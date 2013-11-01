@@ -8,6 +8,7 @@ import java.text.MessageFormat;
 import net.osmand.binary.BinaryMapRouteReaderAdapter.RouteRegion;
 import net.osmand.binary.BinaryMapRouteReaderAdapter.RouteTypeRule;
 import net.osmand.util.Algorithms;
+import net.osmand.util.MapUtils;
 
 public class RouteDataObject {
 	/*private */static final int RESTRICTION_SHIFT = 3;
@@ -326,7 +327,16 @@ public class RouteDataObject {
 			// translate into meters
 			total += Math.abs(px - x) * 0.011d + Math.abs(py - y) * 0.01863d;
 		} while (total < dist);
-		return -Math.atan2( x - px, y - py );
+		
+		if ((x == px) && (y == py))
+		{
+			// Calculate bearing reverse way and adjust.
+			return MapUtils.alignAngleDifference(directionRoute(startPoint, !plus, dist) - Math.PI);
+		}
+		else
+		{
+			return -Math.atan2( x - px, y - py );
+		}
 	}
 	
 	@Override
