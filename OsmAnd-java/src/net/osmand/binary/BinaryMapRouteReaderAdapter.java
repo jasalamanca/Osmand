@@ -382,6 +382,22 @@ public class BinaryMapRouteReaderAdapter {
 			}
 		}
 	}
+
+	private void updatePointTypes(List<TIntArrayList> pointTypes, TIntArrayList dropped)
+	{
+		for (int i = 0; i < dropped.size(); ++i)
+		{
+			//System.err.println("Mirando skipped["+i+"]="+dropped.get(i)+" de "+pointTypes.size());
+			int index = dropped.get(i);
+
+			if (index >= pointTypes.size()) return; // No more points have type info.
+
+			// Accumulate types of both points.
+			pointTypes.get(index-1).addAll(pointTypes.get(index));
+			// Delete drop info (index+1 position)
+			pointTypes.remove(index);
+		}
+	}
 	
 	private RouteDataObject readRouteDataObject(RouteRegion reg, int pleftx, int ptopy) throws IOException {
 		RouteDataObject o = new RouteDataObject(reg);
@@ -389,6 +405,7 @@ public class BinaryMapRouteReaderAdapter {
 		TIntArrayList pointsY = new TIntArrayList();
 		TIntArrayList types = new TIntArrayList();
 		List<TIntArrayList> globalpointTypes = new ArrayList<TIntArrayList>();
+		TIntArrayList dropped = new TIntArrayList();
 		while (true) {
 			int ts = codedIS.readTag();
 			int tags = WireFormat.getTagFieldNumber(ts);
@@ -397,6 +414,7 @@ public class BinaryMapRouteReaderAdapter {
 				o.pointsX = pointsX.toArray();
 				o.pointsY = pointsY.toArray();
 				o.types = types.toArray();
+				updatePointTypes(globalpointTypes, dropped);
 				if(globalpointTypes.size() > 0){
 					o.pointTypes = new int[globalpointTypes.size()][];
 					for(int k=0; k<o.pointTypes.length; k++) {
@@ -407,6 +425,7 @@ public class BinaryMapRouteReaderAdapter {
 					}
 				}
 				return o;
+
 			case RouteData.TYPES_FIELD_NUMBER:
 				int len = codedIS.readRawVarint32();
 				int oldLimit = codedIS.pushLimit(len);
@@ -432,8 +451,15 @@ public class BinaryMapRouteReaderAdapter {
 				int px = pleftx >> SHIFT_COORDINATES;
 				int py = ptopy >> SHIFT_COORDINATES;
 				while(codedIS.getBytesUntilLimit() > 0){
-					int x = (codedIS.readSInt32() ) + px;
-					int y = (codedIS.readSInt32() ) + py;
+					int deltaX = codedIS.readSInt32();
+					int deltaY = codedIS.readSInt32();
+					if (deltaX == 0 && deltaY == 0 && !pointsX.isEmpty())
+					{
+						dropped.add(pointsX.size());
+						continue;
+					}
+					int x = deltaX + px;
+					int y = deltaY + py;
 					pointsX.add(x << SHIFT_COORDINATES);
 					pointsY.add(y << SHIFT_COORDINATES);
 					px = x;
