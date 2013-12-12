@@ -30,6 +30,10 @@ public class TestRouting {
 	public static NativeLibrary lib = null;
 	public static boolean oldRouting = false;
 	private static String vehicle = "car";
+	static
+	{
+		System.loadLibrary("osmand");
+	}
 	
 	
 	public static class Parameters {
@@ -111,12 +115,33 @@ public class TestRouting {
 			}
 		}
 		if(params.startLat != 0) {
-//			calculateRoute(params.obfDir.getAbsolutePath(), params.startLat, params.startLon,
-//					params.endLat, params.endLon);
 			BinaryMapIndexReader[] rs = collectFiles(params.obfDir.getAbsolutePath());
 			vehicle = params.vehicle;
+			// Native old version
+			oldRouting = true;
+			lib = new NativeLibrary(false);
+			// Load map files in native space.
+			File[] lf = params.obfDir.listFiles();
+			for(File f : lf){
+				if(f.getName().endsWith(".obf")) {
+					lib.initMapFile(f.getAbsolutePath());
+					/////
+					/////lib.initCacheMapFile(f.getAbsolutePath());
+				}
+			}
+			System.gc();
 			calculateRoute(params.startLat, params.startLon,
 					params.endLat, params.endLon, rs);
+			// Old router
+			oldRouting = true;
+			lib = null;
+			System.gc();
+			calculateRoute(params.startLat, params.startLon,
+					params.endLat, params.endLon, rs);
+			// New router
+			oldRouting = false;
+			lib = null;
+			System.gc();
 			calculateRoute(params.startLat, params.startLon,
 					params.endLat, params.endLon, rs);
 		}
