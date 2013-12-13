@@ -34,8 +34,7 @@ public class TestRouting {
 	{
 		System.loadLibrary("osmand");
 	}
-	
-	
+
 	public static class Parameters {
 		public File obfDir;
 		public List<File> tests = new ArrayList<File>();
@@ -300,8 +299,6 @@ public class TestRouting {
 		}
 	}
 
-	
-	
 	public static void calculateRoute(String folderWithObf,
 			double startLat, double startLon, double endLat, double endLon) throws IOException, InterruptedException {
 		BinaryMapIndexReader[] rs = collectFiles(folderWithObf);
@@ -328,7 +325,8 @@ public class TestRouting {
 	}
 
 
-	private static void calculateRoute(double startLat, double startLon, double endLat, double endLon, BinaryMapIndexReader[] rs)
+	private static void calculateRoute(double startLat, double startLon,
+			double endLat, double endLon, BinaryMapIndexReader[] rs)
 			throws IOException, InterruptedException {
 		long ts = System.currentTimeMillis();
 		Builder config = RoutingConfiguration.getDefault();
@@ -337,10 +335,10 @@ public class TestRouting {
 		RoutingContext ctx = router.buildRoutingContext(rconfig, lib, rs);
 		RouteSegment startSegment = router.findRouteSegment(startLat, startLon, ctx);
 		RouteSegment endSegment = router.findRouteSegment(endLat, endLon, ctx);
-		if(startSegment == null){
+		if (startSegment == null) {
 			throw new IllegalArgumentException("Start segment is not found ");
 		}
-		if(endSegment == null){
+		if (endSegment == null) {
 			throw new IllegalArgumentException("End segment is not found ");
 		}
 		// Clear ctx
@@ -349,5 +347,4 @@ public class TestRouting {
 				new LatLon(startLat, startLon), new LatLon(endLat, endLon), null);
 		System.out.println("Route is " + route.size() + " segments " + (System.currentTimeMillis() - ts) + " ms ");
 	}
-
 }
