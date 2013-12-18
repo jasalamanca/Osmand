@@ -97,20 +97,9 @@ public class RouteResultPreparation {
 					attachRoadSegments(ctx, result, i, next, plus);
 				}
 				List<RouteSegmentResult> attachedRoutes = rr.getAttachedRoutes(next);
-				boolean tryToSplit = next != rr.getEndPointIndex() && !rr.getObject().roundabout() && attachedRoutes != null;
-				if(rr.getDistance(next, plus ) == 0) {
-					// same point will be processed next step
-					tryToSplit = false;
-				}
-				if (tryToSplit) {
-					// avoid small zigzags
+				if (next != rr.getEndPointIndex() && !rr.getObject().roundabout() && attachedRoutes != null) {
 					float before = rr.getBearing(next, !plus);
 					float after = rr.getBearing(next, plus);
-					if(rr.getDistance(next, plus ) < 5) {
-						after = before + 180;
-					} else if(rr.getDistance(next, !plus ) < 5) {
-						before = after - 180;
-					}
 					boolean straight = Math.abs(MapUtils.degreesDiff(before + 180, after)) < TURN_DEGREE_MIN;
 					boolean isSplit = false;
 					// split if needed
@@ -546,11 +535,11 @@ public class RouteResultPreparation {
 		double devation = Math.abs(MapUtils.degreesDiff(prevSegm.getBearingEnd(), currentSegm.getBearingBegin()));
 		boolean makeSlightTurn = devation > 5 && (!isMotorway(prevSegm) || !isMotorway(currentSegm));
 		if (kl) {
-			t = TurnType.valueOf(makeSlightTurn ? TurnType.TSLL : TurnType.KL, leftSide);
+			t = TurnType.valueOf(devation > 5 ? TurnType.TSLL : TurnType.KL, leftSide);
 			t.setSkipToSpeak(!speak);
 		} 
 		if (kr) {
-			t = TurnType.valueOf(makeSlightTurn ? TurnType.TSLR : TurnType.KR, leftSide);
+			t = TurnType.valueOf(devation > 5 ? TurnType.TSLR : TurnType.KR, leftSide);
 			t.setSkipToSpeak(!speak);
 		}
 		if (t != null && lanes != null) {
