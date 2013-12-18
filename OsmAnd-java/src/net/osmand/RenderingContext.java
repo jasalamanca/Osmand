@@ -29,13 +29,13 @@ public class RenderingContext {
 	}
 	
 
-	public double leftX;
-	public double topY;
+	public float leftX;
+	public float topY;
 	public int width;
 	public int height;
 
 	public int zoom;
-	public double tileDivisor;
+	public float tileDivisor;
 	public float rotate;
 
 	// debug purpose
