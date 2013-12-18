@@ -24,7 +24,7 @@ function copyLibs {
 }
 
 function compile {
-	OSMAND_ANDROID_EXTERNAL_DEPENDENCIES=(expat freetype gdal giflib glew glm glsl-optimizer harfbuzz jpeg libpng protobuf qtbase-desktop skia zlib)
+	OSMAND_ANDROID_EXTERNAL_DEPENDENCIES=(expat freetype gdal giflib glew glm glsl-optimizer jpeg libpng protobuf qtbase-desktop skia zlib)
 	"$ROOT_LOC/core/externals/configure.sh" ${OSMAND_ANDROID_EXTERNAL_DEPENDENCIES[*]}
 	"$ROOT_LOC/core/externals/build.sh" ${OSMAND_ANDROID_EXTERNAL_DEPENDENCIES[*]}
 	"$ROOT_LOC/tools/map-viewer/externals/configure.sh"
