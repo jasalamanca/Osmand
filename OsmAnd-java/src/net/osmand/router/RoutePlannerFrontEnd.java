@@ -71,7 +71,7 @@ public class RoutePlannerFrontEnd {
 					QuadPoint pr = MapUtils.getProjectionPoint31(px, py, r.getPoint31XTile(j-1), 
 							r.getPoint31YTile(j-1), r.getPoint31XTile(j), r.getPoint31YTile(j));
 					double currentsDist = squareDist((int)pr.x, (int)pr.y, px, py);
-					if (road == null || currentsDist < sdist) {
+					if (currentsDist < sdist || road == null) {
 						// New candidate
 						road = r;
 						index = j;
