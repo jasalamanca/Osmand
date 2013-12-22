@@ -267,8 +267,11 @@ public class BinaryRoutePlannerOld {
 
 		// 0. mark route segment as visited
 		long nt = (road.getId() << ROUTE_POINTS) + middle;
-		// avoid empty segments to connect but mark the point as visited
-		visitedSegments.put(nt, null);
+		if (visitedSegments.contains(nt))
+		{
+			return false;
+		}
+		visitedSegments.put(nt, segment);
 
 		int oneway = ctx.getRouter().isOneWay(road);
 		boolean minusAllowed;
@@ -328,9 +331,8 @@ public class BinaryRoutePlannerOld {
 				plusAllowed = false;
 				continue;
 			}
-			// if we found end point break cycle
 			long nts = (road.getId() << ROUTE_POINTS) + segmentEnd;
-			visitedSegments.put(nts, segment);
+			visitedSegments.put(nts, null);
 
 			// 2. calculate point and try to load neighbor ways if they are not loaded
 			int x = road.getPoint31XTile(segmentEnd);
@@ -369,11 +371,12 @@ public class BinaryRoutePlannerOld {
 			RouteSegment next = ctx.loadRouteSegment(x, y, ctx.config.memoryLimitation - overhead);
 			// 3. get intersected ways
 			if (next != null) {
-				// TO-DO U-Turn
-				if((next == segment || next.road.id == road.id) && next.next == null) {
+/*** TODO extract solution check code. Solution point match this same condition. We need to check for solution. 
+				if (next.next == null && next.road.id == road.id) {
 					// simplification if there is no real intersection
 					continue;
 				}
+***/				
 				// Using A* routing algorithm
 				// g(x) - calculate distance to that point and calculate time
 				
@@ -501,9 +504,6 @@ public class BinaryRoutePlannerOld {
 			if (oppositeSegments.contains(nts) && oppositeSegments.get(nts) != null) {
 				// restrictions checked
 				RouteSegment opposite = oppositeSegments.get(nts);
-				// additional check if opposite way not the same as current one
-				if (next.getSegmentStart() != segmentEnd || 
-						opposite.getRoad().getId() != segment.getRoad().getId()) {
 					FinalRouteSegment frs = new FinalRouteSegment(segment.getRoad(), segment.getSegmentStart());
 					float distStartObstacles = segment.distanceFromStart;
 					frs.setParentRoute(segment.getParentRoute());
@@ -517,7 +517,6 @@ public class BinaryRoutePlannerOld {
 					frs.opposite = op;
 					ctx.finalRouteSegment = frs;
 					return true;
-				}
 			}
 			// road.id could be equal on roundabout, but we should accept them
 			boolean alreadyVisited = visitedSegments.contains(nts);

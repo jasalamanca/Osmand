@@ -227,7 +227,8 @@ public class RoutingContext {
 				tileRoutes.put(tileId, routes);
 			}
 			if(!routes.contains(o)){
-				routes.add(o);
+				// Newer versions of roads must be used.
+				routes.add(0, o);
 			}
 		}
 	}
@@ -292,19 +293,17 @@ public class RoutingContext {
 
 	public RouteSegment loadRouteSegment(int x31, int y31, int memoryLimit) {
 		long tileId = getRoutingTile(x31, y31, memoryLimit, OPTION_SMART_LOAD);
-		TLongObjectHashMap<RouteDataObject> excludeDuplications = new TLongObjectHashMap<RouteDataObject>();
+		TLongHashSet excludeDuplications = new TLongHashSet();
 		RouteSegment original = null;
 		if (tileRoutes.containsKey(tileId)) {
 			List<RouteDataObject> routes = tileRoutes.get(tileId);
 			if (routes != null) {
 				for (RouteDataObject ro : routes) {
 					for (int i = 0; i < ro.pointsX.length; i++) {
+						long id = calcRouteId(ro, i);
+						if (excludeDuplications.contains(id)) continue;
+						excludeDuplications.add(id);
 						if (ro.getPoint31XTile(i) == x31 && ro.getPoint31YTile(i) == y31) {
-							long id = calcRouteId(ro, i);
-							if (excludeDuplications.contains(id)) {
-								continue;
-							}
-							excludeDuplications.put(id, ro);
 							RouteSegment segment = new RouteSegment(ro, i);
 							segment.next = original;
 							original = segment;
@@ -464,11 +463,8 @@ public class RoutingContext {
 				ts.add(getRoutingTile(x31 +i*coordinatesShift, y31 + j*coordinatesShift, 0, OPTION_IN_MEMORY_LOAD));		
 			}
 		}
-		TLongIterator it = ts.iterator();
-		TLongObjectHashMap<RouteDataObject> excludeDuplications = new TLongObjectHashMap<RouteDataObject>();
-		while(it.hasNext()){
-			getAllObjects(it.next(), toFillIn, excludeDuplications);
-		}
+		// We need to priorize roads added to tileRoutes
+		getAllObjects(ts, toFillIn);
 		timeToFindInitialSegments += (System.nanoTime() - now);
 	}
 	
@@ -579,26 +575,37 @@ public class RoutingContext {
 		}
 	}
 	
-	private void getAllObjects(long tileId, final List<RouteDataObject> toFillIn, TLongObjectHashMap<RouteDataObject> excludeDuplications) {
-		if (tileRoutes.containsKey(tileId)) {
-			List<RouteDataObject> routes = tileRoutes.get(tileId);
-			if (routes != null) {
-				for (RouteDataObject ro : routes) {
-					if (!excludeDuplications.contains(ro.id)) {
-						excludeDuplications.put(ro.id, ro);
-						toFillIn.add(ro);
+	private void getAllObjects(final TLongHashSet tileIds, final List<RouteDataObject> toFillIn) {
+		TLongHashSet excludeDuplications = new TLongHashSet();
+		// First all objects from tileRoutes.
+		TLongIterator it = tileIds.iterator();
+		while (it.hasNext())
+		{
+			long tileId = it.next();
+			if (tileRoutes.containsKey(tileId)) {
+				List<RouteDataObject> routes = tileRoutes.get(tileId);
+				if (routes != null) {
+					for (RouteDataObject ro : routes) {
+						if (!excludeDuplications.contains(ro.id)) {
+							excludeDuplications.add(ro.id);
+							toFillIn.add(ro);
+						}
 					}
 				}
 			}
 		}
+		it = tileIds.iterator();
+		while (it.hasNext())
+		{
+			long tileId = it.next();
 		List<RoutingSubregionTile> subregions = indexedSubregions.get(tileId);
 		if (subregions != null) {
 			for (RoutingSubregionTile rs : subregions) {
-				rs.loadAllObjects(toFillIn, this, excludeDuplications);
+				rs.loadAllObjects(toFillIn, excludeDuplications);
 			}
 		}
+		}
 	}
-	
 	
 	
 	protected static long runGCUsedMemory()  {
@@ -643,7 +650,7 @@ public class RoutingContext {
 			return routes;
 		}
 		
-		public void loadAllObjects(final List<RouteDataObject> toFillIn, RoutingContext ctx, TLongObjectHashMap<RouteDataObject> excludeDuplications) {
+		private void loadAllObjects(List<RouteDataObject> toFillIn, TLongHashSet excludeDuplications) {
 			if(routes != null) {
 				Iterator<RouteSegment> it = routes.valueCollection().iterator();
 				while(it.hasNext()){
@@ -651,7 +658,7 @@ public class RoutingContext {
 					while(rs != null){
 						RouteDataObject ro = rs.road;
 						if (!excludeDuplications.contains(ro.id)) {
-							excludeDuplications.put(ro.id, ro);
+							excludeDuplications.add(ro.id);
 							toFillIn.add(ro);
 						}
 						rs = rs.next;
@@ -662,7 +669,7 @@ public class RoutingContext {
 				if(objects != null) {
 					for(RouteDataObject ro : objects) {
 						if (ro != null && !excludeDuplications.contains(ro.id)) {
-							excludeDuplications.put(ro.id, ro);
+							excludeDuplications.add(ro.id);
 							toFillIn.add(ro);
 						}
 					}
@@ -671,7 +678,7 @@ public class RoutingContext {
 		}
 		
 		private RouteSegment loadRouteSegment(int x31, int y31, RoutingContext ctx, 
-				TLongObjectHashMap<RouteDataObject> excludeDuplications, RouteSegment original) {
+			TLongHashSet excludeDuplications, RouteSegment original) {
 			if(searchResult == null && routes == null) {
 				return original;
 			}
@@ -681,9 +688,10 @@ public class RoutingContext {
 				RouteSegment segment = routes.get(l);
 				while (segment != null) {
 					RouteDataObject ro = segment.road;
-					RouteDataObject toCmp = excludeDuplications.get(calcRouteId(ro, segment.getSegmentStart()));
-					if (toCmp == null || toCmp.getPointsLength() < ro.getPointsLength()) {
-						excludeDuplications.put(calcRouteId(ro, segment.getSegmentStart()), ro);
+					long id = calcRouteId(ro, segment.getSegmentStart());
+					if (!excludeDuplications.contains(id))
+					{
+						excludeDuplications.add(id);
 						RouteSegment s = new RouteSegment(ro, segment.getSegmentStart());
 						s.next = original;
 						original = s;
@@ -698,21 +706,15 @@ public class RoutingContext {
 			ctx.timeToLoad += (System.nanoTime() - nanoTime);
 			if (res != null) {
 				for (RouteDataObject ro : res) {
-					
-					boolean accept = ro != null;
-					if (ctx != null) {
-						accept = ctx.getRouter().acceptLine(ro);
-					}
-					if (accept) {
+					if (ctx.getRouter().acceptLine(ro)) {
 						for (int i = 0; i < ro.pointsX.length; i++) {
+							long id = calcRouteId(ro, i);
+							if (excludeDuplications.contains(id)) continue;
+							excludeDuplications.add(id);
 							if (ro.getPoint31XTile(i) == x31 && ro.getPoint31YTile(i) == y31) {
-								RouteDataObject toCmp = excludeDuplications.get(calcRouteId(ro, i));
-								if (toCmp == null || toCmp.getPointsLength() < ro.getPointsLength()) {
-									RouteSegment segment = new RouteSegment(ro, i);
-									segment.next = original;
-									original = segment;
-									excludeDuplications.put(calcRouteId(ro, i), ro);
-								}
+								RouteSegment segment = new RouteSegment(ro, i);
+								segment.next = original;
+								original = segment;
 							}
 						}
 					}

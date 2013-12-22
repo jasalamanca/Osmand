@@ -83,6 +83,7 @@ public class RoutePlannerFrontEnd {
 			}
 		}
 		if (road != null) {
+			/*** Always add a new point to road to allow 'RoutePlannerFrontEnd.searchRoute' postprocessing.
 			if ((candidateX == road.pointsX[index-1]) && (candidateY == road.pointsY[index-1]))
 			{
 				// Projection has same coordinates. None new.
@@ -93,6 +94,7 @@ public class RoutePlannerFrontEnd {
 				// Projection has same coordinates. None new.
 				return new RouteSegment(road, index);
 			}
+			***/
 			// Add projection to a new version of the road.
 			RouteDataObject proj = new RouteDataObject(road);
 			proj.insert(index, candidateX, candidateY);
@@ -159,6 +161,29 @@ public class RoutePlannerFrontEnd {
 		if(!addSegment(end, ctx, indexNotFound++, points)){
 			return null;
 		}
+		// Postprocessing when more than one point is on same road.
+		// points has the same order than addSegment calls.
+		for (int i = 0; i < points.size()-1; ++i)
+		{
+			RouteSegment older = points.get(i);
+			long id = older.road.id;
+			for (int j = i+1; j < points.size(); ++j)
+			{
+				RouteSegment newer = points.get(j);
+				if (id == newer.road.id)
+				{
+					// Point i and j on same road. Newest the best.
+					short newIndex = older.segStart;
+					if (older.segStart >= newer.segStart)
+					{
+						// older index shifted when insert called. Behavior of insert method.
+						newIndex++;
+					}
+					points.set(i, new RouteSegment(newer.road, newIndex));
+				}
+			}
+		}
+		///List<RouteSegmentResult> res = searchRoute(ctx, points, leftSideNavigation);
 		List<RouteSegmentResult> res = searchRoute(ctx, points, routeDirection);
 		if(res != null) {
 			new RouteResultPreparation().printResults(ctx, start, end, res);
