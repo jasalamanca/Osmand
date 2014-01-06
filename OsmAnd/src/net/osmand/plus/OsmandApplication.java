@@ -41,6 +41,7 @@ import net.osmand.plus.voice.CommandPlayerException;
 import net.osmand.plus.voice.CommandPlayerFactory;
 import net.osmand.render.RenderingRulesStorage;
 import net.osmand.router.RoutingConfiguration;
+import net.osmand.router.RouteResultPreparation;
 import net.osmand.util.Algorithms;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -163,7 +164,10 @@ public class OsmandApplication extends Application implements ClientContext {
 //		if(!osmandSettings.FOLLOW_THE_ROUTE.get()) {
 //			targetPointsHelper.clearPointToNavigate(false);
 //		}
-		
+
+		// Don't log all route information on devices.
+		RouteResultPreparation.PRINT_TO_CONSOLE_ROUTE_INFORMATION_TO_TEST = false;
+
 		checkPrefferedLocale();
 		startApplication();
 		if (LOG.isDebugEnabled()) {
@@ -175,8 +179,6 @@ public class OsmandApplication extends Application implements ClientContext {
 		if (LOG.isDebugEnabled()) {
 			LOG.debug("Time to init plugins " + (System.currentTimeMillis() - timeToStart) + " ms. Should be less < 800 ms");
 		}
-		
-		
 	}
 
 	@Override
