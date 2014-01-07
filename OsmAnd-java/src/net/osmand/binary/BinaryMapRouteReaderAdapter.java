@@ -393,8 +393,18 @@ public class BinaryMapRouteReaderAdapter {
 			if (index >= pointTypes.size()) return; // No more points have type info.
 
 			// Accumulate types of both points.
-			pointTypes.get(index-1).addAll(pointTypes.get(index));
-			// Delete drop info (index+1 position)
+			TIntArrayList accumulate = pointTypes.get(index-1);
+			TIntArrayList drop = pointTypes.get(index);
+			if (accumulate != null)
+			{
+				if (drop != null)
+					accumulate.addAll(drop);
+			}
+			else
+			{
+				pointTypes.set(index-1, drop); 
+			}
+			// Delete dropped info
 			pointTypes.remove(index);
 		}
 	}
