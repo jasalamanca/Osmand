@@ -4,6 +4,7 @@ package net.osmand.router;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import net.osmand.NativeLibrary;
@@ -14,6 +15,7 @@ import net.osmand.binary.BinaryMapRouteReaderAdapter.RouteRegion;
 import net.osmand.binary.RouteDataObject;
 import net.osmand.data.LatLon;
 import net.osmand.data.QuadPoint;
+import net.osmand.router.BinaryRoutePlanner.FinalRouteSegment;
 import net.osmand.router.BinaryRoutePlanner.RouteSegment;
 import net.osmand.util.MapUtils;
 
@@ -201,9 +203,8 @@ public class RoutePlannerFrontEnd {
 			res.add(f);
 			return true;
 		}
-		
 	}
-	
+
 	private List<RouteSegmentResult> searchRouteInternalPrepare(final RoutingContext ctx, RouteSegment start, RouteSegment end, 
 			PrecalculatedRouteDirection routeDirection) throws IOException, InterruptedException {
 		ctx.initStartAndTargetPoints(start, end);
@@ -213,8 +214,6 @@ public class RoutePlannerFrontEnd {
 		if (ctx.nativeLib != null) {
 			return runNativeRouting(ctx);
 		} else {
-			refreshProgressDistance(ctx);
-			// Split into 2 methods to let GC work in between
 			if(useOldVersion) {
 				new BinaryRoutePlannerOld().searchRouteInternal(ctx, start, end);
 			} else {
@@ -223,6 +222,7 @@ public class RoutePlannerFrontEnd {
 			// 4. Route is found : collect all segments and prepare result
 			return new RouteResultPreparation().prepareResult(ctx, ctx.finalRouteSegment);
 		}
+		return new RouteResultPreparation().prepareResult(ctx, leftSideNavigation, result);
 	}
 
 
@@ -234,9 +234,8 @@ public class RoutePlannerFrontEnd {
 			ctx.calculationProgress.directSegmentQueueSize = 0;
 			float rd = (float) MapUtils.squareRootDist31(ctx.startX, ctx.startY, ctx.targetX, ctx.targetY);
 			float speed = 0.9f * ctx.config.router.getMaxDefaultSpeed();
-			ctx.calculationProgress.totalEstimatedDistance = (float) (rd /  speed); 
+			ctx.calculationProgress.totalEstimatedDistance = rd / speed; 
 		}
-		
 	}
 
 	private List<RouteSegmentResult> runNativeRouting(final RoutingContext ctx) throws IOException {
@@ -252,7 +251,6 @@ public class RoutePlannerFrontEnd {
 		ctx.loadedTiles = ctx.calculationProgress.loadedTiles;
 		return new RouteResultPreparation().prepareResult(ctx, result);
 	}
-	
 
 	private List<RouteSegmentResult> searchRoute(final RoutingContext ctx, List<RouteSegment> points, PrecalculatedRouteDirection routeDirection) 
 			throws IOException, InterruptedException {
@@ -312,7 +310,6 @@ public class RoutePlannerFrontEnd {
 		return searchRoute(ctx, points.get(0), points.get(1), routeDirection);
 	}
 	
-	@SuppressWarnings("static-access")
 	private List<RouteSegmentResult> searchRoute(final RoutingContext ctx, RouteSegment start, RouteSegment end, PrecalculatedRouteDirection routeDirection) 
 			throws IOException, InterruptedException {
 		if(ctx.SHOW_GC_SIZE){
@@ -324,17 +321,14 @@ public class RoutePlannerFrontEnd {
 		if (RoutingContext.SHOW_GC_SIZE) {
 			int sz = ctx.global.size;
 			log.warn("Subregion size " + ctx.subregionTiles.size() + " " + " tiles " + ctx.indexedSubregions.size());
-			ctx.runGCUsedMemory();
-			long h1 = ctx.runGCUsedMemory();
+			RoutingContext.runGCUsedMemory();
+			long h1 = RoutingContext.runGCUsedMemory();
 			ctx.unloadAllData();
-			ctx.runGCUsedMemory();
-			long h2 = ctx.runGCUsedMemory();
+			RoutingContext.runGCUsedMemory();
+			long h2 = RoutingContext.runGCUsedMemory();
 			float mb = (1 << 20);
 			log.warn("Unload context :  estimated " + sz / mb + " ?= " + (h1 - h2) / mb + " actual");
 		}
 		return result;
 	}
-	
-	
-
 }
