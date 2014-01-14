@@ -175,7 +175,7 @@ public class MapInfoWidgetsFactory {
 			lockView.setBackgroundDrawable(lockDisabled);
 		}
 		final FrameLayout transparentLockView = new FrameLayout(view.getContext());
-		FrameLayout.LayoutParams fparams = new FrameLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT, Gravity.CENTER);
+		FrameLayout.LayoutParams fparams = new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, Gravity.CENTER);
 		transparentLockView.setLayoutParams(fparams);
 		transparentLockView.setOnTouchListener(new View.OnTouchListener() {
 			@Override

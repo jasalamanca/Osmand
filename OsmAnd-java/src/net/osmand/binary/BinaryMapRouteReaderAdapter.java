@@ -525,7 +525,7 @@ public class BinaryMapRouteReaderAdapter {
 					fromr.restrictions = new long[it.value().size()];
 					for (int k = 0; k < fromr.restrictions.length; k++) {
 						int to = (int) (it.value().get(k) >> RouteDataObject.RESTRICTION_SHIFT);
-						long valto = (idTables.get(to) << RouteDataObject.RESTRICTION_SHIFT) | ((long) it.value().get(k) & RouteDataObject.RESTRICTION_MASK);
+						long valto = (idTables.get(to) << RouteDataObject.RESTRICTION_SHIFT) | (it.value().get(k) & RouteDataObject.RESTRICTION_MASK);
 						fromr.restrictions[k] = valto;
 					}
 				}

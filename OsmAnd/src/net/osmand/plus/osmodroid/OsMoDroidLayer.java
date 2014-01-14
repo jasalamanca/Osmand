@@ -9,16 +9,11 @@ import net.osmand.data.QuadRect;
 import net.osmand.data.RotatedTileBox;
 import net.osmand.plus.*;
 import net.osmand.plus.ContextMenuAdapter.OnContextMenuClick;
-import net.osmand.plus.GPXUtilities.GPXFile;
 import net.osmand.plus.GPXUtilities.WptPt;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.views.ContextMenuLayer;
-import net.osmand.plus.views.GPXLayer;
 import net.osmand.plus.views.OsmandMapLayer;
 import net.osmand.plus.views.OsmandMapTileView;
-import net.osmand.plus.views.OsmandMapLayer.DrawSettings;
-import net.osmand.render.RenderingRuleSearchRequest;
-import net.osmand.render.RenderingRulesStorage;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -70,13 +65,6 @@ public class OsMoDroidLayer extends OsmandMapLayer implements ContextMenuLayer.I
 
 	private Path path;
 
-	private OsmandSettings settings;
-	
-	private RenderingRulesStorage cachedRrs;
-	private boolean cachedNightMode;
-	private int cachedColor;
-	
-	
 	private void initUI() {
 		paint = new Paint();
 		paint.setStyle(Style.STROKE);

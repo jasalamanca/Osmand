@@ -42,8 +42,8 @@ public class RenderingRulesStorage {
 	
 	public RenderingRuleStorageProperties PROPS = new RenderingRuleStorageProperties();
 
-	@SuppressWarnings("unchecked")
-	public TIntObjectHashMap<RenderingRule>[] tagValueGlobalRules = new TIntObjectHashMap[LENGTH_RULES];
+	public TIntObjectHashMap<RenderingRule>[] tagValueGlobalRules = 
+			(TIntObjectHashMap<RenderingRule>[]) new TIntObjectHashMap[LENGTH_RULES];
 	
 	protected Map<String, RenderingRule> renderingAttributes = new LinkedHashMap<String, RenderingRule>();
 	protected Map<String, String> renderingConstants= new LinkedHashMap<String, String>();
@@ -301,7 +301,6 @@ public class RenderingRulesStorage {
 				stateChanged = true;
 			} else if("renderingAttribute".equals(name)){ //$NON-NLS-1$
 				String attr = parser.getAttributeValue("", "name");
-				@SuppressWarnings("unchecked")
 				RenderingRule root = new RenderingRule(new HashMap<String, String>(	), RenderingRulesStorage.this);
 				renderingAttributes.put(attr, root);
 				stack.push(root);

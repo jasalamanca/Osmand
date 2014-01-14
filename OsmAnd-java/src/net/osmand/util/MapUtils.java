@@ -174,11 +174,11 @@ public class MapUtils {
 	}
 	
 	public static double getTileEllipsoidNumberY(float zoom, double latitude){
-		final double E2 = (double) latitude * Math.PI / 180;
+		final double E2 = latitude * Math.PI / 180;
 		final long sradiusa = 6378137;
 		final long sradiusb = 6356752;
-		final double J2 = (double) Math.sqrt(sradiusa * sradiusa - sradiusb * sradiusb)	/ sradiusa;
-		final double M2 = (double) Math.log((1 + Math.sin(E2))
+		final double J2 = Math.sqrt(sradiusa * sradiusa - sradiusb * sradiusb)	/ sradiusa;
+		final double M2 = Math.log((1 + Math.sin(E2))
 				/ (1 - Math.sin(E2)))/ 2- J2	* Math.log((1 + J2 * Math.sin(E2))/ (1 - J2 * Math.sin(E2))) / 2;
 		final double B2 = getPowZoom(zoom);
 		return B2 / 2 - M2 * B2 / 2 / Math.PI;
@@ -188,7 +188,7 @@ public class MapUtils {
 		final double MerkElipsK = 0.0000001;
 		final long sradiusa = 6378137;
 		final long sradiusb = 6356752;
-		final double FExct = (double) Math.sqrt(sradiusa * sradiusa
+		final double FExct = Math.sqrt(sradiusa * sradiusa
 				- sradiusb * sradiusb)
 				/ sradiusa;
 		final double TilesAtZoom = getPowZoom(zoom);
@@ -287,16 +287,12 @@ public class MapUtils {
 		return str;
 	}
 	
-	@SuppressWarnings("unused")
 	public static LatLon decodeShortLocString(String s) {
 		long x = 0;
 		long y = 0;
 	    int z = 0;
-		int z_offset = 0;
-
 		for (int i = 0; i < s.length(); i++) {
 			if (s.charAt(i) == '-') {
-				z_offset--;
 				continue;
 			}
 			char c = s.charAt(i);

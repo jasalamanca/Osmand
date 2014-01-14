@@ -48,13 +48,12 @@ public class SearchStreetByNameActivity extends SearchByNameAbstractActivity<Str
 			}
 		};
 	}
-	
+
 	@Override
 	protected void reset() {
 		searchWithCity = -1;
 		super.reset();
 	}
-	
 
 	@Override
 	protected void addFooterViews() {
@@ -75,7 +74,7 @@ public class SearchStreetByNameActivity extends SearchByNameAbstractActivity<Str
 		});
 		getListView().addFooterView(ll);
 	}
-	
+
 	@Override
 	public AsyncTask<Object, ?, ?> getInitializeTask() {
 		return new AsyncTask<Object, Street, List<Street>>() {
@@ -118,7 +117,7 @@ public class SearchStreetByNameActivity extends SearchByNameAbstractActivity<Str
 			}
 		};
 	}
-	
+
 	@Override
 	protected void filterLoop(String query, Collection<Street> list) {
 		if(searchWithCity == -1){
@@ -162,10 +161,7 @@ public class SearchStreetByNameActivity extends SearchByNameAbstractActivity<Str
 				}
 			});
 		}
-		
-		
 	}
-
 
 	private void filter(String query, Collection<Street> list) {
 		boolean emptyQuery = query == null || query.length() == 0;
@@ -209,8 +205,7 @@ public class SearchStreetByNameActivity extends SearchByNameAbstractActivity<Str
 		}
 		return null;
 	}
-	
-	
+
 	@Override
 	public void itemSelected(Street obj) {
 		if(!Algorithms.objectEquals(settings.getLastSearchedCity(), obj.getCity().getId())) {
@@ -222,9 +217,8 @@ public class SearchStreetByNameActivity extends SearchByNameAbstractActivity<Str
 //		} else {
 			quitActivity(SearchBuildingByNameActivity.class);
 //		}
-		
 	}
-	
+
 	protected AddressInformation getAddressInformation() {
 		return AddressInformation.buildCity(this, settings);
 	}

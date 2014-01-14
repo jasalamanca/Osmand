@@ -36,10 +36,8 @@ import org.apache.commons.logging.Log;
 
 
 public class RoutingContext {
-
 	public static final boolean SHOW_GC_SIZE = false;
-	 
-	
+
 	private final static Log log = PlatformUtil.getLog(RoutingContext.class);
 	public static final int OPTION_NO_LOAD = 0;
 	public static final int OPTION_SMART_LOAD = 1;
@@ -53,7 +51,7 @@ public class RoutingContext {
 	public final NativeLibrary nativeLib;
 	public final Map<BinaryMapIndexReader, List<RouteSubregion>> map = new LinkedHashMap<BinaryMapIndexReader, List<RouteSubregion>>();
 	public final Map<RouteRegion, BinaryMapIndexReader> reverseMap = new LinkedHashMap<RouteRegion, BinaryMapIndexReader>();
-	
+
 	// 1. Initial variables
 	public int startX;
 	public int startY;
@@ -62,7 +60,7 @@ public class RoutingContext {
 	// deprecated
 	public long firstRoadId;
 	public int firstRoadDirection;
-	
+
 	public RouteCalculationProgress calculationProgress;
 	public boolean leftSideNavigation;
 	public List<RouteSegmentResult> previouslyCalculatedRoute;
@@ -71,27 +69,25 @@ public class RoutingContext {
 	// 2. Routing memory cache (big objects)
 	TLongObjectHashMap<List<RoutingSubregionTile>> indexedSubregions = new TLongObjectHashMap<List<RoutingSubregionTile>>();
 	TLongObjectHashMap<List<RouteDataObject>> tileRoutes = new TLongObjectHashMap<List<RouteDataObject>>();
-	
+
 	// Needs to be a sorted array list . Another option to use hashmap but it will be more memory expensive
 	List<RoutingSubregionTile> subregionTiles = new ArrayList<RoutingSubregionTile>();
-	
+
 	// 3. Warm object caches
 	ArrayList<RouteSegment> segmentsToVisitPrescripted = new ArrayList<BinaryRoutePlanner.RouteSegment>(5);
 	ArrayList<RouteSegment> segmentsToVisitNotForbidden = new ArrayList<BinaryRoutePlanner.RouteSegment>(5);
-	
-	
+
 	// 5. debug information (package accessor)
 	public TileStatistics global = new TileStatistics();
 	// updated by route planner in bytes
 	public int memoryOverhead = 0;
-	
-	
+
 	long timeNanoToCalcDeviation = 0;
 	long timeToLoad = 0;
 	long timeToLoadHeaders = 0;
 	long timeToFindInitialSegments = 0;
 	long timeToCalculate = 0;
-	
+
 	int distinctLoadedTiles = 0;
 	int maxLoadedTiles = 0;
 	int loadedPrevUnloadedTiles = 0;
@@ -468,7 +464,6 @@ public class RoutingContext {
 		timeToFindInitialSegments += (System.nanoTime() - now);
 	}
 	
-	@SuppressWarnings("unused")
 	private long getRoutingTile(int x31, int y31, int memoryLimit, int loadOptions){
 //		long now = System.nanoTime();
 		long xloc = x31 >> (31 - config.ZOOM_TO_LOAD_TILES);
@@ -501,7 +496,6 @@ public class RoutingContext {
 					 int sz2 = getCurrentEstimatedSize();
 					 log.warn("Unload tiles :  occupied before " + sz1 / mb + " Mb - now  " + sz2 / mb + "MB " + 
 					 memoryLimit/mb + " limit MB " + config.memoryLimitation/mb);
-					 long us2 = (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory());
 					 log.warn("Used memory before " + us1 / mb + "after " + us1 / mb + " of max " + maxMemory() / mb);
 				}
 			}

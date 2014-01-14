@@ -1,9 +1,7 @@
+// simple exact TSP solver based on branch-and-bound/Held--Karp
 package net.osmand;
 
-// simple exact TSP solver based on branch-and-bound/Held--Karp
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
@@ -55,7 +53,6 @@ public class TspHeldKarp {
 		PriorityQueue<Node> pq = new PriorityQueue<Node>(11, new NodeComparator());
 		do {
 			do {
-				boolean isTour = true;
 				int i = -1;
 				for (int j = 0; j < n; j++) {
 					if (currentNode.degree[j] > 2 && (i < 0 || currentNode.degree[j] < currentNode.degree[i]))
@@ -181,7 +178,6 @@ public class TspHeldKarp {
   }
 
   private void addEdge(Node node, int i, int j) {
-    double q = node.lowerBound;
     node.lowerBound += costWithPi[i][j];
     node.degree[i]++;
     node.degree[j]++;

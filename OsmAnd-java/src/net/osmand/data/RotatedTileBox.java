@@ -129,9 +129,9 @@ public class RotatedTileBox {
 		float dy = y - cy;
 		double dtilex;
 		if(isMapRotateEnabled()){
-			dtilex = (rotateCos * (float) dx + rotateSin * (float) dy);
+			dtilex = (rotateCos * dx + rotateSin * dy);
 		} else {
-			dtilex = (float) dx;
+			dtilex = dx;
 		}
 		return dtilex / zoomFactor + oxTile;
 	}
@@ -141,9 +141,9 @@ public class RotatedTileBox {
 		float dy = y - cy;
 		double dtiley;
 		if(isMapRotateEnabled()){
-			dtiley = (-rotateSin * (float) dx + rotateCos * (float) dy);
+			dtiley = (-rotateSin * dx + rotateCos * dy);
 		} else {
-			dtiley = (float) dy;
+			dtiley = dy;
 		}
 		return dtiley / zoomFactor + oyTile;
 	}

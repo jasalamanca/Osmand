@@ -220,11 +220,10 @@ public class MapActivity extends AccessibleActivity  {
 	}
 
 	
-	@SuppressWarnings("rawtypes")
 	public Object getLastNonConfigurationInstanceByKey(String key) {
 		Object k = super.getLastNonConfigurationInstance();
-		if(k instanceof Map) {
-			return ((Map) k).get(key);
+		if(k instanceof Map<?, ?>) {
+			return ((Map<?,?>) k).get(key);
 		}
 		return null;
 	}

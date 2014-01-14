@@ -562,7 +562,6 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 		private static final long serialVersionUID = -7848941747811172615L;
 		private double latitude;
 		private double longitude;
-		private String name;
 		private List<String> dates = new ArrayList<String>();
 		private List<String> comments = new ArrayList<String>();
 		private List<String> users = new ArrayList<String>();

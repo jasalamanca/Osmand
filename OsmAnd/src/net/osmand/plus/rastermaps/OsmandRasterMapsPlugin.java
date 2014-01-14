@@ -36,7 +36,6 @@ import android.os.AsyncTask;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceScreen;
-import android.support.v4.app.DialogFragment;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;

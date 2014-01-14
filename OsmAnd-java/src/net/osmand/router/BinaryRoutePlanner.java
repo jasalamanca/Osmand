@@ -63,7 +63,6 @@ public class BinaryRoutePlanner {
 	 * Calculate route between start.segmentEnd and end.segmentStart (using A* algorithm)
 	 * return list of segments
 	 */
-	@SuppressWarnings("unused")
 	FinalRouteSegment searchRouteInternal(final RoutingContext ctx, RouteSegment start, RouteSegment end) throws InterruptedException, IOException {
 		// measure time
 		ctx.timeToLoad = 0;
@@ -78,8 +77,7 @@ public class BinaryRoutePlanner {
 		// Set to not visit one segment twice (stores road.id << X + segmentStart)
 		TLongObjectHashMap<RouteSegment> visitedDirectSegments = new TLongObjectHashMap<RouteSegment>();
 		TLongObjectHashMap<RouteSegment> visitedOppositeSegments = new TLongObjectHashMap<RouteSegment>();
-		
-		
+
 		initQueuesWithStartEnd(ctx, start, end, graphDirectSegments, graphReverseSegments);
 		
 		// Extract & analyze segment with min(f(x)) from queue while final segment is not found
@@ -797,7 +795,7 @@ public class BinaryRoutePlanner {
 		}
 		
 		public String getTestName(){
-			return MessageFormat.format("s{0,number,#.##} e{1,number,#.##}", ((float)distanceFromStart), ((float)distanceToEnd));
+			return MessageFormat.format("s{0,number,#.##} e{1,number,#.##}", distanceFromStart, distanceToEnd);
 		}
 		
 		

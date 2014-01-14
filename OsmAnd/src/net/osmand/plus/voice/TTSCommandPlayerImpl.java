@@ -24,8 +24,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.speech.tts.TextToSpeech;
+import android.speech.tts.UtteranceProgressListener;
 import android.speech.tts.TextToSpeech.OnInitListener;
-import android.speech.tts.TextToSpeech.OnUtteranceCompletedListener;
 
 public class TTSCommandPlayerImpl extends AbstractPrologCommandPlayer {
 	public final static String PEBBLE_ALERT = "PEBBLE_ALERT";
@@ -184,10 +184,21 @@ public class TTSCommandPlayerImpl extends AbstractPrologCommandPlayer {
 					return ctx instanceof SettingsActivity;
 				}
 			});
-			mTts.setOnUtteranceCompletedListener(new OnUtteranceCompletedListener() {
+			mTts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
+
+				@Override
+				public void onStart(String utteranceId) {
+					// TODO Auto-generated method stub
+				}
+
+				@Override
+				public void onError(String utteranceId) {
+					// TODO Auto-generated method stub
+				}
+
 				// The call back is on a binder thread.
 				@Override
-				public synchronized void onUtteranceCompleted(String utteranceId) {
+				public synchronized void onDone(String utteranceId) {
 					if (--ttsRequests == 0)
 						abandonAudioFocus();
 					log.debug("ttsRequests="+ttsRequests);

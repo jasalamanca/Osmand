@@ -110,7 +110,6 @@ public class ProgressDialogImplementation implements IProgress {
 						if(run != null){
 							run.stop();
 						}
-						
 					}
 				});
 			}

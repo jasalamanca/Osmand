@@ -113,14 +113,14 @@ public class SeekBarPreference extends DialogPreference implements
 		valueTextView.setGravity(Gravity.CENTER_HORIZONTAL);
 		valueTextView.setTextSize(32);
 		params = new LinearLayout.LayoutParams(
-				LinearLayout.LayoutParams.FILL_PARENT,
+				LinearLayout.LayoutParams.MATCH_PARENT,
 				LinearLayout.LayoutParams.WRAP_CONTENT);
 		layout.addView(valueTextView, params);
 
 		seekBar = new SeekBar(context);
 		seekBar.setOnSeekBarChangeListener(this);
 		layout.addView(seekBar, new LinearLayout.LayoutParams(
-				LinearLayout.LayoutParams.FILL_PARENT,
+				LinearLayout.LayoutParams.MATCH_PARENT,
 				LinearLayout.LayoutParams.WRAP_CONTENT));
 
 		if (shouldPersist()) {

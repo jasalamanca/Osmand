@@ -39,7 +39,7 @@ public class OsmAndAccessibilityDelegate extends AccessibleLayout {
                 parent.removeViewAt(0);
                 addView(child);
             }
-            parent.addView(this, new FrameLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+            parent.addView(this, new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
         } else if (target.getParent() instanceof ViewGroup) {
             parent = (ViewGroup)target.getParent();
             int position = parent.indexOfChild(target);

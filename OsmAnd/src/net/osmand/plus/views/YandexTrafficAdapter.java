@@ -16,7 +16,6 @@ import net.osmand.util.Algorithms;
 import org.apache.commons.logging.Log;
 
 import android.graphics.Canvas;
-import android.graphics.RectF;
 
 public class YandexTrafficAdapter  extends MapTileAdapter {
 

@@ -1,10 +1,7 @@
 package net.osmand.plus.osmedit;
 
-import java.util.Map;
-
 import net.osmand.PlatformUtil;
 import net.osmand.data.Amenity;
-import net.osmand.data.AmenityType;
 import net.osmand.osm.MapRenderingTypes;
 import net.osmand.osm.edit.EntityInfo;
 import net.osmand.osm.edit.Node;
@@ -16,7 +13,7 @@ import org.apache.commons.logging.Log;
 import android.content.Context;
 
 public class OpenstreetmapLocalUtil implements OpenstreetmapUtil {
-	
+
 	private final Context ctx;
 	private final OpenstreetmapsDbHelper db;
 
@@ -31,7 +28,7 @@ public class OpenstreetmapLocalUtil implements OpenstreetmapUtil {
 	public EntityInfo getEntityInfo() {
 		return new EntityInfo();
 	}
-	
+
 	@Override
 	public Node commitNodeImpl(OsmPoint.Action action, Node n, EntityInfo info, String comment, boolean closeChangeSet){
 		Node newNode = n;
@@ -49,7 +46,7 @@ public class OpenstreetmapLocalUtil implements OpenstreetmapUtil {
 		}
 		return newNode;
 	}
-	
+
 	@Override
 	public Node loadNode(Amenity n) {
 		if(n.getId() % 2 == 1){
@@ -68,7 +65,7 @@ public class OpenstreetmapLocalUtil implements OpenstreetmapUtil {
 		entity.putTag(tag.toString(), value.toString());
 		entity.putTag(OSMTagKey.NAME.getValue(), n.getName());
 		entity.putTag(OSMTagKey.OPENING_HOURS.getValue(), n.getOpeningHours());
- 
+
 		// check whether this is node (because id of node could be the same as relation) 
 		if(entity != null && MapUtils.getDistance(entity.getLatLon(), n.getLocation()) < 50){
 			return entity;
@@ -79,5 +76,4 @@ public class OpenstreetmapLocalUtil implements OpenstreetmapUtil {
 	@Override
 	public void closeChangeSet() {
 	}
-	
 }

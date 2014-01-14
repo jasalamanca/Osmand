@@ -1,6 +1,5 @@
 package net.osmand.plus.activities;
 
-
 import java.io.File;
 import java.io.FilenameFilter;
 import java.text.MessageFormat;
@@ -70,21 +69,17 @@ public class DownloadIndexActivity extends OsmandExpandableListActivity {
 	private static final int SELECT_ALL_ID = 1;
 	private static final int DESELECT_ALL_ID = 2;
 	private static final int FILTER_EXISTING_REGIONS = 3;
-	
+
     public static final String FILTER_KEY = "filter";
-	
+
 	private static DownloadIndexesThread downloadListIndexThread;
 	private DownloadActivityType type = DownloadActivityType.NORMAL_FILE;
 	public static final int MAXIMUM_AVAILABLE_FREE_DOWNLOADS = 10;
-	 
-	
+ 
     private TextWatcher textWatcher ;
 	private EditText filterText;
 	private OsmandSettings settings;
 	private ArrayAdapter<String> spinnerAdapter;
-
-	
-
 
 	private View progressView;
 	private ProgressBar indeterminateProgressBar;
@@ -126,9 +121,8 @@ public class DownloadIndexActivity extends OsmandExpandableListActivity {
 			public void onClick(View v) {
 				downloadFilesCheckFreeVersion();
 			}
-			
 		});
-		
+
 	    filterText = (EditText) findViewById(R.id.search_box);
 	    textWatcher = new TextWatcher() {
 	        @Override
@@ -147,7 +141,6 @@ public class DownloadIndexActivity extends OsmandExpandableListActivity {
 					adapter.getFilter().filter(s);
 				}
 	        }
-
 	    };
 		filterText.addTextChangedListener(textWatcher);
 		final Intent intent = getIntent();
@@ -256,7 +249,6 @@ public class DownloadIndexActivity extends OsmandExpandableListActivity {
 		}
 	}
 
-
 	private void showDialogOfFreeDownloadsIfNeeded() {
 		if (Version.isFreeVersion(getMyApplication())) {
 			Builder msg = new AlertDialog.Builder(this);
@@ -280,8 +272,6 @@ public class DownloadIndexActivity extends OsmandExpandableListActivity {
 			msg.show();
 		}
 	}
-
-
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -353,7 +343,6 @@ public class DownloadIndexActivity extends OsmandExpandableListActivity {
 		listAdapter.notifyDataSetChanged();
 	}
 
-
 	private void selectAll() {
 		final DownloadIndexAdapter listAdapter = (DownloadIndexAdapter)getExpandableListAdapter();
 		int selected = 0;
@@ -373,7 +362,6 @@ public class DownloadIndexActivity extends OsmandExpandableListActivity {
 		}
 	}
 
-
 	public void updateDownloadButton(boolean scroll) {
 		int x = getListView().getScrollX();
 		int y = getListView().getScrollY();
@@ -392,7 +380,6 @@ public class DownloadIndexActivity extends OsmandExpandableListActivity {
 			}
 			findViewById(R.id.DownloadButton).setVisibility(View.VISIBLE);
 			if (Version.isFreeVersion(getMyApplication())) {
-				int countedDownloads = downloadListIndexThread.getDownloads();
 				int left = MAXIMUM_AVAILABLE_FREE_DOWNLOADS - settings.NUMBER_OF_FREE_DOWNLOADS.get() - downloads;
 				boolean excessLimit = left < 0;
 				if (left < 0)

@@ -451,7 +451,6 @@ public class GeoIntentActivity extends OsmandListActivity {
 			point.setName("Lat: " + lat + ",Lon:" + lon);
 		}
 
-
 		@Override
 		public Collection<? extends MapObject> execute() {
 			if (point != null) {
@@ -460,12 +459,10 @@ public class GeoIntentActivity extends OsmandListActivity {
 				return Collections.emptyList();
 			}
 		}
-
 	}
 
 	private interface MyService {
 
 		public Collection<? extends MapObject> execute();
 	}
-
 }

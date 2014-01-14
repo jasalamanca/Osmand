@@ -8,7 +8,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-
 import net.osmand.PlatformUtil;
 
 import org.apache.commons.logging.Log;

@@ -703,7 +703,7 @@ public class BinaryMapPoiReaderAdapter {
 	}
 	
 	private boolean checkCategories(SearchRequest<Amenity> req, PoiRegion region) throws IOException {
-		StringBuilder subType = new StringBuilder();
+//		StringBuilder subType = new StringBuilder();
 		while(true){
 			int t = codedIS.readTag();
 			int tag = WireFormat.getTagFieldNumber(t);

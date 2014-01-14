@@ -3,20 +3,16 @@ package net.osmand.data;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 public class QuadTree<T> {
-	
+
 	private static class Node<T> {
 		List<T> data = null;
 		Node<T>[] children = null;
 		QuadRect bounds;
 
-		@SuppressWarnings("unchecked")
 		private Node(QuadRect b) {
 			bounds = new QuadRect(b.left, b.top, b.right, b.bottom);
-			children = new Node[4];
+			children = (Node<T> []) new Node[4];
 		}
 	}
 

@@ -9,7 +9,6 @@ import net.osmand.data.LatLon;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.resources.RegionAddressRepository;
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
 

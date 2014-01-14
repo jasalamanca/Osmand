@@ -106,14 +106,18 @@ public class RenderingRule {
 		return properties;
 	}
 	
-	@SuppressWarnings("unchecked")
 	public List<RenderingRule> getIfChildren() {
-		return ifChildren != null ? ifChildren : Collections.EMPTY_LIST ;
+		if (ifChildren != null)
+			return ifChildren;
+		else
+			return Collections.emptyList();
 	}
 	
-	@SuppressWarnings("unchecked")
 	public List<RenderingRule> getIfElseChildren() {
-		return ifElseChildren != null ? ifElseChildren : Collections.EMPTY_LIST ;
+		if (ifElseChildren != null)
+			return ifElseChildren;
+		else
+			return Collections.emptyList();
 	}
 	
 	public void addIfChildren(RenderingRule rr){

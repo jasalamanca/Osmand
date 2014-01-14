@@ -4,7 +4,7 @@
 	<meta-data android:name="com.google.android.backup.api_key"
     android:value="AEdPqrEAAAAIqF3tNGT66etVBn_vgzpfAY1wmIzKV1Ss6Ku-2A" />
 	
-	<uses-sdk android:minSdkVersion="7" android:targetSdkVersion="19"/>
+	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="19"/>
 	
 	<uses-feature android:name="android.hardware.camera" android:required="false" />
 	<uses-feature android:name="android.hardware.microphone" android:required="false"/>
@@ -35,7 +35,7 @@
 	    android:xlargeScreens="true" android:anyDensity="true" />
 	<!-- android:theme="@style/OsmandLightDarkActionBarTheme" -->
 	<application android:icon="@drawable/icon" android:label="@string/app_name" 
-		android:debuggable="true" android:name="net.osmand.plus.OsmandApplication"  android:configChanges="locale"
+		android:name="net.osmand.plus.OsmandApplication"  android:configChanges="locale"
 		android:theme="@style/OsmandDarkTheme"
 		android:backupAgent="net.osmand.plus.OsmandBackupAgent" android:restoreAnyVersion="true" android:largeHeap="true">
 		

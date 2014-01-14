@@ -10,8 +10,9 @@ public abstract class UnscaledBitmapLoader {
 
     public static final UnscaledBitmapLoader instance;
 
+    // TODO Only New???
     static {
-        instance = Integer.parseInt(Build.VERSION.SDK) < 4 ? new Old() : new New();
+        instance = Build.VERSION.SDK_INT < 4 ? new Old() : new New();
     }
 
     public static Bitmap loadFromResource(Resources resources, int resId, BitmapFactory.Options options, DisplayMetrics densityDpi) {
@@ -24,7 +25,6 @@ public abstract class UnscaledBitmapLoader {
         Bitmap load(Resources resources, int resId, Options options, DisplayMetrics densityDpi) {
             return BitmapFactory.decodeResource(resources, resId, options);
         }
-
     }
 
     private static class New extends UnscaledBitmapLoader {
@@ -37,9 +37,7 @@ public abstract class UnscaledBitmapLoader {
 			options.inDensity = dm.densityDpi;
             return BitmapFactory.decodeResource(resources, resId, options);
         }
-
     }
 
     abstract Bitmap load(Resources resources, int resId, BitmapFactory.Options options, DisplayMetrics densityDpi);
-
 }

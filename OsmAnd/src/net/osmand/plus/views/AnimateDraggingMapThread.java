@@ -7,7 +7,6 @@ import net.osmand.util.MapUtils;
 import org.apache.commons.logging.Log;
 
 import android.os.SystemClock;
-import android.util.FloatMath;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
@@ -120,7 +119,6 @@ public class AnimateDraggingMapThread {
 		stopAnimatingSync();
 		double startLat = tileView.getLatitude();
 		double startLon = tileView.getLongitude();
-		float rotate = tileView.getRotate();
 		final int startZoom = tileView.getZoom();
 		final RotatedTileBox rb = tileView.getCurrentRotatedTileBox().copy();
 		final float zoomScale = rb.getZoomScale();

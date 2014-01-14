@@ -301,7 +301,10 @@ public class SearchActivity extends SherlockFragmentActivity implements OsmAndLo
 	}
 	
 	private String formatLatLon(LatLon searchPoint){
-		return new Formatter(Locale.US).format(" %.2f;%.2f", searchPoint.getLatitude(), searchPoint.getLongitude()).toString();
+		Formatter f = new Formatter(Locale.US);
+		String r = f.format(" %.2f;%.2f", searchPoint.getLatitude(), searchPoint.getLongitude()).toString();
+		f.close();
+		return r;
 	}
 	
 	@Override
@@ -384,12 +387,12 @@ public class SearchActivity extends SherlockFragmentActivity implements OsmAndLo
 		private TextView tabInfo;
 
         static final class TabInfo {
-            private final String tag;
+  //          private final String tag;
             private Class<?> clss;
             private Bundle args;
 
             TabInfo(String _tag, Class<?> _class, Bundle _args) {
-                tag = _tag;
+  //              tag = _tag;
                 clss = _class;
                 args = _args;
             }

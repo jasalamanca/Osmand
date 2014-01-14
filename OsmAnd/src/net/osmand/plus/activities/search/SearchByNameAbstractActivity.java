@@ -339,7 +339,6 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
 	@Override
 	public NamesAdapter getListAdapter() {
 		return (NamesAdapter) super.getListAdapter();
@@ -370,7 +369,6 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 		private int minimalIndex = Integer.MAX_VALUE;
 		private String minimalText = null;
 		
-		@SuppressWarnings("unchecked")
 		@Override
 		public void handleMessage(Message msg) {
 			String currentFilter = SearchByNameAbstractActivity.this.currentFilter;
@@ -422,8 +420,7 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 			this.newFilter = newFilter;
 			isCancelled = true;
 		}
-		
-		
+
 		@Override
 		protected FilterResults performFiltering(CharSequence constraint) {
 			isCancelled = false;

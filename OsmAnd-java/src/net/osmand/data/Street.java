@@ -57,7 +57,7 @@ public class Street extends MapObject {
 		if (city != null && city.getStreet(getName()) == this) {
 			city.unregisterStreet(getName());
 			super.setName(name);
-			Street s = city.registerStreet(this);
+			city.registerStreet(this);
 		} else {
 			super.setName(name);
 		}

@@ -60,7 +60,7 @@ public class NameFinderPoiFilter extends PoiFilter {
 		String viewbox = "viewboxlbrt="+((float) leftLongitude)+","+((float) bottomLatitude)+","+((float) rightLongitude)+","+((float) topLatitude);
 		try {
 			lastError = "";
-			String urlq = "http://nominatim.openstreetmap.org/search/"+URLEncoder.encode(query)+ "?format=xml&addressdetails=1&limit="+LIMIT+"&bounded=1&"+viewbox;
+			String urlq = "http://nominatim.openstreetmap.org/search/"+URLEncoder.encode(query, "UTF-8")+ "?format=xml&addressdetails=1&limit="+LIMIT+"&bounded=1&"+viewbox;
 			log.info(urlq);
 			URL url = new URL(urlq); //$NON-NLS-1$
 			InputStream stream = url.openStream();

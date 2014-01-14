@@ -27,8 +27,6 @@ import android.app.AlertDialog.Builder;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.SeekBar;

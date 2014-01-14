@@ -151,7 +151,6 @@ public class DownloadIndexAdapter extends OsmandBaseExpandableListAdapter implem
 			return results;
 		}
 
-		@SuppressWarnings("unchecked")
 		@Override
 		protected void publishResults(CharSequence constraint, FilterResults results) {
 			synchronized (DownloadIndexAdapter.this) {

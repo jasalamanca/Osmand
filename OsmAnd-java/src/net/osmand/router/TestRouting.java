@@ -124,8 +124,6 @@ public class TestRouting {
 			for(File f : lf){
 				if(f.getName().endsWith(".obf")) {
 					lib.initMapFile(f.getAbsolutePath());
-					/////
-					/////lib.initCacheMapFile(f.getAbsolutePath());
 				}
 			}
 			System.gc();

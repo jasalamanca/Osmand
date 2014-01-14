@@ -15,8 +15,6 @@ import java.util.List;
 import net.osmand.AndroidUtils;
 import net.osmand.access.AccessibleToast;
 import net.osmand.plus.R;
-import net.osmand.util.Algorithms;
-
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
@@ -27,7 +25,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

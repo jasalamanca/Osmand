@@ -77,7 +77,6 @@ public class LocalIndexesActivity extends OsmandExpandableListActivity {
 	private ContextMenuAdapter optionsMenuAdapter;
 	private ActionMode actionMode;
 
-	@SuppressWarnings("unchecked")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);

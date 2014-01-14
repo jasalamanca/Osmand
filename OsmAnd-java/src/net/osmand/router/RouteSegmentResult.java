@@ -33,11 +33,10 @@ public class RouteSegmentResult {
 	}
 	
 
-	@SuppressWarnings("unchecked")
 	private void updateCapacity() {
 		int capacity = Math.abs(endPointIndex - startPointIndex) + 1;
 		List<RouteSegmentResult>[] old = this.attachedRoutes;
-		this.attachedRoutes = new List[capacity];
+		this.attachedRoutes = (List<RouteSegmentResult>[]) new List[capacity];
 		if(old != null){
 			System.arraycopy(old, 0, this.attachedRoutes, 0, Math.min(old.length, this.attachedRoutes.length));
 		}

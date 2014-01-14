@@ -17,7 +17,6 @@ import net.osmand.plus.voice.CommandPlayer;
 import net.osmand.util.Algorithms;
 import alice.tuprolog.Struct;
 import alice.tuprolog.Term;
-import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
@@ -32,14 +31,13 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 
 /**
  * Test Voice activity
  */
 public class TestVoiceActivity extends SherlockActivity {
-
-
 
 	@Override
 	public void onCreate(Bundle icicle) {
@@ -48,10 +46,7 @@ public class TestVoiceActivity extends SherlockActivity {
 		getSherlock().setUiOptions(ActivityInfo.UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW);
 		getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		
-		final OsmandApplication app = ((OsmandApplication) getApplication());
-		
-		
+
 		LinearLayout gl = new LinearLayout(this);
 		gl.setOrientation(LinearLayout.VERTICAL);
 		gl.setPadding(3, 3, 3, 3);
@@ -61,12 +56,12 @@ public class TestVoiceActivity extends SherlockActivity {
 		tv.setPadding(0, 5, 0, 7);
 		
 		ScrollView sv = new ScrollView(this);
-		gl.addView(sv, new LayoutParams(android.view.ViewGroup.LayoutParams.FILL_PARENT, 
-				android.view.ViewGroup.LayoutParams.FILL_PARENT));
+		gl.addView(sv, new LayoutParams(android.view.ViewGroup.LayoutParams.MATCH_PARENT, 
+				android.view.ViewGroup.LayoutParams.MATCH_PARENT));
 		final LinearLayout ll = new LinearLayout(this);
 		ll.setOrientation(LinearLayout.VERTICAL);
-		sv.addView(ll, new LayoutParams(android.view.ViewGroup.LayoutParams.FILL_PARENT, 
-				android.view.ViewGroup.LayoutParams.FILL_PARENT));
+		sv.addView(ll, new LayoutParams(android.view.ViewGroup.LayoutParams.MATCH_PARENT, 
+				android.view.ViewGroup.LayoutParams.MATCH_PARENT));
 		
 		// add buttons
 		setContentView(gl);
@@ -213,7 +208,7 @@ public class TestVoiceActivity extends SherlockActivity {
 	public void addButton(ViewGroup layout, String description, final CommandBuilder builder){
 		Button button = new Button(this);
 		button.setText(description);
-		button.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+		button.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		button.setPadding(10, 5, 10, 2);
 		
 		layout.addView(button);

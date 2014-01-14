@@ -14,7 +14,7 @@ public class MapAlgorithms {
 		long mask = 0xffffffffL;
 		long middleY = 0;
 		for (int i = 0; i < c.size(); i++) {
-			middleY =  middleY +  (long)(c.get(i) & mask);
+			middleY =  middleY + (c.get(i) & mask);
 		}
 		middleY = middleY /(long) c.size();
 

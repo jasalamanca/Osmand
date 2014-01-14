@@ -59,7 +59,6 @@ public class PoiFiltersHelper {
 		return null;
 	}
 	
-	@SuppressWarnings("unchecked")
 	public PoiFilter getFilterById(String filterId){
 		if(filterId == null){
 			return null;

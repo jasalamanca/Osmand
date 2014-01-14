@@ -2,7 +2,6 @@ package net.osmand.plus.parkingpoint;
 
 
 import java.util.Calendar;
-
 import net.osmand.data.LatLon;
 import net.osmand.plus.ApplicationMode;
 import net.osmand.plus.ContextMenuAdapter;
@@ -346,9 +345,7 @@ public class ParkingPositionPlugin extends OsmandPlugin {
 			public void onClick(DialogInterface dialog, int which) {
 				choose.dismiss();
 				Calendar cal = Calendar.getInstance();
-				//int hour = cal.get(Calendar.HOUR_OF_DAY );
-				//int minute = cal.get(Calendar.MINUTE);
-                cal.add(Calendar.HOUR_OF_DAY, timePicker.getCurrentHour());
+				cal.add(Calendar.HOUR_OF_DAY, timePicker.getCurrentHour());
                 cal.add(Calendar.MINUTE, timePicker.getCurrentMinute());
 				setParkingTime(cal.getTimeInMillis());
 				CheckBox addCalendarEvent = (CheckBox) setTimeParking.findViewById(R.id.check_event_in_calendar);

@@ -199,12 +199,10 @@ public class AudioVideoNotesPlugin extends OsmandPlugin {
 			return s;
 		}
 
-		@SuppressWarnings("rawtypes")
 		public void updatePhotoInformation(double lat, double lon, Location loc, double rot) throws IOException {
 			try {
-				Class exClass = Class.forName("android.media.ExifInterface");
-
-				Constructor c = exClass.getConstructor(new Class[] { String.class });
+				Class<?> exClass = Class.forName("android.media.ExifInterface");
+				Constructor<?> c = exClass.getConstructor(new Class[] { String.class });
 				Object exInstance = c.newInstance(file.getAbsolutePath());
 				Method setAttribute = exClass.getMethod("setAttribute", new Class[] { String.class, String.class });
 				setAttribute.invoke(exInstance, "GPSLatitude", convertDegToExifRational(lat));
@@ -238,13 +236,11 @@ public class AudioVideoNotesPlugin extends OsmandPlugin {
 			}
 		}
 
-		@SuppressWarnings("rawtypes")
 		private int getExifOrientation() {
 			int orientation = 0;
 			try {
-				Class exClass = Class.forName("android.media.ExifInterface");
-
-				Constructor c = exClass.getConstructor(new Class[] { String.class });
+				Class<?> exClass = Class.forName("android.media.ExifInterface");
+				Constructor<?> c = exClass.getConstructor(new Class[] { String.class });
 				Object exInstance = c.newInstance(file.getAbsolutePath());
 				Method getAttributeInt = exClass.getMethod("getAttributeInt", new Class[] { String.class, Integer.TYPE });
 				Integer it = (Integer) getAttributeInt.invoke(exInstance, "Orientation", 1);
@@ -641,11 +637,11 @@ public class AudioVideoNotesPlugin extends OsmandPlugin {
 			try {
 				Method m = mr.getClass().getDeclaredMethod("setOrientationHint", Integer.TYPE);
 				Display display = ((WindowManager) mapActivity.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
-				if (display.getOrientation() == Surface.ROTATION_0) {
+				if (display.getRotation() == Surface.ROTATION_0) {
 					m.invoke(mr, 90);
-				} else if (display.getOrientation() == Surface.ROTATION_270) {
+				} else if (display.getRotation() == Surface.ROTATION_270) {
 					m.invoke(mr, 180);
-				} else if (display.getOrientation() == Surface.ROTATION_180) {
+				} else if (display.getRotation() == Surface.ROTATION_180) {
 					m.invoke(mr, 270);
 				}
 			} catch (Exception e) {

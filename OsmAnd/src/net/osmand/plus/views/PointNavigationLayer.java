@@ -11,7 +11,6 @@ import net.osmand.plus.R;
 import net.osmand.plus.TargetPointsHelper;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.views.ContextMenuLayer.IContextMenuProvider;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -21,8 +20,6 @@ import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.graphics.Paint.Style;
 import android.graphics.PointF;
-import android.util.DisplayMetrics;
-import android.view.WindowManager;
 
 public class PointNavigationLayer extends OsmandMapLayer implements IContextMenuProvider {
 	protected final static int DIST_TO_SHOW = 80;

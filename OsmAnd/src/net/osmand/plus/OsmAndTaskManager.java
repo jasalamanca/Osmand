@@ -10,8 +10,6 @@ public class OsmAndTaskManager {
 		this.app = app;
 	}
 
-	
-	
 	public <Params, Progress, Result> OsmAndTask<Params, Progress, Result> runInBackground(
 			OsmAndTaskRunnable<Params, Progress, Result> r, Params... params) {
 		InternalTaskExecutor<Params, Progress, Result> exec = new InternalTaskExecutor<Params, Progress, Result>(r);
@@ -20,7 +18,6 @@ public class OsmAndTaskManager {
 		return exec;
 	}
 
-	
 	private class InternalTaskExecutor<Params, Progress, Result> 
 			extends AsyncTask<Params, Progress, Result>
 			implements OsmAndTask<Params, Progress, Result> {

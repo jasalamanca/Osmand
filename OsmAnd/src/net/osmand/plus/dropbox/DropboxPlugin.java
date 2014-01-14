@@ -1,23 +1,15 @@
 package net.osmand.plus.dropbox;
 
-import net.osmand.PlatformUtil;
+//import net.osmand.PlatformUtil;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 
-import org.apache.commons.logging.Log;
-
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-
 import com.dropbox.client2.DropboxAPI;
-import com.dropbox.client2.DropboxAPI.Entry;
 import com.dropbox.client2.android.AndroidAuthSession;
-import com.dropbox.client2.android.AuthActivity;
 import com.dropbox.client2.exception.DropboxException;
 import com.dropbox.client2.session.AccessTokenPair;
 import com.dropbox.client2.session.AppKeyPair;
@@ -26,7 +18,7 @@ import com.dropbox.client2.session.Session.AccessType;
 public class DropboxPlugin extends OsmandPlugin {
 
 	public static final String ID = "osmand.dropbox";
-	private static final Log log = PlatformUtil.getLog(DropboxPlugin.class);
+	//private static final Log log = PlatformUtil.getLog(DropboxPlugin.class);
 	private OsmandApplication app;
 	private DropboxAPI<AndroidAuthSession> mApi;
 	
@@ -45,7 +37,6 @@ public class DropboxPlugin extends OsmandPlugin {
 
 	public DropboxPlugin(OsmandApplication app) {
 		this.app = app;
-
 	}
 
 	@Override
@@ -67,14 +58,14 @@ public class DropboxPlugin extends OsmandPlugin {
         mApi = new DropboxAPI<AndroidAuthSession>(session);
 		return true;
 	}
-	
+
 	public void syncFolders(){
 		try {
-			Entry f = mApi.createFolder("osmand");
+			mApi.createFolder("osmand");
 		} catch (DropboxException e) {
 		}
 	}
-	
+
 	private String[] getKeys() {
 		OsmandSettings set = app.getSettings();
         SharedPreferences prefs = (SharedPreferences) set.getGlobalPreferences();
@@ -89,7 +80,7 @@ public class DropboxPlugin extends OsmandPlugin {
         	return null;
         }
     }
-	
+
 	public void storeKeys(String key, String secret) {
         // Save the access key for later
 		OsmandSettings set = app.getSettings();
@@ -117,8 +108,8 @@ public class DropboxPlugin extends OsmandPlugin {
 
         return session;
     }
-    
-    private void checkAppKeySetup() {
+
+/**    private void checkAppKeySetup() {
         // Check if the app has set up its manifest properly.
         Intent testIntent = new Intent(Intent.ACTION_VIEW);
         String scheme = "db-" + APP_KEY;
@@ -131,16 +122,14 @@ public class DropboxPlugin extends OsmandPlugin {
                     "com.dropbox.client2.android.AuthActivity with the " +
                     "scheme: " + scheme);
         }
-    }
+    }**/
 
 	@Override
 	public void registerLayers(MapActivity activity) {
 
 	}
-	
+
 	@Override
 	public void disable(OsmandApplication app) {
 	}
-
-
 }

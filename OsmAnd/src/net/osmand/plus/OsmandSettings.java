@@ -525,9 +525,7 @@ public class OsmandSettings {
 			PLUGINS.set(serialization.toString());
 		}
 	}
-	
 
-	@SuppressWarnings("unchecked")
 	public CommonPreference<Boolean> registerBooleanPreference(String id, boolean defValue) {
 		if(registeredPreferences.containsKey(id)) {
 			return (CommonPreference<Boolean>) registeredPreferences.get(id);
@@ -536,8 +534,7 @@ public class OsmandSettings {
 		registeredPreferences.put(id, p);
 		return p;
 	}
-	
-	@SuppressWarnings("unchecked")
+
 	public CommonPreference<Integer> registerIntPreference(String id, int defValue) {
 		if(registeredPreferences.containsKey(id)) {
 			return (CommonPreference<Integer>) registeredPreferences.get(id);
@@ -547,7 +544,6 @@ public class OsmandSettings {
 		return p;
 	}
 	
-	@SuppressWarnings("unchecked")
 	public CommonPreference<Long> registerLongPreference(String id, long defValue) {
 		if(registeredPreferences.containsKey(id)) {
 			return (CommonPreference<Long>) registeredPreferences.get(id);
@@ -557,7 +553,6 @@ public class OsmandSettings {
 		return p;
 	}
 	
-	@SuppressWarnings("unchecked")
 	public CommonPreference<Float> registerFloatPreference(String id, float defValue) {
 		if(registeredPreferences.containsKey(id)) {
 			return (CommonPreference<Float>) registeredPreferences.get(id);

@@ -106,7 +106,6 @@ public class OsMoDroidPlugin extends OsmandPlugin implements MonitoringInfoContr
 	IRemoteOsMoDroidService mIRemoteService;
 	private ServiceConnection mConnection;
 	private int OSMODROID_SUPPORTED_VERSION_MIN = 5;
-	private OsMoDroidLayer osmoDroidLayer;
 	protected boolean connected = false;
 	ArrayList<OsMoDroidLayer> osmoDroidLayerList = new ArrayList<OsMoDroidLayer>();
 	private AsyncTask<Void, Void, Void> task;

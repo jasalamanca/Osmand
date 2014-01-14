@@ -241,12 +241,11 @@ public class BinaryInspector {
 		//written += 4;
 	}
 	
-	@SuppressWarnings("unchecked")
-	public  static List<Float> combineParts(File fileToExtract, Map<File, String> partsToExtractFrom) throws IOException {
+	public static List<Float> combineParts(File fileToExtract, Map<File, String> partsToExtractFrom) throws IOException {
 		BinaryMapIndexReader[] indexes = new BinaryMapIndexReader[partsToExtractFrom.size()];
 		RandomAccessFile[] rafs = new RandomAccessFile[partsToExtractFrom.size()];
 		
-		LinkedHashSet<Float>[] partsSet = new LinkedHashSet[partsToExtractFrom.size()];
+		LinkedHashSet<Float>[] partsSet = (LinkedHashSet<Float> []) new LinkedHashSet[partsToExtractFrom.size()];
 		int c = 0;
 		Set<String> addressNames = new LinkedHashSet<String>();
 		

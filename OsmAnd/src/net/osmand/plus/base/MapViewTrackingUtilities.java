@@ -25,7 +25,7 @@ import android.view.WindowManager;
 
 public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLocationListener, OsmAndCompassListener, IRouteInformationListener {
 	private static final int AUTO_FOLLOW_MSG_ID = OsmAndConstants.UI_HANDLER_LOCATION_SERVICE + 4; 
-	
+
 	private long lastTimeAutoZooming = 0;
 	private long lastTimeSensorMapRotation = 0;
 	private boolean sensorRegistered = false;
@@ -62,7 +62,7 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 		this.mapView = mapView;
 		if(mapView != null) {
 			WindowManager wm = (WindowManager) app.getSystemService(Context.WINDOW_SERVICE);
-			int orientation = wm.getDefaultDisplay().getOrientation();
+			int orientation = wm.getDefaultDisplay().getRotation();
 			app.getLocationProvider().updateScreenOrientation(orientation);
 			mapView.setMapLocationListener(this);
 		}

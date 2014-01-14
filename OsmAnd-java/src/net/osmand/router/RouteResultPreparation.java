@@ -2,9 +2,7 @@ package net.osmand.router;
 
 import java.io.IOException;
 import java.text.MessageFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -12,7 +10,6 @@ import net.osmand.binary.BinaryMapIndexReader;
 import net.osmand.binary.BinaryMapRouteReaderAdapter.RouteTypeRule;
 import net.osmand.binary.RouteDataObject;
 import net.osmand.data.LatLon;
-import net.osmand.router.BinaryRoutePlanner.FinalRouteSegment;
 import net.osmand.router.BinaryRoutePlanner.RouteSegment;
 import net.osmand.router.RoutePlannerFrontEnd.RouteCalculationMode;
 import net.osmand.util.MapUtils;
@@ -516,7 +513,8 @@ public class RouteResultPreparation {
 		if (current <= 0) {
 			current = 1;
 		}
-//		if(ls >= 0 /*&& current + left + right >= ls*/){
+		if (ls >= 0)
+		{
 			lanes = new int[current + left + right];
 			ls = current + left + right;
 			for(int it=0; it< ls; it++) {
@@ -530,10 +528,10 @@ public class RouteResultPreparation {
 			if ((current <= left + right) && (left > 1 || right > 1)) {
 				speak = true;
 			}
-//		}
+		}
 
 		double devation = Math.abs(MapUtils.degreesDiff(prevSegm.getBearingEnd(), currentSegm.getBearingBegin()));
-		boolean makeSlightTurn = devation > 5 && (!isMotorway(prevSegm) || !isMotorway(currentSegm));
+//		boolean makeSlightTurn = devation > 5 && (!isMotorway(prevSegm) || !isMotorway(currentSegm));
 		if (kl) {
 			t = TurnType.valueOf(devation > 5 ? TurnType.TSLL : TurnType.KL, leftSide);
 			t.setSkipToSpeak(!speak);
@@ -548,14 +546,13 @@ public class RouteResultPreparation {
 		return t;
 	}
 	
-	private boolean isMotorway(RouteSegmentResult s){
+/**	private boolean isMotorway(RouteSegmentResult s){
 		String h = s.getObject().getHighway();
 		return "motorway".equals(h) || "motorway_link".equals(h)  ||
 				"trunk".equals(h) || "trunk_link".equals(h);
 		
-	}
+	}**/
 
-	
 	private void attachRoadSegments(RoutingContext ctx, List<RouteSegmentResult> result, int routeInd, int pointInd, boolean plus) throws IOException {
 		RouteSegmentResult rr = result.get(routeInd);
 		RouteDataObject road = rr.getObject();

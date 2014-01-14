@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -26,7 +27,7 @@ public class OsmBugsRemoteUtil implements OsmBugsUtil {
 
 	private OsmandApplication app;
 	private OsmandSettings settings;
-	
+
 	public OsmBugsRemoteUtil(OsmandApplication app) {
 		this.app = app;
 		settings = app.getSettings();
@@ -38,7 +39,12 @@ public class OsmBugsRemoteUtil implements OsmBugsUtil {
 		b.append(SITE_API).append("?"); //$NON-NLS-1$
 		b.append("lat=").append(latitude); //$NON-NLS-1$
 		b.append("&lon=").append(longitude); //$NON-NLS-1$
-		b.append("&text=").append(URLEncoder.encode(text)); //$NON-NLS-1$
+		try {
+			b.append("&text=").append(URLEncoder.encode(text, "UTF-8")); //$NON-NLS-1$ $NON-NLS-2$
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return editingPOI(b.toString(), "POST", "creating bug"); //$NON-NLS-1$
 	}
 
@@ -47,7 +53,12 @@ public class OsmBugsRemoteUtil implements OsmBugsUtil {
 		StringBuilder b = new StringBuilder();
 		b.append(SITE_API).append("/"); 
 		b.append(id); //$NON-NLS-1$
-		b.append("/comment?text=").append(URLEncoder.encode(text)); //$NON-NLS-1$
+		try {
+			b.append("/comment?text=").append(URLEncoder.encode(text, "UTF-8")); //$NON-NLS-1$ $NON-NLS-2$
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return editingPOI(b.toString(), "POST", "adding comment"); //$NON-NLS-1$
 	}
 
@@ -56,7 +67,12 @@ public class OsmBugsRemoteUtil implements OsmBugsUtil {
 		StringBuilder b = new StringBuilder();
 		b.append(SITE_API).append("/"); 
 		b.append(id); //$NON-NLS-1$
-		b.append("/close?text=").append(URLEncoder.encode(text)); //$NON-NLS-1$
+		try {
+			b.append("/close?text=").append(URLEncoder.encode(text, "UTF-8")); //$NON-NLS-1$ $NON-NLS-2$
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return editingPOI(b.toString(), "POST", "close bug") ; //$NON-NLS-1$
 	}
 
@@ -127,5 +143,4 @@ public class OsmBugsRemoteUtil implements OsmBugsUtil {
 		}
 		return null;
 	}
-
 }

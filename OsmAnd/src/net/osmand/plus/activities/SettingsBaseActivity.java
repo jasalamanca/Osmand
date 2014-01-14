@@ -399,7 +399,6 @@ public abstract class SettingsBaseActivity extends SherlockPreferenceActivity im
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
 		// handle boolean prefences

@@ -3,6 +3,7 @@ package net.osmand.data;
 import gnu.trove.map.hash.TLongObjectHashMap;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -35,10 +36,9 @@ public class DataTileManager<T> {
 		return getObjectsCount() == 0;
 	}
 	
-	@SuppressWarnings("rawtypes")
 	public int getObjectsCount(){
 		int x = 0;
-		for(List s : objects.valueCollection()){
+		for(List<T> s : objects.valueCollection()){
 			x += s.size();
 		}
 		return x;
@@ -50,10 +50,9 @@ public class DataTileManager<T> {
 		} 
 	}
 	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public List<T> getAllObjects(){
 		List<T> l = new ArrayList<T>();
-		for(List s : objects.valueCollection()){
+		for(List<T> s : objects.valueCollection()){
 			l.addAll(s);
 		}
 		return l;

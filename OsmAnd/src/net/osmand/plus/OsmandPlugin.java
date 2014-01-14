@@ -161,7 +161,6 @@ public abstract class OsmandPlugin {
 		return activePlugins;
 	}
 	
-	@SuppressWarnings("unchecked")
 	public static <T extends OsmandPlugin> T getEnabledPlugin(Class<T> clz) {
 		for(OsmandPlugin lr : activePlugins) {
 			if(clz.isInstance(lr)){

@@ -13,7 +13,6 @@ import java.util.Map;
 import net.osmand.PlatformUtil;
 import net.osmand.render.RenderingRulesStorage;
 import net.osmand.render.RenderingRulesStorage.RenderingRulesStorageResolver;
-
 import org.apache.commons.logging.Log;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -129,7 +128,7 @@ public class RendererRegistry {
 		return main;
 	}
 
-	@SuppressWarnings("resource")
+	// We return the opened stream.
 	private InputStream getInputStream(String name) throws FileNotFoundException {
 		InputStream is = null;
 		if(externalRenderers.containsKey(name)){

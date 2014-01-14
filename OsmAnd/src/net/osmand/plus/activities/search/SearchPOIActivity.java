@@ -847,7 +847,6 @@ public class SearchPOIActivity extends OsmandListActivity implements OsmAndCompa
 				return results;
 			}
 
-			@SuppressWarnings("unchecked")
 			@Override
 			protected void publishResults(CharSequence constraint, FilterResults results) {
 				clear();

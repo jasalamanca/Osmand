@@ -259,7 +259,7 @@ public class EditingPOIActivity implements DialogProvider {
 				builder.show();
 			}
 		});			            
-        tlp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.FILL_PARENT);
+        tlp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.MATCH_PARENT);
         tlp.leftMargin = 5;
         tlp.gravity = Gravity.CENTER;
         value.setLayoutParams(tlp);
@@ -400,7 +400,7 @@ public class EditingPOIActivity implements DialogProvider {
 			@Override
 			public void onClick(View v) {
 				final TableLayout layout = ((TableLayout) dlg.findViewById(R.id.advancedModeTable));
-				TableLayout.LayoutParams tlParams = new TableLayout.LayoutParams(TableLayout.LayoutParams.FILL_PARENT,
+				TableLayout.LayoutParams tlParams = new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,
 						TableLayout.LayoutParams.WRAP_CONTENT);
 				layout.setLayoutParams(tlParams);
 				layout.setColumnStretchable(1, true);
