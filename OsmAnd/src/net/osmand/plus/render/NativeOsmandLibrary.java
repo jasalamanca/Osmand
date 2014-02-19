@@ -79,24 +79,15 @@ public class NativeOsmandLibrary extends NativeLibrary {
 		}
 		return isSupported();
 	}
-	
-	public boolean useDirectRendering(){
-		return android.os.Build.VERSION.SDK_INT >= 8;
-	}
 
 	public RenderingGenerationResult generateRendering(RenderingContext rc, NativeSearchResult searchResultHandler,
-			Bitmap bitmap, boolean isTransparent, RenderingRuleSearchRequest render) {
+			Bitmap bitmap, RenderingRuleSearchRequest render) {
 		if (searchResultHandler == null) {
 			log.error("Error search result = null"); //$NON-NLS-1$
 			return new RenderingGenerationResult(null);
 		}
 		
-		// Android 2.2+
-		if(android.os.Build.VERSION.SDK_INT >= 8) { 
-			return generateRenderingDirect(rc, searchResultHandler.nativeHandler, bitmap, render);
-		} else {
-			return generateRenderingIndirect(rc, searchResultHandler.nativeHandler, isTransparent, render, false);
-		}
+		return generateRenderingDirect(rc, searchResultHandler.nativeHandler, bitmap, render);
 	}
 
 	

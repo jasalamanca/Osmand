@@ -179,27 +179,18 @@ public class OsmandRenderer {
 			rc.cosRotateTileSize = FloatMath.cos((float) Math.toRadians(rc.rotate)) * TILE_SIZE;
 			rc.sinRotateTileSize = FloatMath.sin((float) Math.toRadians(rc.rotate)) * TILE_SIZE;
 			try {
-				if(Looper.getMainLooper() != null && library.useDirectRendering()) {
+				if(Looper.getMainLooper() != null) {
 					final Handler h = new Handler(Looper.getMainLooper());
 					notifyListenersWithDelay(rc, notifyList, h);
 				}
 				
-				// Native library will decide on it's own best way of rendering
-				// If res.bitmapBuffer is null, it indicates that rendering was done directly to
-				// memory of passed bitmap, but this is supported only on Android >= 2.2
-				final NativeLibrary.RenderingGenerationResult res = library.generateRendering(
-					rc, searchResultHandler, bmp, bmp.hasAlpha(), render);
+				library.generateRendering(rc, searchResultHandler, bmp, render);
 				rc.ended = true;
 				notifyListeners(notifyList);
 				long time = System.currentTimeMillis() - now;
 				rc.renderingDebugInfo = String.format("Rendering: %s ms  (%s text)\n"
 						+ "(%s points, %s points inside, %s of %s objects visible)\n",//$NON-NLS-1$
 						time, rc.textRenderingTime, rc.pointCount, rc.pointInsideCount, rc.visible, rc.allObjects);
-				
-				// See upper note
-				if(res.bitmapBuffer != null) {
-					bmp.copyPixelsFromBuffer(res.bitmapBuffer);
-				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
