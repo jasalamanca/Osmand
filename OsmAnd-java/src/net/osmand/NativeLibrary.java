@@ -85,6 +85,7 @@ public class NativeLibrary {
 	 * @param
 	 *            - must be null if there is no need to append to previous results returns native handle to results
 	 */
+	// Only called from renderImage on MapCreator 
 	public NativeSearchResult searchObjectsForRendering(int sleft, int sright, int stop, int sbottom, int zoom,
 			RenderingRuleSearchRequest request, boolean skipDuplicates, Object objectWithInterruptedField, String msgIfNothingFound) {
 		int renderRouteDataFile = 0;
@@ -158,9 +159,11 @@ public class NativeLibrary {
 
 	protected static native void initRenderingRulesStorage(RenderingRulesStorage storage);
 
+	// Only called from renderImage on MapCreator 
 	protected static native RenderingGenerationResult generateRenderingIndirect(RenderingContext rc, long searchResultHandler,
 			boolean isTransparent, RenderingRuleSearchRequest render, boolean encodePng);
 
+	// Only called from renderImage on MapCreator 
 	protected static native long searchNativeObjectsForRendering(int sleft, int sright, int stop, int sbottom, int zoom,
 			RenderingRuleSearchRequest request, boolean skipDuplicates, int renderRouteDataFile, Object objectWithInterruptedField,
 			String msgIfNothingFound);
