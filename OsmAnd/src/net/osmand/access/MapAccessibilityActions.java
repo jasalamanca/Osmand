@@ -4,6 +4,7 @@ import net.osmand.data.LatLon;
 import net.osmand.data.RotatedTileBox;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.views.ContextMenuLayer;
+import net.osmand.plus.views.OsmandMapTileView;
 import android.graphics.PointF;
 import android.os.Build;
 

@@ -222,7 +222,7 @@ public class RoutePlannerFrontEnd {
 			// 4. Route is found : collect all segments and prepare result
 			return new RouteResultPreparation().prepareResult(ctx, ctx.finalRouteSegment);
 		}
-		return new RouteResultPreparation().prepareResult(ctx, leftSideNavigation, result);
+		///return new RouteResultPreparation().prepareResult(ctx, leftSideNavigation, result);
 	}
 
 
@@ -312,8 +312,8 @@ public class RoutePlannerFrontEnd {
 	
 	private List<RouteSegmentResult> searchRoute(final RoutingContext ctx, RouteSegment start, RouteSegment end, PrecalculatedRouteDirection routeDirection) 
 			throws IOException, InterruptedException {
-		if(ctx.SHOW_GC_SIZE){
-			long h1 = ctx.runGCUsedMemory();
+		if(RoutingContext.SHOW_GC_SIZE){
+			long h1 = RoutingContext.runGCUsedMemory();
 			float mb = (1 << 20);
 			log.warn("Used before routing " + h1 / mb+ " actual");
 		}
