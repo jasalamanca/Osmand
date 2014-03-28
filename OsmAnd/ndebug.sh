@@ -1,6 +1,8 @@
 #!/bin/bash
 THIS_LOCATION="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+PATH=$PATH:$ANDROID_SDK/platform-tools
+
 # Get native library path on host
 nativelib=$1
 if [ -z "$nativelib" ]; then
@@ -13,8 +15,8 @@ if [ ! -f "$nativelib" ]; then
 fi
 
 # Get pid of our process
-pid=`adb shell ps | grep 'net.osmand' | head -n1 | awk '{print $2}'`
-package=`adb shell ps | grep 'net.osmand' | head -n1 | awk '{print $9}'`
+pid=$(adb shell ps | grep 'net.osmand' | head -n1 | awk '{print $2}')
+package=`adb shell ps | grep 'net.osmand' | head -n1 | awk '{print $9}' | tr -d "\r"`
 echo "OsmAnd package: $package"
 echo "OsmAnd pid: $pid"
 
@@ -26,4 +28,4 @@ adb forward tcp:5039 tcp:5039
 
 # Launch gdb on host
 echo "Execute manually in gdb: target remote :5039"
-"$ANDROID_NDK/toolchains/arm-linux-androideabi-4.7/prebuilt/windows/bin/arm-linux-androideabi-gdb" $nativelib
+"$ANDROID_NDK/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gdb" $nativelib

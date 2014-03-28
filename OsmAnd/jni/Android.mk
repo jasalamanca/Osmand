@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 ROOT_PATH := $(LOCAL_PATH)/../../..
-$(info OsmAnd root: $(ROOT_PATH))
+#$(info OsmAnd root: $(ROOT_PATH))
 
 # LEGACY {
 ifdef BUILD_ONLY_OLD_LIB
@@ -15,7 +15,7 @@ OSMAND_MAKEFILES := \
 # LEGACY {
 endif
 # } LEGACY
-$(info OsmAnd makefiles: $(OSMAND_MAKEFILES))
+#$(info OsmAnd makefiles: $(OSMAND_MAKEFILES))
 
 # Protect from previous builds
 ifneq ($(TARGET_ARCH_ABI),armeabi-v7a)

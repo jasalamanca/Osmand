@@ -1,11 +1,8 @@
 APP_STL := gnustl_shared
-APP_CPPFLAGS := -std=c++11 -fexceptions -frtti
+APP_CPPFLAGS := -std=c++11 -fexceptions
+#APP_CPPFLAGS := -std=c++11 -fexceptions -frtti -fPIC
 
-ifeq ($(wildcard $(ANDROID_NDK)/toolchains/*-4.7),)
-	NDK_TOOLCHAIN_VERSION := 4.8
-else
-	NDK_TOOLCHAIN_VERSION := 4.7
-endif
+NDK_TOOLCHAIN_VERSION := 4.8
 
 APP_ABI :=
 ifneq ($(filter x86,$(OSMAND_ARCHITECTURES_SET)),)
