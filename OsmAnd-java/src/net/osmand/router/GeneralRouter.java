@@ -415,6 +415,7 @@ public class GeneralRouter implements VehicleRouter {
 				paramContext = new ParameterContext();
 				paramContext.vars = params;
 			}
+			// Take rules with all their parameters (param=p0 ... param=pn) defined in params-paramContext
 			for(RouteAttributeEvalRule rt : original.rules){
 				if(checkParameter(rt)){
 					rules.add(rt);
@@ -472,6 +473,8 @@ public class GeneralRouter implements VehicleRouter {
 			return null;
 		}
 
+		// Only used at GeneralRouter construction.
+		// Only keys on paramContext are used here. No values are of interest. 
 		private boolean checkParameter(RouteAttributeEvalRule r) {
 			if (paramContext != null && r.parameters.size() > 0) {
 				for (String p : r.parameters) {
@@ -592,6 +595,7 @@ public class GeneralRouter implements VehicleRouter {
 				return cacheValue.doubleValue();
 			}
 			Object o = null;
+			// If it is a tag
 			if (value instanceof String && value.toString().startsWith("$")) {
 				BitSet mask = tagRuleMask.get(value.toString().substring(1));
 				if (mask != null && mask.intersects(types)) {
@@ -601,8 +605,10 @@ public class GeneralRouter implements VehicleRouter {
 					int v = findBit.nextSetBit(0);
 					o = parseValueFromTag(v, valueType);
 				}
-			} else if (value instanceof String && value.toString().startsWith(":")) {
-				String p = ((String) value).substring(1);
+			}
+			// If it is a variable
+			else if (value instanceof String && value.toString().startsWith(":")) {
+				String p = value.substring(1);
 				if (paramContext != null && paramContext.vars.containsKey(p)) {
 					o = parseValue(paramContext.vars.get(p), valueType);
 				}
@@ -745,9 +751,10 @@ public class GeneralRouter implements VehicleRouter {
 			}
 			return null;
 		}
-		
 
+		// Get the value of the rule processed if needed.
 		protected Object calcSelectValue(BitSet types, ParameterContext paramContext) {
+			// If it is a tag condition
 			if (selectValue instanceof String && selectValue.toString().startsWith("$")) {
 				BitSet mask = tagRuleMask.get(selectValue.toString().substring(1));
 				if (mask != null && mask.intersects(types)) {
@@ -757,7 +764,9 @@ public class GeneralRouter implements VehicleRouter {
 					int value = findBit.nextSetBit(0);
 					return parseValueFromTag(value, selectType);
 				}
-			} else if (selectValue instanceof String && selectValue.toString().startsWith(":")) {
+			}
+			// If it is a variable
+			else if (selectValue instanceof String && selectValue.toString().startsWith(":")) {
 				String p = ((String) selectValue).substring(1);
 				if (paramContext != null && paramContext.vars.containsKey(p)) {
 					selectValue = parseValue(paramContext.vars.get(p), selectType);

@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.io.RandomAccessFile;
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import net.osmand.NativeLibrary;
@@ -224,7 +225,13 @@ public class TestRouting {
 			System.err.println("\n\n!! Skipped test case '" + testDescription + "' because 'best_percent' attribute is not specified \n\n" );
 			return;
 		}
-		RoutingConfiguration rconfig = config.build(vehicle, MEMORY_TEST_LIMIT);
+		// We put an empty list of parameters.
+		// This means that none is defined and conditinal routing rules
+		// that need a "param" are eliminated. When they use "-param", 
+		// they are keept if param is not passed in list.
+		// Passing null implies that every rule is keept as if every 
+		// of their params were adequately defined.
+		RoutingConfiguration rconfig = config.build(vehicle, MEMORY_TEST_LIMIT, new LinkedHashMap<String, String>());
 		RoutePlannerFrontEnd router = new RoutePlannerFrontEnd(oldRouting);
 		RoutingContext ctx = router.buildRoutingContext(rconfig, 
 				lib, rs);
@@ -328,7 +335,13 @@ public class TestRouting {
 			throws IOException, InterruptedException {
 		long ts = System.currentTimeMillis();
 		Builder config = RoutingConfiguration.getDefault();
-		RoutingConfiguration rconfig = config.build(vehicle, MEMORY_TEST_LIMIT);
+		// We put an empty list of parameters.
+		// This means that none is defined and conditinal routing rules
+		// that need a "param" are eliminated. When they use "-param", 
+		// they are keept if param is not passed in list.
+		// Passing null implies that every rule is keept as if every 
+		// of their params were adequately defined.
+		RoutingConfiguration rconfig = config.build(vehicle, MEMORY_TEST_LIMIT, new LinkedHashMap<String, String>());
 		RoutePlannerFrontEnd router = new RoutePlannerFrontEnd(oldRouting);
 		RoutingContext ctx = router.buildRoutingContext(rconfig, lib, rs);
 		RouteSegment startSegment = router.findRouteSegment(startLat, startLon, ctx);

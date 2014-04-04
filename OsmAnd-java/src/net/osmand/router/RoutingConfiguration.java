@@ -15,6 +15,8 @@ import net.osmand.util.Algorithms;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
+//private static final org.apache.commons.logging.Log log = PlatformUtil.getLog(RoutingConfiguration.class);///
+
 public class RoutingConfiguration {
 	
 	public static final int DEFAULT_MEMORY_LIMIT = 30;
@@ -66,6 +68,7 @@ public class RoutingConfiguration {
 			RoutingConfiguration i = new RoutingConfiguration();
 			if (routers.containsKey(router)) {
 				i.router = routers.get(router);
+				// Don't purge rules if defined parameters is null
 				if (params != null) {
 					i.router = i.router.build(params);
 				}
@@ -88,6 +91,8 @@ public class RoutingConfiguration {
 			}
 			i.planRoadDirection = parseSilentInt(getAttribute(i.router, "planRoadDirection"), i.planRoadDirection);
 			
+//log.error("builded router="+router+" #attributes="+i.router.attributes.size()+" rules=");///
+//i.router.printRules(System.out);///
 			return i;
 		}
 		
