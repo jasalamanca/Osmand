@@ -248,11 +248,11 @@ public class RouteResultPreparation {
 		double endLat = end.getLatitude();
 		double endLon = end.getLongitude();
         println(MessageFormat.format("<test regions=\"\" description=\"\" best_percent=\"\" vehicle=\"{4}\" \n"
-				+ "    start_lat=\"{0}\" start_lon=\"{1}\" target_lat=\"{2}\" target_lon=\"{3}\" {5} >", 
-				startLat + "", startLon + "", endLat + "", endLon + "", ctx.config.routerName, 
-				"loadedTiles = \"" + ctx.loadedTiles + "\" " + "visitedSegments = \"" + ctx.visitedSegments + "\" " +
-				"complete_distance = \"" + completeDistance + "\" " + "complete_time = \"" + completeTime + "\" " +
-				"routing_time = \"" + ctx.routingTime + "\" "));
+				+ "    start_lat=\"{0,number,#,##0.00000}\" start_lon=\"{1,number,#,##0.00000}\" target_lat=\"{2,number,#,##0.00000}\" target_lon=\"{3,number,#,##0.00000}\" {5} >",
+				startLat, startLon, endLat, endLon, ctx.config.routerName,
+				"loadedTiles=\"" + ctx.loadedTiles + "\" " + "visitedSegments=\"" + ctx.visitedSegments + "\" " +
+				"complete_distance=\"" + String.format("%03.2f", completeDistance) + "\" " + "complete_time=\"" + String.format("%03.2f", completeTime) + "\" " +
+				"routing_time=\"" + String.format("%03.2f", ctx.routingTime) + "\""));
 		if (PRINT_TO_CONSOLE_ROUTE_INFORMATION_TO_TEST) {
 			for (RouteSegmentResult res : result) {
 				String name = res.getObject().getName();
@@ -261,28 +261,28 @@ public class RouteResultPreparation {
 					name = "";
 				}
 				if (ref != null) {
-					name += " (" + ref + ") ";
+					name += " (" + ref + ")";
 				}
 				StringBuilder additional = new StringBuilder();
-				additional.append("time = \"").append(res.getSegmentTime()).append("\" ");
-				additional.append("rtime = \"").append(res.getRoutingTime()).append("\" ");
-				additional.append("name = \"").append(name).append("\" ");
+				additional.append("time=\"").append(String.format("%03.2f", res.getSegmentTime())).append("\" ");
+//				additional.append("rtime = \"").append(res.getRoutingTime()).append("\" ");
+				additional.append("name=\"").append(name).append("\" ");
 //				float ms = res.getSegmentSpeed();
 				float ms = res.getObject().getMaximumSpeed();
 				if(ms > 0) {
-					additional.append("maxspeed = \"").append(ms * 3.6f).append("\" ").append(res.getObject().getHighway()).append(" ");
+					additional.append("maxspeed=\"").append(String.format("%.0f", ms * 3.6f)).append("\" ").append(res.getObject().getHighway()).append(" ");
 				}
-				additional.append("distance = \"").append(res.getDistance()).append("\" ");
+				additional.append("distance=\"").append(String.format("%03.2f", res.getDistance())).append("\" ");
 				if (res.getTurnType() != null) {
-					additional.append("turn = \"").append(res.getTurnType()).append("\" ");
-					additional.append("turn_angle = \"").append(res.getTurnType().getTurnAngle()).append("\" ");
+					additional.append("turn=\"").append(res.getTurnType()).append("\" ");
+					additional.append("turn_angle=\"").append(String.format("%03.2f", res.getTurnType().getTurnAngle())).append("\" ");
 					if (res.getTurnType().getLanes() != null) {
-						additional.append("lanes = \"").append(Arrays.toString(res.getTurnType().getLanes())).append("\" ");
+						additional.append("lanes=\"").append(Arrays.toString(res.getTurnType().getLanes())).append("\" ");
 					}
 				}
-				additional.append("start_bearing = \"").append(res.getBearingBegin()).append("\" ");
-				additional.append("end_bearing = \"").append(res.getBearingEnd()).append("\" ");
-				additional.append("description = \"").append(res.getDescription()).append("\" ");
+				additional.append("start_bearing=\"").append(String.format("%03.2f", res.getBearingBegin())).append("\" ");
+				additional.append("end_bearing=\"").append(String.format("%03.2f", res.getBearingEnd())).append("\" ");
+				additional.append("description=\"").append(res.getDescription()).append("\" ");
 				println(MessageFormat.format("\t<segment id=\"{0}\" start=\"{1}\" end=\"{2}\" {3}/>", (res.getObject().getId()) + "",
 						res.getStartPointIndex() + "", res.getEndPointIndex() + "", additional.toString()));
 				printAdditionalPointInfo(res);
