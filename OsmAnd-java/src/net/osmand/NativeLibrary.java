@@ -176,6 +176,7 @@ public class NativeLibrary {
 			RenderingRuleSearchRequest request, boolean skipDuplicates, int renderRouteDataFile, Object objectWithInterruptedField,
 			String msgIfNothingFound);
 
+	protected static native boolean initFontType(byte[] byteData, String name, boolean bold, boolean italic);
 
 	/**/
 	// Empty native impl
