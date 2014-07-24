@@ -25,6 +25,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 public class TestRouting {
 	
+	private static final boolean TRACE_TIME = false;
 	public static int MEMORY_TEST_LIMIT = 800;
 	public static boolean TEST_WO_HEURISTIC = false; 
 	public static boolean TEST_BOTH_DIRECTION = false;
@@ -114,19 +115,28 @@ public class TestRouting {
 				System.out.println("All is successfull " + (System.currentTimeMillis() - time) + " ms");
 			}
 		}
-		if(params.startLat != 0) {
+		if(params.startLat != 0)
+		{
 			BinaryMapIndexReader[] rs = collectFiles(params.obfDir.getAbsolutePath());
+			time = System.currentTimeMillis();
 			vehicle = params.vehicle;
 			// Native old version
-			oldRouting = true;
-			lib = new NativeLibrary(false);
+			NativeLibrary natlib = new NativeLibrary(false);
 			// Load map files in native space.
 			File[] lf = params.obfDir.listFiles();
 			for(File f : lf){
-				if(f.getName().endsWith(".obf")) {
-					lib.initMapFile(f.getAbsolutePath());
+				if(f.getName().endsWith(".obf"))
+				{
+					long time1 = System.currentTimeMillis();
+					natlib.initMapFile(f.getAbsolutePath());
+					if (TRACE_TIME) System.out.println("Native load file " + f.getName() + " " 
+					+ (System.currentTimeMillis() - time1) + " ms");
 				}
 			}
+			if (TRACE_TIME) System.out.println("Native load files " + (System.currentTimeMillis() - time) + " ms");
+			time = System.currentTimeMillis();
+			oldRouting = true;
+			lib = natlib;
 			System.gc();
 			calculateRoute(params.startLat, params.startLon,
 					params.endLat, params.endLon, rs);
@@ -304,6 +314,7 @@ public class TestRouting {
 		}
 	}
 
+/***
 	public static void calculateRoute(String folderWithObf,
 			double startLat, double startLon, double endLat, double endLon) throws IOException, InterruptedException {
 		BinaryMapIndexReader[] rs = collectFiles(folderWithObf);
@@ -311,8 +322,10 @@ public class TestRouting {
 		calculateRoute(startLat, startLon, endLat, endLon, rs);
 		calculateRoute(startLat, startLon, endLat, endLon, rs);
 	}
-	
+***/
+
 	private static BinaryMapIndexReader[] collectFiles(String folderWithObf) throws FileNotFoundException, IOException {
+		long totalTime = System.currentTimeMillis();
 		List<File> files = new ArrayList<File>();
 		for (File f : new File(folderWithObf).listFiles()) {
 			if (f.getName().endsWith(".obf")) {
@@ -321,11 +334,16 @@ public class TestRouting {
 		}
 		BinaryMapIndexReader[] rs = new BinaryMapIndexReader[files.size()];
 		int it = 0;
-		for (File f : files) {
+		for (File f : files)
+		{
+			long time = System.currentTimeMillis();
 			RandomAccessFile raf = new RandomAccessFile(f.getAbsolutePath(), "r"); //$NON-NLS-1$ //$NON-NLS-2$
-			System.out.println(f.getName());
 			rs[it++] = new BinaryMapIndexReader(raf);
+			if (TRACE_TIME) System.out.println("IndexReader for "+ f.getName()+ " " + (System.currentTimeMillis() - time) + " ms");
+			else System.out.println(f.getName());
 		}
+
+		if (TRACE_TIME) System.out.println("collectFiles " + (System.currentTimeMillis() - totalTime) + " ms");
 		return rs;
 	}
 
@@ -342,20 +360,28 @@ public class TestRouting {
 		// Passing null implies that every rule is keept as if every 
 		// of their params were adequately defined.
 		RoutingConfiguration rconfig = config.build(vehicle, MEMORY_TEST_LIMIT, new LinkedHashMap<String, String>());
+//System.err.println("RConf.build() accumulated time " + (System.currentTimeMillis() - ts) + " ms");
 		RoutePlannerFrontEnd router = new RoutePlannerFrontEnd(oldRouting);
+//System.err.println("RP() accumulated time " + (System.currentTimeMillis() - ts) + " ms");
 		RoutingContext ctx = router.buildRoutingContext(rconfig, lib, rs);
+//System.err.println("RCtx() accumulated time " + (System.currentTimeMillis() - ts) + " ms");
 		RouteSegment startSegment = router.findRouteSegment(startLat, startLon, ctx);
+//System.err.println("fRS start accumulated time " + (System.currentTimeMillis() - ts) + " ms");
 		RouteSegment endSegment = router.findRouteSegment(endLat, endLon, ctx);
+//System.err.println("fRS end accumulated time " + (System.currentTimeMillis() - ts) + " ms");
 		if (startSegment == null) {
-			throw new IllegalArgumentException("Start segment is not found ");
+			throw new IllegalArgumentException("Start segment is not found");
 		}
 		if (endSegment == null) {
-			throw new IllegalArgumentException("End segment is not found ");
+			throw new IllegalArgumentException("End segment is not found");
 		}
 		// Clear ctx
 		ctx = router.buildRoutingContext(rconfig, lib, rs);
-		List<RouteSegmentResult> route = router.searchRoute(ctx,
+        long preRT = System.currentTimeMillis();
+        List<RouteSegmentResult> route = router.searchRoute(ctx,
 				new LatLon(startLat, startLon), new LatLon(endLat, endLon), null);
-		System.out.println("Route is " + route.size() + " segments " + (System.currentTimeMillis() - ts) + " ms ");
+		System.out.println("Route is " + route.size() + " segments " 
+				+ (System.currentTimeMillis() - ts) + " ms (" 
+				+ (preRT - ts) + " + " + (System.currentTimeMillis() - preRT) + ")");
 	}
 }
