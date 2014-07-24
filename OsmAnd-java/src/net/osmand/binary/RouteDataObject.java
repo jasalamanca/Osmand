@@ -29,7 +29,8 @@ public class RouteDataObject {
 	public RouteDataObject(RouteRegion region) {
 		this.region = region;
 	}
-	
+
+	// Only called from native part
 	public RouteDataObject(RouteRegion region, int[] nameIds, String[] nameValues) {
 		this.region = region;
 		if (nameIds.length > 0) {

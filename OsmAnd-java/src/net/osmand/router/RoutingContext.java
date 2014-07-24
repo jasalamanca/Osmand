@@ -131,13 +131,12 @@ public class RoutingContext {
 	}
 	
 	RoutingContext(RoutingConfiguration config, NativeLibrary nativeLibrary, BinaryMapIndexReader[] map, RouteCalculationMode calcMode) {
-		this.calculationMode = calcMode;
+		this.calculationMode = RouteCalculationMode.NORMAL;////calcMode;
 		for (BinaryMapIndexReader mr : map) {
 			List<RouteRegion> rr = mr.getRoutingIndexes();
 			List<RouteSubregion> subregions = new ArrayList<BinaryMapRouteReaderAdapter.RouteSubregion>();
 			for (RouteRegion r : rr) {
-				List<RouteSubregion> subregs = calcMode == RouteCalculationMode.BASE ? r.getBaseSubregions() :
-					r.getSubregions();
+				List<RouteSubregion> subregs = r.getSubregions();//calcMode == RouteCalculationMode.BASE ? r.getBaseSubregions() : r.getSubregions();
 				for (RouteSubregion rs : subregs) {
 					subregions.add(new RouteSubregion(rs));
 				}
@@ -419,6 +418,13 @@ public class RoutingContext {
 					if(subregs.size() > 0) {
 						checkOldRoutingFiles(r.getKey());
 					}
+//if (subregs.size() > 0)
+//System.err.println("loadTileHeaders #sr="+subregs.size()+" for "+r.getKey().getRegionNames().get(0)+" X="+tileX+" Y="+tileY+" Z="+zoomToLoadM31);
+///for (RouteSubregion sr : subregs)
+///{
+///  System.err.println("("+sr.left+","+sr.top+","+sr.right+","+sr.bottom+")->"+sr.shiftToData
+///		  +" #sr="+((sr.subregions == null)?0:sr.subregions.size())+" #do="+((sr.dataObjects == null)?0:sr.dataObjects.size()));
+///}
 					for (RouteSubregion sr : subregs) {
 						int ind = searchSubregionTile(sr);
 						RoutingSubregionTile found;
@@ -443,29 +449,29 @@ public class RoutingContext {
 	}
 
 	public void loadTileData(int x31, int y31, int zoomAround, final List<RouteDataObject> toFillIn) {
-		int t =  config.ZOOM_TO_LOAD_TILES - zoomAround;
-		int coordinatesShift = (1 << (31 - config.ZOOM_TO_LOAD_TILES));
-		if(t <= 0) {
-			t = 1;
-			coordinatesShift = (1 << (31 - zoomAround));
-		} else {
-			t = 1 << t;
-		}
+	//	int t =  config.ZOOM_TO_LOAD_TILES - zoomAround;
+	//	int coordinatesShift = (1 << (31 - config.ZOOM_TO_LOAD_TILES));
+	//	if(t <= 0) {
+	//		t = 1;
+	//		coordinatesShift = (1 << (31 - zoomAround));
+	//	} else {
+	//		t = 1 << t;
+	//	}
 		
 		TLongHashSet ts = new TLongHashSet(); 
 		long now = System.nanoTime();
-		for(int i = -t; i <= t; i++) {
-			for(int j = -t; j <= t; j++) {
-				ts.add(getRoutingTile(x31 +i*coordinatesShift, y31 + j*coordinatesShift, 0, OPTION_IN_MEMORY_LOAD));		
-			}
-		}
+	//	for(int i = -t; i <= t; i++) {
+	//		for(int j = -t; j <= t; j++) {
+	//			ts.add(getRoutingTile(x31 +i*coordinatesShift, y31 + j*coordinatesShift, 0, OPTION_IN_MEMORY_LOAD));		
+	//		}
+	//	}
+		ts.add(getRoutingTile(x31, y31, 0, OPTION_IN_MEMORY_LOAD));		
 		// We need to priorize roads added to tileRoutes
 		getAllObjects(ts, toFillIn);
 		timeToFindInitialSegments += (System.nanoTime() - now);
 	}
 	
 	private long getRoutingTile(int x31, int y31, int memoryLimit, int loadOptions){
-//		long now = System.nanoTime();
 		long xloc = x31 >> (31 - config.ZOOM_TO_LOAD_TILES);
 		long yloc = y31 >> (31 - config.ZOOM_TO_LOAD_TILES);
 		long tileId = (xloc << config.ZOOM_TO_LOAD_TILES) + yloc;
@@ -512,7 +518,6 @@ public class RoutingContext {
 				}
 			}
 		}
-		// timeToLoad += (System.nanoTime() - now);
 		return tileId;
 	}
 
