@@ -135,6 +135,7 @@ public class TestRouting {
 			}
 			if (TRACE_TIME) System.out.println("Native load files " + (System.currentTimeMillis() - time) + " ms");
 			time = System.currentTimeMillis();
+			// Native routing
 			oldRouting = true;
 			lib = natlib;
 			System.gc();
