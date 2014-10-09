@@ -1,4 +1,5 @@
 APP_STL := gnustl_shared
+APP_CFLAGS := -O3
 APP_CPPFLAGS := -std=c++11 -fexceptions -frtti -fPIC
 
 NDK_TOOLCHAIN_VERSION := 4.8
