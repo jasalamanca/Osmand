@@ -13,12 +13,12 @@ else
         export ANDROID_HOME=$ANDROID_SDK
     else
 	    echo "ANDROID_SDK is also not set"
-	    exit
+	    exit 1
     fi
 fi
 if [ ! -d "$ANDROID_NDK" ]; then
 	echo "ANDROID_NDK is not set"
-	exit
+	exit 1
 fi
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export ANDROID_NDK_ROOT=$ANDROID_NDK
