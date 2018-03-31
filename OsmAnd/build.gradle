@@ -197,8 +197,6 @@ task updateNoTranslate(type: Copy) {
 }
 
 task validateTranslate {
-	println "Validating translations"
-
 	file("res").eachFileRecurse groovy.io.FileType.FILES, {
 		if (it.name == "strings.xml" || it.name == "phrases.xml") {
 			it.eachLine { line ->
@@ -290,7 +288,9 @@ task copyStyleIcons(type: Copy) {
 	include "**/*.png"
 }
 
-task collectExternalResources << {}
+task collectExternalResources() {
+    doLast{}
+}
 collectExternalResources.dependsOn collectVoiceAssets,
 		collectFonts,
 		collectHelpContentsAssets,
@@ -325,12 +325,8 @@ task cleanupDuplicatesInCore() {
 	dependsOn buildOsmAndCore
 	// doesn't work for legacy debug builds
 	doLast {
-		file("libgnustl/armeabi").mkdirs()
-		file("libs/armeabi/libgnustl_shared.so").renameTo(file("libgnustl/armeabi/libgnustl_shared.so"))
 		file("libgnustl/armeabi-v7a").mkdirs()
 		file("libs/armeabi-v7a/libgnustl_shared.so").renameTo(file("libgnustl/armeabi-v7a/libgnustl_shared.so"))
-		file("libgnustl/mips").mkdirs()
-		file("libs/mips/libgnustl_shared.so").renameTo(file("libgnustl/mips/libgnustl_shared.so"))
 		file("libgnustl/x86").mkdirs()
 		file("libs/x86/libgnustl_shared.so").renameTo(file("libgnustl/x86/libgnustl_shared.so"))
 	}
