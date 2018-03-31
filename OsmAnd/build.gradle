@@ -18,7 +18,6 @@ apply plugin: 'com.android.application'
 
 android {
 	compileSdkVersion 26
-//	buildToolsVersion "26.0.2"
 
 	signingConfigs {
 		development {
@@ -61,7 +60,6 @@ android {
 	}
 
 	dexOptions {
-//		incremental true
 		javaMaxHeapSize "4g"
 	}
 
@@ -83,13 +81,9 @@ android {
 		freedev {
 			manifest.srcFile "AndroidManifest-freedev.xml"
 		}
-
-		legacy {
-			jniLibs.srcDirs = ["libgnustl"]
-		}
 	}
 
-	flavorDimensions "version", "coreversion", "abi"
+    flavorDimensions "version", "abi"
 	productFlavors {
 		// ABI
 		armv7 {
@@ -133,19 +127,6 @@ android {
             resConfig "en"
             //resConfigs "xxhdpi", "nodpi"
         }
-
-		// CoreVersion
-		legacy {
-			dimension "coreversion"
-		}
-
-		qtcore {
-			dimension "coreversion"
-		}
-
-		qtcoredebug {
-			dimension "coreversion"
-		}
 	}
 
 	buildTypes {
@@ -222,7 +203,6 @@ task cleanNoTranslate(type: Delete) {
      delete('res/values/no_translate.xml')
 }
 
-
 task collectFonts(type: Copy) {
 	from "../../resources/fonts"
 	from "../../resources/rendering_styles/fonts"
@@ -237,7 +217,6 @@ task collectHelpContentsStyle(type: Copy) {
 	}
 	into "assets"
 }
-
 
 task collectHelpContentsAssets(type: Copy) {
 	from("../../help/website/help") {
@@ -302,11 +281,6 @@ collectExternalResources.dependsOn collectVoiceAssets,
 		copyStyleIcons,
 		updateNoTranslate,
 		validateTranslate
-// tasks.whenTaskAdded { task ->
-//	if (task.name.startsWith("generate") && task.name.endsWith("Resources")) {
-//		task.dependsOn collectExternalResources
-//	}
-// }
 
 // Legacy core build
 import org.apache.tools.ant.taskdefs.condition.Os
@@ -321,18 +295,8 @@ task buildOsmAndCore(type: Exec) {
 	}
 }
 
-task cleanupDuplicatesInCore() {
-	dependsOn buildOsmAndCore
-	// doesn't work for legacy debug builds
-	doLast {
-		file("libgnustl/armeabi-v7a").mkdirs()
-		file("libs/armeabi-v7a/libgnustl_shared.so").renameTo(file("libgnustl/armeabi-v7a/libgnustl_shared.so"))
-		file("libgnustl/x86").mkdirs()
-		file("libs/x86/libgnustl_shared.so").renameTo(file("libgnustl/x86/libgnustl_shared.so"))
-	}
-}
 tasks.withType(JavaCompile) {
-	compileTask -> compileTask.dependsOn << [collectExternalResources, buildOsmAndCore, cleanupDuplicatesInCore]
+    compileTask -> compileTask.dependsOn << [collectExternalResources, buildOsmAndCore]
 }
 
 task appStart(type: Exec) {
@@ -364,7 +328,6 @@ dependencies {
 	if (analytics) {
 		implementation 'com.google.firebase:firebase-core:9.8.0'
 		implementation 'com.google.firebase:firebase-config:9.8.0'
-
 	}
 	implementation 'com.android.support:gridlayout-v7:26.1.0'
 	implementation 'com.android.support:cardview-v7:26.1.0'
@@ -372,11 +335,7 @@ dependencies {
 	implementation 'com.android.support:design:26.1.0'
 	implementation 'com.android.support:customtabs:26.1.0'
 	implementation fileTree(include: ['*.jar'], exclude: ['QtAndroid-bundled.jar', 'QtAndroidAccessibility-bundled.jar', 'OsmAndCore_android.jar', 'OsmAndCore_wrapper.jar', 'android-support-multidex.jar'], dir: 'libs')
-	legacyImplementation "net.osmand:OsmAndCore_android:0.1-SNAPSHOT@jar"
-	qtcoredebugImplementation "net.osmand:OsmAndCore_androidNativeDebug:0.1-SNAPSHOT@aar"
-	qtcoredebugImplementation "net.osmand:OsmAndCore_android:0.1-SNAPSHOT@aar"
-	qtcoreImplementation "net.osmand:OsmAndCore_androidNativeRelease:0.1-SNAPSHOT@aar"
-	qtcoreImplementation "net.osmand:OsmAndCore_android:0.1-SNAPSHOT@aar"
+	implementation "net.osmand:OsmAndCore_android:0.1-SNAPSHOT@jar"
 	implementation ("com.getkeepsafe.taptargetview:taptargetview:1.6.1"){
 		exclude group: 'com.android.support'
 	}
