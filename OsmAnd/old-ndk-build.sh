@@ -2,8 +2,6 @@
 
 SCRIPT_LOC="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 NAME=$(basename $(dirname "${BASH_SOURCE[0]}") )
-echo $SCRIPT_LOC
-echo $NAME
 
 if [ ! -d "$ANDROID_SDK" ]; then
     echo "ANDROID_SDK is not set"
