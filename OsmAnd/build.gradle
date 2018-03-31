@@ -98,22 +98,10 @@ android {
 				abiFilter "armeabi-v7a"
 			}
 		}
-		armv5 {
-			dimension "abi"
-			ndk {
-				abiFilter "armeabi"
-			}
-		}
 		x86 {
 			dimension "abi"
 			ndk {
 				abiFilter "x86"
-			}
-		}
-		mips {
-			dimension "abi"
-			ndk {
-				abiFilter "mips"
 			}
 		}
 		fat {
