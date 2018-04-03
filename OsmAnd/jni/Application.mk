@@ -3,7 +3,7 @@ APP_CPPFLAGS := -std=c++11 -fexceptions -frtti
 APP_SHORT_COMMANDS := true
 
 # Specify least supported Android platform version
-APP_PLATFORM := android-19
+APP_PLATFORM := android-16
 
 #ifeq ($(wildcard $(ANDROID_NDK)/toolchains/*-4.7),)
 #	ifeq ($(wildcard $(ANDROID_NDK)/toolchains/*-4.8),)
