@@ -3,6 +3,20 @@ apply plugin: 'application'
 mainClassName = "net.osmand.util.GeoPointParserUtil"
 compileJava.options.encoding = 'UTF-8'
 
+repositories {
+//	ivy {
+//		name = "OsmAndBinariesIvy"
+//		url = "http://builder.osmand.net"
+//		layout "pattern", {
+//			artifact "ivy/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"
+//		}
+//	}
+// junidecode
+	maven {
+		url "https://dl.bintray.com/allenai/maven/"
+	}
+}
+
 tasks.withType(JavaCompile) {
 	sourceCompatibility = "1.7"
 	targetCompatibility = "1.7"
@@ -31,6 +45,12 @@ artifacts {
 }
 
 dependencies {
-	compile fileTree(dir: "libs", include: ["*.jar"])
+	implementation fileTree(dir: "libs", include: ["*.jar"])
+	implementation "org.beanshell:bsh-core:2.0b4"
+	implementation group: 'net.sf.trove4j', name: 'trove4j', version: '3.0.3'
+	implementation group: 'com.ibm.icu', name: 'icu4j', version: '61.1'
+	implementation group: 'com.vividsolutions', name: 'jts-core', version: '1.14.0'
+	implementation group: 'junidecode', name: 'junidecode', version: '0.1.1'
+	implementation group: 'net.sf.kxml', name: 'kxml2', version: '2.3.0'
+//	implementation "net.osmand:simple-logging:@jar"
 }
-
