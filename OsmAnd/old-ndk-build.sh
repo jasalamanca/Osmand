@@ -7,13 +7,12 @@ if [ ! -d "$ANDROID_SDK" ]; then
     echo "ANDROID_SDK is not set"
     exit 1
 fi
-export ANDROID_SDK_ROOT=$ANDROID_HOME
+export ANDROID_SDK_ROOT=$ANDROID_SDK
 
 if [ ! -d "$ANDROID_NDK" ]; then
 	echo "ANDROID_NDK is not set"
 	exit 1
 fi
 
-export OSMAND_ARCHITECTURES_SET='arm x86'
 "$SCRIPT_LOC/../../core-legacy/externals/configure.sh"
 (cd "$SCRIPT_LOC" && "$ANDROID_NDK/ndk-build" -j1 $*)
