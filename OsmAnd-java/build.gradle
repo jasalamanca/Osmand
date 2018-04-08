@@ -52,5 +52,4 @@ dependencies {
 	implementation group: 'com.vividsolutions', name: 'jts-core', version: '1.14.0'
 	implementation group: 'junidecode', name: 'junidecode', version: '0.1.1'
 	implementation group: 'net.sf.kxml', name: 'kxml2', version: '2.3.0'
-//	implementation "net.osmand:simple-logging:@jar"
 }
