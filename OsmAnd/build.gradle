@@ -143,6 +143,11 @@ android {
 			signingConfig signingConfigs.publishing
 		}
 	}
+	externalNativeBuild {
+		ndkBuild {
+			path 'jni/Android.mk'
+		}
+	}
 }
 
 def replaceNoTranslate(line) {
@@ -282,21 +287,21 @@ collectExternalResources.dependsOn collectVoiceAssets,
 		updateNoTranslate,
 		validateTranslate
 
-// Legacy core build
+// Legacy core
 import org.apache.tools.ant.taskdefs.condition.Os
 
-task buildOsmAndCore(type: Exec) {
-	description "Build Legacy OsmAndCore"
+task configureOsmAndCoreExternals(type: Exec) {
+	description "Configure externals Legacy OsmAndCore"
 
 	if (!Os.isFamily(Os.FAMILY_WINDOWS)) {
-		commandLine "bash", file("./old-ndk-build.sh").getAbsolutePath()
+		commandLine "bash", file("../../core-legacy/externals/configure.sh").getAbsolutePath()
 	} else {
 		commandLine "cmd", "/c", "echo", "Not supported"
 	}
 }
 
 tasks.withType(JavaCompile) {
-    compileTask -> compileTask.dependsOn << [collectExternalResources, buildOsmAndCore]
+    compileTask -> compileTask.dependsOn << [collectExternalResources, configureOsmAndCoreExternals]
 }
 
 task appStart(type: Exec) {
