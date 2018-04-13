@@ -18,7 +18,6 @@ import net.osmand.PlatformUtil;
 import net.osmand.access.AccessibilityPlugin;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.activities.TabActivity.TabItem;
-import net.osmand.plus.audionotes.AudioVideoNotesPlugin;
 import net.osmand.plus.dashboard.tools.DashFragmentData;
 import net.osmand.plus.development.OsmandDevelopmentPlugin;
 import net.osmand.plus.mapcontextmenu.MenuBuilder;
@@ -135,7 +134,6 @@ public abstract class OsmandPlugin {
 		enabledPlugins.add(MapillaryPlugin.ID);
 
 		// plugins with additional actions for context menu in right order:
-		allPlugins.add(new AudioVideoNotesPlugin(app));
 		allPlugins.add(new OsmEditingPlugin(app));
 		checkMarketPlugin(app, new ParkingPositionPlugin(app), false, ParkingPositionPlugin.PARKING_PLUGIN_COMPONENT, null);
 		allPlugins.add(new OsmandRasterMapsPlugin(app));

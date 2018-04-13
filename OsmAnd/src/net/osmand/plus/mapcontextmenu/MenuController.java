@@ -36,8 +36,6 @@ import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.R;
 import net.osmand.plus.TargetPointsHelper.TargetPoint;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.audionotes.AudioVideoNoteMenuController;
-import net.osmand.plus.audionotes.AudioVideoNotesPlugin.Recording;
 import net.osmand.plus.download.DownloadActivityType;
 import net.osmand.plus.download.DownloadIndexesThread;
 import net.osmand.plus.download.DownloadValidationManager;
@@ -182,8 +180,6 @@ public abstract class MenuController extends BaseMenuController implements Colla
 				menuController = new TargetPointMenuController(mapActivity, pointDescription, (TargetPoint) object);
 			} else if (object instanceof OsMoDevice) {
 				menuController = new OsMoMenuController(mapActivity, pointDescription, (OsMoDevice) object);
-			} else if (object instanceof Recording) {
-				menuController = new AudioVideoNoteMenuController(mapActivity, pointDescription, (Recording) object);
 			} else if (object instanceof OsmPoint) {
 				menuController = new EditPOIMenuController(mapActivity, pointDescription, (OsmPoint) object);
 			} else if (object instanceof WptPt) {

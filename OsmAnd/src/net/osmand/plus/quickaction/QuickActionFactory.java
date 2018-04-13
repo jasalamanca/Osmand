@@ -8,10 +8,6 @@ import com.google.gson.reflect.TypeToken;
 
 import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.R;
-import net.osmand.plus.audionotes.AudioVideoNotesPlugin;
-import net.osmand.plus.audionotes.TakeAudioNoteAction;
-import net.osmand.plus.audionotes.TakePhotoNoteAction;
-import net.osmand.plus.audionotes.TakeVideoNoteAction;
 import net.osmand.plus.osmedit.OsmEditingPlugin;
 import net.osmand.plus.parkingpoint.ParkingAction;
 import net.osmand.plus.parkingpoint.ParkingPositionPlugin;
@@ -63,24 +59,6 @@ public class QuickActionFactory {
 
 		if (!marker.hasInstanceInList(active)) {
 			quickActions.add(marker);
-		}
-
-		if (OsmandPlugin.getEnabledPlugin(AudioVideoNotesPlugin.class) != null) {
-			QuickAction audio = new TakeAudioNoteAction();
-			QuickAction photo = new TakePhotoNoteAction();
-			QuickAction video = new TakeVideoNoteAction();
-
-			if (!audio.hasInstanceInList(active)) {
-				quickActions.add(audio);
-			}
-
-			if (!photo.hasInstanceInList(active)) {
-				quickActions.add(photo);
-			}
-
-			if (!video.hasInstanceInList(active)) {
-				quickActions.add(video);
-			}
 		}
 
 		if (OsmandPlugin.getEnabledPlugin(OsmEditingPlugin.class) != null) {
@@ -181,15 +159,6 @@ public class QuickActionFactory {
 			case ParkingAction.TYPE:
 				return new ParkingAction();
 
-			case TakeAudioNoteAction.TYPE:
-				return new TakeAudioNoteAction();
-
-			case TakePhotoNoteAction.TYPE:
-				return new TakePhotoNoteAction();
-
-			case TakeVideoNoteAction.TYPE:
-				return new TakeVideoNoteAction();
-
 			case NavVoiceAction.TYPE:
 				return new NavVoiceAction();
 
@@ -261,15 +230,6 @@ public class QuickActionFactory {
 
 			case ParkingAction.TYPE:
 				return new ParkingAction(quickAction);
-
-			case TakeAudioNoteAction.TYPE:
-				return new TakeAudioNoteAction(quickAction);
-
-			case TakePhotoNoteAction.TYPE:
-				return new TakePhotoNoteAction(quickAction);
-
-			case TakeVideoNoteAction.TYPE:
-				return new TakeVideoNoteAction(quickAction);
 
 			case NavVoiceAction.TYPE:
 				return new NavVoiceAction(quickAction);
@@ -343,15 +303,6 @@ public class QuickActionFactory {
 			case ParkingAction.TYPE:
 				return R.drawable.ic_action_parking_dark;
 
-			case TakeAudioNoteAction.TYPE:
-				return R.drawable.ic_action_micro_dark;
-
-			case TakePhotoNoteAction.TYPE:
-				return R.drawable.ic_action_photo_dark;
-
-			case TakeVideoNoteAction.TYPE:
-				return R.drawable.ic_action_video_dark;
-
 			case NavVoiceAction.TYPE:
 				return R.drawable.ic_action_volume_up;
 
@@ -424,15 +375,6 @@ public class QuickActionFactory {
 			case ParkingAction.TYPE:
 				return R.string.quick_action_add_parking;
 
-			case TakeAudioNoteAction.TYPE:
-				return R.string.quick_action_take_audio_note;
-
-			case TakePhotoNoteAction.TYPE:
-				return R.string.quick_action_take_photo_note;
-
-			case TakeVideoNoteAction.TYPE:
-				return R.string.quick_action_take_video_note;
-
 			case NavVoiceAction.TYPE:
 				return R.string.quick_action_navigation_voice;
 
@@ -489,9 +431,6 @@ public class QuickActionFactory {
 			case ShowHideFavoritesAction.TYPE:
 			case ShowHidePoiAction.TYPE:
 			case ParkingAction.TYPE:
-			case TakeAudioNoteAction.TYPE:
-			case TakePhotoNoteAction.TYPE:
-			case TakeVideoNoteAction.TYPE:
 			case NavVoiceAction.TYPE:
 			case NavAddDestinationAction.TYPE:
 			case NavAddFirstIntermediateAction.TYPE:

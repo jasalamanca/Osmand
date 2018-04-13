@@ -38,7 +38,6 @@ import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.TargetPointsHelper;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.audionotes.AudioVideoNotesPlugin;
 import net.osmand.plus.dialogs.ConfigureMapMenu;
 import net.osmand.plus.helpers.ColorDialogs;
 import net.osmand.plus.monitoring.OsmandMonitoringPlugin;
@@ -92,11 +91,6 @@ public class OsmandAidlApi {
 	private static final String AIDL_ADD_MAP_LAYER = "aidl_add_map_layer";
 	private static final String AIDL_REMOVE_MAP_LAYER = "aidl_remove_map_layer";
 
-	private static final String AIDL_TAKE_PHOTO_NOTE = "aidl_take_photo_note";
-	private static final String AIDL_START_VIDEO_RECORDING = "aidl_start_video_recording";
-	private static final String AIDL_START_AUDIO_RECORDING = "aidl_start_audio_recording";
-	private static final String AIDL_STOP_RECORDING = "aidl_stop_recording";
-
 	private static final String AIDL_NAVIGATE = "aidl_navigate";
 	private static final String AIDL_NAVIGATE_GPX = "aidl_navigate_gpx";
 
@@ -138,10 +132,6 @@ public class OsmandAidlApi {
 		registerRemoveMapWidgetReceiver(mapActivity);
 		registerAddMapLayerReceiver(mapActivity);
 		registerRemoveMapLayerReceiver(mapActivity);
-		registerTakePhotoNoteReceiver(mapActivity);
-		registerStartVideoRecordingReceiver(mapActivity);
-		registerStartAudioRecordingReceiver(mapActivity);
-		registerStopRecordingReceiver(mapActivity);
 		registerNavigateReceiver(mapActivity);
 		registerNavigateGpxReceiver(mapActivity);
 	}
@@ -396,64 +386,6 @@ public class OsmandAidlApi {
 			}
 		};
 		mapActivity.registerReceiver(removeMapLayerReceiver, new IntentFilter(AIDL_REMOVE_MAP_LAYER));
-	}
-
-	private void registerTakePhotoNoteReceiver(final MapActivity mapActivity) {
-		takePhotoNoteReceiver = new BroadcastReceiver() {
-			@Override
-			public void onReceive(Context context, Intent intent) {
-				final AudioVideoNotesPlugin plugin = OsmandPlugin.getEnabledPlugin(AudioVideoNotesPlugin.class);
-				if (plugin != null) {
-					double lat = intent.getDoubleExtra(AIDL_LATITUDE, Double.NaN);
-					double lon = intent.getDoubleExtra(AIDL_LONGITUDE, Double.NaN);
-					plugin.takePhoto(lat, lon, mapActivity, false, true);
-				}
-			}
-		};
-		mapActivity.registerReceiver(takePhotoNoteReceiver, new IntentFilter(AIDL_TAKE_PHOTO_NOTE));
-	}
-
-	private void registerStartVideoRecordingReceiver(final MapActivity mapActivity) {
-		startVideoRecordingReceiver = new BroadcastReceiver() {
-			@Override
-			public void onReceive(Context context, Intent intent) {
-				final AudioVideoNotesPlugin plugin = OsmandPlugin.getEnabledPlugin(AudioVideoNotesPlugin.class);
-				if (plugin != null) {
-					double lat = intent.getDoubleExtra(AIDL_LATITUDE, Double.NaN);
-					double lon = intent.getDoubleExtra(AIDL_LONGITUDE, Double.NaN);
-					plugin.recordVideo(lat, lon, mapActivity, true);
-				}
-			}
-		};
-		mapActivity.registerReceiver(startVideoRecordingReceiver, new IntentFilter(AIDL_START_VIDEO_RECORDING));
-	}
-
-	private void registerStartAudioRecordingReceiver(final MapActivity mapActivity) {
-		startVideoRecordingReceiver = new BroadcastReceiver() {
-			@Override
-			public void onReceive(Context context, Intent intent) {
-				final AudioVideoNotesPlugin plugin = OsmandPlugin.getEnabledPlugin(AudioVideoNotesPlugin.class);
-				if (plugin != null) {
-					double lat = intent.getDoubleExtra(AIDL_LATITUDE, Double.NaN);
-					double lon = intent.getDoubleExtra(AIDL_LONGITUDE, Double.NaN);
-					plugin.recordAudio(lat, lon, mapActivity);
-				}
-			}
-		};
-		mapActivity.registerReceiver(startVideoRecordingReceiver, new IntentFilter(AIDL_START_AUDIO_RECORDING));
-	}
-
-	private void registerStopRecordingReceiver(final MapActivity mapActivity) {
-		stopRecordingReceiver = new BroadcastReceiver() {
-			@Override
-			public void onReceive(Context context, Intent intent) {
-				final AudioVideoNotesPlugin plugin = OsmandPlugin.getEnabledPlugin(AudioVideoNotesPlugin.class);
-				if (plugin != null) {
-					plugin.stopRecording(mapActivity, false);
-				}
-			}
-		};
-		mapActivity.registerReceiver(stopRecordingReceiver, new IntentFilter(AIDL_STOP_RECORDING));
 	}
 
 	private void registerNavigateReceiver(final MapActivity mapActivity) {
@@ -1181,40 +1113,6 @@ public class OsmandAidlApi {
 			return true;
 		}
 		return false;
-	}
-
-	boolean takePhotoNote(double latitude, double longitude) {
-		Intent intent = new Intent();
-		intent.setAction(AIDL_TAKE_PHOTO_NOTE);
-		intent.putExtra(AIDL_LATITUDE, latitude);
-		intent.putExtra(AIDL_LONGITUDE, longitude);
-		app.sendBroadcast(intent);
-		return true;
-	}
-
-	boolean startVideoRecording(double latitude, double longitude) {
-		Intent intent = new Intent();
-		intent.setAction(AIDL_START_VIDEO_RECORDING);
-		intent.putExtra(AIDL_LATITUDE, latitude);
-		intent.putExtra(AIDL_LONGITUDE, longitude);
-		app.sendBroadcast(intent);
-		return true;
-	}
-
-	boolean startAudioRecording(double latitude, double longitude) {
-		Intent intent = new Intent();
-		intent.setAction(AIDL_START_AUDIO_RECORDING);
-		intent.putExtra(AIDL_LATITUDE, latitude);
-		intent.putExtra(AIDL_LONGITUDE, longitude);
-		app.sendBroadcast(intent);
-		return true;
-	}
-
-	boolean stopRecording() {
-		Intent intent = new Intent();
-		intent.setAction(AIDL_STOP_RECORDING);
-		app.sendBroadcast(intent);
-		return true;
 	}
 
 	boolean navigate(String startName, double startLat, double startLon, String destName, double destLat, double destLon, String profile, boolean force) {

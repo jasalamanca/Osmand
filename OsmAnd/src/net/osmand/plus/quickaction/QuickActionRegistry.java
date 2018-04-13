@@ -7,10 +7,6 @@ import com.google.gson.reflect.TypeToken;
 
 import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.OsmandSettings;
-import net.osmand.plus.audionotes.AudioVideoNotesPlugin;
-import net.osmand.plus.audionotes.TakeAudioNoteAction;
-import net.osmand.plus.audionotes.TakePhotoNoteAction;
-import net.osmand.plus.audionotes.TakeVideoNoteAction;
 import net.osmand.plus.openseamapsplugin.NauticalMapsPlugin;
 import net.osmand.plus.osmedit.OsmEditingPlugin;
 import net.osmand.plus.parkingpoint.ParkingAction;
@@ -76,14 +72,6 @@ public class QuickActionRegistry {
 
 		for (QuickAction action : actions) {
 			boolean skip = false;
-			if (OsmandPlugin.getEnabledPlugin(AudioVideoNotesPlugin.class) == null) {
-
-				if (action.type == TakeAudioNoteAction.TYPE || action.type == TakePhotoNoteAction.TYPE
-						|| action.type == TakeVideoNoteAction.TYPE) {
-					skip = true;
-				}
-			}
-
 			if (OsmandPlugin.getEnabledPlugin(ParkingPositionPlugin.class) == null) {
 				if (action.type == ParkingAction.TYPE) {
 					skip = true;

@@ -34,10 +34,6 @@ import net.osmand.aidl.mapwidget.RemoveMapWidgetParams;
 import net.osmand.aidl.mapwidget.UpdateMapWidgetParams;
 import net.osmand.aidl.navigation.NavigateGpxParams;
 import net.osmand.aidl.navigation.NavigateParams;
-import net.osmand.aidl.note.StartAudioRecordingParams;
-import net.osmand.aidl.note.StopRecordingParams;
-import net.osmand.aidl.note.TakePhotoNoteParams;
-import net.osmand.aidl.note.StartVideoRecordingParams;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.util.Algorithms;
 
@@ -351,42 +347,6 @@ public class OsmandAidlService extends Service {
 		public boolean stopGpxRecording(StopGpxRecordingParams params) throws RemoteException {
 			try {
 				return getApi().stopGpxRecording(params);
-			} catch (Exception e) {
-				return false;
-			}
-		}
-
-		@Override
-		public boolean takePhotoNote(TakePhotoNoteParams params) throws RemoteException {
-			try {
-				return params != null && getApi().takePhotoNote(params.getLatitude(), params.getLongitude());
-			} catch (Exception e) {
-				return false;
-			}
-		}
-
-		@Override
-		public boolean startVideoRecording(StartVideoRecordingParams params) throws RemoteException {
-			try {
-				return params != null && getApi().startVideoRecording(params.getLatitude(), params.getLongitude());
-			} catch (Exception e) {
-				return false;
-			}
-		}
-
-		@Override
-		public boolean startAudioRecording(StartAudioRecordingParams params) throws RemoteException {
-			try {
-				return params != null && getApi().startAudioRecording(params.getLatitude(), params.getLongitude());
-			} catch (Exception e) {
-				return false;
-			}
-		}
-
-		@Override
-		public boolean stopRecording(StopRecordingParams params) throws RemoteException {
-			try {
-				return getApi().stopRecording();
 			} catch (Exception e) {
 				return false;
 			}

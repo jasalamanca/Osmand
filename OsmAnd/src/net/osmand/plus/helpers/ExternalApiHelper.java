@@ -25,7 +25,6 @@ import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.TargetPointsHelper;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.audionotes.AudioVideoNotesPlugin;
 import net.osmand.plus.mapcontextmenu.MapContextMenu;
 import net.osmand.plus.monitoring.OsmandMonitoringPlugin;
 import net.osmand.plus.routing.RouteCalculationResult.NextDirectionInfo;
@@ -47,11 +46,6 @@ public class ExternalApiHelper {
 	public static final String API_CMD_NAVIGATE_GPX = "navigate_gpx";
 
 	public static final String API_CMD_NAVIGATE = "navigate";
-
-	public static final String API_CMD_RECORD_AUDIO = "record_audio";
-	public static final String API_CMD_RECORD_VIDEO = "record_video";
-	public static final String API_CMD_RECORD_PHOTO = "record_photo";
-	public static final String API_CMD_STOP_AV_REC = "stop_av_rec";
 
 	public static final String API_CMD_GET_INFO = "get_info";
 
@@ -268,32 +262,6 @@ public class ExternalApiHelper {
 					}
 				}
 
-			} else if (API_CMD_RECORD_AUDIO.equals(cmd)
-					|| API_CMD_RECORD_VIDEO.equals(cmd)
-					|| API_CMD_RECORD_PHOTO.equals(cmd)
-					|| API_CMD_STOP_AV_REC.equals(cmd)) {
-				AudioVideoNotesPlugin plugin = OsmandPlugin.getEnabledPlugin(AudioVideoNotesPlugin.class);
-				if (plugin == null) {
-					resultCode = RESULT_CODE_ERROR_PLUGIN_INACTIVE;
-					finish = true;
-				} else {
-					if (API_CMD_STOP_AV_REC.equals(cmd)) {
-						plugin.stopRecording(mapActivity, false);
-					} else {
-						double lat = Double.parseDouble(uri.getQueryParameter(PARAM_LAT));
-						double lon = Double.parseDouble(uri.getQueryParameter(PARAM_LON));
-						if (API_CMD_RECORD_AUDIO.equals(cmd)) {
-							plugin.recordAudio(lat, lon, mapActivity);
-						} else if (API_CMD_RECORD_VIDEO.equals(cmd)) {
-							plugin.recordVideo(lat, lon, mapActivity, false);
-						} else if (API_CMD_RECORD_PHOTO.equals(cmd)) {
-							plugin.takePhoto(lat, lon, mapActivity, true, false);
-						}
-					}
-
-					resultCode = Activity.RESULT_OK;
-				}
-
 			} else if (API_CMD_GET_INFO.equals(cmd)) {
 
 				Location location = mapActivity.getMyApplication().getLocationProvider().getLastKnownLocation();
@@ -496,23 +464,6 @@ public class ExternalApiHelper {
 						"?start_lat=" + lat + "&start_lon=" + lon + "&start_name=Start" +
 						"&dest_lat=" + destLat + "&dest_lon=" + destLon + "&dest_name=Finish" +
 						"&profile=bicycle");
-			}
-
-			if (API_CMD_RECORD_AUDIO.equals(command)) {
-				// test record audio
-				uri = Uri.parse("osmand.api://record_audio?lat=" + lat + "&lon=" + lon);
-			}
-			if (API_CMD_RECORD_VIDEO.equals(command)) {
-				// test record video
-				uri = Uri.parse("osmand.api://record_video?lat=" + lat + "&lon=" + lon);
-			}
-			if (API_CMD_RECORD_PHOTO.equals(command)) {
-				// test take photo
-				uri = Uri.parse("osmand.api://record_photo?lat=" + lat + "&lon=" + lon);
-			}
-			if (API_CMD_STOP_AV_REC.equals(command)) {
-				// test record video
-				uri = Uri.parse("osmand.api://stop_av_rec");
 			}
 
 			if (API_CMD_ADD_MAP_MARKER.equals(command)) {
