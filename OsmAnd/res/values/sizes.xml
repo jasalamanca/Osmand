@@ -36,7 +36,7 @@
     <dimen name="dashPadding">6dp</dimen>
     <dimen name="dashCardMargin">4dp</dimen>
 	<dimen name="abp__shadow_height">4dp</dimen>
-    <dimen name="dashFABMargin">0dp</dimen>
+	<dimen name="dashFABMargin">76dp</dimen>
 
     <dimen name="list_content_padding">16dp</dimen>
     <dimen name="list_header_padding">8dp</dimen>
