@@ -313,7 +313,6 @@
     <string name="do_not_send_anonymous_app_usage_desc">OsmAnd mengumpulkan informasi tentang bagian mana dari aplikasi yang Anda buka. Lokasi Anda tidak pernah dikirim, juga tidak ada yang masuk ke aplikasi atau detail area yang Anda lihat, telusuri, atau unduh.</string>
     <string name="do_not_show_startup_messages">Jangan tampilkan pesan saat startup</string>
     <string name="do_not_show_startup_messages_desc">Menekankan penawaran diskon aplikasi &amp; pesan acara lokal khusus.</string>
-    <string name="parking_options">Pilihan parkir</string>
     <string name="full_version_thanks">Terima kasih telah membeli versi lengkap dari OsmAnd!</string>
     <string name="routing_attr_relief_smoothness_factor_hills_name">Berbukit</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">kurang berbukit</string>

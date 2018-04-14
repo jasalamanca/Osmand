@@ -998,11 +998,8 @@
     <string name="clear_dest_confirm">도착지 (및 경유지) 를 지우겠습니까?</string>
     <string name="precise_routing_mode_descr">고장없이 정확한 경로를 계산(라우팅) 할 수 있습니다. 현 단계에서는 거리가 한정되어있고 게다가 느립니다.</string>
     <string name="precise_routing_mode">정확한 라우팅 모드</string>
-    <string name="recording_context_menu_show">표시</string>
-    <string name="recording_photo_description">사진 %1$s %2$s</string>
-    <string name="av_def_action_picture">사진 찍기</string>
-    <string name="recording_context_menu_precord">사진 찍기</string>
-    <string name="dropbox_plugin_description">Dropbox 플러그인은 Dropbox 계정으로 GPX경로와 소리/영상 노트를 동기화 할 수 있습니다 .</string>
+	<string name="av_def_action_picture">사진 찍기</string>
+	<string name="dropbox_plugin_description">Dropbox 플러그인은 Dropbox 계정으로 GPX경로와 소리/영상 노트를 동기화 할 수 있습니다 .</string>
     <string name="dropbox_plugin_name">드롭박스 플러그인</string>
     <string name="intermediate_points_change_order">순서 변경</string>
     <string name="srtm_paid_version_msg">등고선 추가 개발을 지원하기 위해 구글플레이에서 플러그인을 구입하시기 바랍니다 .</string>
@@ -1010,19 +1007,11 @@
     <string name="av_def_action_choose">요청에 대한 선택</string>
     <string name="av_widget_action_descr">기본 위젯의 동작을 선택합니다</string>
     <string name="av_widget_action">기본 위젯 작업</string>
-    <string name="av_use_external_recorder">시스템 레코더 사용</string>
-    <string name="av_use_external_camera_descr">사진에 대한 시스템 앱을 사용</string>
+	<string name="av_use_external_camera_descr">사진에 대한 시스템 앱을 사용</string>
     <string name="av_use_external_camera">카메라 앱을 사용</string>
-    <string name="recording_error">"기록하는 동안 오류가 발생했습니다 "</string>
-    <string name="recording_open_external_player">외부 플레이어 열기</string>
-    <string name="recording_delete_confirm">이 기록을 삭제하시겠습니까 ?</string>
-    <string name="recording_unavailable">사용 불가능</string>
-    <string name="recording_can_not_be_played">레코딩을 재생할 수 없습니다</string>
-    <string name="recording_context_menu_delete">레코딩 삭제</string>
-    <string name="recording_context_menu_play">재생</string>
-    <string name="recording_description">레코딩 %1$s %3$s %2$s</string>
-    <string name="recording_default_name">레코딩</string>
-    <string name="osmand_srtm_short_description_80_chars">오프라인 등고선에 대한 OsmAnd 플러그인</string>
+	<string name="recording_delete_confirm">이 기록을 삭제하시겠습니까 ?</string>
+	<string name="recording_context_menu_play">재생</string>
+	<string name="osmand_srtm_short_description_80_chars">오프라인 등고선에 대한 OsmAnd 플러그인</string>
     <string name="map_widget_distancemeasurement">거리 측정</string>
 
     <string name="index_srtm_parts">부분</string>
@@ -1082,8 +1071,7 @@
     <string name="ending_point_too_far">도로에서 너무 멀리 떨어진 마지막 포인트.</string>
     <string name="add_tag">태그 추가</string>
     <string name="btn_advanced_mode">고급 모드…</string>
-    <string name="poi_filter_parking">주차</string>
-    <string name="poi_filter_emergency">비상 사태</string>
+	<string name="poi_filter_emergency">비상 사태</string>
     <string name="poi_filter_public_transport">대중 교통</string>
     <string name="poi_filter_entertainment">엔터테인먼트</string>
     <string name="poi_filter_accomodation">숙소</string>
@@ -1096,45 +1084,9 @@
 	<string name="avoid_motorway">전용도로 회피</string>
 	<string name="snap_to_road_descr">운행하는 동안 차량을 도로에 밀착시킴</string>
 	<string name="snap_to_road">도로에 밀착</string>
-	<string name="osmand_play_title_30_chars">OsmAnd 지도 및 내비게이션</string>
 	<string name="osmand_short_description_80_chars">글로벌 모바일 맵 뷰어 및 오프라인 및 온라인 OSM 지도를 위한 운행</string>
-	<string name="osmand_long_description_1000_chars">" OsmAnd (OSM 자동 라우팅 및 길안내 시스템) OsmAnd 글로벌 OpenStreetMap의 다양한 데이터에 접근할 수 있는 오픈 소스 라우팅 응용 프로그램입니다.
-\n모든 지도 데이터(벡터 맵 또는 타일 맵 ) 는 오프라인 사용을 위하여 휴대 전화 메모리 카드에 저장할 수 있습니다.
-\nOsmAnd는 또한 턴-바이-턴 음성 안내 등의 오프라인 및 온라인 라우팅(길찾기) 기능을 제공합니다.
-\n\n핵심 기능 중 일부 :
-\n- 전체 오프라인 기능 (선택한 폴더에 저장, 벡터지도 또는 타일지도 다운로드 가능)
-\n- 컴팩트한 오프라인 벡터는 전 세계에서 사용가능
-\n- 국가 또는 지역의 다운로드는 앱에서 직접 매핑
-\n- GPX 또는 탐색 트랙, 관광 명소 등 가능한 여러 지도 레이어의 중첩, 즐겨 찾기, 등고선, 대중 교통 정류장, 사용자 정의 투명성 추가
-\n- 주소 및 장소에 대한 오프라인 검색 장소(POI)
-\n- 짧은 거리를 위한 오프라인 라우팅
-\n- 자동차, 자전거, 보행자
-\n\n모드 :
-\n- 옵션으로 자동 주간/야간 지도 전환
-\n- 옵션으로 속도에 따라 지도 줌레벨 변경
-\n- 옵션으로 나침반이나 방향에 따라 맵 정렬
-\n- 옴션으로 차선 안내, 속도제한 표시, 녹음음성 및 TTS음성
-\n\nOsmAnd 무료 버전 제한 사항 :
-\n- 지도 다운로드 수 10회로 제한
-\n- 위키 백과 또는 오프라인 관심 장소에 액세스할 수 없음.
-\n\nOsmAnd 는 적극적으로 개발하고 우리의 프로젝트와 프로젝트의 추가 진행은 개발 자금을 재정 지원에 의존하고 새로운 기능을 testdriving 하고있다.
-\nOsmAnd+ 를 구입, 또는 특정 새로운 기능에 자금을 지원하거나 osmand.net 에 일반 후원을 부탁드립니다. "</string>
-	<string name="osmand_plus_play_title_30_chars">OsmAnd+ 지도 및 내비게이션</string>
 	<string name="osmand_plus_short_description_80_chars">글로벌 모바일 지도보기 및 오프라인 및 온라인 OSM 지도를 위한 운행</string>
-	<string name="osmand_plus_long_description_1000_chars">" OsmAnd + (OSM 자동 안내 및 안내 ) OsmAnd + 글로벌 OpenStreetMap의 다양한 (OSM) 데이터에 접근할 수 있는 오픈 소스 운행 응용 프로그램입니다. 모든 지도 데이터 (벡터 또는 타일 맵 ) 오프라인 사용에 대한 휴대 전화 메모리 카드에 저장할 수 있습니다. OsmAnd 또한 턴-바이-턴 안내 등의 오프라인 및 온라인 라우팅 기능을 제공합니다. OsmAnd+는 프로젝트를 지원하는 새로운 기능의 개발을 투자하고, 최신 업데이트를 받을 수 있도록 구입하여 사용할 수 있는 유료 응용 프로그램 버전입니다.
-\n\n핵심 기능 중 일부 :
-\n- 전체 오프라인 기능 (선택 폴더 에 저장 다운로드 벡터 또는 타일 지도 )
-\n- 컴팩트 오프라인 벡터는 전 세계 에서 사용할 수 매핑
-\n- 국가 또는 지역의 무제한 다운로드가 응용 프로그램에서 직접 매핑
-\n- 관광 오프라인 위키 백과 기능 (다운로드 위키 백과 관심 장소 )\n- GPX 또는 탐색 트랙 , 관광 명소 등 가능한 여러 지도 레이어 의 중첩 , 즐겨 찾기 , 등고선 , 대중 교통 정류장 , 사용자 정의 투명성 추가 지도
-\n- 주소 및 장소에 대한 오프라인 검색 장소 (POI )
-\n- 짧은 거리를 위한 오프라인 라우팅( 실험 )
-\n- 자동차, 자전거, 보행자 모드 :
-\n- 선택적 자동 주간/야간 모드 전환
-\n- 선택적인 속도에 의존하는 지도 줌
-\n- 나침반이나 방향에 따라 맵 정렬
-\n- 선택적 차선 안내 , 제한 속도 표시, 기록 및 TTS 음색 "</string>
-	
+
 	<string name="filterpoi_activity">POI 필터 만들기</string>
 	<string name="select_navigation_mode">전송 모드 선택</string>
 	<string name="day_night_info_description">일출: %1$s \n일몰: %2$s</string>
@@ -1168,10 +1120,9 @@
 	<string name="map_widget_compass">나침반</string>
 	
 	<string name="map_widget_reset">기본값으로 재설정</string>
-	
-	
-	<string name="map_widget_parking">주차</string>
-	<string name="map_widget_monitoring">GPX 로깅</string>
+
+
+    <string name="map_widget_monitoring">GPX 로깅</string>
 	<string name="map_widget_speed">속도</string>
 	<string name="map_widget_distance">도착지</string>
 	<string name="map_widget_altitude">고도</string>
@@ -1189,10 +1140,7 @@
 	<string name="avoid_toll_roads">유료 도로 회피</string>
 	<string name="continue_follow_previous_route_auto">이전 운행은 아직 끝나지 안났습니다. 계속 운행을 하시겠습니까? (%1$s 초)</string>
 	<string name="route_updated_loc_found">현재 위치가 확정되면 경로를 탐색합니다</string>
-	<string name="osmand_parking_hours">시간</string>
-	<string name="osmand_parking_minutes">분</string>
-	<string name="osmand_parking_position_description_add_time">자동차를 ~에 주차했습니다 :</string>
-	
+
 	<string name="select_animate_speedup">경로 시뮬레이션의 속도를 선택합니다</string>
     	<string name="global_app_allocated_memory_descr">할당된 메모리 %1$s MB (안드로이드 메모리 제한 %2$s MB, Dalvik %3$s MB).</string>
 	<string name="global_app_allocated_memory">할당된 메모리</string>
@@ -1202,27 +1150,7 @@
 	
 	<string name="starting_point_too_far">시작 포인트가 도로에서 이탈.</string>
 	<string name="shared_location">공유된 위치</string>
-	<string name="osmand_parking_event">주차장에서 차를 픽업(가져오기)</string>
-	<string name="osmand_parking_warning">경고</string>
-	<string name="osmand_parking_warning_text">차를 픽업한 통지는 이전에 이미 추가되었습니다. 통지서는 수동으로 삭제할 때까지 남아있을 것입니다.</string>    
-	<string name="osmand_parking_time_limit_title">주차장의 시간제한을 설정</string>
-	<string name="osmand_parking_delete_confirm">주차된 차의 위치를 제거 할까요?</string>
-	<string name="osmand_parking_delete">주차 표시(마커)를 삭제</string>
-	<string name="osmand_parking_choose_type">주차장의 유형을 선택</string>
-	<string name="osmand_parking_lim_text">시간 제한</string>
-	<string name="osmand_parking_no_lim_text">시간 무제한</string>
-	<string name="osmand_parking_add_event">일정앱에 알림을 추가</string>
-	<string name="osmand_parking_time_limit">시간 제한 주차</string>
-	<string name="osmand_parking_time_no_limit">시간 무제한 주차</string>
-	<string name="osmand_parking_position_description">주차된 차의 위치. %1$s</string>
-	<string name="osmand_parking_position_description_add">~에서 차를 픽업(가져오기):</string>
-	<string name="osmand_parking_pm">오후</string>
-	<string name="osmand_parking_am">오전</string>
-	<string name="osmand_parking_position_name">주차 포인트</string>
-	<string name="osmand_parking_plugin_description">이 플러그인은 주차된 차의 위치를 쉽게 기억하도록 개발되었습니다.</string>
-	<string name="osmand_parking_plugin_name">주차 위치</string>
 	<string name="context_menu_item_add_parking_point">주차 위치로 마크(표시)</string>
-	<string name="context_menu_item_delete_parking_point">주차 마커를 삭제</string>
 	<string name="gpxup_public">공용</string>
 	<string name="gpxup_identifiable">식별가능</string>
 	<string name="gpxup_trackable">추적 가능</string>
@@ -1322,10 +1250,8 @@
 	<string name="av_camera_focus_infinity">포커스는 무한대로 설정</string>
 	<string name="av_camera_focus_macro">접사모드</string>
 	<string name="av_camera_focus_continuous">카메라 초점을 지속적으로 시도</string>
-	<string name="av_photo_play_sound">사진찍을 때 소리재생</string>
-	<string name="av_photo_play_sound_descr">사진 찍을 때 소리를 재생할 것인지 선택</string>
 
-    <string name="av_camera_focus_edof">필드의 확장된 깊이(EDoF )</string>
+	<string name="av_camera_focus_edof">필드의 확장된 깊이(EDoF )</string>
 	<string name="local_index_installed">로컬 버전</string>
 	
 	<string name="incomplete_locale">불완성</string>
@@ -1702,8 +1628,7 @@
     
     
     <string name="gps_status">GPS status 앱</string>
-    <string name="parking_place">주차장</string>
-    <string name="remove_the_tag">태그를 제거</string>
+	<string name="remove_the_tag">태그를 제거</string>
 <string name="plugin_description_title">설명</string>
 	
 <string name="edit_group">그룹 편집</string>
@@ -1830,10 +1755,9 @@
 	<string name="action_modify">액션 수정</string>
 	<string name="action_delete">액션 삭제</string>
 	<string name="osm_edits">OSM 편집</string>
-	<string name="osmand_parking_hour">시간</string><string name="osmand_parking_minute">분</string><string name="osmand_parking_time_left">남은 시간</string> <string name="parking_place_limited">주차 시간 제한</string>
+	<string name="osmand_parking_hour">시간</string><string name="osmand_parking_minute">분</string>
 	<string name="your_edits">편집</string>
-    <string name="osmand_parking_overdue">시간 초과</string>
-	<string name="delay_to_start_navigation_descr">지정된 시간 경과후 자동으로 운행 시작</string>
+    <string name="delay_to_start_navigation_descr">지정된 시간 경과후 자동으로 운행 시작</string>
     <string name="delay_to_start_navigation">~ 이후 턴-바이-턴 운행을 시작…</string>
     <string name="shared_string_go">실행</string>
 	

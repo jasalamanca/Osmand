@@ -48,16 +48,13 @@
     <string name="delay_to_start_navigation_descr">Especifique o tempo de espera para permanecer na tela de planejamento de rota.</string>
     <string name="delay_to_start_navigation">Iniciar navegação curva a curva depois de…</string>
     <string name="shared_string_go">Ir</string>
-	<string name="osmand_parking_overdue">vencido</string>
-	<string name="action_create">Criar ação</string>
+    <string name="action_create">Criar ação</string>
 	<string name="action_modify">Modificar ação</string>
 	<string name="action_delete">Apagar ação</string>
 	<string name="osm_edits">Edições no OSM</string>
 	<string name="osmand_parking_hour">h</string>
 	<string name="osmand_parking_minute">min</string>
-	<string name="parking_place_limited">Tempo de estacionamento limitado a</string>
-	<string name="osmand_parking_time_left">restante</string>
-	<string name="your_edits">Suas edições</string>
+    <string name="your_edits">Suas edições</string>
     <string name="waypoint_visit_after">Passar depois</string>
     <string name="waypoint_visit_before">Passar antes</string>
     <string name="simulate_your_location">Simular rota</string>
@@ -163,8 +160,7 @@
 	<string name="plugin_ski_name">Visão de mapa de esqui</string>
 	<string name="plugin_ski_descr">"Este complemento para o OsmAnd coloca ao seu alcance detalhes de pistas de descida de esqui, de travessia, rotas de esqui alpino, teleféricos e elevadores de esqui. Rotas e pistas são mostradas com codificação de cores por dificuldade e retratadas em um estilo especial de mapa \'Inverno\' que assimila uma paisagem de inverno cor de neve.
 \n\nAtivando esta mudança na visão do estilo de mapa de \'Inverno e esqui\', mostrando todas as características da paisagem em condições invernais. Essa visão pode ser revertida desativando aqui ou alterando o \'Estilo de mapa\' em \'Configurar mapa\' quando desejado. "</string>
-    <string name="osmand_parking_plugin_name">Posição de estacionamento</string>
-	<string name="osmand_distance_planning_plugin_name">Calculadora de distância e ferramenta de planeamento</string>
+    <string name="osmand_distance_planning_plugin_name">Calculadora de distância e ferramenta de planeamento</string>
 	<string name="osmand_distance_planning_plugin_description">Este complemento fornece um widget da tela mapa permitindo criar caminhos tocando no mapa, ou usar ou modificar arquivos GPX existentes, para planejar uma viagem e medir a distância entre pontos. Os resultados podem ser salvos como um arquivo GPX, que mais tarde pode ser usado para orientação.</string>
 	<string name="shared_string_accessibility">Acessibilidade</string>
 	<string name="osmand_accessibility_description">Este complemento disponibiliza recursos de acessibilidade do dispositivo diretamente no OsmAnd. Facilita, por exemplo, o ajuste da velocidade para vozes TTS, configuração da navegação direcional na tela, uso do trackball para controle de zoom, ou retorno de texto para fala, como para anunciar automaticamente sua posição.</string>
@@ -182,7 +178,6 @@
     <string name="world_ski_missing">Para mostrar mapas de esqui, o mapa off-line especial precisa ser baixado</string>
     <string name="nautical_maps_missing">Para mostrar mapas náuticos, o mapa off-line especial precisa ser baixado</string>
 	<string name="edit_group">Editar grupo</string>
-    <string name="parking_place">Lugar de estacionamento</string>
     <string name="remove_the_tag">REMOVER A ETIQUETA</string>
     <string name="gps_status">Situação do GPS</string>
     <string name="version_settings_descr">Baixar versões noturnas</string>
@@ -192,8 +187,7 @@
     <string name="track_points">Pontos da trilha</string>
 	<string name="osmand_srtm_long_description_1000_chars">"Este complemento fornece curva de nível e camada de sombra de colinas (relevo) por cima do mapa padrão do OsmAnd. Esta funcionalidade será muito apreciada por atletas, viajantes e alguém interessado na estrutura de relevo da paisagem.\n\nOs dados globais (entre as latitudes 70º norte e 70º sul) são baseados em medições do SRTM (Shuttle Radar Topography Mission) e ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), um instrumento de imagens da Terra, o principal satélite do Sistema de Observação da Terra da NASA. ASTER é um esforço conjunto da NASA, do Ministério Japonês da Economia, Comércio e Indústria (METI) e do Sistema Espacial Japonês (J-spacesystems). "</string>
 	<string name="srtm_plugin_description">"Este complemento fornece camadas de curvas de nível e de sombras das colinas (relevo) por cima do mapa padrão do OsmAnd. Esta funcionalidade será muito apreciada por atletas, viajantes e alguém interessado na estrutura de relevo da paisagem.\n\nOs dados globais (entre as latitudes 70º norte e 70º sul) são baseados em medições do SRTM (Shuttle Radar Topography Mission) e ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), um instrumento de imagens da Terra, o principal satélite do Sistema de Observação da Terra da NASA. ASTER é um esforço conjunto da NASA, do Ministério Japonês da Economia, Comércio e Indústria (METI) e do Sistema Espacial Japonês (J-spacesystems). "</string>
-	<string name="osmand_parking_plugin_description">O complemento de posição de estacionamento memoriza facilmente onde seu carro está estacionado e quanto tempo resta (se o estacionamento for de tempo limitado).\nVocê pode encontrar o seu lugar e tempo de estacionamento no painel de instrumentos e no widget do mapa. Pode ser adicionado um evento no calendário, se você quiser um lembrete.</string>
-	<string name="osm_editing_plugin_description">Este complemento do OsmAnd pode ser usado para fazer contribuições ao OSM como criar ou modificar POI, abertura ou comentários de erros do OSM e contribuir com arquivos GPX gravados. OSM é um projeto de mapeamento mundial dirigido pela comunidade e de domínio público. Para mais detalhes, consulte https://openstreetmap.org. Participação ativa é apreciada e as contribuições podem ser feitas diretamente do OsmAnd, se você especificar suas credenciais pessoais de OSM no app.</string>
+    <string name="osm_editing_plugin_description">Este complemento do OsmAnd pode ser usado para fazer contribuições ao OSM como criar ou modificar POI, abertura ou comentários de erros do OSM e contribuir com arquivos GPX gravados. OSM é um projeto de mapeamento mundial dirigido pela comunidade e de domínio público. Para mais detalhes, consulte https://openstreetmap.org. Participação ativa é apreciada e as contribuições podem ser feitas diretamente do OsmAnd, se você especificar suas credenciais pessoais de OSM no app.</string>
 	<string name="osmand_development_plugin_description">Este complemento exibe configurações de desenvolvimento e recursos de depuração como testar ou simular o roteamento, o desempenho de renderização de tela ou instruções de voz. Essas configurações são destinadas a desenvolvedores e não são necessárias para o usuário comum.</string>
 	<string name="proxy_pref_descr">Configurar proxy</string>
     <string name="settings_privacy">Privacidade</string>
@@ -671,8 +665,7 @@
     <string name="snap_to_road_descr">Ajustar posição das vias durante a navegação</string>
 	<string name="snap_to_road">Ajustar à via</string>
 	<string name="osmand_short_description_80_chars">OsmAnd é um aplicativo de navegação de código aberto para mapas off-line e on-line</string>
-	<string name="osmand_long_description_1000_chars">" OsmAnd (Direções de Navegação Automatizada para OSM)\nOsmAnd é um aplicativo de navegação de código aberto com acesso a uma ampla variedade de dados globais do OpenStreetMap (OSM). Todos os dados de mapas (mapas vetoriais ou quadrículas) podem ser armazenados na memória do aparelho para uso off-line. OsmAnd também oferece funcionalidade de roteamento online e offline, incluindo orientação por voz curva a curva.\n\nAlgumas das principais características:\n - Completa funcionalidade offline (armazenar mapas vetoriais ou quadrículas no armazenamento do aparelho)\n - Mapas vetoriais offline compactos para todo o mundo disponível\n - Baixar mapas de país ou região diretamente do app\n - Sobreposição de várias camadas do mapa, como trilhas GPX ou navegação, pontos de interesse, favoritos, linhas de contorno, paradas de transporte público, mapas adicionais com transparência personalizável - Pesquisa off-line de endereços e lugares (POIs)\n - Roteamento off-line para distâncias curtas (experimental)\n - Modos para carro, bicicleta e pedestres com: mudança automatizada de visão dia/noite; opcional zoom dependente da velocidade; alinhamento de mapa de acordo com a bússola ou a direção do movimento; opcional orientação de faixas, exibição de limite de velocidade, gravação e vozes TTS\n\nLimitações nesta versão gratuita do OsmAnd:\n - número limitado de transferências de mapas\n - sem acesso off-line a POIs da Wikipédia\n\nOsmAnd é ativamente desenvolvido e nosso projeto e seus progressos se baseiam em contribuir economicamente para financiar o desenvolvimento e testar novas funcionalidades. Por favor, considere comprar OsmAnd+, financiar específicos recursos novos ou fazer uma doação geral em osmand.net. "</string>
-	<string name="day_night_info_description">Nascer do Sol: %1$s
+    <string name="day_night_info_description">Nascer do Sol: %1$s
 Pôr do Sol: %2$s</string>
 	<string name="avoid_unpaved">Vias não-pavimentadas</string>
 	<string name="avoid_in_routing_descr">Evitar vias com pedágio, não-pavimentadas, balsas</string>
@@ -747,10 +740,7 @@ Pôr do Sol: %2$s</string>
     
     <string name="precise_routing_mode_descr">Permitir calcular rotas precisas sem falhas. Está limitado pela distância e é lento.</string>
     <string name="precise_routing_mode">Roteamento preciso (alfa)</string>
-    <string name="recording_context_menu_show">Mostrar</string>
-    <string name="recording_photo_description">Foto %1$s %2$s</string>
     <string name="av_def_action_picture">Tirar uma foto</string>
-    <string name="recording_context_menu_precord">Tirar uma foto</string>
     <string name="dropbox_plugin_description">O complemento do Dropbox permite sincronizar trilhas e notas de áudio/vídeo com a sua conta.</string>
     <string name="dropbox_plugin_name">Complemento Dropbox</string>
     <string name="intermediate_points_change_order">Alterar ordem</string>
@@ -758,19 +748,11 @@ Pôr do Sol: %2$s</string>
     <string name="av_def_action_choose">Selecionar a pedido</string>
     <string name="av_widget_action_descr">Selecionar ação predefinida do widget</string>
     <string name="av_widget_action">Ação predefinida</string>
-    <string name="av_use_external_recorder">Usar gravador externo</string>
     <string name="av_use_external_camera_descr">Usar o aplicativo de sistema para foto</string>
     <string name="av_use_external_camera">Usar câmera externa</string>
-    <string name="recording_error">Ocorreu um erro durante a gravação</string>
-    <string name="recording_open_external_player">Abrir reprodutor externo</string>
     <string name="recording_delete_confirm">Você quer excluir esta gravação?</string>
-    
-    <string name="recording_unavailable">Indisponível</string>
-    <string name="recording_can_not_be_played">Gravação não pode ser reproduzida</string>
-    <string name="recording_context_menu_delete">Apagar gravação</string>
+
     <string name="recording_context_menu_play">Reproduzir</string>
-    <string name="recording_description">Gravando %1$s %3$s %2$s</string>
-    <string name="recording_default_name">Gravando</string>
     <string name="map_widget_distancemeasurement">Medição de distância</string>
     <string name="index_srtm_parts">peças</string>
     <string name="download_select_map_types">Outros mapas</string>
@@ -793,11 +775,8 @@ Pôr do Sol: %2$s</string>
 	<string name="auto_zoom_map">Zoom automático</string>
 	<string name="interrupt_music_descr">Interromper a música quando fazer anúncio</string>
 	<string name="interrupt_music">Interromper música</string>
-	
-	<string name="osmand_play_title_30_chars">OsmAnd Mapas &amp; Navegação</string>
-	
-	<string name="osmand_plus_play_title_30_chars">OsmAnd+ Mapas &amp; Navegação</string>
-	<string name="osmand_plus_short_description_80_chars">Visualizador Móvel de Mapa Global &amp; Navegação Off-line e On-line para Mapas OSM</string>
+
+    <string name="osmand_plus_short_description_80_chars">Visualizador Móvel de Mapa Global &amp; Navegação Off-line e On-line para Mapas OSM</string>
 	
 	<string name="filterpoi_activity">Criar filtro de POI</string>
 	<string name="recalculate_route_to_your_location">Meio de transporte:</string>
@@ -823,8 +802,7 @@ Pôr do Sol: %2$s</string>
 	<string name="map_widget_lock_screen">Bloquear tela</string>
 	<string name="map_widget_compass">Bússola</string>
 	<string name="map_widget_reset">Restaurar para predefinido</string>
-	<string name="map_widget_parking">Estacionamento</string>
-	<string name="map_widget_monitoring">Registro de GPX</string>
+    <string name="map_widget_monitoring">Registro de GPX</string>
 	<string name="map_widget_speed">Velocidade</string>
 	<string name="map_widget_distance">Destino</string>
 	<string name="map_widget_altitude">Altitude</string>
@@ -840,10 +818,7 @@ Pôr do Sol: %2$s</string>
 	<string name="avoid_toll_roads">Pedágios</string>
 	<string name="continue_follow_previous_route_auto">A navegação anterior não foi concluída, quer continuá-la? (%1$s segundos)</string>
 	<string name="route_updated_loc_found">Rota será recalculada quando a posição for encontrada</string>
-	<string name="osmand_parking_hours">Horas</string>
-	<string name="osmand_parking_minutes">Minutos</string>
-	<string name="osmand_parking_position_description_add_time">O carro foi estacionado em</string>
-	<string name="index_settings">Gerenciar mapas</string>
+    <string name="index_settings">Gerenciar mapas</string>
 	<string name="context_menu_item_search">Pesquisar perto daqui</string>
 	<string name="local_index_descr_title">Gerenciar mapas</string>
 	<string name="show_point_options">Usar posição…</string>
@@ -858,8 +833,7 @@ Pôr do Sol: %2$s</string>
     <string name="safe_mode_description">Executar o aplicativo em modo seguro (usando código de Android, mais lento, em vez de código nativo).</string>
     <string name="zxing_barcode_scanner_not_found">Aplicativo Barcode Scanner da ZXing não está instalado. Pesquisar na loja de apps?</string>
 	<string name="shared_location">Posição compartilhada</string>
-	<string name="osmand_parking_lim_text">Tempo limitado</string>
-	<string name="left_side_navigation">Condução pela faixa da esquerda</string>
+    <string name="left_side_navigation">Condução pela faixa da esquerda</string>
 	<string name="index_settings_descr">Baixar e gerenciar mapas armazenados no seu aparelho</string>
 	<string name="plugins_screen">Complementos</string>
 	<string name="support_new_features">Apoiar novos recursos</string>
@@ -908,7 +882,6 @@ Pôr do Sol: %2$s</string>
     <string name="ending_point_too_far">Destino muito longe da via mais próxima.</string>
     <string name="add_tag">Adicionar etiqueta</string>
     <string name="btn_advanced_mode">Modo avançado…</string>
-    <string name="poi_filter_parking">Estacionamento</string>
     <string name="poi_filter_emergency">Emergência</string>
     <string name="poi_filter_public_transport">Transporte público</string>
     <string name="poi_filter_entertainment">Entretenimento</string>
@@ -928,25 +901,8 @@ Pôr do Sol: %2$s</string>
 	<string name="native_app_allocated_memory_descr">Memória nativa total alocada pelo app %1$s MB (Dalvik %2$s MB, outros %3$s MB). Memória proporcional %4$s MB (limite Android %5$s MB, Dalvik %6$s MB).</string>
 	<string name="native_app_allocated_memory">Memória nativa total</string>
 	<string name="starting_point_too_far">Ponto de partida muito longe da via mais próxima.</string>
-	<string name="osmand_parking_event">Pegar o carro no estacionamento</string>
-	<string name="osmand_parking_warning">Alerta</string>
-	<string name="osmand_parking_warning_text">Notificação para buscar seu carro foi adicionada ao seu calendário. Ela permanecerá até que você a apague manualmente.</string>    
-	<string name="osmand_parking_time_limit_title">Definir o limite de tempo de estacionamento</string>
-	<string name="osmand_parking_delete_confirm">Você quer apagar o marcardor da posição de estacionamento?</string>
-	<string name="osmand_parking_delete">Apagar um marcador de estacionamento</string>
-	<string name="osmand_parking_choose_type">Escolher o tipo de estacionamento</string>
-	<string name="osmand_parking_no_lim_text">Tempo ilimitado</string>
-	<string name="osmand_parking_add_event">Adicionar uma notificação à Agenda</string>
-	<string name="osmand_parking_time_limit">Tempo limitado</string>
-	<string name="osmand_parking_time_no_limit">Sem limite de tempo</string>
-	<string name="osmand_parking_position_description">A posição de estacionamento do seu carro. %1$s</string>
-	<string name="osmand_parking_position_description_add">Buscar o carro em:</string>
-	<string name="osmand_parking_pm">PM</string>
-	<string name="osmand_parking_am">AM</string>
-	<string name="osmand_parking_position_name">Local de estacionamento</string>
-	<string name="context_menu_item_add_parking_point">Marcar como local de estacionamento</string>
-	<string name="context_menu_item_delete_parking_point">Apagar um marcador de estacionamento</string>
-	<string name="gpxup_public">Público</string>
+    <string name="context_menu_item_add_parking_point">Marcar como local de estacionamento</string>
+    <string name="gpxup_public">Público</string>
 	<string name="gpxup_identifiable">Identificável</string>
 	<string name="gpxup_trackable">Rastreável</string>
 	<string name="gpxup_private">Privado</string>
@@ -1107,9 +1063,8 @@ Pôr do Sol: %2$s</string>
 	
 	
 	<string name="arrival_distance_factor_late">Atrasado</string>
-    
-	<string name="osmand_plus_long_description_1000_chars">" OsmAnd+ (Direções de Navegação Automatizada para OSM)\n OsmAnd+ é aplicativo de navegação de código aberto com acesso a uma ampla variedade de dados globais do OpenStreetMap (OSM). Todos os dados de mapa (vetores ou quadrículas) podem ser armazenados na memória do seu aparelho para uso off-line. OsmAnd também oferece a funcionalidade de roteamento on-line e off-line, incluindo orientação por voz curva a curva. OsmAnd+ é a versão paga do aplicativo, ao comprá-lo você ajuda o projeto, financiando o desenvolvimento de novas funcionalidades e recebe as últimas atualizações.\n\nAlgumas das principais características:\n- completa funcionalidade offline (armazena mapas vetorizados baixados ou quadrículas no armazenamento do aparelho)\n- mapas vetoriais off-line compactos e disponíveis para o mundo inteiro\n- transferência ilimitada de mapas por país ou região diretamente do app\n- recurso Wikipédia off-line (transferir POIs da Wikipédia), ótimo para passeios turísticos\n- possível sobreposição de várias camadas de mapa, como trilhas GPX, pontos de interesse, favoritos, curvas de nível e mapas adicionais com transparência personalizável\n- pesquisa off-line de endereços e lugares (POIs)\n- roteamento off-line para distâncias curtas (experimental)\n- modos carro, bicicleta e a pé com:\n- opcional mudança automática do modo dia/noite\n- opcional zoom dinâmico de acordo com a velocidade\n- opcional, alinhar o mapa de acordo com a bússola ou o seu sentido de movimento\n- opcional orientação de faixa, exibição do limite de velocidade, vozes gravadas e TTS "</string>
-	<string name="init_native_library">Iniciando a biblioteca nativa…</string>
+
+    <string name="init_native_library">Iniciando a biblioteca nativa…</string>
 	
     
 	
@@ -1634,9 +1589,7 @@ Pôr do Sol: %2$s</string>
 	<string name="av_camera_focus_infinity">Foco no infinito</string>
 	<string name="av_camera_focus_macro">Foco macro (close-up)</string>
 	<string name="av_camera_focus_continuous">A câmera tenta focar continuamente</string>
-	<string name="av_photo_play_sound">Som ao fotografar</string>
-	<string name="av_photo_play_sound_descr">Escolher se tocará som quando tirar fotos</string>
-	<string name="av_camera_pic_size">Tamanho da foto</string>
+    <string name="av_camera_pic_size">Tamanho da foto</string>
 	<string name="av_camera_pic_size_descr">Selecionar tamanho de imagem da foto</string>
     <string name="navigation_intent_invalid">Formato inválido: %s</string>
 	<string name="plugin_description_title">Descrição</string>
@@ -2324,7 +2277,6 @@ Pôr do Sol: %2$s</string>
     <string name="right_side_navigation">Condução pela faixa da direita</string>
     <string name="driving_region_automatic">Automático</string>
     <string name="do_not_send_anonymous_app_usage">Não enviar estatísticas de uso de aplicativo anônimas</string>
-    <string name="parking_options">Opções de estacionamento</string>
     <string name="full_version_thanks">Obrigado por adquirir a versão completa do OsmAnd!</string>
     <string name="routing_attr_relief_smoothness_factor_hills_name">Montanhoso</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Menos montanhoso</string>
@@ -2542,7 +2494,6 @@ Pôr do Sol: %2$s</string>
     <string name="quick_action_navigation_voice_off">A voz está desligada</string>
     <string name="quick_action_navigation_voice_on">A voz está ligada</string>
     <string name="quick_action_add_gpx">Adicionar ponto de passagem GPX</string>
-    <string name="quick_action_add_parking">Adicionar lugar de estacionamento</string>
     <string name="quick_action_new_action">Adicionar ação</string>
     <string name="quick_action_edit_action">Editar ação</string>
     <string name="quick_action_add_favorite">Adicionar favorito</string>
@@ -2552,8 +2503,7 @@ Pôr do Sol: %2$s</string>
     <string name="quick_favorites_show_favorites_dialog">Mostrar diálogo favoritos</string>
     <string name="quick_favorites_name_preset">Nome do preset</string>
     <string name="quick_action_add_marker_descr">Tocar no botão de ação adicionará um marcador de mapa no local do centro da tela.</string>
-    <string name="quick_action_add_parking_descr">Tocar no botão de ação adicionará um lugar de estacionamento no local do centro da tela.</string>
-    <string name="release_3_0">\\022 Detecção de sinais \"PARE\" agora considera a direção de condução 
+    <string name="release_3_0">\\022 Detecção de sinais \"PARE\" agora considera a direção de condução
 \n 
 \n • Novo algoritmo fornecendo valores de subida/descida significativa para trilhas GPX 
 \n 

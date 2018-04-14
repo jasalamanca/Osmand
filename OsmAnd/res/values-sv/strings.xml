@@ -9,7 +9,6 @@
     <string name="map_widget_back_to_loc">Var är jag</string>
     <string name="map_widget_lock_screen">Skärmlås</string>
     <string name="map_widget_compass">Kompass</string>
-    <string name="map_widget_parking">Parkering</string>
     <string name="map_widget_monitoring">GPX-loggning</string>
     <string name="map_widget_speed">Hastighet</string>
     <string name="map_widget_distance">Destination</string>
@@ -97,9 +96,6 @@
     <string name="avoid_toll_roads">Undvik betalvägar</string>
     <string name="continue_follow_previous_route_auto">En tidigare navigering avbröts. Fortsätta att följa den? (%1$s sekunder)</string>
     <string name="route_updated_loc_found">Resvägen kommer att beräknas så snart positionen hittas</string>
-    <string name="osmand_parking_hours">timmar</string>
-    <string name="osmand_parking_minutes">minuter</string>
-    <string name="osmand_parking_position_description_add_time">Bilen är parkerad vid</string>
 
     <string name="select_animate_speedup">Välj animerad ruttacceleration</string>
     <string name="global_app_allocated_memory_descr">Allokerat minne %1$s MB (Android-gräns %2$s MB, Dalvik %3$s MB).</string>
@@ -110,16 +106,6 @@ Proportionellt minne %4$s MB (Android-gräns %5$s MB, Dalvik %6$s MB).</string>
 
     <string name="starting_point_too_far">Startpunkten ligger för långt från närmaste väg.</string>
     <string name="shared_location">Delad plats</string>
-    <string name="osmand_parking_event">Hämta bilen från parkering</string>
-    <string name="osmand_parking_warning">Varning</string>
-    <string name="osmand_parking_warning_text">En avisering om att hämta din bil har lagts till i din kalender. Den kommer att finnas där tills du tar bort den manuellt.</string>
-    <string name="osmand_parking_time_limit_title">Ange tidsgränsen för parkeringen</string>
-    <string name="osmand_parking_delete_confirm">Vill du ta bort markören för parkeringsplatsen?</string>
-    <string name="osmand_parking_delete">Ta bort P-markering</string>
-    <string name="osmand_parking_choose_type">Välj typ av parkering</string>
-    <string name="osmand_parking_lim_text">Tidsbegränsad</string>
-    <string name="osmand_parking_no_lim_text">Ej tidsbegränsad</string>
-    <string name="osmand_parking_add_event">Lägg till ett meddelande i kalenderprogrammet</string>
     <string name="gpxup_public">Offentlig</string>
     <string name="gpxup_private">Privat</string>
     <string name="gpxup_identifiable">Identifierbar</string>
@@ -190,16 +176,7 @@ Proportionellt minne %4$s MB (Android-gräns %5$s MB, Dalvik %6$s MB).</string>
     <string name="altitude">Höjd</string>
     <string name="map_widget_renderer">Kartutseende</string>
 
-    <string name="osmand_parking_position_description_add">Att hämta bilen på:</string>
-    <string name="osmand_parking_pm">em</string>
-    <string name="osmand_parking_am">fm</string>
-    <string name="osmand_parking_position_name">Parkeringsplats</string>
-    <string name="osmand_parking_plugin_description">Modulen Parkeringsplats hjälper dig att hålla reda på var din bil är parkerad och vid behov hur mycket parkeringstid det är kvar.
-
-Du hittar din parkeringsplats och -tid på instrumentbrädan och i widgeten på kartskärmen. Du kan lägga till ett larm i kalendern som en påminnelse.</string>
-    <string name="osmand_parking_plugin_name">Parkeringsplats</string>
     <string name="context_menu_item_add_parking_point">Markera som parkeringsplats</string>
-    <string name="context_menu_item_delete_parking_point">Ta bort P-markering</string>
     <string name="asap">Snarast</string>
     <string name="route_roundabout">Rondell: ta %1$d avfarten och kör</string>
     <string name="rendering_attr_noPolygons_description">Gör alla ytor på kartan transparenta.</string>
@@ -236,9 +213,6 @@ Du hittar din parkeringsplats och -tid på instrumentbrädan och i widgeten på 
     <string name="map_widget_fluorescent">Fluorescerande rutter</string>
     <string name="bg_service_sleep_mode_off">Kör\n appen i bakgrunden</string>
     <string name="bg_service_sleep_mode_on">Stoppa\n körning i bakgrunden</string>
-    <string name="osmand_parking_time_limit">Tidsbegränsad parkering</string>
-    <string name="osmand_parking_time_no_limit">Ej tidsbegränsad parkering</string>
-    <string name="osmand_parking_position_description">Din parkerade bils plats. %1$s</string>
 
     <string name="prefs_plugins_descr">Insticksmoduler aktiverar avancerade inställningar samt ger ytterligare funktionalitet.</string>
     <string name="prefs_plugins">Insticksmoduler</string>
@@ -249,29 +223,6 @@ Du hittar din parkeringsplats och -tid på instrumentbrädan och i widgeten på 
     <string name="test_voice_prompts">Test av röstmeddelanden</string>
     <string name="switch_to_raster_map_to_see">Det finns ingen offline vektorkarta för den här platsen. Du kan ladda ner en i Inställningar (Hantera kartfiler) eller byta till online-kartor (aktivera modulen för online-kartor för detta).</string>
 
-    <string name="osmand_long_description_1000_chars">"
- OsmAnd (Open Street Maps Automated Navigation Directions)
-
-OsmAnd är ett öpen källkodsprogram med tillgång till ett brett utbud av global OpenStreetMap-data. All kartdata (vektor- eller rasterkartor) kan lagras i telefonens minneskort för offlineanvändning. OsmAnd erbjuder även navigering offline och online, inklusive röstguidning.
-Några av de viktigaste funktionerna:
-- Komplett offline-funktionalitet (lagra nedladdade vektorkartor eller kartbitar på enheten)
-- Kompakta offline-vektorkartor för hela världen finns tillgängliga
-- Nedladdning av land- eller regionkartor direkt från appen
-- Överlägg av flera kartlager möjligt, som GPX- eller navigationsspår, sevärdheter, favoriter, höjddata, offentliga hållplatser, extra kartor med anpassningsbara transparens
-- Sökning offline efter adresser och platser (POIs)
-- Offline-dirigering för medellånga sträckor (experimentell)
-- Bil-, cykel- och fotgängarlägen med:
-- Tillval automatisk växling mellan dag- och nattvisning
-- Tillval hastighetsberoende zoomning
-- Valfri inställningen enligt kompass eller färdriktningen
-- Frivillig körfältsvägledning, visning av hastighetsgräns, inspelade röster samt TTS-röster
-
-Begränsningar i denna gratisversion av OsmAnd:
-- Antalet nedladdningar av kartor är begränsad
-- Ingen tillgång till Wikipedia offline POIs
-
-OsmAnd utvecklas aktivt och vårt projekt och dess fortsatta framsteg bygger på ekonomiska bidrag för att finansiera utveckling och testning av ny funktionalitet. Vänligen överväg att köpa OsmAnd+, finansiera specifika nya funktioner eller göra en allmän donation på osmand.net.
- "</string>
     <string name="native_rendering">Inbyggd rendering</string>
     <string name="default_buttons_support">Support</string>
     <string name="support_new_features">Ge stöd till nya funktioner</string>
@@ -569,7 +520,6 @@ Nyttjat utrymme är {1} MB.
     <string name="ending_point_too_far">Slutpunkten för långt från närmaste väg.</string>
     <string name="add_tag">Lägg till tagg</string>
     <string name="btn_advanced_mode">Avancerat läge…</string>
-    <string name="poi_filter_parking">Parkering</string>
     <string name="poi_filter_emergency">Olycksfall</string>
     <string name="poi_filter_public_transport">Kollektivtrafik</string>
     <string name="poi_filter_entertainment">Underhållning</string>
@@ -849,14 +799,8 @@ Nyttjat utrymme är {1} MB.
     <string name="poi_error_poi_not_found">Noden kan inte hittas eller bekvämligheten består av flera noder och detta stöds inte än.</string>
     <string name="poi_remove_confirm_template">Ta bort {0} (ange kommentar)?</string>
     <string name="poi_remove_title">Ta bort POI</string>
-    <string name="recording_open_external_player">Öppna extern spelare</string>
     <string name="recording_delete_confirm">Vill du ta bort den här inspelningen?</string>
-    <string name="recording_unavailable">inte tillgänglig</string>
-    <string name="recording_can_not_be_played">Inspelningen kan inte spelas upp</string>
-    <string name="recording_context_menu_delete">Ta bort inspelningen</string>
     <string name="recording_context_menu_play">Spela upp</string>
-    <string name="recording_description">Inspelning %1$s %3$s %2$s</string>
-    <string name="recording_default_name">Spelar in</string>
     <string name="osmand_srtm_short_description_80_chars">OsmAnd-modul för höjdkurvor offline</string>
 
     <string name="map_widget_distancemeasurement">Avståndsmätning</string>
@@ -875,9 +819,6 @@ Nyttjat utrymme är {1} MB.
 
     <string name="stop_routing_confirm">Är det säkert att du vill avbryta navigeringen?</string>
     <string name="clear_dest_confirm">Är det säkert att du vill ta bort din destination (samt mellanliggande destinationer)?</string>
-    <string name="recording_context_menu_show">Visa</string>
-    <string name="recording_photo_description">Foto %1$s %2$s</string>
-    <string name="recording_context_menu_precord">Ta ett foto</string>
     <string name="dropbox_plugin_name">Modul för Dropbox</string>
 
     <string name="intermediate_points_change_order">Ändra ordning</string>
@@ -888,8 +829,6 @@ Nyttjat utrymme är {1} MB.
     <string name="srtm_paid_version_msg">Köp gärna pluginen Höjdkurvor på Market för att stödja fortsatt utveckling.</string>
     <string name="av_widget_action_descr">Välj standardåtgärd för widget.</string>
     <string name="av_widget_action">Standardåtgärd för widget</string>
-    <string name="av_use_external_recorder">Använd systemets inspelare</string>
-    <string name="recording_error">Ett fel uppstod under inspelningen </string>
     <string name="srtm_plugin_description">"Denna modul erbjuder överlägg med höjdkurvor som kan visas i kombination med OsmAnds standardkartor. Denna funktion kommer att uppskattas av idrottsmän, vandrare och alla som är intresserade av höjdskillnander i landskapet.
 \n
 \nDessa globala data (mellan 70 grader norr och 70 grader syd) baseras på mätningar av SRTM (Shuttle Radar Topography Mission) och ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), ett bildinstrument ombord Terra, flaggskeppet i NASA:s Earth Observing System. ASTER är ett samprojekt mellan NASA, Japans Ministry of Economy, Trade and Industry (METI), and Japan Space Systems (J-spacesystems). "</string>
@@ -1002,8 +941,6 @@ Nyttjat utrymme är {1} MB.
 
     <string name="layer_hillshade">Skuggad relief-lager</string>
     <string name="map_widget_gps_info">GPS-info</string>
-    <string name="osmand_play_title_30_chars">OsmAnd kartor &amp; navigering</string>
-    <string name="osmand_plus_play_title_30_chars">OsmAnd+ kartor &amp; navigering</string>
     <string name="opening_changeset">Öppnar changeset …</string>
     <string name="closing_changeset">Stänger changeset …</string>
     <string name="use_magnetic_sensor">Använd magnetisk sensor (kompass)</string>
@@ -1126,8 +1063,6 @@ Nyttjat utrymme är {1} MB.
     <string name="av_camera_focus_infinity">Fokus på oändligt</string>
     <string name="av_camera_focus_macro">Makrofokusläge (närbild)</string>
     <string name="av_camera_focus_continuous">Kameran försöker fokusera hela tiden</string>
-    <string name="av_photo_play_sound">Spela upp ljud vid tagning av foto</string>
-    <string name="av_photo_play_sound_descr">Välj om ett ljud ska spelas upp vid fotografering.</string>
 
 
     <string name="map_magnifier">Kartförstoring</string>
@@ -1602,7 +1537,6 @@ Vill du fortsätta med en ny registrering?</string>
     <string name="proxy_port_title">Proxy-port</string>
     <string name="proxy_port_descr">Konfigurera ditt proxy-portnummer (t.ex. 8118).</string>
     <string name="navigation_over_track">Starta navigering längs spår?</string>
-    <string name="parking_place">P-plats</string>
     <string name="remove_the_tag">TA BORT TAGGEN</string>
     <string name="gps_status">GPS-status</string>
     <string name="version_settings_descr">Hämta \"nattversioner\".</string>
@@ -1722,10 +1656,7 @@ Long %2$s</string>
     <string name="osm_edits">OSM-redigeringar</string>
     <string name="osmand_parking_hour">h</string>
     <string name="osmand_parking_minute">min</string>
-    <string name="osmand_parking_time_left">kvar</string>
-    <string name="parking_place_limited">Tidsbegränsad parkering till</string>
     <string name="your_edits">Dina redigeringar</string>
-    <string name="osmand_parking_overdue">över tiden</string>
     <string name="delay_to_start_navigation_descr">Ange väntetid att stanna kvar på ruttplaneringsskärmen.</string>
     <string name="delay_to_start_navigation">Börja sväng-efter-sväng-navigering efter …</string>
     <string name="shared_string_go">Kör</string>
@@ -2389,7 +2320,6 @@ Om du tycker om OsmAnd och OSM och vill stödja dem så är detta ett utmärkt s
     <string name="quick_action_navigation_voice_off">Röst är av</string>
     <string name="quick_action_navigation_voice_on">Röst är på</string>
     <string name="quick_action_add_gpx">Lägg till GPX-waypoint</string>
-    <string name="quick_action_add_parking">Lägg till P-plats</string>
     <string name="quick_action_add_favorite">Lägg till favorit</string>
     <string name="favorite_autofill_toast_text">" har sparats i "</string>
     <string name="favorite_empty_place_name">Plats</string>
@@ -2490,7 +2420,6 @@ Vänligen tillhandahåll fullständig kod</string>
     <string name="do_not_send_anonymous_app_usage">Skicka inte anonym appanvändningsstatistik</string>
     <string name="do_not_show_startup_messages">Visa inga meddelanden vid uppstart</string>
     <string name="do_not_show_startup_messages_desc"/>
-    <string name="parking_options">Parkeringsalternativ</string>
     <string name="fonts_header">Teckensnitt för kartan</string>
     <string name="select_street">Välj gator</string>
     <string name="shared_string_in_name">i %1$s</string>

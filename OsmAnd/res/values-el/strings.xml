@@ -2,7 +2,6 @@
 <resources>
     <string name="add_tag">Προσθήκη Ετικέτας</string>
     <string name="btn_advanced_mode">Λειτουργία για προχωρημένους…</string>
-    <string name="poi_filter_parking">Στάθμευση</string>
     <string name="poi_filter_emergency">Επείγοντα</string>
     <string name="poi_filter_public_transport">Δημόσιες μεταφορές</string>
     <string name="poi_filter_entertainment">Διασκέδαση</string>
@@ -25,12 +24,10 @@
 	<string name="snap_to_road">Κλείδωμα στο δρόμο</string>
 	
 	<string name="osmand_short_description_80_chars">Επισκόπηση παγκόσμιου χάρτη &amp; πλοήγηση για offline και online χάρτες OSM</string>
-	<string name="osmand_long_description_1000_chars">" OsmAnd (OSM Αυτοματοποιημένες Οδηγίες Πλοήγησης) Ο OsmAnd είναι μια εφαρμογή πλοήγησης ανοικτού κώδικα με πρόσβαση σε μεγάλη ποικιλία από παγκόσμια δεδομένα OpenStreetMap (OSM). Όλα τα δεδομένα χάρτη (διανυσματικά ή πλακίδια χάρτη) μπορούν να αποθηκευτούν στην κάρτα μνήμης του τηλεφώνου για χρήση χωρίς σύνδεση. Ο OsmAnd επίσης προσφέρει offline και online λειτουργία δρομολόγησης συμπεριλαμβανομένων φωνητικών οδηγιών. Μερικά από τα βασικά χαρακτηριστικά: - Πλήρης λειτουργικότητα εκτός σύνδεσης (αποθήκευση των ληφθέντων διανυσματικών ή πλακιδίων χάρτη στον αποθηκευτικό χώρο της συσκευής) - Διαθέσιμοι διανυσματικοί χάρτες για όλο τον κόσμο - Λήψη χαρτών χωρών ή περιοχών κατευθείαν από την εφαρμογή - Δυνατότητα overlay από αρκετές στρώσεις χάρτη, όπως GPX ή ίχνη πλοήγησης, Σημεία Ενδιαφέροντος, αγαπημένα, ισοϋψείς γραμμές, στάσεις Μ.Μ. Μεταφοράς, πρόσθετους χάρτες με προσαρμόσιμη διαφάνεια - Εκτός σύνδεσης αναζήτηση για διευθύνσεις και μέρη (ΣΕ) - Εκτός σύνδεσης δρομολόγηση για μικρές αποστάσεις (πειραματικό) - Κατάσταση Αυτοκινήτου, ποδηλάτου και πεζού με: - προαιρετική αυτόματη εναλλαγή όψης ημέρας/νύχτας - προαιρετική εστίαση χάρτη βάσει ταχύτητας - προαιρετικός αυτόματος προσανατολισμός χάρτη βάσει της πυξίδας ή της κατεύθυνσης κίνησης - προαιρετική καθοδήγηση με λωρίδες, εμφάνιση ορίου ταχύτητας, μαγνητοφωνημένες και TTS φωνές Περιορισμοί αυτής της ελεύθερης έκδοσης του : - Περιορισμένος αριθμός λήψης χαρτών - Όχι πρόσβαση στα εκτός σύνδεσης Σημ Ενδ της Wikipedia Ο OsmAnd είναι ενεργά στο στάδιο της ανάπτυξης και το εγχείρημά μας και η περαιτέρω ανάπτυξή του επαφίεται στις οικονομικές προσφορές για την χρηματοδότηση της ανάπτυξης και τις δοκιμές νέων λειτουργιών. Παρακαλούμε σκεφτείτε την αγορά του OsmAnd+, ή χρηματοδοτήστε συγκεκριμένες νέες λειτουργίες ή κάντε μια γενική δωρεά στο osmand.net. "</string>
-	<string name="osmand_plus_short_description_80_chars">Επισκόπηση παγκόσμιου χάρτη &amp; πλοήγηση για offline και online χάρτες OSM</string>
-	<string name="osmand_plus_long_description_1000_chars">" OsmAnd+ (OSM Αυτοματοποιημένες Οδηγίες Πλοήγησης) Ο OsmAnd+ είναι μια εφαρμογή πλοήγησης ανοικτού κώδικα με πρόσβαση σε μεγάλη ποικιλία από παγκόσμια δεδομένα OpenStreetMap (OSM). Όλα τα δεδομένα χάρτη (διανυσματικά ή πλακίδια χάρτη) μπορούν να αποθηκευτούν στην κάρτα μνήμης του τηλεφώνου για χρήση χωρίς σύνδεση. Ο OsmAnd+ επίσης προσφέρει offline και online λειτουργία δρομολόγησης συμπεριλαμβανομένων φωνητικών οδηγιών. Ο OsmAnd+ είναι η πληρωτέα έκδοση της εφαρμογής, με την αγορά της υποστηρίζετε το εγχείρημα, χρηματοδοτείτε την ανάπτυξη νέων λειτουργιών, και λαμβάνετε τις τελευταίες ενημερώσεις. Μερικά από τα βασικά χαρακτηριστικά: - Πλήρης λειτουργικότητα εκτός σύνδεσης (αποθήκευση των ληφθέντων διανυσματικών ή πλακιδίων χάρτη στον αποθηκευτικό χώρο της συσκευής) - Διαθέσιμοι διανυσματικοί χάρτες για όλο τον κόσμο - Απεριόριστη λήψη χαρτών χωρών ή περιοχών κατευθείαν από την εφαρμογή - Χαρακτηριστικό της Wikipedia εκτός σύνδεσης (λήψη Σημ Ενδ Wikipedia), υπέροχο για αξιοθέατα, - Δυνατότητα overlay από αρκετές στρώσεις χάρτη, όπως GPX ή ίχνη πλοήγησης, Σημεία Ενδιαφέροντος, αγαπημένα, ισοϋψείς γραμμές, στάσεις Μ.Μ. Μεταφοράς, πρόσθετους χάρτες με προσαρμόσιμη διαφάνεια - Εκτός σύνδεσης αναζήτηση για διευθύνσεις και μέρη (ΣΕ) - Εκτός σύνδεσης δρομολόγηση για μικρές αποστάσεις (πειραματικό) - Κατάσταση Αυτοκινήτου, ποδηλάτου και πεζού με: - προαιρετική αυτόματη εναλλαγή όψης ημέρας/νύχτας - προαιρετική εστίαση χάρτη βάσει ταχύτητας - προαιρετικός αυτόματος προσανατολισμός χάρτη βάσει της πυξίδας ή της κατεύθυνσης κίνησης - προαιρετική καθοδήγηση με λωρίδες, εμφάνιση ορίου ταχύτητας, μαγνητοφωνημένες και TTS φωνές "</string>
-	
-	
-	<string name="filterpoi_activity">Δημιουργία φίλτρου ΣΕ</string>
+    <string name="osmand_plus_short_description_80_chars">Επισκόπηση παγκόσμιου χάρτη &amp; πλοήγηση για offline και online χάρτες OSM</string>
+
+
+    <string name="filterpoi_activity">Δημιουργία φίλτρου ΣΕ</string>
 	<string name="recalculate_route_to_your_location">Τρόπος μετακίνησης:</string>
 	<string name="select_navigation_mode">Επιλογή τρόπου μετακίνησης</string>
 	
@@ -69,10 +66,9 @@
 	<string name="map_widget_compass">Πυξίδα</string>
 	
 	<string name="map_widget_reset">Επαναφορά στα προκαθορισμένα</string>
-	
-	
-	<string name="map_widget_parking">Στάθμευση</string>
-	<string name="map_widget_monitoring">Εγγραφή GPX</string>
+
+
+    <string name="map_widget_monitoring">Εγγραφή GPX</string>
 	<string name="map_widget_speed">Ταχύτητα</string>
 	<string name="map_widget_distance">Προορισμός</string>
 	<string name="map_widget_altitude">Υψόμετρο</string>
@@ -90,11 +86,8 @@
 	<string name="avoid_toll_roads">Αποφυγή διοδίων</string>
 	<string name="continue_follow_previous_route_auto">Το προηγούμενο δρομολόγιο δεν είχε τελειώσει. Να συνεχιστεί;? (%1$s δευτ.)</string>
 	<string name="route_updated_loc_found">Η διαδρομή θα υπολογιστεί όταν βρεθεί η θέση</string>
-	<string name="osmand_parking_hours">Ώρες</string>
-	<string name="osmand_parking_minutes">Λεπτά</string>
-	<string name="osmand_parking_position_description_add_time">Το αυτοκίνητο στάθμευσε στις:</string>
-	
-	<string name="select_animate_speedup">Επιλέξτε ταχύτητα της προσομοίωσης διαδρομής</string>
+
+    <string name="select_animate_speedup">Επιλέξτε ταχύτητα της προσομοίωσης διαδρομής</string>
     	<string name="global_app_allocated_memory_descr">Εκχωρημένη μνήμη %1$s MB (Όριο Android %2$s MB, Dalvik %3$s MB).</string>
 	<string name="global_app_allocated_memory">Εκχωρημένη μνήμη</string>
 	<string name="native_app_allocated_memory_descr">Συνολική εγγενής μνήμη δεσμευμένη από την εφαρμογή %1$s MB (Dalvik %2$s MB, άλλα %3$s MB).
@@ -103,28 +96,8 @@
 	
 	<string name="starting_point_too_far">Η αφετηρία είναι πολύ μακριά από το κοντινότερο δρόμο.</string>
 	<string name="shared_location">Κοινή τοποθεσία</string>
-	<string name="osmand_parking_event">Πάρτε το αυτοκίνητο από το πάρκινγκ</string>
-	<string name="osmand_parking_warning">Προσοχή</string>
-	<string name="osmand_parking_warning_text">Ειδοποίηση για παραλαβή το αυτοκινήτου σας είχε προστεθεί προηγουμένως στο Ημερολόγιό σας. Θα παραμείνει εκεί μέχρι να το διαγράψετε χειροκίνητα.</string>    
-	<string name="osmand_parking_time_limit_title">Ορισμός χρονικού ορίου στάθμευσης</string>
-	<string name="osmand_parking_delete_confirm">Θέλετε να αφαιρέσετε την τοποθεσία του παρκαρισμένου αυτοκινήτου;</string>
-	<string name="osmand_parking_delete">Διαγράψτε ένα δείκτη στάθμευσης</string>
-	<string name="osmand_parking_choose_type">Επιλέξτε τον τύπο της στάθμευσης</string>
-	<string name="osmand_parking_lim_text">Ορισμένου χρόνου</string>
-	<string name="osmand_parking_no_lim_text">Απεριορίστου χρόνου</string>
-	<string name="osmand_parking_add_event">Προσθέστε μια ειδοποίηση στην εφαρμογή Ημερολόγιο</string>
-	<string name="osmand_parking_time_limit">Στάθμευση περιορισμένου χρόνου</string>
-	<string name="osmand_parking_time_no_limit">Στάθμευση απεριορίστου χρόνου</string>
-	<string name="osmand_parking_position_description">Η θέση του σταθμευμένου αυτοκινήτου σας. %1$s</string>
-	<string name="osmand_parking_position_description_add">Παραλαβή αυτοκινήτου στις:</string>
-	<string name="osmand_parking_pm">ΜΜ</string>
-	<string name="osmand_parking_am">ΠΜ</string>
-	<string name="osmand_parking_position_name">Σημείο στάθμευσης</string>
-	<string name="osmand_parking_plugin_description">Αυτό το πρόσθετο σας επιτρέπει να αποθηκεύσετε τη θέση του σταθμευμένου αυτοκινήτου σας.</string>
-	<string name="osmand_parking_plugin_name">Θέση Στάθμευσης</string>
-	<string name="context_menu_item_add_parking_point">Σήμανση ως μια θέση στάθμευσης</string>
-	<string name="context_menu_item_delete_parking_point">Διαγραφή ενός δείκτη στάθμευσης</string>
-	<string name="gpxup_public">Δημόσιο</string>
+    <string name="context_menu_item_add_parking_point">Σήμανση ως μια θέση στάθμευσης</string>
+    <string name="gpxup_public">Δημόσιο</string>
 	<string name="gpxup_identifiable">Αναγνωρίσιμες</string>
 	<string name="gpxup_trackable">Ιχνηλάσιμο</string>
 	<string name="gpxup_private">Ιδιωτικό</string>
@@ -960,19 +933,11 @@
     <string name="osmand_srtm_short_description_80_chars">Πρόσθετο του OsmAnd για ισοϋψείς γραμμές χωρίς σύνδεση</string>
     
     <string name="map_widget_distancemeasurement">Μέτρηση απόστασης</string>
-    <string name="recording_open_external_player">Άνοιγμα εξωτερικού αναπαραγωγέα</string>
     <string name="recording_delete_confirm">Θέλετε να αφαιρέσετε αυτή την εγγραφή;</string>
-    
-    <string name="recording_unavailable">μη διαθέσιμο</string>
-    <string name="recording_can_not_be_played">Η εγγραφή δεν μπορεί να αναπαραχθεί</string>
-    <string name="recording_context_menu_delete">Διαγραφή εγγραφής</string>
+
     <string name="recording_context_menu_play">Αναπαραγωγή</string>
-    <string name="recording_description">Εγγραφή %1$s %3$s %2$s</string>
-    <string name="recording_default_name">Εγγραφή</string>
     <string name="av_widget_action_descr">Επιλέξτε προκαθορισμένη ενέργεια γραφικού στοιχείου</string>
     <string name="av_widget_action">Προκαθορισμένη ενέργεια γραφικού στοιχείου</string>
-    <string name="av_use_external_recorder">Χρήση εγγραφέα συστήματος</string>
-    <string name="recording_error">Προέκυψε σφάλμα κατά την εγγραφή </string>
     <string name="shared_string_control_stop">Σταμάτημα</string>
 
     <string name="dropbox_plugin_description">Το πρόσθετο dropbox επιτρέπει τον συγχρονισμό ιχνών και σημειώσεων εικόνας/ήχου με τον dropbox λογαριασμό σας.</string>
@@ -984,10 +949,7 @@
     <string name="stop_routing_confirm">Είστε σίγουρος ότι θέλετε να σταματήσετε την πλοήγηση;</string>
     <string name="clear_dest_confirm">Είστε σίγουρος ότι θέλετε να καθαρίσετε το σημείο προορισμού (και τους ενδιάμεσους προορισμούς);</string>
     <string name="precise_routing_mode">Ακριβής δρομολόγηση (άλφα)</string>
-    <string name="recording_context_menu_show">Εμφάνιση</string>
-    <string name="recording_photo_description">Φωτογραφία %1$s %2$s</string>
     <string name="av_def_action_picture">Λήψη φωτογραφίας</string>
-    <string name="recording_context_menu_precord">Λήψη φωτογραφίας</string>
 
     <string name="precise_routing_mode_descr">Ενεργοποίηση για υπολογισμό δρομολογίων με ακρίβεια χωρίς προβλήματα. Ακόμη περιορισμένο σε σχέση με την απόσταση και αργό.</string>
     <string name="shared_string_control_start">Έναρξη</string>
@@ -1006,11 +968,9 @@
     <string name="map_widget_gps_info">Πληροφορίες GPS</string>
     
     <string name="download_hillshade_maps">Ανάγλυφα</string>
-    <string name="osmand_play_title_30_chars">OsmAnd Χάρτες &amp; Δρομολόγηση</string>
-	<string name="osmand_plus_play_title_30_chars">OsmAnd+ Χάρτες &amp; Πλοήγηση</string>
-	
-    
-	<string name="street_name">Όνομα οδού</string>
+
+
+    <string name="street_name">Όνομα οδού</string>
 	<string name="hno">Αριθμός σπιτιού</string>
     <string name="monitoring_settings">Καταγραφή ταξιδιού</string>
     <string name="monitoring_settings_descr">Διαμορφώστε πως θα καταγράφονται τα ταξίδια</string>
@@ -1080,8 +1040,7 @@
 	<string name="av_camera_focus_auto">Αυτόματη εστίαση</string>
 	<string name="av_camera_focus_edof">Εκτεταμένου βάθους πεδίου (EDOF)</string>
 	<string name="av_camera_focus_infinity">Η εστίαση ρυθμίστηκε στο άπειρο</string>
-	<string name="av_photo_play_sound">Αναπαραγωγή ήχου κατά τη λήψη φωτογραφίας</string>
-	<string name="announce_gpx_waypoints">GPX σημεία διαδρομής</string>
+    <string name="announce_gpx_waypoints">GPX σημεία διαδρομής</string>
     <string name="speak_title">Εκφώνηση…</string>
 	<string name="speak_descr">Ρυθμίστε για εκφώνηση ονομάτων οδών, προειδοποιήσεων κυκλοφορίας (αναγκαστικές στάσεις, σαμαράκια), κάμερες ταχύτητας, όρια ταχύτητας</string>
 	<string name="speak_street_names">Ονόματα οδών (TTS)</string>
@@ -1122,8 +1081,7 @@
     <string name="edit_tilesource_choose_existing">Επιλογή υπάρχοντος…</string>
     <string name="driving_region_descr">Επιλέξτε περιοχή οδήγησης: ΗΠΑ, Ευρώπη, ΗΒ, Ασία, κλπ</string>
 	<string name="driving_region">Περιοχή οδήγησης</string>
-	<string name="av_photo_play_sound_descr">Επιλέξτε εάν θα αναπαράγεται ήχος κατά τη λήψη φωτογραφίας</string>
-<string name="app_modes_choose">Προφίλ εφαρμογής</string>
+    <string name="app_modes_choose">Προφίλ εφαρμογής</string>
 	<string name="map_widget_map_rendering">Σχεδιασμός χάρτη</string>
     <string name="app_mode_hiking">Πεζοπορία</string>
     <string name="app_mode_motorcycle">Μοτοσυκλέτα</string>
@@ -1474,7 +1432,6 @@
 	<string name="use_displayed_track_for_navigation">Θέλετε να χρησιμοποιήσετε το εμφανιζόμενο ίχνος για πλοήγηση;</string>
     <string name="route_descr_destination">Προορισμός</string>
     <string name="voices">Φωνητικές οδηγίες</string>
-	<string name="parking_place">Χώρος στάθμευσης</string>
     <string name="gps_status">Κατάσταση GPS</string>
     <string name="points">Σημεία</string>
     
@@ -1530,7 +1487,7 @@
 	<string name="shared_string_audio">Ήχος</string>
     <string name="shared_string_photo">Φωτογραφία</string>
 
-	<string name="osmand_parking_time_left">αριστερά</string> <string name="your_edits">Η επεξεργασίες σου</string>
+    <string name="your_edits">Η επεξεργασίες σου</string>
     <string name="waypoint_visit_after">Επίσκεψη μετά</string>
     <string name="waypoint_visit_before">Επίσκεψη πριν</string>
     <string name="routing_settings_2">Ρυθμίσεις πλοήγησης</string>
@@ -1647,8 +1604,7 @@
 	<string name="location_on_map">Τοποθεσία:\n Γ. Πλ %1$s\n Γ. Μηκ %2$s</string>
 	<string name="rendering_value__name">Προκαθορισμένο</string>
     <string name="print_route">Εκτύπωση διαδρομής</string>
-    <string name="osmand_parking_overdue">εκπρόθεσμο</string>
-	<string name="simulate_your_location">Προσομοίωση της θέση σας</string>
+    <string name="simulate_your_location">Προσομοίωση της θέση σας</string>
     <string name="rendering_value_highContrastRoads_name">Δρόμοι με υψηλή αντίθεση</string>
 	<string name="plugin_settings">Πρόσθετα</string>
 	<string name="av_locations">Τοποθεσίες</string>

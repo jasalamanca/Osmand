@@ -32,7 +32,6 @@
     <string name="shared_string_search">തെരച്ചില്‍</string>
     <string name="shared_string_message">സന്ദേശം</string>
     <string name="welmode_download_maps">ഭൂപടങ്ങള്‍ ഡൗണ്‍ലോഡ് ചെയ്യുക</string>
-    <string name="osmand_parking_time_left">മിച്ചം</string>
     <string name="shared_string_ok">ശരി</string>
     <string name="shared_string_cancel">റദ്ദാക്കുക</string>
     <string name="shared_string_yes">അതെ</string>
@@ -119,20 +118,14 @@
     <string name="hno">വീട്ടു നംബര്‍</string>
     <string name="phone">ഫോണ്‍</string>
     <string name="download_wikipedia_maps">വിക്കിപീഡിയ</string>
-    <string name="recording_context_menu_show">കാണിക്കുക</string>
     <string name="target_points">ഉദ്ദിഷ്ടസ്ഥലങ്ങള്‍</string>
-    <string name="poi_filter_parking">പാര്‍ക്കിങ്ങ്</string>
     <string name="poi_filter_emergency">എമെര്‍ജന്‍സി (അടിയന്തിരം)</string>
     <string name="poi_filter_public_transport">പൊതു ഗതാഗത സംവിധാനം</string>
     <string name="poi_filter_accomodation">ആക്കോമഡേഷന്‍</string>
     <string name="poi_filter_sightseeing">സൈറ്റ്സീയിങ്ങ്</string>
     <string name="map_widget_lock_screen">സ്ക്രീന്‍ പൂട്ടുക</string>
-    <string name="map_widget_parking">പാര്‍ക്കിങ്ങ്</string>
     <string name="map_widget_distance">ലക്ഷ്യസ്ഥാനം</string>
     <string name="bg_service_screen_lock">സ്ക്രീന്‍ പൂട്ടുക</string>
-    <string name="osmand_parking_hours">മണിക്കുര്‍</string>
-    <string name="osmand_parking_minutes">മിനിറ്റ്</string>
-    <string name="osmand_parking_warning">മുന്നറിയിപ്പു്</string>
     <string name="gpxup_public">പബ്ളിക്</string>
     <string name="gpxup_private">പ്രൈവറ്റ്</string>
     <string name="address_search_desc">വിലാസം തെരയുക</string>
@@ -320,13 +313,8 @@
     <string name="access_arrival_time">"ആഗമന സമയം "</string>
     <string name="stop_routing_confirm">ഉറപ്പായിട്ടും വഴികാട്ടല്‍ നിര്‍ത്തണമോ?</string>
     <string name="precise_routing_mode">"സൂക്ഷ്മതയുള്ള  വഴികണ്ടെത്തല്‍(alpha)"</string>
-    <string name="av_use_external_recorder">"സിസ്റ്റം റിക്കോഡര്‍ ഉപയോഗിക്കുക "</string>
     <string name="av_use_external_camera_descr">"ഫോട്ടോക്ക് സിസ്റ്റം ആപ്ളിക്കേഷന്‍ ഉപയോഗിക്കുക "</string>
-    <string name="recording_unavailable">ലഭ്യമല്ല</string>
-    <string name="recording_can_not_be_played">" റിക്കോര്‍ഡിങ്ങ് പ്ളേ ചെയ്യാനാവുന്നില്ല "</string>
     <string name="recording_context_menu_play">പ്രവര്‍ത്തിപ്പിക്കുക</string>
-    <string name="recording_description">റിക്കോഡിങ്ങ് %1$s %3$s %2$s</string>
-    <string name="recording_default_name">റിക്കോഡിങ്ങ്</string>
     <string name="download_select_map_types">മറ്റുളള ഭൂപടങ്ങള്‍</string>
     <string name="rendering_attr_noAdminboundaries_name">"അതിരുകള്‍ മറച്ചുവക്കുക "</string>
     <string name="incremental_search_city">"നഗരങ്ങള്‍ തിരയുക "</string>
@@ -346,7 +334,6 @@
     <string name="map_widget_next_turn_small">അടുത്ത (ചെറു) തിരുവ്</string>
     <string name="map_widget_next_next_turn">"രണ്ടാമത്തെ  തിരുവ്"</string>
     <string name="bg_service_interval">ഉണരാനുള്ള ഇടവേള:</string>
-    <string name="osmand_parking_position_description_add">കാര്‍ എടുക്കേണ്ട സമയം :</string>
     <string name="rendering_attr_appMode_name">വരച്ച് കാണിക്കുന്ന രീതി</string>
     <string name="rendering_attr_contourLines_name">കോണ്ടൂര്‍ ലൈനുകള്‍ കാണിക്കുക</string>
     <string name="gpx_tags_txt">" ടാഗുകള്‍"</string>
@@ -498,8 +485,6 @@
     <string name="app_mode_pedestrian">കാല്‍നടയാത്രക്കാരന്‍</string>
     <string name="add_favorite_dialog_default_favourite_name">താല്‍പര്യമുള്ളവ</string>
     <string name="add_favorite_dialog_favourite_added_template">താല്‍പര്യ ബിന്ദു \'\'{0}\'\' വിജയകരമായി ചേര്‍ത്തിരിക്കുന്നു.</string>
-    <string name="av_photo_play_sound">ഫോട്ടൊയെടുക്കുമ്പോള്‍ ശബ്ദമുണ്ടാക്കുക</string>
-    <string name="av_photo_play_sound_descr">"ഫോട്ടൊയുടെ കൂടെ ശബ്ദം  വേണോ എന്ന് തെരഞ്ഞെടുക്കുക"</string>
     <string name="app_name_osmand">ഓഎസ്എം ആന്റ്</string>
     <string name="activate_seamarks_plugin">സീമാര്‍ക്ക് പ്ളഗ്-ഇന്‍ സജീവമാക്കുക</string>
     <string name="activate_srtm_plugin">"എസ്ആര്‍ടിഎം പ്ളഗ്-ഇന്‍ സജീവമാക്കുക "</string>
@@ -548,7 +533,6 @@
     <string name="storage_directory_default">അകത്തുള്ള മെമ്മറി</string>
     <string name="storage_directory">ഭൂപടം സൂക്ഷിക്കുന്ന സ്ഥലം</string>
     <string name="welcome_header">സ്വാഗതം</string>
-    <string name="osmand_parking_overdue">കാലാവധി കഴിഞ്ഞൂ</string>
     <string name="osmand_parking_minute">മി.</string>
     <string name="your_edits">നിങ്ങളുടെ എഡിറ്റുകള്‍</string>
     <string name="waypoint_visit_after">പിമ്പായി സന്ദര്‍ശിക്കുക</string>
@@ -634,7 +618,6 @@
     <string name="website">വെബ്സൈറ്റ്</string>
     <string name="favourites_list_activity">"താല്‍പര്യമുള്ളവയില്‍ തെരയുക "</string>
     <string name="clear_dest_confirm">ഇടലക്ഷ്യസ്ഥാനങ്ങള്‍ ഉള്‍പടെ ലക്ഷ്യസ്ഥാനങ്ങള്‍ കളയട്ടെ?</string>
-    <string name="recording_context_menu_precord">ഒരു ഫോട്ടോ എടുക്കുക</string>
     <string name="dropbox_plugin_name">ഡ്രോപ്ബോക്സ് പ്ളഗ് ഇന്‍</string>
     <string name="download_roads_only_item">വഴികൾ മാത്രമുള്ളത്</string>
     <string name="download_srtm_maps">കോണ്ടൂര്‍ ലൈനുക</string>
@@ -1141,7 +1124,6 @@
     <string name="map_widget_mini_route">"ചെറിയ റൂട്ട് മാപ്പ് "</string>
     <string name="continue_follow_previous_route_auto">മുന്‍ റൂട്ട് വഴികാട്ടി അവസാനിച്ചില്ല. അത് പിന്തുരട്ടെ ? (%1$s സെക്കന്റുകള്‍ )</string>
     <string name="native_app_allocated_memory">"സഹജമായ മൊത്തം  മെമ്മറി"</string>
-    <string name="context_menu_item_delete_parking_point">പാര്‍ക്കിങ്ങ് മാര്‍ക്കര്‍ നീക്കം ചെയ്യുക</string>
     <string name="navigate_point_format">ഘടന</string>
     <string name="confirm_interrupt_download">ഫയല്‍ ഡൗണ്‍ലോഡ് റദ്ദാക്കണോ?</string>
     <string name="native_rendering">സഹജമായ വരച്ച് കാണിക്കല്‍(നേറ്റിവ് റെണ്ടര്‍)</string>
@@ -1300,7 +1282,6 @@
     <string name="select_animate_speedup">"റൂട്ട് യാത്ര അനുകരിക്കുന്നതിന്റെ(സിമുലേഷന്‍) വേഗത തെരഞ്ഞെടുക്കുക "</string>
     <string name="starting_point_too_far">അടുത്തുള്ള റോഡില്‍ നിന്നും വളരെ അകലെയാണു പ്രാരംഭബിന്ദു.</string>
     <string name="shared_location">പങ്കുവച്ച സ്ഥാനം</string>
-    <string name="osmand_parking_delete">പാര്‍ക്കിങ്ങ് മാര്‍ക്കര്‍ നീക്കം ചെയ്യുക</string>
     <string name="share_route_as_gpx">"റൂട്ട്  ജിപിഎക്സ് ഫയലായി പങ്ക് വക്കുക "</string>
     <string name="share_route_subject">ഓഎസ്എംആന്ഡ് വഴി പങ്ക് വെച്ച റൂട്ടുകള്‍</string>
     <string name="local_index_description">വിവരങ്ങള്‍ അറിയാന്‍ ഏതെങ്കിലും നിലവിലുള്ള ഇനത്തെ ക്ളിക്ക് ചെയ്യുക, നിര്‍ജീവമാക്കാനോ നീക്കം ചെയ്യാനോ അമര്‍ത്തി പിടിക്കുക. ഉപകരണത്തില്‍ ഇപ്പോഴുള്ള വിവരങ്ങള്‍ (%1$s ഫ്രീ):</string>
@@ -1520,7 +1501,6 @@
     <string name="plugin_touringview_name">ടൂറിങ്ങ് ഭൂപടവിന്യാസം</string>
 	<string name="plugin_nautical_name">കപ്പലോട്ട ഭൂപട വിന്യാസം</string>
 	<string name="plugin_ski_name">സ്കീ ഭൂപടവിന്യാസം</string>
-	<string name="parking_place">പാര്‍ക്ക് ചെയ്ത സ്ഥലം</string>
     <string name="lock_screen_request_explanation">" സ്ക്രീന്‍ ഓഫ് ചെയ്ത് പവര്‍ ഉപയോഗം കുറക്കാന്‍ %1$s ന് ഈ അനുമതി വേണം."</string>
     <string name="none_selected_gpx">ജിപിഎക്സ് ഫയലുകളൊന്നും തെരഞ്ഞെടുത്തിട്ടില്ല. തെരഞ്ഞെടുക്കാനായി ലഭ്യമായ പാതയില്‍ ഞെക്കിപിടിക്കുക.</string>
     <string name="layer_amenity_label">ബിന്ദുവിന്റെ പേരുചീട്ട്</string>
@@ -1535,17 +1515,8 @@
     <string name="local_openstreetmap_act_title">ഓഎസ്എം നവീകരണങ്ങള്‍</string>
     <string name="layer_hillshade">ഹില്‍ഷേഡ്(മലനിഴല്‍) പാളീ</string>
     <string name="prefer_in_routing_title">ഇഷ്ടങ്ങള്‍…</string>
-    <string name="recording_context_menu_delete">റിക്കോഡിങ്ങ് നീക്കം ചെയ്യുക</string>
     <string name="poi_filter_food_shop">കട(ആഹാരം)</string>
     <string name="poi_filter_fuel">"ഇന്ധനം "</string>
-    <string name="osmand_play_title_30_chars">ഓഎസ്എംആന്ഡ് ഭൂപടങ്ങളും വഴികാട്ടിയും</string>
-    <string name="osmand_plus_play_title_30_chars">ഓഎസ്എംആന്ഡ്+ ഭൂപടങ്ങളും വഴികാട്ടിയും</string>
-    <string name="osmand_parking_position_description_add_time">കാര്‍ പാര്‍ക്ക് ചെയ്തിരിക്കുന്നത്</string>
-    <string name="osmand_parking_choose_type">പാര്‍ക്കിങ്ങ് തരം തെരഞ്ഞെടുക്കുക</string>
-    <string name="osmand_parking_time_limit">"സമയ നിയന്ത്രിത പാര്‍ക്കിങ്ങ് "</string>
-    <string name="osmand_parking_time_no_limit">"സമയ നിയന്ത്രണമില്ലാത്ത പാര്‍ക്കിങ്ങ് "</string>
-    <string name="osmand_parking_pm">പിഎം</string>
-    <string name="osmand_parking_position_name">പാര്‍ക്കിങ്ങ് സ്ഥലം</string>
     <string name="poi_search_desc">താല്‍പര്യ ബിന്ദു (പിഓഐ) തിരയുക</string>
     <string name="offline_navigation_not_available">ഓഎസ്എംആന്ഡ് ഓഫ്ലൈന്‍ വഴികാട്ടി താല്‍ക്കാലം ലഭ്യമല്ല.</string>
     <string name="local_indexes_cat_map">അടിസ്ഥാന വെക്ടര്‍ ഭൂപടങ്ങള്‍</string>
@@ -1598,10 +1569,6 @@
     <string name="osm_edits">ഓഎസ്എം തിരുത്തലുകള്‍</string>
     <string name="shared_string_on">ഓണ്‍</string>
     <string name="shared_string_or">"അല്ലെങ്കില്‍ "</string>
-    <string name="osmand_parking_plugin_name">പാര്‍ക്കിങ്ങ് സ്ഥാനം</string>
-	<string name="osmand_parking_plugin_description">"പാര്‍ക്കിങ്ങ് സ്ഥാന അനുബന്ധം എവിടെയാണ് കാര്‍ പാര്‍ക്ക് ചെയ്തത് എന്നും എത്രസമയം കൂടി ലഭ്യമാണ്(സമയപരിമിതമെങ്കില്‍) ഓര്‍മിപ്പിക്കുന്നു.
-
-പാര്‍ക്കിങ്ങ് സ്ഥലവും സമയവും ഓഎസ്എംആന്ഡിന്റെ ഡാഷ്ബോഡിലും ഭൂപത്തിലും കാണാവുന്നതാണ്. കൂടാതെ ആന്ഡ്രോയിഡ് കലണ്ടറിലൊരു  ഓര്‍മ്മക്കത്ത് ചേര്‍ക്കാവുന്നതാണ്."</string>
     <string name="osm_settings">ഓഎസ്എം തിരുത്തലുകള്‍</string>
     <string name="watch">നിരീക്ഷണം</string>
     <string name="use_opengl_render_descr">ഉപകരണ സഹായത്തോടെ ഓപണ്‍ജിഎല്‍ ഉപയോഗിച്ച് വരക്കുക (ചില ഉപകരണങ്ങളില്‍ പ്രവര്‍ത്തിക്കില്ല)</string>
@@ -1645,12 +1612,6 @@
     <string name="use_compass_navigation_descr">മറ്റ് വിധത്തില്‍ ദിശ കണ്ട്പിടിക്കാനായില്ലെങ്കില്‍ വടക്കുനോക്കി ഉപയോഗിക്കുക</string>
     
     <string name="global_app_allocated_memory_descr">"അനുവദിച്ചിരിക്കുന്ന മെമ്മറി  %1$s MB (ആന്ഡ്രോയിഡ് പരിധി  %2$s MB, ഡാല്വിക്  %3$s MB)."</string>
-    <string name="osmand_parking_warning_text">നിങ്ങളുടെ കാര്‍ എടുക്കാനുള്ള ഒരു അറിയിപ്പ്‌ കലണ്ടറില്‍ ചേര്‍ത്തിരിക്കുന്നു. അത് നിങ്ങള്‍ നീക്കം ചെയ്യുന്നത് വരെ അവിടെയുണ്ടാകും.</string>
-    <string name="osmand_parking_time_limit_title">പാര്‍ക്ക് ചെയ്യാവുന്ന സമയ പരിധി ചൂണ്ടിക്കാണിക്കുക</string>
-    <string name="osmand_parking_delete_confirm">പാര്‍ക്കിങ്ങ് സ്ഥാനം അടയാളം നീക്കം ചെയ്യട്ടെ?</string>
-    <string name="osmand_parking_lim_text">സമയ പരിമിതം</string>
-    <string name="osmand_parking_no_lim_text">സമയ-അപരിമിതം</string>
-    <string name="osmand_parking_position_description">നിങ്ങളുടെ കാറിന്റെ പാര്‍ക്കിങ്ങ് സ്ഥാനം. %1$s</string>
     <string name="rendering_attr_noPolygons_name">"ബഹുഭുജങ്ങള്‍(പോളിഗണ്‍ ) മറയ്ക്കുക "</string>
     <string name="favourites_search_desc">ഇഷ്ടമുള്ളവ തെരയുക</string>
     <string name="first_time_msg">"ഓഎസ്എം ആന്ഡ് ഉപയോഗിക്കുന്നതിനു നന്ദി. ഈ ആപ്ളിക്കേഷന്റെ പ്രവര്‍ത്തനത്തിനാവശ്യമായ  ചില പ്രാദേശിക വിവരങ്ങള്‍ നിങ്ങള്‍ക്ക് \'സജ്ജീകരണങ്ങള്‍-&gt;ഭൂപട ഫയലുകളുടെ നിയന്ത്രണം\' വഴി ഡൗണ്‍ലോഡ് ചെയ്യാവുന്നതാണ്. അതിന് ശേഷം നിങ്ങള്‍ക്ക് ഭൂപടങ്ങള്‍ കാണനും, വിലാസങ്ങള്‍ കണ്ട്പിടിക്കാനും, താല്‍പര്യബിന്ദുക്കള്‍ തെരഞ്ഞെടുക്കനും, പൊതുഗതാഗതസംവിധാനം കണ്ടെത്താനും സാധിക്കും."</string>

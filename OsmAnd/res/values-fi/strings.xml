@@ -17,7 +17,6 @@
     <string name="ending_point_too_far">Päätepiste on liian kaukana lähimmästä tiestä.</string>
     <string name="add_tag">Lisää avainsana</string>
     <string name="btn_advanced_mode">Edistynyt näkymä…</string>
-    <string name="poi_filter_parking">Pysäköinti</string>
     <string name="poi_filter_emergency">Hätätapaus</string>
     <string name="poi_filter_public_transport">Julkinen liikenne</string>
     <string name="poi_filter_entertainment">Ajanviete</string>
@@ -61,8 +60,7 @@
 	<string name="map_widget_lock_screen">Lukitse näyttö</string>
 	<string name="map_widget_compass">Kompassi</string>
 	<string name="map_widget_reset">Palauta oletusasetukset</string>
-	<string name="map_widget_parking">Pysäköinti</string>
-	<string name="map_widget_monitoring">GPX kirjaus</string>
+    <string name="map_widget_monitoring">GPX kirjaus</string>
 	<string name="map_widget_speed">Nopeus</string>
 	<string name="map_widget_distance">Päämäärä</string>
 	<string name="map_widget_altitude">Korkeus</string>
@@ -74,15 +72,11 @@
 	<string name="show_traffic_warnings">Liikennevaroitukset</string>
 	<string name="avoid_toll_roads">Vältä tietulleja</string>
 	<string name="route_updated_loc_found">Reitti lasketaan uudelleen, kun sijainti löytyy</string>
-	<string name="osmand_parking_hours">Tunteja</string>
-	<string name="osmand_parking_minutes">Minuutteja</string>
-	<string name="osmand_parking_position_description_add_time">Auto on pysäköity</string>
-	<string name="global_app_allocated_memory">Varattu muisti</string>
+    <string name="global_app_allocated_memory">Varattu muisti</string>
 	<string name="native_app_allocated_memory">Käytettävissä oleva puhelimen muisti</string>
 	
 	<string name="shared_location">Jaettu sijainti</string>
-	<string name="osmand_parking_warning">Varoitus</string>
-	<string name="gpxup_public">Julkinen</string>
+    <string name="gpxup_public">Julkinen</string>
 	<string name="gpxup_identifiable">Tunnistettava</string>
 	<string name="gpxup_trackable">Piirrettävä</string>
 	<string name="gpxup_private">Yksityinen</string>
@@ -452,22 +446,7 @@
 	<string name="bg_service_screen_unlock">Poista näytön lukitus</string>
 	<string name="continue_follow_previous_route_auto">Edellinen navigointi keskeytyi. Haluatko jatkaa sitä? (%1$s sekuntia)</string>
 	<string name="starting_point_too_far">Aloituspiste liian kaukana lähimmästä tiestä.</string>
-	<string name="osmand_parking_event">Nouda auto pysäköinnistä</string>
-	<string name="osmand_parking_warning_text">Kalenteriisi on lisätty muistutus autolle paluusta. Se sälyy kunnes poistat sen käsin.</string>    
-	<string name="osmand_parking_time_limit_title">Aseta aikarajoitus pysäköintiin</string>
-	<string name="osmand_parking_delete_confirm">Haluatko poistaa pysäköidyn auton sijaintimarkkerin?</string>
-	<string name="osmand_parking_delete">Poista pysäköinti</string>
-	<string name="osmand_parking_choose_type">Valitse pysäköinnin tyyppi</string>
-	<string name="osmand_parking_lim_text">Aikarajoitettu</string>
-	<string name="osmand_parking_no_lim_text">Aika rajoittamaton</string>
-	<string name="osmand_parking_add_event">Lisää muistutus kalenteriin</string>
-	<string name="osmand_parking_time_limit">Aikarajoitettu pysäköinti</string>
-	<string name="osmand_parking_time_no_limit">Aika rajoittamaton pysäköinti</string>
-	<string name="osmand_parking_position_description">Pysäköidyn autosi sijainti. %1$s</string>
-	<string name="osmand_parking_position_description_add">Nouda auto kello:</string>
-	<string name="osmand_parking_pm">PM</string>
-	<string name="osmand_parking_am">AM</string>
-	<string name="asap">U-Käännös</string>
+    <string name="asap">U-Käännös</string>
 	
 	<string name="route_roundabout">Liikenneympyrä: poistu %1$d. liittymästä</string>
 	<string name="rendering_attr_contourLines_name">Näytä korkeuskäyrät</string>
@@ -584,11 +563,8 @@
     <string name="search_villages_and_postcodes">Etsi lisää paikkakuntia/postinumeroita</string>
 	<string name="map_widget_max_speed">Nopeusrajoitus</string>
     <string name="monitoring_control_start">aloita</string>
-    <string name="osmand_parking_position_name">Pysäköintipaikka</string>
-	<string name="osmand_parking_plugin_description"/>
-	<string name="context_menu_item_add_parking_point">Merkitse pysäköintipaikaksi</string>
-	<string name="context_menu_item_delete_parking_point">Poista pysäköintimerkki</string>
-	<string name="shared_string_clear">Nollaa</string>
+    <string name="context_menu_item_add_parking_point">Merkitse pysäköintipaikaksi</string>
+    <string name="shared_string_clear">Nollaa</string>
 	
 	<string name="specified_dir_doesnt_exist">Ei löydetty määriteltyä hakemistoa.</string>
 	<string name="voice_is_not_available_title">Ei ääniohjausta valittuna</string>
@@ -616,9 +592,6 @@
     <string name="map_widget_distancemeasurement">Etäisyyden mittaus</string>
     <string name="download_select_map_types">Muut kartat</string>
 
-    <string name="av_use_external_recorder">Käytä ulkoista nauhoitinta</string>
-    <string name="recording_error">Tapahtui virhe nauhoituksen aikana </string>
-    <string name="recording_open_external_player">Avaa ulkoinen soitin</string>
     <string name="recording_delete_confirm">Haluatko poistaa tämän nauhoituksen?</string>
     <string name="unit_of_length">Pituuden yksikkö</string>
 	<string name="unit_of_length_descr">Vaihda pituuden yksikköä</string>
@@ -630,12 +603,9 @@
     <string name="stop_routing_confirm">Oletko varma että haluat lopettaa navigoinnin?</string>
     <string name="clear_dest_confirm">Haluatko varmasti poistaa päämääräsi (ja välillä sijaitsevat kohteet)?</string>
     <string name="precise_routing_mode">Tarkka reititys (alpha)</string>
-    <string name="recording_photo_description">Kuva %1$s %2$s\'ta</string>
     <string name="av_def_action_picture">Ota kuva</string>
-    <string name="recording_context_menu_precord">Ota kuva</string>
-    <string name="recording_context_menu_show">Näytä</string>
-    
-	<string name="application_dir">Datan tallennuskansio</string>
+
+    <string name="application_dir">Datan tallennuskansio</string>
 	<string name="access_arrival_time">Saapumisaika</string>
     <string name="item_checked">valittu</string>
     <string name="item_unchecked">ei valittu</string>
@@ -646,11 +616,9 @@
     
     
     <string name="intermediate_points_change_order">Vaihda järjestystä</string>
-    <string name="recording_unavailable">ei saatavilla</string>
     <string name="recording_context_menu_play">Toista</string>
-    <string name="recording_description">Nauhoitus %1$s %2$s / %3$s</string>
-    
-	<string name="destination_point">Kohde %1$s</string>
+
+    <string name="destination_point">Kohde %1$s</string>
     <string name="context_menu_item_destination_point">Valitse määränpääksi</string>
     <string name="please_select_address">Valitse kaupunki tai katu ensin</string>
     <string name="search_street_in_neighborhood_cities">Etsi katua lähikaupungeista</string>
@@ -792,16 +760,13 @@
     <string name="delay_to_start_navigation_descr">Määritä odotusaika jona pysyt reittisuunnittelu näytöllä</string>
     <string name="delay_to_start_navigation">Aloita navigointi sen jälkeen kun…</string>
     <string name="delay_navigation_start">Aloita navigointi automaattisesti</string>
-    <string name="osmand_parking_overdue">myöhässä</string>
-	<string name="action_create">Luo toiminto</string>
+    <string name="action_create">Luo toiminto</string>
 	<string name="action_modify">Muokkaa toimintoa</string>
 	<string name="action_delete">Poista toiminto</string>
 	<string name="osm_edits">OSM muokkaukset</string>
 	<string name="osmand_parking_hour">t</string>
 	<string name="osmand_parking_minute">min</string>
-	<string name="parking_place_limited">Pysäköintiaika rajoitettu</string>
-	<string name="osmand_parking_time_left">vasen</string>
-	<string name="your_edits">Muokkaukset</string>
+    <string name="your_edits">Muokkaukset</string>
     <string name="waypoint_visit_after">Käy sen jälkeen</string>
     <string name="waypoint_visit_before">Käy ennen</string>
     <string name="simulate_your_location">Simuloi sijaintisi</string>
@@ -1275,8 +1240,7 @@ Maailmanlaajuiset tiedot (välillä 70 astetta pohjoista ja 70 astetta eteläist
     <string name="local_indexes_cat_wiki">Wikipedia</string>
     <string name="osm_edit_context_menu_delete">Poista OSM-muokkaus</string>
     <string name="shared_string_logoff">Kirjaudu ulos</string>
-    <string name="osmand_parking_plugin_name">Pysäköinnin sijainti</string>
-	<string name="osm_settings">OSM muokkaus</string>
+    <string name="osm_settings">OSM muokkaus</string>
     <string name="location_on_map">Sijainti:
  Lat %1$s
  Lon %2$s</string>
@@ -1287,7 +1251,6 @@ Maailmanlaajuiset tiedot (välillä 70 astetta pohjoista ja 70 astetta eteläist
     <string name="rendering_attr_pisteGrooming_name">Rinnehuolto</string>
     <string name="world_ski_missing">Näyttääksesi hiihtokartat tarvitsee ladata erityinen offline kartta</string>
     <string name="nautical_maps_missing">Näyttääksesi merikartat tarvitsee ladata erityinen offline kartta</string>
-    <string name="parking_place">Pysäkointipaikka</string>
     <string name="remove_the_tag">POISTA TAGI</string>
     <string name="gps_status">GPS tila</string>
     <string name="version_settings_descr">Lataa yöllinen julkaisu</string>
@@ -1591,8 +1554,6 @@ Jälki %2$s</string>
     <string name="rendering_attr_showRoadMaps_name">Ainoastaan tiet kartta</string>
     <string name="safe_mode">Vikasietotila</string>
     <string name="map_widget_monitoring_services">Kirjauspalvelut</string>
-    <string name="osmand_play_title_30_chars">OsmAnd kartat &amp; suunnistus</string>
-    <string name="osmand_plus_play_title_30_chars">OsmAnd+ kartat ja suunnistus</string>
     <string name="bg_service_sleep_mode_off">Suorita
  sovellutus taustalla</string>
     <string name="map_widget_renderer">Karttatyyli</string>
@@ -1925,9 +1886,6 @@ Paina ja pidä nähdäksesi kartalla</string>
     <string name="av_widget_action">Oletustyökalutoiminto</string>
     <string name="av_use_external_camera_descr">Käytä järjestelmän sovellutusta kuvalle</string>
     <string name="av_use_external_camera">Käytä kamerasovellutusta</string>
-    <string name="recording_can_not_be_played">Nauhoitusta ei voida toistaa</string>
-    <string name="recording_context_menu_delete">Poista nauhoitus</string>
-    <string name="recording_default_name">Nauhoitetaan</string>
     <string name="index_srtm_parts">osat</string>
     <string name="rendering_attr_hikingRoutesOSMC_name">Retkeilysymbolit kartan päällä</string>
     <string name="rendering_attr_noAdminboundaries_description">Pidä piilossa alueellisten rajojen näyttö (hallintotasot 5-9)</string>

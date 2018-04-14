@@ -74,8 +74,7 @@
 	<string name="quick_action_add_destination_desc">Tapping the action button will add a destination at the screen centre location.</string>
 	<string name="quick_action_replace_destination_desc">Tapping the action button will replace the destination with the screen centre location.</string>
 	<string name="quick_action_add_first_intermediate_desc">Tapping the action button will add a first intermediate point at the screen centre location.</string>
-	<string name="quick_action_add_parking_descr">Tapping the action button will add a parking place at the screen centre location.</string>
-	<string name="quick_action_add_osm_bug_descr">Tapping the action button will add an OSM note at the screen centre location.</string>
+    <string name="quick_action_add_osm_bug_descr">Tapping the action button will add an OSM note at the screen centre location.</string>
 	<string name="quick_action_add_poi_descr">Tapping the action button will add a POI at the screen centre location.</string>
 	<string name="quick_action_add_marker_descr">Tapping the action button will add a map marker at the screen centre location.</string>
 	<string name="quick_action_add_gpx_descr">Tapping the action button will add a GPX waypoint at the screen centre location.</string>

@@ -327,10 +327,8 @@
   <string name="transport_search_desc">सार्वजनिक परिवहन शोध</string>
   <string name="favourites_search_desc">आवडत्या ठिकणांचा शोध</string>
   <string name="rendering_attr_hmRendered_name">नकाशा आधिक तपशिलवार दाखवा</string>
-  
-  <string name="osmand_parking_hours">तास</string>
-  <string name="osmand_parking_minutes">मिनिटे</string>
-  <string name="use_compass_navigation">कंपास वापरा</string>
+
+    <string name="use_compass_navigation">कंपास वापरा</string>
 <string name="select_navigation_mode">परिवहन माध्यम निवडा</string>
 <string name="day_night_info_description">सुर्योदय : %1$s \nसूर्यास्त : %2$s</string>
 <string name="day_night_info">दिवस/रात्र माहिती</string>
@@ -346,7 +344,6 @@
 
 <string name="int_continuosly">सलग</string>
 <string name="email">इमेल</string>
-<string name="poi_filter_parking">पार्किंग</string>
     <string name="poi_filter_emergency">आपत्कालीन</string>
     <string name="poi_filter_public_transport">सार्वजनिक परिवहन</string>
     <string name="poi_filter_entertainment">करमणूक</string>
@@ -361,9 +358,7 @@
     <string name="shared_string_map">नकाशा</string>
     <string name="prefer_in_routing_title">प्राधान्य…</string>
 	<string name="max_speed_none">काही नाही</string>
-    <string name="recording_context_menu_show">दाखवा</string>
     <string name="av_def_action_picture">फोटो घ्या</string>
-    <string name="recording_context_menu_precord">फोटो घ्या</string>
     <string name="app_mode_default">नकाशा पहा</string>
 	<string name="destination_point">इच्छित स्थळ %1$s</string>
     <string name="context_menu_item_destination_point">इच्छित स्थळ निवडा</string>
@@ -403,8 +398,7 @@
 	
 	<string name="map_widget_back_to_loc">मी कुठे आहे</string>
 	<string name="map_widget_compass">कंपास</string>
-	<string name="map_widget_parking">वाहनतळ</string>
-	<string name="map_widget_speed">वेग</string>
+    <string name="map_widget_speed">वेग</string>
 	<string name="map_widget_distance">इच्छित स्थळ</string>
 	<string name="map_widget_altitude">उंची</string>
 	<string name="map_widget_next_turn">पुढचे वळण</string>
@@ -468,8 +462,7 @@
     <string name="confirmation_to_clear_history">आपणांस इतिहास पुसून टाकावयाचा आहे का?</string>
     <string name="osmand_parking_hour">ता</string>
 	<string name="osmand_parking_minute">मि</string>
-	<string name="osmand_parking_time_left">उर्वरित</string>
-	<string name="shared_string_ellipsis">…</string>
+    <string name="shared_string_ellipsis">…</string>
 	<string name="shared_string_and">व</string>
 	<string name="shared_string_or">किंवा</string>
 	<string name="shared_string_history">इतिहास</string>

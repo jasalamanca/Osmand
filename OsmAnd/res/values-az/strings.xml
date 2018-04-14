@@ -191,7 +191,6 @@
     <string name="osm_edits">OSM düzəlişləri</string>
     <string name="osmand_parking_hour">s</string>
     <string name="osmand_parking_minute">dəq</string>
-    <string name="osmand_parking_time_left">sol</string>
     <string name="your_edits">Düzəlişləriniz</string>
     <string name="waypoint_visit_after">Sonra ziyarət et</string>
     <string name="waypoint_visit_before">Öncə ziyarət et</string>
@@ -434,10 +433,7 @@
     <string name="map_widget_gps_info">GPS məlumatı</string>
     <string name="max_speed_none">yoxdur</string>
     <string name="download_wikipedia_maps">Vikipediya</string>
-    <string name="recording_context_menu_show">Göstər</string>
-    <string name="recording_photo_description">Şəkil %1$s %2$s</string>
     <string name="av_def_action_picture">Şəkil çək</string>
-    <string name="recording_context_menu_precord">Şəkil çək</string>
     <string name="av_use_external_camera_descr">Şəkillər üçün sistem proqramını istifadə et.</string>
     <string name="av_use_external_camera">Kamera proqramını istifadə et</string>
     <string name="download_select_map_types">Digər xəritələr</string>
@@ -473,13 +469,7 @@
     <string name="bg_service_screen_unlock">Ekran kilidini aç</string>
     <string name="bg_service_screen_lock_toast">Ekran kilidlidir</string>
     <string name="show_cameras">Sürət kameraları</string>
-    <string name="osmand_parking_hours">Saat</string>
-    <string name="osmand_parking_minutes">Dəqiqə</string>
     <string name="shared_location">Paylaşılan məkan</string>
-    <string name="osmand_parking_warning">Xəbərdarlıq</string>
-    <string name="osmand_parking_add_event">Təqvim proqramına bildiriş əlavə et</string>
-    <string name="osmand_parking_pm">PM</string>
-    <string name="osmand_parking_am">AM</string>
     <string name="gpxup_public">İctimai</string>
     <string name="gpxup_private">Xüsusi</string>
     <string name="address_search_desc">Ünvan axtar</string>
@@ -1206,8 +1196,6 @@
     <string name="guidance_preferences_descr">Naviqasiya seçimləri</string>
     <string name="cancel_navigation">Naviqasiyanı dayandır</string>
     <string name="stop_routing_confirm">Naviqasiyanı dayandırmaq istədiyinizdən əminsiniz?</string>
-    <string name="osmand_play_title_30_chars">OsmAnd Xəritələr &amp; Naviqasiya</string>
-    <string name="osmand_plus_play_title_30_chars">OsmAnd+ Xəritələr &amp; Naviqasiya</string>
     <string name="process_navigation_service">OsmAnd naviqasiya xidməti</string>
     <string name="offline_maps_and_navigation">Offlayn Xəritələr
 \n&amp; Naviqasiya</string>
@@ -1279,7 +1267,6 @@
     <string name="av_camera_focus_infinity">Sonsuzluğa fokusla</string>
     <string name="av_camera_focus_macro">Makro (iri plan) fokus rejimi</string>
     <string name="av_camera_focus_continuous">Kamera fasiləsiz fokuslamağa çalışsın</string>
-    <string name="av_photo_play_sound">Şəkil çəkərkən səs çal</string>
     <string name="mapillary_image">Mapillary təsviri</string>
     <string name="osmand_plus_extended_description_part8">Təxmini xəritənin əhatə dairəsi və keyfiyyəti: • Qərbi Avropa: **** • Şərqi Avropa: *** • Rusiya: *** • Şimali Amerika: *** • Cənubi Amerika: ** • Asiya: ** • Yaponiya &amp; Koreya: *** • Yaxın Şərq: ** • Afrika: ** • Antarktida: * Dünyanın bir çox ölkəsi endirmək üçün mövcuddur! Əfqanıstandan Zimbabveyə, Avstraliyadan ABŞ-a. Argentina, Braziliya, Kanada, Fransa, Almaniya, Meksika, Böyük Britaniya, İspaniya, …</string>
     <string name="avoid_in_routing_title">Yayın…</string>
@@ -1333,8 +1320,6 @@
     <string name="record_plugin_name">Səyahət qeydetmə</string>
     <string name="monitoring_settings">Səyahət qeydetmə</string>
     <string name="monitoring_settings_descr">Səyahətlərinizin necə qeyd ediləcəyini tənzimləyin.</string>
-    <string name="av_use_external_recorder">Sistem proqramını istifadə et</string>
-    <string name="recording_error">Qeydetmə zamanı səhv baş verdi</string>
     <string name="building_number">Bina nömrəsi</string>
     <string name="shared_string_permissions">İcazələr</string>
     <string name="import_gpx_failed_descr">OsmAnd faylı idxal edə bilmir. OsmAnd-ın həmin yerdən fayl oxumaq icazəsi olub-olmadığını yoxlayın.</string>
@@ -1468,7 +1453,6 @@
     <string name="prefer_in_routing_descr">Avtomagistralları üstün tut.</string>
     <string name="clear_dest_confirm">Təyinat nöqtəsini (və ara təyinat nöqtələrini) təmizləmək istədiyinizdən əminsiniz?</string>
     <string name="intermediate_points_change_order">Sıralamanı dəyiş</string>
-    <string name="recording_open_external_player">Xarici oynadıcını aç</string>
     <string name="intermediate_point">Ara təyinat nöqtəsi %1$s</string>
     <string name="context_menu_item_last_intermediate_point">Son ara təyinat nöqtəsi olaraq əlavə et</string>
     <string name="context_menu_item_first_intermediate_point">İlk ara təyinat nöqtəsi olaraq əlavə et</string>
@@ -1677,8 +1661,6 @@
     <string name="search_near_map">Hazırki xəritə mərkəzinin yaxınında axtar</string>
     <string name="transport_Routes">Marşrutlar</string>
     <string name="transport_Stop">Dayanacaq</string>
-    <string name="osmand_parking_lim_text">Vaxt-limitli</string>
-    <string name="osmand_parking_no_lim_text">Vaxt-limitsiz</string>
     <string name="pref_vector_map">Vektor xəritə parametrləri</string>
     <string name="file_with_name_already_exists">Bu adda fayl artıq mövcuddur.</string>
     <string name="gpx_navigation">GPX marşrut</string>
@@ -1814,7 +1796,6 @@
     <string name="local_openstreetmap_act_title">OSM dəyişiklikləri</string>
     <string name="access_arrival_time">Gəlmə vaxtı</string>
     <string name="index_name_openmaps">OpenMaps - Avropa</string>
-    <string name="recording_unavailable">dəstəklənmir</string>
     <string name="close_changeset">Dəyişiklikləri bağla</string>
     <string name="rotate_map_to_bearing">Xəritənin istiqaməti</string>
     </resources>

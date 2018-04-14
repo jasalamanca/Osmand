@@ -726,27 +726,7 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="gpxup_identifiable">Identificable</string>
     <string name="gpxup_trackable">Trazable</string>
     <string name="gpxup_private">Privado</string>
-    <string name="osmand_parking_event">Recoger el automóvil del aparcamiento</string>
-    <string name="osmand_parking_warning">Advertencia</string>
-    <string name="osmand_parking_warning_text">Se añadió previamente al calendario una notificación para recoger su automóvil. Permanecerá allí hasta que se borre manualmente.</string>
-    <string name="osmand_parking_time_limit_title">Establecer el límite de tiempo de aparcamiento</string>
-    <string name="osmand_parking_delete_confirm">¿Quiere eliminar el marcador de ubicación de aparcamiento?</string>
-    <string name="osmand_parking_delete">Eliminar un marcador de aparcamiento</string>
-    <string name="osmand_parking_choose_type">Elija el tipo de aparcamiento</string>
-    <string name="osmand_parking_lim_text">Tiempo limitado</string>
-    <string name="osmand_parking_no_lim_text">Tiempo ilimitado</string>
-    <string name="osmand_parking_add_event">Añadir una notificación al calendario</string>
-    <string name="osmand_parking_time_limit">Aparcamiento de tiempo limitado</string>
-    <string name="osmand_parking_time_no_limit">Aparcamiento sin tiempo limitado</string>
-    <string name="osmand_parking_position_description">Localización de su automóvil aparcado. %1$s</string>
-    <string name="osmand_parking_position_description_add">Recoger el automóvil a las:</string>
-    <string name="osmand_parking_pm">PM</string>
-    <string name="osmand_parking_am">AM</string>
-    <string name="osmand_parking_position_name">Ubicación del aparcamiento</string>
-    <string name="osmand_parking_plugin_description">El complemento de ubicación de aparcamiento te deja memorizar dónde aparcaste el automóvil y cuánto tiempo de estacionamiento queda (si hay un límite de tiempo). Tanto la ubicación como el tiempo de estacionamiento se muestran en el panel de control y en el control en la pantalla de mapas. Añade una notificación al calendario, en el caso de que desee tener un recordatorio al respecto.</string>
-    <string name="osmand_parking_plugin_name">Aparcamiento</string>
     <string name="context_menu_item_add_parking_point">Marcar como lugar de aparcamiento</string>
-    <string name="context_menu_item_delete_parking_point">Eliminar un marcador de aparcamiento</string>
     <string name="starting_point_too_far">Punto de inicio demasiado lejos de la carretera más cercana.</string>
     <string name="shared_location">Compartir ubicación</string>
     <string name="global_app_allocated_memory_descr">Memoria asignada %1$s MB (Límite Android %2$s MB, Dalvik %3$s MB).</string>
@@ -755,9 +735,6 @@ El espacio de almacenamiento usado es {1} MB.
  Memoria proporcional %4$s MB (Límite Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="native_app_allocated_memory">Memoria nativa total</string>
     <string name="select_animate_speedup">Seleccionar la velocidad del simulador de ruta</string>
-    <string name="osmand_parking_hours">Horas</string>
-    <string name="osmand_parking_minutes">Minutos</string>
-    <string name="osmand_parking_position_description_add_time">El automóvil fue aparcado a las</string>
     <string name="use_compass_navigation_descr">Usa la brújula cuando no se detecta la dirección.</string>
     <string name="use_compass_navigation">Utilizar brújula</string>
     <string name="route_updated_loc_found">La ruta será calculada una vez encontrada la ubicación</string>
@@ -771,7 +748,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="map_widget_lock_screen">Bloquear pantalla</string>
     <string name="map_widget_compass">Brújula</string>
     <string name="map_widget_reset">Restablecer a los valores predeterminados</string>
-    <string name="map_widget_parking">Aparcamiento</string>
     <string name="map_widget_monitoring">Registro GPX</string>
     <string name="map_widget_speed">Velocidad</string>
     <string name="map_widget_distance">Destino</string>
@@ -799,39 +775,7 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="map_widget_vector_attributes">Atributos de dibujado</string>
     <string name="map_widget_renderer">Estilo del mapa</string>
     <string name="osmand_short_description_80_chars">Visor y navegador móvil global de mapas OSM con y sin conexión</string>
-    <string name="osmand_long_description_1000_chars">OsmAnd (OSM Automated Navigation Directions, Guía de Navegación Automatizada), es una aplicación de navegación de código abierto con acceso a una amplia variedad de datos OpenStreetMap (OSM) globales. Todos los datos del mapa (vectoriales y teselas), pueden ser almacenados en la memoria del teléfono para su uso sin conexión. OsmAnd también ofrece funcionalidad de navegación con y sin conexión, incluyendo indicaciones giro-a-giro mediante voz. 
-\n 
-\nAlgunas de las características fundamentales: 
-\n - Completa funcionalidad sin conexión (almacena los mapas vectoriales o teselas descargados en el almacenamiento del dispositivo) 
-\n - Mapas vectoriales compactos disponibles de todo el planeta 
-\n - Descarga de mapas por país o región directamente desde la aplicación 
-\n - Posibilidad de superponer varias capas de mapa, como GPX o rutas de navegación, puntos de interés (PDI), favoritos, curvas de nivel, paradas de transporte público, mapas adicionales con transparencia personalizable 
-\n - Búsqueda sin conexión de direcciones y lugares (PDIs) 
-\n - Navegación sin conexión para distancias medianas. 
-\n - Modos automóvil, bicicleta y peatón con: \t- opción de cambio automático de vista diurna/nocturna \t- opción de zoom en función de la velocidad \t- opción de alineamiento del mapa según la brújula o la dirección de movimiento \t- opción de indicación de carriles, visualización de límites de velocidad, voces grabadas y TTS 
-\n 
-\nLimitaciones de la versión gratuita de OsmAnd: 
-\n - Limitado el número de mapas descargados 
-\n - Sin acceso a los PDIs descargados de Wikipedia 
-\n 
-\nOsmAnd está siendo desarrollado activamente y nuestro proyecto y su desarrollo adicional se basa en contribuciones económicas para financiar el desarrollo y las pruebas de nuevas funcionalidades. Por favor, considere comprar OsmAnd+, financiar nuevas características concretas o hacer una donación general en osmand.net.</string>
     <string name="osmand_plus_short_description_80_chars">Visor y navegador móvil global de mapas OSM con y sin conexión</string>
-    <string name="osmand_plus_long_description_1000_chars">OsmAnd+ (OSM Automated Navigation Directions), es una aplicación de navegación de código abierto con acceso a una amplia variedad de datos OpenStreetMap (OSM) globales. Todos los datos de mapa (vectores y teselas) pueden ser almacenados en la memoria del teléfono para su uso sin conexión. OsmAnd también ofrece funcionalidad de rutas con y sin conexión con guía giro-a-giro mediante voz. 
-\n 
-\n OsmAnd+ es la versión de pago de la aplicación, comprándola da soporte al proyecto, financia el desarrollo de nuevas características y recibe las últimas actualizaciones. 
-\n 
-\n Algunas de las características fundamentales: 
-\n - Funcionalidad completa sin conexión (almacena los mapas de vectores y teselas descargados en el almacenamiento del dispositivo) 
-\n - Mapas de vectores compactos disponibles de todo el planeta 
-\n - Descarga ilimitada de mapas de país o región directamente desde la aplicación 
-\n - Posibilidad de superponer varias capas de mapa, como GPX o rutas de navegación, Puntos de Interés, favoritos, curvas de nivel, paradas de transporte público, mapas adicionales con transparencia personalizable 
-\n - Búsqueda sin conexión de direcciones y lugares (PDIs) 
-\n - Rutas sin conexión para medias distancias. 
-\n - Modos de coche, bicicleta, y peatón con: 
-\n - Cambio automático opcional de vista diurna/nocturna
-\n - Zoom del mapa opcional en función de la velocidad
-\n - Orientación del mapa opcional a la brújula o a la dirección de movimiento
-\n - Indicación de carriles, mostrar límites de velocidad, voces grabadas y generadas opcionales</string>
     <string name="avoid_motorway">Evitar autopistas</string>
     <string name="snap_to_road_descr">Ajusta la ubicación a las carreteras durante la navegación.</string>
     <string name="snap_to_road">Ajustar a carreteras</string>
@@ -850,7 +794,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="ending_point_too_far">Punto final demasiado lejos de la carretera más cercana.</string>
     <string name="add_tag">Añadir etiqueta</string>
     <string name="btn_advanced_mode">Modo Avanzado…</string>
-    <string name="poi_filter_parking">Aparcamiento</string>
     <string name="poi_filter_emergency">Emergencia</string>
     <string name="poi_filter_public_transport">Transporte público</string>
     <string name="poi_filter_entertainment">Entretenimiento</string>
@@ -900,29 +843,18 @@ El espacio de almacenamiento usado es {1} MB.
 \n
 \nLos datos globales (entre 70 grados norte y 70 grados sur) se basan en mediciones de SRTM (Shuttle Radar Topography Mission, o en español Misión de Topografía por Radar desde Transbordador) y ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer, o en español Radiómetro Espacial Avanzado de Emisión Térmica y Reflexión), un instrumento de captura de imágenes a bordo de Terra, el satélite insignia del Sistema de Observación de la Tierra de la NASA. ASTER es un esfuerzo cooperativo entre la NASA, el Ministerio de Economía, Comercio e Industria de Japón (METI) y Sistemas Espaciales de Japón (J-spacesystems).</string>
     <string name="map_widget_distancemeasurement">Medición de distancia</string>
-    <string name="recording_open_external_player">Abrir reproductor externo</string>
     <string name="recording_delete_confirm">¿Quiere eliminar esta grabación?</string>
-    <string name="recording_unavailable">no disponible</string>
-    <string name="recording_can_not_be_played">La grabación no se puede reproducir</string>
-    <string name="recording_context_menu_delete">Eliminar grabación</string>
     <string name="recording_context_menu_play">Reproducir</string>
-    <string name="recording_default_name">Grabación</string>
     <string name="shared_string_control_stop">Parar</string>
     <string name="shared_string_control_start">Iniciar</string>
     <string name="av_widget_action">Acción del control predeterminado</string>
     <string name="av_widget_action_descr">Seleccione la acción del control predeterminado.</string>
-    <string name="av_use_external_recorder">Utilizar grabadora externa</string>
-    <string name="recording_error">"Error durante la grabación" </string>
-    <string name="recording_description">Grabado %1$s %3$s %2$s</string>
     <string name="srtm_paid_version_msg">Considere la compra del complemento curvas de nivel en la tienda de aplicaciones para apoyar desarrollos adicionales.</string>
     <string name="srtm_paid_version_title">Complemento curvas de nivel</string>
     <string name="dropbox_plugin_description">El complemento Dropbox te permite sincronizar trazas y notas multimedia con tu cuenta de Dropbox.</string>
     <string name="dropbox_plugin_name">Complemento Dropbox</string>
     <string name="intermediate_points_change_order">Cambiar orden</string>
-    <string name="recording_context_menu_show">Mostrar</string>
-    <string name="recording_photo_description">Foto %1$s %2$s</string>
     <string name="av_def_action_picture">Tomar una foto</string>
-    <string name="recording_context_menu_precord">Tomar una foto</string>
     <string name="stop_routing_confirm">¿Está seguro que quiere parar la navegación?</string>
     <string name="clear_dest_confirm">¿Seguro que quieres borrar el destino (y los destinos intermedios)?</string>
     <string name="precise_routing_mode_descr">Activar para calcular rutas precisas sin interferencias. Aún está limitado por la distancia y es lento.</string>
@@ -944,8 +876,6 @@ El espacio de almacenamiento usado es {1} MB.
     
     <string name="layer_hillshade">Capa de sombreado</string>
     <string name="map_widget_gps_info">Información GPS</string>
-    <string name="osmand_play_title_30_chars">Navegación y Mapas OsmAnd</string>
-    <string name="osmand_plus_play_title_30_chars">Navegación y Mapas OsmAnd+</string>
     <string name="street_name">Nombre de calle</string>
     <string name="hno">Número</string>
     <string name="monitoring_settings">Grabar viaje</string>
@@ -1010,8 +940,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="av_camera_focus_infinity">Enfocado al infinito</string>
     <string name="av_camera_focus_macro">Modo de enfoque macro (close-up)</string>
     <string name="av_camera_focus_continuous">La camera intenta enfocar continuamente</string>
-    <string name="av_photo_play_sound">Sonido al fotografiar</string>
-    <string name="av_photo_play_sound_descr">Elige si reproducir un sonido al fotografiar.</string>
     <string name="context_menu_item_directions_from">Ir desde aquí</string>
     <string name="route_via">Vía:</string>
     <string name="route_from">Desde:</string>
@@ -1515,7 +1443,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="rendering_attr_streetLighting_name">Alumbrado público</string>
     <string name="points">Puntos</string>
     <string name="shared_string_my_location">Mi ubicación</string>
-    <string name="parking_place">Lugar de aparcamiento</string>
     <string name="remove_the_tag">QUITA LA ETIQUETA</string>
     <string name="shared_string_disabled">Desactivado</string>
     <string name="shared_string_enabled">Activado</string>
@@ -1573,8 +1500,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="osm_edits">Ediciones OSM</string>
     <string name="osmand_parking_hour">h</string>
     <string name="osmand_parking_minute">min</string>
-    <string name="osmand_parking_time_left">restante</string>
-    <string name="parking_place_limited">Tiempo de aparcamiento limitado a</string>
     <string name="your_edits">Sus ediciones</string>
     <string name="waypoint_visit_after">Visitar después</string>
     <string name="waypoint_visit_before">Visitar antes</string>
@@ -1594,7 +1519,6 @@ Lon %2$s</string>
     <string name="shared_string_photo">Foto</string>
     <string name="route_points">Puntos de la ruta</string>
     <string name="shared_string_release">Liberado</string>
-    <string name="osmand_parking_overdue">vencido</string>
     <string name="delay_to_start_navigation">Iniciar navegación giro-a-giro después de…</string>
     <string name="shared_string_go">Ir</string>
     <string name="delay_to_start_navigation_descr">Especifica el tiempo de espera para permanecer en la pantalla de planificación de ruta.</string>
@@ -2262,7 +2186,6 @@ El espacio de almacenamiento usado es {3} MB temporalmente y {1} MB permanenteme
     <string name="quick_action_navigation_voice_off">La voz está apagada</string>
     <string name="quick_action_navigation_voice_on">La voz está encendida</string>
     <string name="quick_action_add_gpx">Añadir punto de ruta GPX</string>
-    <string name="quick_action_add_parking">Añadir lugar de estacionamiento</string>
     <string name="quick_action_new_action">Añadir acción</string>
     <string name="quick_action_edit_action">Editar acción</string>
     <string name="quick_action_add_favorite">Añadir favorito</string>
@@ -2276,7 +2199,6 @@ El espacio de almacenamiento usado es {3} MB temporalmente y {1} MB permanenteme
     <string name="quick_action_add_osm_bug_descr">Pulsando el botón de acción agregará una nota OSM en la ubicación del centro de la pantalla.</string>
     <string name="quick_action_add_poi_descr">Pulsar el botón de acción agregará un PDI en la ubicación del centro de la pantalla.</string>
     <string name="quick_action_navigation_voice_descr">Pulsar el botón de acción desactivará o activará las indicaciones de voz durante la navegación.</string>
-    <string name="quick_action_add_parking_descr">Pulsar el botón de acción agregará un lugar de aparcamiento en la ubicación del centro de la pantalla.</string>
     <string name="quick_action_interim_dialog">Mostrar un diálogo temporal</string>
     <string name="favorite_autofill_toast_text">" se guarda en "</string>
     <string name="favorite_empty_place_name">Lugar</string>
@@ -2398,7 +2320,6 @@ Por favor proporciona un código completo</string>
     <string name="do_not_send_anonymous_app_usage_desc">OsmAnd recopila información acerca de las secciones que abres en la aplicación. No recopilamos datos de ubicación, ingresos en la aplicación o datos relacionados con las áreas que visualizas, buscas o descargas.</string>
     <string name="do_not_show_startup_messages">No mostrar los mensajes en el inicio</string>
     <string name="do_not_show_startup_messages_desc">Oculta los descuentos de la aplicación y los mensajes especiales de eventos locales.</string>
-    <string name="parking_options">Opciones de aparcamiento</string>
     <string name="full_version_thanks">¡Gracias por comprar la versión completa de OsmAnd!</string>
     <string name="routing_attr_relief_smoothness_factor_name">Seleccionar la fluctuación de elevación</string>
     <string name="right_side_navigation">Conducción por la derecha</string>
@@ -2408,7 +2329,6 @@ Por favor proporciona un código completo</string>
     <string name="shared_string_visible">Visible</string>
     <string name="restore_purchases">Restaurar compras</string>
     <string name="fonts_header">Fuentes para mapa</string>
-    <string name="osmand_extended_description_part2">"Navegación GPS • Puedes elegir modo entre desconectado (sin cargos de roaming cuando estás en el extranjero) o conectado (más rápido) • La guía de voz correo a giro te indica a lo largo del camino (voces grabadas y sintetizadas) • La ruta se reconstruye cada vez que te apartes de ella • La indicación de carril, los nombres de las calles, y el tiempo estimado de llegada ayudará a lo largo de la vía • Para hacer tu viaje más seguro,  el modo día/noche cambia automáticamente • Puedes elegir mostrar los límites de velocidad, y recibir recordatorios si se superan • El zoom del mapa se ajusta a tu velocidad • Puedes buscar destinos por dirección, por tipo (por ejemplo: aparcamiento, restaurante, hotel, gasolinera, museo), o mediante coordenadas geográficas • Admite puntos intermedios en el itinerario • Puedes grabar tu propia pista  GPX o subir una, y seguirla"</string>
     <string name="osmand_extended_description_part3">Mapa • Muestra PDIs (puntos de interés) a tu alrededor • Ajusta el mapa hacia la dirección del movimiento (o a la brújula) • Muestra dónde estás y hacia dónde estás mirando • Comparte tu ubicación para que tus amigos puedan encontrarte • Mantiene tus lugares más importantes en Favoritos • Te permite elegir cómo se muestran los nombres en el mapa: en inglés, local, o con ortografía fonética • Muestra teselas especializadas en línea, vista de satélite (de Bing), diferentes superposiciones como pistas GPX y capas adicionales con transparencia personalizable</string>
     <string name="osmand_extended_description_part4">Esquí El complemento de OsmAnd de mapas de esquí te permite ver las pistas de esquí con el nivel de complejidad y alguna información adicional, como la ubicación de los ascensores y otras instalaciones.</string>
     <string name="osmand_extended_description_part5">Ciclismo 

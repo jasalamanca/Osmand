@@ -179,10 +179,8 @@
     <string name="shared_string_message">Skilaboð</string>
     <string name="welcome_header">Velkomin</string>
     <string name="shared_string_go">Fara</string>
-    <string name="osmand_parking_overdue">útrunnið</string>
     <string name="osmand_parking_hour">klst</string>
     <string name="osmand_parking_minute">mín</string>
-    <string name="osmand_parking_time_left">eftir</string>
     <string name="drawer">Flatur listi</string>
     <string name="general_settings_2">Almennar stillingar</string>
     <string name="shared_string_ellipsis">…</string>
@@ -446,20 +444,14 @@
     <string name="download_wikipedia_maps">Wikipedia</string>
     <string name="download_hillshade_maps">Skuggar í landslagi</string>
     <string name="local_indexes_cat_srtm">Hæðarlínur</string>
-    <string name="recording_context_menu_show">Sýna</string>
     <string name="av_def_action_picture">Taka ljósmynd</string>
-    <string name="recording_context_menu_precord">Taka ljósmynd</string>
     <string name="intermediate_points_change_order">Breyta röðun</string>
-    <string name="recording_unavailable">ekki tiltækt</string>
     <string name="recording_context_menu_play">Spila</string>
-    <string name="recording_description">Tek upp %1$s %3$s %2$s</string>
-    <string name="recording_default_name">Upptaka</string>
     <string name="index_srtm_parts">hlutar</string>
     <string name="map_widget_max_speed">Hraðatakmörk</string>
     <string name="target_points">Áfangastaðir</string>
     <string name="add_tag">Bæta við merki</string>
     <string name="btn_advanced_mode">Ítarlegri hamur…</string>
-    <string name="poi_filter_parking">Bílastæði</string>
     <string name="poi_filter_emergency">Neyðartilfelli</string>
     <string name="poi_filter_public_transport">Almenningssamgöngur</string>
     <string name="poi_filter_entertainment">Afþreying</string>
@@ -479,16 +471,10 @@
     <string name="map_widget_lock_screen">Læsa skjá</string>
     <string name="map_widget_compass">Áttaviti</string>
     <string name="map_widget_reset">Frumstilla á sjálfgefið</string>
-    <string name="map_widget_parking">Bílastæði</string>
     <string name="map_widget_speed">Hraði</string>
     <string name="map_widget_distance">Áfangastaður</string>
     <string name="map_widget_altitude">Hæð</string>
     <string name="bg_service_screen_lock">Læsa skjá</string>
-    <string name="osmand_parking_hours">Klukkustundir</string>
-    <string name="osmand_parking_minutes">Mínútur</string>
-    <string name="osmand_parking_warning">Aðvörun</string>
-    <string name="osmand_parking_pm">e.h.</string>
-    <string name="osmand_parking_am">f.h.</string>
     <string name="gpxup_public">Opinbert</string>
     <string name="gpxup_identifiable">Auðkennanlegt</string>
     <string name="gpxup_trackable">Rekjanlegt</string>
@@ -864,7 +850,6 @@
     <string name="free">Laust %1$s</string>
     <string name="device_memory">Minni tækis</string>
     <string name="rendering_attr_pisteGrooming_name">Verið að troða leið</string>
-    <string name="parking_place">Bílastæði</string>
     <string name="rendering_attr_streetLighting_name">Götulýsing</string>
     <string name="speak_pedestrian">Gangbrautir</string>
     <string name="traffic_warning_pedestrian">Gangbraut</string>
@@ -1136,9 +1121,7 @@ Ferill %2$s</string>
     <string name="local_openstreetmap_act_title">OSM-breytingar</string>
     <string name="layer_hillshade">Hæðaskyggingalag</string>
     <string name="map_widget_gps_info">GPS-upplýsingar</string>
-    <string name="recording_photo_description">Ljósmynd %1$s %2$s</string>
     <string name="dropbox_plugin_name">Dropbox-viðbót</string>
-    <string name="recording_context_menu_delete">Eyða upptöku</string>
     <string name="map_widget_distancemeasurement">Mæling vegalengda</string>
     <string name="index_srtm_ele">Hæðarlínur</string>
     <string name="download_select_map_types">Önnur kort</string>
@@ -1158,8 +1141,6 @@ Ferill %2$s</string>
     <string name="auto_zoom_map">Sjálfvirkur aðdráttur korts</string>
     <string name="snap_to_road">Grípa í veg</string>
     <string name="interrupt_music">Hlé á tónlist</string>
-    <string name="osmand_play_title_30_chars">OsmAnd kort og leiðsögn</string>
-    <string name="osmand_plus_play_title_30_chars">OsmAnd+ kort og leiðsögn</string>
     <string name="select_navigation_mode">Veldu samgönguleið</string>
     <string name="day_night_info_description">Sólarupprás: %1$s 
 Sólsetur: %2$s</string>
@@ -1235,9 +1216,7 @@ Sólsetur: %2$s</string>
     <string name="map_magnifier">Stækkun korts</string>
     <string name="map_widget_show_destination_arrow">Sýna stefnu á ákvörðunarstað</string>
     <string name="map_widget_fluorescent">Flúrlýstar leiðir</string>
-    <string name="osmand_parking_position_name">Bílastæði</string>
     <string name="context_menu_item_add_parking_point">Merkja sem bílastæði</string>
-    <string name="context_menu_item_delete_parking_point">Eyða kortamerki fyrir bílastæði</string>
     <string name="route_roundabout">Hringtorg: Beygðu útaf við %1$d afrein og haltu áfram</string>
     <string name="route_kl">Vertu til vinstri og haltu áfram</string>
     <string name="route_kr">Vertu til hægri og haltu áfram</string>
@@ -1301,7 +1280,6 @@ og leiðsögn</string>
     <string name="show_traffic_warnings">Aðvaranir vegna umferðar</string>
     <string name="continue_follow_previous_route_auto">Fyrri leiðsögn var ekki lokið. Halda áfram með hana? (%1$s sekúndur)</string>
     <string name="route_updated_loc_found">Leiðin verður reiknuð um leið og staðsetning finnst</string>
-    <string name="osmand_parking_position_description_add_time">Bílnum er lagt á</string>
     <string name="select_animate_speedup">Veldu hraða leiðarhermunar</string>
     <string name="global_app_allocated_memory_descr">Úthlutað minni %1$s MB (takmörk Android %2$s MB, Dalvik %3$s MB).</string>
     <string name="global_app_allocated_memory">Úthlutað minni</string>
@@ -1309,19 +1287,6 @@ og leiðsögn</string>
  Hlutfallslegt minni %4$s MB (takmörk Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="native_app_allocated_memory">Samtals innbyggt minni</string>
     <string name="starting_point_too_far">Upphafspunktur of langt frá næsta akvegi.</string>
-    <string name="osmand_parking_event">Ná í bíl af bílastæði</string>
-    <string name="osmand_parking_warning_text">Aðvörun um að ná í bílinn þinn var sett inn í dagatalið þitt. Hún mun vera þar þangað til þú eyðir henni handvirkt.</string>
-    <string name="osmand_parking_time_limit_title">Stilltu tímatakmörkun bílastæðis</string>
-    <string name="osmand_parking_delete_confirm">Viltu eyða kortamerkinu fyrir staðsetningu bílastæðis?</string>
-    <string name="osmand_parking_delete">Eyða kortamerki fyrir bílastæði</string>
-    <string name="osmand_parking_choose_type">Veldu gerð bílastæðis</string>
-    <string name="osmand_parking_lim_text">Með tímamörkum</string>
-    <string name="osmand_parking_no_lim_text">Ótakmarkaður tími</string>
-    <string name="osmand_parking_add_event">Bæta tilkynningu í dagatalsforritið</string>
-    <string name="osmand_parking_time_limit">Bílastæði með tímamörkum</string>
-    <string name="osmand_parking_time_no_limit">Bílastæði með ótakmörkuðum tíma</string>
-    <string name="osmand_parking_position_description">Staðsetningin á bílastæðinu með bílnum þínum. %1$s</string>
-    <string name="osmand_parking_position_description_add">Ná í bíl af bílastæði:</string>
     <string name="share_route_as_gpx">Deila leið sem GPX-skrá</string>
     <string name="share_route_subject">Leið deilt með OsmAnd</string>
     <string name="rendering_attr_noPolygons_description">Gera allar svæðamerkingar á korti gegnsæjar.</string>
@@ -1497,7 +1462,6 @@ og leiðsögn</string>
     <string name="mark_to_delete">Merki sem á að eyða</string>
     <string name="confirmation_to_clear_history">Viltu í alvörunni hreinsa breytingaskrána?</string>
     <string name="osm_edits">OSM-breytingar</string>
-    <string name="parking_place_limited">Tímatakmörkun bílastæðis er</string>
     <string name="your_edits">Breytingarnar þínar</string>
     <string name="waypoint_visit_after">Heimsækja eftir</string>
     <string name="waypoint_visit_before">Heimsækja á undan</string>
@@ -1507,8 +1471,7 @@ Len %2$s</string>
     <string name="plugin_touringview_name">Ferðakort</string>
 	<string name="plugin_nautical_name">Sjókort</string>
 	<string name="plugin_ski_name">Skíðakort</string>
-	<string name="osmand_parking_plugin_name">Staðsetning bílastæðis</string>
-	<string name="osm_settings">OSM-breytingar</string>
+    <string name="osm_settings">OSM-breytingar</string>
     <string name="navigation_over_track">Hefja leiðsögn eftir ferlinum?</string>
     <string name="rendering_attr_roadStyle_name">Stíll götu</string>
     <string name="rendering_attr_roadStyle_description">Stíll götu</string>
@@ -1522,10 +1485,7 @@ Len %2$s</string>
     <string name="osmo_not_signed_in">Innskráning á OsMo mistókst</string>
     <string name="gpx_info_distance">Vegalengd: %1$s (%2$s punktar)</string>
     <string name="osmo_track_interval">Millibil skráninga</string>
-    <string name="recording_error">Villa kom upp á meðan upptöku stóð</string>
-    <string name="recording_open_external_player">Opna utanaðkomandi spilara</string>
     <string name="recording_delete_confirm">Viltu eyða þessari upptöku?</string>
-    <string name="recording_can_not_be_played">Ekki var hægt að spila upptöku</string>
     <string name="gps_not_available">Virkjaðu GPS í stillingunum</string>
     <string name="map_widget_monitoring_services">Leiðarskráningarþjónustur</string>
     <string name="filterpoi_activity">Búa til merkisstaðasíu</string>
@@ -1743,8 +1703,6 @@ Punktar</string>
     <string name="av_camera_focus_infinity">Fókus er stilltur á óendanleika</string>
     <string name="av_camera_focus_macro">Makrófókus (nærmynd)</string>
     <string name="av_camera_focus_continuous">Myndavélin reynir í sífellu að ná fókus</string>
-    <string name="av_photo_play_sound">Spila hljóð við myndatöku</string>
-    <string name="av_photo_play_sound_descr">Veldu hvort eigi að spila hljóð þegar myndir eru teknar.</string>
     <string name="av_camera_pic_size">Stærð myndar úr myndavél</string>
     <string name="av_camera_pic_size_descr">Velja innbyggða stærð myndar úr myndavél.</string>
     <string name="shared_string_card_was_hidden">Kort var falið</string>
@@ -1868,7 +1826,6 @@ Punktar</string>
     <string name="quick_action_navigation_voice_off">Slökkt á tali</string>
     <string name="quick_action_navigation_voice_on">Kveikt á tali</string>
     <string name="quick_action_add_gpx">Bæta við GPX-ferilpunkti</string>
-    <string name="quick_action_add_parking">Bæta við bílastæði</string>
     <string name="quick_action_new_action">Bæta við aðgerð</string>
     <string name="quick_action_edit_action">Breyta aðgerð</string>
     <string name="quick_action_add_favorite">Bæta við sem eftirlæti</string>
@@ -1918,7 +1875,6 @@ Punktar</string>
     <string name="do_not_send_anonymous_app_usage_desc">OsmAnd sendir almennar upplýsingar um þá hluta forritsins sem þó opnar. Við söfnum ekki neinum gögnum um staðsetningar eða hegðun notenda, né heldur um neitt af því sem notendur setja inn til leitar eða skoðunar.</string>
     <string name="do_not_show_startup_messages">Ekki birta skilaboð í ræsingu</string>
     <string name="do_not_show_startup_messages_desc">Lokar á skilaboð um afslætti og sérstaka viðburði í grenndinni.</string>
-    <string name="parking_options">Valkostir bílastæða</string>
     <string name="full_version_thanks">Takk fyrir að kaupa fulla útgáfu OsmAnd!</string>
     <string name="routing_attr_relief_smoothness_factor_hills_name">Hæðótt</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Minna hæðótt</string>
@@ -2075,7 +2031,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="routing_preferences_descr">Stillingar leiðavals</string>
     <string name="disable_complex_routing">Gera flókið leiðaval óvirkt</string>
     <string name="local_osm_changes_backup_successful">Tókst að útbúa OSM-breytingaskrá %1$s</string>
-    <string name="av_use_external_recorder">Nota upptökutæki kerfisins</string>
     <string name="av_use_external_camera_descr">Nota forrit kerfisins fyrir ljósmyndir.</string>
     <string name="rendering_attr_alpineHiking_description">Setja leiðir fram samkvæmt SAC, svissneska gönguleiðakvarðanum.</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Setja leiðir fram samkvæmt OSMC-ferlum.</string>
@@ -2403,7 +2358,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="quick_action_add_osm_bug_descr">Bank á aðgerðahnappinn mun bæta OSM-minnispunkti á miðju skjásins.</string>
     <string name="quick_action_add_poi_descr">Bank á aðgerðahnappinn mun bæta merkisstað á miðju skjásins.</string>
     <string name="quick_action_navigation_voice_descr">Bank á aðgerðahnappinn mun gera raddleiðsögn virka eða óvirka á meðan leiðsögn stendur.</string>
-    <string name="quick_action_add_parking_descr">Bank á aðgerðahnappinn mun bæta staðsetningu bílastæðis á miðju skjásins.</string>
     <string name="quick_action_duplicates">Nafnið á uppgefinni flýtiaðgerð er nú þegar í notkun, var breytt í %1$s til að koma í veg fyrir tvítekningu.</string>
     <string name="quick_action_showhide_favorites_descr">Bank á aðgerðahnappinn mun birta eða fela eftirlætisstaði á kortinu.</string>
     <string name="quick_action_showhide_poi_descr">Bank á aðgerðahnappinn mun birta eða fela merkisstaði á kortinu.</string>
@@ -2467,8 +2421,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
 \nEkki þarf að ná í sérstök kort, þessi sýn er byggð á stöðluðu kortunum. 
 \n
 \nTil að snúa aftur í hefðbundnari kortastíla OsmAnd, þarf einfaldlega að gera viðbótina óvirka aftur eða breyta stílnum í \'Stíll korts\' í \'Stilla kort\' valmyndinni.</string>
-    <string name="osmand_parking_plugin_description">Viðbótin fyrir staðsetningu bílastæðis gerir þér kleift að muna hvar bílnum þínum var lagt og hve langur tími er til stefnu áður en stöðumælir rennur út (ef um tímamörk er að ræða).
-\nBæði staðurinn og tíminn eru sýnileg á stjórnborði OsmAnd rétt eins og í sérstökum viðmótshluta kortaskjásins. Hægt er að bæta áminningu inn í Android dagatalið.</string>
     <string name="empty_state_markers_active_desc">Ýta og halda eða stutt bank á staði, banka síðan á hnappinn í merkiflagginu.</string>
     <string name="tap_on_map_to_hide_interface_descr">Bank á kortið víxlar stjórnhnöppum og viðmótshlutum af eða á.</string>
     <string name="fast_coordinates_input_descr">Veldu inntakssnið hnita. Þú getur alltaf breytt því í stillingunum.</string>

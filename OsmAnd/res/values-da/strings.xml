@@ -3,18 +3,10 @@
     <string name="srtm_paid_version_msg">Overvej at købe Højdekurve udvidelsen (\'Contour lines\') på Google Play for at støtte den videre udvikling.</string>
     <string name="av_widget_action_descr">Vælg standard modulhandling.</string>
     <string name="av_widget_action">Standard modulhandling</string>
-    <string name="av_use_external_recorder">Brug systemoptager</string>
-    <string name="recording_error">Fejl opstod under optagelse </string>
-    <string name="recording_open_external_player">Åbn ekstern afspiller</string>
     <string name="recording_delete_confirm">Skal optagelsen slettes?</string>
 
-    <string name="recording_unavailable">ikke tilgængelig</string>
     <string name="srtm_paid_version_title">Højdekurver</string>
-    <string name="recording_can_not_be_played">Optagelse kan ikke afspilles</string>
-    <string name="recording_context_menu_delete">Slet optagelse</string>
     <string name="recording_context_menu_play">Afspil</string>
-    <string name="recording_description">Optagelse %1$s %3$s %2$s</string>
-    <string name="recording_default_name">Optager</string>
     <string name="osmand_srtm_short_description_80_chars">Udvidelse for offline højdekurver</string>
     <string name="osmand_srtm_long_description_1000_chars">"Udvidelsen giver både en højdekurver overlejring og reliefskygger, der vises ovenpå OsmAnds standard kort. Funktionaliteten er meget værdsat af sportsfolk, vandrere, og enhver interesseret i en relief struktur af landskabet. 
 \n
@@ -75,10 +67,7 @@
     <string name="clear_dest_confirm">Slet destinationen (og mellemliggende destinationer)?</string>
     <string name="precise_routing_mode_descr">Aktiver for at beregne præcise ruter uden fejl. Stadig begrænset af afstand og langsom.</string>
     <string name="precise_routing_mode">Nøjagtig ruteplanlægning (alfa)</string>
-    <string name="recording_context_menu_show">Vis</string>
-    <string name="recording_photo_description">Foto %1$s %2$s</string>
     <string name="av_def_action_picture">Tag et foto</string>
-    <string name="recording_context_menu_precord">Tag et foto</string>
     <string name="target_point">Destination %1$s</string>
     <string name="intermediate_point_too_far">Mellemliggende destination %1$s er for langt væk fra den nærmeste vej.</string>
     <string name="arrived_at_intermediate_point">Ankommet til mellemliggende destination</string>
@@ -86,7 +75,6 @@
     <string name="ending_point_too_far">Slutpunktet er for langt væk fra nærmeste vej.</string>
     <string name="add_tag">Tilføj mærke</string>
     <string name="btn_advanced_mode">Avanceret tilstand…</string>
-    <string name="poi_filter_parking">Parkering</string>
     <string name="poi_filter_emergency">Nødsituation</string>
     <string name="poi_filter_public_transport">Kollektivtrafik</string>
     <string name="poi_filter_entertainment">Underholdning</string>
@@ -172,7 +160,6 @@
     <string name="map_widget_reset">Nulstil til standard</string>
 
 
-    <string name="map_widget_parking">Parkering</string>
     <string name="map_widget_monitoring">GPX logning</string>
     <string name="map_widget_speed">Hastighed</string>
     <string name="map_widget_distance">Destination</string>
@@ -191,9 +178,6 @@
     <string name="avoid_toll_roads">Undgå betalingsveje</string>
     <string name="continue_follow_previous_route_auto">Forrige navigerincg var ikke færdig. Fortsæt med at følge? (%1$s sekunder)</string>
     <string name="route_updated_loc_found">Ruten beregnes, når position er fundet</string>
-    <string name="osmand_parking_hours">Timer</string>
-    <string name="osmand_parking_minutes">Minutter</string>
-    <string name="osmand_parking_position_description_add_time">Bilen er parkeret kl.</string>
 
     <string name="select_animate_speedup">Vælg hastighed for rutesimulering</string>
     <string name="global_app_allocated_memory_descr">Tildelt hukommelse %1$s MB (Android grænse %2$s MB, Dalvik %3$s MB).</string>
@@ -204,26 +188,7 @@ Proportional hukommelse %4$s MB (Android grænse %5$s MB, Dalvik %6$s MB).</stri
 
     <string name="starting_point_too_far">Udgangspunktet er for langt fra nærmeste vej.</string>
     <string name="shared_location">Delt placering</string>
-    <string name="osmand_parking_event">Hent bilen fra parkering</string>
-    <string name="osmand_parking_warning">Advarsel</string>
-    <string name="osmand_parking_warning_text">En påmindelse om at afhente bilen er blevet tilføjet til kalenderen. Der forbliver den, indtil den slettes manuelt.</string>
-    <string name="osmand_parking_time_limit_title">Indstil tidsgrænsen for parkering</string>
-    <string name="osmand_parking_delete_confirm">Slet parkeringsmarkør?</string>
-    <string name="osmand_parking_delete">Slet P-plads markør</string>
-    <string name="osmand_parking_choose_type">Vælg parkeringstype</string>
-    <string name="osmand_parking_lim_text">Tidsbegrænset</string>
-    <string name="osmand_parking_no_lim_text">Tidsubegrænset</string>
-    <string name="osmand_parking_add_event">Tilføj en påmindelse til kalenderen</string>
-    <string name="osmand_parking_time_limit">Tidsbegrænset parkering</string>
-    <string name="osmand_parking_time_no_limit">Ikke tidsbgrænset parkering</string>
-    <string name="osmand_parking_position_description">Den parkerede bils placering. %1$s</string>
-    <string name="osmand_parking_position_description_add">Afhent bilen:</string>
-    <string name="osmand_parking_am">AM</string>
-    <string name="osmand_parking_position_name">Parkeringsplads</string>
-    <string name="osmand_parking_plugin_description">Parkeringsplads udvidelsen kan huske hvor bilen er parkeret, og hvor meget tid der er tilbage (hvis der er en tidsfrist). Både placering og tid er synlige på betjeningspanel samt i modul på skærmen. En alarm kan tilføjes til kalenderen, som en påmindelse.</string>
-    <string name="osmand_parking_plugin_name">Parkering</string>
     <string name="context_menu_item_add_parking_point">Marker som parkeringsplads</string>
-    <string name="context_menu_item_delete_parking_point">Slet en parkeringsmarkør</string>
     <string name="gpxup_public">Offentligt</string>
     <string name="gpxup_identifiable">Identificerbar</string>
     <string name="gpxup_trackable">Sporbar</string>
@@ -236,8 +201,6 @@ Proportional hukommelse %4$s MB (Android grænse %5$s MB, Dalvik %6$s MB).</stri
     <string name="layer_hillshade">Reliefskygger</string>
     <string name="target_points">Destinationer</string>
     <string name="map_widget_intermediate_distance">Mellemliggende destination</string>
-    <string name="osmand_play_title_30_chars">OsmAnd kort &amp; navigation</string>
-    <string name="osmand_plus_play_title_30_chars">OsmAnd+ kort &amp; navigation</string>
     <string name="show_traffic_warnings">Trafikadvarsler</string>
     <string name="rendering_attr_noPolygons_description">Gør alle overflader på kortet transparent.</string>
     <string name="rendering_attr_noPolygons_name">Polygoner</string>
@@ -310,7 +273,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="back_to_location">Tilbage til placering</string>
 
     <string name="accessibility_mode">Tilgængelighedstilstand</string>
-    <string name="osmand_parking_pm">PM</string>
     <string name="default_buttons_support">Støt</string>
     <string name="info_button">Information</string>
     <string name="map_widget_gps_info">GPS-information</string>
@@ -485,40 +447,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="favourites_edit_dialog_category">Kategori</string>
     <string name="shared_string_no_thanks">Nej tak</string>
     <string name="local_index_gpx_info_show">\n\nLangt tryk for valgmuligheder</string>
-	
-	<string name="osmand_long_description_1000_chars">OsmAnd (OSM Automated Navigation Directions) 
-\n 
-\n OsmAnd er et open source navigationsprogram med adgang til en lang række af globale OpenStreetMap (OSM) data. Alle kortdata (vektor eller kortbrikker) kan gemmes på enhedens hukommelseskort til offline brug. OsmAnd tilbyder også offline og online rute funktionalitet inklusiv sving-for-sving talevejledning. 
-\n 
-\nNogle af hovedfunktionerne: 
-\n - Komplet offline funktionalitet (gemme hentede vektor eller kortbrikker i enhedens lager) 
-\n - Kompakt offline vektorkort for hele verden er tilgængelig 
-\n - Kort for enkelte lande eller områder kan hentes direkte fra OsmAnd 
-\n - Overlejring af flere kort lag er muligt, som f.eks. GPX eller navigationsspor, Interessepunkter (IP), favoritter, konturlinjer, Kollektivtrafik stoppesteder og flere kort med modificerebar gennemsigtighed 
-\n - Offline søgning af adresser og steder interessepunkter (IP) 
-\n - Offline ruteplanlægning for medium afstande 
-\n - Bil, cykel og fodgænger tilstand med: 
-\n - Valgfri automatisk dag/nat tilstandsskift 
-\n - Valgfri automatisk zoom efter hastighed 
-\n - Valgfri automatisk kort rotation efter kompas eller bevægelses retning 
-\n - Valgfri vognbaneassistent 
-\n - Visning af hastighedsgrænser 
-\n - Optagede og TTS (Tekst-til-stemme) stemmer 
-\n 
-\n Begrænsninger i den gratis version af OsmAnd: 
-\n - Antallet af kort der kan hentes er begrænset 
-\n - Ingen adgang Wikipedia offline interessepunkter 
-\n 
-\nOsmAnd bliver aktivt udviklet. Projektet og den videre udvikling afhænger af økonomiske bidrag til at drive udviklingen og test af nye funktioner. Overvej at købe OsmAnd+, betale for en specifik ny funktion eller lave en generel donation på osmand.net.</string>
-    
-    <string name="osmand_plus_long_description_1000_chars">"OsmAnd+ (OSM Automated Navigation Directions) OsmAnd+ er et open source navigationsprogram med adgang til en bred vifte af globale OpenStreetMap (OSM) data. Alle kortdata (vektor eller kortbrikker) kan gemmes på enhedens hukommelseskort til offline brug. OsmAnd tilbyder også offline og online ruteplanlægning funktionalitet, herunder sving-for-sving talevejledning. 
-\n
-\nOsmAnd+ er den betalte programversion, ved at købe den støtter man projektet, finansiere udviklingen af nye funktioner, og modtager de seneste opdateringer. 
-\n
-\nNogle af hovedfunktionerne:  - Komplet offline funktionalitet (gem hentede vektor eller kortbrikker i enhedens hukommelsseskort)  - Kompakte offline vektorkort for hele verden tilgængelig  - Ubegrænset hentning af lande- eller områdekort direkte fra OsmAnd  - Offline Wikipedia funktioner (hent Wikipedia Interessepunkter (IP)), fantastisk til sightseeing  - Overlejring af flere kortlag mulige, såsom GPX eller navigationsspor, seværdigheder, favoritter, højdekurver, stoppesteder for kollektivtrafik , ekstra kort med brugerdefinerbar gennemsigtighed  - Offline søgning efter adresser og steder (IP)  - Offline ruteplanlægning til medium afstande   - Bil, cykel, og fodgængere tilstand med:  - Valgfri automatisk dag/nat visning  - Valgfri hastighedsafhængig kort zoom  - Valgfri kort tilpasning i henhold til kompas eller bevægelsesretning 
-\n
-\n - Valgfri vognbane vejledning, visning af hastighedsgrænser,  optagede- eller TTS stemmer"</string>
-    
 
 
     <string name="city_type_hamlet">lille landsby</string>
@@ -1097,8 +1025,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="av_camera_focus_macro">Makrofokustilstand (nærbillede)</string>
     <string name="av_camera_focus_edof">Udvidet dybdeskarphed (EDOF)</string>
     <string name="av_camera_focus_continuous">Kameraet forsøger løbende at fokusere</string>
-    <string name="av_photo_play_sound_descr">Spil lyd når der optages fotos.</string>
-    <string name="av_photo_play_sound">Kameralyd</string>
     <string name="speak_traffic_warnings">Trafikadvarsler</string>
     <string name="speak_cameras">Fartkameraer</string>
     <string name="speak_speed_limit">Hastighedsgrænse</string>
@@ -1636,7 +1562,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="version_settings">Versioner</string>
     <string name="points">Punkter</string>
     <string name="gps_status">GPS status</string>
-    <string name="parking_place">Parkeringsplads</string>
     <string name="remove_the_tag">FJERN MÆRKET</string>
     <string name="plugin_description_title">Beskrivelse</string>
 
@@ -1778,10 +1703,7 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="osm_edits">OSM redigeringer</string>
     <string name="osmand_parking_hour">t</string>
     <string name="osmand_parking_minute">min</string>
-    <string name="osmand_parking_time_left">tilbage</string>
-    <string name="parking_place_limited">Tidsbegrænset parkering til</string>
     <string name="your_edits">Redigeringer</string>
-    <string name="osmand_parking_overdue">Udløbet</string>
     <string name="delay_to_start_navigation_descr">Angiv ventetiden til at forblive på skærmen for ruteplanlægning.</string>
     <string name="delay_to_start_navigation">Start sving-for-sving navigation efter…</string>
     <string name="shared_string_go">Udfør</string>
@@ -2488,7 +2410,6 @@ Hvis du  ønsker at støtte OsmAnd og OSM, er dette en god måde at gøre det p�
     <string name="quick_action_navigation_voice_off">Talevejledning er inaktiv</string>
     <string name="quick_action_navigation_voice_on">Talevejledning er aktiv</string>
     <string name="quick_action_add_gpx">Tilføj GPX-rutepunkt</string>
-    <string name="quick_action_add_parking">Tilføj en parkeringsplads</string>
     <string name="quick_action_new_action">Tilføj genvej</string>
     <string name="quick_action_edit_action">Rediger genvej</string>
     <string name="quick_action_add_favorite">Tilføj favorit</string>
@@ -2502,7 +2423,6 @@ Hvis du  ønsker at støtte OsmAnd og OSM, er dette en god måde at gøre det p�
     <string name="quick_action_add_osm_bug_descr">Tryk på genvejen tilføjer en OSM note på skærmens centrum.</string>
     <string name="quick_action_add_poi_descr">Tryk på genvej vil tilføje et interessepunkt på skærmens centrum.</string>
     <string name="quick_action_navigation_voice_descr">Tryk på genvej vil deaktivere eller aktivere stemmevejledning under navigation.</string>
-    <string name="quick_action_add_parking_descr">Tryk på genvejen vil tilføje en parkeringsplads på skærmens centrum.</string>
     <string name="favorite_autofill_toast_text">" er gemt i "</string>
     <string name="favorite_empty_place_name">Sted</string>
     <string name="quick_action_duplicates">Angivne genvej er allerede i brug, navnet blev ændret til %1$s at undgå overlapning.</string>
@@ -2621,7 +2541,6 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="relief_smoothness_factor_descr">Foretruknet terræn: fladt eller kuperet.</string>
     <string name="routing_attr_relief_smoothness_factor_name">Vælg terræntype</string>
     <string name="full_version_thanks">Tak for købet af den fulde version af OsmAnd!</string>
-    <string name="parking_options">Parkeringsmuligheder</string>
     <string name="do_not_send_anonymous_app_usage">Send ikke anonyme brugsstatistikker</string>
     <string name="do_not_send_anonymous_app_usage_desc">Der indsamles oplysninger om hvilke dele der åbnes. Placering bliver aldrig sendt, heller ikke noget der indtastes eller oplysninger om områder der søges eller hentes.</string>
     <string name="do_not_show_startup_messages">Vis ikke meddelelser ved opstart</string>
@@ -2635,7 +2554,6 @@ Repræsenterer område: %1$s x %2$s</string>
 \n  Anslået kortdækning og kvalitet:   • Vesteuropa: ****   • Østeuropa: ***   • Rusland: ***   • Nordamerika: ***   • Sydamerika: **   • Asien: **   • Japan og Korea: ***   • Mellemøsten: **   • Afrika: **   • Antarktis: *   De fleste lande i verden kan hentes!   Få pålidelig navigation - det være sig Frankrig, Tyskland, Mexico, Storbritannien, Spanien, Holland, USA, Rusland, Brasilien eller andre.</string>
     <string name="osmand_plus_extended_description_part7">Bidrag direkte til OSM   • Rapporter fejl i data   • Overfør GPX-spor direkte til OSM   • Tilføj IP\'er og overfør dem direkte til OSM (eller senere, hvis offline)   • Valgfri turoptagelse også i baggrundstilstand (mens enheden er i dvaletilstand)
 \n  OsmAnd er open source og bliver aktivt udviklet. Alle kan bidrage til anvendelsen ved at rapportere fejl, forbedring af oversættelser eller kodning af nye funktioner. Projektet er i en levende kontinuerlig forbedring af alle disse former for udvikling og brugerinteraktion. Projektets fremdrift er også afhængig af finansielle bidrag til finansiering af kodning og afprøvning af nye funktionaliteter.</string>
-    <string name="osmand_extended_description_part2">"GPS-navigation • Vælg mellem offline (ingen roamingtakster i udlandet) eller online (hurtigere) tilstand  • Sving-for-sving stemmevejledning (indspillet og syntetiseret stemmer)  • Rutens genberegnes ved afvigelse   • Banevejledning, gadenavne, og forventet ankomsttidspunkt vil hjælpe undervejs  • For at gøre -rejsen mere sikker, skifter dag-/nat-tilstand automatisk  • Vælg at vise hastighedsgrænser, og få påmindelser, hvis de overskrides  • Kortzoom tilpasser sig hastigheden  • Søg destination efter adresse, efter type (fx: parkering, restaurant, hotel, tankstation, museum), eller ved geografiskekoordinater  • Understøtter mellemliggende punkter på ruten  • Optag eller overfør et GPX-spor og følg det"</string>
     <string name="osmand_extended_description_part3">Kort • Viser IP\'er (interessepunkter) i nærheden • Justerer kortet til bevægelsesretning (eller kompas) • Viser hvor man er og hvad der kigges på • Del placering, så andre kan finde dig • Gem vigtige steder i favoritter • Giver mulighed for at vælge, hvordan navne vises på kortet: på engelsk, lokal eller fonetisk stavemåde • Viser specialiserede online kortbrikkerr, satellitvisning (fra Bing), forskellige overlejringer som touring/navigation GPX-spor og yderligere lag med tilpasselig gennemsigtighed</string>
     <string name="osmand_extended_description_part4">Skikort udvidelsen viser skiløjper med angivelse af sværhedsgrad og yderligere oplysninger, såsom placering af lifte og andre faciliteter.</string>
     <string name="osmand_extended_description_part5">"Cykling  • Find cykelstier på kortet  • GPS-navigation i cykeltilstand laver ruten ved hjælp af cykelstier • Se hastighed og højde • GPX optagelse kan optage turen og dele den • Via ekstra udvidelser kan aktiveres visning af højdekurver og relieflag"</string>

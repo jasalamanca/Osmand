@@ -23,7 +23,6 @@
     <string name="ending_point_too_far">Sluttpunkt for langt fra nærmeste vei.</string>
     <string name="add_tag">Legg til merke</string>
     <string name="btn_advanced_mode">Avansert modus…</string>
-    <string name="poi_filter_parking">Parkering</string>
     <string name="poi_filter_emergency">Nødsituasjon</string>
     <string name="poi_filter_public_transport">Offentlig transport</string>
     <string name="poi_filter_entertainment">Underholdning</string>
@@ -71,7 +70,6 @@
     <string name="map_widget_reset">Tilbakestill til standard</string>
 
 
-    <string name="map_widget_parking">Parkering</string>
     <string name="map_widget_monitoring">GPX-logging</string>
     <string name="map_widget_speed">Hastighet</string>
     <string name="map_widget_distance">Mål</string>
@@ -90,9 +88,6 @@
     <string name="avoid_toll_roads">Unngå bomveier</string>
     <string name="continue_follow_previous_route_auto">Forrige navigering var ikke ferdig. Fortsette å følge den? (%1$s sekunder)</string>
     <string name="route_updated_loc_found">Rute blir beregnet når posisjon blir funnet</string>
-    <string name="osmand_parking_hours">Timer</string>
-    <string name="osmand_parking_minutes">Minutter</string>
-    <string name="osmand_parking_position_description_add_time">Bilen er parkert</string>
     <string name="rendering_attr_appMode_name">Opptegningsmodus</string>
     <string name="rendering_attr_contourLines_name">Vis koter</string>
     <string name="rendering_attr_hmRendered_description">Øk mengden av kartdetaljer vist.</string>
@@ -763,7 +758,6 @@
     <string name="waypoints">Rutepunkter</string>
     <string name="targets">Reisemål</string>
     <string name="rendering_attr_hideBuildings_name">Bygninger</string>
-    <string name="osmand_parking_warning">Varsel</string>
     <string name="wake_on_voice_descr">Slå på enhetens skjerm (hvis av) når du nærmer deg en sving.</string>
     <string name="search_radius_proximity">Innen</string>
     <string name="speed_limit_exceed_message">Velg toleransemargin for fartsgrense, overskrides denne vil du få talevarsel.</string>
@@ -924,7 +918,6 @@
     <string name="select_address_activity">Velg adresse</string>
     <string name="favourites_list_activity">Velg favoritt</string>
     <string name="local_indexes_cat_srtm">Koter</string>
-    <string name="recording_context_menu_show">Vis</string>
     <string name="srtm_paid_version_title">Programtillegg for koter</string>
     <string name="osmand_srtm_short_description_80_chars">OsmAnd-programtillegg for (nett)frakoblede koter</string>
     <string name="map_widget_distancemeasurement">Avstandsmåling</string>
@@ -941,8 +934,6 @@
     <string name="search_villages_and_postcodes">Søk flere landsbyer/postnummer</string>
     <string name="rendering_attr_showRoadMaps_description">Velg når det skal vises rene veikart:</string>
     <string name="rendering_attr_showRoadMaps_name">Rene veikart</string>
-    <string name="osmand_play_title_30_chars">OsmAnd kart &amp; navigering</string>
-    <string name="osmand_plus_play_title_30_chars">OsmAnd+ kart &amp; navigering</string>
     <string name="map_widget_view_direction">Synsretning</string>
     <string name="gpxup_private">Privat</string>
     <string name="share_route_as_gpx">Del rute som GPX-fil</string>
@@ -1048,9 +1039,7 @@
 
     <string name="stop_routing_confirm">Er du sikker på at du vil stoppe navigeringen?</string>
     <string name="av_def_action_picture">Ta bilde</string>
-    <string name="recording_context_menu_precord">Ta bilde</string>
     <string name="dropbox_plugin_name">Dropbox-programtillegg</string>
-    <string name="recording_unavailable">utilgjengelig</string>
     <string name="monitoring_control_start">GPX</string>
 
     <string name="filterpoi_activity">Opprett interessepunkt-filter</string>
@@ -1102,7 +1091,6 @@
 
     <string name="rendering_attr_streetLighting_name">Gatebelysning</string>
     <string name="edit_group">Rediger gruppe</string>
-    <string name="parking_place">Parkeringsplass</string>
     <string name="points">Punkter</string>
 
     <string name="gps_status">GPS-status</string>
@@ -1197,9 +1185,7 @@
 
     <string name="route_points">Rutepunkter</string>
     <string name="shared_string_ellipsis">…</string>
-    <string name="osmand_parking_overdue">utløpt</string>
     <string name="osm_edits">OSM-redigeringer</string>
-    <string name="osmand_parking_time_left">igjen</string>
     <string name="your_edits">Dine redigeringer</string>
     <string name="waypoint_visit_after">Besøk etter</string>
     <string name="waypoint_visit_before">Besøk før</string>
@@ -1207,7 +1193,6 @@
     <string name="routing_settings_2">Navigeringsinnstillinger</string>
     <string name="osmand_parking_hour">t</string>
     <string name="osmand_parking_minute">min</string>
-    <string name="parking_place_limited">Parkeringstid begrenset til</string>
     <string name="simulate_your_location">Simuler din posisjon</string>
     <string name="short_location_on_map">B.gr. %1$s
 \nL.gr. %2$s</string>
@@ -1242,7 +1227,6 @@
     <string name="search_poi_category_hint">Søk alle</string>
     <string name="delay_to_start_navigation_descr">Spesifiser ventetid til å forbli på ruteplanleggingsskjermen.</string>
     <string name="plugin_nautical_name">Sjøkartvisning</string>
-    <string name="osmand_parking_plugin_name">Parkeringsposisjon</string>
     <string name="days_behind">dager etter</string>
     <string name="settings_privacy">Personvern</string>
     <string name="download_type_to_filter">Filtrer</string>
@@ -1530,7 +1514,6 @@
     <string name="full_report">Fullstendig rapport</string>
     <string name="shared_string_widgets">Moduler</string>
     <string name="consider_turning_polygons_off">Det anbefales å slå av opptegning av polygoner.</string>
-    <string name="recording_photo_description">Foto %1$s %2$s</string>
     <string name="select_month_and_country">Velg måned og land</string>
     <string name="storage_directory_readonly_desc">Den valgte datalagringsmappe er skrivebeskyttet. Lagringsmappen har midlertidig skiftet til internminnet. Velg en gyldig lagringsmappe.</string>
     <string name="shared_string_reverse_order">Snu rekkefølgen</string>
@@ -1579,12 +1562,10 @@
     <string name="download_wikipedia_maps">Wikipedia</string>
     <string name="intermediate_points_change_order">Endre rekkefølge</string>
     <string name="av_def_action_choose">Velg på forespørsel</string>
-    <string name="recording_context_menu_delete">Slett opptak</string>
     <string name="recording_context_menu_play">Spill av</string>
     <string name="int_continuosly">Sammenhengende</string>
     <string name="gpxup_trackable">Sporbar</string>
     <string name="gpxup_identifiable">Identifiserbar</string>
-    <string name="context_menu_item_delete_parking_point">Slett parkeringsplassmarkør</string>
     <string name="asap">Omgående</string>
     <string name="share_route_subject">Rute delt via OsmAnd</string>
     <string name="confirm_interrupt_download">Vil du avbryte nedlasting av filen?</string>
@@ -1639,7 +1620,6 @@
     <string name="local_indexes_cat_wiki">Wikipedia</string>
     <string name="wait_current_task_finished">Vent til gjeldende oppgave er ferdig</string>
     <string name="recording_delete_confirm">Vil du slette dette opptaket?</string>
-    <string name="osmand_parking_delete">Slett parkeringsplassmarkør</string>
     <string name="local_openstreetmap_delete">Slett endring</string>
     <string name="poi_dialog_reopen">Gjenåpne</string>
     <string name="do_you_like_osmand">Liker du OsmAnd?</string>
@@ -1828,29 +1808,7 @@
     <string name="rendering_attr_contourWidth_description">Kotebredde</string>
     <string name="rendering_attr_contourWidth_name">Kotebredde</string>
     <string name="srtm_paid_version_msg">Overvei å kjøpe kote-programtillegget i markedet for å støtte videre utvikling.</string>
-    <string name="osmand_long_description_1000_chars">OsmAnd (OSM Automated Navigation Directions)
-\n
-\nOsmAnd er et navigeringsprogram med åpen kildekode og med tilgang til et bredt mangfold av globale data fra OpenStreetMap (OSM). Alle kartdata (vektor- eller fliskart) kan lagres på telefonens minnekort for nettfrakoblet bruk. OsmAnd tilbyr også frakoblet og nettbasert rutefunksjon inkludert talebaserte anvisninger.
-\n
-\nNoen av kjernefunksjonene:
-\n - Fullstendig nettfrakoblet funksjonalitet (lagre nedlastede vektor- eller fliskart i enhetens lagringsmedium)
-\n - Kompakte frakoblede vektorkart fra hele verden tilgjengelige
-\n - Last ned lands- eller regionkart direkte fra programmet
-\n - Overlegg av flere kartlag mulig, som GPX og navigeringsspor, interessepunkter, favoritter, koter, stoppesteder for offentlig transport, ytterligere kart med egendefinert gjennomsiktighet
-\n - Frakoblet søk etter adresser og steder (interessepunkter)
-\n - Frakoblet ruteplanlegging for middels avstander
-\n - Bil, sykkel eller fotgjengermoduser med:
-\n - Valgfri automatisk skifting mellom dag/natt-visning
-\n - Valgfri fartsavhengig kart-zooming
-\n - Valgfri kartjustering etter kompass- eller bevegelsesretning
-\n - Valgfri fil-henvisning, fartsgrensevisning, innspilte og TTS-tale
-\n
-\nBegrensninger i gratisversjonen av OsmAnd:
-\n - Antall kartnedlastinger er begrenset
-\n - Ingen tilgang til frakoblede interessepunkter fra Wikipedia
-\n
-\nOsmAnd utvikles aktivt, og prosjektet vårt avhenger av finansielle bidrag for å drive utviklingen og å teste ny funksjonalitet. Overvei å kjøpe OsmAnd+ eller støtte spesifikke nye funksjoner eller bidra med en generell donasjon på osmand.net.</string>
-	<string name="upload_osm_note_description">Du kan laste opp ditt OSM-notat anonymt eller bruke din profil hos OpenStreetmap.org.</string>
+    <string name="upload_osm_note_description">Du kan laste opp ditt OSM-notat anonymt eller bruke din profil hos OpenStreetmap.org.</string>
     <string name="gpx_no_tracks_title">Du har ingen spor enda</string>
     <string name="gpx_no_tracks_title_folder">Legg til spor i mappen</string>
     <string name="gpx_add_track">Legg til spor</string>
@@ -2019,14 +1977,8 @@
     <string name="precise_routing_mode">Presis ruteplanlegging (alfa)</string>
     <string name="av_widget_action_descr">Velg standard miniprogram-handling.</string>
     <string name="av_widget_action">Standard miniprogram-handling</string>
-    <string name="av_use_external_recorder">Bruk systemopptaker</string>
     <string name="av_use_external_camera_descr">Bruk systemprogrammet til foto.</string>
     <string name="av_use_external_camera">Bruk kameraprogram</string>
-    <string name="recording_error">Feil oppstod under opptak</string>
-    <string name="recording_open_external_player">Åpne ekstern avspiller</string>
-    <string name="recording_can_not_be_played">Opptaket kan ikke spilles av</string>
-    <string name="recording_description">Innspilling %1$s %3$s %2$s</string>
-    <string name="recording_default_name">Spiller inn</string>
     <string name="index_srtm_parts">deler</string>
     <string name="rendering_attr_alpineHiking_description">Gjengi stier i henhold til SAC-skalaen.</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Gjengi stier i henhold til OSMC-spor.</string>
@@ -2094,19 +2046,6 @@
     <string name="select_animate_speedup">Velg hastighet på rutesimulering</string>
     <string name="global_app_allocated_memory_descr">Tildelt minne %1$s MB (Android-grense %2$s MB, Dalvik %3$s MB).</string>
     <string name="global_app_allocated_memory">Tildelt minne</string>
-	<string name="osmand_parking_event">Finn bilen der den er parkert</string>
-    <string name="osmand_parking_warning_text">En merknad om å hente bilen har blitt lagt til i kalenderen din. Den vil finnes der til du sletter den manuelt.</string>
-    <string name="osmand_parking_time_limit_title">Angi tidsgrense for parkering</string>
-    <string name="osmand_parking_delete_confirm">Ønsker du å slette markeringen for parkering?</string>
-    <string name="osmand_parking_choose_type">Velg typen parkering</string>
-    <string name="osmand_parking_lim_text">Tidsbegrenset</string>
-    <string name="osmand_parking_no_lim_text">Fri parkering</string>
-    <string name="osmand_parking_add_event">Legg til en melding i kalenderprogrammet</string>
-    <string name="osmand_parking_time_limit">Tidsbegrenset parkering</string>
-    <string name="osmand_parking_time_no_limit">Fri parkering</string>
-    <string name="osmand_parking_position_description">Hvor du har parkert. %1$s</string>
-    <string name="osmand_parking_position_description_add">Hvor bilen skal hentes fra:</string>
-    <string name="osmand_parking_position_name">Parkeringsplass</string>
     <string name="context_menu_item_add_parking_point">Marker som parkeringsplass</string>
     <string name="route_roundabout">Rundkjøring: Ta avkjøring %1$d og fortsett</string>
     <string name="support_new_features">Støtt nye funksjoner</string>
@@ -2162,25 +2101,6 @@
     <string name="average_speed">Gjennomsnittshastighet</string>
     <string name="select_gpx_folder">Velg spor-mappe</string>
     <string name="osmand_extended_description_part1">OsmAnd (OSM Automated Navigation Directions) er et kart- og navigeringsprogram med tilgang til gratis, verdensomspennende og høykvalitets data fra OpenStreetMap (OSM). Gled deg over tale og visuell navigering, visning av interessepunkter, oppretting og behandling av GPX-spor, bruk av kotevisualisering og høydeinformasjon (gjennom programtillegg), et valg mellom kjøring, sykling, fotgjenger-modus, OSM-redigering og mye mer.</string>
-    <string name="osmand_plus_long_description_1000_chars">OsmAnd+ (OSM Automated Navigation Directions)
-\n
-\nOsmAnd+ er et navigeringsprogram med åpen kildekode og med tilgang til et bredt mangfold av globale data fra OpenStreetMap (OSM). Alle kartdata (vektor- eller fliskart) kan lagres på telefonens minnekort for nettfrakoblet bruk. OsmAnd tilbyr også frakoblet og nettbasert rutefunksjon inkludert talebaserte anvisninger.
-\n
-\nOsmAnd+ er betalingsversjonen, ved å kjøpe den støtter du prosjektet, finansierer utviklingen av nye funksjoner, og mottar de siste oppdateringene.
-\n
-\nNoen av kjernefunksjonene:
-\n - Fullstendig nettfrakoblet funksjonalitet (lagre nedlastede vektor- eller fliskart i enhetens lagringsmedium)
-\n - Kompakte frakoblede vektorkart fra hele verden tilgjengelige
-\n - Ubegrenset nedlasting av lands- eller regionkart direkte fra programmet
-\n - Frakoblede Wikipedia-funksjoner (last ned Wikipedia-interessepunkter), flott for sightseeing
-\n - Overlegg av flere kartlag mulig, som GPX og navigeringsspor, interessepunkter, favoritter, koter, stoppesteder for offentlig transport, ytterligere kart med egendefinert gjennomsiktighet
-\n - Frakoblet søk etter adresser og steder (interessepunkter)
-\n - Frakoblet ruteplanlegging for middels avstander
-\n - Bil, sykkel eller fotgjengermoduser med:
-\n - Valgfri automatisk skifting mellom dag/natt-visning
-\n - Valgfri fartsavhengig kart-zooming
-\n - Valgfri kartjustering etter kompass- eller bevegelsesretning
-\n - Valgfri fil-henvisning, fartsgrensevisning, innspilte og TTS-tale</string>
     <string name="osmand_plus_extended_description_part1">OsmAnd+ (OSM Automated Navigation Directions) er et kart- og navigeringsprogram med tilgang til gratis, verdensomspennende og høykvalitets data fra OpenStreetMap (OSM). Gled deg over tale og visuell navigering, visning av interessepunkter, oppretting og behandling av GPX-spor, bruk av kotevisualisering og høydeinformasjon, et valg mellom kjøring, sykling, fotgjenger-modus, OSM-redigering og mye mer. OsmAnd+ er betalingsversjonen, ved å kjøpe den støtter du prosjektet, finansierer utviklingen av nye funksjoner, og mottar de siste oppdateringene. Noen av hovedfunksjonene:</string>
     <string name="quick_action_map_source_switch">Kartkilden er endret til \"%s\".</string>
     <string name="quick_action_map_source_action">Legg til kartkilde</string>
@@ -2321,7 +2241,6 @@
     <string name="nautical_maps">Sjøkart</string>
     <string name="restore_purchases">Gjenopprett kjøp</string>
     <string name="do_not_send_anonymous_app_usage">Ikke send anonym bruksstatistikk</string>
-    <string name="parking_options">Parkeringsalternativer</string>
     <string name="full_version_thanks">Takk for at du kjøpte fullversjonen av OsmAnd!</string>
     <string name="routing_attr_driving_style_speed_name">Kortere ruter</string>
     <string name="routing_attr_driving_style_balance_name">Balansert</string>
@@ -2417,8 +2336,6 @@
     <string name="native_app_allocated_memory">Totalt innebygget minne</string>
     <string name="starting_point_too_far">Startpunkt for langt fra nærmeste vei.</string>
     <string name="shared_location">Delt posisjon</string>
-    <string name="osmand_parking_pm">PM</string>
-    <string name="osmand_parking_am">AM</string>
     <string name="play_commands_of_currently_selected_voice">Velg en stemme og test ved å avspille talemeldinger</string>
     <string name="test_voice_prompts">Test talemeldinger</string>
     <string name="validate_gpx_upload_name_pwd">Angi OSM-brukernavn og passord for å laste opp GPX-filer.</string>
@@ -2469,8 +2386,6 @@
     <string name="av_camera_focus_infinity">Uendelig fokus</string>
     <string name="av_camera_focus_macro">Makrofokus (nærbilde)</string>
     <string name="av_camera_focus_continuous">Kameraet prøver kontinuerlig å fokusere</string>
-    <string name="av_photo_play_sound">Spill lyd ved billedtakning</string>
-    <string name="av_photo_play_sound_descr">Velg hvorvidt det skal spilles en lyd når det tas bilder</string>
     <string name="use_fast_recalculation">Smart omberegning av rute</string>
     <string name="rate_this_app">Vurder dette programmet</string>
     <string name="rate_this_app_long">Gi OsmAnd en poengsum på Google Play</string>
@@ -2487,7 +2402,6 @@
     <string name="quick_action_map_style_switch">Endret kartstil til \"%s\".</string>
     <string name="quick_action_add_osm_bug">Legg til OSM-notat</string>
     <string name="quick_action_add_gpx">Legg til GPX-rutepunkt</string>
-    <string name="quick_action_add_parking">Legg til parkeringsplass</string>
     <string name="quick_action_edit_action">Rediger handling</string>
     <string name="quick_actions_delete">Slett handling</string>
     <string name="quick_favorites_name_preset">Navneforvalg</string>
@@ -2495,7 +2409,6 @@
     <string name="quick_action_add_gpx_descr">Å trykke på handlingsknappen vil legge til et GPX-rutepunkt i midten av skjermen.</string>
     <string name="quick_action_add_osm_bug_descr">Å trykke på handlingsknappen vil legge til et OSM-notat i midten av skjermen.</string>
     <string name="quick_action_navigation_voice_descr">Trykk på handlingsknappen vil slå av eller på taleveiledning under navigering.</string>
-    <string name="quick_action_add_parking_descr">Å trykke på handlingsknappen vil legge til en parkeringsplass i midten av skjermen.</string>
     <string name="quick_action_interim_dialog">Vis en midlertidig dialog</string>
     <string name="favorite_autofill_toast_text">" er lagret i "</string>
     <string name="quick_action_showhide_favorites_descr">Trykk på handlingsknappen vil vise eller skjule favorittpunktene på kartet.</string>

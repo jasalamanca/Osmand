@@ -228,17 +228,9 @@
     
     
     <string name="local_indexes_cat_srtm">Høgdekurvedata</string>
-    <string name="recording_context_menu_show">Vis</string>
-    <string name="recording_photo_description">Foto %1$s av %2$s</string>
     <string name="av_def_action_picture">Ta eit foto</string>
-    <string name="recording_context_menu_precord">Ta eit foto</string>
-    <string name="av_use_external_recorder">Bruk systemopptakar</string>
     <string name="av_use_external_camera">Bruk kamera-app</string>
-    <string name="recording_unavailable">ikkje tilgjengeleg</string>
-    <string name="recording_context_menu_delete">Slett opptak</string>
     <string name="recording_context_menu_play">Spel av</string>
-    <string name="recording_description">Opptak %1$s %2$s av %3$s</string>
-    <string name="recording_default_name">opptak</string>
     <string name="shared_string_control_stop">Stopp</string>
     <string name="shared_string_control_start">Start</string>
     <string name="map_widget_distancemeasurement">Avstandsmåling</string>
@@ -263,7 +255,6 @@
     <string name="close_changeset">Lukk endringssett</string>
 	<string name="rendering_attr_roadColors_name">Vegfargetema</string>
     <string name="btn_advanced_mode">Avansert modus …</string>
-    <string name="poi_filter_parking">Parkering</string>
     <string name="poi_filter_emergency">Nødhjelp</string>
     <string name="poi_filter_public_transport">Kollektivtransport</string>
     <string name="poi_filter_entertainment">Underhaldning</string>
@@ -277,7 +268,6 @@
 	<string name="avoid_motorway">Unngå motorvegar</string>
 	<string name="snap_to_road">Lås på veg</string>
 	<string name="interrupt_music">Avbryt musikk</string>
-	<string name="osmand_plus_play_title_30_chars">OsmAnd+ kart og navigering</string>
-	<string name="recalculate_route_to_your_location">Transportmodus</string>
+    <string name="recalculate_route_to_your_location">Transportmodus</string>
 	<string name="select_destination_and_intermediate_points">Merk vegpunkt</string>
     </resources>

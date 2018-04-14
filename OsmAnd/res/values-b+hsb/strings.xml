@@ -402,7 +402,6 @@
     <string name="choose_osmand_theme">Napohlad aplikacije</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
     <string name="download_wikipedia_maps">Wikipedija</string>
-    <string name="recording_error">Při nahrawanju je zmylk wustupił</string>
     <string name="safe_mode_description">Aplikacija běži w zawěsćenym modusu (za pomałše wersije Androida).</string>
     <string name="safe_mode">Zawěsćeny modus</string>
     <string name="native_library_not_running">Aplikacija běži w zawěsćenym modusu (hodźi so w nastajenjach wupinyć).</string>
@@ -434,7 +433,6 @@
     <string name="ending_point_too_far">Cil je předaloko preč wot najblišeho puća.</string>
     <string name="add_tag">Zapisk dodać</string>
     <string name="btn_advanced_mode">Dalše podaće…</string>
-    <string name="poi_filter_parking">Parkowanišćo</string>
     <string name="poi_filter_emergency">Nuzowy pad</string>
     <string name="poi_filter_public_transport">Zjawny transport</string>
     <string name="poi_filter_entertainment">Zabawa</string>
@@ -456,10 +454,8 @@
     <string name="snap_to_road">Na dróze wostać</string>
     <string name="interrupt_music_descr">Hudźbu za připowědźe nawigacije přetorhować.</string>
     <string name="interrupt_music">Wothrawanje hudźby přetorhować</string>
-    <string name="osmand_play_title_30_chars">OsmAnd karty a nawigacija</string>
     <string name="osmand_short_description_80_chars">Globalna kartowa a nawigaciska słužba za OSM-karty (online a offline)</string>
-	<string name="osmand_long_description_1000_chars">OsmAnd (OSM Automated Navigation Directions) OsmAnd je wotewrjena nawigaciska słužba z přistupom na wulku wšelakorosć globalnych datow OpenStreetMap (OSM). Wšě kartowe daty (wektorowe formaty abo kartowe kachlicy) hodźa so za offline-wužiwanje na Wašej składowanskej karće składować. OsmAnd poskići nimo toho nawigacisku słužbu z hłosowymi připowědźemi. Někotre centralne funkcije: - funguje dospołnje tež online (karty hodźa so składować na nastroju) - kompaktne wektorowe karty za cyły swět steja k dispoziciji - sćehnjenje kartow je móžne direktnje z aplikacije - wjacore kartowe runiny hodźa so runočasnje pokazować (n.př. GPX-tracks, nawigaciske čary, zajimawostki (POI), fawority, zastanišća zjawneho transporta a přidatne karty - offline-pytanje za adresami a městnami (POI) - offline-nawigacija za krótke čary (eksperimentalnje) - modusy za awta, kolesa a pěškow z: - móžnym awtomatiskim měnjenjom mjez dnjowym/nócnym modusom - móžnym awtomatiskim zoomom wotpowědujo spěšnosći - móžnym awtomatiskim wusměrjenjom karty wotpowědujo kompasej abo směrej pohibowanja - informacijemi wo dowolenej spěšnosći, jězbnych ćěrjach a błyskačach Wobmjezowanja tuteje bjezpłatneje wersije OsmAnd: - ličba offline-kartow je wobmjezowana - žadyn přistup k offline-dypkam (POI) Wikipedije OsmAnd so aktiwnje dale wuwiwa a projekt trjeba pjenježne srědki za wuwiwanje, wudospołnjenje a testowanje (jězby) nowych funkcijow. Prošu přemyslće, hač njebyšće chcył(a) kupić OsmAnd+ z dalšimi funkcijemi abo podpěrać OsmAnd z darom pod osmand.net.</string>
-	
+
     <string name="filterpoi_activity">POI-filter postajić</string>
     <string name="recalculate_route_to_your_location">Wužiwarski profil:</string>
     <string name="select_navigation_mode">Wužiwarski profil wubrać</string>
@@ -481,7 +477,6 @@
     <string name="map_widget_back_to_loc">Hdźe sym</string>
     <string name="map_widget_lock_screen">Lock screen</string>
     <string name="map_widget_compass">Kompas</string>
-    <string name="map_widget_parking">Parkowanišćo</string>
     <string name="map_widget_speed">Spěšnosć</string>
     <string name="map_widget_distance">Cil</string>
     <string name="map_widget_altitude">Wysokosć</string>
@@ -490,18 +485,8 @@
     <string name="show_traffic_warnings">Wobchadne warnowanja pokazać</string>
     <string name="avoid_toll_roads">Mawtowe dróhi wobeńć</string>
     <string name="continue_follow_previous_route_auto">Zašła nawigacija njebu zakónčena. Chceće čarje dale slědować (%1$s sekundy)</string>
-    <string name="osmand_parking_hours">hodź.</string>
-    <string name="osmand_parking_minutes">mjeńšin</string>
     <string name="select_animate_speedup">Spěšnosć simulacije postajić</string>
     <string name="starting_point_too_far">Wuchadźišćo je předaloko preč wot najblišeho puća.</string>
-    <string name="osmand_parking_warning">Warnowanje</string>
-    <string name="osmand_parking_time_limit_title">Časowy limit za parkowanje postajić</string>
-    <string name="osmand_parking_choose_type">Typ parkowanišća wubrać</string>
-    <string name="osmand_parking_lim_text">časowje wobmjezowane</string>
-    <string name="osmand_parking_no_lim_text">časowje njewobmjezowane</string>
-    <string name="osmand_parking_time_limit">časowje wobmjezowane parkowanišćo</string>
-    <string name="osmand_parking_time_no_limit">časowje njewobmjezowane parkowanišćo</string>
-    <string name="osmand_parking_position_description">Městno twojeho parkowaneho awta. %1$s</string>
     <string name="gpxup_public">Zjawne</string>
     <string name="gpxup_identifiable">Spóznajomne</string>
     <string name="gpxup_private">Priwatne</string>
@@ -974,7 +959,6 @@
     <string name="fonts_header">Pisma za kartu</string>
     <string name="right_side_navigation">Jězdźenje naprawo</string>
     <string name="driving_region_automatic">Awtomatisce</string>
-    <string name="parking_options">Opcije parkowanja</string>
     <string name="full_version_thanks">Dźakujemy so za kup dospołneje wersije OsmAnd!</string>
     <string name="routing_attr_relief_smoothness_factor_hills_name">Hórkate</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Mjenje hórkate</string>
@@ -1098,7 +1082,6 @@
     <string name="shared_string_delete_all">Wšitke wotstronić</string>
     <string name="local_osm_changes_delete_all_confirm">Chceš %1$d změnow na OSM wotstronić. Sy sej wěsty/a?</string>
     <string name="recording_delete_confirm">Chceš tute nahraće wotstronić?</string>
-    <string name="recording_context_menu_delete">Nahraće wotstronić</string>
     <string name="local_openstreetmap_delete">modifikaciju wotstronić</string>
     <string name="local_openstreetmap_settings">Lokalnje składowane OSM-dypki/noticy</string>
     <string name="free_version_message">Tuta bjezpłatna wersija OsmAnd je wobmjezowana na %1$s downloadow (přidaće a wobnowjenje kartow) a njepodpěruje offline-wužiwanje zapiskow z Wikipedije.</string>
@@ -1225,7 +1208,6 @@
     <string name="speak_descr">Připowědźe pućnych mjenow, wobchadnych warnowanjow, błyskačow, wobmjezowanjow spěšnosće.</string>
     <string name="speak_speed_limit">Wobmjezowanja spěšnosće</string>
     <string name="cancel_route">Čaru zaćisnyć</string>
-    <string name="recording_context_menu_show">Pokazać</string>
     <string name="map_widget_max_speed">Wobmjezowanje spěšnosće</string>
     <string name="map_widget_reset">Standardne nastajenja wobnowić</string>
     <string name="left_side_navigation">Jězdźenje nalěwo</string>
@@ -1301,7 +1283,6 @@
     <string name="osmo_grop_name_length_alert">Mjeno skupiny dyrbjało měć znajmjeńša tři pismiki!</string>
     <string name="osmand_parking_hour">h</string>
     <string name="osmand_parking_minute">mjeńš</string>
-    <string name="osmand_parking_time_left">wyše</string>
     <string name="short_location_on_map">Šěr %1$s
 \nDołh %2$s</string>
     <string name="shared_string_more_actions">Dalše akcije</string>
@@ -1435,7 +1416,4 @@
     <string name="track_points">Pućne dypki</string>
     <string name="shared_string_online_maps">Online-karty</string>
     <string name="mark_to_delete">Za wotstronjenje markěrować</string>
-    <string name="osmand_parking_delete_confirm">Chceš parkowansku chorhojčku woprawdźe wotstronić?</string>
-    <string name="osmand_parking_delete">Parkowansku chorhojčku wotstronić</string>
-    <string name="context_menu_item_delete_parking_point">Parkowansku chorhojčku wotstronić</string>
-    </resources>
+</resources>

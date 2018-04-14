@@ -822,39 +822,16 @@
   <string name="gpxup_identifiable">გამოსაცნობი</string>
   <string name="gpxup_trackable">მიყოლის შესაძლებლობა</string>
   <string name="gpxup_private">საკუთარი</string>
-  <string name="osmand_parking_event">მანქანის გაჩერებიდან გამოყვანა</string>
-  <string name="osmand_parking_warning">გაფრთხილება</string>
-  <string name="osmand_parking_warning_text">შეტყობინება თქვენი მანქანის გამოყვენის შესახებ კალენდარში უკვე არსებობს. ის დარჩება ხელით წაშლამდე დარჩება კალენდარში.</string>
-  <string name="osmand_parking_time_limit_title">პარკინგის დროის ლიმიტის დაყენება</string>
-  <string name="osmand_parking_delete_confirm">გნებავთ დაყენებული მანქანის მდებარეობის წაშლა?</string>
-  <string name="osmand_parking_delete">პარკინგის მაჩვენებლის წაშლა</string>
-  <string name="osmand_parking_choose_type">აირჩიეთ პარკინგის ტიპი</string>
-  <string name="osmand_parking_lim_text">დროში შეზღუდული</string>
-  <string name="osmand_parking_no_lim_text">დროში შეუზღუდავი</string>
-  <string name="osmand_parking_add_event">კალენდარში გაფრთხილების დამატება</string>
-  <string name="osmand_parking_time_limit">დროში შეზღუდული პარკინგი</string>
-  <string name="osmand_parking_time_no_limit">დროში შეუზღუდავი პარკინგი</string>
-  <string name="osmand_parking_position_description">დაპარკინგებული მანქანის მდებარეობა. %1$s</string>
-  <string name="osmand_parking_position_description_add">მანქანის გამოყვანის დრო:</string>
-  <string name="osmand_parking_pm">PM</string>
-  <string name="osmand_parking_am">AM</string>
-  <string name="osmand_parking_position_name">პარკინგის ადგილი</string>
-  <string name="osmand_parking_plugin_description">დამატება გაძლევთ საშუალებას შეინახოთ მანქანის პარკინგის მდებარეობა.</string>
-  <string name="osmand_parking_plugin_name">პარკინგის მდებარეობის დამატება</string>
-  <string name="context_menu_item_add_parking_point">დამატება პარკინგის მდებარეობად</string>
-  <string name="context_menu_item_delete_parking_point">პარკინგის მაჩვენებლის წაშლა</string>
-  <string name="starting_point_too_far">საწყისი წერტილი მეტისმეტად შორსაა უახლოესი გზისაგან.</string>
+    <string name="context_menu_item_add_parking_point">დამატება პარკინგის მდებარეობად</string>
+    <string name="starting_point_too_far">საწყისი წერტილი მეტისმეტად შორსაა უახლოესი გზისაგან.</string>
   <string name="shared_location">გაზიარებული მდებარეობა</string>
   <string name="select_animate_speedup">აირჩიეთ მოძრავი გზის აჩქარება</string>
   <string name="global_app_allocated_memory_descr">გამოყოფილი მეხსიერება %1$s მბ (Android-ის ლიმიტი %2$s მბ, Dalvik %3$s მბ).</string>
   <string name="global_app_allocated_memory">გამოყოფილი მეხსიერება</string>
   <string name="native_app_allocated_memory_descr">აპლიკაციის მიერ გამოყენებული ჯამური ადგილობრივი მეხსიერება %1$s მბ (Dalvik %2$s მბ, სხვა %3$s მბ). პროპორციული მეხსიერება %4$s მბ (Android-ის ლიმიტი %5$s მბ, Dalvik %6$s მბ).</string>
   <string name="native_app_allocated_memory">ჯამური ადგილობრივი მეხსიერება</string>
-  
-  <string name="osmand_parking_hours">სთ</string>
-  <string name="osmand_parking_minutes">წთ</string>
-  <string name="osmand_parking_position_description_add_time">მანქანის პარკინგის დროა:</string>
-  <string name="use_compass_navigation_descr">კომპასის გამოყენება მიმართულების დაუდგენლობისას</string>
+
+    <string name="use_compass_navigation_descr">კომპასის გამოყენება მიმართულების დაუდგენლობისას</string>
   <string name="use_compass_navigation">კომპასის გამოყენება</string>
   <string name="route_updated_loc_found">გზის გადათვლა სასურველი წერტილის პოვნის შემთხვევაში</string>
   <string name="continue_follow_previous_route_auto">წინა გზა არ დასრულებულა. გნებავთ მისი გაყოლა? (%1$s წმ)</string>
@@ -873,10 +850,9 @@
   <string name="map_widget_compass">კომპასი</string>
   
   <string name="map_widget_reset">ნაგულისხმევზე დაბრუნება</string>
-  
-  
-  <string name="map_widget_parking">პარკინგი</string>
-  <string name="map_widget_monitoring">დევნა</string>
+
+
+    <string name="map_widget_monitoring">დევნა</string>
   <string name="map_widget_speed">სიჩქარე</string>
   <string name="map_widget_distance">მიზანი</string>
   <string name="map_widget_altitude">სიმაღლე</string>
@@ -959,7 +935,6 @@
     <string name="ending_point_too_far">საბოლოო წერტილი მეტისმეტად სორსაა უახლოესი გზიდან.</string>
     <string name="add_tag">ჭდის დამატება</string>
     <string name="btn_advanced_mode">ზუსტი რეჟიმი…</string>
-    <string name="poi_filter_parking">პარკინგი</string>
     <string name="poi_filter_emergency">სასწრაფო</string>
     <string name="poi_filter_public_transport">საზოგადო ტრანსპორტი</string>
     <string name="poi_filter_entertainment">გასართობი</string>
@@ -976,10 +951,7 @@
     <string name="clear_dest_confirm">დარწმუნებული ბრძანდებით რომ გნებავთ გაასუფთაოთ თქვენი დანიშნულების წერტილი?</string>
     <string name="precise_routing_mode_descr">ჩართეთ ზუსტი გზები მათი მანძილის ზუსტად დასათვლელად. მაგრამ ის ძალიან შეზღუდულია მანძილით და არ იყენებს ადგილობრივ ბიბლიოთეკას.</string>
     <string name="precise_routing_mode">გზის ზუსტი დათვლა (ალფა)</string>
-    <string name="recording_context_menu_show">ჩვენება</string>
-    <string name="recording_photo_description">ფოტო %1$s %2$s-დან</string>
     <string name="av_def_action_picture">ფოტოს გადაღება</string>
-    <string name="recording_context_menu_precord">ფოტოს გადაღება</string>
     <string name="dropbox_plugin_description">Dropbox-ის დამატება საშუალებას გაძლევთ გააკეთოთ სინქრონიზაცია თქვენი გზებისა და აუდიო/ვიდეო შენიშვნებისა თქვენს dropbox-ის ანგარიშთან.</string>
     <string name="dropbox_plugin_name">Dropbox-ის დამატება</string>
     
@@ -988,17 +960,9 @@
     <string name="srtm_paid_version_title">დამატება Contour lines</string>
     <string name="av_widget_action_descr">ღილაკის ნაგულისხმევი ქცევის არჩევა</string>
     <string name="av_widget_action">ღილაკის ნაგულისხმევი ქცევა</string>
-    <string name="av_use_external_recorder">გარე ჩამწერის გამოყენება</string>
-    <string name="recording_error">"ჩაწერის შეცდომა "</string>
-    <string name="recording_open_external_player">გარე დამკვრელის გაშვება</string>
     <string name="recording_delete_confirm">გნებავთ ჩანაწერის წაშლა?</string>
-    
-    <string name="recording_unavailable">მიუწვდომელია</string>
-    <string name="recording_can_not_be_played">ჩანაწერის დაკვრა შეუძლებელია</string>
-    <string name="recording_context_menu_delete">ჩანაწერის წაშლა</string>
+
     <string name="recording_context_menu_play">დაკვრა</string>
-    <string name="recording_description">ჩანაწერი %1$s %2$s %3$s-დან</string>
-    <string name="recording_default_name">ჩანაწერი</string>
     <string name="osmand_srtm_short_description_80_chars">OsmAnd-ის დამატება გათიშული კონტურული ხაზებისათვის</string>
     
     <string name="osmand_srtm_long_description_1000_chars">"ეს დამატება უზრუნველყოფს კონტურულ ხაზებს, რომლებიც შეიძლება ნაჩვენები იქნას OsmAnd-ის გათიშულ რუკებზე. გლობალური მონაცემები (70 გრადუს ჩრდილოეთსა და 70 გრადუს სამხრეთს შორის) ემყარება SRTM (Shuttle Radar Topography Mission) და ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer)-ის მონაცემებს, რომელიც წარმოადგენს ფოტოკამერას Terra-ზე, NASA-ს წამყვან თანამგზავრზე, რომელიც ემსახურება დედამიწის დათვალიერების სისტემას. ASTER წარმოადგენს ერთობლივ პროექტს NASA-ს, იაპონიის ეკონომიკის სამინისტროს, ვაჭრობისა და ინდუსტრიის (METI), და იაპონიის კოსმოსურ სისტემებს (J-spacesystems) შორის. "</string>
@@ -1168,9 +1132,7 @@
     <string name="av_def_action_choose">მოთხოვნისას არჩევა</string>
     <string name="av_use_external_camera_descr">ფოტოებისათვის სისტემური აპლიკაციის გამოყენება</string>
     <string name="av_use_external_camera">კამერის აპლიკაციის გამოყენება</string>
-    <string name="osmand_play_title_30_chars">OsmAnd რუკები &amp; ნავიგაცია</string>
-	<string name="osmand_plus_play_title_30_chars">OsmAnd+ რუკები &amp; ნავიგაცია</string>
-	<string name="support_new_features_descr">შემომწირეთ აპლიკაციაში ახალი მახასიათებლების სანახავად</string>
+    <string name="support_new_features_descr">შემომწირეთ აპლიკაციაში ახალი მახასიათებლების სანახავად</string>
 	<string name="shared_string_downloading">ჩამოტვირთვა</string>
 	<string name="osb_author_dialog_password">OSM პაროლი(არასავალდებულო)</string>
 	<string name="av_camera_focus">კამერის ფოკუსის ტიპი</string>
@@ -1181,9 +1143,7 @@
 	<string name="av_camera_focus_infinity">ფოკუსი უსასრულოა</string>
 	<string name="av_camera_focus_macro">მაკრო (მიახლოებული) ფოკუსის რეჟიმი</string>
 	<string name="av_camera_focus_continuous">კამერა განაგრძობს ფოკუსის დაჭერას</string>
-	<string name="av_photo_play_sound">ფოტოს გადაღებისას ხმის გამოცემა</string>
-	<string name="av_photo_play_sound_descr">აირჩიეთ ფოტოების გადაღებისას ხმის გამოსაცემად</string>
-<string name="traffic_warning_hazard">საშიშროება</string>
+    <string name="traffic_warning_hazard">საშიშროება</string>
     <string name="no_updates_available">განახლებები ნაპოვნი არაა</string>
     <string name="download_live_updates">ცოცხალი განახლებები</string>
 	<string name="rendering_value_default13_name">ნაგულისხმევი (13)</string>

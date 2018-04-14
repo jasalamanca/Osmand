@@ -816,30 +816,8 @@ Er is nu {2} MB beschikbaar</string>
   <string name="gpxup_identifiable">Identificeerbaar</string>
   <string name="gpxup_trackable">Traceerbaar</string>
   <string name="gpxup_private">Privé</string>
-  <string name="osmand_parking_event">Auto ophalen van de parkeerplaats</string>
-  <string name="osmand_parking_warning">Waarschuwing</string>
-  <string name="osmand_parking_warning_text">Een notitie voor het ophalen van de auto staat in de kalender. Deze blijft staan tot je hem zelf verwijdert.</string>
-  <string name="osmand_parking_time_limit_title">Stel de parkeertijd-limiet in</string>
-  <string name="osmand_parking_delete_confirm">De locatie van de geparkeerde auto wissen?</string>
-  <string name="osmand_parking_delete">Verwijder parkeerlocatie</string>
-  <string name="osmand_parking_choose_type">Kies het type parkeerplaats</string>
-  <string name="osmand_parking_lim_text">Met tijdslimiet</string>
-  <string name="osmand_parking_no_lim_text">Zonder tijdslimiet</string>
-  <string name="osmand_parking_add_event">Een notitie aan de Kalender toevoegen</string>
-  <string name="osmand_parking_time_limit">parkeren met tijdslimiet</string>
-  <string name="osmand_parking_time_no_limit">parkeren zonder tijdslimiet</string>
-  <string name="osmand_parking_position_description">De locatie van de geparkeerde auto. %1$s</string>
-  <string name="osmand_parking_position_description_add">De auto ophalen om:</string>
-  <string name="osmand_parking_pm">\'s-middags</string>
-  <string name="osmand_parking_am">\'s-ochtends</string>
-  <string name="osmand_parking_position_name">Parkeerplek</string>
-  <string name="osmand_parking_plugin_description">De parkeerplaats-plugin bewaart de locatie waar de auto geparkeerd staat en de gekozen parkeertijd.
-U kunt uw parkeerplaats en resterende parkeertijd vinden op het Osmand dashboard en op de kaart zelf.
-Kan ter herinnering ook een afspraak in uw agenda zetten.</string>
-  <string name="osmand_parking_plugin_name">Parkeerplaats</string>
-  <string name="context_menu_item_add_parking_point">Markeer als parkeerlocatie</string>
-  <string name="context_menu_item_delete_parking_point">Verwijder de parkeerpositie</string>
-  <string name="starting_point_too_far">Startpunt te ver van de dichtstbijzijnde weg.</string>
+    <string name="context_menu_item_add_parking_point">Markeer als parkeerlocatie</string>
+    <string name="starting_point_too_far">Startpunt te ver van de dichtstbijzijnde weg.</string>
   <string name="shared_location">Gedeelde locatie</string>
   
   <string name="global_app_allocated_memory_descr">Beschikbaar werkgeheugen %1$s MB (Android limiet %2$s MB, Dalvik %3$s MB).</string>
@@ -848,10 +826,7 @@ Kan ter herinnering ook een afspraak in uw agenda zetten.</string>
 Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</string>
   <string name="native_app_allocated_memory">Totaal werkgeheugen</string>
   <string name="select_animate_speedup">Snelheid van de routesimulatie kiezen</string>
-  <string name="osmand_parking_hours">Uur</string>
-  <string name="osmand_parking_minutes">Minuten</string>
-  <string name="osmand_parking_position_description_add_time">De auto werd geparkeerd om</string>
-  <string name="use_compass_navigation_descr">Gebruik het kompas als de richting niet gedetecteerd is</string>
+    <string name="use_compass_navigation_descr">Gebruik het kompas als de richting niet gedetecteerd is</string>
   <string name="use_compass_navigation">Gebruik kompas</string>
   <string name="route_updated_loc_found">Route wordt herberekend als positie gevonden is</string>
   <string name="continue_follow_previous_route_auto">Vorige navigatie was nog niet klaar. Nu daarmee doorgaan? (%1$s seconden)</string>
@@ -870,10 +845,9 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
   <string name="map_widget_compass">Kompas</string>
   
   <string name="map_widget_reset">Herstel standaard</string>
-  
-  
-  <string name="map_widget_parking">Parkeren</string>
-  <string name="map_widget_monitoring">GPX-Track opnemen</string>
+
+
+    <string name="map_widget_monitoring">GPX-Track opnemen</string>
   <string name="map_widget_speed">Snelheid</string>
   <string name="map_widget_distance">Afstand tot Bestemming</string>
   <string name="map_widget_altitude">Hoogte</string>
@@ -903,45 +877,7 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
 
 <string name="osmand_short_description_80_chars">OsmAnd is een open-source navigatiesysteem met raster- en vectorkaarten</string>
 <string name="osmand_plus_short_description_80_chars">OsmAnd is een open-source navigatiesysteem met online en offline kaarten</string>
-<string name="osmand_long_description_1000_chars">" OsmAnd (OSM Automated Navigation Directions)
-\n
-\nOsmAnd is een open-source navigatie-applicatie die toegang geeft tot een uitgebreide variëteit aan wereldwijde OpenStreetMap (OSM) gegevens. Alle kaartgegevens (vector- of rasterkaarten) kunnen in het telefoongeheugen worden opgeslagen voor offline gebruik. OsmAnd biedt zowel offline als online route-aanwijzingen met stembegeleiding. 
-\n
-\n Enkele van de mogelijkheden:
-\n - Volledig offline gebruik (met gedownloade vector- of rasterkaarten)
-\n - Compacte offline vectorkaarten van de hele wereld zijn beschikbaar
-\n - Kaarten van landen of regio\'s direct downloadbaar via de app
-\n - Meerdere kaartlagen mogelijk, zoals GPX- of navigatietracks, interessepunten (points of interest), favorieten, hoogtelijnen, haltes openbaar vervoer, aanvullende kaarten met instelbare transparantie
-\n - Offline zoeken naar adressen en plaatsen
-\n - Offline route-aanwijzingen voor auto, fiets, en voetganger, keuze uit:
-\n     - optioneel automatische dag/nacht-weergave
-\n     - optioneel snelheidsafhankelijk inzoomen
-\n     - optionele kaartoriëntatie volgens kompas of bewegingsrichting
-\n     - optionele rijstrookinformatie, snelheidslimiet, opgenomen- en TTS-stemmen.
-\n
-\n Beperkingen van de gratis versie van OsmAnd:
-\n - Beperkt aantal kaartdownloads
-\n - Geen toegang tot Wikipedia offline POI\'s.
-\n
-\n OsmAnd wordt actief ontwikkeld en de verdere vooruitgang van het project is afhankelijk van financiële bijdragen om de ontwikkeling en toetsing van nieuwe functionaliteit te kunnen bekostigen. Wij verzoeken je om OsmAnd+ te kopen, of om een donatie over te maken via osmand.net. "</string>
-<string name="osmand_plus_long_description_1000_chars">" OsmAnd+ (OSM Automated Navigation Directions)
-\n
-\nOsmAnd is een open-source navigatie- en kaartsysteem dat gebruikmaakt van de grote verzameling OpenStreetMap-gegevens. Alle kaartgegevens kunnen worden opgeslagen in het telefoongeheugen voor offline gebruik. OsmAnd biedt zowel offline als online navigatie met stembegeleiding.
-\n
-\n OsmAnd+ is de betaalde versie. Door deze te kopen ondersteun je het project, betaal je mee aan nieuwe ontwikkelingen, en ontvang je de laatste updates.
-\n
-\n Belangrijke eigenschappen:
-\n - Complete functionaliteit zonder internetverbinding
-\n - Onbeperkt downloaden van offline-kaarten
-\n - Compacte vectorkaarten voor de gehele wereld
-\n - Download Wikipedia-interessepunten voor toerisme
-\n - Offline zoeken naar adressen en plaatsen (POI)
-\n - Offline routeberekening voor tot ca. 250 km 
-\n - Navigatie voor auto / fiets / voetganger
-\n - Stembegeleiding, rijstrookindicatie en snelheidswaarschuwingen
-\n - Meerdere kaartlagen voor POI, afgelegde weg, favorieten, hoogtelijnen, OV-haltes en extra kaarten
-\n - Automatisch draaien en zoomen van de kaart "</string>
-<string name="avoid_motorway">Vermijd snelwegen</string>
+    <string name="avoid_motorway">Vermijd snelwegen</string>
 
 <string name="snap_to_road_descr">Positie op de weg uitlijnen tijdens navigatie</string>
 <string name="snap_to_road">Positie op de weg uitlijnen</string>
@@ -952,8 +888,7 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
 <string name="ending_point_too_far">Eindpunt te ver van dichtstbijzijnde weg.</string>
 <string name="add_tag">Tag toevoegen</string>
 <string name="btn_advanced_mode">Geavanceerde modus…</string>
-<string name="poi_filter_parking">Parkeren</string>
-<string name="poi_filter_emergency">Hulpdiensten</string>
+    <string name="poi_filter_emergency">Hulpdiensten</string>
 <string name="poi_filter_public_transport">Openbaar Vervoer</string>
 <string name="poi_filter_entertainment">Amusement</string>
 <string name="poi_filter_accomodation">Onderkomen</string>
@@ -1025,29 +960,18 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
     <string name="map_widget_distancemeasurement">Afstandsmeting</string>
 
 
-    <string name="recording_open_external_player">Open externe speler</string>
     <string name="recording_delete_confirm">Wil je deze opname wissen?</string>
-    
-    <string name="recording_unavailable">niet beschikbaar</string>
-    <string name="recording_can_not_be_played">Opname kan niet worden afgespeeld</string>
-    <string name="recording_context_menu_delete">Wis opname</string>
+
     <string name="recording_context_menu_play">Afspelen</string>
-    <string name="recording_description">Opname %1$s %3$s %2$s</string>
-    <string name="recording_default_name">Opname</string>
     <string name="av_widget_action_descr">Kies standaardactie voor widget</string>
     <string name="av_widget_action">Standaard widget-actie</string>
-    <string name="av_use_external_recorder">Gebruik de systeemrecorder</string>
-    <string name="recording_error">Fout opgetreden bij opnemen </string>
     <string name="srtm_paid_version_msg">Overweeg om de hoogtelijnen-plugin (\"Contour lines\") te kopen in de Play-store om verdere ontwikkeling te ondersteunen.</string>
     <string name="srtm_paid_version_title">Hoogtelijnen-Plugin</string>
     
     <string name="intermediate_points_change_order">Volgorde wijzigen</string>
     <string name="dropbox_plugin_description">De Dropbox-Plugin kan tracks en Audio/Video-notities synchroniseren met je Dropbox-account.</string>
     <string name="dropbox_plugin_name">Dropbox-Plugin</string>
-    <string name="recording_context_menu_show">Toon</string>
-    <string name="recording_photo_description">Foto %1$s %2$s</string>
     <string name="av_def_action_picture">Foto maken</string>
-    <string name="recording_context_menu_precord">Foto maken</string>
     <string name="stop_routing_confirm">Navigatie stoppen?</string>
     <string name="clear_dest_confirm">Bestemming (en Tussenpunten) wissen?</string>
     <string name="precise_routing_mode_descr">Schakel nauwkeurige routeberekening in om precieze routes te berekenen zonder fouten. Nog beperkt in afstand en langzaam.</string>
@@ -1071,13 +995,9 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
     <string name="access_arrival_time">Aankomsttijd</string>
     <string name="map_widget_gps_info">GPS info</string>
     <string name="layer_hillshade">Reliëfweergave</string>
-    <string name="osmand_play_title_30_chars">OsmAnd Kaarten &amp; Navigatie</string>
-	
-	<string name="osmand_plus_play_title_30_chars">OsmAnd+ Kaarten &amp; Navigatie</string>
-	
-	
-    
-	<string name="hno">Huisnummer</string>
+
+
+    <string name="hno">Huisnummer</string>
     
     <string name="monitoring_settings">GPX-track</string>
     <string name="monitoring_settings_descr">Configureer: hoe uw trips op te nemen</string>
@@ -1134,10 +1054,9 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
     <string name="please_select_address">Kies eerst een plaats of straat</string>
     <string name="context_menu_item_destination_point">Als Bestemming\ninstellen</string>
     <string name="destination_point">Bestemming %1$s</string>
-    
-	
-	<string name="av_photo_play_sound">Geluid bij het maken van Foto</string>
-	<string name="av_camera_focus">Scherpstelmethode</string>
+
+
+    <string name="av_camera_focus">Scherpstelmethode</string>
 	<string name="av_camera_focus_descr">Kies scherpstelmethode voor de camera</string>
 	<string name="av_camera_focus_auto">Automatisch scherpstellen</string>
 	<string name="av_camera_focus_hiperfocal">Hyperfocaal scherpstellen</string>
@@ -1145,9 +1064,8 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
 	<string name="av_camera_focus_infinity">Scherpstellen op oneindig</string>
 	<string name="av_camera_focus_macro">Macromodus (dichtbij scherpstellen)</string>
 	<string name="av_camera_focus_continuous">Voortdurend blijven scherpstellen</string>
-	<string name="av_photo_play_sound_descr">Kies of er een geluid wordt afgespeeld bij het maken van Foto\'s</string>
 
-	
+
     <string name="speak_speed_limit">Snelheidsbeperking</string>
     <string name="speak_cameras">Snelheidscamera\'s</string>
 	<string name="speak_traffic_warnings">Waarschuwingen</string>
@@ -1654,8 +1572,7 @@ Wilt u verder gaan met een nieuwe registratie?</string>
 	<string name="show_railway_warnings">Spoorwegovergangen</string>
 	<string name="show_pedestrian_warnings">Voetgangers-oversteekplaatsen</string>
     <string name="speak_pedestrian">Oversteekplaatsen</string>
-    
-	<string name="parking_place">Parkeerplek</string>
+
     <string name="remove_the_tag">Verwijder de parkeerlocatie</string>
     <string name="gps_status">GPS-status</string>
     <string name="version_settings_descr">Nightly builds downloaden</string>
@@ -1802,8 +1719,8 @@ Wilt u verder gaan met een nieuwe registratie?</string>
 	<string name="action_modify">Actie wijzigen</string>
 	<string name="action_delete">Actie verwijderen</string>
 	<string name="osm_edits">OSM wijzigingen</string>
-	<string name="osmand_parking_hour">u</string><string name="osmand_parking_minute">min</string><string name="osmand_parking_time_left">over</string> <string name="parking_place_limited">Parkeertijd beperkt tot</string>
-	<string name="your_edits">Uw wijzigingen</string>
+	<string name="osmand_parking_hour">u</string><string name="osmand_parking_minute">min</string>
+    <string name="your_edits">Uw wijzigingen</string>
     <string name="waypoint_visit_after">Bezoek na</string>
     <string name="waypoint_visit_before">Bezoek voor</string>
     <string name="simulate_your_location">Routesimulatie</string>
@@ -1821,9 +1738,8 @@ Lengtegraad:\t\t%2$s</string>
 	<string name="shared_string_currently_recording_track">Huidige GPX-track</string>
 	<string name="local_osm_changes_upload_all_confirm">Je gaat %1$d wijziging(en) naar OSM sturen. Weet je dat zeker?</string>
     <string name="confirmation_to_clear_history">Wil je de geschiedenis verwijderen?</string>
-    <string name="osmand_parking_overdue">overschreden</string>
-	
-	<string name="confirm_usage_speed_cameras">In veel landen (Duitsland, Frankrijk, Italië en meer) is het verboden om waarschuwingen voor snelheidscontroles te gebruiken. Osmand neemt geen verantwoording als u de wet overtreedt. Druk alleen op Ja als u deze functie mag gebruiken.</string>
+
+    <string name="confirm_usage_speed_cameras">In veel landen (Duitsland, Frankrijk, Italië en meer) is het verboden om waarschuwingen voor snelheidscontroles te gebruiken. Osmand neemt geen verantwoording als u de wet overtreedt. Druk alleen op Ja als u deze functie mag gebruiken.</string>
 	<string name="welmode_download_maps">Kaarten downloaden</string>
 	<string name="welcome_select_region">Kies uw regio om de juiste verkeersborden en -regels te tonen:</string>
 	<string name="welcome_text">Met OsmAnd kunt u zonder internetverbinding kaarten van de hele wereld gebruiken en ermee navigeren!</string>
@@ -2521,7 +2437,6 @@ voor Gebied: %1$s x %2$s</string>
     <string name="quick_action_navigation_voice_off">Stembegeleiding staat uit</string>
     <string name="quick_action_navigation_voice_on">Stembegeleiding staat aan</string>
     <string name="quick_action_add_gpx">GPX-routepunt maken</string>
-    <string name="quick_action_add_parking">Parkeerpositie instellen</string>
     <string name="quick_action_new_action">Actie toevoegen</string>
     <string name="quick_action_edit_action">Actie bewerken</string>
     <string name="quick_action_add_favorite">Favoriet toevoegen</string>
@@ -2535,7 +2450,6 @@ voor Gebied: %1$s x %2$s</string>
     <string name="quick_action_add_osm_bug_descr">Een druk op de sneltoets voegt een OSM-notitie toe in het midden van het scherm.</string>
     <string name="quick_action_add_poi_descr">"Een druk op de Sneltoets maakt een POI,  in het midden van het scherm."</string>
     <string name="quick_action_navigation_voice_descr">Een druk op de Sneltoets zet de stembegeleiding aan of uit tijdens navigatie.</string>
-    <string name="quick_action_add_parking_descr">Een druk op de Sneltoets stelt je parkeerpositie in op het midden van het scherm.</string>
     <string name="quick_action_interim_dialog">Bewerkingsdialoog tonen</string>
     <string name="favorite_autofill_toast_text">" wordt opgeslagen als "</string>
     <string name="favorite_empty_place_name">Plaats</string>
@@ -2649,7 +2563,6 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="restore_purchases">Aankopen herstellen</string>
     <string name="fonts_header">Lettertypes voor de kaart</string>
     <string name="do_not_show_startup_messages_desc">Onderdruk meldingen van app-aanbiedingen en speciale lokale gebeurtenissen.</string>
-    <string name="parking_options">Parkeermogelijkheden</string>
     <string name="full_version_thanks">Dank voor het aanschaffen van de volledige versie van OsmAnd!</string>
     <string name="routing_attr_relief_smoothness_factor_hills_name">Heuvelachtige wegen</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Minder heuvelachtig</string>
@@ -2687,19 +2600,6 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="osmand_extended_description_part1">" OsmAnd (OSM Automated Navigation Directions) is een kaart- en navigatieprogramma dat de vrije, wereldwijde en gedetailleerde OpenStreetMap (OSM) data gebruikt.
 \n
 \nGebruik visuele en gesproken navigatie, bekijk POIs (point of interest), maak en volg GPX-sporen, toon hoogtelijnen en hoogteinformatie (via plugin), kies tussen auto, fiets en wandelen, bewerk de OSM-kaart, en nog veel meer! "</string>
-    <string name="osmand_extended_description_part2">"
- GPS-navigatie
-• Offline (geen datakosten) of online (snellere) routeberekening
-• Stap-voor-stap navigatie met opgenomen stem of gesproken straatnamen
-• Route wordt herberekend wanneer u ervan afwijkt
-• Rijstrookbegeleiding, straatnamen en verwachte aankomsttijd helpen u tijdens de reis
-• Voor de veiligheid: automatische keuze van dag- of nachtweergave
-• Toon maximum snelheid en waarschuw bij overschrijding
-• Kaartgrootte past zich aan bij de snelheid
-• Zoek bestemming op adres, soort (parkeerplaats, restaurant, brandstof, museum) of coördinaten
-• Maak tussenpunten op een reis
-• Neem uw reis op als GPX-spoor of volg een GPX-spoor
- "</string>
     <string name="osmand_extended_description_part3">Kaart • Toon POI (Points Of Interest) • Draai in de bewegingsrichting (of kompasrichting) • Toont uw positie en waar u naar kijkt • Deel uw lokatie met vrienden • Bewaar belangrijke plaatsen in Favorieten • Toon namen in Engelse, lokale, of fonetische schrijfwijze • Toon extra informatie, zoals satellietfoto (van Bing), GPX-sporen, andere kaartstijlen en extra informatielagen</string>
     <string name="osmand_extended_description_part4">Skiën - Met de OsmAnd Ski plugin ziet u pistes met hun moeilijkheidsgraad, en extra informatie zoals liften en andere faciliteiten.</string>
     <string name="osmand_extended_description_part5">Fietsen • Vind fietspaden op de kaart • Routeberekening met gebruik van fietspaden • Toon snelheid en hoogte • Neem de rit op als GPX-spoor en deel deze • Geef, met een extra plugin, hoogteverschillen weer als hoogtelijnen of reliëfschaduw</string>

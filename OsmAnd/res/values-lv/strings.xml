@@ -828,28 +828,8 @@
   <string name="gpxup_identifiable">Atpazīstamas</string>
   <string name="gpxup_trackable">Izsekojami</string>
   <string name="gpxup_private">Privāti</string>
-  <string name="osmand_parking_event">Izņemt auto no stāvvietas</string>
-  <string name="osmand_parking_warning">Brīdinājums</string>
-  <string name="osmand_parking_warning_text">Kalendārā ir pievienots ieraksts par auto izņemšanu no stāvvietas. Tas tur saglabāsies līdz brīdim, kamēr netiks manuāli izdzēsts.</string>
-  <string name="osmand_parking_time_limit_title">Uzstādīt parkošanas laika limitu</string>
-  <string name="osmand_parking_delete_confirm">Vai noņemt stāvvietas (P) marķieri?</string>
-  <string name="osmand_parking_delete">Dzēst stāvvietas marķieri</string>
-  <string name="osmand_parking_choose_type">Izvēlieties stāvvietas tipu</string>
-  <string name="osmand_parking_lim_text">Uz ierobežotu laiku</string>
-  <string name="osmand_parking_no_lim_text">Uz neierobežotu laiku</string>
-  <string name="osmand_parking_add_event">Pievienot kalendāram ierakstu</string>
-  <string name="osmand_parking_time_limit">Uz ierobežotu laiku</string>
-  <string name="osmand_parking_time_no_limit">Neierobežota laika parkošana</string>
-  <string name="osmand_parking_position_description">Jūsu noparkotā auto atrašanās vieta. %1$s</string>
-  <string name="osmand_parking_position_description_add">Izņemt auto no:</string>
-  <string name="osmand_parking_pm">PM</string>
-  <string name="osmand_parking_am">AM</string>
-  <string name="osmand_parking_position_name">Stāvvieta</string>
-  <string name="osmand_parking_plugin_description">Viegli pamanāms logrīks uz kartes norāda jūsu auto stāvvietu un atlikušo laiku (ja ir uzlikts laika limits). Vietas koordinātes un laiks redzami arī atsevišķā sadaļā Manā Izvēlnē. Ir iespējams pievienot laika atgādinātāju Android kalendārā.</string>
-  <string name="osmand_parking_plugin_name">Stāvvieta</string>
-  <string name="context_menu_item_add_parking_point">Atzīmēt kā stāvvietu</string>
-  <string name="context_menu_item_delete_parking_point">Noņemt</string>
-  <string name="starting_point_too_far">Starta punkts atrodas pārāk tālu no tuvākā ceļa.</string>
+    <string name="context_menu_item_add_parking_point">Atzīmēt kā stāvvietu</string>
+    <string name="starting_point_too_far">Starta punkts atrodas pārāk tālu no tuvākā ceļa.</string>
   <string name="shared_location">Koplietota vieta</string>
   
   <string name="global_app_allocated_memory_descr">Izmantotās atmiņas apjoms %1$s MB (Android limits %2$s MB, dalvik %3$s MB).</string>
@@ -858,10 +838,7 @@
  Proporcionāli atmiņa %4$s MB (Android limits %5$s MB, dalvik %6$s MB).</string>
   <string name="native_app_allocated_memory">Kopējā ierīces atmiņa</string>
   <string name="select_animate_speedup">Izvēlieties maršruta animācijas ātrumu</string>
-  <string name="osmand_parking_hours">Stundas</string>
-  <string name="osmand_parking_minutes">Minūtes</string>
-  <string name="osmand_parking_position_description_add_time">Auto tika novietots pulksten</string>
-  <string name="use_compass_navigation_descr">Ja kustība nav nosakāma, virziena noteikšanai izmantot kompasu</string>
+    <string name="use_compass_navigation_descr">Ja kustība nav nosakāma, virziena noteikšanai izmantot kompasu</string>
   <string name="use_compass_navigation">Izmantot kompasu</string>
   <string name="route_updated_loc_found">Tikko tiks noteiktas koordinātes, ceļš tiks pārrēķināts</string>
   <string name="continue_follow_previous_route_auto">Iepriekšējā navigācija netika pabeigta. Vai to turpināt? (%1$s sekundes)</string>
@@ -880,10 +857,9 @@
   <string name="map_widget_compass">Kompass</string>
   
   <string name="map_widget_reset">Iestatīt uz noklusēto</string>
-  
-  
-  <string name="map_widget_parking">Autostāvvietas</string>
-  <string name="map_widget_monitoring">GPX ieraksts</string>
+
+
+    <string name="map_widget_monitoring">GPX ieraksts</string>
   <string name="map_widget_speed">Ātrums</string>
   <string name="map_widget_distance">Mērķis</string>
   <string name="map_widget_altitude">Augstums</string>
@@ -936,7 +912,6 @@
     <string name="ending_point_too_far">Noslēdzošais punkts ir pārāk tālu no tuvākā ceļa.</string>
     <string name="add_tag">Pievienot tagu</string>
     <string name="btn_advanced_mode">Paplašinātais režīms…</string>
-    <string name="poi_filter_parking">Autostāvvietas</string>
     <string name="poi_filter_emergency">Ātrā palīdzība</string>
     <string name="poi_filter_public_transport">Sabiedriskais transports</string>
     <string name="poi_filter_entertainment">Izklaide</string>
@@ -947,28 +922,7 @@
 	<string name="snap_to_road_descr">Navigācijas laikā tuvināt ceļam</string>
 	<string name="snap_to_road">Tuvināt ceļam</string>
 	<string name="osmand_short_description_80_chars">OsmAnd ir atvērtā koda navigācijas aplikācija bezsaistes un tiešsaistes kartēm</string>
-	<string name="osmand_long_description_1000_chars">"
- OsmAnd (OSM Automated Navigation Directions) 
-
-OsmAnd ir atvērtā koda navigācijas aplikācija ar piekļuvi vispusīgiem OpenStreetMap (OSM) datiem. Visi kartes dati (vektoru un bilžu kartes) var tikt saglabāti telefona atmiņā, lai vēlāk tos izmantotu bezsaistē. OsmAnd piedāvā arī bezsaistes un tiešsaistes navigācijas funkcionalitāti t.sk. balss vadību.
-
-\t\tProgrammas pamata funcionalitāte iekļauj:
-\t\t - Pilnīga bezsaistes funkcionalitāte (vektoru un bilžu kartes saglabātas izvēlētajā mapē)
- \t\t- Kompaktas bezsaistes kartes visai pasaulei - valsts vai reģiona kartes lejupielādējamas tieši no aplikācijas
-\t\t - Iespējama vairāku karšu pārklāšana ar dažādiem caurspīdīguma līmeņiem (piem. GPX sekošanas ceļš, intereses vietas (POI), izlase, kontūra līnijas, sabiedriskā transporta pieturas, papildus kartes)
-\t\t - Bezsaistes adrešu un POI meklēšana.
-\t\t - Bezsaistes navigācija (eksperimentāla)
-\t\t - Auto, velo un kājāmgājēju režīmi
-\t\t - ieslēdzama dienas un nakts režīmu pārslēgšanās
-\t\t - ieslēdzama joslu uzrādīšana, ātruma ierobežojuma attēlošana, ierakstītas un TTS valodas.
-
-\t\t Šai bezmaksas OsmAnd versijai ir sekojoši ierobežojumi:
-\t\t - Ierobežots lejuplādējamo karšu skaits
-\t\t - Nav pieejams Wikipēdijas bezsaistes POI.
-
-\t\tOsmAnd tiek atkīvi izstrādāts un mūsu projekta tālākais progress ir balstīts uz ziedojumiem, lai finansētu jaunas funkcionalitātes izstrādi un testēšanu. Lūdzu izvēlēties iespēju iegādāties OsmAnd+ vai izvēlieties finansēt speciālās funkcijas, vai arī ziedot tieši osmand.net.
- "</string>
-	<string name="osmand_plus_short_description_80_chars">OsmAnd ir atvērtā koda navigācijas aplikācija bezsaistes un tiešsaistes kartēm</string>
+    <string name="osmand_plus_short_description_80_chars">OsmAnd ir atvērtā koda navigācijas aplikācija bezsaistes un tiešsaistes kartēm</string>
 	<string name="filterpoi_activity">Izveidot POI filtru</string>
 	<string name="select_navigation_mode">Izvēlieties transporta veidu</string>
 	<string name="day_night_info_description">Saullēkts: %1$s\nSaulriets: %2$s</string>
@@ -1121,10 +1075,7 @@ OsmAnd ir atvērtā koda navigācijas aplikācija ar piekļuvi vispusīgiem Open
     <string name="clear_dest_confirm">Vai vēlaties noņemt galamērķi (ieskaitot ceļa punktus)?</string>
     <string name="precise_routing_mode_descr">Ieslēgt precīzāku maršruta aprēķināšanu bez kļūdām. Pagaidām darbojas ierobežotā attālumā un ir lēna.</string>
     <string name="precise_routing_mode">Precīzāka maršrutēšana (alfa)</string>
-    <string name="recording_context_menu_show">Parādīt</string>
-    <string name="recording_photo_description">Foto %1$s %2$s</string>
     <string name="av_def_action_picture">Nofotografēt</string>
-    <string name="recording_context_menu_precord">Nofotografēt</string>
     <string name="dropbox_plugin_description">Dropbox spraudnis ļauj sinhronizēt maršrutus un audio/video ierakstus ar jūsu dropbox kontu.</string>
     <string name="dropbox_plugin_name">Dropbox spraudnis</string>
     <string name="intermediate_points_change_order">Mainīt kārtību</string>
@@ -1133,18 +1084,10 @@ OsmAnd ir atvērtā koda navigācijas aplikācija ar piekļuvi vispusīgiem Open
     <string name="av_def_action_choose">Atlasīt pēc pieprasījuma</string>
     <string name="av_widget_action_descr">Izvēlieties noklusēto logrīka darbību</string>
     <string name="av_widget_action">Noklusētā logrīka darbība</string>
-    <string name="av_use_external_recorder">Lietot sistēmas aplikāciju ierakstīšanai</string>
     <string name="av_use_external_camera_descr">Lietot sistēmas aplikāciju bildēm</string>
     <string name="av_use_external_camera">Lietot kameras aplikāciju</string>
-    <string name="recording_error">Kļūda ierakstot </string>
-    <string name="recording_open_external_player">Atvērt ārējo atskaņotāju</string>
     <string name="recording_delete_confirm">Vai vēlaties dzēst ierakstu?</string>
-    <string name="recording_unavailable">Nav pieejams</string>
-    <string name="recording_can_not_be_played">Ierakstu nevar atskaņot</string>
-    <string name="recording_context_menu_delete">Dzēst ierakstu</string>
     <string name="recording_context_menu_play">Atskaņot</string>
-    <string name="recording_description">Ieraksta %1$s %3$s %2$s</string>
-    <string name="recording_default_name">Ierakstīšana</string>
     <string name="shared_string_control_stop">Apturēt</string>
     <string name="shared_string_control_start">Sākt</string>
     <string name="osmand_srtm_short_description_80_chars">OsmAnd spraudnis bezsaistes kontūrlīnijām</string>
@@ -1186,9 +1129,7 @@ OsmAnd ir atvērtā koda navigācijas aplikācija ar piekļuvi vispusīgiem Open
     <string name="srtm_plugin_description">"Šis spraudnis dod iespēju rādīt kontūrlīniju un reljefu pārklājus uz standarta OsmAnd kartēm. Šo iespēju novērtēs dabas mīļotāji, aktīvās atpūtas cienītāji un jebkurš ar padziļinātu interesi par zemes reljefu. 
 \n
 \nGlobālie dati (starp 70° Z un 70° D) ir bāzēti uz SRTM (Shuttle Radar Topography Mission) un ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer) mērījumiem, attēlveidošanas rīks uz Terra\'s, vadošais NASA Zemes Novērošanas Sistēmas satelīts. ASTER ir kopējs veikums ar NASA, Japānas Ekonomikas Ministriju, Trade and Industry (METI) un Japānas Izplatījuma Sistēmām (J-spacesystems). "</string>
-    <string name="osmand_play_title_30_chars">OsmAnd kartes &amp; navigācija</string>
-	<string name="osmand_plus_play_title_30_chars">OsmAnd+ kartes &amp; navigācija</string>
-	<string name="support_new_features_descr">Lūdzu atbalstiet programmu ar ziedojumiem, lai palīdzētu to uzlabot un attīstīt</string>
+    <string name="support_new_features_descr">Lūdzu atbalstiet programmu ar ziedojumiem, lai palīdzētu to uzlabot un attīstīt</string>
 	<string name="incomplete_locale">Nepabeigts</string>
 	<string name="shared_string_downloading">Lejupielādē</string>
 	<string name="av_camera_focus">Fokusa režīms kamerai</string>
@@ -1199,9 +1140,7 @@ OsmAnd ir atvērtā koda navigācijas aplikācija ar piekļuvi vispusīgiem Open
 	<string name="av_camera_focus_infinity">Bezgalīgi tālu</string>
 	<string name="av_camera_focus_macro">Makro (tuvu klāt) režīms</string>
 	<string name="av_camera_focus_continuous">Nepārtraukts fokuss</string>
-	<string name="av_photo_play_sound">Atskaņot skaņu fotografējot</string>
-	<string name="av_photo_play_sound_descr">Izvēlieties vai atskaņot skaņu, nospiežot fotografēšanas pogu</string>
-<string name="amenity_type_seamark">Bojas</string>
+    <string name="amenity_type_seamark">Bojas</string>
     <string name="app_mode_aircraft">Aviācija</string>
     
     <string name="local_index_tile_data_expire">Derīgums (minūtēs): %1$s</string>
@@ -1722,16 +1661,13 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="delay_to_start_navigation_descr">Norādīt maršruta plānošanas uzvednes rādīšanas laiku</string>
     <string name="delay_to_start_navigation">Izlaist maršruta plānošanu…</string>
     <string name="shared_string_go">Aiziet</string>
-	<string name="osmand_parking_overdue">nokavēts</string>
-	<string name="action_create">Darbības izveide</string>
+    <string name="action_create">Darbības izveide</string>
 	<string name="action_modify">Labošanas darbība</string>
 	<string name="action_delete">Dzēšanas darbība</string>
 	<string name="osm_edits">OSM labotie</string>
 	<string name="osmand_parking_hour">st</string>
 	<string name="osmand_parking_minute">min</string>
-	<string name="parking_place_limited">Stāvvietas laiks ierobežots uz</string>
-	<string name="osmand_parking_time_left">pa kreisi</string>
-	<string name="your_edits">Jūsu labotie</string>
+    <string name="your_edits">Jūsu labotie</string>
     <string name="waypoint_visit_after">Apmeklēt pēc</string>
     <string name="waypoint_visit_before">Apmeklēt pirms</string>
     <string name="simulate_your_location">Simulēt pozīciju</string>
@@ -1776,7 +1712,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="world_ski_missing">Lai varētu parādīt slēpošanas kartes, vispirms ir jālejupielādē īpaša karte bezsaistes lietošanai</string>
     <string name="nautical_maps_missing">Lai attēlotu kuģošanas karti, tā ir atsevišķi jālejupielādē</string>
 	<string name="edit_group">Labot grupu</string>
-    <string name="parking_place">Stāvvieta</string>
     <string name="remove_the_tag">Dzēst atzīmi</string>
     <string name="gps_status">GPS statuss</string>
     <string name="version_settings_descr">Lejupielādēt nakts būvējumus</string>
@@ -2504,7 +2439,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="quick_action_navigation_voice_off">Balss ir izslēgta</string>
     <string name="quick_action_navigation_voice_on">Balss ir ieslēgta</string>
     <string name="quick_action_add_gpx">Pievienot GPX ceļapunktu</string>
-    <string name="quick_action_add_parking">Pievienot stāvvietu</string>
     <string name="quick_action_new_action">Pievienot darbību</string>
     <string name="quick_action_edit_action">Labot darbību</string>
     <string name="quick_action_add_favorite">Pievienot favorītu</string>
@@ -2517,7 +2451,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="quick_action_add_osm_bug_descr">Spiežot darbības pogu, ekrāna centrā tiks ielikta OSM kļūdas piezīme.</string>
     <string name="quick_action_add_poi_descr">Spiežot darbības pogu, ekrāna centrā tiks ielikts POI.</string>
     <string name="quick_action_navigation_voice_descr">Spiežot darbības pogu, tiks izslēgta vai ieslēgta balss vadība.</string>
-    <string name="quick_action_add_parking_descr">Spiežot darbības pogu, ekrāna centrā tiks ielikts stāvvietas marķieris.</string>
     <string name="favorite_autofill_toast_text">" ir saglabāts "</string>
     <string name="favorite_empty_place_name">Vieta</string>
     <string name="quick_action_showhide_favorites_descr">Spiežot darbības pogu, tiks rādīti vai slēpti favorīti.</string>
@@ -2606,28 +2539,7 @@ Apraksta laukumu: %1$s x %2$s</string>
 \n 
 \n 
 \n Un vēl…</string>
-	<string name="osmand_plus_long_description_1000_chars">"
- OsmAnd+ (OSM Automated Navigation Directions)
 
- Osmand+ ir atvērtā koda navigācijas aplikācija ar pieeju daudzpusīgiem globāliem OpenStreetMap (OSM) datiem. Visus kartes datus (vektoru vai bilžu) iespējams saglabāt telefona atmiņas kartē vēlākai lietošanai bezsaistē. Tāpat OsmAnd piedāvā bezsaistes un tiešsaistes maršrutēšanas funkcionalitāti, ieskaitot turn-by-turn balss vadību.
-
- OsmAnd+ piedāvā maksas aplikācijas versiju, kuru nopērkot, jūs atbalstīsiet pašu projektu, jaunu iespēju izstrādi un saņemsiet jaunākos atjauninājumus.
-
- Dažas no iespējām:
- - Pilnīga bezsaistes navigācija (saglabā lejupielādētās vektoru un bilžu kartes ierīces iekšējā atmiņā)
- - Kompaktas bezsaistes kartes no visas pasaules
- - Neierobežotas valstu un reğionu karšu lejupielādes caur aplikāciju
- - Bezsaistes vikipēdija (POI lejupielādes no vikipēdijas), neaizvietojams palīgs skatu vietu atrašanai
- - Virsklājs no vairākiem atsevišķiem karšu klājiem kā GPX vai navigācijas trases, interešu punkti (POI), izlase, kontūrlīnijas, sabtransporta pieturas, papildus kartes ar maināmu caurspīdīgumu
- - Bezsaistes adrešu un vietu meklēšana (POIs)
- - Bezsaistes maršrutēšana vidēja attāluma distancēm
- - Automašīnu, velosipēdistu un gājēju režīmi ar:
- - optionālu auto dienas/nakts režīmu pārslēgšanu
- - optionālu no ātruma atkarīgu kartes tuvināšanu
- - optionālu kartes taisnošanu pēc kompasa vai kustības virzienā
- - optionālu joslu vadību, ātruma limita rādīšanu, ierakstītās un TTS balsis
- "</string>
-	
     <string name="rendering_attr_depthContours_description">Rādīt dziļuma kontūras un punktus</string>
     <string name="rendering_attr_depthContours_name">Jūras dziļuma kontūras</string>
 	<string name="add_new_folder">Pievienot jaunu mapi</string>
@@ -2731,7 +2643,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="do_not_send_anonymous_app_usage_desc">OsmAnd apkopo informāciju, kuras aplikācijas daļas jūs izmantojat. Jūsu lokācija nekad netiek izpausta, tāpat arī nekas, kas tiek rakstīts aplikācijā vai skatītās, meklētās un lejupielādētās vietas.</string>
     <string name="do_not_show_startup_messages">Nerādīt ziņojumus startējot</string>
     <string name="do_not_show_startup_messages_desc">Aplikācijas atlaižu kuponi un īpaši vietējo notikumu ziņojumi.</string>
-    <string name="parking_options">Stāvvietas opcijas</string>
     <string name="full_version_thanks">Paldies par OsmAnd pilnās versijas iegādi!</string>
     <string name="routing_attr_relief_smoothness_factor_hills_name">Kalnains</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Mazāk kalnains</string>
@@ -2770,17 +2681,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="osmand_extended_description_part1">" OsmAnd (OSM Automated Navigation Directions) ir karšu un navigācijas aplikācija ar brīvu piekļuvi augstas kvalitātes OpenStreetMap (OSM) datiem no visas pasaules.
 \n
 \n Izbaudiet balss un vizuālo navigatoru, skatiet POIs (interešu punktus), veidojiet un pārvaldiet GPX trekus, lietojiet kontūrlīniju vizualizāciju and altitūdas informāciju (caur spraudni), izvēlieties auto, velobraucēju, kājāmgājēju režīmus, labojiet OSM datus un daudz vairāk. "</string>
-    <string name="osmand_extended_description_part2">GPS navigācija
-\n • Izvēlieties bezsaistes (bez viesabonēšanas maksas, kad esat ārvalstīs) vai tiešsaistes (ātrāks) režīmu
-\n • Turn-by-turn balss vadība jūsu maršrutā (ierakstītās un sintizētās balsis)
-\n • Maršruts tiks pārveidots, ja būsiet novirzījušies no tā
-\n • Ceļa joslu vadība, ielu nosaukumi un aprēķinātais ierašanās laiks palīdzēs ceļa gaitā
-\n • Lai padarītu ceļojumu drošāku, dienas/nakts režīmi pārslēdzas automātiski
-\n • Jūs variet izvēlēties rādīt ātruma limitus un saņemt brīdinājumus, tos pārsniedzot
-\n • Kartes mērogs autmātiski pielāgojas jūsu ātrumam
-\n • Jūs variet meklēt objektus pēc adreses, tipa (autostāvvietas, restorāni, viesnīcas, DUS, muzeji utt.) vai pēc ģeogrāfiskajām koordinātām
-\n • Atbalsta starppunktu pievienošanu maršrutā
-\n • Jūs variet ierakstīt pats savu vai augšupielādēt GPX treku un tam sekot</string>
     <string name="osmand_extended_description_part3">"
  Karte
  • Rāda POIs (interešu punktus) jums apkārt

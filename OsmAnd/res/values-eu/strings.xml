@@ -131,11 +131,8 @@
   <string name="clear_dest_confirm">Ziur zaude zure helmuga (eta erdibideko helburuak) garbitu nahi dituzula?</string>
   <string name="precise_routing_mode_descr">Gaitu errorerik gabeko ibilbide zehatza kalkulatzeko. Distantzia motzetara dago mugatua eta motela da.</string>
   <string name="precise_routing_mode">Ibilbide kalkulu zehatza (alpha)</string>
-  <string name="recording_context_menu_show">Erakutsi</string>
-  <string name="recording_photo_description">"%1$s  %2$s argazkia"</string>
-  <string name="av_def_action_picture">Argazkia atera</string>
-  <string name="recording_context_menu_precord">Argazkia atera</string>
-  <string name="dropbox_plugin_description">Dropbox gehigarriak zure dropboxeko kontuarekin lorratzak eta audio/bideo oharrak sinkronizatzea ahalbideratzen du.</string>
+    <string name="av_def_action_picture">Argazkia atera</string>
+    <string name="dropbox_plugin_description">Dropbox gehigarriak zure dropboxeko kontuarekin lorratzak eta audio/bideo oharrak sinkronizatzea ahalbideratzen du.</string>
   <string name="dropbox_plugin_name">Dropbox gehigarria</string>
   
   <string name="intermediate_points_change_order">Ordena aldatu</string>
@@ -144,20 +141,12 @@
   <string name="av_def_action_choose">Eskariaren arabera hautatu</string>
     <string name="av_widget_action_descr">Aukeratu trepetaren ekintza lehenetsia.</string>
   <string name="av_widget_action">Trepetaren ekintza lehenetsia</string>
-    <string name="av_use_external_recorder">Erabili sistemaren grabatzailea</string>
-  <string name="av_use_external_camera_descr">Erabili sistemaren argazki aplikazioa.</string>
+    <string name="av_use_external_camera_descr">Erabili sistemaren argazki aplikazioa.</string>
   <string name="av_use_external_camera">Kamera aplikazioa erabili</string>
-    <string name="recording_error">Errorea gertatu da grabatzean</string>
-    <string name="recording_open_external_player">Ireki kanpoko erreproduzitzailea</string>
-  <string name="recording_delete_confirm">Grabaketa hau ezabatu nahi al duzu?</string>
-  
-  <string name="recording_unavailable">ez eskuragarri</string>
-    <string name="recording_can_not_be_played">Grabaketa ezin da erreproduzitu</string>
-  <string name="recording_context_menu_delete">Grabaketa ezabatu</string>
-  <string name="recording_context_menu_play">Erreproduzitu</string>
-  <string name="recording_description">%1$s %3$s %2$s grabatzen</string>
-  <string name="recording_default_name">Grabatzen</string>
-  <string name="shared_string_control_stop">Gelditu</string>
+    <string name="recording_delete_confirm">Grabaketa hau ezabatu nahi al duzu?</string>
+
+    <string name="recording_context_menu_play">Erreproduzitu</string>
+    <string name="shared_string_control_stop">Gelditu</string>
   <string name="shared_string_control_start">Hasi</string>
     <string name="osmand_srtm_short_description_80_chars">Lineaz kanpoko sestra-kurben OsmAnd gehigarria</string>
   <string name="osmand_srtm_long_description_1000_chars">Gehigarri honek OsmAnd-eko lineaz kanpoko mapetan agertu daitezkeen sestra-kurbak eta erliebe-itzalak eskaintzen ditu. Kirolariek, mendizaleek eta orokorrean paisaiaren erliebearen estrukturan interesa duen edonork gogoko izango du.
@@ -224,8 +213,7 @@
   <string name="ending_point_too_far">Bukaera puntua errepide gertuenetik urrutiegi dago.</string>
   <string name="add_tag">Etiketa gehitu</string>
   <string name="btn_advanced_mode">Modu Aurreratua…</string>
-  <string name="poi_filter_parking">Aparkalekua</string>
-  <string name="poi_filter_emergency">Larrialdiak</string>
+    <string name="poi_filter_emergency">Larrialdiak</string>
   <string name="poi_filter_public_transport">Garraio publikoa</string>
   <string name="poi_filter_entertainment">Entretenimendua</string>
   <string name="poi_filter_accomodation">Ostatuak</string>
@@ -244,18 +232,13 @@
   <string name="auto_zoom_map">Auto zoom-a egin mapan</string>
   <string name="snap_to_road_descr">Atxikitu kokapena errepidera nabigatu bitartean.</string>
   <string name="snap_to_road">Atxikitu errepidera</string>
-  
-  <string name="osmand_play_title_30_chars">OsmAnd Maps &amp; Nabigazioa</string>
-  <string name="osmand_short_description_80_chars">Lineaz Kanpoko eta Sare Bidezko Mapa Ikusle eta Nabigatzaile Mugikor Globala OSM Mapetarako</string>
-  <string name="osmand_long_description_1000_chars">⏎ ⇥⇥OsmAnd (OSM Automated Navigation Directions)⏎ ⏎ ⇥⇥OsmAnd kode irekiko nabigaziorako aplikazioa da, OpenStreetMapeko (OSM) mota askotako munduko mapetara sarbidearekin. Mapa guztiak (bektore edo tesela mapak) telefonoaren memoria txartelean gorde daitezke, lineaz kanpoko erabilpena bermatzeko. OsmAndek ere lineaz kanpoko eta sareko ibilbideak eskaintzen ditu, txandakako ahots gidaritzarekin.⏎ ⏎ ⇥⇥Ezaugarri nagusi batzuk:⏎ ⇥⇥- Lineaz kanpoko erabateko erabilpena (bektore edo tesela mapak gorde ondoren aukeratu daitezken karpetetan)⏎ ⇥⇥- Lineaz kanpoko mundu guztiko mapa konpaktuak eskuragarri⏎ ⇥⇥- Herrialde edo eskualdeetako mapen deskarga, aplikaziotik zuzenean⏎ ⇥⇥- Gain-geruza desberdin asko ikusi daitezke, GPX edo ibilbide bidea, interes puntuak (POI), gogokoak, sestra-kurbak, garraio publikoaren geltokiak, geruza gardeneko mapa gehigarriak.⏎ ⇥⇥- Lineaz kanpoko helbide eta lekuen bilatzailea (POIak)⏎ ⇥⇥- Lineaz kanpoko ibilbide motzetarako nabigazioa⏎ ⇥⇥- Kotxea, bizikleta eta oinezkoentzat modua:⏎ ⇥⇥- aukerazko egun/gau ikuspegi automatizatua⏎ ⇥⇥- aukerazko abiaduraren araberako maparen zooma⏎ ⇥⇥- aukerazko maparen lerrokatzea, iparrorratzaren edo norabidearen araberakoa⏎ ⇥⇥- aukerazko errei gidaritza, abiadura muga bistaratzea, grabatutako edo TTS ahotsekin⏎ ⏎ ⇥⇥OsmAndeko dohaineko bertsioaren mugak:⏎ ⇥⇥- Mapa kopuruak deskargatzeko muga⏎ ⇥⇥- Wikipediako POIetara lineaz kanpoko sarbiderik ez⏎ ⏎ ⇥⇥OsmAnd aktiboki garatua izaten ari da eta proiektuaren prozesuak dituen garatze, programatze eta funtzionalitate berrien probak egiteko behar den finantziazio laguntzetan ere oinarritzen da. OsmAnd+ erosiz gero, aplikazioa are zirraragarria izatea laguntzen duzu! Ezaugarri berriak finantzatzea edo dohaintza orokor bat egitea posible da osman.net-en.</string>
-  
-  <string name="osmand_plus_play_title_30_chars">OsmAnd+ Mapak &amp; Nabigazioa</string>
-  <string name="osmand_plus_short_description_80_chars">Lineaz Kanpoko eta Sare Bidezko OSM Mapetarako Mapa Ikusle eta Nabigatzaile Mugikor Globala</string>
-  <string name="osmand_plus_long_description_1000_chars">⏎ ⇥⇥OsmAnd+ (OSM Automated Navigation Directions)⏎ ⏎ ⇥⇥OsmAnd+ kode irekiko nabigaziorako aplikazioa da, OpenStreetMapeko (OSM) mota askotako munduko mapetara sarbidearekin. Mapa guztiak (bektore edo tesela mapak) telefonoaren memoria txartelean gorde daitezke, lineaz kanpoko erabilpena bermatzeko. OsmAndek ere lineaz kanpoko eta sareko ibilbideak eskaintzen ditu, txandakako ahots gidaritzarekin.⏎ ⏎ ⇥⇥OsmAnd+ aplikazioaren ordaindutako bertsioa da, hau erosiz gero proiektua aurrera eramaten laguntzen ari zara, ezaugarri berrien garapena finantzatzen, eta gainera, azken eguneraketak jasoko dituzu.⏎ ⏎ ⇥⇥Ezaugarri nagusi batzuk:⏎ ⇥⇥- Lineaz kanpoko erabateko erabilpena (bektore edo tesela mapak gorde ondoren aukeratu daitezken karpetetan)⏎ ⇥⇥- Lineaz kanpoko mundu guztiko mapa konpaktuak eskuragarri⏎ ⇥⇥- Muga gabeko herrialde edo eskualdeetako mapen deskarga, aplikaziotik zuzenean⏎ ⇥⇥- Lineaz kanpoko WIkipediako erabilpena (deskargatu Wikipediako POIak), turismorako erabilgarriak⏎ ⇥⇥- Gain-geruza desberdin asko ikusi daitezke, GPX edo ibilbide bidea, interes puntuak (POI), gogokoak, sestra-kurbak, garraio publikoaren geltokiak, geruza gardeneko mapa gehigarriak.⏎ ⇥⇥- Lineaz kanpoko helbide eta lekuen bilatzailea (POIak)⏎ ⇥⇥- Lineaz kanpoko ibilbide ertainetarako nabigazioa⏎ ⇥⇥- Kotxea, bizikleta eta oinezkoentzat modua:⏎ ⇥⇥- aukerazko egun/gau ikuspegi automatizatua⏎ ⇥⇥- aukerazko abiaduraren araberako maparen zooma⏎ ⇥⇥- aukerazko maparen lerrokatzea, iparrorratzaren edo norabidearen araberakoa⏎ ⇥⇥- aukerazko errei gidaritza, abiadura muga bistaratzea, grabaketa edo TTS (ahots bihurgailua) motorra⏎ ⇥</string>
-  
-  
-  
-  <string name="filterpoi_activity">POI filtroa sortu</string>
+
+    <string name="osmand_short_description_80_chars">Lineaz Kanpoko eta Sare Bidezko Mapa Ikusle eta Nabigatzaile Mugikor Globala OSM Mapetarako</string>
+
+    <string name="osmand_plus_short_description_80_chars">Lineaz Kanpoko eta Sare Bidezko OSM Mapetarako Mapa Ikusle eta Nabigatzaile Mugikor Globala</string>
+
+
+    <string name="filterpoi_activity">POI filtroa sortu</string>
   <string name="recalculate_route_to_your_location">Garraio modua:</string>
   <string name="select_navigation_mode">Aukeratu garraio modua</string>
   <string name="day_night_info_description">Egunsentia: %1$s ⏎\nIlunabarra: %2$s</string>
@@ -292,10 +275,9 @@
   <string name="map_widget_compass">Iparrorratza</string>
   
   <string name="map_widget_reset">Lehenetsitakora berezarri</string>
-  
-  
-  <string name="map_widget_parking">Aparkalekua</string>
-  <string name="map_widget_monitoring">GPX grabaketa</string>
+
+
+    <string name="map_widget_monitoring">GPX grabaketa</string>
   <string name="map_widget_speed">Abiadura</string>
   <string name="map_widget_distance">Helmuga</string>
   <string name="map_widget_altitude">Altuera</string>
@@ -313,11 +295,8 @@
   <string name="avoid_toll_roads">Saihestu bidesariak</string>
   <string name="continue_follow_previous_route_auto">Aurreko nabigazioa ez da amaitu. Jarraitu jarraipena egiten? (%1$s segundo)</string>
   <string name="route_updated_loc_found">Ibilbidea kokapena aurkitzean kalkulatuko da</string>
-  <string name="osmand_parking_hours">Orduak</string>
-  <string name="osmand_parking_minutes">Minutuak</string>
-  <string name="osmand_parking_position_description_add_time">Kotxea hemen aparkatua dago</string>
-  
-  <string name="select_animate_speedup">Aukeratu ibilbide simulazioaren abiadura</string>
+
+    <string name="select_animate_speedup">Aukeratu ibilbide simulazioaren abiadura</string>
   <string name="global_app_allocated_memory_descr">%1$s MB memoria erreserbatuta (Android muga %2$s MB da, Dalvikena %3$s MB).</string>
   <string name="global_app_allocated_memory">Memoria erreserbatua</string>
   <string name="native_app_allocated_memory_descr">Aplikazioak erreserbatutako memoria %1$s MB (Dalvik %2$s MB, bestelakoa %3$s MB).⏎
@@ -326,30 +305,8 @@
   
   <string name="starting_point_too_far">Hasiera puntua urrunegi dago bide gertuenetik.</string>
   <string name="shared_location">Kokapen partekatua</string>
-  <string name="osmand_parking_event">Hartu kotxea aparkalekutik</string>
-  <string name="osmand_parking_warning">Kontuz</string>
-  <string name="osmand_parking_warning_text">Kotxea hartzeko jakinarazpena zure egutegira gehitu da. Hor mantenduko da zuk eskuz ezabatu arte.</string>
-  <string name="osmand_parking_time_limit_title">Ezarri aparkatzeko denbora muga</string>
-  <string name="osmand_parking_delete_confirm">Aparkalekuaren kokapena ezabatu nahi al duzu?</string>
-  <string name="osmand_parking_delete">Ezabatu aparkaleku markatzaile bat</string>
-  <string name="osmand_parking_choose_type">Aparkaleku mota aukeratu</string>
-  <string name="osmand_parking_lim_text">Denboraz mugatua</string>
-  <string name="osmand_parking_no_lim_text">Denboraz ez mugatua</string>
-  <string name="osmand_parking_add_event">Gehitu jakinarazpen bat egutegi aplikaziora</string>
-  <string name="osmand_parking_time_limit">Denboraz mugatutako aparkalekua</string>
-  <string name="osmand_parking_time_no_limit">Denboraz ez mugatutako aparkalekua</string>
-  <string name="osmand_parking_position_description">Zure aparkatutako kotxearen kokalekua. %1$s</string>
-  <string name="osmand_parking_position_description_add">Kotxea hartzeko garaia:</string>
-  <string name="osmand_parking_pm">PM</string>
-  <string name="osmand_parking_am">AM</string>
-  <string name="osmand_parking_position_name">Aparkalekua</string>
-  <string name="osmand_parking_plugin_description">Gehigarri honek zure aparkatutako kotxearen kokalekua eta geratzen zaizun denbora gogoratzea ahalbideratzen zaitu (denbora muga badago).
-
-Kokalekua eta denbora OsmAnd kontrol panelean ikusgai daude eta maparen pantailako trepetan . Alarma bat gehitu daiteke Android egutegira oroigarri gisa.</string>
-  <string name="osmand_parking_plugin_name">Aparkalekuaren kokapena</string>
-  <string name="context_menu_item_add_parking_point">Markatu aparkaleku kokapen bezala</string>
-  <string name="context_menu_item_delete_parking_point">Ezabatu aparkaleku markatzaile bat</string>
-  <string name="gpxup_public">Publikoa</string>
+    <string name="context_menu_item_add_parking_point">Markatu aparkaleku kokapen bezala</string>
+    <string name="gpxup_public">Publikoa</string>
   <string name="gpxup_identifiable">Identifikagarria</string>
   <string name="gpxup_trackable">Jarraigarria</string>
   <string name="gpxup_private">Pribatua</string>
@@ -1161,9 +1118,7 @@ Biltegiratzean {1} MB erabiliko dira.
   <string name="av_camera_focus_infinity">Fokatzea infinitoan dago ezarria</string>
   <string name="av_camera_focus_macro">Macro (gertuko) enfokatze modua</string>
   <string name="av_camera_focus_continuous">Kamara etengabe ari da enfokatzen saiatzen</string>
-  <string name="av_photo_play_sound">Argazkia ateratzean erreproduzitu soinua </string>
-  <string name="av_photo_play_sound_descr">Aukeratu argazkiak ateratzean soinua erreproduzitu ala ez.</string>
-<string name="use_displayed_track_for_navigation">Bistaratutako lorratza erabili nahi duzu nabigatzeko?</string>
+    <string name="use_displayed_track_for_navigation">Bistaratutako lorratza erabili nahi duzu nabigatzeko?</string>
     <string name="keep_and_add_destination_point">Gehitu ondorengo helmuga gisa</string>
     <string name="select_gpx">Aukeratu GPX…</string>
     <string name="route_descr_select_destination">Aukeratu Helmuga</string>
@@ -1627,14 +1582,11 @@ Lorratza %2$s</string>
     <string name="local_osm_changes_upload_all_confirm">%1$d aldaketa igoko dituzu OSMra. Ziur zaude?</string>
     <string name="confirmation_to_clear_history">Historiala ezabatu nahi duzu?</string>
     <string name="shared_string_go">Joan</string>
-    <string name="osmand_parking_overdue">iraungita</string>
     <string name="action_create">Sortze ekintza</string>
     <string name="action_modify">Aldatze ekintza</string>
     <string name="action_delete">Ezabatze ekintza</string>
     <string name="osm_edits">OSM edizioak</string>
     <string name="osmand_parking_minute">min</string>
-    <string name="parking_place_limited">Aparkatzeko denbora muga</string>
-    <string name="osmand_parking_time_left">bukatzeko</string>
     <string name="your_edits">Zure edizioak</string>
     <string name="waypoint_visit_after">Bisitatu ostean</string>
     <string name="waypoint_visit_before">Bisitatu aurretik</string>
@@ -1931,7 +1883,6 @@ Biltegiratzean {3} MB behar dira une batez, {1} MB behin betiko.
     <string name="world_ski_missing">Ski pistak ikusteko, lineaz kanpoko mapa bereziak deskargatu behar dira</string>
     <string name="nautical_maps_missing">Mapa nautikoak bistaratzeko, lineaz kanpoko mapa bereziak deskargatu behar dira</string>
     <string name="edit_group">Editatu taldea</string>
-    <string name="parking_place">Aparkalekua</string>
     <string name="remove_the_tag">KENDU ETIKETA</string>
     <string name="gps_status">GPSaren egoera</string>
     <string name="version_settings_descr">Deskargatu gaueroko konpilazioak.</string>
@@ -2420,7 +2371,6 @@ Area honi dagokio: %1$s x %2$s</string>
     <string name="quick_action_navigation_voice_off">Ahotsa itzalita dago</string>
     <string name="quick_action_navigation_voice_on">Ahotsa piztuta dago</string>
     <string name="quick_action_add_gpx">Gehitu GPX bide-puntua</string>
-    <string name="quick_action_add_parking">Gehitu aparkalekua</string>
     <string name="quick_action_new_action">Gehitu ekintza</string>
     <string name="quick_action_edit_action">Editatu ekintza</string>
     <string name="quick_action_add_favorite">Gehitu gogokoa</string>
@@ -2434,7 +2384,6 @@ Area honi dagokio: %1$s x %2$s</string>
     <string name="quick_action_add_osm_bug_descr">Ekintza botoia sakatzean OSM ohar bat gehituko da pantailaren zentroko kokalekuan.</string>
     <string name="quick_action_add_poi_descr">Ekintza botoia sakatzean POI bat gehituko da pantailaren zentroko kokalekuan.</string>
     <string name="quick_action_navigation_voice_descr">Ekintza botoia sakatzean ahots bidezko jarraibideak gaitu edo desgaituko dira nabigazioan.</string>
-    <string name="quick_action_add_parking_descr">Ekintza botoia sakatzean aparkaleku bat gehituko da pantailaren zentroko kokalekuan.</string>
     <string name="favorite_autofill_toast_text">" hona gorde da: "</string>
     <string name="favorite_empty_place_name">Tokia</string>
     <string name="quick_action_showhide_favorites_title">Erakutsi/ezkutatu gogokoak</string>
@@ -2553,7 +2502,6 @@ Area honi dagokio: %1$s x %2$s</string>
     <string name="do_not_send_anonymous_app_usage_desc">OsmAndek aplikazioan irekitzen dituzun atalei buruzko informazioa jasotzen du. Zure kokalekua ez da inoiz bidaltzen, ezta aplikazioan idazten duzun ezer edo ikusi, bilatu edo deskargatzen dituzun zonaldeei buruzko ezer ere.</string>
     <string name="do_not_show_startup_messages">Ez erakutsi mezuak hasieran</string>
     <string name="do_not_show_startup_messages_desc">Aplikazioen deskontuak eta tokiko gertaera berezien mezuak ezkutatzen ditu.</string>
-    <string name="parking_options">Aparkatzeko aukerak</string>
     <string name="full_version_thanks">Eskerrik asko OsmAnd aplikazioaren bertsio osoa erosteagatik!</string>
     <string name="routing_attr_relief_smoothness_factor_hills_name">Menditsua</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Ez oso menditsua</string>
@@ -2596,7 +2544,6 @@ Area honi dagokio: %1$s x %2$s</string>
     <string name="shared_string_paused">Pausatua</string>
     <string name="osmand_extended_description_part1">"OsmAnd (OSM Automated Navigation Directions) mapa eta nabigazio aplikazio bat da. Doako, mundu osoko eta kalitate altuko OpenStreetMap (OSM) mapak eskura jartzen dizkizuna. Gozatu ahots bidezko nabigazioa edo nabigazio grafikoa, ikusi interesezko puntuak (POI),  sortu eta kudeatu GPX lorratzak, erabili sestra-kurbak eta garaiera datuak (gehigarri baten bidez), aukeratu kotxe, bizikleta eta oinezko moduen artean, editatu OSM, eta askoz gehiago."</string>
     <string name="type_address">Idatzi helbidea</string>
-    <string name="osmand_extended_description_part2">GPS nabigazioa • Lineaz kanpo (Ibiltaritza kargurik ez atzerrian zaudenean) edo konektatuta (azkarragoa) aritzea erabaki dezakezu • Biraz-birako ahots gidaketa bidean daramakizu (grabatutako eta sintetizatutako ahotsak) • Ibilbidea berregin egiten da bidetik ateratzen bazara • Erraien gida, kaleen izenak, eta heltzeko orduaren estimazioa bidean lagunduko zaituzte • Bidaia seguruagoa egiteko, egun/gau moduak automatikoki aldatzen dira • Abiadura muga bistaratzea aukeratu dezakezu, eta gainditzen baduzu abisuak jasotzea • Maparen zooma abiadurara egokitzen da • Helbidea, mota (adib. aparkalekua, jatetxea, hotela, gasolindegia, museoa) edo koordenatu geografikoen arabera bilatu ditzakezu helburuak • Ibilbidean tarteko puntuentzat euskarria du • Zure ibilbidea grabatu dezakezu edo GPX lorratz bat kargatu eta jarraitu dezakezu</string>
     <string name="shared_string_overview">Ikuspegi orokorra</string>
     <string name="select_street">Aukeratu kalea</string>
     <string name="private_access_routing_req">Zure helburua sarbide pribatu duen gune batean dago. Errepide pribatuetara sarbidea baimendu nahi duzu bidai honetan?</string>

@@ -275,10 +275,7 @@
     <string name="clear_dest_confirm">Seguru ses de bòlere iscantzellare sa destinatzione (e sas tapas intermèdias)?</string>
     <string name="precise_routing_mode_descr">Abìlita pro calculare àndalas pretzisas chene atopos. Est lentu e limitadu in sa distàntzia.</string>
     <string name="precise_routing_mode">Calculu pretzisu de s’àndala (alfa)</string>
-    <string name="recording_context_menu_show">Ammustra</string>
-    <string name="recording_photo_description">Foto %1$s %2$s</string>
     <string name="av_def_action_picture">Iscata una foto</string>
-    <string name="recording_context_menu_precord">Iscata una foto</string>
     <string name="av_use_external_camera_descr">Imprea s’aplicatzione de sistema pro sas fotografias.</string>
     <string name="dropbox_plugin_description">S’estensione Dropbox ti permitit de sincronizare sas camineras e sas notas audio/video cun su contu tuo de Dropbox.</string>
     <string name="dropbox_plugin_name">Estensione Dropbox</string>
@@ -288,18 +285,10 @@
     <string name="av_def_action_choose">Issèbera su rechesta</string>
     <string name="av_widget_action_descr">Issèbera s’atzione predefinida de su widget.</string>
     <string name="av_widget_action">Azione predefinida de su widget</string>
-    <string name="av_use_external_recorder">Imprea su registratore de sistema</string>
     <string name="av_use_external_camera">Imprea s’app fotocàmera</string>
-    <string name="recording_error">Errore durante sa registratzione </string>
-    <string name="recording_open_external_player">Abèri reprodutòre esternu</string>
     <string name="recording_delete_confirm">Boles iscantzellare custa registratzione?</string>
 
-    <string name="recording_unavailable">non disponìbile</string>
-    <string name="recording_can_not_be_played">Sa registratzione non podet èssere reprodota</string>
-    <string name="recording_context_menu_delete">Iscantzella sa registratzione</string>
     <string name="recording_context_menu_play">Reprodui</string>
-    <string name="recording_description">Registratzione %1$s %3$s %2$s</string>
-    <string name="recording_default_name">Registrende</string>
     <string name="shared_string_control_stop">Stop</string>
     <string name="shared_string_control_start">Avia/Inghitza</string>
     <string name="osmand_srtm_short_description_80_chars">Estensione OsmAnd pro sas lìnias de livellu chene lìnia</string>
@@ -369,7 +358,6 @@
     <string name="ending_point_too_far">Puntu finale tropu indedda dae s’istrada prus a curtzu.</string>
     <string name="add_tag">Annanghe etichetta</string>
     <string name="btn_advanced_mode">Modalidade avantzada…</string>
-    <string name="poi_filter_parking">Parchezu</string>
     <string name="poi_filter_emergency">Apretu/Emergèntzia</string>
     <string name="poi_filter_public_transport">Trasportu pùblicu</string>
     <string name="poi_filter_entertainment">Intrattenimentu</string>
@@ -392,7 +380,6 @@
     <string name="interrupt_music_descr">Sos annùntzios vocales ponent sa mùsica in pàusa, imbetzes de li andare petzi in subra.</string>
     <string name="interrupt_music">Firma sa mùsica</string>
 
-    <string name="osmand_play_title_30_chars">OsmAnd Mapas &amp; Nàvigu</string>
     <string name="osmand_short_description_80_chars">Aplicu a datos apertos (opensource) pro su nàvigu cun mapas in lìnia e chene lìnia</string>
     <string name="edit_filter_save_as_menu_item">Sarva comente</string>
     <string name="poi_dialog_opening_hours">Aberi</string>
@@ -401,7 +388,6 @@
     <string name="osmo_io_error">OsMo problema de connessione: </string>
     <string name="osmo_mode_on">Firma sa sessione de OSMo</string>
     <string name="osmo_mode_off">Inghitza/avia OSMo</string>
-    <string name="osmand_plus_play_title_30_chars">Mapas OsmAnd+ e Nàvigu</string>
     <string name="osmand_plus_short_description_80_chars">OsmAnd est un’aplicatzione a mitza aperta pro su nàvigu cun mapas in lìnia e chene lìnia</string>
 
     <string name="filterpoi_activity">Crea unu filtru pro sos PDI</string>
@@ -605,7 +591,6 @@ Boles protzèdere cun una registratzione noa?</string>
     <string name="bg_service_sleep_mode_on">Firma\n modalidade \"de isfundu\"</string>
     <string name="gps_wakeup_interval">Intervallu de ischidada GPS: %s</string>
     <string name="int_continuosly">Sighidu</string>
-    <string name="osmand_long_description_1000_chars">"OsmAnd (OSM Automated Navigation Directions - Indicatziones de Nàvigu Automàticas) OsmAnd est un aplicatzione pro su nàvigu chi impreat sa cantidade manna de datos a mitza aberta de OpenStreetMap (OSM). Totu sas mapas (vetoriales o a tasseddos) podent èssere sarvadas in s’ischeda de su telèfono pro èssere impreadas chene lìnia. OsmAnd offerit fintzas sa funtzionalidade de su càlculu de s’àndala in lìnia (online) e chene lìnia (offline) cumpresa sa boghe de ghia curva pro curva. Calicuna de sas caraterìsticas printzipales: - Funtzionalidade cumprida chene lìnia (Sarva sas mapas vetoriales o a tasseddos in sa memòria de su dispositivu) - Mapas chene lìnia cumpatas iscarrigàbiles pro totu su mundu - Iscarrigamentu de sas mapas de regiones o istados diretamente dae sa mapa - Possibilidade de subrapositzione de istratos diferentes, comente rastas GPX o de nàvigu, puntos de interesse, preferidos, curvas de livellu, firmadas de sos trasportos pùblicos, mapas annangàbiles cun trasparentzia pessonalizàbile - Chirca chene lìnia pro indiritzos e locos (PDI) - Càlculu de s’àndala pro distàntzias mèdias - Modalidades màchina, bitzicleta, e pedone cun: - Muda automàtica optzionale de sa vista die/note - Ismanniamentu automàticu optzionale regoladu dae sa lestresa - Alliniamentu de sa mapa regoladu sighinde sa diretzione o sa bùssola - Indicadore de corsia optzionale, segnalatzione de su lìmite de lestresa, boghes registradas e TTS  Limitatziones de custa versione gratùita de OsmAnd: - Nùmeru limitadu de iscarrigamentu de mapas - Atzessu a Wikipedia pro sos PDI chene lìnia fartante OsmAnd est totora in fase de isvilupu e su progetu nostru e su  progressu suo andat a in antis gràtzias a sos contributos finantziàrios pro s’isvilupu e s’iscumprou (sa proa) de funtzionalidades noas. Pro praghere cunsidera s’optzione de comporare OsmAnd+, de finantziare funtziones didlindadas noas o de fàghere una donatzione generale a osmand.net."</string>
     <string name="lang_al">Albanesu</string>
     <string name="lang_ar">Àrabu</string>
     <string name="lang_sc">Sardu</string>
@@ -614,8 +599,7 @@ Boles protzèdere cun una registratzione noa?</string>
     <string name="lang_zh_tw">Tzinesu (traditzionale)</string>
     
     <string name="rendering_attr_subwayMode_name">Àndalas metropolitana</string>
-    <string name="osmand_plus_long_description_1000_chars">OsmAnd+ (OSM Automated Navigation Directions - Indicatziones de Nàvigu Automàticas) OsmAnd+ est unu aplicatzione a mitza aberta pro su nàvigu chi tènet atzessu a sa variedade manna de datos globales de Openstreetmap (OSM). Totu sas mapas (vetoriales o a tasseddos) podent èssere sarvadas in sa memòria de su telèfono pro èssere impreadas chene lìnia. OsmAnd ofèrridi fintzas una funtzione de nàvigu cun ghia vocale in lìnia e chene lìnia. OsmAnd+ est sa versione a pagamentu, comporende·la suportas su progetu, finantzias s’isvilupu de funtzionalidades noas, e retzis totu sos ùrtimos agiornamentos. Calicuna de sas funtziones printzipales: - Funtzionalidade cumprida chene lìnia (sarva mapas vetoriales o a tasseddos in sa memòria de su dispositivu) - Mapas compatas chene lìnia disponìbiles pro totu su mundu - Iscarrigamentu chene lìmites de mapas de regiones e istados deretamente dae s’aplicu - Funtzionalidade chene lìnia de Wikipedia (isgàrriga PDI Wikipedia), òtima pro giros turìsticos - Possibilidade de subrapònnere istratos diferentes de mapas, comente rastas GPX o de nàvigu, Puntos De Interesse, preferidos, lìnias de livellu, firmadas de sos trasportos pùblicos, mapas additzionales cun trasparèntzia pessonalizzàbile - Chirca chene lìnia pro indiritzos e logos (PDI) - Càlculu de s’àndala chene lìnia pro distàntzias mèdias - Modalidades in màchina, bitzicleta, e a pedes cun: - muda automàtica optzionale de sa vista die/note - Ismanniamentu automàticu optzionale regoladu dae sa lestresa - Alliniamentu de sa mapa regoladu dae sa diretzione o dae sa bùssola - indicadore de corsia optzionale, segnalatzione de su lìmite de lestresa, boghes registradas e TTS</string>
-    
+
     <string name="local_index_poi_data">Datos PDI</string>
     <string name="local_indexes_cat_poi">Datos PDI</string>
     <string name="poi_context_menu_modify">Muda PDI</string>
@@ -639,7 +623,6 @@ Boles protzèdere cun una registratzione noa?</string>
     <string name="map_widget_reset">Reimposta sos valores predefinidos</string>
 
 
-    <string name="map_widget_parking">Parchègiu</string>
     <string name="map_widget_monitoring">Registratzione GPX</string>
     <string name="map_widget_speed">Lestresa</string>
     <string name="map_widget_distance">Destinatzione</string>
@@ -658,9 +641,6 @@ Boles protzèdere cun una registratzione noa?</string>
     <string name="avoid_toll_roads">Istransi sas istradas a pedàgiu</string>
     <string name="continue_follow_previous_route_auto">Su nàvigu pretzedente no est istadu cumpridu. Sighire cun cussu? (%1$s segundos)</string>
     <string name="route_updated_loc_found">S’àndala at a èssere calculada a positzione achirida</string>
-    <string name="osmand_parking_hours">Oras</string>
-    <string name="osmand_parking_minutes">Minutos</string>
-    <string name="osmand_parking_position_description_add_time">Sa màchina est istada parchegiada a sas</string>
 
     <string name="select_animate_speedup">Issèbera sa lestresa de s’animatzione de s’àndala</string>
     <string name="global_app_allocated_memory_descr">Memòria allocata %1$s MB (lìmite de Android %2$s MB, Dalvik %3$s MB).</string>
@@ -671,22 +651,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
 
     <string name="starting_point_too_far">Puntu de mòida tropu distante dae s’istrada prus a curtzu.</string>
     <string name="shared_location">Positzione cumpartzida</string>
-    <string name="osmand_parking_event">Piga sa màchina dae su parchègiu</string>
-    <string name="osmand_parking_warning">Atentzione</string>
-    <string name="osmand_parking_time_limit_title">Imposta su lìmite de oràriu de su parchègiu</string>
-    <string name="osmand_parking_choose_type">Issèbera su tipu de parchègiu</string>
-    <string name="osmand_parking_lim_text">A tempus</string>
-    <string name="osmand_parking_no_lim_text">Chene lìmites de tempus</string>
-    <string name="osmand_parking_add_event">Annanghe una notìfica a s’aplicatzione Calendàriu</string>
-    <string name="osmand_parking_time_limit">Parchègiu a tempus</string>
-    <string name="osmand_parking_time_no_limit">Parchègiu chene lìmites de tempus</string>
-    <string name="osmand_parking_position_description">Sa positzione de sa màchina parchegiada tua. %1$s</string>
-    <string name="osmand_parking_pm">PM</string>
-    <string name="osmand_parking_am">AM</string>
-    <string name="osmand_parking_position_name">Logu de parchègiu</string>
-	<string name="osmand_parking_plugin_description">S’estensione positzione parchègiu ti permìtit de ammentare in ue est istada parchegiada sa màchina tua, e cantu tempus tenes galu (si su parchègiu tenet unu tempus limitadu).
-\nPodes agatare su logu e su tempus de parchègiu in su widget de sa mapa. Podes annànghere notìficas in su calendàriu pro ti l\'ammentare.</string>
-    <string name="osmand_parking_plugin_name">Positzione parchègiu</string>
     <string name="context_menu_item_add_parking_point">Marca comente logu de parchègiu</string>
     <string name="gpxup_public">Pùblicu</string>
     <string name="gpxup_identifiable">Identificàbile</string>
@@ -847,10 +811,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="rendering_attr_hikingRoutesOSMC_name">Istratu sìmbulos escursionisticos</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Disinna sas camineras sighinde sas rastas OSMC.</string>
 
-    <string name="osmand_parking_delete_confirm">Cheres iscantzellare su marcadore de sa positzione de sa màchina parchegiada?</string>
-    <string name="osmand_parking_delete">Iscantzella su marcadore de parchègiu</string>
-    <string name="osmand_parking_position_description_add">Recùpera sa màchina pro sas:</string>
-    <string name="context_menu_item_delete_parking_point">Iscantzella unu marcadore de parchègiu</string>
     <string name="route_roundabout">Rutunda: piga sa %1$d essida e sighi</string>
     <string name="rendering_attr_appMode_description">Otimizza sas mapas pro</string>
     <string name="rendering_attr_contourLines_description">Ammustra dae su livellu de ismanniamentu (serbint sos datos de sas lìnias de livellu):</string>
@@ -873,7 +833,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
 
     <string name="osmand_development_plugin_description">Custa estensione ammustrat sas impostatziones pro funtzionalidades pro isvilupu e debug comente sa simulatzione de su nàvigu, sa visualizatzione de sa prestatzione de su rèndering, o s\'interfàtzia vocale. Custas impostatziones sunt pensadas pro sos isvilupadores e non sunt netzessàrias pro sos àteros impitadores.</string>
     <string name="vector_maps_may_display_faster_on_some_devices">Sas mapas vetoriales diat dèpere apàrrere in manera prus lestra. In carchi dispositivu diat podere funtzionare male.</string>
-    <string name="osmand_parking_warning_text">Una notìfica pro recuperare sa màchina est istada annangada a su tzeravallu/calendàriu tuo. At a abarrare finas a cando non l\'as a cantzellare manualmente.</string>
     <string name="rendering_attr_noPolygons_description">Faghe divènnere transparentes totu sas caraterìsticas de sas àreas de su terrinu.</string>
     <string name="rendering_attr_hmRendered_description">Aumenta sa cantidade ammustrada de minujos de sa mapa.</string>
 	<string name="osmand_rastermaps_plugin_description">"Cun custa estensione podes atzèdere a medas castas de màpas in lìnia (cussas connotas comente \"a tasseddos\" o \"raster\"), dae sas predefinidas de  Openstreetmap (comente Mapnik) a sas immàgines satellitares e a sos istratos pro punnas ispetziales comente sas mapas metereològicas, climàticas, geològicas, e umbradura de sos rilievos etc. 
@@ -1479,8 +1438,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="av_camera_focus_infinity">Fogu impostadu a s’infinitu</string>
     <string name="av_camera_focus_macro">Modalidade de fogu macro (particulare)</string>
     <string name="av_camera_focus_continuous">Sa fotocàmera est chirchende de pònnere a fogu a sighidura</string>
-    <string name="av_photo_play_sound">Reprodui su sonu a s’iscatu</string>
-    <string name="av_photo_play_sound_descr">Issèbera si reprodurre unu sonu cando benint iscatadas sas fotos.</string>
     <string name="av_camera_pic_size">Dimensione foto</string>
     <string name="av_camera_pic_size_descr">Ischerta sas dimensiones de sas fotografias de sa fotocàmera interna.</string>
     <string name="navigation_intent_invalid">Formatu non bàlidu: %s</string>
@@ -1626,7 +1583,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="shared_string_my_location">Positzione mea</string>
 
     <string name="gps_status">Istadu GPS</string>
-    <string name="parking_place">Parchègiu</string>
     <string name="remove_the_tag">BOGA SU TAG</string>
     <string name="shared_string_disabled">Disabilitadu</string>
     <string name="shared_string_enabled">Abilitadu</string>
@@ -1691,8 +1647,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="osm_edits">Modìficas OSM</string>
     <string name="osmand_parking_hour">h</string>
     <string name="osmand_parking_minute">min</string>
-    <string name="osmand_parking_time_left">galu</string>
-    <string name="parking_place_limited">Parchègiu cun tempus limitadu a</string>
     <string name="your_edits">Modìficas tuas</string>
     <string name="waypoint_visit_after">Vìsita a pustis</string>
     <string name="waypoint_visit_before">Vìsita in antis</string>
@@ -1712,7 +1666,6 @@ Lon %2$s</string>
     <string name="shared_string_photo">Foto</string>
     <string name="route_points">Puntos de s\'àndala</string>
     <string name="shared_string_release">Essidu</string>
-    <string name="osmand_parking_overdue">Iscadidu</string>
     <string name="delay_to_start_navigation_descr">Dislinda su tempus de permanèntzia in s\'ischermu de pianificatzione de s\'àndala, in antis de su cumintzu de su nàvigu.</string>
 
     <string name="shared_string_go">Bae</string>
@@ -2397,7 +2350,6 @@ Si istimas OsmAnd e OSM e los boles suportare, custa est una manera perfeta pro 
     <string name="quick_action_navigation_voice_off">Sa boghe est istudada</string>
     <string name="quick_action_navigation_voice_on">Sa boghe est alluta</string>
     <string name="quick_action_add_gpx">Annanghe unu puntu de coladòrgiu GPX</string>
-    <string name="quick_action_add_parking">Annanghe unu parchègiu</string>
     <string name="quick_action_new_action">Annanghe un\'atzione</string>
     <string name="quick_action_edit_action">Modìfica s\'atzione</string>
     <string name="quick_action_add_favorite">Annanghe unu preferidu</string>
@@ -2411,7 +2363,6 @@ Si istimas OsmAnd e OSM e los boles suportare, custa est una manera perfeta pro 
     <string name="quick_action_add_osm_bug_descr">Incarchende su butone de s\'atzione as a annànghere una nota OSM in su tzentru de sa mapa.</string>
     <string name="quick_action_add_poi_descr">Incarchende su butone de s\'atzione as a annànghere unu PDI in su tzentru de sa mapa.</string>
     <string name="quick_action_navigation_voice_descr">Incarchende su butone de s\'atzione as a istudare o allùere sa boghe de ghia in su mentres de su nàvigu.</string>
-    <string name="quick_action_add_parking_descr">Incarchende su butone de s\'atzione as a annànghere unu parchègiu in su tzentru de sa mapa.</string>
     <string name="favorite_autofill_toast_text">" est sarvadu in "</string>
     <string name="favorite_empty_place_name">Logu</string>
     <string name="quick_action_duplicates">Custu nùmene est giai impreadu, s\'atzione est istada rinumenada %1$s pro non tènnere dopiones.</string>
@@ -2534,11 +2485,9 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="do_not_send_anonymous_app_usage_desc">OsmAnd imbiat informatziones generales a pitzu de sas partes de s\'aplicatzione impreadas. Non retzimus perunu datu de geolocalizatzione, chi pertochet datos insertados dae s\'impreadore o a pitzu de sas àreas chi bides, chircas o iscàrrigas.</string>
     <string name="do_not_show_startup_messages">No ammustres messàgios a s\'alluìngiu</string>
     <string name="do_not_show_startup_messages_desc">Istudat s\'ammustradura de sos iscontos pro sas aplicatziones e sos messàgios a pitzu de sos eventos locales.</string>
-    <string name="parking_options">Issèberos pro sos parchègios</string>
     <string name="right_side_navigation">Ghia a destra</string>
     <string name="driving_region_automatic">Automàtica</string>
     <string name="osmand_extended_description_part1">OsmAnd (OSM Automated Navigation Directions) est un\'aplicatzione pro sa consultatzione de mapas e su nàvigu chi impreat sos datos lìberos, vàlidos pro totu su mundu, e de alta calidade de OpenStreetMap (OSM). Imprea sa ghia vocale e sas indicatziones in s\'ischermu, càstia sos PDI (puntos de interesse), crea e manìgia rastas GPX, abìlita sa visualizatzione de sas curvas de livellu e sos datos de s\'artària (pro mèdiu de un\'estensione), issèbera sa modalidade intre ghia pro sa màchina, sas bitzicletas e a pedes, agiuda a megioare sas mapas OSM e àteru meda.</string>
-    <string name="osmand_extended_description_part2">Nàvigu GPS • Podes isseberare intre sa modalidade non in lìnia (non b\'ant a èssere pagamentos cando ses in s\'esteru) o in lìnia (prus lestra) • Ghia vocale chi t\'agiudat in totu su biàgiu tuo (boghes registradas e sintetizadas) • S\'àndala benit torrada a èssere calculada cada borta chi b\'essis a foras • S\'indicadore de corsia, su nùmene de sas carreras, e su tempus istimadu de arrivu t\'ant a agiudare in su nàvigu • Pro fàghere su biàgiu tuo prus seguru, sa modalidade die e sa modalidade note cambiant automaticamente sighinde s\'ora • Podes isseberare si bìdere o nono sos lìmites de lestresa, e retzire avisos si los ses barighende • S\'ismanniamentu mapa s\'adatat a sa lestresa tua • Podes chircare destinatzione impreende s\'indiritzu, sa casta (es.: parchègiu, ristorante, albergu, istatzione de servìtziu, museu), o cun sas coordinatas geogràficas • Suportat puntos de coladòrgiu in s\'àndala tua • Podes registrare o carrigare e sighire una rasta GPX</string>
     <string name="osmand_extended_description_part3">Mapa • Ammustra sos PDI (puntos de interesse) a curtzu de tie • Acontza sa mapa pro l\'adatare a sa diretzione de movimentu tua (o a sa bùssola) • Ammustra su puntu in ue ses ecara a ue ses abbistende • Cumpartzi sa positzione tua pro ti fàghere agatare dae sos amigos tuos • Sarva sos logos prus importantes pro tie in sos Preferidos • Issèbera comente cheres bìdere sos nùmenes in sa mapa: in inglesu, limba locale, o in ortografia fonètica • Ammustra taseddos ispetzializados in lìnia, vistas satellitares (dae Bing), istratos diferentes, comente rastas GPX pro su nàvigu, e àteros livellos cun trasparèntzia regolàbile</string>
     <string name="osmand_extended_description_part4">Iscì S\'estensione de OsmAnd pro sas mapas pro s\'iscì ti permitint de bìdere sas pistas pro s\'iscì cunu meda complessidade e cun àteras informatziones, comente sa positzione de sas funivias e de àteras istruturas.</string>
     <string name="osmand_extended_description_part5">Bitzicletas • Podes agatare sas pistas tziclàbiles in sa mapa • Su nàvigu GPS in sa modalidade pro sas bitzicletas calculat sas àndalas impreende sas pistas tziclàbiles • Podes bìdere sa lestresa e s\'artària tua • S\'optzione pro sa registratzione GPX ti permitit de registrare su biàgiu tuo e de lu cumpartzire • Impreende un\'estensione podes abilitare sas curvas de livellu e sas umbraduras de sos rilievos</string>

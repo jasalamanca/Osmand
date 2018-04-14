@@ -38,12 +38,9 @@
   <string name="map_online_data_descr">Koristi javne mape (preuzmi i keširaj sličice na memorijsku karticu)</string>
   <string name="shared_string_online_maps">Javne mape</string>
   <string name="online_map_settings_descr">Podesi izvor sličica javnih ili keširanih mapa</string>
-  
-  
-  <string name="osmand_parking_hours">Sati</string>
-  <string name="osmand_parking_minutes">Minuta</string>
-  <string name="osmand_parking_position_description_add_time">Automobil je parkiran od:</string>
-  <string name="use_compass_navigation">Koristi kompas</string>
+
+
+    <string name="use_compass_navigation">Koristi kompas</string>
   <string name="route_updated_loc_found">Ruta će biti izračunata kad se pronađe položaj</string>
   <string name="continue_follow_previous_route_auto">Prethodno navođenje je nedovršeno. Želite nastaviti? (%1$s seconds)</string>
   <string name="show_cameras">Prikaži kamere za mjerenje brzine</string>
@@ -56,10 +53,9 @@
   <string name="map_widget_compass">Kompas</string>
   
   <string name="map_widget_reset">Resetuj na zadano</string>
-  
-  
-  <string name="map_widget_parking">Parkiralište</string>
-  <string name="map_widget_monitoring">Monitoring</string>
+
+
+    <string name="map_widget_monitoring">Monitoring</string>
   <string name="map_widget_speed">Brzina</string>
   <string name="map_widget_distance">Target</string>
   <string name="map_widget_altitude">Visina</string>
@@ -82,17 +78,11 @@
     
     <string name="stop_routing_confirm">Jeste li sigurni da želite zaustaviti navigaciju?</string>
     <string name="clear_dest_confirm">Jeste li sigurni da želite ukloniti tačku odredišta?</string>
-    <string name="recording_context_menu_show">Prikaži</string>
-    <string name="recording_photo_description">Slika %1$s of %2$s</string>
     <string name="av_def_action_picture">Uslikaj</string>
-    <string name="recording_context_menu_precord">Uslikaj</string>
     <string name="dropbox_plugin_description">Dropbox dodatak omogućuje sinkronizaciju staza i audio / video zapisa s vašim dropbox računom.</string>
     <string name="dropbox_plugin_name">Dropbox dodatak</string>
     <string name="intermediate_points_change_order">Promjeni redosljed</string>
-    <string name="recording_unavailable">nedostupno</string>
     <string name="recording_context_menu_play">Pokreni</string>
-    <string name="recording_context_menu_delete">Izbriši snimku</string>
-    <string name="recording_default_name">Snimanje</string>
     <string name="shared_string_control_stop">stani</string>
     <string name="shared_string_control_start">pokreni</string>
     
@@ -113,8 +103,7 @@
     <string name="poi_filter_sightseeing">Znamenitosti</string>
     <string name="show_warnings_descr">Konfiguracija saobraćajnih upozorenja (ograničenja brzine, prisilno zaustavljanje, ležeći policajci), kontrola brzine i informacije</string>
 	<string name="avoid_motorway">Izbjegavaj autoceste</string>
-	<string name="osmand_play_title_30_chars">OsmAnd Karte &amp; Navigacija</string>
-	<string name="no_buildings_found">Građevine nisu pronađene.</string>
+    <string name="no_buildings_found">Građevine nisu pronađene.</string>
     <string name="search_villages_and_postcodes">Traži sela / poštanski broj</string>
 	<string name="rendering_attr_showRoadMaps_description">Odaberite kada će se prikazati samo cestovne karte:</string>
 	<string name="rendering_attr_showRoadMaps_name">Samo cestovne karte</string>

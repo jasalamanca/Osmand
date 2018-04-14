@@ -11,22 +11,14 @@
 
     <string name="stop_routing_confirm">Jeste li sigurni da želite zaustaviti navigaciju?</string>
     <string name="clear_dest_confirm">Jeste li sigurni da želite ukloniti odredišnu točku?</string>
-    <string name="recording_context_menu_show">Prikaži</string>
     <string name="av_def_action_picture">Fotografiraj</string>
-    <string name="recording_context_menu_precord">Fotografiraj</string>
     <string name="dropbox_plugin_description">Dropbox dodatak omogućuje sinkronizaciju staza i audio/video zapisa s vašim računom.</string>
     <string name="dropbox_plugin_name">Dodatak Dropbox</string>
     
     <string name="intermediate_points_change_order">Promjeni redoslijed</string>
     <string name="av_use_external_camera">Koristite aplikaciju kamere</string>
-    <string name="recording_error">Dogodila se greška tijekom snimanja </string>
     <string name="recording_delete_confirm">Želite li izbrisati ovaj zapis?</string>
-    <string name="recording_unavailable">nedostupno</string>
-    <string name="recording_can_not_be_played">Snimka se ne može otvoriti</string>
-    <string name="recording_context_menu_delete">Izbriši zapis</string>
     <string name="recording_context_menu_play">Pokreni</string>
-    <string name="recording_description">Snimanje %1$s %2$s of %3$s</string>
-    <string name="recording_default_name">snimanje</string>
     <string name="shared_string_control_stop">stani</string>
     <string name="shared_string_control_start">Započni</string>
 
@@ -36,10 +28,8 @@
     <string name="download_select_map_types">Ostale karte</string>
     <string name="download_roads_only_item">Samo ceste</string>
     <string name="download_regular_maps">Regularne karte</string>
-    <string name="recording_photo_description">Slika %1$s of %2$s</string>
     <string name="av_widget_action_descr">Odaberite zadanu radnju widgeta</string>
     <string name="av_widget_action">Zadana radnja widgeta</string>
-    <string name="av_use_external_recorder">Koristite sistemsku aplikaciju za snimanje</string>
     <string name="index_srtm_parts">dijelovi</string>
     <string name="rendering_attr_noAdminboundaries_name">Sakrij granice</string>
 	<string name="download_roads_only_maps">Samo cestovne karte</string>
@@ -69,7 +59,6 @@
     <string name="non_optimal_route_calculation">Izračunajte moguću, neoptimalnu rutu na velike udaljenosti</string>
 	<string name="map_widget_monitoring_services">Bilježenje položaja</string>
 	<string name="no_route">Nema rute</string>
-    <string name="poi_filter_parking">Parkiralište</string>
     <string name="add_tag">Dodaj oznaku</string>
     <string name="btn_advanced_mode">Napredni način rada…</string>
     <string name="poi_filter_emergency">Prva pomoć</string>
@@ -122,10 +111,9 @@
 	<string name="map_widget_compass">Kompas</string>
 	
 	<string name="map_widget_reset">Resetiraj na zadano</string>
-	
-	
-	<string name="map_widget_parking">Parkiralište</string>
-	<string name="map_widget_monitoring">GPX snimanje</string>
+
+
+    <string name="map_widget_monitoring">GPX snimanje</string>
 	<string name="map_widget_speed">Brzina</string>
 	<string name="map_widget_distance">Odredište</string>
 	<string name="map_widget_altitude">Visina</string>
@@ -139,22 +127,8 @@
 	<string name="show_traffic_warnings">Prikaži prometna upozorenja</string>
 	<string name="avoid_toll_roads">Izbjegavaj ceste s naplatom</string>
 	<string name="continue_follow_previous_route_auto">Prethodno navođenje je nedovršeno. Želite nastaviti? (%1$s sekundi)</string>
-	<string name="osmand_parking_hours">Sati</string>
-	<string name="osmand_parking_minutes">Minuta</string>
-	<string name="osmand_parking_position_description_add_time">Automobil je parkiran od:</string>
-	<string name="osmand_parking_warning">Upozorenje</string>
-	<string name="osmand_parking_event">Istječe vrijeme parkinga</string>
-	<string name="osmand_parking_time_limit_title">Odredite trajanje parkiranja</string>
-	<string name="osmand_parking_lim_text">Vremenski ograničeno</string>
-	<string name="osmand_parking_no_lim_text">Vremenski neograničeno</string>
-	<string name="map_widget_show_ruler">Ravnalo</string>
-	<string name="osmand_parking_choose_type">Odaberite vrstu parkiranja</string>
-	<string name="osmand_parking_time_limit">Vremenski ograničeno parkiranje</string>
-	<string name="osmand_parking_time_no_limit">Vremenski neograničeno parkiranje</string>
-	<string name="osmand_parking_position_description">Mjesto parkiranog automobila. %1$s</string>
-	<string name="osmand_parking_pm">PM</string>
-	<string name="osmand_parking_am">AM</string>
-	<string name="gpxup_public">Javni</string>
+    <string name="map_widget_show_ruler">Ravnalo</string>
+    <string name="gpxup_public">Javni</string>
 	<string name="gpxup_identifiable">Identificirajući</string>
 	<string name="gpxup_private">Privatni</string>
 	
@@ -205,11 +179,7 @@
 	<string name="route_updated_loc_found">Ruta će biti izračunata kad se pronađe položaj</string>
 	<string name="starting_point_too_far">Polazna točka je predaleko od najbliže ceste.</string>
 	<string name="shared_location">Zajednička lokacija</string>
-	<string name="osmand_parking_delete_confirm">Želite li ukloniti lokaciju parkiranog automobila?</string>
-	<string name="osmand_parking_add_event">Dodaj oznaku u kalendar</string>
-	<string name="osmand_parking_position_name">Parkirno mjesto</string>
-	<string name="osmand_parking_plugin_description">Parking dodatak vam omogućava da sa lakoćom spremite lokaciju vašeg parkiranog automobila, i prikaz koliko vremena vam je još preostalo ukoliko je parking vremenski ograničen. Također možete pronaći vaš automobil na karti i widgetu. Dodaje podsjetnik u kalendar ukoliko želite obavijesti.</string>
-	<string name="context_menu_item_add_parking_point">Označite kao parkirno mjesto</string>
+    <string name="context_menu_item_add_parking_point">Označite kao parkirno mjesto</string>
 	<string name="route_kl">Držite se lijevo i vozite</string>
 	<string name="route_kr">Držite se desno i vozite</string>
 	<string name="rendering_attr_noPolygons_name">Sakrij poligone</string>
@@ -836,29 +806,20 @@
 	<string name="local_openstreetmap_delete">Izbriši promjene</string>
 	<string name="prefs_plugins_descr">Dodaci aktiviraju napredne postavke i dodatne funkcije</string>
 	<string name="debugging_and_development">OsmAnd razvoj</string>
-	<string name="recording_open_external_player">Otvori preglednik</string>
-    
-	
-	<string name="enable_plugin_monitoring_services">Omogućite dodatak za bilježenje položaja (GPX snimanje, online praćenje)</string>
+
+
+    <string name="enable_plugin_monitoring_services">Omogućite dodatak za bilježenje položaja (GPX snimanje, online praćenje)</string>
     <string name="intermediate_point_too_far">Međutočka %1$s je predaleko od najbliže ceste.</string>
     <string name="arrived_at_intermediate_point">Stigli ste na međutočku</string>
     <string name="context_menu_item_intermediate_point">Dodaj kao međutočku</string>
     <string name="map_widget_intermediate_distance">Međutočka</string>
-    
-    
-    
-	<string name="osmand_play_title_30_chars">OsmAnd Karte &amp; Navigacija</string>
-	<string name="osmand_plus_play_title_30_chars">OsmAnd+ Karte &amp; Navigacija</string>
-	
-	<string name="global_app_allocated_memory_descr">Memorija u uporabi %1$s MB (Android %2$s MB, Dalvik %3$s MB).</string>
+
+
+    <string name="global_app_allocated_memory_descr">Memorija u uporabi %1$s MB (Android %2$s MB, Dalvik %3$s MB).</string>
 	<string name="global_app_allocated_memory">Memorija u uporabi</string>
 	<string name="native_app_allocated_memory">Ukupna memorija</string>
-	
-	<string name="osmand_parking_delete">Izbriši oznaku za parking</string>
-	<string name="osmand_parking_position_description_add">Uzmite auto s parkirališta:</string>
-	<string name="osmand_parking_plugin_name">Lokacija parkiranog automobila</string>
-	<string name="context_menu_item_delete_parking_point">Izbriši oznaku za parking</string>
-	<string name="route_roundabout">Kružni tok: koristite %1$d. izlaz i nastavite voziti po</string>
+
+    <string name="route_roundabout">Kružni tok: koristite %1$d. izlaz i nastavite voziti po</string>
 	
 	<string name="hno">Kućni broj</string>
     <string name="street_name">Ulica</string>
@@ -1354,9 +1315,7 @@
 	<string name="osm_edits">OSM promjene</string>
 	<string name="osmand_parking_hour">h</string>
 	<string name="osmand_parking_minute">min</string>
-	<string name="parking_place_limited">Vrijeme parkiranja ograničeno na</string>
-	<string name="osmand_parking_time_left">preostalo vrijeme</string>
-	<string name="your_edits">vaša uređivanja</string>
+    <string name="your_edits">vaša uređivanja</string>
     <string name="waypoint_visit_after">Posjeti poslije</string>
     <string name="waypoint_visit_before">Posjeti prije</string>
     <string name="tips_and_tricks_descr">Često postavljana pitanja, nedavne promjene, i drugo</string>
@@ -1398,7 +1357,6 @@
     <string name="world_ski_missing">Kako bi se prikazale skijaške karte, potrebno je preuzeti posebne offline karte</string>
     <string name="nautical_maps_missing">Kako bi se prikazale nautičke karte, potrebno je preuzeti posebne offline karte</string>
 	<string name="edit_group">Uredi grupu</string>
-    <string name="parking_place">Parkirno mjesto</string>
     <string name="remove_the_tag">Ukloniti oznaku</string>
     <string name="gps_status">GPS status</string>
     <string name="rendering_attr_streetLighting_name">Ulična rasvjeta</string>
@@ -1477,8 +1435,7 @@
 	<string name="lang_pms">Pijemonte</string>
     <string name="storage_directory_default">Unutarnja memorija</string>
     <string name="confirm_usage_speed_cameras">U mnogim zemljama (Njemačka, Francuska, Italija, i druge) Korištenje upozorenja za nadolazeće uređaje za mjerenje brzine nije dopušteno zakonom. OsmAnd ne preuzima nikakvu odgovornost ako kršite zakon. Molimo kliknite da samo ako ste sigurni da želite koristiti ovu značajku.</string>
-	<string name="osmand_parking_overdue">zakasnio</string>
-	<string name="osmo_plugin_name">OsMo (OSM Monitoring)</string>
+    <string name="osmo_plugin_name">OsMo (OSM Monitoring)</string>
 	<string name="watch">Prikaži</string>
 	<string name="download_tab_local">Lokalno</string>
 	<string name="traffic_warning_hazard">Opasnost</string>

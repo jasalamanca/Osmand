@@ -2,28 +2,7 @@
 <resources>
     <string name="starting_point_too_far">Pradžios taškas yra per toli nuo artimiausio kelio.</string>
     <string name="shared_location">Bendrinta vieta</string>
-    <string name="osmand_parking_warning">Dėmesio</string>
-    <string name="osmand_parking_warning_text">Perspėjimas pasiimti automobilį jau buvo įtrauktas į jūsų kalendorių. Perspėjimas ten liks tol, kol jį panaikinsite.</string>
-    <string name="osmand_parking_time_limit_title">Nustatyti statymo trukmę</string>
-    <string name="osmand_parking_delete_confirm">Ar norite panaikinti automobilio statymo vietą?</string>
-    <string name="osmand_parking_delete">Panaikinti statymo žymę</string>
-    <string name="osmand_parking_choose_type">Pasirinkti statymo vietos tipą</string>
-    <string name="osmand_parking_lim_text">Riboto laiko</string>
-    <string name="osmand_parking_no_lim_text">Neriboto laiko</string>
-    <string name="osmand_parking_add_event">Įkelti priminimą į Kalendoriaus programą</string>
-    <string name="osmand_parking_time_limit">Riboto laiko statymo vieta</string>
-    <string name="osmand_parking_time_no_limit">Neriboto laiko statymo vieta</string>
-    <string name="osmand_parking_position_description">Jūsų automobilio statymo vieta. %1$s</string>
-    <string name="osmand_parking_position_description_add">Pasiimti automobilį:</string>
-    <string name="osmand_parking_pm">po piet</string>
-    <string name="osmand_parking_am">ryto</string>
-    <string name="osmand_parking_position_name">Statymo vieta</string>
-    <string name="osmand_parking_plugin_description">Šis įskiepis leidžia įsiminti vietą, kurioje palikote savo automobilį ir kiek laiko liko iki parkavimo pabaigos (jei ribojamas laikas).
-
-Tiek vieta, tiek laikas yra matomi OsmAnd valdymo skydelyje bei skydelyje žemėlapyje rodinyje. Šis įskiepis taip pat gali įrašyti priminimą į kalendorių.</string>
-    <string name="osmand_parking_plugin_name">Statymo vieta</string>
     <string name="context_menu_item_add_parking_point">Žymėti statymo vietą</string>
-    <string name="context_menu_item_delete_parking_point">Naikinti statymo žymę</string>
     <string name="gpxup_public">Viešas</string>
     <string name="gpxup_identifiable">Atpažįstamas</string>
     <string name="gpxup_trackable">Stebimi</string>
@@ -832,9 +811,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
  Proporcinės atminties %4$s MB (Android limitas %5$s MB, Dalvik %6$s MB).</string>
     <string name="native_app_allocated_memory">Viso atminties</string>
     <string name="select_animate_speedup">Pasirinkti animuotą maršruto pagreitinimą</string>
-    <string name="osmand_parking_hours">Valandos</string>
-    <string name="osmand_parking_minutes">Minutės</string>
-    <string name="osmand_parking_position_description_add_time">Automobilis pastatytas</string>
     <string name="use_compass_navigation_descr">Naudoti kompasą, kai neina nustatyti krypties.</string>
     <string name="use_compass_navigation">Naudoti kompasą</string>
     <string name="route_updated_loc_found">Maršrutas bus perskaičiuotas, kai bus gauta dabartinė vieta</string>
@@ -855,7 +831,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="map_widget_reset">Į pradinius nustatymus</string>
 
 
-    <string name="map_widget_parking">Automobilio statymas</string>
     <string name="map_widget_monitoring">GPX įrašymas</string>
     <string name="map_widget_speed">Greitis</string>
     <string name="map_widget_distance">Tikslas</string>
@@ -904,11 +879,7 @@ Tam prireiks {1} MB pastoviam saugojimui.
 
     <string name="snap_to_road_descr">Poziciją rodyti ant kelių kai naviguojama.</string>
     <string name="snap_to_road">Rodyti ant kelio</string>
-    <string name="osmand_long_description_1000_chars">OsmAnd (OSM Automated Navigation Directions) OsmAnd yra atviro kodo programa naudojanti įvairius OpenStreetMap (OSM) duomenis. Visi žemėlapių duomenys (vektoriniai ar lakštiniai) gali būti išsaugoti telefone ir naudojami be interneto prieigos. OsmAnd taip pat gali pasiūlyti maršruto skaičiavimo paslaugas internete ar įrenginyje, bei balso nurodymus kelionei apskaičiuotu maršrutu. Dalis pagrindinių savybių: - Veikia be interneto (išsaugokite parsiųstus žemėlapius ar jų lakštus įrenginyje) - Kompaktiški vektoriniai viso pasaulio žemėlapiai - Parsisųskite šalies ar regiono žemėlapius tiesiai iš pačios propgramos - Galima sulieti kelis žemėlapop sluoksnius, tokius kaip GPX ar judėjimo istoriją, Lankytinas Vietas, mėgiamas vietas, kontūrų linijas, viešojo transporto stoteles, papildomus žemėlapius su pasirinktinai nustatomu permatomumo lygiu - Adresų ir LV paieška nenaudojant interneto - Vidutinio ilgio maršruto apskaičiavimas be interneto paslaugų - Automobilio, dviračio ir pėsčiojo režimai su: - pasirinktiniu dineos/nakties rodinio perjungimu - pasirinktiniu pagal judėjimo greitį automatiškai nustatomu mąsteliu - pasirinktine žemėlapio orientacija pagal kompaso arba judėjimo kryptį - pasirinktinis eismo juostų nurodymas, greičio ribojimų rodymas, įrašyti ar generuojami balsai Šios nemokamos OsmAnd versijos apribojimai: - Ribojamas žemėlapių parsiuntimų skaičius - Nėra prieigos prie iš Wikipedia parsiunčiamų LV OsmAnd yra aktyviai tobulinama ir mūsų projektas bei jo tolesnis progresas priklauso nuo finansinės paramos, kuri įgalina tolesnį vystymą ir naujų funkcijų kūrimą. Norime paskatinti jus nusipirkti OsmAnd+ programą arba finansiškai prisidėti prie specifinių funkcijų kūrimo arba šiaip paremti programą osmand.net svetainėje.</string>
     <string name="osmand_plus_short_description_80_chars">OsmAnd - atviro kodo navigacijos programa su žemėlapiais</string>
-    <string name="osmand_plus_long_description_1000_chars">"OsmAnd+ (OSM Automated Navigation Directions) OsmAnd+ yra atviro kodo programa naudojanti visą spektrą OpenStreetMap (OSM) duomenų. Visi žemėlapiai (vektoriniai ar lakštiniai) gali būti išsaugoti telefono atmintyje ar atminties kortelėje ir naudojami be interneto prieigos. OsmAnd taip pat gali pasiūlyti maršruto skaičiavimo paslaugas internete ar įrenginyje, bei balso nurodymus kelionei apskaičiuotu maršrutu. OsmAnd+ yra mokama programos versiją, kurią pirkdami jūs remiate šį projektą, skiriate lėšas naujų funkcijų kūrimui ir tuo pačiu gaunate naujausius atnaujinimus. Savybės: - Veikia visiškai be interneto (išsaugokite parsiųstus žemėlapius ar jų lakštus įrenginyje)  - Kompaktiški vektoriniai viso pasaulio žemėlapiai - Neribota galimybė parsisiųsti šalies ar regiono žemėlapius pačioje programoje - Parsiųstos Vikpedijos funkcionalumas (parsisiųskite LV iš Vikipedijos) puikiai tinkantis lankytinų objektų pažinimui - Galimybė sudėti kelis žemėlapių sluoksnius, pvz. GPX ar kelionės istoriją, Lankytinas, Išsaugotas vietas, kontūrų linijas, viešo transporto sustojimus, papildomus žemėlapius pasirenkant jų permatomumą - Adresų ir LV paieška nenaudojant interneto - Vidutinio ilgio maršrutų skaičiavimas nenaudojant interneto - Automobilio, dviračio ir pėsčiojo režimai su: - pasirenkamu automatiniu dienos/nakties vaizdo perjungimu - pasirenkamas prie judėjimo greičio priderinamas žemėlapio didinimas - pasirenkamas žemėlapio pasukimas pagal kompasą arba judėjimo kryptį - pasirenkamas eismo juostų keitimo nurodymų įjungimas, greičių apribojimo rodymas, įrašyti arba sintetiniai (TTS) balsai"</string>
-
-    <string name="osmand_parking_event">Pasiimti automobilį iš stovėjimo vietos</string>
 
     <string name="context_menu_item_last_intermediate_point">Pridėti paskutinį tarpinį tikslą</string>
     <string name="context_menu_item_first_intermediate_point">Nustatyti pirmą tarpinį tikslą</string>
@@ -925,7 +896,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="ending_point_too_far">Pradžios taškas per toli nuo artimiausio kelio.</string>
     <string name="add_tag">Pridėti žymą</string>
     <string name="btn_advanced_mode">Eksperto režimas…</string>
-    <string name="poi_filter_parking">Parkingas</string>
     <string name="poi_filter_emergency">Nelaimės atveju</string>
     <string name="poi_filter_public_transport">Viešasis transportas</string>
     <string name="poi_filter_entertainment">Pramogos</string>
@@ -990,17 +960,9 @@ Tam prireiks {1} MB pastoviam saugojimui.
 
     <string name="av_widget_action_descr">Pasirinkti numatytą įrankio veiksmą.</string>
     <string name="av_widget_action">Numatytas įrankio veiksmas</string>
-    <string name="av_use_external_recorder">Nuadoti kitą įrašymo įrankį</string>
-    <string name="recording_error">Įrašinėjant vaizdą įvyko klaida </string>
-    <string name="recording_open_external_player">Atverti kitą grotuvą</string>
     <string name="recording_delete_confirm">Ar norite ištrinti šį įrašą?</string>
 
-    <string name="recording_unavailable">neprieinama</string>
-    <string name="recording_can_not_be_played">Įrašo neina pagroti</string>
-    <string name="recording_context_menu_delete">Ištrinti įrašą</string>
     <string name="recording_context_menu_play">Groti</string>
-    <string name="recording_description">"Įrašas %1$s  %3$s %2$s"</string>
-    <string name="recording_default_name">Įrašas</string>
     <string name="shared_string_control_start">Įrašyti</string>
     <string name="shared_string_control_stop">Stop</string>
     <string name="srtm_paid_version_msg">Prašome pirkti kontūrinių linijų įskiepį Android Play parduotuvėje. Taip paremsite tolesnį programos vystymą.</string>
@@ -1009,10 +971,7 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="dropbox_plugin_name">Dropbox įskiepis</string>
 
     <string name="intermediate_points_change_order">Pakeisti tvarką</string>
-    <string name="recording_context_menu_show">Rodyti</string>
-    <string name="recording_photo_description">Nuotrauka %1$s %2$s</string>
     <string name="av_def_action_picture">Fotografuoti</string>
-    <string name="recording_context_menu_precord">Fotografuoti</string>
     <string name="stop_routing_confirm">Ar tikrai norite sustabdyti navigaciją?</string>
     <string name="clear_dest_confirm">Ar tikrai norite panaikinti savo kelionės tikslą (ir tarpinius taškus)?</string>
     <string name="precise_routing_mode_descr">Igalinti tikslų maršruto skaičiavimą be trikdžių. Jis naudotinas labai ribotam atstumui ir veikia lėtai.</string>
@@ -1038,10 +997,8 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="map_widget_gps_info">GPS informacija</string>
 
     <string name="layer_hillshade">Kalnų šešėlių sluoksnis</string>
-    <string name="osmand_play_title_30_chars">OsmAnd žemėlapiai ir navigacija</string>
-    <string name="osmand_plus_play_title_30_chars">OsmAnd+ žemėlapiai ir navigacija</string>
 
-    
+
     <string name="osmand_extended_description_4000_chars">"
 OsmAnd (OSM Automated Navigation Directions) yra žemėlapių ir navigacijos programa naudojanti nemokamus, visą pasaulį dengiančius, aukštos kokybės OpenStreetMap (OSM) žemėlapius. Visi žemėlapiai gali būti išsaugoti jūsų įrenginio atminties kortelėje ir naudojami be interneto ryšio. Naudodama jūsų įrenginio GPS imtuvą OsmAnd apskaičiuoja maršrutą, kelionės nuorodas teikia vizualiai ir balsu tiek automobiliui, tiek ir dviračiui bei pėsčiajam. Visas pagrindinis funkcionalumas veikia tiek su, tiek ir be interneto ryšio. 
 
@@ -1211,8 +1168,6 @@ Afghanistan, Albania, Algeria, Andorra, Angola, Anguilla, Antigua and Barbuda, A
     <string name="av_camera_focus_infinity">Fokusas yra begalinis</string>
     <string name="av_camera_focus_macro">Makro fokusas</string>
     <string name="av_camera_focus_continuous">Kamera pastoviai bando sufokusuoti</string>
-    <string name="av_photo_play_sound">Groti garsą darant nuotrauką</string>
-    <string name="av_photo_play_sound_descr">Pasirinkite ar groti garsą, kai fotografuojama.</string>
     <string name="about_version">Versija :</string>
     <string name="shared_string_about">Apie</string>
     <string name="about_settings_descr">Versijos informacija, licencijos, projekto nariai</string>
@@ -1711,7 +1666,6 @@ Ar norite registruotis iš naujo?</string>
     <string name="speak_pedestrian">Pėsčiųjų perėjos</string>
     <string name="traffic_warning_pedestrian">Pėčiųjų perėja</string>
 
-    <string name="parking_place">Parkavimo vieta</string>
     <string name="remove_the_tag">PAŠALINTI ŽYMĄ</string>
     <string name="gps_status">GPS statusas</string>
     <string name="version_settings_descr">Atsisiųsti nightly sąrankas.</string>
@@ -1787,7 +1741,6 @@ Ar norite registruotis iš naujo?</string>
     <string name="action_delete">Ištrinti veiksmą</string>
     <string name="action_create">Sukurti veiksmą</string>
     <string name="osmand_parking_minute">min</string>
-    <string name="osmand_parking_time_left">liko</string>
     <string name="waypoint_visit_after">Aplankyti po</string>
     <string name="waypoint_visit_before">Aplankyti iki</string>
     <string name="short_location_on_map">Platuma %1$s
@@ -1800,7 +1753,6 @@ Ilguma %2$s</string>
     <string name="delay_to_start_navigation">Pradęti maršruto planavimą po …</string>
     <string name="osm_edits">OSM taisymai</string>
     <string name="osmand_parking_hour">val</string>
-    <string name="parking_place_limited">Parkavimas apribotas iki</string>
     <string name="your_edits">Jūsų taisymai</string>
     <string name="drawer">Plokščias sąrašas</string>
 
@@ -1838,7 +1790,6 @@ Ilguma %2$s</string>
     <string name="rendering_value__name">Numatytasis</string>
     <string name="rendering_value_highContrastRoads_name">Raiškaus kontrasto keliai</string>
     <string name="application_dir_change_warning3">Ar norite, kad OsmAnd taip pat nukopijuotų duomenų failus į naują vietą?</string>
-    <string name="osmand_parking_overdue">pradelsta</string>
     <string name="shared_string_currently_recording_track">Šiuo metu įrašomas maršrutas</string>
     <string name="plugin_touringview_descr">Aktyvus šį rodinį, OsmAnd\'s žemėlapių stilius pasikeis į \"Kelionių rodinį\", kuris labai detalus rodynys skirtas keliautojams ir profesionaliems vairuotojams.
 \n 
@@ -2451,7 +2402,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="quick_action_item_action">Veiksmas %d</string>
     <string name="quick_action_add_poi">Pridėti LV</string>
     <string name="quick_action_map_style">Pakeisti žemėlapio stilių</string>
-    <string name="quick_action_add_parking">Pridėti parkavimo vietą</string>
     <string name="quick_action_new_action">Pridėti veiksmą</string>
     <string name="quick_action_edit_action">Redaguoti veiksmą</string>
     <string name="dialog_add_action_title">Pridėti veiksmą</string>
@@ -2630,7 +2580,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="analyze_on_map">Analizuoti žemėlapyje</string>
     <string name="do_not_send_anonymous_app_usage_desc">OsmAnd renka informaciją apie tai kurias programėlės dalis jūs naudojate. Nei jūsų buvimo vieta, nei informacija kurią įvedate į programėlę ar detalės apie tai kokias vietas jūs žiūrite, ieškote ar parsisiunčiate niekada nebūna atsiunčiamos mums.</string>
     <string name="do_not_show_startup_messages_desc">Parodo programėlės nuolaidas ir ypatingų vietinių renginių pranešimus.</string>
-    <string name="parking_options">Parkavimo pasirinkimai</string>
     <string name="route_points_category_name">Posūkiai kuriuos reikės padaryti šiame maršrute</string>
     <string name="track_points_category_name">Ypatingos reikšmės objektai šiame maršrute</string>
     <string name="gpx_track">Kelias</string>
@@ -2876,7 +2825,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="quick_action_add_marker_descr">Bakstelėję veiksmo mygtuką pridėsite žemėlapio žymeklį ekrano centre.</string>
     <string name="quick_action_add_osm_bug_descr">Bakstelėję veiksmo mygtuką pridėsite OSM pastabą ekrano centre.</string>
     <string name="quick_action_add_poi_descr">Bakstelėję veiksmo mygtuką pridėsite LV-ą ekrano centre.</string>
-    <string name="quick_action_add_parking_descr">Bakstelėję veiksmo mygtuką pridėsite automobilio stovėjimo vietą ekrano centre.</string>
     <string name="quick_action_duplicates">Nurodyto greito veiksmo pavadinimas jau naudojamas, todėl buvo pakeistas į %1$s, kad būtų išvengta dubliavimo.</string>
     <string name="quick_action_duplicate">Pasikartojantis greitojo veiksmo pavadinimas</string>
     <string name="quick_action_showhide_poi_descr">Bakstelėjus veiksmo mygtuką bus parodoma arba paslepiama LV-a žemėlapyje.</string>

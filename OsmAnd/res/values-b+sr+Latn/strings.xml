@@ -3,9 +3,8 @@
     <string name="about_version">Verzija:</string>
     
     <string name="about_settings_descr">Verzija info, licence, članovi projekta</string>
-    
-    <string name="av_photo_play_sound_descr">Izaberite da li da se čuje zvuk prilikom snimanja fotografija</string>
-<string name="av_camera_focus_infinity">Fokus je podešen na beskonačno</string>
+
+    <string name="av_camera_focus_infinity">Fokus je podešen na beskonačno</string>
 	<string name="av_camera_focus_macro">Makro režim fokusa</string>
 	<string name="av_camera_focus_auto">Auto fokus</string>
 	<string name="shared_string_delete_all">Obriši sve</string>
@@ -81,12 +80,8 @@
     <string name="files_limit">%1$d fajlova ostalo</string>
     <string name="available_downloads_left">Dostupno %1$d datoteka za preuzimanje</string>
     <string name="install_paid">Puna verzija</string>
-	<string name="recording_error">Došlo je do greške prilikom snimanja </string>
-	<string name="recording_delete_confirm">Da li želite da uklonite ovaj snimak ?</string>
-    <string name="recording_unavailable">nedostupan</string>
-	<string name="recording_context_menu_delete">Obriši zapis</string>
+    <string name="recording_delete_confirm">Da li želite da uklonite ovaj snimak ?</string>
     <string name="recording_context_menu_play">Reprodukuj</string>
-    <string name="recording_default_name">snimanje</string>
     <string name="shared_string_control_start">Počni</string>
     <string name="map_widget_distancemeasurement">Merenje udaljenosti</string>
 
@@ -207,10 +202,7 @@
     <string name="tip_faq">Najčešće postavljana pitanja</string>
     <string name="max_speed_none">nijedan</string>
     <string name="stop_routing_confirm">Da li ste sigurni da želite da prekinete navigaciju?</string>
-    <string name="recording_context_menu_show">Prikaži</string>
-    <string name="recording_photo_description">Fotografija %1$s od %2$s</string>
     <string name="av_def_action_picture">Slikaj</string>
-    <string name="recording_context_menu_precord">Slikaj</string>
     <string name="dropbox_plugin_description">Dropbox dodatak omogućava da sinhronizujete putanje i audio/video beleške sa vašim Dropbox nalogom.</string>
     <string name="dropbox_plugin_name">Dropbox dodatak</string>
     <string name="intermediate_points_change_order">Promeni redosled</string>

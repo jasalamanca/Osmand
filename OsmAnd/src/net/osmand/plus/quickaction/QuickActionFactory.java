@@ -9,8 +9,6 @@ import com.google.gson.reflect.TypeToken;
 import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.R;
 import net.osmand.plus.osmedit.OsmEditingPlugin;
-import net.osmand.plus.parkingpoint.ParkingAction;
-import net.osmand.plus.parkingpoint.ParkingPositionPlugin;
 import net.osmand.plus.quickaction.actions.AddOSMBugAction;
 import net.osmand.plus.quickaction.actions.AddPOIAction;
 import net.osmand.plus.quickaction.actions.FavoriteAction;
@@ -64,13 +62,6 @@ public class QuickActionFactory {
 		if (OsmandPlugin.getEnabledPlugin(OsmEditingPlugin.class) != null) {
 			quickActions.add(new AddPOIAction());
 			quickActions.add(new AddOSMBugAction());
-		}
-
-		if (OsmandPlugin.getEnabledPlugin(ParkingPositionPlugin.class) != null) {
-			QuickAction parking = new ParkingAction();
-			if (!parking.hasInstanceInList(active)) {
-				quickActions.add(parking);
-			}
 		}
 
 		quickActions.add(new QuickAction(0, R.string.quick_action_add_configure_map));
@@ -156,9 +147,6 @@ public class QuickActionFactory {
 			case GPXAction.TYPE:
 				return new GPXAction();
 
-			case ParkingAction.TYPE:
-				return new ParkingAction();
-
 			case NavVoiceAction.TYPE:
 				return new NavVoiceAction();
 
@@ -227,9 +215,6 @@ public class QuickActionFactory {
 
 			case GPXAction.TYPE:
 				return new GPXAction(quickAction);
-
-			case ParkingAction.TYPE:
-				return new ParkingAction(quickAction);
 
 			case NavVoiceAction.TYPE:
 				return new NavVoiceAction(quickAction);
@@ -300,9 +285,6 @@ public class QuickActionFactory {
 			case GPXAction.TYPE:
 				return R.drawable.ic_action_flag_dark;
 
-			case ParkingAction.TYPE:
-				return R.drawable.ic_action_parking_dark;
-
 			case NavVoiceAction.TYPE:
 				return R.drawable.ic_action_volume_up;
 
@@ -372,9 +354,6 @@ public class QuickActionFactory {
 			case GPXAction.TYPE:
 				return R.string.quick_action_add_gpx;
 
-			case ParkingAction.TYPE:
-				return R.string.quick_action_add_parking;
-
 			case NavVoiceAction.TYPE:
 				return R.string.quick_action_navigation_voice;
 
@@ -430,7 +409,6 @@ public class QuickActionFactory {
 			case MarkerAction.TYPE:
 			case ShowHideFavoritesAction.TYPE:
 			case ShowHidePoiAction.TYPE:
-			case ParkingAction.TYPE:
 			case NavVoiceAction.TYPE:
 			case NavAddDestinationAction.TYPE:
 			case NavAddFirstIntermediateAction.TYPE:

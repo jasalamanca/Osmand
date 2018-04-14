@@ -33,11 +33,9 @@
     <string name="mark_to_delete">ಅಳಿಸಲು ಗುರುತುಮಾಡಿ</string>
 	<string name="confirmation_to_clear_history">ಇತಿಹಾಸವನ್ನು ಅಳಿಸಲು ಇಚ್ಛಿಸುವಿರಾ?</string>
     <string name="shared_string_go">ಹೋಗು</string>
-	<string name="osmand_parking_overdue">ಕಾಲಮೀರಿದ</string>
-	<string name="osmand_parking_hour">ಗಂಟೆ</string>
+    <string name="osmand_parking_hour">ಗಂಟೆ</string>
 	<string name="osmand_parking_minute">ನಿಮಿಷ</string>
-	<string name="osmand_parking_time_left">ಉಳಿದ ಸಮಯ</string>
-	<string name="your_edits">ನಿಮ್ಮ ಸಂಪಾದನೆಗಳು</string>
+    <string name="your_edits">ನಿಮ್ಮ ಸಂಪಾದನೆಗಳು</string>
     <string name="tips_and_tricks_descr">ಹೆಚ್ಚಾಗಿ ಕೆಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು, ಇತ್ತೀಚಿನ ಬದಲಾವಣೆಗಳು, ಮತ್ತು ಇತರೆ</string>
     <string name="routing_settings_2">ಸಂಚಾರ ಉಪಕರಣೆಗಳು</string>
     <string name="general_settings_2">ಸಾಮಾನ್ಯ ಉಪಕರಣೆಗಳು</string>
@@ -110,8 +108,7 @@
 	<string name="osmo_plugin_name">ಒಪನ್‌ಸ್ಟ್ರೀಟ್‌ಮ್ಯಾಪ್ ಪರಿವೀಕ್ಷಿಸುವಿಕೆ</string>
 	<string name="plugin_nautical_name">ಹಡಗಿನ ನಕ್ಷೆ ವೀಕ್ಷಣೆ</string>
 	<string name="plugin_ski_name">ಆಕಾಶ ನಕ್ಷೆ ವೀಕ್ಷಣೆ</string>
-    <string name="osmand_parking_plugin_name">ನಿಲುಗಡೆ ಸ್ಥಾನ</string>
-	<string name="shared_string_accessibility">ಲಭ್ಯಾರ್ಹತೆ</string>
+    <string name="shared_string_accessibility">ಲಭ್ಯಾರ್ಹತೆ</string>
 	<string name="osm_settings">ಒಎಸ್ಎಂ ಸಂಪಾದನೆ</string>
 	<string name="debugging_and_development">ಒಸ್ಮಾಂಡ್ ತಂತ್ರಾಶ ಅಭಿವೃದ್ಧಿ</string>
 	<string name="rename_failed">ಮರುನಾಮಕರಣ ವಿಫಲವಾಗಿದೆ.</string>
@@ -122,7 +119,6 @@
 	<string name="online_map">ಮಿಂಬಲೆ ನಕ್ಷೆ</string>
 	<string name="roads_only">ಕೇವಲ ರಸ್ತೆಗಳು</string>
     <string name="edit_group">ಗುಂಪನ್ನು ಸಂಪಾದಿಸಿ</string>
-    <string name="parking_place">ನಿಲುಗಡೆ ಸ್ಥಳ</string>
     <string name="remove_the_tag">ಟ್ಯಾಗ್ಅನ್ನು ತೆಗೆಯಿರಿ</string>
     <string name="gps_status">ಜಿಪಿಎಸ್ ಮಟ್ಟ</string>
     <string name="rendering_attr_streetLighting_name">ದಾರಿ ದೀಪಗಳು</string>

@@ -113,38 +113,11 @@
 	<string name="auto_zoom_map">Automatischer Zoom</string>
 	<string name="snap_to_road_descr">Standort während der Navigation auf Straßen einrasten.</string>
 	<string name="snap_to_road">Auf Straße einrasten</string>
-	<string name="osmand_play_title_30_chars">OsmAnd Karten &amp; Navigation</string>
-	<string name="osmand_short_description_80_chars">Globale Landkarten- und Navigationsanwendung für Offline- und Online-OSM-Karten</string>
-	<string name="osmand_long_description_1000_chars">OsmAnd (OSM Automated Navigation Directions) 
-\n
-\nOsmAnd ist eine Open-Source-Navigationsanwendung mit Zugriff auf eine große Vielfalt öffentlich zugänglicher OpenStreetMap-(OSM)-Karten weltweit. Alle Karten (Vektor- oder Kachelformate) können lokal auf der Speicherkarte abgelegt und offline verwendet werden. OsmAnd bietet ferner eine Offline- und Online-Routing-Funktion inklusive Sprachnavigation. 
-\n
-\nEinige der Kernfunktionen: 
-\n- Komplette Offline-Funktionalität (Kartenmaterial kann auf dem Gerät abgelegt werden) 
-\n- Kompakte Vektorkarten für die ganze Welt verfügbar 
-\n- Direktes Herunterladen von Länder- oder Regionenkarten aus der App heraus 
-\n- Darstellung mehrerer überlagerter Kartenschichten wie GPX oder Navigations-Tracks, POIs (Points of Interest), Favoriten, Höhenlinien, ÖPNV-Haltestellen, zusätzliche Karten mit wählbarer Transparenz 
-\n- Offline Adress- und POI-Suche 
-\n- Offlinenavigation für mittelstrecken Distanzen
-\n
-\n- Auto-, Fahrrad- und Fußgänger-Modus mit 
-\n- optionaler automatischer Tag-Nacht-Umschaltung der Anzeige 
-\n- optionalem geschwindigkeitsabhängigem Kartenmaßstab - optionaler Kartenausrichtung nach Kompass oder Bewegungsrichtung 
-\n- optionaler Fahrspuranzeige, Geschwindigkeitswarnung, aufgenommene oder TTS-Sprachansagen 
-\n
-\nEinschränkungen dieser kostenlosen Version von OsmAnd: 
-\n- Anzahl der Kartendownloads - 
-\nKein Zugriff auf Wikipedia Offline-POIs 
-\n
-\nOsmAnd wird aktiv weiterentwickelt und das Projekt benötigt Mittel für die Entwicklung, die Komplettierung und den Test (Fahrten) neuer Funktionen. 
-\nBitte erwägen Sie den Kauf von OsmAnd+, die Förderung spezieller Funktionen oder eine allgemeine Spende auf osmand.net.</string>
-	
-	<string name="osmand_plus_play_title_30_chars">OsmAnd+ Karten &amp; Navigation</string>
-	<string name="osmand_plus_short_description_80_chars">Globale Landkarten- und Navigationsanwendung für Offline- und Online-OSM-Karten</string>
-	<string name="osmand_plus_long_description_1000_chars">OsmAnd+ ist die Kaufversion der Open-Source-Navigationsanwendung OsmAnd (OSM Automated Navigation Directions) mit Zugriff auf eine Vielzahl öffentlich zugänglicher, weltweit verfügbarer Daten von OpenStreetMap (OSM). Alle Karten (Vektor- oder Kachelformate) können lokal auf der Speicherkarte abgelegt und offline verwendet werden. OsmAnd bietet ferner eine Offline-und Online-Routing-Funktion inklusive Sprachnavigation. Mit dem Kauf von OsmAnd+ unterstützen Sie das Projekt, fördern seine Weiterentwicklung und erhalten stets die aktuellsten Daten. 
-\nEinige der Kernfunktionen: - Komplette Offline-Funktionalität (Kartenmaterial kann auf dem Gerät abgelegt werden) - Kompakte Vektorkarten für die ganze Welt verfügbar - Unbeschränktes, direktes Herunterladen von Länder- oder Regionenkarten aus der App heraus - Offline-Wikipedia-Funktion (Anzeige von Wikipedia-POIs), sehr nützlich für Besichtigungstouren - Darstellung mehrerer überlagerter Kartenschichten wie GPX- oder Navigations-Tracks, POIs (Points of Interest), Favoriten, Höhenlinien, ÖPNV-Haltestellen, zusätzliche Karten mit wählbarer Transparenz - Offline-Adress- und POI-Suche - Offlinenavigation für mittelstrecken Distanzen - Auto-, Fahrrad- und Fußgänger-Modus mit - optionaler automatischer Tag-Nacht-Umschaltung der Anzeige - optionalem geschwindigkeitsabhängigem Kartenmaßstab - optionaler Kartenausrichtung nach Kompass oder Bewegungsrichtung - optionaler Fahrspuranzeige, Geschwindigkeitswarnung, aufgenommene oder TTS-Sprachansagen</string>
-	
-	<string name="select_navigation_mode">Nutzerprofil wählen</string>
+    <string name="osmand_short_description_80_chars">Globale Landkarten- und Navigationsanwendung für Offline- und Online-OSM-Karten</string>
+
+    <string name="osmand_plus_short_description_80_chars">Globale Landkarten- und Navigationsanwendung für Offline- und Online-OSM-Karten</string>
+
+    <string name="select_navigation_mode">Nutzerprofil wählen</string>
 	<string name="day_night_info_description">Sonnenaufgang: %1$s
 \nSonnenuntergang: %2$s</string>
 	<string name="day_night_info">Tag/Nacht-Information</string>
@@ -918,28 +891,8 @@
 
 	<string name="starting_point_too_far">Startpunkt zu weit von nächster Straße entfernt.</string>
 	<string name="shared_location">Mitgeteilter Standort</string>
-	<string name="osmand_parking_event">Fahrzeug vom Parkplatz abholen</string>
-	<string name="osmand_parking_warning">Warnung</string>
-	<string name="osmand_parking_warning_text">Ein Eintrag zum Abholen des Fahrzeugs wurde zum Kalender hinzugefügt. Dieser besteht solange, bis er manuell gelöscht wird.</string>
-	<string name="osmand_parking_time_limit_title">Parkzeitbegrenzung setzen</string>
-	<string name="osmand_parking_delete_confirm">Soll der Standorthinweis des geparkten Fahrzeugs gelöscht werden?</string>
-	<string name="osmand_parking_delete">Parkplatz-Marker löschen</string>
-	<string name="osmand_parking_choose_type">Parkplatz-Eigenschaft wählen</string>
-	<string name="osmand_parking_lim_text">zeitlich beschränkt</string>
-	<string name="osmand_parking_no_lim_text">zeitlich unbeschränkt</string>
-	<string name="osmand_parking_add_event">Einen Eintrag in der Kalender App hinzufügen</string>
-	<string name="osmand_parking_time_limit">zeitlich begrenztes Parken</string>
-	<string name="osmand_parking_time_no_limit">zeitlich unbegrenztes Parken</string>
-	<string name="osmand_parking_position_description">Standort des geparkten Fahrzeugs. %1$s</string>
-	<string name="osmand_parking_position_description_add">Fahrzeug abholen um:</string>
-	<string name="osmand_parking_pm">PM</string>
-	<string name="osmand_parking_am">AM</string>
-	<string name="osmand_parking_position_name">Parkposition</string>
-	<string name="osmand_parking_plugin_description">Die Erweiterung ermöglicht es, den Standort eines geparkten Fahrzeugs zu speichern sowie die restliche Parkzeit anzuzeigen (falls das Parken zeitlich begrenzt ist). Parkplatz und Restzeit werden sowohl auf der OsmAnd-Übersichtsseite als auch auf dem Kartenbildschirm dargestellt. Es kann ein Eintrag im Android-Kalender als Erinnerung hinzugefügt werden.</string>
-	<string name="osmand_parking_plugin_name">Parkposition</string>
-	<string name="context_menu_item_add_parking_point">Parkposition festlegen</string>
-	<string name="context_menu_item_delete_parking_point">Parkplatz-Standort löschen</string>
-	<string name="gpxup_public">Öffentlich</string>
+    <string name="context_menu_item_add_parking_point">Parkposition festlegen</string>
+    <string name="gpxup_public">Öffentlich</string>
 	<string name="gpxup_identifiable">Erkennbar</string>
 	<string name="gpxup_trackable">Verfolgbar</string>
 	<string name="gpxup_private">Privat</string>
@@ -949,10 +902,7 @@
 Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string>
 	<string name="native_app_allocated_memory">Gesamter nativer Speicher</string>
 	<string name="select_animate_speedup">Geschwindigkeit für Routen-Simulation wählen</string>
-	<string name="osmand_parking_hours">Stunde(n)</string>
-	<string name="osmand_parking_minutes">Minuten</string>
-	<string name="osmand_parking_position_description_add_time">Das Auto wurde geparkt um</string>
-	<string name="route_updated_loc_found">Route wird neu berechnet sobald Standort ermittelt</string>
+    <string name="route_updated_loc_found">Route wird neu berechnet sobald Standort ermittelt</string>
 	<string name="continue_follow_previous_route_auto">Vorherige Navigation wurde nicht beendet. Der Route weiter folgen? (%1$s Sekunden)</string>
 
 	<string name="show_cameras">Blitzer</string>
@@ -967,8 +917,7 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	
 	<string name="map_widget_reset">Auf Voreinstellung setzen</string>
 
-	<string name="map_widget_parking">Parken</string>
-	<string name="map_widget_monitoring">GPX-Aufzeichnung</string>
+    <string name="map_widget_monitoring">GPX-Aufzeichnung</string>
 	<string name="map_widget_speed">Geschwindigkeit</string>
 	<string name="map_widget_distance">Ziel</string>
 	<string name="map_widget_altitude">Höhe</string>
@@ -1005,8 +954,7 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="email">E-Mail</string>
 	<string name="add_tag">Eintrag hinzufügen</string>
 	<string name="btn_advanced_mode">Ergänzende Angaben…</string>
-	<string name="poi_filter_parking">Parkplatz</string>
-	<string name="poi_filter_emergency">Notfall</string>
+    <string name="poi_filter_emergency">Notfall</string>
 	<string name="poi_filter_public_transport">ÖPNV</string>
 	<string name="poi_filter_entertainment">Unterhaltung</string>
 	<string name="poi_filter_accomodation">Unterkunft</string>
@@ -1048,7 +996,6 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="av_camera_pic_size_descr">Bildgröße der internen Kamera auswählen.</string>
     <string name="av_widget_action_descr">Standard-Steuerelement-Aktion auswählen.</string>
 	<string name="av_widget_action">Standard-Steuerelement-Aktion</string>
-    <string name="av_use_external_recorder">System-Video-App nutzen</string>
     <string name="shared_string_control_stop">Stopp</string>
     <string name="shared_string_control_start">Start</string>
 	<string name="av_def_action_picture">Foto aufnehmen</string>
@@ -1059,18 +1006,8 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="dropbox_plugin_name">Dropbox-Modul</string>
 	<string name="intermediate_points_change_order">Reihenfolge ändern</string>
 
-    <string name="recording_open_external_player">Externen Player öffnen</string>
-	<string name="recording_delete_confirm">Wollen Sie diese Aufnahme löschen?</string>
-	<string name="recording_unavailable">nicht verfügbar</string>
-	<string name="recording_context_menu_play">Wiedergabe</string>
-	<string name="recording_default_name">Aufnahme</string>
-	<string name="recording_error">Fehler bei der Aufnahme</string>
-    <string name="recording_description">Aufnahme %1$s %2$s von %3$s</string>
-	<string name="recording_context_menu_show">Anzeigen</string>
-	<string name="recording_photo_description">Foto %1$s von %2$s</string>
-	<string name="recording_context_menu_precord">Foto aufnehmen</string>
-	<string name="recording_can_not_be_played">Aufnahme kann nicht abgespielt werden</string>
-	<string name="recording_context_menu_delete">Aufnahme löschen</string>
+    <string name="recording_delete_confirm">Wollen Sie diese Aufnahme löschen?</string>
+    <string name="recording_context_menu_play">Wiedergabe</string>
 
     <string name="osmand_srtm_short_description_80_chars">OsmAnd-Erweiterung für Offline-Höhenlinien</string>
 	<string name="map_widget_distancemeasurement">Entfernungsmessung</string>
@@ -1152,10 +1089,8 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="av_camera_focus_auto">Autofokus</string>
 	<string name="av_camera_focus_infinity">Fokus auf unendlich setzen</string>
 	<string name="av_camera_focus_continuous">Die Kamera kontinuierlich scharf stellen</string>
-	<string name="av_photo_play_sound">Ton bei Auslösung abspielen</string>
-	<string name="av_photo_play_sound_descr">Auswählen, ob beim Aufnehmen eines Fotos ein Ton abgespielt werden soll.</string>
-	
-	<string name="speak_speed_limit">Tempolimit</string>
+
+    <string name="speak_speed_limit">Tempolimit</string>
 	<string name="speak_cameras">Blitzer</string>
 	<string name="speak_traffic_warnings">Verkehrswarnungen</string>
 	<string name="osb_author_or_password_not_specified">Bitte OSM-Nutzername und Passwort in den Einstellungen eingeben</string>
@@ -1686,8 +1621,7 @@ Mit Neuanmeldung fortfahren?</string>
     <string name="routing_attr_no_new_routing_name">Routing-Regeln v1.9 nicht verwenden</string>
     <string name="routing_attr_no_new_routing_description">Neuen Routenalgorithmus aus v1.9 nicht verwenden.</string>
     <string name="speak_pedestrian">Fußgängerübergänge</string>
-    
-    <string name="parking_place">Parkplatz</string>
+
     <string name="remove_the_tag">TAG ENTFERNEN</string>
     <string name="gps_status">GPS-Status</string>
     <string name="version_settings_descr">Nightly-Builds herunterladen.</string>
@@ -1794,13 +1728,10 @@ Mit Neuanmeldung fortfahren?</string>
 	<string name="confirmation_to_clear_history">Soll der Verlauf gelöscht werden?</string>
 	<string name="osmand_parking_hour">h</string>
 	<string name="osmand_parking_minute">min</string>
-	<string name="osmand_parking_time_left">verbleibend</string>
-	<string name="osm_changes_added_to_local_edits">Die Änderungen an den OSM-Daten wurden dem lokalen Änderungssatz hinzugefügt</string>
+    <string name="osm_changes_added_to_local_edits">Die Änderungen an den OSM-Daten wurden dem lokalen Änderungssatz hinzugefügt</string>
 	<string name="shared_string_go">Los</string>
-	<string name="osmand_parking_overdue">überfällig</string>
-	<string name="osm_edits">OSM-Änderungen</string>
-	<string name="parking_place_limited">Parkzeit begrenzt auf</string>
-	<string name="your_edits">Ihre Änderungen</string>
+    <string name="osm_edits">OSM-Änderungen</string>
+    <string name="your_edits">Ihre Änderungen</string>
 	<string name="waypoint_visit_after">Danach besuchen</string>
 	<string name="shared_string_deselect">Abwählen</string>
 	<string name="shared_string_do_not_use">Nicht benutzen</string>
@@ -2439,7 +2370,6 @@ Wenn Sie OsmAnd und OSM lieben und unterstützen wollen, so ist dies die perfekt
     <string name="quick_action_navigation_voice_off">Sprachausgabe ist aus</string>
     <string name="quick_action_navigation_voice_on">Sprachausgabe ist an</string>
     <string name="quick_action_add_gpx">GPX-Wegpunkt einfügen</string>
-    <string name="quick_action_add_parking">Parkposition festlegen</string>
     <string name="quick_action_new_action">Aktion hinzufügen</string>
     <string name="quick_action_edit_action">Aktion bearbeiten</string>
     <string name="quick_action_add_favorite">Favorit hinzufügen</string>
@@ -2486,7 +2416,6 @@ Wenn Sie OsmAnd und OSM lieben und unterstützen wollen, so ist dies die perfekt
     <string name="quick_action_add_osm_bug_descr">Drücken der Aktionstaste fügt eine OSM-Notiz am Bildschirmmittelpunkt ein.</string>
     <string name="quick_action_add_poi_descr">Drücken der Aktionstaste fügt einen POI am Bildschirmmittelpunkt ein.</string>
     <string name="quick_action_navigation_voice_descr">Drücken der Aktionstaste deaktiviert oder aktiviert die Sprachansagen bei der Navigation.</string>
-    <string name="quick_action_add_parking_descr">Drücken der Aktionstaste fügt eine Parkposition am Bildschirmmittelpunkt ein.</string>
     <string name="quick_action_interim_dialog">Dialog zum Bearbeiten zeigen</string>
     <string name="favorite_autofill_toast_text">" wird gespeichert unter "</string>
     <string name="quick_action_duplicates">Angegebener Schnellaktionsname schon in Verwendung, er wurde geändert in %1$s, um ein Duplikat zu vermeiden.</string>
@@ -2576,7 +2505,6 @@ Abgedeckte Fläche: %1$s x %2$s</string>
     <string name="do_not_send_anonymous_app_usage_desc">OsmAnd sammelt Informationen über durch Sie geöffnete App-Teile. Es wird niemals Ihre Position noch irgendeine Ihrer App-Eingaben oder Einzelheiten zu den von Ihnen betrachteten, gesuchten oder heruntergeladenen Gebieten versandt.</string>
     <string name="do_not_show_startup_messages">Keine Meldungen beim App-Start einblenden</string>
     <string name="do_not_show_startup_messages_desc">Unterdrückt Meldungen zu App-Sonderangeboten und besonderen lokalen Ereignissen.</string>
-    <string name="parking_options">Parkmöglichkeiten</string>
     <string name="full_version_thanks">Vielen Dank, dass Sie die Vollversion von OsmAnd erworben haben!</string>
     <string name="routing_attr_relief_smoothness_factor_hills_name">Bergig</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Weniger bergig</string>
@@ -2587,7 +2515,6 @@ Abgedeckte Fläche: %1$s x %2$s</string>
     <string name="routing_attr_relief_smoothness_factor_name">Höhenschwankung auswählen</string>
     <string name="driving_region_automatic">Automatisch</string>
     <string name="osmand_extended_description_part1">OsmAnd (OSM Automated Navigation Directions) ist eine Karten- und Navigationsanwendung mit Zugriff auf die kostenlosen, weltweiten und qualitativ hochwertigen Daten von OpenStreetMap (OSM). Erfreuen Sie sich an der akustischen und visuellen Navigation, der Betrachtung von POIs (points of interest), der Erstellung und Verwaltung von GPX-Tracks, der Visualisierung von Höhenlinien und -angaben (über ein Erweiterungsmodul), den Auswahlmöglichkeiten zwischen Auto-, Fahrrad- und Fußgänger-Betriebsart, der Möglichkeit an OSM mitzuarbeiten und vielem mehr.</string>
-    <string name="osmand_extended_description_part2">GPS-Navigation • Sie haben die Wahl zwischen dem Offline-Betrieb (ohne Roaming-Gebühren, wenn Sie im Ausland sind) oder dem (schnelleren) Online-Betrieb • Die Sprachführung (mit aufgenommenen oder synthetischen Stimmen) begleitet Sie Schritt für Schritt auf Ihrem Weg • Ihre Route wird neu berechnet, sobald Sie von ihr abweichen • Fahrspurassistent, Straßennamen und voraussichtliche Ankunftszeit helfen Ihnen auf der Strecke • Zur Erhöhung Ihrer Reisesicherheit erfolgt ein automatischer Wechsel zwischen Tag- und Nachtmodus • Sie können wählen, ob Tempolimits angezeigt werden sollen, und ob Sie bei deren Überschreitung darauf hingewiesen werden wollen • Die Kartenvergrößerung passt sich Ihrer Geschwindigkeit an • Sie können Ziele nach Adresse, Typ (z. B.: Parkplatz, Restaurant, Hotel, Tankstelle, Museum) oder geographischen Koordinaten suchen • Die Festlegung von Zwischenstopps entlang Ihrer Reiseroute ist möglich • Sie können Ihre GPX-Tracks aufzeichnen, einspielen und ihnen folgen</string>
     <string name="osmand_extended_description_part3">Karten • zeigen POIs (point of interests) in Ihrer Umgebung an • richten sich nach Ihrer Bewegungsrichtung (oder dem Kompass) aus • zeigen an, wo Sie sind und worauf Sie sehen • übermitteln Ihre Position, damit Ihre Freunde Sie finden können • speichern Ihre wichtigsten Orte als Favoriten • lassen Ihnen die Wahl, wie Bezeichnungen auf der Karte angezeigt werden sollen: in Englisch, Landessprache oder in phonetischer Schreibweise • stellen spezielle Online-Karten, Satellitenansichten (von Bing), verschiedene Overlays, wie GPX-Tracks zu Touren-/Routenverläufen, und zusätzliche Ebenen mit einstellbarer Transparenz dar</string>
     <string name="osmand_extended_description_part4">Ski-Sport - das OsmAnd-Skikarten-Modul ermöglicht Ihnen das Betrachten von Skirouten, deren Schwierigkeitsgrad und einiger zusätzlicher Informationen, wie die Lage von Liften und weiterer Einrichtungen.</string>
     <string name="osmand_extended_description_part5">Radfahren • Sie finden Radwege auf der Karte • Die GPS-Navigation im Fahrrad-Modus errechnet Ihre Route anhand von Radwegen • Sie können Ihre Geschwindigkeit und Höhe verfolgen • Die Möglichkeit der GPX-Aufzeichnung versetzt Sie in die Lage, Ihre Fahrt zu protokollieren und sie mit anderen zu teilen • Über ein Zusatzmodul können Sie sich Höhenlinien und das Geländerelief darstellen lassen</string>

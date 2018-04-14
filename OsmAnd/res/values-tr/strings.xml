@@ -27,8 +27,7 @@
     <string name="ending_point_too_far">Bitiş noktası en yakın yoldan çok uzakta.</string>
     <string name="add_tag">Etiket Ekle</string>
     <string name="btn_advanced_mode">Gelişmiş Kip…</string>
-    <string name="poi_filter_parking">Park Etme</string>
-    <string name="poi_filter_emergency">Acil Durum</string>
+	<string name="poi_filter_emergency">Acil Durum</string>
     <string name="poi_filter_public_transport">Toplu Taşıma</string>
     <string name="poi_filter_entertainment">Eğlence</string>
     <string name="poi_filter_accomodation">Konaklama</string>
@@ -77,16 +76,9 @@
 	<string name="show_cameras">Hız kameraları</string>
 	<string name="show_traffic_warnings">Trafik uyarıları</string>
 	<string name="avoid_toll_roads">Ücretli yollardan sakın</string>
-	<string name="osmand_parking_hours">Saat</string>
-	<string name="osmand_parking_minutes">Dakika</string>
-	<string name="global_app_allocated_memory">Ayrılmış bellek</string>
+    <string name="global_app_allocated_memory">Ayrılmış bellek</string>
 	<string name="native_app_allocated_memory">Toplam yerel bellek</string>
-	
-	<string name="osmand_parking_warning">Uyarı</string>
-	<string name="osmand_parking_add_event">Takvim uygulamasına bir bildirim ekle</string>
-	<string name="osmand_parking_pm">ÖS</string>
-	<string name="osmand_parking_am">ÖÖ</string>
-	<string name="osmand_parking_position_name">Park noktası</string>
+
 	<string name="safe_mode_description">Uygulamayı güvenli kipte çalıştır (sisteme özgü kod yerine yavaş Android kodu kullanılarak).</string>
     <string name="safe_mode">Güvenli kip</string>
     <string name="native_library_not_running">Uygulama güvenli kipte çalışıyor (Ayarlar menüsünden kapatabilirsiniz).</string>
@@ -96,11 +88,8 @@
     <string name="stop_routing_confirm">Navigasyonu durdurmak istediğinize emin misiniz?</string>
     <string name="clear_dest_confirm">Varış noktasını silmek istediğinizden emin misiniz (ve ara hedefler)?</string>
     <string name="precise_routing_mode">Hassas yönlendirme (alfa)</string>
-    <string name="recording_context_menu_show">Göster</string>
-    <string name="recording_photo_description">%2$s fotoğrafın %1$s cisi</string>
-    <string name="av_def_action_picture">Fotoğraf çek</string>
-    <string name="recording_context_menu_precord">Fotoğraf çek</string>
-    <string name="dropbox_plugin_description">Dropbox eklentisi, yol tariflerini ve ses/video notlarını dropbox hesabınızla eşitlemenize olanak verir.</string>
+	<string name="av_def_action_picture">Fotoğraf çek</string>
+	<string name="dropbox_plugin_description">Dropbox eklentisi, yol tariflerini ve ses/video notlarını dropbox hesabınızla eşitlemenize olanak verir.</string>
     <string name="dropbox_plugin_name">Dropbox eklentisi</string>
     
     <string name="intermediate_points_change_order">Sıralamayı değiştir</string>
@@ -108,24 +97,16 @@
     <string name="srtm_paid_version_title">Çevreleme çizgileri eklentisi</string>
     <string name="av_widget_action_descr">Varsayılan eklenti eylemini seçin</string>
     <string name="av_widget_action">Varsayılan eklenti eylemi</string>
-    <string name="av_use_external_recorder">Dahili kaydediciyi kullan</string>
-    <string name="recording_error">Kayıt sırasında hata oluştu </string>
 
-    <string name="index_name_openmaps">AB Açık haritası</string>
+	<string name="index_name_openmaps">AB Açık haritası</string>
     
     
     <string name="precise_routing_mode_descr">Glitches olmadan kesin yolları hesaplamak için etkinleştirin. Yine uzaktan sınırlı ve yavaş.</string>
     <string name="av_use_external_camera_descr">Fotoğraflar için sistem uygulamasını kullan.</string>
     <string name="av_use_external_camera">Kamera uygulamasını kullan</string>
-    <string name="recording_open_external_player">Harici oynatıcı aç</string>
-    <string name="recording_delete_confirm">Bu kaydı silmek istiyor musunuz?</string>
-    
-    <string name="recording_unavailable">kullanılamaz</string>
-    <string name="recording_can_not_be_played">Kayıt oynatılamaz</string>
-    <string name="recording_context_menu_delete">Kayıt sil</string>
-    <string name="recording_description">Kayıt %3$s nın %1$s %2$s</string>
-    <string name="recording_default_name">kayıt</string>
-    <string name="shared_string_control_stop">Durdur</string>
+	<string name="recording_delete_confirm">Bu kaydı silmek istiyor musunuz?</string>
+
+	<string name="shared_string_control_stop">Durdur</string>
     <string name="shared_string_control_start">Başlat</string>
     <string name="osmand_srtm_short_description_80_chars">Çevrim dışı çevreleme çizgileri için OsmAnd eklentisi</string>
     <string name="osmand_srtm_long_description_1000_chars">"Bu eklenti OsmAnd çevrimdışı haritalarda eşyükseltileri (kabartma olarak) ve gölgeli yamaçları gösterir. Bu özellik çoğunlukla sporcular, uzun yürüyüşcüler, yürüyüşçüler ve tabii ki bir manzaranın kabartma yapısıyla ilgilenen herkesin takdirinedir.\n\nGlobal veri (70 derece kuzey ve 70 derece güney arasındaki) SRTM (Mekik Radar Topografi Misyonu) ve ASTER (Gelişmiş Uzay Termal Yayılma ve Yansıma Radyometre), bir görüntüleme aracı onboard Terra, NASA&amp;#39;nın Earth Gözlem amiral gemisi uydudan ölçümleri esas Sistemi. ASTER NASA arasında bir kooperatif çabadır, Ekonomi, Ticaret ve Sanayi Odası (METI) ve Japonya Uzay Sistemleri (J-spacesystems) Japonya Bakanlığı. "</string>
@@ -166,11 +147,9 @@
 	<string name="use_compass_navigation_descr"/>
 	<string name="snap_to_road_descr">Navigasyon sırasında konumu yola uydur.</string>
 	<string name="snap_to_road">Yola tuttur</string>
-	
-	<string name="osmand_long_description_1000_chars">" ↵ →→OsmAnd (OSM Otomatik Navigasyon Var)↵ ↵ →→OsmAnd küresel bir yelpazede erişimi olan açık kaynak kodlu bir navigasyon uygulaması OpenStreetMap (OSM) verileri.Tüm harita verisi ( vektör veya kiremit haritaları ) çevrimdışı kullanım içintelefon hafıza kartında saklanabilir .OsmAnd da turn - by-turn sesli rehberlik dahil offline ve online yönlendirme işlevselliği sunuyor.↵ ↵ →→Çekirdek özelliklerden bazıları:↵ →→- Komple isimli işlevselliği (seçilebilir bir klasöre mağaza indirilen vektör veya kiremit haritaları)↵ →→- Kompakt isimli vektör mevcuttüm dünya için haritalar↵ →→- Ülkenin veya bölgenin indirinapp doğrudan harita ↵ →→- GPX veya navigasyon parça , Görülecek Yerler gibi olası çeşitli harita katmanları , Yerleşimi, sık , kontur çizgileri , toplu taşıma durakları , özelleştirilebilir şeffaflık ek haritaları↵ →→- Adresler ve yerler için çevrimdışı arama (POIs)↵ →→- Kısa mesafeler için Çevrimdışı yönlendirme (deneysel)↵ →→- Ile otomobil , bisiklet ve yaya modları:↵ →→- İsteğe bağlı otomatik gündüz / gece görünümü anahtarlama↵ →→- İsteğe bağlı hız bağımlı harita yakınlaştırma↵ →→- hareket pusula veya yöne göre isteğe haritası hizalama↵ →→- İsteğe bağlı şerit rehberlik , hız sınırı göstergesi , kaydedilmiş ve TTS sesler↵ ↵ →→OsmAnd bu ücretsiz sürümü Sınırlamaları:↵ →→- Sınırlı harita indirilme sayısı↵ →→- Wikipedia erişim isimli POIs yok↵ ↵ →→OsmAnd aktif gelişmiş ve bizim proje ve daha fazla ilerlemegelişimini finanse etmek için mali katkılar dayanır ve yeni işlevler testdriving ediliyor .Osmand.net üzerinde genel bir bağış OsmAnd satın alma , ya da belirli yeni özellikler fon veya yapmayı düşünün lütfen.↵ → "</string>
+
 	<string name="osmand_plus_short_description_80_chars">Küresel Mobil Harita Görüntüleme &amp; Yolbul için Çevrim Dışı ve Çevrim İçi OSM Haritaları</string>
-	<string name="osmand_plus_long_description_1000_chars">" OsmAnd   (OSM Automated Gezinti Tarifi) OsmAnd   küresel OpenStreetMap (OSM) veri çok çeşitli erişimi olan bir açık kaynak navigasyon bir uygulamadır. Tüm harita verisi (vektör veya kiremit harita) çevrimdışı kullanım için telefonun hafıza kartında saklanabilir. OsmAnd zamanda turn-by-turn sesli yönlendirme dahil olmak üzere çevrimiçi ve çevrimdışı yönlendirme işlevselliği sunuyor. OsmAnd   Eğer, projeyi destekleyen yeni özellikler geliştirme fonu, ve en son güncellemeleri almak onu satın alarak, ücretli uygulama sürümüdür. Temel özelliklerden bazıları: - Komple çevrimdışı işlevsellik (seçilebilir klasör deposu indirilen vektör veya kiremit harita) - Mevcut tüm dünya için Kompakt çevrimdışı vektör haritaları - doğrudan app ülke veya bölge haritaları Sınırsız indirme - Çevrimdışı Vikipedi özelliği (indir İÇN Wikipedia), gezi için büyük - adresleri ve yerleri (POI) için Çevrimdışı arama - GPX veya navigasyon parçaları, İlgi Çekici Nokta, sık, kontür çizgileri, toplu taşıma durakları, özelleştirilebilir şeffaflık ek haritalar gibi olası birçok harita katmanları Yerleşimi, - - İsteğe bağlı otomatik gündüz / gece görüntüsüyle anahtarlama - yakınlaştırma opsiyonel hız bağımlı haritası - hareket pusula veya yönüne göre opsiyonel harita hizalama - İsteğe bağlı şerit takibi, hız: Otomobil, bisiklet ve yaya ile modları - Kısa mesafelerde (deneysel) için Çevrimdışı yönlendirme sınırı göstergesi kaydedilmeli ve TTS sesleri "</string>
-	
+
 	<string name="day_night_info_description">Gün doğumu:%1$s
 \nGün batımı:%2$s</string>
 	<string name="map_widget_vector_attributes">Öznitelikleri oluşturma</string>
@@ -190,8 +169,7 @@
 	
 	<string name="gps_wakeup_interval">GPS uyandırma aralığı:%1$s</string>
 	<string name="map_widget_config">Ekranı ayarla</string>
-	<string name="map_widget_parking">Park et</string>
-	<string name="map_widget_altitude">Rakım</string>
+    <string name="map_widget_altitude">Rakım</string>
 	<string name="map_widget_time">Gitme zamanı</string>
 	<string name="map_widget_next_turn">Sonraki dönüş</string>
 	<string name="map_widget_next_turn_small">Sonraki dönüş (küçük)</string>
@@ -199,14 +177,8 @@
 	<string name="map_widget_mini_route">Mini rota haritası</string>
 	<string name="download_hillshade_maps">Tepe gölgelendirme tabakaları</string>
     <string name="email">e-posta</string>
-<string name="osmand_parking_position_description_add_time">Araba şu zamanda park edildi</string>
-	<string name="starting_point_too_far">Başlangıç noktası en yakın yoldan çok uzakta.</string>
-	<string name="osmand_parking_delete_confirm">Arabayı park ettiğiniz konumu silmek istiyor musunuz?</string>
-	<string name="osmand_parking_lim_text">Zaman-sınırlı</string>
-	<string name="osmand_parking_no_lim_text">Zaman-sınırsız</string>
-	<string name="osmand_parking_time_limit">Süresi kısıtlı park</string>
-	<string name="osmand_parking_position_description">Park edilmiş aracınızın konumu: %1$s</string>
-	<string name="context_menu_item_add_parking_point">Park etme konumu olarak işaretle</string>
+    <string name="starting_point_too_far">Başlangıç noktası en yakın yoldan çok uzakta.</string>
+    <string name="context_menu_item_add_parking_point">Park etme konumu olarak işaretle</string>
 	
 	<string name="route_kl">Solda kalın ve devam edin</string>
 	<string name="route_kr">Sağda kalın ve devam edin</string>
@@ -449,18 +421,6 @@
     	<string name="global_app_allocated_memory_descr">Ayrılan bellek %1$s MB(Android sınırı %2$s MB, Dalvik %3$s MB).</string>
 	<string name="native_app_allocated_memory_descr">Uygulaması tarafından ayrılan toplam yerel bellek %1$s MB (Dalvik %2$s MB, diğer %3$s MB. tarafından tahsis. Orantılı bellek %4$s MB (Android limiti %5$s MB, Dalvik %6$s MB).</string>
 	<string name="shared_location">Paylaşılan konum</string>
-	<string name="osmand_parking_event">Park yerinden arabayı almak</string>
-	<string name="osmand_parking_warning_text">Aracını almak için Bildirim önceden takvimine eklendi.Onu elden silinceye kadar orada kalacaktır.</string>    
-	<string name="osmand_parking_time_limit_title">Park etme süre sınırı ayarla</string>
-	<string name="osmand_parking_delete">Bir park etme işareti sil</string>
-	<string name="osmand_parking_choose_type">Park etme türü seç</string>
-	<string name="osmand_parking_time_no_limit">Zaman-sınırsız park et</string>
-	<string name="osmand_parking_position_description_add">De arabayı almak için:</string>
-	<string name="osmand_parking_plugin_description">Park yeri konumu eklentisi arabanızın nerede park edildiğini ve (eğer zaman limiti varsa) ne kadar park süresi kaldığını hatırlamanızı sağlar. 
-\n
-\nPark konumu ve park süresi OsmAnd kontrol panelinde ve harita ekranındaki widget ta görüntülenir. Android takvimine hatırlatıcı olarak bir alarm eklenebilir.</string>
-	<string name="osmand_parking_plugin_name">Park Etme Konumu</string>
-	<string name="context_menu_item_delete_parking_point">Bir park etme işareti sil</string>
 	<string name="gpxup_public">Halk</string>
 	<string name="gpxup_identifiable">Teşhis edilebilir</string>
 	<string name="gpxup_trackable">Takip edilebilir</string>
@@ -651,8 +611,6 @@
 	<string name="prefer_in_routing_descr">Otoyolları tercih et</string>
     <string name="max_speed_none">hiçbiri</string>
     <string name="av_def_action_choose">Talep üzerine seç</string>
-    <string name="osmand_play_title_30_chars">OsmAnd Haritalar &amp; Yolbul</string>
-	<string name="osmand_plus_play_title_30_chars">OsmAnd+ Haritalar &amp; Yolbul</string>
 	<string name="gpx_navigation">GPX Rotası</string>
 	<string name="poi_query_by_name_matches_categories">Sorgunuza uyan çeşitli POI kategorileri bulundu:</string>
 	<string name="data_to_search_poi_not_available">POI araması yapmak için yerel veri mevcut değil.</string>
@@ -998,9 +956,7 @@
 	<string name="av_camera_focus_infinity">Sonsuzlukta odaklansın</string>
 	<string name="av_camera_focus_macro">Makro (yakın çekim) odak kipi</string>
 	<string name="av_camera_focus_continuous">Kamera devamlı odaklamaya çalışıyor</string>
-	<string name="av_photo_play_sound">Fotoğraf çekiminde ses çal</string>
-	<string name="av_photo_play_sound_descr">Fotoğrafları çekerken çalınacak sesi seçin</string>
-<string name="basemap_missing">Küçük yakınlaştırmalarda tüm dünyayı kaplayan temel dünya haritası eksik. Tam deneyim için lütfen World_basemap_x.obf indirin.</string>
+	<string name="basemap_missing">Küçük yakınlaştırmalarda tüm dünyayı kaplayan temel dünya haritası eksik. Tam deneyim için lütfen World_basemap_x.obf indirin.</string>
 	<string name="local_index_no_items_to_do">%1$s\'a öğe yok</string>
 	<string name="tts_language_not_supported">Seçtiğiniz dil yüklü olan Android TTS (yazıdan-sese) motoru tarafından desteklenmiyor. Mağazada başka TTS motoruna bakmak ister misiniz? Aksi halde önceden yüklenen TTS dili kullanılacak.</string>
 	<string name="gpx_option_reverse_route">GPX yönünü tersine çevir</string>
@@ -1154,7 +1110,6 @@
 	<string name="osm_edits">OSM düzeltmeleri</string>
 	<string name="osmand_parking_hour">sa</string>
 	<string name="osmand_parking_minute">dk</string>
-	<string name="osmand_parking_time_left">sol</string>
 	<string name="your_edits">Düzeltmeleriniz</string>
     <string name="tips_and_tricks_descr">Sık sorulan sorular, son değişiklikler ve diğerleri.</string>
     <string name="routing_settings_2">Navigasyon ayarları</string>
@@ -1189,8 +1144,7 @@
 	<string name="roads_only">Sadece yollar</string>
     <string name="device_memory">Aygıt belleği</string>
     <string name="edit_group">Grubu düzenle</string>
-    <string name="parking_place">Park yeri</string>
-    <string name="gps_status">GPS durumu</string>
+	<string name="gps_status">GPS durumu</string>
     <string name="points">Noktalar</string>
 	<string name="rendering_attr_roadStyle_name">Yol tarzı</string>
     <string name="rendering_value__name">Varsayılan</string>
@@ -1306,8 +1260,6 @@
 	<string name="osm_changes_added_to_local_edits">OSM değişiklikleri yerel değişiklik kümesine eklendi</string>
    	<string name="delay_to_start_navigation_descr">Rota planlama ekranındayken beklenecek süreyi belirtin.</string>
     <string name="delay_to_start_navigation">Sonra adım-adım navigasyona başla…</string>
-    <string name="osmand_parking_overdue">süresi geçmiş</string>
-	<string name="parking_place_limited">Zaman sınırlı otopark</string>
 	<string name="waypoint_visit_after">Sonra ziyaret edin</string>
     <string name="waypoint_visit_before">Önce ziyaret et</string>
     <string name="simulate_your_location">Konumunuzu simüle et</string>
@@ -2438,7 +2390,6 @@
     <string name="mapillary_descr">Herkes için sokak seviyesinde fotoğraflar. Yerler keşfedin, katkıda bulunun, dünyayı yakalatın.</string>
     <string name="mapillary">Mapillary</string>
     <string name="plugin_mapillary_descr">Herkes için sokak seviyesinde fotoğraflar. Yerler keşfedin, katkıda bulunun, dünyayı yakalayın.</string>
-    <string name="parking_options">Park etme seçenekleri</string>
     <string name="routing_attr_allow_motorway_name">Otoyollara izin ver</string>
     <string name="routing_attr_allow_motorway_description">Otoyollara izin ver.</string>
     <string name="upload_poi">POI yükleyin</string>
@@ -2465,8 +2416,7 @@
     <string name="access_direction_audio_feedback_descr">Hedef nokta yönünü sesle belirt.</string>
     <string name="access_direction_haptic_feedback_descr">Hedef nokta yönünü titreşimle belirt.</string>
     <string name="access_autoannounce_period_descr">Bildirimler arasındaki minimum zaman aralığı.</string>
-    <string name="osmand_extended_description_part2">"GPS navigasyon • Offline -çevrimdışı-(yurtdışındayken internet roaming ücreti yansıtılmaz) ya da online -çevrimiçi-(daha hızlıdır) modlarından birini seçebilirsiniz. • Rotadan her saptığınızda rota tekrar oluşturulur • Yol gidiş şeridi, cadde adları ve tahmini varış zamanı yol boyunca yardımcı olacaktır. • Seyahatinizi daha güvenli kılmak için, gündüz/gece modları otomatik olarak değişir. • Hız limitlerini göstermeyi seçebilirsiniz ve eğer limiti aşarsanız uyarılar alabilirsiniz. • Harita görüntü yakınlaştırma özelliği hızınıza göre uyarlanır. • Gidilecek yerleri (varış noktası) adrese göre, türe göre (örneğin: park yeri, restoran, otel, benzin istasyonu, müze) ya da coğrafi koordinatlar ile arayabilirsiniz. • Kendinizinkini kaydedebilir ya da  bir GPX track\'ı yükleyerek onu takip edebilirsiniz"</string>
-    <string name="osmand_extended_description_part5">Bisiklet sürüşü • Haritada bisiklet yolları bulabilirsiniz • Bisiklet sürüşü modunda GPS navigasyonu rotanızı bisiklet yollarını kullanarak oluşturur. • Hızınızı ve rakım\'ınızı görebilirsiniz • GPS kaydetme özelliği size seyahatlerinizi kaydetme ve paylaşma imkanı verir. • İlave eklenti aracılığıyla contour line\'ları ve hill shading\'leri görüntüleyebilirsiniz</string>
+	<string name="osmand_extended_description_part5">Bisiklet sürüşü • Haritada bisiklet yolları bulabilirsiniz • Bisiklet sürüşü modunda GPS navigasyonu rotanızı bisiklet yollarını kullanarak oluşturur. • Hızınızı ve rakım\'ınızı görebilirsiniz • GPS kaydetme özelliği size seyahatlerinizi kaydetme ve paylaşma imkanı verir. • İlave eklenti aracılığıyla contour line\'ları ve hill shading\'leri görüntüleyebilirsiniz</string>
     <string name="looking_for_tracks_with_waypoints">Uğranacak-ara-noktalara sahip yol-izleri aranıyor</string>
     <string name="add_track_to_markers_descr">uğrama-ara-noktaları işaretleyicilere eklemek için bir yol izi seçin (yalnızca uğrama-ara-noktaları olan yol-izleri listelenir.)</string>
     <string name="import_gpx_file_description">Sık Kullanılanlar noktası ya da yol-izi dosyası olarak içe aktarılabilir.</string>

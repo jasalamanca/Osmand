@@ -1,8 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="recording_context_menu_show">اظهر</string>
+<resources>
     <string name="av_def_action_picture">التقط صورة</string>
-
-    <string name="av_use_external_recorder">استخدم مسجل النظام</string>
 
     <string name="search_villages_and_postcodes">البحث عن المزيد من القرى/الرمز البريدي</string>
 	<string name="gps_not_available">يرجى تمكين GPS في إعدادات</string>
@@ -33,16 +31,10 @@
     <string name="stop_routing_confirm">هل أنت متأكد أنك تريد إيقاف الملاحة؟</string>
     <string name="clear_dest_confirm">هل أنت متأكد أنك تريد مسح نقطة الوجهة (والوجهات المتوسطة) ؟</string>
     <string name="precise_routing_mode">التوجيه الدقيق (ألفا)</string>
-    <string name="recording_context_menu_precord">التقاط صورة</string>
     <string name="dropbox_plugin_name">ملحق دروب بوكس</string>
     <string name="av_def_action_choose">حدد بناء على طلبها</string>
-    <string name="recording_error">حدث خطأ أثناء التسجيل</string>
     <string name="recording_delete_confirm">هل تريد إزالة هذا التسجيل ؟</string>
-    <string name="recording_unavailable">غير متاح</string>
-    <string name="recording_can_not_be_played">تعذر تشغيل التسجيل</string>
-    <string name="recording_context_menu_delete">حذف تسجيل</string>
     <string name="recording_context_menu_play">شغّل</string>
-    <string name="recording_default_name">تسجيل</string>
     <string name="shared_string_control_stop">توقف</string>
     <string name="shared_string_control_start">بدء</string>
     <string name="osmand_srtm_short_description_80_chars">ملحق OsmAnd المحلي للخطوط المحيطية</string>
@@ -74,7 +66,6 @@
     <string name="new_destination_point_dialog">لقد حددت نقطة وجهة سابقا:</string>
     <string name="target_points">الوجهات</string>
     <string name="btn_advanced_mode">الوضع المتقدم…</string>
-    <string name="poi_filter_parking">موقف سيارات</string>
     <string name="poi_filter_emergency">حالة طوارئ</string>
     <string name="poi_filter_public_transport">وسائل النقل العام</string>
     <string name="poi_filter_entertainment">تسلية</string>
@@ -102,8 +93,7 @@
 	<string name="screen_is_locked">لفتح قفل الشاشة انقر على أيقونة القفل</string>
 	<string name="map_widget_top_text">اسم الشارع</string>
 	<string name="map_widget_reset">إعادة التعيين إلى الافتراضي</string>
-	<string name="map_widget_parking">موقف سيارات</string>
-	<string name="map_widget_monitoring">تسجيل GPX</string>
+    <string name="map_widget_monitoring">تسجيل GPX</string>
 	<string name="map_widget_speed">سرعة</string>
 	<string name="map_widget_distance">الوجهة</string>
 	<string name="map_widget_altitude">ارتفاع</string>
@@ -115,12 +105,9 @@
 	<string name="show_cameras">كاميرات السرعة</string>
 	<string name="show_traffic_warnings">تحذيرات حركة المرور</string>
 	<string name="avoid_toll_roads">تجنب الطرق ذات الرسوم</string>
-	<string name="osmand_parking_hours">ساعات</string>
-	<string name="osmand_parking_minutes">دقيقة</string>
-	<string name="global_app_allocated_memory">الذاكرة المخصصة</string>
-	
-	<string name="osmand_parking_warning">تحذير</string>
-	<string name="gpxup_public">عام</string>
+    <string name="global_app_allocated_memory">الذاكرة المخصصة</string>
+
+    <string name="gpxup_public">عام</string>
 	<string name="gpxup_identifiable">يمكن تحديدها</string>
 	<string name="gpxup_trackable">تتبعها</string>
 	<string name="gpxup_private">خاص</string>
@@ -340,8 +327,6 @@
     <string name="local_openstreetmap_act_title">تغييرات OSM</string>
     
 	<string name="intermediate_points_change_order">تغيير الفرز</string>
-    <string name="recording_open_external_player">افتح مشغلًا خارجيًا</string>
-    <string name="recording_description">تسجيل %1$s %3$s %2$s</string>
     <string name="download_roads_only_maps">خرائط الطرقات فقط</string>
     
 	<string name="rendering_attr_noAdminboundaries_description">منع عرض الحدود الإقليمية (المستويات الإدارية من 5-9).</string>
@@ -373,7 +358,6 @@
     
     <string name="osmand_background_plugin_description">يظهر الإعدادات لتمكين التتبع والملاحة في وضعية السكون ( الشاشة مغلقة ) عبر إيقاظ دوري لجهاز GPS.</string>
     <string name="precise_routing_mode_descr">تمكين لحساب المسارات بدقة دون أخطاء. لا يزال محدود المسافة وبطيء.</string>
-    <string name="recording_photo_description">صورة %1$s %2$s</string>
     <string name="dropbox_plugin_description">ملحق Dropbox يسمح بمزامنة المسارات و الملاحظات الصوتية والمرئية مع حسابك في دروب بوكس.</string>
     <string name="av_use_external_camera_descr">استخدام تطبيق النظام للصور.</string>
     <string name="av_use_external_camera">استخدام تطبيق الكاميرا</string>
@@ -395,10 +379,8 @@
 	<string name="auto_zoom_map">تقريب الخريطة تلقائيًا</string>
 	<string name="snap_to_road_descr">ألصق الموقع إلى الشوارع أثناء الملاحة.</string>
 	<string name="snap_to_road">الالتصاق بالطريق</string>
-	<string name="osmand_play_title_30_chars">خرائط OsmAnd وملاحة</string>
-	<string name="osmand_short_description_80_chars">برنامج عرض الخرائط العالمية والملاحة باستخدام خرائط الشوارع المفتوحة OSM أثناء الاتصال بالانترنت أو من دونه</string>
-	<string name="osmand_plus_play_title_30_chars">OsmAnd+ للخرائط و الملاحة</string>
-	<string name="osmand_plus_short_description_80_chars">برنامج عرض الخرائط العالمية والملاحة باستخدام خرائط الشوارع المفتوحة OSM أثناء الاتصال بالانترنت أو من دونه</string>
+    <string name="osmand_short_description_80_chars">برنامج عرض الخرائط العالمية والملاحة باستخدام خرائط الشوارع المفتوحة OSM أثناء الاتصال بالانترنت أو من دونه</string>
+    <string name="osmand_plus_short_description_80_chars">برنامج عرض الخرائط العالمية والملاحة باستخدام خرائط الشوارع المفتوحة OSM أثناء الاتصال بالانترنت أو من دونه</string>
 	<string name="filterpoi_activity">أنشئ مُرشِّح نقاط مهمة</string>
 	<string name="recalculate_route_to_your_location">نمط المواصلات:</string>
 	<string name="select_navigation_mode">اختر نمط المواصلات</string>
@@ -432,25 +414,12 @@
 	<string name="bg_service_interval">تعيين الفاصل الزمني للتنبيه:</string>
 	<string name="continue_follow_previous_route_auto">المسار السابق لم يكتمل. هل تريد متابعته؟ (%1$s ثانية)</string>
 	<string name="route_updated_loc_found">سيعاد احتساب المسار حالما يتم العثور على الموقع</string>
-	<string name="osmand_parking_position_description_add_time">لقد ركنت سيارتك على</string>
-	<string name="select_animate_speedup">حدد سرعة محاكاة المسار</string>
+    <string name="select_animate_speedup">حدد سرعة محاكاة المسار</string>
     	<string name="global_app_allocated_memory_descr">الذاكرة المخصصة %1$s MB (Android limit %2$s MB, Dalvik %3$s MB).</string>
 	<string name="native_app_allocated_memory">إجمالي الذاكرة الأصلية</string>
 	<string name="starting_point_too_far">نقطة الانطلاق بعيدة جدا عن أقرب طريق.</string>
 	<string name="shared_location">موقع مشترك</string>
-	<string name="osmand_parking_event">استرجع السيارة من الموقف</string>
-	<string name="osmand_parking_warning_text">لقد أضيف تنبيه لاسترجاع سيارتك مسبقا إلى تقويمك. سيظل التنبيه هناك حتى تقوم بحذفه يدويا.</string>    
-	<string name="osmand_parking_time_limit_title">حدد مهلة الركن</string>
-	<string name="osmand_parking_delete_confirm">هل تريد إزالة علامة موقع ركن السيارة ؟</string>
-	<string name="osmand_parking_delete">إزالة علامة وقوف السيارة</string>
-	<string name="osmand_parking_choose_type">اختر نوع مواقف السيارات</string>
-	<string name="osmand_parking_lim_text">وقت محدود</string>
-	<string name="osmand_parking_no_lim_text">وقت غير محدود</string>
-	<string name="osmand_parking_add_event">أضف إخطارا إلى تطبيق التقويم</string>
-	<string name="osmand_parking_time_limit">مواقف محدودة زمنيا</string>
-	<string name="osmand_parking_time_no_limit">مواقف غير محدودة زمنيا</string>
-	<string name="av_photo_play_sound_descr">فعّل هذا في حال رغبتك بسماع نغمة التقاط الصور.</string>
-<string name="edit_tilesource_elliptic_tile">نموذج مركتور البيضوي</string>
+    <string name="edit_tilesource_elliptic_tile">نموذج مركتور البيضوي</string>
     
     <string name="route_descr_lat_lon">خط عرض %1$.3f، خط طول %2$.3f</string>
     
@@ -458,21 +427,11 @@
 	
     <string name="use_kalman_filter_compass_descr">يقلل الشوشرة في قراءة البوصلة ولكن يضيف قصور ذاتي.</string>
     <string name="use_kalman_filter_compass">استخدم مُرشّح كالمان</string>
-    <string name="av_photo_play_sound">شغّل صوتًا عند التقاط صورة</string>
-	<string name="use_magnetic_sensor">استخدم الاستشعار المغناطيسي</string>
+    <string name="use_magnetic_sensor">استخدم الاستشعار المغناطيسي</string>
     <string name="av_widget_action_descr">حدد عمل الودجة الافتراضي.</string>
     <string name="av_widget_action">عمل الودجة الافتراضي</string>
-    <string name="osmand_parking_position_description">مكان موقف سيارتك. %1$s</string>
-	<string name="osmand_parking_position_description_add">لأخذ السيارة من:</string>
-	<string name="osmand_parking_pm">م</string>
-	<string name="osmand_parking_am">ص</string>
-	<string name="osmand_parking_position_name">نقطة ركن</string>
-	<string name="osmand_parking_plugin_description">خاصية الركن تسمح بحفظ الأماكن التي ركنت بها سيارتك والوقت المتبقي للركن(في حالة وجود وقت محدد).
-كل من المكان والزمن متواجدان على لوحة التحكم وكذلك في المؤشرات على شاشة الخريطة. يمكن اضافة منبه الى رزنامة جهازك كتذكير.</string>
-	<string name="osmand_parking_plugin_name">موقع الركن</string>
-	<string name="context_menu_item_add_parking_point">أشر إليه كموقف السيارات</string>
-	<string name="context_menu_item_delete_parking_point">احذف علامة وقوف السيارات</string>
-	<string name="asap">في أسرع وقت ممكن</string>
+    <string name="context_menu_item_add_parking_point">أشر إليه كموقف السيارات</string>
+    <string name="asap">في أسرع وقت ممكن</string>
 	<string name="route_roundabout">دوّار: خذ المخرج %1$d ثم استمر</string>
 	<string name="rendering_attr_noPolygons_description">اجعل جميع الميزات الأرض المساحية شفافة على خريطة.</string>
 	<string name="rendering_attr_noPolygons_name">المضلعات</string>
@@ -630,10 +589,8 @@
     <string name="srtm_plugin_description">توفر هاته الأداة كلا من خط محيطي كنتوري و طبقة تضاريس (طبيعية) تظهر على خرائط OsmAnd. هذه الوظيفة ستكون محل تقدير الكثير من الرياضيين، المتنزهين، الرحالة، و كل من تهمه بنية التضاريس الطبيعية. (يرجى ملاحظة ان الخط المحيطي الكنتوري /أو بيانات الاغاثه منفصلة ،التنزيلات الاضافيه متاحة بعد تفعيل البرنامج المساعد)
 \n
 \nالبيانات العالمية (ما بين 70 درجة شمالا و70 جنوبا) مبنية على مقاييس SRTM (مكوك رادار البعثة الطبوغرافية) و ASTER (الانبعاث الحراري الفضائي المتقدم والإنعكاس الإشعاعي)، أداة التصوير على متن Terra، القمر الصناعي الرئيسي لنظام رصد الأرض التابع لناسا. ASTER هو جهد تعاوني بين كل من وكالة ناسا، وزارة الاقتصاد اليابانية، التجارة والصناعة (METI)، ونظم الفضاء اليابانية (J-spacesystems).</string>
-    
-    <string name="osmand_long_description_1000_chars">OsmAnd (توجيهات OSM للملاحة الآلية) تطبيق ملاحة مفتوح المصدر مع إمكانية الوصول إلى مجموعة متنوعة من بيانات (OSM) العالمية. يمكن تخزين جميع بيانات الخريطة (خرائط فيكتور أو الخرائط الجزئية) في ذاكرة الهاتف للاستخدام دون اتصال بالشبكة. OsmAnd يقدم أيضا وظائف توجيه سواء كنت متصل بالشبكة أو لا بما في ذلك التوجيه الصوتي مع كل انعطاف. بعض الميزات الأساسية: - وظائف متكاملة في الوضع الغير متصل (خزن خرائط فيكتور أو الخرائط الجزئية في الجهاز) - خرائط فيكتور مدمجة للعالم كله متاحة دون اتصال - تحميل خرائط بلد أو منطقة مباشرة من التطبيق - امكانية تراكب عدة طبقات خريطة، كمسارات GPX أو مسارات الملاحة، نقاط الاهتمام(POI)، المفضلة، الخطوط الكنتورية، محطات وسائل النقل العامة، خرائط إضافية مع شفافية متخصصة - بحث محلي عن العناوين والأماكن (النقاط المهمة POI) - توجيه لمسافات متوسطة المدى دون الحاجة لاتصال - وضع السيارة ، الدراجة، و المشاة مع: - التبديل آلي اختياري لعرض وضع النهار/الليل - تكبير وتصغير اختياري للخريطة حسب السرعة - محاذاة خريطة اختيارية وفقا للبوصلة أو اتجاه الحركة - وجهة مسار اختيارية، عرض الحد الأقصى للسرعة، ميزة تحويل النص إلى كلام المحدودية المفروضة على هذه النسخة المجانية من أوسماند: - تنزيل محدود للخرائط - عدم امكانية الوصول إلى ويكيبيديا دون اتصال جاري تطويره ومشروعنا و التقدم المحرز فيه يعتمد على مساهمات مالية لتمويل التطوير، اختبار الوظائف الجديدة. يرجى شراء +OsmAnd أو تمويل ميزات محددة جديدة أو تقديم تبرع عام على مستوى osmand.net.</string>
-	
-	<string name="osmand_rastermaps_plugin_description">عن طريق هاته الأداة يمكنك الوصول إلى أنواع عديدة من خرائط النت (تدعى بالقطع أو النقطية)، من قطع OSM مسبقة ( مثل Mapnik) إلى صور أقمار وطبقات مخصصة كخرائط الطقس، الخرائط الجيولوجية، طبقات التضاريس...إلخ.
+
+    <string name="osmand_rastermaps_plugin_description">عن طريق هاته الأداة يمكنك الوصول إلى أنواع عديدة من خرائط النت (تدعى بالقطع أو النقطية)، من قطع OSM مسبقة ( مثل Mapnik) إلى صور أقمار وطبقات مخصصة كخرائط الطقس، الخرائط الجيولوجية، طبقات التضاريس...إلخ.
 \n
 \nكل من هاته الخرائط يمكن أن تستخدم إما كخرائط رئيسية (قاعدية) تظهر على واجهة التطبيق، أو كطبقة فوقية أو تحتية لخريطة قاعدية آخرى( كخرائط التطبيق المحلية). لجعل أي طبقة تحتية خريطة أكثر وضوحا، بعض عناصر خرائط التطبيق الفيكتورية يمكن إخفاءها في قائمة \'ضبط الخريطة\' حسب الرغبة.
 \n
@@ -641,26 +598,9 @@
 	
 	<string name="update_poi_does_not_change_indexes">التغييرات POI داخل التطبيق لا تؤثرعلى ملفات الخرائط المحملة، يتم حفظ التغييرات إلى ملف محلي بدلا من ذلك.</string>
 	<string name="av_camera_focus_descr">تحديد وضع تركيز الكاميرا الداخلية.</string>
-	<string name="osmand_plus_long_description_1000_chars">+OsmAnd (توجيهات OSM للملاحة الآلية) +Osmand عبارة عن تطبيق ملاحة ذو مصدر مفتوح مع إمكانية الوصول إلى العديد من بيانات عالمية لموقع (OSM). كل بيانات الخرائط (خرائط فيكتور أو الخرائط الجزئية) يمكن تخزينها في ذاكرة الجهاز للإستخدام دون أنترنت. يوفر التطبيق كذلك وظائف توجيه بأنترنت أو دونها بما في ذلك التوجيه الصوتي منعطف بمنعطف. +OsmAnd هو النسخة المدفوعة للتطبيق، من خلال شرائها أنت تدعم المشروع، تمول تطوير ميزات جديدة، وتتحصل على آخر التحديثات.
-\nبعض الميزات الأساسية:
-\n - تشغيل كامل دون أنترنت ( تخزين خرائط فيكتور أو الخرائط الجزئية المنزلة في ذاكرة الجهاز)
-\n - خرائط فيكتور مدمجة للعالم ككل متاحة تعمل دون أنترنت
-\n - تنزيل غير محدود لخرائط البلدان أو المناطق مباشرة من التطبيق
-\n - ميزة ويكيبيديا المحلية (قم بتحميل POI لويكيبيديا)، الأمثل لمشاهدة المعالم الأثرية
-\n - يمكن تراكب عدة طبقات للخرائط، كـ GPX أو مسارات الملاحة، مواقع ذات الإهتمام (POI)، الأماكن المفضلة، الحدود المحيطية، أماكن توقف النقل العمومي، خرائط إضافية بشفافية معدلة
-\n - البحث عن العناوين والأماكن (POI) دون أنترنت
-\n - تحديد طرق ذات مسافات متوسطة المدى دون أنترنت
-\n - وضع السيارة، الدراجة والمشاة متوفر مع:
-\n - تبديل اختياري آلي لوضع الرؤية في الليل/النهار
-\n - تكبير مشروط للخريطة
-\n - محاذاة اختيارية للخريطة حسب البوصلة أو اتجاه الحركة
-\n - توجيه اختياري للممر، عرض الحد الأقصى للسرعة، أصوات TTS (نص إلى كلام) مدرجة وأخرى مسجلة</string>
-	
-	
-	
-	
-	
-	<string name="local_openstreetmap_were_uploaded">{0} POI/الملاحظات تم رفعها</string>
+
+
+    <string name="local_openstreetmap_were_uploaded">{0} POI/الملاحظات تم رفعها</string>
 	<string name="live_monitoring_url_descr">تحديد عنوان ويب مع بناء جملة المعلمة: اللات = {0}، خط الطول = {1}، والطابع الزمني = {2}، HDOP = {3}، {4 ارتفاع =}، والسرعة = {5}، واضعة = {6}.</string>
 	<string name="gpx_monitoring_disabled_warn">سجل المسار عن طريق ويدجت GPX أو عن طريق إعدادات \'تسجيل الرحلة\'.</string>
 	    
@@ -1049,9 +989,7 @@
 	<string name="osmo_grop_name_length_alert">اسم المجموعة ينبغي أن يكون 3 أحرف على الأقل!</string>
 	<string name="confirmation_to_clear_history">هل ترغب في حذف السجل الزمني؟</string>
     <string name="shared_string_go">ذهاب</string>
-	<string name="osmand_parking_overdue">تأخر</string>
-	<string name="osmand_parking_time_left">يسار</string>
-	<string name="your_edits">تعديلاتك</string>
+    <string name="your_edits">تعديلاتك</string>
     <string name="waypoint_visit_after">زيارة بعد</string>
     <string name="waypoint_visit_before">زيارة قبل</string>
     <string name="simulate_your_location">محاكاة الموقع الخاص بك</string>
@@ -1287,12 +1225,10 @@
 	<string name="action_modify">تعديل إجراء</string>
 	<string name="action_delete">حذف إجراء</string>
 	<string name="osm_edits">تعديلات OSM</string>
-	<string name="parking_place_limited">مدة الوقوف محدودة بـ</string>
-	<string name="shared_string_collapse">إغلاق</string>
+    <string name="shared_string_collapse">إغلاق</string>
 	<string name="drawer">قائمة منبسطة</string>
     <string name="osm_settings">تعديل OSM</string>
 	<string name="free">مجاني %1$s</string>
-	<string name="parking_place">مكان للركن</string>
     <string name="version_settings_descr">نزل الإصدارات الليلية.</string>
     <string name="version_settings">إصدرات</string>
     <string name="speak_pedestrian">ممرات الراجلين</string>
@@ -2401,7 +2337,6 @@
     <string name="quick_action_navigation_voice_off">الصوت معطل</string>
     <string name="quick_action_navigation_voice_on">الصوت مشغل</string>
     <string name="quick_action_add_gpx">إضافة إحداثية GPX</string>
-    <string name="quick_action_add_parking">إضافة مكان ركن</string>
     <string name="quick_action_new_action">إضافة إجراء</string>
     <string name="quick_action_edit_action">تعديل إجراء</string>
     <string name="quick_action_add_favorite">إضافة المفضلة</string>
@@ -2417,7 +2352,6 @@
     <string name="quick_action_add_osm_bug_descr">النقر على زر الإجراء سيضيف ملاحظة صوتية بالموقع وسط الشاشة.</string>
     <string name="quick_action_add_poi_descr">النقر على زر الإجراء سيضيف POI بالموقع وسط الشاشة.</string>
     <string name="quick_action_navigation_voice_descr">النقر على زر الإجراء سيعطل أو يفعل التوجيه الصوتي أثناء التنقل.</string>
-    <string name="quick_action_add_parking_descr">النقر على زر الإجراء سيضيف مكان للركن بالموقع وسط الشاشة.</string>
     <string name="quick_action_interim_dialog">إظهار مربع حوار مؤقتاً</string>
     <string name="favorite_autofill_toast_text">" حفظ إلى "</string>
     <string name="favorite_empty_place_name">مكان</string>
@@ -2529,7 +2463,6 @@
     <string name="fonts_header">خطوط للخريطة</string>
     <string name="right_side_navigation">القيادة اليمنى</string>
     <string name="driving_region_automatic">آلي</string>
-    <string name="parking_options">خيارات مواقف السيارات</string>
     <string name="full_version_thanks">شكرا لكم لاقتناء النسخة الكاملة من أوسماند !</string>
     <string name="routing_attr_driving_style_speed_name">طرق أقصر</string>
     <string name="routing_attr_driving_style_safety_name">تفضيل الشوارع الجانبية</string>
@@ -2622,8 +2555,6 @@
     <string name="shared_string_paused">متوقف مؤقتاً</string>
     <string name="route_is_too_long_v2">قد يكون هذا المسار طويل جداً ليحسب. الرجاء إضافة الوجهات المتوسطة إن لم يتم العثور على أية نتيجة في غضون 10 دقائق.</string>
     <string name="osmand_extended_description_part1">OsmAnd (اOSM توجيهات الملاحة الآلية) تطبيق خريطة وملاحة مع امكانية الوصول إلى بيانات (OSM) مجاناً وفي جميع أنحاء العالم، وبجودة عالية. استمتع بمستكشف بالصوت والصورة، وعرض POI (نقاط الاهتمام)، إنشاء وإدارة مسارات GPX، استخدام عرض وعلو بيانات الخطوط الكنتورية (عن طريق البرنامج المساعد)، اختيار بين نمط القيادة، ركوب الدراجات وطرق المشاة، التعديل على الموقع وغيرها.</string>
-    <string name="osmand_extended_description_part2">الملاحة GPS • يمكنك أن تختار بين وضع دون اتصال (لا رسوم تجوال عندما تكون في الخارج) أو بالإنترنت (أسرع) • التوجيه الصوتي انعطاف بانعطاف يقودك طوال الطريق (مسجل أو مدرج) 
-\n • يتم اعادة توجيه الطريق كلما انحرفت عنه • سيساعدك كل من التوجيه، أسماء الشوارع، والوقت المقدر للوصول على طول الطريق • لجعل رحلتك أكثر أماناً، يبدل وضع النهار/الليل تلقائياً • يمكنك اختيار إظهار حدود السرعة والتحذير إذا حدث تجاوز • ضبط تكبير/تصغير الخريطة حسب السرعة • يمكنك البحث عن الوجهات بعنوان، حسب النوع (مثال: موقف سيارة، مطعم، فندق، محطة بنزين، متحف)، أو حسب الإحداثيات الجغرافية • يدعم النقاط الوسيطة وسط مسار الرحلة • يمكنك تسجيل مسار GPX الخاص بك أو رفعه ومتابعته</string>
     <string name="osmand_extended_description_part3">خريطة • \"عرض النقاط POI\" (نقطة اهتمام) من حولك • ضبط الخريطة اتجاه الحركة أو (البوصلة) • اظهار مكانك الحالي وما يقابلك • مشاركة موقعك حتى يبسنى لأصدقاء ايجادك • الاحتفاظ بأهم الأماكن في المفضلة • يسمح لك باختيار كيفية عرض الأسماء على الخريطة: باللغة الإنجليزية، اللغة المحلية أو حسب الإملاء الصوتي • اظهار نمط خريطة انترنت متخصص ، صورة قمر صناعي (Bing)، اظهار طبقات خريطة متراكبة مختلفة كالسياحة/مسارات GPX للملاحة وطبقات إضافية مع شفافية قابلة للتعديل</string>
     <string name="osmand_extended_description_part4">البرنامج المساعد لخرائط Skiing OsmAnd للتزلج يمكنك من مشاهدة مسارات التزلج مع مستوى من التعقيد وبعض المعلومات الإضافية، كمواقع المصاعد والمرافق الأخرى.</string>
     <string name="osmand_extended_description_part5">"ركوب الدراجات الهوائية • يمكنك أن تجد مسارات الدراجات الهوائية على الخريطة • الملاحة في وضع ركوب الدراجات تقترح مسارات دراجات هوائية • يمكنك مشاهدة سرعةك وعلوك • تسجيل GPX يتيح لك تسجيل رحلتك ومشاركتها مع الغير • عن طريق برنامج مساعد اضافي يمكنك  عرض الخطوط الكنتورية والتضاريس"</string>

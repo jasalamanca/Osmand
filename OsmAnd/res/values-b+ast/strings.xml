@@ -158,7 +158,6 @@
 	<string name="shared_string_audio">Audiu</string>
 	<string name="shared_string_photo">Semeya</string>
 	<string name="shared_string_online_maps">Mapes en llinia</string>
-    <string name="osmand_parking_plugin_name">Posición d\'aparcaderu</string>
 	<string name="shared_string_accessibility">Accesibilidá</string>
 	<string name="osm_settings">Edición d\'OSM</string>
 	<string name="debugging_and_development">Desendolcu d\'OsmAnd</string>
@@ -166,8 +165,7 @@
 	<string name="online_map">Mapa en llinia</string>
 	<string name="roads_only">Namái carreteres</string>
 	<string name="device_memory">Memoria del preséu</string>
-	<string name="parking_place">Llugar d\'aparcamientu</string>
-	<string name="gps_status">Estáu de GPS</string>
+    <string name="gps_status">Estáu de GPS</string>
 	<string name="settings_privacy">Privacidá</string>
 	<string name="proxy_pref_title">Proxy</string>
 	<string name="avoid_roads_msg">Pues aicionar un camín alternativu esbillando les carreteres a evitar</string>
@@ -482,14 +480,10 @@ Llo %2$s</string>
 	<string name="access_from_map_description">El botón de menú abre\'l tableru, non el menú.</string>
     <string name="show_on_start_description">«Off» llancia direutamente la pantalla del mapa.</string>
     <string name="default_speed_system_descr">Define la unidá de velocidá.</string>
-    <string name="osmand_parking_plugin_description">El complementu de posición d\'aparcaderu déxate memorizar u ta aparcáu\'l to coche y cuantu tiempu-y queda (si hai llende de tiempu).
-
-L\'allugamientu y tiempu son visibles nel cuadru de mandos d\'OsmAnd tamién nel widget sobro la pantalla\'l mapa. Pue amestase una alarma nel calendariu d\'Android como recordatoriu.</string>
-    <string name="version_settings_descr">Baxar versiones diaries inestables.</string>
+	<string name="version_settings_descr">Baxar versiones diaries inestables.</string>
     <string name="enable_proxy_descr">Configura un proxy HTTP pa toles solicitúes de rede.</string>
     <string name="proxy_port_descr">Configura\'l númberu de puertu del proxy (p.ex.: 8118).</string>
     <string name="show_zoom_buttons_navigation_descr">Amuesa los botones de zoom al navegar.</string>
-    <string name="osmand_parking_position_description">L\'allugamientu\'l to coche aparcáu. %1$s</string>
     <string name="navpoint_search_desc">Coordenaes</string>
     <string name="gpx_description_txt">Descripción</string>
     <string name="support_new_features_descr">Fai un donativu pa ver carauterístiques nueves añadíes na aplicación.</string>
@@ -718,7 +712,6 @@ Puntos</string>
     <string name="do_not_send_anonymous_app_usage_desc">Osmand recueye información tocante a les partes qu\'abres de l\'aplicación. Enxamás s\'unvia\'l to allugamientu, nin nada qu\'introduzas n\'aplicación o nos detalles de les árees que veas, guetes o baxes.</string>
     <string name="do_not_show_startup_messages">Nun amosar los mensaxes nel aniciu</string>
     <string name="do_not_show_startup_messages_desc">Nun amosar descuentos de l\'aplicación nin mensaxes especiales d\'actividaes llocales.</string>
-    <string name="parking_options">Opciones d\'aparcamientu</string>
     <string name="full_version_thanks">¡Gracies por mercar la versión completa d\'OsmAnd!</string>
     <string name="routing_attr_relief_smoothness_factor_hills_name">Pindio</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Menos pindio</string>

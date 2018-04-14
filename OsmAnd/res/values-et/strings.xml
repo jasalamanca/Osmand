@@ -13,12 +13,10 @@
     <string name="mark_to_delete">Märgi kustutamiseks</string>
 	<string name="osmo_grop_name_length_alert">Grupi nimi peab olema vähemalt 3 märki!</string>
 	<string name="confirmation_to_clear_history">Kas sa soovid tühjendada ajalugu?</string>
-    <string name="osmand_parking_overdue">tähtaja ületanud</string>
-	<string name="action_create">Tegevuse loomine</string>
+    <string name="action_create">Tegevuse loomine</string>
 	<string name="action_modify">Tegevuse muutmine</string>
 	<string name="action_delete">Tegevuse kustutamine</string>
-	<string name="osmand_parking_time_left">vasak</string>
-	<string name="routing_settings_2">Navigatsiooni seaded</string>
+    <string name="routing_settings_2">Navigatsiooni seaded</string>
     <string name="general_settings_2">Üld seaded</string>
 	<string name="shared_string_ellipsis">…</string>
 	<string name="shared_string_ok">OK</string>
@@ -81,7 +79,6 @@
 	<string name="free">Vaba %1$s</string>
 	<string name="device_memory">Seadme mälu</string>
     <string name="edit_group">Grupi muutmine</string>
-    <string name="parking_place">Parkimiskoht</string>
     <string name="gps_status">GPS staatus</string>
     <string name="rendering_attr_streetLighting_name">Tänava valgustus</string>
     <string name="app_mode_bus">Buss</string>

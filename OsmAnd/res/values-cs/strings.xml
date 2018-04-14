@@ -728,29 +728,7 @@ Navigační služba je dočasně přepnuta na on-line CloudMade.</string>
     <string name="gpxup_identifiable">S identifikací</string>
     <string name="gpxup_trackable">Se záznamem trasy</string>
     <string name="gpxup_private">Soukromé</string>
-    <string name="osmand_parking_event">Vyzvednout auto z parkoviště</string>
-    <string name="osmand_parking_warning">Upozornění</string>
-    <string name="osmand_parking_warning_text">Upozornění k vyzvednutí vašeho auta již bylo přidáno do vašeho kalendáře. Zůstane tam, dokud jej ručně nesmažete.</string>
-    <string name="osmand_parking_time_limit_title">Nastavte maximální povolenou dobu parkování</string>
-    <string name="osmand_parking_delete_confirm">Chcete smazat označení místa, kde jste zaparkovali?</string>
-    <string name="osmand_parking_delete">Smazat místo parkování</string>
-    <string name="osmand_parking_choose_type">Vyberte typ stání</string>
-    <string name="osmand_parking_lim_text">Časově omezené</string>
-    <string name="osmand_parking_no_lim_text">Časově neomezené</string>
-    <string name="osmand_parking_add_event">Přidat upozornění do kalendáře</string>
-    <string name="osmand_parking_time_limit">Časově omezené parkování</string>
-    <string name="osmand_parking_time_no_limit">Časově neomezené parkování</string>
-    <string name="osmand_parking_position_description">Místo, kde jste zaparkovali auto. %1$s</string>
-    <string name="osmand_parking_position_description_add">Vyzvednout auto v:</string>
-    <string name="osmand_parking_pm">odpoledne</string>
-    <string name="osmand_parking_am">dopoledne</string>
-    <string name="osmand_parking_position_name">Místo parkování</string>
-    <string name="osmand_parking_plugin_description">Modul Parkovací místo umožňuje zapamatování si, kde jste zaparkovali své auto, a v případě časově omezeného parkování také kolik času zbývá.
-
-Parkovací místo a čas parkování můžete najít na panelu aktuální mapy. Je také možné přidat upomínku do kalendáře, pokud chcete být upozorněni.</string>
-    <string name="osmand_parking_plugin_name">Parkovací místo</string>
     <string name="context_menu_item_add_parking_point">Označit jako místo parkování</string>
-    <string name="context_menu_item_delete_parking_point">Smazat místo parkování</string>
     <string name="starting_point_too_far">Počáteční bod je příliš daleko nejbližší silnici.</string>
     <string name="shared_location">Sdílená pozice</string>
     <string name="global_app_allocated_memory_descr">Alokovaná paměť %1$s MB (Limit Androidu %2$s MB, Dalvik %3$s MB).</string>
@@ -759,9 +737,6 @@ Parkovací místo a čas parkování můžete najít na panelu aktuální mapy. 
 Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</string>
     <string name="native_app_allocated_memory">Celková nativní paměť</string>
     <string name="select_animate_speedup">Vyberte zrychlení simulované navigace</string>
-    <string name="osmand_parking_hours">hodin</string>
-    <string name="osmand_parking_minutes">minut</string>
-    <string name="osmand_parking_position_description_add_time">Auto je zaparkováno v</string>
     <string name="use_compass_navigation_descr">Použít kompas při navigaci, když nelze zjistit směr.</string>
     <string name="use_compass_navigation">Použít kompas</string>
     <string name="route_updated_loc_found">Trasa bude přepočítána, jakmile bude zjištěna aktuální pozice</string>
@@ -775,7 +750,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="map_widget_lock_screen">Uzamknout obrazovku</string>
     <string name="map_widget_compass">Kompas</string>
     <string name="map_widget_reset">Obnovit výchozí hodnoty</string>
-    <string name="map_widget_parking">Parkování</string>
     <string name="map_widget_monitoring">Záznam trasy</string>
     <string name="map_widget_speed">Aktuální rychlost</string>
     <string name="map_widget_distance">Cíl</string>
@@ -819,7 +793,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="avoid_motorway">Vyhnout se dálnicím</string>
     <string name="snap_to_road_descr">Zachytí kurzor na nejbližší silnici/cestu během navigace.</string>
     <string name="map_widget_vector_attributes">Vlastnosti vykreslování</string>
-    <string name="poi_filter_parking">Parkoviště</string>
     <string name="poi_filter_public_transport">Veřejná doprava</string>
     <string name="poi_filter_entertainment">Zábava</string>
     <string name="poi_filter_accomodation">Ubytování</string>
@@ -842,32 +815,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="new_destination_point_dialog">Cíl je již nastaven:</string>
     <string name="target_point">Cíl %1$s</string>
     <string name="target_points">Cíle</string>
-    <string name="osmand_long_description_1000_chars">"OsmAnd
-\n
-\nOsmAnd je open-source navigační program s přístupem k široké paletě celosvětových mapových dat OpenStreetMap (OSM). Veškerá mapová data (vektorová nebo rastrová) mohou být uložena na paměťové kartě telefonu pro off-line použití. OsmAnd také nabízí off-line a on-line navigaci včetně hlasových pokynů.
-\n
-\nVýčet některých hlavních funkcí: - dokáže pracovat kompletně off-line (vektorové nebo rastrové mapy lze uložit do úložiště zařízení) - kompaktní off-line vektorové mapy celého světa dostupné zdarma - stahování národních nebo regionálních map přímo z aplikace - možnost zobrazení několika vrstev mapy: GPX trasa, body zájmu, oblíbená místa, vrstevnice, zastávky hromadné dopravy, dodatečné mapy s nastavitelnou průhledností - off-line vyhledávání adres a bodů zájmu - off-line navigace na střední vzdálenosti - režim auto, kolo a pěší s volitelným:
-\n    - přepínáním denního a nočního zobrazení
-\n    - automatickým zvětšováním podle rychlosti pohybu
-\n    - natáčením mapy podle kompasu nebo směru pohybu
-\n    - naváděním do jízdních pruhů, zobrazením rychlostních limitů
-\n    - TTS nebo audio hlasovými pokyny
-\n
-\nOmezení této verze zdarma: - omezený počet map ke stažení - chybějící přístup na off-line Wikipedia POI
-\n
-\nOsmAnd je aktivně vyvíjen a náš projekt i jeho budoucí vývoj závisí na finančních příspěvcích. Prosím zvažte zakoupení verze OsmAnd+, sponzorování konkrétní nové funkce nebo obecný dar na osmand.net."</string>
-    <string name="osmand_plus_long_description_1000_chars">"OsmAnd+
-\n
-\nOsmAnd+ je open-source navigační program s přístupem k široké paletě celosvětových mapových dat OpenStreetMap (OSM). Veškerá mapová data (vektorová nebo rastrová) mohou být uložena na paměťové kartě telefonu pro off-line použití. OsmAnd+ také nabízí off-line a on-line navigaci včetně hlasových pokynů.
-\n
-\nOsmAnd+ je placená verze aplikace, jejím zakoupením sponzorujete projekt, vývoj nových funkcí a obdržíte nejnovější aktualizace.
-\n
-\nVýčet některých hlavních funkcí: - dokáže pracovat kompletně off-line (vektorové nebo rastrové mapy lze uložit do úložiště zařízení) - kompaktní off-line vektorové mapy celého světa dostupné zdarma - neomezené stahování národních nebo regionálních map přímo z aplikace - funkce off-line Wikipedie (stažení informací o bodech zájmu z Wikipedie), vynikající pro turisty - možnost zobrazení několika vrstev mapy: GPX trasa, body zájmu, oblíbená místa, vrstevnice, zastávky hromadné dopravy, dodatečné mapy s nastavitelnou průhledností - off-line vyhledávání adres a bodů zájmu - off-line navigace na střední vzdálenosti - režim auto, kolo a pěší s volitelným:
-\n    - přepínáním denního a nočního zobrazení
-\n    - automatickým zvětšováním podle rychlosti pohybu
-\n    - natáčením mapy podle kompasu nebo směru pohybu
-\n    - naváděním do jízdních pruhů, zobrazením rychlostních limitů
-\n    - TTS nebo audio hlasovými pokyny"</string>
     <string name="map_widget_monitoring_services">Sledování polohy</string>
     <string name="no_route">Žádná cesta</string>
     <string name="delete_target_point">Smazat cíl</string>
@@ -905,20 +852,12 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
 \nCelosvětová výšková data (mezi 70 stupni severní šířky a 70 stupni jižní šířky) se zakládají na měřeních SRTM (Shuttle Radar Topography Mission) a ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), snímkovací přístroj na palubě satelitu Terra, vlajkového satelitu Systému pozorování Země NASA. ASTER je společným projektem NASA, japonského ministerstva hospodářství, obchodu a průmyslu (METI) a Japan Space Systems (J-spacesystems).</string>
     <string name="srtm_plugin_name">Vrstevnice</string>
     <string name="download_srtm_maps">Vrstevnice</string>
-    <string name="recording_open_external_player">Otevřít externí přehrávač</string>
     <string name="recording_delete_confirm">Chcete smazat tento záznam?</string>
-    <string name="recording_can_not_be_played">Záznam nelze přehrát</string>
-    <string name="recording_context_menu_delete">Smazat záznam</string>
     <string name="recording_context_menu_play">Přehrát</string>
     <string name="map_widget_distancemeasurement">Měření vzdálenosti</string>
     <string name="index_srtm_parts">části</string>
     <string name="av_widget_action_descr">Zvolte výchozí funkci.</string>
     <string name="av_widget_action">Výchozí funkce</string>
-    <string name="av_use_external_recorder">Použít externí záznamník</string>
-    <string name="recording_error">Při nahrávání došlo k chybě </string>
-    <string name="recording_unavailable">nedostupné</string>
-    <string name="recording_description">Nahrávka %1$s %3$s %2$s</string>
-    <string name="recording_default_name">Nahrávání</string>
     <string name="osmand_srtm_short_description_80_chars">OsmAnd modul pro off-line zobrazování vrstevnic</string>
     <string name="shared_string_control_start">Start</string>
     <string name="dropbox_plugin_name">Modul Dropbox</string>
@@ -932,10 +871,7 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
 \nCelosvětová výšková data (mezi 70 stupni severní šířky a 70 stupni jižní šířky) se zakládají na měřeních SRTM (Shuttle Radar Topography Mission) a ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), snímkovací přístroj na palubě satelitu Terra, vlajkového satelitu Systému pozorování Země NASA. ASTER je společným projektem NASA, japonského ministerstva hospodářství, obchodu a průmyslu (METI) a Japan Space Systems (J-spacesystems).</string>
     <string name="stop_routing_confirm">Opravdu chcete zastavit navigaci?</string>
     <string name="clear_dest_confirm">Opravdu chcete smazat svůj cíl (a mezicíle)?</string>
-    <string name="recording_context_menu_show">Zobrazit</string>
-    <string name="recording_photo_description">Foto %1$s %2$s</string>
     <string name="av_def_action_picture">Vyfotit</string>
-    <string name="recording_context_menu_precord">Vyfotit</string>
     <string name="precise_routing_mode_descr">Umožní výpočet přesné cesty pro navigaci. Omezené vzdáleností a pomalé.</string>
     <string name="precise_routing_mode">Přesná navigace (alfa)</string>
     <string name="support_new_features_descr">Prosím sponzorujte vývoj nových funkcí v aplikaci.</string>
@@ -952,8 +888,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="layer_hillshade">Stínování</string>
     <string name="map_widget_gps_info">Info o GPS</string>
     <string name="shared_string_map">Mapa</string>
-    <string name="osmand_play_title_30_chars">OsmAnd mapa a navigace</string>
-    <string name="osmand_plus_play_title_30_chars">OsmAnd+ mapa a navigace</string>
     <string name="item_checked">zvoleno</string>
     <string name="item_unchecked">nezvoleno</string>
     <string name="choose_osmand_theme">Vzhled aplikace</string>
@@ -1030,8 +964,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="av_camera_focus_infinity">Ostření na nekonečno</string>
     <string name="av_camera_focus_macro">Makro</string>
     <string name="av_camera_focus_continuous">Kamera ostří souvisle</string>
-    <string name="av_photo_play_sound">Přehrát zvuk závěrky</string>
-    <string name="av_photo_play_sound_descr">Zvolte zda při vyfotografování snímku má být přehrán zvuk závěrky.</string>
     <string name="new_directions_point_dialog">Mezicíle jsou již nastaveny.</string>
     <string name="context_menu_item_directions_to">Navigovat sem</string>
     <string name="context_menu_item_directions_from">Navigovat odsud</string>
@@ -1595,7 +1527,6 @@ Seznam obsažených zemí (prakticky celý svět!): Afghánistán, Albánie, Al�
     <string name="proxy_host_descr">Nastavit hostname proxy (např. 127.0.0.1).</string>
     <string name="proxy_port_title">Port proxy</string>
     <string name="proxy_port_descr">Nastavit číslo portu proxy (např. 8118).</string>
-    <string name="parking_place">Parkovací místo</string>
     <string name="remove_the_tag">ODSTRANIT ZNAČKU</string>
     <string name="shared_string_disabled">Zakázán</string>
     <string name="shared_string_enabled">Povolen</string>
@@ -1652,9 +1583,6 @@ Délka %2$s</string>
     <string name="osm_edits">Editace OSM</string>
     <string name="osmand_parking_hour">h</string>
     <string name="osmand_parking_minute">min</string>
-    <string name="parking_place_limited">Čas parkování vymezen do</string>
-    <string name="osmand_parking_overdue">vypršel</string>
-    <string name="osmand_parking_time_left">zbývá</string>
     <string name="your_edits">Vaše změny</string>
     <string name="waypoint_visit_after">Navštívit po</string>
     <string name="waypoint_visit_before">Navštívit před</string>
@@ -2341,7 +2269,6 @@ Pokud máte rádi OsmAnd a OSM a chcete je podpořit, toto je výborný způsob,
     <string name="quick_action_navigation_voice_off">Hlas je vypnut</string>
     <string name="quick_action_navigation_voice_on">Hlas je zapnut</string>
     <string name="quick_action_add_gpx">Přidat GPX mezicíl</string>
-    <string name="quick_action_add_parking">Přidat parkovací místo</string>
     <string name="quick_action_new_action">Přidat akci</string>
     <string name="quick_action_edit_action">Upravit akci</string>
     <string name="quick_action_add_favorite">Přidat oblíbenou položku</string>
@@ -2355,7 +2282,6 @@ Pokud máte rádi OsmAnd a OSM a chcete je podpořit, toto je výborný způsob,
     <string name="quick_action_add_osm_bug_descr">Klepnutím na tlačítko akce se přidá OSM poznámka na místo ve středu obrazovky.</string>
     <string name="quick_action_add_poi_descr">Klepnutím na tlačítko akce se přidá POI na místo ve středu obrazovky.</string>
     <string name="quick_action_navigation_voice_descr">Klepnutím na tlačítko akce se vypnou nebo zapnou hlasové pokyny během navigace.</string>
-    <string name="quick_action_add_parking_descr">Klepnutím na tlačítko akce se přidá parkovací místo na místo ve středu obrazovky.</string>
     <string name="favorite_empty_place_name">Místo</string>
     <string name="quick_action_duplicates">Zadaný název rychlé akce je již použit, byl změněn na %1$s z důvodu duplicity.</string>
     <string name="quick_action_duplicate">Duplicitní název rychlé akce</string>
@@ -2523,7 +2449,6 @@ Pokud potřebujete pomoci s aplikací OsmAnd, prosím kontaktujte naši podporu
     <string name="do_not_send_anonymous_app_usage_desc">OsmAnd sbírá informace o tom, které části aplikace otevíráte. Nikdy se neodesílá poloha, nic co je zapisováno do aplikace nebo detaily prohlížených oblastí, hledání nebo stahování.</string>
     <string name="do_not_show_startup_messages">Nezobrazovat zprávy při spuštění</string>
     <string name="do_not_show_startup_messages_desc">Zakáže zobrazení slev aplikace a mimořádné zprávy lokálních událostí.</string>
-    <string name="parking_options">Možnosti parkování</string>
     <string name="full_version_thanks">Děkujeme vám za zakoupení plné verze OsmAnd!</string>
     <string name="routing_attr_relief_smoothness_factor_name">Zvolte kolísání výšky</string>
     <string name="right_side_navigation">Jízda po pravé straně</string>

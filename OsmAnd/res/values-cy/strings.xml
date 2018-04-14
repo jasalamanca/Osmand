@@ -24,8 +24,7 @@
 <string name="map_widget_reset">Ailosod i\'r rhagosodiad</string>
 
 
-<string name="map_widget_parking">Parcio</string>
-<string name="map_widget_monitoring">Tracio</string>
+    <string name="map_widget_monitoring">Tracio</string>
 <string name="map_widget_speed">Cyflymder</string>
 <string name="map_widget_distance">Targed</string>
 <string name="map_widget_altitude">Uchder</string>
@@ -46,11 +45,8 @@
 
 <string name="continue_follow_previous_route_auto">Nid oedd y llywio diwethaf wedi ei gwblhau. Parhau i\'w ddilyn? (%1$s eiliad)</string>
 <string name="route_updated_loc_found">Bydd y daith yn cael ei ail-gyfrifo ar ôl canfod y lleoliad</string>
-<string name="osmand_parking_hours">Awr</string>
-<string name="osmand_parking_minutes">Munud</string>
-<string name="osmand_parking_position_description_add_time">Roedd y car wedi ei barcio yn:</string>
 
-<string name="use_compass_navigation_descr">Defnyddio cwmpawd lle nad yw\'r cyfeiriad wedi ei ganfod</string>
+    <string name="use_compass_navigation_descr">Defnyddio cwmpawd lle nad yw\'r cyfeiriad wedi ei ganfod</string>
 <string name="use_compass_navigation">Defnyddio cwmpawd</string>
 <string name="select_animate_speedup">Defnyddio cyflymu animeiddio taith</string>
 <string name="global_app_allocated_memory_descr">Cof Dynodedig %1$s MB (Terfyn Android %2$s MB, Dalvik %3$s MB).</string>
@@ -87,26 +83,8 @@
 
 <string name="native_app_allocated_memory_descr">Cyfanswm cof brodorol a ddyrennir gan app %1$s MB (Dalvik %2$s MB, arall %3$s MB).↵
 Cyfrannol cof %4$s MB (terfyn Android %5$s MB, Dalvik %6$s MB).</string>
-<string name="osmand_parking_event">Codwch y car o barcio</string>
-<string name="osmand_parking_warning">Rhybudd</string>
-<string name="osmand_parking_warning_text">Hysbysiad i nôl eich car ei ychwanegu yn flaenorol at eich Calendr. Bydd yn aros yno hyd nes y byddwch yn ei ddileu â llaw.</string>
-<string name="osmand_parking_time_limit_title">Gosod y terfyn amser o barcio</string>
-<string name="osmand_parking_delete_confirm">Ydych chi eisiau i gael gwared ar y lleoliad y car wedi parcio?</string>
-<string name="osmand_parking_delete">Dileu marciwr parcio</string>
-<string name="osmand_parking_choose_type">Dewiswch y math o barcio</string>
-<string name="osmand_parking_lim_text">Amser-gyfyngedig</string>
-<string name="osmand_parking_no_lim_text">Amser-diderfyn</string>
-<string name="osmand_parking_add_event">Ychwanegwch hysbysiad i calendr cais</string>
-<string name="osmand_parking_time_limit">Amser-gyfyngedig parcio</string>
-<string name="osmand_parking_time_no_limit">Amser-diderfyn parcio</string>
-<string name="osmand_parking_position_description">Mae\'r sefyllfa eich car wedi parcio. %1$s</string>
-<string name="osmand_parking_position_description_add">I godi\'r car yn:</string>
-<string name="osmand_parking_position_name">Pwynt parcio</string>
-<string name="osmand_parking_plugin_description">Mae hyn yn ategyn yn caniatáu i storio y lleoliad eich car wedi parcio.</string>
-<string name="osmand_parking_plugin_name">Ategyn Safle Parcio</string>
-<string name="context_menu_item_add_parking_point">Marciwch fel sefyllfa parcio</string>
-<string name="context_menu_item_delete_parking_point">Dileu marciwr parcio</string>
-<string name="gpxup_public">Cyhoeddus</string>
+    <string name="context_menu_item_add_parking_point">Marciwch fel sefyllfa parcio</string>
+    <string name="gpxup_public">Cyhoeddus</string>
 <string name="gpxup_identifiable">Adnabyddadwy</string>
 <string name="gpxup_trackable">Trackable</string>
 <string name="gpxup_private">Preifat</string>

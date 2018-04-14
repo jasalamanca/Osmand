@@ -801,29 +801,7 @@ Ehhez {1} MB helyre van szükség.
     <string name="gpxup_identifiable">Azonosítható</string>
     <string name="gpxup_trackable">Követhető</string>
     <string name="gpxup_private">Magán</string>
-    <string name="osmand_parking_event">Autót felvenni a parkolóból</string>
-    <string name="osmand_parking_warning">Figyelmeztetés</string>
-    <string name="osmand_parking_warning_text">Az autó felvételére egy emlékeztető lett beállítva a naptáradban. Ez az emlékeztető megmarad, amíg ki nem törlöd onnan.</string>
-    <string name="osmand_parking_time_limit_title">Parkolási időkorlát beállítása</string>
-    <string name="osmand_parking_delete_confirm">Biztosan törlöd a parkolási hely jelölőjét?</string>
-    <string name="osmand_parking_delete">Parkolási helyjelző törlése</string>
-    <string name="osmand_parking_choose_type">Válaszd ki a parkolás típusát</string>
-    <string name="osmand_parking_lim_text">Időkorlátos</string>
-    <string name="osmand_parking_no_lim_text">Korlátlan idejű</string>
-    <string name="osmand_parking_add_event">Emlékeztető hozzáadása a Naptár alkalmazáshoz</string>
-    <string name="osmand_parking_time_limit">Időkorlátos parkolás</string>
-    <string name="osmand_parking_time_no_limit">Korlátlan idejű parkolás</string>
-    <string name="osmand_parking_position_description">A leparkolt autó helye. %1$s</string>
-    <string name="osmand_parking_position_description_add">Parkolási engedély vége:</string>
-    <string name="osmand_parking_pm">du.</string>
-    <string name="osmand_parking_am">de.</string>
-    <string name="osmand_parking_position_name">Parkolóhely</string>
-    <string name="osmand_parking_plugin_description">A parkolási hely bővítmény könnyen megjegyezhetővé teszi, hogy hol parkoltál le az autóval, és mennyi parkolási idő van még hátra (ha a parkolás időben korlátozott).
-
-A parkolási hely és az idő is látható az OsmAnd vezérlőpultján, valamint a térkép képernyő felületi elemén. Értesítés adható hozzá az Android naptárhoz emlékeztetőként.</string>
-    <string name="osmand_parking_plugin_name">Parkolási hely</string>
     <string name="context_menu_item_add_parking_point">Megjelölés parkolási helyként</string>
-    <string name="context_menu_item_delete_parking_point">Parkolásjelölő törlése</string>
     <string name="starting_point_too_far">A kezdőpont közelében nem található út.</string>
     <string name="shared_location">Megosztott hely</string>
 
@@ -833,9 +811,6 @@ A parkolási hely és az idő is látható az OsmAnd vezérlőpultján, valamint
 Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</string>
     <string name="native_app_allocated_memory">Összes natív memória</string>
     <string name="select_animate_speedup">Útvonalszimuláció sebessége</string>
-    <string name="osmand_parking_hours">Óra</string>
-    <string name="osmand_parking_minutes">Perc</string>
-    <string name="osmand_parking_position_description_add_time">Autó leparkolva:</string>
     <string name="use_compass_navigation_descr">Iránytű használata navigáláshoz, ha az irány nem érzékelhető.</string>
     <string name="use_compass_navigation">Iránytű használata</string>
     <string name="route_updated_loc_found">Az útvonaltervezés elindul, amint megvan a pozíció</string>
@@ -856,7 +831,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="map_widget_reset">Alapértékek visszaállítása</string>
 
 
-    <string name="map_widget_parking">Parkolás</string>
     <string name="map_widget_monitoring">GPX naplózás</string>
     <string name="map_widget_speed">Sebesség</string>
     <string name="map_widget_distance">Cél</string>
@@ -903,8 +877,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
 
 
     <string name="osmand_short_description_80_chars">Globális mobil térkép és navigáció, offline és online OSM térképekkel</string>
-    <string name="osmand_long_description_1000_chars">OsmAnd (OSM Automated Navigation Directions) Az OsmAnd nyílt forráskódú navigációs alkalmazás az OpenStreetMap (OSM) adatainak széleskörű használatával. Bármelyik térképadat (vektoros és raszteres térképek) tárolható a készülék memóriakártyáján offline használatra. Az OsmAnd továbbá lehetővé teszi az offline és online útvonaltervezést is, részletes hangutasításokkal. Néhány fontosabb funkció: - Teljesen offline működés (a letöltött vektoros és raszteres térképek az eszközön tárolódnak) - A kompakt, offline vektoros térképek az egész világhoz elérhetőek - Az ország vagy régió térképei letölthetők közvetlenül az alkalmazásból - Számos rávetíthető térképréteg, mint GPX-ek, navigációs útvonalak, POI-k (érdekes helyek), kedvencek, szintvonalak, tömegközlekedési megállók, további térképek beállítható átlátszósággal - Címek és helyek offline kereshetősége - Offline útvonaltervezés rövidebb távolságokra (kísérleti) - Autós, kerékpáros és gyalogos módok: - opcionális automata nappali/éjszakai nézetváltással - opcionális sebességfüggő nagyítással - opcionális térképforgatással a mozgás vagy az iránytű alapján - opcionális sávasszisztens, sebességkorlátozás kijelzés, felvett és gépi hangutasítás Az OsmAnd ingyenes változatának korlátozásai: - Korlátozott számú vektoros térképletöltés - Offline Wikipédia cikkek nem elérhetőek Az OsmAnd folyamatosan fejlesztés alatt áll és a projektünk nagyban függ a pénzügyi támogatásoktól, amiből finanszírozhatók a fejlesztések és az új funkciók tesztelése. Kérlek, fontold meg az OsmAnd+ megvásárlását, vagy egy-egy funkció támogatását az osmand.net oldalon.</string>
-    <string name="osmand_plus_long_description_1000_chars">" OsmAnd+ (OSM Automated Navigation Directions)Az OsmAnd+ egy nyílt forráskódú navigációs alkalmazás az OpenStreetMap (OSM) adatainak széleskörű használatával. Bármelyik térképadat (vektoros és raszteres térképek) tárolható a készülék memóriakártyáján offline használatra. Az OsmAnd továbbá lehetővé teszi az offline és online útvonaltervezést is, részletes hangutasításokkal.Az OsmAnd+ az alkalmazás fizetős változata, aminek megvásárlásával támogatod a projektet, az új funkciók fejlesztésének finanszírozását és megkapod a legújabb frissítéseket.Néhány fontosabb funkció: - Teljesen offline működés (a letöltött vektoros és raszteres térképek az eszközön tárolódnak) - A kompakt, offline vektoros térképek az egész világhoz elérhetőek - Az ország vagy régió térképei letölthetők közvetlenül az alkalmazásból - Offline Wikipédia szócikkek letöltése, ami hasznos segítség városnézéshez - Számos rávetíthető térképréteg, mint GPX-ek, navigációs útvonalak, POI-k (érdekes helyek), kedvencek, szintvonalak, tömegközlekedési megállók, további térképek beállítható átlátszósággal - Címek és helyek offline kereshetősége - Offline útvonaltervezés közepes távolságokra - Autós, kerékpáros és gyalogos módok: - opcionális automata nappali/éjszakai nézetváltással - opcionális sebességfüggő nagyítással - opcionális térképforgatással a mozgás vagy az iránytű alapján - opcionális sávasszisztens, sebességhatár kijelzés, felvett és gépi hangutasítás "</string>
     <string name="osmand_plus_short_description_80_chars">Globális mobil térkép és navigáció, offline és online OSM térképekkel</string>
     <string name="avoid_motorway">Autópályák elkerülése</string>
 
@@ -924,7 +896,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="ending_point_too_far">A célpont közelében nem található út.</string>
     <string name="add_tag">Címke hozzáadása</string>
     <string name="btn_advanced_mode">Haladó mód…</string>
-    <string name="poi_filter_parking">Parkoló</string>
     <string name="poi_filter_emergency">Vészhelyzet</string>
     <string name="poi_filter_public_transport">Tömegközlekedés</string>
     <string name="poi_filter_entertainment">Szórakozás</string>
@@ -980,28 +951,20 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
 \nA globális adatok (az északi 70° és déli 70° szélesség között) az SRTM (Shuttle Radar Topography Mission) és az ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer) mérésein alapulnak, amely a NASA Earsh Observing System zászlóshajójának, a Terra műholdnak a képalkotó berendezése. Az ASTER a NASA, a Japán Gazdasági, Kereskedelmi és Ipari Minisztérium (METI), valamint a Japán Űrügynökség (J-spacesystems) közös projektje."</string>
 
 
-    <string name="recording_open_external_player">Külső lejátszó megnyitása</string>
     <string name="recording_delete_confirm">Szeretnéd törölni a felvételt?</string>
 
-    <string name="recording_unavailable">nem elérhető</string>
-    <string name="recording_can_not_be_played">A felvételt nem lehet lejátszani</string>
-    <string name="recording_context_menu_delete">Felvétel törlése</string>
     <string name="recording_context_menu_play">Lejátszás</string>
-    <string name="recording_default_name">Felvétel</string>
     <string name="shared_string_control_start">Indítás</string>
     <string name="osmand_srtm_short_description_80_chars">OsmAnd bővítmény kapcsolat nélküli szintvonalakhoz</string>
 
 
     <string name="map_widget_distancemeasurement">Távolságmérés</string>
-    <string name="av_use_external_recorder">Külső felvevő használata</string>
-    <string name="recording_error">A felvétel közben hiba történt </string>
     <string name="shared_string_control_stop">Leállítás</string>
     <string name="osmand_srtm_long_description_1000_chars">Ez a bővítmény egy szintvonal fedvényt és egy domborzatárnyékolás réteget biztosít, amelyek az OsmAnd normál térképein jelennek meg. Ezt a funkcionalitást nagyon fogják értékelni a sportolók, túrázók, nyomvonalrögzítők és mindenki, akiket a táj domborzati szerkezete érdekel. 
 \n 
 \nA globális adatok (az északi 70° és déli 70° szélesség között) az SRTM (Shuttle Radar Topography Mission) és az ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer) mérésein alapulnak, amely a NASA Earsh Observing System zászlóshajójának, a Terra műholdnak a képalkotó berendezése. Az ASTER a NASA, a Japán Gazdasági, Kereskedelmi és Ipari Minisztérium (METI), valamint a Japán Űrügynökség (J-spacesystems) közös projektje.</string>
     <string name="av_widget_action_descr">Vezérlőgomb alapértelmezett működési módja.</string>
     <string name="av_widget_action">Alapértelmezett mód</string>
-    <string name="recording_description">Felvétel %1$s %3$s %2$s</string>
     <string name="srtm_paid_version_msg">Kérlek fontold meg a Szintvonal bővítmény megvásárlását a Play Store-ban, ezzel támogatva a további fejlesztéseket.</string>
     <string name="srtm_paid_version_title">Szintvonal bővítmény</string>
 
@@ -1012,10 +975,7 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="clear_dest_confirm">Biztosan törlöd a célpontot (és a köztes célpontokat)?</string>
     <string name="precise_routing_mode_descr">Pontos útvonaltervező engedélyezése hibamentes, pontos útvonalak tervezéséhez. Jelenleg lassú, kis távolságokra működik.</string>
     <string name="precise_routing_mode">Pontos útvonaltervezés (kísérleti)</string>
-    <string name="recording_context_menu_show">Mutat</string>
-    <string name="recording_photo_description">Fénykép %1$s %2$s</string>
     <string name="av_def_action_picture">Fénykép készítése</string>
-    <string name="recording_context_menu_precord">Fénykép készítése</string>
 
 
     <string name="download_hillshade_maps">Domborzatárnyékolás</string>
@@ -1036,8 +996,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
 
     <string name="layer_hillshade">Domborzatárnyékolás réteg</string>
     <string name="map_widget_gps_info">GPS infó</string>
-    <string name="osmand_play_title_30_chars">OsmAnd térkép és navigáció</string>
-    <string name="osmand_plus_play_title_30_chars">OsmAnd+ térkép és navigáció</string>
 
 
     <string name="street_name">Utcanév</string>
@@ -1126,8 +1084,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="av_camera_focus_infinity">Végtelenre állított fókusz</string>
     <string name="av_camera_focus_macro">Makró (közeli) fókuszmód</string>
     <string name="av_camera_focus_continuous">A kamera folyamatosan próbál fókuszálni</string>
-    <string name="av_photo_play_sound">Hangjelzés elsütéskor</string>
-    <string name="av_photo_play_sound_descr">Válassz, hogy szeretnél-e hangjelzést fénykép készítésekor.</string>
     <string name="driving_region_descr">Vezetési területet kijelölése: USA, Európa, Egyesült Királyság, Ázsia és egyebek.</string>
     <string name="driving_region">Vezetési terület</string>
     <string name="driving_region_japan">Japán</string>
@@ -1710,7 +1666,6 @@ Afganisztán, Albánia, Algéria, Amerikai Egyesült Államok, Andorra, Anglia, 
     <string name="speak_pedestrian">Gyalogátkelőhelyek</string>
 
     <string name="save_track_to_gpx_globally_headline">Nyomvonalrögzítés igény szerint</string>
-    <string name="parking_place">Parkolóhely</string>
     <string name="gps_status">GPS-állapot</string>
     <string name="rendering_attr_streetLighting_name">Közvilágítás</string>
     <string name="proxy_pref_title">Proxy</string>
@@ -1775,13 +1730,11 @@ Afganisztán, Albánia, Algéria, Amerikai Egyesült Államok, Andorra, Anglia, 
     <string name="osm_edits">OSM szerkesztések</string>
     <string name="osmand_parking_hour">ó</string>
     <string name="osmand_parking_minute">perc</string>
-    <string name="osmand_parking_time_left">maradt</string>
     <string name="confirmation_to_clear_history">Szeretnéd törölni az előzményeket?</string>
     <string name="delay_to_start_navigation_descr">A hátralévő várakozási idő megadása az útvonaltervezés képernyőn.</string>
     <string name="delay_to_start_navigation">Turn-by-turn navigáció indítása ez után…</string>
     <string name="shared_string_go">Indítás</string>
 
-    <string name="parking_place_limited">A parkolási idő vége</string>
     <string name="your_edits">A szerkesztéseid</string>
     <string name="waypoint_visit_after">Megtekintés ez után:</string>
     <string name="simulate_your_location">Pozíció szimulálása</string>
@@ -1808,7 +1761,6 @@ Hosszúság: %2$s</string>
     <string name="current_route">Jelenlegi útvonal</string>
     <string name="osmo_grop_name_length_alert">A csoportnévnek legalább 3 karakter hosszúnak kell lennie!</string>
     <string name="local_osm_changes_upload_all_confirm">%1$d módosítást fogsz feltölteni OSM-re. Biztos vagy benne?</string>
-    <string name="osmand_parking_overdue">késés</string>
     <string name="waypoint_visit_before">Megtekintés ez előtt:</string>
     <string name="agps_info">A-GPS információk</string>
     <string name="agps_data_last_downloaded">Legutóbb letöltött A-GPS adatok: %1$s</string>
@@ -2491,7 +2443,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="quick_action_navigation_voice_off">Hang kikapcsolva</string>
     <string name="quick_action_navigation_voice_on">Hang bekapcsolva</string>
     <string name="quick_action_add_gpx">GPX útpont készítés</string>
-    <string name="quick_action_add_parking">Parkolóhely megjelölés</string>
     <string name="quick_action_new_action">Művelet hozzáadása</string>
     <string name="quick_action_edit_action">Művelet szerkesztése</string>
     <string name="quick_action_add_favorite">Kedvenc hely felvétele</string>
@@ -2505,7 +2456,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="quick_action_add_osm_bug_descr">A gomb megnyomásakor OSM Jegyzetet készít a képernyő közepén található helyen.</string>
     <string name="quick_action_add_poi_descr">A gomb megnyomásakor POI-t hoz létre a képernyő közepén található helyen.</string>
     <string name="quick_action_navigation_voice_descr">A gomb megnyomásával be- és kikapcsolható a navigáció közbeni hang.</string>
-    <string name="quick_action_add_parking_descr">A gomb megnyomásakor megjelöli a parkolási helyet a képernyő közepén található helyen.</string>
     <string name="quick_action_interim_dialog">Ideiglenes dialógusablak megjelenítése</string>
     <string name="favorite_autofill_toast_text">" elmentve ide: "</string>
     <string name="favorite_empty_place_name">Hely</string>
@@ -2624,7 +2574,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="do_not_send_anonymous_app_usage_desc">Az OsmAnd adatokat gyűjt arról, hogy az alkalmazás melyik részeit nyitod meg. Az alkalmazás soha nem küldi el a helyadataidat, és az alkalmazásba bevitt adatokat, valamint az általad megnézett, keresett vagy letöltött területek adatait sem.</string>
     <string name="do_not_show_startup_messages">Ne mutasson üzeneteket indításkor</string>
     <string name="do_not_show_startup_messages_desc">Alkalmazás akciókat és helyi események üzeneteit jeleníti meg.</string>
-    <string name="parking_options">Parkolási opciók</string>
     <string name="full_version_thanks">Köszönjük, hogy megvásároltad az OsmAnd teljes verzióját!</string>
     <string name="routing_attr_relief_smoothness_factor_name">Magasság ingadozásának kijelölése</string>
     <string name="right_side_navigation">Jobb oldali közlekedés</string>

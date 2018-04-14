@@ -1,10 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
 
-    <string name="recording_context_menu_show">Zobraziť</string>
-    <string name="recording_photo_description">Fotografia %1$s %2$s</string>
     <string name="av_def_action_picture">Zachytiť fotografiu</string>
-    <string name="recording_context_menu_precord">Zachytiť fotografiu</string>
     <string name="enable_plugin_monitoring_services">Na použitie služieb pre záznam pozície zapnite modul Zaznamenávanie výletov (záznam GPX, stopovanie naživo)</string>
     <string name="non_optimal_route_calculation">Vypočítať pravdepodobne neoptimálnu cestu s dlhšou vzdialenosťou</string>
     <string name="context_menu_item_last_intermediate_point">Určiť ako posledný prechodný bod</string>
@@ -20,7 +17,6 @@
     <string name="context_menu_item_intermediate_point">Pridať ako prechodný bod</string>
     <string name="map_widget_intermediate_distance">Prechodný bod</string>
     <string name="ending_point_too_far">Štartovací bod je príliš ďaleko od najbližšej cesty.</string>
-    <string name="poi_filter_parking">Parkovanie</string>
     <string name="poi_filter_emergency">Pomoc v núdzi</string>
     <string name="poi_filter_public_transport">Verejná doprava</string>
     <string name="poi_filter_entertainment">Zábava</string>
@@ -58,7 +54,6 @@
     <string name="map_widget_lock_screen">Zámok obrazovky</string>
     <string name="map_widget_compass">Kompas</string>
     <string name="map_widget_reset">Znovunastaviť štandardné</string>
-    <string name="map_widget_parking">Parkovanie</string>
     <string name="map_widget_monitoring">Záznam GPX</string>
     <string name="map_widget_speed">Rýchlosť</string>
     <string name="map_widget_distance">Cieľ</string>
@@ -757,29 +752,7 @@
     <string name="gpxup_identifiable">Identifikovateľná</string>
     <string name="gpxup_trackable">Stopovateľná</string>
     <string name="gpxup_private">Súkromná</string>
-    <string name="osmand_parking_event">Vyzdvihnúť auto z parkoviska</string>
-    <string name="osmand_parking_warning">Upozornenie</string>
-    <string name="osmand_parking_warning_text">Do kalendára bola pridaná pripomienka na vyzdvihnutie Vášho auta. Zostane tam, pokiaľ ju ručne nezmažete.</string>
-    <string name="osmand_parking_time_limit_title">Nastavte časový limit parkovania</string>
-    <string name="osmand_parking_delete_confirm">Chcete zmazať značku parkovacieho miesta?</string>
-    <string name="osmand_parking_delete">Zmazať parkovaciu značku</string>
-    <string name="osmand_parking_choose_type">Zvoľte typ parkovania</string>
-    <string name="osmand_parking_lim_text">Časovo obmedzené</string>
-    <string name="osmand_parking_no_lim_text">Časovo neobmedzené</string>
-    <string name="osmand_parking_add_event">Pridať pripomienku do aplikácie Kalendár</string>
-    <string name="osmand_parking_time_limit">Časovo obmedzené parkovanie</string>
-    <string name="osmand_parking_time_no_limit">Časovo neobmedzené parkovanie</string>
-    <string name="osmand_parking_position_description">Umiestnenie Vášho zaparkovaného auta. %1$s</string>
-    <string name="osmand_parking_position_description_add">Vyzdvihnúť auto o:</string>
-    <string name="osmand_parking_pm">popoludní</string>
-    <string name="osmand_parking_am">dopoludnia</string>
-    <string name="osmand_parking_position_name">Parkovacie miesto</string>
-    <string name="osmand_parking_plugin_description">Modul Parkovacie miesto umožňuje zapamätať si kde bolo auto zaparkované a koľko zostáva času (ak je parkovanie časovo obmedzené).
-
-Miesto aj čas zaparkovania môžete nájsť na nástroji na mape aj úvodnom paneli OsmAnd. Tiež je možné pridať pripomienku do kalendára.</string>
-    <string name="osmand_parking_plugin_name">Parkovacie miesto</string>
     <string name="context_menu_item_add_parking_point">Označiť ako parkovacie miesto</string>
-    <string name="context_menu_item_delete_parking_point">Zmazať parkovaciu značku</string>
     <string name="starting_point_too_far">Počiatočný bod je príliš ďaleko od najbližšej cesty.</string>
     <string name="shared_location">Zdieľané umiestnenie</string>
     <string name="global_app_allocated_memory_descr">Pridelená pamäť %1$s MB (Android limit %2$s MB, Dalvik %3$s MB).</string>
@@ -788,9 +761,6 @@ Miesto aj čas zaparkovania môžete nájsť na nástroji na mape aj úvodnom pa
 Proporčná pamäť %4$s MB (Limit Androidu %5$s MB, Dalvik %6$s MB).</string>
     <string name="native_app_allocated_memory">Celková natívna pamäť</string>
     <string name="select_animate_speedup">Vybrať zrýchlenie animovania trasy</string>
-    <string name="osmand_parking_hours">Hodín</string>
-    <string name="osmand_parking_minutes">Minút</string>
-    <string name="osmand_parking_position_description_add_time">Automobil je zaparkovaný na</string>
     <string name="use_compass_navigation_descr">Použiť kompas ak nie je zistený smer pohybu inak.</string>
     <string name="use_compass_navigation">Použiť kompas</string>
     <string name="route_updated_loc_found">Cesta bude prepočítaná, keď sa nájde umiestnenie</string>
@@ -812,49 +782,6 @@ Proporčná pamäť %4$s MB (Limit Androidu %5$s MB, Dalvik %6$s MB).</string>
     <string name="osmand_short_description_80_chars">OsmAnd je open source navigácia s offline aj online mapami</string>
     <string name="osmand_plus_short_description_80_chars">OsmAnd je open source navigácia s offline aj online mapami</string>
     <string name="rendering_attr_contourLines_description">Zobraziť od úrovne priblíženia (vyžaduje dátový súbor vrstevníc):</string>
-    <string name="osmand_long_description_1000_chars">"
- OsmAnd (OSM Automatizované navigačné pokyny)
-
-OsmAnd je open source navigačná aplikácia s prístupom k širokej škále globálnych dát OpenStreetMap (OSM). Všetky mapové podklady (vektorové alebo dlaždice máp) môžu byť uložené na karte pamäti telefónu pre offline použitie. OsmAnd tiež ponúka offline a online smerovacie funkcie, vrátane turn-by-turn hlasových pokynov.
-
-Niektoré z hlavných funkcií:
- - Kompletné funkcie v režime offline (uloženie stiahnutých vektorových alebo dlaždicových máp v úložisku zariadenia)
- - Kompaktné offline vektorové mapy pre celý svet - Stiahnutie máp pre krajinu alebo región priamo z aplikácie
- - Možné prekrytia niekoľkých mapových vrstiev ako GPX alebo navigačná trasa, body záujmu, obľúbené, vrstevnice, zastávky hromadnej dopravy, ďalšie mapy s prispôsobiteľnou priehľadnosťou
- - Offline vyhľadávanie adries a miest (POI)
- - Offline smerovanie (navigácia) pre stredné vzdialenosti
- - Režimy pre auto, bicykel a chodcov s:
- - voliteľným/automatickým denným / nočným režimom
- - voliteľné približovanie mapy v závislosti na rýchlosti
- - voliteľné otáčanie mapy podľa kompasu alebo smeru pohybu
- - voliteľne navádzanie do jazdných pruhov, zobrazenie obmedzenia rýchlosti, nahrané a TTS hlasy
-
-Obmedzenia tejto voľnej verzie OsmAndu:
- - Počet stiahnutí máp je obmedzený
- - Žiadny prístup k POI offline Wikipédii
-
-OsmAnd je aktívne vyvíjaný a náš projekt a jeho ďalší pokrok závisí od finančných príspevkov na financovanie rozvoja a testovanie nových funkcii. Prosím, zvážte nákup OsmAnd+, alebo financovanie konkrétnych nových funkcií (bidforfix) alebo všeobecný dar. Viac na www.osmand.net.
- "</string>
-    <string name="osmand_plus_long_description_1000_chars">"
- OsmAnd+ (OSM Automatizované navigačné pokyny)
-
-OsmAnd+ je open source navigačná aplikácia s prístupom k širokej škále globálnych dát OpenStreetMap (OSM). Všetky mapové podklady (vektorové alebo dlaždice máp) môžu byť uložené na karte pamäti telefónu pre offline použitie. OsmAnd tiež ponúka offline a online smerovacie funkcie, vrátane turn-by-turn hlasových pokynov.
-
-OsmAnd+ je platená verzia aplikácie. Jej zakúpením podporíte projekt, vývoj nových funkcií a získate najnovšie aktualizácie.
-
-Niektoré z hlavných funkcií:
- - Kompletné funkcie v režime offline (uloženie stiahnutých vektorových alebo dlaždicových máp v úložisku zariadenia)
- - Kompaktné offline vektorové mapy pre celý svet
- - Neobmedzené sťahovanie máp krajín a regiónov priamo z aplikácie
- - Možné prekrytia niekoľkých mapových vrstiev ako GPX alebo navigačná trasa, body záujmu, obľúbené, vrstevnice, zastávky hromadnej dopravy, ďalšie mapy s prispôsobiteľnou priehľadnosťou
- - Offline vyhľadávanie adries a miest (POI)
- - Offline smerovanie (navigácia) na stredné vzdialenosti
- - Režimy pre auto, bicykel a chodcov s:
- - voliteľným/automatickým denným / nočným režimom
- - voliteľné približovanie mapy v závislosti na rýchlosti
- - voliteľné otáčanie mapy podľa kompasu alebo smeru pohybu
- - voliteľne navádzanie do jazdných pruhov, zobrazenie obmedzenia rýchlosti, nahrané a TTS hlasy
- "</string>
     <string name="gps_not_available">Povoľte v nastaveniach GPS</string>
     <string name="map_widget_monitoring_services">Monitorovacie služby</string>
     <string name="no_route">Žiadna cesta</string>
@@ -887,16 +814,8 @@ Niektoré z hlavných funkcií:
     <string name="index_srtm_ele">Vrstevnice</string>
     <string name="av_widget_action_descr">Vybrať predvolenú akciu pre nástroj.</string>
     <string name="av_widget_action">Predvolená akcia pre nástroj</string>
-    <string name="av_use_external_recorder">Použiť externý rekordér</string>
-    <string name="recording_error">Vyskytla sa chyba pri nahrávaní </string>
-    <string name="recording_open_external_player">Otvoriť externý prehrávač</string>
     <string name="recording_delete_confirm">Chcete odstrániť tento záznam?</string>
-    <string name="recording_unavailable">nedostupné</string>
-    <string name="recording_can_not_be_played">Nahrávanie nemôže byť prehrané</string>
-    <string name="recording_context_menu_delete">Odstrániť záznam</string>
     <string name="recording_context_menu_play">Prehrať</string>
-    <string name="recording_description">Záznam %1$s %2$s %3$s</string>
-    <string name="recording_default_name">Nahrávka</string>
     <string name="osmand_srtm_short_description_80_chars">OsmAnd modul pre offline vrstevnice</string>
     <string name="osmand_srtm_long_description_1000_chars">Tento modul poskytuje vrstevnice a tieňované reliéfy, ktoré môžu byť zobrazené ponad štandardné mapy. Táto funkcia je vhodná pre atlétov, turistov, chodcov a všetkých, ktorých zaujíma reliéf terénu. 
 \n
@@ -932,8 +851,6 @@ Niektoré z hlavných funkcií:
     <string name="precise_routing_mode_descr">Umožní výpočet presnej trasy bez závad. Výpočet je však zatiaľ obmedzený na menšiu vzdialenosť a je pomalší.</string>
     <string name="map_widget_gps_info">Informácie o GPS</string>
     <string name="layer_hillshade">Vrstva s tieňovaným reliéfom</string>
-    <string name="osmand_play_title_30_chars">OsmAnd mapy a navigácia</string>
-    <string name="osmand_plus_play_title_30_chars">OsmAnd+ mapy a navigácia</string>
     <string name="street_name">Názov ulice</string>
     <string name="hno">Číslo domu</string>
     <string name="monitoring_settings">Zaznamenávanie výletu</string>
@@ -1036,8 +953,6 @@ Niektoré z hlavných funkcií:
     <string name="av_camera_focus_infinity">Ostrenie je nastavené na nekonečno</string>
     <string name="av_camera_focus_macro">Makro (z blízka) režim ostrenia</string>
     <string name="av_camera_focus_continuous">Fotoaparát sa bude pokúšať ostriť priebežne</string>
-    <string name="av_photo_play_sound">Prehrať zvuk pri zachytení snímky</string>
-    <string name="av_photo_play_sound_descr">Zvoľte, či sa má prehrať zvuk pri odfotografovaní snímky.</string>
     <string name="edit_tilesource_elliptic_tile">Eliptický mercator</string>
     <string name="base_world_map">Základná mapa sveta</string>
     <string name="map_magnifier">Zväčšenie mapy</string>
@@ -1552,7 +1467,6 @@ Chcete pokračovať v novej registrácii?</string>
     <string name="version_settings_descr">Stiahnuť vývojové verzie.</string>
     <string name="version_settings">Verzie</string>
     <string name="points">Body</string>
-    <string name="parking_place">Miesto zaparkovania</string>
     <string name="remove_the_tag">ODSTRÁNIŤ ZNAČKU</string>
     <string name="gps_status">Stav GPS</string>
     <string name="edit_group">Upraviť skupinu</string>
@@ -1683,15 +1597,12 @@ Dĺžka %2$s</string>
     <string name="osm_edits">Zmeny v OSM</string>
     <string name="osmand_parking_hour">h</string>
     <string name="osmand_parking_minute">min</string>
-    <string name="osmand_parking_time_left">zostáva</string>
-    <string name="parking_place_limited">Čas parkovania obmedzený na</string>
     <string name="your_edits">Vaše zmeny</string>
     <string name="waypoint_visit_after">Navštíviť po</string>
     <string name="waypoint_visit_before">Navštíviť pred</string>
     <string name="shared_string_collapse">Skryť</string>
     <string name="local_osm_changes_upload_all_confirm">Idete odoslať %1$d zmien do OSM. Ste si istí?</string>
     <string name="confirmation_to_clear_history">Chcete vymazať celú históriu?</string>
-    <string name="osmand_parking_overdue">prekročený čas</string>
     <string name="osmo_grop_name_length_alert">Názov skupiny by mal mať aspoň 3 písmená!</string>
     <string name="confirm_usage_speed_cameras">Vo viacerých krajinách (ako Nemecko, Francúzsko, Taliansko) je použitie varovaní pred rýchlostnými radarmi/kamerami zakázané zákonom. OsmAnd nepreberá žiadnu zodpovednosť ak porušíte zákon. Povoľte funkciu oznamovania len ak ste na to oprávnený.</string>
     <string name="welmode_download_maps">Stiahnuť mapy</string>
@@ -2353,7 +2264,6 @@ Ak máte radi OsmAnd a OSM a chcete ich podporiť, toto je výborný spôsob ako
     <string name="quick_action_navigation_voice_off">Hlas je vypnutý</string>
     <string name="quick_action_navigation_voice_on">Hlas je zapnutý</string>
     <string name="quick_action_add_gpx">Pridať medzicieľ GPX</string>
-    <string name="quick_action_add_parking">Pridať miesto zaparkovania</string>
     <string name="quick_action_new_action">Pridať akciu</string>
     <string name="quick_action_edit_action">Upraviť akciu</string>
     <string name="quick_action_add_favorite">Pridať obľúbený bod</string>
@@ -2382,7 +2292,6 @@ Zodpovedá oblasti: %1$s x %2$s</string>
     <string name="quick_action_add_osm_bug_descr">Aktivovaním tlačidla akcie sa pridá OSM poznámka do stredu obrazovky.</string>
     <string name="quick_action_add_poi_descr">Aktivovaním tlačidla akcie sa pridá bod záujmu (POI) do stredu obrazovky.</string>
     <string name="quick_action_navigation_voice_descr">Aktivovaním tlačidla akcie sa vypnú alebo zapnú hlasové pokyny počas navigácie.</string>
-    <string name="quick_action_add_parking_descr">Aktivovaním tlačidla akcie sa pridá miesto zaparkovania do stredu obrazovky.</string>
     <string name="quick_action_interim_dialog">Zobraziť dočasné okno</string>
     <string name="favorite_autofill_toast_text">" je uložený do "</string>
     <string name="favorite_empty_place_name">Miesto</string>
@@ -2496,7 +2405,6 @@ Zodpovedá oblasti: %1$s x %2$s</string>
     <string name="do_not_send_anonymous_app_usage_desc">OsmAnd zbiera informácie o tom, ktoré časti aplikácie otvárate. Nikdy sa neodosiela vaša poloha ani nič čo zapíšete do aplikácie ani detaily o oblastiach, ktoré si prezeráte, hľadáte alebo sťahujete.</string>
     <string name="do_not_show_startup_messages">Nezobrazovať oznamy pri štarte</string>
     <string name="do_not_show_startup_messages_desc">Zakáže zobrazovanie zľav aplikácie a oznamov o miestnych udalostiach.</string>
-    <string name="parking_options">Možnosti parkovania</string>
     <string name="full_version_thanks">Ďakujeme za zakúpenie plnej verzie OsmAnd!</string>
     <string name="routing_attr_relief_smoothness_factor_name">Zvoľte fluktuáciu nadmorskej výšky</string>
     <string name="right_side_navigation">Jazdenie po pravej strane</string>
@@ -2506,19 +2414,6 @@ Zodpovedá oblasti: %1$s x %2$s</string>
  OsmAnd (OSM Automated Navigation Directions - Automatizované navigačné pokyny) je mapová a navigačná aplikácia s prístupom k voľným a kvalitným celosvetovým údajom z OpenStreetMap (OSM).
 
  Používajte hlasovú aj optickú navigáciu, zobrazenie bodov záujmu, vytváranie a spravovanie GPX stôp, znázornenie vrstevníc a nadmorskej výšky (pomocou doplnkového modulu), režimy auta, cyklistu a chodca, editáciu OSM a omnoho viac.
- "</string>
-    <string name="osmand_extended_description_part2">"
- GPS navigácia
- • Môžete si vybrať medzi režimom online (rýchla) alebo offline (bez poplatkov za roaming v zahraničí)
- • Hlasové navádzanie po jednotlivých zákrutách vás prevedú trasou (nahraté aj syntetizované hlasy)
- • Automatické prepočítanie trasy ak sa odchýlite z trasy
- • Navádzanie v jazdných pruhoch, zobrazenie názvov ulíc a odhadovaný čas do cieľa
- • Pre bezpečnejšiu jazdu sa automaticky prepína denný a nočný režim
- • Môžete zobraziť obmedzenia rýchlosti a dostať upozornenie pri ich prekročení
- • Priblíženie mapy sa prispôsobuje rýchlosti
- • Vyhľadávanie miest podľa adresy, typu (napr.: reštaurácie, hotely, čerpacie stanice, múzeá) alebo zemepisných súradníc
- • Umožňuje zadať prechodné body trasy
- • Môžete nahrať a odoslať GPX stopu a nasledovať ju
  "</string>
     <string name="osmand_extended_description_part3">"
  Mapa

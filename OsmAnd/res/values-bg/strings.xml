@@ -103,10 +103,7 @@
     <string name="clear_dest_confirm">Наистина ли искате да изтриете крайната цел (и междинните точки)?</string>
     <string name="precise_routing_mode_descr">Прецизното изчисляване на маршрута. Все още е ограничено по дистанция и е по-бавно.</string>
     <string name="precise_routing_mode">Прецизно изчисляване на маршрута (алфа)</string>
-    <string name="recording_context_menu_show">Покажи</string>
-    <string name="recording_photo_description">Снимка %1$s %2$s</string>
     <string name="av_def_action_picture">Направете снимка</string>
-    <string name="recording_context_menu_precord">Направете снимка</string>
     <string name="dropbox_plugin_description">Dropbox приставката ви позволява да синхронизирате следите и аудио/видео бележките с вашия dropbox акаунт.</string>
     <string name="dropbox_plugin_name">Приставка Dropbox</string>
 
@@ -116,19 +113,11 @@
     <string name="av_def_action_choose">Избери при заявка</string>
     <string name="av_widget_action_descr">Изберете действие по подразбиране</string>
     <string name="av_widget_action">Действие по подразбиране</string>
-    <string name="av_use_external_recorder">Използване на вграденото видео</string>
     <string name="av_use_external_camera_descr">Използване на вграденото приложение за камерата</string>
     <string name="av_use_external_camera">Използване на камерата</string>
-    <string name="recording_error">Възникна грешка при запис </string>
-    <string name="recording_open_external_player">Отваряне на външен плеър</string>
     <string name="recording_delete_confirm">Искате ли да изтриете този запис?</string>
 
-    <string name="recording_unavailable">недостъпно</string>
-    <string name="recording_can_not_be_played">Записът не може да бъде изпълнен</string>
-    <string name="recording_context_menu_delete">Изтриване на запис</string>
     <string name="recording_context_menu_play">Старт</string>
-    <string name="recording_description">Запис %1$s %3$s %2$s</string>
-    <string name="recording_default_name">Запис</string>
     <string name="shared_string_control_stop">Стоп</string>
     <string name="shared_string_control_start">Старт</string>
     <string name="osmand_srtm_short_description_80_chars">Добавка на OsmAnd за офлайн контурни линии</string>
@@ -194,7 +183,6 @@
     <string name="ending_point_too_far">Крайната цел е твърде далеч от най-близкия път.</string>
     <string name="add_tag">Добави таг</string>
     <string name="btn_advanced_mode">Разширен режим…</string>
-    <string name="poi_filter_parking">Паркинг</string>
     <string name="poi_filter_emergency">Спешна помощ</string>
     <string name="poi_filter_public_transport">Обществен транспорт</string>
     <string name="poi_filter_entertainment">Забавления</string>
@@ -215,14 +203,9 @@
     <string name="snap_to_road_descr">Позицията да се придържа към пътя по време на пътуване</string>
     <string name="snap_to_road">Придържай мястото към пътя</string>
 
-    <string name="osmand_play_title_30_chars">OsmAnd за карти и навигация</string>
     <string name="osmand_short_description_80_chars">Мобилни карти и навигация от OSM</string>
-    <string name="osmand_long_description_1000_chars">" OsmAnd (OSM Automated Navigation Directions) OsmAnd е отворено приложение за навигация с достъп до широк спектър от данни на OpenStreetMap (OSM). Всички данни (векторни или графични карти) могат да бъдат съхранявани в картата памет на телефона за офлайн използване. OsmAnd предлага офлайн и онлайн маршрутизация, включително гласова навигация завой-по-завой. Някои от основните функции: - Пълна офлайн функционалност (съхранение на свалените карти в устройството) - Компактни офлайн векторни карти за целия свят на разположение - Сваляне на карти за държава или регион директно от приложението - Наслагване на няколко слоя карти са възможни, като GPX файлове, POI, контурни линии, спирки на общ. транспорт, допълнителни карти с адаптивна прозрачност - Офлайн търсене на адреси и места (POI) - Офлайн маршрутизация за кратки разстояния (експериментален) - Режими: Автомобил, велосипед или пешеходец със съответните опции: - възможност за дневен/нощен изглед - мащабиране в зависимост от скоростта - ориентация на картата според компаса или по посоката на движение - допълнително ориентиране по ленти, предупреждения за ограничения на скоростта, записани и синтезирани гласове Ограничения на тази безплатна версия на OsmAnd: - Ограничен брой сваляния на карти - Няма достъп до Уикипедия POI в офлайн режим OsmAnd активно се разработва и нашия проект и неговия по-нататъшен напредък разчита на финансовите вноски за развитието и тестването на нови функционалности. Моля, помислете за закупуване на OsmAnd+, или финансиране на специфични нови функции или провеждане на общо дарение на osmand.net. "</string>
-    
-    <string name="osmand_plus_play_title_30_chars">OsmAnd+ Карти и Навигация</string>
+
     <string name="osmand_plus_short_description_80_chars">Мобилно приложение за разглеждане на карти и навигация ползващо данни от OSM</string>
-	<string name="osmand_plus_long_description_1000_chars">" OsmAnd+ (OSM Automated Navigation Directions) OsmAnd+ е отворено приложение за навигация с достъп до широк спектър от данни на OpenStreetMap (OSM). Всички данни (векторни или графични карти) могат да бъдат съхранявани в картата памет на телефона за офлайн използване. OsmAnd предлага офлайн и онлайн маршрутизация, включително гласова навигация завой-по-завой. OsmAnd+ е платената версия, като го купувате Вие подкрепят проекта, разработването на нови функции и получавате най-новите актуализации. Някои от основните функции: - Пълна офлайн функционалност (съхранение на свалените карти в устройството) - Компактни офлайн векторни карти за целия свят на разположение - Неограничено сваляне на карти по държави или региони директно от приложението - Офлайн показване на статии от Уикипедия (необходимо е да изтеглите Уикипедия POIs), чудесно за разглеждане на забележителности - Наслагване на няколко слоя карти са възможни, като GPX файлове, POI, контурни линии, спирки на общ. транспорт, допълнителни карти с адаптивна прозрачност - Офлайн търсене на адреси и места (POI) - Офлайн маршрутизация за кратки разстояния (експериментален) - Режими: Автомобил, велосипед или пешеходец със съответните опции: - възможност за дневен/нощен изглед - мащабиране в зависимост от скоростта - ориентация карта според компас или посоката на движение - допълнително ориентиране по ленти, предупреждения за ограничения на скоростта, записани и синтезирани гласове "</string>
-    
 
 
     <string name="filterpoi_activity">Създаване на филтър за POI</string>
@@ -263,7 +246,6 @@
     <string name="map_widget_reset">Начални настройки</string>
 
 
-    <string name="map_widget_parking">Паркинг</string>
     <string name="map_widget_monitoring">GPX проследяване</string>
     <string name="map_widget_speed">Скорост</string>
     <string name="map_widget_distance">Крайна цел</string>
@@ -282,9 +264,6 @@
     <string name="avoid_toll_roads">Избягване на платени пътища</string>
     <string name="continue_follow_previous_route_auto">Последната навигация не е завършена. Да се продължи ли? (%1$s секунди)</string>
     <string name="route_updated_loc_found">Маршрутът ще бъде изчислен след намиране на вашето място</string>
-    <string name="osmand_parking_hours">Часа</string>
-    <string name="osmand_parking_minutes">Минути</string>
-    <string name="osmand_parking_position_description_add_time">Паркирахте на</string>
 
     <string name="select_animate_speedup">Изберете скорост за симулацията</string>
     <string name="global_app_allocated_memory_descr">Памет за приложението %1$s MB (Ограничение за Android: %2$s MB, Dalvik: %3$s MB).</string>
@@ -295,27 +274,7 @@
 
     <string name="starting_point_too_far">Началната позиция е твърде далеч от път.</string>
     <string name="shared_location">Споделено място</string>
-    <string name="osmand_parking_event">Вземете колата от паркинга</string>
-    <string name="osmand_parking_warning">Предупреждение</string>
-    <string name="osmand_parking_warning_text">Предупреждението за вземане на колата е добавено във Вашия календар. Ще остане там, докато не го изтриете ръчно.</string>
-    <string name="osmand_parking_time_limit_title">Настройте ограничението по време</string>
-    <string name="osmand_parking_delete_confirm">Да се изтрие ли позицията на паркираната кола?</string>
-    <string name="osmand_parking_delete">Изтриване на маркера за паркинг</string>
-    <string name="osmand_parking_choose_type">Изберете вид на паркинга</string>
-    <string name="osmand_parking_lim_text">Ограничено по време</string>
-    <string name="osmand_parking_no_lim_text">Неограничено време</string>
-    <string name="osmand_parking_add_event">Добавяне на предупреждение във Вашия календар</string>
-    <string name="osmand_parking_time_limit">Ограничено по време паркиране</string>
-    <string name="osmand_parking_time_no_limit">Неограничено по време паркиране</string>
-    <string name="osmand_parking_position_description">Мястото на Вашия автомобил. %1$s</string>
-    <string name="osmand_parking_position_description_add">Вземете Вашия автомобил в:</string>
-    <string name="osmand_parking_pm">сл. обяд</string>
-    <string name="osmand_parking_am">сутринта</string>
-    <string name="osmand_parking_position_name">Паркинг</string>
-    <string name="osmand_parking_plugin_description">Добавката Ви помага за подсеща къде сте паркирали, а също и подсказва колко време Ви остава (ако сте платили за опеделен период). Локацията и оставащото време са видими в OsmAnd и в джаджа на самата карта. Можете да добавите и аларма в календара.</string>
-    <string name="osmand_parking_plugin_name">Място на паркиране</string>
     <string name="context_menu_item_add_parking_point">Маркирайте като място на паркиране</string>
-    <string name="context_menu_item_delete_parking_point">Изтриване на маркера за паркиране</string>
     <string name="gpxup_public">Public (обществен)</string>
     <string name="gpxup_identifiable">Identifiable (разпознаваем)</string>
     <string name="gpxup_trackable">Trackable (проследим)</string>
@@ -1094,8 +1053,6 @@
     <string name="av_camera_focus_infinity">Безкрайност (infinity)</string>
     <string name="av_camera_focus_macro">Макро (close-up)</string>
     <string name="av_camera_focus_continuous">Камерата се опитва да фокусира</string>
-    <string name="av_photo_play_sound">Мелодия при снимане</string>
-    <string name="av_photo_play_sound_descr">Възпроизвеждане на звук или мелодия при снимане</string>
     <string name="announce_gpx_waypoints">GPX точки</string>
     <string name="speak_title">Обявяване…</string>
     <string name="speak_street_names">Имена на улици (синтезиран глас)</string>
@@ -1390,15 +1347,12 @@
     <string name="confirmation_to_clear_history">Искате ли да изчистите хронологията?</string>
     <string name="delay_to_start_navigation">Стартиране на навигацията след…</string>
     <string name="shared_string_go">Старт</string>
-    <string name="osmand_parking_overdue">просрочено</string>
     <string name="action_create">Създадено</string>
     <string name="action_modify">Променено</string>
     <string name="action_delete">Изтрито</string>
     <string name="osm_edits">OSM редакции</string>
     <string name="osmand_parking_hour">ч</string>
     <string name="osmand_parking_minute">мин</string>
-    <string name="parking_place_limited">Времето за паркиране е ограничено до</string>
-    <string name="osmand_parking_time_left">ляво</string>
     <string name="your_edits">Редакциите ви</string>
     <string name="waypoint_visit_after">Посетете след</string>
     <string name="waypoint_visit_before">Посетете преди</string>
@@ -1450,7 +1404,6 @@
     <string name="rendering_attr_pisteRoutes_name">Ски писти</string>
     <string name="free">"Свободни %1$s "</string>
     <string name="device_memory">Памет на устройството</string>
-    <string name="parking_place">Паркинг място</string>
     <string name="remove_the_tag">ПРЕМАХНИ ЕТИКЕТА</string>
     <string name="gps_status">GPS статус</string>
     <string name="version_settings_descr">Сваляне на бета версии</string>

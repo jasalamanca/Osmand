@@ -30,7 +30,6 @@
     <string name="ending_point_too_far">Punctul terminus este prea departe de vreun drum.</string>
     <string name="add_tag">Adaugă etichetă</string>
     <string name="btn_advanced_mode">Mod avansat…</string>
-    <string name="poi_filter_parking">Parcare</string>
     <string name="poi_filter_emergency">Servicii de Urgență</string>
     <string name="poi_filter_public_transport">Transport public</string>
     <string name="poi_filter_entertainment">Divertisment</string>
@@ -52,16 +51,10 @@
 	<string name="snap_to_road">Poziționează pe drum</string>
 	
 	<string name="osmand_short_description_80_chars">OsmAnd este o aplicație open source pentru navigare cu hărți offline și online</string>
-	<string name="osmand_long_description_1000_chars">
-		OsmAnd (OSM Automated Navigation Directions) OsmAnd este o aplicatie open source cu acces la o gamă variată de date de la OpenStreetMap (OSM). Harta în format vectorial sau raster se poate stoca în memoria telefonului (pe card) pentru uz offline. OsmAnd poate calcula ruta atât offline căt și online și oferă ghidare vocală. Câteva dintre funcții: - Poate funcționa offline - se pot stoca hărți vectoriale sau raster într-un director la alegere - Sunt disponibile hărți vectoriale în format compact - Se pot descărca harți ale țării sau regiunii direct din aplicație - Se pot folosi diverse straturi ale hărților precum rute si trasee GPX, POI, favorite, linii de contur, stații ale transportului public, hărți suplimentare cu grad de transparență selectabil - Căutare offline de adrese și POI - Rutare offline pe distanțe scurte (experimental) - Mod de deplasare cu mașina, bicicleta sau pieton opțional cu: * comutare automată zi/noapte * zoom dependent de viteză * aliniere hartă funcție de busolă și de direcția de deplasare * orientare pe benzile de circulație, afișare viteză, voce înregistrată sau TTS Restrângerile variantei gratuite al aplicației OsmAnd: - Numărul de hărți descărcate este limitat - Nu se pot accesa offline lista de POI de la Wikipedia OsmAnd este o aplicație în dezvoltare iar progresul său se bazează pe contribuții financiare pentru implementarea de noi funcționalități. Vă rugăm să aveți în vedere achiziționarea aplicației OsmAnd+, finanțarea unor anume funcționalități sau să faceți o donație la osmand.net.
-	</string>
-	<string name="osmand_plus_short_description_80_chars">OsmAnd+ este o aplicație open source pentru navigare cu hărți offline și online</string>
-	<string name="osmand_plus_long_description_1000_chars">
-		OsmAnd+ (OSM Automated Navigation Directions) OsmAnd+ este o aplicație open source cu acces la o gamă variată de date de la OpenStreetMap (OSM). Harta în format vectorial sau raster se poate stoca în memoria telefonului (pe card) pentru uz offline. OsmAnd poate calcula ruta atât offline cât și online și oferă ghidare vocală. OsmAnd+ este versiunea comercială, prin achiziționarea ei susțineți proiectul, finanțați dezvoltarea de noi funcționalități și primiți cele mai recente versiuni. Câteva dintre funcții: - Poate funcționa offline - se pot stoca hărți vectoriale sau raster într-un director la alegere - Sunt disponibile hărți vectoriale în format compact - Se pot descărca hărți ale țării sau regiunii direct din aplicație - Se pot folosi diverse straturi ale hărților precum rute si trasee GPX, POI, favorite, linii de contur, stații ale transportului public, hărți suplimentare cu grad de transparență selectabil - Căutare offline de adrese și POI - Rutare offline pe distanțe scurte (experimental) - Mod de deplasare cu mașina, bicicleta sau pieton opțional cu: * comutare automată zi/noapte * zoom dependent de viteză * aliniere hartă funcție de busolă și de direcția de deplasare * orientare pe benzile de circulație, afișare viteză, voce înregistrată sau Text To Speech
-	</string>
-	
-	
-	<string name="filterpoi_activity">Creează filtru POI</string>
+    <string name="osmand_plus_short_description_80_chars">OsmAnd+ este o aplicație open source pentru navigare cu hărți offline și online</string>
+
+
+    <string name="filterpoi_activity">Creează filtru POI</string>
 	<string name="recalculate_route_to_your_location">Mod de transport:</string>
 	<string name="select_navigation_mode">Selectează modul de transport</string>
 	
@@ -100,10 +93,9 @@
 	<string name="map_widget_compass">Busolă</string>
 	
 	<string name="map_widget_reset">Resetează la implicit</string>
-	
-	
-	<string name="map_widget_parking">Parcare</string>
-	<string name="map_widget_monitoring">Înregistrare GPX</string>
+
+
+    <string name="map_widget_monitoring">Înregistrare GPX</string>
 	<string name="map_widget_speed">Viteză</string>
 	<string name="map_widget_distance">Distanța până la destinație</string>
 	<string name="map_widget_altitude">Altitudine</string>
@@ -121,11 +113,8 @@
 	<string name="avoid_toll_roads">Evită drumuri cu taxă</string>
 	<string name="continue_follow_previous_route_auto">"Navigarea anterioară nu s-a încheiat. Doriți s-o continuați (implicit \'Da\')?  (%1$s seconds)"</string>
 	<string name="route_updated_loc_found">Ruta va fi calculată când se va stabili poziția curentă</string>
-	<string name="osmand_parking_hours">Ore</string>
-	<string name="osmand_parking_minutes">Minute</string>
-	<string name="osmand_parking_position_description_add_time">Mașina a fost parcată la:</string>
-	
-	<string name="select_animate_speedup">Selecție accelerare simulare rută</string>
+
+    <string name="select_animate_speedup">Selecție accelerare simulare rută</string>
     	<string name="global_app_allocated_memory_descr">Memorie alocată %1$s MB (limita Android %2$s MB, Dalvik %3$s MB).</string>
 	<string name="global_app_allocated_memory">Memorie alocată</string>
 	<string name="native_app_allocated_memory_descr">Total memorie nativă alocată de aplicație %1$s MB (Dalvik %2$s MB, other %3$s MB).
@@ -134,28 +123,8 @@
 	
 	<string name="starting_point_too_far">Punctul de pornire este prea departe de vreun drum.</string>
 	<string name="shared_location">Poziție comună</string>
-	<string name="osmand_parking_event">Luați mașina din parcare</string>
-	<string name="osmand_parking_warning">Atenție</string>
-	<string name="osmand_parking_warning_text">Notificarea de a lua mașina a fost deja adăugată în calendar. Va rămâne acolo până ce va fi ștearsă manual.</string>    
-	<string name="osmand_parking_time_limit_title">Setați timpul limită a parcării</string>
-	<string name="osmand_parking_delete_confirm">Doriți să ștergeți poziția unde ați parcat mașina?</string>
-	<string name="osmand_parking_delete">Ștergeți un marker de parcare</string>
-	<string name="osmand_parking_choose_type">Alegeți tipul parcării</string>
-	<string name="osmand_parking_lim_text">Cu timp limitat</string>
-	<string name="osmand_parking_no_lim_text">Cu timp nelimitat</string>
-	<string name="osmand_parking_add_event">Adaugă o notificare în Calendar</string>
-	<string name="osmand_parking_time_limit">Parcare cu timp limitat</string>
-	<string name="osmand_parking_time_no_limit">Parcare cu timp nelimitat</string>
-	<string name="osmand_parking_position_description">Poziția mașinii dvs. parcate. %1$s</string>
-	<string name="osmand_parking_position_description_add">De ridicat mașina la:</string>
-	<string name="osmand_parking_pm">PM</string>
-	<string name="osmand_parking_am">AM</string>
-	<string name="osmand_parking_position_name">Locul de parcare</string>
-	<string name="osmand_parking_plugin_description">Acest plugin permite memorarea locului unde ați parcat mașina.</string>
-	<string name="osmand_parking_plugin_name">Plugin poziție parcare</string>
-	<string name="context_menu_item_add_parking_point">Marchează ca poziție parcare</string>
-	<string name="context_menu_item_delete_parking_point">Ștergeți un marker de parcare</string>
-	<string name="gpxup_public">Public</string>
+    <string name="context_menu_item_add_parking_point">Marchează ca poziție parcare</string>
+    <string name="gpxup_public">Public</string>
 	<string name="gpxup_identifiable">Identificabil</string>
 	<string name="gpxup_trackable">Poate fi urmărit</string>
 	<string name="gpxup_private">Privat</string>
@@ -991,14 +960,8 @@
     <string name="download_srtm_maps">Hărți SRTM</string>
 
 
-    <string name="recording_open_external_player">Deschide player extern</string>
     <string name="recording_delete_confirm">Doriți să ștergeți această înregistrare?</string>
-    
-    <string name="recording_unavailable">indisponibilă</string>
-    <string name="recording_can_not_be_played">Înregistrarea nu poate fi redată</string>
-    <string name="recording_context_menu_delete">Șterge înregistrarea</string>
-    <string name="recording_description">Înregistrarea %1$s %3$s %2$s</string>
-    <string name="recording_default_name">Înregistrare</string>
+
     <string name="shared_string_control_stop">Stop</string>
     <string name="shared_string_control_start">Start</string>
     <string name="osmand_srtm_short_description_80_chars">Plugin OsmAnd pentru linii de contur offline</string>
@@ -1011,8 +974,6 @@
     <string name="srtm_paid_version_title">Plugin linii de nivel</string>
     <string name="av_widget_action_descr">Selectați acțiunea implicită a iconiței</string>
     <string name="av_widget_action">Acțiune implicită iconiță</string>
-    <string name="av_use_external_recorder">Folosește aplicație externă pentru înregistrare</string>
-    <string name="recording_error">Eroare la înregistrare </string>
     <string name="dropbox_plugin_description">Plugin-ul Dropbox permite sincronizarea traseelor și fișierelor audio/video cu contul dvs. de la dropbox.com.</string>
     <string name="dropbox_plugin_name">Plugin Dropbox</string>
     
@@ -1146,10 +1107,7 @@
     <string name="stop_routing_confirm">Sigur doriți să opriți navigarea?</string>
     <string name="clear_dest_confirm">Sigur doriți să ștergeți punctul de destinație (și puncte intermediare)?</string>
     <string name="precise_routing_mode">Rutare precisă (alpha)</string>
-    <string name="recording_context_menu_show">Afișează</string>
-    <string name="recording_photo_description">Poza %1$s %2$s</string>
     <string name="av_def_action_picture">Faceți o poză</string>
-    <string name="recording_context_menu_precord">Faceți o poză</string>
     <string name="use_displayed_track_for_navigation">Doriți să utilizați traseul afișat pentru navigare?</string>
     <string name="keep_and_add_destination_point">Adaugă ca și punct destinație</string>
     <string name="shared_string_select_on_map">Selectează pe hartă</string>
@@ -1277,8 +1235,7 @@
 	<string name="av_camera_focus_infinity">Focalizarea este setata la infinit</string>
 	<string name="av_camera_focus_macro">Macro(de aproape) mod de focalizare</string>
 	<string name="av_camera_focus_continuous">Camera focalizează in mod continuu</string>
-	<string name="av_photo_play_sound">Sunet la fotografiere</string>
-	<string name="rendering_attr_hideWoodScrubs_name">Ascunde paduri si arbori</string>
+    <string name="rendering_attr_hideWoodScrubs_name">Ascunde paduri si arbori</string>
     <string name="gpx_info_diff_altitude">Limită altitudine: %1$s</string>
 	<string name="gpx_info_asc_altitude">Coboară/urcă: %1$s</string>
     <string name="gpx_timespan">Interval de timp: %1$s</string>
@@ -1778,15 +1735,12 @@
     <string name="delay_to_start_navigation_descr">Specifică timpul de așteptare pentru a rămâne pe ecran planificarea traseului</string>
     <string name="delay_to_start_navigation">Începe navigarea rând pe rând după…</string>
     <string name="shared_string_go">Pleacă</string>
-    <string name="osmand_parking_overdue">Întârziat</string>
     <string name="action_create">Action create</string>
     <string name="action_modify">Modificat</string>
     <string name="action_delete">Șters</string>
     <string name="osm_edits">Editări OSM</string>
     <string name="osmand_parking_hour">h</string>
     <string name="osmand_parking_minute">min</string>
-    <string name="parking_place_limited">Timp de parcare limitat la</string>
-    <string name="osmand_parking_time_left">stânga</string>
     <string name="your_edits">Editările tale</string>
     <string name="waypoint_visit_after">Vizitează după</string>
     <string name="waypoint_visit_before">Vizitează înainte</string>

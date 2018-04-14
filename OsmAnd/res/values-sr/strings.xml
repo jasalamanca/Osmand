@@ -3,9 +3,8 @@
     <string name="about_version">Верзија:</string>
     <string name="shared_string_about">Oko</string>
     <string name="about_settings_descr">Верзија инфо, лиценце, чланови пројекта</string>
-    
-    <string name="av_photo_play_sound_descr">Изаберите да ли да се чује звук приликом снимања фотографија</string>
-<string name="av_camera_focus_infinity">Фокус је подешен на бесконачно</string>
+
+    <string name="av_camera_focus_infinity">Фокус је подешен на бесконачно</string>
 	<string name="av_camera_focus_macro">Макро режим фокуса</string>
 	<string name="av_camera_focus_auto">Ауто фокус</string>
 	<string name="shared_string_delete_all">Обриши све</string>
@@ -79,12 +78,8 @@
     <string name="files_limit">%1$d фајлова остало</string>
     <string name="available_downloads_left">Доступно %1$d датотека за преузимање</string>
     <string name="install_paid">Пуна верзија</string>
-    <string name="recording_error">Дошло је до грешке приликом снимања </string>
     <string name="recording_delete_confirm">Да ли желите да уклоните овај снимак ?</string>
-    <string name="recording_unavailable">недоступан</string>
-    <string name="recording_context_menu_delete">Обриши запис</string>
     <string name="recording_context_menu_play">Репродукуј</string>
-    <string name="recording_default_name">Снимање</string>
     <string name="shared_string_control_start">Почни</string>
     <string name="map_widget_distancemeasurement">Мерење удаљености</string>
 
@@ -205,10 +200,7 @@
     
     <string name="max_speed_none">ниједан</string>
     <string name="stop_routing_confirm">Да ли сте сигурни да желите да прекинете навигацију?</string>
-    <string name="recording_context_menu_show">Прикажи</string>
-    <string name="recording_photo_description">Фотографија %1$s %2$s</string>
     <string name="av_def_action_picture">Сликај</string>
-    <string name="recording_context_menu_precord">Сликај</string>
     <string name="dropbox_plugin_description">Dropbox додатак омогућава да синхронизујете путање и аудио/видео белешке са вашим Dropbox налогом.</string>
     <string name="dropbox_plugin_name">Dropbox додатак</string>
     <string name="intermediate_points_change_order">Промени редослед</string>
@@ -552,8 +544,6 @@
     <string name="action_delete">Дејство брисања</string>
     <string name="action_create">Дејство стварања</string>
     <string name="osm_edits">Уредбе ОСМ-а</string>
-    <string name="parking_place_limited">Време паркирања је ограничено на</string>
-    <string name="osmand_parking_time_left">преостало</string>
     <string name="your_edits">Ваше уредбе</string>
     <string name="waypoint_visit_after">Посети након</string>
     <string name="waypoint_visit_before">Посети пре</string>
@@ -627,14 +617,11 @@
     <string name="osmand_srtm_short_description_80_chars">Прикључак за приказ обриса линија ван мреже ОсмАнда</string>
 	<string name="srtm_plugin_name">Обрисне линије</string>
 	<string name="plugin_touringview_name">Возачки преглед катре</string>
-    <string name="osmand_parking_plugin_name">Положај паркирања</string>
-	<string name="osmand_parking_plugin_description">Прикључак за положај паркирања омогућава запис положаја остављеног возила и колико је времена преостало (ако је са временским ограничењем).\nВреме и положај су видљиви на полетнику ОсмАнда, или као справица на приказу карте. Може се додати узбуна као подсетник Андроидовом колендару.</string>
     <string name="osmand_distance_planning_plugin_description">Овај прикључак додаје справицу на приказу карте која омогућава стварање путањи тапкањем на карту, или употребу и измену постојећих датотека ГПИкс-а, ради зацртавања путовања и мерења растојања између тачака. Добијени излази се могу сачувати као датотеке ГПИкс-а које се касније могу користити као водичи.</string>
     <string name="shared_string_accessibility">Приступачност</string>
     <string name="osm_settings">Уређивање ОСМ-а</string>
     <string name="debugging_and_development">Развој ОсмАнда</string>
     <string name="days_behind">претходни дани</string>
-    <string name="parking_place">Места за паркирање</string>
     <string name="rendering_attr_roadStyle_description">Врсте путева</string>
     <string name="rendering_value__name">Подразумевано</string>
     <string name="rendering_category_transport">Превоз</string>
@@ -930,18 +917,13 @@
     <string name="poi_filter_food_shop">Продавница хране</string>
     <string name="poi_filter_fuel">Гориво</string>
     <string name="show_warnings_title">Приказуј упозорења…</string>
-    <string name="osmand_play_title_30_chars">Османд, карте и навођење</string>
-    <string name="osmand_plus_play_title_30_chars">Османд+, карте и навођење</string>
     <string name="filterpoi_activity">Направи пропусник тачака занимања</string>
     <string name="recalculate_route_to_your_location">Начин превоза:</string>
     <string name="map_widget_view_direction">Правац прегледа</string>
     <string name="map_widget_transparent">Прозирне справице</string>
     <string name="int_continuosly">Непрекидно</string>
     <string name="map_widget_time">Време пристизања</string>
-    <string name="osmand_parking_hours">Часова</string>
-    <string name="osmand_parking_minutes">Минута</string>
     <string name="shared_location">Дељени положај</string>
-    <string name="osmand_parking_warning">Упозорење</string>
     <string name="release_2_2">" • Ново сучеље осетљиво на положај тапкања по карти или другим површима\n\n • Приказ карте се сада покреће непосредно осим ако је означено „Приказуј полетника при покретању“\n\n • Подешава се која карта и како се приказује у полетнику\n\n • Премошћава се полетник ако Вам се више свиђа управљање програмом изборником\n\n • За преузимање карата, области се могу непосредно изабрати тапкањем по светској карти\n\n • Претрага тачака занимања сада подржава одређеније упите\n\n • Побољшане су могућности тачака занимања и уређивања ОСМ-а\n\n • Прерађен је склоп преузимања карата и његово сучеље\n\n и још којешта... "</string>
     <string name="hillshade_layer_disabled">Слој сенчења падина је онемогућен</string>
     <string name="traffic_warning_hazard"/>
@@ -999,12 +981,8 @@
     <string name="precise_routing_mode">Тачно рачунање путања (споро)</string>
     <string name="srtm_paid_version_msg">Молим, размислите о куповини Линија обриса из продавнице ради давања подршке даљем развоју програма.</string>
     <string name="av_def_action_choose">Означи на захтев</string>
-    <string name="av_use_external_recorder">Користи склопног снимача видеа</string>
     <string name="av_use_external_camera_descr">Користи склопни програм за слике</string>
     <string name="av_use_external_camera">Користи програм камере</string>
-    <string name="recording_open_external_player">Отвори програм спољног извођача</string>
-    <string name="recording_can_not_be_played">Снимак се не може извести</string>
-    <string name="recording_description">Снимам %1$s %3$s %2$s</string>
     <string name="index_srtm_parts">делови</string>
     <string name="rendering_attr_alpineHiking_description">Приказуј путеве према лествици САЦ-а</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Приказуј путеве према путањама ОСМЦ-а</string>
@@ -1171,7 +1149,6 @@
     <string name="storage_directory_readonly_desc">Тренутно изабрани омот складишта је само за читање. Омот складишта је тренутно пребачен у унутрашње складиште. Молим, изаберите ваљани омот складишта.</string>
     <string name="save_track_interval_descr">Изаберите међувреме уписа снимања путање приликом навођења</string>
     <string name="app_modes_choose_descr">Изаберите видљивост корисничког пресека у програму</string>
-    <string name="osmand_parking_choose_type">Изаберите врсту паркирања</string>
     <string name="settings_direction_style_descr">Изаберите начин изражавања односних праваца приликом кретања</string>
     <string name="map_underlay_descr">Изаберите карту подножја</string>
     <string name="map_overlay_descr">Изаберите карту прочеља</string>
@@ -1401,7 +1378,6 @@
     <string name="do_not_send_anonymous_app_usage_desc">Османд прикупља податке о томе које делове програма отварате. Ваш положај се не шаље, нити ишта што унесете у програм нити појединости о областима које видите, тражите или преузмете.</string>
     <string name="do_not_show_startup_messages">Не приказуј поруке при покретању</string>
     <string name="do_not_show_startup_messages_desc">Потискује приказ попуста у програму и посебне обласне поруке догађаја.</string>
-    <string name="parking_options">Могућности паркирања</string>
     <string name="full_version_thanks">Хвала Вам за куповину пуног издања Османда!</string>
     <string name="routing_attr_relief_smoothness_factor_hills_name">Брдовито</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Мање брдовито</string>
@@ -1454,7 +1430,6 @@
     <string name="daynight_mode_sensor">Сензор светла</string>
     <string name="daynight">Дневни/ноћни режим рада</string>
     <string name="none_point_error">Молим додајте бар једну тачку.</string>
-    <string name="osmand_parking_overdue">закаснео</string>
     <string name="download_hillshade_maps">Сенке брда</string>
     <string name="offline_edition">Уређивање ван мреже</string>
     <string name="quick_action_new_action">Додај акцију</string>

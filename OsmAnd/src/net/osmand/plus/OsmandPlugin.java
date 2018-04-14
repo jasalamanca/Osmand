@@ -27,7 +27,6 @@ import net.osmand.plus.monitoring.OsmandMonitoringPlugin;
 import net.osmand.plus.myplaces.FavoritesActivity;
 import net.osmand.plus.openseamapsplugin.NauticalMapsPlugin;
 import net.osmand.plus.osmedit.OsmEditingPlugin;
-import net.osmand.plus.parkingpoint.ParkingPositionPlugin;
 import net.osmand.plus.rastermaps.OsmandRasterMapsPlugin;
 import net.osmand.plus.skimapsplugin.SkiMapsPlugin;
 import net.osmand.plus.srtmplugin.SRTMPlugin;
@@ -135,7 +134,6 @@ public abstract class OsmandPlugin {
 
 		// plugins with additional actions for context menu in right order:
 		allPlugins.add(new OsmEditingPlugin(app));
-		checkMarketPlugin(app, new ParkingPositionPlugin(app), false, ParkingPositionPlugin.PARKING_PLUGIN_COMPONENT, null);
 		allPlugins.add(new OsmandRasterMapsPlugin(app));
 
 		allPlugins.add(new OsmandMonitoringPlugin(app));

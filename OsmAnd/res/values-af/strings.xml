@@ -1,10 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources><string name="route_updated_loc_found">Roete sal herbereken word wanneer die ligging bepaal is</string>
-  <string name="osmand_parking_hours">Ure</string>
-  <string name="osmand_parking_minutes">Minute</string>
-  <string name="osmand_parking_position_description_add_time">Die motor was geparkeer om:</string>
-  
-  <string name="use_compass_navigation_descr">Gebruik kompas wanneer rigting nie opgemerk is nie</string>
+
+    <string name="use_compass_navigation_descr">Gebruik kompas wanneer rigting nie opgemerk is nie</string>
   <string name="use_compass_navigation">Gebruik kompas</string>
   <string name="select_animate_speedup">Kies lewendige roete versnelling</string>
   <string name="global_app_allocated_memory_descr">Toegekende geheue %1$s MB (Android beperking %2$s MB, Dalvik %3$s MB).</string>
@@ -14,28 +11,8 @@
   
   <string name="starting_point_too_far">Beginpunt is te ver van die naaste pad.</string>
   <string name="shared_location">Gedeelde ligging</string>
-  <string name="osmand_parking_event">Verkry die motor vanaf parkering</string>
-  <string name="osmand_parking_warning">Waarskuwing</string>
-  <string name="osmand_parking_warning_text">Kennisgewing om jou motor af te haal was voorheen tot jou kalender bygevoeg. Dit sal daar bly tot jy dit self uitvee.</string>
-  <string name="osmand_parking_time_limit_title">Stel die tydperk vir parkering</string>
-  <string name="osmand_parking_delete_confirm">Wil jy die ligging van dei geparkeerde motor verwyder?</string>
-  <string name="osmand_parking_delete">Vee `n parkeermerker uit</string>
-  <string name="osmand_parking_choose_type">Kies die tipe parkering</string>
-  <string name="osmand_parking_lim_text">Tyd-beperk</string>
-  <string name="osmand_parking_no_lim_text">Tyd-onbeperk</string>
-  <string name="osmand_parking_add_event">Voeg `n kennisgewing by die Kalender toepassing</string>
-  <string name="osmand_parking_time_limit">Beperkte tyd parkering</string>
-  <string name="osmand_parking_time_no_limit">Onbeperkte tyd parkering</string>
-  <string name="osmand_parking_position_description">Die ligging van jou geparkeerde motor. %1$s</string>
-  <string name="osmand_parking_position_description_add">Om die motor af te haal om::</string>
-  <string name="osmand_parking_pm">NM</string>
-  <string name="osmand_parking_am">VM</string>
-  <string name="osmand_parking_position_name">Parkeringspunt</string>
-  <string name="osmand_parking_plugin_description">Hierdie inlasmodule laat toe dat die ligging van jou geparkeerde motor geberg kan word.</string>
-  <string name="osmand_parking_plugin_name">Parkering Posisie Inlasmodule</string>
-  <string name="context_menu_item_add_parking_point">Merk as parkeringposisie</string>
-  <string name="context_menu_item_delete_parking_point">Vee `n parkeermerker uit</string>
-  <string name="gpxup_public">Publieke</string>
+    <string name="context_menu_item_add_parking_point">Merk as parkeringposisie</string>
+    <string name="gpxup_public">Publieke</string>
   <string name="gpxup_identifiable">Identifiseerbare</string>
   <string name="gpxup_trackable">Volgbare</string>
   <string name="gpxup_private">Privaat</string>
@@ -865,8 +842,7 @@
 <string name="map_widget_reset">Herstel verstek</string>
 
 
-<string name="map_widget_parking">Parkering</string>
-<string name="map_widget_monitoring">GPX opname</string>
+    <string name="map_widget_monitoring">GPX opname</string>
 <string name="map_widget_speed">Spoed</string>
 <string name="map_widget_distance">Teiken</string>
 <string name="map_widget_altitude">Hoogte</string>
@@ -931,7 +907,6 @@
     <string name="ending_point_too_far">Eindpunt te ver van naaste pad.</string>
     <string name="add_tag">Voeg naamplaatjie by</string>
     <string name="btn_advanced_mode">Gevorderde gebruikswyse…</string>
-    <string name="poi_filter_parking">Parkering</string>
     <string name="poi_filter_emergency">Noodgeval</string>
     <string name="poi_filter_public_transport">Publieke vervoer</string>
     <string name="poi_filter_entertainment">Vermaak</string>
@@ -942,14 +917,8 @@
 	<string name="avoid_motorway">Vermy snelweë</string>
 	<string name="snap_to_road_descr">Knip posisie aan paaie vas gedurende navigasie</string>
 	<string name="snap_to_road">Knip vas aan pad</string>
-	<string name="osmand_long_description_1000_chars">
-		OsmAnd (OSM Automated Navigation Directions) is `n ope bron navigasie toepassing met toegang tot `n wye verskeidenheid wêreldwye OpenStreetMap (OSM) inligting. Alle kaart inligting (vektor of teël kaarte) kan gestoor word op die foon geheue kaart vir aflyn gebruik. OsmAnd bied ook aan- en aflyn routeberekening funksionaliteit insluitend draai-vir-draai stem begeleiding. Sommige van die kern funksies: - Volledege aflyn funksionaliteit (stoor afgelaaide vektor of teël kaarte in `n kiesbare leër) - Kompakte aflyn vektor kaarte vir die hele wëreld beskikbaar - aflaai van land of streek kaarte direk uit die toepassing - Oorlegging van verskeie kaart lae moontlik, bv GPX of navigasie spore, Belangepunte, gunstelinge, kontoerlyne, publieke vervoer haltes, ekstra kaarte met verstelbare deurskynendheid - Aflyn
-	</string>
-	<string name="osmand_plus_short_description_80_chars">OsmAnd is `n oop-bron navigasie toepassing vir direkte en internet kaarte</string>
-	<string name="osmand_plus_long_description_1000_chars">
-		OsmAnd+ (OSM Automated Navigation Directions) OsmAnd+ is `n ope bron navigasie toepassing met toegang tot `n wye verskeidenheid wêreldwye OpenStreetMap (OSM) inligting. Alle kaart inligting (vektor of teëlkaarte) kan op die foon geheuekaart gestoor word vir aflyn gebruik. OsmAnd bied ook aan- en aflyn roete berekening insluitend draai-vir-draai stem leiding. OsmAnd+ is betaalde toepassing weergawe, deur dit te koop ondersteun jy die projek, befonds die ontwikkeling van nuwe funksies, en ontvang die nuutste opgraderings. Sommige van die kern funksies: - volledige aflyn werking (stoor afgelaaide vektor of teëlkaarte in `n leër van jou keuse) - kompakte aflyn vektor vir die hele wereld beskikbaar - Onbeperkte aflaai van land en streek kaarte uit die toepassing - Aflyn Wikipedia funksies (Wikipedia belangepunte kan afgelaai word), goed vir besigtigingstoere - oorlegging van verskeie kaart lae moontlik, bv. GPX of navigasie spore, belangepunte, gunstelinge, kontoerlyne, publieke vervoer haltes, ekstra kaarte met verstelbare deursigtigheid - Aflyn soek vir adresse en belangepunte - Aflyn navigasie roete berekening vir kort roetes (eksperimenteel) - Kar, fiets, en voetganger gebruikerswyses met: - opsionele outomatiese dag/nag skakeling - opsionele spoed-afhankliket kaart vergroting - opsionele kaart rigting volgens kompas of koers - opsionele laan begeleiding, spoedbeperking vertoon, opgeneemde en TTS stemme "
-	</string>
-	<string name="day_night_info_description">Sonopkoms : %1$s ↵\nSonsondergang : %2$s</string>
+    <string name="osmand_plus_short_description_80_chars">OsmAnd is `n oop-bron navigasie toepassing vir direkte en internet kaarte</string>
+    <string name="day_night_info_description">Sonopkoms : %1$s ↵\nSonsondergang : %2$s</string>
 	
 	
 	
@@ -976,10 +945,7 @@
     <string name="clear_dest_confirm">Is jy seker jy wil jou bestemmingspunt verwyder?</string>
     <string name="precise_routing_mode_descr">Aktiveer presiese roetebepaling om presiese roetes te bereken sonder probleme. Dit is baie beperk deur afstand en maak nie gebruik van die inheemse biblioteek nie.</string>
     <string name="precise_routing_mode">Presiese roetebepaling (alfa)</string>
-    <string name="recording_photo_description">Foto %1$s van %2$s</string>
-    <string name="recording_context_menu_show">Wys</string>
     <string name="av_def_action_picture">Neem /\'n foto</string>
-    <string name="recording_context_menu_precord">Neem /\'n foto</string>
     <string name="dropbox_plugin_description">Dropbox inlasmodule laat jou spore en oudio/video notas sinkroniseer met jou Dropbox rekening.</string>
     <string name="dropbox_plugin_name">Dropbox inlasmodule</string>
     <string name="intermediate_points_change_order">Verander volgorde</string>
@@ -988,21 +954,12 @@
     <string name="av_def_action_choose">Kies op versoek</string>
     <string name="av_widget_action_descr">Kies verstek programmetjie-aksie</string>
     <string name="av_widget_action">Verstek programmetjie-aksie</string>
-    <string name="av_use_external_recorder">Gebruik stelsel opnemer</string>
     <string name="av_use_external_camera_descr">Gebruik stelsel toepassing vir foto</string>
     <string name="av_use_external_camera">Gebruik kamera toepassing</string>
 
-    <string name="recording_error">"\'n fout het tydens die opname voorgekom
- " </string>
-    <string name="recording_open_external_player">Maak eksterne speler oop</string>
     <string name="recording_delete_confirm">Wil jy hierdie opname verwyder?</string>
-    
-    <string name="recording_unavailable">nie beskikbaar nie</string>
-    <string name="recording_can_not_be_played">opname kan nie truggespeel word nie</string>
-    <string name="recording_context_menu_delete">Vee opname uit</string>
+
     <string name="recording_context_menu_play">Speel</string>
-    <string name="recording_description">Opname %1$s %2$s van %3$s</string>
-    <string name="recording_default_name">besig met opname</string>
     <string name="shared_string_control_start">begin</string>
     <string name="osmand_srtm_short_description_80_chars">OsmAnd inlasmodule vir aflyn kontoerlyne</string>
     <string name="osmand_srtm_long_description_1000_chars">Hierdie inlasmodule verskaf kontoerlyne wat in OsmAnd aflyn kaarte getoon kan word.Die wêreld inligting (van 70 grade noord tot 70 grade suid) is gebaseer op metings deur SRTM (Shuttle Radar Topography Mission)en ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer),`n beeld-instrument aanboord Terra, die vlagskip sateliet van NASA se Aarde Observasie Stelsel. ASTER is `n samewerkingsprojek tussen NASA, Japan se Ministerie van Ekonomie, Handel en Industrie (MEHI), en Japan Ruimte Stelsels (J-spacesystems).</string>
@@ -1050,11 +1007,8 @@
     
     <string name="index_name_openmaps">\\\'OpenMaps EU\\\'</string>
     <string name="monitoring_control_start">\\\'GPX\\\'</string>
-    <string name="osmand_play_title_30_chars">OsmAnd Kaarte &amp; Navigasie</string>
-	
-	<string name="osmand_plus_play_title_30_chars">OsmAnd+ Kaarte &amp; Navigasie</string>
-	
-	<string name="download_using_mobile_internet">WiFi is nie gekoppel nie. Wil jy voortgaan om af te laai met die beskikbare internet diens?</string>
+
+    <string name="download_using_mobile_internet">WiFi is nie gekoppel nie. Wil jy voortgaan om af te laai met die beskikbare internet diens?</string>
     <string name="street_name">Straat</string>
 	<string name="hno">Huisnommer</string>
     
@@ -1124,10 +1078,8 @@
 	<string name="av_camera_focus_infinity">Fokus is op oneindig gestel</string>
 	<string name="av_camera_focus_macro">Makro (naby) fokus</string>
 	<string name="av_camera_focus_continuous">Die kamera prbeer heeltyd in fokus bly</string>
-	<string name="av_photo_play_sound">Speel geluid wanneer foto geneem word</string>
-	<string name="av_photo_play_sound_descr">Kies of geluid gespeel sal word wanneer foto geneem word</string>
 
-	
+
     <string name="speak_speed_limit">Kondig spoedbeperking aan</string>
     <string name="speak_cameras">Kondig spoedkameras aan</string>
 	<string name="speak_traffic_warnings">Kondig verkeerswaarskuwings aan</string>

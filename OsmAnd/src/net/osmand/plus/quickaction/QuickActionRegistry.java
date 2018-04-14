@@ -9,8 +9,6 @@ import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.openseamapsplugin.NauticalMapsPlugin;
 import net.osmand.plus.osmedit.OsmEditingPlugin;
-import net.osmand.plus.parkingpoint.ParkingAction;
-import net.osmand.plus.parkingpoint.ParkingPositionPlugin;
 import net.osmand.plus.quickaction.actions.AddOSMBugAction;
 import net.osmand.plus.quickaction.actions.AddPOIAction;
 import net.osmand.plus.quickaction.actions.MapSourceAction;
@@ -72,12 +70,6 @@ public class QuickActionRegistry {
 
 		for (QuickAction action : actions) {
 			boolean skip = false;
-			if (OsmandPlugin.getEnabledPlugin(ParkingPositionPlugin.class) == null) {
-				if (action.type == ParkingAction.TYPE) {
-					skip = true;
-				}
-			}
-
 			if (OsmandPlugin.getEnabledPlugin(NauticalMapsPlugin.class) == null) {
 				if (action.type == MapStyleAction.TYPE) {
 					if (((MapStyleAction) QuickActionFactory.produceAction(action)).getFilteredStyles().isEmpty()) {

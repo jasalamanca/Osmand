@@ -66,7 +66,6 @@ import net.osmand.plus.osmedit.OsmBugsLayer.OpenStreetNote;
 import net.osmand.plus.osmedit.OsmPoint;
 import net.osmand.plus.osmo.OsMoGroupsStorage.OsMoDevice;
 import net.osmand.plus.osmo.OsMoMenuController;
-import net.osmand.plus.parkingpoint.ParkingPositionMenuController;
 import net.osmand.plus.resources.ResourceManager;
 import net.osmand.plus.transport.TransportStopRoute;
 import net.osmand.plus.views.DownloadedRegionsLayer.DownloadMapObject;
@@ -199,9 +198,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 			} else if (object instanceof AMapPoint) {
 				menuController = new AMapPointMenuController(mapActivity, pointDescription, (AMapPoint) object);
 			} else if (object instanceof LatLon) {
-				if (pointDescription.isParking()) {
-					menuController = new ParkingPositionMenuController(mapActivity, pointDescription);
-				} else if (pointDescription.isMyLocation()) {
+				if (pointDescription.isMyLocation()) {
 					menuController = new MyLocationMenuController(mapActivity, pointDescription);
 				}
 			} else if (object instanceof RouteDataObject) {
