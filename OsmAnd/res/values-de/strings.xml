@@ -1046,18 +1046,11 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="download_srtm_maps">Höhenlinien</string>
 	<string name="av_camera_pic_size">Bildgröße der Kamera</string>
 	<string name="av_camera_pic_size_descr">Bildgröße der internen Kamera auswählen.</string>
-	<string name="av_def_action_video">Video aufzeichnen</string>
-	<string name="av_def_action_audio">Audio aufnehmen</string>
-	<string name="av_widget_action_descr">Standard-Steuerelement-Aktion auswählen.</string>
+    <string name="av_widget_action_descr">Standard-Steuerelement-Aktion auswählen.</string>
 	<string name="av_widget_action">Standard-Steuerelement-Aktion</string>
-	<string name="av_video_format_descr">Wählen Sie ein Video-Ausgabeformat.</string>
-	<string name="av_video_format">Video-Ausgabeformat</string>
-	<string name="av_use_external_recorder_descr">Systemintegrierte Video-App für Videos verwenden.</string>
-	<string name="av_use_external_recorder">System-Video-App nutzen</string>
-	<string name="av_settings_descr">Konfigurieren von Audio- und Video-Einstellungen.</string>
-	<string name="shared_string_control_stop">Stopp</string>
-	<string name="av_settings">Audio/Video Einstellungen</string>
-	<string name="shared_string_control_start">Start</string>
+    <string name="av_use_external_recorder">System-Video-App nutzen</string>
+    <string name="shared_string_control_stop">Stopp</string>
+    <string name="shared_string_control_start">Start</string>
 	<string name="av_def_action_picture">Foto aufnehmen</string>
 	<string name="av_use_external_camera_descr">Systemanwendung für Fotos verwenden.</string>
 	<string name="av_use_external_camera">System-Kamera-App nutzen</string>
@@ -1066,45 +1059,33 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="dropbox_plugin_name">Dropbox-Modul</string>
 	<string name="intermediate_points_change_order">Reihenfolge ändern</string>
 
-	<string name="recording_camera_not_available">Die Kamera ist nicht verfügbar</string>
-	<string name="recording_open_external_player">Externen Player öffnen</string>
+    <string name="recording_open_external_player">Externen Player öffnen</string>
 	<string name="recording_delete_confirm">Wollen Sie diese Aufnahme löschen?</string>
 	<string name="recording_unavailable">nicht verfügbar</string>
 	<string name="recording_context_menu_play">Wiedergabe</string>
 	<string name="recording_default_name">Aufnahme</string>
 	<string name="recording_error">Fehler bei der Aufnahme</string>
-	<string name="recording_is_recorded">Audio/Video wird aufgenommen. Drücken Sie das A/V-Steuerelement zum Stoppen.</string>
-	<string name="recording_playing">Aus der angegebenen Aufnahme wird abgespielt.\n%1$s</string>
-	<string name="recording_context_menu_arecord">Audio-Notiz aufnehmen</string>
-	<string name="recording_context_menu_vrecord">Video-Notiz aufnehmen</string>
-	<string name="recording_description">Aufnahme %1$s %2$s von %3$s</string>
+    <string name="recording_description">Aufnahme %1$s %2$s von %3$s</string>
 	<string name="recording_context_menu_show">Anzeigen</string>
 	<string name="recording_photo_description">Foto %1$s von %2$s</string>
 	<string name="recording_context_menu_precord">Foto aufnehmen</string>
 	<string name="recording_can_not_be_played">Aufnahme kann nicht abgespielt werden</string>
 	<string name="recording_context_menu_delete">Aufnahme löschen</string>
 
-	<string name="layer_recordings">Audio/Video-Notizen</string>
-	<string name="map_widget_av_notes">Audio-/Video-Notizen</string>
-	<string name="osmand_srtm_short_description_80_chars">OsmAnd-Erweiterung für Offline-Höhenlinien</string>
+    <string name="osmand_srtm_short_description_80_chars">OsmAnd-Erweiterung für Offline-Höhenlinien</string>
 	<string name="map_widget_distancemeasurement">Entfernungsmessung</string>
 	<string name="monitoring_settings">Streckenaufzeichnung</string>
 	<string name="monitoring_settings_descr">Konfiguration der Streckenaufzeichnung.</string>
 	<string name="monitoring_control_start">GPX</string>
-	
-	<string name="map_widget_audionotes">Audio-Notizen</string>
-	<string name="audionotes_plugin_description">Die Audio/Video-Notiz-Erweiterung bietet die Möglichkeit unterwegs ortsbezogene Audio-/Fotografie-/Video-Notizen aufzunehmen, entweder über eine Taste auf dem Kartenbildschirm für die aktuelle Position, oder direkt über das Kontext-Menü für jede beliebige Position auf der Karte.</string>
-	<string name="audionotes_plugin_name">Audio-/Video-Notizen</string>
-	<string name="audionotes_location_not_defined">Es ist noch kein Ort angegeben, der mit der Notiz verbunden werden soll. Benutzen Sie \'Standort verwenden…\', um der Notiz einen Ort zuzuweisen.</string>
-	<string name="osmand_srtm_long_description_1000_chars">Diese Erweiterung beinhaltet Höhenlinien und Relief-Schattierungen, die als Ergänzung zu den Standard-Offline-Karten von OsmAnd angezeigt werden können. Diese Funktionalität ist vor allem für Sportler, Wanderer, Radfahrer, Trekker und jeden interessant, der sich für das Geländerelief einer Landschaft interessiert. 
+
+    <string name="osmand_srtm_long_description_1000_chars">Diese Erweiterung beinhaltet Höhenlinien und Relief-Schattierungen, die als Ergänzung zu den Standard-Offline-Karten von OsmAnd angezeigt werden können. Diese Funktionalität ist vor allem für Sportler, Wanderer, Radfahrer, Trekker und jeden interessant, der sich für das Geländerelief einer Landschaft interessiert.
 \n 
 \nDie globalen Daten (zwischen 70° Nord und 70° Süd) basieren auf Messungen von SRTM (Shuttle Radar Topography Mission) und ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), einem bildgebenden System an Bord des Satelliten Terra, dem Flaggschiff des NASA-Erd-Beobachtungsprogramms. ASTER beruht auf der erfolgreichen Zusammenarbeit zwischen der NASA, dem japanischen Ministerium für Wirtschaft, Handel und Industrie und dem japanischen Raumfahrtprogramm (J-spacesystems).</string>
 	<string name="stop_routing_confirm">Sind Sie sicher, dass Sie die Navigation stoppen möchten?</string>
 	<string name="clear_dest_confirm">Sind Sie sicher, dass Sie Ihr Ziel (und die Zwischenziele) löschen möchten?</string>
 	<string name="precise_routing_mode_descr">Aktivieren, um Routen fehlerfrei zu berechnen. Diese Funktion ist weiterhin auf kurze Entfernung begrenzt und langsam.</string>
 	<string name="precise_routing_mode">Präzises Routing (experimentell)</string>
-	<string name="local_indexes_cat_av">Audio/Video-Daten</string>
-	<string name="prefer_motorways">Autobahnen bevorzugen</string>
+    <string name="prefer_motorways">Autobahnen bevorzugen</string>
 	<string name="prefer_in_routing_title">Bevorzugen von …</string>
 	<string name="prefer_in_routing_descr">Autobahnen bevorzugen.</string>
 	<string name="max_speed_none">keine</string>
@@ -1777,9 +1758,8 @@ Mit Neuanmeldung fortfahren?</string>
     <string name="rendering_attr_pisteRoutes_name">Skipisten</string>
 	<string name="shared_string_export">Export</string>
 	<string name="watch">Ansehen</string>
-	
-	<string name="share_note">Notiz mitteilen</string>
-	<string name="days_behind">Tage alt</string>
+
+    <string name="days_behind">Tage alt</string>
 	<string name="shared_string_ellipsis">…</string>
 	<string name="shared_string_selected">Ausgewählt</string>
 	<string name="shared_string_selected_lowercase">ausgewählt</string>
@@ -1828,8 +1808,7 @@ Mit Neuanmeldung fortfahren?</string>
 	<string name="shared_string_unexpected_error">Ein unerwarteter Fehler ist aufgetreten!</string>
 	<string name="shared_string_collapse">Einklappen</string>
 	<string name="shared_string_address">Adresse</string>
-	<string name="shared_string_video">Video</string>
-	<string name="shared_string_photo">Foto</string>
+    <string name="shared_string_photo">Foto</string>
 	<string name="shared_string_places">Orte</string>
 	<string name="welcome_select_region">Zur korrekten Wiedergabe von Verkehrszeichen und -regeln, bitte Region wählen:</string>
 	<string name="welcome_text">OsmAnd bietet globale Offline-Karten und globale Offline-Navigation!</string>
@@ -1921,8 +1900,7 @@ Lon %2$s</string>
     <string name="lang_vo">Volapük</string>
     <string name="lang_new">Newar / Nepal Bhase</string>
     <string name="lang_ceb">Cebuano</string>
-    <string name="local_recordings_delete_all_confirm">%1$d Notizen werden gelöscht. Fortfahren?</string>
-	<string name="lang_te">Telugu</string>
+    <string name="lang_te">Telugu</string>
     <string name="rendering_value_walkingRoutesScopeOSMC_name">Einfärbung gemäß Routennetzwerk</string>
     <string name="rendering_value_walkingRoutesOSMC_name">Einfärbung gemäß OSMC Wandersymbol</string>
     <string name="do_you_like_osmand">Gefällt Ihnen OsmAnd?</string>
@@ -2111,7 +2089,6 @@ Lon %2$s</string>
 	<string name="file_size_in_mb">%.1f MB</string>
     <string name="please_specify_poi_type_only_from_list">Bitte einen gültigen POI-Typ angeben oder überspringen.</string>
     <string name="share_osm_edits_subject">OSM-Bearbeitung mit OsmAnd geteilt</string>
-    <string name="av_locations_descr">GPX-Datei mit Notizen.</string>
     <string name="free_downloads_used_description">Anzeige der genutzten freien Downloads.</string>
 
     <string name="shared_string_location">Standort</string>
@@ -2120,14 +2097,6 @@ Lon %2$s</string>
 	
     <string name="av_locations">Standorte</string>
     <string name="shared_string_hide">verbergen</string>
-    <string name="av_video_quality_low">Niedrigste Qualität</string>
-    <string name="av_video_quality_high">Höchste Qualität</string>
-    <string name="av_video_quality">Videoqualität</string>
-    <string name="av_video_quality_descr">Videoausgabequalität wählen.</string>
-    <string name="av_audio_format">Audioausgabeformat</string>
-    <string name="av_audio_format_descr">Audioausgabeformat wählen.</string>
-    <string name="av_audio_bitrate">Audio-Bitrate</string>
-    <string name="av_audio_bitrate_descr">Audio-Bitrate wählen.</string>
     <string name="rendering_attr_horseRoutes_name">Pferdewege</string>
     <string name="update">Aktualisierungsintervall</string>
     <string name="only_download_over_wifi">Nur über WLAN herunterladen</string>
@@ -2150,11 +2119,6 @@ Lon %2$s</string>
     <string name="update_time">Aktualisierungszeitpunkt</string>
 <string name="updates_size">Größe der Aktualisierung</string>
 <string name="last_map_change">Letzte Kartenänderung: %s</string>
-<string name="rec_split_storage_size_desc">Menge des Speicherplatzes, der von allen aufgezeichneten Clips belegt werden kann.</string>
-    <string name="rec_split_desc">Clips neu schreiben, wenn der benutzte Platz den Speicherplatz überschreitet.</string>
-    <string name="rec_split_clip_length">Cliplänge</string>
-    <string name="rec_split_clip_length_desc">Auswahl der maximalen Cliplänge für die Aufzeichnung.</string>
-    <string name="rec_split_storage_size">Speicherplatz</string>
     <string name="rec_split">Aufzeichnungsteilung</string>
     <string name="rec_split_title">Automatische Trennung nutzen</string>
     <string name="hourly">Stündlich</string>
@@ -2470,9 +2434,6 @@ Wenn Sie OsmAnd und OSM lieben und unterstützen wollen, so ist dies die perfekt
     <string name="quick_action_add_poi">POI hinzufügen</string>
     <string name="quick_action_map_style">Kartendarstellung ändern</string>
     <string name="quick_action_map_style_switch">Kartendarstellung wurde zu “%s“ gewechselt.</string>
-    <string name="quick_action_take_audio_note">Audio-Notiz aufnehmen</string>
-    <string name="quick_action_take_video_note">Video-Notiz aufnehmen</string>
-    <string name="quick_action_take_photo_note">Foto-Notiz aufnehmen</string>
     <string name="quick_action_add_osm_bug">OSM-Notiz hinzufügen</string>
     <string name="quick_action_navigation_voice">Sprachausgabe Ein/Aus</string>
     <string name="quick_action_navigation_voice_off">Sprachausgabe ist aus</string>
@@ -2491,9 +2452,6 @@ Wenn Sie OsmAnd und OSM lieben und unterstützen wollen, so ist dies die perfekt
     <string name="quick_action_add_marker_descr">Drücken der Aktionstaste fügt einen Kartenmarker am Bildschirmmittelpunkt ein.</string>
     <string name="favorite_empty_place_name">Ort</string>
     <string name="quick_action_showhide_favorites_title">Favoriten ein-/ausblenden</string>
-    <string name="quick_action_take_audio_note_descr">Drücken der Aktionstaste fügt eine Audio-Notiz am Bildschirmmittelpunkt ein.</string>
-    <string name="quick_action_take_video_note_descr">Drücken der Aktionstaste fügt eine Video-Notiz am Bildschirmmittelpunkt ein.</string>
-    <string name="quick_action_take_photo_note_descr">Drücken der Aktionstaste fügt ein Foto am Bildschirmmittelpunkt ein.</string>
     <string name="quick_action_showhide_poi_title">POI ein-/ausblenden</string>
     <string name="quick_action_poi_show">%1$s anzeigen</string>
     <string name="quick_action_poi_hide">%1$s ausblenden</string>
@@ -2939,12 +2897,9 @@ Abgedeckte Fläche: %1$s x %2$s</string>
     <string name="shared_string_added">Hinzugefügt</string>
     <string name="marker_activated">Markierung %s aktiviert.</string>
     <string name="one_tap_active_descr">Markierung auf der Karte antippen, um sie an die erste Stelle der aktiven Markierungen zu verschieben, ohne das Kontextmenü zu öffnen.</string>
-    <string name="empty_state_av_notes">Machen Sie sich Notizen!</string>
     <string name="by_date">Nach Datum</string>
     <string name="by_type">Nach Typ</string>
     <string name="import_gpx_file_description">kann als Favoriten-Punkte oder als Track-Datei importiert werden.</string>
-    <string name="empty_state_av_notes_desc">Audio-, Video- oder Fotonotizen zu jedem Punkt auf der Karte über Widget oder Kontextmenü hinzufügen.</string>
-    <string name="notes_by_date">Notizen nach Datum</string>
     <string name="tap_on_map_to_hide_interface_descr">Ein Tippen auf die Karte schaltet die Steuerschaltflächen und Bedienelemente um.</string>
     <string name="release_3_0">\\022 
 \n

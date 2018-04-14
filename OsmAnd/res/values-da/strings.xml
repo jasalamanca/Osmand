@@ -1,44 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string name="srtm_paid_version_msg">Overvej at købe Højdekurve udvidelsen (\'Contour lines\') på Google Play for at støtte den videre udvikling.</string>
-    <string name="av_def_action_video">Optag video</string>
-    <string name="av_def_action_audio">Optag audio</string>
     <string name="av_widget_action_descr">Vælg standard modulhandling.</string>
     <string name="av_widget_action">Standard modulhandling</string>
-    <string name="av_video_format_descr">Vælg videoformat.</string>
-    <string name="av_use_external_recorder_descr">Brug systemoptager for video.</string>
     <string name="av_use_external_recorder">Brug systemoptager</string>
-    <string name="av_settings_descr">Konfigurer audio- og videoindstillinger.</string>
-    <string name="av_settings">Indstillinger for audio og video </string>
     <string name="recording_error">Fejl opstod under optagelse </string>
-    <string name="recording_camera_not_available">Kameraet er ikke tilgængeligt</string>
-    <string name="recording_is_recorded">Audio/video optages. For at stoppe tryk på AV modulet.</string>
-    <string name="recording_playing">Den valgte optagelsen bliver afspillet.
-\n%1$s</string>
     <string name="recording_open_external_player">Åbn ekstern afspiller</string>
     <string name="recording_delete_confirm">Skal optagelsen slettes?</string>
 
     <string name="recording_unavailable">ikke tilgængelig</string>
-    <string name="recording_context_menu_arecord">Optag lydnote</string>
     <string name="srtm_paid_version_title">Højdekurver</string>
-    <string name="recording_context_menu_vrecord">Optag videonote</string>
-    <string name="layer_recordings">Optagelser</string>
     <string name="recording_can_not_be_played">Optagelse kan ikke afspilles</string>
     <string name="recording_context_menu_delete">Slet optagelse</string>
     <string name="recording_context_menu_play">Afspil</string>
     <string name="recording_description">Optagelse %1$s %3$s %2$s</string>
     <string name="recording_default_name">Optager</string>
-    <string name="map_widget_av_notes">Audio-/videonoter</string>
     <string name="osmand_srtm_short_description_80_chars">Udvidelse for offline højdekurver</string>
     <string name="osmand_srtm_long_description_1000_chars">"Udvidelsen giver både en højdekurver overlejring og reliefskygger, der vises ovenpå OsmAnds standard kort. Funktionaliteten er meget værdsat af sportsfolk, vandrere, og enhver interesseret i en relief struktur af landskabet. 
 \n
 \nDe globale data (mellem 70 grader nord og 70 grader syd) er baseret på målinger af SRTM (Shuttle Radar Topografi Mission) og ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), et billeddannende instrument ombord på Terra satellitten, flagskibet i NASAs Earth Observering system. ASTER er et samarbejde mellem NASA, Japans Ministry of Economy, Trade and Industry  (METI), og Japan Space Systems (J-spacesystems)."</string>
     <string name="map_widget_distancemeasurement">Afstandsmåling</string>
-    <string name="audionotes_location_not_defined">Placering der skal tilknyttes til noten er ikke defineret endnu. \'Brug placering …\' til at knytte en note til den angivne placering.</string>
 
-    <string name="map_widget_audionotes">Audionoter</string>
-    <string name="audionotes_plugin_description">Audio-/videonoter udvidelse giver funktionalitet til at tage audio-/foto-/videonoter under en tur, enten ved hjælp en knap på skærmen, eller direkte fra kontekstmenuen for en position på kortet.</string>
-    <string name="audionotes_plugin_name">Audio-/videonoter</string>
     <string name="index_srtm_parts">dele</string>
     <string name="index_srtm_ele">Højdekurver</string>
     <string name="srtm_plugin_description">"Udvidelsen giver både en højdekurver overlejring og et reliefskygger, der vises ovenpå OsmAnds standard kort. Funktionaliteten er meget værdsat af sportsfolk, vandrere, og enhver interesseret i en relief struktur af landskabet.(Bemærk, at højdekurver og/eller relieflag er separate, yderligere data er tilgængelige efter aktivering af udvidelse.) 
@@ -54,7 +36,6 @@
     <string name="rendering_attr_noAdminboundaries_name">Grænser</string>
 
     <string name="intermediate_points_change_order">Ændre rækkefølge</string>
-    <string name="av_video_format">Videoformat</string>
     <string name="rendering_attr_noAdminboundaries_description">Undertryk visning af regionalegrænser (niveau 5–9).</string>
 
 
@@ -90,7 +71,6 @@
     <string name="add_as_first_destination_point">Tilføj som første mellemliggende destination</string>
     <string name="replace_destination_point">Udskift destinationen</string>
     <string name="new_destination_point_dialog">Destinationen er allerede sat:</string>
-    <string name="local_indexes_cat_av">Audio-/Videodata</string>
     <string name="stop_routing_confirm">Stop navigationen?</string>
     <string name="clear_dest_confirm">Slet destinationen (og mellemliggende destinationer)?</string>
     <string name="precise_routing_mode_descr">Aktiver for at beregne præcise ruter uden fejl. Stadig begrænset af afstand og langsom.</string>
@@ -1675,7 +1655,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="notes">Noter</string>
     <string name="online_map">Online kort</string>
     <string name="watch">Vis</string>
-    <string name="share_note">Del note</string>
 
     <string name="plugin_touringview_name">Touring kortvisning</string>
 	<string name="plugin_nautical_descr">Udvidelsen giver mulighed for at vise maritime kort til sejlsport, sejlads og andre former for vandsport. 
@@ -1776,7 +1755,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
 
 
     <string name="shared_string_audio">Audio</string>
-    <string name="shared_string_video">Video</string>
     <string name="shared_string_photo">Foto</string>
 
     <string name="simulate_your_location">Simuler position</string>
@@ -1864,7 +1842,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="shared_string_show_details">Vis detaljer</string>
     <string name="download_wikipedia_maps">Wikipedia</string>
     <string name="shared_string_import2osmand">Importer til OsmAnd</string>
-    <string name="local_recordings_delete_all_confirm">Slet %1$d noter. Bekræft?</string>
     <string name="disable_recording_once_app_killed">Forhindre uafhængig logning</string>
     <string name="disable_recording_once_app_killed_descrp">Hvis markeret vil GPX logning blive stoppet, når programmet afsluttes (via seneste programmer). OsmAnd baggrundsmeddelse forsvinder fra meddelelseslinjen.</string>
     <string name="gps_network_not_enabled">Placeringtjenesten er ikke aktiveret. Aktiver?</string>
@@ -1954,7 +1931,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="opening_at">Åbner</string>
     <string name="closing_at">Lukker</string>
 
-    <string name="av_locations_descr">GPX-fil med placeringsnoter.</string>
     <string name="av_locations">Placeringer</string>
     <string name="tab_title_basic">Grundlæggende</string>
 
@@ -2144,14 +2120,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
 	
 	
 	<string name="shared_string_hide">Skjul</string>
-    <string name="av_video_quality_low">Laveste kvalitet</string>
-    <string name="av_video_quality_high">Højeste kvalitet</string>
-    <string name="av_video_quality">Videokvalitet</string>
-    <string name="av_video_quality_descr">Vælg videokvalitet.</string>
-    <string name="av_audio_format">Audioformat</string>
-    <string name="av_audio_format_descr">Vælg audioformat.</string>
-    <string name="av_audio_bitrate">Audio bitrate</string>
-    <string name="av_audio_bitrate_descr">Vælg audio bitrate.</string>
     <string name="shared_string_near">I nærheden af</string>
     <string name="no_address_found">Kan ikke bestemme adresse</string>
 	<string name="looking_up_address">Søger efter adressen</string>
@@ -2180,11 +2148,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
 <string name="last_map_change">Sidste kortændring: %s</string>
 <string name="rec_split">Optagelse automatisk opdelt</string>
     <string name="rec_split_title">"Brug  automatisk opdeling"</string>
-    <string name="rec_split_desc">Overskriv klip når lagerpladsen er fuld.</string>
-    <string name="rec_split_clip_length">Kliplængde</string>
-    <string name="rec_split_clip_length_desc">Øvre tidsgrænse for optagede videoklip.</string>
-    <string name="rec_split_storage_size">Lagerplads</string>
-    <string name="rec_split_storage_size_desc">Lagerplads, der kan bruges af alle optagede klip.</string>
     <string name="hourly">Time</string>
     <string name="daily">Daglig</string>
     <string name="weekly">Ugentlig</string>
@@ -2520,9 +2483,6 @@ Hvis du  ønsker at støtte OsmAnd og OSM, er dette en god måde at gøre det p�
     <string name="quick_action_add_poi">Tilføj IP</string>
     <string name="quick_action_map_style">Skift kortformat</string>
     <string name="quick_action_map_style_switch">Kortformat er ændret til \"%s\".</string>
-    <string name="quick_action_take_audio_note">Optag lydnote</string>
-    <string name="quick_action_take_video_note">Optag videonote</string>
-    <string name="quick_action_take_photo_note">Tag en fotonote</string>
     <string name="quick_action_add_osm_bug">Tilføj OSM note</string>
     <string name="quick_action_navigation_voice">Talevejledning til/fra</string>
     <string name="quick_action_navigation_voice_off">Talevejledning er inaktiv</string>
@@ -2539,9 +2499,6 @@ Hvis du  ønsker at støtte OsmAnd og OSM, er dette en god måde at gøre det p�
     <string name="quick_favorites_name_preset">Forudindstillet navn</string>
     <string name="quick_action_add_marker_descr">Tryk på genvej vil tilføje en kortmarkør på skærmens centrum.</string>
     <string name="quick_action_add_gpx_descr">Tryk på genvejen vil tilføje et GPX-rutepunkt på skærmens centrum.</string>
-    <string name="quick_action_take_audio_note_descr">Tryk på gennvejen vil tilføje en lydnote på skærmens centrum.</string>
-    <string name="quick_action_take_video_note_descr">Tryk på genvejen vil føje en videonote på skærmens centrum.</string>
-    <string name="quick_action_take_photo_note_descr">Tryk på genvej vil tilføje en fotonote på skærmens centrum.</string>
     <string name="quick_action_add_osm_bug_descr">Tryk på genvejen tilføjer en OSM note på skærmens centrum.</string>
     <string name="quick_action_add_poi_descr">Tryk på genvej vil tilføje et interessepunkt på skærmens centrum.</string>
     <string name="quick_action_navigation_voice_descr">Tryk på genvej vil deaktivere eller aktivere stemmevejledning under navigation.</string>
@@ -2981,9 +2938,6 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="marker_activated">Markør %s er aktiveret.</string>
     <string name="one_tap_active_descr">Tryk på en markør på kortet for at flytte den til toppen af de aktive markører uden at åbne kontekstmenuen.</string>
     <string name="one_tap_active">Et tryk aktivering</string>
-    <string name="empty_state_av_notes">Tag noter!</string>
-    <string name="empty_state_av_notes_desc">Tilføj en lyd-, video- eller fotonote til hvert punkt på kortet ved hjælp af modul- eller kontekstmenu.</string>
-    <string name="notes_by_date">Noter efter dato</string>
     <string name="by_date">Efter dato</string>
     <string name="by_type">Efter type</string>
     <string name="modify_the_search_query">Ændre søgning.</string>

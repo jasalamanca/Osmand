@@ -271,7 +271,6 @@
 
 
     <string name="local_indexes_cat_srtm">Lìnias de livellu</string>
-    <string name="local_indexes_cat_av">Datos àudio/vìdeo</string>
     <string name="stop_routing_confirm">Ses seguru de bòlere firmare su nàvigu?</string>
     <string name="clear_dest_confirm">Seguru ses de bòlere iscantzellare sa destinatzione (e sas tapas intermèdias)?</string>
     <string name="precise_routing_mode_descr">Abìlita pro calculare àndalas pretzisas chene atopos. Est lentu e limitadu in sa distàntzia.</string>
@@ -287,28 +286,15 @@
     <string name="srtm_paid_version_msg">Pro praghere lea a cunsideru s\'acuistu de s’estensione pro sas lìnias de livellu in su Market, pro sostènnere s’isvilupu imbeniente.</string>
     <string name="srtm_paid_version_title">Estensione lìnias de livellu</string>
     <string name="av_def_action_choose">Issèbera su rechesta</string>
-    <string name="av_def_action_video">Registra video</string>
-    <string name="av_def_action_audio">Registra audio</string>
     <string name="av_widget_action_descr">Issèbera s’atzione predefinida de su widget.</string>
     <string name="av_widget_action">Azione predefinida de su widget</string>
-    <string name="av_video_format_descr">Issèbera su formadu de essida vìdeu.</string>
-    <string name="av_video_format">Formadu de essida video</string>
-    <string name="av_use_external_recorder_descr">Imprea su registratore de sistema pro sos vìdeos.</string>
     <string name="av_use_external_recorder">Imprea su registratore de sistema</string>
     <string name="av_use_external_camera">Imprea s’app fotocàmera</string>
-    <string name="av_settings_descr">Cunfigura sas impostatziones àudio e vìdeo.</string>
-    <string name="av_settings">Impostatziones àudio/vìdeo</string>
     <string name="recording_error">Errore durante sa registratzione </string>
-    <string name="recording_camera_not_available">Sa fotocamera non est disponibile</string>
-    <string name="recording_is_recorded">S’àudio/vìdeo est beninde registradu. Pro lu firmare incarca in su widget AV.</string>
-    <string name="recording_playing">S’àudio de sa registratzione isseberada istat pro èssere reprodotu.\n%1$s</string>
     <string name="recording_open_external_player">Abèri reprodutòre esternu</string>
     <string name="recording_delete_confirm">Boles iscantzellare custa registratzione?</string>
 
     <string name="recording_unavailable">non disponìbile</string>
-    <string name="recording_context_menu_arecord">Registra una nota àudio</string>
-    <string name="recording_context_menu_vrecord">Registra una nota vìdeo</string>
-    <string name="layer_recordings">Istratu regitratziònes</string>
     <string name="recording_can_not_be_played">Sa registratzione non podet èssere reprodota</string>
     <string name="recording_context_menu_delete">Iscantzella sa registratzione</string>
     <string name="recording_context_menu_play">Reprodui</string>
@@ -316,17 +302,12 @@
     <string name="recording_default_name">Registrende</string>
     <string name="shared_string_control_stop">Stop</string>
     <string name="shared_string_control_start">Avia/Inghitza</string>
-    <string name="map_widget_av_notes">Notas àudio/vìdeo</string>
     <string name="osmand_srtm_short_description_80_chars">Estensione OsmAnd pro sas lìnias de livellu chene lìnia</string>
     <string name="osmand_srtm_long_description_1000_chars">Custa estensione frunit sas lìnias de livellu e sas umbraduras de sos rilievos, chi podent èssere ammustradas in supra de sas mapas regulares de OsmAnd. Custa funtzionalidade at a èssere appretziada meda dae sos atletas, sos escursionistas, e totu sos chi sunt interessados in s\'orografia e su paesàggiu. 
 \n
 \nSos datos globales (intre sos 70 grados nord e sos 70 grados sud) sunt basados in supra de sas medidas de su SRTM (Shuttle Radar Topography Mission) e de s’ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), un’aina medidora a bordu de Terra, su satellite de su sistema di osservatzione de sa terra de sa NASA. ASTER est un’isfortzu de coperassione intre NASA, su Ministeru de s’Economia Cummèrtziu e Industria (METI) de su Giappone, e su sistema ispatziale giaponesu (J-spacesystems).</string>
     <string name="map_widget_distancemeasurement">Medidura de sa distantzia</string>
-    <string name="audionotes_location_not_defined">Sa positzione da assotziare cun sa nota non est galu dessinida. \"Imprea positzione …\" pro assinzare una nota a sa positzione dislindada.</string>
 
-    <string name="map_widget_audionotes">Notas àudio</string>
-    <string name="audionotes_plugin_description">S’estensione pro sas notas àudio/vìdeo frunit sas funtzionalidades pro registrare notas àudio/foto/vìdeo durante su biàgiu, impreende su butone in s\'ischermu de sa mapa o su menù de cuntestu pro cale si siat positzione in sa mapa.</string>
-    <string name="audionotes_plugin_name">Estensione notas àudio/vìdeo</string>
     <string name="index_srtm_parts">partes</string>
     <string name="index_srtm_ele">Lìnias de livellu</string>
     <string name="srtm_plugin_description">Custa estensione frunit sas lìnias/curvas de livellu e sas umbraduras de sos rilievos, chi podent èssere ammustradas in supra de sas mapas regulares de OsmAnd. Custa funtzionalidade at a èssere apretziada meda dae sos atletas, sos escursionistas, e totu sos chi sunt interessados in s\'orografia e su paesàgiu. (Pro praghere ammentade·bos chi sos datos de sas curvas de livellu e sos de sos rilievos sunt separados, e ant a èssere disponìbiles pro s\'iscarrigamentu a pustis de àere allutu s\'estensione). 
@@ -1668,7 +1649,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="watch">Relògiu</string>
     <string name="notes">Notas</string>
     <string name="online_map">Mapa in lìnia</string>
-    <string name="share_note">Cumpartzi sa nota</string>
 
     <string name="shared_string_export">Esporta</string>
     <string name="shared_string_audio">Àudio</string>
@@ -1729,7 +1709,6 @@ Lon %2$s</string>
     <string name="shared_string_unexpected_error">B\'est istadu unu errore non prevididu</string>
     <string name="shared_string_action_template">Atzione {0}</string>
     <string name="shared_string_collapse">Mìnima</string>
-    <string name="shared_string_video">Vìdeo</string>
     <string name="shared_string_photo">Foto</string>
     <string name="route_points">Puntos de s\'àndala</string>
     <string name="shared_string_release">Essidu</string>
@@ -1794,7 +1773,6 @@ Lon %2$s</string>
 
     <string name="local_indexes_cat_wiki">Wikipedia</string>
     <string name="shared_string_show_details">Ammustra minujas</string>
-    <string name="local_recordings_delete_all_confirm">As a iscantzellare %1$d notas. Seguru ses?</string>
     <string name="download_wikipedia_maps">Wikipedia</string>
     <string name="gps_network_not_enabled">Su servìtziu de localizatzione no est abilitadu. Lu boles allùere?</string>
     <string name="disable_recording_once_app_killed">Èvita/istransi sa registratzione autònoma</string>
@@ -1885,7 +1863,6 @@ Lon %2$s</string>
     <string name="next_proceed">Imbeniente</string>
     <string name="opening_at">Aberit a sas</string>
     <string name="closing_at">Serrat a sas</string>
-    <string name="av_locations_descr">Documentu GPX cun notas locales.</string>
     <string name="av_locations">Localidades</string>
     
     <string name="contact_info">Informatziones de cuntatu</string>
@@ -2069,15 +2046,7 @@ Lon %2$s</string>
 	<string name="routing_attr_avoid_borders_name">Istransi sa rugradura de sas fronteras</string>
 	<string name="shared_string_near">A curtzu</string>
     <string name="shared_string_hide">Cua</string>
-    <string name="av_video_quality_low">Calidade prus bassa</string>
-    <string name="av_video_quality_high">Calidade prus arta</string>
-    <string name="av_video_quality">Calidade de su vìdeo</string>
-    <string name="av_video_quality_descr">Ischerta sa calidade de su vìdeu.</string>
-    <string name="av_audio_format">Formadu de s’àudio</string>
-    <string name="av_audio_format_descr">Ischerta su formadu de essida de s’àudio.</string>
-    <string name="av_audio_bitrate">Bitrate àudio</string>
-    <string name="av_audio_bitrate_descr">Ischerta su bitrate de s’àudio.</string>
-    <string name="no_address_found">Perunu indiritzu agatadu</string> 
+    <string name="no_address_found">Perunu indiritzu agatadu</string>
 	<string name="looking_up_address">Chirchende s’indiritzu</string>
     <string name="route_distance">Distàntzia:</string>
     <string name="route_duration">Tempus:</string>
@@ -2101,11 +2070,6 @@ Lon %2$s</string>
     <string name="update_time">Tempus de agiornamentu</string>
     
 <string name="shared_string_not_selected">Non ischertadu</string>
-    <string name="rec_split_desc">Torra a iscrìere sas notas si non b\'est logu bastante in sa memòria.</string>
-    <string name="rec_split_clip_length">"Longària  de sa nota"</string>
-    <string name="rec_split_clip_length_desc">Longària màssima de registratzione.</string>
-    <string name="rec_split_storage_size">Mannària de sa memòria</string>
-    <string name="rec_split_storage_size_desc">Cantidade de memòria chi podet èssere impreada dae su totale de sas notas.</string>
     <string name="last_map_change">Ùrtima modìfica de sa mapa: %s</string>
     <string name="hourly">Cada ora</string>
     <string name="daily">Cada die</string>
@@ -2428,9 +2392,6 @@ Si istimas OsmAnd e OSM e los boles suportare, custa est una manera perfeta pro 
     <string name="quick_action_add_poi">Annanghe PDI</string>
     <string name="quick_action_map_style">Acontza s\'istile de sa mapa</string>
     <string name="quick_action_map_style_switch">S\'istile de sa mapa est istadu cambiadu in \"%s\".</string>
-    <string name="quick_action_take_audio_note">Registra una nota àudio</string>
-    <string name="quick_action_take_video_note">Registra una nota vìdeu</string>
-    <string name="quick_action_take_photo_note">Registra una nota fotogràfica</string>
     <string name="quick_action_add_osm_bug">Annanghe una nota OSM</string>
     <string name="quick_action_navigation_voice">Boghe alluta/istudada</string>
     <string name="quick_action_navigation_voice_off">Sa boghe est istudada</string>
@@ -2447,9 +2408,6 @@ Si istimas OsmAnd e OSM e los boles suportare, custa est una manera perfeta pro 
     <string name="quick_favorites_name_preset">Nùmene predefinidu</string>
     <string name="quick_action_add_marker_descr">Incarchende su butone de s\'atzione as a annànghere unu marcadore in su tzentru de sa mapa.</string>
     <string name="quick_action_add_gpx_descr">Incarchende su butone de s\'atzione as a annànghere unu puntu de coladòrgiu GPX in su tzentru de sa mapa.</string>
-    <string name="quick_action_take_audio_note_descr">Incarchende su butone de s\'atzione as a annànghere una nota àudio in su tzentru de sa mapa.</string>
-    <string name="quick_action_take_video_note_descr">Incarchende su butone de s\'atzione as a annànghere una nota vìdeo in su tzentru de sa mapa.</string>
-    <string name="quick_action_take_photo_note_descr">Incarchende su butone de s\'atzione as a annànghere una nota fotogràfica in su tzentru de sa mapa.</string>
     <string name="quick_action_add_osm_bug_descr">Incarchende su butone de s\'atzione as a annànghere una nota OSM in su tzentru de sa mapa.</string>
     <string name="quick_action_add_poi_descr">Incarchende su butone de s\'atzione as a annànghere unu PDI in su tzentru de sa mapa.</string>
     <string name="quick_action_navigation_voice_descr">Incarchende su butone de s\'atzione as a istudare o allùere sa boghe de ghia in su mentres de su nàvigu.</string>
@@ -2879,9 +2837,6 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="marker_activated">Marcadore %s ativadu.</string>
     <string name="one_tap_active_descr">Incarca in unu marcadore in sa mapa pro lu moere in sa prima positzione in sos marcadores ativos, chene abèrrere su menù contestuale.</string>
     <string name="one_tap_active">Un\'incarcu ativu</string>
-    <string name="empty_state_av_notes">Piga notas!</string>
-    <string name="empty_state_av_notes_desc">Annanghe notas sonoras, vìdeos o fotografias a cada puntu in sa mapa, impreende su widget o su menù contestuale.</string>
-    <string name="notes_by_date">Notas pro data</string>
     <string name="by_date">Pro data</string>
     <string name="by_type">Pro casta</string>
     <string name="modify_the_search_query">Modìfica sa rechesta de chirca.</string>

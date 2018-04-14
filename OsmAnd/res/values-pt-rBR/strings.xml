@@ -136,8 +136,7 @@
 	<string name="shared_string_my_tracks">Minhas trilhas</string>
 	<string name="shared_string_currently_recording_track">Gravando trilha</string>
 	<string name="shared_string_audio">Áudio</string>
-	<string name="shared_string_video">Vídeo</string>
-	<string name="shared_string_photo">Foto</string>
+    <string name="shared_string_photo">Foto</string>
 	<string name="route_points">Pontos da rota</string>
 	<string name="track_segments">Segmentos da trilha</string>
 	<string name="shared_string_online_maps">Mapas on-line</string>
@@ -164,9 +163,7 @@
 	<string name="plugin_ski_name">Visão de mapa de esqui</string>
 	<string name="plugin_ski_descr">"Este complemento para o OsmAnd coloca ao seu alcance detalhes de pistas de descida de esqui, de travessia, rotas de esqui alpino, teleféricos e elevadores de esqui. Rotas e pistas são mostradas com codificação de cores por dificuldade e retratadas em um estilo especial de mapa \'Inverno\' que assimila uma paisagem de inverno cor de neve.
 \n\nAtivando esta mudança na visão do estilo de mapa de \'Inverno e esqui\', mostrando todas as características da paisagem em condições invernais. Essa visão pode ser revertida desativando aqui ou alterando o \'Estilo de mapa\' em \'Configurar mapa\' quando desejado. "</string>
-	<string name="audionotes_plugin_name">Notas de áudio/vídeo</string>
-	<string name="audionotes_plugin_description">O complemento de notas de áudio/vídeo fornece a funcionalidade para tomar notas de áudio/fotografia/vídeo durante uma viagem, usando um botão na tela do mapa ou diretamente do menu de contexto para qualquer posição no mapa.</string>
-	<string name="osmand_parking_plugin_name">Posição de estacionamento</string>
+    <string name="osmand_parking_plugin_name">Posição de estacionamento</string>
 	<string name="osmand_distance_planning_plugin_name">Calculadora de distância e ferramenta de planeamento</string>
 	<string name="osmand_distance_planning_plugin_description">Este complemento fornece um widget da tela mapa permitindo criar caminhos tocando no mapa, ou usar ou modificar arquivos GPX existentes, para planejar uma viagem e medir a distância entre pontos. Os resultados podem ser salvos como um arquivo GPX, que mais tarde pode ser usado para orientação.</string>
 	<string name="shared_string_accessibility">Acessibilidade</string>
@@ -175,7 +172,6 @@
 	<string name="debugging_and_development">Desenvolvimento OsmAnd</string>
 	<string name="rename_failed">Falha ao renomear.</string>
 	<string name="back_to_map">Voltar ao mapa</string>
-	<string name="share_note">Compartilhar nota</string>
     <string name="location_on_map">Posição:\n Lat %1$s\n Lon %2$s</string>
 	<string name="notes">Notas</string>
 	<string name="online_map">Mapa on-line</string>
@@ -353,7 +349,6 @@
     <string name="speak_traffic_warnings">Moderadores de tráfego</string>
     <string name="context_menu_item_directions_from">Direções de</string>
     <string name="app_mode_default">Explorar</string>
-	<string name="local_indexes_cat_av">Dados de Áudio/Vídeo</string>
     <string name="stop_routing_confirm">Confirma que quer parar a navegação?</string>
     
     <string name="int_hour">h</string>
@@ -667,7 +662,6 @@
     <string name="route_descr_destination">Destino</string>
     <string name="route_to">Para:</string>
     <string name="clear_dest_confirm">Confirma que deseja remover o destino (inclusive os intermediários)?</string>
-    <string name="av_settings">"Configurar áudio/vídeo "</string>
     <string name="route_via">Via:</string>
     <string name="route_from">De:</string>
 	
@@ -762,37 +756,22 @@ Pôr do Sol: %2$s</string>
     <string name="intermediate_points_change_order">Alterar ordem</string>
     <string name="srtm_paid_version_msg">Por favor, considere comprar o complemento Curvas de nível na loja de apps para apoiar o desenvolvimento.</string>
     <string name="av_def_action_choose">Selecionar a pedido</string>
-    <string name="av_def_action_video">Gravar vídeo</string>
-    <string name="av_def_action_audio">Gravar áudio</string>
     <string name="av_widget_action_descr">Selecionar ação predefinida do widget</string>
     <string name="av_widget_action">Ação predefinida</string>
-    <string name="av_video_format_descr">Selecionar formato do vídeo de saída</string>
-    <string name="av_video_format">Formato do vídeo</string>
-    <string name="av_use_external_recorder_descr">Usar gravador do sistema para vídeo</string>
     <string name="av_use_external_recorder">Usar gravador externo</string>
     <string name="av_use_external_camera_descr">Usar o aplicativo de sistema para foto</string>
     <string name="av_use_external_camera">Usar câmera externa</string>
-    <string name="av_settings_descr">Configurar áudio e vídeo</string>
     <string name="recording_error">Ocorreu um erro durante a gravação</string>
-    <string name="recording_camera_not_available">Câmera indisponível</string>
-    <string name="recording_is_recorded">Áudio/vídeo está sendo gravado. Para parar toque o widget AV.</string>
-    <string name="recording_playing">Reproduzindo áudio da gravação especificada.\n%1$s</string>
     <string name="recording_open_external_player">Abrir reprodutor externo</string>
     <string name="recording_delete_confirm">Você quer excluir esta gravação?</string>
     
     <string name="recording_unavailable">Indisponível</string>
-    <string name="recording_context_menu_arecord">Tomar uma nota de áudio</string>
-    <string name="recording_context_menu_vrecord">Tomar una nota de vídeo</string>
-    <string name="layer_recordings">Camada de gravação</string>
     <string name="recording_can_not_be_played">Gravação não pode ser reproduzida</string>
     <string name="recording_context_menu_delete">Apagar gravação</string>
     <string name="recording_context_menu_play">Reproduzir</string>
     <string name="recording_description">Gravando %1$s %3$s %2$s</string>
     <string name="recording_default_name">Gravando</string>
-    <string name="map_widget_av_notes">Notas de áudio/vídeo</string>
     <string name="map_widget_distancemeasurement">Medição de distância</string>
-    <string name="audionotes_location_not_defined">Local para associar com a nota ainda não está definido. \"Usar posição…\" para atribuir uma nota para o local especificado</string>
-    <string name="map_widget_audionotes">Notas de áudio</string>
     <string name="index_srtm_parts">peças</string>
     <string name="download_select_map_types">Outros mapas</string>
     <string name="download_roads_only_item">Apenas estradas</string>
@@ -1684,8 +1663,7 @@ Pôr do Sol: %2$s</string>
     <string name="local_indexes_cat_wiki">Wikipédia</string>
     <string name="download_wikipedia_maps">Wikipédia</string>
     <string name="shared_string_import2osmand">Importar para OsmAnd</string>
-    <string name="local_recordings_delete_all_confirm">Você vai apagar %1$d notas. Tem certeza?</string>
-	<string name="disable_recording_once_app_killed">Impedir o registro autônomo</string>
+    <string name="disable_recording_once_app_killed">Impedir o registro autônomo</string>
     <string name="gps_network_not_enabled">Serviço de posição está desativado. Você quer ativá-lo?</string>
     <string name="disable_recording_once_app_killed_descrp">Pausará o registro de GPX após o encerramento do app (via apps recentes). (Indicação de OsmAnd em segundo plano desaparecerá da barra de notificação do Android.)</string>
 	<string name="archive_wikipedia_data">Você tem dados baixados da Wikipédia antigos e incompatíveis. Quer arquivá-los?</string>
@@ -1774,7 +1752,6 @@ Pôr do Sol: %2$s</string>
 	<string name="next_proceed">Próximo</string>
 	<string name="opening_at">Abre às</string>
 	<string name="closing_at">Fecha em</string>
-<string name="av_locations_descr">Arquivo GPX com notas de posição.</string>
     <string name="av_locations">Posições</string>
     
 	<string name="contact_info">Informações de contato</string>
@@ -1950,14 +1927,6 @@ Pôr do Sol: %2$s</string>
     <string name="dashboard_or_drawer_title">Controle pelo painel ou menu</string>
     <string name="dashboard_or_drawer_description">Há uma nova opção para controlar principalmente o app via painel de controle flexível ou um menu estático. Sua escolha sempre pode ser alterada nas configurações do painel de controle.</string>
 <string name="shared_string_hide">Ocultar</string>
-    <string name="av_video_quality_low">Menor qualidade</string>
-    <string name="av_video_quality_high">Maior qualidade</string>
-    <string name="av_video_quality">Qualidade do vídeo</string>
-    <string name="av_video_quality_descr">Selecionar a qualidade de vídeo.</string>
-    <string name="av_audio_format">Formato de áudio</string>
-    <string name="av_audio_format_descr">Selecionar o formato de saída de áudio.</string>
-    <string name="av_audio_bitrate">Bitrate de áudio</string>
-    <string name="av_audio_bitrate_descr">Selecionar o bitrate de áudio.</string>
     <string name="shared_string_near">Perto</string>
     <string name="no_address_found">Sem endereço determinado</string>
 	<string name="looking_up_address">Procurando endereço</string>
@@ -1984,11 +1953,6 @@ Pôr do Sol: %2$s</string>
 <string name="updates_size">Tamanho da atualização</string>
 <string name="rec_split">Dividir gravação</string>
     <string name="rec_split_title">Usar o separador de gravação</string>
-    <string name="rec_split_desc">Sobrescrever clipes quando o espaço usado exceder o limite de armazenamento.</string>
-    <string name="rec_split_clip_length">Duração do clipe</string>
-    <string name="rec_split_clip_length_desc">Limite de tempo máximo para clipes gravados.</string>
-    <string name="rec_split_storage_size">Limite de armazenamento</string>
-    <string name="rec_split_storage_size_desc">Quantidade de espaço que pode ser ocupado por todos os clipes gravados.</string>
     <string name="last_map_change">Última mudança de mapa: %s</string>
     <string name="hourly">A cada hora</string>
     <string name="daily">Diariamente</string>
@@ -2298,8 +2262,6 @@ Pôr do Sol: %2$s</string>
     <string name="marker_activated">Marcador %s foi ativado.</string>
     <string name="one_tap_active_descr">Toque num marcador do mapa para movê-lo para o topo dos marcadores ativos sem abrir o menu de contexto.</string>
     <string name="one_tap_active">Ativar com um toque</string>
-    <string name="empty_state_av_notes">Tome notas!</string>
-    <string name="notes_by_date">Notas por data</string>
     <string name="by_date">Por data</string>
     <string name="by_type">Por tipo</string>
     <string name="looking_for_tracks_with_waypoints">Procurando trilhas com pontos de passagem</string>
@@ -2444,7 +2406,6 @@ Pôr do Sol: %2$s</string>
     <string name="translit_names">Transliterar nomes</string>
     <string name="import_track_desc">Arquivo %1$s não possui pontos de passagem, importe-o como uma trilha?</string>
     <string name="add_segment_to_the_track">Adicionar a uma trilha GPX</string>
-<string name="empty_state_av_notes_desc">Adicionar nota de áudio, vídeo ou foto para cada ponto no mapa, usando o widget ou o menu de contexto.</string>
     <string name="quick_action_add_destination_desc">Tocar no botão de ação adicionará um destino no local do centro da tela. O destino anteriormente definido se torna o último destino intermediário.</string>
     <string name="quick_action_replace_destination_desc">Tocar no botão de ação substituirá o destino com o local do centro da tela.</string>
     <string name="quick_action_add_first_intermediate_desc">Tocar no botão de ação adicionará um primeiro ponto intermédio no local do centro da tela.</string>
@@ -2576,9 +2537,6 @@ Pôr do Sol: %2$s</string>
     <string name="quick_action_add_poi">Adicionar POI</string>
     <string name="quick_action_map_style">Mudar estilo de mapa</string>
     <string name="quick_action_map_style_switch">O estilo do mapa foi alterado para \"%s\".</string>
-    <string name="quick_action_take_audio_note">Tome nota de áudio</string>
-    <string name="quick_action_take_video_note">Tome nota de vídeo</string>
-    <string name="quick_action_take_photo_note">Tome nota de foto</string>
     <string name="quick_action_add_osm_bug">Adicionar Nota OSM</string>
     <string name="quick_action_navigation_voice">Ligar/desligar voz</string>
     <string name="quick_action_navigation_voice_off">A voz está desligada</string>
@@ -2634,9 +2592,6 @@ Pôr do Sol: %2$s</string>
     <string name="osmand_extended_description_part7">Contribua para o OSM • Comunique falha de dados • Carregue trilhas GPX diretamente do app • Adicione POIs e carregue-os diretamente ao OSM (ou mais tarde se off-line)</string>
     <string name="osmand_plus_extended_description_part5">Recursos de segurança • Alternância de exibição dia/noite automatizada opcional • Exibição de limite de velocidade opcional, com lembrete se você ultrapassá-lo • Zoom dependente da velocidade opcional • Compartilhe sua localização para que seus amigos possam encontrar você</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Especificar um buffer de tempo para manter locais para enviar sem conexão</string>
-    <string name="quick_action_take_audio_note_descr">Tocar no botão de ação adicionará uma nota de áudio no local do centro da tela.</string>
-    <string name="quick_action_take_video_note_descr">Tocar no botão de ação adicionará uma nota de vídeo no local do centro da tela.</string>
-    <string name="quick_action_take_photo_note_descr">Tocar no botão de ação adicionará uma nota de foto no local do centro da tela.</string>
     <string name="quick_action_add_osm_bug_descr">Tocar no botão de ação adicionará uma nota OSM no local do centro da tela.</string>
     <string name="quick_action_add_poi_descr">Tocar no botão de ação adicionará um POI no local do centro da tela.</string>
     <string name="quick_action_navigation_voice_descr">Tocar no botão de ação irá ativar ou desativar a orientação por voz durante a navegação.</string>

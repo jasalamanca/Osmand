@@ -992,27 +992,16 @@
     <string name="srtm_plugin_name">קווי מתאר</string>
     <string name="download_select_map_types">מפות אחרות</string>
     <string name="download_srtm_maps">מפות SRTM</string>
-    
-	
-<string name="audionotes_location_not_defined">המיקום לא מוגדר עדיין לצורכי שמירת הערות. יש לבחור ב„שימוש במיקום…” כדי להקצות הערה למיקום שצוין.</string>
-    
-    <string name="map_widget_audionotes">הערות קוליות</string>
-    <string name="audionotes_plugin_description">תיאור תוסף ההערות הקוליות</string>
-    <string name="audionotes_plugin_name">תוסף הערות קוליות</string>
-    
+
+
     <string name="osmand_srtm_short_description_80_chars">תוסף ל־OsmAnd לקווי מתאר בלתי מקוונים</string>
     
     <string name="map_widget_distancemeasurement">מדידת מרחק</string>
-    
-    <string name="recording_is_recorded">שמע/וידאו מוקלטים. כדי להפסיק זאת יש לגעת בלחצן העצירה בווידג׳ט.</string>
-    <string name="recording_playing">השמע מההקלטה שצוינה מושמע.\n%1$s</string>
+
     <string name="recording_open_external_player">פתיחת נגן חיצוני</string>
     <string name="recording_delete_confirm">למחוק הקלטה זו?</string>
     
     <string name="recording_unavailable">לא זמין</string>
-    <string name="recording_context_menu_arecord">הקלטת הערה קולית</string>
-    <string name="recording_context_menu_vrecord">צילום הערת וידאו</string>
-    <string name="layer_recordings">שכבת ההקלטה</string>
     <string name="recording_can_not_be_played">לא ניתן לנגן את ההקלטה</string>
     <string name="recording_context_menu_delete">מחיקת הקלטה</string>
     <string name="recording_context_menu_play">נגינה</string>
@@ -1020,19 +1009,10 @@
     <string name="recording_default_name">בהקלטה</string>
     <string name="shared_string_control_stop">עצירה</string>
     <string name="shared_string_control_start">הקלטה</string>
-    <string name="map_widget_av_notes">הערות קוליות</string>
-    <string name="av_def_action_video">הקלטת וידאו</string>
-    <string name="av_def_action_audio">הקלטת שמע</string>
     <string name="av_widget_action_descr">בחירת פעולת הווידג׳ט כבררת המחדל.</string>
     <string name="av_widget_action">פעולת הווידג׳ט כבררת המחדל</string>
-    <string name="av_video_format_descr">נא לבחור את תבנית פלט הווידאו.</string>
-    <string name="av_video_format">תבנית פלט וידאו</string>
-    <string name="av_use_external_recorder_descr">שימוש במקליט המערכת עבור וידאו.</string>
     <string name="av_use_external_recorder">שימוש במקליט חיצוני</string>
-    <string name="av_settings_descr">הגדרת תצורת השמע והווידאו.</string>
-    <string name="av_settings">הגדרות שמע/וידאו</string>
     <string name="recording_error">אירעה שגיאה בזמן ההקלטה</string>
-    <string name="recording_camera_not_available">המצלמה אינה זמינה</string>
     <string name="osmand_srtm_long_description_1000_chars">תוסף זה מספק קווי מתאר שניתן להציג על המפות הבלתי מקוונות של OsmAnd. הנתונים הגלובליים (בין 70 מעלות צפון ל־70 מעלות דרום) מבוססת על מדידות שבוצעו על ידי ה־SRTM (משימת הטופוגרפיה של מעבורת המכ״ם) ו־ASTER (רדיומטר חלל מתקדם לגילוי פליטה תרמית והשתקפות), התקן דימות על סיפונה של Terra, לוויין הדגל של מערכת ההשפעה על כדור הארץ של NASA.‏ ASTER הנו שיתוף פעולה בין NASA, משרד התמ״ת היפני (METI) ומערכות החלל היפניות (J-spacesystems).</string>
     <string name="srtm_paid_version_msg">נא לשקול לקנות את תוסף קווי המתאר מהחנות כדי לתמוך בפיתוח עתידי.</string>
     <string name="srtm_paid_version_title">תוסף קווי מתאר</string>
@@ -1048,8 +1028,7 @@
     <string name="clear_dest_confirm">למחוק את נקודת היעד (ואת נקודות הביניים)?</string>
     <string name="precise_routing_mode_descr">יש להפעיל כדי לחשב נתיבים מדויקים ללא סטיות. עדיין קיימת הגבלת מרחק ואטיות.</string>
     <string name="precise_routing_mode">ניתוב מדויק (אלפא)</string>
-    <string name="local_indexes_cat_av">נתוני שמע/וידאו</string>
-    
+
     <string name="support_new_features_descr">ניתן לתרום כדי לגלות תכונות חדשות שהוטמעו ביישום</string>
 	
     <string name="download_hillshade_maps">מפות צל מדומה</string>
@@ -1139,9 +1118,6 @@
     <string name="shared_string_type">סוג</string>
     <string name="starting_point">נקודת המוצא</string>
     <string name="shared_string_not_selected">לא נבחר</string>
-    <string name="rec_split_clip_length">אורך סרטון</string>
-    <string name="rec_split_clip_length_desc">הגבול העליון לאורך סרטונים מוקלטים.</string>
-    <string name="rec_split_storage_size_desc">כמות המקום שמותר לנצל לצורך אחסון כל הסרטונים המוקלטים.</string>
     <string name="live_updates">עדכונים חיים</string>
     <string name="select_voice_provider">בחירת הנחיה קולית</string>
     <string name="select_voice_provider_descr">יש לבחור או להוריד הנחיה קולית עבור שפתך.</string>
@@ -1156,18 +1132,8 @@
     <string name="shared_string_undo_all">ביטול הכול</string>
     <string name="rec_split">פיצול הקלטות</string>
     <string name="rec_split_title">שימוש בפיצול הקלטות</string>
-    <string name="rec_split_desc">יש לדרוס סרטונים קיימים אם המקום הנדרש עולה על כמות המקום המוקצה.</string>
-    <string name="rec_split_storage_size">גודל האחסון</string>
     <string name="no_address_found">לא נקבעה כתובת</string>
     <string name="shared_string_hide">הסתרה</string>
-    <string name="av_video_quality_low">איכות וידאו נמוכה</string>
-    <string name="av_video_quality_high">איכות וידאו גבוהה</string>
-    <string name="av_video_quality">איכות וידאו</string>
-    <string name="av_video_quality_descr">בחירת רמת איכות הווידאו.</string>
-    <string name="av_audio_format">פורמט שמע</string>
-    <string name="av_audio_format_descr">בחירת המבנה לפלט שמע.</string>
-    <string name="av_audio_bitrate">קצב סיביות להקלטת שמע</string>
-    <string name="av_audio_bitrate_descr">בחירת קצב הסיביות לשמע.</string>
     <string name="please_specify_poi_type_only_from_list">נא לבחור את נקודת העניין הנכונה מהרשימה או לדלג.</string>
     <string name="access_from_map_description">כפתור התפריט מציג את לוח המחוונים ולא את התפריט.</string>
     <string name="access_from_map">גישה מתצוגת המפה</string>
@@ -1820,9 +1786,6 @@
     <string name="quick_action_add_poi">הוספת נקודת עניין</string>
     <string name="quick_action_map_style">שינוי סגנון מפה</string>
     <string name="quick_action_map_style_switch">סגנון המפה הוחלף בהצלחה בסגנון „%s”.</string>
-    <string name="quick_action_take_audio_note">הקלטת הערת שמע</string>
-    <string name="quick_action_take_video_note">הקלטת הערת וידאו</string>
-    <string name="quick_action_take_photo_note">צילום הערת תמונה</string>
     <string name="quick_action_add_osm_bug">הוספת הערת OSM</string>
     <string name="quick_action_navigation_voice">הנחייה קולית כבויה/פעילה</string>
     <string name="quick_action_navigation_voice_off">הנחייה קולית כבויה</string>
@@ -1839,9 +1802,6 @@
     <string name="quick_favorites_name_preset">ערכת שמות</string>
     <string name="quick_action_add_marker_descr">נגיעה בכפתור הפעולה תוסיף סמן מפה במיקום מרכזי במסך.</string>
     <string name="quick_action_add_gpx_descr">נגיעה בכפתור הפעולה תוסיף נקודת דרך GPX במיקום מרכזי במסך.</string>
-    <string name="quick_action_take_audio_note_descr">נגיעה בכפתור הפעולה תוסיף הערת שמע במיקום מרכזי במסך.</string>
-    <string name="quick_action_take_video_note_descr">נגיעה בכפתור הפעולה תוסיף הערת וידאו במיקום מרכזי במסך.</string>
-    <string name="quick_action_take_photo_note_descr">נגיעה בכפתור הפעולה תוסיף הערת תמונה במיקום מרכזי במסך.</string>
     <string name="quick_action_add_osm_bug_descr">נגיעה בכפתור הפעולה תוסיף הערה ל־OSM במיקום מרכזי במסך.</string>
     <string name="quick_action_add_poi_descr">נגיעה בכפתור הפעולה תוסיף נקודת עניין במיקום מרכזי במסך.</string>
     <string name="quick_action_navigation_voice_descr">נגיעה בכפתור הפעולה ישבית או יפעיל הנחייה קולית במהלך ניווט.</string>
@@ -2101,7 +2061,6 @@
     <string name="simulate_your_location_stop_descr">הפסקת הדמיית המיקום שלך.</string>
     <string name="simulate_your_location_descr">הדמיית המיקום שלך באמצעות נתיב מחושב או מסלול GPX מוקלט.</string>
     <string name="looking_up_address">הכתובת בחיפוש</string>
-    <string name="av_locations_descr">קובץ GPX עם מיקומי הערות.</string>
     <string name="routing_attr_avoid_shuttle_train_name">התעלמות מרכבות שאטל</string>
     <string name="routing_attr_avoid_shuttle_train_description">התעלמות מרכבות שאטל</string>
     <string name="rendering_value_boldOutline_name">קו מתאר מודגש</string>
@@ -2151,7 +2110,6 @@
     <string name="osm_changes_added_to_local_edits">השינויים ב־OSM נוספו לערכת השינויים המקומית</string>
     <string name="mark_to_delete">סימון למחיקה</string>
     <string name="osmo_grop_name_length_alert">אורך שם הקבוצה חייב להיות באורך 3 תווים לפחות!</string>
-    <string name="local_recordings_delete_all_confirm">פעולה זו תוביל למחיקת %1$d הערות. להמשיך?</string>
     <string name="local_osm_changes_upload_all_confirm">פעולה זו תעלה %1$d שינויים ל־OSM. להמשיך?</string>
     <string name="confirmation_to_clear_history">לפנות את ההיסטוריה?</string>
     <string name="dash_download_msg_none">להוריד מפות בלתי מקוונות?</string>
@@ -2188,9 +2146,6 @@
     <string name="shared_string_edited">נערכה</string>
     <string name="shared_string_added">נוספה</string>
     <string name="marker_activated">הסמן %s הופעל.</string>
-    <string name="empty_state_av_notes">אפשר לשמור הערות!</string>
-    <string name="empty_state_av_notes_desc">ניתן להוסיף הערה מסוג שמע, וידאו או תמונה לכל נקודה במפה באמצעות וידג׳ט או תפריט הקשר.</string>
-    <string name="notes_by_date">הערות לפי תאריך</string>
     <string name="by_date">לפי תאריך</string>
     <string name="by_type">לפי סוג</string>
     <string name="subscribe_email_desc">ניתן להירשם לרשימת הדיוור שלנו כדי לקבל הנחות על היישומון ולקבל עוד 3 הורדות של מפות בחינם!</string>
@@ -2319,7 +2274,6 @@
     <string name="shared_string_my_tracks">המסלולים שלי</string>
     <string name="shared_string_currently_recording_track">המסלול מוקלט</string>
     <string name="shared_string_audio">שמע</string>
-    <string name="shared_string_video">וידאו</string>
     <string name="shared_string_photo">תמונה</string>
     <string name="route_points">נקודות נתיב</string>
     <string name="track_segments">מקטעי מסלול</string>
@@ -2328,7 +2282,6 @@
     <string name="plugin_touringview_name">תצוגת מפת סיור</string>
     <string name="plugin_nautical_name">תצוגת מפה ימית</string>
     <string name="plugin_ski_name">תצוגת מפת סקי</string>
-    <string name="share_note">שיתוף פתק</string>
     <string name="world_ski_missing">כדי להציג מפות סקי יש להוריד מפה מיוחדת בלתי מקוונת</string>
     <string name="nautical_maps_missing">כדי להציג מפות ימיות, יש להוריד מפות מיוחדות בלתי מקוונות</string>
     <string name="avoid_roads_msg">ניתן לבקש נתיב חלופי על ידי בחירת דרכים בלתי רצויות</string>

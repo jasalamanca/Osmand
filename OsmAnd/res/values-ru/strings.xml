@@ -40,9 +40,6 @@
     <string name="select_city">Выберите город</string>
     <string name="select_postcode">Выберите почтовый код</string>
 
-    <string name="quick_action_take_audio_note">Записать аудио</string>
-    <string name="quick_action_take_video_note">Записать видео</string>
-    <string name="quick_action_take_photo_note">Сделать фото</string>
     <string name="quick_action_add_osm_bug">Добавить заметку OSM</string>
 
     <string name="parking_options">Опции парковки</string>
@@ -250,17 +247,9 @@
     <string name="shared_string_select">Выбрать</string>
     <string name="rendering_attr_hideIcons_name">Значки POI</string>
     <string name="rendering_attr_horseRoutes_name">Конные маршруты</string>
-    <string name="av_video_quality_low">Низкое качество</string>
-    <string name="av_video_quality_high">Высокое качество</string>
-    <string name="av_video_quality">Качество видео</string>
-    <string name="av_video_quality_descr">Выберите качество видео.</string>
-	<string name="shared_string_commit">Подтвердить</string>
+    <string name="shared_string_commit">Подтвердить</string>
     <string name="looking_up_address">Поиск адреса</string>
     <string name="please_specify_poi_type_only_from_list">Пожалуйста, укажите корректный тип POI или оставьте его пустым.</string>
-    <string name="av_audio_format">Формат аудио</string>
-    <string name="av_audio_format_descr">Выберите формат аудио.</string>
-    <string name="av_audio_bitrate">Битрейт аудио</string>
-    <string name="av_audio_bitrate_descr">Выберите битрейт аудио.</string>
     <string name="shared_string_hide">Скрыть</string>
 	<string name="no_address_found">Адрес не определён</string>
 	<string name="shared_string_near">Около</string>
@@ -299,37 +288,20 @@
 \nГлобальные данные (между 70 градусами на севере и 70 градусами на юге) основываются на измерениях SRTM (Shuttle Radar Topography Mission) и ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer) — инструментом визуализации Terra, флагманского спутника Системы Наблюдения Земли NASA. ASTER является результатом совместных усилий NASA, министерства экономики Японии, торговли и промышленности (METI), а также Космических Систем Японии (J-spacesystems).</string>
     <string name="srtm_paid_version_msg">Рассмотрите, пожалуйста, покупку плагина \"Линии высот\" в Google Play, чтобы поддержать последующую разработку.</string>
     <string name="srtm_paid_version_title">Линии высот</string>
-    <string name="av_def_action_video">Запись видео</string>
-    <string name="av_def_action_audio">Запись аудио</string>
     <string name="av_widget_action_descr">Выбрать действие по умолчанию для виджета.</string>
     <string name="av_widget_action">Действие по умолчанию для виджета</string>
-    <string name="av_video_format_descr">Выбрать формат видео.</string>
-    <string name="av_video_format">Формат видео</string>
-    <string name="av_use_external_recorder_descr">Использовать системное приложение для записи видео.</string>
     <string name="av_use_external_recorder">Использовать системную программу</string>
-    <string name="av_settings_descr">Настройка аудио и видео.</string>
     <string name="recording_error">Произошла ошибка при записи </string>
-    <string name="recording_camera_not_available">Камера недоступна</string>
-    <string name="recording_is_recorded">Аудио/видео записывается. Для остановки нажмите AV виждет.</string>
-    <string name="recording_playing">Проигрывается аудио.\n%1$s</string>
     <string name="recording_open_external_player">Открыть внешний проигрыватель</string>
     <string name="recording_delete_confirm">Вы хотите удалить эту запись?</string>
     <string name="recording_unavailable">недоступно</string>
-    <string name="recording_context_menu_arecord">Создать аудио заметку</string>
-    <string name="recording_context_menu_vrecord">Создать видео заметку</string>
-    <string name="layer_recordings">Слой аудиозаписей</string>
     <string name="recording_can_not_be_played">Запись не может быть воспроизведена</string>
     <string name="recording_context_menu_delete">Удалить запись</string>
     <string name="recording_context_menu_play">Проиграть</string>
     <string name="recording_description">Запись %1$s %3$s %2$s</string>
     <string name="recording_default_name">Запись</string>
-    <string name="map_widget_av_notes">Аудио заметки</string>
     <string name="osmand_srtm_short_description_80_chars">OsmAnd плагин для линий высот</string>
     <string name="map_widget_distancemeasurement">Измерение расстояний</string>
-    <string name="audionotes_location_not_defined">Текущее местоположение для заметки ещё не определено. Используйте контекстное меню для привязки заметки к определённой точке.</string>
-    <string name="map_widget_audionotes">Аудио заметки</string>
-    <string name="audionotes_plugin_description">Плагин аудио/видео заметки предоставляет функциональные возможности по созданию аудио/фото/видео записей во время поездки, либо с помощью кнопки на экране карты, либо непосредственно через контекстное меню для любой позиции на карте.</string>
-    <string name="audionotes_plugin_name">Аудио-видео заметки</string>
     <string name="index_srtm_parts">частей</string>
     <string name="index_srtm_ele">Линии высот</string>
     <string name="srtm_plugin_name">Линии высот</string>
@@ -1185,7 +1157,6 @@
     <string name="monitoring_control_start">GPX</string>
     <string name="download_select_map_types">Прочие карты</string>
     <string name="download_srtm_maps">Карты SRTM</string>
-    <string name="av_settings">Настройки аудио и видео </string>
     <string name="intermediate_points_change_order">Изменить порядок</string>
     <string name="recording_context_menu_show">Просмотр</string>
     <string name="av_def_action_picture">Сделать фото</string>
@@ -1196,7 +1167,6 @@
 \n
 \nГлобальные данные (между 70 градусов на севере и 70 градусов на юге) основываются на измерениях SRTM (Shuttle Radar Topography Mission) и ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), инструментом визуализации Terra, флагманского спутника Земли системы наблюдения NASA. ASTER является результатом совместных усилий NASA, министерства экономики Японии, торговли и промышленности (METI), космических систем Японии (J-spacesystems).</string>
     <string name="recording_photo_description">Фото %1$s %2$s</string>
-    <string name="local_indexes_cat_av">Аудио/Видео данные</string>
     <string name="stop_routing_confirm">Вы уверены, что хотите остановить навигацию?</string>
     <string name="clear_dest_confirm">Вы уверены, что хотите удалить пункт назначения (и промежуточные пункты)?</string>
     <string name="precise_routing_mode">Точный маршрут (alpha)</string>
@@ -1823,7 +1793,6 @@
     <string name="shared_string_favorites">Избранные</string>
     <string name="shared_string_add_to_favorites">Добавить к избранным</string>
     <string name="shared_string_audio">Аудио</string>
-    <string name="shared_string_video">Видео</string>
     <string name="shared_string_photo">Фото</string>
     <string name="route_points">Точки маршрута</string>
     <string name="track_segments">Сегменты трека</string>
@@ -1840,7 +1809,6 @@
     <string name="shared_string_my_favorites">Мои избранные</string>
     <string name="shared_string_my_tracks">Мои треки</string>
     <string name="shared_string_currently_recording_track">Текущий пишущийся трек</string>
-    <string name="share_note">Поделиться заметкой</string>
     <string name="shared_string_release">Дата выпуска</string>
     <string name="routing_settings_2">Настройки навигации</string>
     <string name="general_settings_2">Основные настройки</string>
@@ -1933,7 +1901,6 @@
     <string name="download_wikipedia_maps">Википедия</string>
     <string name="read_full_article">Читать полный текст статьи (онлайн)</string>
     <string name="shared_string_import2osmand">Импорт в OsmAnd</string>
-    <string name="local_recordings_delete_all_confirm">Вы собираетесь удалить %1$d заметок. Вы уверены?</string>
     <string name="gps_network_not_enabled">Служба определения координат не включена. Вы хотите включить её?</string>
     <string name="disable_recording_once_app_killed_descrp">При завершении приложения (через последние приложения) запись GPX будет поставлена на паузу. (Из панели уведомлений Android исчезнет значок фонового режима.)</string>
     <string name="download_wikipedia_files">Хотите загрузить дополнительные данные Википедии (%1$s Мб) ?</string>
@@ -2143,7 +2110,6 @@
 <string name="available_maps">Доступные карты</string>
     <string name="starting_point">Начальный пункт</string>
     <string name="shared_string_not_selected">Не выбрано</string>
-    <string name="rec_split_storage_size">Размер хранилища</string>
     <string name="shared_string_sound">Звук</string>
     <string name="no_location_permission">Приложение не имеет разрешения на доступ к местоположению данных.</string>
     <string name="no_camera_permission">Приложение не имеет разрешения на доступ к камере.</string>
@@ -2164,12 +2130,8 @@
     <string name="number_of_edits">Количество правок</string>
     <string name="night">Ночь</string>
     <string name="morning">Утро</string>
-    <string name="rec_split_storage_size_desc">Объём памяти, который может быть занят всеми видеоклипами.</string>
-    <string name="rec_split_clip_length">Длина ролика</string>
-    <string name="rec_split_clip_length_desc">Верхний предел продолжительности записанного клипа.</string>
     <string name="rec_split">Разбиение на клипы</string>
     <string name="rec_split_title">Использовать разбиение на клипы</string>
-    <string name="rec_split_desc">Циклическая перезапись клипов при превышении заданного объема хранилища.</string>
     <string name="switch_start_finish">Поменять местами пункт отправления и пункт назначения</string>
     <string name="shared_string_remove">Удалить</string>
     <string name="rendering_attr_hideUnderground_name">Подземные объекты</string>
@@ -2367,7 +2329,6 @@
     <string name="donation_to_osm">Пожертвование для сообщества OpenStreetMap</string>
     <string name="donation_to_osm_desc">Часть вашего пожертвования будет отправлена пользователям OSM, вносящим изменения в OpenStreetMaps. Стоимость подписки при этом остаётся прежней.</string>
     <string name="osm_live_subscription_desc">Подписка позволяет получать ежечасные, ежедневные, еженедельные обновления и неограниченные загрузки для всех карт по всему миру.</string>
-    <string name="av_locations_descr">Файл GPX с координатами заметок.</string>
     <string name="lang_ast">Астурийский</string>
     <string name="lang_hsb">Верхнелужицкий</string>
     <string name="lang_be_by">Белорусский (латиница)</string>
@@ -2618,9 +2579,6 @@
     <string name="live_monitoring_max_interval_to_send_desrc">Укажите временной буфер для хранения местоположений при отсутствии подключения к сети</string>
     <string name="quick_action_add_marker_descr">Нажатие на кнопку действия добавит маркер по центру экрана.</string>
     <string name="quick_action_add_gpx_descr">Нажатие на кнопку действия добавит путевую точку GPX по центру экрана.</string>
-    <string name="quick_action_take_audio_note_descr">Нажатие на кнопку действия добавит аудио заметку по центру экрана.</string>
-    <string name="quick_action_take_video_note_descr">Нажатие на кнопку действия добавит видео заметку по центру экрана.</string>
-    <string name="quick_action_take_photo_note_descr">Нажатие на кнопку действия добавит фото заметку по центру экрана.</string>
     <string name="quick_action_add_osm_bug_descr">Нажатие на кнопку действия добавит заметку OSM по центру экрана.</string>
     <string name="quick_action_add_poi_descr">Нажатие на кнопку действия добавит POI по центру экрана.</string>
     <string name="quick_action_navigation_voice_descr">Нажатие на кнопку действия выключит или включит голосовые подсказки во время навигации.</string>
@@ -2797,9 +2755,6 @@
     <string name="marker_activated">Маркер %s активирован.</string>
     <string name="one_tap_active_descr">Нажатие на маркер на карте переместит его на первое место в списке активных маркеров, не открывая контекстное меню.</string>
     <string name="one_tap_active">Активация одним нажатием</string>
-    <string name="empty_state_av_notes">Делайте заметки!</string>
-    <string name="empty_state_av_notes_desc">Добавьте аудио, видео или фото заметку в любую точку на карте, используя виджет или контекстное меню.</string>
-    <string name="notes_by_date">Заметки по дате</string>
     <string name="by_date">По дате</string>
     <string name="by_type">По типу</string>
     <string name="modify_the_search_query">Изменить поисковый запрос.</string>

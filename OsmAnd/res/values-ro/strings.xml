@@ -989,29 +989,18 @@
     <string name="srtm_plugin_name">Plugin SRTM</string>
     <string name="download_select_map_types">Alte hărți</string>
     <string name="download_srtm_maps">Hărți SRTM</string>
-    
 
-	<string name="audionotes_plugin_name">Plugin note audio</string>
-    <string name="audionotes_plugin_description">Plugin ce permite înregistrarea unor note audio</string>
-    <string name="audionotes_location_not_defined">Poziția nu este încă definită pentru înregistrarea de note audio</string>
-    
-    <string name="map_widget_audionotes">Note audio</string>
-    <string name="recording_is_recorded">Are loc înregistrarea audio/video. Pentru oprire, apăsați butonul Stop de pe widget.</string>
-    <string name="recording_playing">Redare audio a înregistrării specificate.\n%1$s</string>
+
     <string name="recording_open_external_player">Deschide player extern</string>
     <string name="recording_delete_confirm">Doriți să ștergeți această înregistrare?</string>
     
     <string name="recording_unavailable">indisponibilă</string>
-    <string name="recording_context_menu_arecord">Înregistrare notă audio</string>
-    <string name="recording_context_menu_vrecord">Înregistrare notă video</string>
-    <string name="layer_recordings">Layer Înregistrări</string>
     <string name="recording_can_not_be_played">Înregistrarea nu poate fi redată</string>
     <string name="recording_context_menu_delete">Șterge înregistrarea</string>
     <string name="recording_description">Înregistrarea %1$s %3$s %2$s</string>
     <string name="recording_default_name">Înregistrare</string>
     <string name="shared_string_control_stop">Stop</string>
     <string name="shared_string_control_start">Start</string>
-    <string name="map_widget_av_notes">Note audio</string>
     <string name="osmand_srtm_short_description_80_chars">Plugin OsmAnd pentru linii de contur offline</string>
     <string name="osmand_srtm_long_description_1000_chars">Plugin-ul furnizează linii de contor ce pot fi afișate pe hărțile OsmAnd offline. Datele globale (între 70 grade nord și 70 grade sud) sunt bazate pe măsurătorile SRTM (Shuttle Radar Topography Mission) și ASTER  (Advanced Spaceborne Thermal Emission and Reflection Radiometer) care este un instrument de imagini la bordul TERRA - satelitul stindard al sistemului de observați a Pământului al NASA. ASTER este un rezultat al efortului comun al NASA, Ministerului Economiei, Comerțului și Industriei din Japonia (METI) și Japan Space Systems (J-spacesystems).</string>
     
@@ -1020,18 +1009,10 @@
     <string name="recording_context_menu_play">Play</string>
     <string name="srtm_paid_version_msg">Vă rugăm să aveți în vedere achiziționarea plugin-ului pentru liniile de nivel de la Market pentru susținerea dezvoltării acestuia.</string>
     <string name="srtm_paid_version_title">Plugin linii de nivel</string>
-    <string name="av_def_action_video">Înregistrare video</string>
-    <string name="av_def_action_audio">Înregistrare audio</string>
     <string name="av_widget_action_descr">Selectați acțiunea implicită a iconiței</string>
     <string name="av_widget_action">Acțiune implicită iconiță</string>
-    <string name="av_video_format_descr">Selectați formatul video</string>
-    <string name="av_video_format">Format video</string>
-    <string name="av_use_external_recorder_descr">Folosește aplicația sistemului pt înregistrare video</string>
     <string name="av_use_external_recorder">Folosește aplicație externă pentru înregistrare</string>
-    <string name="av_settings_descr">Configurarea setărilor audio și video</string>
-    <string name="av_settings">Setări audio/video </string>
     <string name="recording_error">Eroare la înregistrare </string>
-    <string name="recording_camera_not_available">Camera video nu este disponibilă</string>
     <string name="dropbox_plugin_description">Plugin-ul Dropbox permite sincronizarea traseelor și fișierelor audio/video cu contul dvs. de la dropbox.com.</string>
     <string name="dropbox_plugin_name">Plugin Dropbox</string>
     
@@ -1162,7 +1143,6 @@
     <string name="max_speed_none">nici una</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
     <string name="local_indexes_cat_srtm">Date linii de contur</string>
-    <string name="local_indexes_cat_av">Date Audio/Video</string>
     <string name="stop_routing_confirm">Sigur doriți să opriți navigarea?</string>
     <string name="clear_dest_confirm">Sigur doriți să ștergeți punctul de destinație (și puncte intermediare)?</string>
     <string name="precise_routing_mode">Rutare precisă (alpha)</string>
@@ -1531,7 +1511,6 @@
     <string name="download_live_updates">Actualizări in timp real</string>
 	<string name="rendering_value_boldOutline_name">Bold contur</string>
     <string name="av_locations">Locații</string>
-    <string name="av_locations_descr">Fișier GPX cu notițe de locații</string>
     <string name="rendering_value_red_name">Roșu</string>
     <string name="rendering_value_translucent_red_name">Roșu translucid</string>
     <string name="rendering_value_translucent_orange_name">Portocaliu translucid</string>
@@ -1571,11 +1550,6 @@
     <string name="shared_string_not_selected">Neselectat</string>
     <string name="rec_split">Înregistrări divizate</string>
     <string name="rec_split_title">Utilizează înregistrări divizate</string>
-    <string name="rec_split_desc">Suprascrie clipurile când spațiul utilizat depășește memoria de stocare</string>
-    <string name="rec_split_clip_length">Lungime clip</string>
-    <string name="rec_split_clip_length_desc">Lungimea fiecărei înregistrări nu va mai specifica intervalul de timp</string>
-    <string name="rec_split_storage_size">Mărimea memoriei de stocare</string>
-    <string name="rec_split_storage_size_desc">Dimensiunea spațiului de stocare pentru toate clipurile înregistrate</string>
     <string name="live_updates">Actualizări live</string>
     <string name="available_maps">Hărți disponibile</string>
     <string name="select_voice_provider">Selectează vocea pentru ghidare</string>
@@ -1591,14 +1565,6 @@
     <string name="no_address_found">Nici o adresă determinată</string>
     <string name="shared_string_near">Apropiere</string>
     <string name="shared_string_hide">Ascunde</string>
-    <string name="av_video_quality_low">Calitate slabă</string>
-    <string name="av_video_quality_high">Calitate mare</string>
-    <string name="av_video_quality">Calitate înregistrării video</string>
-    <string name="av_video_quality_descr">Selectează calitatea înregistrării video</string>
-    <string name="av_audio_format">Format audio</string>
-    <string name="av_audio_format_descr">Selectează formatul audio</string>
-    <string name="av_audio_bitrate">Rata de biți audio</string>
-    <string name="av_audio_bitrate_descr">Selectează rata de biți audio</string>
     <string name="please_specify_poi_type_only_from_list">Te rog specifică corect POI(punct de interes) sau ignoră-l</string>
     <string name="access_from_map_description">Butonul de meniu lansează panoul frontal, nu meniul propriu-zis</string>
     <string name="show_on_start_description">\'Închide\' Lansează direct de pe ecranul cu harta</string>
@@ -1748,7 +1714,6 @@
     <string name="osm_changes_added_to_local_edits">Schimbările OSM adăugate in setul de schimbări locale</string>
     <string name="mark_to_delete">Marchează pentru ștergere</string>
     <string name="osmo_grop_name_length_alert">Numele grupului trebuie să aibă cel puțin 3 caractere!</string>
-    <string name="local_recordings_delete_all_confirm">Sigur dorești ștergerea notelor %1$d?</string>
     <string name="local_osm_changes_upload_all_confirm">Dorești încărcarea (upload) pe OSM a %1$d. Ești sigur?</string>
     <string name="confirmation_to_clear_history">Dorești ștergerea istoricului?</string>
     <string name="donations">Donații</string>
@@ -1847,7 +1812,6 @@
     <string name="shared_string_address">Adresa</string>
     <string name="shared_string_currently_recording_track">Acum se înregistrează un traseu</string>
     <string name="shared_string_audio">Audio</string>
-    <string name="shared_string_video">Video</string>
     <string name="shared_string_photo">Foto</string>
     <string name="route_points">Puncte pe traseu</string>
     <string name="track_segments">Segmente de traseu</string>

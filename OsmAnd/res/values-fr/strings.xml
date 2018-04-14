@@ -995,12 +995,6 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="index_srtm_parts">parties</string>
 
 
-    <string name="audionotes_location_not_defined">La position associée à la note n\'est pas encore définie. Utilisez le menu \'Utiliser ce point\' pour indiquer la position de cette note.</string>
-
-    <string name="map_widget_audionotes">Notes audio</string>
-    <string name="audionotes_plugin_description">Ce greffon permet de prendre des notes (photos, audios ou vidéos) sur un itinéraire soit en utilisant un bouton affiché sur la carte, soit directement depuis le menu contextuel de n\'importe quel point sur la carte.</string>
-    <string name="audionotes_plugin_name">Notes audio/vidéo</string>
-
     <string name="osmand_srtm_short_description_80_chars">Greffon OsmAnd pour les courbes de niveau hors-ligne</string>
     <string name="osmand_srtm_long_description_1000_chars">Ce greffon permet l\'affichage de courbes de niveau ainsi que du relief (ombres) qui s\'ajoutent au-dessus des cartes standard d\'OsmAnd. Ces informations sont particulièrement utiles pour les sportifs, les randonneurs, les cyclistes et d\'une manière générale par toutes les personnes qui souhaitent connaitre le relief.
 \n
@@ -1008,33 +1002,19 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
 
 
     <string name="map_widget_distancemeasurement">Mesure de distance</string>
-    <string name="av_def_action_video">Enregistrer une vidéo</string>
-    <string name="av_def_action_audio">Enregistrer une note audio</string>
     <string name="av_widget_action_descr">Sélectionner l\'action par défaut du gadget.</string>
     <string name="av_widget_action">Action par défaut du gadget</string>
-    <string name="av_video_format_descr">Sélectionner le format de sortie vidéo.</string>
-    <string name="av_video_format">Format d\'enregistrement vidéo de sortie</string>
-    <string name="av_use_external_recorder_descr">Utiliser l\'application système pour l\'enregistrement des vidéos.</string>
     <string name="av_use_external_recorder">Option caméra</string>
-    <string name="av_settings_descr">Configurer les paramètres audio et vidéo.</string>
-    <string name="av_settings">Paramètres audio/vidéo </string>
     <string name="recording_error">Une erreur s\'est produite lors de l\'enregistrement </string>
-    <string name="recording_camera_not_available">Caméra non disponible</string>
-    <string name="recording_is_recorded">Audio/vidéo en cours d\'enregistrement. Pour l\'arrêter, appuyez sur le bouton Arrêter du gadget.</string>
-    <string name="recording_playing">La note audio de l\'enregistrement spécifié est en cours de lecture.\n%1$s</string>
     <string name="recording_open_external_player">Ouvrir dans un lecteur externe</string>
     <string name="recording_delete_confirm">Voulez-vous supprimer cet enregistrement ?</string>
     <string name="recording_unavailable">non disponible</string>
-    <string name="recording_context_menu_arecord">Prendre une note audio</string>
-    <string name="recording_context_menu_vrecord">Prendre une note vidéo</string>
-    <string name="layer_recordings">Enregistrements</string>
     <string name="recording_can_not_be_played">L\'enregistrement ne peut pas être lu</string>
     <string name="recording_context_menu_delete">Supprimer l\'enregistrement</string>
     <string name="recording_context_menu_play">Lire</string>
     <string name="recording_description">Enregistrement %1$s %3$s %2$s</string>
     <string name="recording_default_name">Enregistrement en cours</string>
     <string name="shared_string_control_stop">Arrêter</string>
-    <string name="map_widget_av_notes">Notes audio/vidéo</string>
 
     <string name="shared_string_control_start">Départ</string>
     <string name="srtm_paid_version_msg">Merci d\'acheter le greffon \"Courbes de niveau\" pour soutenir les développements futurs.</string>
@@ -1051,7 +1031,6 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="clear_dest_confirm">Souhaitez-vous vraiment supprimer votre destination (et vos étapes) ?</string>
     <string name="precise_routing_mode">Routage précis (alpha)</string>
     <string name="precise_routing_mode_descr">Activer pour calculer des itinéraires précis et sans surprises. Actuellement fonctionne sur des distances limitées et reste lent.</string>
-    <string name="local_indexes_cat_av">Données audio/vidéo</string>
 
     <string name="support_new_features_descr">Effectuer un don pour encourager la création de nouvelles fonctionnalités dans l\'application.</string>
 
@@ -1730,8 +1709,6 @@ Voulez-vous effectuer à une nouvelle inscription ?</string>
     <string name="shared_string_audio">Audio</string>
 
 
-    <string name="share_note">Partager la note</string>
-
     <string name="shared_string_export">Exporter</string>
     <string name="plugin_ski_descr">Ce greffon pour OsmAnd affiche le relief en conditions hivernales, ainsi que les pistes de ski (dont la difficulté est représentée par un code couleurs) et les remontées mécaniques.
 \n
@@ -1774,7 +1751,6 @@ Voulez-vous effectuer à une nouvelle inscription ?</string>
     <string name="shared_string_deselect_all">Désélectionner tout</string>
     <string name="shared_string_unexpected_error">Une erreur inconnue s\'est produite</string>
     <string name="shared_string_action_template">Action {0}</string>
-    <string name="shared_string_video">Vidéo</string>
     <string name="shared_string_photo">Photo</string>
     <string name="shared_string_release">sortit le</string>
     <string name="drawer">Liste simple</string>
@@ -1852,7 +1828,6 @@ Voulez-vous effectuer à une nouvelle inscription ?</string>
     <string name="local_indexes_cat_wiki">Wikipédia</string>
     <string name="download_wikipedia_maps">Wikipédia</string>
     <string name="shared_string_import2osmand">Importer dans OsmAnd</string>
-    <string name="local_recordings_delete_all_confirm">Vous allez supprimer %1$d notes. Etes-vous sûrs ?</string>
     <string name="gps_network_not_enabled">Le service de localisation est arrêté. Souhaitez-vous l’activer ?</string>
     <string name="disable_recording_once_app_killed_descrp">Met en pause l\'enregistrement de la trace GPX lors de l\'arrêt d\'OsmAnd (via les applications récentes) et supprime l\'icône OsmAnd de la barre de notification Android.</string>
     <string name="disable_recording_once_app_killed">Interdire la journalisation autonome</string>
@@ -1959,7 +1934,6 @@ Voulez-vous effectuer à une nouvelle inscription ?</string>
     <string name="routing_attr_avoid_shuttle_train_description">Éviter les trains-navettes</string>
     <string name="shared_string_card_was_hidden">La carte a été masquée</string>
     <string name="routing_attr_avoid_shuttle_train_name">Éviter les trains-navettes</string>
-    <string name="av_locations_descr">Fichier GPX avec notes d\'emplacements.</string>
 
     <string name="simulate_your_location_stop_descr">Arrêter de simuler votre position.</string>
     <string name="simulate_your_location_descr">Simulez votre position à partir d\'un fichier GPX ou d\'une route calculée.</string>
@@ -2130,14 +2104,6 @@ Voulez-vous effectuer à une nouvelle inscription ?</string>
     <string name="poi_context_menu_modify_osm_change">Modifier la contribution OSM</string>
     <string name="shared_string_near">Proche</string>
     <string name="shared_string_hide">Masquer</string>
-    <string name="av_video_quality_low">Qualité la plus basse</string>
-    <string name="av_video_quality_high">Qualité la plus élevée</string>
-    <string name="av_video_quality">Qualité de la sortie vidéo</string>
-    <string name="av_video_quality_descr">Sélectionnez la qualité de la vidéo</string>
-    <string name="av_audio_format">Format de la sortie audio</string>
-    <string name="av_audio_format_descr">Sélectionnez le format de la sortie audio</string>
-    <string name="av_audio_bitrate">Bitrate audio</string>
-    <string name="av_audio_bitrate_descr">Sélectionnez le bitrate audio</string>
     <string name="no_address_found">Impossible de déterminer l\'adresse</string>
 	<string name="looking_up_address">Recherche de l\'adresse</string>
     <string name="update">Fréquence de mise à jour</string>
@@ -2176,11 +2142,6 @@ Voulez-vous effectuer à une nouvelle inscription ?</string>
     <string name="starting_point">Point de départ</string>
     <string name="rec_split">Intervalle d\'enregistrement</string>
     <string name="rec_split_title">Définir un intervalle d\'enregistrement</string>
-    <string name="rec_split_desc">Écraser les enregistrements quand l\'espace utilisé dépasse la capacité de stockage</string>
-    <string name="rec_split_clip_length">Durée de l\'enregistrement</string>
-    <string name="rec_split_clip_length_desc">Durée maximale d\'enregistrement.</string>
-    <string name="rec_split_storage_size">Taille de l\'espace de stockage</string>
-    <string name="rec_split_storage_size_desc">Espace maximum autorisé pour tous les enregistrements</string>
     <string name="shared_string_type">Type</string>
     <string name="switch_start_finish">Inverser Départ et Destination</string>
     <string name="rendering_attr_hideIcons_name">Icônes des points d\'intérêt</string>
@@ -2488,9 +2449,6 @@ Si vous appréciez OsmAnd et OSM et que vous souhaitez soutenir ces projets, c\'
     <string name="quick_action_add_poi">Ajouter un point d\'intérêt</string>
     <string name="quick_action_map_style">Modifier le style de carte</string>
     <string name="quick_action_map_style_switch">Le style de carte est maintenant \"%s\".</string>
-    <string name="quick_action_take_audio_note">Créer une note sonore</string>
-    <string name="quick_action_take_video_note">Créer une note vidéo</string>
-    <string name="quick_action_take_photo_note">Créer une note photo</string>
     <string name="quick_action_add_osm_bug">Ajouter une note OSM</string>
     <string name="quick_action_navigation_voice">Voix Active / Inactive</string>
     <string name="quick_action_navigation_voice_off">La voix est désactivée</string>
@@ -2542,9 +2500,6 @@ Si vous appréciez OsmAnd et OSM et que vous souhaitez soutenir ces projets, c\'
     <string name="quick_action_btn_tutorial_descr">Appui long pour déplacer le bouton sur l\'écran</string>
 <string name="quick_action_add_marker_descr">Appuyez sur le bouton d\'action pour ajouter une marque au centre de la carte.</string>
     <string name="quick_action_add_gpx_descr">Un appui sur le bouton d\'action ajoutera une étape GPX au centre de la carte.</string>
-    <string name="quick_action_take_audio_note_descr">Appuyez sur le bouton d\'action pour ajouter une note Audio au centre de la carte.</string>
-    <string name="quick_action_take_video_note_descr">Appuyez sur le bouton d\'action pour ajouter une note Vidéo au centre de la carte.</string>
-    <string name="quick_action_take_photo_note_descr">Appuyez sur le bouton d\'action pour ajouter une note Photo au centre de la carte.</string>
     <string name="quick_action_add_osm_bug_descr">Appuyez sur le bouton d\'action pour ajouter une note OSM au centre de la carte.</string>
     <string name="quick_action_add_poi_descr">Appuyez sur le bouton d\'action pour ajouter un point d\'intérêt au centre de la carte.</string>
     <string name="quick_action_navigation_voice_descr">Appuyez sur le bouton pour activer ou désactiver le Guidage vocal pendant la navigation.</string>
@@ -3030,9 +2985,6 @@ représentant la zone : %1$s x %2$s</string>
     <string name="marker_activated">Marque %s activée.</string>
     <string name="one_tap_active_descr">Appuyez sur une marque de la carte pour la déplacer en première position des marques actives sans ouvrir le menu contextuel.</string>
     <string name="one_tap_active">Un appui activé</string>
-    <string name="empty_state_av_notes">Prenez des notes !</string>
-    <string name="empty_state_av_notes_desc">Associez des notes sonore, vidéo ou photo à n\'importe quel point de la carte depuis le gadget ou le menu contextuel.</string>
-    <string name="notes_by_date">Notes par date</string>
     <string name="by_date">Par date</string>
     <string name="by_type">Par type</string>
     <string name="modify_the_search_query">Modifier la recherche.</string>

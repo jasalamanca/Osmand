@@ -994,7 +994,6 @@
     
     
     <string name="local_indexes_cat_srtm">등고선 데이터</string>
-    <string name="local_indexes_cat_av">소리/영상 데이터</string>
     <string name="stop_routing_confirm">운행을 중지하시겠습니까 ?</string>
     <string name="clear_dest_confirm">도착지 (및 경유지) 를 지우겠습니까?</string>
     <string name="precise_routing_mode_descr">고장없이 정확한 경로를 계산(라우팅) 할 수 있습니다. 현 단계에서는 거리가 한정되어있고 게다가 느립니다.</string>
@@ -1009,40 +1008,23 @@
     <string name="srtm_paid_version_msg">등고선 추가 개발을 지원하기 위해 구글플레이에서 플러그인을 구입하시기 바랍니다 .</string>
     <string name="srtm_paid_version_title">등고선 플러그인</string>
     <string name="av_def_action_choose">요청에 대한 선택</string>
-    <string name="av_def_action_video">영상 녹화</string>
-    <string name="av_def_action_audio">소리 녹음</string>
     <string name="av_widget_action_descr">기본 위젯의 동작을 선택합니다</string>
     <string name="av_widget_action">기본 위젯 작업</string>
-    <string name="av_video_format_descr">영상 출력 형식 선택</string>
-    <string name="av_video_format">영상 출력 형식</string>
-    <string name="av_use_external_recorder_descr">영상 촬영시 시스템 레코더를 사용</string>
     <string name="av_use_external_recorder">시스템 레코더 사용</string>
     <string name="av_use_external_camera_descr">사진에 대한 시스템 앱을 사용</string>
     <string name="av_use_external_camera">카메라 앱을 사용</string>
-    <string name="av_settings_descr">소리 및 영상 설정을 구성합니다</string>
-    <string name="av_settings">"소리/영상 설정 "</string>
     <string name="recording_error">"기록하는 동안 오류가 발생했습니다 "</string>
-    <string name="recording_camera_not_available">카메라는 사용할 수 없습니다</string>
-    <string name="recording_is_recorded">소리/영상은 기록되고 있습니다. 정지하려면 AV 위젯을 누르면 됩니다.</string>
-    <string name="recording_playing">지정된 녹음기에서 소리가 재생되고 있습니다.\n%1$s</string>
     <string name="recording_open_external_player">외부 플레이어 열기</string>
     <string name="recording_delete_confirm">이 기록을 삭제하시겠습니까 ?</string>
     <string name="recording_unavailable">사용 불가능</string>
-    <string name="recording_context_menu_arecord">소리 녹음</string>
-    <string name="recording_context_menu_vrecord">영상 녹화</string>
-    <string name="layer_recordings">레코딩 레이어</string>
     <string name="recording_can_not_be_played">레코딩을 재생할 수 없습니다</string>
     <string name="recording_context_menu_delete">레코딩 삭제</string>
     <string name="recording_context_menu_play">재생</string>
     <string name="recording_description">레코딩 %1$s %3$s %2$s</string>
     <string name="recording_default_name">레코딩</string>
-    <string name="map_widget_av_notes">소리/영상 노트</string>
     <string name="osmand_srtm_short_description_80_chars">오프라인 등고선에 대한 OsmAnd 플러그인</string>
     <string name="map_widget_distancemeasurement">거리 측정</string>
-    
-    <string name="map_widget_audionotes">소리 노트</string>
-    <string name="audionotes_plugin_description">이 플러그인은 여행하는 동안 소리/사진/영상을 찍기 위한 기능과 버튼을 제공합니다.</string>
-    <string name="audionotes_plugin_name">소리/영상 노트</string>
+
     <string name="index_srtm_parts">부분</string>
     <string name="index_srtm_ele">등고선</string>
     <string name="srtm_plugin_description">"오프라인 등고선 과 음영을 다운로드하기 위해 외부플러그인을 이용합니다 (설정→지도 관리→다운로드→ 원하는 지도 유형 선택). OsmAnd 오프라인 지도에서 조합하여 표시할 수 있습니다.
@@ -1352,16 +1334,9 @@
 	<string name="use_distance_measurement_help">* 포인트를 탭하여 표시하기.\n* 이전 포인트를 지우기 위해 지도에서 누르고 홀드하기
 \n* 설명을 읽고 알리기 위해 포인트에서누르고 홀드하기
 \n* 더 많은 액션을 보기 위해 측정위젯 클릭하기.</string>
-    
-    
-    
-    
-    
-    <string name="audionotes_location_not_defined">노트와 연결할 위치는 아직 정의되지 않았습니다. 지정된 위치에 노트를 할당하려면 \"위치 사용…\"</string>
-    
-	
-	
-	<string name="osmand_rastermaps_plugin_description">"이 플러그인을 사용하면 날씨지도, 기후지도, 지질지도, 음영레이어 등과 같은 위성 영상과 특수 목적 레이어에 (Mapnik 같은) 미리 정의 된 OpenStreetMap의 타일에서, 온라인 지도(타일 또는 래스터라고도 함) 의 여러 유형의 지도에 액세스 할 수 있습니다\n↵\n이러한 지도 중 하나가 OsmAnd지도 화면에 표시하기 위해 메인 (기본)지도로 사용할 수 있다,  또는 (OsmAnd의 일반 오프라인 지도 처럼) 다른 기본 맵에 오버레이 또는 언더레이로 메인 (기본)지도로 사용할 수 있다. 지도를 상세히 볼 수 있도록 언더레이 지도를 만들려면, OsmAnd 벡터 지도의 특정 요소는 쉽게 원하는대로 \'지도 구성\' 메뉴를 통해 숨길 수 있다. ↵\n↵\n타일 맵은 온라인 소스를 통해 직접 구할 수  있다, 또는 다양한 서드파티 지도 준비 도구에 의해 만들 수 있는  SQLite 데이터베이스로서 오프라인 용 사용을 할 수 있다. (수동으로 OsmAnd의 데이터 폴더에 복사 할 수 있다).\n\n기본 맵으로 또는 오버레이/언더레이 지도로 온라인 또는 캐시 타일맵의 다양한 구성을 위한 설정을 표시합니다. 이 지도는 오프라인으로 준비하거나 OsmAnd 데이터 폴더에 복사 할 수 있습니다. "</string>
+
+
+    <string name="osmand_rastermaps_plugin_description">"이 플러그인을 사용하면 날씨지도, 기후지도, 지질지도, 음영레이어 등과 같은 위성 영상과 특수 목적 레이어에 (Mapnik 같은) 미리 정의 된 OpenStreetMap의 타일에서, 온라인 지도(타일 또는 래스터라고도 함) 의 여러 유형의 지도에 액세스 할 수 있습니다\n↵\n이러한 지도 중 하나가 OsmAnd지도 화면에 표시하기 위해 메인 (기본)지도로 사용할 수 있다,  또는 (OsmAnd의 일반 오프라인 지도 처럼) 다른 기본 맵에 오버레이 또는 언더레이로 메인 (기본)지도로 사용할 수 있다. 지도를 상세히 볼 수 있도록 언더레이 지도를 만들려면, OsmAnd 벡터 지도의 특정 요소는 쉽게 원하는대로 \'지도 구성\' 메뉴를 통해 숨길 수 있다. ↵\n↵\n타일 맵은 온라인 소스를 통해 직접 구할 수  있다, 또는 다양한 서드파티 지도 준비 도구에 의해 만들 수 있는  SQLite 데이터베이스로서 오프라인 용 사용을 할 수 있다. (수동으로 OsmAnd의 데이터 폴더에 복사 할 수 있다).\n\n기본 맵으로 또는 오버레이/언더레이 지도로 온라인 또는 캐시 타일맵의 다양한 구성을 위한 설정을 표시합니다. 이 지도는 오프라인으로 준비하거나 OsmAnd 데이터 폴더에 복사 할 수 있습니다. "</string>
 	
 	<string name="towards">쪽으로</string>
 	
@@ -1746,9 +1721,8 @@
     <string name="watch">보기(Watch)</string>
 	<string name="notes">노트</string>
 	<string name="online_map">온라인 지도</string>
-	<string name="share_note">노트 공유</string>
-	
-	<string name="plugin_nautical_descr">지도 스타일을 항해 지도로 변경하려면 보기(View)를 활성화 합니다, 그러면 모든 해상 운행 마크와 차트 심볼을 볼 수 있습니다.
+
+    <string name="plugin_nautical_descr">지도 스타일을 항해 지도로 변경하려면 보기(View)를 활성화 합니다, 그러면 모든 해상 운행 마크와 차트 심볼을 볼 수 있습니다.
 		\n\n세계적으로 모든 항해 기호를 포함 하는 지도 파일은  \'세계 seamarks\' 라는 하나의 파일을 다운로드하여 이용할 수 있습니다.
 		\n\n다시 비활성화 하거나, 또는 \'지도 구성\' 의 하위메뉴인  \'지도 스타일\'을 변경하여 보기(View)를 되돌릴 수 있습니다.
 	</string>
@@ -1836,8 +1810,7 @@
 	
 	
 	<string name="shared_string_audio">소리</string>
-	<string name="shared_string_video">영상</string>
-	<string name="shared_string_photo">사진</string>
+    <string name="shared_string_photo">사진</string>
 
 	<string name="simulate_your_location">모의 주행</string>
     <string name="drawer">플랫 목록</string>
@@ -1923,8 +1896,7 @@
     <string name="local_indexes_cat_wiki">위키백과</string>
     <string name="shared_string_show_details">세부 정보 보기</string>
     <string name="osm_edit_context_menu_delete">OSM 편집을 삭제</string>
-    <string name="local_recordings_delete_all_confirm">%1$d 노트를 삭제 하려고 합니다. 확실한가요?</string>
-	<string name="light_theme">밝은</string>
+    <string name="light_theme">밝은</string>
     <string name="dark_theme">어두운</string>
     <string name="lang_pms">피에몬테 어</string>
     <string name="lang_bn">벵골어</string>
@@ -2004,7 +1976,6 @@
 	<string name="app_name_osmand">OsmAnd</string>
 	<string name="offline_maps_and_navigation">오프 라인 지도 및 내비게이션</string>
 	<string name="commit_poi">POI 커밋</string>
-    <string name="av_locations_descr">Gpx 파일에 위치와 관련된 메모를 첨부합니다</string>
     <string name="av_locations">위치</string>
     <string name="poi_action_delete">삭제</string>
 	<string name="show_on_start">시작할 때 보여주기</string>

@@ -220,11 +220,8 @@
     <string name="shared_string_reverse_order">തിരിച്ചിടുക</string>
     <string name="map_marker">"മാപ് മാര്‍ക്കര്‍ "</string>
     <string name="shared_string_remove">ഒഴിവാക്കുക</string>
-    <string name="rec_split_clip_length">ക്ളിപ്പിന്റെ ദൈര്‍ഘ്യം</string>
     <string name="available_maps">ലഭ്യമായ ഭൂപടങ്ങള്‍</string>
     <string name="route_distance">ദൂരം:</string>
-    <string name="av_video_quality">വീഡിയോ ഔട്ട്പുട്ട് ക്വാളിറ്റി</string>
-    <string name="av_audio_format">ഓഡിയോ ഔട്ട്പുട്ട് ഫോര്‍മാറ്റ്</string>
     <string name="show_on_start">"പ്രാരംഭത്തില്‍ കാണിക്കുക "</string>
     <string name="copied_to_clipboard">"ക്ലിപ്പ്ബോര്‍ഡിലേക്കു്  പകര്‍ത്തിയിരിക്കുന്നു"</string>
     <string name="osb_author_dialog_password">ഓഎസ്എം പാസ്സ്വേഡ് (നിര്‍ബന്ധമല്ല)</string>
@@ -323,11 +320,8 @@
     <string name="access_arrival_time">"ആഗമന സമയം "</string>
     <string name="stop_routing_confirm">ഉറപ്പായിട്ടും വഴികാട്ടല്‍ നിര്‍ത്തണമോ?</string>
     <string name="precise_routing_mode">"സൂക്ഷ്മതയുള്ള  വഴികണ്ടെത്തല്‍(alpha)"</string>
-    <string name="av_video_format">വീഡിയോ ഔട്ട്പുട്ട് ഫോര്‍മാറ്റ്</string>
-    <string name="av_use_external_recorder_descr">വീഡിയോക്ക് സിസ്റ്റം റിക്കോഡര്‍ ഉപയോഗിക്കുക</string>
     <string name="av_use_external_recorder">"സിസ്റ്റം റിക്കോഡര്‍ ഉപയോഗിക്കുക "</string>
     <string name="av_use_external_camera_descr">"ഫോട്ടോക്ക് സിസ്റ്റം ആപ്ളിക്കേഷന്‍ ഉപയോഗിക്കുക "</string>
-    <string name="av_settings_descr">ഓഡിയോയും വീഡിയോയും സജ്ജീകരിക്കുക</string>
     <string name="recording_unavailable">ലഭ്യമല്ല</string>
     <string name="recording_can_not_be_played">" റിക്കോര്‍ഡിങ്ങ് പ്ളേ ചെയ്യാനാവുന്നില്ല "</string>
     <string name="recording_context_menu_play">പ്രവര്‍ത്തിപ്പിക്കുക</string>
@@ -434,19 +428,12 @@
     <string name="access_sort">ക്രമീകരിക്കുക</string>
     <string name="avoid_road">പാത ഒഴിവാക്കുക</string>
     <string name="active_markers">സജീവമായിട്ടുള്ള മാര്‍ക്കറുകള്‍</string>
-    <string name="av_video_quality_low">ഏറ്റവും കുറഞ്ഞ നിലവാരം</string>
-    <string name="av_video_quality_high">ഏറ്റവും ഉയര്‍ന്ന നിലവാരം</string>
-    <string name="av_audio_format_descr">ഓഡിയോ ഔട്ട്പുട്ട് ഫോര്‍മാറ്റ് തെരഞ്ഞെടുക്കുക</string>
-    <string name="av_audio_bitrate">ശബ്ദ നിലവാരം</string>
-    <string name="av_audio_bitrate_descr">ശബ്ദ നിലവാരം തെരഞ്ഞെടുക്കുക</string>
     <string name="access_from_map_description">മെനുബട്ടണ്‍ മെനുവിന് പകരം ഡാഷ് ബോര്‍ഡ് തുറക്കും</string>
     <string name="access_from_map">ഭൂപടത്തില്‍ നിന്നു പ്രവേശിക്കുക</string>
-    <string name="av_locations_descr">"സ്ഥലക്കുറിപ്പുകളോടെയുള്ള ജിപിഎക്സ് ഫയല്‍ "</string>
     <string name="light_theme">പ്രകാശമയം</string>
     <string name="agps_info">അസിസ്റ്റഡ് ജിപിഎസ് വിവരങ്ങള്‍</string>
     <string name="action_create">സൃഷ്ടിക്കുക</string>
     <string name="action_modify">നവീകരിക്കുക</string>
-    <string name="audionotes_plugin_name">ഓഡിയോ/വീഡിയോ കുറിപ്പുകള്‍</string>
     <string name="avoid_roads_msg">"നിങ്ങള്‍ക്ക് ചില വഴികള്‍ തെരഞ്ഞൊഴിവാക്കി പുതിയ റൂട്ട് കണ്ട്പിടിക്കാവുന്നതാണ് "</string>
     <string name="background_service_int">"ജിപിഎസ് ഉണര്‍ത്താനുള്ള  ഇടവേള"</string>
     <string name="live_monitoring_start">ഓണ്‍ലൈന്‍ റിക്കോഡിങ്ങ് ആരംഭിക്കൂ</string>
@@ -462,9 +449,7 @@
     <string name="about_settings_descr">"പതിപ്പ് വിവരങ്ങള്‍, ലൈസന്‍സ്, പ്രോജക്ട് മെംബേര്‍സ് "</string>
     <string name="app_mode_default">"ഭൂപടം പരതുക "</string>
     <string name="av_def_action_picture">ഒരു ഫോട്ടോ എടുക്കുക</string>
-    <string name="av_def_action_video">വീഡിയോ എടുക്കുക</string>
     <string name="av_use_external_camera">ക്യാമറ ആപ്പ് ഉപയോഗിക്കുക</string>
-    <string name="av_settings">"ഓഡിയോസജ്ജീകരണങ്ങള്‍ "</string>
     <string name="add_as_last_destination_point">"അവസാനത്തെ  ഇട-ലക്ഷ്യസ്ഥാനമായി ചേര്‍ക്കുക"</string>
     <string name="add_as_first_destination_point">അദ്യത്തെ ഇട-ലക്ഷ്യസ്ഥാനമായി ചേര്‍ക്കുക</string>
 
@@ -651,7 +636,6 @@
     <string name="clear_dest_confirm">ഇടലക്ഷ്യസ്ഥാനങ്ങള്‍ ഉള്‍പടെ ലക്ഷ്യസ്ഥാനങ്ങള്‍ കളയട്ടെ?</string>
     <string name="recording_context_menu_precord">ഒരു ഫോട്ടോ എടുക്കുക</string>
     <string name="dropbox_plugin_name">ഡ്രോപ്ബോക്സ് പ്ളഗ് ഇന്‍</string>
-    <string name="map_widget_av_notes">ഓഡിയോ/വീഡിയോ കുറിപ്പുകള്‍</string>
     <string name="download_roads_only_item">വഴികൾ മാത്രമുള്ളത്</string>
     <string name="download_srtm_maps">കോണ്ടൂര്‍ ലൈനുക</string>
     <string name="download_regular_maps">സാധാരണ ഭൂപടം</string>
@@ -883,7 +867,6 @@
     <string name="no_address_found">"വിലാസം കണ്ട്പിടിക്കാനയില്ല "</string>
     <string name="shared_string_near">"സമീപത്ത് "</string>
     <string name="shared_string_hide">മറക്കുക</string>
-    <string name="av_video_quality_descr">വീഡിയൊ നിലവാരം തെരഞ്ഞെടുക്കുക</string>
     <string name="show_on_start_description">"\'ഓഫ്\'  നേരെ ഭുപടം കാണിക്കുന്നു"</string>
     <string name="osn_comment_dialog_title">വിവരണം(കമന്റ്) ചേര്‍ക്കുക</string>
     <string name="osn_reopen_dialog_title">കുറിപ്പ് വീണ്ടും തുറക്കുക</string>
@@ -999,9 +982,6 @@
     <string name="delay_to_start_navigation_descr">റൂട്ട് തയ്യാറാക്കുള്ള സ്ക്രീനില്‍ എത്രസമയം ചെലവഴിക്കണം എന്ന് പറയുക</string>
     <string name="delay_to_start_navigation">"ടേണ്-ബൈ-ടേണ്‍ നിര്‍ദേശങ്ങള്‍ ആരംഭിക്കുന്നതിനു മുമ്പ്  …"</string>
     <string name="simulate_your_location">"നിങ്ങളുടെ സ്ഥാനം  സിമുലേറ്റ് ചെയ്യുക "</string>
-    <string name="shared_string_video">വീഡിയോ</string>
-    <string name="audionotes_plugin_description">"ഓഡിയോ/ വീഡിയൊ കുറിപ്പ്     അനുബന്ധം യാത്രക്കിടക്ക് ഏതു സ്ഥലത്തെക്കുറിച്ചും സ്ക്രീനിലെ ബട്ടണ്‍ / കോണ്ടെക്സ്റ്റ് മെനു ഉപയോഗിച്ച്  ഓഡിയോ/വീഡിയോ/ഫോട്ടോ കുറിപ്പുകള്‍ തയ്യാറാക്കാന്‍ ഉള്ളതാണ്."</string>
-    <string name="share_note">കുറിപ്പ് പങ്ക് വക്കുക</string>
     <string name="notes">കുറിപ്പുകള്‍</string>
     <string name="online_map">ഓണ്‍ലൈന്‍ ഭൂപടം</string>
     <string name="version_settings">ബില്‍ഡുകള്‍</string>
@@ -1143,7 +1123,6 @@
     <string name="map_widget_gps_info">ജിപിഎസ് വിവരങ്ങള്‍</string>
     <string name="max_speed_none">"ഇല്ല "</string>
     <string name="map_widget_distancemeasurement">ദൂരം അളക്കുക</string>
-    <string name="map_widget_audionotes">ഓഡിയോ കുറിപ്പുകള്‍</string>
     <string name="monitoring_control_start">ജിപിഎക്സ്</string>
     <string name="no_buildings_found">"കെട്ടിടം  കണ്ടുപിടിക്കാനായില്ല."</string>
     <string name="gps_not_available">ഉപകരണ സജ്ജീകരണത്തില്‍ നിന്നും ജിപിഎസ് സജീവമാക്കുക</string>
@@ -1311,11 +1290,8 @@
     <string name="use_magnetic_sensor">"കാന്തിക  സെന്‍സര്‍ ഉപയോഗിക്കൂ"</string>
     <string name="choose_osmand_theme">"ആപ്പ് തീം "</string>
     <string name="select_address_activity">വിലാസം തെരഞ്ഞെടുക്കുക</string>
-    <string name="av_def_action_audio">ശബ്ദം റികോഡ് ചെയ്യുക</string>
     <string name="av_widget_action_descr">വിഡ്ജറ്റിന്റെ സ്വതവേയുള്ള പ്രവൃത്തി തെരഞ്ഞെടുക്കുക</string>
     <string name="av_widget_action">വിഡ്ജറ്റിന്റെ സ്വതവേയുള്ള പ്രവൃത്തി</string>
-    <string name="av_video_format_descr">വീഡിയോ ഔട്ട്പുട്ട് ഫോര്‍മാറ്റ് തെരഞ്ഞെടുക്കുക</string>
-    <string name="audionotes_location_not_defined">"കുറിപ്പുമായി ബന്ധപ്പെട്ട സ്ഥാനം ഇതുവരെ ചൂണ്ടി കാണിച്ചിട്ടില്ല. കുറിപ്പിന്റെ സ്ഥാനം \"സ്ഥലം ഉപയോഗിക്കു…\" വഴി തെരഞ്ഞെടുക്കാം "</string>
     <string name="rendering_attr_showRoadMaps_name">വഴികൾ മാത്രമുള്ള ഭൂപടം</string>
     <string name="replace_destination_point">ലക്ഷ്യസ്ഥാനം മാറ്റിവയ്‌ക്കുക</string>
     <string name="interrupt_music_descr">ശബ്ദസൂചനയുടെ സമയത്ത് പാട്ടുകള്‍ പാടുന്നത് താല്‍ക്കാലികമായി നിര്‍ത്തുക (വോള്യം കുറക്കുന്നതിന് പകരം)</string>
@@ -1418,7 +1394,6 @@
     <string name="osmo_connect_to_group_id">ഗ്രൂപ്പ് ഐഡി</string>
     <string name="osmo_groups">ഓസ്മോ ഗ്രൂപ്പുകള്‍</string>
     <string name="rec_split">റിക്കോഡിങ്ങ് സ്പ്ളിറ്റ് ചെയ്യുക</string>
-    <string name="rec_split_storage_size">സംഭരണ വലിപ്പം</string>
     <string name="lang_als">അല്‍ബേനിയന്‍(ടോസ്ക്)</string>
     <string name="simulate_your_location_descr">"കണക്കാക്കിയ  റൂട്ട്  അല്ലെങ്കില്‍ റിക്കോഡ് ചെയ്ത ജിപിഎക്സ് ഉപയോഗിച്ച്  യാത്ര അനുകരിക്കുക(സിമുലേറ്റ്) ചെയ്യുക "</string>
     <string name="lang_sh">"സെര്‍ബോ-ക്രൊയേഷ്യന്‍ "</string>
@@ -1560,11 +1535,6 @@
     <string name="local_openstreetmap_act_title">ഓഎസ്എം നവീകരണങ്ങള്‍</string>
     <string name="layer_hillshade">ഹില്‍ഷേഡ്(മലനിഴല്‍) പാളീ</string>
     <string name="prefer_in_routing_title">ഇഷ്ടങ്ങള്‍…</string>
-    <string name="local_indexes_cat_av">ഓഡിയോ/വീഡിയോ വിവരങ്ങള്‍</string>
-    <string name="recording_camera_not_available">"ക്യാമറ ലഭ്യമല്ല "</string>
-    <string name="recording_context_menu_arecord">ശബ്ദം കുറിപ്പ് എടുക്കുക</string>
-    <string name="recording_context_menu_vrecord">വീഡിയോ കുറിപ്പ് എടുക്കുക</string>
-    <string name="layer_recordings">റിക്കോഡിങ്ങ് പാളീ</string>
     <string name="recording_context_menu_delete">റിക്കോഡിങ്ങ് നീക്കം ചെയ്യുക</string>
     <string name="poi_filter_food_shop">കട(ആഹാരം)</string>
     <string name="poi_filter_fuel">"ഇന്ധനം "</string>

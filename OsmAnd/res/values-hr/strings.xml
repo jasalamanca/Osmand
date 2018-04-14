@@ -8,8 +8,7 @@
 	<string name="prefer_in_routing_descr">Preferiram autocestu</string>
     
     <string name="index_name_openmaps">OpenMaps EU</string>
-    
-    <string name="local_indexes_cat_av">Podaci zvuka/videa</string>
+
     <string name="stop_routing_confirm">Jeste li sigurni da želite zaustaviti navigaciju?</string>
     <string name="clear_dest_confirm">Jeste li sigurni da želite ukloniti odredišnu točku?</string>
     <string name="recording_context_menu_show">Prikaži</string>
@@ -19,19 +18,10 @@
     <string name="dropbox_plugin_name">Dodatak Dropbox</string>
     
     <string name="intermediate_points_change_order">Promjeni redoslijed</string>
-    <string name="av_def_action_video">Snimanje videa</string>
-    <string name="av_def_action_audio">Snimanje zvuka</string>
     <string name="av_use_external_camera">Koristite aplikaciju kamere</string>
-    <string name="av_settings_descr">Postavke zvuka i videa</string>
-    <string name="av_settings">Postavke zvuka/videa </string>
     <string name="recording_error">Dogodila se greška tijekom snimanja </string>
-    <string name="recording_camera_not_available">Kamera nije dostupna</string>
-    <string name="recording_is_recorded">Zvuk ili video se snima. Za zaustavljanje pritisnite widget.</string>
     <string name="recording_delete_confirm">Želite li izbrisati ovaj zapis?</string>
     <string name="recording_unavailable">nedostupno</string>
-    <string name="recording_context_menu_arecord">Snimi zvučni zapis</string>
-    <string name="recording_context_menu_vrecord">Snimi video zapis</string>
-    <string name="layer_recordings">Snimanje sloja</string>
     <string name="recording_can_not_be_played">Snimka se ne može otvoriti</string>
     <string name="recording_context_menu_delete">Izbriši zapis</string>
     <string name="recording_context_menu_play">Pokreni</string>
@@ -39,27 +29,18 @@
     <string name="recording_default_name">snimanje</string>
     <string name="shared_string_control_stop">stani</string>
     <string name="shared_string_control_start">Započni</string>
-    <string name="map_widget_av_notes">Zvučni i video zapisi</string>
-    
-    
-    
-    
+
+
     <string name="map_widget_distancemeasurement">Mjerenje udaljenosti</string>
-    
-    <string name="map_widget_audionotes">Zvučni zapisi</string>
-    <string name="audionotes_plugin_description">Audio/Video dodatak pruža mogućnost da zabilježite fotografiju ili video tokom puta, koristeći gumb na zaslonu karte, ili izravno u kontekstnom izborniku za bilo koje mjesto na karti.</string>
+
     <string name="download_select_map_types">Ostale karte</string>
     <string name="download_roads_only_item">Samo ceste</string>
     <string name="download_regular_maps">Regularne karte</string>
     <string name="recording_photo_description">Slika %1$s of %2$s</string>
     <string name="av_widget_action_descr">Odaberite zadanu radnju widgeta</string>
     <string name="av_widget_action">Zadana radnja widgeta</string>
-    <string name="av_video_format_descr">Odaberite format videa</string>
-    <string name="av_video_format">Video format</string>
-    <string name="av_use_external_recorder_descr">Koristite sistemsku aplikaciju za video snimanje</string>
     <string name="av_use_external_recorder">Koristite sistemsku aplikaciju za snimanje</string>
     <string name="index_srtm_parts">dijelovi</string>
-    <string name="audionotes_plugin_name">Zvučni i video zapisi</string>
     <string name="rendering_attr_noAdminboundaries_name">Sakrij granice</string>
 	<string name="download_roads_only_maps">Samo cestovne karte</string>
     
@@ -583,8 +564,7 @@
     <string name="max_speed_none">bez</string>
     <string name="srtm_paid_version_msg">Molimo vas da razmislite o kupnji dodataka za prikaz Slojnica u Market trgovini kako biste podržati daljnji razvoj.</string>
     <string name="srtm_paid_version_title">Dodatak Slojnice</string>
-    <string name="recording_playing">Trenutno se reproducira zvuk od određenog snimanja.\n%1$s</string>
-    
+
     <string name="osmand_srtm_short_description_80_chars">OsmAnd dodatak za offline slojnice</string>
     <string name="srtm_plugin_name">Slojnice</string>
     
@@ -1369,8 +1349,7 @@
 	<string name="confirmation_to_clear_history">Želite li izbrisati povijest?</string>
     <string name="rendering_value_orange_name">Narančasta</string>
     <string name="osmo_grop_name_length_alert">Naziv grupe trebaju imati najmanje 3 znaka!</string>
-	<string name="local_recordings_delete_all_confirm">Izbrisati ćete %1$d bilješke. Jeste li sigurni?</string>
-	<string name="delay_to_start_navigation">Započni turn-by-turn navigaciju poslije…</string>
+    <string name="delay_to_start_navigation">Započni turn-by-turn navigaciju poslije…</string>
     <string name="shared_string_go">Kreni</string>
 	<string name="osm_edits">OSM promjene</string>
 	<string name="osmand_parking_hour">h</string>
@@ -1403,15 +1382,13 @@
 	<string name="shared_string_currently_recording_track">Snimanje trase</string>
 	<string name="shared_string_my_tracks">Moje trase</string>
 	<string name="shared_string_audio">Zvučni zapis</string>
-	<string name="shared_string_video">Video zapis</string>
-	<string name="shared_string_photo">Fotografija</string>
+    <string name="shared_string_photo">Fotografija</string>
 	<string name="route_points">Točke rute</string>
 	<string name="plugin_nautical_name">Nautička karta</string>
 	<string name="plugin_ski_name">Skijaška karta</string>
 	<string name="rename_failed">Preimenovanje nije uspjelo.</string>
 	<string name="back_to_map">Natrag na kartu</string>
-	<string name="share_note">Podijeli bilješku</string>
-    <string name="location_on_map">Lokacija:\n Širina %1$s\n Dužina %2$s</string>
+	<string name="location_on_map">Lokacija:\n Širina %1$s\n Dužina %2$s</string>
 	<string name="notes">Bilješke</string>
 	<string name="online_map">Online karta</string>
 	<string name="roads_only">Samo ceste</string>

@@ -91,9 +91,8 @@
     <string name="safe_mode">Güvenli kip</string>
     <string name="native_library_not_running">Uygulama güvenli kipte çalışıyor (Ayarlar menüsünden kapatabilirsiniz).</string>
     <string name="background_service_is_enabled_question">Osmand arka plan hizmeti hala çalışıyor. Sen de bunu durdurmak istiyor musunuz?</string>
-    
-    
-	<string name="local_indexes_cat_av">Ses/Video verisi</string>
+
+
     <string name="stop_routing_confirm">Navigasyonu durdurmak istediğinize emin misiniz?</string>
     <string name="clear_dest_confirm">Varış noktasını silmek istediğinizden emin misiniz (ve ara hedefler)?</string>
     <string name="precise_routing_mode">Hassas yönlendirme (alfa)</string>
@@ -107,41 +106,27 @@
     <string name="intermediate_points_change_order">Sıralamayı değiştir</string>
     <string name="srtm_paid_version_msg">Programın geliştirilebilmesi için lütfen çevreleme çizgileri eklentisini Mağazadan almayı da düşünün.</string>
     <string name="srtm_paid_version_title">Çevreleme çizgileri eklentisi</string>
-    <string name="av_def_action_video">Video çek</string>
-    <string name="av_def_action_audio">Ses kaydet</string>
     <string name="av_widget_action_descr">Varsayılan eklenti eylemini seçin</string>
     <string name="av_widget_action">Varsayılan eklenti eylemi</string>
-    <string name="av_video_format_descr">Video çıkış formatını seçin.</string>
-    <string name="av_video_format">Video formatı</string>
-    <string name="av_use_external_recorder_descr">Video için dahili kaydediciyi kullan</string>
     <string name="av_use_external_recorder">Dahili kaydediciyi kullan</string>
-    <string name="av_settings_descr">Ses ve video ayarlarını yapılandır.</string>
-    <string name="av_settings">Ses/Video ayarları </string>
     <string name="recording_error">Kayıt sırasında hata oluştu </string>
-    <string name="recording_camera_not_available">Kamera kullanılabilir değil</string>
-    
+
     <string name="index_name_openmaps">AB Açık haritası</string>
     
     
     <string name="precise_routing_mode_descr">Glitches olmadan kesin yolları hesaplamak için etkinleştirin. Yine uzaktan sınırlı ve yavaş.</string>
     <string name="av_use_external_camera_descr">Fotoğraflar için sistem uygulamasını kullan.</string>
     <string name="av_use_external_camera">Kamera uygulamasını kullan</string>
-    <string name="recording_is_recorded">Ses/Video kayıt ediliyor. Durdurmak için bu AV ikonuna basın.</string>
-    <string name="recording_playing">Belirtilen kayıttan bir ses çalınıyor.\n%1$s</string>
     <string name="recording_open_external_player">Harici oynatıcı aç</string>
     <string name="recording_delete_confirm">Bu kaydı silmek istiyor musunuz?</string>
     
     <string name="recording_unavailable">kullanılamaz</string>
-    <string name="recording_context_menu_arecord">Sesli bir not al</string>
-    <string name="recording_context_menu_vrecord">Bir video notu al</string>
-    <string name="layer_recordings">Kayıt katmanı</string>
     <string name="recording_can_not_be_played">Kayıt oynatılamaz</string>
     <string name="recording_context_menu_delete">Kayıt sil</string>
     <string name="recording_description">Kayıt %3$s nın %1$s %2$s</string>
     <string name="recording_default_name">kayıt</string>
     <string name="shared_string_control_stop">Durdur</string>
     <string name="shared_string_control_start">Başlat</string>
-    <string name="map_widget_av_notes">Ses/video notları</string>
     <string name="osmand_srtm_short_description_80_chars">Çevrim dışı çevreleme çizgileri için OsmAnd eklentisi</string>
     <string name="osmand_srtm_long_description_1000_chars">"Bu eklenti OsmAnd çevrimdışı haritalarda eşyükseltileri (kabartma olarak) ve gölgeli yamaçları gösterir. Bu özellik çoğunlukla sporcular, uzun yürüyüşcüler, yürüyüşçüler ve tabii ki bir manzaranın kabartma yapısıyla ilgilenen herkesin takdirinedir.\n\nGlobal veri (70 derece kuzey ve 70 derece güney arasındaki) SRTM (Mekik Radar Topografi Misyonu) ve ASTER (Gelişmiş Uzay Termal Yayılma ve Yansıma Radyometre), bir görüntüleme aracı onboard Terra, NASA&amp;#39;nın Earth Gözlem amiral gemisi uydudan ölçümleri esas Sistemi. ASTER NASA arasında bir kooperatif çabadır, Ekonomi, Ticaret ve Sanayi Odası (METI) ve Japonya Uzay Sistemleri (J-spacesystems) Japonya Bakanlığı. "</string>
     
@@ -149,11 +134,7 @@
     
     
     <string name="map_widget_distancemeasurement">Mesafe ölçümü</string>
-    <string name="audionotes_location_not_defined">Notu ile ilişkilendirmek Yer henüz tanımlanmamıştır. &amp;quot;Konumu kullan ...&amp;quot; Belirtilen yere not atamak</string>
-    
-    <string name="map_widget_audionotes">Sesli notlar</string>
-    <string name="audionotes_plugin_description">Ses / video eklentisi harita üzerinde herhangi bir pozisyon için harita ekranında bir düğme veya doğrudan bağlam menüsünü kullanarak, bir yolculuk sırasında ses / fotoğraf / video notlar almak için işlevsellik sağlar belirtiyor.</string>
-    <string name="audionotes_plugin_name">Ses/video notları</string>
+
     <string name="index_srtm_parts">bölümler</string>
     <string name="index_srtm_ele">Çevreleme çizgileri</string>
     <string name="srtm_plugin_description">"Bu eklenti OsmAnd çevrimdışı haritalarda eşyükseltileri (kabartma olarak) ve gölgeli yamaçları gösterir. Bu özellik çoğunlukla sporcular, uzun yürüyüşcüler, yürüyüşçüler ve tabii ki bir manzaranın kabartma yapısıyla ilgilenen herkesin takdirinedir. "</string>
@@ -1199,11 +1180,9 @@
 	<string name="shared_string_my_places">Yerlerim</string>
 	<string name="shared_string_my_favorites">Favorilerim</string>
 	<string name="shared_string_audio">Ses</string>
-	<string name="shared_string_video">Vidyo</string>
-	<string name="shared_string_photo">Fotoğraf</string>
+    <string name="shared_string_photo">Fotoğraf</string>
 	<string name="days_behind">gün geride</string>
 	<string name="back_to_map">Haritaya dön</string>
-	<string name="share_note">Not paylaş</string>
     <string name="watch">İzle</string>
 	<string name="notes">Notlar</string>
 	<string name="online_map">Çevrim içi harita</string>
@@ -1247,8 +1226,7 @@
 	<string name="shared_string_import2osmand">OsmAnd\'a aktar</string>
     <string name="read_full_article">Tüm metni oku (çevrim içi)</string>
     <string name="rendering_value_walkingRoutesOSMC_name">OSMC göre olan boyama</string>
-    <string name="local_recordings_delete_all_confirm">%1$d notu silmek üzeresiniz. Emin misiniz?</string>
-	<string name="local_osm_changes_upload_all_confirm">%1%d düzenlemeyi OSM\'ye yüklemek üzeresiniz. Emin misiniz?</string>
+    <string name="local_osm_changes_upload_all_confirm">%1%d düzenlemeyi OSM\'ye yüklemek üzeresiniz. Emin misiniz?</string>
     <string name="plugin_nautical_name">Deniz haritası görünümü</string>
 	<string name="plugin_ski_name">Kayak haritası görünümü</string>
 	<string name="text_size">Yazı boyutu</string>
@@ -1279,12 +1257,8 @@
 	<string name="rendering_value_pink_name">Pembe</string>
 	
 	<string name="rendering_value_brown_name">Kahverengi</string>
-	
-	
-	
-	
 
-    <string name="av_locations_descr">Not yerleri ile GPX dosyası</string>
+
     <string name="av_locations">Lokasyonlar</string>
     <string name="plugin_settings">Eklentiler</string>
 	<string name="routing_attr_avoid_shuttle_train_description">Mekik treninden kaçın</string>
@@ -1471,14 +1445,6 @@
 	<string name="downloads_left_template">%1$s indirme kaldı</string>
 	<string name="shared_string_near">Yakın</string>
     <string name="shared_string_hide">Gizle</string>
-    <string name="av_video_quality_low">En düşük kalite</string>
-    <string name="av_video_quality_high">En yüksek kalite</string>
-    <string name="av_video_quality">Video çıkış kalitesi</string>
-    <string name="av_video_quality_descr">Video kalitesi seç.</string>
-    <string name="av_audio_format">Ses çıkış biçimi</string>
-    <string name="av_audio_format_descr">Ses çıkış biçimini seçin.</string>
-    <string name="av_audio_bitrate">Ses bit hızı</string>
-    <string name="av_audio_bitrate_descr">Ses bit hızı seçin.</string>
     <string name="commit_poi">POI Commit</string>
 	<string name="tab_title_basic">Temel</string>
 	<string name="tab_title_advanced">İleri</string>
@@ -2033,11 +1999,6 @@
 <string name="shared_string_not_selected">Seçilmedi</string>
     <string name="rec_split"/>
     <string name="rec_split_title"/>
-    <string name="rec_split_desc">Kullanılan alan depolama alanı boyutunu aştığında klipleri yeniden yaz.</string>
-    <string name="rec_split_clip_length">klip uzunluğu</string>
-    <string name="rec_split_clip_length_desc">Kaydedilen klipler için üst süre limiti.</string>
-    <string name="rec_split_storage_size">Depolama boyutu</string>
-    <string name="rec_split_storage_size_desc">Tüm kaydedilen klipler tarafından işgal edilebilir alan miktarı.</string>
     <string name="last_map_change">Son harita değişikliği: %s</string>
     <string name="hourly">Saatlik</string>
     <string name="daily">Günlük</string>
@@ -2309,9 +2270,6 @@
     <string name="marker_activated">İşaretleyici %s aktifleştirildi.</string>
     <string name="one_tap_active_descr">İçerik menüsünü açmadan, harita üzerinde bir belirtecin üzerine bas ve aktif belirteçlerin üzerine sürükle.</string>
     <string name="one_tap_active">Tek basış aktif</string>
-    <string name="empty_state_av_notes">Notlar al!</string>
-    <string name="empty_state_av_notes_desc">Widget veya içerik menüsünü kullanarak, harita üzerinde her nokta için ses, video veya fotoğraf notları al.</string>
-    <string name="notes_by_date">Tarihe göre notlar</string>
     <string name="by_date">Tarihe göre</string>
     <string name="by_type">Tipe göre</string>
     <string name="shared_string_more_without_dots">Daha fazla</string>

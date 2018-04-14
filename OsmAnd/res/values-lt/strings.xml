@@ -977,8 +977,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="srtm_plugin_name">SRTM įskiepis</string>
     <string name="download_select_map_types">Kiti žemėlapiai</string>
     <string name="download_srtm_maps">SRTM žemėlapiai</string>
-    <string name="audionotes_plugin_description">Šis įskiepis leidžia įrašinėti garsą ir vaizdą bei fotografuoti kelionės metu paspaudus mygtuką žemėlapio ekrane arba tiesiai iš kontekstinio meniu bt kurioje žemėlapio vietoje.</string>
-    <string name="audionotes_plugin_name">Audio užrašų įskiepis</string>
 
 
     <string name="osmand_srtm_short_description_80_chars">OsmAnd įskiepis, skirtas aukščio kontūrų linijoms</string>
@@ -988,38 +986,22 @@ Tam prireiks {1} MB pastoviam saugojimui.
 
 
     <string name="map_widget_distancemeasurement">Atstumo matavimas</string>
-    <string name="audionotes_location_not_defined">Vieta, kuriai skiriama ši pastaba, nenustatyta. Pasirinkite \"Naudoti vietą …\" priskirti pastabą specifinei vietai.</string>
-    <string name="map_widget_audionotes">Audio užrašai</string>
 
 
-    <string name="av_def_action_video">Įrašyti vaizdą</string>
-    <string name="av_def_action_audio">Įrašyti garsą</string>
     <string name="av_widget_action_descr">Pasirinkti numatytą įrankio veiksmą.</string>
     <string name="av_widget_action">Numatytas įrankio veiksmas</string>
-    <string name="av_video_format_descr">Pasirinkti vaizdo įrašo formatą.</string>
-    <string name="av_video_format">Vaizdo įrašo formatas</string>
-    <string name="av_use_external_recorder_descr">Naudoti sistemos vaizdo įrašymo įrankį.</string>
     <string name="av_use_external_recorder">Nuadoti kitą įrašymo įrankį</string>
-    <string name="av_settings_descr">Konfigūruoti vaizdo ir garso parametrus.</string>
-    <string name="av_settings">Garso/vaizdo nustatymai </string>
     <string name="recording_error">Įrašinėjant vaizdą įvyko klaida </string>
-    <string name="recording_camera_not_available">Kamera neprieinama</string>
-    <string name="recording_is_recorded">Įrašinėjamas garsas/vaizdas. Norėdami sustabdyti palieskite įrankio mygtuką.</string>
-    <string name="recording_playing">Grojamas pasirinktas garso įrašas.\n%1$s</string>
     <string name="recording_open_external_player">Atverti kitą grotuvą</string>
     <string name="recording_delete_confirm">Ar norite ištrinti šį įrašą?</string>
 
     <string name="recording_unavailable">neprieinama</string>
-    <string name="recording_context_menu_arecord">Įrašyti audio žinutę</string>
-    <string name="recording_context_menu_vrecord">Įrašyti vaizdo žinutę</string>
-    <string name="layer_recordings">Įrašų sluoksnis</string>
     <string name="recording_can_not_be_played">Įrašo neina pagroti</string>
     <string name="recording_context_menu_delete">Ištrinti įrašą</string>
     <string name="recording_context_menu_play">Groti</string>
     <string name="recording_description">"Įrašas %1$s  %3$s %2$s"</string>
     <string name="recording_default_name">Įrašas</string>
     <string name="shared_string_control_start">Įrašyti</string>
-    <string name="map_widget_av_notes">Audio užrašai</string>
     <string name="shared_string_control_stop">Stop</string>
     <string name="srtm_paid_version_msg">Prašome pirkti kontūrinių linijų įskiepį Android Play parduotuvėje. Taip paremsite tolesnį programos vystymą.</string>
     <string name="srtm_paid_version_title">Kontūrinių linijų įskiepis</string>
@@ -1039,7 +1021,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="download_hillshade_maps">Kalnų šešėlių žemėlapiai</string>
 
 
-    <string name="local_indexes_cat_av">Audio/Video duomenys</string>
     <string name="support_new_features_descr">Paremkite finansiškai naujo funkcionalumo vystymą.</string>
     <string name="av_use_external_camera_descr">Naudoti sistemos fotoaparato programą.</string>
     <string name="av_use_external_camera">Nautodi fotoaparato programą</string>
@@ -1787,7 +1768,6 @@ Ar norite registruotis iš naujo?</string>
     <string name="back_to_map">Grįžti į žemėlapį</string>
     <string name="shared_string_selected">Pasirinkta</string>
 
-    <string name="share_note">Pasidalinti pastaba</string>
     <string name="agps_info">A-GPS informacija</string>
     <string name="shared_string_message">Žinutė</string>
     <string name="agps_data_last_downloaded">Vėliausi A-GPS duomenys parsiųsti: %1$s</string>
@@ -1829,7 +1809,6 @@ Ilguma %2$s</string>
     <string name="shared_string_unexpected_error">Įvyko nenumatyta klaida</string>
     <string name="shared_string_action_template">Veiksmas {0}</string>
     <string name="shared_string_collapse">Suskleisti</string>
-    <string name="shared_string_video">Video</string>
     <string name="shared_string_photo">Foto</string>
     <string name="route_points">Maršruto taškai</string>
     <string name="plugin_touringview_name">Turistinis žemėlapis</string>
@@ -1898,7 +1877,6 @@ Ilguma %2$s</string>
     <string name="local_indexes_cat_wiki">Vikipedija</string>
     <string name="shared_string_show_details">Rodyti detales</string>
     <string name="osm_edit_context_menu_delete">Ištrinti OSM taisymus</string>
-    <string name="local_recordings_delete_all_confirm">Ketinate ištrinti %1$d pastabas. Ar tikrai to norite?</string>
     <string name="download_wikipedia_maps">Vikipedija</string>
     <string name="disable_recording_once_app_killed_descrp">Bus pristabdytas GPX įrašymas, jei programa bus išjungta (per Pastarosios programos). (OsmAnd Miego foninio režimo piktograma dings iš Android pranešimų juostos.)</string>
     <string name="download_wikipedia_files">Ar norite atsisiųsti papildomų Wikipedia duomenų (%1$s MB)?</string>
@@ -2092,7 +2070,6 @@ Ilguma %2$s</string>
     <string name="favourites_edit_dialog_title">Įsimintos vietos informacija</string>
     <string name="simulate_your_location_stop_descr">Išjungti mano pozicijos simuliavimą.</string>
     <string name="simulate_your_location_descr">Simuliuoti jūsų vietą naudojant apskaičiuotą maršrutą ar įrašytą GPX.</string>
-    <string name="av_locations_descr">GPX failas su užrašų vietomis.</string>
     <string name="favourites_context_menu_add">Pridėti įsimintą vietą</string>
 	<string name="number_of_rows_in_dash">Eilučių skaičius %1$s puslapyje</string>
 	<string name="favourites">Įsimintos vietos</string>
@@ -2118,12 +2095,7 @@ Ilguma %2$s</string>
     <string name="osm_save_offline">Išsaugoti įrenginyje</string>
     <string name="lang_nds">Vokiečių žemaičių</string>
     <string name="shared_string_hide">Slėpti</string>
-    <string name="av_video_quality_low">Žemiausia kokybė</string>
-    <string name="av_video_quality_high">Aukščiausia kokybė</string>
     <string name="no_address_found">Adresas nerastas</string>
-    <string name="av_audio_format">Garso formatas</string>
-    <string name="av_audio_format_descr">Pasirinkite garso formatą.</string>
-    <string name="av_video_quality_descr">Pasirinkite vaizdo kokybę.</string>
     <string name="route_distance">Atstumas:</string>
     <string name="route_duration">Trukmė:</string>
     <string name="rendering_attr_horseRoutes_name">Arklių maršrutas</string>
@@ -2144,7 +2116,6 @@ Ilguma %2$s</string>
     <string name="missing_write_external_storage_permission">Programėlė neturi teisių įrašyti į atminties kortelę</string>
 <string name="no_camera_permission">Programėlė neturi teisių naudoti kamerą.</string>
     <string name="no_microphone_permission">Programėlė neturi teisių naudoti mikrofoną.</string>
-    <string name="av_video_quality">Vaizdo kokybė</string>
     <string name="please_specify_poi_type_only_from_list">Prašome parinkti teisingą LV tipą iš sąrašo arba palikti lauką neužpildytą.</string>
     <string name="osm_edit_modified_poi">Redaguota OSM LV</string>
     <string name="context_menu_item_open_note">Pridėti OSM pastabą</string>
@@ -2173,18 +2144,11 @@ Ilguma %2$s</string>
 <string name="shared_string_not_selected">Nepasirinkta</string>
     <string name="rec_split">Įrašo padalijimas</string>
     <string name="rec_split_title">Naudoti įrašo padalijimą</string>
-    <string name="rec_split_desc">Perrašyti klipus kai naudojama vieta pasiekia saugyklos dydį.</string>
-    <string name="rec_split_clip_length">Klipo ilgis</string>
-    <string name="rec_split_clip_length_desc">Viršutinė įrašo riba.</string>
-    <string name="rec_split_storage_size">Saugyklos dydis</string>
-    <string name="rec_split_storage_size_desc">Maksimalus saugyklos, kurią gali užimti įrašyti klipai, dydis.</string>
     <string name="live_updates">Tiesioginiai atnaujinimai</string>
     <string name="select_voice_provider">Pasirinkti balso nurodymus</string>
     <string name="select_voice_provider_descr">Pasirinkti arba parsiųsti balso nurodymus jūsų kalbai.</string>
     <string name="no_location_permission">Programai neleista gauti jūsų vietos informacijos.</string>
     <string name="shared_string_near">Netoliese</string>
-    <string name="av_audio_bitrate">Audio bitų sparta</string>
-    <string name="av_audio_bitrate_descr">Pasirinkite audio bitų spartą.</string>
     <string name="release_2_2">\\022 Nauja kontekstinė sąsaja skirta vietovės pasirinkimui žemėlapyje ir kituose languose
 \n
 \n • Žemėlapio ekranas rodomas iš karto, nebent pasirinkimas \"Rodyti valdymo skydelį startuojant programai\" yra pažymėtas
@@ -2579,9 +2543,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="quick_action_item_screen">Ekrano %d</string>
     <string name="quick_action_add_marker">Pridėti žemėlapio žymeklį</string>
     <string name="quick_action_map_style_switch">Žemėlapis stilius buvo pakeistas į \"%s\".</string>
-    <string name="quick_action_take_audio_note">Įrašyti garsinę pastabą</string>
-    <string name="quick_action_take_video_note">Įrašyti vaizdo pastabą</string>
-    <string name="quick_action_take_photo_note">Fotografuoti</string>
     <string name="quick_action_add_osm_bug">Pridėti OSM Pastabą</string>
     <string name="quick_action_add_gpx">Pridėti GPX tašką</string>
     <string name="quick_action_add_favorite">Įtraukti į parankinius</string>
@@ -2836,7 +2797,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="shared_string_added">Pridėta</string>
     <string name="marker_activated">Žymeklis %s aktyvuotas.</string>
     <string name="one_tap_active">Aktyvavimas vienu lietimu</string>
-    <string name="empty_state_av_notes">Rašykite pastabas!</string>
     <string name="by_date">Pagal datą</string>
     <string name="by_type">Pagal tipą</string>
     <string name="shared_string_more_without_dots">Daugiau</string>
@@ -2866,7 +2826,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="show_arrows_on_the_map">Rodyti rodykles žemėlapyje</string>
     <string name="show_passed">Rodyti praeitą</string>
     <string name="hide_passed">Slėpti praeitą</string>
-    <string name="notes_by_date">Užrašai pagal datą</string>
     <string name="appearance_on_the_map">Išvaizda žemėlapyje</string>
     <string name="will_open_tomorrow_at">Bus atidaryta rytoj</string>
     <string name="rendering_attr_hidePOILabels_name">LV pavadinimai</string>
@@ -2896,7 +2855,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="shared_string_marker">Žymeklis</string>
     <string name="empty_state_osm_edits_descr">Kurkite arba keiskite OSM LV-as, užrašykite arba komentuokite OSM pastabas bei dalinkitės įrašytais GPX failais.</string>
     <string name="one_tap_active_descr">Spustelėkite žymeklį ant žemėlapio norėdami jį perkelti į aktyvių žymeklių sarašo viršų neatveriant kontekstinio meniu.</string>
-    <string name="empty_state_av_notes_desc">Pridėkite garso, vaizdo įrašą ar nuotrauką kiekviename žemėlapio taške naudodami valdiklį arba kontekstinį meniu.</string>
     <string name="add_favourites_group_to_markers_descr">Pasirinkite pamėgtų kategoriją norėdami įtraukti į žymeklius.</string>
     <string name="show_number_pad">Rodyti skaičių klaviatūrą</string>
     <string name="mark_passed">Pažymėti kaip praeitą</string>
@@ -2916,9 +2874,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="osmand_extended_description_part1">OsmAnd (OSM Automated Navigation Directions) yra žemėlapio ir navigacijos programa su prieiga prie nemokamų, pasaulinių ir aukštos kokybės OpenStreetMap (OSM) duomenų. Naudokitės balso ir vaizdo navigatoriumi, peržiūrėkite LV (lankytinas vietas), kurkite ir valdytkite GPX kelius, naudojkite kontūro linijos vizualizaciją ir aukščio info (įskiepių pagalba), pasirinkite vairavimo, dviračių, pėsčiųjų režimus, redaguokite OSM duomenis ir daug daugiau.</string>
     <string name="quick_favorites_name_preset">Nuostatos pavadinimas</string>
     <string name="quick_action_add_marker_descr">Bakstelėję veiksmo mygtuką pridėsite žemėlapio žymeklį ekrano centre.</string>
-    <string name="quick_action_take_audio_note_descr">Bakstelėję veiksmo mygtuką pridėsite garso įrašą ekrano centre.</string>
-    <string name="quick_action_take_video_note_descr">Bakstelėję veiksmo mygtuką pridėsite vazido įrašą ekrano centre.</string>
-    <string name="quick_action_take_photo_note_descr">Bakstelėję veiksmo mygtuką pridėsite foto pastabą ekrano centre.</string>
     <string name="quick_action_add_osm_bug_descr">Bakstelėję veiksmo mygtuką pridėsite OSM pastabą ekrano centre.</string>
     <string name="quick_action_add_poi_descr">Bakstelėję veiksmo mygtuką pridėsite LV-ą ekrano centre.</string>
     <string name="quick_action_add_parking_descr">Bakstelėję veiksmo mygtuką pridėsite automobilio stovėjimo vietą ekrano centre.</string>

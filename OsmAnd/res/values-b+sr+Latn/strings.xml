@@ -81,23 +81,15 @@
     <string name="files_limit">%1$d fajlova ostalo</string>
     <string name="available_downloads_left">Dostupno %1$d datoteka za preuzimanje</string>
     <string name="install_paid">Puna verzija</string>
-    <string name="av_settings_descr">Konfigurisanje audio i video podešavanja</string>
-    <string name="av_settings">Audio/video podešavanja </string>
-    <string name="recording_error">Došlo je do greške prilikom snimanja </string>
-    <string name="recording_camera_not_available">Kamera nije dostupna</string>
-    <string name="recording_delete_confirm">Da li želite da uklonite ovaj snimak ?</string>
+	<string name="recording_error">Došlo je do greške prilikom snimanja </string>
+	<string name="recording_delete_confirm">Da li želite da uklonite ovaj snimak ?</string>
     <string name="recording_unavailable">nedostupan</string>
-    <string name="recording_context_menu_arecord">Napravi audio belešku</string>
-    <string name="recording_context_menu_vrecord">Napravi video belešku</string>
-    <string name="layer_recordings">Sloj za snimanje</string>
-    <string name="recording_context_menu_delete">Obriši zapis</string>
+	<string name="recording_context_menu_delete">Obriši zapis</string>
     <string name="recording_context_menu_play">Reprodukuj</string>
     <string name="recording_default_name">snimanje</string>
     <string name="shared_string_control_start">Počni</string>
-    <string name="map_widget_av_notes">Audio/video beleške</string>
     <string name="map_widget_distancemeasurement">Merenje udaljenosti</string>
-    
-    <string name="map_widget_audionotes">Audio beleške</string>
+
     <string name="download_select_map_types">Ostale mape</string>
     <string name="download_roads_only_item">Samo putevi</string>
     <string name="download_srtm_maps">izohipse</string>
@@ -366,10 +358,8 @@
 		\n\nSvetska karta prikazuje sva skijališta i skijaške staze u ovom pregledu je dostupna preuzimanjem  „Svetske skijaške karte“.
 	</string>
 	<string name="shared_string_audio">Zvuk</string>
-	
-	
-	<string name="share_note">Deli belešku</string>
-	
+
+
     <string name="location_on_map">Geografski položaj:\nŠirina %1$s↵\nDužina %2$s</string>
 	<string name="watch">Pregledaj</string>
 	<string name="notes">Beležnica</string>

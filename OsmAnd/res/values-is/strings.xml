@@ -71,16 +71,12 @@
     <string name="shared_string_select">Velja</string>
     <string name="shared_string_type">Tegund</string>
     <string name="shared_string_not_selected">Ekki valið</string>
-    <string name="rec_split_storage_size">Stærð geymslupláss</string>
     <string name="shared_string_sound">Hljóð</string>
     <string name="route_distance">Fjarlægð:</string>
     <string name="route_duration">Tími:</string>
     <string name="rendering_attr_horseRoutes_name">Reiðleiðir</string>
     <string name="shared_string_near">Nálægt</string>
     <string name="shared_string_hide">Fela</string>
-    <string name="av_video_quality_low">Minnstu gæði</string>
-    <string name="av_video_quality_high">Mestu gæði</string>
-    <string name="av_audio_bitrate">Bitahraði hljóðs</string>
     <string name="show_on_start">Birta í ræsingu</string>
     <string name="copied_to_clipboard">Afritað á klippispjald</string>
     <string name="osn_comment_dialog_title">Bæta við athugasemd</string>
@@ -255,7 +251,6 @@
     <string name="shared_string_my_favorites">Eftirlætin mín</string>
     <string name="shared_string_my_tracks">Ferlarnir mínir</string>
     <string name="shared_string_audio">Hljóð</string>
-    <string name="shared_string_video">Myndskeið</string>
     <string name="shared_string_photo">Ljósmynd</string>
     <string name="route_points">Leiðarpunktar</string>
     <string name="shared_string_accessibility">Aukið aðgengi</string>
@@ -860,7 +855,6 @@
     <string name="rename_failed">Endurnefning mistókst.</string>
     <string name="days_behind">dögum á eftir</string>
     <string name="back_to_map">Aftur í kort</string>
-    <string name="share_note">Deila minnispunkti</string>
     <string name="location_on_map">Staðsetning:
 \nBreidd %1$s
 \nLengd %2$s</string>
@@ -1142,14 +1136,10 @@ Ferill %2$s</string>
     <string name="local_openstreetmap_act_title">OSM-breytingar</string>
     <string name="layer_hillshade">Hæðaskyggingalag</string>
     <string name="map_widget_gps_info">GPS-upplýsingar</string>
-    <string name="local_indexes_cat_av">Hjóð/Myndgögn</string>
     <string name="recording_photo_description">Ljósmynd %1$s %2$s</string>
     <string name="dropbox_plugin_name">Dropbox-viðbót</string>
-    <string name="av_settings_descr">Breyta stillingum hljóð- og myndmerkja.</string>
-    <string name="av_settings">Stillingar hljóð- og myndskeiða</string>
     <string name="recording_context_menu_delete">Eyða upptöku</string>
     <string name="map_widget_distancemeasurement">Mæling vegalengda</string>
-    <string name="map_widget_audionotes">Hljóð-minnispunktar</string>
     <string name="index_srtm_ele">Hæðarlínur</string>
     <string name="download_select_map_types">Önnur kort</string>
     <string name="download_roads_only_item">Einungis vegir</string>
@@ -1477,15 +1467,9 @@ og leiðsögn</string>
     <string name="rendering_attr_showMtbRoutes_name">Sýna MTB-leiðir</string>
     <string name="switch_start_finish">Snúa við upphafsstað og áfangastað</string>
     <string name="rendering_attr_hideIcons_name">Táknmyndir merkisstaða</string>
-    <string name="rec_split_clip_length">Lengd myndskeiðs</string>
     <string name="no_location_permission">Forritið hefur ekki heimildir til að nota staðsetningargögn.</string>
     <string name="no_camera_permission">Forritið hefur ekki heimildir til að nota myndavélina.</string>
     <string name="no_microphone_permission">Forritið hefur ekki heimildir til að nota hljóðnemann.</string>
-    <string name="av_video_quality">Gæði myndmerkisúttaks</string>
-    <string name="av_video_quality_descr">Veldu gæði myndmerkisúttaks.</string>
-    <string name="av_audio_format">Snið hljóðúttaks</string>
-    <string name="av_audio_format_descr">Veldu snið hljóðúttaks.</string>
-    <string name="av_audio_bitrate_descr">Veldu bitahraða hljóðs.</string>
     <string name="please_specify_poi_type_only_from_list">Tilgreindu rétta tegund af merkisstað eða slepptu henni.</string>
     <string name="access_from_map">Aðgangur frá korti</string>
     <string name="osm_save_offline">Vista ótengt</string>
@@ -1503,7 +1487,6 @@ og leiðsögn</string>
 
     <string name="simulate_initial_startup">Líkja eftir fyrstu ræsingu forritsins</string>
     <string name="favorite_category_dublicate_message">Flokkur með heitinu er þegar til. Notaðu eitthvað annað nafn.</string>
-    <string name="av_locations_descr">GPX-skrá með minnispunktum við staðsetningar.</string>
     <string name="download_wikipedia_files">Viltu ná í viðbótargögn af Wikipedia (%1$s MB) ?</string>
     <string name="osm_edit_context_menu_delete">Eyða OSM-breytingu</string>
     <string name="rendering_attr_hideHouseNumbers_name">Húsnúmer</string>
@@ -1540,13 +1523,9 @@ Len %2$s</string>
     <string name="gpx_info_distance">Vegalengd: %1$s (%2$s punktar)</string>
     <string name="osmo_track_interval">Millibil skráninga</string>
     <string name="recording_error">Villa kom upp á meðan upptöku stóð</string>
-    <string name="recording_camera_not_available">Myndavél er ekki tiltæk</string>
     <string name="recording_open_external_player">Opna utanaðkomandi spilara</string>
     <string name="recording_delete_confirm">Viltu eyða þessari upptöku?</string>
-    <string name="recording_context_menu_arecord">Taka minnispunkt sem hljóðupptöku</string>
-    <string name="recording_context_menu_vrecord">Taka minnispunkt sem myndskeið</string>
     <string name="recording_can_not_be_played">Ekki var hægt að spila upptöku</string>
-    <string name="map_widget_av_notes">Hljóð/myndskeiðs-minnispunktar</string>
     <string name="gps_not_available">Virkjaðu GPS í stillingunum</string>
     <string name="map_widget_monitoring_services">Leiðarskráningarþjónustur</string>
     <string name="filterpoi_activity">Búa til merkisstaðasíu</string>
@@ -1793,22 +1772,15 @@ Punktar</string>
     <string name="rendering_attr_contourWidth_description">Breidd hæðarlína</string>
     <string name="rendering_attr_contourWidth_name">Breidd hæðarlína</string>
     <string name="rendering_attr_hideWaterPolygons_description">Vatn</string>
-    <string name="local_recordings_delete_all_confirm">Þú ert að fara að eyða %1$d minnispunktum. Ertu viss?</string>
-    <string name="audionotes_plugin_name">Hljóð/myndskeiðs-minnispunktar</string>
     <string name="speech_rate_descr">Tilgreindu talhraða fyrir TTS.</string>
     <string name="stop_routing_confirm">Ertu viss um að þú viljir stöðva leiðsögnina?</string>
     <string name="precise_routing_mode_descr">Virkja þetta til að reikna nákvæmar leiðir án hnökra. Er ennþá takmarkað út frá vegalengdum og fremur hægvirkt.</string>
     <string name="precise_routing_mode">Nákvæmt leiðaval (alfa-tilraunaútgáfa)</string>
     <string name="dropbox_plugin_description">Dropbox-viðbótin gerir þér kleift að samstilla ferla og minnispunkta við hljóð/myndskeið með því að nota Dropbox-aðganginn þinn.</string>
     <string name="av_def_action_choose">Velja eftir beiðni</string>
-    <string name="av_def_action_video">Taka upp myndskeið</string>
-    <string name="av_def_action_audio">Taka upp hljóð</string>
     <string name="av_widget_action_descr">Veldu sjálfgefna aðgerð viðmótshluta.</string>
     <string name="av_widget_action">Sjálfgefin aðgerð viðmótshluta</string>
-    <string name="av_video_format_descr">Veldu úttakssnið myndmerkis.</string>
-    <string name="av_video_format">Frálagssnið myndmerkis</string>
     <string name="av_use_external_camera">Nota myndavélarforritið</string>
-    <string name="layer_recordings">Upptaka á lagi</string>
     <string name="local_openstreetmap_were_uploaded">{0} merkisstaðir/minnispunktar voru sendir inn</string>
     <string name="local_openstreetmap_settings">Merkisstaðir/minnispunktar sem vistaðir eru á tæki</string>
     <string name="local_openstreetmap_settings_descr">Birta og sýsla með merkisstaði/minnispunkta sem skráðir eru í staðværum gagnagrunni.</string>
@@ -1891,9 +1863,6 @@ Punktar</string>
     <string name="quick_action_add_poi">Bæta við merkisstað</string>
     <string name="quick_action_map_style">Breyta stíl korts</string>
     <string name="quick_action_map_style_switch">Stíl kortsins var breytt yfir í \"%s\".</string>
-    <string name="quick_action_take_audio_note">Taka minnispunkt sem hljóðupptöku</string>
-    <string name="quick_action_take_video_note">Taka minnispunkt sem myndskeið</string>
-    <string name="quick_action_take_photo_note">Taka minnispunkt sem ljósmynd</string>
     <string name="quick_action_add_osm_bug">Bæta við OSM-minnispunkti</string>
     <string name="quick_action_navigation_voice">Tal af/á</string>
     <string name="quick_action_navigation_voice_off">Slökkt á tali</string>
@@ -2106,7 +2075,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="routing_preferences_descr">Stillingar leiðavals</string>
     <string name="disable_complex_routing">Gera flókið leiðaval óvirkt</string>
     <string name="local_osm_changes_backup_successful">Tókst að útbúa OSM-breytingaskrá %1$s</string>
-    <string name="av_use_external_recorder_descr">Nota upptökutæki kerfisins fyrir myndskeið.</string>
     <string name="av_use_external_recorder">Nota upptökutæki kerfisins</string>
     <string name="av_use_external_camera_descr">Nota forrit kerfisins fyrir ljósmyndir.</string>
     <string name="rendering_attr_alpineHiking_description">Setja leiðir fram samkvæmt SAC, svissneska gönguleiðakvarðanum.</string>
@@ -2278,8 +2246,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="shared_string_added">Bætt við</string>
     <string name="marker_activated">Kortamerkið %s virkjað.</string>
     <string name="one_tap_active">Eitt bank virkjar</string>
-    <string name="empty_state_av_notes">Taktu niður minnispunkta!</string>
-    <string name="notes_by_date">Minnispunktar eftir dagsetningu</string>
     <string name="by_date">Eftir dagsetningu</string>
     <string name="by_type">Eftir gerð</string>
     <string name="looking_for_tracks_with_waypoints">Leita að ferlum með ferilpunktum</string>
@@ -2424,10 +2390,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="empty_state_my_tracks_desc">Skrá eða flytja inn ferla til skoðunar.</string>
     <string name="download_using_mobile_internet">Í augnablikinu er þráðlaust Wi-Fi net ekki tengt. Viltu nota núverandi internettengingu undir niðurhal?</string>
     <string name="srtm_paid_version_msg">Íhugaðu að kaupa viðbótina fyrir hæðarlínur á markaðnum til að styðja við áframhaldandi þróun forritsins.</string>
-    <string name="recording_is_recorded">Verið er að taka upp hjóð/myndskeið. Til að stöðva hana, bankaðu á HM-viðmótshlutann.</string>
-    <string name="recording_playing">Verið er að spila hjóð úr tilgreindri upptöku.
-\n%1$s</string>
-    <string name="audionotes_location_not_defined">Staðsetning sem tengja á minnispunktinum er ekki ennþá skilgreind. \"Nota staðsetningu …\" til að úthluta minnispunkti á uppgefna staðsetningu.</string>
     <string name="native_library_not_running">Forritið er keyrandi í öryggisham (gerðu hann óvirkan í stillingunum).</string>
     <string name="zxing_barcode_scanner_not_found">ZXing Barcode Scanner forritið er ekki uppsett. Leita á Google Play markaðnum?</string>
     <string name="osmand_plus_extended_description_part8">Áætluð kortaþekja og gæði: • Vestur-Evrópa: **** • Austur-Evrópa: *** • Rússland: *** • Norður-Ameríka: *** • Suður-Ameríka: ** • Asía: ** • Japan &amp; Kórea: *** • Miðausturlönd: ** • Afríka: ** • Antarktíka: * Flest lönd í heiminum eru tiltæk sem niðurhalspakkar! Frá Afghanistan til Simbabve, frá Ástralíu til BNA. Argentína, Brasilía, Kanada, Frakkland, Þýskaland, Mexíkó, UK, Spánn, …</string>
@@ -2438,9 +2400,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="amenity_type_geocache">GPS-ratleikur (geocache)</string>
     <string name="quick_action_add_marker_descr">Bank á aðgerðahnappinn mun bæta kortamerki á miðju skjásins.</string>
     <string name="quick_action_add_gpx_descr">Bank á aðgerðahnappinn mun bæta GPX-ferilpunkti á miðju skjásins.</string>
-    <string name="quick_action_take_audio_note_descr">Bank á aðgerðahnappinn mun bæta hljóð-minnispunkti á miðju skjásins.</string>
-    <string name="quick_action_take_video_note_descr">Bank á aðgerðahnappinn mun bæta myndskeiðs-minnispunkti á miðju skjásins.</string>
-    <string name="quick_action_take_photo_note_descr">Bank á aðgerðahnappinn mun bæta ljósmyndar-minnispunkti á miðju skjásins.</string>
     <string name="quick_action_add_osm_bug_descr">Bank á aðgerðahnappinn mun bæta OSM-minnispunkti á miðju skjásins.</string>
     <string name="quick_action_add_poi_descr">Bank á aðgerðahnappinn mun bæta merkisstað á miðju skjásins.</string>
     <string name="quick_action_navigation_voice_descr">Bank á aðgerðahnappinn mun gera raddleiðsögn virka eða óvirka á meðan leiðsögn stendur.</string>
@@ -2466,8 +2425,7 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="shared_string_marker">Kortamerki</string>
     <string name="plan_route_no_markers_toast">Þú verður að bæta við a.m.k. einni merkingu til að geta notað þessa aðgerð.</string>
     <string name="osm_recipient_stat">Breytingar %1$s, upphæð %2$s mBTC</string>
-    <string name="rec_split_clip_length_desc">Efri tímamörk fyrir upptökur myndskeiða.</string>
-    <string name="osmand_rastermaps_plugin_description">Með þessari viðbót geturðu fengið aðgang að margskyns nettengdum landakortum (svokölluðum kortatígla- eða rastakortum), allt frá forákvörðuðum OpenStreetMap tíglum (eins og Mapnik) til gervitunglamynda eða sértækra laga á borð við veðurkort, veðurfarskort, jarðfræðikort, hæðaskygginga, o.s.frv. 
+    <string name="osmand_rastermaps_plugin_description">Með þessari viðbót geturðu fengið aðgang að margskyns nettengdum landakortum (svokölluðum kortatígla- eða rastakortum), allt frá forákvörðuðum OpenStreetMap tíglum (eins og Mapnik) til gervitunglamynda eða sértækra laga á borð við veðurkort, veðurfarskort, jarðfræðikort, hæðaskygginga, o.s.frv.
 \n
 \nHvert þessara korta má nota sem aðalkort (grunnkort) til birtingar á kortaskjá OsmAnd, eða sem yfir- eða undirlag á öðru grunnkorti (eins og stöðluðu ónettengdu OsmAnd kortunum). Til að gera undirlagskort sýnilegri, er einfalt að fela eftir þörfum ýmis einindi OsmAnd vigurkortanna með því að fara í valmyndina \'Stilla kort\'. 
 \n
@@ -2509,8 +2467,7 @@ Stendur fyrir svæði: %1$s x %2$s</string>
 \nEkki þarf að ná í sérstök kort, þessi sýn er byggð á stöðluðu kortunum. 
 \n
 \nTil að snúa aftur í hefðbundnari kortastíla OsmAnd, þarf einfaldlega að gera viðbótina óvirka aftur eða breyta stílnum í \'Stíll korts\' í \'Stilla kort\' valmyndinni.</string>
-    <string name="audionotes_plugin_description">Viðbótin fyrir hljóð/myndskeiðs-minnispunkta virkjar eiginleikann til að taka upp minnispunkta með hljóði/ljósmyndum/myndskeiðum á meðan ferðalagi stendur, annað hvort með því að nota hnapp á kortaskjánum eða beint í samhengisvalmynd fyrir hvaða staðsetningu sem er á kortinu.</string>
-    <string name="osmand_parking_plugin_description">Viðbótin fyrir staðsetningu bílastæðis gerir þér kleift að muna hvar bílnum þínum var lagt og hve langur tími er til stefnu áður en stöðumælir rennur út (ef um tímamörk er að ræða). 
+    <string name="osmand_parking_plugin_description">Viðbótin fyrir staðsetningu bílastæðis gerir þér kleift að muna hvar bílnum þínum var lagt og hve langur tími er til stefnu áður en stöðumælir rennur út (ef um tímamörk er að ræða).
 \nBæði staðurinn og tíminn eru sýnileg á stjórnborði OsmAnd rétt eins og í sérstökum viðmótshluta kortaskjásins. Hægt er að bæta áminningu inn í Android dagatalið.</string>
     <string name="empty_state_markers_active_desc">Ýta og halda eða stutt bank á staði, banka síðan á hnappinn í merkiflagginu.</string>
     <string name="tap_on_map_to_hide_interface_descr">Bank á kortið víxlar stjórnhnöppum og viðmótshlutum af eða á.</string>
@@ -2549,7 +2506,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
 \n</string>
     <string name="empty_state_osm_edits_descr">Búðu til eða breyttu merkisstöðum í OSM (POI), opnaðu eða gerðu athugasemdir í OSM og sendu inn skráða ferla í GPX-skrám.</string>
     <string name="one_tap_active_descr">Bankaðu á merki á kortinu til að færa það efst í virk kortamerki án þess að opna samhengisvalmyndina.</string>
-    <string name="empty_state_av_notes_desc">Bættu minnispunkti með hljóði, ljósmynd eða myndskeiði á hvern punkt á kortinu, með hjálp viðmótshluta eða samhengisvalmyndar.</string>
     <string name="add_track_to_markers_descr">Veldu feril úr hverjum ferilpunktum verður bætt í kortamerkin. (Einungis ferlar með ferilpunktum eru taldir upp.)</string>
     <string name="open_from">Opið frá</string>
     <string name="open_till">Opið til</string>

@@ -1,13 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources><string name="recording_context_menu_show">اظهر</string>
     <string name="av_def_action_picture">التقط صورة</string>
-    
-    <string name="av_def_action_video">تسجيل الفيديو</string>
-    <string name="av_def_action_audio">تسجيل الصوت</string>
+
     <string name="av_use_external_recorder">استخدم مسجل النظام</string>
-    <string name="av_settings">إعدادات الصوت / الفيديو </string>
-    <string name="recording_camera_not_available">الكاميرا ليست متاحة</string>
-    
+
     <string name="search_villages_and_postcodes">البحث عن المزيد من القرى/الرمز البريدي</string>
 	<string name="gps_not_available">يرجى تمكين GPS في إعدادات</string>
     <string name="replace_destination_point">استبدال الوجهة</string>
@@ -33,8 +29,7 @@
 	<string name="prefer_in_routing_descr">فضّل الطرق السريعة.</string>
     <string name="max_speed_none">لا شيء</string>
     <string name="index_name_openmaps">فتح خرائط الاتحاد الأوروبي</string>
-    
-    <string name="local_indexes_cat_av">بيانات الصوت / الفيديو</string>
+
     <string name="stop_routing_confirm">هل أنت متأكد أنك تريد إيقاف الملاحة؟</string>
     <string name="clear_dest_confirm">هل أنت متأكد أنك تريد مسح نقطة الوجهة (والوجهات المتوسطة) ؟</string>
     <string name="precise_routing_mode">التوجيه الدقيق (ألفا)</string>
@@ -53,8 +48,7 @@
     <string name="osmand_srtm_short_description_80_chars">ملحق OsmAnd المحلي للخطوط المحيطية</string>
     
     <string name="map_widget_distancemeasurement">قياس المسافة</string>
-    
-    <string name="map_widget_audionotes">الصوت تلاحظ</string>
+
     <string name="index_srtm_parts">أجزاء</string>
     <string name="index_srtm_ele">الخطوط المحيطية (الكنتورية)</string>
     <string name="srtm_plugin_name">ملحق الخطوط المحيطية</string>
@@ -346,15 +340,8 @@
     <string name="local_openstreetmap_act_title">تغييرات OSM</string>
     
 	<string name="intermediate_points_change_order">تغيير الفرز</string>
-    <string name="recording_is_recorded">جاري تسجيل الصوت/الفيديو. لوقفه انقر على أداة AV.</string>
     <string name="recording_open_external_player">افتح مشغلًا خارجيًا</string>
-    <string name="recording_context_menu_arecord">خذ ملاحظة صوتية</string>
-    <string name="recording_context_menu_vrecord">خذ ملاحظة فيديو</string>
-    <string name="layer_recordings">طبقة التسجيل</string>
     <string name="recording_description">تسجيل %1$s %3$s %2$s</string>
-    <string name="map_widget_av_notes">ملاحظات الصوت/الفيديو</string>
-    <string name="audionotes_plugin_description">هاته الأداة توفر وظائف لتدوين الملاحظات الصوتية /المصورة/الفيديو خلال الرحلة، سواء باستخدام زر على شاشة الخريطة، أو مباشرة من القائمة لأي موقع على الخريطة.</string>
-    <string name="audionotes_plugin_name">ملاحظات صوتية / مصورة</string>
     <string name="download_roads_only_maps">خرائط الطرقات فقط</string>
     
 	<string name="rendering_attr_noAdminboundaries_description">منع عرض الحدود الإقليمية (المستويات الإدارية من 5-9).</string>
@@ -388,12 +375,8 @@
     <string name="precise_routing_mode_descr">تمكين لحساب المسارات بدقة دون أخطاء. لا يزال محدود المسافة وبطيء.</string>
     <string name="recording_photo_description">صورة %1$s %2$s</string>
     <string name="dropbox_plugin_description">ملحق Dropbox يسمح بمزامنة المسارات و الملاحظات الصوتية والمرئية مع حسابك في دروب بوكس.</string>
-    <string name="av_video_format_descr">حدد نسق الفيديو الناتج.</string>
-    <string name="av_video_format">تنسيق الفيديو الناتج</string>
-    <string name="av_use_external_recorder_descr">استخدم مسجل النظام للفيديو.</string>
     <string name="av_use_external_camera_descr">استخدام تطبيق النظام للصور.</string>
     <string name="av_use_external_camera">استخدام تطبيق الكاميرا</string>
-    <string name="av_settings_descr">ضبط إعدادات الصوت والفيديو.</string>
     <string name="add_as_last_destination_point">أضف كآخر وجهة وسيطة</string>
     <string name="add_as_first_destination_point">أضف كأول وجهة وسيطة</string>
     <string name="intermediate_point_too_far">الوجهة %1$s بعيدة جدا من أقرب طريق.</string>
@@ -585,7 +568,6 @@
     <string name="local_indexes_cat_srtm">الخطوط الكنتورية</string>
     <string name="srtm_paid_version_msg">فكّر من فضلك في شراء ملحق الخطوط المحيطية من السّوق لدعم المزيد من التّطوير.</string>
     <string name="srtm_paid_version_title">ملحق الخطوط المحيطية</string>
-    <string name="recording_playing">جاري تشغيل صوت من التّسجيل المحدد.\n%1$s</string>
     <string name="zxing_barcode_scanner_not_found">برنامج ZXing للبحث عن الباركود غيرُ مثبّت. أأبحث في السّوق ؟</string>
 	<string name="rendering_attr_contourLines_description">اعرض درجة التّكبير (يتطلب البيانات المحيطية):</string>
 	
@@ -623,9 +605,8 @@
 	<string name="oclock">o\'على مدار الساعة</string>
 	<string name="auto_announce_off">إيقاف الإخطار التلقائي</string>
 	<string name="auto_announce_on">تفعيل الإخطار التلقائي</string>
-	
-	<string name="audionotes_location_not_defined">لم يتم ربط الملاحظة بأي موقع. إضغط على \"استخدام المكان …\" لترفق ملاحظة بالمكان المحدد.</string>
-	<string name="animate_routing_route_not_calculated">الرجاء، احتسب المسار أولا</string>
+
+    <string name="animate_routing_route_not_calculated">الرجاء، احتسب المسار أولا</string>
     <string name="animate_routing_route">حاكي باستخدام المسار المحتسب </string>
     <string name="animate_routing_gpx">حاكي باستخدام مسار GPX</string>
     <string name="shared_string_remember_my_choice">تذكر اختياري</string>
@@ -1161,15 +1142,13 @@
 	<string name="favourites_remove_dialog_success">تم بنجاح حذف النقطة المفضلة {0}.</string>
 	<string name="osmand_parking_hour">س</string>
 	<string name="osmand_parking_minute">دقيقة</string>
-	<string name="shared_string_video">فيديو</string>
-	<string name="shared_string_photo">صورة</string>
+    <string name="shared_string_photo">صورة</string>
 	<string name="route_points">نقاط الطريق</string>
 	<string name="track_segments">مقاطع المسار</string>
 	<string name="track_points">نقاط المسار</string>
 	<string name="plugin_touringview_name">عرض خريطة السياحة</string>
 	<string name="rename_failed">فشل في إعادة التسمية.</string>
 	<string name="back_to_map">عودة إلى الخريطة</string>
-	<string name="share_note">شارك ملاحظة</string>
     <string name="location_on_map">"الموقع :\nالعرض %1$s\nالطول  %2$s"</string>
 	<string name="notes">ملاحظات</string>
 	<string name="online_map">خريطة نت</string>
@@ -1849,7 +1828,6 @@
     <string name="no_address_found">لم يتم تحديد أي عنوان</string>
     <string name="shared_string_location">الموقع</string>
     <string name="share_menu_location">شارك الموقع</string>
-    <string name="av_locations_descr">ملف GPX مرفوق بملاحظات عن المواقع.</string>
     <string name="av_locations">المواقع</string>
     <string name="gps_network_not_enabled">إن خدمة تحديد المواقع ليست مفعلة. هل تريد تشغيلها ؟</string>
     <string name="osmo_track_interval_descr">اختر الفاصل الزمني لإرسال بيانات الموقع.</string>
@@ -1879,16 +1857,11 @@
     <string name="shared_string_not_selected">غير محدد</string>
     <string name="rec_split">قسم المسجل</string>
     <string name="rec_split_title">إستعمل مقسم التسجيلات</string>
-    <string name="rec_split_clip_length">طول المقطع</string>
-    <string name="rec_split_storage_size">حجم التخزين</string>
-    <string name="rec_split_storage_size_desc">مقدار المساحة التي يمكن أن تحتلها كافة القصاصات المسجلة.</string>
     <string name="select_voice_provider">إختر التوجيه الصوتي</string>
     <string name="select_voice_provider_descr">إختر أو قم بتنزيل التوجيه الصوتي الخاص بلغتك.</string>
     <string name="no_location_permission">لا يسمح للتطبيق الوصول إلى طريق البيانات.</string>
     <string name="rendering_attr_horseRoutes_name">طرق خاصة للأحصنة</string>
     <string name="shared_string_hide">إخفاء</string>
-    <string name="av_video_quality_low">أقل جودة</string>
-    <string name="av_video_quality_high">أعلى جودة</string>
     <string name="copied_to_clipboard">نسخ إلى الحافظة</string>
     <string name="context_menu_item_open_note">نقطة ملاحظة OSM المفتوحة</string>
     <string name="osm_edit_reopened_note">ملاحظة OSM أعيد فتحها</string>
@@ -1959,10 +1932,8 @@
     <string name="osmo_not_signed_in">فشل تسجيل الدخول إلى خدمة OsMo</string>
     <string name="osmo_auto_connect_descr">الربط بالخدمة تلقائياً بعد بدء تشغيل التطبيق.</string>
     <string name="osmo_regenerate_login_ids">إعادة إنشاء معرف ID المستخدم</string>
-    <string name="av_video_quality_descr">حدد جودة الفيديو.</string>
     <string name="favorite_category_add_new">أضفة جديدة</string>
     <string name="shared_string_undo_all">إلغاء كلي</string>
-    <string name="av_video_quality">جودة مخرج الفيديو</string>
     <string name="osm_edit_deleted_poi">حذف OSM POI</string>
     <string name="osmo_use_server_name">الإسم المسجل</string>
     <string name="osmo_auth_pending">في انتظار الترخيص …</string>
@@ -1994,12 +1965,8 @@
     <string name="add_time_span">اضافة مجال زمني</string>
     <string name="item_removed">تمت ازالة العنصر</string>
     <string name="n_items_removed">تمت ازالة العناصر</string>
-    <string name="rec_split_desc">اعد كتابة اللقطات عند تجاوز المساحة المتستخدمة لمساحة التخزين.</string>
-    <string name="rec_split_clip_length_desc">الحد الزمني الأعلى للمقاطع المسجلة.</string>
     <string name="no_camera_permission">لايسمح للتطبيق الوصول إلى الكاميرا.</string>
     <string name="no_microphone_permission">ليس للتطبيق إذن للوصول إلى الميكروفون.</string>
-    <string name="av_audio_format">صيغة اخراج الصوت</string>
-    <string name="av_audio_format_descr">حدد صيغة الصوت المنتج.</string>
     <string name="opening_changeset">فتح مجموعة التغييرات …</string>
     <string name="loading_poi_obj">تحميل ال POI …</string>
     <string name="auth_failed">فشل الترخيص</string>
@@ -2029,8 +1996,6 @@
     <string name="map_viewing_item">شاهد الخريطة</string>
     <string name="use_dashboard_btn">إستعمل لوحة التحكم</string>
     <string name="use_drawer_btn">إستعمل القائمة</string>
-    <string name="av_audio_bitrate">معدل تدفق الصوت</string>
-    <string name="av_audio_bitrate_descr">حدد معدل تدفق الصوت.</string>
     <string name="osm_save_offline">إحفظ محليا (دون حاجة لربط بالأنترنت)</string>
     <string name="world_map_download_descr">خريطة العالم الأساسية (التي تغطي العالم بأسره) مفقودة أو قديمة. يرجى القيام بتنزيلها للحصول على نظرة شاملة.</string>
     <string name="map_downloaded_descr">لقد تم تنزيل خريطة %1$s. يمكنك الآن إستخدامها.</string>
@@ -2145,7 +2110,6 @@
     <string name="rendering_value_walkingRoutesScopeOSMC_name">تلوين وفق الانتماء للشبكة</string>
     <string name="rendering_value_walkingRoutesOSMC_name">تلوين وفق رمز تنزه OSMC</string>
     <string name="shared_string_logoff">خروج</string>
-    <string name="local_recordings_delete_all_confirm">ستقوم بحذف %1$d ملاحظات. هل أنت واثق؟</string>
     <string name="nautical_maps_missing">لعرض الخرائط البحرية، يجب تنزيل خريطة خاصة محليا</string>
     <string name="save_track_to_gpx_globally_descr">تسجيل الموقع العام إلى ملف GPX يمكن تشغيله أو إيقافه باستخدام نافذة تسجيل GPX على الشاشة خريطة.</string>
     <string name="proxy_host_descr">ضبط اسم مضيف البروكسي (مثال 127.0.0.1).</string>
@@ -2433,9 +2397,6 @@
     <string name="quick_action_add_poi">إضافة POI</string>
     <string name="quick_action_map_style">تغيير نمط الخريطة</string>
     <string name="quick_action_map_style_switch">تم تغيير نمط الخريطة إلى \"%s\".</string>
-    <string name="quick_action_take_audio_note">أخذ ملاحظة صوتية</string>
-    <string name="quick_action_take_video_note">أخذ ملاحظة بالفيديو</string>
-    <string name="quick_action_take_photo_note">أخذ ملاحظة بالصورة</string>
     <string name="quick_action_navigation_voice">تشغيل/إيقاف الصوت</string>
     <string name="quick_action_navigation_voice_off">الصوت معطل</string>
     <string name="quick_action_navigation_voice_on">الصوت مشغل</string>
@@ -2451,11 +2412,8 @@
     <string name="quick_action_add_osm_bug">إضافة ملاحظة OSM</string>
     <string name="quick_favorites_show_favorites_dialog">إظهار مربع حوار الأماكن المفضلة</string>
     <string name="quick_action_add_marker_descr">النقر على زر الإجراء سيقوم بإضافة علامة على الموقع المحدد وسط الشاشة.</string>
-    <string name="quick_action_take_video_note_descr">النقر على زر الإجراء سيقوم بإضافة ملاحظة فيديو على الموقع المحدد.</string>
     <string name="quick_favorites_name_preset">اسم الإعداد المسبق</string>
     <string name="quick_action_add_gpx_descr">النقر على زر الإجراء سيضيف مسارا للـ GPX وسط الشاشة.</string>
-    <string name="quick_action_take_audio_note_descr">النقر على زر الإجراء سيضيف ملاحظة صوتية وسط مركز الشاشة.</string>
-    <string name="quick_action_take_photo_note_descr">النقر على زر الإجراء سيضيف ملاحظة بالصورة وسط مركز الشاشة.</string>
     <string name="quick_action_add_osm_bug_descr">النقر على زر الإجراء سيضيف ملاحظة صوتية بالموقع وسط الشاشة.</string>
     <string name="quick_action_add_poi_descr">النقر على زر الإجراء سيضيف POI بالموقع وسط الشاشة.</string>
     <string name="quick_action_navigation_voice_descr">النقر على زر الإجراء سيعطل أو يفعل التوجيه الصوتي أثناء التنقل.</string>
@@ -2851,7 +2809,6 @@
     <string name="modify_the_search_query">تغيير البحث.</string>
     <string name="marker_activated">%s علامة مفعلة.</string>
     <string name="one_tap_active_descr">اضغط علامة على الخريطة لتحريكها الى أعلى العلامات المفعلة دون فتح قائمة السياق.</string>
-    <string name="empty_state_av_notes">تدوين ملاحظات!</string>
     <string name="without_time_limit">دون تحديد الوقت</string>
     <string name="context_menu_read_full_article">إقرأ المقال كاملا</string>
     <string name="context_menu_read_article">قراءة المقال</string>
@@ -2864,7 +2821,6 @@
     <string name="additional_actions">إجراءات إضافية</string>
     <string name="shared_string_actions">الإجراءات</string>
     <string name="shared_string_marker">العلامة</string>
-    <string name="notes_by_date">الملاحظات حسب التاريخ</string>
     <string name="by_date">بحسب التاريخ</string>
     <string name="by_type">حسب النوع</string>
     <string name="shared_string_more_without_dots">المزيد</string>

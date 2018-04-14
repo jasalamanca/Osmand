@@ -1024,31 +1024,14 @@ OsmAnd jest otwarto-źródłowym programem do nawigacji z dostępem do szerokiej
     <string name="index_srtm_parts">części</string>
 
 
-    <string name="audionotes_plugin_description">Dostarcza funkcje tworzenia notatek zdjęciowych/audio/video podczas podróżowania aktywowaną poprzez przycisk na ekranie mapy lub menu kontekstowe dla wybranego położenia.</string>
-    <string name="audionotes_plugin_name">Notatki głosowe</string>
-    <string name="audionotes_location_not_defined">Nie ustalono jeszcze położenia dla notatki głosowej. Proszę wybrać polecenie „Użyj położenia…”, aby przypisać notatkę do wybranego położenia.</string>
-
-    <string name="map_widget_audionotes">Notatki głosowe</string>
-
-    <string name="av_def_action_video">Nagranie filmu</string>
-    <string name="av_def_action_audio">Nagranie dźwięku</string>
     <string name="av_widget_action_descr">Wybiera domyślną funkcję widżetu.</string>
     <string name="av_widget_action">Domyślne działanie widżetu</string>
-    <string name="av_video_format_descr">Wybierz format wideo.</string>
-    <string name="av_video_format">Format wideo</string>
-    <string name="av_use_external_recorder_descr">Nagrywa filmy przy użyciu aplikacji systemowej.</string>
     <string name="av_use_external_recorder">Używanie aplikacji kamery</string>
-    <string name="av_settings_descr">Konfiguruj ustawienia dźwięku i obrazu.</string>
-    <string name="av_settings">Ustawienia obrazu/dźwięku </string>
     <string name="recording_error">Wystąpił błąd podczas nagrywania </string>
-    <string name="recording_camera_not_available">Kamera jest niedostępna</string>
-    <string name="recording_is_recorded">Dźwięk/obraz jest nagrywany. Aby zatrzymać naciśnij przycisk stop na widżecie.</string>
-    <string name="recording_playing">Dźwięk z wybranego nagrania jest odtwarzany.\n%1$s</string>
     <string name="recording_open_external_player">Otwórz zewnętrzny odtwarzacz</string>
     <string name="recording_delete_confirm">Usunąć ten ślad?</string>
 
     <string name="recording_unavailable">niedostępne</string>
-    <string name="layer_recordings">Warstwa nagrywania</string>
     <string name="recording_can_not_be_played">Nagranie nie może zostać odtworzone</string>
     <string name="recording_context_menu_delete">Usuń nagranie</string>
     <string name="recording_context_menu_play">Odtwórz</string>
@@ -1056,7 +1039,6 @@ OsmAnd jest otwarto-źródłowym programem do nawigacji z dostępem do szerokiej
     <string name="recording_default_name">Nagranie</string>
     <string name="shared_string_control_stop">Zatrzymaj</string>
     <string name="shared_string_control_start">Start</string>
-    <string name="map_widget_av_notes">Notatki audio/video</string>
     <string name="osmand_srtm_short_description_80_chars">Wtyczka OsmAnd do rysowania poziomic offline</string>
 
 
@@ -1067,8 +1049,6 @@ OsmAnd jest otwarto-źródłowym programem do nawigacji z dostępem do szerokiej
     <string name="intermediate_points_change_order">Zmień kolejność</string>
     <string name="srtm_paid_version_msg">Rozważ zakup wtyczki dodającej poziomice w Market, aby wspomóc dalszy rozwój.</string>
     <string name="srtm_paid_version_title">Wtyczka poziomic</string>
-    <string name="recording_context_menu_arecord">Nagraj notatkę audio</string>
-    <string name="recording_context_menu_vrecord">Nagraj notatkę wideo</string>
     <string name="osmand_srtm_long_description_1000_chars">Dostarcza warstwy poziomic i cieniowania rzeźby terenu wyświetlanych na standardowych mapach OsmAnd. Funkcja przydatna dla sportowców, turystów i osób zainteresowanych strukturą reliefową krajobrazu.
 \n
 \nŚwiatowe dane (między 70 stopniem szerokości północnej a 70 stopniem szerokości południowej) opierają się na pomiarach SRTM (Shuttle Radar Topography Mission) i ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), przyrządu na pokładzie Terra, flagowego satelity Systemu Obserwacji Ziemi NASA. ASTER jest wspólnym przedsięwzięciem NASA, japońskiego Ministerstwa Gospodarki, Handlu i Przemysłu (METI) i Japońskich Systemów Kosmicznych (J-spacesystems).</string>
@@ -1080,7 +1060,6 @@ OsmAnd jest otwarto-źródłowym programem do nawigacji z dostępem do szerokiej
     <string name="clear_dest_confirm">Usunąć cel trasy i jej cele pośrednie?</string>
     <string name="precise_routing_mode">Precyzyjne trasy (alpha)</string>
     <string name="precise_routing_mode_descr">Włącz obliczanie precyzyjnych tras w nawigacji. Funkcja dość powolna, nadal jest ograniczona odległością.</string>
-    <string name="local_indexes_cat_av">Dane audio/video</string>
 
     <string name="support_new_features_descr">Wesprzyj prace nad nowymi funkcjami przez przekazanie darowizny.</string>
 
@@ -1724,7 +1703,6 @@ OsmAnd jest otwarto-źródłowym programem do nawigacji z dostępem do szerokiej
     <string name="plugin_ski_name">Widok narciarski</string>
     <string name="rename_failed">Nie udało się zmienić nazwy.</string>
     <string name="back_to_map">Powrót do mapy</string>
-    <string name="share_note">Udostępnij uwagę</string>
     <string name="location_on_map">Położenie:
  Szer. %1$s
  Dł. %2$s</string>
@@ -1771,7 +1749,6 @@ Długość %2$s</string>
     <string name="shared_string_collapse">Zwiń</string>
     <string name="shared_string_currently_recording_track">Aktualny ślad</string>
     <string name="shared_string_audio">Dźwięk</string>
-    <string name="shared_string_video">Wideo</string>
     <string name="shared_string_photo">Obraz</string>
     <string name="route_points">Punkty trasy</string>
     <string name="track_segments">Segmenty</string>
@@ -1882,7 +1859,6 @@ Długość %2$s</string>
     <string name="shared_string_wikipedia">Wikipedia</string>
     <string name="local_indexes_cat_wiki">Wikipedia</string>
     <string name="shared_string_show_details">Wyświetl szczegóły</string>
-    <string name="local_recordings_delete_all_confirm">Usunąć %1$d notatek?</string>
     <string name="download_wikipedia_maps">Wikipedia</string>
     <string name="light_theme">Jasny</string>
     <string name="dark_theme">Ciemny</string>
@@ -1961,7 +1937,6 @@ Długość %2$s</string>
     <string name="poi_dialog_poi_type">Rodzaj użytecznego miejsca</string>
     <string name="poi_action_delete">usuń</string>
     <string name="building_number">Numer budynku</string>
-    <string name="av_locations_descr">Plik śladu GPX z notatkami o położeniach.</string>
     <string name="rendering_value_boldOutline_name">Pogrubione kontury</string>
     <string name="download_live_updates">Aktualizowanie na bieżąco</string>
     <string name="commit_poi">Wyślij użyteczne miejsce</string>
@@ -2135,14 +2110,6 @@ Długość %2$s</string>
     <string name="rendering_attr_roadStyle_description">Styl dróg</string>
     <string name="poi_context_menu_modify_osm_change">Zmodyfikuj zmianę OSM</string>
     <string name="dashboard_or_drawer_title">Kokpit lub menu</string>
-    <string name="av_video_quality_low">Najniższa jakość</string>
-    <string name="av_video_quality_high">Najwyższa jakość</string>
-    <string name="av_video_quality">Jakość wideo</string>
-    <string name="av_video_quality_descr">Wybiera jakość nagrania wideo.</string>
-    <string name="av_audio_format">Format dźwięku</string>
-    <string name="av_audio_format_descr">Wybiera format wyjściowego nagrania dźwięku.</string>
-    <string name="av_audio_bitrate">Przepływność dźwięku</string>
-    <string name="av_audio_bitrate_descr">Określa wartość przepływności dźwięku.</string>
     <string name="shared_string_near">Obok</string>
     <string name="routing_attr_avoid_stairs_name">Omijanie schodów</string>
     <string name="routing_attr_avoid_stairs_description">Omijaj schody.</string>
@@ -2170,14 +2137,12 @@ Długość %2$s</string>
     <string name="update_time">Czas aktualizacji</string>
     <string name="updates_size">Rozmiar aktualizacji</string>
     <string name="last_map_change">Ostatnia zmiana mapy: %s</string>
-    <string name="rec_split_clip_length">Długość nagrania</string>
     <string name="shared_string_not_selected">Nie wybrany</string>
 <string name="item_removed">Usunięto element</string>
     <string name="n_items_removed">pozycji usuniętych</string>
     <string name="shared_string_undo_all">COFNIJ WSZYSTKO</string>
     <string name="shared_string_type">Typ</string>
     <string name="starting_point">Początek trasy</string>
-    <string name="rec_split_storage_size">Wielkość pamięci</string>
     <string name="live_updates">Bieżące aktualizacje</string>
     <string name="hourly">Co godzinę</string>
     <string name="daily">Co dzień</string>
@@ -2233,10 +2198,7 @@ Długość %2$s</string>
     <string name="rendering_attr_hideIcons_name">Ikony użytecznych miejsc</string>
     <string name="rec_split">Dzielenie nagrań</string>
     <string name="rec_split_title">Dzielenie rejestrowanych nagrań</string>
-    <string name="rec_split_desc">Przenosi pliki po wykorzystaniu określonej wielkości pamięci.</string>
-    <string name="rec_split_clip_length_desc">Określa maksymalną długość każdego nagrania.</string>
-    <string name="rec_split_storage_size_desc">Deklaruje maksymalną wielkość pamięci przeznaczoną dla wszystkich nagrań.</string>
-    
+
     <string name="storage_directory_readonly_desc">Wybrany katalog przechowywania danych umożliwia tylko ich odczyt. Katalog przechowywania został tymczasowo umieszczony w pamięci wewnętrznej. Proszę wybrać prawidłowy katalog przechowywania danych.</string>
     <string name="storage_directory_shared">Pamięć współdzielona</string>
     <string name="osm_live_subscribe_btn">Zasubskrybuj</string>
@@ -2498,9 +2460,6 @@ Długość %2$s</string>
     <string name="quick_action_add_poi">Dodaj użyteczne miejsce</string>
     <string name="quick_action_map_style">Zmień styl mapy</string>
     <string name="quick_action_map_style_switch">Zmieniono styl mapy na „%s”.</string>
-    <string name="quick_action_take_audio_note">Utwórz notatkę dźwiękową</string>
-    <string name="quick_action_take_video_note">Utwórz notatkę filmową</string>
-    <string name="quick_action_take_photo_note">Utwórz notatkę fotograficzną</string>
     <string name="quick_action_add_osm_bug">Dodaj uwagę OSM</string>
     <string name="quick_action_navigation_voice">Przełącz wyciszenie dźwięku</string>
     <string name="quick_action_navigation_voice_off">Dźwięk wyciszony</string>
@@ -2532,9 +2491,6 @@ Długość %2$s</string>
     <string name="quick_favorites_name_preset">Nazwa</string>
     <string name="quick_action_add_marker_descr">Naciśnięcie przycisku doda znacznik mapy na środku ekranu.</string>
     <string name="quick_action_add_gpx_descr">Naciśnięcie przycisku akcji doda punkt pośredni GPX w centrum ekranu.</string>
-    <string name="quick_action_take_audio_note_descr">Naciśnięcie przycisku doda notatkę dźwiękową na środku ekranu.</string>
-    <string name="quick_action_take_video_note_descr">Naciśnięcie przycisku czynności doda notatkę filmową na środku ekranu.</string>
-    <string name="quick_action_take_photo_note_descr">Naciśnięcie przycisku doda notatkę fotograficzną na środku ekranu.</string>
     <string name="quick_action_add_osm_bug_descr">Naciśnięcie przycisku doda uwagę OSM na środku ekranu.</string>
     <string name="quick_action_add_poi_descr">Naciśnięcie przycisku doda użyteczne miejsce na środku ekranu.</string>
     <string name="quick_action_navigation_voice_descr">Naciśnięcie przycisku akcji włączy lub wyłączy podpowiedzi głosowe podczas nawigacji.</string>
@@ -2960,9 +2916,6 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="what_is_here">Co tu jest:</string>
     <string name="context_menu_read_full_article">Czytaj cały artykuł</string>
     <string name="context_menu_read_article">Czytaj artykuł</string>
-    <string name="empty_state_av_notes">Notuj!</string>
-    <string name="empty_state_av_notes_desc">Dodaj notatkę audio, video lub zdjęciową do każdego punktu na mapie, za pomocą widgetu lub menu kontekstowego.</string>
-    <string name="notes_by_date">Notatki według dat</string>
     <string name="empty_state_markers_groups">Importuj grupy</string>
     <string name="add_favourites_group_to_markers_descr">Wybierz grupę ulubionych, do której chcesz dodać znaczniki.</string>
     <string name="digits_quantity">Liczba cyfr dziesiętnych</string>

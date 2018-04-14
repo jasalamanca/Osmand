@@ -615,16 +615,9 @@
     
     <string name="map_widget_distancemeasurement">Etäisyyden mittaus</string>
     <string name="download_select_map_types">Muut kartat</string>
-    
-	<string name="av_def_action_video">Tallenna videota</string>
-    <string name="av_def_action_audio">Tallenna ääntä</string>
-    <string name="av_video_format_descr">Valitse videon tallennusformaatti</string>
-    <string name="av_video_format">Videon tallennusformaatti</string>
+
     <string name="av_use_external_recorder">Käytä ulkoista nauhoitinta</string>
-    <string name="av_settings_descr">Muuta ääni- ja videoasetuksia</string>
-    <string name="av_settings">Ääni/video asetukset </string>
     <string name="recording_error">Tapahtui virhe nauhoituksen aikana </string>
-    <string name="recording_camera_not_available">Kamera ei ole saatavilla</string>
     <string name="recording_open_external_player">Avaa ulkoinen soitin</string>
     <string name="recording_delete_confirm">Haluatko poistaa tämän nauhoituksen?</string>
     <string name="unit_of_length">Pituuden yksikkö</string>
@@ -739,10 +732,8 @@
 	<string name="shared_string_my_favorites">Omat suosikit</string>
 	<string name="shared_string_my_tracks">Reittini</string>
 	<string name="shared_string_audio">Ääni</string>
-	<string name="shared_string_video">Video</string>
-	<string name="shared_string_photo">Kuva</string>
-	<string name="audionotes_plugin_name">Ääni/video muistiinpanot</string>
-	<string name="rendering_attr_hideHouseNumbers_name">Talonumerot</string>
+    <string name="shared_string_photo">Kuva</string>
+    <string name="rendering_attr_hideHouseNumbers_name">Talonumerot</string>
     <string name="agps_data_last_downloaded">A-GPS tiedot viimeksi ladattu: %1$s</string>
     <string name="application_dir_change_warning3">Haluatko, että OsmAnd myös kopioi tiedostot uuteen paikkaan?</string>
     <string name="specified_directiory_not_writeable">Karttoja ei voitu luoda valittuun hakemistoon</string>
@@ -1153,7 +1144,6 @@ Maailmanlaajuiset tiedot (välillä 70 astetta pohjoista ja 70 astetta eteläist
     <string name="shared_string_type">Tyyppi</string>
     <string name="starting_point">Lähtöpiste</string>
     <string name="shared_string_not_selected">Ei valittu</string>
-    <string name="rec_split_storage_size">Tallennustilan koko</string>
     <string name="live_updates">Live-päivitykset</string>
     <string name="available_maps">Käytettävissä olevat kartat</string>
     <string name="select_voice_provider">Valitse ääniohjaus</string>
@@ -1169,12 +1159,6 @@ Maailmanlaajuiset tiedot (välillä 70 astetta pohjoista ja 70 astetta eteläist
     <string name="no_address_found">Osoitetta ei määritetty</string>
     <string name="shared_string_near">Lähellä</string>
     <string name="shared_string_hide">Piilota</string>
-    <string name="av_video_quality_low">Alhaisin laatu</string>
-    <string name="av_video_quality_high">Korkein laatu</string>
-    <string name="av_video_quality">Video tulosteen laatu</string>
-    <string name="av_video_quality_descr">Valitse video tulosteen laatu</string>
-    <string name="av_audio_format">"Ääni  tulosteen laatu"</string>
-    <string name="av_audio_format_descr">Valitse ääni tulosteen laatu</string>
     <string name="please_specify_poi_type_only_from_list">Ole hyvä ja valitse oikea POI tyyppi tai ohita se</string>
     <string name="access_from_map_description">Valikkonäppäin käynnistää hallintapaneelin eikä valikkoa</string>
     <string name="access_from_map">Käytä kartalta</string>
@@ -1254,7 +1238,6 @@ Maailmanlaajuiset tiedot (välillä 70 astetta pohjoista ja 70 astetta eteläist
     <string name="favourites_edit_dialog_title">Suosikkitiedot</string>
     <string name="simulate_your_location_stop_descr">Lopeta sijainnin simulointi</string>
     <string name="simulate_your_location_descr">Simuloi laskettua reittiä tai tallennettua GPX-reittiä</string>
-    <string name="av_locations_descr">GPX-tiedosto, jossa huomautuksia sijainneista</string>
     <string name="av_locations">Sijainnit</string>
     <string name="routing_attr_avoid_shuttle_train_name">Vältä liityntäjunaa</string>
     <string name="routing_attr_avoid_shuttle_train_description">Vältä liityntäjunaa</string>
@@ -1292,10 +1275,8 @@ Maailmanlaajuiset tiedot (välillä 70 astetta pohjoista ja 70 astetta eteläist
     <string name="local_indexes_cat_wiki">Wikipedia</string>
     <string name="osm_edit_context_menu_delete">Poista OSM-muokkaus</string>
     <string name="shared_string_logoff">Kirjaudu ulos</string>
-    <string name="local_recordings_delete_all_confirm">Olet poistamassa %1$d huomautusta. Oletko varma?</string>
     <string name="osmand_parking_plugin_name">Pysäköinnin sijainti</string>
 	<string name="osm_settings">OSM muokkaus</string>
-    <string name="share_note">Jaa huomautus</string>
     <string name="location_on_map">Sijainti:
  Lat %1$s
  Lon %2$s</string>
@@ -1362,9 +1343,6 @@ Maailmanlaajuiset tiedot (välillä 70 astetta pohjoista ja 70 astetta eteläist
     <string name="later">Myöhemmin</string>
     <string name="get_full_version">Täysi versio</string>
     <string name="downloads">Lataukset</string>
-    <string name="rec_split_clip_length">Leikkeen pituus</string>
-    <string name="rec_split_clip_length_desc">Minkään nauhoitetun leikkeen pituus ei voi olla pidempi kuin määritelty aikaväli</string>
-    <string name="rec_split_storage_size_desc">Tilan määrä jonka nauhoitetut leikkeet voivat käyttää</string>
     <string name="show_on_start_description">\'Pois\' käynnistää suoraan karttanäytön</string>
     <string name="osm_save_offline">Tallenna offlineen</string>
     <string name="use_opengl_render_descr">Käytä hardware kiihdytettyä OpenGL hahmotusta (ei ehkä toimi kaikilla laitteilla)</string>
@@ -1606,7 +1584,6 @@ Jälki %2$s</string>
     <string name="download_wikipedia_maps">Wikipedia</string>
     <string name="download_hillshade_maps">Rinnevarjostus</string>
     <string name="local_indexes_cat_srtm">Korkeuskäyrät</string>
-    <string name="local_indexes_cat_av">Audio/Video data</string>
     <string name="dropbox_plugin_name">Dropbox lisäosa</string>
     <string name="download_roads_only_maps">Ainoastaan tiet kartta</string>
     <string name="rendering_attr_noAdminboundaries_name">Rajat</string>
@@ -1946,17 +1923,11 @@ Paina ja pidä nähdäksesi kartalla</string>
     <string name="av_def_action_choose">Valitse käytettäessä</string>
     <string name="av_widget_action_descr">Valitse oletustyökalutoiminto</string>
     <string name="av_widget_action">Oletustyökalutoiminto</string>
-    <string name="av_use_external_recorder_descr">Käytä järjestelmän nauhoitinta videolle</string>
     <string name="av_use_external_camera_descr">Käytä järjestelmän sovellutusta kuvalle</string>
     <string name="av_use_external_camera">Käytä kamerasovellutusta</string>
-    <string name="recording_is_recorded">Audio/video on nauhoituksessa. Lopettaaksesi sen paina AV työkalua.</string>
-    <string name="recording_context_menu_vrecord">Tee video huomautus</string>
-    <string name="layer_recordings">Nauhoitustaso</string>
     <string name="recording_can_not_be_played">Nauhoitusta ei voida toistaa</string>
     <string name="recording_context_menu_delete">Poista nauhoitus</string>
     <string name="recording_default_name">Nauhoitetaan</string>
-    <string name="map_widget_av_notes">Audio/video huomautukset</string>
-    <string name="map_widget_audionotes">Audio huomautukset</string>
     <string name="index_srtm_parts">osat</string>
     <string name="rendering_attr_hikingRoutesOSMC_name">Retkeilysymbolit kartan päällä</string>
     <string name="rendering_attr_noAdminboundaries_description">Pidä piilossa alueellisten rajojen näyttö (hallintotasot 5-9)</string>
@@ -2039,7 +2010,6 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
     <string name="routing_attr_allow_motorway_description">Salli moottoritiet</string>
     <string name="rec_split">Nauhoituksen jako</string>
     <string name="rec_split_title">Käytä nauhoituksen jakoa</string>
-    <string name="rec_split_desc">Kirjoita leikkeet uudelleen kun käytetty tila ylittää tallennustilan koon</string>
     <string name="world_map_download_descr">Maailman peruskartta (käsittää koko maailman pienillä zoomaustasoilla) puuttuu tai on vanhentunut. Harkitse sen latausta maailman yleiskatsausta varten.</string>
     <string name="rendering_value_walkingRoutesScopeOSMC_name">Väri verkkoon kuulumisen perusteella</string>
     <string name="rendering_value_walkingRoutesOSMC_name">Väri OSMC-vaellussymbolin perusteella</string>
@@ -2072,8 +2042,6 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
 
  ja lisää…
  "</string>
-    <string name="av_audio_bitrate">Audion bittinopeus</string>
-    <string name="av_audio_bitrate_descr">Valitse audion bittinopeus</string>
     <string name="none_selected_gpx">GPX tiedostoa ei valittu. Valitaksesi paina ja pidä käytettävissä olevalla jäljellä.</string>
     <string name="osmo_create_groups_confirm">Luodaksesi ryhmiä tulee Sinun olla OsMo\'on rekisteröitynyt käyttäjä.</string>
     <string name="osmo_credentials_not_valid">OsMo käyttäjätietosi eivät ole oikein.</string>
@@ -2092,9 +2060,6 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
     <string name="use_magnetic_sensor_descr">Käytä magneetista sensoria määrittäesä kompassin arvoja suuntasensorin sijaan</string>
     <string name="use_magnetic_sensor">Käytä magneetista sensoria</string>
     <string name="srtm_paid_version_msg">Harkitse ostavasi Korkeuskäyrä laajennuksen Kaupasta tukeaksesi jatkokehitystä.</string>
-    <string name="recording_playing">Audio halutusta nauhoituksesta soitetaan.
-%1$s</string>
-    <string name="recording_context_menu_arecord">Tee audio muistiinpano</string>
     <string name="rendering_attr_alpineHiking_name">Alppivaelluksen mittakaava (SAC)</string>
     <string name="rendering_attr_alpineHiking_description">Hahmota polut SAC mittakaavan mukaisesti</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Piirrä polut OSMC-jälkien pohjalta</string>

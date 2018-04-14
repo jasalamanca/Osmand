@@ -749,7 +749,6 @@ POIの更新は利用できません</string>
     
     
     <string name="local_indexes_cat_srtm">等高線</string>
-    <string name="local_indexes_cat_av">音声/ビデオデータ</string>
     <string name="stop_routing_confirm">検索したルートを却下してナビゲーションを終了しますか？</string>
     <string name="clear_dest_confirm">本当に目的地(とその経由地点)を削除しますか？</string>
     <string name="precise_routing_mode_descr">グリッチ無しの正確なルート計算を有効化します。現段階では距離が限定されて尚且つ遅いです。</string>
@@ -765,28 +764,15 @@ POIの更新は利用できません</string>
     <string name="srtm_paid_version_msg">さらなるアプリケーションの発展のために、どうかGoogle Play上にある等高線プラグインのご購入をご検討下さい。</string>
     <string name="srtm_paid_version_title">等高線プラグイン</string>
     <string name="av_def_action_choose">ウィジェット起動毎に選択</string>
-    <string name="av_def_action_video">ビデオを撮影</string>
-    <string name="av_def_action_audio">音声を録音</string>
     <string name="av_widget_action_descr">ウィジェットボタンの(音声、ビデオ、写真記録)のデフォルト動作を選択します</string>
     <string name="av_widget_action">ウィジェット機能のデフォルト設定</string>
-    <string name="av_video_format_descr">ビデオ出力形式を選択します</string>
-    <string name="av_video_format">ビデオ出力形式</string>
-    <string name="av_use_external_recorder_descr">ビデオ撮影時にシステムレコーダを使用します</string>
     <string name="av_use_external_recorder">システムレコーダを使用</string>
     <string name="av_use_external_camera_descr">写真の撮影にシステムアプリケーションを使用します</string>
     <string name="av_use_external_camera">カメラアプリを使用</string>
-    <string name="av_settings_descr">音声とビデオに関する設定をします</string>
-    <string name="av_settings">音声/ビデオ設定 </string>
     <string name="recording_error">記録中にエラーが発生しました </string>
-    <string name="recording_camera_not_available">カメラが利用できません</string>
-    <string name="recording_is_recorded">音声/ビデオは記録中です。停止するにはAVウィジェットをタップして下さい。</string>
-    <string name="recording_playing">指定されたファイルから音声が再生されています。 \n%1$s</string>
     <string name="recording_open_external_player">外部プレイヤーで開く</string>
     <string name="recording_delete_confirm">この記録を削除しますか？</string>
     <string name="recording_unavailable">利用できません</string>
-    <string name="recording_context_menu_arecord">音声を録音</string>
-    <string name="recording_context_menu_vrecord">ビデオを撮影</string>
-    <string name="layer_recordings">記録レイヤー</string>
     <string name="recording_can_not_be_played">記録されたファイルは再生できませんでした</string>
     <string name="recording_context_menu_delete">記録を削除</string>
     <string name="recording_context_menu_play">再生</string>
@@ -794,7 +780,6 @@ POIの更新は利用できません</string>
     <string name="recording_default_name">記録中</string>
     <string name="shared_string_control_stop">停止</string>
     <string name="shared_string_control_start">記録</string>
-    <string name="map_widget_av_notes">音声/動画メモ</string>
     <string name="osmand_srtm_short_description_80_chars">オフライン等高線のためのOsmAndプラグイン</string>
     <string name="map_widget_distancemeasurement">距離の測定</string>
     <string name="map_online_data_descr">オンラインマップを使用します(SDカードにダウンロードしたタイルのキャッシュを使用)</string>
@@ -1098,10 +1083,6 @@ POIの更新は利用できません</string>
 	<string name="osmand_srtm_long_description_1000_chars">このプラグインは、等高線のオーバーレイ表示と陰影起伏図(浮き彫り表示)の両方がOsmAndの標準マップ上に表示出来るように用意されています。 この機能は地形の構造を知る必要のある、アスリート、ハイカー、登山者、そしてその他の多くの人々の助けになるでしょう。
 \n
 \nこのグローバルデータ(北緯70°から南緯70°の間)はSRTM(スペースシャトル立体地形データ)とNASAの地球観測衛星であるテラ(Terra)に搭載されたASTER(資源探査用将来型センサ)と呼ばれる機器の観測結果をベースにしたものです。 ASTERはNASAと日本の経済産業省(METI)、そして宇宙システム開発利用推進機構(J-spacesystems)の共同作業によるものです。</string>
-    <string name="audionotes_location_not_defined">メモを取る地点が指定されていません。マップ上を長押しでメニューを開き、右端のボタン『その他のアクション』から任意の形式のメモを取ることが出来ます。</string>
-    <string name="map_widget_audionotes">音声メモ</string>
-    <string name="audionotes_plugin_description">音声/動画メモプラグインは、旅行中の音声/写真/動画に関するメモ機能を提供します。マップ画面上のボタンまたはコンテキストメニューから使用出来ます。</string>
-    <string name="audionotes_plugin_name">音声/動画メモ</string>
     <string name="index_srtm_parts">パート</string>
     <string name="index_srtm_ele">等高線</string>
     <string name="srtm_plugin_description">このプラグインは、等高線のオーバーレイ表示と陰影起伏図(浮き彫り表示)の両方がOsmAndの標準マップ上に表示出来るように用意されています。 この機能は地形の構造を知る必要のある、アスリート、ハイカー、登山者、そしてその他の多くの人々の助けになるでしょう。（等高線、陰影起伏図はプラグインを有効にした後、別途ダウンロードしてください）
@@ -1839,8 +1820,7 @@ POIの更新は利用できません</string>
 	<string name="shared_string_collapse">折り畳み表示</string>
 	<string name="shared_string_currently_recording_track">現在の経路を記録</string>
 	<string name="shared_string_audio">音声</string>
-	<string name="shared_string_video">ビデオ</string>
-	<string name="shared_string_photo">写真</string>
+    <string name="shared_string_photo">写真</string>
 	<string name="route_points">ルート地点</string>
 	<string name="track_segments">経路セグメント</string>
 	<string name="track_points">経路地点</string>
@@ -1875,7 +1855,6 @@ POIの更新は利用できません</string>
 	<string name="rename_failed">リネーム出来ませんでした</string>
 	<string name="days_behind">日前</string>
 	<string name="back_to_map">マップ画面に戻る</string>
-	<string name="share_note">メモを共有</string>
     <string name="location_on_map">位置:\n緯度 %1$s\n経度 %2$s</string>
 	<string name="watch">表示</string>
 	<string name="notes">メモ全部</string>
@@ -2001,8 +1980,7 @@ POIの更新は利用できません</string>
     <string name="shared_string_wikipedia">Wikipedia</string>
     <string name="local_indexes_cat_wiki">Wikipedia</string>
     <string name="shared_string_show_details">パーソナルトラッカーIDを表示</string>
-    <string name="local_recordings_delete_all_confirm">%1$d個のメモを削除します。よろしいですか？</string>
-	<string name="download_wikipedia_maps">Wikipedia</string>
+    <string name="download_wikipedia_maps">Wikipedia</string>
     <string name="do_you_like_osmand">OsmAndを気に入っていただけましたか？</string>
 	
 	<string name="rate_this_app">アプリを評価</string>
@@ -2030,7 +2008,6 @@ POIの更新は利用できません</string>
 	<string name="app_name_osmand">OsmAnd</string>
 	<string name="offline_maps_and_navigation">Offline Maps\n&amp; Navigation</string>
 	<string name="commit_poi">POIを申請する</string>
-<string name="av_locations_descr">GPXファイルに位置に関するメモを付けます</string>
     <string name="av_locations">位置</string>
     <string name="poi_action_delete">削除</string>
 	<string name="shared_string_card_was_hidden">項目は非表示</string>
@@ -2298,11 +2275,6 @@ POIの更新は利用できません</string>
     <string name="road_blocked">通行止め</string>
     <string name="rec_split">記録の制限</string>
     <string name="rec_split_title">記録制限を使用</string>
-    <string name="rec_split_desc">設定された制限を超えた記録(音声、動画等)は分割又は上書きされます</string>
-    <string name="rec_split_clip_length">記録時間の指定</string>
-    <string name="rec_split_clip_length_desc">ここで指定した時間が記録関連ファイルの最大値になります</string>
-    <string name="rec_split_storage_size">ストレージ容量</string>
-    <string name="rec_split_storage_size_desc">記録関連ファイルを保存できる容量を割り当てます</string>
     <string name="live_updates">ライブ更新</string>
     <string name="available_maps">利用可能なマップ</string>
     <string name="select_voice_provider">音声案内を選択</string>
@@ -2317,14 +2289,6 @@ POIの更新は利用できません</string>
     <string name="rendering_attr_horseRoutes_name">乗馬用ルート</string>
     <string name="shared_string_near">近隣</string>
     <string name="shared_string_hide">非表示</string>
-    <string name="av_video_quality_low">最低画質</string>
-    <string name="av_video_quality_high">最高画質</string>
-    <string name="av_video_quality">ビデオ出力時の画質</string>
-    <string name="av_video_quality_descr">ビデオの出力画質を選択します</string>
-    <string name="av_audio_format">音声出力形式</string>
-    <string name="av_audio_format_descr">音声出力形式を選択します</string>
-    <string name="av_audio_bitrate">音声ビットレート</string>
-    <string name="av_audio_bitrate_descr">音声のビットレートを選択します</string>
     <string name="looking_up_address">道路名及び市町村名を取得中</string>
     
     <string name="begin_with_osmand_menu_group">OsmAndを初めて使う方へ</string>
@@ -2604,9 +2568,6 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="quick_action_add_poi">POIを追加</string>
     <string name="quick_action_map_style">マップスタイルの変更</string>
     <string name="quick_action_map_style_switch">マップスタイルが\"%s\"に変更されました。</string>
-    <string name="quick_action_take_audio_note">音声メモを取る</string>
-    <string name="quick_action_take_video_note">動画メモを取る</string>
-    <string name="quick_action_take_photo_note">写真メモを取る</string>
     <string name="quick_action_add_osm_bug">OSM注記を追加</string>
     <string name="quick_action_navigation_voice">音声のon/off</string>
     <string name="quick_action_navigation_voice_off">音声はoffです</string>
@@ -2623,9 +2584,6 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="quick_favorites_name_preset">プリセットに名前を付ける</string>
     <string name="quick_action_add_marker_descr">アクションボタンをタップすると、画面中央アイコンの位置にマップマーカーが追加されます。</string>
     <string name="quick_action_add_gpx_descr">アクションボタンをタップすると、画面中央アイコンの地点をGPX経由地点として追加します。</string>
-    <string name="quick_action_take_audio_note_descr">アクションボタンをタップすると画面中央アイコンの地点に音声メモを追加します。</string>
-    <string name="quick_action_take_video_note_descr">アクションボタンをタップすると画面中央アイコンの地点に動画メモが追加されます。</string>
-    <string name="quick_action_take_photo_note_descr">アクションボタンをタップすると画面中央アイコンの地点に写真メモが追加されます。</string>
     <string name="quick_action_add_osm_bug_descr">アクションボタンをタップすると画面中央アイコンの地点にOSM注記が追加されます。</string>
     <string name="quick_action_add_poi_descr">アクションボタンをタップすると画面中央アイコンの地点にPOIが追加されます。</string>
     <string name="quick_action_navigation_voice_descr">アクションボタンをタップするとナビゲーション中の案内音声on/off切替が出来ます。</string>
@@ -3084,8 +3042,6 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="marker_activated">マーカー[%s]がアクティブ化されました。</string>
     <string name="one_tap_active_descr">コンテキストメニューを開かずにマップ上のマーカーをタップするだけで1番目のマーカーとしてアクティブ化させます。</string>
     <string name="one_tap_active">ワンタップアクティブ</string>
-    <string name="empty_state_av_notes">場所に関するメモをつけよう！</string>
-    <string name="empty_state_av_notes_desc">ウィジェットやコンテキストメニューから、音声、動画、写真を使った注釈をマップ上のどの場所にでもつけることができます。</string>
     <string name="by_date">日付別</string>
     <string name="by_type">種類別</string>
     <string name="digits_quantity">小数点以下の桁数</string>
@@ -3114,6 +3070,5 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="shared_string_deleted">削除しました</string>
     <string name="shared_string_edited">編集されました</string>
     <string name="shared_string_added">追加しました</string>
-    <string name="notes_by_date">日付別の注釈</string>
     <string name="add_group">グループの追加</string>
     </resources>

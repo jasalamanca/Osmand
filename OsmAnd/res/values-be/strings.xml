@@ -137,7 +137,6 @@
     
     
     <string name="local_indexes_cat_srtm">Ізалініі вышынь</string>
-    <string name="local_indexes_cat_av">Аўдыё/відэа зьвесткі</string>
     <string name="stop_routing_confirm">Сапраўды спыніць навігацыю?</string>
     <string name="clear_dest_confirm">Сапраўды сьцерці месца прызначэньня (і прамежкавыя пункты прызначэньня)?</string>
     <string name="precise_routing_mode_descr">Дазволіць дакладную навігацыю каб шукаць шлях без памылак. Усё яшчэ абмежавана адлегласцю і павольная.</string>
@@ -153,41 +152,23 @@
     <string name="srtm_paid_version_msg">Калі ласка, падумайце пра набыцьцё модуля Ізалініі вышынь у Play Store для падтрымкі далейшай распрацоўкі.</string>
     <string name="srtm_paid_version_title">Модуль Ізалініі вышынь</string>
     <string name="av_def_action_choose">Выбар па запыце</string>
-    <string name="av_def_action_video">Запіс відэа</string>
-    <string name="av_def_action_audio">Запіс аўдыё</string>
     <string name="av_widget_action_descr">Выберыце агаданае дзеянне віджэта.</string>
     <string name="av_widget_action">Дзеяньне віджэта па змаўчанні</string>
-    <string name="av_video_format_descr">Выбар выхаднога фармату відэа.</string>
-    <string name="av_video_format">Фармат відэа</string>
-    <string name="av_use_external_recorder_descr">Выкарыстоўваць сістэмную праграму для запісу відэа.</string>
     <string name="av_use_external_recorder">Выкарыстоўваць сістэмны рэкордэр</string>
     <string name="av_use_external_camera_descr">Выкарыстоўваць сістэмнае дастасаванне для фота.</string>
     <string name="av_use_external_camera">Выкарыстоўваць праграму камеры</string>
-    <string name="av_settings_descr">Настроіць параметры аўдыё і відэа.</string>
-    <string name="av_settings">Налады аўдыё і відэа </string>
     <string name="recording_error">Адбылася памылка падчас запісу </string>
-    <string name="recording_camera_not_available">Камера не даступная</string>
-    <string name="recording_is_recorded">Аўдыё/відэа запісваецца. Каб спыніць, націсніце на віджэт AV.</string>
-    <string name="recording_playing">Прайграецца аўдыё з абранага запісу.\n%1$s</string>
     <string name="recording_open_external_player">Адкрыць зьнешні прайгравальнік</string>
     <string name="recording_delete_confirm">Вы хочаце зьнішчыць гэты запіс?</string>
     <string name="recording_unavailable">недаступны</string>
-    <string name="recording_context_menu_arecord">Запісаць аўдыё-нататку</string>
-    <string name="recording_context_menu_vrecord">Запісаць відэа-нататку</string>
-    <string name="layer_recordings">Слой запісу</string>
     <string name="recording_can_not_be_played">Запіс не можа быць прайграны</string>
     <string name="recording_context_menu_delete">Выдаліць запіс</string>
     <string name="recording_context_menu_play">Граць</string>
     <string name="recording_description">Запіс %1$s %3$s %2$s</string>
     <string name="recording_default_name">Запіс</string>
-    <string name="map_widget_av_notes">Аўдыё/відэа-нататкі</string>
     <string name="osmand_srtm_short_description_80_chars">Модуль OsmAnd для пазасеткавых ізаліній вышынь</string>
     <string name="map_widget_distancemeasurement">Вымярэньне адлегласьці</string>
-    <string name="audionotes_location_not_defined">Месцазнаходжаньне для прывязкі нататкі пакуль яшчэ не вызначылася. «Выкарыстаць месцазнаходжаньне…» каб прызначыць нататку ў выбраным месцы.</string>
-    
-    <string name="map_widget_audionotes">Аўдыё-нататкі</string>
-    <string name="audionotes_plugin_description">Модуль для стварэньня аўдыё/відэа-нататак падчас падарожжаў, з дапамогай выкарыстаньня кнопкі на экране мапы або праз кантэкстнае мэню на любым месцы на мапе.</string>
-    <string name="audionotes_plugin_name">Аўдыё/відэа-нататкі</string>
+
     <string name="index_srtm_parts">частак</string>
     <string name="index_srtm_ele">Ізалініі вышынь</string>
     <string name="srtm_plugin_name">Ізалініі вышынь</string>
@@ -1689,9 +1670,8 @@
     <string name="watch">Сачыць</string>
 	<string name="notes">Нататкі</string>
 	<string name="online_map">Інтэрнэт мапа</string>
-	<string name="share_note">Падзяліцца нататкаю</string>
-	
-	<string name="plugin_nautical_descr">Актывацыя гэтага стылю мяняе выгляд мапы на Марскую, на якой паказваюцца ўсе навігацыйныя знакі і сімвалы.
+
+    <string name="plugin_nautical_descr">Актывацыя гэтага стылю мяняе выгляд мапы на Марскую, на якой паказваюцца ўсе навігацыйныя знакі і сімвалы.
 		\n\nФайл з дадзенымі зьмяшчае ўсе навігацыйныя сімвалы ў выглядзе адзінага файлу з назвай \"World seamarks\".
 		\n\nГэты стыль можа быць скасаваны шляхам яго выключэньня тут або зьменаю ў пункце \"Стыль мапы\" меню \"Налады мапы\" на патрэбны.
 	</string>
@@ -1765,8 +1745,7 @@
 	
 	
 	<string name="shared_string_audio">Аўдыё</string>
-	<string name="shared_string_video">Відэа</string>
-	<string name="shared_string_photo">Фота</string>
+    <string name="shared_string_photo">Фота</string>
 
 	<string name="route_points">Пункты маршруту</string>
 	<string name="shared_string_more_actions">Больш дзеяньняў</string>
@@ -1873,8 +1852,7 @@
     <string name="local_indexes_cat_wiki">Вікіпэдыя</string>
     <string name="shared_string_show_details">Паказаць падрабязнасьці</string>
     <string name="download_wikipedia_maps">Вікіпэдыя</string>
-    <string name="local_recordings_delete_all_confirm">Вы зьбіраецеся выдаліць %1$d нататкі. Вы ўпэўненыя?</string>
-	<string name="shared_string_import2osmand">Імпартаваць у OsmAnd</string>
+    <string name="shared_string_import2osmand">Імпартаваць у OsmAnd</string>
     <string name="disable_recording_once_app_killed">Прадухіліць аўтаномны запіс</string>
     <string name="disable_recording_once_app_killed_descrp">Запіс GPX прыпыніцца, калі праграма будзе забіта (праз надаўнія праграмы). (Апавяшчэньне ў вобласьці падказак Android пра фонавы рэжым OsmAnd зьнікне.)</string>
 	<string name="gps_network_not_enabled">Служба месцазнаходжаньня не ўключаная. Вы хочаце ўключыць яе?</string>
@@ -1970,7 +1948,6 @@
 	<string name="add_opening_hours">Дадаць гадзіны працы</string>
 	<string name="poi_dialog_poi_type">Тып POI</string>
 	<string name="please_specify_poi_type">Калі ласка, пазначце тып POI.</string>
-<string name="av_locations_descr">GPX-файл з мецазнаходжаннем заўваг.</string>
     <string name="av_locations">Месцазнаходжаньні</string>
     <string name="number_of_rows_in_dash">Колькасьць радкоў на галоўным экране %1$s</string>
 	
@@ -2142,15 +2119,7 @@
 \n 
 \n і многае іншае …</string>
     <string name="shared_string_hide">Схаваць</string>
-    <string name="av_video_quality">Якасьць відэа</string>
-    <string name="av_video_quality_descr">Выбар якасьці відэа.</string>
-    <string name="av_audio_format">Фармат аўдыё вываду</string>
-    <string name="av_audio_format_descr">Абраць фармат аўдыё вываду.</string>
-    <string name="av_audio_bitrate">Аўдыё бітрэйт</string>
-    <string name="av_audio_bitrate_descr">Абярыце бітрэйт аўдыё.</string>
-    <string name="av_video_quality_low">Нізкая якасьць</string>
-    <string name="av_video_quality_high">Высокая якасьць</string>
-    <string name="no_address_found">Адрас не вызначаны</string> 
+    <string name="no_address_found">Адрас не вызначаны</string>
 	<string name="shared_string_near">Побач</string>
     <string name="looking_up_address">Пошук адраса</string>
     <string name="route_distance">Адлегласьць:</string>
@@ -2184,7 +2153,6 @@
     <string name="shared_string_type">Тып</string>
     <string name="starting_point">Пачатковы пункт</string>
     <string name="shared_string_undo_all">ВЯРНУЦЬ УСЁ</string>
-    <string name="rec_split_storage_size">Памер сховішча</string>
     <string name="select_month_and_country">Выберыце месяц і краіну</string>
 <string name="shared_string_select">Абраць</string>
     <string name="shared_string_remove">Выдаліць</string>
@@ -2193,10 +2161,6 @@
     <string name="rendering_attr_hideIcons_name">Значкі POI</string>
     <string name="rec_split">Разьбіцьцё на кліпы</string>
     <string name="rec_split_title">Выкарыстоўваць разьбіцьцё на кліпы</string>
-    <string name="rec_split_desc">Цыклічны перазапіс кліпаў пры перавышэнні зададзенага аб\'ёму сховішча.</string>
-    <string name="rec_split_clip_length">Працягласьць відэакліпа</string>
-    <string name="rec_split_clip_length_desc">Верхняя мяжа часу запісанага кліпа.</string>
-    <string name="rec_split_storage_size_desc">Аб\'ём памяці, які можа быць заняты ўсімі відэакліпамі.</string>
     <string name="number_of_contributors">Колькасьць удзельнікаў</string>
     <string name="number_of_edits">Колькасьць правак</string>
     <string name="show_polygons">Паказваць палігоны</string>
@@ -2537,9 +2501,6 @@
     <string name="quick_action_map_source_switch">Крыніца мапы была зьменена на \"%s\".</string>
     <string name="quick_action_btn_tutorial_title">Зьмяніць становішча кнопкі</string>
     <string name="shared_string_action_name">Назва дзеяньня</string>
-<string name="quick_action_take_audio_note">Стварыць гукавую нататку</string>
-    <string name="quick_action_take_video_note">Стварыць відэа-нататку</string>
-    <string name="quick_action_take_photo_note">Стварыць фота-нататку</string>
     <string name="quick_action_navigation_voice_off">Голас прыглушаны</string>
     <string name="quick_action_navigation_voice_on">Голас актыўны</string>
     <string name="rendering_attr_depthContours_description">Паказваць контуры і пункты глыбіні.</string>
@@ -2607,9 +2568,6 @@
     <string name="quick_favorites_name_preset">Назва перадусталёўкі</string>
     <string name="quick_action_add_marker_descr">Пры націсканні на кнопку дадасць маркер на мапу ў цэнтры экрана.</string>
     <string name="quick_action_add_gpx_descr">Пры націску на кнопку дзеяньня дадасьць GPX-кропку на мапу ў цэнтры экрана.</string>
-    <string name="quick_action_take_audio_note_descr">Пры націсканні на кнопку дадасць аўдыянататку на мапу ў цэнтры экрана.</string>
-    <string name="quick_action_take_video_note_descr">Пры націсканні на кнопку дадасць відэанататку на мапу ў цэнтры экрана.</string>
-    <string name="quick_action_take_photo_note_descr">Пры націсканні на кнопку дадасць фотанататку на мапу ў цэнтры экрана.</string>
     <string name="quick_action_add_osm_bug_descr">Пры націсканні на кнопку дадасць OSM-нататку на мапу ў цэнтры экрана.</string>
     <string name="quick_action_add_poi_descr">Пры націсканні на кнопку дадасць POI на мапу ў цэнтры экрана.</string>
     <string name="quick_action_navigation_voice_descr">Пры націсканьні на кнопку адключыць ці ўключыць галасавыя падказкі пад час навігацыі.</string>
@@ -2975,15 +2933,12 @@
     <string name="shared_string_deleted">Выдалена</string>
     <string name="shared_string_edited">Адрэдагавана</string>
     <string name="marker_activated">Маркер %s актываваны.</string>
-    <string name="notes_by_date">Нататкі па даце</string>
     <string name="by_date">Па даце</string>
     <string name="by_type">Па тыпу</string>
     <string name="empty_state_osm_edits_descr">Стварайце або зьмяняйце OSM POI, адкрывайце або камэнтуйце OSM-нататкі, а таксама адсылайце запісаныя GPX-файлы.</string>
     <string name="shared_string_added">Дададзена</string>
     <string name="one_tap_active_descr">Націск на маркер на мапе перамесціць гэты маркер на першае месца ў спісе актыўных маркераў, не адкрываючы кантэкстнае меню.</string>
     <string name="one_tap_active">Актывацыя адным націскам</string>
-    <string name="empty_state_av_notes">Рабі нататкі!</string>
-    <string name="empty_state_av_notes_desc">Дадайце аўдыё-, відэа- ці фотанататку на любую кропку на мапе, выкарыстоўваючы віджэт ці кантэкстнае меню.</string>
     <string name="modify_the_search_query">Зьмяніце пошукавы запыт.</string>
     <string name="release_3_0">\\022 
 \n

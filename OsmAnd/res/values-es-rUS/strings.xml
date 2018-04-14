@@ -123,7 +123,6 @@ Lon %2$s</string>
     <string name="shared_string_my_tracks">Mis trazas</string>
     <string name="shared_string_currently_recording_track">Grabando traza actual</string>
     <string name="shared_string_audio">Audio</string>
-    <string name="shared_string_video">Video</string>
     <string name="shared_string_photo">Fotografía</string>
     <string name="route_points">Puntos de la ruta</string>
     <string name="track_segments">Segmentos de la traza</string>
@@ -134,13 +133,11 @@ Lon %2$s</string>
     <string name="plugin_touringview_name">Vista turística</string>
     <string name="plugin_nautical_name">Vista náutica</string>
     <string name="plugin_ski_name">Vista invernal</string>
-    <string name="audionotes_plugin_name">Notas multimedia</string>
     <string name="osmand_parking_plugin_name">Estacionamiento</string>
     <string name="shared_string_accessibility">Accesibilidad</string>
     <string name="osm_settings">Edición OSM</string>
     <string name="debugging_and_development">Desarrollo de OsmAnd</string>
     <string name="back_to_map">Volver al mapa</string>
-    <string name="share_note">Compartir nota multimedia</string>
     <string name="location_on_map">Ubicación:\n Lat %1$s\n Lon %2$s</string>
     <string name="watch">Ver</string>
     <string name="notes">Notas</string>
@@ -487,7 +484,6 @@ Lon %2$s</string>
     <string name="plugin_ski_descr">Este complemento para OsmAnd pone a tu alcance detalles sobre pistas de esquí de descenso, de travesía, rutas de esquí alpino, teleféricos y remontes a nivel mundial. Las rutas y pistas se muestran por código de color en función de su dificultad y representados con un estilo del mapa especial «Invierno» que lo asemeja a un paisaje invernal nevado. 
 \n 
 \nActivando esta vista, cambia el estilo del mapa a «Invierno y esquí», mostrando las características del terreno en condiciones invernales. Esta vista se puede revertir desactivando de nuevo aquí o cambiando el «Estilo del mapa» en «Configurar mapa» cuando lo desees.</string>
-    <string name="audionotes_plugin_description">El complemento de notas multimedia, proporciona la funcionalidad para tomar notas de audio, fotografía y/o video durante un viaje, usando un botón en la pantalla del mapa, o directamente en el menú contextual para cualquier ubicación en el mapa.</string>
     <string name="osmand_parking_plugin_description">Este complemento, te recuerda fácilmente dónde se estacionó el automóvil y cuánto tiempo queda si el estacionamiento está limitado por tiempo.
 
 Tanto la ubicación como el tiempo del estacionamiento se muestran en el menú principal y en el control del mapa. Puedes añadir una notificación al calendario, en el caso de que desees tener un recordatorio al respecto.</string>
@@ -746,7 +742,6 @@ Tanto la ubicación como el tiempo del estacionamiento se muestran en el menú p
     <string name="index_name_openmaps">OpenMaps UE</string>
     <string name="download_hillshade_maps">Sombreado</string>
     <string name="local_indexes_cat_srtm">Curvas de nivel</string>
-    <string name="local_indexes_cat_av">Datos multimedia</string>
     <string name="stop_routing_confirm">¿Quieres parar la navegación?</string>
     <string name="clear_dest_confirm">¿Quieres quitar el destino (y los destinos intermedios)?</string>
     <string name="precise_routing_mode_descr">Habilita el cálculo de rutas precisas sin interferencias. Aún está limitado por la distancia y es lento.</string>
@@ -760,37 +755,21 @@ Tanto la ubicación como el tiempo del estacionamiento se muestran en el menú p
     <string name="intermediate_points_change_order">Cambiar orden</string>
     <string name="srtm_paid_version_msg">Considera la compra del complemento de curvas de nivel en la Tienda para apoyar desarrollos adicionales.</string>
     <string name="av_def_action_choose">Elegir a petición</string>
-    <string name="av_def_action_video">Grabar video</string>
-    <string name="av_def_action_audio">Grabar audio</string>
     <string name="av_widget_action_descr">Elige la acción predefinida.</string>
     <string name="av_widget_action">Acción predefinida</string>
-    <string name="av_video_format_descr">Elige el formato de salida del video.</string>
-    <string name="av_video_format">Formato de salida del video</string>
-    <string name="av_use_external_recorder_descr">Usa la grabadora de video del sistema.</string>
     <string name="av_use_external_recorder">Usar grabadora externa</string>
     <string name="av_use_external_camera_descr">Usa la aplicación del sistema para fotografías.</string>
     <string name="av_use_external_camera">Usar aplicación de la cámara</string>
-    <string name="av_settings_descr">Configura los ajustes de audio y video.</string>
-    <string name="av_settings">Ajustes de notas multimedia</string>
     <string name="recording_error">Error durante la grabación</string>
-    <string name="recording_camera_not_available">La cámara no está disponible</string>
-    <string name="recording_is_recorded">Grabando audio/video. Para pararlo, pulsa el control AV.</string>
-    <string name="recording_playing">Reproduciendo audio de la grabación indicada.\n%1$s</string>
     <string name="recording_open_external_player">Abrir reproductor externo</string>
     <string name="recording_delete_confirm">¿Quieres borrar esta grabación?</string>
     <string name="recording_unavailable">no disponible</string>
-    <string name="recording_context_menu_arecord">Grabar audio</string>
-    <string name="recording_context_menu_vrecord">Grabar video</string>
-    <string name="layer_recordings">Capa de grabaciones</string>
     <string name="recording_can_not_be_played">La grabación no se puede reproducir</string>
     <string name="recording_context_menu_delete">Borrar grabación</string>
     <string name="recording_context_menu_play">Reproducir</string>
     <string name="recording_description">Grabado %1$s %3$s %2$s</string>
     <string name="recording_default_name">Grabación</string>
-    <string name="map_widget_av_notes">Notas multimedia</string>
     <string name="map_widget_distancemeasurement">Medición de distancia</string>
-    <string name="audionotes_location_not_defined">No se definió la ubicación para asociar la nota. Utiliza «Usar ubicación…» para asignar una nota a la ubicación indicada.</string>
-    <string name="map_widget_audionotes">Notas de audio</string>
     <string name="index_srtm_parts">partes</string>
     <string name="index_srtm_ele">Curvas de nivel</string>
     <string name="download_select_map_types">Otros mapas</string>
@@ -1708,7 +1687,6 @@ Tanto la ubicación como el tiempo del estacionamiento se muestran en el menú p
     <string name="shared_string_show_details">Ver detalles</string>
     <string name="download_wikipedia_maps">Wikipedia</string>
     <string name="shared_string_import2osmand">Importar a OsmAnd</string>
-    <string name="local_recordings_delete_all_confirm">Borrarás %1$d nota(s). ¿Continuar?</string>
     <string name="disable_recording_once_app_killed">Prevenir grabación independiente</string>
     <string name="disable_recording_once_app_killed_descrp">La grabación GPX se pausará al cerrar la aplicación (mediante aplicaciones recientes). (La indicación de fondo de OsmAnd, desaparecerá de la barra de notificaciones de Android.)</string>
     <string name="gps_network_not_enabled">El servicio de ubicación está desactivado. ¿Quieres activarlo?</string>
@@ -1798,7 +1776,6 @@ Tanto la ubicación como el tiempo del estacionamiento se muestran en el menú p
     <string name="next_proceed">Siguiente</string>
     <string name="opening_at">Abren a las</string>
     <string name="closing_at">Cierran a las</string>
-    <string name="av_locations_descr">Archivo GPX con notas de ubicaciones.</string>
     <string name="av_locations">Ubicaciones</string>
     <string name="contact_info">Información de contacto</string>
     <string name="description">Descripción</string>
@@ -1971,14 +1948,6 @@ Tanto la ubicación como el tiempo del estacionamiento se muestran en el menú p
 	<string name="routing_attr_avoid_borders_name">Evitar cruces fronterizos</string>
 	<string name="shared_string_near">Cerca de</string>
     <string name="shared_string_hide">Ocultar</string>
-    <string name="av_video_quality_low">Menor calidad</string>
-    <string name="av_video_quality_high">Mayor calidad</string>
-    <string name="av_video_quality">Calidad del video</string>
-    <string name="av_video_quality_descr">Elige la calidad del video.</string>
-    <string name="av_audio_format">Formato de audio</string>
-    <string name="av_audio_format_descr">Elige el formato del audio.</string>
-    <string name="av_audio_bitrate">Tasa de bits del audio</string>
-    <string name="av_audio_bitrate_descr">Elige la tasa de bits del audio.</string>
     <string name="no_address_found">Dirección indeterminada</string>
 	<string name="looking_up_address">Buscando dirección</string>
     <string name="rendering_attr_horseRoutes_name">Rutas a caballo</string>
@@ -2004,11 +1973,6 @@ Tanto la ubicación como el tiempo del estacionamiento se muestran en el menú p
     
 <string name="rec_split">División de grabación</string>
     <string name="rec_split_title">Usar la división de grabación</string>
-    <string name="rec_split_desc">Reescribir videoclips al exceder el espacio de almacenamiento utilizado.</string>
-    <string name="rec_split_clip_length">Duración del videoclip</string>
-    <string name="rec_split_clip_length_desc">Tiempo límite máximo para los clips grabados.</string>
-    <string name="rec_split_storage_size">Tamaño de almacenamiento</string>
-    <string name="rec_split_storage_size_desc">La cantidad de espacio que pueden ocupar todos los videoclips grabados.</string>
     <string name="updates_size">Tamaño de actualización</string>
     <string name="last_map_change">Último cambio de mapa: %s</string>
     <string name="hourly">Cada hora</string>
@@ -2334,9 +2298,6 @@ Si amas a OsmAnd, OSM y quieres apoyarlos, esta es una perfecta manera de hacerl
     <string name="quick_action_add_poi">Añadir PDI</string>
     <string name="quick_action_map_style">Cambiar estilo del mapa</string>
     <string name="quick_action_map_style_switch">El estilo del mapa se cambió para «%s».</string>
-    <string name="quick_action_take_audio_note">Grabar nota de audio</string>
-    <string name="quick_action_take_video_note">Grabar nota de video</string>
-    <string name="quick_action_take_photo_note">Tomar nota fotográfica</string>
     <string name="quick_action_add_osm_bug">Añadir nota de OSM</string>
     <string name="quick_action_navigation_voice">Alternar activación de voz</string>
     <string name="quick_action_navigation_voice_off">Voz desactivada</string>
@@ -2354,9 +2315,6 @@ Si amas a OsmAnd, OSM y quieres apoyarlos, esta es una perfecta manera de hacerl
     <string name="shared_string_action_name">Nombre de la acción</string>
     <string name="quick_action_add_marker_descr">Pulsar el botón de acción añadirá un marcador en la ubicación central de la pantalla.</string>
     <string name="quick_action_add_gpx_descr">Pulsar el botón de acción añadirá un punto GPX en la ubicación central de la pantalla.</string>
-    <string name="quick_action_take_audio_note_descr">Pulsar el botón de acción añadirá una nota de audio en la ubicación central de la pantalla.</string>
-    <string name="quick_action_take_video_note_descr">Pulsar el botón de acción añadirá una nota de video en la ubicación central de la pantalla.</string>
-    <string name="quick_action_take_photo_note_descr">Pulsar el botón de acción añadirá una nota fotográfica en la ubicación central de la pantalla.</string>
     <string name="quick_action_add_osm_bug_descr">Pulsar el botón de acción añadirá una nota de OSM, en la ubicación central de la pantalla.</string>
     <string name="quick_action_add_poi_descr">Pulsar el botón de acción añadirá un PDI en la ubicación central de la pantalla.</string>
     <string name="quick_action_navigation_voice_descr">Pulsar el botón de acción desactivará o activará las indicaciones por voz durante la navegación.</string>
@@ -2868,9 +2826,6 @@ Proporciona un código completo</string>
     <string name="marker_activated">Marcador «%s» activado.</string>
     <string name="one_tap_active_descr">Pulsa un marcador en el mapa para moverlo al primer lugar de los marcadores activos, sin abrir el menú contextual.</string>
     <string name="one_tap_active">Activar con una pulsación</string>
-    <string name="empty_state_av_notes">¡Tomar notas multimedia!</string>
-    <string name="empty_state_av_notes_desc">Añade una nota de audio, vídeo o foto para cada punto del mapa, utilizando el controlador o el menú contextual.</string>
-    <string name="notes_by_date">Notas por fecha</string>
     <string name="by_date">Por fecha</string>
     <string name="by_type">Por tipo</string>
     <string name="modify_the_search_query">Modificar la consulta de búsqueda.</string>

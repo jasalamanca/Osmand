@@ -43,8 +43,7 @@
 	<string name="prefer_in_routing_descr">Utamakan jalan raya</string>
     <string name="max_speed_none">tidak ada</string>
     <string name="download_hillshade_maps">Overlay Hillshade</string>
-    
-    <string name="local_indexes_cat_av">Data Audio/Video</string>
+
     <string name="about_version">Versi :</string>
     <string name="shared_string_about">Tentang</string>
     <string name="about_settings_descr">Info versi, lisensi, anggota</string>
@@ -90,9 +89,6 @@
     <string name="marker_activated">Penanda %s telah diaktifkan.</string>
     <string name="one_tap_active_descr">Ketuk penanda pada peta untuk memindahkannya ke bagian atas penanda aktif tanpa perlu membuka menu konteks.</string>
     <string name="one_tap_active">Ketuk satu kali</string>
-    <string name="empty_state_av_notes">Ambil catatan!</string>
-    <string name="empty_state_av_notes_desc">Tambah audio, video atau foto catatan untuk setiap arah pada map, menggunakan widget atau menu konteks.</string>
-    <string name="notes_by_date">Catatan menurut tanggal</string>
     <string name="by_date">Menurut tanggal</string>
     <string name="by_type">Menurut tipe</string>
     <string name="looking_for_tracks_with_waypoints">Mencari trek-trek dengan titik arah</string>

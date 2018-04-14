@@ -89,7 +89,6 @@
     <string name="dropbox_plugin_description">Dropbox dodatak omogućuje sinkronizaciju staza i audio / video zapisa s vašim dropbox računom.</string>
     <string name="dropbox_plugin_name">Dropbox dodatak</string>
     <string name="intermediate_points_change_order">Promjeni redosljed</string>
-    <string name="recording_camera_not_available">Kamera nije dostupna</string>
     <string name="recording_unavailable">nedostupno</string>
     <string name="recording_context_menu_play">Pokreni</string>
     <string name="recording_context_menu_delete">Izbriši snimku</string>

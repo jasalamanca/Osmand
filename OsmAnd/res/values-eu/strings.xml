@@ -127,8 +127,7 @@
   
   
   <string name="local_indexes_cat_srtm">Sestra-kurbak</string>
-  <string name="local_indexes_cat_av">Audio/Bideo datuak</string>
-  <string name="stop_routing_confirm">Ziur nabigazioa gelditu nahi duzula?</string>
+    <string name="stop_routing_confirm">Ziur nabigazioa gelditu nahi duzula?</string>
   <string name="clear_dest_confirm">Ziur zaude zure helmuga (eta erdibideko helburuak) garbitu nahi dituzula?</string>
   <string name="precise_routing_mode_descr">Gaitu errorerik gabeko ibilbide zehatza kalkulatzeko. Distantzia motzetara dago mugatua eta motela da.</string>
   <string name="precise_routing_mode">Ibilbide kalkulu zehatza (alpha)</string>
@@ -143,48 +142,30 @@
   <string name="srtm_paid_version_msg">Mesedez, gehiago garatu ahal izateko kontsideratu Sestra-kurben gehigarria Marketean erostea.</string>
   <string name="srtm_paid_version_title">Sestra-kurben gehigarria</string>
   <string name="av_def_action_choose">Eskariaren arabera hautatu</string>
-  <string name="av_def_action_video">Bideoa grabatu</string>
-  <string name="av_def_action_audio">Audioa grabatu</string>
-  <string name="av_widget_action_descr">Aukeratu trepetaren ekintza lehenetsia.</string>
+    <string name="av_widget_action_descr">Aukeratu trepetaren ekintza lehenetsia.</string>
   <string name="av_widget_action">Trepetaren ekintza lehenetsia</string>
-  <string name="av_video_format_descr">Aukeratu bideo formatua.</string>
-  <string name="av_video_format">Bideoaren formatua</string>
-  <string name="av_use_external_recorder_descr">Erabili sistemaren bideo grabatzailea.</string>
-  <string name="av_use_external_recorder">Erabili sistemaren grabatzailea</string>
+    <string name="av_use_external_recorder">Erabili sistemaren grabatzailea</string>
   <string name="av_use_external_camera_descr">Erabili sistemaren argazki aplikazioa.</string>
   <string name="av_use_external_camera">Kamera aplikazioa erabili</string>
-  <string name="av_settings_descr">Konfiguratu audio eta bideo ezarpenak.</string>
-  <string name="av_settings">Audio/bideo ezarpenak</string>
-  <string name="recording_error">Errorea gertatu da grabatzean</string>
-  <string name="recording_camera_not_available">Kamera ez dago eskugarri</string>
-  <string name="recording_is_recorded">Audioa/bideoa grabatzen ari da. Gelditzeko sakatu AV trepeta.</string>
-  <string name="recording_playing">Aukeratutako grabaketaren audioa erreproduzitzen.⏎\n%1$s</string>
-  <string name="recording_open_external_player">Ireki kanpoko erreproduzitzailea</string>
+    <string name="recording_error">Errorea gertatu da grabatzean</string>
+    <string name="recording_open_external_player">Ireki kanpoko erreproduzitzailea</string>
   <string name="recording_delete_confirm">Grabaketa hau ezabatu nahi al duzu?</string>
   
   <string name="recording_unavailable">ez eskuragarri</string>
-  <string name="recording_context_menu_arecord">Grabatu audio ohar bat</string>
-  <string name="recording_context_menu_vrecord">Grabatu bideo ohar bat</string>
-  <string name="layer_recordings">Grabaketa geruza</string>
-  <string name="recording_can_not_be_played">Grabaketa ezin da erreproduzitu</string>
+    <string name="recording_can_not_be_played">Grabaketa ezin da erreproduzitu</string>
   <string name="recording_context_menu_delete">Grabaketa ezabatu</string>
   <string name="recording_context_menu_play">Erreproduzitu</string>
   <string name="recording_description">%1$s %3$s %2$s grabatzen</string>
   <string name="recording_default_name">Grabatzen</string>
   <string name="shared_string_control_stop">Gelditu</string>
   <string name="shared_string_control_start">Hasi</string>
-  <string name="map_widget_av_notes">Audio/bideo oharrak</string>
-  <string name="osmand_srtm_short_description_80_chars">Lineaz kanpoko sestra-kurben OsmAnd gehigarria</string>
+    <string name="osmand_srtm_short_description_80_chars">Lineaz kanpoko sestra-kurben OsmAnd gehigarria</string>
   <string name="osmand_srtm_long_description_1000_chars">Gehigarri honek OsmAnd-eko lineaz kanpoko mapetan agertu daitezkeen sestra-kurbak eta erliebe-itzalak eskaintzen ditu. Kirolariek, mendizaleek eta orokorrean paisaiaren erliebearen estrukturan interesa duen edonork gogoko izango du.
 \n
 \nDatu globalak (iparraldean 70 gradutan eta hegoaldean 70 gradutan) STRM (Shuttle Radar Topography Mission) eta ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer) neurrietan oinarrituak daude, espazioko Terra irudi tresna, NASAren Lurra Behatzeko Sistemaren satelite enblematikoa. ASTER NASAren, Japoniako Ekonomi, Merkataritza eta Industria Ministerioaren (EMIM), eta Japoneko Espazio Sistemaren (J-espaziosistema) elkarlanaren ondorioz sortua izan da.</string>
   <string name="map_widget_distancemeasurement">Distantzia neurketa</string>
-  <string name="audionotes_location_not_defined">Ez da oharrari lotutako kokapenik zehaztu. \"Erabili kokapena …\" oharra zehaztutako kokapenera esleitzeko.</string>
-  
-  <string name="map_widget_audionotes">Audio oharrak</string>
-  <string name="audionotes_plugin_description">Audio/Bideo gehigarriak bidaian zehar audio/argazki/bideo oharrak hartzeko gaitasuna ematen du, zuzenean maparen pantailan botoi bat erabiliz edo mapako edozein posizioaren laster-menuan.</string>
-  <string name="audionotes_plugin_name">Audio/bideo oharrak</string>
-  <string name="index_srtm_parts">zatiak</string>
+
+    <string name="index_srtm_parts">zatiak</string>
   <string name="index_srtm_ele">Sestra-kurbak</string>
   <string name="srtm_plugin_description">Gehigarri honek OsmAnd-eko lineaz kanpoko mapetan agertu daitezkeen sestra-kurbak eta erliebe-itzalak eskaintzen ditu. Kirolariek, mendizaleek eta orokorrean paisaiaren erliebearen estrukturan interesa duen edonork gogoko izango du.
 \n
@@ -1458,7 +1439,6 @@ Lorratza %2$s</string>
 	<string name="shared_string_photo">Argazkia</string>
     <string name="route_points">Ibilbideko puntuak</string>
     <string name="shared_string_audio">Audioa</string>
-    <string name="shared_string_video">Bideoa</string>
     <string name="access_no_destination">Ez da helburua zehaztu</string>
     <string name="access_disable_offroute_recalc">Ez birkalkulatu ibilbidea honetatik atera eta gero</string>
     <string name="access_disable_offroute_recalc_descr">Eragotzi ibilbidearen birkalkulatze automatikoa hau utzi eta gero.</string>
@@ -1517,7 +1497,6 @@ Lorratza %2$s</string>
     <string name="shared_string_type">Mota</string>
     <string name="starting_point">Hasiera puntua</string>
     <string name="shared_string_not_selected">Hautatu gabe</string>
-    <string name="rec_split_storage_size">Biltegiratzearen neurria</string>
     <string name="live_updates">Berehalako eguneraketak</string>
     <string name="available_maps">Mapa eskuragarriak</string>
     <string name="shared_string_sound">Soinua</string>
@@ -1529,14 +1508,6 @@ Lorratza %2$s</string>
     <string name="no_address_found">Ez da helbiderik zehaztu</string>
     <string name="shared_string_near">+-</string>
     <string name="shared_string_hide">Ezkutatu</string>
-    <string name="av_video_quality_low">Gutxieneko kalitatea</string>
-    <string name="av_video_quality_high">Gehieneko kalitatea</string>
-    <string name="av_video_quality">Bideo irteeraren kalitatea</string>
-    <string name="av_video_quality_descr">Hautatu bideoaren kalitatea.</string>
-    <string name="av_audio_format">Audio irteeraren formatua</string>
-    <string name="av_audio_format_descr">Hautatu audio irteeraren formatua.</string>
-    <string name="av_audio_bitrate">Audio bit-tasa</string>
-    <string name="av_audio_bitrate_descr">Hautatu audio bit-tasa.</string>
     <string name="access_from_map">Sarbidea mapatik</string>
     <string name="show_on_start">Bistaratu abiatzean</string>
     <string name="copied_to_clipboard">Arbelera kopiatuta</string>
@@ -1653,7 +1624,6 @@ Lorratza %2$s</string>
     <string name="current_route">Uneko ibilbidea</string>
     <string name="mark_to_delete">Markatu ezabatzeko</string>
     <string name="osmo_grop_name_length_alert">Taldearen izenak 3 karaktere behar ditu gutxienez!</string>
-    <string name="local_recordings_delete_all_confirm">%1$d ohar ezabatuko dituzu. Ziur zaude?</string>
     <string name="local_osm_changes_upload_all_confirm">%1$d aldaketa igoko dituzu OSMra. Ziur zaude?</string>
     <string name="confirmation_to_clear_history">Historiala ezabatu nahi duzu?</string>
     <string name="shared_string_go">Joan</string>
@@ -1818,10 +1788,6 @@ Biltegiratzean {3} MB behar dira une batez, {1} MB behin betiko.
     <string name="rendering_attr_hideIcons_name">POI ikonoak</string>
     <string name="rec_split">Grabaketaren banatzea</string>
     <string name="rec_split_title">Erabili grabaketaren banatzea</string>
-    <string name="rec_split_desc">Gainidatzi atalak erabilitako espazioa biltegiratze espazioa baino handiagoa bada.</string>
-    <string name="rec_split_clip_length">Atalaren luzera</string>
-    <string name="rec_split_clip_length_desc">Grabatutako atal bakoitzaren gehieneko denbora.</string>
-    <string name="rec_split_storage_size_desc">Grabatutako atal guztiekin okupatu daitekeen espazioa.</string>
     <string name="select_voice_provider">Hautatu ahots bidezko gidaritza</string>
     <string name="select_voice_provider_descr">Hautatu zure hizkuntzaren ahots bidezko gidaritza.</string>
     <string name="please_specify_poi_type_only_from_list">Zehaztu POI mota egokia edo saltatu.</string>
@@ -1911,7 +1877,6 @@ Biltegiratzean {3} MB behar dira une batez, {1} MB behin betiko.
     <string name="si_min_m">Minutuak miliako</string>
     <string name="si_nm_h">Itsas miliak orduko (korapiloak)</string>
     <string name="nm_h">korapiloak</string>
-    <string name="av_locations_descr">GPX fitxategia ohar-kokapenekin.</string>
     <string name="traffic_warning_hazard">Arriskua</string>
     <string name="rendering_value_boldOutline_name">Ingerada lodia</string>
     <string name="download_live_updates">Berehalako eguneraketak</string>
@@ -1957,7 +1922,6 @@ Biltegiratzean {3} MB behar dira une batez, {1} MB behin betiko.
 	<string name="rename_failed">Izen aldaketak huts egin du.</string>
     <string name="days_behind">egun atzeratua</string>
     <string name="back_to_map">Itzuli mapara</string>
-    <string name="share_note">Partekatu oharra</string>
     <string name="location_on_map">Kokapena:\n Lat %1$s\n Lon %2$s</string>
     <string name="notes">Oharrak</string>
     <string name="online_map">Sareko mapa</string>
@@ -2451,9 +2415,6 @@ Area honi dagokio: %1$s x %2$s</string>
     <string name="quick_action_add_poi">Gehitu POI</string>
     <string name="quick_action_map_style">Aldatu maparen estiloa</string>
     <string name="quick_action_map_style_switch">Mapa \"%s\" estilora aldatu da.</string>
-    <string name="quick_action_take_audio_note">Hartu audio-oharra</string>
-    <string name="quick_action_take_video_note">Hartu bideo-oharra</string>
-    <string name="quick_action_take_photo_note">Hartu argazki-oharra</string>
     <string name="quick_action_add_osm_bug">Gehitu OSM oharra</string>
     <string name="quick_action_navigation_voice">Ahotsa bai/ez</string>
     <string name="quick_action_navigation_voice_off">Ahotsa itzalita dago</string>
@@ -2470,9 +2431,6 @@ Area honi dagokio: %1$s x %2$s</string>
     <string name="quick_favorites_name_preset">Izenaren aurre-ezarpena</string>
     <string name="quick_action_add_marker_descr">Ekintza botoia sakatzean mapa markatzaile bat gehituko da pantailaren zentroko kokalekuan.</string>
     <string name="quick_action_add_gpx_descr">Ekintza botoia sakatzean GPX bide-puntu bat gehituko da pantailaren zentroko kokalekuan.</string>
-    <string name="quick_action_take_audio_note_descr">Ekintza botoia sakatzean audio-ohar bat gehituko da pantailaren zentroko kokalekuan.</string>
-    <string name="quick_action_take_video_note_descr">Ekintza botoia sakatzean bideo-ohar bat gehituko da pantailaren zentroko kokalekuan.</string>
-    <string name="quick_action_take_photo_note_descr">Ekintza botoia sakatzean argazki-ohar bat gehituko da pantailaren zentroko kokalekuan.</string>
     <string name="quick_action_add_osm_bug_descr">Ekintza botoia sakatzean OSM ohar bat gehituko da pantailaren zentroko kokalekuan.</string>
     <string name="quick_action_add_poi_descr">Ekintza botoia sakatzean POI bat gehituko da pantailaren zentroko kokalekuan.</string>
     <string name="quick_action_navigation_voice_descr">Ekintza botoia sakatzean ahots bidezko jarraibideak gaitu edo desgaituko dira nabigazioan.</string>
@@ -2838,9 +2796,6 @@ Area honi dagokio: %1$s x %2$s</string>
     <string name="marker_activated">%s markatzailea aktibatuta.</string>
     <string name="one_tap_active_descr">Sakatu markatzaile bat berau markatzaile aktiboen goialdera eramateko laster-menua ireki gabe.</string>
     <string name="one_tap_active">Aktibatu behin sakatuta</string>
-    <string name="empty_state_av_notes">Hartu oharrak!</string>
-    <string name="empty_state_av_notes_desc">Gehitu audioa, bideoa edo argazkia mapako edozein punturentzat, trepeta edo laster-menua erabiliz.</string>
-    <string name="notes_by_date">Oharrak datako</string>
     <string name="by_date">Datako</string>
     <string name="by_type">Motako</string>
     <string name="looking_for_tracks_with_waypoints">Bide-puntuak dituzten lorratzak bilatzen</string>

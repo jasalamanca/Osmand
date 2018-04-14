@@ -56,9 +56,6 @@
     <string name="marker_activated">Marker %s activated.</string>
     <string name="one_tap_active_descr">Tap a marker on the map to move it to the top of the active markers without opening the context menu.</string>
     <string name="one_tap_active">One tap active</string>
-    <string name="empty_state_av_notes">Take notes!</string>
-    <string name="empty_state_av_notes_desc">Add audio, video or photo note to every point on the map, using widget or context menu.</string>
-    <string name="notes_by_date">Notes by date</string>
     <string name="by_date">By date</string>
     <string name="by_type">By type</string>
     <string name="looking_for_tracks_with_waypoints">Looking for tracks with waypoints</string>
@@ -674,11 +671,6 @@
     <string name="shared_string_not_selected">Not selected</string>
     <string name="rec_split">Recorder Split</string>
     <string name="rec_split_title">Use Recorder Split</string>
-    <string name="rec_split_desc">Rewrite clips when used space exceeds the storage size.</string>
-    <string name="rec_split_clip_length">Clip length</string>
-    <string name="rec_split_clip_length_desc">Upper time limit for recorded clips.</string>
-    <string name="rec_split_storage_size">Storage size</string>
-    <string name="rec_split_storage_size_desc">Amount of space that can be occupied by all recorded clips.</string>
     <string name="live_updates">Live updates</string>
     <string name="available_maps">Available maps</string>
     <string name="select_voice_provider">Select voice guidance</string>
@@ -694,14 +686,6 @@
     <string name="no_address_found">No address determined</string>
     <string name="shared_string_near">Near</string>
     <string name="shared_string_hide">Hide</string>
-    <string name="av_video_quality_low">Lowest quality</string>
-    <string name="av_video_quality_high">Highest quality</string>
-    <string name="av_video_quality">Video output quality</string>
-    <string name="av_video_quality_descr">Select video quality.</string>
-    <string name="av_audio_format">Audio output format</string>
-    <string name="av_audio_format_descr">Select audio output format.</string>
-    <string name="av_audio_bitrate">Audio bitrate</string>
-    <string name="av_audio_bitrate_descr">Select audio bitrate.</string>
     <string name="please_specify_poi_type_only_from_list">Please specify the correct POI type or skip it.</string>
     <string name="access_from_map_description">Menu button launches dashboard, not menu.</string>
     <string name="access_from_map">Access from map</string>
@@ -798,7 +782,6 @@
     <string name="simulate_your_location_stop_descr">Stop simulating your position.</string>
     <string name="simulate_your_location_descr">Simulate your position using a calculated route or a recorded GPX track.</string>
     <string name="looking_up_address">Looking up address</string>
-    <string name="av_locations_descr">GPX file with note locations.</string>
     <string name="av_locations">Locations</string>
     <string name="plugin_settings">Plugins</string>
     <string name="routing_attr_avoid_shuttle_train_name">Avoid shuttle train</string>
@@ -920,7 +903,6 @@
     <string name="osm_changes_added_to_local_edits">OSM changes added to local changeset</string>
     <string name="mark_to_delete">Mark to delete</string>
     <string name="osmo_grop_name_length_alert">Group name should be at least 3 characters long!</string>
-    <string name="local_recordings_delete_all_confirm">You are going to delete %1$d notes. Are you sure?</string>
     <string name="local_osm_changes_upload_all_confirm">You are going to upload %1$d change(s) to OSM. Are you sure?</string>
     <string name="confirmation_to_clear_history">Do you want to clear the history?</string>
     <string name="delay_to_start_navigation_descr">Specify wait time to remain on the route planning screen.</string>
@@ -1017,7 +999,6 @@
     <string name="shared_string_my_tracks">My Tracks</string>
     <string name="shared_string_currently_recording_track">Currently recording track</string>
     <string name="shared_string_audio">Audio</string>
-    <string name="shared_string_video">Video</string>
     <string name="shared_string_photo">Photo</string>
     <string name="route_points">Route points</string>
     <string name="track_segments">Track segments</string>
@@ -1057,8 +1038,6 @@
     <string name="plugin_ski_descr">This plugin for OsmAnd puts at your fingertips details of global downhill ski slopes, cross country ski runs, Alpine ski routes, cable cars and ski lifts. Routes and pistes are shown color-coded by difficulty, and depicted in a special \'Winter\' map style which assimilates a snow-colored winter landscape.
 		\n\nActivating this view changes the map style to \'Winter and ski\', showing all landscape features under wintry conditions. This view can be reverted by either de-activating it again here, or by changing the \'Map style\' under \'Configure map\' as desired.
 	</string>
-    <string name="audionotes_plugin_name">Audio/video notes</string>
-    <string name="audionotes_plugin_description">The Audio/video notes plugin provides the functionality to take audio/photography/video notes during a trip, using either a button on the map screen, or directly the context menu for any position on the map.</string>
     <string name="osmand_parking_plugin_name">Parking Position</string>
     <string name="osmand_parking_plugin_description">The parking position plugin lets you memorize where your car is parked and how much parking time is left (if there is a time limit).
 	\nBoth the location and time are visible on the OsmAnd dashboard as well as in widget on the map screen. An alarm can be added to the Android calendar as a reminder.</string>
@@ -1073,7 +1052,6 @@
     <string name="rename_failed">Rename failed.</string>
     <string name="days_behind">days behind</string>
     <string name="back_to_map">Back to map</string>
-    <string name="share_note">Share note</string>
     <string name="location_on_map">Location:\n Lat %1$s\n Lon %2$s</string>
     <string name="watch">Watch</string>
     <string name="notes">Notes</string>
@@ -1610,7 +1588,6 @@
     <string name="download_wikipedia_maps">Wikipedia</string>
     <string name="download_hillshade_maps">Hillshades</string>
     <string name="local_indexes_cat_srtm">Contour lines</string>
-    <string name="local_indexes_cat_av">Audio/Video data</string>
     <string name="stop_routing_confirm">Are you sure you want to stop the navigation?</string>
     <string name="clear_dest_confirm">Are you sure you want to clear your destination (and intermediate destinations)?</string>
     <string name="precise_routing_mode_descr">Enable to calculate precise routes without glitches. Still distance-limited and slow.</string>
@@ -1624,37 +1601,21 @@
     <string name="intermediate_points_change_order">Change order</string>
     <string name="srtm_paid_version_msg">Please consider to buy the Contour lines plugin in the Market to support further development.</string>
     <string name="av_def_action_choose">Select on request</string>
-    <string name="av_def_action_video">Record video</string>
-    <string name="av_def_action_audio">Record audio</string>
     <string name="av_widget_action_descr">Select default widget action.</string>
     <string name="av_widget_action">Default widget action</string>
-    <string name="av_video_format_descr">Select the video output format.</string>
-    <string name="av_video_format">Video output format</string>
-    <string name="av_use_external_recorder_descr">Use the system recorder for video.</string>
     <string name="av_use_external_recorder">Use system recorder</string>
     <string name="av_use_external_camera_descr">Use the system application for photos.</string>
     <string name="av_use_external_camera">Use camera app</string>
-    <string name="av_settings_descr">Configure audio and video settings.</string>
-    <string name="av_settings">Audio/video settings </string>
     <string name="recording_error">Error occurred while recording </string>
-    <string name="recording_camera_not_available">Camera is not available</string>
-    <string name="recording_is_recorded">Audio/video is being recorded. To stop it tap the AV widget.</string>
-    <string name="recording_playing">An audio from the specified recording is being played.\n%1$s</string>
     <string name="recording_open_external_player">Open external player</string>
     <string name="recording_delete_confirm">Do you want to delete this recording?</string>
     <string name="recording_unavailable">unavailable</string>
-    <string name="recording_context_menu_arecord">Take an audio note</string>
-    <string name="recording_context_menu_vrecord">Take a video note</string>
-    <string name="layer_recordings">Recording layer</string>
     <string name="recording_can_not_be_played">Recording can not be played</string>
     <string name="recording_context_menu_delete">Delete recording</string>
     <string name="recording_context_menu_play">Play</string>
     <string name="recording_description">Recording %1$s %3$s %2$s</string>
     <string name="recording_default_name">Recording</string>
-    <string name="map_widget_av_notes">Audio/video notes</string>
     <string name="map_widget_distancemeasurement">Distance measurement</string>
-    <string name="audionotes_location_not_defined">Location to associate with the note is not defined yet. \"Use location …\" to assign a note to the location specified.</string>
-    <string name="map_widget_audionotes">Audio notes</string>
     <string name="index_srtm_parts">parts</string>
     <string name="index_srtm_ele">Contour lines</string>
     <string name="download_select_map_types">Other maps</string>
@@ -2780,9 +2741,6 @@
     <string name="quick_action_add_poi">Add POI</string>
     <string name="quick_action_map_style">Change map style</string>
     <string name="quick_action_map_style_switch">The map style has been changed to \"%s\".</string>
-    <string name="quick_action_take_audio_note">Take audio note</string>
-    <string name="quick_action_take_video_note">Take video note</string>
-    <string name="quick_action_take_photo_note">Take photo note</string>
     <string name="quick_action_add_osm_bug">Add OSM Note</string>
     <string name="quick_action_navigation_voice">Voice on/off</string>
     <string name="quick_action_navigation_voice_off">Voice is off</string>
@@ -2799,9 +2757,6 @@
     <string name="quick_favorites_name_preset">Name preset</string>
     <string name="quick_action_add_marker_descr">Tapping the action button will add a map marker at the screen center location.</string>
     <string name="quick_action_add_gpx_descr">Tapping the action button will add a GPX waypoint at the screen center location.</string>
-    <string name="quick_action_take_audio_note_descr">Tapping the action button will add an audio note at the screen center location.</string>
-    <string name="quick_action_take_video_note_descr">Tapping the action button will add a video note at the screen center location.</string>
-    <string name="quick_action_take_photo_note_descr">Tapping the action button will add a photo note at the screen center location.</string>
     <string name="quick_action_add_osm_bug_descr">Tapping the action button will add an OSM note at the screen center location.</string>
     <string name="quick_action_add_poi_descr">Tapping the action button will add a POI at the screen center location.</string>
     <string name="quick_action_navigation_voice_descr">Tapping the action button will disable or enable voice guidance during navigation.</string>

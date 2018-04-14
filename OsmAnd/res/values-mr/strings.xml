@@ -364,8 +364,6 @@
     <string name="recording_context_menu_show">दाखवा</string>
     <string name="av_def_action_picture">फोटो घ्या</string>
     <string name="recording_context_menu_precord">फोटो घ्या</string>
-    <string name="av_def_action_video">विडिओ रेकॉर्ड करा</string>
-    <string name="av_def_action_audio">आवाज रेकॉर्ड करा</string>
     <string name="app_mode_default">नकाशा पहा</string>
 	<string name="destination_point">इच्छित स्थळ %1$s</string>
     <string name="context_menu_item_destination_point">इच्छित स्थळ निवडा</string>
@@ -484,8 +482,7 @@
 	<string name="shared_string_address">पत्ता</string>
 	<string name="shared_string_my_places">माझी ठिकाणे</string>
 	<string name="shared_string_audio">ध्वनि</string>
-	<string name="shared_string_video">चलच्चित्र</string>
-	<string name="shared_string_photo">छायाचित्र</string>
+    <string name="shared_string_photo">छायाचित्र</string>
 	<string name="rendering_attr_currentTrackColor_name">जिपिएक्स रंग</string>
     <string name="rendering_attr_currentTrackWidth_name">जिपिएक्स रुंदी</string>
     <string name="rendering_value_red_name">लाल</string>

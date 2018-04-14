@@ -971,8 +971,7 @@
 	<string name="snap_to_road">გზისთვის მიბმა</string>
 	<string name="osmand_short_description_80_chars">OsmAnd არის ნავიგაციის აპლიკაცია ღია წყაროთი გათიშული და ონლაინ რუკების მხარდაჭერით</string>
 	<string name="map_widget_intermediate_distance">გზის წერტილი</string>
-    
-    <string name="local_indexes_cat_av">აუდიო/ვიდეო მონაცემები</string>
+
     <string name="stop_routing_confirm">დარწმუნებული ბრძანდებით რომ გნებავთ ნავიგაციის შეწყვეტა?</string>
     <string name="clear_dest_confirm">დარწმუნებული ბრძანდებით რომ გნებავთ გაასუფთაოთ თქვენი დანიშნულების წერტილი?</string>
     <string name="precise_routing_mode_descr">ჩართეთ ზუსტი გზები მათი მანძილის ზუსტად დასათვლელად. მაგრამ ის ძალიან შეზღუდულია მანძილით და არ იყენებს ადგილობრივ ბიბლიოთეკას.</string>
@@ -987,33 +986,19 @@
     <string name="intermediate_points_change_order">წყობის შეცვლა</string>
     <string name="srtm_paid_version_msg">პროგრამის განვითარების მხარდასაჭერად გთხოვთ შეიძინოთ Contour lines დამატება Market-დან.</string>
     <string name="srtm_paid_version_title">დამატება Contour lines</string>
-    <string name="av_def_action_video">ვიდეოს ჩაწერა</string>
-    <string name="av_def_action_audio">ხმის ჩაწერა</string>
     <string name="av_widget_action_descr">ღილაკის ნაგულისხმევი ქცევის არჩევა</string>
     <string name="av_widget_action">ღილაკის ნაგულისხმევი ქცევა</string>
-    <string name="av_video_format_descr">აირჩიეთ ვიდეო გამოსახულების ფორმატი</string>
-    <string name="av_video_format">ვიდეო გამოსახულების ფორმატი</string>
-    <string name="av_use_external_recorder_descr">ვიდეოს ჩასაწერად სისტემური ჩამწერის გამოყენება</string>
     <string name="av_use_external_recorder">გარე ჩამწერის გამოყენება</string>
-    <string name="av_settings_descr">აუდიო/ვიდეო-ს გამართვა</string>
-    <string name="av_settings">"აუდიო/ვიდეო პარამეტრები "</string>
     <string name="recording_error">"ჩაწერის შეცდომა "</string>
-    <string name="recording_camera_not_available">კამერა მიუწვდომელია</string>
-    <string name="recording_is_recorded">მიმდინარეობს ხმის/ვიდეოს ჩაწერა. შესაწყვეტად დააწირეთ AV ღილაკს.</string>
-    <string name="recording_playing">მოცემული ჩანაწერიდან იკვრება მხოლოდ ხმა.\n%1$s</string>
     <string name="recording_open_external_player">გარე დამკვრელის გაშვება</string>
     <string name="recording_delete_confirm">გნებავთ ჩანაწერის წაშლა?</string>
     
     <string name="recording_unavailable">მიუწვდომელია</string>
-    <string name="recording_context_menu_arecord">ხმოვანი შენიშვნის ჩაწერა</string>
-    <string name="recording_context_menu_vrecord">ვიდეო შენიშვნის ჩაწერა</string>
-    <string name="layer_recordings">ჩანაწერების დონე</string>
     <string name="recording_can_not_be_played">ჩანაწერის დაკვრა შეუძლებელია</string>
     <string name="recording_context_menu_delete">ჩანაწერის წაშლა</string>
     <string name="recording_context_menu_play">დაკვრა</string>
     <string name="recording_description">ჩანაწერი %1$s %2$s %3$s-დან</string>
     <string name="recording_default_name">ჩანაწერი</string>
-    <string name="map_widget_av_notes">ხმოვანი/ვიდეო შენიშვნები</string>
     <string name="osmand_srtm_short_description_80_chars">OsmAnd-ის დამატება გათიშული კონტურული ხაზებისათვის</string>
     
     <string name="osmand_srtm_long_description_1000_chars">"ეს დამატება უზრუნველყოფს კონტურულ ხაზებს, რომლებიც შეიძლება ნაჩვენები იქნას OsmAnd-ის გათიშულ რუკებზე. გლობალური მონაცემები (70 გრადუს ჩრდილოეთსა და 70 გრადუს სამხრეთს შორის) ემყარება SRTM (Shuttle Radar Topography Mission) და ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer)-ის მონაცემებს, რომელიც წარმოადგენს ფოტოკამერას Terra-ზე, NASA-ს წამყვან თანამგზავრზე, რომელიც ემსახურება დედამიწის დათვალიერების სისტემას. ASTER წარმოადგენს ერთობლივ პროექტს NASA-ს, იაპონიის ეკონომიკის სამინისტროს, ვაჭრობისა და ინდუსტრიის (METI), და იაპონიის კოსმოსურ სისტემებს (J-spacesystems) შორის. "</string>
@@ -1021,11 +1006,7 @@
     
     
     <string name="map_widget_distancemeasurement">მანძილის გაზომვა</string>
-    <string name="audionotes_location_not_defined">მდებარეობა შენიშვნის მისაბმელად ჯერ განსაზღვრული არაა. გამოიყენეთ \"მდებარეობის გამოყენება…\" შენიშვნის სასურველი მდებარეობისათვის მისანიჭებლად</string>
-    
-    <string name="map_widget_audionotes">ხმოვანი შენიშვნები</string>
-    <string name="audionotes_plugin_description">მგზავრობისას ხმოვანი/ვიდეო შენიშვნების ჩაწერა</string>
-    <string name="audionotes_plugin_name">ხმოვანი/ვიდეო შენიშვნები</string>
+
     <string name="index_srtm_parts">მონაკვეთები</string>
     <string name="index_srtm_ele">კონტურული ხაზები</string>
     <string name="srtm_plugin_description">მოცემული დამატება აადვილებს კონტურული ხაზების ჩამოწერას (გათიშული მონაცემების გადმოწერა -&gt; მენიუ -&gt; სხვა რუკები) გათიშულ რუკებთან გამოსაყენებლად.</string>
@@ -1264,14 +1245,6 @@
     <string name="no_address_found">მისამართის მოძებნა შეუძლებელია</string>
     <string name="shared_string_near">ახლოს</string>
     <string name="shared_string_hide">დამალვა</string>
-    <string name="av_video_quality_low">დაბალი ხარისხი</string>
-    <string name="av_video_quality_high">მაღალი ხარისხი</string>
-    <string name="av_video_quality">ვიდეოს ჩვენების ხარისხი</string>
-    <string name="av_video_quality_descr">აირჩიეთ ვიდეოს ჩვენების ხარისხი</string>
-    <string name="av_audio_format">აუდიო ფორმატი</string>
-    <string name="av_audio_format_descr">აირჩიეთ ხმის ფორმატი</string>
-    <string name="av_audio_bitrate">ხმის ბიტრეიტი</string>
-    <string name="av_audio_bitrate_descr">აირჩიეთ ხმის ბიტრეიტი</string>
     <string name="please_specify_poi_type_only_from_list">გთხოვთ აირჩიოთ სწორი POI-ს ტიპი ან გამოტოვოთ</string>
     <string name="access_from_map_description">მენიუს ღილაკი უშვებს სამართავ პანელს და არა მენიუს</string>
     <string name="access_from_map">წვდომა რუკიდან</string>

@@ -397,7 +397,6 @@
     
     <string name="download_hillshade_maps">山体阴影层</string>
     <string name="prefer_in_routing_descr">首选高速公路</string>
-    <string name="local_indexes_cat_av">音频/视频数据</string>
     <string name="stop_routing_confirm">是否确定停止导航？</string>
     <string name="clear_dest_confirm">是否确定清楚目标点？</string>
     <string name="precise_routing_mode_descr">启用精确路径计算，受实地距离限制不使用本地库。</string>
@@ -496,19 +495,10 @@
     <string name="cancel_route">取消路线</string>
     <string name="contribution_activity">安装版本</string>
     <string name="local_indexes_cat_srtm">等高线数据</string>
-    <string name="av_def_action_video">录制视频</string>
-    <string name="av_def_action_audio">录制音频</string>
     <string name="av_widget_action_descr">选择缺省窗体动作</string>
     <string name="av_widget_action">缺省窗体动作</string>
-    <string name="av_video_format_descr">选择视频输出格式</string>
-    <string name="av_video_format">视频输出格式</string>
-    <string name="av_use_external_recorder_descr">使用系统程序录制视频</string>
     <string name="av_use_external_camera_descr">使用系统程序拍照</string>
-    <string name="av_settings_descr">配置视频与音频设置</string>
-    <string name="av_settings">音频/视频设置 </string>
     <string name="recording_error">录制时发生错误 </string>
-    <string name="recording_camera_not_available">摄像头不可用</string>
-    <string name="recording_is_recorded">音频/视频正在记录，要停止请点击AV窗体。</string>
     <string name="recording_open_external_player">打开外部播放器</string>
     <string name="osmand_srtm_short_description_80_chars">OsmAnd 的离线等高线插件</string>
     <string name="map_widget_distancemeasurement">距离测量</string>
@@ -1013,7 +1003,6 @@
     <string name="shared_string_type">类型</string>
     <string name="starting_point">起始标点</string>
     <string name="shared_string_not_selected">未选取</string>
-    <string name="rec_split_storage_size">存储大小</string>
     <string name="available_maps">可用地图</string>
     <string name="select_voice_provider">选择语音指引</string>
     <string name="shared_string_sound">语音</string>
@@ -1022,14 +1011,6 @@
     <string name="no_address_found">没有确定地址</string>
     <string name="shared_string_near">附近</string>
     <string name="shared_string_hide">隐藏</string>
-    <string name="av_video_quality_low">最低品质</string>
-    <string name="av_video_quality_high">最高品质</string>
-    <string name="av_video_quality">视频输出质量</string>
-    <string name="av_video_quality_descr">选择视频输出质量</string>
-    <string name="av_audio_format">音频输出格式</string>
-    <string name="av_audio_format_descr">选择音频输出格式</string>
-    <string name="av_audio_bitrate">音频比特率</string>
-    <string name="av_audio_bitrate_descr">选择音频比特率</string>
     <string name="please_specify_poi_type_only_from_list">请指定正确的 POI 类型或跳过</string>
     <string name="access_from_map_description">菜单按钮启动仪表板，无菜单</string>
     <string name="access_from_map">从地图访问</string>
@@ -1101,7 +1082,6 @@
     <string name="simulate_your_location_stop_descr">停止模拟您的位置</string>
     <string name="simulate_your_location_descr">使用计算得到的路线或者一条 GPX 记录模拟您的位置</string>
     <string name="looking_up_address">查询地址</string>
-    <string name="av_locations_descr">GPS 文件附位置注解</string>
     <string name="av_locations">位置</string>
     <string name="plugin_settings">插件</string>
     <string name="traffic_warning_hazard">危险</string>
@@ -1299,7 +1279,6 @@
 
     <string name="use_dashboard_btn">使用仪表板</string>
     <string name="dashboard_or_drawer_title">仪表板或菜单控制</string>
-    <string name="audionotes_plugin_name">音频/视频笔记</string>
     <string name="rendering_value_light_brown_name">浅棕色</string>
     <string name="rendering_value_dark_brown_name">深棕色</string>
     <string name="use_osm_live_routing">OsmAnd 实时导航</string>
@@ -1736,10 +1715,6 @@
     <string name="switch_start_finish">对调起始点和目的地</string>
     <string name="rec_split">录制器拆分</string>
     <string name="rec_split_title">使用录制器拆分</string>
-    <string name="rec_split_desc">重写剪辑时，使用的空间超过存储大小</string>
-    <string name="rec_split_clip_length">剪辑长度</string>
-    <string name="rec_split_clip_length_desc">每个记录的剪辑的长度不会长于指定的时间间隔</string>
-    <string name="rec_split_storage_size_desc">全部录制片段可以使用的空间量</string>
     <string name="live_updates">实时更新</string>
     <string name="no_location_permission">应用程序没有权限访问定位数据。</string>
     <string name="no_camera_permission">应用程序没有权限访问摄像头。</string>
@@ -1831,7 +1806,6 @@
     <string name="welcome_text">OsmAnd 提供了全球的离线地图浏览和全球的离线导航 ！</string>
     <string name="osm_changes_added_to_local_edits">OSM 更改添加到本地的变更集</string>
     <string name="osmo_grop_name_length_alert">组名称至少应有 3 个字符 ！</string>
-    <string name="local_recordings_delete_all_confirm">要删除 %1$d 个注解。是否确定？</string>
     <string name="local_osm_changes_upload_all_confirm">你将要上传 %1$d 个更改到 OSM。是否确定？</string>
     <string name="delay_to_start_navigation_descr">指定等待时间以便继续留在航路规划屏幕</string>
     <string name="delay_to_start_navigation">开始转弯提醒前…</string>
@@ -1850,7 +1824,6 @@
     <string name="shared_string_my_tracks">我的足迹</string>
     <string name="shared_string_currently_recording_track">当前正在录制轨迹</string>
     <string name="shared_string_audio">音频</string>
-    <string name="shared_string_video">视频</string>
     <string name="shared_string_photo">图片</string>
     <string name="route_points">路线点</string>
     <string name="track_segments">轨迹区段</string>
@@ -1872,7 +1845,6 @@
 \n全球数据（在 70 度以北和 70 度以南之间）的测量基于 SRTM（Shuttle Radar Topography Mission）和 ASTER（Advanced Spaceborne Thermal Emission and Reflection Radiometer），安装在美国太空总署地球观测系统的旗舰卫星 Terra 上的遥测仪器，ASTER 是美国太空总署、日本经济产业省（METI）、日本太空系统（J-spacesystems）之间的通力合作的产物。</string>
     <string name="plugin_touringview_name">旅游地图视图</string>
     <string name="plugin_nautical_name">航海地图视图</string>
-    <string name="audionotes_plugin_description">音频/视频附注插件组件提供的功能，在旅程中取得的音频/照相/视频之注解，使用在地图画面上的按钮，或地图上任何的位置直接显示上下文菜单。</string>
     <string name="osmand_parking_plugin_description">停车位置插件让你记住你的车停在哪里，还有多少泊车时间 （如果有时间限制）。
 \n位置和时间上均可见 OsmAnd 操控板在地图屏幕上的小部件。警报可以作为提醒添加到 Android 的日历。</string>
     <string name="osmand_distance_planning_plugin_description">这个插件提供一个允许通过在地图上，点击创建路径或使用或修改现有的 GPX 文件，计划一次旅行和测量点之间的距离的地图屏幕小部件。结果可以保存为 GPX 文件，以后可以用于导航。</string>
@@ -1881,7 +1853,6 @@
     <string name="rename_failed">重命名失败。</string>
     <string name="days_behind">天前</string>
     <string name="back_to_map">返回地图</string>
-    <string name="share_note">分享注解</string>
     <string name="location_on_map">位置：
 \n 纬度 %1$s
 \n 经度 %2$s</string>
@@ -2233,18 +2204,10 @@
     <string name="osmand_background_plugin_description">透过周期性的唤醒 GPS 设备，在背景模式下（屏幕关闭）显示设置，以启用追踪与导航。</string>
     <string name="av_def_action_choose">在请求时选择</string>
     <string name="av_use_external_recorder">使用系统录音机</string>
-    <string name="recording_playing">从已指定的录音开始播放音频。
-\n%1$s</string>
     <string name="recording_delete_confirm">你想要删除此记录吗？</string>
-    <string name="recording_context_menu_arecord">设置音频注释</string>
-    <string name="recording_context_menu_vrecord">设置视频注释</string>
-    <string name="layer_recordings">记录层</string>
     <string name="recording_can_not_be_played">录音不能播放</string>
     <string name="recording_context_menu_delete">删除记录</string>
     <string name="recording_description">正在录制 %1$s %3$s %2$s</string>
-    <string name="map_widget_av_notes">音频/视频注释</string>
-    <string name="audionotes_location_not_defined">以位置去关联的附注尚未下定义。\"使用位置 …\"，把注解分配给指定的位置。</string>
-    <string name="map_widget_audionotes">音频注释</string>
     <string name="rendering_attr_alpineHiking_name">高山远足规模 (SAC)</string>
     <string name="rendering_attr_alpineHiking_description">依据 SAC 分级计算路径</string>
     <string name="rendering_attr_hikingRoutesOSMC_name">徒步旅行符号叠加</string>
@@ -2546,9 +2509,6 @@
     <string name="quick_action_add_poi">添加 POI</string>
     <string name="quick_action_map_style">更改地图样式</string>
     <string name="quick_action_map_style_switch">地图显示风格已改为\"%s\"。</string>
-    <string name="quick_action_take_audio_note">录制音频注释</string>
-    <string name="quick_action_take_video_note">录制视频注释</string>
-    <string name="quick_action_take_photo_note">设置图片注释</string>
     <string name="quick_action_add_osm_bug">添加 OSM 注解</string>
     <string name="quick_action_navigation_voice">打开关闭声音</string>
     <string name="quick_action_navigation_voice_off">语音已关闭</string>
@@ -2564,9 +2524,6 @@
     <string name="quick_favorites_name_preset">预设的名称</string>
     <string name="quick_action_add_marker_descr">轻触动作按钮将会在屏幕中心的位置增加一个地图记号。</string>
     <string name="quick_action_add_gpx_descr">轻触动作按钮将会在屏幕中心的位置增加一个 GPX 地标。</string>
-    <string name="quick_action_take_audio_note_descr">轻触动作按钮将会在屏幕中心的位置增加一个音频注释。</string>
-    <string name="quick_action_take_video_note_descr">轻触动作按钮将会在屏幕中心的位置增加一个视频注释。</string>
-    <string name="quick_action_take_photo_note_descr">轻触动作按钮将会在屏幕中心的位置增加一个照片注释。</string>
     <string name="quick_action_add_osm_bug_descr">轻触动作按钮将会在屏幕中心的位置增加一个 OSM 注解。</string>
     <string name="quick_action_add_poi_descr">轻触动作按钮将会在屏幕中心的位置增加一个 POI。</string>
     <string name="quick_action_add_parking_descr">轻触动作按钮将会在屏幕中心的位置增加一个停车场。</string>
@@ -2702,9 +2659,6 @@
     <string name="marker_activated">标记%s 已激活。</string>
     <string name="one_tap_active_descr">点击地图上的标记将其移动到活动标记的顶端, 而不打开上下文菜单。</string>
     <string name="one_tap_active">一个点击激活</string>
-    <string name="empty_state_av_notes">做笔记!</string>
-    <string name="empty_state_av_notes_desc">使用小部件或上下文菜单, 在地图上的每个点添加音频、视频或照片注释。</string>
-    <string name="notes_by_date">按日期说明</string>
     <string name="by_date">按日期</string>
     <string name="by_type">按类型</string>
     <string name="looking_for_tracks_with_waypoints">用航路点寻找轨迹</string>

@@ -1117,7 +1117,6 @@ OsmAnd ir atvērtā koda navigācijas aplikācija ar piekļuvi vispusīgiem Open
     
     
     <string name="local_indexes_cat_srtm">Kontūrlīnijas</string>
-    <string name="local_indexes_cat_av">Audio/video dati</string>
     <string name="stop_routing_confirm">Vai vēlaties apturēt navigāciju?</string>
     <string name="clear_dest_confirm">Vai vēlaties noņemt galamērķi (ieskaitot ceļa punktus)?</string>
     <string name="precise_routing_mode_descr">Ieslēgt precīzāku maršruta aprēķināšanu bez kļūdām. Pagaidām darbojas ierobežotā attālumā un ir lēna.</string>
@@ -1132,28 +1131,15 @@ OsmAnd ir atvērtā koda navigācijas aplikācija ar piekļuvi vispusīgiem Open
     <string name="srtm_paid_version_msg">Lūdzu apsveriet iespēju pirkt Contour Lines spraudni, lai atbalstītu tā tālāko attīstību.</string>
     <string name="srtm_paid_version_title">Kontūrlīniju spraudnis</string>
     <string name="av_def_action_choose">Atlasīt pēc pieprasījuma</string>
-    <string name="av_def_action_video">Ierakstīt video</string>
-    <string name="av_def_action_audio">Ierakstīt audio</string>
     <string name="av_widget_action_descr">Izvēlieties noklusēto logrīka darbību</string>
     <string name="av_widget_action">Noklusētā logrīka darbība</string>
-    <string name="av_video_format_descr">Atlasīt video formātu</string>
-    <string name="av_video_format">Video formāts</string>
-    <string name="av_use_external_recorder_descr">Lietot sistēmas programmu video ierakstīšanai</string>
     <string name="av_use_external_recorder">Lietot sistēmas aplikāciju ierakstīšanai</string>
     <string name="av_use_external_camera_descr">Lietot sistēmas aplikāciju bildēm</string>
     <string name="av_use_external_camera">Lietot kameras aplikāciju</string>
-    <string name="av_settings_descr">Konfigurēt audio un video iestatījumus</string>
-    <string name="av_settings">"Audio/video iestatījumi "</string>
     <string name="recording_error">Kļūda ierakstot </string>
-    <string name="recording_camera_not_available">Kamera nav pieejama</string>
-    <string name="recording_is_recorded">Tiek ierakstīts audio/video, tā apturēšanai uzspiediet uz AV logrīka.</string>
-    <string name="recording_playing">Tiek atskaņots izvēlētais audio ieraksts.\n%1$s</string>
     <string name="recording_open_external_player">Atvērt ārējo atskaņotāju</string>
     <string name="recording_delete_confirm">Vai vēlaties dzēst ierakstu?</string>
     <string name="recording_unavailable">Nav pieejams</string>
-    <string name="recording_context_menu_arecord">Sākt audio ierakstu</string>
-    <string name="recording_context_menu_vrecord">Sākt video ierakstu</string>
-    <string name="layer_recordings">Ieraksta slānis</string>
     <string name="recording_can_not_be_played">Ierakstu nevar atskaņot</string>
     <string name="recording_context_menu_delete">Dzēst ierakstu</string>
     <string name="recording_context_menu_play">Atskaņot</string>
@@ -1161,14 +1147,9 @@ OsmAnd ir atvērtā koda navigācijas aplikācija ar piekļuvi vispusīgiem Open
     <string name="recording_default_name">Ierakstīšana</string>
     <string name="shared_string_control_stop">Apturēt</string>
     <string name="shared_string_control_start">Sākt</string>
-    <string name="map_widget_av_notes">Audio/video ieraksti</string>
     <string name="osmand_srtm_short_description_80_chars">OsmAnd spraudnis bezsaistes kontūrlīnijām</string>
     <string name="map_widget_distancemeasurement">Distances mērīšana</string>
-    <string name="audionotes_location_not_defined">Šai piezīmei nav definēta atrašanās vieta. Lai to izdarītu, izvēlieties \"Lietot atrašanās vietu…\".</string>
-    
-    <string name="map_widget_audionotes">Audio ieraksti</string>
-    <string name="audionotes_plugin_description">Ceļojuma laikā veikt audio/video vai foto ierakstus ar pogas palīdzību uz kartes vai caur konteksta izvēlni no jebkuras vietas kartē.</string>
-    <string name="audionotes_plugin_name">Audio/video ieraksti</string>
+
     <string name="index_srtm_parts">daļas</string>
     <string name="index_srtm_ele">Kontūrlīnijas</string>
     <string name="srtm_plugin_name">Kontūrlīniju spraudnis</string>
@@ -1775,8 +1756,7 @@ Vai gribat veikt jaunu reģistrāciju?</string>
 	<string name="shared_string_my_location">Mana atrašanās vieta</string>
 	<string name="shared_string_currently_recording_track">Tiek ierakstīts treks</string>
 	<string name="shared_string_audio">Audio</string>
-	<string name="shared_string_video">Video</string>
-	<string name="shared_string_photo">Foto</string>
+    <string name="shared_string_photo">Foto</string>
 	<string name="route_points">Maršruta punkti</string>
 	<string name="track_segments">Treka segmenti</string>
 	<string name="track_points">Treka punkti</string>
@@ -1786,7 +1766,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
 	<string name="rename_failed">Neizdevās mainīt nosaukumu.</string>
 	<string name="days_behind">dienas pēc</string>
 	<string name="back_to_map">Atpakaļ kartē</string>
-	<string name="share_note">Kopīgot ierakstus</string>
     <string name="location_on_map">Atrašanās vieta:\n Lat %1$s\n Lon %2$s</string>
 	<string name="watch">Skatīties</string>
 	<string name="notes">Ieraksti</string>
@@ -1976,11 +1955,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="shared_string_not_selected">Nav izvēlēts</string>
     <string name="rec_split">Ieraksta dalīšana</string>
     <string name="rec_split_title">Lietot ieraksta dalīšanu</string>
-    <string name="rec_split_desc">Pārrakstīt ierakstus, kad izmantotā vieta pārsniedz krātuves izmērus</string>
-    <string name="rec_split_clip_length">Ierakstu izmērs</string>
-    <string name="rec_split_clip_length_desc">Ieraksts nebūs garāks par izvēlēto laika intervālu</string>
-    <string name="rec_split_storage_size">Krātuves izmērs</string>
-    <string name="rec_split_storage_size_desc">Krātuves izmērs ierakstu veikšanai</string>
     <string name="live_updates">Live atjauninājumi</string>
     <string name="select_voice_provider">Izvēlieties balss vadību</string>
     <string name="select_voice_provider_descr">Kādu valodu lietot norādēm.</string>
@@ -1994,14 +1968,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="no_address_found">Adrese nav atrasta</string>
     <string name="shared_string_near">Tuvumā</string>
     <string name="shared_string_hide">Paslēpt</string>
-    <string name="av_video_quality_low">Zema kvalitāte</string>
-    <string name="av_video_quality_high">Augsta kvalitāte</string>
-    <string name="av_video_quality">Video kvalitāte</string>
-    <string name="av_video_quality_descr">Izvēlieties vēlamo video kvalitāti</string>
-    <string name="av_audio_format">Audio formāts</string>
-    <string name="av_audio_format_descr">Izvēlieties vēlamo audio formātu</string>
-    <string name="av_audio_bitrate">Audio bitreits</string>
-    <string name="av_audio_bitrate_descr">IZvēlieties audio bitreitu</string>
     <string name="please_specify_poi_type_only_from_list">Lūdzu norādiet korektu POI tipu vai atstājiet tukšu</string>
     <string name="access_from_map_description">Izvēlnes poga ļauj atvērt manu izvēlni</string>
     <string name="access_from_map">Piekļūt no kartes</string>
@@ -2078,7 +2044,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="simulate_your_location_stop_descr">Pārtraukt pozīcijas imitāciju</string>
     <string name="simulate_your_location_descr">Imitēt pēc aprēķinātā maršruta vai ierakstītā GPX</string>
     <string name="looking_up_address">Adreses meklēšana</string>
-    <string name="av_locations_descr">GPX fails ar Audio/Video piezīmēm</string>
     <string name="av_locations">Vietas</string>
     <string name="routing_attr_avoid_shuttle_train_name">Izvairīties no piepilsētas vilcieniem</string>
     <string name="traffic_warning_hazard">Bīstamība</string>
@@ -2135,7 +2100,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="rendering_value_walkingRoutesScopeOSMC_name">Krāsas pēc infrastruktūras veida</string>
     <string name="rendering_value_walkingRoutesOSMC_name">Krāsas pēc OSMC simbola</string>
     <string name="osmo_share_my_location">Sūtīt manu atrašanās vietu</string>
-    <string name="local_recordings_delete_all_confirm">"Vai vēlaties izdzēst  %1$d ierakstus?"</string>
     <string name="rendering_attr_pisteRoutes_name">Slēpošanas trases</string>
     <string name="rendering_attr_roadStyle_description">Stila veidi</string>
     <string name="routing_attr_avoid_stairs_name">Izvairīties no kāpnēm</string>
@@ -2535,9 +2499,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="quick_action_add_poi">Pievienot POI</string>
     <string name="quick_action_map_style">Mainīt kartes stilu</string>
     <string name="quick_action_map_style_switch">Kartes stils ir nomainīts uz \"%s\".</string>
-    <string name="quick_action_take_audio_note">Sākt audio piezīmi</string>
-    <string name="quick_action_take_video_note">Sākt video piezīmi</string>
-    <string name="quick_action_take_photo_note">Sākt foto piezīmi</string>
     <string name="quick_action_add_osm_bug">Pievienot OSM kļūdu</string>
     <string name="quick_action_navigation_voice">Balss ieslēgt/izslēgt</string>
     <string name="quick_action_navigation_voice_off">Balss ir izslēgta</string>
@@ -2553,9 +2514,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="quick_favorites_show_favorites_dialog">Rādīt favorītu dialogu</string>
     <string name="quick_action_add_marker_descr">Spiežot darbības pogu, ekrāna centrā tiks ielikts ceļapunkts.</string>
     <string name="quick_action_add_gpx_descr">Spiežot darbības pogu, ekrāna centrā tiks ielikts GPX ceļapunkts.</string>
-    <string name="quick_action_take_audio_note_descr">Spiežot darbības pogu, ekrāna centrā tiks ielikta audio piezīme.</string>
-    <string name="quick_action_take_video_note_descr">Spiežot darbības pogu, ekrāna centrā tiks ielikta video piezīme.</string>
-    <string name="quick_action_take_photo_note_descr">Spiežot darbības pogu, ekrāna centrā tiks ielikta foto piezīme.</string>
     <string name="quick_action_add_osm_bug_descr">Spiežot darbības pogu, ekrāna centrā tiks ielikta OSM kļūdas piezīme.</string>
     <string name="quick_action_add_poi_descr">Spiežot darbības pogu, ekrāna centrā tiks ielikts POI.</string>
     <string name="quick_action_navigation_voice_descr">Spiežot darbības pogu, tiks izslēgta vai ieslēgta balss vadība.</string>

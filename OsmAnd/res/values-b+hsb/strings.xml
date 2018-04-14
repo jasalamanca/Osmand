@@ -49,7 +49,6 @@
     <string name="switch_start_finish">Start a cil wuměnić</string>
     <string name="starting_point">Startowy dypk</string>
     <string name="shared_string_not_selected">Njeje wubrane</string>
-    <string name="rec_split_storage_size">Wulkosć składowaka</string>
     <string name="available_maps">Přistupne karty</string>
     <string name="impassable_road_desc">Wubjerće puće, kiž chceće při nawigaciji wobeńć.</string>
     <string name="shared_string_sound">Zwuk</string>
@@ -60,14 +59,6 @@
     <string name="rendering_attr_horseRoutes_name">Konjace čary</string>
     <string name="shared_string_near">Blisko</string>
     <string name="shared_string_hide">Schować</string>
-    <string name="av_video_quality_low">Najniša kwalita</string>
-    <string name="av_video_quality_high">Najwyša kwalita</string>
-    <string name="av_video_quality">Kwalita wideja</string>
-    <string name="av_video_quality_descr">Wubjerće kwalitu wideja.</string>
-    <string name="av_audio_format">Format awdijo-dataje</string>
-    <string name="av_audio_format_descr">Wubjerće format awdijo-dataje.</string>
-    <string name="av_audio_bitrate">awdijo-bitrate</string>
-    <string name="av_audio_bitrate_descr">Wubjerće awdijo-bitrate.</string>
     <string name="access_from_map">Přistup z karty</string>
     <string name="show_on_start">Wot započatka pokazać</string>
     <string name="osm_save_offline">Offline składować</string>
@@ -1103,7 +1094,6 @@
     <string name="shared_string_sort">Sortěrować</string>
     <string name="is_saved">bu składowane</string>
     <string name="osm_edit_context_menu_delete">OSM-změnu wotstronić</string>
-    <string name="local_recordings_delete_all_confirm">Chceš %1$d noticu wotstronić. Sy sej wěsty/a?</string>
     <string name="shared_string_delete">Wotstronić</string>
     <string name="shared_string_delete_all">Wšitke wotstronić</string>
     <string name="local_osm_changes_delete_all_confirm">Chceš %1$d změnow na OSM wotstronić. Sy sej wěsty/a?</string>
@@ -1208,8 +1198,6 @@
     <string name="shared_string_apply">Přewzać</string>
     <string name="shared_string_do_not_show_again">Wjace njepokazać</string>
     <string name="record_plugin_name">Nahrawanje jězbow</string>
-    <string name="audionotes_plugin_name">Awdijowe/widejowe noticy</string>
-    <string name="audionotes_plugin_description">Přidatk za awdijowe/widejowe noticy skići móžnosć, po puću awdijowe/fotowe/widejowe noticy za wěstu poziciju nahrać, pak přez kneflk na kartowym wobrazu, abo direktnje přez kontekstowy meni.</string>
     <string name="osm_settings">Wobdźěłanje OSM</string>
     <string name="rendering_attr_roadStyle_name">Stil pućow</string>
     <string name="rendering_attr_roadStyle_description">Stil pućow</string>
@@ -1238,7 +1226,6 @@
     <string name="speak_speed_limit">Wobmjezowanja spěšnosće</string>
     <string name="cancel_route">Čaru zaćisnyć</string>
     <string name="recording_context_menu_show">Pokazać</string>
-    <string name="map_widget_av_notes">Awdijowe/widejowe noticy</string>
     <string name="map_widget_max_speed">Wobmjezowanje spěšnosće</string>
     <string name="map_widget_reset">Standardne nastajenja wobnowić</string>
     <string name="left_side_navigation">Jězdźenje nalěwo</string>
@@ -1333,11 +1320,7 @@
     <string name="context_menu_item_open_note">OSM-noticu wočinić</string>
     <string name="osm_edit_created_note">OSM-notica je so wutworiła</string>
     <string name="osn_reopen_dialog_title">Noticu znowa wočinić</string>
-    <string name="av_locations_descr">GPX-dataja z městnami noticow.</string>
-    <string name="share_note">Noticu rozšěrić</string>
     <string name="stop_routing_confirm">Chceš nawigaciju woprawdźe přetorhnyć?</string>
-    <string name="recording_context_menu_arecord">Awdio-noticu nahrać</string>
-    <string name="recording_context_menu_vrecord">Widejo-noticu nahrać</string>
     <string name="what_is_here">Što je tu:</string>
     <string name="without_time_limit">bjez časoweho wobmjezowanja</string>
     <string name="context_menu_read_full_article">Cyły zapisk čitać</string>
@@ -1354,7 +1337,6 @@
     <string name="shared_string_deleted">Wotstronjene</string>
     <string name="shared_string_edited">Wobdźěłane</string>
     <string name="shared_string_added">Přidate</string>
-    <string name="notes_by_date">Noticy po datumje</string>
     <string name="by_date">po datumje</string>
     <string name="by_type">po družinje</string>
     <string name="empty_state_markers_groups_desc">Móžeš faworitowe skupiny abo pućne dypki jako markěrowanja importować.</string>
@@ -1447,7 +1429,6 @@
     <string name="shared_string_my_tracks">Moje puće</string>
     <string name="shared_string_currently_recording_track">Tuchwilne nahrawanje puća</string>
     <string name="shared_string_audio">Awdijo</string>
-    <string name="shared_string_video">Widejo</string>
     <string name="shared_string_photo">Foto</string>
     <string name="route_points">Čarowe dypki</string>
     <string name="track_segments">Pućne wotrězki</string>

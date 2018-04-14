@@ -41,31 +41,17 @@
     <string name="stop_routing_confirm">آیا راهبری را قطع می‌کنید؟</string>
     <string name="clear_dest_confirm">آیا برای پاک‌کردن مقصد (و مقصدهای بین‌راهی) مطمئن هستید؟</string>
     <string name="intermediate_points_change_order">تغییر ترتیب</string>
-    <string name="av_def_action_video">ضبط ویدئو</string>
-    <string name="av_def_action_audio">ضبط صدا</string>
-    <string name="av_video_format_descr">قالب خروجی ویدئو را انتخاب کنید.</string>
-    <string name="av_video_format">قالب خروجی ویدئو</string>
-    <string name="av_settings">تنظیمات صدا/ویدئو</string>
     <string name="av_use_external_recorder">استفاده از ضبط‌کنندهٔ سیستم</string>
     <string name="av_use_external_camera_descr">برای عکس‌گرفتن از برنامهٔ خود دستگاه استفاده کن.</string>
     <string name="av_use_external_camera">از برنامهٔ دوربین استفاده کن</string>
-    <string name="av_settings_descr">تنظیمات صدا و ویدئو را پیکربندی کنید.</string>
     <string name="recording_error">در حین ضبط خطایی رخ داد</string>
-    <string name="recording_camera_not_available">دسترسی به دوربین امکان‌پذیر نیست</string>
-    <string name="recording_context_menu_arecord">یادداشت صوتی</string>
-    <string name="recording_context_menu_vrecord">یادداشت ویدئویی</string>
-    <string name="layer_recordings">لایهٔ ضبط‌شده‌ها</string>
     <string name="recording_can_not_be_played">فایل ضبط‌شده قابل‌پخش نیست</string>
     <string name="recording_context_menu_delete">حذف فایل ضبط‌شده</string>
     <string name="recording_context_menu_play">پخش</string>
     <string name="recording_default_name">ضبط</string>
     <string name="shared_string_control_stop">توقف</string>
     <string name="shared_string_control_start">شروع</string>
-    <string name="map_widget_av_notes">یادداشت‌های صوتی/تصویری</string>
-    
-    <string name="map_widget_audionotes">یادداشت‌های صوتی</string>
-    <string name="audionotes_plugin_description">با استفاده از افزونهٔ یادداشت صوتی/تصویری در حین سفر یادداشت‌های صوتی/عکسی/ویدئویی بگذارید. این کار با استفاده از دکمه‌ای بر روی صفحهٔ نقشه امکان‌پذیر است. همچنین می‌توانید با استفاده از منوی زمینه برای هر نقطه روی نقشه یادداشت بگذارید.</string>
-    <string name="audionotes_plugin_name">یادداشت‌های صوتی/تصویری</string>
+
     <string name="download_select_map_types">نقشه‌های دیگر</string>
     <string name="download_regular_maps">نقشهٔ استاندارد</string>
     <string name="download_roads_only_maps">فقط نقشهٔ جاده‌ها</string>
@@ -184,8 +170,7 @@
     <string name="cancel_route">کنارگذاشتن مسیر</string>
     <string name="max_speed_none">هیچ‌کدام</string>
     <string name="dropbox_plugin_name">افزونهٔ دراپ‌باکس</string>
-    
-    <string name="av_use_external_recorder_descr">برای ویدئو از ضبط‌کنندهٔ خود دستگاه استفاده کن.</string>
+
     <string name="recording_open_external_player">بازکردن پخش‌کنندهٔ خارجی</string>
     <string name="recording_unavailable">موجود نیست</string>
     <string name="map_widget_distancemeasurement">اندازه‌گیری مسافت</string>
@@ -204,7 +189,6 @@
     <string name="item_checked">انتخاب‌شده</string>
     <string name="item_unchecked">انتخاب‌نشده</string>
     <string name="prefer_in_routing_title">ترجیح‌دادن…</string>
-	<string name="local_indexes_cat_av">داده‌های صوتی/تصویری</string>
     <string name="precise_routing_mode">مسیریابی دقیق (آلفا)</string>
     <string name="recording_photo_description">تصویر %1$s از %2$s</string>
     <string name="av_widget_action">عملکرد پیش‌فرض ابزارک</string>
@@ -602,9 +586,6 @@
     <string name="srtm_paid_version_msg">لطفاً افزونهٔ منحنی‌های تراز را بخرید تا به توسعهٔ بیشتر نرم‌افزار کمک کنید.</string>
     <string name="srtm_paid_version_title">افزونهٔ منحنی‌های تراز</string>
     <string name="av_widget_action_descr">عملکرد پیش‌فرض ابزارک را انتخاب کنید.</string>
-    <string name="recording_is_recorded">صدا/ویدئو در حال ضبط است. برای پایان‌دادن به آن ابزارک صدا/ویدئو را لمس کنید.</string>
-    <string name="recording_playing">صدایی از فایل ضبط‌شدهٔ موردنظر در حال پخش است. 
-\n%1$s</string>
     <string name="recording_delete_confirm">آیا این مورد ضبط‌شده را پاک می‌کنید؟</string>
     <string name="recording_description">در حال ضبط %1$s %3$s %2$s</string>
     <string name="osmand_srtm_short_description_80_chars">افزونهٔ OsmAnd برای منحنی‌های تراز آفلاین</string>
@@ -657,8 +638,6 @@
 	<string name="settings_preset_descr">نمای نقشه و تنظیمات راهبری برای هر پروفایل جداگانه ذخیره می‌شود. پروفایل پیش‌فرض خود را اینجا تنظیم کنید.</string>
     <string name="osmand_background_plugin_description">تنظیمات مربوط به فعال‌سازی ردگیری و راهبری در حالت پس‌زمینه (صفحه خاموش) را نشان می‌دهد که با ارسال بیدارباش‌های متناوب به جی‌پی‌اس دستگاه این کار را انجام می‌دهد.</string>
     <string name="av_def_action_choose">انتخاب برحسب تقاضا</string>
-    <string name="audionotes_location_not_defined">مکانی برای یادداشت‌گذاری تعیین نشده است.
-\nمکانی را مشخص و از طریق منوی زمینه اقدام کنید.</string>
     <string name="rendering_attr_showRoadMaps_description">انتخاب کنید چه زمانی نقشه‌های فقط-جاده‌ای نشان داده شود:</string>
 	<string name="target_points">مقصدها</string>
     <string name="ending_point_too_far">نقطهٔ پایانی از نزدیک‌ترین جاده خیلی دور است.</string>
@@ -1650,11 +1629,9 @@
 	<string name="back_to_map">برگشتن به نقشه</string>
 	<string name="plugin_touringview_name">نمای گشتی نقشه</string>
 	<string name="shared_string_audio">صدا</string>
-	
-	
-	<string name="share_note">به‌اشتراک‌گذاری یادداشت</string>
-	
-    <string name="location_on_map">موقعیت: 
+
+
+    <string name="location_on_map">موقعیت:
 \n عرض %1$s 
 \n طول %2$s</string>
 	<string name="watch">مشاهده</string>
@@ -1839,8 +1816,7 @@
 	<string name="shared_string_deselect_all">پاک‌کردن همهٔ انتخاب‌ها</string>
 	<string name="shared_string_unexpected_error">خطای غیرمنتظره رخ داد</string>
 	<string name="shared_string_address">نشانی</string>
-	<string name="shared_string_video">ویدئو</string>
-	<string name="shared_string_photo">عکس</string>
+    <string name="shared_string_photo">عکس</string>
 	<string name="route_points">نقاط مسیر</string>
 	<string name="track_segments">قطعات مسیر</string>
 	<string name="track_points">نقاط مسیر</string>
@@ -1911,12 +1887,6 @@
     <string name="no_address_found">آدرسی پیدا نشد</string>
 	<string name="shared_string_near">نزدیک</string>
     <string name="shared_string_hide">نشان نده</string>
-    <string name="av_video_quality_low">پایین‌ترین کیفیت</string>
-    <string name="av_video_quality_high">بالاترین کیفیت</string>
-    <string name="av_video_quality">کیفیت ویدئوی خروجی</string>
-    <string name="av_video_quality_descr">کیفیت ویدئو را انتخاب کنید.</string>
-    <string name="av_audio_format">قالب صدای خروجی</string>
-    <string name="av_audio_format_descr">قالب صدای خروجی را انتخاب کنید.</string>
     <string name="please_specify_poi_type_only_from_list">لطفاً نوع درست POI را انتخاب کنید یا از این مرحله رد شوید.</string>
     <string name="access_from_map_description">کلید منو به‌جای آوردن منو پیشخوان را می‌آورد.</string>
     <string name="access_from_map">دسترسی از نقشه</string>
@@ -2281,10 +2251,6 @@
     <string name="n_items_removed">حذف شدند</string>
     <string name="starting_point">مبدأ</string>
     <string name="shared_string_not_selected">انتخاب نشده</string>
-    <string name="rec_split_desc">هنگامی که فضای استفاده‌شده افزون بر فضای ذخیره‌سازی می‌شود، کلیپ‌ها را جایگزین کن.</string>
-    <string name="rec_split_clip_length_desc">مدت‌زمان کلیپ‌های ضبط‌شده را مشخص کنید.</string>
-    <string name="rec_split_storage_size">حجم فضای ذخیره‌سازی</string>
-    <string name="rec_split_storage_size_desc">مقدار فضای قابل‌تصرف برای همهٔ کلیپ‌های ضبط‌شده را مشخص کنید.</string>
     <string name="live_updates">به‌روزرسانی‌های پویا</string>
     <string name="available_maps">نقشه‌های موجود</string>
     <string name="select_voice_provider">راهنمای صوتی را انتخاب کنید</string>
@@ -2296,8 +2262,6 @@
     <string name="route_distance">مسافت:</string>
     <string name="route_duration">مدت‌زمان:</string>
     <string name="rendering_attr_horseRoutes_name">راه اسب‌رو</string>
-    <string name="av_audio_bitrate">بیت‌رِیت صدا</string>
-    <string name="av_audio_bitrate_descr">نرخ بیتی صدا را انتخاب کنید.</string>
     <string name="show_on_start">هنگام شروع نشانش بده</string>
     <string name="copied_to_clipboard">کپی شد</string>
     <string name="osm_edit_deleted_poi">حذف POI</string>
@@ -2374,7 +2338,6 @@
     <string name="shared_string_import2osmand">واردکردن به OsmAnd</string>
     <string name="read_full_article">مقالهٔ کامل را بخوانید (آنلاین)</string>
     <string name="shared_string_wikipedia">ویکی‌پدیا</string>
-    <string name="local_recordings_delete_all_confirm">دارید %1$d یادداشت را پاک می‌کنید. آیا مطمئن هستید؟</string>
     <string name="osmand_parking_hour">س</string>
     <string name="osmand_parking_minute">دق‍</string>
     <string name="shared_string_collapse">مخفی شود</string>
@@ -2513,9 +2476,6 @@
     <string name="quick_action_add_poi">افزودن POI</string>
     <string name="quick_action_map_style">تغییر سبک نقشه</string>
     <string name="quick_action_map_style_switch">سبک نقشه به «%s» تغییر کرد.</string>
-    <string name="quick_action_take_audio_note">یادداشت صوتی</string>
-    <string name="quick_action_take_video_note">یادداشت ویدئویی</string>
-    <string name="quick_action_take_photo_note">یادداشت عکسی</string>
     <string name="quick_action_add_osm_bug">افزودن توضیح ویرایشی</string>
     <string name="quick_action_navigation_voice">صدا روشن/خاموش</string>
     <string name="quick_action_navigation_voice_off">صدا خاموش است</string>
@@ -2529,9 +2489,6 @@
     <string name="quick_actions_delete_text">آیا برای حذف‌کردن عملیات «%s» مطمئن هستید؟</string>
     <string name="quick_favorites_show_favorites_dialog">کادر نقاط برگزیده را نشان بده</string>
     <string name="quick_action_add_marker_descr">با لمس دکمهٔ عملیاتی یک نشانه در مرکز صفحه ایجاد می‌شود.</string>
-    <string name="quick_action_take_audio_note_descr">با لمس دکمهٔ عملیاتی یک یادداشت صوتی در مرکز صفحه ایجاد می‌شود.</string>
-    <string name="quick_action_take_video_note_descr">با لمس دکمهٔ عملیاتی یک یادداشت ویدئویی در مرکز صفحه ایجاد می‌شود.</string>
-    <string name="quick_action_take_photo_note_descr">با لمس دکمهٔ عملیاتی یک یادداشت تصویری در مرکز صفحه ایجاد می‌شود.</string>
     <string name="quick_action_add_osm_bug_descr">با لمس دکمهٔ عملیاتی یک توضیح ویرایشی OSM در مرکز صفحه ایجاد می‌شود.</string>
     <string name="quick_action_add_poi_descr">با لمس دکمهٔ عملیاتی یک مکان POI در مرکز صفحه ایجاد می‌شود.</string>
     <string name="quick_action_navigation_voice_descr">با لمس دکمهٔ عملیاتی در حین راهبری، راهنمای صوتی فعال یا غیرفعال می‌شود.</string>
@@ -2707,7 +2664,6 @@
     <string name="auto_split_recording_title">بخش‌بندی خودکار ضبط‌ها پس از وقفه</string>
     <string name="save_track_min_distance">کمترین جابه‌جایی برای ثبت</string>
     <string name="translit_names">نویسه‌گردانی نام‌ها</string>
-    <string name="rec_split_clip_length">مدت کلیپ</string>
     <string name="shared_string_sound">صدا</string>
     <string name="show_on_start_description">اگر خاموش باشد، مستقیماً صفحهٔ نقشه را برایتان می‌آورد.</string>
     <string name="osm_edit_modified_poi">اصلاح POI</string>
@@ -2879,8 +2835,7 @@
 \n • رابط کاربری و شیوهٔ دانلود اطلاعات نقشه‌ها بازسازی شده است
 \n
 \n و…</string>
-    <string name="av_locations_descr">فایل GPX با مکان‌های یادداشت‌دار.</string>
-    <string name="osmand_plus_extended_description_part1">برنامهٔ OsmAnd+‎ (مخفف OSM Automated Navigation Directions به‌معنی راهبری خودکار با نقشهٔ OSM) یک نرم‌افزار نقشه و راهبری است که به گسترهٔ وسیعی از داده‌های نقشهٔ باز شهری (OpenStreetMap یا به‌صورت خلاصه OSM) دسترسی دارد. این داده‌های رایگان و جهانی با بالاترین کیفیت ارائه می‌شوند. 
+    <string name="osmand_plus_extended_description_part1">برنامهٔ OsmAnd+‎ (مخفف OSM Automated Navigation Directions به‌معنی راهبری خودکار با نقشهٔ OSM) یک نرم‌افزار نقشه و راهبری است که به گسترهٔ وسیعی از داده‌های نقشهٔ باز شهری (OpenStreetMap یا به‌صورت خلاصه OSM) دسترسی دارد. این داده‌های رایگان و جهانی با بالاترین کیفیت ارائه می‌شوند.
 \nراهبر دیداری و شنیداری، مشاهدهٔ مکان‌های محبوب (POIها یا Points of interest)، ایجاد و مدیریت ردهای GPX، استفاده از تصویرسازی منحنی‌های تراز و اطلاعات ارتفاع، انتخاب حالت‌های پیاده، دوچرخه، خودرو، امکان ویرایش مکان‌ها و... چیزهایی هستند که تجربهٔ مؤثر و لذت‌بخشی را در کار با نقشه برایتان به ارمغان می‌آورد.
 \n‏OsmAnd+‎ نسخهٔ پولی این برنامه است. با خریدن آن از این پروژه حمایت می‌کنید، سرمایه‌ای برای توسعهٔ قابلیت‌های جدید فراهم می‌کنید و آخرین به‌روزرسانی‌ها در اختیارتان قرار می‌گیرد.
 \nاز ویژگی‌های مهم برنامه:</string>
@@ -2971,9 +2926,6 @@
     <string name="marker_activated">نشانهٔ %s فعال شد.</string>
     <string name="one_tap_active_descr">یکی از نشانه‌ها را روی نقشه انتخاب کنید و بدون بازکردن منوی زمینه، آن را به بالاترین مکان در میان نشانه‌های فعال ببرید.</string>
     <string name="one_tap_active">فعال‌کردن با یک بار لمس</string>
-    <string name="empty_state_av_notes">یادداشت بگذارید!</string>
-    <string name="empty_state_av_notes_desc">با استفاده از ابزارک یا منوی زمینه، برای هر نقطه‌ای روی نقشه یادداشت صوتی، عکسی یا ویدئویی بگذارید.</string>
-    <string name="notes_by_date">یادداشت‌ها بر اساس تاریخ</string>
     <string name="by_date">بر اساس تاریخ</string>
     <string name="by_type">بر اساس نوع</string>
     <string name="empty_state_markers_history">\@string/shared_string_history</string>

@@ -906,8 +906,7 @@
     <string name="index_name_openmaps">OpenMaps - Європа</string>
     
     <string name="download_hillshade_maps">Затемнення рельєфу</string>
-    
-    <string name="local_indexes_cat_av">Аудіо/Відео дані</string>
+
     <string name="stop_routing_confirm">Ви впевнені, що хочете зупинити навігацію?</string>
     <string name="clear_dest_confirm">Ви впевнені, що хочете вилучити пункт призначення (і проміжні точки)?</string>
     <string name="recording_context_menu_show">Показати</string>
@@ -920,41 +919,28 @@
     <string name="intermediate_points_change_order">Змінити порядок</string>
     <string name="srtm_paid_version_msg">Розгляньте, будь ласка, можливість придбання втулка «Ізолінії висот» на Маркеті, це підтримає його подальшу розробку.</string>
     <string name="srtm_paid_version_title">Втулок Ізолінії висот</string>
-    <string name="av_def_action_video">Запис відео</string>
-    <string name="av_def_action_audio">Запис аудіо</string>
     <string name="av_widget_action_descr">Вибрати типову дію для віджету.</string>
     <string name="av_widget_action">Дія для віджета</string>
     
     <string name="precise_routing_mode_descr">Ввімкніть, для обчислення точних маршрутів без збоїв. Цей режим працює на обмеженій відстані та є повільним.</string>
     <string name="precise_routing_mode">Точний маршрут (alpha)</string>
-    <string name="av_video_format_descr">Виберіть формат відео.</string>
-    <string name="av_video_format">Формат відео</string>
-    <string name="av_use_external_recorder_descr">Використовувати системну програму для запису відео.</string>
     <string name="av_use_external_recorder">Використовувати системну програму</string>
     <string name="av_use_external_camera_descr">Використовувати системну програму для фото.</string>
     <string name="recording_unavailable">недоступно</string>
     <string name="shared_string_control_stop">Стоп</string>
     <string name="shared_string_control_start">Старт</string>
-    <string name="map_widget_av_notes">Аудіо/відео-нотатки</string>
     <string name="osmand_srtm_short_description_80_chars">Втулок OsmAnd для відображення рельєфу</string>
     
     <string name="av_use_external_camera">Використовувати програму Камера</string>
-    <string name="av_settings_descr">Налаштування аудіо/відео запису.</string>
-    <string name="av_settings">"Налаштування аудіо/відео " </string>
     <string name="recording_error">"Помилка під час запису " </string>
-    <string name="recording_camera_not_available">Камера не доступна</string>
     <string name="recording_default_name">Запис</string>
     <string name="av_def_action_choose">Обрати за запитом</string>
-    <string name="recording_is_recorded">Аудіо/відео зараз записується. Для зупинки натисніть на АВ-віджет.</string>
-    <string name="recording_context_menu_arecord">Створити аудіо-нотатку</string>
-    <string name="recording_context_menu_vrecord">Створити відео-нотатку</string>
     <string name="recording_context_menu_delete">Вилучити запис</string>
     <string name="recording_context_menu_play">Грати</string>
     
     
     <string name="map_widget_intermediate_distance">Проміжний пункт призначення</string>
     <string name="recording_can_not_be_played">Неможливо відтворити запис</string>
-    <string name="recording_playing">Відбувається відтворення аудіо\n%1$s</string>
     <string name="recording_open_external_player">Відкрити зовнішній програвач</string>
     <string name="recording_delete_confirm">Ви хочете вилучити даний запис?</string>
     
@@ -965,9 +951,6 @@
     
     
     <string name="map_widget_distancemeasurement">Вимірювання відстаней</string>
-    <string name="map_widget_audionotes">Аудіо-нотатки</string>
-    <string name="audionotes_plugin_description">Втулок для створення аудіо/відео заміток під час подорожей, за допомогою використання кнопки на екрані мапи або через контекстне меню на будь-якому місці на мапі.</string>
-    <string name="audionotes_plugin_name">Аудіо/відео-нотатки</string>
     <string name="index_srtm_parts">частин</string>
     <string name="index_srtm_ele">Ізолінії висот</string>
     <string name="srtm_plugin_description">Цей втулок показує як ізолінії висот так і рельєф на стандартних мапах OsmAnd. Ці можливості стануть в нагоді для спортсменів, туристів, мандрівників та для будь-кого, хто цікавиться структурою рельєфу місцевості. 
@@ -994,9 +977,8 @@
     <string name="safe_mode_description">Запустити програму в безпечному режимі (сповільнює роботу програми, використовуючи тільки Android-функції).</string>
     <string name="safe_mode">Безпечний режим</string>
     <string name="native_library_not_running">Програму запущено в безпечному режимі (вимикається в Налаштуваннях).</string>
-    <string name="audionotes_location_not_defined">Поточне місцезнаходження для нотатки не визначено. Використовуйте контекстне меню для прив\'язки нотатки до даної точки.</string>
-    
-    
+
+
     <string name="monitoring_control_start">GPX</string>
     <string name="background_service_is_enabled_question">Фоновий режим запущений. Ви хочете зупинити його роботу також?</string>
     <string name="close_changeset">Закрити набір змін</string>
@@ -1070,9 +1052,8 @@
 	<string name="support_new_features_descr">Пожертвувати, для реалізації нових можливостей в застосунку.</string>
 	<string name="email">Email</string>
 <string name="map_widget_gps_info">GPS дані</string>
-    <string name="layer_recordings">Аудіо записи</string>
-    
-	
+
+
     <string name="osmand_play_title_30_chars">OsmAnd Мапи і Навігація</string>
 	<string name="osmand_plus_play_title_30_chars">OsmAnd+ Мапи і Навігація</string>
 	<string name="layer_hillshade">Шар рельєфа місцевості</string>
@@ -1735,11 +1716,9 @@
     <string name="navigate_point_northing">Північної широти</string>
     <string name="shared_string_dismiss">Не надсилати</string>
     <string name="shared_string_audio">Аудіо</string>
-	
-	
-	<string name="share_note">Поділитись нотаткою</string>
-	
-	<string name="notes">Нотатки</string>
+
+
+    <string name="notes">Нотатки</string>
 	<string name="online_map">Онлайн мапа</string>
 	<string name="roads_only">Тільки дороги</string>
     <string name="free">Вільно %1$s</string>
@@ -1839,8 +1818,7 @@
 	<string name="shared_string_action_template">Дія {0}</string>
 	<string name="shared_string_collapse">Згорнути</string>
 	<string name="shared_string_currently_recording_track">Поточний трек, що записується</string>
-	<string name="shared_string_video">Відео</string>
-	<string name="shared_string_photo">Фото</string>
+    <string name="shared_string_photo">Фото</string>
 	<string name="route_points">Точки маршруту</string>
 	<string name="track_segments">Відрізки треку</string>
 	<string name="track_points">Точки треку</string>
@@ -1977,8 +1955,7 @@
     <string name="rendering_value_walkingRoutesOSMC_name">Розмальовування відповідно пішохідній символіці OSMC</string>
     <string name="osmo_share_my_location">Повідомляти про місцезнаходження</string>
     <string name="shared_string_logoff">Вийти</string>
-    <string name="local_recordings_delete_all_confirm">Ви збираєтеся видалити %1$d нотаток. Ви впевнені?</string>
-	<string name="download_wikipedia_maps">Вікіпедія</string>
+    <string name="download_wikipedia_maps">Вікіпедія</string>
     <string name="rendering_value_default13_name">Типово (13)</string>
 	<string name="rendering_value_defaultTranslucentCyan_name">Типово (напівпрозорий блакитний)</string>
     <string name="rendering_value_translucent_orange_name">Напівпрозорий помаранчевий</string>
@@ -1987,14 +1964,6 @@
     <string name="no_address_found">Адреса не визначена</string>
     <string name="shared_string_near">Поблизу</string>
     <string name="shared_string_hide">Приховати</string>
-    <string name="av_video_quality_low">Нижча якість</string>
-    <string name="av_video_quality_high">Вища якість</string>
-    <string name="av_video_quality">Якість відео</string>
-    <string name="av_video_quality_descr">Виберіть якість відео.</string>
-    <string name="av_audio_format">Формат аудіо</string>
-    <string name="av_audio_format_descr">Виберіть формат аудіо.</string>
-    <string name="av_audio_bitrate">Бітова швидкість аудіо</string>
-    <string name="av_audio_bitrate_descr">Виберіть бітову швидкість аудіо.</string>
     <string name="please_specify_poi_type_only_from_list">Будь ласка, вкажіть коректний тип POI з переліку, або пропустіть його.</string>
     <string name="show_on_start">Показувати після старту</string>
     <string name="copied_to_clipboard">Скопійовано до буферу обміну</string>
@@ -2181,7 +2150,6 @@
     <string name="no_microphone_permission">Додаток не має дозволу на використання мікрофону.</string>
     <string name="route_distance">Відстань:</string>
     <string name="route_duration">Час:</string>
-    <string name="rec_split_storage_size">Розмір сховища</string>
     <string name="live_updates">Автоматичні оновлення</string>
     <string name="available_maps">Доступні мапи</string>
     <string name="select_voice_provider">Виберіть голосові вказівки</string>
@@ -2209,7 +2177,6 @@
     <string name="shared_string_type">Тип</string>
     <string name="starting_point">Початкова точка</string>
     <string name="shared_string_not_selected">Не вибрано</string>
-    <string name="rec_split_clip_length">Тривалість кліпу</string>
     <string name="nm">мор.м.</string>
     <string name="nm_h">мор.м./год</string>
     <string name="update_time">Час оновлення</string>
@@ -2229,9 +2196,6 @@
     <string name="clear_updates_proposition_message">Ви можете видалити завантажені оновлення та повернутися до початкової редакції карти</string>
     <string name="rec_split">Розбиття на кліпи</string>
     <string name="rec_split_title">Використовувати розбиття на кліпи</string>
-    <string name="rec_split_desc">Циклічно перезаписувати кліпи, коли недостатньо місця на сховищі.</string>
-    <string name="rec_split_clip_length_desc">Верхня межа часу записаного кліпу.</string>
-    <string name="rec_split_storage_size_desc">Обсяг пам’яті, який може бути зайнятий всіма кліпами.</string>
     <string name="dashboard_or_drawer_title">Стільниця або меню керування</string>
     <string name="live_update">Оновлення</string>
     <string name="reports_for">Відзвітувати</string>
@@ -2249,7 +2213,6 @@
     <string name="map_markers">Маркери мапи</string>
     <string name="map_marker">Позначка мапи</string>
     <string name="consider_turning_polygons_off">Рекомендується вимкнути показ полігонів.</string>
-    <string name="av_locations_descr">Файл GPX з координатами нотаток.</string>
     <string name="show_free_version_banner_description">Навіть, якщо ви придбали платну версію, ви все ще можете бачити банер для безкоштовної версії.</string>
     <string name="dashboard_or_drawer_description">У вас зараз є вибір керувати застосунком через гнучку панель керування або через звичайне мені. Ваші вподобання завжди можна змінити в параметрах панелі керування.</string>
     <string name="release_2_2">\\u2022 Нові елементи інтерфейсу, що залежать від поточного стану, для вибору місця на мапи та на інших екранах
@@ -2647,15 +2610,9 @@
 	<string name="quick_action_add_osm_bug">Додати нотатку OSM</string>
     <string name="rendering_value_fine_name">Дуже тонкий</string>
     <string name="navigate_point_olc">Відкритий код розташування (OLC)</string>
-    <string name="quick_action_take_audio_note">Створити звукову нотатку</string>
-    <string name="quick_action_take_video_note">Створити відео-нотатку</string>
-    <string name="quick_action_take_photo_note">Створити фото-нотатку</string>
     <string name="quick_favorites_name_preset">Найменування</string>
     <string name="quick_action_add_marker_descr">При натисканні на кнопку дії додасть маркер мапи в центрі екрану.</string>
     <string name="quick_action_add_gpx_descr">При натисканні на кнопку дії додасть проміжну крапку GPX в центрі екрану.</string>
-    <string name="quick_action_take_audio_note_descr">При натисканні кнопки дії додасть звукову нотатку в центрі екрану.</string>
-    <string name="quick_action_take_video_note_descr">При натисканні кнопки дії додасть відео-примітку в центрі екрану.</string>
-    <string name="quick_action_take_photo_note_descr">При натисканні кнопки дії додасть фото-примітку у центрі екрану.</string>
     <string name="quick_action_add_osm_bug_descr">При натисканні кнопки дії додасть OSM-нотатку на мапу у центрі екрану.</string>
     <string name="quick_action_add_poi_descr">При натисканні кнопки дії додасть POI в центрі екрану.</string>
     <string name="quick_action_navigation_voice_descr">При натисканні кнопки дії вмикаються або вимикаються голосові підказки під час навігації.</string>
@@ -3124,9 +3081,6 @@
     <string name="marker_activated">Маркер %s активовано.</string>
     <string name="one_tap_active_descr">Натискання на маркер на мапі перемістить його на перше місце в списку активних маркерів, не відкриваючи контекстне меню.</string>
     <string name="one_tap_active">Активація одним натисненням</string>
-    <string name="empty_state_av_notes">Робіть нотатки!</string>
-    <string name="empty_state_av_notes_desc">Додайте аудіо, відео або фото замітку в будь-яку точку на мапі, використовуючи віджет або контекстне меню.</string>
-    <string name="notes_by_date">Примітки за датою</string>
     <string name="by_date">За датою</string>
     <string name="by_type">За типом</string>
     <string name="modify_the_search_query">Змінити пошуковий запит.</string>

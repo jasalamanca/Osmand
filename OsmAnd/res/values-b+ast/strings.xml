@@ -42,7 +42,6 @@
 	<string name="lang_mk">Macedoniu</string>
 	<string name="read_more">Llei más</string>
 	<string name="shared_string_qr_code">Códigu QR</string>
-	<string name="rec_split_storage_size">Tamañu d\'almacenamientu</string>
 	<string name="available_maps">Mapes disponibles</string>
 	<string name="shared_string_sound">Soníu</string>
 	<string name="impassable_road_desc">Esbilla les estraes que quies evitar na navegación.</string>
@@ -50,11 +49,6 @@
 	<string name="no_camera_permission">L\'aplicación nun tien permisu p\'acceder a la cámara.</string>
 	<string name="no_microphone_permission">L\'aplicación nun tien permisu p\'acceder al micrófonu.</string>
 	<string name="route_distance">Distancia:</string>
-	<string name="av_video_quality_low">Calidá más baxa</string>
-	<string name="av_video_quality_high">Calidá más alta</string>
-	<string name="av_video_quality">Calidá de salida de videu</string>
-	<string name="av_audio_format">Formatu de salida d\'audiu</string>
-	<string name="av_audio_bitrate">Tasa de bits d\'audiu</string>
 	<string name="osn_add_dialog_success">Creóse con ésitu la nota</string>
 	<string name="osb_author_dialog_password">Contraseña d\'OSM (opcional)</string>
 	<string name="osn_close_dialog_error">Asocedió una esceición: nun se zarró la nota</string>
@@ -162,11 +156,9 @@
 	<string name="shared_string_my_places">Los mios llugares</string>
 	<string name="shared_string_my_favorites">Los mios favoritos</string>
 	<string name="shared_string_audio">Audiu</string>
-	<string name="shared_string_video">Videu</string>
 	<string name="shared_string_photo">Semeya</string>
 	<string name="shared_string_online_maps">Mapes en llinia</string>
-	<string name="audionotes_plugin_name">Notes d\'audiu/videu</string>
-	<string name="osmand_parking_plugin_name">Posición d\'aparcaderu</string>
+    <string name="osmand_parking_plugin_name">Posición d\'aparcaderu</string>
 	<string name="shared_string_accessibility">Accesibilidá</string>
 	<string name="osm_settings">Edición d\'OSM</string>
 	<string name="debugging_and_development">Desendolcu d\'OsmAnd</string>
@@ -487,10 +479,7 @@ Llo %2$s</string>
     <string name="access_hint_enter_description">Escribi la descripción.</string>
     <string name="osm_live_region_desc">Parte de la to donación unviaráse a usuarios d\'OSM qu\'unvien camudancies al mapa nesa rexón.</string>
     <string name="select_voice_provider_descr">Seleiciona o descarga la guía de voz pa la to llingua.</string>
-    <string name="av_video_quality_descr">Seleiciona la calidá de videu.</string>
-    <string name="av_audio_format_descr">Seleiciona la calidá de salida de soníu.</string>
-    <string name="av_audio_bitrate_descr">Seleiciona la tasa de bits del soníu.</string>
-    <string name="access_from_map_description">El botón de menú abre\'l tableru, non el menú.</string>
+	<string name="access_from_map_description">El botón de menú abre\'l tableru, non el menú.</string>
     <string name="show_on_start_description">«Off» llancia direutamente la pantalla del mapa.</string>
     <string name="default_speed_system_descr">Define la unidá de velocidá.</string>
     <string name="osmand_parking_plugin_description">El complementu de posición d\'aparcaderu déxate memorizar u ta aparcáu\'l to coche y cuantu tiempu-y queda (si hai llende de tiempu).
@@ -525,9 +514,7 @@ L\'allugamientu y tiempu son visibles nel cuadru de mandos d\'OsmAnd tamién nel
 
     <string name="index_name_voice">Avisos per voz (grabaos, carauterístiques llimitaes)</string>
     <string name="index_name_tts_voice">Indicaciones de voz (sintetizaes con TTS, preferibles)</string>
-    <string name="audionotes_location_not_defined">Entá nun se definió l\'allugamientu p\'asociar cola nota. «Usar allugamientu...» p\'asinar una nota al llugar especificáu.</string>
-    <string name="show_point_options">Usar allugamientu…</string>
-    <string name="local_recordings_delete_all_confirm">Vas desaniciar %1$d notes. ¿Tas seguru?</string>
+	<string name="show_point_options">Usar allugamientu…</string>
     <string name="local_osm_changes_upload_all_confirm">Vas xubir %1$d camudancia(es) a OSM. ¿Tas seguru?</string>
     <string name="shared_string_go">Dir</string>
     <string name="short_location_on_map">Lla %1$s
@@ -540,7 +527,6 @@ L\'allugamientu y tiempu son visibles nel cuadru de mandos d\'OsmAnd tamién nel
     <string name="shared_string_add">Amestar</string>
     <string name="shared_string_add_to_favorites">Amestar a favoritos</string>
     <string name="record_plugin_name">Grabación de viaxe</string>
-	<string name="audionotes_plugin_description">El complementu de notes d\'audiu/videu apurre la funcionalidá de facer notes d\'audiu/semeyes/videu nun viaxe, usando un botón na pantalla\'l mapa o direutamente dende\'l menú contestual pa cualesquier posición nel mapa.</string>
     <string name="free">%1$s llibre</string>
     <string name="remove_the_tag">DESANICIAR ETIQUETA</string>
     <string name="show_pedestrian_warnings">Pasos peatones</string>
@@ -985,7 +971,6 @@ Puntos</string>
 	<string name="waypoints_added_to_map_markers">Puntos de ruta añadíos a los marcadores del mapa</string>
 	<string name="plan_route_no_markers_toast">Hai qu\'amestar polo menos un marcador pa usar esta función.</string>
     <string name="osn_modify_dialog_error">Hebo una esceición: nun se camudó la nota</string>
-    <string name="empty_state_av_notes">¡Toma notes!</string>
     <string name="yesterday">Ayeri</string>
     <string name="this_year">Esti añu</string>
     <string name="move_all_to_history">Mover too al historial</string>
@@ -1004,9 +989,7 @@ Puntos</string>
     <string name="app_mode_boat">Barcu</string>
     <string name="access_arrival_time">Tiempu de llegada</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
-    <string name="local_indexes_cat_av">Datos d\'Audiu/Videu</string>
-    <string name="dropbox_plugin_name">Complementu Dropbox</string>
-    <string name="map_widget_audionotes">Notes d\'audiu</string>
+	<string name="dropbox_plugin_name">Complementu Dropbox</string>
     <string name="rendering_attr_noAdminboundaries_name">Llendes</string>
     <string name="target_points">Destinos</string>
     <string name="poi_filter_entertainment">Entretenimientu</string>
@@ -1079,8 +1062,6 @@ Puntos</string>
     <string name="marker_activated">Activáu el marcador %s.</string>
     <string name="one_tap_active_descr">"Prime un marcador del mapa pa movelu al principiu de los marcadores activos sin abrir el menú  de contestu."</string>
     <string name="one_tap_active">Activar con un toque</string>
-    <string name="empty_state_av_notes_desc">Añade una nota de soníu, videu o foto pa cada puntu del mapa, utilizando\\\'l complementu o\\\'l menú de contestu.</string>
-    <string name="notes_by_date">Notes per data</string>
     <string name="by_date">Per data</string>
     <string name="by_type">Per triba</string>
     <string name="looking_for_tracks_with_waypoints">Buscando traces con puntos de ruta</string>

@@ -970,47 +970,29 @@ Omogoča tudi dodajanje opomb v koledar za prikaz opomnikov ob daljših časih p
     <string name="recording_description">Snemanje %1$s %3$s na %2$s</string>
     <string name="recording_default_name">Snemanje</string>
     <string name="shared_string_control_stop">Zaustavi</string>
-    <string name="map_widget_av_notes">Zvočni in video zaznamki</string>
     <string name="osmand_srtm_short_description_80_chars">Vstavek za prikaz izohips v programu OsmAnd (brez povezave)</string>
 
 
     <string name="map_widget_distancemeasurement">Merjenje razdalj</string>
 
-    <string name="map_widget_audionotes">Zvočni zaznamek</string>
-    <string name="audionotes_plugin_description">Vstavek za snemanje zvočnih in video zaznamkov omogoča beleženje podrobnosti med potovanjem. Možnost se omogoči z izbiro vstavka ali preko vsebinskega menija zemljevida.</string>
-    <string name="audionotes_plugin_name">Zvočni in video zaznamki</string>
     <string name="index_srtm_parts">deli</string>
     <string name="download_srtm_maps">Podatki izohips</string>
-    <string name="recording_playing">Predvajanje zvoka iz izbranega posnetka.\n%1$s</string>
     <string name="recording_open_external_player">Odpri zunanji predvajalnik</string>
     <string name="recording_delete_confirm">Ali želite izbrisati ta posnetek?</string>
 
     <string name="recording_unavailable">ni na voljo</string>
-    <string name="recording_context_menu_arecord">Posnemi zvočni zaznamek</string>
-    <string name="recording_context_menu_vrecord">Posnemi video zaznamek</string>
     <string name="recording_can_not_be_played">Posnetka ni mogoče predvajati</string>
     <string name="recording_context_menu_delete">Izbriši posnetek</string>
-    <string name="recording_is_recorded">Zvok oziroma video se snema. Za ustavitev pritisnite gumb ustavi na gradniku.</string>
-    <string name="layer_recordings">Sloj posnetka</string>
     <string name="shared_string_control_start">Izmeri ↦</string>
 
 
-    <string name="av_def_action_video">Snemanje videa</string>
-    <string name="av_def_action_audio">Snemanje zvoka</string>
     <string name="av_widget_action_descr">Izberite privzeto dejanje gradnika.</string>
     <string name="av_widget_action">Privzeto dejanje gradnika</string>
-    <string name="av_video_format_descr">Izberite zapis za video.</string>
-    <string name="av_video_format">Zapis za video</string>
-    <string name="av_use_external_recorder_descr">Uporabi sistemski snemalnik videa.</string>
     <string name="av_use_external_recorder">Uporabi zunanji snemalnik</string>
-    <string name="av_settings_descr">Nastavi možnosti za zvok in video.</string>
-    <string name="av_settings">Nastavitve za zvok in video</string>
     <string name="recording_error">Med snemanjem je prišlo do napake </string>
-    <string name="recording_camera_not_available">Kamera ni na voljo</string>
     <string name="osmand_srtm_long_description_1000_chars">Ta vstavek omogoča prikaz izohips in reliefa pokrajine na shranjenih zemljevidih OsmAnd. Zmožnost je uporabna za športnike in pohodnike ter za vse, ki potrebujejo podatke o reliefu pokrajine.
 \n 
 \nGlobalni podatki (med 70 stopinj severno in 70 stopinj južno) temeljijo na meritvah SRTM (Shuttle Radar Topography Mission) in ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), ki je instrument za slikanje na krovu Terre, vodilnega satelita Nasinega sistema za opazovanje. ASTER je prizadevanje za sodelovanje med ameriško NASO, japonskim ministrstvom za gospodarstvo, trgovino in industrijo (METI) in japonskim vesoljskim sistemom (J-spacesystems).</string>
-    <string name="audionotes_location_not_defined">Mesto, ki naj bi ga povezali z zaznamkom, še ni določeno. Z možnostjo \"Uporabi mesto …\" je mogoče dodeliti zaznamek za določeno točko na zemljevidu.</string>
     <string name="srtm_paid_version_msg">Razmislite o nakupu vstavka za prikaz izohips v trgovini Market in s tem podprite nadaljnji razvoj.</string>
     <string name="srtm_paid_version_title">Vstavek Izohipse</string>
 
@@ -1025,7 +1007,6 @@ Omogoča tudi dodajanje opomb v koledar za prikaz opomnikov ob daljših časih p
     <string name="clear_dest_confirm">Ali ste prepričani, da želite izbrisati celotno pot do cilja?</string>
     <string name="precise_routing_mode_descr">Omogočite možnost za natančno izračunavanje poti. Možnost je še vedno omejena na točke, ki niso preveč oddaljene, storitev pa je tudi časovno zahtevnejša.</string>
     <string name="precise_routing_mode">Natančno usmerjanje (preizkusno)</string>
-    <string name="local_indexes_cat_av">Podatki zvoka/videa</string>
 
     <string name="support_new_features_descr">Donirajte in pripomogli boste k razvoju novih zmožnosti programa.</string>
 
@@ -1784,13 +1765,11 @@ ZŠ (β) %2$s</string>
     <string name="shared_string_collapse">Zloži</string>
     <string name="shared_string_currently_recording_track">Beleženje sledi</string>
     <string name="shared_string_audio">Zvok</string>
-    <string name="shared_string_video">Video</string>
     <string name="shared_string_photo">Fotografija</string>
     <string name="route_points">Točke poti</string>
     <string name="rename_failed">Preimenovanje je spodletelo.</string>
     <string name="days_behind">dni od posodobitve</string>
     <string name="back_to_map">Nazaj na zemljevid</string>
-    <string name="share_note">Objavi opombo</string>
     <string name="location_on_map">Koordinate:\nZŠ (β) %1$s\nZD (λ) %2$s</string>
     <string name="notes">Opombe</string>
     <string name="online_map">Spletni zemljevid</string>
@@ -1881,7 +1860,6 @@ ZŠ (β) %2$s</string>
     <string name="shared_string_show_details">Pokaži podrobnosti</string>
     <string name="download_wikipedia_maps">Wikipedija</string>
     <string name="shared_string_import2osmand">Uvozi v OsmAnd</string>
-    <string name="local_recordings_delete_all_confirm">Ali res želite izbrisati opombe (%1$d))?</string>
     <string name="gps_network_not_enabled">Storitev določanja trenutnega mesta ni omogočena. Ali jo želite zagnati?</string>
     <string name="disable_recording_once_app_killed">Prepreči samostojno beleženje</string>
     <string name="disable_recording_once_app_killed_descrp">Možnost onemogoči beleženje GPX, ko program ni dejaven (preko nedavnih programov). To je možnost delovanja v ozadju, katere indikator se ne pojavi v obvestilni vrstici.</string>
@@ -1972,7 +1950,6 @@ ZŠ (β) %2$s</string>
     <string name="routing_attr_avoid_shuttle_train_description">Izogni se vožnji z vlakom</string>
     <string name="offline_maps_and_navigation">Zemljevidi za delo brez\npovezave in navigacijo</string>
     <string name="favourites">Priljubljene</string>
-    <string name="av_locations_descr">Datoteka GPX z opombami.</string>
     <string name="av_locations">Mesta</string>
     <string name="poi_action_delete">izbriši</string>
     <string name="tab_title_basic">Osnovno</string>
@@ -2155,14 +2132,6 @@ ZŠ (β) %2$s</string>
 	<string name="routing_attr_avoid_borders_name">Izogni se mejnim prehodom</string>
 	<string name="shared_string_near">V bližini</string>
     <string name="shared_string_hide">Skrij</string>
-    <string name="av_video_quality_low">Najnižja kakovost</string>
-    <string name="av_video_quality_high">Najvišja kakovost</string>
-    <string name="av_video_quality">Kakovost odvoda videa</string>
-    <string name="av_video_quality_descr">Izbor kakovosti videa</string>
-    <string name="av_audio_format">Zapis odvoda zvoka</string>
-    <string name="av_audio_format_descr">Izbor zapisa zvoka</string>
-    <string name="av_audio_bitrate">Bitna hitrost zvoka</string>
-    <string name="av_audio_bitrate_descr">Izbor bitne hitrosti zvoka</string>
     <string name="rendering_attr_horseRoutes_name">Konjske poti</string>
     <string name="no_address_found">Naslov ni določen</string>
     <string name="looking_up_address">Iskanje naslova</string>
@@ -2186,10 +2155,6 @@ ZŠ (β) %2$s</string>
     
     <string name="update_time">Čas posodobitve</string>
 <string name="shared_string_not_selected">Ni izbrano</string>
-    <string name="rec_split_clip_length">Dolžina posnetka</string>
-    <string name="rec_split_clip_length_desc">Zgornja meja dolžine posnetka.</string>
-    <string name="rec_split_storage_size">Velikost skladišča posnetkov</string>
-    <string name="rec_split_storage_size_desc">Velikost prostora, ki je namenjen shranjenim posnetkom.</string>
     <string name="updates_size">Velikost posodobitve</string>
     <string name="last_map_change">Zadnja sprememba zemljevida: %s</string>
     <string name="hourly">Vsako uro</string>
@@ -2199,7 +2164,6 @@ ZŠ (β) %2$s</string>
     <string name="night">Zvečer</string>
 <string name="rec_split">Razdelilnik posnetkov</string>
     <string name="rec_split_title">Uporabi razdelilnik posnetkov</string>
-    <string name="rec_split_desc">Prepiši starejše posnetke, ko velikost posnetka preseže omejitev.</string>
     <string name="item_removed">Predmet je odstranjen</string>
     <string name="n_items_removed">izbrisanih predmetov</string>
     <string name="shared_string_undo_all">Razveljavi vse</string>
@@ -2515,9 +2479,6 @@ Del prihodka se vrne skupnosti OSM in se izplačuje za vsako opravljeno dejavnos
     <string name="quick_action_add_poi">Dodaj točko POI</string>
     <string name="quick_action_map_style">Spremeni slog zemljevida</string>
     <string name="quick_action_map_style_switch">Slog zemljevida je spremenjen na »%s«.</string>
-    <string name="quick_action_take_audio_note">Zabeleži zvočno sporočilo</string>
-    <string name="quick_action_take_video_note">Zabeleži video sporočilo</string>
-    <string name="quick_action_take_photo_note">Zabeleži slikovno sporočilo</string>
     <string name="quick_action_add_osm_bug">Vpiši opombo OSM</string>
     <string name="quick_action_add_gpx">Dodaj vmesno točko GPX</string>
     <string name="quick_action_add_parking">Dodaj parkirno mesto</string>
@@ -2595,9 +2556,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
 	<string name="auto_split_recording_descr">Začne z novim odsekom po 6-minutnem premoru, novo sled po 2-urnem premoru oziroma s povsem novo datoteko beleženja, če je zamik čez datumsko mejo.</string>
     <string name="quick_action_add_marker_descr">S pritiskom na gumb dejanja bo dodana označba na zemljevid na trenutno sredinsko točko na zaslonu.</string>
     <string name="quick_action_add_gpx_descr">S pritiskom na gumb dejanja bo dodana vmesna točka GPX na trenutno sredinsko točko na zaslonu.</string>
-    <string name="quick_action_take_audio_note_descr">S pritiskom na gumb dejanja bo dodano zvočno sporočilo na trenutno sredinsko točko na zaslonu.</string>
-    <string name="quick_action_take_video_note_descr">S pritiskom na gumb dejanja bo dodano video sporočilo na trenutno sredinsko točko na zaslonu.</string>
-    <string name="quick_action_take_photo_note_descr">S pritiskom na gumb dejanja bo dodano slikovno sporočilo na trenutno sredinsko točko na zaslonu.</string>
     <string name="quick_action_add_osm_bug_descr">S pritiskom na gumb dejanja bo dodano obvestilo OSM na trenutno sredinsko točko na zaslonu.</string>
     <string name="quick_action_add_poi_descr">S pritiskom na gumb dejanja bo dodana točka POI na trenutno sredinsko točko na zaslonu.</string>
     <string name="quick_action_navigation_voice_descr">S pritiskom na gumb dejanja se omogoči oziroma onemogoči glasovno vodenje.</string>
@@ -2934,9 +2892,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="marker_activated">Označba %s je dejavna.</string>
     <string name="one_tap_active_descr">Za samodejno prestavljanje na vrh seznama, enostavno pritisnite označbo na zemljevidu.</string>
     <string name="one_tap_active">Zagon z enim pritiskom</string>
-    <string name="empty_state_av_notes">Zabeležite si opombe!</string>
-    <string name="empty_state_av_notes_desc">Dodajte slikovno, zvokovno ali video opombo za vsako točko na zemljevidu prek gradnika ali vsebinskega menija.</string>
-    <string name="notes_by_date">Opombe po datumu</string>
     <string name="looking_for_tracks_with_waypoints">Iskanje sledi z vmesnimi točkami</string>
     <string name="add_track_to_markers_descr">"Izbor sledi za dodajanje vmesnik točk kot označbe na  zemljevid (izpisane so le sledi z vmesnimi točkami)."</string>
     <string name="add_favourites_group_to_markers_descr">Izbor priljubljenih za dodajanje med označbe.</string>

@@ -597,7 +597,6 @@ Punktaŭ maršrutu %2$s</string>
     
     
     <string name="local_indexes_cat_srtm">Іzalinіі vyšyń</string>
-    <string name="local_indexes_cat_av">Aŭdyjo/vіdea źviestkі</string>
     <string name="stop_routing_confirm">Sapraŭdy spynіć navіhacyju?</string>
     <string name="clear_dest_confirm">Sapraŭdy ściercі miesca pryznačeńnia (і pramiežkavyja punkty pryznačeńnia)?</string>
     <string name="precise_routing_mode_descr">Dazvolić dakładnuju navіhacyju kab šukać šlach biez pamyłak. Usio jašče abmiežavana adlehłasciu і pavolnaja.</string>
@@ -612,29 +611,16 @@ Punktaŭ maršrutu %2$s</string>
     <string name="srtm_paid_version_msg">Kali łaska, padumajcie pra nabyćcio modula Іzalinіі vyšyń u Play Store dla padtrymkі dalejšaj raspracoŭkі.</string>
     <string name="srtm_paid_version_title">Modul Іzalinіі vyšyń</string>
     <string name="av_def_action_choose">Vybar pa zapycie</string>
-    <string name="av_def_action_video">Zapіs vіdea</string>
-    <string name="av_def_action_audio">Zapіs aŭdyjo</string>
     <string name="av_widget_action_descr">Vybierycie ahadanaje dziejannie vidžeta.</string>
     <string name="av_widget_action">Dziejańnie vіdžeta pa zmaŭčannі</string>
-    <string name="av_video_format_descr">Vybar vychadnoha farmatu videa.</string>
-    <string name="av_video_format">Farmat vіdea</string>
-    <string name="av_use_external_recorder_descr">Vykarystoŭvać sistemnuju prahramu dlia zapisu videa.</string>
     <string name="av_use_external_recorder">Vykarystoŭvać sіstemny rekorder</string>
     <string name="av_use_external_camera_descr">Vykarystoŭvać sistemnaje dastasavannie dlia fota.</string>
     <string name="av_use_external_camera">Vykarystoŭvać prahramu kamiery</string>
-    <string name="av_settings_descr">Nastroić paramietry aŭdyjo i videa.</string>
-    <string name="av_settings">Nalady aŭdyjo i videa</string>
     <string name="recording_error">Adbylasia pamylka padčas zapisu</string>
-    <string name="recording_camera_not_available">Kamiera nie dastupnaja</string>
-    <string name="recording_is_recorded">Aŭdyjo/videa zapisvajecca. Kab spynić, nacisnicie na vidžet AV.</string>
-    <string name="recording_playing">Prajhrajecca aŭdyjo z abranaha zapіsu.\n%1$s</string>
     <string name="recording_open_external_player">Adkryć źniešnі prajhravalnіk</string>
     <string name="recording_delete_confirm">Vy chočacie źnіščyć hety zapіs?</string>
     
     <string name="recording_unavailable">niedastupny</string>
-    <string name="recording_context_menu_arecord">Zapіsać aŭdyjo-natatku</string>
-    <string name="recording_context_menu_vrecord">Zapіsać vіdea-natatku</string>
-    <string name="layer_recordings">Słoj zapіsu</string>
     <string name="recording_can_not_be_played">Zapіs nie moža być prajhrany</string>
     <string name="recording_context_menu_delete">Vydalić zapіs</string>
     <string name="recording_context_menu_play">Hrać</string>
@@ -642,17 +628,12 @@ Punktaŭ maršrutu %2$s</string>
     <string name="recording_default_name">Zapіs</string>
     <string name="shared_string_control_stop">Spynіć</string>
     <string name="shared_string_control_start">Pačać</string>
-    <string name="map_widget_av_notes">Aŭdyjo/vіdea-natatkі</string>
     <string name="osmand_srtm_short_description_80_chars">Modul OsmAnd dla pazasietkavych іzalinіj vyšyń</string>
     <string name="osmand_srtm_long_description_1000_chars">Hety moduĺ pakazvaje jak izalinii vyšyń tak i reĺjef na standartnych mapach OsmAnd. Hetyja mahčymasci spatrebiacca spartsmienam, turystam, padarožnikam i ŭsim, chto cikavicca strukturaj reĺjefu miascovasci. 
 \n 
 \nHlabaĺnyja dadzienyja (pamiž 70 hradusami na poŭnačy i 70 hradusami na poŭdni) hruntujucca na vymiarenniach SRTM (Shuttle Radar Topography Mission) i ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), dadzienych instrumientu vizualizacyi Terra, flahmanskaha spadarožnika sistemy nazirannia Ziamli ad NASA. ASTER — heta vynik sumiesnaj pracy NASA, ministerstva ekanomiki Japonii, ministerstva handliu i pramyslovaści Japonii (METI), ahienctva kasmičnych sistem Japonii (J-spacesystems).</string>
     <string name="map_widget_distancemeasurement">Vymiareńnie adlehłaścі</string>
-    <string name="audionotes_location_not_defined">Miescaznachodžańnie dla pryviazki natatki pakul jašče nie vyznačyłasia. «Vykarystać miescaznachodžańnie…» kab pryznačyć natatku ŭ vybranym miescy.</string>
-    
-    <string name="map_widget_audionotes">Aŭdyjo-natatkі</string>
-    <string name="audionotes_plugin_description">Modul dla stvareńnia aŭdyjo/vіdea-natatak padčas padarožžaŭ, z dapamohaj vykarystańnia knopkі na ekranie mapy abo praz kantekstnaje meniu na lubym miescy na mapie.</string>
-    <string name="audionotes_plugin_name">Aŭdyjo/vіdea-natatkі</string>
+
     <string name="index_srtm_parts">častak</string>
     <string name="index_srtm_ele">Іzalinіі vyšyń</string>
     <string name="srtm_plugin_description">Hety moduĺ pakazvaje jak izalinii vyšyń tak i reĺjef na standartnych mapach OsmAnd. Heta mahčyma spatrebiacca spartsmienam, turystam, padarožnikam i ŭsim, chto cikavicca strukturaj reĺjefu miascovasci. (Zviarnicie ŭvahu, što dadzienyja vyšyń i reĺjefu asobnyja, dadatkova dastupnyja da spampoŭki, paslia aktyvacyi modulia.) 
@@ -1822,11 +1803,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="shared_string_not_selected">Nia vybrana</string>
     <string name="rec_split">Raźbіćcio na klipy</string>
     <string name="rec_split_title">Vykarystoŭvać raźbіćcio na klipy</string>
-    <string name="rec_split_desc">Cykličny pierazapis klipaŭ pry pieravyšenni zadadzienaha abjomu schovišča.</string>
-    <string name="rec_split_clip_length">Praciahłaść vіdeaklipa</string>
-    <string name="rec_split_clip_length_desc">Vierchniaja miaža času zapisanaha klipa.</string>
-    <string name="rec_split_storage_size">Pamier schovіšča</string>
-    <string name="rec_split_storage_size_desc">Abjom pamiaci, jaki moža być zaniaty ŭsimi videaklipami.</string>
     <string name="live_updates">Biahučyja abnaŭleńnі</string>
     <string name="available_maps">Dastupnyja mapy</string>
     <string name="select_voice_provider">Vybierycie hałasavyja ŭkazańnі</string>
@@ -1842,14 +1818,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="no_address_found">Adresa nia vyznačanaja</string>
     <string name="shared_string_near">Pobač</string>
     <string name="shared_string_hide">Schavać</string>
-    <string name="av_video_quality_low">Nіzkaja jakaść</string>
-    <string name="av_video_quality_high">Vysokaja jakaść</string>
-    <string name="av_video_quality">Jakaść vіdea</string>
-    <string name="av_video_quality_descr">Vybar jakaści videa.</string>
-    <string name="av_audio_format">Farmat aŭdyjo vyvadu</string>
-    <string name="av_audio_format_descr">Abrać farmat aŭdyjo vyvadu.</string>
-    <string name="av_audio_bitrate">Aŭdyjo bіtrejt</string>
-    <string name="av_audio_bitrate_descr">Abiarycie bitrejt aŭdyjo.</string>
     <string name="please_specify_poi_type_only_from_list">Kali łaska, uviadzicie pravilny typ POI abo prapuścicie jaho.</string>
     <string name="access_from_map_description">Knopka Mieniu pakazvaje paneĺ kiravannia, a nie mieniu.</string>
     <string name="access_from_map">Dostup z mapy</string>
@@ -1948,7 +1916,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="simulate_your_location_stop_descr">Spynić emuliacyju svajho stanovišča.</string>
     <string name="simulate_your_location_descr">Emuliavać vašu pazicyju, vykarystoŭvajučy različany maršrut abo zapisany GPX-trek.</string>
     <string name="looking_up_address">Pošuk adresy</string>
-    <string name="av_locations_descr">GPX-fajl z miecaznachodžanniem zaŭvah.</string>
     <string name="av_locations">Miescaznachodžańnі</string>
     <string name="plugin_settings">Moduli</string>
     <string name="routing_attr_avoid_shuttle_train_name">Paźbiahać transfier-ciahnіk</string>
@@ -2058,7 +2025,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="osm_changes_added_to_local_edits">Źmieny OSM dadadzienyja da lakalnaha naboru źmienaŭ</string>
     <string name="mark_to_delete">Paznačyć dla vydaleńnia</string>
     <string name="osmo_grop_name_length_alert">Іmia hrupy pavіnna być mіnіmum 3 sіmvała!</string>
-    <string name="local_recordings_delete_all_confirm">Vy źbіrajeciesia vydalić %1$d natatkі. Vy ŭpeŭnienyja?</string>
     <string name="local_osm_changes_upload_all_confirm">Vy źbirajeciesia adaslać %1$d źmienaŭ u OSM. Vy ŭpeŭnienyja?</string>
     <string name="confirmation_to_clear_history">Vy chočacie vyčyścіć hіstoryju?</string>
     <string name="delay_to_start_navigation_descr">Zadajcie čas zatrymki na ekranie planavannia maršrutu.</string>
@@ -2099,7 +2065,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="shared_string_my_location">Majo miescaznachodžańnie</string>
     <string name="shared_string_currently_recording_track">Biahučy śled, jakі zapіsvajecca</string>
     <string name="shared_string_audio">Aŭdyjo</string>
-    <string name="shared_string_video">Vіdea</string>
     <string name="shared_string_photo">Fota</string>
     <string name="route_points">Punkty maršrutu</string>
     <string name="track_segments">Adrezkі śledu</string>
@@ -2129,7 +2094,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="rename_failed">Nie atrymałasia pierajmienavać.</string>
     <string name="days_behind">d. tamu abnaŭlali</string>
     <string name="back_to_map">Viarnucca da mapy</string>
-    <string name="share_note">Padzialicca natatkaju</string>
     <string name="location_on_map">Kaardynaty:\n Šyrata %1$s\n Daŭhata %2$s</string>
     <string name="watch">Sačyć</string>
     <string name="notes">Natatkі</string>
@@ -2492,9 +2456,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="quick_action_add_poi">Dadać POI</string>
     <string name="quick_action_map_style">Zmianić styl mapy</string>
     <string name="quick_action_map_style_switch">Styl mapy byŭ zmienieny na \"%s\".</string>
-    <string name="quick_action_take_audio_note">Stvaryć aŭdyjo-natatku</string>
-    <string name="quick_action_take_video_note">Stvaryć videa-natatku</string>
-    <string name="quick_action_take_photo_note">Stvaryć fota-natatku</string>
     <string name="quick_action_add_osm_bug">Dadać OSM natatku</string>
     <string name="quick_action_navigation_voice">Holas ukl/adkl</string>
     <string name="shared_string_add_photos">Dadać fatahrafii</string>
@@ -2703,9 +2664,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="quick_favorites_name_preset">Nazva pieradustaloŭki</string>
     <string name="quick_action_add_marker_descr">Pry naciskanni na knopku dadasć markier na mapu ŭ centry ekrana.</string>
     <string name="quick_action_add_gpx_descr">Pry nacisku na knopku dziejańnia dadaść GPX-kropku na mapu ŭ centry ekrana.</string>
-    <string name="quick_action_take_audio_note_descr">Pry naciskanni na knopku dadasć aŭdyjanatatku na mapu ŭ centry ekrana.</string>
-    <string name="quick_action_take_video_note_descr">Pry naciskanni na knopku dadasć videanatatku na mapu ŭ centry ekrana.</string>
-    <string name="quick_action_take_photo_note_descr">Pry naciskanni na knopku dadasć fotanatatku na mapu ŭ centry ekrana.</string>
     <string name="quick_action_add_osm_bug_descr">Pry naciskanni na knopku dadasć OSM-natatku na mapu ŭ centry ekrana.</string>
     <string name="quick_action_add_poi_descr">Pry naciskanni na knopku dadasć POI na mapu ŭ centry ekrana.</string>
     <string name="quick_action_navigation_voice_descr">Pry naciskańni na knopku adklučyć ci ŭklučyć hałasavyja padkazki pad čas navihacyi.</string>
@@ -2928,13 +2886,10 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="shared_string_edited">Adredahavana</string>
     <string name="shared_string_added">Dadadziena</string>
     <string name="marker_activated">Markier %s aktyvavany.</string>
-    <string name="notes_by_date">Natatki pa dacie</string>
     <string name="by_date">Pa dacie</string>
     <string name="by_type">Pa typu</string>
     <string name="one_tap_active_descr">Nacisk na markier na mapie pieramiescić hety markier na pieršaje miesca ŭ spisie aktyŭnych markieraŭ, nie adkryvajučy kantekstnaje mieniu.</string>
     <string name="one_tap_active">Aktyvacyja adnym naciskam</string>
-    <string name="empty_state_av_notes">Rabi natatki!</string>
-    <string name="empty_state_av_notes_desc">Dadajcie aŭdyjo-, videa- ci fotanatatku na lubuju kropku na mapie, vykarystoŭvajučy vidžet ci kantekstnaje mieniu.</string>
     <string name="modify_the_search_query">Źmianicie pošukavy zapyt.</string>
     <string name="release_3_0">\\022 
 \n

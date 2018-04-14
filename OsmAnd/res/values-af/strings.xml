@@ -970,9 +970,8 @@
     
     <string name="max_speed_none">geen</string>
     <string name="download_hillshade_maps">Heuwelskadu-oorleggings</string>
-    
-    
-    <string name="local_indexes_cat_av">Oudio/video inligting</string>
+
+
     <string name="stop_routing_confirm">Is jy seker jy wil die navigasie staak?</string>
     <string name="clear_dest_confirm">Is jy seker jy wil jou bestemmingspunt verwyder?</string>
     <string name="precise_routing_mode_descr">Aktiveer presiese roetebepaling om presiese roetes te bereken sonder probleme. Dit is baie beperk deur afstand en maak nie gebruik van die inheemse biblioteek nie.</string>
@@ -987,39 +986,24 @@
     <string name="srtm_paid_version_msg">Oorweeg dit asseblief om die kontoerlyn-inlasmodulen in die Market winkel te koop om verdere ontwikkeling te ondersteun.</string>
     <string name="srtm_paid_version_title">Kontoerlyn inlasmodule</string>
     <string name="av_def_action_choose">Kies op versoek</string>
-    <string name="av_def_action_video">Neem video</string>
-    <string name="av_def_action_audio">Neem oudio op</string>
     <string name="av_widget_action_descr">Kies verstek programmetjie-aksie</string>
     <string name="av_widget_action">Verstek programmetjie-aksie</string>
-    <string name="av_video_format_descr">Kies video-uitvoer formaat</string>
-    <string name="av_video_format">Video-uitvoer formaat</string>
-    <string name="av_use_external_recorder_descr">Gebruik stelsel kamera vir video</string>
     <string name="av_use_external_recorder">Gebruik stelsel opnemer</string>
     <string name="av_use_external_camera_descr">Gebruik stelsel toepassing vir foto</string>
     <string name="av_use_external_camera">Gebruik kamera toepassing</string>
-    
-    <string name="av_settings_descr">Maak oudio en video verstellings</string>
-    <string name="av_settings">"Oudio/video verstellings 
-" </string>
+
     <string name="recording_error">"\'n fout het tydens die opname voorgekom
  " </string>
-    <string name="recording_camera_not_available">Kamera is nie beskikbaar nie</string>
-    <string name="recording_is_recorded">Oudio/video word opgeneem. Om te stop druk op die OV programmetjie.</string>
-    <string name="recording_playing">Oudio van die gespesifiseerde opname is besig om te speel.\n%1$s</string>
     <string name="recording_open_external_player">Maak eksterne speler oop</string>
     <string name="recording_delete_confirm">Wil jy hierdie opname verwyder?</string>
     
     <string name="recording_unavailable">nie beskikbaar nie</string>
-    <string name="recording_context_menu_arecord">Neem `n oudio nota</string>
-    <string name="recording_context_menu_vrecord">Neem `n video nota</string>
-    <string name="layer_recordings">Opname vel</string>
     <string name="recording_can_not_be_played">opname kan nie truggespeel word nie</string>
     <string name="recording_context_menu_delete">Vee opname uit</string>
     <string name="recording_context_menu_play">Speel</string>
     <string name="recording_description">Opname %1$s %2$s van %3$s</string>
     <string name="recording_default_name">besig met opname</string>
     <string name="shared_string_control_start">begin</string>
-    <string name="map_widget_av_notes">Oudio/video notas</string>
     <string name="osmand_srtm_short_description_80_chars">OsmAnd inlasmodule vir aflyn kontoerlyne</string>
     <string name="osmand_srtm_long_description_1000_chars">Hierdie inlasmodule verskaf kontoerlyne wat in OsmAnd aflyn kaarte getoon kan word.Die wêreld inligting (van 70 grade noord tot 70 grade suid) is gebaseer op metings deur SRTM (Shuttle Radar Topography Mission)en ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer),`n beeld-instrument aanboord Terra, die vlagskip sateliet van NASA se Aarde Observasie Stelsel. ASTER is `n samewerkingsprojek tussen NASA, Japan se Ministerie van Ekonomie, Handel en Industrie (MEHI), en Japan Ruimte Stelsels (J-spacesystems).</string>
     
@@ -1028,8 +1012,6 @@
     
     <string name="map_widget_distancemeasurement">Afstandsmeting</string>
     <string name="index_srtm_parts">dele</string>
-    <string name="audionotes_plugin_name">Oudio/video notas</string>
-    <string name="map_widget_audionotes">Oudio notas</string>
     <string name="index_srtm_ele">Kontoerlyne</string>
     <string name="download_select_map_types">Ander kaarte</string>
     <string name="download_srtm_maps">Kontoerlyne</string>
@@ -1037,8 +1019,6 @@
     <string name="download_roads_only_maps">Paaie-uitsluitlik kaarte</string>
     
 	<string name="rendering_attr_noAdminboundaries_name">Versteek grense</string>
-	<string name="audionotes_location_not_defined">Ligging om met die nota te asosieer is nog nie gedefinieer nie. Gebruik ligging … om `n nota aan `n spesifieke ligging toe te ken</string>
-    <string name="audionotes_plugin_description">Neem oudio/video notas tydens die rit</string>
     <string name="srtm_plugin_name">Kontoerlyn inlasmodule</string>
     <string name="download_regular_maps">Algemene kaarte</string>
     <string name="rendering_attr_noAdminboundaries_description">Onderduk streeksgrense (adminvlk 5-9)</string>

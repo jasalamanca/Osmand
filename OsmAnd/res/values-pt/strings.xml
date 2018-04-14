@@ -989,24 +989,14 @@
     
     <string name="search_villages_and_postcodes">Pesquisa por CEP</string>
 	<string name="dropbox_plugin_description">O plugin Dropbox permite sincronizar trilhos e notas de vídeo/audio com a sua conta Dropbox.</string>
-    
-    <string name="av_def_action_video">Gravar vídeo</string>
-    <string name="av_def_action_audio">Gravar audio</string>
+
     <string name="av_widget_action_descr">Escolha a acção widget padrão</string>
     <string name="av_widget_action">Ação widget padrão</string>
-    <string name="av_video_format">Formato de saída de vídeo</string>
     <string name="av_use_external_recorder">Usar gravador externo</string>
-    <string name="av_settings_descr">Configurar definições de áudio e vídeo</string>
-    <string name="av_settings">"Definições de áudio e vídeo " </string>
     <string name="recording_error">Ocorreu um erro durante a gravação</string>
-    <string name="recording_camera_not_available">Câmera não está disponível</string>
-    <string name="recording_is_recorded">Áudio/vídeo está a ser gravado. Para parar pressione o botão de stop no widget.</string>
     <string name="recording_open_external_player">Abrir leitor externo</string>
     <string name="recording_delete_confirm">Quer remover esta gravação?</string>
-    
-    <string name="recording_context_menu_arecord">Fazer uma nota de áudio</string>
-    <string name="recording_context_menu_vrecord">Fazer uma nota de vídeo</string>
-    <string name="layer_recordings">Camada de gravação</string>
+
     <string name="recording_can_not_be_played">A gravação não pode ser exibida</string>
     <string name="recording_context_menu_delete">Apagar a gravação</string>
     <string name="recording_context_menu_play">Tocar</string>
@@ -1019,8 +1009,7 @@
     
     <string name="max_speed_none">Nenhum</string>
     <string name="index_name_openmaps">OpenMaps UE</string>
-    
-    <string name="local_indexes_cat_av">Dados de Áudio/Vídeo</string>
+
     <string name="stop_routing_confirm">Quer parar a navegação?</string>
     <string name="clear_dest_confirm">Confirma que deseja apagar o seu ponto de destino?</string>
     <string name="precise_routing_mode_descr">Ativar o roteamento preciso para calcular rotas precisas sem falhas. É muito limitado pela distância e não usa a biblioteca nativa.</string>
@@ -1031,28 +1020,20 @@
     <string name="srtm_paid_version_msg">Por favor, considere comprar o plugin Curvas de Nível (Contour Lines) na loja do Market para apoiar o desenvolvimento.</string>
     <string name="srtm_paid_version_title">Plugin curvas de nível</string>
     <string name="av_def_action_choose">Selecionar na altura</string>
-    <string name="av_video_format_descr">Selecione o formato de saída de vídeo</string>
-    <string name="av_use_external_recorder_descr">Usar gravador do sistema para vídeo</string>
     <string name="av_use_external_camera_descr">Utilize aplicação do sistema para a foto</string>
     <string name="av_use_external_camera">Use aplicativo da câmera</string>
-    <string name="recording_playing">A tocar o áudio da gravação. \n%1$s</string>
     <string name="recording_unavailable">Indisponível</string>
     <string name="recording_description">Gravar %1$s %2$s de %3$s</string>
     <string name="recording_default_name">Gravação</string>
     <string name="shared_string_control_stop">Parar</string>
     <string name="shared_string_control_start">Iniciar</string>
-    <string name="map_widget_av_notes">Notas de Áudio/vídeo</string>
     <string name="osmand_srtm_short_description_80_chars">Plugin OsmAnd para curvas de nível off-line</string>
     
     
     
     
     <string name="map_widget_distancemeasurement">Medição da distância</string>
-    <string name="audionotes_location_not_defined">Local para associar com a nota ainda não está definido. \"Usar localização…\" para atribuir uma nota para o local especificado</string>
-    
-    <string name="map_widget_audionotes">Notas de áudio</string>
-    <string name="audionotes_plugin_description">O plugin de notas de áudio/vídeo fornece a funcionalidade para tomar notas de áudio/fotografia/vídeo durante uma viagem, usando um botão na tela do mapa ou diretamente do menu de contexto para qualquer posição no mapa.</string>
-    <string name="audionotes_plugin_name">Notas de Audio/vídeo</string>
+
     <string name="index_srtm_parts">Partes</string>
     <string name="index_srtm_ele">Curvas de nível</string>
     
@@ -1650,8 +1631,7 @@ Clique no widget de medição para ver mais ações.</string>
 	<string name="shared_string_address">Endereço</string>
 	<string name="shared_string_currently_recording_track">Atualmente gravando o trajeto</string>
 	<string name="shared_string_audio">Áudio</string>
-	<string name="shared_string_video">Vídeo</string>
-	<string name="shared_string_photo">Foto</string>
+    <string name="shared_string_photo">Foto</string>
 	<string name="route_points">Pontos de rota</string>
 	<string name="track_segments">Segmentos do trajeto</string>
 	<string name="track_points">Pontos de trajeto</string>
@@ -1660,7 +1640,6 @@ Clique no widget de medição para ver mais ações.</string>
 	<string name="plugin_ski_name">Ver mapa de esqui</string>
 	<string name="rename_failed">Falha ao renomear.</string>
 	<string name="back_to_map">Voltar ao mapa</string>
-	<string name="share_note">Compartilhar nota</string>
     <string name="location_on_map">Posição:\n Lat %1$s\n Lon %2$s</string>
 	<string name="notes">Notas</string>
 	<string name="online_map">Mapa on-line</string>
@@ -1742,14 +1721,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="no_address_found">Nenhum endereço definido</string>
     <string name="shared_string_near">Perto</string>
     <string name="shared_string_hide">Ocultar</string>
-    <string name="av_video_quality_low">Baixa Qualidade</string>
-    <string name="av_video_quality_high">Alta Qualidade</string>
-    <string name="av_video_quality">Qualidade de saída de Vídeo</string>
-    <string name="av_video_quality_descr">Escolha a qualidade de saída de vídeo</string>
-    <string name="av_audio_format">Formato de saída de Áudio</string>
-    <string name="av_audio_format_descr">Escolha o formato de saída de áudio</string>
-    <string name="av_audio_bitrate">Taxa bit de Áudio</string>
-    <string name="av_audio_bitrate_descr">Escolha a taxa bit de áudio</string>
     <string name="osm_edit_deleted_poi">POI OSM apagado</string>
     <string name="context_menu_item_open_note">Abrir Nota OSM</string>
     <string name="osm_edit_reopened_note">Re-abrir Nota OSM</string>
@@ -1793,7 +1764,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="simulate_your_location_stop_descr">Parar de simular a sua posição</string>
     <string name="simulate_your_location_descr">Simular usando uma rota calculada ou trilha GPX armazenada</string>
     <string name="looking_up_address">Procurar endereço</string>
-    <string name="av_locations_descr">Ficheiro GPX com anotações de posições</string>
     <string name="av_locations">Localizações</string>
     <string name="plugin_settings">Plugins</string>
     <string name="routing_attr_avoid_shuttle_train_name">Evitar de transporte de comboio</string>
@@ -1826,9 +1796,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="restart_is_required">Para aplicar completamente as alterações, requer uma reinicialização da aplicação.</string>
     <string name="light_theme">Claro</string>
     <string name="dark_theme">Escuro</string>
-    <string name="rec_split_desc">Sobrescrever ficheiros quando o espaço utilizado exceder o armazenamento disponível</string>
-    <string name="rec_split_storage_size">Espaço de armazenamento</string>
-    <string name="rec_split_storage_size_desc">Total de espaço que pode ser ocupado por todos os clips gravados</string>
     <string name="available_maps">Mapas disponíveis</string>
     <string name="select_voice_provider">Escolher orientação por voz</string>
     <string name="select_voice_provider_descr">Escolher ou fazer download de \'orientação por voz\' para a sua linguagem</string>
@@ -1867,7 +1834,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="rendering_value_walkingRoutesOSMC_name">Colorir de acordo com a OSMC</string>
     <string name="osmo_share_my_location">Partilhar a minha posição</string>
     <string name="shared_string_logoff">Sair</string>
-    <string name="local_recordings_delete_all_confirm">Vai apagar %1$d nota(s). Continuar?</string>
     <string name="plugin_touringview_descr">"Esta opção muda o estilo de mapa do Osmand para a \"visão Touring \', uma visão especial de alto detalhe, para viajantes e motoristas profissionais.\n\nEsta exibição fornece, em qualquer zoom de mapa, a quantidade máxima de informação de viagem disponível no mapa (particularmente estradas, trilhas, caminhos, e marcas de orientação).\n\nTambém separa claramente todos os tipos de estradas de forma inequívoca com um código de cores, que se revela útil para a condução de veículos grandes (por exemplo).\n\nOferece opções especiais de turismo, como mostrar ciclovias ou rotas alpinas de montanha.\n\nNão é necessário fazer download dum mapa especial, a exibição é feita a partir dos mapas padrão.\n\nEssa visão pode ser revertida, basta desactiva-la, ou alterar o estilo de mapa em \'Configurar mapa\'. "</string>
     <string name="rendering_attr_roadStyle_description">Estilo de estrada</string>
     <string name="error_avoid_specific_road">Nenhum desvio encontrado</string>
@@ -2031,8 +1997,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="starting_point">Ponto de partida</string>
     <string name="rec_split">Divisão da Gravação</string>
     <string name="rec_split_title">Usar Divisão de Gravação</string>
-    <string name="rec_split_clip_length">Duração do recorte</string>
-    <string name="rec_split_clip_length_desc">A duração de cada recorte gravado não será superior ao intervalo de tempo especificado</string>
     <string name="lang_mk">Macedónio(a)</string>
     <string name="lang_sh">Servo-Croata</string>
     <string name="lang_br">Bretão</string>

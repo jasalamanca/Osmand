@@ -956,42 +956,25 @@
     
 	
 <string name="index_srtm_parts">μέρη</string>
-    
-    <string name="map_widget_audionotes">Ηχητικές σημειώσεις</string>
-    <string name="audionotes_plugin_description">Το πρόσθετο σημειώσεων ήχου/video παρέχει τη λειτουργία λήψης σημειώσεων ήχου/φωτογραφίας/video κατά τη διάρκεια του ταξιδιού, χρησιμοποιώντας είτε ένα κουμπί στην οθόνη χάρτη, ή απευθείας στο αναδυόμενο μενού για οποιοδήποτε σημείο στον χάρτη.</string>
-    <string name="audionotes_plugin_name">Σημειώσεις ήχου/video</string>
-    
+
     <string name="osmand_srtm_short_description_80_chars">Πρόσθετο του OsmAnd για ισοϋψείς γραμμές χωρίς σύνδεση</string>
     
     <string name="map_widget_distancemeasurement">Μέτρηση απόστασης</string>
-    <string name="recording_is_recorded">Εγγραφή Ήχου/video σε εξέλιξη. Για σταμάτημα πατήστε το γραφικό στοιχείο AV.</string>
-    <string name="recording_playing">Ένας ήχος από την συγκεκριμένη εγγραφή αναπαράγεται.\n%1$s</string>
     <string name="recording_open_external_player">Άνοιγμα εξωτερικού αναπαραγωγέα</string>
     <string name="recording_delete_confirm">Θέλετε να αφαιρέσετε αυτή την εγγραφή;</string>
     
     <string name="recording_unavailable">μη διαθέσιμο</string>
-    <string name="recording_context_menu_arecord">Κάντε ηχητική σημείωση</string>
-    <string name="recording_context_menu_vrecord">Κάντε σημείωση video</string>
     <string name="recording_can_not_be_played">Η εγγραφή δεν μπορεί να αναπαραχθεί</string>
     <string name="recording_context_menu_delete">Διαγραφή εγγραφής</string>
     <string name="recording_context_menu_play">Αναπαραγωγή</string>
     <string name="recording_description">Εγγραφή %1$s %3$s %2$s</string>
     <string name="recording_default_name">Εγγραφή</string>
-    <string name="map_widget_av_notes">Σημειώσεις ήχου/video</string>
-    <string name="av_def_action_video">Εγγραφή video</string>
-    <string name="av_def_action_audio">Εγγραφή ήχου</string>
     <string name="av_widget_action_descr">Επιλέξτε προκαθορισμένη ενέργεια γραφικού στοιχείου</string>
     <string name="av_widget_action">Προκαθορισμένη ενέργεια γραφικού στοιχείου</string>
     <string name="av_use_external_recorder">Χρήση εγγραφέα συστήματος</string>
-    <string name="av_settings">Ρυθμίσεις ήχου/video </string>
     <string name="recording_error">Προέκυψε σφάλμα κατά την εγγραφή </string>
-    <string name="recording_camera_not_available">Κάμερα μη διαθέσιμη</string>
     <string name="shared_string_control_stop">Σταμάτημα</string>
-    <string name="av_video_format_descr">Επιλέξτε μορφή εξόδου video</string>
-    <string name="av_video_format">Μορφή εξόδου video</string>
-    <string name="av_use_external_recorder_descr">Χρήση τού εγγραφέα συστήματος για video</string>
-    
-    <string name="av_settings_descr">Διαμόρφωση ρυθμίσεων ήχου και video</string>
+
     <string name="dropbox_plugin_description">Το πρόσθετο dropbox επιτρέπει τον συγχρονισμό ιχνών και σημειώσεων εικόνας/ήχου με τον dropbox λογαριασμό σας.</string>
     <string name="dropbox_plugin_name">Πρόσθετο dropbox</string>
     
@@ -1005,11 +988,8 @@
     <string name="recording_photo_description">Φωτογραφία %1$s %2$s</string>
     <string name="av_def_action_picture">Λήψη φωτογραφίας</string>
     <string name="recording_context_menu_precord">Λήψη φωτογραφίας</string>
-    <string name="audionotes_location_not_defined">Δεν έχει καθοριστεί ακόμα τοποθεσία για συσχέτιση με την σημείωση. \"Χρήση τοποθεσίας …\" για να συνδέσετε την σημείωση με την καθορισμένη τοποθεσία</string>
-    <string name="local_indexes_cat_av">Δεδομένα Ήχου/Εικόνας</string>
-    
+
     <string name="precise_routing_mode_descr">Ενεργοποίηση για υπολογισμό δρομολογίων με ακρίβεια χωρίς προβλήματα. Ακόμη περιορισμένο σε σχέση με την απόσταση και αργό.</string>
-    <string name="layer_recordings">Επίπεδο εγγραφής</string>
     <string name="shared_string_control_start">Έναρξη</string>
     <string name="av_use_external_camera_descr">Χρήση εφαρμογής συστήματος για φωτογραφία</string>
     <string name="av_use_external_camera">Χρήση εφαρμογής κάμερας</string>
@@ -1548,8 +1528,7 @@
 	<string name="shared_string_my_favorites">Τα Αγαπημένα μου</string>
 	<string name="shared_string_my_tracks">Τα Ίχνη μου</string>
 	<string name="shared_string_audio">Ήχος</string>
-	<string name="shared_string_video">Εικόνα</string>
-	<string name="shared_string_photo">Φωτογραφία</string>
+    <string name="shared_string_photo">Φωτογραφία</string>
 
 	<string name="osmand_parking_time_left">αριστερά</string> <string name="your_edits">Η επεξεργασίες σου</string>
     <string name="waypoint_visit_after">Επίσκεψη μετά</string>
@@ -1580,7 +1559,6 @@
 	<string name="rename_failed">Η μετονομασία απέτυχε.</string>
 	<string name="days_behind">ημέρες πίσω</string>
 	<string name="back_to_map">Πίσω στο χάρτη</string>
-	<string name="share_note">Κοινή χρήση σημείωσης</string>
     <string name="notes">Σημειώσεις</string>
 	<string name="roads_only">Μόνο δρόμοι</string>
     <string name="free">"Ελεύθερος %1$s "</string>
@@ -1661,8 +1639,7 @@
     <string name="application_dir_change_warning3">Θέλετε ο OsmAnd να αντιγράψει τα αρχεία δεδομένων του στο νέο προορισμό;</string>
     <string name="filter_poi_hint">Φιλτράρισμα κατά όνομα</string>
     <string name="shared_string_manage">Διαχείριση</string>
-	<string name="local_recordings_delete_all_confirm">Πρόκειται να διαγράψεις %1$d σημειώσεις. Είσαι σίγουρος?</string>
-	<string name="delay_to_start_navigation">Εκκίνηση πλοήγησης στροφή προς στροφή μετά από.…</string>
+    <string name="delay_to_start_navigation">Εκκίνηση πλοήγησης στροφή προς στροφή μετά από.…</string>
     <string name="shared_string_go">Εκτέλεση</string>
 	<string name="short_location_on_map">Γ. Πλ %1$s\n Γ. Μηκ %2$s</string>
     <string name="track_segments">Τμήματα διαδρομής</string>
@@ -1775,7 +1752,4 @@
     <string name="marker_activated">Ο δείκτης %s ενεργοποιήθηκε.</string>
     <string name="one_tap_active_descr">Πατήστε ένα δείκτη στο χάρτη για να τον μετακινήσετε στην κορυφή των ενεργών δεικτών χωρίς να ανοίξει το συναφές μενού.</string>
     <string name="one_tap_active">Μονό πάτημα ενεργό</string>
-    <string name="empty_state_av_notes">Κρατήστε σημειώσεις!</string>
-    <string name="empty_state_av_notes_desc">Προσθήκη ήχου, βίντεο ή σημείωση φωτογραφίας για κάθε σημείο στο χάρτη, χρησιμοποιώντας το widget ή το συναφές μενού.</string>
-    <string name="notes_by_date">Σημειώσεις κατά ημερομηνία</string>
-    </resources>
+</resources>

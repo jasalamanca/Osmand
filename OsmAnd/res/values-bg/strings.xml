@@ -99,7 +99,6 @@
 
 
     <string name="local_indexes_cat_srtm">Контурни линии</string>
-    <string name="local_indexes_cat_av">Аудио/видео данни</string>
     <string name="stop_routing_confirm">Наистина ли искате да спрете навигацията?</string>
     <string name="clear_dest_confirm">Наистина ли искате да изтриете крайната цел (и междинните точки)?</string>
     <string name="precise_routing_mode_descr">Прецизното изчисляване на маршрута. Все още е ограничено по дистанция и е по-бавно.</string>
@@ -115,29 +114,16 @@
     <string name="srtm_paid_version_msg">Можете да закупите добавката Contour lines чрез Market и да подпомогнете нейното бъдещо развитие.</string>
     <string name="srtm_paid_version_title">Добавка за контури (Contour lines)</string>
     <string name="av_def_action_choose">Избери при заявка</string>
-    <string name="av_def_action_video">Запиши видео</string>
-    <string name="av_def_action_audio">Запиши аудио</string>
     <string name="av_widget_action_descr">Изберете действие по подразбиране</string>
     <string name="av_widget_action">Действие по подразбиране</string>
-    <string name="av_video_format_descr">Изберете формат за видеото</string>
-    <string name="av_video_format">Изходен формат на видеото</string>
-    <string name="av_use_external_recorder_descr">Използване на вградената камера за видео</string>
     <string name="av_use_external_recorder">Използване на вграденото видео</string>
     <string name="av_use_external_camera_descr">Използване на вграденото приложение за камерата</string>
     <string name="av_use_external_camera">Използване на камерата</string>
-    <string name="av_settings_descr">Настройване на аудио и видео</string>
-    <string name="av_settings">Настройки на аудио/видео </string>
     <string name="recording_error">Възникна грешка при запис </string>
-    <string name="recording_camera_not_available">Камерата не е достъпна</string>
-    <string name="recording_is_recorded">Записва се аудио/видео. За спиране натиснете стоп.</string>
-    <string name="recording_playing">Избраният аудио запис се изпълнява.\n%1$s</string>
     <string name="recording_open_external_player">Отваряне на външен плеър</string>
     <string name="recording_delete_confirm">Искате ли да изтриете този запис?</string>
 
     <string name="recording_unavailable">недостъпно</string>
-    <string name="recording_context_menu_arecord">Направи аудио бележка</string>
-    <string name="recording_context_menu_vrecord">Направи видео бележка</string>
-    <string name="layer_recordings">Маркери за бележки</string>
     <string name="recording_can_not_be_played">Записът не може да бъде изпълнен</string>
     <string name="recording_context_menu_delete">Изтриване на запис</string>
     <string name="recording_context_menu_play">Старт</string>
@@ -145,15 +131,10 @@
     <string name="recording_default_name">Запис</string>
     <string name="shared_string_control_stop">Стоп</string>
     <string name="shared_string_control_start">Старт</string>
-    <string name="map_widget_av_notes">Аудио/видео бележки</string>
     <string name="osmand_srtm_short_description_80_chars">Добавка на OsmAnd за офлайн контурни линии</string>
     <string name="osmand_srtm_long_description_1000_chars">"Тази добавка изчертава линии на релефа върху основните карти на OsmAnd. Това е особено полезно за туристи и хора интересуващи се от релефа на местността.\n\nГлобалната карта (между 70 градуса северна ширина и 70 градуса южна ширина) се базира на измервания от SRTM (Shuttle Radar Topography Mission) и ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), устройство за изображения на борда на Terra, най-добрият спътник на програмата на NASA Earth Observing System. ASTER е съвместен проект на NASA, Японското правителсто и японската компания Japan Space Systems (J-spacesystems). "</string>
     <string name="map_widget_distancemeasurement">Измерване на дистанции</string>
-    <string name="audionotes_location_not_defined">Няма определена позиция за тази бележка. Използвайте контекстното меню за да изберете място и да направите бележка</string>
 
-    <string name="map_widget_audionotes">Аудио бележки</string>
-    <string name="audionotes_plugin_description">С добавката можете да правите бележки (глас, снимка или видео) по време на пътуване, ползвайки специалния бутон или контекстното меню.</string>
-    <string name="audionotes_plugin_name">Аудио/видео бележки</string>
     <string name="index_srtm_parts">части</string>
     <string name="index_srtm_ele">Контури</string>
     <string name="srtm_plugin_description">"Тази добавка осигурява показване на релефни контури върху офлайн картите на OsmAnd. Тази функционалност е много оценявана от спортисти, туристи, всички които се интересуват от ландшафта.
@@ -1446,7 +1427,6 @@
     <string name="shared_string_my_tracks">Моите следи</string>
     <string name="shared_string_currently_recording_track">Текуща следа</string>
     <string name="shared_string_audio">Аудио</string>
-    <string name="shared_string_video">Видео</string>
     <string name="shared_string_photo">Снимка</string>
     <string name="route_points">Точки от маршрута</string>
     <string name="track_segments">Сегменти от маршрута</string>
@@ -1462,7 +1442,6 @@
     <string name="rename_failed">Неуспешно преименуване.</string>
     <string name="days_behind">дена по-рано</string>
     <string name="back_to_map">Назад към картата</string>
-    <string name="share_note">Сподели бележката</string>
     <string name="location_on_map">Позиция:\n шир: %1$s\n дълж: %2$s</string>
     <string name="watch">Виж</string>
     <string name="notes">Бележки</string>
@@ -1630,7 +1609,6 @@
     <string name="disable_recording_once_app_killed_descrp">Спира на пауза записа на GPX, когато приложението е затворено (от последни приложения). (Иконата на OsmAnd изчезва от лентата за уведомяване на Андроид.)</string>
     <string name="shared_string_import2osmand">Импортиране към OsmAnd</string>
     <string name="read_full_article">Прочетете пълната статия (онлайн)</string>
-    <string name="local_recordings_delete_all_confirm">Възнамерявате да изтриете %1$d бележки. Сигурни ли сте?</string>
     <string name="archive_wikipedia_data">Имате изтеглени стари и несъвместими данни от Уикипедия. Искате ли да ги архивирате?</string>
     <string name="download_wikipedia_files">Искате ли да изтеглите допълнителни данни от Уикипедия (%1$s МБ)?</string>
     <string name="shared_string_release">Издаден</string>
@@ -1831,7 +1809,6 @@
     <string name="shared_string_location">Местоположение</string>
     <string name="simulate_your_location_stop_descr">Спиране на симулацията на място</string>
     <string name="simulate_your_location_descr">Симулира с помощта на изчисления маршрут или записана GPX следа</string>
-    <string name="av_locations_descr">GPX файл с бележки</string>
     <string name="av_locations">Места</string>
     <string name="routing_attr_avoid_shuttle_train_name">Избягване на трансферен влак</string>
     <string name="routing_attr_avoid_shuttle_train_description">Избягване на трансферен влак</string>
@@ -1995,14 +1972,6 @@
 <string name="osmo_auto_send_locations_descr">Автоматично стартиране и изпращане на данни</string>
     <string name="shared_string_near">Близо</string>
     <string name="shared_string_hide">Скрий</string>
-    <string name="av_video_quality_low">Най-ниско качество</string>
-    <string name="av_video_quality_high">Най-високо качество</string>
-    <string name="av_video_quality">Качество на видеото</string>
-    <string name="av_video_quality_descr">Изберете качество на видеото</string>
-    <string name="av_audio_format">Формат за аудио изход</string>
-    <string name="av_audio_format_descr">Изберете формат за аудио изход</string>
-    <string name="av_audio_bitrate">Аудио битрейт</string>
-    <string name="av_audio_bitrate_descr">Изберете аудио битрейт</string>
     <string name="no_address_found">Няма адрес</string>
 	<string name="looking_up_address">Търсене на адрес</string>
     <string name="osmo_tracker_id_descr">Преглед ID на трекер.</string>
@@ -2028,14 +1997,9 @@
     <string name="shared_string_sound">Звук</string>
     <string name="last_update">Последна актуализация: %s</string>
 <string name="rec_split">Записване на раздели</string>
-    <string name="rec_split_clip_length">Дължина на клипа</string>
-    <string name="rec_split_clip_length_desc">Всеки записан видео клип ще бъде ограничен от този размер</string>
-    <string name="rec_split_storage_size">Място за съхранение</string>
-    <string name="rec_split_storage_size_desc">Големина на определената за видео клипове памет</string>
     <string name="updates_size">Актуализации: %s</string>
     <string name="last_map_change">Последна промяна на картата: %s</string>
 <string name="shared_string_not_selected">Няма избран</string>
-    <string name="rec_split_desc">Презаписване върху стари клипове при недостиг на място</string>
     <string name="rec_split_title">Разделяне на клиповете чрез камерата</string>
     <string name="update_time">Дата/час на актуализация</string>
     <string name="hourly">На всеки час</string>

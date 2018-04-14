@@ -1,8 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string name="download_hillshade_maps">Տարածքի մգեցված ռելիեֆով քարտեզներ (Hillshades)</string>
-    
-    <string name="local_indexes_cat_av">Ձայնա/Տեսանյութեր</string>
+
     <string name="clear_dest_confirm">Վստահ ե՞ք, որ ցանկանում եք ջնջել ձեր նպատակակետը(և միջանկյալ նպատակակետը)?</string>
     <string name="stop_routing_confirm">Վստահ ե՞ք որ ցանկանում եք դադարեցնել նավիգացիան?</string>
     <string name="precise_routing_mode">Ճշգրիտ ճանապարհ (ալֆա)</string>
@@ -15,18 +14,10 @@
     <string name="intermediate_points_change_order">Փոխել հերթականությունը</string>
     <string name="srtm_paid_version_msg">Рассмотрите пожалуйста покупку плагина \"Линии высот\" на Market, чтобы поддержать последующую разработку.</string>
     <string name="srtm_paid_version_title">Բարձրության գծեր փլագին</string>
-    <string name="av_def_action_video">Տեսանյութի ձայնագրում</string>
-    <string name="av_def_action_audio">Աուդիո ձայնագրում</string>
-    <string name="av_video_format_descr">Ընտրեք տեսանյութի ֆորմատը։</string>
-    <string name="av_video_format">Տեսանյութի ֆորմատ</string>
-    <string name="av_use_external_recorder_descr">Օգտագործել սիստեմային ծրագիր տեսաձայնագրման համար։</string>
     <string name="av_use_external_recorder">Օգտագործել արտաքին ծրագիր</string>
     <string name="av_use_external_camera_descr">Օգտագործել սիստեմային ծրագիր լուսանկարելու համար։</string>
     <string name="av_use_external_camera">Օգտագործել Camera ծրագիրը</string>
-    <string name="av_settings_descr">Տեսա/Ձայնա-գրման պարամետրեր։</string>
-    <string name="av_settings">"Աուդիո/վիդեո պարամետրեր" </string>
     <string name="recording_error">"Սխալ է տեղի ունեցել  արձանագրության ժամանակ"</string>
-    <string name="recording_camera_not_available">Վիդեո/Ֆոտո-խցիկը անհասանելի է</string>
     <string name="email">էլ-փոստ</string>
 <string name="use_kalman_filter_compass_descr">Օգտագործել Կալմանի ֆիլտրը կողմնացույցի սխելներից խուսափելու համար։</string>
     <string name="use_kalman_filter_compass">Օգտագործել Կալմանի ֆիլտրը</string>
@@ -103,14 +94,9 @@
     <string name="av_def_action_choose">Ընտրել ըստ հարցման</string>
     <string name="av_widget_action_descr">Ընտրել default Widget գործողություն։</string>
     <string name="av_widget_action">Default վիդջետի գործողություն</string>
-    <string name="recording_is_recorded">Կատարվում է Աուդիո/վիդեո ձայնագրում, դադարեցնելու համար սեխմեք \"Վերջ\"։</string>
-    <string name="recording_playing">Նվագում է ձայնագրությունը\n%1$s</string>
     <string name="recording_open_external_player">Բացել արտաքին նվագարկիչով</string>
     <string name="recording_delete_confirm">Դուք ուզու՞մ եք ջնջել գրառումը?</string>
     <string name="recording_unavailable">անհասանելի է</string>
-    <string name="recording_context_menu_arecord">Կատարել աուդիո նշում</string>
-    <string name="recording_context_menu_vrecord">Կատարել վիդեո նշում</string>
-    <string name="layer_recordings">Աուդիո-ձայնագրությունների շերտ</string>
     <string name="recording_can_not_be_played">Ձայնագրությունը հնարավոր չէ նվագել</string>
     <string name="recording_context_menu_delete">Ջնջել ձայնագրությունը</string>
     <string name="recording_context_menu_play">Նվագել</string>
@@ -118,9 +104,8 @@
     <string name="recording_default_name">Ձայնագրություն\\գրառում</string>
     <string name="shared_string_control_stop">Կանգնել</string>
     <string name="shared_string_control_start">ձայնագրել</string>
-    <string name="map_widget_av_notes">Աուդիո/Վիդեո նշումներ</string>
-    
-	<string name="about_version">Տարբերակ :</string>
+
+    <string name="about_version">Տարբերակ :</string>
     
     <string name="local_index_tile_data_downloadable">Բեռնվող: %1$s</string>
     <string name="select_gpx">Ընտրել GPX-…</string>
@@ -618,23 +603,12 @@
     <string name="impassable_road_desc">Ընտրեք ճանապարհներ, որոնք ցանկանում եք խուսափել նավարկության ժամանակ։</string>
     <string name="shared_string_sound">Ձայն</string>
     <string name="consider_turning_polygons_off">Ցանկալի է անջատել պոլիգենների ցուցադրումը։</string>
-    <string name="rec_split_clip_length">"Clip  երկարությունը"</string>
-    <string name="rec_split_clip_length_desc">Ձայնագրված տեսահոլովակի(clip) երկարության սահմանաչափը։</string>
-    <string name="rec_split_storage_size_desc">Հիշողության ծավալը, որը կարող է զբաղեցված լինի բոլոր clips-ներով։</string>
     <string name="route_distance">Հեռավորություն։</string>
     <string name="route_duration">Ժամանակ՝</string>
     <string name="rendering_attr_horseRoutes_name">Ձիոյու երթուղիներ</string>
     <string name="no_address_found">Հասցեն որոշված չէ</string>
     <string name="shared_string_near">Մոտ</string>
     <string name="shared_string_hide">Թաքցնել</string>
-    <string name="av_video_quality_low">Ցածր որակ</string>
-    <string name="av_video_quality_high">Բարձր որակ</string>
-    <string name="av_video_quality">Տեսանյութի որակը</string>
-    <string name="av_video_quality_descr">Ընտրեք տեսանյութի որակը։</string>
-    <string name="av_audio_format">Ձայնի ձևաչափ</string>
-    <string name="av_audio_format_descr">Ընտրեք ձայնի ձևաչափ։</string>
-    <string name="av_audio_bitrate">Ձայնի bitrate</string>
-    <string name="av_audio_bitrate_descr">Ընտրեք ձայնի bitrate։</string>
     <string name="shared_string_road">Ճանապարհ</string>
     <string name="show_map">Ցույց տալ քարտեզը</string>
     <string name="route_is_calculated">Երթուղին հաշվարկված է</string>
@@ -653,7 +627,6 @@
     <string name="download_files_error_not_enough_space">Բավարար տեղ չկա: Պահպանելու համար անհրաժեշտ է {3} ՄԲ ժամանակավոր, {1} ՄԲ մշտապես: Առկա է միայն {2} ՄԲ:</string>
     <string name="download_files_question_space_with_temp">Ներբեռնել {0} ֆայլ(եր)? Օգտագործված պահեստային տարածքը {3} ՄԲ ժամանակավոր է, {1} ՄԲ մշտապես: (Առկա է միայն {2} ՄԲ:)</string>
     <string name="download_files_question_space">Ներբեռնեք {0} ֆայլ (եր)? Օգտագործված պահեստային տարածքը`{1} ՄԲ է։ (Առկա տարածքը {2} ՄԲ է:)</string>
-    <string name="rec_split_storage_size">Պահպանման տարացքի ծավալը</string>
     <string name="please_specify_poi_type_only_from_list">Խնդրում ենք նշել ճիշտ POI տեսակի կամ բաց թողնել այն։</string>
     <string name="access_from_map_description">Մենյուի կոճակը բացում է Վահանակը, այլ ոչ Մենյու։</string>
     <string name="access_from_map">Մուտք քարտեզից</string>
@@ -756,7 +729,6 @@
     <string name="simulate_your_location_stop_descr">Դադարեցնել սիմուլյացիան։</string>
     <string name="simulate_your_location_descr">Խթանել ձեր դիրքորոշումը, օգտագործելով հաշվարկված երթուղին կամ գրանցված GPX երթուղին։</string>
     <string name="looking_up_address">Հասցեի որոնում</string>
-    <string name="av_locations_descr">GPX ֆայլը նշումների կոորդինատներով։</string>
     <string name="av_locations">Գտնվելու վայրերը</string>
     <string name="plugin_settings">Պլագիններ</string>
     <string name="routing_attr_avoid_shuttle_train_name">Խուսափեք բեռնատար գնացքներից</string>
@@ -876,7 +848,6 @@
     <string name="osm_changes_added_to_local_edits">OSM-ի փոփոխությունները մուտքագրվել են տեղական տվյալների բազայում</string>
     <string name="mark_to_delete">Նշել ջնջելու համար</string>
     <string name="osmo_grop_name_length_alert">Խմբի անունը պետք կազմված լինի առնվազն 3 նիշից:</string>
-    <string name="local_recordings_delete_all_confirm">Դուք մտադիր եք ջնջել %1$d նշումներ: Համոզված եք?</string>
     <string name="local_osm_changes_upload_all_confirm">Դուք մտադիր եք %1$d փոփոխություններ ուղարկել OSM- ին: Համոզված եք?</string>
     <string name="confirmation_to_clear_history">Ցանկանում եք մաքրել պատմությունը?</string>
     <string name="delay_to_start_navigation_descr">Նշեք սպասման ժամանակը երթուղու պլանավորման էկրանին։</string>
@@ -999,7 +970,6 @@
     <string name="shared_string_my_tracks">Իմ տրեկները</string>
     <string name="shared_string_currently_recording_track">Ներկայումս գրնացվող ուղին</string>
     <string name="shared_string_audio">Աուդիո</string>
-    <string name="shared_string_video">Վիդեո</string>
     <string name="shared_string_photo">Լուսանկար</string>
     <string name="route_points">Երթուղու կետերը</string>
     <string name="track_segments">Տրեկի հատվածներ</string>
@@ -1036,8 +1006,6 @@
 \nԱյս դիտումը կարող է վերադարձվել կամ կրկին անջատել այն այս կետից, կամ փոխելով «Քարտեզի ոճը», «Կարգավորել քարտեզը» կետից, ըստ ցանկության:"</string>
     <string name="plugin_nautical_name">Ծովային քարտեզի դիտում</string>
     <string name="plugin_ski_name">Դահուկային քարտեզի դիտում</string>
-    <string name="audionotes_plugin_name">Աուդիո և վիդեո նշումներ</string>
-    <string name="audionotes_plugin_description">"Աուդիո/Վիդեո նշումների plugin-ը հնարավորություն են տալիս ստեղծել աուդիո/լուսանկարներ/վիդեո նշումներ վարելու ժամանակ  կամ   կոճակի միջոցով  քարտեզի էկրանին վրա  կամ անմիջապես համատեքստային մենյուի միջոցով ցանկացած դիրքի համար քարտեզի վրա:"</string>
     <string name="osmand_parking_plugin_name">Ավտոկայանատեղ</string>
     <string name="osmand_parking_plugin_description">Ավտոկայանատեղ plugin-ը թույլ է տալիս հիշել, թե որտեղ է ձեր մեքենան կայանել և որքան ժամանակ է մնացել ավտոկայանատեղը ազատելու (եթե առկա է ժամկետ):
 \nԹե տեղը, թե ժամանակը տեսանելի են OsmAnd-ի վահանակի վրա, ինչպես նաև քարտեզի էկրանին ինչպես նաև վիդժետի մեջ: Android օրացույցին կարելի է միացնել որպես հիշեցում:</string>
@@ -1055,7 +1023,6 @@
     <string name="rename_failed">Չհաջողվեց վերանվանել:</string>
     <string name="days_behind">օր առաջ</string>
     <string name="back_to_map">Վերադառնալ քարտեզին</string>
-    <string name="share_note">Տարածեք նշումը</string>
     <string name="location_on_map">Կոորդինատներ.
 \nԼայնությունը %1$
 \nԵրկայնություն %2$s</string>
@@ -1550,8 +1517,6 @@
     <string name="contribution_activity">Տեղադրել տարբերակը</string>
     <string name="download_wikipedia_maps">Վիքիպեդիա</string>
     <string name="map_widget_distancemeasurement">Հեռավորության չափում</string>
-    <string name="audionotes_location_not_defined">"Դիրքը դեռ հայտնի չէ, որպեսզի կապել նշումի հետ:\"Օգտագործեք դիրղը ...\" նշումը  նշված դիրքին նշանակելու համար։"</string>
-    <string name="map_widget_audionotes">Աուդիո նշումներ</string>
     <string name="index_srtm_parts">մասեր</string>
     <string name="index_srtm_ele">Բարձունքների գծեր</string>
     <string name="download_select_map_types">Այլ քարտեզներ</string>
@@ -1646,7 +1611,6 @@
     <string name="osmand_plus_extended_description_part1">"OsmAnd+ (OSM Automated Navigation Directions) հանդիսանում է որպեսզ քարտեզ և նավիգացիոն հավելված ազատ մուտթով բարձրորակ OpenStreetMap (OSM) տվյալներին։ Վայելեք ձայնային և օպտիկական նավիգատորի հնարավորությունները, դիտելով POIs, ստեղծեք և կառավարեք GPX track-րը, օգտագործելով եզրագծերի(contour lines) արտացոլման և բարձրությանների տեղեկատվություն (plugin-ի միջոցով), մեքենավարման, հեծանվավազքի, հետիոտների ռեժիմների  միջև ընտրում, OSM խմբագրում և այլնի: OsmAnd+ - հավելվածի վճարովի  տարբերակն է, ձեռք բերելով այն, աջակցեկցում եք նախագծին, ֆինանսավորում եք նոր առանձնահատկությունների զարգացումը և ստանում եք վերջին թարմացումները: Հիմնական առանձնահատկություններից մի քանիսը`"</string>
     <string name="osmand_plus_extended_description_part2">"Նավիգացիան • Աշխատում է առցանց (արագ) կամ անցանց (չկա ռոումինգի վճարներ, արտերկրում) • Ձայնային ուղեկցումը առաջնորդում է Ձեզ  ճանապարհով (ձայնագրված և սինթեզված(TTS) ձայն)  • Ճանապարհային ուղեցույցը, փողոցների անունները և նախատեսված ժամանման ժամանակը • Աջակցում է  երթուղու միջանկյալ կետերը ձեր երթուղու վրա  • Երթուղին վերահաշվարկվում է եթե դուք շեղվում եք նրանից • Դուք կարող եք որոնել Ձեր նպատակակետը ըստ հասցեյի, ըստ տեսակի (օրինակ`ավտոկանգառ, ռեստորան, հյուրանոց, բենզալցակայան, թանգարան) կամ ըստ աշխարհագրական կոորդինատների"</string>
     <string name="show_legacy_search_desc">"Ավելացնել  մենյուի ցանկում հին որոնումը։"</string>
-    <string name="rec_split_desc">"Վերագրանցել  կլիպները(clips), երբ սահմանվաշ պահեստային ծավալը գերազանցում է։"</string>
     <string name="osmand_plus_extended_description_part3">"Քարտեզի դիտում  • Ցուցադրում է ձեր դիրքը և կողմնորոշումը  • Կարգավորում է քարտեզը ըստ Ձեր շարժման ուղղությամբ • Պահպանում է ձեր ամենակարևոր տեղերը  «Սիրված»-ում (Favorites) • Ցուցադրում է Ձեր շուրջը գտնվող POIs (հետաքրքրության կետ) • Ցուցադրում է մասնագիտացված օնլայն սալիկներ, արբանյակային դիտում (Bing-ից), տարբեր կափարիչներ, ինչպիսիք են շրջագայությունը/նավիգացիան GPX tracks և լրացուցիչ շերտերով`հարմարեցված թափանցիկությամբ • Թույլ է տալիս ընտրել, թե ինչպես  ցուցադրել անունները քարտեզի վրա`անգլերեն, տեղական կամ հնչյունական ուղղագրությամբ"</string>
     <string name="osmand_plus_extended_description_part4">"Հհարավորություն է տալիս օգտագործել OSM և Wikipedia տվյալները • Բարձրորակ տեղեկատվություն աշխարհի լավագույն համագործակցային նախագծերից • OSM տվյալներ ըստ երկրի կամ տարածաշրջանի • Վիքիպեդիա POIs, մեծ տեսարժան վայրեր դիտելու համար • Անսահմանափակ անվճար ներլցումներ, անմիջապես հավելվածից • Կոմպակտ անցանց վեկտորային քարտեզները թարմացվում են առնվազն ամիսը մեկ անգամ • Ընտրություն միջև ամբողջական տարածաշրջանային տվյալների և ճանապարհային ցանցի  (օրինակ, ամբողջ Ճապոնիայն 700 ՄԲ կամ 200 ՄԲ միայն ճանապարհային ցանցի համար)"</string>
     <string name="osmand_plus_extended_description_part5">Անվտանգության հատկություններ • Լրացուցիչ ավտոմատացված օրվա/գիշերային դիտման անցում • Լրացուցիչ արագության ցուցադրման ցուցադրություն, հիշեցում, եթե այն գերազանցում է • Արագության սահմանափակումների ցուցադռումը և զգուշացում այն գերազանցելու դեպկում • Փոխանակեք ձեր գտնվելու վայրը, որպեսզի ձեր ընկերները կարողանան գտնել ձեզ</string>
@@ -2525,9 +2489,6 @@
     <string name="quick_action_add_poi">Ավելացնել POI</string>
     <string name="quick_action_map_style">Փոխել քարտեզի ոճը</string>
     <string name="quick_action_map_style_switch">Քարտեզի ոճը փոխվել է «%s»։</string>
-    <string name="quick_action_take_audio_note">Ձայնագրել աուդիո նշում</string>
-    <string name="quick_action_take_video_note">Ձայնագրել վիդեո նշում</string>
-    <string name="quick_action_take_photo_note">Անել լուսանկար-նշում</string>
     <string name="quick_action_add_osm_bug">"Ավելացնել OSM  Նշում"</string>
     <string name="quick_action_navigation_voice">Ձայնը on/off</string>
     <string name="quick_action_navigation_voice_off">Ձայնը անջատված է</string>
@@ -2543,9 +2504,6 @@
     <string name="quick_favorites_show_favorites_dialog">Ցուցադրել «Սիրված» երկխոսությունը</string>
     <string name="quick_action_add_marker_descr">Սեղմելով գործողության կոճակը, էկրանին կտեղադրվի մարկեր:</string>
     <string name="quick_action_add_gpx_descr">Սեղմելով գործողության կոճակը, էկրանի կենտրոնում կտեղադրվի GPX կետ:</string>
-    <string name="quick_action_take_audio_note_descr">Սեղմելով գործողության կոճակը, էկրանի կենտրոնում կտեղադրվի աուդիո նշում:</string>
-    <string name="quick_action_take_video_note_descr">Սեղմելով գործողության կոճակը, էկրանի կենտրոնում կտեղադրվի վիդեո նշում:</string>
-    <string name="quick_action_take_photo_note_descr">Սեղմելով գործողության կոճակը, էկրանի կենտրոնում կտեղադրվի լուսանկարային նշում:</string>
     <string name="quick_action_add_osm_bug_descr">Սեղմելով գործողության կոճակը, էկրանի կենտրոնում կտեղադրվի OSM նշում:</string>
     <string name="quick_action_add_poi_descr">Սեղմելով գործողության կոճակը, էկրանի կենտրոնում կտեղադրվի POI:</string>
     <string name="quick_action_navigation_voice_descr">Սեղմելով գործողության կոճակը, կանջատի կամ կակտիվացնի ձայնային ուղեցույցը նավիգացիայի ընթացքում:</string>
@@ -2662,9 +2620,6 @@
     <string name="one_tap_active_descr">"Քարտեզի վրա  մարկերի նշումը, տեղափոխելու է այն առաջին տեղը ակտիվ մարկերների ցուցակում,       
 \nառանց  կոնտեքստային մենյուն բացելու։"</string>
     <string name="one_tap_active">Մեկ սեղմումով ակտիվացում</string>
-    <string name="empty_state_av_notes">Նշումներ կատարեք:</string>
-    <string name="empty_state_av_notes_desc">Տեղադրեք աուդիո, վիդեո կամ ֆոտո գրառումներ քարտեզի ցանկացած կետի վրա, օգտագործելով վիջեթ կամ համատեքստային մենյու:</string>
-    <string name="notes_by_date">Նշումներ ըստ ամսաթվի</string>
     <string name="by_date">Ըստ ամսաթվի</string>
     <string name="by_type">Ըստ տեսակի</string>
     <string name="looking_for_tracks_with_waypoints">Տրեկների որոնում ճանապարհային կետեր հետ</string>

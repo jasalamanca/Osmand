@@ -892,7 +892,6 @@
     <string name="edit_filter_create_message">篩選{0}已被建立</string>
 
     <string name="email">電子郵件</string>
-    <string name="recording_context_menu_vrecord">拍攝視訊附註</string>
     <string name="intermediate_items_sort_by_distance">排序送貨到門</string>
     <string name="plugin_distance_point_time">時間</string>
     <string name="plugin_distance_point_speed">速度</string>
@@ -949,7 +948,6 @@
 
 
     <string name="local_indexes_cat_srtm">等高線</string>
-    <string name="local_indexes_cat_av">音訊/視訊資料</string>
     <string name="stop_routing_confirm">您確定要停止導航嗎？</string>
     <string name="clear_dest_confirm">您確定想要清除您的目的地(含中轉地點)？</string>
     <string name="precise_routing_mode">精確的路線 (alpha)</string>
@@ -965,42 +963,27 @@
     <string name="srtm_paid_version_msg">請考慮在商場上購買等高線外掛元件，以支持更進一步的開發。</string>
     <string name="srtm_paid_version_title">等高線外掛元件</string>
     <string name="av_def_action_choose">應需求選取</string>
-    <string name="av_def_action_video">錄取視訊</string>
-    <string name="av_def_action_audio">錄取音訊</string>
     <string name="av_widget_action_descr">選擇預設小工具的作用。</string>
     <string name="av_widget_action">預設小工具作用</string>
-    <string name="av_video_format_descr">選擇視訊輸出格式。</string>
-    <string name="av_video_format">視訊輸出格式</string>
 
     <string name="search_street_in_neighborhood_cities">在附近一帶的城市查尋街道</string>
-    <string name="av_settings_descr">組態音訊和視訊設定。</string>
-    <string name="av_settings">音訊/視訊設定 </string>
     <string name="recording_error">在錄製時發生錯誤</string>
-    <string name="recording_camera_not_available">相機失效</string>
-    <string name="recording_playing">從已指定的錄音開始播放音訊。\n%1$s</string>
     <string name="recording_open_external_player">開啟外部播放</string>
     <string name="recording_delete_confirm">您想刪除此錄製嗎？</string>
     <string name="recording_unavailable">無法使用</string>
-    <string name="recording_context_menu_arecord">錄取音訊附註</string>
     <string name="destination_point">目的地 %1$s</string>
     <string name="local_osm_changes_backup_successful">OSM 變更的檔案已成功的產生 %1$s</string>
-    <string name="av_use_external_recorder_descr">使用系統錄製視訊。</string>
     <string name="av_use_external_recorder">使用系統錄製</string>
     <string name="av_use_external_camera_descr">使用系統應用程式照片。</string>
     <string name="av_use_external_camera">使用相機應用程式</string>
-    <string name="recording_is_recorded">音訊/視訊開始錄製。要停止時輕點 AV 小工具。</string>
     <string name="recording_can_not_be_played">不能播放記錄</string>
     <string name="recording_context_menu_delete">刪除錄製</string>
     <string name="recording_context_menu_play">播放</string>
     <string name="recording_description">錄製 %1$s %3$s %2$s</string>
     <string name="recording_default_name">錄製中</string>
-    <string name="map_widget_av_notes">音訊/視訊的附註</string>
     <string name="osmand_srtm_short_description_80_chars">用於離線等高線的 OsmAnd 外掛元件</string>
     <string name="map_widget_distancemeasurement">測量距離</string>
 
-    <string name="map_widget_audionotes">音訊註解</string>
-    <string name="audionotes_plugin_description">音訊/視訊附註外掛元件提供的功能，在旅程中取得的音訊/照相/視訊之註解，使用在地圖畫面上的按鈕，或地圖上任何的位置直接叫出快顯選單。</string>
-    <string name="audionotes_plugin_name">音訊/視訊附註</string>
     <string name="index_srtm_parts">部件</string>
     <string name="index_srtm_ele">等高線</string>
     <string name="srtm_plugin_name">等高線</string>
@@ -1108,13 +1091,11 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="plugin_distance_point">標點</string>
     <string name="distance_measurement_clear_route">清除所有的標點</string>
     <string name="files_limit">剩餘 %1$d 個檔</string>
-    <string name="layer_recordings">記錄層</string>
     <string name="intermediate_items_sort_return">在目前的位置到達目的地之間的路途上，沿路的中轉地點已採取了最佳化排列。</string>
     <string name="osmand_srtm_long_description_1000_chars">這個外掛元件同時提供了等高線上層和（地貌）地形陰影層，顯示在 OsmAnd 標準地圖的頂部。此功能會讓運動選手、健行旅遊者、背包客，和對起伏的地理構成感興趣的任何人。 
 \n
 \n全球圖資（在北緯 70 度至南緯 70 度之間）的量測基礎在於 SRTM (Shuttle Radar Topography Mission)和 ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer)，安裝在美國太空總署地球觀測系統的旗艦衛星 Terra 上的遙測儀器，ASTER 是美國太空總署、日本經濟產業省(METI)、日本太空系統 (J-spacesystems)之間的通力合作產物。</string>
-    <string name="audionotes_location_not_defined">以位置去關聯的附註尚未下定義。\"使用位置 …\"，把註解分配給指定的位置。</string>
-    <string name="srtm_plugin_description">這個外掛元件同時提供了等高線上層和（地貌）地形陰影層，顯示在 OsmAnd 標準地圖的頂部。此功能會讓運動選手、健行旅遊者、背包客，和對起伏的地理構成感興趣的任何人。（請注意，等高線和地貌資料是各自獨立的，在外掛元件啟用後可以追加下載。） 
+    <string name="srtm_plugin_description">這個外掛元件同時提供了等高線上層和（地貌）地形陰影層，顯示在 OsmAnd 標準地圖的頂部。此功能會讓運動選手、健行旅遊者、背包客，和對起伏的地理構成感興趣的任何人。（請注意，等高線和地貌資料是各自獨立的，在外掛元件啟用後可以追加下載。）
 \n 
 \n全球圖資（在 70 度以北和 70 度以南之間）的量測基礎在於 SRTM（Shuttle Radar Topography Mission）和 ASTER（Advanced Spaceborne Thermal Emission and Reflection Radiometer），安裝在美國太空總署地球觀測系統的旗艦衛星 Terra 上的遙測儀器，ASTER 是美國太空總署、日本經濟產業省（METI）、日本太空系統（J-spacesystems）之間的通力合作的產物。</string>
 
@@ -1694,7 +1675,6 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="watch">觀看</string>
     <string name="notes">註解</string>
     <string name="online_map">線上地圖</string>
-    <string name="share_note">分享註解</string>
     <string name="plugin_touringview_name">旅遊地圖檢視</string>
     <string name="plugin_nautical_descr">這個外掛元件豐富了 OsmAnd 地圖和導航應用，也為了划船、帆船、與其他類型的水上運動，產生了航海地圖。 
 \n 
@@ -1777,7 +1757,6 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="shared_string_my_tracks">我的軌跡</string>
     <string name="shared_string_currently_recording_track">錄製軌跡</string>
     <string name="shared_string_audio">音訊</string>
-    <string name="shared_string_video">視訊</string>
     <string name="shared_string_photo">照片</string>
 
     <string name="simulate_your_location">模擬您的位置</string>
@@ -1862,7 +1841,6 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="shared_string_show_details">顯示詳細資訊</string>
     <string name="download_wikipedia_maps">維基百科</string>
     <string name="shared_string_import2osmand">匯入到 OsmAnd</string>
-    <string name="local_recordings_delete_all_confirm">您要刪除 %1$d 的註解。您確定嗎？</string>
     <string name="gps_network_not_enabled">未啟用位置服務。您想要開啟它嗎？</string>
     <string name="disable_recording_once_app_killed">預防單獨的日誌記錄</string>
     <string name="disable_recording_once_app_killed_descrp">當應用程式被停止，將暫停 GPX 日誌記錄 (藉由新的應用程式)。(OsmAnd 背景標示，從通知列消失。)</string>
@@ -1952,7 +1930,6 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="opening_at">營業於</string>
     <string name="closing_at">結束於</string>
     <string name="next_proceed">下頁</string>
-    <string name="av_locations_descr">GPX 檔案加上地點附註。</string>
     <string name="av_locations">地點</string>
 
     
@@ -2139,14 +2116,6 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
 	<string name="routing_attr_avoid_stairs_description">避開樓梯。</string>
 	<string name="routing_attr_avoid_borders_name">避開跨越邊界</string>
 	<string name="shared_string_hide">隱藏</string>
-    <string name="av_video_quality_low">最低品質</string>
-    <string name="av_video_quality_high">最高品質</string>
-    <string name="av_video_quality">視訊輸出品質</string>
-    <string name="av_video_quality_descr">選擇視訊品質。</string>
-    <string name="av_audio_format">音訊輸出格式</string>
-    <string name="av_audio_format_descr">選擇音訊輸出格式。</string>
-    <string name="av_audio_bitrate">音訊位元傳輸速率</string>
-    <string name="av_audio_bitrate_descr">選擇音訊位元傳輸速率。</string>
     <string name="shared_string_near">附近</string>
     <string name="no_address_found">沒有確定地址</string>
 	<string name="looking_up_address">查尋地址</string>
@@ -2175,11 +2144,6 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
 <string name="last_map_change">上次地圖的更改：%s</string>
 <string name="rec_split">錄製分割</string>
     <string name="rec_split_title">使用錄製分割</string>
-    <string name="rec_split_clip_length">剪輯長度</string>
-    <string name="rec_split_storage_size">存儲大小</string>
-    <string name="rec_split_desc">當重寫剪輯時，使用的空間超過記憶體大小。</string>
-    <string name="rec_split_storage_size_desc">被所有錄製的剪輯可以佔用的空間總量。</string>
-    <string name="rec_split_clip_length_desc">錄製剪輯的時間上限。</string>
     <string name="hourly">每小時</string>
     <string name="daily">每日</string>
     <string name="weekly">每週</string>
@@ -2499,9 +2463,6 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="quick_action_add_poi">增加 POI</string>
     <string name="quick_action_map_style">更改地圖樣式</string>
     <string name="quick_action_map_style_switch">地圖樣式已經更改為 \"%s\"。</string>
-    <string name="quick_action_take_audio_note">錄取音訊註解</string>
-    <string name="quick_action_take_video_note">錄取視訊註解</string>
-    <string name="quick_action_take_photo_note">拍攝註解</string>
     <string name="quick_action_add_osm_bug">增加 OSM 的註解</string>
     <string name="quick_action_navigation_voice">聲音開/關</string>
     <string name="quick_action_navigation_voice_off">聲音為關閉</string>
@@ -2556,9 +2517,6 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="quick_actions_delete_text">您確定要刪除動作 \"%s\" 嗎？</string>
     <string name="quick_action_add_marker_descr">輕點動作按鈕將會在螢幕中心的位置增加一個地圖記號。</string>
     <string name="quick_action_add_gpx_descr">輕點動作按鈕將會在螢幕中心的位置增加一個 GPX 航點。</string>
-    <string name="quick_action_take_audio_note_descr">輕點動作按鈕將會在螢幕中心的位置增加一個音訊注解。</string>
-    <string name="quick_action_take_video_note_descr">輕點動作按鈕將會在螢幕中心的位置增加一個視訊注解。</string>
-    <string name="quick_action_take_photo_note_descr">輕點動作按鈕將會在螢幕中心的位置增加一個照片注解。</string>
     <string name="quick_action_add_osm_bug_descr">輕點動作按鈕將會在螢幕中心的位置增加一個 OSM 註解。</string>
     <string name="quick_action_add_poi_descr">輕點動作按鈕將會在螢幕中心的位置增加一個 POI。</string>
     <string name="navigate_point_olc">打開位置編碼(OLC)</string>
@@ -2962,9 +2920,6 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="shared_string_added">已增加</string>
     <string name="marker_activated">標記 %s 已啟動。</string>
     <string name="one_tap_active">點一下啟動</string>
-    <string name="empty_state_av_notes">記註解！</string>
-    <string name="empty_state_av_notes_desc">使用小工具或內容選單，增加音訊、視訊或照片附註在地圖上的每個標點。</string>
-    <string name="notes_by_date">註解按照日期</string>
     <string name="by_date">按照日期</string>
     <string name="by_type">按照類型</string>
     <string name="one_tap_active_descr">輕點在地圖上的標記，將其移動到活動標記的頂端，而不用打開內容選單。</string>

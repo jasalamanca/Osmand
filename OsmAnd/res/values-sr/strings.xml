@@ -79,23 +79,15 @@
     <string name="files_limit">%1$d фајлова остало</string>
     <string name="available_downloads_left">Доступно %1$d датотека за преузимање</string>
     <string name="install_paid">Пуна верзија</string>
-    <string name="av_settings_descr">Конфигурисање аудио и видео подешавања</string>
-    <string name="av_settings">Аудио/видео подешавања </string>
     <string name="recording_error">Дошло је до грешке приликом снимања </string>
-    <string name="recording_camera_not_available">Камера није доступна</string>
     <string name="recording_delete_confirm">Да ли желите да уклоните овај снимак ?</string>
     <string name="recording_unavailable">недоступан</string>
-    <string name="recording_context_menu_arecord">Направи аудио белешку</string>
-    <string name="recording_context_menu_vrecord">Направи видео белешку</string>
-    <string name="layer_recordings">Слој за снимање</string>
     <string name="recording_context_menu_delete">Обриши запис</string>
     <string name="recording_context_menu_play">Репродукуј</string>
     <string name="recording_default_name">Снимање</string>
     <string name="shared_string_control_start">Почни</string>
-    <string name="map_widget_av_notes">Аудио/видео белешке</string>
     <string name="map_widget_distancemeasurement">Мерење удаљености</string>
-    
-    <string name="map_widget_audionotes">Аудио белешке</string>
+
     <string name="download_select_map_types">Остале мапе</string>
     <string name="download_roads_only_item">Само путеви</string>
     <string name="download_srtm_maps">изохипсе</string>
@@ -364,10 +356,8 @@
 		\n\nСветска карта приказује сва скијалишта и скијашке стазе у овом прегледу је доступна преузимањем  „Светске скијашке карте“.
 	</string>
 	<string name="shared_string_audio">Звук</string>
-	
-	
-	<string name="share_note">Дели белешку</string>
-	
+
+
     <string name="location_on_map">Географски положај:\nШирина %1$s↵\nДужина %2$s</string>
 	<string name="watch">Прегледај</string>
 	<string name="notes">Бележница</string>
@@ -392,10 +382,6 @@
     <string name="rendering_attr_subwayMode_name">Линије метроа</string>
     <string name="search_radius_proximity">У близини</string>
     <string name="shared_string_hide">Сакриј</string>
-    <string name="av_audio_format">Облик звучног излаза</string>
-    <string name="av_audio_format_descr">Изаберите облик за звучни излаз.</string>
-    <string name="av_audio_bitrate">Битски проток звука</string>
-    <string name="av_audio_bitrate_descr">Изаберите битски проток звука.</string>
     <string name="please_specify_poi_type_only_from_list">Молим, изаберите тачну врсту тачке занимања или је прескочите.</string>
     <string name="access_from_map_description">Дугме изборника не покреће изборник, већ полицу полетника.</string>
     <string name="access_from_map">Приступ са карте</string>
@@ -467,7 +453,6 @@
     <string name="simulate_your_location_stop_descr">Заустави опонашање свог положаја</string>
     <string name="simulate_your_location_descr">Опонашај употребом прорачунате путање или снимка ГПИкс-а.</string>
     <string name="looking_up_address">Претражујем адресу</string>
-    <string name="av_locations_descr">Датотека ГПС-а са положајима белешки.</string>
     <string name="av_locations">Положаји</string>
     <string name="plugin_settings">Прикључци</string>
     <string name="rendering_value_boldOutline_name">Задебљај обрисне линије</string>
@@ -559,7 +544,6 @@
     <string name="osm_changes_added_to_local_edits">Измене ОСМ-а додате скупу месних измена</string>
     <string name="mark_to_delete">Означи за брисање</string>
     <string name="osmo_grop_name_length_alert">Скупно име треба да буде са најмање 3 знака!</string>
-    <string name="local_recordings_delete_all_confirm">Избрисаћете %1$d белешки. Да ли сте сигурни?</string>
     <string name="local_osm_changes_upload_all_confirm">Отпремићете %1$d измена на ОСМ-и. Да ли сте сигурни?</string>
     <string name="confirmation_to_clear_history">Да ли желите да очистите записе програма?</string>
     <string name="delay_to_start_navigation_descr">Одредите преостало време за чекање екрана за исцртавање путање</string>
@@ -632,7 +616,6 @@
     <string name="shared_string_my_places">Моја места</string>
     <string name="shared_string_my_favorites">Моје омиљено</string>
     <string name="shared_string_my_tracks">Моје путање</string>
-    <string name="shared_string_video">Снимак</string>
     <string name="shared_string_photo">Слика</string>
     <string name="route_points">Тачке путање</string>
     <string name="track_segments">Одсечци путање</string>
@@ -644,8 +627,6 @@
     <string name="osmand_srtm_short_description_80_chars">Прикључак за приказ обриса линија ван мреже ОсмАнда</string>
 	<string name="srtm_plugin_name">Обрисне линије</string>
 	<string name="plugin_touringview_name">Возачки преглед катре</string>
-	<string name="audionotes_plugin_name">Забелешке звука и снимака</string>
-    <string name="audionotes_plugin_description">Прикључак забелешки звука и снимака омогућује да се сниме звуци, слике и видео приликом путовања, или притиском дугмета на приказу карте, или непосредно у приручном изборнику за сваки положај на карти.</string>
     <string name="osmand_parking_plugin_name">Положај паркирања</string>
 	<string name="osmand_parking_plugin_description">Прикључак за положај паркирања омогућава запис положаја остављеног возила и колико је времена преостало (ако је са временским ограничењем).\nВреме и положај су видљиви на полетнику ОсмАнда, или као справица на приказу карте. Може се додати узбуна као подсетник Андроидовом колендару.</string>
     <string name="osmand_distance_planning_plugin_description">Овај прикључак додаје справицу на приказу карте која омогућава стварање путањи тапкањем на карту, или употребу и измену постојећих датотека ГПИкс-а, ради зацртавања путовања и мерења растојања између тачака. Добијени излази се могу сачувати као датотеке ГПИкс-а које се касније могу користити као водичи.</string>
@@ -718,10 +699,6 @@
     <string name="shared_string_near">Близу</string>
     <string name="live_updates">Надоградње уживо</string>
     <string name="no_address_found">Није одређена адреса</string>
-    <string name="av_video_quality_low">Најнижа каквоћа</string>
-    <string name="av_video_quality_high">Највиша каквоћа</string>
-    <string name="av_video_quality">Квалитет излаза слике</string>
-    <string name="av_video_quality_descr">Изаберите својства приказа видеја.</string>
     <string name="osm_edit_created_note">Направи белешку ОСМ-а</string>
     <string name="context_menu_item_delete_waypoint">Да ли избрисати пролазну тачку ГПИкс-а?</string>
     <string name="context_menu_item_edit_waypoint">Уреди пролазну тачку ГПИкс-а</string>
@@ -737,11 +714,6 @@
     <string name="routing_attr_avoid_shuttle_train_name"/>
     <string name="rec_split">Сецкање снимања</string>
     <string name="rec_split_title">Користи сецкање снимака</string>
-    <string name="rec_split_desc">Преписује снимке када се препуни место за њихово складиштење.</string>
-    <string name="rec_split_clip_length">Дужина одсечка снимка</string>
-    <string name="rec_split_clip_length_desc">Повећај временско ограничење за снимке.</string>
-    <string name="rec_split_storage_size">Величина оставе</string>
-    <string name="rec_split_storage_size_desc">Величина заузећа свих снимљених одсечака.</string>
     <string name="night">Ноћ</string>
 <string name="shared_string_go">Иди</string>
     <string name="shared_string_not_selected">Није означено</string>
@@ -933,8 +905,6 @@
     <string name="prefer_in_routing_descr">Предност путевима за моторна возила</string>
     <string name="download_wikipedia_maps">Википедија</string>
     <string name="local_indexes_cat_srtm">Линије обриса</string>
-    <string name="av_def_action_video">Сними видео</string>
-    <string name="av_def_action_audio">Сними звук</string>
     <string name="av_widget_action_descr">Изаберите подразумевану радњу справице</string>
     <string name="av_widget_action">Подразумевана радњу справице</string>
     <string name="index_srtm_ele">Линије обриса</string>
@@ -1024,24 +994,17 @@
     <string name="accessibility_options">Могућности приступачности</string>
     <string name="map_widget_gps_info">Подаци ГПС-а</string>
     <string name="index_name_openmaps">Отворене карте ЕУ-а</string>
-    <string name="local_indexes_cat_av">Подаци звука/видеа</string>
     <string name="clear_dest_confirm">Да ли сигурно желите да очистите тачку одредишта (и пролазна одредишта)?</string>
     <string name="precise_routing_mode_descr">Омогући рачунање тачних путања без грешака. Радња је ограничена даљином и спора.</string>
     <string name="precise_routing_mode">Тачно рачунање путања (споро)</string>
     <string name="srtm_paid_version_msg">Молим, размислите о куповини Линија обриса из продавнице ради давања подршке даљем развоју програма.</string>
     <string name="av_def_action_choose">Означи на захтев</string>
-    <string name="av_video_format_descr">Изаберите облик излазног снимка</string>
-    <string name="av_video_format">Облик излазног снимка</string>
-    <string name="av_use_external_recorder_descr">Користи склопног снимача за видео</string>
     <string name="av_use_external_recorder">Користи склопног снимача видеа</string>
     <string name="av_use_external_camera_descr">Користи склопни програм за слике</string>
     <string name="av_use_external_camera">Користи програм камере</string>
-    <string name="recording_is_recorded">Звук/видео је снимљен. Зауставите снимање притиском на справицу ЗВ-а.</string>
-    <string name="recording_playing">Изводи се одређени звучни запис\n%1$s</string>
     <string name="recording_open_external_player">Отвори програм спољног извођача</string>
     <string name="recording_can_not_be_played">Снимак се не може извести</string>
     <string name="recording_description">Снимам %1$s %3$s %2$s</string>
-    <string name="audionotes_location_not_defined">Положај за придруживање белешци и даље није одређен. „Користи положај …“ за придруживање белешке одређеном положају</string>
     <string name="index_srtm_parts">делови</string>
     <string name="rendering_attr_alpineHiking_description">Приказуј путеве према лествици САЦ-а</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Приказуј путеве према путањама ОСМЦ-а</string>
@@ -1522,9 +1485,6 @@
     <string name="marker_activated">Активирана ознака %s</string>
     <string name="one_tap_active_descr">Тупните ознаку на карти ради њеног померања на врх покренутих ознака без отварања приручног изборника.</string>
     <string name="one_tap_active">Покретање на туп</string>
-    <string name="empty_state_av_notes">Хватајте белешке!</string>
-    <string name="empty_state_av_notes_desc">Додај снимак, звучну или сликовну белешку на сваку тачку карте, помоћу справице или приручног изборника.</string>
-    <string name="notes_by_date">Белешке по данима</string>
     <string name="by_date">По дану</string>
     <string name="by_type">По врсти</string>
     <string name="looking_for_tracks_with_waypoints">Претрага за путањама са пролазним тачкама</string>

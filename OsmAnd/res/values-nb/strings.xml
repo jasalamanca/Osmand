@@ -926,8 +926,6 @@
     <string name="local_indexes_cat_srtm">Koter</string>
     <string name="recording_context_menu_show">Vis</string>
     <string name="srtm_paid_version_title">Programtillegg for koter</string>
-    <string name="av_settings_descr">Still inn lyd og video.</string>
-    <string name="av_settings">Lyd/video-innstillinger</string>
     <string name="osmand_srtm_short_description_80_chars">OsmAnd-programtillegg for (nett)frakoblede koter</string>
     <string name="map_widget_distancemeasurement">Avstandsmåling</string>
 
@@ -1048,7 +1046,6 @@
     <string name="download_hillshade_maps">Relieffskygger</string>
 
 
-    <string name="local_indexes_cat_av">Audio/Video-data</string>
     <string name="stop_routing_confirm">Er du sikker på at du vil stoppe navigeringen?</string>
     <string name="av_def_action_picture">Ta bilde</string>
     <string name="recording_context_menu_precord">Ta bilde</string>
@@ -1124,7 +1121,6 @@
     <string name="layer_overlay">Overleggskart…</string>
     <string name="map_overlay">Overleggskart</string>
     <string name="map_overlay_descr">Velg overleggskartet.</string>
-    <string name="audionotes_plugin_name">Audio/video-notater</string>
     <string name="osm_settings">OSM-redigering</string>
 	<string name="osmand_srtm_long_description_1000_chars">Dette programtillegget gir både et lag med koter og et lag med relieffskygger som kan vises oppå standardkartene til OsmAnd. Denne funksjonen vil bli satt stor pris på av idrettsutøvere, turgåere og enhver som er interessert i relieff-strukturen til et landskap. 
 \n
@@ -1294,7 +1290,6 @@
     <string name="drawer">Flat liste</string>
     <string name="shared_string_export">Eksporter</string>
     <string name="shared_string_collapse">Fold sammen</string>
-    <string name="shared_string_video">Video</string>
     <string name="rendering_attr_pisteRoutes_name">Skibakker</string>
     <string name="rendering_attr_pisteGrooming_name">Løypepreparering</string>
     
@@ -1584,8 +1579,6 @@
     <string name="download_wikipedia_maps">Wikipedia</string>
     <string name="intermediate_points_change_order">Endre rekkefølge</string>
     <string name="av_def_action_choose">Velg på forespørsel</string>
-    <string name="av_def_action_video">Ta opp video</string>
-    <string name="av_def_action_audio">Ta opp lyd</string>
     <string name="recording_context_menu_delete">Slett opptak</string>
     <string name="recording_context_menu_play">Spill av</string>
     <string name="int_continuosly">Sammenhengende</string>
@@ -1661,13 +1654,10 @@
     <string name="osmo_auto_send_locations">Start tur automatisk</string>
     <string name="storage_permission_restart_is_required">Nå har programmet lov til å skrive til ekstern lagring. En manuell programomstart kreves.</string>
     <string name="shared_string_undo_all">Angre alle</string>
-    <string name="rec_split_storage_size">Lagringsstørrelse</string>
     <string name="no_location_permission">OsmAnd har ingen tillatelse til å få tilgang til posisjonsdata.</string>
     <string name="no_camera_permission">OsmAnd har ingen tillatelse til å få tilgang til kameraet.</string>
     <string name="no_microphone_permission">OsmAnd har ingen tillatelse til å få tilgang til mikrofonen.</string>
     <string name="shared_string_hide">Skjul</string>
-    <string name="av_video_quality_low">Laveste kvalitet</string>
-    <string name="av_video_quality_high">Høyeste kvalitet</string>
     <string name="change_markers_position">Endre markørens posisjon</string>
     <string name="show_transparency_seekbar">Vis glidebryterlinje for gjennomsiktighet</string>
     <string name="lang_hu_formal">Ungarsk (formell)</string>
@@ -1797,11 +1787,6 @@
     <string name="report">Rapport</string>
     <string name="osmo_connect">Bli med</string>
     <string name="live_updates">Live-oppdateringer</string>
-    <string name="av_video_quality">Videokvalitet</string>
-    <string name="av_video_quality_descr">Velg videokvalitet.</string>
-    <string name="av_audio_format">Lydformat</string>
-    <string name="av_audio_format_descr">Velg lydformat.</string>
-    <string name="av_audio_bitrate">Lydoppløsning</string>
     <string name="shared_string_update">Oppdater</string>
     <string name="shared_string_upload">Last opp</string>
     <string name="osm_edit_created_poi">Opprettet OSM-interessepunkt</string>
@@ -1906,11 +1891,6 @@
     <string name="add_time_span">Legg til tidsramme</string>
     <string name="rec_split">Oppdeling av opptak</string>
     <string name="rec_split_title">Bruk automatisk oppdeling</string>
-    <string name="rec_split_desc">Skriv klipp på nytt når brukt plass overskrider lagringsstørrelsen.</string>
-    <string name="rec_split_clip_length">Klipplengde</string>
-    <string name="rec_split_clip_length_desc">Øvre tidsbegrensning for innspilte videoklipp.</string>
-    <string name="rec_split_storage_size_desc">Plassmengde som kan bli opptatt av alle innspilte klipp.</string>
-    <string name="av_audio_bitrate_descr">Velg lyd-bitrate.</string>
     <string name="osm_save_offline">Lagre for frakoblet bruk</string>
     <string name="osm_edit_modified_poi">Modifisert OSM-interessepunkt</string>
     <string name="context_menu_item_open_note">Åpne OSM-notat</string>
@@ -1934,7 +1914,6 @@
     <string name="si_nm_h">Nautiske mil i timen (knop)</string>
     <string name="simulate_your_location_stop_descr">Stopp simulering av din posisjon.</string>
     <string name="simulate_your_location_descr">Simuler din posisjon ved bruk av en beregnet rute eller et GPX-spor som er tatt opp.</string>
-    <string name="av_locations_descr">GPX-fil med plasseringsnotater.</string>
     <string name="rendering_attr_currentTrackColor_description">GPX-farge</string>
     <string name="archive_wikipedia_data">Du har gammel, inkompatibel Wikipediadata nedlastet. Ønsker du å arkivere den?</string>
     <string name="download_wikipedia_files">Ønsker du å laste ned ytterligere data fra Wikipedia (%1$s MB)?</string>
@@ -1943,11 +1922,9 @@
     <string name="rendering_value_walkingRoutesScopeOSMC_name">Farge etter rutenettverk</string>
     <string name="rendering_attr_OSMMapperAssistant_name">OSM Mapper-assistent</string>
     <string name="osm_changes_added_to_local_edits">OSM-endringer lagt til lokale endringssett</string>
-    <string name="local_recordings_delete_all_confirm">Du vil slette %1$d notater. Er du sikker?</string>
     <string name="shared_string_currently_recording_track">Gjeldende opptaksspor</string>
     <string name="track_segments">Sporsegmenter</string>
     <string name="track_points">Sporpunkter</string>
-    <string name="share_note">Del notat</string>
     <string name="notes">Notater</string>
     <string name="nautical_maps_missing">For å vise sjøkart, må det spesielle offline-kartet lastes ned</string>
     <string name="navigation_over_track">Starte navigering langs spor?</string>
@@ -2042,26 +2019,14 @@
     <string name="precise_routing_mode">Presis ruteplanlegging (alfa)</string>
     <string name="av_widget_action_descr">Velg standard miniprogram-handling.</string>
     <string name="av_widget_action">Standard miniprogram-handling</string>
-    <string name="av_video_format_descr">Velg videoformat.</string>
-    <string name="av_video_format">Videoformat</string>
-    <string name="av_use_external_recorder_descr">Bruk systemopptaker for video</string>
     <string name="av_use_external_recorder">Bruk systemopptaker</string>
     <string name="av_use_external_camera_descr">Bruk systemprogrammet til foto.</string>
     <string name="av_use_external_camera">Bruk kameraprogram</string>
     <string name="recording_error">Feil oppstod under opptak</string>
-    <string name="recording_camera_not_available">Kamera ikke tilgjengelig</string>
-    <string name="recording_is_recorded">Lyd/video tas opp. For å stoppe, trykk A/V-modulen.</string>
-    <string name="recording_playing">Lyd fra det angitte opptaket spilles av.
-\n%1$s</string>
     <string name="recording_open_external_player">Åpne ekstern avspiller</string>
-    <string name="recording_context_menu_arecord">Ta et lydnotat</string>
-    <string name="recording_context_menu_vrecord">Ta et videonotat</string>
-    <string name="layer_recordings">Opptakslag</string>
     <string name="recording_can_not_be_played">Opptaket kan ikke spilles av</string>
     <string name="recording_description">Innspilling %1$s %3$s %2$s</string>
     <string name="recording_default_name">Spiller inn</string>
-    <string name="map_widget_av_notes">Lyd/video-notater</string>
-    <string name="map_widget_audionotes">Lydnotater</string>
     <string name="index_srtm_parts">deler</string>
     <string name="rendering_attr_alpineHiking_description">Gjengi stier i henhold til SAC-skalaen.</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Gjengi stier i henhold til OSMC-spor.</string>
@@ -2425,7 +2390,6 @@
 \n- synkronisere grupper og enheter med tjeneren;
 \n- behandle grupper og enheter i et personlig dashbord på nettstedet.</string>
     <string name="simulate_initial_startup">Simuler første programstart</string>
-    <string name="audionotes_plugin_description">Programtillegget for Audio/video-notater tilbyr funksjoner for å ta lyd/video/bilde-notater på en tur, enten ved bruk av en knapp på kartskjermen eller direkte i kontekstmenyen for enhver posisjon på kartet.</string>
     <string name="average">Gjennomsnitt</string>
     <string name="of">%1$d av %2$d</string>
     <string name="ascent_descent">Stigning/fall</string>
@@ -2521,9 +2485,6 @@
     <string name="quick_action_add_marker">Legg til kartmarkør</string>
     <string name="quick_action_map_style">Endre kartstil</string>
     <string name="quick_action_map_style_switch">Endret kartstil til \"%s\".</string>
-    <string name="quick_action_take_audio_note">Ta opp lydnotat</string>
-    <string name="quick_action_take_video_note">Ta opp videonotat</string>
-    <string name="quick_action_take_photo_note">Ta bildenotat</string>
     <string name="quick_action_add_osm_bug">Legg til OSM-notat</string>
     <string name="quick_action_add_gpx">Legg til GPX-rutepunkt</string>
     <string name="quick_action_add_parking">Legg til parkeringsplass</string>
@@ -2532,9 +2493,6 @@
     <string name="quick_favorites_name_preset">Navneforvalg</string>
     <string name="quick_action_add_marker_descr">Å trykke på handlingsknappen vil legge til en kartmarkør i midten av skjermen.</string>
     <string name="quick_action_add_gpx_descr">Å trykke på handlingsknappen vil legge til et GPX-rutepunkt i midten av skjermen.</string>
-    <string name="quick_action_take_audio_note_descr">Å trykke på handlingsknappen vil legge til et lydnotat i midten av skjermen.</string>
-    <string name="quick_action_take_video_note_descr">Å trykke på handlingsknappen vil legge til et videonotat i midten av skjermen.</string>
-    <string name="quick_action_take_photo_note_descr">Å trykke på handlingsknappen vil legge til et bildenotat i midten av skjermen.</string>
     <string name="quick_action_add_osm_bug_descr">Å trykke på handlingsknappen vil legge til et OSM-notat i midten av skjermen.</string>
     <string name="quick_action_navigation_voice_descr">Trykk på handlingsknappen vil slå av eller på taleveiledning under navigering.</string>
     <string name="quick_action_add_parking_descr">Å trykke på handlingsknappen vil legge til en parkeringsplass i midten av skjermen.</string>
@@ -2593,9 +2551,6 @@
     <string name="marker_activated">Markøren %s er aktivert.</string>
     <string name="one_tap_active_descr">Trykk en markør på kartet for å flytte den til toppen av de aktive markørene uten å åpne kontekstmenyen.</string>
     <string name="one_tap_active">Ett trykk aktiv</string>
-    <string name="empty_state_av_notes">Ta notater!</string>
-    <string name="empty_state_av_notes_desc">Legg til lyd-, video- eller bildenotat til hvert punkt på kartet, ved bruk av modul eller kontekstmeny.</string>
-    <string name="notes_by_date">Notater etter dato</string>
     <string name="by_date">Etter dato</string>
     <string name="by_type">Etter type</string>
     <string name="shared_string_more_without_dots">Mer</string>
@@ -2716,7 +2671,6 @@
     <string name="disable_recording_once_app_killed_descrp">Vil sette GPX-logging i pausemodus når programmet avsluttes (via nylig brukte apper). (OsmAnds bakgrunnsindikasjon forsvinner fra Android-varslingslinjen.)</string>
     <string name="route_is_too_long_v2">Denne ruten kan være for lang å beregne. Legg til mellomliggende reisemål hvis det ikke blir funnet noe resultat innen 10 minutter.</string>
     <string name="intermediate_items_sort_return">Mellomliggende reisemål sortert igjen for å optimalisere deres rekkefølge på vei fra nåværende posisjon til målet.</string>
-    <string name="audionotes_location_not_defined">Sted å assosiere med notatet er ikke definert ennå. \"Bruk posisjon …\" for å tilordne et notat til det angitte stedet.</string>
     <string name="add_waypoint_dialog_title">Legg til rutepunkt i innspilt GPX-spor</string>
     <string name="voice_is_not_available_msg">Taleveiledning er ikke tilgjengelig, gå til \'Innstillinger\' → \'Navigeringsinnstillinger\' → \'Taleveiledning\' og velg eller last ned en språkpakke.</string>
     <string name="use_fast_recalculation_desc">For lange turer, beregn på nytt bare den første delen av ruten.</string>

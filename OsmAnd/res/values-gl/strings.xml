@@ -510,7 +510,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     
     
     <string name="local_indexes_cat_srtm">Curvas de nivel</string>
-    <string name="local_indexes_cat_av">Datos de son/vídeo</string>
     <string name="stop_routing_confirm">Confirma que desexa parar a navegación?</string>
     <string name="clear_dest_confirm">Confirma que desexa limpar o destino (e os destinos intermedios)?</string>
     <string name="precise_routing_mode_descr">Permitir calcular rutas precisas sen fallo. Aínda se ve limitado polas distancias e é lento.</string>
@@ -525,29 +524,16 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="srtm_paid_version_msg">Considere a posibilidade de comprar o engadido de curvas de nivel para así colaborar co desenvolvemento.</string>
     <string name="srtm_paid_version_title">Engadido de curvas de nivel</string>
     <string name="av_def_action_choose">Seleccionar ao ser pedido</string>
-    <string name="av_def_action_video">Gravar vídeo</string>
-    <string name="av_def_action_audio">Gravar son</string>
     <string name="av_widget_action_descr">Seleccionar a acción predeterminada do trebello</string>
     <string name="av_widget_action">Acción predeterminada do trebello</string>
-    <string name="av_video_format_descr">Seleccioanr o formato de saída do vídeo</string>
-    <string name="av_video_format">Formato de saída do vídeo</string>
-    <string name="av_use_external_recorder_descr">Empregar a gravadora do sistema para o vídeo</string>
     <string name="av_use_external_recorder">Empregar a gravadora do sistema</string>
     <string name="av_use_external_camera_descr">Empregar o aplicativo do sistemo para a foto</string>
     <string name="av_use_external_camera">Empregar o aplicativo da cámara</string>
-    <string name="av_settings_descr">Configurar as opcións de son e vídeo</string>
-    <string name="av_settings">"Configuración de son/vídeo "</string>
     <string name="recording_error">Produciuse un erro ao gravar</string>
-    <string name="recording_camera_not_available">A cámara non está dispoñíbel</string>
-    <string name="recording_is_recorded">Estase a gravar son/vídeo. Para parar prema o trevello AV.</string>
-    <string name="recording_playing">Estase a reproducir un son da gravación indicada.\n%1$s</string>
     <string name="recording_open_external_player">Abrir un reprodutor externo</string>
     <string name="recording_delete_confirm">Desexa eliminar esta gravación?</string>
     
     <string name="recording_unavailable">non dispoñíbel</string>
-    <string name="recording_context_menu_arecord">Tomar unha nota de son</string>
-    <string name="recording_context_menu_vrecord">Tomar unha nota de vídeo</string>
-    <string name="layer_recordings">Capa de gravacións</string>
     <string name="recording_can_not_be_played">Non é posíbel reproducir a gravación</string>
     <string name="recording_context_menu_delete">Eliminar a gravación</string>
     <string name="recording_context_menu_play">Reproducir</string>
@@ -555,7 +541,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="recording_default_name">Gravación</string>
     <string name="shared_string_control_stop">Parar</string>
     <string name="shared_string_control_start">Comezar</string>
-    <string name="map_widget_av_notes">Notas de son/vídeo</string>
     <string name="osmand_srtm_short_description_80_chars">Engadido de OsmAnd para curvas de nivel sen conexión</string>
     <string name="osmand_srtm_long_description_1000_chars">"Este engadido fornece unha capa de sobreposición de curvas de nivel e unha capa de sombras de altitude (relevo) que poden ser mostradas nos mapas sen conexión de OsmAnd. Esta funcionalidade pode ser moi apreciada por atletas, camiñantes, sendeiristas e calquera que teña interese pola estrutura de relevo da paisaxe.
 
@@ -563,11 +548,7 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 Os datos globais (entre os 70 graos norte e os 70 graos sul) están baseados nas medicións de SRTM (Misión Topográfica con Radar da Lanzadeira Espacial) e ASTER (Radiómetro Espacial Avanzado de Emisión Térmica e Reflexión) e instrumentos de imaxes a bordo do Terra, o satélite máis importante do Sistema de Observación Terrestre da NASA. ASTER é un esforzo cooperativo entre a NASA, o Ministerio de Economía do Xapón, Comercio e Industria (METI) e Sistemas Espaciais Xaponeses (J-spaceystems).
  "</string>
     <string name="map_widget_distancemeasurement">Medición de distancias</string>
-    <string name="audionotes_location_not_defined">A situación que asociar coa nota aínda non foi definida. Con «Empregar a situación…» pódeselle asignar unha nota á situación indicada</string>
-    
-    <string name="map_widget_audionotes">Notas de son</string>
-    <string name="audionotes_plugin_description">O engadido de notas de son/vídeo fornece a funcionalidade de tomar notas de son/fotografía/vídeo durante unha viaxe, usando tanto un botón da pantalla do mapa ou directamente co menú de contexto para calquera posición do mapa.</string>
-    <string name="audionotes_plugin_name">Notas de son/vídeo</string>
+
     <string name="index_srtm_parts">partes</string>
     <string name="index_srtm_ele">Curvas de nivel</string>
     <string name="srtm_plugin_description">"Este engadido fornece unha capa de sobreposición de curvas de nivel e unha capa de sombras de altitude (relevo) que poden ser mostradas nos mapas sen conexión de OsmAnd. Esta funcionalidade pode ser moi apreciada por atletas, camiñantes, sendeiristas e calqueira que teña interese pola estrutura de relevo da paisaxe.
@@ -1765,8 +1746,7 @@ Os mapas en teselas pódense obter directamente a través de recursos na rede ou
     <string name="current_route">Ruta actual</string>
     <string name="mark_to_delete">Marcar para eliminar</string>
 	<string name="osmo_grop_name_length_alert">O nome do grupo debería ter un mínimo de tres caracteres!</string>
-	<string name="local_recordings_delete_all_confirm">Está a piques de eliminar %1$d notas. Confírmao?</string>
-	<string name="local_osm_changes_upload_all_confirm">Está a piques de enviar %1$d cambio(s) a OSM. Confírmao?</string>
+    <string name="local_osm_changes_upload_all_confirm">Está a piques de enviar %1$d cambio(s) a OSM. Confírmao?</string>
     <string name="confirmation_to_clear_history">Desexa limpar o historial?</string>
     <string name="shared_string_go">Ir</string>
 	<string name="osm_edits">Edicións de OSM</string>
@@ -1792,14 +1772,12 @@ Lon %2$s</string>
 	<string name="shared_string_selected">Seleccionado</string>
 	<string name="shared_string_my_location">A miña posición</string>
 	<string name="shared_string_audio">Son</string>
-	<string name="shared_string_video">Vídeo</string>
-	<string name="shared_string_photo">Foto</string>
+    <string name="shared_string_photo">Foto</string>
 	<string name="route_points">Puntos da ruta</string>
 	<string name="track_segments">Segmentos de pista</string>
 	<string name="track_points">Puntos de pista</string>
 	<string name="plugin_ski_name">Vista de mapas de esquí</string>
 	<string name="back_to_map">Volver ao mapa</string>
-	<string name="share_note">Compartir nota</string>
     <string name="location_on_map">Situación:\n Lat %1$s\n Lon %2$s</string>
 	<string name="watch">Vixiar</string>
 	<string name="notes">Notas</string>
@@ -1996,7 +1974,6 @@ Lon %2$s</string>
     <string name="contact_us">Contacte connosco</string>
     <string name="map_legend">Lenda do mapa</string>
     <string name="hillshade_layer_disabled">A capa de curvas de nivel está desactivada</string>
-    <string name="av_locations_descr">Ficheiro GPX con posicións das notas</string>
     <string name="plugin_touringview_name">Vista de mapa turístico</string>
 	<string name="plugin_touringview_descr">"Ao activar esta vista cámbiase o estilo do mapa de OsmAnd a «Vista turística», que é unha vista especial moi detallada para viaxeiros e condutores profesionais.
 
@@ -2026,14 +2003,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="no_address_found">Non se especificou ningún enderezo</string>
     <string name="shared_string_near">Preto</string>
     <string name="shared_string_hide">Agochar</string>
-    <string name="av_video_quality_low">Calidade inferior</string>
-    <string name="av_video_quality_high">Calidade superior</string>
-    <string name="av_video_quality">Calidade da saída de vídeo</string>
-    <string name="av_video_quality_descr">Seleccione a calidade da saída de vídeo</string>
-    <string name="av_audio_format">Formato de saída do son</string>
-    <string name="av_audio_format_descr">Seleccione o formato de saída do son</string>
-    <string name="av_audio_bitrate">Taxa de bits do son</string>
-    <string name="av_audio_bitrate_descr">Seleccione a taxa de bits o son</string>
     <string name="please_specify_poi_type_only_from_list">Indique o tipo de PDE correcto ou omítao</string>
     <string name="access_from_map_description">O botón do menú inicia a pantalla principal, non o menú</string>
     <string name="access_from_map">Acceso desde o mapa</string>
@@ -2052,8 +2021,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="shared_string_type">Tipo</string>
     <string name="starting_point">Punto de partida</string>
     <string name="shared_string_not_selected">Non seleccionada</string>
-    <string name="rec_split_storage_size">Tamaño do almacenamento</string>
-    <string name="rec_split_storage_size_desc">Cantidade de espazo que poden ocupar todos os vídeos gravados</string>
     <string name="live_updates">Actualizacións ao vivo</string>
     <string name="available_maps">Mapas dispoñíbeis</string>
     <string name="rendering_attr_horseRoutes_name">Rutas ecuestres</string>
@@ -2156,8 +2123,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="item_removed">Elemento retirado</string>
     <string name="n_items_removed">elementos retirados</string>
     <string name="shared_string_undo_all">DESFACER TODO</string>
-    <string name="rec_split_clip_length">Duración do vídeo</string>
-    <string name="rec_split_clip_length_desc">A duración de cada vídeo gravado non excederá o intervalo de tempo indicado</string>
     <string name="rendering_value_thin_name">Delgado</string>
     <string name="rendering_value_medium_name">Mediano</string>
     <string name="rendering_value_bold_name">Gordo</string>
@@ -2373,9 +2338,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="quick_action_add_poi">Engadir un PDI</string>
     <string name="quick_action_map_style">Cambiar o estilo do mapa</string>
     <string name="quick_action_map_style_switch">Cambiouse o estilo do mapa a «%s».</string>
-    <string name="quick_action_take_audio_note">Tomar unha nota de voz</string>
-    <string name="quick_action_take_video_note">Tomar unha nota de vídeo</string>
-    <string name="quick_action_take_photo_note">Tomar unha nota de foto</string>
     <string name="quick_action_add_osm_bug">Engadir un fallo de OSM</string>
     <string name="quick_action_add_parking">Engadir un lugar de aparcamento</string>
     <string name="quick_action_new_action">Engadir unha acción</string>
@@ -2386,9 +2348,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="quick_actions_delete_text">Confirma que desexa eliminar a acción «%s»?</string>
     <string name="quick_favorites_show_favorites_dialog">Mostrar o diálogo de favoritos</string>
     <string name="quick_action_add_marker_descr">Ao tocar o botón de acción engádese un marcador de mapa na posición central da pantalla.</string>
-    <string name="quick_action_take_audio_note_descr">Ao tocar un botón de acción engádese unha nota de son na posición central da pantalla.</string>
-    <string name="quick_action_take_video_note_descr">Ao tocar un botón de acción engádese unha nota de vídeo na posición central da pantalla.</string>
-    <string name="quick_action_take_photo_note_descr">Ao tocar un botón de acción engádese unha nota de foto na posición central da pantalla.</string>
     <string name="quick_action_add_osm_bug_descr">Ao tocar un botón de acción engádese unha nota de fallo de OSM na posición central da pantalla.</string>
     <string name="quick_action_add_poi_descr">Ao tocar un botón de acción engádese un PDI na posición central da pantalla.</string>
     <string name="quick_action_navigation_voice_descr">Ao tocar o botón de acción actívase ou desactívase a orientación por voz durante a navegación.</string>

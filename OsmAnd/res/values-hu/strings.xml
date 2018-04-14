@@ -975,45 +975,26 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="download_select_map_types">Egyéb térképek</string>
 
 
-    <string name="audionotes_location_not_defined">Még nincs meghatározva pozíció hangmegjegyzés készítéséhez. A „Hely használata…” gombbal helyezhetsz el megjegyzést az adott helyen.</string>
-    <string name="map_widget_audionotes">Hangjegyzetek</string>
-    <string name="audionotes_plugin_name">Hang- és videojegyzetek</string>
-
-    <string name="srtm_plugin_description">"Ez a bővítmény egy szintvonal fedvényt és egy domborzatárnyékolás réteget biztosít, amelyek az OsmAnd normál térképein jelennek meg. Ezt a funkcionalitást nagyon fogják értékelni a sportolók, túrázók, nyomvonalrögzítők és mindenki, akiket a táj domborzati szerkezete érdekel.  (Vedd figyelembe, hogy a szintvonalak és a domborzatárnyékolás külön, további letöltés után érhető el a bővítmény engedélyezése után.) 
+    <string name="srtm_plugin_description">"Ez a bővítmény egy szintvonal fedvényt és egy domborzatárnyékolás réteget biztosít, amelyek az OsmAnd normál térképein jelennek meg. Ezt a funkcionalitást nagyon fogják értékelni a sportolók, túrázók, nyomvonalrögzítők és mindenki, akiket a táj domborzati szerkezete érdekel.  (Vedd figyelembe, hogy a szintvonalak és a domborzatárnyékolás külön, további letöltés után érhető el a bővítmény engedélyezése után.)
 \n 
 \nA globális adatok (az északi 70° és déli 70° szélesség között) az SRTM (Shuttle Radar Topography Mission) és az ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer) mérésein alapulnak, amely a NASA Earsh Observing System zászlóshajójának, a Terra műholdnak a képalkotó berendezése. Az ASTER a NASA, a Japán Gazdasági, Kereskedelmi és Ipari Minisztérium (METI), valamint a Japán Űrügynökség (J-spacesystems) közös projektje."</string>
 
 
-    <string name="recording_is_recorded">Hang/videofelvétel elindult. Leállításhoz nyomd meg az A/V vezérlő stop gombját.</string>
-    <string name="recording_playing">A hangfelvétel lejátszása elindult…\n%1$s</string>
     <string name="recording_open_external_player">Külső lejátszó megnyitása</string>
     <string name="recording_delete_confirm">Szeretnéd törölni a felvételt?</string>
 
     <string name="recording_unavailable">nem elérhető</string>
-    <string name="recording_context_menu_arecord">Hangjegyzet készítése</string>
-    <string name="recording_context_menu_vrecord">Videojegyzet készítése</string>
-    <string name="layer_recordings">Felvétel réteg</string>
     <string name="recording_can_not_be_played">A felvételt nem lehet lejátszani</string>
     <string name="recording_context_menu_delete">Felvétel törlése</string>
     <string name="recording_context_menu_play">Lejátszás</string>
     <string name="recording_default_name">Felvétel</string>
     <string name="shared_string_control_start">Indítás</string>
-    <string name="map_widget_av_notes">Hangjegyzetek</string>
     <string name="osmand_srtm_short_description_80_chars">OsmAnd bővítmény kapcsolat nélküli szintvonalakhoz</string>
 
 
     <string name="map_widget_distancemeasurement">Távolságmérés</string>
-    <string name="audionotes_plugin_description">A hang- és videojegyzetek bővítmény biztosítja az utazás közbeni hang-, fénykép- és videojegyzetek készítésének lehetőségét a térkép képernyőn lévő gomb segítségével, vagy közvetlenül a térképen lévő bármely pozíció helyi menüjének használatával.</string>
-    <string name="av_def_action_video">Videofelvétel</string>
-    <string name="av_def_action_audio">Hangfelvétel</string>
-    <string name="av_video_format_descr">Video kimeneti formátum kiválasztása.</string>
-    <string name="av_video_format">Videó kimeneti formátuma</string>
-    <string name="av_use_external_recorder_descr">Rendszerprogram használata videofelvételre.</string>
     <string name="av_use_external_recorder">Külső felvevő használata</string>
-    <string name="av_settings_descr">Hang- és videofelvétel beállításai.</string>
-    <string name="av_settings">Hang/videóbeállítások </string>
     <string name="recording_error">A felvétel közben hiba történt </string>
-    <string name="recording_camera_not_available">A kamera nem elérhető</string>
     <string name="shared_string_control_stop">Leállítás</string>
     <string name="osmand_srtm_long_description_1000_chars">Ez a bővítmény egy szintvonal fedvényt és egy domborzatárnyékolás réteget biztosít, amelyek az OsmAnd normál térképein jelennek meg. Ezt a funkcionalitást nagyon fogják értékelni a sportolók, túrázók, nyomvonalrögzítők és mindenki, akiket a táj domborzati szerkezete érdekel. 
 \n 
@@ -1027,7 +1008,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="intermediate_points_change_order">Más sorrend</string>
     <string name="dropbox_plugin_description">A Dropbox-bővítmény lehetővé teszi a rögzített útvonalak és hang/videojegyzetek szinkronizálását a Dropbox fiókoddal.</string>
     <string name="dropbox_plugin_name">Dropbox bővítmény</string>
-    <string name="local_indexes_cat_av">Hang- és videofelvétel</string>
     <string name="stop_routing_confirm">Biztosan megállítod a navigációt?</string>
     <string name="clear_dest_confirm">Biztosan törlöd a célpontot (és a köztes célpontokat)?</string>
     <string name="precise_routing_mode_descr">Pontos útvonaltervező engedélyezése hibamentes, pontos útvonalak tervezéséhez. Jelenleg lassú, kis távolságokra működik.</string>
@@ -1776,8 +1756,6 @@ Afganisztán, Albánia, Algéria, Amerikai Egyesült Államok, Andorra, Anglia, 
     <string name="shared_string_audio">Hang</string>
 
 
-    <string name="share_note">Megjegyzés megosztása</string>
-
     <string name="shared_string_export">Exportálás</string>
     <string name="plugin_touringview_name">Túratérkép nézet</string>
 
@@ -1820,7 +1798,6 @@ Hosszúság: %2$s</string>
     <string name="shared_string_unexpected_error">Váratlan hiba történt</string>
     <string name="shared_string_action_template">{0} művelet</string>
     <string name="shared_string_collapse">Összecsukás</string>
-    <string name="shared_string_video">Videó</string>
     <string name="shared_string_photo">Fénykép</string>
     <string name="shared_string_release">Megjelent</string>
     <string name="days_behind">napos</string>
@@ -1901,7 +1878,6 @@ Hosszúság: %2$s</string>
     <string name="local_indexes_cat_wiki">Wikipédia</string>
     <string name="download_wikipedia_maps">Wikipédia</string>
     <string name="shared_string_import2osmand">Importálás az OsmAnd programba</string>
-    <string name="local_recordings_delete_all_confirm">%1$d megjegyzést törölni fogsz. Biztos vagy benne?</string>
     <string name="disable_recording_once_app_killed">Önálló naplózás megakadályozása</string>
     <string name="gps_network_not_enabled">A helymeghatározó szolgáltatás nincs engedélyezve. Be szeretnéd kapcsolni?</string>
     <string name="disable_recording_once_app_killed_descrp">Szüneteltetni fogja a GPX-naplózást, ha az alkalmazást kilőtték (a legutóbbi alkalmazásokon keresztül). (Az OsmAnd háttérben futás jelzője eltűnik az Android értesítési sávjáról.)</string>
@@ -2030,7 +2006,6 @@ Hosszúság: %2$s</string>
     <string name="osmand_running_in_background">Háttérben fut</string>
     <string name="simulate_your_location_stop_descr">Pozíciószimuláció leállítása.</string>
     <string name="simulate_your_location_descr">Szimuláció megtervezett útvonallal vagy felvett GPX-szel.</string>
-    <string name="av_locations_descr">GPX-fájl jegyzet helyszínekkel.</string>
     <string name="av_locations">Helyszín</string>
     <string name="routing_attr_avoid_shuttle_train_name">Autószállító vonat elkerülése</string>
     <string name="routing_attr_avoid_shuttle_train_description">Autószállító vonat elkerülése</string>
@@ -2166,14 +2141,6 @@ Hosszúság: %2$s</string>
     <string name="dashboard_or_drawer_description">Eldöntheted, hogy az alkalmazást az interaktív műszerfalon, vagy a statikus oldalsáv menün keresztül szeretnéd vezérelni. A működést bármikor módosíthatod a műszerfal beállításokban.</string>
 <string name="shared_string_near">Közel</string>
     <string name="shared_string_hide">Elrejtés</string>
-    <string name="av_video_quality_low">Legalacsonyabb minőség</string>
-    <string name="av_video_quality_high">Legmagasabb minőség</string>
-    <string name="av_video_quality">Videokimenet minősége</string>
-    <string name="av_video_quality_descr">Video minőségének kiválasztása.</string>
-    <string name="av_audio_format">Hangkimenet formátuma</string>
-    <string name="av_audio_format_descr">Hangkimenet formátumának kiválasztása.</string>
-    <string name="av_audio_bitrate">Hang bitmélysége</string>
-    <string name="av_audio_bitrate_descr">Hang bitmélységének kiválasztása.</string>
     <string name="routing_attr_avoid_stairs_name">Lépcsők elkerülése</string>
 	<string name="routing_attr_avoid_stairs_description">Lépcsők elkerülése.</string>
 	<string name="routing_attr_avoid_borders_name">Határátlépés elkerülése</string>
@@ -2283,8 +2250,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="starting_point">Kiindulópont</string>
     <string name="rec_split">Felvétel vágás</string>
     <string name="rec_split_title">Felvétel automatikus darabolása</string>
-    <string name="rec_split_clip_length">Klipp hossz</string>
-    <string name="rec_split_storage_size">Tárolási méret</string>
     <string name="number_of_contributors">Közreműködők száma</string>
     <string name="number_of_edits">Szerkesztések száma</string>
     <string name="reports_for">Jelentés erről</string>
@@ -2311,9 +2276,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="shared_string_undo_all">MINDET VISSZAVON</string>
     <string name="file_name_containes_illegal_char">A fájlnév érvénytelen karaktereket tartalmaz</string>
 <string name="storage_permission_restart_is_required">Az alkalmazás már tud írni a külső tárolóra. Egy kézi alkalmazás újraindítás szükséges.</string>
-    <string name="rec_split_desc">Klipek elvágása, ha a felhasznált hely túllépi a tárolási méretet.</string>
-    <string name="rec_split_clip_length_desc">A felvett klipek maximális hossza.</string>
-    <string name="rec_split_storage_size_desc">Az összes klip által elfoglalható hely.</string>
     <string name="no_map_markers_found">Kérlek, vegyél fel jelölőket a térképen</string>
     <string name="no_waypoints_found">Nem találhatók útpontok</string>
     <string name="map_widget_bearing">Relatív irány</string>
@@ -2524,9 +2486,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="quick_action_add_poi">POI készítés</string>
     <string name="quick_action_map_style">Térképstílus módosítás</string>
     <string name="quick_action_map_style_switch">A térképstílus erre módosult: „%s”.</string>
-    <string name="quick_action_take_audio_note">Hangjegyzet készítése</string>
-    <string name="quick_action_take_video_note">Videojegyzet készítése</string>
-    <string name="quick_action_take_photo_note">Fényképjegyzet készítése</string>
     <string name="quick_action_add_osm_bug">OSM-megjegyzés készítése</string>
     <string name="quick_action_navigation_voice">Hang be/ki</string>
     <string name="quick_action_navigation_voice_off">Hang kikapcsolva</string>
@@ -2543,9 +2502,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="quick_favorites_name_preset">Előre megadott név</string>
     <string name="quick_action_add_marker_descr">A gomb megnyomásakor egy térképjelölőt helyez a képernyő közepére.</string>
     <string name="quick_action_add_gpx_descr">A gomb megnyomásakor egy GPX útpontot készít a képernyő közepén található helyen.</string>
-    <string name="quick_action_take_audio_note_descr">A gomb megnyomásakor hangjegyzetet készít a képernyő közepén található helyen.</string>
-    <string name="quick_action_take_video_note_descr">A gomb megnyomásakor videojegyzetet készít a képernyő közepén található helyen.</string>
-    <string name="quick_action_take_photo_note_descr">A gomb megnyomásakor fényképjegyzetet készít a képernyő közepén található helyen.</string>
     <string name="quick_action_add_osm_bug_descr">A gomb megnyomásakor OSM Jegyzetet készít a képernyő közepén található helyen.</string>
     <string name="quick_action_add_poi_descr">A gomb megnyomásakor POI-t hoz létre a képernyő közepén található helyen.</string>
     <string name="quick_action_navigation_voice_descr">A gomb megnyomásával be- és kikapcsolható a navigáció közbeni hang.</string>
@@ -2917,9 +2873,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="marker_activated">%s jelölő aktiválva.</string>
     <string name="one_tap_active_descr">Nyomj a térképen egy jelölőre, hogy az aktív jelölők tetejére mozgasd anélkül, hogy megnyitnád a környezeti menüt.</string>
     <string name="one_tap_active">Egy tapintásos aktiválás</string>
-    <string name="empty_state_av_notes">Készíts jegyzeteket!</string>
-    <string name="empty_state_av_notes_desc">Hang-, video-, vagy fotójegyzet hozzáadása a térkép bármely pontjához, a vezérlőgombbal vagy környezeti menüből.</string>
-    <string name="notes_by_date">Jegyzetek dátum szerint</string>
     <string name="by_date">Dátum szerint</string>
     <string name="by_type">Típus szerint</string>
     <string name="looking_for_tracks_with_waypoints">Útpontokat tartalmazó nyomvonalak keresése</string>

@@ -849,27 +849,18 @@ Nyttjat utrymme är {1} MB.
     <string name="poi_error_poi_not_found">Noden kan inte hittas eller bekvämligheten består av flera noder och detta stöds inte än.</string>
     <string name="poi_remove_confirm_template">Ta bort {0} (ange kommentar)?</string>
     <string name="poi_remove_title">Ta bort POI</string>
-    <string name="recording_is_recorded">Ljud/video spelas in. För att stoppa detta, tryck på AV-knappen på widgeten.</string>
-    <string name="recording_playing">Ljud från den angivna inspelningen spelas upp.↵\n%1$s</string>
     <string name="recording_open_external_player">Öppna extern spelare</string>
     <string name="recording_delete_confirm">Vill du ta bort den här inspelningen?</string>
     <string name="recording_unavailable">inte tillgänglig</string>
-    <string name="recording_context_menu_arecord">Gör en ljudanteckning</string>
-    <string name="recording_context_menu_vrecord">Gör en videoanteckning</string>
-    <string name="layer_recordings">Inspelningsskikt</string>
     <string name="recording_can_not_be_played">Inspelningen kan inte spelas upp</string>
     <string name="recording_context_menu_delete">Ta bort inspelningen</string>
     <string name="recording_context_menu_play">Spela upp</string>
     <string name="recording_description">Inspelning %1$s %3$s %2$s</string>
     <string name="recording_default_name">Spelar in</string>
-    <string name="map_widget_av_notes">Ljud-/Videoanteckningar</string>
     <string name="osmand_srtm_short_description_80_chars">OsmAnd-modul för höjdkurvor offline</string>
 
     <string name="map_widget_distancemeasurement">Avståndsmätning</string>
 
-    <string name="map_widget_audionotes">Ljudanteckningar</string>
-    <string name="audionotes_plugin_description">Denna modul för ljud- och videoanteckningar erbjuder möjlighet att skapa ljud-/foto-/videoanteckningar under en resa, antingen med hjälp av en knapp på kartskärmen eller direkt i kontextmenyn för en position på kartan.</string>
-    <string name="audionotes_plugin_name">Ljud-/Videoanteckningar</string>
     <string name="index_srtm_parts">delar</string>
     <string name="index_srtm_ele">Höjdkurvor</string>
     <string name="download_select_map_types">Andra kartor</string>
@@ -877,16 +868,11 @@ Nyttjat utrymme är {1} MB.
     <string name="download_srtm_maps">Höjdkurvsdata</string>
 
 
-    <string name="audionotes_location_not_defined">Någon plats att associera med anteckningen är inte angiven än. \"Använd platsen …\" för att knyta en anteckning till den angivna platsen.</string>
-    
-
-
     <string name="close_changeset">Stäng changeset</string>
     <string name="map_widget_show_destination_arrow">Visa färdriktningen</string>
     <string name="gps_not_available">Aktivera GPS i inställningarna</string>
     <string name="map_widget_monitoring_services">Loggningstjänster</string>
 
-    <string name="local_indexes_cat_av">Audio-/videodata</string>
     <string name="stop_routing_confirm">Är det säkert att du vill avbryta navigeringen?</string>
     <string name="clear_dest_confirm">Är det säkert att du vill ta bort din destination (samt mellanliggande destinationer)?</string>
     <string name="recording_context_menu_show">Visa</string>
@@ -896,22 +882,14 @@ Nyttjat utrymme är {1} MB.
 
     <string name="intermediate_points_change_order">Ändra ordning</string>
     <string name="srtm_paid_version_title">Modul för höjdkurvor</string>
-    <string name="av_def_action_video">Spela in video</string>
     <string name="precise_routing_mode">Exakt ruttning (alfa)</string>
     <string name="av_def_action_picture">Ta ett foto</string>
     <string name="dropbox_plugin_description">Dropbox-modulen låter dig synkronisera spår och ljud-/videoanteckningar med ditt Dropbox-konto.</string>
     <string name="srtm_paid_version_msg">Köp gärna pluginen Höjdkurvor på Market för att stödja fortsatt utveckling.</string>
-    <string name="av_def_action_audio">Spela in ljud</string>
     <string name="av_widget_action_descr">Välj standardåtgärd för widget.</string>
     <string name="av_widget_action">Standardåtgärd för widget</string>
-    <string name="av_video_format_descr">Välj videoformat.</string>
-    <string name="av_video_format">Videoformat</string>
-    <string name="av_use_external_recorder_descr">Använd systemets inspelare för video.</string>
     <string name="av_use_external_recorder">Använd systemets inspelare</string>
-    <string name="av_settings_descr">Konfigurera inställningar för ljud och video.</string>
-    <string name="av_settings">Inställningar för ljud och video </string>
     <string name="recording_error">Ett fel uppstod under inspelningen </string>
-    <string name="recording_camera_not_available">Ingen kamera tillgänglig</string>
     <string name="srtm_plugin_description">"Denna modul erbjuder överlägg med höjdkurvor som kan visas i kombination med OsmAnds standardkartor. Denna funktion kommer att uppskattas av idrottsmän, vandrare och alla som är intresserade av höjdskillnander i landskapet.
 \n
 \nDessa globala data (mellan 70 grader norr och 70 grader syd) baseras på mätningar av SRTM (Shuttle Radar Topography Mission) och ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), ett bildinstrument ombord Terra, flaggskeppet i NASA:s Earth Observing System. ASTER är ett samprojekt mellan NASA, Japans Ministry of Economy, Trade and Industry (METI), and Japan Space Systems (J-spacesystems). "</string>
@@ -1652,8 +1630,7 @@ Vill du fortsätta med en ny registrering?</string>
     <string name="roads_only">Endast vägar</string>
     <string name="notes">Anteckningar</string>
     <string name="online_map">Online-karta</string>
-    <string name="share_note">Dela anteckning</string>
-	<string name="plugin_nautical_descr">Om du aktiverar denna vy ändras kartstilen till Nautisk och visar alla sjömärken och sjökortssymboler.
+    <string name="plugin_nautical_descr">Om du aktiverar denna vy ändras kartstilen till Nautisk och visar alla sjömärken och sjökortssymboler.
 		\n\nEn kartfil som innehåller alla nautiska symboler globalt finns tillgänglig som en enda nedladdning med namnet \'World seamarks\'.
 		\n\nDenna vy kan ändras genom att antingen inaktivera den här igen eller genom att ändra kartstilen under Konfigurera kartor.
 	</string>
@@ -1728,7 +1705,6 @@ Vill du fortsätta med en ny registrering?</string>
     <string name="shared_string_my_tracks">Mina spår</string>
     <string name="shared_string_currently_recording_track">Spelar för tillfället in spår</string>
     <string name="shared_string_audio">Ljud</string>
-    <string name="shared_string_video">Video</string>
     <string name="shared_string_photo">Foto</string>
 
     <string name="shared_string_release">Utgiven</string>
@@ -1807,7 +1783,6 @@ Long %2$s</string>
     <string name="shared_string_wikipedia">Wikipedia</string>
     <string name="local_indexes_cat_wiki">Wikipedia</string>
     <string name="shared_string_show_details">Visa detaljer</string>
-    <string name="local_recordings_delete_all_confirm">Du håller på att ta bort %1$d anteckningar. Är du säker?</string>
     <string name="download_wikipedia_maps">Wikipedia</string>
     <string name="shared_string_import2osmand">Importera till OsmAnd</string>
     <string name="gps_network_not_enabled">Platstjänsten är inte aktiverad. Vill du slå på den?</string>
@@ -1897,7 +1872,6 @@ Long %2$s</string>
     <string name="opening_at">Öppnar</string>
     <string name="closing_at">Stänger</string>
     <string name="av_locations">Platser</string>
-    <string name="av_locations_descr">GPX-fil med anteckningar om platser.</string>
     <string name="poi_dialog_poi_type">Typ av POI</string>
     <string name="add_opening_hours">Lägg till öppettider</string>
     <string name="description">Beskrivning</string>
@@ -2079,14 +2053,6 @@ Long %2$s</string>
 	<string name="action_delete">Åtgärd ta bort</string>
 	<string name="shared_string_near">Nära</string>
     <string name="shared_string_hide">Dölj</string>
-    <string name="av_video_quality_low">Lägsta kvalitet</string>
-    <string name="av_video_quality_high">Högsta kvalitet</string>
-    <string name="av_video_quality">Videokvalitet</string>
-    <string name="av_video_quality_descr">Välj videokvalitet.</string>
-    <string name="av_audio_format">Ljudformat</string>
-    <string name="av_audio_format_descr">Välj ljudformat.</string>
-    <string name="av_audio_bitrate">Ljudsamplingshastighet</string>
-    <string name="av_audio_bitrate_descr">Välj ljudupplösning.</string>
     <string name="no_address_found">Ingen adress angiven</string>
 	<string name="looking_up_address">Slår upp adressen</string>
     <string name="rendering_attr_horseRoutes_name">Hästleder</string>
@@ -2137,7 +2103,6 @@ Long %2$s</string>
     <string name="data_is_not_available">Inga data tillgängliga</string>
     <string name="rendering_attr_hideUnderground_name">Underjordiska objekt</string>
     <string name="shared_string_read_more">Läs mer</string>
-    <string name="rec_split_storage_size">Lagringsutrymme</string>
     <string name="shared_string_email_address">E-postadress</string>
     <string name="shared_string_status">Status</string>
     <string name="shared_string_save_changes">Spara ändringar</string>
@@ -2254,7 +2219,6 @@ Om du tycker om OsmAnd och OSM och vill stödja dem så är detta ett utmärkt s
     
     <string name="access_no_destination">Ingen destination angiven</string>
     <string name="map_widget_magnetic_bearing">Magnetisk bäring</string>
-    <string name="rec_split_clip_length">Klipplängd</string>
     <string name="file_name_containes_illegal_char">Filnamnet innehåller ogiltiga tecken</string>
 <string name="move_marker_bottom_sheet_title">Flytta på kartan för att ändra markörens plats</string>
     <!-- string name="lat_lon_pattern">Lat: %1$.5f Lon: %2$.5f</string -->
@@ -2482,9 +2446,6 @@ Vänligen tillhandahåll fullständig kod</string>
     <string name="configure_screen_quick_action">Snabbåtgärd</string>
 
     <string name="quick_action_item_action">Åtgärd %d</string>
-    <string name="quick_action_take_audio_note">Ta ljudanteckning</string>
-    <string name="quick_action_take_video_note">Ta videoanteckning</string>
-    <string name="quick_action_take_photo_note">Ta fotoanteckning</string>
     <string name="quick_action_new_action">Lägg till åtgärd</string>
     <string name="quick_action_edit_action">Redigera åtgärd</string>
     <string name="dialog_add_action_title">Lägg till åtgärd</string>
@@ -2684,8 +2645,6 @@ Vänligen tillhandahåll fullständig kod</string>
     <string name="shared_string_edited">Redigerad</string>
     <string name="shared_string_added">Tillagd</string>
     <string name="marker_activated">Markör %s aktiverad.</string>
-    <string name="empty_state_av_notes">Gör anteckningar!</string>
-    <string name="notes_by_date">Anteckningar efter datum</string>
     <string name="by_date">Efter datum</string>
     <string name="by_type">Efter typ</string>
     <string name="looking_for_tracks_with_waypoints">Söker spår med waypoints</string>

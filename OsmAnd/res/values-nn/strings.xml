@@ -232,27 +232,17 @@
     <string name="recording_photo_description">Foto %1$s av %2$s</string>
     <string name="av_def_action_picture">Ta eit foto</string>
     <string name="recording_context_menu_precord">Ta eit foto</string>
-    <string name="av_def_action_video">Videoopptak</string>
-    <string name="av_def_action_audio">Lydopptak</string>
     <string name="av_use_external_recorder">Bruk systemopptakar</string>
     <string name="av_use_external_camera">Bruk kamera-app</string>
-    <string name="recording_camera_not_available">Kameraet er ikkje tilgjengeleg</string>
     <string name="recording_unavailable">ikkje tilgjengeleg</string>
-    <string name="recording_context_menu_arecord">Ta lydnotat</string>
-    <string name="recording_context_menu_vrecord">Ta videonotat</string>
-    <string name="layer_recordings">Opptakslag</string>
     <string name="recording_context_menu_delete">Slett opptak</string>
     <string name="recording_context_menu_play">Spel av</string>
     <string name="recording_description">Opptak %1$s %2$s av %3$s</string>
     <string name="recording_default_name">opptak</string>
     <string name="shared_string_control_stop">Stopp</string>
     <string name="shared_string_control_start">Start</string>
-    <string name="map_widget_av_notes">Lyd-/video-notat</string>
     <string name="map_widget_distancemeasurement">Avstandsmåling</string>
-    
-    <string name="map_widget_audionotes">Lydnotat</string>
-    <string name="audionotes_plugin_description">Ta lyd- eller videonotat under turen</string>
-    <string name="audionotes_plugin_name">Lyd-/videonotat</string>
+
     <string name="index_srtm_parts">delar</string>
     <string name="index_srtm_ele">Høgdkurver</string>
     <string name="download_select_map_types">Andre kart</string>

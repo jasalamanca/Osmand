@@ -103,7 +103,6 @@
     <string name="n_items_removed">element silindi</string>
     <string name="shared_string_type">Növ</string>
     <string name="shared_string_not_selected">Seçilməyib</string>
-    <string name="rec_split_storage_size">Yaddaş ölçüsü</string>
     <string name="available_maps">Mövcud xəritələr</string>
     <string name="shared_string_sound">Səs</string>
     <string name="no_microphone_permission">Proqramın mikrofondan istifadə etmək icazəsi yoxdur.</string>
@@ -113,8 +112,6 @@
     <string name="route_duration">Vaxt:</string>
     <string name="shared_string_near">Yaxın</string>
     <string name="shared_string_hide">Gizlət</string>
-    <string name="av_video_quality_high">Yüksək keyfiyyət</string>
-    <string name="av_video_quality_low">Aşağı keyfiyyət</string>
     <string name="show_on_start">Başlanğıcda göstər</string>
     <string name="copied_to_clipboard">Buferə köçürüldü</string>
     <string name="osn_bug_name">OSM qeyd</string>
@@ -259,13 +256,10 @@
     <string name="shared_string_my_places">Yerlərim</string>
     <string name="shared_string_my_favorites">Favoritlərim</string>
     <string name="shared_string_audio">Səs</string>
-    <string name="shared_string_video">Video</string>
     <string name="shared_string_photo">Şəkil</string>
     <string name="shared_string_online_maps">Onlayn xəritələr</string>
-    <string name="audionotes_plugin_name">Səs/video qeydləri</string>
     <string name="rename_failed">Yenidən adlandırıla bilmədi.</string>
     <string name="back_to_map">Xəritəyə qayıt</string>
-    <string name="share_note">Qeydi paylaş</string>
     <string name="watch">İzlə</string>
     <string name="notes">Qeydlər</string>
     <string name="online_map">Onlayn xəritə</string>
@@ -440,16 +434,12 @@
     <string name="map_widget_gps_info">GPS məlumatı</string>
     <string name="max_speed_none">yoxdur</string>
     <string name="download_wikipedia_maps">Vikipediya</string>
-    <string name="local_indexes_cat_av">Səs/Video məlumatları</string>
     <string name="recording_context_menu_show">Göstər</string>
     <string name="recording_photo_description">Şəkil %1$s %2$s</string>
     <string name="av_def_action_picture">Şəkil çək</string>
     <string name="recording_context_menu_precord">Şəkil çək</string>
-    <string name="av_def_action_video">Video çək</string>
-    <string name="av_def_action_audio">Səs yaz</string>
     <string name="av_use_external_camera_descr">Şəkillər üçün sistem proqramını istifadə et.</string>
     <string name="av_use_external_camera">Kamera proqramını istifadə et</string>
-    <string name="av_settings">Səs/video parametrləri</string>
     <string name="download_select_map_types">Digər xəritələr</string>
     <string name="download_regular_maps">Standart xəritə</string>
     <string name="map_widget_max_speed">Sürət limiti</string>
@@ -997,9 +987,7 @@
     <string name="lang_ht">Haiti dili</string>
     <string name="lang_et">Estonca</string>
     <string name="recording_context_menu_play">Oynat</string>
-    <string name="map_widget_av_notes">Səs/video qeydləri</string>
     <string name="map_widget_distancemeasurement">Məsafə ölçülməsi</string>
-    <string name="map_widget_audionotes">Səs qeydləri</string>
     <string name="index_srtm_parts">hissələr</string>
     <string name="index_srtm_ele">Kontur xətləri</string>
     <string name="download_roads_only_item">Yalnız yollar</string>
@@ -1345,10 +1333,8 @@
     <string name="record_plugin_name">Səyahət qeydetmə</string>
     <string name="monitoring_settings">Səyahət qeydetmə</string>
     <string name="monitoring_settings_descr">Səyahətlərinizin necə qeyd ediləcəyini tənzimləyin.</string>
-    <string name="av_use_external_recorder_descr">Video çəkmək üçün sistem proqramını istifadə et.</string>
     <string name="av_use_external_recorder">Sistem proqramını istifadə et</string>
     <string name="recording_error">Qeydetmə zamanı səhv baş verdi</string>
-    <string name="recording_is_recorded">Səs/video qeyd edilir. Dayandırmaq üçün AV widget-inə toxunun.</string>
     <string name="building_number">Bina nömrəsi</string>
     <string name="shared_string_permissions">İcazələr</string>
     <string name="import_gpx_failed_descr">OsmAnd faylı idxal edə bilmir. OsmAnd-ın həmin yerdən fayl oxumaq icazəsi olub-olmadığını yoxlayın.</string>
@@ -1482,8 +1468,6 @@
     <string name="prefer_in_routing_descr">Avtomagistralları üstün tut.</string>
     <string name="clear_dest_confirm">Təyinat nöqtəsini (və ara təyinat nöqtələrini) təmizləmək istədiyinizdən əminsiniz?</string>
     <string name="intermediate_points_change_order">Sıralamanı dəyiş</string>
-    <string name="av_settings_descr">Səs və video parametrlərini tənzimləyin.</string>
-    <string name="recording_camera_not_available">Kamera dəstəklənmir</string>
     <string name="recording_open_external_player">Xarici oynadıcını aç</string>
     <string name="intermediate_point">Ara təyinat nöqtəsi %1$s</string>
     <string name="context_menu_item_last_intermediate_point">Son ara təyinat nöqtəsi olaraq əlavə et</string>
@@ -1570,7 +1554,6 @@
     <string name="osb_comment_dialog_error">Səhv baş verdi: rəy əlavə edilmədi</string>
     <string name="share_osm_edits_subject">OSM düzəlişləri OsmAnd ilə paylaşılıb</string>
     <string name="rendering_attr_hideProposed_name">Təklif olunan obyektlər</string>
-    <string name="local_recordings_delete_all_confirm">%1$d qeydi silmək üzrəsiniz. Əminsiniz?</string>
     <string name="local_osm_changes_upload_all_confirm">%1$d dəyişikliyi OSM-a yükləmək üzrəsiniz. Əminsiniz?</string>
     <string name="osm_live_subscription">OsmAnd Live abunəliyi</string>
     <string name="osm_live_thanks">Canlı yeniləmələrə abunə olduğunuz üçün təşəkkür edirik!</string>
@@ -1755,7 +1738,6 @@
     <string name="shared_string_edited">Düzəliş edildi</string>
     <string name="shared_string_added">Əlavə edildi</string>
     <string name="marker_activated">İşarə %s aktivləşdirildi.</string>
-    <string name="notes_by_date">Tarixə görə qeydlər</string>
     <string name="by_date">Tarixə görə</string>
     <string name="by_type">Növünə görə</string>
     <string name="looking_for_tracks_with_waypoints">Yol nöqtələri olan izlər axtarılır</string>
