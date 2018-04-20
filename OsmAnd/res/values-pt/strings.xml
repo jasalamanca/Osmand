@@ -954,31 +954,17 @@
     <string name="precise_routing_mode">Roteamento preciso (alfa)</string>
     <string name="dropbox_plugin_name">Plugin Dropbox</string>
     <string name="intermediate_points_change_order">Alterar ordem</string>
-    <string name="srtm_paid_version_msg">Por favor, considere comprar o plugin Curvas de Nível (Contour Lines) na loja do Market para apoiar o desenvolvimento.</string>
-    <string name="srtm_paid_version_title">Plugin curvas de nível</string>
     <string name="av_def_action_choose">Selecionar na altura</string>
     <string name="av_use_external_camera_descr">Utilize aplicação do sistema para a foto</string>
     <string name="av_use_external_camera">Use aplicativo da câmera</string>
     <string name="shared_string_control_stop">Parar</string>
     <string name="shared_string_control_start">Iniciar</string>
-    <string name="osmand_srtm_short_description_80_chars">Plugin OsmAnd para curvas de nível off-line</string>
-    
-    
-    
-    
+
+
     <string name="map_widget_distancemeasurement">Medição da distância</string>
 
-    <string name="index_srtm_parts">Partes</string>
-    <string name="index_srtm_ele">Curvas de nível</string>
-
     <string name="av_def_action_picture">Capture uma foto</string>
-    <string name="osmand_srtm_long_description_1000_chars">"Este plugin disponibiliza \'Curvas de Nível\' e \'Sombras de Relevo\', que podem ser aplicadas nos mapas standard do OsmAnd.
-\nEstas funcionalidades podem ser apreciadas por atletas, caminhantes, e qualquer pessoa interessada na informação de relevo de uma paisagem.\n\nOs dados globais (entre as latitudes 70° norte e 70° sul) são baseados nas medições do SRTM (Shuttle Radar Topography Mission) e do ASTER (Advanced Spaceborn Thermal Emission and Reflection Radiometer), um instrumento de imagens no \'Terra\', o satélite principal do Sistema de Observação da Terra da NASA. O ASTER é um esforço conjunto da NASA, do Ministério da Economia, Comércio e Indústria do Japão e do Sistema Espacial Japonês (J-spacesystems). "</string>
-    <string name="srtm_plugin_description">"Este plugin disponibiliza \'Curvas de Nível\' e \'Sombras de Relevo\', que podem ser aplicadas nos mapas standard do OsmAnd.
-\nEstas funcionalidades podem ser apreciadas por atletas, caminhantes, e qualquer pessoa interessada na informação de relevo de uma paisagem.\n\nOs dados globais (entre as latitudes 70° norte e 70° sul) são baseados nas medições do SRTM (Shuttle Radar Topography Mission) e do ASTER (Advanced Spaceborn Thermal Emission and Reflection Radiometer), um instrumento de imagens no \'Terra\', o satélite principal do Sistema de Observação da Terra da NASA. O ASTER é um esforço conjunto da NASA, do Ministério da Economia, Comércio e Indústria do Japão e do Sistema Espacial Japonês (J-spacesystems). "</string>
-    <string name="srtm_plugin_name">Curvas de Nível</string>
     <string name="download_select_map_types">Outros mapas</string>
-    <string name="download_srtm_maps">Curvas de nível</string>
     <string name="rendering_attr_noAdminboundaries_name">Ocultar limites</string>
 	<string name="rendering_attr_noAdminboundaries_description">Esconder limites regionais (níveis 5 a 9)</string>
 
@@ -1003,16 +989,13 @@
     <string name="favourites_list_activity">Selecione favorito</string>
     <string name="local_openstreetmap_act_title">Modificaçoes OSM</string>
     <string name="shared_string_more_actions">Outras acções</string>
-    <string name="layer_hillshade">Camada de Sombras de relevo</string>
     <string name="map_widget_gps_info">Informação de GPS</string>
     <string name="download_using_mobile_internet">A Wifi está desligada. Quer continuar o download com a ligação internet?</string>
     
     <string name="monitoring_settings_descr">Cancelar rota</string>
     <string name="clear_destination">Apagar local de destino</string>
-    
-    
-    
-    <string name="download_hillshade_maps">Sobreposições de Sombras de Colinas</string>
+
+
     <string name="files_limit">Restando %1$d arquivos</string>
     <string name="available_downloads_left">Disponível %1$d arquivos para download</string>
     <string name="install_paid">Versão completa</string>
@@ -1086,9 +1069,8 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="use_magnetic_sensor_descr">use o sensor magnético para determinar a direção da bússola em vez do sensor de orientação</string>
     <string name="use_magnetic_sensor">Use sensor magnético</string>
     <string name="other_location">Outro</string>
-    <string name="local_indexes_cat_srtm">Dados de curvas de nível</string>
-    
-    
+
+
     <string name="monitoring_control_start">GPX</string>
 
 
@@ -1591,8 +1573,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="regions">Regiões</string>
     <string name="region_maps">Mapas de Regiões</string>
     <string name="world_maps">Mapas Mundiais</string>
-    <string name="hillshade_layer_disabled">Camada de Sombra de colinas desligada</string>
-    <string name="srtm_plugin_disabled">Curvas de Nível desligadas</string>
     <string name="favorite_category_add_new">Adicionar novo</string>
     <string name="favorite_category_select">Seleccionar Categoria</string>
     <string name="default_speed_system_descr">Definir unidades de medida para velocidade</string>
@@ -2056,13 +2036,8 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="quick_action_showhide_osmbugs_descr">Tocar no botão de ação irá mostrar ou esconder as Notas OSM no mapa.</string>
     <string name="sorted_by_distance">Ordenar por distância</string>
     <string name="search_favorites">Favoritos de pesquisa</string>
-    <string name="hillshade_menu_download_descr">Para observar relief hillshading no mapa, precisa de descarregar o mapa de hillshade overlay desta região.</string>
-    <string name="hillshade_purchase_header">Para ver relief hillshading no mapa, precisa de comprar e instalar o plugin Contour Lines</string>
     <string name="hide_from_zoom_level">Esconder do nível de zoom</string>
-    <string name="srtm_menu_download_descr">Para ver linhas de contorno deste mapa, precisa de descarregar o mapa de linha de contorno para esta região.</string>
     <string name="shared_string_plugin">Plugin</string>
-    <string name="srtm_purchase_header">Para ver as linhas de contorno no mapa, precisa de comprar e instalar o plugin de Linhas de Contorno</string>
-    <string name="srtm_color_scheme">Esquema de cores</string>
     <string name="show_from_zoom_level">Mostrar a partir do nível de zoom</string>
     <string name="routing_attr_allow_private_name">Permitir acesso privado</string>
     <string name="routing_attr_allow_private_description">Permitir acesso a áreas privadas</string>
@@ -2113,7 +2088,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="do_not_show_startup_messages">Não mostres mensagens ao iniciar</string>
     <string name="do_not_show_startup_messages_desc">Suprime mostrar descontos da aplicação e mensagens de eventos locais especiais</string>
     <string name="full_version_thanks">Muito obrigado por comprar a versão completa de OsmAnd!</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Inclinado</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Menos inclinado</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Plano</string>
     <string name="routing_attr_driving_style_speed_name">Percursos mais curtos</string>

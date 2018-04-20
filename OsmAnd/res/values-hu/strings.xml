@@ -914,34 +914,19 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
 
     <string name="rendering_attr_noAdminboundaries_name">Határvonalak</string>
     <string name="rendering_attr_noAdminboundaries_description">Nem jeleníti meg a megyénél kisebb közigazgatási határokat.</string>
-    <string name="download_srtm_maps">Szintvonalak</string>
-    <string name="srtm_plugin_name">Szintvonalak</string>
-    <string name="index_srtm_ele">Szintvonalak</string>
-    <string name="index_srtm_parts">darab</string>
     <string name="download_select_map_types">Egyéb térképek</string>
-
-
-    <string name="srtm_plugin_description">"Ez a bővítmény egy szintvonal fedvényt és egy domborzatárnyékolás réteget biztosít, amelyek az OsmAnd normál térképein jelennek meg. Ezt a funkcionalitást nagyon fogják értékelni a sportolók, túrázók, nyomvonalrögzítők és mindenki, akiket a táj domborzati szerkezete érdekel.  (Vedd figyelembe, hogy a szintvonalak és a domborzatárnyékolás külön, további letöltés után érhető el a bővítmény engedélyezése után.)
-\n 
-\nA globális adatok (az északi 70° és déli 70° szélesség között) az SRTM (Shuttle Radar Topography Mission) és az ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer) mérésein alapulnak, amely a NASA Earsh Observing System zászlóshajójának, a Terra műholdnak a képalkotó berendezése. Az ASTER a NASA, a Japán Gazdasági, Kereskedelmi és Ipari Minisztérium (METI), valamint a Japán Űrügynökség (J-spacesystems) közös projektje."</string>
 
 
     <string name="recording_delete_confirm">Szeretnéd törölni a felvételt?</string>
 
     <string name="recording_context_menu_play">Lejátszás</string>
     <string name="shared_string_control_start">Indítás</string>
-    <string name="osmand_srtm_short_description_80_chars">OsmAnd bővítmény kapcsolat nélküli szintvonalakhoz</string>
 
 
     <string name="map_widget_distancemeasurement">Távolságmérés</string>
     <string name="shared_string_control_stop">Leállítás</string>
-    <string name="osmand_srtm_long_description_1000_chars">Ez a bővítmény egy szintvonal fedvényt és egy domborzatárnyékolás réteget biztosít, amelyek az OsmAnd normál térképein jelennek meg. Ezt a funkcionalitást nagyon fogják értékelni a sportolók, túrázók, nyomvonalrögzítők és mindenki, akiket a táj domborzati szerkezete érdekel. 
-\n 
-\nA globális adatok (az északi 70° és déli 70° szélesség között) az SRTM (Shuttle Radar Topography Mission) és az ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer) mérésein alapulnak, amely a NASA Earsh Observing System zászlóshajójának, a Terra műholdnak a képalkotó berendezése. Az ASTER a NASA, a Japán Gazdasági, Kereskedelmi és Ipari Minisztérium (METI), valamint a Japán Űrügynökség (J-spacesystems) közös projektje.</string>
     <string name="av_widget_action_descr">Vezérlőgomb alapértelmezett működési módja.</string>
     <string name="av_widget_action">Alapértelmezett mód</string>
-    <string name="srtm_paid_version_msg">Kérlek fontold meg a Szintvonal bővítmény megvásárlását a Play Store-ban, ezzel támogatva a további fejlesztéseket.</string>
-    <string name="srtm_paid_version_title">Szintvonal bővítmény</string>
 
     <string name="intermediate_points_change_order">Más sorrend</string>
     <string name="dropbox_plugin_description">A Dropbox-bővítmény lehetővé teszi a rögzített útvonalak és hang/videojegyzetek szinkronizálását a Dropbox fiókoddal.</string>
@@ -952,8 +937,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="precise_routing_mode">Pontos útvonaltervezés (kísérleti)</string>
     <string name="av_def_action_picture">Fénykép készítése</string>
 
-
-    <string name="download_hillshade_maps">Domborzatárnyékolás</string>
 
     <string name="support_new_features_descr">Adományozz, hogy új funkciók kerülhessenek az alkalmazásba.</string>
     <string name="av_use_external_camera_descr">Rendszeralkalmazás használata fotózáshoz.</string>
@@ -969,7 +952,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="shared_string_map">Térkép</string>
     <string name="av_def_action_choose">Kijelölés kérésre</string>
 
-    <string name="layer_hillshade">Domborzatárnyékolás réteg</string>
     <string name="map_widget_gps_info">GPS infó</string>
 
 
@@ -999,7 +981,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="use_kalman_filter_compass_descr">Csökkenti a zajt az iránytű olvasásakor, de hozzáadja a tehetetlenséget.</string>
     <string name="use_kalman_filter_compass">Kálmán-szűrő használata</string>
 
-    <string name="local_indexes_cat_srtm">Szintvonalak</string>
     <string name="wait_current_task_finished">Kérlek várd meg, amíg a jelenlegi befejeződik</string>
     <string name="shared_string_downloading">Letöltés</string>
     <string name="plugin_distance_point_time">idő</string>
@@ -1900,8 +1881,6 @@ Hosszúság: %2$s</string>
     <string name="region_maps">Régiószintű térképek</string>
     <string name="world_maps">Világtérképek</string>
 
-    <string name="hillshade_layer_disabled">Domborzatárnyékolás letiltva</string>
-    <string name="srtm_plugin_disabled">Szintvonalak letiltva</string>
     <string name="favorite_category_add_new">Új hozzáadása</string>
     <string name="favorite_category_select">Kategória kijelölése</string>
     <string name="default_speed_system_descr">Sebesség mértékegységének megadása.</string>
@@ -1940,7 +1919,6 @@ Hosszúság: %2$s</string>
     <string name="show_free_version_banner_description">Az ingyenes verzió bannerének megjelenítése akkor is, ha fizetős verziót használsz.</string>
     <string name="buy">VÁSÁRLÁS</string>
     <string name="activate_seamarks_plugin">Kérlek aktiváld a Hajózási térkép bővítményt</string>
-    <string name="activate_srtm_plugin">Kérlek aktiváld a Szintvonalak bővítményt</string>
     <string name="later">Tovább</string>
     <string name="get_full_version">Teljes verzió</string>
     <string name="downloads">Letöltések</string>
@@ -2521,7 +2499,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="shared_string_start_time">Kezdő idő</string>
     <string name="shared_string_end_time">Befejező idő</string>
     <string name="shared_string_color">Szín</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Dombos</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Kevésbé dombos</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Sík</string>
     <string name="routing_attr_driving_style_speed_name">Rövidebb útvonal</string>
@@ -2584,13 +2561,8 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="quick_action_showhide_osmbugs_descr">A műveletgomb megnyomásával a térképen megjeleníthetők vagy elrejthetők az OSM-megjegyzések.</string>
     <string name="sorted_by_distance">Távolság szerinti sorrendben</string>
     <string name="search_favorites">Kedvencek keresése</string>
-    <string name="hillshade_menu_download_descr">A domborzatárnyékolás térképen való megtekintéséhez le kell tölteni ennek a területnek a domborzatárnyékolási térképrétegét.</string>
-    <string name="hillshade_purchase_header">A domborzatárnyékolás térképen való megtekintéséhez meg kell vásárolni és telepíteni kell a szintvonal-plugint</string>
     <string name="hide_from_zoom_level">Elrejtés a következő nagyítási fokozattól</string>
-    <string name="srtm_menu_download_descr">A szintvonalak térképen való megtekintéséhez le kell tölteni ennek a területnek a szintvonaltérképét.</string>
     <string name="shared_string_plugin">Plugin</string>
-    <string name="srtm_purchase_header">A szintvonalak térképen való megtekintéséhez meg kell vásárolni és telepíteni kell a szintvonal-plugint</string>
-    <string name="srtm_color_scheme">Színséma</string>
     <string name="show_from_zoom_level">Megjelenítés a következő nagyítási fokozattól</string>
     <string name="routing_attr_allow_private_name">Magánutak használatának engedélyezése</string>
     <string name="routing_attr_allow_private_description">Magánterület használatának engedélyezése.</string>

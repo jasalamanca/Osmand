@@ -903,17 +903,9 @@
 	
     
     <string name="download_select_map_types">Άλλοι χάρτες</string>
-    <string name="index_srtm_ele">Ισοϋψείς γραμμές</string>
-    <string name="srtm_plugin_description">Διευκολύνει τη λήψη offline υψομετρικών γραμμών και ανάγλυφου (\'Ρυθμίσεις\' → \'Διαχείριση αρχείων χαρτών\' → \'Λήψη\' → Επιλογή του επιθυμητού τύπου χάρτη).</string>
-    <string name="srtm_plugin_name">Ισοϋψείς Γραμμές</string>
-    <string name="download_srtm_maps">Ισοϋψείς γραμμές</string>
-    
-	
-<string name="index_srtm_parts">μέρη</string>
 
-    <string name="osmand_srtm_short_description_80_chars">Πρόσθετο του OsmAnd για ισοϋψείς γραμμές χωρίς σύνδεση</string>
-    
-    <string name="map_widget_distancemeasurement">Μέτρηση απόστασης</string>
+
+	<string name="map_widget_distancemeasurement">Μέτρηση απόστασης</string>
     <string name="recording_delete_confirm">Θέλετε να αφαιρέσετε αυτή την εγγραφή;</string>
 
     <string name="recording_context_menu_play">Αναπαραγωγή</string>
@@ -925,9 +917,7 @@
     <string name="dropbox_plugin_name">Πρόσθετο dropbox</string>
     
     <string name="intermediate_points_change_order">Αλλαγή σειράς</string>
-    <string name="srtm_paid_version_msg">Παρακαλώ σκεφτείτε την αγορά του πρόσθετου ισοϋψών γραμμών από το Market για να υποστηρίξετε την περαιτέρω ανάπτυξη.</string>
-    <string name="srtm_paid_version_title">Πρόσθετο ισοϋψών γραμμών</string>
-    <string name="stop_routing_confirm">Είστε σίγουρος ότι θέλετε να σταματήσετε την πλοήγηση;</string>
+	<string name="stop_routing_confirm">Είστε σίγουρος ότι θέλετε να σταματήσετε την πλοήγηση;</string>
     <string name="clear_dest_confirm">Είστε σίγουρος ότι θέλετε να καθαρίσετε το σημείο προορισμού (και τους ενδιάμεσους προορισμούς);</string>
     <string name="precise_routing_mode">Ακριβής δρομολόγηση (άλφα)</string>
     <string name="av_def_action_picture">Λήψη φωτογραφίας</string>
@@ -936,9 +926,8 @@
     <string name="shared_string_control_start">Έναρξη</string>
     <string name="av_use_external_camera_descr">Χρήση εφαρμογής συστήματος για φωτογραφία</string>
     <string name="av_use_external_camera">Χρήση εφαρμογής κάμερας</string>
-    
-    <string name="osmand_srtm_long_description_1000_chars">Αυτό το πρόσθετο παρέχει ισοϋψείς γραμμές οι οποίες μπορούν να εμφανιστούν στους εκτός σύνδεσης χάρτες του OsmAnd. Τα παγκόσμια δεδομένα (μεταξύ 70 μοιρών βόρεια και 70 μοιρών νότια) είναι βασισμένα σε μετρήσεις από το SRTM (Shuttle Radar Topography Mission) και το ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), ένα όργανο απεικόνισης πάνω στον Terra, τη ναυαρχίδα των δορυφόρων του Συστήματος Παρακολούθησης της Γης της NASA. Το ASTER είναι μια συνεργασία μεταξύ της NASA, Του Υπουργείου οικονομίας. εμπορίου και βιομηχανίας της Ιαπωνίας (METI), και της Japan Space Systems (J-spacesystems).</string>
-    <string name="support_new_features_descr">Δωρίστε ώστε να δείτε νέα χαρακτηριστικά να πραγματοποιούνται στην εφαρμογή</string>
+
+	<string name="support_new_features_descr">Δωρίστε ώστε να δείτε νέα χαρακτηριστικά να πραγματοποιούνται στην εφαρμογή</string>
 	<string name="prefer_motorways">Προτίμηση αυτοκινητοδρόμων</string>
 	<string name="prefer_in_routing_title">Προτίμηση…</string>
 	<string name="prefer_in_routing_descr">Προτίμηση αυτοκινητοδρόμων</string>
@@ -947,11 +936,9 @@
     <string name="item_checked">επιλεγμένο</string>
     <string name="item_unchecked">μη επιλεγμένο</string>
     <string name="map_widget_gps_info">Πληροφορίες GPS</string>
-    
-    <string name="download_hillshade_maps">Ανάγλυφα</string>
 
 
-    <string name="street_name">Όνομα οδού</string>
+	<string name="street_name">Όνομα οδού</string>
 	<string name="hno">Αριθμός σπιτιού</string>
     <string name="monitoring_settings">Καταγραφή ταξιδιού</string>
     <string name="monitoring_settings_descr">Διαμορφώστε πως θα καταγράφονται τα ταξίδια</string>
@@ -978,8 +965,7 @@
     <string name="use_kalman_filter_compass_descr">Μειώνει τον θόρυβο στην ανάγνωση της πυξίδας αλλά προσθέτει αδράνεια</string>
     <string name="use_kalman_filter_compass">Χρήση φίλτρου Kalman</string>
     <string name="wait_current_task_finished">Παρακαλώ περιμένετε μέχρι να τελειώσει η τρέχουσα διεργασία</string>
-    <string name="local_indexes_cat_srtm">Ισοϋψείς γραμμές</string>
-    <string name="shared_string_downloading">Λήψη</string>
+	<string name="shared_string_downloading">Λήψη</string>
 	<string name="delete_point">Διαγραφή σημείου</string>
     <string name="plugin_distance_point_time">χρόνος</string>
     <string name="plugin_distance_point_hdop">ακρίβεια</string>
@@ -1001,8 +987,7 @@
     <string name="intermediate_items_sort_by_distance">Ταξινόμηση πόρτα-πόρτα</string>
     <string name="local_osm_changes_backup_failed">Η δημιουργία αντιγράφου ασφαλείας αλλαγών OSM απέτυχε</string>
     <string name="local_osm_changes_backup">Δημιουργία αντιγράφου ασφαλείας αλλαγών OSM</string>
-    <string name="layer_hillshade">Στρώση σκίασης αναγλύφου</string>
-    <string name="clear_intermediate_points">Καθαρισμός ενδιάμεσων προορισμών</string>
+	<string name="clear_intermediate_points">Καθαρισμός ενδιάμεσων προορισμών</string>
     <string name="keep_intermediate_points">Διατήρηση ενδιάμεσων προορισμών</string>
     <string name="context_menu_item_directions_to">Οδηγίες προς</string>
     <string name="context_menu_item_directions_from">Οδηγίες από</string>
@@ -1586,7 +1571,6 @@
     <string name="regions">Περιοχές</string>
     
     <string name="world_maps">Παγκόσμιοι χάρτες</string>
-    <string name="srtm_plugin_disabled">Ισοϋψείς γραμμές απενεργοποιημένες</string>
     <string name="favorite_category_add_new">Προσθήκη νέου</string>
     <string name="favorite_category_select">Επιλέξτε κατηγορία</string>
     <string name="default_speed_system_descr">Ορισμός μονάδας ταχύτητας</string>

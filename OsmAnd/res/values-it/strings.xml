@@ -887,20 +887,7 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="rendering_attr_noAdminboundaries_description">Non visualizzare i confini regionali (livelli amministrativi 5-9).</string>
 
 
-    <string name="index_srtm_parts">parti</string>
     <string name="download_select_map_types">Altre mappe</string>
-    <string name="download_srtm_maps">Linee isoipse</string>
-    <string name="srtm_plugin_name">Linee isoipse</string>
-    <string name="srtm_plugin_description">Questo plugin fornisce sia le curve di livello che lo strato ombreggiamento dei rilievi che possono essere visualizzati sopra alle mappe standard di OsmAnd. Questa funzionalità sarà molto apprezzata dagli atleti, dagli escursionisti, e tutti coloro che sono interessati all\'orografia del paesaggio. (Per favore notare che linee isoipse e dati elevazione sono separati, una volta attivato il componente aggiuntivo saranno disponibili altri file scaricare.)
-\n
-\nI dati globali (fra i 70 gradi nord e 70 gradi sud) sono basati su misurazioni del SRTM (Shuttle Radar Topography Mission) e ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), lo strumento per raccogliere immagini a bordo Terra, il satellite fiore all\'occhiello del Sistema Nasa di Osservazione della Terra . ASTER è uno sforzo di cooperazione tra NASA, il Ministero dell\'Economia del Giappone, Commercio e Industria (METI) e sistema spaziale giapponese (J-spacesystems).</string>
-    <string name="index_srtm_ele">Linee isoipse</string>
-
-
-    <string name="osmand_srtm_short_description_80_chars">Plugin Osmand per le curve di livello offline</string>
-    <string name="osmand_srtm_long_description_1000_chars">Questo plugin fornisce sia le curve di livello che lo strato ombreggiamento dei rilievi che possono essere visualizzate nelle mappe standard di OsmAnd. Questa funzionalità sarà molto apprezzata dagli atleti, dagli escursionisti, e tutti coloro che sono interessati all\'orografia e al paesaggio.
-\n
-\nI dati globali (fra i 70 gradi nord e 70 gradi sud) sono basati su misurazioni del SRTM (Shuttle Radar Topography Mission) e ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), lo strumento misuratore a bordo Terra, il satellite della NASA del sistema di osservazione della terra. ASTER è uno sforzo di cooperazione tra NASA, il Ministero dell\'Economia del Giappone, Commercio e Industria (METI) e sistema spaziale giapponese (J-spacesystems).</string>
 
 
     <string name="map_widget_distancemeasurement">Misurazione della distanza</string>
@@ -910,8 +897,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="recording_delete_confirm">Vuoi cancellare questa registrazione?</string>
 
     <string name="recording_context_menu_play">Riproduci</string>
-    <string name="srtm_paid_version_msg">Per favore valuta l\'acquisto sul Market del plugin per le linee isoipse per sostenere lo sviluppo futuro.</string>
-    <string name="srtm_paid_version_title">Plugin linee isoipse</string>
 
     <string name="intermediate_points_change_order">Modifica l\'ordine</string>
     <string name="dropbox_plugin_description">Il plugin Dropbox ti permette di sincronizzare le tracce e le note video/audio con il tuo account Dropbox.</string>
@@ -922,8 +907,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="precise_routing_mode_descr">Abilita per calcolare percorsi precisi senza intoppi. È lento e limitato in distanza.</string>
     <string name="precise_routing_mode">Calcolo della rotta preciso (alfa)</string>
 
-
-    <string name="download_hillshade_maps">Ombreggiamento rilievi</string>
 
     <string name="support_new_features_descr">Fai una donazione per avere nuove funzionalità implementate nell\'applicazione.</string>
     <string name="av_use_external_camera_descr">Usa l\'applicazione di sistema per le foto.</string>
@@ -939,7 +922,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="item_unchecked">non segnato</string>
     <string name="access_arrival_time">Orario arrivo</string>
     <string name="map_widget_gps_info">Informazioni GPS</string>
-    <string name="layer_hillshade">Livello ombreggiatura rilievi</string>
 
 
     <string name="street_name">Nome strada</string>
@@ -965,7 +947,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="install_paid">Versione completa</string>
     <string name="use_magnetic_sensor_descr">Per utilizzare il valore della bussola invece del sensore di orientamento, utilizza il utilizza il sensore magnetico.</string>
     <string name="use_magnetic_sensor">Utilizza il sensore magnetico (bussola)</string>
-    <string name="local_indexes_cat_srtm">Linee isoipse</string>
     <string name="use_kalman_filter_compass_descr">Riduce il rumore delle letture della bussola ma introduce dell\'inerzia.</string>
     <string name="use_kalman_filter_compass">Usa il filtro di Kalman</string>
     <string name="wait_current_task_finished">Prego attendere il termine dell\'operazione</string>
@@ -1866,13 +1847,10 @@ Attivando questa vista lo stile della mappa diventerà \'Inverno e sci\', mostra
     <string name="favorite_category_add_new">Aggiungi nuova</string>
     <string name="favorite_category_select">Scegli la categoria</string>
 
-    <string name="srtm_plugin_disabled">Linee isoipse disattivate</string>
     <string name="show_free_version_banner">Mostra il banner della versione gratuita</string>
     <string name="show_free_version_banner_description">Anche se hai la versione a pagamento puoi comunque vedere il banner della versione gratuita</string>
     <string name="downloading_number_of_files">In download - %1$d file</string>
-    <string name="hillshade_layer_disabled">Livello di ombreggiatura per i rilievi disabilitato</string>
     <string name="buy">ACQUISTA</string>
-    <string name="activate_srtm_plugin">Attiva il componente aggiuntivo SRTM</string>
     <string name="later">In seguito</string>
     <string name="get_full_version">Versione completa</string>
     <string name="activate_seamarks_plugin">Attiva il componente aggiuntivo Boe di segnalazione</string>
@@ -2516,7 +2494,6 @@ Rappresenta l\'area: %1$s x %2$s</string>
     <string name="add_new_folder">Aggiungi una nuova cartella</string>
     <string name="shared_string_slope">Pendenza</string>
     <string name="lang_ber">Berbero</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Collinoso</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Meno collinoso</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Pianeggiante</string>
     <string name="routing_attr_driving_style_speed_name">Percorsi più brevi</string>
@@ -2583,13 +2560,8 @@ Rappresenta l\'area: %1$s x %2$s</string>
     <string name="quick_action_showhide_osmbugs_descr">Toccando il pulsante azione verranno mostrate o nascoste le Note OSM sulla mappa.</string>
     <string name="sorted_by_distance">Ordinato per distanza</string>
     <string name="search_favorites">Cerca preferiti</string>
-    <string name="hillshade_menu_download_descr">Per vedere le ombreggiature dei rilievi sulla mappa, devi scaricare la mappa ombreggiatura dei rilievi di questa regione.</string>
-    <string name="hillshade_purchase_header">Per vedere le ombreggiature dei rilievi sulla mappa, devi scaricare e installare il componente aggiuntivo Linee Isoipse</string>
     <string name="hide_from_zoom_level">Nascondi dal livello di zoom</string>
-    <string name="srtm_menu_download_descr">Per visualizzare le linee isoipse nella mappa, devi scaricare la mappa delle linee isoipse per questa regione.</string>
     <string name="shared_string_plugin">Componente aggiuntivo</string>
-    <string name="srtm_purchase_header">Per visualizzare le linee isoipse nella mappa, devi acquistare e installare il componente aggiuntivo delle curve di livello</string>
-    <string name="srtm_color_scheme">Schema colori</string>
     <string name="routing_attr_allow_private_name">Permetti l\'accesso alle proprietà private</string>
     <string name="routing_attr_allow_private_description">Permetti l\'accesso alle aree private.</string>
     <string name="edit_name">Modifica il nome</string>

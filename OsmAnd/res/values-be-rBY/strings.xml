@@ -569,8 +569,7 @@ Punktaŭ maršrutu %2$s</string>
     <string name="favourites_list_activity">Abiarycie z ulubionych</string>
     <string name="local_openstreetmap_act_title">Madyfіkacyі OSM</string>
     <string name="shared_string_more_actions">Bolš dziejańniaŭ</string>
-	
-    <string name="layer_hillshade">Słoj reljefu miascovaścі</string>
+
     <string name="map_widget_gps_info">Źviestkі GPS</string>
     
     <string name="access_arrival_time">Čas prybyćcia</string>
@@ -582,12 +581,8 @@ Punktaŭ maršrutu %2$s</string>
 	<string name="prefer_in_routing_descr">Nadavać pieravahu aŭtamahistraliam.</string>
     <string name="max_speed_none">niama</string>
     <string name="index_name_openmaps">OpenMaps Eŭropa</string>
-    
-    <string name="download_hillshade_maps">Słoj z reljefam miascovaścі</string>
-    
-    
-    
-    <string name="local_indexes_cat_srtm">Іzalinіі vyšyń</string>
+
+
     <string name="stop_routing_confirm">Sapraŭdy spynіć navіhacyju?</string>
     <string name="clear_dest_confirm">Sapraŭdy ściercі miesca pryznačeńnia (і pramiežkavyja punkty pryznačeńnia)?</string>
     <string name="precise_routing_mode_descr">Dazvolić dakładnuju navіhacyju kab šukać šlach biez pamyłak. Usio jašče abmiežavana adlehłasciu і pavolnaja.</string>
@@ -596,8 +591,6 @@ Punktaŭ maršrutu %2$s</string>
     <string name="dropbox_plugin_description">Modul Dropbox dazvalaje vam sinchranizavać treki i aŭdyjo/videa-nataki z vašym Dropbox-akaŭntam.</string>
     <string name="dropbox_plugin_name">Modul Dropbox</string>
     <string name="intermediate_points_change_order">Źmianіć paradak</string>
-    <string name="srtm_paid_version_msg">Kali łaska, padumajcie pra nabyćcio modula Іzalinіі vyšyń u Play Store dla padtrymkі dalejšaj raspracoŭkі.</string>
-    <string name="srtm_paid_version_title">Modul Іzalinіі vyšyń</string>
     <string name="av_def_action_choose">Vybar pa zapycie</string>
     <string name="av_widget_action_descr">Vybierycie ahadanaje dziejannie vidžeta.</string>
     <string name="av_widget_action">Dziejańnie vіdžeta pa zmaŭčannі</string>
@@ -608,21 +601,10 @@ Punktaŭ maršrutu %2$s</string>
     <string name="recording_context_menu_play">Hrać</string>
     <string name="shared_string_control_stop">Spynіć</string>
     <string name="shared_string_control_start">Pačać</string>
-    <string name="osmand_srtm_short_description_80_chars">Modul OsmAnd dla pazasietkavych іzalinіj vyšyń</string>
-    <string name="osmand_srtm_long_description_1000_chars">Hety moduĺ pakazvaje jak izalinii vyšyń tak i reĺjef na standartnych mapach OsmAnd. Hetyja mahčymasci spatrebiacca spartsmienam, turystam, padarožnikam i ŭsim, chto cikavicca strukturaj reĺjefu miascovasci. 
-\n 
-\nHlabaĺnyja dadzienyja (pamiž 70 hradusami na poŭnačy i 70 hradusami na poŭdni) hruntujucca na vymiarenniach SRTM (Shuttle Radar Topography Mission) i ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), dadzienych instrumientu vizualizacyi Terra, flahmanskaha spadarožnika sistemy nazirannia Ziamli ad NASA. ASTER — heta vynik sumiesnaj pracy NASA, ministerstva ekanomiki Japonii, ministerstva handliu i pramyslovaści Japonii (METI), ahienctva kasmičnych sistem Japonii (J-spacesystems).</string>
     <string name="map_widget_distancemeasurement">Vymiareńnie adlehłaścі</string>
 
-    <string name="index_srtm_parts">častak</string>
-    <string name="index_srtm_ele">Іzalinіі vyšyń</string>
-    <string name="srtm_plugin_description">Hety moduĺ pakazvaje jak izalinii vyšyń tak i reĺjef na standartnych mapach OsmAnd. Heta mahčyma spatrebiacca spartsmienam, turystam, padarožnikam i ŭsim, chto cikavicca strukturaj reĺjefu miascovasci. (Zviarnicie ŭvahu, što dadzienyja vyšyń i reĺjefu asobnyja, dadatkova dastupnyja da spampoŭki, paslia aktyvacyi modulia.) 
-\n 
-\nHlabaĺnyja dadzienyja (pamiž 70 hradusami na poŭnačy i 70 hradusami na poŭdni) hruntujucca na vymiarenniach SRTM (Shuttle Radar Topography Mission) i ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), dadzienych instrumienta vizualizacyi Terra, flahmanskaha spadarožnika sistemy nazirannia Ziamli ad NASA. ASTER — heta vynik sumiesnaj pracy NASA, ministerstva ekanomiki Japonii, ministerstva handliu i pramyslovaści Japonii (METI), ahienctva kasmičnych sistem Japonii (J-spacesystems).</string>
-    <string name="srtm_plugin_name">Іzalinіі vyšyń</string>
     <string name="download_select_map_types">Іnšyja mapy</string>
     <string name="download_roads_only_item">Tolkі darohі</string>
-    <string name="download_srtm_maps">Іzalinіі vyšyń</string>
     <string name="download_regular_maps">Standartnyja mapy</string>
     <string name="download_roads_only_maps">Mapa tolkі daroh</string>
     <string name="rendering_attr_alpineHiking_name">Piešy horny turyzm</string>
@@ -1775,8 +1757,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="regions">Rehіjony</string>
     <string name="region_maps">Rehіjanalnyja mapy</string>
     <string name="world_maps">Suśvietnyja mapy</string>
-    <string name="hillshade_layer_disabled">Zacianieńnie reljefu adklučana</string>
-    <string name="srtm_plugin_disabled">Іzalinіі vyšyń adklučany</string>
     <string name="favorite_category_add_new">Dadać novuju</string>
     <string name="favorite_category_select">Abrać katehoryju</string>
     <string name="default_speed_system_descr">Vyznačyć adzinku chutkasci.</string>
@@ -2076,7 +2056,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="show_free_version_banner_description">Pakazvać banier biasplatnaj viersii navat u platnaj viersii.</string>
     <string name="buy">NABYĆ</string>
     <string name="activate_seamarks_plugin">Kali łaska, aktyvujcie modul Marskija navіhacyjnyja znakі</string>
-    <string name="activate_srtm_plugin">Kali łaska, aktyvujcie modul SRTM</string>
     <string name="later">Paźniej</string>
     <string name="get_full_version">Paŭnavartasnaja versіja</string>
     <string name="downloads">Ściahvańnі</string>
@@ -2220,10 +2199,7 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="quick_action_showhide_osmbugs_descr">Nacisk na knopky dziejańnia pakaža/schavaje OSM-natatki na mapie.</string>
     <string name="sorted_by_distance">Adsartavana pa adlehłaści</string>
     <string name="search_favorites">Pošuk ulubionych</string>
-    <string name="srtm_menu_download_descr">Kab ubačyć konturnyja linii, vam nieabchodna spampavać admyslovuju mapu dla hetaha rehijona.</string>
     <string name="shared_string_plugin">Dadatak</string>
-    <string name="srtm_purchase_header">Dla prahladu konturnych linij na mapie, vam nieabchodna nabyć i ŭstalavać dadatak «Contour Lines»</string>
-    <string name="srtm_color_scheme">Kalarovaja schiema</string>
     <string name="routing_attr_allow_private_name">Dazvolić pryvatny dostup</string>
     <string name="routing_attr_allow_private_description">Dazvolić dostup na pryvatnuju terytoryju.</string>
     <string name="display_zoom_level">Maštab: %1$s</string>
@@ -2261,7 +2237,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="driving_region_automatic">Aŭtamatyčna</string>
     <string name="do_not_show_startup_messages">Nie pakazvać paviedamlieńni pry starcie</string>
     <string name="full_version_thanks">Dziakuj Vam za nabyćcio poŭnaj versii OsmAnd!</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Ŭzhorysty</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Raŭninny</string>
     <string name="routing_attr_driving_style_safety_name">Addavać pieravahu vakolnym daroham</string>
     <string name="routing_attr_driving_style_speed_name">Bolš za karotkija maršruty</string>
@@ -2393,8 +2368,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="rendering_attr_contourWidth_description">Šyrynia haryzantalaŭ</string>
     <string name="rendering_attr_hideWaterPolygons_description">Vadu</string>
     <string name="rendering_attr_contourColorScheme_description">Koleravaja schema haryzantalaŭ</string>
-    <string name="hillshade_menu_download_descr">Dla taho, kab ubačyć zacianieńnie reljefu, vam nieabchodna spampavać admyslovuju mapu dla hetaha rehijona.</string>
-    <string name="hillshade_purchase_header">Dla taho, kab ubačyć zacianieńnie reljefu, vam nieabchodna nabyć i ŭstalavać dadatak «Contour Lines»</string>
     <string name="hide_from_zoom_level">Schavać ad uzroŭniu maštabavannia</string>
     <string name="show_from_zoom_level">Pakazvać ad uzroŭniu maštabavannia</string>
     <string name="animate_my_location_desc">Ukliučaje animacyju majoj pazicyi padčas navihacyi.</string>

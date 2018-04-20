@@ -37,16 +37,11 @@
     <string name="recording_context_menu_play">شغّل</string>
     <string name="shared_string_control_stop">توقف</string>
     <string name="shared_string_control_start">بدء</string>
-    <string name="osmand_srtm_short_description_80_chars">ملحق OsmAnd المحلي للخطوط المحيطية</string>
-    
+
     <string name="map_widget_distancemeasurement">قياس المسافة</string>
 
-    <string name="index_srtm_parts">أجزاء</string>
-    <string name="index_srtm_ele">الخطوط المحيطية (الكنتورية)</string>
-    <string name="srtm_plugin_name">ملحق الخطوط المحيطية</string>
     <string name="download_select_map_types">خرائط أخرى</string>
     <string name="download_roads_only_item">الطرق فقط</string>
-    <string name="download_srtm_maps">الخطوط المحيطية (الكنتورية)</string>
     <string name="download_regular_maps">الخرائط العادية</string>
     <string name="rendering_attr_noAdminboundaries_name">الحدود</string>
 	<string name="map_widget_max_speed">حدّ السرعة</string>
@@ -505,14 +500,8 @@
 \n * انقر مطولا على الخريطة لتحذف النقطة السّابقة.
 \n * انقر مطولا على النقطة لعرضها و ارفاق وصف.
 \n * انقر على أداة القياس لعرض المزيد من الأنشطة.</string>
-    <string name="layer_hillshade">طبقة التضاريس</string>
-    
-    
-    <string name="download_hillshade_maps">ظل المرتفعات</string>
-    
-    <string name="local_indexes_cat_srtm">الخطوط الكنتورية</string>
-    <string name="srtm_paid_version_msg">فكّر من فضلك في شراء ملحق الخطوط المحيطية من السّوق لدعم المزيد من التّطوير.</string>
-    <string name="srtm_paid_version_title">ملحق الخطوط المحيطية</string>
+
+
     <string name="zxing_barcode_scanner_not_found">برنامج ZXing للبحث عن الباركود غيرُ مثبّت. أأبحث في السّوق ؟</string>
 	<string name="rendering_attr_contourLines_description">اعرض درجة التّكبير (يتطلب البيانات المحيطية):</string>
 	
@@ -568,13 +557,6 @@
     
     <string name="local_osm_changes_delete_all_confirm">أنت بصدد حذف %1$d من التغييرات. هل انت متأكد ؟</string>
     <string name="shared_string_delete_all">احذف الكل</string>
-    
-    <string name="osmand_srtm_long_description_1000_chars">توفر هاته الأداة طبقة خط محيطي كنتوري وطبقة للتضاريس ظاهرة على الخريطة الأساسية للتطبيق. هاته الوظيفة ستكون محل تقدير من طرف الرياضيين، المتنزهين، الرحالة، وكل من هو مهتم بجمال ورخاء الطبيعة.
-\n
-\nالبيانات العالمية (بين 70 درجة شمالا و70 جنوبا) مبنية حسب قياسات SRTM (مكوك رادار البعثة الطبوغرافية) وASTER (المكوك المتقدم الخاص بالإنبعاث الحراري والانعكاس الإشعاعي)، أداة تصوير على متن Terra، القمر الصناعي الرئيسي لنظام رصد الأرض التابع لناسا. ASTER هو جهد تعاوني فيما بين وكالة ناسا، وزارة الاقتصاد اليابانية، التجارة والصناعة (METI)، و أنظمة الفضاء اليابانية (J-spacesystems).</string>
-    <string name="srtm_plugin_description">توفر هاته الأداة كلا من خط محيطي كنتوري و طبقة تضاريس (طبيعية) تظهر على خرائط OsmAnd. هذه الوظيفة ستكون محل تقدير الكثير من الرياضيين، المتنزهين، الرحالة، و كل من تهمه بنية التضاريس الطبيعية. (يرجى ملاحظة ان الخط المحيطي الكنتوري /أو بيانات الاغاثه منفصلة ،التنزيلات الاضافيه متاحة بعد تفعيل البرنامج المساعد)
-\n
-\nالبيانات العالمية (ما بين 70 درجة شمالا و70 جنوبا) مبنية على مقاييس SRTM (مكوك رادار البعثة الطبوغرافية) و ASTER (الانبعاث الحراري الفضائي المتقدم والإنعكاس الإشعاعي)، أداة التصوير على متن Terra، القمر الصناعي الرئيسي لنظام رصد الأرض التابع لناسا. ASTER هو جهد تعاوني بين كل من وكالة ناسا، وزارة الاقتصاد اليابانية، التجارة والصناعة (METI)، ونظم الفضاء اليابانية (J-spacesystems).</string>
 
     <string name="update_poi_does_not_change_indexes">التغييرات POI داخل التطبيق لا تؤثرعلى ملفات الخرائط المحملة، يتم حفظ التغييرات إلى ملف محلي بدلا من ذلك.</string>
 	<string name="av_camera_focus_descr">تحديد وضع تركيز الكاميرا الداخلية.</string>
@@ -1991,8 +1973,6 @@
     <string name="advanced_coords_search">بحث متقدم عن الإحداثيات</string>
     <string name="simulate_initial_startup_descr">وضع علامة تشير إلى بدء تشغيل التطبيق الأولي، ابقي جميع الإعدادات الأخرى دون تغيير.</string>
     <string name="region_maps">خرائط واسعة النطاق</string>
-    <string name="hillshade_layer_disabled">طبقة التضاريس غير مفعلة</string>
-    <string name="srtm_plugin_disabled">الخطوط الكفافية معطلة</string>
     <string name="nm">بحاجة إلى معلومات أكثر</string>
     <string name="nm_h">ميل بحري/ساعة</string>
     <string name="simulate_your_location_descr">محاكاة موقعك باستخدام طريق مقاس أو مسار GPX مسجل.</string>
@@ -2105,7 +2085,6 @@
     <string name="route_stops_before">%1$s محطة قبل</string>
     <string name="map_legend">مفتاح الخريطة</string>
     <string name="confirm_download_roadmaps">هل حقا تريد تحميل خريطة الطرق فقط، على الرغم من أنه لديك الخريطة (كاملة)؟</string>
-    <string name="activate_srtm_plugin">رجاءا قم بتفعيل أداة SRTM</string>
     <string name="transport_search_before">مسار رحلة مسبق</string>
     <string name="transport_to_go_after">مسافة مسبقة</string>
     <string name="transport_to_go_before">المسافة اللاحقة</string>
@@ -2415,7 +2394,6 @@
     <string name="increase_search_radius">قم بتوسيع دائرة البحث</string>
     <string name="search_favorites">ابحث في المفضلة</string>
     <string name="shared_string_plugin">ملحق</string>
-    <string name="srtm_color_scheme">نظام الألوان</string>
     <string name="favorite_group_name">إسم المجموعة</string>
     <string name="change_color">تغيير اللون</string>
     <string name="edit_name">تعديل الإسم</string>
@@ -2456,7 +2434,6 @@
     <string name="shared_string_visible">ظاهر</string>
     <string name="restore_purchases">استعادة المشتريات</string>
     <string name="do_not_send_anonymous_app_usage">لا ترسل إحصاءات مجهولة عن استخدام التطبيق</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">هضابي</string>
     <string name="shared_string_time_moving">زمن التنقل</string>
     <string name="shared_string_time_span">الفترة الزمنية</string>
     <string name="route_altitude">ارتفاع الطريق</string>
@@ -2481,11 +2458,9 @@
     <string name="private_access_routing_req">الوجهة الخاص بك تقع في منطقة ذات ولوج خاص. هل تريد تفعيل خاصية السماح بالوصول إلى هاته الأماكن لهذه الرحلة؟</string>
     <string name="quick_action_showhide_osmbugs_descr">النقر على زر الإجراء سيظهر أو يخفي ملاحظات OSM على الخريطة.</string>
     <string name="hide_from_zoom_level">إخفاء من مستوى التكبير/التصغير</string>
-    <string name="srtm_menu_download_descr">لعرض الخطوط الكنتورية على الخريطة، تحتاج إلى تحميل خريطة الخط الكنتوري لهذه المنطقة.</string>
     <string name="show_from_zoom_level">عرض من مستوى التكبير/التصغير</string>
     <string name="display_zoom_level">عرض مستوى التكبير/التصغير: %1$s</string>
     <string name="animate_my_location">قم بتحريك موقعي</string>
-    <string name="srtm_purchase_header">لمشاهدة الخطوط الكنتورية على الخريطة، أنت بحاجة لشراء وتثبيت البرنامج المساعد للخطوط الكنتورية</string>
     <string name="animate_my_location_desc">تفعيل حركة تعديل مجال رؤية الخريطة بالنسبة لموقعي أثناء الملاحة.</string>
     <string name="quick_action_auto_zoom_desc">النقر على زر الإجراء سوف يقوم بتشغيل/إيقاف تكبير الخريطة وفقا لسرعتك.</string>
     <string name="quick_action_add_destination_desc">النقر على زر الإجراء سيقوم بإضافة وجهة في مركز الشاشة. الوجهة المعينة مسبقا تصبح النقطة الوسيطة الأخيرة.</string>
@@ -2493,8 +2468,6 @@
     <string name="improve_coverage_install_mapillary_desc">يمكنك أن تأخذ صورك الخاصة أو سلسلة من الصور وإرفاقها بهذا الموقع.
 \n
 \nللقيام بذل، تحتاج إلى تثبيت تطبيق مابيلاري من البلاي ستور.</string>
-    <string name="hillshade_menu_download_descr">لمشاهدة التضاريس على الخريطة، تحتاج إلى تحميل خريطة طبقة التضاريس لهذه المنطقة.</string>
-    <string name="hillshade_purchase_header">لمشاهدة التضاريس على الخريطة، تحتاج إلى شراء وتثبيت برنامج الخطوط الكنتورية المساعد</string>
     <string name="quick_action_add_first_intermediate_desc">النقر على زر الإجراء سيتم إضافة نقطة وسيطة أولى في موقع مركز الشاشة.</string>
     <string name="no_overlay">لا طبقة فوقية</string>
     <string name="no_underlay">لا طبقة تحتية</string>

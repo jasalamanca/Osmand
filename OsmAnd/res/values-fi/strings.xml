@@ -700,10 +700,7 @@
     <string name="specified_directiory_not_writeable">Karttoja ei voitu luoda valittuun hakemistoon</string>
 	<string name="copying_osmand_file_failed">Tiedostojen kopiointi epäonnistui</string>    
     <string name="coordinates">Koordinaatit</string>
-	<string name="srtm_plugin_name">Korkeuskäyrät</string>
-	<string name="index_srtm_ele">Korkeuskäyrät</string>
-    <string name="download_srtm_maps">Korkeuskäyrät</string>
-    <string name="record_plugin_name">Matkan tallennus</string>
+	<string name="record_plugin_name">Matkan tallennus</string>
 	<string name="monitoring_settings">Matkan tallennus</string>
     <string name="plugin_ski_name">Hiihtokartat</string>
 	<string name="route_points">Reittipisteet</string>
@@ -789,18 +786,6 @@ Nauhoitetut jäljet voidaan jakaa ystävillesi tai käyttää OSM osallistumisis
 Voit seurata muita laitteita ja olla seurattuna. Voit spontaanisti luoda anonyymejä ryhmiä, jakaa toistenne sijainnin, ja viestitellä. Mukana tulee eri vaihtoehtoja harjoituksen seuraamiseen tai jatkuvaan seuraamiseen.
 
 Anonyymejä ryhmiä luodaan määritellyiksi päivämääriksi ja rajoitettuna määrättyihin toimintohin, toisin sanoeni ei etäohjausta eikä ryhmän pääkäyttäjää. Täysin toimivia ryhmiä, toisaalta, voi luoda verkkosivuilla ja vain rekisteröityneillä käyttäjillä on pääsy niihin.
- "</string>
-	<string name="srtm_paid_version_title">Korkeuskäyrät lisäosa</string>
-	<string name="osmand_srtm_short_description_80_chars">OsmAnd lisäosa offline korkeuskäyrille</string>
-	<string name="osmand_srtm_long_description_1000_chars">"Tämä lisäosa tarjoaa sekä korkeuskäyrä päällyskerros ja (helpotus) mäkisävy tason näytettäväksi OsmAnd offline karttojen päällä. Tätä toiminnallisuutta arvostavat paljon urheilijat, retkeilijät, vuoristo seikkailijat, ja ketkä tahansa maisemien ihailusta kiinnostuneet.
-
-
-Maailmanlaajuiset tiedot (välillä 70 astetta pohjoista ja 70 astetta eteläistä) perustuu mittauksiin jotka on tehnyt SRTM (Shuttle Radar Topography Mission) ja ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), ja kuvausvälineet mukana kulkeva Terra, NASAn maapallontarkkailujärjestelmän lippulaiva satelliitti. ASTER on yhteistyö NASAn, Japanin talous-, kauppa ja teollisuusministeriön (METI), ja Japanin avaruusjärjestelmien (J-spacesystems) välillä. *
- "</string>
-	<string name="srtm_plugin_description">"Tämä lisäosa tarjoaa sekä korkeuskäyrä päällyskerros ja (helpotus) mäkisävy tason näytettäväksi OsmAnd offline karttojen päällä. Tätä toiminnallisuutta arvostavat paljon urheilijat, retkeilijät, vuoristo seikkailijat, ja ketkä tahansa maisemien ihailusta kiinnostuneet.
-
-
-Maailmanlaajuiset tiedot (välillä 70 astetta pohjoista ja 70 astetta eteläistä) perustuu mittauksiin jotka on tehnyt SRTM (Shuttle Radar Topography Mission) ja ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), ja kuvausvälineet mukana kulkeva Terra, NASAn maapallontarkkailujärjestelmän lippulaiva satelliitti. ASTER on yhteistyö NASAn, Japanin talous-, kauppa ja teollisuusministeriön (METI), ja Japanin avaruusjärjestelmien (J-spacesystems) välillä.
  "</string>
 	<string name="layer_gpx_layer">GPX-reitti…</string>
 	<string name="layer_map">Kartan lähde…</string>
@@ -1165,9 +1150,7 @@ Maailmanlaajuiset tiedot (välillä 70 astetta pohjoista ja 70 astetta eteläist
     <string name="regions">Alueet</string>
     <string name="region_maps">Alueen laajuiset kartat</string>
     <string name="world_maps">Maailmankartat</string>
-    <string name="hillshade_layer_disabled">Rinnevarjostustaso poistettu käytöstä</string>
-    <string name="srtm_plugin_disabled">Korkeuskäyrät poistettu käytöstä</string>
-    <string name="favorite_category_add_new">Lisää uusi</string>
+	<string name="favorite_category_add_new">Lisää uusi</string>
     <string name="favorite_category_select">Valitse luokka</string>
     <string name="default_speed_system_descr">Määrittele nopeuden yksikkö</string>
     <string name="default_speed_system">Nopeuden yksikkö</string>
@@ -1289,8 +1272,7 @@ Maailmanlaajuiset tiedot (välillä 70 astetta pohjoista ja 70 astetta eteläist
     <string name="show_free_version_banner_description">Vaikka Sinulla on maksettu versio voit silti nähdä vapaan version mainoksen</string>
     <string name="buy">OSTA</string>
     <string name="activate_seamarks_plugin">Ole hyvä ja aktivoi Merimerkit laajennus</string>
-    <string name="activate_srtm_plugin">Ole hyvä ja aktivoi SRTM laajennus</string>
-    <string name="later">Myöhemmin</string>
+	<string name="later">Myöhemmin</string>
     <string name="get_full_version">Täysi versio</string>
     <string name="downloads">Lataukset</string>
     <string name="show_on_start_description">\'Pois\' käynnistää suoraan karttanäytön</string>
@@ -1525,13 +1507,10 @@ Jälki %2$s</string>
     <string name="select_address_activity">Valitse osoite</string>
     <string name="favourites_list_activity">Valitse suosikki</string>
     <string name="local_openstreetmap_act_title">OSM muokkaukset</string>
-    <string name="layer_hillshade">Rinnevarjostustaso</string>
-    <string name="map_widget_gps_info">GPS tiedot</string>
+	<string name="map_widget_gps_info">GPS tiedot</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
     <string name="download_wikipedia_maps">Wikipedia</string>
-    <string name="download_hillshade_maps">Rinnevarjostus</string>
-    <string name="local_indexes_cat_srtm">Korkeuskäyrät</string>
-    <string name="dropbox_plugin_name">Dropbox lisäosa</string>
+	<string name="dropbox_plugin_name">Dropbox lisäosa</string>
     <string name="download_roads_only_maps">Ainoastaan tiet kartta</string>
     <string name="rendering_attr_noAdminboundaries_name">Rajat</string>
     <string name="rendering_attr_showRoadMaps_description">Valitse koska näyttää \"ainoastaan tiet\" kartta:</string>
@@ -1867,8 +1846,7 @@ Paina ja pidä nähdäksesi kartalla</string>
     <string name="av_widget_action">Oletustyökalutoiminto</string>
     <string name="av_use_external_camera_descr">Käytä järjestelmän sovellutusta kuvalle</string>
     <string name="av_use_external_camera">Käytä kamerasovellutusta</string>
-    <string name="index_srtm_parts">osat</string>
-    <string name="rendering_attr_hikingRoutesOSMC_name">Retkeilysymbolit kartan päällä</string>
+	<string name="rendering_attr_hikingRoutesOSMC_name">Retkeilysymbolit kartan päällä</string>
     <string name="rendering_attr_noAdminboundaries_description">Pidä piilossa alueellisten rajojen näyttö (hallintotasot 5-9)</string>
     <string name="safe_mode_description">Suorita sovellus turvatilassa (käyttäen hitaampaa Androidia natiivin koodin sijasta).</string>
     <string name="native_library_not_running">Sovellutusta suoritetaan turvatilassa (poista tila Asetuksissa).</string>
@@ -1997,8 +1975,7 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
     <string name="use_kalman_filter_compass_descr">Vähentää kohinaa kompassilukemissa mutta lisää hitautta</string>
     <string name="use_magnetic_sensor_descr">Käytä magneetista sensoria määrittäesä kompassin arvoja suuntasensorin sijaan</string>
     <string name="use_magnetic_sensor">Käytä magneetista sensoria</string>
-    <string name="srtm_paid_version_msg">Harkitse ostavasi Korkeuskäyrä laajennuksen Kaupasta tukeaksesi jatkokehitystä.</string>
-    <string name="rendering_attr_alpineHiking_name">Alppivaelluksen mittakaava (SAC)</string>
+	<string name="rendering_attr_alpineHiking_name">Alppivaelluksen mittakaava (SAC)</string>
     <string name="rendering_attr_alpineHiking_description">Hahmota polut SAC mittakaavan mukaisesti</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Piirrä polut OSMC-jälkien pohjalta</string>
 
@@ -2199,7 +2176,6 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
     <string name="sorted_by_distance">Lajiteltu etäisyydellä</string>
     <string name="search_favorites">Etsi suosikeista</string>
     <string name="hide_from_zoom_level">Piilota zoomaustasosta</string>
-    <string name="srtm_menu_download_descr">Näyttääksesi korkeuskäyrät kartalla tulee Sinun ladata korkeuskäyräkartta tältä alueelta.</string>
     <string name="shared_string_plugin">Liitännäinen</string>
     <string name="show_from_zoom_level">Näytä zoomaustasolta</string>
     <string name="display_zoom_level">Näytä zoomaustaso: %1$s</string>

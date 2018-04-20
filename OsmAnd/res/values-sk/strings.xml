@@ -787,26 +787,13 @@ Proporčná pamäť %4$s MB (Limit Androidu %5$s MB, Dalvik %6$s MB).</string>
     <string name="monitoring_control_start">GPX</string>
     <string name="rendering_attr_noAdminboundaries_name">Hranice oblastí</string>
     <string name="rendering_attr_noAdminboundaries_description">Potlačiť zobrazenie hraníc regiónov (administratívne úrovne 5 až 9).</string>
-    <string name="index_srtm_parts">časti</string>
-    <string name="index_srtm_ele">Vrstevnice</string>
     <string name="av_widget_action_descr">Vybrať predvolenú akciu pre nástroj.</string>
     <string name="av_widget_action">Predvolená akcia pre nástroj</string>
     <string name="recording_delete_confirm">Chcete odstrániť tento záznam?</string>
     <string name="recording_context_menu_play">Prehrať</string>
-    <string name="osmand_srtm_short_description_80_chars">OsmAnd modul pre offline vrstevnice</string>
-    <string name="osmand_srtm_long_description_1000_chars">Tento modul poskytuje vrstevnice a tieňované reliéfy, ktoré môžu byť zobrazené ponad štandardné mapy. Táto funkcia je vhodná pre atlétov, turistov, chodcov a všetkých, ktorých zaujíma reliéf terénu. 
-\n
-\nGlobálne údaje (medzi 70 stupňami severne a 70 stupňami južne) sú založené na meraní SRTM (Shuttle Radar Topography Mission) a ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), zobrazovacieho nástroja na palube Terra, vlajkového satelitu NASA Earth Observing System. ASTER je kooperatívne úsilie medzi NASA, Japonským ministerstvom hospodárstva, obchodu a priemyslu (METI) a Japonských vesmírnych systémov (J-spacesystems).</string>
     <string name="map_widget_distancemeasurement">Meranie vzdialenosti</string>
-    <string name="srtm_plugin_description">Tento modul poskytuje vrstevnice a tieňované reliéfy, ktoré môžu byť zobrazené ponad štandardné mapy. Táto funkcia je vhodná pre atlétov, turistov, chodcov a všetkých, ktorých zaujíma reliéf terénu. (Samotné vrstevnice sú samostatnými dátami, ktoré je potrebné stiahnuť po aktivovaní modulu.)
-\n
-\nGlobálne údaje (medzi 70 stupňami severne a 70 stupňami južne) sú založené na meraní SRTM (Shuttle Radar Topography Mission) a ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), zobrazovacieho nástroja na palube Terra, vlajkového satelitu NASA Earth Observing System. ASTER je kooperatívne úsilie medzi NASA, Japonským ministerstvom hospodárstva, obchodu a priemyslu (METI) a Japonských vesmírnych systémov (J-spacesystems).</string>
-    <string name="srtm_plugin_name">Vrstevnice</string>
     <string name="download_select_map_types">Ďalšie mapy</string>
-    <string name="download_srtm_maps">Údaje vrstevníc</string>
     <string name="intermediate_points_change_order">Zmeniť poradie</string>
-    <string name="srtm_paid_version_msg">Prosím, zvážte zakúpenie zásuvného modulu pre vrstevnice z obchodu, aby ste podporili ďalší vývoj.</string>
-    <string name="srtm_paid_version_title">Zásuvný modul pre vrstevnice</string>
     <string name="dropbox_plugin_description">Zásuvný modul pre Dropbox vám umožňuje synchronizovať stopy a video/zvukové poznámky s vaším účtom na službe Dropbox.</string>
     <string name="dropbox_plugin_name">Zásuvný modul pre Dropbox</string>
     <string name="stop_routing_confirm">Naozaj chcete vypnúť navigáciu?</string>
@@ -815,7 +802,6 @@ Proporčná pamäť %4$s MB (Limit Androidu %5$s MB, Dalvik %6$s MB).</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
     <string name="av_use_external_camera_descr">Použiť systémovú aplikáciu na zachytenie fotografií.</string>
     <string name="av_use_external_camera">Použiť aplikáciu Fotoaparát</string>
-    <string name="download_hillshade_maps">Tieňované reliéfy</string>
     <string name="support_new_features_descr">Sponzorujte vývoj nových funkcií v aplikácii.</string>
     <string name="max_speed_none">žiadna</string>
     <string name="prefer_motorways">Uprednostniť diaľnice</string>
@@ -827,7 +813,6 @@ Proporčná pamäť %4$s MB (Limit Androidu %5$s MB, Dalvik %6$s MB).</string>
     <string name="access_arrival_time">Čas príchodu</string>
     <string name="precise_routing_mode_descr">Umožní výpočet presnej trasy bez závad. Výpočet je však zatiaľ obmedzený na menšiu vzdialenosť a je pomalší.</string>
     <string name="map_widget_gps_info">Informácie o GPS</string>
-    <string name="layer_hillshade">Vrstva s tieňovaným reliéfom</string>
     <string name="street_name">Názov ulice</string>
     <string name="hno">Číslo domu</string>
     <string name="monitoring_settings">Zaznamenávanie výletu</string>
@@ -879,7 +864,6 @@ Proporčná pamäť %4$s MB (Limit Androidu %5$s MB, Dalvik %6$s MB).</string>
     <string name="distance_measurement_finish_subtrack">Začnite novú podtrasu</string>
     <string name="distance_measurement_clear_route">Vymazať všetky body</string>
     <string name="distance_measurement_load_gpx">Otvoriť existujúci GPX</string>
-    <string name="local_indexes_cat_srtm">Vrstevnice</string>
     <string name="keep_intermediate_points">Zachovať prechodné body</string>
     <string name="new_directions_point_dialog">Už máte určené prechodné body.</string>
     <string name="context_menu_item_directions_to">Pokyny sem</string>
@@ -1757,17 +1741,14 @@ Dĺžka %2$s</string>
     <string name="shared_string_trip_recording">Nahrávanie výletu</string>
     <string name="shared_string_navigation">Navigácia</string>
     <string name="osmand_running_in_background">Beh v pozadí</string>
-    <string name="srtm_plugin_disabled">Vrstevnice vypnuté</string>
     <string name="show_free_version_banner">Zobraziť nápis verzie zdarma</string>
     <string name="show_free_version_banner_description">Zobraziť nápis z verzie zadarmo, aj keď používate platenú verziu.</string>
     <string name="downloading_number_of_files">Sťahovanie - súbor %1$d</string>
     <string name="regions">Oblasti</string>
     <string name="region_maps">Mapy celých oblastí</string>
     <string name="world_maps">Svetové mapy</string>
-    <string name="hillshade_layer_disabled">Tieňovaný reliéf vypnutý</string>
     <string name="buy">KÚPIŤ</string>
     <string name="activate_seamarks_plugin">Prosím zapnite modul Námorné značky</string>
-    <string name="activate_srtm_plugin">Prosím zapnite modul Vrstevnice</string>
     <string name="later">Neskôr</string>
     <string name="get_full_version">Plná verzia</string>
     <string name="downloads">Sťahovania</string>
@@ -2362,7 +2343,6 @@ Zodpovedá oblasti: %1$s x %2$s</string>
     <string name="add_new_folder">Pridať nový priečinok</string>
     <string name="shared_string_slope">Svah</string>
     <string name="lang_ber">Berbersky</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Pahorkatý</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Menej pahorkatý</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Rovinatý</string>
     <string name="routing_attr_driving_style_speed_name">Kratšie trasy</string>
@@ -2551,19 +2531,14 @@ Zodpovedá oblasti: %1$s x %2$s</string>
     <string name="favorite_group_name">Názov skupiny</string>
     <string name="change_color">Zmeniť farbu</string>
     <string name="edit_name">Upraviť názov</string>
-    <string name="srtm_color_scheme">Farebná schéma</string>
     <string name="show_from_zoom_level">Zobraziť od úrovne priblíženia</string>
     <string name="routing_attr_allow_private_name">Povoliť súkromný prístup</string>
     <string name="routing_attr_allow_private_description">Povoliť prístup do súkromných oblastí.</string>
     <string name="display_zoom_level">Priblíženie zobrazenia: %1$s</string>
     <string name="route_is_too_long_v2">Táto trasa môže byť príliš dlhá na výpočet. Ak sa nenájde výsledok do 10 minút, vložte prosím tranzitné ciele.</string>
     <string name="save_poi_too_many_uppercase">Názov obsahuje príliš veľa veľkých písmen. Chcete pokračovať?</string>
-    <string name="hillshade_menu_download_descr">Pre zobrazenie tieňovaných svahov si musíte stiahnuť špeciálnu mapu pre tento región.</string>
-    <string name="hillshade_purchase_header">Pre zobrazenie tieňovaných svahov si musíte zakúpiť a nainštalovať zásuvný modul Vrstevnice</string>
     <string name="hide_from_zoom_level">Skryť od úrovne priblíženia</string>
     <string name="shared_string_plugin">Zásuvný modul</string>
-    <string name="srtm_purchase_header">Pre zobrazenie vrstevníc si musíte zakúpiť a nainštalovať zásuvný modul Vrstevnice</string>
-    <string name="srtm_menu_download_descr">Pre zobrazenie vrstevníc na mape musíte stiahnuť mapu vrstevníc pre tento región.</string>
     <string name="sorted_by_distance">Zoradené podľa vzdialenosti</string>
     <string name="search_favorites">Hľadať obľúbené body</string>
     <string name="quick_action_showhide_osmbugs_title">Zobraziť/skryť OSM poznámky</string>

@@ -82,9 +82,8 @@
     <string name="recording_context_menu_play">Pokreni</string>
     <string name="shared_string_control_stop">stani</string>
     <string name="shared_string_control_start">pokreni</string>
-    
-    
-    <string name="index_srtm_parts">dijelovi</string>
+
+
     <string name="download_roads_only_item">Samo ceste</string>
     <string name="rendering_attr_noAdminboundaries_name">Sakrij granice</string>
 	<string name="map_widget_max_speed">Ograničenje brzine</string>

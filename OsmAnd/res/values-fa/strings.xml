@@ -142,7 +142,6 @@
     <string name="dropbox_plugin_name">افزونهٔ دراپ‌باکس</string>
 
     <string name="map_widget_distancemeasurement">اندازه‌گیری مسافت</string>
-    <string name="index_srtm_parts">بخش‌ها</string>
     <string name="map_widget_show_destination_arrow">نشان‌دادن جهت مقصد</string>
     <string name="no_route">مسیری وجود ندارد</string>
 	<string name="add_tag">افزودن برچسب</string>
@@ -492,9 +491,6 @@
 	<string name="poi_search_desc">جست‌وجوی POI (مکان‌های محبوب)</string>
 	<string name="poi_dialog_comment_default">تغییر POI</string>
 	<string name="default_buttons_commit">اجرا</string>
-	<string name="download_srtm_maps">منحنی‌های تراز</string>
-    <string name="srtm_plugin_name">منحنی‌های تراز</string>
-    <string name="index_srtm_ele">منحنی‌های تراز</string>
     <string name="download_roads_only_item">فقط جاده‌ها</string>
     <string name="rendering_attr_noAdminboundaries_description">مرزهای مناطق را نشان نده (تقسیمات سیاسی سطح ۵–۹).</string>
     
@@ -538,15 +534,11 @@
     
 	<string name="prefer_motorways">ترجیح‌دادن آزادراه‌ها</string>
 	<string name="prefer_in_routing_descr">آزادراه‌ها را ترجیح می‌دهم.</string>
-    <string name="local_indexes_cat_srtm">منحنی‌های تراز</string>
     <string name="precise_routing_mode_descr">این را فعال کنید تا مسیرها دقیق و بدون اشکال محاسبه شوند. البته این حالت محدودیت مسافت دارد و کُند است.</string>
     <string name="av_def_action_picture">عکس‌گرفتن</string>
     <string name="dropbox_plugin_description">با افزونهٔ دراپ‌باکس مسیرها و یادداشت‌های صوتی/تصویری را با حساب دراپ‌باکس خود همگام کنید.</string>
-    <string name="srtm_paid_version_msg">لطفاً افزونهٔ منحنی‌های تراز را بخرید تا به توسعهٔ بیشتر نرم‌افزار کمک کنید.</string>
-    <string name="srtm_paid_version_title">افزونهٔ منحنی‌های تراز</string>
     <string name="av_widget_action_descr">عملکرد پیش‌فرض ابزارک را انتخاب کنید.</string>
     <string name="recording_delete_confirm">آیا این مورد ضبط‌شده را پاک می‌کنید؟</string>
-    <string name="osmand_srtm_short_description_80_chars">افزونهٔ OsmAnd برای منحنی‌های تراز آفلاین</string>
     <string name="use_magnetic_sensor_descr">برای مقدار قطب‌نما به‌جای حسگر جهتی از حسگر مغناطیسی استفاده کن.</string>
     <string name="show_poi_over_map">نشان‌دادن لایهٔ نقاط POI</string>
 	<string name="show_poi_over_map_description">لایهٔ آخرین نقاط POI که انتخاب کرده بودم را روی نقشه نشان بده.</string>
@@ -796,27 +788,10 @@
 	<string name="speak_traffic_warnings">هشدارهای ترافیکی</string>
 	
     <string name="osmand_distance_planning_plugin_description">این افزونه، یک ابزارک روی صفحهٔ نقشه می‌گذارد که با آن می‌توانید مسیرهایی را روی نقشه رسم کنید یا فایل‌های GPX موجود را تغییر دهید تا برای سفر طرح‌ریزی کنید و مسافت بین نقاط را اندازه بگیرید. نتیجه را هم می‌توانید به‌صورت فایل GPX ذخیره کنید تا بعداً از آن برای راهنمایی استفاده کنید.</string>
-    
-    
-    
-    <string name="layer_hillshade">لایهٔ سایه‌تپه</string>
-    
+
+
     <string name="index_name_openmaps">نقشه‌های اتحادیهٔ اروپا</string>
-    
-    <string name="download_hillshade_maps">سایه‌تپه‌ها</string>
-    
-    <string name="osmand_srtm_long_description_1000_chars">این افزونه دو لایهٔ منحنی‌های تراز و سایه‌تپه (عوارض زمین) را روی نقشه‌‌های استاندارد OsmAnd نمایش می‌دهد. 
-\nورزشکاران، راه‌پیمایان، کوله‌گردان و همهٔ کسانی که به ساختار پستی‌وبلندی‌های زمین علاقه‌مند هستند از این ویژگی بهره می‌برند. 
-\nمبنای داده‌های جهانی یعنی بین ۷۰ درجهٔ شمالی و ۷۰ درجهٔ جنوبی اندازه‌گیری‌های SRTM (مأموریت توپوگرافی رادار شاتل) و ASTER (رادیومتر پیشرفتهٔ فضابرد بازتاب و گسیل حرارتی) است. 
-\n 
-\nاَستِر یک ابزار تصویربرداری است که بر روی ماهوارهٔ Terra نصب است و تِرا ماهوار‌ه‌ای فوق‌پیشرفته برای سامانهٔ دیده‌بانی زمینِ ناساست. 
-\nاَستِر محصول تلاش مشترک ناسا، وزارت اقتصاد، صنعت و تجارت ژاپن و سامانه‌های فضایی ژاپن است.</string>
-    <string name="srtm_plugin_description">این افزونه دو لایهٔ منحنی‌های تراز و سایه‌تپه (عوارض زمین) را روی نقشه‌‌های استاندارد OsmAnd نمایش می‌دهد. 
-\nورزشکاران، راه‌پیمایان، کوله‌گردان و همهٔ کسانی که به ساختار پستی‌وبلندی‌های زمین علاقه‌مند هستند از این ویژگی بهره می‌برند. 
-\nمبنای داده‌های جهانی یعنی بین ۷۰ درجهٔ شمالی و ۷۰ درجهٔ جنوبی اندازه‌گیری‌های SRTM (مأموریت توپوگرافی رادار شاتل) و ASTER (رادیومتر پیشرفتهٔ فضابرد بازتاب و گسیل حرارتی) است. 
-\n 
-\nاَستِر یک ابزار تصویربرداری است که بر روی ماهوارهٔ Terra نصب است و تِرا ماهوار‌ه‌ای فوق‌پیشرفته برای سامانهٔ دیده‌بانی زمینِ ناساست. 
-\nاَستِر محصول تلاش مشترک ناسا، وزارت اقتصاد، صنعت و تجارت ژاپن و سامانه‌های فضایی ژاپن است.</string>
+
     <string name="monitoring_control_start">جی‌پی‌ایکس</string>
     <string name="rendering_attr_noPolygons_description">همهٔ عوارض زمین را روی نقشه ناپدید کنید.</string>
 	<string name="rendering_attr_noPolygons_name">چندضلعی‌ها</string>
@@ -1950,7 +1925,6 @@
     <string name="driving_region_automatic">خودکار</string>
     <string name="do_not_show_startup_messages">هنگام شروع برنامه پیام‌ها را نشان نده</string>
     <string name="full_version_thanks">سپاسگزاریم که نسخهٔ کامل OsmAnd را خریدید!</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">پُرتپه</string>
     <string name="routing_attr_driving_style_speed_name">مسیرهای کوتاه‌تر</string>
     <string name="routing_attr_driving_style_balance_name">متعادل</string>
     <string name="add_new_folder">افزودن پوشهٔ جدید</string>
@@ -2293,7 +2267,6 @@
     <string name="show_free_version_banner_description">حتی در نسخهٔ خریداری‌شده هم بنر نسخهٔ رایگان را نشان بده.</string>
     <string name="buy">خرید</string>
     <string name="activate_seamarks_plugin">لطفاً افزونهٔ Seamarks را فعال کنید</string>
-    <string name="activate_srtm_plugin">لطفاً افزونهٔ SRTM را فعال کنید</string>
     <string name="later">بعداً</string>
     <string name="get_full_version">نسخهٔ کامل</string>
     <string name="downloads">دانلودها</string>
@@ -2485,13 +2458,8 @@
     <string name="quick_action_showhide_osmbugs_descr">با لمس دکمهٔ عملیاتی، توضیحات ویرایشی OSM را روی نقشه آشکار یا پنهان کنید.</string>
     <string name="sorted_by_distance">مرتب‌شده بر اساس مسافت</string>
     <string name="search_favorites">جست‌وجوی نقاط برگزیده</string>
-    <string name="hillshade_menu_download_descr">برای دیدن سایه‌تپهٔ پستی‌وبلندی‌ها روی نقشه باید نقشهٔ تپه‌سایه را برای این منطقه دانلود کنید.</string>
-    <string name="hillshade_purchase_header">برای دیدن سایه‌تپهٔ پستی‌وبلندی‌ها روی نقشه باید افزونهٔ منحنی‌های تراز را بخرید و نصب کنید</string>
     <string name="hide_from_zoom_level">از این زوم پنهان شود</string>
-    <string name="srtm_menu_download_descr">نقشهٔ منحنی تراز این منطقه را دانلود کنید تا منحنی‌های تراز را روی نقشه ببینید.</string>
     <string name="shared_string_plugin">افزونه</string>
-    <string name="srtm_purchase_header">برای دیدن منحنی‌ها تراز روی نقشه باید افزونهٔ منحنی‌های تراز را بخرید و نصب کنید</string>
-    <string name="srtm_color_scheme">رنگ‌بندی</string>
     <string name="show_from_zoom_level">از این زوم آشکار شود</string>
     <string name="routing_attr_allow_private_name">مجازشمردن دسترسی خصوصی</string>
     <string name="routing_attr_allow_private_description">دسترسی به نواحی خصوصی را مجاز کنید.</string>
@@ -2540,8 +2508,6 @@
     <string name="lang_mk">مقدونی</string>
     <string name="lang_fy">فریسی غربی</string>
     <string name="lang_als">آلبانیایی (تُسک)</string>
-    <string name="hillshade_layer_disabled">لایهٔ تپه‌سایه غیرفعال شد</string>
-    <string name="srtm_plugin_disabled">منحنی‌های تراز غیرفعال شد</string>
     <string name="av_locations">مکان‌ها</string>
     <string name="routing_attr_avoid_shuttle_train_name">اجتناب از قطار خطی</string>
     <string name="routing_attr_avoid_shuttle_train_description">از قطار خطی اجتناب کن</string>

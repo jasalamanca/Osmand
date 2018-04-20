@@ -245,7 +245,6 @@
     <string name="shared_string_more_actions">Àteras atziones</string>
 
 
-    <string name="layer_hillshade">Istratu umbradura rilievos</string>
     <string name="map_widget_gps_info">Informatziones GPS</string>
 
     <string name="access_arrival_time">Oràriu de lòmpida</string>
@@ -258,10 +257,7 @@
     <string name="max_speed_none">perunu</string>
     <string name="index_name_openmaps">OpenMaps UE</string>
 
-    <string name="download_hillshade_maps">Umbraduras rilievos</string>
 
-
-    <string name="local_indexes_cat_srtm">Lìnias de livellu</string>
     <string name="stop_routing_confirm">Ses seguru de bòlere firmare su nàvigu?</string>
     <string name="clear_dest_confirm">Seguru ses de bòlere iscantzellare sa destinatzione (e sas tapas intermèdias)?</string>
     <string name="precise_routing_mode_descr">Abìlita pro calculare àndalas pretzisas chene atopos. Est lentu e limitadu in sa distàntzia.</string>
@@ -271,8 +267,6 @@
     <string name="dropbox_plugin_description">S’estensione Dropbox ti permitit de sincronizare sas camineras e sas notas audio/video cun su contu tuo de Dropbox.</string>
     <string name="dropbox_plugin_name">Estensione Dropbox</string>
     <string name="intermediate_points_change_order">Muda s’òrdine</string>
-    <string name="srtm_paid_version_msg">Pro praghere lea a cunsideru s\'acuistu de s’estensione pro sas lìnias de livellu in su Market, pro sostènnere s’isvilupu imbeniente.</string>
-    <string name="srtm_paid_version_title">Estensione lìnias de livellu</string>
     <string name="av_def_action_choose">Issèbera su rechesta</string>
     <string name="av_widget_action_descr">Issèbera s’atzione predefinida de su widget.</string>
     <string name="av_widget_action">Azione predefinida de su widget</string>
@@ -282,21 +276,10 @@
     <string name="recording_context_menu_play">Reprodui</string>
     <string name="shared_string_control_stop">Stop</string>
     <string name="shared_string_control_start">Avia/Inghitza</string>
-    <string name="osmand_srtm_short_description_80_chars">Estensione OsmAnd pro sas lìnias de livellu chene lìnia</string>
-    <string name="osmand_srtm_long_description_1000_chars">Custa estensione frunit sas lìnias de livellu e sas umbraduras de sos rilievos, chi podent èssere ammustradas in supra de sas mapas regulares de OsmAnd. Custa funtzionalidade at a èssere appretziada meda dae sos atletas, sos escursionistas, e totu sos chi sunt interessados in s\'orografia e su paesàggiu. 
-\n
-\nSos datos globales (intre sos 70 grados nord e sos 70 grados sud) sunt basados in supra de sas medidas de su SRTM (Shuttle Radar Topography Mission) e de s’ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), un’aina medidora a bordu de Terra, su satellite de su sistema di osservatzione de sa terra de sa NASA. ASTER est un’isfortzu de coperassione intre NASA, su Ministeru de s’Economia Cummèrtziu e Industria (METI) de su Giappone, e su sistema ispatziale giaponesu (J-spacesystems).</string>
     <string name="map_widget_distancemeasurement">Medidura de sa distantzia</string>
 
-    <string name="index_srtm_parts">partes</string>
-    <string name="index_srtm_ele">Lìnias de livellu</string>
-    <string name="srtm_plugin_description">Custa estensione frunit sas lìnias/curvas de livellu e sas umbraduras de sos rilievos, chi podent èssere ammustradas in supra de sas mapas regulares de OsmAnd. Custa funtzionalidade at a èssere apretziada meda dae sos atletas, sos escursionistas, e totu sos chi sunt interessados in s\'orografia e su paesàgiu. (Pro praghere ammentade·bos chi sos datos de sas curvas de livellu e sos de sos rilievos sunt separados, e ant a èssere disponìbiles pro s\'iscarrigamentu a pustis de àere allutu s\'estensione). 
-\n 
-\nSos datos globales (intre sos 70 grados nord e sos 70 grados sud) sunt basados in supra de sas medidas de su SRTM (Shuttle Radar Topography Mission) e de s’ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), un’aina medidora a bordu de Terra, su satellite de su sistema di osservatzione de sa terra de sa NASA. ASTER est un’isfortzu de coperassione intre NASA, su Ministeru de s’Economia Cummèrtziu e Industria (METI) de su Giappone, e su sistema ispatziale giaponesu (J-spacesystems).</string>
-    <string name="srtm_plugin_name">Estensione lìnias de livellu</string>
     <string name="download_select_map_types">Àteras mapas</string>
     <string name="download_roads_only_item">Petzi istradas</string>
-    <string name="download_srtm_maps">Lìnias de livellu</string>
     <string name="download_regular_maps">Mapas regulares</string>
     <string name="download_roads_only_maps">Mapas cun petzi istradas</string>
 
@@ -1832,14 +1815,11 @@ Lon %2$s</string>
     <string name="m_s">m/s</string>
 
 
-    <string name="srtm_plugin_disabled">Lìnias de livellu disativadas</string>
     <string name="show_free_version_banner">Ammustra s’insigna de sa versione a indonu (gratùita)</string>
     <string name="show_free_version_banner_description">Ammustra s’insigna de sa versione a indonu fintzas si tenes cussa a pagamentu.</string>
     <string name="downloading_number_of_files">Iscarrighende - %1$d documentu/os</string>
-    <string name="hillshade_layer_disabled">Livellu umbradura rilievos disativadu</string>
     <string name="buy">CÒMPORA</string>
     <string name="activate_seamarks_plugin">Pro praghere allue s’estensione nàutica</string>
-    <string name="activate_srtm_plugin">Pro praghere allue s’estensione SRTM</string>
     <string name="later">Prus a tardu</string>
     <string name="get_full_version">Versione cumprida</string>
     <string name="regions">Regiones</string>
@@ -2441,7 +2421,6 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="shared_string_slope">Caladòrgia</string>
     <string name="lang_ber">Bèrberu</string>
     <string name="relief_smoothness_factor_descr">Terrinos preferidos: in paris o cun cùcuros.</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Cùcuros/montigros</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Pagos cùcuros</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Terrinu in paris</string>
     <string name="routing_attr_driving_style_speed_name">Àndalas prus curtzas</string>
@@ -2513,16 +2492,11 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="save_poi_too_many_uppercase">In su nùmene bi sunt tropas lìteras maiùscolas. Boles sighire?</string>
     <string name="route_is_too_long_v2">B\'est sa possibilidade chi s\'àndala siat tropu longa pro èssere calculada. Si no at a èssere pronta in 10 minutos pro praghere agiunghe carchi destinatzione intermèdia.</string>
     <string name="display_zoom_level">Livellu ismmaniamentu ischermu: %1$s</string>
-    <string name="srtm_color_scheme">Ischema de colores</string>
     <string name="show_from_zoom_level">Ammustra dae su livellu de ismanniamentu</string>
     <string name="routing_attr_allow_private_name">Permiti sos atzessos privados</string>
     <string name="routing_attr_allow_private_description">Permiti s\'atzessu a sas àreas privadas.</string>
-    <string name="hillshade_menu_download_descr">Pro bìdere sas umbraduras de sos rilievos in sa mapa depes iscarrigare sa mapa de sas umbraduras de custa regione.</string>
-    <string name="hillshade_purchase_header">Pro bìdere sas umbraduras de sos rilievos in sa mapa depes comporare e installare s\'estensione Curvas de Livellu</string>
     <string name="hide_from_zoom_level">Cua dae su livellu de ismanniamentu</string>
-    <string name="srtm_menu_download_descr">Pro bìdere sas lìnias de livellu in sa mapa depes iscarrigare sa mapa de sas curvas de livellu de custa regione.</string>
     <string name="shared_string_plugin">Estensione</string>
-    <string name="srtm_purchase_header">Pro bìdere sas curvas de livellu in sa mapa depes comporare e installare s\'estensione Curvas de Livellu</string>
     <string name="search_favorites">Chirca preferidos</string>
     <string name="sorted_by_distance">Ordinados pro distàntzia</string>
     <string name="quick_action_showhide_osmbugs_title">Ammustra/cua sas notas OSM</string>

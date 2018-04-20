@@ -93,8 +93,6 @@
     <string name="dropbox_plugin_name">Dropbox eklentisi</string>
     
     <string name="intermediate_points_change_order">Sıralamayı değiştir</string>
-    <string name="srtm_paid_version_msg">Programın geliştirilebilmesi için lütfen çevreleme çizgileri eklentisini Mağazadan almayı da düşünün.</string>
-    <string name="srtm_paid_version_title">Çevreleme çizgileri eklentisi</string>
     <string name="av_widget_action_descr">Varsayılan eklenti eylemini seçin</string>
     <string name="av_widget_action">Varsayılan eklenti eylemi</string>
 
@@ -108,21 +106,12 @@
 
 	<string name="shared_string_control_stop">Durdur</string>
     <string name="shared_string_control_start">Başlat</string>
-    <string name="osmand_srtm_short_description_80_chars">Çevrim dışı çevreleme çizgileri için OsmAnd eklentisi</string>
-    <string name="osmand_srtm_long_description_1000_chars">"Bu eklenti OsmAnd çevrimdışı haritalarda eşyükseltileri (kabartma olarak) ve gölgeli yamaçları gösterir. Bu özellik çoğunlukla sporcular, uzun yürüyüşcüler, yürüyüşçüler ve tabii ki bir manzaranın kabartma yapısıyla ilgilenen herkesin takdirinedir.\n\nGlobal veri (70 derece kuzey ve 70 derece güney arasındaki) SRTM (Mekik Radar Topografi Misyonu) ve ASTER (Gelişmiş Uzay Termal Yayılma ve Yansıma Radyometre), bir görüntüleme aracı onboard Terra, NASA&amp;#39;nın Earth Gözlem amiral gemisi uydudan ölçümleri esas Sistemi. ASTER NASA arasında bir kooperatif çabadır, Ekonomi, Ticaret ve Sanayi Odası (METI) ve Japonya Uzay Sistemleri (J-spacesystems) Japonya Bakanlığı. "</string>
-    
-    
-    
-    
+
+
     <string name="map_widget_distancemeasurement">Mesafe ölçümü</string>
 
-    <string name="index_srtm_parts">bölümler</string>
-    <string name="index_srtm_ele">Çevreleme çizgileri</string>
-    <string name="srtm_plugin_description">"Bu eklenti OsmAnd çevrimdışı haritalarda eşyükseltileri (kabartma olarak) ve gölgeli yamaçları gösterir. Bu özellik çoğunlukla sporcular, uzun yürüyüşcüler, yürüyüşçüler ve tabii ki bir manzaranın kabartma yapısıyla ilgilenen herkesin takdirinedir. "</string>
-    <string name="srtm_plugin_name">Eşyükselti çizgileri</string>
     <string name="download_select_map_types">Diğer haritalar</string>
     <string name="download_roads_only_item">Sadece yollar</string>
-    <string name="download_srtm_maps">Çevreleme çizgileri</string>
     <string name="download_regular_maps">Standart Harita</string>
     <string name="download_roads_only_maps">Yalnızca yolları gösteren harita</string>
     
@@ -175,7 +164,6 @@
 	<string name="map_widget_next_turn_small">Sonraki dönüş (küçük)</string>
 	<string name="map_widget_next_next_turn">İkinci sonraki dönüş</string>
 	<string name="map_widget_mini_route">Mini rota haritası</string>
-	<string name="download_hillshade_maps">Tepe gölgelendirme tabakaları</string>
     <string name="email">e-posta</string>
     <string name="starting_point_too_far">Başlangıç noktası en yakın yoldan çok uzakta.</string>
     <string name="context_menu_item_add_parking_point">Park etme konumu olarak işaretle</string>
@@ -652,7 +640,6 @@
 	<string name="trace_rendering_descr">Dönüştürme performansını göster</string>
 	<string name="installing_new_resources">Yeni veri(ler) açılıyor…</string>
 	<string name="internet_connection_required_for_online_route">Çevrimiçi navigasyon servisi seçildi ancak İnternet bağlantısı kullanılabilir değil.</string>
-	<string name="layer_hillshade">Tepe gölgesi katmanı</string>
     <string name="map_widget_fps_info">FPS hata ayıklama bilgisi</string>
 	<string name="driving_region_descr">Sürüş bölgesini seç: ABD, Avrupa, İngiltere, Asya ve Diğerleri.</string>
 	<string name="driving_region">Sürüş bölgesi</string>
@@ -725,7 +712,6 @@
     <string name="favourites_list_activity">Favoriyi seç</string>
     <string name="local_openstreetmap_act_title">OSM değişiklikleri</string>
     <string name="shared_string_more_actions">Diğer komutlar</string>
-    <string name="local_indexes_cat_srtm">Kontür çizgileri</string>
     <string name="announce_gpx_waypoints">GPX uğranacak-ara-noktaları</string>
     <string name="about_version">Sürüm :</string>
     <string name="shared_string_about">Hakkında</string>
@@ -1360,7 +1346,6 @@
     <string name="update_all">Tüm güncelleyin (%1$s MB)</string>
     <string name="buy">Satın Al</string>
     <string name="activate_seamarks_plugin">Seamarks eklentisi aktif ediniz</string>
-    <string name="activate_srtm_plugin">SRTM eklentisi aktif ediniz</string>
     <string name="later">Daha Sonra</string>
     <string name="get_full_version">Tam Sürüm</string>
     <string name="downloads">Yüklemeler</string>
@@ -1745,8 +1730,6 @@
     <string name="share_geo">Yer:</string>
     <string name="region_maps">Bölge çapında haritalar</string>
     <string name="world_maps">Dünya Haritaları</string>
-    <string name="hillshade_layer_disabled"/>
-    <string name="srtm_plugin_disabled">Kontur hatları devre dışı</string>
     <string name="nm">nmi</string>
     <string name="si_kmh">Kilometre/saat</string>
     <string name="si_min_m">Dakika / mil</string>
@@ -2093,13 +2076,8 @@
     <string name="nothing_found">Hiçbir şey bulunamadı :(</string>
     <string name="nothing_found_descr">Arama sorgusunu değiştir veya arama yarıçapını arttır.</string>
     <string name="search_favorites">Sık Kullanılanları ara</string>
-    <string name="hillshade_menu_download_descr">Harita üzerinde kabartmalı gölgelendirme görmek için, bu bölgeye ait gölgelendirme bindirme haritasını indirmeniz gerekir.</string>
-    <string name="hillshade_purchase_header">Rahatlamanın dağınıklığını haritada görmek için, Contour Lines eklentisini satın almanız ve kurmanız gerekiyor</string>
     <string name="hide_from_zoom_level">Zum seviyesinden gizle</string>
-    <string name="srtm_menu_download_descr">Haritadaki kontur çizgileri için bu bölgenin kontur çizgisini indirmeniz gerekiyor.</string>
     <string name="shared_string_plugin">Eklenti</string>
-    <string name="srtm_purchase_header">Kontur hatlarını harita üzerinde görmek için Contour Lines eklentisini satın almanız ve kurmanız gerekiyor</string>
-    <string name="srtm_color_scheme">Renk düzeni</string>
     <string name="show_from_zoom_level">Zum düzeyinden görüntüleme</string>
     <string name="routing_attr_allow_private_name">Özel-arazi erişimine izin ver</string>
     <string name="routing_attr_allow_private_description">Özel-arazi alanlarına erişime izin ver.</string>
@@ -2410,7 +2388,6 @@
     <string name="quick_action_replace_destination_desc">Aksiyon düğmesine basmak \'varış noktası\'nı ekranın merkezi noktası ile değiştirecek.</string>
     <string name="quick_action_add_first_intermediate_desc">Aksiyon düğmesine basmak ekranın merkezi noktasında seyahatte-ilk-ara-nokta\'yı ekleyecek.</string>
     <string name="right_side_navigation">Sağdan-direksiyonlu araç sürüşü</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Tepelikli</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Az tepelikli</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Düzlük</string>
     <string name="routing_attr_driving_style_balance_name">Dengeli</string>

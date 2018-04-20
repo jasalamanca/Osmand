@@ -934,20 +934,11 @@
 	<string name="monitoring_control_start">התחלה</string>
     <string name="rendering_attr_noAdminboundaries_name">גבולות</string>
 	<string name="rendering_attr_noAdminboundaries_description">הסתרת דרגות ניהול 5-9</string>
-	
-    
-    
-	
-    <string name="index_srtm_parts">קטעים</string>
-    <string name="index_srtm_ele">קווי הגבהה</string>
-    <string name="srtm_plugin_description">תוסף זה מאפשר להוריד קווי הגבהה (הורדת מפות -&gt; תפריט -&gt; מפות אחרות) עבור קטע מסוים ולהשתמש בהם למפות בלתי מקוונות.</string>
-    <string name="srtm_plugin_name">קווי מתאר</string>
+
+
     <string name="download_select_map_types">מפות אחרות</string>
-    <string name="download_srtm_maps">מפות SRTM</string>
 
 
-    <string name="osmand_srtm_short_description_80_chars">תוסף ל־OsmAnd לקווי מתאר בלתי מקוונים</string>
-    
     <string name="map_widget_distancemeasurement">מדידת מרחק</string>
 
     <string name="recording_delete_confirm">למחוק הקלטה זו?</string>
@@ -957,10 +948,7 @@
     <string name="shared_string_control_start">הקלטה</string>
     <string name="av_widget_action_descr">בחירת פעולת הווידג׳ט כבררת המחדל.</string>
     <string name="av_widget_action">פעולת הווידג׳ט כבררת המחדל</string>
-    <string name="osmand_srtm_long_description_1000_chars">תוסף זה מספק קווי מתאר שניתן להציג על המפות הבלתי מקוונות של OsmAnd. הנתונים הגלובליים (בין 70 מעלות צפון ל־70 מעלות דרום) מבוססת על מדידות שבוצעו על ידי ה־SRTM (משימת הטופוגרפיה של מעבורת המכ״ם) ו־ASTER (רדיומטר חלל מתקדם לגילוי פליטה תרמית והשתקפות), התקן דימות על סיפונה של Terra, לוויין הדגל של מערכת ההשפעה על כדור הארץ של NASA.‏ ASTER הנו שיתוף פעולה בין NASA, משרד התמ״ת היפני (METI) ומערכות החלל היפניות (J-spacesystems).</string>
-    <string name="srtm_paid_version_msg">נא לשקול לקנות את תוסף קווי המתאר מהחנות כדי לתמוך בפיתוח עתידי.</string>
-    <string name="srtm_paid_version_title">תוסף קווי מתאר</string>
-    
+
     <string name="intermediate_points_change_order">שינוי הסדר</string>
     <string name="dropbox_plugin_description">תוסף Dropbox מאפשר לך לסנכרן מסלולים והערות שמע/וידאו עם חשבון ה־Dropbox שלך.</string>
     <string name="dropbox_plugin_name">תוסף Dropbox</string>
@@ -971,9 +959,7 @@
     <string name="precise_routing_mode">ניתוב מדויק (אלפא)</string>
 
     <string name="support_new_features_descr">ניתן לתרום כדי לגלות תכונות חדשות שהוטמעו ביישום</string>
-	
-    <string name="download_hillshade_maps">מפות צל מדומה</string>
-    
+
     <string name="av_use_external_camera_descr">שימוש ביישום המערכת לצילום תמונות.</string>
     <string name="av_use_external_camera">שימוש ביישום מצלמה</string>
     <string name="index_name_openmaps">OpenMaps אירופה</string>
@@ -988,7 +974,6 @@
     <string name="shared_string_map">מפה</string>
     <string name="access_arrival_time">זמן ההגעה</string>
     <string name="map_widget_gps_info">פרטי איכון</string>
-    <string name="layer_hillshade">שכבת הצללת תבליט</string>
 
 
     <string name="street_name">שם רחוב</string>
@@ -1017,7 +1002,6 @@
     <string name="use_magnetic_sensor">שימוש בחיישן מגנטי (מצפן)</string>
     <string name="use_kalman_filter_compass">שימוש במסנן קלמן</string>
     <string name="use_kalman_filter_compass_descr">ניתן להשתמש במסנן קלמן למניעת סטיות מצפן</string>
-    <string name="local_indexes_cat_srtm">קווי מתאר</string>
     <string name="wait_current_task_finished">נא להמתין להשלמת המשימה הנוכחית</string>
     <string name="shared_string_downloading">בהורדה</string>
 	<string name="delete_point">מחיקת נקודה</string>
@@ -1820,13 +1804,8 @@
     <string name="show_on_map_after_saving">הצגה על המפה לאחר השמירה</string>
     <string name="measurement_tool_action_bar">עיון במפה והוספת נקודות</string>
     <string name="measurement_tool">מדידת מרחק</string>
-    <string name="hillshade_menu_download_descr">כדי לצפות בהצללת תבליט של המפה, עליך להוריד את שכבת ההצללה של האזור הזה.</string>
-    <string name="hillshade_purchase_header">כדי לצפות בהצללת תבליט של המפה, עליך לרכוש ולהתקין את תוסף קווי המתאר (Contour Lines)</string>
     <string name="hide_from_zoom_level">הסתרה החל מרמת תקריב</string>
-    <string name="srtm_menu_download_descr">כדי לצפות בקווי מתאר במפה, עליך להוריד את מפת קווי המתאר של האזור הזה.</string>
     <string name="shared_string_plugin">תוסף</string>
-    <string name="srtm_purchase_header">כדי לצפות בקווי מתאר במפה, עליך לרכוש ולהתקין את תוסף קווי המתאר (Contour Lines)</string>
-    <string name="srtm_color_scheme">ערכת צבעים</string>
     <string name="show_from_zoom_level">הצגה החל מרמת תקריב</string>
     <string name="routing_attr_allow_private_name">לאפשר גישה פרטית</string>
     <string name="routing_attr_allow_private_description">לאפשר גישה לאזורים פרטיים.</string>
@@ -1972,7 +1951,6 @@
     <string name="regions">אזורים</string>
     <string name="region_maps">מפות אזוריות</string>
     <string name="world_maps">מפות עולמיות</string>
-    <string name="srtm_plugin_disabled">קווי מתאר מושבתים</string>
     <string name="favorite_category_add_new">הוספת חדש</string>
     <string name="favorite_category_select">בחירת קטגוריה</string>
     <string name="default_speed_system_descr">הגדרת יחידת מהירות.</string>
@@ -2089,7 +2067,6 @@
     <string name="nautical_maps">מפות ימיות</string>
     <string name="do_not_show_startup_messages">לא להציג הודעות פתיחה</string>
     <string name="full_version_thanks">תודה לך על רכישת הגרסה המלאה של OsmAnd!</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">הררי</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">פחות הררי</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">מישור</string>
     <string name="routing_attr_driving_style_speed_name">נתיבים קצרים יותר</string>
@@ -2340,7 +2317,6 @@
     <string name="show_free_version_banner_description">הצגת חלונית הגרסה החינמית גם בגרסה בתשלום.</string>
     <string name="buy">רכישה</string>
     <string name="activate_seamarks_plugin">נא להפעיל את תוסף הסמנים הימיים</string>
-    <string name="activate_srtm_plugin">נא להפעיל את תוסף ה־SRTM</string>
     <string name="poi_context_menu_modify_osm_change">עריכת שינוי ב־OSM</string>
     <string name="christmas_poi">נקודת עניין של חג המולד</string>
     <string name="christmas_desc_q">להציג נקודת עניין של חג המולד?</string>

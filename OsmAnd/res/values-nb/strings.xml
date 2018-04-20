@@ -898,16 +898,10 @@
     <string name="hno">Husnummer</string>
     <string name="select_address_activity">Velg adresse</string>
     <string name="favourites_list_activity">Velg favoritt</string>
-    <string name="local_indexes_cat_srtm">Koter</string>
-    <string name="srtm_paid_version_title">Programtillegg for koter</string>
-    <string name="osmand_srtm_short_description_80_chars">OsmAnd-programtillegg for (nett)frakoblede koter</string>
     <string name="map_widget_distancemeasurement">Avstandsmåling</string>
 
-    <string name="index_srtm_ele">Koter</string>
-    <string name="srtm_plugin_name">Koter</string>
     <string name="download_select_map_types">Andre kart</string>
     <string name="download_roads_only_item">Bare veier</string>
-    <string name="download_srtm_maps">Koter</string>
     <string name="download_regular_maps">Standardkart</string>
     <string name="download_roads_only_maps">Rent veikart</string>
 
@@ -940,10 +934,6 @@
     <string name="shared_string_downloading">Laster ned</string>
     <string name="loading_postcodes">Laster postnummer…</string>
     <string name="loading_data">Laster data…</string>
-	
-	<string name="srtm_plugin_description">Dette programtillegget gir både et lag med koter og et lag med relieffskygger som kan vises oppå standardkartene til OsmAnd. Denne funksjonen vil bli satt stor pris på av idrettsutøvere, turgåere og enhver som er interessert i relieff-strukturen til et landskap. (Merk at koter og/eller relieff-data er separate tilleggsnedlastinger tilgjengelige etter aktivering av programtillegget.) 
-\n
-\nDe globale dataene (mellom 70 grader nord og 70 grader sør) er basert på målinger av SRTM (Shuttle Radar Topography Mission) og ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), et bildeinstrument ombord på Terra, flaggskipsatellitten til NASA\'s Earth Observing System. ASTER er et samarbeid mellom NASA, Japans finansdepartement, Trade and Industry (METI), og Japan Space Systems (J-spacesystems).</string>
 
     <string name="first_time_msg">Takk for at du bruker OsmAnd. For mange funksjoner i dette programmet trenger du noen regionale offline-data som du kan laste ned via \'Innstillinger\' → \'Karthåndtering\'. Etterpå vil du være i stand til å se kart, finne adresser, lete etter interessepunkter og finne offentlig transport.</string>
 
@@ -1013,9 +1003,6 @@
     <string name="route_descr_destination">Reisemål</string>
     <string name="gpx_file_name">GPX-filnavn</string>
     <string name="osmand_distance_planning_plugin_name">Distansekalkulator &amp; planleggingsverktøy</string>
-    <string name="layer_hillshade">Relieffskyggelag</string>
-
-    <string name="download_hillshade_maps">Relieffskygger</string>
 
 
     <string name="stop_routing_confirm">Er du sikker på at du vil stoppe navigeringen?</string>
@@ -1091,9 +1078,6 @@
     <string name="map_overlay">Overleggskart</string>
     <string name="map_overlay_descr">Velg overleggskartet.</string>
     <string name="osm_settings">OSM-redigering</string>
-	<string name="osmand_srtm_long_description_1000_chars">Dette programtillegget gir både et lag med koter og et lag med relieffskygger som kan vises oppå standardkartene til OsmAnd. Denne funksjonen vil bli satt stor pris på av idrettsutøvere, turgåere og enhver som er interessert i relieff-strukturen til et landskap. 
-\n
-\nDe globale dataene (mellom 70 grader nord og 70 grader sør) er basert på målinger av SRTM (Shuttle Radar Topography Mission) og ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), et bildeinstrument ombord på Terra, flaggskipsatellitten til NASA\'s Earth Observing System. ASTER er et samarbeid mellom NASA, Japans finansdepartement, Trade and Industry (METI), og Japan Space Systems (J-spacesystems).</string>
     <string name="plugin_ski_name">Skikartvisning</string>
     <string name="osmand_accessibility_description">Dette programtillegget gjør enhetens tilgjengelighetsfunksjoner tilgjengelige direkte i OsmAnd. Det muliggjør f.eks justering av talehastigheten for TTS-tale, innstilling av styrekors-skjermnavigering ved hjelp av en styrekule for zoomkontroll, eller bruke tekst-til-tale-tilbakemelding, f.eks auto-annonsering av din posisjon.</string>
     <string name="rename_failed">Navneendring feilet.</string>
@@ -1328,7 +1312,6 @@
     <string name="offline_maps_and_navigation">Offline-kart\n&amp; navigering</string>
     <string name="routing_attr_avoid_shuttle_train_name">Unngå pendeltog</string>
     <string name="routing_attr_avoid_shuttle_train_description">Unngå pendeltog</string>
-    <string name="srtm_plugin_disabled">Koter deaktivert</string>
     <string name="favorite_category_add_new">Legg til ny</string>
     <string name="favorite_category_select">Velg kategori</string>
     <string name="shared_string_navigation">Navigering</string>
@@ -1351,7 +1334,6 @@
     <string name="regions">Regioner</string>
     <string name="region_maps">Regionkart</string>
     <string name="world_maps">Verdenskart</string>
-    <string name="hillshade_layer_disabled">Relieffskyggelag deaktivert</string>
     <string name="share_menu_location">Del posisjon</string>
     <string name="shared_string_send">Send</string>
     <string name="map_downloaded">Kart lastet ned</string>
@@ -1370,7 +1352,6 @@
     <string name="get_full_version">Fullversjon</string>
     <string name="confirm_download_roadmaps">Er du sikker på at du vil laste ned et rent veikart, selv om du allerede har det fullstendige standardkartet?</string>
     <string name="later">Senere</string>
-    <string name="activate_srtm_plugin">Aktiver programtillegg SRTM</string>
     <string name="opening_at">Åpner</string>
     <string name="closing_at">Lukker</string>
     
@@ -1784,7 +1765,6 @@
     <string name="rendering_attr_contourDensity_name">Kotetetthet</string>
     <string name="rendering_attr_contourWidth_description">Kotebredde</string>
     <string name="rendering_attr_contourWidth_name">Kotebredde</string>
-    <string name="srtm_paid_version_msg">Overvei å kjøpe kote-programtillegget i markedet for å støtte videre utvikling.</string>
     <string name="upload_osm_note_description">Du kan laste opp ditt OSM-notat anonymt eller bruke din profil hos OpenStreetmap.org.</string>
     <string name="gpx_no_tracks_title">Du har ingen spor enda</string>
     <string name="gpx_no_tracks_title_folder">Legg til spor i mappen</string>
@@ -1954,7 +1934,6 @@
     <string name="av_widget_action">Standard miniprogram-handling</string>
     <string name="av_use_external_camera_descr">Bruk systemprogrammet til foto.</string>
     <string name="av_use_external_camera">Bruk kameraprogram</string>
-    <string name="index_srtm_parts">deler</string>
     <string name="rendering_attr_alpineHiking_description">Gjengi stier i henhold til SAC-skalaen.</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Gjengi stier i henhold til OSMC-spor.</string>
 
@@ -2035,7 +2014,6 @@
     
     <string name="shared_string_time">Tid</string>
     <string name="total_distance">Total distanse</string>
-    <string name="srtm_color_scheme">Fargevalg</string>
     <string name="shared_string_plugin">Programtillegg</string>
     <string name="hide_from_zoom_level">Skjul fra zoom-nivå</string>
     <string name="show_from_zoom_level">Vis fra zoom-nivå</string>
@@ -2128,7 +2106,6 @@
     <string name="fonts_header">Skrifttyper for kart</string>
     <string name="driving_region_automatic">Automatisk</string>
     <string name="do_not_show_startup_messages">Ikke vis meldinger ved oppstart</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Kupert</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Småkupert</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Flatt</string>
     <string name="relief_smoothness_factor_descr">Foretrukket terreng: flatt eller kupert.</string>
@@ -2307,7 +2284,6 @@
     <string name="order_by">Sorter etter:</string>
     <string name="map_orientation_change_in_accordance_with_speed">Kartorienteringsterskel</string>
     <string name="map_orientation_change_in_accordance_with_speed_descr">Velg ved hvilken hastighet kartorienteringen skifter fra \'I bevegelsesretning\' til \'Ifølge kompass\'.</string>
-    <string name="srtm_purchase_header">For å se koter på kartet, må du kjøpe og installere programtillegget for koter</string>
     <string name="native_app_allocated_memory">Totalt innebygget minne</string>
     <string name="starting_point_too_far">Startpunkt for langt fra nærmeste vei.</string>
     <string name="shared_location">Delt posisjon</string>
@@ -2391,8 +2367,6 @@
     <string name="quick_action_fav_name_descr">La stå tomt for å automatisk bruke adressen eller stedsnavnet.</string>
     <string name="quick_action_bug_descr">Denne meldingen vil bli auto-fullført i kommentarfeltet.</string>
     <string name="mappilary_no_internet_desc">Du trenger internett for å vise bilder fra Mapillary.</string>
-    <string name="hillshade_menu_download_descr">For å se relieffskygger på kartet, må du laste ned relieffskyggeoverleggskartet for denne regionen.</string>
-    <string name="hillshade_purchase_header">For å se relieffskygger på kartet, må du kjøpe og installere programtillegget for koter</string>
     <string name="enter_new_name">Oppfør nytt navn</string>
 	<string name="shared_string_back">Tilbake</string>
 	<string name="waypoints_added_to_map_markers">Rutepunkter lagt til kartmarkører</string>
@@ -2405,7 +2379,6 @@
     <string name="plan_route_no_markers_toast">Du må legge til minst en markør for å bruke denne funksjonen.</string>
     <string name="make_round_trip_descr">Legg til kopi av startpunktet som reisemål.</string>
     <string name="make_round_trip">Gjør rundtur</string>
-    <string name="srtm_menu_download_descr">For å vise koter på kartet, må du laste ned kotekartet for denne regionen.</string>
     <string name="view">Vis</string>
 	<string name="import_as_gpx">Importer som GPX-fil</string>
     <string name="import_as_favorites">Importer som Favoritter</string>

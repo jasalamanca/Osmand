@@ -1025,8 +1025,7 @@
     <string name="favourites_list_activity">Atlasīt favorītu</string>
     <string name="local_openstreetmap_act_title">OSM modifikācijas</string>
     <string name="shared_string_more_actions">Citas darbības</string>
-    
-	<string name="layer_hillshade">Kalnu reljefs</string>
+
     <string name="map_widget_gps_info">GPS informācija</string>
     <string name="access_arrival_time">Ierašanās laiks</string>
     <string name="item_checked">Atzīmēts</string>
@@ -1036,11 +1035,8 @@
 	<string name="prefer_in_routing_title">Dot priekšroku…</string>
 	<string name="prefer_in_routing_descr">Priekšroka automaģistrālēm</string>
     <string name="max_speed_none">Nav</string>
-    
-    <string name="download_hillshade_maps">Reljefs</string>
-    
-    
-    <string name="local_indexes_cat_srtm">Kontūrlīnijas</string>
+
+
     <string name="stop_routing_confirm">Vai vēlaties apturēt navigāciju?</string>
     <string name="clear_dest_confirm">Vai vēlaties noņemt galamērķi (ieskaitot ceļa punktus)?</string>
     <string name="precise_routing_mode_descr">Ieslēgt precīzāku maršruta aprēķināšanu bez kļūdām. Pagaidām darbojas ierobežotā attālumā un ir lēna.</string>
@@ -1049,8 +1045,6 @@
     <string name="dropbox_plugin_description">Dropbox spraudnis ļauj sinhronizēt maršrutus un audio/video ierakstus ar jūsu dropbox kontu.</string>
     <string name="dropbox_plugin_name">Dropbox spraudnis</string>
     <string name="intermediate_points_change_order">Mainīt kārtību</string>
-    <string name="srtm_paid_version_msg">Lūdzu apsveriet iespēju pirkt Contour Lines spraudni, lai atbalstītu tā tālāko attīstību.</string>
-    <string name="srtm_paid_version_title">Kontūrlīniju spraudnis</string>
     <string name="av_def_action_choose">Atlasīt pēc pieprasījuma</string>
     <string name="av_widget_action_descr">Izvēlieties noklusēto logrīka darbību</string>
     <string name="av_widget_action">Noklusētā logrīka darbība</string>
@@ -1060,15 +1054,10 @@
     <string name="recording_context_menu_play">Atskaņot</string>
     <string name="shared_string_control_stop">Apturēt</string>
     <string name="shared_string_control_start">Sākt</string>
-    <string name="osmand_srtm_short_description_80_chars">OsmAnd spraudnis bezsaistes kontūrlīnijām</string>
     <string name="map_widget_distancemeasurement">Distances mērīšana</string>
 
-    <string name="index_srtm_parts">daļas</string>
-    <string name="index_srtm_ele">Kontūrlīnijas</string>
-    <string name="srtm_plugin_name">Kontūrlīniju spraudnis</string>
     <string name="download_select_map_types">Pārējās kartes</string>
     <string name="download_roads_only_item">Tikai ceļi</string>
-    <string name="download_srtm_maps">Kontūrlīnijas</string>
     <string name="download_regular_maps">Standarta kartes</string>
     <string name="download_roads_only_maps">Ceļu kartes</string>
     
@@ -1096,9 +1085,6 @@
     <string name="local_osm_changes_delete_all_confirm">Tiks izdzēsti %1$d osm labojumi. Vai turpināt?</string>
     <string name="auto_zoom_none">Nav automātiskais mērogs</string>
 	<string name="index_name_openmaps">OpenMaps Eiropa</string>
-    <string name="srtm_plugin_description">"Šis spraudnis dod iespēju rādīt kontūrlīniju un reljefu pārklājus uz standarta OsmAnd kartēm. Šo iespēju novērtēs dabas mīļotāji, aktīvās atpūtas cienītāji un jebkurš ar padziļinātu interesi par zemes reljefu. 
-\n
-\nGlobālie dati (starp 70° Z un 70° D) ir bāzēti uz SRTM (Shuttle Radar Topography Mission) un ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer) mērījumiem, attēlveidošanas rīks uz Terra\'s, vadošais NASA Zemes Novērošanas Sistēmas satelīts. ASTER ir kopējs veikums ar NASA, Japānas Ekonomikas Ministriju, Trade and Industry (METI) un Japānas Izplatījuma Sistēmām (J-spacesystems). "</string>
     <string name="support_new_features_descr">Lūdzu atbalstiet programmu ar ziedojumiem, lai palīdzētu to uzlabot un attīstīt</string>
 	<string name="incomplete_locale">Nepabeigts</string>
 	<string name="shared_string_downloading">Lejupielādē</string>
@@ -1123,10 +1109,7 @@
 ……… * Nospiediet uz kartes un paturiet, lai noņemtu iepriekšējo punktu.\n…
 ……… * Nospiediet uz punkta un paturiet, lai pievienotu un lasītu aprakstu.\n…
 ……… * Nospiediet uz mērlineāla, lai izvēlētos citas darbības.</string>
-    <string name="osmand_srtm_long_description_1000_chars">"Šis spraudnis iespējo kontūrlīniju un reljefu pārklājus uz OsmAnd standarta kartēm.
-\n
-\n Globālie dati (starp 70 Z un 70 D) ir bāzēti uz SRTM (Shuttle Radar Topography Mission) un ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer) mērījumiem, attēlveidošanas rīks uz Terra\'s, vadošais NASA Zemes Novērošanas Sistēmas satelīts. ASTER ir kopējs veikums ar NASA, Japānas Ekonomikas Ministriju, Trade and Industry (METI) un Japānas Izplatījuma Sistēmām (J-spacesystems). "</string>
-    
+
     <string name="osb_author_dialog_password">OSM parole (optionāla)</string>
 	
 	<string name="osmand_plus_extended_description_4000_chars">"
@@ -1924,8 +1907,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="favorite_category_add_new_title">Izveidot jaunu kategoriju</string>
     <string name="region_maps">Apgabala kartes</string>
     <string name="world_maps">Pasaules kartes</string>
-    <string name="hillshade_layer_disabled">Hillshade layer ir atslēgts</string>
-    <string name="srtm_plugin_disabled">Kontūrlīnijas ir deaktivizētas</string>
     <string name="favorite_category_add_new">Izveidot jaunu</string>
     <string name="favorite_category_select">Izvēlieties kategoriju</string>
     <string name="default_speed_system_descr">Izvēlieties ātruma mērvienību</string>
@@ -2059,7 +2040,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="show_free_version_banner">Rādīt bezmaksas versijas banneri</string>
     <string name="show_free_version_banner_description">Arī maksas versijā jūs varat redzēt bezmaksas versijas banneri</string>
     <string name="activate_seamarks_plugin">Lūdzu aktivizējiet jūras kartes spraudni</string>
-    <string name="activate_srtm_plugin">Lūdzu aktivizējiet SRTM spraudni</string>
     <string name="number_of_recipients">Adresātu skaits</string>
     <string name="osm_live_subscription">OSM Live abonoments</string>
     <string name="osm_live_user_public_name">Publiskais vārds</string>
@@ -2556,12 +2536,7 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="quick_action_showhide_osmbugs_descr">Nospiežot pogu, tiks rādītas vai slēptas OEM piezīmes uz kartes.</string>
     <string name="sorted_by_distance">Sakārtots pēc distances</string>
     <string name="search_favorites">Izlases meklēšana</string>
-    <string name="hillshade_menu_download_descr">Lai attēlotu reljefa griezumu kartē, ir nepieciešams lejupielādēt reljefa virsklāja karti šim reğionam.</string>
-    <string name="hillshade_purchase_header">Lai attēlotu reljefa griezumu kartē, ir nepieciešams iegādāties un instalēt Kontūrlīniju spraudni</string>
-    <string name="srtm_menu_download_descr">Lai redzētu kontūrlīnijas uz kartes, nepieciešams lejupielādēt kontūrlīniju karti šim reğionam.</string>
     <string name="shared_string_plugin">Spraudnis</string>
-    <string name="srtm_purchase_header">Lai redzētu kontūrlīnijas kartē, ir nepieciešams nopirkt un instalēt Kontūrlīniju spraudni</string>
-    <string name="srtm_color_scheme">Krāsu shēma</string>
     <string name="routing_attr_allow_private_name">Privātās teritorijas</string>
     <string name="favorite_group_name">Nosaukums</string>
     <string name="change_color">Nomainīt krāsu</string>
@@ -2612,7 +2587,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="do_not_show_startup_messages">Nerādīt ziņojumus startējot</string>
     <string name="do_not_show_startup_messages_desc">Aplikācijas atlaižu kuponi un īpaši vietējo notikumu ziņojumi.</string>
     <string name="full_version_thanks">Paldies par OsmAnd pilnās versijas iegādi!</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Kalnains</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Mazāk kalnains</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Līdzens</string>
     <string name="routing_attr_driving_style_speed_name">Īsāki maršruti</string>

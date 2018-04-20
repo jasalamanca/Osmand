@@ -11,8 +11,7 @@
 
     <string name="recording_context_menu_play">玩</string>
     <string name="shared_string_control_stop">停止</string>
-    
-    <string name="index_srtm_parts">部分</string>
+
     <string name="download_select_map_types">其它地图</string>
     <string name="map_widget_max_speed">速度限制</string>
     <string name="monitoring_control_start">GPX</string>
@@ -60,7 +59,6 @@
     <string name="shared_string_control_start">开始</string>
     
     <string name="download_roads_only_item">道路只</string>
-    <string name="download_srtm_maps">等高线</string>
     <string name="download_regular_maps">定期地图</string>
     <string name="rendering_attr_noAdminboundaries_name">隐藏边界</string>
 	
@@ -378,15 +376,12 @@
 	<string name="shared_string_add">添加</string>
 	<string name="shared_string_no">否</string>
 	<string name="shared_string_delete">删除</string>
-	
-	<string name="layer_hillshade">山体阴影层</string>
-    
+
     <string name="shared_string_map">地图</string>
     <string name="prefer_motorways">首选高速公路</string>
 	<string name="prefer_in_routing_title">首选…</string>
 	<string name="index_name_openmaps">开放地图属性索引</string>
-    
-    <string name="download_hillshade_maps">山体阴影层</string>
+
     <string name="prefer_in_routing_descr">首选高速公路</string>
     <string name="stop_routing_confirm">是否确定停止导航？</string>
     <string name="clear_dest_confirm">是否确定清楚目标点？</string>
@@ -394,10 +389,8 @@
     <string name="dropbox_plugin_description">Dropbox的插件可以让你的Dropbox帐户同步轨道和音频/视频数据。</string>
     <string name="dropbox_plugin_name">Dropbox插件</string>
     <string name="precise_routing_mode">精确路径（alpha）</string>
-    <string name="srtm_paid_version_msg">请考虑在谷歌Play商店购买插件以支持进一步发展。</string>
-    <string name="srtm_paid_version_title">等高线插件</string>
-    
-	
+
+
     <string name="about_version">版本：</string>
     <string name="shared_string_about">关于</string>
     <string name="about_settings_descr">版本信息，许可证，项目成员</string>
@@ -475,14 +468,10 @@
     <string name="available_downloads_left">%1$d 个文件可下载</string>
     <string name="cancel_route">取消路线</string>
     <string name="contribution_activity">安装版本</string>
-    <string name="local_indexes_cat_srtm">等高线数据</string>
     <string name="av_widget_action_descr">选择缺省窗体动作</string>
     <string name="av_widget_action">缺省窗体动作</string>
     <string name="av_use_external_camera_descr">使用系统程序拍照</string>
-    <string name="osmand_srtm_short_description_80_chars">OsmAnd 的离线等高线插件</string>
     <string name="map_widget_distancemeasurement">距离测量</string>
-    <string name="index_srtm_ele">等高线</string>
-    <string name="srtm_plugin_name">等高线插件</string>
     <string name="download_roads_only_maps">仅包含道路的地图</string>
     
 	<string name="rendering_attr_noAdminboundaries_description">不显示区域(行政区划级别5-9)的边界</string>
@@ -1018,8 +1007,6 @@
     <string name="regions">地图</string>
     <string name="region_maps">区域地图</string>
     <string name="world_maps">世界地图</string>
-    <string name="hillshade_layer_disabled">地形层已禁用</string>
-    <string name="srtm_plugin_disabled">等高线已禁用</string>
     <string name="favorite_category_add_new">添加新的</string>
     <string name="favorite_category_select">选择分类</string>
     <string name="default_speed_system_descr">定义速度单位</string>
@@ -1323,7 +1310,6 @@
     <string name="rendering_category_others">其它地图属性</string>
     <string name="print_route">显示路线</string>
     <string name="search_osm_offline">搜索地理位置</string>
-    <string name="srtm_color_scheme">颜色方案</string>
     <string name="change_color">改变颜色</string>
     <string name="edit_name">编辑名称</string>
     <string name="display_zoom_level">显示缩放等级：%1$s</string>
@@ -1449,12 +1435,8 @@
     <string name="quick_action_showhide_osmbugs_descr">轻点动作按钮会在地图上显示或隐藏 OSM 注解。</string>
     <string name="sorted_by_distance">按距离排序</string>
     <string name="search_favorites">搜索我的收藏</string>
-    <string name="hillshade_menu_download_descr">要在地图上看到起伏的山坡，您需要下载这个地区的地形阴影层地图。</string>
-    <string name="hillshade_purchase_header">要在地图上看到起伏的山坡，您需要购买并安装等高线插件</string>
     <string name="hide_from_zoom_level">基于缩放级别隐藏</string>
-    <string name="srtm_menu_download_descr">要查看地图上的等高线，您需要下载该地区的等高线图。</string>
     <string name="shared_string_plugin">插件</string>
-    <string name="srtm_purchase_header">要看到地图上的等高线，您需要购买并安装等高线插件</string>
     <string name="show_from_zoom_level">根据縮放等級显示</string>
     <string name="favorite_group_name">组名称</string>
     <string name="animate_my_location">动画处理我的位置</string>
@@ -1473,7 +1455,6 @@
     <string name="download_depth_countours">航海等深线</string>
     <string name="nautical_maps">航海地图</string>
     <string name="analyze_on_map">在地图上分析</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">丘陵</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">低丘陵</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">平地</string>
     <string name="routing_attr_driving_style_speed_name">更短的路径</string>
@@ -1788,12 +1769,6 @@
     <string name="record_plugin_description">这个插件在地图屏幕上，并手动轻击 GPX 记录小工具，以启动去录制和保存您轨迹的功能，或是自动记录您所有的导航路线到 GPX 文件。 
 \n
 \n录制的轨迹可以与您的朋友共享或用作为 OSM 的贡献。运动选手可以使用录制的轨迹，监看他们的训练。一些基本的轨迹分析，可以直接在 OsmAnd 进行，如一圈的时间、平均速度等，而轨迹当然也可于事后在专门的第三方分析工具解析。</string>
-    <string name="osmand_srtm_long_description_1000_chars">这个插件同时提供了等高在线层和（地貌）地形阴影层，显示在 OsmAnd 标准地图的顶部。此功能会让运动选手、健行旅游者、背包客，和对起伏的地理构成感兴趣的任何人。 
-\n
-\n全球数据（在北纬 70 度至南纬 70 度之间）的测量基于 SRTM (Shuttle Radar Topography Mission)和 ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer)，安装在美国太空总署地球观测系统的旗舰卫星 Terra 上的遥测仪器，ASTER 是美国太空总署、日本经济产业省(METI)、日本太空系统 (J-spacesystems)之间的通力合作产物。</string>
-    <string name="srtm_plugin_description">这个插件组件同时提供了等高在线层和（地貌）地形阴影层，显示在 OsmAnd 标准地图的顶部。此功能会让运动选手、健行旅游者、背包客，和对起伏的地理构成感兴趣的任何人。（请注意，等高线和地貌数据是各自独立的，在插件组件启用后可以追加下载。） 
-\n
-\n全球数据（在 70 度以北和 70 度以南之间）的测量基于 SRTM（Shuttle Radar Topography Mission）和 ASTER（Advanced Spaceborne Thermal Emission and Reflection Radiometer），安装在美国太空总署地球观测系统的旗舰卫星 Terra 上的遥测仪器，ASTER 是美国太空总署、日本经济产业省（METI）、日本太空系统（J-spacesystems）之间的通力合作的产物。</string>
     <string name="plugin_touringview_name">旅游地图视图</string>
     <string name="plugin_nautical_name">航海地图视图</string>
     <string name="osmand_distance_planning_plugin_description">这个插件提供一个允许通过在地图上，点击创建路径或使用或修改现有的 GPX 文件，计划一次旅行和测量点之间的距离的地图屏幕小部件。结果可以保存为 GPX 文件，以后可以用于导航。</string>
@@ -2383,7 +2358,6 @@
     <string name="show_free_version_banner">显示免费版标题</string>
     <string name="show_free_version_banner_description">即使你有付费版本你仍然可以看到免费版标题</string>
     <string name="activate_seamarks_plugin">请激活航线标识插件</string>
-    <string name="activate_srtm_plugin">请激活 SRTM 插件</string>
     <string name="confirm_download_roadmaps">你确定你想要下载只有道路的地图，即使你已经有标准（完整）的地图？</string>
     <string name="value_downloaded_of_max">%1$.1f 从 %2$.1f MB</string>
     <string name="file_size_in_mb">%.1f MB</string>

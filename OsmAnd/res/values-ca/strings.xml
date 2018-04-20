@@ -763,14 +763,8 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="intermediate_points_change_order">Canvia l\'ordre</string>
     <string name="recording_delete_confirm">Voleu eliminar aquest enregistrament?</string>
     <string name="shared_string_control_stop">Atura</string>
-    <string name="srtm_paid_version_msg">Considereu comprar el connector de les línies de nivell al Market per ajudar al desenvolupament futur.</string>
-    <string name="srtm_paid_version_title">Connector de corbes de nivell</string>
     <string name="shared_string_control_start">Comença</string>
-    <string name="osmand_srtm_short_description_80_chars">Connector de l\'OsmAnd per a corbes de nivell fora de línia</string>
     <string name="map_widget_distancemeasurement">Mesura de distàncies</string>
-    <string name="index_srtm_parts">peces</string>
-    <string name="index_srtm_ele">Línies de nivell</string>
-    <string name="srtm_plugin_name">Corbes de nivell</string>
     <string name="download_roads_only_item">"Carreteres "</string>
     <string name="download_regular_maps">Mapes estàndards</string>
     <string name="rendering_attr_noAdminboundaries_description">No mostris els límits administratius regionals (nivells 5 a 9).</string>
@@ -780,7 +774,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="incremental_search_city">Cerca progressiva de municipis</string>
     <string name="safe_mode_description">Executeu l\'aplicació en mode segur (usant codi d\'Android, més lent que el codi nadiu).</string>
     <string name="delete_target_point">Elimina el destí</string>
-    <string name="download_srtm_maps">Dades de corbes de nivell</string>
     <string name="incomplete_locale">incomplet</string>
     <string name="sd_mounted_ro">La targeta SD és només de lectura.\nNomés podeu visualitzar el mapa precarregat i no podeu baixar-ne des d\'Internet.</string>
     <string name="map_orientation_portrait">Vertical</string>
@@ -802,9 +795,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="show_transport_over_map">Mostra les parades del transport</string>
     <string name="save_track_to_gpx">Enregistrament automàtic del trajecte durant la navegació</string>
     <string name="use_english_names_descr">Escolliu entre els noms nadius i els anglesos.</string>
-    <string name="srtm_plugin_description">Aquest connector proporciona tant corbes de nivell superposades com una capa d\'ombres amb efecte relleu per superposar als mapes de OsmAnd. Corredors, ciclistes, excursionistes i qualsevol interessat en el perfil de relleu del terreny ho agrairan força. (Fixeu-vos que les corbes de nivell i/o els efectes de relleu són baixades independents i complementàries, disponibles un cop s\'hagi activat el connector). 
-\n 
-\nLes dades globals (entre 70 graus nord i 70 graus sud) estan basades en mesures del SRTM (Shuttle Radar Topography Mission) i del ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), un instrument de generació d\'imatges a bord de Terra, el satèl·lit insígnia del Sistema d\'Observació de la Terra de la NASA. ASTER és un esforç de col·laboració entre la NASA, el Ministeri d\'Economia i Comerç del Japó (METI) i la fundació Japan Space Systems (J-spacesystems).</string>
     <string name="rendering_attr_showRoadMaps_description">Indiqueu quan mostrar mapes de només carreteres:</string>
     <string name="auto_announce_on">Inicia els anuncis automàtics</string>
     <string name="send_location_email_pattern">Per a veure la localització seguiu l\'enllaç web %1$s o l\'enllaç Android %2$s</string>
@@ -816,7 +806,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="stop_routing_confirm">Esteu segur què voleu aturar la navegació?</string>
     <string name="clear_dest_confirm">"N\'esteu segur que voleu eliminar la vostra destinació  (i les vostres fites)?"</string>
     <string name="av_def_action_picture">Fes una fotografia</string>
-    <string name="download_hillshade_maps">Ombres de relleu</string>
     <string name="precise_routing_mode_descr">Activeu per calcular itineraris precisos sense discontinuïtats. De moment és lent i de distància limitada.</string>
     <string name="precise_routing_mode">Encaminament precís (alfa)</string>
     <string name="intermediate_point">Punt de pas %1$s</string>
@@ -865,7 +854,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="favourites_list_activity">Seleccioneu el preferit</string>
     <string name="local_openstreetmap_act_title">Modificacions de l\'OSM</string>
     <string name="shared_string_more_actions">Altres accions</string>
-    <string name="layer_hillshade">Capa d\'ombrejat</string>
     <string name="map_widget_gps_info">Informació GPS</string>
     <string name="access_arrival_time">Hora d\'arribada</string>
     <string name="item_checked">marcat</string>
@@ -875,7 +863,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="prefer_in_routing_title">Preferències…</string>
     <string name="prefer_in_routing_descr">Preferència per autopistes.</string>
     <string name="max_speed_none">cap</string>
-    <string name="local_indexes_cat_srtm">Corbes de nivell</string>
     <string name="monitoring_settings_descr">Configureu com enregistrar els vostres recorreguts.</string>
     <string name="av_use_external_camera_descr">Usa l\'aplicació del sistema per a les fotos.</string>
     <string name="av_use_external_camera">Usa l\\\'aplicació de la càmera</string>
@@ -1017,9 +1004,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="shared_string_favorite">Preferida</string>
     <string name="route_preferences">Preferències de ruta</string>
     <string name="route_info">Informació de ruta</string>
-    <string name="osmand_srtm_long_description_1000_chars">Aquest connector proporciona tant corbes de nivell superposades com una capa d\'ombres amb efecte relleu per superposar als mapes de OsmAnd. Corredors, ciclistes, excursionistes i qualsevol interessat en el perfil de relleu del terreny ho agrairan força. 
-\n 
-\nLes dades globals (entre 70 graus nord i 70 graus sud) estan basades en mesures del SRTM (Shuttle Radar Topography Mission) i del ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), un instrument de generació d\'imatges a bord de Terra, el satèl·lit insígnia del Sistema d\'Observació de la Terra de la NASA. ASTER és un esforç de col·laboració entre la NASA, el Ministeri d\'Economia i Comerç del Japó (METI) i la fundació Japan Space Systems (J-spacesystems).</string>
     <string name="keep_and_add_destination_point">Afegeix com el següent punt de destinació</string>
     <string name="calculate_osmand_route_without_internet">Calcula un segment de ruta a l\'OsmAnd sense Internet</string>
     <string name="gpx_option_calculate_first_last_segment">Calcula una ruta OsmAnd al primer i al darrer segment de la ruta</string>
@@ -1689,11 +1673,9 @@ Per retornar a l\'estil habitual dels mapes d\'OsmAnd, només cal desactivar aqu
     <string name="min_mile">min/m</string>
     <string name="min_km">min/km</string>
     <string name="m_s">m/s</string>
-    <string name="srtm_plugin_disabled">Corbes de nivell desactivades</string>
     <string name="show_free_version_banner">Mostra bàner de la versió gratuïta</string>
     <string name="show_free_version_banner_description">Mostra el bàner de la versió gratuïta encara que sigui la versió de pagament.</string>
     <string name="downloading_number_of_files">Baixada - %1$d fitxer</string>
-    <string name="hillshade_layer_disabled">Capa d\'ombrejat desactivada</string>
     <string name="buy">Compra</string>
     <string name="regions">Regions</string>
     <string name="region_maps">Mapes de regions</string>
@@ -1702,7 +1684,6 @@ Per retornar a l\'estil habitual dels mapes d\'OsmAnd, només cal desactivar aqu
     <string name="get_full_version">Versió completa</string>
     <string name="downloads">Baixades</string>
     <string name="activate_seamarks_plugin">Activeu el connector de cartes marines</string>
-    <string name="activate_srtm_plugin">Activeu el connector de corbes de nivell</string>
     <string name="favorite_category_dublicate_message">El nom de categoria especificat ja existeix. Utilitzeu un nom diferent.</string>
     <string name="favorite_category_name">Nom de categoria</string>
     <string name="favorite_category_add_new_title">Afegeix una nova categoria</string>
@@ -2289,7 +2270,6 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="add_new_folder">Afegeix a una carpeta nova</string>
     <string name="shared_string_slope">Pista</string>
     <string name="lang_ber">Berber</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Aturonat</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Menys aturonat</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Pla</string>
     <string name="routing_attr_driving_style_speed_name">Les rutes més curtes</string>
@@ -2363,15 +2343,10 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="save_poi_too_many_uppercase">El nom té moltes majúscules. Voleu continuar?</string>
     <string name="display_zoom_level">Nivell d\'escala de visualització: %1$s</string>
     <string name="route_is_too_long_v2">Aquesta ruta sembla massa llarga per calcular-la. Afegiu-hi fites intermèdies si no us dona un resultat abans de 10 minuts.</string>
-    <string name="srtm_color_scheme">Combinació de colors</string>
     <string name="show_from_zoom_level">Mostra segons el nivell d\'escala</string>
     <string name="routing_attr_allow_private_name">Permet l\'accés privat</string>
     <string name="routing_attr_allow_private_description">Permet l\'accés a zones privades.</string>
-    <string name="hillshade_menu_download_descr">Per veure l\'ombrejat de relleu al mapa cal baixar un mapa especial d\'aquesta zona.</string>
-    <string name="hillshade_purchase_header">Per veure l\'ombrejat de relleu al mapa cal comprar i instal·lar el connector de corbes de nivell</string>
     <string name="shared_string_plugin">Connector</string>
-    <string name="srtm_purchase_header">Per veure les corbes de nivell cal comprar i instal·lar el connector de corbes de nivell</string>
-    <string name="srtm_menu_download_descr">Per veure les corbes de nivell al mapa us cal baixar el mapa de corbes de nivell d\'aquesta zona.</string>
     <string name="hide_from_zoom_level">Amaga segons el nivell d\'escala</string>
     <string name="quick_action_showhide_osmbugs_title">Mostra/amaga notes OSM</string>
     <string name="quick_action_osmbugs_show">Mostra notes OSM</string>

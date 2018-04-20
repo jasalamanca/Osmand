@@ -920,14 +920,7 @@
 
     <string name="monitoring_control_start">Ślad</string>
 
-    <string name="download_srtm_maps">Poziomice</string>
     <string name="download_select_map_types">Inne mapy</string>
-    <string name="srtm_plugin_name">Poziomice</string>
-    <string name="srtm_plugin_description">Dostarcza warstwy poziomic i cieniowania rzeźby terenu wyświetlanych na standardowych mapach OsmAnd. Funkcja przydatna dla sportowców, turystów i osób zainteresowanych strukturą reliefową krajobrazu. (Proszę zauważyć, że dane poziomic i cieniowania terenu należy osobno pobrać po aktywacji wtyczki.)
-\n
-\nŚwiatowe dane (między 70 stopniem szerokości północnej a 70 stopniem szerokości południowej) opierają się na pomiarach SRTM (Shuttle Radar Topography Mission) i ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), przyrządu na pokładzie Terra, flagowego satelity Systemu Obserwacji Ziemi NASA. ASTER jest wspólnym przedsięwzięciem NASA, japońskiego Ministerstwa Gospodarki, Handlu i Przemysłu (METI) i Japońskich Systemów Kosmicznych (J-spacesystems).</string>
-    <string name="index_srtm_ele">Poziomice</string>
-    <string name="index_srtm_parts">części</string>
 
 
     <string name="av_widget_action_descr">Wybiera domyślną funkcję widżetu.</string>
@@ -937,7 +930,6 @@
     <string name="recording_context_menu_play">Odtwórz</string>
     <string name="shared_string_control_stop">Zatrzymaj</string>
     <string name="shared_string_control_start">Start</string>
-    <string name="osmand_srtm_short_description_80_chars">Wtyczka OsmAnd do rysowania poziomic offline</string>
 
 
     <string name="map_widget_distancemeasurement">Pomiar odległości</string>
@@ -945,11 +937,6 @@
     <string name="dropbox_plugin_name">Wtyczka Dropbox</string>
 
     <string name="intermediate_points_change_order">Zmień kolejność</string>
-    <string name="srtm_paid_version_msg">Rozważ zakup wtyczki dodającej poziomice w Market, aby wspomóc dalszy rozwój.</string>
-    <string name="srtm_paid_version_title">Wtyczka poziomic</string>
-    <string name="osmand_srtm_long_description_1000_chars">Dostarcza warstwy poziomic i cieniowania rzeźby terenu wyświetlanych na standardowych mapach OsmAnd. Funkcja przydatna dla sportowców, turystów i osób zainteresowanych strukturą reliefową krajobrazu.
-\n
-\nŚwiatowe dane (między 70 stopniem szerokości północnej a 70 stopniem szerokości południowej) opierają się na pomiarach SRTM (Shuttle Radar Topography Mission) i ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), przyrządu na pokładzie Terra, flagowego satelity Systemu Obserwacji Ziemi NASA. ASTER jest wspólnym przedsięwzięciem NASA, japońskiego Ministerstwa Gospodarki, Handlu i Przemysłu (METI) i Japońskich Systemów Kosmicznych (J-spacesystems).</string>
     <string name="av_def_action_picture">Zrobienie zdjęcia</string>
     <string name="stop_routing_confirm">Zatrzymać nawigowanie?</string>
     <string name="clear_dest_confirm">Usunąć cel trasy i jej cele pośrednie?</string>
@@ -957,8 +944,6 @@
     <string name="precise_routing_mode_descr">Włącz obliczanie precyzyjnych tras w nawigacji. Funkcja dość powolna, nadal jest ograniczona odległością.</string>
 
     <string name="support_new_features_descr">Wesprzyj prace nad nowymi funkcjami przez przekazanie darowizny.</string>
-
-    <string name="download_hillshade_maps">Cieniowanie rzeźby terenu</string>
 
     <string name="av_use_external_camera_descr">Robi zdjęcia przy użyciu aplikacji systemowej.</string>
     <string name="av_use_external_camera">Używanie aplikacji aparatu</string>
@@ -974,7 +959,6 @@
     <string name="av_def_action_choose">Wybranie czynności</string>
     <string name="access_arrival_time">Czas przybycia</string>
     <string name="map_widget_gps_info">Dane GPS</string>
-    <string name="layer_hillshade">Cieniowanie rzeźby terenu</string>
 
 
     <string name="street_name">Nazwa ulicy</string>
@@ -1001,7 +985,6 @@
     <string name="available_downloads_left">%1$d dostępnych plików do pobrania</string>
     <string name="use_magnetic_sensor_descr">Wykorzystuje czujnik pola magnetycznego zamiast czujnika orientacji, w celu określania kierunku kompasu.</string>
     <string name="use_magnetic_sensor">Używanie czujnika magnetycznego</string>
-    <string name="local_indexes_cat_srtm">Poziomice</string>
     <string name="use_kalman_filter_compass_descr">Redukuje szumy w odczytach kompasu, ale zwiększa bezwładność.</string>
     <string name="use_kalman_filter_compass">Używanie filtra Kalmana</string>
     <string name="wait_current_task_finished">Proszę zaczekać, aż bieżące zadanie zostanie zakończone</string>
@@ -1867,15 +1850,12 @@ Długość %2$s</string>
     <string name="region_maps">Mapy regionu</string>
     <string name="world_maps">Mapy świata</string>
 
-    <string name="hillshade_layer_disabled">Wyłączona warstwa cieniowania rzeźby terenu</string>
-    <string name="srtm_plugin_disabled">Wyłączone poziomice</string>
     <string name="favourites_edit_dialog_title">Informacje ulubione</string>
     <string name="downloading_number_of_files">Pobieranie - %1$d plik</string>
     <string name="show_free_version_banner">Baner darmowej wersji</string>
     <string name="show_free_version_banner_description">Wyświetla baner wersji darmowej w przypadku zainstalowania wersji płatnej.</string>
     <string name="buy">KUP</string>
     <string name="activate_seamarks_plugin">Proszę włączyć wtyczkę latarni morskich</string>
-    <string name="activate_srtm_plugin">Proszę włączyć wtyczkę SRTM</string>
     <string name="later">Później</string>
     <string name="get_full_version">Pełna wersja</string>
     <string name="downloads">Pobierz</string>
@@ -2465,7 +2445,6 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="shared_string_slope">Nachylenie</string>
     <string name="lang_ber">Berberyjski</string>
     <string name="relief_smoothness_factor_descr">Preferuj teren: płaski lub górzysty.</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Górzysty</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Mniej górzysty</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Płaski</string>
     <string name="routing_attr_driving_style_speed_name">Krótsze trasy</string>
@@ -2525,18 +2504,13 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="change_color">Zmień kolor</string>
     <string name="edit_name">Zmień nazwę</string>
     <string name="display_zoom_level">Stopień przybliżenia: %1$s</string>
-    <string name="srtm_color_scheme">Zestaw kolorów</string>
     <string name="show_from_zoom_level">Wyświetlanie od stopnia przybliżenia</string>
     <string name="routing_attr_allow_private_name">Uwzględnianie prywatnych obszarów</string>
     <string name="routing_attr_allow_private_description">Zezwala na dostęp do prywatnych obszarów.</string>
     <string name="route_is_too_long_v2">Ta trasa może być zbyt długa do wyznaczenia. Prosimy dodać punkty pośrednie, jeżeli nie otrzymasz wyniku w ciągu 10 minut.</string>
     <string name="save_poi_too_many_uppercase">Nazwa zawiera zbyt wiele wielkich liter. Czy chcesz kontynuować?</string>
     <string name="shared_string_plugin">Wtyczka</string>
-    <string name="srtm_menu_download_descr">Aby wyświetlić poziomice na mapie, należy pobrać mapę poziomic tego obszaru.</string>
     <string name="hide_from_zoom_level">Ukrywanie od stopnia przybliżenia</string>
-    <string name="hillshade_purchase_header">Aby wyświetlić cieniowanie rzeźby terenu, należy zakupić i zainstalować wtyczkę \'Poziomice\'</string>
-    <string name="hillshade_menu_download_descr">Aby wyświetlić cieniowanie rzeźby terenu, należy pobrać specjalny podkład dla tego regionu.</string>
-    <string name="srtm_purchase_header">Aby wyświetlić poziomice na mapie, należy zakupić i zainstalować wtyczkę \'Poziomice\'</string>
     <string name="quick_action_showhide_osmbugs_title">Przełącz wyświetlanie uwag OSM</string>
     <string name="quick_action_osmbugs_show">Pokaż uwagi OSM</string>
     <string name="quick_action_osmbugs_hide">Ukryj uwagi OSM</string>

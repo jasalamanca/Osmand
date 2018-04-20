@@ -938,27 +938,16 @@
     <string name="dropbox_plugin_name">Dropbox-ის დამატება</string>
     
     <string name="intermediate_points_change_order">წყობის შეცვლა</string>
-    <string name="srtm_paid_version_msg">პროგრამის განვითარების მხარდასაჭერად გთხოვთ შეიძინოთ Contour lines დამატება Market-დან.</string>
-    <string name="srtm_paid_version_title">დამატება Contour lines</string>
     <string name="av_widget_action_descr">ღილაკის ნაგულისხმევი ქცევის არჩევა</string>
     <string name="av_widget_action">ღილაკის ნაგულისხმევი ქცევა</string>
     <string name="recording_delete_confirm">გნებავთ ჩანაწერის წაშლა?</string>
 
     <string name="recording_context_menu_play">დაკვრა</string>
-    <string name="osmand_srtm_short_description_80_chars">OsmAnd-ის დამატება გათიშული კონტურული ხაზებისათვის</string>
-    
-    <string name="osmand_srtm_long_description_1000_chars">"ეს დამატება უზრუნველყოფს კონტურულ ხაზებს, რომლებიც შეიძლება ნაჩვენები იქნას OsmAnd-ის გათიშულ რუკებზე. გლობალური მონაცემები (70 გრადუს ჩრდილოეთსა და 70 გრადუს სამხრეთს შორის) ემყარება SRTM (Shuttle Radar Topography Mission) და ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer)-ის მონაცემებს, რომელიც წარმოადგენს ფოტოკამერას Terra-ზე, NASA-ს წამყვან თანამგზავრზე, რომელიც ემსახურება დედამიწის დათვალიერების სისტემას. ASTER წარმოადგენს ერთობლივ პროექტს NASA-ს, იაპონიის ეკონომიკის სამინისტროს, ვაჭრობისა და ინდუსტრიის (METI), და იაპონიის კოსმოსურ სისტემებს (J-spacesystems) შორის. "</string>
-    
-    
-    
+
+
     <string name="map_widget_distancemeasurement">მანძილის გაზომვა</string>
 
-    <string name="index_srtm_parts">მონაკვეთები</string>
-    <string name="index_srtm_ele">კონტურული ხაზები</string>
-    <string name="srtm_plugin_description">მოცემული დამატება აადვილებს კონტურული ხაზების ჩამოწერას (გათიშული მონაცემების გადმოწერა -&gt; მენიუ -&gt; სხვა რუკები) გათიშულ რუკებთან გამოსაყენებლად.</string>
-    <string name="srtm_plugin_name">კონტურული ხაზების დამატება</string>
     <string name="download_select_map_types">სხვა რუკები</string>
-    <string name="download_srtm_maps">კოტურული ხაზების მონაცემები</string>
     <string name="rendering_attr_noAdminboundaries_name">საზღვრების დამალვა</string>
 	<string name="rendering_attr_noAdminboundaries_description">რეგიონალური საზღვრების ჩვენების შეზღუდვა (ადმინისტრირების დონე 5-9)</string>
     
@@ -1102,7 +1091,6 @@
 	<string name="prefer_in_routing_descr">მოტოციკლების გზებისათვის უპირატესობის მინიჭება</string>
     <string name="max_speed_none">არა</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
-    <string name="local_indexes_cat_srtm">კონტურული ხაზების მონაცემები</string>
     <string name="av_def_action_choose">მოთხოვნისას არჩევა</string>
     <string name="av_use_external_camera_descr">ფოტოებისათვის სისტემური აპლიკაციის გამოყენება</string>
     <string name="av_use_external_camera">კამერის აპლიკაციის გამოყენება</string>

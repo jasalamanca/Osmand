@@ -482,8 +482,7 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="favourites_list_activity">Seleccionar un favorito</string>
     <string name="local_openstreetmap_act_title">Modificacións de OSM</string>
     <string name="shared_string_more_actions">Outras accións</string>
-	
-    <string name="layer_hillshade">Capa de sombreado</string>
+
     <string name="map_widget_gps_info">Información sobre o GPS</string>
     
     <string name="access_arrival_time">Hora de chegada</string>
@@ -495,12 +494,8 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="prefer_in_routing_descr">Preferir as autoestradas</string>
     <string name="max_speed_none">none</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
-    
-    <string name="download_hillshade_maps">Sombreado</string>
-    
-    
-    
-    <string name="local_indexes_cat_srtm">Curvas de nivel</string>
+
+
     <string name="stop_routing_confirm">Confirma que desexa parar a navegación?</string>
     <string name="clear_dest_confirm">Confirma que desexa limpar o destino (e os destinos intermedios)?</string>
     <string name="precise_routing_mode_descr">Permitir calcular rutas precisas sen fallo. Aínda se ve limitado polas distancias e é lento.</string>
@@ -509,8 +504,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="dropbox_plugin_description">O engadido de Dropbox permite sincronizar pistas e notas de son/vídeo cunha conta de Dropbox.</string>
     <string name="dropbox_plugin_name">Engadido de Dropbox</string>
     <string name="intermediate_points_change_order">Cambiar a orde</string>
-    <string name="srtm_paid_version_msg">Considere a posibilidade de comprar o engadido de curvas de nivel para así colaborar co desenvolvemento.</string>
-    <string name="srtm_paid_version_title">Engadido de curvas de nivel</string>
     <string name="av_def_action_choose">Seleccionar ao ser pedido</string>
     <string name="av_widget_action_descr">Seleccionar a acción predeterminada do trebello</string>
     <string name="av_widget_action">Acción predeterminada do trebello</string>
@@ -521,25 +514,10 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="recording_context_menu_play">Reproducir</string>
     <string name="shared_string_control_stop">Parar</string>
     <string name="shared_string_control_start">Comezar</string>
-    <string name="osmand_srtm_short_description_80_chars">Engadido de OsmAnd para curvas de nivel sen conexión</string>
-    <string name="osmand_srtm_long_description_1000_chars">"Este engadido fornece unha capa de sobreposición de curvas de nivel e unha capa de sombras de altitude (relevo) que poden ser mostradas nos mapas sen conexión de OsmAnd. Esta funcionalidade pode ser moi apreciada por atletas, camiñantes, sendeiristas e calquera que teña interese pola estrutura de relevo da paisaxe.
-
-
-Os datos globais (entre os 70 graos norte e os 70 graos sul) están baseados nas medicións de SRTM (Misión Topográfica con Radar da Lanzadeira Espacial) e ASTER (Radiómetro Espacial Avanzado de Emisión Térmica e Reflexión) e instrumentos de imaxes a bordo do Terra, o satélite máis importante do Sistema de Observación Terrestre da NASA. ASTER é un esforzo cooperativo entre a NASA, o Ministerio de Economía do Xapón, Comercio e Industria (METI) e Sistemas Espaciais Xaponeses (J-spaceystems).
- "</string>
     <string name="map_widget_distancemeasurement">Medición de distancias</string>
 
-    <string name="index_srtm_parts">partes</string>
-    <string name="index_srtm_ele">Curvas de nivel</string>
-    <string name="srtm_plugin_description">"Este engadido fornece unha capa de sobreposición de curvas de nivel e unha capa de sombras de altitude (relevo) que poden ser mostradas nos mapas sen conexión de OsmAnd. Esta funcionalidade pode ser moi apreciada por atletas, camiñantes, sendeiristas e calqueira que teña interese pola estrutura de relevo da paisaxe.
-
-
-Os datos globais (entre os 70 graos norte e os 70 graos sul) están baseados nas medicións de SRTM (Misión Topográfica con Radar da Lanzadeira Espacial) e ASTER (Radiómetro Espacial Avanzado de Emisión Térmica e Reflexión) e instrumentos de imaxes a bordo do Terra, o satélite máis importante do Sistema de Observación Terrestre da NASA. ASTER é un esforzo cooperativo entre a NASA, o Ministerio de Economía do Xapón, Comercio e Industria (METI) e Sistemas Espaciais Xaponeses (J-spaceystems).
- "</string>
-    <string name="srtm_plugin_name">Curvas de nivel</string>
     <string name="download_select_map_types">Outros mapas</string>
     <string name="download_roads_only_item">Só as estradas</string>
-    <string name="download_srtm_maps">Curvas de nivel</string>
     <string name="download_regular_maps">Mapa normal</string>
     <string name="download_roads_only_maps">Mapa só de estradas</string>
     <string name="rendering_attr_alpineHiking_name">Escala de excursionismo alpino (SAC)</string>
@@ -1768,7 +1746,6 @@ Lon %2$s</string>
     <string name="regions">Rexións</string>
     <string name="region_maps">Mapas de toda a rexión</string>
     <string name="world_maps">Mapas mundiais</string>
-    <string name="srtm_plugin_disabled">As curvas de nivel están desactivadas</string>
     <string name="favorite_category_select">Seleccionar categoría</string>
     <string name="default_speed_system_descr">Indicar a unidade develocidade</string>
     <string name="default_speed_system">Unidade de velocidade</string>
@@ -1820,7 +1797,6 @@ Lon %2$s</string>
 	<string name="roads">Estradas</string>
     <string name="downloading_number_of_files">A descargar - ficheiro %1$d</string>
     <string name="buy">COMPRAR</string>
-    <string name="activate_srtm_plugin">Active o engadido SRTM</string>
     <string name="later">Noutro momento</string>
     <string name="get_full_version">Versión completa</string>
     <string name="downloads">Descargas</string>
@@ -1850,7 +1826,6 @@ Lon %2$s</string>
     <string name="feedback">Opinións</string>
     <string name="contact_us">Contacte connosco</string>
     <string name="map_legend">Lenda do mapa</string>
-    <string name="hillshade_layer_disabled">A capa de curvas de nivel está desactivada</string>
     <string name="plugin_touringview_name">Vista de mapa turístico</string>
 	<string name="plugin_touringview_descr">"Ao activar esta vista cámbiase o estilo do mapa de OsmAnd a «Vista turística», que é unha vista especial moi detallada para viaxeiros e condutores profesionais.
 
@@ -2293,7 +2268,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="do_not_send_anonymous_app_usage">Non enviar estatísticas anónimas de uso do aplicativo</string>
     <string name="do_not_show_startup_messages">Non mostrar mensaxes no inicio</string>
     <string name="full_version_thanks">Grazas por adquirir a versión completa do OsmAnd!</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Outeiros</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Chairas</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Máis chairas</string>
     <string name="routing_attr_driving_style_speed_name">Velocidades</string>
@@ -2328,8 +2302,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="total_distance">Distancia total</string>
     <string name="routing_attr_height_obstacles_name">Empregar datos de elevación</string>
     <string name="shared_string_plugin">Engadido</string>
-    <string name="srtm_purchase_header">Para ver as liñas de nivel no mapa hai que comprar e instalar o engadido Liñas de Nivel</string>
-    <string name="srtm_color_scheme">Esquema de cores</string>
     <string name="routing_attr_allow_private_name">Permitir acceso privado</string>
     <string name="routing_attr_allow_private_description">Permitir acceso a zonas privadas</string>
     <string name="change_color">Cambiar a cor</string>

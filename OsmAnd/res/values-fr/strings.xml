@@ -917,20 +917,7 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="rendering_attr_noAdminboundaries_description">Masquer les limites administratives régionales (niveaux 5 à 9).</string>
 
 
-    <string name="index_srtm_ele">Courbes de niveau</string>
-    <string name="srtm_plugin_description">Ce greffon permet l\'affichage de courbes de niveau ainsi que du relief (ombres) qui s\'ajoutent au-dessus des cartes standards d\'OsmAnd. Ces informations sont particulièrement utiles pour les sportifs, les randonneurs, les cyclistes et d\'une manière générale par toutes les personnes qui souhaitent connaitre le relief. Les données pour les courbes de niveau et le relief sont des données supplémentaires que vous devez télécharger après avoir activé ce greffon.
-\n
-\nLes données globales (entre 70 degrés Nord et 70 degrés Sud) sont basées sur des mesures de SRTM (Shuttle Radar Topography Mission) et ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), un instrument d\'imagerie embarqué à bord de Terra, le satellite phare du système d\'observation de la terre de la NASA. ASTER est un effort de coopération entre la NASA, le ministère japonais de l\'économie, du commerce et de l\'industrie (METI) et \"Japan Space Systems\" (J-Spacesystems).</string>
-    <string name="srtm_plugin_name">Courbes de niveau</string>
     <string name="download_select_map_types">Autres cartes</string>
-    <string name="download_srtm_maps">Courbes de niveau</string>
-    <string name="index_srtm_parts">parties</string>
-
-
-    <string name="osmand_srtm_short_description_80_chars">Greffon OsmAnd pour les courbes de niveau hors-ligne</string>
-    <string name="osmand_srtm_long_description_1000_chars">Ce greffon permet l\'affichage de courbes de niveau ainsi que du relief (ombres) qui s\'ajoutent au-dessus des cartes standard d\'OsmAnd. Ces informations sont particulièrement utiles pour les sportifs, les randonneurs, les cyclistes et d\'une manière générale par toutes les personnes qui souhaitent connaitre le relief.
-\n
-\nLes données globales (entre 70 degrés Nord et 70 degrés Sud) sont basées sur des mesures SRTM (Shuttle Radar Topography Mission) et ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), des instruments d\'imagerie embarqués à bord de Terra, le satellite phare du système d\'observation de la terre de la NASA. ASTER est un effort de coopération entre la NASA, le ministère japonais de l\'économie, du commerce et de l\'industrie (METI) et \"Japan Space Systems\" (J-Spacesystems).</string>
 
 
     <string name="map_widget_distancemeasurement">Mesure de distance</string>
@@ -941,8 +928,6 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="shared_string_control_stop">Arrêter</string>
 
     <string name="shared_string_control_start">Départ</string>
-    <string name="srtm_paid_version_msg">Merci d\'acheter le greffon \"Courbes de niveau\" pour soutenir les développements futurs.</string>
-    <string name="srtm_paid_version_title">Greffon \"Courbes de niveau\"</string>
 
     <string name="intermediate_points_change_order">Modifier l\'ordre</string>
     <string name="dropbox_plugin_name">Greffon Dropbox</string>
@@ -954,8 +939,6 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="precise_routing_mode_descr">Activer pour calculer des itinéraires précis et sans surprises. Actuellement fonctionne sur des distances limitées et reste lent.</string>
 
     <string name="support_new_features_descr">Effectuer un don pour encourager la création de nouvelles fonctionnalités dans l\'application.</string>
-
-    <string name="download_hillshade_maps">Ombrage du relief</string>
 
     <string name="av_use_external_camera_descr">Utiliser l\'application système pour les photos.</string>
     <string name="av_use_external_camera">Option appareil photo</string>
@@ -971,7 +954,6 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="shared_string_map">Carte</string>
     <string name="access_arrival_time">Heure d\'arrivée</string>
     <string name="map_widget_gps_info">Informations GPS</string>
-    <string name="layer_hillshade">Ombrage du relief</string>
 
 
     <string name="street_name">Nom de la rue</string>
@@ -999,7 +981,6 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="install_paid">Version complète</string>
     <string name="use_magnetic_sensor_descr">Utiliser le capteur magnétique pour déterminer l\'orientation de la boussole plutôt que le capteur d\'orientation.</string>
     <string name="use_magnetic_sensor">Utiliser le magnétomètre (boussole)</string>
-    <string name="local_indexes_cat_srtm">Courbes de niveau</string>
     <string name="use_kalman_filter_compass_descr">Réduit le bruit sur les mesures de la boussole, mais ajoute de l\'inertie.</string>
     <string name="use_kalman_filter_compass">Utiliser un filtre de Kalman</string>
     <string name="distance_measurement_start_editing">Démarrer la mesure sur la carte</string>
@@ -1868,14 +1849,11 @@ Voulez-vous effectuer à une nouvelle inscription ?</string>
     <string name="favorite_category_add_new">Ajouter une catégorie</string>
     <string name="favorite_category_select">Sélectionner une catégorie</string>
 
-    <string name="srtm_plugin_disabled">Courbes de niveau désactivées</string>
     <string name="show_free_version_banner">Afficher le bandeau \"Version Gratuite\"</string>
     <string name="show_free_version_banner_description">Afficher le bandeau \"Version Gratuite\" même dans la version payante</string>
     <string name="downloading_number_of_files">Téléchargement de %1$d fichiers</string>
-    <string name="hillshade_layer_disabled">Affichage du relief désactivé</string>
     <string name="buy">Acheter</string>
     <string name="activate_seamarks_plugin">Merci d\'activer le greffon balisage</string>
-    <string name="activate_srtm_plugin">Merci d\'activer le greffon SRTM</string>
     <string name="later">Plus tard</string>
     <string name="get_full_version">Version complète</string>
     <string name="regions">Régions</string>
@@ -2482,7 +2460,6 @@ représentant la zone : %1$s x %2$s</string>
     <string name="relief_smoothness_factor_plains">Plaines</string>
     
     <string name="relief_smoothness_factor_descr">Terrain préféré : plat ou vallonné</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Vallonné</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Moins vallonné</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Plat</string>
     <string name="routing_attr_driving_style_speed_name">Routes plus courtes</string>
@@ -2579,15 +2556,10 @@ représentant la zone : %1$s x %2$s</string>
     <string name="routing_attr_allow_private_name">Autoriser les accès privés</string>
     <string name="routing_attr_allow_private_description">Autoriser l\'accès aux zones privées</string>
     <string name="display_zoom_level">Niveau de zoom de l\'affichage : %1$s</string>
-    <string name="srtm_color_scheme">Couleur du thème</string>
     <string name="show_from_zoom_level">Afficher à partir du niveau de zoom</string>
     <string name="route_is_too_long_v2">Cet itinéraire risque d\'être très long à calculer. Merci d\'ajouter des points de passage intermédiaires.</string>
-    <string name="srtm_menu_download_descr">Pour afficher les courbes de niveaux sur la carte, vous devez télécharger la carte courbes de niveaux de la région.</string>
     <string name="shared_string_plugin">Greffon</string>
-    <string name="srtm_purchase_header">Pour afficher les courbes de niveaux sur une carte, vous devez acheter puis installer le greffon Courbes de niveaux</string>
-    <string name="hillshade_purchase_header">Pour afficher les ombrages du relief sur la carte, vous devez acheter et installer le greffon Courbes de niveaux</string>
     <string name="hide_from_zoom_level">Masquer depuis le niveau de zoom</string>
-    <string name="hillshade_menu_download_descr">Pour afficher les ombrages du relief sur la carte, vous devez télécharger une sur-couche supplémentaire pour la carte de cette région.</string>
     <string name="quick_action_showhide_osmbugs_title">Afficher / Masquer les notes OSM</string>
     <string name="quick_action_osmbugs_show">Afficher les notes OSM</string>
     <string name="quick_action_osmbugs_hide">Masquer les notes OSM</string>

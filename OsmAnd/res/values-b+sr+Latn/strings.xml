@@ -82,7 +82,6 @@
 
     <string name="download_select_map_types">Ostale mape</string>
     <string name="download_roads_only_item">Samo putevi</string>
-    <string name="download_srtm_maps">izohipse</string>
     <string name="rendering_attr_noAdminboundaries_name">Sakrij granice</string>
 	
 	<string name="map_widget_max_speed">Ograničenje brzine</string>

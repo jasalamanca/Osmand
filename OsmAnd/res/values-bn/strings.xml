@@ -3,8 +3,7 @@
     
     <string name="region_maps">অঞ্চলভিত্তিক মানচিত্র</string>
     <string name="world_maps">বিশ্ব মানচিত্র</string>
-    
-    <string name="hillshade_layer_disabled">পর্বতছায়া স্তর নিষ্ক্রিয়</string>
+
     <string name="favorite_category_add_new">নতুন সংযোজন</string>
     <string name="shared_string_markers">চিহ্নসমুহ</string>
     <string name="coordinates_format">অক্ষাংশ-দ্রাঘিমাংশ বিন্যাস</string>

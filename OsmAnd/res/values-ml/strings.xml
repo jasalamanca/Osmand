@@ -221,7 +221,6 @@
     <string name="osb_comment_dialog_author">രചയിതാവിന്റെ പേര്</string>
     <string name="context_menu_item_delete_waypoint">ജിപിഎക്സ് വഴിത്തിരിവുകള്‍ നീക്കം ചെയ്യട്ടെ?</string>
     <string name="region_maps">പ്രാദേശികമായ ഭൂപടങ്ങള്‍</string>
-    <string name="hillshade_layer_disabled">"ഹില്‍ഷേഡ് ലേയര്‍ നിര്‍ജ്ജീവമാക്കിയിരിക്കുന്നു "</string>
     <string name="favorite_category_add_new">പുതിയതായി ചേര്‍ക്കുക</string>
     <string name="si_m_s">"മീറ്റര്‍/സെക്കന്റ് "</string>
     <string name="rendering_value_translucent_orange_name">മങ്ങിയ ഓറഞ്ച്</string>
@@ -250,7 +249,6 @@
     <string name="shared_string_currently_recording_track">"നിലവില്‍ റിക്കോഡ് ചെയ്യുന്ന പാത "</string>
     <string name="track_segments">വഴി കഷണം (ട്രാക്ക് സെഗ്.)</string>
     <string name="shared_string_online_maps">ഓണ്‍ലൈന്‍ ഭൂപടങ്ങള്‍</string>
-	<string name="srtm_paid_version_title">കോണ്ടൂര്‍ ലൈനുകളുടെ പ്ളഗ് ഇന്‍</string>
     <string name="edit_group">"ഗ്രൂപ്പ് എഡിറ്റ് ചെയ്യുക "</string>
     <string name="version_settings_descr">നൈറ്റിലി ബില്‍ഡ് വേര്‍ഷന്‍ ഡൗണ്‍ലോഡ് ചെയ്യുക</string>
     <string name="rendering_attr_streetLighting_name">"തെരുവിളക്ക് "</string>
@@ -487,7 +485,6 @@
     <string name="add_favorite_dialog_favourite_added_template">താല്‍പര്യ ബിന്ദു \'\'{0}\'\' വിജയകരമായി ചേര്‍ത്തിരിക്കുന്നു.</string>
     <string name="app_name_osmand">ഓഎസ്എം ആന്റ്</string>
     <string name="activate_seamarks_plugin">സീമാര്‍ക്ക് പ്ളഗ്-ഇന്‍ സജീവമാക്കുക</string>
-    <string name="activate_srtm_plugin">"എസ്ആര്‍ടിഎം പ്ളഗ്-ഇന്‍ സജീവമാക്കുക "</string>
     <string name="edit_filter">വിഭാഗങ്ങള്‍ എഡിറ്റ് ചെയ്യുക</string>
     <string name="delete_filter">ഫില്‍റ്റര്‍ നീക്കം ചെയ്യുക</string>
     <string name="donation_to_osm_desc">"സംഭാവനകളുടെ ഒരു ഭാഗം ഓഎസ്എംആന്റ് -ന്റെ കോണ്ട്രിബ്യൂട് ചെയ്തവര്‍ക്ക് കൊടുക്കുന്നതാണ്. സബ്സ്ക്രിപ്ഷന്‍ വില  മാറ്റമില്ലാതെ തുടരും."</string>
@@ -516,7 +513,6 @@
     <string name="favorite_category_name">"തരത്തിന്റെ പേര് "</string>
     <string name="favorite_category_add_new_title">പുതിയ തരങ്ങള്‍ ചേര്‍ക്കുക</string>
     <string name="world_maps">ലോകഭൂപടങ്ങള്‍</string>
-    <string name="srtm_plugin_disabled">"കോണ്ടൂര്‍ ലൈനുകള്‍ നിര്‍ജീവമാക്കിയിരിക്കുന്നു "</string>
     <string name="favorite_category_select">ഒരു വിഭാഗം തെരഞ്ഞെടുക്കുക</string>
     <string name="default_speed_system_descr">വേഗതയുടെ അളവ് നിര്‍വചിക്കുക</string>
     <string name="default_speed_system">വേഗതയുടെ അളവ്</string>
@@ -542,8 +538,7 @@
     <string name="general_settings_2">പൊതുവായ സജ്ജീകരണങ്ങള്‍</string>
     <string name="shared_string_favorite">താല്‍പര്യമുള്ളവ</string>
     <string name="track_points">പാത ബിന്ദുക്കള്‍</string>
-    <string name="srtm_plugin_name">"കോണ്ടൂര്‍ ലൈനുകള്‍ "</string>
-	<string name="debugging_and_development">ഓഎസ്എം ആന്റ് വികസനം</string>
+    <string name="debugging_and_development">ഓഎസ്എം ആന്റ് വികസനം</string>
     <string name="days_behind">പിമ്പിലുള്ള ദിവസങ്ങള്‍</string>
     <string name="free">"ഫ്രീ  %1$s "</string>
     <string name="device_memory">ഉപകരണ മെമ്മറി</string>
@@ -617,7 +612,6 @@
     <string name="clear_dest_confirm">ഇടലക്ഷ്യസ്ഥാനങ്ങള്‍ ഉള്‍പടെ ലക്ഷ്യസ്ഥാനങ്ങള്‍ കളയട്ടെ?</string>
     <string name="dropbox_plugin_name">ഡ്രോപ്ബോക്സ് പ്ളഗ് ഇന്‍</string>
     <string name="download_roads_only_item">വഴികൾ മാത്രമുള്ളത്</string>
-    <string name="download_srtm_maps">കോണ്ടൂര്‍ ലൈനുക</string>
     <string name="download_regular_maps">സാധാരണ ഭൂപടം</string>
     <string name="download_roads_only_maps">വഴികൾ മാത്രമുള്ള ഭൂപടം</string>
     <string name="target_point">"ലക്ഷ്യസ്ഥാനം %1$s "</string>
@@ -927,8 +921,6 @@
     <string name="install_paid">"പൂര്‍ണ്ണമായ പതുപ്പ് "</string>
     <string name="prefer_motorways">അതിവേഗപാതകള്‍ തെരഞ്ഞെടുക്കുക</string>
     <string name="prefer_in_routing_descr">അതിവേഗപാതകള്‍ തെരഞ്ഞെടുക്കുക</string>
-    <string name="local_indexes_cat_srtm">"കോണ്ടൂര്‍ ലൈനുകള്‍ "</string>
-    <string name="index_srtm_ele">"കോണ്ടൂര്‍ ലൈനുകള്‍ "</string>
     <string name="map_widget_max_speed">വേഗപരിധി</string>
     <string name="map_widget_top_text">തെരുവ് നാമം</string>
     <string name="show_cameras">സ്പീഡ് ക്യാമറ</string>
@@ -988,8 +980,6 @@
     <string name="app_modes_choose_descr">ആപ്പ്ളിക്കേഷനില്‍ കാണിക്കുന്ന ഉപയോഗരീതികള്‍(പ്രൊഫൈലുകള്‍) തെരഞ്ഞെടുക്കുക</string>
     <string name="base_world_map">അടിസ്ഥാന ലോക ഭൂപടം</string>
     <string name="clear_destination">ലക്ഷ്യസ്ഥാനങ്ങള്‍ കളയുക</string>
-    <string name="download_hillshade_maps">പര്‍വതഛായകള്‍</string>
-    <string name="index_srtm_parts">കഷണങ്ങള്‍</string>
     <string name="close_changeset">"ചേഞ്ച്സെറ്റ്  അടയ്ക്കുക"</string>
     <string name="show_warnings_title">മുന്നറിയിപ്പുകള്‍ കാണിക്കുക…</string>
     <string name="snap_to_road_descr">റോഡില്‍ തന്നെ നിന്ന് വഴികാട്ടുക</string>
@@ -1504,7 +1494,6 @@
     <string name="plugin_distance_point_speed">വേഗത</string>
     <string name="plugin_distance_point">ബിന്ദൂ(പോയിന്റ്)</string>
     <string name="local_openstreetmap_act_title">ഓഎസ്എം നവീകരണങ്ങള്‍</string>
-    <string name="layer_hillshade">ഹില്‍ഷേഡ്(മലനിഴല്‍) പാളീ</string>
     <string name="prefer_in_routing_title">ഇഷ്ടങ്ങള്‍…</string>
     <string name="poi_filter_food_shop">കട(ആഹാരം)</string>
     <string name="poi_filter_fuel">"ഇന്ധനം "</string>
@@ -1777,7 +1766,6 @@
     <string name="mapillary_menu_title_dates">"തിയതി "</string>
     <string name="mapillary_menu_title_username">ഉപയോക്തൃനാമം</string>
     <string name="shared_string_install">സ്ഥാപിക്കുക</string>
-    <string name="srtm_color_scheme">നിറങ്ങളുടെ സ്കീം</string>
     <string name="shared_string_overview">അവലോകനം</string>
     <string name="shared_string_visible">ദൃശ്യമായ</string>
     <string name="driving_region_automatic">തനിയെയുള്ള</string>

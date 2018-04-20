@@ -855,8 +855,6 @@
     
     <string name="max_speed_none">немає</string>
     <string name="index_name_openmaps">OpenMaps - Європа</string>
-    
-    <string name="download_hillshade_maps">Затемнення рельєфу</string>
 
     <string name="stop_routing_confirm">Ви впевнені, що хочете зупинити навігацію?</string>
     <string name="clear_dest_confirm">Ви впевнені, що хочете вилучити пункт призначення (і проміжні точки)?</string>
@@ -865,8 +863,6 @@
     <string name="dropbox_plugin_name">Втулок Dropbox</string>
     
     <string name="intermediate_points_change_order">Змінити порядок</string>
-    <string name="srtm_paid_version_msg">Розгляньте, будь ласка, можливість придбання втулка «Ізолінії висот» на Маркеті, це підтримає його подальшу розробку.</string>
-    <string name="srtm_paid_version_title">Втулок Ізолінії висот</string>
     <string name="av_widget_action_descr">Вибрати типову дію для віджету.</string>
     <string name="av_widget_action">Дія для віджета</string>
     
@@ -875,8 +871,7 @@
     <string name="av_use_external_camera_descr">Використовувати системну програму для фото.</string>
     <string name="shared_string_control_stop">Стоп</string>
     <string name="shared_string_control_start">Старт</string>
-    <string name="osmand_srtm_short_description_80_chars">Втулок OsmAnd для відображення рельєфу</string>
-    
+
     <string name="av_use_external_camera">Використовувати програму Камера</string>
     <string name="av_def_action_choose">Обрати за запитом</string>
     <string name="recording_context_menu_play">Грати</string>
@@ -885,21 +880,10 @@
     <string name="map_widget_intermediate_distance">Проміжний пункт призначення</string>
     <string name="recording_delete_confirm">Ви хочете вилучити даний запис?</string>
 
-    <string name="osmand_srtm_long_description_1000_chars">Цей втулок показує як ізолінії висот так і рельєф на стандартних мапах OsmAnd. Ці можливості стануть в нагоді для спортсменів, туристів, мандрівників та для будь-кого, хто цікавиться структурою рельєфу місцевості.
-\n 
-\nГлобальні дані (між 70 градусами на півночі і 70 градусами на півдні) базуються на вимірюваннях SRTM (Shuttle Radar Topography Mission) і ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), даних інструменту візуалізації Terra, флагманського супутника системи спостереження Землі від NASA. ASTER — це результат спільної роботи NASA, міністерства економіки Японії, міністерства торгівлі і промисловості Японії (METI), агенції космічних систем Японії (J-spacesystems).</string>
-    
-    
+
     <string name="map_widget_distancemeasurement">Вимірювання відстаней</string>
-    <string name="index_srtm_parts">частин</string>
-    <string name="index_srtm_ele">Ізолінії висот</string>
-    <string name="srtm_plugin_description">Цей втулок показує як ізолінії висот так і рельєф на стандартних мапах OsmAnd. Ці можливості стануть в нагоді для спортсменів, туристів, мандрівників та для будь-кого, хто цікавиться структурою рельєфу місцевості. 
-\n 
-\nГлобальні дані (між 70 градусами на півночі і 70 градусами на півдні) базуються на вимірюваннях SRTM (Shuttle Radar Topography Mission) і ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), даних інструменту візуалізації Terra, флагманського супутника системи спостереження Землі від NASA. ASTER — це результат спільної роботи NASA, міністерства економіки Японії, міністерства торгівлі і промисловості Японії (METI), агенції космічних систем Японії (J-spacesystems).</string>
-    <string name="srtm_plugin_name">Ізолінії висот</string>
     <string name="download_select_map_types">Інші мапи</string>
     <string name="download_roads_only_item">Тільки дороги</string>
-    <string name="download_srtm_maps">Ізолінії висот</string>
     <string name="download_roads_only_maps">Мапа лише з дорогами</string>
     
 	<string name="rendering_attr_noAdminboundaries_name">Кордони</string>
@@ -993,10 +977,7 @@
 <string name="map_widget_gps_info">GPS дані</string>
 
 
-    <string name="layer_hillshade">Шар рельєфа місцевості</string>
-    
-	
-	<string name="download_regular_maps">Стандартна мапа</string>
+    <string name="download_regular_maps">Стандартна мапа</string>
 
 
     <string name="street_name">Назва вулиці</string>
@@ -1048,9 +1029,8 @@
     <string name="please_select_address">Виберіть місто або вулицю</string>
     <string name="osmand_distance_planning_plugin_description">Цей втулок активує віджет для створення маршрутів натисканням на мапі (чи використати наявний GPX-файл) для підрахунку відстані між точками. Результат може бути збережений як GPX для подальшого використання.</string>
     <string name="distance_measurement_finish_subtrack">Виміряти нову ділянку</string>
-    
-    
-	<string name="local_indexes_cat_srtm">Ізоліній висот</string>
+
+
     <string name="context_menu_item_destination_point">Встановити як пункт призначення</string>
     <string name="local_osm_changes_backup_failed">Збій резервного копіювання файлу змін OSM</string>
     <string name="local_osm_changes_backup">Резервне копіювання файлу змін OSM</string>
@@ -1864,8 +1844,6 @@
     <string name="regions">Регіони</string>
     <string name="region_maps">Регіональні мапи</string>
     <string name="world_maps">Мапи світу</string>
-    <string name="hillshade_layer_disabled">Шар рельєфу місцевості вимкнено</string>
-    <string name="srtm_plugin_disabled">Ізолінії висот вимкнено</string>
     <string name="favorite_category_add_new">Додати нову</string>
     <string name="favorite_category_select">Виберіть категорію</string>
     <string name="default_speed_system_descr">Визначити одиницю виміру швидкості.</string>
@@ -1943,7 +1921,6 @@
     <string name="roads">Дороги</string>
     <string name="buy">Придбати</string>
     <string name="activate_seamarks_plugin">Будь ласка, активуйте втулок з морськими навігаційними знаками</string>
-    <string name="activate_srtm_plugin">Будь ласка, увімкніть втулок SRTM</string>
     <string name="later">Пізніше</string>
     <string name="get_full_version">Повна версія</string>
     <string name="downloads">Завантаження</string>
@@ -2506,13 +2483,8 @@
     <string name="quick_action_showhide_osmbugs_descr">Натискання на кнопку дії відобразить чи приховає OSM-нотатки на мапі.</string>
     <string name="sorted_by_distance">Відсортоване за відстанню</string>
     <string name="search_favorites">Пошук у закладках</string>
-    <string name="hillshade_menu_download_descr">Для того, щоб відобразити затінення рельєфу, Вам потрібно звантажити спеціальну мапу для цієї області.</string>
-    <string name="hillshade_purchase_header">Для того, щоб відобразити затінення рельєфу, Вам потрібно купити та встановити втулок</string>
     <string name="hide_from_zoom_level">Приховати від рівня масштабування</string>
-    <string name="srtm_menu_download_descr">Для того, щоб відобразити лінії контурів рельєфу, Вам потрібно звантажити спеціальну мапу для цієї області.</string>
     <string name="shared_string_plugin">Втулок</string>
-    <string name="srtm_purchase_header">Для того, щоб відобразити лінії контурів рельєфу, Вам потрібно купити і встановити втулок</string>
-    <string name="srtm_color_scheme">Схема кольорів</string>
     <string name="show_from_zoom_level">Відображення від рівня масштабування</string>
     <string name="routing_attr_allow_private_name">Дозволити приватний доступ</string>
     <string name="routing_attr_allow_private_description">Дозволити доступ на приватну територію.</string>
@@ -2557,7 +2529,6 @@
     <string name="do_not_send_anonymous_app_usage">На відсилати анонімну статистику використання</string>
     <string name="do_not_send_anonymous_app_usage_desc">OsmAnd збирає інформацію про те, якій частині програми використовуються вами. Ваше місце розташування ніколи не відправляється, як і все, що ви вводите, які місця переглядаєте, що шукаєте чи звантажуєте.</string>
     <string name="full_version_thanks">Дякуємо за покупку повної версії OsmAnd!</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Горбисто</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Менш горбисто</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Рівнинно</string>
     <string name="relief_smoothness_factor_descr">Переважний рельєф: рівнинний або гористий.</string>

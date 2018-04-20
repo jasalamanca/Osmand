@@ -908,21 +908,13 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="rendering_attr_noAdminboundaries_description">Izbira onemogoči izris upravnih mej (na ravneh približanja od 5 do 9).</string>
 
 
-    <string name="index_srtm_ele">Izris izohips</string>
-    <string name="srtm_plugin_description">Vstavek omogoča prikaz izohips in senčenje hribovitih področij kot prekrivni zemljevid. Zmožnost je uporabna predvsem za pohodnike, športnike, raziskovalce in druge zanesenjake, ki si želijo, ali potrebujejo natančen prikaz na zemljevidu. 
-\n 
-\nSplošni podatki med 70 stopinjami severno in 70 južno so opredeljeni z meritvami SRTM (Shuttle Radar Topography Mission) in ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), napravo na satelitu Terra, ki je del NASINEGA sistema EOS (Earth Observing System). Satelit ASTER je razvit v sodelovanju med NASO, japonskim ministrstvom za ekonomijo, trgovino in industrijo (Trade and Industry – METI) in japonskim vesoljskimi sistemi (J-spacesystems).</string>
-    <string name="srtm_plugin_name">Izohipse</string>
     <string name="download_select_map_types">Drugi zemljevidi</string>
     <string name="recording_context_menu_play">Predvajaj</string>
     <string name="shared_string_control_stop">Zaustavi</string>
-    <string name="osmand_srtm_short_description_80_chars">Vstavek za prikaz izohips v programu OsmAnd (brez povezave)</string>
 
 
     <string name="map_widget_distancemeasurement">Merjenje razdalj</string>
 
-    <string name="index_srtm_parts">deli</string>
-    <string name="download_srtm_maps">Podatki izohips</string>
     <string name="recording_delete_confirm">Ali želite izbrisati ta posnetek?</string>
 
     <string name="shared_string_control_start">Izmeri ↦</string>
@@ -930,11 +922,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
 
     <string name="av_widget_action_descr">Izberite privzeto dejanje gradnika.</string>
     <string name="av_widget_action">Privzeto dejanje gradnika</string>
-    <string name="osmand_srtm_long_description_1000_chars">Ta vstavek omogoča prikaz izohips in reliefa pokrajine na shranjenih zemljevidih OsmAnd. Zmožnost je uporabna za športnike in pohodnike ter za vse, ki potrebujejo podatke o reliefu pokrajine.
-\n 
-\nGlobalni podatki (med 70 stopinj severno in 70 stopinj južno) temeljijo na meritvah SRTM (Shuttle Radar Topography Mission) in ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), ki je instrument za slikanje na krovu Terre, vodilnega satelita Nasinega sistema za opazovanje. ASTER je prizadevanje za sodelovanje med ameriško NASO, japonskim ministrstvom za gospodarstvo, trgovino in industrijo (METI) in japonskim vesoljskim sistemom (J-spacesystems).</string>
-    <string name="srtm_paid_version_msg">Razmislite o nakupu vstavka za prikaz izohips v trgovini Market in s tem podprite nadaljnji razvoj.</string>
-    <string name="srtm_paid_version_title">Vstavek Izohipse</string>
 
     <string name="intermediate_points_change_order">Spremeni vrstni red</string>
     <string name="dropbox_plugin_description">Vstavek Dropbox omogoča usklajevanje datotek sledi in video/zvočnih zaznamkov z Dropboxovim uporabniškim računom.</string>
@@ -948,8 +935,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="support_new_features_descr">Donirajte in pripomogli boste k razvoju novih zmožnosti programa.</string>
 
 
-    <string name="download_hillshade_maps">Senčenje terena</string>
-
     <string name="av_use_external_camera_descr">Uporabi sistemski program za fotografiranje.</string>
     <string name="av_use_external_camera">Uporabi kamero</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
@@ -962,7 +947,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="item_unchecked">ni izbrano</string>
     <string name="shared_string_map">Zemljevid</string>
     <string name="access_arrival_time">Čas prihoda</string>
-    <string name="layer_hillshade">Izris senčenja terena</string>
     <string name="map_widget_gps_info">Podrobnosti GPS</string>
 
 
@@ -1020,7 +1004,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="choose_osmand_theme_descr">Izbor teme programa.</string>
     <string name="choose_osmand_theme">Tema programa</string>
     <string name="accessibility_options">Možnosti dostopnosti</string>
-    <string name="local_indexes_cat_srtm">Podatki izohips</string>
     <string name="shared_string_downloading">Poteka prejemanje</string>
     <string name="use_distance_measurement_help">* Pritisnite za določitev točke.
 \n* Zadržite pritisk na zemljevidu za brisanje predhodne točke.
@@ -1919,12 +1902,9 @@ ZŠ (β) %2$s</string>
 
     <string name="downloading_number_of_files">Prejemanje datotek: %1$d</string>
     <string name="show_free_version_banner">Pokaži pasico brezplačne različice</string>
-    <string name="srtm_plugin_disabled">Izris izohips je onemogočen</string>
     <string name="show_free_version_banner_description">Četudi imate plačljivo različico, še vedno lahko prikažete pasico brezplačne različice.</string>
-    <string name="hillshade_layer_disabled">Senčenje terena je onemogočeno</string>
     <string name="buy">Nakup</string>
     <string name="activate_seamarks_plugin">Omogočite vstavek pomorskih oznak</string>
-    <string name="activate_srtm_plugin">Omogočite vstavek SRTM</string>
     <string name="later">Kasneje</string>
     <string name="get_full_version">Polna različica</string>
     <string name="regions">Območja</string>
@@ -2526,7 +2506,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="shared_string_slope">Pobočje</string>
     <string name="add_new_folder">Dodaj novo mapo</string>
     <string name="lang_ber">Berberščina</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Gričevnato</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Manj gričevnato</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Ravninsko</string>
     <string name="routing_attr_driving_style_speed_name">Krajše poti</string>
@@ -2561,7 +2540,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="nearest_cities">Najbližje mesto</string>
     <string name="select_city">Izberite mesto</string>
     <string name="select_postcode">Izberite poštno številko</string>
-    <string name="srtm_color_scheme">Barvna shema</string>
     <string name="routing_attr_allow_private_name">Dovoli zasebni dostop</string>
     <string name="routing_attr_allow_private_description">Dovoli dostop do zasebnih območij.</string>
     <string name="favorite_group_name">Ime skupine</string>
@@ -2615,11 +2593,7 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="download_depth_countours">Navtični relief globine</string>
     <string name="route_is_too_long_v2">Preračunavanje poti je lahko zelo dolgotrajno. V kolikor izračun ne bo končan v 10 minutah, vstavite nekaj vmesnih točk.</string>
     <string name="open_mapillary">Odpri Mapillary</string>
-    <string name="hillshade_menu_download_descr">Za prikaz senčenja reliefa na zemljevidu, je treba namestiti prekrivno plast senčenja za to območje.</string>
-    <string name="hillshade_purchase_header">Za prikaz senčenja reliefa na zemljevidu, je treba kupiti in namestiti vstavek Izohipse.</string>
     <string name="hide_from_zoom_level">Skrij od ravni približanja</string>
-    <string name="srtm_menu_download_descr">Za prikaz izohips reliefa na zemljevidu, je treba prejeti zemljevid reliefa za to območje.</string>
-    <string name="srtm_purchase_header">Za prikaz reliefa na zemljevidu, je treba kupiti in namestiti vstavek Izohipse.</string>
     <string name="show_from_zoom_level">Prikaži od ravni približanja</string>
     <string name="display_zoom_level">Raven približanja: %1$s</string>
     <string name="distance_moving">Razdalja je popravljena</string>

@@ -423,8 +423,6 @@ Lon %2$s</string>
     <string name="routing_attr_weight_description">Indica el peso del vehículo permitido en rutas.</string>
     <string name="lang_sw">Suajili</string>
     <string name="lang_mr">Marathi</string>
-    <string name="osmand_srtm_short_description_80_chars">Complemento OsmAnd para curvas de nivel sin conexión</string>
-    <string name="srtm_plugin_name">Curvas de nivel</string>
     <string name="osmand_distance_planning_plugin_name">Distancias y planificación</string>
     <string name="rename_failed">Falló el renombrado.</string>
     <string name="days_behind">días atrás</string>
@@ -448,14 +446,7 @@ Lon %2$s</string>
 \nPuedes rastrear todos los dispositivos de un grupo, participando en tiempo real. También puedes ver los puntos y trazas subidas al grupo correspondiente.
 \n
 \nLos grupos no se quitarán después de meses, esto se sincroniza con las reglas de los grupos en el sitio web OsMo.mobi</string>
-    <string name="srtm_paid_version_title">Complemento de curvas de nivel</string>
-    <string name="osmand_srtm_long_description_1000_chars">Este complemento proporciona una capa superpuesta de curvas de nivel y una capa (de relieve) sombreada, que se pueden visualizar sobre los mapas descargados de OsmAnd. Esta funcionalidad será muy apreciada por atletas, caminantes, excursionistas, y cualquiera interesado en la estructura de relieve de un paisaje. 
-\n
-\nLos datos globales (entre 70 grados norte y 70 grados sur) se basan en mediciones de SRTM (Shuttle Radar Topography Mission, o en español Misión de Topografía por Radar desde Transbordador) y ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer, o en español Radiómetro Espacial Avanzado de Emisión Térmica y Reflexión), un instrumento de captura de imágenes a bordo de Terra, el satélite insignia del Sistema de Observación de la Tierra de la NASA. ASTER es un esfuerzo cooperativo entre la NASA, el Ministerio de Economía, Comercio e Industria de Japón (METI) y Sistemas Espaciales de Japón (J-spacesystems).</string>
-    <string name="srtm_plugin_description">Este complemento proporciona tanto una capa superpuesta de curvas de nivel y una capa (de relieve) sombreada, que se pueden visualizar sobre los mapas descargados de OsmAnd. Esta funcionalidad será muy apreciada por atletas, caminantes, excursionistas, y cualquiera interesado en la estructura de relieve de un paisaje. (Note que las curvas de nivel y/o los datos de relieve están disponibles en descargas adicionales separadas luego de activar el complemento.) 
-\n 
-\nLos datos globales (entre 70 grados norte y 70 grados sur) se basan en mediciones de SRTM (Shuttle Radar Topography Mission, o en español Misión de Topografía por Radar Shuffle) y ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer, o en español Radiómetro Espacial Avanzado de Emisión Térmica y Reflexión), un instrumento de captura de imágenes a bordo de Terra, el satélite insignia del Sistema de Observación de la Tierra de la NASA. ASTER es un esfuerzo cooperativo entre la NASA, el Ministerio de Economía, Comercio e Industria de Japón (METI) y Sistemas Espaciales de Japón (J-spacesystems).</string>
-    <string name="plugin_touringview_descr">Activando esta vista cambia el estilo del mapa OsmAnd a la «Vista turística», que es una vista de alto detalle, especial para viajeros y conductores profesionales. 
+    <string name="plugin_touringview_descr">Activando esta vista cambia el estilo del mapa OsmAnd a la «Vista turística», que es una vista de alto detalle, especial para viajeros y conductores profesionales.
 \n 
 \nEsta vista proporciona, en cualquier nivel de ampliación del mapa, la máxima cantidad de detalles de viaje disponible en los datos del mapa (especialmente carreteras, senderos, caminos y marcas de orientación). 
 \n 
@@ -708,7 +699,6 @@ Lon %2$s</string>
     <string name="select_address_activity">Elige la dirección</string>
     <string name="favourites_list_activity">Elige el favorito</string>
     <string name="local_openstreetmap_act_title">Cambios OSM</string>
-    <string name="layer_hillshade">Capa de sombreado</string>
     <string name="map_widget_gps_info">Información GPS</string>
     <string name="access_arrival_time">Hora de llegada</string>
     <string name="item_checked">marcado</string>
@@ -718,8 +708,6 @@ Lon %2$s</string>
     <string name="prefer_in_routing_descr">Preferir usar autopistas.</string>
     <string name="max_speed_none">ninguna</string>
     <string name="index_name_openmaps">OpenMaps UE</string>
-    <string name="download_hillshade_maps">Sombreado</string>
-    <string name="local_indexes_cat_srtm">Curvas de nivel</string>
     <string name="stop_routing_confirm">¿Quieres parar la navegación?</string>
     <string name="clear_dest_confirm">¿Quieres quitar el destino (y los destinos intermedios)?</string>
     <string name="precise_routing_mode_descr">Habilita el cálculo de rutas precisas sin interferencias. Aún está limitado por la distancia y es lento.</string>
@@ -728,7 +716,6 @@ Lon %2$s</string>
     <string name="dropbox_plugin_description">El complemento de Dropbox, permite sincronizar trazas y notas multimedia con tu cuenta de Dropbox.</string>
     <string name="dropbox_plugin_name">Complemento Dropbox</string>
     <string name="intermediate_points_change_order">Cambiar orden</string>
-    <string name="srtm_paid_version_msg">Considera la compra del complemento de curvas de nivel en la Tienda para apoyar desarrollos adicionales.</string>
     <string name="av_def_action_choose">Elegir a petición</string>
     <string name="av_widget_action_descr">Elige la acción predefinida.</string>
     <string name="av_widget_action">Acción predefinida</string>
@@ -737,11 +724,8 @@ Lon %2$s</string>
     <string name="recording_delete_confirm">¿Quieres borrar esta grabación?</string>
     <string name="recording_context_menu_play">Reproducir</string>
     <string name="map_widget_distancemeasurement">Medición de distancia</string>
-    <string name="index_srtm_parts">partes</string>
-    <string name="index_srtm_ele">Curvas de nivel</string>
     <string name="download_select_map_types">Otros mapas</string>
     <string name="download_roads_only_item">Sólo caminos</string>
-    <string name="download_srtm_maps">Curvas de nivel</string>
     <string name="download_regular_maps">Mapa estándar</string>
     <string name="download_roads_only_maps">Mapa sólo vial</string>
     <string name="rendering_attr_alpineHiking_name">Escala de senderismo alpino (SAC)</string>
@@ -1690,14 +1674,11 @@ Lon %2$s</string>
     <string name="m_s">m/s</string>
     <string name="favorite_category_add_new">Añadir nuevo</string>
     <string name="favorite_category_select">Elegir categoría</string>
-    <string name="srtm_plugin_disabled">Curvas de nivel desactivadas</string>
     <string name="show_free_version_banner">Mostrar anuncio de la versión gratuita</string>
     <string name="show_free_version_banner_description">Muestra el anuncio de la versión gratuita, incluso en la versión de pago.</string>
     <string name="downloading_number_of_files">Descargando - %1$d archivo/s</string>
-    <string name="hillshade_layer_disabled">Capa de sombreado desactivada</string>
     <string name="buy">COMPRAR</string>
     <string name="activate_seamarks_plugin">Activa el complemento náutico</string>
-    <string name="activate_srtm_plugin">Activa el complemento SRTM</string>
     <string name="later">Luego</string>
     <string name="get_full_version">Versión completa</string>
     <string name="regions">Regiones</string>
@@ -2296,7 +2277,6 @@ Proporciona un código completo</string>
     <string name="add_new_folder">Añadir nueva carpeta</string>
     <string name="shared_string_slope">Pendiente</string>
     <string name="lang_ber">Bereber (amazig)</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Empinado</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Poco empinado</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Plano (llanura)</string>
     <string name="routing_attr_driving_style_speed_name">Rutas más cortas</string>
@@ -2437,17 +2417,12 @@ Proporciona un código completo</string>
     <string name="change_color">Cambiar color</string>
     <string name="edit_name">Editar nombre</string>
     <string name="save_poi_too_many_uppercase">El nombre contiene demasiadas letras capitales. ¿Continuar?</string>
-    <string name="srtm_color_scheme">Esquema de color</string>
     <string name="show_from_zoom_level">Mostrar desde el nivel de ampliación</string>
     <string name="routing_attr_allow_private_name">Permitir el acceso privado</string>
     <string name="routing_attr_allow_private_description">Permite acceder a áreas privadas.</string>
     <string name="display_zoom_level">Nivel de ampliación de pantalla: %1$s</string>
     <string name="route_is_too_long_v2">Esta ruta puede ser muy larga para calcular. Añade destinos intermedios si no se encuentran resultados dentro de los 10 minutos.</string>
-    <string name="srtm_menu_download_descr">Para ver las curvas de nivel en el mapa, debes descargar el mapa de curvas de nivel de esta región.</string>
     <string name="shared_string_plugin">Complemento</string>
-    <string name="srtm_purchase_header">Para ver las curvas de nivel en el mapa, debes comprar e instalar el complemento «Curvas de nivel»</string>
-    <string name="hillshade_menu_download_descr">Para ver el sombreado del relieve en el mapa, debes descargar la superposición del sombreado de esta región.</string>
-    <string name="hillshade_purchase_header">Para ver el sombreado del relieve en el mapa, debes comprar e instalar el complemento «Curvas de nivel»</string>
     <string name="hide_from_zoom_level">Ocultar desde el nivel de ampliación</string>
     <string name="quick_action_showhide_osmbugs_title">Alternar vista de notas de OSM</string>
     <string name="quick_action_osmbugs_show">Mostrar notas de OSM</string>

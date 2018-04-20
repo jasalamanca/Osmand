@@ -442,12 +442,9 @@
     <string name="max_speed_none">ekkert</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
     <string name="download_wikipedia_maps">Wikipedia</string>
-    <string name="download_hillshade_maps">Skuggar í landslagi</string>
-    <string name="local_indexes_cat_srtm">Hæðarlínur</string>
     <string name="av_def_action_picture">Taka ljósmynd</string>
     <string name="intermediate_points_change_order">Breyta röðun</string>
     <string name="recording_context_menu_play">Spila</string>
-    <string name="index_srtm_parts">hlutar</string>
     <string name="map_widget_max_speed">Hraðatakmörk</string>
     <string name="target_points">Áfangastaðir</string>
     <string name="add_tag">Bæta við merki</string>
@@ -787,8 +784,6 @@
     <string name="osn_reopen_dialog_title">Enduropna minnispunkt</string>
     <string name="rendering_attr_hideProposed_name">Uppástungur</string>
     <string name="world_map_download_descr">Grunnkort af heiminum (sem þekur alla jörðina í minni aðdrætti) vantar eða er úrelt. Íhugaðu að hlaða því inn til að fá hnattræna yfirsýn.</string>
-    <string name="hillshade_layer_disabled">Hæðaskyggingalag óvirkt</string>
-    <string name="srtm_plugin_disabled">Hæðarlínur óvirkar</string>
     <string name="default_speed_system_descr">Skilgreindu einingu fyrir hraða.</string>
     <string name="shared_string_trip_recording">Skráning ferðar</string>
     <string name="osmand_running_in_background">Keyrandi í bakgrunni</string>
@@ -1056,7 +1051,6 @@ Ferill %2$s</string>
     <string name="number_of_edits">Fjöldi breytinga</string>
     <string name="reports_for">Skýrsla fyrir</string>
     <string name="file_name_containes_illegal_char">Skráarheitið inniheldur ógildan staf</string>
-<string name="srtm_paid_version_title">Viðbót fyrir hæðarlínur</string>
     <string name="rendering_attr_showAccess_name">Sýna aðgangstakmarkanir og gjald</string>
     <string name="index_item_world_basemap">Heims-yfirlitskort</string>
     <string name="index_item_world_ski">Heims-skíðakort</string>
@@ -1112,14 +1106,11 @@ Ferill %2$s</string>
     <string name="choose_osmand_theme_descr">Veldu þema fyrir forritið.</string>
     <string name="favourites_list_activity">Veldu eftirlæti</string>
     <string name="local_openstreetmap_act_title">OSM-breytingar</string>
-    <string name="layer_hillshade">Hæðaskyggingalag</string>
     <string name="map_widget_gps_info">GPS-upplýsingar</string>
     <string name="dropbox_plugin_name">Dropbox-viðbót</string>
     <string name="map_widget_distancemeasurement">Mæling vegalengda</string>
-    <string name="index_srtm_ele">Hæðarlínur</string>
     <string name="download_select_map_types">Önnur kort</string>
     <string name="download_roads_only_item">Einungis vegir</string>
-    <string name="download_srtm_maps">Hæðarlínur</string>
     <string name="download_regular_maps">Staðlað kort</string>
     <string name="download_roads_only_maps">Kort einungis með vegum</string>
     <string name="monitoring_control_start">GPX</string>
@@ -1167,7 +1158,6 @@ Sólsetur: %2$s</string>
     <string name="avoid_toll_roads">Forðast gjaldskylda vegi</string>
     <string name="plugin_install_needs_network">Þú þarft internettengingu til að setja upp þessa viðbót.</string>
     <string name="activate_seamarks_plugin">Virkjaðu Sjómerkja-viðbótina</string>
-    <string name="activate_srtm_plugin">Virkjaðu SRTM-viðbótina</string>
     <string name="legacy_search">Gamaldags leit</string>
     <string name="show_legacy_search">Birta gamaldags leit</string>
     <string name="show_legacy_search_desc">Virkja gamaldags leit í skúffulistanum.</string>
@@ -1186,8 +1176,7 @@ Sólsetur: %2$s</string>
     <string name="map_downloaded">Náð í kort</string>
     <string name="share_geo">geo:</string>
     <string name="record_plugin_name">Skráning ferðar</string>
-	<string name="srtm_plugin_name">Hæðarlínur</string>
-	<string name="show_pedestrian_warnings">Gangbrautir</string>
+    <string name="show_pedestrian_warnings">Gangbrautir</string>
     <string name="navigate_point_zone">Svæði</string>
     <string name="rendering_category_others">Önnur eigindi korts</string>
     <string name="sleep_mode_stop_dialog">Stöðva bakgrunnsham GPS?</string>
@@ -1853,7 +1842,6 @@ Punktar</string>
     <string name="do_not_show_startup_messages">Ekki birta skilaboð í ræsingu</string>
     <string name="do_not_show_startup_messages_desc">Lokar á skilaboð um afslætti og sérstaka viðburði í grenndinni.</string>
     <string name="full_version_thanks">Takk fyrir að kaupa fulla útgáfu OsmAnd!</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Hæðótt</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Minna hæðótt</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Flatt</string>
     <string name="routing_attr_driving_style_speed_name">Styttri leiðir</string>
@@ -2059,7 +2047,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="sorted_by_distance">Raðað eftir vegalengd</string>
     <string name="search_favorites">Leita að eftirlætum</string>
     <string name="shared_string_plugin">Viðbót</string>
-    <string name="srtm_color_scheme">Litastef</string>
     <string name="favorite_group_name">Heiti hóps</string>
     <string name="change_color">Breyta lit</string>
     <string name="edit_name">Breyta heiti</string>
@@ -2089,7 +2076,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="access_autoannounce_period_descr">Lágmarkstími á milli tilkynninga.</string>
     <string name="osm_live_thanks">Takk fyrir að vera áskrifandi að síuppfærslum!</string>
     <string name="delay_to_start_navigation">Hefja beygju-fyrir-beygju leiðsögn eftir…</string>
-    <string name="osmand_srtm_short_description_80_chars">OsmAnd-viðbót fyrir hæðarlínur án nettengingar</string>
     <string name="osmo_credentials_not_valid">Uppgefin OsMo-auðkenni eru ekki gild.</string>
     <string name="osmo_settings_uuid">Einkvæmt auðkenni tækis</string>
     <string name="index_item_nation_addresses">heimilisföng á landsvísu</string>
@@ -2140,10 +2126,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="mapillary_widget_descr">Gerir þér kleift að bæta kerfið á einfaldan hátt með Mapillary.</string>
     <string name="mapillary_descr">Götumyndir af netinu fyrir alla. Uppgötvaðu staði, útvíkkaðu heiminn og vertu með í samstarfinu.</string>
     <string name="plugin_mapillary_descr">Götumyndir fyrir alla. Uppgötvaðu staði, útvíkkaðu heiminn og vertu með í samstarfinu.</string>
-    <string name="hillshade_menu_download_descr">Til að sjá hæðarskyggingar á kortinu, þarftu að sækja hæðaskyggingakortið af þessu svæði.</string>
-    <string name="hillshade_purchase_header">Til að sjá hæðarskyggingar á kortinu, þarftu að kaupa og setja inn hæðaskyggingaviðbótina</string>
-    <string name="srtm_menu_download_descr">Til að sjá hæðarlínur á kortinu, þarftu að sækja hæðarlínukortið af þessu svæði.</string>
-    <string name="srtm_purchase_header">Til að sjá hæðarlínur á kortinu, þarftu að kaupa og setja inn hæðarlínuviðbótina</string>
     <string name="show_from_zoom_level">Birta frá aðdráttarstigi</string>
     <string name="subscribe_email_desc">Gerstu áskrifandi að póstlistanum um forritaafslætti og fáðu ókeypis 3 niðurhöl á kortum til viðbótar!</string>
     <string name="depth_contour_descr">Sett af kortum með dýptarlínum og dýptarpunktum sjávar.</string>
@@ -2319,7 +2301,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="quick_action_page_list_descr">Bank á aðgerðahnappinn mun fletta í gegnum listann hér fyrir neðan.</string>
     <string name="empty_state_my_tracks_desc">Skrá eða flytja inn ferla til skoðunar.</string>
     <string name="download_using_mobile_internet">Í augnablikinu er þráðlaust Wi-Fi net ekki tengt. Viltu nota núverandi internettengingu undir niðurhal?</string>
-    <string name="srtm_paid_version_msg">Íhugaðu að kaupa viðbótina fyrir hæðarlínur á markaðnum til að styðja við áframhaldandi þróun forritsins.</string>
     <string name="native_library_not_running">Forritið er keyrandi í öryggisham (gerðu hann óvirkan í stillingunum).</string>
     <string name="zxing_barcode_scanner_not_found">ZXing Barcode Scanner forritið er ekki uppsett. Leita á Google Play markaðnum?</string>
     <string name="osmand_plus_extended_description_part8">Áætluð kortaþekja og gæði: • Vestur-Evrópa: **** • Austur-Evrópa: *** • Rússland: *** • Norður-Ameríka: *** • Suður-Ameríka: ** • Asía: ** • Japan &amp; Kórea: *** • Miðausturlönd: ** • Afríka: ** • Antarktíka: * Flest lönd í heiminum eru tiltæk sem niðurhalspakkar! Frá Afghanistan til Simbabve, frá Ástralíu til BNA. Argentína, Brasilía, Kanada, Frakkland, Þýskaland, Mexíkó, UK, Spánn, …</string>
@@ -2354,13 +2335,7 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="shared_string_marker">Kortamerki</string>
     <string name="plan_route_no_markers_toast">Þú verður að bæta við a.m.k. einni merkingu til að geta notað þessa aðgerð.</string>
     <string name="osm_recipient_stat">Breytingar %1$s, upphæð %2$s mBTC</string>
-    <string name="osmand_srtm_long_description_1000_chars">Þessi viðbót kemur með bæði yfirlag fyrir hæðarlínur og lag fyrir hæðaskyggingu (relief hillshade), sem bæði birtast ofan á staðalkortum OsmAnd\'. Þessir eiginleikar eru gjarnan í miklum metum hjá íþróttafólki, göngufólki, ferðamönnum og öðrum þeim sem áhuga hafa á uppbyggingu landsins.
-\n
-\nAlmennt byggjast þessi gögn (milli 70 breiddargráðu norður og 70 breiddargráðu suður) á mælingum frá SRTM (Shuttle Radar Topography Mission) og ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), og frá myndgreiningartækjum um borð í Terra, aðalgervihnetti Earth Observing System hjá NASA. ASTER er samvinnuverkefni NASA, Ráðuneytis efnahags, viðskipta og iðnaðar í Japan (METI), og Japan Space Systems (J-spacesystems).</string>
-    <string name="srtm_plugin_description">Þessi viðbót kemur með bæði yfirlag fyrir hæðarlínur og lag fyrir hæðaskyggingu (relief hillshade), sem bæði birtast ofan á staðalkortum OsmAnd\'. Þessir eiginleikar eru gjarnan í miklum metum hjá íþróttafólki, göngufólki, ferðamönnum og öðrum þeim sem áhuga hafa á uppbyggingu landsins. (Taktu eftir því að hæðarlínu- og skyggingargögnin eru aðskildir pakkar sem þarf að sækja eftir að viðbótin hefur verið gerð virk.) 
-\n
-\nAlmennt byggjast þessi gögn (milli 70 breiddargráðu norður og 70 breiddargráðu suður) á mælingum frá SRTM (Shuttle Radar Topography Mission) og ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), og frá myndgreiningartækjum um borð í Terra, aðalgervihnetti Earth Observing System hjá NASA. ASTER er samvinnuverkefni NASA, Ráðuneytis efnahags, viðskipta og iðnaðar í Japan (METI), og Japan Space Systems (J-spacesystems).</string>
-    <string name="plugin_nautical_descr">Þessi viðbót bætir eiginleikum inn í landakort OsmAnd og leiðsagnarforritið þannig að úr verði sjókort til skemmtisiglinga, fyrir seglbáta og fleiri tegundir vatnaíþrótta. 
+    <string name="plugin_nautical_descr">Þessi viðbót bætir eiginleikum inn í landakort OsmAnd og leiðsagnarforritið þannig að úr verði sjókort til skemmtisiglinga, fyrir seglbáta og fleiri tegundir vatnaíþrótta.
 \n
 \nSérstök kortaviðbót fyrir OsmAnd mun koma með öll sjómerki og leiðatákn þeim tengd, til rötunar á sjó eða ströndum. Lýsing sjómerkja inniheldur öll þau atriði sem nauðsynleg er til að auðkenna þau og hvað þau þýða (flokkur, lögun, litur, röð, tilvísun, o.s.frv.). 
 \n

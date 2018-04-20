@@ -807,18 +807,7 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="monitoring_control_start">GPX</string>
     <string name="rendering_attr_noAdminboundaries_name">Límites</string>
     <string name="rendering_attr_noAdminboundaries_description">Ocultar fronteras regionales (niveles administrativos 5-9).</string>
-    <string name="index_srtm_parts">piezas</string>
-    <string name="index_srtm_ele">Curvas de nivel</string>
-    <string name="srtm_plugin_description">Este complemento proporciona una capa superpuesta de curvas de nivel y una capa (de relieve) sombreada que se pueden visualizar sobre los mapas descargados de OsmAnd. Esta funcionalidad será muy apreciada por atletas, caminantes, excursionistas, y cualquiera interesado en la estructura de relieve de un paisaje. (Por favor ten en cuenta que las curvas de nivel o datos de relieve están separados, hay descargas adicionales después de activar el complemento). 
-\n 
-\nLos datos globales (entre 70 grados norte y 70 grados sur) se basan en mediciones de SRTM (Shuttle Radar Topography Mission, o en español Misión de Topografía por Radar Shuffle) y ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer, o en español Radiómetro Espacial Avanzado de Emisión Térmica y Reflexión), un instrumento de captura de imágenes a bordo de Terra, el satélite insignia del Sistema de Observación de la Tierra de la NASA. ASTER es un esfuerzo cooperativo entre la NASA, el Ministerio de Economía, Comercio e Industria de Japón (METI) y Sistemas Espaciales de Japón (J-spacesystems).</string>
-    <string name="srtm_plugin_name">Curvas de nivel</string>
     <string name="download_select_map_types">Otros mapas</string>
-    <string name="download_srtm_maps">Curvas de nivel</string>
-    <string name="osmand_srtm_short_description_80_chars">Complemento OsmAnd para curvas de nivel sin conexión</string>
-    <string name="osmand_srtm_long_description_1000_chars">Este complemento proporciona una capa superpuesta de curvas de nivel y una capa (de relieve) sombreada que se pueden visualizar sobre los mapas descargados de OsmAnd. Esta funcionalidad será muy apreciada por atletas, caminantes, excursionistas, y cualquiera interesado en la estructura de relieve de un paisaje. 
-\n
-\nLos datos globales (entre 70 grados norte y 70 grados sur) se basan en mediciones de SRTM (Shuttle Radar Topography Mission, o en español Misión de Topografía por Radar desde Transbordador) y ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer, o en español Radiómetro Espacial Avanzado de Emisión Térmica y Reflexión), un instrumento de captura de imágenes a bordo de Terra, el satélite insignia del Sistema de Observación de la Tierra de la NASA. ASTER es un esfuerzo cooperativo entre la NASA, el Ministerio de Economía, Comercio e Industria de Japón (METI) y Sistemas Espaciales de Japón (J-spacesystems).</string>
     <string name="map_widget_distancemeasurement">Medición de distancia</string>
     <string name="recording_delete_confirm">¿Quiere eliminar esta grabación?</string>
     <string name="recording_context_menu_play">Reproducir</string>
@@ -826,8 +815,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="shared_string_control_start">Iniciar</string>
     <string name="av_widget_action">Acción del control predeterminado</string>
     <string name="av_widget_action_descr">Seleccione la acción del control predeterminado.</string>
-    <string name="srtm_paid_version_msg">Considere la compra del complemento curvas de nivel en la tienda de aplicaciones para apoyar desarrollos adicionales.</string>
-    <string name="srtm_paid_version_title">Complemento curvas de nivel</string>
     <string name="dropbox_plugin_description">El complemento Dropbox te permite sincronizar trazas y notas multimedia con tu cuenta de Dropbox.</string>
     <string name="dropbox_plugin_name">Complemento Dropbox</string>
     <string name="intermediate_points_change_order">Cambiar orden</string>
@@ -837,7 +824,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="precise_routing_mode_descr">Activar para calcular rutas precisas sin interferencias. Aún está limitado por la distancia y es lento.</string>
     <string name="precise_routing_mode">Navegación precisa (alfa)</string>
     <string name="support_new_features_descr">Dona para ver nuevas características implementadas en la aplicación.</string>
-    <string name="download_hillshade_maps">Sombreado</string>
     <string name="av_use_external_camera_descr">Usa la aplicación del sistema para fotografía.</string>
     <string name="av_use_external_camera">Utilizar aplicación de la cámara</string>
     <string name="index_name_openmaps">OpenMaps UE</string>
@@ -850,8 +836,7 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="item_unchecked">desmarcado</string>
     <string name="shared_string_map">Mapa</string>
     <string name="access_arrival_time">Hora de llegada</string>
-    
-    <string name="layer_hillshade">Capa de sombreado</string>
+
     <string name="map_widget_gps_info">Información GPS</string>
     <string name="street_name">Nombre de calle</string>
     <string name="hno">Número</string>
@@ -876,7 +861,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="cancel_navigation">Parar navegación</string>
     <string name="clear_destination">Borrar destino</string>
     <string name="download_using_mobile_internet">El WiFi no está conectado en este momento. ¿Quiere utilizar la conexión actual a Internet para descargar?</string>
-    <string name="local_indexes_cat_srtm">Curvas de nivel</string>
     <string name="wait_current_task_finished">Espere hasta que termine la tarea actual</string>
     <string name="shared_string_downloading">Descargando</string>
     <string name="destination_point">Destino %1$s</string>
@@ -1680,14 +1664,11 @@ Lon %2$s</string>
     <string name="regions">Regiones</string>
     <string name="region_maps">Mapas de la región</string>
     <string name="world_maps">Mapas mundiales</string>
-    <string name="hillshade_layer_disabled">Capa de sombreado desactivada</string>
-    <string name="srtm_plugin_disabled">Curvas de nivel desactivadas</string>
     <string name="downloading_number_of_files">Descargando - %1$d archivo/s</string>
     <string name="show_free_version_banner">Mostrar anuncio de versión gratuita</string>
     <string name="show_free_version_banner_description">Muestra el anuncio de la versión gratuita, incluso en la versión de pago.</string>
     <string name="buy">COMPRAR</string>
     <string name="activate_seamarks_plugin">Active el complemento náutico</string>
-    <string name="activate_srtm_plugin">Active el complemento SRTM</string>
     <string name="later">Luego</string>
     <string name="get_full_version">Versión completa</string>
     <string name="downloads">Descargas</string>
@@ -2276,7 +2257,6 @@ Por favor proporciona un código completo</string>
     <string name="shared_string_start_time">Hora de inicio</string>
     <string name="shared_string_end_time">Hora de fin</string>
     <string name="shared_string_color">Color</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Empinado</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Poco empinado</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Llano</string>
     <string name="routing_attr_driving_style_speed_name">Rutas más cortas</string>
@@ -2396,10 +2376,7 @@ Por favor proporciona un código completo</string>
 \n • Antártida: * 
 \n ¡La mayoría de países alrededor del globo están disponibles para descargar! Desde Afganistán a Zimbabue, desde Australia a Estados Unidos. Argentina, Brasil, Canadá, Francia, Alemania, México, Reino Unido, España, …</string>
     <string name="save_poi_too_many_uppercase">El nombre contiene demasiadas letras capitales. ¿Continuar?</string>
-    <string name="srtm_menu_download_descr">Para ver las curvas de nivel en el mapa, necesitas descargar el mapa de curvas de nivel de esta región.</string>
     <string name="shared_string_plugin">Complemento</string>
-    <string name="srtm_purchase_header">Para ver las curvas de nivel en el mapa, necesitas comprar e instalar el complemento «Curvas de nivel»</string>
-    <string name="srtm_color_scheme">Esquema de color</string>
     <string name="show_from_zoom_level">Mostrar desde el nivel de zoom</string>
     <string name="routing_attr_allow_private_name">Permitir acceso privado</string>
     <string name="routing_attr_allow_private_description">Permite el acceso a áreas privadas.</string>
@@ -2416,8 +2393,6 @@ Por favor proporciona un código completo</string>
     <string name="increase_search_radius">Aumentar radio de búsqueda</string>
     <string name="nothing_found">Nada encontrado :(</string>
     <string name="nothing_found_descr">Intenta cambiar el criterio de búsqueda o aumentar el radio de búsqueda.</string>
-    <string name="hillshade_menu_download_descr">Para ver el sombreado del relieve en el mapa, necesitas descargar la superposición del sombreado de esta región.</string>
-    <string name="hillshade_purchase_header">Para ver el sombreado del relieve en el mapa, necesitas comprar e instalar el complemento «Curvas de nivel»</string>
     <string name="private_access_routing_req">Tu destino se ubica en un área de acceso privado. ¿Quieres permitir el acceso a las carreteras privadas en este viaje?</string>
     <string name="mapillary_widget">Control de Mapillary</string>
     <string name="mapillary_descr">Fotos a pie de calle para todos. Descubre lugares, colabora, captura el mundo.</string>

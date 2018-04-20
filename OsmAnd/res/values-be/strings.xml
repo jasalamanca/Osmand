@@ -109,9 +109,8 @@
     <string name="accessibility_options">Налады даступнасьці</string>
     <string name="select_address_activity">Абраць адрас</string>
     <string name="favourites_list_activity">Абярыце з улюбёных</string>
-    <string name="local_openstreetmap_act_title">Мадыфікацыі OSM</string>    
-	
-    <string name="layer_hillshade">Слой рэльефу мясцовасьці</string>
+    <string name="local_openstreetmap_act_title">Мадыфікацыі OSM</string>
+
     <string name="map_widget_gps_info">Зьвесткі GPS</string>
     
     <string name="access_arrival_time">Час прыбыцьця</string>
@@ -122,12 +121,8 @@
 	<string name="prefer_in_routing_descr">Надаваць перавагу аўтамагістралям.</string>
     <string name="max_speed_none">няма</string>
     <string name="index_name_openmaps">OpenMaps Эўропа</string>
-    
-    <string name="download_hillshade_maps">Слой з рэльефам мясцовасьці</string>
-    
-    
-    
-    <string name="local_indexes_cat_srtm">Ізалініі вышынь</string>
+
+
     <string name="stop_routing_confirm">Сапраўды спыніць навігацыю?</string>
     <string name="clear_dest_confirm">Сапраўды сьцерці месца прызначэньня (і прамежкавыя пункты прызначэньня)?</string>
     <string name="precise_routing_mode_descr">Дазволіць дакладную навігацыю каб шукаць шлях без памылак. Усё яшчэ абмежавана адлегласцю і павольная.</string>
@@ -137,8 +132,6 @@
     <string name="dropbox_plugin_name">Модуль Dropbox</string>
     
     <string name="intermediate_points_change_order">Зьмяніць парадак</string>
-    <string name="srtm_paid_version_msg">Калі ласка, падумайце пра набыцьцё модуля Ізалініі вышынь у Play Store для падтрымкі далейшай распрацоўкі.</string>
-    <string name="srtm_paid_version_title">Модуль Ізалініі вышынь</string>
     <string name="av_def_action_choose">Выбар па запыце</string>
     <string name="av_widget_action_descr">Выберыце агаданае дзеянне віджэта.</string>
     <string name="av_widget_action">Дзеяньне віджэта па змаўчанні</string>
@@ -146,15 +139,10 @@
     <string name="av_use_external_camera">Выкарыстоўваць праграму камеры</string>
     <string name="recording_delete_confirm">Вы хочаце зьнішчыць гэты запіс?</string>
     <string name="recording_context_menu_play">Граць</string>
-    <string name="osmand_srtm_short_description_80_chars">Модуль OsmAnd для пазасеткавых ізаліній вышынь</string>
     <string name="map_widget_distancemeasurement">Вымярэньне адлегласьці</string>
 
-    <string name="index_srtm_parts">частак</string>
-    <string name="index_srtm_ele">Ізалініі вышынь</string>
-    <string name="srtm_plugin_name">Ізалініі вышынь</string>
     <string name="download_select_map_types">Іншыя мапы</string>
     <string name="download_roads_only_item">Толькі дарогі</string>
-    <string name="download_srtm_maps">Ізалініі вышынь</string>
     <string name="download_regular_maps">Стандартныя мапы</string>
     <string name="download_roads_only_maps">Мапа толькі дарог</string>
     
@@ -1176,18 +1164,9 @@
     <string name="keep_informing_descr">Паўтараць навігацыйныя інструкцыі праз рэгулярныя прамежкі часу.</string>
     <string name="keep_informing">Паўтараць навігацыйныя інструкцыі</string>
 	<string name="arrival_distance">Абвяшчэнне прыбыцця</string>
-    
-    
-    <string name="osmand_srtm_long_description_1000_chars">Гэты модуль паказвае як ізалініі вышынь так і рэльеф на стандартных мапах OsmAnd. Гэтыя магчымасці спатрэбяцца спартсменам, турыстам, падарожнікам і ўсім, хто цікавіцца структурай рэльефу мясцовасці. 
-\n 
-\nГлабальныя дадзеныя (паміж 70 градусамі на поўначы і 70 градусамі на поўдні) грунтуюцца на вымярэннях SRTM (Shuttle Radar Topography Mission) і ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), дадзеных інструменту візуалізацыі Terra, флагманскага спадарожніка сістэмы назірання Зямлі ад NASA. ASTER — гэта вынік сумеснай працы NASA, міністэрства эканомікі Японіі, міністэрства гандлю і прамысловасьці Японіі (METI), агенцтва касмічных сістэм Японіі (J-spacesystems).</string>
-    <string name="srtm_plugin_description">Гэты модуль паказвае як ізалініі вышынь так і рэльеф на стандартных мапах OsmAnd. Гэта магчыма спатрэбяцца спартсменам, турыстам, падарожнікам і ўсім, хто цікавіцца структурай рэльефу мясцовасці. (Звярніце ўвагу, што дадзеныя вышынь і рэльефу асобныя, дадаткова даступныя да спампоўкі, пасля актывацыі модуля.) 
-\n 
-\nГлабальныя дадзеныя (паміж 70 градусамі на поўначы і 70 градусамі на поўдні) грунтуюцца на вымярэннях SRTM (Shuttle Radar Topography Mission) і ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), дадзеных інструмента візуалізацыі Terra, флагманскага спадарожніка сістэмы назірання Зямлі ад NASA. ASTER — гэта вынік сумеснай працы NASA, міністэрства эканомікі Японіі, міністэрства гандлю і прамысловасьці Японіі (METI), агенцтва касмічных сістэм Японіі (J-spacesystems).</string>
-    
-    
-    
-	<string name="arrival_distance_descr">Як хутка вы хочаце чуць паведамленне аб прыбыцці?</string>
+
+
+    <string name="arrival_distance_descr">Як хутка вы хочаце чуць паведамленне аб прыбыцці?</string>
     
 	
 	
@@ -1869,16 +1848,13 @@
     <string name="min_mile">хв/м</string>
     <string name="min_km">хв/км</string>
     <string name="m_s">м/с</string>
-    
-    <string name="srtm_plugin_disabled">Ізалініі вышынь адключаны</string>
+
     <string name="downloading_number_of_files">Сьцягваецца - %1$d файл</string>
     <string name="show_free_version_banner_description">Паказваць банер бясплатнай версіі нават у платнай версіі.</string>
 <string name="show_free_version_banner">Паказваць банэр бясплатнай вэрсіі</string>
     <string name="buy">НАБЫЦЬ</string>
     <string name="later">Пазьней</string>
     <string name="get_full_version">Паўнавартасная вэрсія</string>
-<string name="hillshade_layer_disabled">Зацяненьне рэльефу адключана</string>
-    <string name="activate_srtm_plugin">Калі ласка, актывуйце модуль SRTM</string>
     <string name="activate_seamarks_plugin">Калі ласка, актывуйце модуль Марскія навігацыйныя знакі</string>
     <string name="regions">Рэгіёны</string>
     
@@ -2472,7 +2448,6 @@
     <string name="quick_action_btn_tutorial_descr">Доўгі націск і перацягванне дазваляе перамясціць пазіцыю на экране.</string>
 	<string name="route_points_category_name">Павароты на маршруце</string>
     <string name="relief_smoothness_factor_descr">Пераважны рэльеф: раўнінны ці гарысты.</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Гарысты</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Пагорысты</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Раўнінны</string>
     <string name="routing_attr_driving_style_speed_name">Кароткія маршруты</string>
@@ -2553,14 +2528,9 @@
     <string name="sorted_by_distance">Адсартавана па адлегласці</string>
     <string name="search_favorites">Пошук улюбёных</string>
     <string name="shared_string_plugin">Дадатак</string>
-    <string name="srtm_purchase_header">Для прагляду контурных ліній на мапе, вам неабходна набыць і ўсталяваць дадатак «Contour Lines»</string>
-    <string name="srtm_color_scheme">Каляровая схема</string>
     <string name="routing_attr_allow_private_name">Дазволіць прыватны доступ</string>
     <string name="routing_attr_allow_private_description">Дазволіць доступ на прыватную тэрыторыю.</string>
-    <string name="hillshade_menu_download_descr">Для таго, каб убачыць зацяненне рэльефу, вам неабходна спампаваць адмысловую мапу для гэтага рэгіёна.</string>
-    <string name="hillshade_purchase_header">Для таго, каб убачыць зацяненне рэльефу, вам неабходна набыць і ўсталяваць дадатак «Contour Lines»</string>
     <string name="hide_from_zoom_level">Схаваць ад узроўню маштабавання</string>
-    <string name="srtm_menu_download_descr">Каб убачыць контурныя лініі, вам неабходна спампаваць адмысловую мапу для гэтага рэгіёна.</string>
     <string name="show_from_zoom_level">Паказваць ад узроўню маштабавання</string>
     <string name="display_zoom_level">Узровень маштабавання паказу: %1$s</string>
     <string name="route_is_too_long_v2">Гэты маршрут, магчыма, занадта вялікі для разьліку. Калі ласка, дадайце прамежкавыя пункты, калі разьлік не завяршыўся цягам 10 хвілін.</string>

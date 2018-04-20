@@ -30,12 +30,10 @@
     <string name="download_regular_maps">Regularne karte</string>
     <string name="av_widget_action_descr">Odaberite zadanu radnju widgeta</string>
     <string name="av_widget_action">Zadana radnja widgeta</string>
-    <string name="index_srtm_parts">dijelovi</string>
-    <string name="rendering_attr_noAdminboundaries_name">Sakrij granice</string>
+	<string name="rendering_attr_noAdminboundaries_name">Sakrij granice</string>
 	<string name="download_roads_only_maps">Samo cestovne karte</string>
-    
-	<string name="download_srtm_maps">Obrisi linija</string>
-    <string name="rendering_attr_noAdminboundaries_description">Prikrivanje prikaza regionalnih granica (admin razine 5-9)</string>
+
+	<string name="rendering_attr_noAdminboundaries_description">Prikrivanje prikaza regionalnih granica (admin razine 5-9)</string>
     
     <string name="map_widget_max_speed">Ograničenje brzine</string>
     <string name="route_descr_lat_lon">Z. širina %1$.3f, z. dužina %2$.3f</string>
@@ -529,14 +527,8 @@
 	<string name="precise_routing_mode">Precizni način navođenja (alfa)</string>
     <string name="av_def_action_choose">Odaberite na zahtjev</string>
     <string name="max_speed_none">bez</string>
-    <string name="srtm_paid_version_msg">Molimo vas da razmislite o kupnji dodataka za prikaz Slojnica u Market trgovini kako biste podržati daljnji razvoj.</string>
-    <string name="srtm_paid_version_title">Dodatak Slojnice</string>
 
-    <string name="osmand_srtm_short_description_80_chars">OsmAnd dodatak za offline slojnice</string>
-    <string name="srtm_plugin_name">Slojnice</string>
-    
-	
-    
+
 	<string name="delete_target_point">Uklonite ciljnu točku</string>
 	<string name="target_point">Ciljna točka %1$s</string>
     <string name="intermediate_point">Točka %1$s</string>
@@ -950,9 +942,8 @@
 	<string name="poi_error_unexpected_template">Došlo je do neočekivane pogreške tijekom izvođenja radnje {0}.</string>
 	<string name="poi_error_io_error_template">Dogodila se I/O pogreška tijekom izvođenja radnje {0}.</string>
 	<string name="poi_error_info_not_loaded">Info o točki koja nije učitana</string>
-	<string name="layer_hillshade">Reljefni sloj</string>
-    
-    <string name="routing_attr_prefer_motorway_name">Preferiram autoceste</string>
+
+	<string name="routing_attr_prefer_motorway_name">Preferiram autoceste</string>
 	<string name="routing_attr_prefer_motorway_description">Preferiram autoceste</string>
 	<string name="routing_attr_avoid_toll_name">Izbjegavati ceste s naplatom cestarine</string>
 	<string name="routing_attr_avoid_toll_description">Izbjegavati ceste s naplatom cestarine</string>

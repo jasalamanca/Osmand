@@ -773,8 +773,6 @@
     <string name="quick_action_showhide_osmbugs_descr">Fəaliyyət düyməsinə toxunulduğunda, xəritədə OSM qeydləri göstərilir və ya gizlədilir.</string>
     <string name="sorted_by_distance">Məsafəyə görə sırala</string>
     <string name="search_favorites">Favoritləri axtar</string>
-    <string name="srtm_menu_download_descr">Xəritədə kontur xətlərini göstərmək üçün bu bölgənin kontur xətli xəritəsini endirməlisiniz.</string>
-    <string name="srtm_color_scheme">Rəng sxemi</string>
     <string name="routing_attr_allow_private_name">Xüsusi girişə icazə ver</string>
     <string name="routing_attr_allow_private_description">Xüsusi sahələrə girişə icazə ver.</string>
     <string name="favorite_group_name">Qrup adı</string>
@@ -958,7 +956,6 @@
     <string name="nautical_maps">Dəniz xəritələri</string>
     <string name="do_not_send_anonymous_app_usage">Anonim proqram istifadəsi statistikalarını göndərmə</string>
     <string name="do_not_show_startup_messages">Başlanğıcda mesaj göstərmə</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Dağlıq</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Az dağlıq</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Düzənlik</string>
     <string name="routing_attr_driving_style_safety_name">Yolları üstün tut</string>
@@ -976,10 +973,7 @@
     <string name="lang_et">Estonca</string>
     <string name="recording_context_menu_play">Oynat</string>
     <string name="map_widget_distancemeasurement">Məsafə ölçülməsi</string>
-    <string name="index_srtm_parts">hissələr</string>
-    <string name="index_srtm_ele">Kontur xətləri</string>
     <string name="download_roads_only_item">Yalnız yollar</string>
-    <string name="download_srtm_maps">Kontur xətləri</string>
     <string name="download_roads_only_maps">Yalnız yol xəritəsi</string>
     <string name="rendering_attr_noAdminboundaries_name">Sərhədlər</string>
     <string name="no_buildings_found">Bina tapılmadı.</string>
@@ -1001,17 +995,12 @@
     <string name="mapillary">Mapillary</string>
     <string name="private_access_routing_req">Təyinat nöqtəniz xüsusi girişi olan ərazidə yerləşir. Bu səyahət üçün xüsusi yollara giriş icazəsi vermək istəyirsiniz?</string>
     <string name="shared_string_plugin">Qoşma</string>
-    <string name="srtm_purchase_header">Xəritədə kontur xətlərini görmək üçün Kontur Xətləri qoşmasını almaq və quraşdırmaq lazımdır</string>
     <string name="plugin_settings">Qoşmalar</string>
-    <string name="srtm_paid_version_title">Kontur xətləri qoşması</string>
-    <string name="osmand_srtm_short_description_80_chars">Offlayn kontur xətləri üçün OsmAnd qoşması</string>
     <string name="dropbox_plugin_name">Dropbox qoşması</string>
-    <string name="srtm_paid_version_msg">Zəhmət olmasa inkişafları dəstəkləmək üçün Marketdəki Kontur xətləri qoşmasını almaq haqda düşünün.</string>
     <string name="map_online_plugin_is_not_installed">Müxtəlif xəritə mənbələrini seçmək üçün Onlayn xəritələr qoşmasını aktivləşdirin</string>
     <string name="plugins_screen">Qoşmalar</string>
     <string name="prefs_plugins">Qoşmalar</string>
     <string name="plugin_install_needs_network">Bu qoşmanı quraşdırmaq üçün internet bağlantınız olmalıdır.</string>
-    <string name="activate_srtm_plugin">SRTM qoşmasını aktivləşdirin</string>
     <string name="plugins_menu_group">Qoşmalar</string>
     <string name="impassable_road_desc">Naviqasiya zamanı yayınmaq istədiyiniz yolları seçin.</string>
     <string name="roads_only">Yalnız yollar</string>
@@ -1200,7 +1189,6 @@
     <string name="shared_string_io_error">I/O səhvi baş verdi</string>
     <string name="shared_string_collapse">Yığışdır</string>
     <string name="route_points">Marşrut nöqtələri</string>
-    <string name="srtm_plugin_name">Kontur xətləri</string>
     <string name="points">Nöqtələr</string>
     <string name="traffic_warning_pedestrian">Piyada keçidi</string>
     <string name="show_pedestrian_warnings">Piyada keçidləri</string>
@@ -1221,7 +1209,6 @@
     <string name="go_to_map">Xəritəni göstər</string>
     <string name="favorite_category_dublicate_message">Göstərilən kateqoriya adı artıq mövcuddur. Fərqli ad istifadə edin.</string>
     <string name="region_maps">Region xəritələri</string>
-    <string name="srtm_plugin_disabled">Kontur xətləri sönülüdür</string>
     <string name="default_speed_system_descr">Sürət vahidi təyin edin.</string>
     <string name="default_speed_system">Sürət vahidi</string>
     <string name="min_km">dəq/km</string>
@@ -1350,7 +1337,6 @@
     <string name="use_displayed_track_for_navigation">Naviqasiya üçün göstərilən iz istifadə etmək istəyirsiniz?</string>
     <string name="distance_measurement_clear_route">Bütün nöqtələri təmizlə</string>
     <string name="clear_destination">Təyinat nöqtəsini təmizlə</string>
-    <string name="local_indexes_cat_srtm">Kontur xətləri</string>
     <string name="distance_measurement_finish_subtrack">Yeni bir alt iz başlat</string>
     <string name="osmand_background_plugin_description">GPS cihazını vaxtaşırı oyadaraq arxa fon (ekran sönülü) rejimində naviqasiya və izləməni aktivləşdirmək üçün parametrləri göstərir.</string>
     <string name="dropbox_plugin_description">Dropbox qoşması sizə izləri və səs/video qeydlərini Dropbox hesabınızla sinxronlaşdırmağa imkan verir.</string>

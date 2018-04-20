@@ -915,25 +915,11 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
     <string name="monitoring_control_start">GPX</string>
     <string name="rendering_attr_noAdminboundaries_name">Grenzen</string>
 	<string name="rendering_attr_noAdminboundaries_description">Geen weergave van regio- en provinciegrenzen (grensniveaus 5-9)</string>
-	
-    
-    
-	<string name="index_srtm_parts">gedeelten</string>
-    <string name="index_srtm_ele">Hoogtelijnen</string>
-    <string name="srtm_plugin_description">"Toon contourlijnen en een reliëflaag over de normale kaart. Uitermate praktisch voor sporters, wandelaars, trekkers, en iedereen die geïnteresseerd is in de hoogteverschillen van een landschap.
-\n
-\nDe wereldwijde gegevens (van 70 graden noorderbreedte tot 70 graden zuiderbreedte) zijn gebaseerd op metingen door SRTM (Shuttle Radar Topography Mission) en ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), een beeldvormend instrument aan boord van de satelliet Terra, het vlaggeschip van NASA\'s Earth Observing System. ASTER is een samenwerkingsverband tussen NASA, het Japanse Ministerie van Economie, Handel en Industrie (METI), en het Japan Space Systems (J-spacesystems). "</string>
-    <string name="srtm_plugin_name">Hoogtelijnen</string>
+
+
     <string name="download_select_map_types">Andere kaarten</string>
-    <string name="download_srtm_maps">Hoogtelijnen</string>
 
 
-    <string name="osmand_srtm_short_description_80_chars">OsmAnd-plugin voor offline hoogtelijnen</string>
-    <string name="osmand_srtm_long_description_1000_chars">"Toon contourlijnen en een reliëflaag over de normale kaart. Uitermate praktisch voor sporters, wandelaars, trekkers, en iedereen die geïnteresseerd is in de hoogteverschillen van een landschap.
-\n
-\nDe wereldwijde gegevens (van 70 graden noorderbreedte tot 70 graden zuiderbreedte) zijn gebaseerd op metingen door SRTM (Shuttle Radar Topography Mission) en ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), een beeldvormend instrument aan boord van de satelliet Terra, het vlaggeschip van NASA\'s Earth Observing System. ASTER is een samenwerkingsverband tussen NASA, het Japanse Ministerie van Economie, Handel en Industrie (METI), en het Japan Space Systems (J-spacesystems). "</string>
-    
-    
     <string name="map_widget_distancemeasurement">Afstandsmeting</string>
 
 
@@ -942,9 +928,7 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
     <string name="recording_context_menu_play">Afspelen</string>
     <string name="av_widget_action_descr">Kies standaardactie voor widget</string>
     <string name="av_widget_action">Standaard widget-actie</string>
-    <string name="srtm_paid_version_msg">Overweeg om de hoogtelijnen-plugin (\"Contour lines\") te kopen in de Play-store om verdere ontwikkeling te ondersteunen.</string>
-    <string name="srtm_paid_version_title">Hoogtelijnen-Plugin</string>
-    
+
     <string name="intermediate_points_change_order">Volgorde wijzigen</string>
     <string name="dropbox_plugin_description">De Dropbox-Plugin kan tracks en Audio/Video-notities synchroniseren met je Dropbox-account.</string>
     <string name="dropbox_plugin_name">Dropbox-Plugin</string>
@@ -955,9 +939,7 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
     <string name="precise_routing_mode">Nauwkeurige routeberekening (alpha)</string>
 
     <string name="support_new_features_descr">Doe een donatie om OsmAnd uit te laten breiden met nieuwe functies</string>
-	
-    <string name="download_hillshade_maps">Reliëfschaduwkaarten</string>
-    
+
     <string name="av_use_external_camera_descr">Gebruik de systeemapplicatie voor Foto\'s</string>
     <string name="av_use_external_camera">Gebruik de camera-applicatie</string>
     <string name="index_name_openmaps">OpenMaps.eu</string>
@@ -971,7 +953,6 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
     <string name="item_unchecked">niet aangevinkt</string>
     <string name="access_arrival_time">Aankomsttijd</string>
     <string name="map_widget_gps_info">GPS info</string>
-    <string name="layer_hillshade">Reliëfweergave</string>
 
 
     <string name="hno">Huisnummer</string>
@@ -999,8 +980,7 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
     <string name="use_magnetic_sensor">Gebruik magnetische sensor</string>
     <string name="use_kalman_filter_compass_descr">Verminder storingen in het kompas (maakt de kompasweergave langzamer)</string>
     <string name="use_kalman_filter_compass">Gebruik Kalman-filter</string>
-    <string name="local_indexes_cat_srtm">Hoogtelijnen</string>
-	<string name="wait_current_task_finished">Wacht alsjeblieft tot de huidige taak klaar is</string>
+    <string name="wait_current_task_finished">Wacht alsjeblieft tot de huidige taak klaar is</string>
     <string name="delete_point">Verwijder punt</string>
     <string name="plugin_distance_point_time">tijd</string>
     <string name="plugin_distance_point_hdop">nauwkeurigheid</string>
@@ -1840,8 +1820,6 @@ Lengtegraad:\t\t%2$s</string>
     <string name="regions">Regio\'s</string>
     <string name="region_maps">Kaarten van regio\'s</string>
     <string name="world_maps">Wereldkaarten</string>
-    <string name="hillshade_layer_disabled">Reliëfschaduw uitgeschakeld</string>
-    <string name="srtm_plugin_disabled">Hoogtelijnen uitgeschakeld</string>
     <string name="favorite_category_add_new">Categorie toevoegen</string>
     <string name="favorite_category_select">Kies categorie</string>
     <string name="default_speed_system_descr">Eenheid voor de snelheid instellen.</string>
@@ -2012,7 +1990,6 @@ Lengtegraad:\t\t%2$s</string>
     <string name="rendering_attr_roadStyle_description">Stijl van wegen</string>
     <string name="poi_dialog_reopen">Heropenen</string>
 	<string name="activate_seamarks_plugin">Activeer de Zeebakens-plugin</string>
-    <string name="activate_srtm_plugin">Activeer de Hoogtelijnen-plugin</string>
     <string name="get_full_version">Volledige versie</string>
     <string name="save_poi_without_poi_type_message">Deze POI echt bewaren zonder het type aan te geven?</string>
     <string name="poi_context_menu_modify_osm_change">Verander OSM-wijziging</string>
@@ -2532,7 +2509,6 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="fonts_header">Lettertypes voor de kaart</string>
     <string name="do_not_show_startup_messages_desc">Onderdruk meldingen van app-aanbiedingen en speciale lokale gebeurtenissen.</string>
     <string name="full_version_thanks">Dank voor het aanschaffen van de volledige versie van OsmAnd!</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Heuvelachtige wegen</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Minder heuvelachtig</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Voorkeur voor vlakke wegen</string>
     <string name="routing_attr_driving_style_speed_name">Kortere routes</string>
@@ -2553,13 +2529,8 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="routing_attr_relief_smoothness_factor_name">Kies voorkeur voor hoogteverschillen</string>
     <string name="shared_string_paused">In pauze</string>
     <string name="lang_ber">Berbers</string>
-    <string name="hillshade_menu_download_descr">Om reliëfschaduw weer te geven, moet je de reliëfschaduwkaart voor deze regio downloaden.</string>
-    <string name="hillshade_purchase_header">Om reliëfschaduw op de kaart weer te geven, moet je de Hoogtelijnen-plugin kopen en installeren.</string>
     <string name="hide_from_zoom_level">Niet tonen vanaf zoom-niveau</string>
-    <string name="srtm_menu_download_descr">Download de hoogtelijnenkaart voor deze regio om hoogtelijnen te zien.</string>
     <string name="shared_string_plugin">Plugin</string>
-    <string name="srtm_purchase_header">Om hoogtelijnen weer te geven, moet je de Hoogtelijnen-plugin kopen em installeren.</string>
-    <string name="srtm_color_scheme">Kleurschema</string>
     <string name="show_from_zoom_level">Toon vanaf dit zoom-niveau</string>
     <string name="routing_attr_allow_private_name">Privé-wegen toestaan</string>
     <string name="routing_attr_allow_private_description">Ga ook over privé-terreinen.</string>

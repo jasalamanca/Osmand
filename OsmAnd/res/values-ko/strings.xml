@@ -954,8 +954,7 @@
     <string name="favourites_list_activity">즐겨찾기 선택</string>
     <string name="local_openstreetmap_act_title">OSM 대량수정</string>
     <string name="available_downloads_left">"다운로드 할 파일  %1$d 가능"</string>
-    
-	<string name="layer_hillshade">음영기복 레이어</string>
+
     <string name="map_widget_gps_info">GPS 정보</string>
     <string name="access_arrival_time">도착 시간</string>
     <string name="item_checked">확인</string>
@@ -963,11 +962,8 @@
     <string name="prefer_motorways">전용도로 선호</string>
 	<string name="prefer_in_routing_title">선호…</string>
 	<string name="prefer_in_routing_descr">전용도로 선호</string>
-    
-    <string name="download_hillshade_maps">음영 오버레이</string>
-    
-    
-    <string name="local_indexes_cat_srtm">등고선 데이터</string>
+
+
     <string name="stop_routing_confirm">운행을 중지하시겠습니까 ?</string>
     <string name="clear_dest_confirm">도착지 (및 경유지) 를 지우겠습니까?</string>
     <string name="precise_routing_mode_descr">고장없이 정확한 경로를 계산(라우팅) 할 수 있습니다. 현 단계에서는 거리가 한정되어있고 게다가 느립니다.</string>
@@ -976,8 +972,6 @@
 	<string name="dropbox_plugin_description">Dropbox 플러그인은 Dropbox 계정으로 GPX경로와 소리/영상 노트를 동기화 할 수 있습니다 .</string>
     <string name="dropbox_plugin_name">드롭박스 플러그인</string>
     <string name="intermediate_points_change_order">순서 변경</string>
-    <string name="srtm_paid_version_msg">등고선 추가 개발을 지원하기 위해 구글플레이에서 플러그인을 구입하시기 바랍니다 .</string>
-    <string name="srtm_paid_version_title">등고선 플러그인</string>
     <string name="av_def_action_choose">요청에 대한 선택</string>
     <string name="av_widget_action_descr">기본 위젯의 동작을 선택합니다</string>
     <string name="av_widget_action">기본 위젯 작업</string>
@@ -985,18 +979,10 @@
     <string name="av_use_external_camera">카메라 앱을 사용</string>
 	<string name="recording_delete_confirm">이 기록을 삭제하시겠습니까 ?</string>
 	<string name="recording_context_menu_play">재생</string>
-	<string name="osmand_srtm_short_description_80_chars">오프라인 등고선에 대한 OsmAnd 플러그인</string>
     <string name="map_widget_distancemeasurement">거리 측정</string>
 
-    <string name="index_srtm_parts">부분</string>
-    <string name="index_srtm_ele">등고선</string>
-    <string name="srtm_plugin_description">"오프라인 등고선 과 음영을 다운로드하기 위해 외부플러그인을 이용합니다 (설정→지도 관리→다운로드→ 원하는 지도 유형 선택). OsmAnd 오프라인 지도에서 조합하여 표시할 수 있습니다.
-\n↵\n↵\n이 플러그인은 등고선 오버레이와 음영레이어 모두 제공합니다. OsmAnd 오프라인 지도의 상단에 표시 할 수 있습니다. 이 기능은  운동선수, 하이커, 트레커등 음영에 관심이 있는 사람들이 즐겨 사용할 것이다.
-\n↵\n↵\n(70도 북쪽과 남쪽 70도 사이의) 글로벌 데이터는  SRTM (Shuttle Radar Topography Mission:셔틀 레이더 지형 미션)과 ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer:고급 우주선 열 방출 및 반사 복사계)에 의한 측정을 기반으로 합니다, 테라 온보드 영상 측정, NASA의 지구 관찰 시스템의 주력 위성 . ASTER는 NASA, 일본 경제 산업성(METI), 일본 우주 시스템 (J-spacesystems) 사이의 협력적인 노력의 결과입니다. "</string>
-    <string name="srtm_plugin_name">등고선</string>
     <string name="download_select_map_types">다른 지도</string>
     <string name="download_roads_only_item">도로 전용</string>
-    <string name="download_srtm_maps">등고선</string>
     <string name="download_regular_maps">일반 지도</string>
     <string name="download_roads_only_maps">도로 전용 지도</string>
     
@@ -1240,9 +1226,7 @@
     <string name="voice_pref_title">음성</string>
     <string name="misc_pref_title">기타</string>
     <string name="localization_pref_title">현지화</string>
-    <string name="osmand_srtm_long_description_1000_chars">"이 플러그인은 등고선 오버레이와 음영레이어 모두 제공합니다. OsmAnd 오프라인 지도의 상단에 표시 할 수 있습니다. 이 기능은  운동선수, 하이커, 트레커등 음영에 관심이 있는 사람들이 즐겨 사용할 것이다.
-\n↵\n↵\n(70도 북쪽과 남쪽 70도 사이의) 글로벌 데이터는  SRTM (Shuttle Radar Topography Mission:셔틀 레이더 지형 미션)과 ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer:고급 우주선 열 방출 및 반사 복사계)에 의한 측정을 기반으로 합니다, 테라 온보드 영상 측정, NASA의 지구 관찰 시스템의 주력 위성 . ASTER는 NASA, 일본 경제 산업성(METI), 일본 우주 시스템 (J-spacesystems) 사이의 협력적인 노력의 결과입니다.\n\n\n이 플러그인은 OsmAnd 의 오프라인 지도에 표시할 수 있는 등고선을 제공합니다. (북쪽으로 70도 남쪽으로 70도 사이 ) 글로벌 데이터는 SRTM (셔틀 레이더 지형 미션 :Shuttle Radar Topography Mission) 과 ASTER (고급화된 Spaceborne 열 방출 및 반사 복사계 테라 온보드영상 기기 : Advanced Spaceborne Thermal Emission and Reflection Radiometer) NASA 의 주력 위성에 의한 측정을 기반으로 합니다. 지구 관측 시스템의 ASTER 는 NASA , 일본의 경제 산업성(METI ), 일본 우주 시스템 (J- spacesystems )의 장관 사이의 협력한 노력의 결실입니다. "</string>
-    
+
     <string name="interrupt_music_descr">음성안내를 할 때 음악을 중지</string>
 	<string name="interrupt_music">음악 중지</string>
 	
@@ -1899,9 +1883,7 @@
     
     <string name="region_maps">지역 지도</string>
     <string name="world_maps">세계 지도</string>
-    
-    <string name="hillshade_layer_disabled">Hillshade 레이어 비활성화</string>
-    <string name="srtm_plugin_disabled">등고선 비활성화</string>
+
     <string name="favorite_category_add_new">새로 추가</string>
     <string name="favorite_category_select">범주 선택</string>
     <string name="default_speed_system_descr">이동속도 표시형식을 지정합니다</string>
@@ -1935,7 +1917,6 @@
     <string name="show_free_version_banner_description">유로버전을 구입해도 여전히 무료 버전 배너를 볼 수 있습니다</string>
     <string name="buy">구입</string>
     <string name="activate_seamarks_plugin">Seamarks(수위선) 플러그인을 활성화해 주세요</string>
-    <string name="activate_srtm_plugin">SRTM 플러그인을 활성화해 주세요</string>
     <string name="later">나중에</string>
     <string name="get_full_version">정식 버전 구입</string>
     <string name="downloads">다운로드</string>

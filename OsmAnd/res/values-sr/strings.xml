@@ -80,7 +80,6 @@
 
     <string name="download_select_map_types">Остале мапе</string>
     <string name="download_roads_only_item">Само путеви</string>
-    <string name="download_srtm_maps">изохипсе</string>
     <string name="rendering_attr_noAdminboundaries_name">Сакриј границе</string>
 	
 	<string name="map_widget_max_speed">Ограничење брзине</string>
@@ -420,7 +419,6 @@
     <string name="regions">Области</string>
     <string name="region_maps">Карте великих области</string>
     <string name="world_maps">Светске карте</string>
-    <string name="srtm_plugin_disabled">Линије обриса су онемогућене</string>
     <string name="favorite_category_add_new">Додај ново</string>
     <string name="favorite_category_select">Изаберите врсту</string>
     <string name="default_speed_system_descr">Одредите мерне јединице за брзину</string>
@@ -608,10 +606,7 @@
     <string name="shared_string_online_maps">Карте на мрежи</string>
 	<string name="record_plugin_name">Снимци путовања</string>
 	<string name="osmo_plugin_name">Надгледање ОСМ-а</string>
-	<string name="srtm_paid_version_title">Прикључак обриса линија</string>
-    <string name="osmand_srtm_short_description_80_chars">Прикључак за приказ обриса линија ван мреже ОсмАнда</string>
-	<string name="srtm_plugin_name">Обрисне линије</string>
-	<string name="plugin_touringview_name">Возачки преглед катре</string>
+    <string name="plugin_touringview_name">Возачки преглед катре</string>
     <string name="osmand_distance_planning_plugin_description">Овај прикључак додаје справицу на приказу карте која омогућава стварање путањи тапкањем на карту, или употребу и измену постојећих датотека ГПИкс-а, ради зацртавања путовања и мерења растојања између тачака. Добијени излази се могу сачувати као датотеке ГПИкс-а које се касније могу користити као водичи.</string>
     <string name="shared_string_accessibility">Приступачност</string>
     <string name="osm_settings">Уређивање ОСМ-а</string>
@@ -886,10 +881,8 @@
     <string name="prefer_in_routing_title">Преност…</string>
     <string name="prefer_in_routing_descr">Предност путевима за моторна возила</string>
     <string name="download_wikipedia_maps">Википедија</string>
-    <string name="local_indexes_cat_srtm">Линије обриса</string>
     <string name="av_widget_action_descr">Изаберите подразумевану радњу справице</string>
     <string name="av_widget_action">Подразумевана радњу справице</string>
-    <string name="index_srtm_ele">Линије обриса</string>
     <string name="download_regular_maps">Уобичајена карта</string>
     <string name="download_roads_only_maps">Карта путева</string>
     <string name="map_widget_show_destination_arrow">Приказуј правац одредишта</string>
@@ -920,7 +913,6 @@
     <string name="map_widget_time">Време пристизања</string>
     <string name="shared_location">Дељени положај</string>
     <string name="release_2_2">" • Ново сучеље осетљиво на положај тапкања по карти или другим површима\n\n • Приказ карте се сада покреће непосредно осим ако је означено „Приказуј полетника при покретању“\n\n • Подешава се која карта и како се приказује у полетнику\n\n • Премошћава се полетник ако Вам се више свиђа управљање програмом изборником\n\n • За преузимање карата, области се могу непосредно изабрати тапкањем по светској карти\n\n • Претрага тачака занимања сада подржава одређеније упите\n\n • Побољшане су могућности тачака занимања и уређивања ОСМ-а\n\n • Прерађен је склоп преузимања карата и његово сучеље\n\n и још којешта... "</string>
-    <string name="hillshade_layer_disabled">Слој сенчења падина је онемогућен</string>
     <string name="traffic_warning_hazard"/>
     <string name="lang_al">Албански</string>
     <string name="lang_ar">Арапски</string>
@@ -974,11 +966,9 @@
     <string name="clear_dest_confirm">Да ли сигурно желите да очистите тачку одредишта (и пролазна одредишта)?</string>
     <string name="precise_routing_mode_descr">Омогући рачунање тачних путања без грешака. Радња је ограничена даљином и спора.</string>
     <string name="precise_routing_mode">Тачно рачунање путања (споро)</string>
-    <string name="srtm_paid_version_msg">Молим, размислите о куповини Линија обриса из продавнице ради давања подршке даљем развоју програма.</string>
     <string name="av_def_action_choose">Означи на захтев</string>
     <string name="av_use_external_camera_descr">Користи склопни програм за слике</string>
     <string name="av_use_external_camera">Користи програм камере</string>
-    <string name="index_srtm_parts">делови</string>
     <string name="rendering_attr_alpineHiking_description">Приказуј путеве према лествици САЦ-а</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Приказуј путеве према путањама ОСМЦ-а</string>
 
@@ -1299,8 +1289,6 @@
     <string name="rendering_attr_horseRoutes_name">Коњске стазе</string>
     <string name="share_geo">положај:</string>
     <string name="lang_br">Бретонски</string>
-    <string name="hillshade_menu_download_descr">Да бисте видели рељеф, потребно је да преузмете посебну карту овог подручја са сенчењем.</string>
-    <string name="hillshade_purchase_header">Да бисте видели сенчење рељефа на карти, потребно је да купите и уградите прикључак линија обриса</string>
     <string name="shared_string_plugin">Прикључак</string>
     <string name="display_zoom_level">Прриказ нивоа увеличања: %1$s</string>
     <string name="favorite_group_name">Име групе</string>
@@ -1330,9 +1318,6 @@
     <string name="sorted_by_distance">Разврстано по удаљености</string>
     <string name="search_favorites">Тражи омиљене</string>
     <string name="hide_from_zoom_level">Сакриј ниво увећања</string>
-    <string name="srtm_menu_download_descr">За приказ линија обриса на карти, треба преузети карту линије обриса ове области.</string>
-    <string name="srtm_purchase_header">За приказ линија обриса на карти, требате купити и уградити прикључак линија обриса</string>
-    <string name="srtm_color_scheme">Образац боја</string>
     <string name="show_from_zoom_level">Приказ од разине увећања</string>
     <string name="routing_attr_allow_private_name">Дозволи лични приступ</string>
     <string name="routing_attr_allow_private_description">Дозволи приступ областима личних поседа.</string>
@@ -1371,7 +1356,6 @@
     <string name="do_not_show_startup_messages">Не приказуј поруке при покретању</string>
     <string name="do_not_show_startup_messages_desc">Потискује приказ попуста у програму и посебне обласне поруке догађаја.</string>
     <string name="full_version_thanks">Хвала Вам за куповину пуног издања Османда!</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Брдовито</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Мање брдовито</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Равно</string>
     <string name="routing_attr_driving_style_speed_name">Краће руте</string>
@@ -1422,7 +1406,6 @@
     <string name="daynight_mode_sensor">Сензор светла</string>
     <string name="daynight">Дневни/ноћни режим рада</string>
     <string name="none_point_error">Молим додајте бар једну тачку.</string>
-    <string name="download_hillshade_maps">Сенке брда</string>
     <string name="offline_edition">Уређивање ван мреже</string>
     <string name="quick_action_new_action">Додај акцију</string>
     <string name="quick_action_add_favorite">Додај омиљено</string>

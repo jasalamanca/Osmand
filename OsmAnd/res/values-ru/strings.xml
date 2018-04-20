@@ -14,12 +14,7 @@
     <string name="quick_action_showhide_osmbugs_descr">Нажатие на кнопку действия отобразит/скроет заметки OSM с карты.</string>
     <string name="sorted_by_distance">Отсортировано по расстоянию</string>
     <string name="search_favorites">Поиск в избранных</string>
-    <string name="hillshade_menu_download_descr">Для того, чтобы отобразить затенение рельефа, вам нужно загрузить специальную карту для этой области.</string>
-    <string name="hillshade_purchase_header">Для того, чтобы отобразить затенение рельефа, вам нужно приобрести и установить плагин \"Contour Lines\"</string>
-    <string name="srtm_menu_download_descr">Для того, чтобы отобразить линии контуров рельефа, вам нужно загрузить специальную карту для этой области.</string>
     <string name="shared_string_plugin">Плагин</string>
-    <string name="srtm_purchase_header">Для того, чтобы отобразить линии контуров рельефа, вам нужно приобрести и установить плагин \"Contour Lines\"</string>
-    <string name="srtm_color_scheme">Цветовая схема</string>
     <string name="show_from_zoom_level">Отображать с масштаба</string>
     <string name="animate_my_location">Анимация моего положения</string>
     <string name="animate_my_location_desc">Включить анимацию прокрутки карты с моим положением во время навигации.</string>
@@ -74,7 +69,6 @@
     <string name="quick_action_add_first_intermediate_desc">Нажатие на кнопку действия добавит по центру экрана первую промежуточную точку маршрута.</string>
     <string name="no_overlay">Нет покрытия</string>
     <string name="no_underlay">Нет подложки</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Холмистый</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Менее холмистый</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Равнинный</string>
     <string name="routing_attr_driving_style_speed_name">Короткие маршруты</string>
@@ -280,22 +274,13 @@
     <string name="lang_fy">Западнофризский</string>
     <string name="lang_als">Албанский (тоскский)</string>
     <string name="rendering_attr_hideProposed_name">Планируемые объекты</string>
-    
-    
-    <string name="srtm_plugin_description">Этот плагин обеспечивает как наложение контурных линий, так и отображения затеняющего слоя рельефа поверх стандартных карт OsmAnd. Эта функция высоко оценится спортсменами, туристами, путешественниками и всеми, кто заинтересован в рельефной структуре ландшафта.
-\n
-\nГлобальные данные (между 70 градусами на севере и 70 градусами на юге) основываются на измерениях SRTM (Shuttle Radar Topography Mission) и ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer) — инструментом визуализации Terra, флагманского спутника Системы Наблюдения Земли NASA. ASTER является результатом совместных усилий NASA, министерства экономики Японии, торговли и промышленности (METI), а также Космических Систем Японии (J-spacesystems).</string>
-    <string name="srtm_paid_version_msg">Рассмотрите, пожалуйста, покупку плагина \"Линии высот\" в Google Play, чтобы поддержать последующую разработку.</string>
-    <string name="srtm_paid_version_title">Линии высот</string>
+
+
     <string name="av_widget_action_descr">Выбрать действие по умолчанию для виджета.</string>
     <string name="av_widget_action">Действие по умолчанию для виджета</string>
     <string name="recording_delete_confirm">Вы хотите удалить эту запись?</string>
     <string name="recording_context_menu_play">Проиграть</string>
-    <string name="osmand_srtm_short_description_80_chars">OsmAnd плагин для линий высот</string>
     <string name="map_widget_distancemeasurement">Измерение расстояний</string>
-    <string name="index_srtm_parts">частей</string>
-    <string name="index_srtm_ele">Линии высот</string>
-    <string name="srtm_plugin_name">Линии высот</string>
     <string name="rendering_attr_noAdminboundaries_name">Границы</string>
     <string name="rendering_attr_noAdminboundaries_description">Скрыть региональные границы (admin levels 5-9).</string>
     <string name="no_buildings_found">Здания не найдены.</string>
@@ -1096,20 +1081,15 @@
     <string name="map_widget_max_speed">Ограничение скорости</string>
     <string name="monitoring_control_start">GPX</string>
     <string name="download_select_map_types">Прочие карты</string>
-    <string name="download_srtm_maps">Карты SRTM</string>
     <string name="intermediate_points_change_order">Изменить порядок</string>
     <string name="av_def_action_picture">Сделать фото</string>
     <string name="dropbox_plugin_description">Плагин Dropbox позволяет синхронизировать треки и видео/аудио заметки с вашим аккаунтом Dropbox.</string>
     <string name="dropbox_plugin_name">Плагин Dropbox</string>
-    <string name="osmand_srtm_long_description_1000_chars">Плагин обеспечивает наложение контурных линии и (рельефа) затемняющего слоя, которые будут отображаться поверх стандартных карт OsmAnd. Эта функция высоко оценится спортсменами, туристами, путешественниками и всеми, кто заинтересован в рельефной структуре ландшафта.
-\n
-\nГлобальные данные (между 70 градусов на севере и 70 градусов на юге) основываются на измерениях SRTM (Shuttle Radar Topography Mission) и ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), инструментом визуализации Terra, флагманского спутника Земли системы наблюдения NASA. ASTER является результатом совместных усилий NASA, министерства экономики Японии, торговли и промышленности (METI), космических систем Японии (J-spacesystems).</string>
     <string name="stop_routing_confirm">Вы уверены, что хотите остановить навигацию?</string>
     <string name="clear_dest_confirm">Вы уверены, что хотите удалить пункт назначения (и промежуточные пункты)?</string>
     <string name="precise_routing_mode">Точный маршрут (alpha)</string>
     <string name="support_new_features_descr">Пожертвуйте, чтобы увидеть новые опции реализованными в приложении.</string>
     <string name="precise_routing_mode_descr">Включите, для расчёта точных маршрутов без затруднений. Всё ещё ограниченн расстоянием и медленный.</string>
-    <string name="download_hillshade_maps">Затенение рельефа</string>
     <string name="av_use_external_camera_descr">Использовать системное приложение для фото.</string>
     <string name="av_use_external_camera">Использовать приложение Камера</string>
     <string name="index_name_openmaps">OpenMaps - Европа</string>
@@ -1121,7 +1101,6 @@
     <string name="access_arrival_time">Время прибытия</string>
     <string name="map_widget_gps_info">Информация GPS</string>
     <string name="max_speed_none">нет</string>
-    <string name="layer_hillshade">Слой рельефа местности</string>
     <string name="street_name">Название улицы</string>
     <string name="hno">Номер дома</string>
     <string name="download_using_mobile_internet">В настоящее время нет соединения по Wi-Fi. Хотите использовать текущее интернет-соединение для загрузки?</string>
@@ -1170,7 +1149,6 @@
 \n* Нажмите на виджет измерения, чтобы увидеть больше действий.</string>
     <string name="use_magnetic_sensor_descr">Использовать магнитный датчик вместо датчика ориентации.</string>
     <string name="other_location">Другие</string>
-    <string name="local_indexes_cat_srtm">Контурные линии</string>
     <string name="shared_string_downloading">Загрузка</string>
     <string name="osmand_distance_planning_plugin_description">Плагин добавляет виджет на экран карты, позволяющий создавать маршруты, нажав на карте, а также использовать или изменять существующие файлы GPX, планировать поездку и измерять расстояние между точками. Результаты могут быть сохранены в виде файла GPX, который впоследствии может быть использован для навигации.</string>
     <string name="context_menu_item_destination_point">Установить как пункт назначения</string>
@@ -1953,12 +1931,9 @@
     <string name="favorite_category_dublicate_message">Категория с таким названием уже существует. Введите другое название.</string>
     <string name="favorite_category_name">Название категории</string>
     <string name="favorite_category_add_new_title">Добавить новую категорию</string>
-    <string name="hillshade_layer_disabled">Слой рельефа местности отключен</string>
-    <string name="srtm_plugin_disabled">Контурные линии отключены</string>
     <string name="roads">Дороги</string>
     <string name="buy">Купить</string>
     <string name="activate_seamarks_plugin">Пожалуйста, активируйте плагин морские карты</string>
-    <string name="activate_srtm_plugin">Пожалуйста, активируйте плагин SRTM</string>
     <string name="later">Позже</string>
     <string name="get_full_version">Полная версия</string>
     <string name="downloads">Загрузки</string>

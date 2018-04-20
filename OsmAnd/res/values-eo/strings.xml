@@ -232,8 +232,6 @@
 \n • Multe da plibonigoj ĉe mapa kunteksta menuo ekz. kunteksta elserĉado de adreso. 
 \n 
 \n kaj pli…</string>
-    <string name="srtm_plugin_disabled">Nivelkurboj kaŝitaj</string>
-    <string name="hillshade_layer_disabled">Tavolo de nivel-ombrumo kaŝita</string>
     <string name="favorite_category_add_new">Aldoni novan</string>
     <string name="favorite_category_select">Elekti kategorion</string>
     <string name="default_speed_system_descr">Difini unuon de rapido.</string>
@@ -424,8 +422,7 @@
     <string name="about_settings_descr">Informoj, permesiloj, kontribuintoj</string>
     <string name="choose_osmand_theme">Etoso</string>
     <string name="choose_osmand_theme_descr">Elekti etoson de la aplikaĵo.</string>
-    <string name="local_indexes_cat_srtm">Nivelkurboj</string>
-    <string name="osmo_group_information_desc">- Por krei grupon, bonvolu nomi kaj priskribi ĝin 
+    <string name="osmo_group_information_desc">- Por krei grupon, bonvolu nomi kaj priskribi ĝin
 \n - Per la aplikaĵo oni povas krei nur grupoj de simpla tipo, legu pli ĉe la retpaĝo https://osmo.mobi/g/new 
 \n - Per retpaĝo vi povas administri grupon, loki kursojn kaj punktojn videblajn por ĉiujn 
 \n - Ni ne rekomendas uzi gropon nur de unu persono, se tiu ne estas intereseja gropo 
@@ -700,15 +697,6 @@ Lon: %2$s</string>
     <string name="osmo_auto_connect_descr">Aŭtomate konekti kun servo post starto de la aplikaĵo.</string>
     <string name="osmo_start_service">OsMo servo</string>
     <string name="osmo_gpx_track_downloaded">Elŝutis %1$s OsMo-ajn kursojn.</string>
-    <string name="srtm_paid_version_title">Nivelkurba kromprogramo</string>
-    <string name="osmand_srtm_short_description_80_chars">OsmAnd-kromprogramo por desegni nivelkurbojn eksterrete</string>
-	<string name="srtm_plugin_name">Nivelkurboj</string>
-	<string name="osmand_srtm_long_description_1000_chars">Tiu ĉi kromprogramo ebligas vidigi kaj tavolon de nivelkurboj kaj tavolon de nivel-ombrumo (reliefo) supre normaj OsmAnd-mapoj. Tiu ĉi eblo estas dezirata de atletoj, migrantoj, turistoj kaj ĉiuj scivolaj en reliefa strukturo de tero. 
-\n 
-\nLa mondaj datumoj (inter 70-a norda kaj 70-a suda grado de latitudo) estas bazitaj sur mezuroj de SRTM (Shuttle Radar Topography Mission) kaj de ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), bildiga aparato en la Terra - ĉefa satelito de Sistemo de Tera Observado de NASA. ASTER estas kunlaboraĵo de NASA, de Japana Ministerio pri Ekonomio, Komerco kaj Industrio (METI) kaj de Japanaj Spacaj Sistemoj (J-spacesystems).</string>
-    <string name="srtm_plugin_description">Tiu ĉi kromprogramo ebligas vidigi kaj tavolon de nivelkurboj kaj tavolon de nivel-ombrumo (reliefo) supre normaj OsmAnd-mapoj. Tiu ĉi eblo estas dezirata de atletoj, migrantoj, turistoj, kaj ĉiuj scivolaj en reliefa strukturo de tero. (Bonvolu rimarki, ke datumoj de nivelkurboj kaj nivel-ombrumo estas elŝuteblaj aparte post instalado de kromprogramo.) 
-\n 
-\nLa mondaj datumoj (inter 70-a norda kaj 70-a suda grado de latitudo) estas bazitaj sur mezuroj de la SRTM (Shuttle Radar Topography Mission) kaj de la ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), bildiga aparato en la Terra - ĉefa satelito de Sistemo de Tera Observado de NASA. ASTER estas kunlaboraĵo de NASA, de Japana Ministerio pri Ekonomio, Komerco kaj Industrio (METI) kaj de Japanaj Spacaj Sistemoj (J-spacesystems).</string>
     <string name="no_index_file_to_download">Elŝutoj ne trovitaj, bonvolu kontroli vian retkonekton.</string>
     <string name="select_index_file_to_download">Trovis nenion. Se vi ne povas trovi vian regionon, vi povas fari ĝin mem (rigardu http://osmand.net).</string>
     <string name="none_selected_gpx">Neniu GPX-dosiero elektita. Por elekti premtenu disponeblan kurson.</string>
@@ -1042,7 +1030,6 @@ Lon: %2$s</string>
     <string name="select_address_activity">Elekti adreson</string>
     <string name="favourites_list_activity">Elekti ŝatatan</string>
     <string name="local_openstreetmap_act_title">Modifoj de OSM</string>
-    <string name="layer_hillshade">Tavolo de nivel-ombrumo</string>
     <string name="map_widget_gps_info">GPS-informoj</string>
     <string name="access_arrival_time">Alvena tempo</string>
     <string name="item_checked">markita(j)</string>
@@ -1053,7 +1040,6 @@ Lon: %2$s</string>
     <string name="max_speed_none">nenia</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
     <string name="download_wikipedia_maps">Vikipedio</string>
-    <string name="download_hillshade_maps">Nivel-ombrumoj</string>
     <string name="stop_routing_confirm">Ĉu vi certe volas ĉesigi navigadon?</string>
     <string name="clear_dest_confirm">Ĉu vi certe volas forviŝi la celon (kaj intercelojn)?</string>
     <string name="precise_routing_mode">Precizaj kursoj (alfa)</string>
@@ -1062,7 +1048,6 @@ Lon: %2$s</string>
     <string name="dropbox_plugin_description">La kromprogramo Dropbox ebligas al vi samtempigi kursojn kaj sonajn/videajn notojn kun via Dropbox-a konto.</string>
     <string name="dropbox_plugin_name">Dropbox kromprogramo</string>
     <string name="intermediate_points_change_order">Ŝanĝi ordon</string>
-    <string name="srtm_paid_version_msg">Bonvolu konsideri aĉeti la kromprogramon ‘Nivelkurboj’ en la Market por subteni pluan disvolviĝon.</string>
     <string name="av_def_action_choose">Elekti laŭvole</string>
     <string name="av_widget_action_descr">Elekti implicitan agon por fenestraĵo.</string>
     <string name="av_widget_action">Implicita fenestraĵo ago</string>
@@ -1071,11 +1056,8 @@ Lon: %2$s</string>
     <string name="recording_delete_confirm">Ĉu vi volas forigi tiun ĉi registraĵon?</string>
     <string name="recording_context_menu_play">Ludi</string>
     <string name="map_widget_distancemeasurement">Mezuro de distanco</string>
-    <string name="index_srtm_parts">partoj</string>
-    <string name="index_srtm_ele">Nivelkurboj</string>
     <string name="download_select_map_types">Aliaj mapoj</string>
     <string name="download_roads_only_item">Nur vojoj</string>
-    <string name="download_srtm_maps">Nivelkurboj</string>
     <string name="download_regular_maps">Plena mapo</string>
     <string name="download_roads_only_maps">Nur-voja mapo</string>
     <string name="rendering_attr_alpineHiking_name">Montogrimpada skalo (SAC)</string>
@@ -1923,7 +1905,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="show_free_version_banner">Montri reklamaĵon de senpaga versio</string>
     <string name="show_free_version_banner_description">Montri reklamaĵon de senpaga versio, eĉ se vi havas pagan version.</string>
     <string name="activate_seamarks_plugin">Bonvolu aktivigi Lumturojn kromprogramon</string>
-    <string name="activate_srtm_plugin">Bonvolu aktivigi SRTM kromprogramon</string>
     <string name="later">Poste</string>
     <string name="get_full_version">Plena versio</string>
     <string name="downloads">Elŝutoj</string>
@@ -2315,7 +2296,6 @@ Indikas lokon:  %1$s x %2$s"</string>
     <string name="shared_string_slope">Klineco</string>
     <string name="lang_ber">Berbera</string>
     <string name="relief_smoothness_factor_descr">Preferi terenon: ebenan aŭ malebenan.</string>
-    <string name="routing_attr_relief_smoothness_factor_hills_name">Malebena</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Malpli ebena</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">Ebena</string>
     <string name="routing_attr_driving_style_speed_name">Pli mallongaj vojoj</string>
@@ -2468,18 +2448,13 @@ Indikas lokon:  %1$s x %2$s"</string>
     <string name="favorite_group_name">Grupa nomo</string>
     <string name="change_color">Ŝanĝi koloron</string>
     <string name="edit_name">Redakti nomon</string>
-    <string name="srtm_color_scheme">Kolor-skemo</string>
     <string name="show_from_zoom_level">Vidigi de skal-nivelo</string>
     <string name="routing_attr_allow_private_name">Permesi privatan aliron</string>
     <string name="routing_attr_allow_private_description">Permesi aliron al privataj areoj.</string>
     <string name="display_zoom_level">Vidigi de skal-nivelo: %1$s</string>
     <string name="route_is_too_long_v2">Tiu ĉi kurso povas esti tro longa por kalkuli. Bonvolu aldoni intercelojn, se neniu rezulto estos trovita post 10 minutoj.</string>
     <string name="save_poi_too_many_uppercase">Nomo enhavas tro multe da grandaj literoj? Ĉu vi volas pluigi?</string>
-    <string name="srtm_menu_download_descr">Por vidi nivelkurbojn sur la mapo, vi devas elŝuti nivelkurban mapon de tiu ĉi regiono.</string>
     <string name="shared_string_plugin">Kromprogramo</string>
-    <string name="srtm_purchase_header">Por vidi nivelkurbojn sur la mapo, vi devas aĉeti kaj instali la kromprogramon ‘Nivelkurboj</string>
-    <string name="hillshade_menu_download_descr">Por vidi nivel-ombrumon sub la mapo, vi devas elŝuti nivel-ombruman mapon de tiu ĉi regiono.</string>
-    <string name="hillshade_purchase_header">Por vidi nivel-ombrumon sub la mapo, vi devas aĉeti kaj instali kromprogramon ‘Nivelkurboj</string>
     <string name="hide_from_zoom_level">Kaŝi de skal-nivelo</string>
     <string name="sorted_by_distance">Ordigitaj laŭ distanco</string>
     <string name="search_favorites">Serĉi en ŝatataj</string>

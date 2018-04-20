@@ -919,7 +919,6 @@
     
     
     <string name="max_speed_none">geen</string>
-    <string name="download_hillshade_maps">Heuwelskadu-oorleggings</string>
 
 
     <string name="stop_routing_confirm">Is jy seker jy wil die navigasie staak?</string>
@@ -930,8 +929,6 @@
     <string name="dropbox_plugin_description">Dropbox inlasmodule laat jou spore en oudio/video notas sinkroniseer met jou Dropbox rekening.</string>
     <string name="dropbox_plugin_name">Dropbox inlasmodule</string>
     <string name="intermediate_points_change_order">Verander volgorde</string>
-    <string name="srtm_paid_version_msg">Oorweeg dit asseblief om die kontoerlyn-inlasmodulen in die Market winkel te koop om verdere ontwikkeling te ondersteun.</string>
-    <string name="srtm_paid_version_title">Kontoerlyn inlasmodule</string>
     <string name="av_def_action_choose">Kies op versoek</string>
     <string name="av_widget_action_descr">Kies verstek programmetjie-aksie</string>
     <string name="av_widget_action">Verstek programmetjie-aksie</string>
@@ -942,22 +939,14 @@
 
     <string name="recording_context_menu_play">Speel</string>
     <string name="shared_string_control_start">begin</string>
-    <string name="osmand_srtm_short_description_80_chars">OsmAnd inlasmodule vir aflyn kontoerlyne</string>
-    <string name="osmand_srtm_long_description_1000_chars">Hierdie inlasmodule verskaf kontoerlyne wat in OsmAnd aflyn kaarte getoon kan word.Die wêreld inligting (van 70 grade noord tot 70 grade suid) is gebaseer op metings deur SRTM (Shuttle Radar Topography Mission)en ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer),`n beeld-instrument aanboord Terra, die vlagskip sateliet van NASA se Aarde Observasie Stelsel. ASTER is `n samewerkingsprojek tussen NASA, Japan se Ministerie van Ekonomie, Handel en Industrie (MEHI), en Japan Ruimte Stelsels (J-spacesystems).</string>
-    
-    
-    
-    
+
+
     <string name="map_widget_distancemeasurement">Afstandsmeting</string>
-    <string name="index_srtm_parts">dele</string>
-    <string name="index_srtm_ele">Kontoerlyne</string>
     <string name="download_select_map_types">Ander kaarte</string>
-    <string name="download_srtm_maps">Kontoerlyne</string>
     <string name="download_roads_only_item">Slegs paaie</string>
     <string name="download_roads_only_maps">Paaie-uitsluitlik kaarte</string>
     
 	<string name="rendering_attr_noAdminboundaries_name">Versteek grense</string>
-    <string name="srtm_plugin_name">Kontoerlyn inlasmodule</string>
     <string name="download_regular_maps">Algemene kaarte</string>
     <string name="rendering_attr_noAdminboundaries_description">Onderduk streeksgrense (adminvlk 5-9)</string>
     <string name="map_widget_max_speed">Snelheidsgrens</string>
@@ -968,11 +957,8 @@
     <string name="safe_mode_description">gebruik die toepassing in beskermde wyse (gebruik stadiger Android in plaas van inheemse kode).</string>
     <string name="safe_mode">Beskermde wyse</string>
     <string name="native_library_not_running">Die toepassing werk in beskermde wyse (skakel dit af in Instellings).</string>
-    <string name="srtm_plugin_description">Vergemoontlik dei aflaai van aflyn kontoerlyne en heuwelsakdus (\'Instellings\'-&gt; \'Inligtingsbestuur\' -&gt; \'Aflaai\' -&gt; Kies verlangde kaart-tipe).</string>
-    
-    
-    
-	
+
+
     <string name="route_descr_lat_lon">Breedtegraad %1$.3f, lengtegraad %2$.3f</string>
     
     
@@ -981,9 +967,8 @@
     
     <string name="support_new_features_descr">Maak donasies om die implementering van nuwe funksies in die toepassing moontlik te maak</string>
 	<string name="incomplete_locale">Onvolledig</string>
-    
-    
-	<string name="layer_hillshade">Heuwelskadu-vel</string>
+
+
     <string name="map_widget_gps_info">GPS inligting</string>
     
     <string name="index_name_openmaps">\\\'OpenMaps EU\\\'</string>
@@ -1019,7 +1004,6 @@
     <string name="use_kalman_filter_compass">Gebruik Kalman filter</string>
     <string name="use_magnetic_sensor_descr">Gebruik die magnetiese sensor om die kompas waarde te bepaal in plaas van die oriëntasie sensor</string>
     <string name="use_magnetic_sensor">Gebruik magnetiese sensor</string>
-    <string name="local_indexes_cat_srtm">Kontoer lyne inligting</string>
     <string name="shared_string_downloading">Aflaai besig …</string>
 	<string name="delete_point">Vee punt uit</string>
     <string name="plugin_distance_point_time">Tyd</string>

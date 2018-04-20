@@ -82,7 +82,6 @@
     <string name="shared_string_more_actions">Други действия</string>
 
 
-    <string name="layer_hillshade">Релеф на местността</string>
     <string name="map_widget_gps_info">GPS информация</string>
 
     <string name="access_arrival_time">Време на пристигане</string>
@@ -95,10 +94,7 @@
     <string name="max_speed_none">няма</string>
     <string name="index_name_openmaps">OpenMaps - Европа</string>
 
-    <string name="download_hillshade_maps">Оцветяване на релефа</string>
 
-
-    <string name="local_indexes_cat_srtm">Контурни линии</string>
     <string name="stop_routing_confirm">Наистина ли искате да спрете навигацията?</string>
     <string name="clear_dest_confirm">Наистина ли искате да изтриете крайната цел (и междинните точки)?</string>
     <string name="precise_routing_mode_descr">Прецизното изчисляване на маршрута. Все още е ограничено по дистанция и е по-бавно.</string>
@@ -108,8 +104,6 @@
     <string name="dropbox_plugin_name">Приставка Dropbox</string>
 
     <string name="intermediate_points_change_order">Смяна на реда</string>
-    <string name="srtm_paid_version_msg">Можете да закупите добавката Contour lines чрез Market и да подпомогнете нейното бъдещо развитие.</string>
-    <string name="srtm_paid_version_title">Добавка за контури (Contour lines)</string>
     <string name="av_def_action_choose">Избери при заявка</string>
     <string name="av_widget_action_descr">Изберете действие по подразбиране</string>
     <string name="av_widget_action">Действие по подразбиране</string>
@@ -120,18 +114,10 @@
     <string name="recording_context_menu_play">Старт</string>
     <string name="shared_string_control_stop">Стоп</string>
     <string name="shared_string_control_start">Старт</string>
-    <string name="osmand_srtm_short_description_80_chars">Добавка на OsmAnd за офлайн контурни линии</string>
-    <string name="osmand_srtm_long_description_1000_chars">"Тази добавка изчертава линии на релефа върху основните карти на OsmAnd. Това е особено полезно за туристи и хора интересуващи се от релефа на местността.\n\nГлобалната карта (между 70 градуса северна ширина и 70 градуса южна ширина) се базира на измервания от SRTM (Shuttle Radar Topography Mission) и ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), устройство за изображения на борда на Terra, най-добрият спътник на програмата на NASA Earth Observing System. ASTER е съвместен проект на NASA, Японското правителсто и японската компания Japan Space Systems (J-spacesystems). "</string>
     <string name="map_widget_distancemeasurement">Измерване на дистанции</string>
 
-    <string name="index_srtm_parts">части</string>
-    <string name="index_srtm_ele">Контури</string>
-    <string name="srtm_plugin_description">"Тази добавка осигурява показване на релефни контури върху офлайн картите на OsmAnd. Тази функционалност е много оценявана от спортисти, туристи, всички които се интересуват от ландшафта.
-\n\nГлобалните данни (между 70 градуса северна ширина и 70 градуса южна ширина) се основават на измервания от SRTM  и ASTER - радари намиращи се на борда на Terra - сателит на НАСА за наблюдение на НАСА. ASTER е съвместен проект между НАСА и Япония. "</string>
-    <string name="srtm_plugin_name">Контурни линии</string>
     <string name="download_select_map_types">Други карти</string>
     <string name="download_roads_only_item">Само пътища</string>
-    <string name="download_srtm_maps">Контури</string>
     <string name="download_regular_maps">Стандартна карта</string>
     <string name="download_roads_only_maps">Карта само с пътища</string>
 
@@ -1673,8 +1659,6 @@
     <string name="regions">Региони</string>
     <string name="region_maps">Карти на региони</string>
     <string name="world_maps">Световни карти</string>
-    <string name="hillshade_layer_disabled">Релефът на местността е изключен</string>
-    <string name="srtm_plugin_disabled">Контурните линии са изключени</string>
     <string name="favorite_category_add_new">Добавяне на нов</string>
     <string name="favorite_category_select">Изберете категория</string>
     <string name="default_speed_system_descr">Изберете мерна единица за скоростта (км/ч, м/с, …)</string>
@@ -1813,7 +1797,6 @@
     <string name="confirm_download_roadmaps">Сигурни ли сте, че искате да изтеглите карта само с пътища, въпреки че вече имате стандартната карта?</string>
     <string name="downloads">Изтегляния</string>
     <string name="get_full_version">Пълна версия</string>
-    <string name="activate_srtm_plugin">Моля, активирайте добавката SRTM</string>
     <string name="activate_seamarks_plugin">Моля, активирайте добавката за морски карти</string>
     <string name="buy">Купи</string>
     <string name="downloading_number_of_files">Изтегляне - %1$d файла</string>

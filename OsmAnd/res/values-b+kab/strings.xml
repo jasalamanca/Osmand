@@ -109,7 +109,6 @@
     <string name="plugin_distance_point_time">akud</string>
     <string name="max_speed_none">ulac</string>
     <string name="download_wikipedia_maps">Wikipedia</string>
-    <string name="index_srtm_parts">amuren</string>
     <string name="monitoring_control_start">GPX</string>
     <string name="no_route">Ulac abrid</string>
     <string name="map_widget_top_text">Isem n webrid</string>
@@ -318,7 +317,6 @@
     <string name="shared_string_permissions">Tisirag</string>
     <string name="shared_string_install">Sbedd</string>
     <string name="nothing_found">Ulac ayen yettwafen :(</string>
-    <string name="srtm_color_scheme">Initen n ugrudem n tedbelt</string>
     <string name="favorite_group_name">Isem n wegraw</string>
     <string name="shared_string_overview">Agzul</string>
     <string name="shared_string_in_name">"di  %1$s"</string>
