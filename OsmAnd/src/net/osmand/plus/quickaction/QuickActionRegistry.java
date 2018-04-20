@@ -11,9 +11,7 @@ import net.osmand.plus.openseamapsplugin.NauticalMapsPlugin;
 import net.osmand.plus.osmedit.OsmEditingPlugin;
 import net.osmand.plus.quickaction.actions.AddOSMBugAction;
 import net.osmand.plus.quickaction.actions.AddPOIAction;
-import net.osmand.plus.quickaction.actions.MapSourceAction;
 import net.osmand.plus.quickaction.actions.MapStyleAction;
-import net.osmand.plus.rastermaps.OsmandRasterMapsPlugin;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -78,11 +76,6 @@ public class QuickActionRegistry {
 				}
 			}
 
-			if (OsmandPlugin.getEnabledPlugin(OsmandRasterMapsPlugin.class) == null) {
-				if (action.type == MapSourceAction.TYPE) {
-					skip = true;
-				}
-			}
 			if (OsmandPlugin.getEnabledPlugin(OsmEditingPlugin.class) == null) {
 				if (action.type == AddPOIAction.TYPE) {
 					skip = true;

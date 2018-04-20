@@ -65,9 +65,6 @@
     <string name="osmand_service_descr">OsmAnd s\'exécute en tâche de fond lorsque l\'écran est éteint.</string>
 
 
-    <string name="switch_to_raster_map_to_see">Vous n\'avez pas actuellement de carte vectorielle pour cette position.\n\t\n\tVous pouvez en télécharger dans \'Paramètres\' → \'Données hors-ligne\', ou basculer sur les cartes en ligne via \'Paramètres\' → \'Sources de carte\' en activant le greffon des cartes en ligne.</string>
-
-
     <string name="download_files_not_enough_space">Il n\'y a pas suffisamment d\'espace pour télécharger %1$s MB (disponible : %2$s).</string>
     <string name="download_files_question_space">Souhaitez-vous télécharger {0} fichiers qui occuperont {1} Mo ? Actuellement {2} Mo sont disponibles.</string>
 
@@ -83,7 +80,6 @@
     <string name="auto_follow_location_enabled">Recentrage automatique activé.</string>
     <string name="pref_vector_rendering">Options pour l\'affichage vectoriel</string>
     <string name="pref_overlay">Sur-couche / Sous-couche</string>
-    <string name="pref_raster_map">Options pour la source des cartes</string>
     <string name="pref_vector_map">Options cartographie vectorielle</string>
     <string name="delete_confirmation_msg">Supprimer %1$s ?</string>
     <string name="city_type_suburb">Banlieue</string>
@@ -203,13 +199,10 @@
     <string name="shared_string_none">Aucun</string>
     <string name="map_overlay">Sur-couche de la carte</string>
     <string name="map_overlay_descr">Sélectionnez la sur-couche de carte.</string>
-    <string name="tile_source_already_installed">La Carte est déjà installée, les paramètres seront mis à jour.</string>
-    <string name="select_tile_source_to_install">Sélectionnez les cartes à installer ou à mettre à jour.</string>
     <string name="internet_not_available">Une connexion Internet est nécessaire pour cette opération. Celle-ci n\'est pas disponible actuellement.</string>
     <string name="install_more">Installer plus…</string>
 
 
-    <string name="level_to_switch_vector_raster_descr">Niveau de zoom minimum pour l\'utilisation des cartes vectorielles.</string>
     <string name="level_to_switch_vector_raster">Niveau de zoom vectoriel</string>
 
 
@@ -278,14 +271,10 @@
     <string name="poi_filter_for_tourists">Pour voyageurs</string>
     <string name="poi_filter_fuel">Carburant</string>
     <string name="poi_filter_namefinder">Recherche de points d\'intérêt en ligne</string>
-    <string name="reading_cached_tiles">Lecture des tuiles en cache…</string>
     <string name="version_index_is_big_for_memory">L\'index \'\'{0}\'\' est trop gros pour la mémoire</string>
     <string name="version_index_is_not_supported">La version de l\'\'index \'\'{0}\'\' n\'\'est pas supporté</string>
-    
-    
-    <string name="osmand_routing_experimental">La navigation hors-ligne OsmAnd est une fonction expérimentale ne fonctionnant pas pour une distance de plus de 20 km.
 
-Au-delà la navigation bascule automatiquement sur le service en ligne CloudMade.</string>
+
     <string name="specified_dir_doesnt_exist">Le dossier spécifié est introuvable.</string>
     <string name="application_dir">Dossier de stockage</string>
 
@@ -314,7 +303,6 @@ Au-delà la navigation bascule automatiquement sur le service en ligne CloudMade
     <string name="shared_string_refresh">Recharger</string>
     <string name="fast_route_mode">Itinéraire le plus rapide</string>
     <string name="fast_route_mode_descr">Activer pour calculer l\'itinéraire le plus rapide ou Désactiver pour calculer l\'itinéraire le plus économe en carburant</string>
-    <string name="tiles_to_download_estimated_size">Le zoom {0} télécharge {1} tuiles ({2} Mb)</string>
     <string name="shared_string_download_map">Télécharger une carte</string>
     <string name="select_max_zoom_preload_area">Sélectionnez le zoom maximum pour précharger la zone visible</string>
     <string name="maps_could_not_be_downloaded">Impossible de télécharger cette carte</string>
@@ -333,7 +321,6 @@ Au-delà la navigation bascule automatiquement sur le service en ligne CloudMade
     <string name="phone">Téléphone</string>
     <string name="download_type_to_filter">Filtre</string>
     <string name="use_high_res_maps">Carte haute résolution</string>
-    <string name="use_high_res_maps_descr">Ne pas étirer (et rendre flou) les tuiles de carte sur les écrans haute résolution.</string>
     <string name="unknown_location">Position inconnue</string>
 
     <string name="context_menu_item_search_transport">Chercher un transport public</string>
@@ -479,7 +466,6 @@ Au-delà la navigation bascule automatiquement sur le service en ligne CloudMade
     <string name="search_offline_address">Hors-ligne</string>
     <string name="search_online_address">Internet</string>
     <string name="max_level_download_tile">Niveau de zoom maximum</string>
-    <string name="max_level_download_tile_descr">Sélectionnez un niveau de zoom maximum pour le téléchargement des cartes (tuiles) en ligne</string>
     <string name="route_general_information">Distance totale : %1$s, Durée estimée : %2$d h %3$d min.</string>
     <string name="router_service_descr">Sélectionnez un service de navigation, hors-ligne ou en ligne</string>
     <string name="router_service">Service de navigation</string>
@@ -551,7 +537,6 @@ Au-delà la navigation bascule automatiquement sur le service en ligne CloudMade
     <string name="save_track_to_gpx_descrp">Une trace GPX est enregistrée automatiquement dans le dossier des traces pendant l\'itinéraire</string>
     <string name="save_track_to_gpx">Enregistrer automatiquement la trace en cours de navigation</string>
     <string name="update_tile">Mettre à jour la carte</string>
-    <string name="reload_tile">Recharger carreau</string>
     <string name="mark_point">Destination</string>
 
 
@@ -569,15 +554,12 @@ Au-delà la navigation bascule automatiquement sur le service en ligne CloudMade
     <string name="map_view_3d">Vue 3D</string>
     <string name="show_poi_over_map_description">Afficher sur la carte la dernière sur-couche de points d\'intérêt sélectionnée.</string>
     <string name="show_poi_over_map">Afficher la sur-couche points d\'intérêt</string>
-    <string name="map_tile_source_descr">Sélectionnez la source des cartes dites tuiles (en ligne ou en cache).</string>
-    <string name="map_tile_source">Carte en ligne (tuiles)</string>
     <string name="map_source">Source cartographique</string>
     <string name="use_internet">Utiliser internet</string>
     <string name="show_location">Afficher votre position</string>
 
 
     <string name="show_gps_coordinates_text">Afficher les coordonnées GPS sur la carte</string>
-    <string name="use_internet_to_download_tile">Utiliser internet pour télécharger les tuiles de carte manquantes</string>
     <string name="app_description">Application de navigation</string>
     <string name="shared_string_exit">Quitter</string>
 
@@ -668,7 +650,6 @@ Au-delà la navigation bascule automatiquement sur le service en ligne CloudMade
     <string name="edit_filter_delete_message">Le filtre {0} a été effacé</string>
     <string name="edit_filter_create_message">Le filtre {0} a été créé</string>
 
-    <string name="offline_navigation_not_available">Navigation hors-ligne temporairement indisponible.</string>
     <string name="left_side_navigation">Conduite à gauche</string>
     <string name="left_side_navigation_descr">Activer dans les pays où l\'on conduit à gauche.</string>
 
@@ -678,16 +659,9 @@ Au-delà la navigation bascule automatiquement sur le service en ligne CloudMade
 
     <string name="map_online_plugin_is_not_installed">Activez le greffon \"Cartes en ligne\" pour sélectionner différentes sources de cartes</string>
     <string name="map_online_data">Carte en ligne (tuiles)</string>
-    <string name="map_online_data_descr">Utiliser les cartes en ligne (télécharge et conserve en cache les tuiles sur la carte SD).</string>
     <string name="shared_string_online_maps">Cartes en ligne</string>
-    <string name="online_map_settings_descr">Configurer la source de la carte en ligne ou en cache.</string>
 
 
-    <string name="osmand_rastermaps_plugin_description">Ce greffon permet d\'accéder à une grand nombre de cartes en ligne (aussi appelées tuiles ou cartes raster) qui vont de cartes OpenStreetMap (comme Mapnik) jusqu\'aux images satellites en passant par des cartes spécialisées comme des cartes météo, des cartes de climat, des cartes géologiques, des couches de relief, etc.
-\n
-\nChacune de ces cartes est utilisable, comme carte principale, sur-couche ou sous-couche d\'une autre carte. Afin de gérer au mieux la superposition des cartes, vous pouvez masquer certains éléments des cartes vectorielles hors ligne depuis le menu \"Configurer la carte\".
-\n
-\nLes cartes tuiles peuvent être obtenues directement en ligne ou peuvent être préparées pour un usage hors ligne grâce à des outils tiers puis copiées dans le dossier de données d\'OsmAnd sous forme de base de données SQLite.</string>
     <string name="osmand_background_plugin_description">Affiche les préférences afin d\'activer le suivi et la navigation en tâche de fond (écran éteint) en réveillant périodiquement le GPS.</string>
     <string name="osmand_accessibility_description">Ce greffon active dans OsmAnd les options d\'accessibilité de votre appareil (réglage de la vitesse des voix TTS, utilisation du trackball pour zoomer ou annonces vocales de votre position).</string>
 
@@ -695,7 +669,6 @@ Au-delà la navigation bascule automatiquement sur le service en ligne CloudMade
     <string name="osmand_development_plugin_description">Ce greffon permet de gérer les paramètres de développement et de débogage tels que la simulation de navigation ou l\'affichage des performances du rendu. Ces paramètres sont conçus pour les développeurs et peuvent être ignorés par les autres utilisateurs.</string>
     <string name="plugins_screen">Gestionnaire de greffons</string>
 
-    <string name="prefs_plugins_descr">Les greffons ajoutent à l\'application des fonctionnalités supplémentaires et des paramètres avancés.</string>
     <string name="prefs_plugins">Gestionnaire de greffons</string>
 
     <string name="osm_editing_plugin_description">Grâce à ce greffon vous pouvez gérer vos contributions à OpenStreetMap (OSM) directement depuis l\'application OsmAnd. Par exemple : créer ou modifier les points d\'intérêt OSM, déclarer ou commenter les notes OSM et envoyer vos traces GPX (nécessite un compte OSM). OpenStreetMap est une communauté ouverte de cartographie publique. Pour plus de détails, consultez https://openstreetmap.org.</string>
@@ -1071,15 +1044,9 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="shared_string_about">À propos</string>
     <string name="about_settings_descr">Note de version, licences, membres du projet</string>
 
-    <string name="local_index_tile_data_zooms">Zooms téléchargés : %1$s</string>
     <string name="local_index_tile_data_expire">Expire (minutes) : %1$s</string>
-    <string name="local_index_tile_data_downloadable">Téléchargeable : %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Zoom maximum : %1$s</string>
-    <string name="local_index_tile_data_minzoom">Zoom minimum : %1$s</string>
     <string name="edit_tilesource_maxzoom">Zoom max</string>
-    <string name="edit_tilesource_expiration_time">Expiration (en minutes)</string>
     <string name="edit_tilesource_minzoom">Zoom min</string>
-    <string name="edit_tilesource_url_to_load">Lien</string>
     <string name="driving_region_descr">Sélectionnez la région de conduite : États-Unis, Europe, Royaume-Uni, Asie ou autre.</string>
     <string name="driving_region">Région de conduite</string>
     <string name="driving_region_europe_asia">Europe, Asie, Amérique latine et équivalent</string>
@@ -1093,9 +1060,6 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="clear_intermediate_points">Supprimer les étapes intermédiaires</string>
     <string name="keep_intermediate_points">Conserver les étapes intermédiaires</string>
     <string name="local_index_tile_data_name">Données de tuile : %1$s</string>
-    <string name="edit_tilesource_successfully">Le fournisseur de tuiles %1$s a été enregistré avec succès.</string>
-    <string name="edit_tilesource_elliptic_tile">Mercator elliptique</string>
-    <string name="edit_tilesource_choose_existing">Sélectionner existant…</string>
     <string name="maps_define_edit">Définir/Éditer…</string>
     <string name="announce_gpx_waypoints">Points de passage GPX</string>
     <string name="speak_descr">Annoncer les noms de rue, les avertissements (stops, ralentisseurs, radars), les limites de vitesse.</string>

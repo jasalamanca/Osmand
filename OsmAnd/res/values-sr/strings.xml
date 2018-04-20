@@ -18,19 +18,14 @@
 	<string name="base_world_map">Основна карта света</string>
 	
 	<string name="local_index_tile_data_expire">Истиче(минута): %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Максимално увеличање: %1$s</string>
-    <string name="edit_tilesource_elliptic_tile">Еклиптични приказ земљине кугле</string>
     <string name="edit_tilesource_maxzoom">Максимално увеличање</string>
     <string name="edit_tilesource_minzoom">Минимално увеличање</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Изаберите постојећи…</string>
     <string name="map_widget_fps_info">Подаци о грешкама брзине приказа сличица</string>
 	<string name="driving_region_japan">Јапан</string>
 	<string name="driving_region_us">Сједињене Америчке Државе</string>
 	<string name="driving_region_canada">Канада</string>
 	<string name="driving_region_europe_asia">Европа и Азија</string>
 	<string name="driving_region_uk">Велика Британија, Индија, Аустралија &amp; Остало</string>
-	<string name="local_index_tile_data_minzoom">Минимални зум: %1$s</string>
     <string name="announce_gpx_waypoints">GPX путне тачке</string>
     <string name="speak_title">Најави…</string>
 	<string name="speak_descr">Подешавање најаве назива улица, саобраћајних упозорења, ограничења брзине</string>
@@ -1017,7 +1012,6 @@
     <string name="shared_string_read_more">Сазнајте више</string>
     <string name="clear_updates_proposition_message">Можете уклонити преузете надоградње и вратити се на изворну карту</string>
     <string name="shared_string_select">Означи</string>
-    <string name="osmand_rastermaps_plugin_description"/>
     <string name="rendering_attr_contourDensity_description">Густина линија обриса</string>
     <string name="rendering_attr_contourDensity_name">Густина линија обриса</string>
     <string name="rendering_value_high_name">Густа</string>
@@ -1156,13 +1150,11 @@
     <string name="renderers_descr">Изаберите изглед приказа</string>
     <string name="background_service_provider_descr">Изаберите достављача положаја позадинске услуге</string>
     <string name="transport_stop_to_go_out">Изаберите стајалиште за излаз</string>
-    <string name="max_level_download_tile_descr">Изаберите највеће увеличање преузимања плочица карата са мреже</string>
     <string name="router_service_descr">Изаберите мрежне и ванмрежне услуге навођења</string>
     <string name="choose_building">Изаберите зграду</string>
     <string name="choose_street">Изаберите улицу</string>
     <string name="choose_city">Изаберите град или поштански број</string>
     <string name="ChooseCountry">Изаберите државу</string>
-    <string name="map_tile_source_descr">Изаберите извор мрежних или захваћених плочица карата</string>
     <string name="searchpoi_activity">Изаберите тачке занимања</string>
     <string name="choose_available_region">Изаберите област са списка</string>
     <string name="choose_intersected_street">Изаберите секућу улицу</string>

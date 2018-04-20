@@ -440,12 +440,7 @@ Lon %2$s</string>
     <string name="error_avoid_specific_road">No se encontró desvío</string>
     <string name="map_update">Actualización disponible para %1$s mapa(s)</string>
     <string name="wake_on_voice">Encender pantalla</string>
-    <string name="osmand_rastermaps_plugin_description">Este complemento puede acceder a muchos tipos de mapas en línea (llamados teselas o ráster), desde teselas predefinidas de OpenStreetMap (como Mapnik) a imágenes satelitales y capas de propósito especial como mapas del tiempo, mapas del clima, mapas geológicos, capas de sombreado, etc. 
-\n 
-\nCualquiera de estos mapas puede ser usado como el mapa (base) principal que se mostrará en la pantalla del mapa de OsmAnd, o como una superposición o subyacencia de otro mapa base (como los mapas estándar de OsmAnd en línea). Para hacer más visible cualquier mapa subyacente, ciertos elementos de los mapas vectoriales OsmAnd se pueden ocultar fácilmente a través del menú «Configurar mapa» cuando lo desees. 
-\n 
-\nLos mapas de teselas se pueden obtener directamente a través de fuentes en línea, o se pueden preparar para tu uso sin conexión (y copiar manualmente en la carpeta de datos OsmAnd) como una base de datos SQLite que puede ser producida por una variedad de herramientas de preparación de mapas de terceros.</string>
-    <string name="record_plugin_description">Este complemento activa la funcionalidad para registrar y guardar tus trazas manualmente tocando el control de grabación GPX en la pantalla del mapa, o automáticamente registrando todas tus rutas navegadas en un archivo GPX. 
+    <string name="record_plugin_description">Este complemento activa la funcionalidad para registrar y guardar tus trazas manualmente tocando el control de grabación GPX en la pantalla del mapa, o automáticamente registrando todas tus rutas navegadas en un archivo GPX.
 \n
 \nLas trazas grabadas pueden ser compartidas con tus amigos o ser usadas para contribuir a OSM. Los atletas pueden usar las trazas grabadas para seguir sus entrenamientos. Algunos análisis básicos de trazas se pueden realizar directamente en OsmAnd, como tiempos por vuelta, velocidad media, etc., y por supuesto las trazas pueden analizarse posteriormente con herramientas de análisis de terceros.</string>
     <string name="osmo_plugin_description">Este complemento proporciona parcialmente la funcionalidad para el rastreo en directo de OpenStreetMap, ver http://osmo.mobi 
@@ -627,19 +622,10 @@ Lon %2$s</string>
     <string name="about_version">Versión:</string>
     <string name="shared_string_about">Acerca de</string>
     <string name="about_settings_descr">Información de la versión, licencias, miembros del proyecto</string>
-    <string name="local_index_tile_data_zooms">Ampliaciones descargadas: %1$s</string>
     <string name="local_index_tile_data_expire">Expira (minutos): %1$s</string>
-    <string name="local_index_tile_data_downloadable">Descargable: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Ampliación máxima: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Ampliación mínima: %1$s</string>
     <string name="local_index_tile_data_name">Datos de teselas: %1$s</string>
-    <string name="edit_tilesource_successfully">Fuente de teselas «%1$s» guardada correctamente</string>
-    <string name="edit_tilesource_elliptic_tile">Mercator elíptica</string>
     <string name="edit_tilesource_maxzoom">Máxima ampliación</string>
-    <string name="edit_tilesource_expiration_time">Expira (minutos)</string>
     <string name="edit_tilesource_minzoom">Mínima ampliación</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Elegir existente…</string>
     <string name="maps_define_edit">Definir/Editar…</string>
     <string name="map_widget_fps_info">Info de depuración FPS</string>
     <string name="driving_region_descr">Elige la región de conducción: EEUU, Europa, Reino Unido, Asia u otras.</string>
@@ -907,7 +893,6 @@ Lon %2$s</string>
     <string name="navpoint_search_desc">Coordenadas</string>
     <string name="transport_search_desc">Buscar transporte público</string>
     <string name="favourites_search_desc">Buscar favoritos</string>
-    <string name="offline_navigation_not_available">La navegación sin conexión de OsmAnd, no está disponible temporalmente.</string>
     <string name="left_side_navigation">Conducir por la izquierda</string>
     <string name="left_side_navigation_descr">Elige la conducción para países con tráfico por la izquierda.</string>
     <string name="local_index_description">Pulsa cualquier objeto para ver más detalles, mantén pulsado para desactivar o borrar. Datos en el dispositivo actualmente (%1$s libre):</string>
@@ -922,16 +907,12 @@ Lon %2$s</string>
     <string name="index_settings_descr">Descarga y gestiona mapas sin conexión almacenados en tu dispositivo.</string>
     <string name="map_online_plugin_is_not_installed">Activa el complemento de mapas en línea, para seleccionar diferentes fuentes de mapas</string>
     <string name="map_online_data">Mapas en línea y teselas</string>
-    <string name="map_online_data_descr">Usa mapas en línea (descarga y guarda teselas en la tarjeta SD).</string>
-    <string name="online_map_settings_descr">Configura fuentes de mapas en línea o teselas guardadas.</string>
     <string name="plugins_screen">Complementos</string>
-    <string name="prefs_plugins_descr">Los complementos activan ajustes avanzados y funcionalidades adicionales.</string>
     <string name="prefs_plugins">Complementos</string>
     <string name="vector_maps_may_display_faster_on_some_devices">Los mapas vectoriales pueden mostrarse más rápido. Puede no funcionar correctamente en algunos dispositivos.</string>
     <string name="play_commands_of_currently_selected_voice">Elige una voz y comprueba las indicaciones por voz</string>
     <string name="native_rendering">Dibujo nativo</string>
     <string name="test_voice_prompts">Probar avisos por voz</string>
-    <string name="switch_to_raster_map_to_see">No existe mapa vectorial sin conexión presente en esta ubicación. Puede descargar uno en Opciones (Gestionar mapas), o cambiar al mapa en línea (para esto, activa el complemento de mapas en línea).</string>
     <string name="send_files_to_osm">¿Enviar archivos GPX a OSM?</string>
     <string name="gpx_visibility_txt">Visibilidad</string>
     <string name="gpx_tags_txt">Etiquetas</string>
@@ -1069,7 +1050,6 @@ Lon %2$s</string>
     <string name="auto_follow_location_enabled">Centrado automático del mapa activado.</string>
     <string name="pref_vector_rendering">Opciones específicas de dibujo vectorial</string>
     <string name="pref_overlay">Superpuesta / subyacente</string>
-    <string name="pref_raster_map">Ajustes de fuente del mapa</string>
     <string name="pref_vector_map">Ajustes del mapa vectorial</string>
     <string name="delete_confirmation_msg">Borrarás «%1$s». ¿Continuar?</string>
     <string name="city_type_suburb">Suburbio</string>
@@ -1171,11 +1151,8 @@ Lon %2$s</string>
     <string name="layer_overlay">Mapa superpuesto…</string>
     <string name="map_overlay">Mapa superpuesto</string>
     <string name="map_overlay_descr">Elige el mapa superpuesto.</string>
-    <string name="tile_source_already_installed">Mapa ya instalado, se actualizarán los ajustes.</string>
-    <string name="select_tile_source_to_install">Elige los mapas (teselas) a instalar o actualizar.</string>
     <string name="internet_not_available">Se necesita una conexión a Internet para esta operación pero no está disponible.</string>
     <string name="install_more">Instalar más…</string>
-    <string name="level_to_switch_vector_raster_descr">Mínimo nivel de ampliación para usar los mapas vectoriales.</string>
     <string name="level_to_switch_vector_raster">Mínimo nivel de ampliación vectorial</string>
     <string name="create_poi_link_to_osm_doc"><u>OSM en línea</u> clasificación de mapa con imágenes.</string>
     <string name="error_doing_search">Ocurrió un error en la búsqueda.</string>
@@ -1234,12 +1211,10 @@ Lon %2$s</string>
     <string name="poi_filter_closest_poi">PDI más cercanos</string>
     <string name="poi_filter_custom_filter">Filtro propio</string>
     <string name="poi_filter_namefinder">NameFinder en línea</string>
-    <string name="reading_cached_tiles">Leyendo teselas guardadas…</string>
     <string name="version_index_is_big_for_memory">La versión «{0}» de índices no cabe en memoria</string>
     <string name="version_index_is_not_supported">No se soporta la versión «{0}» de índices</string>
-    
-    
-    <string name="osmand_routing_experimental">La navegación sin conexión OsmAnd es una característica experimental y no funciona para distancias mayores a 20 km.\n\nEl servicio de navegación se cambia temporalmente al servicio en línea CloudMade.</string>
+
+
     <string name="specified_dir_doesnt_exist">No se puede encontrar la carpeta indicada.</string>
     <string name="osmand_net_previously_installed">Una versión anterior de OsmAnd está instalada. Todos los datos descargados están soportados por la nueva aplicación. Pero los Favoritos deben exportarse desde la aplicación antigua y luego, importarse en la nueva.</string>
     <string name="build_installed">Compilación {0} correctamente instalada ({1}).</string>
@@ -1262,7 +1237,6 @@ Lon %2$s</string>
     <string name="filter_existing_indexes">Descargados</string>
     <string name="fast_route_mode">Ruta más rápida</string>
     <string name="fast_route_mode_descr">Activar para calcular la ruta más rápida o desactivar para la más eficiente en combustible.</string>
-    <string name="tiles_to_download_estimated_size">En la ampliación {0}, descarga {1} teselas ({2} MB)</string>
     <string name="shared_string_download_map">Descargar mapa</string>
     <string name="select_max_zoom_preload_area">Elige la ampliación máxima para precargar</string>
     <string name="maps_could_not_be_downloaded">No se pudo descargar el mapa</string>
@@ -1278,7 +1252,6 @@ Lon %2$s</string>
     <string name="poi_context_menu_call">Mostrar teléfono del PDI</string>
     <string name="download_type_to_filter">escribe el filtro</string>
     <string name="use_high_res_maps">Pantalla de alta resolución</string>
-    <string name="use_high_res_maps_descr">No estira (ni hace borrosas) las teselas de mapa en pantallas de alta densidad.</string>
     <string name="context_menu_item_search_transport">Buscar transporte público</string>
     <string name="transport_searching_transport">Resultados de transporte (sin destino):</string>
     <string name="transport_searching_route">Resultados de transporte ({0} al destino):</string>
@@ -1408,7 +1381,6 @@ Lon %2$s</string>
     <string name="search_offline_address">Búsqueda sin conexión</string>
     <string name="search_online_address">Búsqueda en línea</string>
     <string name="max_level_download_tile">Máxima ampliación en línea</string>
-    <string name="max_level_download_tile_descr">Indica el nivel de ampliación máxima para descargar teselas de mapas en línea.</string>
     <string name="route_general_information">Distancia total %1$s, tiempo de viaje %2$d h %3$d min.</string>
     <string name="router_service_descr">Elige un servicio de navegación con o sin conexión.</string>
     <string name="router_service">Servicio de navegación</string>
@@ -1458,7 +1430,6 @@ Lon %2$s</string>
     <string name="data_settings">Datos</string>
     <string name="additional_settings">Ajustes adicionales</string>
     <string name="update_tile">Actualizar mapa</string>
-    <string name="reload_tile">Recargar tesela</string>
     <string name="mark_point">Objetivo</string>
     <string name="use_english_names_descr">Elige entre nombres nativos o en inglés.</string>
     <string name="use_english_names">Usar nombres ingleses en los mapas</string>
@@ -1473,13 +1444,10 @@ Lon %2$s</string>
     <string name="map_view_3d">Visión 3D del mapa</string>
     <string name="show_poi_over_map_description">Muestra la última superposición de PDI elegida en el mapa.</string>
     <string name="show_poi_over_map">Mostrar superposición de PDI</string>
-    <string name="map_tile_source_descr">Elige la fuente de mapas en línea o teselas guardadas.</string>
-    <string name="map_tile_source">Fuente de teselas de mapa</string>
     <string name="map_source">Fuente de mapa</string>
     <string name="use_internet">Usar Internet</string>
     <string name="show_location">Mostrar tu ubicación</string>
     <string name="show_gps_coordinates_text">Mostrar coordenadas GPS en el mapa</string>
-    <string name="use_internet_to_download_tile">Usa Internet para descargar las teselas faltantes</string>
     <string name="app_description">Aplicación de navegación</string>
     <string name="search_button">Búsqueda rápida</string>
     <string name="search_activity">Buscar</string>

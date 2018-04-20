@@ -109,9 +109,8 @@
 	<string name="navpoint_search_desc">קואורדינטות</string>
 	<string name="transport_search_desc">חיפוש תח״צ</string>
 	<string name="favourites_search_desc">חיפוש במועדפים</string>
-	
-	<string name="offline_navigation_not_available">ניווט בלתי מקוון ב־OsmAnd אינו זמין נכון לעכשיו.</string>
-	<string name="left_side_navigation">נהיגה בצד שמאל</string>
+
+    <string name="left_side_navigation">נהיגה בצד שמאל</string>
 	<string name="left_side_navigation_descr">יש לבחור עבור מדינות בהן נוהגים משמאל (לא תקף לישראל).</string>
 	
 	<string name="unknown_from_location">נקודת ההתחלה לא נקבעה עדיין</string>
@@ -169,32 +168,27 @@
 	<string name="index_settings_descr">הורדה וניהול של מפות בלתי מקוונות שמאוחסנות בהתקן שלך.</string>
 	<string name="map_online_plugin_is_not_installed">ניתן להפעיל את תוסף המפות המקוונות כדי לבחור במקורות שונים למפה</string>
 	<string name="map_online_data">מפות מקוונות ואריחים</string>
-	<string name="map_online_data_descr">שימוש במפות מקוונות (הורדה ואחסון אריחי המפה בכרטיס ה־SD).</string>
-	<string name="shared_string_online_maps">מפות מקוונות</string>
-	<string name="online_map_settings_descr">הגדרת מקורות אריחי מפה מקוונים או שמורים.</string>
-	
-	
-	<string name="osmand_rastermaps_plugin_description">הצגת תצורה להגדרת מגוון של אריחים מפה מקוונים או שמורים כמפת בסיס או כשכבת על / תחת. ניתן להכין מפות אלה באופן בלתי מקוון ואז להעתיק אותן לתיקייה של OsmAnd.</string>
-	<string name="osmand_background_plugin_description">הצגת הגדרות להפעלת מעקב וניווט במצב רקע (מסך כבוי) על ידי השכמת רכיב האיכון מדי פעם בפעם.</string>
+    <string name="shared_string_online_maps">מפות מקוונות</string>
+
+
+    <string name="osmand_background_plugin_description">הצגת הגדרות להפעלת מעקב וניווט במצב רקע (מסך כבוי) על ידי השכמת רכיב האיכון מדי פעם בפעם.</string>
 	<string name="osmand_accessibility_description">הצגת הגדרות לתכונות נגישות מיוחדות.</string>
 	
 	
 	
 	<string name="osmand_development_plugin_description">תוסף זה מציג הגדרות פיתוח וניפוי שגיאות כגון בדיקה או הדמיה של ניתוב, ביצועי עיבוד התמונה או התרעות קוליות. הגדרות אלו מיועדות למפתחים ואינן נחוצות למשתמשים על פי רוב.</string>
 	<string name="plugins_screen">מנהל התוספים</string>
-	
-	<string name="prefs_plugins_descr">התוספים מאפשרים הגדרות במצב מומחה ומספקים תכונות נוספות</string>
-	<string name="prefs_plugins">מנהל התוספים</string>
+
+    <string name="prefs_plugins">מנהל התוספים</string>
 	
 	<string name="osm_editing_plugin_description">הצגת ההגדרות שנדרשות לטובת משוב ל־OSM כמו איסוף / שינוי פריטי נ״ע של OSM, פתיחה / תגובה על תקלות ב־OSM ותרומה של קובצי GPX מוקלטים (נדרשים פרטי גישה ל־OSM).</string>
 	<string name="vector_maps_may_display_faster_on_some_devices">יתכן שמפות וקטוריות יוצגו מהר יותר. עם זאת לא בטוח שיעבדו כראוי על חלק מההתקנים.</string>
 	<string name="play_commands_of_currently_selected_voice">השמעת הפקודות של הקול שנבחר</string>
 	<string name="debugging_and_development">פיתוח OsmAnd</string>
 	<string name="native_rendering">עיבוד תמונה טבעי</string>
-	<string name="test_voice_prompts">בדיקת ההכרזות הקוליות</string>    
-	<string name="switch_to_raster_map_to_see">אין מפה וקטורית בלתי מקוונת לאזור זה. ניתן להוריד אחת בהגדרות (נתונים בלתי מקוונים) או לעבור למפות מקוונות.</string>
-	
-	<string name="send_files_to_osm">האם לשלוח את קובצי ה־GPX ל־OSM?</string>
+	<string name="test_voice_prompts">בדיקת ההכרזות הקוליות</string>
+
+    <string name="send_files_to_osm">האם לשלוח את קובצי ה־GPX ל־OSM?</string>
 	<string name="gpx_visibility_txt">הופעה</string>
 	<string name="gpx_tags_txt">תגיות</string>
 	<string name="gpx_description_txt">תיאור</string>
@@ -340,8 +334,7 @@
 	<string name="auto_follow_location_enabled">מרכוז אוטומטי של תצוגת המפה בעת שימוש.</string>
 	<string name="pref_vector_rendering">אפשרויות יעודיות למעבד הווקטורים</string>
 	<string name="pref_overlay">שכבת על / תחת</string>
-	<string name="pref_raster_map">הגדרות מקור המפה</string>
-	<string name="pref_vector_map">הגדרות מפת הווקטורים</string>
+    <string name="pref_vector_map">הגדרות מפת הווקטורים</string>
 	<string name="delete_confirmation_msg">האם למחוק את %1$s?</string>
 	<string name="city_type_suburb">פרבר</string>
 	<string name="city_type_hamlet">כפר קטן</string>
@@ -464,12 +457,9 @@
 	<string name="shared_string_none">ללא</string>
 	<string name="map_overlay">מפה עליונה</string>
 	<string name="map_overlay_descr">נא לבחור במפה עליונה.</string>
-	<string name="tile_source_already_installed">המפה כבר מותקנת, ההגדרות יעודכנו.</string>
-	<string name="select_tile_source_to_install">יש לבחור ב(אריחי) מפה להתקנה או עדכון.</string>
-	<string name="internet_not_available">החיבור הנדרש לאינטרנט לצורך ביצוע הפעולה אינו זמין.</string>
+    <string name="internet_not_available">החיבור הנדרש לאינטרנט לצורך ביצוע הפעולה אינו זמין.</string>
 	<string name="install_more">התקנת עוד…</string>
-	<string name="level_to_switch_vector_raster_descr">רמת התקריב המזערית לשימוש במפות וקטוריות.</string>
-	<string name="level_to_switch_vector_raster">תקריב מזערי לווקטורים</string>
+    <string name="level_to_switch_vector_raster">תקריב מזערי לווקטורים</string>
 	
 	
 	
@@ -544,16 +534,14 @@
 	<string name="poi_filter_closest_poi">נ״ע הקרובות ביותר</string>
 	<string name="poi_filter_custom_filter">מסנן מותאם אישית</string>
 	<string name="poi_filter_namefinder">מחפש שמות מקוון</string>
-	<string name="reading_cached_tiles">האריחים שנשמרו נקראים…</string>
-	<string name="version_index_is_big_for_memory">האינדקס „{0}“ גדול מדי לזיכרון</string>
+    <string name="version_index_is_big_for_memory">האינדקס „{0}“ גדול מדי לזיכרון</string>
 	<string name="version_index_is_not_supported">גרסת האינדקס „{0}“ אינה נתמכת</string>
 	<string name="safe_mode_description">הפעלת היישום במצב בטוח (על ידי שימוש בקוד אנדרויד במקום טבעי).</string>
     <string name="safe_mode">מצב בטוח</string>
     <string name="native_library_not_running">היישום פועל כעת במצב בטוח (ניתן לנטרל זאת בהגדרות).</string>
     <string name="background_service_is_enabled_question">שירות הרקע של OsmAnd עדיין פעיל. לבטל גם אותו?</string>
-    
-    <string name="osmand_routing_experimental">ניווט בלתי מקוון ב־OsmAnd הנו תכונה ניסיונית ואינה פועלת למרחקים של למעלה מ־20 ק״מ.\n\nשירות הניווט הוחלף זמנית ל־CloudMade.</string>
-	<string name="specified_dir_doesnt_exist">לא ניתן למצוא את התיקייה שצוינה.</string>
+
+    <string name="specified_dir_doesnt_exist">לא ניתן למצוא את התיקייה שצוינה.</string>
 	<string name="application_dir">תיקיית אחסון הנתונים</string>
 	
 	<string name="osmand_net_previously_installed">מותקנת גרסה קודמת של OsmAnd. כל הנתונים הבלתי מקוונים יתמכו על ידי היישום החדש. אך את הנקודות המועדפות יש לייצא ביישום הישן ולייבא לאחר מכן ליישום החדש.</string>
@@ -582,8 +570,7 @@
 	<string name="shared_string_refresh">רענון</string>
 	<string name="fast_route_mode">המסלול המהיר ביותר</string>
 	<string name="fast_route_mode_descr">יש להפעיל כדי לחשב את המסלול המהיר ביותר או להשבית כדי לקבל את המסלול החסכוני ביותר.</string>
-	<string name="tiles_to_download_estimated_size">ברמת תקריב {0} יש להוריד {1} אריחים ({2} מ״ב)</string>
-	<string name="shared_string_download_map">הורדת המפה</string>
+    <string name="shared_string_download_map">הורדת המפה</string>
 	<string name="select_max_zoom_preload_area">יש לבחור את רמת התקריב המרבית כדי לטעון מראש</string>
 	<string name="maps_could_not_be_downloaded">לא ניתן להוריד מפה זאת</string>
 	<string name="continuous_rendering">עיבוד תמונה רציף</string>
@@ -600,9 +587,8 @@
 	<string name="phone">טלפון</string>
 	<string name="download_type_to_filter">יש להקליד כדי לסנן</string>
 	<string name="use_high_res_maps">תצוגה ברזולוציה גבוהה</string>
-	<string name="use_high_res_maps_descr">אין למתוח (או לטשטש) אריחי מפה בתצוגות בצפיפות גבוהה.</string>
-	
-	<string name="context_menu_item_search_transport">חיפוש תחבורה ציבורית</string>
+
+    <string name="context_menu_item_search_transport">חיפוש תחבורה ציבורית</string>
 	<string name="transport_searching_transport">תוצאות תחבורה (אין יעד):</string>
 	<string name="transport_searching_route">תוצאות תחבורה ({0} ליעד):</string>
 	
@@ -738,8 +724,7 @@
 	<string name="search_offline_address">בלתי מקוון</string>
 	<string name="search_online_address">אינטרנט</string>
 	<string name="max_level_download_tile">תקריב מרבי מקוון</string>
-	<string name="max_level_download_tile_descr">נא לבחור את רמת התקריב המרבית להורדת אריחי מפה מקוונים.</string>
-	<string name="route_general_information">סך כל המרחק: %1$s, זמן הנסיעה: %2$d שע׳ %3$d דק׳.</string>
+    <string name="route_general_information">סך כל המרחק: %1$s, זמן הנסיעה: %2$d שע׳ %3$d דק׳.</string>
 	<string name="router_service_descr">בחירה בשירות ניווט מקוון או בלתי מקוון.</string>
 	<string name="router_service">שירות ניווט</string>
 	<string name="sd_dir_not_accessible">תיקיית אחסון הנתונים בכרטיס ה־SD אינה נגישה!</string>
@@ -812,8 +797,7 @@
 	<string name="save_track_to_gpx_descrp">מסלול GPX יישמר אוטומטית לתיקיית המסלולים במהלך הניווט.</string>
 	<string name="save_track_to_gpx">הקלטת המסלול אוטומטית במהלך הניווט</string>
 	<string name="update_tile">עדכון המפה</string>
-	<string name="reload_tile">רעניון האריח</string>
-	<string name="mark_point">מטרה</string>
+    <string name="mark_point">מטרה</string>
 	
 	
 	
@@ -831,16 +815,13 @@
 	<string name="map_view_3d">הצגת המפה בתלת־ממד</string>
 	<string name="show_poi_over_map_description">הצגת שכבת נקודות העניין האחרונות שנבחרו על גבי המפה.</string>
 	<string name="show_poi_over_map">הצגת שכבת נ״ע</string>
-	<string name="map_tile_source_descr">נא לבחור מקור של אריחי מפה מקוונים או שמורים.</string>
-	<string name="map_tile_source">מקור אריחי המפה</string>
-	<string name="map_source">מקור המפה</string>
+    <string name="map_source">מקור המפה</string>
 	<string name="use_internet">להשתמש באינטרנט</string>
 	<string name="show_location">הצגת המיקום שלך</string>
 	
 	
 	<string name="show_gps_coordinates_text">הצגת קואורדינטות איכון במפה</string>
-	<string name="use_internet_to_download_tile">להשתמש באינטרנט כדי להוריד את אריחי המפה החסרים</string>
-	<string name="app_description">יישום ניווט</string>
+    <string name="app_description">יישום ניווט</string>
 	<string name="shared_string_exit">יציאה</string>
 	
 	
@@ -1691,10 +1672,7 @@
     <string name="about_version">גרסה :</string>
     <string name="shared_string_about">על אודות</string>
     <string name="edit_tilesource_maxzoom">תקריב מרבי</string>
-    <string name="edit_tilesource_expiration_time">תפוגה (דקות)</string>
     <string name="edit_tilesource_minzoom">תקריב מזערי</string>
-    <string name="edit_tilesource_url_to_load">כתובת</string>
-    <string name="edit_tilesource_choose_existing">בחירה בקיים…</string>
     <string name="maps_define_edit">הגדרה/עריכה…</string>
     <string name="driving_region">אזור נהיגה</string>
     <string name="driving_region_japan">יפן</string>
@@ -2377,13 +2355,8 @@
     <string name="auto_zoom_farthest">טווח ארוך</string>
     <string name="map_magnifier">מגדיל מפה</string>
     <string name="about_settings_descr">פרטי גרסה, רשיונות, חברי המיזם</string>
-    <string name="local_index_tile_data_zooms">רמות תקריב שהתקבלו: %1$s</string>
     <string name="local_index_tile_data_expire">תפוגה (דקות): %1$s</string>
-    <string name="local_index_tile_data_downloadable">ניתן להורדה: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">תקריב מרבי: %1$s</string>
-    <string name="local_index_tile_data_minzoom">תקריב מזערי: %1$s</string>
     <string name="local_index_tile_data_name">נתוני אריח: %1$s</string>
-    <string name="edit_tilesource_successfully">מקור האריח %1$s נשמר בהצלחה</string>
     <string name="driving_region_descr">נא לבחור את איזור הנהיגה: ארה״ב, אירופה, הממלכה המאוחדת, אסיה ואחרות.</string>
     <string name="speak_descr">יש להגדיר כדי לצורך הקראה של שמות רחובות, אזהרות תנועה (עצירות מאולצות, פסי האטה), אזהרות על מצלמות מהירות, מגבלת מהירות.</string>
     <string name="animate_my_location_desc">הפעלת הנפשת גלישת מפה של המיקום שלי במהלך ניווט.</string>

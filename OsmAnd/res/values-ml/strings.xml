@@ -588,10 +588,7 @@
     <string name="routing_preferences_descr">റൂട്ടിങ്ങ് മുന്‍ഗണനകള്‍</string>
     <string name="complex_route_calculation_failed">വേഗത്തിലുള്ള റൂട്ട് കാല്‍ക്കുലേഷന്‍ പരാജയം (%s), പതിയെ കണ്ട്പിടിച്ചോണ്ടിരിക്കുന്നു.</string>
     <string name="edit_tilesource_maxzoom">ഏറ്റവും കൂടിയ സൂം</string>
-    <string name="edit_tilesource_expiration_time">കാലഹരണം(മിനിറ്റുകള്‍)</string>
     <string name="edit_tilesource_minzoom">ഏറ്റവും കുറഞ്ഞ സൂം</string>
-    <string name="edit_tilesource_url_to_load">വെബ് വിലാസം</string>
-    <string name="edit_tilesource_choose_existing">നിലവിലുള്ളത് തെരഞ്ഞെടുക്കുക…</string>
     <string name="driving_region_descr">ഡ്രൈവിങ്ങ് ദിശ തിരഞ്ഞെടുക്കുക(രാജ്യം): യുഎസ്, യൂറോപ്പ്, യൂകെ , ഏഷ്യ , മറ്റുള്ളവ</string>
     <string name="driving_region">ഡ്രൈ‌വിങ്ങ് റീജിയണ്‍(രാജ്യം)</string>
     <string name="driving_region_uk">ഇന്ത്യ, യൂകെ, ജപ്പാന്‍</string>
@@ -1048,8 +1045,6 @@
     <string name="versions_item">പതിപ്പുകള്‍</string>
     <string name="weekly">വാരം</string>
     <string name="enable_proxy_descr">എച്ച് ടി ടി പി പ്രോക്സി ക്രമീകരിക്കുക (ഇന്റെര്‍നെറ്റിനാവശ്യമുണ്ടെങ്കില്‍)</string>
-    <string name="edit_tilesource_successfully">"%1$s ടൈല്‍ സോര്‍സ് വിജയകരമായി സംഭരിച്ചിരിക്കുന്നു "</string>
-    <string name="edit_tilesource_elliptic_tile">എലിപ്ടിക് മെര്‍കേറ്റര്‍</string>
     <string name="download_using_mobile_internet">ഇപ്പോഴത്തെ ഇന്റര്‍നെറ്റ് കണക്ഷന്‍ വൈ-ഫൈ അല്ല. ഈ കണക്ഷനിലൂടെ ഡൗണ്‍ലോഡ് ചെയ്തോട്ടെ?</string>
     <string name="dropbox_plugin_description">ഡ്രോപ്ബോക്സ് അനുബന്ധം പാതകളും ഓഡിയോ, വീഡിയൊ കുറിപ്പുകളും നിങ്ങളുടെ ഡ്രോപ്ബോക്സ് അക്കൗണ്ടുമായി സമകാലികമാക്കാന്‍ അനുവദിക്കുന്നു.</string>
     <string name="enable_plugin_monitoring_services">പാത റിക്കോഡ് ചെയ്യാന്‍(ജിപിഎക്സ് റിക്കോഡിങ്ങ്, ഓണ്‍ലൈനില്‍ പിന്തുടരാനും ) ട്രിപ് റിക്കോഡിങ്ങ് അനുബന്ധം സജീവമാക്കുക</string>
@@ -1162,7 +1157,6 @@
     <string name="finished_task">പൂര്‍ണമായി</string>
     <string name="map_view_3d_descr">"3ഡി ഭൂപടദൃശ്യം സജീവമാക്കുക "</string>
     <string name="map_view_3d">ഭൂപടം 3ഡി ആയി കാണിക്കുക</string>
-    <string name="map_tile_source">ടൈല്‍ ഭൂപട ഉറവിടം</string>
     <string name="map_source">ഭൂപടഉറവിടം</string>
     <string name="navigate_point_latitude">അക്ഷാംശം</string>
     <string name="navigate_point_longitude">രേഖാംശം</string>
@@ -1311,7 +1305,6 @@
     <string name="local_index_action_do">" %2$s ഇനങ്ങള്‍ നിങ്ങള്‍  %1$s ചെയ്യാന്‍ പോവുന്നു. തുടരട്ടെ?"</string>
     <string name="local_indexes_cat_backup">നിര്‍ജീവം</string>
     <string name="internet_not_available">ഈ പ്രവര്‍ത്തിക്ക് ഇന്റെര്‍നെറ്റ് കണക്ഷന്‍ ആവശ്യമാണ്, പക്ഷെ ലഭ്യമല്ല</string>
-    <string name="level_to_switch_vector_raster_descr">വെക്ടര്‍ ഭൂപടങ്ങള്‍ ഉപയോഗിക്കാനുള്ള ഏറ്റവും ചെറിയ സൂം നില</string>
     <string name="send_location_way_choose_title">സ്ഥാനം പങ്ക് വെക്കാനുപയോഗിക്കുക</string>
     <string name="send_location_sms_pattern">സ്ഥാനം: %1$s
 %2$s</string>
@@ -1505,8 +1498,6 @@
     <string name="none_selected_gpx">ജിപിഎക്സ് ഫയലുകളൊന്നും തെരഞ്ഞെടുത്തിട്ടില്ല. തെരഞ്ഞെടുക്കാനായി ലഭ്യമായ പാതയില്‍ ഞെക്കിപിടിക്കുക.</string>
     <string name="layer_amenity_label">ബിന്ദുവിന്റെ പേരുചീട്ട്</string>
     <string name="local_index_tile_data_expire">കാലഹരണം(മിനിറ്റുകള്‍): %1$s</string>
-    <string name="local_index_tile_data_maxzoom">പരമാവധി സൂം: %1$s</string>
-    <string name="local_index_tile_data_minzoom">കുറഞ്ഞ സൂം: %1$s</string>
     <string name="osb_author_or_password_not_specified">ദയവായി ഓഎസ്എം യൂസര്‍,പാസ്വോഡ് എന്നിവ സജ്ജീകരണത്തില്‍ പറയുക</string>
     <string name="keep_intermediate_points">ഇടലക്ഷ്യസ്ഥാനങ്ങള്‍ സൂക്ഷിക്കുക</string>
     <string name="plugin_distance_point_time">സമയം</string>
@@ -1518,14 +1509,12 @@
     <string name="poi_filter_food_shop">കട(ആഹാരം)</string>
     <string name="poi_filter_fuel">"ഇന്ധനം "</string>
     <string name="poi_search_desc">താല്‍പര്യ ബിന്ദു (പിഓഐ) തിരയുക</string>
-    <string name="offline_navigation_not_available">ഓഎസ്എംആന്ഡ് ഓഫ്ലൈന്‍ വഴികാട്ടി താല്‍ക്കാലം ലഭ്യമല്ല.</string>
     <string name="local_indexes_cat_map">അടിസ്ഥാന വെക്ടര്‍ ഭൂപടങ്ങള്‍</string>
     <string name="oclock">മണി</string>
     <string name="local_openstreetmap_upload">" നവീകരണങ്ങള്‍ ഓഎസ്എംലെക്ക്   അപ്ലോഡ് ചെയ്യുക "</string>
     <string name="local_openstreetmap_delete">നവീകരണങ്ങള്‍ നീക്കം ചെയ്യുക</string>
     <string name="osmand_service">"ബാക്ക്ഗ്രൗണ്ടിലുള്ള പ്രവര്‍ത്തനം "</string>
     <string name="pref_overlay">മേല്‍/കീഴ് പാളി</string>
-    <string name="pref_raster_map">ഭൂപട ഉറവിട സജ്ജീകരണങ്ങള്‍</string>
     <string name="pref_vector_map">വെക്ടര്‍ ഭൂപട സജ്ജീകരണങ്ങള്‍</string>
     <string name="poi_filter_by_name">പേരുപയോഗിച്ച് തിരയുക</string>
     <string name="poi_filter_nominatim">ഓണ്‍ലൈനില്‍ പേരുപയോഗിച്ച് തിരയുക</string>
@@ -1652,7 +1641,6 @@
     <string name="fav_points_edited">ഇഷ്ടമുള്ള ബിന്ദു തിരുത്തിയിരിക്കുന്നു</string>
     <string name="fav_points_not_exist">"ഇഷ്ടമുള്ള ബിന്ദുക്കളൊന്നും നിലവിലില്ല "</string>
     <string name="use_english_names_descr">ഇംഗ്ളീഷ് അല്ലെങ്കില്‍ പ്രാദേശിക ഭാക്ഷയിലുള്ള പേരുകള്‍ തെരഞ്ഞെടുക്കുക</string>
-    <string name="use_internet_to_download_tile">ഇന്റര്‍നെറ്റ് ഉപയോഗിച്ച് ഇല്ലാത്ത ഭൂപട കഷണങ്ങള്‍ ഡൗണ്‍ലോഡ് ചെയ്യുക</string>
     <string name="app_description">വഴികാട്ടി ആപ്ളിക്കേഷന്‍</string>
     <string name="incremental_search_street">തെരുവുകള്‍ പടിപടിയായ് തെരയുക</string>
     <string name="incremental_search_building">കെട്ടിടങ്ങള്‍ പടിപടിയായി തെരയുക</string>

@@ -117,7 +117,6 @@ Proportionellt minne %4$s MB (Android-gräns %5$s MB, Dalvik %6$s MB).</string>
     <string name="address_search_desc">Adressökning</string>
     <string name="navpoint_search_desc">Koordinater</string>
     <string name="transport_search_desc">Kollektivtrafiksökning</string>
-    <string name="offline_navigation_not_available">OsmAnd offlinenavigering är inte tillgänglig för tillfället.</string>
     <string name="left_side_navigation">Vänstertrafik</string>
     <string name="left_side_navigation_descr">Välj för länder med vänstertrafik.</string>
 
@@ -197,13 +196,8 @@ Proportionellt minne %4$s MB (Android-gräns %5$s MB, Dalvik %6$s MB).</string>
     <string name="select_index_file_to_download">Hittade ingenting. Om du inte kan hitta din region, kan du skapa den själv (se http://osmand.net).</string>
     <string name="map_online_plugin_is_not_installed">Aktivera modulen online-kartor för att välja olika kartkällor</string>
     <string name="map_online_data">Online-kartor och kartbitar (tiles)</string>
-    <string name="map_online_data_descr">Använd online-kartor (ladda ner och cacha kartbitar på SD-kortet).</string>
-    <string name="online_map_settings_descr">Konfigurera online- eller cachade källor för kartbitar.</string>
 
 
-<string name="osmand_rastermaps_plugin_description">"Med denna modul får man tillgång till många typer av online-kartor, från fördefinierade Openstreetmap-rutor (som Mapnik) till satellitbilder och speciella lager såsom väderkartor, klimatkartor, geologiska kartor, reliefkartor etc.
-\n\nDessa kartor kan användas antingen som huvudkarta (baskarta) och visas på kartskärmen i OsmAnd eller som ett över- eller underlägg till en annan baskarta (som OsmAnds vanliga offline-kartor). För att göra en underliggande karta tydligare kan vissa element i OsmAnds vektorkartor lätt döljas via menyn \'Konfigurera karta\'.
-\n\nKartbitar (tile maps) kan hämtas direkt online eller förberedas för användning offline (och kopieras manuellt till OsmAnds datamapp) som en SQLite-databas som kan skapas med olika tredjepartsverktyg. "</string>
     <string name="osmand_background_plugin_description">Visa inställningarna för att aktivera spårning och navigering i bakgrundsläge (skärm av) genom att periodvis väcka GPS-enheten.</string>
 
     <string name="osmand_development_plugin_description">Denna modul visar inställningarna för utvecklings- och felsökningsfunktioner som rutt-testning och -simulering eller visning av renderingsprestanda eller röststyrning. Dessa inställningar är avsedda för utvecklare och behövs inte för den vanliga användaren.</string>
@@ -214,14 +208,12 @@ Proportionellt minne %4$s MB (Android-gräns %5$s MB, Dalvik %6$s MB).</string>
     <string name="bg_service_sleep_mode_off">Kör\n appen i bakgrunden</string>
     <string name="bg_service_sleep_mode_on">Stoppa\n körning i bakgrunden</string>
 
-    <string name="prefs_plugins_descr">Insticksmoduler aktiverar avancerade inställningar samt ger ytterligare funktionalitet.</string>
     <string name="prefs_plugins">Insticksmoduler</string>
 
     <string name="osm_editing_plugin_description">"Med denna modul kan OsmAnd användas för att göra bidrag till OSM såsom samlande/modifierande av OSM POI-objekt, öppnande/kommenterande av OSM-anteckningar, och bidragande med inspelade GPX-filer. OSM är ett globalt kartprojekt inom public domain, För mer info, se  https://openstreetmap.org. Aktivt deltagande uppskattas och bidrag kan ges direkt i OsmAnd om du anger dina personiga OSM-referenser i appen."</string>
     <string name="vector_maps_may_display_faster_on_some_devices">Vektorkartor ritas sannolikt upp snabbare. Fungerar kanske inte så bra på vissa enheter.</string>
     <string name="play_commands_of_currently_selected_voice">Spela upp kommandon med vald röst</string>
     <string name="test_voice_prompts">Test av röstmeddelanden</string>
-    <string name="switch_to_raster_map_to_see">Det finns ingen offline vektorkarta för den här platsen. Du kan ladda ner en i Inställningar (Hantera kartfiler) eller byta till online-kartor (aktivera modulen för online-kartor för detta).</string>
 
     <string name="native_rendering">Inbyggd rendering</string>
     <string name="default_buttons_support">Support</string>
@@ -323,7 +315,6 @@ Nyttjat utrymme är {1} MB.
     <string name="auto_follow_location_enabled">Auto-centrera aktuell kartvy.</string>
     <string name="pref_vector_rendering">Alternativ specifika för vektorrenderaren</string>
     <string name="pref_overlay">Överlägg/Underlägg</string>
-    <string name="pref_raster_map">Inställningar för kartkällor</string>
     <string name="pref_vector_map">Inställningar för vektorkartor</string>
     <string name="delete_confirmation_msg">Ta bort %1$s?</string>
     <string name="city_type_suburb">Förort</string>
@@ -429,11 +420,8 @@ Nyttjat utrymme är {1} MB.
     <string name="layer_overlay">Överläggskarta …</string>
     <string name="map_overlay">Överläggskarta</string>
     <string name="map_overlay_descr">Välj överläggskarta.</string>
-    <string name="tile_source_already_installed">Kartan är redan installerad; inställningarna kommer att uppdateras.</string>
-    <string name="select_tile_source_to_install">Välj kartor/kartrutor att installera eller uppdatera.</string>
     <string name="internet_not_available">En anslutning till Internet krävs för denna åtgärd men någon sådan är inte tillgänglig.</string>
     <string name="install_more">Installera fler …</string>
-    <string name="level_to_switch_vector_raster_descr">Minsta zoomnivå för att använda vektorkartor.</string>
     <string name="level_to_switch_vector_raster">Minsta vektor-zoomnivå</string>
 
 
@@ -498,7 +486,6 @@ Nyttjat utrymme är {1} MB.
     <string name="poi_filter_for_tourists">För turister</string>
     <string name="poi_filter_fuel">Bränsle</string>
     <string name="poi_filter_namefinder">Online namn-sökare</string>
-    <string name="reading_cached_tiles">Läser cachade kartbitar …</string>
     <string name="version_index_is_big_for_memory">Index \"{0}\" fick inte plats i minnet</string>
     <string name="version_index_is_not_supported">Denna version av indexet \"{0}\" stöds inte</string>
     
@@ -552,7 +539,6 @@ Nyttjat utrymme är {1} MB.
 
     <string name="fast_route_mode">Snabbaste vägen</string>
     <string name="fast_route_mode_descr">Aktivera för att beräkna den snabbaste vägen eller inaktivera för den bränslesnålaste vägen.</string>
-    <string name="tiles_to_download_estimated_size">Vid zoom {0} hämta {1} kartbitar ({2} MB)</string>
     <string name="shared_string_download_map">Ladda ner karta</string>
     <string name="poi_filter_sightseeing">Sevärdheter</string>
     <string name="index_settings">Hantera kartfiler</string>
@@ -571,12 +557,10 @@ Nyttjat utrymme är {1} MB.
     <string name="poi_context_menu_call">Visa POI-telefon</string>
 
 
-    <string name="osmand_routing_experimental">OsmAnd offline-navigering är en experimentell funktion och den fungerar inte för sträckor över c:a 20 km.\n\nNavigeringstjänsten är tillfälligt kopplad till online CloudMade.</string>
     <string name="website">Webbplats</string>
     <string name="phone">Telefon</string>
     <string name="download_type_to_filter">Skriv för att filtrera</string>
     <string name="use_high_res_maps">Skärm med hög upplösning</string>
-    <string name="use_high_res_maps_descr">Sträck inte ut (och gör oskarpa) kartbitar på högupplösta skärmar.</string>
 
     <string name="context_menu_item_search_transport">Sök kollektivtrafik</string>
     <string name="transport_searching_transport">Transportresultat (ingen destination):</string>
@@ -708,7 +692,6 @@ Nyttjat utrymme är {1} MB.
     <string name="searching_address">Söker adress …</string>
     <string name="hint_search_online">Online-sökning: Husnummer, gata, stad</string>
     <string name="search_offline_address">Offline</string>
-    <string name="max_level_download_tile_descr">Välj högsta zoomnivå att ladda ner för online-kartbitar.</string>
     <string name="route_general_information">Total sträcka %1$s, restid %2$d h %3$d min.</string>
     <string name="router_service_descr">Välj en online- eller offline-navigeringstjänst.</string>
     <string name="router_service">Navigeringstjänst</string>
@@ -872,7 +855,6 @@ Nyttjat utrymme är {1} MB.
     <string name="save_track_to_gpx_descrp">Ett GPX-spår sparas automatiskt i spårmappen under navigering.</string>
     <string name="save_track_to_gpx">Spela in spår automatiskt under navigering</string>
     <string name="update_tile">Uppdatera kartan</string>
-    <string name="reload_tile">Läs om kartbit</string>
     <string name="mark_point">Mål</string>
 
 
@@ -884,12 +866,9 @@ Nyttjat utrymme är {1} MB.
     <string name="map_view_3d">3D-vy på kartan</string>
     <string name="show_poi_over_map_description">Visa det senast valda POI-överlägget på kartan.</string>
     <string name="show_poi_over_map">Visa POI-överlägg</string>
-    <string name="map_tile_source_descr">Välj källa för onlinekartor eller cachade kartbitar.</string>
-    <string name="map_tile_source">Källa för kartbitar</string>
     <string name="map_source">Kartkälla</string>
     <string name="show_location">Visa din position</string>
     <string name="show_gps_coordinates_text">Visa GPS-koordinater på kartan</string>
-    <string name="use_internet_to_download_tile">Använd Internet för att hämta kartrutor som saknas</string>
     <string name="app_description">Navigationsapp</string>
     <string name="search_button">Sök</string>
     <string name="search_activity">Sök</string>
@@ -1038,19 +1017,10 @@ Nyttjat utrymme är {1} MB.
     <string name="about_settings_descr">Versionsinformation, licenser, projektmedlemmar</string>
 
 
-    <string name="local_index_tile_data_zooms">Zoom nedladdade: %1$s</string>
     <string name="local_index_tile_data_expire">Förfallotid (minuter): %1$s</string>
-    <string name="local_index_tile_data_downloadable">Nedladdningsbart: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Max-zoom: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Min-zoom: %1$s</string>
     <string name="local_index_tile_data_name">Kartbitsdata: %1$s</string>
-    <string name="edit_tilesource_successfully">Kartbitskälla %1$s sparades utan problem</string>
-    <string name="edit_tilesource_elliptic_tile">Elliptisk mercator</string>
     <string name="edit_tilesource_maxzoom">Max. zoom</string>
-    <string name="edit_tilesource_expiration_time">Utgår (minuter)</string>
     <string name="edit_tilesource_minzoom">Min. zoom</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Välj befintlig …</string>
     <string name="maps_define_edit">Definiera/Redigera …</string>
 
 

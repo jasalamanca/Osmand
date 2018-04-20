@@ -21,8 +21,6 @@
     <string name="shared_string_about">Rreth</string>
     <string name="about_settings_descr">Informacion versioni, liçensat, anëtarët e projektit</string>
     <string name="local_index_tile_data_expire">Skadon (minuta): %1$s</string>
-    <string name="local_index_tile_data_downloadable">E shkarkueshme: %1$s</string>
-    <string name="edit_tilesource_expiration_time">Skadon (minuta)</string>
     <string name="driving_region_japan">Japoni</string>
 	<string name="driving_region_us">Shtetet e Bashkuara</string>
 	<string name="driving_region_canada">Kanada</string>

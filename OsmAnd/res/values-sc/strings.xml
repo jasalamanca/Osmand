@@ -134,19 +134,10 @@
     <string name="about_settings_descr">Informatziones de sa versione, litzèntzias, membros de su progetu</string>
 
 
-    <string name="local_index_tile_data_zooms">Ismanniamentos iscarrigados: %1$s</string>
     <string name="local_index_tile_data_expire">Iscadèntzia (minutos): %1$s</string>
-    <string name="local_index_tile_data_downloadable">Iscarrigàbiles: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Ismanniamentu màssimu: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Ismanniamentu mìnimu: %1$s</string>
     <string name="local_index_tile_data_name">Datos tasseddos: %1$s</string>
-    <string name="edit_tilesource_successfully">Sa mitza %1$s de sas imbrèstias est istada sarvada chene problemas</string>
-    <string name="edit_tilesource_elliptic_tile">Mercatore ellitticu</string>
     <string name="edit_tilesource_maxzoom">Ismanniamentu màssimu</string>
-    <string name="edit_tilesource_expiration_time">Iscadèntzia (minutos)</string>
     <string name="edit_tilesource_minzoom">Ismanniamentu mìnimu</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Issèbera intre sos esistentes…</string>
     <string name="maps_define_edit">Imposta/Muda…</string>
     <string name="map_widget_fps_info">Informatziones FPS</string>
     <string name="driving_region">Regione de ghia</string>
@@ -672,7 +663,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="navpoint_search_desc">Coordinatas</string>
     <string name="transport_search_desc">Chirca de sos trasportos pùblicos</string>
     <string name="favourites_search_desc">Chirca de sos preferidos</string>
-    <string name="offline_navigation_not_available">Su nàvigu chene lìnia de OsmAnd est temporaneamente non disponìbile.</string>
     <string name="left_side_navigation">Ghia a manca</string>
     <string name="left_side_navigation_descr">Abìlita in sos istados in ue si ghiat mantenende sa manca.</string>
     <string name="unknown_from_location">Sa positzione de tzucada no est istada galu determinata</string>
@@ -682,16 +672,13 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="local_indexes_cat_tile">Mapas in lìnia e in cache a tasseddos</string>
     <string name="local_indexes_cat_map">Mapas regulares (vetoriales)</string>
     <string name="map_online_data">Mapas in lìnia e a tasseddos</string>
-    <string name="map_online_data_descr">Imprea sas mapas in lìnia (iscàrriga e archìvia sos tasseddos in s’ischeda SD).</string>
     <string name="shared_string_online_maps">Mapas in lìnia</string>
-    <string name="online_map_settings_descr">Cunfigura sas mitzas de sas mapas in lìnia o de sos tasseddos in cache.</string>
 
 
     <string name="osmand_accessibility_description">Custa estensione permitit de impreare sas funtzionalidades pro s\'atzessibilidade de su dispositivu detetamente in OsmAnd, e fatzilitat, pro nàrrere, sa modìfica de sa lestresa de sas boghes TTS, sa cunfiguratzione de su movimentu de s\'ischermu, s’impreu de una trackball pro s\'ismanniamentu o de un’interfàtzia vocale pro cosas comente s\'annùntziu de sa positzione tua.</string>
 
     <string name="plugins_screen">Estensiones</string>
 
-    <string name="prefs_plugins_descr">Sas estensiones abìlitant funtzionalidades agiuntivas e impostatziones avantzadas.</string>
     <string name="prefs_plugins">Estensiones</string>
     <string name="debugging_and_development">Isvilupu de OsmAnd</string>
     <string name="native_rendering">Disinnu nativu</string>
@@ -773,7 +760,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     
     <string name="keep_informing_never">Manualmente ebbia (carca sa fritza)</string>
     <string name="keep_informing">Torra a repìtere sas istrutziones de nàvigu</string>
-    <string name="pref_raster_map">Impostatziones de sa mitza de sa mapa</string>
     <string name="pref_vector_map">Impostatziones de sa mapa vetoriale</string>
     <string name="city_type_hamlet">Bidditzolu</string>
     <string name="city_type_village">Bidda</string>
@@ -835,17 +821,11 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="vector_maps_may_display_faster_on_some_devices">Sas mapas vetoriales diat dèpere apàrrere in manera prus lestra. In carchi dispositivu diat podere funtzionare male.</string>
     <string name="rendering_attr_noPolygons_description">Faghe divènnere transparentes totu sas caraterìsticas de sas àreas de su terrinu.</string>
     <string name="rendering_attr_hmRendered_description">Aumenta sa cantidade ammustrada de minujos de sa mapa.</string>
-	<string name="osmand_rastermaps_plugin_description">"Cun custa estensione podes atzèdere a medas castas de màpas in lìnia (cussas connotas comente \"a tasseddos\" o \"raster\"), dae sas predefinidas de  Openstreetmap (comente Mapnik) a sas immàgines satellitares e a sos istratos pro punnas ispetziales comente sas mapas metereològicas, climàticas, geològicas, e umbradura de sos rilievos etc. 
-\n
-\nTotu custas mapas podent èssere impreadas siat comente mapa printzipale (de base) de ammustrare in s\'ischermada mapa de OsmAnd siat comente un\'istratu se subrapositzione o de isfundu de un’àtera mapa de base (comente sas mapas regulares non in lìnia de OsmAnd). Pro permìtere una visibilidade prus manna de sas mapas de isfundu, calicunu de sos elementos de sas mapas vetoriales podet èssere cuadu, impreende su menù \'Cunfigura sa mapa\' sighinde sas netzessidades tuas. 
-\n
-\nSas mapas a tasseddos podent èssere iscarrigadas deretamente o ammaniadas pro s\'impreu chene lìnia (e a pustis copiadas intre sa cartella de sos datos de OsmAnd) comente unu database SQLite chi podet èssere produidu dae medas ainas pro sa creatzione de mapas esternas (third-party maps)."</string>
 
 
     <string name="osm_editing_plugin_description">Custa estensione permitit de cuntribuire ad OSM creende e modifichende sos PDI de OSM, aberinde e cummentende notas de OSM e imbiende documentos GPX registrados. OSM est unu progetu pùblicu de mapadura fatu dae una comunidade globale. Pro àteras informatziones: https://openstreetmap.org. Sa partetzipatzione est apretziada, e sas cuntributziones podent èssere fatas deretamente dae OsmAnd insertende in intro de s\'aplicu sas credentziales de atzessu.</string>
     <string name="play_commands_of_currently_selected_voice">Ischerta una boghe e proa·la riproduinde cummandos</string>
     <string name="test_voice_prompts">Proa sos cumandos vocales</string>
-    <string name="switch_to_raster_map_to_see">Peruna mapa vetoriale est disponìbile pro custa positzione. Ne podes iscarrigare una in Impostatziones (Amministra sos documentos de sas mapas), o colare a sas mapas in lìnia (abìlita sas mapas in lìnia pro lu fàghere).</string>
 
     <string name="support_new_features_descr">Faghe una donatzione pro tènnere funtzionalidades noas implementadas in s’àplicu.</string>
     <string name="accessibility_default">Basada in supra de sas impostatziones globales de sistema</string>
@@ -1003,11 +983,8 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="shared_string_none">Perunu</string>
     <string name="map_overlay">Mapa subraposta</string>
     <string name="map_overlay_descr">Issèbera sa mapa de subrapositzione.</string>
-    <string name="tile_source_already_installed">Sa mapa est giai installata, sas impostatziones ant a èssere agiornadas.</string>
-    <string name="select_tile_source_to_install">Issèbera sas mapas (tasseddos) da installare o agiornare.</string>
     <string name="internet_not_available">Una connessione ìnternet est netzessària pro custa operatzione, ma no nde bi sunt disponìbiles.</string>
     <string name="install_more">Installa àteru…</string>
-    <string name="level_to_switch_vector_raster_descr">Livellu mìnimu de ismanniamentu pro impreare sas mapas vetoriales.</string>
     <string name="level_to_switch_vector_raster">Liv. min. ismanniamentu vetoriale</string>
 
 
@@ -1072,7 +1049,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="poi_filter_closest_poi">PDI prus a curtzu</string>
     <string name="poi_filter_custom_filter">Filtru pessonalizadu</string>
     <string name="poi_filter_namefinder">Chirca nùmenes in lìnia</string>
-    <string name="reading_cached_tiles">Leghidura anteprimas dae sa cache…</string>
     <string name="version_index_is_big_for_memory">S’ìnditze \'\'{0}\'\' est tropu mannu pro sa memòria atuale</string>
     <string name="version_index_is_not_supported">Sa versione de s’ìnditze \'\'{0}\'\' no est suportada</string>
     
@@ -1099,7 +1075,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
 
     <string name="shared_string_select_all">Ischerta totu</string>
     <string name="fast_route_mode">Àndala prus lestra</string>
-    <string name="tiles_to_download_estimated_size">Pro s\'ismanniamentu {0} iscàrriga {1} tasseddos ({2} MB)</string>
     <string name="shared_string_download_map">Iscàrriga mapa</string>
     <string name="maps_could_not_be_downloaded">No est istadu possìbile iscarrigare custa mapa</string>
     <string name="show_point_options">Imprea sa positzione …</string>
@@ -1172,7 +1147,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="local_index_items_uploaded">Ogetu/os %1$d de %2$d carrigadu curretamente.</string>
 
     <string name="old_map_index_is_not_supported">Su formadu datos mapa \'\'{0}\'\' est isputziau e no est suportadu</string>
-    <string name="osmand_routing_experimental">Su nàvigu chene lìnia de OsmAnd est isperimentale e non funtzionat pro distàntzias prus mannas de 20 km.\n\nSu servìtziu de nàvigu benit frunidu intertantu pro mèdiu de CloudMade in lìnia.</string>
     <string name="osmand_net_previously_installed">B’est installada una versione prus betza de OsmAnd. Totu sos datos ant a èssere suportados dae s’aplicatzione noa. Sos preferidos depent èssere esportados dae s’aplicatzione betza e importados a manuda in sa noa.</string>
     <string name="gps_status_app_not_found">Aplicu istadu GPS no installadu. Lu boles chircare in su Market?</string>
     <string name="voice_is_not_available_msg">Boghe de ghia non disponìbile. Intra in \'Impostatziones\' → \'Impostatziones generales\' → \'Ghia vocale\', issèbera su pachete preferidu e/o iscàrrigalu.</string>
@@ -1262,7 +1236,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="search_offline_address">Chene lìnia</string>
     <string name="search_online_address">Ìnternet</string>
     <string name="max_level_download_tile">Max ismanniamentu in lìnia</string>
-    <string name="max_level_download_tile_descr">Issèbera su livellu màssimu da iscarrigare pro sa mapas in lìnia a tasseddos.</string>
     <string name="route_general_information">Distàntzia totale %1$s, longària de su biàgiu %2$d h %3$d min.</string>
     <string name="router_service_descr">Issèbera unu servìtziu in lìnia o chene lìnia de nàvigu.</string>
     <string name="router_service">Servìtziu de nàvigu</string>
@@ -1326,7 +1299,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="save_track_to_gpx_descrp">Una rasta GPX at a èssere sarvada in sa cartella apòsita durante su nàvigu.</string>
     <string name="save_track_to_gpx">Sarva automaticamente sa rasta in GPX durante su nàvigu</string>
     <string name="update_tile">Agiorna mapa</string>
-    <string name="reload_tile">Torra a carrigare tasseddos</string>
     <string name="mark_point">Obietivu</string>
 
 
@@ -1343,15 +1315,12 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="map_view_3d">Bisura mapa 3D</string>
     <string name="show_poi_over_map_description">Ammustra s\'ùrtimu istratu superiore de sos PDI isseberadu in sa mapa.</string>
     <string name="show_poi_over_map">Ammustra s\'istratu de sos PDI</string>
-    <string name="map_tile_source_descr">Issèbera sa mitza pro sos tasseddos in lìnia o in cache.</string>
-    <string name="map_tile_source">Mitza de sos tasseddos in lìnia</string>
     <string name="map_source">Mitza mapa</string>
     <string name="use_internet">Imprea ìnternet</string>
     <string name="show_location">Ammustra sa positzione tua</string>
 
 
     <string name="show_gps_coordinates_text">Ammustra coordinatas GPS in sa mapa</string>
-    <string name="use_internet_to_download_tile">Imprea ìnternet pro iscarrigare tasseddos fartantes de sa mapa</string>
     <string name="app_description">Aplicu de nàvigu</string>
     <string name="shared_string_exit">Essida</string>
 
@@ -1447,7 +1416,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="show_more_map_detail_descr">Ammustra carchi minuja de sas mapas vetoriales (istradas etc.) fintzas a sos ismanniamentos prus bassos.</string>
     <string name="show_route">Minujas àndala</string>
 
-    <string name="use_high_res_maps_descr">Non allonghiare (ne inghelare) sos tasseddos de sa mapa in sos dispositivos a carchesa arta.</string>
     <string name="background_router_service_descr">Allughe su servìtziu a reposu de OsmAnd pro s’arrastamentu de sa positzione cando s’ischermu est istudadu.</string>
     <string name="off_router_service_no_gps_available">Su servìtziu de nàvigu de isfundu de OsmAnd netzèssitat de su sistema de positzionamentu ativadu.</string>
 

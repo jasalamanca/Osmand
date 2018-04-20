@@ -95,8 +95,7 @@
     <string name="shared_string_control_start">ձայնագրել</string>
 
     <string name="about_version">Տարբերակ :</string>
-    
-    <string name="local_index_tile_data_downloadable">Բեռնվող: %1$s</string>
+
     <string name="select_gpx">Ընտրել GPX-…</string>
     <string name="route_descr_select_destination">Ընտրել Նպատակակետը</string>
     <string name="shared_string_select_on_map">Ընտրել քարտեզի վրա</string>
@@ -960,11 +959,6 @@
     <string name="track_segments">Տրեկի հատվածներ</string>
     <string name="track_points">Տրեկի կետերը</string>
     <string name="shared_string_online_maps">Առցանց քարտեզներ</string>
-    <string name="osmand_rastermaps_plugin_description">"Այս plugin-ի միջոցով Դուք կարող եք մուտք գործել առցանց (այսպես կոչված սալիկների կամ ռաստր)  քարտեզների, նախապես սահմանված OpenStreetMap սալիկներից (նման Mapnik), արբանյակային պատկերներ եւ հատուկ նպատակային շերտեր, ինչպիսիք են եղանակային քարտեզները, կլիմայական քարտեզները, երկրաբանական քարտեզները, խճուղային շերտերը եւ այլն:
-\n
-\nԱյս քարտեզներից յուրաքանչյուրը կարող է օգտագործվել որպես հիմնական (բազային) քարտեզ, որը ցուցադրվում է OsmAnd քարտեզի էկրանին, կամ որպես կափարիչ կամ ստորագրված այլ բազային քարտեզի (նման OsmAnd-ի ստանդարտ անցանց քարտեզները): Ցանկացած ստորերկրյա քարտեզի առավել տեսանելի դարձնելու համար OsmAnd վեկտորի քարտեզները հեշտությամբ կարելի է թաքցնել «Կարգավորեք քարտեզը» ցանկի միջոցով:
-\n
-\nՍալիկի քարտեզները կարելի է ձեռք բերել անմիջապես առցանց աղբյուրների միջոցով կամ կարող են պատրաստվել անցանց օգտագործման համար (և պատճենել OsmAnd-ի տվյալների պանակում) որպես SQLite տվյալների բազա, որը կարող է արտադրվել 3-րդ կողմի քարտեզի պատրաստման գործիքների կողմից:"</string>
     <string name="record_plugin_name">Ուղեւորության գրանցում</string>
     <string name="record_plugin_description">"Այս plugin-նը ակտիվացնում է հետևյալ ֆունկցիաները`գրանցում և պահպանում ձեր տրեկերը, ձեռքով հպելով GPX-ի գրանցման վիջեթը քարտեզի էկրանին կամ ավտոմատ կերպով մուտքագրելու ձեր բոլոր նավիգացիոն երթուղիները GPX ֆայլում:
 \n
@@ -1421,18 +1415,10 @@
     <string name="base_world_map">Աշխարհի հիմնական քարտեզ</string>
     <string name="shared_string_about">Ծրագրի մասին</string>
     <string name="about_settings_descr">Թողարկման տեղեկություն, լիցենզիաներ, նախագծի անդամներ</string>
-    <string name="local_index_tile_data_zooms">Մեծացում է ներբեռնվել՝ %1$s</string>
     <string name="local_index_tile_data_expire">Լրանում է (րոպե)՜ %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Առավելագույն խոշորացում՝ %1$s</string>
-    <string name="local_index_tile_data_minzoom">Նվազագույն խոշորացում՝ %1$s</string>
     <string name="local_index_tile_data_name">Տայլերի տվյալները՝ %1$s</string>
-    <string name="edit_tilesource_successfully">Տայլերի աղբյուրը %1$s հաջողությամբ պահպանվեց</string>
-    <string name="edit_tilesource_elliptic_tile">Մերկատորի էլիպտիկ նախագծումը</string>
     <string name="edit_tilesource_maxzoom">Առավելագույն խոշորացում</string>
-    <string name="edit_tilesource_expiration_time">Լրանում է (րոպե)</string>
     <string name="edit_tilesource_minzoom">Նվազագույն խոշորացում</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Ընտրեք առկա…</string>
     <string name="maps_define_edit">Սահմանել/Խմբագրել …</string>
     <string name="map_widget_fps_info">Կարգավորման տեղեկություններ</string>
     <string name="driving_region_descr">Ընտրեք վարելու տարածաշրջանը՝ ԱՄՆ, Եվրոպա, Մեծ Բրիտանիա, Ասիա և այլն։</string>
@@ -1673,7 +1659,6 @@
     <string name="navpoint_search_desc">Կոորդինատներ</string>
     <string name="transport_search_desc">Հանրային տրանսպորտի որոնում</string>
     <string name="favourites_search_desc">Որոնում «Սիրված»-ում(Favorites)</string>
-    <string name="offline_navigation_not_available">OsmAnd անցանց նավարկությունը ժամանակավորապես հասանելի չէ:</string>
     <string name="left_side_navigation">Ձախակողմյան նավարկություն</string>
     <string name="left_side_navigation_descr">Ընտրեք ձախակողմյան երթևեկող երկրների համար։</string>
     <string name="local_index_description">"Սխմեք  ցանկացած տարր,տեսնել ավելի մանրամասն տեղեկություններ տեսնելու համար, սխմեք և երկար պահեք`անջատելու կամ ջնջելու համար: Սարքի ընթացիկ տվյալները (%1$s ազատ է)՝"</string>
@@ -1688,16 +1673,12 @@
     <string name="index_settings_descr">"Քարտեզների ֆայլերը ներբեռնում և կառավարում  ձեր սարքում։"</string>
     <string name="map_online_plugin_is_not_installed">"Միացրեք առցանց քարտեզների plugin-ը  տարբեր քարտեզային աղբյուրներ ընտրելու համար"</string>
     <string name="map_online_data">Առցանց քարտեզներ</string>
-    <string name="map_online_data_descr">Օգտագործեք առցանց քարտեզներ (ներբեռնեք և քեշավորեք սալիկներ(tiles) SD քարտում)։</string>
-    <string name="online_map_settings_descr">«Կարգավորումներ» առցանց քարտեզների և շերտերի(tile) աղբյուրների։</string>
     <string name="plugins_screen">Պլագիններ</string>
-    <string name="prefs_plugins_descr">Plugins-ը ակտիվացնում է հավելվածի լրացուցիչ հնարավորությունները։</string>
     <string name="prefs_plugins">Պլագիններ</string>
     <string name="vector_maps_may_display_faster_on_some_devices">Վեկտորային քարտեզները կարող են ավելի արագ ցուցադրվել: Բոլոր սարքերը չեն աջակցում:</string>
     <string name="play_commands_of_currently_selected_voice">Ընտրեք ձայնը և ստուգեք աշխատեցնելով հրահանգները</string>
     <string name="native_rendering">Արագ մատուցում (ցուցադրում)</string>
     <string name="test_voice_prompts">Ձայնային հրահանգների ստուգում</string>
-    <string name="switch_to_raster_map_to_see">"Ընթացիկ դիրքի համար քարտեզները բացակայում են։ Դուք կարող եք ներբեռնել քարտեզներ օգտագործելով մենյուն \"Կառավարում\" → \"Քարտեզների կառավարում\" կամ անցնել առցանց քարտեզների օգտագործմանը  (դրա համար անհրաժեշտ է միացնել plugin «Առցանց քարտեզներ»)."</string>
     <string name="send_files_to_osm">Ուղարկել GPX ֆայլերը OSM-ին?</string>
     <string name="gpx_visibility_txt">Տեսանելիություն</string>
     <string name="gpx_tags_txt">Թեգեր(Tags)</string>
@@ -1831,7 +1812,6 @@
     <string name="auto_follow_route_navigation_descr">Քարտեզի ավտո-վերադարձ ընթացիկ դիրք միայն երթուղով հետեվելու ժամանակ։</string>
     <string name="pref_vector_rendering">Կարգավորումներ վեկտորային ռենդերինգի</string>
     <string name="pref_overlay">Լրացուցիչ շերտեր</string>
-    <string name="pref_raster_map">Առցանց քարտեզների կարգավորումները</string>
     <string name="pref_vector_map">Տեղական(Vector) քարտեզների կարգավորումները</string>
     <string name="delete_confirmation_msg">Ջնջել %1$s?</string>
     <string name="city_type_suburb">Արվարձան</string>
@@ -1932,11 +1912,8 @@
     <string name="layer_overlay">Կափարիչ քարտեզ…</string>
     <string name="map_overlay">Կափարիչ քարտեզ</string>
     <string name="map_overlay_descr">Ընտրեք կափարիչ շերտը հինական քարտեզի համար։</string>
-    <string name="tile_source_already_installed">Քարտեզը արդեն տեղադրված է, պարամետրերը կթարմացվեն։</string>
-    <string name="select_tile_source_to_install">Ընտրեք քարտեզ տեղադրելու կամ թարմացնելու համար։</string>
     <string name="internet_not_available">Այս գործողության համար անհրաժեշտ է ինտերնետ կապ, սակայն այն մատչելի չէ։</string>
     <string name="install_more">Տեղադրել ավելին…</string>
-    <string name="level_to_switch_vector_raster_descr">Առավելագույն սանդղակը(մասշտաբ) վեկտորային քարտեզների օգտագործման համար ուղղորդված քարտեզների փոխարեն։</string>
     <string name="level_to_switch_vector_raster">Սանդղակը(մասշտաբ) վեկտորային քարտեզների օգտագործման համար</string>
     <string name="create_poi_link_to_osm_doc"><u>1Online OSM</u>2 քարտեզ նկաներով։</string>
     <string name="error_doing_search">Անցանց որոնման սխալ։</string>
@@ -2001,12 +1978,8 @@
     <string name="poi_filter_closest_poi">Մոտակա POI-եր</string>
     <string name="poi_filter_custom_filter">Նոր ֆիլտր</string>
     <string name="poi_filter_namefinder">NameFinder (Ինտերնետ)</string>
-    <string name="reading_cached_tiles">Ռաստրային(tiles) քարտեզները օգտագործում…</string>
     <string name="version_index_is_big_for_memory">Տեղական(offline) քարտեզի «{0}» համար հիշողությունը բավարար չէ</string>
     <string name="version_index_is_not_supported">Տեղական քարտեզի(offline) տարբերակը «{0}» չի աջակցվում</string>
-    <string name="osmand_routing_experimental">"OsmAnd-ի ինքնավար նավարկությունը  փորձարարական է և չի աշխատում ավելի քան 20 կիլոմետր հեռավորության վրա:
-\n
-\nԱյս դեպքում օգտագործվում է CloudMade առցանց ծառայությունը երթուղին հաշվարկելու համար:"</string>
     <string name="specified_dir_doesnt_exist">Նշված գրացուցակը(folder) հնարավոր չէ գտնել:</string>
     <string name="osmand_net_previously_installed">Դուք ունեք OsmAnd-ի նախորդ տարբերակը: Բոլոր տեղական(offline) տվյալները աջակցվում են նոր տարբերակում: Այնուամենայնիվ «Սիրված»(Favorite) կետերը պետք է բեռնաթափվեն հավելվածի նախորդ տարբերակից և բեռնվեն նորի մեջ:</string>
     <string name="build_installed">Հավաքացուն {0} հաջողությամբ տեղադրված ({1}):</string>
@@ -2231,7 +2204,6 @@
     <string name="data_settings">Տվյալներ</string>
     <string name="additional_settings">Լրացուցիչ կարգավորումներ</string>
     <string name="update_tile">Թարմացնել քարտեզը</string>
-    <string name="reload_tile">Թարմացնել քարտեզի մի մասը</string>
     <string name="mark_point">Նպատակետ</string>
     <string name="use_english_names">Քարտեզներում օգտագործել անգլերեն անունները</string>
     <string name="app_settings">Հավելվածի կարգավորումները</string>
@@ -2249,7 +2221,6 @@
     <string name="show_location">Ցույց տալ ձեր դիրքը</string>
     <string name="show_gps_coordinates_text">Ցույց տալ GPS կոորդինատները քարտեզի վրա</string>
     <string name="use_english_names_descr">Ընտրեք մայրենի և անգլերեն անունների միջև:</string>
-    <string name="use_internet_to_download_tile">Օգտվել Ինտերնետից բացակայող քարտեզները ներբեռնելու համար</string>
     <string name="app_description">Նավիգացիոն հավելված</string>
     <string name="search_button">Որոնում</string>
     <string name="search_activity">Որոնում</string>
@@ -2369,7 +2340,6 @@
 \n - Մանրամասն պայմանները միշտ հասանելի են OsMo.mobi կայքում 
 \n - Եթե Ձեզ անհրաժեշտ է հատուկ պայմաններ - խնդրում աջակցության համար դիմել՝ osmo.mobi@gmail.com</string>
     <string name="show_view_angle">Ցուցադրել դիտարկման ուղղությունը</string>
-    <string name="map_tile_source_descr">Ընտրեք առցանց կամ պահված քարտեզի աղբյուրը:</string>
     <string name="unsaved_changes_will_be_lost">Ցանկացած չպահպնված փոփոխություն կկորցնեք: Շարունակել?</string>
     <string name="downloads_left_template">Մնաց %1$s ներբեռնումներ</string>
     <string name="roads">Ճանապարհներ</string>
@@ -2601,8 +2571,6 @@
     <string name="plugin_ski_descr">"OsmAnd-ի այս հավելվածը  տրքմքդրում է մանրամասները գլոբալ ցածր լեռնադահուկային լանջերի, խաչաձեւ լեռնադահուկային լեռնանցքի, ալպիական լեռնադահուկային երթուղիների, ճոպանուղիների և լեռնադահուկային վերելակների մանրամասների մասին:
 \n
 \nԱյս տեսակը ակտիվացնելու դեպքում, քարտեզի ոճը փոխվում է «Ձմեռային եւ լեռնադահուկային սպորտին», ցույց տալով լանդշաֆտի բոլոր մանրամասները `ձմռանը նայելու ձևով: Այս (ձմեռային) տեսքը կարող է չեղյալ համարվել ,  այստեղ կրկին անջատելով այն, կամ եթե փոխեք «Քարտի ոճը» ցանկալի տեսք, «Քարտեզների կարգավորումը» ցանկում:"</string>
-    <string name="tiles_to_download_estimated_size">Մասշտաբով {0} ներբեռնել {1} սալիկներ ({2} ՄԲ)</string>
-    <string name="use_high_res_maps_descr">"Չձգել  պատկերացանցային(ռաստրային) քարտեզները բարձրորակ էկրանների վրա:"</string>
     <string name="route_tu">Կատարեք շրջադարձ(U-turn) և շարժվեք</string>
     <string name="map_orientation_default">Ըստ սարքի</string>
     <string name="map_orientation_portrait">Դիմանկարի ձև (Portrait)</string>
@@ -2610,8 +2578,6 @@
     <string name="map_screen_orientation">Էկրանի կողմնորոշումը (Screen orientation)</string>
     <string name="map_screen_orientation_descr">Ընտրեք էկրանի կողմնորոշումը (Portrait, landscape, or device):</string>
     <string name="update_poi_error_loading">Խնդիր առաջացավ սերվերից տվյալների ներբեռման ժամանակ</string>
-    <string name="max_level_download_tile_descr">Նշեք առավելագույն մաշտաբը առցանց քարտեզի սալիկները ներբեռնելու համար:</string>
-    <string name="map_tile_source">Սալիկային(ռաստրային) քարտեզների աղբյուրը</string>
     <string name="navigation_item_description">Կարգավորում(Setup) նավարկության:</string>
     <string name="map_viewing_item">Քարտեզի դիտում</string>
     <string name="search_on_the_map_item">Քարտեզի որոնում</string>

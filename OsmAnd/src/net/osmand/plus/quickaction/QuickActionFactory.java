@@ -13,10 +13,7 @@ import net.osmand.plus.quickaction.actions.AddOSMBugAction;
 import net.osmand.plus.quickaction.actions.AddPOIAction;
 import net.osmand.plus.quickaction.actions.FavoriteAction;
 import net.osmand.plus.quickaction.actions.GPXAction;
-import net.osmand.plus.quickaction.actions.MapOverlayAction;
-import net.osmand.plus.quickaction.actions.MapSourceAction;
 import net.osmand.plus.quickaction.actions.MapStyleAction;
-import net.osmand.plus.quickaction.actions.MapUnderlayAction;
 import net.osmand.plus.quickaction.actions.MarkerAction;
 import net.osmand.plus.quickaction.actions.NavAddDestinationAction;
 import net.osmand.plus.quickaction.actions.NavAddFirstIntermediateAction;
@@ -29,7 +26,6 @@ import net.osmand.plus.quickaction.actions.NewAction;
 import net.osmand.plus.quickaction.actions.ShowHideFavoritesAction;
 import net.osmand.plus.quickaction.actions.ShowHideOSMBugAction;
 import net.osmand.plus.quickaction.actions.ShowHidePoiAction;
-import net.osmand.plus.rastermaps.OsmandRasterMapsPlugin;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -79,11 +75,6 @@ public class QuickActionFactory {
 		}
 
 		quickActions.add(new MapStyleAction());
-		if (OsmandPlugin.getEnabledPlugin(OsmandRasterMapsPlugin.class) != null) {
-			quickActions.add(new MapSourceAction());
-			quickActions.add(new MapOverlayAction());
-			quickActions.add(new MapUnderlayAction());
-		}
 
 		QuickAction voice = new NavVoiceAction();
 		QuickAction addDestination = new NavAddDestinationAction();
@@ -162,15 +153,6 @@ public class QuickActionFactory {
 			case MapStyleAction.TYPE:
 				return new MapStyleAction();
 
-			case MapSourceAction.TYPE:
-				return new MapSourceAction();
-
-			case MapOverlayAction.TYPE:
-				return new MapOverlayAction();
-
-			case MapUnderlayAction.TYPE:
-				return new MapUnderlayAction();
-
 			case NavAddDestinationAction.TYPE:
 				return new NavAddDestinationAction();
 
@@ -230,15 +212,6 @@ public class QuickActionFactory {
 
 			case MapStyleAction.TYPE:
 				return new MapStyleAction(quickAction);
-
-			case MapSourceAction.TYPE:
-				return new MapSourceAction(quickAction);
-
-			case MapOverlayAction.TYPE:
-				return new MapOverlayAction(quickAction);
-
-			case MapUnderlayAction.TYPE:
-				return new MapUnderlayAction(quickAction);
 
 			case NavAddDestinationAction.TYPE:
 				return new NavAddDestinationAction(quickAction);
@@ -300,15 +273,6 @@ public class QuickActionFactory {
 			case MapStyleAction.TYPE:
 				return R.drawable.ic_map;
 
-			case MapSourceAction.TYPE:
-				return R.drawable.ic_world_globe_dark;
-
-			case MapOverlayAction.TYPE:
-				return R.drawable.ic_layer_top_dark;
-
-			case MapUnderlayAction.TYPE:
-				return R.drawable.ic_layer_bottom_dark;
-
 			case NavAddDestinationAction.TYPE:
 				return R.drawable.ic_action_point_add_destination;
 
@@ -368,15 +332,6 @@ public class QuickActionFactory {
 
 			case MapStyleAction.TYPE:
 				return R.string.quick_action_map_style;
-
-			case MapSourceAction.TYPE:
-				return R.string.quick_action_map_source;
-
-			case MapOverlayAction.TYPE:
-				return R.string.quick_action_map_overlay;
-
-			case MapUnderlayAction.TYPE:
-				return R.string.quick_action_map_underlay;
 
 			case NavAddDestinationAction.TYPE:
 				return R.string.quick_action_add_destination;

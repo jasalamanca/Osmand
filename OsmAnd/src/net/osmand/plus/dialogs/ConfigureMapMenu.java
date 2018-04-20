@@ -44,7 +44,6 @@ import net.osmand.plus.activities.PluginActivity;
 import net.osmand.plus.activities.SettingsActivity;
 import net.osmand.plus.openseamapsplugin.NauticalMapsPlugin;
 import net.osmand.plus.poi.PoiFiltersHelper;
-import net.osmand.plus.rastermaps.OsmandRasterMapsPlugin;
 import net.osmand.plus.render.RendererRegistry;
 import net.osmand.plus.srtmplugin.SRTMPlugin;
 import net.osmand.plus.views.OsmandMapTileView;
@@ -186,14 +185,8 @@ public class ConfigureMapMenu {
 					showGpxSelectionDialog(adapter, adapter.getItem(pos));
 				}
 			} else if (itemId == R.string.layer_map) {
-				if (OsmandPlugin.getEnabledPlugin(OsmandRasterMapsPlugin.class) == null) {
-					Intent intent = new Intent(ma, PluginActivity.class);
-					intent.putExtra(PluginActivity.EXTRA_PLUGIN_ID, OsmandRasterMapsPlugin.ID);
-					ma.startActivity(intent);
-				} else {
-					ContextMenuItem it = adapter.getItem(pos);
-					ma.getMapLayers().selectMapLayer(ma.getMapView(), it, adapter);
-				}
+				ContextMenuItem it = adapter.getItem(pos);
+				ma.getMapLayers().selectMapLayer(ma.getMapView(), it, adapter);
 			}
 			adapter.notifyDataSetChanged();
 			ma.getMapLayers().updateLayers(ma.getMapView());

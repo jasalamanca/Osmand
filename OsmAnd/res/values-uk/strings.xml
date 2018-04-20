@@ -20,9 +20,8 @@
   <string name="navpoint_search_desc">Пошук за координатами</string>
   <string name="transport_search_desc">Пошук громадського транспорту</string>
   <string name="favourites_search_desc">Шукати у закладках</string>
-  
-  <string name="offline_navigation_not_available">Автономна навігація OsmAnd тимчасово не доступна.</string>
-  <string name="left_side_navigation">Лівосторонній рух</string>
+
+    <string name="left_side_navigation">Лівосторонній рух</string>
   <string name="left_side_navigation_descr">Увімкніть для країн з лівостороннім рухом.</string>
   
   <string name="unknown_from_location">Початкове місцезнаходження не визначено</string>
@@ -38,26 +37,18 @@
   <string name="index_settings_descr">Завантаження, перегляд деталей, та управління локальними мапами.</string>
   <string name="map_online_plugin_is_not_installed">Активуйте втулок онлайн мап, щоб мати можливість вибирати різні джерела для мап</string>
   <string name="map_online_data">Онлайн мапи (растрові)</string>
-  <string name="map_online_data_descr">Використовувати онлайн мапи (кешуються на SD картці).</string>
-  <string name="shared_string_online_maps">Онлайн мапи</string>
-  <string name="online_map_settings_descr">Налаштування онлайн або кешованих джерел (тайлів) мап.</string>
-  
-  
-  <string name="osmand_rastermaps_plugin_description">"Цей втулок надає можливість отримати доступ до багатьох типів онлайн (так званих растрових) мап, від попередньо створених квадратів OpenStreetMap (на кшталт стилю Mapnik) до супутникових знімків та спеціальних шарів, таких як погодні, кліматичні та геологічні мапи, шари рельєфу й т.і. 
-\n
-\nБудь яка з цих мап може використовуватись як основна мапа в OsmAnd, або як покриття чи підкладка до іншої основної мапи (наприклад стандартна оффлайнова мапа OsmAnd). Для того, щоб зробити більш помітною будь-яку мапу-підкладку, певні елементи векторної мапи OsmAnd можна легко сховати через меню „Налаштування Мапи“. 
-\n
-\nКвадрати мап можна отримувати безпосередньо з онлайн-джерел або підготувати їх для оффлайнового використання (та вручну скопіювати в теку даних  OsmAnd) у вигляді бази даних SQLite, яку можна створити за допомогою різноманітних сторонніх інструментів підготовки мап."</string>
-  <string name="osmand_background_plugin_description">Показує налаштування для активації навігації та запису маршрутів в фоновому режимі (екран вимкнено), періодично активуючи GPS.</string>
+    <string name="shared_string_online_maps">Онлайн мапи</string>
+
+
+    <string name="osmand_background_plugin_description">Показує налаштування для активації навігації та запису маршрутів в фоновому режимі (екран вимкнено), періодично активуючи GPS.</string>
   <string name="osmand_accessibility_description">Втулок містить налаштування допоміжних можливостей. Він дозволяє налаштувати швидкість відтворення голосових підказок, налаштування спрямовування екрану під час навігації, використання трекболу для масштабування, або використання перетворення тексту в голос, скажімо, для сповіщення про ваше поточне місцезнаходження.</string>
   
   
   
   <string name="osmand_development_plugin_description">Втулок показує налаштування для пошуку помилок і розробки, наприклад моделювання навігації чи показу продуктивності рендерингу, голосових повідомлень. Ці налаштування призначені для розробників і не потрібні пересічним користувачам.</string>
   <string name="plugins_screen">Втулки</string>
-  
-  <string name="prefs_plugins_descr">Втулки надають додаткові можливості.</string>
-  <string name="prefs_plugins">Втулки</string>
+
+    <string name="prefs_plugins">Втулки</string>
   
   <string name="osm_editing_plugin_description">За допомогою цього втулка, ви можете використовувати OsmAnd для створення або редагування цікавих точок (POI) в OSM, створення й коментування нотаток OSM, надсилання GPX-треків в OSM. OSM — суспільний картографічний проект, участь в якому можуть брати усі охочі. За докладною інформацією звертайтесь на https://openstreetmap.org. Вітається активна участь, внесок можна зробити безпосередньо з OsmAnd, якщо ви вкажете свої персональні облікові дані OSM.</string>
   <string name="vector_maps_may_display_faster_on_some_devices">Векторні мапи відображаються швидше. Підтримуються не всіма пристроями.</string>
@@ -67,9 +58,8 @@
   <string name="native_rendering">Швидкий рендеринг</string>
   
   <string name="test_voice_prompts">Тестувати голосові підказки</string>
-  <string name="switch_to_raster_map_to_see">Для поточної місцевості відсутні векторні оффлайн мапи. Ви можете завантажити їх в меню Налаштування (Управління мапами), або використовувати онлайн мапи (для цього увімкніть відповідний втулок).</string>
-  
-  <string name="send_files_to_osm">Відправити GPX файли в OSM?</string>
+
+    <string name="send_files_to_osm">Відправити GPX файли в OSM?</string>
   <string name="gpx_visibility_txt">Видимість</string>
   <string name="gpx_tags_txt">Теги</string>
   <string name="gpx_description_txt">Опис</string>
@@ -218,8 +208,7 @@
   <string name="auto_follow_location_enabled">Використовується режим автоматичного центрування мапи.</string>
   <string name="pref_vector_rendering">Налаштування векторного рендерінгу</string>
   <string name="pref_overlay">Додаткові шари</string>
-  <string name="pref_raster_map">Налаштування онлайн мап</string>
-  <string name="pref_vector_map">Налаштування векторних мап</string>
+    <string name="pref_vector_map">Налаштування векторних мап</string>
   <string name="delete_confirmation_msg">Вилучити %1$s?</string>
   <string name="city_type_suburb">Передмістя</string>
   <string name="city_type_hamlet">Хутір</string>
@@ -340,14 +329,11 @@
   <string name="shared_string_none">Нема</string>
   <string name="map_overlay">Верхній шар</string>
   <string name="map_overlay_descr">Виберіть верхній шар для основної мапи.</string>
-  <string name="tile_source_already_installed">Мапа вже встановлена, налаштування будуть оновлені.</string>
-  <string name="select_tile_source_to_install">Виберіть мапи для встановлення або оновлення.</string>
-  <string name="internet_not_available">Потрібно Інтернет-з’єднання для даної операції, але воно недоступне.</string>
+    <string name="internet_not_available">Потрібно Інтернет-з’єднання для даної операції, але воно недоступне.</string>
   <string name="install_more">Завантажити ще…</string>
-  
-  
-  <string name="level_to_switch_vector_raster_descr">Мінімальний масштаб для використання векторних мап.</string>
-  <string name="level_to_switch_vector_raster">Масштаб векторних мап</string>
+
+
+    <string name="level_to_switch_vector_raster">Масштаб векторних мап</string>
   
   
   
@@ -425,13 +411,11 @@
   <string name="poi_filter_for_tourists">Для туристів</string>
   <string name="poi_filter_fuel">Заправки</string>
   <string name="poi_filter_namefinder">NameFinder (інтернет)</string>
-  <string name="reading_cached_tiles">Зчитування кешованих растрових мап…</string>
-  <string name="version_index_is_big_for_memory">Недостатньо пам’яті для локальної мапи \'\'{0}\'\'</string>
+    <string name="version_index_is_big_for_memory">Недостатньо пам’яті для локальної мапи \'\'{0}\'\'</string>
   <string name="version_index_is_not_supported">Версія локальної мапи \'\'{0}\'\' не підтримується</string>
-  
-  
-  <string name="osmand_routing_experimental">OsmAnd оффлайн навігація є експериментальною і не працює на відстанях &gt; 20 км\n\nВ цьому випадку для прокладання маршруту використовуйте онлайн сервіс CloudMade.</string>
-  <string name="specified_dir_doesnt_exist">Неможливо знайти вказану теку.</string>
+
+
+    <string name="specified_dir_doesnt_exist">Неможливо знайти вказану теку.</string>
   <string name="application_dir">Тека даних</string>
   
   <string name="build_installed">Збірка {0} успішно встановлена ({1}).</string>
@@ -458,8 +442,7 @@
   <string name="shared_string_refresh">Перезавантажити</string>
   <string name="fast_route_mode">Найшвидший маршрут</string>
   <string name="fast_route_mode_descr">Задіяти розрахунок найшвидшого маршруту, або ж вимкнути режим паливно-ощадного маршруту.</string>
-  <string name="tiles_to_download_estimated_size">На масштабі{0} завантажувати {1} тайли ({2} MB)</string>
-  <string name="shared_string_download_map">Завантажити мапу</string>
+    <string name="shared_string_download_map">Завантажити мапу</string>
   <string name="select_max_zoom_preload_area">Вибрати максимальний масштаб для завантаження</string>
   <string name="maps_could_not_be_downloaded">Дана мапа не може бути завантажена</string>
   <string name="continuous_rendering">Безперервний рендеринг</string>
@@ -476,9 +459,8 @@
   <string name="phone">телефон</string>
   <string name="download_type_to_filter">фільтрувати</string>
   <string name="use_high_res_maps">Дисплей високої роздільної здатності</string>
-  <string name="use_high_res_maps_descr">Не розтягувати (із розмиттям) растрові мапи на дисплеях з високою роздільною здатністю.</string>
-  
-  <string name="context_menu_item_search_transport">Шукати громадський транспорт</string>
+
+    <string name="context_menu_item_search_transport">Шукати громадський транспорт</string>
   <string name="transport_searching_transport">Пошук транспорту (нема цілі):</string>
   <string name="transport_searching_route">Пошук транспорту ({0} до цілі):</string>
   
@@ -618,8 +600,7 @@
   <string name="search_offline_address">Оффлайн пошук</string>
   <string name="search_online_address">Інтернет</string>
   <string name="max_level_download_tile">Макс. рівень деталізації</string>
-  <string name="max_level_download_tile_descr">Виберіть максимальний рівень деталізації для завантаження з Інтернету.</string>
-  <string name="route_general_information">Загальна відстань %1$s, час в дорозі %2$d г %3$d хв.</string>
+    <string name="route_general_information">Загальна відстань %1$s, час в дорозі %2$d г %3$d хв.</string>
   <string name="router_service_descr">Виберіть сервіс для прокладання маршруту.</string>
   <string name="router_service">Прокладання маршруту</string>
   <string name="sd_dir_not_accessible">Тека даних на SD-карті не доступна!</string>
@@ -692,8 +673,7 @@
   <string name="save_track_to_gpx_descrp">Під час навігації треки будуть автоматично збережені у теку з треками у форматі GPX.</string>
   <string name="save_track_to_gpx">Автоматично записувати трек під час навігації</string>
   <string name="update_tile">Оновити мапу</string>
-  <string name="reload_tile">Оновити частину мапи</string>
-  <string name="mark_point">Точка</string>
+    <string name="mark_point">Точка</string>
   
   
   
@@ -714,16 +694,13 @@
   <string name="map_view_3d">3D вид</string>
   <string name="show_poi_over_map_description">Відображати останні вибрані POI на мапі.</string>
   <string name="show_poi_over_map">Відображати POI</string>
-  <string name="map_tile_source_descr">Виберіть джерело онлайн мап або кешованих ділянок мапи.</string>
-  <string name="map_tile_source">Джерело растрових мап</string>
-  <string name="map_source">Джерело мапи</string>
+    <string name="map_source">Джерело мапи</string>
   <string name="use_internet">Використовувати інтернет</string>
   <string name="show_location">Показати ваше місцерозташування</string>
   
   
   <string name="show_gps_coordinates_text">Показати GPS координати на мапі</string>
-  <string name="use_internet_to_download_tile">Використовувати інтернет для завантаження відсутніх частин мапи</string>
-  <string name="app_description">Навігаційна програма</string>
+    <string name="app_description">Навігаційна програма</string>
   <string name="shared_string_exit">Вихід</string>
   
   
@@ -1134,21 +1111,12 @@
 <string name="about_version">Версія:</string>
     <string name="shared_string_about">Про</string>
     <string name="about_settings_descr">Версія, ліцензії, учасники проекту</string>
-    
-    
-    <string name="local_index_tile_data_zooms">Завантажені масштаби: %1$s</string>
+
+
     <string name="local_index_tile_data_expire">Термін дії (у хвилинах): %1$s</string>
-    <string name="local_index_tile_data_downloadable">Завантажувані: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Максимальний масштаб: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Мінімальний масштаб: %1$s</string>
     <string name="local_index_tile_data_name">Дата квадрату: %1$s</string>
-    <string name="edit_tilesource_successfully">Джерело квадратів мапи %1$s збережене</string>
-    <string name="edit_tilesource_elliptic_tile">Еліптичний Меркатор</string>
     <string name="edit_tilesource_maxzoom">Макс.масштаб</string>
-    <string name="edit_tilesource_expiration_time">Термін дії (в хвилинах)</string>
     <string name="edit_tilesource_minzoom">Мін.масштаб</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Виберіть наявний…</string>
     <string name="maps_define_edit">Визначити/змінити…</string>
 	
 	

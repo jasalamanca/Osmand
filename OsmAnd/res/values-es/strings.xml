@@ -70,7 +70,6 @@
     
     <string name="osmand_service">Modo en segundo plano</string>
     <string name="osmand_service_descr">OsmAnd se ejecuta en segundo plano mientras la pantalla está apagada.</string>
-    <string name="switch_to_raster_map_to_see">No hay ningún mapa vectorial descargado para esta ubicación. Puede descargar uno en Ajustes (Gestionar mapas), o cambiar al mapa en línea (para esto active el complemento «Mapas en línea»).</string>
     <string name="download_files_not_enough_space">No hay suficiente espacio libre para descargar %1$s MB (disponible: %2$s).</string>
     <string name="download_files_question_space">¿Descargar {0} archivo(s)?
 El espacio de almacenamiento usado es {1} MB.
@@ -86,7 +85,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="auto_follow_location_enabled">Auto-centrar vista del mapa activado.</string>
     <string name="pref_vector_rendering">Opciones específicas de renderizado vectorial</string>
     <string name="pref_overlay">Superpuesta / subyacente</string>
-    <string name="pref_raster_map">Ajustes de la fuente del mapa</string>
     <string name="pref_vector_map">Ajustes del mapa vectorial</string>
     <string name="delete_confirmation_msg">¿Borrar %1$s?</string>
     <string name="city_type_suburb">Barrio</string>
@@ -196,11 +194,8 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="shared_string_none">Ninguno</string>
     <string name="map_overlay">Mapa superpuesto</string>
     <string name="map_overlay_descr">Elige el mapa superpuesto.</string>
-    <string name="tile_source_already_installed">El mapa ya está instalado, los ajustes se actualizarán.</string>
-    <string name="select_tile_source_to_install">Seleccione mapas (teselas) a instalar o actualizar.</string>
     <string name="internet_not_available">Se necesita una conexión a Internet para esta operación pero no está disponible.</string>
     <string name="install_more">Instalar más…</string>
-    <string name="level_to_switch_vector_raster_descr">Nivel de zoom mínimo para utilizar los mapas vectoriales.</string>
     <string name="level_to_switch_vector_raster">Mín. nivel de zoom vectorial</string>
     <string name="create_poi_link_to_osm_doc"><u>OSM en línea</u> clasificación de mapa con imágenes.</string>
     <string name="error_doing_search">Se produjo un error en la búsqueda sin conexión.</string>
@@ -265,12 +260,10 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="poi_filter_for_tourists">Para turistas</string>
     <string name="poi_filter_fuel">Gasolinera</string>
     <string name="poi_filter_namefinder">NameFinder en línea</string>
-    <string name="reading_cached_tiles">Leyendo teselas almacenadas localmente…</string>
     <string name="version_index_is_big_for_memory">La versión «{0}» de índices no cabe en memoria</string>
     <string name="version_index_is_not_supported">No se soporta la versión «{0}» de índices</string>
-    
-    
-    <string name="osmand_routing_experimental">La navegación sin conexión de OsmAnd es una característica experimental y no funciona para distancias mayores a 20 km. El servicio de navegación se ha cambiado temporalmente al servicio en línea CloudMade.</string>
+
+
     <string name="specified_dir_doesnt_exist">No se puede encontrar la carpeta especificada.</string>
     <string name="application_dir">Carpeta de almacenamiento de datos</string>
     <string name="osmand_net_previously_installed">Una versión anterior de OsmAnd está instalada. Todos los datos descargados están soportados por la nueva aplicación. Pero los favoritos deben exportarse desde la aplicación antigua y después importarse en la nueva.</string>
@@ -297,7 +290,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="shared_string_refresh">Actualizar</string>
     <string name="fast_route_mode">Ruta más rápida</string>
     <string name="fast_route_mode_descr">Activar para calcular la ruta más rápida o desactivar para la ruta que ahorra combustible.</string>
-    <string name="tiles_to_download_estimated_size">En zoom {0} descarga {1} teselas ({2} MB)</string>
     <string name="shared_string_download_map">Descargar mapa</string>
     <string name="select_max_zoom_preload_area">Seleccione el zoom máximo para precargar</string>
     <string name="maps_could_not_be_downloaded">Este mapa no se pudo descargar</string>
@@ -316,7 +308,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="phone">Teléfono</string>
     <string name="download_type_to_filter">escriba el filtro</string>
     <string name="use_high_res_maps">Pantalla de alta resolución</string>
-    <string name="use_high_res_maps_descr">No estira (ni hace borrosas) las teselas de mapa en pantallas de alta densidad.</string>
     <string name="unknown_location">Ubicación aún desconocida</string>
     <string name="context_menu_item_search_transport">Buscar transporte público</string>
     <string name="transport_searching_transport">Resultados de transporte (sin destino):</string>
@@ -451,7 +442,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="search_offline_address">Búsqueda sin conexión</string>
     <string name="search_online_address">Búsqueda en línea</string>
     <string name="max_level_download_tile">Máx. zoom en línea</string>
-    <string name="max_level_download_tile_descr">Especifica el nivel de zoom máximo para descargar teselas de mapas en línea.</string>
     <string name="route_general_information">Distancia total %1$s, tiempo de viaje %2$d h %3$d min.</string>
     <string name="router_service_descr">Selecciona un servicio de navegación con o sin conexión.</string>
     <string name="router_service">Servicio de navegación</string>
@@ -515,7 +505,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="save_track_to_gpx_descrp">Una traza GPX se guardará automáticamente en la carpeta de trazas durante la navegación.</string>
     <string name="save_track_to_gpx">Guardar la traza automáticamente durante la navegación</string>
     <string name="update_tile">Actualizar mapa</string>
-    <string name="reload_tile">Recargar tesela</string>
     <string name="mark_point">Objetivo</string>
     <string name="shared_string_add_to_favorites">Añadir a favoritos</string>
     <string name="use_english_names_descr">Selecciona entre nombres nativos o en inglés.</string>
@@ -531,13 +520,10 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="map_view_3d">Visión 3D del mapa</string>
     <string name="show_poi_over_map_description">Muestra la última superposición del PDI elegido en el mapa.</string>
     <string name="show_poi_over_map">Mostrar superposición de PDI</string>
-    <string name="map_tile_source_descr">Elige la fuente de las teselas de mapas en línea o almacenadas.</string>
-    <string name="map_tile_source">Fuente de teselas del mapa</string>
     <string name="map_source">Fuente de mapa</string>
     <string name="use_internet">Utilizar Internet</string>
     <string name="show_location">Mostrar su ubicación</string>
     <string name="show_gps_coordinates_text">Mostrar coordenadas GPS en el mapa</string>
-    <string name="use_internet_to_download_tile">Utilizar Internet para descargar las teselas que falten</string>
     <string name="app_description">Aplicación de navegación</string>
     <string name="shared_string_exit">Salir</string>
     <string name="search_button">Buscar</string>
@@ -613,7 +599,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="edit_filter_delete_dialog_title">¿Eliminar el filtro seleccionado?</string>
     <string name="edit_filter_delete_message">Se borró el filtro {0}</string>
     <string name="edit_filter_create_message">Se creó el filtro {0}</string>
-    <string name="offline_navigation_not_available">La navegación desconectada de OsmAnd, no está disponible temporalmente.</string>
     <string name="left_side_navigation">Conducción por la izquierda</string>
     <string name="left_side_navigation_descr">Seleccione en países con tráfico por la izquierda.</string>
     <string name="unknown_from_location">Todavía no se determinó el punto de partida</string>
@@ -621,20 +606,12 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="basemap_was_selected_to_download">El Mapa Base (World Basemap) se necesita para el correcto funcionamiento de la aplicación y se seleccionó para su descarga.</string>
     <string name="map_online_plugin_is_not_installed">Activa el complemento «Mapas en línea» para seleccionar diferentes fuentes de mapas</string>
     <string name="map_online_data">Mapas en línea y teselas</string>
-    <string name="map_online_data_descr">Usa mapas en línea (teselas descargadas y almacenadas en la tarjeta SD).</string>
     <string name="shared_string_online_maps">Mapas en línea</string>
-    <string name="online_map_settings_descr">Configura las fuentes de teselas de mapas en línea o almacenadas.</string>
-    <string name="osmand_rastermaps_plugin_description">Con este complemento puede acceder a muchos tipos de mapas en línea (llamados de teselas o ráster), desde teselas de OpenStreetMap predefinidas (como Mapnik) a imágenes de satélite y capas de propósito especial como mapas del tiempo, mapas del clima, mapas geológicos, capas de sombreado, etc. 
-\n 
-\nCualquiera de estos mapas se puede utilizar como el mapa (base) principal, que se mostrará en la pantalla del mapa de OsmAnd, o como una superposición o subyacente de otro mapa base (como los mapas estándares sin conexión de OsmAnd). Para hacer cualquier mapa subyacente más visible, ciertos elementos de los mapas vectoriales de OsmAnd se pueden ocultar fácilmente a través del menú «Configurar mapa». 
-\n 
-\nLas teselas de mapas, se pueden obtener directamente a través de fuentes en línea o pueden prepararse para su uso sin conexión (y copiarse manualmente en la carpeta de datos de OsmAnd) como una base de datos SQLite, que puede generarse con diversas herramientas de preparación de mapas de terceros.</string>
     <string name="osmand_background_plugin_description">Muestra los ajustes para activar el seguimiento y la navegación en segundo plano (pantalla apagada) activando periódicamente el dispositivo GPS.</string>
     <string name="osmand_accessibility_description">Este complemento activa las características de accesibilidad del dispositivo directamente en OsmAnd. Facilita, por ejemplo, el ajuste de la velocidad de la voz para voces TTS, la configuración de navegación de pantalla con el panel direccional, el uso de bola de desplazamiento para el control del zoom o el uso de comentarios texto a voz, como el anuncio automático de tu ubicación.</string>
     <string name="osmand_development_plugin_description">Este complemento muestra los ajustes de características de desarrollo y depuración para probar la simulación de rutas, el rendimiento del renderizado en pantalla, o los avisos de voz.
 \n\nEstos ajustes están destinados para los desarrolladores y no son necesarios para el usuario general.</string>
     <string name="plugins_screen">Complementos</string>
-    <string name="prefs_plugins_descr">Los complementos activan ajustes avanzados y funcionalidades adicionales.</string>
     <string name="prefs_plugins">Complementos</string>
     <string name="osm_editing_plugin_description">Este complemento OsmAnd puede ser utilizado para hacer contribuciones en OSM como crear o modificar objetos PDI (puntos de interés) de OSM, abrir o comentar errores de OSM, y contribuir con archivos grabados de trazas GPX. OSM es un proyecto de mapeo impulsado por la comunidad y de dominio público mundial. Para más detalles consulte https://openstreetmap.org.
 \n\nSe aprecia la participación activa, y las contribuciones se pueden hacer directamente desde OsmAnd, si especifica sus credenciales personales de OSM en la aplicación.</string>
@@ -959,11 +936,7 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="route_descr_map_location">Mapa: </string>
     <string name="route_to">Hacia:</string>
     <string name="about_version">Versión:</string>
-    <string name="local_index_tile_data_downloadable">Descargable: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Zoom máximo: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Zoom mínimo: %1$s</string>
     <string name="edit_tilesource_maxzoom">Zoom máximo</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
     <string name="maps_define_edit">Definir/Editar…</string>
     <string name="driving_region_japan">Japón</string>
     <string name="driving_region_us">Estados Unidos</string>
@@ -973,15 +946,10 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="driving_region_descr">Seleccione la región de conducción: EEUU, Europa, Reino Unido, Asia y otras.</string>
     <string name="driving_region">Región de conducción</string>
     <string name="edit_tilesource_minzoom">Zoom mínimo</string>
-    <string name="edit_tilesource_expiration_time">Expirar (minutos)</string>
-    <string name="edit_tilesource_successfully">La fuente de teselas %1$s, se guardó correctamente</string>
     <string name="local_index_tile_data_name">Datos de teselas: %1$s</string>
     <string name="local_index_tile_data_expire">Expirar (minutos): %1$s</string>
     <string name="shared_string_about">Acerca de</string>
     <string name="about_settings_descr">Información de la versión, licencias, miembros del proyecto</string>
-    <string name="edit_tilesource_choose_existing">Elegir existente…</string>
-    <string name="local_index_tile_data_zooms">Niveles de zoom descargados: %1$s</string>
-    <string name="edit_tilesource_elliptic_tile">Mercator elíptica</string>
     <string name="map_widget_fps_info">Información de FPS</string>
     <string name="base_world_map">Mapa base mundial</string>
     

@@ -137,8 +137,7 @@
 	<string name="route_points">Pontos da rota</string>
 	<string name="track_segments">Segmentos da trilha</string>
 	<string name="shared_string_online_maps">Mapas on-line</string>
-	<string name="osmand_rastermaps_plugin_description">"Com este complemento você pode acessar muitos tipos de mapas online (chamados de quadrícula ou ladrilho), tais como quadrículas predefinidas do OpenStreetMap (como Mapnik) para imagens de satélite e camadas especiais como mapas aquáticos, climáticos, geológicos, camadas de sombra de relevo, etc.\n\nQuaisquer desses mapas podem ser usados como mapa principal (base) para ser mostrado no OsmAnd ou como uma sobreposição ou subcamada para outro mapa base (como o mapa offline padrão do OsmAnd). A fim de fazer qualquer subcamada do mapa mais visível, certos elementos do mapa vetorial do OsmAnd podem facilmente ser ocultados através do menu \'Configurar mapa\' conforme desejado.\n\nQuadrículas de mapas podem ser obtidas diretamente através de fontes online ou podem ser preparados para uso offline (e copiadas manualmente para o diretório de dados do OsmAnd) como um banco de dados sqlite, que pode ser produzido por uma variedade de ferramentas de terceiros para preparação de mapas. "</string>
-	<string name="record_plugin_name">Gravação de viagem</string>
+    <string name="record_plugin_name">Gravação de viagem</string>
 	<string name="record_plugin_description">"Este complemento ativa a funcionalidade para gravar e salvar suas trilhas manualmente tocando o widget de registro de GPX na tela do mapa ou também fazendo automaticamente o registro de todas as suas rotas de navegação para um arquivo GPX.
 \n\nTrilhas gravadas podem ser compartilhadas com seus amigos ou serem usadas para contribuições ao OSM. Atletas podem usar trilhas gravadas para monitorar seus treinos. Algumas análises básicas da trilha podem ser feitas diretamente no OsmAnd, como tempos de percurso, velocidade média, etc. E, claro, trilhas também podem ser analisadas mais tarde em ferramentas de terceiros. "</string>
 	<string name="osmo_plugin_name">Monitoramento do OpenStreetMap</string>
@@ -338,8 +337,6 @@
     <string name="calculate_osmand_route_gpx">Calcular rota off-line</string>
     <string name="app_mode_truck">Caminhão</string>
     <string name="auto_zoom_far">Visão intermediária</string>
-	<string name="local_index_tile_data_minzoom">Zoom mínimo: %1$s</string>
-    <string name="edit_tilesource_successfully">A fonte da quadrícula %1$s foi salva com sucesso</string>
     <string name="speak_traffic_warnings">Moderadores de tráfego</string>
     <string name="context_menu_item_directions_from">Direções de</string>
     <string name="app_mode_default">Explorar</string>
@@ -619,18 +616,11 @@
     <string name="shared_string_about">Sobre</string>
     <string name="about_settings_descr">Versão, licenças, membros do projeto</string>
 
-    
-    <string name="local_index_tile_data_zooms">Zooms baixados: %1$s</string>
+
     <string name="local_index_tile_data_expire">Expirar (minutos): %1$s</string>
-    <string name="local_index_tile_data_downloadable">Transferível: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Zoom máximo: %1$s</string>
     <string name="local_index_tile_data_name">Dados da quadrícula: %1$s</string>
-    <string name="edit_tilesource_elliptic_tile">Mercator elíptico</string>
     <string name="edit_tilesource_maxzoom">Zoom máximo</string>
-    <string name="edit_tilesource_expiration_time">Expirar (minutos)</string>
     <string name="edit_tilesource_minzoom">Zoom mínimo</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Escolher existente…</string>
     <string name="maps_define_edit">Definir/Editar…</string>
 	<string name="map_widget_fps_info">Informações de depuração FPS</string>
 	<string name="driving_region_descr">Selecionar região de direção</string>
@@ -927,8 +917,7 @@ Pôr do Sol: %2$s</string>
 	<string name="navpoint_search_desc">Coordenadas</string>
 	<string name="transport_search_desc">Pesquisar transporte público</string>
 	<string name="favourites_search_desc">Pesquisar favoritos</string>
-	<string name="offline_navigation_not_available">Navegação OsmAnd off-line está temporariamente indisponível.</string>
-	<string name="left_side_navigation_descr">Selecionar para países com direção pela esquerda</string>
+    <string name="left_side_navigation_descr">Selecionar para países com direção pela esquerda</string>
 	<string name="local_index_description">Toque em qualquer item para ver mais detalhes, Toque e segure para desativar ou excluir. Dados atuais no aparelho (%1$s livre):</string>
 	<string name="unknown_from_location">Precisa definir um ponto de partida</string>
 	<string name="unknown_location">Posição ainda desconhecida</string>
@@ -939,18 +928,14 @@ Pôr do Sol: %2$s</string>
 	<string name="local_indexes_cat_map">Mapa padrão (vectorial)</string>
 	<string name="map_online_plugin_is_not_installed">Ativar o complemento de mapas on-line, para selecionar diferentes fontes de mapa</string>
 	<string name="map_online_data">Mapas e quadrículas on-line</string>
-	<string name="map_online_data_descr">Usar mapas on-line (baixar e armazenar quadrículas)</string>
-	<string name="online_map_settings_descr">Configurar fontes de quadrículas de mapas on-line ou off-line</string>
-	<string name="prefs_plugins_descr">Complementos ativam as configurações avançadas e funcionalidades adicionais</string>
-	<string name="prefs_plugins">Complementos</string>
+    <string name="prefs_plugins">Complementos</string>
 	
 	<string name="vector_maps_may_display_faster_on_some_devices">Mapas vectoriais são visualizados mais rápido. Podem não funcionar bem em alguns aparelhos.</string>
 	<string name="play_commands_of_currently_selected_voice">Tocar comando de voz selecionado</string>
 	<string name="native_rendering">Renderização nativa</string>
-	<string name="test_voice_prompts">Testar comandos de voz</string>    
-	<string name="switch_to_raster_map_to_see">Nenhum mapa vetorial off-line presente para esta região. Você pode baixar um em Configurações (Gerenciar mapas) ou mudar para mapas on-line (para isso, ative complemento de mapas on-line).</string>
-	
-	<string name="send_files_to_osm">Enviar arquivos GPX para o OSM?</string>
+	<string name="test_voice_prompts">Testar comandos de voz</string>
+
+    <string name="send_files_to_osm">Enviar arquivos GPX para o OSM?</string>
 	<string name="gpx_visibility_txt">Visibilidade</string>
 	<string name="gpx_tags_txt">Etiquetas</string>
 	<string name="gpx_description_txt">Descrição</string>
@@ -1088,8 +1073,7 @@ Pôr do Sol: %2$s</string>
 	<string name="auto_follow_location_enabled">Mapa automaticamente centrado.</string>
 	<string name="pref_vector_rendering">Opções específicas para renderizar vetores</string>
 	<string name="pref_overlay">Sobreposição / Subjacente</string>
-	<string name="pref_raster_map">Configurações de fonte de mapa</string>
-	<string name="pref_vector_map">Configurações de mapa vetorial</string>
+    <string name="pref_vector_map">Configurações de mapa vetorial</string>
 	<string name="delete_confirmation_msg">Apagar %1$s?</string>
 	<string name="local_index_items_uploaded">%1$d de %2$d itens enviados com sucesso.</string>
 	<string name="internet_connection_required_for_online_route">Um serviço de navegação on-line está selecionado, mas não há conexão com a Internet.</string>
@@ -1229,12 +1213,9 @@ Pôr do Sol: %2$s</string>
 	<string name="layer_overlay">Camada superior…</string>
 	<string name="map_overlay">Mapa da camada superior</string>
 	<string name="map_overlay_descr">Escolher mapa da camada superior.</string>
-	<string name="tile_source_already_installed">Mapa já está instalado, as configurações serão atualizadas.</string>
-	<string name="select_tile_source_to_install">Selecione os mapas (quadrículas) para instalar ou atualizar.</string>
-	<string name="internet_not_available">Uma conexão com a Internet é necessária para esta operação, mas não está disponível</string>
+    <string name="internet_not_available">Uma conexão com a Internet é necessária para esta operação, mas não está disponível</string>
 	<string name="install_more">Instalar mais…</string>
-	<string name="level_to_switch_vector_raster_descr">Nível de zoom mínimo para usar mapas vetoriais</string>
-	<string name="level_to_switch_vector_raster">Mín. nível de zoom vetorial</string>
+    <string name="level_to_switch_vector_raster">Mín. nível de zoom vetorial</string>
 	
 	
 	
@@ -1295,13 +1276,11 @@ Pôr do Sol: %2$s</string>
 	<string name="old_map_index_is_not_supported">O formato obsoleto de mapa \'\'{0}\'\' não é suportado</string>
 	<string name="poi_filter_closest_poi">POIs mais próximos</string>
 	<string name="poi_filter_custom_filter">Filtro personalizado</string>
-	<string name="reading_cached_tiles">Lendo quadrículas salvas…</string>
-	<string name="version_index_is_big_for_memory">O índice \'\'{0}\'\' não coube na memória</string>
+    <string name="version_index_is_big_for_memory">O índice \'\'{0}\'\' não coube na memória</string>
 	<string name="version_index_is_not_supported">A versão do índice \'\'{0}\'\' não é suportada</string>
-	
-	
-	<string name="osmand_routing_experimental">Navegação OsmAnd off-line é ainda uma função experimental e não funciona em distâncias superiores a cerca de 20 km.\n\nO serviço de navegação está temporariamente mudado para CloudMade on-line.</string>
-	<string name="specified_dir_doesnt_exist">Não se pode encontrar o diretório especificado.</string>
+
+
+    <string name="specified_dir_doesnt_exist">Não se pode encontrar o diretório especificado.</string>
 	
 	
 	<string name="osmand_net_previously_installed">Uma versão anterior do OsmAnd está instalada. Todos os dados off-line serão suportados pelo novo aplicativo. Mas pontos favoritos devem ser exportados no antigo aplicativo e posteriormente importados pelo novo.</string>
@@ -1322,8 +1301,7 @@ Pôr do Sol: %2$s</string>
 	<string name="filter_existing_indexes">Baixado</string>
 	<string name="fast_route_mode">Rota mais rápida</string>
 	<string name="fast_route_mode_descr">"Ative para calcular a rota mais rápida ou desative para calcular a rota mais econômica "</string>
-	<string name="tiles_to_download_estimated_size">No zoom {0}: baixar {1} imagens ({2} MB)</string>
-	<string name="shared_string_download_map">Baixar mapa</string>
+    <string name="shared_string_download_map">Baixar mapa</string>
 	<string name="select_max_zoom_preload_area">Selecionar zoom máximo para pré-carregar</string>
 	<string name="maps_could_not_be_downloaded">Não é possível baixar este mapa</string>
 	<string name="continuous_rendering">Renderização contínua</string>
@@ -1337,8 +1315,7 @@ Pôr do Sol: %2$s</string>
 	<string name="poi_context_menu_call">Mostrar o telefone do POI</string>
 	<string name="download_type_to_filter">digite o filtro</string>
 	<string name="use_high_res_maps">Exibir em alta resolução</string>
-	<string name="use_high_res_maps_descr">Não esticar (e borrar) quadrículas de mapas em telas de alta densidade</string>
-	<string name="context_menu_item_search_transport">Pesquisar transporte público</string>
+    <string name="context_menu_item_search_transport">Pesquisar transporte público</string>
 	<string name="transport_searching_transport">Resultados de transporte (sem destino):</string>
 	<string name="transport_searching_route">Resultados de transporte ({0} para o destino):</string>
 	<string name="transport_search_again">Reiniciar pesquisa de transporte</string>
@@ -1440,8 +1417,7 @@ Pôr do Sol: %2$s</string>
 	<string name="search_offline_address">Pesquisa off-line</string>
 	<string name="search_online_address">Pesquisa on-line</string>
 	<string name="max_level_download_tile">Max. zoom on-line</string>
-	<string name="max_level_download_tile_descr">Escolher o nível de zoom máximo para baixar quadrículas de mapa on-line</string>
-	<string name="route_general_information">Distância total %1$s, tempo de viagem %2$d h %3$d min.</string>
+    <string name="route_general_information">Distância total %1$s, tempo de viagem %2$d h %3$d min.</string>
 	<string name="router_service_descr">Escolher um serviço de navegação on-line ou off-line</string>
 	<string name="router_service">Serviço de navegação</string>
 	<string name="sd_dir_not_accessible">O diretório de armazenamento de dados no cartão SD não está acessível!</string>
@@ -1487,8 +1463,7 @@ Pôr do Sol: %2$s</string>
 	<string name="data_settings">Dados</string>
 	<string name="additional_settings">Configurações adicionais</string>
 	<string name="update_tile">Atualizar mapa</string>
-	<string name="reload_tile">Atualizar quadrículas</string>
-	<string name="mark_point">Destino</string>
+    <string name="mark_point">Destino</string>
 	<string name="app_settings">Configurações do aplicativo</string>
 	<string name="search_address">Pesquisar endereço</string>
 	<string name="choose_building">Escolher número</string>
@@ -1498,14 +1473,11 @@ Pôr do Sol: %2$s</string>
 	<string name="show_view_angle">Mostrar ângulo de visão</string>
 	<string name="map_view_3d_descr">Ativar a visualização em 3D do mapa</string>
 	<string name="map_view_3d">Visão em 3D</string>
-	<string name="map_tile_source_descr">Escolher a fonte de mapa on-line ou de quadrículas salvas.</string>
-	<string name="map_tile_source">Fonte do mapa de quadrículas</string>
-	<string name="map_source">Fonte do mapa</string>
+    <string name="map_source">Fonte do mapa</string>
 	<string name="use_internet">Usar a Internet</string>
 	<string name="show_location">Mostrar sua posição</string>
 	<string name="show_gps_coordinates_text">Mostrar coordenadas GPS no mapa</string>
-	<string name="use_internet_to_download_tile">Usar Internet para baixar quadrículas que faltam no mapa</string>
-	<string name="app_description">Aplicativo de navegação</string>
+    <string name="app_description">Aplicativo de navegação</string>
 	<string name="search_button">Pesquisar</string>
 	<string name="search_activity">Pesquisar</string>
 	<string name="searchpoi_activity">Escolher POI</string>

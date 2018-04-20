@@ -5,11 +5,9 @@
   <string name="local_indexes_cat_tile">ऑनलाइन नकाशे (टाइल्स)</string>
   <string name="local_indexes_cat_map">साधारण नकाशे (वेक्टर)</string>
   <string name="map_online_data">ऑनलाइन नकाशे (टाइल्स)</string>
-  <string name="map_online_data_descr">ऑनलाइन नकाशे वापरा (डाउनलोड करून एसडी कार्ड वार साठवा)</string>
-  <string name="shared_string_online_maps">ऑनलाइन नकाशे</string>
-  <string name="online_map_settings_descr">Configure online or cached tile map sources</string>
-  
-  <string name="plugins_screen">प्लगिन्स</string>
+    <string name="shared_string_online_maps">ऑनलाइन नकाशे</string>
+
+    <string name="plugins_screen">प्लगिन्स</string>
   <string name="prefs_plugins">प्लगिन्स</string>
   <string name="play_commands_of_currently_selected_voice">निवडलेल्या आवाजाची वाक्ये ऐकवा</string>
   <string name="test_voice_prompts">आवाज तपासा</string>
@@ -280,10 +278,9 @@
   <string name="map_source">नकाशाचा स्त्रोत</string>
   <string name="use_internet">इंटरनेट वापरा</string>
   <string name="show_location">तुमचे स्थान दाखवा</string>
-  
-  
-  <string name="use_internet_to_download_tile">नसलेल्या टाइल्स डाउनलोड करण्यासाठी इंटरनेटचा वापर करा</string>
-  <string name="app_description">दिशादर्शन ऍप्लिकेशन</string>
+
+
+    <string name="app_description">दिशादर्शन ऍप्लिकेशन</string>
   <string name="shared_string_exit">बाहेर पडा</string>
   
   

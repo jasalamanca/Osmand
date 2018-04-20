@@ -63,7 +63,6 @@ import net.osmand.plus.dashboard.tools.DashFragmentData;
 import net.osmand.plus.dashboard.tools.DashboardSettingsDialogFragment;
 import net.osmand.plus.dashboard.tools.TransactionBuilder;
 import net.osmand.plus.dialogs.ConfigureMapMenu;
-import net.osmand.plus.dialogs.RasterMapMenu;
 import net.osmand.plus.download.DownloadActivity;
 import net.osmand.plus.download.DownloadIndexesThread;
 import net.osmand.plus.download.IndexItem;
@@ -77,7 +76,6 @@ import net.osmand.plus.mapcontextmenu.other.RoutePreferencesMenu.LocalRoutingPar
 import net.osmand.plus.mapillary.MapillaryFiltersFragment;
 import net.osmand.plus.mapillary.MapillaryPlugin.MapillaryFirstDialogFragment;
 import net.osmand.plus.osmedit.OsmNotesMenu;
-import net.osmand.plus.rastermaps.OsmandRasterMapsPlugin;
 import net.osmand.plus.routing.RoutingHelper;
 import net.osmand.plus.routing.RoutingHelper.IRouteInformationListener;
 import net.osmand.plus.srtmplugin.ContourLinesMenu;
@@ -876,10 +874,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 				ArrayAdapter<LocalRoutingParameter> listAdapter = routePreferencesMenu.getRoutePreferencesDrawerAdapter(nightMode);
 				OnItemClickListener listener = routePreferencesMenu.getItemClickListener(listAdapter);
 				updateListAdapter(listAdapter, listener);
-			} else if (visibleType == DashboardType.UNDERLAY_MAP) {
-				cm = RasterMapMenu.createListAdapter(mapActivity, OsmandRasterMapsPlugin.RasterMapType.UNDERLAY);
-			} else if (visibleType == DashboardType.OVERLAY_MAP) {
-				cm = RasterMapMenu.createListAdapter(mapActivity, OsmandRasterMapsPlugin.RasterMapType.OVERLAY);
 			} else if (visibleType == DashboardType.CONTOUR_LINES) {
 				cm = ContourLinesMenu.createListAdapter(mapActivity);
 			} else if (visibleType == DashboardType.HILLSHADE) {

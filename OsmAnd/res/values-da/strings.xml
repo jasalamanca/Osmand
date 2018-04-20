@@ -217,7 +217,6 @@ Proportional hukommelse %4$s MB (Android grænse %5$s MB, Dalvik %6$s MB).</stri
     <string name="transport_search_desc">Kollektivtrafiksøgning</string>
     <string name="favourites_search_desc">Favoritsøgning</string>
 
-    <string name="offline_navigation_not_available">Offline navigation er midlertidig utilgængelig.</string>
     <string name="left_side_navigation">Venstrekørsel</string>
     <string name="left_side_navigation_descr">Vælg for lande med venstrekørsel.</string>
 
@@ -234,25 +233,16 @@ Proportional hukommelse %4$s MB (Android grænse %5$s MB, Dalvik %6$s MB).</stri
     <string name="index_settings_descr">Hent og administrer offline kortfiler gemt på enheden.</string>
     <string name="map_online_plugin_is_not_installed">Aktiver onlinekort udvidelsen for at vælge andre kortkilder</string>
     <string name="map_online_data">Onlinekort og kortbrikker</string>
-    <string name="map_online_data_descr">Brug onlinekort (hent og gem midlertidig kortbrikker på SD-kort).</string>
     <string name="shared_string_online_maps">Onlinekort</string>
-    <string name="online_map_settings_descr">Konfigurer online- eller cachelagrede kilder til kortbrikker.</string>
 
 
     <string name="osmand_background_plugin_description">"Viser indstillinger til at aktivere sporing og navigation i baggrunden (slukket skærm)  via periodisk at vække GPS-enheden."</string>
     <string name="osmand_accessibility_description">"Udvidelsen gør  tilgængelighedsfunktioner tilgængelige direkte i OsmAnd. Det letter fx. justering af tale for TTS stemmerne, konfiguration af styrekryds (D-pad) skærmnavigation ved hjælp af en styrekugle til zoomknappen, eller ved hjælp af tekst-til-tale tilbagemeldinger, og som at meddele positionen automatisk."</string>
-	
-	
-	<string name="osmand_rastermaps_plugin_description">Udvidelsen giver adgang til mange typer af online (såkaldte brikker eller raster) kort, fra foruddefinerede OpenStreetMap kortbrikker (som Mapnik) til satellitbilleder og lag til særlig anvendelse som vejr-, klima- eller geologiskekort og reliefskygger osv. 
-\n 
-\nAlle disse kort kan enten bruges som det vigtigste (primær) kort, der skal vises på skærmen, eller som en over- eller underlejring til et andet basiskort (såsom OsmAnd standard offline kort). For at gøre underlejringskortet mere synlig, kan visse elementer af OsmAnd vektorkort nemt skjules via \'Konfigurer kort\' menuen som ønsket. 
-\n 
-\nKortbrikker kan hentes direkte via online-kilder, eller kan fremstilles til offline brug (og manuelt kopieres til OsmAnd datamappen) som en SQLite database. Kort kan fremstilles ved hjælp af en række 3. parts kortværktøjer.</string>
+
 
     <string name="osmand_development_plugin_description">Viser indstillinger for udviklings- og fejlretningsfunktioner som rutesimulering eller optegningsydeevne indikation, eller talevejledning.\nIndstillinger er beregnet til udviklere og er ikke nødvendig for den almindelige bruger.</string>
     <string name="plugins_screen">Udvidelser</string>
 
-    <string name="prefs_plugins_descr">Udvidelser aktiverer avancerede indstillinger og ekstra funktionalitet,.</string>
     <string name="prefs_plugins">Udvidelser</string>
     <string name="osm_editing_plugin_description">Udvidelsen giver OsmAnd mulighed for at lave OSM bidrag såsom at oprette eller ændre OSM interessepunkter (IP), åbne eller kommentere OSM noter, og bidrage med optagede GPX-filer.
 
@@ -262,7 +252,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="debugging_and_development">OsmAnd udvikling</string>
     <string name="native_rendering">Indbygget optegning</string>
     <string name="test_voice_prompts">Test talemeddelelser</string>
-    <string name="switch_to_raster_map_to_see">Ingen offline vektorkort til stede for denne placering. Hent et kort i \'Indstillinger\' → \'Administrer kortfiler\' eller skift til onlinekort (aktiver online kort udvidelsen først).</string>
     <string name="send_files_to_osm">Sende GPX-filer til OSM?</string>
     <string name="gpx_visibility_txt">Synlighed</string>
     <string name="gpx_description_txt">Beskrivelse</string>
@@ -403,7 +392,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="auto_follow_location_enabled">Autocentrer kort.</string>
     <string name="pref_vector_rendering">Specifikke indstillinger for vektoroptegning</string>
     <string name="pref_overlay">Over-/underlejring</string>
-    <string name="pref_raster_map">Indstillinger for kortkilde</string>
     <string name="pref_vector_map">Indstillinger for vektorkort</string>
     <string name="delete_confirmation_msg">Slet %1$s?</string>
     <string name="city_type_suburb">Forstad</string>
@@ -515,11 +503,8 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="layer_overlay">Overlejringskort…</string>
     <string name="map_overlay">Overlejringskort</string>
     <string name="map_overlay_descr">Vælg kortet til overlejring.</string>
-    <string name="tile_source_already_installed">Kort er allerede installeret, indstillinger bliver opdateret.</string>
-    <string name="select_tile_source_to_install">Vælg kort/kortbrikker der skal installeres eller opdateres.</string>
     <string name="internet_not_available">En internetforbindelse er nødvendig for handlingen, men er ikke tilgængelig.</string>
     <string name="install_more">Installer flere…</string>
-    <string name="level_to_switch_vector_raster_descr">Minimum zoomniveau for at bruge vektorkort.</string>
     <string name="level_to_switch_vector_raster">Min. vektor zoomniveau</string>
 
 
@@ -581,7 +566,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="poi_filter_closest_poi">Nærmeste interessepunkter</string>
     <string name="poi_filter_custom_filter">Brugerdefineret filter</string>
     <string name="poi_filter_namefinder">Online navne-søger</string>
-    <string name="reading_cached_tiles">Læser cachelagrede kortbrikker…</string>
     <string name="version_index_is_big_for_memory">Ikke nok hukommelse for indeks \'{0}\'</string>
     <string name="version_index_is_not_supported">Versionen af indeks \'{0}\' er ikke understøttet</string>
     
@@ -613,7 +597,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="filter_existing_indexes">Hentet</string>
     <string name="fast_route_mode">Hurtigste rute</string>
     <string name="fast_route_mode_descr">"Aktiver for at beregne den hurtigste rute eller deaktiver for  brændstofbesparende rute."</string>
-    <string name="tiles_to_download_estimated_size">Ved zoom {0} hent {1} kortbrikker ({2} MB)</string>
     <string name="shared_string_download_map">Hent kort</string>
     <string name="select_max_zoom_preload_area">Vælg maksimal zoom der skal indlæses på forhånd</string>
     <string name="maps_could_not_be_downloaded">Kortet kunne ikke hentes</string>
@@ -631,7 +614,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="phone">Telefon</string>
     <string name="download_type_to_filter">skriv for at filtrere</string>
     <string name="use_high_res_maps">Højopløseligt visning</string>
-    <string name="use_high_res_maps_descr">Stræk (og slør) ikke kortbrikker på skærme med stor opløsning.</string>
 
     <string name="context_menu_item_search_transport">Søg kollektivtrafik</string>
     <string name="transport_searching_transport">Transportresultater (ingen destination):</string>
@@ -816,14 +798,8 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="hint_search_online">Online-søgning: husnummer, gade, by</string>
     <string name="search_online_address">Online søgning</string>
     <string name="max_level_download_tile">Maks online zoom</string>
-    <string name="max_level_download_tile_descr">Angiv det maksimale zoomniveau der skal hentes for online kortbrikker.</string>
-	
-	
-	
-	
-	<string name="osmand_routing_experimental">OsmAnd offline-navigation er en eksperimentel funktion og den virker ikke for afstande på mere end ca. 20 km. 
-\n
-\nNavigationstjenesten skiftes midlertidig til online CloudMade.</string>
+
+
     <string name="search_offline_address">Offline søgning</string>
     <string name="route_general_information">Total afstand %1$s, rejsetid %2$d t %3$d m.</string>
     <string name="router_service_descr">Vælg en online eller offline navigationstjeneste.</string>
@@ -888,7 +864,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="save_track_to_gpx_descrp">GPX spor gemmes automatisk i \'/track\' mappen under navigation.</string>
     <string name="save_track_to_gpx">Automatisk optagelse af spor under navigation</string>
     <string name="update_tile">Opdater kort</string>
-    <string name="reload_tile">Genindlæs kortbrikker</string>
     <string name="mark_point">Mål</string>
 
 
@@ -905,15 +880,12 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="map_view_3d">3D-kortvisning</string>
     <string name="show_poi_over_map_description">Vis den sidst valgte IP overlejring på kortet.</string>
     <string name="show_poi_over_map">Vis IP overlejring</string>
-    <string name="map_tile_source_descr">Vælg kilden til onlinekort eller cachelagrede kortbrikker.</string>
-    <string name="map_tile_source">Kilde til kortbrikker</string>
     <string name="map_source">Kortkilde</string>
     <string name="use_internet">Brug internettet</string>
     <string name="show_location">Vis position</string>
 
 
     <string name="show_gps_coordinates_text">Vis GPS-koordinater på kortet</string>
-    <string name="use_internet_to_download_tile">Brug internettet til at hente manglende kortbrikker</string>
     <string name="app_description">Navigationsprogram</string>
 
 
@@ -1057,19 +1029,10 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="driving_region_descr">Vælg region: USA, Europa, Storbritannien, Asien og andre.</string>
     <string name="map_widget_fps_info">FPS-fejlsøgningssinfo</string>
     <string name="local_index_tile_data_expire">Udløber (minutter): %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Maks zoomniveau: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Minimum zoomniveau: %1$s</string>
-    <string name="edit_tilesource_elliptic_tile">Elliptisk mercator</string>
     <string name="edit_tilesource_maxzoom">Maks. zoomniveau</string>
-    <string name="edit_tilesource_expiration_time">Udløber (minutter)</string>
     <string name="edit_tilesource_minzoom">Min. zoomniveau</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Vælg eksisterende…</string>
     <string name="maps_define_edit">Definer/rediger…</string>
-    <string name="local_index_tile_data_zooms">Zoomniveauer hentet: %1$s</string>
-    <string name="local_index_tile_data_downloadable">Kan hentes: %1$s</string>
     <string name="local_index_tile_data_name">Kortbrik-data: %1$s</string>
-    <string name="edit_tilesource_successfully">Kortbrikkilden %1$s er gemt</string>
 
     <string name="about_version">Version:</string>
     <string name="shared_string_about">Om</string>

@@ -32,7 +32,6 @@ import net.osmand.plus.measurementtool.MeasurementToolLayer;
 import net.osmand.plus.poi.PoiFiltersHelper;
 import net.osmand.plus.poi.PoiUIFilter;
 import net.osmand.plus.quickaction.QuickActionRegistry;
-import net.osmand.plus.rastermaps.OsmandRasterMapsPlugin;
 import net.osmand.plus.render.MapVectorLayer;
 import net.osmand.plus.render.RenderingIcons;
 import net.osmand.plus.routing.RoutingHelper;
@@ -435,10 +434,6 @@ public class MapActivityLayers {
 	}
 
 	public void selectMapLayer(final OsmandMapTileView mapView, final ContextMenuItem it, final ArrayAdapter<ContextMenuItem> adapter) {
-		if (OsmandPlugin.getEnabledPlugin(OsmandRasterMapsPlugin.class) == null) {
-			Toast.makeText(activity, R.string.map_online_plugin_is_not_installed, Toast.LENGTH_LONG).show();
-			return;
-		}
 		final OsmandSettings settings = getApplication().getSettings();
 
 		final LinkedHashMap<String, String> entriesMap = new LinkedHashMap<>();
@@ -494,57 +489,6 @@ public class MapActivityLayers {
 						updateMapSource(mapView, null);
 						it.setDescription(null);
 						adapter.notifyDataSetChanged();
-						break;
-					case layerEditInstall:
-						OsmandRasterMapsPlugin.defineNewEditLayer(activity, new ResultMatcher<TileSourceTemplate>() {
-
-							@Override
-							public boolean publish(TileSourceTemplate object) {
-								settings.MAP_TILE_SOURCES.set(object.getName());
-								settings.MAP_ONLINE_DATA.set(true);
-								if(it != null) {
-									it.setDescription(object.getName());
-								}
-								updateMapSource(mapView, settings.MAP_TILE_SOURCES);
-								return true;
-							}
-
-							@Override
-							public boolean isCancelled() {
-								return false;
-							}
-
-						});
-						break;
-					case layerInstallMore:
-						OsmandRasterMapsPlugin.installMapLayers(activity, new ResultMatcher<TileSourceTemplate>() {
-							TileSourceTemplate template = null;
-							int count = 0;
-
-							@Override
-							public boolean publish(TileSourceTemplate object) {
-								if (object == null) {
-									if (count == 1) {
-										settings.MAP_TILE_SOURCES.set(template.getName());
-										settings.MAP_ONLINE_DATA.set(true);
-										it.setDescription(template.getName());
-										adapter.notifyDataSetChanged();
-										updateMapSource(mapView, settings.MAP_TILE_SOURCES);
-									} else {
-										selectMapLayer(mapView, it, adapter);
-									}
-								} else {
-									count++;
-									template = object;
-								}
-								return false;
-							}
-
-							@Override
-							public boolean isCancelled() {
-								return false;
-							}
-						});
 						break;
 					default:
 						settings.MAP_TILE_SOURCES.set(layerKey);

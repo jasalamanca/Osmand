@@ -130,9 +130,6 @@
     <string name="osmand_service_descr">Az OsmAnd háttérben fut, amíg ki van kapcsolva a képernyő.</string>
 
 
-    <string name="switch_to_raster_map_to_see">Nincs internet nélkül használható térkép erre a területre. Letölthetsz egyet a Beállításokban (Térképek kezelése), vagy átválthatsz online térképekre (engedélyezd az online bővítményt).</string>
-
-
     <string name="download_files_not_enough_space">Nincs elég hely %1$s MB letöltéséhez (szabad %2$s).</string>
     <string name="download_files_question_space">Letöltesz {0} fájlt?
 Ehhez {1} MB helyre van szükség.
@@ -150,7 +147,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="auto_follow_location_enabled">Automatikus követés.</string>
     <string name="pref_vector_rendering">Beállítások vektoros megjelenítéshez</string>
     <string name="pref_overlay">Rátét / alátét</string>
-    <string name="pref_raster_map">Térképforrás beállítások</string>
     <string name="pref_vector_map">Vektoros térkép beállítások</string>
     <string name="delete_confirmation_msg">Biztosan törlöd: %1$s?</string>
     <string name="city_type_suburb">településrész</string>
@@ -272,13 +268,10 @@ Ehhez {1} MB helyre van szükség.
     <string name="shared_string_none">Nincs</string>
     <string name="map_overlay">Rátét térkép</string>
     <string name="map_overlay_descr">Rátét térkép kiválasztás.</string>
-    <string name="tile_source_already_installed">A térkép már telepítve van, a beállítások frissítésre kerülnek.</string>
-    <string name="select_tile_source_to_install">Térkép (mozaik) kijelölése telepítéshez, frissítéshez.</string>
     <string name="internet_not_available">A művelet elvégzéséhez internetkapcsolat szükséges, de az nem érhető el.</string>
     <string name="install_more">További telepítése…</string>
 
 
-    <string name="level_to_switch_vector_raster_descr">Minimális nagyítási szint vektoros megjelenítéshez térképcsempék helyett.</string>
     <string name="level_to_switch_vector_raster">Min. vektoros nagyítás</string>
 
 
@@ -347,13 +340,11 @@ Ehhez {1} MB helyre van szükség.
     <string name="poi_filter_for_tourists">Turistáknak</string>
     <string name="poi_filter_fuel">Üzemanyag</string>
     <string name="poi_filter_namefinder">Online névkereső</string>
-    <string name="reading_cached_tiles">Elmentett térképcsempék olvasása…</string>
     <string name="version_index_is_big_for_memory">A(z) \'\'{0}\'\' indexadat nem fér a memóriába</string>
     <string name="version_index_is_not_supported">\'\'{0}\'\' index verziója nem támogatott</string>
     <string name="osmand_net_previously_installed">Már telepítettél egy korábbi OsmAnd verziót. Minden internettől független adat használható az új alkalmazással. A Kedvenc pontokat a régi alkalmazásból érdemes kimenteni és az újba betölteni.</string>
-    
-    
-    <string name="osmand_routing_experimental">Az OsmAnd offline útvonaltervezője kísérleti funkció és nem működik 20 kilométernél nagyobb távolságban.\n\nÁtmenetileg átállítva online Cluodmade-re.</string>
+
+
     <string name="specified_dir_doesnt_exist">Nem található a megadott könyvtár.</string>
     <string name="application_dir">Adatok tárolási helye</string>
 
@@ -381,7 +372,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="shared_string_refresh">Frissítés</string>
     <string name="fast_route_mode">Leggyorsabb útvonal</string>
     <string name="fast_route_mode_descr">Leggyorsabb útvonal kiszámításának engedélyezése, vagy tiltása az üzemanyag-takarékos útvonal útért.</string>
-    <string name="tiles_to_download_estimated_size">{0} nagyításnál {1} térképcsempe letöltése ({2} Mb )</string>
     <string name="shared_string_download_map">Térkép letöltése</string>
     <string name="select_max_zoom_preload_area">Maximális nagyítás kiválasztása a látható terület előtöltéséhez</string>
     <string name="maps_could_not_be_downloaded">Ezt a térképet nem lehet letölteni</string>
@@ -399,7 +389,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="phone">telefon</string>
     <string name="download_type_to_filter">szűrés</string>
     <string name="use_high_res_maps">Nagy felbontású kijelző</string>
-    <string name="use_high_res_maps_descr">Ne nyújtsa a térképcsempéket nagy képpontsűrűségű eszközön.</string>
     <string name="unknown_location">A jelenlegi helyzet nem ismert</string>
 
     <string name="context_menu_item_search_transport">Tömegközlekedés keresése</string>
@@ -543,7 +532,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="search_offline_address">Offline</string>
     <string name="search_online_address">Internet</string>
     <string name="max_level_download_tile">Max. online nagyítás</string>
-    <string name="max_level_download_tile_descr">Maximum nagyítási szint kiválasztása térképcsempék letöltéshez.</string>
     <string name="route_general_information">Teljes távolság %1$s, utazási idő %2$d óra %3$d perc.</string>
     <string name="router_service_descr">Online vagy offline útvonaltervező szolgáltatás kiválasztása.</string>
     <string name="router_service">Útvonaltervező szolgáltatás</string>
@@ -615,7 +603,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="save_track_to_gpx_descrp">Navigáció közben a GPX útvonal automatikusan mentődik az OsmAnd „tracks” könyvtárába.</string>
     <string name="save_track_to_gpx">Nyomvonal automatikus felvétele navigáció közben</string>
     <string name="update_tile">Térkép frissítés</string>
-    <string name="reload_tile">Térképcsempe aktualizálása</string>
     <string name="mark_point">Célpont</string>
 
 
@@ -635,15 +622,12 @@ Ehhez {1} MB helyre van szükség.
     <string name="map_view_3d">3D térképnézet</string>
     <string name="show_poi_over_map_description">Utoljára használt POI kategória megjelenítése a térképen.</string>
     <string name="show_poi_over_map">POI-réteg megjelenítése</string>
-    <string name="map_tile_source_descr">Online vagy letárolt térképcsempék forrásának kiválasztása.</string>
-    <string name="map_tile_source">Térképcsempék forrása</string>
     <string name="map_source">Térkép forrása</string>
     <string name="use_internet">Internet használata</string>
     <string name="show_location">Pozíció megjelenítése</string>
 
 
     <string name="show_gps_coordinates_text">GPS koordináták megjelenítése a térképen</string>
-    <string name="use_internet_to_download_tile">Internet használata a hiányzó térképcsempék letöltéséhez</string>
     <string name="app_description">Navigációs alkalmazás</string>
     <string name="shared_string_exit">Kilépés</string>
 
@@ -737,7 +721,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="edit_filter_delete_message">{0} szűrő törölve</string>
     <string name="edit_filter_create_message">{0} szűrő létrehozva</string>
 
-    <string name="offline_navigation_not_available">Az OsmAnd offline navigációja átmenetileg nem elérhető.</string>
     <string name="left_side_navigation">Bal oldali közlekedés</string>
     <string name="left_side_navigation_descr">Kapcsold be, ha bal oldali közlekedésű országban navigálsz.</string>
 
@@ -747,16 +730,9 @@ Ehhez {1} MB helyre van szükség.
 
     <string name="map_online_plugin_is_not_installed">További térképforrások kijelöléséhez engedélyezd az online térképek bővítményt</string>
     <string name="map_online_data">Online térképcsempék</string>
-    <string name="map_online_data_descr">Internetes térképek használata (letöltés és tárolás az SD kártyán).</string>
     <string name="shared_string_online_maps">Online térképek</string>
-    <string name="online_map_settings_descr">Internetes és tárolt raszteres térképek beállításai.</string>
 
 
-    <string name="osmand_rastermaps_plugin_description">Ezzel a bővítménnyel az online (úgynevezett csempés vagy raszteres) térképek több típusához is hozzáférhetsz az előre meghatározott OpenStreetMap csempéktől kezdve (mint például a Mapnik) a műholdképekig és a speciális célú rétegekig, úgymint időjárási térképek, éghajlati térképek, földtani térképek, domborzatárnyékolási rétegek, stb. 
-\n 
-\nEzen térképek bármelyike használható az OsmAnd térkép képernyőjén megjelenítendő fő (alap) térképként, vagy egy másik alaptérkép fedvényeként vagy alátétjeként (mint például az OsmAnd normál offline térképei). Bármely alátét térkép jobban láthatóbbá tételének érdekében az OsmAnd vektoros térképeinek bizonyos elemei igény szerint könnyedén elrejthetők a „Térkép beállítása” menün keresztül. 
-\n 
-\nA csempés térképek internetes forrásokon keresztül szerezhetők be, vagy előkészíthetők kapcsolat nélküli használathoz (és kézzel átmásolva az OsmAnd adatmappájába) egy olyan SQLite adatbázisként, amelyet különféle harmadik féltől származó térkép-előkészítő eszközök állíthatnak elő.</string>
     <string name="osmand_background_plugin_description">"Megjeleníti a háttér üzemmódban  (kikapcsolt képernyővel) való útvonalrögzítéshez és navigációhoz tartozó beállításokat. (A készülék bizonyos időközönként felébreszti a GPS-t.)"</string>
     <string name="osmand_accessibility_description">Ez a bővítmény elérhetővé teszi az eszköz akadálymentesítési lehetőségeit közvetlenül az OsmAnd programban. Ez megkönnyíti például a TTS hangok beszédsebességének állítását, az irányító gombok képernyő navigációjának beállítását, egy görgető használatát a nagyítás vezérléséhez, vagy szövegfelolvasó visszajelzés használatát, például a pozíció automatikus bejelentésénél.</string>
 
@@ -764,7 +740,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="osmand_development_plugin_description">Ez a bővítmény beállításokat jelenít meg olyan fejlesztői és hibakeresési szolgáltatásokhoz, mint például útvonaltervezés tesztelése vagy szimulálása, a képernyő megjelenítésének teljesítménye, vagy hangalapú figyelmeztetések. Ezeket a beállításokat fejlesztőknek szánják, és nem szükségesek az átlagos felhasználónak.</string>
     <string name="plugins_screen">Bővítménykezelő</string>
 
-    <string name="prefs_plugins_descr">A bővítmények további funkciókkal és beállításokkal bővítik az alkalmazást.</string>
     <string name="prefs_plugins">Bővítménykezelő</string>
 
     <string name="osm_editing_plugin_description">Ezen bővítményen keresztül az OsmAnd használható OSM hozzájárulások beküldéséhez, mint például OSM POI objektumok létrehozása vagy módosítása, OSM Jegyzetek nyitása és hozzászólások írása, illetve a rögzített GPX fájlok közreadása. Az OSM egy közösségi, globális, közkincs térképező projekt. A részletekért nézd meg a https://openstreetmap.org oldalt. Értékelik az aktív részvételt, és a hozzájárulások közvetlenül az OsmAnd alkalmazásból is beküldhetők, ha az alkalmazásban megadod a személyes OSM hitelesítési adataid.</string>
@@ -1105,19 +1080,10 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="about_settings_descr">Verzióinfó, licencek, csapattagok</string>
 
 
-    <string name="local_index_tile_data_zooms">Letöltött zoomszintek: %1$s</string>
     <string name="local_index_tile_data_expire">Lejárat (perc): %1$s</string>
-    <string name="local_index_tile_data_downloadable">Letölthető: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Maximum zoom: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Minimum zoom: %1$s</string>
     <string name="local_index_tile_data_name">Csempeadat: %1$s</string>
-    <string name="edit_tilesource_successfully">%1$s csempeforrás sikeresen elmentve</string>
-    <string name="edit_tilesource_elliptic_tile">Elliptikus Merkátor</string>
     <string name="edit_tilesource_maxzoom">Max zoom</string>
-    <string name="edit_tilesource_expiration_time">Lejárat (perc)</string>
     <string name="edit_tilesource_minzoom">Min zoom</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Meglévő kiválasztása…</string>
     <string name="maps_define_edit">Megad/Szerkeszt…</string>
 
     <string name="base_world_map">Föld alaptérkép</string>

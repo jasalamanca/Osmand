@@ -400,7 +400,6 @@
     <string name="app_mode_aircraft">Təyyarə</string>
     <string name="about_version">Versiya:</string>
     <string name="shared_string_about">Haqqında</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
     <string name="driving_region_japan">Yaponiya</string>
     <string name="driving_region_us">ABŞ</string>
     <string name="driving_region_canada">Kanada</string>
@@ -558,7 +557,6 @@
     <string name="tts_missing_language_data">Seçilmiş dil üçün məlumatlar quraşdırılmayıb. Quraşdırmaq üçün Marketə getmək istəyirsiniz?</string>
     <string name="voice_stream_notification">Bildiriş səsi</string>
     <string name="voice_stream_music">Media/musiqi səsi</string>
-    <string name="tile_source_already_installed">Xəritə artıq quraşdırılıb, parametrlər yenilənəcək.</string>
     <string name="install_more">Daha çox quraşdır…</string>
     <string name="error_doing_search">Offlayn axtarışda səhv baş verdi.</string>
     <string name="system_locale">Sistem</string>
@@ -1011,7 +1009,6 @@
     <string name="srtm_paid_version_msg">Zəhmət olmasa inkişafları dəstəkləmək üçün Marketdəki Kontur xətləri qoşmasını almaq haqda düşünün.</string>
     <string name="map_online_plugin_is_not_installed">Müxtəlif xəritə mənbələrini seçmək üçün Onlayn xəritələr qoşmasını aktivləşdirin</string>
     <string name="plugins_screen">Qoşmalar</string>
-    <string name="prefs_plugins_descr">Qoşmalar təkmil parametrləri və əlavə funksionallığı aktivləşdirir.</string>
     <string name="prefs_plugins">Qoşmalar</string>
     <string name="plugin_install_needs_network">Bu qoşmanı quraşdırmaq üçün internet bağlantınız olmalıdır.</string>
     <string name="activate_srtm_plugin">SRTM qoşmasını aktivləşdirin</string>
@@ -1114,9 +1111,6 @@
     <string name="quick_action_auto_zoom_on">Avtomatik miqyası yandır</string>
     <string name="quick_action_auto_zoom_off">Avtomatik miqyası söndür</string>
     <string name="auto_zoom_none">Avto-miqyas yoxdur</string>
-    <string name="local_index_tile_data_zooms">Miqyaslar endirildi: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Maksimum yaxınlaşdırma: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Minimum yaxınlaşdırma: %1$s</string>
     <string name="edit_tilesource_maxzoom">Maksimum yaxınlaşdırma</string>
     <string name="edit_tilesource_minzoom">Minimum yaxınlaşdırma</string>
     <string name="auto_zoom_map">Avtomatik miqyas</string>
@@ -1282,14 +1276,10 @@
     <string name="profile_settings">Profil parametrləri</string>
     <string name="about_settings_descr">Versiya məlumatı, lisenziyalar, layihə üzvləri</string>
     <string name="local_index_tile_data_expire">Başa çatır (dəqiqə): %1$s</string>
-    <string name="local_index_tile_data_downloadable">Endirilə bilən: %1$s</string>
-    <string name="edit_tilesource_expiration_time">Başa çatır (dəqiqə)</string>
-    <string name="edit_tilesource_choose_existing">Mövcud olanı seçin…</string>
     <string name="maps_define_edit">Müəyyənləşdir/Düzəliş et…</string>
     <string name="driving_region_europe_asia">Avropa, Asiya, Latın Amerikası və oxşar</string>
     <string name="driving_region_uk">Böyük Britaniya, Hindistan və oxşar</string>
     <string name="map_widget_view_direction">Baxış istiqaməti</string>
-    <string name="pref_raster_map">Xəritə mənbəyi parametrləri</string>
     <string name="layer_map">Xəritə mənbəyi…</string>
     <string name="map_source">Xəritə mənbəyi</string>
     <string name="quick_action_map_source">Xəritə mənbəyini dəyiş</string>
@@ -1587,7 +1577,6 @@
     <string name="navigate_point_format">Format</string>
     <string name="poi_search_desc">POI (maraq nöqtəsi) axtar</string>
     <string name="navpoint_search_desc">Koordinatlar</string>
-    <string name="offline_navigation_not_available">OsmAnd offlayn naviqasiya müvəqqəti olaraq mövcud deyil.</string>
     <string name="unknown_from_location">Başlanğıc nöqtə hələ müəyyənləşdirilməyib</string>
     <string name="local_indexes_cat_map">Standart xəritələr (vektor)</string>
     <string name="validate_gpx_upload_name_pwd">GPX fayllarını yükləmək üçün OSM istifadəçi adı və şifrəni daxil edin.</string>

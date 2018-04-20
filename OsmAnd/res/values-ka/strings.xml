@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="offline_navigation_not_available">OsmAnd-ით ნავიგაცია გათიშულ რეჟიმში დროებით მიუწვდომელია.</string>
-  <string name="left_side_navigation">მარცხენა ხელით ტარება</string>
+<resources>
+    <string name="left_side_navigation">მარცხენა ხელით ტარება</string>
   <string name="left_side_navigation_descr">აირჩიეთ მარცხენა მხარეს საჭის გამომყენებელი ქვეყნებისათვის</string>
   
   <string name="unknown_from_location">საწყისი პოზიცია ნაპოვნი ჯერ არაა</string>
@@ -16,22 +16,18 @@
   <string name="index_settings_descr">გათიშული რუკების ჩამოტვირთვა, მართვა და დეტალები</string>
   <string name="map_online_plugin_is_not_installed">"ჩართეთ მიმდინარე რუკების დამატება სხვადასხვა წყაროების სანახავად"</string>
   <string name="map_online_data">მიმდინარე რუკები</string>
-  <string name="map_online_data_descr">მიმდინარე რუკების გამოყენება (ჩამოტვირთვა და sdcard-ზე ქეშირება)</string>
-  <string name="shared_string_online_maps">მიმდინარე რუკები</string>
-  <string name="online_map_settings_descr">მიმდინარე და დაქეშირებული ნაწილოვანი რუკების წყაროების გამართვა</string>
-  
-  
-  <string name="osmand_rastermaps_plugin_description">"დამატება ამსუბუქებს სხვადასხვა მიმდინარე ან ქეშირებულ ნაწილოვან რუკებს. ისინი შეიძლება მომზადდეს როგორც გათიშული რუკები და შეინახოს OsmAnd-ის დასტაში. "</string>
-  <string name="osmand_background_plugin_description">დამატება გაძლევთ საშუალებს დევნის ან ნავიგაციის მოწყობილობის ძილის დროს პერიოდულად GPS ჩიპის გააქტიურების საშუალებით.</string>
+    <string name="shared_string_online_maps">მიმდინარე რუკები</string>
+
+
+    <string name="osmand_background_plugin_description">დამატება გაძლევთ საშუალებს დევნის ან ნავიგაციის მოწყობილობის ძილის დროს პერიოდულად GPS ჩიპის გააქტიურების საშუალებით.</string>
   <string name="osmand_accessibility_description">დამატება მართავს სპეციალური წვდომის შესაძლებლობებს.</string>
   
   
   
   <string name="osmand_development_plugin_description">დამატება გაძლევთ საშუალებას განახორციელოთ შეცდომების კონტროლი და განვითარება მახასიათებლებისა როგორიცაა ანიმირებული ნავიგაცია.</string>
   <string name="plugins_screen">დამატებათა გამმართველი</string>
-  
-  <string name="prefs_plugins_descr">დამატება გაძლევთ საშუალებას გამოიყენოთ აპლიკაციისათვის თანმოყოლილი ფუნქციები როგორიცაა ნაწილოვანი რუკები, თვალის დევნება, ძილის დროის ოპერაციები და სხვა</string>
-  <string name="prefs_plugins">დამატების მმართველი</string>
+
+    <string name="prefs_plugins">დამატების მმართველი</string>
   
   <string name="osm_editing_plugin_description">ეს დამატება გაძლევთ საშუალებას გააცნოთ OSM-ს თქვენი აზრი, გახსნა/დახურვა OSM-ის ხოჭოების შესახებ და მიაწოდოთ პროექტს თქვენი ჩაწერილი GPX ფაილები.</string>
   <string name="vector_maps_may_display_faster_on_some_devices">ვექტორული რუკები როგორც წესი ჩანს უფრო სწრაფად. შეიძლება არ იმუშაოს ზოგიერთ მოწყობილობაზე.</string>
@@ -41,9 +37,8 @@
   <string name="native_rendering">ადგილობრივი რენდერი</string>
   
   <string name="test_voice_prompts">ხმის ტესტირება</string>
-  <string name="switch_to_raster_map_to_see">მოცემული ადგილისათვის ვექტორული რუკები ნაპოვნი არაა. შეგიძლიათ გადმოწეროთ პარამეტრებში (გამორთული მონაცემები), ან გადაერთოთ მიმდინარე მონაცემებზე.</string>
-  
-  <string name="send_files_to_osm">გავუგზავნო GPX ფაილები OSM-ს?</string>
+
+    <string name="send_files_to_osm">გავუგზავნო GPX ფაილები OSM-ს?</string>
   <string name="gpx_visibility_txt">ხილვადობა</string>
   <string name="gpx_tags_txt">ჭდეები</string>
   <string name="gpx_description_txt">აღწერა</string>
@@ -194,8 +189,7 @@
   <string name="auto_follow_location_enabled">გამოიყენება ავტოცენტრირებული რუკის ხედი.</string>
   <string name="pref_vector_rendering">ვექტორული რენდერერის სპეციფიური პარამეტრები</string>
   <string name="pref_overlay">ზედა / ქვედა</string>
-  <string name="pref_raster_map">რუკის წყაროს პარამეტრები</string>
-  <string name="pref_vector_map">ვექტორული რუკის პარამეტრები</string>
+    <string name="pref_vector_map">ვექტორული რუკის პარამეტრები</string>
   <string name="delete_confirmation_msg">წავშალო %1$s?</string>
   <string name="city_type_suburb">გარეუბანი</string>
   <string name="city_type_hamlet">დასახლება</string>
@@ -316,14 +310,11 @@
   <string name="shared_string_none">არა</string>
   <string name="map_overlay">ზედა რუკა</string>
   <string name="map_overlay_descr">ზედა რუკის არჩევა</string>
-  <string name="tile_source_already_installed">რუკა უკვე დაყენებულია. მიმდინარეობს პარამეტრების განახლება</string>
-  <string name="select_tile_source_to_install">აირჩიეთ რუკა დასაყენებლად ან განსანახლებლად</string>
-  <string name="internet_not_available">ოპერაციისათვის საჭიროა ინტერნეტი, რომელთანაც წვდომა არ არსებობს</string>
+    <string name="internet_not_available">ოპერაციისათვის საჭიროა ინტერნეტი, რომელთანაც წვდომა არ არსებობს</string>
   <string name="install_more">მეტის ჩაყენება…</string>
-  
-  
-  <string name="level_to_switch_vector_raster_descr">მინიმალური გადიდება ვექტორული რუკების ჩვენებისათვის</string>
-  <string name="level_to_switch_vector_raster">ვექტორული გადიდების მინ. ზომა</string>
+
+
+    <string name="level_to_switch_vector_raster">ვექტორული გადიდების მინ. ზომა</string>
   
   
   
@@ -403,13 +394,11 @@
   <string name="poi_filter_for_tourists">ტურისტებისათვის</string>
   <string name="poi_filter_fuel">საწვავი</string>
   <string name="poi_filter_namefinder">მიმდინარე სახელის ძებნა</string>
-  <string name="reading_cached_tiles">მიმდინარეობს ნაწილების კითხვა…</string>
-  <string name="version_index_is_big_for_memory">ინდექსი \'\'{0}\'\' არ ეტევა მეხსიერებაში</string>
+    <string name="version_index_is_big_for_memory">ინდექსი \'\'{0}\'\' არ ეტევა მეხსიერებაში</string>
   <string name="version_index_is_not_supported">ინდექსის ვერსიის \'\'{0}\'\' მხარდაჭერა არ არსებობს</string>
-  
-  
-  <string name="osmand_routing_experimental">OsmAnd-ის გათიშული ნავიგაცია არის საცდელი თვისება რომებიც არ მუშაობს 20 კმ-ზე მეტი მანძილებისათვის.\n\nნავიგაციის სერვისი დროებით გადართულია მიმდინარე სერვისზე CloudMade.</string>
-  <string name="specified_dir_doesnt_exist">შეუძლებელია მითითებული დასტის პოვნა.</string>
+
+
+    <string name="specified_dir_doesnt_exist">შეუძლებელია მითითებული დასტის პოვნა.</string>
   <string name="application_dir">შესანახი დასტა</string>
   
   <string name="osmand_net_previously_installed">დაყენებულია OsmAnd-ის წინა ვერსია. მთელი გათიშული მონაცემების მხარდაჭერილია და გამოყენებულ იქნება ახალ აპლიკაციაში. რჩეული წერტილების გამოსაყენებლად ისინი უნდა დააექსპორტოთ ძველიდან და შეიტანოთ ახალში.</string>
@@ -437,8 +426,7 @@
   <string name="shared_string_refresh">განახლება</string>
   <string name="fast_route_mode">უსწრაფესი გზა</string>
   <string name="fast_route_mode_descr">"ჩართეთ უსწრაფესი გზის დასათვლელად ან გამორთეთ უმოკლესისათვის "</string>
-  <string name="tiles_to_download_estimated_size">გადიდებისას {0} გადმოსაწერია {1} ნაწილი ({2} MB)</string>
-  <string name="shared_string_download_map">რუკის გადმოწერა</string>
+    <string name="shared_string_download_map">რუკის გადმოწერა</string>
   <string name="select_max_zoom_preload_area">აირჩიეთ მაქსიმალური გადიდება ჩასატვირთად</string>
   <string name="maps_could_not_be_downloaded">რუკის გადმოწერა შეუძლებელია</string>
   <string name="continuous_rendering">გაგრძელებადი რენდერი</string>
@@ -455,9 +443,8 @@
   <string name="phone">ტელეფონი</string>
   <string name="download_type_to_filter">ფილტრირებისათვის აკრიფეთ</string>
   <string name="use_high_res_maps">მაღალი გარჩევადობის ეკრანი</string>
-  <string name="use_high_res_maps_descr">არ დააპატარაოს (და დაბუროს) რუკის ნაწილები მაღალი გარჩევადობის ეკრანებზე</string>
-  
-  <string name="context_menu_item_search_transport">ტრანსპორტის ძებნა</string>
+
+    <string name="context_menu_item_search_transport">ტრანსპორტის ძებნა</string>
   <string name="transport_searching_transport">ტრანსპორტის ძებნა (არ მოიძებნა):</string>
   <string name="transport_searching_route">ტრანსპორტის პასუხები ({0} -მდე):</string>
   
@@ -597,8 +584,7 @@
   <string name="search_offline_address">გათიშული</string>
   <string name="search_online_address">ინტერნეტი</string>
   <string name="max_level_download_tile">მაქს. მიმდინარე გადიდება</string>
-  <string name="max_level_download_tile_descr">აირჩიეთ მაქსიმალური გადიდება მიმდინარე რუკების ნაწილის ჩამოტვირთვისას</string>
-  <string name="route_general_information">ჯამური სიშორე %1$s,\n მოგზაურობის დრო %2$d სთ %3$d წთ.</string>
+    <string name="route_general_information">ჯამური სიშორე %1$s,\n მოგზაურობის დრო %2$d სთ %3$d წთ.</string>
   <string name="router_service_descr">აირჩიეთ მიმდინარე ან გათიშული ნავიგაციის სერვისი</string>
   <string name="router_service">ნავიგაციის სერვისი</string>
   <string name="sd_dir_not_accessible">შენახვის დასტა SDCard-ზე მიუწვდომელია</string>
@@ -671,8 +657,7 @@
   <string name="save_track_to_gpx_descrp">დევნები ჩაიწერება დევნის დასტაში, დალაგდება დღეების მიხედვით</string>
   <string name="save_track_to_gpx">დევნის GPX-ში ჟურნალირება</string>
   <string name="update_tile">რუკის განახლება</string>
-  <string name="reload_tile">ხელახალი ჩატვირთვა</string>
-  <string name="mark_point">მიზანი</string>
+    <string name="mark_point">მიზანი</string>
   
   
   
@@ -693,16 +678,13 @@
   <string name="map_view_3d">რუკის 3D ხედვა</string>
   <string name="show_poi_over_map_description">POI-ის რუკაზე ჩვენება (ბოლოს არჩეული ფილტრის გამოყენებით)</string>
   <string name="show_poi_over_map">POI-ის ჩვენება</string>
-  <string name="map_tile_source_descr">აირჩიეთ მიმდინარე ან ქეშირებული რუკის ნაწილის წყარო</string>
-  <string name="map_tile_source">რუკის წყარო</string>
-  <string name="map_source">რუკის წყარო</string>
+    <string name="map_source">რუკის წყარო</string>
   <string name="use_internet">ინტერნეტის გამოყენება</string>
   <string name="show_location">მდებარეობის ჩვენება</string>
   
   
   <string name="show_gps_coordinates_text">GPS კოორდინატების რუკაზე ჩვენება</string>
-  <string name="use_internet_to_download_tile">ინტერნეტის გამოყენება ნაკლული რუკის წარწერების ჩამოსატვირთად</string>
-  <string name="app_description">ნავიგაციის აპლიკაცია</string>
+    <string name="app_description">ნავიგაციის აპლიკაცია</string>
   <string name="shared_string_exit">გასვლა</string>
   
   
@@ -1023,20 +1005,12 @@
 	<string name="about_version">ვერსია:</string>
     <string name="shared_string_about">შესახებ</string>
     <string name="about_settings_descr">ინფორმაცია ვერსიის, ლიცენზიების და პროექტის წევრების შესახებ</string>
-    
-    <string name="local_index_tile_data_zooms">ჩამოტვირთულია გადიდებები: %1$s</string>
+
     <string name="local_index_tile_data_expire">დროის გასვლა (წთ): %1$s</string>
-    <string name="local_index_tile_data_downloadable">გადმოტვირთვადი: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">მაქსიმალური გადიდებადობა: %1$s</string>
-    <string name="local_index_tile_data_minzoom">მინიმალური გადიდებადობა: %1$s</string>
     <string name="local_index_tile_data_name">ინდექსი: %1$s</string>
-    <string name="edit_tilesource_successfully">ინდექსის წყარო %1$s წარმატებით იქნა შენახული</string>
     <string name="amenity_type_seamark">ზღვის დონიდან</string>
     <string name="edit_tilesource_maxzoom">მაქს. გადიდება</string>
-    <string name="edit_tilesource_expiration_time">დროის გასვლა (წთ)</string>
     <string name="edit_tilesource_minzoom">მინ. გადიდება</string>
-    <string name="edit_tilesource_url_to_load">ბმული</string>
-    <string name="edit_tilesource_choose_existing">აირჩიეთ არსებული…</string>
     <string name="maps_define_edit">აღწერა/ჩასწორება…</string>
 	<string name="map_widget_fps_info">FPS გარჩევის ინფორმაცია</string>
 	<string name="driving_region_descr">აირჩიეთ გზის რეგიონი: აშშ, ევროპა, UK, აზია და სხვა</string>

@@ -18,22 +18,17 @@
 	<string name="base_world_map">Osnovna karta sveta</string>
 	
 	<string name="local_index_tile_data_expire">Ističe(minuta): %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Maksimalno uveličanje: %1$s</string>
-    <string name="edit_tilesource_elliptic_tile">Ekliptični prikaz zemljine kugle</string>
-    <string name="edit_tilesource_maxzoom">Maksimalno uveličanje</string>
+	<string name="edit_tilesource_maxzoom">Maksimalno uveličanje</string>
     <string name="edit_tilesource_minzoom">Minimalno uveličanje</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Izaberite postojeći…</string>
-    <string name="map_widget_fps_info">Podaci o greškama brzine prikaza sličica</string>
+	<string name="map_widget_fps_info">Podaci o greškama brzine prikaza sličica</string>
 	<string name="driving_region_japan">Japan</string>
 	<string name="driving_region_us">Sjedinjene Američke Države</string>
 	<string name="driving_region_canada">Kanada</string>
 	<string name="driving_region_europe_asia">Evropa i Azija</string>
 	<string name="driving_region_uk">Velika Britanija, Indija, Australija &amp; Ostalo</string>
-	<string name="local_index_tile_data_minzoom">Minimalni zum: %1$s</string>
-    
-    
-    <string name="announce_gpx_waypoints">Najavi GPX waypoints</string>
+
+
+	<string name="announce_gpx_waypoints">Najavi GPX waypoints</string>
     <string name="speak_title">Najavi…</string>
 	<string name="speak_descr">Podešavanje najave naziva ulica, saobraćajnih upozorenja, ograničenja brzine</string>
 	<string name="speak_street_names">Obaveštenje - naziv ulice</string>

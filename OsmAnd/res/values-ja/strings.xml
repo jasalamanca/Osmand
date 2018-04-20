@@ -13,11 +13,9 @@
      <string name="gpx_option_reverse_route">GPXルートを反転</string>
      <string name="gpx_option_destination_point">現在の目的地を使用</string>
      <string name="gpx_option_from_start_point">経路全体に沿って通る</string>
-     
-     
 
-     <string name="switch_to_raster_map_to_see">現在の位置は あなたのオフラインベクターマップではカバーされていません、 追加でベクターマップをダウンロードする場合は設定内のマップデータ等管理にて、またはオンラインマップにも切り替えることが出来ます(オンラインマッププラグインを使用した場合)。</string>
-     <string name="switch_to_vector_map_to_see">現在地のベクターマップを見るには\n\t\n\t\'メニュー\' →\'マップ設定\' →\'マップソース…\' →\'オフラインベクターマップ\'を有効にします。</string>
+
+    <string name="switch_to_vector_map_to_see">現在地のベクターマップを見るには\n\t\n\t\'メニュー\' →\'マップ設定\' →\'マップソース…\' →\'オフラインベクターマップ\'を有効にします。</string>
      
      <string name="choose_audio_stream">音声案内ストリーム</string>
      <string name="choose_audio_stream_descr">音声案内を再生するチャンネルを選択します</string>
@@ -37,18 +35,11 @@
      <string name="shared_string_none">無し</string>
      <string name="map_overlay">オーバーレイマップ</string>
      <string name="map_overlay_descr">オーバーレイマップを選択します</string>
-     <string name="tile_source_already_installed">マップは既に
-インストール済です、設定を更新します</string>
-     <string name="select_tile_source_to_install">インストールまたは
-更新する(タイル)マップを選んでください</string>
-     <string name="internet_not_available">この操作に必要なインターネット接続が現在利用できません</string>
+    <string name="internet_not_available">この操作に必要なインターネット接続が現在利用できません</string>
      <string name="install_more">リスト以外のものをインストール…</string>
 
-     
-     
 
-     <string name="level_to_switch_vector_raster_descr">ベクター形式マップを使用する際の最小ズームレベルを選択します</string>
-     <string name="level_to_switch_vector_raster">最小ベクターズームレベル</string>
+    <string name="level_to_switch_vector_raster">最小ベクターズームレベル</string>
 
      
      
@@ -144,16 +135,11 @@
      <string name="poi_filter_for_tourists">観光(For tourists)</string>
      <string name="poi_filter_fuel">燃料(Fuel)</string>
      <string name="poi_filter_namefinder">オンラインNameFinder</string>
-     <string name="reading_cached_tiles">キャッシュ済タイル読み込み中…</string>
-     <string name="version_index_is_big_for_memory">\'\'{0}\'\' の項目はメモリ内に格納できませんでした</string>
+    <string name="version_index_is_big_for_memory">\'\'{0}\'\' の項目はメモリ内に格納できませんでした</string>
      <string name="version_index_is_not_supported">\'\'{0}\'\' は、この無料バージョンではサポートされていません</string>
 
-     
-     
-     <string name="osmand_routing_experimental">OsmAndオフライン経路案内は実験的な機能であり
-20km以上の距離では動作しません。
-\n\n経路案内サービスはオンラインのCloudMadeに自動的に切り替わります。</string>
-     <string name="specified_dir_doesnt_exist">指定されたフォルダが見つかりません。</string>
+
+    <string name="specified_dir_doesnt_exist">指定されたフォルダが見つかりません。</string>
      <string name="application_dir">データ格納フォルダ</string>
      
 
@@ -202,9 +188,7 @@ MB)をダウンロードしますか?</string>
      <string name="osmand_service_descr">画面オフの間もOsmAndはバックグラウンドモードで動作します</string>
      <string name="fast_route_mode">最速ルート</string>
      <string name="fast_route_mode_descr">"有効なら目的地までの最速ルートで計算し、無効なら燃費を抑えた短いルートで計算します "</string>
-     <string name="tiles_to_download_estimated_size">ズームレベル {0}で
-{1} 件のタイル({2} MB)をダウンロード</string>
-     <string name="shared_string_download_map">マップをダウンロード</string>
+    <string name="shared_string_download_map">マップをダウンロード</string>
      <string name="select_max_zoom_preload_area">プリロードする最大ズームを選択</string>
      <string name="maps_could_not_be_downloaded">このマップはダウンロードできませんでした</string>
 
@@ -224,8 +208,7 @@ MB)をダウンロードしますか?</string>
      <string name="phone">電話番号</string>
      <string name="download_type_to_filter">フィルタをかける種別</string>
      <string name="use_high_res_maps">高解像度マップ</string>
-     <string name="use_high_res_maps_descr">高精細度装置向け高解像度マップを表示します</string>
-     <string name="unknown_location">位置取得中</string>
+    <string name="unknown_location">位置取得中</string>
      
      <string name="context_menu_item_search_transport">公共交通機関を検索</string>
      <string name="transport_searching_transport">交通機関の検索結果(目的地無し):</string>
@@ -384,8 +367,7 @@ POIの更新は利用できません</string>
      <string name="search_offline_address">オフライン</string>
      <string name="search_online_address">インターネット</string>
      <string name="max_level_download_tile">最大オンラインズーム</string>
-     <string name="max_level_download_tile_descr">オンラインマップタイル用にダウンロードする 最大ズームレベルを選びます</string>
-     <string name="route_general_information">総距離 %1$s, 移動時間 %2$d 時間 %3$d 分。</string>
+    <string name="route_general_information">総距離 %1$s, 移動時間 %2$d 時間 %3$d 分。</string>
      <string name="router_service_descr">オンラインまたはオフラインで使用する経路案内方法を選択します</string>
      <string name="router_service">経路案内サービス</string>
      <string name="sd_dir_not_accessible">SDカードのデータ格納フォルダにアクセスできません！</string>
@@ -468,8 +450,7 @@ POIの更新は利用できません</string>
  <string name="save_track_to_gpx_descrp">GPX経路はナビゲーション中にtracksフォルダに自動保存されます</string>
  <string name="save_track_to_gpx">ナビゲーション中に経路をGPXに記録</string>
  <string name="update_tile">マップを更新</string>
- <string name="reload_tile">タイルをリロード</string>
- <string name="open_street_map_login_descr">あなたのOSM ユーザー名を入力します</string>
+    <string name="open_street_map_login_descr">あなたのOSM ユーザー名を入力します</string>
  <string name="user_name">OSM ユーザー名</string>
  <string name="mark_point">ターゲット</string>
  
@@ -494,17 +475,14 @@ POIの更新は利用できません</string>
  <string name="show_poi_over_map_description">マップ上にPOIを表示
 (前回選択したフィルタを使用)</string>
  <string name="show_poi_over_map">POIを表示</string>
- <string name="map_tile_source_descr">オンラインで使用するマップソース、またはオフラインマップタイルキャッシュを選択します</string>
- <string name="map_tile_source">タイルマップ選択</string>
- <string name="map_source">マップソース</string>
+    <string name="map_source">マップソース</string>
  <string name="use_internet">インターネットを使用</string>
  <string name="show_location">現在地を表示</string>
  
  
  <string name="show_gps_coordinates_text">マップ上にGPS座標を表示</string>
- <string name="use_internet_to_download_tile">ローカルデータ内で見つからないマップタイルをインターネットからダウンロードします</string>
- 
- <string name="app_description">ナビゲーションアプリケーション</string>
+
+    <string name="app_description">ナビゲーションアプリケーション</string>
 
 <string name="shared_string_exit">戻る</string>
 
@@ -625,21 +603,12 @@ POIの更新は利用できません</string>
     <string name="about_version">バージョン：</string>
     <string name="shared_string_about">OsmAnd Maps &amp; Navigationについて</string>
     <string name="about_settings_descr">バージョン情報、ライセンス、プロジェクトメンバー</string>
-    
-    
-    <string name="local_index_tile_data_zooms">ズームダウンロード中: %1$s</string>
+
+
     <string name="local_index_tile_data_expire">有効期限 (分): %1$s</string>
-    <string name="local_index_tile_data_downloadable">ダウンロード可能: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">最大ズーム: %1$s</string>
-    <string name="local_index_tile_data_minzoom">最小ズーム: %1$s</string>
     <string name="local_index_tile_data_name">タイルデータ: %1$s</string>
-    <string name="edit_tilesource_successfully">タイルソース %1$s は正常に保存されました</string>
-    <string name="edit_tilesource_elliptic_tile">楕円メルカトル</string>
     <string name="edit_tilesource_maxzoom">最大ズーム</string>
-    <string name="edit_tilesource_expiration_time">有効期限(分)</string>
     <string name="edit_tilesource_minzoom">最小ズーム</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">既存のデータから選択…</string>
     <string name="maps_define_edit">マップの定義と編集…</string>
 	<string name="map_widget_fps_info">FPS デバッグ情報</string>
 	<string name="driving_region_descr">運転する地域を選択します:米国、ヨーロッパ、イギリス、アジア、その他</string>
@@ -770,8 +739,7 @@ POIの更新は利用できません</string>
     <string name="shared_string_control_start">記録</string>
     <string name="osmand_srtm_short_description_80_chars">オフライン等高線のためのOsmAndプラグイン</string>
     <string name="map_widget_distancemeasurement">距離の測定</string>
-    <string name="map_online_data_descr">オンラインマップを使用します(SDカードにダウンロードしたタイルのキャッシュを使用)</string>
-	<string name="confirm_interrupt_download">ファイルのダウンロードを中止しますか？</string>
+    <string name="confirm_interrupt_download">ファイルのダウンロードを中止しますか？</string>
 	<string name="animate_route_off">シミュレーション停止</string>
 	<string name="animate_route">シミュレーション開始</string>
 	<string name="left_side_navigation">左側通行に設定</string>
@@ -922,28 +890,24 @@ POIの更新は利用できません</string>
 	<string name="navpoint_search_desc">座標</string>
 	<string name="transport_search_desc">公共交通機関検索</string>
 	<string name="favourites_search_desc">お気に入り検索</string>
-	
-	<string name="offline_navigation_not_available">OsmAndオフラインナビゲーションが一時的に利用できません。</string>
-	
-	<string name="unknown_from_location">出発点は、まだ決定されていません</string>
+
+    <string name="unknown_from_location">出発点は、まだ決定されていません</string>
 	<string name="basemap_was_selected_to_download">ベースマップはアプリケーションの動作に必要なので、ダウンロード候補として選択されました。</string>
 	<string name="local_indexes_cat_tile">オンライン(またはキャッシュ済み)タイルマップ</string>
 	<string name="local_indexes_cat_map">標準マップ(ベクター形式)</string>
 	<string name="map_online_plugin_is_not_installed">別のマップソースを選択するためにオンラインマッププラグインを有効にする</string>
 	<string name="map_online_data">オンラインタイルマップ</string>
 	<string name="shared_string_online_maps">オンラインマップ</string>
-	<string name="online_map_settings_descr">オンラインまたはキャッシュされたタイルマップソースを設定します</string>
-	
-	
-	<string name="osmand_accessibility_description">このプラグインはデバイスのユーザー補助機能をOsmAndから直接利用できるようになります。例：TTS音声の発声速度の調整や、ナビゲーション画面を操作するパッドの設定、トラックボールを利用したズームコントロール、テキスト発声機能を使ってのあなたの現在地を自動でお知らせするフィードバック機能など。</string>
+
+
+    <string name="osmand_accessibility_description">このプラグインはデバイスのユーザー補助機能をOsmAndから直接利用できるようになります。例：TTS音声の発声速度の調整や、ナビゲーション画面を操作するパッドの設定、トラックボールを利用したズームコントロール、テキスト発声機能を使ってのあなたの現在地を自動でお知らせするフィードバック機能など。</string>
 	
 	
 	
 	<string name="osmand_development_plugin_description">このプラグインは開発やデバッグの為のテスト機能、ルーティングシミュレーション、画面のレンダリング性能、音声指示の確認など出来るように設定項目を表示します。これらの設定は開発者向けに用意されており、一般ユーザーには必要ありません。</string>
 	<string name="plugins_screen">プラグイン設定</string>
-	
-	<string name="prefs_plugins_descr">プラグインの有効化で、より高度な設定や各プラグインの追加機能を利用可能になります</string>
-	<string name="prefs_plugins">プラグイン設定</string>
+
+    <string name="prefs_plugins">プラグイン設定</string>
 	<string name="vector_maps_may_display_faster_on_some_devices">ベクター形式のマップはすばやく表示されます。一部のデバイスではうまく動作しない場合があります。</string>
 	<string name="play_commands_of_currently_selected_voice">文字列(音声案内サンプル)を選択した音声で再生します</string>
 	<string name="debugging_and_development">OsmAnd開発者向けオプション</string>
@@ -1101,8 +1065,7 @@ POIの更新は利用できません</string>
 	<string name="auto_follow_location_enabled">設定に従い、現在地をマップ中心に表示します。</string>
 	<string name="pref_vector_rendering">ベクターレンダラ固有のオプション</string>
 	<string name="pref_overlay">オーバーレイ/アンダーレイ</string>
-	<string name="pref_raster_map">マップソースの設定</string>
-	<string name="pref_vector_map">ベクターマップの設定</string>
+    <string name="pref_vector_map">ベクターマップの設定</string>
 	<string name="delete_confirmation_msg">%1$sを削除しますか？</string>
 	<string name="city_type_suburb">区画</string>
 	<string name="city_type_hamlet">市町村</string>
@@ -1221,14 +1184,9 @@ POIの更新は利用できません</string>
 
 
     <string name="rendering_attr_noPolygons_description">マップ上の土地の特徴を透明にする</string>
-	<string name="osmand_rastermaps_plugin_description">このプラグインを使用すると、標準のOpenStreetMapタイル(Mapnik風)から衛星画像、天気図、気候マップ、地質図、陰影起伏図など、目的に応じた様々な(タイル又はラスタと呼ばれる)オンラインマップにアクセスし、レイヤーに反映することができます。 
-\n 
-\nこれらのマップのいずれも(OsmAnd標準オフラインマップの様に)ベースマップとして使用でき、オーバーレイマップ、アンダーレイマップとしてもOsmAndマップ画面に表示させることが出来ます。アンダーレイマップを見やすくしたい時は、OsmAndベクターマップの特定の要素を必要に応じて\'マップ設定\'メニューから簡単に非表示にすることができます。 
-\n 
-\nタイルマップはオンライン経由で直接取得することが可能です、また様々なサードパーティ製マップ作成ツールで作成したSQLiteデータベースをオフラインで使用するために調整することができます。(手動でOsmAndのデータフォルダにコピーする必要があります)</string>
-	
-	
-	<string name="osm_editing_plugin_description">このプラグイン経由でPOIオブジェクトの作成や変更、OSM注記の開示やコメント、記録したGPXファイルを使用しOSMの改善に貢献することが出来ます。OSM(OpenStreetMap)はコミュニティ主導で行われる、世界規模のパブリックドメイン(特定の知的財産権に影響されない)マップ作成のプロジェクトです。詳しくはhttps://openstreetmap.orgを参照してください。アプリに必要な情報を入力することでOsmAndからもいくつかの作業を直接行うことができます。積極的な参加を歓迎いたします。</string>
+
+
+    <string name="osm_editing_plugin_description">このプラグイン経由でPOIオブジェクトの作成や変更、OSM注記の開示やコメント、記録したGPXファイルを使用しOSMの改善に貢献することが出来ます。OSM(OpenStreetMap)はコミュニティ主導で行われる、世界規模のパブリックドメイン(特定の知的財産権に影響されない)マップ作成のプロジェクトです。詳しくはhttps://openstreetmap.orgを参照してください。アプリに必要な情報を入力することでOsmAndからもいくつかの作業を直接行うことができます。積極的な参加を歓迎いたします。</string>
 	
 	
 	    

@@ -522,11 +522,6 @@ Lon: %2$s</string>
     <string name="free">Libera %1$s</string>
     <string name="gps_status">GPS-a stato</string>
     <string name="map_widget_show_ruler">Mezurilo</string>
-    <string name="osmand_rastermaps_plugin_description">Per tiu ĉi kromprogramo vi povas atingi multajn enretajn (ankaŭ nomitaj kiel kahelajn aŭ rastrumajn) mapojn, ekzemple: antaŭgeneritaj OpenStreetMap kaheloj (kiel Mapnik), satelitaj fotoj kaj mapoj por specialaj uzoj: veteraj, klimataj, tersciencaj mapoj, tavoloj de nivel-ombrumo, ktp. 
-\n 
-\nĈiuj de tiuj mapoj oni eblas uzi kiel ĉefan (bazan) mapon por OsmAnd, aŭ kiel supran aŭ malsupran tavolon por alia bazmapo (ekz. por norma OsmAnd-a eksterreta mapo). Por fari malsupran tavolon de mapo pli klara, kelkaj elementoj de vektoraj OSM-aj mapoj oni eblas facile kaŝi per la menuo ‘agordi mapon. 
-\n 
-\nKahelajn mapojn oni povas elŝuti senpere de Interreto, aŭ prepari por eksterreta uzado (kaj permane kopii al OSM-a datum-dosierujo) kiel SQLite-an datumbazon kiu povas esti farita uzante diversajn eksterajn ilojn por prepari mapojn.</string>
     <string name="shared_string_accessibility">Alirebleco</string>
     <string name="device_memory">Aparata memoro</string>
     <string name="edit_group">Redakti grupon</string>
@@ -967,19 +962,10 @@ Lon: %2$s</string>
     <string name="auto_zoom_farthest">Malproksime</string>
     <string name="base_world_map">Monda bazmapo</string>
     <string name="map_magnifier">Map-skalado</string>
-    <string name="local_index_tile_data_zooms">Elŝutitaj niveloj de pligrandigo: %1$s</string>
     <string name="local_index_tile_data_expire">Senvalidiĝos (minutoj): %1$s</string>
-    <string name="local_index_tile_data_downloadable">Elŝuteblaj: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Maksimuma skalo: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Minimuma skalo: %1$s</string>
     <string name="local_index_tile_data_name">Kahelaj datumoj: %1$s</string>
-    <string name="edit_tilesource_successfully">Kahelfonto %1$s estas sukcese konservita</string>
-    <string name="edit_tilesource_elliptic_tile">Elipsa merkatora</string>
     <string name="edit_tilesource_maxzoom">Maksimuma skalo</string>
-    <string name="edit_tilesource_expiration_time">Senvalidiĝos (minutoj)</string>
     <string name="edit_tilesource_minzoom">Minimuma skalo</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Elekti ekzistantan…</string>
     <string name="maps_define_edit">Difini/redakti…</string>
     <string name="map_widget_fps_info">Montri kadrojn sekunde (senerarigo)</string>
     <string name="driving_region">Trafika regiono</string>
@@ -1241,7 +1227,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="navpoint_search_desc">Koordinatoj</string>
     <string name="transport_search_desc">Serĉi transporton publikan</string>
     <string name="favourites_search_desc">Serĉi en ŝatataj</string>
-    <string name="offline_navigation_not_available">OsmAnd eksterreta navigado estas dumtempe nealirebla.</string>
     <string name="left_side_navigation">Maldekstr-flanka trafiko</string>
     <string name="left_side_navigation_descr">Elektu por landoj kun maldekstr-flanka trafiko.</string>
     <string name="local_index_description">Frapetu ekzistantan elementon por vidi pliajn detalojn, premtenu por malaktivigi aŭ forigi. Datumoj en aparato nuntempe (%1$s malokupiĝa):</string>
@@ -1262,15 +1247,11 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="incomplete_locale">nekompleta</string>
     <string name="map_online_plugin_is_not_installed">Aktivigi la kromprogramo \'Enretaj mapoj\' por elekti aliajn fontojn de mapoj</string>
     <string name="map_online_data">Enretaj kaj kahelaj mapoj</string>
-    <string name="map_online_data_descr">Uzi enretajn mapojn (elŝuti kaj kaŝmemorigi kahelojn en memorkarto).</string>
-    <string name="online_map_settings_descr">Agordi fontojn de enretaj kaj kahelaj mapoj.</string>
     <string name="prefs_plugins">Kromprogramoj</string>
-    <string name="prefs_plugins_descr">Kromprogramoj aktivigas spertajn agordojn kaj pliajn eblojn.</string>
     <string name="vector_maps_may_display_faster_on_some_devices">Vektoraj mapoj verŝajne funkcias pli rapide. Estas eble, ke tio ne funkcias en kelkaj aparatoj.</string>
     <string name="play_commands_of_currently_selected_voice">Elekti voĉon kaj provi ĝin ludante avertojn</string>
     <string name="native_rendering">Indiĝena blldigo</string>
     <string name="test_voice_prompts">Testi voĉ-avertojn</string>
-    <string name="switch_to_raster_map_to_see">Neniu eksterreta vektora mapo disponebla por tiu ĉi loko. Vi povas elŝuti iun en Agordoj (Administri map-dosierojn), aŭ ŝalti enretajn mapojn (aktivigu la Enretajn mapojn kromprogramon).</string>
     <string name="send_files_to_osm">Ĉu alŝuti GPX-dosierojn al OSM?</string>
     <string name="gpx_tags_txt">Etikedoj</string>
     <string name="gpx_visibility_txt">Videbleco</string>
@@ -1395,7 +1376,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="auto_follow_location_enabled">Aŭtomate centrigi map-vidon aktiva.</string>
     <string name="pref_vector_rendering">Specifaj agordoj pri vektor-bildigado</string>
     <string name="pref_overlay">Surtavolo / subtavolo</string>
-    <string name="pref_raster_map">Map-fontaj agordoj</string>
     <string name="pref_vector_map">Vektor-mapaj agordoj</string>
     <string name="delete_confirmation_msg">Ĉu forigi na %1$s?</string>
     <string name="city_type_town">Urbo</string>
@@ -1492,8 +1472,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="layer_overlay">Surtavola mapo…</string>
     <string name="map_overlay">Surtavola mapo</string>
     <string name="map_overlay_descr">Elekti surtavolan mapon.</string>
-    <string name="tile_source_already_installed">Mapo estas jam instalita, agordoj estos ĝisdatigitaj.</string>
-    <string name="select_tile_source_to_install">Elekti (kahelajn) mapojn por instali aŭ ĝisdatigi.</string>
     <string name="internet_not_available">Interreta konekto estas bezonata por tio, sed ne estas disponebla.</string>
     <string name="install_more">Instali pli…</string>
     <string name="lang_es_us">Hispana (Amerika)</string>
@@ -1573,7 +1551,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="debugging_and_development">OsmAnd-programistilo</string>
     <string name="osmand_development_plugin_description">Montras agordojn por programado kaj senerarigado kiel testado aŭ simulado de kurso, efikeco de ekran-bildigado, aŭ voĉaj sciigoj. Tiuj ĉi agordoj taŭgas por programistoj kaj ne estas bezonataj por norma uzanto.</string>
     <string name="lang_en_gb">Angla (Brita)</string>
-    <string name="level_to_switch_vector_raster_descr">Minimuma skal-nivelo por uzi ĉe vektoraj mapoj.</string>
     <string name="level_to_switch_vector_raster">Minimuma vektora skal-nivelo</string>
     <string name="create_poi_link_to_osm_doc"><u>Enreta OSM</u> map-klasigo kun bildoj.</string>
     <string name="error_doing_search">Eraro okazis dum eksterreta serĉado.</string>
@@ -1619,14 +1596,10 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="old_map_index_is_not_supported">Neaktuala formo de map-datumoj \"{0}\" ne estas subtenata</string>
     <string name="poi_filter_custom_filter">Propra filtrilo</string>
     <string name="poi_filter_namefinder">Serĉi nomojn enrete</string>
-    <string name="reading_cached_tiles">Ŝargado de konservitaj kaheloj…</string>
     <string name="version_index_is_big_for_memory">La indekso \"{0}\" ne povas esti enspacata en memorejo</string>
     <string name="version_index_is_not_supported">La indeks-versio \"{0}\" ne estas subtenata</string>
-    
-    
-    <string name="osmand_routing_experimental">OsmAnd eksterreta navigado estas testa eblo kaj ĝi ne funkcias por distancoj pli grandaj ol 20 km.
 
-Provizore estas uzata enreta servo CloudMade.</string>
+
     <string name="specified_dir_doesnt_exist">Ne povis trovi la elektitan dosierujon.</string>
 
 
@@ -1641,7 +1614,6 @@ Provizore estas uzata enreta servo CloudMade.</string>
     <string name="unzipping_file">Elarĥivigado de dosiero…</string>
     <string name="voice_is_not_available_title">Gvidada voĉo ne elektita</string>
     <string name="voice_is_not_available_msg">Neniu gvidada voĉo elektita, bonvolu iri al \'Agordoj\' → \'Ĝeneralaj\' → \'Gvidada voĉo\' kaj elektu kaj elŝutu pakaĵon de voĉaj sciigoj.</string>
-    <string name="tiles_to_download_estimated_size">Elŝuti {1} kahelojn ĉe skal-nivelo {0} ({2} MB)</string>
     <string name="select_max_zoom_preload_area">Elekti maksimuman skal-nivelon por elŝuti</string>
     <string name="maps_could_not_be_downloaded">Tiu ĉi mapo ne povas esti elŝutita</string>
     <string name="continuous_rendering">Konstanta bildigado</string>
@@ -1656,7 +1628,6 @@ Provizore estas uzata enreta servo CloudMade.</string>
     <string name="poi_context_menu_call">Montri telefonon de interesejo</string>
     <string name="download_type_to_filter">entajpu tekston por filtri</string>
     <string name="use_high_res_maps">Alta ekrandistingivo</string>
-    <string name="use_high_res_maps_descr">Ne etendi (kaj malklarigi) map-kahelojn ĉe alt-distingivaj ekranoj.</string>
     <string name="context_menu_item_search_transport">Serĉi transporton publikan</string>
     <string name="transport_searching_transport">Serĉrezultoj pri transporto (sen celo):</string>
     <string name="transport_searching_route">Serĉrezultoj pri transporto ({0} al celo):</string>
@@ -1785,7 +1756,6 @@ Provizore estas uzata enreta servo CloudMade.</string>
     <string name="search_osm_nominatim">Serĉi enrete per OSM Nominatim</string>
     <string name="hint_search_online">Serĉi enrete: dom-numero, strato, urbo</string>
     <string name="max_level_download_tile">Maks. enreta pligrandigo</string>
-    <string name="max_level_download_tile_descr">Elekti maksimuman skal-nivelon por elŝuti enretajn kahelajn mapojn.</string>
     <string name="route_general_information">Tuta distanco %1$s, vojaĝ-tempo %2$d h %3$d min.</string>
     <string name="router_service">Navigada servo</string>
     <string name="router_service_descr">Elekti enretan aŭ eksterretan servon por navigado.</string>
@@ -1831,7 +1801,6 @@ Provizore estas uzata enreta servo CloudMade.</string>
     <string name="osm_settings_descr">Agordoj bezonataj por sendoj al OpenStreetMap.org.</string>
     <string name="data_settings">Datumoj</string>
     <string name="additional_settings">Neĉefaj agordoj</string>
-    <string name="reload_tile">Reŝargi kahelojn</string>
     <string name="mark_point">Celo</string>
     <string name="app_settings">Aplikaĵaj agordoj</string>
     <string name="choose_building">Elektu domon</string>
@@ -1843,13 +1812,10 @@ Provizore estas uzata enreta servo CloudMade.</string>
     <string name="map_view_3d_descr">Aktivigi tri-dimensian vidon de la mapo.</string>
     <string name="show_poi_over_map">Montri interesejojn</string>
     <string name="show_poi_over_map_description">Montri surtavolon de laste elektita interesejo sur la mapo.</string>
-    <string name="map_tile_source">Fonto de kahelaj mapoj</string>
-    <string name="map_tile_source_descr">Elekti fonton de enretaj aŭ kaŝmemorigitaj map-kaheloj.</string>
     <string name="map_source">Map-fonto</string>
     <string name="use_internet">Uzi Interreton</string>
     <string name="show_location">Montri vian pozicion</string>
     <string name="show_gps_coordinates_text">Montri GPS-ajn koordinatojn sur mapo</string>
-    <string name="use_internet_to_download_tile">Uzi Interreton por elŝuti mankajn map-kahelojn</string>
     <string name="app_description">Navigada programo</string>
     <string name="searchpoi_activity">Elekti interesejon</string>
     <string name="search_POI_level_btn">Serĉi pli</string>

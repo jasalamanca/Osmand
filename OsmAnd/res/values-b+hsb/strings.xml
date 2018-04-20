@@ -360,8 +360,6 @@
     <string name="app_mode_aircraft">Lětadło</string>
     <string name="base_world_map">Zakładna karta swěta</string>
     <string name="about_version">Wersija :</string>
-    <string name="local_index_tile_data_maxzoom">Maksimalny zoom: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Minimalny zoom: %1$s</string>
     <string name="driving_region_descr">Wubjerće region jězdźenja: Europa, Azija, Zjednoćene staty abo druhe.</string>
     <string name="driving_region">Region jězdźenja</string>
     <string name="driving_region_japan">Japanska</string>
@@ -498,7 +496,6 @@
     <string name="navpoint_search_desc">Koordinaty</string>
     <string name="transport_search_desc">Pytanje za zjawnym transportom</string>
     <string name="favourites_search_desc">Pytanje za faworitami</string>
-    <string name="offline_navigation_not_available">OsmAnd offline-nawigacija tuchwilu přistupna njeje.</string>
     <string name="unknown_location">Stejišćo hišće njenamakane</string>
     <string name="confirm_interrupt_download">Chceće sćehnjenje dataje přetorhnyć?</string>
     <string name="local_indexes_cat_map">Standardne karty (wektor)</string>
@@ -563,7 +560,6 @@
     <string name="download_files_not_enough_space">Njeje dosć swobodneho městna za download %1$s MB (swobodne: %2$s).</string>
     <string name="choose_auto_follow_route">Kartu sobuwzać</string>
     <string name="choose_auto_follow_route_descr">Čakanski čas hač do synchronizowanja karty z aktualnym stejišćom.</string>
-    <string name="pref_raster_map">Nastajenja kartowych žórłow</string>
     <string name="pref_vector_map">Nastajenja wektorowych kartow</string>
     <string name="city_type_suburb">Měšćanski dźěl</string>
     <string name="city_type_hamlet">Wjeska</string>
@@ -765,7 +761,6 @@
     <string name="data_settings">Daty</string>
     <string name="additional_settings">Přidatne nastajenja</string>
     <string name="update_tile">Kartowe kachlicy zaktualizować</string>
-    <string name="reload_tile">Kachlicy zaktualizować</string>
     <string name="mark_point">Cil</string>
     <string name="use_english_names_descr">Jendźelske abo domjace mjena wužiwać.</string>
     <string name="use_english_names">Jendźelske mjena wužiwać</string>
@@ -780,13 +775,10 @@
     <string name="map_view_3d">3D-napohlad wužiwać</string>
     <string name="show_poi_over_map_description">Njedawno wužiwane dypki na karće pokazać.</string>
     <string name="show_poi_over_map">Pokazaj runinu z dypkami</string>
-    <string name="map_tile_source_descr">Online- abo offline-žórło za kartowe kachlicy wubrać.</string>
-    <string name="map_tile_source">Žórło kartowych kachlicow</string>
     <string name="map_source">Žórło karty</string>
     <string name="use_internet">Internet wužiwać</string>
     <string name="show_location">Moje stejišćo pokazać</string>
     <string name="show_gps_coordinates_text">GPS-koordinaty na karće pokazać</string>
-    <string name="use_internet_to_download_tile">Pobrachowace kartowe kachlicy z interneta sćahnyć</string>
     <string name="app_description">Nawigaciska aplikacija</string>
     <string name="search_button">Pytać</string>
     <string name="search_activity">Pytanje</string>
@@ -1212,7 +1204,6 @@
     <string name="map_widget_reset">Standardne nastajenja wobnowić</string>
     <string name="left_side_navigation">Jězdźenje nalěwo</string>
     <string name="plugins_screen">Přidatki</string>
-    <string name="prefs_plugins_descr">Přidatki zmóžnja dalše nastajenja a přidatnu funkcionalitu.</string>
     <string name="prefs_plugins">Přidatki</string>
     <string name="arrival_distance">Připowědźenje přijězda</string>
     <string name="arrival_distance_descr">Hdy chceće připowědź přijězda?</string>

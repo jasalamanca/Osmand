@@ -9,8 +9,7 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
 
 	<string name="pref_vector_rendering">Thiết lập hiển thị Vector</string>
 	<string name="pref_overlay">Lớp phủ trên / Lớp phủ dưới</string>
-	<string name="pref_raster_map">Thiết lập bản đồ nguồn</string>
-	<string name="pref_vector_map">Thiết lập bản đồ vector</string>
+    <string name="pref_vector_map">Thiết lập bản đồ vector</string>
 	<string name="delete_confirmation_msg">Bạn có muốn xóa %1$s?</string>
 	<string name="city_type_suburb">Ngoại thành</string>
 	<string name="city_type_hamlet">Thôn/Xóm</string>
@@ -143,15 +142,10 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
 	<string name="shared_string_none">Không</string>
 	<string name="map_overlay">Chồng phủ bản đồ</string>
 	<string name="map_overlay_descr">Chọn bản đồ cần chồng phủ</string>
-	<string name="tile_source_already_installed">Bản đồ đã được cài, các thiết lập sẽ được cập nhật</string>
-	<string name="select_tile_source_to_install">Chọn bản đồ cần cài đặt hoặc cập nhật</string>
 	<string name="internet_not_available">Không vào được Internet</string>
 	<string name="install_more">Cài đặt thêm…</string>
 
-	
-	
 
-	<string name="level_to_switch_vector_raster_descr">Tỉ lệ nhỏ nhất để hiển thị bản đồ vector thay cho bản đồ ảnh</string>
 	<string name="level_to_switch_vector_raster">Tỉ lệ nhỏ nhất để xem bản đồ vector</string>
 
 	
@@ -229,14 +223,10 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
 	<string name="poi_filter_for_tourists">Du lịch</string>
 	<string name="poi_filter_fuel">Trạm Xăng</string>
 	<string name="poi_filter_namefinder">Tìm tên online</string>
-	<string name="reading_cached_tiles">Đang đọc các tiles đã được lưu sẵn…</string>
 	<string name="version_index_is_big_for_memory">Chỉ mục \'\'{0}\'\' lớn hơn bộ nhớ</string>
 	<string name="version_index_is_not_supported">Phiên bản chỉ mục \'\'{0}\'\' không được hỗ trợ</string>
 
-	
-	
-	<string name="osmand_routing_experimental">Tìm đường Offline trên OsmAnd là tính năng thử nghiệm và
-	nó không thể chạy được với khoảng cách trên 20km.\n\nDịch vụ tìm được sẽ tự động chuyển sang dùng CloudMade.</string>
+
 	<string name="specified_dir_doesnt_exist">Không tìm thấy thư mục.</string>
 	<string name="application_dir">Thư mục lưu trữ</string>
 	
@@ -274,7 +264,6 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
 	<string name="osmand_service_descr">OsmAnd vẫn chạy khi tắt màn hình thiết bị</string>
 	<string name="fast_route_mode">Nhanh nhất</string>
 	<string name="fast_route_mode_descr">Bật/tắt tính năng tìm đường đi nhanh nhất</string>
-	<string name="tiles_to_download_estimated_size">Tại mức zoom {0} tải về {1} tiles ({2} MB)</string>
 	<string name="shared_string_download_map">Tải bản đồ</string>
 	<string name="select_max_zoom_preload_area">Lựa chọn Zoom lớn nhất để tải lại</string>
 	<string name="maps_could_not_be_downloaded">Bản đồ này không tải được</string>
@@ -295,7 +284,6 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
 	<string name="phone">Điện thoại</string>
 	<string name="download_type_to_filter">kiểu bộ lọc</string>
 	<string name="use_high_res_maps">Hiện độ phân giải cao</string>
-	<string name="use_high_res_maps_descr">Cải thiện chất lượng hiển thị cho các thiết bị có độ phân giải cao</string>
 	<string name="unknown_location">Vị trí chưa được biết</string>
 	
 	<string name="context_menu_item_search_transport">Tìm phương tiện giao thông</string>
@@ -438,7 +426,6 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
 	<string name="search_offline_address">Offline</string>
 	<string name="search_online_address">Internet</string>
 	<string name="max_level_download_tile">Online zoom lớn nhất</string>
-	<string name="max_level_download_tile_descr">Chọn tỉ lệ Zoom lớn nhất để tải về bản đồ tile online</string>
 	<string name="route_general_information">Tổng khoảng cách %1$s \n thời gian đi %2$d h %3$d m.</string>
 	<string name="router_service_descr">Chọn dịch vụ tìm đường Online hoặc Offline</string>
 	<string name="router_service">Dịch vụ tìm đường</string>
@@ -515,8 +502,7 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
     <string name="save_track_interval">Khoảng thời gian lưu Track</string>
     <string name="save_track_to_gpx">Lưu track thành GPX</string>
     <string name="update_tile">Cập nhật bản đồ</string>
-    <string name="reload_tile">Tải lại tile</string>
-    <string name="open_street_map_login_descr">Tài khoản tại OpenStreetMap.org (OSM)</string>
+	<string name="open_street_map_login_descr">Tài khoản tại OpenStreetMap.org (OSM)</string>
     <string name="user_name">Tài khoản OSM</string>
     <string name="mark_point">Mục tiêu</string>
     
@@ -540,17 +526,14 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
     
     <string name="show_poi_over_map_description">Hiện địa điểm trên bản đồ (sử dụng bộ lọc gần đây nhất)</string>
     <string name="show_poi_over_map">Hiện địa điểm</string>
-    <string name="map_tile_source_descr">Chọn nguồn cho bản đồ tiles online/offline</string>
-    <string name="map_tile_source">Nguồn bản đồ Tile</string>
-    <string name="map_source">Nguồn bản đồ</string>
+	<string name="map_source">Nguồn bản đồ</string>
     <string name="use_internet">Dùng Internet</string>
     <string name="show_location">Hiện vị trí</string>
     
     
     <string name="show_gps_coordinates_text">Hiện tọa độ GPS trên bản đồ</string>
-    <string name="use_internet_to_download_tile">Dùng Internet để tải các tile bị thiếu</string>
-    
-    <string name="app_description">Ứng dụng dẫn đường cá nhân</string>
+
+	<string name="app_description">Ứng dụng dẫn đường cá nhân</string>
 
 <string name="shared_string_exit">Thoát</string>
 

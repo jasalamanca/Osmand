@@ -404,17 +404,9 @@
     
     
     <string name="local_index_tile_data_expire">过期(分钟)：%1$s</string>
-    <string name="local_index_tile_data_downloadable">可下载：%1$s</string>
-    <string name="local_index_tile_data_maxzoom">最大显示级别：%1$s</string>
-    <string name="local_index_tile_data_minzoom">最小显示级别：%1$s</string>
     <string name="local_index_tile_data_name">地图瓦片数据：%1$s</string>
-    <string name="edit_tilesource_successfully">地图瓦片数据源 %1$s 已成功保存</string>
-    <string name="edit_tilesource_elliptic_tile">椭圆墨卡托</string>
     <string name="edit_tilesource_maxzoom">最大显示级别</string>
-    <string name="edit_tilesource_expiration_time">过期(分钟)</string>
     <string name="edit_tilesource_minzoom">最小显示级别</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">选择已有来源…</string>
     <string name="maps_define_edit">定义/编辑…</string>
 	<string name="map_widget_fps_info">FPS 调试信息</string>
 	<string name="driving_region_descr">选择驾驶区域：美国、欧洲、英国、亚洲及其它</string>
@@ -475,7 +467,6 @@
     <string name="favourites_list_activity">选择收藏</string>
     <string name="local_openstreetmap_act_title">OSM 改动</string>
     <string name="shared_string_more_actions">更多动作</string>
-    <string name="local_index_tile_data_zooms">已下载的显示级别：%1$s</string>
     <string name="speak_street_names">播报街道名称(TTS)</string>
     <string name="osmand_distance_planning_plugin_name">距离计算器与规划工具</string>
     <string name="distance_measurement_finish_subtrack">开始一条新的子轨迹</string>
@@ -549,8 +540,7 @@
 	<string name="poi_search_desc">POI(兴趣点)搜索</string>
 	<string name="address_search_desc">地址搜索</string>
 	<string name="transport_search_desc">交通设施搜索</string>
-	<string name="offline_navigation_not_available">OsmAnd 离线导航暂时不可用。</string>
-	<string name="left_side_navigation">左侧行驶</string>
+    <string name="left_side_navigation">左侧行驶</string>
 	
 	<string name="modify_transparency">修改透明度(0 - 透明，255 - 不透明)</string>
 	<string name="confirm_interrupt_download">是否终止文件下载？</string>
@@ -559,17 +549,14 @@
 	<string name="index_settings_descr">下载地图以及管理您设备上存储的离线数据</string>
 	<string name="map_online_plugin_is_not_installed">启用在线地图插件以选择不同的地图来源</string>
 	<string name="map_online_data">在线瓦片地图</string>
-	<string name="map_online_data_descr">使用在线地图(在SD卡上下载并缓存瓦片)</string>
-	<string name="shared_string_online_maps">在线地图</string>
-	<string name="online_map_settings_descr">配置在线或缓存瓦片地图来源</string>
-	
-	
-	<string name="osmand_accessibility_description">显示特殊可用性功能的设置。</string>
+    <string name="shared_string_online_maps">在线地图</string>
+
+
+    <string name="osmand_accessibility_description">显示特殊可用性功能的设置。</string>
 	
 	<string name="vector_maps_may_display_faster_on_some_devices">矢量地图很可能显示更快速。但在某些设备上不能正常工作。</string>
-	<string name="test_voice_prompts">测试语音提示</string>    
-	<string name="switch_to_raster_map_to_see">这个位置没有离线矢量地图。您可以从设置(数据管理)中下载，或者切换到在线地图。</string>
-	<string name="show_ruler_level">显示标尺</string>	
+	<string name="test_voice_prompts">测试语音提示</string>
+    <string name="show_ruler_level">显示标尺</string>
 	<string name="back">后方</string>
 	<string name="back_left">左后方</string>
 	<string name="left">左方</string>
@@ -607,8 +594,7 @@
 	<string name="auto_follow_route_navigation">只在导航时自动居中</string>
 	<string name="pref_vector_rendering">矢量渲染器特殊选项</string>
 	<string name="pref_overlay">叠加层/背景层</string>
-	<string name="pref_raster_map">地图来源设置</string>
-	<string name="pref_vector_map">矢量地图设置</string>
+    <string name="pref_vector_map">矢量地图设置</string>
 	<string name="delete_confirmation_msg">删除 %1$s？</string>
 	
 	<string name="animate_route_off">停止模拟导航</string>
@@ -677,10 +663,8 @@
 	<string name="shared_string_none">无</string>
 	<string name="map_overlay">叠加层地图</string>
 	<string name="map_overlay_descr">选择叠加层地图</string>
-	<string name="tile_source_already_installed">地图已经安装，设置将被更新</string>
-	<string name="install_more">安装更多…</string>
-	<string name="level_to_switch_vector_raster_descr">使用矢量地图的最小显示级别</string>
-	<string name="level_to_switch_vector_raster">最小矢量显示级别</string>
+    <string name="install_more">安装更多…</string>
+    <string name="level_to_switch_vector_raster">最小矢量显示级别</string>
 	
 	
 	<string name="error_doing_search">离线搜索中发生错误</string>
@@ -699,8 +683,7 @@
 	<string name="old_map_index_is_not_supported">已废弃的地图数据格式 \'\'{0}\'\' 不再支持</string>
 	<string name="poi_filter_closest_poi">最近的POI</string>
 	<string name="poi_filter_custom_filter">自定义过滤器</string>
-	<string name="reading_cached_tiles">正在读取缓存瓦片…</string>
-	<string name="version_index_is_big_for_memory">索引 \'\'{0}\'\' 太大而无法载入内存</string>
+    <string name="version_index_is_big_for_memory">索引 \'\'{0}\'\' 太大而无法载入内存</string>
 	<string name="version_index_is_not_supported">索引版本号 \'\'{0}\'\' 不支持</string>
 	
 	<string name="specified_dir_doesnt_exist">无法找到指定的目录。</string>
@@ -818,8 +801,7 @@
 	<string name="save_track_interval">日志记录时间间隔</string>
 	<string name="save_track_interval_descr">选择轨迹记录的位置间隔</string>
 	<string name="update_tile">更新地图</string>
-	<string name="reload_tile">重新载入地图瓦片</string>
-	<string name="mark_point">目标</string>
+    <string name="mark_point">目标</string>
 	<string name="shared_string_add_to_favorites">加入收藏夹</string>
 	<string name="use_english_names_descr">选择显示当地名称或英文名称</string>
 	<string name="use_english_names">在地图中使用英文名称</string>
@@ -831,14 +813,11 @@
 	<string name="ChooseCountry">选择国家</string>
 	<string name="show_poi_over_map_description">在地图上显示POI(使用上一次选择的过滤器)</string>
 	<string name="show_poi_over_map">显示POI</string>
-	<string name="map_tile_source_descr">选择在线或缓存地图瓦片的来源</string>
-	<string name="map_tile_source">瓦片地图来源</string>
-	<string name="map_source">地图来源</string>
+    <string name="map_source">地图来源</string>
 	<string name="show_location">显示位置</string>
-	
-	
-	<string name="use_internet_to_download_tile">使用互联网下载丢失的地图瓦片</string>
-	<string name="app_description">导航应用程序</string>
+
+
+    <string name="app_description">导航应用程序</string>
 	<string name="searchpoi_activity">选择POI</string>
 	<string name="search_POI_level_btn">搜索更多</string>
 	<string name="choose_available_region">从列表中选择区域</string>
@@ -1805,11 +1784,6 @@
     <string name="route_points">路线点</string>
     <string name="track_segments">轨迹区段</string>
     <string name="track_points">轨迹点</string>
-    <string name="osmand_rastermaps_plugin_description">有了这个插件，您可以访问多种类型的网上（所谓的图砖或网格）地图，从默认的 OpenStreetMap 图砖（如 Mapnik）到卫星图像和特殊用途的图层，比如天气地图、气候地图、地质地图、地形阴影层等。 
-\n
-\n这些地图可以用来作为主要的（基本）地图，以便在 OsmAnd 地图屏幕上显示，或作为上层又或另外基本地图的底层（如 OsmAnd 标准的离线地图）。为了使任何的底层地图可以看见，OsmAnd 矢量地图可以容易的根据需要透过 \'组态地图\' 菜单来隐藏某些构成。 
-\n
-\n地图图砖可以直接透过在线数据源获得，或者可以使用准备好的脱机地图（手动复制到 OsmAnd 的数据文件夹中） 作为一个 SQLite 数据库，可以透过各种的第三方地图编制工具产生。</string>
     <string name="record_plugin_name">旅行记录</string>
     <string name="record_plugin_description">这个插件在地图屏幕上，并手动轻击 GPX 记录小工具，以启动去录制和保存您轨迹的功能，或是自动记录您所有的导航路线到 GPX 文件。 
 \n
@@ -2233,7 +2207,6 @@
     <string name="local_index_description">轻触任何现有的项目，查看更详细的信息，长按则停用或删除。目前在设备上的数据有（%1$s 可用）：</string>
     <string name="first_time_msg">感谢您使用 OsmAnd。对于此应用程序的许多功能，您需要一些地区的离线数据，您可以透过\'设置\' -&gt; \'管理地图文件\'来下载。之后您可浏览地图、位置的地址、查看兴趣点以及寻找大众运输工具。</string>
     <string name="basemap_was_selected_to_download">底图为某些特别的应用功能必需使用的，并且缺省为下载。</string>
-    <string name="prefs_plugins_descr">启动插件的高级设置和更多的附加功能</string>
     <string name="play_commands_of_currently_selected_voice">用所选择的语音播放指令</string>
     <string name="back_to_location">回到目前位置</string>
     <string name="direction_style_sidewise">横向（8 个扇区）</string>
@@ -2284,15 +2257,11 @@
 \n
 \n启用方式“菜单” -&gt; “组态地图” -&gt; “地图来源…” -&gt; “离线矢量图”。</string>
     <string name="voice_stream_voice_call">电话音频（会中断汽车蓝牙音响）</string>
-    <string name="select_tile_source_to_install">选择要安装或更新的（平铺）地图</string>
     <string name="create_poi_link_to_osm_doc">带照片的<u>在线 OSM</u> 地图分类</string>
     <string name="search_offline_geo_error">不能分析地理含义“%s”</string>
     <string name="send_location_email_pattern">查看追踪位置，以网页浏览器链接 %1$s 或用 Android intent 链接 %2$s</string>
     <string name="add_waypoint_dialog_added">GPX 航点“{0}”已成功添加</string>
     <string name="poi_filter_namefinder">在线名称查找器</string>
-    <string name="osmand_routing_experimental">OsmAnd 离线导航是个实验性的功能，它不能运作超过 20 公里的距离。
-\n
-\n导航服务暂时切为在线的 CloudMade。</string>
     <string name="osmand_net_previously_installed">有前一版的 OsmAnd 存在，所有的脱机数据将被新版引用。但我的收藏内的标点须以旧版程序导出后再用新版程序导入。</string>
     <string name="build_installed">生成 {0} 成功安裝({1})。</string>
     <string name="downloading_build">正在下载编译…</string>
@@ -2300,13 +2269,11 @@
     <string name="loading_builds_failed">获取 OsmAnd 的生成列表失败</string>
     <string name="loading_builds">正在加载 OsmAnd 编译…</string>
     <string name="select_build_to_install">选择要安装的 OsmAnd 版本</string>
-    <string name="tiles_to_download_estimated_size">在缩放第{0}级别，下载{1}张地图图砖 ({2} MB)</string>
     <string name="select_max_zoom_preload_area">选择要预加载的最大缩放</string>
     <string name="continuous_rendering">连续渲染</string>
     <string name="continuous_rendering_descr">显示连续渲染而不是一次性显示</string>
     <string name="download_type_to_filter">要筛选类型</string>
     <string name="use_high_res_maps">高分辨率显示</string>
-    <string name="use_high_res_maps_descr">在高清晰度的屏幕上不要拉伸（模糊）地图图砖</string>
     <string name="transport_searching_transport">交通运输结果（未设目的地）：</string>
     <string name="transport_searching_route">交通运输结果（有 {0} 条路线可到目的地）：</string>
     <string name="voices">语音提示</string>
@@ -2348,7 +2315,6 @@
     <string name="transport_stops_to_pass">不停站</string>
     <string name="transport_route_distance">行程距离</string>
     <string name="transport">交通工具</string>
-    <string name="max_level_download_tile_descr">选择要下载的在线地图图像块的最大缩放级别</string>
     <string name="fav_points_not_exist">没有收藏的标点</string>
     <string name="show_view_angle">显示目视方向</string>
     <string name="incremental_search_street">渐进式查询街道</string>

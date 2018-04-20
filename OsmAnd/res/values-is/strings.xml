@@ -876,8 +876,6 @@ Ferill %2$s</string>
     <string name="gpx_file_is_empty">GPX-ferill er tómur</string>
     <string name="base_world_map">Grunnkort af heiminum</string>
     <string name="local_index_tile_data_expire">Rennur út (mínútur): %1$s</string>
-    <string name="edit_tilesource_expiration_time">Rennur út (mínútur)</string>
-    <string name="edit_tilesource_url_to_load">Slóð (URL)</string>
     <string name="distance_measurement_finish_subtrack">Byrja nýjan undirferil</string>
     <string name="shared_location">Deild staðsetning</string>
     <string name="rendering_attr_noPolygons_name">Flákar</string>
@@ -1004,7 +1002,6 @@ Ferill %2$s</string>
     <string name="saving_gpx_tracks">Vista GPX-ferla á SD-kort…</string>
     <string name="use_online_routing_descr">Nota internetið til að reikna leið.</string>
     <string name="use_online_routing">Nota leiðsögn af neti</string>
-    <string name="reload_tile">Endurhlaða tígli</string>
     <string name="use_english_names">Nota ensk heiti á korti</string>
     <string name="app_settings">Stillingar forrits</string>
     <string name="search_address">Leita að heimilisfangi</string>
@@ -1091,12 +1088,8 @@ Ferill %2$s</string>
     <string name="app_mode_aircraft">Flug</string>
     <string name="auto_zoom_none">Ekki sjálfvirkur aðdráttur</string>
     <string name="about_settings_descr">Upplýsingar um útgáfu, notkunarleyfi, þátttakendur verkefnis</string>
-    <string name="local_index_tile_data_downloadable">Niðurhalanlegt: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Hámarksaðdráttur: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Lágmarksaðdráttur: %1$s</string>
     <string name="edit_tilesource_maxzoom">Hám. aðdráttur</string>
     <string name="edit_tilesource_minzoom">Lágm. aðdráttur</string>
-    <string name="edit_tilesource_choose_existing">Veldu fyrirliggjandi…</string>
     <string name="maps_define_edit">Skilgreina/Breyta…</string>
     <string name="driving_region_descr">Veldu aksturssvæði: BNA, Evrópa, Bretland, Asía og annað.</string>
     <string name="driving_region">Aksturssvæði</string>
@@ -1292,7 +1285,6 @@ og leiðsögn</string>
     <string name="rendering_attr_noPolygons_description">Gera allar svæðamerkingar á korti gegnsæjar.</string>
     <string name="rendering_attr_hmRendered_description">Auka fjölda smáatriða sem sýndur er á korti.</string>
     <string name="local_index_routing_data">Gögn fyrir leiðagerð</string>
-    <string name="offline_navigation_not_available">Ónettengd leiðsögn með OsmAnd er ekki tiltæk í augnablikinu.</string>
     <string name="left_side_navigation_descr">Velja fyrir lönd með vinstri handar umferð.</string>
     <string name="unknown_from_location">Upphafspunktur er ekki ennþá skilgreindur</string>
     <string name="modify_transparency">Breyta gegnsæi (0 - gegnsætt, 255 - ógegnsætt)</string>
@@ -1301,9 +1293,6 @@ og leiðsögn</string>
     <string name="local_indexes_cat_tile">Nettengd kort og kortatíglar í biðminni</string>
     <string name="index_settings_descr">Hlaða niður og sýsla með ónettengdar kortaskrár sem geymdar eru á tækinu.</string>
     <string name="map_online_data">Nettengd kort og kortatíglar</string>
-    <string name="map_online_data_descr">Nota nettengd kort (sækja og setja kortatígla í biðminni á SD-kort).</string>
-    <string name="online_map_settings_descr">Stilla uppruna nettengdra korta og kortatígla í biðminni.</string>
-    <string name="prefs_plugins_descr">Viðbætur virkja ýmsar ítarlegar stillingar og fleiri eiginleika.</string>
     <string name="vector_maps_may_display_faster_on_some_devices">Vektorkort birtast að öllum líkindum hraðar. Virkar hugsanlega ekki vel á sumum tækjum.</string>
     <string name="play_commands_of_currently_selected_voice">Veldu rödd og prófaðu hana með því að spila raddskipanir</string>
     <string name="send_files_to_osm">Senda GPX-skrár til OSM?</string>
@@ -1324,7 +1313,6 @@ og leiðsögn</string>
     <string name="auto_follow_route_navigation_descr">Sjálfvirkt miðja sýn á kort einungis við leiðsögn.</string>
     <string name="auto_follow_location_enabled">Sjálfvirkt miðja sýn á kort sem er í notkun.</string>
     <string name="pref_vector_rendering">Sértækar stillingar vektor-myndgerðar</string>
-    <string name="pref_raster_map">Stillingar uppruna korta</string>
     <string name="animate_route_off">Hætta hermun</string>
     <string name="animate_route">Hefja hermun</string>
     <string name="file_can_not_be_renamed">Ekki var hægt að endurnefna skrá.</string>
@@ -1344,12 +1332,9 @@ og leiðsögn</string>
     <string name="local_index_action_do">"Þú ert um það bil að %1$s %2$s atriði.  Viltu halda áfram?"</string>
     <string name="gpx_option_destination_point">Nota núverandi áfangastað</string>
     <string name="warning_tile_layer_not_downloadable">Forritið getur ekki hlaðið niður kortalaginu %1$s, prófaðu að setja það aftur upp.</string>
-    <string name="tile_source_already_installed">Kortið er þegar uppsett, stillingar verða uppfærðar.</string>
-    <string name="select_tile_source_to_install">Veldu (tígla)kort til að setja inn eða uppfæra.</string>
     <string name="internet_not_available">Internettengingar er krafist við þessa aðgerð, en hún er hinsvegar ekki tiltæk.</string>
     <string name="error_doing_search">Villa kom upp í ónettengdri leit.</string>
     <string name="preferred_locale_descr">Veldu tungumál til birtingar í forriti (endurræstu OsmAnd eftir breytingar).</string>
-    <string name="reading_cached_tiles">Les kortatígla úr biðminni…</string>
     <string name="specified_dir_doesnt_exist">Fann ekki tilgreinda möppu.</string>
 
 
@@ -1386,7 +1371,6 @@ og leiðsögn</string>
     <string name="previous_run_crashed">Síðasta keyrsla OsmAnd hrundi. Annálsskrá er í {0}. Tilkynntu um vandamálið og sendu annálsskrána inn með skýrslunni.</string>
     <string name="data_settings_descr">Tilgreindu tungumál, síðan sækja/endurhlaða gögn.</string>
     <string name="use_english_names_descr">Veldu á milli staðarheita og enskra heita.</string>
-    <string name="map_tile_source_descr">Veldu uppruna nettengdra korta eða kortatígla í biðminni.</string>
     <string name="save_track_min_speed">Lágmarkshraði skráningar</string>
     <string name="save_track_min_distance">Skráning minnstu hreyfingar</string>
     <string name="save_track_precision">Lágmarksnákvæmni skráningar</string>
@@ -1632,7 +1616,6 @@ Punktar</string>
     <string name="amenity_type_seamark">Sjómerki</string>
     <string name="animate_routing_route_not_calculated">Reikna leiðina fyrst</string>
     <string name="local_index_tile_data_name">Tíglagögn: %1$s</string>
-    <string name="edit_tilesource_elliptic_tile">Sporöskjulagað Mercator</string>
     <string name="speak_traffic_warnings">Aðvaranir vegna umferðar</string>
     <string name="osb_author_or_password_not_specified">Settu inn OSM-notandanafn og lykilorð í stillingarnar</string>
     <string name="context_menu_item_directions_to">Leiðir til</string>
@@ -1646,12 +1629,10 @@ Punktar</string>
     <string name="indexing_transport">Lykla samgöngur…</string>
     <string name="daynight_descr">Veldu reglu til að skipta um dags/næturham.</string>
     <string name="fast_route_mode_descr">Virkja til að reikna hröðustu leið eða gera óvirkt til að reikna hagkvæmustu leið.</string>
-    <string name="tiles_to_download_estimated_size">Við aðdráttinn {0} skal sækja {1} tígla ({2} MB)</string>
     <string name="select_max_zoom_preload_area">Veldu hámarksaðdrátt fyrir forhleðslu</string>
     <string name="maps_could_not_be_downloaded">Það tókst ekki að hlaða inn kortinu</string>
     <string name="continuous_rendering_descr">Birta samfellda myndgerð í stað myndgerðar einnar myndar í einu.</string>
     <string name="rendering_exception">Villa kom upp við að myndgera valið svæði</string>
-    <string name="use_high_res_maps_descr">Ekki teygja (og gera óskýra) kortatígla á skjám með háupplausn.</string>
     <string name="transport_searching_transport">Niðurstöður fyrir samgöngur (enginn áfangastaður):</string>
     <string name="transport_searching_route">Niðurstöður leitar að samgöngum ({0} til áfangastaðar):</string>
     <string name="transport_search_again">Núllstilla leit að samgöngum</string>
@@ -1674,7 +1655,6 @@ Punktar</string>
     <string name="update_poi_error_loading">Villa við að hlaða inn gögnum frá vefþjóni</string>
     <string name="update_poi_is_not_available_for_zoom">Uppfærsla merkisstaða er ekki fáanleg fyrir lág aðdráttarstig</string>
     <string name="search_osm_nominatim">Leit á netinu með OSM Nominatim</string>
-    <string name="max_level_download_tile_descr">Veldu hámarks aðdráttarstig til að sækja kortatígla á netið.</string>
     <string name="download_question_exist">Ónettengd gögn fyrir {0} eru þegar til staðar ({1}). Viltu uppfæra þau ({2}) ?</string>
     <string name="list_index_files_was_not_loaded">Listinn yfir svæði fékkst ekki frá osmand.net.</string>
     <string name="opening_changeset">Opna breytingasett…</string>
@@ -1685,10 +1665,8 @@ Punktar</string>
     <string name="show_view_angle">Birta skoðunarstefnu</string>
     <string name="map_view_3d_descr">Virkja 3D-þrívíddarsýn á kortið.</string>
     <string name="map_view_3d">3D-þrívíddarsýn á korti</string>
-    <string name="map_tile_source">Uppruni tíglakorts</string>
     <string name="use_internet">Nota internetið</string>
     <string name="show_gps_coordinates_text">Birta GPS-hnit á korti</string>
-    <string name="use_internet_to_download_tile">Nota netið til að sækja kortatígla sem vantar</string>
     <string name="choose_intersected_street">Veldu þvergötu</string>
     <string name="Closest_Amenities">Næsta almenningsaðstaða</string>
     <string name="navigate_point_top_text">Settu inn breiddar- &amp; lengdargráður á völdu sniði (D - gráður, M - mínútur, S - sekúndur)</string>
@@ -1751,7 +1729,6 @@ Punktar</string>
     <string name="gpx_option_reverse_route">Snúa við stefnu GPX</string>
     <string name="choose_audio_stream">Frálag raddleiðsagnar</string>
     <string name="voice_stream_music">Hljóð margmiðlun/tónlist</string>
-    <string name="level_to_switch_vector_raster_descr">Lágmarks aðdráttarstig við notkun vektorkorta.</string>
     <string name="level_to_switch_vector_raster">Lágm. aðdráttur vektora</string>
     <string name="create_poi_link_to_osm_doc"><u>Nettengd OSM</u> kortaflokkun með myndum.</string>
     <string name="poi_filter_namefinder">Nettengd NafnaLeit</string>
@@ -2001,7 +1978,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="local_index_description">Bankaðu á eitthvað atriði til að sjá nánari upplýsingar, ýttu og haltu niðri til að gera óvirkt eða eyða því. Núverandi gögn á tækinu (%1$s laust):</string>
     <string name="first_time_msg">Takk fyrir að nota OsmAnd. Til að nota marga eiginleika þessa forrits þarftu að sækja ýmis ónettengd svæðisbundin gögn, hægt er að gera það með því að fara í \'Stillingar\' → \'Sýsla með kortaskrár\'. Þegar því er lokið geturðu skoðað kort, staðsett heimilisföng, flett upp merkisstöðum og fundið almenningssamgöngur.</string>
     <string name="map_online_plugin_is_not_installed">Virkjaðu viðbótina fyrir ónettengd kort til að velja önnur kortaupptök</string>
-    <string name="switch_to_raster_map_to_see">Ekkert ónettengt vektorkort er til fyrir þessa staðsetningu. Þú getur sótt slík kort í \'Stillingar\' → \'Sýsla með kortaskrár\', nú eða skipt yfir í nettengd kort (virkja þarf viðbótina fyrir ónettengd kort svo þetta virki).</string>
     <string name="support_new_features_descr">Styrkja til að fá nýja eiginleika þróaða fyrir forritið.</string>
     <string name="settings_direction_style_descr">Veldu stíl til framsetningar á afstæðum stefnum á meðan verið er á ferð.</string>
     <string name="accessibility_preferences_descr">Kjörstillingar sem tengjast aðgengi.</string>
@@ -2122,7 +2098,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="auto_zoom_close">Nærmynd</string>
     <string name="auto_zoom_far">Miðjusvið</string>
     <string name="auto_zoom_farthest">Stórt svið</string>
-    <string name="local_index_tile_data_zooms">Sótt aðdráttarstig: %1$s</string>
     <string name="map_widget_fps_info">FPS-aflúsunarupplýsingar</string>
     <string name="local_osm_changes_backup_failed">Öryggisafritun OSM-breytinga mistókst</string>
     <string name="local_osm_changes_backup">Taka öryggisafrit sem OSM-breytingu</string>
@@ -2379,12 +2354,7 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="shared_string_marker">Kortamerki</string>
     <string name="plan_route_no_markers_toast">Þú verður að bæta við a.m.k. einni merkingu til að geta notað þessa aðgerð.</string>
     <string name="osm_recipient_stat">Breytingar %1$s, upphæð %2$s mBTC</string>
-    <string name="osmand_rastermaps_plugin_description">Með þessari viðbót geturðu fengið aðgang að margskyns nettengdum landakortum (svokölluðum kortatígla- eða rastakortum), allt frá forákvörðuðum OpenStreetMap tíglum (eins og Mapnik) til gervitunglamynda eða sértækra laga á borð við veðurkort, veðurfarskort, jarðfræðikort, hæðaskygginga, o.s.frv.
-\n
-\nHvert þessara korta má nota sem aðalkort (grunnkort) til birtingar á kortaskjá OsmAnd, eða sem yfir- eða undirlag á öðru grunnkorti (eins og stöðluðu ónettengdu OsmAnd kortunum). Til að gera undirlagskort sýnilegri, er einfalt að fela eftir þörfum ýmis einindi OsmAnd vigurkortanna með því að fara í valmyndina \'Stilla kort\'. 
-\n
-\nTígluð kort er hægt að sækja beint frá gagnagjöfum á netinu, en einnig er hægt að undirbúa þau fyrir ónettengda notkun (og afrita síðan handvirkt í gagnamöppu OsmAnd) sem SQLite-gagnagrunn, sem er hægt að útbúa í fjölmörgum utanaðkomandi kortaumsýslutólum.</string>
-    <string name="osmand_srtm_long_description_1000_chars">Þessi viðbót kemur með bæði yfirlag fyrir hæðarlínur og lag fyrir hæðaskyggingu (relief hillshade), sem bæði birtast ofan á staðalkortum OsmAnd\'. Þessir eiginleikar eru gjarnan í miklum metum hjá íþróttafólki, göngufólki, ferðamönnum og öðrum þeim sem áhuga hafa á uppbyggingu landsins. 
+    <string name="osmand_srtm_long_description_1000_chars">Þessi viðbót kemur með bæði yfirlag fyrir hæðarlínur og lag fyrir hæðaskyggingu (relief hillshade), sem bæði birtast ofan á staðalkortum OsmAnd\'. Þessir eiginleikar eru gjarnan í miklum metum hjá íþróttafólki, göngufólki, ferðamönnum og öðrum þeim sem áhuga hafa á uppbyggingu landsins.
 \n
 \nAlmennt byggjast þessi gögn (milli 70 breiddargráðu norður og 70 breiddargráðu suður) á mælingum frá SRTM (Shuttle Radar Topography Mission) og ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer), og frá myndgreiningartækjum um borð í Terra, aðalgervihnetti Earth Observing System hjá NASA. ASTER er samvinnuverkefni NASA, Ráðuneytis efnahags, viðskipta og iðnaðar í Japan (METI), og Japan Space Systems (J-spacesystems).</string>
     <string name="srtm_plugin_description">Þessi viðbót kemur með bæði yfirlag fyrir hæðarlínur og lag fyrir hæðaskyggingu (relief hillshade), sem bæði birtast ofan á staðalkortum OsmAnd\'. Þessir eiginleikar eru gjarnan í miklum metum hjá íþróttafólki, göngufólki, ferðamönnum og öðrum þeim sem áhuga hafa á uppbyggingu landsins. (Taktu eftir því að hæðarlínu- og skyggingargögnin eru aðskildir pakkar sem þarf að sækja eftir að viðbótin hefur verið gerð virk.) 
@@ -2402,7 +2372,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="osmo_show_group_notifications_descr">Birta spretttilkynningar þegar notandi kemur í eða yfirgefur hópinn.</string>
     <string name="index_item_world_bitcoin_payments">Bitcoin-greiðslur um víða veröld</string>
     <string name="app_modes_choose_descr">Veldu notkunarsnið sem eiga að vera sýnileg í forriti.</string>
-    <string name="edit_tilesource_successfully">Tókst að vista %1$s gagnagjafa tígla</string>
     <string name="speak_descr">Stilla til að tilkynna götuheiti og fá umferðaraðvaranir (lokanir, umferðarhnúta, hraðahindranir), aðvaranir um hraðamyndavélar og hraðatakmarkanir.</string>
     <string name="osmand_extended_description_part4">OsmAnd skíðakortaviðbótin gerir þér kleift að skoða skíðasvæði nokkuð nákvæmlega með ýmsum stigum upplýsinga, eins og staðsetningar á lyftum og öðrum mannvirkjum.</string>
     <string name="osm_recipients_label">OSM viðtakendur</string>

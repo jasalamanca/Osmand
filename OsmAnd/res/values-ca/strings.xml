@@ -59,16 +59,13 @@
     <string name="modify_transparency">Modifica l\'opacitat (0 - transparent, 255 - opac)</string>
     <string name="bg_service_sleep_mode_off">Activa\n…el mode en segon pla</string>
     <string name="bg_service_sleep_mode_on">Atura\n…el mode en segon pla</string>
-    <string name="offline_navigation_not_available">La navegació fora de línia de l\'OsmAnd no està disponible temporalment.</string>
     <string name="confirm_interrupt_download">Voleu cancel·lar la baixada del fitxer?</string>
     <string name="select_index_file_to_download">No s\'ha trobat res. Si no trobeu la vostra regió, podeu crear-la vosaltres mateixos (vegeu http://osmand.net).</string>
     <string name="local_indexes_cat_tile">Mapes de tessel·les en línia i cau</string>
     <string name="local_indexes_cat_map">Mapes estàndards (vectorials)</string>
     <string name="map_online_plugin_is_not_installed">Activeu el connector Mapes en línia per poder seleccionar diferents fonts de mapes</string>
     <string name="map_online_data">Mapes en línia (tessel·les)</string>
-    <string name="map_online_data_descr">Utilitza mapes en línia (les tessel·les es baixen i es desen a la targeta SD).</string>
     <string name="shared_string_online_maps">Mapes en línia</string>
-    <string name="online_map_settings_descr">Configureu les fonts de mapes de tessel·les en línia o desades a la memòria cau.</string>
     <string name="osmand_accessibility_description">"Aquest connector fa disponible directament des OsmAnd  les característiques d\'accessibilitat del dispositiu. Us permet, per exemple,  ajustar la velocitat de la veu en la síntesi TTS , configurar la pantalla de navegació, l\'ús del ratolí de bola pel zoom o de la veu sintetitzada, com per anunciar automàticament la vostra posició."</string>
     <string name="plugins_screen">Gestor de connectors</string>
     <string name="poi_search_desc">Cerca de PDI (punt d\'interès)</string>
@@ -226,7 +223,6 @@ S\'ocuparà una memòria de {1} MB
     <string name="global_app_allocated_memory">Memòria assignada</string>
     <string name="native_app_allocated_memory_descr">Memòria nativa total assignada a l\'aplicació %1$s MB (Dalvik %2$s MB, altres %3$s MB). 
 Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</string>
-    <string name="switch_to_raster_map_to_see">No s\'ha trobat cap mapa de vectors fora de línia per aquesta localització. Podeu baixar-ne un a Configuració (Gestió de fitxers de mapes) o canviar per utilitzar mapes en línia (cal activar el connector de mapes en línia per fer-ho).</string>
     <string name="global_app_settings">Paràmetres globals de l\'aplicació</string>
     <string name="open_street_map_login_descr">És necessari per a les trameses a openstreetmap.org.</string>
     
@@ -310,7 +306,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="settings_preset_descr">La configuració de la representació del mapa i de la navegació segueix un perfil d\'utilització. Seleccioneu aquí el vostre perfil predeterminat.</string>
     <string name="osmand_service">Mode en segon pla</string>
     <string name="osmand_service_descr">OsmAnd continua executant-se en procés de fons mentre la pantalla està apagada.</string>
-    <string name="pref_raster_map">Configuració de la font del mapa</string>
     <string name="pref_vector_map">Configuració del mapa de vectors</string>
     <string name="button_upgrade_osmandplus">Actualitza a l\'OsmAnd+</string>
     <string name="favorite_home_category">Casa</string>
@@ -323,17 +318,13 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="voice_stream_notification">Àudio d\'avís</string>
     <string name="voice_stream_music">Àudio de multimèdia/música</string>
     <string name="shared_string_none">Cap</string>
-    <string name="tile_source_already_installed">El mapa ja està instal·lat, s\'actualitzarà la configuració.</string>
-    <string name="select_tile_source_to_install">Seleccioneu els mapes (de tessel·les) per instal·lar o actualitzar.</string>
     <string name="internet_not_available">Per realitzar l\'operació cal una connexió a Internet que ara no està disponible.</string>
-    <string name="level_to_switch_vector_raster_descr">Nivell mínim de zoom per utilitzar mapes vectorials.</string>
     <string name="level_to_switch_vector_raster">Nivell mínim de zoom pels vectors</string>
     <string name="error_doing_search">S\'ha produït un error en la cerca fora de línia.</string>
     <string name="amenity_type_healthcare">Serveis mèdics</string>
     <string name="amenity_type_man_made">Construccions</string>
     <string name="amenity_type_office">Oficines</string>
     <string name="m">m</string>
-    <string name="reading_cached_tiles">Llegint les tessel·les emmagatzemades…</string>
     <string name="specified_dir_doesnt_exist">No s\'ha trobat la carpeta especificada.</string>
     <string name="application_dir">Carpeta d\'emmagatzematge de dades</string>
     <string name="rendering_attr_contourLines_description">Seleccioneu el nivell mínim de zoom per mostrar el mapa si està disponible. Caldrà el fitxer SRTM separat:</string>
@@ -420,7 +411,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="fast_route_mode">La ruta més ràpida</string>
     <string name="fast_route_mode_descr">Activeu per calcular la ruta més ràpida o desactiveu per buscar la de menor consum.</string>
     <string name="shared_string_download_map">Baixa el mapa</string>
-    <string name="tiles_to_download_estimated_size">Per al nivell de zoom {0} es baixaran {1} tessel·les ({2} MB)</string>
     <string name="shared_string_ok">D\'acord</string>
     <string name="shared_string_no_thanks">No, gràcies</string>
     <string name="yard">iardes</string>
@@ -600,7 +590,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="snap_to_road_descr">Ajusta la posició a les carreteres durant la navegació.</string>
     <string name="snap_to_road">Desplaça a la carretera</string>
     <string name="asap">MCP</string>
-    <string name="prefs_plugins_descr">Els connectors activen els paràmetres del mode expert i de funcionalitats addicionals.</string>
     <string name="fav_export_confirmation">Ja existeix un fitxer anterior amb preferits exportats. Voleu reemplaçar-lo?</string>
     <string name="city_type_suburb">Barri</string>
     <string name="city_type_hamlet">Llogaret</string>
@@ -656,11 +645,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="opening_hours_not_supported">Format d\'horaris d\'obertura no suportat per a l\'edició</string>
     <string name="transport_to_go_after">prioritza distancia</string>
     <string name="hello">Aplicació de navegació OsmAnd</string>
-    <string name="osmand_rastermaps_plugin_description">"Amb aquest connector podeu accedir a diferents tipus de mapa (anomenats mosaic o ràster), des de les tessel·les predefinides d\'OpenStreetMap (com Mapnik) a imatges de satèl·lit i capes específiques com mapes meteorològics, climàtics, geològics, de relleu, etc. 
-\n 
-\nQualsevol d\'aquests mapes es pot utilitzar sigui com principal (base) per veure\'s a la vista del mapa de l\'OsmAnd, o com una superposició o sots-posició d\'un altre mapa base (com els mapes  d\'OsmAnd habituals en desconnexió). Per fer més visible qualsevol mapa en sots-posició, es pot amagar fàcilment determinats elements dels mapes vectorials de l\'OsmAnd via el menú «Configuració del mapa» a voluntat. 
-\n 
-\nEls mapes de tessel·les es poden obtenir directament de proveïdors en línia, o es poden preparar per un ús fora de línia (cal copiar-los manualment al directori de l\'OsmAnd) com una base de dades SQLite construïda per diferents eines de preparació de mapes de tercers."</string>
     <string name="choose_audio_stream_descr">Escolliu el canal d\'àudio on reproduir el guiat per veu.</string>
     <string name="renderers">Renderització dels vectors</string>
     
@@ -683,7 +667,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="poi_filter_sightseeing">Vistes panoràmiques</string>
     <string name="poi_filter_car_aid">Assistència a vehicles</string>
     <string name="create_poi_link_to_osm_doc">Llegenda del mapa <u>OSM en línia</u> amb imatges.</string>
-    <string name="osmand_routing_experimental">La navegació fora de línia de l\'OsmAnd és una característica experimental i no funciona per distàncies superiors als 20Km.\n\nEl servei de navegació s\'ha desviat temporalment cap a CloudMade en línia.</string>
     <string name="renderer_load_exception">S\'ha produït una excepció: el renderitzador no s\'ha carregat</string>
     <string name="context_menu_item_search_transport">Cerca de transports públics</string>
     <string name="transport_search_again">Reinicia la cerca de transport</string>
@@ -713,7 +696,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="uploading">Enviant…</string>
     <string name="search_osm_nominatim">Cerca una adreça utilitzant OSM Nominatim</string>
     <string name="hint_search_online">Cerca en línia: Núm. de la casa, carrer, ciutat</string>
-    <string name="max_level_download_tile_descr">Seleccioneu el nivell màxim de zoom per baixar tessel·les de mapes en línia.</string>
     <string name="route_general_information">"Distància total %1$s,  temps de viatge %2$d h %3$d min."</string>
     <string name="router_service_descr">Escolliu un servei de navegació en línia o fora de línia.</string>
     <string name="download_question">Voleu baixar {0} - {1} ?</string>
@@ -730,7 +712,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="use_online_routing_descr">Utilitzeu Internet per calcular una ruta.</string>
     <string name="save_current_track">Desa la traça GPX actual</string>
     <string name="save_track_to_gpx_descrp">Durant la navegació es desa automàticament una traça GPX a la carpeta de traces.</string>
-    <string name="reload_tile">Torna a carregar la tessel·la</string>
     <string name="mark_point">Objectiu</string>
     <string name="edit_filter_delete_message">El filtre {0} s\'ha eliminat</string>
     <string name="update_poi_success">Les dades dels PDI s\'han actualitzat correctament (se n\'han carregat {0})</string>
@@ -741,8 +722,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="choose_building">Trieu l\'edifici</string>
     <string name="show_view_angle">Mostra la direcció de visió</string>
     <string name="map_view_3d">Visualització del mapa en 3D</string>
-    <string name="map_tile_source">Font del mapa de tessel·les</string>
-    <string name="use_internet_to_download_tile">Utilitza Internet per baixar les tessel·les que faltin</string>
     <string name="app_description">Aplicació de navegació</string>
     <string name="shared_string_show_on_map">Mostra al mapa</string>
     <string name="search_address_street_option">Intersecció de carrers</string>
@@ -803,7 +782,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="delete_target_point">Elimina el destí</string>
     <string name="download_srtm_maps">Dades de corbes de nivell</string>
     <string name="incomplete_locale">incomplet</string>
-    <string name="use_high_res_maps_descr">No ampliïs (ni difuminis) les tessel·les del mapa en pantalles d\'alta densitat.</string>
     <string name="sd_mounted_ro">La targeta SD és només de lectura.\nNomés podeu visualitzar el mapa precarregat i no podeu baixar-ne des d\'Internet.</string>
     <string name="map_orientation_portrait">Vertical</string>
     <string name="map_screen_orientation_descr">Vertical, apaïsat, o segons el dispositiu.</string>
@@ -974,17 +952,10 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="about_version">Versió:</string>
     <string name="shared_string_about">Quant a</string>
     <string name="about_settings_descr">Informació de la versió, llicències, membres del projecte</string>
-    <string name="local_index_tile_data_zooms">Escalats baixats: %1$s</string>
     <string name="local_index_tile_data_expire">Expira (minuts): %1$s</string>
-    <string name="local_index_tile_data_downloadable">Baixable: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Escalat màxim: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Escalat mínim: %1$s</string>
     <string name="local_index_tile_data_name">Dades de les tessel·les: %1$s</string>
-    <string name="edit_tilesource_elliptic_tile">Mercator el·líptica</string>
     <string name="edit_tilesource_maxzoom">Escalat màxim</string>
-    <string name="edit_tilesource_expiration_time">Expira (minuts)</string>
     <string name="edit_tilesource_minzoom">Escalat mínim</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
     <string name="maps_define_edit">Defineix/edita…</string>
     <string name="driving_region_descr">Seleccioneu la regió de conducció: EUA, Europa, Regne Unit, Àsia i altres.</string>
     <string name="driving_region">Regió de conducció</string>
@@ -1000,9 +971,7 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="complex_route_calculation_failed">El càlcul ràpid de ruta ha fallat (%s), retorn al mètode lent.</string>
     <string name="disable_complex_routing_descr">Desactiva el càlcul de ruta en 2 fases per cotxe.</string>
     <string name="disable_complex_routing">Desactiva el càlcul complex de la ruta</string>
-    
-    <string name="edit_tilesource_successfully">El proveïdor de tessel·les %1$s és ben desat</string>
-    <string name="edit_tilesource_choose_existing">Tria existent…</string>
+
     <string name="map_widget_fps_info">Info depuració FPS</string>
     <string name="intermediate_items_sort_return">S\'han reordenat les fites per optimitzar la ruta que les inclou des de la ubicació actual fins a la destinació.</string>
     <string name="osmand_distance_planning_plugin_description">Aquest connector proporciona un giny de la pantalla del mapa que permet crear itineraris en prémer sobre el mapa o bé amb l\'ús o la modificació de fitxers GPX existents, per planificar un trajecte o mesurar la distància entre punts. Els resultats es poden desar com un fitxer GPX que podreu usar més endavant com una referència.</string>
@@ -1036,8 +1005,7 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="av_camera_focus_descr">Trieu el mode d\'enfocament de la càmera interna.</string>
     <string name="av_camera_focus">Tipus d\'enfocament</string>
     <string name="poi_error_unexpected_template">S\'ha produït un error inesperat en fer l\'acció {0}.</string>
-    
-    <string name="map_tile_source_descr">Trieu l\'origen de les tessel·les, sigui en línia o de la memòria cau.</string>
+
     <string name="previous_run_crashed">La darrera execució de l\'OsmAnd ha fallat. El fitxer log és a {0}. Si us plau informeu del problema i adjunteu el fitxer log.</string>
     <string name="transport_stop_to_go_out">Trieu aturada per sortir</string>
     <string name="route_head">Endavant</string>

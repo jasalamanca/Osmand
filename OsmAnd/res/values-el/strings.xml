@@ -121,9 +121,8 @@
 	<string name="navpoint_search_desc">Συντεταγμένες</string>
 	<string name="transport_search_desc">Αναζήτηση ΜΜΜ</string>
 	<string name="favourites_search_desc">Αναζήτηση αγαπημένων</string>
-	
-	<string name="offline_navigation_not_available">Η εκτός σύνδεσης πλοήγηση του OsmAnd δεν είναι διαθέσιμη προσωρινά.</string>
-	<string name="left_side_navigation">Οδήγηση αριστερά</string>
+
+    <string name="left_side_navigation">Οδήγηση αριστερά</string>
 	<string name="left_side_navigation_descr">Επιλέξτε για χώρες με κυκλοφορία αριστερά</string>
 	
 	<string name="unknown_from_location">Το αφετηρία δεν έχει ακόμη καθοριστεί</string>
@@ -139,32 +138,27 @@
 	<string name="index_settings_descr">Λήψη και διαχείριση εκτός σύνδεσης αρχείων χαρτών αποθηκευμένων στη συσκευή σας</string>
 	<string name="map_online_plugin_is_not_installed">Ενεργοποιήστε το πρόσθετο για τους online χάρτες για να επιλέξετε διαφορετικές πηγές χάρτη</string>
 	<string name="map_online_data">Online και χάρτες πλακίδια</string>
-	<string name="map_online_data_descr">Χρήση online χαρτών (λήψη και φύλαξη πλακιδίων στην κάρτα SD)</string>
-	<string name="shared_string_online_maps">Online χάρτες</string>
-	<string name="online_map_settings_descr">Διαμορφώστε τις πηγές των online ή προσωρινά αποθηκευμένων πλακιδίων χάρτη</string>
-	
-	
-	<string name="osmand_rastermaps_plugin_description">Εμφάνιση ρυθμίσεων για να διαμορφώσετε μια ποικιλία από online ή προσωρινά αποθηκευμένων πλακιδίων χάρτη ως βασικό χάρτη ή ως επικάλυψη / υπόστρωμα. Οι χάρτες αυτοί μπορούν να προετοιμαστούν εκτός σύνδεσης και να αντιγραφούν στο φάκελο δεδομένων του OsmAnd.</string>
-	<string name="osmand_background_plugin_description">Εμφάνιση των ρυθμίσεων για ενεργοποίηση ιχνηλάτησης και δρομολόγησης στο παρασκήνιο (οθόνη κλειστή) μέσω περιοδικής αφύπνισης της συσκευής GPS.</string>
+    <string name="shared_string_online_maps">Online χάρτες</string>
+
+
+    <string name="osmand_background_plugin_description">Εμφάνιση των ρυθμίσεων για ενεργοποίηση ιχνηλάτησης και δρομολόγησης στο παρασκήνιο (οθόνη κλειστή) μέσω περιοδικής αφύπνισης της συσκευής GPS.</string>
 	<string name="osmand_accessibility_description">Εμφάνιση ρυθμίσεων για ενεργοποίηση των ειδικών χαρακτηριστικών προσβασιμότητας.</string>
 	
 	
 	
 	<string name="osmand_development_plugin_description">Αυτό το πρόσθετο εμφανίζει τις ρυθμίσεις για τα χαρακτηριστικά ανάπτυξης και αποσφαλμάτωσης όπως η δοκιμή ή η προσομοίωση πλοήγησης, η απόδοση απεικόνισης οθόνης, ή η φωνητική καθοδήγηση. Αυτές οι ρυθμίσεις προορίζονται για τους προγραμματιστές και δεν χρειάζονται στον απλό χρήστη.</string>
 	<string name="plugins_screen">Πρόσθετα</string>
-	
-	<string name="prefs_plugins_descr">Τα πρόσθετα ενεργοποιούν προχωρημένες ρυθμίσεις και επιπλέον λειτουργικότητα</string>
-	<string name="prefs_plugins">Πρόσθετα</string>
+
+    <string name="prefs_plugins">Πρόσθετα</string>
 	
 	<string name="osm_editing_plugin_description">Εμφάνιση ρυθμίσεων που χρειάζονται για συνεισφορές στο OSM όπως τη συλλογή / τροποποίηση Σημ Ενδ OSM, άνοιγμα / σχολιασμός σφαλμάτων OSM, και αποστολή καταγραμμένων αρχείων GPX (απαιτούνται διαπιστευτήρια OSM).</string>
 	<string name="vector_maps_may_display_faster_on_some_devices">Οι διανυσματικοί χάρτες πιθανόν εμφανίζονται γρηγορότερα. Ίσως δεν λειτουργούν καλά σε κάποιες συσκευές.</string>
 	<string name="play_commands_of_currently_selected_voice">Αναπαραγωγή εντολών της επιλεγμένης φωνής</string>
 	<string name="debugging_and_development">Ανάπτυξη του OsmAnd</string>
 	<string name="native_rendering">Εγγενής απεικόνιση</string>
-	<string name="test_voice_prompts">Δοκιμή φωνητικών εντολών</string>    
-	<string name="switch_to_raster_map_to_see">Δεν υπάρχουν offline διανυσματικοί χάρτες για αυτήν την τοποθεσία. Μπορείτε να κατεβάσετε έναν από τις Ρυθμίσεις (Διαχείριση αρχείων χαρτών), ή αλλάξτε σε online χάρτες (ενεργοποιήστε το πρόσθετο online χάρτες για αυτό).</string>
-	
-	<string name="send_files_to_osm">Αποστολή αρχείων GPX στο OSM;</string>
+	<string name="test_voice_prompts">Δοκιμή φωνητικών εντολών</string>
+
+    <string name="send_files_to_osm">Αποστολή αρχείων GPX στο OSM;</string>
 	<string name="gpx_visibility_txt">Ορατότητα</string>
 	<string name="gpx_tags_txt">Ετικέτες</string>
 	<string name="gpx_description_txt">Περιγραφή</string>
@@ -309,8 +303,7 @@
 	<string name="auto_follow_location_enabled">Αυτο-κεντράρισμα χάρτη σε χρήση.</string>
 	<string name="pref_vector_rendering">Ειδικές επιλογές απεικονιστή διανυσμάτων</string>
 	<string name="pref_overlay">Επικάλυψη / υπόστρωμα</string>
-	<string name="pref_raster_map">Ρυθμίσεις προέλευσης χάρτη</string>
-	<string name="pref_vector_map">Ρυθμίσεις διανυσματικού χάρτη</string>
+    <string name="pref_vector_map">Ρυθμίσεις διανυσματικού χάρτη</string>
 	<string name="delete_confirmation_msg">Διαγραφή του %1$s?</string>
 	<string name="city_type_suburb">Προάστιο</string>
 	<string name="city_type_hamlet">Οικισμός</string>
@@ -424,12 +417,9 @@
 	<string name="layer_overlay">Χάρτης επικάλυψης…</string>
 	<string name="map_overlay">Χάρτης επικάλυψης</string>
 	<string name="map_overlay_descr">Επιλογή χάρτη επικάλυψης</string>
-	<string name="tile_source_already_installed">Ο χάρτης είναι ήδη εγκατεστημένος, οι ρυθμίσεις θα ενημερωθούν</string>
-	<string name="select_tile_source_to_install">Επιλέξτε χάρτες (πλακίδια) για εγκατάσταση ή ενημέρωση</string>
-	<string name="internet_not_available">Μια σύνδεση στο Διαδίκτυο απαιτείται για αυτή τη λειτουργία αλλά δεν είναι διαθέσιμη</string>
+    <string name="internet_not_available">Μια σύνδεση στο Διαδίκτυο απαιτείται για αυτή τη λειτουργία αλλά δεν είναι διαθέσιμη</string>
 	<string name="install_more">Εγκατάσταση περισσότερων…</string>
-	<string name="level_to_switch_vector_raster_descr">Ελάχιστη κλίμακα εστίασης για χρήση διανυσματικών χαρτών</string>
-	<string name="level_to_switch_vector_raster">Ελαχ. κλιμ. διανυσματικών</string>
+    <string name="level_to_switch_vector_raster">Ελαχ. κλιμ. διανυσματικών</string>
 	
 	
 	
@@ -504,13 +494,11 @@
 	<string name="poi_filter_closest_poi">Πλησιέστερα ΣΕ</string>
 	<string name="poi_filter_custom_filter">Προσαρμοσμένο φίλτρο</string>
 	<string name="poi_filter_namefinder">Online NameFinder</string>
-	<string name="reading_cached_tiles">Ανάγνωση αποθηκευμένων πλακιδίων…</string>
-	<string name="version_index_is_big_for_memory">Το ευρετήριο \'\'{0}\'\' δεν χωράει στη μνήμη</string>
+    <string name="version_index_is_big_for_memory">Το ευρετήριο \'\'{0}\'\' δεν χωράει στη μνήμη</string>
 	<string name="version_index_is_not_supported">Η εκδοχή \'\'{0}\'\' του ευρετηρίου δεν υποστηρίζεται</string>
-	
-	
-	<string name="osmand_routing_experimental">Η πλοήγηση εκτός δικτύου OsmAnd είναι μια πειραματική λειτουργία και δε λειτουργεί για αποστάσεις άνω των 20 χλμ.\n\nΗ υπηρεσία πλοήγησης έχει προσωρινά αλλάξει στην δικτυακή CloudMade.</string>
-	<string name="specified_dir_doesnt_exist">Δεν μπορώ να βρω τον καθορισμένο φάκελο.</string>
+
+
+    <string name="specified_dir_doesnt_exist">Δεν μπορώ να βρω τον καθορισμένο φάκελο.</string>
 	<string name="application_dir">Φάκελος αποθήκευσης δεδομένων</string>
 	
 	<string name="osmand_net_previously_installed">Μια προηγούμενη έκδοση OsmAnd είναι εγκατεστημένη. Όλα τα offline δεδομένα θα υποστηρίζονται από τη νέα εφαρμογή. Αλλά τα Αγαπημένα σημεία θα πρέπει να εξαχθούν από την παλιά εφαρμογή και στη συνέχεια να εισαχθούν στη νέα.</string>
@@ -537,8 +525,7 @@
 	<string name="shared_string_refresh">Ανανέωση</string>
 	<string name="fast_route_mode">Ταχύτερη διαδρομή</string>
 	<string name="fast_route_mode_descr">Ενεργοποίηση για υπολογισμό ταχύτερης διαδρομής ή για απενεργοποίηση συντομότερης διαδρομής </string>
-	<string name="tiles_to_download_estimated_size">Στη κλίμακα {0} λήψη {1} πλακίδια ({2} MB)</string>
-	<string name="shared_string_download_map">Λήψη χάρτη</string>
+    <string name="shared_string_download_map">Λήψη χάρτη</string>
 	<string name="select_max_zoom_preload_area">Επιλέξτε τη μέγιστη μεγέθυνση για προφόρτωση</string>
 	<string name="maps_could_not_be_downloaded">Αυτός ο χάρτης δεν μπορεί να ληφθεί</string>
 	<string name="continuous_rendering">Συνεχής απεικόνιση</string>
@@ -555,9 +542,8 @@
 	<string name="phone">Τηλέφωνο</string>
 	<string name="download_type_to_filter">πληκτρ/στε. για φιλτράρισμα</string>
 	<string name="use_high_res_maps">Οθόνη υψηλής ανάλυσης</string>
-	<string name="use_high_res_maps_descr">Όχι παραμόρφωση (και θόλωμα) των πλακιδίων χάρτη σε οθόνες υψηλής πυκνότητας</string>
-	
-	<string name="context_menu_item_search_transport">Αναζήτηση ΜΜΜ</string>
+
+    <string name="context_menu_item_search_transport">Αναζήτηση ΜΜΜ</string>
 	<string name="transport_searching_transport">Αποτελέσματα μέσων μεταφοράς (χωρίς προορισμό):</string>
 	<string name="transport_searching_route">Αποτελέσματα μέσων μεταφοράς ({0} μέχρι τον προορισμό):</string>
 	
@@ -692,8 +678,7 @@
 	<string name="search_offline_address">Χωρίς σύνδεση</string>
 	<string name="search_online_address">Διαδίκτυο</string>
 	<string name="max_level_download_tile">Μεγ. online κλίμακα</string>
-	<string name="max_level_download_tile_descr">Επιλέξτε τη μέγιστη κλίμακα προς λήψη για τα πλακίδια του online χάρτη</string>
-	<string name="route_general_information">Συνολική απόσταση %1$s, χρόνος ταξιδιού %2$d ω %3$d λ.</string>
+    <string name="route_general_information">Συνολική απόσταση %1$s, χρόνος ταξιδιού %2$d ω %3$d λ.</string>
 	<string name="router_service_descr">Επιλέξτε μια online ή offline υπηρεσία πλοήγησης</string>
 	<string name="router_service">Υπηρεσία πλοήγησης</string>
 	<string name="sd_dir_not_accessible">Η κατάλογος αποθήκευσης δεδομένων στην SD κάρτα δεν είναι προσβάσιμος!</string>
@@ -757,8 +742,7 @@
 	<string name="save_track_to_gpx_descrp">Τα ίχνη θα αποθηκεύονται στον κατάλογο ιχνών κατά την πλοήγηση</string>
 	<string name="save_track_to_gpx">Εγγραφή ίχνους σε αρχείο GPX κατά την πλοήγηση</string>
 	<string name="update_tile">Ενημέρωση χάρτη</string>
-	<string name="reload_tile">Ανανέωση πλακιδίου</string>
-	<string name="mark_point">Στόχος</string>
+    <string name="mark_point">Στόχος</string>
 	
 	
 	<string name="use_english_names_descr">Επέλεξε μεταξύ ντόπιων και Αγγλικών ονομάτων</string>
@@ -774,16 +758,13 @@
 	<string name="map_view_3d">Εμφάνιση χάρτη 3Δ</string>
 	<string name="show_poi_over_map_description">Εμφάνιση ΣΕ πάνω στο χάρτη (χρήση τελευταίου επιλεγμένου φίλτρου)</string>
 	<string name="show_poi_over_map">Εμφάνιση ΣΕ</string>
-	<string name="map_tile_source_descr">Επιλέξτε την πηγή των online ή προσωρινά αποθηκευμένων πλακιδίων χάρτη</string>
-	<string name="map_tile_source">Πηγή πλακιδίων χάρτη</string>
-	<string name="map_source">Πηγή χάρτη</string>
+    <string name="map_source">Πηγή χάρτη</string>
 	<string name="use_internet">Χρήση Διαδικτύου</string>
 	<string name="show_location">Εμφάνιση τοποθεσίας σου</string>
 	
 	
 	<string name="show_gps_coordinates_text">Εμφάνιση συντεταγμένων GPS στο χάρτη</string>
-	<string name="use_internet_to_download_tile">Χρήση Διαδικτύου για λήψη πλακιδίων χάρτη που λείπουν</string>
-	<string name="app_description">Εφαρμογή πλοήγησης</string>
+    <string name="app_description">Εφαρμογή πλοήγησης</string>
 	<string name="search_button">Αναζήτηση</string>
 	<string name="search_activity">Αναζήτηση</string>
 	<string name="searchpoi_activity">Επιλέξτε ΣΕ</string>
@@ -1065,20 +1046,11 @@
     <string name="about_settings_descr">Πληροφορίες έκδοσης, άδειες, μέλη έργου</string>
     
     <string name="local_index_tile_data_expire">Λήξη (λεπτά): %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Μέγιστη εστίαση: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Ελάχιστη εστίαση: %1$s</string>
     <string name="edit_tilesource_maxzoom">Μεγ Εστίαση</string>
-    <string name="edit_tilesource_expiration_time">Λήξη (λεπτά)</string>
     <string name="edit_tilesource_minzoom">Ελαχ εστίαση</string>
     <string name="maps_define_edit">Καθορισμός/Επεξεργασία…</string>
-	
-	<string name="local_index_tile_data_downloadable">Διαθέσιμο για λήψη: %1$s</string>
-    <string name="local_index_tile_data_zooms">Εστιάσεις που ελήφθησαν: %1$s</string>
+
     <string name="local_index_tile_data_name">Δεδομένα πλακιδίου: %1$s</string>
-    <string name="edit_tilesource_successfully">Η πηγή πλακιδίων %1$s αποθηκεύτηκε επιτυχώς</string>
-    <string name="edit_tilesource_elliptic_tile">Ελλειπτικό Μερκάτωρ</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Επιλογή υπάρχοντος…</string>
     <string name="driving_region_descr">Επιλέξτε περιοχή οδήγησης: ΗΠΑ, Ευρώπη, ΗΒ, Ασία, κλπ</string>
 	<string name="driving_region">Περιοχή οδήγησης</string>
     <string name="app_modes_choose">Προφίλ εφαρμογής</string>

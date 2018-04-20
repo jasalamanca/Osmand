@@ -6,7 +6,6 @@
     <string name="init_native_library">Inicjowanie biblioteki renderowania natywnego…</string>
     <string name="pref_vector_rendering">Opcje dotyczące renderera wektorowego</string>
     <string name="pref_overlay">Podkłady / nakładki</string>
-    <string name="pref_raster_map">Zasoby mapy</string>
     <string name="pref_vector_map">Ustawienia mapy wektorowej</string>
     <string name="choose_auto_follow_route">Automatyczne środkowanie mapy</string>
     <string name="choose_auto_follow_route_descr">Ustala opóźnienie synchronizacji mapy z aktualnym położeniem.</string>
@@ -115,8 +114,7 @@
     <string name="gpx_option_destination_point">Użyj bieżącego celu</string>
 
 
-    <string name="switch_to_raster_map_to_see">Żadna z map offline nie zawiera tego położenia. Można pobrać nową mapę na ekranie ustawień programu (Zarządzaj mapami) lub przełączyć na mapy online (wymaga włączenia wtyczki map online).</string>
-  <string name="switch_to_vector_map_to_see">Dla bieżącego położenia dostępna jest wektorowa mapa offline.
+    <string name="switch_to_vector_map_to_see">Dla bieżącego położenia dostępna jest wektorowa mapa offline.
 
 \t
 \tAby jej użyć, proszę wybrać „Menu” → „Skonfiguruj mapę” → „Zasób mapy…” → „Wektorowe mapy offline”.</string>
@@ -139,13 +137,10 @@
     <string name="shared_string_none">Brak</string>
     <string name="map_overlay">Nakładka</string>
     <string name="map_overlay_descr">Wybierz nakładkę (overlay).</string>
-    <string name="tile_source_already_installed">Mapa jest już zainstalowana, ustawienia zostaną zaktualizowane.</string>
-    <string name="select_tile_source_to_install">Proszę wybrać mapy (kafelkowe) do zainstalowania lub uaktualnienia.</string>
     <string name="internet_not_available">Połączenie internetowe, wymagane dla tej czynności jest niedostępne.</string>
     <string name="install_more">Zainstaluj więcej…</string>
 
 
-    <string name="level_to_switch_vector_raster_descr">Określa najmniejszy poziom zbliżenia dla map wektorowych.</string>
     <string name="level_to_switch_vector_raster">Minimalne zbliżenie mapy wektorowej</string>
 
 
@@ -214,12 +209,10 @@
     <string name="poi_filter_for_tourists">Dla turystów</string>
     <string name="poi_filter_fuel">Paliwo</string>
     <string name="poi_filter_namefinder">Wyszukiwarka nazw online</string>
-    <string name="reading_cached_tiles">Wczytywanie zachowanych kafelków…</string>
     <string name="version_index_is_big_for_memory">Indeks „{0}” nie zmieścił się w pamięci</string>
     <string name="version_index_is_not_supported">Wersja indeksu „{0}” nie jest obsługiwana</string>
-    
-    
-    <string name="osmand_routing_experimental">Nawigacja offline w OsmAnd jest funkcją eksperymentalną i nie działa dla odległości większych niż 20 km.\n\nUsługa nawigacji została tymczasowo przełączona na CloudMade (online).</string>
+
+
     <string name="specified_dir_doesnt_exist">Nie można odnaleźć wskazanego katalogu.</string>
     <string name="application_dir">Katalog przechowywania danych</string>
 
@@ -254,7 +247,6 @@
     <string name="osmand_service_descr">Działanie aplikacji w tle, gdy ekran jest wygaszony.</string>
     <string name="fast_route_mode">Najszybsza trasa</string>
     <string name="fast_route_mode_descr">Wyznacza najszybszą trasę zamiast ekonomicznej.</string>
-    <string name="tiles_to_download_estimated_size">Do pobrania {1} kafelków na poziomie {0} ({2} MB)</string>
     <string name="shared_string_download_map">Pobierz mapę</string>
     <string name="select_max_zoom_preload_area">Proszę wybrać maksymalne przybliżenie do pobrania</string>
     <string name="maps_could_not_be_downloaded">Nie udało się pobrać tej mapy</string>
@@ -273,7 +265,6 @@
     <string name="phone">Telefon</string>
     <string name="download_type_to_filter">Proszę wprowadzić tekst, aby filtrować dane</string>
     <string name="use_high_res_maps">Wysoka rozdzielczość ekranu</string>
-    <string name="use_high_res_maps_descr">Nie rozciągaj i rozmazuj kafelków mapy na ekranach o dużej rozdzielczości.</string>
     <string name="unknown_location">Położenie nie jest jeszcze znane</string>
 
     <string name="context_menu_item_search_transport">Wyszukaj transport publiczny</string>
@@ -419,7 +410,6 @@
     <string name="search_offline_address">Wyszukiwanie offline</string>
     <string name="search_online_address">Wyszukiwanie online</string>
     <string name="max_level_download_tile">Maks. zoom online</string>
-    <string name="max_level_download_tile_descr">Wybierz maksymalny poziom przybliżenia mapy dla pobierania kafelków map online.</string>
     <string name="route_general_information">Całkowity dystans %1$s, czas podróży %2$d h %3$d min.</string>
     <string name="router_service_descr">Wybiera usługę nawigacyjną online lub offline.</string>
     <string name="router_service">Usługa nawigacyjna</string>
@@ -497,7 +487,6 @@
     <string name="save_track_to_gpx_descrp">Ślad GPX zostanie automatycznie zapisany do katalogu śladów podczas nawigacji.</string>
     <string name="save_track_to_gpx">Automatyczne rejestrowanie śladu podczas nawigacji</string>
     <string name="update_tile">Uaktualnij mapę</string>
-    <string name="reload_tile">Wczytaj ponownie kafelki</string>
     <string name="open_street_map_login_descr">Wprowadza dane uwierzytelniające wymagane do wysyłania zmian na openstreetmap.org</string>
     <string name="user_name">Nazwa użytkownika OSM</string>
     <string name="mark_point">Cel</string>
@@ -519,15 +508,12 @@
     <string name="map_view_3d">Widok 3D mapy</string>
     <string name="show_poi_over_map_description">Wyświetl ostatnio wybrane użyteczne miejsca na mapie.</string>
     <string name="show_poi_over_map">Wyświetlanie użytecznych miejsc</string>
-    <string name="map_tile_source_descr">Proszę wybrać zasób map kafelkowych online lub offline.</string>
-    <string name="map_tile_source">Zasób mapy kafelkowej</string>
     <string name="map_source">Zasób mapy</string>
     <string name="use_internet">Używanie połączenia internetowego</string>
     <string name="show_location">Wyświetl aktualne położenie</string>
 
 
     <string name="show_gps_coordinates_text">Pokaż współrzędne GPS na mapie</string>
-    <string name="use_internet_to_download_tile">Pobiera brakujące kafelki map za pośrednictwem połączenia internetowego</string>
     <string name="app_description">Program do nawigacji satelitarnej</string>
     <string name="shared_string_exit">Zakończ</string>
 
@@ -616,7 +602,6 @@
     <string name="edit_filter_delete_message">Usunięto filtr {0}</string>
     <string name="edit_filter_create_message">Utworzono filtr {0}</string>
 
-    <string name="offline_navigation_not_available">Nawigacja offline w OsmAnd jest tymczasowo niedostępna.</string>
     <string name="left_side_navigation">Ruch lewostronny</string>
     <string name="left_side_navigation_descr">Wybierz dla krajów z ruchem lewostronnym.</string>
 
@@ -626,16 +611,9 @@
 
     <string name="map_online_plugin_is_not_installed">Aktywuj wtyczkę map online, aby wybrać inne źródła mapy</string>
     <string name="map_online_data">Mapy online i kafelki</string>
-    <string name="map_online_data_descr">Używa map online (pobiera i przechowuje kafelki na karcie SD).</string>
     <string name="shared_string_online_maps">Mapy online</string>
-    <string name="online_map_settings_descr">Skonfiguruj źródła kafelków online i offline.</string>
 
 
-    <string name="osmand_rastermaps_plugin_description">Umożliwia uzyskanie dostępu do wielu rodzajów map online (tzw kafelki lub raster), od gotowych kafelków OpenStreetMap (jak Mapnik) do zdjęć satelitarnych i specjalnych warstw map pogodowych uniwersalnych, map klimatycznych, map geologicznych, warstw cieniowania rzeźby terenu itp.
-\n
-\nKażda z tych map może być wykorzystana jako główna (podstawa) mapa wyświetlana na ekranie mapy OsmAnd lub jako nakładka lub podkład do innej mapy bazowej (jak zwykłe mapy offline OsmAnd). W celu zwiększenia widoczności mapy bazowej, niektóre elementy map wektorowych OsmAnd można łatwo ukryć poprzez menu „Konfiguracja mapy” zgodnie z zapotrzebowaniem.
-\n
-\nMapy kafelkowe można uzyskać bezpośrednio z zasobów sieciowych, jak i przygotować je do użytku w trybie offline (i ręcznie skopiować do katalogu danych OsmAnd) jako bazy danych sqlite, które mogą być przygotowane przez niezależnych dostawców map.</string>
     <string name="osmand_background_plugin_description">Wyświetla ustawienia umożliwiające włączenie śledzenia i nawigacji w tle (wyłączony ekran) poprzez okresowe wybudzanie urządzenia GPS.</string>
     <string name="osmand_accessibility_description">Umożliwia korzystanie ze specjalnych ułatwień dostępu urządzenia bezpośrednio w OsmAnd. Pozwala na np. dostosowanie szybkości mowy syntezowanych komunikatów głosowych, skonfigurowanie poruszania się po ekranie za pomocą pada kierunkowego, użycie trackballa do zmiany przybliżenia lub użycie syntezowanych komunikatów głosowych np. do automatycznego powiadamiania o położeniu.</string>
 
@@ -643,7 +621,6 @@
     <string name="osmand_development_plugin_description">Wyświetla ustawienia dotyczące rozwoju i diagnozowania błędów. Dodaje możliwość symulacji nawigacji, wyświetlania informacji o wydajności renderowania, czy też testowania komunikatów głosowych. Te funkcje oraz ustawienia przeznaczone są dla twórców oprogramowania. Zwykły użytkownik nie potrzebuje ich do prawidłowego działania programu.</string>
     <string name="plugins_screen">Wtyczki</string>
 
-    <string name="prefs_plugins_descr">Aktywuje zaawansowane ustawienia i dodatkową funkcjonalność.</string>
     <string name="prefs_plugins">Wtyczki</string>
 
     <string name="osm_editing_plugin_description">Umożliwia wprowadzanie zmian w zasobach OSM, takich jak dodawanie lub modyfikowanie obiektów POI, zgłaszanie i komentowanie błędów oraz wysyłanie zarejestrowanych plików GPX. OSM jest publicznym projektem tworzenia map przez społeczność. Więcej szczegółów pod adresem https://openstreetmap.org. Aktywny udział jest mile widziany, modyfikacji można dokonywać bezpośrednio z poziomu programu po wprowadzeniu danych uwierzytelniających OSM.</string>
@@ -1101,28 +1078,18 @@
     <string name="driving_region">Region ruchu</string>
     <string name="driving_region_canada">Kanada</string>
     <string name="map_widget_fps_info">Diagnozowanie błędów FPS</string>
-    <string name="local_index_tile_data_zooms">Pobrane stopnie przybliżenia: %1$s</string>
     <string name="local_index_tile_data_expire">Wygaśnięcie (minuty): %1$s</string>
-    <string name="local_index_tile_data_downloadable">Do pobrania: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Maksymalne przybliżenie: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Minimalne przybliżenie: %1$s</string>
     <string name="local_index_tile_data_name">Dane kafelkowe: %1$s</string>
     <string name="about_version">Wersja:</string>
     <string name="shared_string_about">Informacje</string>
     <string name="about_settings_descr">Wyświetla informacje o wersji, licencji, współtwórcach</string>
 
 
-    <string name="edit_tilesource_url_to_load">Adres URL</string>
     <string name="edit_tilesource_maxzoom">Maksymalne przybliżenie</string>
-    <string name="edit_tilesource_expiration_time">Czas wygaśnięcia (minuty)</string>
     <string name="edit_tilesource_minzoom">Minimalne przybliżenie</string>
-    <string name="edit_tilesource_choose_existing">Zdefiniowane…</string>
     <string name="maps_define_edit">Zdefiniuj/Edytuj…</string>
-    
 
 
-    <string name="edit_tilesource_successfully">Zapisano zasób danych kafelkowych %1$s</string>
-    <string name="edit_tilesource_elliptic_tile">Eliptyczna Merkatora</string>
     <string name="route_descr_destination">Cel</string>
     
 

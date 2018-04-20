@@ -251,8 +251,7 @@
 	
 	<string name="tts_language_not_supported_title">Dil desteklenmemektedir</string>
 	<string name="tts_missing_language_data_title">Kayıp data</string>
-	<string name="tile_source_already_installed">Harita zaten yüklenmiş, Ayarlar güncellenecek</string>
-	<string name="error_doing_search">Çevrim dışı aramada hata oluştu</string>
+    <string name="error_doing_search">Çevrim dışı aramada hata oluştu</string>
 	<string name="search_osm_offline">Coğrafi konum ara</string>
 	<string name="system_locale">Sistem</string>
 	<string name="preferred_locale_descr">Ekran dilini seç (değiştirdikten sonra lütfen OsmAnd\'ı yeniden başlatın)</string>
@@ -438,8 +437,7 @@
 	<string name="poi_search_desc">İÇN (İhtiyaç Noktası) arama</string>
 	<string name="navpoint_search_desc">Koordinatlar</string>
 	<string name="transport_search_desc">Toplu taşıma arama</string>
-	<string name="offline_navigation_not_available">OsmAnd çevrim dışı yolbul geçici olarak kullanılamıyor.</string>
-	<string name="left_side_navigation">Soldan-direksiyonlu araç sürüşü</string>
+    <string name="left_side_navigation">Soldan-direksiyonlu araç sürüşü</string>
 	<string name="left_side_navigation_descr">Sol taraftan akan trafiğe sahip ülkeler için seçin</string>
 	
 	<string name="modify_transparency">"Şeffaflık değiştir(0 -Şeffaf,255-opak) "</string>
@@ -450,28 +448,23 @@
 	<string name="index_settings_descr">Aygıtınızda saklanan çevrim dışı harita dosyaları yönet ve indir</string>
 	<string name="map_online_plugin_is_not_installed">Farklı harita kaynaklarını seçmek için Online haritalar eklentisi etkinleştirme</string>
 	<string name="map_online_data">Çevrimiçi ve çini harita</string>
-	<string name="map_online_data_descr">Çevrimiçi haritalar kullan (SD kart üzerine indirme ve önbellek verisi)</string>
-	<string name="online_map_settings_descr">Çevrimiçi veya önbelleğe alınmış çini harita kaynaklarını yapılandırın</string>
-	
-	<string name="osmand_rastermaps_plugin_description">"Bu eklenti ile bir çok çevirimiçi (karo ya da raster) haritaya erişebilirsiniz, önceden tanımlanmış Openstreetmap karolarından (Mapnik gibi) uydu görüntülerine, hava haritaları gibi özel amaçlı katmanları, iklim haritaları, jeolojik haritalar, tepe katmanları, vb\n\nHerhangi bir harita ana (taban) olarak kullanılabilir ve OsmAnd ana harita ekranında gösterilir, veya başka bir ana haritaya üstlük, ya da altlık olabilir (normal OsmAnd çevrimdışı haritalar gibi). Herhangi bir altlık haritayı daha görünür yapmak, veya istediğiniz unsurları gizlemek için ‘Haritayı yapılandır’ bölümünden seçilebilir.\n\nKaro haritalar doğrudan çevrimiçi edinilebilir, veya çevrimdışı kullanmak için sqlite veritabanı üçüncü parti harita hazırlama araçları ile oluşturup hazırlanabilir (OsmAnd klasörüne elle kopyalamak gerekir). "</string>
-	<string name="osmand_accessibility_description">Bu eklenti Osmand doğrudan cihazın erişilebilirlik özellikleri kullanılabilir hale getirir. Bu, örneğin kolaylaştırır TTS sesler konuşma hızını, yön-pad ekran navigasyon yapılandırmak yakınlaştırma kontrolü için bir topunu kullanarak, ya da konumunu duyuran oto için olduğu gibi, text-to-speech geribildirim kullanarak ayarlama.</string>
+
+    <string name="osmand_accessibility_description">Bu eklenti Osmand doğrudan cihazın erişilebilirlik özellikleri kullanılabilir hale getirir. Bu, örneğin kolaylaştırır TTS sesler konuşma hızını, yön-pad ekran navigasyon yapılandırmak yakınlaştırma kontrolü için bir topunu kullanarak, ya da konumunu duyuran oto için olduğu gibi, text-to-speech geribildirim kullanarak ayarlama.</string>
 	
 	
 	<string name="osmand_development_plugin_description">Bu eklenti geliştirme ve hata ayıklama özellikleri için ayarları test etmek ya da isteyen yönlendirme, ekran render performansı veya ses simüle etmek istiyorum gösterir. Bu ayarlar geliştiriciler için tasarlanmıştır ve genel kullanıcı için gerekli değildir.</string>
 	<string name="plugins_screen">Eklentiler</string>
-	
-	<string name="prefs_plugins_descr">Eklentiler gelişmiş ayarları ve ek işlevselliği etkinleştirir.</string>
-	<string name="prefs_plugins">Eklentiler</string>
+
+    <string name="prefs_plugins">Eklentiler</string>
 	
 	<string name="osm_editing_plugin_description">Bu eklenti Osmand aracılığıyla oluşturma veya değiştirme OSM POI nesneleri açma veya OSM hataları yorumlama ve kaydedilen GPX dosyaları katkıda gibi OSM katkıda bulunmak için kullanılabilir. OSM bir topluluk odaklı, küresel kamu malı haritalama projesidir. Detaylar için https://openstreetmap.org başvurun. Aktif katılım takdir ve app kişisel OSM kimlik belirtirseniz katkıları, Osmand doğrudan yapılabilir.</string>
 	<string name="vector_maps_may_display_faster_on_some_devices">Vektörel haritalar daha hızlı görüntülenir. Bazı aygıtlarda düzgün çalışmayabilir.</string>
 	<string name="play_commands_of_currently_selected_voice">Seçili ses komutları oynat</string>
 	<string name="debugging_and_development">OsmAnd gelişimi</string>
 	<string name="native_rendering">Yerel render etme</string>
-	<string name="test_voice_prompts">Sesli uyarıları dene</string>    
-	<string name="switch_to_raster_map_to_see">Bu konum için mevcut çevrim dışı vektör haritası yok. Ayarlar biri (harita dosyalarını yönetme) indirmek veya çevrimiçi haritalar (bunun için eklentisi çevrimiçi haritalar etkinleştirmek) geçiş yapabilirsiniz.</string>
-	
-	<string name="send_files_to_osm">GPX dosyalarını OSM ye gönder?</string>
+	<string name="test_voice_prompts">Sesli uyarıları dene</string>
+
+    <string name="send_files_to_osm">GPX dosyalarını OSM ye gönder?</string>
 	<string name="gpx_visibility_txt">Görünürlük</string>
 	<string name="gpx_tags_txt">Etiketler</string>
 	<string name="gpx_description_txt">Tanım</string>
@@ -591,8 +584,7 @@
 	<string name="auto_follow_location_enabled">Haritayı kullanırken görünümü otomatik olarak ortala.</string>
 	<string name="pref_vector_rendering">Özel seçenekli vektör renderer etme</string>
 	<string name="pref_overlay">Bindirme / altlık</string>
-	<string name="pref_raster_map">Harita kaynağı ayarları</string>
-	<string name="pref_vector_map">Vektör harita ayarları</string>
+    <string name="pref_vector_map">Vektör harita ayarları</string>
 	<string name="delete_confirmation_msg">%1$s silinsin mi?</string>
 	<string name="city_type_suburb">Banliyö</string>
 	<string name="city_type_hamlet">Mezra</string>
@@ -740,13 +732,6 @@
     <string name="about_settings_descr">Sürüm bilgisi, lisanslar, proje üyeleri</string>
     
     <string name="local_index_tile_data_expire">Sona erecek (dakika): %1$s</string>
-    <string name="local_index_tile_data_downloadable">İndirilebilir: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Azami yakınlaştırma: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Asgari yakınlaştırma: %1$s</string>
-    <string name="edit_tilesource_elliptic_tile">Eliptik izdüşümü</string>
-    <string name="edit_tilesource_expiration_time">Sona erecek (dakika)</string>
-    <string name="edit_tilesource_url_to_load">Adres</string>
-    <string name="edit_tilesource_choose_existing">Varolanı seçin…</string>
     <string name="maps_define_edit">Tanımla/Düzenle…</string>
 	<string name="clear_intermediate_points"/>
     <string name="keep_intermediate_points">Ara hedefler tutun</string>
@@ -972,8 +957,7 @@
 	<string name="layer_overlay">Üst katman harita…</string>
 	<string name="map_overlay">Üst katman harita</string>
 	<string name="map_overlay_descr">Üst katman harita seç</string>
-	<string name="level_to_switch_vector_raster_descr">Vektör haritaların kullanımı için asgari yaklaştırma seviyesi</string>
-	<string name="level_to_switch_vector_raster">Asgari vektör yakınlaştırma seviyesi</string>
+    <string name="level_to_switch_vector_raster">Asgari vektör yakınlaştırma seviyesi</string>
 	
 	<string name="routing_attr_prefer_motorway_name">Otoyolları tercih et</string>
 	<string name="routing_attr_prefer_motorway_description"/>
@@ -1029,10 +1013,8 @@
 	<string name="auto_zoom_farthest">Uzun mesafeli görüntüye</string>
 	<string name="map_magnifier">Harita büyüteci</string>
 	<string name="base_world_map">Dünya Haritası</string>
-	
-	<string name="local_index_tile_data_zooms">Zvmhay indirildi : %1$s</string>
+
     <string name="local_index_tile_data_name">Döşeme verisi : %1$s</string>
-    <string name="edit_tilesource_successfully">Kaydedilen Çini kaynağı %1$s</string>
     <string name="edit_tilesource_maxzoom">maksimum Yakınlaştırma</string>
     
     <string name="specified_directiory_not_writeable">Haritalar belirtilen dizinde oluşturulamadı</string>
@@ -1441,10 +1423,7 @@
 	<string name="use_english_names_descr">Yerli ve İngilizce isimleri arasında seçin</string>
 	<string name="show_view_angle">Ekran görüntüleme yönü</string>
 	<string name="show_poi_over_map_description">POI\'leri harita üzerinde göster (kullanımının son seçilen filtre)</string>
-	<string name="map_tile_source_descr">Online veya önbelleğe alınmış harita fayans kaynağını seç</string>
-	<string name="map_tile_source">Çini harita kaynağı</string>
-	<string name="use_internet_to_download_tile">Eksik harita fayans indirmek için interneti kullanın</string>
-	<string name="incremental_search_street">Arama sokak aşamalı</string>
+    <string name="incremental_search_street">Arama sokak aşamalı</string>
 	<string name="incremental_search_building">Arama binası aşamalı</string>
 	<string name="choose_intersected_street">Sokağa kesişen seç</string>
 	<string name="navigate_point_format_D">DDD.DD</string>
@@ -1467,8 +1446,7 @@
 	<string name="favorite">Favori</string>
 	<string name="search_osm_nominatim">OSM Nominatim kullanarak çevrimiçi arama</string>
 	<string name="max_level_download_tile">Max. Online zoom</string>
-	<string name="max_level_download_tile_descr">Çevrimiçi harita fayans indirmek için maksimum yakınlaştırma düzeyini seçin</string>
-	<string name="fav_points_edited">En sevdiğim nokta düzenlendi</string>
+    <string name="fav_points_edited">En sevdiğim nokta düzenlendi</string>
 	<string name="fav_points_not_exist">Hiçbir favori noktalar var</string>
 	<string name="opening_changeset">Changeset Açılış …</string>
 	<string name="closing_changeset">Changeset Kapanış …</string>
@@ -1476,8 +1454,7 @@
 	<string name="converting_names">Yerli / İngilizce adları dönüştürülüyor …</string>
 	<string name="previous_run_crashed">Son Osmand çalıştırmak çöktü. Log dosya {0} olduğunu. Sorunu bildirmek ve günlük dosyasını ekleyiniz.</string>
 	<string name="osm_settings_descr">OSM gönderimler için gerekli Openstreetmap.org (OSM) ayarlarını belirtin</string>
-	<string name="reload_tile">Sayfaya kiremit</string>
-	<string name="opening_hours_not_supported">Hours formatını Açılış düzenleme için desteklenmiyor</string>
+    <string name="opening_hours_not_supported">Hours formatını Açılış düzenleme için desteklenmiyor</string>
 	<string name="transport_stop_to_go_out">Kurtulmak için durdurmak seçin</string>
 	<string name="transport_to_go_after">Önceki mesafe</string>
 	<string name="transport_to_go_before">Sonraki mesafe</string>
@@ -1501,24 +1478,20 @@
 	<string name="transport_context_menu">Durakta Arama taşımacılığı</string>
 	<string name="rotate_map_to_bearing">Harita yönlendirme</string>
 	<string name="version_index_is_not_supported">Endeksin versiyonu \'\' {0} \'desteklenmiyor</string>
-	
-	
-	<string name="osmand_routing_experimental">Osmand çevrimdışı gezinme deneysel bir özelliktir ve daha yaklaşık 20 km\'lik mesafelerde çalışmıyor.\n\nNavigasyon hizmeti geçici olarak çevrimiçi CloudMade geçer.</string>
-	<string name="install_selected_build">Eğer Osmand yüklemek istiyor musunuz - {0} {1} {2} MB?</string>
-	<string name="tiles_to_download_estimated_size">Yakınlaştırma {0} indirmek {1} fayans ({2} MB)</string>
-	<string name="select_max_zoom_preload_area">Preload maksimum zoom seçin</string>
+
+
+    <string name="install_selected_build">Eğer Osmand yüklemek istiyor musunuz - {0} {1} {2} MB?</string>
+    <string name="select_max_zoom_preload_area">Preload maksimum zoom seçin</string>
 	<string name="continuous_rendering_descr">Bir defada yerine görüntünün sürekli render görüntüler</string>
 	<string name="renderers">vektör render</string>
 	<string name="renderers_descr">Görünüm render seç</string>
-	<string name="use_high_res_maps_descr">Yüksek yoğunluklu ekranlarda harita fayans streç (ve bulanıklık) etmeyin</string>
-	<string name="indexing_address">Dizin Oluşturma adresi …</string>
+    <string name="indexing_address">Dizin Oluşturma adresi …</string>
 	<string name="indexing_map">Dizin Oluşturma haritası …</string>
 	<string name="indexing_poi">Dizin Oluşturma POI …</string>
 	<string name="indexing_transport">Dizin Oluşturma taşımacılığı …</string>
 	<string name="old_map_index_is_not_supported">\'{0}\' desteklenmiyor onaylanmamaktadır harita veri formatı \'</string>
 	<string name="poi_filter_namefinder">Çevrimiçi Name Finder</string>
-	<string name="reading_cached_tiles">Önbelleğe fayans okunuyor …</string>
-	<string name="version_index_is_big_for_memory">Index \'\' {0} \'belleğe sığmadı</string>
+    <string name="version_index_is_big_for_memory">Index \'\' {0} \'belleğe sığmadı</string>
 	<string name="si_mi_yard">Mil/yarda</string>
 	<string name="yard">yd</string>
 	<string name="foot">ft</string>
@@ -1531,8 +1504,7 @@
 	<string name="amenity_type_leisure">Boş</string>
 	<string name="gpx_option_from_start_point">Tüm yol-izi boyunca geç</string>
 	<string name="layer_underlay">Underlay haritası …</string>
-	<string name="select_tile_source_to_install">Seç (kiremit) yüklemek veya güncellemek haritalar</string>
-	<string name="create_poi_link_to_osm_doc">&lt;u&gt; Online OSM &lt;/ u&gt; görüntüleri ile harita sınıflandırma<u>Online OSM</u> map classification with images</string>
+    <string name="create_poi_link_to_osm_doc">&lt;u&gt; Online OSM &lt;/ u&gt; görüntüleri ile harita sınıflandırma<u>Online OSM</u> map classification with images</string>
 	<string name="search_offline_geo_error">Coğrafi niyet ayrıştırılamadı \'%s\'</string>
 	<string name="unit_of_length">Ölçü birimi</string>
 	<string name="keep_informing_never">Yalnızca elle ayarlama (oka basın)</string>

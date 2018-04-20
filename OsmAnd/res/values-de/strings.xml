@@ -136,22 +136,14 @@
 	<string name="rendering_attr_hmRendered_name">Mehr Details in Karte</string>
 	<string name="map_online_plugin_is_not_installed">Aktivieren Sie das Online-Karten-Modul, um andere Kartenquellen nutzen zu können</string>
 	<string name="map_online_data">Online- und Kachel-Karten</string>
-	<string name="map_online_data_descr">Online-Karten verwenden (Kacheln auf die SD-Karte herunterladen und zwischenspeichern).</string>
-	<string name="shared_string_online_maps">Online-Karten</string>
-	<string name="online_map_settings_descr">Online- oder zwischengespeicherte Kachelkartenquellen konfigurieren.</string>
+    <string name="shared_string_online_maps">Online-Karten</string>
 
-	<string name="osmand_rastermaps_plugin_description">Mit dieser Erweiterung erhalten Sie Zugang zu zahlreichen Online-Karten (so genannte Kachel- oder Rasterkarten), von vordefinierten OpenStreetMap-Kacheln (wie Mapnik) bis hin zu Satellitenbildern und speziellen, zweckgebundenen Kartenfolien zu Wetter, Klima, Geologie, Geländerelief, usw. 
-\n 
-\nAlle Karten können sowohl als Hauptkarte als auch als Auf- oder Unterlage einer anderen Basiskarte (wie OsmAnds Standard-Offline-Karten) dargestellt werden. Um Kartenunterlagen sichtbarer zu machen, können bestimmte Elemente der OsmAnd-Vektorkarten im Menü \'Karte konfigurieren\' ausgeblendet werden. 
-\n 
-\nRasterkarten können direkt online bezogen werden, oder zur Offline-Verwendung mit einer Vielzahl von Bearbeitungstools als SQLite-Datei aufbereitet und manuell in den OsmAnd-Unterordner \'tiles\' kopiert werden.</string>
-	<string name="osmand_background_plugin_description">Zeigt die Einstellungen für die Standortaufzeichnung oder die Navigation während das Gerät im Standby-Modus ist (periodisches Aufwecken des GPS-Empfängers).</string>
+    <string name="osmand_background_plugin_description">Zeigt die Einstellungen für die Standortaufzeichnung oder die Navigation während das Gerät im Standby-Modus ist (periodisches Aufwecken des GPS-Empfängers).</string>
 	<string name="osmand_accessibility_description">Diese Erweiterung verschafft den direkten Zugriff auf die System-Eingabehilfen in OsmAnd. Dadurch kann z.B. die Abspielgeschwindigkeit der Synthesizer-Stimme, die Bildschirmnavigation mittels Steuerkreuz, die Benutzung eines Trackballs zur Zoomsteuerung oder die Sprachausgabe, wie die automatische Ansage Ihrer Position, konfiguriert werden.</string>
 
 	<string name="osmand_development_plugin_description">Diese Erweiterung aktiviert Entwicklereinstellungen und Funktionen zur Fehlersuche, wie Testung oder Simulation der Routenberechnung, der Bildschirm-Render-Leistung oder der Sprachsteuerung. Diese Einstellungen sind für Entwickler gedacht und werden für die Verwendung von OsmAnd sonst nicht benötigt.</string>
 	<string name="plugins_screen">Erweiterungen</string>
-	<string name="prefs_plugins_descr">Erweiterungen aktivieren weitere Einstellungen und zusätzliche Funktionen.</string>
-	<string name="prefs_plugins">Erweiterungen</string>
+    <string name="prefs_plugins">Erweiterungen</string>
 	<string name="osm_editing_plugin_description">Diese Erweiterung ermöglicht das Erstellen und Bearbeiten von OSM-POI-Objekten, das Eintragen oder Kommentieren von OSM-Notizen, sowie das Hochladen von GPX-Dateien als Beiträge zu OSM (benötigt ein OSM-Benutzerkonto).
 \n
 \nOSM ist ein gemeinschaftliches, frei zugängliches, globales Kartografierungsprojekt, Details siehe https://openstreetmap.org. Jeder ist eingeladen, aktiv daran mitzuarbeiten. Die Mitarbeit kann auch direkt via OsmAnd erfolgen, wenn in den Einstellungen der OsmAnd-Erweiterung ein OSM-Benutzerkonto hinterlegt wird.</string>
@@ -162,8 +154,7 @@
 	<string name="native_rendering">Natives Rendern</string>
 	
 	<string name="test_voice_prompts">Sprachansagen testen</string>
-	<string name="switch_to_raster_map_to_see">Der Gerätespeicher enthält keine Vektorkarte für diese Position. Sie können entweder eine herunterladen (über \'Einstellungen\' → \'Kartenverwaltung\') oder alternativ auf Online-Karten umschalten (hierzu muss das Online-Karten-Modul aktiviert werden).</string>
-	<string name="send_files_to_osm">GPX-Dateien an OSM senden?</string>
+    <string name="send_files_to_osm">GPX-Dateien an OSM senden?</string>
 	<string name="validate_gpx_upload_name_pwd">Bitte tragen Sie Ihren OSM-Benutzernamen und Passwort ein, um GPX-Dateien hochzuladen.</string>
 	<string name="default_buttons_support">Unterstütze OsmAnd</string>
 	<string name="support_new_features">Unterstütze neue Funktionen</string>
@@ -317,8 +308,7 @@
 	<string name="auto_follow_location_enabled">Kartennachführung aktiv.</string>
 	<string name="pref_vector_rendering">spezielle Optionen für Vektor-Renderer</string>
 	<string name="pref_overlay">Overlay / Underlay</string>
-	<string name="pref_raster_map">Kartenquelleneinstellungen</string>
-	<string name="pref_vector_map">Vektorkarteneinstellungen</string>
+    <string name="pref_vector_map">Vektorkarteneinstellungen</string>
 	<string name="delete_confirmation_msg">%1$s löschen?</string>
 	<string name="city_type_suburb">Stadtteil</string>
 	<string name="city_type_hamlet">Weiler</string>
@@ -435,13 +425,10 @@
 	<string name="shared_string_none">Keine(r/s)</string>
 	<string name="map_overlay">Overlay-Karte</string>
 	<string name="map_overlay_descr">Karte als Überlagerung auswählen.</string>
-	<string name="tile_source_already_installed">Karte schon installiert, Einstellungen werden aktualisiert.</string>
-	<string name="select_tile_source_to_install">Wähle Karten(Kacheln) zu installieren oder aktualisieren.</string>
-	<string name="internet_not_available">Internet Verbindung erforderlich, aber nicht verfügbar.</string>
+    <string name="internet_not_available">Internet Verbindung erforderlich, aber nicht verfügbar.</string>
 	<string name="install_more">Weitere installieren…</string>
 
-	<string name="level_to_switch_vector_raster_descr">Niedrigste Zoomstufe mit der Vektorkarten (statt Kacheln) verwendet werden sollen.</string>
-	<string name="level_to_switch_vector_raster">Min. Vektor-Zoomstufe</string>
+    <string name="level_to_switch_vector_raster">Min. Vektor-Zoomstufe</string>
 	
 	<string name="create_poi_link_to_osm_doc"><u>Online OSM</u> Klassifizierung mit Bildern.</string>
 	<string name="error_doing_search">Fehler in der Offline-Suche aufgetreten.</string>
@@ -508,13 +495,11 @@
 	<string name="poi_filter_for_tourists">Für Touristen</string>
 	<string name="poi_filter_fuel">Tankstelle</string>
 	<string name="poi_filter_namefinder">Online-Namens-Finder</string>
-	<string name="reading_cached_tiles">Lese zwischengespeicherte Kacheln…</string>
-	<string name="version_index_is_big_for_memory">Nicht genügend Speicher für Index \'\'{0}\'\'</string>
+    <string name="version_index_is_big_for_memory">Nicht genügend Speicher für Index \'\'{0}\'\'</string>
 	<string name="version_index_is_not_supported">Die Index-Version \'\'{0}\'\' wird nicht unterstützt</string>
-	
-	
-	<string name="osmand_routing_experimental">OsmAnd Offline-Navigation ist noch experimentell und funktioniert nicht gut für Entfernungen über 20 km.\n\nAls Navigationsdienst wird temporär online CloudMade verwendet.</string>
-	<string name="specified_dir_doesnt_exist">Angegebener Ordner kann nicht gefunden werden.</string>
+
+
+    <string name="specified_dir_doesnt_exist">Angegebener Ordner kann nicht gefunden werden.</string>
 	<string name="application_dir">Datenordner</string>
 	
 	<string name="osmand_net_previously_installed">Eine Vorversion von OsmAnd ist installiert. Alle Offline-Daten werden weiter unterstützt. Favoriten müssen aber in der Vorversion exportiert und anschließend in die neue Version importiert werden.</string>
@@ -542,8 +527,7 @@
 	<string name="shared_string_refresh">Aktualisieren</string>
 	<string name="fast_route_mode">Schnellste Route</string>
 	<string name="fast_route_mode_descr">Zur Berechnung der schnellsten Route aktivieren oder für eine kraftstoffsparende Route deaktivieren.</string>
-	<string name="tiles_to_download_estimated_size">Bei Zoomlevel {0} lade {1} Kacheln\n ({2} MB)</string>
-	<string name="shared_string_download_map">Karte herunterladen</string>
+    <string name="shared_string_download_map">Karte herunterladen</string>
 	<string name="select_max_zoom_preload_area">Größte zu ladende Vergrößerung wählen</string>
 	<string name="maps_could_not_be_downloaded">Diese Karte konnte nicht geladen werden</string>
 	<string name="continuous_rendering">Kontinuierlicher Kartenaufbau</string>
@@ -560,8 +544,7 @@
 	<string name="phone">Telefon</string>
 	<string name="download_type_to_filter">Nach Typ filtern</string>
 	<string name="use_high_res_maps">Hochauflösende Anzeige</string>
-	<string name="use_high_res_maps_descr">Unterdrückt Streckung (Unschärfe) von Kartenkacheln auf manchen Anzeigen.</string>
-	<string name="unknown_location">Position noch nicht bekannt</string>
+    <string name="unknown_location">Position noch nicht bekannt</string>
 	
 	<string name="context_menu_item_search_transport">Suche ÖPNV</string>
 	<string name="transport_searching_transport">ÖPNV-Ergebnisse (kein Ziel):</string>
@@ -702,8 +685,7 @@
 	<string name="search_offline_address">Offline-Suche</string>
 	<string name="search_online_address">Online-Suche</string>
 	<string name="max_level_download_tile">Max. Online-Zoom</string>
-	<string name="max_level_download_tile_descr">Maximale Vergrößerung bis zu der Online-Karten-Daten (Kacheln) aus dem Internet geladen werden.</string>
-	<string name="route_general_information">Gesamtentfernung %1$s, Reisezeit %2$d h %3$d min.</string>
+    <string name="route_general_information">Gesamtentfernung %1$s, Reisezeit %2$d h %3$d min.</string>
 	<string name="router_service_descr">Online- oder Offline-Dienst zur Routenberechnung wählen.</string>
 	<string name="router_service">Navigationsdienst</string>
 	<string name="sd_dir_not_accessible">Auf den Daten-Ordner auf der SD-Karte kann nicht zugegriffen werden!</string>
@@ -764,8 +746,7 @@
 	<string name="additional_settings">Weitere Einstellungen</string>
 	<string name="shared_string_settings">Einstellungen</string>
 	<string name="update_tile">Karte (Kacheln) aktualisieren</string>
-	<string name="reload_tile">Kartenteile (Kacheln) aktualisieren</string>
-	<string name="mark_point">Ziel</string>
+    <string name="mark_point">Ziel</string>
 
 	<string name="shared_string_add_to_favorites">Als Favorit speichern</string>
 	<string name="use_english_names_descr">Englische oder einheimische Namen in der Karte verwenden.</string>
@@ -782,15 +763,12 @@
 	<string name="map_view_3d">3D-Kartenansicht</string>
 	<string name="show_poi_over_map_description">Zuletzt gewähltes POIs Overlax auf der Karte anzeigen.</string>
 	<string name="show_poi_over_map">POI Overlay anzeigen</string>
-	<string name="map_tile_source_descr">Online- oder Offline-Quelle für Karte (Kacheln).</string>
-	<string name="map_tile_source">Kartenquelle (Kacheln)</string>
-	<string name="map_source">Kartenquelle</string>
+    <string name="map_source">Kartenquelle</string>
 	<string name="use_internet">Internet verwenden</string>
 	<string name="show_location">Standort anzeigen</string>
 
 	<string name="show_gps_coordinates_text">GPS-Koordinaten auf der Karte anzeigen</string>
-	<string name="use_internet_to_download_tile">Fehlende Kartenteile aus dem Internet nachladen</string>
-	<string name="app_description">Navigationsanwendung OsmAnd</string>
+    <string name="app_description">Navigationsanwendung OsmAnd</string>
 	<string name="shared_string_exit">Beenden</string>
 
 	<string name="search_button">Suche</string>
@@ -872,9 +850,8 @@
 	<string name="edit_filter_delete_dialog_title">Ausgewählten Filter löschen?</string>
 	<string name="edit_filter_delete_message">Der Filter {0} wurde gelöscht</string>
 	<string name="edit_filter_create_message">Der Filter {0} wurde erstellt</string>
-	
-	<string name="offline_navigation_not_available">OsmAnd-Offline-Navigation steht zur Zeit nicht zur Verfügung.</string>
-	<string name="left_side_navigation">Linksverkehr</string>
+
+    <string name="left_side_navigation">Linksverkehr</string>
 	<string name="left_side_navigation_descr">Für Länder mit Linksverkehr auswählen.</string>
 	
 	<string name="unknown_from_location">Startpunkt ist noch nicht ermittelt</string>
@@ -1123,20 +1100,11 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="about_version">Version:</string>
 	<string name="shared_string_about">Über</string>
 	<string name="about_settings_descr">Versionsinfo, Lizenz, Projektmitglieder</string>
-	<string name="local_index_tile_data_zooms">Heruntergeladene Zoom-Stufen: %1$s</string>
-	<string name="local_index_tile_data_expire">Gültigkeit endet in (Minuten): %1$s</string>
-	<string name="local_index_tile_data_downloadable">Herunterladbar: %1$s</string>
-	<string name="local_index_tile_data_maxzoom">Maximum Zoom: %1$s</string>
-	<string name="local_index_tile_data_minzoom">Minimum Zoom: %1$s</string>
-	<string name="local_index_tile_data_name">Kacheldaten: %1$s</string>
-	<string name="edit_tilesource_successfully">Kachelquelle %1$s wurde erfolgreich gespeichert</string>
-	<string name="edit_tilesource_elliptic_tile">Elliptischer Merkator</string>
-	<string name="edit_tilesource_maxzoom">Max Zoom</string>
-	<string name="edit_tilesource_expiration_time">Ablaufzeit (Minuten)</string>
-	<string name="edit_tilesource_minzoom">Min Zoom</string>
-	<string name="edit_tilesource_url_to_load">URL</string>
-	<string name="edit_tilesource_choose_existing">Aus vorhandenen wählen…</string>
-	<string name="maps_define_edit">Definieren/Bearbeiten…</string>
+    <string name="local_index_tile_data_expire">Gültigkeit endet in (Minuten): %1$s</string>
+    <string name="local_index_tile_data_name">Kacheldaten: %1$s</string>
+    <string name="edit_tilesource_maxzoom">Max Zoom</string>
+    <string name="edit_tilesource_minzoom">Min Zoom</string>
+    <string name="maps_define_edit">Definieren/Bearbeiten…</string>
 	<string name="shared_string_and">und</string>
 	<string name="shared_string_or">oder</string>
 	

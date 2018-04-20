@@ -374,7 +374,6 @@
 	
 	
 	<string name="show_gps_coordinates_text">Näytä GPS-koordinaatit kartalla</string>
-	<string name="use_internet_to_download_tile">Käytä internettiä puuttuvien karttapalojen lataamiseen</string>
 	<string name="shared_string_exit">Poistu</string>
 	
 	
@@ -454,8 +453,7 @@
 	<string name="navpoint_search_desc">Koordinaatit</string>
 	<string name="transport_search_desc">Julkisen liikenteen haku</string>
 	<string name="favourites_search_desc">Haku suosikeista</string>
-	
-	<string name="offline_navigation_not_available">OsmAnd offline navigointi ei ole saatavilla tilapäisesti.</string>
+
 	<string name="left_side_navigation">Vasemman kaistan ajo</string>
 	<string name="left_side_navigation_descr">Valitse maissa joissa on käytössä vasen kaista</string>
 	
@@ -638,15 +636,10 @@
 	<string name="about_version">Versio:</string>
     <string name="shared_string_about">Tietoja</string>
     <string name="about_settings_descr">Versio tietoja, lisenssit, projektin jäsenet</string>
-    
-    <string name="local_index_tile_data_downloadable">Ladattavissa: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Maksimi zoomi: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Minimi zoomi: %1$s</string>
-    <string name="edit_tilesource_maxzoom">Maksimi zoomi</string>
+
+	<string name="edit_tilesource_maxzoom">Maksimi zoomi</string>
     <string name="edit_tilesource_minzoom">Minimi zoomi</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Valitse olemassaoleva…</string>
-    <string name="driving_region_descr">Valitse liikkumisalue: USA, Eurooppa, UK, Aasia tai muut</string>
+	<string name="driving_region_descr">Valitse liikkumisalue: USA, Eurooppa, UK, Aasia tai muut</string>
 	<string name="driving_region">Liikkumisalue</string>
 	<string name="driving_region_japan">Japani</string>
 	<string name="driving_region_us">Yhdysvallat</string>
@@ -785,13 +778,7 @@ Pit %2$s</string>
 	<string name="shared_string_currently_recording_track">Reitin nauhoitus</string>
 	<string name="track_segments">Jälkijanat</string>
 	<string name="track_points">Jälkipisteet</string>
-	<string name="osmand_rastermaps_plugin_description">"Tällä lisäosalla voit päästä monenlaisiin online (ns. laatta- tai rasteri-) karttoihin, esimääritellyistä Openstreetmap laatoista (kuten Mapnik) satelliitti kuviin ja erityistarkoitus tasoihin kuten sääkarttoihin, ilmasto karttoihin, geologisiin karttoihin, mäkisävy tasoihin, jne.
-
-Mitä tahansa näistä kartoista voidaan käyttää pää (pohja) karttana näytettäessä OsmAnd karttaruudulla, tai päällys- tai aluskerroksena toiselle pohjakartalle (kuten OsmAndin perus offline kartat). Saadaksesi mikä tahansa aluskerros näkyvämmäksi, tiettyjä osia OsmAnd vektorikartoista voi helposti piilottaa \'Kartta asetukset\' valikosta tarvittaessa.
-
-Laattakarttoja voi saada suoraan online lähteistä, tai voidaan valmistaa offline käyttöön (tai manuaalisesti kopioida OsmAndin kansioon) sqlite tietokantana jonka voi teihdä eri kolmannen osapuolen karttavalmistelu työkaluilla.
- "</string>
-	<string name="record_plugin_description">"Tämä lisäosa ottaa käyttöön toiminnallisuudet nauhoittaa ja tallentaa jälkiä manuaalisesti koskettamalla GPX nauhoitus toimintoja karttaruudulla, tai myös automaattisesti tallentaa kaikki navigointireitit GPX tiedostoon.
+    <string name="record_plugin_description">"Tämä lisäosa ottaa käyttöön toiminnallisuudet nauhoittaa ja tallentaa jälkiä manuaalisesti koskettamalla GPX nauhoitus toimintoja karttaruudulla, tai myös automaattisesti tallentaa kaikki navigointireitit GPX tiedostoon.
 
 
 Nauhoitetut jäljet voidaan jakaa ystävillesi tai käyttää OSM osallistumisissa. Urheilijat voivat nauhoittaa jälkiä harjoittelun seuraamiseen. Jotain perus jälkianalyysejä voidaan tehdä suoraan OsmAndissa, kuten kierrosaikoja, keskimääräistä nopeutta jne., ja jälkiä voi tietysty myös myöhemmin analysoida erityisissä kolmannen osapuolen analysointi työkaluissa.
@@ -1388,12 +1375,9 @@ Maailmanlaajuiset tiedot (välillä 70 astetta pohjoista ja 70 astetta eteläist
     <string name="auto_zoom_farthest">Loitonna</string>
     <string name="map_magnifier">Karttasuurennos</string>
     <string name="base_world_map">Maailman peruskartta</string>
-    <string name="local_index_tile_data_zooms">Zoomaa ladattuun: %1$s</string>
-    <string name="local_index_tile_data_expire">Vanhenemisaika (minuuteissa): %1$s</string>
+	<string name="local_index_tile_data_expire">Vanhenemisaika (minuuteissa): %1$s</string>
     <string name="local_index_tile_data_name">Kuvakedata: %1$s</string>
-    <string name="edit_tilesource_successfully">Kuvakelähde %1$s talletettu onnistuneesti</string>
-    <string name="edit_tilesource_expiration_time">Vanhenemisaika (minuuteissa)</string>
-    <string name="maps_define_edit">Määritä/Muokkaa…</string>
+	<string name="maps_define_edit">Määritä/Muokkaa…</string>
     <string name="map_widget_fps_info">FPS testausinfo</string>
     <string name="driving_region_australia">Australia</string>
     <string name="speak_title">Ilmoita…</string>
@@ -1596,8 +1580,7 @@ Jälki %2$s</string>
     <string name="native_library_not_supported">Natiivia kirjastoa ei tueta tällä laitteistolla.</string>
     <string name="init_native_library">Alustetaan natiivi kirjasto…</string>
     <string name="keep_informing_never">Ainoastaan käsin (näpäytä nuolta)</string>
-    <string name="pref_raster_map">Karttalähteen asetukset</string>
-    <string name="poi_filter_nominatim">Online Nominatim</string>
+	<string name="poi_filter_nominatim">Online Nominatim</string>
     <string name="favourites_delete_multiple_succesful">Suosikkipiste(et) poistettu onnistuneesti.</string>
     <string name="shared_string_release">Julkaistu</string>
     <string name="local_index_items_deleted">%1$d yhteensä %2$d jäsenestä onnistuneesti poistettu.</string>
@@ -1663,8 +1646,7 @@ Jälki %2$s</string>
     <string name="loading_poi_obj">Ladataan POI…</string>
     <string name="data_settings_descr">Määrittele kieli, lataa/uudelleen lataa data</string>
     <string name="data_settings">Data</string>
-    <string name="reload_tile">Lataa kuvake uudelleen</string>
-    <string name="show_view_angle">Osoita näyttösuunta</string>
+	<string name="show_view_angle">Osoita näyttösuunta</string>
     <string name="map_view_3d_descr">Ota käyttöön 3D näyttö kartalle</string>
     <string name="map_view_3d">Karttanäyttö 3D</string>
     <string name="position_on_map_bottom">Alas</string>
@@ -1846,8 +1828,7 @@ Jälki %2$s</string>
     <string name="update_poi_no_offline_poi_index">Tälle alueelle ei ole käytettävissä offline POI tietoja</string>
     <string name="update_poi_is_not_available_for_zoom">POI päivittäminen pienille zoomaustasoille ei ole käytettävissä</string>
     <string name="max_level_download_tile">Maksimi online zoomaus</string>
-    <string name="max_level_download_tile_descr">Valitse maksimi zoomaustaso online karttakuvakkeiden lataamiseksi</string>
-    <string name="router_service_descr">Valitse online- tai offline-navigaatiopalvelu</string>
+	<string name="router_service_descr">Valitse online- tai offline-navigaatiopalvelu</string>
     <string name="download_question_exist">Offline data {0} on jo olemassa ({1}). Haluatko päivittää sen ({2}) ?</string>
     <string name="opening_changeset">Avataan muutosjoukkoa…</string>
     <string name="closing_changeset">Suljetaan muutosjoukkoa…</string>
@@ -2010,8 +1991,7 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
     <string name="lang_zh_hk">Kiina (Hong Kong)</string>
     <string name="speech_rate_descr">Määrittele puheen nopeus TTS:lle</string>
     <string name="speech_rate">Puheen nopeus</string>
-    <string name="edit_tilesource_elliptic_tile">elliptinen merkator</string>
-    <string name="clear_intermediate_points">Poista välikohteet</string>
+	<string name="clear_intermediate_points">Poista välikohteet</string>
     <string name="keep_intermediate_points">Säilytä välikohteet</string>
     <string name="new_directions_point_dialog">Olet jo asettanut välikohteita.</string>
     <string name="use_kalman_filter_compass_descr">Vähentää kohinaa kompassilukemissa mutta lisää hitautta</string>
@@ -2029,12 +2009,9 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
     <string name="overlay_transparency">Peitteen läpinäkyvyys</string>
     <string name="map_transparency_descr">Muokkaa peruskartan läpinäkyvyyttä</string>
     <string name="map_transparency">Peruskartan läpinäkyvyys</string>
-    <string name="tile_source_already_installed">Kartta on jo asennettu, asetukset päivitetään</string>
-    <string name="select_tile_source_to_install">Valitse (tiili) kartat asennettavaksi tai päivitettäväksi</string>
-    <string name="internet_not_available">Internet yhteys tarvitaan tähän toimintoon mutta se ei ole käytettävissä</string>
+	<string name="internet_not_available">Internet yhteys tarvitaan tähän toimintoon mutta se ei ole käytettävissä</string>
     <string name="install_more">Asenna lisää…</string>
-    <string name="level_to_switch_vector_raster_descr">Minimi zoomaustaso käytettäväksi vektorikartoilla</string>
-    <string name="level_to_switch_vector_raster">Min vektorien zoomaustaso</string>
+	<string name="level_to_switch_vector_raster">Min vektorien zoomaustaso</string>
     <string name="create_poi_link_to_osm_doc"><u>Online OSM</u> karttaluokittelu kuvin</string>
     <string name="error_doing_search">Tapahtui virhe offline haussa</string>
     <string name="system_locale">Järjestelmä</string>
@@ -2119,8 +2096,7 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
     <string name="quick_action_map_source">Muuta kartan lähdettä</string>
     <string name="quick_action_map_source_switch"/>
     <string name="gpx_split_interval">Jakoväli</string>
-    <string name="prefs_plugins_descr">Liitännäiset aktivoivat laajennetut asetukset ja lisätoiminnallisuudet</string>
-    <string name="choose_auto_follow_route_descr">Aika kunnes karttanäyttö synkronoituu nykysijaintiin</string>
+	<string name="choose_auto_follow_route_descr">Aika kunnes karttanäyttö synkronoituu nykysijaintiin</string>
     <string name="keep_informing_descr">Ilmoita uudestaan suunnistusohjeet säännöllisin väliajoin</string>
     <string name="auto_follow_route_navigation">Keskitä automaattisesti ainoastaan suunnistettaessa</string>
     <string name="old_poi_file_should_be_deleted">POI datatiedosto \'%1$s\' on tarpeeton ja se voidaan poistaa.</string>

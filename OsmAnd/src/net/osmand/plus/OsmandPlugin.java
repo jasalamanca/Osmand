@@ -27,7 +27,6 @@ import net.osmand.plus.monitoring.OsmandMonitoringPlugin;
 import net.osmand.plus.myplaces.FavoritesActivity;
 import net.osmand.plus.openseamapsplugin.NauticalMapsPlugin;
 import net.osmand.plus.osmedit.OsmEditingPlugin;
-import net.osmand.plus.rastermaps.OsmandRasterMapsPlugin;
 import net.osmand.plus.skimapsplugin.SkiMapsPlugin;
 import net.osmand.plus.srtmplugin.SRTMPlugin;
 import net.osmand.plus.views.OsmandMapTileView;
@@ -134,7 +133,6 @@ public abstract class OsmandPlugin {
 
 		// plugins with additional actions for context menu in right order:
 		allPlugins.add(new OsmEditingPlugin(app));
-		allPlugins.add(new OsmandRasterMapsPlugin(app));
 
 		allPlugins.add(new OsmandMonitoringPlugin(app));
 		// allPlugins.add(new OsMoPlugin(app));

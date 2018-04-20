@@ -123,9 +123,8 @@
 	<string name="navpoint_search_desc">مختصات</string>
 	<string name="transport_search_desc">جست‌وجو در حمل‌ونقل عمومی</string>
 	<string name="favourites_search_desc">جست‌وجو در نقاط برگزیده</string>
-	
-	<string name="offline_navigation_not_available">مسیریابی آفلاین OsmAnd موقتاً در دسترس نیست.</string>
-	<string name="left_side_navigation">رانندگی با فرمان سمت چپ</string>
+
+    <string name="left_side_navigation">رانندگی با فرمان سمت چپ</string>
 	<string name="left_side_navigation_descr">برای کشورهایی که از سمت چپ می‌رانند.</string>
 	<string name="unknown_from_location">نقطهٔ شروع هنوز مشخص نیست</string>
 	<string name="unknown_location">موقعیت هنوز مشخص نیست</string>
@@ -242,8 +241,7 @@
 	
 	
 	<string name="show_gps_coordinates_text">مختصات GPS را روی نقشه نمایش بده</string>
-	<string name="use_internet_to_download_tile">کاشی‌های ناموجود با استفاده از اینترنت دانلود شود.</string>
-	<string name="app_description">برنامهٔ راهبری</string>
+    <string name="app_description">برنامهٔ راهبری</string>
 	<string name="shared_string_exit">خروج</string>
 	
 	
@@ -266,8 +264,7 @@
 	<string name="osb_comment_dialog_error">خطایی رخ داد: توضیح افزوده نشد</string>
 	
 	<string name="Closest_Amenities">نزدیک‌ترین امکانات رفاهی</string>
-	<string name="map_tile_source_descr">منبع نقشهٔ آنلاین یا کاشی‌های ذخیره‌شده را انتخاب کنید.</string>
-	<string name="error_calculating_route_occured">در حین محاسبهٔ مسیر خطایی رخ داد</string>
+    <string name="error_calculating_route_occured">در حین محاسبهٔ مسیر خطایی رخ داد</string>
 	<string name="empty_route_calculated">خطا: مسیر محاسبه‌شده تُهی است</string>					
 	<string name="new_route_calculated_dist">مسیر جدید؛ مسافت</string>
 	<string name="arrived_at_destination">به مقصد خود رسیدید</string>
@@ -415,9 +412,8 @@
     <string name="route_roundabout">میدان: از خروجی %1$d خارج شوید و بروید</string>
 	
 	<string name="plugins_screen">افزونه‌ها</string>
-	
-	<string name="prefs_plugins_descr">افزونه‌ها تنظیمات پیشرفته و قابلیت‌های بیشتری را فعال می‌کنند.</string>
-	<string name="prefs_plugins">افزونه‌ها</string>
+
+    <string name="prefs_plugins">افزونه‌ها</string>
 	<string name="debugging_and_development">توسعهٔ OsmAnd</string>
 	<string name="send_files_to_osm">فایل‌های GPX به OSM ارسال شوند؟</string>
 	<string name="gpx_visibility_txt">محرمانگی</string>
@@ -654,14 +650,11 @@
 	<string name="select_index_file_to_download">چیزی پیدا نشد. اگر نمی‌توانید ناحیهٔ خود را پیدا کنید، خودتان آن را بسازید (http://osmand.net را ببینید).</string>
 	<string name="local_indexes_cat_tile">نقشه‌های آنلاین و کاشی‌های ذخیره‌شده</string>
 	<string name="map_online_data">نقشه‌ها و کاشی‌های آنلاین</string>
-	<string name="map_online_data_descr">از نقشه‌های آنلاین استفاده کنید (کاشی‌های نقشه را دانلود و روی کارت حافظه ذخیره کنید).</string>
-	<string name="shared_string_online_maps">نقشه‌های آنلاین</string>
-	<string name="online_map_settings_descr">منبع نقشه‌های آنلاین یا کاشی‌های ذخیره‌شده را تنظیم کنید.</string>
-	
-	<string name="vector_maps_may_display_faster_on_some_devices">نقشه‌های بُرداری معمولاً زودتر نمایش داده می‌شوند. شاید روی برخی دستگاه‌ها خوب کار نکند.</string>
-	<string name="test_voice_prompts">امتحان‌کردن پیام‌های صوتی</string>    
-	<string name="switch_to_raster_map_to_see">برای این مکان هیچ نقشهٔ بُرداری آفلاینی وجود ندارد. نقشهٔ موردنظرتان را از قسمت تنظیمات (مدیریت فایل‌های نقشه) دانلود کنید یا اینکه از نقشه‌های آنلاین استفاده کنید (برای این کار افزونهٔ نقشه‌های آنلاین را فعال کنید).</string>
-	<string name="no_info">بدون اطلاعات</string>
+    <string name="shared_string_online_maps">نقشه‌های آنلاین</string>
+
+    <string name="vector_maps_may_display_faster_on_some_devices">نقشه‌های بُرداری معمولاً زودتر نمایش داده می‌شوند. شاید روی برخی دستگاه‌ها خوب کار نکند.</string>
+	<string name="test_voice_prompts">امتحان‌کردن پیام‌های صوتی</string>
+    <string name="no_info">بدون اطلاعات</string>
 	<string name="direction_style_clockwise">ساعت‌سو (۱۲سویه)</string>
 	<string name="settings_direction_style">شیوهٔ بیان جهت</string>
 	<string name="settings_direction_style_descr">مشخص کنید در هنگام حرکت، جهت‌ها به چه شیوه‌ای بیان شوند.</string>
@@ -721,8 +714,7 @@
 	<string name="auto_follow_location_enabled">نمای نقشه خودکار-مرکز است.</string>
 	<string name="pref_vector_rendering">تنظیمات مربوط به رندرکنندهٔ بُرداری</string>
 	<string name="pref_overlay">لایهٔ رویی/لایهٔ زیری</string>
-	<string name="pref_raster_map">تنظیمات منبع نقشه</string>
-	<string name="pref_vector_map">تنظیمات نقشهٔ بُرداری</string>
+    <string name="pref_vector_map">تنظیمات نقشهٔ بُرداری</string>
 	
 	<string name="poi_query_by_name_matches_categories">چندین دسته‌بندی POI مطابق با تقاضای شما پیدا شد:</string>
 	<string name="data_to_search_poi_not_available">داده‌های محلی برای جست‌وجوی POI وجود ندارد.</string>
@@ -763,12 +755,10 @@
 	<string name="shared_string_none">هیچ‌کدام</string>
 	<string name="map_overlay">نقشهٔ رویی</string>
 	<string name="map_overlay_descr">نقشهٔ رویی را انتخاب کنید.</string>
-	<string name="tile_source_already_installed">نقشه قبلاً نصب شده است، تنظیمات به‌روز خواهد شد.</string>
-	<string name="internet_not_available">برای این عملیات ارتباط اینترنتی لازم است ولی اکنون وجود ندارد.</string>
+    <string name="internet_not_available">برای این عملیات ارتباط اینترنتی لازم است ولی اکنون وجود ندارد.</string>
 	<string name="install_more">نصب بیشتر…</string>
-	<string name="level_to_switch_vector_raster_descr">کمترین زوم برای استفاده از نقشه‌های بُرداری.</string>
-	
-	<string name="error_doing_search">در هنگام جست‌وجوی آفلاین خطایی رخ داد.</string>
+
+    <string name="error_doing_search">در هنگام جست‌وجوی آفلاین خطایی رخ داد.</string>
 	
 	<string name="system_locale">سیستم</string>
 	<string name="incomplete_locale">ناقص</string>
@@ -796,8 +786,7 @@
 	<string name="shared_string_io_error">خطای ورودی/خروجی رخ داد</string>
 	<string name="km">ک‌م</string>
 	<string name="m">متر</string>
-	<string name="map_tile_source">منبع نقشهٔ کاشی‌مانند</string>
-	<string name="mark_point">هدف</string>
+    <string name="mark_point">هدف</string>
 	
 	
 	
@@ -841,8 +830,7 @@
     <string name="route_from">از:</string>
     <string name="incremental_search_building">جست‌وجوی حرف‌به‌حرف نام ساختمان‌ها</string>
 	<string name="incremental_search_street">جست‌وجوی حرف‌به‌حرف نام خیابان‌ها</string>
-	<string name="reload_tile">بارگیری مجدد کاشی</string>
-	<string name="save_track_to_gpx">ضبط‌کردن خودکار مسیر هنگام راهبری</string>
+    <string name="save_track_to_gpx">ضبط‌کردن خودکار مسیر هنگام راهبری</string>
 	
 	<string name="loading_postcodes">بارگیری کدهای پستی…</string>
 	<string name="converting_names">در حال تبدیل اسامی بومی/انگلیسی…</string>
@@ -856,8 +844,7 @@
 	<string name="router_service">سرویس مسیریابی</string>
 	<string name="sd_dir_not_accessible">پوشهٔ ذخیره‌سازی روی کارت SD قابل‌دسترسی نیست!</string>
 	<string name="router_service_descr">یکی از سرویس‌های مسیریابی آنلاین یا آفلاین را انتخاب کنید.</string>
-	<string name="max_level_download_tile_descr">حداکثر زوم را برای دانلود کاشی‌های آنلاین نقشه انتخاب کنید.</string>
-	<string name="search_osm_nominatim">جست‌وجوی آنلاین با استفاده از OSM Nominatim</string>
+    <string name="search_osm_nominatim">جست‌وجوی آنلاین با استفاده از OSM Nominatim</string>
 	<string name="uploading">در حال آپلود…</string>
 	<string name="uploading_data">در حال آپلود داده‌ها…</string>
 	<string name="shared_string_clear_all">پاک‌کردن همه</string>
@@ -943,16 +930,14 @@
 	<string name="voice_is_not_available_title">راهنمای صوتی انتخاب نشده</string>
 	<string name="download_files_question">آیا {0} فایل دانلود شود ({1} مگابایت)؟</string>
 	<string name="filter_existing_indexes">دانلود شد</string>
-	<string name="tiles_to_download_estimated_size">در زوم {0} تعداد {1} کاشی دانلود می‌شود ({2} مگابایت)</string>
-	<string name="maps_could_not_be_downloaded">این نقشه قابل‌دانلود نیست</string>
+    <string name="maps_could_not_be_downloaded">این نقشه قابل‌دانلود نیست</string>
 	<string name="continuous_rendering">رندرکردن مداوم</string>
 	<string name="rendering_exception">هنگام رندرکردن ناحیهٔ انتخاب‌شده خطایی رخ داد</string>
 	<string name="poi_context_menu_website">نشان‌دادن وبسایت این مکان</string>
 	<string name="poi_context_menu_call">نشان‌دادن تلفن این مکان</string>
 	<string name="use_high_res_maps">نمایش با تفکیک‌پذیری بالا</string>
-	<string name="use_high_res_maps_descr">کاشی‌های نقشه را در نمایشگرهای با تراکمِ بالا نکِش و محو یا کدر نکن.</string>
-	
-	<string name="context_menu_item_search_transport">جست‌وجو در حمل‌ونقل عمومی</string>
+
+    <string name="context_menu_item_search_transport">جست‌وجو در حمل‌ونقل عمومی</string>
 	<string name="transport_searching_transport">نتایج حمل‌ونقل (بدون مقصد):</string>
 	<string name="transport_searching_route">نتایج حمل‌ونقل ({0} تا مقصد):</string>
 	
@@ -968,15 +953,11 @@
 	
 	
 	<string name="downloading_build">در حال دانلود ساخت…</string>
-	<string name="reading_cached_tiles">در حال خواندن کاشی‌های ذخیره‌شده…</string>
-	<string name="version_index_is_big_for_memory">نمایهٔ «{0}» در حافظه جای نگرفت</string>
+    <string name="version_index_is_big_for_memory">نمایهٔ «{0}» در حافظه جای نگرفت</string>
 	<string name="version_index_is_not_supported">نسخهٔ نمایهٔ «{0}» پشتیبانی نمی‌شود</string>
-	
-	
-	<string name="osmand_routing_experimental">مسیریابی آفلاین OsmAnd یک ویژگی آزمایشی است که برای مسیرهای بیش از ۲۰ کیلومتر کارآیی ندارد.
-\n
-\nسرویس مسیریابی موقتاْ به سرویس آنلاین CloudMade تغییر کرد.</string>
-	<string name="specified_dir_doesnt_exist">پوشهٔ موردنظر پیدا نشد.</string>
+
+
+    <string name="specified_dir_doesnt_exist">پوشهٔ موردنظر پیدا نشد.</string>
 	
 	<string name="osmand_net_previously_installed">یک نسخهٔ قدیمی از OsmAnd نصب است. همهٔ داده‌های آفلاین در این نسخهٔ جدید هم پشتیبانی می‌شوند. اما باید نقاط برگزیده را ابتدا با نسخهٔ قبلی صادر کنید و سپس در این نسخه وارد کنید.</string>
 	<string name="build_installed">ساخت {0} با موفقیت نصب شد ({1}).</string>
@@ -999,13 +980,8 @@
 
 
     <string name="asap">دراسرع‌وقت</string>
-	<string name="osmand_rastermaps_plugin_description">با استفاده از این افزونه به انواع مختلفی از نقشه‌های آنلاین (کاشی‌مانند یا رَستر) دسترسی پیدا می‌کنید. این نقشه‌ها از کاشی‌های پیش‌فرض OpenStreetMap (مانند مَپنیک) تا تصاویر ماهواره‌ای و لایه‌های خاص مانند نقشه‌های آب‌و‌هوایی، هواشناسی، جغرافیایی و لایه‌های تپه‌ماهوری و... را در بر می‌گیرد. 
-\n 
-\nهرکدام از این نقشه‌ها هم به‌عنوان نقشهٔ پایه و هم به‌عنوان لایهٔ رویی یا زیری برای لایهٔ پایه (مثلاً نقشه‌های آفلاین و استاندارد OsmAnd) قابل‌نمایش هستند. برای اینکه لایهٔ زیری را نمایان‌تر کنید می‌توانید اجزای خاصی را در نقشه‌های بُرداری OsmAnd از طریق منوی «پیکربندی نقشه» مخفی کنید. 
-\n 
-\nنقشه‌های کاشی‌مانند مستقیماً از طریق منابع آنلاین قابل‌دریافت هستند. همچنین می‌توانید آن‌ها را به‌صورت پایگاه داده SQLite برای استفادهٔ آفلاین آماده کنید و سپس در پوشهٔ دیتای OsmAnd قرار دهید. نرم‌افزارهای مختلفی برای انجام این کار وجود دارد.</string>
-	
-	<string name="osmand_accessibility_description">این افزونه امکانات قابلیت‌دسترسی (accessibility) در دستگاهتان را مستقیماً در OsmAnd به‌کار می‌گیرد و تسهیلاتی را در اختیارتان می‌گذارد؛ مانند تنظیم‌کردن سرعت گفتار موتور صوتی، خوانش متن (مثل اعلام موقعیت شما)، پیمایش صفحه به‌کمک صفحهٔ جهت‌دار و استفاده از توپک برای تنظیم بزرگ‌نمایی.</string>
+
+    <string name="osmand_accessibility_description">این افزونه امکانات قابلیت‌دسترسی (accessibility) در دستگاهتان را مستقیماً در OsmAnd به‌کار می‌گیرد و تسهیلاتی را در اختیارتان می‌گذارد؛ مانند تنظیم‌کردن سرعت گفتار موتور صوتی، خوانش متن (مثل اعلام موقعیت شما)، پیمایش صفحه به‌کمک صفحهٔ جهت‌دار و استفاده از توپک برای تنظیم بزرگ‌نمایی.</string>
 	
 	
 	
@@ -1068,8 +1044,7 @@
 	<string name="overlay_transparency">شفافیت لایهٔ رویی</string>
 	<string name="map_transparency_descr">شفافیت نقشهٔ پایه را تغییر دهید.</string>
 	<string name="map_transparency">شفافیت نقشهٔ پایه</string>
-	<string name="select_tile_source_to_install">نقشه‌ها (کاشی) را برای نصب یا به‌روزرسانی انتخاب کنید.</string>
-	<string name="level_to_switch_vector_raster">کمترین سطح زوم بُرداری</string>
+    <string name="level_to_switch_vector_raster">کمترین سطح زوم بُرداری</string>
 	
 	
 	<string name="search_offline_geo_error">نشانی جغرافیایی \'%s\' قابل‌تجزیه نیست.</string>
@@ -1134,23 +1109,14 @@
 	<string name="about_version">نسخه:</string>
     <string name="shared_string_about">درباره</string>
     <string name="about_settings_descr">دربارهٔ نسخه، گواهی‌ها، اعضای پروژه</string>
-    
-    
-    <string name="local_index_tile_data_zooms">زوم‌های دانلود‌شده: %1$s</string>
+
+
     <string name="local_index_tile_data_expire">انقضا (به دقیقه): %1$s</string>
-    <string name="local_index_tile_data_downloadable">قابل‌دانلود: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">حداکثر زوم: %1$s</string>
-    <string name="local_index_tile_data_minzoom">کمترین زوم: %1$s</string>
     <string name="local_index_tile_data_name">منبع کاشی‌ها: %1$s</string>
-    <string name="edit_tilesource_successfully">منبع کاشی %1$s ذخیره شد</string>
     <string name="edit_tilesource_maxzoom">بیشترین زوم</string>
-    <string name="edit_tilesource_expiration_time">انقضا (به دقیقه)</string>
     <string name="edit_tilesource_minzoom">کمترین زوم</string>
-    <string name="edit_tilesource_choose_existing">انتخاب از بین موارد موجود…</string>
     <string name="maps_define_edit">تعریف/ویرایش…</string>
 	<string name="driving_region">منطقهٔ رانندگی</string>
-	<string name="edit_tilesource_elliptic_tile">مرکارتور بیضوی</string>
-    <string name="edit_tilesource_url_to_load">نشانی اینترنتی</string>
 
     <string name="map_magnifier">ذره‌بین نقشه</string>
     <string name="base_world_map">نقشهٔ جهانی پایه</string>

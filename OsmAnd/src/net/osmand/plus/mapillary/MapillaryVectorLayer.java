@@ -23,7 +23,6 @@ import net.osmand.data.RotatedTileBox;
 import net.osmand.map.ITileSource;
 import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.R;
-import net.osmand.plus.rastermaps.OsmandRasterMapsPlugin;
 import net.osmand.plus.resources.ResourceManager;
 import net.osmand.plus.views.ContextMenuLayer.IContextMenuProvider;
 import net.osmand.plus.views.MapTileLayer;
@@ -127,7 +126,7 @@ class MapillaryVectorLayer extends MapTileLayer implements MapillaryLayer, ICont
 		int dzoom = nzoom - TILE_ZOOM;
 		int div = (int) Math.pow(2.0, dzoom);
 
-		boolean useInternet = (OsmandPlugin.getEnabledPlugin(OsmandRasterMapsPlugin.class) != null || OsmandPlugin.getEnabledPlugin(MapillaryPlugin.class) != null) &&
+		boolean useInternet = OsmandPlugin.getEnabledPlugin(MapillaryPlugin.class) != null &&
 				settings.USE_INTERNET_TO_DOWNLOAD_TILES.get() && settings.isInternetConnectionAvailable() && map.couldBeDownloadedFromInternet();
 
 		Map<String, GeometryTile> tiles = new HashMap<>();

@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
 
-    <string name="switch_to_raster_map_to_see">Off-line vektorové mapy toto místo neobsahují. Mapová data můžete stáhnout v Nastavení (Stáhnout mapy), nebo se přepněte na on-line mapy (vyžaduje modul „On-line mapy“).</string>
     <string name="send_files_to_osm">Nahrát GPX soubory do OSM?</string>
     <string name="gpx_visibility_txt">Viditelnost</string>
     <string name="gpx_tags_txt">Tagy</string>
@@ -133,7 +132,6 @@
     <string name="auto_follow_location_enabled">Automatické sledování pozice je zapnuto.</string>
     <string name="pref_vector_rendering">Nastavení vektorového vykreslovače</string>
     <string name="pref_overlay">Překryvná/podkresová vrstva</string>
-    <string name="pref_raster_map">Nastavení zdroje mapy</string>
     <string name="pref_vector_map">Nastavení vektorové mapy</string>
     <string name="delete_confirmation_msg">Opravdu chcete smazat %1$s?</string>
     <string name="city_type_suburb">Předměstí</string>
@@ -244,7 +242,6 @@
     <string name="poi_filter_for_tourists">Pro turisty</string>
     <string name="poi_filter_fuel">Čerpací stanice</string>
     <string name="poi_filter_namefinder">On-line POI filtr „NameFinder“</string>
-    <string name="reading_cached_tiles">Načítání uložených dlaždic…</string>
     <string name="version_index_is_big_for_memory">Index \'\'{0}\'\' se nevejde do paměti</string>
     <string name="version_index_is_not_supported">Verze indexu \'\'{0}\'\' není podporována</string>
     <string name="osmand_net_previously_installed">Máte nainstalovanou předchozí verzi programu. Všechna off-line data budou podporována novou verzí, avšak oblíbená místa byste měli exportovat ve staré verzi a po aktualizaci importovat do nové verze.</string>
@@ -288,11 +285,8 @@
     <string name="shared_string_none">Žádná</string>
     <string name="map_overlay">Překryvná mapa</string>
     <string name="map_overlay_descr">Vyberte překryvnou mapu.</string>
-    <string name="tile_source_already_installed">Mapa je již nainstalovaná, aktualizuji nastavení.</string>
-    <string name="select_tile_source_to_install">Vyberte mapy k instalaci nebo aktualizaci.</string>
     <string name="internet_not_available">Pro tuto akci je potřebné internetové připojení, ale není dostupné.</string>
     <string name="install_more">Instalovat další…</string>
-    <string name="level_to_switch_vector_raster_descr">Zobrazovat vektorové mapy od minimálního zvětšení.</string>
     <string name="level_to_switch_vector_raster">Zvětšení vektorové mapy</string>
     <string name="error_doing_search">Při off-line hledání došlo k chybě.</string>
     <string name="search_offline_geo_error">Nemohu rozpoznat geo intent:\'%s\'.</string>
@@ -319,11 +313,8 @@
     <string name="add_waypoint_dialog_added">Cíl \'\'{0}\'\' byl přidán</string>
     <string name="add_waypoint_dialog_title">Přidat bod na zaznamenávanou GPX trasu</string>
     <string name="context_menu_item_add_waypoint">Přidat bod na GPX trasu</string>
-    
-    
-    <string name="osmand_routing_experimental">Off-line navigace je experimentální a funguje jen pro vzdálenosti do 20 km.
 
-Navigační služba je dočasně přepnuta na on-line CloudMade.</string>
+
     <string name="specified_dir_doesnt_exist">Nemohu najít zadaný adresář.</string>
     <string name="application_dir">Adresář pro data</string>
     <string name="gps_status_app_not_found">Aplikace pro zobrazení stavu GPS není nainstalovaná. Hledat v Obchodě?</string>
@@ -344,7 +335,6 @@ Navigační služba je dočasně přepnuta na on-line CloudMade.</string>
     <string name="shared_string_refresh">Načíst znovu</string>
     <string name="fast_route_mode">Nejrychlejší trasa</string>
     <string name="fast_route_mode_descr">Zapněte pro výpočet nejrychlejší trasy nebo vypněte pro ekonomickou trasu.</string>
-    <string name="tiles_to_download_estimated_size">Pro zvětšení {0} je třeba stáhnout {1} mapových dlaždic, celkem {2} MB</string>
     <string name="shared_string_download_map">Stáhnout mapu</string>
     <string name="select_max_zoom_preload_area">Vyberte maximální zvětšení stahovaných map</string>
     <string name="maps_could_not_be_downloaded">Tuto mapu nelze stáhnout</string>
@@ -363,7 +353,6 @@ Navigační služba je dočasně přepnuta na on-line CloudMade.</string>
     <string name="phone">telefon</string>
     <string name="download_type_to_filter">vyhledat</string>
     <string name="use_high_res_maps">Vysoké rozlišení</string>
-    <string name="use_high_res_maps_descr">Použít mapu s vysokým rozlišením pro jemné displeje.</string>
     <string name="unknown_location">Pozice ještě není známa</string>
     <string name="context_menu_item_search_transport">Hledat veřejnou dopravu</string>
     <string name="transport_searching_transport">Hledání dopravy (žádný cíl):</string>
@@ -499,7 +488,6 @@ Navigační služba je dočasně přepnuta na on-line CloudMade.</string>
     <string name="search_offline_address">Hledání off-line</string>
     <string name="search_online_address">Hledat on-line</string>
     <string name="max_level_download_tile">Maximální zvětšení</string>
-    <string name="max_level_download_tile_descr">Zadejte nejvyšší úroveň přiblížení mapy, kdy budou stahované dlaždice.</string>
     <string name="route_general_information">Celková vzdálenost %1$s, doba cesty %2$d h %3$d min.</string>
     <string name="router_service_descr">Vyberte online nebo offline navigační službu.</string>
     <string name="router_service">Navigace</string>
@@ -563,7 +551,6 @@ Navigační služba je dočasně přepnuta na on-line CloudMade.</string>
     <string name="save_track_to_gpx_descrp">Během navigace budou GPX trasy automaticky ukládány do adresáře s trasami.</string>
     <string name="save_track_to_gpx">Automaticky zaznamenat trasu během navigace</string>
     <string name="update_tile">Aktualizovat mapu</string>
-    <string name="reload_tile">Načíst znovu dlaždici</string>
     <string name="mark_point">Cíl</string>
     <string name="shared_string_add_to_favorites">Přidat mezi oblíbené</string>
     <string name="use_english_names_descr">Přepíná mezi místními a anglickými názvy.</string>
@@ -579,13 +566,10 @@ Navigační služba je dočasně přepnuta na on-line CloudMade.</string>
     <string name="map_view_3d">3D Mapa</string>
     <string name="show_poi_over_map_description">Zobrazit naposledy vybrané POI jako vrstvu na mapě.</string>
     <string name="show_poi_over_map">Zobrazit vrstvu POI</string>
-    <string name="map_tile_source_descr">Zvolte zdroj on-line dlaždic nebo dlaždic v mezipaměti.</string>
-    <string name="map_tile_source">Zdroj rastrových map</string>
     <string name="map_source">Zdroj map</string>
     <string name="use_internet">Používat internet</string>
     <string name="show_location">Zobrazit mou polohu</string>
     <string name="show_gps_coordinates_text">Zobrazit GPS souřadnice na mapě</string>
-    <string name="use_internet_to_download_tile">Stahovat chybějící části mapy z internetu</string>
     <string name="app_description">Navigační aplikace</string>
     <string name="shared_string_exit">Konec</string>
     <string name="search_button">Hledat</string>
@@ -670,7 +654,6 @@ Navigační služba je dočasně přepnuta na on-line CloudMade.</string>
     <string name="edit_filter_delete_dialog_title">Smazat vybraný filtr?</string>
     <string name="edit_filter_delete_message">Filtr {0} byl smazán</string>
     <string name="edit_filter_create_message">Filtr {0} byl vytvořen</string>
-    <string name="offline_navigation_not_available">Off-line navigace OsmAnd je dočasně nedostupná.</string>
     <string name="left_side_navigation">Levostranný provoz</string>
     <string name="left_side_navigation_descr">Zvolte pokud jste v zemi, kde se jezdí vlevo.</string>
     <string name="unknown_from_location">Startovní bod navigace ještě není zvolen</string>
@@ -678,19 +661,11 @@ Navigační služba je dočasně přepnuta na on-line CloudMade.</string>
     <string name="basemap_was_selected_to_download">Pro správnou funkci aplikace je třeba základní mapa. Proto byla automaticky vybrána ke stažení.</string>
     <string name="map_online_plugin_is_not_installed">Pro výběr různých zdrojů map povolte modul „On-line mapy“</string>
     <string name="map_online_data">On-line mapy a dlaždice</string>
-    <string name="map_online_data_descr">Používat on-line mapy (ukládat dlaždice do mezipaměti na SD kartě).</string>
     <string name="shared_string_online_maps">On-line mapy</string>
-    <string name="online_map_settings_descr">Nastavení rastrových překryvných nebo podkresových map.</string>
-    <string name="osmand_rastermaps_plugin_description">S tímto modulem můžete použít mnoho druhů on-line map (tzv. dlaždicové nebo rastrové mapy), od předdefinovaných OpenStreetMap dlaždic (jako Mapnik) až po satelitní snímky a speciální vrstvy jako mapy počasí, klimatické mapy, geologické mapy, stínované vrstvy, atd.
-\n
-\nVšechny tyto mapy mohou být použity jako hlavní (základní) mapa na obrazovce OsmAnd nebo jako překryvná popř. podkladová mapa k jiné základní mapě (např. standardní OsmAnd off-line mapě). Pro zlepšení viditelnosti podkladových map je možné vypnout některé objekty z vektorových map OsmAnd, přes menu \'Nastavení mapy\'.
-\n
-\nDlaždicové mapy můžete získat přímo z on-line zdrojů nebo si je můžete připravit pro off-line použití (zkopírovat ručně do datového adresáře OsmAnd) jako SQLite databázi, která může být vytvořena mnoha programy pro přípravu map.</string>
     <string name="osmand_background_plugin_description">Zobrazí nastavení na povolení záznamu trasy a navigace v úsporném režimu (při vypnuté obrazovce) pravidelným probouzením GPS zařízení.</string>
     <string name="osmand_accessibility_description">Tento modul zobrazí nastavení pro speciální funkce ulehčení přístupu přímo v OsmAnd. Například je možné měnit rychlost TTS hlasu, použít trackball na přibližování nebo například použít hlasové předčítání pro oznamování polohy.</string>
     <string name="osmand_development_plugin_description">Tento modul zobrazí nastavení vývojových a ladících funkcí, jako jsou simulace navigace, informace o rychlosti vykreslování nebo hlasová oznámení. Tato nastavení jsou určené pro vývojáře a nejsou potřebné pro běžné použití.</string>
     <string name="plugins_screen">Správce modulů</string>
-    <string name="prefs_plugins_descr">Moduly umožňují zapnout pokročilé nastavení a přídavné funkce.</string>
     <string name="prefs_plugins">Moduly</string>
     <string name="osm_editing_plugin_description">Pomocí tohoto modulu může být OsmAnd použit na přispívání do OSM, například vytvářením nebo úpravami POI, vytvářením nebo komentováním OSM poznámek a přispíváním zaznamenanými GPX soubory. OSM je celosvětový komunitní projekt mapování. Pro více detailů se podívejte na https://openstreetmap.org. Aktivní účast je vítaná a příspěvky mohou být vytvářené přímo v OsmAnd, jestliže zadáte své osobní přihlašovací údaje do OSM.</string>
     <string name="vector_maps_may_display_faster_on_some_devices">Akcelerace vykreslování pomocí \'Android native\' knihovny. Vektorové mapy se zpravidla vykreslují rychleji, pokud je tato možnost zaškrtnuta. Avšak na některých zařízeních tato funkce nemusí fungovat.</string>
@@ -979,30 +954,21 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="about_version">Verze:</string>
     <string name="shared_string_about">O aplikaci</string>
     <string name="about_settings_descr">Informace o verzi, licenci, členech projektu</string>
-    <string name="local_index_tile_data_maxzoom">Maximální zvětšení: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Minimální zvětšení: %1$s</string>
     <string name="edit_tilesource_maxzoom">Maximální zvětšení</string>
     <string name="edit_tilesource_minzoom">Minimální zvětšení</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Vybrat existující…</string>
-    <string name="local_index_tile_data_downloadable">Ke stažení: %1$s</string>
     <string name="maps_define_edit">Vytvořit/Upravit…</string>
-    <string name="edit_tilesource_expiration_time">Doba platnosti (min)</string>
     <string name="driving_region_descr">Vyberte dopravní oblast: USA, Evropa, Británie, Asie a další.</string>
     <string name="driving_region">Dopravní oblast</string>
     <string name="local_index_tile_data_expire">Doba platnosti (minut): %1$s</string>
     <string name="map_widget_fps_info">Snímků za sekundu (ladění)</string>
-    <string name="edit_tilesource_elliptic_tile">Eliptický mercator</string>
     <string name="base_world_map">Základní mapa světa</string>
     <string name="map_magnifier">Lupa mapy</string>
     <string name="auto_zoom_none">Bez automatického přibližování</string>
     <string name="auto_zoom_farthest">Na velkou vzdálenost</string>
     <string name="auto_zoom_close">Na malou vzdálenost</string>
     <string name="auto_zoom_far">Na střední vzdálenost</string>
-    
-    <string name="local_index_tile_data_zooms">Stažené přiblížení: %1$s</string>
+
     <string name="local_index_tile_data_name">Data dlaždic: %1$s</string>
-    <string name="edit_tilesource_successfully">Zdroj dlaždic %1$s byl úspěšně uložen</string>
     <string name="shared_string_remember_my_choice">Zapamatovat mou volbu</string>
     <string name="shared_string_and">a</string>
     <string name="shared_string_or">nebo</string>

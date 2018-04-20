@@ -5,9 +5,8 @@
 	<string name="debugging_and_development">OsmAnd 개발</string>
 	<string name="native_rendering">기본 렌더링</string>
 	
-	<string name="test_voice_prompts">음성 안내 테스트</string>    
-	<string name="switch_to_raster_map_to_see">이 위치에 대한 오프라인 벡터맵이 존재하지 않습니다. [설정-&gt;데이터 관리] 메뉴에서 다운로드하거나 온라인 맵으로 변경할 수 있습니다.</string>
-    
+	<string name="test_voice_prompts">음성 안내 테스트</string>
+
     <string name="send_files_to_osm">GPX 파일을 OSM으로 전송하시겠습니까?</string>
     <string name="gpx_visibility_txt">가시성</string>
     <string name="gpx_tags_txt">태그</string>
@@ -150,8 +149,7 @@
 	
 	<string name="pref_vector_rendering">벡터 렌더러(renderer) 특정 옵션들</string>
 	<string name="pref_overlay">오버레이/언더레이</string>
-	<string name="pref_raster_map">지도 소스 설정</string>
-	<string name="pref_vector_map">벡터 지도 설정</string>
+    <string name="pref_vector_map">벡터 지도 설정</string>
 	<string name="delete_confirmation_msg">%1$s 를 삭제하시겠습니까?</string>
 	
 	<string name="animate_route_off">모의주행 정지</string>
@@ -276,16 +274,11 @@
 	<string name="layer_overlay">오버레이 맵…</string>
 	<string name="map_overlay">오버레이 맵</string>
 	<string name="map_overlay_descr">오버레이 맵을 선택합니다</string>
-	<string name="tile_source_already_installed">맵이 이미 설치되어, 설정이 업데이트될 것입니다</string>
-	<string name="select_tile_source_to_install">설치할 또는 업데이트할 (타일) 맵을 선택합니다</string>
-	<string name="internet_not_available">인터넷 연결이 필요하지만 연결되지 않았습니다</string>
+    <string name="internet_not_available">인터넷 연결이 필요하지만 연결되지 않았습니다</string>
 	<string name="install_more">추가 설치…</string>
 
-	
-	
 
-	<string name="level_to_switch_vector_raster_descr">벡터 맵을 사용하기 위한 최소 줌 레벨</string>
-	<string name="level_to_switch_vector_raster">최소 벡터 줌 레벨</string>
+    <string name="level_to_switch_vector_raster">최소 벡터 줌 레벨</string>
 
 	
 	
@@ -369,14 +362,11 @@
 	<string name="poi_filter_for_tourists">여행자</string>
 	<string name="poi_filter_fuel">연료</string>
 	<string name="poi_filter_namefinder">온라인 이름찾기</string>
-	<string name="reading_cached_tiles">캐쉬 타일 읽기…</string>
-	<string name="version_index_is_big_for_memory">인덱스 \'\'{0}\'\' 가 메모리에 적합하지 않습니다</string>
+    <string name="version_index_is_big_for_memory">인덱스 \'\'{0}\'\' 가 메모리에 적합하지 않습니다</string>
 	<string name="version_index_is_not_supported">인덱스 \'\'{0}\'\' 버전은 지원되지 않습니다</string>
 
-	
-	
-	<string name="osmand_routing_experimental">OsmAnd 오프라인 라우팅은 실험적인 기능이며 20 km 이상의 거리에서는 동작하지 않습니다.\n\n라우팅 서비스는 일시적으로 온라인서비스인 CloudMade로 변경합니다.</string>
-	<string name="specified_dir_doesnt_exist">지정한 폴더를 찾을 수 없습니다.</string>
+
+    <string name="specified_dir_doesnt_exist">지정한 폴더를 찾을 수 없습니다.</string>
 	<string name="application_dir">데이터 저장 폴더</string>
 	
 
@@ -405,8 +395,7 @@
 	<string name="filter_existing_indexes">다운로드된 것들로 필터링</string>
 	<string name="fast_route_mode">가장 빠른 경로</string>
 	<string name="fast_route_mode_descr">"가장 빠른 경로를 활성화하거나 or 가장 짧은 경로를 비활성화합니다 "</string>
-	<string name="tiles_to_download_estimated_size">줌에서 {0} 다운로드 {1} 타일 ({2} MB)</string>
-	<string name="shared_string_download_map">맵 다운로드</string>
+    <string name="shared_string_download_map">맵 다운로드</string>
 	<string name="select_max_zoom_preload_area">가시 영역을 미리 로드하기 위한 최대 줌 선택</string>
 	<string name="maps_could_not_be_downloaded">맵을 다운로드할 수 없습니다</string>
 	
@@ -425,8 +414,7 @@
 	<string name="phone">전화</string>
 	<string name="download_type_to_filter">필터 종류</string>
 	<string name="use_high_res_maps">고해상도 지도 표시</string>
-	<string name="use_high_res_maps_descr">고해상도 장치를 위해 고해상도 지도를 사용합니다</string>
-	<string name="unknown_location">위치는 아직 알 수 없음</string>
+    <string name="unknown_location">위치는 아직 알 수 없음</string>
 	
 	<string name="context_menu_item_search_transport">대중교통 검색</string>
 	<string name="transport_searching_transport">대중교통 검색결과 (도착지 없음):</string>
@@ -571,8 +559,7 @@
 	<string name="search_offline_address">오프라인 검색</string>
 	<string name="search_online_address">온라인 검색</string>
 	<string name="max_level_download_tile">최대 온라인 줌</string>
-	<string name="max_level_download_tile_descr">다운로드할 최대 줌 레벨을 선택하세요</string>
-	<string name="route_general_information">전체거리 %1$s, 여행시간 %2$d h %3$d m.</string>
+    <string name="route_general_information">전체거리 %1$s, 여행시간 %2$d h %3$d m.</string>
 	<string name="router_service_descr">온라인 또는 오프라인 라우팅 서비스를 선택합니다</string>
 	<string name="router_service">운행 서비스</string>
 	<string name="sd_dir_not_accessible">SD 카드에 있는 데이터 저장 폴더에 접근할 수 없습니다!</string>
@@ -643,7 +630,6 @@
     <string name="save_track_to_gpx_descrp">운행하는 동안 트랙을 트랙폴더에 저장합니다</string>
     <string name="save_track_to_gpx">운행하는 동안 트랙을 GPX파일로 기록</string>
     <string name="update_tile">맵 업데이트</string>
-    <string name="reload_tile">타일 재로드</string>
     <string name="mark_point">목적지</string>
     
     
@@ -663,15 +649,12 @@
     
     <string name="show_poi_over_map_description">POI를 지도에 표시합니다 (최근에 선택된 필터 사용)</string>
     <string name="show_poi_over_map">POI 표시</string>
-    <string name="map_tile_source_descr">온라인소스 또는 캐시된 맵 타일 소스를 선택합니다</string>
-    <string name="map_tile_source">타일 맵 소스</string>
     <string name="map_source">지도 소스</string>
     <string name="use_internet">인터넷 사용</string>
     <string name="show_location">위치 표시</string>
     
     
     <string name="show_gps_coordinates_text">지도에 GPS 좌표 표시</string>
-    <string name="use_internet_to_download_tile">누락된 맵 타일을 다운로드하기 위해 인터넷을 사용합니다</string>
     <string name="app_description">운행 앱</string>
 
 
@@ -864,13 +847,8 @@
     <string name="about_settings_descr">버전 정보, 라이센스, 프로젝트 멤버</string>
     
     <string name="shared_string_about">소개</string>
-    <string name="local_index_tile_data_zooms">다운로드된 줌 : %1$s</string>
     <string name="local_index_tile_data_expire">만료(분) : %1$s</string>
-    <string name="local_index_tile_data_downloadable">다운로드 가능 : %1$s</string>
-    <string name="local_index_tile_data_maxzoom">최대 줌 : %1$s</string>
-    <string name="local_index_tile_data_minzoom">최소 줌 : %1$s</string>
     <string name="local_index_tile_data_name">타일 데이터 : %1$s</string>
-    <string name="edit_tilesource_successfully">타일 소스 %1$s 는 성공적으로 저장됨</string>
     <string name="edit_tilesource_maxzoom">최대 줌</string>
     <string name="edit_tilesource_minzoom">최소 줌</string>
     <string name="map_widget_fps_info">FPS 디버그 정보</string>
@@ -909,10 +887,6 @@
 	<string name="auto_zoom_close">좀 더 가깝게</string>
 	<string name="auto_zoom_far">중간 거리에</string>
 	<string name="auto_zoom_farthest">긴 거리에</string>
-	<string name="edit_tilesource_elliptic_tile">타원 메르카토르</string>
-    <string name="edit_tilesource_expiration_time">만료 (분)</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">기존 선택 …</string>
     <string name="osb_author_or_password_not_specified">설정에서 OSM 사용자 및 암호를 지정하십시오</string>
     <string name="clear_intermediate_points">경유지 지우기</string>
     <string name="keep_intermediate_points">경유지 유지</string>
@@ -1175,9 +1149,8 @@
 	<string name="navpoint_search_desc">좌표</string>
 	<string name="transport_search_desc">대중 교통 검색</string>
 	<string name="favourites_search_desc">즐겨 찾기 검색</string>
-	
-	<string name="offline_navigation_not_available">OsmAnd 오프라인 라우팅을 일시적으로 사용할 수 없습니다.</string>
-	<string name="left_side_navigation">왼쪽좌석 운전</string>
+
+    <string name="left_side_navigation">왼쪽좌석 운전</string>
 	<string name="left_side_navigation_descr">왼쪽좌석 운전 국가를 선택합니다</string>
 	
 	<string name="unknown_from_location">시작 포인트은 아직 결정되지 않았습니다</string>
@@ -1185,20 +1158,17 @@
 	<string name="basemap_was_selected_to_download">베이스맵은 적절한 앱의 작동에 필요하며, 다운로드하기 위해  베이스맵을 선택 했습니다.</string>
 	<string name="map_online_plugin_is_not_installed">다른 지도 소스를 선택하려면 온라인지도 플러그인을 활성화하세요</string>
 	<string name="map_online_data">온라인 및 타일 지도</string>
-	<string name="map_online_data_descr">온라인지도를 사용합니다 (SD 카드에 타일을 다운로드 하고 캐시합니다)</string>
-	<string name="shared_string_online_maps">온라인지도</string>
-	<string name="online_map_settings_descr">온라인 또는 캐시된 타일 지도 소스를 구성합니다</string>
-	
-	
-	<string name="osmand_accessibility_description">"이 플러그인은 기기의 accessibility 기능을 OsmAnd에 직접 제공 합니다. 예: TTS 음성 속도 조절 용이, 방향 패드 화면 운행 구성 용이,  트랙볼을 사용하여 확대/축소 컨트롤 용이,  또는 TTS 음성 피드백을 사용하여 자동으로 현재위치 발표 용이."</string>
+    <string name="shared_string_online_maps">온라인지도</string>
+
+
+    <string name="osmand_accessibility_description">"이 플러그인은 기기의 accessibility 기능을 OsmAnd에 직접 제공 합니다. 예: TTS 음성 속도 조절 용이, 방향 패드 화면 운행 구성 용이,  트랙볼을 사용하여 확대/축소 컨트롤 용이,  또는 TTS 음성 피드백을 사용하여 자동으로 현재위치 발표 용이."</string>
 	
 	
 	
 	<string name="osmand_development_plugin_description">모의 주행이나 렌더링 성능 표시와 같은 개발 및 디버깅 기능에 대한 설정을 표시합니다.</string>
 	<string name="plugins_screen">플러그인</string>
-	
-	<string name="prefs_plugins_descr">플러그인은 고급설정 및 추가기능을 활성화합니다</string>
-	<string name="prefs_plugins">플러그인</string>
+
+    <string name="prefs_plugins">플러그인</string>
 	<string name="osm_editing_plugin_description">"이 플러그인을 통해,  OSM POI 생성 및 수정,  OSM 버그 열기 및 주석달기, 기록된  GPX 파일 기부처럼 OSM에 기여를 할 수 있도록  OsmAnd을 사용할 수 있습니다. 이 기능을 사용하려면 ,개인 OSM 자격 증명이 필요합니다."</string>
 	<string name="support_new_features_descr">앱에 구현된 새로운 기능을 도울 수 있게 기부합니다</string>
 	<string name="north">북쪽</string>
@@ -1262,9 +1232,7 @@
 \n* 더 많은 액션을 보기 위해 측정위젯 클릭하기.</string>
 
 
-    <string name="osmand_rastermaps_plugin_description">"이 플러그인을 사용하면 날씨지도, 기후지도, 지질지도, 음영레이어 등과 같은 위성 영상과 특수 목적 레이어에 (Mapnik 같은) 미리 정의 된 OpenStreetMap의 타일에서, 온라인 지도(타일 또는 래스터라고도 함) 의 여러 유형의 지도에 액세스 할 수 있습니다\n↵\n이러한 지도 중 하나가 OsmAnd지도 화면에 표시하기 위해 메인 (기본)지도로 사용할 수 있다,  또는 (OsmAnd의 일반 오프라인 지도 처럼) 다른 기본 맵에 오버레이 또는 언더레이로 메인 (기본)지도로 사용할 수 있다. 지도를 상세히 볼 수 있도록 언더레이 지도를 만들려면, OsmAnd 벡터 지도의 특정 요소는 쉽게 원하는대로 \'지도 구성\' 메뉴를 통해 숨길 수 있다. ↵\n↵\n타일 맵은 온라인 소스를 통해 직접 구할 수  있다, 또는 다양한 서드파티 지도 준비 도구에 의해 만들 수 있는  SQLite 데이터베이스로서 오프라인 용 사용을 할 수 있다. (수동으로 OsmAnd의 데이터 폴더에 복사 할 수 있다).\n\n기본 맵으로 또는 오버레이/언더레이 지도로 온라인 또는 캐시 타일맵의 다양한 구성을 위한 설정을 표시합니다. 이 지도는 오프라인으로 준비하거나 OsmAnd 데이터 폴더에 복사 할 수 있습니다. "</string>
-	
-	<string name="towards">쪽으로</string>
+    <string name="towards">쪽으로</string>
 	
 	<string name="mile_per_hour">mph</string>
 	

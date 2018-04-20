@@ -39,7 +39,6 @@ import net.osmand.plus.base.OsmAndListFragment;
 import net.osmand.plus.poi.NominatimPoiFilter;
 import net.osmand.plus.poi.PoiFiltersHelper;
 import net.osmand.plus.poi.PoiUIFilter;
-import net.osmand.plus.rastermaps.OsmandRasterMapsPlugin;
 import net.osmand.plus.render.RenderingIcons;
 import net.osmand.plus.resources.ResourceManager;
 import net.osmand.util.Algorithms;
@@ -169,10 +168,6 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 				filters.add(p);
 			}
 			filters.add(poiFilters.getSearchByNamePOIFilter());
-			if (OsmandPlugin.getEnabledPlugin(OsmandRasterMapsPlugin.class) != null) {
-				filters.add(poiFilters.getNominatimPOIFilter());
-				filters.add(poiFilters.getNominatimAddressFilter());
-			}
 		}
 		return filters;
 	}

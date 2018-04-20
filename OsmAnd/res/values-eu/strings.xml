@@ -1,19 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="local_index_tile_data_zooms">Deskargatutako zoomak: %1$s</string>
-  <string name="local_index_tile_data_expire">Iraungitze epea (minutuak): %1$s</string>
-  <string name="local_index_tile_data_downloadable">Deskargagarria: %1$s</string>
-  <string name="local_index_tile_data_maxzoom">Zoom maximoa: %1$s</string>
-  <string name="local_index_tile_data_minzoom">Zoom minimoa: %1$s</string>
-  <string name="local_index_tile_data_name">Tesela datuak: %1$s</string>
-  <string name="edit_tilesource_successfully">%1$s tesela iturburua ongi gorde da</string>
-  <string name="edit_tilesource_elliptic_tile">Mercator eliptikoa</string>
-  <string name="edit_tilesource_maxzoom">Zoom max</string>
-  <string name="edit_tilesource_expiration_time">Iraungitze epea (minutuak)</string>
-  <string name="edit_tilesource_minzoom">Zoom min</string>
-  <string name="edit_tilesource_url_to_load">URL</string>
-  <string name="edit_tilesource_choose_existing">Aukeratu existitzen dena…</string>
-  <string name="maps_define_edit">Definitu/Editatu…</string>
+    <string name="local_index_tile_data_expire">Iraungitze epea (minutuak): %1$s</string>
+    <string name="local_index_tile_data_name">Tesela datuak: %1$s</string>
+    <string name="edit_tilesource_maxzoom">Zoom max</string>
+    <string name="edit_tilesource_minzoom">Zoom min</string>
+    <string name="maps_define_edit">Definitu/Editatu…</string>
   <string name="map_widget_fps_info">FPS debugeatzeko info</string>
   <string name="driving_region_descr">Aukeratu gidatze eremua: EEBB, Europa, EB, Asia edo bestelakoak.</string>
   <string name="driving_region">Gidatze eremua</string>
@@ -330,9 +321,8 @@
   <string name="navpoint_search_desc">Koordinatuak</string>
   <string name="transport_search_desc">Garraio publikoaren bilaketa</string>
   <string name="favourites_search_desc">Gogokoen bilaketa</string>
-  
-  <string name="offline_navigation_not_available">Lineaz kanpoko nabigazioa ez dago erabilgarri orain.</string>
-  <string name="left_side_navigation">Ezkerretik gidatzea</string>
+
+    <string name="left_side_navigation">Ezkerretik gidatzea</string>
   <string name="left_side_navigation_descr">Hautatu trafikoa ezkerrean duten herrialdeentzat.</string>
   
   <string name="unknown_from_location">Hasierako kokapena ez da zehaztu oraindik</string>
@@ -347,26 +337,17 @@
   <string name="index_settings_descr">Deskargatu mapak eta kudeatu zure gailuan gordetako lineaz kanpoko mapa-fitxategiak.</string>
   <string name="map_online_plugin_is_not_installed">Gaitu sareko mapen gehigarria mapen iturburu ezberdinak aukeratzeko</string>
   <string name="map_online_data">Sare eta tesela mapak</string>
-  <string name="map_online_data_descr">Erabili sareko mapak (deskargatu eta katxeatu teselak SD txartelan).</string>
-  <string name="shared_string_online_maps">Sareko mapak</string>
-  <string name="online_map_settings_descr">Konfiguratu sareko edo katxeaturiko mapen iturburuak.</string>
-  
-  
-  <string name="osmand_rastermaps_plugin_description">"Gehigarri honekin sareko (edo tesela) mapa mota ugari atzitu ditzakezu, aurrez zehaztutako OpenStreetMap teselak (adibidez Mapnik), satelite irudiak, edo erabilera zehatz baterako geruzak, hala nola, eguraldi mapak, mapa geologikoak, erliebe-itzalak eta abar.
-\n
-\n
-\nMapa guzti hauek mapa nagusi edo oinarrizko gisa ezarri daitezke OsmAnd maparen pantailan bistaratzeko, edo beste oinarrizko mapa baten  gain-azal / azpi-azal gisa (adibidez lineaz kanpoko OsmAnd mapa estandarren gainean edo azpian). Azpiko mapak ikusgaiagoak egiteko OsmAnd bektore-mapetako elementu batzuk ezkutatu daitezke \'Konfiguratu mapa\' menuaren bidez.
-\n
-\nTesela mapak zuzenean sareko iturburuetatik eskuratu daitezke, edo lineaz kanporako prestatu daitezke ere SQLite datu base gisa (eta eskuz OsmAndeko karpetan kopiatu), horretarako dauden hirugarrengoen prestaketa tresnaren bat erabiliz."</string>
-  <string name="osmand_accessibility_description">Gehigarri honek gailuaren irisgarritasun ezaugarriak OsmAnd aplikazioan eskuragarri jartzen ditu. Besteak beste TTS ahotsen hizketaren abiadura moldatzea baimentzen du, gurutzetaren bidezko nabigazioa konfiguratzea, zooma trackball bidez kontrolatzea, edo testu-ahots bihurketaren bidezko erantzuna, adibidez zure kokalekua iragartzeko.</string>
+    <string name="shared_string_online_maps">Sareko mapak</string>
+
+
+    <string name="osmand_accessibility_description">Gehigarri honek gailuaren irisgarritasun ezaugarriak OsmAnd aplikazioan eskuragarri jartzen ditu. Besteak beste TTS ahotsen hizketaren abiadura moldatzea baimentzen du, gurutzetaren bidezko nabigazioa konfiguratzea, zooma trackball bidez kontrolatzea, edo testu-ahots bihurketaren bidezko erantzuna, adibidez zure kokalekua iragartzeko.</string>
   
   
   
   <string name="osmand_development_plugin_description">Gehigarri honek garapen eta arazte ezaugarriak azalarazten ditu, ibilbide simulazioa edo pantailaren marrazketaren errendimenduaren bistaratzea, edo ahots abisuak esaterako. Ezarpen hauek garatzaileentzako dira eta erabiltzaile arruntek ez dituzte behar.</string>
   <string name="plugins_screen">Gehigarriak</string>
-  
-  <string name="prefs_plugins_descr">Gehigarriek ezarpen aurreratuak eta funtzionalitate berriak aktibatzen dituzte.</string>
-  <string name="prefs_plugins">Gehigarriak</string>
+
+    <string name="prefs_plugins">Gehigarriak</string>
   
   <string name="osm_editing_plugin_description">Gehigarri honekin OsmAnd erabili daiteke OSM ekarpenak egiteko, POI objektuak sortzea edo eraldatzea, OSM oharrak irekitzea edo komentatzea eta sortutako GPX fitxategiak bidaltzea esaterako. OSM elkarlanean egindako, domeinu publikoko mapa proiektu global bat da, xehetasun gehiagorako bisitatu https://openstreetmap.org Parte hartze aktiboa eskertzen da, eta ekarpenak OsmAnd bertatik egin daitezke, aplikazioan OSM kredentzialak zehaztuz gero.</string>
   <string name="vector_maps_may_display_faster_on_some_devices">Ziurrenik bektore mapak azkarrago kargatu. Baliteke gailu batzuetan ongi ez funtzionatzea.</string>
@@ -374,9 +355,8 @@
   <string name="debugging_and_development">OsmAnd garapena</string>
   <string name="native_rendering">Marrazte natiboa</string>
   <string name="test_voice_prompts">Probatu ahotsezko abisuak</string>
-  <string name="switch_to_raster_map_to_see">Ez dago lineaz kanpoko bektore maparik kokapen honetarako. Ezarpenetan (Kudeatu mapa-fitxategiak) deskargatu dezakezu bat edo sareko mapetara pasa zaitezke (gaitu online mapen gehigarria horretarako).</string>
-  
-  <string name="send_files_to_osm">Bidali GPX fitxategiak OSMra?</string>
+
+    <string name="send_files_to_osm">Bidali GPX fitxategiak OSMra?</string>
   <string name="gpx_visibility_txt">Ikuserraztasuna</string>
   <string name="gpx_tags_txt">Etiketak</string>
   <string name="gpx_description_txt">Deskribapena</string>
@@ -523,8 +503,7 @@ Biltegiratzean {1} MB erabiliko dira.
   <string name="auto_follow_location_enabled">Auto-zentratu ikuspegia martxan.</string>
   <string name="pref_vector_rendering">Bektore marrazlearen berezko aukerak</string>
   <string name="pref_overlay">Gain-azala / Azpi-azala</string>
-  <string name="pref_raster_map">Maparen iturburuaren ezarpenak</string>
-  <string name="pref_vector_map">Bektore maparen ezarpenak</string>
+    <string name="pref_vector_map">Bektore maparen ezarpenak</string>
   <string name="delete_confirmation_msg">%1$s ezabatu?</string>
   <string name="city_type_suburb">Aldiria</string>
   <string name="city_type_hamlet">Auzoa</string>
@@ -647,12 +626,9 @@ Biltegiratzean {1} MB erabiliko dira.
   <string name="shared_string_none">Bat ere ez</string>
   <string name="map_overlay">Gain-azal mapa</string>
   <string name="map_overlay_descr">Aukeratu gain-azal mapa.</string>
-  <string name="tile_source_already_installed">Mapa aurretik instalatuta dago, ezarpenak eguneratuko dira.</string>
-  <string name="select_tile_source_to_install">Aukeratu (tesela) mapak instalatu edo eguneratzeko.</string>
-  <string name="internet_not_available">Eragiketa honentzat Interneteko konexioa beharrezkoa da baina ez dago eskuragarri.</string>
+    <string name="internet_not_available">Eragiketa honentzat Interneteko konexioa beharrezkoa da baina ez dago eskuragarri.</string>
   <string name="install_more">Gehiago instalatu…</string>
-  <string name="level_to_switch_vector_raster_descr">Bektore mapak erabiltzeko zoom maila minimoa.</string>
-  <string name="level_to_switch_vector_raster">Bektoreen zoom maila min.</string>
+    <string name="level_to_switch_vector_raster">Bektoreen zoom maila min.</string>
   
   
   
@@ -728,13 +704,11 @@ Biltegiratzean {1} MB erabiliko dira.
   <string name="poi_filter_closest_poi">POIrik gertuena</string>
   <string name="poi_filter_custom_filter">Iragazki pertsonala</string>
   <string name="poi_filter_namefinder">Sare bidezko izen bilatzailea</string>
-  <string name="reading_cached_tiles">Katxeatutako teselak irakurtzen…</string>
-  <string name="version_index_is_big_for_memory">\"{0}\" indizea ez da memorian sartzen</string>
+    <string name="version_index_is_big_for_memory">\"{0}\" indizea ez da memorian sartzen</string>
   <string name="version_index_is_not_supported">\"{0}\" indizearen bertsioa ez da onartzen</string>
-  
-  
-  <string name="osmand_routing_experimental">OsmAnden lineaz kanpoko nabigazioa ezaugarri esperimentala da eta ez du 20 km baina gehiagoko distantziekin lan egiten.⏎\n⏎\nNabigazio zerbitzuak oraingoz sarean dagoen CloudMade zerbitzua erabiltzen du.</string>
-  <string name="specified_dir_doesnt_exist">Ezin izan da zehaztutako karpeta aurkitu.</string>
+
+
+    <string name="specified_dir_doesnt_exist">Ezin izan da zehaztutako karpeta aurkitu.</string>
   <string name="application_dir">Datuak gordetzeko direktorioa</string>
   
   <string name="osmand_net_previously_installed">OsmAnd aplikazioaren bertsio zaharrago bat dago instalatuta. Aplikazio berriak lineaz kanpoko datu guztiak erabili ditzake. Baina gogoko puntuak aplikazio zaharrean esportatu eta gero berrian inportatu beharko lirateke.</string>
@@ -761,8 +735,7 @@ Biltegiratzean {1} MB erabiliko dira.
   <string name="shared_string_refresh">Birkargatu</string>
   <string name="fast_route_mode">Ibilbiderik azkarrena</string>
   <string name="fast_route_mode_descr">Gaitu ibilbiderik azkarrena kalkulatzeko, edo ezgaitu erregaia aurrezten duen ibilbidea kalkulatzeko.</string>
-  <string name="tiles_to_download_estimated_size">{0} zoomean deskargatu {1} tesela ({2} MB)</string>
-  <string name="shared_string_download_map">Deskargatu mapa</string>
+    <string name="shared_string_download_map">Deskargatu mapa</string>
   <string name="select_max_zoom_preload_area">Aukeratu aurrez kargatzeko gehienezko zooma</string>
   <string name="maps_could_not_be_downloaded">Ezin izan da mapa hau deskargatu</string>
   <string name="continuous_rendering">Etengabeko marrazketa</string>
@@ -777,9 +750,8 @@ Biltegiratzean {1} MB erabiliko dira.
   <string name="poi_context_menu_call">Erakutsi POIaren telefonoa</string>
   <string name="download_type_to_filter">filtratu beharreko mota</string>
   <string name="use_high_res_maps">Erresoluzio handiko bistaratzea</string>
-  <string name="use_high_res_maps_descr">Ez luzatu (eta lausotu) mapa teselak erresoluzio handiko bistaratzetan.</string>
-  
-  <string name="context_menu_item_search_transport">Garraio publikoa bilatu</string>
+
+    <string name="context_menu_item_search_transport">Garraio publikoa bilatu</string>
   <string name="transport_searching_transport">Garraioaren emaitzak (helmugarik gabe):</string>
   <string name="transport_searching_route">Garraioaren emaitzak ({0} helmuga):</string>
   
@@ -917,8 +889,7 @@ Biltegiratzean {1} MB erabiliko dira.
   <string name="search_offline_address">Lineaz kanpoko bilaketa</string>
   <string name="search_online_address">Sareko bilaketa</string>
   <string name="max_level_download_tile">Sareko zoom maximoa</string>
-  <string name="max_level_download_tile_descr">Zehaztu sareko tesela mapak deskargatzeko gehieneko zoom maila.</string>
-  <string name="route_general_information">Distantzia guztira %1$s, bidai-denbora %2$d h %3$d min.</string>
+    <string name="route_general_information">Distantzia guztira %1$s, bidai-denbora %2$d h %3$d min.</string>
   <string name="router_service_descr">Aukeratu sareko edo lineaz kanpoko nabigazio zerbitzu bat.</string>
   <string name="router_service">Nabigazio zerbitzua</string>
   <string name="sd_dir_not_accessible">SD txarteleko datuen karpeta ez dago erabilgarri!</string>
@@ -988,8 +959,7 @@ Biltegiratzean {1} MB erabiliko dira.
   <string name="save_track_to_gpx_descrp">GPX lorratza automatikoki gordeko da lorratzen direktorioan nabigazioan zehar.</string>
   <string name="save_track_to_gpx">Erregistratu lorratza automatikoki nabigazioan zehar</string>
   <string name="update_tile">Mapa eguneratu</string>
-  <string name="reload_tile">Tesela birkargatu</string>
-  <string name="mark_point">Helmuga</string>
+    <string name="mark_point">Helmuga</string>
   
   
   
@@ -1007,16 +977,13 @@ Biltegiratzean {1} MB erabiliko dira.
   <string name="map_view_3d">3D Mapa Ikuspegia</string>
   <string name="show_poi_over_map_description">Erakutsi hautatutako azken POI-a mapan.</string>
   <string name="show_poi_over_map">Erakutsi POI gainazala</string>
-  <string name="map_tile_source_descr">Aukeratu sareko edo katxeaturiko mapen iturburuak.</string>
-  <string name="map_tile_source">Tesela maparen iturburua</string>
-  <string name="map_source">Maparen iturburua</string>
+    <string name="map_source">Maparen iturburua</string>
   <string name="use_internet">Internet erabili</string>
   <string name="show_location">Erakutsi zure kokapena</string>
   
   
   <string name="show_gps_coordinates_text">Erakutsi GPS kordenadak mapa</string>
-  <string name="use_internet_to_download_tile">Erabili internet falta diren tesela mapak deskargatzeko</string>
-  <string name="app_description">Nabigazio aplikazioa</string>
+    <string name="app_description">Nabigazio aplikazioa</string>
   <string name="shared_string_exit">Atera</string>
   
   

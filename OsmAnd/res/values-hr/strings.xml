@@ -136,9 +136,8 @@
 	<string name="rendering_attr_hmRendered_name">Prikaži više pojedinosti na karti</string>
 	<string name="address_search_desc">Traži adresu</string>
 	<string name="navpoint_search_desc">Zemljopisne kordinate</string>
-	
-	<string name="offline_navigation_not_available">OsmAnd offline navigacija privremeno nije dostupna.</string>
-	<string name="left_side_navigation">Vožnja lijevom stranom</string>
+
+    <string name="left_side_navigation">Vožnja lijevom stranom</string>
 	<string name="left_side_navigation_descr">Označi za države s vožnjom na lijevoj strani</string>
 	<string name="local_indexes_cat_map">Offline karte (vektorske)</string>
 	<string name="shared_string_online_maps">Online karte</string>
@@ -300,10 +299,9 @@
 	<string name="mark_point">Cilj</string>
 	
 	<string name="shared_string_add_to_favorites">Dodaj u Favorite</string>
-	<string name="reload_tile">Ponovno učitaj</string>
-	
-	
-	<string name="save_current_track">Spremi trenutni GPX</string>
+
+
+    <string name="save_current_track">Spremi trenutni GPX</string>
 	<string name="additional_settings">Dodatne postavke</string>
 	<string name="save_current_track_descr">Spremi trenutnu stazu na memorijsku karticu</string>
 	<string name="shared_string_settings">Postavke</string>
@@ -509,8 +507,7 @@
 	<string name="system_locale">Sistem</string>
 	
 	<string name="install_more">Instaliraj više…</string>
-	<string name="tile_source_already_installed">Karta je već instalirana, postavke će biti ažurirane</string>
-	<string name="overlay_transparency_descr">Izmjeni sloj transparentnosti</string>
+    <string name="overlay_transparency_descr">Izmjeni sloj transparentnosti</string>
 	<string name="tts_language_not_supported_title">Jezik nije podržan</string>
 	<string name="tts_missing_language_data_title">Nedostaju podaci</string>
 	<string name="gpx_option_destination_point">Koristi trenutni cilj</string>
@@ -585,8 +582,7 @@
 	<string name="map_view_3d_descr">Omogući 3D prikaz na karti</string>
 	<string name="map_view_3d">3D prikaz karte</string>
 	<string name="show_poi_over_map_description">Prikaži POI preko karte (koristi zadnji odabrani filtar)</string>
-	<string name="use_internet_to_download_tile">Koristite Internet za preuzimanje dijelova karte koji nedostaju</string>
-	<string name="app_description">Navigacijska aplikacija</string>
+    <string name="app_description">Navigacijska aplikacija</string>
 	<string name="search_POI_level_btn">Više rezultata</string>
 	<string name="poi_remove_confirm_template">Izbriši {0} (unesite komentar)?</string>
 	
@@ -647,8 +643,7 @@
 	<string name="osmand_net_previously_installed">Instalirana je prethodna inačica OsmAnd aplikacije. Svi offline podaci će biti podržani od strane nove inačice aplikacije. Ali Favorite treba izvesti iz stare aplikacije i kasnije uvesti u novu.</string>
 	
 	<string name="specified_dir_doesnt_exist">Ne mogu pronaći određenu mapu.</string>
-	<string name="osmand_routing_experimental">OsmAnd offline navigacija je eksperimentalna značajka i ne radi na udaljenosti većoj od oko 20 km.\n\nNavigacija je privremeno prebačena na online CloudMade.</string>
-	<string name="poi_filter_namefinder">Online NameFinder</string>
+    <string name="poi_filter_namefinder">Online NameFinder</string>
 	
 	<string name="poi_filter_closest_poi">Najbliže POI</string>
 	<string name="amenity_type_sustenance">Prehrana</string>
@@ -659,12 +654,10 @@
 	<string name="context_menu_item_add_waypoint">Dodaj GPX međutočku</string>
 	<string name="search_osm_offline">Traži adresu pomoću offline karte</string>
 	<string name="error_doing_search">Dogodila se pogreška u offline traženju</string>
-	
-	<string name="level_to_switch_vector_raster_descr">Minimalna razina uvećanja kod korištenja vektorske karte</string>
-	<string name="level_to_switch_vector_raster">Min. razina uvećanja vektora</string>
+
+    <string name="level_to_switch_vector_raster">Min. razina uvećanja vektora</string>
 	<string name="internet_not_available">Internet priključak koji je potreban za rad, nije dostupan</string>
-	<string name="select_tile_source_to_install">Odaberite karte za instalirati ili ažurirati</string>
-	<string name="map_overlay_descr">Odaberite slojnu kartu</string>
+    <string name="map_overlay_descr">Odaberite slojnu kartu</string>
 	<string name="map_overlay">Karta sloja</string>
 	<string name="shared_string_none">Bez</string>
 	<string name="layer_overlay">Karta sloja…</string>
@@ -804,8 +797,7 @@
 	<string name="offline_edition_descr">Uvijek koristi offline uređivanje</string>
 	<string name="update_poi_does_not_change_indexes">POI promjene unutar aplikacije ne utječu na datoteke preuzete karte , promjene se pohranjuju u lokalnu datoteku.</string>
 	<string name="local_openstreetmap_delete">Izbriši promjene</string>
-	<string name="prefs_plugins_descr">Dodaci aktiviraju napredne postavke i dodatne funkcije</string>
-	<string name="debugging_and_development">OsmAnd razvoj</string>
+    <string name="debugging_and_development">OsmAnd razvoj</string>
 
 
     <string name="enable_plugin_monitoring_services">Omogućite dodatak za bilježenje položaja (GPX snimanje, online praćenje)</string>
@@ -872,8 +864,7 @@
 	<string name="base_world_map">Osnovna karta svijeta</string>
 	<string name="about_version">Inačica :</string>
     <string name="about_settings_descr">Podaci o inačici, licence, članovi projekta</string>
-    
-    <string name="edit_tilesource_choose_existing">Odaberite postojeće…</string>
+
     <string name="maps_define_edit">Definiraj/Uredi…</string>
 	<string name="driving_region_descr">Odaberite područje u kojem vozite: SAD, Europa, Velika Britanija, Azija i ostalo</string>
 	<string name="driving_region">Područje vožnje</string>
@@ -901,8 +892,6 @@
     
 	
     <string name="local_index_tile_data_expire">Expire za (minutes): %1$s</string>
-    <string name="local_index_tile_data_downloadable">Preuzimanje: %1$s</string>
-    <string name="edit_tilesource_expiration_time">Istječe za (minuta)</string>
     <string name="speak_street_names">Najavi imena ulica (TTS)</string>
     <string name="osb_author_or_password_not_specified">Molimo vas da u postavkama navedete OSM korisničko ime i lozinku</string>
     <string name="search_street_in_neighborhood_cities">Traži ulicu u susjedstvu</string>
@@ -928,15 +917,13 @@
 	<string name="map_widget_fluorescent">Fluorescentne rute</string>
 	<string name="navigate_point_format">Format:</string>
 	<string name="confirm_interrupt_download">Želite li prekinuti preuzimanja?</string>
-	<string name="test_voice_prompts">Test glasovnih uputa</string>    
-	<string name="switch_to_raster_map_to_see">Nema offline karte za ovu lokaciju. Možete je preuzeti u postavkama (Upravljanje Podacima), ili koristite online karte.</string>
-	<string name="direction_style_sidewise">Bočno (8 sektora)</string>
+	<string name="test_voice_prompts">Test glasovnih uputa</string>
+    <string name="direction_style_sidewise">Bočno (8 sektora)</string>
 	<string name="direction_style_clockwise">Smjeru kazaljke na satu (12 sektora)</string>
 	<string name="local_openstreetmap_uploading">Prijenos …</string>
 	<string name="amenity_type_osmwiki">Wikipedia (offline)</string>
 	<string name="init_native_library">Inicijalizacija…</string>
-	<string name="pref_raster_map">Postavke izvora karte</string>
-	<string name="pref_vector_map">Postavke vektorske karte</string>
+    <string name="pref_vector_map">Postavke vektorske karte</string>
 	<string name="basemap_missing">Osnovna karta svijeta (koja pokriva cijeli svijet u malom zumu) nedostaje. Molimo razmislite o preuzimanju World_basemap_x.obf.</string>
 	
 	<string name="yard">yd</string>
@@ -993,12 +980,9 @@
     <string name="speech_rate">Brzina Govora</string>
     <string name="disable_complex_routing_descr">Onemogućiti 2-fazno usmjeravanje za automobilsku navigaciju</string>
     <string name="disable_complex_routing">Onemogućiti složenu usmjeravanje</string>
-    
-	<string name="local_index_tile_data_maxzoom">Maksimalni zoom: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Minimalni zoom: %1$s</string>
-    
-	
-	<string name="amenity_type_seamark">Morske oznake</string>
+
+
+    <string name="amenity_type_seamark">Morske oznake</string>
 <string name="osmo_settings_uuid">Jedinstveni identitet uređaja</string>
     <string name="osmo_settings_descr">Konfigurirajte postavke praćenja i postavljanje osobnih monitoring kanala</string>
     <string name="osmo_plugin_description">OpenStreetMap-Monitoring - Napredno praćenje uživo s puno mogućnosti za daljinsko upravljanje http://osmo.mobi</string>

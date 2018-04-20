@@ -390,10 +390,6 @@
     <string name="about_version">Versión:</string>
     <string name="shared_string_about">Tocante a</string>
     <string name="about_settings_descr">Información de versión, llicencies, miembros del proyeutu</string>
-    <string name="local_index_tile_data_zooms">Zooms baxaos: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Zoom máximu: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Zoom mínimu: %1$s</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
     <string name="maps_define_edit">Definir/Editar…</string>
     <string name="driving_region_japan">Xapón</string>
     <string name="driving_region_us">Estaos Xuníos</string>
@@ -487,7 +483,6 @@ Llo %2$s</string>
     <string name="navpoint_search_desc">Coordenaes</string>
     <string name="gpx_description_txt">Descripción</string>
     <string name="support_new_features_descr">Fai un donativu pa ver carauterístiques nueves añadíes na aplicación.</string>
-    <string name="prefs_plugins_descr">Los complementos activen los axustes avanzaos y otres funciones.</string>
     <string name="accessibility_mode_descr">Activa les funciones d\'accesibilidá.</string>
     <string name="accessibility_preferences_descr">Preferencies rellacionaes cola accesibilidá.</string>
     <string name="local_openstreetmap_descr_title">Edición d\'OSM asíncrona:</string>
@@ -659,7 +654,6 @@ Puntos</string>
     <string name="website">Sitiu web</string>
     <string name="phone">Teléfonu</string>
     <string name="rename_failed">Falló\'l renomáu.</string>
-    <string name="tile_source_already_installed">Yá ta instaláu el mapa, anovaráse la configuración.</string>
     <string name="internet_not_available">Ríquese una conexón a internet pa esta operación pero nun ta disponible.</string>
     <string name="error_doing_search">Asocedió un fallu na gueta ensin conexón.</string>
     <string name="system_locale">Sistema</string>

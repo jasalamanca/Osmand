@@ -25,9 +25,8 @@
   <string name="native_rendering">Interne kaartgeneratie</string>
   
   <string name="test_voice_prompts">Test stem-instructies</string>
-  <string name="switch_to_raster_map_to_see">Geen offline vectorkaart aanwezig voor deze locatie. Je kan deze downloaden via Instellingen (Kaartbeheer), of overschakelen naar online kaarten; activeer hiervoor de Online Kaarten-plugin.</string>
-  
-  <string name="send_files_to_osm">GPX-bestanden naar OpenStreetMap sturen?</string>
+
+    <string name="send_files_to_osm">GPX-bestanden naar OpenStreetMap sturen?</string>
   <string name="gpx_visibility_txt">Zichtbaarheid</string>
   <string name="gpx_tags_txt">Tags</string>
   <string name="gpx_description_txt">Beschrijving</string>
@@ -175,8 +174,7 @@ Er is nu {2} MB beschikbaar</string>
   <string name="auto_follow_location_enabled">Automatisch kaart volgen in gebruik.</string>
   <string name="pref_vector_rendering">Opties voor vectorkaarten</string>
   <string name="pref_overlay">Bovenlaag / onderlaag</string>
-  <string name="pref_raster_map">Kaartbron-instellingen</string>
-  <string name="pref_vector_map">Vectorkaart-instellingen</string>
+    <string name="pref_vector_map">Vectorkaart-instellingen</string>
   <string name="delete_confirmation_msg">Verwijder %1$s?</string>
   <string name="city_type_suburb">Buitenwijk</string>
   <string name="city_type_hamlet">Gehucht</string>
@@ -291,14 +289,11 @@ Er is nu {2} MB beschikbaar</string>
   <string name="layer_overlay">Overlay kaart…</string>
   <string name="map_overlay">Overlay kaart</string>
   <string name="map_overlay_descr">Kies overlay-kaart</string>
-  <string name="tile_source_already_installed">Kaart is al geïnstalleerd, instellingen worden geactualiseerd</string>
-  <string name="select_tile_source_to_install">Kies (raster)kaarten om te installeren of te updaten</string>
-  <string name="internet_not_available">De benodigde internetverbinding voor deze actie is niet beschikbaar</string>
+    <string name="internet_not_available">De benodigde internetverbinding voor deze actie is niet beschikbaar</string>
   <string name="install_more">Installeer meer…</string>
-  
-  
-  <string name="level_to_switch_vector_raster_descr">Minimum zoomniveau om vectorkaarten inplaats van (raster)kaartsegmenten te gebruiken</string>
-  <string name="level_to_switch_vector_raster">Min. vector zoomniveau</string>
+
+
+    <string name="level_to_switch_vector_raster">Min. vector zoomniveau</string>
   
   
   
@@ -375,13 +370,11 @@ Er is nu {2} MB beschikbaar</string>
   <string name="poi_filter_for_tourists">Voor toeristen</string>
   <string name="poi_filter_fuel">Brandstof</string>
   <string name="poi_filter_namefinder">Online Namenzoeker</string>
-  <string name="reading_cached_tiles">Kaartsegmenten worden gelezen…</string>
-  <string name="version_index_is_big_for_memory">De index \'\'{0}\'\' past niet in het geheugen</string>
+    <string name="version_index_is_big_for_memory">De index \'\'{0}\'\' past niet in het geheugen</string>
   <string name="version_index_is_not_supported">De versie van index \'\'{0}\'\' wordt niet ondersteund</string>
-  
-  
-  <string name="osmand_routing_experimental">OsmAnd offline routing is een experimentele functie en werkt niet voor afstanden van meer dan ongeveer 20 km.\n\nRouting service is tijdelijk omgeschakeld naar online CloudMade.</string>
-  <string name="specified_dir_doesnt_exist">Kan de opgegeven map niet vinden.</string>
+
+
+    <string name="specified_dir_doesnt_exist">Kan de opgegeven map niet vinden.</string>
   <string name="application_dir">Opslagmap</string>
   
   <string name="osmand_net_previously_installed">Een oudere OsmAnd versie is al geïnstalleerd. Alle offline gegevens blijven werken in het nieuwe programma, maar Favorieten moeten worden geëxporteerd in de oude versie en dan worden geïmporteerd met de nieuwe.</string>
@@ -406,8 +399,7 @@ Er is nu {2} MB beschikbaar</string>
   <string name="filter_existing_indexes">Toon gedownloade</string>
   <string name="fast_route_mode">Snelle route</string>
   <string name="fast_route_mode_descr">Activeer voor de snelste route of deactiveer voor een zuinige route</string>
-  <string name="tiles_to_download_estimated_size">Op zoom {0} omvat de download {1} kaartsegmenten ({2} MB)</string>
-  <string name="shared_string_download_map">Download kaart</string>
+    <string name="shared_string_download_map">Download kaart</string>
   <string name="select_max_zoom_preload_area">Kies maximum zoom om vooraf te laden</string>
   <string name="maps_could_not_be_downloaded">Kaarten konden niet worden gedownload</string>
   <string name="continuous_rendering">Continue kaartgeneratie</string>
@@ -424,8 +416,7 @@ Er is nu {2} MB beschikbaar</string>
   <string name="phone">Telefoon</string>
   <string name="download_type_to_filter">Tik om te zoeken</string>
   <string name="use_high_res_maps">Hoge resolutie beeldscherm</string>
-  <string name="use_high_res_maps_descr">Rasterkaarten niet rekken op hoge-resolutie beeldschermen</string>
-  <string name="unknown_location">Positie nog niet bekend</string>
+    <string name="unknown_location">Positie nog niet bekend</string>
   
   <string name="context_menu_item_search_transport">Zoek Openbaar Vervoer</string>
   <string name="transport_searching_transport">Openbaar Vervoer-resultaten (geen bestemming):</string>
@@ -563,8 +554,7 @@ Er is nu {2} MB beschikbaar</string>
   <string name="search_offline_address">Offline</string>
   <string name="search_online_address">Internet</string>
   <string name="max_level_download_tile">Max. online zoom</string>
-  <string name="max_level_download_tile_descr">Kies maximum zoomniveau voor het downloaden van online kaartsegmenten</string>
-  <string name="route_general_information">Totale afstand %1$s, reistijd %2$d u %3$d min.</string>
+    <string name="route_general_information">Totale afstand %1$s, reistijd %2$d u %3$d min.</string>
   <string name="router_service_descr">Kies een online of offline routeberekening</string>
   <string name="router_service">Routeberekening</string>
   <string name="sd_dir_not_accessible">Opslagmap op SD kaart is niet toegankelijk</string>
@@ -635,8 +625,7 @@ Er is nu {2} MB beschikbaar</string>
   <string name="save_track_to_gpx_descrp">Tijdens het navigeren wordt automatisch een GPX-track gemaakt en opgeslagen</string>
   <string name="save_track_to_gpx">GPX-Track automatisch opnemen tijdens navigatie</string>
   <string name="update_tile">Kaart bijwerken</string>
-  <string name="reload_tile">Herlaad kaartsegment</string>
-  <string name="mark_point">Doel</string>
+    <string name="mark_point">Doel</string>
   
   
   
@@ -656,16 +645,13 @@ Er is nu {2} MB beschikbaar</string>
   <string name="map_view_3d">Kaartbeeld 3D</string>
   <string name="show_poi_over_map_description">Toon interessepunten op kaart (met laatst gebruikte filter)</string>
   <string name="show_poi_over_map">Toon Interessepunten</string>
-  <string name="map_tile_source_descr">Kies de bron van online of offline kaartsegmenten</string>
-  <string name="map_tile_source">Kaartsegment bron</string>
-  <string name="map_source">Kaartbron</string>
+    <string name="map_source">Kaartbron</string>
   <string name="use_internet">Gebruik internet</string>
   <string name="show_location">Toon Huidige Positie</string>
   
   
   <string name="show_gps_coordinates_text">Toon GPS-coördinaten op kaart</string>
-  <string name="use_internet_to_download_tile">Ontbrekende kaartsegmenten van internet downloaden</string>
-  <string name="app_description">Navigatieprogramma</string>
+    <string name="app_description">Navigatieprogramma</string>
   
   
   
@@ -750,9 +736,8 @@ Er is nu {2} MB beschikbaar</string>
   <string name="edit_filter_delete_dialog_title">Verwijder ingestelde filter?</string>
   <string name="edit_filter_delete_message">Filter {0} is verwijderd</string>
   <string name="edit_filter_create_message">Filter {0} is aangemaakt</string>
-  
-  <string name="offline_navigation_not_available">OsmAnd offline navigatie is tijdelijk niet beschikbaar.</string>
-  <string name="left_side_navigation">Linksrijdend verkeer</string>
+
+    <string name="left_side_navigation">Linksrijdend verkeer</string>
   <string name="left_side_navigation_descr">Activeer in een land waar men links rijdt</string>
   
   <string name="unknown_from_location">Startlocatie is nog niet bepaald</string>
@@ -761,26 +746,18 @@ Er is nu {2} MB beschikbaar</string>
   
   <string name="map_online_plugin_is_not_installed">Activeer de Online Kaarten-plugin om andere kaartbronnen te kunnen selecteren</string>
   <string name="map_online_data">Online (raster-) kaarten</string>
-  <string name="map_online_data_descr">Gebruik online kaarten (download en bewaar deze op SD-kaart)</string>
-  <string name="shared_string_online_maps">Online kaarten</string>
-  <string name="online_map_settings_descr">Configureer online of bewaarde kaartbronnen</string>
-  
-  
-  <string name="osmand_rastermaps_plugin_description">"Geeft toegang tot vele soorten online (zogenaamde tegel of raster) kaarten, van vooraf gedefinieerde OpenStreetMap tegels (zoals Mapnik) tot satellietbeelden en lagen voor speciale doeleinden zoals weerkaarten, klimaatkaarten, geologische kaarten, reliëflagen, enz.
-\n
-\nAl deze kaarten kunnen worden gebruikt als de hoofd(basis)kaart, of als een extra laag of een achtergrondlaag bij een andere basiskaart (zoals de normale offline kaarten van OsmAnd). Om een achtergrondlaag beter te klunnen zien, kunt u elementen van de OsmAnd kaarten eenvoudig verbergen via het menu \'Kaart instellen\'.
-\n
-\nTegelkaarten zijn direct via online bronnen verkrijgbaar of kunnen voor offline gebruik gereedgemaakt worden (en handmatig gekopieerd naar de OsmAnd gegevensmap) als SQLite database door diverse hulpprogramma\'s van derden. "</string>
-  <string name="osmand_background_plugin_description">Instellingen om tracking en navigatie te kunnen gebruiken met het scherm uit (schakelt de GPS periodiek in).</string>
+    <string name="shared_string_online_maps">Online kaarten</string>
+
+
+    <string name="osmand_background_plugin_description">Instellingen om tracking en navigatie te kunnen gebruiken met het scherm uit (schakelt de GPS periodiek in).</string>
   <string name="osmand_accessibility_description">Maakt de toegankelijkheid-opties van uw toestel beschikbaar in OsmAnd. Het vergemakkelijkt o.a. het aanpassen van de spreeksnelheid, het configureren van D-pad scherm navigatie door gebruik van een trackbal voor zoomregeling of het gebruiken van tekst-naar-spraak opties voor het automatisch aankondigen van uw positie.</string>
   
   
   
   <string name="osmand_development_plugin_description">Deze plugin toont de instellingen voor ontwikkel- en debug-opties, zoals routetest en -simulatie, schermweergave-prestaties, en spraaksturing. Deze instellingen zijn bedoeld voor programmeurs die OsmAnd willen verbeteren en zijn niet nodig voor normaal gebruik.</string>
   <string name="plugins_screen">Plugins beheren</string>
-  
-  <string name="prefs_plugins_descr">Schakel plugins in voor speciale functies en extra instellingen</string>
-  <string name="prefs_plugins">Plugin-manager</string>
+
+    <string name="prefs_plugins">Plugin-manager</string>
   
   <string name="osm_editing_plugin_description">Gebruik deze plugin om bij te dragen aan OpenStreetMap (OSM), bijvoorbeeld door het aanmaken of wijzigen van OSM-interessepunten, aanmaken of becommentariëren van OSM-opmerkingen, en door GPX-tracks te uploaden. OSM is een wereldwijd community-driven project om een wereldwijde kaart te maken. Voor details zie https://openstreetmap.org. Actieve deelnemers zijn welkom, en bijdragen kunnen direct vanuit OsmAnd worden gemaakt, zodra uw OSM-aanmeldgegevens zijn ingevuld in de app.</string>
   <string name="north_north_west">noordnoordwest</string>
@@ -1095,19 +1072,10 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
 	<string name="driving_region_europe_asia">Europa, Azië en Zuid-Amerika enz.</string>
 	<string name="driving_region_uk">Verenigd Koninkrijk, India, etc.</string>
 	<string name="map_widget_fps_info">FPS-debuginformatie</string>
-	<string name="local_index_tile_data_zooms">Zoomniveau\'s gedownload: %1$s</string>
     <string name="local_index_tile_data_expire">Verlopen (minuten): %1$s</string>
-    <string name="local_index_tile_data_downloadable">Downloadbaar: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Maximum zoomniveau: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Minimum zoomniveau: %1$s</string>
     <string name="local_index_tile_data_name">Kaartsegmentgegevens: %1$s</string>
-    <string name="edit_tilesource_successfully">Kaartsegmentbron %1$s werd succesvol opgeslagen</string>
-    <string name="edit_tilesource_elliptic_tile">Elliptische Mercator</string>
     <string name="edit_tilesource_maxzoom">Max zoomniveau</string>
-    <string name="edit_tilesource_expiration_time">Verlopen (minuten)</string>
     <string name="edit_tilesource_minzoom">Min zoomniveau</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Kies een bestaande…</string>
     <string name="maps_define_edit">Definieer/bewerk…</string>
 	
     <string name="about_version">Versie:</string>

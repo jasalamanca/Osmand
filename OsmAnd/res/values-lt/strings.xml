@@ -29,7 +29,6 @@
     <string name="transport_search_desc">Viešojo transporto paieška</string>
     <string name="favourites_search_desc">Išsaugotų vietų paieška</string>
 
-    <string name="offline_navigation_not_available">Vidinė (be interneto) OsmAnd navigacija laikinai neprieinama.</string>
     <string name="left_side_navigation">Važiavimas kairiąja kelio puse</string>
     <string name="left_side_navigation_descr">Pasirinkite šalims, kuriose važiuojama kairiąja kelio puse.</string>
 
@@ -46,16 +45,9 @@
     <string name="index_settings_descr">Parsisiųsti, peržiūrėti detalią informaciją ir valdyti parsiųstus žemėlapius.</string>
     <string name="map_online_plugin_is_not_installed">Įjunkite interneto žemėlapių įskiepį norėdami pasirinkti kitus žemėlapių šaltinius</string>
     <string name="map_online_data">Interneto žemėlapiai</string>
-    <string name="map_online_data_descr">Naudoti interneto žemėlapius (parsisiųsti dalis laikinam saugojimui SD kortelėje).</string>
     <string name="shared_string_online_maps">Interneto žemėlapiai</string>
-    <string name="online_map_settings_descr">Nustatykite interneto ar laikinai išsaugotų žemėlapių šaltinius.</string>
 
 
-    <string name="osmand_rastermaps_plugin_description">Šio įskiepio pagalba galite pasiekti daugybę žemėlapių rūšių internete, pradedant Openstreetmap (Mapnik), baigiant palydovinėmis nuotraukomis ir specialios paskirties sluoksnių, tokių kaip orų, klimato, geologinių žemėlapiai, bei kalvų šešėliavimo sluoksnius.
-\n
-\nKiekvienas iš šių žemėlapių gali būti atvaizduotas OsmAnd ekrane kaip pagrindinis (bazinis) arba kaip papildomas antsluoksnis ar posluoksnis kitame baziniame žemėlapyje (pvz., OsmAnd parsiųstuose žemėlapiuose). Tam, kad posluoksninis žemėlapis būtų aiškiai matomas, galima išjungti OsmAnd vektorinių žemėlapių tam tikrus elementus meniu \"Konfigūruoti žemėlapį\".
-\n
-\nŽemėlapius lakštus galima atsisiųsti iš interneto arba paruošti naudojimui neprisijungus (ir rankiniu būdu įkelti į OsmAnd duomenų katalogą) kaip SQLite duomenų bazę, kurią galima paruošti įvairiais trečių šalių įrankiais.</string>
     <string name="osmand_background_plugin_description">Rodyti nustatymus sekimui ir navigacijai foniniame režime (išjungus ekraną) periodiškai žadinant GPS įrenginį.</string>
     <string name="osmand_accessibility_description">Šis įskiepis įgalina įrenginio specialiuosius nustatymus tiesiai OsmAnd. Tai, pavyzdžiui, palengvina TTS balso greičio reguliavimą, navigacijos ekrano kryptį, mąstelio reguliavimą.</string>
 
@@ -63,7 +55,6 @@
     <string name="osmand_development_plugin_description">Įskiepis rodo nustatymus kūrimo ir klaidų paieškos funkcionalumui: patikrinti arba imituoti navigaciją, ekrano generavimo efektyvumo, balso pranešimų patikrinimui. Šie nustatymui akrtualūs programuotojui ir nėra įdomūs eiliniam vartotojui.</string>
     <string name="plugins_screen">Įskiepių valdymas</string>
 
-    <string name="prefs_plugins_descr">Įskiepiai pateikia eksperto režimo nustatymus ir įgalina papildomą funkcionalumą.</string>
     <string name="prefs_plugins">Įskiepių valdymas</string>
 
     <string name="osm_editing_plugin_description">Šis įskiepis leidžia kurti ar redaguoti LV, užregistruoti ar komentuoti OSM Pastabas, dalintis įrašytais GPX failais. OSM yra atviros visuomenės valdomas, viešas žemėlapio žymėjimo projektas. Dėl smulkesnės informacijos prašome kreiptis į https://openstreetmap.org. Aktyvus dalyvavimas yra labai vertinamas, prisidėti galite tiesiai OsmAnd, jei programoje nurodysite savo prisijungimo duomenis.</string>
@@ -74,7 +65,6 @@
     <string name="native_rendering">Aparatinis atvaizdavimas</string>
 
     <string name="test_voice_prompts">Patikrinti balso nurodymus</string>
-    <string name="switch_to_raster_map_to_see">Šiai vietai nėra parsiųsto vektorinio žemėlapio. Jūs galite jį parsisiųsti Nustatymuose (Žemėlapių valdymas) arba perjungti į interneto žemėlapius (įjunkite tam skirtą įskiepį).</string>
 
     <string name="send_files_to_osm">Siųsti GPX failus į OSM?</string>
     <string name="gpx_visibility_txt">Matomumas</string>
@@ -222,7 +212,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="auto_follow_location_enabled">Naudojamas automatinis žemėlapio centravimas.</string>
     <string name="pref_vector_rendering">Specifiniai vektorinio vaizdavimo nustatymai</string>
     <string name="pref_overlay">Viršutinis / apatinis sluoksniai</string>
-    <string name="pref_raster_map">Rastrinių žemėlapių šaltinių nustatymai</string>
     <string name="pref_vector_map">Vektorinių žemėlapių nustatymai</string>
     <string name="delete_confirmation_msg">Ištrinti %1$s?</string>
     <string name="city_type_suburb">Priemiestis</string>
@@ -342,13 +331,10 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="shared_string_none">Nėra</string>
     <string name="map_overlay">Viršutinis žemėlapio sluoksnis</string>
     <string name="map_overlay_descr">Pasirinkti viršutinį žemėlapio sluoksnį.</string>
-    <string name="tile_source_already_installed">Žemėlapis jau įdiegtas, nustatymai bus atnaujinti.</string>
-    <string name="select_tile_source_to_install">Pasirinkite žemėlapius įdiegimui ar atnaujinimui.</string>
     <string name="internet_not_available">Nėra šiam veiksmui reikalingo interneto ryšio.</string>
     <string name="install_more">Įdiegti daugiau…</string>
 
 
-    <string name="level_to_switch_vector_raster_descr">Mažiausias dydis, kuriuo rodyti vektorinius žemėlapius.</string>
     <string name="level_to_switch_vector_raster">Mažiausias vektorinių žemėl. dydis</string>
 
 
@@ -417,12 +403,10 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="poi_filter_for_tourists">Turistams</string>
     <string name="poi_filter_fuel">Kuras</string>
     <string name="poi_filter_namefinder">Pavadinimų paieška internete</string>
-    <string name="reading_cached_tiles">Skaitomi išsaugoti žemėlapiai…</string>
     <string name="version_index_is_big_for_memory">Indeksas \'\'{0}\'\' netilpo į atmintį</string>
     <string name="version_index_is_not_supported">Indekso versija \'\'{0}\'\' nepalaikoma</string>
-    
-    
-    <string name="osmand_routing_experimental">OsmAnd navigacija be interneto yra eksperimentinė funkcija ir ji neveikia didesniems nei 20km atstumams.\n\nLaikinai naudojama CloudMade navigacijos paslauga.</string>
+
+
     <string name="specified_dir_doesnt_exist">Neina rasti nurodyto segtuvo.</string>
     <string name="application_dir">Segtuvas duomenų talpinimui</string>
 
@@ -451,7 +435,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="shared_string_refresh">Atnaujinti</string>
     <string name="fast_route_mode">Greičiausias maršrutas</string>
     <string name="fast_route_mode_descr">Įjunkite, kad būtų skaičiuojamas greičiausias maršrutas arba išjunkite, kad skaičiuotų taupiausią maršrutą.</string>
-    <string name="tiles_to_download_estimated_size">Esant {0} dydžiui parsiųsti {1} žemėlapio lakštus ({2} MB)</string>
     <string name="shared_string_download_map">Parsiųsti žemėlapį</string>
     <string name="select_max_zoom_preload_area">Pasirinkite didžiausią dydį, kurį parsiųsti</string>
     <string name="maps_could_not_be_downloaded">Šio žemėlapio parsiųsti nepavyko</string>
@@ -469,7 +452,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="phone">telefonas</string>
     <string name="download_type_to_filter">filtruoti tipą</string>
     <string name="use_high_res_maps">Didelės raiškos ekranas</string>
-    <string name="use_high_res_maps_descr">Neištempti (ir nesulieti) žemėlapio lakštų didelės raiškos ekranuose.</string>
 
     <string name="context_menu_item_search_transport">Ieškoti viešojo transporto</string>
     <string name="transport_searching_transport">Transporto paieškos rezultatai (tikslas nerastas):</string>
@@ -611,7 +593,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="search_offline_address">Be interneto</string>
     <string name="search_online_address">Internete</string>
     <string name="max_level_download_tile">Didžiausias mastelis interneto žemėlapiui</string>
-    <string name="max_level_download_tile_descr">Pasirinkti didžiausią internetinio žemėlapio mastelį parsiuntimui.</string>
     <string name="route_general_information">Visas atstumas %1$s, kelionės trukmė %2$d h %3$d min.</string>
     <string name="router_service_descr">Pasirinkti navigacijos paslaugą internete arba įrenginyje.</string>
     <string name="router_service">Navigacijos paslauga</string>
@@ -682,7 +663,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="save_track_to_gpx_descrp">Navigavimo metu judėjimo istorija bus išsaugota į track aplanką automatiškai.</string>
     <string name="save_track_to_gpx">Naviguojant išsaugoti judėjimo istoriją į GPX failą automatiškai</string>
     <string name="update_tile">Atnaujinti žemėlapį</string>
-    <string name="reload_tile">Iš naujo įkelti lakštą</string>
     <string name="mark_point">Tikslas</string>
 
 
@@ -702,15 +682,12 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="map_view_3d">Žemėlapio 3D rodinys</string>
     <string name="show_poi_over_map_description">Rodyti LV žemėlapyje (pagal paskutinį naudotą filtrą).</string>
     <string name="show_poi_over_map">Rodyti LV sluoksnį</string>
-    <string name="map_tile_source_descr">Pasirinkite internete arba talpykloje esančius žemėlapius.</string>
-    <string name="map_tile_source">Žemėlapio lakštų šaltinis</string>
     <string name="map_source">Žemėlapio šaltinis</string>
     <string name="use_internet">Naudoti internetą</string>
     <string name="show_location">Rodyti vietą</string>
 
 
     <string name="show_gps_coordinates_text">Rodyti GPS koordinates žemėlapyje</string>
-    <string name="use_internet_to_download_tile">Parsisiųskite trūkstamus žemėlapio lakštus iš interneto</string>
     <string name="app_description">Navigacijos programa</string>
     <string name="shared_string_exit">Išeiti</string>
 
@@ -1173,19 +1150,10 @@ Afghanistan, Albania, Algeria, Andorra, Angola, Anguilla, Antigua and Barbuda, A
     <string name="about_settings_descr">Versijos informacija, licencijos, projekto nariai</string>
 
 
-    <string name="local_index_tile_data_zooms">Parsiųsti mąsteliai: %1$s</string>
     <string name="local_index_tile_data_expire">Nustos galioti (minutės): %1$s</string>
-    <string name="local_index_tile_data_downloadable">Prieinami parsiuntimui: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Didžiausias mąstelis: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Mažiausias mąstelis: %1$s</string>
     <string name="local_index_tile_data_name">Žemėlapių lakštų duomenys: %1$s</string>
-    <string name="edit_tilesource_successfully">Žemėlapių lakštų šaltinis %1$s sėkmingai išsaugotas</string>
-    <string name="edit_tilesource_elliptic_tile">Eliptinis merkatorius</string>
     <string name="edit_tilesource_maxzoom">Maksimalus mąstelis</string>
-    <string name="edit_tilesource_expiration_time">Nustos galioti (minutės)</string>
     <string name="edit_tilesource_minzoom">Mažiausias mąstelis</string>
-    <string name="edit_tilesource_url_to_load">Nuoroda</string>
-    <string name="edit_tilesource_choose_existing">Pasirinkti iš turimų…</string>
     <string name="maps_define_edit">Nustatyti/redaguoti…</string>
 
 

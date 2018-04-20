@@ -123,8 +123,7 @@
 	<string name="navpoint_search_desc">ينسق</string>
 	<string name="transport_search_desc">بحث وسائل النقل العام</string>
 	<string name="favourites_search_desc">البحث في المفضلة</string>
-	<string name="offline_navigation_not_available">ملاحة OsmAnd غير متاحة مؤقتا.</string>
-	<string name="unknown_from_location">نقطة الانطلاق لم تحدد بعد</string>
+    <string name="unknown_from_location">نقطة الانطلاق لم تحدد بعد</string>
 	<string name="local_indexes_cat_map">خرائط عادية (متجهية)</string>
 	
 	<string name="index_settings_descr">تنزيل وإدارة الخرائط غير المتصلة المخزنة على جهازك.</string>
@@ -180,7 +179,6 @@
     
     <string name="edit_tilesource_maxzoom">التّقريب الأقصى</string>
     <string name="edit_tilesource_minzoom">التصغير اﻷقصى</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
     <string name="driving_region_descr">حدد منطقة القيادة: الولايات المتحدة، أوروبا، المملكة المتحدة، آسيا، وغيرها.</string>
 	<string name="driving_region">منطقة القيادة</string>
 	<string name="driving_region_japan">اليابان</string>
@@ -300,9 +298,6 @@
     <string name="map_magnifier">مكبر الخريطة</string>
     <string name="base_world_map">خريطة العالم الأساسية</string>
 	<string name="local_index_tile_data_expire">الانتهاء (دقائق):  %1$s</string>
-    <string name="local_index_tile_data_downloadable">قابل للتنزيل: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">أقصى تكبير: %1$s</string>
-    <string name="local_index_tile_data_minzoom">أدنى تكبير: %1$s</string>
     <string name="maps_define_edit">تعريف/تعديل…</string>
 	    
     
@@ -345,9 +340,7 @@
     <string name="intermediate_point">الوجهة المتوسطة %1$s</string>
     <string name="context_menu_item_last_intermediate_point">أضف كآخر وجهة وسيطة</string>
     <string name="context_menu_item_first_intermediate_point">أضف كأول وجهة وسيطة</string>
-    
-    <string name="edit_tilesource_expiration_time">الانتهاء (دقائق)</string>
-    <string name="edit_tilesource_choose_existing">اختر موجودا…</string>
+
     <string name="map_widget_fps_info">معلومات تنقيح FPS</string>
 	<string name="settings_preset_descr">إعدادات عرض الخريط والملاحة محفوظة لكل ملف استخدام. قم بتعيين ملفك الافتراضي هنا.</string>
     <string name="intermediate_items_sort_return">أُعيد ترتيب نقاط الوجهات الوسيطة لتحسين ترتيبها من الموقع الحالي حتى الوجهة.</string>
@@ -370,10 +363,8 @@
     <string name="ending_point_too_far">نقطة الوصول بعيدة جدا عن أقرب طريق.</string>
     <string name="add_tag">أضف وسما</string>
     <string name="show_warnings_descr">ضبط تحذيرات المرور ( حدود السرعة، والتوقف القسري، والمطبات الصناعية ) ، وتحذيرات كاميرا السرعة ، ومعلومات الممرات.</string>
-	
-    <string name="local_index_tile_data_zooms">التكبيرات المُنزّلة: %1$s</string>
+
     <string name="local_index_tile_data_name">معلومات التّجانب: %1$s</string>
-    <string name="edit_tilesource_successfully">حُفِظ المصدر التّجانبي %1$s بنجاح</string>
     <string name="use_compass_navigation_descr">استخدم البوصلة عندما لا تكون هناك أي وجهة محددة.</string>
 	<string name="auto_zoom_map_descr">ملائمة تقريب الخريطة وفقا لسرعتك (هذا بينما تتزامن الخريطة مع الموقع الحالي).</string>
 	<string name="auto_zoom_map">تقريب الخريطة تلقائيًا</string>
@@ -419,8 +410,7 @@
 	<string name="native_app_allocated_memory">إجمالي الذاكرة الأصلية</string>
 	<string name="starting_point_too_far">نقطة الانطلاق بعيدة جدا عن أقرب طريق.</string>
 	<string name="shared_location">موقع مشترك</string>
-    <string name="edit_tilesource_elliptic_tile">نموذج مركتور البيضوي</string>
-    
+
     <string name="route_descr_lat_lon">خط عرض %1$.3f، خط طول %2$.3f</string>
     
 	
@@ -454,10 +444,8 @@
 	<string name="local_indexes_cat_tile">قراميد خرائط متصلة بالإنترنت وتجانبية</string>
 	<string name="map_online_plugin_is_not_installed">تمكين ملحق الخرائط على الإنترنت من تحديد مصادر مختلفة للخرائط</string>
 	<string name="map_online_data">خرائط من الانترنت وتجانبية</string>
-	<string name="map_online_data_descr">استخدام الخرائط من الإنترنت (تنزيل وحفظ التجانبيات منها على بطاقة SD).</string>
-	<string name="shared_string_online_maps">الخرائط المتصلة بالانترنت</string>
-	<string name="online_map_settings_descr">ضبط مصادر الخرائط التجانبية على الإنترنت أو المخزنة مؤقتا.</string>
-	<string name="auto_zoom_farthest">إلى مدى الطويل</string>
+    <string name="shared_string_online_maps">الخرائط المتصلة بالانترنت</string>
+    <string name="auto_zoom_farthest">إلى مدى الطويل</string>
 	<string name="use_magnetic_sensor_descr">لقراءة البوصلة، استخدام المستشعر المغناطيسي بدلاً من مستشعر التوجيه.</string>
     
 	
@@ -465,13 +453,11 @@
 	
 	<string name="osmand_development_plugin_description">هاته الأداة المساعدة تعرض إعدادات لتطوير وتصحيح الميزات كاختبار أو محاكاة التوجيه، أداء الشاشة، أو الإشعار الصوتي. هاته الإعدادات معدة للمطورين و المستخدم العام لا يحتاجها.</string>
 	<string name="plugins_screen">ملحقات</string>
-	
-	<string name="prefs_plugins_descr">تفعّل الملحقات إعداداتٍ متقدمة ووظائف إضافية.</string>
-	<string name="osm_editing_plugin_description">عبر هاته الأداة يمكن اسخدام التطبيق للمساهمات في الموقع كإنشاء أو تعديل أماكن الأشياء، والمساهمة بملفات GPX مسجلة. الموقع قائم بفعل المجتمع، وهو مشروع رسم خرائط على النطاق العام العالمي. للمزيد من التفاصيل رجاءا انظر https://openstreetmap.org. المشاركة الفعالة جد مقدرة، والمساهمات يمكن إنشاءها من التطبيق مباشرة إن قمت بإدخال معلوماتك الشخصية في التطبيق.</string>
+
+    <string name="osm_editing_plugin_description">عبر هاته الأداة يمكن اسخدام التطبيق للمساهمات في الموقع كإنشاء أو تعديل أماكن الأشياء، والمساهمة بملفات GPX مسجلة. الموقع قائم بفعل المجتمع، وهو مشروع رسم خرائط على النطاق العام العالمي. للمزيد من التفاصيل رجاءا انظر https://openstreetmap.org. المشاركة الفعالة جد مقدرة، والمساهمات يمكن إنشاءها من التطبيق مباشرة إن قمت بإدخال معلوماتك الشخصية في التطبيق.</string>
 	<string name="vector_maps_may_display_faster_on_some_devices">عادة تعرض الخرائط الاتجاهية أسرع. ربما لا تعمل جيدا على بعض الأجهزة.</string>
 	<string name="play_commands_of_currently_selected_voice">حدد صوتا واختبر عن طريق تشغيل مقاطع سريعة</string>
-	<string name="switch_to_raster_map_to_see">لا توجد خرائط متجهية محلية لهذا المكان. يمكنك تنزيل إحداها من الإعدادات (إدارة ملفات الخرائط)، أو التغيير لخرائط الانترنت (فعّل ملحق الخرائط عبر الإنترنت لهذا).</string>
-	<string name="shared_string_and">و</string>
+    <string name="shared_string_and">و</string>
     <string name="shared_string_or">أو</string>
 	<string name="av_camera_focus_continuous">التركيز المستمر</string>
 	<string name="free_version_title">الإصدار المجاني</string>
@@ -590,13 +576,7 @@
 \n
 \nالبيانات العالمية (ما بين 70 درجة شمالا و70 جنوبا) مبنية على مقاييس SRTM (مكوك رادار البعثة الطبوغرافية) و ASTER (الانبعاث الحراري الفضائي المتقدم والإنعكاس الإشعاعي)، أداة التصوير على متن Terra، القمر الصناعي الرئيسي لنظام رصد الأرض التابع لناسا. ASTER هو جهد تعاوني بين كل من وكالة ناسا، وزارة الاقتصاد اليابانية، التجارة والصناعة (METI)، ونظم الفضاء اليابانية (J-spacesystems).</string>
 
-    <string name="osmand_rastermaps_plugin_description">عن طريق هاته الأداة يمكنك الوصول إلى أنواع عديدة من خرائط النت (تدعى بالقطع أو النقطية)، من قطع OSM مسبقة ( مثل Mapnik) إلى صور أقمار وطبقات مخصصة كخرائط الطقس، الخرائط الجيولوجية، طبقات التضاريس...إلخ.
-\n
-\nكل من هاته الخرائط يمكن أن تستخدم إما كخرائط رئيسية (قاعدية) تظهر على واجهة التطبيق، أو كطبقة فوقية أو تحتية لخريطة قاعدية آخرى( كخرائط التطبيق المحلية). لجعل أي طبقة تحتية خريطة أكثر وضوحا، بعض عناصر خرائط التطبيق الفيكتورية يمكن إخفاءها في قائمة \'ضبط الخريطة\' حسب الرغبة.
-\n
-\nأجزاء الخرائط يمكن التحصل عليها من مصادر إنترنت، أو تحضيرها للإستخدام دون إنترنت ( ونسخها يدويا إلى مجلد بيانات التطبيق) كقاعدة بيانات SQLite والتي يمكن إنتاجها عن طريق مجموعة متنوعة من أدوات تحضير الخرائط المستقلة.</string>
-	
-	<string name="update_poi_does_not_change_indexes">التغييرات POI داخل التطبيق لا تؤثرعلى ملفات الخرائط المحملة، يتم حفظ التغييرات إلى ملف محلي بدلا من ذلك.</string>
+    <string name="update_poi_does_not_change_indexes">التغييرات POI داخل التطبيق لا تؤثرعلى ملفات الخرائط المحملة، يتم حفظ التغييرات إلى ملف محلي بدلا من ذلك.</string>
 	<string name="av_camera_focus_descr">تحديد وضع تركيز الكاميرا الداخلية.</string>
 
 
@@ -642,8 +622,7 @@
 	<string name="auto_follow_location_enabled">توسيط عرض الخريطة تلقائيا مفعل.</string>
 	<string name="pref_vector_rendering">خيارات محددةناقلات العارض</string>
 	<string name="pref_overlay">غطاء/بطانة</string>
-	<string name="pref_raster_map">اعدادات مصدر الخريطة</string>
-	<string name="pref_vector_map">اعدادات الخريطة المتجهة</string>
+    <string name="pref_vector_map">اعدادات الخريطة المتجهة</string>
 	<string name="delete_confirmation_msg">حذف %1$s؟</string>
 	<string name="city_type_suburb">ضاحية</string>
 	<string name="city_type_hamlet">قرية</string>
@@ -768,12 +747,9 @@
 	<string name="poi_dialog_other_tags_message">يتم الاحتفاظ بكافة العلامات الاخري</string>
 	<string name="amenity_type_seamark">سيمارك</string>
     <string name="poi_dialog_comment_default">متغير POI</string>
-	<string name="tile_source_already_installed">الخريطة مٌثبّتة بالفعل، ستٌحدّث الإعدادات.</string>
-	<string name="select_tile_source_to_install">حدد الخرائط (التجانبية) للتثبيت أو التحديث.</string>
-	<string name="internet_not_available">اتصال إنترنت مطلوب لتشغيل هذه العملية لكنه غير متوفر.</string>
+    <string name="internet_not_available">اتصال إنترنت مطلوب لتشغيل هذه العملية لكنه غير متوفر.</string>
 	<string name="install_more">ثبّت أكثر…</string>
-	<string name="level_to_switch_vector_raster_descr">مستوى التقريب الأدنى لإستخدام الخرائط المتجهية.</string>
-	<string name="level_to_switch_vector_raster">مستوى تقريب الخريطة المتجهية الأدنى</string>
+    <string name="level_to_switch_vector_raster">مستوى تقريب الخريطة المتجهية الأدنى</string>
 	
 	
 	
@@ -847,8 +823,7 @@
 	<string name="poi_filter_closest_poi">أقرب POI</string>
 	<string name="poi_filter_custom_filter">تصفية مخصصة</string>
 	<string name="poi_filter_namefinder">البحث عن الاسم في الإنترنت</string>
-	<string name="reading_cached_tiles">جاري قراءة التجانبيات المخزنة مؤقتا…</string>
-	<string name="version_index_is_big_for_memory">الفهرس \"{0}\" كبير جدًّا على الذاكرة</string>
+    <string name="version_index_is_big_for_memory">الفهرس \"{0}\" كبير جدًّا على الذاكرة</string>
 	<string name="version_index_is_not_supported">اصدار المنتج غير مدعوم</string>
 	<string name="poi_error_unexpected_template">حدث خطأ غير متوقع أثناء ممارسة العمل {0}.</string>
 	<string name="show_zoom_buttons_navigation">أظهر أزرار التقريب</string>
@@ -1456,19 +1431,12 @@
 	<string name="map_view_3d_descr">تمكن عرض الخريطة ثلاثي الأبعاد.</string>
 	<string name="map_view_3d">عرض الخريطة ثلاثي الأبعاد</string>
 	<string name="mark_point">هدف</string>
-	<string name="reload_tile">إعادة تحميل التجانبية/المربع</string>
-	<string name="update_tile">تحديث الخريطة</string>
+    <string name="update_tile">تحديث الخريطة</string>
 	<string name="additional_settings">إعدادات إضافية</string>
-	<string name="map_tile_source">مصدر الخريطة التجانبية/المربعية</string>
-	<string name="use_internet_to_download_tile">استخدم الإنترنت لتحميل تجانبيات/مربعات الخريطة المفقودة</string>
-	<string name="app_description">تطبيق ملاحة</string>
+    <string name="app_description">تطبيق ملاحة</string>
 	<string name="choose_available_region">اختر المنطقة من القائمة</string>
 	<string name="osb_comment_dialog_success">تم إضافة التعليق بنجاح</string>
-	<string name="tiles_to_download_estimated_size">عند التقريب {0} قم بتحميل {1} التجانبيات/المربعات ({2} MB)</string>
-	<string name="use_high_res_maps_descr">عدم تمدد (وطمس) تجانبيات/مربعات الخريطة على شاشات العرض عالية الكثافة.</string>
-	<string name="max_level_download_tile_descr">اختر مستوى التقريب الأقصى لتحميل تجانبيات/قراميد الخريطة من الإنترنت.</string>
-	<string name="map_tile_source_descr">اختر مصدر تجانبيات/مربعات الخريطة على الإنترنت أو المخزنة مؤقتاً.</string>
-	<string name="user_hates_app_get_feedback_long">فضلًا أخبرنا ما الذي تريد تغييره في هذا التّطبيق.</string>
+    <string name="user_hates_app_get_feedback_long">فضلًا أخبرنا ما الذي تريد تغييره في هذا التّطبيق.</string>
 <string name="storage_directory_readonly_desc">مجلّد تخزين البيانات المحدّد حاليًّا للقراءة فقط. نُقل مجلّد التّخزين مؤقّتًا إلى الذّاكرة الدّاخليّة. رجاءا اختر وجهة تخزين صحيحة.</string>
     <string name="storage_directory_shared">الذّاكرة المشتركة</string>
     <string name="donations">التبرعات</string>
@@ -2103,10 +2071,7 @@
 قد يكون عطل مؤقت في الخدمة أو تسجيلك انتهى.
 
 هل تريد المتابعة بتسجيل جديد؟</string>
-    
-    <string name="osmand_routing_experimental">ملاحة OsmAnd دون نت ميزة تجريبية وهي لا تعمل لمسافات تزيد عن 20 كيلومترا.
 
-خدمة الملاحة حولت مؤقتا إلى CloudMade على الانترنت.</string>
     <string name="build_installed">"إصدار {0} تثبيت بنجاح  ({1})."</string>
     <string name="downloading_build">جاري تنزيل الإصدار …</string>
     <string name="install_selected_build">هل تريد تثبيت التطبيق - {0} من {1} {2} مب ؟</string>

@@ -300,7 +300,6 @@
     <string name="transport_search_desc">Търсене в обществен транспорт</string>
     <string name="favourites_search_desc">Търсене в \'любими\'</string>
 
-    <string name="offline_navigation_not_available">OsmAnd офлайн навигацията временно не е достъпна.</string>
     <string name="left_side_navigation">Обратно движение</string>
     <string name="left_side_navigation_descr">За държави с движение в лявата лента</string>
 
@@ -316,14 +315,8 @@
     <string name="index_settings_descr">Сваляне и управление на свалените данни във Вашето устройство</string>
     <string name="map_online_plugin_is_not_installed">Включете добавката за онлайн карти и ще можете да избирате различни източници на карти</string>
     <string name="map_online_data">Онлайн карти</string>
-    <string name="map_online_data_descr">Използване на онлайн карти (сваляне на карти в SD картата)</string>
     <string name="shared_string_online_maps">Онлайн карти</string>
-    <string name="online_map_settings_descr">Настройване на източниците за онлайн карти</string>
-	
-	
-	<string name="osmand_rastermaps_plugin_description">"С този плъгин можете да получите достъп до много типове онлайн (или растерни) карти, достъп до предварително създадени Openstreetmap растерни изображения (като Mapnik), до сателитни снимки и до слоеве със специално предназначение, като карти за времето, карти на климата, геоложки карти, географски терен и др.
-\n\nНякои от тези карти могат да бъдат използвани като основна (базова) карта на екрана на OsmAnd или като подложка на друга базова карта (като на OsmAnd стандартната офлайн карта). За да се направи всяка подложка по-видима, някои елементи на OsmAnd картата могат лесно да бъдат скрити чрез менюто \"Настройки на  картата\".
-\n\nРастерните карти могат да бъдат получени директно чрез онлайн източници, или могат да бъдат подготвени за офлайн употреба (и ръчно копирани в папката за данни OsmAnd) под формата на sqlite база данни от друго приложение. "</string>
+
 
     <string name="osmand_accessibility_description">Настройки на специалните функции за достъпност. Настройване скоростта на гласовите напътствия и допълнителни настройки за хора със специални потребности.</string>
 
@@ -331,7 +324,6 @@
     <string name="osmand_development_plugin_description">Добавката показва настройки за отстраняване на неизправности по програмата - тестване или симулиране на маршрут, честота на опресняване на екрана, работата на гласовите напътствия. Тези настройки са предназначени за разработчици и не са необходими на обикновения потребител.</string>
     <string name="plugins_screen">Добавки</string>
 
-    <string name="prefs_plugins_descr">Добавките внасят допълнителна функционалност на приложението</string>
     <string name="prefs_plugins">Добавки</string>
 
     <string name="osm_editing_plugin_description">Добавка за изпращане на данни към OSM - обекти (POI), бележки, GPX записани маршрути. За подробности по проекта OSM посетете https://openstreetmap.org. Вашият принос към проекта ще бъде оценен с благодарности. Необходимо е да се регистрирате на сайта на OSM и да въведете Вашето потребителско име и парола в това приложение.</string>
@@ -340,7 +332,6 @@
     <string name="debugging_and_development">За разработчици</string>
     <string name="native_rendering">Естествено изчертаване</string>
     <string name="test_voice_prompts">Тестова гласова навигация</string>
-    <string name="switch_to_raster_map_to_see">Няма свалени векторни карти за този район. Можете да ги свалите от \'Настройки\'-\'Управление на карти\', или да превключите на онлайн карти.</string>
 
     <string name="send_files_to_osm">Да се изпратят ли GPX файловете към OSM?</string>
     <string name="gpx_visibility_txt">Видимост</string>
@@ -484,7 +475,6 @@
     <string name="auto_follow_location_enabled">Автоматичното центриране е включено.</string>
     <string name="pref_vector_rendering">Специфични настройки за векторното изчертаване</string>
     <string name="pref_overlay">Допълнителен слой отгоре/отдолу</string>
-    <string name="pref_raster_map">Настройки за източник на картите</string>
     <string name="pref_vector_map">Настройки на векторните карти</string>
     <string name="delete_confirmation_msg">Изтриване на %1$s?</string>
     <string name="city_type_suburb">Квартал</string>
@@ -603,11 +593,8 @@
     <string name="shared_string_none">Няма</string>
     <string name="map_overlay">Карта отгоре</string>
     <string name="map_overlay_descr">Избор на карта за горния слой</string>
-    <string name="tile_source_already_installed">Картата вече е инсталирана, настройките ще бъдат обновени</string>
-    <string name="select_tile_source_to_install">Изберете карти за инсталиране или обновяване</string>
     <string name="internet_not_available">За действието се изисква Интернет връзка, но тя не е налична</string>
     <string name="install_more">Инсталиране на други…</string>
-    <string name="level_to_switch_vector_raster_descr">Минимален мащаб, с който могат да се ползват векторните карти</string>
     <string name="level_to_switch_vector_raster">Мин. мащаб за векторните карти</string>
 
 
@@ -672,12 +659,10 @@
     <string name="poi_filter_closest_poi">Най-близки POI</string>
     <string name="poi_filter_custom_filter">Потребителски филтър</string>
     <string name="poi_filter_namefinder">Онлайн търсене с NameFinder</string>
-    <string name="reading_cached_tiles">Зареждане на запазените фрагменти…</string>
     <string name="version_index_is_big_for_memory">Индексът \'\'{0}\'\' не се побира в паметта</string>
     <string name="version_index_is_not_supported">Версията на индекса \'\'{0}\'\' не се поддържа</string>
-    
-    
-    <string name="osmand_routing_experimental">Офлайн навигацията на OsmAnd е пробна версия и не работи пълноценно на дистанции по-големи от 20км.\n\nУслугата за навигация временно е превключена на онлайн от CloudMade.</string>
+
+
     <string name="specified_dir_doesnt_exist">Посочената папка не може да бъде намерена.</string>
     <string name="application_dir">Папка за данни</string>
 
@@ -705,7 +690,6 @@
     <string name="shared_string_refresh">Обнови</string>
     <string name="fast_route_mode">Най-бърз маршрут</string>
     <string name="fast_route_mode_descr">Отметнете за изчисляване на най-бърз маршрут. Ако няма отметка се изчислява най-къс маршрут. </string>
-    <string name="tiles_to_download_estimated_size">При мащаб {0} свалете {1} плочки ({2} MB)</string>
     <string name="shared_string_download_map">Сваляне на карта</string>
     <string name="select_max_zoom_preload_area">Изберете максималният мащаб</string>
     <string name="maps_could_not_be_downloaded">Тази карта не може да бъде свалена</string>
@@ -721,7 +705,6 @@
     <string name="poi_context_menu_call">Покажи телефона в POI</string>
     <string name="download_type_to_filter">въведете за филтър</string>
     <string name="use_high_res_maps">Висока резолюция</string>
-    <string name="use_high_res_maps_descr">Да не се разтягат (съответно замъгляват) картите на HD екрани</string>
 
     <string name="context_menu_item_search_transport">Търсене на общ. транспорт</string>
     <string name="transport_searching_transport">Резултати за общ. транспорт (без крайна цел):</string>
@@ -862,7 +845,6 @@
     <string name="search_offline_address">Търсене офлайн</string>
     <string name="search_online_address">Търсене онлайн</string>
     <string name="max_level_download_tile">Максимален мащаб при онлайн</string>
-    <string name="max_level_download_tile_descr">Изберете максимален мащаб за сваляне на онлайн картни фрагменти</string>
     <string name="route_general_information">Разстояние: %1$s, време до целта: %2$d ч. %3$d мин.</string>
     <string name="router_service_descr">Изберете онлайн или офлайн услуга за навигация</string>
     <string name="router_service">Услуга за навигация</string>
@@ -931,7 +913,6 @@
     <string name="save_track_to_gpx_descrp">Следите ще бъдат записвани в папката tracks по време на самата навигация</string>
     <string name="save_track_to_gpx">Запиши следата в GPX файл по време на навигация</string>
     <string name="update_tile">Обнови картата</string>
-    <string name="reload_tile">Презареждане на картната плочка</string>
     <string name="mark_point">Цел</string>
 
 
@@ -949,15 +930,12 @@
     <string name="map_view_3d">Карта в 3D</string>
     <string name="show_poi_over_map_description">Покажи POI на картата (ползвай последния избран филтър)</string>
     <string name="show_poi_over_map">Покажи POI</string>
-    <string name="map_tile_source_descr">Изберете източник на онлайн или локални карти</string>
-    <string name="map_tile_source">Източник на картно изображение</string>
     <string name="map_source">Източник на карти</string>
     <string name="use_internet">Ползвай интернет</string>
     <string name="show_location">Показване Вашата позиция</string>
 
 
     <string name="show_gps_coordinates_text">Покажи GPS координатите на картата</string>
-    <string name="use_internet_to_download_tile">Използвай интернет за сваляне на липсващите части от картата</string>
     <string name="app_description">Приложение за навигация</string>
     <string name="shared_string_exit">Изход</string>
 
@@ -1103,18 +1081,9 @@
 
 
     <string name="local_index_tile_data_expire">Изтича след %1$s минути</string>
-    <string name="local_index_tile_data_downloadable">Разрешени за теглене: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Максимален мащаб: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Минимален мащаб: %1$s</string>
-    <string name="local_index_tile_data_zooms">Заредени мащаби: %1$s</string>
     <string name="local_index_tile_data_name">Данни: %1$s</string>
-    <string name="edit_tilesource_successfully">Източникът на карти %1$s беше записан</string>
-    <string name="edit_tilesource_elliptic_tile">Елиптична меркаторна проекция</string>
     <string name="edit_tilesource_maxzoom">Максимално увеличение</string>
-    <string name="edit_tilesource_expiration_time">Минути до изтичане</string>
     <string name="edit_tilesource_minzoom">Минимално увеличение</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Изберете съществуващ…</string>
 
     <string name="maps_define_edit">Въвеждане/редактиране…</string>
     <string name="guidance_preferences_descr">Предпочитания за навигацията</string>

@@ -384,20 +384,11 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="shared_string_about">Sobre</string>
     <string name="about_settings_descr">Información sobre a versión, licenzas, participantes no proxecto</string>
 
-    
-    <string name="local_index_tile_data_zooms">Ampliacións descargadas: %1$s</string>
+
     <string name="local_index_tile_data_expire">Caducidade (minutos): %1$s</string>
-    <string name="local_index_tile_data_downloadable">Descargábel: %1$s</string>
-    <string name="local_index_tile_data_maxzoom">Ampliación máxima: %1$s</string>
-    <string name="local_index_tile_data_minzoom">Ampliación mínima: %1$s</string>
     <string name="local_index_tile_data_name">Datos das deselas: %1$s</string>
-    <string name="edit_tilesource_successfully">A fonte de teselas %1$s foi gardada correctamente</string>
-    <string name="edit_tilesource_elliptic_tile">Mercator elíptica</string>
     <string name="edit_tilesource_maxzoom">Ampliación máxima</string>
-    <string name="edit_tilesource_expiration_time">Caducidade (minutos)</string>
     <string name="edit_tilesource_minzoom">Ampliación mínima</string>
-    <string name="edit_tilesource_url_to_load">URL</string>
-    <string name="edit_tilesource_choose_existing">Escoller unha existente…</string>
     <string name="maps_define_edit">Definir/Editar…</string>
 	<string name="map_widget_fps_info">Información de depuración de FPS</string>
 	<string name="driving_region_descr">Seleccione a rexión na que conducir: Estados Unidos, Europa, Reino Unido, Asia e outras</string>
@@ -718,9 +709,8 @@ Os datos globais (entre os 70 graos norte e os 70 graos sul) están baseados nas
 	<string name="navpoint_search_desc">Coordenadas</string>
 	<string name="transport_search_desc">Busca de transporte público</string>
 	<string name="favourites_search_desc">Busca por favoritos</string>
-	
-	<string name="offline_navigation_not_available">A navegación sen conexión de OsmAnd non está dispoñíbel temporalmente.</string>
-	<string name="left_side_navigation">Condución pola esquerda</string>
+
+    <string name="left_side_navigation">Condución pola esquerda</string>
 	<string name="left_side_navigation_descr">Seleccióneo para os países nos que se conduza pola esquerda</string>
 	<string name="local_index_description">Prema en calqeura elemento existente para ver máis detalles, manteña premido para desactivar ou eliminar. Datos actualmente no dispositivo (%1$s libre):</string>
 	<string name="unknown_from_location">O punto de partida está aínda sen determinar</string>
@@ -734,39 +724,26 @@ Os datos globais (entre os 70 graos norte e os 70 graos sul) están baseados nas
 	<string name="index_settings_descr">Descargar e xestionar ficheiros de mapas sen conexión almacenados no dispositivo</string>
 	<string name="map_online_plugin_is_not_installed">Activar o engadido de mapas con conexión para seleccionar fontes de mapas diferentes</string>
 	<string name="map_online_data">Mapas con conexión e en teselas</string>
-	<string name="map_online_data_descr">Empregar mapas con conexión (descargar e gardar temporalmente as teselas no cartón SD)</string>
-	<string name="shared_string_online_maps">Mapas con conexión</string>
-	<string name="online_map_settings_descr">Configurar as fontes de mapas en teselas con conexión ou gardados temporalmente</string>
-	
-	
-	<string name="osmand_rastermaps_plugin_description">"Con este engadido pódese acceder a moitos tipos de mapas da rede (chamados de teselas ou raster), desde teselas predefinidas de Openstreetmap (como Mapnik) a imaxes de satélite e capas para propósitos determinados, como mapas climatolóxicos, mapas xeolóxicos, capas con sombreado das pendentes, etc.
+    <string name="shared_string_online_maps">Mapas con conexión</string>
 
 
-Calquera destes mapas pode ser empregado como mapa principal (base) para que apareza na pantalla de mapas de Osm ou superposto ou submetido doutro mapa base (como os mapas sen conexión normais de OsmAnd). Para que un mapa submetido sexa máis visíbel algúns elementos dos mapas vectoriais de OsmAnd poden ser agochados facilmente mediante o menú «Configurar o mapa».
-
-
-Os mapas en teselas pódense obter directamente a través de recursos na rede ou poden ser preparados para seren empregados sen conexión (e copiarse manualmente a un cartafol de datos de OsmAnd) como base de datos sqlite, que pode ser producida con diversas ferramentas de preparación de mapas de terceiros.
- "</string>
-	
-	<string name="osmand_accessibility_description">Este engadido pon as funcións de accesibilidade do dispositivo a disposición directamente desde o OsmAnd. Facilita que, por exemplo, se poida axustar a velocidade da fala nas voces de TTS, se configure a navegación da pantalla, se use unha trackball para controlar a ampliación ou se use a resposta de texto a fala, como cando se anuncia automaticamente a posición.</string>
+    <string name="osmand_accessibility_description">Este engadido pon as funcións de accesibilidade do dispositivo a disposición directamente desde o OsmAnd. Facilita que, por exemplo, se poida axustar a velocidade da fala nas voces de TTS, se configure a navegación da pantalla, se use unha trackball para controlar a ampliación ou se use a resposta de texto a fala, como cando se anuncia automaticamente a posición.</string>
 	
 	
 	
 	<string name="osmand_development_plugin_description">Este engadido mostra as opcións para as funcionalidades de desenvolvemento e depuración, como simulación de rutas, visión do desempeño do renderizado ou indicacións por voz. Estas opcións están pensadas para seren usadas polos desenvolvedores e non son necesarias para o uso xeral.</string>
 	<string name="plugins_screen">Engadidos</string>
-	
-	<string name="prefs_plugins_descr">Os engadidos activan opcións avanzadas e funcionalidade adicional</string>
-	<string name="prefs_plugins">Engadidos</string>
+
+    <string name="prefs_plugins">Engadidos</string>
 	
 	<string name="osm_editing_plugin_description">Con este engadido pódese usar OsmAnd para achegar mellorar a OSM, como crear ou modificar obxectos de punto de interese de OSM, abrir ou comentar fallos de OSM e enviar ficheiros GPX gravados. OSM é un proxecto comunitario de creación de mapas globais no dominio público. Para máis detalles, consulte https://openstreetmap.org. Agradécese a participación activa e as colaboracións pódense realizar directamente desde OsmAnd se se indican as credenciais persoais de OSM no aplicativo.</string>
 	<string name="vector_maps_may_display_faster_on_some_devices">Os mapas vectoriais seguramente se mostran máis rápido. Poden non funcionar ben nalgúns dispositivos.</string>
 	<string name="play_commands_of_currently_selected_voice">Reproducir as ordes da voz que haxa seleccionada</string>
 	<string name="debugging_and_development">Desenvolvemento do OsmAnd</string>
 	<string name="native_rendering">Renderizado nativo</string>
-	<string name="test_voice_prompts">Probar as instrucións de voz</string>    
-	<string name="switch_to_raster_map_to_see">Non hai mapas vectoriais presentes para esta situación. Pode descargar un en Configuración (Xestionar ficheiros mapas) ou pase aos mapas con conexión (active o engadido de mapas en liña para isto).</string>
-	
-	<string name="send_files_to_osm">Enviar ficheiros GPX a OSM?</string>
+	<string name="test_voice_prompts">Probar as instrucións de voz</string>
+
+    <string name="send_files_to_osm">Enviar ficheiros GPX a OSM?</string>
 	<string name="gpx_visibility_txt">Visibilidade</string>
 	<string name="gpx_tags_txt">Etiquetas</string>
 	<string name="gpx_description_txt">Descrición</string>
@@ -918,8 +895,7 @@ Os mapas en teselas pódense obter directamente a través de recursos na rede ou
 	<string name="auto_follow_location_enabled">Centrar automaticamente a vista do mapa en uso.</string>
 	<string name="pref_vector_rendering">Opcións específicas do rendereizador vectorial</string>
 	<string name="pref_overlay">Sobreposición / submisión</string>
-	<string name="pref_raster_map">Configuración das fontes de mapas</string>
-	<string name="pref_vector_map">Configuración dos mapas vectoriais</string>
+    <string name="pref_vector_map">Configuración dos mapas vectoriais</string>
 	<string name="delete_confirmation_msg">Eliminar %1$s?</string>
 	<string name="city_type_suburb">Zona residencial</string>
 	<string name="city_type_hamlet">Lugar</string>
@@ -1035,12 +1011,9 @@ Os mapas en teselas pódense obter directamente a través de recursos na rede ou
 	<string name="shared_string_none">Ningún</string>
 	<string name="map_overlay">Mapa sobreposto</string>
 	<string name="map_overlay_descr">Escoller o mapa sobreposto</string>
-	<string name="tile_source_already_installed">O mapa xa está instalado; vaise actualizar a configuración</string>
-	<string name="select_tile_source_to_install">Seleccione os mapas (teselas) que desexa instalar ou actualizar</string>
-	<string name="internet_not_available">Esta operación require unha conexión á Internet mais non hai ningunha dispoñíbel</string>
+    <string name="internet_not_available">Esta operación require unha conexión á Internet mais non hai ningunha dispoñíbel</string>
 	<string name="install_more">Instalar máis…</string>
-	<string name="level_to_switch_vector_raster_descr">Nivel de ampliación mínimo para empregar mapas vectoriais</string>
-	<string name="level_to_switch_vector_raster">Nivel de ampliación vectorial mínimo</string>
+    <string name="level_to_switch_vector_raster">Nivel de ampliación vectorial mínimo</string>
 	
 	
 	
@@ -1111,13 +1084,11 @@ Os mapas en teselas pódense obter directamente a través de recursos na rede ou
 	<string name="poi_filter_closest_poi">PDI máis preto</string>
 	<string name="poi_filter_custom_filter">Filtro personalizado</string>
 	<string name="poi_filter_namefinder">Busca de puntos de interese con conexión</string>
-	<string name="reading_cached_tiles">A ler as teselas gardadas temporalmente…</string>
-	<string name="version_index_is_big_for_memory">O índice «{0}» non cabe na memoria</string>
+    <string name="version_index_is_big_for_memory">O índice «{0}» non cabe na memoria</string>
 	<string name="version_index_is_not_supported">Non se admite a versión do índice «{0}»</string>
-	
-	
-	<string name="osmand_routing_experimental">A navegación sen conexión de OsmAnd é unha funcionalidade experimental e non funciona para distancias maiores duns 20 km.\n\nO servizo de navegación vai pasar temporalmente ao CloudMade, con conexión.</string>
-	<string name="specified_dir_doesnt_exist">Non é posíbel atopar o cartafol indicado.</string>
+
+
+    <string name="specified_dir_doesnt_exist">Non é posíbel atopar o cartafol indicado.</string>
 	<string name="application_dir">Cartafol de almacenamento de datos</string>
 	
 	<string name="osmand_net_previously_installed">Xa hai unha versión anterior de OsmAnd instalada. Todos os datos sen conexión son utilizábeis polo novo aplicativo. Porén, os puntos favoritos hainos que exportar co aplicativo antigo e despois importalos co novo.</string>
@@ -1144,8 +1115,7 @@ Os mapas en teselas pódense obter directamente a través de recursos na rede ou
 	<string name="shared_string_refresh">Anovar</string>
 	<string name="fast_route_mode">Itinerario máis rápido</string>
 	<string name="fast_route_mode_descr">"Active isto para calcular a ruta máis rápida ou desactíveo para a máis curta "</string>
-	<string name="tiles_to_download_estimated_size">Na ampliación {0} descargar {1} teselas ({2} MB)</string>
-	<string name="shared_string_download_map">Descargar mapa</string>
+    <string name="shared_string_download_map">Descargar mapa</string>
 	<string name="select_max_zoom_preload_area">Seleccionar a ampliaciń máxima que pré-cargar</string>
 	<string name="maps_could_not_be_downloaded">Non foi posíbel descargar este mapa</string>
 	<string name="continuous_rendering">Renderizado continuo</string>
@@ -1160,9 +1130,8 @@ Os mapas en teselas pódense obter directamente a través de recursos na rede ou
 	<string name="poi_context_menu_call">Mostrar o teléfono do punto de interese</string>
 	<string name="download_type_to_filter">tipo que filtrar</string>
 	<string name="use_high_res_maps">Pantalla de alta resolución</string>
-	<string name="use_high_res_maps_descr">Non estirar (e perder a nitidez) das teselas do mapa en pantallas de alta densidade</string>
-	
-	<string name="context_menu_item_search_transport">Buscar transporte público</string>
+
+    <string name="context_menu_item_search_transport">Buscar transporte público</string>
 	<string name="transport_searching_transport">Resultados de transporte (sen destino):</string>
 	<string name="transport_searching_route">Resultados de transporte ({0} ao destino):</string>
 	
@@ -1301,8 +1270,7 @@ Os mapas en teselas pódense obter directamente a través de recursos na rede ou
 	<string name="search_offline_address">Busca sen conexión</string>
 	<string name="search_online_address">Busca con conexión</string>
 	<string name="max_level_download_tile">Max. online zoom</string>
-	<string name="max_level_download_tile_descr">Escoller o nivel de ampliación máximo que descargar para as teselas dos mapas con conexión</string>
-	<string name="route_general_information">Distancia total %1$s, tempo de viaxe %2$d h %3$d m.</string>
+    <string name="route_general_information">Distancia total %1$s, tempo de viaxe %2$d h %3$d m.</string>
 	<string name="router_service_descr">Escoller un servizo de navegación con ou sen conexión</string>
 	<string name="router_service">Navigation service</string>
 	<string name="sd_dir_not_accessible">O cartafol de almacenamento de datos do cartón SD non é accesíbel!</string>
@@ -1365,8 +1333,7 @@ Os mapas en teselas pódense obter directamente a través de recursos na rede ou
 	<string name="additional_settings">Opcións adicionais</string>
 	<string name="shared_string_settings">Configuración</string>
 	<string name="update_tile">Actualizar o mapa</string>
-	<string name="reload_tile">Recargar a tesela</string>
-	<string name="mark_point">Destino</string>
+    <string name="mark_point">Destino</string>
 	
 	
 	
@@ -1384,16 +1351,13 @@ Os mapas en teselas pódense obter directamente a través de recursos na rede ou
 	<string name="map_view_3d">Vista do mapa en 3D</string>
 	<string name="show_poi_over_map_description">Mostrar os PDI no mapa (empregar o último filtro escollido)</string>
 	<string name="show_poi_over_map">Mostrar os PDI</string>
-	<string name="map_tile_source_descr">Escoller a fonte das teselas do mapa con conexión ou gardadas temporalmente</string>
-	<string name="map_tile_source">Fonte das deselas do mapa</string>
-	<string name="map_source">Fonte do mapa</string>
+    <string name="map_source">Fonte do mapa</string>
 	<string name="use_internet">Empregar a Internet</string>
 	<string name="show_location">Mostrar a súa situación</string>
 	
 	
 	<string name="show_gps_coordinates_text">Mostrar as coordenadas de GPS no mapa</string>
-	<string name="use_internet_to_download_tile">Empregar a Internet para descargar as teselas do mapa que falten</string>
-	<string name="app_description">Aplicativo de navegación</string>
+    <string name="app_description">Aplicativo de navegación</string>
 	<string name="shared_string_exit">Saír</string>
 	
 	
