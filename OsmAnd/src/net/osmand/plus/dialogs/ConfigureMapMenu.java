@@ -45,7 +45,6 @@ import net.osmand.plus.activities.SettingsActivity;
 import net.osmand.plus.openseamapsplugin.NauticalMapsPlugin;
 import net.osmand.plus.poi.PoiFiltersHelper;
 import net.osmand.plus.render.RendererRegistry;
-import net.osmand.plus.srtmplugin.SRTMPlugin;
 import net.osmand.plus.views.OsmandMapTileView;
 import net.osmand.plus.views.corenative.NativeCoreContext;
 import net.osmand.render.RenderingRule;
@@ -67,11 +66,6 @@ import java.util.Locale;
 import java.util.Map;
 
 import gnu.trove.list.array.TIntArrayList;
-
-import static net.osmand.plus.srtmplugin.SRTMPlugin.CONTOUR_DENSITY_ATTR;
-import static net.osmand.plus.srtmplugin.SRTMPlugin.CONTOUR_LINES_ATTR;
-import static net.osmand.plus.srtmplugin.SRTMPlugin.CONTOUR_LINES_SCHEME_ATTR;
-import static net.osmand.plus.srtmplugin.SRTMPlugin.CONTOUR_WIDTH_ATTR;
 
 public class ConfigureMapMenu {
 	private static final Log LOG = PlatformUtil.getLog(ConfigureMapMenu.class);
@@ -464,13 +458,6 @@ public class ConfigureMapMenu {
 
 		OsmandPlugin.registerLayerContextMenu(activity.getMapView(), adapter, activity);
 		app.getAppCustomization().prepareLayerContextMenu(activity, adapter);
-		boolean srtmDisabled = OsmandPlugin.getEnabledPlugin(SRTMPlugin.class) == null;
-		if (srtmDisabled) {
-			SRTMPlugin srtmPlugin = OsmandPlugin.getPlugin(SRTMPlugin.class);
-			if (srtmPlugin != null) {
-				srtmPlugin.registerLayerContextMenuActions(activity.getMapView(), adapter, activity);
-			}
-		}
 	}
 
 	public static void refreshMapComplete(final MapActivity activity) {
@@ -1151,10 +1138,6 @@ public class ConfigureMapMenu {
 				p.getAttrName().equals(RenderingRuleStorageProperties.A_ENGINE_V1) ||
 				p.getAttrName().equals(HIKING_ROUTES_OSMC_ATTR) ||
 				p.getAttrName().equals(ROAD_STYLE_ATTR) ||
-				p.getAttrName().equals(CONTOUR_WIDTH_ATTR) ||
-				p.getAttrName().equals(CONTOUR_DENSITY_ATTR) ||
-				p.getAttrName().equals(CONTOUR_LINES_ATTR) ||
-				p.getAttrName().equals(CONTOUR_LINES_SCHEME_ATTR) ||
 				p.getAttrName().equals(CURRENT_TRACK_COLOR_ATTR) ||
 				p.getAttrName().equals(CURRENT_TRACK_WIDTH_ATTR));
 	}

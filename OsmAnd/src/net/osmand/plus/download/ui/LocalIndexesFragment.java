@@ -182,7 +182,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 				return performBasicOperation(resId, info);
 			}
 		};
-		if (info.getType() == LocalIndexType.MAP_DATA || info.getType() == LocalIndexType.SRTM_DATA ||
+		if (info.getType() == LocalIndexType.MAP_DATA ||
 				info.getType() == LocalIndexType.WIKI_DATA) {
 			if (!info.isBackupedData()) {
 				adapter.addItem(new ContextMenuItem.ItemBuilder()
@@ -440,8 +440,6 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 					}
 				} else if (i.getOriginalType() == LocalIndexType.TILES_DATA) {
 					parent = getMyApplication().getAppPath(IndexConstants.TILES_INDEX_DIR);
-				} else if (i.getOriginalType() == LocalIndexType.SRTM_DATA) {
-					parent = getMyApplication().getAppPath(IndexConstants.SRTM_INDEX_DIR);
 				} else if (i.getOriginalType() == LocalIndexType.WIKI_DATA) {
 					parent = getMyApplication().getAppPath(IndexConstants.WIKI_INDEX_DIR);
 				} else if (i.getOriginalType() == LocalIndexType.TTS_VOICE_DATA) {
@@ -799,7 +797,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 						public void onClick(DialogInterface dialog, int which) {
 							doAction(itemId);
 						}
-					}, EnumSet.of(LocalIndexType.MAP_DATA, LocalIndexType.WIKI_DATA, LocalIndexType.SRTM_DATA));
+					}, EnumSet.of(LocalIndexType.MAP_DATA, LocalIndexType.WIKI_DATA));
 		} else if (itemId == R.string.local_index_mi_restore) {
 			openSelectionMode(itemId, R.drawable.ic_type_archive,
 					new DialogInterface.OnClickListener() {
@@ -1070,8 +1068,6 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 				return ctx.getString(R.string.download_roads_only_item);
 			} else if (child.isBackupedData() && child.getFileName().endsWith(IndexConstants.BINARY_WIKI_MAP_INDEX_EXT)) {
 				return ctx.getString(R.string.download_wikipedia_maps);
-			} else if (child.isBackupedData() && child.getFileName().endsWith(IndexConstants.BINARY_SRTM_MAP_INDEX_EXT)) {
-				return ctx.getString(R.string.download_srtm_maps);
 			}
 			return "";
 		}

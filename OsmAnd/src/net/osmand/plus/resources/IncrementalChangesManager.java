@@ -43,8 +43,7 @@ public class IncrementalChangesManager {
 			}
 			Set<String> existingFiles = new HashSet<String>();
 			for (File f : files) {
-				if(!f.getName().endsWith(IndexConstants.BINARY_WIKI_MAP_INDEX_EXT) && 
-						!f.getName().endsWith(IndexConstants.BINARY_SRTM_MAP_INDEX_EXT)) {
+				if(!f.getName().endsWith(IndexConstants.BINARY_WIKI_MAP_INDEX_EXT)) {
 					existingFiles.add(Algorithms.getFileNameWithoutExtension(f));
 				}
 			}

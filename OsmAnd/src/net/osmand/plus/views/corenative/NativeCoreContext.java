@@ -1,8 +1,10 @@
 package net.osmand.plus.views.corenative;
 
-import java.io.File;
+import android.content.Context;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.WindowManager;
 
-import net.osmand.IndexConstants;
 import net.osmand.core.android.CoreResourcesFromAndroidAssets;
 import net.osmand.core.android.MapRendererContext;
 import net.osmand.core.android.NativeCore;
@@ -11,12 +13,8 @@ import net.osmand.core.jni.MapStylesCollection;
 import net.osmand.core.jni.ObfsCollection;
 import net.osmand.core.jni.QIODeviceLogSink;
 import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.OsmandPlugin;
-import net.osmand.plus.srtmplugin.SRTMPlugin;
-import android.content.Context;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.WindowManager;
+
+import java.io.File;
 
 /**
  * Created by Denis on 01.10.2014.
@@ -60,9 +58,6 @@ public class NativeCoreContext {
 				
 				ObfsCollection obfsCollection = new ObfsCollection();
 				obfsCollection.addDirectory(directory.getAbsolutePath(), false);
-				if(OsmandPlugin.getEnabledPlugin(SRTMPlugin.class) != null) {
-					obfsCollection.addDirectory(app.getAppPath(IndexConstants.SRTM_INDEX_DIR).getAbsolutePath(), false);
-				}
 
                 mapRendererContext = new MapRendererContext(app, dm.density);
 				mapRendererContext.setupObfMap(new MapStylesCollection(), obfsCollection);

@@ -64,7 +64,6 @@ import net.osmand.plus.inapp.InAppHelper;
 import net.osmand.plus.inapp.InAppHelper.InAppListener;
 import net.osmand.plus.liveupdates.OsmLiveActivity;
 import net.osmand.plus.openseamapsplugin.NauticalMapsPlugin;
-import net.osmand.plus.srtmplugin.SRTMPlugin;
 import net.osmand.plus.views.controls.PagerSlidingTabStrip;
 import net.osmand.util.Algorithms;
 
@@ -122,8 +121,6 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 
 	private InAppHelper inAppHelper;
 
-	private boolean srtmDisabled;
-	private boolean srtmNeedsInstallation;
 	private boolean nauticalPluginDisabled;
 	private boolean freeVersion;
 
@@ -870,14 +867,6 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 		messageTextView.setText(R.string.device_memory);
 	}
 
-	public boolean isSrtmDisabled() {
-		return srtmDisabled;
-	}
-
-	public boolean isSrtmNeedsInstallation() {
-		return srtmNeedsInstallation;
-	}
-
 	public boolean isNauticalPluginDisabled() {
 		return nauticalPluginDisabled;
 	}
@@ -887,12 +876,8 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 	}
 
 	public void initAppStatusVariables() {
-		srtmDisabled = OsmandPlugin.getEnabledPlugin(SRTMPlugin.class) == null;
 		nauticalPluginDisabled = OsmandPlugin.getEnabledPlugin(NauticalMapsPlugin.class) == null;
 		freeVersion = Version.isFreeVersion(getMyApplication());
-		OsmandPlugin srtmPlugin = OsmandPlugin.getPlugin(SRTMPlugin.class);
-		srtmNeedsInstallation = srtmPlugin == null || srtmPlugin.needsInstallation();
-
 	}
 
 	public static class AskMapDownloadFragment extends BottomSheetDialogFragment {

@@ -31,8 +31,6 @@ public class DownloadResourceGroup {
 		// headers
 		WORLD_MAPS(R.string.world_maps),
 		REGION_MAPS(R.string.region_maps),
-		SRTM_HEADER(R.string.download_srtm_maps),
-		HILLSHADE_HEADER(R.string.download_hillshade_maps),
 		OTHER_MAPS_HEADER(R.string.download_select_map_types),
 		NAUTICAL_MAPS_HEADER(R.string.nautical_maps),
 		// headers with voice items
@@ -81,7 +79,6 @@ public class DownloadResourceGroup {
 		public boolean isHeader() {
 			return this == VOICE_HEADER_REC || this == VOICE_HEADER_TTS || this == SUBREGIONS
 					|| this == WORLD_MAPS || this == REGION_MAPS || this == OTHER_GROUP
-					|| this == HILLSHADE_HEADER || this == SRTM_HEADER
 					|| this == OTHER_MAPS_HEADER || this == OTHER_MAPS_GROUP
 					|| this == FONTS_HEADER || this == NAUTICAL_MAPS_HEADER || this == NAUTICAL_MAPS_GROUP;
 		}
@@ -157,43 +154,6 @@ public class DownloadResourceGroup {
 			}
 		}
 		
-	}
-	
-	public void createHillshadeSRTMGroups() {
-		if(getType().isScreen()) {
-			DownloadResourceGroup regionMaps = getSubGroupById(DownloadResourceGroupType.REGION_MAPS.getDefaultId());
-			if(regionMaps != null && regionMaps.size() == 1 && parentGroup != null && parentGroup.getParentGroup() != null && 
-					isEmpty(getSubGroupById(DownloadResourceGroupType.SUBREGIONS.getDefaultId()))) {
-				IndexItem item = regionMaps.individualResources.get(0);
-				DownloadResourceGroup screenParent = parentGroup.getParentGroup();
-				if(item.getType() == DownloadActivityType.HILLSHADE_FILE) {
-					DownloadResourceGroup hillshades = 
-							screenParent.getSubGroupById(DownloadResourceGroupType.HILLSHADE_HEADER.getDefaultId());
-					if(hillshades == null) {
-						hillshades = new DownloadResourceGroup(screenParent, DownloadResourceGroupType.HILLSHADE_HEADER);
-						screenParent.addGroup(hillshades);
-					}
-					hillshades.addItem(item);
-					regionMaps.individualResources.remove(0);
-				} else if (item.getType() == DownloadActivityType.SRTM_COUNTRY_FILE) {
-					DownloadResourceGroup hillshades = screenParent
-							.getSubGroupById(DownloadResourceGroupType.SRTM_HEADER.getDefaultId());
-					if (hillshades == null) {
-						hillshades = new DownloadResourceGroup(screenParent, DownloadResourceGroupType.SRTM_HEADER);
-						screenParent.addGroup(hillshades);
-					}
-					hillshades.addItem(item);
-					regionMaps.individualResources.remove(0);
-				}
-				
-			}
-			DownloadResourceGroup subregs = getSubGroupById(DownloadResourceGroupType.SUBREGIONS.getDefaultId());
-			if(subregs != null) {
-				for(DownloadResourceGroup g : subregs.getGroups()) {
-					g.createHillshadeSRTMGroups();
-				}
-			}
-		}
 	}
 	
 	private boolean isEmpty(DownloadResourceGroup subGroupById) {

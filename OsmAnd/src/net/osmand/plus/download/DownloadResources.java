@@ -140,8 +140,7 @@ public class DownloadResources extends DownloadResourceGroup {
 			if ((item.getType() == DownloadActivityType.NORMAL_FILE && !item.extra)
 					|| item.getType() == DownloadActivityType.ROADS_FILE
 					|| item.getType() == DownloadActivityType.WIKIPEDIA_FILE
-					|| item.getType() == DownloadActivityType.DEPTH_CONTOUR_FILE
-					|| item.getType() == DownloadActivityType.SRTM_COUNTRY_FILE) {
+					|| item.getType() == DownloadActivityType.DEPTH_CONTOUR_FILE) {
 				outdated = true;
 			} else {
 				long itemSize = item.getContentSize();
@@ -347,7 +346,6 @@ public class DownloadResources extends DownloadResourceGroup {
 		// Possible improvements
 		// 1. if there is no subregions no need to create resource group REGIONS_MAPS - objection raise diversity and there is no value
 		// 2. if there is no subregions and there only 1 index item it could be merged to the level up - objection there is no such maps
-		// 3. if hillshade/srtm is disabled, all maps from inner level could be combined into 1 
 		addGroup(worldMaps);
 
 		nauticalMapsScreen.addGroup(nauticalMaps);
@@ -370,7 +368,6 @@ public class DownloadResources extends DownloadResourceGroup {
 		}
 		addGroup(otherGroup);
 
-		createHillshadeSRTMGroups();
 		trimEmptyGroups();
 		updateLoadedFiles();
 		return true;

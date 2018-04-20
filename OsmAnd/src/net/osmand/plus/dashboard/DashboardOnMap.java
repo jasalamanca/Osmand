@@ -78,9 +78,6 @@ import net.osmand.plus.mapillary.MapillaryPlugin.MapillaryFirstDialogFragment;
 import net.osmand.plus.osmedit.OsmNotesMenu;
 import net.osmand.plus.routing.RoutingHelper;
 import net.osmand.plus.routing.RoutingHelper.IRouteInformationListener;
-import net.osmand.plus.srtmplugin.ContourLinesMenu;
-import net.osmand.plus.srtmplugin.HillshadeMenu;
-import net.osmand.plus.srtmplugin.SRTMPlugin;
 import net.osmand.plus.views.DownloadedRegionsLayer;
 import net.osmand.plus.views.MapInfoLayer;
 import net.osmand.plus.views.OsmandMapTileView;
@@ -187,8 +184,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		OVERLAY_MAP,
 		UNDERLAY_MAP,
 		MAPILLARY,
-		CONTOUR_LINES,
-		HILLSHADE,
 		OSM_NOTES
 	}
 
@@ -424,10 +419,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 			tv.setText(R.string.map_overlay);
 		} else if (visibleType == DashboardType.MAPILLARY) {
 			tv.setText(R.string.mapillary);
-		} else if (visibleType == DashboardType.CONTOUR_LINES) {
-			tv.setText(R.string.srtm_plugin_name);
-		} else if (visibleType == DashboardType.HILLSHADE) {
-			tv.setText(R.string.layer_hillshade);
 		} else if (visibleType == DashboardType.OSM_NOTES) {
 			tv.setText(R.string.osm_notes);
 		}
@@ -823,8 +814,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		if (visibleType != DashboardType.WAYPOINTS
 				&& visibleType != DashboardType.CONFIGURE_SCREEN
 				&& visibleType != DashboardType.CONFIGURE_MAP
-				&& visibleType != DashboardType.CONTOUR_LINES
-				&& visibleType != DashboardType.HILLSHADE
 				&& visibleType != DashboardType.OSM_NOTES) {
 			listView.setDivider(dividerDrawable);
 			listView.setDividerHeight(dpToPx(1f));
@@ -874,10 +863,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 				ArrayAdapter<LocalRoutingParameter> listAdapter = routePreferencesMenu.getRoutePreferencesDrawerAdapter(nightMode);
 				OnItemClickListener listener = routePreferencesMenu.getItemClickListener(listAdapter);
 				updateListAdapter(listAdapter, listener);
-			} else if (visibleType == DashboardType.CONTOUR_LINES) {
-				cm = ContourLinesMenu.createListAdapter(mapActivity);
-			} else if (visibleType == DashboardType.HILLSHADE) {
-				cm = HillshadeMenu.createListAdapter(mapActivity);
 			} else if (visibleType == DashboardType.OSM_NOTES) {
 				cm = OsmNotesMenu.createListAdapter(mapActivity);
 			}
@@ -899,41 +884,13 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 	}
 
 	public void onNewDownloadIndexes() {
-		if (visibleType == DashboardType.CONTOUR_LINES || visibleType == DashboardType.HILLSHADE) {
-			refreshContent(true);
-		}
 	}
 
 	@SuppressWarnings("unchecked")
 	public void onDownloadInProgress() {
-		if (visibleType == DashboardType.CONTOUR_LINES || visibleType == DashboardType.HILLSHADE) {
-			DownloadIndexesThread downloadThread = getMyApplication().getDownloadThread();
-			IndexItem downloadIndexItem = downloadThread.getCurrentDownloadingItem();
-			if (downloadIndexItem != null) {
-				int downloadProgress = downloadThread.getCurrentDownloadingItemProgress();
-				ArrayAdapter<ContextMenuItem> adapter = (ArrayAdapter<ContextMenuItem>) listAdapter;
-				for (int i = 0; i < adapter.getCount(); i++) {
-					ContextMenuItem item = adapter.getItem(i);
-					if (item != null && item.getProgressListener() != null) {
-						item.getProgressListener().onProgressChanged(
-								downloadIndexItem, downloadProgress, adapter, (int) adapter.getItemId(i), i);
-					}
-				}
-			}
-		}
 	}
 
 	public void onDownloadHasFinished() {
-		if (visibleType == DashboardType.CONTOUR_LINES || visibleType == DashboardType.HILLSHADE) {
-			refreshContent(true);
-			if (visibleType == DashboardType.HILLSHADE) {
-				SRTMPlugin plugin = OsmandPlugin.getEnabledPlugin(SRTMPlugin.class);
-				if (plugin != null && plugin.isHillShadeLayerEnabled()) {
-					plugin.registerLayers(mapActivity);
-				}
-			}
-			SRTMPlugin.refreshMapComplete(mapActivity);
-		}
 	}
 
 	public void refreshContent(boolean force) {

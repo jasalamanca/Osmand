@@ -28,7 +28,6 @@ import net.osmand.plus.myplaces.FavoritesActivity;
 import net.osmand.plus.openseamapsplugin.NauticalMapsPlugin;
 import net.osmand.plus.osmedit.OsmEditingPlugin;
 import net.osmand.plus.skimapsplugin.SkiMapsPlugin;
-import net.osmand.plus.srtmplugin.SRTMPlugin;
 import net.osmand.plus.views.OsmandMapTileView;
 
 import org.apache.commons.logging.Log;
@@ -43,8 +42,6 @@ public abstract class OsmandPlugin {
 	private static List<OsmandPlugin> allPlugins = new ArrayList<OsmandPlugin>();
 	private static final Log LOG = PlatformUtil.getLog(OsmandPlugin.class);
 
-	private static final String SRTM_PLUGIN_COMPONENT_PAID = "net.osmand.srtmPlugin.paid"; //$NON-NLS-1$
-	private static final String SRTM_PLUGIN_COMPONENT = "net.osmand.srtmPlugin";
 	private boolean active;
 	private String installURL = null;
 
@@ -135,13 +132,6 @@ public abstract class OsmandPlugin {
 		allPlugins.add(new OsmEditingPlugin(app));
 
 		allPlugins.add(new OsmandMonitoringPlugin(app));
-		// allPlugins.add(new OsMoPlugin(app));
-		checkMarketPlugin(app, new SRTMPlugin(app), true, SRTM_PLUGIN_COMPONENT_PAID, SRTM_PLUGIN_COMPONENT);
-
-		// ? questionable - definitely not market plugin 
-//		checkMarketPlugin(app, new TouringViewPlugin(app), false, TouringViewPlugin.COMPONENT, null);
-		checkMarketPlugin(app, new NauticalMapsPlugin(app), false, NauticalMapsPlugin.COMPONENT, null);
-		checkMarketPlugin(app, new SkiMapsPlugin(app), false, SkiMapsPlugin.COMPONENT, null);
 
 		allPlugins.add(new AccessibilityPlugin(app));
 		allPlugins.add(new OsmandDevelopmentPlugin(app));
@@ -163,24 +153,13 @@ public abstract class OsmandPlugin {
 		}
 	}
 
-	private static void checkMarketPlugin(OsmandApplication app, OsmandPlugin srtm, boolean paid, String id, String id2) {
+	private static void checkMarketPlugin(OsmandApplication app, boolean paid, String id, String id2) {
 		boolean marketEnabled = Version.isMarketEnabled(app);
 		boolean pckg = isPackageInstalled(id, app) ||
 				isPackageInstalled(id2, app);
 		if ((Version.isDeveloperVersion(app) || !Version.isProductionVersion(app)) && !paid) {
 			// for test reasons
 			marketEnabled = false;
-		}
-		if (pckg || (!marketEnabled && !paid)) {
-			if (pckg && !app.getSettings().getPlugins().contains("-" + srtm.getId())) {
-				srtm.setActive(true);
-			}
-			allPlugins.add(srtm);
-		} else {
-			if (marketEnabled) {
-				srtm.setInstallURL(Version.getUrlWithUtmRef(app, id));
-				allPlugins.add(srtm);
-			}
 		}
 	}
 

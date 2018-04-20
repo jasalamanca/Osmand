@@ -41,7 +41,6 @@ import net.osmand.plus.render.NativeOsmandLibrary;
 import net.osmand.plus.resources.AsyncLoadingThread.MapLoadRequest;
 import net.osmand.plus.resources.AsyncLoadingThread.OnMapLoadedListener;
 import net.osmand.plus.resources.AsyncLoadingThread.TileLoadDownloadRequest;
-import net.osmand.plus.srtmplugin.SRTMPlugin;
 import net.osmand.plus.views.OsmandMapLayer.DrawSettings;
 import net.osmand.util.Algorithms;
 import net.osmand.util.MapUtils;
@@ -584,10 +583,7 @@ public class ResourceManager {
 		if (!Version.isFreeVersion(context) || context.getSettings().FULL_VERSION_PURCHASED.get()) {
 			collectFiles(context.getAppPath(IndexConstants.WIKI_INDEX_DIR), IndexConstants.BINARY_MAP_INDEX_EXT, files);
 		}
-		if (OsmandPlugin.getEnabledPlugin(SRTMPlugin.class) != null) {
-			collectFiles(context.getAppPath(IndexConstants.SRTM_INDEX_DIR), IndexConstants.BINARY_MAP_INDEX_EXT, files);
-		}
-		
+
 		changesManager.collectChangesFiles(context.getAppPath(IndexConstants.LIVE_INDEX_DIR), IndexConstants.BINARY_MAP_INDEX_EXT, files);
 
 		Collections.sort(files, Algorithms.getFileVersionComparator());
@@ -617,7 +613,6 @@ public class ResourceManager {
 					log.error(String.format("File %s could not be read", f.getName()), e);
 				}
 				boolean wikiMap = (f.getName().contains("_wiki") || f.getName().contains(IndexConstants.BINARY_WIKI_MAP_INDEX_EXT));
-				boolean srtmMap = f.getName().contains(IndexConstants.BINARY_SRTM_MAP_INDEX_EXT);
 				if (mapReader == null || (Version.isFreeVersion(context) && wikiMap && !context.getSettings().FULL_VERSION_PURCHASED.get())) {
 					warnings.add(MessageFormat.format(context.getString(R.string.version_index_is_not_supported), f.getName())); //$NON-NLS-1$
 				} else {
@@ -638,7 +633,7 @@ public class ResourceManager {
 							}
 							continue;
 						}
-					} else if(!wikiMap && !srtmMap) {
+					} else if(!wikiMap) {
 						changesManager.indexMainMap(f, dateCreated);
 					}
 					indexFileNames.put(f.getName(), dateFormat.format(dateCreated)); //$NON-NLS-1$

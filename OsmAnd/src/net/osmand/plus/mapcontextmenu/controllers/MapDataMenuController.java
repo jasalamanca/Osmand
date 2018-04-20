@@ -28,7 +28,6 @@ import net.osmand.plus.helpers.FileNameTranslationHelper;
 import net.osmand.plus.liveupdates.LiveUpdatesHelper;
 import net.osmand.plus.mapcontextmenu.MenuBuilder;
 import net.osmand.plus.mapcontextmenu.MenuController;
-import net.osmand.plus.srtmplugin.SRTMPlugin;
 import net.osmand.plus.views.ContextMenuLayer.IContextMenuProvider;
 import net.osmand.plus.views.DownloadedRegionsLayer.DownloadMapObject;
 import net.osmand.util.Algorithms;
@@ -47,8 +46,6 @@ public class MapDataMenuController extends MenuController {
 	private List<IndexItem> otherIndexItems;
 	private LocalIndexInfo localIndexInfo;
 	private List<LocalIndexInfo> otherLocalIndexInfos;
-	private boolean srtmDisabled;
-	private boolean srtmNeedsInstallation;
 	private boolean backuped;
 
 	private DownloadIndexesThread downloadThread;
@@ -79,36 +76,13 @@ public class MapDataMenuController extends MenuController {
 			}
 		}
 
-		srtmDisabled = OsmandPlugin.getEnabledPlugin(SRTMPlugin.class) == null;
-		OsmandPlugin srtmPlugin = OsmandPlugin.getPlugin(SRTMPlugin.class);
-		srtmNeedsInstallation = srtmPlugin == null || srtmPlugin.needsInstallation();
-
 		leftDownloadButtonController = new TitleButtonController() {
 			@Override
 			public void buttonPressed() {
 				if (backuped) {
 					restoreFromBackup();
 				} else if (indexItem != null) {
-					if ((indexItem.getType() == DownloadActivityType.SRTM_COUNTRY_FILE
-							|| indexItem.getType() == DownloadActivityType.HILLSHADE_FILE)
-							&& srtmDisabled) {
-						getMapActivity().getContextMenu().close();
-
-						if (srtmNeedsInstallation) {
-							OsmandPlugin plugin = OsmandPlugin.getPlugin(SRTMPlugin.class);
-							if (plugin != null) {
-								mapActivity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(plugin.getInstallURL())));
-							} else {
-								Toast.makeText(mapActivity.getApplicationContext(),
-										mapActivity.getString(R.string.activate_srtm_plugin), Toast.LENGTH_LONG).show();
-							}
-						} else {
-							mapActivity.startActivity(new Intent(mapActivity, mapActivity.getMyApplication().getAppCustomization()
-									.getPluginsActivity()));
-							Toast.makeText(mapActivity, mapActivity.getString(R.string.activate_srtm_plugin),
-									Toast.LENGTH_SHORT).show();
-						}
-					} else if (!downloaded || indexItem.isOutdated()) {
+					if (!downloaded || indexItem.isOutdated()) {
 						new DownloadValidationManager(app).startDownload(mapActivity, indexItem);
 					} else if (isLiveUpdatesOn()) {
 						LiveUpdatesHelper.runLiveUpdate(mapActivity, indexItem.getTargetFileName(), true);
@@ -377,12 +351,7 @@ public class MapDataMenuController extends MenuController {
 		if (backuped) {
 			leftDownloadButtonController.caption = getMapActivity().getString(R.string.local_index_mi_restore);
 		} else if (indexItem != null) {
-			if ((indexItem.getType() == DownloadActivityType.SRTM_COUNTRY_FILE
-					|| indexItem.getType() == DownloadActivityType.HILLSHADE_FILE)
-					&& srtmDisabled) {
-				leftDownloadButtonController.caption = getMapActivity().getString(R.string.get_plugin);
-				leftDownloadButtonController.clearIcon(true);
-			} else if (indexItem.isOutdated()) {
+			if (indexItem.isOutdated()) {
 				leftDownloadButtonController.caption = getMapActivity().getString(R.string.shared_string_update);
 			} else if (!downloaded) {
 				leftDownloadButtonController.caption = getMapActivity().getString(R.string.shared_string_download);
@@ -533,8 +502,6 @@ public class MapDataMenuController extends MenuController {
 				}
 			} else if (i.getOriginalType() == LocalIndexType.TILES_DATA) {
 				parent = app.getAppPath(IndexConstants.TILES_INDEX_DIR);
-			} else if (i.getOriginalType() == LocalIndexType.SRTM_DATA) {
-				parent = app.getAppPath(IndexConstants.SRTM_INDEX_DIR);
 			} else if (i.getOriginalType() == LocalIndexType.WIKI_DATA) {
 				parent = app.getAppPath(IndexConstants.WIKI_INDEX_DIR);
 			} else if (i.getOriginalType() == LocalIndexType.TTS_VOICE_DATA) {
@@ -557,8 +524,6 @@ public class MapDataMenuController extends MenuController {
 				} else {
 					return DownloadActivityType.NORMAL_FILE;
 				}
-			} else if (localIndexInfo.getOriginalType() == LocalIndexType.SRTM_DATA) {
-				return DownloadActivityType.SRTM_COUNTRY_FILE;
 			} else if (localIndexInfo.getOriginalType() == LocalIndexType.WIKI_DATA) {
 				return DownloadActivityType.WIKIPEDIA_FILE;
 			} else if (localIndexInfo.getOriginalType() == LocalIndexType.TTS_VOICE_DATA

@@ -79,8 +79,6 @@ public class LocalIndexHelper {
 			}
 			info.setAttachedObject(template);
 			info.setDescription(descr);
-		} else if (info.getType() == LocalIndexType.SRTM_DATA) {
-			info.setDescription(app.getString(R.string.download_srtm_maps));
 		} else if (info.getType() == LocalIndexType.WIKI_DATA) {
 			info.setDescription(getInstalledDate(f));
 		} else if (info.getType() == LocalIndexType.TTS_VOICE_DATA) {
@@ -109,10 +107,6 @@ public class LocalIndexHelper {
 				fileName = Algorithms.capitalizeFirstLetterAndLowercase(downloadName)
 						+ IndexConstants.BINARY_ROAD_MAP_INDEX_EXT;
 			}
-		} else if (type == LocalIndexType.SRTM_DATA) {
-			fileDir = app.getAppPath(IndexConstants.SRTM_INDEX_DIR);
-			fileName = Algorithms.capitalizeFirstLetterAndLowercase(downloadName)
-					+ IndexConstants.BINARY_SRTM_MAP_INDEX_EXT;
 		} else if (type == LocalIndexType.WIKI_DATA) {
 			fileDir = app.getAppPath(IndexConstants.WIKI_INDEX_DIR);
 			fileName = Algorithms.capitalizeFirstLetterAndLowercase(downloadName)
@@ -141,9 +135,6 @@ public class LocalIndexHelper {
 			info = getLocalIndexInfo(LocalIndexType.MAP_DATA, downloadName, true, false);
 		}
 		if (info == null) {
-			info = getLocalIndexInfo(LocalIndexType.SRTM_DATA, downloadName, false, false);
-		}
-		if (info == null) {
 			info = getLocalIndexInfo(LocalIndexType.WIKI_DATA, downloadName, false, false);
 		}
 
@@ -152,9 +143,6 @@ public class LocalIndexHelper {
 		}
 		if (info == null) {
 			info = getLocalIndexInfo(LocalIndexType.MAP_DATA, downloadName, true, true);
-		}
-		if (info == null) {
-			info = getLocalIndexInfo(LocalIndexType.SRTM_DATA, downloadName, false, true);
 		}
 		if (info == null) {
 			info = getLocalIndexInfo(LocalIndexType.WIKI_DATA, downloadName, false, true);
@@ -173,10 +161,6 @@ public class LocalIndexHelper {
 		if (info != null) {
 			list.add(info);
 		}
-		info = getLocalIndexInfo(LocalIndexType.SRTM_DATA, downloadName, false, false);
-		if (info != null) {
-			list.add(info);
-		}
 		info = getLocalIndexInfo(LocalIndexType.WIKI_DATA, downloadName, false, false);
 		if (info != null) {
 			list.add(info);
@@ -186,10 +170,6 @@ public class LocalIndexHelper {
 			list.add(info);
 		}
 		info = getLocalIndexInfo(LocalIndexType.MAP_DATA, downloadName, true, true);
-		if (info != null) {
-			list.add(info);
-		}
-		info = getLocalIndexInfo(LocalIndexType.SRTM_DATA, downloadName, false, true);
 		if (info != null) {
 			list.add(info);
 		}
@@ -208,7 +188,6 @@ public class LocalIndexHelper {
 		loadObfData(app.getAppPath(IndexConstants.MAPS_PATH), result, false, loadTask, loadedMaps);
 		loadObfData(app.getAppPath(IndexConstants.ROADS_INDEX_DIR), result, false, loadTask, loadedMaps);
 		loadTilesData(app.getAppPath(IndexConstants.TILES_INDEX_DIR), result, false, loadTask);
-		loadSrtmData(app.getAppPath(IndexConstants.SRTM_INDEX_DIR), result, loadTask);
 		loadWikiData(app.getAppPath(IndexConstants.WIKI_INDEX_DIR), result, loadTask);
 		//loadVoiceData(app.getAppPath(IndexConstants.TTSVOICE_INDEX_EXT_ZIP), result, true, loadTask);
 		loadVoiceData(app.getAppPath(IndexConstants.VOICE_INDEX_DIR), result, false, loadTask);
@@ -303,20 +282,6 @@ public class LocalIndexHelper {
 		return listFiles;
 	}
 
-
-	private void loadSrtmData(File mapPath, List<LocalIndexInfo> result, AbstractLoadLocalIndexTask loadTask) {
-		if (mapPath.canRead()) {
-			for (File mapFile : listFilesSorted(mapPath)) {
-				if (mapFile.isFile() && mapFile.getName().endsWith(IndexConstants.BINARY_MAP_INDEX_EXT)) {
-					LocalIndexInfo info = new LocalIndexInfo(LocalIndexType.SRTM_DATA, mapFile, false, app);
-					updateDescription(info);
-					result.add(info);
-					loadTask.loadFile(info);
-				}
-			}
-		}
-	}
-
 	private void loadWikiData(File mapPath, List<LocalIndexInfo> result, AbstractLoadLocalIndexTask loadTask) {
 		if (mapPath.canRead()) {
 			for (File mapFile : listFilesSorted(mapPath)) {
@@ -335,9 +300,7 @@ public class LocalIndexHelper {
 			for (File mapFile : listFilesSorted(mapPath)) {
 				if (mapFile.isFile() && mapFile.getName().endsWith(IndexConstants.BINARY_MAP_INDEX_EXT)) {
 					LocalIndexType lt = LocalIndexType.MAP_DATA;
-					if (mapFile.getName().endsWith(IndexConstants.BINARY_SRTM_MAP_INDEX_EXT)) {
-						lt = LocalIndexType.SRTM_DATA;
-					} else if (mapFile.getName().endsWith(IndexConstants.BINARY_WIKI_MAP_INDEX_EXT)) {
+					if (mapFile.getName().endsWith(IndexConstants.BINARY_WIKI_MAP_INDEX_EXT)) {
 						lt = LocalIndexType.WIKI_DATA;
 					}
 					LocalIndexInfo info = new LocalIndexInfo(lt, mapFile, backup, app);
@@ -355,7 +318,6 @@ public class LocalIndexHelper {
 	public enum LocalIndexType {
 		MAP_DATA(R.string.local_indexes_cat_map, R.drawable.ic_map, 10),
 		TILES_DATA(R.string.local_indexes_cat_tile, R.drawable.ic_map, 60),
-		SRTM_DATA(R.string.local_indexes_cat_srtm, R.drawable.ic_plugin_srtm, 40),
 		WIKI_DATA(R.string.local_indexes_cat_wiki, R.drawable.ic_plugin_wikipedia, 50),
 		TTS_VOICE_DATA(R.string.local_indexes_cat_tts, R.drawable.ic_action_volume_up, 20),
 		VOICE_DATA(R.string.local_indexes_cat_voice, R.drawable.ic_action_volume_up, 30),
