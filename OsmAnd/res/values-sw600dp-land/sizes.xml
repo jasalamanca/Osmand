@@ -2,4 +2,9 @@
 <resources>
     <dimen name="splash_screen_logo_top">200dp</dimen>
     <dimen name="splash_screen_text_bottom">150dp</dimen>
+
+    <dimen name="empty_state_image_margin_top">59dp</dimen>
+    <dimen name="empty_state_image_margin_bottom">59dp</dimen>
+
+    <dimen name="measurement_tool_content_padding_medium">21dp</dimen>
 </resources>
