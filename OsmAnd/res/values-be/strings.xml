@@ -296,9 +296,7 @@
 	<string name="rendering_attr_noPolygons_name">Палігоны</string>
 	<string name="rendering_attr_appMode_name">Рэжым візуалізацыі</string>
 	<string name="rendering_attr_appMode_description">Аптымізаваць мапу для</string>
-	<string name="rendering_attr_contourLines_description">Мінімальны ўзровень маштабу з адлюстраваньнем ізаліній вышынь:</string>
-	<string name="rendering_attr_contourLines_name">Паказваць ізалініі вышынь</string>
-	<string name="rendering_attr_hmRendered_description">Адлюстроўваць больш дэталяў на мапе.</string>
+    <string name="rendering_attr_hmRendered_description">Адлюстроўваць больш дэталяў на мапе.</string>
 	<string name="rendering_attr_hmRendered_name">Паказаць больш дэталей мапы</string>
 	<string name="local_index_routing_data">Дадзеныя маршрутызацыі</string>
 	<string name="navigate_point_format">Фармат</string>
@@ -1118,8 +1116,7 @@
     <string name="animate_routing_gpx">Імітацыя з выкарыстаньнем GPX-сьледу</string>
     <string name="app_modes_choose">Профілі дастасаваньня</string>
 	<string name="index_item_world_altitude_correction">Глябальная карэкцыя вышыні</string>
-	<string name="index_item_world_seamarks">Навігацыйныя знакі ўсяго сьвету</string>
-	<string name="index_item_world_bitcoin_payments">Bitcoin плацяжы ўсяго сьвету</string>
+    <string name="index_item_world_bitcoin_payments">Bitcoin плацяжы ўсяго сьвету</string>
 	<string name="keep_and_add_destination_point">Дадаць наступным пунктам прызначэньня</string>
     <string name="route_descr_select_destination">Выбраць месца прызначэньня</string>
     <string name="route_preferences">Настройкі маршрута</string>
@@ -1522,10 +1519,8 @@
 	<string name="plugin_install_needs_network">Неабходна падключэньне да Інтэрнэту, каб усталяваць гэты модуль.</string>
 	<string name="get_plugin">Атрымаць</string>
 <string name="plugin_ski_name">Лыжныя мапы</string>
-    <string name="plugin_nautical_name">Марскія мапы</string>
     <string name="world_ski_missing">Для адлюстраваньня лыжных мап неабходна сьцягнуць адмысловыя мапы</string>
-    <string name="nautical_maps_missing">Для адлюстраваньня марскіх мап неабходна сьцягнуць адмысловыя мапы</string>
-	<string name="rendering_attr_pisteGrooming_name">Дагляд трасы</string>
+    <string name="rendering_attr_pisteGrooming_name">Дагляд трасы</string>
     <string name="free">Вольна %1$s</string>
 	<string name="device_memory">Памяць прыстасаваньня</string>
     <string name="rendering_attr_pisteRoutes_name">Лыжныя трасы</string>
@@ -1534,12 +1529,7 @@
 	<string name="notes">Нататкі</string>
 	<string name="online_map">Інтэрнэт мапа</string>
 
-    <string name="plugin_nautical_descr">Актывацыя гэтага стылю мяняе выгляд мапы на Марскую, на якой паказваюцца ўсе навігацыйныя знакі і сімвалы.
-		\n\nФайл з дадзенымі зьмяшчае ўсе навігацыйныя сімвалы ў выглядзе адзінага файлу з назвай \"World seamarks\".
-		\n\nГэты стыль можа быць скасаваны шляхам яго выключэньня тут або зьменаю ў пункце \"Стыль мапы\" меню \"Налады мапы\" на патрэбны.
-	</string>
-
-	<string name="back_to_map">Вярнуцца да мапы</string>
+    <string name="back_to_map">Вярнуцца да мапы</string>
 	<string name="track_segments">Адрэзкі сьледу</string>
 	<string name="track_points">Пункты сьледу</string>
 	<string name="location_on_map">Каардынаты:\n Шырата %1$s\n Даўгата %2$s</string>
@@ -1855,7 +1845,6 @@
     <string name="buy">НАБЫЦЬ</string>
     <string name="later">Пазьней</string>
     <string name="get_full_version">Паўнавартасная вэрсія</string>
-    <string name="activate_seamarks_plugin">Калі ласка, актывуйце модуль Марскія навігацыйныя знакі</string>
     <string name="regions">Рэгіёны</string>
     
     <string name="region_maps">Рэгіянальныя мапы</string>
@@ -2274,10 +2263,8 @@
     <string name="search_map_hint">Пошук горада ці краіны</string>
     <string name="wiki_around">Блізкія артыкулы ў Вікіпэдыі</string>
     <string name="rendering_value_fine_name">Вельмі тонкі</string>
-    <string name="rendering_attr_contourColorScheme_description">Колеравая схема гарызанталяў</string>
     <string name="save_track_min_speed">Мінімальная хуткасьць для запісу</string>
     <string name="christmas_desc">Напярэдадні калядных і навагодніх сьвятаў, вы можаце выбраць для адлюстраваньня POI, зьвязаныя з Калядамі: елкі, кірмашы і да т.п.</string>
-    <string name="rendering_attr_contourColorScheme_name">Колеравая схема гарызанталяў</string>
     <string name="routing_attr_allow_motorway_name">Дазволіць аўтамагістралі</string>
     <string name="routing_attr_allow_motorway_description">Дазволіць аўтамагістралі.</string>
     <string name="lang_sr_latn">Сэрбская лацінка</string>
@@ -2286,7 +2273,6 @@
     <string name="show_legacy_search">Паказваць састарэлы пошук</string>
     <string name="rendering_attr_hideWaterPolygons_description">Ваду</string>
     <string name="show_legacy_search_desc">Дадаць састарэлы пошук у спісе, што раскрываецца.</string>
-    <string name="rendering_attr_contourWidth_name">Таўшчыня гарызанталяў</string>
     <string name="release_2_5">\\u2022 Іконкі на мапе, якія можа націскаць
 \n 
 \n • Пошук любых POI: Пошук рэстаранаў паводле кухні або кемпінгаў з пэўнымі выгодамі, 
@@ -2300,9 +2286,6 @@
 \n • Мноства іншых паляпшэньняў і выпраўленьняў, 
 \n 
 \n і многае іншае …</string>
-    <string name="rendering_attr_contourWidth_description">Таўшчыня гарызанталяў (ізагіпсы)</string>
-    <string name="rendering_attr_contourDensity_description">Частасьць гарызанталяў</string>
-    <string name="rendering_attr_contourDensity_name">Частасьць гарызанталяў</string>
     <string name="rendering_value_high_name">Высокая</string>
     <string name="rendering_value_medium_w_name">Сярэдняя</string>
     <string name="rendering_value_low_name">Нізкая</string>
@@ -2359,9 +2342,7 @@
     <string name="shared_string_action_name">Назва дзеяньня</string>
     <string name="quick_action_navigation_voice_off">Голас прыглушаны</string>
     <string name="quick_action_navigation_voice_on">Голас актыўны</string>
-    <string name="rendering_attr_depthContours_description">Паказваць контуры і пункты глыбіні.</string>
-    <string name="rendering_attr_depthContours_name">Контуры марскіх глыбінь</string>
-	<string name="release_2_6">\\u2022 Новая функцыя: кнопка хуткага дзеяння
+    <string name="release_2_6">\\u2022 Новая функцыя: кнопка хуткага дзеяння
 \n 
 \n • Палепшаны адказ на жэсты сэнсарнага экрана 
 \n 
@@ -2485,13 +2466,6 @@
     <string name="no_overlay">Няма пакрыцця</string>
     <string name="no_underlay">Няма падкладкі</string>
     <string name="subscribe_email_desc">Падпішыцеся на нашу рассылку аб зніжках на праграму і атрымайце 3 дадатковыя мапы!</string>
-    <string name="depth_contour_descr">Набор мап, якія змяшчаюць контуры і кропкі марскіх глыбінь.</string>
-    <string name="sea_depth_thanks">Дзякуй за пакупку контураў марскіх глыбінь!</string>
-    <string name="index_item_depth_contours_osmand_ext">Контуры марскіх глыбінь</string>
-    <string name="index_item_depth_points_southern_hemisphere">Кропкі марскіх глыбінь паўднёвага паўшар\'я</string>
-    <string name="index_item_depth_points_northern_hemisphere">Кропкі марскіх глыбінь паўночнага паўшар\'я</string>
-    <string name="download_depth_countours">Контуры марскіх глыбінь</string>
-    <string name="nautical_maps">Марскія мапы</string>
     <string name="analyze_on_map">Аналізуй на мапе</string>
     <string name="shared_string_visible">Бачны</string>
     <string name="shared_string_paused">Прыпынены</string>
@@ -2842,8 +2816,7 @@
     <string name="day_off_label">вых.</string>
     <string name="winter_and_ski_renderer">Зімовы/лыжны</string>
     <string name="touring_view_renderer">Турыстычны (кантраст і дэталі)</string>
-    <string name="nautical_renderer">Марскі</string>
-<string name="will_open_tomorrow_at">Адчыніцца заўтра а</string>
+    <string name="will_open_tomorrow_at">Адчыніцца заўтра а</string>
     <string name="copy_location_name">Капіяваць назву кропкі/POI</string>
     <string name="toast_empty_name_error">Месца не мае назвы</string>
 </resources>

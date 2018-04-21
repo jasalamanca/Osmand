@@ -744,9 +744,7 @@ Puntos</string>
     <string name="routing_attr_height_obstacles_name">Usar datos d\'elevación</string>
     <string name="routing_attr_height_obstacles_description">Usar los datos d\'elevación del terrén proporcionaos por SRTM, ASTER y EU-DEM.</string>
 
-    <string name="rendering_attr_depthContours_description">Amosar la batimetría y puntos.</string>
-    <string name="rendering_attr_depthContours_name">Curves de fondura marina</string>
-	<string name="release_2_6">\\u2022 Nueva función: Botón d\'aición rápida
+    <string name="release_2_6">\\u2022 Nueva función: Botón d\'aición rápida
 \n 
 \n • Respuesta ameyorada a xestos en pantalles táctiles (p.ex. abasnar y ampliar al tiempu) 
 \n 
@@ -816,7 +814,6 @@ Puntos</string>
     <string name="quick_action_add_destination">Amestar destín</string>
     <string name="quick_action_replace_destination">Trocar destín</string>
     <string name="subscribe_email_error">Fallu</string>
-    <string name="nautical_maps">Mapes náuticos</string>
     <string name="shared_string_visible">Visible</string>
     <string name="rendering_attr_hideWaterPolygons_description">Agua</string>
     <string name="rendering_attr_hideWaterPolygons_name">Anubrir agua</string>
@@ -888,8 +885,6 @@ Puntos</string>
     <string name="no_overlay">Ensin superposición</string>
     <string name="no_underlay">Ensin fondu</string>
     <string name="subscribe_email_desc"/>
-    <string name="depth_contour_descr">Conxuntu de mapes que contienen la batimetría y puntos náuticos.</string>
-    <string name="sea_depth_thanks">¡Gracies por comprar les curves de fondura marina!</string>
     <string name="shared_string_markers">Marcadores</string>
     <string name="coordinates_format">Formatu de coordenaes</string>
     <string name="use_system_keyboard">Usar el tecláu del sistema</string>

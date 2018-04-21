@@ -149,11 +149,7 @@
 \n\nE ele oferece opções de turismo especiais como mostrando rotas de bicicleta ou rotas de montanha.
 \n\nNão é necessário baixar mapa especial, pois esse modo de exibição é criado a partir do mapa padrão.
 \n\nEssa visão pode ser revertida desativando aqui mesmo ou alterando o \'Estilo do mapa\' em \'Configurar mapa\' quando desejar. "</string>
-	<string name="plugin_nautical_name">Visão de mapa náutico</string>
-	<string name="plugin_nautical_descr">"Este complemento enriquece o mapa do OsmAnd para também produzir mapas náuticos para passeios de barco, vela e outros tipos de desportos aquáticos.
-\n\nUm complemento de mapa especial para OsmAnd fornecerá todas as marcas de navegação náutica e símbolos cartográficos, para o interior assim como para navegação próxima à costa. A descrição de cada marca de navegação fornece os detalhes necessários para identificá-las e o seu significado (categoria, forma, cor, sequência, referência, etc.).
-\n\nPara retornar a um estilo convencional de mapa do OsmAnd, simplesmente desative este complemento ou altere o \'Estilo de mapa\' em \'Configurar mapa\' quando desejado. "</string>
-	<string name="plugin_ski_name">Visão de mapa de esqui</string>
+    <string name="plugin_ski_name">Visão de mapa de esqui</string>
 	<string name="plugin_ski_descr">"Este complemento para o OsmAnd coloca ao seu alcance detalhes de pistas de descida de esqui, de travessia, rotas de esqui alpino, teleféricos e elevadores de esqui. Rotas e pistas são mostradas com codificação de cores por dificuldade e retratadas em um estilo especial de mapa \'Inverno\' que assimila uma paisagem de inverno cor de neve.
 \n\nAtivando esta mudança na visão do estilo de mapa de \'Inverno e esqui\', mostrando todas as características da paisagem em condições invernais. Essa visão pode ser revertida desativando aqui ou alterando o \'Estilo de mapa\' em \'Configurar mapa\' quando desejado. "</string>
     <string name="osmand_distance_planning_plugin_name">Calculadora de distância e ferramenta de planeamento</string>
@@ -172,8 +168,7 @@
 	<string name="free">"Livre %1$s "</string>
 	<string name="device_memory">Memória do aparelho</string>
     <string name="world_ski_missing">Para mostrar mapas de esqui, o mapa off-line especial precisa ser baixado</string>
-    <string name="nautical_maps_missing">Para mostrar mapas náuticos, o mapa off-line especial precisa ser baixado</string>
-	<string name="edit_group">Editar grupo</string>
+    <string name="edit_group">Editar grupo</string>
     <string name="remove_the_tag">REMOVER A ETIQUETA</string>
     <string name="gps_status">Situação do GPS</string>
     <string name="version_settings_descr">Baixar versões noturnas</string>
@@ -509,8 +504,7 @@
     <string name="localization_pref_title">Localização</string>
     <string name="index_item_nation_addresses">endereços nacionais</string>
 	<string name="index_item_world_altitude_correction">Correção de altitude mundial</string>
-	<string name="index_item_world_seamarks">Marcas marítimas mundiais</string>
-	<string name="index_item_world_bitcoin_payments">Pagamentos mundiais de bitcoin</string>
+    <string name="index_item_world_bitcoin_payments">Pagamentos mundiais de bitcoin</string>
 	<string name="index_item_world_basemap">Mapa de visão geral do mundo</string>
     <string name="index_item_world_ski">Mapa mundial de esquí</string>
     <string name="lang_zh">Chinês</string>
@@ -893,9 +887,7 @@ Pôr do Sol: %2$s</string>
 	<string name="rendering_attr_noPolygons_name">Polígonos de áreas</string>
 	<string name="rendering_attr_appMode_name">Modo de renderização</string>
 	<string name="rendering_attr_appMode_description">Otimizar o mapa para</string>
-	<string name="rendering_attr_contourLines_description">Exibir a partir do nível de zoom (requer dados de contorno):</string>
-	<string name="rendering_attr_contourLines_name">Mostrar curvas de nível</string>
-	<string name="rendering_attr_hmRendered_description">Aumentar a quantidade de detalhe no mapa</string>
+    <string name="rendering_attr_hmRendered_description">Aumentar a quantidade de detalhe no mapa</string>
 	<string name="rendering_attr_hmRendered_name">Mostrar mais detalhes do mapa</string>
 	<string name="local_index_routing_data">Dados de roteamento</string>
 	<string name="navigate_point_format">Formato</string>
@@ -1795,7 +1787,6 @@ Pôr do Sol: %2$s</string>
     <string name="show_free_version_banner">Mostrar banner da versão gratuita</string>
     <string name="show_free_version_banner_description">Mesmo se você tem a versão paga você ainda pode ver o banner da versão gratuita</string>
     <string name="buy">COMPRAR</string>
-    <string name="activate_seamarks_plugin">Ative o complemento de marcas marítimas</string>
     <string name="later">Depois</string>
     <string name="get_full_version">Versão completa</string>
     <string name="downloads">Transferências</string>
@@ -2214,13 +2205,6 @@ Pôr do Sol: %2$s</string>
     <string name="no_overlay">Sem camada superior</string>
     <string name="no_underlay">Sem camada inferior</string>
     <string name="subscribe_email_error">Erro</string>
-    <string name="depth_contour_descr">Conjunto de mapas contendo as curvas batimétricas do mar e pontos náuticos.</string>
-    <string name="sea_depth_thanks">Obrigado por adquirir a batimetria náutica!</string>
-    <string name="index_item_depth_contours_osmand_ext">Batimetria náutica</string>
-    <string name="index_item_depth_points_southern_hemisphere">Pontos de profundidade náuticos, Hemisfério Sul</string>
-    <string name="index_item_depth_points_northern_hemisphere">Pontos de profundidade náuticos, Hemisfério Norte</string>
-    <string name="download_depth_countours">Batimetria náutica</string>
-    <string name="nautical_maps">Mapas náuticos</string>
     <string name="analyze_on_map">Analisar no mapa</string>
     <string name="shared_string_visible">Visível</string>
     <string name="restore_purchases">Restaurar compras</string>
@@ -2256,15 +2240,9 @@ Pôr do Sol: %2$s</string>
     <string name="routing_attr_relief_smoothness_factor_name">Selecionar a flutuação de altimetria</string>
     <string name="routing_attr_height_obstacles_name">Usar dados altimétricos</string>
     <string name="routing_attr_height_obstacles_description">Usar dados altimétricos do terreno fornecidos pelo SRTM, ASTER, e EU-DEM.</string>
-    <string name="rendering_attr_depthContours_description">Mostrar curvas e pontos batimétricos.</string>
-    <string name="rendering_attr_depthContours_name">Batimetria náutica</string>
-    <string name="rendering_attr_contourDensity_description">Densidade das curvas de nível</string>
-    <string name="rendering_attr_contourDensity_name">Densidade das curvas de nível</string>
     <string name="rendering_value_high_name">Alto</string>
     <string name="rendering_value_medium_w_name">Médio</string>
     <string name="rendering_value_low_name">Baixo</string>
-    <string name="rendering_attr_contourWidth_description">Espessura das curvas de nível</string>
-    <string name="rendering_attr_contourWidth_name">Espessura das curvas de nível</string>
     <string name="rendering_attr_hideWaterPolygons_description">Água</string>
     <string name="rendering_attr_hideWaterPolygons_name">Ocultar água</string>
     <string name="legacy_search">Pesquisa antiga</string>
@@ -2292,7 +2270,6 @@ Pôr do Sol: %2$s</string>
     <string name="shared_string_trip">Viagem</string>
     <string name="shared_string_recorded">Gravado</string>
     <string name="gpx_logging_no_data">Sem dados</string>
-    <string name="rendering_attr_contourColorScheme_description">Esquema de cores das curvas de nível</string>
     <string name="save_track_min_speed_descr">Filtro: Definir velocidade mínima para um ponto ser registrado.</string>
     <string name="save_track_min_distance">Deslocamento mínimo de registro</string>
     <string name="save_track_min_distance_descr">Filtro: Definir a distância mínima da última posição para o ponto ser registrado.</string>
@@ -2301,7 +2278,6 @@ Pôr do Sol: %2$s</string>
     <string name="christmas_desc_q">Mostrar POI de Natal?</string>
     <string name="rendering_value_light_brown_name">Marrom claro</string>
     <string name="rendering_value_dark_brown_name">Marrom escuro</string>
-    <string name="rendering_attr_contourColorScheme_name">Esquema de cores das curvas de nível</string>
     <string name="rendering_attr_surfaceIntegrity_name">Integridade do pavimento de estrada</string>
     <string name="search_hint">Digite a cidade, endereço, nome do POI</string>
     <string name="translit_name_if_miss">Transliterar se o nome %1$s for ausente</string>

@@ -89,7 +89,6 @@
     <string name="continue_follow_previous_route_auto">Forrige navigering var ikke ferdig. Fortsette å følge den? (%1$s sekunder)</string>
     <string name="route_updated_loc_found">Rute blir beregnet når posisjon blir funnet</string>
     <string name="rendering_attr_appMode_name">Opptegningsmodus</string>
-    <string name="rendering_attr_contourLines_name">Vis koter</string>
     <string name="rendering_attr_hmRendered_description">Øk mengden av kartdetaljer vist.</string>
     <string name="rendering_attr_hmRendered_name">Vis flere kartdetaljer</string>
     <string name="local_index_routing_data">Ruteplanleggingsdata</string>
@@ -669,7 +668,6 @@
     <string name="index_name_canada">Nord-Amerika - Canada</string>
     <string name="index_item_nation_addresses">adresser (hele landet)</string>
     <string name="index_item_world_altitude_correction">Høydekorrigering (verden)</string>
-    <string name="index_item_world_seamarks">Sjømerker (verden)</string>
     <string name="index_item_world_bitcoin_payments">Bitcoin-betalinger (verden)</string>
     <string name="index_item_world_basemap">Oversiktskart (verden)</string>
     <string name="index_item_world_ski">Skikart (verden)</string>
@@ -807,7 +805,6 @@
     <string name="interrupt_music">Avbryt musikk</string>
     <string name="gpxup_public">Offentlig</string>
     <string name="rendering_attr_appMode_description">Optimaliser kart for</string>
-    <string name="rendering_attr_contourLines_description">Vis fra zoom-nivå (krever kotedata):</string>
     <string name="local_index_description">Trykk på et eksisterende element for å se flere detaljer, langt trykk for å deaktivere eller slette. Gjeldende data på enheten (%1$s ledig):</string>
     <string name="send_files_to_osm">Sende GPX-filer til OSM?</string>
     <string name="arrival_distance_factor_early">Tidlig</string>
@@ -1188,7 +1185,6 @@
     <string name="shared_string_edit">Rediger</string>
     <string name="search_poi_category_hint">Søk alle</string>
     <string name="delay_to_start_navigation_descr">Spesifiser ventetid til å forbli på ruteplanleggingsskjermen.</string>
-    <string name="plugin_nautical_name">Sjøkartvisning</string>
     <string name="days_behind">dager etter</string>
     <string name="settings_privacy">Personvern</string>
     <string name="download_type_to_filter">Filtrer</string>
@@ -1678,10 +1674,8 @@
     <string name="custom_search">Egendefinert søk</string>
     <string name="edit_filter">Rediger kategorier</string>
     <string name="subcategories">Underkategorier</string>
-    <string name="rendering_attr_contourColorScheme_description">Fargeskjema for koter</string>
     <string name="rendering_value_light_brown_name">Lysebrun</string>
     <string name="rendering_value_dark_brown_name">Mørkebrun</string>
-    <string name="rendering_attr_contourColorScheme_name">Fargeskjema for koter</string>
     <string name="search_hint">Tast by, adresse, interessepunktnavn</string>
     <string name="search_map_hint">Søk etter by eller region</string>
     <string name="legacy_search">Søk (gamlemåten)</string>
@@ -1761,10 +1755,6 @@
     <string name="osmo_follow">Følg</string>
     <string name="osmo_sign_in">Logg inn</string>
     <string name="osmo_credentials_not_valid">Din OsMo-legitimasjon er ikke gyldig.</string>
-    <string name="rendering_attr_contourDensity_description">Kotetetthet</string>
-    <string name="rendering_attr_contourDensity_name">Kotetetthet</string>
-    <string name="rendering_attr_contourWidth_description">Kotebredde</string>
-    <string name="rendering_attr_contourWidth_name">Kotebredde</string>
     <string name="upload_osm_note_description">Du kan laste opp ditt OSM-notat anonymt eller bruke din profil hos OpenStreetmap.org.</string>
     <string name="gpx_no_tracks_title">Du har ingen spor enda</string>
     <string name="gpx_no_tracks_title_folder">Legg til spor i mappen</string>
@@ -1841,7 +1831,6 @@
     <string name="track_segments">Sporsegmenter</string>
     <string name="track_points">Sporpunkter</string>
     <string name="notes">Notater</string>
-    <string name="nautical_maps_missing">For å vise sjøkart, må det spesielle offline-kartet lastes ned</string>
     <string name="navigation_over_track">Starte navigering langs spor?</string>
     <string name="avoid_roads_msg">Du kan utløse en alternativ rute ved å velge veier å unngå</string>
     <string name="routing_attr_no_new_routing_name">Ingen v1.9-regler for ruteplanlegging</string>
@@ -2190,7 +2179,6 @@
     <string name="mapillary_widget_descr">Lar deg bidra raskt til Mapillary.</string>
     <string name="mapillary_descr">Nettbaserte bilder på gatenivå for alle. Oppdag steder, samarbeid, fang inn verden.</string>
     <string name="mapillary">Mapillary</string>
-    <string name="nautical_maps">Sjøkart</string>
     <string name="restore_purchases">Gjenopprett kjøp</string>
     <string name="do_not_send_anonymous_app_usage">Ikke send anonym bruksstatistikk</string>
     <string name="full_version_thanks">Takk for at du kjøpte fullversjonen av OsmAnd!</string>
@@ -2244,12 +2232,7 @@
     <string name="quick_action_osmbugs_show">Vis OSM-notater</string>
     <string name="quick_action_osmbugs_hide">Skjul OSM-notater</string>
     <string name="quick_action_showhide_osmbugs_descr">Å trykke på handlingsknappen vil vise eller skjule OSM-notater på kartet.</string>
-    <string name="sea_depth_thanks">Takk for at du kjøpte havdybdekonturer!</string>
-    <string name="index_item_depth_contours_osmand_ext">Havdybdekonturer</string>
-    <string name="download_depth_countours">Havdybdekonturer</string>
     <string name="route_points_category_name">Svinger å passere langs ruten</string>
-    <string name="rendering_attr_depthContours_description">Vis havdybdekonturer og punkter.</string>
-    <string name="rendering_attr_depthContours_name">Havdybdekonturer</string>
     <string name="auto_split_recording_title">Del opp opptak automatisk etter avbrudd</string>
     <string name="auto_split_recording_descr">Start nytt segment etter et avbrudd på 6 min., nytt spor etter avbrudd på 2 timer, eller ny fil etter et lengre avbrudd hvis datoen er endret.</string>
     <string name="osmo_no_connection_msg">Kan ikke koble til OsMo-tjeneren:
@@ -2442,8 +2425,6 @@
     <string name="quick_action_replace_destination_desc">Trykk på handlingsknappen vil erstatte målet med posisjonen midt på skjermen.</string>
     <string name="quick_action_add_first_intermediate_desc">Trykk på handlingsknappen vil legge til et første mellomliggende punkt midt på skjermen.</string>
     <string name="subscribe_email_desc">Abonner på vår e-postliste om programrabatter og få tre kartnedlastinger til!</string>
-    <string name="index_item_depth_points_southern_hemisphere">Havdybdepunkter for sørlige halvkule</string>
-    <string name="index_item_depth_points_northern_hemisphere">Havdybdepunkter for nordlige halvkule</string>
     <string name="download_files_error_not_enough_space">Ikke nok plass! Lagringsplass som trengs er {3} MB midlertidig, {1} MB permanent. Tilgjengelig plass er kun {2} MB.</string>
     <string name="download_files_question_space_with_temp">Laste ned {0} fil(er)? Brukt lagringsplass er {3} MB midlertidig, {1} MB permanent. (Tilgjengelig plass er {2} MB.)</string>
     <string name="simulate_initial_startup_descr">Setter flagget som indikerer første programoppstart, alle andre innstillinger forblir uendret.</string>
@@ -2471,7 +2452,6 @@
     <string name="opening_changeset">Åpner endringssett…</string>
     <string name="closing_changeset">Lukker endringssett…</string>
     <string name="downloading_number_of_files">Laster ned - %1$d fil</string>
-    <string name="activate_seamarks_plugin">Aktiver sjømerketillegget</string>
     <string name="save_poi_too_many_uppercase">Navnet inneholder for mange store bokstaver. Ønsker du å fortsette?</string>
     <string name="quick_action_add_poi">Legg til interessepunkt</string>
     <string name="quick_action_showhide_poi_descr">Trykk på handlingsknappen vil vise eller skjule interessepunkter på kartet.</string>
@@ -2480,7 +2460,6 @@
     <string name="quick_action_btn_tutorial_descr">Lang-trykk og dra knappen for å endre dens posisjon på skjermen.</string>
     <string name="add_track_to_markers_descr">Velg et spor for å legge til dets rutepunkter til markørene. (Kun spor med rutepunkter er listet opp.)</string>
     <string name="empty_state_markers_history">\@string/shared_string_history</string>
-    <string name="depth_contour_descr">Kartsett som inneholder havdybdekoter og nautiske punkter.</string>
     <string name="do_not_send_anonymous_app_usage_desc">OsmAnd samler inn informasjon om hvilke deler av programmet du åpner. Plasseringen din blir aldri sendt, ei heller noe du måtte skrive inn i programmet eller detaljer om områder som vises, søkes etter, eller lastes ned.</string>
     <string name="do_not_show_startup_messages_desc">Skrur av visning av programrabatter og spesielle lokale hendelsesmeldinger.</string>
     <string name="routing_attr_driving_style_safety_name">Foretrekk sideveier</string>
@@ -2534,8 +2513,7 @@
     <string name="add_waypoint_dialog_title">Legg til rutepunkt i innspilt GPX-spor</string>
     <string name="voice_is_not_available_msg">Taleveiledning er ikke tilgjengelig, gå til \'Innstillinger\' → \'Navigeringsinnstillinger\' → \'Taleveiledning\' og velg eller last ned en språkpakke.</string>
     <string name="use_fast_recalculation_desc">For lange turer, beregn på nytt bare den første delen av ruten.</string>
-    <string name="nautical_renderer">Nautisk</string>
-<string name="day_off_label">stengt (fridag)</string>
+    <string name="day_off_label">stengt (fridag)</string>
     <string name="copy_location_name">Kopier punkt/interessepunkt-navn</string>
     <string name="toast_empty_name_error">Sted har ikke noe navn</string>
 </resources>

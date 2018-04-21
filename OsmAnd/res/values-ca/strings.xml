@@ -44,7 +44,6 @@
     <string name="route_roundabout">Rotonda: preneu la %1$d sortida i continueu</string>
     <string name="rendering_attr_noPolygons_name">Polígons</string>
     <string name="rendering_attr_appMode_name">Mode de renderització</string>
-    <string name="rendering_attr_contourLines_name">Mostra les línies de contorn</string>
     <string name="rendering_attr_hmRendered_description">Augmenta la quantitat de detalls mostrats al mapa.</string>
     <string name="rendering_attr_hmRendered_name">Mostra més detalls al mapa</string>
     <string name="navigate_point_format">Format</string>
@@ -327,7 +326,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="m">m</string>
     <string name="specified_dir_doesnt_exist">No s\'ha trobat la carpeta especificada.</string>
     <string name="application_dir">Carpeta d\'emmagatzematge de dades</string>
-    <string name="rendering_attr_contourLines_description">Seleccioneu el nivell mínim de zoom per mostrar el mapa si està disponible. Caldrà el fitxer SRTM separat:</string>
     <string name="osmand_development_plugin_description">Aquest connector mostra la configuració de característiques per al desenvolupament i depuració com la verificació o simulació de rutes, el rendiment del renderitzat o les indicacions de veu. Aquestes configuracions s\'adrecen a desenvolupadors i no són d\'utilitat per a un usuari normal.</string>
     <string name="accessibility_default">En consonància amb la configuració global del sistema</string>
     <string name="zoomIs">El nivell de zoom és</string>
@@ -1053,7 +1051,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="index_name_canada">Amèrica del Nord - Canadà</string>
     <string name="index_name_italy">Europa - Itàlia</string>
     <string name="index_name_gb">Europa - Gran Bretanya</string>
-    <string name="index_item_world_seamarks">Balises marítimes al món</string>
     <string name="lang_mr">Marathi</string>
     <string name="lang_no">Noruec</string>
     <string name="lang_pl">Polonès</string>
@@ -1415,9 +1412,7 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="edit_group">Edició del grup</string>
     <string name="plugin_install_needs_network">Us cal una connexió a internet per instal·lar aquest connector.</string>
     <string name="plugin_ski_name">Vista mapa d\'esquí</string>
-    <string name="plugin_nautical_name">Vista cartes marines</string>
     <string name="world_ski_missing">Per veure les pistes d\'esquí cal que baixeu un mapa específic</string>
-    <string name="nautical_maps_missing">Per accedir a cartes marines cal que baixeu un mapa específic</string>
     <string name="shared_string_enable">Activa</string>
     <string name="shared_string_disable">Desactiva</string>
     <string name="rendering_attr_pisteGrooming_name">Pista condicionada</string>
@@ -1495,12 +1490,7 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="shared_string_show_description">Mostra la descripció.</string>
     <string name="shared_string_do_not_use">No utilitzeu</string>
     <string name="shared_string_address">Adreça</string>
-    <string name="plugin_nautical_descr">Aquest connector completa el mapa OsmAnd i la seva navegació en produir mapes nàutics per cabotatge, regates i altres tipus de esports d\'aigua.
-
-Un complement de mapa específic per OsmAnd us proporcionarà tot tipus de senyals nàutiques i símbols gràfics, per navegació interior o propera a la costa. La descripció de cada senyal de navegació us donarà els detalls que calguin per identificar-les i del seu significat (categoria, forma, color, seqüència, referència, etc.).
-
-Per retornar a l\'estil habitual dels mapes d\'OsmAnd, només cal desactivar aquest connector o canviar a com es desitgi &lt;&lt;Estil del Mapa&gt;&gt; dins &lt;&lt;Configuració del Mapa&gt;&gt;. </string>
-    <string name="plugin_ski_descr">Aquest connector per l\'OsmAnd us proporciona els detalls de les pistes d\'esquí en baixada, de travessa i alpí així com de telefèrics i remuntadors a tot el món. Les rutes i pistes es mostren amb el codi de colors que els correspon segons la seva dificultat i amb un estil de mapa especial «Hivern» que s\'associa a un paisatge nevat. 
+    <string name="plugin_ski_descr">Aquest connector per l\'OsmAnd us proporciona els detalls de les pistes d\'esquí en baixada, de travessa i alpí així com de telefèrics i remuntadors a tot el món. Les rutes i pistes es mostren amb el codi de colors que els correspon segons la seva dificultat i amb un estil de mapa especial «Hivern» que s\'associa a un paisatge nevat.
 \n 
 \nEn activar aquests canvis de visualització l\'estil del mapa canvia a «Hivern i esquí», i es mostren totes les característiques del paisatge a l\'hivern. Aquesta vista es pot revertir tant en activar-la altra cop com en canviar-la a «Estil del mapa» dins «Configuració del mapa».</string>
     <string name="rendering_attr_OSMMapperAssistant_name">Assistent cartogràfic per OSM</string>
@@ -1683,7 +1673,6 @@ Per retornar a l\'estil habitual dels mapes d\'OsmAnd, només cal desactivar aqu
     <string name="later">Mes tard</string>
     <string name="get_full_version">Versió completa</string>
     <string name="downloads">Baixades</string>
-    <string name="activate_seamarks_plugin">Activeu el connector de cartes marines</string>
     <string name="favorite_category_dublicate_message">El nom de categoria especificat ja existeix. Utilitzeu un nom diferent.</string>
     <string name="favorite_category_name">Nom de categoria</string>
     <string name="favorite_category_add_new_title">Afegeix una nova categoria</string>
@@ -2068,7 +2057,6 @@ L\'ús de memòria serà de {3} MB temporalment i {1} MB permanentment.
     <string name="subcategories">Subcategories</string>
     <string name="translit_names">Translitera els noms</string>
     <string name="translit_name_if_miss">Translitera si el nom %1$s no existeix</string>
-    <string name="rendering_attr_contourColorScheme_description">Esquema de color de les línies de contorn</string>
     <string name="save_track_min_speed">Velocitat mínima per registrar la ruta</string>
     <string name="save_track_min_speed_descr">Filtre: Establiu la velocitat mínima per enregistrar punts.</string>
     <string name="save_track_min_distance">Desplaçament mínim per un nou enregistrament</string>
@@ -2080,7 +2068,6 @@ L\'ús de memòria serà de {3} MB temporalment i {1} MB permanentment.
     <string name="christmas_desc_q">Voleu mostrar els PDI de Nadal?</string>
     <string name="rendering_value_light_brown_name">Marró clar</string>
     <string name="rendering_value_dark_brown_name">Marró fosc</string>
-    <string name="rendering_attr_contourColorScheme_name">Esquema de color de les línies de contorn</string>
     <string name="rendering_attr_surfaceIntegrity_name">Integritat superficial de la carretera</string>
     <string name="search_hint">Introduïu ciutat, adreça, nom del PDI</string>
     <string name="shared_string_continue">Continua</string>
@@ -2125,11 +2112,7 @@ L\'ús de memòria serà de {3} MB temporalment i {1} MB permanentment.
     <string name="routing_attr_allow_motorway_description">Permet les autopistes.</string>
     <string name="lang_sr_latn">Serbi (alfabet llatí)</string>
     <string name="lang_zh_hk">Xinès (Hong Kong)</string>
-    <string name="rendering_attr_contourWidth_description">Gruix de les corbes de nivell</string>
-    <string name="rendering_attr_contourWidth_name">Gruix de les corbes de nivell</string>
     <string name="rendering_attr_hideWaterPolygons_description">Hidràulic</string>
-    <string name="rendering_attr_contourDensity_description">Densitat de les corbes de nivell</string>
-    <string name="rendering_attr_contourDensity_name">Densitat de les corbes de nivell</string>
     <string name="rendering_value_high_name">Gros</string>
     <string name="rendering_value_medium_w_name">Mitjà</string>
     <string name="rendering_value_low_name">Baix</string>
@@ -2234,9 +2217,7 @@ Abasta l\'àrea: %1$s x %2$s</string>
 \n • Altres millores i correccions d\'errors 
 \n 
 \ni encara més…</string>
-	<string name="rendering_attr_depthContours_description">Mostra isòbates i fondàries puntuals.</string>
-    <string name="rendering_attr_depthContours_name">Isòbates</string>
-	
+
     <string name="routing_attr_height_relief_smoothness_factor_description">Més planes o més turons</string>
     <string name="routing_attr_height_obstacles_name">Utilitza les cotes d\'elevació</string>
     <string name="routing_attr_height_obstacles_description">Utilitza les cotes d\'elevació del terreny proporcionades per SRTM, ASTER i EU-DEM.</string>
@@ -2300,12 +2281,6 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="subscribe_email_desc">Subscriviu-vos a la nostra llista de correu sobre descomptes a la aplicació i aconseguiu 3 baixades de mapa addicionals!</string>
     <string name="no_overlay">Sense superposició</string>
     <string name="no_underlay">Sense sots-posició</string>
-    <string name="sea_depth_thanks">Us agraïm la compra de les isòbates!</string>
-    <string name="index_item_depth_contours_osmand_ext">Isòbates</string>
-    <string name="index_item_depth_points_southern_hemisphere">Fondària marina puntual a l\'hemisferi sud</string>
-    <string name="index_item_depth_points_northern_hemisphere">Fondària marina puntual a l\'hemisferi nord</string>
-    <string name="download_depth_countours">Isòbates</string>
-    <string name="nautical_maps">Cartes nàutiques</string>
     <string name="quick_action_auto_zoom">Escala automàtica del mapa activa/desactiva</string>
     <string name="quick_action_auto_zoom_desc">Prement el botó d\'acció commutareu l\'escala automàtica del mapa en funció de la vostra velocitat.</string>
     <string name="quick_action_auto_zoom_on">Activa l\'escala automàtica del mapa</string>
@@ -2316,7 +2291,6 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="quick_action_add_destination_desc">Prement el botó d\'acció afegireu com destinació el punt central de la pantalla. L\'anterior destí esdevindrà la darrera destinació intermèdia.</string>
     <string name="quick_action_replace_destination_desc">Prement el botó d\'acció substituireu la destinació actual pel punt central de la pantalla.</string>
     <string name="quick_action_add_first_intermediate_desc">Prement el botó d\'acció afegireu com primer punt intermedi el punt central de la pantalla.</string>
-    <string name="depth_contour_descr">Llibreria de mapes que contenen isòbates i fondàries puntuals.</string>
     <string name="shared_string_paused">En pausa</string>
     <string name="osmand_extended_description_part3">Mapa • Mostra els PDIs (punts d\'interès) al vostre voltant • Ajusta l\'orientació del mapa a la vostra direcció del moviment (o al nord) • Mostra on sou i com esteu orientat • Compartiu la vostra ubicació perquè els vostres amics us puguin trobar • Manté els vostres llocs més importants a Preferits • Permet escollir com es mostren els noms al mapa: en anglès, llengues locals o amb ortografia fonètica • Mostra representacions especialitzades disponibles a la xarxa, imatges de satèl·lit (Bing), diferents superposicions com traces GPX d\'exploració/navegació i capes addicionals amb un grau transparència variable</string>
     <string name="osmand_plus_extended_description_part2">Navegació • Funciona en línia (ràpid) o sense connexió (sense càrrecs de roaming quan sigueu a l\'estranger) • Indicacions de veu a cada gir (amb missatges gravats i sintetitzats) • Orientació opcional del carril, visualització del nom de la via i el temps estimat d\'arribada • Admet punts de pas intermedis • Revisió automàtica de la ruta quan us aparteu de la ruta proposada • Cerca de llocs per adreça, tipus (per exemple: restaurant, hotel, gasolinera, museu) o coordenades geogràfiques</string>

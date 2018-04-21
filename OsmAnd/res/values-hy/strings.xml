@@ -270,11 +270,6 @@
     <string name="no_underlay">Նեքեվի շերնը անջատված է</string>
     <string name="subscribe_email_error">Սխալ</string>
     <string name="subscribe_email_desc">Բաժանորդագրվեք մեր էլեկտրոնային փոստի առաքմանը `OsmAnd զեղչերի մասին եւ ստացիր 3 լրացուցիչ քարտեզների ներբեռնում:</string>
-    <string name="depth_contour_descr">Քարտեզներ, որոնք պարունակոմ են եզրագծեր և ծովային խորության կետեր։</string>
-    <string name="sea_depth_thanks">Շնորհակալություն ծովային խորքային ուրվագծերի ձեռքբերման համար:</string>
-    <string name="index_item_depth_contours_osmand_ext">Ծովային խորքային ուրվագծեր</string>
-    <string name="download_depth_countours">Ծովային խորքային ուրվագիծը</string>
-    <string name="nautical_maps">Ծովային քարտեզներ</string>
     <string name="analyze_on_map">Դիտել քարտեզի վրա</string>
     <string name="shared_string_visible">Տեսանելի</string>
     <string name="restore_purchases">Գնումների վերականգնում</string>
@@ -319,15 +314,9 @@
     <string name="routing_attr_relief_smoothness_factor_name">Ընտրել բարձունքների տատանումը</string>
     <string name="routing_attr_height_obstacles_name">Օգտագործել բարձրության տվյալները</string>
     <string name="routing_attr_height_obstacles_description">Օգտագործել բարձրության տվյալներ տրամադրված SRTM, ASTER և EU-DEM։</string>
-    <string name="rendering_attr_depthContours_description">Ցույց տալ խորության տվյալները։</string>
-    <string name="rendering_attr_depthContours_name">Ծովային խորքային ուրվագծեր</string>
-    <string name="rendering_attr_contourDensity_description">Եզրագծերի խտությունը</string>
-    <string name="rendering_attr_contourDensity_name">Եզրագծերի խտությունը</string>
     <string name="rendering_value_high_name">Բարձր</string>
     <string name="rendering_value_medium_w_name">Միջին</string>
     <string name="rendering_value_low_name">Ցածր</string>
-    <string name="rendering_attr_contourWidth_description">Եզրագծերի լայնությունը</string>
-    <string name="rendering_attr_contourWidth_name">Եզրագծերի լայնությունը</string>
     <string name="rendering_attr_hideWaterPolygons_description">Ջուր</string>
     <string name="rendering_attr_hideWaterPolygons_name">Թաքցնել ջուրը</string>
     <string name="legacy_search">Հին որոնման տեսակը</string>
@@ -390,12 +379,9 @@
     <string name="storage_place_description">OsmAnd-ը կպահպանի տվյալները (քարտեզներ, երթուղիներ և այլն) %1$s։</string>
     <string name="give_permission">Տալ թույլտվություն</string>
     <string name="animate_my_location_desc">"Միացնել  Իմ Դիրքի անիմացումը քարտեզի համայնապատկերում նավիգացիայի ժամանակ։"</string>
-    <string name="index_item_depth_points_southern_hemisphere">Ծովային խորության կետերը հարավային կիսագնդում</string>
-    <string name="index_item_depth_points_northern_hemisphere">Ծովային խորության կետերը հյուսիսային կիսագնդում</string>
     <string name="do_not_send_anonymous_app_usage_desc">OsmAnd հավաքում է միայն այն տեղեկատվությունները, որոնք վերաբերվում են հավելվածին օգտագործման։ Ձեր գտնվելու վայրը երբեք չի ուղարկվի, ոչ էլ այն, ինչ դուք մուտք եք գործել հավեվածում կամ ձեր դիտած, որոնման և ներբեռնելու տարածքների մանրամասները:</string>
     <string name="do_not_show_startup_messages_desc">Չցուցադրել հավելվածի զեղչերի և տեղական միջոցառման հատուկ հաղորդագրությունները։</string>
     <string name="auto_split_recording_descr">Սկսել նոր սեգմենտ 6 րոպեանոց ընդմիջումից հետո, նոր տրեկ 2 ժամանոց ընդմիջումից հետո կամ նոր ֆայլ երկարատև ընդմիջումից հետո (եթե ամսաթիվը փոխվել է):</string>
-    <string name="rendering_attr_contourColorScheme_description">Եզրագծերի գունային սխեման</string>
     <string name="save_track_min_speed">Նվազագույն արագությունը մուտքագրելու համար</string>
     <string name="save_track_min_speed_descr">Ֆիլտր՝ Նշանակել նվազագույն արագություն կետի համար։</string>
     <string name="save_track_min_distance">Նվազագույն տեղաշարժը մուտքագրելու համար</string>
@@ -405,7 +391,6 @@
     <string name="christmas_desc">Սուրբ Ծննդյան եւ Ամանորյա տոների նախօրեին դուք կարող եք ընտրել Սուրբ Ծնունդի հետ կապված POI-ների ցուցադրումը՝ տոնածառեր, տոնավաճառներ և այլն:</string>
     <string name="rendering_value_light_brown_name">Բաց-շագանակագույն</string>
     <string name="rendering_value_dark_brown_name">Մուգ շագանակագույն</string>
-    <string name="rendering_attr_contourColorScheme_name">Contour lines գունային սխեման</string>
     <string name="translit_name_if_miss">Transliterate եթե %1$s անունը բացակայում է</string>
     <string name="translit_names">Transliterate անունները</string>
     <string name="first_usage_greeting">Ստացեք երթուղիներ եւ հայտնաբերեք նոր վայրեր առանց ինտերնետ կապի</string>
@@ -963,7 +948,6 @@
 \nՀատուկ քարտեզի ներբեռնում չի պահանջվում, դիտումը հնարավոր է մեր ստանդարտ քարտեզներից:
 \n
 \nԱյս դիտումը կարող է վերադարձվել կամ կրկին անջատել այն այս կետից, կամ փոխելով «Քարտեզի ոճը», «Կարգավորել քարտեզը» կետից, ըստ ցանկության:"</string>
-    <string name="plugin_nautical_name">Ծովային քարտեզի դիտում</string>
     <string name="plugin_ski_name">Դահուկային քարտեզի դիտում</string>
     <string name="shared_string_accessibility">Հատուկ հնարավորություններ</string>
     <string name="osmand_accessibility_description">The plugin-ն սարքի համար ավելացնում հատուկ հնարավորությունների աջակցում ուղղակիորեն OsmAnd-ում: Սա հեշտացնում է, օրինակ, TTS-ի ձայնի ելքային արագությունը հարմարեցնելու համար, կարգավորել նավիգացիայի ուղղվածությունը էկրանի վրա, վերահսկեք սանդղակը կամ օգտագործեք ձայնային հետադարձ կապի հրամանները ավտո անոտացիաներ անելու դեպքում ձեր դիրքի վերաբերյալ:</string>
@@ -991,7 +975,6 @@
     <string name="device_memory">Սարքի հիշողությունը</string>
     <string name="rendering_attr_pisteGrooming_name">Լեռնադահուկորդ երթուղու տեսակը</string>
     <string name="world_ski_missing">"Լեռնադահուկային քարտեզների ցուցադրման համար անհրաժեշտ է ներբեռնել  հատուկ քարտեզ"</string>
-    <string name="nautical_maps_missing">"Ծովային քարտեզների ցուցադրման համար անհրաժեշտ է ներբեռնել  հատուկ քարտեզ"</string>
     <string name="edit_group">Խմբագրել խումբը</string>
     <string name="remove_the_tag">ՋՆՋԵԼ TAG-ը</string>
     <string name="gps_status">GPS-ի կարգավիճակը</string>
@@ -1286,7 +1269,6 @@
     <string name="localization_pref_title">Տեղայնացման</string>
     <string name="index_item_nation_addresses">Հասցեներ ըստ երկրի</string>
     <string name="index_item_world_altitude_correction">Աշխարհի բարձրության ուղղում</string>
-    <string name="index_item_world_seamarks">Աշխարհի ծովային կայքեր</string>
     <string name="index_item_world_bitcoin_payments">Աշխարհի փոխանակման կետեր bitcoin</string>
     <string name="index_item_world_basemap">Աշխարհը դիտողական քարտեզ</string>
     <string name="index_item_world_ski">Համաշխարհային լեռնադահուկային քարտեզ</string>
@@ -1624,8 +1606,6 @@
     <string name="rendering_attr_noPolygons_name">Պոլիգոններ</string>
     <string name="rendering_attr_appMode_name">Ցուցադրման ռեժիմ</string>
     <string name="rendering_attr_appMode_description">Քարտեզի օպտիմալացում համապատասխան պրոֆիլի համար</string>
-    <string name="rendering_attr_contourLines_description">Ընտրեք նվազագույն մասշտաբի մակարդակը եզրագծերի համար (նախ պետք է ներբեռնեք համապատասխան SRTM ֆայլ):</string>
-    <string name="rendering_attr_contourLines_name">Ցույց տալ եզրագծերը (contour lines)</string>
     <string name="rendering_attr_hmRendered_description">Քարտեզի վրա ցույց տալ ավելի շատ մանրամասներ։</string>
     <string name="rendering_attr_hmRendered_name">Ավելի մանրամասն</string>
     <string name="local_index_routing_data">Routing-ի տվյալներ</string>
@@ -1896,11 +1876,6 @@
     <string name="search_offline_geo_error">Հնարավոր չէ վերլուծել հարցումը \'%s\'։</string>
     <string name="search_osm_offline">Որոնում ըստ հասցեյի տեղական(offlne) քարտեզներում</string>
     <string name="system_locale">Համակարգային</string>
-    <string name="plugin_nautical_descr">"Այս plugin-ը հարստացնում է OsmAnd նավարկության հավելվածը  ինչպես նաևւ ծովային քարտեզներով նավակների համար, ծովագնացության և  այլ տեսակի ջրային շրջաններում
-\n
-\nOsmAnd-ի հատուկ քարտեզների add-on-ը  կտրամադրի բոլոր ծովային նավագնացության նշանները և աղյուսակը, ներքին, ինչպես նաև մոտակա նավարկության համար: Յուրաքանչյուր նավագնացության նշանի նկարագրությունը ապահովում է նրանց և դրանց իմաստը  հայտնաբերելու համար անհրաժեշտ մանրամասները(կատեգորիա, ձև, գույն, հաջորդականություն, հղում և այլն):
-\n
-\nOsmAnd-ի ավանդական քարտեզի ոճերից մեկին վերադառնալու համար պարզապես  կամ  ապաակտիվացրեք այս հավելվածը կամ ըստ ցանկության փոխեք «Քարտեզի ոճը» «Քարտեզի կարգավորում» մենույում:"</string>
     <string name="preferred_locale_descr">Ընտրել ծրագրի լեզուն (Վերագործարկեք OsmAnd փոփոխությունից հետո)։</string>
     <string name="preferred_locale">Տեղայնացումը (լեզուն)</string>
     <string name="incomplete_locale">թերի</string>
@@ -2323,7 +2298,6 @@
     <string name="show_free_version_banner">Ցույց տալ անվճար տարբերակների պաստառը</string>
     <string name="show_free_version_banner_description">Ցույց տալ անվճար տարբերակների պաստառը նաև վճարովի տարբերակում։</string>
     <string name="buy">ԳՆԵԼ</string>
-    <string name="activate_seamarks_plugin">Խնդրում ենք ակտիվացնել Ծովային քարտեզների plugin-ը</string>
     <string name="later">Ավելի ուշ</string>
     <string name="get_full_version">Ամբողջական տարբերակը</string>
     <string name="downloads">Ներբեռնումներ</string>

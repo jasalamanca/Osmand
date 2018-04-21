@@ -983,7 +983,6 @@
     <string name="localization_pref_title">Lokalizacija</string>
     <string name="index_item_nation_addresses">adrese diljem zemlje</string>
 	<string name="index_item_world_altitude_correction">Korekcija nadmorske visine u svijetu</string>
-	<string name="index_item_world_seamarks">Morske oznake u svijetu</string>
 	<string name="index_item_world_bitcoin_payments">Plaćanje s bitcoin-om u svijetu</string>
 	<string name="index_item_world_basemap">Pregled karte svijeta</string>
     <string name="index_item_world_ski">Svjetska skijaška karta</string>
@@ -1318,8 +1317,7 @@
 	<string name="shared_string_audio">Zvučni zapis</string>
     <string name="shared_string_photo">Fotografija</string>
 	<string name="route_points">Točke rute</string>
-	<string name="plugin_nautical_name">Nautička karta</string>
-	<string name="plugin_ski_name">Skijaška karta</string>
+    <string name="plugin_ski_name">Skijaška karta</string>
 	<string name="rename_failed">Preimenovanje nije uspjelo.</string>
 	<string name="back_to_map">Natrag na kartu</string>
 	<string name="location_on_map">Lokacija:\n Širina %1$s\n Dužina %2$s</string>
@@ -1330,8 +1328,7 @@
 	<string name="free">"Slobodno %1$s "</string>
 	<string name="device_memory">Memorija uređaja</string>
     <string name="world_ski_missing">Kako bi se prikazale skijaške karte, potrebno je preuzeti posebne offline karte</string>
-    <string name="nautical_maps_missing">Kako bi se prikazale nautičke karte, potrebno je preuzeti posebne offline karte</string>
-	<string name="edit_group">Uredi grupu</string>
+    <string name="edit_group">Uredi grupu</string>
     <string name="remove_the_tag">Ukloniti oznaku</string>
     <string name="gps_status">GPS status</string>
     <string name="rendering_attr_streetLighting_name">Ulična rasvjeta</string>

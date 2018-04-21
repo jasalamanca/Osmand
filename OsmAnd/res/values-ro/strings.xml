@@ -137,8 +137,6 @@
 	<string name="rendering_attr_noPolygons_name">Fără poligoane</string>
 	<string name="rendering_attr_appMode_name">Mod de randare</string>
 	<string name="rendering_attr_appMode_description">Optimizează harta pentru</string>
-	<string name="rendering_attr_contourLines_description">Afișează începând de la nivelul de zoom (necesită fișier SRTM):</string>
-	<string name="rendering_attr_contourLines_name">Afișează liniile de contur</string>
 	<string name="rendering_attr_hmRendered_description">Crește nivelul de detalii ale hărții</string>
 	<string name="rendering_attr_hmRendered_name">Mai multe detalii pe hartă</string>
 	<string name="local_index_routing_data">Date despre rutare</string>

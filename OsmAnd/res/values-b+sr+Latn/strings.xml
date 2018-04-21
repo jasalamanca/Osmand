@@ -336,11 +336,7 @@
     <string name="rename_failed">Preimenovanje nije uspelo.</string>
 	<string name="shared_string_currently_recording_track">Staza koja se trenutno snima</string>
 	<string name="back_to_map">Nazad na kartu</string>
-	<string name="plugin_nautical_descr">Prelazak pregleda karte prikazuje pomorski izgled, čime se prikazuju sve pomorske oznake navođenja i grafički znaci.
-		\n\nDatoteka karte koja sadrži sve opšte pomorske znake je dostupna u vidu  jednog preuzimanja i naziva se „Svetske pomorske karte“.
-		\n\nPregled može da se vrati na stari njegovim isključivanjem ovde, ili izmenom „Načina prikaza karte“ pod „Podesite kartu“.
-	</string>
-	<string name="plugin_ski_descr">Pokretanje ove izmene menja pregled karte na „Zima i skijanje“, koje prikazuje u položenom pogledu osobine predela i zimske uslove.
+    <string name="plugin_ski_descr">Pokretanje ove izmene menja pregled karte na „Zima i skijanje“, koje prikazuje u položenom pogledu osobine predela i zimske uslove.
 		\n\nSvetska karta prikazuje sva skijališta i skijaške staze u ovom pregledu je dostupna preuzimanjem  „Svetske skijaške karte“.
 	</string>
 	<string name="shared_string_audio">Zvuk</string>
@@ -354,9 +350,7 @@
     <string name="free">"Slobodno %1$s "</string>
 	<string name="device_memory">Skladište uređaja</string>
     <string name="plugin_ski_name">Pregled skijaške karte</string>
-    <string name="plugin_nautical_name">Pregled pomorske karte</string>
     <string name="world_ski_missing">Da bi se prikazivala skijaška karta, naročita karta za pregled van mreže treba da se preuzme</string>
-    <string name="nautical_maps_missing">Da bi se prikazivale pomorske karte, naročita karta za pregled van mreže treba da se preuzme</string>
 	<string name="edit_group">Uredi skup</string>
     <string name="remove_the_tag">UKLONI OZNAKU</string>
     <string name="gps_status">Stanje GPS-a</string>
@@ -369,14 +363,10 @@
     <string name="home_button">Kuća</string>
     <string name="rendering_attr_subwayMode_name">Linije metroa</string>
     <string name="search_radius_proximity">U blizini</string>
-<string name="rendering_attr_contourDensity_description">Gustina linija</string>
-    <string name="rendering_attr_contourDensity_name">Gustoća linija</string>
-    <string name="rendering_value_high_name">Velika</string>
+	<string name="rendering_value_high_name">Velika</string>
     <string name="rendering_value_medium_w_name">Srednje</string>
     <string name="rendering_value_low_name">Mala</string>
-    <string name="rendering_attr_contourWidth_description">Širina konturnih linija</string>
-    <string name="rendering_attr_contourWidth_name">Širina konturnih linija</string>
-    <string name="rendering_attr_hideWaterPolygons_description">Voda</string>
+	<string name="rendering_attr_hideWaterPolygons_description">Voda</string>
     <string name="rendering_attr_hideWaterPolygons_name">Sakriti vodu</string>
     <string name="routing_attr_allow_motorway_name">Omogućiti autoputeve</string>
     <string name="quick_action_add_navigation">Navigacija</string>

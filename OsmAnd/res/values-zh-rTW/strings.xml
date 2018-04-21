@@ -128,8 +128,6 @@
     <string name="rendering_attr_noPolygons_name">多邊形</string>
     <string name="rendering_attr_appMode_name">著色演算模式</string>
     <string name="rendering_attr_appMode_description">為地圖最佳化</string>
-    <string name="rendering_attr_contourLines_description">顯示縮放比級別(需要等高線資料)：</string>
-    <string name="rendering_attr_contourLines_name">顯示等高線</string>
     <string name="rendering_attr_hmRendered_description">增加地圖顯示詳細的資訊量。</string>
     <string name="rendering_attr_hmRendered_name">顯示更多地圖細節</string>
     <string name="local_index_routing_data">導航路線資料</string>
@@ -1187,7 +1185,6 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="index_name_gb">歐洲 - 英國</string>
     <string name="index_item_nation_addresses">全國範圍的地址</string>
     <string name="index_item_world_altitude_correction">全球海拔修正</string>
-    <string name="index_item_world_seamarks">全球航線標識</string>
     <string name="index_item_world_bitcoin_payments">全球比特幣支付</string>
     <string name="index_item_world_basemap">全球地圖總覽</string>
     <string name="index_item_world_ski">全球滑雪地圖</string>
@@ -1570,9 +1567,7 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="plugin_install_needs_network">您需要連接網際網路來安裝這個外掛程式。</string>
     <string name="get_plugin">取得</string>
     <string name="plugin_ski_name">檢視滑雪地圖</string>
-    <string name="plugin_nautical_name">檢視航海地圖</string>
     <string name="world_ski_missing">要顯示滑雪地圖，需要有已下載的專用離線地圖</string>
-    <string name="nautical_maps_missing">要顯示航海地圖，需要有已下載的專用離線地圖</string>
     <string name="rendering_attr_pisteGrooming_name">滑雪道修整</string>
     <string name="free">%1$s 可用</string>
     <string name="device_memory">裝置記憶體</string>
@@ -1582,12 +1577,7 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="notes">註解</string>
     <string name="online_map">線上地圖</string>
     <string name="plugin_touringview_name">旅遊地圖檢視</string>
-    <string name="plugin_nautical_descr">這個外掛元件豐富了 OsmAnd 地圖和導航應用，也為了划船、帆船、與其他類型的水上運動，產生了航海地圖。 
-\n 
-\n一個為 OsmAnd 附加的特有地圖，將提供用於所有內陸近岸航行的航海導航標誌和圖表符號。每個導航標誌描述提供需識別出它們和它們含義的詳細資訊（類別、形狀、顏色、序列、參考等）。 
-\n 
-\n要返回到 OsmAnd 慣用的地圖模式，再次取消這個外掛元件的啟動，或 \'組態地圖\' 下的 \'地圖樣式\'，在這兩者中的任何一個的更改都可輕易的回復。</string>
-    <string name="plugin_ski_descr">此外掛元件為 OsmAnd 所安置，讓您在全球滑雪斜坡、越野滑雪、阿爾卑斯山的滑雪路線、纜車和滑雪纜車上的詳細資訊瞭若指掌。以顏色編碼顯示路線和滑雪道的困難度，並且在特殊的 \'冬季\' 地圖樣式描畫出，哪個在冬季景觀變成雪色。 
+    <string name="plugin_ski_descr">此外掛元件為 OsmAnd 所安置，讓您在全球滑雪斜坡、越野滑雪、阿爾卑斯山的滑雪路線、纜車和滑雪纜車上的詳細資訊瞭若指掌。以顏色編碼顯示路線和滑雪道的困難度，並且在特殊的 \'冬季\' 地圖樣式描畫出，哪個在冬季景觀變成雪色。
 \n 
 \n啟動此檢視，會更改地圖樣式到 \'冬季和滑雪 \'，顯示出冬季的條件下，所有的景觀特徵。此檢視可以在這裡經由再次取消啟動，或透過 \'組態地圖\' 之下的 \'地圖樣式\' 這兩者中任何一個的更改而恢復它。</string>
 	<string name="plugin_touringview_descr">啟動此檢視的地圖樣式更改為\'旅遊檢視\'，這是給旅客和職業司機的一種特殊的高細節檢視。 
@@ -1884,7 +1874,6 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="show_free_version_banner_description">即使是付費版本，仍顯示免費版本的標題。</string>
     <string name="downloading_number_of_files">正在下載 - %1$d 檔案</string>
     <string name="buy">購買</string>
-    <string name="activate_seamarks_plugin">請啟動航線標識外掛元件</string>
     <string name="later">隨後</string>
     <string name="get_full_version">完整版</string>
     <string name="regions">地區</string>
@@ -2292,7 +2281,6 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="translit_names">音譯名稱</string>
     <string name="search_hint">輸入城市、地址、poi 名稱</string>
     <string name="translit_name_if_miss">如果 %1$s 的名稱缺失則音譯</string>
-    <string name="rendering_attr_contourColorScheme_description">等高線的色彩調配</string>
     <string name="save_track_min_speed">記錄最低的速度</string>
     <string name="save_track_min_speed_descr">篩選：設定最低速度的一個點用以記錄。</string>
     <string name="save_track_min_distance">記錄最小位移</string>
@@ -2303,7 +2291,6 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="christmas_desc_q">顯示聖誕節 POI？</string>
     <string name="rendering_value_light_brown_name">淺棕色</string>
     <string name="rendering_value_dark_brown_name">深棕色</string>
-    <string name="rendering_attr_contourColorScheme_name">等高線的顏色調配</string>
     <string name="rendering_attr_surfaceIntegrity_name">路面的整體狀態</string>
     <string name="shared_string_continue">繼續</string>
     <string name="shared_string_pause">暫停</string>
@@ -2350,10 +2337,6 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="lang_sr_latn">塞爾維亞語（拉丁語）</string>
     <string name="lang_zh_hk">中文（香港）</string>
     <string name="rendering_attr_hideWaterPolygons_description">水</string>
-    <string name="rendering_attr_contourWidth_description">等高線的線寬</string>
-    <string name="rendering_attr_contourWidth_name">等高線的線寬</string>
-    <string name="rendering_attr_contourDensity_description">等高線的密度</string>
-    <string name="rendering_attr_contourDensity_name">等高線的密度</string>
     <string name="rendering_value_high_name">高</string>
     <string name="rendering_value_medium_w_name">中</string>
     <string name="rendering_value_low_name">低</string>
@@ -2457,9 +2440,7 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
 \n •  一些其它的改進和錯誤修復 
 \n 
 \n 和更多…"</string>
-	<string name="rendering_attr_depthContours_description">顯示等深線和標記。</string>
-    <string name="rendering_attr_depthContours_name">航海等深線</string>
-	
+
     <string name="routing_attr_height_relief_smoothness_factor_description">更多的平原或丘陵</string>
     <string name="routing_attr_height_obstacles_name">使用海拔資料</string>
     <string name="routing_attr_height_obstacles_description">使用 SRTM、ASTER 和 EU-DEM 提供的地形海拔資料。</string>
@@ -2521,12 +2502,6 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="no_overlay">無上圖層</string>
     <string name="no_underlay">無下圖層</string>
     <string name="subscribe_email_error">錯誤</string>
-    <string name="sea_depth_thanks">感謝您購買航海等深線！</string>
-    <string name="index_item_depth_contours_osmand_ext">航海等深線</string>
-    <string name="index_item_depth_points_southern_hemisphere">南半球航海等深線</string>
-    <string name="index_item_depth_points_northern_hemisphere">北半球航海等深線</string>
-    <string name="download_depth_countours">航海等深線</string>
-    <string name="nautical_maps">航海地圖</string>
     <string name="analyze_on_map">在地圖上分析</string>
     <string name="restore_purchases">恢復購買</string>
     <string name="fonts_header">地圖字體</string>
@@ -2561,7 +2536,6 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="shared_string_overview">概要</string>
     <string name="quick_action_replace_destination_desc">輕點動作按鈕將把螢幕中心的位置更換為目的地。</string>
     <string name="quick_action_add_first_intermediate_desc">輕點動作按鈕將會在螢幕中心的位置增加一個中轉點。</string>
-    <string name="depth_contour_descr">地圖集包含海洋等深線和航海標點。</string>
     <string name="quick_action_add_destination_desc">輕點動作按鈕將在螢幕中心位置增加一個目的地。先前設定之目的地成為最後的中轉目的地。</string>
     <string name="subscribe_email_desc">簽署我們有關應用程式折扣的電子郵件名單和獲得3次以上的地圖下載！</string>
     <string name="animate_my_location">動畫我的位置</string>
@@ -2841,8 +2815,7 @@ OsmAnd (Automated Navigation Directions) 是一個地圖和導航的應用程式
     <string name="day_off_label">關閉</string>
     <string name="winter_and_ski_renderer">冬季和滑雪</string>
     <string name="touring_view_renderer">旅遊風景 (對比和細節)</string>
-    <string name="nautical_renderer">航海</string>
-<string name="rendering_attr_hidePOILabels_name">POI 標籤</string>
+    <string name="rendering_attr_hidePOILabels_name">POI 標籤</string>
     <string name="release_2_9">\\022 停止標誌的檢測現在考量了駕駛的方向 
 \n 
 \n • 為 GPX 軌跡提供有意義的上坡/下坡值的新運算法則 

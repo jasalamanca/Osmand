@@ -728,8 +728,6 @@
     <string name="shared_string_trip">Ferð</string>
     <string name="shared_string_recorded">Skráð</string>
     <string name="shared_string_record">Taka upp</string>
-    <string name="rendering_attr_contourColorScheme_description">Litastef hæðarlína</string>
-    <string name="rendering_attr_contourColorScheme_name">Litastef hæðarlína</string>
     <string name="translit_names">Umrita nöfn</string>
     <string name="apply_filters">Virkja síur</string>
     <string name="location_not_found">Staðsetningin fannst ekki</string>
@@ -875,7 +873,6 @@ Ferill %2$s</string>
     <string name="shared_location">Deild staðsetning</string>
     <string name="rendering_attr_noPolygons_name">Flákar</string>
     <string name="rendering_attr_appMode_description">Besta kort fyrir</string>
-    <string name="rendering_attr_contourLines_name">Birta hæðarlínur</string>
     <string name="address_search_desc">Leit að heimilisfangi</string>
     <string name="transport_search_desc">Leit að almenningssamgöngum</string>
     <string name="favourites_search_desc">Leit að eftirlætum</string>
@@ -1157,7 +1154,6 @@ Sólsetur: %2$s</string>
     <string name="show_cameras">Hraðamyndavélar</string>
     <string name="avoid_toll_roads">Forðast gjaldskylda vegi</string>
     <string name="plugin_install_needs_network">Þú þarft internettengingu til að setja upp þessa viðbót.</string>
-    <string name="activate_seamarks_plugin">Virkjaðu Sjómerkja-viðbótina</string>
     <string name="legacy_search">Gamaldags leit</string>
     <string name="show_legacy_search">Birta gamaldags leit</string>
     <string name="show_legacy_search_desc">Virkja gamaldags leit í skúffulistanum.</string>
@@ -1442,8 +1438,7 @@ og leiðsögn</string>
 Len %2$s</string>
     <string name="routing_settings_2">Leiðsagnarstillingar</string>
     <string name="plugin_touringview_name">Ferðakort</string>
-	<string name="plugin_nautical_name">Sjókort</string>
-	<string name="plugin_ski_name">Skíðakort</string>
+    <string name="plugin_ski_name">Skíðakort</string>
     <string name="osm_settings">OSM-breytingar</string>
     <string name="navigation_over_track">Hefja leiðsögn eftir ferlinum?</string>
     <string name="rendering_attr_roadStyle_name">Stíll götu</string>
@@ -1591,7 +1586,6 @@ Punktar</string>
     <string name="osmo_mode_off">Hefja OsMo-setu</string>
     <string name="always_center_position_on_map">Staðsetning skjás alltaf á miðju</string>
     <string name="index_item_world_altitude_correction">Hæðarleiðrétting á heimsvísu</string>
-    <string name="index_item_world_seamarks">Sjómerki um víða veröld</string>
     <string name="calculate_osmand_route_without_internet">Reikna OsmAnd leiðarbút án internettengingar</string>
     <string name="use_displayed_track_for_navigation">Viltu nota birtan feril fyrir leiðsögn?</string>
     <string name="routing_attr_weight_description">Tilgreindu þyngd farartækis sem leyfð er á leiðum.</string>
@@ -1694,8 +1688,6 @@ Punktar</string>
     <string name="local_openstreetmap_uploadall">Senda allt inn</string>
     <string name="local_openstreetmap_delete">Eyða breytingu</string>
     <string name="show_current_gpx_title">Eyða núverandi ferli</string>
-    <string name="rendering_attr_contourWidth_description">Breidd hæðarlína</string>
-    <string name="rendering_attr_contourWidth_name">Breidd hæðarlína</string>
     <string name="rendering_attr_hideWaterPolygons_description">Vatn</string>
     <string name="speech_rate_descr">Tilgreindu talhraða fyrir TTS.</string>
     <string name="stop_routing_confirm">Ertu viss um að þú viljir stöðva leiðsögnina?</string>
@@ -1744,10 +1736,6 @@ Punktar</string>
     <string name="use_fast_recalculation">Snjöll endurreiknun leiðar</string>
     <string name="use_fast_recalculation_desc">Einungis endurreikna upphafshluta leiðar fyrir langar ferðir.</string>
     <string name="confirm_download_roadmaps">Ertu viss um að þú viljir sækja kort eingöngu með vegum, jafnvel þó þú sért þegar með staðlaða (fulla útgáfu) korts?</string>
-    <string name="rendering_attr_depthContours_description">Birta dýptarlínur og punkta.</string>
-    <string name="rendering_attr_depthContours_name">Dýptarlínur sjávar</string>
-	<string name="rendering_attr_contourDensity_description">Þéttleiki hæðarlína</string>
-    <string name="rendering_attr_contourDensity_name">Þéttleiki hæðarlína</string>
     <string name="rendering_value_high_name">Hár</string>
     <string name="rendering_value_medium_w_name">Miðlungs</string>
     <string name="rendering_value_low_name">Lágur</string>
@@ -1919,7 +1907,6 @@ Punktar</string>
     <string name="tips_and_tricks_descr">Algengar spurningar, nýlegar breytingar og fleira.</string>
     <string name="osmand_distance_planning_plugin_name">Reikna vegalengdir og skipuleggja</string>
     <string name="world_ski_missing">Til að birta skíðakort, verður að ná í sérstakt kort til notkunar án nettengingar</string>
-    <string name="nautical_maps_missing">Til að birta sjókort, verður að ná í sérstakt kort til notkunar án nettengingar</string>
     <string name="remove_the_tag">FJARLÆGJA MERKIÐ</string>
     <string name="version_settings_descr">Sækja náttfara (nightly builds).</string>
     <string name="version_settings">Útgáfusamsetningar</string>
@@ -2025,12 +2012,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="no_overlay">Ekkert yfirlag</string>
     <string name="no_underlay">Ekkert undirlag</string>
     <string name="subscribe_email_error">Villa</string>
-    <string name="sea_depth_thanks">Takk fyrir að kaupa sjódýptarlínur!</string>
-    <string name="index_item_depth_contours_osmand_ext">Dýptarlínur sjávar</string>
-    <string name="index_item_depth_points_southern_hemisphere">Sjódýptarpunktar á suðurhveli</string>
-    <string name="index_item_depth_points_northern_hemisphere">Sjódýptarpunktar á norðurhveli</string>
-    <string name="download_depth_countours">Dýptarlínur sjávar</string>
-    <string name="nautical_maps">Sjókort</string>
     <string name="osm_live_subscription">Áskrift að OsmAnd Live</string>
     <string name="osm_live_support_region">Svæði sem stuðningur er við</string>
     <string name="rendering_value_walkingRoutesOSMC_name">Litur fer eftir OSMC göngutáknum</string>
@@ -2128,7 +2109,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="plugin_mapillary_descr">Götumyndir fyrir alla. Uppgötvaðu staði, útvíkkaðu heiminn og vertu með í samstarfinu.</string>
     <string name="show_from_zoom_level">Birta frá aðdráttarstigi</string>
     <string name="subscribe_email_desc">Gerstu áskrifandi að póstlistanum um forritaafslætti og fáðu ókeypis 3 niðurhöl á kortum til viðbótar!</string>
-    <string name="depth_contour_descr">Sett af kortum með dýptarlínum og dýptarpunktum sjávar.</string>
     <string name="auto_split_recording_descr">Hefja nýjan bút eftir 6 mínútna bil, hefja nýjan feril eftir 2 klst bil, eða nýja skrá eftir lengra bil ef dagsetning hefur breyst.</string>
     <string name="save_track_min_speed_descr">Sía: Stilltu lágmarkshraða þar sem punktur er tekinn í skráningu.</string>
     <string name="save_track_min_distance_descr">Sía: Stilltu lágmarksfjarlægð frá síðustu staðsetningu þar sem punktur er tekinn í skráningu.</string>
@@ -2304,7 +2284,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="native_library_not_running">Forritið er keyrandi í öryggisham (gerðu hann óvirkan í stillingunum).</string>
     <string name="zxing_barcode_scanner_not_found">ZXing Barcode Scanner forritið er ekki uppsett. Leita á Google Play markaðnum?</string>
     <string name="osmand_plus_extended_description_part8">Áætluð kortaþekja og gæði: • Vestur-Evrópa: **** • Austur-Evrópa: *** • Rússland: *** • Norður-Ameríka: *** • Suður-Ameríka: ** • Asía: ** • Japan &amp; Kórea: *** • Miðausturlönd: ** • Afríka: ** • Antarktíka: * Flest lönd í heiminum eru tiltæk sem niðurhalspakkar! Frá Afghanistan til Simbabve, frá Ástralíu til BNA. Argentína, Brasilía, Kanada, Frakkland, Þýskaland, Mexíkó, UK, Spánn, …</string>
-    <string name="rendering_attr_contourLines_description">Birta frá aðdráttarstigi (krefst hæðarlínugagna):</string>
     <string name="live_monitoring_max_interval_to_send">Tímabiðminni fyrir rakningu með netstuðningi</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Skilgreindu tímabiðminni þar sem geymdar eru staðsetningar sem á að senda án tengingar</string>
     <string name="map_version_changed_info">Þjónninn inniheldur kortaskrár sem ekki eru samhæfanlegar þinni útgáfu forritsins. Til að sækja þær og nota, ættirðu að uppfæra forritið í nýrri útgáfu.</string>
@@ -2335,12 +2314,7 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="shared_string_marker">Kortamerki</string>
     <string name="plan_route_no_markers_toast">Þú verður að bæta við a.m.k. einni merkingu til að geta notað þessa aðgerð.</string>
     <string name="osm_recipient_stat">Breytingar %1$s, upphæð %2$s mBTC</string>
-    <string name="plugin_nautical_descr">Þessi viðbót bætir eiginleikum inn í landakort OsmAnd og leiðsagnarforritið þannig að úr verði sjókort til skemmtisiglinga, fyrir seglbáta og fleiri tegundir vatnaíþrótta.
-\n
-\nSérstök kortaviðbót fyrir OsmAnd mun koma með öll sjómerki og leiðatákn þeim tengd, til rötunar á sjó eða ströndum. Lýsing sjómerkja inniheldur öll þau atriði sem nauðsynleg er til að auðkenna þau og hvað þau þýða (flokkur, lögun, litur, röð, tilvísun, o.s.frv.). 
-\n
-\nTil að snúa aftur í hefðbundnari kortastíla OsmAnd, þarf einfaldlega að gera viðbótina óvirka aftur eða breyta stílnum í \'Stíll korts\' í \'Stilla kort\' valmyndinni.</string>
-    <string name="plugin_ski_descr">Þessi viðbót fyrir OsmAnd setur við fingurgóma þína allskyns smáatriði varðandi skíðabrekkur, gönguskíðabrautir, fjallaskíðaleiðir, kláfa og skíðalyftur. Leiðir og brautir eru með litakóða eftir erfiðleikastigi, og birtast í sérstökum \'Vetrar\'-kortastíl sem líkir eftir snævi þöktu landslagi. 
+    <string name="plugin_ski_descr">Þessi viðbót fyrir OsmAnd setur við fingurgóma þína allskyns smáatriði varðandi skíðabrekkur, gönguskíðabrautir, fjallaskíðaleiðir, kláfa og skíðalyftur. Leiðir og brautir eru með litakóða eftir erfiðleikastigi, og birtast í sérstökum \'Vetrar\'-kortastíl sem líkir eftir snævi þöktu landslagi.
 \n
 \nVirkjun á þessari sýn breytirstíl kortsins yfir í \'Vetur og skíði\', þar sem allt landslag birtist í vetraraðstæðum. Til að snúa aftur í hefðbundnari kortastíla OsmAnd, þarf einfaldlega að gera viðbótina óvirka aftur eða breyta stílnum í \'Stíll korts\' í \'Stilla kort\' valmyndinni.</string>
     <string name="select_index_file_to_download">Ekkert fannst. Ef þú finnur ekki héraðið þitt, geturðu útbúið það sjálf(ur) (skoðaðu http://osmand.net).</string>
@@ -2445,8 +2419,7 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="day_off_label">slökkt</string>
     <string name="winter_and_ski_renderer">Vetur og skíði</string>
     <string name="touring_view_renderer">Ferðakort (birtuskil og ítarefni)</string>
-    <string name="nautical_renderer">Sjókort</string>
-<string name="simulate_initial_startup_descr">Stillir flaggið sem gefur til kynna fyrstu keyrslu forrits, heldur öllum öðrum stillingum óbreyttum.</string>
+    <string name="simulate_initial_startup_descr">Stillir flaggið sem gefur til kynna fyrstu keyrslu forrits, heldur öllum öðrum stillingum óbreyttum.</string>
     <string name="fav_point_dublicate_message">"Tilgreint heiti eftirlætis er þegar  í notkun, var breytt í %1$s til að koma í veg fyrir tvítekningu."</string>
     <string name="osmo_auth_error">Villa kom upp í OsMo-auðkenningu: %1$s.
 \nÞað gæti verið tímabundin röskun á þjónustu eða að skráning þín sé útrunnin.

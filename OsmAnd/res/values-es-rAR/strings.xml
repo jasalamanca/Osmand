@@ -128,7 +128,6 @@ Lon %2$s</string>
     <string name="record_plugin_name">Grabación de viaje</string>
     <string name="osmo_plugin_name">Rastreo OpenStreetMap</string>
     <string name="plugin_touringview_name">Vista turística</string>
-    <string name="plugin_nautical_name">Vista náutica</string>
     <string name="plugin_ski_name">Vista invernal</string>
     <string name="shared_string_accessibility">Accesibilidad</string>
     <string name="osm_settings">Edición OSM</string>
@@ -349,7 +348,6 @@ Lon %2$s</string>
     <string name="misc_pref_title">Varios</string>
     <string name="localization_pref_title">Ubicación</string>
     <string name="index_item_world_altitude_correction">Corrección mundial de altitud</string>
-    <string name="index_item_world_seamarks">Balizas mundiales</string>
     <string name="index_item_world_bitcoin_payments">Pagos mundiales con Bitcoin</string>
     <string name="index_item_world_basemap">Mapa mundial general</string>
     <string name="index_item_world_ski">Mapa mundial de esquí</string>
@@ -457,12 +455,7 @@ Lon %2$s</string>
 \nNo es necesario descargar un mapa especial, la vista es creada a partir de nuestros mapas estándar. 
 \n 
 \nEsta vista puede ser revertida desactivando de nuevo aquí, o cambiando el «Estilo del mapa» desde «Configurar mapa» cuando lo desees.</string>
-    <string name="plugin_nautical_descr">Este complemento enriquece el mapa y la navegación de OsmAnd al producir también mapas náuticos para el canotaje, vela y otros tipos de deportes acuáticos. 
-\n 
-\nUn mapa especial complementado para OsmAnd proporcionará toda las marcas de navegación náutica y símbolos cartográficos para el interior, así como para la navegación cerca de la costa. La descripción de cada marca de navegación proporciona los datos necesarios para su identificación y su significado (categoría, forma, color, número, referencia, etc.). 
-\n 
-\nPara volver a uno de los estilos del mapas convencionales de OsmAnd, simplemente desactiva este complemento de nuevo, o cambia el «Estilo del mapa» en «Configurar mapa» cuando lo desees.</string>
-    <string name="plugin_ski_descr">Este complemento para OsmAnd pone a tu alcance detalles sobre pistas de esquí de descenso, de travesía, rutas de esquí alpino, teleféricos y remontes a nivel mundial. Las rutas y pistas se muestran por código de color en función de su dificultad y representados con un estilo del mapa especial «Invierno» que lo asemeja a un paisaje invernal nevado. 
+    <string name="plugin_ski_descr">Este complemento para OsmAnd pone a tu alcance detalles sobre pistas de esquí de descenso, de travesía, rutas de esquí alpino, teleféricos y remontes a nivel mundial. Las rutas y pistas se muestran por código de color en función de su dificultad y representados con un estilo del mapa especial «Invierno» que lo asemeja a un paisaje invernal nevado.
 \n 
 \nActivando esta vista, cambia el estilo del mapa a «Invierno y esquí», mostrando las características del terreno en condiciones invernales. Esta vista se puede revertir desactivando de nuevo aquí o cambiando el «Estilo del mapa» en «Configurar mapa» cuando lo desees.</string>
     <string name="osmand_distance_planning_plugin_description">Este complemento proporciona un control en la pantalla del mapa, permitiendo crear caminos pulsando en el mapa, o usar o modificar archivos GPX existentes, para planificar un viaje y medir la distancia entre puntos. Los resultados pueden guardarse como un archivo GPX y usarse luego para la orientación.</string>
@@ -470,7 +463,6 @@ Lon %2$s</string>
     <string name="osm_editing_plugin_description">Este complemento puede usarse para hacer contribuciones en OSM, como el crear o modificar objetos PDI, abrir o comentar notas de OSM y contribuir con archivos de trazas GPX. OSM es un proyecto de mapeo global impulsado por la comunidad y de dominio público. Para más detalles, consulta https://openstreetmap.org. Se aprecia la participación activa, y las contribuciones pueden hacerse directamente desde OsmAnd, especificando las credenciales personales de OSM en la aplicación.</string>
     <string name="osmand_development_plugin_description">Este complemento muestra los ajustes de funciones de desarrollo y depuración para probar la simulación de rutas, el rendimiento del renderizado en pantalla, o las indicaciones por voz. Estos ajustes están destinados para los desarrolladores y no son necesarios para el usuario general.</string>
     <string name="world_ski_missing">Para mostrar mapas de esquí, necesita descargarse el mapa especial sin conexión</string>
-    <string name="nautical_maps_missing">Para mostrar mapas náuticos, necesita descargarse el mapa especial sin conexión</string>
     <string name="proxy_pref_descr">Indica un proxy de Internet.</string>
     <string name="avoid_roads_msg">Puedes obtener una ruta alternativa eligiendo los caminos a evitar</string>
     <string name="rendering_attr_publicTransportMode_name">Rutas de colectivo, trolebús y lanzadera</string>
@@ -866,8 +858,6 @@ Lon %2$s</string>
     <string name="rendering_attr_noPolygons_name">Polígonos</string>
     <string name="rendering_attr_appMode_name">Modo de dibujo</string>
     <string name="rendering_attr_appMode_description">Optimizar mapa para</string>
-    <string name="rendering_attr_contourLines_description">Mostrar desde el nivel de ampliación (requiere datos de contorno):</string>
-    <string name="rendering_attr_contourLines_name">Mostrar curvas de nivel</string>
     <string name="rendering_attr_hmRendered_description">Aumentar detalle que se muestra en el mapa.</string>
     <string name="rendering_attr_hmRendered_name">Mostrar más detalle del mapa</string>
     <string name="local_index_routing_data">Datos de navegación</string>
@@ -1678,7 +1668,6 @@ Lon %2$s</string>
     <string name="show_free_version_banner_description">Muestra el anuncio de la versión gratuita, incluso en la versión de pago.</string>
     <string name="downloading_number_of_files">Descargando - %1$d archivo/s</string>
     <string name="buy">COMPRAR</string>
-    <string name="activate_seamarks_plugin">Activa el complemento náutico</string>
     <string name="later">Luego</string>
     <string name="get_full_version">Versión completa</string>
     <string name="regions">Regiones</string>
@@ -2079,7 +2068,6 @@ Lon %2$s</string>
     <string name="search_hint">Ingresa nombre de ciudad, dirección o PDI</string>
     <string name="rendering_value_light_brown_name">Marrón claro</string>
     <string name="rendering_value_dark_brown_name">Marrón oscuro</string>
-    <string name="rendering_attr_contourColorScheme_name">Esquema de color de las curvas de nivel</string>
     <string name="rendering_attr_surfaceIntegrity_name">Integridad de la superficie del camino</string>
     <string name="christmas_poi">PDI navideño</string>
     <string name="christmas_desc">Anticipando los días festivos de Navidad y Año Nuevo, puedes elegir mostrar los punto de interés asociados a la Navidad: Árboles navideños, tiendas, etc.</string>
@@ -2090,7 +2078,6 @@ Lon %2$s</string>
     <string name="save_track_min_distance_descr">Filtro: Define la distancia mínima de registro entre puntos de ubicación.</string>
     <string name="save_track_precision">Precisión mínima del registro</string>
     <string name="save_track_precision_descr">Filtro: Define la precisión mínima para registrar un punto.</string>
-    <string name="rendering_attr_contourColorScheme_description">Esquema de color para las curvas de nivel</string>
     <string name="shared_string_continue">Continuar</string>
     <string name="shared_string_pause">Pausar</string>
     <string name="shared_string_trip">Viaje</string>
@@ -2134,13 +2121,9 @@ Lon %2$s</string>
     <string name="lang_sr_latn">Serbio (latín)</string>
     <string name="lang_zh_hk">Chino (Hong Kong)</string>
     <string name="rendering_attr_hideWaterPolygons_description">Agua</string>
-    <string name="rendering_attr_contourDensity_description">Densidad de las curvas de nivel</string>
-    <string name="rendering_attr_contourDensity_name">Densidad de curvas de nivel</string>
     <string name="rendering_value_high_name">Alto</string>
     <string name="rendering_value_medium_w_name">Mediano</string>
     <string name="rendering_value_low_name">Bajo</string>
-    <string name="rendering_attr_contourWidth_description">Anchura de las curvas de nivel</string>
-    <string name="rendering_attr_contourWidth_name">Anchura de curvas de nivel</string>
     <string name="rendering_attr_hideWaterPolygons_name">Ocultar agua</string>
     <string name="configure_screen_quick_action">Acción rápida</string>
 
@@ -2241,9 +2224,7 @@ Proporciona un código completo</string>
 \n • Varias otras mejoras y corrección de errores 
 \n 
 \n y más…</string>
-	<string name="rendering_attr_depthContours_description">Mostrar curvas y puntos de profundidad.</string>
-    <string name="rendering_attr_depthContours_name">Curvas de profundidad náuticas</string>
-	<string name="route_altitude">Elevación de la ruta</string>
+    <string name="route_altitude">Elevación de la ruta</string>
     <string name="altitude_descent">Descenso</string>
     <string name="altitude_ascent">Ascenso</string>
     <string name="altitude_range">Rango de altitud</string>
@@ -2379,13 +2360,6 @@ Proporciona un código completo</string>
     <string name="restore_purchases">Restaurar compras</string>
     <string name="analyze_on_map">Analizar en el mapa</string>
     <string name="shared_string_visible">Visible</string>
-    <string name="sea_depth_thanks">¡Gracias por comprar las curvas de profundidad náuticas!</string>
-    <string name="index_item_depth_contours_osmand_ext">Curvas de profundidad náuticas</string>
-    <string name="index_item_depth_points_southern_hemisphere">Puntos de profundidad náuticos del hemisferio sur</string>
-    <string name="index_item_depth_points_northern_hemisphere">Puntos de profundidad náuticos del hemisferio norte</string>
-    <string name="download_depth_countours">Curvas de profundidad náuticas</string>
-    <string name="nautical_maps">Mapas náuticos</string>
-    <string name="depth_contour_descr">Conjunto de mapas que contienen las curvas y puntos de profundidad náuticas.</string>
     <string name="subscribe_email_error">Error</string>
     <string name="subscribe_email_desc">¡Suscríbete a nuestra lista de correo electrónico para recibir descuentos de la aplicación y obtener 3 descargas de mapas más!</string>
     <string name="no_overlay">Sin superposición</string>
@@ -2710,7 +2684,6 @@ Proporciona un código completo</string>
     <string name="day_off_label">cerrado (día libre)</string>
     <string name="winter_and_ski_renderer">Invierno y esquí</string>
     <string name="touring_view_renderer">Vista de Touring (contraste y detalles)</string>
-    <string name="nautical_renderer">Náutico</string>
-<string name="copy_location_name">Copiar nombre del punto/PDI</string>
+    <string name="copy_location_name">Copiar nombre del punto/PDI</string>
     <string name="toast_empty_name_error">Ubicación sin nombre</string>
 </resources>

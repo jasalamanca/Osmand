@@ -764,8 +764,6 @@
     <string name="rendering_attr_noPolygons_name">Wielokąty</string>
     <string name="rendering_attr_appMode_name">Tryb renderowania</string>
     <string name="rendering_attr_appMode_description">Optymalizuj mapę dla</string>
-    <string name="rendering_attr_contourLines_description">Wyświetlanie od stopnia przybliżenia (wymaga danych poziomic):</string>
-    <string name="rendering_attr_contourLines_name">Poziomice</string>
     <string name="rendering_attr_hmRendered_description">Zwiększ liczbę szczegółów pokazywanych na mapie.</string>
     <string name="rendering_attr_hmRendered_name">Wyświetl więcej szczegółów na mapie</string>
     <string name="route_roundabout">Na rondzie wybierz %1$d zjazd</string>
@@ -1195,7 +1193,6 @@
     <string name="lang_zh">Chiński</string>
     <string name="lang_hr">Chorwacki</string>
     <string name="index_item_world_altitude_correction">Korekcja wysokości</string>
-    <string name="index_item_world_seamarks">Morskie znaki orientacyjne</string>
     <string name="index_item_world_bitcoin_payments">Miejsca akceptujące płatności Bitcoin</string>
     <string name="lang_pt_br">Portugalski (Brazylia)</string>
     <string name="index_name_canada">Ameryka Północna - Kanada</string>
@@ -1563,7 +1560,6 @@
 
     <string name="shared_string_disabled">Wyłączone</string>
     <string name="shared_string_enabled">Włączone</string>
-    <string name="plugin_nautical_name">Widok morski</string>
     <string name="plugin_ski_name">Widok narciarski</string>
     <string name="rename_failed">Nie udało się zmienić nazwy.</string>
     <string name="back_to_map">Powrót do mapy</string>
@@ -1629,7 +1625,6 @@ Długość %2$s</string>
     <string name="rendering_attr_pisteRoutes_name">Stoki narciarskie</string>
     <string name="rendering_attr_pisteGrooming_name">Ratrakowanie</string>
     <string name="world_ski_missing">Aby wyświetlać mapy narciarskie, należy pobrać specjalną mapę offline</string>
-    <string name="nautical_maps_missing">Aby wyświetlać mapy żeglugowe, należy pobrać specjalną mapę offline</string>
     <string name="remove_the_tag">Usuń znacznik</string>
     <string name="version_settings">Kompilacje</string>
     <string name="points">Punkty</string>
@@ -1659,12 +1654,7 @@ Długość %2$s</string>
     <string name="osmo_grop_name_length_alert">Nazwa grupy powinna zawierać co najmniej 3 znaki!</string>
     <string name="shared_string_go">Nawiguj</string>
 
-    <string name="plugin_nautical_descr">Umożliwia tworzenie map nawigacyjnych dla łodzi, żaglówek oraz innych sportów wodnych. 
-\n 
-\nSpecjalny dodatek do OsmAnd wstawia znaki nawigacyjne i oznaczenia map morskich dla nawigacji śródlądowej oraz przybrzeżnej. Opis każdego znaku dostarcza szczegółów potrzebnych do identyfikacji jego i jego przeznaczenia (kategoria, kształt, kolor, kolejność, odniesienie itd.). 
-\n 
-\nW razie potrzeby należy wyłączyć tę wtyczkę lub zmienić styl w opcjach „Styl mapy\" w menu „Konfiguracja mapy\", aby powrócić do jednego z typowych stylów map OsmAnd.</string>
-    <string name="plugin_ski_descr">Dodaje do OsmAnd szczegóły dotyczące stoków narciarskich, tras biegowych, tras skitour, kolejek linowych i wyciągów narciarskich na świecie. Trasy i szlaki są pokolorowane według trudności i przedstawione w specjalnym zimowym stylu mapy, imitującym krajobraz pokryty śniegiem. 
+    <string name="plugin_ski_descr">Dodaje do OsmAnd szczegóły dotyczące stoków narciarskich, tras biegowych, tras skitour, kolejek linowych i wyciągów narciarskich na świecie. Trasy i szlaki są pokolorowane według trudności i przedstawione w specjalnym zimowym stylu mapy, imitującym krajobraz pokryty śniegiem.
 \n 
 \nWłączenie tego widoku zmienia styl mapy na „Zima i narty”, ukazujący teren pokryty śniegiem. Widok można wyłączyć przez wyłączenie wtyczki lub zmianę stylu w menu „Styl mapy” w „Konfiguracji mapy”.</string>
     <string name="shared_string_message">Wiadomość</string>
@@ -1855,7 +1845,6 @@ Długość %2$s</string>
     <string name="show_free_version_banner">Baner darmowej wersji</string>
     <string name="show_free_version_banner_description">Wyświetla baner wersji darmowej w przypadku zainstalowania wersji płatnej.</string>
     <string name="buy">KUP</string>
-    <string name="activate_seamarks_plugin">Proszę włączyć wtyczkę latarni morskich</string>
     <string name="later">Później</string>
     <string name="get_full_version">Pełna wersja</string>
     <string name="downloads">Pobierz</string>
@@ -2246,11 +2235,9 @@ Długość %2$s</string>
     <string name="search_hint">Proszę wprowadzić miasto, adres, nazwę użytecznego miejsca</string>
     <string name="rendering_value_light_brown_name">Jasnobrązowy</string>
     <string name="rendering_value_dark_brown_name">Ciemnobrązowy</string>
-    <string name="rendering_attr_contourColorScheme_name">Zestaw kolorów poziomic</string>
     <string name="rendering_attr_surfaceIntegrity_name">Spójność nawierzchni dróg</string>
     <string name="christmas_poi">Bożonarodzeniowe miejsca</string>
     <string name="save_track_min_speed_descr">Filtr: minimalna prędkość ruchu, aby zarejestrować punkt.</string>
-    <string name="rendering_attr_contourColorScheme_description">Zestaw kolorów poziomic</string>
     <string name="save_track_min_speed">Minimalna prędkość rejestrowania</string>
     <string name="save_track_min_distance">Filtr: minimalna zmiana położenia, aby zarejestrować punkt</string>
     <string name="save_track_min_distance_descr">Filtr: ustaw minimalną odległość od poprzedniego punktu do rejestracji.</string>
@@ -2300,13 +2287,9 @@ Długość %2$s</string>
     <string name="routing_attr_allow_motorway_description">Zezwala na autostrady.</string>
     <string name="lang_sr_latn">Serbski (łaciński)</string>
     <string name="lang_zh_hk">Chiński (Hongkong)</string>
-    <string name="rendering_attr_contourDensity_description">Gęstość poziomic</string>
-    <string name="rendering_attr_contourDensity_name">Gęstość poziomic</string>
     <string name="rendering_value_high_name">Wysoka</string>
     <string name="rendering_value_medium_w_name">Średnia</string>
     <string name="rendering_value_low_name">Niska</string>
-    <string name="rendering_attr_contourWidth_description">Szerokość poziomic</string>
-    <string name="rendering_attr_contourWidth_name">Szerokość poziomic</string>
     <string name="rendering_attr_hideWaterPolygons_description">Woda</string>
     <string name="rendering_attr_hideWaterPolygons_name">Ukryj wodę</string>
     <string name="configure_screen_quick_action">Szybka czynność</string>
@@ -2408,9 +2391,7 @@ Reprezentuje obszar: %1$s x %2$s</string>
 \n • Mnóstwo innych ulepszeń i poprawek 
 \n 
 \n i więcej…</string>
-	<string name="rendering_attr_depthContours_description">Wyświetla kontury i punkty głębi.</string>
-    <string name="rendering_attr_depthContours_name">Mapy batymetryczne</string>
-	
+
     <string name="routing_attr_height_relief_smoothness_factor_description">Więcej równin lub więcej wzgórz</string>
     <string name="routing_attr_height_obstacles_name">Użyj danych wysokościowych</string>
     <string name="routing_attr_height_obstacles_description">Używa danych wysokościowych dostarczanych przez SRTM, ASTER i EU-DEM.</string>
@@ -2459,7 +2440,6 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="right_side_navigation">Ruch prawostronny</string>
     <string name="driving_region_automatic">Automatyczny</string>
     <string name="restore_purchases">Przywróć zakupy</string>
-    <string name="nautical_maps">Mapy morskie</string>
     <string name="shared_string_visible">Widoczne</string>
     <string name="no_overlay">Brak nakładki</string>
     <string name="no_underlay">Brak podkładu</string>
@@ -2481,12 +2461,6 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="select_city">Wybierz miasto</string>
     <string name="select_postcode">Wybierz kod pocztowy</string>
     <string name="subscribe_email_desc">Zapisz się do naszej subskrypcji dotyczącej rabatów na aplikację i zgarnij 3 dodatkowe pobrania map!</string>
-    <string name="depth_contour_descr">Zastaw map przedstawiających punkty głębokości i poziomice dna morskiego.</string>
-    <string name="sea_depth_thanks">Dziękujemy za zakup map batymetrycznych!</string>
-    <string name="index_item_depth_contours_osmand_ext">Mapy batymetryczne</string>
-    <string name="index_item_depth_points_southern_hemisphere">Mapa batymetryczna półkuli południowej</string>
-    <string name="index_item_depth_points_northern_hemisphere">Mapa batymetryczna półkuli północnej</string>
-    <string name="download_depth_countours">Mapy batymetryczne</string>
     <string name="analyze_on_map">Analizuj na mapie</string>
     <string name="fonts_header">Kroje pisma mapy</string>
     <string name="shared_string_paused">Wstrzymano</string>
@@ -2763,5 +2737,4 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="total_donations">Łączne dotacje</string>
     <string name="winter_and_ski_renderer">Zima i narciarstwo</string>
     <string name="touring_view_renderer">Widok turystyczny (kontrast i szczegóły)</string>
-    <string name="nautical_renderer">Żeglarstwo</string>
 </resources>

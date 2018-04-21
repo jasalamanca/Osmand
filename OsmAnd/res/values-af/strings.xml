@@ -25,9 +25,7 @@
   <string name="rendering_attr_noPolygons_name">Geen veelhoeke</string>
   <string name="rendering_attr_appMode_name">Weergewing wyse</string>
   <string name="rendering_attr_appMode_description">Kaart optimalisering vir onderskeie Gebruikersprofiele</string>
-  <string name="rendering_attr_contourLines_description">Vertoon minimum vergrotingsvlak. (Aparte SRTM-dokument benodig):</string>
-  <string name="rendering_attr_contourLines_name">Wys kontoerlyne</string>
-  <string name="rendering_attr_hmRendered_description">Vermeerder die detail wat in die kaart vertoon word</string>
+    <string name="rendering_attr_hmRendered_description">Vermeerder die detail wat in die kaart vertoon word</string>
   <string name="rendering_attr_hmRendered_name">Wys meer kaart detail</string>
   <string name="local_index_routing_data">Roete inligting</string>
   <string name="navigate_point_format">Formaat :</string>
@@ -1142,8 +1140,7 @@
     <string name="localization_pref_title">lokalisering</string>
     <string name="index_item_nation_addresses">adresse landwyd</string>
 	<string name="index_item_world_altitude_correction">Wêreld hoogte regstelling</string>
-	<string name="index_item_world_seamarks">Wêreld seemerke</string>
-	<string name="index_item_world_bitcoin_payments">Wêreld bitcoin betalings</string>
+    <string name="index_item_world_bitcoin_payments">Wêreld bitcoin betalings</string>
 	<string name="index_item_world_basemap">Wêreld oorsig kaart</string>
     <string name="index_item_world_ski">Wêreld ski kaart</string>
     <string name="lang_hr">Kroaties</string>
@@ -1168,15 +1165,9 @@
     <string name="osmo_group">OsMo groep</string>
     <string name="osmo_group_share">Om by groep %2$s in te skakel, spesifiseer groep id (%1$s)</string>
     <string name="osmo_share_connect_device">Volg hierdie toestel permanent</string>
-    <string name="rendering_attr_depthContours_description">Vertoon dieptelyne en punte</string>
-    <string name="rendering_attr_depthContours_name">Dieptelyne</string>
-	<string name="rendering_attr_contourDensity_description">Digtheid van die hoogtelyne</string>
-    <string name="rendering_attr_contourDensity_name">Digtheid van die hoogtelyne</string>
     <string name="rendering_value_high_name">Hoog</string>
     <string name="rendering_value_medium_w_name">Gemiddeld</string>
     <string name="rendering_value_low_name">Laag</string>
-    <string name="rendering_attr_contourWidth_description">Dikte van die hoogtelyne</string>
-    <string name="rendering_attr_contourWidth_name">Dikte van die hoogtelyne</string>
     <string name="rendering_attr_hideWaterPolygons_description">Water</string>
     <string name="rendering_attr_hideWaterPolygons_name">Verberg watervlaktes</string>
     <string name="what_is_here">Wat is hier:</string>

@@ -938,7 +938,6 @@
     <string name="quick_action_add_destination">Cil dodać</string>
     <string name="quick_action_replace_destination">Cil zarunać</string>
     <string name="subscribe_email_error">Zmylk</string>
-    <string name="nautical_maps">Nawtiske karty</string>
     <string name="analyze_on_map">Na karće analyzować</string>
     <string name="shared_string_visible">Widźomne</string>
     <string name="fonts_header">Pisma za kartu</string>
@@ -969,11 +968,8 @@
     <string name="shared_string_time">Čas</string>
     <string name="total_distance">Dospołna distanca</string>
     <string name="routing_attr_height_obstacles_name">Daty wo wysokosći wužiwać</string>
-    <string name="rendering_attr_contourDensity_name">Hustosć wysokostnych linijow</string>
     <string name="rendering_value_high_name">Wysoko</string>
     <string name="rendering_value_low_name">Nisko</string>
-    <string name="rendering_attr_contourWidth_description">Šěrokosć wysokostnych linijow</string>
-    <string name="rendering_attr_contourWidth_name">Šěrokosć wysokostnych linijow</string>
     <string name="rendering_attr_hideWaterPolygons_description">Woda</string>
     <string name="rendering_attr_hideWaterPolygons_name">Wodu schować</string>
     <string name="routing_attr_allow_motorway_name">Awtodróhi dowolić</string>
@@ -1003,7 +999,6 @@
     <string name="context_menu_item_directions_from">Směry wot</string>
     <string name="rendering_attr_noAdminboundaries_name">Hranicy</string>
     <string name="rendering_attr_noPolygons_name">Polygony</string>
-    <string name="rendering_attr_contourLines_name">Wysokostne linije pokazać</string>
     <string name="get_directions">Nawigacija</string>
     <string name="measurement_tool_altitude">Wysokosć: %1$s</string>
     <string name="add_point_before">Předchadny dypk dodać</string>

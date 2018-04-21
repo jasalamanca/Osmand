@@ -6,7 +6,6 @@
     <string name="localization_pref_title">Localizatzione</string>
     <string name="index_item_nation_addresses">Indiritzos natzionales</string>
     <string name="index_item_world_altitude_correction">Curretzione de s’artària mundiale</string>
-    <string name="index_item_world_seamarks">Pidagnos mundiales</string>
     <string name="index_item_world_bitcoin_payments">Pagamentos in bitcoins mundiale</string>
     <string name="index_item_world_basemap">Mapa summària de su mundu</string>
     <string name="index_item_world_ski">Mapa iscì mundiale</string>
@@ -638,7 +637,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="route_kr">Mantene sa destra e sighi</string>
     <string name="rendering_attr_noPolygons_name">Polìgonos</string>
     <string name="rendering_attr_appMode_name">Modalidade de disinnu</string>
-    <string name="rendering_attr_contourLines_name">Ammustra curvas de livellu</string>
     <string name="local_index_routing_data">Datos àndala</string>
     <string name="navigate_point_format">Formatu</string>
     <string name="poi_search_desc">Chirca PDI (puntos de interesse)</string>
@@ -782,7 +780,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
 
     <string name="route_roundabout">Rutunda: piga sa %1$d essida e sighi</string>
     <string name="rendering_attr_appMode_description">Otimizza sas mapas pro</string>
-    <string name="rendering_attr_contourLines_description">Ammustra dae su livellu de ismanniamentu (serbint sos datos de sas lìnias de livellu):</string>
     <string name="rendering_attr_hmRendered_name">Ammustra prus minujas in sa mapa</string>
 
 
@@ -1544,10 +1541,8 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="shared_string_disable">Disabìlita</string>
     <string name="plugin_install_needs_network">Est netzessària sa connessione a ìnternet pro installare custa estensione.</string>
     <string name="get_plugin">Iscàrriga</string>
-    <string name="plugin_nautical_name">Vista mapa nàutica</string>
     <string name="world_ski_missing">Pro bìdere sas mapas ispetziales pro s’iscì, depent èssere iscarrigadas</string>
     <string name="plugin_ski_name">Vista mapa iscì</string>
-    <string name="nautical_maps_missing">Pro bìdere sas mapas ispetziales nàuticas, depent èssere iscarrigadas</string>
     <string name="rendering_attr_pisteGrooming_name">Pista abbatigada</string>
     <string name="free">Lìbera %1$s</string>
     <string name="device_memory">Memòria dispositivu</string>
@@ -1559,14 +1554,9 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
 
     <string name="shared_string_export">Esporta</string>
     <string name="shared_string_audio">Àudio</string>
-	
-	
-	<string name="plugin_nautical_descr">Alluende custa funtzionalidade s’istile de sa mapa at a divènnere Nàuticu, e at a èssere disponìbile totu sa simbologia pro su nàvigu. 
-\n
-\nSa mapa cun totu sa simbologia nàutica globale est disponìbile comente iscarrigamentu ùnicu cun su nùmene \"World seamarks\". 
-\n
-\nCusta vista podet èssere furriada istudende·la inoghe torra o cambiende s’\'Istile mapa\' in \'Cunfigura sa mapa\' comente boles tue.</string>
-	<string name="plugin_ski_descr">Custa estensione pro OsmAnd ti frunit sas minujas de sas pistas de iscì, de fundu, alpinas e de àtera casta, de sas funivias e de sas isciovias. Sas camineras e sas pistas sunt coloradas pro dificultade, e ammustradas in unu istile de mapa particulare, \'Ierru\', chi s\'assimigiat a unu paesaggiu coloradu dae sa neve de s\'ierru. 
+
+
+    <string name="plugin_ski_descr">Custa estensione pro OsmAnd ti frunit sas minujas de sas pistas de iscì, de fundu, alpinas e de àtera casta, de sas funivias e de sas isciovias. Sas camineras e sas pistas sunt coloradas pro dificultade, e ammustradas in unu istile de mapa particulare, \'Ierru\', chi s\'assimigiat a unu paesaggiu coloradu dae sa neve de s\'ierru.
 \n
 \nAlluende custa vista s’istile mapa at a divènnere \'Ierru e iscì\', ammustrende totu sas caraterìsticas de s’iscenàriu in sas cunditziones de s’ierru. Custa vista podet èssere furriada istudende·la inoghe torra o cambiende s’\'Istile mapa\' in \'Cunfigura mapa\'.</string>
 	<string name="plugin_touringview_descr">Alluende custa vista s’istile de sa mapa at a colare a \'Vista turìstica\', una vista fata a sa minuda pro turistas, biagiatores e autistas professionistas. 
@@ -1819,7 +1809,6 @@ Lon %2$s</string>
     <string name="show_free_version_banner_description">Ammustra s’insigna de sa versione a indonu fintzas si tenes cussa a pagamentu.</string>
     <string name="downloading_number_of_files">Iscarrighende - %1$d documentu/os</string>
     <string name="buy">CÒMPORA</string>
-    <string name="activate_seamarks_plugin">Pro praghere allue s’estensione nàutica</string>
     <string name="later">Prus a tardu</string>
     <string name="get_full_version">Versione cumprida</string>
     <string name="regions">Regiones</string>
@@ -2226,7 +2215,6 @@ Si istimas OsmAnd e OSM e los boles suportare, custa est una manera perfeta pro 
     <string name="shared_string_recorded">Registradu</string>
     <string name="shared_string_record">Registra</string>
     <string name="gpx_logging_no_data">Datu perunu</string>
-    <string name="rendering_attr_contourColorScheme_description">Ischema de colores de sas lìnias de livellu</string>
     <string name="save_track_min_speed">Lestresa mìnima pro sa registratzione</string>
     <string name="save_track_min_speed_descr">Filtru: Issèbera sa lestresa mìnima pro registrare unu puntu.</string>
     <string name="save_track_min_distance">Rilevamentu de movimentu mìnimu pro sa registratzione</string>
@@ -2238,7 +2226,6 @@ Si istimas OsmAnd e OSM e los boles suportare, custa est una manera perfeta pro 
     <string name="christmas_desc_q">Ammustrare sos PDI de Nadale?</string>
     <string name="rendering_value_light_brown_name">Castàngiu craru</string>
     <string name="rendering_value_dark_brown_name">Castàngiu iscuru</string>
-    <string name="rendering_attr_contourColorScheme_name">Ischema de colores pro sas lìnias de livellu</string>
     <string name="rendering_attr_surfaceIntegrity_name">Integridade superfitziale istradale</string>
     <string name="release_2_5">\\u2022 Iconas incarcàbiles in sa mapa
 \n 
@@ -2276,11 +2263,7 @@ Si istimas OsmAnd e OSM e los boles suportare, custa est una manera perfeta pro 
     <string name="legacy_search">Chirca betza</string>
     <string name="show_legacy_search">Ammustra sa chirca betza</string>
     <string name="show_legacy_search_desc">Annanghe sa chirca betza a sa lista.</string>
-    <string name="rendering_attr_contourWidth_description">Ispessore curvas de livellu</string>
-    <string name="rendering_attr_contourWidth_name">Ispessore curvas de livellu</string>
     <string name="rendering_attr_hideWaterPolygons_description">Abba</string>
-    <string name="rendering_attr_contourDensity_description">Densidade de curvas de livellu</string>
-    <string name="rendering_attr_contourDensity_name">Densidade de curvas de livellu</string>
     <string name="rendering_value_high_name">Arta</string>
     <string name="rendering_value_medium_w_name">Mesana</string>
     <string name="rendering_value_low_name">Bassa</string>
@@ -2384,9 +2367,7 @@ Pro praghere iscrie su còdighe intreu</string>
 \n • Meda àteros megioramentos e curretziones de errores 
 \n 
 \n e àteru…"</string>
-	<string name="rendering_attr_depthContours_name">Lìnias nàuticas de profondidade</string>
-	<string name="rendering_attr_depthContours_description">Ammustra sas lìnias de profondidade.</string>
-    
+
     <string name="routing_attr_height_obstacles_name">Imprea sos datos de s\'artària</string>
     <string name="routing_attr_height_obstacles_description">Imprea sos datos de s\'artària frunidos dae SRTM, ASTER e EU-DEM.</string>
 
@@ -2467,13 +2448,6 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="no_underlay">Perunu istratu inferiore</string>
     <string name="subscribe_email_error">Errore</string>
     <string name="subscribe_email_desc">Iscrie·ti a sa listra de posta eletrònica nostra a pitzu de sos iscontos pro s\'aplicatzione e as a tènnere 3 iscarrigamentos de mapas in prus!</string>
-    <string name="depth_contour_descr">Grupu de mapas chi cuntenint sas curvas e sos puntos de livellu de profondidade marinos.</string>
-    <string name="sea_depth_thanks">Gràtzias pro àere comporadu sas curvas de livellu nàuticas!</string>
-    <string name="index_item_depth_contours_osmand_ext">Curvas de livellu nàuticas</string>
-    <string name="index_item_depth_points_southern_hemisphere">Puntos suta de su livellu de su mare in s\'emisferu australe</string>
-    <string name="index_item_depth_points_northern_hemisphere">Puntos suta de su livellu de su mare in s\'emisferu boreale</string>
-    <string name="download_depth_countours">Curvas de livellu nàuticas</string>
-    <string name="nautical_maps">Mapas nàuticas</string>
     <string name="shared_string_paused">In pàusa</string>
     <string name="nearest_cities">Tzitades a curtzu</string>
     <string name="select_city">Issèbera sa tzitade</string>
@@ -2763,8 +2737,7 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="rendering_attr_hidePOILabels_name">Etichetas PDI</string>
     <string name="winter_and_ski_renderer">Ierru e iscì</string>
     <string name="touring_view_renderer">Vista pro su turismu (cuntrastu e minujas)</string>
-    <string name="nautical_renderer">Nàutica</string>
-<string name="will_open_tomorrow_at">At a abèrrere cras a sas</string>
+    <string name="will_open_tomorrow_at">At a abèrrere cras a sas</string>
     <string name="release_2_9">\\022 Agiornadu su menù de cuntestu: ammustra cando unu PDI aberit / serrat
 \n
 \n • Menù trasportu pùblicu: totu sas àndalas disponìbiles como sunt in pitzos

@@ -753,7 +753,6 @@
 
 <string name="index_item_nation_addresses">전국 주소</string>
 	<string name="index_item_world_altitude_correction">세계 고도 보정</string>
-	<string name="index_item_world_seamarks">세계 seamarks</string>
 	<string name="index_item_world_basemap">세계 개요 지도</string>
     <string name="index_item_world_ski">세계 스키 지도</string>
     <string name="lang_hr">크로아티아어</string>
@@ -1124,8 +1123,6 @@
 	<string name="rendering_attr_noPolygons_name">폴리곤 숨기기</string>
 	<string name="rendering_attr_appMode_name">렌더링 모드</string>
 	<string name="rendering_attr_appMode_description">~에 대한 지도를 최적화</string>
-	<string name="rendering_attr_contourLines_description">줌 레벨에서 보여주기(등고선 데이터가 필요합니다):</string>
-	<string name="rendering_attr_contourLines_name">등고선 표시</string>
 	<string name="rendering_attr_hmRendered_description">지도 세부사항 표시 증가</string>
 	<string name="rendering_attr_hmRendered_name">지도 세부사항 표시</string>
 	<string name="local_index_routing_data">데이터로 길찾기</string>
@@ -1587,9 +1584,7 @@
     <string name="plugin_install_needs_network">이 플러그인을 설치 하려면 인터넷에 연결을 해야 합니다.</string>
 	<string name="get_plugin">가져오기</string>
 <string name="plugin_ski_name">스키 지도 보기</string>
-    <string name="plugin_nautical_name">항해 지도 보기</string>
     <string name="world_ski_missing">스키 지도를 표시 하려면, 특정 오프라인 지도를 다운로드 해야 합니다</string>
-    <string name="nautical_maps_missing">항해 지도 표시 하려면, 특정 오프라인 지도를 다운로드 해야 합니다</string>
 	<string name="rendering_attr_pisteGrooming_name">Piste grooming (손질)</string>
     <string name="rendering_attr_pisteRoutes_name">스키 슬로프</string>
 	<string name="free">"무료 %1$s "</string>
@@ -1599,11 +1594,7 @@
 	<string name="notes">노트</string>
 	<string name="online_map">온라인 지도</string>
 
-    <string name="plugin_nautical_descr">지도 스타일을 항해 지도로 변경하려면 보기(View)를 활성화 합니다, 그러면 모든 해상 운행 마크와 차트 심볼을 볼 수 있습니다.
-		\n\n세계적으로 모든 항해 기호를 포함 하는 지도 파일은  \'세계 seamarks\' 라는 하나의 파일을 다운로드하여 이용할 수 있습니다.
-		\n\n다시 비활성화 하거나, 또는 \'지도 구성\' 의 하위메뉴인  \'지도 스타일\'을 변경하여 보기(View)를 되돌릴 수 있습니다.
-	</string>
-	<string name="days_behind">하루가 저물 때</string>
+    <string name="days_behind">하루가 저물 때</string>
 	<string name="plugin_ski_descr">지도 스타일을 \' 겨울 스키\'로 변경하려면 뷰(View)를 활성화 합니다, 겨울 조건 하에서 모든 풍경을 보여줍니다.
 		\n\n(모든 스키 슬로프와 크로스 컨트리 스키 경로를 볼 수 있는)  글로벌 지도는 \'세계 스키 지도\'를 다운로드하여  사용할 수 있습니다.
 		\n\n다시 비활성화 하거나, 또는 \'지도 구성\' 의 하위메뉴인  \'지도 스타일\'을 변경하여 보기(View)를 되돌릴 수 있습니다.
@@ -1916,8 +1907,7 @@
     <string name="show_free_version_banner">무료 버전 배너를 표시</string>
     <string name="show_free_version_banner_description">유로버전을 구입해도 여전히 무료 버전 배너를 볼 수 있습니다</string>
     <string name="buy">구입</string>
-    <string name="activate_seamarks_plugin">Seamarks(수위선) 플러그인을 활성화해 주세요</string>
-    <string name="later">나중에</string>
+	<string name="later">나중에</string>
     <string name="get_full_version">정식 버전 구입</string>
     <string name="downloads">다운로드</string>
     <string name="confirm_download_roadmaps">모든 지도를 가지고 있더러도 지도를 다운로드 하시겠습니까?</string>

@@ -165,7 +165,6 @@
     <string name="rendering_attr_noPolygons_name">Izriši ploskve</string>
     <string name="rendering_attr_appMode_name">Način izrisa</string>
     <string name="rendering_attr_appMode_description">Prilagodi zemljevid za</string>
-    <string name="rendering_attr_contourLines_name">Izriši izohipse</string>
     <string name="zoomOut">Oddalji</string>
     <string name="zoomIn">Približaj</string>
     <string name="zoomIs">Trenutni pogled je</string>
@@ -339,7 +338,6 @@
     <string name="route_roundabout">Krožišče: zapeljite v %1$d izvoz</string>
     <string name="route_kl">Držite se leve</string>
     <string name="route_kr">Držite se desne</string>
-    <string name="rendering_attr_contourLines_description">Prikaži pod povečavo (zahteva podatke izohips):</string>
     <string name="rendering_attr_hmRendered_description">Povečaj podrobnost izrisa zemljevida.</string>
     <string name="rendering_attr_hmRendered_name">Pokaži podrobnejši izris</string>
     <string name="navigate_point_format">Oblika</string>
@@ -1235,7 +1233,6 @@ Afganistan, Albanija, Alžirija, Andora, Angola, Angvila, Antigva in Barbuda, Ar
     <string name="misc_pref_title">Razno</string>
     <string name="localization_pref_title">Jezikovno prilagajanje</string>
     <string name="index_item_world_altitude_correction">Svetovni popravki nadmorske višine</string>
-    <string name="index_item_world_seamarks">Svetovne pomorske oznake</string>
     <string name="keep_and_add_destination_point">Dodaj kot naslednjo ciljno točko</string>
     <string name="select_gpx">Izbor sledi GPX …</string>
     <string name="route_descr_select_destination">Izbor cilja</string>
@@ -1630,9 +1627,7 @@ Ali želite nadaljevati z obnovitvijo registracije?</string>
     <string name="shared_string_disabled">Onemogočeno</string>
     <string name="shared_string_enabled">Omogočeno</string>
     <string name="plugin_ski_name">Zemljevidi smučišč</string>
-    <string name="plugin_nautical_name">Pomorski zemljevid</string>
     <string name="world_ski_missing">Za prikaz zemljevidov smučišč je treba prejeti posebne datoteke za delovanje brez povezave</string>
-    <string name="nautical_maps_missing">Za izris pomorskih zemljevidov je treba najprej prejeti datoteke za delovanje brez povezave.</string>
     <string name="edit_group">Urejanje skupine</string>
     <string name="shared_string_enable">Omogoči</string>
     <string name="shared_string_disable">Onemogoči</string>
@@ -1740,12 +1735,7 @@ ZŠ (β) %2$s</string>
     <string name="plugin_ski_descr">Vstavek omogoča prikaz prog za nordijsko in alpsko smučanje, splošnih smučišč, žičnic in vlečnic in druge smučarske podrobnosti. Težavnost smučišč je označena barvnimi kodami, podrobni izris zemljevida pa je primeren za zimski pogled pokrajine.
 \n
 \nZ izborom tega pogleda se slog prikaza spremeni v »Zimski pogled« in kaže vse podrobnosti v zimskem pogledu. Izris je mogoče prekiniti z onemogočanjem možnosti ali pa s spreminjanjem vrste prikaza zemljevida.</string>
-    <string name="plugin_nautical_descr">"Vstavek obogati vsebino zemljevidov OsmAnd in kakovost navigacije s podrobnimi pomorskimi zemljevidi za plovila, jadralce in druge vrste vodnih športov.
-\n
-\nS tem posebnim prekrivnim zemljevidom je mogoč izris posebnih navigacijskih oznak, ki so sicer značilne za navtične  zemljevide. Opisi posamezne oznake pripomorejo k določanju (kategorije, oblike, barve, zaporedja, sklica …).
-\n
-\nVrnitev na običajni pogled je mogoče na dva načina. Ali odklopite prekrivni sloj ali pa spremenite slog zemljevida med »Nastavitvami zemljevida« v meniju."</string>
-    
+
     <string name="routing_attr_avoid_borders_description">Izogibanje prehodom meje z drugimi državami.</string>
     <string name="routing_attr_height_name">Omejitev višine</string>
     <string name="routing_attr_height_description">Določitev omejitve višine vozila za določeno pot.</string>
@@ -1904,7 +1894,6 @@ ZŠ (β) %2$s</string>
     <string name="show_free_version_banner">Pokaži pasico brezplačne različice</string>
     <string name="show_free_version_banner_description">Četudi imate plačljivo različico, še vedno lahko prikažete pasico brezplačne različice.</string>
     <string name="buy">Nakup</string>
-    <string name="activate_seamarks_plugin">Omogočite vstavek pomorskih oznak</string>
     <string name="later">Kasneje</string>
     <string name="get_full_version">Polna različica</string>
     <string name="regions">Območja</string>
@@ -2342,9 +2331,7 @@ Del prihodka se vrne skupnosti OSM in se izplačuje za vsako opravljeno dejavnos
 \n • Mnogo posodobitev in razrešenih hroščev 
 \n 
 \n in še veliko več …</string>
-    <string name="rendering_attr_contourColorScheme_description">Barvna shema izohips</string>
     <string name="christmas_desc">V zadnjih dneh koledarskega leta je mogoče izbrati prikaz točk POI, ki so povezane z božičnimi in novoletnimi dogodki: postavljena novoletna drevesca, božične jasli, prodajalne, razstave ...</string>
-    <string name="rendering_attr_contourColorScheme_name">Barvna shema izohips</string>
     <string name="upload_poi">Pošlji točko POI</string>
     <string name="route_calculation">Izračunavanje poti</string>
     <string name="gpx_no_tracks_title">Ni še shranjenih poti</string>
@@ -2363,13 +2350,9 @@ Del prihodka se vrne skupnosti OSM in se izplačuje za vsako opravljeno dejavnos
     <string name="routing_attr_allow_motorway_name">Vodenje po avtocestah</string>
     <string name="routing_attr_allow_motorway_description">Dovoli vodenje po cestah rezerviranih za motorna vozila in avtocestah.</string>
     <string name="rendering_attr_hideWaterPolygons_description">Voda</string>
-    <string name="rendering_attr_contourDensity_description">Gostota izohips</string>
-    <string name="rendering_attr_contourDensity_name">Gostota izohips</string>
     <string name="rendering_value_high_name">Visoka</string>
     <string name="rendering_value_medium_w_name">Običajna</string>
     <string name="rendering_value_low_name">Nizka</string>
-    <string name="rendering_attr_contourWidth_description">Širina izohips</string>
-    <string name="rendering_attr_contourWidth_name">Širina izohips</string>
     <string name="rendering_attr_hideWaterPolygons_name">Skrij vodne površine</string>
     <string name="configure_screen_quick_action">Hitro dejanje</string>
 
@@ -2470,9 +2453,7 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="quick_action_showhide_favorites_descr">S pritiskom na gumb dejanja bodo pokazana ali skrita priljubljena mesta na zemljevidu.</string>
     <string name="quick_action_showhide_poi_descr">S pritiskom na gumb dejanja bodo pokazane ali skrite točke POI na zemljevidu.</string>
     <string name="quick_action_btn_tutorial_descr">Z dolgim pritiskom in vlekom je mogoče postaviti gumb na poljubno mesto na zaslonu.</string>
-	<string name="rendering_attr_depthContours_description">Pokaži točke in izohipse globine.</string>
-    <string name="rendering_attr_depthContours_name">Navtične globinske izohipse</string>
-	<string name="route_altitude">Višinske spremembe poti</string>
+    <string name="route_altitude">Višinske spremembe poti</string>
     <string name="altitude_descent">Spust</string>
     <string name="altitude_ascent">Vzpon</string>
     <string name="altitude_range">Obseg nadmorske višine</string>
@@ -2526,7 +2507,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="quick_action_add_destination">Dodaj cilj</string>
     <string name="quick_action_replace_destination">Zamenjaj cilj</string>
     <string name="subscribe_email_error">Napaka</string>
-    <string name="nautical_maps">Navtični zemljevidi</string>
     <string name="analyze_on_map">Preuči na zemljevidu</string>
     <string name="fonts_header">Pisave za zemljevid</string>
     <string name="shared_string_paused">V premoru</string>
@@ -2585,12 +2565,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="quick_action_auto_zoom_desc">S pritiskom na gumb dejanj se preklopi prikaz samodejnega približevanja zemljevida glede na hitrost gibanja.</string>
     <string name="quick_action_replace_destination_desc">S pritiskom na gumb dejanj se zamenja trenutno ciljno mesto z mestom na sredini zaslona.</string>
     <string name="subscribe_email_desc">Naročite se na dopisni seznam o popustih programa in prejmite tri dodatne prejeme zemljevidov!</string>
-    <string name="depth_contour_descr">Nabor zemljevidov z izobatami morske gladine in navtičnih točk.</string>
-    <string name="sea_depth_thanks">Zahvaljujemo se vam za nakup navtičnega zemljevida z reliefom morskega dna!</string>
-    <string name="index_item_depth_contours_osmand_ext">Navtični relief globine</string>
-    <string name="index_item_depth_points_southern_hemisphere">Navtične globinske točke južne poloble</string>
-    <string name="index_item_depth_points_northern_hemisphere">Navtične globinske točke severne poloble</string>
-    <string name="download_depth_countours">Navtični relief globine</string>
     <string name="route_is_too_long_v2">Preračunavanje poti je lahko zelo dolgotrajno. V kolikor izračun ne bo končan v 10 minutah, vstavite nekaj vmesnih točk.</string>
     <string name="open_mapillary">Odpri Mapillary</string>
     <string name="hide_from_zoom_level">Skrij od ravni približanja</string>

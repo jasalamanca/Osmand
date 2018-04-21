@@ -293,9 +293,7 @@
   <string name="rendering_attr_noPolygons_name">Poligonoak</string>
   <string name="rendering_attr_appMode_name">Marrazte modua</string>
   <string name="rendering_attr_appMode_description">Mapa optimizatu</string>
-  <string name="rendering_attr_contourLines_description">Erakusteko gutxieneko zoom maila (erliebe datuak behar dira):</string>
-  <string name="rendering_attr_contourLines_name">Erakutsi sestra-kurbak</string>
-  <string name="rendering_attr_hmRendered_description">Erakutsi xehetasun gehiago mapan.</string>
+    <string name="rendering_attr_hmRendered_description">Erakutsi xehetasun gehiago mapan.</string>
   <string name="rendering_attr_hmRendered_name">Mapa xehetasun gehiago erakutsi</string>
   <string name="local_index_routing_data">Ibilbide datuak</string>
   <string name="navigate_point_format">Formatua</string>
@@ -1695,7 +1693,6 @@ Biltegiratzean {3} MB behar dira une batez, {1} MB behin betiko.
     <string name="access_from_map_description">Menu botoiak kontrol panela abiatzen du, ez menua.</string>
     <string name="show_on_start_description">Desgaitzean maparen pantaila abiatzen da zuzenean.</string>
     <string name="always_center_position_on_map">Bistaratu posizioa beti erdian</string>
-    <string name="index_item_world_seamarks">Munduko itsaso markak</string>
     <string name="index_item_world_bitcoin_payments">Munduko bitcoin ordainketak</string>
     <string name="index_item_world_basemap">Munduko ikuspegi mapa</string>
     <string name="index_item_world_ski">Munduko ski mapa</string>
@@ -1818,8 +1815,7 @@ Biltegiratzean {3} MB behar dira une batez, {1} MB behin betiko.
     <string name="osmand_parking_hour">h</string>
     <string name="shared_string_collapse">Tolestu</string>
     <string name="plugin_touringview_name">Bidaiatze mapa ikuspegia</string>
-	<string name="plugin_nautical_name">Mapa nautikoa ikuspegia</string>
-	<string name="rename_failed">Izen aldaketak huts egin du.</string>
+    <string name="rename_failed">Izen aldaketak huts egin du.</string>
     <string name="days_behind">egun atzeratua</string>
     <string name="back_to_map">Itzuli mapara</string>
     <string name="location_on_map">Kokapena:\n Lat %1$s\n Lon %2$s</string>
@@ -1829,7 +1825,6 @@ Biltegiratzean {3} MB behar dira une batez, {1} MB behin betiko.
     <string name="free">"%1$s  libre"</string>
     <string name="device_memory">Gailuaren memoria</string>
     <string name="world_ski_missing">Ski pistak ikusteko, lineaz kanpoko mapa bereziak deskargatu behar dira</string>
-    <string name="nautical_maps_missing">Mapa nautikoak bistaratzeko, lineaz kanpoko mapa bereziak deskargatu behar dira</string>
     <string name="edit_group">Editatu taldea</string>
     <string name="remove_the_tag">KENDU ETIKETA</string>
     <string name="gps_status">GPSaren egoera</string>
@@ -2164,13 +2159,7 @@ mapak eta nabigazioa</string>
 \n 
 \n
 \nIkuspegi hemen desgaitu daiteke atzera edo \'Konfiguratu mapa\' menuan \'Maparen estiloa\' aukeratuz.</string>
-    <string name="plugin_nautical_descr">"Gehigarri honek OsmAnd mapa eta nabigazio aplikazioa hobetzen du, itsasaldi eta ur kiroletarako itsas mapak sor dezan ahalbidetuz.
-\n
-\nOsmAnd aplikaziorako gehigarri berezi honek itsas nabigaziorako marka eta ikur kartografikoak gehitzen ditu  itsaso zabalean zein kostatik hurbil. Itsas nabigaziorako marka bakoitzak identifikaziorako eta esanahia ulertzeko datuak dauzka (kategoria, forma, kolorea, zenbakia, erreferentzia, eta abar)
-\n
-\nOsmAnden ohiko mapa batetara itzultzeko, gehigarri hau desgaitu edo \'Mapa estiloa\' aldatu \'Konfiguratu mapa\' menuan."</string>
     <string name="fav_point_emoticons_message">Gogoko puntuaren izena aldatu da eta orain %1$s da irriabartxoak dituen katea fitxategira gorde ahal izateko.</string>
-    <string name="activate_seamarks_plugin">Gaitu itsaso markak gehigarria mesedez</string>
     <string name="plugin_ski_descr">Gehigarri honek zure eskura jartzen ditu mundu osoko eskiatzeko aldapak, fondoko eski zirkuituak, trabesiako eski ibilbideak, teleferikoak, eta abar. Ibilbideak eta pistak zailtasunaren arabera koloreztatu dira, eta elurtutako paisaiaren itxura duen \'Negu\' estiloko mapa batean adierazten dira.
 \n
 \nHau aktibatzean ikuspegia \'Negua eta eskia\' estilora aldatzen da, paisaia neguko egoeran bistaratuz. Hau atzera aldatu daiteke gehigarri hau desgaituz eta \'Konfiguratu mapa\' menuko \'Mapa estiloa\' aldatuz.</string>
@@ -2229,9 +2218,7 @@ mapak eta nabigazioa</string>
     <string name="search_hint">Idatzi hiria, helbidea, POI izena</string>
     <string name="rendering_value_light_brown_name">Marroi argia</string>
     <string name="rendering_value_dark_brown_name">Marroi iluna</string>
-    <string name="rendering_attr_contourColorScheme_name">Ingerada marren kolore eskema</string>
     <string name="rendering_attr_surfaceIntegrity_name">Errepidearen gainazalaren integritatea</string>
-    <string name="rendering_attr_contourColorScheme_description">Ingerada marren kolore eskema</string>
     <string name="save_track_min_speed">Gutxieneko abiadura erregistratzeko</string>
     <string name="save_track_min_speed_descr">Iragazkia: Ezarri puntu bat erregistratzea eragingo duen gutxieneko abiadura.</string>
     <string name="save_track_min_distance">Erregistratzeko desplazamendu minimoa</string>
@@ -2290,10 +2277,6 @@ mapak eta nabigazioa</string>
     <string name="lang_sr_latn">Serbiera (Latinoa)</string>
     <string name="lang_zh_hk">Txinera (Hong Kong)</string>
     <string name="rendering_attr_hideWaterPolygons_description">Ura</string>
-    <string name="rendering_attr_contourWidth_description">Sestra-kurben zabalera</string>
-    <string name="rendering_attr_contourWidth_name">Sestra-kurben zabalera</string>
-    <string name="rendering_attr_contourDensity_description">Sestra-kurben dentsitatea</string>
-    <string name="rendering_attr_contourDensity_name">Sestra-kurben dentsitatea</string>
     <string name="rendering_value_high_name">Altua</string>
     <string name="rendering_value_medium_w_name">Ertaina</string>
     <string name="rendering_value_low_name">Baxua</string>
@@ -2376,9 +2359,7 @@ Area honi dagokio: %1$s x %2$s</string>
     <string name="quick_action_fav_name_descr">Laga hutsik helbidea edo lekuaren izena erabiltzeko automatikoki.</string>
     <string name="auto_split_recording_title">Automatikoki zatitu grabaketa hutsunea eta gero</string>
 	<string name="auto_split_recording_descr">Hasi segmentu berria 6 minututako hutsune bat eta gero, lorratz berria bi ordu eta gero, edo fitxategi berria hutsune luzeago bat eta gero data aldatzean.</string>
-    <string name="rendering_attr_depthContours_description">Erakutsi sakonera sestra-kurbak eta puntuak.</string>
-    <string name="rendering_attr_depthContours_name">Sakonera nautikoaren sestra-kurbak</string>
-	<string name="release_2_6">\\u2022 Ezaugarri berria: Ekintza azkarren botoia 
+    <string name="release_2_6">\\u2022 Ezaugarri berria: Ekintza azkarren botoia
 \n 
 \n 
 \n • Pantaila ukigarriaren keinuen erantzuna hobetua 
@@ -2476,13 +2457,6 @@ Area honi dagokio: %1$s x %2$s</string>
     <string name="no_underlay">Azpi-azalik ez</string>
     <string name="subscribe_email_error">Errorea</string>
     <string name="subscribe_email_desc">Harpidetu gure posta-zerrendara aplikazioen deskontuak jaso eta 3 mapa gehiago deskargatu ahal izateko!</string>
-    <string name="sea_depth_thanks">Eskerrik asko sakonera nautikoaren sestra-kurbak erosteagatik!</string>
-    <string name="depth_contour_descr">Itsasoaren sakoneraren sestra-kurbak eta puntu nautikoak dituzten mapen multzoa.</string>
-    <string name="index_item_depth_contours_osmand_ext">Sakonera nautikoaren sestra-kurbak</string>
-    <string name="index_item_depth_points_southern_hemisphere">Hego hemisferioko sakonera nautikoaren puntuak</string>
-    <string name="index_item_depth_points_northern_hemisphere">Ipar hemisferioko sakonera nautikoaren puntuak</string>
-    <string name="download_depth_countours">Sakonera nautikoaren sestra-kurbak</string>
-    <string name="nautical_maps">Mapa nautikoak</string>
     <string name="analyze_on_map">Aztertu mapan</string>
     <string name="shared_string_visible">Ikusgai</string>
     <string name="restore_purchases">Berreskuratu erosketak</string>
@@ -2783,8 +2757,7 @@ Area honi dagokio: %1$s x %2$s</string>
 <string name="day_off_label">itxita</string>
     <string name="winter_and_ski_renderer">Negua eta eskia</string>
     <string name="touring_view_renderer">Bidaiatze ikuspegia (kontrastea eta xehetasunak)</string>
-    <string name="nautical_renderer">Nautikoa</string>
-<string name="rendering_attr_hidePOILabels_name">POI etiketak</string>
+    <string name="rendering_attr_hidePOILabels_name">POI etiketak</string>
     <string name="release_2_9">\\022 Stop seinaleen detekzioak kontuan hartzen du martxaren noranzkoa
 \n
 \n • GPX lorratzen zentzuzko igoera/jaitsiera balioak ematen dituen algoritmo berria

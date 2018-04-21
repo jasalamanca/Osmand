@@ -334,11 +334,7 @@
     <string name="rename_failed">Преименовање није успело.</string>
 	<string name="shared_string_currently_recording_track">Стаза која се тренутно снима</string>
 	<string name="back_to_map">Назад на карту</string>
-	<string name="plugin_nautical_descr">Прелазак прегледа карте приказује поморски изглед, чиме се приказују све поморске ознаке навођења и графички знаци.
-		\n\nДатотека карте која садржи све опште поморске знаке је доступна у виду  једног преузимања и назива се „Светске поморске карте“.
-		\n\nПреглед може да се врати на стари његовим искључивањем овде, или изменом „Начина приказа карте“ под „Подесите карту“.
-	</string>
-	<string name="plugin_ski_descr">Покретање ове измене мења преглед карте на „Зима и скијање“, које приказује у положеном погледу особине предела и зимске услове.
+    <string name="plugin_ski_descr">Покретање ове измене мења преглед карте на „Зима и скијање“, које приказује у положеном погледу особине предела и зимске услове.
 		\n\nСветска карта приказује сва скијалишта и скијашке стазе у овом прегледу је доступна преузимањем  „Светске скијашке карте“.
 	</string>
 	<string name="shared_string_audio">Звук</string>
@@ -352,10 +348,8 @@
     <string name="free">"Слободно %1$s "</string>
 	<string name="device_memory">Складиште уређаја</string>
     <string name="plugin_ski_name">Преглед скијашке карте</string>
-    <string name="plugin_nautical_name">Преглед поморске карте</string>
     <string name="world_ski_missing">Да би се приказивала скијашка карта, нарочита карта за преглед ван мреже треба да се преузме</string>
-    <string name="nautical_maps_missing">Да би се приказивале поморске карте, нарочита карта за преглед ван мреже треба да се преузме</string>
-	<string name="edit_group">Уреди скуп</string>
+    <string name="edit_group">Уреди скуп</string>
     <string name="remove_the_tag">УКЛОНИ ОЗНАКУ</string>
     <string name="gps_status">Стање ГПС-а</string>
     <string name="version_settings_descr">Преузми ноћне изградње</string>
@@ -819,7 +813,6 @@
     <string name="localization_pref_title">Превод</string>
     <string name="index_item_nation_addresses">Адреса у држави</string>
     <string name="index_item_world_altitude_correction">Исправка светске географске висине</string>
-    <string name="index_item_world_seamarks">Светске водене ознаке</string>
     <string name="index_item_world_bitcoin_payments">Светска плаћања битским новцем</string>
     <string name="index_item_world_basemap">Светска карта</string>
     <string name="index_item_world_ski">Небеска карта</string>
@@ -1002,13 +995,9 @@
     <string name="shared_string_read_more">Сазнајте више</string>
     <string name="clear_updates_proposition_message">Можете уклонити преузете надоградње и вратити се на изворну карту</string>
     <string name="shared_string_select">Означи</string>
-    <string name="rendering_attr_contourDensity_description">Густина линија обриса</string>
-    <string name="rendering_attr_contourDensity_name">Густина линија обриса</string>
     <string name="rendering_value_high_name">Густа</string>
     <string name="rendering_value_medium_w_name">Средња</string>
     <string name="rendering_value_low_name">Ретка</string>
-    <string name="rendering_attr_contourWidth_description">Дебљина линија обриса</string>
-    <string name="rendering_attr_contourWidth_name">Дебљина линија обриса</string>
     <string name="rendering_attr_hideWaterPolygons_description">Вода</string>
     <string name="rendering_attr_hideWaterPolygons_name">Сакриј воду</string>
     <string name="legacy_search">Стара претрага</string>
@@ -1035,7 +1024,6 @@
     <string name="shared_string_record">Снимај</string>
     <string name="gpx_logging_no_data">Нема података</string>
     <string name="release_2_5"/>
-    <string name="rendering_attr_contourColorScheme_description">Образац боја линија обриса</string>
     <string name="save_track_min_speed">Најмања брзина бележења</string>
     <string name="save_track_min_speed_descr">Услов: Постави најмању брзину при којој ће тачка бити записана</string>
     <string name="save_track_min_distance">Најмањи померај бележења</string>
@@ -1047,7 +1035,6 @@
     <string name="christmas_desc_q">Приказуј божићне тачке занимања?</string>
     <string name="rendering_value_light_brown_name">Светла смеђа</string>
     <string name="rendering_value_dark_brown_name">Тамна смеђа</string>
-    <string name="rendering_attr_contourColorScheme_name">Образац боја линија обриса</string>
     <string name="rendering_attr_surfaceIntegrity_name">Целовитост површи пута</string>
     <string name="search_hint">Укуцајте град, адресу, име тачке занимања</string>
     <string name="translit_name_if_miss">Преслови ако име %1$s не постоји</string>
@@ -1344,7 +1331,6 @@
     <string name="quick_action_add_first_intermediate_desc">Тапкање на дугме радње ће додати прву међутачку на средишњи положај екрана.</string>
     <string name="no_underlay">Без подвлачења</string>
     <string name="subscribe_email_error">Грешка</string>
-    <string name="nautical_maps">Поморске карте</string>
     <string name="analyze_on_map">Рашчлани на карти</string>
     <string name="shared_string_visible">Видљиво</string>
     <string name="restore_purchases">Поврати трговину</string>
@@ -1390,8 +1376,6 @@
     <string name="total_distance">Укупно растојање</string>
     <string name="routing_attr_relief_smoothness_factor_name">Изаберите висинско одступање</string>
     <string name="routing_attr_height_obstacles_name">Користи податке о висини</string>
-    <string name="rendering_attr_depthContours_description">Приказуј обрисе и тачке дубине.</string>
-    <string name="rendering_attr_depthContours_name">Обриси поморске дубине</string>
     <string name="shared_string_paused">Заустављено</string>
     <string name="appearance_on_the_map">Изглед на мапи</string>
     <string name="shared_string_right">Десно</string>
@@ -1580,12 +1564,6 @@
 \n
 \nДа би то учинили требате уградити програм Картиште (Mapillary) из Гуглове продавнице.</string>
     <string name="subscribe_email_desc">Претплатите се на наш дописни списак за попуст и добијте још 3 преузимања карти!</string>
-    <string name="depth_contour_descr">Скуп карата које садрже обрисе дубине мора и наутичке тачке.</string>
-    <string name="sea_depth_thanks">Хвала Вам на куповини обриса наутичких дубина!</string>
-    <string name="index_item_depth_contours_osmand_ext">Обриси наутичких дубина</string>
-    <string name="index_item_depth_points_southern_hemisphere">Наутичке дубинске тачке јужне полулопте</string>
-    <string name="index_item_depth_points_northern_hemisphere">Наутичке дубинске тачке северне полулопте</string>
-    <string name="download_depth_countours">Обриси наутичке дубине</string>
     <string name="shared_string_color">Боја</string>
     <string name="routing_attr_height_obstacles_description">Користите податке висине земљишта обезбеђених помоћу СРМ-а, АСТЕР-а и ЕУ-ДЕМ-а.</string>
     <string name="auto_split_recording_title">Самоподели снимке после размака</string>

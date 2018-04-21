@@ -262,13 +262,6 @@
     <string name="no_underlay">No underlay</string>
     <string name="subscribe_email_error">Error</string>
     <string name="subscribe_email_desc">Subscribe to our email list about app discounts and get 3 more map downloads!</string>
-    <string name="depth_contour_descr">Set of maps containing the sea depth contour lines and nautical points.</string>
-    <string name="sea_depth_thanks">Thank you for purchasing nautical depth contours!</string>
-    <string name="index_item_depth_contours_osmand_ext">Nautical depth contours</string>
-    <string name="index_item_depth_points_southern_hemisphere">Nautical depth points southern hemisphere</string>
-    <string name="index_item_depth_points_northern_hemisphere">Nautical depth points northern hemisphere</string>
-    <string name="download_depth_countours">Nautical depth contours</string>
-    <string name="nautical_maps">Nautical maps</string>
     <string name="analyze_on_map">Analyze on map</string>
     <string name="shared_string_visible">Visible</string>
     <string name="restore_purchases">Restore purchases</string>
@@ -316,8 +309,6 @@
     <string name="routing_attr_relief_smoothness_factor_name">Select elevation fluctuation</string>
     <string name="routing_attr_height_obstacles_name">Use elevation data</string>
     <string name="routing_attr_height_obstacles_description">Use terrain elevation data provided by SRTM, ASTER, and EU-DEM.</string>
-    <string name="rendering_attr_depthContours_description">Show depth contours and points.</string>
-    <string name="rendering_attr_depthContours_name">Nautical depth contours</string>
     <string name="release_2_6">
 	\u2022 New feature: Quick action button\n\n
 	\u2022 Improved touch screen gesture response (e.g. concurrent panning and zooming)\n\n
@@ -356,13 +347,9 @@
 	</string>
     <string name="auto_split_recording_title">Auto-split recordings after gap</string>
     <string name="auto_split_recording_descr">Start new segment after gap of 6 min, new track after gap of 2 h, or new file after a longer gap if the date has changed.</string>
-    <string name="rendering_attr_contourDensity_description">Contour lines density</string>
-    <string name="rendering_attr_contourDensity_name">Contour lines density</string>
     <string name="rendering_value_high_name">High</string>
     <string name="rendering_value_medium_w_name">Medium</string>
     <string name="rendering_value_low_name">Low</string>
-    <string name="rendering_attr_contourWidth_description">Contour lines width</string>
-    <string name="rendering_attr_contourWidth_name">Contour lines width</string>
     <string name="rendering_attr_hideWaterPolygons_description">Water</string>
     <string name="rendering_attr_hideWaterPolygons_name">Hide water</string>
     <string name="legacy_search">Legacy search</string>
@@ -402,7 +389,6 @@
 	\u2022 Many other improvements and bug fixes\n\n
 	and more…
     </string>
-    <string name="rendering_attr_contourColorScheme_description">Contour lines color scheme</string>
     <string name="save_track_min_speed">Logging minimum speed</string>
     <string name="save_track_min_speed_descr">Filter: Set minimum speed for a point to be logged.</string>
     <string name="save_track_min_distance">Logging minimum displacement</string>
@@ -414,7 +400,6 @@
     <string name="christmas_desc_q">Show Christmas POI?</string>
     <string name="rendering_value_light_brown_name">Light brown</string>
     <string name="rendering_value_dark_brown_name">Dark brown</string>
-    <string name="rendering_attr_contourColorScheme_name">Contour lines color scheme</string>
     <string name="rendering_attr_surfaceIntegrity_name">Road surface integrity</string>
     <string name="search_hint">Type city, address, poi name</string>
     <string name="translit_name_if_miss">Transliterate if %1$s name is missing</string>
@@ -1004,11 +989,6 @@
 		\n\nA special map download is not needed, the view is created from our standard maps.
 		\n\nThis view can be reverted by either de-activating it again here, or by changing the \'Map style\' under \'Configure map\' as desired.
 	</string>
-    <string name="plugin_nautical_name">Nautical map view</string>
-    <string name="plugin_nautical_descr">This plugin enriches the OsmAnd map and navigation app to also produce nautical maps for boating, sailing, and other types of watersports.
-		\n\nA special map add-on for OsmAnd will provide all nautical navigation marks and chart symbols, for inland  as well as for nearshore navigation. The description of each navigation mark provides the details needed to identify them and their meaning (category, shape, color, sequence, reference, etc.).
-		\n\nTo return to one of OsmAnd\'s conventional map styles, simply either de-activate this plugin again, or change the \'Map style\' under \'Configure map\' as desired.
-	</string>
     <string name="plugin_ski_name">Ski map view</string>
     <string name="plugin_ski_descr">This plugin for OsmAnd puts at your fingertips details of global downhill ski slopes, cross country ski runs, Alpine ski routes, cable cars and ski lifts. Routes and pistes are shown color-coded by difficulty, and depicted in a special \'Winter\' map style which assimilates a snow-colored winter landscape.
 		\n\nActivating this view changes the map style to \'Winter and ski\', showing all landscape features under wintry conditions. This view can be reverted by either de-activating it again here, or by changing the \'Map style\' under \'Configure map\' as desired.
@@ -1034,7 +1014,6 @@
     <string name="device_memory">Device memory</string>
     <string name="rendering_attr_pisteGrooming_name">Piste grooming</string>
     <string name="world_ski_missing">In order to display ski maps, the special offline map needs to be downloaded</string>
-    <string name="nautical_maps_missing">In order to display nautical maps, the special offline map needs to be downloaded</string>
     <string name="edit_group">Edit group</string>
     <string name="remove_the_tag">REMOVE THE TAG</string>
     <string name="gps_status">GPS status</string>
@@ -1325,7 +1304,6 @@
     <string name="localization_pref_title">Localization</string>
     <string name="index_item_nation_addresses">addresses nationwide</string>
     <string name="index_item_world_altitude_correction">World altitude correction</string>
-    <string name="index_item_world_seamarks">World seamarks</string>
     <string name="index_item_world_bitcoin_payments">World bitcoin payments</string>
     <string name="index_item_world_basemap">World overview map</string>
     <string name="index_item_world_ski">World ski map</string>
@@ -1834,8 +1812,6 @@
     <string name="rendering_attr_appMode_name">Rendering mode</string>
     <string name="rendering_attr_appMode_description">Optimize map for</string>
     <!-- string name="rendering_attr_contourLines_description">Select minimum zoom level to display in map if available. Separate contour data needed.</string -->
-    <string name="rendering_attr_contourLines_description">Display from zoom level (requires contour data):</string>
-    <string name="rendering_attr_contourLines_name">Show contour lines</string>
     <string name="rendering_attr_hmRendered_description">Increase amount of map detail shown.</string>
     <string name="rendering_attr_hmRendered_name">Show more map detail</string>
     <string name="local_index_routing_data">Routing data</string>
@@ -2516,7 +2492,6 @@
     <string name="show_free_version_banner">Show free version banner</string>
     <string name="show_free_version_banner_description">Display the free version banner even in the paid version.</string>
     <string name="buy">BUY</string>
-    <string name="activate_seamarks_plugin">Please activate Seamarks plugin</string>
     <string name="later">Later</string>
     <string name="get_full_version">Full version</string>
     <string name="downloads">Downloads</string>
@@ -2664,7 +2639,6 @@
     <string name="day_off_label">off</string>
     <string name="winter_and_ski_renderer">Winter and ski</string>
     <string name="touring_view_renderer">Touring view (contrast and details)</string>
-    <string name="nautical_renderer">Nautical</string>
     <string name="copy_location_name">Copy Point/POI name</string>
     <string name="toast_empty_name_error">Location has no name</string>
     <string name="tunnel_warning">Tunnel ahead</string>

@@ -448,8 +448,7 @@
     <string name="asap">U-Käännös</string>
 	
 	<string name="route_roundabout">Liikenneympyrä: poistu %1$d. liittymästä</string>
-	<string name="rendering_attr_contourLines_name">Näytä korkeuskäyrät</string>
-	<string name="address_search_desc">Osoitehaku</string>
+    <string name="address_search_desc">Osoitehaku</string>
 	<string name="navpoint_search_desc">Koordinaatit</string>
 	<string name="transport_search_desc">Julkisen liikenteen haku</string>
 	<string name="favourites_search_desc">Haku suosikeista</string>
@@ -705,8 +704,7 @@
     <string name="plugin_ski_name">Hiihtokartat</string>
 	<string name="route_points">Reittipisteet</string>
 	<string name="get_plugin">Lataa</string>
-	<string name="plugin_nautical_name">Merikartat</string>
-	<string name="osmand_distance_planning_plugin_name">Etäisyyslaskin &amp; suunnittelutyökalu</string>
+    <string name="osmand_distance_planning_plugin_name">Etäisyyslaskin &amp; suunnittelutyökalu</string>
 	<string name="search_for">Etsi</string>
 	<string name="search_poi_category_hint">Kirjoita etsiäksesi kaikista</string>
     <string name="search_position_map_view">Nykyisen kartan keskusta</string>
@@ -862,7 +860,6 @@ Anonyymejä ryhmiä luodaan määritellyiksi päivämääriksi ja rajoitettuna m
     <string name="shared_string_recorded">Nauhoitettu</string>
     <string name="shared_string_record">Nauhoita</string>
     <string name="gpx_logging_no_data">Ei dataa</string>
-    <string name="rendering_attr_contourColorScheme_description">Korkeuskäyräviivojen väripaletti</string>
     <string name="save_track_min_speed">Miniminopeuden kirjaaminen</string>
     <string name="save_track_min_speed_descr">Aseta miniminopeus kirjattavalle pisteelle</string>
     <string name="save_track_min_distance">Liikkeen tunnistuksen kirjaus</string>
@@ -873,7 +870,6 @@ Anonyymejä ryhmiä luodaan määritellyiksi päivämääriksi ja rajoitettuna m
     <string name="christmas_desc_q">Näytä Joulu POI?</string>
     <string name="rendering_value_light_brown_name">Vaaleanruskea</string>
     <string name="rendering_value_dark_brown_name">Tummanruskea</string>
-    <string name="rendering_attr_contourColorScheme_name">Korkeuskäyrien väripaletti</string>
     <string name="rendering_attr_surfaceIntegrity_name">Tienpinnan eheys</string>
     <string name="search_hint">Kirjoita kaupunki, osoite, POI nimi</string>
     <string name="edit_filter">Muokkaa luokkia</string>
@@ -1220,7 +1216,6 @@ Anonyymejä ryhmiä luodaan määritellyiksi päivämääriksi ja rajoitettuna m
     <string name="device_memory">Laitteen muisti</string>
     <string name="rendering_attr_pisteGrooming_name">Rinnehuolto</string>
     <string name="world_ski_missing">Näyttääksesi hiihtokartat tarvitsee ladata erityinen offline kartta</string>
-    <string name="nautical_maps_missing">Näyttääksesi merikartat tarvitsee ladata erityinen offline kartta</string>
     <string name="remove_the_tag">POISTA TAGI</string>
     <string name="gps_status">GPS tila</string>
     <string name="version_settings_descr">Lataa yöllinen julkaisu</string>
@@ -1271,8 +1266,7 @@ Anonyymejä ryhmiä luodaan määritellyiksi päivämääriksi ja rajoitettuna m
     <string name="show_free_version_banner">Näytä vapaan version mainos</string>
     <string name="show_free_version_banner_description">Vaikka Sinulla on maksettu versio voit silti nähdä vapaan version mainoksen</string>
     <string name="buy">OSTA</string>
-    <string name="activate_seamarks_plugin">Ole hyvä ja aktivoi Merimerkit laajennus</string>
-	<string name="later">Myöhemmin</string>
+    <string name="later">Myöhemmin</string>
     <string name="get_full_version">Täysi versio</string>
     <string name="downloads">Lataukset</string>
     <string name="show_on_start_description">\'Pois\' käynnistää suoraan karttanäytön</string>
@@ -1486,7 +1480,6 @@ Jälki %2$s</string>
     <string name="localization_pref_title">Käännös</string>
     <string name="index_item_nation_addresses">osoitteet kansallisesti</string>
     <string name="index_item_world_altitude_correction">Maailman korkeuskorjaus</string>
-    <string name="index_item_world_seamarks">Maailman merimerkit</string>
     <string name="index_item_world_bitcoin_payments">Maailman bitcoin maksut</string>
     <string name="index_item_world_basemap">Maailman yleiskartta</string>
     <string name="index_item_world_ski">Maailman hiihtokartta</string>
@@ -1532,7 +1525,6 @@ Jälki %2$s</string>
     <string name="rendering_attr_noPolygons_name">Monikulmiot</string>
     <string name="rendering_attr_appMode_name">Hahmotustila</string>
     <string name="rendering_attr_appMode_description">Optimoi kartta</string>
-    <string name="rendering_attr_contourLines_description">Näytä alkaen zoomaustasosta (tarvitsee korkeuskäyrätietoja):</string>
     <string name="rendering_attr_hmRendered_description">Lisää kartan näytettävien yksityiskohtien määrää</string>
     <string name="rendering_attr_hmRendered_name">Näytä lisää kartan yksityiskohtia</string>
     <string name="local_index_routing_data">Reititystiedot</string>
@@ -1933,8 +1925,6 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
     <string name="drawer">Jäsentämätön luettelo</string>
     <string name="plugin_touringview_name">Tiekarttanäyttö</string>
 	<string name="avoid_roads_msg">Voit muuttaa toiselle reitille valitsemalla vältettäviä teitä</string>
-    <string name="rendering_attr_contourWidth_description">Korkeuskäyräviivojen leveys</string>
-    <string name="rendering_attr_contourWidth_name">Korkeuskäyriäviivojen leveys</string>
     <string name="rendering_attr_hideWaterPolygons_description">Vesi</string>
     <string name="legacy_search">Vanha haku</string>
     <string name="show_legacy_search">Näytä vanha haku</string>
@@ -2046,11 +2036,7 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
     <string name="rendering_value_low_name">Matala</string>
     <string name="rendering_value_high_name">Korkea</string>
     <string name="rendering_value_medium_w_name">Keskitaso</string>
-    <string name="rendering_attr_contourDensity_description">Korkeuskäyräviivojen tiheys</string>
-    <string name="rendering_attr_contourDensity_name">Korkeuskäyräviivojen tiheys</string>
-    <string name="rendering_attr_depthContours_name">Korkeuskäyrät</string>
-	<string name="rendering_attr_depthContours_description">Näytä korkeuskäyrät ja -pisteet</string>
-    
+
     <string name="routing_attr_driving_style_description">Turvallista, nopeaa tai tasapainoista ajoa</string>
     <string name="route_altitude">Reitin korkeus</string>
     <string name="altitude_descent">Lasku</string>

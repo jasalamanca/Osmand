@@ -788,9 +788,7 @@
   <string name="rendering_attr_noPolygons_name">Ocultar polígonos</string>
   <string name="rendering_attr_appMode_name">Modo de Visualização</string>
   <string name="rendering_attr_appMode_description">Map optimization for respective User Profile</string>
-  <string name="rendering_attr_contourLines_description">Exibir a partir do nível de zoom (precisa arquivo SRTM):</string>
-  <string name="rendering_attr_contourLines_name">Mostrar curvas de nível</string>
-  <string name="rendering_attr_hmRendered_description">Aumentar a quantidade de detalhe no mapa</string>
+    <string name="rendering_attr_hmRendered_description">Aumentar a quantidade de detalhe no mapa</string>
   <string name="rendering_attr_hmRendered_name">Ver mais detalhes no mapa</string>
   <string name="route_roundabout">Roundabout : take %1$d exit</string>
   <string name="route_kl">Keep left</string>
@@ -1218,8 +1216,7 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="localization_pref_title">Localização</string>
     <string name="index_item_nation_addresses">moradas nacionais</string>
 	<string name="index_item_world_altitude_correction">Correcção de altitude mundial</string>
-	<string name="index_item_world_seamarks">Marcas marítimas mundiais</string>
-	<string name="index_item_world_bitcoin_payments">Pagamentos de bitcoin do mundo</string>
+    <string name="index_item_world_bitcoin_payments">Pagamentos de bitcoin do mundo</string>
 	<string name="index_item_world_basemap">Mapa de visão geral do mundo</string>
     <string name="index_item_world_ski">Mapa do mundo de esqui</string>
     <string name="lang_hr">Croata</string>
@@ -1532,8 +1529,7 @@ Clique no widget de medição para ver mais ações.</string>
 	<string name="track_segments">Segmentos do trajeto</string>
 	<string name="track_points">Pontos de trajeto</string>
 	<string name="plugin_touringview_name">Ver mapa de turismo</string>
-	<string name="plugin_nautical_name">Ver mapa náutico</string>
-	<string name="plugin_ski_name">Ver mapa de esqui</string>
+    <string name="plugin_ski_name">Ver mapa de esqui</string>
 	<string name="rename_failed">Falha ao renomear.</string>
 	<string name="back_to_map">Voltar ao mapa</string>
     <string name="location_on_map">Posição:\n Lat %1$s\n Lon %2$s</string>
@@ -1544,8 +1540,7 @@ Clique no widget de medição para ver mais ações.</string>
 	<string name="free">"Livre %1$s "</string>
 	<string name="device_memory">Memória do aparelho</string>
     <string name="world_ski_missing">Para exibir mapas de esqui, o mapa offline especial precisa ser baixado</string>
-    <string name="nautical_maps_missing">Para exibir mapas náuticos, o mapa offline especial precisa ser baixado</string>
-	<string name="edit_group">Editar grupo</string>
+    <string name="edit_group">Editar grupo</string>
     <string name="version_settings">Compilações</string>
     <string name="navigation_over_track">Iniciar navegação através do trajeto?</string>
 	<string name="rendering_attr_transportStops_name">Parada de transporte</string>
@@ -2070,13 +2065,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="no_underlay">Sem subposição</string>
     <string name="subscribe_email_error">Erro</string>
     <string name="subscribe_email_desc">Subscreva à nossa lista de e-mail sobre descontos da aplicação e ganhe 3 mapas adicionais!</string>
-    <string name="depth_contour_descr">Conjunto de mapas que contém os pontos e linhas de contorno de profundidade marítima.</string>
-    <string name="sea_depth_thanks">Muito obrigado por comprar contornos de profundidade náutica!</string>
-    <string name="index_item_depth_contours_osmand_ext">Contornos de profundidade náutica</string>
-    <string name="index_item_depth_points_southern_hemisphere">Pontos de profundidade náutica do hemisfério sul</string>
-    <string name="index_item_depth_points_northern_hemisphere">Pontos de profundidade náutica do hemisfério norte</string>
-    <string name="download_depth_countours">Contornos de profundidade náutica</string>
-    <string name="nautical_maps">Mapas náuticos</string>
     <string name="analyze_on_map">Analise no mapa</string>
     <string name="shared_string_visible">Visível</string>
     <string name="restore_purchases">Restaurar compras</string>
@@ -2124,8 +2112,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="routing_attr_relief_smoothness_factor_name">Selecionar flutuação de elevação</string>
     <string name="routing_attr_height_obstacles_name">Utilizar dados de elevação</string>
     <string name="routing_attr_height_obstacles_description">Utilizar dados de elevação de terreno provenientes de SRTM, ASTER e EU-DEM</string>
-    <string name="rendering_attr_depthContours_description">Mostrar pontos e contornos de profundidade</string>
-    <string name="rendering_attr_depthContours_name">Contornos de profundidade náuticos</string>
     <string name="release_2_6">\\022 Nova funcionaldiade: Botão de ação rápida
 \n
 \n• Resposta melhorada a gestos do ecrã touch (ex. panorâmico e aproximação em simultâneo)
@@ -2161,13 +2147,9 @@ Clique no widget de medição para ver mais ações.</string>
 \n</string>
     <string name="auto_split_recording_title">Divisão automática de gravações após separação</string>
     <string name="auto_split_recording_descr">Iniciar novo segmento após uma quebra de 6 min, novo percurso após quebra de 2 h, ou novo arquivo após quebra mais longa se a data se tiver alterado.</string>
-    <string name="rendering_attr_contourDensity_description">Densidade de linhas de contorno</string>
-    <string name="rendering_attr_contourDensity_name">Densidade de linhas de contorno</string>
     <string name="rendering_value_high_name">Alto</string>
     <string name="rendering_value_medium_w_name">Médio</string>
     <string name="rendering_value_low_name">Baixo</string>
-    <string name="rendering_attr_contourWidth_description">Largura das linhas de contorno</string>
-    <string name="rendering_attr_contourWidth_name">Largura das linhas de contorno</string>
     <string name="rendering_attr_hideWaterPolygons_description">Água</string>
     <string name="rendering_attr_hideWaterPolygons_name">Esconder água</string>
     <string name="legacy_search">Pesquisa antiga</string>
@@ -2210,7 +2192,6 @@ Clique no widget de medição para ver mais ações.</string>
 \n • Muitas outras melhorias e correção de erros
 \n
 \n e muitos mais…</string>
-    <string name="rendering_attr_contourColorScheme_description">Esquema de cores das linhas de contorno</string>
     <string name="save_track_min_speed">Velocidade mínima para registo</string>
     <string name="save_track_min_speed_descr">Filtro: Definir velocidade mínima para um ponto poder ser registado</string>
     <string name="save_track_min_distance">Deslocamento mínimo para registo</string>
@@ -2222,7 +2203,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="christmas_desc_q">Mostrar pontos de interesse (POI) de Natal?</string>
     <string name="rendering_value_light_brown_name">Castanho claro</string>
     <string name="rendering_value_dark_brown_name">Castanho escuro</string>
-    <string name="rendering_attr_contourColorScheme_name">Esquema de cores das linhas de contorno</string>
     <string name="rendering_attr_surfaceIntegrity_name">Integridade da superfície da estrada</string>
     <string name="search_hint">Escreva cidade, morada, nome do ponto de interesse (POI)</string>
     <string name="translit_name_if_miss">Transliterar se %1$s nome está ausente</string>

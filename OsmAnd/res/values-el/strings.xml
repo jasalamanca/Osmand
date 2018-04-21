@@ -110,9 +110,7 @@
 	<string name="rendering_attr_noPolygons_name">Απόκρυψη πολυγώνων</string>
 	<string name="rendering_attr_appMode_name">Τρόπος απεικόνισης</string>
 	<string name="rendering_attr_appMode_description">Βελτιστοποίηση του χάρτη για</string>
-	<string name="rendering_attr_contourLines_description">Εμφάνιση από το επίπεδο εστίασης (χρειάζεται αρχείο ισοϋψών):</string>
-	<string name="rendering_attr_contourLines_name">Εμφάνιση ισοϋψών γραμμών</string>
-	<string name="rendering_attr_hmRendered_description">Αύξηση ποσότητας των λεπτομερειών του χάρτη</string>
+    <string name="rendering_attr_hmRendered_description">Αύξηση ποσότητας των λεπτομερειών του χάρτη</string>
 	<string name="rendering_attr_hmRendered_name">Εμφάνιση περισσότερων λεπτομερειών χάρτη</string>
 	<string name="local_index_routing_data">Δεδομένα δρομολόγησης</string>
 	<string name="navigate_point_format">Μορφή</string>
@@ -1469,8 +1467,7 @@
     <string name="shared_string_unexpected_error">Παρουσιάστηκε μη αναμενόμενο σφάλμα</string>
 	<string name="shared_string_currently_recording_track">Τρέχουσα καταγραφή ίχνους</string>
 	<string name="osmo_plugin_name">Παρακολούθηση OpenStreetMap</string>
-	<string name="plugin_nautical_name">Προβολή Ναυτικού χάρτη</string>
-	<string name="rename_failed">Η μετονομασία απέτυχε.</string>
+    <string name="rename_failed">Η μετονομασία απέτυχε.</string>
 	<string name="days_behind">ημέρες πίσω</string>
 	<string name="back_to_map">Πίσω στο χάρτη</string>
     <string name="notes">Σημειώσεις</string>

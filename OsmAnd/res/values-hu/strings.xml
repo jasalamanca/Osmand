@@ -762,8 +762,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="rendering_attr_noPolygons_name">Felületek</string>
     <string name="rendering_attr_appMode_name">Megjelenítési mód</string>
     <string name="rendering_attr_appMode_description">Térkép optimalizálása az adott Felhasználási módhoz</string>
-    <string name="rendering_attr_contourLines_description">Megjelenítés ettől a nagyítási szinttől (szintvonaladatokat igényel):</string>
-    <string name="rendering_attr_contourLines_name">Szintvonalak megjelenítése</string>
     <string name="rendering_attr_hmRendered_description">Megnöveli a megjelenített térképrészletek mennyiségét.</string>
     <string name="rendering_attr_hmRendered_name">Több térképrészlet</string>
     <string name="route_roundabout">Körforgalom: %1$d. kijárat, majd menj</string>
@@ -1197,7 +1195,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="localization_pref_title">Nyelv</string>
     <string name="index_item_nation_addresses">címek (egész ország)</string>
     <string name="index_item_world_altitude_correction">Magasságkorrekció világszerte</string>
-    <string name="index_item_world_seamarks">Hajózási jelzések</string>
     <string name="index_item_world_bitcoin_payments">Bitcoin fizetőhelyek (globális)</string>
     <string name="index_item_world_basemap">Áttekintő világtérkép</string>
     <string name="index_item_world_ski">Sítérkép</string>
@@ -1644,9 +1641,7 @@ Afganisztán, Albánia, Algéria, Amerikai Egyesült Államok, Andorra, Anglia, 
     <string name="get_plugin">Beszerzés</string>
     <string name="version_settings">Összeállítások</string>
     <string name="plugin_ski_name">Sítérkép nézet</string>
-    <string name="plugin_nautical_name">Hajózási térkép nézet</string>
     <string name="world_ski_missing">A sítérképek megjelenítése érdekében a speciális kapcsolat nélküli térkép letöltése szükséges</string>
-    <string name="nautical_maps_missing">A hajózási térképek megjelenítése érdekében a speciális kapcsolat nélküli térkép letöltése szükséges</string>
     <string name="device_memory">Eszköz memóriája</string>
     <string name="free">"%1$s szabad "</string>
     <string name="roads_only">Csak utak</string>
@@ -1735,12 +1730,7 @@ Hosszúság: %2$s</string>
 \nNem szükséges speciális térképet letölteni, a nézet a szabványos térképeinkből kerül előállításra. 
 \n 
 \nEz a nézet visszaállítható, ha újra kikapcsolja az aktiválást itt, vagy a „Térképstílus” megváltoztatásával a „Térkép beállítása” alatt igény szerint.</string>
-    <string name="plugin_nautical_descr">Ez a bővítmény az OsmAnd térképet és a navigációs alkalmazást gazdagítja hajózási térképek készítésével csónakázáshoz, vitorlázáshoz és a vízi sportok egyéb típusaihoz. 
-\n 
-\nEgy speciális térkép-kiegészítő az OsmAnd alkalmazáshoz biztosítani fogja az összes hajózási navigációs jelzést és szimbólumot a belvízi, valamint a partközeli navigációhoz. Minden egyes navigációs jelzés leírása olyan részleteket biztosít, amely azok azonosításához és a jelentésükhöz szükségesek (kategória, alak, szín, sorozat, hivatkozás, stb.). 
-\n 
-\nAz OsmAnd hagyományos térképstílusainak egyikéhez való visszatéréshez egyszerűen kapcsolja ki ezen bővítmény aktiválást újra, vagy változtassa meg a „Térképstílust” a „Térkép beállítása” alatt igény szerint.</string>
-    <string name="plugin_ski_descr">Az OsmAnd ezen bővítménye a kezedbe adja a globális lesikló pályák, a sífutópályák, az alpesi síutak, kabinok és sífelvonók minden részletét. Az utak és a pályák nehézség szerinti színkódokkal vannak megjelenítve, és egy speciális „Téli” térképstílussal vannak ábrázolva hószínű alapon. 
+    <string name="plugin_ski_descr">Az OsmAnd ezen bővítménye a kezedbe adja a globális lesikló pályák, a sífutópályák, az alpesi síutak, kabinok és sífelvonók minden részletét. Az utak és a pályák nehézség szerinti színkódokkal vannak megjelenítve, és egy speciális „Téli” térképstílussal vannak ábrázolva hószínű alapon.
 \n 
 \nA nézet aktiválása megváltoztatja a térképstílust „Tél és síelésre”, megjelenítve a táj minden elemét a téli körülmények szerint. Ez a nézet visszaállítható, ha újra kikapcsolja az aktiválást itt, vagy a „Térképstílus” megváltoztatásával a „Térkép beállítása” alatt igény szerint.</string>
     <string name="filter_poi_hint">Szűrés név szerint</string>
@@ -1918,7 +1908,6 @@ Hosszúság: %2$s</string>
     <string name="show_free_version_banner">Ingyenes verzió banner megjelenítése</string>
     <string name="show_free_version_banner_description">Az ingyenes verzió bannerének megjelenítése akkor is, ha fizetős verziót használsz.</string>
     <string name="buy">VÁSÁRLÁS</string>
-    <string name="activate_seamarks_plugin">Kérlek aktiváld a Hajózási térkép bővítményt</string>
     <string name="later">Tovább</string>
     <string name="get_full_version">Teljes verzió</string>
     <string name="downloads">Letöltések</string>
@@ -2310,7 +2299,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="lang_kab">kabil</string>
     <string name="shared_string_continue">Folytatás</string>
     <string name="gpx_logging_no_data">Nincs adat</string>
-    <string name="rendering_attr_contourColorScheme_description">Szintvonalak színsémája</string>
     <string name="route_roundabout_short">Hajts ki a(z) %1$d kijáraton és menj</string>
     <string name="upload_poi">POI feltöltése</string>
     <string name="route_calculation">Útvonalszámítás</string>
@@ -2339,7 +2327,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="christmas_desc_q">Megjeleníted a karácsonyi POI-kat?</string>
     <string name="rendering_value_light_brown_name">Világosbarna</string>
     <string name="rendering_value_dark_brown_name">Sötétbarna</string>
-    <string name="rendering_attr_contourColorScheme_name">Szintvonalak színsémája</string>
     <string name="rendering_attr_surfaceIntegrity_name">Útfelület épsége</string>
     <string name="search_hint">Város, cím, POI név megadása</string>
     <string name="translit_name_if_miss">Átírás, ha a(z) %1$s név hiányzik</string>
@@ -2365,13 +2352,9 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="routing_attr_allow_motorway_description">Autópályák engedélyezése.</string>
     <string name="lang_sr_latn">szerb (latin betűs)</string>
     <string name="lang_zh_hk">kínai (Hongkong)</string>
-    <string name="rendering_attr_contourDensity_description">Szintvonalak sűrűsége</string>
-    <string name="rendering_attr_contourDensity_name">Szintvonalak sűrűsége</string>
     <string name="rendering_value_high_name">Magas</string>
     <string name="rendering_value_medium_w_name">Közepes</string>
     <string name="rendering_value_low_name">Alacsony</string>
-    <string name="rendering_attr_contourWidth_description">Szintvonalak vastagsága</string>
-    <string name="rendering_attr_contourWidth_name">Szintvonalak vastagsága</string>
     <string name="rendering_attr_hideWaterPolygons_description">Vízfelületek</string>
     <string name="rendering_attr_hideWaterPolygons_name">Vízfelületek elrejtése</string>
     <string name="configure_screen_quick_action">Gyors művelet</string>
@@ -2468,9 +2451,7 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="routing_attr_height_obstacles_name">Magasságadatok használata</string>
     <string name="routing_attr_height_obstacles_description">Terepmagasság használata SRTM, ASTER és EU-DEM domborzatmodellekből.</string>
 
-    <string name="rendering_attr_depthContours_description">Mélységvonalak és pontok megjelenítése.</string>
-    <string name="rendering_attr_depthContours_name">Tengeri mélységvonalak</string>
-	<string name="release_2_6">• Új funkció: Gyors művelet gomb 
+    <string name="release_2_6">• Új funkció: Gyors művelet gomb
 \n 
 \n • Javított érintőképernyő-gesztus felismerés 
 \n 
@@ -2538,13 +2519,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="no_underlay">Nincs alátét</string>
     <string name="subscribe_email_error">Hiba</string>
     <string name="subscribe_email_desc">Iratkozz fel az alkalmazás akciókról szóló hírlevelünkre és kapsz további 3 térképletöltést!</string>
-    <string name="depth_contour_descr">Térképkészlet, amely tartalmazza a tengeri mélységvonalakat és tengi pontokat.</string>
-    <string name="sea_depth_thanks">Köszönjük, hogy megvásároltad a tengeri mélységvonalakat!</string>
-    <string name="index_item_depth_contours_osmand_ext">Tengeri mélységvonalak</string>
-    <string name="index_item_depth_points_southern_hemisphere">Tengeri mélységpontok, déli félteke</string>
-    <string name="index_item_depth_points_northern_hemisphere">Tengeri mélységpontok, északi félteke</string>
-    <string name="download_depth_countours">Tengeri mélységvonalak</string>
-    <string name="nautical_maps">Hajózási térképek</string>
     <string name="analyze_on_map">Elemzés a térképen</string>
     <string name="shared_string_visible">Látható</string>
     <string name="restore_purchases">Vásárlások visszaállítása</string>

@@ -69,8 +69,7 @@
 	<string name="search_near_map">Search near current map centre</string>
 	<string name="position_on_map_center">Centre</string>
 	<string name="route_general_information">Total distance %1$s, travelling time %2$d h %3$d m.</string>
-	<string name="rendering_attr_contourColorScheme_name">Contour lines colour scheme</string>
-	<string name="quick_action_add_destination_desc">Tapping the action button will add a destination at the screen centre location.</string>
+    <string name="quick_action_add_destination_desc">Tapping the action button will add a destination at the screen centre location.</string>
 	<string name="quick_action_replace_destination_desc">Tapping the action button will replace the destination with the screen centre location.</string>
 	<string name="quick_action_add_first_intermediate_desc">Tapping the action button will add a first intermediate point at the screen centre location.</string>
     <string name="quick_action_add_osm_bug_descr">Tapping the action button will add an OSM note at the screen centre location.</string>

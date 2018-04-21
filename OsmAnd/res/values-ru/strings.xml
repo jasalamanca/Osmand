@@ -49,12 +49,6 @@
     <string name="restore_purchases">Восстановить покупки</string>
     <string name="fonts_header">Шрифты для карты</string>
     <string name="analyze_on_map">Посмотреть на карте</string>
-    <string name="nautical_maps">Морские карты</string>
-    <string name="download_depth_countours">Контуры морских глубин</string>
-    <string name="index_item_depth_contours_osmand_ext">Контуры морских глубин</string>
-    <string name="index_item_depth_points_southern_hemisphere">Отметки морских глубин южного полушария</string>
-    <string name="index_item_depth_points_northern_hemisphere">Отметки морских глубин северного полушария</string>
-    <string name="depth_contour_descr">Набор карт, содержащих контуры и точки морских глубин.</string>
     <string name="subscribe_email_desc">Подпишитесь на нашу email рассылку про скидки на OsmAnd и получите 3 дополнительные загрузки карт!</string>
     <string name="subscribe_email_error">Ошибка</string>
     <string name="quick_action_auto_zoom">Автомасштаб карты вкл/выкл</string>
@@ -136,15 +130,9 @@
     <string name="quick_action_map_source_switch">Источник карты изменён на \"%s\".</string>
     <string name="quick_action_btn_tutorial_descr">Долгое нажатие и перетаскивание позволит переместить кнопку.</string>
 
-    <string name="rendering_attr_depthContours_description">Показывать контуры и точки глубины.</string>
-    <string name="rendering_attr_depthContours_name">Контуры морских глубин</string>
-    <string name="rendering_attr_contourDensity_description">Частота горизонталей</string>
-    <string name="rendering_attr_contourDensity_name">Частота горизонталей</string>
     <string name="rendering_value_high_name">Высокая</string>
     <string name="rendering_value_medium_w_name">Средняя</string>
     <string name="rendering_value_low_name">Низкая</string>
-    <string name="rendering_attr_contourWidth_description">Толщина горизонталей</string>
-    <string name="rendering_attr_contourWidth_name">Толщина горизонталей</string>
     <string name="rendering_attr_hideWaterPolygons_description">Воду</string>
     <string name="rendering_attr_hideWaterPolygons_name">Скрыть воду</string>
     <string name="legacy_search">Старый поиск</string>
@@ -198,10 +186,8 @@
     <string name="christmas_desc">В преддверии рождественских и новогодних праздников, вы можете выбрать для отображения POI, связанные с Рождеством: елки, ярмарки и т. п.</string>
     <string name="christmas_desc_q">Показать рождественские POI?</string>
 
-    <string name="rendering_attr_contourColorScheme_description">Цветовая схема горизонталей</string>
     <string name="rendering_value_light_brown_name">Светло-коричневый</string>
     <string name="rendering_value_dark_brown_name">Тёмно-коричневый</string>
-    <string name="rendering_attr_contourColorScheme_name">Цветовая схема горизонталей</string>
     <string name="rendering_attr_surfaceIntegrity_name">Качество дорожного покрытия</string>
     <string name="search_hint">Введите название города, адрес, POI</string>
     <string name="new_filter_desc">Введите имя для нового фильтра. Вы сможете его найти в списке Категории.</string>
@@ -966,8 +952,6 @@
     <string name="rendering_attr_noPolygons_name">Полигоны</string>
     <string name="rendering_attr_appMode_name">Режим рендеринга</string>
     <string name="rendering_attr_appMode_description">Оптимизация карты для соответствующего профиля</string>
-    <string name="rendering_attr_contourLines_description">Выберите минимальный уровень масштаба для отображения горизонталей (необходимо предварительно загрузить соответствующий SRTM-файл):</string>
-    <string name="rendering_attr_contourLines_name">Показывать горизонтали</string>
     <string name="rendering_attr_hmRendered_description">Отображать больше деталей на карте.</string>
     <string name="rendering_attr_hmRendered_name">Больше деталей</string>
     <string name="route_roundabout">Круговое движение, %1$d съезд</string>
@@ -1301,7 +1285,6 @@
     <string name="index_item_nation_addresses">Адреса по стране</string>
     <string name="index_item_world_ski">Мировая лыжная карта</string>
     <string name="index_item_world_basemap">Мировая обзорная карта</string>
-    <string name="index_item_world_seamarks">Мировые морские объекты</string>
     <string name="index_item_world_altitude_correction">Мировая коррекция высоты</string>
     <string name="index_name_canada">Северная Америка - Канада</string>
     <string name="always_center_position_on_map">Отображать положение в центре экрана</string>
@@ -1643,9 +1626,7 @@
     <string name="shared_string_disable">Отключить</string>
     <string name="get_plugin">Получить</string>
     <string name="plugin_ski_name">Лыжные карты</string>
-    <string name="plugin_nautical_name">Морские карты</string>
     <string name="world_ski_missing">Для отображения лыжных карт необходимо загрузить данные специализированные карты</string>
-    <string name="nautical_maps_missing">Для отображения морских карт необходимо загрузить данные специализированные карты</string>
     <string name="device_memory">Память устройства</string>
     <string name="free">Свободно %1$s</string>
     <string name="roads_only">Только дороги</string>
@@ -1733,11 +1714,6 @@
     <string name="delay_to_start_navigation_descr">Укажите время задержки на экране планирования маршрута.</string>
     <string name="delay_to_start_navigation">Задержка начала навигации…</string>
     <string name="shared_string_go">Поехали</string>
-    <string name="plugin_nautical_descr">Плагин расширяет возможности OsmAnd, делая доступными морские карты для катания на лодках, парусного спорта и других видов спорта. 
-\n
-\nСпециальная дополнительная карта для OsmAnd добавляет морские навигационные и условные знаки как для внутренней, так и для прибрежной навигации. Описание навигационных отметок содержит информацию, необходимую для их идентификации, а также их характеристики (категория, форма, цвет, последовательность мерцания огней и т.д.).
-\n
-\nЧтобы вернуться к одному из традиционных стилей карт в OsmAnd, просто деактивируйте этот плагин или измените на желаемый \"Стиль карты\" в разделе \"Настройка карты\".</string>
     <string name="local_osm_changes_upload_all_confirm">Вы собираетесь отправить %1$d изменений в OSM. Вы уверены?</string>
     <string name="confirmation_to_clear_history">Вы хотите очистить историю?</string>
     <string name="plugin_ski_descr">Плагин обеспечивает вам доступ к данным о горнолыжных трассах, маршрутах для беговых лыж, альпийских спусках, фуникулерах и горнолыжных подъемниках. Маршруты и спуски отмечены разными цветами в зависимости от их сложности и изображены с использованием специального \"зимнего\" стиля карты, который заключается в том, что используются \"снежные\" цвета зимнего пейзажа.
@@ -1933,7 +1909,6 @@
     <string name="favorite_category_add_new_title">Добавить новую категорию</string>
     <string name="roads">Дороги</string>
     <string name="buy">Купить</string>
-    <string name="activate_seamarks_plugin">Пожалуйста, активируйте плагин морские карты</string>
     <string name="later">Позже</string>
     <string name="get_full_version">Полная версия</string>
     <string name="downloads">Загрузки</string>
@@ -2290,7 +2265,6 @@
     <string name="quick_action_navigation_voice_off">Голос выключен</string>
     <string name="quick_action_navigation_voice_on">Голос включен</string>
     <string name="file_can_not_be_moved">Файл не может быть перемещен.</string>
-    <string name="sea_depth_thanks">Благодарим вас за покупку контуров морских глубин!</string>
     <string name="shared_string_add_photos">Добавить фотографии</string>
     <string name="shared_string_permissions">Разрешения</string>
     <string name="online_photos">Онлайн фотографии</string>
@@ -2665,7 +2639,6 @@
     <string name="day_off_label">вых.</string>
     <string name="winter_and_ski_renderer">Зимний/лыжный</string>
     <string name="touring_view_renderer">Туристический (контраст и детали)</string>
-    <string name="nautical_renderer">Морской</string>
     <string name="rendering_attr_hidePOILabels_name">Названия POI</string>
 
     <string name="will_open_tomorrow_at">Откроется завтра в</string>

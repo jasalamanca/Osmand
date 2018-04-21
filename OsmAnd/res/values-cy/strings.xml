@@ -97,9 +97,7 @@ Cyfrannol cof %4$s MB (terfyn Android %5$s MB, Dalvik %6$s MB).</string>
 <string name="rendering_attr_noPolygons_name">Dim polygonau</string>
 <string name="rendering_attr_appMode_name">Rendro modd</string>
 <string name="rendering_attr_appMode_description">Optimize map ar gyfer</string>
-<string name="rendering_attr_contourLines_description">Arddangos o (angen SRTM ffeil) lefel chwyddo:</string>
-<string name="rendering_attr_contourLines_name">Dangos chyfuchliniau</string>
-<string name="rendering_attr_hmRendered_description">Cynyddu faint o fanylion a ddangosir map</string>
+    <string name="rendering_attr_hmRendered_description">Cynyddu faint o fanylion a ddangosir map</string>
 <string name="rendering_attr_hmRendered_name">Dangos map mwy manwl</string>
 <string name="local_index_routing_data">Data llwybrau</string>
 <string name="navigate_point_format">Fformat :</string>

@@ -791,9 +791,7 @@
   <string name="rendering_attr_noPolygons_name">Poligonus</string>
   <string name="rendering_attr_appMode_name">Renderēšanas režīms</string>
   <string name="rendering_attr_appMode_description">Kartes optimizēšana atbilstošam lietotāja profilam</string>
-  <string name="rendering_attr_contourLines_description">Iestatīt minimālo mērogu kontūrlīniju attēlošanai (nepieciešams SRTM-fails):</string>
-  <string name="rendering_attr_contourLines_name">Kontūrlīnijas</string>
-  <string name="rendering_attr_hmRendered_description">Palielināt kartes detalizāciju</string>
+    <string name="rendering_attr_hmRendered_description">Palielināt kartes detalizāciju</string>
   <string name="rendering_attr_hmRendered_name">Kartes detalizācija</string>
   <string name="route_roundabout">Lokveida kustība : izbraukt %1$d izbrauktuvē un turpināt kustību</string>
   <string name="route_kl">Turēties pa kreisi</string>
@@ -1271,8 +1269,7 @@ Aptuvenais kartes pārklājums un kvalitāte:
     
     <string name="index_item_nation_addresses">Adreses valsts mērogā</string>
 	<string name="index_item_world_altitude_correction">Pasaules augstuma korekcija</string>
-	<string name="index_item_world_seamarks">Jūras navigācijas zīmes</string>
-	<string name="index_item_world_bitcoin_payments">Pasaules bitcoin maksājumi</string>
+    <string name="index_item_world_bitcoin_payments">Pasaules bitcoin maksājumi</string>
 	<string name="index_item_world_basemap">Pasaules pamatkarte</string>
     <string name="index_item_world_ski">Pasaules slēpošanas karte</string>
     <string name="lang_hr">Horvātu</string>
@@ -1648,8 +1645,7 @@ Vai gribat veikt jaunu reģistrāciju?</string>
 	<string name="track_segments">Treka segmenti</string>
 	<string name="track_points">Treka punkti</string>
 	<string name="plugin_touringview_name">Tūrisma karte</string>
-	<string name="plugin_nautical_name">Jūras kartes</string>
-	<string name="plugin_ski_name">Slēpošanas kartes</string>
+    <string name="plugin_ski_name">Slēpošanas kartes</string>
 	<string name="rename_failed">Neizdevās mainīt nosaukumu.</string>
 	<string name="days_behind">dienas pēc</string>
 	<string name="back_to_map">Atpakaļ kartē</string>
@@ -1661,8 +1657,7 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="free">"Brīvi %1$s "</string>
 	<string name="device_memory">Ierīces atmiņa</string>
     <string name="world_ski_missing">Lai varētu parādīt slēpošanas kartes, vispirms ir jālejupielādē īpaša karte bezsaistes lietošanai</string>
-    <string name="nautical_maps_missing">Lai attēlotu kuģošanas karti, tā ir atsevišķi jālejupielādē</string>
-	<string name="edit_group">Labot grupu</string>
+    <string name="edit_group">Labot grupu</string>
     <string name="remove_the_tag">Dzēst atzīmi</string>
     <string name="gps_status">GPS statuss</string>
     <string name="version_settings_descr">Lejupielādēt nakts būvējumus</string>
@@ -2039,7 +2034,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="downloading_number_of_files">"Lejupielādē  - %1$d failu"</string>
     <string name="show_free_version_banner">Rādīt bezmaksas versijas banneri</string>
     <string name="show_free_version_banner_description">Arī maksas versijā jūs varat redzēt bezmaksas versijas banneri</string>
-    <string name="activate_seamarks_plugin">Lūdzu aktivizējiet jūras kartes spraudni</string>
     <string name="number_of_recipients">Adresātu skaits</string>
     <string name="osm_live_subscription">OSM Live abonoments</string>
     <string name="osm_live_user_public_name">Publiskais vārds</string>
@@ -2150,11 +2144,6 @@ failu(s)?
     <string name="full_report">Pilnais pārskats</string>
     <string name="open_street_map_login_and_pass">OpenStreetMap lietotāja vārds un parole</string>
     <string name="osm_live_email_desc">Mums tas ir vajadzīgs, lai informētu jūs par ieguldījumiem</string>
-    <string name="plugin_nautical_descr">"Spraudnis papildina OsmaAnd kartes ar jūras kartēm kuģošanai, ūdenslēpošanai un citiem ūdens sporta veidiem.
-\n
-\nSpeciāls kartes papildinājums rāda navigācijas ceļus, zīmes un simbolus uz ūdens un iekšzemē krastu tuvumā. Katra navigācijas zīme ir aprakstīta, lai to varētu viegli indentificēt un ir dots skaidrojums par tās nozīmi (kategorija, izmēri, krāsa, secība, atsauces, u.t.t.).
-\n
-\nLai atgrieztos uz OsmAnd standarta kartēm, deaktivizējiet spraudni vai nomainiet karti galvenajā izvēlnē - kartes attēlošana. "</string>
     <string name="number_of_contributors">Līdzstrādnieku skaits</string>
     <string name="file_name_containes_illegal_char">Faila vārds satur neatļautas rakstu zīmes</string>
 <string name="access_default_color">Noklusētā krāsa</string>
@@ -2322,7 +2311,6 @@ Un vēl...
     <string name="shared_string_recorded">Ierakstīts</string>
     <string name="shared_string_record">Ieraksts</string>
     <string name="gpx_logging_no_data">Nav datu</string>
-    <string name="rendering_attr_contourColorScheme_description">Kontūrlīniju krāsu shēma</string>
     <string name="save_track_min_speed">Minimālais kustības ātrums ierakstam</string>
     <string name="save_track_min_speed_descr">Filtrs: Iestatiet minimālo ātrumu punkta reğistrācijai žurnālā.</string>
     <string name="save_track_min_distance">Kustības noteicēja ieraksts</string>
@@ -2334,7 +2322,6 @@ Un vēl...
     <string name="christmas_desc_q">Rādīt Ziemassvētku POI?</string>
     <string name="rendering_value_light_brown_name">Gaiši brūns</string>
     <string name="rendering_value_dark_brown_name">Tumši brūns</string>
-    <string name="rendering_attr_contourColorScheme_name">Kontūrlīniju krāsu shēma</string>
     <string name="rendering_attr_surfaceIntegrity_name">Ceļa seguma integritāte</string>
     <string name="search_hint">Ierakstiet pilsētu, adresi vai POI</string>
     <string name="translit_name_if_miss">Transliterēt ja %1$s vārds iztrūkst</string>
@@ -2353,13 +2340,9 @@ kas tiks pievienots jūsu Kategorijas sadaļai.</string>
     <string name="rendering_value_fine_name">Smalki</string>
     <string name="lang_kab">Kabuļu</string>
     <string name="driving_region_australia">Austrālija</string>
-    <string name="rendering_attr_contourDensity_description">Kontūrlīniju biezums</string>
-    <string name="rendering_attr_contourDensity_name">Kontūrlīniju biezums</string>
     <string name="rendering_value_high_name">Augsts</string>
     <string name="rendering_value_medium_w_name">Vidējs</string>
     <string name="rendering_value_low_name">Zems</string>
-    <string name="rendering_attr_contourWidth_description">Kontūrlīniju platums</string>
-    <string name="rendering_attr_contourWidth_name">Kontūrlīniju platums</string>
     <string name="rendering_attr_hideWaterPolygons_description">Ūdens</string>
     <string name="legacy_search">Meklēšanas vēsture</string>
     <string name="show_legacy_search">Rādīt vēsturi</string>
@@ -2488,9 +2471,7 @@ Apraksta laukumu: %1$s x %2$s</string>
 \n 
 \n Un vēl…</string>
 
-    <string name="rendering_attr_depthContours_description">Rādīt dziļuma kontūras un punktus</string>
-    <string name="rendering_attr_depthContours_name">Jūras dziļuma kontūras</string>
-	<string name="add_new_folder">Pievienot jaunu mapi</string>
+    <string name="add_new_folder">Pievienot jaunu mapi</string>
     <string name="points_delete_multiple_succesful">Punkts(i) ir veiksmīgi izdzēsti.</string>
     <string name="points_delete_multiple">Jūs izdzēsīsiet %1$d punktu(us). Vai turpināt?</string>
     <string name="route_points_category_name">Punkti maršruta ceļā</string>
@@ -2572,11 +2553,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="no_underlay">Nav apakšklāja</string>
     <string name="subscribe_email_error">Kļūda</string>
     <string name="subscribe_email_desc">"Pierakstieties mūsu epastu sūtīšanas listei par aplikācijas atlaidēm un saņemiet  vēl 3 karšu lejupielādes!"</string>
-    <string name="depth_contour_descr">Kartes, kas satur jūras dziļuma kontūrlīnijas un punktus.</string>
-    <string name="sea_depth_thanks">Paldies par jūras dziļuma kontūrkaršu pirkumu!</string>
-    <string name="index_item_depth_contours_osmand_ext">Jūras dziļuma kontūras</string>
-    <string name="download_depth_countours">Jūras dziļuma kontūras</string>
-    <string name="nautical_maps">Jūras kartes</string>
     <string name="analyze_on_map">Skatīt uz kartes</string>
     <string name="shared_string_visible">Redzams</string>
     <string name="restore_purchases">Atjaunot pirkumus</string>
@@ -2618,8 +2594,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="display_zoom_level">Mērogs: %1$s</string>
     <string name="quick_action_auto_zoom_on">Automērogošana ieslēgta</string>
     <string name="quick_action_auto_zoom_off">Automērogošana izslēgta</string>
-    <string name="index_item_depth_points_southern_hemisphere">Jūras dziļuma punkti dienvidu puslodē</string>
-    <string name="index_item_depth_points_northern_hemisphere">Jūras dziļuma punkti ziemeļu puslodē</string>
     <string name="osmand_extended_description_part1">" OsmAnd (OSM Automated Navigation Directions) ir karšu un navigācijas aplikācija ar brīvu piekļuvi augstas kvalitātes OpenStreetMap (OSM) datiem no visas pasaules.
 \n
 \n Izbaudiet balss un vizuālo navigatoru, skatiet POIs (interešu punktus), veidojiet un pārvaldiet GPX trekus, lietojiet kontūrlīniju vizualizāciju and altitūdas informāciju (caur spraudni), izvēlieties auto, velobraucēju, kājāmgājēju režīmus, labojiet OSM datus un daudz vairāk. "</string>

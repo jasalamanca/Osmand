@@ -791,12 +791,6 @@
     <string name="altitude_ascent">Yoxuş</string>
     <string name="routing_attr_height_obstacles_name">Yüksəklik məlumatlarını istifadə et</string>
     <string name="routing_attr_height_obstacles_description">SRTM, ASTER və EU-DEM tərəfindən təmin edilən ərazi yüksəklik məlumatlarını istifadə et.</string>
-    <string name="rendering_attr_depthContours_description">Dərinlik konturlarını və nöqtələrini göstər.</string>
-    <string name="rendering_attr_depthContours_name">Dəniz dərinliyi konturları</string>
-    <string name="rendering_attr_contourDensity_description">Kontur xətlərinin sıxlığı</string>
-    <string name="rendering_attr_contourDensity_name">Kontur xətlərinin sıxlığı</string>
-    <string name="rendering_attr_contourWidth_description">Kontur xətlərinin genişliyi</string>
-    <string name="rendering_attr_contourWidth_name">Kontur xətlərinin genişliyi</string>
     <string name="legacy_search">Köhnə axtarış</string>
     <string name="show_legacy_search">Köhnə axtarışı göstər</string>
     <string name="upload_osm_note_description">OSM qeydinizi anonim və ya OpenStreetMap.org profilinizi istifadə edərək yükləyə bilərsiniz.</string>
@@ -808,10 +802,8 @@
     <string name="osmo_service_running">OsMo xidməti başladılıb</string>
     <string name="shared_string_paused">Fasilə verildi</string>
     <string name="shared_string_trip">Səyahət</string>
-    <string name="rendering_attr_contourColorScheme_description">Kontur xətlərinin rəng sxemi</string>
     <string name="rendering_value_light_brown_name">Açıq qəhvəyi</string>
     <string name="rendering_value_dark_brown_name">Tünd qəhvəyi</string>
-    <string name="rendering_attr_contourColorScheme_name">Kontur xətlərinin rəng sxemi</string>
     <string name="search_hint">Şəhər, ünvan, POI adı yazın</string>
     <string name="subcategories">Altkateqoriyalar</string>
     <string name="osm_live_payment_desc">Abunə haqqı hər ay tutulacaq. Abuləliyinizi istənilən vaxt Google Play-dən ləğv edə bilərsiniz.</string>
@@ -894,7 +886,6 @@
     <string name="osmo_mode_on">OsMo sessiyanı dayandır</string>
     <string name="osmo_mode_off">OsMo sessiyanı başlat</string>
     <string name="always_center_position_on_map">Mövqeni hər zaman mərkəzdə göstər</string>
-    <string name="index_item_world_seamarks">Dünya dəniz işarələri</string>
     <string name="lang_en_gb">İngiliscə (Birləşmiş Krallıq)</string>
     <string name="lang_af">Afrikanca</string>
     <string name="lang_al">Albanca</string>
@@ -949,11 +940,6 @@
     <string name="open_mapillary">Mapillary-ni aç</string>
     <string name="no_photos_descr">Bu məkan üçün şəkillərimiz yoxdur.</string>
     <string name="subscribe_email_desc">Proqramın endirimləri haqqında e-poçt siyahımıza abunə olun və əlavə 3 xəritə endirməsi əldə edin!</string>
-    <string name="sea_depth_thanks">Dəniz dərinliyi konturlarını aldığınız üçün təşəkkür edirik!</string>
-    <string name="index_item_depth_contours_osmand_ext">Dəniz dərinliyi konturları</string>
-    <string name="index_item_depth_points_southern_hemisphere">Dəniz dərinliyi cənub yarımkürəsində göstərilir</string>
-    <string name="download_depth_countours">Dəniz dərinliyi konturları</string>
-    <string name="nautical_maps">Dəniz xəritələri</string>
     <string name="do_not_send_anonymous_app_usage">Anonim proqram istifadəsi statistikalarını göndərmə</string>
     <string name="do_not_show_startup_messages">Başlanğıcda mesaj göstərmə</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">Az dağlıq</string>
@@ -1488,7 +1474,6 @@
     <string name="accessibility_options">Xüsusi imkanlar seçimləri</string>
     <string name="accessibility_mode">Xüsusi imkanlar rejimi</string>
     <string name="accessibility_mode_descr">Xüsusi imkanlar xüsusiyyətlərini aktivləşdirir.</string>
-    <string name="index_item_depth_points_northern_hemisphere">Dəniz dərinliyi şimal yarımkürəsində göstərilir</string>
     <string name="no_waypoints_found">Yol nöqtələri tapılmadı</string>
     <string name="context_menu_item_delete_waypoint">GPX yol nöqtəsi silinsin?</string>
     <string name="context_menu_item_edit_waypoint">GPX nöqtəsinə düzəliş et</string>
@@ -1557,7 +1542,6 @@
     <string name="app_mode_default">Xəritəyə baxış</string>
     <string name="share_route_as_gpx">Marşrutu GPX faylı olaraq paylaş</string>
     <string name="share_route_subject">Marşrut OsmAnd ilə paylaşılıb</string>
-    <string name="rendering_attr_contourLines_name">Kontur xətlərini göstər</string>
     <string name="rendering_attr_hmRendered_name">Daha çox xəritə detalı göstər</string>
     <string name="local_index_routing_data">Marşrutlama məlumatları</string>
     <string name="navigate_point_format">Format</string>

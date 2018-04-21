@@ -333,7 +333,6 @@
     <string name="map_widget_next_next_turn">"രണ്ടാമത്തെ  തിരുവ്"</string>
     <string name="bg_service_interval">ഉണരാനുള്ള ഇടവേള:</string>
     <string name="rendering_attr_appMode_name">വരച്ച് കാണിക്കുന്ന രീതി</string>
-    <string name="rendering_attr_contourLines_name">കോണ്ടൂര്‍ ലൈനുകള്‍ കാണിക്കുക</string>
     <string name="gpx_tags_txt">" ടാഗുകള്‍"</string>
     <string name="default_buttons_support">" സപ്പോര്‍ട്ട്"</string>
     <string name="south_east">"തെക്കു കിഴക്ക് "</string>
@@ -484,7 +483,6 @@
     <string name="add_favorite_dialog_default_favourite_name">താല്‍പര്യമുള്ളവ</string>
     <string name="add_favorite_dialog_favourite_added_template">താല്‍പര്യ ബിന്ദു \'\'{0}\'\' വിജയകരമായി ചേര്‍ത്തിരിക്കുന്നു.</string>
     <string name="app_name_osmand">ഓഎസ്എം ആന്റ്</string>
-    <string name="activate_seamarks_plugin">സീമാര്‍ക്ക് പ്ളഗ്-ഇന്‍ സജീവമാക്കുക</string>
     <string name="edit_filter">വിഭാഗങ്ങള്‍ എഡിറ്റ് ചെയ്യുക</string>
     <string name="delete_filter">ഫില്‍റ്റര്‍ നീക്കം ചെയ്യുക</string>
     <string name="donation_to_osm_desc">"സംഭാവനകളുടെ ഒരു ഭാഗം ഓഎസ്എംആന്റ് -ന്റെ കോണ്ട്രിബ്യൂട് ചെയ്തവര്‍ക്ക് കൊടുക്കുന്നതാണ്. സബ്സ്ക്രിപ്ഷന്‍ വില  മാറ്റമില്ലാതെ തുടരും."</string>
@@ -1344,12 +1342,10 @@
     <string name="shared_string_trip">യാത്രാ</string>
     <string name="shared_string_recorded">റിക്കോഡ് ചെയ്തത്</string>
     <string name="shared_string_record">റിക്കോഡ്</string>
-    <string name="rendering_attr_contourColorScheme_description">കോണ്ടൂര്‍ വരകളുടെ നിറങ്ങളുടെ സ്കീം</string>
     <string name="save_track_min_speed">"റിക്കോഡ് ചെയ്യാനുള്ള കുറഞ്ഞ  വേഗത"</string>
     <string name="save_track_min_distance">"ചലിക്കുന്നതറിഞ്ഞ് റിക്കോഡ്  ചെയ്യുക"</string>
     <string name="save_track_precision">"റിക്കോഡ് ചെയ്യാനുള്ള കുറഞ്ഞ  കൃത്യത"</string>
     <string name="rendering_value_light_brown_name">ഇളം തവിട്ടുനിറം</string>
-    <string name="rendering_attr_contourColorScheme_name">കോണ്ടൂര്‍ വരകളുടെ നിറങ്ങളുടെ സ്കീം</string>
     <string name="translit_names">ലിപി മാറ്റിയെഴുതിയ പേരുകള്‍</string>
     <string name="save_filter">അരിപ്പ (ഫില്‍ട്ടര്‍) സൂക്ഷിക്കുക</string>
     <string name="search_my_location">എന്റെ സ്ഥാനം തെരയുക</string>
@@ -1405,7 +1401,6 @@
     <string name="osmo_mode_on">ഓസ്മോ ഉപയോഗം നിര്‍ത്തുക</string>
     <string name="osmo_mode_off">ഓസ്മോയുപയോഗിച്ച് തുടങ്ങുക</string>
     <string name="index_item_world_altitude_correction">"ലോക ഉയരവ്യത്യാസതിരുത്തലുകള്‍ "</string>
-    <string name="index_item_world_seamarks">ലോകകടലടയാളങ്ങള്‍</string>
     <string name="index_item_world_ski">ലോക സ്കി ഭൂപടങ്ങള്‍</string>
     <string name="lang_pt_br">പോര്‍ട്ടുഗീസ് (ബ്രസീൽ)</string>
     <string name="lang_en">" ഇംഗ്ലീഷ് "</string>
@@ -1482,8 +1477,7 @@
     <string name="osn_bug_name">"ഓഎസ്എം കുറിപ്പ് "</string>
     <string name="lang_hsb">സോര്‍ബിയന്‍(അപ്പര്‍)</string>
     <string name="plugin_touringview_name">ടൂറിങ്ങ് ഭൂപടവിന്യാസം</string>
-	<string name="plugin_nautical_name">കപ്പലോട്ട ഭൂപട വിന്യാസം</string>
-	<string name="plugin_ski_name">സ്കീ ഭൂപടവിന്യാസം</string>
+    <string name="plugin_ski_name">സ്കീ ഭൂപടവിന്യാസം</string>
     <string name="lock_screen_request_explanation">" സ്ക്രീന്‍ ഓഫ് ചെയ്ത് പവര്‍ ഉപയോഗം കുറക്കാന്‍ %1$s ന് ഈ അനുമതി വേണം."</string>
     <string name="none_selected_gpx">ജിപിഎക്സ് ഫയലുകളൊന്നും തെരഞ്ഞെടുത്തിട്ടില്ല. തെരഞ്ഞെടുക്കാനായി ലഭ്യമായ പാതയില്‍ ഞെക്കിപിടിക്കുക.</string>
     <string name="layer_amenity_label">ബിന്ദുവിന്റെ പേരുചീട്ട്</string>
@@ -1747,8 +1741,6 @@
     <string name="average_altitude">ശരാശരി ഉയരം</string>
     <string name="total_distance">ആകെ ദൂരം</string>
     <string name="auto_split_recording_descr">"ആറുമിനിറ്റ് ഇടവേളക്ക് ശേഷം പുതിയ ഭാഗമാക്കുക, പുതിയ പാത 2 മണിക്കൂറിന് ശേഷം, അല്ലെങ്കില്‍ പുതിയ ഫയല്‍ ദിവസം മാറിയ വിധം വലിയ ഇടവേളക്ക് "</string>
-    <string name="rendering_attr_contourDensity_description">കോണ്ടൂര്‍ ലൈനുകളുടെ ഡെന്‍സിറ്റി</string>
-    <string name="rendering_attr_contourDensity_name">കോണ്ടൂര്‍ ലൈനുകളുടെ ഡെന്‍സിറ്റി</string>
     <string name="shared_string_without_name">"നാമമില്ലാത്തത് "</string>
     <string name="shared_string_actions">പ്രവര്‍ത്തികള്‍</string>
     <string name="shared_string_more_without_dots">കൂടുതല്‍</string>

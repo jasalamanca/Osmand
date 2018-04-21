@@ -189,8 +189,6 @@ Proportional hukommelse %4$s MB (Android grænse %5$s MB, Dalvik %6$s MB).</stri
     <string name="rendering_attr_noPolygons_name">Polygoner</string>
     <string name="rendering_attr_appMode_name">Optegningsmåde</string>
     <string name="rendering_attr_appMode_description">Optimer kort til</string>
-    <string name="rendering_attr_contourLines_description">Vis fra zoom-niveau (kræver højdekurvedata):</string>
-    <string name="rendering_attr_contourLines_name">Vis højdekurver</string>
     <string name="rendering_attr_hmRendered_description">Øg mængden af kortdetaljer, der vises.</string>
     <string name="rendering_attr_hmRendered_name">Vis flere kortdetaljer</string>
     <string name="local_index_routing_data">Ruteplanlægningsdata</string>
@@ -1138,7 +1136,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="index_item_world_basemap">Global oversigtskort</string>
     <string name="index_item_world_ski">Globalt skikort</string>
     <string name="index_item_nation_addresses">Adresser på landsplan</string>
-    <string name="index_item_world_seamarks">Globale sømærker</string>
     <string name="index_item_world_bitcoin_payments">Globale bitcoinbetalinger</string>
     <string name="index_item_world_altitude_correction">Global højdekorrektion</string>
     <string name="always_center_position_on_map">Vis altid position centeret</string>
@@ -1514,9 +1511,7 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="plugin_install_needs_network">Internetforbindelse behøves for at installere udvidelsen.</string>
     <string name="get_plugin">Hent</string>
     <string name="plugin_ski_name">Skikort</string>
-    <string name="plugin_nautical_name">Søkort</string>
     <string name="world_ski_missing">For at vise skikort, skal det særlige offline kort hentes</string>
-    <string name="nautical_maps_missing">For at vise søkort, skal det særlige offline kort hentes</string>
     <string name="rendering_attr_pisteGrooming_name">Pistepreparering</string>
     <string name="free">Tilgængelig %1$s</string>
     <string name="device_memory">Lagerplads</string>
@@ -1527,12 +1522,7 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="watch">Vis</string>
 
     <string name="plugin_touringview_name">Touring kortvisning</string>
-	<string name="plugin_nautical_descr">Udvidelsen giver mulighed for at vise maritime kort til sejlsport, sejlads og andre former for vandsport. 
-\n 
-\nEn særlig kort tilføjelse giver alle maritime sømærker og søkortsymboler, for indre såvel som for kystnært navigation. Beskrivelsen af hvert sømærke giver oplysninger, der er nødvendige for at identificere dem og deres betydning (kategori, form, farve, sekvens, reference, etc.). 
-\n 
-\nFor at vende tilbage til et af denkonventionelle kortformater, enten deaktiver kortet igen, eller ændre \'Kortformat\' under \'Konfigurer kort \"som ønsket.</string>
-	<string name="plugin_ski_descr">Udvidelsen viser detaljerne om global skiløjper, langrendsruter, alpine skiruter, svævebaner og skilifte. Ruter og pister vises farvekodede efter sværhedsgrad, og vises i et særligt \'Vinter\' kortformat, som et snefarvet vinterlandskab.
+    <string name="plugin_ski_descr">Udvidelsen viser detaljerne om global skiløjper, langrendsruter, alpine skiruter, svævebaner og skilifte. Ruter og pister vises farvekodede efter sværhedsgrad, og vises i et særligt \'Vinter\' kortformat, som et snefarvet vinterlandskab.
 \n
 \nAktivering ændrer kortformat til \'Vinter og ski\', som viser alle landskabstræk under vinterlige forhold. 
 \nVisningen kan altid nulstilles ved enten at deaktivere den igen her, eller ved at ændre \'Kortformat\' under \'Konfigurer kort\' som ønsket.</string>
@@ -1850,7 +1840,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="show_free_version_banner_description">Vis banneret for den gratis version selv i den betalte version.</string>
     <string name="downloading_number_of_files">Henter - %1$d fil</string>
     <string name="buy">KØB</string>
-    <string name="activate_seamarks_plugin">Aktiver sømærkeudvidelsen</string>
     <string name="later">Senere</string>
     <string name="get_full_version">Fuldversion</string>
     <string name="regions">Områder</string>
@@ -2276,7 +2265,6 @@ Hvis du  ønsker at støtte OsmAnd og OSM, er dette en god måde at gøre det p�
     <string name="search_hint">"Indtast by, adresse,  IP navn"</string>
     <string name="rendering_value_light_brown_name">Lysebrun</string>
     <string name="rendering_value_dark_brown_name">Mørkebrun</string>
-    <string name="rendering_attr_contourColorScheme_name">Farveskema for højdekurver</string>
     <string name="rendering_attr_surfaceIntegrity_name">Vejoverfladens integritet</string>
     <string name="christmas_poi">Jule interessepunkter (IP)</string>
     <string name="christmas_desc">I anledning af jul og nytår, vælg at få vist interessepunkter tilknyttet jul: juletræer, markeder, mm.</string>
@@ -2287,7 +2275,6 @@ Hvis du  ønsker at støtte OsmAnd og OSM, er dette en god måde at gøre det p�
     <string name="save_track_min_distance_descr">Filter: Indstil minimumsafstand fra sidste position før et punkt logges.</string>
     <string name="save_track_precision">Mindste nøjagtighed for logning</string>
     <string name="save_track_precision_descr">Filter: Indstil minimum nøjagtighed før et punkt logges.</string>
-    <string name="rendering_attr_contourColorScheme_description">Farveskema for højdekurver</string>
     <string name="shared_string_continue">Fortsæt</string>
     <string name="shared_string_pause">Pause</string>
     <string name="shared_string_trip">Tur</string>
@@ -2331,10 +2318,6 @@ Hvis du  ønsker at støtte OsmAnd og OSM, er dette en god måde at gøre det p�
     <string name="lang_sr_latn">Serbisk (Latin)</string>
     <string name="lang_zh_hk">Kinesisk (Hong Kong)</string>
     <string name="rendering_attr_hideWaterPolygons_description">Vand</string>
-    <string name="rendering_attr_contourWidth_description">Bredde på højdekurver</string>
-    <string name="rendering_attr_contourWidth_name">Bredde på højdekurver</string>
-    <string name="rendering_attr_contourDensity_description">Tæthed på højdekurver</string>
-    <string name="rendering_attr_contourDensity_name">Tæthed på højdekurver</string>
     <string name="rendering_value_high_name">Høj</string>
     <string name="rendering_value_medium_w_name">Mellem</string>
     <string name="rendering_value_low_name">Lav</string>
@@ -2438,9 +2421,7 @@ Repræsenterer område: %1$s x %2$s</string>
 \n  • Flere andre forbedringer og fejlrettelser 
 \n 
 \n  og mere…</string>
-	<string name="rendering_attr_depthContours_description">Vis dybdekonturer og -punkter.</string>
-    <string name="rendering_attr_depthContours_name">Havdybdekonturer</string>
-	
+
     <string name="routing_attr_height_obstacles_name">Brug højdedata</string>
     <string name="routing_attr_height_obstacles_description">Brug terrænhøjdedata fra SRTM, ASTER og EU-DEM.</string>
 
@@ -2513,13 +2494,6 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="restore_purchases">Gendan køb</string>
     <string name="shared_string_visible">Synlig</string>
     <string name="analyze_on_map">Analyser på kortet</string>
-    <string name="sea_depth_thanks">Tak for købet af havdybdekonturer!</string>
-    <string name="index_item_depth_contours_osmand_ext">Havdybdekonturer</string>
-    <string name="index_item_depth_points_southern_hemisphere">Havdybdepunkter for den sydlige halvkugle</string>
-    <string name="index_item_depth_points_northern_hemisphere">Havdybdepunkter for den nordlige halvkugle</string>
-    <string name="download_depth_countours">Havdybdekonturer</string>
-    <string name="nautical_maps">Søkort</string>
-    <string name="depth_contour_descr">Kortsæt der indeholder havdybdekonturlinjer og -punkter.</string>
     <string name="subscribe_email_error">Fejl</string>
     <string name="subscribe_email_desc">Abonner på e-mail listen om rabatter og hent yderligere 3 kort!</string>
     <string name="no_overlay">Ingen overlejring</string>
@@ -2827,8 +2801,7 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="day_off_label">fra</string>
     <string name="winter_and_ski_renderer">Vinter og ski</string>
     <string name="touring_view_renderer">Touringvisning (kontrast og detaljer)</string>
-    <string name="nautical_renderer">Nautisk</string>
-<string name="rendering_attr_hidePOILabels_name">IP etiketter</string>
+    <string name="rendering_attr_hidePOILabels_name">IP etiketter</string>
     <string name="release_2_9">• Opdateret kontekstmenuen: viser, når et interessepunkt åbner / lukker 
 \n 
 \n• Transportmenu: alle tilgængelige ruter er nu øverst 

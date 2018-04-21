@@ -9,9 +9,7 @@
   <string name="rendering_attr_noPolygons_name">Полігони</string>
   <string name="rendering_attr_appMode_name">Режим відображення</string>
   <string name="rendering_attr_appMode_description">Оптимізувати мапу</string>
-  <string name="rendering_attr_contourLines_description">Мінімальний рівень масштабу з відображенням ізоліній висот:</string>
-  <string name="rendering_attr_contourLines_name">Показувати ізолінії</string>
-  <string name="rendering_attr_hmRendered_description">Відображати більше деталей на мапі.</string>
+    <string name="rendering_attr_hmRendered_description">Відображати більше деталей на мапі.</string>
   <string name="rendering_attr_hmRendered_name">Більше деталей</string>
   <string name="local_index_routing_data">Дані роутингу</string>
   <string name="navigate_point_format">Формат</string>
@@ -1295,8 +1293,7 @@
     <string name="localization_pref_title">Локалізація</string>
     <string name="index_item_nation_addresses">адреси по всій країні</string>
 	<string name="index_item_world_altitude_correction">Всесвітня корекція висоти</string>
-	<string name="index_item_world_seamarks">Всесвітні морські навігаційні знаки</string>
-	<string name="index_item_world_basemap">Всесвітня оглядова мапа</string>
+    <string name="index_item_world_basemap">Всесвітня оглядова мапа</string>
     <string name="index_item_world_ski">Всесвітня лижна мапа</string>
     <string name="lang_hr">Хорватська</string>
     <string name="lang_zh">Китайська</string>
@@ -1557,10 +1554,8 @@
     <string name="free">Вільно %1$s</string>
 	<string name="device_memory">Пам’ять пристрою</string>
     <string name="plugin_ski_name">Лижні мапи</string>
-    <string name="plugin_nautical_name">Морські мапи</string>
     <string name="world_ski_missing">Для показу лижних мап, потрібно завантажити спеціалізовані мапи</string>
-    <string name="nautical_maps_missing">Для показу морських мап, потрібно завантажити спеціалізовані мапи</string>
-	<string name="edit_group">Редагувати групу</string>
+    <string name="edit_group">Редагувати групу</string>
     <string name="remove_the_tag">ВИЛУЧИТИ ТЕҐ</string>
     <string name="gps_status">Стан GPS</string>
     <string name="version_settings_descr">Завантажити нічні збірки.</string>
@@ -1621,11 +1616,6 @@
 	
 	<string name="plugin_install_needs_network">Для встановлення цього втулку вам потрібне з’єднання з Інтернет.</string>
 	<string name="get_plugin">Отримати</string>
-	<string name="plugin_nautical_descr">Цей втулок збагачує програму OsmAnd морськими мапами для човнів, вітрильного спорту та інших видів водних видів спорту.
-\n
-\nСпеціальний втулок-мапа для OsmAnd забезпечить усі навігаційні навігаційні знаки та символи, як для плавання у внутрішніх водах, так і для прибережної навігації. Опис кожної навігаційної позначки містить подробиці, необхідні для їх ідентифікації та їхнього значення (категорія, форма, колір, послідовність, посилання та інше).
-\n
-\nЩоб повернутися до одного з звичайних стилів OsmAnd, просто деактивуйте цей втулок або змініть „Стиль мапи“ у розділі „Налаштування мапи“ на потрібний.</string>
     <string name="action_create">Створити дію</string>
 	<string name="action_modify">Змінити дію</string>
 	<string name="action_delete">Вилучити дію</string>
@@ -1920,7 +1910,6 @@
     <string name="downloads_left_template">%1$s завантажень лишилось</string>
     <string name="roads">Дороги</string>
     <string name="buy">Придбати</string>
-    <string name="activate_seamarks_plugin">Будь ласка, активуйте втулок з морськими навігаційними знаками</string>
     <string name="later">Пізніше</string>
     <string name="get_full_version">Повна версія</string>
     <string name="downloads">Завантаження</string>
@@ -2176,13 +2165,9 @@
     <string name="lang_en_gb">Англійська (Сполучене Королівство)</string>
     <string name="lang_be_by">Білоруська (Латинка)</string>
     <string name="lang_kn">Каннада</string>
-    <string name="rendering_attr_contourDensity_description">Частота горизонталей</string>
-    <string name="rendering_attr_contourDensity_name">Частота горизонталей</string>
     <string name="rendering_value_high_name">Висока</string>
     <string name="rendering_value_medium_w_name">Середня</string>
     <string name="rendering_value_low_name">Низька</string>
-    <string name="rendering_attr_contourWidth_description">Товщина горизонталей</string>
-    <string name="rendering_attr_contourWidth_name">Товщина горизонталей</string>
     <string name="rendering_attr_hideWaterPolygons_description">Воду</string>
     <string name="rendering_attr_hideWaterPolygons_name">Приховати воду</string>
     <string name="legacy_search">Старий пошук</string>
@@ -2224,7 +2209,6 @@
 \n• Безліч інших поліпшень й виправлень помилок 
 \n 
 \nі багато іншого …</string>
-    <string name="rendering_attr_contourColorScheme_description">Колірна схема горизонталей</string>
     <string name="save_track_min_speed">Мінімальна швидкість для запису</string>
     <string name="save_track_min_speed_descr">Виберіть мінімальну швидкість, при перевищенні якої точка буде записана в трек.</string>
     <string name="save_track_min_distance">Мінімальне зміщення для запису</string>
@@ -2236,7 +2220,6 @@
     <string name="christmas_desc_q">Показати різдвяні POI?</string>
     <string name="rendering_value_light_brown_name">Світло-коричневий</string>
     <string name="rendering_value_dark_brown_name">Темно-коричневий</string>
-    <string name="rendering_attr_contourColorScheme_name">Колірна схема горизонталей</string>
     <string name="rendering_attr_surfaceIntegrity_name">Якість дорожнього покриття</string>
     <string name="search_hint">Введіть назву міста, адресу, назвуPOI</string>
     <string name="translit_name_if_miss">Транслітерація якщо назва на %1$s відсутня</string>
@@ -2384,9 +2367,7 @@
     <string name="routing_attr_height_obstacles_name">Використовувати дані висоти</string>
     <string name="routing_attr_height_obstacles_description">Використовувати дані про рельєф земної поверхні від SRTM, ASTER та EU-DEM.</string>
 
-    <string name="rendering_attr_depthContours_description">Показати контури глибини і точки.</string>
-    <string name="rendering_attr_depthContours_name">Контури морських глибин</string>
-	<string name="auto_split_recording_title">Авто-розрив запису після перерви</string>
+    <string name="auto_split_recording_title">Авто-розрив запису після перерви</string>
 	<string name="auto_split_recording_descr">Почати новий сегмент після 6 хвилинної перерви, новий трек після 2 годинної перерви, або новий файл після тривалої перерви (якщо змінилася дата).</string>
     <string name="select_gpx_folder">Виберіть теку GPX-треку</string>
     <string name="release_2_6">"\\u2022 Нова функція: кнопка швидкої дії
@@ -2515,13 +2496,6 @@
     <string name="no_underlay">Підкладка вимкнена</string>
     <string name="subscribe_email_error">Помилка</string>
     <string name="mapillary">Mapillary</string>
-    <string name="depth_contour_descr">Набір мап із зазначенням точок контурних ліній і глибини морського дна.</string>
-    <string name="sea_depth_thanks">Дякую за покупку контурів морських глибин!</string>
-    <string name="index_item_depth_contours_osmand_ext">Контури морських глибин</string>
-    <string name="index_item_depth_points_southern_hemisphere">Точки морських глибин південної півкулі</string>
-    <string name="index_item_depth_points_northern_hemisphere">Точки морських глибин північної півкулі</string>
-    <string name="download_depth_countours">Контури морських глибин</string>
-    <string name="nautical_maps">Морські мапи</string>
     <string name="analyze_on_map">Аналізувати на мапі</string>
     <string name="shared_string_visible">Видимі</string>
     <string name="restore_purchases">Відновлення покупок</string>
@@ -2912,6 +2886,5 @@
     <string name="day_off_label">вих.</string>
     <string name="winter_and_ski_renderer">Зимовий/лижний</string>
     <string name="touring_view_renderer">Туристичний (контраст і деталі)</string>
-    <string name="nautical_renderer">Морський</string>
 
 </resources>

@@ -181,8 +181,6 @@ Proportionellt minne %4$s MB (Android-gräns %5$s MB, Dalvik %6$s MB).</string>
     <string name="rendering_attr_noPolygons_description">Gör alla ytor på kartan transparenta.</string>
     <string name="rendering_attr_noPolygons_name">Polygoner</string>
     <string name="rendering_attr_appMode_name">Renderingsläge</string>
-    <string name="rendering_attr_contourLines_description">Visning från zoomnivå (kräver höjdkurvsdata):</string>
-    <string name="rendering_attr_contourLines_name">Visa höjdkurvor</string>
     <string name="rendering_attr_hmRendered_description">Öka antalet kartdetaljer som visas.</string>
     <string name="rendering_attr_hmRendered_name">Visa mer kartdetaljer</string>
     <string name="local_index_routing_data">Ruttdata</string>
@@ -1128,7 +1126,6 @@ Nyttjat utrymme är {1} MB.
     <string name="app_modes_choose_descr">Välj vilka användningsprofiler som ska visas i appen.</string>
     <string name="index_item_nation_addresses">adresser (hela landet)</string>
     <string name="index_item_world_altitude_correction">Rättning av höjd (världen)</string>
-    <string name="index_item_world_seamarks">Sjömärken (världen)</string>
     <string name="index_item_world_bitcoin_payments">Bitcoinbetalningar (världen)</string>
     <string name="index_item_world_basemap">Översiktskarta (världen)</string>
     <string name="index_item_world_ski">Skidkarta (världen)</string>
@@ -1507,9 +1504,7 @@ Vill du fortsätta med en ny registrering?</string>
     <string name="shared_string_disable">Inaktivera</string>
     <string name="get_plugin">Hämta</string>
     <string name="plugin_ski_name">Skidkartsvy</string>
-    <string name="plugin_nautical_name">Sjökortsvy</string>
     <string name="world_ski_missing">För att kunna visa skidkartor måste den speciella offline-kartan hämtas</string>
-    <string name="nautical_maps_missing">För att kunna visa sjökort måste den speciella offline-kartan hämtas</string>
     <string name="rendering_attr_pisteGrooming_name">Pist- och spårpreparering</string>
     <string name="free">Ledigt %1$s</string>
     <string name="device_memory">Intern lagring</string>
@@ -1517,11 +1512,7 @@ Vill du fortsätta med en ny registrering?</string>
     <string name="roads_only">Endast vägar</string>
     <string name="notes">Anteckningar</string>
     <string name="online_map">Online-karta</string>
-    <string name="plugin_nautical_descr">Om du aktiverar denna vy ändras kartstilen till Nautisk och visar alla sjömärken och sjökortssymboler.
-		\n\nEn kartfil som innehåller alla nautiska symboler globalt finns tillgänglig som en enda nedladdning med namnet \'World seamarks\'.
-		\n\nDenna vy kan ändras genom att antingen inaktivera den här igen eller genom att ändra kartstilen under Konfigurera kartor.
-	</string>
-	<string name="plugin_ski_descr">"Om du aktiverar denna vy ändras kartstilen till Vinter och skidor, och visar landskapet i vinterskrud.
+    <string name="plugin_ski_descr">"Om du aktiverar denna vy ändras kartstilen till Vinter och skidor, och visar landskapet i vinterskrud.
 \n\nEn global karta med alla pister och längdskidspår i denna vy finns tillgänglig under Alla kartor som \'World ski map\'.
 \n\nDenna vy kan ändras genom att antingen inaktivera den här igen eller genom att ändra kartstilen under Konfigurera kartor. "</string>
 	<string name="plugin_touringview_descr">"Om du aktiverar denna vy ändras kartan till \'Vägkartsvy\', som är en speciell vy med mycket detaljer för resenärer och yrkesförare.
@@ -1811,7 +1802,6 @@ Long %2$s</string>
 
     <string name="downloads">Nedladdningar</string>
     <string name="buy">KÖP</string>
-    <string name="activate_seamarks_plugin">Aktivera modulen Sjömärken</string>
     <string name="later">Senare</string>
     <string name="get_full_version">Fullversionen</string>
     <string name="favorite_category_dublicate_message">Det angivna kategorinamnet finns redan. Ange ett annat namn.</string>
@@ -2183,7 +2173,6 @@ Om du tycker om OsmAnd och OSM och vill stödja dem så är detta ett utmärkt s
     <string name="search_map">Söker efter kartor …</string>
     <string name="first_usage_greeting">Få anvisningar och upptäck nya platser utan Internetuppkoppling</string>
     <string name="search_my_location">Sök efter min plats</string>
-    <string name="rendering_attr_contourColorScheme_description">Färgschema för konturer</string>
     <string name="save_track_min_speed">Minsta loggningshastighet</string>
     <string name="save_track_min_speed_descr">Filter: Välj minsta hastighet som startar loggning av en punkt.</string>
     <string name="save_track_min_distance">Loggning av minimal rörelse</string>
@@ -2194,7 +2183,6 @@ Om du tycker om OsmAnd och OSM och vill stödja dem så är detta ett utmärkt s
     <string name="christmas_desc_q">Visa Jul-POI?</string>
     <string name="rendering_value_light_brown_name">Ljusbrun</string>
     <string name="rendering_value_dark_brown_name">Mörkbrun</string>
-    <string name="rendering_attr_contourColorScheme_name">Färgschema för konturer</string>
     <string name="shared_string_notifications">Aviseringar</string>
     <string name="shared_string_continue">Fortsätt</string>
     <string name="shared_string_pause">Pausa</string>
@@ -2232,7 +2220,6 @@ Om du tycker om OsmAnd och OSM och vill stödja dem så är detta ett utmärkt s
 \n 
 \n och mer …</string>
     <string name="christmas_desc">Med tanke på den kommande julen och nyåret så kan du välja att visa POI som har med julen att göra: julgranar, julmarknader med mera.</string>
-    <string name="rendering_attr_contourWidth_name">Bredd på konturlinjer</string>
     <string name="rendering_attr_hideWaterPolygons_description">Vatten</string>
     <string name="osm_live_payment_desc">Prenumerationsavgiften kommer att faktureras varje månad. Du kan när som helst avbryta din prenumeration i Google Play.</string>
     <string name="donation_to_osm_desc">En del av din donation kommer att skickas till OSM-användare som skickar in ändringar till OpenStreetMap. Prenumerationens kostnad fortsätter att vara densamma.</string>
@@ -2252,11 +2239,8 @@ Om du tycker om OsmAnd och OSM och vill stödja dem så är detta ett utmärkt s
 \n 
 \nmed mera…</string>
     <string name="rendering_value_low_name">Låg</string>
-    <string name="rendering_attr_contourWidth_description">Bredd på konturlinjer</string>
     <string name="rendering_value_high_name">Hög</string>
     <string name="rendering_value_medium_w_name">Mellan</string>
-    <string name="rendering_attr_contourDensity_description">Täthet på konturlinjer</string>
-    <string name="rendering_attr_contourDensity_name">Täthet på konturlinjer</string>
     <string name="lang_zh_hk">Kinesiska (Hong Kong)</string>
     <string name="driving_region_australia">Australien</string>
     <string name="rendering_attr_hideWaterPolygons_name">Dölj vatten</string>
@@ -2293,8 +2277,7 @@ Om du tycker om OsmAnd och OSM och vill stödja dem så är detta ett utmärkt s
     <string name="quick_action_map_underlay_title">Kartunderlägg</string>
     <string name="quick_action_map_underlay">Ändra kartunderlägg</string>
     <string name="quick_action_map_underlay_switch">Kartunderlägget har ändrats till \"%s\".</string>
-    <string name="rendering_attr_depthContours_name">Konturer för sjödjup</string>
-	<string name="rendering_value_fine_name">Fin</string>
+    <string name="rendering_value_fine_name">Fin</string>
     <string name="navigate_point_olc">Öppna platskod</string>
     <string name="navigate_point_olc_info_invalid">Ogiltig OLC
 </string>
@@ -2348,7 +2331,6 @@ Vänligen tillhandahåll fullständig kod</string>
 	<string name="routing_attr_height_obstacles_name">Använd höjddata</string>
     <string name="routing_attr_height_obstacles_description">Använd terränghöjddata från SRTM, ASTER och EU-DEM.</string>
 
-    <string name="rendering_attr_depthContours_description">Visa djupkonturer och punkter.</string>
     <string name="shared_string_slope">Sluttning</string>
     <string name="altitude_range">Höjdområde</string>
     
@@ -2398,7 +2380,6 @@ Vänligen tillhandahåll fullständig kod</string>
     <string name="no_overlay">Inget överlägg</string>
     <string name="no_underlay">Inget underlägg</string>
     <string name="subscribe_email_error">Fel</string>
-    <string name="nautical_maps">Sjökort</string>
     <string name="shared_string_visible">Synlig</string>
     <string name="online_photos">Online-foton</string>
     <string name="shared_string_add_photos">Lägg till foton</string>

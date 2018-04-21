@@ -691,8 +691,6 @@
     <string name="rendering_attr_noPolygons_name">Polygony</string>
     <string name="rendering_attr_appMode_name">Režim vykreslování</string>
     <string name="rendering_attr_appMode_description">Optimalizace mapy pro příslušný uživatelský profil</string>
-    <string name="rendering_attr_contourLines_description">Minimální zvětšení, od kterého se budou zobrazovat vrstevnice (vyžaduje soubor \'SRTM\'):</string>
-    <string name="rendering_attr_contourLines_name">Zobrazit vrstevnice</string>
     <string name="rendering_attr_hmRendered_description">Zvýšit počet detailů vyobrazených v mapě.</string>
     <string name="rendering_attr_hmRendered_name">Více mapových detailů</string>
     <string name="asap">hned</string>
@@ -1008,7 +1006,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="calculate_osmand_route_without_internet">Vypočítat trasu bez připojení k Internetu</string>
     <string name="gpx_option_calculate_first_last_segment">Vypočítat OsmAnd trasu pro první a poslední úsek</string>
     <string name="index_item_world_altitude_correction">Svět - korekce výšky</string>
-    <string name="index_item_world_seamarks">Svět ­– plavební</string>
     <string name="index_item_world_bitcoin_payments">Svět - platby bitcoin</string>
     <string name="index_item_world_basemap">Svět - základní mapa</string>
     <string name="index_item_world_ski">Svět - mapa lyžování</string>
@@ -1482,10 +1479,8 @@ Seznam obsažených zemí (prakticky celý svět!): Afghánistán, Albánie, Al�
     <string name="shared_string_enabled">Povolen</string>
     <string name="plugin_description_title">Popisek</string>
     <string name="edit_group">Upravit skupinu</string>
-    <string name="nautical_maps_missing">Pro zobrazování plavebních map je třeba stáhnout speciální mapu</string>
     <string name="world_ski_missing">Pro zobrazování lyžařských map je třeba stáhnout speciální mapu</string>
     <string name="plugin_ski_name">Lyžařský mapový pohled</string>
-    <string name="plugin_nautical_name">Plavební mapový pohled</string>
     <string name="notes">Poznámky</string>
     <string name="online_map">On-line mapa</string>
     <string name="roads_only">Pouze cesty</string>
@@ -1573,11 +1568,6 @@ Délka %2$s</string>
 \nNení potřeba stahovat samostatný soubor, tento pohled používá standardní mapové soubory. 
 \n 
 \nTento pohled může být vypnut jeho deaktivováním zde, nebo změnou hodnoty možnosti „Styl mapy“ v „Nastavení mapy“.</string>
-    <string name="plugin_nautical_descr">Tento modul obohacuje OsmAnd mapy a navigaci o poskytování plavebních map pro plavení, plachtění a ostatní typy vodních sportů.
-\n
-\nSpeciální mapový modul pro OsmAnd poskytuje všechny plavební znaky a symboly pro vnitrozemskou i pobřežní navigaci. Popis každého plavebního znaku poskytuje všechny údaje k jejich identifikaci (kategorii, tvar, barvu atd.)
-\n
-\nTento pohled může být vypnut jeho deaktivovací zde, nebo změnou hodnoty ve „Vykreslování mapy“ v „Nastavení mapy“.</string>
     <string name="plugin_ski_descr">Tento modul pro OsmAnd zobrazuje sjezdovky, běžecké tratě, skialpinistické trasy, lanovky a lyžařské vleky. Tratě a sjezdovky jsou zobrazeny barvami podle obtížnosti na speciálně barevně upravené zimní mapě.
 \n
 \nAktivováním tohoto pohledu se změní styl mapy na \"Winter and ski\", který zobrazuje krajinné útvary v zimních podmínkách. Tento pohled může být vypnut jeho deaktivováním zde, nebo změnou hodnoty ve \"Vykreslování mapy\" v \"Nastavení mapy\".</string>
@@ -1753,7 +1743,6 @@ Délka %2$s</string>
     <string name="favorite_category_dublicate_message">Zadaný název kategorie již existuje. Zvolte prosím jiný název.</string>
     <string name="favorite_category_name">Název kategorie</string>
     <string name="favorite_category_add_new_title">Přidat novou kategorii</string>
-    <string name="activate_seamarks_plugin">Prosím aktivujte modul Plavební mapový pohled</string>
     <string name="later">Později</string>
     <string name="get_full_version">Plná verze</string>
     <string name="downloads">Stahování</string>
@@ -2127,7 +2116,6 @@ Pokud máte rádi OsmAnd a OSM a chcete je podpořit, toto je výborný způsob,
     <string name="shared_string_recorded">Zaznamenáno</string>
     <string name="shared_string_record">Záznam</string>
     <string name="gpx_logging_no_data">Žádná data</string>
-    <string name="rendering_attr_contourColorScheme_description">Barevné schéma pro vrstevnice</string>
     <string name="save_track_min_speed">Minimální rychlost pro záznam</string>
     <string name="save_track_min_speed_descr">Filtr: Nastavte minimální rychlost, při které se zaznamená bod.</string>
     <string name="save_track_min_distance">Minimální změna polohy pro záznam</string>
@@ -2139,7 +2127,6 @@ Pokud máte rádi OsmAnd a OSM a chcete je podpořit, toto je výborný způsob,
     <string name="christmas_desc_q">Zobrazit vánoční POI?</string>
     <string name="rendering_value_light_brown_name">Světle hnědá</string>
     <string name="rendering_value_dark_brown_name">Tmavě hnědá</string>
-    <string name="rendering_attr_contourColorScheme_name">Barevné schéma vrstevnic</string>
     <string name="rendering_attr_surfaceIntegrity_name">Celistvost povrchu cest</string>
     <string name="search_hint">Zadejte město, adresu, název bodu</string>
     <string name="translit_name_if_miss">Přepsat, pokud %1$s název chybí</string>
@@ -2194,13 +2181,9 @@ Pokud máte rádi OsmAnd a OSM a chcete je podpořit, toto je výborný způsob,
 \n a další…</string>
     <string name="lang_sr_latn">Srbsky (Latinka)</string>
     <string name="lang_zh_hk">Čínsky (Hong Kong)</string>
-    <string name="rendering_attr_contourDensity_description">Hustota vrstevnic</string>
-    <string name="rendering_attr_contourDensity_name">Hustota vrstevnic</string>
     <string name="rendering_value_high_name">Velká</string>
     <string name="rendering_value_medium_w_name">Střední</string>
     <string name="rendering_value_low_name">Malá</string>
-    <string name="rendering_attr_contourWidth_description">Šířka linií vrstevnic</string>
-    <string name="rendering_attr_contourWidth_name">Šířka linií vrstevnic</string>
     <string name="rendering_attr_hideWaterPolygons_description">Voda</string>
     <string name="rendering_attr_hideWaterPolygons_name">Skrýt vodu</string>
     <string name="configure_screen_quick_action">Rychlá akce</string>
@@ -2280,9 +2263,7 @@ Zobrazená oblast: %1$s x %2$s</string>
 	<string name="auto_split_recording_descr">Začít nový úsek po 6minutové pauze, novou trasu po 2hodinové pauze nebo nový soubor po delší pauze, pokud se změnilo datum.</string>
     <string name="quick_action_interim_dialog">Zobrazit dočasné okno</string>
     <string name="quick_action_page_list_descr">Aktivace tlačítka akce posune seznam na další stranu.</string>
-    <string name="rendering_attr_depthContours_description">Zobrazit hloubkové úrovně a body.</string>
-    <string name="rendering_attr_depthContours_name">Námořní hloubkové vrstevnice</string>
-	<string name="release_2_6">• Nová funkce: Tlačítko rychlé akce
+    <string name="release_2_6">• Nová funkce: Tlačítko rychlé akce
 \n
 \n• Vylepšená odezva dotykových gest
 \n
@@ -2440,13 +2421,6 @@ Pokud potřebujete pomoci s aplikací OsmAnd, prosím kontaktujte naši podporu
     <string name="no_underlay">Bez podkladové vrstvy</string>
     <string name="subscribe_email_error">Chyba</string>
     <string name="subscribe_email_desc">Přihlaste se k odběru novinek o slevách aplikace a získejte 3 další stahování map!</string>
-    <string name="depth_contour_descr">Sada map obsahuje hloubkové vrstevnice a body v moři.</string>
-    <string name="sea_depth_thanks">Děkujeme vám za nákup námořních hloubkových vrstevnic!</string>
-    <string name="index_item_depth_contours_osmand_ext">Námořní hloubkové vrstevnice</string>
-    <string name="index_item_depth_points_southern_hemisphere">Námořní hloubkové body jižní polokoule</string>
-    <string name="index_item_depth_points_northern_hemisphere">Námořní hloubkové body severní polokoule</string>
-    <string name="download_depth_countours">Námořní hloubkové vrstevnice</string>
-    <string name="nautical_maps">Námořní mapy</string>
     <string name="analyze_on_map">Analyzovat na mapě</string>
     <string name="shared_string_visible">Viditelné</string>
     <string name="shared_string_paused">Pozastaveno</string>
@@ -2707,8 +2681,7 @@ Pokud potřebujete pomoci s aplikací OsmAnd, prosím kontaktujte naši podporu
     <string name="shared_string_actions">Akce</string>
     <string name="winter_and_ski_renderer">Zima a lyžování</string>
     <string name="touring_view_renderer">Cestování (vysoký kontrast a detaily)</string>
-    <string name="nautical_renderer">Námořnictví</string>
-<string name="will_open_tomorrow_at">Otevřou zítra v</string>
+    <string name="will_open_tomorrow_at">Otevřou zítra v</string>
     <string name="shared_string_marker">Značka</string>
     <string name="release_2_9">\\022 Aktualizováno kontextové menu: zobrazí, kdy POI otevírá / zavírá
 \n

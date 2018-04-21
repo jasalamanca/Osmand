@@ -8,9 +8,7 @@
   <string name="rendering_attr_noPolygons_name">Nema poligona</string>
   <string name="rendering_attr_appMode_name">Režim iscrtavanja</string>
   <string name="rendering_attr_appMode_description">"Karta za optimizaciju korisničkog profila"</string>
-  <string name="rendering_attr_contourLines_description">Izaberite minimalni nivo uvećanja za prikaz ako je moguć. Izdvojanje SRTM-datoteke će možda biti potrebno.</string>
-  <string name="rendering_attr_contourLines_name">Prikaži linije konture</string>
-  <string name="rendering_attr_hmRendered_description">Povećajte nivo detalja na mapi</string>
+    <string name="rendering_attr_hmRendered_description">Povećajte nivo detalja na mapi</string>
   <string name="rendering_attr_hmRendered_name">Prikaži više detalja na mapi</string>
   <string name="poi_search_desc">Pretraga zanimljivosti</string>
   <string name="address_search_desc">Pretraga po adresi</string>

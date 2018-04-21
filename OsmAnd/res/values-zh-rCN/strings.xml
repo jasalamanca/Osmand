@@ -522,8 +522,7 @@
 	<string name="route_kr">靠右行驶</string>
 	<string name="rendering_attr_noPolygons_name">隐藏多边形</string>
 	<string name="rendering_attr_appMode_name">渲染模式</string>
-	<string name="rendering_attr_contourLines_name">显示等高线</string>
-	<string name="rendering_attr_hmRendered_name">显示更多地图细节</string>
+    <string name="rendering_attr_hmRendered_name">显示更多地图细节</string>
 	<string name="local_index_routing_data">路线规划数据</string>
 	<string name="navigate_point_format">格式</string>
 	<string name="poi_search_desc">POI(兴趣点)搜索</string>
@@ -1447,13 +1446,6 @@
     <string name="no_overlay">无覆盖层</string>
     <string name="no_underlay">无衬底层</string>
     <string name="subscribe_email_desc">订阅我们的邮件列表可以获知应用程序折扣并获得3个地图下载！</string>
-    <string name="depth_contour_descr">地图套件包含海深等高线和点。</string>
-    <string name="sea_depth_thanks">感谢您购买航海等深线 ！</string>
-    <string name="index_item_depth_contours_osmand_ext">航海等深线</string>
-    <string name="index_item_depth_points_southern_hemisphere">南半球航海等深线</string>
-    <string name="index_item_depth_points_northern_hemisphere">北半球航海等深线</string>
-    <string name="download_depth_countours">航海等深线</string>
-    <string name="nautical_maps">航海地图</string>
     <string name="analyze_on_map">在地图上分析</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">低丘陵</string>
     <string name="routing_attr_relief_smoothness_factor_more_plains_name">平地</string>
@@ -1478,17 +1470,11 @@
     <string name="routing_attr_relief_smoothness_factor_name">选择海拔波动</string>
     <string name="routing_attr_height_obstacles_name">使用标高数据</string>
     <string name="routing_attr_height_obstacles_description">使用提供 SRTM、 ASTER 和 EU-DEM 的地形标高数据</string>
-    <string name="rendering_attr_depthContours_description">显示等深线和标记</string>
-    <string name="rendering_attr_depthContours_name">航海等深线</string>
     <string name="auto_split_recording_title">自动拆分录音后的间隙</string>
     <string name="auto_split_recording_descr">如果日期已更改，开始新区段在6分钟后的间隙，新轨迹在2小时后的间隙，或新文件在更长的间隙之后。</string>
-    <string name="rendering_attr_contourDensity_description">等高线的密度</string>
-    <string name="rendering_attr_contourDensity_name">等高线的密度</string>
     <string name="rendering_value_high_name">高</string>
     <string name="rendering_value_medium_w_name">中等</string>
     <string name="rendering_value_low_name">低</string>
-    <string name="rendering_attr_contourWidth_description">等高线的线宽</string>
-    <string name="rendering_attr_contourWidth_name">等高线的线宽</string>
     <string name="rendering_attr_hideWaterPolygons_description">水</string>
     <string name="rendering_attr_hideWaterPolygons_name">隐藏水</string>
     <string name="legacy_search">旧版搜索</string>
@@ -1503,13 +1489,11 @@
     <string name="shared_string_trip">旅行</string>
     <string name="shared_string_recorded">已录制</string>
     <string name="shared_string_record">记录</string>
-    <string name="rendering_attr_contourColorScheme_description">等高线的色彩调配</string>
     <string name="save_track_min_distance">最低位移记录阈值</string>
     <string name="save_track_min_distance_descr">过滤器：从最后位置的一个点设置最短距离用以记录</string>
     <string name="save_track_precision">记录最小的精确度</string>
     <string name="save_track_precision_descr">过滤器：设置记录一个点的最小精度</string>
     <string name="christmas_desc">预知圣诞节和新年假期，您可以选择显示与圣诞节关联的 POI：圣诞树、市场等等。</string>
-    <string name="rendering_attr_contourColorScheme_name">等高线的颜色调配</string>
     <string name="rendering_attr_surfaceIntegrity_name">道路表面完整性</string>
     <string name="translit_name_if_miss">如果 %1$s 的名称缺失则音译</string>
     <string name="translit_names">音译名称</string>
@@ -1770,7 +1754,6 @@
 \n
 \n录制的轨迹可以与您的朋友共享或用作为 OSM 的贡献。运动选手可以使用录制的轨迹，监看他们的训练。一些基本的轨迹分析，可以直接在 OsmAnd 进行，如一圈的时间、平均速度等，而轨迹当然也可于事后在专门的第三方分析工具解析。</string>
     <string name="plugin_touringview_name">旅游地图视图</string>
-    <string name="plugin_nautical_name">航海地图视图</string>
     <string name="osmand_distance_planning_plugin_description">这个插件提供一个允许通过在地图上，点击创建路径或使用或修改现有的 GPX 文件，计划一次旅行和测量点之间的距离的地图屏幕小部件。结果可以保存为 GPX 文件，以后可以用于导航。</string>
     <string name="osm_editing_plugin_description">透过这个插件组件 OsmAnd 可以用来对 OSM 作贡献，如创建或修改 OSM POI 对象、开启或评论 OSM 的注解和提供录制的 GPX 文件。OSM 是一个社区推动，相关的详细信息，请参阅 https://openstreetmap.org。如果您在应用程序中指定您个人的 OSM 帐号，可直接从 OsmAnd 进行贡献，积极参与是令人感激的 。</string>
     <string name="osmand_development_plugin_description">这个插件可以显示设置为开发和调试功能想测试或模拟路由、 屏幕渲染性能，或语音提示。这些设置是为开发人员和一般用户不需要。</string>
@@ -1786,7 +1769,6 @@
     <string name="free">%1$s 可用</string>
     <string name="rendering_attr_pisteGrooming_name">滑雪道修整</string>
     <string name="world_ski_missing">为了显示滑雪地图，需要下载特别的离线地图</string>
-    <string name="nautical_maps_missing">为了显示航海地图，需要下载特别的离线地图</string>
     <string name="edit_group">编辑群组</string>
     <string name="remove_the_tag">删除标记</string>
     <string name="gps_status">GPS 状态</string>
@@ -1862,12 +1844,7 @@
 \n此预览是从我们的标准地图所创建，不需要下载特殊的地图。 
 \n
 \n此预览可以在这里经由再次取消启动，或透过“配置地图”下的“地图样式”这两者中任何一个的更改而恢复它。</string>
-    <string name="plugin_nautical_descr">这个插件丰富了 OsmAnd 地图和导航应用，也为了划船、帆船、与其他类型的水上运动，产生了航海地图。 
-\n
-\n一个为 OsmAnd 附加的特有地图，将提供用于所有内陆近岸航行的航海导航标志和图表符号。每个导航标志描述提供需识别出它们和它们含义的详细信息（类别、形状、颜色、串行、参考等）。 
-\n
-\n要返回到 OsmAnd 惯用的地图模式，再次取消这个插件的启动，或“配置地图”下的“地图样式”，在这两者中的任何一个的更改都可轻易的回复。</string>
-    <string name="plugin_ski_descr">此插件为 OsmAnd 所安置，让您在全球滑雪斜坡、越野滑雪、阿尔卑斯山的滑雪路线、缆车和滑雪缆车上的详细信息了若指掌。以颜色编码显示路线和滑雪道的困难度，并且在特殊的“冬季”地图样式描画出，哪个在冬季景观变成雪色。 
+    <string name="plugin_ski_descr">此插件为 OsmAnd 所安置，让您在全球滑雪斜坡、越野滑雪、阿尔卑斯山的滑雪路线、缆车和滑雪缆车上的详细信息了若指掌。以颜色编码显示路线和滑雪道的困难度，并且在特殊的“冬季”地图样式描画出，哪个在冬季景观变成雪色。
 \n
 \n启动此预览，会更改地图样式到“冬季和滑雪”，显示出冬季的条件下，所有的景观特征。此查看可以在这里经由再次取消启动，或通过“配置地图”下的“地图样式”这两者中任何一个的更改而恢复它。</string>
     <string name="index_tours">旅游</string>
@@ -2015,7 +1992,6 @@
     <string name="localization_pref_title">本地化</string>
     <string name="index_item_nation_addresses">全国范围内的地址</string>
     <string name="index_item_world_altitude_correction">全球海拔校正</string>
-    <string name="index_item_world_seamarks">全球航线标识</string>
     <string name="index_item_world_bitcoin_payments">全球比特币支付</string>
     <string name="index_item_world_basemap">全球概览地图</string>
     <string name="index_item_world_ski">世界滑雪地图</string>
@@ -2176,7 +2152,6 @@
     <string name="share_route_subject">通过 OsmAnd 分享路线</string>
     <string name="rendering_attr_noPolygons_description">透明表示地图上所有的陆地区域</string>
     <string name="rendering_attr_appMode_description">优化的地图用于</string>
-    <string name="rendering_attr_contourLines_description">显示缩放级别（需要等高线数据）：</string>
     <string name="rendering_attr_hmRendered_description">增加地图显示的详细信息量</string>
     <string name="left_side_navigation_descr">道路通行方向为左侧行车</string>
     <string name="local_index_description">轻触任何现有的项目，查看更详细的信息，长按则停用或删除。目前在设备上的数据有（%1$s 可用）：</string>
@@ -2357,7 +2332,6 @@
     <string name="downloading_number_of_files">正在下载 - %1$d 个文件</string>
     <string name="show_free_version_banner">显示免费版标题</string>
     <string name="show_free_version_banner_description">即使你有付费版本你仍然可以看到免费版标题</string>
-    <string name="activate_seamarks_plugin">请激活航线标识插件</string>
     <string name="confirm_download_roadmaps">你确定你想要下载只有道路的地图，即使你已经有标准（完整）的地图？</string>
     <string name="value_downloaded_of_max">%1$.1f 从 %2$.1f MB</string>
     <string name="file_size_in_mb">%.1f MB</string>

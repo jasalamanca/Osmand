@@ -274,8 +274,6 @@
     <string name="rendering_attr_noPolygons_name">Скрий полигоните</string>
     <string name="rendering_attr_appMode_name">Режим на показване</string>
     <string name="rendering_attr_appMode_description">Оптимизирай картата за</string>
-    <string name="rendering_attr_contourLines_description">Показване след ниво увеличение (при вкл. добавка):</string>
-    <string name="rendering_attr_contourLines_name">Показвай контури</string>
     <string name="rendering_attr_hmRendered_description">Увеличаване на детайлността на картата</string>
     <string name="rendering_attr_hmRendered_name">Показвай повече детайли на картата</string>
     <string name="local_index_routing_data">Данни за маршрута</string>
@@ -1346,7 +1344,6 @@
     <string name="search_poi_category_hint">Въведете за търсене</string>
     <string name="delay_to_start_navigation_descr">Време за изчакване</string>
     <string name="plugin_touringview_name">Изглед за автомобилисти</string>
-    <string name="plugin_nautical_name">Навигационни карти</string>
     <string name="plugin_ski_name">Изглед за скиори</string>
     <string name="rename_failed">Неуспешно преименуване.</string>
     <string name="days_behind">дена по-рано</string>
@@ -1385,7 +1382,6 @@
     <string name="map_update">%1$s карти са обновени</string>
     <string name="rendering_attr_pisteGrooming_name">Обработена ски писта</string>
     <string name="world_ski_missing">Трябва да изтеглите специалната карта за скиори за правилното изобразяване на ски писти и други подробности</string>
-    <string name="nautical_maps_missing">За правилното изобразяване на морските навигационни ориентири трябва да изтеглите специална карта за тях</string>
     <string name="edit_group">Редактиране на група</string>
     <string name="speak_pedestrian">Пешеходни пътеки</string>
     <string name="rendering_value__name">По подразбиране</string>
@@ -1561,7 +1557,6 @@
 
 Анонимните групи могат да бъдат създадени временно за определен брой дни и имат ограничени възможности, например без отдалечено управление и администратор. Пълноценните групи, от друга страна, могат да се създават на сайта и само регистрираните потребители имат достъп до тях.
  "</string>
-    <string name="plugin_nautical_descr">"Добавката обогатява приложението OsmAnd карти и навигация като създава карти за гребане, ветроходство и други водни спортове.\n\nСпециалната добавка за карти на OsmAnd добавя морски навигационни символи и диаграми за вътрешна и крайбрежна навигация. Описанието на всеки навигационен символ показва подробностите, необходими за разпознаването и значението му (категория, фигура, цвят, последователност, препратка и др.).\n\nЗа да се върнете към някой от обикновените режими на картите на OsmAnd, просто изключете добавката или сменете \"Стил на картата\" в менюто \"Настройка на картата\". "</string>
     <string name="plugin_settings">Добавки</string>
     <string name="rendering_attr_currentTrackColor_name">цвят на GPX</string>
     <string name="rendering_attr_currentTrackWidth_name">GPX ширина</string>
@@ -1749,7 +1744,6 @@
     <string name="localization_pref_title">Локализация</string>
     <string name="index_item_nation_addresses">адреси в цялата страна</string>
     <string name="index_item_world_altitude_correction">Корекция на надморската височина</string>
-    <string name="index_item_world_seamarks">Морски карти</string>
     <string name="index_item_world_bitcoin_payments">Плащане с bitcoin</string>
     <string name="index_item_world_basemap">Световна карта</string>
     <string name="index_item_world_ski">Световната ски карта</string>
@@ -1797,7 +1791,6 @@
     <string name="confirm_download_roadmaps">Сигурни ли сте, че искате да изтеглите карта само с пътища, въпреки че вече имате стандартната карта?</string>
     <string name="downloads">Изтегляния</string>
     <string name="get_full_version">Пълна версия</string>
-    <string name="activate_seamarks_plugin">Моля, активирайте добавката за морски карти</string>
     <string name="buy">Купи</string>
     <string name="downloading_number_of_files">Изтегляне - %1$d файла</string>
     <string name="roads">Пътища</string>

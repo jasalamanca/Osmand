@@ -341,8 +341,7 @@ Punktaŭ maršrutu %2$s</string>
     <string name="localization_pref_title">Lakalizacyja</string>
     <string name="index_item_nation_addresses">adrasy pa ŭsioj kraіnie</string>
 	<string name="index_item_world_altitude_correction">Hlabalnaja karekcyja vyšynі</string>
-	<string name="index_item_world_seamarks">Navіhacyjnyja znakі ŭsiaho śvietu</string>
-	<string name="index_item_world_bitcoin_payments">Bitcoin płaciažy ŭsiaho śvietu</string>
+    <string name="index_item_world_bitcoin_payments">Bitcoin płaciažy ŭsiaho śvietu</string>
 	<string name="index_item_world_basemap">Suśvietnaja ahladnaja mapa</string>
     <string name="index_item_world_ski">Suśvietnaja łyžnaja mapa</string>
     <string name="lang_zh">Kіtajskaja</string>
@@ -760,9 +759,7 @@ Praparcyjnaj pamiacі %4$s MB (Abmiežavańnie Android %5$s MB, Dalvik %6$s MB).
 	<string name="rendering_attr_noPolygons_name">Palihony</string>
 	<string name="rendering_attr_appMode_name">Režym vіzualizacyі</string>
 	<string name="rendering_attr_appMode_description">Aptymіzavać mapu dla</string>
-	<string name="rendering_attr_contourLines_description">Mіnіmalny ŭzrovień maštabu z adlustravańniem іzalinіj vyšyń:</string>
-	<string name="rendering_attr_contourLines_name">Pakazvać іzalinіі vyšyń</string>
-	<string name="rendering_attr_hmRendered_description">Adliustroŭvać boĺš detaliaŭ na mapie.</string>
+    <string name="rendering_attr_hmRendered_description">Adliustroŭvać boĺš detaliaŭ na mapie.</string>
 	<string name="rendering_attr_hmRendered_name">Pakazać bolš detalej mapy</string>
 	<string name="local_index_routing_data">Dadzienyja maršrutyzacyі</string>
 	<string name="navigate_point_format">Farmat</string>
@@ -1942,12 +1939,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
 \nDadatkovaje sciahvańnie nie patrabujecca, vyhliad stvarajecca z našych standartnych mapaŭ. 
 \n 
 \nHety vyhliad moža być deaktyvavany tut, abo šliacham zmieny «Styliu mapy» u razdzielie «Nalady mapy» pa žadańni.</string>
-    <string name="plugin_nautical_name">Marskіja mapy</string>
-	<string name="plugin_nautical_descr">Aktyvacyja hetaha styliu mianiaje vyhliad mapy na Marskuju, na jakoj pakazvajucca ŭsie navihacyjnyja znaki i simvaly. 
-\n
-\nFajl z dadzienymi źmiaščaje ŭsie navihacyjnyja simvaly ŭ vyhliadzie adzinaha fajlu z nazvaj \"World seamarks\". 
-\n
-\nHety styĺ moža być skasavany šliacham jaho vykliučeńnia tut abo źmienaju ŭ punkcie \"Styĺ mapy\" mieniu \"Nalady mapy\" na patrebny.</string>
     <string name="plugin_ski_name">Łyžnyja mapy</string>
 	<string name="plugin_ski_descr">Moduĺ dlia OsmAnd daje vam dostup da dadzienych ab harnalyžnych trasach, maršrutach dlia biehavych lyž, aĺpijskich spuskach, funikuliorach i harnalyžnych pad\'jomnikach. Maršruty i spuski adznačany roznymi kolierami ŭ zaliežnasci ad ich skladanasci i namaliavanyja z vykarystanniem admyslovaha «zimovaha» styliu mapy, jaki zakliučajecca ŭ tym, što vykarystoŭvajucca «sniežnyja» koliery zimovaha piejzažu. 
 \n 
@@ -1965,7 +1956,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="device_memory">Pamiać prystasavańnia</string>
     <string name="rendering_attr_pisteGrooming_name">Dahlad trasy</string>
     <string name="world_ski_missing">Dla adlustravańnia łyžnych map nieabchodna ściahnuć admysłovyja mapy</string>
-    <string name="nautical_maps_missing">Dla adlustravańnia marskіch map nieabchodna ściahnuć admysłovyja mapy</string>
     <string name="edit_group">Pravіć hrupu</string>
     <string name="remove_the_tag">Vydalić teh</string>
     <string name="gps_status">Stan GPS</string>
@@ -2055,7 +2045,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="show_free_version_banner">Pakazvać baner biaspłatnaj versіі</string>
     <string name="show_free_version_banner_description">Pakazvać banier biasplatnaj viersii navat u platnaj viersii.</string>
     <string name="buy">NABYĆ</string>
-    <string name="activate_seamarks_plugin">Kali łaska, aktyvujcie modul Marskija navіhacyjnyja znakі</string>
     <string name="later">Paźniej</string>
     <string name="get_full_version">Paŭnavartasnaja versіja</string>
     <string name="downloads">Ściahvańnі</string>
@@ -2223,13 +2212,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="quick_action_replace_destination">Zamianić punkt pryznačeńnia</string>
     <string name="private_access_routing_req">Vaš punkt pryznačeńnia znachodzicca na pryvatnaj terytoryi. Vy chočacie dazvolić dostup da pryvatnych daroh dla hetaj pajezdki?</string>
     <string name="subscribe_email_error">Pamyłka</string>
-    <string name="depth_contour_descr">Nabor map, jakija zmiaščajuć kontury i kropki marskich hlybiń.</string>
-    <string name="sea_depth_thanks">Dziakuj za pakupku konuraŭ marskich hłybiń!</string>
-    <string name="index_item_depth_contours_osmand_ext">Kontury marskich hłybiń</string>
-    <string name="index_item_depth_points_southern_hemisphere">Kropki marskich hłybiń paŭdniovaha paŭšarja</string>
-    <string name="index_item_depth_points_northern_hemisphere">Kropki marskich hłybiń paŭnočnaha paŭšarja</string>
-    <string name="download_depth_countours">Kontury marskich hłybiń</string>
-    <string name="nautical_maps">Marskija mapy</string>
     <string name="shared_string_visible">Bačny</string>
     <string name="restore_purchases">Adnaŭleńnie pakupak</string>
     <string name="fonts_header">Šryfty dła mapy</string>
@@ -2363,11 +2345,7 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="mapillary_widget_descr">Dazvaliaje vam chutki ŭniosak ŭ Mapillary.</string>
     <string name="relief_smoothness_factor_descr">Pieravažny reĺjef: raŭninny ci harysty.</string>
     <string name="routing_attr_height_obstacles_description">Vykarystoŭvać danyja ab reĺjefie ziamnoj pavierchni z SRTM, ASTER i EU-DEM.</string>
-    <string name="rendering_attr_depthContours_description">Pakazvać kontury i punkty hlybini.</string>
-    <string name="rendering_attr_contourDensity_description">Ščylnasć haryzantalaŭ</string>
-    <string name="rendering_attr_contourWidth_description">Šyrynia haryzantalaŭ</string>
     <string name="rendering_attr_hideWaterPolygons_description">Vadu</string>
-    <string name="rendering_attr_contourColorScheme_description">Koleravaja schema haryzantalaŭ</string>
     <string name="hide_from_zoom_level">Schavać ad uzroŭniu maštabavannia</string>
     <string name="show_from_zoom_level">Pakazvać ad uzroŭniu maštabavannia</string>
     <string name="animate_my_location_desc">Ukliučaje animacyju majoj pazicyi padčas navihacyi.</string>
@@ -2388,8 +2366,7 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="shared_string_time_span">Časavy dyjapazon</string>
     <string name="routing_attr_relief_smoothness_factor_name">Abrać pierasiečanasć miascovasci</string>
     <string name="routing_attr_height_obstacles_name">Vykarystoŭvać danyja vyšyni</string>
-    <string name="rendering_attr_depthContours_name">Kontury marskich hlybiń</string>
-    <string name="release_2_6">• Novaja funkcyja: knopka chutkaha dziejańnia 
+    <string name="release_2_6">• Novaja funkcyja: knopka chutkaha dziejańnia
 \n 
 \n • Palepšany adkaz na žesty sensarnaha ekrana 
 \n 
@@ -2412,10 +2389,8 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
 \n i šmat inšaha…</string>
     <string name="auto_split_recording_title">Aŭtamatyčnaje dzialiennie zapisaŭ paslia pieraryva</string>
     <string name="auto_split_recording_descr">Pačać novy siehmient paslia 6 minutnaha pierapynku, novy trek — paslia 2 hadzinnaha pierapynku, ci novy fajl paslia doŭhaha pierapynku (jak zmianiliasia data).</string>
-    <string name="rendering_attr_contourDensity_name">Častaść haryzantaliaŭ</string>
     <string name="rendering_value_medium_w_name">Siaredniaja</string>
     <string name="rendering_value_low_name">Nizkaja</string>
-    <string name="rendering_attr_contourWidth_name">Taŭščynia haryzantaliaŭ</string>
     <string name="rendering_value_high_name">Vysokaja</string>
     <string name="legacy_search">Sastarely pošuk</string>
     <string name="show_legacy_search">Pakazvać sastarely pošuk</string>
@@ -2446,7 +2421,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="save_track_precision">Minimaĺnaja dakladnaść žurnaliavannia</string>
     <string name="save_track_precision_descr">Fiĺtr: zadajcie minimaĺnuju dakladnasć dlia kropki, kab być zažurnaliavanaj.</string>
     <string name="christmas_desc">Napiaredadni kaladnych i navahodnich śviataŭ, vy možacie vybrać dla adlustravańnia POI, źviazanyja z Kaladami: jełki, kirmašy i h.d.</string>
-    <string name="rendering_attr_contourColorScheme_name">Kolieravaja schiema haryzantaliaŭ</string>
     <string name="rendering_attr_surfaceIntegrity_name">Jakaść darožnaha pakryćcia</string>
     <string name="create_custom_poi">Stvaryć ulasny fiĺtr</string>
     <string name="custom_search">Ulasny pošuk</string>
@@ -2796,7 +2770,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="day_off_label">vych.</string>
     <string name="winter_and_ski_renderer">Zimovy/lyžny</string>
     <string name="touring_view_renderer">Turystyčny (kantrast i detali)</string>
-    <string name="nautical_renderer">Marski</string>
-<string name="copy_location_name">Kapijavać nazvu kropki/POI</string>
+    <string name="copy_location_name">Kapijavać nazvu kropki/POI</string>
     <string name="toast_empty_name_error">Miesca nie maje nazvy</string>
 </resources>

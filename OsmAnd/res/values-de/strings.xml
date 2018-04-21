@@ -127,9 +127,7 @@
 	<string name="rendering_attr_noPolygons_name">Flächen</string>
 	<string name="rendering_attr_appMode_description">Optimierung der Kartendarstellung für</string>
 	<string name="rendering_attr_appMode_name">Darstellungsmodus</string>
-	<string name="rendering_attr_contourLines_description">Darstellung (bei vorhandenen Höhenlinien-Daten) ab Zoomstufe:</string>
-	<string name="rendering_attr_contourLines_name">Höhenlinien anzeigen</string>
-	<string name="rendering_attr_hmRendered_description">Erhöht den dargestellten Detailgrad der Karte.</string>
+    <string name="rendering_attr_hmRendered_description">Erhöht den dargestellten Detailgrad der Karte.</string>
 	<string name="rendering_attr_hmRendered_name">Mehr Details in Karte</string>
 	<string name="map_online_plugin_is_not_installed">Aktivieren Sie das Online-Karten-Modul, um andere Kartenquellen nutzen zu können</string>
 	<string name="map_online_data">Online- und Kachel-Karten</string>
@@ -259,8 +257,7 @@
 	<string name="index_name_canada">Nordamerika - Kanada</string>
 	<string name="index_item_nation_addresses">Landesweite Adressen</string>
 	<string name="index_item_world_altitude_correction">Höhenkorrektur (weltweit)</string>
-	<string name="index_item_world_seamarks">Seezeichen (weltweit)</string>
-	<string name="index_item_world_bitcoin_payments">Bitcoin-Bezahlmöglichkeiten (weltweit)</string>
+    <string name="index_item_world_bitcoin_payments">Bitcoin-Bezahlmöglichkeiten (weltweit)</string>
 	<string name="index_item_world_basemap">Übersichtskarte der Welt</string>
 	<string name="index_item_world_ski">Ski-Karte (weltweit)</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
@@ -1605,19 +1602,12 @@ Mit Neuanmeldung fortfahren?</string>
     <string name="device_memory">Gerätespeicher</string>
     <string name="rendering_attr_pisteGrooming_name">Pistenpflege</string>
     <string name="plugin_ski_name">Ski-Karte</string>
-    <string name="plugin_nautical_name">Seekarte</string>
     <string name="world_ski_missing">Um Ski-Karten anzeigen zu können, muss die entsprechende Offline-Karte heruntergeladen werden</string>
-    <string name="nautical_maps_missing">Um See-Karten anzeigen zu können, muss die entsprechende Offline-Karte heruntergeladen werden</string>
     <string name="get_plugin">Erwerben</string>
     <string name="rename_failed">Umbenennen fehlgeschlagen.</string>
 	<string name="shared_string_currently_recording_track">Momentane Track-Aufzeichnung</string>
 	<string name="back_to_map">Zurück zur Karte</string>
-	<string name="plugin_nautical_descr">Die Erweiterung bereichert OsmAnd um die zusätzliche Darstellungsmöglichkeit nautischer Karten für Bootfahrer, Segler oder andere Wassersportler. 
-\n
-\nEine spezielle Kartenergänzung für OsmAnd (\'Seezeichen (weltweit)\') enthält alle nautischen Navigationsmarken und Kartensymbole zur Navigation auf Binnengewässern und in Küstennähe. Die Beschreibung jeder Navigationsmarke liefert die notwendigen Einzelheiten zu deren Bestimmung und Bedeutung (Kategorie, Form, Farbe, Reihenfolge, Verweis usw.). 
-\n 
-\nUm zur herkömmlichen Kartendarstellung in OsmAnd zurückzukehren, kann diese Ansicht hier wieder deaktiviert oder die \'Kartendarstellung\' unter \'Karte konfigurieren\' wie gewünscht geändert werden.</string>
-	<string name="plugin_ski_descr">Diese Erweiterung aktiviert die spezielle Kartendarstellung \'Winter- und Skikarte\', die global Skiabfahrten, Langlaufrouten, alpine Skirouten, Skilifte und Bergbahnen enthält. Routen und Pisten werden farbcodiert nach Schwierigkeit, Landschaftselemente nach winterlichen Gesichtspunkten (Assimilierung einer Schneedecke) angezeigt. 
+    <string name="plugin_ski_descr">Diese Erweiterung aktiviert die spezielle Kartendarstellung \'Winter- und Skikarte\', die global Skiabfahrten, Langlaufrouten, alpine Skirouten, Skilifte und Bergbahnen enthält. Routen und Pisten werden farbcodiert nach Schwierigkeit, Landschaftselemente nach winterlichen Gesichtspunkten (Assimilierung einer Schneedecke) angezeigt.
 \n 
 \nDiese spezielle Kartendarstellung kann zurückgestellt werden, indem sie hier wieder deaktiviert oder indem die \'Kartendarstellung\' unter \'Karte konfigurieren\' wie gewünscht geändert wird.</string>
 	<string name="plugin_touringview_descr">Bei Aktivierung dieser Ansicht wechselt die Kartendarstellung zur \'Tourenkarte\', einer besonders detaillierten Darstellung für Fernreisende und Berufsfahrer. 
@@ -1950,7 +1940,6 @@ Lon %2$s</string>
 	<string name="downloads_left_template">%1$s Downloads übrig</string>
 	<string name="downloading_number_of_files">Herunterladen - %1$d Datei</string>
     <string name="show_free_version_banner">Zeige das Banner der freien Version</string>
-    <string name="activate_seamarks_plugin">Bitte das Seekarten-Modul aktivieren</string>
     <string name="get_full_version">Vollversion</string>
     <string name="confirm_download_roadmaps">Soll wirklich die reine Straßenkarte heruntergeladen werden, obwohl bereits die vollständige Standardkarte vorhanden ist?</string>
     <string name="value_downloaded_of_max">%1$.1f von %2$.1f MB</string>
@@ -2245,7 +2234,6 @@ Wenn Sie OsmAnd und OSM lieben und unterstützen wollen, so ist dies die perfekt
     <string name="translit_name_if_miss">Transliteration, wenn Namen in %1$s fehlen</string>
     <string name="rendering_value_light_brown_name">Hellbraun</string>
     <string name="rendering_value_dark_brown_name">Dunkelbraun</string>
-    <string name="rendering_attr_contourColorScheme_name">Farbschema für Höhenlinien</string>
     <string name="rendering_attr_surfaceIntegrity_name">Straßenoberflächenbeschaffenheit</string>
     <string name="search_hint">Stadt, Adresse, POI-Bezeichnung eingeben</string>
     <string name="christmas_poi">Weihnachts POI</string>
@@ -2257,7 +2245,6 @@ Wenn Sie OsmAnd und OSM lieben und unterstützen wollen, so ist dies die perfekt
     <string name="save_track_min_distance_descr">Filter: Wählen Sie die Mindestentfernung von der letzten Position, ab der ein neuer Punkt aufgezeichnet wird.</string>
     <string name="save_track_precision">Mindestgenauigkeit für Erfassung</string>
     <string name="save_track_precision_descr">Filter: Legen Sie die Mindestgenauigkeit für die Aufzeichnung eines Punktes fest.</string>
-    <string name="rendering_attr_contourColorScheme_description">Farbschema für Höhenlinien</string>
     <string name="shared_string_continue">Fortsetzen</string>
     <string name="shared_string_pause">Pause</string>
     <string name="shared_string_recorded">Aufgezeichnet</string>
@@ -2299,10 +2286,6 @@ Wenn Sie OsmAnd und OSM lieben und unterstützen wollen, so ist dies die perfekt
     <string name="lang_sr_latn">Serbisch (lateinisch)</string>
     <string name="lang_zh_hk">Chinesisch (Hong Kong)</string>
     <string name="rendering_attr_hideWaterPolygons_description">Wasser</string>
-    <string name="rendering_attr_contourWidth_description">Breite der Höhenlinien</string>
-    <string name="rendering_attr_contourWidth_name">Breite der Höhenlinien</string>
-    <string name="rendering_attr_contourDensity_description">Höhenliniendichte</string>
-    <string name="rendering_attr_contourDensity_name">Dichte der Höhenlinien</string>
     <string name="rendering_value_high_name">Hoch</string>
     <string name="rendering_value_medium_w_name">Mittel</string>
     <string name="rendering_value_low_name">Niedrig</string>
@@ -2411,8 +2394,6 @@ Abgedeckte Fläche: %1$s x %2$s</string>
     <string name="routing_attr_height_obstacles_name">Höhendaten verwenden</string>
     <string name="routing_attr_height_obstacles_description">Von SRTM, ASTER und EU-DEM bereitgestellte Geländeprofildaten verwenden.</string>
 
-    <string name="rendering_attr_depthContours_name">Nautische Tiefenlinien</string>
-	<string name="rendering_attr_depthContours_description">Tiefenlinien und -punkte einblenden.</string>
     <string name="route_altitude">Routenhöhenprofil</string>
     <string name="altitude_descent">Abstieg</string>
     <string name="altitude_ascent">Aufstieg</string>
@@ -2492,13 +2473,6 @@ Abgedeckte Fläche: %1$s x %2$s</string>
     <string name="quick_action_add_first_intermediate_desc">Drücken der Aktionstaste fügt die zum Bildschirmmittelpunkt gehörende Position als ersten Zwischenstopp ein.</string>
     <string name="subscribe_email_error">Fehler</string>
     <string name="subscribe_email_desc">Tragen Sie sich in unsere Mail-Liste zu App-Angeboten ein, und erhalten Sie dafür 3 zusätzliche Karten-Downloads!</string>
-    <string name="depth_contour_descr">Kartensatz, der die Meeresbodenkonturlinien und nautischen Punkte enthält.</string>
-    <string name="sea_depth_thanks">Vielen Dank, dass Sie die Meerestiefenkonturen erworben haben!</string>
-    <string name="index_item_depth_contours_osmand_ext">Nautische Tiefenkonturen</string>
-    <string name="index_item_depth_points_southern_hemisphere">Nautische Meerestiefen der Südhalbkugel</string>
-    <string name="index_item_depth_points_northern_hemisphere">Nautische Meerestiefen der Nordhalbkugel</string>
-    <string name="download_depth_countours">Nautische Tiefenkonturen</string>
-    <string name="nautical_maps">Seekarten</string>
     <string name="analyze_on_map">Auf Karte auswerten</string>
     <string name="shared_string_visible">Sichtbar</string>
     <string name="right_side_navigation">Rechtsverkehr</string>
@@ -2810,7 +2784,6 @@ Abgedeckte Fläche: %1$s x %2$s</string>
     <string name="day_off_label">aus</string>
     <string name="winter_and_ski_renderer">Winter und Ski</string>
     <string name="touring_view_renderer">Touring-Ansicht (Kontrast und Details)</string>
-    <string name="nautical_renderer">Nautisch</string>
     <string name="copy_location_name">Punkt/POI-Name kopieren</string>
     <string name="toast_empty_name_error">Ort hat keinen Namen</string>
 </resources>

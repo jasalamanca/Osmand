@@ -764,8 +764,6 @@
     <string name="rendering_attr_noPolygons_name">Polygones</string>
     <string name="rendering_attr_appMode_name">Profil pour l\'affichage</string>
     <string name="rendering_attr_appMode_description">Optimisation de la carte selon le profil d\'utilisation</string>
-    <string name="rendering_attr_contourLines_description">Afficher à partir du niveau de zoom (données courbes de niveau requises)</string>
-    <string name="rendering_attr_contourLines_name">Afficher les courbes de niveau</string>
     <string name="rendering_attr_hmRendered_description">Augmenter le niveau de détail affiché.</string>
     <string name="rendering_attr_hmRendered_name">Afficher plus de détail</string>
 
@@ -1144,7 +1142,6 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="index_name_canada">Amérique du Nord - Canada</string>
     <string name="index_item_nation_addresses">Adresses sur l\'ensemble du pays</string>
     <string name="index_item_world_altitude_correction">Monde - Correction d\'altitude</string>
-    <string name="index_item_world_seamarks">Monde - Balisage maritime</string>
     <string name="index_item_world_bitcoin_payments">Monde - Paiement en bitcoin</string>
     <string name="index_item_world_basemap">Monde - Carte générale</string>
     <string name="index_item_world_ski">Monde - Ski</string>
@@ -1583,9 +1580,7 @@ Voulez-vous effectuer à une nouvelle inscription ?</string>
     <string name="shared_string_disable">Désactiver</string>
     <string name="get_plugin">Installer</string>
     <string name="plugin_ski_name">Pistes de ski</string>
-    <string name="plugin_nautical_name">Carte marine</string>
     <string name="world_ski_missing">Pour afficher les pistes de ski, une carte hors ligne doit être téléchargée.</string>
-    <string name="nautical_maps_missing">Pour afficher les cartes marines, une carte hors ligne doit être téléchargée.</string>
     <string name="rendering_attr_pisteGrooming_name">Damage des pistes</string>
     <string name="free">%1$s libre</string>
     <string name="device_memory">Mémoire de l\'appareil</string>
@@ -1613,11 +1608,6 @@ Voulez-vous effectuer à une nouvelle inscription ?</string>
 \n
 \nCet affichage peut être annulé soit en le désactivant ici, soit en modifiant le Style de la carte dans \"Configurer la carte\".</string>
     <string name="plugin_touringview_name">Grand tourisme</string>
-	<string name="plugin_nautical_descr">Ce greffon enrichit la carte OsmAnd ainsi que l\'application de navigation afin d\'afficher des cartes marines pour la navigation de plaisance, la voile et tous les sports nautiques.
-\n
-\nCe greffon OsmAnd affichera les marques nautiques et symboles graphiques utiles à la navigation aussi bien sur terre que le long des côtes. Chaque marque de navigation est détaillée afin de permettre son identification et de connaître sa signification (catégorie, forme, couleur, fréquence, référence, etc.).
-\n
-\nPour revenir à l’un des styles de carte classique de OsmAnd, désactivez simplement ce greffon ou modifiez le « Style de carte » dans le menu « Configurer la carte ».</string>
     <string name="location_on_map">Position :\n Lat. %1$s\n Lon. %2$s</string>
     <string name="days_behind">jours passés</string>
     <string name="rename_failed">Échec du renommage.</string>
@@ -1853,7 +1843,6 @@ Voulez-vous effectuer à une nouvelle inscription ?</string>
     <string name="show_free_version_banner_description">Afficher le bandeau \"Version Gratuite\" même dans la version payante</string>
     <string name="downloading_number_of_files">Téléchargement de %1$d fichiers</string>
     <string name="buy">Acheter</string>
-    <string name="activate_seamarks_plugin">Merci d\'activer le greffon balisage</string>
     <string name="later">Plus tard</string>
     <string name="get_full_version">Version complète</string>
     <string name="regions">Régions</string>
@@ -2259,12 +2248,10 @@ Si vous appréciez OsmAnd et OSM et que vous souhaitez soutenir ces projets, c\'
     <string name="rendering_value_light_brown_name">Marron clair</string>
     <string name="rendering_value_dark_brown_name">Marron foncé</string>
     <string name="search_hint">Saisissez une ville, une adresse ou un nom de point d\'intérêt</string>
-    <string name="rendering_attr_contourColorScheme_name">Couleurs des courbes de niveau</string>
     <string name="rendering_attr_surfaceIntegrity_name">État de la route</string>
     <string name="christmas_poi">Points d\'intérêt de Noël</string>
     <string name="christmas_desc">Anticipez Noël et le Nouvel An en affichant les points d\'intérêt associés à ces événements de fin d\'année comme : les arbres de Noël, les marchés, etc.</string>
     <string name="christmas_desc_q">Afficher les points d\'intérêt de Noël ?</string>
-    <string name="rendering_attr_contourColorScheme_description">Couleurs des courbes de niveau</string>
     <string name="save_track_min_speed">Vitesse minimale pour enregistrer</string>
     <string name="save_track_min_speed_descr">Filtre : Indiquez une vitesse minimale à partir de laquelle déclencher l\'enregistrement d\'un point.</string>
     <string name="save_track_min_distance">Déplacement minimal pour enregistrer</string>
@@ -2312,13 +2299,9 @@ Si vous appréciez OsmAnd et OSM et que vous souhaitez soutenir ces projets, c\'
     <string name="lang_sr_latn">Serbe (Latin)</string>
     <string name="lang_zh_hk">Chinois (Hong Kong)</string>
     <string name="rendering_attr_hideWaterPolygons_description">Eau</string>
-    <string name="rendering_attr_contourWidth_description">Épaisseur des traits pour les courbes de niveaux</string>
-    <string name="rendering_attr_contourWidth_name">Épaisseur des courbes de niveaux</string>
-    <string name="rendering_attr_contourDensity_name">Densité des courbes de niveaux</string>
     <string name="rendering_value_high_name">Élevé</string>
     <string name="rendering_value_medium_w_name">Moyen</string>
     <string name="rendering_value_low_name">Faible</string>
-    <string name="rendering_attr_contourDensity_description">Densité des courbes de niveaux</string>
     <string name="legacy_search">Recherche héritée</string>
     <string name="show_legacy_search">Afficher la recherche héritée</string>
     <string name="show_legacy_search_desc">Ajouter la recherche héritée à la liste déroulante</string>
@@ -2418,9 +2401,7 @@ représentant la zone : %1$s x %2$s</string>
 \n • Améliorations des itinéraires à vélo : paramétrage du style de \"conduite\", possibilité d\'utiliser les données d\'altitude 
 \n 
 \n • Et de nombreuses autres améliorations et corrections d\'anomalies…</string>
-	<string name="rendering_attr_depthContours_description">Afficher les lignes et points de sonde.</string>
-    <string name="rendering_attr_depthContours_name">Lignes de sonde maritimes</string>
-	<string name="routing_attr_height_obstacles_name">Utiliser les données d\'altitude</string>
+    <string name="routing_attr_height_obstacles_name">Utiliser les données d\'altitude</string>
     <string name="routing_attr_height_obstacles_description">Utiliser les données d\'altitude fournies par SRTM, ASTER et EU-DEM</string>
 
     
@@ -2509,13 +2490,6 @@ représentant la zone : %1$s x %2$s</string>
     <string name="osmand_plus_extended_description_part1">OsmAnd+ (OpenStreetMap Automated Navigation and Directions) est une application de visualisation de cartes et de navigation utilisant les données gratuites couvrant le monde entier du projet OpenStreetMap. Bénéficiez d\'un guidage vocal comme visuel; découvrez des points d\'intérêt; créez et gérez des traces GPX; installez des greffons pour visualiser l\'altitude et les courbes de niveaux; utilisez les modes Automobile, Piéton, Cycliste; contribuez à l\'amélioration des cartes et bien plus encore !
 \n
 \nOsmAnd+ est la version payante de l\'application, en l\'achetant vous supportez le projet, financez le développement de nouvelles fonctionnalités, et recevez les dernières mises à jour.</string>
-    <string name="sea_depth_thanks">Merci d\'avoir acheté le greffon Lignes de sonde marines !</string>
-    <string name="index_item_depth_contours_osmand_ext">Lignes de sonde marines</string>
-    <string name="index_item_depth_points_southern_hemisphere">Lignes de sonde marines pour l\'hémisphère sud</string>
-    <string name="index_item_depth_points_northern_hemisphere">Lignes de sonde marines pour l\'hémisphère nord</string>
-    <string name="download_depth_countours">Lignes de sonde marines</string>
-    <string name="nautical_maps">Cartes marines</string>
-    <string name="depth_contour_descr">Cartes contenant des lignes et des points de sonde indiquant la profondeur d\'eau.</string>
     <string name="subscribe_email_error">Erreur</string>
     <string name="subscribe_email_desc">Inscrivez-vous à notre lettre d\'informations sur les applications et téléchargez 3 cartes supplémentaires gratuitement !</string>
     <string name="no_overlay">Sans sur-couche</string>
@@ -2879,8 +2853,7 @@ représentant la zone : %1$s x %2$s</string>
     <string name="day_off_label">éteint</string>
     <string name="winter_and_ski_renderer">Hiver et ski</string>
     <string name="touring_view_renderer">Vue grand tourisme (contrastée et détaillée)</string>
-    <string name="nautical_renderer">Maritime</string>
-<string name="will_open_tomorrow_at">Sera ouvert demain à</string>
+    <string name="will_open_tomorrow_at">Sera ouvert demain à</string>
     <string name="release_2_9">\\022 Menu contextuel : affichage des horaires des points d\'intérêt
 \n
 \n • Menu Transport : les itinéraires possibles sont maintenant en haut

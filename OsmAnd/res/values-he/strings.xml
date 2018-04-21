@@ -153,9 +153,7 @@
 	<string name="rendering_attr_noPolygons_name">מצולעים</string>
 	<string name="rendering_attr_appMode_name">מצב עיבוד תמונה</string>
 	<string name="rendering_attr_appMode_description">מיטוב המפה לטובת</string>
-	<string name="rendering_attr_contourLines_description">הצגה החל מרמת תקריב (נדרש קובץ SRTM):</string>
-	<string name="rendering_attr_contourLines_name">הצגת קווי מתאר</string>
-	<string name="rendering_attr_hmRendered_description">הגדלת כמות פרטי המפה המופיעים.</string>
+    <string name="rendering_attr_hmRendered_description">הגדלת כמות פרטי המפה המופיעים.</string>
 	<string name="rendering_attr_hmRendered_name">הצגת יותר פרטים במפה</string>
 	<string name="local_index_routing_data">נתוני המסלול</string>
 	<string name="navigate_point_format">עיצוב</string>
@@ -2060,11 +2058,6 @@
     <string name="by_date">לפי תאריך</string>
     <string name="by_type">לפי סוג</string>
     <string name="subscribe_email_desc">ניתן להירשם לרשימת הדיוור שלנו כדי לקבל הנחות על היישומון ולקבל עוד 3 הורדות של מפות בחינם!</string>
-    <string name="depth_contour_descr">ערכות של מפות שמכילות קווי מתאר של עומק הים ונקודות ימיות.</string>
-    <string name="sea_depth_thanks">תודה לך על רכישת קווי המתאר של עומק הים!</string>
-    <string name="index_item_depth_contours_osmand_ext">קווי מתאר של עומק הים</string>
-    <string name="download_depth_countours">קווי מתאר של עומק הים</string>
-    <string name="nautical_maps">מפות ימיות</string>
     <string name="do_not_show_startup_messages">לא להציג הודעות פתיחה</string>
     <string name="full_version_thanks">תודה לך על רכישת הגרסה המלאה של OsmAnd!</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">פחות הררי</string>
@@ -2187,10 +2180,8 @@
     <string name="track_points">נקודות מסלול</string>
     <string name="record_plugin_name">הקלטת מסלול</string>
     <string name="plugin_touringview_name">תצוגת מפת סיור</string>
-    <string name="plugin_nautical_name">תצוגת מפה ימית</string>
     <string name="plugin_ski_name">תצוגת מפת סקי</string>
     <string name="world_ski_missing">כדי להציג מפות סקי יש להוריד מפה מיוחדת בלתי מקוונת</string>
-    <string name="nautical_maps_missing">כדי להציג מפות ימיות, יש להוריד מפות מיוחדות בלתי מקוונות</string>
     <string name="avoid_roads_msg">ניתן לבקש נתיב חלופי על ידי בחירת דרכים בלתי רצויות</string>
     <string name="routing_attr_no_new_routing_name">כללי ניתוב גרסה 1.9</string>
     <string name="routing_attr_no_new_routing_description">לא להשתמש בכללי הניתוב שנוספו ב־1.9.</string>
@@ -2283,13 +2274,9 @@
 \n
 \n</string>
     <string name="auto_split_recording_title">פיצול הקלטות אוטומטית לאחר הפסקה</string>
-    <string name="rendering_attr_contourDensity_description">צפיפות קווי מתאר</string>
-    <string name="rendering_attr_contourDensity_name">צפיפות קווי מתאר</string>
     <string name="rendering_value_high_name">גבוהה</string>
     <string name="rendering_value_medium_w_name">בינונית</string>
     <string name="rendering_value_low_name">נמוכה</string>
-    <string name="rendering_attr_contourWidth_description">עובי קווי מתאר</string>
-    <string name="rendering_attr_contourWidth_name">עובי קווי מתאר</string>
     <string name="rendering_attr_hideWaterPolygons_description">מים</string>
     <string name="rendering_attr_hideWaterPolygons_name">הסתרת מים</string>
     <string name="legacy_search">חיפוש מיושן</string>
@@ -2316,7 +2303,6 @@
     <string name="show_free_version_banner">הצגת חלונית גרסה חופשית</string>
     <string name="show_free_version_banner_description">הצגת חלונית הגרסה החינמית גם בגרסה בתשלום.</string>
     <string name="buy">רכישה</string>
-    <string name="activate_seamarks_plugin">נא להפעיל את תוסף הסמנים הימיים</string>
     <string name="poi_context_menu_modify_osm_change">עריכת שינוי ב־OSM</string>
     <string name="christmas_poi">נקודת עניין של חג המולד</string>
     <string name="christmas_desc_q">להציג נקודת עניין של חג המולד?</string>
@@ -2343,8 +2329,6 @@
 \n</string>
     <string name="one_tap_active">הפעלה בנגיעה אחת</string>
     <string name="map_orientation_change_in_accordance_with_speed_descr">נא לבחור להלן באיזו מהירות כיוון המפה יתחלף ממצב ‚לפי כיוון התנועה’ למצב ‚לפי מצפן’.</string>
-    <string name="index_item_depth_points_southern_hemisphere">נקודות עומק ימיות בחצי הכדור הדרומי</string>
-    <string name="index_item_depth_points_northern_hemisphere">נקודות עומק ימיות בחצי הכדור הצפוני</string>
     <string name="do_not_send_anonymous_app_usage_desc">ב־OsmAnd נאסף מידע על אילו חלקים ביישומון משמשים אותך. המיקום שלך אף פעם לא נשלח, גם לא הקלט שלך ביישומון או פרטים על אזורים בהם צפית, חיפשת או הורדת.</string>
     <string name="keep_informing_descr">הכרזה מחודשת של הנחיות הניווט במרווחי זמן קבועים.</string>
     <string name="keep_informing">חזרה על הנחיות הניווט</string>

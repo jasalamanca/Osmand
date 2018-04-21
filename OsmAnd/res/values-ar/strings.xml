@@ -109,8 +109,7 @@
 	
 	<string name="route_kl">الزم اليسار واذهب</string>
 	<string name="route_kr">الزم اليمين واذهب</string>
-	<string name="rendering_attr_contourLines_name">اظهر الخطوط المحيطية (الكنتورية)</string>
-	<string name="rendering_attr_hmRendered_name">اظهر المزيد من تفاصيل الخريطة</string>
+    <string name="rendering_attr_hmRendered_name">اظهر المزيد من تفاصيل الخريطة</string>
 	<string name="rendering_attr_hmRendered_description">زيادة كمية خريطة التفصيل هو مبين.</string>
 	<string name="local_index_routing_data">بيانات التوجيه</string>
 	<string name="navigate_point_format">الصيغة</string>
@@ -503,9 +502,8 @@
 
 
     <string name="zxing_barcode_scanner_not_found">برنامج ZXing للبحث عن الباركود غيرُ مثبّت. أأبحث في السّوق ؟</string>
-	<string name="rendering_attr_contourLines_description">اعرض درجة التّكبير (يتطلب البيانات المحيطية):</string>
-	
-	<string name="back_left">الأيسر الخلفي</string>
+
+    <string name="back_left">الأيسر الخلفي</string>
 	<string name="left">إلى اليسار</string>
 	<string name="front_left">الأيسر الأمامي</string>
 	<string name="towards">نحو</string>
@@ -1353,13 +1351,11 @@
 	<string name="layer_route">طريق</string>
 	<string name="filter_existing_indexes">محملة</string>
 	<string name="daynight">وضع نهاري/ليلي</string>
-	<string name="plugin_nautical_name">عرض الخرائط البحرية</string>
-	<string name="plugin_ski_name">عرض خريطة التزلج</string>
+    <string name="plugin_ski_name">عرض خريطة التزلج</string>
 	<string name="rendering_attr_pisteRoutes_name">منحدرات تزلج</string>
 	<string name="osmo_auth_error_short">فشل الحصول على صلاحية</string>
     <string name="index_item_world_ski">خريطة التزلج العالمية</string>
-    <string name="index_item_world_seamarks">خريطة العلامات البحرية العالمية</string>
-	<string name="amenity_type_transportation">نقل</string>
+    <string name="amenity_type_transportation">نقل</string>
 	<string name="daynight_mode_day">نهار</string>
 	<string name="daynight_mode_night">ليل</string>
 	<string name="daynight_mode_auto">الشروق/الغروب</string>
@@ -1696,11 +1692,6 @@
     <string name="route_duration">المدة الزمنية :</string>
     <string name="route_tr">در يمينا ثم واصل</string>
     <string name="route_tl">در يسارا و اسلك</string>
-    <string name="plugin_nautical_descr">هاته الأداة تثري خريطة التطبيق والملاحة لتوفير خرائط بحرية للزوارق والمراكب الشراعية وأنواع أخرى من الرياضات المائية.
-\n
-\nخريطة خاصة إضافية للتطبيق ستوفر كل علامات الملاحة البحرية سواء داخلية أو شاطئية وكذلك جدول للرموز. وصف كل علامة ملاحة يوفر التفاصيل اللازمة للتعرف عليها ومعانيها (الفئة، الشكل، اللون، التسلسل، المرجع...إلخ).
-\n
-\nللعودة إلى واحدة من أنماط الخريطة التقليدية، ببساطة إما عطل هاته الأداة مرة أخرى أو غير \'نمط الخريطة\' في \'ضبط الخريطة\' حسب الرغبة.</string>
     <string name="search_near_map">البحث قرب مركز الخريطة الحالية</string>
     <string name="active_markers">العلامات المفعلة</string>
     <string name="map_markers">العلامات على الخريطة</string>
@@ -1994,7 +1985,6 @@
     <string name="rendering_value_walkingRoutesScopeOSMC_name">تلوين وفق الانتماء للشبكة</string>
     <string name="rendering_value_walkingRoutesOSMC_name">تلوين وفق رمز تنزه OSMC</string>
     <string name="shared_string_logoff">خروج</string>
-    <string name="nautical_maps_missing">لعرض الخرائط البحرية، يجب تنزيل خريطة خاصة محليا</string>
     <string name="save_track_to_gpx_globally_descr">تسجيل الموقع العام إلى ملف GPX يمكن تشغيله أو إيقافه باستخدام نافذة تسجيل GPX على الشاشة خريطة.</string>
     <string name="proxy_host_descr">ضبط اسم مضيف البروكسي (مثال 127.0.0.1).</string>
     <string name="map_preferred_locale_descr">اللغة المفضلة للمسميات على الخريطة (إذا لم تكن متوفرة ستتحول إلى الإنجليزية أو الأسماء المحلية).</string>
@@ -2139,7 +2129,6 @@
     <string name="number_of_rows_in_dash">عدد الصفوف في الدفعة %1$s</string>
     <string name="poi_deleted_localy">سيتم حذف POI بمجرد إرسال التغييرات</string>
     <string name="downloading_number_of_files">جاري التحميل - %1$d ملف</string>
-    <string name="activate_seamarks_plugin">يرجى تفعيل أداة المعالم البحرية</string>
     <string name="value_downloaded_of_max">%1$.1f من %2$.1f مب</string>
     <string name="file_size_in_mb">%.1f مب</string>
     <string name="plugin_ski_descr">ويضع هذا البرنامج المساعد أوسماند في التفاصيل الخاصة بك في متناول من منحدرات التزلج هبوطاً العالمية ومسارات التزلج عبر البلاد، ومسارات التزلج في جبال الألب، والتلفريك ومصاعد التزلج. طرق وأماكن اللهو تظهر مرمزة بصعوبة، وصورت في نمط خريطة \'شتاء\' خاصة التي تستوعب المناظر الطبيعية الملونة الثلوج شتاء. 
@@ -2202,10 +2191,8 @@
     <string name="christmas_desc_q">إظهار POI عيد الميلاد ؟</string>
     <string name="rendering_value_light_brown_name">بني فاتح</string>
     <string name="rendering_value_dark_brown_name">بني داكن</string>
-    <string name="rendering_attr_contourColorScheme_name">نظام ألوان الخطوط المحيطية</string>
     <string name="rendering_attr_surfaceIntegrity_name">سلامة سطح الطرق</string>
     <string name="christmas_poi">POI عيد الميلاد</string>
-    <string name="rendering_attr_contourColorScheme_description">نظام ألوان المعالم المحيطية</string>
     <string name="save_track_min_speed">تسجيل السرعة الأدنى</string>
     <string name="save_track_min_speed_descr">عامل التصفية: حدد السرعة الأدنى ليتم تسجيل النقطة.</string>
     <string name="save_track_min_distance">تسجيل الحد الأدنى للإزاحة</string>
@@ -2261,10 +2248,6 @@
     <string name="lang_sr_latn">الصربية (اللاتينية)</string>
     <string name="lang_zh_hk">الصينية (هونج كونج)</string>
     <string name="rendering_attr_hideWaterPolygons_description">ماء</string>
-    <string name="rendering_attr_contourWidth_description">عرض الخطوط الكنتورية</string>
-    <string name="rendering_attr_contourWidth_name">عرض الخطوط الكنتورية</string>
-    <string name="rendering_attr_contourDensity_description">كثافة الخطوط الكنتورية</string>
-    <string name="rendering_attr_contourDensity_name">كثافة الخطوط الكنتورية</string>
     <string name="rendering_value_high_name">عالية</string>
     <string name="rendering_value_medium_w_name">متوسطة</string>
     <string name="rendering_value_low_name">منخفض</string>
@@ -2337,8 +2320,7 @@
     <string name="navigate_point_olc_info_invalid">خطآ فيي الرمز المفتوح للتَّمَوْضُع
 </string>
     <string name="quick_action_btn_tutorial_descr">انقر مطولا واسحب الزر لتغيير مكانه على الشاشة.</string>
-	<string name="rendering_attr_depthContours_name">معالم العمق البحري</string>
-	<string name="auto_split_recording_title">تقسيم التسجيلات آليا إلى أجزاء بعد كل فراغ</string>
+    <string name="auto_split_recording_title">تقسيم التسجيلات آليا إلى أجزاء بعد كل فراغ</string>
 	<string name="navigate_point_olc_info_short">تقصير رمز التموضع المفتوح يُرجى تقديم رمزٍ كامل</string>
     <string name="quick_action_duplicate">إسم الإجراء السريع مكرر</string>
     <string name="quick_action_bug_descr">سوف تكون تتمة هذه الرسالة تلقائيةً في المجال المخصص للتعليق.</string>
@@ -2402,7 +2384,6 @@
     <string name="quick_action_add_destination">إضافة وجهة</string>
     <string name="quick_action_replace_destination">تبديل الوجهة</string>
     <string name="subscribe_email_error">خطأ</string>
-    <string name="nautical_maps">الخرائط البحرية</string>
     <string name="fonts_header">خطوط للخريطة</string>
     <string name="right_side_navigation">القيادة اليمنى</string>
     <string name="driving_region_automatic">آلي</string>
@@ -2472,12 +2453,6 @@
     <string name="no_overlay">لا طبقة فوقية</string>
     <string name="no_underlay">لا طبقة تحتية</string>
     <string name="subscribe_email_desc">اشترك في قائمة البريد الإلكتروني لدينا فيما يخص الخصومات والحصول على 3 تنزيلات خرائط إضافية!</string>
-    <string name="depth_contour_descr">مجموعة من الخرائط التي تتضمن خطوط عمق البحر الكنتورية والنقاط البحرية.</string>
-    <string name="sea_depth_thanks">شكرا لك على شراء اضافة معالم العمق البحري !</string>
-    <string name="index_item_depth_contours_osmand_ext">معالم العمق البحري</string>
-    <string name="index_item_depth_points_southern_hemisphere">نقاط العمق البحري في نصف الكرة الجنوبي</string>
-    <string name="index_item_depth_points_northern_hemisphere">نقاط العمق البحري في نصف الكرة الشمالي</string>
-    <string name="download_depth_countours">معالم العمق البحري</string>
     <string name="do_not_send_anonymous_app_usage_desc">التطبيق يقوم بجمع معلومات حول أجزاء من التطبيقات التي تفتحها. الموقع الخاص بك لا يرسل ابدأ، ولا أي شيء تقوم بادخاله في التطبيق أو أي تفاصيل لمناطق رأيتها ، بحثت عنها أو نزلتها.</string>
     <string name="do_not_show_startup_messages_desc">يمنع عرض الخصومات على التطبيق واعلانات الأحداث المحلية المميزة.</string>
     <string name="routing_attr_relief_smoothness_factor_plains_name">أقل تضاريس</string>
@@ -2487,8 +2462,7 @@
     <string name="shared_string_slope">منحدر</string>
     <string name="shared_string_move">انتقل</string>
     <string name="routing_attr_height_obstacles_description">استخدام بيانات ارتفاع التضاريس المتاحة من طرف ASTER ،SRTM، وEU-DEM.</string>
-    <string name="rendering_attr_depthContours_description">اظهار نقاط ومعالم العمق.</string>
-    
+
     <string name="auto_split_recording_descr">بدء جزء جديد بعد فجوة 6 دقائق، مسار جديد بعد فجوة 2سا، أو ملف جديد بعد الانقطاع لفجوة أطول إذا تغير التاريخ.</string>
     <string name="shared_string_paused">متوقف مؤقتاً</string>
     <string name="route_is_too_long_v2">قد يكون هذا المسار طويل جداً ليحسب. الرجاء إضافة الوجهات المتوسطة إن لم يتم العثور على أية نتيجة في غضون 10 دقائق.</string>
@@ -2717,5 +2691,4 @@
     <string name="osm_recipient_stat">التعديلات %1$s, المبلغ %2$s mBTC</string>
     <string name="osm_recipients_label">مساهمي OSM المستفيدون</string>
     <string name="winter_and_ski_renderer">الشتاء و التزحلق</string>
-    <string name="nautical_renderer">الملاحة البحرية</string>
 </resources>

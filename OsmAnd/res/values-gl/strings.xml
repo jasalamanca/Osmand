@@ -252,8 +252,7 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="localization_pref_title">Situación</string>
     <string name="index_item_nation_addresses">enderezos de todo o país</string>
 	<string name="index_item_world_altitude_correction">Corrección da altitude mundial</string>
-	<string name="index_item_world_seamarks">Balizamento mundial</string>
-	<string name="index_item_world_bitcoin_payments">Pagamentos con bitcoin mundiais</string>
+    <string name="index_item_world_bitcoin_payments">Pagamentos con bitcoin mundiais</string>
 	<string name="index_item_world_basemap">Mapa xeral mundial</string>
     <string name="index_item_world_ski">Mapa de esquí mundial</string>
     <string name="lang_zh">Chinés</string>
@@ -676,9 +675,7 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="rendering_attr_noPolygons_name">agochar os polígonos</string>
 	<string name="rendering_attr_appMode_name">Modo de renderizado</string>
 	<string name="rendering_attr_appMode_description">Optimizar o mapa para</string>
-	<string name="rendering_attr_contourLines_description">Mostrar desde o nivel de ampliación (require datos de nivel):</string>
-	<string name="rendering_attr_contourLines_name">Mostrar as curvas de nivel</string>
-	<string name="rendering_attr_hmRendered_description">Aumentar a cantidade de detalles que se mostran</string>
+    <string name="rendering_attr_hmRendered_description">Aumentar a cantidade de detalles que se mostran</string>
 	<string name="rendering_attr_hmRendered_name">Mostrar máis detalles do mapa</string>
 	<string name="local_index_routing_data">Datos de cálculo de ruta</string>
 	<string name="navigate_point_format">Formato</string>
@@ -1715,8 +1712,7 @@ Lon %2$s</string>
     <string name="rename_failed">Non foi posíbel cambiar o nome.</string>
 	<string name="days_behind">días de atraso</string>
 	<string name="rendering_attr_pisteGrooming_name">Coidado de pistas</string>
-    <string name="nautical_maps_missing">Para poder mostrar mapas náuticos hai que descargar o mapa especial sen conexión</string>
-	<string name="edit_group">Editar o grupo</string>
+    <string name="edit_group">Editar o grupo</string>
     <string name="version_settings_descr">Descargar versións nocturnas</string>
     <string name="version_settings">Construcións (versións)</string>
     <string name="voices">Indicacións con voz</string>
@@ -1737,8 +1733,7 @@ Lon %2$s</string>
 	<string name="agps_data_last_downloaded">Datos de A-GPS descargados por última vez: %1$s</string>
     <string name="delay_to_start_navigation_descr">Indicar o tempo de agarda durante o que ficar na pantalla de planificación de rutas</string>
     <string name="delay_to_start_navigation">Iniciar a navegación paso a paso despois de…</string>
-    <string name="plugin_nautical_name">Vista de mapa náutico</string>
-	<string name="save_track_to_gpx_globally_headline">Rexistro de pistas baixo petición</string>
+    <string name="save_track_to_gpx_globally_headline">Rexistro de pistas baixo petición</string>
 	<string name="shared_string_send">Engadir</string>
     <string name="favorite_category_dublicate_message">O nome de categoría indicado xa existe. Indique outro nome.</string>
     <string name="favorite_category_name">Nome da categoría</string>
@@ -1844,8 +1839,7 @@ Non se precisa descargar ningún mapa especial, xa que a vista se crea a partir 
 
 Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa» en «Configurar o mapa» como se desexe.
  "</string>
-	<string name="plugin_nautical_descr">"Este engadido enriquece o aplicativo de mapas de navegación OsmAnd para que mostre tamén mapas náuticos para viaxes en barco e outros tipos de deportes acuáticos.\n\nUnha extensión de mapas especial para OsmAnd fornece todas as marcas náuticas e símbolos das cartas para a navegación en augas interiores e de cabotaxe. A descrición de cada marca de navegación fornece os detalles precisos para identificala, así como o seu significado (categoría, forma, cor, secuencia, referencia, etc.).\n\nPara volver a un dos estilos de mapa convencionais de OsmAnd, simplemente hai que desactivar este engadido de novo ou cambiar o «Estilo de mapa» en «Configurar o mapa» como se desexe. "</string>
-	<string name="impassable_road_desc">Seleccione as estradas que desexe evitar durante a navegación</string>
+    <string name="impassable_road_desc">Seleccione as estradas que desexe evitar durante a navegación</string>
     <string name="shared_string_sound">Son</string>
     <string name="no_location_permission">O aplicativo non ten permiso para acceder aos datos de localización.</string>
     <string name="no_camera_permission">O aplicativo non ten permiso para acceder á cámara.</string>
@@ -2006,7 +2000,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="shared_string_recorded">Gravada</string>
     <string name="shared_string_record">Gravar</string>
     <string name="gpx_logging_no_data">Sen datos</string>
-    <string name="rendering_attr_contourColorScheme_description">Esquema de cores das liñas de nivel</string>
     <string name="save_track_min_speed">Velocidade de rexistro mínima</string>
     <string name="save_track_min_speed_descr">Indique a velocidade mínima para rexistrar un punto</string>
     <string name="save_track_min_distance_descr">Indique a distancia mínima desde a última posición para rexistrar un punto</string>
@@ -2017,7 +2010,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="christmas_desc_q">Mostrar PDI de Nadal?</string>
     <string name="rendering_value_light_brown_name">Marrón claro</string>
     <string name="rendering_value_dark_brown_name">Marrón escuro</string>
-    <string name="rendering_attr_contourColorScheme_name">Esquema de cores das liñas de nivel</string>
     <string name="search_hint">Escriba a cidade, o enderezo ou o nome do PDI</string>
     <string name="translit_names">Transliterar os nomes</string>
     <string name="edit_filter">Editar as categorías</string>
@@ -2122,13 +2114,9 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="access_widget_expand">Expandir</string>
     <string name="map_mode">Modo do mapa</string>
     <string name="storage_permission_restart_is_required">Agora o aplicativo ten permiso para escribir en almacenamento externo. Requírese reiniciar manualmente o aplicativo.</string>
-    <string name="rendering_attr_contourDensity_description">Densidade das liñas de nivel</string>
-    <string name="rendering_attr_contourDensity_name">Densidade das liñas de nivel</string>
     <string name="rendering_value_high_name">Alta</string>
     <string name="rendering_value_medium_w_name">Media</string>
     <string name="rendering_value_low_name">Baixa</string>
-    <string name="rendering_attr_contourWidth_description">Largo das liñas de nivel</string>
-    <string name="rendering_attr_contourWidth_name">Largo das liñas de nivel</string>
     <string name="rendering_attr_hideWaterPolygons_description">Auga</string>
     <string name="rendering_attr_hideWaterPolygons_name">Agochar a auga</string>
     <string name="legacy_search">Busca á antiga</string>
@@ -2175,7 +2163,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="driving_region_australia">Australia</string>
     <string name="show_free_version_banner">Mostrar a publicidade na versión gratuíta</string>
     <string name="show_free_version_banner_description">Mesmo se ten a versión paga, pode ver a publicidade da versión gratuíta</string>
-    <string name="activate_seamarks_plugin">Active o engadido de marcas marítimas</string>
     <string name="other_menu_group">Outros</string>
     <string name="poi_context_menu_modify_osm_change">Modificar cambio de OSM</string>
     <string name="number_of_contributors">Número de colaboradores</string>
@@ -2258,7 +2245,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="quick_action_add_first_intermediate_desc">Ao tocar no botón de acción engádese un primeiro punto intermedio na posición central da pantalla.</string>
     <string name="no_overlay">Sen capas superpostas</string>
     <string name="subscribe_email_error">Erro</string>
-    <string name="nautical_maps">Mapas náuticos</string>
     <string name="analyze_on_map">Analizar no mapa</string>
     <string name="shared_string_visible">Visíbel</string>
     <string name="restore_purchases">Restaurar as adquisicións</string>

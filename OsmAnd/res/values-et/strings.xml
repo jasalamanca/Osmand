@@ -67,7 +67,6 @@
 	<string name="shared_string_online_maps">Online kaardid</string>
 	<string name="record_plugin_name">Reisi salvestus</string>
 	<string name="osmo_plugin_name">OpenStreetMap monitoorimine</string>
-	<string name="plugin_nautical_name">Merendus kaardi vaade</string>
     <string name="shared_string_accessibility">Juurdepääs</string>
 	<string name="debugging_and_development">OsmAnd arendus</string>
 	<string name="back_to_map">Tagasi kaardile</string>

@@ -790,8 +790,6 @@
   <string name="rendering_attr_noPolygons_name">პოლიგონების გარეშე</string>
   <string name="rendering_attr_appMode_name">რენდერის რეჟიმი</string>
   <string name="rendering_attr_appMode_description">რუკის გაუმჯობესება მომხმარებლის პროფილის მიხედვით</string>
-  <string name="rendering_attr_contourLines_description">აირჩიეთ მინიმალური გადიდების ზომა რუკის საჩვენებლად. შეიძლება საჭირო გახდეს SRTM ფაილი:</string>
-  <string name="rendering_attr_contourLines_name">კონტურის ჩვენება</string>
   <string name="rendering_attr_hmRendered_description">რუკის მეტი წვრილმანის ჩვენება</string>
   <string name="rendering_attr_hmRendered_name">მეტი დეტალები რუკის შესახებ</string>
   <string name="route_roundabout">შემობრუნდით : %1$d</string>
@@ -1215,9 +1213,7 @@
     <string name="total_distance">ჯამური მანძილი</string>
     <string name="routing_attr_relief_smoothness_factor_name">რელიეფის სირბილის ფაქტორი</string>
     <string name="routing_attr_height_obstacles_name">სიმაღლის მონაცემების გამოყენება</string>
-    <string name="rendering_attr_depthContours_description">სიღრმის წერტილებისა და კონტურების ჩვენება</string>
-    <string name="rendering_attr_depthContours_name">სიღრმის კონტურები</string>
-	<string name="distance_moving">დაშორება შესწორებულია</string>
+  <string name="distance_moving">დაშორება შესწორებულია</string>
     <string name="shared_string_install">ჩადგმა</string>
     <string name="shared_string_add_photos">ფოტოების დამატება</string>
     <string name="no_photos_descr">მოცემული ლოკაციისთვის ფოტოები არ არსებობს</string>
