@@ -63,7 +63,6 @@ import net.osmand.plus.helpers.FileNameTranslationHelper;
 import net.osmand.plus.inapp.InAppHelper;
 import net.osmand.plus.inapp.InAppHelper.InAppListener;
 import net.osmand.plus.liveupdates.OsmLiveActivity;
-import net.osmand.plus.openseamapsplugin.NauticalMapsPlugin;
 import net.osmand.plus.views.controls.PagerSlidingTabStrip;
 import net.osmand.util.Algorithms;
 
@@ -121,7 +120,6 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 
 	private InAppHelper inAppHelper;
 
-	private boolean nauticalPluginDisabled;
 	private boolean freeVersion;
 
 	private ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
@@ -259,13 +257,6 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 		}
 	}
 
-	public void purchaseDepthContours() {
-		if (inAppHelper != null) {
-			getMyApplication().logEvent(this, "depth_contours_purchase_redirect");
-			inAppHelper.purchaseDepthContours(this);
-		}
-	}
-
 	public DownloadIndexesThread getDownloadThread() {
 		return downloadThread;
 	}
@@ -349,8 +340,6 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 					});
 					bld.setNegativeButton(R.string.shared_string_cancel, null);
 					bld.show();
-				} else if (fileName.startsWith(FileNameTranslationHelper.SEA_DEPTH)) {
-					getMyApplication().getSettings().getCustomRenderBooleanProperty("depthContours").set(true);
 				}
 			}
 			downloadItem = null;
@@ -471,8 +460,7 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 				&& !application.getSettings().FULL_VERSION_PURCHASED.get())
 				|| application.getSettings().SHOULD_SHOW_FREE_VERSION_BANNER.get();
 	}
-	
-	
+
 	public static class FreeVersionDialog {
 		private final View freeVersionBanner;
 		private final View freeVersionBannerTitle;
@@ -481,10 +469,6 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 		private final TextView freeVersionDescriptionTextView;
 		private final TextView downloadsLeftTextView;
 		private final ProgressBar downloadsLeftProgressBar;
-		
-//		private final View laterButton;
-//		private final View buttonsLinearLayout;
-		
 		private final View fullVersionProgress;
 		private final AppCompatButton fullVersionButton;
 		private final View osmLiveProgress;
@@ -492,7 +476,6 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 		private DownloadActivity ctx;
 		private boolean dialog;
 
-		
 		private OnClickListener onCollapseListener = new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -867,16 +850,11 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 		messageTextView.setText(R.string.device_memory);
 	}
 
-	public boolean isNauticalPluginDisabled() {
-		return nauticalPluginDisabled;
-	}
-
 	public boolean isFreeVersion() {
 		return freeVersion;
 	}
 
 	public void initAppStatusVariables() {
-		nauticalPluginDisabled = OsmandPlugin.getEnabledPlugin(NauticalMapsPlugin.class) == null;
 		freeVersion = Version.isFreeVersion(getMyApplication());
 	}
 

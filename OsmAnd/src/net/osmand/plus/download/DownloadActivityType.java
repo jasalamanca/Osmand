@@ -37,8 +37,6 @@ public class DownloadActivityType {
 			new DownloadActivityType(R.string.fonts_header, R.drawable.ic_action_map_language, "fonts", 25);
 	public static final DownloadActivityType ROADS_FILE =
 			new DownloadActivityType(R.string.download_roads_only_maps, "road_map", 30);
-	public static final DownloadActivityType DEPTH_CONTOUR_FILE =
-			new DownloadActivityType(R.string.download_regular_maps, "depth", 45);
 	public static final DownloadActivityType WIKIPEDIA_FILE =
 			new DownloadActivityType(R.string.download_wikipedia_maps, R.drawable.ic_plugin_wikipedia, "wikimap", 60);
 	public static final DownloadActivityType LIVE_UPDATES_FILE =
@@ -117,8 +115,6 @@ public class DownloadActivityType {
 		} else if (WIKIPEDIA_FILE == this) {
 			return fileName.endsWith(addVersionToExt(IndexConstants.BINARY_WIKI_MAP_INDEX_EXT_ZIP,
 					IndexConstants.BINARY_MAP_VERSION));
-		} else if (DEPTH_CONTOUR_FILE == this) {
-			return fileName.endsWith(addVersionToExt(IndexConstants.BINARY_MAP_INDEX_EXT_ZIP, IndexConstants.BINARY_MAP_VERSION));
 		}
 		return false;
 	}
@@ -139,8 +135,6 @@ public class DownloadActivityType {
 			return ctx.getAppPath(IndexConstants.WIKI_INDEX_DIR);
 		} else if (LIVE_UPDATES_FILE == this) {
 			return ctx.getAppPath(IndexConstants.LIVE_INDEX_DIR);
-		} else if (DEPTH_CONTOUR_FILE == this) {
-			return ctx.getAppPath(IndexConstants.MAPS_PATH);
 		}
 		throw new UnsupportedOperationException();
 	}
@@ -180,8 +174,6 @@ public class DownloadActivityType {
 			return IndexConstants.BINARY_WIKI_MAP_INDEX_EXT;
 		} else if (LIVE_UPDATES_FILE == this) {
 			return BINARY_MAP_INDEX_EXT;
-		} else if (DEPTH_CONTOUR_FILE == this) {
-			return BINARY_MAP_INDEX_EXT;
 		}
 		throw new UnsupportedOperationException();
 	}
@@ -195,8 +187,6 @@ public class DownloadActivityType {
 			return "&wiki=yes";
 		} else if (this == FONT_FILE) {
 			return "&fonts=yes";
-		} else if (this == DEPTH_CONTOUR_FILE) {
-			return "&inapp=depth";
 		}
 		return "";
 	}
@@ -248,8 +238,6 @@ public class DownloadActivityType {
 			return ctx.getString(R.string.shared_string_wikipedia);
 		} else if (this == ROADS_FILE) {
 			return ctx.getString(R.string.download_roads_only_item);
-		} else if (this == DEPTH_CONTOUR_FILE) {
-			return ctx.getString(R.string.download_depth_countours);
 		} else if (this == FONT_FILE) {
 			return ctx.getString(R.string.fonts_header);
 		}

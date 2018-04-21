@@ -32,12 +32,7 @@ public class DownloadResources extends DownloadResourceGroup {
 	private List<IndexItem> rawResources;
 	private Map<WorldRegion, List<IndexItem> > groupByRegion;
 	private List<IndexItem> itemsToUpdate = new ArrayList<>();
-	public static final String WORLD_SEAMARKS_KEY = "world_seamarks";
-	public static final String WORLD_SEAMARKS_NAME = "World_seamarks";
-	public static final String WORLD_SEAMARKS_OLD_KEY = "world_seamarks_basemap";
-	public static final String WORLD_SEAMARKS_OLD_NAME = "World_seamarks_basemap";
-	
-	
+
 	public DownloadResources(OsmandApplication app) {
 		super(null, DownloadResourceGroupType.WORLD, "");
 		this.region = app.getRegions().getWorldRegion();
@@ -139,8 +134,7 @@ public class DownloadResources extends DownloadResourceGroup {
 		if (date != null && !date.equals(indexActivatedDate) && !date.equals(indexFilesDate)) {
 			if ((item.getType() == DownloadActivityType.NORMAL_FILE && !item.extra)
 					|| item.getType() == DownloadActivityType.ROADS_FILE
-					|| item.getType() == DownloadActivityType.WIKIPEDIA_FILE
-					|| item.getType() == DownloadActivityType.DEPTH_CONTOUR_FILE) {
+					|| item.getType() == DownloadActivityType.WIKIPEDIA_FILE) {
 				outdated = true;
 			} else {
 				long itemSize = item.getContentSize();
@@ -264,10 +258,6 @@ public class DownloadResources extends DownloadResourceGroup {
 
 		DownloadResourceGroup worldMaps = new DownloadResourceGroup(this, DownloadResourceGroupType.WORLD_MAPS);
 
-		DownloadResourceGroup nauticalMapsGroup = new DownloadResourceGroup(this, DownloadResourceGroupType.NAUTICAL_MAPS_GROUP);
-		DownloadResourceGroup nauticalMapsScreen = new DownloadResourceGroup(nauticalMapsGroup, DownloadResourceGroupType.NAUTICAL_MAPS);
-		DownloadResourceGroup nauticalMaps = new DownloadResourceGroup(nauticalMapsGroup, DownloadResourceGroupType.NAUTICAL_MAPS_HEADER);
-
 		Map<WorldRegion, List<IndexItem> > groupByRegion = new LinkedHashMap<WorldRegion, List<IndexItem>>();
 		OsmandRegions regs = app.getRegions();
 		for (IndexItem ii : resources) {
@@ -283,12 +273,6 @@ public class DownloadResources extends DownloadResourceGroup {
 				fonts.addItem(ii);
 				continue;
 			}
-			if (ii.getType() == DownloadActivityType.DEPTH_CONTOUR_FILE) {
-				if (app.getSettings().DEPTH_CONTOURS_PURCHASED.get() || nauticalMaps.size() == 0) {
-					nauticalMaps.addItem(ii);
-				}
-				continue;
-			}
 			String basename = ii.getBasename().toLowerCase();
 			WorldRegion wg = regs.getRegionDataByDownloadName(basename);
 			if (wg != null) {
@@ -298,12 +282,7 @@ public class DownloadResources extends DownloadResourceGroup {
 				groupByRegion.get(wg).add(ii);
 			} else {
 				if (ii.getFileName().startsWith("World_")) {
-					if (ii.getFileName().toLowerCase().startsWith(WORLD_SEAMARKS_KEY) || 
-							ii.getFileName().toLowerCase().startsWith(WORLD_SEAMARKS_OLD_KEY)) {
-						nauticalMaps.addItem(ii);
-					} else {
-						worldMaps.addItem(ii);
-					}
+					worldMaps.addItem(ii);
 				} else {
 					otherMaps.addItem(ii);
 				}
@@ -347,10 +326,6 @@ public class DownloadResources extends DownloadResourceGroup {
 		// 1. if there is no subregions no need to create resource group REGIONS_MAPS - objection raise diversity and there is no value
 		// 2. if there is no subregions and there only 1 index item it could be merged to the level up - objection there is no such maps
 		addGroup(worldMaps);
-
-		nauticalMapsScreen.addGroup(nauticalMaps);
-		nauticalMapsGroup.addGroup(nauticalMapsScreen);
-		addGroup(nauticalMapsGroup);
 
 		if (otherMaps.size() > 0) {
 			addGroup(otherMapsGroup);

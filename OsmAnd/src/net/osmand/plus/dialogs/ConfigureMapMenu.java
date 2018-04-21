@@ -42,7 +42,6 @@ import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.activities.MapActivityLayers;
 import net.osmand.plus.activities.PluginActivity;
 import net.osmand.plus.activities.SettingsActivity;
-import net.osmand.plus.openseamapsplugin.NauticalMapsPlugin;
 import net.osmand.plus.poi.PoiFiltersHelper;
 import net.osmand.plus.render.RendererRegistry;
 import net.osmand.plus.views.OsmandMapTileView;
@@ -96,11 +95,10 @@ public class ConfigureMapMenu {
 		});
 		RenderingRulesStorage renderer = ma.getMyApplication().getRendererRegistry().getCurrentSelectedRenderer();
 		List<RenderingRuleProperty> customRules = new ArrayList<>();
-		boolean hasDepthContours = ma.getMyApplication().getResourceManager().hasDepthContours();
 		if (renderer != null) {
 			for (RenderingRuleProperty p : renderer.PROPS.getCustomRules()) {
 				if (!RenderingRuleStorageProperties.UI_CATEGORY_HIDDEN.equals(p.getCategory())
-						&& (hasDepthContours || !p.getAttrName().equals("depthContours"))) {
+						&& !p.getAttrName().equals("depthContours")) {
 					customRules.add(p);
 				}
 			}
@@ -480,7 +478,6 @@ public class ConfigureMapMenu {
 						bld.setTitle(R.string.renderers);
 						final OsmandApplication app = activity.getMyApplication();
 						final ArrayList<String> items = new ArrayList<>(app.getRendererRegistry().getRendererNames());
-						boolean nauticalPluginDisabled = OsmandPlugin.getEnabledPlugin(NauticalMapsPlugin.class) == null;
 						final List<String> visibleNamesList = new ArrayList<>();
 						int selected = -1;
 						final String selectedName = app.getRendererRegistry().getCurrentSelectedRenderer().getName();
@@ -488,17 +485,13 @@ public class ConfigureMapMenu {
 						Iterator<String> iterator = items.iterator();
 						while (iterator.hasNext()) {
 							String item = iterator.next();
-							if (nauticalPluginDisabled && item.equals(RendererRegistry.NAUTICAL_RENDER)) {
-								iterator.remove();
-							} else {
-								if (item.equals(selectedName)) {
-									selected = i;
-								}
-								String translation = RendererRegistry.getTranslatedRendererName(activity, item);
-								visibleNamesList.add(translation != null ? translation
-										: item.replace('_', ' ').replace('-', ' '));
-								i++;
+							if (item.equals(selectedName)) {
+								selected = i;
 							}
+							String translation = RendererRegistry.getTranslatedRendererName(activity, item);
+							visibleNamesList.add(translation != null ? translation
+									: item.replace('_', ' ').replace('-', ' '));
+							i++;
 						}
 
 						bld.setSingleChoiceItems(visibleNamesList.toArray(new String[visibleNamesList.size()]), selected, new DialogInterface.OnClickListener() {

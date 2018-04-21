@@ -12,7 +12,6 @@ import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.dialogs.ConfigureMapMenu;
-import net.osmand.plus.openseamapsplugin.NauticalMapsPlugin;
 import net.osmand.plus.quickaction.QuickAction;
 import net.osmand.plus.quickaction.SwitchableAction;
 import net.osmand.plus.render.RendererRegistry;
@@ -71,22 +70,7 @@ public class MapStyleAction extends SwitchableAction<String> {
 	}
 
 	public List<String> getFilteredStyles() {
-
-		List<String> filtered = new ArrayList<>();
-		boolean enabled = OsmandPlugin.getEnabledPlugin(NauticalMapsPlugin.class) != null;
-
-		if (enabled) return loadListFromParams();
-		else {
-
-			for (String style : loadListFromParams()) {
-
-				if (!style.equals(RendererRegistry.NAUTICAL_RENDER)) {
-					filtered.add(style);
-				}
-			}
-		}
-
-		return filtered;
+		return loadListFromParams();
 	}
 
 	@Override
@@ -121,18 +105,13 @@ public class MapStyleAction extends SwitchableAction<String> {
 				final OsmandApplication app = activity.getMyApplication();
 				final List<String> visibleNamesList = new ArrayList<>();
 				final ArrayList<String> items = new ArrayList<>(app.getRendererRegistry().getRendererNames());
-				final boolean nauticalPluginDisabled = OsmandPlugin.getEnabledPlugin(NauticalMapsPlugin.class) == null;
 
 				Iterator<String> iterator = items.iterator();
 				while (iterator.hasNext()) {
 					String item = iterator.next();
-					if (nauticalPluginDisabled && item.equals(RendererRegistry.NAUTICAL_RENDER)) {
-						iterator.remove();
-					} else {
-						String translation = RendererRegistry.getTranslatedRendererName(activity, item);
-						visibleNamesList.add(translation != null ? translation
-								: item.replace('_', ' ').replace('-', ' '));
-					}
+					String translation = RendererRegistry.getTranslatedRendererName(activity, item);
+					visibleNamesList.add(translation != null ? translation
+							: item.replace('_', ' ').replace('-', ' '));
 				}
 
 				final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(activity, R.layout.dialog_text_item);

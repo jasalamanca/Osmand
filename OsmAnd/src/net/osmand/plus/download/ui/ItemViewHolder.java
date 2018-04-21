@@ -47,9 +47,7 @@ public class ItemViewHolder {
 	protected final Button rightButton;
 	protected final ProgressBar progressBar;
 
-	private boolean nauticalPluginDisabled;
 	private boolean freeVersion;
-	private boolean depthContoursPurchased;
 
 	protected final DownloadActivity context;
 	
@@ -68,9 +66,7 @@ public class ItemViewHolder {
 
 	private enum RightButtonAction {
 		DOWNLOAD,
-		ASK_FOR_SEAMARKS_PLUGIN,
 		ASK_FOR_FULL_VERSION_PURCHASE,
-		ASK_FOR_DEPTH_CONTOURS_PURCHASE
 	}
 	
 
@@ -122,9 +118,7 @@ public class ItemViewHolder {
 	}
 
 	private void initAppStatusVariables() {
-		nauticalPluginDisabled = context.isNauticalPluginDisabled();
 		freeVersion = context.isFreeVersion();
-		depthContoursPurchased = context.getMyApplication().getSettings().DEPTH_CONTOURS_PURCHASED.get();
 	}
 
 	public void bindIndexItem(final IndexItem indexItem) {
@@ -172,9 +166,7 @@ public class ItemViewHolder {
 		if (!isDownloading) {
 			progressBar.setVisibility(View.GONE);
 			descrTextView.setVisibility(View.VISIBLE);
-			if (indexItem.getType() == DownloadActivityType.DEPTH_CONTOUR_FILE && !depthContoursPurchased) {
-				descrTextView.setText(context.getString(R.string.depth_contour_descr));
-			} else if (showTypeInDesc) {
+			if (showTypeInDesc) {
 				descrTextView.setText(indexItem.getType().getString(context) + 
 						" • " + indexItem.getSizeDescription(context) +
 						" • " + (showRemoteDate ? indexItem.getRemoteDate(dateFormat) : indexItem.getLocalDate(dateFormat)));
@@ -290,15 +282,9 @@ public class ItemViewHolder {
 	@SuppressLint("DefaultLocale")
 	public RightButtonAction getClickAction(final IndexItem indexItem) {
 		RightButtonAction clickAction = RightButtonAction.DOWNLOAD;
-		if (indexItem.getBasename().toLowerCase().equals(DownloadResources.WORLD_SEAMARKS_KEY)
-				&& nauticalPluginDisabled) {
-			clickAction = RightButtonAction.ASK_FOR_SEAMARKS_PLUGIN;
-		} else if (indexItem.getType() == DownloadActivityType.WIKIPEDIA_FILE && freeVersion
+		if (indexItem.getType() == DownloadActivityType.WIKIPEDIA_FILE && freeVersion
 				&& !context.getMyApplication().getSettings().FULL_VERSION_PURCHASED.get()) {
 			clickAction = RightButtonAction.ASK_FOR_FULL_VERSION_PURCHASE;
-		} else if (indexItem.getType() == DownloadActivityType.DEPTH_CONTOUR_FILE
-				&& !context.getMyApplication().getSettings().DEPTH_CONTOURS_PURCHASED.get()) {
-			clickAction = RightButtonAction.ASK_FOR_DEPTH_CONTOURS_PURCHASE;
 		}
 		return clickAction;
 	}
@@ -312,15 +298,6 @@ public class ItemViewHolder {
 						case ASK_FOR_FULL_VERSION_PURCHASE:
 							context.getMyApplication().logEvent(context, "in_app_purchase_show_from_wiki_context_menu");
 							context.purchaseFullVersion();
-							break;
-						case ASK_FOR_DEPTH_CONTOURS_PURCHASE:
-							context.purchaseDepthContours();
-							break;
-						case ASK_FOR_SEAMARKS_PLUGIN:
-							context.startActivity(new Intent(context, context.getMyApplication().getAppCustomization()
-									.getPluginsActivity()));
-							Toast.makeText(context.getApplicationContext(),
-									context.getString(R.string.activate_seamarks_plugin), Toast.LENGTH_SHORT).show();
 							break;
 						case DOWNLOAD:
 							break;

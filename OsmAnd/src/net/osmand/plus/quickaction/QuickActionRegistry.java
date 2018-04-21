@@ -7,11 +7,9 @@ import com.google.gson.reflect.TypeToken;
 
 import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.OsmandSettings;
-import net.osmand.plus.openseamapsplugin.NauticalMapsPlugin;
 import net.osmand.plus.osmedit.OsmEditingPlugin;
 import net.osmand.plus.quickaction.actions.AddOSMBugAction;
 import net.osmand.plus.quickaction.actions.AddPOIAction;
-import net.osmand.plus.quickaction.actions.MapStyleAction;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -68,14 +66,6 @@ public class QuickActionRegistry {
 
 		for (QuickAction action : actions) {
 			boolean skip = false;
-			if (OsmandPlugin.getEnabledPlugin(NauticalMapsPlugin.class) == null) {
-				if (action.type == MapStyleAction.TYPE) {
-					if (((MapStyleAction) QuickActionFactory.produceAction(action)).getFilteredStyles().isEmpty()) {
-						skip = true;
-					}
-				}
-			}
-
 			if (OsmandPlugin.getEnabledPlugin(OsmEditingPlugin.class) == null) {
 				if (action.type == AddPOIAction.TYPE) {
 					skip = true;

@@ -1,11 +1,11 @@
 package net.osmand.plus.helpers;
 
 import android.content.Context;
+
 import net.osmand.IndexConstants;
 import net.osmand.PlatformUtil;
 import net.osmand.map.OsmandRegions;
 import net.osmand.plus.R;
-import net.osmand.plus.download.DownloadResources;
 
 import org.apache.commons.logging.Log;
 
@@ -18,7 +18,6 @@ import java.lang.reflect.Field;
 public class FileNameTranslationHelper {
 	private static final Log LOG = PlatformUtil.getLog(FileNameTranslationHelper.class);
 	public static final String WIKI_NAME = "_wiki";
-	public static final String SEA_DEPTH = "Depth_";
 
 	public static String getFileName(Context ctx, OsmandRegions regions, String fileName) {
 		String basename = getBasename(fileName);
@@ -208,15 +207,6 @@ public class FileNameTranslationHelper {
 			return ctx.getString(R.string.index_item_world_basemap);
 		} else if (basename.equals("world_bitcoin_payments")) {
 			return ctx.getString(R.string.index_item_world_bitcoin_payments);
-		} else if (basename.equals(DownloadResources.WORLD_SEAMARKS_KEY) || 
-				basename.equals(DownloadResources.WORLD_SEAMARKS_OLD_KEY)) {
-			return ctx.getString(R.string.index_item_world_seamarks);
-		} else if (basename.equals("depth_contours_osmand_ext")) {
-			return ctx.getString(R.string.index_item_depth_contours_osmand_ext);
-		} else if (basename.equals("depth_points_southern_hemisphere_osmand_ext")) {
-			return ctx.getString(R.string.index_item_depth_points_southern_hemisphere);
-		} else if (basename.equals("depth_points_northern_hemisphere_osmand_ext")) {
-			return ctx.getString(R.string.index_item_depth_points_northern_hemisphere);
 		}
 		return null;
 	}
