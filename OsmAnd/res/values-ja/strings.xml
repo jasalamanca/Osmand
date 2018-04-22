@@ -505,8 +505,7 @@ POIの更新は利用できません</string>
 <string name="app_mode_pedestrian">徒歩</string>
 <string name="position_on_map_center">中央</string>
 <string name="position_on_map_bottom">下</string>
-<string name="navigate_point_top_text">選択した形式で緯度 &amp; 経度を入力
-(D - 度, M - 分, S - 秒)</string>
+<string name="navigate_point_top_text">選択した形式で緯度 &amp; 経度を入力 (D - 度, M - 分, S - 秒)</string>
 <string name="navigate_point_latitude">緯度</string>
 <string name="navigate_point_longitude">経度</string>
 <string name="navigate_point_format_D">DDD.DDDDD</string>
@@ -659,7 +658,6 @@ POIの更新は利用できません</string>
     <string name="gpx_file_name">GPXファイル名</string>
     <string name="gpx_saved_sucessfully">GPXファイルは正常に {0} に保存されました</string>
     <string name="osmand_distance_planning_plugin_description">このプラグインはマップ画面のタップ、又は既存のGPXファイルから道順を作成したり、旅程の計画など任意の地点間の距離を測定するためのウィジェットを追加します。得られた結果はGPXファイルとして保存することができるので、後で使用することができます。</string>
-    <string name="osmand_distance_planning_plugin_name">距離の計算＆計画ツール</string>
     <string name="use_distance_measurement_help">* 地点をマークするにはタップして下さい。
  
  * マップ上で長タップすると以前の地点を削除できます。
@@ -1838,8 +1836,7 @@ POIの更新は利用できません</string>
 	<string name="shared_string_undo">元に戻す</string>
 	<string name="shared_string_skip">スキップ</string>
 	<string name="app_name_osmand">OsmAnd</string>
-	<string name="offline_maps_and_navigation">Offline Maps\n&amp; Navigation</string>
-	<string name="commit_poi">POIを申請する</string>
+    <string name="commit_poi">POIを申請する</string>
     <string name="av_locations">位置</string>
     <string name="poi_action_delete">削除</string>
 	<string name="shared_string_card_was_hidden">項目は非表示</string>
@@ -1923,23 +1920,6 @@ POIの更新は利用できません</string>
     <string name="access_from_map">マップ画面から開く</string>
     <string name="show_on_start_description">ONでOsmAnd起動時ダッシュボードを自動的に表示します</string>
     <string name="copied_to_clipboard">クリップボードにコピーしました</string>
-    <string name="release_2_2">" • マップ画面や他の画面で項目をタップした場合のコンテキストメニューの刷新
-\n
-\n • ダッシュボード設定で\'起動時に表示\'をOFFにすることで今まで通りにマップ画面が直接表示出来る様に、選択式に変更
-\n
-\n • ダッシュボード設定で任意の項目だけ表示できる様に変更可能
-\n
-\n • ダッシュボード設定で今まで通りメニューボタンでメニューが開ける様に設定可能
-\n
-\n • マップ画面で世界地図表示状態から任意の地点のマップデータをダウンロード可能に
-\n
-\n • POI検索時より具体的に検索できる様に変更
-\n
-\n • POIやOSMの項目編集機能を改善
-\n
-\n • マップやその他データのダウンロード構造とUIを刷新
-\n
-\n他多数… "</string>
     <string name="osm_save_offline">ｵﾌﾗｲﾝで保存</string>
     <string name="osm_edit_modified_poi">OSMのPOIが変更されました</string>
     <string name="osm_edit_deleted_poi">OSMのPOIが削除されました</string>
@@ -2033,17 +2013,6 @@ POIの更新は利用できません</string>
     <string name="shared_string_not_selected">指定しない</string>
     <string name="report">レポート</string>
     <string name="storage_permission_restart_is_required">外部ストレージへの書き込みが許可されました。手動でアプリケーションを再起動してください。</string>
-    <string name="release_2_3">" ・ 『OSM Live』 地図作成者と開発者をサポートする機能と時間毎の地図更新に対応。
-\n
-\n・ 『マップマーカー』 マップにて場所を選択する新しい方法の採用。
-\n
-\n・ より詳細なOSMマップと国または地域別の道路標識とマップの新しい機能の追加。
-\n
-\n・ ルート指定方法を視覚的に分かりやすく改良。
-\n
-\n・ 住所検索などコンテキストメニューの大幅改良。
-\n
-\n等々… "</string>
     <string name="shared_string_move_up">上に移動</string>
     <string name="shared_string_move_down">下に移動</string>
     <string name="finish_navigation">ナビゲーションの終了</string>
@@ -2202,19 +2171,6 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="back_to_search">検索に戻る</string>
     <string name="confirmation_to_delete_history_items">選択された履歴を削除しますか？</string>
     <string name="show_something_on_map">マップ上に%1$sを表示</string>
-    <string name="release_2_4">• 新しくなって、より強化されたフリーワード検索 
-\n 
-\n • Bluetooth関連の改善多数 
-\n 
-\n • 音声案内とターン及びレーン指示等のルート案内の改善 
-\n 
-\n • ルートレンダリング時のトランスポートレイヤの改善 
-\n 
-\n • 新たな言語と対象地域の追加 
-\n 
-\n • 他、多くの改善とバグ修正 
-\n 
-\n等々…</string>
     <string name="dist_away_from_my_location">%1$s離れた場所を検索</string>
     
     <string name="share_history_subject">OsmAnd経由で共有</string>
@@ -2236,28 +2192,7 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="show_legacy_search_desc">メニューリストで旧型検索も使用できるようにします</string>
     <string name="routing_attr_allow_motorway_name">高速道路を許可</string>
     <string name="routing_attr_allow_motorway_description">高速道路を使用可能とみなします</string>
-    <string name="release_2_6">"\\022 新機能: クイックアクションボタンの実装 
-\n 
-\n • 画面タッチおよびジェスチャ時の応答改善 (例: 左右への移動や、マップの拡大縮小時など)
-\n 
-\n •  より多くの言語に応じたマップフォントを導入 
-\n 
-\n • 言語地域に応じたTTS音声をサポート (地域による訛り含む)
-\n 
-\n • いくつかのマップスタイルとwikipediaの視認性強化 
-\n 
-\n • オープンロケーションコード(OLC)をサポート 
-\n 
-\n • 記録済みGPXトラックとルート計算後での標高、勾配、および速度プロファイルを表示 
-\n 
-\n • 自転車の\"運転スタイル\"の設定とそれに応じたルート検索の改善 
-\n 
-\n • 自転車のルート検索で高度データを使用するための設定 
-\n 
-\n • その他いくつかの改善とバグ修正 
-\n 
-\n等々…"</string>
-	<string name="auto_split_recording_title">空白検知で自動分割記録</string>
+    <string name="auto_split_recording_title">空白検知で自動分割記録</string>
 	<string name="auto_split_recording_descr">6分、2時間、あるいは日付変更後に長い空白があった場合に新しいセグメントを開始します。</string>
     <string name="rendering_value_high_name">高</string>
     <string name="rendering_value_medium_w_name">中</string>
@@ -2304,19 +2239,6 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="search_map_hint">市町村名または地域名で検索</string>
     <string name="route_roundabout_short">%1$d番目の出口から出て進みます</string>
     <string name="route_calculation">ルート計算</string>
-    <string name="release_2_5">\\022 地図上のアイコンをタップ可能に 
-\n 
-\n・ より強力な検索フィルター、料理別のレストランまたは施設の充実したキャンプ場など 
-\n 
-\n・ サイクリストやハイカー向けの新しい地形表記のあるマップ 
-\n 
-\n・ 旅程記録機能の強化 
-\n 
-\n・ ナビゲーション通知の改善(Android版) 
-\n 
-\n・ 他多くの改善とバグ修正 
-\n 
-\n等々…</string>
     <string name="search_hint">市町村名、住所、POI名称を入力</string>
     <string name="osm_live_banner_desc">マップのダウンロード数は無制限になり、設定した更新頻度(月、週、日、時間)での自動ダウンロードが可能になります。</string>
     <string name="osmand_plus_banner_desc">マップの無制限ダウンロード、アップデート、Wikipediaプラグインも使用可能。</string>
@@ -2515,30 +2437,6 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="advanced_coords_search">高度な座標検索</string>
     <string name="lang_ber">ベルベル諸語</string>
     <string name="route_is_too_long_v2">現在の経路は計算するには長すぎるようです。10分以内に結果が出なければ中間に目的地(経由地点)を追加してください。</string>
-    <string name="osmand_extended_description_part1">" OsmAnd(OSM Automated Navigation Directions～自動ナビ案内)は、『無償利用可、ワールドワイド対応、高品質のOpenStreetMap(OSM)データ』を使用した、地図＆ナビゲーションアプリです。
-\n音声と視覚による案内、POI(Point Of Interest～興味的地点)表示、GPX経路の作成と管理、等高線を使った地形情報(要プラグイン)、ドライブ、サイクリング、徒歩移動各移動手段別のモード、OSMの編集等々に対応。 "</string>
-    <string name="osmand_extended_description_part3">"
- マップ機能
- • 周囲のPOI(Point Of Interests～興味を引く施設)を表示できます
- • 進行方向に応じてマップの表示向きの変更も出来ます(コンパスを基本にも出来ます)
- • あなたがいる場所やあなたが見ている場所も表示できます
- • 友人があなたを見つけることが出来るように、あなたの場所を共有することができます
- • 大事な場所は『お気に入り』として保存できます
- • 地図上の名前(地名)を表示する方法を英語、現地語、または表音のつづりで選択できます
- • 特殊なオンラインタイル、衛星写真(Bingを利用)、ツーリング/ナビゲーションGPX経路などを異なるレイヤーに、またカスタマイズ可能な透明度などを追加レイヤーに指定できます
- "</string>
-    <string name="osmand_extended_description_part4">"
- スキー
- OsmAndスキーマッププラグインを使用すると、難度も含めたスキー用経路や、リフトや他の施設の場所などの追加情報を確認することができます。
- "</string>
-    <string name="osmand_extended_description_part5">"
- サイクリング
- • サイクリングに適した道もマップで見つけられます
- • サイクリングモードでのGPSナビゲーションは、サイクリング用道路を使用してルートを構築します。
- • 実際の速度と高度を見ることができます
- • GPXレコーディングオプションを使用すると、経路を記録して共有することができます
- • 追加のプラグインを使用して、等高線と山陰を表示することができます
- "</string>
     <string name="osmand_extended_description_part6">"
  ウォーキング、ハイキング、市内ツアー
  • 地図には、徒歩移動やハイキング向け道が表示されます
@@ -2552,72 +2450,6 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
  • データ、バグの報告ができます
  • GPX経路情報をアプリから直接OSMにアップロードできます
  • POIを追加してOSMに直接アップロードできます(オフラインの場合は後で行うことができます)
- "</string>
-    <string name="osmand_extended_description_part8">"
- OsmAndはオープンソースで積極的に開発されています。バグを報告したり、翻訳を改善したり、新しい機能をコーディングすることで、誰もがアプリケーションの開発に貢献できます。このような開発者とユーザーとのやりとりによって、プロジェクトは継続的に改善されています。プロジェクトの進捗状況は、資金調達と新しい機能のテストに大きく左右されます。
-
-地図のおおよそのエリアとその品質(※注 *の数が多いほど充実しています):
- • 西ヨーロッパ: ****
- • 東ヨーロッパ: ***
- • ロシア: ***
- • 北米: ***
- • 南アメリカ: **
- • アジア: **
- • 日本、韓国: ***
- • 中東: **
- • アフリカ: **
- • 南極: *
-
- 世界中のほとんどの国の地図がダウンロード可能です！
- フランス、ドイツ、メキシコ、英国、スペイン、オランダ、米国、ロシア、ブラジルなどの国の便利なナビゲーターを入手しましょう。
- "</string>
-    <string name="osmand_plus_extended_description_part1">" OsmAnd(OSM Automated Navigation Directions～自動ナビ案内)は、『無償利用可、ワールドワイド対応、高品質のOpenStreetMap(OSM)』データを使用した、地図＆ナビゲーションアプリです。
-\n音声と視覚による案内、POI(Point Of Interest～興味的地点)表示、GPX経路の作成と管理、等高線を使った地形情報(要プラグイン)、ドライブ、サイクリング、徒歩移動各移動手段別のモード、OSMの編集等々に対応。
-\n OsmAnd+は有料のアプリケーションです。購入することで同プロジェクトの資金、新機能開発への援助となり、最新アップデートも利用可能になります。
-\nいくつかの主な機能: "</string>
-    <string name="osmand_plus_extended_description_part2">"
- ナビゲーション
- • オンライン（高速）またはオフライン(海外の場合はローミング料金が不要に）どちらでも動作可能です
- • ターンバイターンの音声案内（録音された音声と合成音声）が可能です
- • 車線案内、道路名、到着予定時刻等の様々なオプションが利用できます
- • 旅程上の中間経由地点をサポートしています
- • ルートから大きく外れると自動的に再ルート検索します
- • 住所別、種類別（例：レストラン、ホテル、ガソリンスタンド、博物館）、または座標の数値で場所を検索可能です
- "</string>
-    <string name="osmand_plus_extended_description_part3">"
- マップ表示
- • 現在地と現在の方向を表示できます
- • オプションで、コンパスまたは動きの方向に応じてマップの向きを変更できます
- • 大事な場所は『お気に入り』として保存できます
- • 周囲のPOI(Point Of Interests～興味を引く施設)を表示できます
- • 特殊なオンラインタイル、衛星写真(Bingを利用)、ツーリング/ナビゲーションGPX経路などを異なるレイヤーに、またカスタマイズ可能な透明度などを追加レイヤーに指定可能
- • オプションで、地名を英語、現地語、または表音つづりで表示可能
- "</string>
-    <string name="osmand_plus_extended_description_part4">"
- OSMとWikipediaデータを使用
- • 世界最高峰の共有プロジェクトからの高品質な情報を得られます
- • 国または地域ごとにOSMデータが利用できます
- • 観光に最適なウィキペディアのPOI
- • マップや音声などはアプリからの回数の制限無く無料ダウンロードができます
- • コンパクトなオフラインベクターマップが少なくとも1か月に1回更新されます
-
- • 完全な地域データと道路網のみのデータの選択が可能です（例：施設などを含んだデータ 700MB、道路網のみ 200MB）
- "</string>
-    <string name="osmand_plus_extended_description_part5">"
- 安全機能
- • オプションで昼/夜モードマップ自動表示切り替えができます
- • 制限速度の表示が出来ます(オプション)
- • 速度に応じたマップの表示拡縮ができます
- • 友人があなたを見つけることができるようにあなたの場所を共有する昨日もあります
- "</string>
-    <string name="osmand_plus_extended_description_part6">"
- 自転車と徒歩モードの特徴
- • アウトドアアクティビティ向けに徒歩移動、ハイキング、自転車向けルートを見られます
- • 自転車と徒歩のための特別なルート検索と表示モードがあります
- • 路線名を含む公共交通機関の停留所(バス、路面電車、電車)
- • ローカル内のGPXファイル内記録経路またはオンラインサービスからの経路利用ができます
- • オプションで速度と標高表示ができます
- • 等高線と山陰の表示(要追加プラグイン）
  "</string>
     <string name="quick_action_showhide_osmbugs_title">OSMメモの表示/非表示</string>
     <string name="quick_action_osmbugs_show">OSMメモを表示</string>
@@ -2640,20 +2472,6 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="nothing_found_descr">検索単語を変更したり、検索の距離を広げてみてください</string>
     <string name="increase_search_radius">検索範囲を広げる</string>
     <string name="restart_search">再検索</string>
-    <string name="osmand_plus_extended_description_part8">" 地図のおおよそのエリアとその品質(※注 *の数が多いほど充実しています):
-\n • 西ヨーロッパ: ****
-\n • 東ヨーロッパ: ***
-\n • ロシア: ***
-\n • 北米: ***
-\n • 南アメリカ: **
-\n • アジア: **
-\n • 日本、韓国: ***
-\n • 中東: **
-\n • アフリカ: **
-\n • 南極: *
-\n
-\n 世界中のほとんどの国の地図がダウンロード可能です！
-\n アフガニスタンからジンバブエ、オーストラリアからアメリカ、 アルゼンチン、ブラジル、カナダ、フランス、ドイツ、メキシコ、イギリス、スペイン、... "</string>
     <string name="osmand_plus_extended_description_part7">"
  直接OSMに寄与
  • データ、バグの報告ができます
@@ -2786,15 +2604,6 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="quick_action_show_navigation_finish_dialog">ナビゲーション終了の確認ダイアログを表示</string>
     <string name="quick_action_start_stop_navigation">ナビゲーションの開始/停止</string>
     <string name="quick_action_start_stop_navigation_descr">このボタンをタップするとナビゲーションを開始または終了します。</string>
-    <string name="release_2_7">\\022 Mapillary ストリート画像用プラグインの実装
-\n
-\n • 距離測定のための定規ウィジェット
-\n
-\n • GPXから作成した経路とその詳細部分の分割機能
-\n
-\n • その他改善といくつかのバグ修正
-\n
-\n</string>
     <string name="release_2_8">\\022 複数の目的地とそれを踏まえたルート計画用に新しく生まれ変わったマップマーカーシステム
 \n
 \n • 距離測定ツールで道に沿って計測できる機能とそれを保存できる機能の追加

@@ -309,25 +309,6 @@
     <string name="routing_attr_relief_smoothness_factor_name">Select elevation fluctuation</string>
     <string name="routing_attr_height_obstacles_name">Use elevation data</string>
     <string name="routing_attr_height_obstacles_description">Use terrain elevation data provided by SRTM, ASTER, and EU-DEM.</string>
-    <string name="release_2_6">
-	\u2022 New feature: Quick action button\n\n
-	\u2022 Improved touch screen gesture response (e.g. concurrent panning and zooming)\n\n
-	\u2022 New map fonts covering more locales\n\n
-	\u2022 Support TTS for regional language variants (and accents)\n\n
-	\u2022 Visibility enhancements in several map styles and wikipedia\n\n
-	\u2022 Support Open Location Code (OLC)\n\n
-	\u2022 Display elevation, slope, and speed profile for recorded GPX tracks and calculated routes\n\n
-	\u2022 \"Driving style\" setting and logic improvements in bicycle routing\n\n
-	\u2022 Settings for using altitude data in bicycle routing\n\n
-	\u2022 Several other improvements and bug fixes\n\n
-	and more…
-	</string>
-    <string name="release_2_7">
-	\u2022 Mapillary plugin with street-level imagery\n\n
-	\u2022 Ruler widget for distance measurement\n\n
-	\u2022 GPX split intervals with detailed info about your track\n\n
-	\u2022 Other improvements and bug fixes\n\n
-	</string>
     <string name="release_2_8">
 	\u2022 Completely reworked map markers with guide lines and route planning\n\n
 	\u2022 Measure distance tool offering snap to road feature and saving points as track\n\n
@@ -380,15 +361,6 @@
     <string name="shared_string_recorded">Recorded</string>
     <string name="shared_string_record">Record</string>
     <string name="gpx_logging_no_data">No data</string>
-    <string name="release_2_5">
-	\u2022 Tappable icons on the map\n\n
-	\u2022 Powerful POI filter search: Search, e.g. restaurants by cuisine, or campgrounds with specific facilities\n\n
-	\u2022 New Topo Map style for cyclists and hikers\n\n
-	\u2022 Enhanced trip recording\n\n
-	\u2022 Improved navigation notifications (Android Wear)\n\n
-	\u2022 Many other improvements and bug fixes\n\n
-	and more…
-    </string>
     <string name="save_track_min_speed">Logging minimum speed</string>
     <string name="save_track_min_speed_descr">Filter: Set minimum speed for a point to be logged.</string>
     <string name="save_track_min_distance">Logging minimum displacement</string>
@@ -456,15 +428,6 @@
     <string name="back_to_search">Back to search</string>
     <string name="confirmation_to_delete_history_items">Do you want to remove the selected items from history?</string>
     <string name="show_something_on_map">Show %1$s on the map</string>
-    <string name="release_2_4">
-	\u2022 New very powerful free text search\n\n
-	\u2022 Car audio system / speaker phone integration via Bluetooth\n\n
-	\u2022 Improved route guidance, voice prompting, and turn lane indication\n\n
-	\u2022 Improved transport layer with route rendering\n\n
-	\u2022 Added more locales and now support regional locales\n\n
-	\u2022 Many other improvements and bug fixes\n\n
-	and more…
-    </string>
     <string name="dist_away_from_my_location">Search %1$s away</string>
     <string name="share_history_subject"> shared via OsmAnd</string>
     <string name="search_categories">Categories</string>
@@ -553,14 +516,6 @@
     \n\nThe group has not been removed after months, bring it in line with the rules you create groups on the website OsMo.mobi
     </string>
     <string name="storage_permission_restart_is_required">Now the application is allowed to write to external storage. A manual application restart is required.</string>
-    <string name="release_2_3">
-	\u2022 OSM Live. Support map contributors and developers and get hourly map updates. \n\n
-	\u2022 Map markers. A new way to quickly select places on the map.\n\n
-	\u2022 More detailed OSM maps with country specific road shields and lots of new map features.\n\n
-	\u2022 Improved Look and Feel of Route preparation. \n\n
-	\u2022 Many improvements in the map context menu such as contextual address lookup.\n\n
-	and more…
-        </string>
     <string name="shared_string_move_up">Move up</string>
     <string name="shared_string_move_down">Move down</string>
     <string name="finish_navigation">Finish navigation</string>
@@ -670,17 +625,6 @@
     <string name="show_on_start_description">\'Off\' directly launches the map screen.</string>
     <string name="show_on_start">Show on start</string>
     <string name="copied_to_clipboard">Copied to clipboard</string>
-    <string name="release_2_2">
-	\u2022 New context-sensitive UI for tapping locations on the map and on other screens\n\n
-	\u2022 Map screen is now launched directly unless \'Show dashboard on app start\' is selected\n\n
-	\u2022 Configure which and how cards are displayed on the dashboard\n\n
-	\u2022 Bypass the dashboard if you like menu-based app control\n\n
-	\u2022 To download maps, regions can be directly selected by tapping on the world map\n\n
-	\u2022 POI Search now supports more specific queries\n\n
-	\u2022 Improved POI and OSM editing functionality\n\n
-	\u2022 Map data download structure and interface reworked\n\n
-	and more…
-        </string>
     <string name="osm_save_offline">Save offline</string>
     <string name="osm_edit_modified_poi">Modified OSM POI</string>
     <string name="osm_edit_deleted_poi">Deleted OSM POI</string>
@@ -989,7 +933,6 @@
 		\n\nA special map download is not needed, the view is created from our standard maps.
 		\n\nThis view can be reverted by either de-activating it again here, or by changing the \'Map style\' under \'Configure map\' as desired.
 	</string>
-    <string name="osmand_distance_planning_plugin_name">Distance calculator &amp; planning tool</string>
     <string name="osmand_distance_planning_plugin_description">This plugin provides a map screen widget allowing to create paths by tapping on the map, or use or modify existing GPX files, to plan a trip and measure the distance between points. The results can be saved as a GPX file, which can later be used for guidance.</string>
     <string name="shared_string_accessibility">Accessibility</string>
     <string name="osmand_accessibility_description">This plugin makes the device\'s accessibility features available directly in OsmAnd. It facilitates e.g. adjusting the speech rate for TTS voices, configuring directional-pad screen navigation, using a trackball for zoom control, or using text-to-speech feedback, like for auto announcing your position.</string>
@@ -1601,33 +1544,6 @@
     <string name="interrupt_music_descr">Voice prompts pause, not just subdue, music playback.</string>
     <string name="interrupt_music">Pause music</string>
     <string name="osmand_short_description_80_chars">Global Mobile Map Viewing &amp; Navigation for Offline and Online OSM Maps</string>
-    <string name="osmand_extended_description_part1">
-    OsmAnd (OSM Automated Navigation Directions) is a map and navigation application with access to the free, worldwide, and high-quality OpenStreetMap (OSM) data.
-
-    Enjoy voice and optical navigator, viewing POIs (points of interest), creating and managing GPX tracks, using contour lines visualization and altitude info (through plugin), a choice between driving, cycling, pedestrian modes, OSM editing and much more.
-    </string>
-    <string name="osmand_extended_description_part3">
-        Map
-        • Displays POIs (point of interests) around you
-        • Adjusts the map to your direction of motion (or compass)
-        • Shows where you are and where you are looking at
-        • Share your location so that your friends can find you
-        • Keeps your most important places in Favorites
-        • Allows you to choose how to display names on the map: in English, local, or phonetic spelling
-        • Displays specialized online tiles, satellite view (from Bing), different overlays like touring/navigation GPX tracks and additional layers with customizable transparency
-    </string>
-    <string name="osmand_extended_description_part4">
-        Skiing
-        OsmAnd ski maps plugin enables you to see ski tracks with level of complexity and some additional information, like location of lifts and other facilities.
-    </string>
-    <string name="osmand_extended_description_part5">
-        Cycling
-        • You can find cycling paths on the map
-        • GPS navigation in cycling mode builds your route using cycling paths
-        • You can see your speed and altitude
-        • GPX recording option enables you to record your trip and share it
-        • Via additional plugin you can enable displaying contour lines and hill-shading
-    </string>
     <string name="osmand_extended_description_part6">
         Walking, hiking, city tour
         • The map shows you walking and hiking paths
@@ -1642,60 +1558,7 @@
         • Upload GPX tracks to OSM directly from the app
         • Add POIs and directly upload them to OSM (or later if offline)
     </string>
-    <string name="osmand_extended_description_part8">OsmAnd is open-source and actively being developed. Everyone can contribute to the application by reporting bugs, improving translations or coding new features. The project is in a lively state of continuous improvement by all these forms of developer and user interaction. The project progress also relies on financial contributions to fund coding and testing of new functionalities. Approximate map coverage and quality: • Western Europe: **** • Eastern Europe: *** • Russia: *** • North America: *** • South America: ** • Asia: ** • Japan &amp; Korea: *** • Middle East: ** • Africa: ** • Antarctica: * Most countries around the globe are available for download! Get a reliable navigator in your country - be it France, Germany, Mexico, UK, Spain, Netherlands, USA, Russia, Brazil or any other.</string>
     <string name="osmand_plus_short_description_80_chars">Global Mobile Map Viewing &amp; Navigation for Offline and Online OSM Maps</string>
-    <string name="osmand_plus_extended_description_part1">
-        OsmAnd+ (OSM Automated Navigation Directions) is a map and navigation application with access to the free, worldwide, and high-quality OpenStreetMap (OSM) data.
-        Enjoy voice and optical navigation, viewing POIs (points of interest), creating and managing GPX tracks, using contour lines visualization and altitude info, a choice between driving, cycling, pedestrian modes, OSM editing and much more.
-
-        OsmAnd+ is the paid application version. By buying it, you support the project, fund the development of new features, and receive the latest updates.
-
-        Some of the main features:
-    </string>
-    <string name="osmand_plus_extended_description_part2">
-        Navigation
-        • Works online (fast) or offline (no roaming charges when you are abroad)
-        • Turn-by-turn voice guidance (recorded and synthesized voices)
-        • Optional lane guidance, street name display, and estimated time of arrival
-        • Supports intermediate points on your itinerary
-        • Automatic re-routing whenever you deviate from the route
-        • Search for places by address, by type (e.g.: restaurant, hotel, gas station, museum), or by geographical coordinates
-    </string>
-    <string name="osmand_plus_extended_description_part3">
-        Map Viewing
-        • Display your position and orientation
-        • Optionally align the picture according to compass or your direction of motion
-        • Save your most important places as Favorites
-        • Display POIs (point of interests) around you
-        • Display specialized online tiles, satellite view (from Bing), different overlays like touring/navigation GPX tracks and additional layers with customizable transparency
-        • Optionally display place names in English, local, or phonetic spelling
-    </string>
-    <string name="osmand_plus_extended_description_part4">
-        Use OSM and Wikipedia Data
-        • High-quality information from the best collaborative projects of the world
-        • OSM data available per country or region
-        • Wikipedia POIs, great for sightseeing
-        • Unlimited free downloads, directly from the app
-        • Compact offline vector maps updated at least once a month
-
-        • Selection between complete region data and just road network (Example: All of Japan is 700 MB or 200 MB for the road network only)
-    </string>
-    <string name="osmand_plus_extended_description_part5">
-        Safety Features
-        • Optional automated day/night view switching
-        • Optional speed limit display, with reminder if you exceed it
-        • Optional speed-dependent zooming
-        • Share your location so that your friends can find you
-    </string>
-    <string name="osmand_plus_extended_description_part6">
-        Bicycle and Pedestrian Features
-        • Viewing foot, hiking, and bike paths, great for outdoor activities
-        • Special routing and display modes for bike and pedestrian
-        • Optional public transport stops (bus, tram, train) including line names
-        • Optional trip recording to local GPX file or online service
-        • Optional speed and altitude display
-        • Display of contour lines and hill-shading (via additional plugin)
-    </string>
     <string name="osmand_plus_extended_description_part7">
         Directly Contribute to OSM
         • Report data bugs
@@ -1703,21 +1566,6 @@
         • Add POIs and directly upload them to OSM (or later if offline)
         • Optional trip recording also in background mode (while device is in sleep mode)
         OsmAnd is open-source and actively being developed. Everyone can contribute to the application by reporting bugs, improving translations or coding new features. The project is in a lively state of continuous improvement by all these forms of developer and user interaction. The project progress also relies on financial contributions to fund coding and testing of new functionalities.
-    </string>
-    <string name="osmand_plus_extended_description_part8">
-        Approximate map coverage and quality:
-        • Western Europe: ****
-        • Eastern Europe: ***
-        • Russia: ***
-        • North America: ***
-        • South America: **
-        • Asia: **
-        • Japan &amp; Korea: ***
-        • Middle East: **
-        • Africa: **
-        • Antarctica: *
-        Most countries around the globe available as downloads!
-        From Afghanistan to Zimbabwe, from Australia to the USA. Argentina, Brazil, Canada, France, Germany, Mexico, UK, Spain, …
     </string>
     <string name="filterpoi_activity">Create POI filter</string>
     <string name="recalculate_route_to_your_location">Transport mode:</string>
@@ -2439,7 +2287,6 @@
     <string name="shared_string_undo">UNDO</string>
     <string name="shared_string_skip">Skip</string>
     <string name="app_name_osmand">OsmAnd</string>
-    <string name="offline_maps_and_navigation">Offline Maps\n&amp; Navigation</string>
     <string name="commit_poi">Commit POI</string>
     <string name="tab_title_basic">Basic</string>
     <string name="tab_title_advanced">Advanced</string>

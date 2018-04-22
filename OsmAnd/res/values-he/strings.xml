@@ -1011,7 +1011,6 @@
     <string name="gpx_file_name">קובץ שם ה־GPX</string>
     <string name="gpx_saved_sucessfully">קובץ ה־GPX נשמר בהצלחה אל {0}</string>
     <string name="osmand_distance_planning_plugin_description">יש ליצור נתיב (או להשתמש / לשנות קובצי GPX קיימים) כדי למדוד את המרחק בין נקודות. לשמור כ־GPX, ניתן להשתמש בזה כדי לתכנן נתיב לפי GPX.</string>
-    <string name="osmand_distance_planning_plugin_name">מחשבון מרחק וכלי תכנון</string>
     <string name="shared_string_do_not_show_again">לא להציג שוב</string>
     <string name="distance_measurement_start_editing">להתחיל בעריכה</string>
     <string name="distance_measurement_finish_editing">סיום העריכה</string>
@@ -2236,8 +2235,6 @@
     <string name="shared_string_undo">ביטול</string>
     <string name="shared_string_skip">דילוג</string>
     <string name="app_name_osmand">OsmAnd</string>
-    <string name="offline_maps_and_navigation">ניווט ומפות
-\nללא אינטרנט</string>
     <string name="commit_poi">הגשת נקודת עניין</string>
     <string name="tab_title_basic">בסיסי</string>
     <string name="tab_title_advanced">מתקדם</string>
@@ -2258,15 +2255,6 @@
     <string name="altitude_range">טווח גבהים</string>
     <string name="routing_attr_relief_smoothness_factor_name">בחירת תנודת גובה</string>
     <string name="routing_attr_height_obstacles_name">שימוש בנתוני עלייה</string>
-    <string name="release_2_7">\\022 תוסף Mapillary עם צילומים ברמת רחוב
-\n
-\n • כלי סרגל למדידת מרחקים
-\n
-\n • טווחי פיצול GPX עם מידע מפורט על המסלול שלך
-\n
-\n • שיפורים ותיקונים נוספים
-\n
-\n</string>
     <string name="auto_split_recording_title">פיצול הקלטות אוטומטית לאחר הפסקה</string>
     <string name="rendering_value_high_name">גבוהה</string>
     <string name="rendering_value_medium_w_name">בינונית</string>

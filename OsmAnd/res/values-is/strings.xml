@@ -1221,8 +1221,6 @@ Sólsetur: %2$s</string>
     <string name="poi">Áhugaverður staður</string>
     <string name="show_location">Birta staðsetningu þína</string>
     <string name="app_name_osmand">OsmAnd</string>
-    <string name="offline_maps_and_navigation">Ónettengd kort
-og leiðsögn</string>
     <string name="search_on_the_map_item">Leit á kortinu</string>
     <string name="skip_map_downloading_desc">Þú ert ekki með uppsett nein ónettengd kort. Þú gætir valið kort úr listanum eða hlaðið inn kortum síðar með valmyndinni - %1$s.</string>
     <string name="search_another_country">Velja annað svæði</string>
@@ -1900,7 +1898,6 @@ Punktar</string>
     <string name="action_delete">Aðgerðin eyða</string>
     <string name="simulate_your_location">Herma staðsetningu þína</string>
     <string name="tips_and_tricks_descr">Algengar spurningar, nýlegar breytingar og fleira.</string>
-    <string name="osmand_distance_planning_plugin_name">Reikna vegalengdir og skipuleggja</string>
     <string name="remove_the_tag">FJARLÆGJA MERKIÐ</string>
     <string name="version_settings_descr">Sækja náttfara (nightly builds).</string>
     <string name="version_settings">Útgáfusamsetningar</string>
@@ -1995,8 +1992,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="show_warnings_descr">Stilla umferðaraðvaranir (hraðatakmarkanir, lokanir, umferðarhnúta, hraðahindranir), aðvaranir um hraðamyndavélar og upplýsingar um akreinaskiptingar.</string>
     <string name="osmand_short_description_80_chars">Almenn skoðun landakorta í farsíma og flakk á ónettengdum sem nettengdum OSM-landakortum</string>
 	<string name="osmand_extended_description_part7">Leggðu þitt fram til OSM • Tilkynntu um villur í gögnum • Sendu inn GPX-ferla til OSM beint úr forritinu • Bættu við merkisstöðum og sendu þá beint inn til OSM (eða síðar ef engin nettenging er til staðar)</string>
-    <string name="osmand_extended_description_part8">OsmAnd er opinn hugbúnaður og í stöðugri þróun. Hver sem er getur tekið þátt í gerð forritsins, til dæmis með því að tilkynna um hnökra, bæta þýðingar eða forrita nýja eiginleika. Lífleg staða verkefnisins og sífelldar endurbætur má þannig rekja til margra þátta samspils milli notenda og hönnuða. Verkefnið styðst líka við fjárhagslega styrki frá notendum sem nýtast til að fjármagna viðameiri forritun og prófanir. 
-\n Gæði og áætluð þekja landakorta: • Vestur-Evrópa: **** • Austur-Evrópa: *** • Rússland: *** • Norður-Ameríka: *** • Suður-Ameríka: ** • Asía: ** • Japan &amp; Kórea: *** • Miðausturlönd: ** • Afríka: ** • Suðurskautslandið: * Hægt er að sækja kort frá flestum heimsins löndum á netinu! Frá Afghanistan til Zimbabwe, frá Ástralíu til BNA. Argentína, Brasilía, Kanada, Frakkland, Þýskaland, Mexíkó, Spánn, eða eitthvað annað.</string>
     <string name="osmand_plus_short_description_80_chars">Almenn skoðun landakorta í farsíma og flakk á ónettengdum sem nettengdum OSM-landakortum</string>
 	<string name="osmand_plus_extended_description_part7">Leggðu þitt fram til OSM • Tilkynntu um villur í gögnum • Sendu inn GPX-ferla til OSM beint úr forritinu • Bættu við merkisstöðum og sendu þá beint inn til OSM (eða síðar ef engin nettenging er til staðar) OsmAnd er opinn hugbúnaður og í stöðugri þróun. Hver sem er getur tekið þátt í gerð forritsins, til dæmis með því að tilkynna um hnökra, bæta þýðingar eða forrita nýja eiginleika. Lífleg staða verkefnisins og sífelldar endurbætur má þannig rekja til margra þátta samspils milli notenda og hönnuða. Verkefnið styðst líka við fjárhagslega styrki frá notendum sem nýtast til að fjármagna viðameiri forritun og prófanir.</string>
     <string name="search_offline_geo_error">Ekki tókst að þátta \'%s\' geo-virkniskipun (intent).</string>
@@ -2277,7 +2272,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="download_using_mobile_internet">Í augnablikinu er þráðlaust Wi-Fi net ekki tengt. Viltu nota núverandi internettengingu undir niðurhal?</string>
     <string name="native_library_not_running">Forritið er keyrandi í öryggisham (gerðu hann óvirkan í stillingunum).</string>
     <string name="zxing_barcode_scanner_not_found">ZXing Barcode Scanner forritið er ekki uppsett. Leita á Google Play markaðnum?</string>
-    <string name="osmand_plus_extended_description_part8">Áætluð kortaþekja og gæði: • Vestur-Evrópa: **** • Austur-Evrópa: *** • Rússland: *** • Norður-Ameríka: *** • Suður-Ameríka: ** • Asía: ** • Japan &amp; Kórea: *** • Miðausturlönd: ** • Afríka: ** • Antarktíka: * Flest lönd í heiminum eru tiltæk sem niðurhalspakkar! Frá Afghanistan til Simbabve, frá Ástralíu til BNA. Argentína, Brasilía, Kanada, Frakkland, Þýskaland, Mexíkó, UK, Spánn, …</string>
     <string name="live_monitoring_max_interval_to_send">Tímabiðminni fyrir rakningu með netstuðningi</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Skilgreindu tímabiðminni þar sem geymdar eru staðsetningar sem á að senda án tengingar</string>
     <string name="map_version_changed_info">Þjónninn inniheldur kortaskrár sem ekki eru samhæfanlegar þinni útgáfu forritsins. Til að sækja þær og nota, ættirðu að uppfæra forritið í nýrri útgáfu.</string>
@@ -2313,7 +2307,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="index_item_world_bitcoin_payments">Bitcoin-greiðslur um víða veröld</string>
     <string name="app_modes_choose_descr">Veldu notkunarsnið sem eiga að vera sýnileg í forriti.</string>
     <string name="speak_descr">Stilla til að tilkynna götuheiti og fá umferðaraðvaranir (lokanir, umferðarhnúta, hraðahindranir), aðvaranir um hraðamyndavélar og hraðatakmarkanir.</string>
-    <string name="osmand_extended_description_part4">OsmAnd skíðakortaviðbótin gerir þér kleift að skoða skíðasvæði nokkuð nákvæmlega með ýmsum stigum upplýsinga, eins og staðsetningar á lyftum og öðrum mannvirkjum.</string>
     <string name="osm_recipients_label">OSM viðtakendur</string>
     <string name="total_donations">Heildarstyrkir</string>
 <string name="record_plugin_description">Þessi viðbót virkjar eiginleikann til að skrá og vista ferlana þína með því að snerta GPX-skráningarmerkið á kortaskjánum, en einnig til að skrá sjálfvirkt allar leiðir sem þú ferð yfir í GPX-skrá. 
@@ -2417,13 +2410,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
 \nViltu halda áfram með nýskráningu?</string>
     <string name="intermediate_items_sort_by_distance">Raða dyr-til-dyra</string>
     <string name="osmand_background_plugin_description">Sýnir stillingar til að virkja ham fyrir rakningu og leiðsögn í bakgrunni (slökkt á skjá) með því að vekja GPS-tækið reglulega.</string>
-    <string name="osmand_plus_extended_description_part4">Notaðu gögn frá OSM og Wikipedia
-\n• Hágæða upplýsingar frá bestu samstarfsverkefnum heimsins 
-\n• OSM-gögn tiltæk í hverju landi eða svæði
-\n• Merkisstaðir (POI) frá Wikipedia, frábært fyrir skoðunarferðir
-\n• Ótakmörkuð ókeypis niðurhöl, beint í forritinu
-\n• Þjöppuð ónettengd vektorkort, uppfærð einu sinni í mánuði
-\n• Val á milli heildargagna svæðis eða einungis vegakerfis (dæmi: öll gögn fyrir Japan eru 700 MB en 200 MB fyrir vegakerfið eingöngu)</string>
     <string name="save_global_track_interval_descr">Veldu millibil skráninga í almenna leiðarskráningu (virkjað með viðmótshlutanum fyrir GPX-skráningu á kortinu).</string>
     <string name="will_open_tomorrow_at">Mun opna á morgun kl.</string>
     <string name="animate_my_location_desc">Virkja hreyfingu við hliðrun staðsetningar minnar á meðan leiðsögn stendur.</string>

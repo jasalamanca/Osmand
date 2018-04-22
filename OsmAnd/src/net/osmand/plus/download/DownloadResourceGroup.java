@@ -31,21 +31,18 @@ public class DownloadResourceGroup {
 		// headers
 		WORLD_MAPS(R.string.world_maps),
 		REGION_MAPS(R.string.region_maps),
-		OTHER_MAPS_HEADER(R.string.download_select_map_types),
 		// headers with voice items
 		VOICE_HEADER_TTS(R.string.index_name_tts_voice),
 		VOICE_HEADER_REC(R.string.index_name_voice),
 		// headers with font items
 		FONTS_HEADER(R.string.fonts_header),
 		// headers with resources
-		OTHER_MAPS_GROUP(R.string.download_select_map_types),
 		OTHER_GROUP(R.string.other_menu_group),
 		SUBREGIONS(R.string.regions),
 		// screen items
 		VOICE_TTS(R.string.index_name_tts_voice),
 		FONTS(R.string.fonts_header),
 		VOICE_REC(R.string.index_name_voice),
-		OTHER_MAPS(R.string.download_select_map_types),
 		WORLD(-1),
 		REGION(-1);
 
@@ -57,7 +54,7 @@ public class DownloadResourceGroup {
 
 		public boolean isScreen() {
 			return this == WORLD || this == REGION || this == VOICE_TTS
-					|| this == VOICE_REC || this == OTHER_MAPS || this == FONTS;
+					|| this == VOICE_REC || this == FONTS;
 		}
 
 		public String getDefaultId() {
@@ -69,13 +66,12 @@ public class DownloadResourceGroup {
 		}
 
 		public boolean containsIndexItem() {
-			return isHeader() && this != SUBREGIONS && this != OTHER_GROUP && this != OTHER_MAPS_GROUP;
+			return isHeader() && this != SUBREGIONS && this != OTHER_GROUP;
 		}
 
 		public boolean isHeader() {
 			return this == VOICE_HEADER_REC || this == VOICE_HEADER_TTS || this == SUBREGIONS
 					|| this == WORLD_MAPS || this == REGION_MAPS || this == OTHER_GROUP
-					|| this == OTHER_MAPS_HEADER || this == OTHER_MAPS_GROUP
 					|| this == FONTS_HEADER;
 		}
 

@@ -1036,7 +1036,6 @@
     <string name="plugin_distance_point">Punct</string>
     <string name="gpx_file_name">Nume fișier GPX</string>
     <string name="gpx_saved_sucessfully">Fișier GPX salvat cu succes în {0}</string>
-    <string name="osmand_distance_planning_plugin_name">Unealtă de calcularea distanței și planificare</string>
     <string name="shared_string_do_not_show_again">Nu mai afișa</string>
     
     <string name="distance_measurement_load_gpx">Deschide GPX existent</string>
@@ -1489,7 +1488,6 @@
     <string name="access_from_map_description">Butonul de meniu lansează panoul frontal, nu meniul propriu-zis</string>
     <string name="show_on_start_description">\'Închide\' Lansează direct de pe ecranul cu harta</string>
     <string name="copied_to_clipboard">Copiat în clipboard</string>
-    <string name="release_2_2">" • O interfață nouă cu context sensibil la atingere a locațiilor pe hartă și alte ecrane\n\n • Harta este lansată direct, doar dacă nu este selectată \'Afișează panoul frontal la pornire\'\n\n • Configurează ce elemente să fie afișate pe panoul frontal\n\n • Ignoră panoul frontal dacă dorești utilizarea meniurilor în aplicație\n\n • Descărcarea hărților sau a regiunilor se poate face direct prin atingere pe harta lumii\n\n • Căutarea punctelor de interes (POI) suportă mai multe criterii\n\n • Îmbunatățit funcționalitatea de editare POI și OSM\n\n • Refăcută structura de descărcare a hărților și a interfeței\n\n și multe altele... "</string>
     <string name="osm_edit_commented_note">Nota OSM comentată</string>
     <string name="osm_edit_removed_note">Nota OSM ștearsă</string>
     <string name="osm_edit_created_note">Nota OSM creată</string>

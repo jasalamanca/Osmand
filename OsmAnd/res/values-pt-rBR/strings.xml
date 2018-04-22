@@ -148,8 +148,7 @@
 \n\nE ele oferece opções de turismo especiais como mostrando rotas de bicicleta ou rotas de montanha.
 \n\nNão é necessário baixar mapa especial, pois esse modo de exibição é criado a partir do mapa padrão.
 \n\nEssa visão pode ser revertida desativando aqui mesmo ou alterando o \'Estilo do mapa\' em \'Configurar mapa\' quando desejar. "</string>
-    <string name="osmand_distance_planning_plugin_name">Calculadora de distância e ferramenta de planeamento</string>
-	<string name="osmand_distance_planning_plugin_description">Este complemento fornece um widget da tela mapa permitindo criar caminhos tocando no mapa, ou usar ou modificar arquivos GPX existentes, para planejar uma viagem e medir a distância entre pontos. Os resultados podem ser salvos como um arquivo GPX, que mais tarde pode ser usado para orientação.</string>
+    <string name="osmand_distance_planning_plugin_description">Este complemento fornece um widget da tela mapa permitindo criar caminhos tocando no mapa, ou usar ou modificar arquivos GPX existentes, para planejar uma viagem e medir a distância entre pontos. Os resultados podem ser salvos como um arquivo GPX, que mais tarde pode ser usado para orientação.</string>
 	<string name="shared_string_accessibility">Acessibilidade</string>
 	<string name="osmand_accessibility_description">Este complemento disponibiliza recursos de acessibilidade do dispositivo diretamente no OsmAnd. Facilita, por exemplo, o ajuste da velocidade para vozes TTS, configuração da navegação direcional na tela, uso do trackball para controle de zoom, ou retorno de texto para fala, como para anunciar automaticamente sua posição.</string>
 	<string name="osm_settings">Edição no OSM</string>
@@ -1637,8 +1636,7 @@ Pôr do Sol: %2$s</string>
 	<string name="shared_string_undo">Desfazer</string>
 	<string name="shared_string_skip">Pular</string>
 	<string name="app_name_osmand">OsmAnd</string>
-	<string name="offline_maps_and_navigation">Mapas &amp; Navegação\nOffline</string>
-<string name="commit_poi">Enviar POI</string>
+    <string name="commit_poi">Enviar POI</string>
 <string name="routing_attr_avoid_shuttle_train_name">Evitar transporte por trem</string>
 	<string name="routing_attr_avoid_shuttle_train_description">Evitar transporte por trem</string>
     <string name="plugin_settings">Complementos</string>
@@ -1681,23 +1679,6 @@ Pôr do Sol: %2$s</string>
     <string name="access_from_map">Acessar a partir do mapa</string>
     <string name="show_on_start_description">\'Desligado\' lança diretamente para a tela do mapa.</string>
     <string name="copied_to_clipboard">Copiado para a área de transferência</string>
-    <string name="release_2_2">\\022 Nova interface do usuário sensível ao contexto, ao tocar locais no mapa ou em outras telas
-\n
-\n • Tela do mapa agora é lançada diretamente, a menos que \'Mostrar painel de controle no início\' esteja selecionado
-\n
-\n • Configure quais e de que forma os cartões são exibidos no painel de controle
-\n
-\n • Desative o painel de controle, se preferir um controle baseado em menus
-\n
-\n • Para baixar mapas, as regiões podem ser selecionadas diretamente, tocando no mapa do mundo
-\n
-\n • Pesquisa por \'Pontos de interesse\' agora oferece suporte a consultas mais específicas
-\n
-\n • Melhoria nos \'Pontos de interesse\' e funcionalidades de edição OSM
-\n
-\n • Reformulação de estrutura e de interface para baixar dados de mapa.
-\n
-\n e mais…</string>
     <string name="access_from_map_description">O botão menu abre o painel de controle, não o menu.</string>
     <string name="osm_save_offline">Salvar offline</string>
     <string name="osm_edit_modified_poi">POI no OSM modificado</string>
@@ -2396,7 +2377,6 @@ Pôr do Sol: %2$s</string>
     <string name="lang_sr_latn">Sérvio (latino)</string>
     <string name="lang_zh_hk">Chinês (Hong Kong)</string>
     <string name="driving_region_australia">Austrália</string>
-    <string name="osmand_extended_description_part4">O plugin de mapas de ski Skiing OsmAnd permite que você veja pistas de ski com nível de complexidade e algumas informações adicionais, como localização de elevadores e outras facilidades.</string>
     <string name="live_monitoring_max_interval_to_send">Buffer de tempo para rastreamento on-line</string>
     <string name="save_poi_too_many_uppercase">Nome contém muitas letras maiúsculas. Você quer continuar?</string>
     <string name="file_name_containes_illegal_char">Nome do arquivo contém caracteres ilegais</string>
@@ -2429,15 +2409,6 @@ Pôr do Sol: %2$s</string>
 \n
 \n</string>
     <string name="route_points_category_name">Converte como visitado nesta rota</string>
-    <string name="release_2_7">\\022 Mapillary plugin com imagens ao nível da rua
-\n
-\n• Widget de régua para medição de distância
-\n
-\n• Intervalos de divisão GPX, com informações detalhadas sobre o seu trajeto
-\n
-\n• Outras melhorias e correções de bugs
-\n
-\n</string>
     <string name="release_2_8">\\022 Marcadores de mapa completamente reformulado com as linhas de guia e planejamento de rota
 \n
 \n • Ferramenta de medição de distância oferecendo recurso de alinhar com estrada e salvar pontos como trajeto
@@ -2455,10 +2426,8 @@ Pôr do Sol: %2$s</string>
     <string name="navigate_point_olc_info_area">OLC completo válido 
 \nRepresenta área: %1$s x %2$s</string>
     <string name="route_is_too_long_v2">Esta rota pode ser muito longa para calcular. Por favor, adicione destinos intermediários se nenhum resultado for encontrado dentro de 10 minutos.</string>
-    <string name="osmand_extended_description_part5">Ciclismo • Você pode encontrar caminhos de bicicleta no mapa • Navegação por GPS no modo ciclismo constrói a sua rota utilizando caminhos de bicicleta • Você pode ver a sua velocidade e altitude • Opção de gravação GPX permite-lhe gravar a sua viagem e compartilhá-la • Através de plugin adicionais você pode ativar a exibição de curvas de nível e sombreamento de relevo</string>
     <string name="osmand_extended_description_part6">Passeio, caminhada, turismo pela cidade • O mapa mostra caminhos para passeios e caminhadas • A Wikipédia no seu idioma preferido pode dizer muito durante um turismo pela cidade • Paradas de transportes públicos (ônibus, troleibus, trem) incluindo nomes de linha, ajuda a navegar em uma nova cidade • Navegação GPS em modo pedestre constrói a sua rota usando caminhos para pedestres • Você pode fazer o upload e seguir uma rota GPX ou gravar e compartilhar a sua própria rota</string>
     <string name="osmand_extended_description_part7">Contribua para o OSM • Comunique falha de dados • Carregue trilhas GPX diretamente do app • Adicione POIs e carregue-os diretamente ao OSM (ou mais tarde se off-line)</string>
-    <string name="osmand_plus_extended_description_part5">Recursos de segurança • Alternância de exibição dia/noite automatizada opcional • Exibição de limite de velocidade opcional, com lembrete se você ultrapassá-lo • Zoom dependente da velocidade opcional • Compartilhe sua localização para que seus amigos possam encontrar você</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Especificar um buffer de tempo para manter locais para enviar sem conexão</string>
     <string name="quick_action_add_osm_bug_descr">Tocar no botão de ação adicionará uma nota OSM no local do centro da tela.</string>
     <string name="quick_action_add_poi_descr">Tocar no botão de ação adicionará um POI no local do centro da tela.</string>
@@ -2522,43 +2491,7 @@ Pôr do Sol: %2$s</string>
     <string name="import_track">Importar trilha</string>
     <string name="move_point">Mover Ponto</string>
     <string name="osm_recipients_label">Destinatários OSM</string>
-    <string name="osmand_plus_extended_description_part6">Recursos de ciclismo e pedestre • Visualização de caminhos a pé, pistas de caminhadas e ciclovias, ideal para atividades ao ar livre • Roteamento e modos de exibição especiais para bicicleta e pedestres • Paradas de transporte público opcionais (ônibus, troleibus, trem) incluindo nomes de linhas • Gravação opcional de viagem para arquivo GPX local ou serviço on-line • Exibição opcional de velocidade e altitudes • Exibição de curvas de nível e sombreamento de relevo (via plugin adicional)</string>
     <string name="shared_string_without_name">Sem nome</string>
     <string name="empty_state_markers_history">\@string/shared_string_history</string>
-    <string name="release_2_6">\\022 Novo recurso: Botão de ação rápida
-\n
-\n • Resposta a gesto de toque de tela melhorada (por exemplo, deslocamento de tela e zoom simultâneos)
-\n
-\n • Novas fontes de mapas cobrindo mais localidades
-\n
-\n • Suporte TTS para variantes de idiomas regionais (e sotaques)
-\n
-\n • Melhorias de visibilidade em vários estilos de mapas e Wikipédia
-\n
-\n • Suporte ao Open Location Code (OLC)
-\n
-\n • Exibe elevação, inclinação e perfil de velocidade para trilhas GPX gravadas e rotas calculadas
-\n
-\n • Definição de \"estilo de condução\" e melhorias de lógica em roteamento de bicicleta
-\n
-\n • Configurações para usar dados de altitude em roteamento de bicicleta
-\n
-\n • Várias outras melhorias e correções de bugs
-\n
-\n e muito mais…</string>
-    <string name="osmand_plus_extended_description_part8">Cobertura de mapa e qualidade aproximada: • Europa Ocidental: **** • Europa Oriental: *** • Rússia: *** • América do Norte: *** • América do Sul: ** • Ásia: ** • Japão e Coreia: *** • Oriente Médio: ** • África: ** • Antártica: * A maioria dos países ao redor do globo disponível como downloads! Do Afeganistão ao Zimbabué, da Austrália aos Estados Unidos. Argentina, Brasil, Canadá, França, Alemanha, México, Reino Unido, Espanha,…</string>
-    <string name="release_2_5">\\022 Ícones de toque sobre a mapa
-\n
-\n • Filtro de pesquisa de POI robusto: Pesquise, por ex., restaurantes por cozinha, ou áreas de campismo com instalações específicas
-\n
-\n • Novo estilo de mapa topográfico para ciclistas e caminhantes
-\n
-\n • Gravação de viagem melhorado
-\n
-\n • Notificações de navegação melhorados (Android Wear)
-\n
-\n • Outras melhorias e correções de bugs
-\n
-\n e muito mais…</string>
     <string name="lang_lo">Laociano</string>
     </resources>

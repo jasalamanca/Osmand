@@ -1014,7 +1014,6 @@
     
 	
 	<string name="intermediate_items_sort_return">Οι ενδιάμεσοι προορισμοί ανα ταξινομήθηκαν για βελτιστοποίηση τις σειράς τους από την τρέχουσα τοποθεσία προς τον προορισμό.</string>
-    <string name="osmand_distance_planning_plugin_name">Υπολογιστής απόστασης &amp; εργαλείο σχεδιασμού</string>
     <string name="av_camera_focus">Τύπος εστίασης κάμερας</string>
 	<string name="av_camera_focus_descr">Επιλέξτε τον τύπο εστίασης της εσωτερικής κάμερας</string>
 	    

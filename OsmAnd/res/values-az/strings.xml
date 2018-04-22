@@ -1164,8 +1164,6 @@
     <string name="cancel_navigation">Naviqasiyanı dayandır</string>
     <string name="stop_routing_confirm">Naviqasiyanı dayandırmaq istədiyinizdən əminsiniz?</string>
     <string name="process_navigation_service">OsmAnd naviqasiya xidməti</string>
-    <string name="offline_maps_and_navigation">Offlayn Xəritələr
-\n&amp; Naviqasiya</string>
     <string name="quick_action_add_navigation">Naviqasiya</string>
     <string name="storage_directory_manual">Əllə müəyyənləşdirilmiş</string>
     <string name="general_settings_2">Əsas parametrlər</string>
@@ -1233,7 +1231,6 @@
     <string name="av_camera_focus_macro">Makro (iri plan) fokus rejimi</string>
     <string name="av_camera_focus_continuous">Kamera fasiləsiz fokuslamağa çalışsın</string>
     <string name="mapillary_image">Mapillary təsviri</string>
-    <string name="osmand_plus_extended_description_part8">Təxmini xəritənin əhatə dairəsi və keyfiyyəti: • Qərbi Avropa: **** • Şərqi Avropa: *** • Rusiya: *** • Şimali Amerika: *** • Cənubi Amerika: ** • Asiya: ** • Yaponiya &amp; Koreya: *** • Yaxın Şərq: ** • Afrika: ** • Antarktida: * Dünyanın bir çox ölkəsi endirmək üçün mövcuddur! Əfqanıstandan Zimbabveyə, Avstraliyadan ABŞ-a. Argentina, Braziliya, Kanada, Fransa, Almaniya, Meksika, Böyük Britaniya, İspaniya, …</string>
     <string name="avoid_in_routing_title">Yayın…</string>
     <string name="map_widget_distance">Təyinat nöqtəsi</string>
     <string name="quick_action_add_first_intermediate">Birinci aralığı əlavə et</string>

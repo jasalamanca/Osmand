@@ -892,8 +892,7 @@
     <string name="local_osm_changes_backup_failed">Sigurnosna kopija OSM izmjena nije uspjela</string>
     <string name="local_osm_changes_backup">Sigurnosna kopija kao OSM izmjena</string>
     <string name="gpx_file_name">Naziv GPX datoteke</string>
-    <string name="osmand_distance_planning_plugin_name">Kalkulator udaljenosti i alat za planiranje</string>
-    <string name="use_distance_measurement_help">* Dodirnite za obilježavanje točke.\n 
+    <string name="use_distance_measurement_help">* Dodirnite za obilježavanje točke.\n
         * Pritisnite i držite na karti za brisanje prethodne točke.\n
         * Pritisnite i držite na točki za pregled i priložite opis.\n
         * Kliknite na widget da biste vidjeli više radnji.</string>

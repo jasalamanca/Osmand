@@ -105,23 +105,6 @@
     <string name="show_on_start_description">‘Ek-butono rekte lanĉas map-ekranon.</string>
     <string name="copied_to_clipboard">Enpoŝigita</string>
     <string name="show_on_start">Montri dum starto</string>
-    <string name="release_2_2">\\u2022 Nova tekst-dependa fasado kiu ebligas tuŝi lokojn en la mapo kaj en aliaj ekranoj
-\n 
-\n • Mapekrano estas nun montrita rekte escepte se \'Montri stirpanelon dum aplikaĵa starto\' estas elektita 
-\n 
-\n • Agordi kiujn kaj kiamaniere langetojn estas montritaj en la stirpanelo 
-\n 
-\n • Preterpasi la stirpanelon se vi ŝatas menuo-bazitan aplikaĵ-stiradon 
-\n 
-\n • Por elŝuti mapojn, regionoj povas esti elektitaj rekte per tuŝado en mondmapo 
-\n 
-\n • Serĉado por interesejoj nun subtenas pli multe specifajn petojn 
-\n 
-\n • Plibonigitaj eblecoj por redakti interesejojn kaj la OSM-on 
-\n 
-\n • Mapdosiera elŝutada strukturo kaj interfaco rebonigitaj 
-\n 
-\n kaj pli…</string>
     <string name="osm_save_offline">Konservi loke</string>
     <string name="osm_edit_modified_poi">Ŝanĝitaj OSM-aj interesejoj</string>
     <string name="osm_edit_deleted_poi">Forigitaj OSM-aj interesejoj</string>
@@ -221,17 +204,6 @@
     <string name="welcome_header">Saluton</string>
     <string name="shared_string_and">kaj</string>
     <string name="shared_string_or">aŭ</string>
-    <string name="release_2_3">\\u2022 OSM Live. Subtenu kontribuantojn kaj programistoj, kaj havigu ĉiuhorajn mapajn ĝisdatigojn. 
-\n 
-\n • Map-markoj. Nova maniero por rapide elekti lokojn sur la mapo. 
-\n 
-\n • Pli multe detalaj OSM mapoj kun landspecifaj specoj de vojoj kaj multe da novaj ebloj de mapoj. 
-\n 
-\n • Plibonigita fasado de antaŭaranĝo de kurso. 
-\n 
-\n • Multe da plibonigoj ĉe mapa kunteksta menuo ekz. kunteksta elserĉado de adreso. 
-\n 
-\n kaj pli…</string>
     <string name="favorite_category_add_new">Aldoni novan</string>
     <string name="favorite_category_select">Elekti kategorion</string>
     <string name="default_speed_system_descr">Difini unuon de rapido.</string>
@@ -1507,7 +1479,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="access_direction_haptic_feedback">Vibraj sciigoj pri direkto</string>
     <string name="access_direction_haptic_feedback_descr">Montri direkton al celo per vibrado.</string>
     <string name="lang_ast">Asturia</string>
-    <string name="osmand_distance_planning_plugin_name">Kalkulilo de distanco kaj planilo</string>
     <string name="osmand_distance_planning_plugin_description">Tiu ĉi kromprogramo liveras mapekranan fenestraĵon por krei kursojn tuŝante sur la mapo, aŭ por uzi aŭ modifi ekzistajn GPX-dosierojn por plani ekskurson aŭ mezuri distancon inter punktoj. Rezultoj povas esti konservitaj kiel GPX-dosieroj, kiuj oni povas estonte uzi por gvidado.</string>
     <string name="osm_settings">OSM-redaktilo</string>
     <string name="osm_editing_plugin_description">Per tiu ĉi kromprogramo OsmAnd povas esti uzata por kontribui al OSM per krei aŭ redakti OSM-interesejojn, per raporti aŭ komenti OSM-rimarkojn, per aldoni registritajn GPX-dosierojn. OSM estas komunuma, tutmonda, publika map-projekto. Por detaloj, legu: https://openstreetmap.org. Aktiva kontribuado estas laŭdinda, kaj vi povas kontribui senpere per OsmAnd, se vi entajpos viajn OSM-ajn ensalutilojn en la aplikaĵo.</string>
@@ -1857,7 +1828,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="shared_string_card_was_hidden">Langeto kaŝita</string>
     <string name="shared_string_undo">MALFARI</string>
     <string name="shared_string_skip">Transsalti</string>
-    <string name="offline_maps_and_navigation">Mapoj eksterretaj\nkaj navigado</string>
     <string name="commit_poi">Enmeti interesejon</string>
     <string name="tab_title_basic">Bazaj</string>
     <string name="tab_title_advanced">Altnivelaj</string>
@@ -1956,19 +1926,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="share_history_subject">kunhavigita per OsmAnd</string>
     
     <string name="show_something_on_map">Montri na %1$s sur la mapo</string>
-    <string name="release_2_4">\\u2022 Nova ebloplena tekstoserĉilo
-\n 
-\n • Konekto kun aŭd-sistemo/parolilo de aŭto per Bludento 
-\n 
-\n • Plibonigita navigado - voĉaj sciigoj kaj subdiroj pri koridoroj 
-\n 
-\n • Plibonigita tavolo de publik-transporto kun bildigado de kurso 
-\n 
-\n • Aldonitaj novaj lingvoj kaj subteno por dialektoj 
-\n 
-\n • Multaj aliaj plibonigoj kaj korektoj 
-\n 
-\n kaj pli…</string>
     <string name="dist_away_from_my_location">Serĉi %1$s for</string>
     <string name="confirmation_to_delete_history_items">Ĉu vi volas forigi elektitajn elementojn el historio?</string>
     <string name="back_to_search">Reveni al serĉo</string>
@@ -1976,53 +1933,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="advanced_coords_search">Detala koordinat-serĉo</string>
     <string name="route_stops_before">Post %1$s haltejoj</string>
 
-    <string name="osmand_plus_extended_description_4000_chars_v2">"
-OsmAnd Mapoj kaj Navigado - trovu ejoj sur mapo kaj difini kursojn sen interreta konekto. Elŝutu mapon de lando antaŭ vi vojaĝos tie por trovi lokojn kaj vojojn de nekonata regiono.
-
-Bazaj ebloj:
-• Detalaj mapoj de 200 landoj
-• Eksterreta navigado kun gvidata voĉo
-• Serĉi adresojn eksterrete
-• Informoj pri lokoj sur la mapo: interesaj ejoj, kafejoj, parkumejoj, vendejoj
-• Aldoni lokojn kiel ŝatatajn
-• Navigado por aŭtistoj, biciklistoj kaj piedirantoj
-
-Pliaj ebloj:
-• Montri kaj registri GPX-kursojn
-• Interesejoj de Vikipedio
-• Aldoni fotojn, aŭdajn kaj videajn notojn sur la mapo
-• Taga kaj nokta aspekto de mapo por oportuna veturado
-• Informoj pri kursoj kaj haltejoj de publika transporto
-• Piediradaj kaj biciklaj kursoj
-• Turismaj vojoj por regionoj de la tuta mondo
-• Enretaj mapoj el diversaj fontoj
-• Informoj pri pavim-kvalito de vojoj kaj strat-prilumado
-• Aldoni, redakti kaj forigi interesejojn (por redaktantoj de OpenStreetMap)
-• OsMo - perinterreta observado de aliaj aparatoj
-
-Havigu senmalfunkcian navigadilon kie ajn vi estas - en Francujo, Germanujo, Meksiko, Britujo, Hispanujo, Nederlando, Usono, Rusujo, Brazilo kaj en iu ajn alia lando.
-
-Kromprogramoj:
-• Nivelkurboj kaj nivel-ombrumo https://goo.gl/7mojP8
- Nivelkurboj kaj tavolo de nivel-ombrumo (reliefo) aldonita al baza OsmAnd mapo.
-
-• Skiada mapo https://goo.gl/pX6DxJ
- Informoj pri descendejoj, skivojoj, kablovojoj kaj skiliftoj.
-
-• Mar-navigada mapo https://goo.gl/0hEdxm
- Speciala map-aspekto por vidi mar-navigadajn markojn por enlanda kaj apudborda boatado.
-
-• Parkumeja pozicio https://goo.gl/6JxQXF
- Plifaciligas al vi marki la pozicion de via parkumata veturilo kaj montras kiom da tempo restas se parkumejo estas temp-limigita.
-
-Estu informita!
-
-Twitter: https://twitter.com/osmandapp
-Fejsbuko: https://www.facebook.com/osmandapp
-Retpaĝo: http://osmand.net
-
-Se vi bezonas helpon pri OsmAnd aplikaĵo, bonvolu kontakti nian helpantaron: support@osmand.net 
- "</string>
     <string name="rendering_attr_hideOverground_name">Superteraj objektoj</string>
 
     <string name="shared_string_change">Ŝanĝi</string>
@@ -2093,19 +2003,6 @@ Se vi bezonas helpon pri OsmAnd aplikaĵo, bonvolu kontakti nian helpantaron: su
     <string name="shared_string_recorded">Registrita</string>
     <string name="shared_string_record">Registri</string>
     <string name="gpx_logging_no_data">Neniuj datumoj</string>
-    <string name="release_2_5">\\u2022 Alklakeblaj piktogramoj sur la mapo
-\n 
-\n • Ebloplena filtrebla serĉado de interesejoj: serĉu restoraciojn laŭ kuirarto, kampadejojn kun difinitaj ebloj 
-\n 
-\n • Nova ‘OsmAnd Topo map-stilo por biciklistoj kaj piediradaj turistoj 
-\n 
-\n • Plibonigita registrado de kurso 
-\n 
-\n • Plibonigitaj navigadaj sciigoj (Android Wear) 
-\n 
-\n • Multe da aliaj plibonigoj kaj korektoj 
-\n 
-\nkaj pli…</string>
     <string name="trip_rec_notification_settings">Aktivigi rapid-starton de registrado</string>
     <string name="trip_rec_notification_settings_desc">Montri sisteman sciigon kun eblo ekigi registradon de kurso.</string>
     <string name="shared_string_notifications">Sciigoj</string>
@@ -2212,27 +2109,6 @@ Indikas lokon:  %1$s x %2$s"</string>
     <string name="quick_action_page_list_descr">Premado sur la ag-butono foliumos tra la jena listo.</string>
     <string name="auto_split_recording_title">Aŭtomate dividi registraĵojn post paŭzo</string>
 	<string name="auto_split_recording_descr">Komenci novan segmenton post 6 min paŭzo, novan registraĵon post 2 h, kaj novan dosieron post pli longaj paŭzoj, se dato ŝanĝiĝis.</string>
-    <string name="release_2_6">\\u2022 Nova eblo: butono de rapida ago
-\n 
-\n • Plibonigita respondeblo de ekrano al gestoj 
-\n 
-\n • Novaj mapaj tiparoj subtenataj pli da lingvoj 
-\n 
-\n • Subteno por dialektoj en parolsintezitaj dialogaj helpoj 
-\n 
-\n • Videblaj plibonigoj en kelkaj map-stiloj kaj en Vikipedio 
-\n 
-\n • Subteno por \'Malferma pozicia kodo\' (OLC) 
-\n 
-\n • Montrado de altitudo, klineco kaj rapid-profilo por registritaj GPX-spuroj kaj kalkulitaj kursoj 
-\n 
-\n • Agordo \'Veturada stilo\' kaj logikaj plibonigoj en bicikla difinado de vojo 
-\n 
-\n • Eblo uzi altitudajn datumojn por bicikla difinado de vojo 
-\n 
-\n • Kelkaj aliaj plibonigoj kaj erar-riparoj 
-\n 
-\n kaj pli…</string>
 
     <string name="routing_attr_height_relief_smoothness_factor_description">Pli da ebenejoj aŭ pli da montetoj</string>
     <string name="routing_attr_height_obstacles_name">Uzi datumojn pri altitudo</string>
@@ -2281,24 +2157,7 @@ Indikas lokon:  %1$s x %2$s"</string>
     <string name="do_not_show_startup_messages_desc">Ne montri mesaĝojn pri rabatoj kaj specialaj lokaj okazoj.</string>
     <string name="driving_region_automatic">Aŭtomata</string>
     <string name="right_side_navigation">Dekstr-flanka trafiko</string>
-    <string name="osmand_extended_description_part1">OsmAnd (OSM Aŭtomata Navigado Direkte al celo) estas mapa kaj naviga aplikaĵo kun aliro al liberaj, tutmondaj kaj alt-kvalitaj datumoj de OpenStreetMap (OSM). Ĝuu voĉan kaj vidan navigadon, esploradon de interesejoj (punktoj de intereso), kreadon kaj administradon de GPX-spuroj, montradon de nivelkurboj kaj informojn pri altitudo (per kromprogramo), elekton inter aŭta, bicikla kaj piediranta reĝimoj, OSM-redaktadon kaj pli.</string>
-    <string name="osmand_extended_description_part3">Mapo
-\n • Montrado de interesejoj (punktoj de intereso) ĉirkaŭ vi 
-\n • Orientiĝado de mapo laŭ via direkto de movo (aŭ laŭ kompaso) 
-\n • Montrado kie vi estas kaj kien vi rigardas 
-\n • Diskonigi vian pozicion por ke viaj amikoj povu trovi vin 
-\n • Konservi viajn plej gravajn ejojn en listo de ŝatataj 
-\n • Ebligas al vi elekti kiel vidigi nomojn sur la mapo: esperante, en loka lingvo aŭ en fonetika transskribo 
-\n • Montras specialajn enretajn kahelojn, satelitan vidon (de Bing), diversajn surtavolojn kiel piediradajn kursojn kaj aldonajn tavolojn kun agordebla diafaneco</string>
-    <string name="osmand_extended_description_part4">Skiado 
-\n OsmAnd-kromprogramo ‘Skiada map-vido ebligas al vi vidigi skivojojn kun iliaj facileco kaj aliajn taŭgajn informojn, kiel lokojn de skiliftoj kaj aliajn ejojn.</string>
-    <string name="osmand_extended_description_part5">Biciklado 
-\n • Vi povas trovi biciklajn vojojn sur la mapo 
-\n • GPS-navigado en biciklada reĝimo kalkulas kursojn uzante biciklajn vojojn 
-\n • Vi povas vidi viajn rapidon kaj altitudon 
-\n • Vi povas registri GPX-spurojn de via vojaĝo kaj diskonigi ilin 
-\n • Per aldona kromprogramo vi povas vidigi nivelkurbojn kaj nivel-ombrumon (reliefon)</string>
-    <string name="osmand_extended_description_part6">Piedirado, vizitado de urbo 
+    <string name="osmand_extended_description_part6">Piedirado, vizitado de urbo
 \n • La mapo montras al vi piediradajn kursojn 
 \n • Vikipedio en via lingvo eblas rakonti al vi multe dum via vizitado de urbo 
 \n • Haltejoj de publika transporto (aŭtobusaj, tramaj, fervojaj) kaj nomoj de linioj por helpi al vi navigi en urbo 
@@ -2308,79 +2167,13 @@ Indikas lokon:  %1$s x %2$s"</string>
 \n • Raporti erarojn pri datumoj 
 \n • Alŝuti GPX-spurojn al OSM senpere de la aplikaĵo 
 \n • Aldoni interesejojn kaj senpere alŝuti ilin al OSM (aŭ poste se eksterrete)</string>
-    <string name="osmand_extended_description_part8">OsmAnd estas malfermkoda kaj daŭre disvolvigata. Ĉiu povas kontribui al la aplikaĵo per raporti erarojn, plibonigi tradukojn aŭ programi novajn funkciojn. La projekto estas senĉese plibonigata ĉiumaniere de programistoj kaj uzantoj. La projekto estas ankaŭ subtenata permone por fondi kodumado kaj testi novajn funkciojn. 
-\n Proksimuma map-atingo kaj kvalito: 
-\n • Okcidenta Eŭropo: **** 
-\n • Orienta Eŭropo: *** 
-\n • Rusujo: *** 
-\n • Nordameriko: *** 
-\n • Sudameriko: ** 
-\n • Azio: ** 
-\n • Japanujo kaj Koreujo: *** 
-\n • Proksim-Oriento: ** 
-\n • Afriko: ** 
-\n • Antarkto: * 
-\n Mapoj de preskaŭ ĉiuj de landoj de la mondo estas elŝuteblaj! 
-\n Havigu konfidindan navigilon en via lando - kaj en Francujo, Germanujo, Meksiko, Britujo, Hispanujo, Nederlando, Usono, Rusujo, Brazilo kaj ie alie.</string>
-    <string name="osmand_plus_extended_description_part1">OsmAnd+ (OSM Aŭtomata Navigado Direkte al celo) estas mapa kaj naviga aplikaĵo kun aliro al liberaj, tutmondaj kaj alt-kvalitaj datumoj de OpenStreetMap (OSM). 
-\n Ĝuu voĉan kaj vidan navigadon, esploradon de interesejoj (punktoj de intereso), kreadon kaj administradon de GPX-spuroj, montradon de nivelkurboj kaj informojn pri altitudo (per kromprogramo), elekton inter aŭta, bicikla kaj piediranta reĝimoj, OSM-redaktadon kaj pli. 
-\n 
-\n OsmAnd+ estas pagenda versio de aplikaĵo. Per aĉeti ĝin, vi apogas la projekton, fondas disvolvigon de novaj funkcioj kaj akiras plej aktualajn ĝisdatigojn. 
-\n 
-\n Kelkaj ĉefaj ebloj de OsmAnd+:</string>
-    <string name="osmand_plus_extended_description_part2">Navigado 
-\n • Funkcias enrete (pli rapide) aŭ eksterrete (neniuj retmigradaj kostoj dum estado eksterlande) 
-\n • Turno-post-turnaj voĉaj anoncoj (antaŭregistritaj kaj parolsintezitaj voĉoj) 
-\n • Informoj pri koridoroj, strat-nomoj kaj proksimuma tempo de alveno 
-\n • Subteno por interceloj sur via kurso 
-\n • Aŭtomata rekalkulado de kurso kiam vi devojiĝos 
-\n • Serĉi cel-lokojn laŭ adreso, laŭ speco (ekz.: restoracio, hotelo, benzinejo, muzeo) aŭ laŭ geografiaj koordinatoj</string>
-    <string name="osmand_plus_extended_description_part3">Map-vido 
-\n • Montras vian pozicion kaj orientiĝon 
-\n • Malnepre orientas la ekranon laŭ kompaso aŭ laŭ via direkto de movo 
-\n • Konservi viajn plej gravajn ejojn en listo de ŝatataj 
-\n • Montrado de proksimaj interesejoj (punktoj de intereso) 
-\n • Montrado de specialaj enretaj kaheloj, satelita vido (de Bing), diversaj surtavoloj kiel piediradaj kursoj, GPX-spuroj kaj kromaj tavoloj kun agordebla diafaneco 
-\n • Malnepre vidigas nomojn en Esperanto, en loka lingvo aŭ en fonetika transskribo</string>
     <string name="fonts_header">Mapaj tiparoj</string>
-    <string name="osmand_plus_extended_description_part4">Uzi datumojn de OSM kaj Vikipedio 
-\n • Alt-kvalitaj informoj el la plej bonaj kunlaboraj projektoj en la mondo 
-\n • OSM-datumoj disponeblaj por lando aŭ regiono 
-\n • Vikipediaj interesejoj, taŭgaj por vizitado 
-\n • Senlimaj senpagaj elŝutoj senpere de la aplikaĵo 
-\n • Kompaktaj vektoraj mapoj ĝisdatigataj almenaŭ unumonate 
-\n 
-\n • Elekto inter plenaj datumoj por regiono aŭ nur voja reto (ekz. plena mapo de Japanujo okupas 700 MB, sed nur-voja mapo nur 200 MB)</string>
-    <string name="osmand_plus_extended_description_part5">Sekurecaj eblaĵoj 
-\n • Malnepre aŭtomate baskulas inter taga/nokta vido 
-\n • Malnepre montras rapid-limon kaj avertojn se vi trorapidas 
-\n • Malnepra rapid-dependa map-pligrandigo 
-\n • Kunhavigi vian pozicion, por ke viajn amikojn povu trovi vin</string>
-    <string name="osmand_plus_extended_description_part6">Bicikladaj kaj piediradaj eblaĵoj 
-\n • Vidigo de piediradaj kaj bicikladaj kursoj, bonega por eksterdoma aktiveco 
-\n • Speciala difinado de vojo por biciklado kaj piedirado 
-\n • Malnepra vidigo de haltejoj de publika transporto (aŭtobusaj, tramaj, fervojaj) kun nomoj de linioj 
-\n • Malnepra registrado de kurso kun eblo konservi ĝin al GPX-dosiero aŭ al enreta servo 
-\n • Malnepra vidigado de rapido kaj altitudo 
-\n • Vidigado de nivelkurboj kaj nivel-ombrumo (reliefo) (per kromprogramo)</string>
-    <string name="osmand_plus_extended_description_part7">Senpere kontribui al OSM 
+    <string name="osmand_plus_extended_description_part7">Senpere kontribui al OSM
 \n • Raporti erarojn pri datumoj 
 \n • Alŝuti GPX-spurojn al OSM senpere de la aplikaĵo 
 \n • Aldoni interesejojn kaj senpere alŝuti ilin al OSM (aŭ poste se eksterrete) 
 \n • Malnepre registri kurson ankaŭ en fona reĝimo (kiam la aparato dormetas) 
 \n OsmAnd estas malfermkoda kaj daŭre disvolvigata. Ĉiu povas kontribui al la aplikaĵo per raporti erarojn, plibonigi tradukojn aŭ programi novajn funkciojn. La projekto estas senĉese plibonigata ĉiumaniere de programistoj kaj uzantoj. La projekto estas ankaŭ subtenata permone por fondi kodumado kaj testi novajn funkciojn.</string>
-    <string name="osmand_plus_extended_description_part8">Proksimuma map-atingo kaj kvalito: 
-\n • Okcidenta Eŭropo: **** 
-\n • Orienta Eŭropo: *** 
-\n • Rusujo: *** 
-\n • Nordameriko: *** 
-\n • Sudameriko: ** 
-\n • Azio: ** 
-\n • Japanujo kaj Koreujo: *** 
-\n • Proksim-Oriento: ** 
-\n • Afriko: ** 
-\n • Antarkto: * 
-\nMapoj de preskaŭ ĉiuj de landoj de la mondo estas elŝuteblaj! De Afganujo al Zimbabvo, de Aŭstralio al Usono, Argentino, Brazilo, Kanado, Francujo, Germanujo, Meksiko, Britujo, Hispanujo…</string>
     <string name="restore_purchases">Restarigi aĉetaĵojn</string>
     <string name="shared_string_visible">Videbla</string>
     <string name="analyze_on_map">Analizi sur mapo</string>
@@ -2476,15 +2269,6 @@ Indikas lokon:  %1$s x %2$s"</string>
     
     <string name="range_min_max">Variejo = min/maks</string>
     <string name="min_max">Min./maks.</string>
-    <string name="release_2_7">• Kromprogramo ‘Mapillary’ kun strat-nivela fotaro
-\n
-\n• Fenestraĵo de mezurilo por mezuri distancoj
-\n
-\n• GPX divid-intervaloj kun detalaj informoj pri via kurso
-\n
-\n• Aliaj plibonigoj kaj erar-riparoj
-\n
-\n</string>
     <string name="rendering_value_translucent_pink_name">Rozkolora diafana</string>
     <string name="quick_action_resume_pause_navigation">Daŭrigi/paŭzigi navigadon</string>
     <string name="quick_action_resume_pause_navigation_descr">Premu tiun ĉi butonon por paŭzigi aŭ reaktivigi navigadon.</string>

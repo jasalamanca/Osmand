@@ -999,7 +999,6 @@
     <string name="copying_osmand_files">Kopierer OsmAnd-datafiler…</string>
     <string name="route_descr_destination">Reisemål</string>
     <string name="gpx_file_name">GPX-filnavn</string>
-    <string name="osmand_distance_planning_plugin_name">Distansekalkulator &amp; planleggingsverktøy</string>
 
 
     <string name="stop_routing_confirm">Er du sikker på at du vil stoppe navigeringen?</string>
@@ -1300,7 +1299,6 @@
     <string name="shared_string_undo">Angre</string>
     <string name="shared_string_skip">Hopp over</string>
     <string name="app_name_osmand">OsmAnd</string>
-    <string name="offline_maps_and_navigation">Offline-kart\n&amp; navigering</string>
     <string name="routing_attr_avoid_shuttle_train_name">Unngå pendeltog</string>
     <string name="routing_attr_avoid_shuttle_train_description">Unngå pendeltog</string>
     <string name="favorite_category_add_new">Legg til ny</string>
@@ -1923,43 +1921,7 @@
     <string name="rendering_attr_noAdminboundaries_description">Undertrykk visning av regionale grenser (administrasjonsnivåer 5-9).</string>
     <string name="close_changeset">Lukk endringssett</string>
     <string name="zxing_barcode_scanner_not_found">Programmet ZXing strekkodeskanner er ikke installert. Vil du søke på Google Play?</string>
-    <string name="release_2_5">"
- • Klikkbare ikoner på kartet
-
-
- • Kraftig POI-filtersøk: Søk f.eks etter restauranter etter type kjøkken, eller campingsteder med gitte tjenestetilbud
-
- • Nytt topologisk kart for syklister og turgåere
-
- • Forbedret opptak av turer
-
- • Forbedrede navigasjonsmerknader (Android Wear)
-
-
- • Mange andre forbedringer og feilrettinger
-
-
- med mer…
- "</string>
-    <string name="release_2_4">"
- • Nytt og veldig kraftig fritekstsøk
-
- • Lydsystem i bil / høytalertelefonintegrasjon via Blåtann
-
- • Forbedret veivisning, stemmehjelp og filanvisning
-
- • Improved transport layer with route rendering
-
-
- • Added more locales and now support regional locales
-
-
- • Many other improvements and bug fixes
-
-
- and more…
- "</string>
-    <string name="osmo_group_information_desc">"- Ved opprettelse av en gruppe, angi et navn og fyll ut beskrivelsen 
+    <string name="osmo_group_information_desc">"- Ved opprettelse av en gruppe, angi et navn og fyll ut beskrivelsen
 \n- Fra programmet kan det kun opprettes en gruppe av enkel type, les mer på hjemmesiden https://osmo.mobi/g/new 
 \n- Via en hjemmeside kan administreres en gruppe, til å plassere spor og punkter tilgjengelig for alle 
 \n- Støtter ikke bruk av gruppen for kun én bruker, hvis dette ikke er IP-gruppen 
@@ -2036,8 +1998,6 @@
     <string name="points_delete_multiple">Du skal slette %1$d punkt(er). Er du sikker?</string>
     <string name="average_speed">Gjennomsnittshastighet</string>
     <string name="select_gpx_folder">Velg spor-mappe</string>
-    <string name="osmand_extended_description_part1">OsmAnd (OSM Automated Navigation Directions) er et kart- og navigeringsprogram med tilgang til gratis, verdensomspennende og høykvalitets data fra OpenStreetMap (OSM). Gled deg over tale og visuell navigering, visning av interessepunkter, oppretting og behandling av GPX-spor, bruk av kotevisualisering og høydeinformasjon (gjennom programtillegg), et valg mellom kjøring, sykling, fotgjenger-modus, OSM-redigering og mye mer.</string>
-    <string name="osmand_plus_extended_description_part1">OsmAnd+ (OSM Automated Navigation Directions) er et kart- og navigeringsprogram med tilgang til gratis, verdensomspennende og høykvalitets data fra OpenStreetMap (OSM). Gled deg over tale og visuell navigering, visning av interessepunkter, oppretting og behandling av GPX-spor, bruk av kotevisualisering og høydeinformasjon, et valg mellom kjøring, sykling, fotgjenger-modus, OSM-redigering og mye mer. OsmAnd+ er betalingsversjonen, ved å kjøpe den støtter du prosjektet, finansierer utviklingen av nye funksjoner, og mottar de siste oppdateringene. Noen av hovedfunksjonene:</string>
     <string name="quick_action_map_source_switch">Kartkilden er endret til \"%s\".</string>
     <string name="quick_action_map_source_action">Legg til kartkilde</string>
     <string name="quick_action_map_source_title">Kartkilder</string>

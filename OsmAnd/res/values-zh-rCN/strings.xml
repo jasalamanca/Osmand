@@ -461,7 +461,6 @@
     <string name="local_openstreetmap_act_title">OSM 改动</string>
     <string name="shared_string_more_actions">更多动作</string>
     <string name="speak_street_names">播报街道名称(TTS)</string>
-    <string name="osmand_distance_planning_plugin_name">距离计算器与规划工具</string>
     <string name="distance_measurement_finish_subtrack">开始一条新的子轨迹</string>
     <string name="other_location">其他</string>
     <string name="files_limit">剩余 %1$d 个文件</string>
@@ -1156,19 +1155,6 @@
     <string name="osmo_share_location">分享</string>
     <string name="osmo_pause_location">暂停</string>
     <string name="shared_string_notifications">通知</string>
-    <string name="release_2_5">\\u2022 地图上可点击的图标
-\n 
-\n • 强大的兴趣点过滤搜索：例如，根据菜肴搜索餐馆，或者具有特定设施的场所 
-\n 
-\n • 新的 Topo 地图风格，为骑行爱好者和登山者设计 
-\n 
-\n • 增强的旅途记录功能 
-\n 
-\n • 改进了导航提醒功能（Android Wear） 
-\n 
-\n • 许多其它改进和缺陷修复 
-\n 
-\n 还有更多待你发现……</string>
     <string name="christmas_poi">圣诞兴趣点</string>
     <string name="christmas_desc_q">显示圣诞兴趣点？</string>
     <string name="search_hint">输入城市、地址、兴趣点名称</string>
@@ -1226,17 +1212,6 @@
     <string name="rendering_value_light_brown_name">浅棕色</string>
     <string name="rendering_value_dark_brown_name">深棕色</string>
     <string name="use_osm_live_routing">OsmAnd 实时导航</string>
-    <string name="release_2_3">\\u2022 OSM 实时功能。支持地图贡献者和开发者获取每小时更新的地图。
-\n 
-\n • 地图标记。新的快速地图选点的方式。 
-\n 
-\n • 更多详细的国别特有的道路标志以及包含许多新地图功能的 OSM 地图。 
-\n 
-\n • 改进的导航准备界面外观显示。 
-\n
-\n • 上下文菜单的许多改进，例如上下文中的地址查找。 
-\n 
-\n还有更多……</string>
     <string name="get_directions">导航</string>
     <string name="settings_privacy">隐私</string>
     <string name="proxy_pref_title">代理</string>
@@ -1532,19 +1507,6 @@
     <string name="back_to_search">返回到搜索</string>
     <string name="confirmation_to_delete_history_items">你想要从历史中删除所选的项目吗？</string>
     <string name="show_something_on_map">在地图上显示 %1$s</string>
-    <string name="release_2_4">\\u2022 新加入非常强大的自由文本查找
-\n
-\n • 透过蓝牙集成汽车音响系统 / 电话扬声器 
-\n
-\n • 改进的路线引导、 语音提示，和转弯道指示 
-\n
-\n • 改进了运输层与路线绘制 
-\n
-\n • 增加了更多的语言环境，现在支持区域的语言环境 
-\n
-\n • 许多其它的改善和修正错误 
-\n
-\n 以及更多…</string>
     <string name="dist_away_from_my_location">搜索 %1$s 离开</string>
     <string name="share_history_subject">通过 OsmAnd 分享</string>
     <string name="postcode">邮政编码</string>
@@ -1639,25 +1601,6 @@
     <string name="no_camera_permission">应用程序没有权限访问摄像头。</string>
     <string name="no_microphone_permission">应用程序没有访问麦克风的权限。</string>
     <string name="show_on_start_description">“关闭”会直接启动地图屏幕</string>
-    <string name="release_2_2">\\u2022 在地图上和其它屏幕上，为点击位置做了新的敏捷内容菜单用户界面
-\n
-\n • 地图屏幕上现在除了直接启动外，还有\'在应用程序时启动显示仪表板\'可选 
-\n
-\n • 组态哪些以及何种卡可以在仪表板上显示 
-\n
-\n • 如果您喜欢基本菜单的应用程序控制，绕过仪表板方式 
-\n
-\n • 要下载地图，可以直接在全球地图上点击区域
-\n 
-\n • 更好的重新计算路线（现在引擎经过反复的尝试，建议一条不同的路线） 
-\n
-\n • 兴趣点搜索现在支持更具体的查找 
-\n
-\n • 改善过的兴趣点和 OSM 编辑功能 
-\n
-\n • 地图数据下载结构和界面重新设计 
-\n
-\n 还有更多…</string>
     <string name="share_osm_edits_subject">通过 OsmAnd 协作编辑 OSM</string>
     <string name="lang_nds">低地德语</string>
     <string name="lang_mk">马其顿</string>
@@ -1665,27 +1608,6 @@
     <string name="lang_als">"阿尔巴尼亚  (Tosk)"</string>
     <string name="world_map_download_descr">世界底图（涵盖整个世界的缩小版）可能存在丢失或过期。请考虑下载它的全球概览。</string>
     <string name="map_downloaded_descr">已下载 %1$s 的地图，你现在可以开始使用它。</string>
-    <string name="release_2_6">"\\u2022 新功能：快速动作按钮
-\n
-\n •  改进了触摸屏幕手势的回应(同时平移和缩放) 
-\n
-\n • 新的地图字体覆盖了更多的语言环境 
-\n
-\n • 支持 TTS 不同版本的区域语言(和语法) 
-\n
-\n • 在一些地图样式和维基百科的清晰度增强 
-\n
-\n • 支持开放位置码 (OLC) 
-\n
-\n •  为记录的 GPX 轨迹和预测的路线显示海拔、坡度和速度的概貌 
-\n
-\n •  在自行车路线中\"驾驶样式\"设置和逻辑的改进 
-\n
-\n •  在自行车路线中使用高度数据的设置 
-\n
-\n •  一些其它的改进和错误修复 
-\n
-\n 以及更多…"</string>
     <string name="simulate_initial_startup_descr">设置标志，指示第一个应用程序启动，保持所有其他设置保持不变</string>
     <string name="favorite_category_dublicate_message">指定的类别名称已存在。请使用一个不同的名称。</string>
     <string name="shared_string_trip_recording">旅行记录</string>
@@ -2111,28 +2033,13 @@
     <string name="use_compass_navigation_descr">没有检测到朝向的时候使用罗盘</string>
     <string name="auto_zoom_map_descr">根据你的速度（地图与当前的位置同步）自动缩放地图</string>
     <string name="snap_to_road_descr">在导航过程中对齐道路的位置</string>
-    <string name="osmand_extended_description_part1">" OsmAnd (Automated Navigation Directions) 是一个地图和导航的应用程序可以免费的访问，有世界各地和高品质的 OpenStreetMap (OSM) 数据。有语音和视觉的导航，查看 POI（兴趣点），创建和管理 GPX 轨迹，使用可视化的等高线和海拔信息（需要插件），能在汽车驾驶、骑自行车和步行模式之间选择、OSM 编辑和更多。 "</string>
-    <string name="osmand_extended_description_part3">" 地图 • 显示您周遭的 POI（兴趣点） • 调整地图到您的移动方向（或罗盘） • 显示您在哪里和您在看的地方 • 分享您的位置，让您的朋友能找到您 • 保存您最重要的地点于我的收藏 • 允许您去选择怎样在地图上显示名称：于英文、设备端或语言的拼写 • 显示专用的在线地图图砖、卫星视图（来自 Bing）、不同的叠加层如旅游/导航 GPX 轨迹以及可自定透明度的附加层 "</string>
-    <string name="osmand_extended_description_part4">" 滑雪 OsmAnd 滑雪地图插件，使您能够看到滑雪道与复杂程度和一些附加的信息，如滑雪缆车和其它设施的位置。 "</string>
-    <string name="osmand_extended_description_part5">" 自行车 • 您可以在地图找到自行车道 • GPS 导航在自行车模式下，使用自行车道构建您的路线 • 您能看到您的速度和海拔高度 • GPX 录制选项使您能去记录您的旅程并且分享 • 通过附加的插件组件，您可以启用显示等高线和地形阴影 "</string>
     <string name="osmand_extended_description_part6">" 步行、健行、市区旅游 • 地图显示您的步行和健行路径 • 维基百科以您喜好的语言在市区旅游中可以告诉您很多事 • 大众运输停靠站（公共汽车、电车、火车），包括路线名称，有助于在新的城市里导航 • GPS 导航在行人模式下，使用步行路径构建您的路线 • 您可以上传并且跟随 GPX 路线或着记录和分享您自己的路线 "</string>
     <string name="osmand_extended_description_part7">" ￼ 为 OSM 做出贡献 • 报告数据错误 • 从应用程序直接将 GPX 轨迹上传到 OSM • 增加 POI 并直接将其上传到 OSM（或如果脱机则之后上传） "</string>
-    <string name="osmand_extended_description_part8">" OsmAnd 是开源软件，而且正在积极的开发。应用程序从记述注解、改进翻译或编写新的功能，每个人都可以作出贡献。透过所有的这些形成开发人员和用户交互的作用下，让该项目处于不断改善的活络状态。项目的开发进度、编写代码和测试新的功能，还是要依靠提供资金捐款资助。 大概的地图覆盖区域和品质： • 西欧： **** • 东欧： *** • 俄罗斯： *** • 北美洲： *** • 南美洲： ** • 亚洲： ** • 日本和韩国： *** • 中东： ** • 非洲： ** • 南极洲： * 
-\n 全球大多数国家都可以下载！ 在您的国家获得可靠的导航 - 无论是法国、德国、墨西哥、英国、西班牙、荷兰、美国、俄罗斯、巴西或其他任何的国家。 "</string>
-    <string name="osmand_plus_extended_description_part1">" OsmAnd+ (OSM Automated Navigation Directions) 是一个地图和导航应用程序，可以免费访问全球性且高品质的 OpenStreetMap (OSM) 地图数据。有语音和视觉的导航、查看 POI（兴趣点）、创建和管理 GPX 轨迹、使用可视化的等高线和海拔信息，能在汽车驾驶、骑自行车和步行模式之间选择、OSM 编辑和更多。 OsmAnd + 是付费应用程序版本。透过购买，您支持了该项目，资助新功能的开发并收到最新的更新。一些主要特点： "</string>
-    <string name="osmand_plus_extended_description_part2">" 导航 • 在线工作（快速）或是离线（当您在国外无需国际漫游费用） • 转弯提醒 (turn by turn) 语音导航（真人和合成语音） • 可任选的车道导引、街道名称显示和预计抵达时间 • 支持您行程安排上的中转点 • 当您行驶路线改道，自动重新规划 • 查寻地点按照地址、类别（例如：餐厅、旅店、加油站、博物馆）或以地理位置坐标 "</string>
-    <string name="osmand_plus_extended_description_part3">" 地图查看 • 显示您的位置和方向 • 可以选择依照罗盘或您的运动方向对齐画面 • 将您最重要的地点，保存为我的收藏 
-\n • 显示您周遭的 POI（兴趣点） • 显示专用的在线地图图砖、卫星视图（来自 Bing）、不同的叠加层如旅游/导航 GPX 轨迹以及可自定透明度的附加层 • 可任选显示地名于英文、设备端或语言的拼写 "</string>
-    <string name="osmand_plus_extended_description_part4">" 使用 OSM 和维基百科的数据 • 来自世界最好的协作项目所得的高品质信息 • OSM 数据可用在每个国家或地区 • 维基百科 POI 卓越的观光景点 • 直接从应用程序，无限制的免费下载 • 密集的脱机矢量地图更新，至少每月一次 • 可在完整的区域数据还是只有公路网之间选择（例如：光全日本就有700 MB或200 MB的公路网） "</string>
-    <string name="osmand_plus_extended_description_part5">" 安全功能 • 任选的自动日/夜查看切换 • 任选的速限显示功能，如果您超速了它会提醒 • 取决于速度的地图缩放选项 
-\n • 分享您所在的位置的功能，这样您的朋友能找到您 "</string>
-    <string name="osmand_plus_extended_description_part6">" 自行车和步行功能 • 地图包括步行，健行旅游者，自行车道，非常适合户外活动 • 特殊的自行车和行人的路线和显示模式 • 任选的大众运输停靠站 (公共汽车、 电车、火车）包括线路名称 • 任选的旅程录制到设备端 GPX 文件或在线服务 • 任选的速度和高度显示 • 显示等高线和地形阴影（经由附加的插件） "</string>
     <string name="osmand_plus_extended_description_part7">" 直接提供给 OSM
 \n • 报告地图错误
 \n • 直接从该应用程序上传 GPX 轨迹到 OSM
 \n • 增加 POI 并直接上传给 OSM（如果离线则在之后上传）
 \n • 任选的旅程录制而且在背景模式（当设备处于休眠模式下） OsmAnd 是开源软件，而且正在积极的开发。应用程序从报告错误、改进翻译或编写新的功能，每个人都可以作出贡献。透过所有的这些形成开发人员和用户交互的作用下，让该项目处于不断改善的活络状态。项目的开发进度、编写代码和测试新的功能，还是要依靠提供资金捐款资助。 "</string>
-    <string name="osmand_plus_extended_description_part8">" 大概的地图覆盖区域和品质： • 西欧： **** • 东欧： *** • 俄罗斯： *** • 北美洲： *** • 南美洲： ** • 亚洲：** • 日本和韩国： *** • 中东： ** • 非洲： ** • 南极洲： * 全球大多数国家都可以下载！ 从阿富汗到津巴布韦，从澳大利亚到美国。 阿根廷、巴西、加拿大、法国、德国、墨西哥、英国、 西班牙 … "</string>
     <string name="route_updated_loc_found">一旦找到定位时，导航路线将重新规划</string>
     <string name="native_app_allocated_memory_descr">本地存储总计由应用程序 %1$s MB（Dalvik %2$s MB，其它 %3$s MB）。 比例存储 %4$s MB（Android 限制 %5$s MB，Dalvik %6$s MB）。</string>
     <string name="starting_point_too_far">起始标点离最近的道路太远。</string>
@@ -2294,8 +2201,6 @@
     <string name="shared_string_undo">撤消</string>
     <string name="shared_string_skip">跳过</string>
     <string name="app_name_osmand">OsmAnd</string>
-    <string name="offline_maps_and_navigation">离线地图
-\n和导航</string>
     <string name="commit_poi">提交 POI</string>
     <string name="tab_title_basic">基本</string>
     <string name="tab_title_advanced">高级</string>
@@ -2446,15 +2351,6 @@
     <string name="quick_action_show_navigation_finish_dialog">显示导航完成对话框</string>
     <string name="quick_action_start_stop_navigation">开始/停止导航</string>
     <string name="quick_action_start_stop_navigation_descr">点击该按钮以开始或结束导航。</string>
-    <string name="release_2_7">\\022 带有街道等级图像的 Mapillary 插件
-\n
-\n• 用于距离测量的量尺小部件
-\n
-\n • GPX 切分间隔，带有您的路径的详细信息
-\n
-\n • 其它改进和问题修复
-\n
-\n</string>
     <string name="rendering_value_translucent_pink_name">半透明粉红色</string>
     <string name="empty_state_osm_edits">创建或修改 OSM 对象</string>
     <string name="import_as_gpx">作为 GPX 文件导入</string>

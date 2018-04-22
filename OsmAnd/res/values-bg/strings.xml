@@ -38,8 +38,7 @@
     <string name="gpx_file_name">име на GPX файл</string>
     <string name="gpx_saved_sucessfully">GPX успешно записан в {0}</string>
     <string name="osmand_distance_planning_plugin_description">Добавката предоставя джаджа за създаване на маршрути като натискате върху картата, да редактирате съществуващи GPX файлове за планиране на пътешествие и измерване на разстояние между точки. Резултатите могат да бъдат записани в GPX файл, който по-късно да бъде ползван като маршрут за навигацията.</string>
-    <string name="osmand_distance_planning_plugin_name">Изчисляване на дистанции и планиране на маршрут</string>
-    <string name="use_distance_measurement_help">* Маркирайте точка.\n 
+    <string name="use_distance_measurement_help">* Маркирайте точка.\n
         * Натиснете и задръжте върху картата за изтриване на предна точка.\n
         * Натиснете и задръжте върху точка за разглеждане и добавяне на описание.\n
         * Докоснете върху добавката за повече опции.</string>
@@ -1674,8 +1673,6 @@
     <string name="favourites_edit_dialog_title">Предпочитана информация</string>
     <string name="show_on_start">Да се показва при стартиране</string>
     <string name="copied_to_clipboard">Копирано</string>
-    <string name="release_2_2">" • Нов контекстно-ориентиран интерфейс\n\n • При стартиране на приложението се извежда картата, освен ако не е избрано  \'Показване на таблото при стартиране\'\n\n • Настройване на контролите върху таблото за управление\n\n • Пропускане на таблото, ако предпочитате приложение с меню\n\n • За сваляне на карти, регионите могат да бъдат директно избирани чрез докосване на световната карта\n\n • Търсенето на POI сега може да стане с подробни заявки\n\n • Подобрено редактиране на  POI и OSM\n\n • Преработен е интерфейса и свалянето на карти
-\n\n и още… "</string>
     <string name="osm_save_offline">Запази офлайн</string>
     <string name="osm_edit_modified_poi">Модифицирани OSM POI</string>
     <string name="osm_edit_deleted_poi">Изтрити OSM POI</string>
@@ -1825,7 +1822,6 @@
     <string name="tab_title_advanced">Разширени</string>
     <string name="tab_title_basic">Основни</string>
     <string name="commit_poi">Изпрати POI</string>
-    <string name="offline_maps_and_navigation">Офлайн карти\n &amp; навигация</string>
     <string name="shared_string_skip">Пропусни</string>
     <string name="shared_string_undo">ОТМЕНИ</string>
     <string name="shared_string_card_was_hidden">Картата беше скрита</string>

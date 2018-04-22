@@ -1011,7 +1011,6 @@
     <string name="plugin_distance_point">Ponto</string>
     <string name="gpx_file_name">Nome do arquivo GPX</string>
     <string name="gpx_saved_sucessfully">Arquivo GPX guardado com sucesso em {0}</string>
-    <string name="osmand_distance_planning_plugin_name">Calculadora de Distância e Ferramenta de Planeamento</string>
     <string name="osmand_distance_planning_plugin_description">Este plugin fornece um widget na tela do mapa que permite criar caminhos ao tocar no mapa, ou usar/modificar arquivos GPX existentes, para planear uma viagem e medir a distância entre os pontos. Os resultados podem ser guardados como um arquivo GPX, que pode ser usado posteriormente para orientação.</string>
     
 	<string name="driving_region_descr">Selecione região: EUA, Europa, RU, Ásia e outros</string>
@@ -1588,8 +1587,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="show_on_start_description">\'Desligado\' lança directamente para a vista do mapa</string>
     <string name="show_on_start">Mostrar no arranque</string>
     <string name="copied_to_clipboard">Copiado para a Área de Transferências</string>
-    <string name="release_2_2">" • Novo interface do utilizador sensível ao contexto, ao tocar locais no mapa, ou em outras telas\n\n• Tela do Mapa é agora lançada diretamente, a menos que \'Mostrar Painel de instrumentos no arranque\' seja selecionado\n\n• Configure quais e de que forma os cartões são exibidos no Painel de instrumentos\n\n• Desactivar o Painel, se preferir um controle baseado em menus\n\n• Para fazer download de mapas, as regiões podem ser seleccionadas directamente, tocando no mapa do mundo\n\n• Busca por \'Pontos de Interesse\' agora oferece suporte a consultas mais específicas\n\n• Melhoria nos \'Pontos de Interesse\' e funcionalidades de edição OSM\n\n• Reformulação de estrutura e de interface para download de mapas de dados 
-\n\ne mais… "</string>
     <string name="osm_save_offline">Guardar off-line</string>
     <string name="osm_edit_modified_poi">Ponto de Interesse OSM modificado</string>
     <string name="impassable_road_desc">Escolha as estradas que quer evitar durante a navegação</string>
@@ -2106,39 +2103,9 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="routing_attr_relief_smoothness_factor_name">Selecionar flutuação de elevação</string>
     <string name="routing_attr_height_obstacles_name">Utilizar dados de elevação</string>
     <string name="routing_attr_height_obstacles_description">Utilizar dados de elevação de terreno provenientes de SRTM, ASTER e EU-DEM</string>
-    <string name="release_2_6">\\022 Nova funcionaldiade: Botão de ação rápida
-\n
-\n• Resposta melhorada a gestos do ecrã touch (ex. panorâmico e aproximação em simultâneo)
-\n
-\n• Novas fontes de mapas com mais localizações
-\n
-\n• Suporte de TTS para variantes de linguagem regionais (e sotaques)
-\n
-\n• Melhoria de visibilidade em múltiplos estilos de mapa e wikipedia
-\n
-\n• Suporte para Open Location Code (OLC)
-\n
-\n• Mostrar elevação, encosta, e perfil de velocidade para percursos GPX gravados e percursos calculados
-\n
-\n• Configuração \"Estilo de condução\" e melhorias lógicas em percursos de bicicleta
-\n
-\n• Definições para utilizar dados de altitude em rotas de bicicleta
-\n
-\n• Várias outras melhorias e correção de erros
-\n
-\ne muito mais…</string>
     <string name="show_transparency_seekbar">Mostra a transparência da barra de navegação</string>
     <string name="shared_string_widgets">Widgets</string>
     <string name="rendering_attr_hideUnderground_name">Objectos subterrâneos</string>
-    <string name="release_2_7">\\022 Plugin Mapillary com imagens ao nível da rua
-\n
-\n • Widget de régua para medição da distância
-\n
-\n • Intervalos GPX com informação detalhada sobre o seu percurso
-\n
-\n • Outras melhores e correção de erros
-\n
-\n</string>
     <string name="auto_split_recording_title">Divisão automática de gravações após separação</string>
     <string name="auto_split_recording_descr">Iniciar novo segmento após uma quebra de 6 min, novo percurso após quebra de 2 h, ou novo arquivo após quebra mais longa se a data se tiver alterado.</string>
     <string name="rendering_value_high_name">Alto</string>
@@ -2173,19 +2140,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="shared_string_recorded">Gravado</string>
     <string name="shared_string_record">Registo</string>
     <string name="gpx_logging_no_data">Sem dados</string>
-    <string name="release_2_5">\\022 Icones selecionáveis no mapa
-\n
-\n • Pesquisa poderosa filtrada por pontos de interesse (POI): Pesquise, ex. restaurantes por cozinha, ou campgrounds with specific facilities 
-\n
-\n • Novo estilo de Mapa Topo para ciclistas e montanhistas 
-\n
-\n • Gravação de viagem melhorada
-\n
-\n • Notificações de navegação melhoradas (Android Wear)
-\n
-\n • Muitas outras melhorias e correção de erros
-\n
-\n e muitos mais…</string>
     <string name="save_track_min_speed">Velocidade mínima para registo</string>
     <string name="save_track_min_speed_descr">Filtro: Definir velocidade mínima para um ponto poder ser registado</string>
     <string name="save_track_min_distance">Deslocamento mínimo para registo</string>

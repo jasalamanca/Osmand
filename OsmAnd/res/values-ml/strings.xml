@@ -1022,8 +1022,6 @@
     <string name="user_hates_app_get_feedback">എന്ത് കൊണ്ട് എന്ന് പറയുക.</string>
     <string name="shared_string_undo">കഴിഞ്ഞ നീക്കം ഉപേക്ഷിച്ചു പൂര്‍വ്വസ്ഥിതിയിലേക്കു തിരിച്ചു പോകുക</string>
     <string name="shared_string_skip">ഒഴിവാക്കുക</string>
-    <string name="offline_maps_and_navigation">ഓഫ് ലൈന്‍ ഭൂപടങ്ങളും
-വഴികാട്ടിയും</string>
     <string name="downloading_number_of_files">" %1$d ഫയല്‍  ഡൗണ്‍ലോഡ് ചെയ്തു കൊണ്ടിരിക്കുന്നു"</string>
     <string name="application_dir_description">എവിടെയാണ് ഭൂപടങ്ങളും മറ്റ് വിവരങ്ങളും സംഭരിക്കേണ്ടത് എന്ന് തെരഞ്ഞെടുക്കുക.</string>
 

@@ -190,7 +190,6 @@
     <string name="gpx_file_name">Nùmene de su documentu GPX</string>
     <string name="gpx_saved_sucessfully">Documentu GPX sarvadu cun sutzessu in {0}</string>
     <string name="osmand_distance_planning_plugin_description">Custa estensione ativat unu widget in s\'ischermu de sa mapa chi permitit de creare àndalas carchende in sa mapa, o de impreare o mudare documentos GPX esistentes, pro pianificare unu biàgiu e medire sa distantzia intre puntos diferentes. Sos resurtados podent èssere sarvados comente GPX, e ant a poder\'èssere impreados prus a tardu comente ghia.</string>
-    <string name="osmand_distance_planning_plugin_name">Aina calcoladore de distàntzia e pianificatzione</string>
     <string name="use_distance_measurement_help">* Toca pro sinnare unu puntu.
 \n * Incarca e mantene incarcadu in sa mapa pro iscantzellare su puntu antepostu.
 \n * Incarca e mantene incarcadu in subra de unu puntu pro bìdere e alliongiare una descrizione.
@@ -1735,7 +1734,6 @@ Lon %2$s</string>
     <string name="dahboard_options_dialog_title">Cunfigura su pannellu</string>
     <string name="shared_string_skip">Brinca</string>
     <string name="app_name_osmand">OsmAnd</string>
-    <string name="offline_maps_and_navigation">Mapas non in lìnia\ne Nàvigu</string>
     <string name="shared_string_undo">Annudda atzione</string>
     <string name="commit_poi">Imbia PDI</string>
     <string name="shared_string_card_was_hidden">S’ischeda fiat cuada</string>
@@ -1904,23 +1902,6 @@ Lon %2$s</string>
     <string name="use_drawer_btn">Imprea sa mapa</string>
     <string name="access_from_map_description">Su butone de su menù alluet su pannellu de controllu, imbetzes de su menù.</string>
     <string name="access_from_map">Intra dae sa mapa</string>
-    <string name="release_2_2">\\u2022 Interfache impitadore noa pro incarcare positziones in sa mapa e in àteros ischermos
-\n 
-\n • S\'ischermu de sa mapa est como postu come prima cosa a s’allumìngiu de s’aplicatzione, semper chi \'Ammustra pannellu de controllu in s\'allumìngiu\' no siet ischertadu 
-\n 
-\n • Como podes cunfigurare sas impostatziones pro isseberare cales sunt sas ischedas chi diant dèper’èssere ammustradas in su pannellu e comente 
-\n 
-\n • Brinca su pannellu de controllu, si preferis a impreare su menù pro sa gestione de s’aplicatzione 
-\n 
-\n • Pro iscarrigare mapas, sas regiones podent èssere ischertadas deretamente incarchende in sa mapa generale de su mundu 
-\n 
-\n • Sa chirca de PDI como suportat chircas prus dislindadas 
-\n 
-\n • Megioradas sas funtzionalidades de modìficas de PDI e OSM 
-\n 
-\n • Istrutura e s\'interfache de iscarrigamentu datos mapas torrada a fàghere 
-\n 
-\n e àteru…</string>
     <string name="please_specify_poi_type_only_from_list">Dislinda sa casta curreta de PDI o brinca custa parte.</string>
     <string name="routing_attr_avoid_stairs_name">Istransi sas iscalas</string>
 	<string name="routing_attr_avoid_stairs_description">Istransi sas iscalas.</string>
@@ -2050,17 +2031,6 @@ Si istimas OsmAnd e OSM e los boles suportare, custa est una manera perfeta pro 
     <string name="storage_directory_shared">Memòria cumpartzida</string>
     <string name="full_report">Raportu cumpridu</string>
     <string name="open_street_map_login_and_pass">Nùmene impreadore e crae de OpenStreetMap</string>
-    <string name="release_2_3">\\u2022 OSM Live. Suporta sos contribuidores a sa mapa e sos isvilupadores pro otènnere mapas agiornadas cada ora.
-\n
-\n • Marcadores mapa. Una manera noa de ischertare in manera lestra logos in sa mapa.
-\n
-\n • Mapas OSM prus a sa minuda cun caraterìsticas pro sas istradas pro cada istadu e unu muntone de àteras funtzionalidades.
-\n
-\n • Megioramentu de s’aparèntzia e de s’ammaniamentu de sas àndalas. 
-\n
-\n • Medas megioramentos in su menù de sa mapa, comente sa chirca cuntestuale de sos indiritzos.
-\n
-\n e àteru…</string>
     <string name="storage_directory_readonly_desc">Sa cartella de memorizatzione ischertada est in letura ebbia. Sa cartella de memorizatzione est istada mudada pro impreare sa mamòria interna. Pro praghere issèbera una cartella de destinatzione vàlida.</string>
     <string name="no_map_markers_found">Annanghe sos marcadores mapa dae sa mapa</string>
     <string name="no_waypoints_found">Perunu puntu de coladòrgiu agatadu</string>
@@ -2135,19 +2105,6 @@ Si istimas OsmAnd e OSM e los boles suportare, custa est una manera perfeta pro 
     <string name="confirmation_to_delete_history_items">Boles iscantzellare sos elementos ischertados de s\'istòria?</string>
     <string name="coords_search">Chirca cun coordinatas</string>
     <string name="advanced_coords_search">Chirca avantzada cun coordinatas</string>
-    <string name="release_2_4">"\\u2022 Chirca de testu noa e potente meda
-\n 
-\n • Integratzione intre su sistema àudio de sa màchina e su telèfono pro mèdiu de Bluetooth 
-\n 
-\n • Boghe de ghia, interfàtzia vocale e indicatziones de bortada megioradas 
-\n 
-\n • Istratu de sos trasportos pùblicos megioradu cun sas  àndalas 
-\n 
-\n • Medas limbas noas, e como est istadu agiuntu fintzas su suportu pro limbas regionales e variantes 
-\n 
-\n • Meda àteros megioramentos e curretziones de errores 
-\n 
-\n e àteru…"</string>
     <string name="route_stops_before">%1$s firmadas in antis</string>
     <string name="routing_attr_short_way_name">Àndala prus de atòliu pro sos consumos</string>
     <string name="routing_attr_short_way_description">Issèbera s\'àndala prus de atòliu pro sos consumos (sa prus curtza, de sòlitu).</string>
@@ -2218,19 +2175,6 @@ Si istimas OsmAnd e OSM e los boles suportare, custa est una manera perfeta pro 
     <string name="rendering_value_light_brown_name">Castàngiu craru</string>
     <string name="rendering_value_dark_brown_name">Castàngiu iscuru</string>
     <string name="rendering_attr_surfaceIntegrity_name">Integridade superfitziale istradale</string>
-    <string name="release_2_5">\\u2022 Iconas incarcàbiles in sa mapa
-\n 
-\n • Chirca filtrada de PDI potente meda: chirca sos ristorantes pro casta de coghina, o sos campègios cun caraterìsticas particulares 
-\n 
-\n • Istile topogràficu nou pro tziclistas e escursionistas 
-\n 
-\n • Registratzione de sos biàgios megiorada (impostatziones noas) 
-\n 
-\n • Notìficas pro su nàvigu megioradas (Android Wear) 
-\n 
-\n • Meda àteros megioramentos e errores isoltos 
-\n 
-\n e àteru…</string>
     <string name="osmo_share_location">Cumpartzi</string>
     <string name="osmo_pause_location">Pone in pàusa</string>
     <string name="osmo_service_running">Su servìtziu OsMo est allutu</string>
@@ -2337,27 +2281,6 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="auto_split_recording_title">Iscroba automaticamente sas registratziones</string>
 	<string name="auto_split_recording_descr">Incumintza unu segmentu nou a pustis de una pàusa de 6 minutos, una rasta noa a pustis de 2 oras o unu documentu nou si sa pàusa est istada prus longa e sa data est cambiada.</string>
     <string name="quick_action_page_list_descr">Incarchende su butone pro s\'atzione as a cùrrere pro sa lista in suta.</string>
-    <string name="release_2_6">"\\u2022 Funtzionalidae noa: Butone pro sas atziones lestras
-\n 
-\n • Megioramentu de sa risposta de s\'ichermu a sos incarcos 
-\n 
-\n • Caràteres noos pro sa mapa, chi ant a permìtere de tènnere prus limbas 
-\n 
-\n • Suportu TTS pro variantes regionales de sas limbas 
-\n 
-\n • Megioramentos a sa visibilidade pro meda istiles de sa mapa e pro wikipedia 
-\n 
-\n • Suportu pro su \"Còdighe Abertu pro sa Positzione\" (Open Location Code  - OLC) 
-\n 
-\n • Visualizatzione basilare pro sos profilos de s\'artària, de sa pendèntzia e de lestresa pro sas rastas GPX registradas e sas àndalas calculadas 
-\n 
-\n • Impostatzione \"Istile de ghia\" emegioramentos lògicos in su càlculu de sas àndalas pro bitzicletas 
-\n 
-\n • Impostatziones pro s\'impreu de sos datos de s\'artària pro su càlculu de sas àndalas pro bitzicletas 
-\n 
-\n • Meda àteros megioramentos e curretziones de errores 
-\n 
-\n e àteru…"</string>
 
     <string name="routing_attr_height_obstacles_name">Imprea sos datos de s\'artària</string>
     <string name="routing_attr_height_obstacles_description">Imprea sos datos de s\'artària frunidos dae SRTM, ASTER e EU-DEM.</string>
@@ -2406,21 +2329,9 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="do_not_show_startup_messages_desc">Istudat s\'ammustradura de sos iscontos pro sas aplicatziones e sos messàgios a pitzu de sos eventos locales.</string>
     <string name="right_side_navigation">Ghia a destra</string>
     <string name="driving_region_automatic">Automàtica</string>
-    <string name="osmand_extended_description_part1">OsmAnd (OSM Automated Navigation Directions) est un\'aplicatzione pro sa consultatzione de mapas e su nàvigu chi impreat sos datos lìberos, vàlidos pro totu su mundu, e de alta calidade de OpenStreetMap (OSM). Imprea sa ghia vocale e sas indicatziones in s\'ischermu, càstia sos PDI (puntos de interesse), crea e manìgia rastas GPX, abìlita sa visualizatzione de sas curvas de livellu e sos datos de s\'artària (pro mèdiu de un\'estensione), issèbera sa modalidade intre ghia pro sa màchina, sas bitzicletas e a pedes, agiuda a megioare sas mapas OSM e àteru meda.</string>
-    <string name="osmand_extended_description_part3">Mapa • Ammustra sos PDI (puntos de interesse) a curtzu de tie • Acontza sa mapa pro l\'adatare a sa diretzione de movimentu tua (o a sa bùssola) • Ammustra su puntu in ue ses ecara a ue ses abbistende • Cumpartzi sa positzione tua pro ti fàghere agatare dae sos amigos tuos • Sarva sos logos prus importantes pro tie in sos Preferidos • Issèbera comente cheres bìdere sos nùmenes in sa mapa: in inglesu, limba locale, o in ortografia fonètica • Ammustra taseddos ispetzializados in lìnia, vistas satellitares (dae Bing), istratos diferentes, comente rastas GPX pro su nàvigu, e àteros livellos cun trasparèntzia regolàbile</string>
-    <string name="osmand_extended_description_part4">Iscì S\'estensione de OsmAnd pro sas mapas pro s\'iscì ti permitint de bìdere sas pistas pro s\'iscì cunu meda complessidade e cun àteras informatziones, comente sa positzione de sas funivias e de àteras istruturas.</string>
-    <string name="osmand_extended_description_part5">Bitzicletas • Podes agatare sas pistas tziclàbiles in sa mapa • Su nàvigu GPS in sa modalidade pro sas bitzicletas calculat sas àndalas impreende sas pistas tziclàbiles • Podes bìdere sa lestresa e s\'artària tua • S\'optzione pro sa registratzione GPX ti permitit de registrare su biàgiu tuo e de lu cumpartzire • Impreende un\'estensione podes abilitare sas curvas de livellu e sas umbraduras de sos rilievos</string>
     <string name="osmand_extended_description_part6">A pedes, escursionismu, turismu intre sas tzitades • Sa mapa ammustrat camineras pro s\'esrcursionismu e sas passigiadas • Sa Wikipedia in sa limba preferida tua ti podet fàghere iscobèrrere meda in su mentres chi ses faghinde unu giru de sa tzitade • Sas firmadas de sos trasportos pùblicos (bus, tram, trenu), cun fintzas sos nùmenes de sas lìniasi, ti podent agiudare a ti mòere in una tzitade noa • Su nàvigu GPS in sa modalidade a pedes calculat sas àndalas pro tie impreende sas camineras pedonales • Podes carrigare e sighire una rasta GPX o registrare sas tuas e isseberare de las cumpartzire</string>
     <string name="osmand_extended_description_part7">Agiuda a OSM • Sinnala errores in sos datos • Càrriga rastas GPX in OSM dae s\'aplicatzione • Annanghe PDI e carriga·los in OSM (fintzas prus a tardu, si non ses in lìnia)</string>
-    <string name="osmand_extended_description_part8">OsmAnd est a mitza aberta e benit megioradu totora. Totus podent contribuire a s\'aplicatzione sinnalende errores, megiorende sas tradutziones o programmende funtzionalidades noas. Su progetu est in un\'istadu de megioramentu sighidu gràtzias a totu custas maneras de agiudu, e benit sustènnidu fintzas gràtzias a sas donatziones pro sa programmatzione e su collàudu de funtzionalidades noas. Cobertura e calidade aprosimativa de sas mapas: • Europa otzidentale: **** • Europa orientale: *** • Rùssia: *** • Amèrica de su Nord: *** • Amèrica de su Sud: ** • Àsia: ** • Giapone e Corea: *** • Oriente de mesu: ** • Àfrica: ** • Antàrtide: * Sa majoria de sos istados de su mundu tenent una mapa chi podet èssere iscarrigada! Installa unu navigadore afidàbile in sa natzione tua - chi siat sa Frantza, sa Germània, su Mèssicu, s\'Ispagna, s\'Olanda, sos Istados Unidos, sa Rùssia, su Brasile o un\'àtera.</string>
-    <string name="osmand_plus_extended_description_part1">OsmAnd+ (OSM Automated Navigation Directions) est un\'aplicatzione pro sa consultatzione de mapas e su nàvigu chi impreat sos datos lìberos, vàlidos pro totu su mundu, e de alta calidade de OpenStreetMap (OSM). Imprea sa ghia vocale e sas indicatziones in s\'ischermu, càstia sos PDI (puntos de interesse), crea e manìgia rastas GPX, abìlita sa visualizatzione de sas curvas de livellu e sos datos de s\'artària (pro mèdiu de un\'estensione), issèbera sa modalidade intre ghia pro sa màchina, sas bitzicletas e a pedes, agiuda a megioare sas mapas OSM e àteru meda. OsmAnd+ est sa versione a pagamentu. Comporande·la, agiudas s\'isvilupu de funtzionalidades noas, e podes retzire sos ùrtimos agiornamentos. Calicuna de sas funtzionalidades prus importantes:</string>
-    <string name="osmand_plus_extended_description_part2">Nàvigu • Podes isseberare intre sa modalidade non in lìnia (non b\'ant a èssere pagamentos cando ses in s\'esteru) o in lìnia (prus lestra) • Ghia vocale chi t\'agiudat in totu su biàgiu tuo (boghes registradas e sintetizadas) • Indicadore de corsia, nùmene de sas carreras e su tempus istimadu de arrivu • Suportat puntos de coladòrgiu in s\'àndala tua • S\'àndala benit torrada a èssere calculada cada borta chi b\'essis a foras • Chirca destinatzione impreende s\'indiritzu, sa casta (es.: parchègiu, ristorante, albergu, istatzione de servìtziu, museu), o cun sas coordinatas geogràficas</string>
-    <string name="osmand_plus_extended_description_part3">Visualizatzione mapa • Ammustra sa positzione e sa diretzione tua • Alliniamentu optzionale de sa mapa regoladu sighinde sa diretzione o sa bùssola • Sarva sos logos prus importantes pro tie in sos Preferidos • Ammustra sos PDI (puntos de interesse) a curtzu de tie • Ammustra taseddos ispetzializados in lìnia, vistas satellitares (dae Bing), istratos diferentes, comente rastas GPX pro su nàvigu, e àteros livellos cun trasparèntzia regolàbile • Issèbera comente cheres bìdere sos nùmenes in sa mapa: in inglesu, limba locale, o in ortografia fonètica</string>
-    <string name="osmand_plus_extended_description_part4">Imprea datos de OSM e Wikipedia • Informatziones de calidade arta dae sos mègius progetos collaborativos de su mundu • Datos OSM disponìbiles pro istadu o regione • PDI Wikipedia, ispantosos pro su turismu • Iscarrigamentos de badas illimitados, diretamente dae s\'aplicatzione • Mapas vetoriales cumpatas agiornadas a su mancu una borta a su mese • Issèbera intra sos datos intreos pro sas regiones o petzi sos de sas istradas (esèmpiu: totu su Giapone est 700 MB, sas istradas ebbia sunt 200 MB)</string>
-    <string name="osmand_plus_extended_description_part5">Funtzionalidades pro sa seguresa • Muda automàtica optzionale de sa vista die/note • Visulaizatzione automàtica de su lìmite de lestresa, cun avisos cando lu barigas • Ismanniamentu automàticu optzionale regoladu dae sa lestresa • Cumpartzi sa positzione tua pro ti fàghere agatare dae sos amigos tuos</string>
-    <string name="osmand_plus_extended_description_part6">Funtzionalidades pro sas bitzicletas e a pedes • Podes agatare sas pistas tziclàbiles, pro escursionismu e pro passigiadas, ispantosas pro s\'atividades a s\'àera aberta • Modalidades ispetziales pro su nàvigu e sa mapa pro bitzicletas e a pedes • Firmadas de sos trasportos pùblicos (bus, tram, trenu) cun sos nùmenes de sas lìnias • Registratzione de sos biàgios in rastas GPX in documentos sarvados in locale o in servìtzios in lìnia • Podes bìdere sa lestresa e s\'artària tua (optzionale) • Impreende un\'estensione podes abilitare sas curvas de livellu e sas umbraduras de sos rilievos</string>
     <string name="osmand_plus_extended_description_part7">Agiuda a OSM • Sinnala errores in sos datos • Càrriga rastas GPX in OSM dae s\'aplicatzione • Annanghe PDI e carriga·los in OSM (fintzas prus a tardu, si non ses in lìnia) • Registratzione optzionale de sos biàgios fintzas in modalidade \"in isfundu\" (cando su dispositivu est in modalidade \"a riposu\") OsmAnd est a mitza aberta e benit megioradu totora. Totus podent contribuire a s\'aplicatzione sinnalende errores, megiorende sas tradutziones o programmende funtzionalidades noas. Su progetu est in un\'istadu de megioramentu sighidu gràtzias a totu custas maneras de agiudu, e benit sustènnidu fintzas gràtzias a sas donatziones pro sa programmatzione e su collàudu de funtzionalidades noas.</string>
-    <string name="osmand_plus_extended_description_part8">Cobertura e calidade aprosimativa de sas mapas: • Europa otzidentale: **** • Europa orientale: *** • Rùssia: *** • Amèrica de su Nord: *** • Amèrica de su Sud: ** • Àsia: ** • Giapone e Corea: *** • Oriente de mesu: ** • Àfrica: ** • Antàrtide: * Sa majoria de sos istados de su mundu tenent una mapa chi podet èssere iscarrigada! Dae s\'Afghanistan a su Zimbabwe, dae s\'Austràlia a sos Istados Unidos. Argentina, Brasile, Cànada, Frantza, Germània, Mèssicu, Regnu Unidu, Ispagna, …</string>
     <string name="fonts_header">Caràteres pro sa mapa</string>
     <string name="restore_purchases">Riprìstina sas còmporas</string>
     <string name="shared_string_visible">Visìbile</string>
@@ -2513,15 +2424,6 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="moving_time">Tempus in movimentu</string>
     <string name="max_min">Mass/Min</string>
     <string name="min_max">Mìn/Màss</string>
-    <string name="release_2_7">\\u2022 Estensione Mapillary cun immàgines a livellu de s\'istrada
-\n
-\n • Widget righellu pro medire sas distàntzias
-\n
-\n • Intervallos iscrobados GPX cun informatziones a pitzu de sa rasta tua
-\n
-\n • Àteros megioramentos e curretziones de errores
-\n
-\n</string>
     <string name="rendering_value_translucent_pink_name">Rosa translùtzidu</string>
     <string name="average">Mèdiu</string>
     <string name="ascent_descent">Ascendente/Discendente</string>

@@ -988,7 +988,6 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
     <string name="gpx_file_name">GPX-bestandsnaam</string>
     <string name="gpx_saved_sucessfully">GPX-bestand succesvol opgeslagen als {0}</string>
     <string name="osmand_distance_planning_plugin_description">Maak een route door op de kaart te tikken of gebruik of wijzig GPX-bestanden. Plan een reis en bereken de afstand tussen punten. Het resultaat kan worden bewaard als GPX-bestand, om later te gebruiken als navigatieroute.</string>
-    <string name="osmand_distance_planning_plugin_name">Afstand meten &amp; Route plannen</string>
     <string name="use_distance_measurement_help">* Tik om een punt te markeren.
 \n* Druk lang op de kaart om het vorige punt te verwijderen. 
 \n* Druk lang en houd vast op een punt om de beschrijving te zien en toe te voegen. 
@@ -1855,8 +1854,7 @@ Lengtegraad:\t\t%2$s</string>
 	<string name="shared_string_undo">Ongedaan maken</string>
 	<string name="shared_string_skip">Overslaan</string>
 	<string name="app_name_osmand">OsmAnd</string>
-	<string name="offline_maps_and_navigation">Offline Kaarten\n&amp; Navigatie</string>
-	<string name="commit_poi">POI vastleggen</string>
+    <string name="commit_poi">POI vastleggen</string>
 	<string name="tab_title_basic">Basis</string>
 	<string name="tab_title_advanced">Geavanceerd</string>
 	<string name="building_number">Huisnummer</string>
@@ -1945,23 +1943,6 @@ Lengtegraad:\t\t%2$s</string>
     
     <string name="dashboard_or_drawer_description">Kies tussen het flexibele Dashboard of een vast Menu. Dit is altijd te wijzigen via de dashboard-instellingen.</string>
     <string name="copied_to_clipboard">Gekopieerd naar klembord</string>
-    <string name="release_2_2">\\022 Nieuw contextmenu bij het aantikken van plekken op de kaart en op andere schermen 
-\n 
-\n • De kaart wordt direct getoond, tenzij \'Toon dashboard bij starten van de app\' is gekozen 
-\n 
-\n • Kies welke kaarten worden getoond op het dashboard 
-\n 
-\n • Mogelijkheid menu te gebruiken in plaats van het dashboard 
-\n 
-\n • Kaarten downloaden door op de wereldkaart te tikken 
-\n 
-\n • Fijnmaziger zoeken van POI 
-\n 
-\n • Betere bewerkingsmogelijkheden van POI en OSM 
-\n 
-\n • Kaarten downloaden is makkelijker en overzichtelijker 
-\n 
-\n en meer…</string>
     <string name="shared_string_commit">Bijdrage versturen</string>
 	
     <string name="context_menu_item_delete_waypoint">GPX-routepunt wissen?</string>
@@ -2105,17 +2086,6 @@ Er is nu {2} MB beschikbaar</string>
     <string name="shared_string_move_up">Omhoog</string>
     <string name="shared_string_move_down">Omlaag</string>
     <string name="finish_navigation">Navigatie stoppen</string>
-    <string name="release_2_3">\\022 OSM Live: Ondersteun bijdragers aan de kaart en ontwikkelaars en ontvang dagelijks kaart-updates. 
-\n 
-\n • Markeervlaggetjes: Een nieuwe manier op snel plekken op de kaart te kiezen. 
-\n 
-\n • Nog meer details op de kaart met landspecifieke routeschildjes en nog veel meer nieuwe mogelijkheden. 
-\n 
-\n • De route-voorbereiding is vernieuwd. 
-\n 
-\n • Vele verbeteringen in het kaart-context-menu, zoals adres-zoek-functie. 
-\n 
-\n en nog meer…</string>
     <string name="storage_permission_restart_is_required">OsmAnd heeft nu toestemming om de externe opslag te gebruiken. Een handmatige herstart is noodzakelijk.</string>
     <string name="full_report">Volledig Verslag</string>
     <string name="open_street_map_login_and_pass">OpenStreetMap loginnaam and wachtwoord</string>
@@ -2186,19 +2156,6 @@ Er is nu {2} MB beschikbaar</string>
     <string name="back_to_search">Terug naar zoekscherm</string>
     <string name="confirmation_to_delete_history_items">Geselecteerde items verwijderen uit geschiedenis?</string>
     <string name="show_something_on_map">Toon %1$s op de kaart</string>
-    <string name="release_2_4">\\022 Nieuwe krachtige zoekfunctie 
-\n 
-\n • Audio via Bluetooth is verbeterd 
-\n 
-\n • Verbeterde route-instructies, gesproken aanwijzingen en rijstrook-informatie 
-\n 
-\n • Verbeterde weergave van Openbaar Vervoer-routes 
-\n 
-\n • Vertalingen in nieuwe talen; ook regionale talen worden nu ondersteund 
-\n 
-\n • Vele ander verbeteringen en bug-fixes 
-\n 
-\n en nog meer…</string>
     <string name="dist_away_from_my_location">Zoek tot %1$s ver weg</string>
     
     <string name="share_history_subject">gedeeld via OsmAnd</string>
@@ -2275,19 +2232,6 @@ Er is nu {2} MB beschikbaar</string>
     <string name="gpx_logging_no_data">Geen gegevens</string>
     <string name="shared_string_recorded">Opgenomen</string>
     <string name="shared_string_record">Opname</string>
-    <string name="release_2_5">• Aanklikbare iconen op de kaart 
-\n 
-\n • Krachtige POI Filter Zoekfunctie: zoek naar bijvoorbeeld naar restaurants per keuken, campings met speciale voorzieningen 
-\n 
-\n • Nieuwe Topo kaartstijl, speciaal voor fietsers en wandelaars 
-\n 
-\n • Verbeterde GPX-opname, met nieuwe instellingen 
-\n 
-\n • Verbeterde navigatie-aanwijzingen (Android Wear) 
-\n 
-\n • Vele andere verbeteringen en bugfixes 
-\n 
-\n en nog meer…</string>
     <string name="gpx_no_tracks_title">Je hebt nog geen GPX-tracks</string>
     <string name="gpx_no_tracks_title_folder">Je kunt ook GPX-tracks toevoegen aan de map</string>
     <string name="gpx_add_track">GPX-track toevoegen</string>
@@ -2316,26 +2260,7 @@ Er is nu {2} MB beschikbaar</string>
     <string name="rendering_value_low_name">Laag</string>
     <string name="rendering_attr_hideWaterPolygons_description">Watervlakten</string>
     <string name="rendering_attr_hideWaterPolygons_name">Verberg watervlakten</string>
-    <string name="release_2_6">"\\022 Nieuw: Sneltoets op de kaart: je favoriete acties snel bereikbaar 
-\n
-\n • Verbeterde reactie op  het touchscreen 
-\n 
-\n • Nieuw font ondersteunt meer talen op de kaart 
-\n 
-\n • TTS  voor regionale taalvarianten 
-\n 
-\n •  Duidelijker kaartweergave en betere weergave van Wikipedia 
-\n
-\n • Ondersteunt Open Location Code (OLC) 
-\n 
-\n • Weergave van een hoogte- en hellings-en snelheidsprofiel van een berekende route of een opgenomen GPX-track 
-\n 
-\n • Extra fietsnavigarltie-instellingen met rijstijl en hoogtegegevens 
-\n 
-\n • Diverse andere verbeteringen en bug fixes 
-\n 
-\n en meer …"</string>
-	<string name="auto_split_recording_title">GPX-track automatisch splitsen na een onderbreking</string>
+    <string name="auto_split_recording_title">GPX-track automatisch splitsen na een onderbreking</string>
 	<string name="auto_split_recording_descr">Start een nieuw GPX-segment na een onderbreking van 6 minuten; een nieuwe GPX-track na 2 uur, of een nieuw bestand na een langere pauze na een datum wijziging.</string>
     <string name="navigate_point_olc">Open Location Code (OLC)</string>
     <string name="navigate_point_olc_info_invalid">Ongeldige OLC
@@ -2501,39 +2426,8 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="routing_attr_allow_private_description">Ga ook over privé-terreinen.</string>
     <string name="display_zoom_level">Zoomniveau weergave: %1$s</string>
     <string name="route_is_too_long_v2">Deze route is misschien te lang. Voeg tussenpunten toe als binnen 10 minuten geen route berekend is.</string>
-    <string name="osmand_extended_description_part1">" OsmAnd (OSM Automated Navigation Directions) is een kaart- en navigatieprogramma dat de vrije, wereldwijde en gedetailleerde OpenStreetMap (OSM) data gebruikt.
-\n
-\nGebruik visuele en gesproken navigatie, bekijk POIs (point of interest), maak en volg GPX-sporen, toon hoogtelijnen en hoogteinformatie (via plugin), kies tussen auto, fiets en wandelen, bewerk de OSM-kaart, en nog veel meer! "</string>
-    <string name="osmand_extended_description_part3">Kaart • Toon POI (Points Of Interest) • Draai in de bewegingsrichting (of kompasrichting) • Toont uw positie en waar u naar kijkt • Deel uw lokatie met vrienden • Bewaar belangrijke plaatsen in Favorieten • Toon namen in Engelse, lokale, of fonetische schrijfwijze • Toon extra informatie, zoals satellietfoto (van Bing), GPX-sporen, andere kaartstijlen en extra informatielagen</string>
-    <string name="osmand_extended_description_part4">Skiën - Met de OsmAnd Ski plugin ziet u pistes met hun moeilijkheidsgraad, en extra informatie zoals liften en andere faciliteiten.</string>
-    <string name="osmand_extended_description_part5">Fietsen • Vind fietspaden op de kaart • Routeberekening met gebruik van fietspaden • Toon snelheid en hoogte • Neem de rit op als GPX-spoor en deel deze • Geef, met een extra plugin, hoogteverschillen weer als hoogtelijnen of reliëfschaduw</string>
     <string name="osmand_extended_description_part6">Wandelen • De kaart toont voetpaden, bergpaden, routes door parken • Wikipedia vertelt u meer over uw omgeving • OV-haltes (tram, bus, trein, metro), inclusief lijnnummers, helpen u te navigeren • Navigatie gebruikt voetpaden • Neem uw weg op als GPX-route of volg een gedownloade route</string>
     <string name="osmand_extended_description_part7">Werk mee aan OpenStreetMap (OSM) • Meld fouten • Upload sporen naar OSM, direct vanuit de app • Voeg POI toe aan de kaart en upload deze</string>
-    <string name="osmand_extended_description_part8">OsmAnd is open-source en wordt steeds verder ontwikkeld. Iedereen kan helpen door bugs te melden, vertalingen te verbeteren of nieuwe functies te programmeren. Door deze interactie wordt het steeds beter. De voortgang is mede afhankelijk van betalingen om programmeurs en testers voor nieuwe functies te betalen. 
-\n 
-\nIndicatie van compleetheid en kwaliteit van de kaart: 
-\n • West-Europa: **** 
-\n • Oost-Europa: *** 
-\n • Rusland: *** 
-\n • Noord-Amerika: *** 
-\n • Zuid-Amerika: ** 
-\n • Azië: ** 
-\n • Japan &amp; Korea: *** 
-\n • Midden-Oosten: ** 
-\n • Afrika: ** 
-\n • Antarctica: * 
-\n Voor bijna elk land ter wereld kunt u de kaart downloaden.</string>
-    <string name="osmand_plus_extended_description_part8">Indicatie van compleetheid en kwaliteit van de kaart:
-\n • West-Europa: ****
-\n • Oost-Europa: ***
-\n • Rusland: ***
-\n • Noord-Amerika: ***
-\n • Zuid-Amerika: **
-\n • Azië: **
-\n • Japan &amp; Korea: ***
-\n • Midden-Oosten: **
-\n • Afrika: **
-\n • Antarctica: * Van bijna alle landen is een kaart te downloaden: van Afghanistan tot Zimbabwe, Australie tot de VS, Nederland, Duitsland, Spanje, Japan, …</string>
     <string name="save_poi_too_many_uppercase">Naam bevat erg veel hoofdletters, toch doorgaan?</string>
     <string name="search_favorites">Zoek favorieten</string>
     <string name="quick_action_showhide_osmbugs_title">Toon/verberg OSM-opmerkingen</string>
@@ -2564,12 +2458,6 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="shared_string_permissions">Rechten</string>
     <string name="import_gpx_failed_descr">OsmAnd kan het bestand niet lezen. Controleer of OsmAnd rechten heeft om het bestand van deze locatie te lezen.</string>
     <string name="distance_moving">Gecorrigeerde afstand</string>
-    <string name="osmand_plus_extended_description_part1">" OsmAnd+ (OSM Automated Navigation Directions) is een kaart- en navigatieprogramma dat de vrije, wereldwijde en uitstekende OpenStreetMap (OSM) gegevens gebruikt. Met akoestische en visuele navigatie, bekijk POI (points of interest), maak en beheer GPX-sporen, gebruik hoogtelijnen en hoogtegegevens, kies tussen auto, fiets en wandelen, bewerk OSM en veel meer. OsmAnd+ is de betaalde versie van de app. Met de aanschaf ondersteunt u het project, geeft geld voor het maken van nieuwe functies, en krijgt u de nieuwste functies. Een paar belangrijke functies: "</string>
-    <string name="osmand_plus_extended_description_part2">" Navigatie • werkt online (snel) of offline (zonder roaming-kosten in het buitenalnd) • gesproken stap-voor-stap navigatie (met opgenomen of synthetische stem) • optioneel met rijstrookaanduiding, straatnamen und geschatte aankomsttijd • tussenstops op de route • automatische herberekening bij het verlaten van de route • zoek op adres, soort (bijv.: restaurant, hotel, benzinepomp, museum) of geografische coördinaten "</string>
-    <string name="osmand_plus_extended_description_part3">" kaart bekijken • positie en richting tonen • kaart richten volgens kompas of volgens beweging • bewaar plaatsen als favoriet • toon POIs (point of interest) in de buurt • toon specifieke online-kaarten, satellietbeelden (van Bing), overlays zoals GPX-sporen met rit-/routeinformatie und extra kaartlagen met instelbare transparantie • toon plaatsnamen in Engels, de taal van het land of phonetisch weergegeven "</string>
-    <string name="osmand_plus_extended_description_part4">" gebruik OSM- en Wikipedia-gegevens • de beste gegevens van de beste wereldwijde projecten • OSM-gegevens per land of regio • Wikipedia-POIs voor sightseeing • onbeperkte gratis downloads vanuit de app • compacte vectorkaarten, tenminste eens per maand bijgewerkt • keuze tussen volledige kaarten of alleen het stratennet (bijv: Japan compleet is 700 MB, de straten maar 200 MB) "</string>
-    <string name="osmand_plus_extended_description_part5">" veiligheidsfucties • kan automatisch tussen dag- en nachtweergave schakelen • kan maximum snelheid weergeven en waarschuwen bij overschrijding • kan kaartwegave aanpassen aan de snelheid • locatie doorgeven aan uw vrienden, zodat ze u kunnen vinden "</string>
-    <string name="osmand_plus_extended_description_part6">" functies voor fietsers en voetgangers • weergave van voetpaden, wandelroutes en fietspaden voor buitenactiviteiten • aangepaste weergave en routeberekening voor voetgangers en fietsers • weergave van OV-haltes (bus, tram, trein), inclusief zijnnummers • leg de afgelegde weg vast in een GPX-bestand op het apparaat of online • snelheids- en hoogteweergave • hoogtelijnen en reliëfschaduw weergeven (extra module) "</string>
     <string name="osmand_plus_extended_description_part7">" bewerk OSM • meld verkeerde kaartgegevens • upload GPX-sporen naar OSM • voeg POIs toe en upload ze naar OSM • neem een GPX-spoor op met het apparaat in slaapstand
 \n OsmAnd is open-source wordt actief ontwikkeld. iedereen kan bijdragen door bugs te melsen, de vertaling te verbeteren of nieuwe functies te programmeren. Het project wordt druk verbeterd door al deze vormen van interactie met gebruikers. Het project is tevens afhankelijk van financiële bijdragen om programmeer- en testwerk te kunnen bekostigen. "</string>
     <string name="shared_string_reset">Reset</string>
@@ -2680,15 +2568,6 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="route_point_one">Punt 1 van de route</string>
     <string name="empty_state_my_tracks">Sporen toevoegen en vastleggen</string>
     <string name="map_widget_ruler_control">Cirkel</string>
-    <string name="release_2_7">"\\022 Mapillary-plugin met foto\'s van straten
-\n
-\n • Lineaal om afstanden te meten
-\n
-\n •  GPX splitsintervallen met gedetailleerde informatie over het traject
-\n
-\n • Andere verbeteringen en bugfixes
-\n
-\n"</string>
     <string name="live_monitoring_max_interval_to_send">Tijdbuffer voor verzenden van live track</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Geef een tijd op gedurende welke posties bewaard worden als er geen internetverbinding is</string>
     <string name="mappilary_no_internet_desc">U moet een internetverbinding hebben om Mapillary-foto\'s te bekijken</string>

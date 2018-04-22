@@ -59,7 +59,6 @@
     <string name="plugin_distance_point">Тачка</string>
     <string name="gpx_file_name">назив GPX фајла</string>
     <string name="gpx_saved_sucessfully">GPX датотека успешно сачувана на {0}</string>
-    <string name="osmand_distance_planning_plugin_name">Калкулатор растојања и алат за планирање</string>
     <string name="shared_string_do_not_show_again">Не приказуј поново</string>
     <string name="distance_measurement_start_editing">Почните уређивање</string>
     <string name="distance_measurement_finish_editing">Заврши уређивање</string>
@@ -900,7 +899,6 @@
     <string name="int_continuosly">Непрекидно</string>
     <string name="map_widget_time">Време пристизања</string>
     <string name="shared_location">Дељени положај</string>
-    <string name="release_2_2">" • Ново сучеље осетљиво на положај тапкања по карти или другим површима\n\n • Приказ карте се сада покреће непосредно осим ако је означено „Приказуј полетника при покретању“\n\n • Подешава се која карта и како се приказује у полетнику\n\n • Премошћава се полетник ако Вам се више свиђа управљање програмом изборником\n\n • За преузимање карата, области се могу непосредно изабрати тапкањем по светској карти\n\n • Претрага тачака занимања сада подржава одређеније упите\n\n • Побољшане су могућности тачака занимања и уређивања ОСМ-а\n\n • Прерађен је склоп преузимања карата и његово сучеље\n\n и још којешта... "</string>
     <string name="traffic_warning_hazard"/>
     <string name="lang_al">Албански</string>
     <string name="lang_ar">Арапски</string>
@@ -1018,7 +1016,6 @@
     <string name="shared_string_recorded">Снимљено</string>
     <string name="shared_string_record">Снимај</string>
     <string name="gpx_logging_no_data">Нема података</string>
-    <string name="release_2_5"/>
     <string name="save_track_min_speed">Најмања брзина бележења</string>
     <string name="save_track_min_speed_descr">Услов: Постави најмању брзину при којој ће тачка бити записана</string>
     <string name="save_track_min_distance">Најмањи померај бележења</string>

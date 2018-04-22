@@ -1012,7 +1012,6 @@
     <string name="gpx_file_name">GPX lêernaam</string>
     <string name="gpx_saved_sucessfully">GPX lëer suksesvol geberg na {0}</string>
     <string name="osmand_distance_planning_plugin_description">Skep paaie (of gebruik / pas bestaande GPX lêers aan) om die afstand tussen punte te meet. Berg as GPX, kan gebruik word om GPX roetes te beplan.</string>
-    <string name="osmand_distance_planning_plugin_name">Afstand rekenaar &amp; beplanning gereedskap</string>
     <string name="local_osm_changes_backup_successful">OSM veranderingslëer %1$s suskesvol geskep</string>
     <string name="destination_point">Bestemming %1$s</string>
     <string name="context_menu_item_destination_point">Stel as bestemming</string>

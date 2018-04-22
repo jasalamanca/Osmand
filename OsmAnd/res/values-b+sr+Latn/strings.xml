@@ -61,7 +61,6 @@
     <string name="plugin_distance_point">Tačka</string>
     <string name="gpx_file_name">naziv GPX fajla</string>
     <string name="gpx_saved_sucessfully">GPX datoteka uspešno sačuvana na {0}</string>
-    <string name="osmand_distance_planning_plugin_name">Kalkulator rastojanja i Alat za planiranje</string>
     <string name="shared_string_do_not_show_again">Ne prikazuj ponovo</string>
     <string name="distance_measurement_start_editing">Počnite uređivanje</string>
     <string name="distance_measurement_finish_editing">Završi uređivanje</string>

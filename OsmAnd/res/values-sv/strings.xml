@@ -945,7 +945,6 @@ Nyttjat utrymme är {1} MB.
     <string name="gpx_file_name">GPX-filnamn</string>
     <string name="gpx_saved_sucessfully">GPX-filen sparades utan problem till {0}</string>
     <string name="osmand_distance_planning_plugin_description">Denna modul erbjuder en widget på kartskärmen för att skapa spår genom att peta på kartan (eller använda/modifiera befintliga GPX-filer) för att planera en resa samt att mäta avståndet mellan punkter. Resultatet kan sparas i GPX-format som kan användas för att planera GPX-rutter.</string>
-    <string name="osmand_distance_planning_plugin_name">Avståndskalkylator &amp; planeringsverktyg</string>
     <string name="use_distance_measurement_help">* Tryck på kartan för att markera en punkt.
 \n* Tryck och håll på kartan för att ta bort en tidigare punkt.
 \n* Tryck och håll på en punkt för att visa den och lägga till en beskrivning.
@@ -1722,7 +1721,6 @@ Long %2$s</string>
     <string name="no_updates_available">Inga uppdateringar tillgängliga</string>
     <string name="we_really_care_about_your_opinion">Vi bryr oss mycket om vad du tycker och det är viktigt för oss att höra din åsikt.</string>
     <string name="rendering_value_boldOutline_name">Fet kontur</string>
-    <string name="offline_maps_and_navigation">Offline-kartor\noch navigering</string>
     <string name="shared_string_card_was_hidden">Kortet har dolts</string>
     <string name="shared_string_undo">ÅNGRA</string>
     <string name="shared_string_skip">Hoppa över</string>
@@ -1879,23 +1877,6 @@ Long %2$s</string>
     <string name="access_from_map">Tillgång från kartan</string>
     <string name="rendering_attr_currentTrackColor_description">GPX-färg</string>
     <string name="rendering_attr_currentTrackWidth_description">GPX-bredd</string>
-    <string name="release_2_2">•\\022 Nytt kontextkänsligt gränssnitt för att peta på platser på kartan och på andra skärmar 
-\n 
-\n • Kartskärmen startar nu automatiskt om inte \'Visa panelen vid appstart\' är vald 
-\n 
-\n • Konfigurera vilka kort och hur de ska visas i panelen 
-\n 
-\n • Gå förbi panelen om du föredrar en menybaserad kontroll över appen 
-\n 
-\n • För att hämta kartor kan regioner väljas direkt genom att peta på världskartan 
-\n 
-\n • Sökning efter intressepunkter (POI) understöder nu mer specifika frågor 
-\n 
-\n • Förbättrad funktion för POI- och OSM-redigering 
-\n 
-\n • Strukturen för hämtning av kartdata och gränssnittet har omarbetats 
-\n 
-\n och mer …</string>
     <string name="dashboard_or_drawer_description">Det finns ett nytt val att primärt kontrollera appen via den flexibla panelen eller via en statisk meny. Detta val kan du alltid ändra på under inställningarna i panelen.</string>
 <string name="use_dashboard_btn">Använd panelen</string>
     <string name="use_drawer_btn">Använd menyn</string>
@@ -2033,17 +2014,6 @@ Detta kräver {3} MB temporärt och {1} MB permanent.
     <string name="open_street_map_login_and_pass">OpenStreetMap inloggning och lösenord</string>
     <string name="no_map_markers_found">Lägg till kartmarkörer via kartan</string>
     <string name="no_waypoints_found">Hittar inga waypoints</string>
-    <string name="release_2_3">•\\022 OSM Live. Stöd bidragsgivare och utvecklare av kartor och erhåll kartuppdateringar varje timme. 
-\n
-\n • Kartmarkörer: ett nytt sätt att snabbt välja platser på kartan.
-\n
-\n • Mer detaljerade OSM-kartor med landsspecifika vägmärken samt massor av nya kartfunktioner.
-\n
-\n • Förbättrat utseende för ruttförberedelse. 
-\n
-\n • Många förbättringar i kartans kontextmeny såsom kontextuell adressökning.
-\n
-\n och ännu mer …</string>
     <string name="map_widget_bearing">Relativ bäring</string>
     <string name="access_disable_offroute_recalc">Räkna inte om rutten när du lämnat den</string>
     <string name="access_disable_offroute_recalc_descr">Förhindrar automatiskt omberäkning av rutten när du lämnat den.</string>
@@ -2197,38 +2167,12 @@ Om du tycker om OsmAnd och OSM och vill stödja dem så är detta ett utmärkt s
     <string name="osmo_pause_location">Pausa</string>
     <string name="osmo_service_running">OsMo-tjänsten är igång</string>
     <string name="trip_rec_notification_settings">Aktivera snabbstart av inspelning</string>
-    <string name="release_2_5">• Klickbara ikoner på kartan 
-\n 
-\n • Kraftfull sökning med POI-filter: Sök t.ex. restauranger efter kvalitet, eller campingplatser med speciellta faciliteter 
-\n 
-\n • Ny Topo Map-stil för cyklister och vandrare 
-\n 
-\n • Förbättrad trippinspelning 
-\n 
-\n • Förbättrade navigationsaviseringar (Android Wear) 
-\n 
-\n • Många andra förbättringar och felkorrigeringar 
-\n 
-\n och mer …</string>
     <string name="christmas_desc">Med tanke på den kommande julen och nyåret så kan du välja att visa POI som har med julen att göra: julgranar, julmarknader med mera.</string>
     <string name="rendering_attr_hideWaterPolygons_description">Vatten</string>
     <string name="osm_live_payment_desc">Prenumerationsavgiften kommer att faktureras varje månad. Du kan när som helst avbryta din prenumeration i Google Play.</string>
     <string name="donation_to_osm_desc">En del av din donation kommer att skickas till OSM-användare som skickar in ändringar till OpenStreetMap. Prenumerationens kostnad fortsätter att vara densamma.</string>
     <string name="osm_live_subscription_desc">En prenumeration aktiverar uppdateringar varje timme, dag eller vecka och obegränsade nedladdningar av alla kartor globalt.</string>
     <string name="osm_live_banner_desc">Erhåll obegränsade nedladdningar av kartor samt kartuppdateringar oftare än en gång i månaden: varje vecka, varje dag eller varje timme.</string>
-    <string name="release_2_4">\\022 Ny mycket kraftfull fritextsökning 
-\n 
-\n• Ljudsystem för bil/högtalarintegrering via Blåtand 
-\n 
-\n• Förbättrad vägvisning, meddelanderöst och körfält för omdirigering 
-\n 
-\n• Förbättrat transportlager med vägrendering. 
-\n 
-\n• Fler språkversioner och nu stöd för regionala språk 
-\n 
-\n• Många fler förbättringar och felkorrigeringar 
-\n 
-\nmed mera…</string>
     <string name="rendering_value_low_name">Låg</string>
     <string name="rendering_value_high_name">Hög</string>
     <string name="rendering_value_medium_w_name">Mellan</string>

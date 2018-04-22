@@ -989,8 +989,7 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="gpx_file_name">GPX fájlnév</string>
     <string name="gpx_saved_sucessfully">GPX fájl sikeresen elmentve ide: {0}</string>
     <string name="osmand_distance_planning_plugin_description">Ez a bővítmény lehetővé teszi útvonalak létrehozását a térképen való koppintással, vagy meglévő GPX fájlok használatát, módosítását egy út megtervezéséhez és a pontok közötti távolság méréséhez. Az eszközt a térkép képernyőn elhelyezett gombbal lehet indítani. Az eredmény elmenthető GPX fájlként, amely később használható a vezetéshez.</string>
-    <string name="osmand_distance_planning_plugin_name">Távolságszámító és tervezőeszköz</string>
-    <string name="use_distance_measurement_help">* Pont lerakásához koppints. 
+    <string name="use_distance_measurement_help">* Pont lerakásához koppints.
 \n* Nyomd meg hosszan a térképet az előző pont törléséhez. 
 \n* Nyomd meg hosszan a pontot leírás csatolásához és megtekintéséhez. 
 \n* További műveletekért nyomj a vezérlőgombra.</string>
@@ -1760,7 +1759,6 @@ Hosszúság: %2$s</string>
     <string name="plugin_settings">Bővítmények</string>
     <string name="shared_string_skip">Kihagyás</string>
     <string name="app_name_osmand">OsmAnd</string>
-    <string name="offline_maps_and_navigation">Offline térképek\nés navigáció</string>
     <string name="next_proceed">Tovább</string>
     <string name="dahboard_options_dialog_title">Műszerfal beállításai</string>
     <string name="traffic_warning_hazard">Veszély</string>
@@ -1916,23 +1914,6 @@ Hosszúság: %2$s</string>
     <string name="poi_dialog_reopen">Újranyitás</string>
 	<string name="save_poi_without_poi_type_message">Biztosan elmented a POI-t típus nélkül?</string>
     <string name="poi_context_menu_modify_osm_change">OSM-szerkesztés módosítása</string>
-    <string name="release_2_2">\\022 Új, környezetérzékeny menü térképre tapintáskor 
-\n 
-\n • Az alkalmazás már közvetlenül a térkép képernyővel indul a műszerfal helyett 
-\n 
-\n • A műszerfal kártyái elrejthetőek, testre szabhatóak 
-\n 
-\n • Kiválasztható, hogy a térkép menü gombja a műszerfalat, vagy az oldalsávot hozza be 
-\n 
-\n • Térkép letöltéséhez elég a világtérkép régióira tapintani 
-\n 
-\n • A POI kereső már sokkal speciálisabb kérdéseket is megért 
-\n 
-\n • Továbbfejlesztett POI és OSM szerkesztési lehetőségek 
-\n 
-\n • A térképletöltő felület felépítése és kezelőfelülete át lett dolgozva 
-\n 
-\n és sok egyéb fejlesztés…</string>
     <string name="shared_string_card_was_hidden">Kártya el lett rejtve</string>
 	<string name="please_specify_poi_type_only_from_list">Kérlek add meg a helyes POI típust, vagy hagyd ki.</string>
     <string name="access_from_map_description">A menü gomb a menü helyett a műszerfalat indítja.</string>
@@ -2057,18 +2038,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="number_of_edits">Szerkesztések száma</string>
     <string name="reports_for">Jelentés erről</string>
 <string name="report">Jelentés</string>
-    <string name="release_2_3">\\022 OSM Live. Támogasd a térkép szerkesztőit és fejlesztőket, és óránkénti térképfrissítést kapsz. 
-\n 
-\n • Térkép jelölők. Egy új mód arra, hogy a gyorsan tudj helyeket kiválasztani a térképen. 
-\n 
-\n • Még részletesebb OSM térképek, országspecifikus útszám ikonokkal és sok új térképelemmel. 
-\n 
-\n • Továbbfejlesztett útvonal előkészítő felület. 
-\n 
-\n • Számos fejlesztés a térkép környezeti menüjében, mint például a cím azonnali keresése. 
-\n 
-\n
-\nés még számos dolog…</string>
     <string name="shared_string_move_up">Mozgatás fel</string>
     <string name="shared_string_move_down">Mozgatás le</string>
     <string name="finish_navigation">Navigáció befejezése</string>
@@ -2140,20 +2109,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="back_to_search">Vissza a kereséshez</string>
     <string name="confirmation_to_delete_history_items">Szeretnéd eltávolítani a kijelölt elemeket az előzményekből?</string>
     <string name="show_something_on_map">%1$s megjelenítése a térképen</string>
-    <string name="release_2_4">\\022 Új, hatékony szabad szavas kereső 
-\n 
-\n • Autó hangrendszer integráció Bluetoothon keresztül 
-\n 
-\n • Továbbfejlesztett navigáció, hangutasítások és kanyarodósáv kijelzés 
-\n 
-\n • Továbbfejlesztett tömegközlekedési réteg útvonalak megjelenítésével 
-\n 
-\n • Új nyelvek, valamint már nyelvjárások is elérhetőek 
-\n 
-\n • Sok más fejlesztés és hibajavítás 
-\n 
-\n
-\nés még számos dolog…</string>
     <string name="dist_away_from_my_location">Keresés %1$s távolságban</string>
     
     <string name="share_history_subject">megosztva OsmAndból</string>
@@ -2250,17 +2205,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="translit_name_if_miss">Átírás, ha a(z) %1$s név hiányzik</string>
     <string name="translit_names">Nevek átírása</string>
     <string name="rendering_value_fine_name">Finom</string>
-    <string name="release_2_5">• Kattintható ikonok a térképen 
-\n 
-\n • Hatékony POI szűrő: pl. keress éttermeket konyha szerint, vagy kempingeket egy adott szolgáltatással 
-\n 
-\n • Új Topográfiai térképstílus kerékpárosoknak és kirándulóknak 
-\n 
-\n • Továbbfejlesztett útvonalrögzítés 
-\n 
-\n • Tökéletesített navigációs értesítések (Android Wear) 
-\n 
-\n • Sok egyéb fejlesztés és hibajavítás</string>
     <string name="wiki_around">Közeli Wikipédia-cikkek</string>
     <string name="search_map_hint">Város, régió keresése</string>
     <string name="legacy_search">Régi kereső</string>
@@ -2369,26 +2313,7 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="routing_attr_height_obstacles_name">Magasságadatok használata</string>
     <string name="routing_attr_height_obstacles_description">Terepmagasság használata SRTM, ASTER és EU-DEM domborzatmodellekből.</string>
 
-    <string name="release_2_6">• Új funkció: Gyors művelet gomb
-\n 
-\n • Javított érintőképernyő-gesztus felismerés 
-\n 
-\n • Új, több írásmódot lefedő betűtípusok a térképen 
-\n 
-\n • TTS szövegfelolvasó támogatás regionális nyelvváltozatokon 
-\n 
-\n • Láthatósági fejlesztések több térképstíluson és Wikipédia cikkeken 
-\n 
-\n • Open Location Code (OLC) támogatás 
-\n 
-\n • Szintmetszet, lejtőprofil és sebességdiagram készítése a felvett GPX fájlokról valamint a tervezett útvonalakról 
-\n 
-\n • „Vezetési stílus” beállítások és logika fejlesztés kerékpáros tervezésnél 
-\n 
-\n • Magassági adatok használata kerékpáros tervezésnél 
-\n 
-\n • Sok egyéb apró fejlesztés és hibajavítás…</string>
-	<string name="auto_split_recording_title">Felvételek auto-vágása szünet után</string>
+    <string name="auto_split_recording_title">Felvételek auto-vágása szünet után</string>
 	<string name="auto_split_recording_descr">Új szakasz készítése 6 perc szünet után, új nyomvonal 2 óra szünet után, és új fájl hosszabb szünet után, vagy dátum változásakor.</string>
     <string name="max_speed">Max sebesség</string>
     <string name="average_speed">Átlagsebesség</string>
@@ -2466,7 +2391,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="animate_my_location_desc">Helyzetem animálásának engedélyezése navigáció közben.</string>
     <string name="shared_string_overview">Áttekintés</string>
     <string name="route_is_too_long_v2">Ennek az útnak a kiszámítása túl hosszú ideig tarthat. Ha 10 percen belül nem kap eredményt, kérjük, adjon hozzá köztes célpontokat.</string>
-    <string name="osmand_extended_description_part1">OsmAnd (OSM Automated Navigation Directions) egy térkép- és navigációs alkalmazás, amellyel hozzáférhet az ingyenes, globális és kiváló minőségű OpenStreetMap (OSM) adataihoz. Élvezze a hangalapú és vizuális navigációs szolgáltatást, tekintsen meg érdekes pontokat (POI-kat), hozzon létre és kezeljen GPX-útvonalakat szintvonalak és magasságinformációk használatával (egy plugin segítségével), válasszon az autós, kerékpáros és gyalogos üzemmód közül és használjon ki számos egyéb lehetőséget.</string>
     <string name="save_poi_too_many_uppercase">A név túl sok nagybetűt tartalmaz. Folytatja?</string>
     <string name="private_access_routing_req">A célpont korlátozott hozzáférésű területen található. Engedélyezed a magánutak használatát ennél az útvonaltervnél?</string>
     <string name="restart_search">Keresés újraindítása</string>
@@ -2481,7 +2405,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="mapillary_widget_descr">Segítségével gyorsan hozzájárulhatsz a Mapillaryhez.</string>
     <string name="mapillary_descr">Online utcaszintű fotók mindenkinek. Fedezz fel helyeket, vegyél benne részt, fotózd le a világot.</string>
     <string name="plugin_mapillary_descr">Utcaszintű fotók mindenkinek. Fedezz fel helyeket, vegyél benne részt, fotózd le a világot.</string>
-    <string name="osmand_extended_description_part4">Az OsmAnd sítérkép bővítménye lehetővé teszi a sípályák megjelenítését nehézség szerint, valamint további információkat, mint például a felvonók helyét, és más berendezéseket.</string>
     <string name="online_photos">Online fényképek</string>
     <string name="improve_coverage_mapillary">Fényképes lefedettség javítása a Mapillaryvel</string>
     <string name="improve_coverage_install_mapillary_desc">Készíthet saját fényképet vagy fényképsorozatot, és hozzáadhatja ehhez a térképhelyhez. 
@@ -2490,7 +2413,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="shared_string_install">Telepítés</string>
     <string name="open_mapillary">Mapillary megnyitása</string>
     <string name="mapillary_image">Mapillary-kép</string>
-    <string name="osmand_plus_extended_description_part8">"Hozzávetőleges lefedettség és térképminőség:  • Nyugat-Európa: ****  • Kelet-Európa: ***  • Oroszország: ***  • Észak-Amerika: ***  • Dél-Amerika: **  • Ázsia: **  • Japán és Korea: ***  • Közel-Kelet: **  • Afrika: **  • Antarktisz: *  A világ legtöbb országa letölthető. Afganisztántól Zimbabwéig, Ausztráliától az Egyesült Államokig. Magyarország, Szlovákia, Románia, Ausztria, Németország, Olaszország…"</string>
     <string name="distance_moving">Korrigált távolság</string>
     <string name="shared_string_permissions">Engedélyek</string>
     <string name="import_gpx_failed_descr">Az OsmAnd nem tudja importálni a fájlt. Ellenőrizze, hogy az OsmAndnak van-e engedélye fájlt olvasni erről a helyről.</string>
@@ -2522,15 +2444,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="quick_action_show_navigation_finish_dialog">„Navigáció befejezése” párbeszéd megjelenítése</string>
     <string name="quick_action_start_stop_navigation">Navigáció indítása/megállítása</string>
     <string name="quick_action_start_stop_navigation_descr">A navigáció elkezdéséhez vagy befejezéséhez érintse meg ezt a gombot.</string>
-    <string name="release_2_7">\\022 Mapillary bővítmény utcaszintű fotókkal
-\n
-\n • Vonalzó bővítmény távolságméréshez
-\n
-\n • GPX felosztási intervallumok részletes információval a nyomvonalról
-\n
-\n • További fejlesztések és hibajavítások
-\n
-\n</string>
     <string name="rendering_value_translucent_pink_name">Átlátszó rózsaszín</string>
     <string name="live_monitoring_max_interval_to_send">Online rögzítési puffer hossza</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Add meg a puffer méretét, amennyi ideig megőrzi a pozíciókat, ha nincs internetkapcsolat</string>

@@ -439,7 +439,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="gpx_file_name">Nome de ficheiro GPX</string>
     <string name="gpx_saved_sucessfully">O ficheiro GPX foi gravado correctametne en {0}</string>
     <string name="osmand_distance_planning_plugin_description">Este engadido fornece un trebello da pantalla do mapa que permite crear camiños tocando no mapa ou usar ou modificar ficheiros GPX existentes e así planificar unha viaxe e medir a distancia entre distintos puntos. Os resultados pódense gardar nun ficheiro GPX, que máis tarde pode servir de guía.</string>
-    <string name="osmand_distance_planning_plugin_name">Calculadora de distancias e ferramenta de planificación</string>
     <string name="use_distance_measurement_help">* Toque para marcar un punto.
 
  * Manteña premido o mapa para eliminar un punto anterior.
@@ -1680,8 +1679,7 @@ Lon %2$s</string>
 	<string name="shared_string_skip">Omitir</string>
 	<string name="shared_string_undo">DESFACER</string>
 	<string name="app_name_osmand">OsmAnd</string>
-	<string name="offline_maps_and_navigation">Mapas e navegación\nsen conexión</string>
-	<string name="tab_title_basic">Básico</string>
+    <string name="tab_title_basic">Básico</string>
 	<string name="tab_title_advanced">Avanzado</string>
 	<string name="building_number">Número de versión</string>
 	<string name="next_proceed">Seguinte</string>

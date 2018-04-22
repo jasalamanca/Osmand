@@ -242,12 +242,6 @@ public class DownloadResources extends DownloadResourceGroup {
 	protected boolean prepareData(List<IndexItem> resources) {
 		this.rawResources = resources;
 
-		DownloadResourceGroup otherMapsGroup = new DownloadResourceGroup(this, DownloadResourceGroupType.OTHER_MAPS_GROUP);
-		DownloadResourceGroup otherMapsScreen = new DownloadResourceGroup(otherMapsGroup, DownloadResourceGroupType.OTHER_MAPS);
-		DownloadResourceGroup otherMaps = new DownloadResourceGroup(otherMapsGroup, DownloadResourceGroupType.OTHER_MAPS_HEADER);
-		otherMapsScreen.addGroup(otherMaps);
-		otherMapsGroup.addGroup(otherMapsScreen);
-
 		DownloadResourceGroup otherGroup = new DownloadResourceGroup(this, DownloadResourceGroupType.OTHER_GROUP);
 		DownloadResourceGroup voiceScreenTTS = new DownloadResourceGroup(otherGroup, DownloadResourceGroupType.VOICE_TTS);
 		DownloadResourceGroup voiceScreenRec = new DownloadResourceGroup(otherGroup, DownloadResourceGroupType.VOICE_REC);
@@ -283,8 +277,6 @@ public class DownloadResources extends DownloadResourceGroup {
 			} else {
 				if (ii.getFileName().startsWith("World_")) {
 					worldMaps.addItem(ii);
-				} else {
-					otherMaps.addItem(ii);
 				}
 			}
 		}
@@ -326,10 +318,6 @@ public class DownloadResources extends DownloadResourceGroup {
 		// 1. if there is no subregions no need to create resource group REGIONS_MAPS - objection raise diversity and there is no value
 		// 2. if there is no subregions and there only 1 index item it could be merged to the level up - objection there is no such maps
 		addGroup(worldMaps);
-
-		if (otherMaps.size() > 0) {
-			addGroup(otherMapsGroup);
-		}
 
 		voiceScreenTTS.addGroup(voiceTTS);
 		voiceScreenRec.addGroup(voiceRec);
