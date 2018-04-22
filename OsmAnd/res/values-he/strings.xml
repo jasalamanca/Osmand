@@ -1511,10 +1511,8 @@
     <string name="notes">הערות</string>
     <string name="online_map">מפה מקוונת</string>
     <string name="roads_only">דרכים בלבד</string>
-    <string name="rendering_attr_pisteRoutes_name">מדרוני סקי</string>
     <string name="free">%1$s פנויים</string>
     <string name="device_memory">זיכרון המכשיר</string>
-    <string name="rendering_attr_pisteGrooming_name">פילוס שלג</string>
     <string name="edit_group">עריכת קבוצה</string>
     <string name="remove_the_tag">הסרת התגית</string>
     <string name="gps_status">מצב GPS</string>
@@ -1531,8 +1529,6 @@
     <string name="rendering_attr_roadStyle_description">סגנון דרך</string>
     <string name="rendering_value__name">בררת מחדל</string>
     <string name="rendering_value_default_name">בררת מחדל</string>
-    <string name="rendering_value_germanRoadAtlas_name">אטלס דרכים גרמני</string>
-    <string name="rendering_value_highContrastRoads_name">דרכים בניגודיות גבוהה</string>
     <string name="traffic_warning_railways">מפגש רכבת</string>
     <string name="traffic_warning_pedestrian">מעבר חציה</string>
     <string name="show_railway_warnings">מפגשי רכבת</string>
@@ -2180,8 +2176,6 @@
     <string name="track_points">נקודות מסלול</string>
     <string name="record_plugin_name">הקלטת מסלול</string>
     <string name="plugin_touringview_name">תצוגת מפת סיור</string>
-    <string name="plugin_ski_name">תצוגת מפת סקי</string>
-    <string name="world_ski_missing">כדי להציג מפות סקי יש להוריד מפה מיוחדת בלתי מקוונת</string>
     <string name="avoid_roads_msg">ניתן לבקש נתיב חלופי על ידי בחירת דרכים בלתי רצויות</string>
     <string name="routing_attr_no_new_routing_name">כללי ניתוב גרסה 1.9</string>
     <string name="routing_attr_no_new_routing_description">לא להשתמש בכללי הניתוב שנוספו ב־1.9.</string>

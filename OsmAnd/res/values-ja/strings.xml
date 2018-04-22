@@ -1606,8 +1606,7 @@ POIの更新は利用できません</string>
     <string name="rendering_attr_roadStyle_name">道路の表示形式</string>
     <string name="rendering_value_default_name">標準</string>
     <string name="rendering_value_orange_name">オレンジ</string>
-    <string name="rendering_value_germanRoadAtlas_name">ドイツの道路マップ</string>
-	<string name="traffic_warning_railways">踏切</string>
+    <string name="traffic_warning_railways">踏切</string>
 	<string name="traffic_warning_pedestrian">横断歩道</string>
 	<string name="show_railway_warnings">踏切</string>
 	<string name="show_pedestrian_warnings">横断歩道</string>
@@ -1690,11 +1689,7 @@ POIの更新は利用できません</string>
 \n 
 \n設定の有効無効化で元に戻せますが、\'マップ設定\'下の\'マップスタイル \'を変更することで必要に応じて切り替えることも出来ます。</string>
     <string name="local_osm_changes_upload_all_confirm">OSMに%1$dカ所の変更をアップロードします。よろしいですか？</string>
-    <string name="plugin_ski_name">スキーマップ表示</string>
-	<string name="plugin_ski_descr">このプラグインは簡単にダウンヒル、クロスカントリー、アルペンの各スキーコース、ロープウェイやスキーリフト等の配置などを参照できます。ルートとゲレンデが色分けされた難易度によって示され、冬の雪景色をイメージした\'ウィンター風\'マップスタイルで描かれます。 
-\n 
-\nこの表示を有効化すると、冬の景色をイメージした\'ウィンターアンドスキー\'のスタイルに変更されます。この表示はプラグインを無効化するか、必要に応じて\'マップ設定\'から\'マップスタイル \'を変更することで元に戻すことができます。</string>
-	<string name="rename_failed">リネーム出来ませんでした</string>
+    <string name="rename_failed">リネーム出来ませんでした</string>
 	<string name="days_behind">日前</string>
 	<string name="back_to_map">マップ画面に戻る</string>
     <string name="location_on_map">位置:\n緯度 %1$s\n経度 %2$s</string>
@@ -1702,11 +1697,8 @@ POIの更新は利用できません</string>
 	<string name="notes">メモ全部</string>
 	<string name="online_map">オンラインマップ</string>
 	<string name="roads_only">道路のみ</string>
-    <string name="rendering_attr_pisteRoutes_name">スキー場</string>
-	<string name="free">空き %1$s</string>
+    <string name="free">空き %1$s</string>
 	<string name="device_memory">デバイス容量</string>
-    <string name="rendering_attr_pisteGrooming_name">ゲレンデ圧雪</string>
-    <string name="world_ski_missing">スキーマップを表示するためには専用のオフラインマップのダウンロードが必要</string>
     <string name="edit_group">グループ編集</string>
     <string name="shared_string_release">リリース</string>
 	<string name="plugin_description_title">説明</string>
@@ -1737,8 +1729,7 @@ POIの更新は利用できません</string>
     <string name="search_poi_category_hint">名称でフィルター</string>
     <string name="index_name_netherlands">ヨーロッパ - オランダ</string>
 	<string name="rendering_value__name">標準</string>
-    <string name="rendering_value_highContrastRoads_name">ハイコントラスト道路</string>
-	<string name="rendering_attr_hideHouseNumbers_name">番地</string>
+    <string name="rendering_attr_hideHouseNumbers_name">番地</string>
     <string name="application_dir_change_warning3">OsmAndとそのデータファイルを新しい保存先にコピーしますか？</string>
     <string name="specified_directiory_not_writeable">指定したディレクトリ内にマップを作成(あるいは書き込みが)できませんでした</string>
 	<string name="copying_osmand_file_failed">ファイルのコピーに失敗しました</string>    

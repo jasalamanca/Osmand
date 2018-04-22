@@ -1474,7 +1474,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="rendering_attr_roadStyle_name">Vejformat</string>
     <string name="rendering_value_default_name">Standard</string>
     <string name="rendering_value_orange_name">Orange</string>
-    <string name="rendering_value_germanRoadAtlas_name">Tysk vejkort</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerikansk vejkort</string>
     <string name="routing_attr_no_new_routing_name">Ingen v1.9 routing regler</string>
     <string name="routing_attr_no_new_routing_description">Brug ikke routing regler indført i v1.9.</string>
@@ -1510,23 +1509,15 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="edit_group">Rediger gruppe</string>
     <string name="plugin_install_needs_network">Internetforbindelse behøves for at installere udvidelsen.</string>
     <string name="get_plugin">Hent</string>
-    <string name="plugin_ski_name">Skikort</string>
-    <string name="world_ski_missing">For at vise skikort, skal det særlige offline kort hentes</string>
-    <string name="rendering_attr_pisteGrooming_name">Pistepreparering</string>
     <string name="free">Tilgængelig %1$s</string>
     <string name="device_memory">Lagerplads</string>
-    <string name="rendering_attr_pisteRoutes_name">Skiløjper</string>
     <string name="roads_only">Kun veje</string>
     <string name="notes">Noter</string>
     <string name="online_map">Online kort</string>
     <string name="watch">Vis</string>
 
     <string name="plugin_touringview_name">Touring kortvisning</string>
-    <string name="plugin_ski_descr">Udvidelsen viser detaljerne om global skiløjper, langrendsruter, alpine skiruter, svævebaner og skilifte. Ruter og pister vises farvekodede efter sværhedsgrad, og vises i et særligt \'Vinter\' kortformat, som et snefarvet vinterlandskab.
-\n
-\nAktivering ændrer kortformat til \'Vinter og ski\', som viser alle landskabstræk under vinterlige forhold. 
-\nVisningen kan altid nulstilles ved enten at deaktivere den igen her, eller ved at ændre \'Kortformat\' under \'Konfigurer kort\' som ønsket.</string>
-	<string name="plugin_touringview_descr">Aktivering ændrer kortformat til \'Touring\', det er en særlig højdetaljevisning for rejsende og erhvervschauffører. 
+    <string name="plugin_touringview_descr">Aktivering ændrer kortformat til \'Touring\', det er en særlig højdetaljevisning for rejsende og erhvervschauffører.
 \n
 \nVisning giver, på et givet kortzoom, den maksimale mængde rejseoplysninger til rådighed i kortdata (især veje, spor, stier, og orienteringsmærker).
 \n
@@ -1669,7 +1660,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="search_poi_category_hint">Tast for at søge alle</string>
     <string name="index_name_netherlands">Europa - Holland</string>
     <string name="rendering_value__name">Standard</string>
-    <string name="rendering_value_highContrastRoads_name">Veje med høj kontrast</string>
     <string name="specified_directiory_not_writeable">Kunne ikke oprettes kort i det angivne bibliotek</string>
     <string name="copying_osmand_file_failed">Kopiering af filer mislykkedes</string>
     <string name="storage_directory_external">Ekstern lager</string>

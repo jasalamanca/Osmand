@@ -1147,8 +1147,7 @@
     <string name="read_full_article">Tüm metni oku (çevrim içi)</string>
     <string name="rendering_value_walkingRoutesOSMC_name">OSMC göre olan boyama</string>
     <string name="local_osm_changes_upload_all_confirm">%1%d düzenlemeyi OSM\'ye yüklemek üzeresiniz. Emin misiniz?</string>
-    <string name="plugin_ski_name">Kayak haritası görünümü</string>
-	<string name="text_size">Yazı boyutu</string>
+    <string name="text_size">Yazı boyutu</string>
     <string name="text_size_descr">Haritadaki yazı boyutunu ayarla.</string>
     <string name="speak_favorites">Yakındaki Sık Kıllanılanlar</string>
 	<string name="speak_poi">Yakınlardaki POI</string>
@@ -1745,16 +1744,12 @@
     <string name="rendering_attr_currentTrackWidth_description">GPX genişliği</string>
     <string name="shared_string_wikipedia">Wikipedia</string>
     <string name="plugin_touringview_descr">"Bu görünüm etkinleştirilmesi \'Touring görünümü\' için Osmand haritasında tarzını değiştirir, bu seyahat ve profesyonel sürücüler için özel yüksek detay görünümüdür.\n\nBu görüş, herhangi bir harita zoom sağlar, harita verilerinin mevcut seyahat ayrıntıları maksimum miktarı (özellikle yollar, parça, yolları ve yönlendirme işaretleri).\n\nAynı zamanda açıkça net bir şekilde yararlıdır, örneğin bir renk kodlama ile yolların her türlü tasvir Büyük araçlar sürüş.\n\nVe bu bisiklet yolları veya Alp dağ yolları gösteren gibi özel turne seçenekleri sağlar.\n\nÖzel bir harita indir görünümü standart haritalar oluşturulur, gerekli değildir.\n\nBu görünüm, ya tekrar buraya de aktive ya da istediğiniz gibi \'Yapılandırma haritası\' başlığı altında \'Harita stilini\' değiştirilerek tarafından geri alınabilir. "</string>
-    <string name="plugin_ski_descr">"Osmand Bu eklenti, küresel yokuş aşağı kayak pistleri, kros kayak pistleri, Alp kayak yolları, teleferik ve telesiyej sizin parmaklarınızın ayrıntıları koyar. Rotalar ve pistler renk kodlu zorluk tarafından gösterilen ve kar renkli kış manzara özümlediği özel \'Kış\' harita tarzında tasvir edilmektedir.\n\nBu görünüm etkinleştirilmesi kış koşullarında tüm peyzaj özellikler gösteren, \'Kış ve kayak\' harita stilini değiştirir. Bu görünüm, ya tekrar buraya de aktive ya da istediğiniz gibi \'Yapılandırma haritası\' başlığı altında \'Harita stilini\' değiştirilerek tarafından geri alınabilir. "</string>
     <string name="osmand_distance_planning_plugin_description">Bu eklenti bir gezi planı ve nokta arasındaki mesafeyi ölçmek için, mevcut GPX dosyalarını harita üzerinde dokunarak yolları oluşturmak veya kullanmak veya değiştirmek için izin veren bir harita ekranı widget\'ı sağlar. Sonuçlar daha sonra rehberlik için kullanılabilecek bir GPX dosyası olarak kaydedilebilir.</string>
     <string name="rename_failed">Yeniden adlandırma başarısız oldu.</string>
     <string name="location_on_map">Yer:
 \nEnl %1$s
 \nByl %2$s</string>
-    <string name="rendering_attr_pisteRoutes_name">Kayak pistleri</string>
     <string name="free">"%1$s boş "</string>
-    <string name="rendering_attr_pisteGrooming_name">Pist tımar</string>
-    <string name="world_ski_missing">Kayak haritalarını görüntülemek için, özel çevrim dışı harita indirimek gerekiyor</string>
     <string name="remove_the_tag">Etiketi Kaldır</string>
     <string name="version_settings_descr">Yenilemesini indir</string>
     <string name="version_settings">kurar</string>
@@ -1766,8 +1761,6 @@
     <string name="avoid_roads_msg">Kaçınılacak yolları seçerek bir başka güzergah başlatabilirsin</string>
     <string name="speak_pedestrian">Yaya geçitleri</string>
     <string name="rendering_attr_roadStyle_description">Yol tarzı</string>
-    <string name="rendering_value_germanRoadAtlas_name">Alman yol atlası</string>
-    <string name="rendering_value_highContrastRoads_name">Yüksek kontrastlı yolları</string>
     <string name="traffic_warning_railways">Demiryolu geçidi</string>
     <string name="show_railway_warnings">Demiryolu geçitleri göster</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerikan yol atlası</string>

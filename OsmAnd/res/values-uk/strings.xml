@@ -1540,8 +1540,6 @@
     <string name="traffic_warning">Попередження на дорозі</string>
 	<string name="local_index_description">Натисніть на будь-який наявний елемент для перегляду додаткових відомостей, довго утримуйте, щоб деактивувати або вилучити. Наявні дані на пристрої (%1$s вільно):</string>
 	<string name="watch">Годинник</string>
-	<string name="rendering_attr_pisteRoutes_name">Лижні траси</string>
-	<string name="rendering_attr_pisteGrooming_name">Тип лижні</string>
     <string name="routing_attr_no_new_routing_name">Не використовувати маршрутизацію версії 1.9</string>
     <string name="navigate_point_northing">Північної широти</string>
     <string name="shared_string_dismiss">Не надсилати</string>
@@ -1553,8 +1551,6 @@
 	<string name="roads_only">Тільки дороги</string>
     <string name="free">Вільно %1$s</string>
 	<string name="device_memory">Пам’ять пристрою</string>
-    <string name="plugin_ski_name">Лижні мапи</string>
-    <string name="world_ski_missing">Для показу лижних мап, потрібно завантажити спеціалізовані мапи</string>
     <string name="edit_group">Редагувати групу</string>
     <string name="remove_the_tag">ВИЛУЧИТИ ТЕҐ</string>
     <string name="gps_status">Стан GPS</string>
@@ -1576,8 +1572,7 @@
     <string name="rendering_attr_roadStyle_name">Стиль доріг</string>
     <string name="rendering_value_default_name">Типово</string>
     <string name="rendering_value_orange_name">Помаранчевий</string>
-    <string name="rendering_value_germanRoadAtlas_name">Атлас доріг Німеччини</string>
-	<string name="traffic_warning_railways">Залізничний переїзд</string>
+    <string name="traffic_warning_railways">Залізничний переїзд</string>
 	<string name="traffic_warning_pedestrian">Пішохідний перехід</string>
 	<string name="show_railway_warnings">Залізничні переїзди</string>
 	<string name="show_pedestrian_warnings">Пішохідні переходи</string>
@@ -1686,10 +1681,7 @@
 \nВін не потребує завантаження окремих мап, вид створюється на основі інформації зі стандартної мапи. 
 \n
 \nЦей вид можна де-активувати тут або змінити на інший, змінивши „Стиль мапи“ на потрібний в „Налаштування мапи“.</string>
-	<string name="plugin_ski_descr">Втулок забезпечує вам доступ до даних про гірськолижні траси, маршрути для бігових лиж, гірськолижні спуски, фунікулери та підйомники. Маршрути і спуски відзначені різними кольорами залежно від їх складності та зображені з використанням спеціального \"зимового\" стилю мапи, який полягає в тому, що використовуються \"снігові\" кольори зимового пейзажу. 
-\n
-\nУ разі активації цього виду, стиль мапи змінюється на „Winter and ski“, показуючи всі деталі пейзажу так, як вони виглядають взимку. Цей (зимовий) вид може бути де-активований тут, або якщо ви поміняєте „Стиль мапи“ в меню „Налаштування мапи“ на бажаний вид.</string>
-	<string name="rendering_attr_hideHouseNumbers_name">Номери будинків</string>
+    <string name="rendering_attr_hideHouseNumbers_name">Номери будинків</string>
     <string name="application_dir_change_warning3">Ви хочете, щоб OsmAnd також перемістив свої файли даних по новому призначенню?</string>
     <string name="specified_directiory_not_writeable">Не вдалося створити мапи у вказаній теці</string>
 	<string name="copying_osmand_file_failed">Не вдалося скопіювати файли</string>    
@@ -1703,8 +1695,7 @@
     <string name="filter_poi_hint">Фільтрувати за назвою</string>
     <string name="search_poi_category_hint">Введіть запит для пошуку всіх</string>
     <string name="rendering_value__name">За замовчуванням</string>
-    <string name="rendering_value_highContrastRoads_name">Контрастні дороги</string>
-	<string name="index_name_netherlands">Європа - Нідерланди</string>
+    <string name="index_name_netherlands">Європа - Нідерланди</string>
 	
 	<string name="routing_attr_avoid_borders_description">Уникнути перетину кордону в іншу країну.</string>
 	<string name="routing_attr_height_name">Обмеження по висоті</string>

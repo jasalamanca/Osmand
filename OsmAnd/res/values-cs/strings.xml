@@ -1345,77 +1345,7 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="rendering_category_hide">Skrýt</string>
     <string name="wake_on_voice">Zapnout obrazovku</string>
     <string name="wake_on_voice_descr">Zapnout obrazovku zařízení (pokud je vypnuta) když se blíží odbočka.</string>
-    
-    <string name="osmand_plus_extended_description_4000_chars">"
-OsmAnd (OSM Automated Navigation Directions - Automatizované navigační pokyny) je mapová a navigační aplikace s přístupem ke kvalitním celosvětovým údajům z OpenStreetMap (OSM). Všechny údaje map mohou být uloženy na paměťové kartě ve vašem zařízení pro použití bez přístupu k Internetu (off-line). Pomocí GPS ve vašem zařízení může OsmAnd nabídnout navigování vizuálními a hlasovými pokyny pro automobil, kolo a chodce. Všechny hlavní funkce pracují on-line i off-line (bez nutnosti přístupu k Internetu).
 
-OsmAnd+ je placená verze aplikace. Její zakoupením podpoříte projekt, nové funkce a získáte nejnovější aktualizace map. Aplikaci si můžete před zakoupením vyzkoušet nainstalováním verze zdarma nazvané OsmAnd. 
-
-Některé hlavní funkce:
-
-Navigace:
-- Funguje on-line (rychlá) nebo off-line (bez poplatků za roaming v zahraničí)
-- Hlasové navádění po jednotlivých zatáčkách (nahrané i syntetizované hlasy)
-- Volitelné navádění v jízdních pruzích, zobrazení názvů ulic a odhadovaný čas do cíle 
-- Umožňuje zadat přechodné body trasy
-- Automatické přepočítání trasy pokud se odchýlíte z trasy 
-- Hledání míst podle adresy, typu (např .: restaurace, hotely, čerpací stanice, muzea) nebo zeměpisných souřadnic 
-
-Zobrazení mapy: 
-- Zobrazování vaší pozice a orientace na mapě 
-- Možnost zobrazení mapy ve směru pohybu nebo podle kompasu 
-- Uložení oblíbených míst - zobrazení POI (bodů zájmu) v okolí 
-- Možnost zobrazit specializované podkladové mapy z Internetu
-- Možnost zobrazit satelitní snímky (z Bing) 
-- Možnost zobrazit různé překryvné vrstvy jako turistické / navigační GPX stopy a další mapy s nastavitelnou průhledností 
-- Volitelně může zobrazit názvy v angličtině, lokálním jazyku nebo foneticky 
-
-Využívá data z OpenStreetMap a Wikipedie: 
-- Informace vysoké kvality z nejlepších projektů světa 
-- Globální mapy z OpenStreetMap dostupné podle země nebo regionu 
-- Body zájmu z Wikipedie, vhodné pro návštěvu zajímavostí 
-- Neomezené stahování, přímo z aplikace 
-- Vždy aktuální mapy (aktualizováno nejméně jednou za měsíc) 
-- Kompaktní vektorové off-line mapy 
-- Možnost volby mezi kompletními mapami nebo silniční sítí (např. celé Japonsko má 700 MB, silniční síť pouze 200 MB) 
-- Podporuje i podkladové dlaždice z Internetu 
-
-Bezpečnostní funkce: 
-- Volitelné automatické přepínání mezi denním a nočním režimem 
-- Volitelné zobrazení povolené rychlosti s upozorněním na její překročení 
-- Volitelné přibližování mapy podle rychlosti 
-- Sdílejte vaši polohu s přáteli, aby vás mohli najít 
-
-Funkce pro cyklisty a chodce: 
-- Mapy obsahují i cesty pro pěší, turisty a cyklisty vhodné pro aktivity v přírodě 
-- Speciální režimy zobrazení a navigace pro chodce a cyklisty 
-- Volitelné zobrazení zastávek hromadné dopravy (autobus, tramvaj, vlak) včetně názvů linek 
-- Volitelné nahrávání výletu do GPX souboru (lokálního nebo on-line služby) 
-- Volitelné zobrazení rychlosti a nadmořské výšky 
-- zobrazení vrstevnic a stínování svahů (s doplňkovými moduly) 
-
-Přímo přispívejte do OpenStreetMap: 
-- Nahlášení chyb v mapě 
-- Odeslání GPX stop do OSM přímo z aplikace 
-- Přidání POI a přímé odeslání do OSM (nebo později, pokud jste off-line) 
-- Volitelné nahrávání výletu na pozadí (když je zařízení v režimu spánku) 
-
-OsmAnd je svobodný a aktivně vyvíjený software. Každý může přispět do aplikace hlášením chyb, vylepšením překladu nebo programováním nových funkcí. Projekt je ve stavu soustavného vylepšování díky spolupráci vývojářů a uživatelů. Pokrok projektu také závisí na finančních příspěvků na vývoj, programování a testování nových funkcí. Koupením OsmAnd + (placená verze) pomůžete aplikaci být ještě lepší! Na osmand.net můžete přispět obecně nebo na vývoj konkrétní funkce. 
-
-Přibližná kvalita pokrytí: 
-- Západní Evropa: **** 
-- Východní Evropa: *** 
-- Rusko: *** 
-- Severní Amerika: *** 
-- Jižní Amerika: ** 
-- Asie: ** 
-- Japonsko a Korea: *** 
-- Blízký Východ: ** 
-- Afrika: ** 
-- Antarktida: * 
-
-Seznam obsažených zemí (prakticky celý svět!): Afghánistán, Albánie, Alžírsko, Andorra, Angola, Anguilla, Antigua a Barbuda, Argentina, Arménie, Aruba, Austrálie, Ázerbájdžán, Bahamy, Bahrajn, Bangladéš, Barbados, Belgie, Belize, Bělorusko, Benin, Bermudy, Bhútán, Bolívie, Bonaire, Bosna a Hercegovina, Botswana, Brazílie, Britské Panenské ostrovy, Brunej, Bulharsko, Burkina Faso, Burundi, Curaçao, Čad, Černá hora, Česká Republika, Čína, Dánsko, Dominika, Dominikánská Republika, Džibuti, Egypt, Ekvádor, Eritrea, Estonsko, Etiopie, Fidži, Filipíny, Finsko, Francie, Francouzská Guyana, Francouzská Polynésie, Gabon, Gambie, Ghana, Gibraltar, Grenada, Grónsko, Gruzie, Guadeloupe, Guam, Guatemala, Guernsey, Guinea, Guinea-Bissau, Guyana, Haiti, Honduras, Hongkong, Chile, Chorvatsko, Indie, Indonésie, Irák, Írán, Irsko, Island, Itálie, Izrael, Jamajka, Japonsko, Jemen, Jersey, Jižní Afrika, Jižní Georgie, Jižní Súdán, Jordánsko, Kambodža, Kamerun, Kanada, Kapverdy, Katar, Kazachstán, Keňa, Kiribati, Kolumbie, Komory, Kongo, Kostarika, Kuba, Kuvajt, Kypr, Kyrgyzstán, Laos, Lesotho, Libanon, Libérie, Libye, Lichtenštejnsko, Litva, Lotyšsko, Lucembursko, Macao, Madagaskar, Maďarsko, Makedonie, Malajsie, Malawi, Maledivy, Mali, Malta, Maroko, Martinik, Mauretánie, Mauricius, Mayotte, Mexiko, Mikronésie, Moldavsko, Monako, Mongolsko, Montserrat, Mosambik, Myanmar, Namibie, Nauru, Německo, Nepál, Niger, Nigérie, Nikaragua, Nizozemské Antily, Nizozemsko, Norsko, Nová Kaledonie, Nový Zéland, Omán, Ostrov Man, Pákistán, Palau, Palestinská území, Panama, Papua Nová Guinea, Paraguay, Peru, Pobřeží slonoviny, Polsko, Portoriko, Portugalsko, Rakousko, Rovníková Guinea, Rumunsko, Rusko, Rwanda, Řecko, Sadská Arábie, Saint Barthelemy, Saint-Pierre a Miquelon, Salvador, Samoa, San Marino, Senegal, Severní a Jižní Korea, Seychely, Sierra Leone, Singapur, Slovensko, Slovinsko, Somálsko, Spojené Arabské Emiráty, Spojené království (UK), Spojené státy americké (USA), Srbsko, Srí Lanka, Středoafrická republika, Súdán, Surinam, Svatá Helena, Svatá Lucie, Svatý Kryštof a Nevis, Svatý Martin, Svatý Vincenc a Grenadiny, Svazijsko, Sýrie, Španělsko, Švédsko, Švýcarsko, Tádžikistán, Taiwan, Tanzanie, Thajsko, Togo, Tokelau, Tonga, Trinidad a Tobago, Tunisko, Turecko, Turkmenistán, Tuvalu, Uganda, Ukrajina, Uruguay, Uzbekistán, Vanuatu, Vatikán, Venezuela, Vietnam, Východní Timor, Wallis a Futuna, Zambie, Západní Sahara
- "</string>
     <string name="lock_screen_request_explanation">%1$s potřebuje tato oprávnění pro vypnutí obrazovky při režimu šetření energie.</string>
     <string name="shared_string_never">Nikdy</string>
     <string name="home_button">Domovská obrazovka</string>
@@ -1447,7 +1377,6 @@ Seznam obsažených zemí (prakticky celý svět!): Afghánistán, Albánie, Al�
     <string name="rendering_attr_roadStyle_name">Styl cesty</string>
     <string name="rendering_value_default_name">Výchozí</string>
     <string name="rendering_value_orange_name">Oranžová</string>
-    <string name="rendering_value_germanRoadAtlas_name">Německý Atlas cest</string>
     <string name="traffic_warning_railways">Železniční přejezd</string>
     <string name="traffic_warning_pedestrian">Přechod pro chodce</string>
     <string name="show_railway_warnings">Železniční přejezdy</string>
@@ -1479,12 +1408,9 @@ Seznam obsažených zemí (prakticky celý svět!): Afghánistán, Albánie, Al�
     <string name="shared_string_enabled">Povolen</string>
     <string name="plugin_description_title">Popisek</string>
     <string name="edit_group">Upravit skupinu</string>
-    <string name="world_ski_missing">Pro zobrazování lyžařských map je třeba stáhnout speciální mapu</string>
-    <string name="plugin_ski_name">Lyžařský mapový pohled</string>
     <string name="notes">Poznámky</string>
     <string name="online_map">On-line mapa</string>
     <string name="roads_only">Pouze cesty</string>
-    <string name="rendering_attr_pisteRoutes_name">Lyžařské svahy</string>
     <string name="free">%1$s volných</string>
     <string name="device_memory">Paměť zařízení</string>
     <string name="shared_string_audio">Audio</string>
@@ -1494,7 +1420,6 @@ Seznam obsažených zemí (prakticky celý svět!): Afghánistán, Albánie, Al�
     <string name="shared_string_currently_recording_track">Právě zaznamenávaná trasa</string>
     <string name="back_to_map">Zpět na mapu</string>
     <string name="plugin_touringview_name">Cestovní mapový pohled</string>
-    <string name="rendering_attr_pisteGrooming_name">Úprava sjezdovky</string>
     <string name="track_segments">Úseky trasy</string>
     <string name="track_points">Body trasy</string>
     <string name="location_on_map">Poloha:\n Šířka %1$s\n Délka %2$s</string>
@@ -1568,12 +1493,8 @@ Délka %2$s</string>
 \nNení potřeba stahovat samostatný soubor, tento pohled používá standardní mapové soubory. 
 \n 
 \nTento pohled může být vypnut jeho deaktivováním zde, nebo změnou hodnoty možnosti „Styl mapy“ v „Nastavení mapy“.</string>
-    <string name="plugin_ski_descr">Tento modul pro OsmAnd zobrazuje sjezdovky, běžecké tratě, skialpinistické trasy, lanovky a lyžařské vleky. Tratě a sjezdovky jsou zobrazeny barvami podle obtížnosti na speciálně barevně upravené zimní mapě.
-\n
-\nAktivováním tohoto pohledu se změní styl mapy na \"Winter and ski\", který zobrazuje krajinné útvary v zimních podmínkách. Tento pohled může být vypnut jeho deaktivováním zde, nebo změnou hodnoty ve \"Vykreslování mapy\" v \"Nastavení mapy\".</string>
     <string name="index_name_netherlands">Evropa - Holandsko</string>
     <string name="rendering_value__name">Výchozí</string>
-    <string name="rendering_value_highContrastRoads_name">Vysoce kontrastní cesty</string>
     <string name="application_dir_change_warning3">Chcete aby OsmAnd také zkopíroval datové soubory do nového cíle?</string>
     <string name="specified_directiory_not_writeable">V zadaném adresáři nemohly být mapy vytvořené</string>
     <string name="copying_osmand_file_failed">Kopírování souborů selhalo</string>

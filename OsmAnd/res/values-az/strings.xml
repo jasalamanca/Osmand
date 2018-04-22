@@ -993,8 +993,6 @@
     <string name="avoid_roads_msg">Yayınmaq üçün yollar seçərək alternativ marşrut yarada bilərsiniz</string>
     <string name="rendering_attr_roadStyle_name">Yol stili</string>
     <string name="rendering_attr_roadStyle_description">Yol stili</string>
-    <string name="rendering_value_germanRoadAtlas_name">Almaniya yol atlası</string>
-    <string name="rendering_value_highContrastRoads_name">Yüksək kontrastlı yollar</string>
     <string name="traffic_warning_railways">Dəmir yolu keçidi</string>
     <string name="show_railway_warnings">Dəmir yolu keçidləri</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerika yol atlası</string>

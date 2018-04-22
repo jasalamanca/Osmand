@@ -1255,82 +1255,8 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="lang_zh_cn">Chinesisch (vereinfacht)</string>
 	<string name="lang_zh_tw">Chinesisch (traditionell)</string>
 
-	
-	<string name="osmand_plus_extended_description_4000_chars">"
-OsmAnd (OSM Automated Navigation Directions) ist eine Karten- und Navigationsanwendung mit Zugang zu den freien, weltweit verfügbaren und hoch qualitativen Daten von OpenStreetMap (OSM). Alle Kartendaten können für die Offline-Nutzung auf der Speicherkarte oder dem internen Speicher des Endgerätes gespeichert werden. Über das GPS des Endgerätes bietet OsmAnd eine Routing-Funktion mit visueller Anzeige und Sprachausgabe für KFZ, Fahrräder und Fußgänger. Alle Hauptfunktionen funktionieren sowohl online als auch offline (ohne Verbindung zum Internet). 
 
-OsmAnd+ ist die bezahlte Anwendungsversion. Durch ihren Kauf unterstützen Sie das Projekt, fördern die Entwicklung neuer Funktionen und erhalten die neusten Aktualisierungen. Vor einem Kauf können Sie die Anwendung durch Installation der kostenlosen, OsmAnd genannten Version ausprobieren. 
-
-Der Funktionsumfang beinhaltet unter anderem:
-
-Navigation:
-- funktioniert online (schnell) und offline (ohne Roaming-Gebühren im Ausland)
-- exakte Sprachausgabe (aufgenomme und synchronisierte Stimmen)
-- optionale Fahrspurführung, Anzeige der Straßennamen und der geschätzten Ankunftszeit
-- Unterstützung von Zwischenzielen auf ihrer Route
-- automatische Neuberechnung der Route, sobald von der ursprünglichen Route abgewichen wird.
-- Suche nach Orten anhand der Adresse, dem Typ (z. B. Restaurant, Hotel, Tankstelle, Museum) oder geografischen Koordinaten
-
-Kartenansicht:
-- Anzeige der Standort und der Blickrichtung auf der Karte
-- optionale Ausrichtung der Karte anhand des Kompasses oder der Bewegungsrichtung
-- Speichern der wichtigsten Orte als Favorit
-- Anzeige von POI (Point Of Interests)
-- Darstellung spezieller Online-Karten
-- Darstellung der Satelliten-Ansicht (auf Bing basierend)
-- Darstellung verschiedener Überlagerungen wie GPS-Tracks und weiterer Karten mit einstellbarer Transparenz
-- Anzeige von Ortsnamen in Englisch, der lokalen Sprache oder phonetischer Schreibweise 
-
-Verwendung von OpenStreetMap- und Wikipedia-Daten:
-- qualitativ hochwertige Informationen aus den beiden besten Gemeinschaftsprojekten der Welt
-- globale Karten von Openstreetmap, verfügbar nach Land oder Region
-- Wikipedia-POIs, praktisch bei Stadtbesichtigungen (nicht in der kostenfreien Version enthalten)
-- unlimitierter kostenloser Download direkt in der App (Download-Limit in der kostenfreien Version: 16 Karten)
-- immer aktuelle Karten (mindestens eine Aktualisierung pro Monat)
-- kompakte Offline-Vektor-Karten
-- Auswahl zwischen kompletten Karten und reinen Straßenkarten (Beispiel: Die gesamte Karte für Japan ist 700 MB, die reine Straßenkarte 200 MB groß)
-- zusätzliche Unterstützung von Online-Karten oder zwischengespeicherten Rasterkarten 
-
-Sicherheitsfunktionen:
-- optionaler automatisierter Wechsel zwischen Tag- und Nachtansicht
-- optionale Einblendung der aktuellen Geschwindigkeitsbeschränkung mit Erinnerung, falls diese überschritten wird
-- optionales geschwindigkeitsabhängiges Zoomen der Karte
-- Teilen des Standortes, damit Ihre Freunde Sie finden können
-
-Fahrrad- und Fußgängerfunktionen:
-- die Karten beinhalten Fuß, Wander- und Fahrradwege, bestens geeignet für Outdoor-Aktivitäten
-- spezielle Navigations- und Darstellungsoptionen für Radfahrer und Fußgänger
-- optionale Einblendung von Haltestellen des öffentlichen Nahverkehrs (Bus, Straßenbahn, Zug…) inkl. der Linienbezeichnungen 
-- optionale Aufzeichnung des zurückgelegten Weges als lokale GPX-Datei oder bei einem Online-Service
-- optionale Anzeige der Geschwindigkeit und aktuellen Höhe
-- Darstellung von Höhenlinien und Bergschattierungen (über zusätzliches Plugin) 
-
-Direkte OpenStreetMap-Beiträge:
-- Melden von Fehlern
-- Hochladen von GPX-Tracks zu OSM direkt aus der App
-- Hinzufügen von POIs und sie sofort oder (bei fehlender Internetverbindung) später zu OSM hochladen
-- optionales Aufzeichnen der Strecke (auch im Hintergrundmodus während das Endgerät im Ruhemodus ist) 
-
-OsmAnd ist quelloffen und wird stetig weiterentwickelt. Jeder kann seinen Beitrag dazu leisten, indem er Fehler mitteilt,  Übersetzungen verbessert oder neue Funktionen programmiert. Durch diese Formen des ständigen Austauschs zwischen Entwicklern und Anwendern bleibt das Projekt lebendig und wird kontinuierlich verbessert. Der Fortschritt des Projekts ist aber auch auf finanzielle Unterstützung angewiesen, um Entwicklung, Programmierung und Testung neuer Funktionen fördern zu können. Durch den Kauf von OsmAnd+ helfen Sie also, die App noch besser zu machen. Darüberhinaus haben Sie die Möglichkeit, für spezielle neue Funktionen oder generell für die Entwicklung auf osmand.net zu spenden. 
-
-Durchschnittliche Kartenabdeckung und -qualität:
-- Westeuropa: ****
-- Osteuropa: ***
-- Russland: ***
-- Nordamerika: ***
-- Südamerika: **
-- Asien: **
-- Japan und Korea: ***
-- mittlerer Osten: **
-- Afrika: **
-- Antarktis: * 
-
-Liste der unterstützten Länder (im Grunde weltweit!):
-Afghanistan, Ägypten, Albanien, Algerien, Andorra, Angola, Anguilla, Antigua und Barbuda, Äquatorialguinea, Arabische Republik Sahara, Argentinien, Armenien, Aruba, Aserbaidschan, Äthiopien, Australien, Bahamas, Bahrain, Bangladesch, Barbados, Belgien, Belize, Benin, Bermuda, Bhutan, Bolivien, Bonaire, Bosnien und Herzegowina, Botswana, Brasilien, Brunei, Bulgarien, Burkina Faso, Burundi, Chile, China, Costa Rica, Curaçao, Dänemark, Deutschland, Dominica, Dominikanische Republik, Dschibuti, Ecuador, El Salvador, Elfenbeinküste, Eritrea, Estland, Fidschi, Finnland, Frankreich, Französisch-Guayana, Französisch-Polynesien, Gabun, Gambia, Georgien, Ghana, Gibraltar, Grenada, Griechenland, Grönland, Großbritannien, Guadeloupe, Guam, Guatemala, Guernsey, Guinea, Guinea-Bissau, Guyana, Haiti, Honduras, Hong Kong, Indien, Indonesien, Isle of Man, Irak, Iran, Irland, Island, Israel, Italien, Jamaika, Japan, Jemen, Jersey, Jordanien, Jungferninseln, Kambodscha, Kamerun, Kanada, Kap Verde, Kasachstan, Katar, Kenia, Kirgistan, Kiribati, Kolumbien, Komoren, Kongo, Kroatien, Kuba, Kuwait, Laos, Lesotho, Lettland, Libanon, Liberia, Libyen, Liechtenstein, Litauen, Luxemburg, Macau, Madagaskar, Malawi, Malaysia, Malediven, Mali, Malta, Marokko, Martinique, Mauretanien, Mauritius, Mayotte, Mazedonien, Mexiko, Mikronesien, Moldau, Monaco, Mongolei, Montenegro, Montserrat, Mosambik, Myanmar, Namibia, Nauru, Nepal, Neukaledonien, Neuseeland, Nicaragua, Niederlande, Niederländische Antillen, Niger, Nigeria, Nordkorea, Norwegen, Oman, Österreich, Osttimor, Pakistan, Palau, Palästinensische Autonomiegebiete, Panama, Papua-Neuguinea, Paraquay, Peru, Philippinen, Polen, Portugal, Puerto Rico, Ruanda, Rumänien, Russland, Saint-Barthélemy, Saint Helena, Saint Helena, Ascension und Tristan da Cunha, Saint Kitts und Nevis, Saint Lucia, Saint Martin, Saint-Pierre und Miquelon, Saint Vincent und die Grenadinen, Sambia, Samoa, San Marino, Saudi Arabien, Schweden, Schweiz, Senegal, Serbien, Seychellen, Sierra Leona Singapur, Simbabwe, Slovakei, Slowenien, Somalia, Spanien, Sri Lanka, Südafrika, Sudan, Südgeorgien, Südkorea, Südsudan, Suriname, Swasiland, Syrien, Taiwan, Tadschikistan, Tansania, Thailand, Togo, Trinidad und Tobago, Tschad, Tschechische Republik, Tunesien, Türkei, Turkmenistan, Tuvalu, Uganda, Ukraine, Ungarn, Uruguay, Usbekistan, Vanuatu, Vatikan, Venezuela, Vereinigte Arabische Emirate, Vereinigte Staaten von Amerika, Vietnam, Wallis und Futuna, Weißrussland, Zentralafrikanische Republik, Zypern.
- "</string>
-
-	
-	<string name="rendering_value_pink_name">Rosa</string>
+    <string name="rendering_value_pink_name">Rosa</string>
 	<string name="rendering_value_brown_name">Braun</string>
 
 	<string name="osmo_settings_uuid">Geräte-ID</string>
@@ -1559,9 +1485,7 @@ Mit Neuanmeldung fortfahren?</string>
     <string name="rendering_value__name">Standard</string>
     <string name="rendering_value_default_name">Standard</string>
     <string name="rendering_value_orange_name">Orange</string>
-    <string name="rendering_value_germanRoadAtlas_name">Deutscher Straßenatlas</string>
-    <string name="rendering_value_highContrastRoads_name">Kontrastreiche Straßen</string>
-    <string name="traffic_warning_railways">Bahnübergang</string>
+	<string name="traffic_warning_railways">Bahnübergang</string>
     <string name="traffic_warning_pedestrian">Fußgängerübergang</string>
     <string name="show_railway_warnings">Eisenbahnübergänge</string>
     <string name="show_pedestrian_warnings">Fußgängerübergänge</string>
@@ -1600,17 +1524,11 @@ Mit Neuanmeldung fortfahren?</string>
     <string name="edit_group">Gruppe bearbeiten</string>
     <string name="free">Frei %1$s </string>
     <string name="device_memory">Gerätespeicher</string>
-    <string name="rendering_attr_pisteGrooming_name">Pistenpflege</string>
-    <string name="plugin_ski_name">Ski-Karte</string>
-    <string name="world_ski_missing">Um Ski-Karten anzeigen zu können, muss die entsprechende Offline-Karte heruntergeladen werden</string>
-    <string name="get_plugin">Erwerben</string>
+	<string name="get_plugin">Erwerben</string>
     <string name="rename_failed">Umbenennen fehlgeschlagen.</string>
 	<string name="shared_string_currently_recording_track">Momentane Track-Aufzeichnung</string>
 	<string name="back_to_map">Zurück zur Karte</string>
-    <string name="plugin_ski_descr">Diese Erweiterung aktiviert die spezielle Kartendarstellung \'Winter- und Skikarte\', die global Skiabfahrten, Langlaufrouten, alpine Skirouten, Skilifte und Bergbahnen enthält. Routen und Pisten werden farbcodiert nach Schwierigkeit, Landschaftselemente nach winterlichen Gesichtspunkten (Assimilierung einer Schneedecke) angezeigt.
-\n 
-\nDiese spezielle Kartendarstellung kann zurückgestellt werden, indem sie hier wieder deaktiviert oder indem die \'Kartendarstellung\' unter \'Karte konfigurieren\' wie gewünscht geändert wird.</string>
-	<string name="plugin_touringview_descr">Bei Aktivierung dieser Ansicht wechselt die Kartendarstellung zur \'Tourenkarte\', einer besonders detaillierten Darstellung für Fernreisende und Berufsfahrer. 
+	<string name="plugin_touringview_descr">Bei Aktivierung dieser Ansicht wechselt die Kartendarstellung zur \'Tourenkarte\', einer besonders detaillierten Darstellung für Fernreisende und Berufsfahrer.
 \n 
 \nDiese Darstellung liefert für jeden Maßstab den größtmöglichen Umfang an Details zu Fernreisen, die die Kartendaten enthalten (insbesondere alle Straßen, Wege, Pfade und Orientierungspunkte). 
 \n
@@ -1630,7 +1548,6 @@ Mit Neuanmeldung fortfahren?</string>
 	<string name="notes">Notizen</string>
 	<string name="online_map">Online-Karte</string>
 	<string name="roads_only">Nur Straßen</string>
-    <string name="rendering_attr_pisteRoutes_name">Skipisten</string>
 	<string name="shared_string_export">Export</string>
 	<string name="watch">Ansehen</string>
 

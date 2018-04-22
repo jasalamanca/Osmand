@@ -2,7 +2,6 @@
 <resources><string name="shared_string_my_places">Meus locais</string>
 	<string name="days_behind">dias atrás</string>
 	<string name="watch">Ver</string>
-	<string name="rendering_attr_pisteGrooming_name">Pista de preparação</string>
     <string name="routing_attr_no_new_routing_name">Evitar regras de roteamento da v1.9</string>
     <string name="navigate_point_northing">Ao norte</string>
     <string name="navigate_point_easting">Ao leste</string>
@@ -149,9 +148,6 @@
 \n\nE ele oferece opções de turismo especiais como mostrando rotas de bicicleta ou rotas de montanha.
 \n\nNão é necessário baixar mapa especial, pois esse modo de exibição é criado a partir do mapa padrão.
 \n\nEssa visão pode ser revertida desativando aqui mesmo ou alterando o \'Estilo do mapa\' em \'Configurar mapa\' quando desejar. "</string>
-    <string name="plugin_ski_name">Visão de mapa de esqui</string>
-	<string name="plugin_ski_descr">"Este complemento para o OsmAnd coloca ao seu alcance detalhes de pistas de descida de esqui, de travessia, rotas de esqui alpino, teleféricos e elevadores de esqui. Rotas e pistas são mostradas com codificação de cores por dificuldade e retratadas em um estilo especial de mapa \'Inverno\' que assimila uma paisagem de inverno cor de neve.
-\n\nAtivando esta mudança na visão do estilo de mapa de \'Inverno e esqui\', mostrando todas as características da paisagem em condições invernais. Essa visão pode ser revertida desativando aqui ou alterando o \'Estilo de mapa\' em \'Configurar mapa\' quando desejado. "</string>
     <string name="osmand_distance_planning_plugin_name">Calculadora de distância e ferramenta de planeamento</string>
 	<string name="osmand_distance_planning_plugin_description">Este complemento fornece um widget da tela mapa permitindo criar caminhos tocando no mapa, ou usar ou modificar arquivos GPX existentes, para planejar uma viagem e medir a distância entre pontos. Os resultados podem ser salvos como um arquivo GPX, que mais tarde pode ser usado para orientação.</string>
 	<string name="shared_string_accessibility">Acessibilidade</string>
@@ -164,10 +160,8 @@
 	<string name="notes">Notas</string>
 	<string name="online_map">Mapa on-line</string>
 	<string name="roads_only">Apenas estradas</string>
-    <string name="rendering_attr_pisteRoutes_name">Pistas de esqui</string>
-	<string name="free">"Livre %1$s "</string>
+    <string name="free">"Livre %1$s "</string>
 	<string name="device_memory">Memória do aparelho</string>
-    <string name="world_ski_missing">Para mostrar mapas de esqui, o mapa off-line especial precisa ser baixado</string>
     <string name="edit_group">Editar grupo</string>
     <string name="remove_the_tag">REMOVER A ETIQUETA</string>
     <string name="gps_status">Situação do GPS</string>
@@ -188,9 +182,7 @@
 	<string name="rendering_value__name">Predefinido</string>
     <string name="rendering_value_default_name">Predefinido</string>
     <string name="rendering_value_orange_name">Laranja</string>
-    <string name="rendering_value_germanRoadAtlas_name">Atlas de vias alemãs</string>
-    <string name="rendering_value_highContrastRoads_name">Vias em alto contraste</string>
-	<string name="traffic_warning_railways">Cruzamento de ferrovia</string>
+    <string name="traffic_warning_railways">Cruzamento de ferrovia</string>
 	<string name="traffic_warning_pedestrian">Travessia de pedestres</string>
 	<string name="show_railway_warnings">Cruzamento de ferrovia</string>
 	<string name="rendering_value_americanRoadAtlas_name">Atlas de vias americanas</string>

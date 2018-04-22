@@ -37,7 +37,6 @@ public class RendererRegistry {
 	public final static String DEFAULT_RENDER = "OsmAnd";  //$NON-NLS-1$
 	public final static String DEFAULT_RENDER_FILE_PATH = "default.render.xml";
 	public final static String TOURING_VIEW = "Touring view (contrast and details)";  //$NON-NLS-1$
-	public final static String WINTER_SKI_RENDER = "Winter and ski";  //$NON-NLS-1$
 	public final static String TOPO_RENDER = "Topo";  //$NON-NLS-1$
 	public final static String MAPNIK_RENDER = "Mapnik";  //$NON-NLS-1$
 
@@ -65,7 +64,6 @@ public class RendererRegistry {
 		internalRenderers.put(MAPNIK_RENDER, "mapnik" + ".render.xml");
 		internalRenderers.put("UniRS", "UniRS" + ".render.xml");
 		internalRenderers.put("LightRS", "LightRS" + ".render.xml");
-		internalRenderers.put(WINTER_SKI_RENDER, "skimap" + ".render.xml");
 	}
 	
 	public RenderingRulesStorage defaultRender() {
@@ -250,8 +248,6 @@ public class RendererRegistry {
 		switch (key) {
 			case TOURING_VIEW:
 				return ctx.getString(R.string.touring_view_renderer);
-			case WINTER_SKI_RENDER:
-				return ctx.getString(R.string.winter_and_ski_renderer);
 		}
 		return null;
 	}

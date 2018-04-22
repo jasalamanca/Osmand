@@ -701,8 +701,7 @@
     <string name="coordinates">Koordinaatit</string>
 	<string name="record_plugin_name">Matkan tallennus</string>
 	<string name="monitoring_settings">Matkan tallennus</string>
-    <string name="plugin_ski_name">Hiihtokartat</string>
-	<string name="route_points">Reittipisteet</string>
+    <string name="route_points">Reittipisteet</string>
 	<string name="get_plugin">Lataa</string>
     <string name="osmand_distance_planning_plugin_name">Etäisyyslaskin &amp; suunnittelutyökalu</string>
 	<string name="search_for">Etsi</string>
@@ -1212,11 +1211,8 @@ Anonyymejä ryhmiä luodaan määritellyiksi päivämääriksi ja rajoitettuna m
  Lon %2$s</string>
     <string name="watch">Katso</string>
     <string name="online_map">Online kartta</string>
-    <string name="rendering_attr_pisteRoutes_name">Hiihtorinteet</string>
-    <string name="device_memory">Laitteen muisti</string>
-    <string name="rendering_attr_pisteGrooming_name">Rinnehuolto</string>
-    <string name="world_ski_missing">Näyttääksesi hiihtokartat tarvitsee ladata erityinen offline kartta</string>
-    <string name="remove_the_tag">POISTA TAGI</string>
+	<string name="device_memory">Laitteen muisti</string>
+	<string name="remove_the_tag">POISTA TAGI</string>
     <string name="gps_status">GPS tila</string>
     <string name="version_settings_descr">Lataa yöllinen julkaisu</string>
     <string name="version_settings">Julkaisut</string>
@@ -1231,8 +1227,7 @@ Anonyymejä ryhmiä luodaan määritellyiksi päivämääriksi ja rajoitettuna m
     <string name="rendering_attr_roadStyle_description">Tien tyyli</string>
     <string name="rendering_value__name">Oletus</string>
     <string name="rendering_value_default_name">Oletus</string>
-    <string name="rendering_value_germanRoadAtlas_name">Saksan tiekartta</string>
-    <string name="traffic_warning_railways">Rautatieristeys</string>
+	<string name="traffic_warning_railways">Rautatieristeys</string>
     <string name="show_railway_warnings">Rautatieristeydet</string>
     <string name="show_pedestrian_warnings">Suojatiet</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerikan tiekartta</string>

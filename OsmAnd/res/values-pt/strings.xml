@@ -1399,8 +1399,7 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="rendering_attr_roadStyle_name">Estilo das vias</string>
     <string name="rendering_value_default_name">Predefinido</string>
     <string name="rendering_value_orange_name">Laranja</string>
-    <string name="rendering_value_germanRoadAtlas_name">Atlas de vias alemãs</string>
-	<string name="traffic_warning_railways">Cruzamento de ferrovia</string>
+    <string name="traffic_warning_railways">Cruzamento de ferrovia</string>
 	<string name="traffic_warning_pedestrian">Cruzamento de faixa de pedestre</string>
 	<string name="show_railway_warnings">Exibir cruzamento de ferrovia</string>
 	<string name="show_pedestrian_warnings">Exibir faixas de pedestre</string>
@@ -1466,7 +1465,6 @@ Clique no widget de medição para ver mais ações.</string>
 	<string name="agps_data_last_downloaded">A-GPS últimos dados baixados: %1$s</string>
     <string name="confirm_usage_speed_cameras">Em diversos países (Alemanha, França, Itália, etc.) o uso de alertas de radar é proibido por lei. OsmAnd não assume qualquer responsabilidade se você violar a lei. Por favor, toque em \"sim\" somente se você pode aceitar o uso deste recurso.</string>
 	<string name="welmode_download_maps">Baixar mapas</string>
-	<string name="rendering_attr_pisteGrooming_name">Preparando pista</string>
     <string name="days_behind">dias atrás</string>
 	<string name="watch">Ver</string>
 	<string name="navigate_point_northing">Norte</string>
@@ -1482,8 +1480,7 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="rendering_attr_tramTrainRoutes_name">Rotas de bonde e trem</string>
 	<string name="rendering_attr_streetLighting_name">Iluminação pública</string>
     <string name="rendering_value__name">Predefinido</string>
-    <string name="rendering_value_highContrastRoads_name">Vias em alto contraste</string>
-	<string name="welcome_text">OsmAnd oferece um explorador de mapa e navegador GPS offline!</string>
+    <string name="welcome_text">OsmAnd oferece um explorador de mapa e navegador GPS offline!</string>
 	<string name="welcome_header">Bem-vindo</string>
     <string name="current_route">Rota atual</string>
     <string name="osm_changes_added_to_local_edits">Mudanças no OSM adicionadas ao conjunto de alterações local</string>
@@ -1529,17 +1526,14 @@ Clique no widget de medição para ver mais ações.</string>
 	<string name="track_segments">Segmentos do trajeto</string>
 	<string name="track_points">Pontos de trajeto</string>
 	<string name="plugin_touringview_name">Ver mapa de turismo</string>
-    <string name="plugin_ski_name">Ver mapa de esqui</string>
-	<string name="rename_failed">Falha ao renomear.</string>
+    <string name="rename_failed">Falha ao renomear.</string>
 	<string name="back_to_map">Voltar ao mapa</string>
     <string name="location_on_map">Posição:\n Lat %1$s\n Lon %2$s</string>
 	<string name="notes">Notas</string>
 	<string name="online_map">Mapa on-line</string>
 	<string name="roads_only">Apenas vias</string>
-    <string name="rendering_attr_pisteRoutes_name">Pistas de esqui</string>
-	<string name="free">"Livre %1$s "</string>
+    <string name="free">"Livre %1$s "</string>
 	<string name="device_memory">Memória do aparelho</string>
-    <string name="world_ski_missing">Para exibir mapas de esqui, o mapa offline especial precisa ser baixado</string>
     <string name="edit_group">Editar grupo</string>
     <string name="version_settings">Compilações</string>
     <string name="navigation_over_track">Iniciar navegação através do trajeto?</string>

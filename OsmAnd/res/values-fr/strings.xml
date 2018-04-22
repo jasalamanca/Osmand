@@ -1542,7 +1542,6 @@ Voulez-vous effectuer à une nouvelle inscription ?</string>
     <string name="traffic_warning_pedestrian">Passage piéton</string>
     <string name="show_railway_warnings">Traversées de voie ferrée</string>
     <string name="show_pedestrian_warnings">Passages piétons</string>
-    <string name="rendering_value_germanRoadAtlas_name">Atlas des routes allemandes</string>
     <string name="rendering_value_americanRoadAtlas_name">Atlas des routes américaines</string>
     <string name="routing_attr_no_new_routing_description">Ne pas utiliser les règles de calcul d\'itinéraire ajoutées dans la version 1.9.</string>
     <string name="routing_attr_no_new_routing_name">Ne pas utiliser le calcul d\'itinéraire de la version 1.9</string>
@@ -1579,24 +1578,17 @@ Voulez-vous effectuer à une nouvelle inscription ?</string>
     <string name="shared_string_enable">Activer</string>
     <string name="shared_string_disable">Désactiver</string>
     <string name="get_plugin">Installer</string>
-    <string name="plugin_ski_name">Pistes de ski</string>
-    <string name="world_ski_missing">Pour afficher les pistes de ski, une carte hors ligne doit être téléchargée.</string>
-    <string name="rendering_attr_pisteGrooming_name">Damage des pistes</string>
     <string name="free">%1$s libre</string>
     <string name="device_memory">Mémoire de l\'appareil</string>
     <string name="notes">Notes</string>
     <string name="online_map">Carte en ligne</string>
     <string name="roads_only">Routes uniquement</string>
-    <string name="rendering_attr_pisteRoutes_name">Pistes de ski</string>
     <string name="watch">Suivre</string>
     <string name="shared_string_audio">Audio</string>
 
 
     <string name="shared_string_export">Exporter</string>
-    <string name="plugin_ski_descr">Ce greffon pour OsmAnd affiche le relief en conditions hivernales, ainsi que les pistes de ski (dont la difficulté est représentée par un code couleurs) et les remontées mécaniques.
-\n
-\nL\'activation de cette vue change le style de carte en \"Hiver et ski\", en affichant toutes les caractéristiques du paysage en condition neigeuse. Cet affichage peut être annulé soit en le désactivant ici, soit en modifiant le Style de la carte dans \"Configurer la carte\".</string>
-	<string name="plugin_touringview_descr">Activer cette vue bascule vers le style d\'affichage \"Grand tourisme\", affichant une carte très détaillée adaptée aux voyageurs et chauffeurs routiers.
+    <string name="plugin_touringview_descr">Activer cette vue bascule vers le style d\'affichage \"Grand tourisme\", affichant une carte très détaillée adaptée aux voyageurs et chauffeurs routiers.
 \n
 \nCet affichage, quel que soit le niveau de zoom, fournit le maximum de détails disponibles. 
 \n
@@ -1673,7 +1665,6 @@ Voulez-vous effectuer à une nouvelle inscription ?</string>
     <string name="search_poi_category_hint">Saisissez votre recherche</string>
     <string name="index_name_netherlands">Europe - Pays-Bas</string>
     <string name="rendering_value__name">Par défaut</string>
-    <string name="rendering_value_highContrastRoads_name">Routes avec fort contraste</string>
     <string name="specified_directiory_not_writeable">Impossible de créer les cartes dans le dossier spécifié</string>
     <string name="copying_osmand_file_failed">Échec lors de la copie des fichiers</string>
     <string name="storage_directory_external">Stockage externe</string>

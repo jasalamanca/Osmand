@@ -1534,7 +1534,6 @@
     <string name="rendering_attr_roadStyle_name">Styl dróg</string>
     <string name="rendering_value_default_name">Domyślnie</string>
     <string name="rendering_value_orange_name">Pomarańczowy</string>
-    <string name="rendering_value_germanRoadAtlas_name">Niemiecki atlas drogowy</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerykański atlas drogowy</string>
     <string name="routing_attr_no_new_routing_name">Bez reguł wyznaczania tras z wersji 1.9</string>
     <string name="routing_attr_no_new_routing_description">Nie używa reguł wyznaczania tras wprowadzonych w wersji 1.9.</string>
@@ -1560,7 +1559,6 @@
 
     <string name="shared_string_disabled">Wyłączone</string>
     <string name="shared_string_enabled">Włączone</string>
-    <string name="plugin_ski_name">Widok narciarski</string>
     <string name="rename_failed">Nie udało się zmienić nazwy.</string>
     <string name="back_to_map">Powrót do mapy</string>
     <string name="location_on_map">Położenie:
@@ -1622,9 +1620,6 @@ Długość %2$s</string>
 \n 
 \nMożna go wyłączyć używając obecnej tutaj opcji lub zmieniając styl mapy w menu konfiguracji mapy.</string>
     <string name="watch">Oglądaj</string>
-    <string name="rendering_attr_pisteRoutes_name">Stoki narciarskie</string>
-    <string name="rendering_attr_pisteGrooming_name">Ratrakowanie</string>
-    <string name="world_ski_missing">Aby wyświetlać mapy narciarskie, należy pobrać specjalną mapę offline</string>
     <string name="remove_the_tag">Usuń znacznik</string>
     <string name="version_settings">Kompilacje</string>
     <string name="points">Punkty</string>
@@ -1654,9 +1649,6 @@ Długość %2$s</string>
     <string name="osmo_grop_name_length_alert">Nazwa grupy powinna zawierać co najmniej 3 znaki!</string>
     <string name="shared_string_go">Nawiguj</string>
 
-    <string name="plugin_ski_descr">Dodaje do OsmAnd szczegóły dotyczące stoków narciarskich, tras biegowych, tras skitour, kolejek linowych i wyciągów narciarskich na świecie. Trasy i szlaki są pokolorowane według trudności i przedstawione w specjalnym zimowym stylu mapy, imitującym krajobraz pokryty śniegiem.
-\n 
-\nWłączenie tego widoku zmienia styl mapy na „Zima i narty”, ukazujący teren pokryty śniegiem. Widok można wyłączyć przez wyłączenie wtyczki lub zmianę stylu w menu „Styl mapy” w „Konfiguracji mapy”.</string>
     <string name="shared_string_message">Wiadomość</string>
     <string name="shared_string_do_not_use">Nie używaj</string>
     <string name="shared_string_address">Adres</string>
@@ -1674,7 +1666,6 @@ Długość %2$s</string>
     <string name="storage_directory_default">Pamięć wewnętrzna</string>
     <string name="shared_string_copy">Skopiuj</string>
     <string name="rendering_value__name">Domyślnie</string>
-    <string name="rendering_value_highContrastRoads_name">Wysoki kontrast dróg</string>
     <string name="index_name_netherlands">Europa - Holandia</string>
     <string name="storage_directory_manual">Określony ręcznie</string>
     <string name="storage_directory_internal_app">Wewnętrzna pamięć programu</string>

@@ -1479,7 +1479,6 @@
     <string name="dash_download_manage">Кіраваць</string>
     <string name="voices">Галасавыя падказкі</string>
 	<string name="rendering_value_orange_name">Аранжавы</string>
-    <string name="rendering_value_germanRoadAtlas_name">Нямецкі атлас аўтадарог</string>
     <string name="rendering_value_americanRoadAtlas_name">Амэрыканскі атлас аўтадарог</string>
     <string name="routing_attr_no_new_routing_name">Бяз правілаў маршрутызацыі v1.9</string>
     <string name="routing_attr_no_new_routing_description">Не выкарыстоўваць правілы маршрутызацыі ўведзеныя ў v1.9.</string>
@@ -1518,13 +1517,9 @@
     
 	<string name="plugin_install_needs_network">Неабходна падключэньне да Інтэрнэту, каб усталяваць гэты модуль.</string>
 	<string name="get_plugin">Атрымаць</string>
-<string name="plugin_ski_name">Лыжныя мапы</string>
-    <string name="world_ski_missing">Для адлюстраваньня лыжных мап неабходна сьцягнуць адмысловыя мапы</string>
-    <string name="rendering_attr_pisteGrooming_name">Дагляд трасы</string>
     <string name="free">Вольна %1$s</string>
 	<string name="device_memory">Памяць прыстасаваньня</string>
-    <string name="rendering_attr_pisteRoutes_name">Лыжныя трасы</string>
-	<string name="roads_only">Толькі дарогі</string>
+    <string name="roads_only">Толькі дарогі</string>
     <string name="watch">Сачыць</string>
 	<string name="notes">Нататкі</string>
 	<string name="online_map">Інтэрнэт мапа</string>
@@ -1634,10 +1629,7 @@
     <string name="shared_string_go">Паехалі</string>
 	
 	<string name="local_osm_changes_upload_all_confirm">Вы зьбіраецеся адаслаць %1$d зьменаў у OSM. Вы ўпэўненыя?</string>
-    <string name="plugin_ski_descr">Модуль для OsmAnd дае вам доступ да дадзеных аб гарналыжных трасах, маршрутах для бегавых лыж, альпійскіх спусках, фунікулёрах і гарналыжных пад\'ёмніках. Маршруты і спускі адзначаны рознымі колерамі ў залежнасці ад іх складанасці і намаляваныя з выкарыстаннем адмысловага «зімовага» стылю мапы, які заключаецца ў тым, што выкарыстоўваюцца «снежныя» колеры зімовага пейзажу. 
-\n 
-\nУ выпадку актывацыі гэтага віду, стыль мапы мяняецца на «Winter and ski», паказваючы ўсё дэталі пейзажу так, як яны выглядаюць зімой. Такі (зімовы) выгляд можа быць адменены альбо шляхам дэактывацыі тут, альбо калі вы памяняеце «Стыль мапы» у меню «Налада мапы» на жаданы выгляд.</string>
-	<string name="osmo_grop_name_length_alert">Імя групы павінна быць мінімум 3 сімвала!</string>
+    <string name="osmo_grop_name_length_alert">Імя групы павінна быць мінімум 3 сімвала!</string>
 	<string name="current_route">Цяперашні маршрут</string>
     <string name="osm_changes_added_to_local_edits">Зьмены OSM дададзеныя да лякальнага набору зьменаў</string>
    	<string name="mark_to_delete">Пазначыць для выдаленьня</string>
@@ -1673,8 +1665,7 @@
     <string name="search_poi_category_hint">Друкуйце, каб знайсьці ўсё</string>
     <string name="index_name_netherlands">Эўропа - Нідэрлянды</string>
 	<string name="rendering_value__name">Па змоўчаньні</string>
-    <string name="rendering_value_highContrastRoads_name">Высокая кантрастнасьць дарог</string>
-	<string name="specified_directiory_not_writeable">Мапы не могуць быць створаны ў пазначанай дырэкторыі</string>
+    <string name="specified_directiory_not_writeable">Мапы не могуць быць створаны ў пазначанай дырэкторыі</string>
 	<string name="copying_osmand_file_failed">Капіяваньне файлаў не атрымалася</string>    
     <string name="storage_directory_internal_app">Унутраная памяць дастасаваньня</string>
     <string name="storage_directory_manual">Зададзены ўручную</string>

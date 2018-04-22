@@ -1361,7 +1361,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="rendering_value_orange_name">Naranja</string>
     <string name="routing_attr_no_new_routing_name">Sin reglas de navegación v1.9</string>
     <string name="routing_attr_no_new_routing_description">No utilizar reglas de navegación introducidas en v.1.9.</string>
-    <string name="rendering_value_germanRoadAtlas_name">Atlas alemán de carreteras</string>
     <string name="traffic_warning_railways">Cruce de ferrocarril</string>
     <string name="traffic_warning_pedestrian">Paso de peatones</string>
     <string name="show_railway_warnings">Pasos a nivel</string>
@@ -1394,24 +1393,17 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="plugin_description_title">Descripción</string>
     <string name="edit_group">Editar grupo</string>
     <string name="plugin_install_needs_network">Necesita una conexión a Internet para instalar este complemento.</string>
-    <string name="plugin_ski_name">Vista invernal</string>
-    <string name="world_ski_missing">Para mostrar mapas de esquí, necesita ser descargado el mapa especial sin conexión</string>
     <string name="shared_string_enable">Activar</string>
     <string name="shared_string_disable">Desactivar</string>
     <string name="get_plugin">Obtener</string>
     <string name="free">Libre %1$s</string>
     <string name="device_memory">Memoria del dispositivo</string>
-    <string name="rendering_attr_pisteRoutes_name">Pistas de esquí</string>
-    <string name="rendering_attr_pisteGrooming_name">Pista de entrenamiento</string>
     <string name="roads_only">Sólo carreteras</string>
     <string name="notes">Notas</string>
     <string name="online_map">Mapa en línea</string>
     <string name="shared_string_export">Exportar</string>
     <string name="shared_string_audio">Audio</string>
-    <string name="plugin_ski_descr">Este complemento para OsmAnd pone a su alcance detalles sobre pistas de esquí de descenso, de travesía, rutas de esquí alpino, teleféricos y remontes a nivel mundial. Las rutas y pistas se muestran por código de color en función de su dificultad, y representados con un estilo del mapa especial «Invierno» que lo asemeja a un paisaje invernal nevado.
-\n 
-\nActivando esta vista cambia el estilo del mapa a «Invernal», mostrando las características del terreno en condiciones invernales. Esta vista puede ser revertida desactivando de nuevo aquí, o cambiando el «Estilo del mapa» en «Configurar mapa» cuando desee.</string>
-    <string name="plugin_touringview_descr">Activando esta vista cambia el estilo del mapa OSMAnd a la «Vista turística», que es una vista de alto detalle especial para viajeros y conductores profesionales. 
+    <string name="plugin_touringview_descr">Activando esta vista cambia el estilo del mapa OSMAnd a la «Vista turística», que es una vista de alto detalle especial para viajeros y conductores profesionales.
 \n 
 \nEsta vista proporciona, en cualquier nivel de zoom del mapa, la máxima cantidad de detalles de viaje disponible en los datos del mapa (especialmente carreteras, senderos, caminos y marcas de orientación). 
 \n 
@@ -1487,7 +1479,6 @@ Lon %2$s</string>
     <string name="search_poi_category_hint">Escribe para buscar en todos</string>
     <string name="index_name_netherlands">Europa - Países Bajos</string>
     <string name="rendering_value__name">Predeterminado</string>
-    <string name="rendering_value_highContrastRoads_name">Carreteras en alto contraste</string>
     <string name="specified_directiory_not_writeable">No se pueden crear mapas en el directorio especificado</string>
     <string name="copying_osmand_file_failed">Fallo copiando archivos</string>
     <string name="storage_directory_external">Almacenamiento externo</string>

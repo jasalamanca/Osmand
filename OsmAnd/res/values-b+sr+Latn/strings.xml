@@ -336,10 +336,7 @@
     <string name="rename_failed">Preimenovanje nije uspelo.</string>
 	<string name="shared_string_currently_recording_track">Staza koja se trenutno snima</string>
 	<string name="back_to_map">Nazad na kartu</string>
-    <string name="plugin_ski_descr">Pokretanje ove izmene menja pregled karte na „Zima i skijanje“, koje prikazuje u položenom pogledu osobine predela i zimske uslove.
-		\n\nSvetska karta prikazuje sva skijališta i skijaške staze u ovom pregledu je dostupna preuzimanjem  „Svetske skijaške karte“.
-	</string>
-	<string name="shared_string_audio">Zvuk</string>
+    <string name="shared_string_audio">Zvuk</string>
 
 
     <string name="location_on_map">Geografski položaj:\nŠirina %1$s↵\nDužina %2$s</string>
@@ -349,9 +346,7 @@
 	<string name="roads_only">Samo putevi</string>
     <string name="free">"Slobodno %1$s "</string>
 	<string name="device_memory">Skladište uređaja</string>
-    <string name="plugin_ski_name">Pregled skijaške karte</string>
-    <string name="world_ski_missing">Da bi se prikazivala skijaška karta, naročita karta za pregled van mreže treba da se preuzme</string>
-	<string name="edit_group">Uredi skup</string>
+    <string name="edit_group">Uredi skup</string>
     <string name="remove_the_tag">UKLONI OZNAKU</string>
     <string name="gps_status">Stanje GPS-a</string>
     <string name="version_settings_descr">Preuzmi noćne izgradnje</string>

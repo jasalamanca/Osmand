@@ -66,12 +66,10 @@
     <string name="shared_string_add_to_favorites">ഇഷ്ടപ്പെട്ടവയിലേക്ക് ചേര്‍ക്കുക</string>
     <string name="shared_string_accessibility">സാമീപ്യത</string>
     <string name="back_to_map">ഭൂപടത്തിലോട്ട് തിരിച്ചു പോവുക</string>
-    <string name="rendering_attr_pisteGrooming_name">സ്കിട്രേ‌യില്‍ (തയ്യാറാക്കിയ വിധം)</string>
     <string name="proxy_pref_title">പ്രോക്സി</string>
     <string name="settings_privacy">സ്വകാര്യത</string>
     <string name="rendering_value__name">സഹജമായ</string>
     <string name="rendering_value_default_name">സഹജമായ</string>
-    <string name="rendering_value_germanRoadAtlas_name">ജര്‍മ്മന്‍ റോഡ് അറ്റ്-ലസ്</string>
     <string name="traffic_warning_railways">റയില്‍വെ ക്രോ‌സിങ്ങ്</string>
     <string name="navigate_point_northing">വടക്കോട്ട് ദര്‍ശനം</string>
     <string name="download_tab_local">പ്രാദേശികം</string>
@@ -1219,7 +1217,6 @@
     <string name="shared_string_my_tracks">"എന്റെ  പാതകള്‍"</string>
     <string name="shared_string_audio">ശബ്ദം</string>
     <string name="shared_string_photo">ഫോട്ടോ</string>
-    <string name="rendering_value_highContrastRoads_name">കൂടിയ നിറവ്യത്യാസമുള്ള റോഡുകള്‍</string>
     <string name="rendering_value_americanRoadAtlas_name">അമേരിക്കന്‍ റോഡ് അറ്റ്-ലസ്</string>
     <string name="rendering_attr_transportStops_name">സ്ടോപ്പുകള്‍ (ട്രാന്‍സ്പോര്‍ട്ട്)</string>
 
@@ -1477,7 +1474,6 @@
     <string name="osn_bug_name">"ഓഎസ്എം കുറിപ്പ് "</string>
     <string name="lang_hsb">സോര്‍ബിയന്‍(അപ്പര്‍)</string>
     <string name="plugin_touringview_name">ടൂറിങ്ങ് ഭൂപടവിന്യാസം</string>
-    <string name="plugin_ski_name">സ്കീ ഭൂപടവിന്യാസം</string>
     <string name="lock_screen_request_explanation">" സ്ക്രീന്‍ ഓഫ് ചെയ്ത് പവര്‍ ഉപയോഗം കുറക്കാന്‍ %1$s ന് ഈ അനുമതി വേണം."</string>
     <string name="none_selected_gpx">ജിപിഎക്സ് ഫയലുകളൊന്നും തെരഞ്ഞെടുത്തിട്ടില്ല. തെരഞ്ഞെടുക്കാനായി ലഭ്യമായ പാതയില്‍ ഞെക്കിപിടിക്കുക.</string>
     <string name="layer_amenity_label">ബിന്ദുവിന്റെ പേരുചീട്ട്</string>

@@ -334,10 +334,7 @@
     <string name="rename_failed">Преименовање није успело.</string>
 	<string name="shared_string_currently_recording_track">Стаза која се тренутно снима</string>
 	<string name="back_to_map">Назад на карту</string>
-    <string name="plugin_ski_descr">Покретање ове измене мења преглед карте на „Зима и скијање“, које приказује у положеном погледу особине предела и зимске услове.
-		\n\nСветска карта приказује сва скијалишта и скијашке стазе у овом прегледу је доступна преузимањем  „Светске скијашке карте“.
-	</string>
-	<string name="shared_string_audio">Звук</string>
+    <string name="shared_string_audio">Звук</string>
 
 
     <string name="location_on_map">Географски положај:\nШирина %1$s↵\nДужина %2$s</string>
@@ -347,8 +344,6 @@
 	<string name="roads_only">Само путеви</string>
     <string name="free">"Слободно %1$s "</string>
 	<string name="device_memory">Складиште уређаја</string>
-    <string name="plugin_ski_name">Преглед скијашке карте</string>
-    <string name="world_ski_missing">Да би се приказивала скијашка карта, нарочита карта за преглед ван мреже треба да се преузме</string>
     <string name="edit_group">Уреди скуп</string>
     <string name="remove_the_tag">УКЛОНИ ОЗНАКУ</string>
     <string name="gps_status">Стање ГПС-а</string>

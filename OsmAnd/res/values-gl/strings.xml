@@ -1503,8 +1503,7 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="rendering_attr_roadStyle_name">Estilo de estrada</string>
     <string name="rendering_value_default_name">Predeterminado</string>
     <string name="rendering_value_orange_name">Laranxa</string>
-    <string name="rendering_value_germanRoadAtlas_name">Atlas de estradas alemáns</string>
-	<string name="traffic_warning_pedestrian">Paso de peóns</string>
+    <string name="traffic_warning_pedestrian">Paso de peóns</string>
 	<string name="show_pedestrian_warnings">Pasos de peóns</string>
     <string name="rendering_value_americanRoadAtlas_name">Atlas de estradas norteamericanos</string>
     <string name="routing_attr_no_new_routing_name">Non seguir as regras de v1.9</string>
@@ -1631,16 +1630,13 @@ Lon %2$s</string>
 	<string name="route_points">Puntos da ruta</string>
 	<string name="track_segments">Segmentos de pista</string>
 	<string name="track_points">Puntos de pista</string>
-	<string name="plugin_ski_name">Vista de mapas de esquí</string>
-	<string name="back_to_map">Volver ao mapa</string>
+    <string name="back_to_map">Volver ao mapa</string>
     <string name="location_on_map">Situación:\n Lat %1$s\n Lon %2$s</string>
 	<string name="watch">Vixiar</string>
 	<string name="notes">Notas</string>
 	<string name="online_map">Mapa na rede</string>
 	<string name="roads_only">Só estradas</string>
-    <string name="rendering_attr_pisteRoutes_name">Pistas de esquí</string>
-	<string name="device_memory">Memoria do dispositivo</string>
-    <string name="world_ski_missing">Para poder mostrar mapas de esquí hai que descargar mapas especiais sen conexión</string>
+    <string name="device_memory">Memoria do dispositivo</string>
     <string name="remove_the_tag">RETIRAR A ETIQUETA</string>
     <string name="gps_status">Estado do GPS</string>
     <string name="rendering_attr_streetLighting_name">Iluminación da rúa</string>
@@ -1651,8 +1647,7 @@ Lon %2$s</string>
 	<string name="navigation_over_track">Comezar a navegación seguindo a pista?</string>
 	<string name="avoid_roads_msg">Pode designar unha ruta alternativa seleccionando as estradas que desexe evitar</string>
 	<string name="rendering_value__name">Predeterminado</string>
-    <string name="rendering_value_highContrastRoads_name">Estradas con contraste alto</string>
-	<string name="traffic_warning_railways">Cruzamento ferroviario</string>
+    <string name="traffic_warning_railways">Cruzamento ferroviario</string>
 	<string name="show_railway_warnings">Cruzamentos ferroviarios</string>
 	<string name="enable_proxy_title">Activar o proxy de HTTP</string>
 	<string name="enable_proxy_descr">Configurar un proxy de HTTP para todas as solicitudes de rede</string>
@@ -1711,7 +1706,6 @@ Lon %2$s</string>
 	<string name="shared_string_logoff">Pechar a sesión</string>
     <string name="rename_failed">Non foi posíbel cambiar o nome.</string>
 	<string name="days_behind">días de atraso</string>
-	<string name="rendering_attr_pisteGrooming_name">Coidado de pistas</string>
     <string name="edit_group">Editar o grupo</string>
     <string name="version_settings_descr">Descargar versións nocturnas</string>
     <string name="version_settings">Construcións (versións)</string>

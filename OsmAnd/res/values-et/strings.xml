@@ -74,8 +74,7 @@
 	<string name="notes">Märkmed</string>
 	<string name="online_map">Online kaart</string>
 	<string name="roads_only">Ainult teed</string>
-    <string name="rendering_attr_pisteRoutes_name">Suusarajad</string>
-	<string name="free">Vaba %1$s</string>
+    <string name="free">Vaba %1$s</string>
 	<string name="device_memory">Seadme mälu</string>
     <string name="edit_group">Grupi muutmine</string>
     <string name="gps_status">GPS staatus</string>

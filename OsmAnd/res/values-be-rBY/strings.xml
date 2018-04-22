@@ -3,8 +3,7 @@
     <string name="rendering_attr_roadStyle_name">Styl aŭtadaroh</string>
     <string name="rendering_value_default_name">Pa zmoŭčańnі</string>
     <string name="rendering_value_orange_name">Aranžavy</string>
-    <string name="rendering_value_germanRoadAtlas_name">Niamieckі atłas aŭtadaroh</string>
-	<string name="traffic_warning_railways">Čyhunačny pierajezd</string>
+    <string name="traffic_warning_railways">Čyhunačny pierajezd</string>
 	<string name="traffic_warning_pedestrian">Piešachodny pierachod</string>
 	<string name="show_railway_warnings">Čyhunačnyja pierajezdy</string>
 	<string name="show_pedestrian_warnings">Piešachodnyja pierachody</string>
@@ -1939,10 +1938,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
 \nDadatkovaje sciahvańnie nie patrabujecca, vyhliad stvarajecca z našych standartnych mapaŭ. 
 \n 
 \nHety vyhliad moža być deaktyvavany tut, abo šliacham zmieny «Styliu mapy» u razdzielie «Nalady mapy» pa žadańni.</string>
-    <string name="plugin_ski_name">Łyžnyja mapy</string>
-	<string name="plugin_ski_descr">Moduĺ dlia OsmAnd daje vam dostup da dadzienych ab harnalyžnych trasach, maršrutach dlia biehavych lyž, aĺpijskich spuskach, funikuliorach i harnalyžnych pad\'jomnikach. Maršruty i spuski adznačany roznymi kolierami ŭ zaliežnasci ad ich skladanasci i namaliavanyja z vykarystanniem admyslovaha «zimovaha» styliu mapy, jaki zakliučajecca ŭ tym, što vykarystoŭvajucca «sniežnyja» koliery zimovaha piejzažu. 
-\n 
-\nU vypadku aktyvacyi hetaha vidu, styĺ mapy mianiajecca na «Winter and ski», pakazvajučy ŭsio detali piejzažu tak, jak jany vyhliadajuć zimoj. Taki (zimovy) vyhliad moža być admienieny aĺbo šliacham deaktyvacyi tut, aĺbo kali vy pamianiajecie «Styĺ mapy» u mieniu «Nalada mapy» na žadany vyhliad.</string>
     <string name="rename_failed">Nie atrymałasia pierajmienavać.</string>
     <string name="days_behind">d. tamu abnaŭlali</string>
     <string name="back_to_map">Viarnucca da mapy</string>
@@ -1951,11 +1946,8 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="notes">Natatkі</string>
     <string name="online_map">Іnternet mapa</string>
     <string name="roads_only">Tolkі darohі</string>
-    <string name="rendering_attr_pisteRoutes_name">Łyžnyja trasy</string>
     <string name="free">Voĺna %1$s</string>
     <string name="device_memory">Pamiać prystasavańnia</string>
-    <string name="rendering_attr_pisteGrooming_name">Dahlad trasy</string>
-    <string name="world_ski_missing">Dla adlustravańnia łyžnych map nieabchodna ściahnuć admysłovyja mapy</string>
     <string name="edit_group">Pravіć hrupu</string>
     <string name="remove_the_tag">Vydalić teh</string>
     <string name="gps_status">Stan GPS</string>
@@ -1970,7 +1962,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="avoid_roads_msg">Vy možacie abrać іnšy maršrut, paznačyŭšy darohі, jakіja varta paźbiahać</string>
     <string name="rendering_attr_roadStyle_description">Styl adlustravańnia daroh</string>
     <string name="rendering_value__name">Pa zmoŭčańnі</string>
-    <string name="rendering_value_highContrastRoads_name">Vysokaja kantrastnaść daroh</string>
     <string name="save_track_to_gpx_globally_headline">Zapіs śledu pa zapatrabavańnі</string>
     <string name="enable_proxy_title">Ukliučyć HTTP-proksi</string>
     <string name="enable_proxy_descr">Naladzić HTTP-proksi dlia ŭsich sietkavych zapytaŭ.</string>

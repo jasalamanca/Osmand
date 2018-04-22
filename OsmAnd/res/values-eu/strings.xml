@@ -1338,8 +1338,7 @@ Lorratza %2$s</string>
     <string name="osm_live_subscription_settings">Harpidetzaren ezarpenak</string>
     <string name="upload_anonymously">Igo anonimo gisa</string>
     <string name="shared_string_widgets">Trepetak</string>
-    <string name="plugin_ski_name">Ski-mapa ikuspegia</string>
-	<string name="shared_string_photo">Argazkia</string>
+    <string name="shared_string_photo">Argazkia</string>
     <string name="route_points">Ibilbideko puntuak</string>
     <string name="shared_string_audio">Audioa</string>
     <string name="access_no_destination">Ez da helburua zehaztu</string>
@@ -1612,8 +1611,6 @@ Lorratza %2$s</string>
     <string name="roads_only">Errepideak besterik ez</string>
     <string name="rendering_attr_roadStyle_name">Errepide estiloa</string>
     <string name="rendering_attr_roadStyle_description">Errepide estiloa</string>
-    <string name="rendering_value_germanRoadAtlas_name">Alemaniako errepide atlasa</string>
-    <string name="rendering_value_highContrastRoads_name">Kontraste handiko errepideak</string>
     <string name="traffic_warning_railways">Trenbide gurutzea</string>
     <string name="show_railway_warnings">Trenbide gurutzeak</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerikako errepide atlasa</string>
@@ -1821,10 +1818,8 @@ Biltegiratzean {3} MB behar dira une batez, {1} MB behin betiko.
     <string name="location_on_map">Kokapena:\n Lat %1$s\n Lon %2$s</string>
     <string name="notes">Oharrak</string>
     <string name="online_map">Sareko mapa</string>
-    <string name="rendering_attr_pisteRoutes_name">Ski pistak</string>
     <string name="free">"%1$s  libre"</string>
     <string name="device_memory">Gailuaren memoria</string>
-    <string name="world_ski_missing">Ski pistak ikusteko, lineaz kanpoko mapa bereziak deskargatu behar dira</string>
     <string name="edit_group">Editatu taldea</string>
     <string name="remove_the_tag">KENDU ETIKETA</string>
     <string name="gps_status">GPSaren egoera</string>
@@ -2030,7 +2025,6 @@ Biltegiratzean {3} MB behar dira une batez, {1} MB behin betiko.
 \nGrabatutako lorratzak lagunekin partekatu ditzakezu edo OSM kontribuzio gisa erabili. Kirolariek entrenamenduak grabatzeko erabili dezakete. Lorratzen oinarrizko analisi bat egin daiteke zuzenean OsmAnd erabiliz, bueltako denbora, batezbesteko abiadura, eta abar. eta jakina lorratzak kanpo tresna bereziekin aztertu daitezke ere.</string>
     <string name="plugin_install_needs_network">Internet konexio bat behar duzu gehigarri hau instalatzeko.</string>
     <string name="plugins_menu_group">Gehigarriak</string>
-    <string name="rendering_attr_pisteGrooming_name">Pisten prestaketa</string>
     <string name="navigate_point_northing">Iparrera</string>
     <string name="navigate_point_easting">Ekialdera</string>
     <string name="osmo_auth_error_short">Egiaztaketak huts egin du</string>
@@ -2160,10 +2154,7 @@ mapak eta nabigazioa</string>
 \n
 \nIkuspegi hemen desgaitu daiteke atzera edo \'Konfiguratu mapa\' menuan \'Maparen estiloa\' aukeratuz.</string>
     <string name="fav_point_emoticons_message">Gogoko puntuaren izena aldatu da eta orain %1$s da irriabartxoak dituen katea fitxategira gorde ahal izateko.</string>
-    <string name="plugin_ski_descr">Gehigarri honek zure eskura jartzen ditu mundu osoko eskiatzeko aldapak, fondoko eski zirkuituak, trabesiako eski ibilbideak, teleferikoak, eta abar. Ibilbideak eta pistak zailtasunaren arabera koloreztatu dira, eta elurtutako paisaiaren itxura duen \'Negu\' estiloko mapa batean adierazten dira.
-\n
-\nHau aktibatzean ikuspegia \'Negua eta eskia\' estilora aldatzen da, paisaia neguko egoeran bistaratuz. Hau atzera aldatu daiteke gehigarri hau desgaituz eta \'Konfiguratu mapa\' menuko \'Mapa estiloa\' aldatuz.</string>
-    
+
     <string name="rendering_attr_hideOverground_name">Lur gaineko objektuak</string>
 
     <string name="no_update_info_desc">Ez egiaztatu bertsio berriak edo OsmAndekin erlazioa duten deskontuak.</string>

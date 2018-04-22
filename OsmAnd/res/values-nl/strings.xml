@@ -1508,7 +1508,6 @@ Wilt u verder gaan met een nieuwe registratie?</string>
     <string name="rendering_attr_roadStyle_name">Weergave van wegen</string>
     <string name="rendering_value_default_name">Standaard</string>
     <string name="rendering_value_orange_name">Oranje</string>
-    <string name="rendering_value_germanRoadAtlas_name">Duitse wegenkaart</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerikaanse wegenkaart</string>
     <string name="routing_attr_no_new_routing_name">Gebruik v1.9-routeberekening niet</string>
     <string name="routing_attr_no_new_routing_description">Gebruik de routeregels van vóór versie 1.9</string>
@@ -1543,11 +1542,8 @@ Wilt u verder gaan met een nieuwe registratie?</string>
 	
 <string name="edit_group">Bewerk groep</string>
     <string name="plugin_install_needs_network">Om deze plugin te installeren is een internetverbinding nodig.</string>
-    <string name="world_ski_missing">Om skikaarten te kunnen gebruiken, moet u de speciale offline skikaart downloaden</string>
     <string name="get_plugin">Installeren</string>
 	<string name="watch">Bekijk</string>
-	<string name="rendering_attr_pisteRoutes_name">Ski-pistes</string>
-	<string name="rendering_attr_pisteGrooming_name">Piste verzorging</string>
     <string name="track_segments">GPX-track-segmenten</string>
 	<string name="track_points">GPX-track-punten</string>
 	<string name="plugin_touringview_name">Touring-kaartweergave</string>
@@ -1562,13 +1558,9 @@ Wilt u verder gaan met een nieuwe registratie?</string>
 \nEen speciale kaart downloaden is niet nodig; de weergave wordt gecreëerd van de gewone kaartgegevens.
 \n
 \nDeze weergave kan worden aan- en uitgezet door het kiezen van \'Touring-weergave (meer contrast en detail)\' onder \'Kaart instellen\' en dan \'Kaartstijl\'. "</string>
-    <string name="plugin_ski_name">Ski kaartweergave</string>
-	<string name="plugin_ski_descr">"Toon gedetailleerde informatie over slalompistes, langlaufroutes, alpine ski routes, kabelbanen en skiliften wereldwijd. Routes en pistes worden getoond in een kleurcode naar moeilijkheidsgraad, en afgebeeld in een speciale \'Winter en ski\' kaartstijl die lijkt op een besneeuwd winterlandschap.
-\n
-\nHet activeren van deze weergave verandert de kaartstijl in \'Winter en ski\', met alle kenmerken van het landschap onder winterse omstandigheden. Deze weergave kan worden teruggezet door het de-activeren van de plugin, of door het veranderen van de \'Kaart stijl\' onder \'Kaart Instellen\'. "</string>
-	
-	
-	<string name="rename_failed">Hernoemen mislukt.</string>
+
+
+    <string name="rename_failed">Hernoemen mislukt.</string>
 	<string name="back_to_map">Terug naar kaart</string>
 
     <string name="location_on_map">Locatie:\n Lat %1$s\n Lon %2$s</string>
@@ -1712,8 +1704,7 @@ Lengtegraad:\t\t%2$s</string>
     <string name="storage_directory">Opslag van de kaart</string>
     <string name="shared_string_copy">Kopiëren</string>
     <string name="rendering_value__name">Standaard</string>
-    <string name="rendering_value_highContrastRoads_name">Wegen met hoog contrast</string>
-	<string name="index_name_netherlands">Europa - Nederland</string>
+    <string name="index_name_netherlands">Europa - Nederland</string>
 	
 	<string name="routing_attr_avoid_borders_description">Vermijd het oversteken van landsgrenzen</string>
 	<string name="routing_attr_height_name">Hoogte van het voertuig</string>

@@ -1500,7 +1500,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="rendering_attr_roadStyle_name">Istile disinnu de sas istradas</string>
     <string name="rendering_value_default_name">Predefinidu</string>
     <string name="rendering_value_orange_name">Arantzu</string>
-    <string name="rendering_value_germanRoadAtlas_name">Atlante de sas istradas tedescas</string>
     <string name="rendering_value_americanRoadAtlas_name">Atlante de sas istradas americanas</string>
     <string name="routing_attr_no_new_routing_name">No impreare su càlculu de s’àndala v1.9</string>
     <string name="routing_attr_no_new_routing_description">No impreare su càlculu de s’àndala v1.9.</string>
@@ -1541,12 +1540,8 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="shared_string_disable">Disabìlita</string>
     <string name="plugin_install_needs_network">Est netzessària sa connessione a ìnternet pro installare custa estensione.</string>
     <string name="get_plugin">Iscàrriga</string>
-    <string name="world_ski_missing">Pro bìdere sas mapas ispetziales pro s’iscì, depent èssere iscarrigadas</string>
-    <string name="plugin_ski_name">Vista mapa iscì</string>
-    <string name="rendering_attr_pisteGrooming_name">Pista abbatigada</string>
     <string name="free">Lìbera %1$s</string>
     <string name="device_memory">Memòria dispositivu</string>
-    <string name="rendering_attr_pisteRoutes_name">Pistas de iscì</string>
     <string name="roads_only">Istradas ebbia</string>
     <string name="watch">Relògiu</string>
     <string name="notes">Notas</string>
@@ -1556,10 +1551,7 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="shared_string_audio">Àudio</string>
 
 
-    <string name="plugin_ski_descr">Custa estensione pro OsmAnd ti frunit sas minujas de sas pistas de iscì, de fundu, alpinas e de àtera casta, de sas funivias e de sas isciovias. Sas camineras e sas pistas sunt coloradas pro dificultade, e ammustradas in unu istile de mapa particulare, \'Ierru\', chi s\'assimigiat a unu paesaggiu coloradu dae sa neve de s\'ierru.
-\n
-\nAlluende custa vista s’istile mapa at a divènnere \'Ierru e iscì\', ammustrende totu sas caraterìsticas de s’iscenàriu in sas cunditziones de s’ierru. Custa vista podet èssere furriada istudende·la inoghe torra o cambiende s’\'Istile mapa\' in \'Cunfigura mapa\'.</string>
-	<string name="plugin_touringview_descr">Alluende custa vista s’istile de sa mapa at a colare a \'Vista turìstica\', una vista fata a sa minuda pro turistas, biagiatores e autistas professionistas. 
+    <string name="plugin_touringview_descr">Alluende custa vista s’istile de sa mapa at a colare a \'Vista turìstica\', una vista fata a sa minuda pro turistas, biagiatores e autistas professionistas.
 \n 
 \nCusta vista frunit, pro cada livellu de ismanniamentu (zoom), su màssimu de sas minujas de biàgiu disponìbiles in sos datos de sa mapa (in particulare minujas de de sas istradas e de sas àndalas e sinnos de orientamentu). 
 \n 
@@ -1646,7 +1638,6 @@ Lon %2$s</string>
     <string name="application_dir_change_warning3">Boles chi OsmAnd copiet in sa destinatzione noa fintzas sos documentos de sos datos suos?</string>
     <string name="storage_directory_internal_app">Memòria interna de s\'aplicu</string>
     <string name="rendering_value__name">Predefinidu</string>
-    <string name="rendering_value_highContrastRoads_name">Istradas a cuntrastu artu</string>
     <string name="storage_directory_multiuser">Memòria multi-impreadore</string>
     <string name="storage_directory">Memòria de sas mapas</string>
     <string name="rendering_attr_hideHouseNumbers_name">Nùmeros de sas domos</string>

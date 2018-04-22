@@ -199,9 +199,7 @@ public class FileNameTranslationHelper {
 	}
 
 	public static String getStandardMapName(Context ctx, String basename) {
-		if (basename.equals("world-ski")) {
-			return ctx.getString(R.string.index_item_world_ski);
-		} else if (basename.equals("world_altitude_correction_ww15mgh")) {
+		if (basename.equals("world_altitude_correction_ww15mgh")) {
 			return ctx.getString(R.string.index_item_world_altitude_correction);
 		} else if (basename.equals("world_basemap")) {
 			return ctx.getString(R.string.index_item_world_basemap);

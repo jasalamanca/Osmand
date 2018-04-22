@@ -992,7 +992,6 @@
     <string name="select_map_markers">Markěrowanja wubrać</string>
     <string name="map_markers">Chorhojčki</string>
     <string name="confirm_usage_speed_cameras">We wjele krajach (Němskej, Francoskej, Italskej a druhich) njeje wužiwanje před błyšćakami warnowacych srědkow dowolene. OsmAnd nima žanu zamołwitosć, jeli přestupujeće zakoń. Prošu přihłosujće jenož, hdyž je wužiwanje tuteje funkcije dowolene.</string>
-    <string name="rendering_value_germanRoadAtlas_name">Němski dróhowy atlas</string>
     <string name="rendering_category_hide">Schować</string>
     <string name="configure_map">Napohlad karty</string>
     <string name="context_menu_item_directions_to">Směry do</string>
@@ -1158,7 +1157,6 @@
     <string name="rendering_attr_roadStyle_description">Stil pućow</string>
     <string name="rendering_value__name">Standard</string>
     <string name="rendering_value_default_name">Standard</string>
-    <string name="rendering_value_highContrastRoads_name">Wysoki kontrast za puće</string>
     <string name="traffic_warning_railways">Železniski přechod</string>
     <string name="show_railway_warnings">Železniske přechody</string>
     <string name="show_pedestrian_warnings">Přechody za pěškow</string>

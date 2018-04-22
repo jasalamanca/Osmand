@@ -1378,7 +1378,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="rendering_attr_roadStyle_name">Estil de via</string>
     <string name="rendering_value_default_name">Per defecte</string>
     <string name="rendering_value_orange_name">Taronja</string>
-    <string name="rendering_value_germanRoadAtlas_name">Atles de carreteres alemany</string>
     <string name="traffic_warning_railways">Pas a nivell</string>
     <string name="traffic_warning_pedestrian">Pas de vianants</string>
     <string name="show_railway_warnings">Passos a nivell</string>
@@ -1411,11 +1410,8 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="plugin_description_title">Descripció</string>
     <string name="edit_group">Edició del grup</string>
     <string name="plugin_install_needs_network">Us cal una connexió a internet per instal·lar aquest connector.</string>
-    <string name="plugin_ski_name">Vista mapa d\'esquí</string>
-    <string name="world_ski_missing">Per veure les pistes d\'esquí cal que baixeu un mapa específic</string>
     <string name="shared_string_enable">Activa</string>
     <string name="shared_string_disable">Desactiva</string>
-    <string name="rendering_attr_pisteGrooming_name">Pista condicionada</string>
     <string name="get_plugin">Obteniu</string>
     <string name="free">%1$s disponible</string>
     <string name="device_memory">Memòria del dispositiu</string>
@@ -1481,7 +1477,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="rename_failed">No s\'ha pogut canviar el nom.</string>
     <string name="back_to_map">Torna al mapa</string>
     <string name="location_on_map">Posició:\n Lat %1$s\n Lon %2$s</string>
-    <string name="rendering_attr_pisteRoutes_name">Pistes d\'esquí</string>
     <string name="shared_string_release">Alliberat</string>
     <string name="shared_string_message">Missatge</string>
     <string name="agps_data_last_downloaded">Darreres dades A-GPS baixades: %1$s</string>
@@ -1490,9 +1485,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="shared_string_show_description">Mostra la descripció.</string>
     <string name="shared_string_do_not_use">No utilitzeu</string>
     <string name="shared_string_address">Adreça</string>
-    <string name="plugin_ski_descr">Aquest connector per l\'OsmAnd us proporciona els detalls de les pistes d\'esquí en baixada, de travessa i alpí així com de telefèrics i remuntadors a tot el món. Les rutes i pistes es mostren amb el codi de colors que els correspon segons la seva dificultat i amb un estil de mapa especial «Hivern» que s\'associa a un paisatge nevat.
-\n 
-\nEn activar aquests canvis de visualització l\'estil del mapa canvia a «Hivern i esquí», i es mostren totes les característiques del paisatge a l\'hivern. Aquesta vista es pot revertir tant en activar-la altra cop com en canviar-la a «Estil del mapa» dins «Configuració del mapa».</string>
     <string name="rendering_attr_OSMMapperAssistant_name">Assistent cartogràfic per OSM</string>
     <string name="shared_string_manage">Gestiona</string>
     <string name="shared_string_edit">Edita</string>
@@ -1502,7 +1494,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="search_poi_category_hint">Escriviu per cercar-ho tot</string>
     <string name="index_name_netherlands">Europa - Països Baixos</string>
     <string name="rendering_value__name">Per defecte</string>
-    <string name="rendering_value_highContrastRoads_name">Vies més contrastades</string>
     <string name="application_dir_change_warning3">Voleu que l\'OsmAnd també copiï els seus fitxers de dades a la nova destinació?</string>
     <string name="specified_directiory_not_writeable">Creació de mapes al directori indicat fallida</string>
     <string name="copying_osmand_file_failed">Error en copiar fitxers</string>

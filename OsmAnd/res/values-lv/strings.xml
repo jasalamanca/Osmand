@@ -1109,79 +1109,8 @@
 ……… * Nospiediet uz mērlineāla, lai izvēlētos citas darbības.</string>
 
     <string name="osb_author_dialog_password">OSM parole (optionāla)</string>
-	
-	<string name="osmand_plus_extended_description_4000_chars">"
-OsmAnd (OSM Automated Navigation Directions) ir kartes un navigācijas aplikācija ar brīvi pieejamām vispasaules, augstas kvalitātes OpenStreetMap (OSM) kartēm. Visus karšu datus ir iespējams saglabāt ierīces atmiņas kartē offline (bez interneta pieslēguma) lietošanai. Ar jūsu ierīces GPS uztvērēja palīdzibu, OsmAnd piedāvā maršrutēšanu ar vizuālo un balss vadību automašīnai, velobraucējiem un gājējiem. Visas galvenās funkcijas darbojas ar vai bez interneta pieslēguma.
- 
-Dažas no galvenajām iespējām: 
-
-Navigācija:
- - Darbojas tiešsaistē (ātri) vai bezsaistē (nevajag izmantot viesabonēšanu, esot ārzemēs) -
- -  Pagrieziens-pēc-pagrieziena balss vadība (ierakstītas vai sintizētas balsis)
- - Optionāli ceļa joslu vadība, ielas nosaukumu rādīšana un aprēķinātais laiks galapunkta sasniegšanai
- - Ceļapunktu ievietošana maršrutā 
- - Automātiski pārrēķina ceļu pēc novirzīšanās no maršruta
- - Meklē vietas pēc adreses, veida (benzīntanki, kafejnīcas, viesnīcas, muzeji u.t.t.) vai pēc koordinātām
-
- Kartes skats:
- - Rāda jūsu pozīciju un virzienu uz kartes
- - Optionāli pieskaņo karti kompasam vai kustības virzienam
- - Saglabājiet izlasē izvēlētās vietas uz kartes
- - Rāda POIs (point of interests) jums apkārt
- - Iespējams attēlot tiešsaistes bilžu kartes
- - Iespējams attēlot satelīta skatu (no Bing)
- - Iespējams attēlot vairākus kartes slāņus, kā piemēram, tūrisma/navigācijas GPX ceļus un papildus kartes ar regulējamu caurspīdīgumu
- - Optionāli rāda vietu nosaukumus angliski, vietējā valodā vai fonētiski izrunātus
-
- OpenStreetMap un wikipedia vietnes:
-  - Augstas kvalitātes informācija no labākajiem visas pasaules kopīgi veidotajiem projektiem
-  - OpenStreetMap kartes pieejamas pēc valsts vai reģiona
-  - Vikipēdijas POIs un vietu apskate (nav pieejama bezmaksas versijā) 
-  - Neierobežota lejupielāde no aplikācijas par brīvu (bezmaksas versijai ierobežojums 16 kartes)
-  - Vienmēr jaunākās kartes (atjauninājumi vismaz reizi mēnesī)
-  - Kompaktas bezsaistes vektora kartes
-  - Pilnās kartes vai tikai ceļi (piemēram visa Japāna 700MB vai tikai ceļi 200MB)
-  - Tiešsaistes kartes vai saglabātas bilžu kartes
-
- Droša braukšana:
-  - Pēc izvēles automātisks dienas/nakts režīms
-  - Pēc izvēles ātruma limita rādīšana ar brīdinājumu, pārsniedzot ātrumu
-  - Pēc izvēles, no ātruma atkarīga kartes mērogošana
-  - Dalīties ar atrašanās vietu, lai jūsu draugi var jūs atrast
-
- Velobraucēji un kājāmgājēji: 
- - Kartes veidi ietver pastaigas, velobraucēju un slēpošanas celiņus, ideāli visa veida aktivitātēm
- - Maršrutēšana un kartes attēlošana īpaši vielobraucējiem un kājāmgājējiem
- - Pēc izvēles publiskā transporta pieturas vietas, ieskaitot nosaukumus
- - Pēc izvēles ceļojuma ierakstīšana gpx failā vai caur internetu
- - Pēc izvēles ātruma un augstuma attēlošana
- - Kontūrlīniju un kalnu reljefa attēlošana (ar papildus spraudni)
-
- Tieša saziņa ar OpenStreetMap:
- - Ziņošana par kartes nepilnībām - GPX ceļu nosūtīšana OSM vietnei caur aplikāciju
- - Jaunu POI izveidošana un nosūtīšana OSM
- - Pēc izvēles ceļojuma ierakstīšana fonā (kamēr ierīce ir miega režīmā)
 
 
- OsmAnd ir atvērtā koda aplikācija un nepārtraukti tiek attīstīta. Ikviens var piedalīties, ziņojot par kļūdām, uzlabojot valodu tulkojumus vai kodējot jaunas iespējas. Projekts nepārtraukti tiek uzlabots, tiešā veidā aktīvi sadarbojoties lietotājiem ar izstrādātājiem. Tāpat projekts ir atkarīgs no finansēm, kas nepieciešamas aplikācijas izstrādei, kodēšanai un jaunu funkciju testēšanai. Noperkot OsmAnd+ jūs palīdzēsiet aplikācijai kļūt pilnvērtīgākai! Jūs varat arī finansiāli atbalstot atsevišķas jaunas iespējas vai veikt ziedojumu kopīgajam projektam osmand.net interneta vietnē. 
-
-Aptuvenais kartes pārklājums un kvalitāte:
- - Rietumeiropa: ****
- - Austrumeiropa: ***
- - Krievija: ***
- - Ziemeļamerika: ***
- - Dienvidamerika: **
- - Āzija: **
- - Japāna &amp; Koreja: ***
- - Tuvie Austrumi: **
- - Āfrika **
- - Antarktīda: *
-
- Valstu saraksts, kuras tiek atbalstītas (gandrīz visa pasaule!):
- Afghanistan, Albania, Algeria, Andorra, Angola, Anguilla, Antigua and Barbuda, Argentina, Armenia, Aruba, Australia, Austria, Azerbaijan, Bahamas, Bahrain, Bangladesh, Barbados, Belarus, Belgium, Belize, Benin, Bermuda, Bhutan, Bolivia, Bonaire, Bosnia and Herzegovina, Botswana, Brazil, British Virgin Islands, Brunei, Bulgaria, Burkina Faso, Burundi, Cambodia, Cameroon, Canada, Cape Verde, Central African Republic, Chad, Chile, China, Colombia, Comoros, Congo, Costa Rica, Ivory Coast, Croatia, Cuba, Curaçao, Cyprus, Czech Republic, Denmark, Djibouti, Dominica, Dominican Republic, Ecuador, Egypt, El Salvador, Equatorial Guinea, Eritrea, Estonia, Ethiopia, Fiji, Finland, France, French Guiana, French Polynesia, Gabon, Gambia, Georgia, Germany, Ghana, Gibraltar, Greece, Greenland, Grenada, Guadeloupe, Guam, Guatemala, Guernsey, Guinea, Guinea-Bissau, Guyana, Haiti, Vatican, Honduras, Hong Kong, Hungary, Iceland, India, Indonesia, Iran, Iraq, Ireland, Isle of Man, Israel, Italy, Jamaica, Japan, Jersey, Jordan, Kazakhstan, Kenya, Kiribati, North Korea and South Korea, Kuwait, Kyrgyzstan, Laos, Latvia, Lebanon, Lesotho, Liberia, Libya, Liechtenstein, Lithuania, Luxembourg, Macao, Macedonia, Madagascar, Malawi, Malaysia, Maldives, Mali, Malta, Martinique, Mauritania, Mauritius, Mayotte, Mexico, Micronesia, Moldova, Monaco, Mongolia, Montenegro, Montserrat, Morocco, Mozambique, Myanmar, Namibia, Nauru, Nepal, Netherlands, Netherlands Antilles, New Caledonia, New Zealand, Nicaragua, Niger, Nigeria, Norway, Oman, Pakistan, Palau, Palestinian Territory, Panama, Papua New Guinea, Paraguay, Peru, Philippines, Poland, Portugal, Puerto Rico, Qatar, Romania, Russia, Rwanda, Saint Barthelemy, Saint Helena, Saint Kitts and Nevis, Saint Lucia, Saint Martin, Saint Pierre and Miquelon, Saint Vincent and the Grenadines, Samoa, San Marino, Saudi Arabia, Senegal, Serbia, Seychelles, Sierra Leone, Singapore, Slovakia, Slovenia, Somalia, South Africa, South Georgia, South Sudan, Spain, Sri Lanka, Sudan, Suriname, Swaziland, Sweden, Switzerland, Syria, Taiwan, Tajikistan, Tanzania, Thailand, Timor-Leste, Togo, Tokelau, Tonga, Trinidad and Tobago, Tunisia, Turkey, Turkmenistan, Tuvalu, Uganda, Ukraine, United Arab Emirates, United Kingdom (UK), United States of America (USA), Uruguay, Uzbekistan, Vanuatu, Venezuela, Vietnam, Wallis and Futuna, Western Sahara, Yemen, Zambia, Zimbabwe.
- "</string>
-	
-    
     <string name="speech_rate_descr">TTS (runas robots) balss ātrums</string>
     <string name="speech_rate">Vārdu ātrums</string>
     
@@ -1507,8 +1436,7 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     
     <string name="rendering_value_default_name">Pēc noklusējuma</string>
     <string name="rendering_value_orange_name">Oranžs</string>
-    <string name="rendering_value_germanRoadAtlas_name">Vāciešu ceļa karte</string>
-	<string name="traffic_warning_railways">Dzelzceļa pāreja</string>
+    <string name="traffic_warning_railways">Dzelzceļa pāreja</string>
 	<string name="traffic_warning_pedestrian">Gājēju pāreja</string>
 	<string name="show_railway_warnings">Dzelzceļa pārejas</string>
 	<string name="show_pedestrian_warnings">Gājēju pārejas</string>
@@ -1645,8 +1573,7 @@ Vai gribat veikt jaunu reģistrāciju?</string>
 	<string name="track_segments">Treka segmenti</string>
 	<string name="track_points">Treka punkti</string>
 	<string name="plugin_touringview_name">Tūrisma karte</string>
-    <string name="plugin_ski_name">Slēpošanas kartes</string>
-	<string name="rename_failed">Neizdevās mainīt nosaukumu.</string>
+    <string name="rename_failed">Neizdevās mainīt nosaukumu.</string>
 	<string name="days_behind">dienas pēc</string>
 	<string name="back_to_map">Atpakaļ kartē</string>
     <string name="location_on_map">Atrašanās vieta:\n Lat %1$s\n Lon %2$s</string>
@@ -1656,7 +1583,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
 	<string name="roads_only">Tikai ceļus</string>
     <string name="free">"Brīvi %1$s "</string>
 	<string name="device_memory">Ierīces atmiņa</string>
-    <string name="world_ski_missing">Lai varētu parādīt slēpošanas kartes, vispirms ir jālejupielādē īpaša karte bezsaistes lietošanai</string>
     <string name="edit_group">Labot grupu</string>
     <string name="remove_the_tag">Dzēst atzīmi</string>
     <string name="gps_status">GPS statuss</string>
@@ -1702,7 +1628,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="plugin_description_title">Apraksts</string>
 	<string name="plugin_install_needs_network">Lai instalētu spraudni, ir vajadzīgs interneta savienojums.</string>
 	<string name="get_plugin">Iegūt</string>
-<string name="rendering_attr_pisteGrooming_name">Sniega tīrīšana</string>
     <string name="application_dir_change_warning3">Vai kopēt OsmAnd datu failus uz jauno vietu?</string>
     <string name="specified_directiory_not_writeable">Norādītajā mapē nevar izveidot kartes</string>
 	<string name="copying_osmand_file_failed">Neizdevās nokopēt failus</string>    
@@ -1749,8 +1674,7 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="shared_string_logoff">Izlogoties</string>
     <string name="shared_string_address">Adrese</string>
 	<string name="rendering_value__name">Pēc noklusējuma</string>
-    <string name="rendering_value_highContrastRoads_name">Kontrastaināki ceļi</string>
-	<string name="plugin_settings">Spraudņi</string>
+    <string name="plugin_settings">Spraudņi</string>
 	<string name="rendering_attr_currentTrackColor_name">GPX krāsa</string>
     <string name="rendering_value_red_name">Sarkans</string>
     <string name="rendering_value_yellow_name">Dzeltens</string>
@@ -1979,7 +1903,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="rendering_value_walkingRoutesScopeOSMC_name">Krāsas pēc infrastruktūras veida</string>
     <string name="rendering_value_walkingRoutesOSMC_name">Krāsas pēc OSMC simbola</string>
     <string name="osmo_share_my_location">Sūtīt manu atrašanās vietu</string>
-    <string name="rendering_attr_pisteRoutes_name">Slēpošanas trases</string>
     <string name="rendering_attr_roadStyle_description">Stila veidi</string>
     <string name="routing_attr_avoid_stairs_name">Izvairīties no kāpnēm</string>
     <string name="routing_attr_avoid_stairs_description">Izvairīties no kāpnēm</string>
@@ -2186,9 +2109,6 @@ failu(s)?
 \n • Pārstrādāta karšu datu lejupielādes struktūra un interfeiss
 \n
 \nun vēl... "</string>
-    <string name="plugin_ski_descr">"Šis OsmAnd spraudnis ļauj piekļūt datiem par slēpošanas trasēm un maršrutiem, trošu vagoniem un pacēlājiem. Maršruti un trases tiek rādīti pēc krāsām, atkarībā no grūtības pakāpes un tiek attēlotas īpašā \"ziemas\" kartes stilā.
-\n
-\nAktivizējot spraudni, kartes stils tiek nomainīts uz \"Ziema un slēpošana,\" attēlojot visus ainavas elementus ziemas apstākļiem atbilstošus. Deaktivizēt spraudni var vai nu šeit vai nomainot kartes stilu kartes uzstādījumos. "</string>
     <string name="move_marker_bottom_sheet_title">Velciet karti, lai pārvietotu marķieri</string>
     <!-- string name="lat_lon_pattern">Plat: %1$.5f Gar: %2$.5f</string -->
     <string name="follow_us">Sekojiet mums</string>

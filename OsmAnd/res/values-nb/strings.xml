@@ -1043,7 +1043,6 @@
     <string name="rendering_attr_roadStyle_name">Veistil</string>
     <string name="rendering_value_default_name">Standard</string>
     <string name="rendering_value_orange_name">Orange</string>
-    <string name="rendering_value_germanRoadAtlas_name">Tysk veiatlas</string>
     <string name="traffic_warning_railways">Jernbaneovergang</string>
     <string name="traffic_warning_pedestrian">Fotgjengerovergang</string>
     <string name="show_railway_warnings">Jernbaneoverganger</string>
@@ -1075,7 +1074,6 @@
     <string name="map_overlay">Overleggskart</string>
     <string name="map_overlay_descr">Velg overleggskartet.</string>
     <string name="osm_settings">OSM-redigering</string>
-    <string name="plugin_ski_name">Skikartvisning</string>
     <string name="osmand_accessibility_description">Dette programtillegget gjør enhetens tilgjengelighetsfunksjoner tilgjengelige direkte i OsmAnd. Det muliggjør f.eks justering av talehastigheten for TTS-tale, innstilling av styrekors-skjermnavigering ved hjelp av en styrekule for zoomkontroll, eller bruke tekst-til-tale-tilbakemelding, f.eks auto-annonsering av din posisjon.</string>
     <string name="rename_failed">Navneendring feilet.</string>
 
@@ -1232,9 +1230,7 @@
     <string name="drawer">Flat liste</string>
     <string name="shared_string_export">Eksporter</string>
     <string name="shared_string_collapse">Fold sammen</string>
-    <string name="rendering_attr_pisteRoutes_name">Skibakker</string>
-    <string name="rendering_attr_pisteGrooming_name">Løypepreparering</string>
-    
+
     <string name="routing_attr_avoid_borders_description">Unngå å krysse grensen til et annet land.</string>
     <string name="shared_string_import2osmand">Importer til OsmAnd</string>
     <string name="read_full_article">Les hele artikkelen (på nett)</string>
@@ -1289,7 +1285,6 @@
     <string name="restart_is_required">For å fullt ut bruke endringene er en manuell omstart av programmet nødvendig.</string>
     <string name="plugin_touringview_name">Turkartvisning</string>
     <string name="rendering_value__name">Standard</string>
-    <string name="rendering_value_highContrastRoads_name">Veier med høy kontrast</string>
     <string name="rendering_value_red_name">Rød</string>
     <string name="rendering_value_translucent_orange_name">Gjennomskinnelig orange</string>
     <string name="traffic_warning_hazard">Fare</string>
@@ -1625,7 +1620,6 @@
     
     <string name="share_history_subject">delt via OsmAnd</string>
     <string name="rendering_attr_horseRoutes_name">Hesteruter</string>
-    <string name="world_ski_missing">For å vise skikart må det spesielle offline-kartet lastes ned</string>
     <string name="route_stops_before">%1$s stopp før</string>
     <string name="coords_search">Koordinatsøk</string>
     <string name="advanced_coords_search">Avansert koordinatsøk</string>

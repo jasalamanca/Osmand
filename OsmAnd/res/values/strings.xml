@@ -989,10 +989,6 @@
 		\n\nA special map download is not needed, the view is created from our standard maps.
 		\n\nThis view can be reverted by either de-activating it again here, or by changing the \'Map style\' under \'Configure map\' as desired.
 	</string>
-    <string name="plugin_ski_name">Ski map view</string>
-    <string name="plugin_ski_descr">This plugin for OsmAnd puts at your fingertips details of global downhill ski slopes, cross country ski runs, Alpine ski routes, cable cars and ski lifts. Routes and pistes are shown color-coded by difficulty, and depicted in a special \'Winter\' map style which assimilates a snow-colored winter landscape.
-		\n\nActivating this view changes the map style to \'Winter and ski\', showing all landscape features under wintry conditions. This view can be reverted by either de-activating it again here, or by changing the \'Map style\' under \'Configure map\' as desired.
-	</string>
     <string name="osmand_distance_planning_plugin_name">Distance calculator &amp; planning tool</string>
     <string name="osmand_distance_planning_plugin_description">This plugin provides a map screen widget allowing to create paths by tapping on the map, or use or modify existing GPX files, to plan a trip and measure the distance between points. The results can be saved as a GPX file, which can later be used for guidance.</string>
     <string name="shared_string_accessibility">Accessibility</string>
@@ -1009,11 +1005,8 @@
     <string name="notes">Notes</string>
     <string name="online_map">Online map</string>
     <string name="roads_only">Roads only</string>
-    <string name="rendering_attr_pisteRoutes_name">Ski slopes</string>
     <string name="free">Free %1$s </string>
     <string name="device_memory">Device memory</string>
-    <string name="rendering_attr_pisteGrooming_name">Piste grooming</string>
-    <string name="world_ski_missing">In order to display ski maps, the special offline map needs to be downloaded</string>
     <string name="edit_group">Edit group</string>
     <string name="remove_the_tag">REMOVE THE TAG</string>
     <string name="gps_status">GPS status</string>
@@ -1031,8 +1024,6 @@
     <string name="rendering_attr_roadStyle_description">Road style</string>
     <string name="rendering_value__name">Default</string>
     <string name="rendering_value_default_name">Default</string>
-    <string name="rendering_value_germanRoadAtlas_name">German road atlas</string>
-    <string name="rendering_value_highContrastRoads_name">High contrast roads</string>
     <string name="traffic_warning_railways">Railroad crossing</string>
     <string name="traffic_warning_pedestrian">Pedestrian crosswalk</string>
     <string name="show_railway_warnings">Railroad crossings</string>
@@ -1651,22 +1642,7 @@
         • Upload GPX tracks to OSM directly from the app
         • Add POIs and directly upload them to OSM (or later if offline)
     </string>
-    <string name="osmand_extended_description_part8">
-        OsmAnd is open-source and actively being developed. Everyone can contribute to the application by reporting bugs, improving translations or coding new features. The project is in a lively state of continuous improvement by all these forms of developer and user interaction. The project progress also relies on financial contributions to fund coding and testing of new functionalities.
-        Approximate map coverage and quality:
-        • Western Europe: ****
-        • Eastern Europe: ***
-        • Russia: ***
-        • North America: ***
-        • South America: **
-        • Asia: **
-        • Japan &amp; Korea: ***
-        • Middle East: **
-        • Africa: **
-        • Antarctica: *
-        Most countries around the globe are available for download!
-        Get a reliable navigator in your country - be it France, Germany, Mexico, UK, Spain, Netherlands, USA, Russia, Brazil or any other.
-    </string>
+    <string name="osmand_extended_description_part8">OsmAnd is open-source and actively being developed. Everyone can contribute to the application by reporting bugs, improving translations or coding new features. The project is in a lively state of continuous improvement by all these forms of developer and user interaction. The project progress also relies on financial contributions to fund coding and testing of new functionalities. Approximate map coverage and quality: • Western Europe: **** • Eastern Europe: *** • Russia: *** • North America: *** • South America: ** • Asia: ** • Japan &amp; Korea: *** • Middle East: ** • Africa: ** • Antarctica: * Most countries around the globe are available for download! Get a reliable navigator in your country - be it France, Germany, Mexico, UK, Spain, Netherlands, USA, Russia, Brazil or any other.</string>
     <string name="osmand_plus_short_description_80_chars">Global Mobile Map Viewing &amp; Navigation for Offline and Online OSM Maps</string>
     <string name="osmand_plus_extended_description_part1">
         OsmAnd+ (OSM Automated Navigation Directions) is a map and navigation application with access to the free, worldwide, and high-quality OpenStreetMap (OSM) data.

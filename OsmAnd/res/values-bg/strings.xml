@@ -1279,7 +1279,6 @@
     <string name="rendering_attr_streetLighting_name">Улично осветление</string>
     <string name="osmo_activity">Наблюдение на OpenStreetMap</string>
     <string name="rendering_attr_roadStyle_name">Оцветяване на пътищата</string>
-    <string name="rendering_value_germanRoadAtlas_name">Германски стил</string>
     <string name="rendering_value_americanRoadAtlas_name">Американски стил</string>
     <string name="rendering_value_orange_name">оранжев</string>
 
@@ -1344,7 +1343,6 @@
     <string name="search_poi_category_hint">Въведете за търсене</string>
     <string name="delay_to_start_navigation_descr">Време за изчакване</string>
     <string name="plugin_touringview_name">Изглед за автомобилисти</string>
-    <string name="plugin_ski_name">Изглед за скиори</string>
     <string name="rename_failed">Неуспешно преименуване.</string>
     <string name="days_behind">дена по-рано</string>
     <string name="back_to_map">Назад към картата</string>
@@ -1353,7 +1351,6 @@
     <string name="notes">Бележки</string>
     <string name="online_map">Онлайн карта</string>
     <string name="roads_only">Само пътища</string>
-    <string name="rendering_attr_pisteRoutes_name">Ски писти</string>
     <string name="free">"Свободни %1$s "</string>
     <string name="device_memory">Памет на устройството</string>
     <string name="remove_the_tag">ПРЕМАХНИ ЕТИКЕТА</string>
@@ -1380,13 +1377,10 @@
     <string name="osmo_set_moving_target">Установете като подвижна цел</string>
     <string name="download_tab_updates">Нови</string>
     <string name="map_update">%1$s карти са обновени</string>
-    <string name="rendering_attr_pisteGrooming_name">Обработена ски писта</string>
-    <string name="world_ski_missing">Трябва да изтеглите специалната карта за скиори за правилното изобразяване на ски писти и други подробности</string>
     <string name="edit_group">Редактиране на група</string>
     <string name="speak_pedestrian">Пешеходни пътеки</string>
     <string name="rendering_value__name">По подразбиране</string>
     <string name="rendering_value_default_name">По подразбиране</string>
-    <string name="rendering_value_highContrastRoads_name">Контрастни пътища</string>
     <string name="traffic_warning_railways">ЖП прелези</string>
     <string name="traffic_warning_pedestrian">Пешеходна пътека</string>
     <string name="dash_download_msg_none">Искате ли да свалите карти?</string>
@@ -1844,8 +1838,6 @@
     <string name="poi_dialog_reopen">Повторно отваряне</string>
     <string name="poi_action_delete">изтриване</string>
     <string name="favourites_context_menu_add">Добавяне на любим</string>
-	<string name="plugin_ski_descr">"Тази добавка за OsmAnd показва ски писти, алпийски маршрути, кабинкови лифтове и ски лифтове. Маршрутите и пистите са оцветени съобразно тяхната трудност. Можете да ползвате специален картен стил \"Зима\", който оцветява пейзажа в съответните цветове.
-\n\nТози стил може да бъде деактивиран го отново от тук, или чрез промяна на \"Стил на картата\" в \"Настройки на картата\". "</string>
     <string name="osmo_session_not_available">Сесията не е налична, проверете, че \"Изпращане на места\" е включено.</string>
     <string name="copying_osmand_one_file_descr">Копиране на файл (%s) на новата дестинация…</string>
     <string name="copying_osmand_files_descr">Копиране на файлове с данни на OsmAnd към ново местоназначение (%s)…</string>

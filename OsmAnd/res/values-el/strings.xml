@@ -1377,7 +1377,6 @@
     <string name="map_widget_appearance_rem">Εναπομείναντα στοιχεία</string>
     <string name="speed_limit_exceed_message">Επιλέξτε το περιθώριο του ορίου ταχύτητας, πάνω από το οποίο θα ακούτε ηχητική προειδοποίηση.</string>
 	<string name="fav_point_dublicate_message">Το καθορισμένο όνομα αγαπημένου είναι ήδη σε χρήση, αλλάχτηκε σε %1$s για να αποφευχθούν διπλά ονόματα.</string>
-    <string name="rendering_value_germanRoadAtlas_name">Γερμανικός άτλαντας δρόμων</string>
 	<string name="rendering_value_americanRoadAtlas_name">Αμερικάνικος άτλαντας δρόμων</string>
     <string name="use_opengl_render">Χρήση αποτύπωσης OpenGL</string>
     <string name="use_opengl_render_descr">Χρήση αποτύπωσης με επιτάχυνση υλικού OpenGL (μπορεί να μη λειτουργεί σε ορισμένες συσκευές)</string>
@@ -1559,7 +1558,6 @@
 	<string name="rendering_value__name">Προκαθορισμένο</string>
     <string name="print_route">Εκτύπωση διαδρομής</string>
     <string name="simulate_your_location">Προσομοίωση της θέση σας</string>
-    <string name="rendering_value_highContrastRoads_name">Δρόμοι με υψηλή αντίθεση</string>
 	<string name="plugin_settings">Πρόσθετα</string>
 	<string name="av_locations">Τοποθεσίες</string>
     <string name="favorite_category_dublicate_message">Το συγκεκριμένο όνομα κατηγορίας υπάρχει ήδη. Παρακαλώ ορίστε διαφορετικό όνομα.</string>

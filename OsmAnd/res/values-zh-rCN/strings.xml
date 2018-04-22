@@ -1274,8 +1274,6 @@
     <string name="rendering_attr_roadStyle_description">道路风格</string>
     <string name="rendering_value__name">默认</string>
     <string name="rendering_value_default_name">默认</string>
-    <string name="rendering_value_germanRoadAtlas_name">德国道路地图</string>
-    <string name="rendering_value_highContrastRoads_name">高对比度道路</string>
     <string name="rendering_value_americanRoadAtlas_name">美国道路地图</string>
     <string name="layer_poi">兴趣点…</string>
     <string name="layer_map">地图来源…</string>
@@ -1320,7 +1318,6 @@
     <string name="tips_and_tricks_descr">常见问题、最近修改和其它内容</string>
     <string name="faq_item_description">常见问题</string>
     <string name="features_menu_group">功能</string>
-    <string name="plugin_ski_name">滑雪地图浏览</string>
     <string name="help_us_to_improve_menu_group">帮助我们改进 OsmAnd</string>
     <string name="contact_us">联系我们</string>
     <string name="follow_us">跟随我们</string>
@@ -1765,10 +1762,7 @@
 \n 经度 %2$s</string>
     <string name="watch">观看</string>
     <string name="notes">注解</string>
-    <string name="rendering_attr_pisteRoutes_name">滑雪场</string>
     <string name="free">%1$s 可用</string>
-    <string name="rendering_attr_pisteGrooming_name">滑雪道修整</string>
-    <string name="world_ski_missing">为了显示滑雪地图，需要下载特别的离线地图</string>
     <string name="edit_group">编辑群组</string>
     <string name="remove_the_tag">删除标记</string>
     <string name="gps_status">GPS 状态</string>
@@ -1844,9 +1838,6 @@
 \n此预览是从我们的标准地图所创建，不需要下载特殊的地图。 
 \n
 \n此预览可以在这里经由再次取消启动，或透过“配置地图”下的“地图样式”这两者中任何一个的更改而恢复它。</string>
-    <string name="plugin_ski_descr">此插件为 OsmAnd 所安置，让您在全球滑雪斜坡、越野滑雪、阿尔卑斯山的滑雪路线、缆车和滑雪缆车上的详细信息了若指掌。以颜色编码显示路线和滑雪道的困难度，并且在特殊的“冬季”地图样式描画出，哪个在冬季景观变成雪色。
-\n
-\n启动此预览，会更改地图样式到“冬季和滑雪”，显示出冬季的条件下，所有的景观特征。此查看可以在这里经由再次取消启动，或通过“配置地图”下的“地图样式”这两者中任何一个的更改而恢复它。</string>
     <string name="index_tours">旅游</string>
     <string name="shared_string_all">全部</string>
     <string name="waypoints">路标</string>

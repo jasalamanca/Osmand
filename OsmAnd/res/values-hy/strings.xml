@@ -948,7 +948,6 @@
 \nՀատուկ քարտեզի ներբեռնում չի պահանջվում, դիտումը հնարավոր է մեր ստանդարտ քարտեզներից:
 \n
 \nԱյս դիտումը կարող է վերադարձվել կամ կրկին անջատել այն այս կետից, կամ փոխելով «Քարտեզի ոճը», «Կարգավորել քարտեզը» կետից, ըստ ցանկության:"</string>
-    <string name="plugin_ski_name">Դահուկային քարտեզի դիտում</string>
     <string name="shared_string_accessibility">Հատուկ հնարավորություններ</string>
     <string name="osmand_accessibility_description">The plugin-ն սարքի համար ավելացնում հատուկ հնարավորությունների աջակցում ուղղակիորեն OsmAnd-ում: Սա հեշտացնում է, օրինակ, TTS-ի ձայնի ելքային արագությունը հարմարեցնելու համար, կարգավորել նավիգացիայի ուղղվածությունը էկրանի վրա, վերահսկեք սանդղակը կամ օգտագործեք ձայնային հետադարձ կապի հրամանները ավտո անոտացիաներ անելու դեպքում ձեր դիրքի վերաբերյալ:</string>
     <string name="wrong_input">Սխալ մուտքագրում</string>
@@ -970,11 +969,8 @@
     <string name="notes">Նշումներ</string>
     <string name="online_map">Առցանց քարտեզ</string>
     <string name="roads_only">Միայն ճանապարհները</string>
-    <string name="rendering_attr_pisteRoutes_name">Լեռնադահուկային երթուղիները</string>
     <string name="free">Ազատ է %1$s</string>
     <string name="device_memory">Սարքի հիշողությունը</string>
-    <string name="rendering_attr_pisteGrooming_name">Լեռնադահուկորդ երթուղու տեսակը</string>
-    <string name="world_ski_missing">"Լեռնադահուկային քարտեզների ցուցադրման համար անհրաժեշտ է ներբեռնել  հատուկ քարտեզ"</string>
     <string name="edit_group">Խմբագրել խումբը</string>
     <string name="remove_the_tag">ՋՆՋԵԼ TAG-ը</string>
     <string name="gps_status">GPS-ի կարգավիճակը</string>
@@ -992,8 +988,6 @@
     <string name="rendering_attr_roadStyle_description">Ճանապարհների ոճը</string>
     <string name="rendering_value__name">Սկզբնական</string>
     <string name="rendering_value_default_name">Սկզբնական</string>
-    <string name="rendering_value_germanRoadAtlas_name">Գերմանիայի ճանապարհների ատլաս</string>
-    <string name="rendering_value_highContrastRoads_name">Բարձր հակադրության(contrast) ճանապարհներ</string>
     <string name="traffic_warning_railways">Երկաթուղային անցում</string>
     <string name="traffic_warning_pedestrian">Հետիոտնային անցում</string>
     <string name="show_railway_warnings">Ցուցադրել երկաթուղային անցումները</string>
@@ -2517,9 +2511,6 @@
 \n• Քարտեզի տվյալների ներբեռնումը
 \n
 \n․․և այլ…"</string>
-    <string name="plugin_ski_descr">"OsmAnd-ի այս հավելվածը  տրքմքդրում է մանրամասները գլոբալ ցածր լեռնադահուկային լանջերի, խաչաձեւ լեռնադահուկային լեռնանցքի, ալպիական լեռնադահուկային երթուղիների, ճոպանուղիների և լեռնադահուկային վերելակների մանրամասների մասին:
-\n
-\nԱյս տեսակը ակտիվացնելու դեպքում, քարտեզի ոճը փոխվում է «Ձմեռային եւ լեռնադահուկային սպորտին», ցույց տալով լանդշաֆտի բոլոր մանրամասները `ձմռանը նայելու ձևով: Այս (ձմեռային) տեսքը կարող է չեղյալ համարվել ,  այստեղ կրկին անջատելով այն, կամ եթե փոխեք «Քարտի ոճը» ցանկալի տեսք, «Քարտեզների կարգավորումը» ցանկում:"</string>
     <string name="route_tu">Կատարեք շրջադարձ(U-turn) և շարժվեք</string>
     <string name="map_orientation_default">Ըստ սարքի</string>
     <string name="map_orientation_portrait">Դիմանկարի ձև (Portrait)</string>

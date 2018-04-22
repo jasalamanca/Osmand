@@ -1061,8 +1061,6 @@
     <string name="rendering_value__name">الافتراضي</string>
     <string name="rendering_value_default_name">الافتراضي</string>
     <string name="rendering_value_orange_name">برتقالي</string>
-    <string name="rendering_value_germanRoadAtlas_name">أطلس الطرق الألمانية</string>
-    <string name="rendering_value_highContrastRoads_name">طرق بتباين عالي</string>
 	<string name="traffic_warning_railways">عبور خط السكة الحديدية</string>
 	<string name="rendering_value_americanRoadAtlas_name">أطلس الطرق الأمريكية</string>
     <string name="routing_attr_no_new_routing_description">لا تستخدم قواعد توجيه الإصدار 1.9.</string>
@@ -1351,8 +1349,6 @@
 	<string name="layer_route">طريق</string>
 	<string name="filter_existing_indexes">محملة</string>
 	<string name="daynight">وضع نهاري/ليلي</string>
-    <string name="plugin_ski_name">عرض خريطة التزلج</string>
-	<string name="rendering_attr_pisteRoutes_name">منحدرات تزلج</string>
 	<string name="osmo_auth_error_short">فشل الحصول على صلاحية</string>
     <string name="index_item_world_ski">خريطة التزلج العالمية</string>
     <string name="amenity_type_transportation">نقل</string>
@@ -1944,9 +1940,7 @@
     <string name="osm_edit_modified_poi">OSM POI معدل</string>
     <string name="osm_edit_commented_note">ملاحظة OSM معلق عليها</string>
     <string name="osm_edit_removed_note">ملاحظة OSM محذوفة</string>
-    <string name="rendering_attr_pisteGrooming_name">مسار زلق</string>
-    <string name="world_ski_missing">لاظهار خرائط التزلج، يجب تنزيل خريطة خاصة محلية</string>
-    <string name="rendering_attr_publicTransportMode_name">حافلة، ترامواي وغيرها</string>
+	<string name="rendering_attr_publicTransportMode_name">حافلة، ترامواي وغيرها</string>
     <string name="osm_edit_created_note">إنشاء ملاحظة OSM</string>
     <string name="osn_add_dialog_error">حدث استثناء: لم يتم إنشاء الملاحظة</string>
     <string name="osn_close_dialog_error">حدث استثناء: لم يتم غلق الملاحظة</string>
@@ -2131,11 +2125,8 @@
     <string name="downloading_number_of_files">جاري التحميل - %1$d ملف</string>
     <string name="value_downloaded_of_max">%1$.1f من %2$.1f مب</string>
     <string name="file_size_in_mb">%.1f مب</string>
-    <string name="plugin_ski_descr">ويضع هذا البرنامج المساعد أوسماند في التفاصيل الخاصة بك في متناول من منحدرات التزلج هبوطاً العالمية ومسارات التزلج عبر البلاد، ومسارات التزلج في جبال الألب، والتلفريك ومصاعد التزلج. طرق وأماكن اللهو تظهر مرمزة بصعوبة، وصورت في نمط خريطة \'شتاء\' خاصة التي تستوعب المناظر الطبيعية الملونة الثلوج شتاء. 
-\n
-\nتفعيل هذا عرض التغييرات نمط الخريطة إلى \' فصل الشتاء والتزلج، عرض كافة الميزات المناظر الطبيعية تحت ظروف شتوي. يمكن عاد هذا الرأي أما إلغاء تنشيطها مرة أخرى هنا، أو بتغيير نمط \'خريطة\' ضمن \'تكوين خريطة\' كالمطلوب.</string>
-    
-    <string name="rendering_attr_hideOverground_name">أشياء فوق سطح الأرض</string>
+
+	<string name="rendering_attr_hideOverground_name">أشياء فوق سطح الأرض</string>
 
     <string name="shared_string_change">تغيير</string>
     <string name="get_started">باشر</string>

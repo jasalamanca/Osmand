@@ -515,15 +515,12 @@ Lon: %2$s</string>
     <string name="notes">Notoj</string>
     <string name="online_map">Enreta mapo</string>
     <string name="roads_only">Nur vojoj</string>
-    <string name="rendering_attr_pisteRoutes_name">Descendejoj</string>
     <string name="free">Libera %1$s</string>
     <string name="gps_status">GPS-a stato</string>
     <string name="map_widget_show_ruler">Mezurilo</string>
     <string name="shared_string_accessibility">Alirebleco</string>
     <string name="device_memory">Aparata memoro</string>
     <string name="edit_group">Redakti grupon</string>
-    <string name="rendering_attr_pisteGrooming_name">Skivoja prepar-speco</string>
-    <string name="world_ski_missing">Por montri skiadajn mapojn, speciala eksterreta mapo devas esti elŝutita</string>
     <string name="remove_the_tag">FORIGI LA ETIKEDON</string>
     <string name="version_settings">Kompilaĵoj</string>
     <string name="version_settings_descr">Elŝuti antaŭ-alfajn versiojn.</string>
@@ -538,8 +535,6 @@ Lon: %2$s</string>
     <string name="rendering_attr_roadStyle_description">Kiel vidigi vojojn</string>
     <string name="rendering_value__name">Norma</string>
     <string name="rendering_value_default_name">Norma</string>
-    <string name="rendering_value_germanRoadAtlas_name">Germana voja maparo</string>
-    <string name="rendering_value_highContrastRoads_name">Kontrastegaj vojoj</string>
     <string name="traffic_warning_railways">Traknivela pasejo</string>
     <string name="traffic_warning_pedestrian">Zebrostria pasejo</string>
     <string name="show_railway_warnings">Traknivelaj pasejoj</string>
@@ -1512,10 +1507,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="access_direction_haptic_feedback">Vibraj sciigoj pri direkto</string>
     <string name="access_direction_haptic_feedback_descr">Montri direkton al celo per vibrado.</string>
     <string name="lang_ast">Asturia</string>
-    <string name="plugin_ski_name">Skiada map-vido</string>
-	<string name="plugin_ski_descr">Tiu ĉi kromprogramo aldonas al OsmAnd detalojn pri descendejoj, skivojoj, montaraj skivojoj, kablovojoj kaj skiliftoj. Kursoj kaj vojoj estas kolorigitaj laŭ facileco kaj montrataj kiel speciala ‘vintra map-aspekto kiu ŝajnas kiel neĝ-kovrita landvidaĵo. 
-\n 
-\nAktivigo de tiu ĉi map-vido ŝanĝas map-aspekton al ‘vintro kaj skiado’, montranta ĉiun terenon kovritan de neĝo. La vidon oni povas malaktivigi, per malaktivigi la kromprogramon tie ĉi, aŭ per ŝanĝi de ‘map-aspekto’ en la menuo ‘agordi mapon.</string>
     <string name="osmand_distance_planning_plugin_name">Kalkulilo de distanco kaj planilo</string>
     <string name="osmand_distance_planning_plugin_description">Tiu ĉi kromprogramo liveras mapekranan fenestraĵon por krei kursojn tuŝante sur la mapo, aŭ por uzi aŭ modifi ekzistajn GPX-dosierojn por plani ekskurson aŭ mezuri distancon inter punktoj. Rezultoj povas esti konservitaj kiel GPX-dosieroj, kiuj oni povas estonte uzi por gvidado.</string>
     <string name="osm_settings">OSM-redaktilo</string>
