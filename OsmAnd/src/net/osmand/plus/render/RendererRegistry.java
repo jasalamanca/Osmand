@@ -99,12 +99,6 @@ public class RendererRegistry {
 //	private static boolean USE_PRECOMPILED_STYLE = false;
 	private RenderingRulesStorage loadRenderer(String name, final Map<String, RenderingRulesStorage> loadedRenderers, 
 			final Map<String, String> renderingConstants) throws IOException,  XmlPullParserException {
-//		if ((name.equals(DEFAULT_RENDER) || name.equalsIgnoreCase("default")) && USE_PRECOMPILED_STYLE) {
-//			RenderingRulesStorage rrs = new RenderingRulesStorage("", null);
-//			new DefaultRenderingRulesStorage().createStyle(rrs);
-//			log.info("INIT rendering from class");
-//			return rrs;
-//		}
 		InputStream is = getInputStream(name);
 		if(is == null) {
 			return null;

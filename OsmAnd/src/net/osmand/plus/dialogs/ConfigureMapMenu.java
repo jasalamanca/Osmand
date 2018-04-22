@@ -97,8 +97,7 @@ public class ConfigureMapMenu {
 		List<RenderingRuleProperty> customRules = new ArrayList<>();
 		if (renderer != null) {
 			for (RenderingRuleProperty p : renderer.PROPS.getCustomRules()) {
-				if (!RenderingRuleStorageProperties.UI_CATEGORY_HIDDEN.equals(p.getCategory())
-						&& !p.getAttrName().equals("depthContours")) {
+				if (!RenderingRuleStorageProperties.UI_CATEGORY_HIDDEN.equals(p.getCategory())) {
 					customRules.add(p);
 				}
 			}
@@ -928,7 +927,6 @@ public class ConfigureMapMenu {
 				builder.setSelected(selected);
 			}
 			return builder.createItem();
-//			createCustomRenderingProperties(adapter, activity, ps);
 		}
 		return null;
 	}

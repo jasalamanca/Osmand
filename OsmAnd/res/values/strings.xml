@@ -1635,7 +1635,6 @@
     <string name="rendering_attr_noPolygons_name">Polygons</string>
     <string name="rendering_attr_appMode_name">Rendering mode</string>
     <string name="rendering_attr_appMode_description">Optimize map for</string>
-    <!-- string name="rendering_attr_contourLines_description">Select minimum zoom level to display in map if available. Separate contour data needed.</string -->
     <string name="rendering_attr_hmRendered_description">Increase amount of map detail shown.</string>
     <string name="rendering_attr_hmRendered_name">Show more map detail</string>
     <string name="local_index_routing_data">Routing data</string>
