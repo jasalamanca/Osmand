@@ -58,8 +58,6 @@ import net.osmand.plus.mapcontextmenu.controllers.TransportRouteController;
 import net.osmand.plus.mapcontextmenu.controllers.TransportStopController;
 import net.osmand.plus.mapcontextmenu.controllers.WptPtMenuController;
 import net.osmand.plus.mapcontextmenu.other.ShareMenu;
-import net.osmand.plus.mapillary.MapillaryImage;
-import net.osmand.plus.mapillary.MapillaryMenuController;
 import net.osmand.plus.osmedit.EditPOIMenuController;
 import net.osmand.plus.osmedit.OsmBugMenuController;
 import net.osmand.plus.osmedit.OsmBugsLayer.OpenStreetNote;
@@ -205,8 +203,6 @@ public abstract class MenuController extends BaseMenuController implements Colla
 				menuController = new ImpassibleRoadsMenuController(mapActivity, pointDescription, (RouteDataObject) object);
 			} else if (object instanceof RenderedObject) {
 				menuController = new RenderedObjectMenuController(mapActivity, pointDescription, (RenderedObject) object);
-			} else if (object instanceof MapillaryImage) {
-				menuController = new MapillaryMenuController(mapActivity, pointDescription, (MapillaryImage) object);
 			}
 		}
 		if (menuController == null) {

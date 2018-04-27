@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
 
-    <string name="av_def_action_picture">Zachytiť fotografiu</string>
     <string name="enable_plugin_monitoring_services">Na použitie služieb pre záznam pozície zapnite modul Zaznamenávanie výletov (záznam GPX, stopovanie naživo)</string>
     <string name="non_optimal_route_calculation">Vypočítať pravdepodobne neoptimálnu cestu s dlhšou vzdialenosťou</string>
     <string name="context_menu_item_last_intermediate_point">Určiť ako posledný prechodný bod</string>
@@ -755,8 +754,6 @@ Proporčná pamäť %4$s MB (Limit Androidu %5$s MB, Dalvik %6$s MB).</string>
     
     <string name="map_widget_vector_attributes">Atribúty vykresľovania</string>
     <string name="map_widget_renderer">Štýl vykresľovania</string>
-    <string name="osmand_short_description_80_chars">OsmAnd je open source navigácia s offline aj online mapami</string>
-    <string name="osmand_plus_short_description_80_chars">OsmAnd je open source navigácia s offline aj online mapami</string>
     <string name="gps_not_available">Povoľte v nastaveniach GPS</string>
     <string name="map_widget_monitoring_services">Monitorovacie služby</string>
     <string name="no_route">Žiadna cesta</string>
@@ -792,14 +789,11 @@ Proporčná pamäť %4$s MB (Limit Androidu %5$s MB, Dalvik %6$s MB).</string>
     <string name="map_widget_distancemeasurement">Meranie vzdialenosti</string>
     <string name="download_select_map_types">Ďalšie mapy</string>
     <string name="intermediate_points_change_order">Zmeniť poradie</string>
-    <string name="dropbox_plugin_description">Zásuvný modul pre Dropbox vám umožňuje synchronizovať stopy a video/zvukové poznámky s vaším účtom na službe Dropbox.</string>
     <string name="dropbox_plugin_name">Zásuvný modul pre Dropbox</string>
     <string name="stop_routing_confirm">Naozaj chcete vypnúť navigáciu?</string>
     <string name="clear_dest_confirm">Naozaj chcete zmazať váš cieľ (a prechodné ciele)?</string>
     <string name="precise_routing_mode">Precízna navigácia (vo vývoji)</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
-    <string name="av_use_external_camera_descr">Použiť systémovú aplikáciu na zachytenie fotografií.</string>
-    <string name="av_use_external_camera">Použiť aplikáciu Fotoaparát</string>
     <string name="support_new_features_descr">Sponzorujte vývoj nových funkcií v aplikácii.</string>
     <string name="max_speed_none">žiadna</string>
     <string name="prefer_motorways">Uprednostniť diaľnice</string>
@@ -895,14 +889,11 @@ Proporčná pamäť %4$s MB (Limit Androidu %5$s MB, Dalvik %6$s MB).</string>
     <string name="osb_author_or_password_not_specified">Prosím, zadajte používateľa OSM a heslo v nastaveniach</string>
     <string name="clear_intermediate_points">Zmazať prechodné body</string>
     <string name="osb_author_dialog_password">Heslo k OSM (voliteľné)</string>
-    <string name="av_camera_focus">Typ ostrenia fotoaparátu</string>
-    <string name="av_camera_focus_descr">Vybrať režim zaostrovania vstavaného fotoaparátu.</string>
     <string name="av_camera_focus_auto">Automatické ostrenie</string>
     <string name="av_camera_focus_hiperfocal">Hyperfokálne ostrenie</string>
     <string name="av_camera_focus_edof">Rozšírená hĺbka poľa (EDOF)</string>
     <string name="av_camera_focus_infinity">Ostrenie je nastavené na nekonečno</string>
     <string name="av_camera_focus_macro">Makro (z blízka) režim ostrenia</string>
-    <string name="av_camera_focus_continuous">Fotoaparát sa bude pokúšať ostriť priebežne</string>
     <string name="base_world_map">Základná mapa sveta</string>
     <string name="map_magnifier">Zväčšenie mapy</string>
     
@@ -1217,8 +1208,6 @@ Chcete pokračovať v novej registrácii?</string>
     <string name="arrival_distance_factor_normally">Normálne</string>
     <string name="arrival_distance_factor_late">Neskoro</string>
     <string name="arrival_distance_factor_at_last">V posledných metroch</string>
-    <string name="av_camera_pic_size">Veľkosť fotografie</string>
-    <string name="av_camera_pic_size_descr">Vybrať veľkosť obrázka interného fotoaparátu.</string>
     <string name="rendering_value_browse_map_name">Štandardná</string>
     <string name="rendering_value_car_name">Automobil</string>
     <string name="rendering_value_bicycle_name">Bicykel</string>
@@ -1322,8 +1311,6 @@ Chcete pokračovať v novej registrácii?</string>
     <string name="show_railway_warnings">Železničné priecestia</string>
     <string name="show_pedestrian_warnings">Priechody pre chodcov</string>
     <string name="rendering_value_americanRoadAtlas_name">Americký atlas ciest</string>
-    <string name="routing_attr_no_new_routing_name">Bez smerovacích pravidiel verzie 1.9</string>
-    <string name="routing_attr_no_new_routing_description">Nepoužívať pravidlá výpočtu trasy zavedené vo verzii 1.9.</string>
     <string name="speak_pedestrian">Priechody pre chodcov</string>
     <string name="save_track_to_gpx_globally_headline">Záznam trasy v prípade potreby</string>
     <string name="navigation_over_track">Spustiť navigáciu pozdĺž stopy?</string>
@@ -1432,8 +1419,6 @@ Chcete pokračovať v novej registrácii?</string>
     <string name="shared_string_favorites">Obľúbené</string>
     <string name="shared_string_add_to_favorites">Pridať k obľúbeným</string>
     <string name="shared_string_my_places">Moje miesta</string>
-    <string name="shared_string_audio">Zvuk</string>
-    <string name="shared_string_photo">Foto</string>
     <string name="route_points">Body trasy</string>
     <string name="shared_string_release">Vydaná</string>
     <string name="simulate_your_location">Simulovať pozíciu</string>
@@ -1771,7 +1756,6 @@ Dĺžka %2$s</string>
 <string name="impassable_road_desc">Vyberte cesty, ktorým sa chcete navigácii vyhnúť.</string>
     <string name="shared_string_sound">Zvuk</string>
     <string name="no_location_permission">Aplikácia nemá oprávnenia na prístup k údajom o polohe.</string>
-    <string name="no_camera_permission">Aplikácia nemá oprávnenia na prístup k fotoaparátu.</string>
     <string name="no_microphone_permission">Aplikácia nemá oprávnenia na prístup k mikrofónu.</string>
     <string name="select_voice_provider">Zvoľte hlasové pokyny</string>
     <string name="select_voice_provider_descr">Vyberte alebo stiahnite hlasové pokyny pre váš jazyk.</string>
@@ -1812,7 +1796,6 @@ Dĺžka %2$s</string>
     <string name="shared_string_email_address">E-mailová adresa</string>
     <string name="rendering_attr_hideUnderground_name">Podzemné objekty</string>
     <string name="shared_string_read_more">Prečítať viac</string>
-    <string name="find_parking">Nájsť parkovanie</string>
     <string name="show_polygons">Zobraziť polygóny</string>
     
     <string name="rendering_attr_showMtbRoutes_name">Zobraziť trasy pre horské bicykle</string>
@@ -2180,28 +2163,6 @@ Zodpovedá oblasti: %1$s x %2$s</string>
     <string name="right_side_navigation">Jazdenie po pravej strane</string>
     <string name="driving_region_automatic">Automaticky</string>
     <string name="fonts_header">Písma pre mapu</string>
-    <string name="osmand_extended_description_part6">"
- Chodci, turisti, prehliadky miest
- • Mapy obsahujú aj cesty pre chodcov a turistov
- • Zastávky hromadnej dopravy (autobus, električka, vlak) vrátane názvov liniek
- • GPS navigácia v režime chodca vytvorí trasu po cestách pre peších
- • Môžete nahrať GPX trasu výletu a zdieľať ju
- "</string>
-    <string name="osmand_extended_description_part7">"
- Prispievajte do OSM
- • Hláste chyby v mape
- • Odosielajte GPX stopy do OSM priamo z aplikácie
- • Pridávajte body záujmu a priamo ich odošlite OSM (alebo neskôr, ak ste offline)
- "</string>
-    <string name="osmand_plus_extended_description_part7">"
- Priamo prispievajte do OpenStreetMap
- • Hláste chyby v mape
- • Odosielajte GPX stopy do OSM priamo z aplikácie
- • Pridajte body záujmu a priamo ich odošlite do OSM (alebo neskôr, ak ste offline)
- • Voliteľné nahrávanie výletu na pozadí (keď je zariadenie v režime spánku)
-
- OsmAnd je slobodný a aktívne vyvíjaný softvér. Každý môže prispieť do aplikácie hlásením chýb, vylepšením prekladu alebo programovaním nových funkcií. Projekt je v stave sústavného vylepšovania vďaka spolupráci vývojárov a používateľov. Pokrok projektu tiež závisí od finančných príspevkov na vývoj, programovanie a testovanie nových funkcií.
- "</string>
     <string name="restore_purchases">Obnoviť nákupy</string>
     <string name="analyze_on_map">Analyzovať na mape</string>
     <string name="shared_string_visible">Viditeľné</string>
@@ -2253,22 +2214,10 @@ Zodpovedá oblasti: %1$s x %2$s</string>
     <string name="increase_search_radius">Zväčšiť okruh hľadania</string>
     <string name="nothing_found">Nič sa nenašlo :(</string>
     <string name="nothing_found_descr">Zmeňte vyhľadávacie kritérium alebo polomer hľadania.</string>
-    <string name="mapillary">Mapillary</string>
-    <string name="open_mapillary">Otvoriť Mapillary</string>
     <string name="shared_string_install">Inštalovať</string>
-    <string name="improve_coverage_mapillary">Zlepšiť pokrytie fotografií s Mapillary</string>
-    <string name="improve_coverage_install_mapillary_desc">Môžete zosnímať vlastné fotografie alebo sady fotografií a pridať ich na toto miesto na mape. 
-\n 
-\nK tomu je potrebné nainštalovať aplikáciu Mapillary z Google Play.</string>
     <string name="online_photos">Online fotografie</string>
     <string name="shared_string_add_photos">Pridať fotografie</string>
     <string name="no_photos_descr">Nemáme fotografie pre toto miesto.</string>
-    <string name="mapillary_action_descr">Prispejte vlastnými pohľadmi na toto miesto z úrovne ulice cez Mapillary.</string>
-    <string name="mapillary_widget_descr">Umožňuje rýchle prispievanie do Mapillary.</string>
-    <string name="mapillary_descr">Online fotografie z ulíc pre každého. Objavte miesta, spolupracuje, zachyťte svet.</string>
-    <string name="plugin_mapillary_descr">Fotografie z ulíc pre každého. Objavte miesta, spolupracuje, zachyťte svet.</string>
-    <string name="mapillary_widget">Nástroj Mapillary</string>
-    <string name="mapillary_image">Obrázok Mapillary</string>
     <string name="distance_moving">Vzdialenosť opravená</string>
     <string name="shared_string_permissions">Povolenia</string>
     <string name="import_gpx_failed_descr">OsmAnd nemôže naimportovať súbor. Prosím skontrolujte, či OsmAnd má oprávnenie čítať súbor z tohto umiestnenia.</string>
@@ -2276,17 +2225,8 @@ Zodpovedá oblasti: %1$s x %2$s</string>
     <string name="map_widget_ruler_control">Polomerové pravítko</string>
     <string name="shared_string_reset">Resetovať</string>
     <string name="shared_string_reload">Znovu načítať</string>
-    <string name="mapillary_menu_descr_tile_cache">Znovu načítať dlaždice pre získanie aktuálnych dát.</string>
-    <string name="mapillary_menu_title_tile_cache">Pamäť dlaždíc</string>
     <string name="wrong_user_name">Chybné používateľské meno!</string>
     <string name="shared_string_to">Do</string>
-    <string name="mapillary_menu_date_from">Od</string>
-    <string name="mapillary_menu_descr_dates">Zobraziť iba obrázky pridané</string>
-    <string name="mapillary_menu_title_dates">Dátum</string>
-    <string name="mapillary_menu_edit_text_hint">Zadajte meno používateľa</string>
-    <string name="mapillary_menu_descr_username">Zobraziť iba obrázky pridané</string>
-    <string name="mapillary_menu_title_username">Meno používateľa</string>
-    <string name="mapillary_menu_filter_description">Môžete filtrovať obrázky podľa odosielateľa alebo dátumu. Filtre sa aplikujú len pri vysokom priblížení.</string>
     <string name="store_tracks_in_monthly_directories">Ukladať zaznamenané stopy v priečinkoch po mesiacoch</string>
     <string name="store_tracks_in_monthly_directories_descrp">Ukladať zaznamenané stopy v podpriečinkoch podľa mesiaca záznamu (ako 2017-01).</string>
     <string name="average">Priemer</string>
@@ -2305,7 +2245,6 @@ Zodpovedá oblasti: %1$s x %2$s</string>
     <string name="min_max">Min/Max</string>
     <string name="live_monitoring_max_interval_to_send">Časový zásobník pre online sledovanie</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Zadajte čas pokiaľ budú udržované pozície na odoslanie kým nie je pripojenie</string>
-    <string name="mappilary_no_internet_desc">Na zobrazovanie fotografií z Mapillary potrebujete pripojenie na Internet.</string>
     <string name="retry">Skúsiť znova</string>
 <string name="measurement_tool_action_bar">Prezerať mapu a pridať body</string>
     <string name="measurement_tool">Merať vzdialenosť</string>

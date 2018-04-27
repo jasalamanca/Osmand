@@ -849,8 +849,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="map_widget_renderer">Térkép megjelenítési stílus</string>
 
 
-    <string name="osmand_short_description_80_chars">Globális mobil térkép és navigáció, offline és online OSM térképekkel</string>
-    <string name="osmand_plus_short_description_80_chars">Globális mobil térkép és navigáció, offline és online OSM térképekkel</string>
     <string name="avoid_motorway">Autópályák elkerülése</string>
 
     <string name="snap_to_road_descr">Úthoz rögzítés navigáció közben.</string>
@@ -927,18 +925,14 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="av_widget_action">Alapértelmezett mód</string>
 
     <string name="intermediate_points_change_order">Más sorrend</string>
-    <string name="dropbox_plugin_description">A Dropbox-bővítmény lehetővé teszi a rögzített útvonalak és hang/videojegyzetek szinkronizálását a Dropbox fiókoddal.</string>
     <string name="dropbox_plugin_name">Dropbox bővítmény</string>
     <string name="stop_routing_confirm">Biztosan megállítod a navigációt?</string>
     <string name="clear_dest_confirm">Biztosan törlöd a célpontot (és a köztes célpontokat)?</string>
     <string name="precise_routing_mode_descr">Pontos útvonaltervező engedélyezése hibamentes, pontos útvonalak tervezéséhez. Jelenleg lassú, kis távolságokra működik.</string>
     <string name="precise_routing_mode">Pontos útvonaltervezés (kísérleti)</string>
-    <string name="av_def_action_picture">Fénykép készítése</string>
 
 
     <string name="support_new_features_descr">Adományozz, hogy új funkciók kerülhessenek az alkalmazásba.</string>
-    <string name="av_use_external_camera_descr">Rendszeralkalmazás használata fotózáshoz.</string>
-    <string name="av_use_external_camera">Kamera alkalmazás használata</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
     <string name="max_speed_none">nincs</string>
     <string name="prefer_motorways">Autópályák preferálása</string>
@@ -1029,14 +1023,11 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="context_menu_item_destination_point">Beállítás célpontnak</string>
     <string name="please_select_address">Előbb válassz települést vagy utcát</string>
     <string name="search_street_in_neighborhood_cities">Utca keresése közeli városrészekben</string>
-    <string name="av_camera_focus">Kamera fókuszmód</string>
-    <string name="av_camera_focus_descr">Belső kamera fókuszmódjának kiválasztása.</string>
     <string name="av_camera_focus_auto">Autófókusz</string>
     <string name="av_camera_focus_hiperfocal">Végtelen fókusz</string>
     <string name="av_camera_focus_edof">Kiterjesztett mélységélesség (EDOF)</string>
     <string name="av_camera_focus_infinity">Végtelenre állított fókusz</string>
     <string name="av_camera_focus_macro">Makró (közeli) fókuszmód</string>
-    <string name="av_camera_focus_continuous">A kamera folyamatosan próbál fókuszálni</string>
     <string name="driving_region_descr">Vezetési területet kijelölése: USA, Európa, Egyesült Királyság, Ázsia és egyebek.</string>
     <string name="driving_region">Vezetési terület</string>
     <string name="driving_region_japan">Japán</string>
@@ -1375,8 +1366,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="arrival_distance_factor_normally">Normál</string>
     <string name="arrival_distance_factor_late">Későn</string>
     <string name="arrival_distance_factor_at_last">Utolsó métereken</string>
-    <string name="av_camera_pic_size">Kamera képméret</string>
-    <string name="av_camera_pic_size_descr">A beépített kamera képmérete.</string>
 
 
     <string name="osmo_leave_confirmation_msg">Szeretnéd elhagyni a(z) %1$s csoportot?</string>
@@ -1530,8 +1519,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="show_railway_warnings">Vasúti kereszteződések</string>
     <string name="show_pedestrian_warnings">Gyalogátkelőhelyek</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerikai autós atlasz</string>
-    <string name="routing_attr_no_new_routing_name">Nincsenek v1.9-es útvonalszabályok</string>
-    <string name="routing_attr_no_new_routing_description">Ne használja az 1.9-es verzióban bevezetett útvonalszabályokat.</string>
     <string name="speak_pedestrian">Gyalogátkelőhelyek</string>
 
     <string name="save_track_to_gpx_globally_headline">Nyomvonalrögzítés igény szerint</string>
@@ -1571,7 +1558,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="watch">Óra</string>
     <string name="notes">Megjegyzések</string>
     <string name="online_map">Online térkép</string>
-    <string name="shared_string_audio">Hang</string>
 
 
     <string name="shared_string_export">Exportálás</string>
@@ -1614,7 +1600,6 @@ Hosszúság: %2$s</string>
     <string name="shared_string_unexpected_error">Váratlan hiba történt</string>
     <string name="shared_string_action_template">{0} művelet</string>
     <string name="shared_string_collapse">Összecsukás</string>
-    <string name="shared_string_photo">Fénykép</string>
     <string name="shared_string_release">Megjelent</string>
     <string name="days_behind">napos</string>
     <string name="welmode_download_maps">Térképek letöltése</string>
@@ -1941,7 +1926,6 @@ Hosszúság: %2$s</string>
     <string name="impassable_road_desc">Válaszd ki azokat az utakat, amiket el szeretnél kerülni.</string>
     <string name="shared_string_sound">Hang</string>
     <string name="no_location_permission">Az alkalmazásnak nincs jogosultsága elérni a helyadatokat.</string>
-    <string name="no_camera_permission">Az alkalmazásnak nincs jogosultsága elérni a kamerát.</string>
     <string name="no_microphone_permission">Az alkalmazásnak nincs jogosultsága elérni a mikrofont.</string>
     <string name="route_distance">Távolság:</string>
     <string name="route_duration">Idő:</string>
@@ -2015,7 +1999,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="consider_turning_polygons_off">Ajánlott a felületek kitöltésének kikapcsolása.</string>
     <string name="rendering_attr_showMtbRoutes_name">MTB útvonalak</string>
     <string name="show_polygons">Felületek kitöltése</string>
-    <string name="find_parking">Parkoló keresése</string>
     <string name="shared_string_status">Állapot</string>
     <string name="shared_string_save_changes">Módosítások mentése</string>
     <string name="shared_string_email_address">Email cím</string>
@@ -2397,22 +2380,10 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="increase_search_radius">Keresett terület szélesítése</string>
     <string name="nothing_found">Nincs találat :(</string>
     <string name="nothing_found_descr">Módosítsd a keresőkifejezést vagy növeld a keresés sugarát.</string>
-    <string name="mapillary">Mapillary</string>
     <string name="shared_string_add_photos">Fényképek hozzáadása</string>
     <string name="no_photos_descr">Erről a helyről nincsenek fényképeink.</string>
-    <string name="mapillary_action_descr">Add hozzá a saját fényképedet a hely utcanézetéről a Mapillaryvel.</string>
-    <string name="mapillary_widget">Mapillary vezérlőgomb</string>
-    <string name="mapillary_widget_descr">Segítségével gyorsan hozzájárulhatsz a Mapillaryhez.</string>
-    <string name="mapillary_descr">Online utcaszintű fotók mindenkinek. Fedezz fel helyeket, vegyél benne részt, fotózd le a világot.</string>
-    <string name="plugin_mapillary_descr">Utcaszintű fotók mindenkinek. Fedezz fel helyeket, vegyél benne részt, fotózd le a világot.</string>
     <string name="online_photos">Online fényképek</string>
-    <string name="improve_coverage_mapillary">Fényképes lefedettség javítása a Mapillaryvel</string>
-    <string name="improve_coverage_install_mapillary_desc">Készíthet saját fényképet vagy fényképsorozatot, és hozzáadhatja ehhez a térképhelyhez. 
-\n 
-\nEhhez először telepítenie kell a Mapillary alkalmazást a Google Play-ről.</string>
     <string name="shared_string_install">Telepítés</string>
-    <string name="open_mapillary">Mapillary megnyitása</string>
-    <string name="mapillary_image">Mapillary-kép</string>
     <string name="distance_moving">Korrigált távolság</string>
     <string name="shared_string_permissions">Engedélyek</string>
     <string name="import_gpx_failed_descr">Az OsmAnd nem tudja importálni a fájlt. Ellenőrizze, hogy az OsmAndnak van-e engedélye fájlt olvasni erről a helyről.</string>
@@ -2420,18 +2391,9 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="store_tracks_in_monthly_directories_descrp">Rögzített nyomvonalak tárolása havi bontású alkönyvtárakban (pl. 2017-01).</string>
     <string name="shared_string_reset">Visszaállítás</string>
     <string name="shared_string_reload">Újratöltés</string>
-    <string name="mapillary_menu_descr_tile_cache">Csempék újratöltése naprakész adatok megjelenítéséhez.</string>
-    <string name="mapillary_menu_title_tile_cache">Csempegyorsítótár</string>
     <string name="wrong_user_name">Hibás felhasználónév!</string>
     <string name="shared_string_to">Ide:</string>
-    <string name="mapillary_menu_date_from">Ettől:</string>
-    <string name="mapillary_menu_descr_dates">Csak az ekkor hozzáadott képek megtekintése:</string>
-    <string name="mapillary_menu_title_dates">Dátum</string>
-    <string name="mapillary_menu_edit_text_hint">Felhasználónév megadása</string>
-    <string name="mapillary_menu_descr_username">Csak az általa hozzáadott képek megtekintése:</string>
-    <string name="mapillary_menu_title_username">Felhasználónév</string>
-    <string name="mapillary_menu_filter_description">A képeket feltöltő vagy dátum szerint is szűrheti. A szűrők csak erős nagyításnál működnek.</string>
-    
+
     <string name="map_widget_ruler_control">Sugaras vonalzó</string>
     <string name="average">Átlag</string>
     <string name="of">%1$d / %2$d</string>
@@ -2530,7 +2492,6 @@ Kérlek adj meg egy teljes kódot</string>
 \n
 \n</string>
     <string name="rendering_value_darkyellow_name">Sötétsárga</string>
-    <string name="mappilary_no_internet_desc">A Mapillary fényképek megtekintéséhez internetre van szükség.</string>
     <string name="retry">Újra</string>
     <string name="add_route_points">Hozzáadás útvonalpontokként</string>
     <string name="add_waypoint">Hozzáadás útpontként</string>

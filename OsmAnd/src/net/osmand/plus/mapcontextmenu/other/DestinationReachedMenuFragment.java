@@ -110,33 +110,6 @@ public class DestinationReachedMenuFragment extends Fragment {
 			}
 		});
 
-		Button findParkingButton = (Button) view.findViewById(R.id.findParkingButton);
-
-		ApplicationMode appMode = getMapActivity().getMyApplication().getRoutingHelper().getAppMode();
-
-		if (!appMode.isDerivedRoutingFrom(appMode.CAR)) {
-			findParkingButton.setVisibility(View.GONE);
-		}
-
-		findParkingButton.setCompoundDrawablesWithIntrinsicBounds(
-				iconsCache.getIcon(R.drawable.ic_action_parking_dark, menu.isLight()), null, null, null);
-		AndroidUtils.setTextPrimaryColor(view.getContext(), findParkingButton, !menu.isLight());
-		findParkingButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				PoiFiltersHelper helper = getMapActivity().getMyApplication().getPoiFilters();
-				//PoiType place = getMapActivity().getMyApplication().getPoiTypes().getPoiTypeByKey("parking");
-				PoiUIFilter parkingFilter = helper.getFilterById(PoiUIFilter.STD_PREFIX + "parking");
-				if (parkingFilter != null) {
-					final Intent newIntent = new Intent(getActivity(), SearchPOIActivity.class);
-					newIntent.putExtra(SearchPOIActivity.AMENITY_FILTER, parkingFilter.getFilterId());
-					newIntent.putExtra(SearchActivity.SEARCH_NEARBY, true);
-					startActivityForResult(newIntent, 0);
-				}
-				dismissMenu();
-			}
-		});
-
 		View mainView = view.findViewById(R.id.main_view);
 		if (menu.isLandscapeLayout()) {
 			AndroidUtils.setBackground(view.getContext(), mainView, !menu.isLight(),

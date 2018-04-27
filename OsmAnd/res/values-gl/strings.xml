@@ -498,15 +498,11 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="clear_dest_confirm">Confirma que desexa limpar o destino (e os destinos intermedios)?</string>
     <string name="precise_routing_mode_descr">Permitir calcular rutas precisas sen fallo. Aínda se ve limitado polas distancias e é lento.</string>
     <string name="precise_routing_mode">Cálculo de rutas preciso (alfa)</string>
-    <string name="av_def_action_picture">Tirar unha foto</string>
-    <string name="dropbox_plugin_description">O engadido de Dropbox permite sincronizar pistas e notas de son/vídeo cunha conta de Dropbox.</string>
     <string name="dropbox_plugin_name">Engadido de Dropbox</string>
     <string name="intermediate_points_change_order">Cambiar a orde</string>
     <string name="av_def_action_choose">Seleccionar ao ser pedido</string>
     <string name="av_widget_action_descr">Seleccionar a acción predeterminada do trebello</string>
     <string name="av_widget_action">Acción predeterminada do trebello</string>
-    <string name="av_use_external_camera_descr">Empregar o aplicativo do sistemo para a foto</string>
-    <string name="av_use_external_camera">Empregar o aplicativo da cámara</string>
     <string name="recording_delete_confirm">Desexa eliminar esta gravación?</string>
 
     <string name="recording_context_menu_play">Reproducir</string>
@@ -592,10 +588,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="snap_to_road">Aferrar á estrada</string>
 	<string name="interrupt_music_descr">Interromper a música cando se dean anuncios (non só baixar o volume)</string>
 	<string name="interrupt_music">Deter a música</string>
-
-    <string name="osmand_short_description_80_chars">Visualización e navegación móbil de mapas globais para mapas de OSM con e sen conexión</string>
-
-    <string name="osmand_plus_short_description_80_chars">Visualización e navegación móbil de mapas globais para mapas de OSM con e sen conexión</string>
 
 
     <string name="filterpoi_activity">Crear un filtro de PDI</string>
@@ -1425,16 +1417,11 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="edit_filter_create_message">Creouse o filtro {0}</string>
 	
 	<string name="email">correo electrónico</string>
-	<string name="av_camera_focus">Tipo de enfoque da cámara</string>
-	<string name="av_camera_focus_descr">Seleccione o tipo de enfoque da cámara interna</string>
-	<string name="av_camera_focus_auto">Enfoque automático</string>
+    <string name="av_camera_focus_auto">Enfoque automático</string>
 	<string name="av_camera_focus_hiperfocal">Foco hiperfocal</string>
 	<string name="av_camera_focus_edof">Profundidade de campo extendida (EDOF)</string>
 	<string name="av_camera_focus_infinity">O foco está no infinito</string>
 	<string name="av_camera_focus_macro">Modo de macro (primeiro plano)</string>
-	<string name="av_camera_focus_continuous">A cámara tenta enfocar de maneira continua</string>
-    <string name="av_camera_pic_size">Tamaño de imaxe da cámara</string>
-	<string name="av_camera_pic_size_descr">Seleccione o tamaño de imaxe da cámare</string>
     <string name="navigation_intent_invalid">O formato é incorrecto: %s</string>
     
 <string name="speed_limit_exceed">Tolerancia no límite de velocidade</string>
@@ -1505,8 +1492,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="traffic_warning_pedestrian">Paso de peóns</string>
 	<string name="show_pedestrian_warnings">Pasos de peóns</string>
     <string name="rendering_value_americanRoadAtlas_name">Atlas de estradas norteamericanos</string>
-    <string name="routing_attr_no_new_routing_name">Non seguir as regras de v1.9</string>
-    <string name="routing_attr_no_new_routing_description">Non empregar as retras para itinerarios introducidas na versión 1.9</string>
     <string name="plugin_settings">Engadidos</string>
 	<string name="no_updates_available">Non hai actualizacións dispoñíbeis</string>
     <string name="download_live_updates">Actualizacións ao vivo</string>
@@ -1624,9 +1609,7 @@ Lon %2$s</string>
 	<string name="shared_string_disabled">Desactivado</string>
 	<string name="shared_string_selected">Seleccionado</string>
 	<string name="shared_string_my_location">A miña posición</string>
-	<string name="shared_string_audio">Son</string>
-    <string name="shared_string_photo">Foto</string>
-	<string name="route_points">Puntos da ruta</string>
+    <string name="route_points">Puntos da ruta</string>
 	<string name="track_segments">Segmentos de pista</string>
 	<string name="track_points">Puntos de pista</string>
     <string name="back_to_map">Volver ao mapa</string>
@@ -1834,7 +1817,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="impassable_road_desc">Seleccione as estradas que desexe evitar durante a navegación</string>
     <string name="shared_string_sound">Son</string>
     <string name="no_location_permission">O aplicativo non ten permiso para acceder aos datos de localización.</string>
-    <string name="no_camera_permission">O aplicativo non ten permiso para acceder á cámara.</string>
     <string name="no_microphone_permission">O aplicativo non ten permiso para acceder ao micrófono.</string>
     <string name="route_distance">Distancia:</string>
     <string name="route_duration">Hora:</string>
@@ -1946,7 +1928,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="map_markers">Marcadores de mapas</string>
     <string name="map_marker">Marcador de mapas</string>
     <string name="show_polygons">Mostrar polígonos</string>
-    <string name="find_parking">Atopar aparcamento</string>
     <string name="shared_string_status">Estado</string>
     <string name="shared_string_save_changes">Gardar os cambios</string>
     <string name="shared_string_email_address">Enderezo de correo</string>
@@ -2289,11 +2270,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="lang_ber">Bérber</string>
     <string name="lang_kn">Kannada</string>
     <string name="shared_string_install">Instalar</string>
-    <string name="improve_coverage_mapillary">Mellorar a cobertura de fotos con Mapillary</string>
-    <string name="open_mapillary">Abrir Mapillary</string>
-    <string name="improve_coverage_install_mapillary_desc">Podes facer as túas propias fotos ou serie de fotos e engadilas a este lugar do mapa. 
-\n 
-\nPara facer isto, hai que instalar a aplicación Mapillary dende Google Play.</string>
     <string name="online_photos">Fotos da rede</string>
     <string name="quick_action_resume_pause_navigation">Retomar/Deter a navegación</string>
     <string name="quick_action_resume_pause_navigation_descr">Prema neste botón para deter a navegación, ou para retomala se xa estaba detida.</string>
@@ -2303,25 +2279,13 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="store_tracks_in_monthly_directories_descrp">Almacenar as pistas gravadas en sub-cartafoles segundo o mes de gravación (como 2017-01).</string>
     <string name="shared_string_reset">Restaurar</string>
     <string name="shared_string_reload">Recargar</string>
-    <string name="mapillary_menu_descr_tile_cache">Recargar as teselas para ver datos actualizados.</string>
-    <string name="mapillary_menu_title_tile_cache">Caché de teselas</string>
     <string name="wrong_user_name">O nome de usuario é incorrecto!</string>
     <string name="shared_string_to">A</string>
-    <string name="mapillary_menu_date_from">Desde</string>
-    <string name="mapillary_menu_descr_dates">Ver as imaxes engadidas nun período determinado.</string>
-    <string name="mapillary_menu_title_dates">Datas</string>
-    <string name="mapillary_menu_edit_text_hint">Escriba o nome de usuario</string>
-    <string name="mapillary_menu_descr_username">Ver as imaxes engadidas por un usuario determinado.</string>
-    <string name="mapillary_menu_title_username">Nome de usuario</string>
-    <string name="mapillary_menu_filter_description">Pode filtrar as imaxes por quen as enviou ou pola data. Os filtros só se aplican na ampliación próxima.</string>
     <string name="shared_string_permissions">Permisos</string>
     <string name="import_gpx_failed_descr">O OsmAnd non pode importar o ficheiro. Comprobe se o OsmAnd ten permiso para ler o ficheiro neste sitio.</string>
     <string name="distance_moving">Distancia corrixida</string>
-    <string name="mapillary_image">Imaxe de Mapillary</string>
     <string name="shared_string_add_photos">Engadir fotos</string>
     <string name="no_photos_descr">Non dispomos de fotos deste lugar</string>
-    <string name="mapillary_widget">Trebello de Mapillary</string>
-    <string name="mapillary">Mapillary</string>
     <string name="restart_search">Reiniciar a busca</string>
     <string name="increase_search_radius">Aumentar o radio de busca</string>
     <string name="nothing_found">Non se atopou nada :(</string>

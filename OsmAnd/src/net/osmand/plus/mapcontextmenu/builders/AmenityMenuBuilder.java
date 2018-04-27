@@ -334,7 +334,7 @@ public class AmenityMenuBuilder extends MenuBuilder {
 			String key = e.getKey();
 			String vl = e.getValue();
 
-			if (key.equals("image") || key.equals("mapillary")) {
+			if (key.equals("image")) {
 				continue;
 			}
 
@@ -618,21 +618,6 @@ public class AmenityMenuBuilder extends MenuBuilder {
 					info.textColor, info.isWiki, info.isText, info.needLinks, info.isPhoneNumber,
 					info.isUrl, info.matchWidthDivider, info.textLinesLimit);
 		}
-	}
-
-	@Override
-	protected Map<String, String> getAdditionalCardParams() {
-		Map<String, String> params = new HashMap<>();
-		Map<String, String> additionalInfo = amenity.getAdditionalInfo();
-		String imageValue = additionalInfo.get("image");
-		String mapillaryValue = additionalInfo.get("mapillary");
-		if (!Algorithms.isEmpty(imageValue)) {
-			params.put("osm_image", imageValue);
-		}
-		if (!Algorithms.isEmpty(mapillaryValue)) {
-			params.put("osm_mapillary_key", mapillaryValue);
-		}
-		return params;
 	}
 
 	private CollapsableView getPoiAdditionalCollapsableView(

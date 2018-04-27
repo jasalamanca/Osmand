@@ -749,8 +749,6 @@ El espacio de almacenamiento usado es {1} MB.
     
     <string name="map_widget_vector_attributes">Atributos de dibujado</string>
     <string name="map_widget_renderer">Estilo del mapa</string>
-    <string name="osmand_short_description_80_chars">Visor y navegador móvil global de mapas OSM con y sin conexión</string>
-    <string name="osmand_plus_short_description_80_chars">Visor y navegador móvil global de mapas OSM con y sin conexión</string>
     <string name="avoid_motorway">Evitar autopistas</string>
     <string name="snap_to_road_descr">Ajusta la ubicación a las carreteras durante la navegación.</string>
     <string name="snap_to_road">Ajustar a carreteras</string>
@@ -813,17 +811,13 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="shared_string_control_start">Iniciar</string>
     <string name="av_widget_action">Acción del control predeterminado</string>
     <string name="av_widget_action_descr">Seleccione la acción del control predeterminado.</string>
-    <string name="dropbox_plugin_description">El complemento Dropbox te permite sincronizar trazas y notas multimedia con tu cuenta de Dropbox.</string>
     <string name="dropbox_plugin_name">Complemento Dropbox</string>
     <string name="intermediate_points_change_order">Cambiar orden</string>
-    <string name="av_def_action_picture">Tomar una foto</string>
     <string name="stop_routing_confirm">¿Está seguro que quiere parar la navegación?</string>
     <string name="clear_dest_confirm">¿Seguro que quieres borrar el destino (y los destinos intermedios)?</string>
     <string name="precise_routing_mode_descr">Activar para calcular rutas precisas sin interferencias. Aún está limitado por la distancia y es lento.</string>
     <string name="precise_routing_mode">Navegación precisa (alfa)</string>
     <string name="support_new_features_descr">Dona para ver nuevas características implementadas en la aplicación.</string>
-    <string name="av_use_external_camera_descr">Usa la aplicación del sistema para fotografía.</string>
-    <string name="av_use_external_camera">Utilizar aplicación de la cámara</string>
     <string name="index_name_openmaps">OpenMaps UE</string>
     <string name="prefer_motorways">Preferir autopistas</string>
     <string name="prefer_in_routing_title">Preferir…</string>
@@ -890,14 +884,11 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="distance_measurement_finish_subtrack">Empezar una nueva subtraza</string>
     <string name="distance_measurement_clear_route">Borrar todos los puntos</string>
     <string name="distance_measurement_load_gpx">Abrir GPX existente</string>
-    <string name="av_camera_focus">Método de enfoque</string>
-    <string name="av_camera_focus_descr">Selecciona el modo de enfoque de la cámara interna.</string>
     <string name="av_camera_focus_auto">Enfoque automático</string>
     <string name="av_camera_focus_hiperfocal">Enfoque hiperfocal</string>
     <string name="av_camera_focus_edof">Profundidad de campo extendido (EDOF)</string>
     <string name="av_camera_focus_infinity">Enfocado al infinito</string>
     <string name="av_camera_focus_macro">Modo de enfoque macro (close-up)</string>
-    <string name="av_camera_focus_continuous">La camera intenta enfocar continuamente</string>
     <string name="context_menu_item_directions_from">Ir desde aquí</string>
     <string name="route_via">Vía:</string>
     <string name="route_from">Desde:</string>
@@ -1255,8 +1246,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="arrival_distance_factor_late">Tarde</string>
     <string name="arrival_distance_factor_at_last">En los últimos metros</string>
     <string name="rendering_attr_coloredBuildings_name">Colorear edificios, según el tipo</string>
-    <string name="av_camera_pic_size">Tamaño de foto</string>
-    <string name="av_camera_pic_size_descr">Selecciona el tamaño interno de la foto.</string>
     <string name="rendering_value_browse_map_name">Explorar mapa</string>
     <string name="rendering_value_car_name">Automóvil</string>
     <string name="rendering_value_bicycle_name">Bicicleta</string>
@@ -1358,8 +1347,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="rendering_attr_roadStyle_name">Estilo de carretera</string>
     <string name="rendering_value_default_name">Predefinido</string>
     <string name="rendering_value_orange_name">Naranja</string>
-    <string name="routing_attr_no_new_routing_name">Sin reglas de navegación v1.9</string>
-    <string name="routing_attr_no_new_routing_description">No utilizar reglas de navegación introducidas en v.1.9.</string>
     <string name="traffic_warning_railways">Cruce de ferrocarril</string>
     <string name="traffic_warning_pedestrian">Paso de peatones</string>
     <string name="show_railway_warnings">Pasos a nivel</string>
@@ -1401,7 +1388,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="notes">Notas</string>
     <string name="online_map">Mapa en línea</string>
     <string name="shared_string_export">Exportar</string>
-    <string name="shared_string_audio">Audio</string>
     <string name="plugin_touringview_descr">Activando esta vista cambia el estilo del mapa OSMAnd a la «Vista turística», que es una vista de alto detalle especial para viajeros y conductores profesionales.
 \n 
 \nEsta vista proporciona, en cualquier nivel de zoom del mapa, la máxima cantidad de detalles de viaje disponible en los datos del mapa (especialmente carreteras, senderos, caminos y marcas de orientación). 
@@ -1445,7 +1431,6 @@ Lon %2$s</string>
     <string name="shared_string_unexpected_error">Se produjo un error inesperado</string>
     <string name="shared_string_action_template">Acción {0}</string>
     <string name="shared_string_collapse">Contraer</string>
-    <string name="shared_string_photo">Foto</string>
     <string name="route_points">Puntos de la ruta</string>
     <string name="shared_string_release">Liberado</string>
     <string name="delay_to_start_navigation">Iniciar navegación giro-a-giro después de…</string>
@@ -1754,7 +1739,6 @@ Lon %2$s</string>
     <string name="route_duration">Duración:</string>
     <string name="missing_write_external_storage_permission">La aplicación no tiene permiso para usar la tarjeta SD</string>
 <string name="no_location_permission">La aplicación no tiene permiso para acceder a los datos de ubicación.</string>
-    <string name="no_camera_permission">La aplicación no tiene permiso para acceder a la cámara.</string>
     <string name="no_microphone_permission">La aplicación no tiene permiso para acceder al micrófono.</string>
     <string name="impassable_road_desc">Selecciona las carreteras a evitar durante la navegación.</string>
     <string name="shared_string_sound">Sonido</string>
@@ -1800,7 +1784,6 @@ Lon %2$s</string>
     <string name="shared_string_email_address">Dirección de correo electrónico</string>
     <string name="shared_string_status">Estado</string>
     <string name="shared_string_save_changes">Guardar los cambios</string>
-    <string name="find_parking">Encontrar aparcamiento</string>
     <string name="show_polygons">Mostrar polígonos</string>
     
     <string name="rendering_attr_showMtbRoutes_name">Mostrar rutas para bicicletas de montaña</string>
@@ -2166,8 +2149,6 @@ Por favor proporciona un código completo</string>
     <string name="shared_string_visible">Visible</string>
     <string name="restore_purchases">Restaurar compras</string>
     <string name="fonts_header">Fuentes para mapa</string>
-    <string name="osmand_extended_description_part6">Caminar, senderismo, turismo de ciudad • El mapa tmuestrae caminos y rutas de senderismo • Wikipedia en tu idioma preferido puede decirte mucho durante una visita turística • Las paradas de transporte público (autobús, tranvía, tren), incluyendo los nombres de las líneas, ayudan a navegar en una nueva ciudad • Navegación GPS en el modo de peatón construye tu ruta mediante caminos y senderos • Puedes subir y seguir una ruta GPX o grabar y compartir las tuyas</string>
-    <string name="osmand_extended_description_part7">Contribuir a OSM • Informar de fallos en los datos • Subir pistas GPX a OSM directamente desde la aplicación • Añadir PDIs y subirlos directamente a OSM (o más tarde si estuvieras desconectado)</string>
     <string name="quick_action_auto_zoom">Zoom automático del mapa sí/no</string>
     <string name="quick_action_auto_zoom_desc">Pulsar el botón de acción encenderá/apagará el zoom automático del mapa según la velocidad.</string>
     <string name="quick_action_auto_zoom_on">Activar zoom automático del mapa</string>
@@ -2197,12 +2178,6 @@ Por favor proporciona un código completo</string>
     <string name="animate_my_location">Animar mi ubicación</string>
     <string name="animate_my_location_desc">Activa la ubicación panorámica animada del mapa durante la navegación.</string>
     <string name="shared_string_overview">Resumen</string>
-    <string name="osmand_plus_extended_description_part7">"Contribuye con OSM
-\n • Informa sobre problemas de datos en el mapa 
-\n • Sube trazas GPX a OSM directamente desde la aplicación 
-\n • Añade PDIs y súbelos directamente a OSM (o más tarde, si no estás conectado) 
-\n • (Opcional) Grabación del viaje en segundo plano (mientras el dispositivo está bloqueado) 
-\n  OsmAnd es de código abierto y se desarrolla activamente. Puedes contribuir con la aplicación al informar sobre errores, mejorar las traducciones o desarrollar nuevas funciones. El proyecto se encuentra en un estado de mejora continua gracias a todas estas formas de interacción entre el desarrollador y el usuario. El progreso del proyecto también depende de contribuciones financieras para financiar el desarrollo y pruebas de nuevas funcionalidades."</string>
     <string name="save_poi_too_many_uppercase">El nombre contiene demasiadas letras capitales. ¿Continuar?</string>
     <string name="shared_string_plugin">Complemento</string>
     <string name="show_from_zoom_level">Mostrar desde el nivel de zoom</string>
@@ -2222,22 +2197,10 @@ Por favor proporciona un código completo</string>
     <string name="nothing_found">Nada encontrado :(</string>
     <string name="nothing_found_descr">Intenta cambiar el criterio de búsqueda o aumentar el radio de búsqueda.</string>
     <string name="private_access_routing_req">Tu destino se ubica en un área de acceso privado. ¿Quieres permitir el acceso a las carreteras privadas en este viaje?</string>
-    <string name="mapillary_widget">Control de Mapillary</string>
-    <string name="mapillary_descr">Fotos a pie de calle para todos. Descubre lugares, colabora, captura el mundo.</string>
-    <string name="mapillary">Mapillary</string>
     <string name="shared_string_add_photos">Añadir fotos</string>
-    <string name="mapillary_action_descr">Contribuye con tus propias vistas a pie de calle de esta ubicación a través de Mapillary.</string>
-    <string name="mapillary_widget_descr">Permite la rápida contribución a Mapillary.</string>
-    <string name="plugin_mapillary_descr">Fotos a nivel de calle para todos. Descubre lugares, colabora, captura el mundo.</string>
     <string name="no_photos_descr">No se encontraron fotos en esta ubicación.</string>
-    <string name="open_mapillary">Abrir Mapillary</string>
     <string name="shared_string_install">Instalar</string>
-    <string name="improve_coverage_mapillary">Mejorar la cobertura de fotos con Mapillary</string>
-    <string name="improve_coverage_install_mapillary_desc">Puedes hacer tus propias fotos o serie de fotos y añadirlas a esta ubicación del mapa. 
-\n 
-\nPara ello debes instalar la aplicación de Mapillary desde Google Play.</string>
     <string name="online_photos">Fotos en línea</string>
-    <string name="mapillary_image">Imagen de Mapillary</string>
     <string name="shared_string_permissions">Permisos</string>
     <string name="import_gpx_failed_descr">OsmAnd no puede importar el archivo. Comprueba si OsmAnd tiene permiso para leer el archivo en esa ubicación.</string>
     <string name="distance_moving">Distancia corregida</string>
@@ -2245,18 +2208,9 @@ Por favor proporciona un código completo</string>
     <string name="store_tracks_in_monthly_directories_descrp">Guarda las trazas grabadas en subcarpetas por mes de grabación (como 2017-01).</string>
     <string name="shared_string_reset">Restablecer</string>
     <string name="shared_string_reload">Recargar</string>
-    <string name="mapillary_menu_descr_tile_cache">Recargar teselas para ver la información actualizada.</string>
-    <string name="mapillary_menu_title_tile_cache">Caché de teselas</string>
     <string name="wrong_user_name">¡Nombre de usuario incorrecto!</string>
     <string name="shared_string_to">Hasta</string>
-    <string name="mapillary_menu_date_from">Desde</string>
-    <string name="mapillary_menu_descr_dates">Ver sólo imágenes añadidas</string>
-    <string name="mapillary_menu_title_dates">Fecha</string>
-    <string name="mapillary_menu_edit_text_hint">Escribir nombre de usuario</string>
-    <string name="mapillary_menu_descr_username">Ver sólo imágenes añadidas por</string>
-    <string name="mapillary_menu_title_username">Nombre de usuario</string>
-    <string name="mapillary_menu_filter_description">Puedes filtrar imágenes por usuario o por fecha. Los filtros aplican para los primeros acercamientos.</string>
-    
+
     <string name="map_widget_ruler_control">Regla radial</string>
     <string name="average">Promedio</string>
     <string name="of">%1$d de %2$d</string>
@@ -2277,7 +2231,6 @@ Por favor proporciona un código completo</string>
     <string name="show_on_map_after_saving">Mostrar en el mapa después de guardar</string>
     <string name="measurement_tool_action_bar">Navega por el mapa y añade puntos</string>
     <string name="measurement_tool">Medir distancia</string>
-    <string name="mappilary_no_internet_desc">Debes tener conexión a Internet para ver fotos de Mapillary.</string>
     <string name="retry">Reintentar</string>
     <string name="add_route_point">Añadir punto de ruta</string>
     <string name="add_waypoint">Añadir punto de ruta</string>

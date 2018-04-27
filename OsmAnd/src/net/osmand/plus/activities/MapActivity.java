@@ -96,7 +96,6 @@ import net.osmand.plus.inapp.InAppHelper;
 import net.osmand.plus.mapcontextmenu.AdditionalActionsBottomSheetDialogFragment;
 import net.osmand.plus.mapcontextmenu.MapContextMenu;
 import net.osmand.plus.mapcontextmenu.MapContextMenuFragment;
-import net.osmand.plus.mapcontextmenu.builders.cards.dialogs.ContextMenuCardDialogFragment;
 import net.osmand.plus.mapcontextmenu.other.DestinationReachedMenu;
 import net.osmand.plus.mapcontextmenu.other.MapRouteInfoMenu;
 import net.osmand.plus.mapcontextmenu.other.MapRouteInfoMenuFragment;
@@ -897,11 +896,6 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 	}
 
 	public void dismissCardDialog() {
-		try {
-			getSupportFragmentManager().popBackStack(ContextMenuCardDialogFragment.TAG, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 
 	@Override
@@ -926,7 +920,6 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				doRestart(MapActivity.this);
-				//android.os.Process.killProcess(android.os.Process.myPid());
 			}
 		});
 		bld.show();

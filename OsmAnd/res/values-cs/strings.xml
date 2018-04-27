@@ -756,8 +756,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="map_widget_view_direction">Zorné pole</string>
     <string name="day_night_info_description">Východ slunce: %1$s
 \nZápad slunce: %2$s</string>
-    <string name="osmand_short_description_80_chars">OsmAnd je open-source navigační program s podporou off-line a on-line map celého světa</string>
-    <string name="osmand_plus_short_description_80_chars">OsmAnd je open-source navigační program s podporou off-line a on-line map celého světa</string>
     <string name="filterpoi_activity">Vytvořit filtr pro POI</string>
     <string name="select_navigation_mode">Vyberte způsob dopravy</string>
     <string name="day_night_info">Denní/noční info</string>
@@ -828,15 +826,11 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="dropbox_plugin_name">Modul Dropbox</string>
     <string name="intermediate_points_change_order">Změnit pořadí</string>
     <string name="shared_string_control_stop">Zastavit</string>
-    <string name="dropbox_plugin_description">Modul Dropbox vám umožňuje nahrávat trasy, audio a video poznámky do vašeho účtu Dropbox.</string>
     <string name="stop_routing_confirm">Opravdu chcete zastavit navigaci?</string>
     <string name="clear_dest_confirm">Opravdu chcete smazat svůj cíl (a mezicíle)?</string>
-    <string name="av_def_action_picture">Vyfotit</string>
     <string name="precise_routing_mode_descr">Umožní výpočet přesné cesty pro navigaci. Omezené vzdáleností a pomalé.</string>
     <string name="precise_routing_mode">Přesná navigace (alfa)</string>
     <string name="support_new_features_descr">Prosím sponzorujte vývoj nových funkcí v aplikaci.</string>
-    <string name="av_use_external_camera_descr">Použít systémovou aplikaci pro fotografie.</string>
-    <string name="av_use_external_camera">Externí foto aplikace</string>
     <string name="prefer_motorways">Upřednostňovat dálnice</string>
     <string name="prefer_in_routing_title">Upřednostňovat…</string>
     <string name="max_speed_none">žádná</string>
@@ -912,14 +906,11 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="speak_cameras">Rychlostní radary</string>
     <string name="speak_traffic_warnings">Dopravní varování</string>
     <string name="osb_author_dialog_password">Heslo OSM (volitelné)</string>
-    <string name="av_camera_focus">Typ ostření fotoaparátu</string>
-    <string name="av_camera_focus_descr">Zvolte způsob ostření vestavěného fotoaparátu.</string>
     <string name="av_camera_focus_auto">Automatické ostření</string>
     <string name="av_camera_focus_hiperfocal">Fix-focus</string>
     <string name="av_camera_focus_edof">Fix-focus</string>
     <string name="av_camera_focus_infinity">Ostření na nekonečno</string>
     <string name="av_camera_focus_macro">Makro</string>
-    <string name="av_camera_focus_continuous">Kamera ostří souvisle</string>
     <string name="new_directions_point_dialog">Mezicíle jsou již nastaveny.</string>
     <string name="context_menu_item_directions_to">Navigovat sem</string>
     <string name="context_menu_item_directions_from">Navigovat odsud</string>
@@ -1266,8 +1257,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="arrival_distance_factor_normally">Normální</string>
     <string name="arrival_distance_factor_late">Později</string>
     <string name="arrival_distance_factor_at_last">V posledních metrech</string>
-    <string name="av_camera_pic_size">Velikost fotografie</string>
-    <string name="av_camera_pic_size_descr">Vyberte velikost obrázku interního fotoaparátu.</string>
     <string name="shared_string_more">Více…</string>
     <string name="rendering_value_browse_map_name">Standardní</string>
     <string name="rendering_value_car_name">Automobil</string>
@@ -1381,8 +1370,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="show_railway_warnings">Železniční přejezdy</string>
     <string name="show_pedestrian_warnings">Přechody pro chodce</string>
     <string name="rendering_value_americanRoadAtlas_name">Americký Atlas cest</string>
-    <string name="routing_attr_no_new_routing_name">Nepoužívat routovací pravidla v1.9</string>
-    <string name="routing_attr_no_new_routing_description">Nepoužívat pravidla výpočtu trasy zavedené ve verzi 1.9.</string>
     <string name="speak_pedestrian">Přechody pro chodce</string>
     <string name="gps_status">GPS stav</string>
     <string name="version_settings_descr">Stáhnout vývojové verze.</string>
@@ -1412,7 +1399,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="roads_only">Pouze cesty</string>
     <string name="free">%1$s volných</string>
     <string name="device_memory">Paměť zařízení</string>
-    <string name="shared_string_audio">Audio</string>
     <string name="watch">Zobrazit</string>
     <string name="shared_string_selected">Vybraný</string>
     <string name="rename_failed">Přejmenování selhalo.</string>
@@ -1438,7 +1424,6 @@ Délka %2$s</string>
     <string name="shared_string_deselect_all">Zrušit výběr všech</string>
     <string name="shared_string_unexpected_error">Nastala neočekávaná chyba</string>
     <string name="shared_string_action_template">Činnost {0}</string>
-    <string name="shared_string_photo">Foto</string>
     <string name="drawer">Seznam</string>
     <string name="tips_and_tricks_descr">Často pokládané dotazy, nedávné změny a další.</string>
     <string name="days_behind">dnů novější</string>
@@ -1767,7 +1752,6 @@ Délka %2$s</string>
     <string name="rendering_attr_horseRoutes_name">Stezka pro koně</string>
     <string name="only_download_over_wifi">Stahovat jen přes WiFi</string>
     <string name="no_location_permission">Aplikace nemá povolen přístup k poloze.</string>
-    <string name="no_camera_permission">Aplikace nemá povolen přístup k fotoaparátu.</string>
     <string name="no_microphone_permission">Aplikace nemá povolen přístup k mikrofonu.</string>
     <string name="update">Aktualizovat každých</string>
     <string name="live_update">Okamžité aktualizace</string>
@@ -1811,7 +1795,6 @@ Délka %2$s</string>
 <string name="rendering_attr_hideUnderground_name">Podzemní objekty</string>
     <string name="shared_string_email_address">E-mail</string>
     <string name="show_polygons">Zobrazit polygony</string>
-    <string name="find_parking">Najít parkování</string>
     <string name="shared_string_status">Stav</string>
     <string name="shared_string_save_changes">Uložit změny</string>
     <string name="shared_string_read_more">Číst více</string>
@@ -2222,7 +2205,6 @@ Zobrazená oblast: %1$s x %2$s</string>
     <string name="shared_string_paused">Pozastaveno</string>
     <string name="route_is_too_long_v2">Tato cesta může být příliš dlouhá pro výpočet. Prosím, přidejte mezilehlé cíle, pokud není nalezen žádný výsledek do 10 minut.</string>
     <string name="save_poi_too_many_uppercase">Název obsahuje příliš mnoho velkých písmen. Chcete pokračovat?</string>
-    <string name="mapillary">Mapillary</string>
     <string name="private_access_routing_req">Váš cíl se nachází v oblasti se soukromým přístupem. Chcete povolit přístup k soukromým silnicím pro tuto cestu?</string>
     <string name="restart_search">Spustit hledání znovu</string>
     <string name="increase_search_radius">Zvětšit okruh hledání</string>
@@ -2232,36 +2214,16 @@ Zobrazená oblast: %1$s x %2$s</string>
     <string name="shared_string_permissions">Oprávnění</string>
     <string name="import_gpx_failed_descr">OsmAnd nemůže naimportovat soubor. Prosím zkontrolujte, že má oprávnění číst soubor z tohoto umístění.</string>
     <string name="distance_moving">Vzdálenost opravená</string>
-    <string name="mapillary_image">Obrázek Mapillary</string>
-    <string name="open_mapillary">Otevřít Mapillary</string>
     <string name="shared_string_install">Instalovat</string>
-    <string name="improve_coverage_mapillary">Zlepšit pokrytí fotografií s Mapillary</string>
-    <string name="improve_coverage_install_mapillary_desc">Můžete vyfotit své vlastní fotografie nebo série fotografií a připojit je k tomuto místu na mapě.
-\n
-\nK tomu budete muset nainstalovat aplikaci Mapillary z obchodu Google Play.</string>
     <string name="online_photos">On-line fotografie</string>
     <string name="shared_string_add_photos">Přidat fotografie</string>
     <string name="no_photos_descr">Nemáme fotografie pro toto umístění.</string>
-    <string name="mapillary_action_descr">Přispějte vlastními pohledy na toto místo přes Mapillary z úrovně ulice.</string>
-    <string name="mapillary_widget_descr">Umožňuje rychle přispět do Mapillary.</string>
-    <string name="mapillary_descr">On-line fotografie z ulic pro každého. Objevte místa, spolupracujte, zachyťte svět.</string>
-    <string name="plugin_mapillary_descr">Fotografie z ulic pro každého. Objevte místa, spolupracujte, zachyťte svět.</string>
-    <string name="mapillary_widget">Nástroj Mapillary</string>
-    
+
     <string name="map_widget_ruler_control">Kruhové pravítko</string>
     <string name="shared_string_reset">Resetovat</string>
     <string name="shared_string_reload">Znovu načíst</string>
-    <string name="mapillary_menu_descr_tile_cache">Znovu načíst dlaždice pro zobrazení aktuálních dat.</string>
-    <string name="mapillary_menu_title_tile_cache">Vyrovnávací paměť dlaždic</string>
     <string name="wrong_user_name">Nesprávné uživatelské jméno!</string>
     <string name="shared_string_to">Do</string>
-    <string name="mapillary_menu_date_from">Od</string>
-    <string name="mapillary_menu_descr_dates">Zobrazit pouze přidané obrázky</string>
-    <string name="mapillary_menu_title_dates">Datum</string>
-    <string name="mapillary_menu_edit_text_hint">Zadejte uživatelské jméno</string>
-    <string name="mapillary_menu_descr_username">Zobrazit pouze obrázky přidané</string>
-    <string name="mapillary_menu_title_username">Uživatelské jméno</string>
-    <string name="mapillary_menu_filter_description">Můžete filtrovat snímky podle odesílatele nebo podle datumu. Filtry se použijí pouze pro detailní přiblížení.</string>
     <string name="store_tracks_in_monthly_directories">Ukládat zaznamenané trasy v adresářích po měsících</string>
     <string name="store_tracks_in_monthly_directories_descrp">Ukládat zaznamenané trasy v podadresářích podle měsíce záznamu (např. 2017-01).</string>
     <string name="average">Průměr</string>
@@ -2284,7 +2246,6 @@ Zobrazená oblast: %1$s x %2$s</string>
     <string name="measurement_tool">Měřit vzdálenost</string>
     <string name="live_monitoring_max_interval_to_send">Časový zásobník pro online sledování</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Zadejte čas pro podržení pozic k odeslání, pokud není připojení</string>
-    <string name="mappilary_no_internet_desc">Pro zobrazení fotografií z Mapillary potřebujete Internet.</string>
     <string name="retry">Zkusit znovu</string>
     <string name="add_route_point">Přidat bod trasy</string>
     <string name="add_waypoint">Přidat trasový bod</string>

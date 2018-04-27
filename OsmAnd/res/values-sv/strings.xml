@@ -53,8 +53,6 @@
 
     <string name="map_widget_reset">Återställ till standard</string>
     <string name="map_widget_time">Tid som är kvar</string>
-    <string name="osmand_short_description_80_chars">OsmAnd är en open source-navigeringsapp för offline- och onlinekartor</string>
-    <string name="osmand_plus_short_description_80_chars">OsmAnd är en open source-navigeringsapp för offline- och onlinekartor</string>
 
     <string name="edit_filter_save_as_menu_item">Spara som</string>
     <string name="edit_filter_delete_dialog_title">Ta bort markerat filter?</string>
@@ -799,8 +797,6 @@ Nyttjat utrymme är {1} MB.
 
     <string name="intermediate_points_change_order">Ändra ordning</string>
     <string name="precise_routing_mode">Exakt ruttning (alfa)</string>
-    <string name="av_def_action_picture">Ta ett foto</string>
-    <string name="dropbox_plugin_description">Dropbox-modulen låter dig synkronisera spår och ljud-/videoanteckningar med ditt Dropbox-konto.</string>
     <string name="av_widget_action_descr">Välj standardåtgärd för widget.</string>
     <string name="av_widget_action">Standardåtgärd för widget</string>
     <string name="delete_target_point">Ta bort destination</string>
@@ -886,8 +882,6 @@ Nyttjat utrymme är {1} MB.
     <string name="Closest_Amenities">Närmaste bekvämligheter</string>
     <string name="support_new_features_descr">Skänk lite pengar så att nya funktioner kan läggas till i appen.</string>
 
-    <string name="av_use_external_camera_descr">Andvänd systemets app för foton.</string>
-    <string name="av_use_external_camera">Använd kamera-app</string>
     <string name="max_speed_none">Ingen</string>
     <string name="prefer_motorways">Föredra motorvägar</string>
     <string name="prefer_in_routing_title">Föredra …</string>
@@ -1005,14 +999,11 @@ Nyttjat utrymme är {1} MB.
 
 
     <string name="base_world_map">Baskarta (världen)</string>
-    <string name="av_camera_focus">Typ av kamerafokus</string>
-    <string name="av_camera_focus_descr">Välj läge för intern kamerafokus.</string>
     <string name="av_camera_focus_auto">Autofokus</string>
     <string name="av_camera_focus_hiperfocal">Hyperfokal fokus</string>
     <string name="av_camera_focus_edof">Utökat skärpedjup (EDOF)</string>
     <string name="av_camera_focus_infinity">Fokus på oändligt</string>
     <string name="av_camera_focus_macro">Makrofokusläge (närbild)</string>
-    <string name="av_camera_focus_continuous">Kameran försöker fokusera hela tiden</string>
 
 
     <string name="map_magnifier">Kartförstoring</string>
@@ -1357,9 +1348,6 @@ Vill du fortsätta med en ny registrering?</string>
     <string name="arrival_distance_factor_late">Sent</string>
     <string name="arrival_distance_factor_at_last">De sista metrarna</string>
 
-    <string name="av_camera_pic_size">Fotostorlek</string>
-    <string name="av_camera_pic_size_descr">Välj fotostorlek för den interna kameran.</string>
-
     <string name="rendering_value_car_name">Bil</string>
     <string name="rendering_value_bicycle_name">Cykel</string>
     <string name="rendering_value_pedestrian_name">Fotgängare</string>
@@ -1453,8 +1441,6 @@ Vill du fortsätta med en ny registrering?</string>
     <string name="show_railway_warnings">Järnvägsövergångar</string>
     <string name="show_pedestrian_warnings">Övergångsställen</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerikansk vägkarta</string>
-    <string name="routing_attr_no_new_routing_name">Inga regler från version 1.9-ruttning</string>
-    <string name="routing_attr_no_new_routing_description">Använd inte de ruttningsregler som infördes i version 1.9.</string>
     <string name="dash_download_msg_none">Vill du hämta offline-kartor?</string>
     <string name="dash_download_msg">Du har hämtat %1$s kartor</string>
     <string name="dash_download_new_one">Hämta ny karta</string>
@@ -1573,8 +1559,6 @@ Vill du fortsätta med en ny registrering?</string>
     <string name="shared_string_my_favorites">Mina favoriter</string>
     <string name="shared_string_my_tracks">Mina spår</string>
     <string name="shared_string_currently_recording_track">Spelar för tillfället in spår</string>
-    <string name="shared_string_audio">Ljud</string>
-    <string name="shared_string_photo">Foto</string>
 
     <string name="shared_string_release">Utgiven</string>
     <string name="simulate_your_location">Simulera din plats</string>
@@ -1907,7 +1891,6 @@ Long %2$s</string>
     <string name="route_duration">Tid:</string>
     <string name="missing_write_external_storage_permission">Appen har inte tillåtelse att använda SD-kortet</string>
 <string name="no_location_permission">Appen har inte tillräckliga behörigheter för att komma åt platsdata.</string>
-    <string name="no_camera_permission">Appen har inte tillräckliga behörigheter för att komma åt kameran.</string>
     <string name="no_microphone_permission">Appen har inte tillräckliga behörigheter för att komma åt mikrofonen.</string>
     <string name="select_voice_provider">Välj röstvägledning</string>
     <string name="select_voice_provider_descr">Välj eller hämta röstvägledning för ditt språk.</string>
@@ -1949,7 +1932,6 @@ Long %2$s</string>
     <string name="shared_string_email_address">E-postadress</string>
     <string name="shared_string_status">Status</string>
     <string name="shared_string_save_changes">Spara ändringar</string>
-    <string name="find_parking">Hitta en parkeringsplats</string>
     <string name="show_polygons">Visa polygoner</string>
     
     <string name="rendering_attr_showMtbRoutes_name">Visa MTB-rutter</string>
@@ -2319,8 +2301,6 @@ Vänligen tillhandahåll fullständig kod</string>
     <string name="online_photos">Online-foton</string>
     <string name="shared_string_add_photos">Lägg till foton</string>
     <string name="no_photos_descr">Vi har inga foton från denna plats.</string>
-    <string name="mapillary_widget">Mapillary-widget</string>
-    <string name="mapillary">Mapillary</string>
     <string name="shared_string_install">Installera</string>
     <string name="shared_string_permissions">Tillstånd</string>
     <string name="import_gpx_failed_descr">OsmAnd kan inte importera filen. Kolla om OsmAnd har tillåtelse att läsa filen från sin plats.</string>
@@ -2367,10 +2347,6 @@ Vänligen tillhandahåll fullständig kod</string>
     <string name="shared_string_reload">Ladda om</string>
     <string name="wrong_user_name">Fel användarnamn!</string>
     <string name="shared_string_to">Till</string>
-    <string name="mapillary_menu_date_from">Från</string>
-    <string name="mapillary_menu_title_dates">Datum</string>
-    <string name="mapillary_menu_edit_text_hint">Ange användarnamn</string>
-    <string name="mapillary_menu_title_username">Användarnamn</string>
     <string name="animate_my_location">Animera min plats</string>
     <string name="analyze_on_map">Analysera på kartan</string>
     <string name="restore_purchases">Återställ köp</string>
@@ -2406,10 +2382,6 @@ Vänligen tillhandahåll fullständig kod</string>
     <string name="show_on_map_after_saving">Visa på kartan när den sparats</string>
     <string name="quick_action_resume_pause_navigation_descr">Peta på denna knapp för att pausa eller fortsätta med navigeringen.</string>
     <string name="quick_action_start_stop_navigation_descr">Peta på denna knapp för att starta eller avsluta navigeringen.</string>
-    <string name="mapillary_image">Mapillary-bild</string>
-    <string name="open_mapillary">Öppna Mapillary</string>
-    <string name="improve_coverage_mapillary">Förbättra fototäckning med Mapillary</string>
-    <string name="mapillary_widget_descr">Gör så att du snabbt kan bidraga till Mapillary.</string>
     <string name="descendingly">nedåt</string>
     <string name="ascendingly">uppåt</string>
     <string name="marker_moved_to_active">Kartmarkören flyttad till aktiva</string>
@@ -2419,8 +2391,6 @@ Vänligen tillhandahåll fullständig kod</string>
     <string name="quick_action_show_navigation_finish_dialog">Visa dialogen Navigation avslutad</string>
     <string name="store_tracks_in_monthly_directories">Spara inspelade spår i mappar efter månad</string>
     <string name="store_tracks_in_monthly_directories_descrp">Spara inspelade spår i undermappar efter inspelad månad (typ 2017-01).</string>
-    <string name="mapillary_menu_descr_dates">Visa endast tillagda bilder</string>
-    <string name="mapillary_menu_descr_username">Visa endast bilder tillagda av</string>
     <string name="import_gpx_file_description">kan importeras som favoritpunkter eller som spårfil.</string>
     <string name="import_as_gpx">Importera som GPX-fil</string>
     <string name="import_as_favorites">Importera som favorit</string>

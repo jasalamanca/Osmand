@@ -223,8 +223,6 @@
     <string name="index_name_openmaps">OpenMaps EU</string>
 
 
-    <string name="av_def_action_picture">Ta eit foto</string>
-    <string name="av_use_external_camera">Bruk kamera-app</string>
     <string name="recording_context_menu_play">Spel av</string>
     <string name="shared_string_control_stop">Stopp</string>
     <string name="shared_string_control_start">Start</string>

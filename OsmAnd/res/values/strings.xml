@@ -188,35 +188,16 @@
     <string name="store_tracks_in_monthly_directories_descrp">Store recorded tracks in sub-folders per recording month (like 2017-01).</string>
     <string name="shared_string_reset">Reset</string>
     <string name="shared_string_reload">Reload</string>
-    <string name="mapillary_menu_descr_tile_cache">Reload tiles to see up to date data.</string>
-    <string name="mapillary_menu_title_tile_cache">Tile cache</string>
     <string name="wrong_user_name">Wrong username!</string>
     <string name="shared_string_to">To</string>
-    <string name="mapillary_menu_date_from">From</string>
-    <string name="mapillary_menu_descr_dates">View only images added</string>
-    <string name="mapillary_menu_title_dates">Date</string>
-    <string name="mapillary_menu_edit_text_hint">Type username</string>
-    <string name="mapillary_menu_descr_username">View only images added by</string>
-    <string name="mapillary_menu_title_username">Username</string>
-    <string name="mapillary_menu_filter_description">You can filter images by submitter or by date. Filters apply only for closeup zoom.</string>
     <string name="map_widget_ruler_control">Radius ruler</string>
     <string name="shared_string_permissions">Permissions</string>
     <string name="import_gpx_failed_descr">OsmAnd cannot import the file. Please check if OsmAnd has permission to read file from its location.</string>
     <string name="distance_moving">Distance corrected</string>
-    <string name="mapillary_image">Mapillary image</string>
-    <string name="open_mapillary">Open Mapillary</string>
     <string name="shared_string_install">Install</string>
-    <string name="improve_coverage_mapillary">Improve photo coverage with Mapillary</string>
-    <string name="improve_coverage_install_mapillary_desc">You can take your own photos or series of photos and attach them to this map location.\n\nTo do this you need to install the Mapillary app from the Google Play Store.</string>
     <string name="online_photos">Online photos</string>
     <string name="shared_string_add_photos">Add photos</string>
     <string name="no_photos_descr">We do not have photos for this location.</string>
-    <string name="mapillary_action_descr">Contribute with your own street-level views of this location via Mapillary.</string>
-    <string name="mapillary_widget">Mapillary widget</string>
-    <string name="mapillary_widget_descr">Allows you to quickly contribute to Mapillary.</string>
-    <string name="mapillary_descr">Online street-level photos for everyone. Discover places, collaborate, capture the world.</string>
-    <string name="mapillary">Mapillary</string>
-    <string name="plugin_mapillary_descr">Street-level photos for everyone. Discover places, collaborate, capture the world.</string>
     <string name="private_access_routing_req">Your destination is located in an area with private access. Do you want to allow access to the private roads for this trip?</string>
     <string name="restart_search">Restart search</string>
     <string name="increase_search_radius">Increase search radius</string>
@@ -582,7 +563,6 @@
     <string name="rendering_attr_showMtbRoutes_name">Show MTB routes</string>
     <string name="show_polygons">Show polygons</string>
     <!-- string name="underlay_transparency">Underlay transparency</string -->
-    <string name="find_parking">Find parking</string>
     <string name="shared_string_status">Status</string>
     <string name="shared_string_save_changes">Save changes</string>
     <string name="shared_string_email_address">E-mail address</string>
@@ -611,7 +591,6 @@
     <string name="impassable_road_desc">Select roads you want to avoid during navigation.</string>
     <string name="shared_string_sound">Sound</string>
     <string name="no_location_permission">App has no permission to access location data.</string>
-    <string name="no_camera_permission">App has no permission to access the camera.</string>
     <string name="no_microphone_permission">App has no permission to access the microphone.</string>
     <string name="route_distance">Distance:</string>
     <string name="route_duration">Time:</string>
@@ -915,8 +894,6 @@
     <string name="shared_string_my_favorites">My Favorites</string>
     <string name="shared_string_my_tracks">My Tracks</string>
     <string name="shared_string_currently_recording_track">Currently recording track</string>
-    <string name="shared_string_audio">Audio</string>
-    <string name="shared_string_photo">Photo</string>
     <string name="route_points">Route points</string>
     <string name="track_segments">Track segments</string>
     <string name="track_points">Track points</string>
@@ -972,8 +949,6 @@
     <string name="show_railway_warnings">Railroad crossings</string>
     <string name="show_pedestrian_warnings">Pedestrian crosswalks</string>
     <string name="rendering_value_americanRoadAtlas_name">American road atlas</string>
-    <string name="routing_attr_no_new_routing_name">No v1.9 routing rules</string>
-    <string name="routing_attr_no_new_routing_description">Do not use routing rules introduced in v1.9.</string>
     <string name="dash_download_msg_none">Do you want to download offline maps?</string>
     <string name="dash_download_msg">You have downloaded %1$s maps</string>
     <string name="dash_download_new_one">Download new map</string>
@@ -1463,15 +1438,11 @@
     <string name="clear_dest_confirm">Are you sure you want to clear your destination (and intermediate destinations)?</string>
     <string name="precise_routing_mode_descr">Enable to calculate precise routes without glitches. Still distance-limited and slow.</string>
     <string name="precise_routing_mode">Precise routing (alpha)</string>
-    <string name="av_def_action_picture">Take a photo</string>
-    <string name="dropbox_plugin_description">The Dropbox plugin allows you to synchronize tracks and audio/video notes with your Dropbox account.</string>
     <string name="dropbox_plugin_name">Dropbox plugin</string>
     <string name="intermediate_points_change_order">Change order</string>
     <string name="av_def_action_choose">Select on request</string>
     <string name="av_widget_action_descr">Select default widget action.</string>
     <string name="av_widget_action">Default widget action</string>
-    <string name="av_use_external_camera_descr">Use the system application for photos.</string>
-    <string name="av_use_external_camera">Use camera app</string>
     <string name="recording_delete_confirm">Do you want to delete this recording?</string>
     <string name="recording_context_menu_play">Play</string>
     <string name="map_widget_distancemeasurement">Distance measurement</string>
@@ -1543,30 +1514,6 @@
     <string name="snap_to_road">Snap to road</string>
     <string name="interrupt_music_descr">Voice prompts pause, not just subdue, music playback.</string>
     <string name="interrupt_music">Pause music</string>
-    <string name="osmand_short_description_80_chars">Global Mobile Map Viewing &amp; Navigation for Offline and Online OSM Maps</string>
-    <string name="osmand_extended_description_part6">
-        Walking, hiking, city tour
-        • The map shows you walking and hiking paths
-        • Wikipedia in your preferred language can tell you a lot during a city tour
-        • Public transport stops (bus, tram, train),  including line names, help to navigate in a new city
-        • GPS navigation in pedestrian mode builds your route using walking paths
-        • You can upload and follow a GPX route or record and share your own
-    </string>
-    <string name="osmand_extended_description_part7">
-        Contribute to OSM
-        • Report data bugs
-        • Upload GPX tracks to OSM directly from the app
-        • Add POIs and directly upload them to OSM (or later if offline)
-    </string>
-    <string name="osmand_plus_short_description_80_chars">Global Mobile Map Viewing &amp; Navigation for Offline and Online OSM Maps</string>
-    <string name="osmand_plus_extended_description_part7">
-        Directly Contribute to OSM
-        • Report data bugs
-        • Upload GPX tracks to OSM directly from the app
-        • Add POIs and directly upload them to OSM (or later if offline)
-        • Optional trip recording also in background mode (while device is in sleep mode)
-        OsmAnd is open-source and actively being developed. Everyone can contribute to the application by reporting bugs, improving translations or coding new features. The project is in a lively state of continuous improvement by all these forms of developer and user interaction. The project progress also relies on financial contributions to fund coding and testing of new functionalities.
-    </string>
     <string name="filterpoi_activity">Create POI filter</string>
     <string name="recalculate_route_to_your_location">Transport mode:</string>
     <string name="select_navigation_mode">Select transport mode</string>
@@ -2254,16 +2201,11 @@
     <string name="edit_filter_delete_message">Filter {0} has been deleted</string>
     <string name="edit_filter_create_message">Filter {0} has been created</string>
     <string name="email">email</string>
-    <string name="av_camera_focus">Camera focus type</string>
-    <string name="av_camera_focus_descr">Select the internal camera focus mode.</string>
     <string name="av_camera_focus_auto">Auto focus</string>
     <string name="av_camera_focus_hiperfocal">Hyperfocal focus</string>
     <string name="av_camera_focus_edof">Extended depth of field (EDOF)</string>
     <string name="av_camera_focus_infinity">Focus is set at infinity</string>
     <string name="av_camera_focus_macro">Macro (close-up) focus mode</string>
-    <string name="av_camera_focus_continuous">The camera continuously tries to focus</string>
-    <string name="av_camera_pic_size">Camera Picture Size</string>
-    <string name="av_camera_pic_size_descr">Select the internal camera picture size.</string>
     <string name="navigation_intent_invalid">Invalid format: %s</string>
     <string name="plugin_description_title">Description</string>
     <string name="plugin_install_needs_network">You need an Internet connection to install this plugin.</string>
@@ -2439,7 +2381,6 @@
     <string name="quick_action_btn_tutorial_title">Change button position</string>
     <string name="quick_action_btn_tutorial_descr">Long-tap and drag the button to change its position on the screen.</string>
     <string name="shared_string_action_name">Action name</string>
-    <string name="mappilary_no_internet_desc">You need internet to view photos from Mapillary.</string>
     <string name="retry">Retry</string>
     <string name="add_route_points">Add Route Points</string>
     <string name="add_waypoint">Add Waypoint</string>

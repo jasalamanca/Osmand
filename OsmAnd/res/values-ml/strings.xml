@@ -309,7 +309,6 @@
     <string name="access_arrival_time">"ആഗമന സമയം "</string>
     <string name="stop_routing_confirm">ഉറപ്പായിട്ടും വഴികാട്ടല്‍ നിര്‍ത്തണമോ?</string>
     <string name="precise_routing_mode">"സൂക്ഷ്മതയുള്ള  വഴികണ്ടെത്തല്‍(alpha)"</string>
-    <string name="av_use_external_camera_descr">"ഫോട്ടോക്ക് സിസ്റ്റം ആപ്ളിക്കേഷന്‍ ഉപയോഗിക്കുക "</string>
     <string name="recording_context_menu_play">പ്രവര്‍ത്തിപ്പിക്കുക</string>
     <string name="download_select_map_types">മറ്റുളള ഭൂപടങ്ങള്‍</string>
     <string name="rendering_attr_noAdminboundaries_name">"അതിരുകള്‍ മറച്ചുവക്കുക "</string>
@@ -430,8 +429,6 @@
     <string name="about_version">പതിപ്പ് :</string>
     <string name="about_settings_descr">"പതിപ്പ് വിവരങ്ങള്‍, ലൈസന്‍സ്, പ്രോജക്ട് മെംബേര്‍സ് "</string>
     <string name="app_mode_default">"ഭൂപടം പരതുക "</string>
-    <string name="av_def_action_picture">ഒരു ഫോട്ടോ എടുക്കുക</string>
-    <string name="av_use_external_camera">ക്യാമറ ആപ്പ് ഉപയോഗിക്കുക</string>
     <string name="add_as_last_destination_point">"അവസാനത്തെ  ഇട-ലക്ഷ്യസ്ഥാനമായി ചേര്‍ക്കുക"</string>
     <string name="add_as_first_destination_point">അദ്യത്തെ ഇട-ലക്ഷ്യസ്ഥാനമായി ചേര്‍ക്കുക</string>
 
@@ -818,7 +815,6 @@
     <string name="map_markers">മാപ്പ് മാര്‍ക്കറുകള്‍</string>
     <string name="rendering_attr_showMtbRoutes_name">എം ടി ബി റൂട്ടുകള്‍ കാണിക്കുക</string>
     <string name="show_polygons">ബഹുഭുജങ്ങള്‍ കാണിക്കുക</string>
-    <string name="find_parking">പാര്‍ക്കിങ്ങ് കണ്ട്പിടിക്കുക</string>
     <string name="shared_string_save_changes">മാറ്റങ്ങള്‍ പരിരക്ഷിക്കുക</string>
     <string name="shared_string_email_address">ഈ-മെയില്‍ വിലാസം</string>
     <string name="rendering_attr_hideUnderground_name">ഭൂഗര്‍ഭവസ്തുക്കള്‍</string>
@@ -831,7 +827,6 @@
     <string name="select_voice_provider_descr">"നിങ്ങളുടെ ഭാക്ഷക്ക് യോജിച്ച ശബ്ദ മാര്‍ഗനിര്‍ദേശം തെരഞ്ഞെടുക്കുക/ഡൗണ്‍ലോഡ് ചെയ്യുക "</string>
     <string name="impassable_road_desc">വഴികാട്ടി ഒഴിവാക്കേണ്ട റോഡുകള്‍ തെരഞ്ഞെടുക്കുക</string>
     <string name="no_location_permission">ആപ്പിന് സ്ഥാനവിവരങ്ങള്‍ ഉപയോഗിക്കാനുള്ള അനുമതിയില്ലാ.</string>
-    <string name="no_camera_permission">ആപ്പിന് ക്യാമറ ഉപയോഗിക്കാനുള്ള അനുമതിയില്ല.</string>
     <string name="no_microphone_permission">"ആപ്പിന് മൈക്ക്  ഉപയോഗിക്കാനുള്ള അനുമതിയില്ല."</string>
     <string name="rendering_attr_horseRoutes_name">കുതിര പാതകള്‍</string>
     <string name="no_address_found">"വിലാസം കണ്ട്പിടിക്കാനയില്ല "</string>
@@ -1014,11 +1009,8 @@
     <string name="only_show">റൂട്ട് പ്രദര്‍ശിപ്പിക്കുക</string>
     <string name="show_poi_over_map">"പി ഓ ഐ കാണിക്കൂക "</string>
     <string name="Closest_Amenities">"അടുത്തുള്ള  സൗകര്യങ്ങള്‍"</string>
-    <string name="av_camera_focus_descr">ക്യാമറ ഫോക്കസ് രീതി തെരഞ്ഞെടുക്കുക</string>
     <string name="av_camera_focus_edof">വികസിത ആഴമുള്ള ഫീ‌ല്‍ഡ് (ഇഡിഓഎഫ്)</string>
     <string name="av_camera_focus_macro">ക്ളോസപ്പില്‍ ഫോക്ക്സ് ചെയ്യുക</string>
-    <string name="av_camera_focus_continuous">ക്യാമറ തുടര്‍ച്ചയായി ഫോക്കസ് ചെയ്യാന്‍ ശ്രമിക്കുന്നു</string>
-    <string name="av_camera_pic_size_descr">ക്യാമറയിലെ പടത്തിന്റെ വലിപ്പം തെരഞ്ഞെടുക്കുക</string>
     <string name="user_hates_app_get_feedback">എന്ത് കൊണ്ട് എന്ന് പറയുക.</string>
     <string name="shared_string_undo">കഴിഞ്ഞ നീക്കം ഉപേക്ഷിച്ചു പൂര്‍വ്വസ്ഥിതിയിലേക്കു തിരിച്ചു പോകുക</string>
     <string name="shared_string_skip">ഒഴിവാക്കുക</string>
@@ -1030,7 +1022,6 @@
     <string name="weekly">വാരം</string>
     <string name="enable_proxy_descr">എച്ച് ടി ടി പി പ്രോക്സി ക്രമീകരിക്കുക (ഇന്റെര്‍നെറ്റിനാവശ്യമുണ്ടെങ്കില്‍)</string>
     <string name="download_using_mobile_internet">ഇപ്പോഴത്തെ ഇന്റര്‍നെറ്റ് കണക്ഷന്‍ വൈ-ഫൈ അല്ല. ഈ കണക്ഷനിലൂടെ ഡൗണ്‍ലോഡ് ചെയ്തോട്ടെ?</string>
-    <string name="dropbox_plugin_description">ഡ്രോപ്ബോക്സ് അനുബന്ധം പാതകളും ഓഡിയോ, വീഡിയൊ കുറിപ്പുകളും നിങ്ങളുടെ ഡ്രോപ്ബോക്സ് അക്കൗണ്ടുമായി സമകാലികമാക്കാന്‍ അനുവദിക്കുന്നു.</string>
     <string name="enable_plugin_monitoring_services">പാത റിക്കോഡ് ചെയ്യാന്‍(ജിപിഎക്സ് റിക്കോഡിങ്ങ്, ഓണ്‍ലൈനില്‍ പിന്തുടരാനും ) ട്രിപ് റിക്കോഡിങ്ങ് അനുബന്ധം സജീവമാക്കുക</string>
     <string name="ending_point_too_far">അടുത്തുള്ള റോഡില്‍ നിന്നും വളരെ അകലെയാണു അവസാനബിന്ദു.</string>
     <string name="favorite_delete_multiple">"%1$d ല്‍പര്യമുള്ളവയും  %2$d താത്പര്യമുള്ളവയുടെ കൂട്ടവും നീക്കം ചെയ്യാന്‍ പോവുന്നു. ഉറപ്പാണോ?"</string>
@@ -1213,8 +1204,6 @@
     <string name="shared_string_my_places">"എന്റെ സ്ഥലങ്ങള്‍ "</string>
     <string name="shared_string_my_favorites">എനിക്ക് ഇഷ്ടമുളളവ</string>
     <string name="shared_string_my_tracks">"എന്റെ  പാതകള്‍"</string>
-    <string name="shared_string_audio">ശബ്ദം</string>
-    <string name="shared_string_photo">ഫോട്ടോ</string>
     <string name="rendering_value_americanRoadAtlas_name">അമേരിക്കന്‍ റോഡ് അറ്റ്-ലസ്</string>
     <string name="rendering_attr_transportStops_name">സ്ടോപ്പുകള്‍ (ട്രാന്‍സ്പോര്‍ട്ട്)</string>
 
@@ -1314,11 +1303,9 @@
     <string name="search_POI_level_btn">കൂടുതല്‍ കണ്ടെത്തുക</string>
     <string name="choose_intersected_street">"കുറുകെയുള്ള തെരുവ് തെരഞ്ഞെടുക്കുക "</string>
     <string name="poi_create_title">"പി ഓ ഐക്ക്  രുപം നല്‍കുക"</string>
-    <string name="av_camera_focus">ക്യാമറ ഫോക്കസ് രീതി</string>
     <string name="av_camera_focus_auto">ഓട്ടോ ഫോക്കസ്</string>
     <string name="av_camera_focus_hiperfocal">ഹൈപ്പര്‍ഫോക്കല്‍ ഫോക്കസ്</string>
     <string name="av_camera_focus_infinity">"അനന്തതയിലുള്ള  ഫോക്കസ് "</string>
-    <string name="av_camera_pic_size">"ക്യാമറയിലെ പടത്തിന്റെ വലിപ്പം "</string>
     <string name="show_gpx">ജിപിഎക്സ് കാണിക്കുക</string>
     <string name="update_all">എല്ലാം പരിഷ്കരിക്കട്ടെ (%1$s MB)</string>
     <string name="search_on_the_map_item">"ഭൂപടത്തില്‍ തിരയുന്നു "</string>
@@ -1682,17 +1669,12 @@
     <string name="quick_action_start_stop_navigation">"വഴികാട്ടി ആരംഭിക്കുക/നിര്‍ത്തുക "</string>
     <string name="quick_action_start_stop_navigation_descr">"വഴികാട്ടി തുടരാന്‍/നിര്‍ജീവമാക്കാന്‍  ഈ ബട്ടണ്‍ അമര്‍ത്തുക "</string>
     <string name="shared_string_to">"വരെ "</string>
-    <string name="mapillary_menu_date_from">പ്രാരംഭസ്ഥാനം:</string>
     <string name="map_widget_ruler_control">ആരവൃത്തം</string>
     <string name="shared_string_permissions">അനുമതികള്‍</string>
     <string name="import_gpx_failed_descr">"ഓഎസ്എംആന്‍ഡിന് ഫയല്‍ തുറക്കാനായില്ല. ദയവായ് ഓഎസ്എംആന്‍ഡിന് ആ ഫയല്‍ വായിക്കാനുള്ള അനുമതിയുണ്ട്  എന്ന് ഉറപ്പാക്കുക "</string>
     <string name="distance_moving">ദൂരം (തെറ്റുതിരുത്തിയത് )</string>
-    <string name="improve_coverage_install_mapillary_desc">"നിങ്ങള്‍ക്ക് ഒന്നോ അതിലധികമോ ഫോട്ടോകള്‍ ഭൂപടത്തിലേ സ്ഥലവുമായ് ബന്ദിപ്പിക്കാവുന്നതാണ്. .
-\n
-\nഅതിനായ്  നിങ്ങള്‍ മാപ്പില്ലാരി ആപ് ഗൂഗിള്‍ പ്ളേ കടയില്‍ നിന്നും ഇന്‍സ്റ്റാള്‍ ചെയ്യണം"</string>
     <string name="online_photos">"ഓണ്‍ലൈന്‍ ഫോട്ടോകള്‍ "</string>
     <string name="shared_string_add_photos">"ഫോട്ടോകള്‍ ചേര്‍ക്കുക "</string>
-    <string name="mapillary">"മാപ്പില്ലാരി "</string>
     <string name="private_access_routing_req">"നിങ്ങളുടെ ലക്ഷ്യസ്ഥാനം പൊതുസ്ഥലമല്ല. ഈ യാത്രയില്‍ സ്വകാര്യ വഴികളില്‍ പ്രവേശിക്കാമോ? "</string>
     <string name="restart_search">"വീണ്ടും തെരയുക "</string>
     <string name="increase_search_radius">"തെരച്ചില്‍ വൃത്തം വലുതാക്കുക "</string>
@@ -1749,8 +1731,6 @@
     <string name="add_point_after">"അടുത്ത ബിന്ദുവായ്  ചേര്‍ക്കുക "</string>
     <string name="shared_string_options">ഐച്ഛികങ്ങള്‍</string>
     <string name="shared_string_reset">വീണ്ടും തുടങ്ങുക</string>
-    <string name="mapillary_menu_title_dates">"തിയതി "</string>
-    <string name="mapillary_menu_title_username">ഉപയോക്തൃനാമം</string>
     <string name="shared_string_install">സ്ഥാപിക്കുക</string>
     <string name="shared_string_overview">അവലോകനം</string>
     <string name="shared_string_visible">ദൃശ്യമായ</string>

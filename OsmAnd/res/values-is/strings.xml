@@ -248,8 +248,6 @@
     <string name="shared_string_my_places">Staðirnir mínir</string>
     <string name="shared_string_my_favorites">Eftirlætin mín</string>
     <string name="shared_string_my_tracks">Ferlarnir mínir</string>
-    <string name="shared_string_audio">Hljóð</string>
-    <string name="shared_string_photo">Ljósmynd</string>
     <string name="route_points">Leiðarpunktar</string>
     <string name="shared_string_accessibility">Aukið aðgengi</string>
     <string name="watch">Fylgjast með</string>
@@ -442,7 +440,6 @@
     <string name="max_speed_none">ekkert</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
     <string name="download_wikipedia_maps">Wikipedia</string>
-    <string name="av_def_action_picture">Taka ljósmynd</string>
     <string name="intermediate_points_change_order">Breyta röðun</string>
     <string name="recording_context_menu_play">Spila</string>
     <string name="map_widget_max_speed">Hraðatakmörk</string>
@@ -762,7 +759,6 @@
     <string name="osm_live_subscription_settings">Stillingar áskriftar</string>
     <string name="upload_anonymously">Senda inn nafnlaust</string>
     <string name="show_polygons">Birta fláka</string>
-    <string name="find_parking">Finna bílastæði</string>
     <string name="rendering_attr_hideUnderground_name">Hlutir neðanjarðar</string>
     <string name="data_is_not_available">Gögn eru ekki tiltæk</string>
     <string name="road_blocked">Vegur er lokaður</string>
@@ -1398,7 +1394,6 @@ Sólsetur: %2$s</string>
     <string name="switch_start_finish">Snúa við upphafsstað og áfangastað</string>
     <string name="rendering_attr_hideIcons_name">Táknmyndir merkisstaða</string>
     <string name="no_location_permission">Forritið hefur ekki heimildir til að nota staðsetningargögn.</string>
-    <string name="no_camera_permission">Forritið hefur ekki heimildir til að nota myndavélina.</string>
     <string name="no_microphone_permission">Forritið hefur ekki heimildir til að nota hljóðnemann.</string>
     <string name="please_specify_poi_type_only_from_list">Tilgreindu rétta tegund af merkisstað eða slepptu henni.</string>
     <string name="access_from_map">Aðgangur frá korti</string>
@@ -1650,15 +1645,10 @@ Punktar</string>
     <string name="poi_action_succeded_template">Tókst að ljúka {0} aðgerðinni.</string>
     <string name="poi_error_unexpected_template">Óvænt villa kom upp við að framkvæma aðgerð {0}.</string>
     <string name="poi_error_io_error_template">I/O-villa kom upp við að framkvæma aðgerð {0}.</string>
-    <string name="av_camera_focus">Tegund myndavélarfókus</string>
-    <string name="av_camera_focus_descr">Velja innbyggða fókustegund úr myndavél.</string>
     <string name="av_camera_focus_hiperfocal">Ofurfókus (hyperfocal - næstum allt skarpt)</string>
     <string name="av_camera_focus_edof">Útvíkkuð dýpt sjónsviðs (EDOF)</string>
     <string name="av_camera_focus_infinity">Fókus er stilltur á óendanleika</string>
     <string name="av_camera_focus_macro">Makrófókus (nærmynd)</string>
-    <string name="av_camera_focus_continuous">Myndavélin reynir í sífellu að ná fókus</string>
-    <string name="av_camera_pic_size">Stærð myndar úr myndavél</string>
-    <string name="av_camera_pic_size_descr">Velja innbyggða stærð myndar úr myndavél.</string>
     <string name="shared_string_card_was_hidden">Kort var falið</string>
     <string name="number_of_rows_in_dash">Fjöldi raða á stjórnborði %1$s</string>
     <string name="downloads_left_template">%1$s niðurhöl eftir</string>
@@ -1686,11 +1676,9 @@ Punktar</string>
     <string name="stop_routing_confirm">Ertu viss um að þú viljir stöðva leiðsögnina?</string>
     <string name="precise_routing_mode_descr">Virkja þetta til að reikna nákvæmar leiðir án hnökra. Er ennþá takmarkað út frá vegalengdum og fremur hægvirkt.</string>
     <string name="precise_routing_mode">Nákvæmt leiðaval (alfa-tilraunaútgáfa)</string>
-    <string name="dropbox_plugin_description">Dropbox-viðbótin gerir þér kleift að samstilla ferla og minnispunkta við hljóð/myndskeið með því að nota Dropbox-aðganginn þinn.</string>
     <string name="av_def_action_choose">Velja eftir beiðni</string>
     <string name="av_widget_action_descr">Veldu sjálfgefna aðgerð viðmótshluta.</string>
     <string name="av_widget_action">Sjálfgefin aðgerð viðmótshluta</string>
-    <string name="av_use_external_camera">Nota myndavélarforritið</string>
     <string name="local_openstreetmap_were_uploaded">{0} merkisstaðir/minnispunktar voru sendir inn</string>
     <string name="local_openstreetmap_settings">Merkisstaðir/minnispunktar sem vistaðir eru á tæki</string>
     <string name="local_openstreetmap_settings_descr">Birta og sýsla með merkisstaði/minnispunkta sem skráðir eru í staðværum gagnagrunni.</string>
@@ -1973,7 +1961,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="routing_preferences_descr">Stillingar leiðavals</string>
     <string name="disable_complex_routing">Gera flókið leiðaval óvirkt</string>
     <string name="local_osm_changes_backup_successful">Tókst að útbúa OSM-breytingaskrá %1$s</string>
-    <string name="av_use_external_camera_descr">Nota forrit kerfisins fyrir ljósmyndir.</string>
     <string name="rendering_attr_alpineHiking_description">Setja leiðir fram samkvæmt SAC, svissneska gönguleiðakvarðanum.</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Setja leiðir fram samkvæmt OSMC-ferlum.</string>
 
@@ -1990,10 +1977,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
 	<string name="incremental_search_city">Stigvaxandi leit í borg</string>
     <string name="rendering_attr_showRoadMaps_description">Velja þegar birta á kort einungis með vegum:</string>
     <string name="show_warnings_descr">Stilla umferðaraðvaranir (hraðatakmarkanir, lokanir, umferðarhnúta, hraðahindranir), aðvaranir um hraðamyndavélar og upplýsingar um akreinaskiptingar.</string>
-    <string name="osmand_short_description_80_chars">Almenn skoðun landakorta í farsíma og flakk á ónettengdum sem nettengdum OSM-landakortum</string>
-	<string name="osmand_extended_description_part7">Leggðu þitt fram til OSM • Tilkynntu um villur í gögnum • Sendu inn GPX-ferla til OSM beint úr forritinu • Bættu við merkisstöðum og sendu þá beint inn til OSM (eða síðar ef engin nettenging er til staðar)</string>
-    <string name="osmand_plus_short_description_80_chars">Almenn skoðun landakorta í farsíma og flakk á ónettengdum sem nettengdum OSM-landakortum</string>
-	<string name="osmand_plus_extended_description_part7">Leggðu þitt fram til OSM • Tilkynntu um villur í gögnum • Sendu inn GPX-ferla til OSM beint úr forritinu • Bættu við merkisstöðum og sendu þá beint inn til OSM (eða síðar ef engin nettenging er til staðar) OsmAnd er opinn hugbúnaður og í stöðugri þróun. Hver sem er getur tekið þátt í gerð forritsins, til dæmis með því að tilkynna um hnökra, bæta þýðingar eða forrita nýja eiginleika. Lífleg staða verkefnisins og sífelldar endurbætur má þannig rekja til margra þátta samspils milli notenda og hönnuða. Verkefnið styðst líka við fjárhagslega styrki frá notendum sem nýtast til að fjármagna viðameiri forritun og prófanir.</string>
     <string name="search_offline_geo_error">Ekki tókst að þátta \'%s\' geo-virkniskipun (intent).</string>
     <string name="send_location_email_pattern">Til að sjá staðsetninguna, fylgdu veftenglinum %1$s eða Android-virkniskipunatenglinum %2$s</string>
     <string name="version_index_is_not_supported">Ekki er stuðningur við \'\'{0}\'\' útgáfu af vísi</string>
@@ -2066,36 +2049,15 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="no_photos_descr">Ekki eru til myndir fyrir þessa staðsetningu.</string>
     <string name="nothing_found_descr">Reyndu að breyta leitarorðum eða að stækka radíus leitarinnar.</string>
     <string name="import_gpx_failed_descr">OsmAnd getur ekki flutt skrána inn. Vinsamlegast athugið hvort OsmAnd hafi réttindi til að lesa skrána þar sem hún er.</string>
-    <string name="open_mapillary">Opna Mapillary</string>
-    <string name="mapillary_widget">Mapillary græja</string>
-    <string name="mapillary">Mapillary</string>
-    <string name="mapillary_image">Mapillary mynd</string>
-    
+
     <string name="map_widget_ruler_control">Mælistika út frá miðju hrings</string>
     <string name="shared_string_permissions">Heimildir</string>
     <string name="distance_moving">Leiðrétt fjarlægð</string>
-    <string name="improve_coverage_mapillary">Bæta ljósmyndaþekju með Mapillary</string>
     <string name="hide_from_zoom_level">Fela í aðdráttarstigi</string>
     <string name="shared_string_reload">Endurnýja</string>
-    <string name="mapillary_menu_descr_tile_cache">Endurlesa kortaflísar til að sjá uppfærð gögn.</string>
-    <string name="mapillary_menu_title_tile_cache">Tiglaskyndiminni</string>
     <string name="wrong_user_name">Rangt notandanafn!</string>
     <string name="shared_string_to">Til</string>
-    <string name="mapillary_menu_date_from">Frá</string>
-    <string name="mapillary_menu_descr_dates">Skoða myndir sem bætt hefur verið inn</string>
-    <string name="mapillary_menu_title_dates">Dagsetning</string>
-    <string name="mapillary_menu_edit_text_hint">Ritaðu notandanafn</string>
-    <string name="mapillary_menu_descr_username">Skoða myndir sem bætt hefur verið við af</string>
-    <string name="mapillary_menu_title_username">Notandanafn</string>
-    <string name="mapillary_menu_filter_description">Þú getur síað myndir eftir sendanda eða dagsetningu. Síum er aðeins beitt í miklum aðdrætti.</string>
     <string name="shared_string_reset">Frumstilla</string>
-    <string name="improve_coverage_install_mapillary_desc">Þú getur tekið þínar eigin myndir eða myndarunur og sett þær inn á þessa staðsetningu á kortinu.
-\n
-\nTil að gera þetta þarftu að ná í Mapillary-forritið úr Google Play safninu.</string>
-    <string name="mapillary_action_descr">Legðu þitt af mörkum með þínum eigin götumyndum frá þessari staðsetningu í gegnum Mapillary.</string>
-    <string name="mapillary_widget_descr">Gerir þér kleift að bæta kerfið á einfaldan hátt með Mapillary.</string>
-    <string name="mapillary_descr">Götumyndir af netinu fyrir alla. Uppgötvaðu staði, útvíkkaðu heiminn og vertu með í samstarfinu.</string>
-    <string name="plugin_mapillary_descr">Götumyndir fyrir alla. Uppgötvaðu staði, útvíkkaðu heiminn og vertu með í samstarfinu.</string>
     <string name="show_from_zoom_level">Birta frá aðdráttarstigi</string>
     <string name="subscribe_email_desc">Gerstu áskrifandi að póstlistanum um forritaafslætti og fáðu ókeypis 3 niðurhöl á kortum til viðbótar!</string>
     <string name="auto_split_recording_descr">Hefja nýjan bút eftir 6 mínútna bil, hefja nýjan feril eftir 2 klst bil, eða nýja skrá eftir lengra bil ef dagsetning hefur breyst.</string>
@@ -2111,8 +2073,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="access_disable_offroute_recalc_descr">Kemur í veg fyrir að leið sé endurreiknuð þegar farið er út af stefnu.</string>
     <string name="access_disable_wrong_direction_recalc_descr">Kemur í veg fyrir að leið sé endurreiknuð þegar aðeins stefnt er í öfuga átt.</string>
     <string name="access_smart_autoannounce_descr">Einungis tilkynna þegar stefnu á markpunkt er breytt.</string>
-    <string name="routing_attr_no_new_routing_name">Engar v1.9 leiðareglur</string>
-    <string name="routing_attr_no_new_routing_description">Ekki nota leiðareglur sem komu til sögunnar í útgáfu 1.9.</string>
     <string name="rendering_attr_shareTaxiRoutes_name">Leiðir deilileigubíla</string>
     <string name="osmo_share_connect_device">Fylgjast framvegis með þessu tæki</string>
     <string name="osmo_session_not_available">Seta ekki tiltæk, gakktu úr skugga um að kveikt sé á \'Senda staðsetningu\'.</string>
@@ -2257,7 +2217,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="disable_complex_routing_descr">Gera 2-fasa leiðaval í akstri óvirkt.</string>
     <string name="use_magnetic_sensor_descr">Við lestur áttavita skal nota segulskynjara í stað stefnuskynjara.</string>
     <string name="quick_action_interim_dialog">Birta millistigsglugga</string>
-    <string name="mappilary_no_internet_desc">Þú þarft internettengingu til að skoða myndir frá Mapillary.</string>
     <string name="empty_state_favourites">Bæta við eftirlætum</string>
     <string name="empty_state_favourites_desc">Bæta við eftirlætum á korti eða flytja þau inn úr skrá.</string>
     <string name="import_track_desc">Skráin %1$s inniheldur enga ferilpunkta, á að flytja hana inn sem leið?</string>

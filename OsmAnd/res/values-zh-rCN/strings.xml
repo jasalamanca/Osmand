@@ -52,10 +52,7 @@
     <string name="item_unchecked">未查</string>
     <string name="max_speed_none">无</string>
 
-    <string name="av_def_action_picture">拍摄照片</string>
-
     <string name="intermediate_points_change_order">变更顺序</string>
-    <string name="av_use_external_camera">使用相机的应用程序</string>
     <string name="shared_string_control_start">开始</string>
     
     <string name="download_roads_only_item">道路只</string>
@@ -386,7 +383,6 @@
     <string name="stop_routing_confirm">是否确定停止导航？</string>
     <string name="clear_dest_confirm">是否确定清楚目标点？</string>
     <string name="precise_routing_mode_descr">启用精确路径计算，受实地距离限制不使用本地库。</string>
-    <string name="dropbox_plugin_description">Dropbox的插件可以让你的Dropbox帐户同步轨道和音频/视频数据。</string>
     <string name="dropbox_plugin_name">Dropbox插件</string>
     <string name="precise_routing_mode">精确路径（alpha）</string>
 
@@ -469,7 +465,6 @@
     <string name="contribution_activity">安装版本</string>
     <string name="av_widget_action_descr">选择缺省窗体动作</string>
     <string name="av_widget_action">缺省窗体动作</string>
-    <string name="av_use_external_camera_descr">使用系统程序拍照</string>
     <string name="map_widget_distancemeasurement">距离测量</string>
     <string name="download_roads_only_maps">仅包含道路的地图</string>
     
@@ -870,7 +865,6 @@
     <string name="monitoring_settings_descr">配置如何记录旅程以及启用睡眠模式</string>
     <string name="lang_zh_cn">简体中文</string>
 	<string name="lang_zh_tw">繁体中文</string>
-	<string name="find_parking">找到一个停车位</string>
     <string name="shared_string_status">状态</string>
     <string name="shared_string_save_changes">保存更改</string>
     <string name="no_map_markers_found">请通过地图添加地图标记</string>
@@ -1301,7 +1295,6 @@
     <string name="navigation_item_description">设置导航</string>
     <string name="first_usage_item_description">如何下载地图，进行基本设置</string>
     <string name="search_on_the_map_item">在地图中搜索</string>
-    <string name="osmand_short_description_80_chars">全球移动地图浏览，以及使用离线和在线 OSM 地图进行导航</string>
     <string name="search_categories">分类</string>
     <string name="map_widget_map_rendering">地图渲染</string>
     <string name="local_map_names">本地名称</string>
@@ -1368,18 +1361,14 @@
 \n 注1：您的旧文件不会移动（但是可以稍后手动删除）。
 \n 注2：使用新的存储位置后，您无法将这些文件在 OsmAnd 和 OsmAnd+ 之间进行共享。</string>
     <string name="copying_osmand_one_file_descr">正在将文件（%s）复制到新位置……</string>
-    <string name="mapillary_image">Mapillary 图像</string>
-    <string name="open_mapillary">Open Mapillary（服务）</string>
     <string name="shared_string_install">安装</string>
     <string name="online_photos">在线照片</string>
-    <string name="mapillary_descr">供所有人使用的在线街景照片。协作发现景点，捕捉世界之美。</string>
     <string name="distance_moving">距离已修正</string>
     <string name="no_photos_descr">我们没有该地点的照片。</string>
     <string name="routing_attr_short_way_name">节油道路</string>
     <string name="routing_attr_short_way_description">使用节油道路（通常更短）</string>
     <string name="configure_screen_quick_action">快捷操作</string>
     <string name="shared_string_show_all">显示全部</string>
-    <string name="osmand_plus_short_description_80_chars">全球移动地图浏览，以及使用离线和在线 OSM 地图进行导航</string>
     <string name="map_viewing_item">地图浏览</string>
     <string name="planning_trip_item">行程计划</string>
     <string name="begin_with_osmand_menu_group">使用 OsmAnd 第一步</string>
@@ -1394,15 +1383,6 @@
     <string name="buy">购买</string>
     <string name="shared_string_permissions">权限</string>
     <string name="import_gpx_failed_descr">OsmAnd 不能导入此文件。请检查 OsmAnd 已经具有相应的读取该位置的权限。</string>
-    <string name="improve_coverage_mapillary">提高 Mapillary 照片覆盖的范围</string>
-    <string name="improve_coverage_install_mapillary_desc">您可以拍攝自己的照片或系列照片，并將其增加到此地图位置。 
-\n 
-\n要做到這些，您需要去 Google Play 安裝 Mapillary 应用。</string>
-    <string name="mapillary_action_descr">在这个地点，通过 Mapillary 贡献您的在线街景图片。</string>
-    <string name="mapillary_widget">Mapillary 小工具</string>
-    <string name="mapillary_widget_descr">可以助您迅速将图片提交到 Mapillary。</string>
-    <string name="mapillary">Mapillary</string>
-    <string name="plugin_mapillary_descr">将街道平面照片給每个人。发现新地点、写作、获取整个世界。</string>
     <string name="quick_action_showhide_osmbugs_descr">轻点动作按钮会在地图上显示或隐藏 OSM 注解。</string>
     <string name="sorted_by_distance">按距离排序</string>
     <string name="search_favorites">搜索我的收藏</string>
@@ -1598,7 +1578,6 @@
     <string name="rec_split_title">使用录制器拆分</string>
     <string name="live_updates">实时更新</string>
     <string name="no_location_permission">应用程序没有权限访问定位数据。</string>
-    <string name="no_camera_permission">应用程序没有权限访问摄像头。</string>
     <string name="no_microphone_permission">应用程序没有访问麦克风的权限。</string>
     <string name="show_on_start_description">“关闭”会直接启动地图屏幕</string>
     <string name="share_osm_edits_subject">通过 OsmAnd 协作编辑 OSM</string>
@@ -1663,8 +1642,6 @@
     <string name="shared_string_my_favorites">我的收藏</string>
     <string name="shared_string_my_tracks">我的足迹</string>
     <string name="shared_string_currently_recording_track">当前正在录制轨迹</string>
-    <string name="shared_string_audio">音频</string>
-    <string name="shared_string_photo">图片</string>
     <string name="route_points">路线点</string>
     <string name="track_segments">轨迹区段</string>
     <string name="track_points">轨迹点</string>
@@ -1696,8 +1673,6 @@
     <string name="navigation_over_track">开始沿着轨道导航吗？</string>
     <string name="avoid_roads_msg">您可以选择一条需绕开的道路以触发路线重新规划</string>
     <string name="speak_pedestrian">步行街道</string>
-    <string name="routing_attr_no_new_routing_name">不用 v1.9 路径规则</string>
-    <string name="routing_attr_no_new_routing_description">请不要使用 v1.9 的路径规划规则</string>
     <string name="rendering_attr_transportStops_name">公交站</string>
     <string name="navigate_point_zone">地区</string>
     <string name="navigate_point_olc">打开位置代码</string>
@@ -2033,13 +2008,6 @@
     <string name="use_compass_navigation_descr">没有检测到朝向的时候使用罗盘</string>
     <string name="auto_zoom_map_descr">根据你的速度（地图与当前的位置同步）自动缩放地图</string>
     <string name="snap_to_road_descr">在导航过程中对齐道路的位置</string>
-    <string name="osmand_extended_description_part6">" 步行、健行、市区旅游 • 地图显示您的步行和健行路径 • 维基百科以您喜好的语言在市区旅游中可以告诉您很多事 • 大众运输停靠站（公共汽车、电车、火车），包括路线名称，有助于在新的城市里导航 • GPS 导航在行人模式下，使用步行路径构建您的路线 • 您可以上传并且跟随 GPX 路线或着记录和分享您自己的路线 "</string>
-    <string name="osmand_extended_description_part7">" ￼ 为 OSM 做出贡献 • 报告数据错误 • 从应用程序直接将 GPX 轨迹上传到 OSM • 增加 POI 并直接将其上传到 OSM（或如果脱机则之后上传） "</string>
-    <string name="osmand_plus_extended_description_part7">" 直接提供给 OSM
-\n • 报告地图错误
-\n • 直接从该应用程序上传 GPX 轨迹到 OSM
-\n • 增加 POI 并直接上传给 OSM（如果离线则在之后上传）
-\n • 任选的旅程录制而且在背景模式（当设备处于休眠模式下） OsmAnd 是开源软件，而且正在积极的开发。应用程序从报告错误、改进翻译或编写新的功能，每个人都可以作出贡献。透过所有的这些形成开发人员和用户交互的作用下，让该项目处于不断改善的活络状态。项目的开发进度、编写代码和测试新的功能，还是要依靠提供资金捐款资助。 "</string>
     <string name="route_updated_loc_found">一旦找到定位时，导航路线将重新规划</string>
     <string name="native_app_allocated_memory_descr">本地存储总计由应用程序 %1$s MB（Dalvik %2$s MB，其它 %3$s MB）。 比例存储 %4$s MB（Android 限制 %5$s MB，Dalvik %6$s MB）。</string>
     <string name="starting_point_too_far">起始标点离最近的道路太远。</string>
@@ -2171,15 +2139,10 @@
     <string name="Closest_Amenities">最近的设施</string>
     <string name="poi_action_delete">删除</string>
     <string name="poi_dialog_reopen">重新打开</string>
-    <string name="av_camera_focus">相机焦点类型</string>
-    <string name="av_camera_focus_descr">选择内部相机焦点类型</string>
     <string name="av_camera_focus_hiperfocal">超焦距对焦</string>
     <string name="av_camera_focus_edof">扩展的景深 (EDOF)</string>
     <string name="av_camera_focus_infinity">将焦点设置在无穷远</string>
     <string name="av_camera_focus_macro">微距（特写）对焦模式</string>
-    <string name="av_camera_focus_continuous">相机连续对焦</string>
-    <string name="av_camera_pic_size">相机图片大小</string>
-    <string name="av_camera_pic_size_descr">选择内部相机图片大小</string>
     <string name="navigation_intent_invalid">格式无效: %s</string>
     <string name="plugin_description_title">描述</string>
     <string name="plugin_install_needs_network">你需要互联网连接来安装这个插件。</string>
@@ -2327,19 +2290,10 @@
     <string name="map_widget_ruler_control">半径量尺</string>
     <string name="wrong_user_name">错误的用户名！</string>
     <string name="shared_string_to">到</string>
-    <string name="mapillary_menu_date_from">从</string>
-    <string name="mapillary_menu_title_username">用户名</string>
-    <string name="mapillary_menu_edit_text_hint">输入用户名</string>
-    <string name="mapillary_menu_title_dates">日期</string>
-    <string name="mapillary_menu_descr_username">仅查看特定用户添加的图像</string>
-    <string name="mapillary_menu_descr_dates">仅查看添加的图像</string>
-    <string name="mapillary_menu_filter_description">您可以根据提交者或日期过滤图像。过滤器仅在高比例尺放大时产生作用。</string>
     <string name="shared_string_reload">重新载入</string>
     <string name="shared_string_reset">重置</string>
     <string name="store_tracks_in_monthly_directories">按月将记录的轨迹存放在文件夹中</string>
     <string name="store_tracks_in_monthly_directories_descrp">按照月份将记录的轨迹存储在子文件夹中（例如 2017-01）。</string>
-    <string name="mapillary_menu_descr_tile_cache">重新加载区片以查看最新的数据。</string>
-    <string name="mapillary_menu_title_tile_cache">区片缓存</string>
     <string name="average">平均</string>
     <string name="ascent_descent">升序/降序</string>
     <string name="max_min">最大/最小</string>

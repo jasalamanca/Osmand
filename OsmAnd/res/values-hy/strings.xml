@@ -4,12 +4,8 @@
     <string name="clear_dest_confirm">Վստահ ե՞ք, որ ցանկանում եք ջնջել ձեր նպատակակետը(և միջանկյալ նպատակակետը)?</string>
     <string name="stop_routing_confirm">Վստահ ե՞ք որ ցանկանում եք դադարեցնել նավիգացիան?</string>
     <string name="precise_routing_mode">Ճշգրիտ ճանապարհ (ալֆա)</string>
-    <string name="av_def_action_picture">Նկարել</string>
-    <string name="dropbox_plugin_description">Dropbox plugin-ը թույլ է տալիս սինխրոնիզացնել տրեքերը և Աուդիո/վիդեո նշումները ձեր Dropbox-ի հետ:</string>
-    
+
     <string name="intermediate_points_change_order">Փոխել հերթականությունը</string>
-    <string name="av_use_external_camera_descr">Օգտագործել սիստեմային ծրագիր լուսանկարելու համար։</string>
-    <string name="av_use_external_camera">Օգտագործել Camera ծրագիրը</string>
     <string name="email">էլ-փոստ</string>
 <string name="use_kalman_filter_compass_descr">Օգտագործել Կալմանի ֆիլտրը կողմնացույցի սխելներից խուսափելու համար։</string>
     <string name="use_kalman_filter_compass">Օգտագործել Կալմանի ֆիլտրը</string>
@@ -195,36 +191,16 @@
     <string name="store_tracks_in_monthly_directories_descrp">Պահպանել տրեկները ենթա-թղթապանակներում ըստ գրանցված ամսին (օրինակ 2017-01)։</string>
     <string name="shared_string_reset">Վերագործարկեք</string>
     <string name="shared_string_reload">Վերբեռնել</string>
-    <string name="mapillary_menu_descr_tile_cache">Վերբեռնել սալիկներ ընթացիկ տվյալները ցուցադրելու համար:</string>
-    <string name="mapillary_menu_title_tile_cache">Սալիկներ կեշ</string>
     <string name="wrong_user_name">Սխալ օգտագործողի անուն!</string>
     <string name="shared_string_to">Մինչև</string>
-    <string name="mapillary_menu_date_from">Սկսած</string>
-    <string name="mapillary_menu_descr_dates">Դիտել միայն ավելացրած լուսանկարներ</string>
-    <string name="mapillary_menu_title_dates">Ամսաթիվ</string>
-    <string name="mapillary_menu_edit_text_hint">"Մուտքագրեք  օգտատերի անունը"</string>
-    <string name="mapillary_menu_descr_username">Դիտել լուսանկարները ավելացրած օգտագործողի կողմից</string>
-    <string name="mapillary_menu_title_username">Օգտատերի անունը</string>
-    <string name="mapillary_menu_filter_description">Դուք կարող եք դասավորել լուսանկարներ ըստ ուղարկողի կամ ամսաթվի: Զտիչները օգտագործվում են միայն մեծ չափերի համար:</string>
     <string name="map_widget_ruler_control">Շառավիղ-քանոն</string>
     <string name="shared_string_permissions">Թույլտվություն</string>
     <string name="import_gpx_failed_descr">OsmAnd-ը չի կարող ներմուծել ֆայլը: Ստուգեք, արդյոք OsmAnd-ը իրավունք ունի կարդալ ֆայլը իր գտնվելու վայրից:</string>
     <string name="distance_moving">Ուղղված հեռավորությունը</string>
-    <string name="mapillary_image">Ուղարկել լուսանկարներ Mapillary- ին</string>
-    <string name="open_mapillary">Բացել Mapillary</string>
     <string name="shared_string_install">Տեղադրել</string>
-    <string name="improve_coverage_mapillary">Կատարելագործել լուսանկարի ծածկույթը Mapillary- ի միջոցով</string>
-    <string name="improve_coverage_install_mapillary_desc">"Դուք կարող եք  ձեր սեփական լուսանկարները կամ մի շարք լուսանկարներ կցել  քարտեզի գտնվելու վայրի:
-\nԴա անելու համարանհրաժեշտ է տեղադրել Mapillary ծրագիրը Google Play խանութից:"</string>
     <string name="online_photos">Առցանց լուսանկարներ</string>
     <string name="shared_string_add_photos">Ավելացնել լուսանկարներ</string>
     <string name="no_photos_descr">Այս վայրի համար լուսանկարներ չունենք։</string>
-    <string name="mapillary_action_descr">Նպաստել այս դիրքի համար ձեր սեփական փողոցային դիտարկումներով Mapillary- ի միջոցով:</string>
-    <string name="mapillary_widget">Mapillary վիջեթը</string>
-    <string name="mapillary_widget_descr">Թույլ է տալիս արագորեն նպաստել Mapillary-ին։</string>
-    <string name="mapillary_descr">Առցանց փողոցային նկարներ բոլորի համար: Բացահայտեք վայրերը, համագործակցեք, նկարեք աշխարհը:</string>
-    <string name="mapillary">Մափիլարի(Mapillary)</string>
-    <string name="plugin_mapillary_descr">Փողոցային նկարներ բոլորի համար: Բացահայտեք վայրերը, համագործակցեք, նկարեք աշխարհը:</string>
     <string name="private_access_routing_req">"Նպատակակետը գտնվում է մասնավորի տարածքում: Ցանկանում եք թույլատրել այս ուղեւորությանը  մասնավոր ճանապարհներ մուտք գործել?"</string>
     <string name="restart_search">Նորից որոնեք</string>
     <string name="increase_search_radius">Ավելացնել որոնման շառավղը</string>
@@ -536,7 +512,6 @@
     <string name="map_marker">Մարկերներ</string>
     <string name="rendering_attr_showMtbRoutes_name">Ցուցադրել MTB երթուղիները</string>
     <string name="show_polygons">Ցուցադրել պոլիգոններ</string>
-    <string name="find_parking">Գտնել կայանատեղ</string>
     <string name="shared_string_status">Կարգավիճակ</string>
     <string name="shared_string_save_changes">Պահպանել փոփոխությունները</string>
     <string name="shared_string_email_address">Էլեկտրոնային հասցե</string>
@@ -581,7 +556,6 @@
     <string name="shared_string_record">Գրանցում</string>
     <string name="osm_live_header">Այս բաժանորդագրությունը հնարավորություն է տալիս ամեն ժամյա թարմացումներ ստանալ աշխարհի բոլոր քարտեզների համար: Եկամտի մի մասը վերադառնում է OSM համայնքին և վճարվում է յուրաքանչյուր OSM ներդրման համար: Եթե սիրում եք OsmAnd- ը և OSM- ը և ուզում եք աջակցել նրանց, սա կատարյալ ճանապարհն է դա անել:</string>
     <string name="no_location_permission">Ծրագիրը թույլտվություն չունի մուտք գործի տվյալները պահպանման վայրը:</string>
-    <string name="no_camera_permission">Ծրագիրը թույլտվություն չունի տեսախցիկի օգտագործման համար։</string>
     <string name="no_microphone_permission">Ծրագիրը թույլտվություն չունի խոսափողի օգտագործման համար։</string>
     <string name="access_direction_haptic_feedback">Ուղղության ցուցում շոշափման եղանակով</string>
     <string name="download_files_error_not_enough_space">Բավարար տեղ չկա: Պահպանելու համար անհրաժեշտ է {3} ՄԲ ժամանակավոր, {1} ՄԲ մշտապես: Առկա է միայն {2} ՄԲ:</string>
@@ -882,8 +856,6 @@
     <string name="lang_pms">Պյեմոնտերեն</string>
     <string name="shared_string_my_tracks">Իմ տրեկները</string>
     <string name="shared_string_currently_recording_track">Ներկայումս գրնացվող ուղին</string>
-    <string name="shared_string_audio">Աուդիո</string>
-    <string name="shared_string_photo">Լուսանկար</string>
     <string name="route_points">Երթուղու կետերը</string>
     <string name="track_segments">Տրեկի հատվածներ</string>
     <string name="track_points">Տրեկի կետերը</string>
@@ -949,8 +921,6 @@
     <string name="show_railway_warnings">Ցուցադրել երկաթուղային անցումները</string>
     <string name="show_pedestrian_warnings">Ցույց տալ հետիոտնային անցումներ</string>
     <string name="rendering_value_americanRoadAtlas_name">Ամերիկայի ճանապարհների ատլաս</string>
-    <string name="routing_attr_no_new_routing_name">"Չօգտագործել  երթուղային 1.9 տարբերակը"</string>
-    <string name="routing_attr_no_new_routing_description">"Չօգտագործել  երթուղային 1.9 տարբերակում ներկայացված ալգորիթմը։"</string>
     <string name="dash_download_msg_none">Ցանկանում եք ներբեռնել անցանց քարտեզները?</string>
     <string name="dash_download_msg">Ներբեռնված քարտեզներ %1$s</string>
     <string name="dash_download_new_one">Ներբեռնեք նոր քարտեզ</string>
@@ -1439,17 +1409,12 @@
     <string name="snap_to_road">Կապել ճանապարհին</string>
     <string name="interrupt_music_descr">Ձայնային հուշումների դադար, երաժշտական նվագարկում։</string>
     <string name="interrupt_music">Ընդհատել երաժշտությունը</string>
-    <string name="osmand_short_description_80_chars">OsmAnd - ճանապարհորդելու համար նավիգացիոն ծրագիր է բաց կոդով</string>
-    <string name="osmand_extended_description_part6">"Քայլում, արշավ, քաղաքային շրջագայություն • Քարտեզը ցույց է տալիս, որ դուք քայլում եք և արշավներ եք անում • Վիքիպեդիան ձեր նախընտրած լեզվով կարող է պատմել ձեզ շրջագայության ժամանակ քաղաքներում  • Հասարակական տրանսպորտի կանգառները (ավտոբուս, տրամվայ, գնացք), ներառյալ գծի անունները, օգնում են նավարկելու նոր քաղաքում • GPS նավիգացիան հետիոտնային ռեժիմում կառուցում է ձեր երթուղին, օգտագործելով քայլելու ճանապարհները • Դուք կարող եք վերբեռնել և հետեւել GPX երթուղին կամ գրանցել և կիսվել ձեր սեփական"</string>
-    <string name="osmand_extended_description_part7">"Նպաստել OSM-ին • Զեկուցել սխալների մասին • Վերբեռնել GPX track-եր OSM ուղղակիորեն հավելվածից  • Ավելացրեք POIs և ուղղակիորեն վերբեռնել դրանք OSM-ում (կամ ավելի ուշ, եթե անցանց եք)"</string>
-    <string name="osmand_plus_short_description_80_chars">OsmAnd - ճանապարհորդելու համար նավիգացիոն ծրագիր է բաց կոդով</string>
     <string name="import_as_gpx">Ներմուծեք որպես GPX ֆայլ</string>
     <string name="import_as_favorites">Ներմուծեք որպես «Սիրված» (Favorites)</string>
     <string name="import_file">Ներմուծել ֆայլը</string>
 	<string name="route_points_category_name">Ստանում է այս երթուղին</string>
     <string name="map_widget_bearing">Հարաբերական կրող</string>
     <string name="show_legacy_search_desc">"Ավելացնել  մենյուի ցանկում հին որոնումը։"</string>
-    <string name="osmand_plus_extended_description_part7">"Ուղղակի նպաստել OSM-ին • Զեկուցել սխալների մասին • Վերբեռնել GPX track-եր OSM ուղղակիորեն հավելվածից  • Ավելացրեք POIs և ուղղակիորեն վերբեռնել դրանք OSM-ում (կամ ավելի ուշ, եթե անցանց եք) • Ուղեւորության գրանցումը նաև ֆոնային ռեժիմում (սարքը գտնվում է քնի ռեժիմում)։ Osmand-ը ակտիվորեն զարգացող նախագիծ է`բաց կոդով: Յուրաքանչյուրը կարող է նպաստել նախագծին, հաղորդելով է սխալները,  բարելավելով թարգմանությունները կամ  նոր առանձնահատկություններ կոդավորման: Ծրագիրն անընդհատ կատարելագործման  վիճակում է, մշակողների և օգտագործողների միջև բոլոր այդ ձևերի փոխհարաբերությունների շնորհիվ: Ծրագրի առաջընթացը նաև կախված է ֆինանսական գործառույթներից, նոր ֆունկցիաների գրելու և փորձարկելու համար:"</string>
     <string name="filterpoi_activity">Ստեղծել ֆիլտր POI համար</string>
     <string name="recalculate_route_to_your_location">Տրանսպորտի տեսակը՝</string>
     <string name="select_navigation_mode">Ընտրեք տրանսպորտի տեսակը</string>
@@ -2142,16 +2107,11 @@
     <string name="poi_dialog_other_tags_message">Այլ POI պիտակների արժեքները չեն կարող փոխվել</string>
     <string name="default_buttons_commit">Հաստատել</string>
     <string name="filter_current_poiButton">Ֆիլտր</string>
-    <string name="av_camera_focus">Տեսախցիկի ֆոկուսի ռեժիմը</string>
-    <string name="av_camera_focus_descr">Ընտրեք ներքին տեսախցիկի ֆոկուսի ռեժիմը:</string>
     <string name="av_camera_focus_auto">Ավտո ֆոկուս</string>
     <string name="av_camera_focus_hiperfocal">Hyperfocal ֆոկուս</string>
     <string name="av_camera_focus_edof">Ընդլայնված դաշտը (EDOF)</string>
     <string name="av_camera_focus_infinity">Ֆոկուսը անսահմանության վրա</string>
     <string name="av_camera_focus_macro">Մակրո ռեժիմ</string>
-    <string name="av_camera_focus_continuous">Շարունակական ֆոկուս</string>
-    <string name="av_camera_pic_size">Լուսանկարի չափը</string>
-    <string name="av_camera_pic_size_descr">Ընտրեք ներքին տեսախցիկի պատկերի չափը:</string>
     <string name="navigation_intent_invalid">Սխալ ձևաչափ՝ %s</string>
     <string name="plugin_description_title">Նկարագրություն</string>
     <string name="plugin_install_needs_network">Անհրաժեշտ է ինտերնետ կապ այս plugin-ը տեղադրելու համար:</string>
@@ -2331,7 +2291,6 @@
     <string name="quick_action_btn_tutorial_title">Փոխել կոճակի դիրքը</string>
     <string name="quick_action_btn_tutorial_descr">Երկար սեղմումը և քաշեքը փոխում է կոճակի դիրքը։</string>
     <string name="shared_string_action_name">Գործողության անունը</string>
-    <string name="mappilary_no_internet_desc">Mapillary-ից լուսանկարներ դիտելու համար Ձեզ անհրաժեշտ է ինտերնետ:</string>
     <string name="retry">Կրկնել</string>
     <string name="track_waypoints">Տրեկի (track) կետերը</string>
     <string name="add_group">Ավելացնել խումբ</string>

@@ -195,8 +195,6 @@
     <string name="tip_faq">Najčešće postavljana pitanja</string>
     <string name="max_speed_none">nijedan</string>
     <string name="stop_routing_confirm">Da li ste sigurni da želite da prekinete navigaciju?</string>
-    <string name="av_def_action_picture">Slikaj</string>
-    <string name="dropbox_plugin_description">Dropbox dodatak omogućava da sinhronizujete putanje i audio/video beleške sa vašim Dropbox nalogom.</string>
     <string name="dropbox_plugin_name">Dropbox dodatak</string>
     <string name="intermediate_points_change_order">Promeni redosled</string>
     
@@ -326,16 +324,13 @@
     <string name="proxy_pref_title">Mrežni posrednik</string>
     <string name="proxy_pref_descr">Podesite mrežnog posrednika za internet</string>
     <string name="settings_privacy">Privatnost</string>
-    <string name="routing_attr_no_new_routing_name">Bez usmeravanja po izdanju v1.9</string>
-    <string name="routing_attr_no_new_routing_description">Nemoj da koristiš pravila usmeravanja iz izdanja v1.9</string>
-    <string name="rendering_attr_transportStops_name">Stanice</string>
+	<string name="rendering_attr_transportStops_name">Stanice</string>
     <string name="navigate_point_northing">Geografska širina</string>
     <string name="navigate_point_easting">Geografska dužina</string>
     <string name="error_avoid_specific_road">Nisam pronašao zaobilaznice</string>
     <string name="rename_failed">Preimenovanje nije uspelo.</string>
 	<string name="shared_string_currently_recording_track">Staza koja se trenutno snima</string>
 	<string name="back_to_map">Nazad na kartu</string>
-    <string name="shared_string_audio">Zvuk</string>
 
 
     <string name="location_on_map">Geografski položaj:\nŠirina %1$s↵\nDužina %2$s</string>

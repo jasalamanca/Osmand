@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<color name="mapillary_color">#3db878</color>
-	<color name="mapillary_color_pressed">#3a9f73</color>
-	<color name="mapillary_action_bar">#14c45d</color>
 	<color name="buy_button_color">#50ae55</color>
     <color name="buy_button_pressed_color">#b5e5b9</color>
 
@@ -54,14 +51,8 @@
 	<color name="dash_search_icon_light">#536DFE</color>
 	<color name="dash_search_icon_dark">#7a8c99</color>
 
-	<color name="parking_outdated_color">#f41a34</color>
 	<color name="osmo_header_dark">#2d383d</color>
 	<color name="osmo_header_light">#b36d12</color>
-
-	<color name="dashboard_parking_light_selected">#007888</color>
-	<color name="dashboard_parking_light_color">#009688</color>
-	<color name="dashboard_parking_dark_color">#54778c</color>
-	<color name="dashboard_parking_dark_selected">#446072</color>
 
 	<color name="plugin_details_install_header_bg_light">#dbdbdb</color>
 	<color name="plugin_details_install_header_bg_dark">#2d3438</color>
@@ -135,7 +126,6 @@
 	<color name="status_bar_transparent_light">#66000000</color>
 	<color name="status_bar_transparent_dark">#99000000</color>
 	<color name="status_bar_transparent_gradient">#CC000000</color>
-	<color name="status_bar_mapillary">#11ab51</color>
 	<color name="status_bar_route_light">#e68200</color>
 	<color name="status_bar_route_dark">#000000</color>
 	<color name="status_bar_dim_light">#8a4e00</color>

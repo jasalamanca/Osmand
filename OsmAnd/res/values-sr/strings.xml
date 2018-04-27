@@ -193,8 +193,6 @@
     
     <string name="max_speed_none">ниједан</string>
     <string name="stop_routing_confirm">Да ли сте сигурни да желите да прекинете навигацију?</string>
-    <string name="av_def_action_picture">Сликај</string>
-    <string name="dropbox_plugin_description">Dropbox додатак омогућава да синхронизујете путање и аудио/видео белешке са вашим Dropbox налогом.</string>
     <string name="dropbox_plugin_name">Dropbox додатак</string>
     <string name="intermediate_points_change_order">Промени редослед</string>
     
@@ -324,8 +322,6 @@
     <string name="proxy_pref_title">Мрежни посредник</string>
     <string name="proxy_pref_descr">Подесите мрежног посредника за интернет</string>
     <string name="settings_privacy">Приватност</string>
-    <string name="routing_attr_no_new_routing_name">Без усмеравања по издању v1.9</string>
-    <string name="routing_attr_no_new_routing_description">Немој да користиш правила усмеравања из издања v1.9</string>
     <string name="rendering_attr_transportStops_name">Станице</string>
     <string name="navigate_point_northing">Географска ширина</string>
     <string name="navigate_point_easting">Географска дужина</string>
@@ -333,7 +329,6 @@
     <string name="rename_failed">Преименовање није успело.</string>
 	<string name="shared_string_currently_recording_track">Стаза која се тренутно снима</string>
 	<string name="back_to_map">Назад на карту</string>
-    <string name="shared_string_audio">Звук</string>
 
 
     <string name="location_on_map">Географски положај:\nШирина %1$s↵\nДужина %2$s</string>
@@ -587,7 +582,6 @@
     <string name="shared_string_my_places">Моја места</string>
     <string name="shared_string_my_favorites">Моје омиљено</string>
     <string name="shared_string_my_tracks">Моје путање</string>
-    <string name="shared_string_photo">Слика</string>
     <string name="route_points">Тачке путање</string>
     <string name="track_segments">Одсечци путање</string>
     <string name="track_points">Тачке путање</string>
@@ -657,7 +651,6 @@
     <string name="impassable_road_desc">Изаберите које путеве желите да избегавате током навођења.</string>
     <string name="shared_string_sound">Звук</string>
     <string name="no_location_permission">Програм нема дозволу да приступи подацима о положају.</string>
-    <string name="no_camera_permission">Програм нема дозволу да приступи камери.</string>
     <string name="no_microphone_permission">Програм нема дозволу да приступи микрофону.</string>
     <string name="route_distance">Растојање:</string>
     <string name="route_duration">Време:</string>
@@ -953,8 +946,6 @@
     <string name="precise_routing_mode_descr">Омогући рачунање тачних путања без грешака. Радња је ограничена даљином и спора.</string>
     <string name="precise_routing_mode">Тачно рачунање путања (споро)</string>
     <string name="av_def_action_choose">Означи на захтев</string>
-    <string name="av_use_external_camera_descr">Користи склопни програм за слике</string>
-    <string name="av_use_external_camera">Користи програм камере</string>
     <string name="rendering_attr_alpineHiking_description">Приказуј путеве према лествици САЦ-а</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Приказуј путеве према путањама ОСМЦ-а</string>
 
@@ -978,7 +969,6 @@
     <string name="use_compass_navigation">Користи компас</string>
     <string name="use_compass_navigation_descr">Користи компас када правац није препознат на други начин</string>
     <string name="avoid_motorway">Избегавај путеве за моторна возила</string>
-    <string name="find_parking">Пронађи паркиралиште</string>
     <string name="shared_string_status">Стање</string>
     <string name="shared_string_save_changes">Сачувај измене</string>
     <string name="shared_string_email_address">Адреса е-поште</string>
@@ -1278,13 +1268,6 @@
     <string name="online_photos">Слике на мрежи</string>
     <string name="shared_string_add_photos">Додај слике</string>
     <string name="no_photos_descr">Нема слика овог положаја.</string>
-    <string name="mapillary_action_descr">Учествујте својим прегледима на нивоу улица овог положаја са Мапиларом.</string>
-    <string name="mapillary_widget">Справица Мапилара</string>
-    <string name="mapillary_widget_descr">Омогућава брзи допринос Мапилару.</string>
-    <string name="open_mapillary">Отвори Мапилар</string>
-    <string name="mapillary_descr">Мрежне слике улица за све. Откријте места, сарађујте, освојите свет.</string>
-    <string name="mapillary">Мапилар</string>
-    <string name="plugin_mapillary_descr">Мрежне слике улица за све. Откријте места, сарађујте, освојите свет.</string>
     <string name="private_access_routing_req">Ваше одредиште се налази у подручју са личним приступом. Желите ли дозволити приступ личним путевима овом путовању?</string>
     <string name="restart_search">Препокрени претрагу</string>
     <string name="increase_search_radius">Повећај област претраге</string>
@@ -1535,26 +1518,12 @@
     <string name="store_tracks_in_monthly_directories_descrp">Сачувај снимљене путање по подомотима према месецима снимања (нпр. 2017-11).</string>
     <string name="shared_string_reset">Врати на подразумевано</string>
     <string name="shared_string_reload">Поново учитај</string>
-    <string name="mapillary_menu_descr_tile_cache">Поново учитај плочице ради постављања података дана.</string>
-    <string name="mapillary_menu_title_tile_cache">Оставка плочица</string>
     <string name="wrong_user_name">Погрешно корисничко име!</string>
     <string name="shared_string_to">Ка</string>
-    <string name="mapillary_menu_date_from">Из</string>
-    <string name="mapillary_menu_descr_dates">Прегледај само додате слике</string>
-    <string name="mapillary_menu_title_dates">Дан</string>
-    <string name="mapillary_menu_edit_text_hint">Унесите корисничко име</string>
-    <string name="mapillary_menu_descr_username">Прегледај само слике додате од</string>
-    <string name="mapillary_menu_title_username">Корисничко име</string>
-    <string name="mapillary_menu_filter_description">Можете пробирати слике према отпремачу или дану. Пробирање се примењује само при приближавању.</string>
     <string name="map_widget_ruler_control">Обим лењира</string>
     <string name="shared_string_permissions">Дозволе</string>
     <string name="import_gpx_failed_descr">Османд не може увести датотеку. Молим, проверите да ли Османд има дозволе за читање датотеке са његовог положаја.</string>
     <string name="distance_moving">Растојање је исправљено</string>
-    <string name="mapillary_image">Слика Картишта</string>
-    <string name="improve_coverage_mapillary">Побољшајте покривеност слика Картиштем</string>
-    <string name="improve_coverage_install_mapillary_desc">Можете своје слике или низ слика и додати их на овај положај карте.
-\n
-\nДа би то учинили требате уградити програм Картиште (Mapillary) из Гуглове продавнице.</string>
     <string name="subscribe_email_desc">Претплатите се на наш дописни списак за попуст и добијте још 3 преузимања карти!</string>
     <string name="shared_string_color">Боја</string>
     <string name="routing_attr_height_obstacles_description">Користите податке висине земљишта обезбеђених помоћу СРМ-а, АСТЕР-а и ЕУ-ДЕМ-а.</string>

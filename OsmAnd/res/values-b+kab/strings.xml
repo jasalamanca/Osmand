@@ -260,7 +260,6 @@
     <string name="empty_state_favourites">Rnu γer imenyafen</string>
     <string name="wrong_input">Yir anekcam</string>
 	<string name="shared_string_options">Iγewwaṛen</string>
-    <string name="mapillary_menu_title_username">Isem n useqdac</string>
     <string name="nearest_cities">Timdinin ig qarben</string>
     <string name="shared_string_add_to_map_markers">Rnu ar ticṛaḍ</string>
     <string name="map_markers">Ticṛaḍ</string>
@@ -313,7 +312,6 @@
     <string name="line">Izirig</string>
     <string name="shared_string_reset">Ales awennez</string>
     <string name="shared_string_reload">Smiren</string>
-    <string name="mapillary_menu_date_from">Seg</string>
     <string name="shared_string_permissions">Tisirag</string>
     <string name="shared_string_install">Sbedd</string>
     <string name="nothing_found">Ulac ayen yettwafen :(</string>
@@ -451,7 +449,6 @@
     <string name="shared_string_favorite">Menyif</string>
     <string name="shared_string_favorites">Imenyafen</string>
     <string name="shared_string_my_tracks">Iberdan-iw</string>
-    <string name="shared_string_audio">Imesli</string>
     <string name="shared_string_accessibility">Ittuseblel i tuffart</string>
     <string name="watch">Ɛass</string>
     <string name="version_settings"/>

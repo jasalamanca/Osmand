@@ -20,7 +20,6 @@ import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.activities.TrackActivity;
 import net.osmand.plus.mapcontextmenu.MenuBuilder;
-import net.osmand.plus.mapillary.MapillaryPlugin;
 import net.osmand.plus.views.POIMapLayer;
 import net.osmand.plus.widgets.TextViewEx;
 import net.osmand.util.Algorithms;

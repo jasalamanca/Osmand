@@ -14,10 +14,8 @@ import net.osmand.data.RotatedTileBox;
 import net.osmand.map.ITileSource;
 import net.osmand.map.TileSourceManager;
 import net.osmand.map.TileSourceManager.TileSourceTemplate;
-import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.R;
-import net.osmand.plus.mapillary.MapillaryPlugin;
 import net.osmand.plus.resources.ResourceManager;
 import net.osmand.util.MapUtils;
 
@@ -148,8 +146,9 @@ public class MapTileLayer extends BaseMapLayer {
 		int width = (int) Math.ceil(tilesRect.right - left);
 		int height = (int) Math.ceil(tilesRect.bottom + ellipticTileCorrection - top);
 
-		boolean useInternet = OsmandPlugin.getEnabledPlugin(MapillaryPlugin.class) != null &&
-				settings.USE_INTERNET_TO_DOWNLOAD_TILES.get() && settings.isInternetConnectionAvailable() && map.couldBeDownloadedFromInternet();
+		boolean useInternet = settings.USE_INTERNET_TO_DOWNLOAD_TILES.get()
+				&& settings.isInternetConnectionAvailable()
+				&& map.couldBeDownloadedFromInternet();
 		int maxLevel = map.getMaximumZoomSupported();
 		int tileSize = map.getTileSize();
 		boolean oneTileShown = false;

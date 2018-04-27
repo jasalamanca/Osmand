@@ -840,8 +840,7 @@
 	<string name="rendering_attr_roadColors_name">Pad kleurskema</string>
     <string name="map_widget_show_destination_arrow">Wys rigting na bestemming</string>
     <string name="show_warnings_title">Wys alarms…</string>
-	<string name="osmand_short_description_80_chars">OsmAnd is `n oopbron navigasie toepassing vir aflyn en aanlyn kaarte</string>
-	<string name="filterpoi_activity">Skep PVB filter</string>
+    <string name="filterpoi_activity">Skep PVB filter</string>
 	<string name="select_navigation_mode">Kies vervoertipe</string>
 	<string name="day_night_info">Dag/nag inligting</string>
 	
@@ -896,8 +895,7 @@
 	<string name="avoid_motorway">Vermy snelweë</string>
 	<string name="snap_to_road_descr">Knip posisie aan paaie vas gedurende navigasie</string>
 	<string name="snap_to_road">Knip vas aan pad</string>
-    <string name="osmand_plus_short_description_80_chars">OsmAnd is `n oop-bron navigasie toepassing vir direkte en internet kaarte</string>
-    <string name="day_night_info_description">Sonopkoms : %1$s ↵\nSonsondergang : %2$s</string>
+  <string name="day_night_info_description">Sonopkoms : %1$s ↵\nSonsondergang : %2$s</string>
 	
 	
 	
@@ -923,17 +921,13 @@
     <string name="clear_dest_confirm">Is jy seker jy wil jou bestemmingspunt verwyder?</string>
     <string name="precise_routing_mode_descr">Aktiveer presiese roetebepaling om presiese roetes te bereken sonder probleme. Dit is baie beperk deur afstand en maak nie gebruik van die inheemse biblioteek nie.</string>
     <string name="precise_routing_mode">Presiese roetebepaling (alfa)</string>
-    <string name="av_def_action_picture">Neem /\'n foto</string>
-    <string name="dropbox_plugin_description">Dropbox inlasmodule laat jou spore en oudio/video notas sinkroniseer met jou Dropbox rekening.</string>
-    <string name="dropbox_plugin_name">Dropbox inlasmodule</string>
+  <string name="dropbox_plugin_name">Dropbox inlasmodule</string>
     <string name="intermediate_points_change_order">Verander volgorde</string>
     <string name="av_def_action_choose">Kies op versoek</string>
     <string name="av_widget_action_descr">Kies verstek programmetjie-aksie</string>
     <string name="av_widget_action">Verstek programmetjie-aksie</string>
-    <string name="av_use_external_camera_descr">Gebruik stelsel toepassing vir foto</string>
-    <string name="av_use_external_camera">Gebruik kamera toepassing</string>
 
-    <string name="recording_delete_confirm">Wil jy hierdie opname verwyder?</string>
+  <string name="recording_delete_confirm">Wil jy hierdie opname verwyder?</string>
 
     <string name="recording_context_menu_play">Speel</string>
     <string name="shared_string_control_start">begin</string>
@@ -1029,20 +1023,16 @@
     <string name="distance_measurement_clear_route">Verwyder all punte</string>
     
     <string name="distance_measurement_load_gpx">Maak bestaande GPX oop</string>
-    
-    
-	
-	<string name="av_camera_focus">Kamera fokus tipe</string>
-	<string name="av_camera_focus_descr">Kies interne kamera fokus tipe</string>
-	<string name="av_camera_focus_auto">Outo fokus</string>
+
+
+  <string name="av_camera_focus_auto">Outo fokus</string>
 	<string name="av_camera_focus_hiperfocal">Hiperfokale fokus</string>
 	<string name="av_camera_focus_edof">Uitgebreide velddiepte (EDOF)</string>
 	<string name="av_camera_focus_infinity">Fokus is op oneindig gestel</string>
 	<string name="av_camera_focus_macro">Makro (naby) fokus</string>
-	<string name="av_camera_focus_continuous">Die kamera prbeer heeltyd in fokus bly</string>
 
 
-    <string name="speak_speed_limit">Kondig spoedbeperking aan</string>
+  <string name="speak_speed_limit">Kondig spoedbeperking aan</string>
     <string name="speak_cameras">Kondig spoedkameras aan</string>
 	<string name="speak_traffic_warnings">Kondig verkeerswaarskuwings aan</string>
 	

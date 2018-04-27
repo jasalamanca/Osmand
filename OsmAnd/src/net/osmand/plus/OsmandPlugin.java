@@ -22,7 +22,6 @@ import net.osmand.plus.dashboard.tools.DashFragmentData;
 import net.osmand.plus.development.OsmandDevelopmentPlugin;
 import net.osmand.plus.mapcontextmenu.MenuBuilder;
 import net.osmand.plus.mapcontextmenu.MenuController;
-import net.osmand.plus.mapillary.MapillaryPlugin;
 import net.osmand.plus.monitoring.OsmandMonitoringPlugin;
 import net.osmand.plus.myplaces.FavoritesActivity;
 import net.osmand.plus.osmedit.OsmEditingPlugin;
@@ -122,9 +121,6 @@ public abstract class OsmandPlugin {
 	public static void initPlugins(OsmandApplication app) {
 		OsmandSettings settings = app.getSettings();
 		Set<String> enabledPlugins = settings.getEnabledPlugins();
-
-		allPlugins.add(new MapillaryPlugin(app));
-		enabledPlugins.add(MapillaryPlugin.ID);
 
 		// plugins with additional actions for context menu in right order:
 		allPlugins.add(new OsmEditingPlugin(app));

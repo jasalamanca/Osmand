@@ -38,7 +38,6 @@
     <string name="osm_live_enter_user_name">Prošu zapodajće zjawne mjeno</string>
     <string name="upload_anonymously">Anonymnje nahrać</string>
     <string name="upload_osm_note">OSM-noticu nahrać</string>
-    <string name="find_parking">Parkowanišćo namakać</string>
     <string name="shared_string_save_changes">Změny składować</string>
     <string name="shared_string_email_address">Mejlowa adresa</string>
     <string name="data_is_not_available">Daty k dispoziciji njesteja</string>
@@ -52,7 +51,6 @@
     <string name="available_maps">Přistupne karty</string>
     <string name="impassable_road_desc">Wubjerće puće, kiž chceće při nawigaciji wobeńć.</string>
     <string name="shared_string_sound">Zwuk</string>
-    <string name="no_camera_permission">Aplikacija nima dowolnosć k wužiwanju kamery.</string>
     <string name="no_microphone_permission">Aplikacija nima dowolnosć k wužiwanju mikrofona.</string>
     <string name="route_distance">Zdalenosć:</string>
     <string name="route_duration">Čas:</string>
@@ -450,7 +448,6 @@
     <string name="snap_to_road">Na dróze wostać</string>
     <string name="interrupt_music_descr">Hudźbu za připowědźe nawigacije přetorhować.</string>
     <string name="interrupt_music">Wothrawanje hudźby přetorhować</string>
-    <string name="osmand_short_description_80_chars">Globalna kartowa a nawigaciska słužba za OSM-karty (online a offline)</string>
 
     <string name="filterpoi_activity">POI-filter postajić</string>
     <string name="recalculate_route_to_your_location">Wužiwarski profil:</string>
@@ -870,12 +867,8 @@
     <string name="storage_directory_card">Składowanska karta</string>
     <string name="coords_format">Format koordinatow</string>
     <string name="coords_format_descr">Format za geografiske koordinaty.</string>
-<string name="mapillary">Mapillary</string>
     <string name="shared_string_reload">wobnowić</string>
     <string name="wrong_user_name">Wopačne wužiwarske mjeno!</string>
-    <string name="mapillary_menu_date_from">Wot</string>
-    <string name="mapillary_menu_title_dates">Datum</string>
-    <string name="mapillary_menu_edit_text_hint">Wužiwarske mjeno zapodać</string>
     <string name="shared_string_permissions">Prawa</string>
     <string name="shared_string_install">Instalować</string>
     <string name="shared_string_add_photos">Wobrazy přidać</string>
@@ -895,18 +888,9 @@
     <string name="measurement_tool">Zdalenosć měrić</string>
     <string name="quick_action_resume_pause_navigation">Nawigaciju znowa startować/přetorhnyć</string>
     <string name="shared_string_to">Do</string>
-    <string name="mapillary_menu_descr_dates">Jenož přidate wobrazy pokazać</string>
-    <string name="mapillary_menu_descr_username">Jenož wobrazy wužiwarja</string>
-    <string name="mapillary_menu_title_username">Wužiwarske mjeno</string>
     <string name="import_gpx_failed_descr">OsmAnd njemóže importować dataju. Prošu přepruwuj hač ma OsmAnd dowolnosć za začitanje dataje z tutoho městna.</string>
     <string name="distance_moving">Zdalenosć skorigowana</string>
-    <string name="mapillary_image">Wobraz z Mapillary</string>
-    <string name="open_mapillary">Mapillary wočinić</string>
-    <string name="improve_coverage_install_mapillary_desc">Móžeš swójske wobrazy abo seriju wobrazow wzać a z tutym městnom zwjazać
-\n
-\nZa to dyrbiš instalować aplikaciju Mapillary z Google Play.</string>
     <string name="online_photos">Fota online</string>
-    <string name="mapillary_widget">Asistent Mapillary</string>
     <string name="private_access_routing_req">Twój cil leži w priwatnej kónčinje. Chceš dowolić za tutu jězbu přistup k priwatnym pućam?</string>
     <string name="restart_search">Pytanje wospjetować</string>
     <string name="increase_search_radius">Pytanski radius powjetšić</string>
@@ -1111,7 +1095,6 @@
     <string name="edit_filter_delete_dialog_title">Wubrany filter wotstronić?</string>
     <string name="edit_filter_delete_message">Filter {0} je so wotstronił</string>
     <string name="edit_filter_create_message">Filter {0} je so wutworił</string>
-    <string name="av_camera_pic_size">Wulkosć wobraza</string>
     <string name="user_hates_app_get_feedback_long">Prošu zdźěl nam, što by w tutej aplikaciji změnił(a).</string>
     <string name="successfully_uploaded_pattern">Wuspěšnje nahrate {0}/{1}</string>
     <string name="app_name_osmand">OsmAnd</string>
@@ -1261,7 +1244,6 @@
     <string name="round_trip">Kołojězba</string>
     <string name="make_round_trip">Kołojězbu činić</string>
     <string name="fast_coordinates_input">Spěšne zapodaće koordinatow</string>
-    <string name="mapillary_action_descr">Přinošuj swoje wobrazy wot tutoho městna přez Mapillary.</string>
     <string name="animate_my_location">Animěruj moje stejišćo</string>
     <string name="shared_string_change">Změnić</string>
     <string name="shared_string_close">Začinić</string>
@@ -1378,8 +1360,6 @@
     <string name="shared_string_add_to_favorites">Jako faworit składować</string>
     <string name="shared_string_my_tracks">Moje puće</string>
     <string name="shared_string_currently_recording_track">Tuchwilne nahrawanje puća</string>
-    <string name="shared_string_audio">Awdijo</string>
-    <string name="shared_string_photo">Foto</string>
     <string name="route_points">Čarowe dypki</string>
     <string name="track_segments">Pućne wotrězki</string>
     <string name="track_points">Pućne dypki</string>

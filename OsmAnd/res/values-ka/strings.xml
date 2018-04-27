@@ -924,15 +924,12 @@
     <string name="avoid_motorway">მოტოციკლეტის გზებისათვის თავის არიდება</string>
 	<string name="snap_to_road_descr">ნავიგაციისას პიზიციის მიბმა გზებისათვის</string>
 	<string name="snap_to_road">გზისთვის მიბმა</string>
-	<string name="osmand_short_description_80_chars">OsmAnd არის ნავიგაციის აპლიკაცია ღია წყაროთი გათიშული და ონლაინ რუკების მხარდაჭერით</string>
-	<string name="map_widget_intermediate_distance">გზის წერტილი</string>
+    <string name="map_widget_intermediate_distance">გზის წერტილი</string>
 
     <string name="stop_routing_confirm">დარწმუნებული ბრძანდებით რომ გნებავთ ნავიგაციის შეწყვეტა?</string>
     <string name="clear_dest_confirm">დარწმუნებული ბრძანდებით რომ გნებავთ გაასუფთაოთ თქვენი დანიშნულების წერტილი?</string>
     <string name="precise_routing_mode_descr">ჩართეთ ზუსტი გზები მათი მანძილის ზუსტად დასათვლელად. მაგრამ ის ძალიან შეზღუდულია მანძილით და არ იყენებს ადგილობრივ ბიბლიოთეკას.</string>
     <string name="precise_routing_mode">გზის ზუსტი დათვლა (ალფა)</string>
-    <string name="av_def_action_picture">ფოტოს გადაღება</string>
-    <string name="dropbox_plugin_description">Dropbox-ის დამატება საშუალებას გაძლევთ გააკეთოთ სინქრონიზაცია თქვენი გზებისა და აუდიო/ვიდეო შენიშვნებისა თქვენს dropbox-ის ანგარიშთან.</string>
     <string name="dropbox_plugin_name">Dropbox-ის დამატება</string>
     
     <string name="intermediate_points_change_order">წყობის შეცვლა</string>
@@ -957,11 +954,9 @@
     <string name="map_widget_max_speed">სიჩქარის ლიმიტი</string>
     <string name="monitoring_control_start">GPX დევნა</string>
     <string name="route_descr_lat_lon">გან %1$.3f, გრძ %2$.3f</string>
-    
-    
-    
-    <string name="osmand_plus_short_description_80_chars">OsmAnd წარმოადგენს აპლიკაციას ღია კოდით გათიშული და მიმდინარე რუკებით ნავიგაციისათვის</string>
-	<string name="select_navigation_mode">აირჩიეთ ტრანსპორტის ტიპი</string>
+
+
+    <string name="select_navigation_mode">აირჩიეთ ტრანსპორტის ტიპი</string>
 	<string name="incomplete_locale">დაუსრულებელი</string>
 	<string name="app_modes_choose_descr">აირჩიეთ აპლიკაციის რეჟიმები</string>
     <string name="app_modes_choose">აპლიკაციის პროფილები</string>
@@ -1089,19 +1084,14 @@
     <string name="max_speed_none">არა</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
     <string name="av_def_action_choose">მოთხოვნისას არჩევა</string>
-    <string name="av_use_external_camera_descr">ფოტოებისათვის სისტემური აპლიკაციის გამოყენება</string>
-    <string name="av_use_external_camera">კამერის აპლიკაციის გამოყენება</string>
     <string name="support_new_features_descr">შემომწირეთ აპლიკაციაში ახალი მახასიათებლების სანახავად</string>
 	<string name="shared_string_downloading">ჩამოტვირთვა</string>
 	<string name="osb_author_dialog_password">OSM პაროლი(არასავალდებულო)</string>
-	<string name="av_camera_focus">კამერის ფოკუსის ტიპი</string>
-	<string name="av_camera_focus_descr">აირჩიეთ შიდა კამერის ფოკუსის ტიპი</string>
-	<string name="av_camera_focus_auto">ავტოფოკუსი</string>
+    <string name="av_camera_focus_auto">ავტოფოკუსი</string>
 	<string name="av_camera_focus_hiperfocal">ზემაღალი ფოკუსი</string>
 	<string name="av_camera_focus_edof">ველის გაფართოებული სიღრმავე (EDOF)</string>
 	<string name="av_camera_focus_infinity">ფოკუსი უსასრულოა</string>
 	<string name="av_camera_focus_macro">მაკრო (მიახლოებული) ფოკუსის რეჟიმი</string>
-	<string name="av_camera_focus_continuous">კამერა განაგრძობს ფოკუსის დაჭერას</string>
     <string name="traffic_warning_hazard">საშიშროება</string>
     <string name="no_updates_available">განახლებები ნაპოვნი არაა</string>
     <string name="download_live_updates">ცოცხალი განახლებები</string>

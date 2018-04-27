@@ -101,9 +101,7 @@
 	<string name="shared_string_my_favorites">ನನ್ನ ಇಷ್ಟವಾದವುಗಳು</string>
 	<string name="shared_string_my_tracks">ನನ್ನ ಟ್ರ್ಯಾಕ್ ಗಳು</string>
 	<string name="shared_string_currently_recording_track">ಈಗ ದಾಖಲಿಸಿಕೊಳ್ಳುತ್ತಿರುವ ಟ್ರ್ಯಾಕ್</string>
-	<string name="shared_string_audio">ಶ್ರಾವ್ಯ</string>
-    <string name="shared_string_photo">ಛಾಯಾಚಿತ್ರ</string>
-	<string name="shared_string_online_maps">ಮಿಂಬಲೆ ನಕ್ಷೆಗಳು</string>
+    <string name="shared_string_online_maps">ಮಿಂಬಲೆ ನಕ್ಷೆಗಳು</string>
 	<string name="record_plugin_name">ಪ್ರಯಾಣ ದಾಖಲಿಸಿಕೊಳ್ಳುವುದು</string>
 	<string name="osmo_plugin_name">ಒಪನ್‌ಸ್ಟ್ರೀಟ್‌ಮ್ಯಾಪ್ ಪರಿವೀಕ್ಷಿಸುವಿಕೆ</string>
     <string name="shared_string_accessibility">ಲಭ್ಯಾರ್ಹತೆ</string>
@@ -236,7 +234,6 @@
     <string name="lang_ml">ಮಲಯಾಳಂ</string>
     <string name="shared_string_import2osmand">ಒಸ್ಮಾಂಡ್‌ಗೆ ಆಮದುಮಾಡಿ</string>
     <string name="shared_string_add_photos">ಚಿತ್ರಗಳನ್ನು ಸೇರಿಸಿ</string>
-    <string name="mapillary">ಮ್ಯಾಪಿಲರಿ</string>
     <string name="nothing_found">ಏನೂ ಸಿಗಲಿಲ್ಲ :(</string>
     <string name="quick_action_osmbugs_show">ಒಎಸ್ಎಂ ಟಿಪ್ಪಣಿಗಳನ್ನು ತೋರಿಸು</string>
     <string name="quick_action_osmbugs_hide">ಒಎಸ್ಎಂ ಟಿಪ್ಪಣಿಗಳನ್ನು ಅಡಗಿಸು</string>
@@ -258,14 +255,7 @@
     <string name="this_year">ಈ ವರ್ಷ</string>
     <string name="enter_gpx_name">GPX ಕಡತದ ಹೆಸರು:</string>
     <string name="shared_string_to">ಗೆ</string>
-    <string name="mapillary_menu_date_from">ಇಂದ</string>
-    <string name="mapillary_menu_title_dates">ದಿನಾಂಕಗಳು</string>
-    <string name="mapillary_menu_edit_text_hint">ಬಳಕೆದಾರರ ಹೆಸರನ್ನು ಟೈಪ್ ಮಾಡಿ</string>
-    <string name="mapillary_menu_title_username">ಬಳಕೆದಾರರ ಹೆಸರು</string>
-    <string name="mapillary_image">Mapillary ಚಿತ್ರ</string>
-    <string name="open_mapillary">Mapillary ತೆರೆ</string>
     <string name="shared_string_install">ಅನುಸ್ಥಾಪಿಸಿ</string>
-    <string name="mapillary_widget">ಮ್ಯಾಪಿಲರಿ ವಿಜೆಟ್</string>
     <string name="shared_string_plugin">ಪ್ಲಗಿನ್</string>
     <string name="add_segment_to_the_track">GPX ಟ್ರ್ಯಾಕ್ಅನ್ನು ಸೇರಿಸಿ</string>
 </resources>

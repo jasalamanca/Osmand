@@ -39,17 +39,6 @@ public class TileSourceManager {
 			new TileSourceTemplate("OsmAnd (online tiles)", "http://tile.osmand.net/hd/{0}/{1}/{2}.png", ".png", 19, 1, 512, 8, 18000);  //$NON-NLS-1$//$NON-NLS-2$ //$NON-NLS-3$
 	private static final TileSourceTemplate CYCLE_MAP_SOURCE =
 			new TileSourceTemplate("CycleMap", "https://b.tile.thunderforest.com/cycle/{0}/{1}/{2}.png?apikey=a778ae1a212641d38f46dc11f20ac116", ".png", 16, 1, 256, 32, 18000);  //$NON-NLS-1$//$NON-NLS-2$ //$NON-NLS-3$ http://b.tile.opencyclemap.org/cycle/{0}/{1}/{2}.png
-	private static final TileSourceTemplate MAPILLARY_RASTER_SOURCE =
-			new TileSourceTemplate("Mapillary (raster tiles)", "https://d6a1v2w10ny40.cloudfront.net/v0.1/{0}/{1}/{2}.png", ".png", 13, 0, 256, 16, 32000);
-	private static final TileSourceTemplate MAPILLARY_VECTOR_SOURCE =
-			new TileSourceTemplate("Mapillary (vector tiles)", "https://d25uarhxywzl1j.cloudfront.net/v0.1/{0}/{1}/{2}.mvt", ".mvt", 21, 14, 256, 16, 3200);
-
-	static {
-		MAPILLARY_RASTER_SOURCE.setExpirationTimeMinutes(60 * 24);
-		MAPILLARY_RASTER_SOURCE.setHidden(true);
-		MAPILLARY_VECTOR_SOURCE.setExpirationTimeMinutes(60 * 24);
-		MAPILLARY_VECTOR_SOURCE.setHidden(true);
-	}
 
 	public static class TileSourceTemplate implements ITileSource, Cloneable {
 		private int maxZoom;
@@ -436,8 +425,6 @@ public class TileSourceManager {
 		java.util.List<TileSourceTemplate> list = new ArrayList<TileSourceTemplate>();
 		list.add(getMapnikSource());
 		list.add(getCycleMapSource());
-		list.add(getMapillaryRasterSource());
-		list.add(getMapillaryVectorSource());
 		return list;
 	}
 
@@ -447,14 +434,6 @@ public class TileSourceManager {
 
 	public static TileSourceTemplate getCycleMapSource(){
 		return CYCLE_MAP_SOURCE;
-	}
-
-	public static TileSourceTemplate getMapillaryRasterSource() {
-		return MAPILLARY_RASTER_SOURCE;
-	}
-
-	public static TileSourceTemplate getMapillaryVectorSource() {
-		return MAPILLARY_VECTOR_SOURCE;
 	}
 
 	public static List<TileSourceTemplate> downloadTileSourceTemplates(String versionAsUrl) {

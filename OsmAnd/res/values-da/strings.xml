@@ -25,7 +25,6 @@
     <string name="no_buildings_found">Ingen bygninger fundet.</string>
     <string name="incremental_search_city">Søg efter by trinvist</string>
     <string name="search_villages_and_postcodes">Søg flere landsbyer/postnummer</string>
-    <string name="dropbox_plugin_description">Dropbox udvidelsen gør det muligt at synkronisere spor og audio-/videonoter med en Dropbox-konto.</string>
     <string name="rendering_attr_showRoadMaps_description">Vælg, hvornår der skal vises kort kun med veje:</string>
     <string name="rendering_attr_showRoadMaps_name">Kort kun med veje</string>
     <string name="safe_mode_description">Kør program i fejlsikret tilstand (for langsommere Android i stedet for oprindelige kode).</string>
@@ -54,7 +53,6 @@
     <string name="clear_dest_confirm">Slet destinationen (og mellemliggende destinationer)?</string>
     <string name="precise_routing_mode_descr">Aktiver for at beregne præcise ruter uden fejl. Stadig begrænset af afstand og langsom.</string>
     <string name="precise_routing_mode">Nøjagtig ruteplanlægning (alfa)</string>
-    <string name="av_def_action_picture">Tag et foto</string>
     <string name="target_point">Destination %1$s</string>
     <string name="intermediate_point_too_far">Mellemliggende destination %1$s er for langt væk fra den nærmeste vej.</string>
     <string name="arrived_at_intermediate_point">Ankommet til mellemliggende destination</string>
@@ -91,16 +89,12 @@
 
     <string name="dropbox_plugin_name">Dropbox udvidelse</string>
     <string name="av_def_action_choose">Vælg ved forespørgsel</string>
-    <string name="av_use_external_camera_descr">Brug systemprogram til foto.</string>
-    <string name="av_use_external_camera">Brug kamera</string>
 
     <string name="monitoring_control_start">GPX</string>
     <string name="route_descr_lat_lon">Lat %1$.3f, Lon %2$.3f</string>
     <string name="intermediate_point">Mellemliggende destination %1$s</string>
     <string name="snap_to_road_descr">Hold position på vejen under navigation.</string>
     <string name="snap_to_road">Fastgør til vejen</string>
-    <string name="osmand_short_description_80_chars">Globale mobilkort &amp; navigation til offline og online OSM kort</string>
-    <string name="osmand_plus_short_description_80_chars">Global mobilkort visning &amp; navigation til offline og online OSM kort</string>
 
     <string name="filterpoi_activity">Opret interessepunkt-filter</string>
     <string name="recalculate_route_to_your_location">Transporttilstand:</string>
@@ -968,14 +962,11 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="destination_point">Destinationen %1$s</string>
 
 
-    <string name="av_camera_focus">Kameraets fokustype</string>
-    <string name="av_camera_focus_descr">Vælg fokustypen for det interne kamera.</string>
     <string name="av_camera_focus_auto">Autofokus</string>
     <string name="av_camera_focus_hiperfocal">Hyperfocal fokus</string>
     <string name="av_camera_focus_infinity">Uendelig fokus</string>
     <string name="av_camera_focus_macro">Makrofokustilstand (nærbillede)</string>
     <string name="av_camera_focus_edof">Udvidet dybdeskarphed (EDOF)</string>
-    <string name="av_camera_focus_continuous">Kameraet forsøger løbende at fokusere</string>
     <string name="speak_traffic_warnings">Trafikadvarsler</string>
     <string name="speak_cameras">Fartkameraer</string>
     <string name="speak_speed_limit">Hastighedsgrænse</string>
@@ -1362,9 +1353,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="arrival_distance_factor_at_last">Ved de sidste meter</string>
     <string name="rendering_attr_coloredBuildings_name">Farvekod bygninger efter type</string>
 
-    <string name="av_camera_pic_size">Kamera billedstørrelse</string>
-    <string name="av_camera_pic_size_descr">Vælg billedstørrelsen for det interne kamera.</string>
-
     <string name="rendering_value_car_name">Bil</string>
     <string name="rendering_value_bicycle_name">Cykel</string>
     <string name="rendering_value_pedestrian_name">Fodgænger</string>
@@ -1474,8 +1462,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="rendering_value_default_name">Standard</string>
     <string name="rendering_value_orange_name">Orange</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerikansk vejkort</string>
-    <string name="routing_attr_no_new_routing_name">Ingen v1.9 routing regler</string>
-    <string name="routing_attr_no_new_routing_description">Brug ikke routing regler indført i v1.9.</string>
     <string name="traffic_warning_railways">Jernbaneoverskæring</string>
     <string name="traffic_warning_pedestrian">Fodgængerovergang</string>
     <string name="show_railway_warnings">Jernbaneoverskæringer</string>
@@ -1603,9 +1589,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
 
     <string name="shared_string_my_places">Foretrukne</string>
 
-
-    <string name="shared_string_audio">Audio</string>
-    <string name="shared_string_photo">Foto</string>
 
     <string name="simulate_your_location">Simuler position</string>
     <string name="drawer">Enkel liste</string>
@@ -1956,7 +1939,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="route_duration">Varighed:</string>
     <string name="missing_write_external_storage_permission">OsmAnd har ikke tilladelse til at bruge SD-kortet</string>
 <string name="no_location_permission">OsmAnd har ikke tilladelse til at bruge lokaliseringsdata.</string>
-    <string name="no_camera_permission">OsmAnd har ikke tilladelse til at bruge kameraet.</string>
     <string name="no_microphone_permission">OsmAnd har ikke tilladelse til at bruge mikrofonen.</string>
     <string name="impassable_road_desc">Vælg veje, der skal undgås under navigation.</string>
     <string name="shared_string_sound">Lyd</string>
@@ -2002,7 +1984,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="shared_string_email_address">Email adresse</string>
     <string name="shared_string_status">Status</string>
     <string name="shared_string_save_changes">Gem ændringer</string>
-    <string name="find_parking">Find parkering</string>
     <string name="show_polygons">Vis polygoner</string>
     
     <string name="rendering_attr_showMtbRoutes_name">Vis MTB ruter</string>
@@ -2371,10 +2352,6 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="do_not_show_startup_messages_desc">Undertrykker visning af rabatter &amp; særlige lokale hændelsesmeddelelser.</string>
     <string name="right_side_navigation">Højrekørsel</string>
     <string name="driving_region_automatic">Automatisk</string>
-    <string name="osmand_extended_description_part7">Bidrag til OSM. • Rapporter fejl i data • Overfør GPX-spor til OSM direkte • Tilføj IP\'er og overfør dem direkte til OSM (eller senere, hvis offline)</string>
-    <string name="osmand_plus_extended_description_part7">Bidrag direkte til OSM   • Rapporter fejl i data   • Overfør GPX-spor direkte til OSM   • Tilføj IP\'er og overfør dem direkte til OSM (eller senere, hvis offline)   • Valgfri turoptagelse også i baggrundstilstand (mens enheden er i dvaletilstand)
-\n  OsmAnd er open source og bliver aktivt udviklet. Alle kan bidrage til anvendelsen ved at rapportere fejl, forbedring af oversættelser eller kodning af nye funktioner. Projektet er i en levende kontinuerlig forbedring af alle disse former for udvikling og brugerinteraktion. Projektets fremdrift er også afhængig af finansielle bidrag til finansiering af kodning og afprøvning af nye funktionaliteter.</string>
-    <string name="osmand_extended_description_part6">Gåture, vandring, byrundtur   • Kortet viser gang- og vandrestier   • Wikipedia på det foretrukne sprog kan fortælle en masse i løbet af en byrundtur   • Offentlig transport stoppesteder (bus, sporvogn, tog), herunder linjenavne, hjælper til at navigere i en ny by   • GPS-navigation i fodgængertilstand laver ruten ved hjælp af gangstier   • Overfør og følg en GPX rute eller optag og del egne ruter</string>
     <string name="fonts_header">Skrifttyper for kort</string>
     <string name="restore_purchases">Gendan køb</string>
     <string name="shared_string_visible">Synlig</string>
@@ -2427,22 +2404,10 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="nothing_found">Fandt intet :(</string>
     <string name="nothing_found_descr">Ændre søgningen eller øg søgeradius.</string>
     <string name="private_access_routing_req">Destination ligger i et område med privat adgang. Giv adgang til de private veje for turen?</string>
-    <string name="mapillary">Mapillary</string>
-    <string name="mapillary_widget">Mapillary modul</string>
-    <string name="mapillary_widget_descr">Giver mulighed for hurtigt at bidrage til Mapillary.</string>
-    <string name="mapillary_descr">Online fotos for alle på gadenivea. Oplev steder, samarbejd, indfang verden.</string>
     <string name="shared_string_add_photos">Tilføj fotos</string>
-    <string name="mapillary_action_descr">Bidrag med visninger af placeringen på gadeniveau via Mapillary.</string>
-    <string name="plugin_mapillary_descr">Fotos på gadeniveau for alle. Opdag steder, samarbejd, indfang verden.</string>
     <string name="online_photos">Online fotos</string>
     <string name="no_photos_descr">Ingen fotos til denne placering.</string>
     <string name="shared_string_install">Installer</string>
-    <string name="improve_coverage_mapillary">Forbedre fotodækningen med Mapillary</string>
-    <string name="improve_coverage_install_mapillary_desc">Tag egne fotos eller serier af fotos og føj dem til denne placering. 
-\n 
-\nFor at gøre dette skal Mapillary installeres fra Google Play.</string>
-    <string name="open_mapillary">Åbn Mapillary</string>
-    <string name="mapillary_image">Mapillary foto</string>
     <string name="distance_moving">Korrigeret afstand</string>
     <string name="shared_string_permissions">Tilladelser</string>
     <string name="import_gpx_failed_descr">Kan ikke importere filen. Kontroller om der er læsetilladelse på filplaceringen.</string>
@@ -2450,16 +2415,7 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="map_widget_ruler_control">Cirkel lineal</string>
     <string name="wrong_user_name">Forkert brugernavn!</string>
     <string name="shared_string_to">Til</string>
-    <string name="mapillary_menu_date_from">Fra</string>
-    <string name="mapillary_menu_title_dates">Dato</string>
-    <string name="mapillary_menu_edit_text_hint">Indtast brugernavn</string>
-    <string name="mapillary_menu_descr_username">Se kun billeder tilføjet af</string>
-    <string name="mapillary_menu_title_username">Brugernavn</string>
-    <string name="mapillary_menu_filter_description">Filtrer billeder efter indsender eller dato. Filter gælder kun for højere zoomniveauer.</string>
-    <string name="mapillary_menu_descr_dates">Se kun de billeder, der er tilføjet</string>
     <string name="shared_string_reload">Genindlæs</string>
-    <string name="mapillary_menu_descr_tile_cache">Genindlæs kortbrikker for at se opdaterede data.</string>
-    <string name="mapillary_menu_title_tile_cache">Kortbrik-cache</string>
     <string name="shared_string_reset">Nulstil</string>
     <string name="store_tracks_in_monthly_directories">Gem optagede spor i månedlige mapper</string>
     <string name="store_tracks_in_monthly_directories_descrp">Gem optagede spor i undermapper arrangeret efter optagelsesmåned (fx. 2017-01).</string>
@@ -2480,7 +2436,6 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="live_monitoring_max_interval_to_send">Tidsbuffer til online sporing</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Angiv en buffer for hvor lang tid positioner skal gemmes, når der ingen internetforbindelse er</string>
     <string name="retry">Prøv igen</string>
-<string name="mappilary_no_internet_desc">Internetforbindelse er nødvendig for at se fotos fra Mapillary.</string>
     <string name="measurement_tool">Mål afstand</string>
     <string name="measurement_tool_action_bar">Gennemse kortet og tilføj punkter</string>
     <string name="add_gpx_waypoint_bottom_sheet_title">Tilføj gpx rutepunkt</string>

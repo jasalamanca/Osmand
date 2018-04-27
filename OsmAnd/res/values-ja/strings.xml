@@ -715,16 +715,12 @@ POIの更新は利用できません</string>
     <string name="clear_dest_confirm">本当に目的地(とその経由地点)を削除しますか？</string>
     <string name="precise_routing_mode_descr">グリッチ無しの正確なルート計算を有効化します。現段階では距離が限定されて尚且つ遅いです。</string>
     <string name="precise_routing_mode">正確なルーティング(アルファ)</string>
-    <string name="av_def_action_picture">写真を撮影</string>
-    <string name="dropbox_plugin_description">Dropboxプラグインはあなたの経路と音声/動画メモをあなたのDropboxアカウントと同期することを可能にします。</string>
     <string name="dropbox_plugin_name">Dropboxプラグイン</string>
     
     <string name="intermediate_points_change_order">順序を変更</string>
     <string name="av_def_action_choose">ウィジェット起動毎に選択</string>
     <string name="av_widget_action_descr">ウィジェットボタンの(音声、ビデオ、写真記録)のデフォルト動作を選択します</string>
     <string name="av_widget_action">ウィジェット機能のデフォルト設定</string>
-    <string name="av_use_external_camera_descr">写真の撮影にシステムアプリケーションを使用します</string>
-    <string name="av_use_external_camera">カメラアプリを使用</string>
     <string name="recording_delete_confirm">この記録を削除しますか？</string>
     <string name="recording_context_menu_play">再生</string>
     <string name="shared_string_control_stop">停止</string>
@@ -792,9 +788,7 @@ POIの更新は利用できません</string>
 	<string name="avoid_motorway">高速道路を使用しない</string>
 	<string name="snap_to_road_descr">有効化でナビゲーション中は現在位置が道路から外れないようになります</string>
 	<string name="snap_to_road">道路に合わせる</string>
-    <string name="osmand_short_description_80_chars">OSMオフライン、オンライン両対応、グローバルモバイルマップ＆ナビゲーション</string>
-    <string name="osmand_plus_short_description_80_chars">OSMオフライン、オンライン両対応、グローバルモバイルマップ＆ナビゲーション</string>
-	<string name="filterpoi_activity">POIフィルタを作成</string>
+    <string name="filterpoi_activity">POIフィルタを作成</string>
 	<string name="select_navigation_mode">トランスポートモードの選択</string>
 	<string name="day_night_info_description">日の出: %1$s \n日の入: %2$s</string>
 	<string name="day_night_info">昼/夜の情報</string>
@@ -1135,13 +1129,10 @@ POIの更新は利用できません</string>
 	<string name="shared_string_downloading">ダウンロード中</string>
 	<string name="osb_author_dialog_password">OSMパスワード(オプション)</string>
 	<string name="email">Eメール</string>
-	<string name="av_camera_focus">カメラフォーカスタイプ</string>
-	<string name="av_camera_focus_descr">OsmAnd内蔵カメラのフォーカスタイプを選択します</string>
-	<string name="av_camera_focus_auto">オートフォーカス</string>
+    <string name="av_camera_focus_auto">オートフォーカス</string>
 	<string name="av_camera_focus_hiperfocal">過焦点フォーカス</string>
 	<string name="av_camera_focus_edof">拡張被写界深度(EDOF)</string>
-	<string name="av_camera_focus_continuous">定期的にフォーカスを調整</string>
-	<string name="amenity_type_seamark">満潮線(Seamark)</string>
+    <string name="amenity_type_seamark">満潮線(Seamark)</string>
     <string name="app_modes_choose_descr">アプリケーション内で表示する移動手段別プロファイルを選択します(乗用車、自転車、徒歩、その他…)</string>
     <string name="app_modes_choose">アプリケーションプロファイル</string>
 	<string name="map_widget_map_rendering">マップ描画に関する設定</string>
@@ -1494,8 +1485,6 @@ POIの更新は利用できません</string>
 	
 	<string name="shared_string_share">共有</string>
 	<string name="share_fav_subject">OsmAndを介してお気に入りを共有</string>
-	<string name="av_camera_pic_size">カメラの解像度</string>
-	<string name="av_camera_pic_size_descr">OsmAnd内蔵カメラの解像度を選択します</string>
     <string name="navigation_intent_invalid">無効なフォーマット: %s</string>
     
     
@@ -1609,8 +1598,6 @@ POIの更新は利用できません</string>
 	<string name="show_railway_warnings">踏切</string>
 	<string name="show_pedestrian_warnings">横断歩道</string>
     <string name="rendering_value_americanRoadAtlas_name">アメリカの道路マップ</string>
-    <string name="routing_attr_no_new_routing_name">ver1.9のルート検索をしない</string>
-    <string name="routing_attr_no_new_routing_description">バージョン1.9で導入されたルート検索方法を使用しない</string>
     <string name="dash_download_msg_none">オフラインマップをダウンロードしますか？</string>
     <string name="dash_download_msg">%1$sのマップをダウンロードしました</string>
     <string name="dash_download_new_one">新しいマップをダウンロード</string>
@@ -1664,9 +1651,7 @@ POIの更新は利用できません</string>
 	<string name="shared_string_action_template">アクション {0}</string>
 	<string name="shared_string_collapse">折り畳み表示</string>
 	<string name="shared_string_currently_recording_track">現在の経路を記録</string>
-	<string name="shared_string_audio">音声</string>
-    <string name="shared_string_photo">写真</string>
-	<string name="route_points">ルート地点</string>
+    <string name="route_points">ルート地点</string>
 	<string name="track_segments">経路セグメント</string>
 	<string name="track_points">経路地点</string>
 	<string name="delay_to_start_navigation_descr">目的地決定後、指定時間が経過すると自動的にナビゲーションを開始します</string>
@@ -2068,7 +2053,6 @@ POIの更新は利用できません</string>
     <string name="consider_turning_polygons_off">ポリゴンによる描画をオフにすることを推奨します。</string>
     <string name="rendering_attr_showMtbRoutes_name">MTB用ルートを表示</string>
     <string name="show_polygons">ポリゴンを表示</string>
-    <string name="find_parking">駐車場を探す</string>
     <string name="road_blocked">通行止め</string>
     <string name="rec_split">記録の制限</string>
     <string name="rec_split_title">記録制限を使用</string>
@@ -2079,7 +2063,6 @@ POIの更新は利用できません</string>
     <string name="impassable_road_desc">ルート検索やナビゲーション中に避けたい道路を選択します</string>
     <string name="shared_string_sound">音声</string>
     <string name="no_location_permission">指定されたデータ保存場所にアクセスする権限がありません。</string>
-    <string name="no_camera_permission">カメラ機能を使用する権限がありません。</string>
     <string name="no_microphone_permission">マイク機能を使用する権限がありません。</string>
     <string name="route_distance">距離:</string>
     <string name="route_duration">時間:</string>
@@ -2437,20 +2420,6 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="advanced_coords_search">高度な座標検索</string>
     <string name="lang_ber">ベルベル諸語</string>
     <string name="route_is_too_long_v2">現在の経路は計算するには長すぎるようです。10分以内に結果が出なければ中間に目的地(経由地点)を追加してください。</string>
-    <string name="osmand_extended_description_part6">"
- ウォーキング、ハイキング、市内ツアー
- • 地図には、徒歩移動やハイキング向け道が表示されます
- • 親しんだ言語のウィキペディアは、市内ツアー中に多くの情報をもたらしてくれます
- • 公共交通機関の停留所や駅(バス、路面電車、電車)、路線名の表示は、初めて訪れた市街での移動に役立ちます
- • 歩行者モードでのGPSナビゲーションは、徒歩移動向け経路を使用してルートを構築します。
- • ルートや記録を含んだGPXファイルをアップロードしたり、フォローしたり、自分自身で共有することができます
- "</string>
-    <string name="osmand_extended_description_part7">"
- OSMに寄与
- • データ、バグの報告ができます
- • GPX経路情報をアプリから直接OSMにアップロードできます
- • POIを追加してOSMに直接アップロードできます(オフラインの場合は後で行うことができます)
- "</string>
     <string name="quick_action_showhide_osmbugs_title">OSMメモの表示/非表示</string>
     <string name="quick_action_osmbugs_show">OSMメモを表示</string>
     <string name="quick_action_osmbugs_hide">OSMメモを非表示</string>
@@ -2472,29 +2441,10 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="nothing_found_descr">検索単語を変更したり、検索の距離を広げてみてください</string>
     <string name="increase_search_radius">検索範囲を広げる</string>
     <string name="restart_search">再検索</string>
-    <string name="osmand_plus_extended_description_part7">"
- 直接OSMに寄与
- • データ、バグの報告ができます
- • GPX経路情報をアプリから直接OSMにアップロードできます
- • POIを追加してOSMに直接アップロードできます(オフラインの場合は後で行うことができます)
-　 OsmAndはオープンソースで積極的に開発されています。バグを報告したり、翻訳を改善したり、新しい機能をコーディングすることで、誰もがアプリケーションの開発に貢献できます。このような開発者とユーザーとのやりとりによって、プロジェクトは継続的に改善されています。プロジェクトの進捗状況は、資金調達と新しい機能のテストに大きく左右されます。
- "</string>
     <string name="save_poi_too_many_uppercase">名前に大文字が多すぎます。 続行しますか？</string>
     <string name="shared_string_add_photos">写真を追加</string>
     <string name="no_photos_descr">この近辺の写真はありません</string>
     <string name="online_photos">近隣の写真(要オンライン)</string>
-    <string name="mapillary_descr">情報共有のための路上写真です(要オンライン)。新たな場所の発見に、協力しあい、この世界を写真で保存しましょう。</string>
-    <string name="improve_coverage_mapillary">Mapillaryにて写真の有効領域を広げましょう</string>
-    <string name="improve_coverage_install_mapillary_desc">自分自身の写真や、ストリートビューの様な連続写真をこの地点に追加することが出来ます。
-\n
-\nその為にはGoogle PlayからMapillaryというアプリのインストールが必要になります。</string>
-    <string name="open_mapillary">Mapillaryを開く</string>
-    <string name="mapillary">Mapillary</string>
-    <string name="mapillary_widget">Mapillaryウィジェット</string>
-    <string name="mapillary_image">Mapillary画像</string>
-    <string name="mapillary_action_descr">Mapillaryにて、この場所の路上表示に貢献します</string>
-    <string name="mapillary_widget_descr">Mapillaryへワンタッチ貢献を許可します</string>
-    <string name="plugin_mapillary_descr">皆で共有する路上写真です。新たな場所の発見に、協力しあい、この世界を写真で保存しましょう。</string>
     <string name="shared_string_install">インストール</string>
     <string name="import_gpx_failed_descr">OsmAndは指定したファイルをインポートできません。OsmAndにその場所からファイルを読み取る権限があるか確認して下さい。</string>
     <string name="map_widget_ruler_control">同心円測定器</string>
@@ -2503,18 +2453,8 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="access_shared_string_navigate_up">上に移動</string>
     <string name="rendering_value_fine_name">美麗</string>
     <string name="shared_string_reload">再読み込み</string>
-    <string name="mapillary_menu_descr_tile_cache">最新データを見るためにタイルを再読み込みします。</string>
-    <string name="mapillary_menu_title_tile_cache">タイルキャッシュ</string>
     <string name="wrong_user_name">存在しないユーザー名です！</string>
     <string name="shared_string_to">この日付以前</string>
-    <string name="mapillary_menu_date_from">この日付以降</string>
-    <string name="mapillary_menu_descr_dates">指定の期間に追加された画像だけを表示します。</string>
-    <string name="mapillary_menu_title_dates">日付</string>
-    <string name="mapillary_menu_edit_text_hint">ユーザー名を入力</string>
-    <string name="mapillary_menu_descr_username">指定のユーザーに追加された画像だけを表示します。</string>
-    <string name="mapillary_menu_title_username">ユーザー名</string>
-    <string name="mapillary_menu_filter_description">投稿者と日付で投稿された画像をフィルタリングできます。
-\nマップが一定値以上に拡大された場合のみフィルタは適用されます。</string>
     <string name="distance_moving">距離補正済み</string>
     <string name="shared_string_reset">リセット</string>
     <string name="store_tracks_in_monthly_directories">月ごとのフォルダ別に記録経路を保存</string>

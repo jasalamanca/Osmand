@@ -2,7 +2,6 @@
 <resources><string name="shared_string_my_places">Meus locais</string>
 	<string name="days_behind">dias atrás</string>
 	<string name="watch">Ver</string>
-    <string name="routing_attr_no_new_routing_name">Evitar regras de roteamento da v1.9</string>
     <string name="navigate_point_northing">Ao norte</string>
     <string name="navigate_point_easting">Ao leste</string>
     <string name="home_button">Início</string>
@@ -131,9 +130,7 @@
 	<string name="shared_string_my_favorites">Meus favoritos</string>
 	<string name="shared_string_my_tracks">Minhas trilhas</string>
 	<string name="shared_string_currently_recording_track">Gravando trilha</string>
-	<string name="shared_string_audio">Áudio</string>
-    <string name="shared_string_photo">Foto</string>
-	<string name="route_points">Pontos da rota</string>
+    <string name="route_points">Pontos da rota</string>
 	<string name="track_segments">Segmentos da trilha</string>
 	<string name="shared_string_online_maps">Mapas on-line</string>
     <string name="record_plugin_name">Gravação de viagem</string>
@@ -241,7 +238,6 @@
 	<string name="fav_point_emoticons_message">O nome do favorito foi modificado para %1$s para facilitar a salvar corretamente a seqüência de caracteres com emoticons para um arquivo.</string>
     <string name="speak_title">Anunciar…</string>
 	<string name="show_pedestrian_warnings">Faixas de pedestre</string>
-    <string name="routing_attr_no_new_routing_description">Não use as regras de roteamento introduzidas na v1.9</string>
     <string name="dash_download_new_one">Baixar um novo mapa</string>
     <string name="map_update">Atualizações disponíveis para %1$s mapa(s)</string>
 	<string name="fav_point_dublicate_message">O nome do favorito já está em uso, mudamos para %1$s a fim de evitar nomes duplicados.</string>
@@ -634,7 +630,6 @@
 	<string name="settings_preset_descr">Configurações de exibição e navegação de mapa são gravadas por perfil de uso. Defina seu perfil padrão aqui.</string>
     <string name="snap_to_road_descr">Ajustar posição das vias durante a navegação</string>
 	<string name="snap_to_road">Ajustar à via</string>
-	<string name="osmand_short_description_80_chars">OsmAnd é um aplicativo de navegação de código aberto para mapas off-line e on-line</string>
     <string name="day_night_info_description">Nascer do Sol: %1$s
 Pôr do Sol: %2$s</string>
 	<string name="avoid_unpaved">Vias não-pavimentadas</string>
@@ -707,15 +702,11 @@ Pôr do Sol: %2$s</string>
 
     <string name="precise_routing_mode_descr">Permitir calcular rotas precisas sem falhas. Está limitado pela distância e é lento.</string>
     <string name="precise_routing_mode">Roteamento preciso (alfa)</string>
-    <string name="av_def_action_picture">Tirar uma foto</string>
-    <string name="dropbox_plugin_description">O complemento do Dropbox permite sincronizar trilhas e notas de áudio/vídeo com a sua conta.</string>
     <string name="dropbox_plugin_name">Complemento Dropbox</string>
     <string name="intermediate_points_change_order">Alterar ordem</string>
     <string name="av_def_action_choose">Selecionar a pedido</string>
     <string name="av_widget_action_descr">Selecionar ação predefinida do widget</string>
     <string name="av_widget_action">Ação predefinida</string>
-    <string name="av_use_external_camera_descr">Usar o aplicativo de sistema para foto</string>
-    <string name="av_use_external_camera">Usar câmera externa</string>
     <string name="recording_delete_confirm">Você quer excluir esta gravação?</string>
 
     <string name="recording_context_menu_play">Reproduzir</string>
@@ -741,9 +732,7 @@ Pôr do Sol: %2$s</string>
 	<string name="interrupt_music_descr">Interromper a música quando fazer anúncio</string>
 	<string name="interrupt_music">Interromper música</string>
 
-    <string name="osmand_plus_short_description_80_chars">Visualizador Móvel de Mapa Global &amp; Navegação Off-line e On-line para Mapas OSM</string>
-	
-	<string name="filterpoi_activity">Criar filtro de POI</string>
+    <string name="filterpoi_activity">Criar filtro de POI</string>
 	<string name="recalculate_route_to_your_location">Meio de transporte:</string>
 	<string name="select_navigation_mode">Selecionar meio de transporte</string>
 	<string name="day_night_info">Informações dia/noite</string>
@@ -1523,16 +1512,11 @@ Pôr do Sol: %2$s</string>
 	<string name="edit_filter_delete_message">Filtro {0} foi apagado</string>
 	<string name="edit_filter_create_message">Filtro {0} foi criado</string>
 	<string name="email">e-mail</string>
-	<string name="av_camera_focus">Tipo de foco da câmera</string>
-	<string name="av_camera_focus_descr">Selecionar o tipo de foco da câmera interna</string>
-	<string name="av_camera_focus_auto">Foco automático</string>
+    <string name="av_camera_focus_auto">Foco automático</string>
 	<string name="av_camera_focus_hiperfocal">Foco hiperfocal</string>
 	<string name="av_camera_focus_edof">Profundidade de visão estendida (EDOF)</string>
 	<string name="av_camera_focus_infinity">Foco no infinito</string>
 	<string name="av_camera_focus_macro">Foco macro (close-up)</string>
-	<string name="av_camera_focus_continuous">A câmera tenta focar continuamente</string>
-    <string name="av_camera_pic_size">Tamanho da foto</string>
-	<string name="av_camera_pic_size_descr">Selecionar tamanho de imagem da foto</string>
     <string name="navigation_intent_invalid">Formato inválido: %s</string>
 	<string name="plugin_description_title">Descrição</string>
 	<string name="plugin_install_needs_network">Você precisa de uma conexão com a Internet para instalar este complemento.</string>
@@ -1812,7 +1796,6 @@ Pôr do Sol: %2$s</string>
     <string name="route_duration">Tempo:</string>
     <string name="missing_write_external_storage_permission">App não tem permissão para usar o cartão SD</string>
 <string name="no_location_permission">O aplicativo não tem permissão para acessar os dados de localização.</string>
-    <string name="no_camera_permission">App não tem permissão para acessar a câmera.</string>
     <string name="no_microphone_permission">App não tem permissão para acessar o microfone.</string>
     <string name="impassable_road_desc">Escolha as vias que quer evitar durante a navegação.</string>
     <string name="shared_string_sound">Som</string>
@@ -1856,7 +1839,6 @@ Pôr do Sol: %2$s</string>
     <string name="shared_string_email_address">Endereço de e-mail</string>
     <string name="shared_string_status">Estado</string>
     <string name="shared_string_save_changes">Salvar alterações</string>
-    <string name="find_parking">Encontrar estacionamento</string>
     <string name="show_polygons">Mostrar polígonos de áreas</string>
     
     <string name="add_points_to_map_markers_q">Você quer adicionar todos os pontos aos marcadores de mapa?</string>
@@ -2034,35 +2016,15 @@ Pôr do Sol: %2$s</string>
     <string name="store_tracks_in_monthly_directories_descrp">Armazenar trilhas gravadas em subpastas por mês gravado (como 2017-01).</string>
     <string name="shared_string_reset">Redefinir</string>
     <string name="shared_string_reload">Recarregar</string>
-    <string name="mapillary_menu_descr_tile_cache">Recarregar ladrilhos para visualizar dados atualizados.</string>
     <string name="wrong_user_name">Nome de usuário errado!</string>
     <string name="shared_string_to">Para</string>
-    <string name="mapillary_menu_date_from">De</string>
-    <string name="mapillary_menu_descr_dates">Ver somente imagens adicionadas</string>
-    <string name="mapillary_menu_title_dates">Data</string>
-    <string name="mapillary_menu_edit_text_hint">Digite o nome de usuário</string>
-    <string name="mapillary_menu_descr_username">Ver somente imagens adicionadas por</string>
-    <string name="mapillary_menu_title_username">Nome de usuário</string>
-    <string name="mapillary_menu_filter_description">Você pode filtrar imagens por quem submeteu ou por data. Os filtros só se aplicam para ampliação bem próxima.</string>
     <string name="shared_string_permissions">Permissões</string>
     <string name="import_gpx_failed_descr">O OsmAnd não pode importar o arquivo. Favor verificar se o OsmAnd tem permissão para ler arquivo de sua localização.</string>
     <string name="distance_moving">Distância corrigida</string>
-    <string name="mapillary_image">Imagem do Mapillary</string>
-    <string name="open_mapillary">Abrir o Mapillary</string>
     <string name="shared_string_install">Instalar</string>
-    <string name="improve_coverage_mapillary">Melhorar a cobertura fotográfica com Mapillary</string>
-    <string name="improve_coverage_install_mapillary_desc">Você pode tirar suas próprias fotos ou séries de fotos e anexá-las a esta localização do mapa. 
-\n 
-\nPara isso você precisa instalar o aplicativo Mapillary da Google Play Store.</string>
     <string name="online_photos">Fotos on-line</string>
     <string name="shared_string_add_photos">Adicionar fotos</string>
     <string name="no_photos_descr">Não temos fotos para este local.</string>
-    <string name="mapillary_action_descr">Contribuir com suas próprias vistas da rua deste local através do Mapillary.</string>
-    <string name="mapillary_widget">Ferramenta Mapillary</string>
-    <string name="mapillary_widget_descr">Permite que você contribua rapidamente ao Mapillary.</string>
-    <string name="mapillary_descr">Fotos ao nível da rua, online, para todos. Descobrir lugares, colaborar, capturar o mundo.</string>
-    <string name="mapillary">Mapillary</string>
-    <string name="plugin_mapillary_descr">Fotos ao nível da rua para todos. Descubra lugares, colabore, capture o mundo.</string>
     <string name="private_access_routing_req">Seu destino está localizado em uma área de acesso privado. Você quer permitir acesso à estradas privadas para esta viagem?</string>
     <string name="restart_search">Reiniciar pesquisa</string>
     <string name="increase_search_radius">Aumentar o raio de busca</string>
@@ -2081,7 +2043,6 @@ Pôr do Sol: %2$s</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Evitar estradas de gelo e vaus.</string>
     <string name="map_orientation_change_in_accordance_with_speed">Limite para orientação do mapa</string>
     <string name="quick_action_show_navigation_finish_dialog">Mostrar diálogo de navegação finalizada</string>
-    <string name="mapillary_menu_title_tile_cache">Cache de quadrícula</string>
     <string name="map_widget_ruler_control">Régua de raio</string>
     <string name="show_from_zoom_level">Mostrar do nível de ampliação</string>
     <string name="routing_attr_allow_private_name">Permitir acesso privado</string>
@@ -2426,8 +2387,6 @@ Pôr do Sol: %2$s</string>
     <string name="navigate_point_olc_info_area">OLC completo válido 
 \nRepresenta área: %1$s x %2$s</string>
     <string name="route_is_too_long_v2">Esta rota pode ser muito longa para calcular. Por favor, adicione destinos intermediários se nenhum resultado for encontrado dentro de 10 minutos.</string>
-    <string name="osmand_extended_description_part6">Passeio, caminhada, turismo pela cidade • O mapa mostra caminhos para passeios e caminhadas • A Wikipédia no seu idioma preferido pode dizer muito durante um turismo pela cidade • Paradas de transportes públicos (ônibus, troleibus, trem) incluindo nomes de linha, ajuda a navegar em uma nova cidade • Navegação GPS em modo pedestre constrói a sua rota usando caminhos para pedestres • Você pode fazer o upload e seguir uma rota GPX ou gravar e compartilhar a sua própria rota</string>
-    <string name="osmand_extended_description_part7">Contribua para o OSM • Comunique falha de dados • Carregue trilhas GPX diretamente do app • Adicione POIs e carregue-os diretamente ao OSM (ou mais tarde se off-line)</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Especificar um buffer de tempo para manter locais para enviar sem conexão</string>
     <string name="quick_action_add_osm_bug_descr">Tocar no botão de ação adicionará uma nota OSM no local do centro da tela.</string>
     <string name="quick_action_add_poi_descr">Tocar no botão de ação adicionará um POI no local do centro da tela.</string>
@@ -2475,7 +2434,6 @@ Pôr do Sol: %2$s</string>
     <string name="quick_action_btn_tutorial_title">Mudar posição do botão</string>
     <string name="quick_action_btn_tutorial_descr">Segure e arraste o botão para mudar a sua posição na tela.</string>
     <string name="shared_string_action_name">Nome da ação</string>
-    <string name="mappilary_no_internet_desc">Você precisa de internet para ver as fotos do Mapillary.</string>
     <string name="retry">Repetir</string>
     <string name="add_route_points">Adicionar Pontos de Rota</string>
     <string name="add_waypoint">Adicionar Ponto de Passagem</string>

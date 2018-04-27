@@ -26,7 +26,6 @@ public class TransportRouteController extends MenuController {
 									final TransportStopRoute transportRoute) {
 		super(new MenuBuilder(mapActivity), pointDescription, mapActivity);
 		this.transportRoute = transportRoute;
-		builder.setShowOnlinePhotos(false);
 		toolbarController = new ContextMenuToolbarController(this);
 		toolbarController.setTitle(getNameStr());
 		toolbarController.setOnBackButtonClickListener(new OnClickListener() {

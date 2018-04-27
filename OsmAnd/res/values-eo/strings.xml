@@ -53,7 +53,6 @@
     <string name="rendering_attr_showMtbRoutes_name">Montbiciklaj vojoj</string>
     <string name="show_polygons">Pluranguloj</string>
     <string name="shared_string_status">Stato</string>
-    <string name="find_parking">Trovi parkumejon</string>
     <string name="shared_string_save_changes">Konservi ŝanĝojn</string>
     <string name="shared_string_email_address">Retpoŝtadreso</string>
     <string name="rendering_attr_hideUnderground_name">Subteraj objektoj</string>
@@ -91,7 +90,6 @@
     <string name="impassable_road_desc">Elekti vojojn, kiujn vi volas eviti dum navigado.</string>
     <string name="shared_string_sound">Sono</string>
     <string name="no_location_permission">Aplikaĵo ne estas permesita por atingi informojn pri pozicio.</string>
-    <string name="no_camera_permission">Aplikaĵo ne estas permesita por atingi fotilon.</string>
     <string name="no_microphone_permission">Aplikaĵo ne estas permesita por atingi mikrofonon.</string>
     <string name="route_distance">Distanco:</string>
     <string name="route_duration">Tempo:</string>
@@ -369,8 +367,6 @@
     <string name="shared_string_add">Aldoni</string>
     <string name="shared_string_my_places">Miaj ejoj</string>
     <string name="shared_string_my_tracks">Miaj spuroj</string>
-    <string name="shared_string_audio">Sono</string>
-    <string name="shared_string_photo">Foto</string>
     <string name="settings_privacy">Privateco</string>
     <string name="map_locale">Mapa lingvo</string>
     <string name="download_tab_updates">Ĝisdatigoj</string>
@@ -512,8 +508,6 @@ Lon: %2$s</string>
     <string name="show_railway_warnings">Traknivelaj pasejoj</string>
     <string name="show_pedestrian_warnings">Zebrostriaj pasejoj</string>
     <string name="rendering_value_americanRoadAtlas_name">Usona voja maparo</string>
-    <string name="routing_attr_no_new_routing_name">Sen v1.9 kursaj reguloj</string>
-    <string name="routing_attr_no_new_routing_description">Ne uzi regulojn por difini kurson enkondukitajn en v1.9.</string>
     <string name="dash_download_msg_none">Ĉu vi volas elŝuti eksterretajn mapojn?</string>
     <string name="dash_download_msg">Vi elŝutis %1$s mapojn</string>
     <string name="dash_download_new_one">Elŝuti novan mapon</string>
@@ -1009,15 +1003,11 @@ Lon: %2$s</string>
     <string name="clear_dest_confirm">Ĉu vi certe volas forviŝi la celon (kaj intercelojn)?</string>
     <string name="precise_routing_mode">Precizaj kursoj (alfa)</string>
     <string name="precise_routing_mode_descr">Aktivigas kalkuladon de precizaj seneraraj kursoj. Nuntempe ĝi estas malrapida kaj nur por limigitaj distancoj.</string>
-    <string name="av_def_action_picture">Fari foton</string>
-    <string name="dropbox_plugin_description">La kromprogramo Dropbox ebligas al vi samtempigi kursojn kaj sonajn/videajn notojn kun via Dropbox-a konto.</string>
     <string name="dropbox_plugin_name">Dropbox kromprogramo</string>
     <string name="intermediate_points_change_order">Ŝanĝi ordon</string>
     <string name="av_def_action_choose">Elekti laŭvole</string>
     <string name="av_widget_action_descr">Elekti implicitan agon por fenestraĵo.</string>
     <string name="av_widget_action">Implicita fenestraĵo ago</string>
-    <string name="av_use_external_camera">Uzi sisteman fotilon</string>
-    <string name="av_use_external_camera_descr">Uzi sisteman aplikaĵon por fari fotojn.</string>
     <string name="recording_delete_confirm">Ĉu vi volas forigi tiun ĉi registraĵon?</string>
     <string name="recording_context_menu_play">Ludi</string>
     <string name="map_widget_distancemeasurement">Mezuro de distanco</string>
@@ -1091,8 +1081,6 @@ Lon: %2$s</string>
     <string name="snap_to_road">Proksimumigi al vojo</string>
     <string name="interrupt_music">Paŭzigi muzikon</string>
     <string name="interrupt_music_descr">Tute paŭzigi ĉiun muzikon dum sciigoj (ne nur mallaŭtigi ĝin).</string>
-    <string name="osmand_short_description_80_chars">Foliumi tutmondajn mapojn kaj navigadi uzante eksterretajn kaj enretajn OSM mapojn</string>
-	<string name="osmand_plus_short_description_80_chars">Foliumi tutmondajn mapojn kaj navigadi uzante eksterretajn kaj enretajn OSM mapojn</string>
     <string name="day_night_info_description">Sunleviĝo: %1$s\nSunsubiro: %2$s</string>
     <string name="day_night_info">Informo pri tago/nokto</string>
     <string name="filterpoi_activity">Krei filtrilon de interesejo</string>
@@ -1801,16 +1789,11 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="edit_filter_delete_message">Filtrilo {0} forigita</string>
     <string name="edit_filter_create_message">Filtrilo {0} kreita</string>
     <string name="email">retpoŝto</string>
-    <string name="av_camera_focus">Speco de fotila fokuso</string>
-    <string name="av_camera_focus_descr">Elekti specon de fokuso de fotilo.</string>
     <string name="av_camera_focus_auto">Aŭtomata fokuso</string>
     <string name="av_camera_focus_hiperfocal">Hiperfokala fokuso</string>
     <string name="av_camera_focus_edof">Plilarĝigita profundo kampa (EDOF)</string>
     <string name="av_camera_focus_infinity">Fokuso agordita je infinito</string>
     <string name="av_camera_focus_macro">Makrofokuso (alproksimigo)</string>
-    <string name="av_camera_focus_continuous">Fotilo kontinue provas agordi fokuson</string>
-    <string name="av_camera_pic_size">Fotila distingivo</string>
-    <string name="av_camera_pic_size_descr">Elekti distingivon de fotojn de la interna fotilo.</string>
     <string name="navigation_intent_invalid">Erara formo: %s</string>
     <string name="plugin_install_needs_network">Vi bezonas retkonekton por instali tiun ĉi kromprogramon.</string>
     <string name="use_fast_recalculation">Inteligenta rekalkulado de kurso</string>
@@ -2157,23 +2140,7 @@ Indikas lokon:  %1$s x %2$s"</string>
     <string name="do_not_show_startup_messages_desc">Ne montri mesaĝojn pri rabatoj kaj specialaj lokaj okazoj.</string>
     <string name="driving_region_automatic">Aŭtomata</string>
     <string name="right_side_navigation">Dekstr-flanka trafiko</string>
-    <string name="osmand_extended_description_part6">Piedirado, vizitado de urbo
-\n • La mapo montras al vi piediradajn kursojn 
-\n • Vikipedio en via lingvo eblas rakonti al vi multe dum via vizitado de urbo 
-\n • Haltejoj de publika transporto (aŭtobusaj, tramaj, fervojaj) kaj nomoj de linioj por helpi al vi navigi en urbo 
-\n • GPS-navigado en piedirada reĝimo kalkulas kursojn uzante piediradajn kursojn 
-\n • Vi povas alŝuti kaj postsekvi GPX-spuron aŭ registri kaj diskonigi vian propran</string>
-    <string name="osmand_extended_description_part7">Kontribui al OSM 
-\n • Raporti erarojn pri datumoj 
-\n • Alŝuti GPX-spurojn al OSM senpere de la aplikaĵo 
-\n • Aldoni interesejojn kaj senpere alŝuti ilin al OSM (aŭ poste se eksterrete)</string>
     <string name="fonts_header">Mapaj tiparoj</string>
-    <string name="osmand_plus_extended_description_part7">Senpere kontribui al OSM
-\n • Raporti erarojn pri datumoj 
-\n • Alŝuti GPX-spurojn al OSM senpere de la aplikaĵo 
-\n • Aldoni interesejojn kaj senpere alŝuti ilin al OSM (aŭ poste se eksterrete) 
-\n • Malnepre registri kurson ankaŭ en fona reĝimo (kiam la aparato dormetas) 
-\n OsmAnd estas malfermkoda kaj daŭre disvolvigata. Ĉiu povas kontribui al la aplikaĵo per raporti erarojn, plibonigi tradukojn aŭ programi novajn funkciojn. La projekto estas senĉese plibonigata ĉiumaniere de programistoj kaj uzantoj. La projekto estas ankaŭ subtenata permone por fondi kodumado kaj testi novajn funkciojn.</string>
     <string name="restore_purchases">Restarigi aĉetaĵojn</string>
     <string name="shared_string_visible">Videbla</string>
     <string name="analyze_on_map">Analizi sur mapo</string>
@@ -2225,39 +2192,18 @@ Indikas lokon:  %1$s x %2$s"</string>
     <string name="nothing_found">Trovis nenion :(</string>
     <string name="nothing_found_descr">Bonvolu provi ŝanĝi serĉpeton aŭ pliigi radiuson de serĉo.</string>
     <string name="private_access_routing_req">Via celloko troviĝas en privata tereno. Ĉu vi volas permesi aliron al privataj vojoj por tiu ĉi kurso?</string>
-    <string name="mapillary">Mapillary</string>
-    <string name="mapillary_widget">Mapillary-fenestraĵo</string>
-    <string name="mapillary_widget_descr">Ebligas al vi rapide kontribui al Mapillary.</string>
-    <string name="mapillary_descr">Enretaj strat-nivelaj fotoj por ĉiuj. Esplori lokojn, kunlabori kaj foti la mondon.</string>
     <string name="shared_string_add_photos">Aldoni fotojn</string>
-    <string name="mapillary_action_descr">Kontribui per viaj strat-nivelaj vidaĵoj de tiu ĉi loko per Mapillary.</string>
-    <string name="plugin_mapillary_descr">Strat-nivelaj fotoj por ĉiuj. Esplori lokojn, kunlabori kaj foti la mondon.</string>
     <string name="online_photos">Enretaj fotoj</string>
     <string name="no_photos_descr">Ni ne havas fotojn pri tiu ĉi loko.</string>
     <string name="shared_string_install">Instali</string>
-    <string name="improve_coverage_mapillary">Pliigi fotan atingon de Mapillary</string>
-    <string name="improve_coverage_install_mapillary_desc">Vi povas fari viajn proprajn fotojn aŭ seriojn da fotoj kaj aldoni ilin al tiu ĉi map-loko.
-\n
-\nPor fari tion, vi devas instali aplikaĵon Mapillary el Google Play.</string>
-    <string name="open_mapillary">Malfermi Mapillary</string>
-    <string name="mapillary_image">Mapillary-foto</string>
     <string name="distance_moving">Korektita distanco</string>
     <string name="shared_string_permissions">Permesoj</string>
     <string name="import_gpx_failed_descr">OsmAnd ne povas enporti la dosieron. Bonvolu kontroli, ĉu OsmAnd estas permesata por legi dosieron de tiu ĉi loko.</string>
     
     <string name="map_widget_ruler_control">Radiusa mezurilo</string>
     <string name="shared_string_reload">Reŝargi</string>
-    <string name="mapillary_menu_descr_tile_cache">Reŝargi kahelojn por ĝisdatigi datumojn.</string>
-    <string name="mapillary_menu_title_tile_cache">Kahela memoro</string>
     <string name="wrong_user_name">Erara uzantnomo!</string>
     <string name="shared_string_to">Al</string>
-    <string name="mapillary_menu_date_from">El</string>
-    <string name="mapillary_menu_descr_dates">Montri nur aldonitajn bildojn</string>
-    <string name="mapillary_menu_title_dates">Dato</string>
-    <string name="mapillary_menu_edit_text_hint">Entajpu uzantnomon</string>
-    <string name="mapillary_menu_descr_username">Montri nur bildojn aldonitajn de</string>
-    <string name="mapillary_menu_title_username">Uzantnomo</string>
-    <string name="mapillary_menu_filter_description">Vi povas filtri bildojn laŭ alŝutinto aŭ laŭ dato. Filtriloj aplikiĝas nur je pligrandigo.</string>
     <string name="shared_string_reset">Reagordi</string>
     <string name="store_tracks_in_monthly_directories">Konservi registritajn spurojn en monataj dosierujoj</string>
     <string name="store_tracks_in_monthly_directories_descrp">Konservi registritajn spurojn en dosierujoj por registrita monato (kiel 2017-01).</string>
@@ -2278,7 +2224,6 @@ Indikas lokon:  %1$s x %2$s"</string>
     <string name="live_monitoring_max_interval_to_send">Temp-bufro por enreta registrado</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Difini temp-bufron por konservi sendendajn poziciojn seninterrete</string>
     <string name="measurement_tool">Distanc-mezurilo</string>
-    <string name="mappilary_no_internet_desc">Vi bezonas interret-konekton por vidi fotojn de Mapillary.</string>
     <string name="retry">Reprovi</string>
 <string name="measurement_tool_action_bar">Esploru mapon kaj aldonu punktojn</string>
     <string name="add_gpx_waypoint_bottom_sheet_title">Aldoni GPX-navigadpunkton</string>

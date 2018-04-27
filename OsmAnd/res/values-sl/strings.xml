@@ -298,8 +298,6 @@
     <string name="auto_zoom_map">Samodejna povečava zemljevida</string>
     <string name="snap_to_road_descr">Med navigacijo pripni položaj na ceste.</string>
     <string name="snap_to_road">Pripni na cesto</string>
-    <string name="osmand_short_description_80_chars">OsmAnd je odprtokodni program za navigacijo z uporabo shranjenih ali spletnih zemljevidov</string>
-    <string name="osmand_plus_short_description_80_chars">OsmAnd je odprtokodni program za navigacijo z uporabo shranjenih ali spletnih zemljevidov</string>
 
     <string name="filterpoi_activity">Ustvari filter POI</string>
     <string name="recalculate_route_to_your_location">Način prevoza:</string>
@@ -922,9 +920,7 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="av_widget_action">Privzeto dejanje gradnika</string>
 
     <string name="intermediate_points_change_order">Spremeni vrstni red</string>
-    <string name="dropbox_plugin_description">Vstavek Dropbox omogoča usklajevanje datotek sledi in video/zvočnih zaznamkov z Dropboxovim uporabniškim računom.</string>
     <string name="dropbox_plugin_name">Vstavek Dropbox</string>
-    <string name="av_def_action_picture">Posnemi fotografijo</string>
     <string name="stop_routing_confirm">Ali ste prepričani, da želite prekiniti navigacijo?</string>
     <string name="clear_dest_confirm">Ali ste prepričani, da želite izbrisati celotno pot do cilja?</string>
     <string name="precise_routing_mode_descr">Omogočite možnost za natančno izračunavanje poti. Možnost je še vedno omejena na točke, ki niso preveč oddaljene, storitev pa je tudi časovno zahtevnejša.</string>
@@ -933,8 +929,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="support_new_features_descr">Donirajte in pripomogli boste k razvoju novih zmožnosti programa.</string>
 
 
-    <string name="av_use_external_camera_descr">Uporabi sistemski program za fotografiranje.</string>
-    <string name="av_use_external_camera">Uporabi kamero</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
     <string name="prefer_motorways">Prednostno usmeri na avtocesto</string>
     <string name="prefer_in_routing_title">Prednostno usmerjanje …</string>
@@ -1008,14 +1002,11 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
 \n* Za prikaz več možnosti, kliknite na gradnik za merjenje.</string>
 
 
-    <string name="av_camera_focus">Vrsta ostrenja kamere</string>
-    <string name="av_camera_focus_descr">Izberite vrsto ostrenja vgrajene kamere.</string>
     <string name="av_camera_focus_auto">Samodejno ostrenje</string>
     <string name="av_camera_focus_hiperfocal">Daljinsko ostrenje</string>
     <string name="av_camera_focus_edof">Povečana globinska ostrina (EDOF)</string>
     <string name="av_camera_focus_infinity">Ostrenje je nastavljeno na neskončno</string>
     <string name="av_camera_focus_macro">Makro (close-up) način ostrenja</string>
-    <string name="av_camera_focus_continuous">Nenehno ostrenje</string>
 
 
     <string name="speak_speed_limit">Omejitve hitrosti</string>
@@ -1403,8 +1394,6 @@ Ali želite nadaljevati z obnovitvijo registracije?</string>
 
     <string name="rendering_attr_coloredBuildings_name">Z barvo označi vrsto stavbe</string>
     <string name="osmo_leave_confirmation_msg">Ali želite zapustiti skupino %1$s?</string>
-    <string name="av_camera_pic_size">Velikost fotografije</string>
-    <string name="av_camera_pic_size_descr">Izberite velikost posnetkov vgrajenega fotoaparata.</string>
 
     <string name="download_additional_maps">Prejem manjkajočih zemljevidov %1$s (%2$d MB)?</string>
     <string name="shared_string_more">Več …</string>
@@ -1490,8 +1479,6 @@ Ali želite nadaljevati z obnovitvijo registracije?</string>
 
     <string name="lock_screen_request_explanation">%1$s zahteva dovoljenje za izklop zaslona za varčevanje z energijo.</string>
     <string name="fav_point_emoticons_message">Ime priljubljene točke je bilo spremenjeno v %1$s, s čimer se omogoči pravilno shranjevanje nizov z izraznimi ikonami v datoteko.</string>
-    <string name="routing_attr_no_new_routing_name">Ne omogoči pravil usmerjanja v1.9</string>
-    <string name="routing_attr_no_new_routing_description">Ne omogoči uporabe pravil usmerjanja, ki so bile uvedene z različico v1.9.</string>
     <string name="rendering_attr_roadStyle_name">Slog izrisa cest</string>
     <string name="rendering_value_default_name">Privzeto</string>
     <string name="rendering_value_orange_name">Oranžno</string>
@@ -1587,8 +1574,6 @@ ZŠ (β) %2$s</string>
     <string name="shared_string_action_template">Dejanje {0}</string>
     <string name="shared_string_collapse">Zloži</string>
     <string name="shared_string_currently_recording_track">Beleženje sledi</string>
-    <string name="shared_string_audio">Zvok</string>
-    <string name="shared_string_photo">Fotografija</string>
     <string name="route_points">Točke poti</string>
     <string name="rename_failed">Preimenovanje je spodletelo.</string>
     <string name="days_behind">dni od posodobitve</string>
@@ -1936,7 +1921,6 @@ ZŠ (β) %2$s</string>
 <string name="impassable_road_desc">Izberite poti, ki se jim želite izogniti.</string>
     <string name="shared_string_sound">Zvok</string>
     <string name="no_location_permission">Ni ustreznih dovoljenj za dostop do podatkov GPS.</string>
-    <string name="no_camera_permission">Ni ustreznih dovoljenj za dostop do kamere.</string>
     <string name="no_microphone_permission">Ni ustreznih dovoljenj za dostop do mikrofona.</string>
     <string name="live_updates">Posodobitve v živo</string>
     <string name="available_maps">Razpoložljivi zemljevidi</string>
@@ -1977,7 +1961,6 @@ ZŠ (β) %2$s</string>
     <string name="shared_string_save_changes">Shrani spremembe</string>
     <string name="shared_string_email_address">Elektronski naslov</string>
     <string name="shared_string_read_more">Več o tem ...</string>
-    <string name="find_parking">Najdi parkirno mesto</string>
     <string name="select_map_markers">Izbor označb zemljevida</string>
     <string name="shared_string_reverse_order">Obrni razvrstitev</string>
     
@@ -2354,7 +2337,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="analyze_on_map">Preuči na zemljevidu</string>
     <string name="fonts_header">Pisave za zemljevid</string>
     <string name="shared_string_paused">V premoru</string>
-    <string name="osmand_extended_description_part7">Sodelujte pri razvoju OSM • Pošiljajte poročila o hroščih • Objavljajte sledi GPX za OSM neposredno iz programa • Dodajajte točke POI in jih neposredno pošiljajte na strežnik OSM (z zamikom, če ni vzpostavljene povezave)</string>
     <string name="shared_string_overview">Pregled</string>
     
     <string name="shared_string_in_name">v %1$s</string>
@@ -2387,19 +2369,9 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="no_underlay">Brez podlog</string>
     <string name="shared_string_visible">Vidno</string>
     <string name="shared_string_add_photos">Dodaj fotografije</string>
-    <string name="mapillary_widget">Gradnik Mapillary</string>
-    <string name="mapillary">Mapillary</string>
     <string name="shared_string_install">Namesti</string>
-    <string name="improve_coverage_mapillary">Izboljšajte slikovno pokritost prek sistema Mapillary</string>
-    <string name="improve_coverage_install_mapillary_desc">Uporabite lahko lastne fotografije ali posnetke in jih dodate na to mesto na zemljevidu.
-\n
-\nZa tovrstno sodelovanje mora biti nameščen program Mapillary prek Google Play.</string>
     <string name="online_photos">Spletne fotografije</string>
     <string name="no_photos_descr">Za to mesto še ni objavljenih fotografij.</string>
-    <string name="mapillary_action_descr">Sodelujete lahko s posnetki ulic za to mesto prek programa Mapillary.</string>
-    <string name="mapillary_widget_descr">Omogoča hitro posodobitev območja prek sistema Mapillary.</string>
-    <string name="mapillary_descr">Spletne fotografije ulic za vsakogar. Odkrijte mesta, sodelujte in zajemite svet.</string>
-    <string name="plugin_mapillary_descr">Fotografije ulic za vsakogar. Odkrijte mesta, sodelujte in zajemite svet.</string>
     <string name="private_access_routing_req">Ciljno mesto je znotraj območja z zasebnim dostopom. Ali želite omogočiti dostop do zasebnih poti za to vodenje?</string>
     <string name="quick_action_showhide_osmbugs_descr">S pritiskom na gumb dejanj se pokažejo ali skrijejo opombe OSM na zemljevidu.</string>
     <string name="animate_my_location">Animiraj trenutno mesto</string>
@@ -2408,12 +2380,10 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="quick_action_replace_destination_desc">S pritiskom na gumb dejanj se zamenja trenutno ciljno mesto z mestom na sredini zaslona.</string>
     <string name="subscribe_email_desc">Naročite se na dopisni seznam o popustih programa in prejmite tri dodatne prejeme zemljevidov!</string>
     <string name="route_is_too_long_v2">Preračunavanje poti je lahko zelo dolgotrajno. V kolikor izračun ne bo končan v 10 minutah, vstavite nekaj vmesnih točk.</string>
-    <string name="open_mapillary">Odpri Mapillary</string>
     <string name="hide_from_zoom_level">Skrij od ravni približanja</string>
     <string name="show_from_zoom_level">Prikaži od ravni približanja</string>
     <string name="display_zoom_level">Raven približanja: %1$s</string>
     <string name="distance_moving">Razdalja je popravljena</string>
-    <string name="mapillary_image">Slika Mapillary</string>
     <string name="import_gpx_failed_descr">Ni mogoče uvoziti datoteke. Preverite ali ima program ustrezna dovoljenja za branje datotek s tega mesta.</string>
     <string name="shared_string_permissions">Dovoljenja</string>
 
@@ -2422,17 +2392,8 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="quick_action_add_first_intermediate_desc">S pritiskom na gumb dejanj bo dodana na sredino zaslona prva vmesna točka.</string>
     <string name="shared_string_reset">Ponastavi</string>
     <string name="shared_string_reload">Ponovno naloži</string>
-    <string name="mapillary_menu_descr_tile_cache">Ponovno posodobi sličice zemljevida.</string>
-    <string name="mapillary_menu_title_tile_cache">Predpomnilnik sličic</string>
     <string name="wrong_user_name">Napačno uporabniško ime!</string>
     <string name="shared_string_to">Za</string>
-    <string name="mapillary_menu_date_from">Od</string>
-    <string name="mapillary_menu_descr_dates">Pogled le dodanih slik</string>
-    <string name="mapillary_menu_title_dates">Datum</string>
-    <string name="mapillary_menu_edit_text_hint">Uporabniško ime</string>
-    <string name="mapillary_menu_descr_username">Pogled le dodane s strani</string>
-    <string name="mapillary_menu_title_username">Uporabniško ime</string>
-    <string name="mapillary_menu_filter_description">Slike je mogoče filtrirati po datumu in uporabniku. Filtri so dejavni le pri največjem približanju.</string>
     <string name="store_tracks_in_monthly_directories">Shrani zabeležene sledi v mapah, razdeljenih po mesecih</string>
     <string name="store_tracks_in_monthly_directories_descrp">Sledi so shranjene v podmape, poimenovane kot mesečni zapis datuma (na primer 2017-01).</string>
     <string name="average">Povprečje</string>
@@ -2441,7 +2402,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="moving_time">Čas premikanja</string>
     <string name="max_min">Največ/Najmanj</string>
 
-    <string name="osmand_extended_description_part6">Pohodništvo, sprehodi in raziskovanje mest • Na zemljevidu so posebej poudarjene pešpoti • Povezave na spletne strani Wikipedija so odličen pripomoček za raziskovanje mesta • Postaje javnih prevozov (avtobus, tramvaj, vlak) in nazivi tras omogočajo hitro orientacijo v mestu • Navigacija GPS v načinu za pešce preračuna pot po pešpoteh • Sledi poti GPX je mogoče shraniti in prikazati za sledenje</string>
     <string name="min_max">Najmanj/Največ</string>
     <string name="quick_action_resume_pause_navigation">Nadaljuj/Ustavi navigacijo</string>
     <string name="quick_action_start_stop_navigation">Začni/Končaj navigacijo</string>
@@ -2451,7 +2411,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="quick_action_start_stop_navigation_descr">Pritisnite gumb, če želite začeti ali končati navigacijo.</string>
     <string name="live_monitoring_max_interval_to_send">Časovni medpomnilnik za spletno sledenje</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Določitev časovnega medpomnilnika za ohranjanje trenutnega mesta pri pošiljanju brez povezave</string>
-    <string name="mappilary_no_internet_desc">Za ogled slik prek Mapillary je zahtevana omrežna povezava.</string>
     <string name="retry">Poskusi znova</string>
 <string name="none_point_error">Dodati je treba vsaj eno točko.</string>
     <string name="enter_gpx_name">Ime datoteke GPX:</string>
@@ -2495,7 +2454,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="do_not_use_animations_descr">Onemogoči predvajanje animacij v programu.</string>
     <string name="keep_showing_on_map">Prikazuj na zemljevidu</string>
     <string name="exit_without_saving">Ali želite končati brez shranjevanja?</string>
-    <string name="osmand_plus_extended_description_part7">Neposredno objavljanje na OSM • Objavljanje poročil o hroščih • Pošiljanje sledi GPX neposredno na OSM • Dodajanje točk POI • Izbirno beleženje tudi v stanju pripravljenosti naprave Program OsmAnd je odprtokoden, zato lahko vsak sodeluje pri razvoju. Zaželena je pomoč pri objavljanju hroščev, pregledovanje prevodov in pri razvoju novih možnosti programa. Trenutno je skupnost zelo živa. Napredovanje projekta se zanaša tudi na finančne donacije za nove zmožnosti in preizkušanje delovanja.</string>
     <string name="show_guide_line">Pokaži vodilne črte</string>
     <string name="show_arrows_on_the_map">Na zemljevidu pokaži puščice</string>
     <string name="show_passed">Pokaži dosežene</string>

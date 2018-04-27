@@ -46,8 +46,6 @@
     <string name="auto_zoom_map">自動縮放地圖</string>
     <string name="snap_to_road_descr">導航過程中對齊道路位置。</string>
     <string name="snap_to_road">對齊道路</string>
-    <string name="osmand_short_description_80_chars">將離線與線上的 OSM 地圖，用在全球行動地圖檢視和導航</string>
-    <string name="osmand_plus_short_description_80_chars">將離線與線上的 OSM 地圖，用在全球行動地圖檢視和導航</string>
 
 
     <string name="filterpoi_activity">建立 POI 篩選</string>
@@ -893,8 +891,6 @@
     <string name="clear_dest_confirm">您確定想要清除您的目的地(含中轉地點)？</string>
     <string name="precise_routing_mode">精確的路線 (alpha)</string>
     <string name="precise_routing_mode_descr">允許去預估精確而無差錯的路線。仍然有距離限制並且緩慢。</string>
-    <string name="av_def_action_picture">拍攝照片</string>
-    <string name="dropbox_plugin_description">Dropbox 的外掛元件，允許您讓軌跡和音訊/視訊的附註同步到您的 Dropbox 帳戶。</string>
     <string name="dropbox_plugin_name">Dropbox 外掛程式</string>
 
     <string name="intermediate_points_change_order">變動排列</string>
@@ -906,8 +902,6 @@
     <string name="recording_delete_confirm">您想刪除此錄製嗎？</string>
     <string name="destination_point">目的地 %1$s</string>
     <string name="local_osm_changes_backup_successful">OSM 變更的檔案已成功的產生 %1$s</string>
-    <string name="av_use_external_camera_descr">使用系統應用程式照片。</string>
-    <string name="av_use_external_camera">使用相機應用程式</string>
     <string name="recording_context_menu_play">播放</string>
     <string name="map_widget_distancemeasurement">測量距離</string>
 
@@ -956,14 +950,11 @@
     <string name="monitoring_control_start">GPX</string>
 
 
-    <string name="av_camera_focus">相機對焦類型</string>
-    <string name="av_camera_focus_descr">選擇內置相機對焦模式。</string>
     <string name="av_camera_focus_auto">自動對焦</string>
     <string name="av_camera_focus_hiperfocal">超焦距對焦</string>
     <string name="av_camera_focus_edof">全幅對焦 (EDOF)</string>
     <string name="av_camera_focus_infinity">焦距設為無限大</string>
     <string name="av_camera_focus_macro">微距(特寫)對焦模式</string>
-    <string name="av_camera_focus_continuous">相機連續對焦</string>
 
     <string name="osb_author_or_password_not_specified">請在設定裡指定 OSM 的使用者名稱和密碼</string>
     <string name="clear_intermediate_points">清除中轉地點</string>
@@ -1352,9 +1343,6 @@
     <string name="arrival_distance_factor_at_last">在最後幾公尺</string>
     <string name="rendering_attr_coloredBuildings_name">按類型用色碼區分建築物</string>
 
-    <string name="av_camera_pic_size">相機照片的大小</string>
-    <string name="av_camera_pic_size_descr">選擇內部相機照片的大小。</string>
-
     <string name="rendering_value_browse_map_name">瀏覽地圖</string>
     <string name="rendering_value_car_name">汽車</string>
     <string name="rendering_value_bicycle_name">自行車</string>
@@ -1457,8 +1445,6 @@
     <string name="dash_download_msg">您已下載了 %1$s 的地圖</string>
     <string name="dash_download_new_one">下載新的地圖</string>
     <string name="dash_download_manage">管理</string>
-    <string name="routing_attr_no_new_routing_name">不用 v1.9 的路徑規則</string>
-    <string name="routing_attr_no_new_routing_description">在 v1.9 不使用路徑規則引導。</string>
     <string name="rendering_attr_roadStyle_name">道路樣式</string>
     <string name="rendering_value_default_name">預設</string>
     <string name="rendering_value_orange_name">橙色</string>
@@ -1578,8 +1564,6 @@
     <string name="shared_string_my_favorites">我的收藏</string>
     <string name="shared_string_my_tracks">我的軌跡</string>
     <string name="shared_string_currently_recording_track">錄製軌跡</string>
-    <string name="shared_string_audio">音訊</string>
-    <string name="shared_string_photo">照片</string>
 
     <string name="simulate_your_location">模擬您的位置</string>
     <string name="short_location_on_map">緯度 %1$s
@@ -1922,7 +1906,6 @@
     <string name="route_duration">時間：</string>
     <string name="missing_write_external_storage_permission">應用程式無權限使用 SD 卡</string>
 <string name="no_location_permission">應用程式沒有權限存取所在位置資料。</string>
-    <string name="no_camera_permission">應用程式沒有權限存取相機。</string>
     <string name="no_microphone_permission">應用程式沒有權限存取麥克風。</string>
     <string name="impassable_road_desc">選擇在導航期間您想要避開的道路。</string>
     <string name="shared_string_sound">語音</string>
@@ -1968,7 +1951,6 @@
     <string name="shared_string_email_address">E-mail 地址</string>
     <string name="shared_string_status">狀態</string>
     <string name="shared_string_save_changes">儲存更改</string>
-    <string name="find_parking">找停車場</string>
     <string name="show_polygons">顯示多邊形</string>
     
     <string name="rendering_attr_showMtbRoutes_name">顯示 MTB 路線</string>
@@ -2355,15 +2337,8 @@
     <string name="right_side_navigation">靠右行駛</string>
     <string name="driving_region_automatic">自動</string>
     <string name="shared_string_paused">暫停</string>
-    <string name="osmand_plus_extended_description_part7">直接提供給 OSM
-\n • 報告地圖錯誤
-\n • 直接從該應用程式上傳 GPX 軌跡到 OSM
-\n • 增加 POI 並直接上傳給 OSM（如果離線則在之後上傳）
-\n • 任選的旅程錄製而且在背景模式（當裝置處於休眠模式下） OsmAnd 是開放原始碼，而且正在積極的開發。應用程式從報告錯誤、改進翻譯或編寫新的功能，每個人都可以作出貢獻。透過所有的這些形成開發人員和使用者交互的作用下，讓該專案處於不斷改善的活絡狀態。專案的開發進度、編寫程式碼和測試新的功能，還是要依靠提供資金捐款資助。</string>
     <string name="quick_action_add_first_intermediate">增加第一個中轉</string>
     <string name="shared_string_visible">可見的</string>
-    <string name="osmand_extended_description_part7">為 OSM 做出貢獻 • 報告資料錯誤 • 從應用程式直接將 GPX 軌跡上傳到 OSM • 增加 POI 並直接將其上傳到 OSM（或如果離線則之後上傳）</string>
-    <string name="osmand_extended_description_part6">步行、登山健行、市區旅遊 • 地圖顯示您的步行和登山健行路徑 • 維基百科以您喜好的語言在市區旅遊中可以告訴您很多事 • 大眾運輸停靠站（公共汽車、電車、火車），包括路線名稱，有助於在新的城市裡導航 • GPS 導航在行人模式下，使用步行路徑構建您的路線 • 您可以上傳並且跟隨 GPX 路線或著記錄和分享您自己的路線</string>
     <string name="quick_action_auto_zoom_desc">輕點動作按鈕開/關將會根據您的速度自動縮放地圖。</string>
     <string name="shared_string_overview">概要</string>
     <string name="quick_action_replace_destination_desc">輕點動作按鈕將把螢幕中心的位置更換為目的地。</string>
@@ -2394,22 +2369,10 @@
     <string name="increase_search_radius">增加搜尋半徑</string>
     <string name="nothing_found">没有找到 :(</string>
     <string name="nothing_found_descr">變更搜尋的查詢或增加搜尋的半徑。</string>
-    <string name="mapillary">Mapillary</string>
-    <string name="mapillary_widget">Mapillary 小工具</string>
-    <string name="mapillary_widget_descr">讓您迅速的提供給 Mapillary。</string>
-    <string name="mapillary_descr">把線上街道平面照片給每個人。發覺地點、協作、抓取世界。</string>
     <string name="shared_string_add_photos">新增照片</string>
-    <string name="mapillary_action_descr">在這個地點，透過 Mapillary 貢獻您的線上街頭照片。</string>
-    <string name="plugin_mapillary_descr">將街道平面照片給每個人。發覺地點、協作、抓取世界。</string>
     <string name="online_photos">線上照片</string>
     <string name="no_photos_descr">我們沒有在這個位置的照片。</string>
     <string name="shared_string_install">安裝</string>
-    <string name="improve_coverage_mapillary">提高 Mapillary 照片覆蓋的範圍</string>
-    <string name="improve_coverage_install_mapillary_desc">您可以拍攝自己的照片或系列照片，並將其增加到此地圖位置。 
-\n 
-\n要做到這些，您需要去 Google Play 安裝 Mapillary 應用程式。</string>
-    <string name="open_mapillary">開啟 Mapillary</string>
-    <string name="mapillary_image">Mapillary 圖片</string>
     <string name="distance_moving">距離已校正</string>
     <string name="shared_string_permissions">權限</string>
     <string name="import_gpx_failed_descr">OsmAnd 無法匯入檔案。 請檢查 OsmAnd 是否有權限從該位置去讀取檔案。</string>
@@ -2417,16 +2380,7 @@
     <string name="map_widget_ruler_control">半徑尺規</string>
     <string name="wrong_user_name">錯誤的使用者名稱！</string>
     <string name="shared_string_to">至</string>
-    <string name="mapillary_menu_date_from">從</string>
-    <string name="mapillary_menu_descr_dates">僅檢視增加的圖片</string>
-    <string name="mapillary_menu_title_dates">日期</string>
-    <string name="mapillary_menu_edit_text_hint">輸入使用者名稱</string>
-    <string name="mapillary_menu_descr_username">僅檢視增加的圖片由</string>
-    <string name="mapillary_menu_title_username">使用者名稱</string>
-    <string name="mapillary_menu_filter_description">您可以按照提供者或日期篩選圖片，篩選僅適用於特寫鏡頭縮放。</string>
     <string name="shared_string_reload">重新載入</string>
-    <string name="mapillary_menu_descr_tile_cache">請重新載入圖磚，以查看最新的資料。</string>
-    <string name="mapillary_menu_title_tile_cache">圖磚快取</string>
     <string name="shared_string_reset">重置</string>
     <string name="store_tracks_in_monthly_directories">在每月的資料夾中存儲已記錄的軌跡</string>
     <string name="store_tracks_in_monthly_directories_descrp">存儲已記錄的軌跡以月份記錄在子資料夾中 (例如 2017-01）。</string>
@@ -2446,7 +2400,6 @@
     <string name="quick_action_start_stop_navigation_descr">輕點此按鈕以開始或停止導航。</string>
     <string name="live_monitoring_max_interval_to_send">用於線上追蹤的緩衝時間</string>
     <string name="live_monitoring_max_interval_to_send_desrc">指定一段緩衝時間以保持位置，而無需連接發送</string>
-    <string name="mappilary_no_internet_desc">您需要連上網路才能從 Mapillary 檢視照片。</string>
     <string name="retry">重試</string>
 <string name="measurement_tool">測量距離</string>
     <string name="measurement_tool_action_bar">瀏覽地圖並增加標點</string>

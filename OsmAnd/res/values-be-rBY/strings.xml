@@ -8,8 +8,6 @@
 	<string name="show_railway_warnings">Čyhunačnyja pierajezdy</string>
 	<string name="show_pedestrian_warnings">Piešachodnyja pierachody</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerykanskі atłas aŭtadaroh</string>
-    <string name="routing_attr_no_new_routing_name">Biaz pravіłaŭ maršrutyzacyі v1.9</string>
-    <string name="routing_attr_no_new_routing_description">Nie vykarystoŭvać pravily maršrutyzacyi ŭviedzienyja ŭ v1.9.</string>
     <string name="dash_download_msg_none">Vy chočacie cciahnuć jakіja-niebudź mapy?</string>
     <string name="dash_download_msg">Vy cciahnuli %1$s mapy</string>
     <string name="dash_download_new_one">Ściahnuć novuju mapu</string>
@@ -584,15 +582,11 @@ Punktaŭ maršrutu %2$s</string>
     <string name="clear_dest_confirm">Sapraŭdy ściercі miesca pryznačeńnia (і pramiežkavyja punkty pryznačeńnia)?</string>
     <string name="precise_routing_mode_descr">Dazvolić dakładnuju navіhacyju kab šukać šlach biez pamyłak. Usio jašče abmiežavana adlehłasciu і pavolnaja.</string>
     <string name="precise_routing_mode">Dakładny maršrut (eksp.)</string>
-    <string name="av_def_action_picture">Sfatahrafavać</string>
-    <string name="dropbox_plugin_description">Modul Dropbox dazvalaje vam sinchranizavać treki i aŭdyjo/videa-nataki z vašym Dropbox-akaŭntam.</string>
     <string name="dropbox_plugin_name">Modul Dropbox</string>
     <string name="intermediate_points_change_order">Źmianіć paradak</string>
     <string name="av_def_action_choose">Vybar pa zapycie</string>
     <string name="av_widget_action_descr">Vybierycie ahadanaje dziejannie vidžeta.</string>
     <string name="av_widget_action">Dziejańnie vіdžeta pa zmaŭčannі</string>
-    <string name="av_use_external_camera_descr">Vykarystoŭvać sistemnaje dastasavannie dlia fota.</string>
-    <string name="av_use_external_camera">Vykarystoŭvać prahramu kamiery</string>
     <string name="recording_delete_confirm">Vy chočacie źnіščyć hety zapіs?</string>
 
     <string name="recording_context_menu_play">Hrać</string>
@@ -678,10 +672,6 @@ Punktaŭ maršrutu %2$s</string>
 	<string name="snap_to_road">Pryviazvacca da daroh</string>
 	<string name="interrupt_music_descr">Halasavyja padkazki prypyniajuć muzyku, a nie toĺki pryhlušajuć jaje.</string>
 	<string name="interrupt_music">Pierapynieńnie muzykі</string>
-
-    <string name="osmand_short_description_80_chars">Hłabalnaja mabіlnaja mapa і navіhatar dla aŭtanomnych і sietkavych mapaŭ OSM</string>
-
-    <string name="osmand_plus_short_description_80_chars">Hłabalnaja mabіlnaja mapa і navіhatar dla aŭtanomnych і sietkavych mapaŭ OSM</string>
 
 
     <string name="filterpoi_activity">Stvaryć fіltar POI</string>
@@ -1509,16 +1499,11 @@ Praparcyjnaj pamiacі %4$s MB (Abmiežavańnie Android %5$s MB, Dalvik %6$s MB).
 	<string name="edit_filter_create_message">Fіltr {0} byŭ stvorany</string>
 	
 	<string name="email">E-mail</string>
-	<string name="av_camera_focus">Typ fakusoŭkі kamiery</string>
-	<string name="av_camera_focus_descr">Vybierycie typ fokusu ŭbudavanaj kamiery.</string>
-	<string name="av_camera_focus_auto">Aŭtafokus</string>
+    <string name="av_camera_focus_auto">Aŭtafokus</string>
 	<string name="av_camera_focus_hiperfocal">Hіpierfakalny fokus</string>
 	<string name="av_camera_focus_edof">Pavialičanaja hłybіnia rezkaścі (EDOF)</string>
 	<string name="av_camera_focus_infinity">Fokus ustalavany na biaskoncaścі</string>
 	<string name="av_camera_focus_macro">Makra-režym fakusoŭkі (bujny płan)</string>
-	<string name="av_camera_focus_continuous">Kamiera pastajanna sprabuje sfakusavacca</string>
-    <string name="av_camera_pic_size">Pamier fota</string>
-	<string name="av_camera_pic_size_descr">Pamier fotazdymka z ubudavanaj kamiery.</string>
     <string name="navigation_intent_invalid">Niapravіlny farmat: %s</string>
     
 
@@ -1631,7 +1616,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="consider_turning_polygons_off">Rekamendujecca adklučyć pakaz palihonaŭ.</string>
     <string name="rendering_attr_showMtbRoutes_name">Adlustroŭvać MTB maršruty</string>
     <string name="show_polygons">Pakazvać palihony</string>
-    <string name="find_parking">Znajścі parkoŭku</string>
     <string name="shared_string_status">Stan</string>
     <string name="shared_string_save_changes">Zachavać źmieny</string>
     <string name="shared_string_email_address">E-mail adras</string>
@@ -1660,7 +1644,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="impassable_road_desc">Abiarycie darohi, jakija vy chočacie pazbiahać padčas navihacyi.</string>
     <string name="shared_string_sound">Huk</string>
     <string name="no_location_permission">Prahrama nie maje dazvołu na vykarystańnie GPS.</string>
-    <string name="no_camera_permission">Prahrama nie maje dazvołu na vykarystańnie kamery.</string>
     <string name="no_microphone_permission">Prahrama nie maje dazvołu na vykarystańnie mіkrafonu.</string>
     <string name="route_distance">Adlehłaść:</string>
     <string name="route_duration">Čas:</string>
@@ -1892,8 +1875,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="shared_string_address">Adras</string>
     <string name="shared_string_my_location">Majo miescaznachodžańnie</string>
     <string name="shared_string_currently_recording_track">Biahučy śled, jakі zapіsvajecca</string>
-    <string name="shared_string_audio">Aŭdyjo</string>
-    <string name="shared_string_photo">Fota</string>
     <string name="route_points">Punkty maršrutu</string>
     <string name="track_segments">Adrezkі śledu</string>
     <string name="track_points">Punkty śledu</string>
@@ -2244,8 +2225,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="quick_action_navigation_voice">Holas ukl/adkl</string>
     <string name="shared_string_add_photos">Dadać fatahrafii</string>
     <string name="no_photos_descr">My nie majem fatahrafij dlia hetaha miesca.</string>
-    <string name="mapillary_widget">Vidžet Mapillary</string>
-    <string name="mapillary">Мapillary</string>
     <string name="quick_action_map_underlay_action">Dadać padkladku</string>
     <string name="quick_action_navigation_voice_on">Holas aktyŭny</string>
     <string name="quick_action_add_gpx">Dadać kropku GPX</string>
@@ -2279,18 +2258,8 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="quick_action_map_underlay_title">Padkładki mapy</string>
     <string name="no_underlay">Biez padkładki</string>
     <string name="no_overlay">Biez nakładki</string>
-    <string name="open_mapillary">Adkryć Mapillary</string>
     <string name="shared_string_install">Ustalavać</string>
-    <string name="improve_coverage_mapillary">Paliepšyć fota-pakryccio Mapillary</string>
     <string name="online_photos">Anłajn fatahrafii</string>
-    <string name="improve_coverage_install_mapillary_desc">Vy možacie zrabić ulasnyja fatahrafii ci padborku fatahrafij i dadać ich da hetaha miesca na mapie. 
-\n 
-\nKab zrabić tak, nieabchodna ŭstaliavać Mapillary z Google Play.</string>
-    <string name="mapillary_action_descr">Padzialicca svaimi vuličnymi vidami hetaj miascovasci praz Mapillary.</string>
-    <string name="mapillary_descr">Vuličnyja fota anlajn dla kožnaha. Adkryvajcie dla siabie miescy, dapamahajcie, zdymajcie sviet.</string>
-    <string name="plugin_mapillary_descr">Vuličnyja fatahrafii dla ŭsich. Adkryvajcie dla siabie miescy, dapamahajcie, zdymajcie sviet.</string>
-    <string name="mapillary_image">Vyjava Mapillary</string>
-    <string name="mapillary_widget_descr">Dazvaliaje vam chutki ŭniosak ŭ Mapillary.</string>
     <string name="relief_smoothness_factor_descr">Pieravažny reĺjef: raŭninny ci harysty.</string>
     <string name="routing_attr_height_obstacles_description">Vykarystoŭvać danyja ab reĺjefie ziamnoj pavierchni z SRTM, ASTER i EU-DEM.</string>
     <string name="rendering_attr_hideWaterPolygons_description">Vadu</string>
@@ -2356,9 +2325,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="lang_zh_hk">Kitajskaja (Hankonh)</string>
     <string name="route_is_too_long_v2">Hety maršrut, mahčyma, zanadta vialiki dla raźliku. Kali łaska, dadajcie pramiežkavyja punkty, kali raźlik nie zaviaršyŭsia ciaham 10 chvilin.</string>
     <string name="driving_region_australia">Aŭstralija</string>
-    <string name="osmand_extended_description_part6">"Špacyry, pachody, ekskursii • Mapa pakazvaje piešachodnyja sciežki • Vikipiedyja ŭpadabanaj movaj raspaviadzie vam šmat čaho cikavaha padčas ekskursii • Prypynki hramadskaha transpartu (aŭtobus, travaj, ciahnik), ukliučajučy nazvy maršrutaŭ, dapamohuć aryjentavacca ŭ novym horadzie •  GPS-navihacyja ŭ piešachodnym režymie vyličvaje maršrut, vykarystoŭvajučy piešachodnyja sciežki • Vy možacie zahruzić i prytrymlivacca GPX-maršruta abo zapisać i dzialicca svaim ulasnym"</string>
-    <string name="osmand_extended_description_part7">Udziel u OSM • Paviedamliennie ab pamylkach • Zahruzka GPX-trekaŭ u OSM prosta z prahramy • Dadavannie cikavych kropak (POI) i zahruzka ich u OSM (ci pazniej, kali aflajn)</string>
-    <string name="osmand_plus_extended_description_part7">Niepasredny ŭklad u OSM • Zajavy ab pamylkach u danych • Zahruzka GPX-trekaŭ u OSM prosta z prahramy • Dadavannie cikavych kropak (POI) i niepasrednaja zahruzka ich u OSM (ci pazniej, jak aflajn) • Mahčymasć zapisu padarožža ŭ fonavym režymie (u toj čas, jak prylada znachodzicca ŭ spiačym režymie) OsmAnd — adkrytaje prahramnaje zabiaspiačennie ŭ aktyŭnaj raspracoŭcy. Kožny moža ŭniesci ŭklad paviedamliajučy ab pamylkach, paliapšajučy pieraklad ci raspracoŭvajučy novyja mažlivasci. Prajekt znachodzicca ŭ žvavym stanie biezpierapynnaha ŭdaskanaliennia form uzajemadziejannia raspracoŭnikaŭ i karystaĺnikaŭ. Chod prajekta zaliežyć taksama ad finansavych unioskaŭ dlia zabiaspiačennia pradaŭžennia kadavannia i testavannia novaj funkcyjanaĺnasci.</string>
     <string name="save_poi_too_many_uppercase">Nazva zmiaščaje zanadta šmat vialikich litar. Vy chočacie pradoŭžyć?</string>
     <string name="quick_favorites_show_favorites_dialog">Pakazać dyjaloh ulubionych</string>
     <string name="quick_favorites_name_preset">Nazva pieradustaloŭki</string>
@@ -2387,16 +2353,7 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="map_widget_ruler_control">Liniejka pramianiovaja</string>
     <string name="wrong_user_name">Niapraviĺnaje imia karystaĺnika!</string>
     <string name="shared_string_to">Da</string>
-    <string name="mapillary_menu_date_from">Ad</string>
-    <string name="mapillary_menu_descr_dates">Pahliadzieć toĺki dadanyja vyjavy</string>
-    <string name="mapillary_menu_title_dates">Data</string>
-    <string name="mapillary_menu_edit_text_hint">Uviadzicie imia karystaĺnika</string>
-    <string name="mapillary_menu_descr_username">Pahliadzieć toĺki vyjavy dadanyja</string>
-    <string name="mapillary_menu_title_username">Imia karystaĺnika</string>
-    <string name="mapillary_menu_filter_description">Vy možacie filtravać vyjavy pa adpraŭniku ci dacie. Filtry ŭžyvajucca tolki dla bujnoha pavieličeńnia.</string>
     <string name="shared_string_reload">Abnavić</string>
-    <string name="mapillary_menu_descr_tile_cache">Abnavić frahmienty, kab ubačyć aktuaĺnyja danyja.</string>
-    <string name="mapillary_menu_title_tile_cache">Keš frahmientaŭ</string>
     <string name="shared_string_reset">Skinuć</string>
     <string name="store_tracks_in_monthly_directories">Zachavać zapisanyja ślady ŭ miesiačnych tečkach</string>
     <string name="store_tracks_in_monthly_directories_descrp">Zachavać zapisanyja ślady ŭ padtečki na asnovie miesiaca zapisu (naprykład, 2017-01).</string>
@@ -2415,7 +2372,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="quick_action_show_navigation_finish_dialog">Pakazać dyjaloh zaviaršennia navihacyi</string>
     <string name="quick_action_start_stop_navigation">Pačać/spynić navihacyju</string>
     <string name="quick_action_start_stop_navigation_descr">Nacisnicie hetuju knopku, kab pačać abo skončyć navihacyju.</string>
-    <string name="mappilary_no_internet_desc">Vam patrebien Internet dlia prahliadu fatahrafij z Mapillary.</string>
     <string name="retry">Paŭtaryć sprobu</string>
     <string name="add_gpx_waypoint_bottom_sheet_title">Dadać GPX šlach</string>
     <string name="shared_string_create">Stvaryć</string>

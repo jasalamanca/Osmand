@@ -849,12 +849,10 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="map_widget_renderer">Atvaizdavimo stilius</string>
 
 
-    <string name="osmand_short_description_80_chars">OsmAnd - atviro kodo navigacijos programa su interneto/parsiųstais žemėlapius</string>
     <string name="avoid_motorway">Vengti greitkelių</string>
 
     <string name="snap_to_road_descr">Poziciją rodyti ant kelių kai naviguojama.</string>
     <string name="snap_to_road">Rodyti ant kelio</string>
-    <string name="osmand_plus_short_description_80_chars">OsmAnd - atviro kodo navigacijos programa su žemėlapiais</string>
 
     <string name="context_menu_item_last_intermediate_point">Pridėti paskutinį tarpinį tikslą</string>
     <string name="context_menu_item_first_intermediate_point">Nustatyti pirmą tarpinį tikslą</string>
@@ -927,11 +925,9 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="recording_context_menu_play">Groti</string>
     <string name="shared_string_control_start">Įrašyti</string>
     <string name="shared_string_control_stop">Stop</string>
-    <string name="dropbox_plugin_description">Dropbox įskeipis leidžia sinchronizuoti išsaugotus kelionių maršrutus ir video/audio užrašus su jūsų Dropbox sąskaita.</string>
     <string name="dropbox_plugin_name">Dropbox įskiepis</string>
 
     <string name="intermediate_points_change_order">Pakeisti tvarką</string>
-    <string name="av_def_action_picture">Fotografuoti</string>
     <string name="stop_routing_confirm">Ar tikrai norite sustabdyti navigaciją?</string>
     <string name="clear_dest_confirm">Ar tikrai norite panaikinti savo kelionės tikslą (ir tarpinius taškus)?</string>
     <string name="precise_routing_mode_descr">Igalinti tikslų maršruto skaičiavimą be trikdžių. Jis naudotinas labai ribotam atstumui ir veikia lėtai.</string>
@@ -939,8 +935,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
 
 
     <string name="support_new_features_descr">Paremkite finansiškai naujo funkcionalumo vystymą.</string>
-    <string name="av_use_external_camera_descr">Naudoti sistemos fotoaparato programą.</string>
-    <string name="av_use_external_camera">Nautodi fotoaparato programą</string>
     <string name="index_name_openmaps">OpenMaps ES</string>
     <string name="prefer_motorways">Teikti pirmenybę greitkeliams</string>
     <string name="prefer_in_routing_title">Teikti pirmenybę…</string>
@@ -1044,14 +1038,11 @@ Tam prireiks {1} MB pastoviam saugojimui.
 
 
     <string name="osb_author_dialog_password">OSM slaptažodis (neprivaloma)</string>
-    <string name="av_camera_focus">Kameros fokuso tipas</string>
-    <string name="av_camera_focus_descr">Pasirinkite vidinės kameros fokuso tipą.</string>
     <string name="av_camera_focus_auto">Automatinis fokusas</string>
     <string name="av_camera_focus_hiperfocal">Hyperfocalins fokusas</string>
     <string name="av_camera_focus_edof">Išplėstinis gylis (EDOF)</string>
     <string name="av_camera_focus_infinity">Fokusas yra begalinis</string>
     <string name="av_camera_focus_macro">Makro fokusas</string>
-    <string name="av_camera_focus_continuous">Kamera pastoviai bando sufokusuoti</string>
     <string name="about_version">Versija :</string>
     <string name="shared_string_about">Apie</string>
     <string name="about_settings_descr">Versijos informacija, licencijos, projekto nariai</string>
@@ -1420,9 +1411,6 @@ Ar norite registruotis iš naujo?</string>
     <string name="rendering_attr_alpineHiking_name">Kalnų žygiai (SAC)</string>
     <string name="rendering_attr_hikingRoutesOSMC_name">Padengimas žygių simboliais</string>
 
-    <string name="av_camera_pic_size">Nuotraukos dydis</string>
-    <string name="av_camera_pic_size_descr">Pasirinkti vidinės kameros nuotraukos dydį.</string>
-
     <string name="rendering_value_browse_map_name">Naršyti žemėlapį</string>
     <string name="rendering_value_car_name">Automobilis</string>
     <string name="rendering_value_bicycle_name">Dviratis</string>
@@ -1528,8 +1516,6 @@ Ar norite registruotis iš naujo?</string>
     <string name="rendering_value_default_name">Numatytasis</string>
     <string name="rendering_value_orange_name">Oranžinis</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerikos kelių atlasas</string>
-    <string name="routing_attr_no_new_routing_name">Nenaudoti 1.9 versijos maršrutizavimo taisyklių</string>
-    <string name="routing_attr_no_new_routing_description">Nenaudoti 1.9 versijos maršrutizavimo.</string>
     <string name="dash_download_msg_none">Ar norite atsisiųsti bet kurį žemėlapį naudojimui be interneto?</string>
     <string name="shared_string_dismiss">Nesiųsti</string>
     <string name="traffic_warning_railways">Geležinkelio pervaža</string>
@@ -1576,7 +1562,6 @@ Ar norite registruotis iš naujo?</string>
     <string name="watch">Žiūrėti</string>
     <string name="notes">Pastabos</string>
     <string name="online_map">Žemėlapis online</string>
-    <string name="shared_string_audio">Garsas</string>
 
 
     <string name="location_on_map">Vieta:\n Plat. %1$s\n Ilg. %2$s</string>
@@ -1625,7 +1610,6 @@ Ilguma %2$s</string>
     <string name="shared_string_unexpected_error">Įvyko nenumatyta klaida</string>
     <string name="shared_string_action_template">Veiksmas {0}</string>
     <string name="shared_string_collapse">Suskleisti</string>
-    <string name="shared_string_photo">Foto</string>
     <string name="route_points">Maršruto taškai</string>
     <string name="plugin_touringview_name">Turistinis žemėlapis</string>
     <string name="shared_string_release">Išleista</string>
@@ -1918,7 +1902,6 @@ Ilguma %2$s</string>
     <string name="only_download_over_wifi">Atsisiųsti tik naudojant Wi-Fi</string>
     <string name="update_now">Atnaujinti tuoj pat</string>
     <string name="missing_write_external_storage_permission">Programėlė neturi teisių įrašyti į atminties kortelę</string>
-<string name="no_camera_permission">Programėlė neturi teisių naudoti kamerą.</string>
     <string name="no_microphone_permission">Programėlė neturi teisių naudoti mikrofoną.</string>
     <string name="please_specify_poi_type_only_from_list">Prašome parinkti teisingą LV tipą iš sąrašo arba palikti lauką neužpildytą.</string>
     <string name="osm_edit_modified_poi">Redaguota OSM LV</string>
@@ -1979,7 +1962,6 @@ Ilguma %2$s</string>
     <string name="shared_string_email_address">E. pašto adresas</string>
     <string name="rendering_attr_hideUnderground_name">Požeminiai objektai</string>
     <string name="data_is_not_available">Duomenys nepasiekiami</string>
-    <string name="find_parking">Surasti parkavimo vietą</string>
     <string name="rendering_attr_showMtbRoutes_name">Rodyti MTB maršrutus</string>
     <string name="road_blocked">Kelias blokuojamas</string>
     <string name="starting_point">Pradžios taškas</string>
@@ -2230,10 +2212,8 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="driving_region_automatic">Automatinis</string>
     <string name="do_not_send_anonymous_app_usage">Nesiųsti anoniminės programėlės naudojimo informacijos</string>
     <string name="shared_string_install">Įdiegti</string>
-    <string name="improve_coverage_mapillary">Pagerinti nuotraukų aprėptį su Mapillary</string>
     <string name="shared_string_add_photos">Pridėti nuotrauką</string>
     <string name="no_photos_descr">Mes neturime šios vietovės nuotraukų.</string>
-    <string name="mapillary">Mapillary</string>
     <string name="restart_search">Ieškoti iš naujo</string>
     <string name="increase_search_radius">Padidinti paieškos spindulį</string>
     <string name="nothing_found">Nepavyko nieko rasti :(</string>
@@ -2319,40 +2299,21 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="quick_action_map_source_switch">Žemėlapio šaltinis buvo pakeistas į \'%s\'.</string>
     <string name="quick_action_btn_tutorial_title">Pakeisti mygtuko padėtį</string>
     <string name="shared_string_action_name">Veiksmo pavadinimas</string>
-<string name="mapillary_widget">Mapillary valdiklis</string>
-    <string name="mapillary_image">Mapillary nuotrauka</string>
-    <string name="open_mapillary">Atidaryti Mapillary</string>
     <string name="online_photos">Nuotraukas internete</string>
-    <string name="mapillary_menu_date_from">Iš</string>
-    <string name="mapillary_menu_title_dates">Data</string>
-    <string name="mapillary_menu_edit_text_hint">Įveskite vartotojo vardą</string>
-    <string name="mapillary_menu_title_username">Vartotojo vardas</string>
     <string name="shared_string_permissions">Teisės</string>
     <string name="sorted_by_distance">Surūšiuota pagal atstumą</string>
     <string name="shared_string_visible">Matomas</string>
     <string name="shared_string_reload">Perkrauti</string>
     <string name="wrong_user_name">Neteisingas vartotojo vardas!</string>
-    <string name="mapillary_menu_descr_dates">Peržiūrėti tik pridėtas nuotraukas</string>
-    <string name="mapillary_menu_descr_username">Peržiūrėti tik pridėtas nuotraukas</string>
     <string name="import_gpx_failed_descr">OsmAnd negali importuoti failo. Prašome patikrinti, ar OsmAnd turi leidimą skaityti failą iš jo buvimo vietos.</string>
     <string name="distance_moving">Atstumas pataisytas</string>
-    <string name="mapillary_action_descr">Prisidėti su savo šios vietos gatvių vaizdu naudojant Mapillary.</string>
-    <string name="mapillary_widget_descr">Leidžia jums greitai prisidėti prie Mapillary.</string>
-    <string name="mapillary_descr">Internetinės gatvės nuotraukos visiems. Atraskite vietas, bendradarbiaukite, fotografuokite pasaulį.</string>
-    <string name="plugin_mapillary_descr">Internetinės gatvės nuotraukos visiems. Atraskite vietas, bendradarbiaukite, fotografuokite pasaulį.</string>
     <string name="routing_attr_allow_private_description">Naudoti privačias teritorijas.</string>
     <string name="points_delete_multiple_succesful">Punktas(-ai) sėkmingai ištrintas(-i).</string>
     <string name="points_delete_multiple">Jūs ketinate trinti %1$d punktą (- us). Ar tikrai?</string>
     <string name="shared_string_reset">Nustatyti iš naujo</string>
-    <string name="mapillary_menu_descr_tile_cache">Užkrauti žemėlapio lakštus iš naujo kad pamatytumėte naujus duomenis.</string>
-    <string name="mapillary_menu_title_tile_cache">Žemėlapio lakštų talpykla</string>
     <string name="shared_string_to">Iki</string>
-    <string name="mapillary_menu_filter_description">Vaizdus galima filtruoti pagal pateikėją arba pagal datą. Filtrai veikia tik labai priartinus.</string>
-    
+
     <string name="map_widget_ruler_control">Spindulio liniuotė</string>
-    <string name="improve_coverage_install_mapillary_desc">Galite fotografuoti ir savo nuotraukas ar jų grupę prisegti ją prie šios vietos žemėlapyje.
-\n
-\nKad tą galėtumėt padaryti jums reikalinga Mapillary programa iš Google Play parduotuvės.</string>
     <string name="private_access_routing_req">Jūsų kelionės tikslas yra privačioje teritorijoje. Ar norite leisti keliavimą privačiais keliais šioje kelionėje?</string>
     <string name="quick_action_showhide_osmbugs_descr">Paspaudus aktyvinimo mygtuką OSM užrašai bus parodomi ant žemėlapio arba paslepiami.</string>
     <string name="hide_from_zoom_level">Paslėpti mąstelį</string>
@@ -2451,7 +2412,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="show_on_map_after_saving">Rodyti žemėlapyje išsaugojus</string>
     <string name="measurement_tool_action_bar">Naršykite žemėlapį ir pridėkite taškų</string>
     <string name="measurement_tool">Išmatuoti atstumą</string>
-    <string name="osmand_extended_description_part7">Prisidėkite prie OSM • Praneškite apie duomenų klaidas • Įkelkite GPX maršrutus į OSM tiesiai iš programos • Pridėkite LV-as ir tiesiogiai jas įkelkite į OSM (arba vėliau, jei neprisijungę)</string>
     <string name="quick_action_navigation_voice">Balso įj/išj</string>
     <string name="quick_action_navigation_voice_off">Balso išjungtas</string>
     <string name="quick_action_navigation_voice_on">Balsas įjungtas</string>
@@ -2574,7 +2534,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="quick_action_duplicate">Pasikartojantis greitojo veiksmo pavadinimas</string>
     <string name="quick_action_showhide_poi_descr">Bakstelėjus veiksmo mygtuką bus parodoma arba paslepiama LV-a žemėlapyje.</string>
     <string name="quick_action_btn_tutorial_descr">Nuspauskite ir vilkite mygtuką norėdami pakeisti jo padėtį ekrane.</string>
-    <string name="mappilary_no_internet_desc">Prisijunkite prie interneto jei norite matyti nuotraukas iš Mapillary.</string>
     <string name="move_point">Perkelti tašką</string>
     <string name="osm_recipients_label">OSM gavėjai</string>
     <string name="total_donations">Iš viso paaukota</string>

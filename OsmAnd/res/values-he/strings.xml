@@ -50,11 +50,8 @@
 	<string name="auto_zoom_map">שינוי תקריב אוטומטי במפה</string>
 	<string name="snap_to_road_descr">יש להצמיד את המיקום לדרכים במהלך הניווט</string>
 	<string name="snap_to_road">הצמדה לדרך</string>
-	
-	<string name="osmand_short_description_80_chars">OsmAnd הנו יישום ניווט בקוד פתוח עבור מפות מקוונות ובלתי מקוונות</string>
-	<string name="osmand_plus_short_description_80_chars">OsmAnd הנו יישום ניווט בקוד פתוח עבור מפות מקוונות ובלתי מקוונות</string>
-	
-	<string name="filterpoi_activity">יצירת מסנן נ״ע</string>
+
+    <string name="filterpoi_activity">יצירת מסנן נ״ע</string>
 	<string name="recalculate_route_to_your_location">מצב תעבורה:</string>
 	<string name="select_navigation_mode">בחירת מצב תעבורה</string>
 	
@@ -948,9 +945,7 @@
     <string name="av_widget_action">פעולת הווידג׳ט כבררת המחדל</string>
 
     <string name="intermediate_points_change_order">שינוי הסדר</string>
-    <string name="dropbox_plugin_description">תוסף Dropbox מאפשר לך לסנכרן מסלולים והערות שמע/וידאו עם חשבון ה־Dropbox שלך.</string>
     <string name="dropbox_plugin_name">תוסף Dropbox</string>
-    <string name="av_def_action_picture">צילום תמונה</string>
     <string name="stop_routing_confirm">האם אכן לעצור את הניווט?</string>
     <string name="clear_dest_confirm">למחוק את נקודת היעד (ואת נקודות הביניים)?</string>
     <string name="precise_routing_mode_descr">יש להפעיל כדי לחשב נתיבים מדויקים ללא סטיות. עדיין קיימת הגבלת מרחק ואטיות.</string>
@@ -958,8 +953,6 @@
 
     <string name="support_new_features_descr">ניתן לתרום כדי לגלות תכונות חדשות שהוטמעו ביישום</string>
 
-    <string name="av_use_external_camera_descr">שימוש ביישום המערכת לצילום תמונות.</string>
-    <string name="av_use_external_camera">שימוש ביישום מצלמה</string>
     <string name="index_name_openmaps">OpenMaps אירופה</string>
     
     <string name="max_speed_none">אין</string>
@@ -1044,7 +1037,6 @@
     <string name="impassable_road_desc">בחירת דרכים מהן יש להימנע במהלך הניווט.</string>
     <string name="shared_string_sound">קול</string>
     <string name="no_location_permission">ליישום אין הרשאה להשתמש בנתוני המיקום.</string>
-    <string name="no_camera_permission">ליישומון אין הרשאה להשתמש במצלמה.</string>
     <string name="no_microphone_permission">ליישומון אין הרשאה להשתמש במיקרופון.</string>
     <string name="route_distance">מרחק:</string>
     <string name="route_duration">זמן:</string>
@@ -1097,17 +1089,8 @@
     <string name="store_tracks_in_monthly_directories">אחסון המסלולים המוקלטים בתיקיות לפי חודש</string>
     <string name="shared_string_reset">איפוס</string>
     <string name="shared_string_reload">רענון</string>
-    <string name="mapillary_menu_descr_tile_cache">יש לרענן את האריחים כדי לראות מידע עדכני.</string>
-    <string name="mapillary_menu_title_tile_cache">מטמון האריחים</string>
     <string name="wrong_user_name">שם המשתמש שגוי!</string>
     <string name="shared_string_to">עד</string>
-    <string name="mapillary_menu_date_from">מ־</string>
-    <string name="mapillary_menu_descr_dates">הצגת תמונות שנוספו בלבד</string>
-    <string name="mapillary_menu_title_dates">תאריך</string>
-    <string name="mapillary_menu_edit_text_hint">הקלדת שם משתמש</string>
-    <string name="mapillary_menu_descr_username">הצגת תמונות שנוספו רק על ידי</string>
-    <string name="mapillary_menu_title_username">שם משתמש</string>
-    <string name="mapillary_menu_filter_description">אפשר לסנן תמונות לפי השולח או לפי תאריך. המסננים חלים רק על תקריב בגודל מסוים.</string>
     <string name="map_widget_ruler_control">מד זווית</string>
     <string name="shared_string_permissions">הרשאות</string>
     <string name="import_gpx_failed_descr">ל־OsmAnd אין אפשרות לייבא את הקובץ. נא לוודא של־OsmAnd יש הרשאה לקרוא קבצים מהמיקום הזה.</string>
@@ -1118,22 +1101,10 @@
     <string name="quick_action_start_stop_navigation">התחלה/עצירת הניווט</string>
     <string name="quick_action_start_stop_navigation_descr">יש ללחוץ על כפתור זה כדי להתחיל בניווט או כדי לסיים אותו.</string>
     <string name="store_tracks_in_monthly_directories_descrp">אחסון המסלולים המוקלטים בתת־תיקיות לפי חודש ההקלטה (למשל: 2017-01).</string>
-    <string name="mapillary_image">תמונת Mapillary</string>
-    <string name="open_mapillary">פתיחת Mapillary</string>
     <string name="shared_string_install">התקנה</string>
-    <string name="improve_coverage_mapillary">שיפור כיסוי התמונות עם Mapillary</string>
-    <string name="improve_coverage_install_mapillary_desc">ניתן לצלם סדרת תמונות משלך ולצרף אותם למיקום הזה במפה.
-\n
-\nכדי לעשות זאת עליך להתקין את היישום של Mapillary מחנות היישומים Google Play.</string>
     <string name="online_photos">תמונות מקוונות</string>
     <string name="shared_string_add_photos">הוספת תמונות</string>
     <string name="no_photos_descr">אין לנו תמונות של המיקום הזה.</string>
-    <string name="mapillary_action_descr">ניתן לתרום עם נופים ברמת הרחוב למיקום זה עם Mapillary.</string>
-    <string name="mapillary_widget">וידג׳ט Mapillary</string>
-    <string name="mapillary_widget_descr">מאפשר לך לתרום במהירות ל־Mapillary.</string>
-    <string name="mapillary_descr">תמונות מקוונות ברמת רחוב לכולם. היכרות עם מקומות חדשים, שיתוף פעולה וצילום העולם.</string>
-    <string name="mapillary">Mapillary</string>
-    <string name="plugin_mapillary_descr">תמונות ברמת הרחוב לכולם. להכיר מקומות, לשתף פעולה ולצלם את העולם.</string>
     <string name="private_access_routing_req">היעד שלך ממוקם באיזור עם גישה פרטית לאפשר גישה לכבישים הפרטיים לצורך טיול זה?</string>
     <string name="restart_search">חיפוש מחדש</string>
     <string name="increase_search_radius">הגדלת רדיוס החיפוש</string>
@@ -1420,7 +1391,6 @@
     <string name="consider_turning_polygons_off">מומלץ לכבות עיבוד מצולעים.</string>
     <string name="rendering_attr_showMtbRoutes_name">הצגת מסלולי אופני הרים</string>
     <string name="show_polygons">הצגת מצולעים</string>
-    <string name="find_parking">חיפוש חנייה</string>
     <string name="shared_string_status">מצב</string>
     <string name="shared_string_save_changes">שמירת השינויים</string>
     <string name="shared_string_email_address">כתובת דוא״ל</string>
@@ -1755,7 +1725,6 @@
     <string name="quick_action_btn_tutorial_title">שינוי מיקום הכפתור</string>
     <string name="quick_action_btn_tutorial_descr">יש לגעת נגיעה ארוכה בכפתור כדי לשנות את המיקום שלו על המסך.</string>
     <string name="shared_string_action_name">שם הפעולה</string>
-    <string name="mappilary_no_internet_desc">נדרש חיבור לאינטרנט כדי להציג תמונות מ־Mapillary.</string>
     <string name="retry">ניסיון חוזר</string>
     <string name="add_route_points">הוספת נקודות נתיב</string>
     <string name="add_waypoint">הוספת נקודת דרך</string>
@@ -2168,16 +2137,12 @@
     <string name="shared_string_my_favorites">המועדפים שלי</string>
     <string name="shared_string_my_tracks">המסלולים שלי</string>
     <string name="shared_string_currently_recording_track">המסלול מוקלט</string>
-    <string name="shared_string_audio">שמע</string>
-    <string name="shared_string_photo">תמונה</string>
     <string name="route_points">נקודות נתיב</string>
     <string name="track_segments">מקטעי מסלול</string>
     <string name="track_points">נקודות מסלול</string>
     <string name="record_plugin_name">הקלטת מסלול</string>
     <string name="plugin_touringview_name">תצוגת מפת סיור</string>
     <string name="avoid_roads_msg">ניתן לבקש נתיב חלופי על ידי בחירת דרכים בלתי רצויות</string>
-    <string name="routing_attr_no_new_routing_name">כללי ניתוב גרסה 1.9</string>
-    <string name="routing_attr_no_new_routing_description">לא להשתמש בכללי הניתוב שנוספו ב־1.9.</string>
     <string name="gpx_info_waypoints">נקודות דרך: %1$s</string>
     <string name="download_wikipedia_maps">ויקיפדיה</string>
     <string name="voices">הנחיות קוליות</string>
@@ -2203,16 +2168,11 @@
     <string name="favourites_context_menu_add">הוספה למועדפים</string>
     <string name="poi_action_delete">מחיקה</string>
     <string name="poi_dialog_reopen">פתיחה מחדש</string>
-    <string name="av_camera_focus">סוג מיקוד המצלמה</string>
-    <string name="av_camera_focus_descr">נא לבחור את מצב המיקוד של המצלמה הפנימית.</string>
     <string name="av_camera_focus_auto">מיקוד אוטומטי</string>
     <string name="av_camera_focus_hiperfocal">מיקוד רב מוקדי</string>
     <string name="av_camera_focus_edof">עומק שדה מורחב (EDOF)</string>
     <string name="av_camera_focus_infinity">המיקוד מוגדר לאינסוף</string>
     <string name="av_camera_focus_macro">מצב מיקוד לעצמים זעירים (תקריב)</string>
-    <string name="av_camera_focus_continuous">המצלמה תנסה למקד כל הזמן</string>
-    <string name="av_camera_pic_size">גודל תמונת המצלמה</string>
-    <string name="av_camera_pic_size_descr">בחירת גודל התמונה של המצלמה הפנימית.</string>
     <string name="navigation_intent_invalid">תבנית שגויה: %s</string>
     <string name="plugin_description_title">תיאור</string>
     <string name="plugin_install_needs_network">כדי להתקין את התוסף הזה צריך חיבור לאינטרנט.</string>
@@ -2407,7 +2367,6 @@
     <string name="routing_attr_avoid_motorway_name">הימנעות מכבישים סלולים</string>
     <string name="routing_attr_avoid_motorway_description">הימנעות מכבישים סלולים.</string>
     <string name="interrupt_music_descr">הנחיות קוליות משהות, לא רק מנמיכות, מוזיקה שברקע.</string>
-    <string name="osmand_extended_description_part7">תרומה ל־OSM • דיווח על תקלה בנתונים • העלאת מסלולי GPX ישירות מהיישומון אל OSM • הוספת נקודות עניין והעלאה ישירה שלהן ל־OSM (או לאחר מכן אם אין חיבור)</string>
     <string name="arrival_distance_descr">כמה לפני המועד ברצונך להיוודע על הגעה ליעד?</string>
     <string name="live_monitoring_max_interval_to_send">חוצץ זמן למעקב מקוון</string>
     <string name="osm_edit_removed_note">הערת OSM נמחקה</string>

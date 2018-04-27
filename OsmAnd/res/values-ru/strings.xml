@@ -1011,8 +1011,6 @@
     <string name="map_widget_renderer">Стиль карты</string>
     <string name="email">email</string>
     <string name="day_night_info">Восход/закат</string>
-    <string name="osmand_short_description_80_chars">OsmAnd - это навигационное приложение для путешествий с открытым исходным кодом</string>
-    <string name="osmand_plus_short_description_80_chars">OsmAnd - это навигационное приложение для путешествий с открытым исходным кодом</string>
     <string name="avoid_motorway">Избегать автомагистралей</string>
     <string name="snap_to_road_descr">Привязываться к дорогам во время навигации.</string>
     <string name="snap_to_road">Привязка к дороге</string>
@@ -1053,16 +1051,12 @@
     <string name="monitoring_control_start">GPX</string>
     <string name="download_select_map_types">Прочие карты</string>
     <string name="intermediate_points_change_order">Изменить порядок</string>
-    <string name="av_def_action_picture">Сделать фото</string>
-    <string name="dropbox_plugin_description">Плагин Dropbox позволяет синхронизировать треки и видео/аудио заметки с вашим аккаунтом Dropbox.</string>
     <string name="dropbox_plugin_name">Плагин Dropbox</string>
     <string name="stop_routing_confirm">Вы уверены, что хотите остановить навигацию?</string>
     <string name="clear_dest_confirm">Вы уверены, что хотите удалить пункт назначения (и промежуточные пункты)?</string>
     <string name="precise_routing_mode">Точный маршрут (alpha)</string>
     <string name="support_new_features_descr">Пожертвуйте, чтобы увидеть новые опции реализованными в приложении.</string>
     <string name="precise_routing_mode_descr">Включите, для расчёта точных маршрутов без затруднений. Всё ещё ограниченн расстоянием и медленный.</string>
-    <string name="av_use_external_camera_descr">Использовать системное приложение для фото.</string>
-    <string name="av_use_external_camera">Использовать приложение Камера</string>
     <string name="index_name_openmaps">OpenMaps - Европа</string>
     <string name="prefer_motorways">Предпочитать автомагистрали</string>
     <string name="prefer_in_routing_title">Предпочитать…</string>
@@ -1124,16 +1118,11 @@
     <string name="context_menu_item_destination_point">Установить как пункт назначения</string>
     <string name="please_select_address">Сначала выберите город или улицу</string>
     <string name="destination_point">Пункт назначения %1$s</string>
-    <string name="av_camera_focus">Режим фокусировки камеры</string>
-    <string name="av_camera_focus_descr">Выберите режим фокусировки встроенной камеры.</string>
     <string name="av_camera_focus_auto">Автоматический фокус</string>
     <string name="av_camera_focus_hiperfocal">Гиперфокальная фокусировка</string>
     <string name="av_camera_focus_edof">Увеличенная глубина резкозти (EDOF)</string>
     <string name="av_camera_focus_infinity">Фокус на бесконечность</string>
     <string name="av_camera_focus_macro">Макро-режим</string>
-    <string name="av_camera_focus_continuous">Постоянная фокусировка</string>
-    <string name="av_camera_pic_size">Размер фото</string>
-    <string name="av_camera_pic_size_descr">Выберите размер фотографии со встроенной камеры.</string>
     <string name="speak_speed_limit">Ограничение скорости</string>
     <string name="speak_cameras">Камеры контроля скорости</string>
     <string name="speak_traffic_warnings">Дорожные предупреждения</string>
@@ -1577,8 +1566,6 @@
     <string name="rendering_value_default_name">По умолчанию</string>
     <string name="rendering_value_orange_name">Оранжевый</string>
     <string name="rendering_value_americanRoadAtlas_name">Атлас дорог Америки</string>
-    <string name="routing_attr_no_new_routing_name">Не использовать маршрутизацию версии 1.9</string>
-    <string name="routing_attr_no_new_routing_description">Не использовать для построения маршрута алгоритм представленный в версии 1.9.</string>
     <string name="show_railway_warnings">Показывать ж/д переезды</string>
     <string name="show_pedestrian_warnings">Показывать пешеходные переходы</string>
     <string name="traffic_warning_railways">Железнодорожный переезд</string>
@@ -1656,8 +1643,6 @@
     <string name="shared_string_favorite">Избранные</string>
     <string name="shared_string_favorites">Избранные</string>
     <string name="shared_string_add_to_favorites">Добавить к избранным</string>
-    <string name="shared_string_audio">Аудио</string>
-    <string name="shared_string_photo">Фото</string>
     <string name="route_points">Точки маршрута</string>
     <string name="track_segments">Сегменты трека</string>
     <string name="track_points">Точки трека</string>
@@ -1957,7 +1942,6 @@
     <string name="shared_string_not_selected">Не выбрано</string>
     <string name="shared_string_sound">Звук</string>
     <string name="no_location_permission">Приложение не имеет разрешения на доступ к местоположению данных.</string>
-    <string name="no_camera_permission">Приложение не имеет разрешения на доступ к камере.</string>
     <string name="no_microphone_permission">Приложение не имеет разрешения на доступ к микрофону.</string>
     <string name="last_update">Последнее обновление: %s</string>
     <string name="last_map_change">Последнее изменение карты: %s</string>
@@ -2016,7 +2000,6 @@
     <string name="map_markers">Маркеры</string>
     <string name="map_marker">Маркер</string>
     <string name="consider_turning_polygons_off">Рекомендуется отключить рендеринг полигонов.</string>
-    <string name="find_parking">Найти парковку</string>
     <string name="shared_string_status">Статус</string>
     <string name="shared_string_save_changes">Сохранить изменения</string>
     <string name="shared_string_email_address">Адрес электронной почты</string>
@@ -2203,12 +2186,6 @@
     <string name="shared_string_permissions">Разрешения</string>
     <string name="online_photos">Онлайн фотографии</string>
     <string name="no_photos_descr">У нас нет фотографий для этого места.</string>
-    <string name="mapillary_action_descr">Поделиться своими собственными уличными видами этого места через Mapillary.</string>
-    <string name="mapillary_widget">Виджет Mapillary</string>
-    <string name="mapillary_widget_descr">Позволяет быстро внести свой вклад в Mapillary.</string>
-    <string name="mapillary_descr">Уличные онлайн фотографии для всех. Открывайте для себя места, сотрудничайте, снимайте мир.</string>
-    <string name="mapillary">Mapillary</string>
-    <string name="plugin_mapillary_descr">Уличные фотографии для всех. Открывайте для себя места, сотрудничайте, снимайте мир.</string>
     <string name="save_poi_too_many_uppercase">Название содержит слишком много заглавных букв. Вы действительно хотите продолжить?</string>
     <string name="quick_action_resume_pause_navigation_descr">Нажмите эту кнопку, чтобы приостановить или возобновить навигацию.</string>
     <string name="quick_action_show_navigation_finish_dialog">Показывать диалог завершения навигации</string>
@@ -2216,14 +2193,8 @@
     <string name="quick_action_start_stop_navigation_descr">Нажмите эту кнопку, чтобы начать или остановить навигацию.</string>
     <string name="store_tracks_in_monthly_directories">Сохранять записанные треки в папках помесячно</string>
     <string name="store_tracks_in_monthly_directories_descrp">Сохранять записанные треки в подпапках с записью месяца (например, 2017-01).</string>
-    <string name="mapillary_menu_title_tile_cache">Кэш тайлов</string>
     <string name="wrong_user_name">Неверное имя пользователя!</string>
-    <string name="mapillary_menu_descr_dates">Просмотр только добавленных фотографий</string>
-    <string name="mapillary_menu_title_dates">Дата</string>
-    <string name="mapillary_menu_descr_username">Просмотр только фотографий, добавленных</string>
-    <string name="mapillary_menu_title_username">Имя пользователя</string>
     <string name="map_widget_ruler_control">Радиус-линейка</string>
-    <string name="open_mapillary">Открыть Mapillary</string>
     <string name="shared_string_install">Установить</string>
     <string name="shared_string_paused">Приостановлено</string>
     <string name="rendering_value_fine_name">Правильно</string>
@@ -2233,26 +2204,17 @@
     <string name="max_min">Макс/Мин</string>
     <string name="min_max">Мин/Макс</string>
     <string name="quick_action_resume_pause_navigation">Возобновить/приостановить навигацию</string>
-    <string name="mapillary_menu_descr_tile_cache">Перезагрузка тайлов для отображения актуальных данных.</string>
-    <string name="mapillary_menu_edit_text_hint">Введите имя пользователя</string>
     <string name="shared_string_reset">Сбросить</string>
     <string name="shared_string_to">До</string>
-    <string name="mapillary_menu_date_from">От</string>
     <string name="shared_string_reload">Обновить</string>
-    <string name="mapillary_menu_filter_description">Вы можете фильтровать фотографии по отправителю или по дате. Фильтры применяются только для больших масштабов.</string>
     <string name="import_gpx_failed_descr">OsmAnd не удается импортировать файл. Проверьте имеет ли OsmAnd разрешение на чтение файла из его местоположения.</string>
     <string name="distance_moving">Откорректированное расстояние</string>
-    <string name="improve_coverage_install_mapillary_desc">Вы можете взять ваши собственные фотографии или серии фотографий и прикрепить их к этому месту на карте.
-\n
-\nДля этого Вам необходимо установить с Goggle Play маркета приложение Mapillary.</string>
     <string name="route_altitude">Высота маршрута</string>
     <string name="enter_gpx_name">Имя GPX файла:</string>
     <string name="show_on_map_after_saving">Показать на карте после сохранения</string>
     <string name="measurement_tool_action_bar">Просмотрите карту и добавьте точки</string>
     <string name="measurement_tool">Измерить расстояние</string>
     <string name="none_point_error">Необходимо добавить хотя бы одну точку.</string>
-    <string name="mapillary_image">Отправить фотографию в Mapillary</string>
-    <string name="improve_coverage_mapillary">Улучшить фотопокрытие через Mapillary</string>
     <string name="hide_from_zoom_level">Скрыть от шкалы приближения</string>
     <string name="rendering_value_translucent_pink_name">Прозрачно-розовый</string>
     <string name="lang_ber">Берберский язык</string>
@@ -2357,7 +2319,6 @@
     <string name="quick_action_add_poi_descr">Нажатие на кнопку действия добавит POI по центру экрана.</string>
     <string name="quick_action_navigation_voice_descr">Нажатие на кнопку действия выключит или включит голосовые подсказки во время навигации.</string>
     <string name="quick_action_interim_dialog">Показывать промежуточный диалог</string>
-    <string name="mappilary_no_internet_desc">Вам нужен Интернет для просмотра фотографий с Mapillary.</string>
     <string name="wrong_format">Неправильный формат</string>
     <string name="enter_new_name">Введите новое имя</string>
 	<string name="shared_string_back">Назад</string>
@@ -2424,16 +2385,6 @@
 \n
 \nЭтот вид может быть отменен путем деактивации его здесь или путем изменения «Стиля карты» в разделе «Настройки карты» по желанию.</string>
     <string name="navigate_point_olc">Открытый код местоположения (OLC)</string>
-    <string name="osmand_extended_description_part6">Прогулки, походы, экскурсии
-\n• Карта показывает пешеходные и треккинговые тропы
-\n• Википедия на предпочитаемом вами языке может многое рассказать вам во время экскурсии по городу
-\n• Остановки общественного транспорта (автобус, трамвай, поезд), включая названия маршрутов, помогут ориентироваться в новом городе
-\n• GPS навигация в пешеходном режиме высчитывает маршрут, используя пешеходные тропы
-\n• Вы можете загрузить и следовать GPX маршруту или записать и делиться своим собственным</string>
-    <string name="osmand_extended_description_part7">Внесение вклада в OSM
-\n• Сообщения об ошибках
-\n• Загрузка GPX треков в OSM напрямую из программы
-\n• Добавление точек интереса (POI) и загрузка их в OSM (или позже, если оффлайн)</string>
     <string name="quick_action_item_screen">Экран %d</string>
     <string name="quick_favorites_show_favorites_dialog">Показать диалог избранных</string>
     <string name="quick_favorites_name_preset">Название предустановки</string>
@@ -2453,12 +2404,6 @@
     <string name="import_track">Импортировать трек</string>
     <string name="move_point">Переместить точку</string>
     <string name="add_segment_to_the_track">Добавить в GPX трек</string>
-    <string name="osmand_plus_extended_description_part7">Непосредственный вклад в OSM
-\n• Сообщения об ошибках в данных
-\n• Загрузка GPX треков в OSM непосредственно из приложения
-\n• Добавление точек интереса (POI) и непосредственная загрузка их в OSM (или позже, если в автономном режиме)
-\n• Возможность записи путешествие в фоновом режиме (в то время, как устройство находится в спящем режиме)
-\nOsmAnd - открытое программное обеспечение в активной разработке. Каждый может внести вклад сообщая об ошибках, улучшая перевод или разрабатывая новые возможности. Проект находится в состоянии постоянного совершенствования форм взаимодействия разработчиков и пользователей. Ход проекта зависит также от финансовых взносов для обеспечения продолжения кодирования и тестирования новой функциональности.</string>
     <string name="empty_state_osm_edits">Создать или изменить OSM объекты</string>
     <string name="empty_state_osm_edits_descr">Создавайте или изменяйте OSM POI, открывайте или комментируйте заметки OSM, а также отправляйте записанные файлы GPX.</string>
     <string name="shared_string_deleted">Удалено</string>

@@ -44,7 +44,6 @@
 	<string name="watch">Kujdes</string>
 	<string name="rendering_attr_roadStyle_name">Stil i rrugës</string>
     <string name="traffic_warning_pedestrian">Mbikalim për këmbësorë</string>
-	<string name="routing_attr_no_new_routing_name">Jo v1.9 rregullat e llogaritjes së rrugëtimit</string>
     <string name="navigate_point_northing">Vlera veriore</string>
     <string name="navigate_point_easting">Vlera lindore</string>
     <string name="home_button">Shtëpia</string>

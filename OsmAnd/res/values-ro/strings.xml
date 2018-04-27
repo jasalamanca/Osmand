@@ -49,9 +49,6 @@
 	<string name="auto_zoom_map">Auto zoom hartă</string>
 	<string name="snap_to_road_descr">Menține poziția pe drum în timpul navigării</string>
 	<string name="snap_to_road">Poziționează pe drum</string>
-	
-	<string name="osmand_short_description_80_chars">OsmAnd este o aplicație open source pentru navigare cu hărți offline și online</string>
-    <string name="osmand_plus_short_description_80_chars">OsmAnd+ este o aplicație open source pentru navigare cu hărți offline și online</string>
 
 
     <string name="filterpoi_activity">Creează filtru POI</string>
@@ -944,7 +941,6 @@
     <string name="recording_context_menu_play">Play</string>
     <string name="av_widget_action_descr">Selectați acțiunea implicită a iconiței</string>
     <string name="av_widget_action">Acțiune implicită iconiță</string>
-    <string name="dropbox_plugin_description">Plugin-ul Dropbox permite sincronizarea traseelor și fișierelor audio/video cu contul dvs. de la dropbox.com.</string>
     <string name="dropbox_plugin_name">Plugin Dropbox</string>
     
     <string name="intermediate_points_change_order">Schimbare ordine</string>
@@ -1070,7 +1066,6 @@
     <string name="stop_routing_confirm">Sigur doriți să opriți navigarea?</string>
     <string name="clear_dest_confirm">Sigur doriți să ștergeți punctul de destinație (și puncte intermediare)?</string>
     <string name="precise_routing_mode">Rutare precisă (alpha)</string>
-    <string name="av_def_action_picture">Faceți o poză</string>
     <string name="use_displayed_track_for_navigation">Doriți să utilizați traseul afișat pentru navigare?</string>
     <string name="keep_and_add_destination_point">Adaugă ca și punct destinație</string>
     <string name="shared_string_select_on_map">Selectează pe hartă</string>
@@ -1191,13 +1186,10 @@
 	<string name="gpx_info_avg_altitude">Altitudinea medie: %1$s</string>
 	<string name="gpx_selection_segment_title">Segment</string>
     <string name="record_plugin_description">Salvează înregistrările cu o singură atingere a ecranului. Arată setările pentru înregistrarea traseelor și stocarea locală în fișiere GPX folosind un serviciu web.</string>
-    <string name="av_camera_focus">Tip de focalizare al camerei</string>
-	<string name="av_camera_focus_descr">Selectați tipul de focalizare al camerei interne</string>
-	<string name="av_camera_focus_auto">Auto focalizare</string>
+    <string name="av_camera_focus_auto">Auto focalizare</string>
 	<string name="av_camera_focus_hiperfocal">Focalizare hiperfocală</string>
 	<string name="av_camera_focus_infinity">Focalizarea este setata la infinit</string>
 	<string name="av_camera_focus_macro">Macro(de aproape) mod de focalizare</string>
-	<string name="av_camera_focus_continuous">Camera focalizează in mod continuu</string>
     <string name="rendering_attr_hideWoodScrubs_name">Ascunde paduri si arbori</string>
     <string name="gpx_info_diff_altitude">Limită altitudine: %1$s</string>
 	<string name="gpx_info_asc_altitude">Coboară/urcă: %1$s</string>
@@ -1254,7 +1246,6 @@
     <string name="show_railway_warnings">Arată trecerile peste calea ferata</string>
 	<string name="show_pedestrian_warnings">Arată trecerile pietonale</string>
     <string name="rendering_value_americanRoadAtlas_name">Atlas rutier american</string>
-    <string name="routing_attr_no_new_routing_description">Nu folosi reguli de rute introduse in v1.9</string>
     <string name="dash_download_msg_none">Vrei să descărci hărţi offline?</string>
     <string name="dash_download_msg">Aţi descărcat %1$s hărţi</string>
     <string name="dash_download_new_one">Descarcă hartă nouă</string>
@@ -1476,7 +1467,6 @@
     <string name="impassable_road_desc">Selectează drumurile pe care dorești sa le eviți pe perioada navigării</string>
     <string name="shared_string_sound">Sunet</string>
     <string name="no_location_permission">Aplicația nu are permisiunea de a accesa datele de localizare.</string>
-    <string name="no_camera_permission">Aplicația nu are permisiunea de a accesa camera.</string>
     <string name="no_microphone_permission">Aplicația nu are permisiunea de a accesa microfonul.</string>
     <string name="route_distance">Distanța:</string>
     <string name="route_duration">Timp:</string>
@@ -1677,7 +1667,6 @@
     <string name="consider_turning_polygons_off">Este recomandat să dezactivați redarea de poligoane.</string>
     <string name="rendering_attr_showMtbRoutes_name">Arată rutele de MTB</string>
     <string name="show_polygons">Arată poligoanele</string>
-    <string name="find_parking">Găsește o parcare</string>
     <string name="shared_string_status">Stare</string>
     <string name="shared_string_save_changes">Salvează schimbările</string>
     <string name="shared_string_email_address">Adresa de email</string>
@@ -1724,8 +1713,6 @@
     <string name="shared_string_collapse">Căzut</string>
     <string name="shared_string_address">Adresa</string>
     <string name="shared_string_currently_recording_track">Acum se înregistrează un traseu</string>
-    <string name="shared_string_audio">Audio</string>
-    <string name="shared_string_photo">Foto</string>
     <string name="route_points">Puncte pe traseu</string>
     <string name="track_segments">Segmente de traseu</string>
     <string name="track_points">Puncte pe traseu</string>
@@ -1752,8 +1739,6 @@
     <string name="shared_string_reset">Resetează</string>
     <string name="shared_string_reload">Reîncarcă</string>
     <string name="shared_string_to">Spre</string>
-    <string name="mapillary_menu_date_from">De la</string>
-    <string name="mapillary_menu_title_username">Nume de utilizator</string>
     <string name="shared_string_permissions">Permisiuni</string>
     <string name="shared_string_install">Instalare</string>
     <string name="shared_string_add_photos">Adaugă poze</string>

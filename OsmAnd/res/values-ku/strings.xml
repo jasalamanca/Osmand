@@ -2,7 +2,6 @@
 <resources>
 
     <string name="stop_routing_confirm">Tu dixwazî navîgasyonê bisekinînî?</string>
-    <string name="av_def_action_picture">ڕسمه ك بگرە</string>
     <string name="application_dir_change_warning3">Vai vēlaties, lai OsmAnd kopē uz jauno vietu arī savus datu failus?</string>
     <string name="specified_directiory_not_writeable">Norādītajā direktorijā nevar veidot Kartes</string>
 	<string name="favorite_category_add_new">Nu Texe</string>

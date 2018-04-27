@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="av_def_action_picture">التقط صورة</string>
 
     <string name="search_villages_and_postcodes">البحث عن المزيد من القرى/الرمز البريدي</string>
 	<string name="gps_not_available">يرجى تمكين GPS في إعدادات</string>
@@ -344,9 +343,6 @@
     
     <string name="osmand_background_plugin_description">يظهر الإعدادات لتمكين التتبع والملاحة في وضعية السكون ( الشاشة مغلقة ) عبر إيقاظ دوري لجهاز GPS.</string>
     <string name="precise_routing_mode_descr">تمكين لحساب المسارات بدقة دون أخطاء. لا يزال محدود المسافة وبطيء.</string>
-    <string name="dropbox_plugin_description">ملحق Dropbox يسمح بمزامنة المسارات و الملاحظات الصوتية والمرئية مع حسابك في دروب بوكس.</string>
-    <string name="av_use_external_camera_descr">استخدام تطبيق النظام للصور.</string>
-    <string name="av_use_external_camera">استخدام تطبيق الكاميرا</string>
     <string name="add_as_last_destination_point">أضف كآخر وجهة وسيطة</string>
     <string name="add_as_first_destination_point">أضف كأول وجهة وسيطة</string>
     <string name="intermediate_point_too_far">الوجهة %1$s بعيدة جدا من أقرب طريق.</string>
@@ -363,9 +359,7 @@
 	<string name="auto_zoom_map">تقريب الخريطة تلقائيًا</string>
 	<string name="snap_to_road_descr">ألصق الموقع إلى الشوارع أثناء الملاحة.</string>
 	<string name="snap_to_road">الالتصاق بالطريق</string>
-    <string name="osmand_short_description_80_chars">برنامج عرض الخرائط العالمية والملاحة باستخدام خرائط الشوارع المفتوحة OSM أثناء الاتصال بالانترنت أو من دونه</string>
-    <string name="osmand_plus_short_description_80_chars">برنامج عرض الخرائط العالمية والملاحة باستخدام خرائط الشوارع المفتوحة OSM أثناء الاتصال بالانترنت أو من دونه</string>
-	<string name="filterpoi_activity">أنشئ مُرشِّح نقاط مهمة</string>
+    <string name="filterpoi_activity">أنشئ مُرشِّح نقاط مهمة</string>
 	<string name="recalculate_route_to_your_location">نمط المواصلات:</string>
 	<string name="select_navigation_mode">اختر نمط المواصلات</string>
 	<string name="day_night_info_description">الشروق: %1$s \nالغروب: %2$s</string>
@@ -452,8 +446,7 @@
 	<string name="play_commands_of_currently_selected_voice">حدد صوتا واختبر عن طريق تشغيل مقاطع سريعة</string>
     <string name="shared_string_and">و</string>
     <string name="shared_string_or">أو</string>
-	<string name="av_camera_focus_continuous">التركيز المستمر</string>
-	<string name="free_version_title">الإصدار المجاني</string>
+    <string name="free_version_title">الإصدار المجاني</string>
 	<string name="index_name_north_america">أمريكا الشمالية</string>
 	<string name="index_name_us">أمريكا الشمالية - الولايات المتحدة</string>
 	<string name="index_name_central_america">أمريكا الوسطى</string>
@@ -493,8 +486,7 @@
 	<string name="av_camera_focus_macro">وضع التركيز الكلي (عن قرب)</string>
 	<string name="av_camera_focus_auto">تركيز تلقائي</string>
 	<string name="av_camera_focus_hiperfocal">التركيز البؤري</string>
-	<string name="av_camera_focus">نوع الكاميرا</string>
-	<string name="use_distance_measurement_help">* انقر لتُعلّم نقطة.
+    <string name="use_distance_measurement_help">* انقر لتُعلّم نقطة.
 \n * انقر مطولا على الخريطة لتحذف النقطة السّابقة.
 \n * انقر مطولا على النقطة لعرضها و ارفاق وصف.
 \n * انقر على أداة القياس لعرض المزيد من الأنشطة.</string>
@@ -556,7 +548,6 @@
     <string name="shared_string_delete_all">احذف الكل</string>
 
     <string name="update_poi_does_not_change_indexes">التغييرات POI داخل التطبيق لا تؤثرعلى ملفات الخرائط المحملة، يتم حفظ التغييرات إلى ملف محلي بدلا من ذلك.</string>
-	<string name="av_camera_focus_descr">تحديد وضع تركيز الكاميرا الداخلية.</string>
 
 
     <string name="local_openstreetmap_were_uploaded">{0} POI/الملاحظات تم رفعها</string>
@@ -932,7 +923,6 @@
 	<string name="shared_string_my_places">مواقعي</string>
 	<string name="days_behind">متخلف بأيام</string>
 	<string name="watch">شاهد</string>
-	<string name="routing_attr_no_new_routing_name">قواعد توجيه No v1.9</string>
     <string name="navigate_point_northing">نحو الشمال</string>
     <string name="home_button">الصفحة الرئيسية</string>
     <string name="agps_data_last_downloaded">آخر ما تحميله من بيانات A-GPS: %1$s</string>
@@ -1006,8 +996,7 @@
 	<string name="gpx_monitoring_stop">إيقاف تسجيل GPX</string>
     <string name="transport_Stop">موقف</string>
 	<string name="transport_stops">مواقف</string>
-	<string name="shared_string_audio">صوت</string>
-	<string name="shared_string_currently_recording_track">المسار الجاري تسجيله</string>
+    <string name="shared_string_currently_recording_track">المسار الجاري تسجيله</string>
 	<string name="record_plugin_name">تسجيل الرحلة</string>
 	<string name="save_global_track_interval_descr">اختر الفاصل الزمني لتسجيل المسار العام (مفعل عن طريق أداة تسجيل GPX على الخريطة).</string>
 	<string name="save_track_interval_descr">اختر الفاصل الزمني لتسجيل المسار أثناء الملاحة.</string>
@@ -1034,8 +1023,7 @@
 	<string name="favourites_remove_dialog_success">تم بنجاح حذف النقطة المفضلة {0}.</string>
 	<string name="osmand_parking_hour">س</string>
 	<string name="osmand_parking_minute">دقيقة</string>
-    <string name="shared_string_photo">صورة</string>
-	<string name="route_points">نقاط الطريق</string>
+    <string name="route_points">نقاط الطريق</string>
 	<string name="track_segments">مقاطع المسار</string>
 	<string name="track_points">نقاط المسار</string>
 	<string name="plugin_touringview_name">عرض خريطة السياحة</string>
@@ -1062,7 +1050,6 @@
     <string name="rendering_value_orange_name">برتقالي</string>
 	<string name="traffic_warning_railways">عبور خط السكة الحديدية</string>
 	<string name="rendering_value_americanRoadAtlas_name">أطلس الطرق الأمريكية</string>
-    <string name="routing_attr_no_new_routing_description">لا تستخدم قواعد توجيه الإصدار 1.9.</string>
     <string name="dash_download_msg_none">هل تريد تنزيل الخرائط غير المتصلة بالنت؟</string>
     <string name="dash_download_msg">قمت بتنزيل %1$s من الخرائط</string>
     <string name="dash_download_new_one">نزل خريطة جديدة</string>
@@ -1307,9 +1294,7 @@
 	<string name="get_plugin">تحميل</string>
 <string name="plugin_install_needs_network">تحتاج إلى اتصال انترنت لثبيت الإضافة.</string>
 	<string name="navigation_intent_invalid">صيغة خاطئة: %s</string>
-	<string name="av_camera_pic_size_descr">حدد حجم صورة الكاميرا الداخلية.</string>
-    <string name="av_camera_pic_size">حجم صورة الكاميرا</string>
-	<string name="poi_action_succeded_template">الإجراء {0} تم بنجاح.</string>
+    <string name="poi_action_succeded_template">الإجراء {0} تم بنجاح.</string>
 	<string name="saving_gpx_tracks">جاري حفظ مسارات GPX إلى الذاكرة…</string>
 	<string name="search_POI_level_btn">ابحث عن المزيد</string>
 	<string name="failed_op">فشل</string>
@@ -1633,7 +1618,6 @@
     <string name="select_month_and_country">حدد الشهر والبلد</string>
     <string name="number_of_contributors">عدد المساهمين</string>
     <string name="number_of_edits">عدد التعديلات</string>
-    <string name="find_parking">البحث عن موقف سيارات</string>
     <string name="lang_sq">الألبانية</string>
     <string name="lang_bn">البنغالية</string>
     <string name="lang_et">الإستونية</string>
@@ -1826,7 +1810,6 @@
     <string name="add_time_span">اضافة مجال زمني</string>
     <string name="item_removed">تمت ازالة العنصر</string>
     <string name="n_items_removed">تمت ازالة العناصر</string>
-    <string name="no_camera_permission">لايسمح للتطبيق الوصول إلى الكاميرا.</string>
     <string name="no_microphone_permission">ليس للتطبيق إذن للوصول إلى الميكروفون.</string>
     <string name="opening_changeset">فتح مجموعة التغييرات …</string>
     <string name="loading_poi_obj">تحميل ال POI …</string>
@@ -2309,10 +2292,6 @@
     <string name="shared_string_tracks">المسارات</string>
     <string name="shared_string_time">الزمن</string>
     <string name="restart_search">إعادة البحث</string>
-    <string name="osmand_extended_description_part7">المساهمة في OSM
-\n • الإبلاغ عن الأخطاء في البيانات
-\n • تحميل مسارات GPX إلى الموقع مباشرة بالتطبيق
-\n • إضافة POI ورفعها مباشرة إلى الموقع (أو في وقت لاحق إن كنت غير متصل بالشبكة)</string>
     <string name="nothing_found_descr">حاول تغيير طلب البحث أو وسع دائرة البحث.</string>
     <string name="quick_action_showhide_osmbugs_title">إظهار أو إخفاء ملاحظات الخريطة</string>
     <string name="quick_action_osmbugs_show">أظهر ملاحظات الخريطة</string>
@@ -2335,19 +2314,10 @@
     <string name="shared_string_permissions">ترخيصات</string>
     <string name="import_gpx_failed_descr">لا يمكن للتطبيق استيراد الملف. الرجاء التحقق إذا كان التطبيق لديه إذن قراءة الملف من موقعه.</string>
     <string name="distance_moving">تم تصحيح المسافة</string>
-    <string name="mapillary_image">صورة مابيلاري</string>
-    <string name="open_mapillary">فتح مابيلاري</string>
     <string name="shared_string_install">تثبيت</string>
-    <string name="improve_coverage_mapillary">تحسين التغطية بالصور بمابيلاري</string>
     <string name="online_photos">صور على الإنترنت</string>
     <string name="shared_string_add_photos">إضافة صور</string>
     <string name="no_photos_descr">ليس لدينا صور لهذا الموقع.</string>
-    <string name="mapillary_action_descr">ساهم بصور الشوارع الخاصة بك لهذا الموقع عن طريق مابيلاري.</string>
-    <string name="mapillary_widget">ويدجت مابيلاري</string>
-    <string name="mapillary_widget_descr">يسمح لك بالمساهمة بسرعة لمابيلاري.</string>
-    <string name="mapillary_descr">صور شوارع متاحة على الإنترنت للجميع. اكتشف أماكن، تعاون، والتقط صورا للعالم.</string>
-    <string name="mapillary">مابيلاري</string>
-    <string name="plugin_mapillary_descr">صور شوارع متاحة للجميع. اكتشف أماكن، تعاون، والتقط صورا للعالم.</string>
     <string name="private_access_routing_req">الوجهة الخاص بك تقع في منطقة ذات ولوج خاص. هل تريد تفعيل خاصية السماح بالوصول إلى هاته الأماكن لهذه الرحلة؟</string>
     <string name="quick_action_showhide_osmbugs_descr">النقر على زر الإجراء سيظهر أو يخفي ملاحظات OSM على الخريطة.</string>
     <string name="hide_from_zoom_level">إخفاء من مستوى التكبير/التصغير</string>
@@ -2358,9 +2328,6 @@
     <string name="quick_action_auto_zoom_desc">النقر على زر الإجراء سوف يقوم بتشغيل/إيقاف تكبير الخريطة وفقا لسرعتك.</string>
     <string name="quick_action_add_destination_desc">النقر على زر الإجراء سيقوم بإضافة وجهة في مركز الشاشة. الوجهة المعينة مسبقا تصبح النقطة الوسيطة الأخيرة.</string>
     <string name="quick_action_replace_destination_desc">النقر على زر الإجراء سيحل محل الوجهة بالموقع الظاهر على مركز الشاشة.</string>
-    <string name="improve_coverage_install_mapillary_desc">يمكنك أن تأخذ صورك الخاصة أو سلسلة من الصور وإرفاقها بهذا الموقع.
-\n
-\nللقيام بذل، تحتاج إلى تثبيت تطبيق مابيلاري من البلاي ستور.</string>
     <string name="quick_action_add_first_intermediate_desc">النقر على زر الإجراء سيتم إضافة نقطة وسيطة أولى في موقع مركز الشاشة.</string>
     <string name="no_overlay">لا طبقة فوقية</string>
     <string name="no_underlay">لا طبقة تحتية</string>
@@ -2378,8 +2345,6 @@
     <string name="auto_split_recording_descr">بدء جزء جديد بعد فجوة 6 دقائق، مسار جديد بعد فجوة 2سا، أو ملف جديد بعد الانقطاع لفجوة أطول إذا تغير التاريخ.</string>
     <string name="shared_string_paused">متوقف مؤقتاً</string>
     <string name="route_is_too_long_v2">قد يكون هذا المسار طويل جداً ليحسب. الرجاء إضافة الوجهات المتوسطة إن لم يتم العثور على أية نتيجة في غضون 10 دقائق.</string>
-    <string name="osmand_extended_description_part6">مشي، تنزه، جولة في مدينة • الخريطة تظهر لك ممرات مشي وتنزه • ويكيبيديا بلغتك المفضلة ستخبرك الكثير أثناء جولتك • مواقف نقل عام (حافلة ،ترامواي ،قطار)، بما في ذلك أسماء خطوط النقل تساعدك على التجول في مدينة جديدة • التجول بمساعدة الـGPS يساعد على تحديد طريق وجهتك باستعمال ممرات مشي • يمكنك تسجيل ورفع مسارات GPX ومتابعتها ومشاركنها</string>
-    <string name="osmand_plus_extended_description_part7">المساهمة مباشرة في OSM • الابلاغ عن الأخطاء في البرنامج • رفع مسارات GPX إلى OSM مباشرة من التطبيق • إضافة النقاط المهمة ورفعها مباشرة إلى OSM (أو في وقت لاحق في حالة كنت بدون اتصال) • تسجيل اختياري للرحلة في الخلفية (في حين كون الجهاز في وضع النوم) OsmAnd ذو المصدر المفتوح، وجاري تطوره . يمكن للجميع أن يساهم بالإبلاغ عن الأخطاء، تحسين الترجمات أو برمجة ميزات جديدة. هذا المشروع خاضع للتحسين المستمر بشتى أشكال تفاعل المطورين والمستخدمين. التقدم المحرز في المشروع يعتمد أيضا على المساهمات المالية لتمويل البرمجة واختبار التحديثات الجديدة.</string>
     <string name="save_poi_too_many_uppercase">الاسم يحتوي على الكثير من الأحرف الكبيرة . هل تريد الاستمرار؟</string>
     <string name="quick_action_duplicates">اسم الإجراء السريع المحدد قيد الاستخدام، لقد تم تغييره إلى %1$s لتجنب التكرار.</string>
     <string name="quick_action_page_list_descr">النقر على زر الإجراء سوف يوجهك خلال القائمة أدناه.</string>
@@ -2387,16 +2352,7 @@
     <string name="navigate_point_olc_info_area">OLC الصالحة بالكامل\nتمثل المنطقة: %1$s x %2$s</string>
     <string name="wrong_user_name">اسم المستخدم خاطئ !</string>
     <string name="shared_string_to">إلى</string>
-    <string name="mapillary_menu_date_from">من</string>
-    <string name="mapillary_menu_descr_dates">عرض الصور المضافة فقط</string>
-    <string name="mapillary_menu_title_dates">التاريخ</string>
-    <string name="mapillary_menu_edit_text_hint">قم بادخال اسم المستخدم</string>
-    <string name="mapillary_menu_descr_username">عرض الصور التي أضافها المستخدم</string>
-    <string name="mapillary_menu_title_username">اسم المستخدم</string>
-    <string name="mapillary_menu_filter_description">يمكنك تصفية الصور حسب مقدمها أو حسب التاريخ. يتم تطبيق عوامل التصفية اذا ما كان التكبير عن كثب فقط.</string>
     <string name="shared_string_reload">إعادة تحميل</string>
-    <string name="mapillary_menu_descr_tile_cache">إعادة تحميل أجزاء الخريطة لمشاهدة البيانات المحدثة.</string>
-    <string name="mapillary_menu_title_tile_cache">التخزين المؤقت لأجزاء الخريطة</string>
     <string name="shared_string_reset">إعادة تعيين</string>
     <string name="store_tracks_in_monthly_directories">تخزين المسارات المسجلة في المجلدات الشهرية</string>
     <string name="store_tracks_in_monthly_directories_descrp">تخزين المسارات المسجلة في مجلدات فرعية لكل تسجيل شهري (مثل 01-2017).</string>
@@ -2416,7 +2372,6 @@
     <string name="quick_action_start_stop_navigation_descr">اضغط هذا الزر لبدء أو إنهاء الملاحة.</string>
     <string name="live_monitoring_max_interval_to_send">الوقت الإضافي المخزن المؤقت للتتبع على الإنترنت</string>
     <string name="live_monitoring_max_interval_to_send_desrc">تحديد الوقت الإضافي المخزن للحفاظ على المواقع وإرسالها دون اتصال</string>
-    <string name="mappilary_no_internet_desc">أنت بحاجة إلى إنترنت لعرض الصور من Mapillary.</string>
     <string name="retry">اعد المحاولة</string>
 <string name="measurement_tool_action_bar">تصفح الخريطة واضف نقاط</string>
     <string name="measurement_tool">قياس المسافة</string>

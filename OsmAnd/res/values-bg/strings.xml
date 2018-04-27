@@ -98,16 +98,12 @@
     <string name="clear_dest_confirm">Наистина ли искате да изтриете крайната цел (и междинните точки)?</string>
     <string name="precise_routing_mode_descr">Прецизното изчисляване на маршрута. Все още е ограничено по дистанция и е по-бавно.</string>
     <string name="precise_routing_mode">Прецизно изчисляване на маршрута (алфа)</string>
-    <string name="av_def_action_picture">Направете снимка</string>
-    <string name="dropbox_plugin_description">Dropbox приставката ви позволява да синхронизирате следите и аудио/видео бележките с вашия dropbox акаунт.</string>
     <string name="dropbox_plugin_name">Приставка Dropbox</string>
 
     <string name="intermediate_points_change_order">Смяна на реда</string>
     <string name="av_def_action_choose">Избери при заявка</string>
     <string name="av_widget_action_descr">Изберете действие по подразбиране</string>
     <string name="av_widget_action">Действие по подразбиране</string>
-    <string name="av_use_external_camera_descr">Използване на вграденото приложение за камерата</string>
-    <string name="av_use_external_camera">Използване на камерата</string>
     <string name="recording_delete_confirm">Искате ли да изтриете този запис?</string>
 
     <string name="recording_context_menu_play">Старт</string>
@@ -187,10 +183,6 @@
     <string name="auto_zoom_map">Авто-мащабиране</string>
     <string name="snap_to_road_descr">Позицията да се придържа към пътя по време на пътуване</string>
     <string name="snap_to_road">Придържай мястото към пътя</string>
-
-    <string name="osmand_short_description_80_chars">Мобилни карти и навигация от OSM</string>
-
-    <string name="osmand_plus_short_description_80_chars">Мобилно приложение за разглеждане на карти и навигация ползващо данни от OSM</string>
 
 
     <string name="filterpoi_activity">Създаване на филтър за POI</string>
@@ -1006,14 +998,11 @@
     <string name="edit_filter_create_message">Филтърът {0} беше създаден</string>
 
     <string name="email">ел.поща</string>
-    <string name="av_camera_focus">Фокус на вградената камера</string>
-    <string name="av_camera_focus_descr">Избор на режим за фокуса на вградената камера</string>
     <string name="av_camera_focus_auto">Авто-фокус (auto)</string>
     <string name="av_camera_focus_hiperfocal">Хиперфокален фокус (hyper-focal)</string>
     <string name="av_camera_focus_edof">Разширена дълбочина на рязкост (EDOF)</string>
     <string name="av_camera_focus_infinity">Безкрайност (infinity)</string>
     <string name="av_camera_focus_macro">Макро (close-up)</string>
-    <string name="av_camera_focus_continuous">Камерата се опитва да фокусира</string>
     <string name="announce_gpx_waypoints">GPX точки</string>
     <string name="speak_title">Обявяване…</string>
     <string name="speak_street_names">Имена на улици (синтезиран глас)</string>
@@ -1236,7 +1225,6 @@
     <string name="plugin_install_needs_network">За да инсталирате добавката трябва да сте свързани към интернет.</string>
     <string name="navigation_intent_invalid">Невалиден формат: %s</string>
     <string name="plugin_description_title">Описание</string>
-    <string name="av_camera_pic_size">Размер на картината на камерата</string>
     <string name="shared_string_selected">Избрани</string>
     <string name="shared_string_selected_lowercase">избрани</string>
     <string name="none_selected_gpx">Няма избрани GPX файлове. За да изберете натиснете и задръжте на някой от маршрутите.</string>
@@ -1256,8 +1244,6 @@
     <string name="shared_string_show_description">Покажи описанието</string>
     <string name="shared_string_message">Съобщение</string>
     <string name="agps_data_last_downloaded">A-GPS последно изтеглени в: %1$s</string>
-    <string name="routing_attr_no_new_routing_name">Без ползване на алгоритми от v1.9</string>
-    <string name="routing_attr_no_new_routing_description">Да не се ползват алгоритми за маршрути въведени във версия 1.9</string>
     <string name="rendering_attr_hideHouseNumbers_name">Скрий номерата на къщите</string>
     <string name="application_dir_change_warning3">Искате ли и OsmAnd да копира своите файлове на новото място?</string>
     <string name="general_settings_2">Общи настройки</string>
@@ -1331,8 +1317,6 @@
     <string name="shared_string_my_favorites">Моите места</string>
     <string name="shared_string_my_tracks">Моите следи</string>
     <string name="shared_string_currently_recording_track">Текуща следа</string>
-    <string name="shared_string_audio">Аудио</string>
-    <string name="shared_string_photo">Снимка</string>
     <string name="route_points">Точки от маршрута</string>
     <string name="track_segments">Сегменти от маршрута</string>
     <string name="track_points">Точки от маршрута</string>
@@ -1497,7 +1481,6 @@
     <string name="osmo_groups">OsMo групи</string>
     <string name="osmo_session_token">Маркер за сесия: %1$s</string>
     <string name="osmo_auth_pending">Чака за разрешение…</string>
-    <string name="av_camera_pic_size_descr">Изберете размер на снимката за вградената камера</string>
     <string name="shared_string_wikipedia">Уикипедия</string>
     <string name="local_indexes_cat_wiki">Уикипедия</string>
     <string name="shared_string_show_details">Покажи подробни данни</string>
@@ -1873,7 +1856,6 @@
     <string name="route_duration">Продължителност:</string>
     <string name="missing_write_external_storage_permission">Приложението няма разрешение да използва SD картата</string>
 <string name="no_location_permission">Приложението няма разрешение да ползва данни за местоположение.</string>
-    <string name="no_camera_permission">Приложението няма разрешение да ползва камерата.</string>
     <string name="no_microphone_permission">Приложението няма разрешение да ползва микрофона.</string>
     <string name="live_updates">Актуализации онлайн</string>
     <string name="available_maps">Достъпни карти</string>
@@ -1912,7 +1894,6 @@
     <string name="shared_string_remove">Премахване</string>
     <string name="rendering_attr_hideUnderground_name">Скрий подземните обекти</string>
     <string name="shared_string_read_more">Прочети още</string>
-    <string name="find_parking">Намери паркинг</string>
     <string name="shared_string_status">Статус</string>
     <string name="shared_string_save_changes">Запази промените</string>
     <string name="shared_string_email_address">Е-мейл адрес</string>
@@ -2036,10 +2017,7 @@
     <string name="get_started">Първи стъпки</string>
     <string name="route_stops_before">%1$s спирания преди</string>
     <string name="shared_string_install">Инсталиране</string>
-    <string name="improve_coverage_install_mapillary_desc">Можете да направите снимки и да ги прикачите към това място.
-\nЗа целта инсталирайте приложението Mapillary app от Google Play Store.</string>
     <string name="online_photos">Онлайн снимки</string>
     <string name="shared_string_add_photos">Добавяне на снимки</string>
     <string name="no_photos_descr">Ние нямаме снимки за това местоположение</string>
-    <string name="mapillary_action_descr">Допринесе с ваши собствени снимки на улично ниво за това място чрез Mapillary.</string>
-    </resources>
+</resources>

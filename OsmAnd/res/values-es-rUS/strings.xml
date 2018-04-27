@@ -119,8 +119,6 @@ Lon %2$s</string>
     <string name="shared_string_my_favorites">Mis favoritos</string>
     <string name="shared_string_my_tracks">Mis trazas</string>
     <string name="shared_string_currently_recording_track">Grabando traza actual</string>
-    <string name="shared_string_audio">Audio</string>
-    <string name="shared_string_photo">Fotografía</string>
     <string name="route_points">Puntos de la ruta</string>
     <string name="track_segments">Segmentos de la traza</string>
     <string name="track_points">Puntos de la traza</string>
@@ -154,8 +152,6 @@ Lon %2$s</string>
     <string name="show_railway_warnings">Cruces de ferrocarril</string>
     <string name="show_pedestrian_warnings">Cruces peatonales</string>
     <string name="rendering_value_americanRoadAtlas_name">Estilo vial estadounidense</string>
-    <string name="routing_attr_no_new_routing_name">Sin reglas de navegación v1.9</string>
-    <string name="routing_attr_no_new_routing_description">No usar reglas de navegación introducidas en v.1.9.</string>
     <string name="dash_download_msg_none">¿Quieres descargar los mapas sin conexión?</string>
     <string name="dash_download_msg">Has descargado %1$s mapa(s)</string>
     <string name="dash_download_new_one">Descargar nuevo mapa</string>
@@ -694,15 +690,11 @@ Lon %2$s</string>
     <string name="clear_dest_confirm">¿Quieres quitar el destino (y los destinos intermedios)?</string>
     <string name="precise_routing_mode_descr">Habilita el cálculo de rutas precisas sin interferencias. Aún está limitado por la distancia y es lento.</string>
     <string name="precise_routing_mode">Enrutado preciso (alfa)</string>
-    <string name="av_def_action_picture">Fotografiar</string>
-    <string name="dropbox_plugin_description">El complemento de Dropbox, permite sincronizar trazas y notas multimedia con tu cuenta de Dropbox.</string>
     <string name="dropbox_plugin_name">Complemento Dropbox</string>
     <string name="intermediate_points_change_order">Cambiar orden</string>
     <string name="av_def_action_choose">Elegir a petición</string>
     <string name="av_widget_action_descr">Elige la acción predefinida.</string>
     <string name="av_widget_action">Acción predefinida</string>
-    <string name="av_use_external_camera_descr">Usa la aplicación del sistema para fotografías.</string>
-    <string name="av_use_external_camera">Usar aplicación de la cámara</string>
     <string name="recording_delete_confirm">¿Quieres borrar esta grabación?</string>
     <string name="recording_context_menu_play">Reproducir</string>
     <string name="map_widget_distancemeasurement">Medición de distancia</string>
@@ -774,9 +766,6 @@ Lon %2$s</string>
     <string name="snap_to_road">Ajustar al camino</string>
     <string name="interrupt_music_descr">El aviso por voz, pausa la reproducción de música (no sólo reduce el volumen).</string>
     <string name="interrupt_music">Pausar música</string>
-    <string name="osmand_short_description_80_chars">Visor y navegador móvil global de mapas OSM con y sin conexión</string>
-
-    <string name="osmand_plus_short_description_80_chars">Visor y navegador móvil global de mapas OSM con y sin conexión</string>
 
     <string name="filterpoi_activity">Crear filtro PDI</string>
     <string name="recalculate_route_to_your_location">Modo transporte:</string>
@@ -1490,16 +1479,11 @@ Lon %2$s</string>
     <string name="edit_filter_delete_message">Se borró el filtro {0}</string>
     <string name="edit_filter_create_message">Se creó el filtro {0}</string>
     <string name="email">correo electrónico</string>
-    <string name="av_camera_focus">Método de enfoque</string>
-    <string name="av_camera_focus_descr">Elige el modo de enfoque de la cámara interna.</string>
     <string name="av_camera_focus_auto">Enfoque automático</string>
     <string name="av_camera_focus_hiperfocal">Enfoque hiperfocal</string>
     <string name="av_camera_focus_edof">Profundidad de campo extendido (EDOF)</string>
     <string name="av_camera_focus_infinity">Enfoque al infinito</string>
     <string name="av_camera_focus_macro">Modo de enfoque macro (primer plano)</string>
-    <string name="av_camera_focus_continuous">Enfoque continuo</string>
-    <string name="av_camera_pic_size">Tamaño de fotografía</string>
-    <string name="av_camera_pic_size_descr">Elige el tamaño interno de la fotografía.</string>
     <string name="navigation_intent_invalid">Formato inválido: %s</string>
     <string name="plugin_description_title">Descripción</string>
     <string name="plugin_install_needs_network">Necesitas una conexión a Internet para instalar este complemento.</string>
@@ -1769,7 +1753,6 @@ Lon %2$s</string>
     <string name="route_duration">Duración:</string>
     <string name="missing_write_external_storage_permission">La aplicación no tiene permiso para usar la tarjeta SD</string>
 <string name="no_location_permission">La aplicación no tiene permiso de acceso a los datos de ubicación.</string>
-    <string name="no_camera_permission">La aplicación no tiene permiso de acceso a la cámara.</string>
     <string name="no_microphone_permission">La aplicación no tiene permiso de acceso al micrófono.</string>
     <string name="impassable_road_desc">Elige los caminos a evitar durante la navegación.</string>
     <string name="shared_string_sound">Sonido</string>
@@ -1815,7 +1798,6 @@ Lon %2$s</string>
     <string name="shared_string_status">Estado</string>
     <string name="shared_string_save_changes">Guardar cambios</string>
     <string name="shared_string_email_address">Correo electrónico</string>
-    <string name="find_parking">Encontrar estacionamiento</string>
     <string name="show_polygons">Mostrar polígonos</string>
     
     <string name="rendering_attr_showMtbRoutes_name">Rutas para bicicletas de montaña</string>
@@ -2183,18 +2165,6 @@ Proporciona un código completo</string>
     <string name="routing_attr_relief_smoothness_factor_name">Elegir la fluctuación de elevación</string>
     <string name="right_side_navigation">Conducir por la derecha</string>
     <string name="driving_region_automatic">Automático</string>
-    <string name="osmand_extended_description_part6">Caminar, senderismo, paseo por la ciudad: • El mapa muestra las rutas para caminar y de senderismo • Wikipedia en el idioma de preferencia, puede decir mucho durante un paseo por la ciudad • Las paradas de transporte público (autobús, tranvía, tren), incluyendo los nombres de línea, ayuda a navegar en una nueva ciudad • La navegación GPS en el modo peatón, construye la ruta usando rutas de senderismo • Puedes subir y seguir una ruta GPX o grabar y compartir sus propias rutas</string>
-    <string name="osmand_extended_description_part7">Contribuye con OSM 
-\n • Informa sobre problemas de datos en el mapa 
-\n • Sube trazas GPX a OSM directamente desde la aplicación 
-\n • Añade PDI y súbelos directamente a OSM (o más tarde, si no estás conectado)</string>
-    <string name="osmand_plus_extended_description_part7">"Contribuye con OSM
-\n • Informa sobre problemas de datos en el mapa 
-\n • Sube trazas GPX a OSM directamente desde la aplicación 
-\n • Añade PDI y súbelos directamente a OSM (o más tarde, si no estás conectado) 
-\n • (Opcional) Grabación del viaje en segundo plano (mientras el dispositivo está bloqueado) 
-\n
-\n  OsmAnd es de código abierto y se desarrolla activamente. Puedes contribuir con la aplicación al informar sobre errores, mejorar las traducciones o desarrollar nuevas funciones. El proyecto se encuentra en un estado de mejora continua gracias a todas estas formas de interacción entre el desarrollador y el usuario. El progreso del proyecto también depende de contribuciones financieras para financiar el desarrollo y pruebas de nuevas funcionalidades."</string>
     <string name="fonts_header">Estilo del texto del mapa</string>
     <string name="restore_purchases">Restaurar compras</string>
     <string name="analyze_on_map">Analizar en el mapa</string>
@@ -2247,22 +2217,10 @@ Proporciona un código completo</string>
     <string name="nothing_found">¡Nada por aquí! :-(</string>
     <string name="nothing_found_descr">Modifica la consulta de búsqueda o aumenta el radio de búsqueda.</string>
     <string name="private_access_routing_req">El destino se ubica en un área de acceso privado. ¿Quieres acceder en este viaje a los caminos privados?</string>
-    <string name="mapillary">Mapillary</string>
-    <string name="mapillary_widget">Control de Mapillary</string>
-    <string name="mapillary_widget_descr">Permite contribuir rápidamente a Mapillary.</string>
-    <string name="mapillary_descr">Fotos a nivel de calle en línea para todos. Descubre lugares, colabora, captura el mundo.</string>
     <string name="shared_string_add_photos">Añadir fotos</string>
-    <string name="mapillary_action_descr">Contribuye con tus propias vistas a nivel de calle de esta ubicación a través de Mapillary.</string>
-    <string name="plugin_mapillary_descr">Fotos a nivel de calle para todos. Descubre lugares, colabora, captura el mundo.</string>
     <string name="online_photos">Fotos en línea</string>
     <string name="no_photos_descr">No se encontraron fotos en esta ubicación.</string>
     <string name="shared_string_install">Instalar</string>
-    <string name="improve_coverage_mapillary">Mejorar cobertura de fotos con Mapillary</string>
-    <string name="improve_coverage_install_mapillary_desc">Puedes tomar tus propias fotos o serie de fotos y añadirlas a esta ubicación del mapa.
-\n
-\nPara ello debes instalar la aplicación Mapillary desde Google Play.</string>
-    <string name="open_mapillary">Abrir Mapillary</string>
-    <string name="mapillary_image">Imagen de Mapillary</string>
     <string name="distance_moving">Distancia corregida</string>
     <string name="shared_string_permissions">Permisos</string>
     <string name="import_gpx_failed_descr">OsmAnd no puede importar el archivo. Comprueba si OsmAnd tiene permiso para leer archivos desde esta ubicación.</string>
@@ -2270,16 +2228,7 @@ Proporciona un código completo</string>
     <string name="map_widget_ruler_control">Regla radial</string>
     <string name="wrong_user_name">¡Nombre de usuario incorrecto!</string>
     <string name="shared_string_to">Hasta</string>
-    <string name="mapillary_menu_date_from">Desde</string>
-    <string name="mapillary_menu_descr_dates">Ver sólo imágenes añadidas</string>
-    <string name="mapillary_menu_title_dates">Fecha</string>
-    <string name="mapillary_menu_edit_text_hint">Escribir nombre de usuario</string>
-    <string name="mapillary_menu_descr_username">Ver sólo imágenes añadidas por</string>
-    <string name="mapillary_menu_title_username">Nombre de usuario</string>
-    <string name="mapillary_menu_filter_description">Puedes filtrar imágenes por usuario o por fecha. Los filtros sólo aplican para los primeros acercamientos.</string>
     <string name="shared_string_reload">Recargar</string>
-    <string name="mapillary_menu_descr_tile_cache">Recarga las teselas para ver la información actualizada.</string>
-    <string name="mapillary_menu_title_tile_cache">Caché de teselas</string>
     <string name="shared_string_reset">Restablecer</string>
     <string name="store_tracks_in_monthly_directories">Guardar las trazas grabadas en carpetas mensuales</string>
     <string name="store_tracks_in_monthly_directories_descrp">Guarda las trazas grabadas en subcarpetas por mes de grabación (como 2017-01).</string>
@@ -2299,7 +2248,6 @@ Proporciona un código completo</string>
     <string name="quick_action_start_stop_navigation_descr">Pulsa este botón para iniciar o parar la navegación.</string>
     <string name="live_monitoring_max_interval_to_send">Tiempo del búfer para el seguimiento en línea</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Especifica el tiempo que el búfer mantendrá los lugares para enviar sin conexión</string>
-    <string name="mappilary_no_internet_desc">Debes tener conexión a Internet para ver fotos de Mapillary.</string>
     <string name="retry">Reintentar</string>
 <string name="measurement_tool_action_bar">Navega por el mapa y añade puntos</string>
     <string name="measurement_tool">Medir distancia</string>

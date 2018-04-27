@@ -896,9 +896,7 @@
     <string name="avoid_motorway">Izvairīties no automaģistrālēm</string>
 	<string name="snap_to_road_descr">Navigācijas laikā tuvināt ceļam</string>
 	<string name="snap_to_road">Tuvināt ceļam</string>
-	<string name="osmand_short_description_80_chars">OsmAnd ir atvērtā koda navigācijas aplikācija bezsaistes un tiešsaistes kartēm</string>
-    <string name="osmand_plus_short_description_80_chars">OsmAnd ir atvērtā koda navigācijas aplikācija bezsaistes un tiešsaistes kartēm</string>
-	<string name="filterpoi_activity">Izveidot POI filtru</string>
+    <string name="filterpoi_activity">Izveidot POI filtru</string>
 	<string name="select_navigation_mode">Izvēlieties transporta veidu</string>
 	<string name="day_night_info_description">Saullēkts: %1$s\nSaulriets: %2$s</string>
 	<string name="day_night_info">Dienas/nakts info</string>
@@ -1038,15 +1036,11 @@
     <string name="clear_dest_confirm">Vai vēlaties noņemt galamērķi (ieskaitot ceļa punktus)?</string>
     <string name="precise_routing_mode_descr">Ieslēgt precīzāku maršruta aprēķināšanu bez kļūdām. Pagaidām darbojas ierobežotā attālumā un ir lēna.</string>
     <string name="precise_routing_mode">Precīzāka maršrutēšana (alfa)</string>
-    <string name="av_def_action_picture">Nofotografēt</string>
-    <string name="dropbox_plugin_description">Dropbox spraudnis ļauj sinhronizēt maršrutus un audio/video ierakstus ar jūsu dropbox kontu.</string>
     <string name="dropbox_plugin_name">Dropbox spraudnis</string>
     <string name="intermediate_points_change_order">Mainīt kārtību</string>
     <string name="av_def_action_choose">Atlasīt pēc pieprasījuma</string>
     <string name="av_widget_action_descr">Izvēlieties noklusēto logrīka darbību</string>
     <string name="av_widget_action">Noklusētā logrīka darbība</string>
-    <string name="av_use_external_camera_descr">Lietot sistēmas aplikāciju bildēm</string>
-    <string name="av_use_external_camera">Lietot kameras aplikāciju</string>
     <string name="recording_delete_confirm">Vai vēlaties dzēst ierakstu?</string>
     <string name="recording_context_menu_play">Atskaņot</string>
     <string name="shared_string_control_stop">Apturēt</string>
@@ -1085,14 +1079,11 @@
     <string name="support_new_features_descr">Lūdzu atbalstiet programmu ar ziedojumiem, lai palīdzētu to uzlabot un attīstīt</string>
 	<string name="incomplete_locale">Nepabeigts</string>
 	<string name="shared_string_downloading">Lejupielādē</string>
-	<string name="av_camera_focus">Fokusa režīms kamerai</string>
-	<string name="av_camera_focus_descr">Fokusa režīms iekšējai kamerai</string>
-	<string name="av_camera_focus_auto">Auto fokuss</string>
+    <string name="av_camera_focus_auto">Auto fokuss</string>
 	<string name="av_camera_focus_hiperfocal">Hiperfokāls fokuss</string>
 	<string name="av_camera_focus_edof">Paplašināts lauka dziļums (EDOF)</string>
 	<string name="av_camera_focus_infinity">Bezgalīgi tālu</string>
 	<string name="av_camera_focus_macro">Makro (tuvu klāt) režīms</string>
-	<string name="av_camera_focus_continuous">Nepārtraukts fokuss</string>
     <string name="amenity_type_seamark">Bojas</string>
     <string name="app_mode_aircraft">Aviācija</string>
     
@@ -1440,8 +1431,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
 	<string name="show_railway_warnings">Dzelzceļa pārejas</string>
 	<string name="show_pedestrian_warnings">Gājēju pārejas</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerikāņu ceļa karte</string>
-    <string name="routing_attr_no_new_routing_name">Ne v1.9 maršruta nosacījumi</string>
-    <string name="routing_attr_no_new_routing_description">Nelietot jaunos maršruta nosacījumus, kas atrodami 1.9 versijā</string>
     <string name="dash_download_msg_none">Vai lejupielādēt kartes?</string>
     <string name="dash_download_msg">Lejupielādēti %1$s no kartēm</string>
     <string name="dash_download_new_one">Lejupielādēt jaunu karti</string>
@@ -1566,9 +1555,7 @@ Vai gribat veikt jaunu reģistrāciju?</string>
 	<string name="shared_string_collapse">Kollapss</string>
 	<string name="shared_string_my_location">Mana atrašanās vieta</string>
 	<string name="shared_string_currently_recording_track">Tiek ierakstīts treks</string>
-	<string name="shared_string_audio">Audio</string>
-    <string name="shared_string_photo">Foto</string>
-	<string name="route_points">Maršruta punkti</string>
+    <string name="route_points">Maršruta punkti</string>
 	<string name="track_segments">Treka segmenti</string>
 	<string name="track_points">Treka punkti</string>
 	<string name="plugin_touringview_name">Tūrisma karte</string>
@@ -1622,8 +1609,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="rendering_attr_hikingRoutesOSMC_name">Slēpošanas trašu pārklājs</string>
     <string name="local_index_description">Nospiediet, lai redzētu detaļas, paturiet nospiestu, lai deaktivizētu vai dzēstu. Datu apjoms (%1$s brīvs):</string>
 	<string name="voices">Balss vadība</string>
-	<string name="av_camera_pic_size">Fotokameras bildes izmērs</string>
-	<string name="av_camera_pic_size_descr">Norādīt iebūvētās fotokameras bildes lielumu</string>
     <string name="plugin_description_title">Apraksts</string>
 	<string name="plugin_install_needs_network">Lai instalētu spraudni, ir vajadzīgs interneta savienojums.</string>
 	<string name="get_plugin">Iegūt</string>
@@ -1747,7 +1732,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="consider_turning_polygons_off">Vēlams izslēgt poligonu renderēšanu.</string>
     <string name="rendering_attr_showMtbRoutes_name">Kalnu velosipēdu maršruti</string>
     <string name="show_polygons">Rādīt poligonus</string>
-    <string name="find_parking">Atrast autostāvvietu</string>
     <string name="rendering_attr_hideUnderground_name">Pazemes objektus</string>
     <string name="data_is_not_available">Dati nav pieejami</string>
     <string name="add_time_span">Pievienot laika intervālu</string>
@@ -1764,7 +1748,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="select_voice_provider_descr">Kādu valodu lietot norādēm.</string>
     <string name="impassable_road_desc">Atzīmējiet ceļus, no kuriem jāizvairās navigācijas laikā</string>
     <string name="no_location_permission">Aplikācijai nav atļauts piekļūt atrašanās vietas datiem.</string>
-    <string name="no_camera_permission">Aplikācijai nav atļaujas izmantot kameru.</string>
     <string name="no_microphone_permission">Aplikācijai nav atļaujas izmantot mikrofonu.</string>
     <string name="route_distance">Distance:</string>
     <string name="route_duration">Laiks:</string>
@@ -2405,46 +2388,12 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="display_zoom_level">Mērogs: %1$s</string>
     <string name="quick_action_auto_zoom_on">Automērogošana ieslēgta</string>
     <string name="quick_action_auto_zoom_off">Automērogošana izslēgta</string>
-    <string name="osmand_extended_description_part6">"
- Pastaigas, pārgājieni, tūrisms
- • Karte parāda pastaigu un pārgājienu takas
- • Wikipēdija izvēlētajā valodā pastāstīs jums daudz kā kā jauna pilsētas pastaigās
- • Sabiedriskā transorta pieturas, ieskaitot peronu nosaukumus, ļaus droši pārvietoties svešā pilsētā
- • GPS navigācija kājāmgājēju režīmā veido maršrutus pa gājēju celiņiem
- • Jūs varat augšupielādēt un sekot GPX maršrutam vai ierakstīt un kopīgot pats savu
- "</string>
-    <string name="osmand_extended_description_part7">"
- Piedalīties OSM izstrādē
- • Ziņot par datu kļūdām
- • Caur aplikāciju augšupielādēt GPX trases uz OSM
- • Pievienot POIs un augšupielādēt tos uzreiz (vai vēlāk, ja esat bezsaistē) uz OSM
- "</string>
-    <string name="osmand_plus_extended_description_part7">"
- Piedalieties OSM veidošanā
- • Ziņojiet par datu kļūdām
- • Augšupielādējiet GPX trekus uz OSM caur aplikāciju
- • Pievienojiet POIs un augšupielādējiet uzreiz uz OSM (vai vēlāk, ja esat bezsaistē)
- • Optionāli ceļojuma ierakstīšana arī fona režīmā (kamēr ierīce atrodas miega režīmā)
- OsmAnd ir atvērtā koda un aktīvā izstrādē esoša aplikācija. Ikviens var piedalīties tā veidošanā, ziņojot par kļūdām, uzlabojot tulkojumus vai kodējot jaunas iespējas. Projekts atrodas patstāvīgā mijiedarbībā starp izstrādātājiem un aplikācijas lietotājiem. Tāpat arī projekta progress balstās uz finansiālajiem ziedojumiem aplikācijas kodēšanai un jauno iespēju testēšanai
- "</string>
     <string name="shared_string_add_photos">Pievienot fotogrāfijas</string>
-    <string name="mapillary_action_descr">Pievienojiet savus ielas līmeņa skatus ar Mapillary.</string>
-    <string name="mapillary_widget">Mapillary logrīks</string>
-    <string name="mapillary_widget_descr">Ātrā piekļuve Mapillary.</string>
-    <string name="mapillary_descr">Tiešsaistes ielas līmeņa fotoattēli ikvienam. Atklājiet vietas, kopīgojiet, iemūžiniet pasauli.</string>
-    <string name="mapillary">Mapillary</string>
-    <string name="open_mapillary">Atvērt Mapillary</string>
     <string name="shared_string_install">Instalēt</string>
-    <string name="improve_coverage_mapillary">Uzlabot bilžu pārklājumu ar Mapillary</string>
-    <string name="improve_coverage_install_mapillary_desc">Uzņemiet vienu vai vairākus fotoattēlus un pievienojiet vietām uz kartes. 
-\n 
-\nLai to darītu, instalējiet Mapillary aplikāciju no Google Play.</string>
     <string name="online_photos">Tiešsaistes fotoattēli</string>
     <string name="no_photos_descr">Mums nav fotogrāfiju šai vietai.</string>
-    <string name="plugin_mapillary_descr">Ielas līmeņa fotoattēli ikvienam - atklājiet vietas, kopīgojiet, iemūžiniet pasauli.</string>
     <string name="hide_from_zoom_level">Paslēpt no zoom līmeņa</string>
     <string name="show_from_zoom_level">Rādīt no zoom līmeņa</string>
-    <string name="mapillary_image">Mapillary bilde</string>
     <string name="import_gpx_failed_descr">OsmAnd nevar importēt failu. Pārliecinieties vai OsmAnd ir atļauja nolasīt failu dotajā mapē.</string>
     <string name="shared_string_permissions">Atļaujas</string>
     <string name="none_point_error">Lūdzu pievienojiet vismaz vienu punktu.</string>
@@ -2547,17 +2496,8 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="choose_navigation_type">Izvēlieties navigācjas profilu</string>
     <string name="shared_string_reset">Atiestatīt</string>
     <string name="shared_string_reload">Pārlādēt</string>
-    <string name="mapillary_menu_descr_tile_cache">Atjaunot flīzes, lai redzētu aktuālos datus.</string>
-    <string name="mapillary_menu_title_tile_cache">Bilžu kešatmiņa</string>
     <string name="wrong_user_name">Nepareizs lietotājvārds!</string>
     <string name="shared_string_to">Līdz</string>
-    <string name="mapillary_menu_date_from">No</string>
-    <string name="mapillary_menu_descr_dates">Skatīt bildes, kas pievienotas noteiktā laikaposmā.</string>
-    <string name="mapillary_menu_title_dates">Datumi</string>
-    <string name="mapillary_menu_edit_text_hint">Ievadiet lietotājvārdu</string>
-    <string name="mapillary_menu_descr_username">Skatīt bildes, kuras pievienojis konkrēts lietotājs.</string>
-    <string name="mapillary_menu_title_username">Lietotājvārds</string>
-    <string name="mapillary_menu_filter_description">Jūs varat filtrēt bildes pēc lietotāja vai datuma. Filtri tiek lietoti tikai tuvos mērogos.</string>
     <string name="distance_moving">Distance ir koriģēta</string>
     <string name="rendering_value_darkyellow_name">Tumši dzeltens</string>
     <string name="rendering_value_translucent_pink_name">Caurspīdīgs rozā</string>
@@ -2569,7 +2509,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="min_max">Min./Maks.</string>
     <string name="live_monitoring_max_interval_to_send">Laika buferis tiešsaistes sekošanai</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Nosakiet laika buferi turpināt sūtīt lokācijas, ja zūd savienojums</string>
-    <string name="mappilary_no_internet_desc">Lai redzētu Mapillary bildes, ir nepieciešams interneta savienojums.</string>
     <string name="retry">Mēğināt vēlreiz</string>
     <string name="add_route_points">Pievienot maršruta punktus</string>
     <string name="add_waypoint">Pievienot ceļapunktu</string>

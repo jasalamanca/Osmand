@@ -30,7 +30,6 @@ import net.osmand.plus.api.SettingsAPI;
 import net.osmand.plus.api.SettingsAPI.SettingsEditor;
 import net.osmand.plus.dialogs.RateUsBottomSheetDialog;
 import net.osmand.plus.helpers.SearchHistoryHelper;
-import net.osmand.plus.mapillary.MapillaryPlugin;
 import net.osmand.plus.render.RendererRegistry;
 import net.osmand.plus.routing.RouteProvider.RouteService;
 import net.osmand.render.RenderingRulesStorage;
@@ -613,7 +612,8 @@ public class OsmandSettings {
 	///////////// PREFERENCES classes ////////////////
 
 	// this value string is synchronized with settings_pref.xml preference name
-	private final OsmandPreference<String> PLUGINS = new StringPreference("enabled_plugins", MapillaryPlugin.ID).makeGlobal();
+//	private final OsmandPreference<String> PLUGINS = new StringPreference("enabled_plugins", MapillaryPlugin.ID).makeGlobal();
+	private final OsmandPreference<String> PLUGINS = new StringPreference("enabled_plugins", "").makeGlobal();
 
 	public Set<String> getEnabledPlugins() {
 		String plugs = PLUGINS.get();
@@ -717,12 +717,6 @@ public class OsmandSettings {
 	public final CommonPreference<Boolean> SHOW_ARROWS_TO_FIRST_MARKERS = new BooleanPreference("show_arrows_to_first_markers", false).makeProfile();
 
 	public final CommonPreference<Boolean> SELECT_MARKER_ON_SINGLE_TAP = new BooleanPreference("select_marker_on_single_tap", false).makeProfile();
-
-	public final CommonPreference<Boolean> USE_MAPILLARY_FILTER = new BooleanPreference("use_mapillary_filters", false).makeGlobal();
-	public final CommonPreference<String> MAPILLARY_FILTER_USER_KEY = new StringPreference("mapillary_filter_user_key", "").makeGlobal();
-	public final CommonPreference<String> MAPILLARY_FILTER_USERNAME = new StringPreference("mapillary_filter_username", "").makeGlobal();
-	public final CommonPreference<Long> MAPILLARY_FILTER_FROM_DATE = new LongPreference("mapillary_filter_from_date", 0).makeGlobal();
-	public final CommonPreference<Long> MAPILLARY_FILTER_TO_DATE = new LongPreference("mapillary_filter_to_date", 0).makeGlobal();
 
 	public final CommonPreference<Boolean> USE_FAST_RECALCULATION = new BooleanPreference("use_fast_recalculation", true).makeGlobal().cache();
 	public final CommonPreference<Boolean> FORCE_PRIVATE_ACCESS_ROUTING_ASKED = new BooleanPreference("force_private_access_routing", false).makeProfile().cache();
@@ -922,9 +916,6 @@ public class OsmandSettings {
 
 	public final OsmandPreference<Boolean> SHOW_POI_LABEL = new BooleanPreference("show_poi_label", false).makeGlobal();
 
-	public final OsmandPreference<Boolean> SHOW_MAPILLARY = new BooleanPreference("show_mapillary", false).makeGlobal();
-	public final OsmandPreference<Boolean> MAPILLARY_FIRST_DIALOG_SHOWN = new BooleanPreference("mapillary_first_dialog_shown", false).makeGlobal();
-	public final OsmandPreference<Boolean> ONLINE_PHOTOS_ROW_COLLAPSED = new BooleanPreference("mapillary_menu_collapsed", false).makeGlobal();
 	public final OsmandPreference<Boolean> WEBGL_SUPPORTED = new BooleanPreference("webgl_supported", true).makeGlobal();
 
 	// this value string is synchronized with settings_pref.xml preference name

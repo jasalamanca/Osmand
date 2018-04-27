@@ -107,7 +107,6 @@
     <string name="shared_string_sound">Səs</string>
     <string name="no_microphone_permission">Proqramın mikrofondan istifadə etmək icazəsi yoxdur.</string>
     <string name="no_location_permission">Proqramın məkan məlumatlarına daxil olmaq icazəsi yoxdur.</string>
-    <string name="no_camera_permission">Proqramın kameradan istifadə etmək icazəsi yoxdur.</string>
     <string name="route_distance">Məsafə:</string>
     <string name="route_duration">Vaxt:</string>
     <string name="shared_string_near">Yaxın</string>
@@ -254,8 +253,6 @@
     <string name="shared_string_my_location">Mövqeyim</string>
     <string name="shared_string_my_places">Yerlərim</string>
     <string name="shared_string_my_favorites">Favoritlərim</string>
-    <string name="shared_string_audio">Səs</string>
-    <string name="shared_string_photo">Şəkil</string>
     <string name="shared_string_online_maps">Onlayn xəritələr</string>
     <string name="rename_failed">Yenidən adlandırıla bilmədi.</string>
     <string name="back_to_map">Xəritəyə qayıt</string>
@@ -432,9 +429,6 @@
     <string name="map_widget_gps_info">GPS məlumatı</string>
     <string name="max_speed_none">yoxdur</string>
     <string name="download_wikipedia_maps">Vikipediya</string>
-    <string name="av_def_action_picture">Şəkil çək</string>
-    <string name="av_use_external_camera_descr">Şəkillər üçün sistem proqramını istifadə et.</string>
-    <string name="av_use_external_camera">Kamera proqramını istifadə et</string>
     <string name="download_select_map_types">Digər xəritələr</string>
     <string name="download_regular_maps">Standart xəritə</string>
     <string name="map_widget_max_speed">Sürət limiti</string>
@@ -920,9 +914,6 @@
     <string name="restore_purchases">Alışları bərpa et</string>
     <string name="full_version_thanks">OsmAnd-ın tam versiyasını aldığınız üçün təşəkkür edirik!</string>
     <string name="shared_string_install">Quraşdır</string>
-    <string name="improve_coverage_install_mapillary_desc">Öz şəkillərinizi və ya şəkil seriyanızı bu xəritə məkanına əlavə edə bilərsiniz.
-\n
-\nBunu etmək üçün Google Play-dən Mapillary proqramını quraşdırmalısınız.</string>
     <string name="online_photos">Onlayn şəkillər</string>
     <string name="shared_string_add_photos">Şəkillər əlavə et</string>
     <string name="live_updates">Canlı yeniləmələr</string>
@@ -937,7 +928,6 @@
     <string name="report">Hesabat</string>
     <string name="finish_navigation">Naviqasiyanı bitir</string>
     <string name="avoid_road">Yollardan yayın</string>
-    <string name="open_mapillary">Mapillary-ni aç</string>
     <string name="no_photos_descr">Bu məkan üçün şəkillərimiz yoxdur.</string>
     <string name="subscribe_email_desc">Proqramın endirimləri haqqında e-poçt siyahımıza abunə olun və əlavə 3 xəritə endirməsi əldə edin!</string>
     <string name="do_not_send_anonymous_app_usage">Anonim proqram istifadəsi statistikalarını göndərmə</string>
@@ -978,7 +968,6 @@
     <string name="new_destination_point_dialog">Artıq təyinat nöqtəsini seçmisiniz:</string>
     <string name="target_points">Təyinat nöqtələri</string>
     <string name="amenity_type_user_defined">İstifadəçi müəyyənləşdirib</string>
-    <string name="mapillary">Mapillary</string>
     <string name="private_access_routing_req">Təyinat nöqtəniz xüsusi girişi olan ərazidə yerləşir. Bu səyahət üçün xüsusi yollara giriş icazəsi vermək istəyirsiniz?</string>
     <string name="shared_string_plugin">Qoşma</string>
     <string name="plugin_settings">Qoşmalar</string>
@@ -1222,15 +1211,11 @@
     <string name="archive_wikipedia_data">Endirilmiş köhnə uyğunsuz Vikipediya məlumatlarınız var. Arxivləmək istəyirsiniz?</string>
     <string name="read_full_article">Tam məqaləni oxu (onlayn)</string>
     <string name="edit_filter_save_as_menu_item">Fərqli saxla</string>
-    <string name="av_camera_focus">Kamera fokus növü</string>
-    <string name="av_camera_focus_descr">Daxili kameranın fokus rejimini seçin.</string>
     <string name="av_camera_focus_auto">Avtomatik fokus</string>
     <string name="av_camera_focus_hiperfocal">Hiperfokal fokus</string>
     <string name="av_camera_focus_edof">Genişlədilmiş sahə dərinliyi (EDOF)</string>
     <string name="av_camera_focus_infinity">Sonsuzluğa fokusla</string>
     <string name="av_camera_focus_macro">Makro (iri plan) fokus rejimi</string>
-    <string name="av_camera_focus_continuous">Kamera fasiləsiz fokuslamağa çalışsın</string>
-    <string name="mapillary_image">Mapillary təsviri</string>
     <string name="avoid_in_routing_title">Yayın…</string>
     <string name="map_widget_distance">Təyinat nöqtəsi</string>
     <string name="quick_action_add_first_intermediate">Birinci aralığı əlavə et</string>
@@ -1320,7 +1305,6 @@
     <string name="clear_destination">Təyinat nöqtəsini təmizlə</string>
     <string name="distance_measurement_finish_subtrack">Yeni bir alt iz başlat</string>
     <string name="osmand_background_plugin_description">GPS cihazını vaxtaşırı oyadaraq arxa fon (ekran sönülü) rejimində naviqasiya və izləməni aktivləşdirmək üçün parametrləri göstərir.</string>
-    <string name="dropbox_plugin_description">Dropbox qoşması sizə izləri və səs/video qeydlərini Dropbox hesabınızla sinxronlaşdırmağa imkan verir.</string>
     <string name="enable_plugin_monitoring_services">Mövqe qeydiyyatı xidmətini (GPX qeydiyyatı, onlayn izləmə) istifadə etmək üçün Səyahət qeydetmə qoşmasını aktivləşdirin</string>
     <string name="gpxup_trackable">İzlənə bilən</string>
     <string name="gpx_monitoring_disabled_warn">GPX widget və ya “Səyahət qeydetmə” parametri ilə izləri qeyd et.</string>
@@ -1519,17 +1503,10 @@
     <string name="shared_string_reload">Yenilə</string>
     <string name="wrong_user_name">Yanlış istifadəçi adı!</string>
     <string name="shared_string_to">Bu tarixədək:</string>
-    <string name="mapillary_menu_date_from">Bu tarixdən:</string>
-    <string name="mapillary_menu_descr_dates">Müəyyən dövrdə əlavə edilmiş şəkillərə baxın.</string>
-    <string name="mapillary_menu_title_dates">Tarix</string>
-    <string name="mapillary_menu_edit_text_hint">İstifadəçi adını yazın</string>
-    <string name="mapillary_menu_descr_username">Bir istifadəçinin əlavə etdiyi şəkillərə baxın.</string>
-    <string name="mapillary_menu_title_username">İstifadəçi adı</string>
     <string name="no_address_found">Ünvan müəyyən deyil</string>
     <string name="context_menu_item_open_note">OSM qeydini aç</string>
     <string name="storage_directory">Xəritənin saxlandığı yer</string>
     <string name="shared_string_reset">Sıfırla</string>
-    <string name="mapillary_menu_filter_description">Şəkilləri təqdim edənə və ya tarixə görə filtrləyə bilərsiniz. Filtrlər yalnız yaxın miqyas üçün tətbiq olunur.</string>
     <string name="general_settings_descr">Proqramın ekran və ümumi parametrlərini tənzimləyin.</string>
     <string name="open_street_map_login_descr">openstreetmap.org təqdimlər üçün lazımdır.</string>
     <string name="no_map_markers_found">Zəhmət olmasa xəritədə işarələr əlavə edin</string>
@@ -1567,7 +1544,6 @@
     <string name="quick_action_show_navigation_finish_dialog">Naviqasiyanın bitmə dialoqunu göstər</string>
     <string name="quick_action_start_stop_navigation">Naviqasiyanı başlat/dayandır</string>
     <string name="quick_action_start_stop_navigation_descr">Naviqasiyanı başlatmaq və ya bitirmək üçün bu düyməyə toxunun.</string>
-    <string name="mappilary_no_internet_desc">Mapillary-dən şəkillərə baxmaq üçün internetiniz olmalıdır.</string>
     <string name="retry">Təkrar cəhd</string>
 <string name="osm_edit_modified_poi">Dəyişdirilmiş OSM POI</string>
     <string name="osm_edit_deleted_poi">Silinmiş OSM POI</string>

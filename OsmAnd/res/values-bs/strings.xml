@@ -73,8 +73,6 @@
     
     <string name="stop_routing_confirm">Jeste li sigurni da želite zaustaviti navigaciju?</string>
     <string name="clear_dest_confirm">Jeste li sigurni da želite ukloniti tačku odredišta?</string>
-    <string name="av_def_action_picture">Uslikaj</string>
-    <string name="dropbox_plugin_description">Dropbox dodatak omogućuje sinkronizaciju staza i audio / video zapisa s vašim dropbox računom.</string>
     <string name="dropbox_plugin_name">Dropbox dodatak</string>
     <string name="intermediate_points_change_order">Promjeni redosljed</string>
     <string name="recording_context_menu_play">Pokreni</string>

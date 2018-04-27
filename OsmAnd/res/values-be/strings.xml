@@ -126,16 +126,12 @@
     <string name="clear_dest_confirm">Сапраўды сьцерці месца прызначэньня (і прамежкавыя пункты прызначэньня)?</string>
     <string name="precise_routing_mode_descr">Дазволіць дакладную навігацыю каб шукаць шлях без памылак. Усё яшчэ абмежавана адлегласцю і павольная.</string>
     <string name="precise_routing_mode">Дакладны маршрут (эксп.)</string>
-    <string name="av_def_action_picture">Сфатаграфаваць</string>
-    <string name="dropbox_plugin_description">Модуль Dropbox дазваляе вам сынхранізаваць трэкі і аўдыё/відэа-натакi з вашым Dropbox-акаўнтам.</string>
     <string name="dropbox_plugin_name">Модуль Dropbox</string>
     
     <string name="intermediate_points_change_order">Зьмяніць парадак</string>
     <string name="av_def_action_choose">Выбар па запыце</string>
     <string name="av_widget_action_descr">Выберыце агаданае дзеянне віджэта.</string>
     <string name="av_widget_action">Дзеяньне віджэта па змаўчанні</string>
-    <string name="av_use_external_camera_descr">Выкарыстоўваць сістэмнае дастасаванне для фота.</string>
-    <string name="av_use_external_camera">Выкарыстоўваць праграму камеры</string>
     <string name="recording_delete_confirm">Вы хочаце зьнішчыць гэты запіс?</string>
     <string name="recording_context_menu_play">Граць</string>
     <string name="map_widget_distancemeasurement">Вымярэньне адлегласьці</string>
@@ -209,9 +205,6 @@
 	<string name="auto_zoom_map">Аўтаматычнае памяншэнне/павелічэнне</string>
 	<string name="snap_to_road_descr">Прывязвацца да дарог падчас навігацыі.</string>
 	<string name="snap_to_road">Прывязвацца да дарог</string>
-    <string name="osmand_short_description_80_chars">Глабальная мабільная мапа і навігатар для аўтаномных і сеткавых мапаў OSM</string>
-
-    <string name="osmand_plus_short_description_80_chars">Глабальная мабільная мапа і навігатар для аўтаномных і сеткавых мапаў OSM</string>
 
 
     <string name="filterpoi_activity">Стварыць фільтар POI</string>
@@ -1019,14 +1012,11 @@
 	<string name="edit_filter_create_message">Фільтр {0} быў створаны</string>
 	
 	<string name="email">E-mail</string>
-	<string name="av_camera_focus">Тып факусоўкі камеры</string>
-	<string name="av_camera_focus_descr">Выберыце тып фокусу ўбудаванай камеры.</string>
-	<string name="av_camera_focus_auto">Аўтафокус</string>
+    <string name="av_camera_focus_auto">Аўтафокус</string>
 	<string name="av_camera_focus_hiperfocal">Гіперфакальны фокус</string>
 	<string name="av_camera_focus_edof">Павялічаная глыбіня рэзкасьці (EDOF)</string>
 	<string name="av_camera_focus_infinity">Фокус усталяваны на бясконцасьці</string>
 	<string name="av_camera_focus_macro">Макра-рэжым факусоўкі (буйны план)</string>
-	<string name="av_camera_focus_continuous">Камера пастаянна спрабуе сфакусавацца</string>
 
 
     <string name="lang_hr">Харвацкая</string>
@@ -1371,11 +1361,9 @@
     <string name="arrival_distance_factor_normally">Звычайна</string>
     <string name="arrival_distance_factor_late">Пазней</string>
     <string name="arrival_distance_factor_at_last">На апошніх метрах</string>
-    <string name="av_camera_pic_size">Памер фота</string>
-	<string name="av_camera_pic_size_descr">Памер фотаздымка з убудаванай камеры.</string>
-    
-    
-<string name="rendering_value_browse_map_name">Прагляд мапы</string>  
+
+
+    <string name="rendering_value_browse_map_name">Прагляд мапы</string>
     <string name="rendering_value_car_name">Аўтамабіль</string>
     <string name="rendering_value_bicycle_name">Ровар</string>
     <string name="rendering_value_pedestrian_name">Пешаход</string>
@@ -1479,8 +1467,6 @@
     <string name="voices">Галасавыя падказкі</string>
 	<string name="rendering_value_orange_name">Аранжавы</string>
     <string name="rendering_value_americanRoadAtlas_name">Амэрыканскі атлас аўтадарог</string>
-    <string name="routing_attr_no_new_routing_name">Бяз правілаў маршрутызацыі v1.9</string>
-    <string name="routing_attr_no_new_routing_description">Не выкарыстоўваць правілы маршрутызацыі ўведзеныя ў v1.9.</string>
     <string name="rendering_value_default_name">Па змоўчаньні</string>
     <string name="rendering_attr_roadStyle_name">Стыль аўтадарог</string>
     <string name="show_pedestrian_warnings">Пешаходныя пераходы</string>
@@ -1589,12 +1575,9 @@
 	<string name="shared_string_add_to_favorites">Дадаць да Ўлюбёных</string>
 	
 	<string name="shared_string_my_places">Мае мясьціны</string>
-	
-	
-	<string name="shared_string_audio">Аўдыё</string>
-    <string name="shared_string_photo">Фота</string>
 
-	<string name="route_points">Пункты маршруту</string>
+
+    <string name="route_points">Пункты маршруту</string>
 	<string name="shared_string_more_actions">Больш дзеяньняў</string>
 
     <string name="osmand_parking_hour">г</string>
@@ -1949,7 +1932,6 @@
     <string name="update_now">Абнавіць зараз</string>
 <string name="missing_write_external_storage_permission">Праграма не мае дазволу на выкарыстаньне SD карткі</string>
 <string name="no_location_permission">Праграма не мае дазволу на выкарыстаньне GPS.</string>
-    <string name="no_camera_permission">Праграма не мае дазволу на выкарыстаньне камэры.</string>
     <string name="no_microphone_permission">Праграма не мае дазволу на выкарыстаньне мікрафону.</string>
     <string name="available_maps">Даступныя мапы</string>
     <string name="shared_string_sound">Гук</string>
@@ -1982,7 +1964,6 @@
     <string name="number_of_contributors">Колькасьць удзельнікаў</string>
     <string name="number_of_edits">Колькасьць правак</string>
     <string name="show_polygons">Паказваць палігоны</string>
-    <string name="find_parking">Знайсьці паркоўку</string>
     <string name="shared_string_status">Стан</string>
     <string name="shared_string_save_changes">Захаваць зьмены</string>
     <string name="shared_string_email_address">E-mail адрас</string>
@@ -2408,25 +2389,10 @@
     <string name="display_zoom_level">Узровень маштабавання паказу: %1$s</string>
     <string name="route_is_too_long_v2">Гэты маршрут, магчыма, занадта вялікі для разьліку. Калі ласка, дадайце прамежкавыя пункты, калі разьлік не завяршыўся цягам 10 хвілін.</string>
     <string name="save_poi_too_many_uppercase">Назва змяшчае занадта шмат вялікіх літар. Вы хочаце прадоўжыць?</string>
-    <string name="mapillary">Mapillary</string>
-    <string name="mapillary_widget">Віджэт Mapillary</string>
-    <string name="mapillary_widget_descr">Дазваляе вам хуткі ўнёсак ў Mapillary.</string>
-    <string name="mapillary_descr">Вулічныя фота анлайн для кожнага. Адкрывайце для сябе месцы, дапамагайце, здымайце свет.</string>
     <string name="shared_string_add_photos">Дадаць фатаграфій</string>
-    <string name="mapillary_action_descr">Падзяліцца сваімі вулічнымі відамі гэтай мясцовасці праз Mapillary.</string>
-    <string name="osmand_extended_description_part6">"Шпацыры, паходы, экскурсіі • Мапа паказвае пешаходныя сцежкі • Вікіпедыя ўпадабанай мовай распавядзе вам шмат чаго цікавага падчас экскурсіі • Прыпынкі грамадскага транспарту (аўтобус, травай, цягнік), уключаючы назвы маршрутаў, дапамогуць арыентавацца ў новым горадзе •  GPS-навігацыя ў пешаходным рэжыме вылічвае маршрут, выкарыстоўваючы пешаходныя сцежкі • Вы можаце загрузіць і прытрымлівацца GPX-маршрута або запісаць і дзяліцца сваім уласным"</string>
-    <string name="osmand_extended_description_part7">Удзел у OSM • Паведамленне аб памылках • Загрузка GPX-трэкаў у OSM проста з праграмы • Дадаванне цікавых кропак (POI) і загрузка іх у OSM (ці пазней, калі афлайн)</string>
     <string name="online_photos">Анлайн-фатаграфіі</string>
     <string name="no_photos_descr">Мы не маем фатаграфій для гэтага месца.</string>
-    <string name="plugin_mapillary_descr">Вулічныя фатаграфіі для ўсіх. Адкрывайце для сябе месцы, дапамагайце, здымайце свет.</string>
-    <string name="osmand_plus_extended_description_part7">Непасрэдны ўклад у OSM • Заявы аб памылках у даных • Загрузка GPX-трэкаў у OSM проста з праграмы • Дадаванне цікавых кропак (POI) і непасрэдная загрузка іх у OSM (ці пазней, як афлайн) • Магчымасць запісу падарожжа ў фонавым рэжыме (у той час, як прылада знаходзіцца ў спячым рэжыме) OsmAnd — адкрытае праграмнае забяспячэнне ў актыўнай распрацоўцы. Кожны можа ўнесці ўклад паведамляючы аб памылках, паляпшаючы пераклад ці распрацоўваючы новыя мажлівасці. Праект знаходзіцца ў жвавым стане безперапыннага ўдасканалення форм узаемадзеяння распрацоўнікаў і карыстальнікаў. Ход праекта залежыць таксама ад фінансавых унёскаў для забяспячэння прадаўжэння кадавання і тэставання новай функцыянальнасці.</string>
     <string name="shared_string_install">Усталяваць</string>
-    <string name="improve_coverage_mapillary">Палепшыць фота-пакрыццё Mapillary</string>
-    <string name="improve_coverage_install_mapillary_desc">Вы можаце зрабіць уласныя фатаграфіі ці падборку фатаграфій і дадаць іх да гэтага месца на мапе.
-\n
-\nКаб зрабіць так, неабходна ўсталяваць Mapillary з Google Play.</string>
-    <string name="open_mapillary">Адкрыць Mapillary</string>
-    <string name="mapillary_image">Выява Mapillary</string>
     <string name="distance_moving">Дыстанцыя папраўленая</string>
     <string name="shared_string_permissions">Дазволы</string>
     <string name="import_gpx_failed_descr">OsmAnd не можа імпартаваць файл. Калі ласка, праверце, ці мае OsmAnd дазволы на чытаньне файла з гэтага каталёга.</string>
@@ -2434,16 +2400,7 @@
     <string name="map_widget_ruler_control">Лінейка прамянёвая</string>
     <string name="wrong_user_name">Няправільнае імя карыстальніка!</string>
     <string name="shared_string_to">Да</string>
-    <string name="mapillary_menu_date_from">Ад</string>
-    <string name="mapillary_menu_descr_dates">Паглядзець толькі даданыя выявы</string>
-    <string name="mapillary_menu_title_dates">Дата</string>
-    <string name="mapillary_menu_edit_text_hint">Увядзіце імя карыстальніка</string>
-    <string name="mapillary_menu_descr_username">Паглядзець толькі выявы даданыя</string>
-    <string name="mapillary_menu_title_username">Імя карыстальніка</string>
-    <string name="mapillary_menu_filter_description">Вы можаце фільтраваць выявы па адпраўніку ці даце. Фільтры ўжываюцца толькі для буйнога павелічэння.</string>
     <string name="shared_string_reload">Абнавіць</string>
-    <string name="mapillary_menu_descr_tile_cache">Абнавіць фрагменты, каб убачыць актуальныя даныя.</string>
-    <string name="mapillary_menu_title_tile_cache">Кэш фрагментаў</string>
     <string name="shared_string_reset">Скінуць</string>
     <string name="store_tracks_in_monthly_directories">Захаваць запісаныя сьляды ў месячных тэчках</string>
     <string name="store_tracks_in_monthly_directories_descrp">Захаваць запісаныя сьляды ў падтэчкі на аснове месяца запісу (напрыклад, 2017-01).</string>
@@ -2465,7 +2422,6 @@
     <string name="quick_action_start_stop_navigation_descr">Націсніце гэтую кнопку, каб пачаць або скончыць навігацыю.</string>
     <string name="live_monitoring_max_interval_to_send">Час буферызацыі для анлайн сачэньня</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Задае час буферызацыі для зьберажэньня месцаў для адпраўкі без злучэньня</string>
-    <string name="mappilary_no_internet_desc">Вам патрэбен Інтэрнэт для прагляду фатаграфій з Mapillary.</string>
     <string name="retry">Паўтарыць</string>
     <string name="add_gpx_waypoint_bottom_sheet_title">Дадаць GPX-кропку</string>
     <string name="shared_string_create">Стварыць</string>

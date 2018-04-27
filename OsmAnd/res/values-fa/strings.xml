@@ -41,8 +41,6 @@
     <string name="stop_routing_confirm">آیا راهبری را قطع می‌کنید؟</string>
     <string name="clear_dest_confirm">آیا برای پاک‌کردن مقصد (و مقصدهای بین‌راهی) مطمئن هستید؟</string>
     <string name="intermediate_points_change_order">تغییر ترتیب</string>
-    <string name="av_use_external_camera_descr">برای عکس‌گرفتن از برنامهٔ خود دستگاه استفاده کن.</string>
-    <string name="av_use_external_camera">از برنامهٔ دوربین استفاده کن</string>
     <string name="recording_context_menu_play">پخش</string>
     <string name="shared_string_control_stop">توقف</string>
     <string name="shared_string_control_start">شروع</string>
@@ -519,11 +517,9 @@
 	<string name="avoid_motorway">اجتناب از آزادراه‌ها</string>
 	<string name="snap_to_road_descr">در طول راهبری، موقعیت را به جاده‌ها بچسبان.</string>
 	<string name="snap_to_road">چسبیدن به راه</string>
-    <string name="osmand_short_description_80_chars">برنامهٔ همراه برای مشاهدهٔ نقشه جهانی و راهبری با نقشه‌های آفلاین و آنلاین OSM</string>
-    <string name="osmand_plus_short_description_80_chars">برنامهٔ همراه برای مشاهدهٔ نقشهٔ جهانی و راهبری با نقشه‌های آفلاین و آنلاین OSM</string>
-	
-	
-	<string name="filterpoi_activity">ایجاد فیلتر برای POI</string>
+
+
+    <string name="filterpoi_activity">ایجاد فیلتر برای POI</string>
     <string name="distance_measurement_finish_subtrack">شروع‌کردن یک زیرمسیر جدید</string>
     <string name="use_kalman_filter_compass_descr">اغتشاشات قطب‌نما را کاهش می‌دهد اما اینرسی را بیشتر می‌کند.</string>
     <string name="monitoring_settings">ضبط مسیر</string>
@@ -534,8 +530,6 @@
 	<string name="prefer_motorways">ترجیح‌دادن آزادراه‌ها</string>
 	<string name="prefer_in_routing_descr">آزادراه‌ها را ترجیح می‌دهم.</string>
     <string name="precise_routing_mode_descr">این را فعال کنید تا مسیرها دقیق و بدون اشکال محاسبه شوند. البته این حالت محدودیت مسافت دارد و کُند است.</string>
-    <string name="av_def_action_picture">عکس‌گرفتن</string>
-    <string name="dropbox_plugin_description">با افزونهٔ دراپ‌باکس مسیرها و یادداشت‌های صوتی/تصویری را با حساب دراپ‌باکس خود همگام کنید.</string>
     <string name="av_widget_action_descr">عملکرد پیش‌فرض ابزارک را انتخاب کنید.</string>
     <string name="recording_delete_confirm">آیا این مورد ضبط‌شده را پاک می‌کنید؟</string>
     <string name="use_magnetic_sensor_descr">برای مقدار قطب‌نما به‌جای حسگر جهتی از حسگر مغناطیسی استفاده کن.</string>
@@ -593,15 +587,12 @@
     <string name="map_widget_vector_attributes">خصوصیات رندر نقشه</string>
 
 
-    <string name="av_camera_focus">نوع فوکوس دوربین</string>
-	<string name="av_camera_focus_descr">نوع فوکوس داخلی دوربین را انتخاب کنید.</string>
-	<string name="av_camera_focus_auto">فوکوس خودکار</string>
+    <string name="av_camera_focus_auto">فوکوس خودکار</string>
 	<string name="av_camera_focus_hiperfocal">فوکوس فراکانونی</string>
 	<string name="av_camera_focus_edof">عمق میدان گسترده (EDOF)</string>
 	<string name="av_camera_focus_infinity">فوکوس بر روی بینهایت تنظیم شده است</string>
 	<string name="av_camera_focus_macro">فوکوس ماکرو (از نزدیک)</string>
-	<string name="av_camera_focus_continuous">دوربین، پیوسته وضوح را تنظیم می‌کند</string>
-	<string name="choose_intersected_street">تقاطع را انتخاب کنید</string>
+    <string name="choose_intersected_street">تقاطع را انتخاب کنید</string>
 	<string name="osm_settings">ویرایش نقشهٔ OSM</string>
 	<string name="save_current_track_descr">مسیر جاری را همین الآن روی کارت حافظه ذخیره کن.</string>
 	<string name="save_current_track">ذخیرهٔ مسیر GPX جاری</string>
@@ -1465,17 +1456,13 @@
     <string name="arrival_distance_factor_normally">معمولی</string>
     <string name="arrival_distance_factor_late">دیر</string>
     <string name="arrival_distance_factor_at_last">در چند متر آخر</string>
-    <string name="av_camera_pic_size">اندازهٔ عکس دوربین</string>
-	<string name="av_camera_pic_size_descr">اندازهٔ عکس دوربین داخلی را انتخاب کنید.</string>
-    
 
-	
-	<string name="rename_failed">تغییر نام انجام نشد.</string>
+
+    <string name="rename_failed">تغییر نام انجام نشد.</string>
 	<string name="days_behind">روز قبل</string>
 	<string name="shared_string_currently_recording_track">مسیر در حال ضبط</string>
 	<string name="back_to_map">برگشتن به نقشه</string>
 	<string name="plugin_touringview_name">نمای گشتی نقشه</string>
-	<string name="shared_string_audio">صدا</string>
 
 
     <string name="location_on_map">موقعیت:
@@ -1524,7 +1511,6 @@
     <string name="dash_download_new_one">دانلود نقشهٔ جدید</string>
     <string name="dash_download_msg">شما %1$s نقشه دانلود کرده‌اید</string>
     <string name="dash_download_msg_none">آیا می‌خواهید نقشه‌های آفلاین را دانلود کنید؟</string>
-    <string name="routing_attr_no_new_routing_description">از قوائد مسیریابی معرفی‌شده در نسخهٔ ۱٫۹ استفاده نکن.</string>
     <string name="rendering_value_americanRoadAtlas_name">اطلس راه‌های آمریکایی</string>
     
     <string name="impassable_road">اجتناب از راه‌های…</string>
@@ -1568,7 +1554,6 @@
     <string name="traffic_warning_pedestrian">گذرگاه پیاده</string>
 	<string name="show_railway_warnings">تقاطع‌های ریلی</string>
 	<string name="show_pedestrian_warnings">گذرگاه‌های پیاده</string>
-    <string name="routing_attr_no_new_routing_name">استفاده‌نکردن از قوائد مسیریابی نسخهٔ ۱٫۹</string>
     <string name="rendering_attr_transportStops_name">ایستگاه‌های حمل‌ونقل</string>
     <string name="navigate_point_northing">به‌طرف شمال</string>
     <string name="navigate_point_easting">به‌طرف شرق</string>
@@ -1652,8 +1637,7 @@
 	<string name="shared_string_deselect_all">پاک‌کردن همهٔ انتخاب‌ها</string>
 	<string name="shared_string_unexpected_error">خطای غیرمنتظره رخ داد</string>
 	<string name="shared_string_address">نشانی</string>
-    <string name="shared_string_photo">عکس</string>
-	<string name="route_points">نقاط مسیر</string>
+    <string name="route_points">نقاط مسیر</string>
 	<string name="track_segments">قطعات مسیر</string>
 	<string name="track_points">نقاط مسیر</string>
 	<string name="free">آزاد %1$s</string>
@@ -2065,7 +2049,6 @@
     <string name="select_voice_provider_descr">راهنمای صوتی زبان خودتان را انتخاب یا دانلود کنید.</string>
     <string name="impassable_road_desc">جاده‌هایی را انتخاب نمایید که می‌خواهید در مسیریابی از آن‌ها اجتناب کنید.</string>
     <string name="no_location_permission">برنامه اجازهٔ دسترسی به موقعیت مکانی را ندارد.</string>
-    <string name="no_camera_permission">برنامه اجازهٔ دسترسی به دوربین را ندارد.</string>
     <string name="no_microphone_permission">برنامه اجازهٔ دسترسی به میکروفون را ندارد.</string>
     <string name="route_distance">مسافت:</string>
     <string name="route_duration">مدت‌زمان:</string>
@@ -2334,7 +2317,6 @@
     <string name="quick_action_btn_tutorial_title">تغییردادن جای دکمه</string>
     <string name="quick_action_btn_tutorial_descr">دکمه را لمس کنید و نگه دارید تا جای آن را روی صفحه عوض کنید.</string>
     <string name="shared_string_action_name">نام عملیات</string>
-    <string name="mappilary_no_internet_desc">برای اینکه تصاویر مَپیلاری را ببینید به اینترنت نیاز دارید.</string>
     <string name="retry">تلاش مجدد</string>
     <string name="add_line">افزودن خط</string>
     <string name="empty_state_favourites">افزودن نقاط برگزیده</string>
@@ -2379,36 +2361,15 @@
     <string name="none_point_error">لطفاً حداقل یک نقطه اضافه کنید.</string>
     <string name="quick_action_resume_pause_navigation_descr">برای مکث‌کردن در/ادامه‌دادن به راهبری این دکمه را لمس کنید.</string>
     <string name="quick_action_start_stop_navigation_descr">این دکمه را لمس کنید تا راهبری را شروع کنید یا پایان دهید.</string>
-    <string name="mapillary_menu_descr_tile_cache">کاشی‌ها را مجدداً بارگیری کنید تا اطلاعات به‌روز را ببینید.</string>
-    <string name="mapillary_menu_title_tile_cache">حافظهٔ کاشی‌ها</string>
     <string name="wrong_user_name">نام کاربری اشتباه است!</string>
     <string name="shared_string_to">تا</string>
-    <string name="mapillary_menu_date_from">از</string>
-    <string name="mapillary_menu_descr_dates">فقط تصاویری که در بازهٔ زمانی زیر اضافه شده است</string>
-    <string name="mapillary_menu_title_dates">تاریخ</string>
-    <string name="mapillary_menu_edit_text_hint">نام کاربری را بنویسید</string>
-    <string name="mapillary_menu_descr_username">فقط تصاویری که کاربر زیر اضافه کرده است</string>
-    <string name="mapillary_menu_title_username">نام کاربری</string>
-    <string name="mapillary_menu_filter_description">می‌توانید تصاویر را بر اساس تاریخ یا ارسال‌کنندهٔ آن فیلتر کنید. فیلترها فقط برای زوم نزدیک کار می‌کند.</string>
     <string name="map_widget_ruler_control">خط‌کش شعاعی</string>
     <string name="shared_string_permissions">مجوزها</string>
     <string name="import_gpx_failed_descr">‏OsmAnd نمی‌تواند فایل را وارد کند. لطفاً بررسی کنید OsmAnd اجازهٔ خواندن فایل را داشته باشد.</string>
-    <string name="mapillary_image">تصویر مپیلاری</string>
-    <string name="open_mapillary">بازکردن مپیلاری</string>
     <string name="shared_string_install">نصب</string>
-    <string name="improve_coverage_mapillary">با مَپیلاری پوشش تصویری را بهتر کنید</string>
-    <string name="improve_coverage_install_mapillary_desc">خودتان عکس بگیرید و سپس تصاویر یا رشته‌تصاویر خود را به این مکان از نقشه ضمیمه کنید. 
-\n 
-\nبرای این کار باید برنامهٔ Mapillary را از طریق فروشگاه Play نصب کنید.</string>
     <string name="online_photos">تصاویر آنلاین</string>
     <string name="shared_string_add_photos">افزودن تصویر</string>
     <string name="no_photos_descr">برای این مکان تصویری نداریم.</string>
-    <string name="mapillary_action_descr">نماهای خیابانی این مکان را به‌وسیلهٔ مپیلاری به‌اشتراک بگذارید.</string>
-    <string name="mapillary_widget">ابزارک مپیلاری</string>
-    <string name="mapillary_widget_descr">به‌وسیلهٔ این ابزارک با مپیلاری سریع‌تر کار کنید.</string>
-    <string name="mapillary_descr">تصاویر خیابانی آنلاین برای همه. مکان‌ها را کشف کنید، همکاری کنید و جهان را به‌تصویر درآورید.</string>
-    <string name="mapillary">مپیلاری</string>
-    <string name="plugin_mapillary_descr">تصاویر خیابانی آنلاین برای همه. مکان‌ها را کشف کنید، همکاری کنید و جهان را به‌تصویر درآورید.</string>
     <string name="private_access_routing_req">مقصد شما در ناحیه‌ای با دسترسی خصوصی قرار دارد. آیا دسترسی به مسیرهای خصوصی برای این سفر مجاز شود؟</string>
     <string name="restart_search">شروع مجدد جست‌وجو</string>
     <string name="nothing_found">چیزی پیدا نشد :(</string>
@@ -2444,7 +2405,6 @@
     <string name="save_track_min_speed_descr">فیلتر: کمترین سرعتی که یک نقطه باید داشته باشد تا ثبت شود.</string>
     <string name="save_track_min_distance_descr">فیلتر: کمترین مسافتی که یک نقطه باید از موقعیت قبلی داشته باشد تا ثبت شود.</string>
     <string name="save_track_precision_descr">فیلتر: کمترین دقتی که یک نقطه باید داشته باشد تا ثبت شود.</string>
-    <string name="find_parking">پیداکردن پارکینگ</string>
     <string name="add_time_span">افزودن بازهٔ زمانی</string>
     <string name="shared_string_undo_all">خنثی‌کردن همه</string>
     <string name="auto_split_recording_title">بخش‌بندی خودکار ضبط‌ها پس از وقفه</string>
@@ -2554,12 +2514,7 @@
 \nبرای استفاده از این نما لازم نیست نقشهٔ خاصی را دانلود کنید. این نما بر اساس نقشه‌های استاندارد ایجاد می‌شود.
 \n
 \nبرای غیرفعال‌کردن این نما دو راه دارید: از همین‌جا غیرفعالش کنید یا اینکه به این قسمت بروید: منو ← پیکربندی نقشه ← سبک نقشه؛ سپس سبک دیگری را انتخاب کنید.</string>
-    <string name="osmand_extended_description_part6">پیاده‌روی، پیاده‌گردی و گردش در شهر • نقشه مسیرهای پیاده‌روی و پیاده‌گردی را نشانتان می‌دهد • هنگام گشت‌زدن در شهر، از طریق ویکی‌پدیا اطلاعات مفیدی در مورد مکان‌ها به‌دست آورید (به زبان خودتان) • ایستگاه‌های حمل‌ونقل عمومی (اتوبوس، تراموا، قطار)، همراه با نام خطوط، در شهرهای جدید کمک‌دست شما خواهند بود • راهبری GPS در حالت پیاده مسیرتان را بر اساس راه‌های پیاده محاسبه می‌کند • می‌توانید یک مسیر GPX را دنبال کنید یا اینکه مسیر خودتان را ضبط کنید و به‌اشتراک بگذارید</string>
-    <string name="osmand_extended_description_part7">مشارکت در نقشهٔ باز شهری (OSM) • گزارش مشکل در داده‌ها • آپلود مسیرهای GPX به OSM مستقیماً از طریق برنامه • افزودن مکان‌ها (POI) و آپلود مستقیم آن‌ها در نقشه</string>
     <string name="wrong_format">قالب نادرست</string>
-    <string name="osmand_plus_extended_description_part7">مشارکت مستقیم در نقشهٔ باز شهری (OSM) • گزارش مشکل در داده‌ها • آپلود مسیرهای GPX به OSM مستقیماً از طریق برنامه • افزودن مکان‌ها (POI) و آپلود مستقیم آن‌ها در نقشه • ضبط اختیاری سفر حتی در پس‌زمینه (هنگامی که دستگاه در حالت خواب است)
-\nنرم‌افزار OsmAnd متن‌باز است و فعالانه در حال توسعهٔ آن هستیم. راه مشارکت در توسعهٔ OsmAnd هم به‌روی همه باز است؛ از طریق گزارش مشکلات برنامه، بهترکردن ترجمهٔ برنامه یا کدنویسی برای قابلیت‌های جدید. هم‌اکنون این پروژه با بهبودهای مستمرِ توسعه‌دهندگان و کاربران در همهٔ این زمینه‌ها، در وضعیت پویایی قرار دارد.
-\nهمچنین بخشی از پیشرفت پروژه متکی به هدایای مالی شماست که در راستای سرمایه‌گذاری برای توسعه و آزمایش قابلیت‌های جدید نرم‌افزار صرف می‌شود.</string>
     <string name="number_of_rows_in_dash">تعداد ردیف‌ها در هر صفحه %1$s</string>
     <string name="wrong_input">ورودی نادرست</string>
 	<string name="enter_new_name">نام جدیدی بنویسید</string>

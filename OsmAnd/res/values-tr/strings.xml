@@ -48,11 +48,9 @@
 	<string name="select_navigation_mode">Ulaşım modunu seç</string>
 	
 	<string name="day_night_info">Gündüz/gece bilgisi</string>
-	
-	<string name="osmand_short_description_80_chars">Küresel Mobil Harita Görüntüleme ve Yolbul için Çevrim Dışı ve Çevrim İçi OSM Haritaları</string>
-	
-	
-	<string name="map_widget_view_direction">Görüntüleme yönü</string>
+
+
+    <string name="map_widget_view_direction">Görüntüleme yönü</string>
 	
 	<string name="bg_service_sleep_mode_off">Aktifleştir\nUygulamayı arka planda</string>
 	<string name="bg_service_sleep_mode_on">Durdur\nArka planda çalışan Uygulamayı</string>
@@ -88,8 +86,6 @@
     <string name="stop_routing_confirm">Navigasyonu durdurmak istediğinize emin misiniz?</string>
     <string name="clear_dest_confirm">Varış noktasını silmek istediğinizden emin misiniz (ve ara hedefler)?</string>
     <string name="precise_routing_mode">Hassas yönlendirme (alfa)</string>
-	<string name="av_def_action_picture">Fotoğraf çek</string>
-	<string name="dropbox_plugin_description">Dropbox eklentisi, yol tariflerini ve ses/video notlarını dropbox hesabınızla eşitlemenize olanak verir.</string>
     <string name="dropbox_plugin_name">Dropbox eklentisi</string>
     
     <string name="intermediate_points_change_order">Sıralamayı değiştir</string>
@@ -100,9 +96,7 @@
     
     
     <string name="precise_routing_mode_descr">Glitches olmadan kesin yolları hesaplamak için etkinleştirin. Yine uzaktan sınırlı ve yavaş.</string>
-    <string name="av_use_external_camera_descr">Fotoğraflar için sistem uygulamasını kullan.</string>
-    <string name="av_use_external_camera">Kamera uygulamasını kullan</string>
-	<string name="recording_delete_confirm">Bu kaydı silmek istiyor musunuz?</string>
+    <string name="recording_delete_confirm">Bu kaydı silmek istiyor musunuz?</string>
 
 	<string name="shared_string_control_stop">Durdur</string>
     <string name="shared_string_control_start">Başlat</string>
@@ -137,9 +131,7 @@
 	<string name="snap_to_road_descr">Navigasyon sırasında konumu yola uydur.</string>
 	<string name="snap_to_road">Yola tuttur</string>
 
-	<string name="osmand_plus_short_description_80_chars">Küresel Mobil Harita Görüntüleme &amp; Yolbul için Çevrim Dışı ve Çevrim İçi OSM Haritaları</string>
-
-	<string name="day_night_info_description">Gün doğumu:%1$s
+    <string name="day_night_info_description">Gün doğumu:%1$s
 \nGün batımı:%2$s</string>
 	<string name="map_widget_vector_attributes">Öznitelikleri oluşturma</string>
 	<string name="map_widget_renderer">Harita tarzı</string>
@@ -917,14 +909,11 @@
 	<string name="edit_filter_delete_dialog_title">Seçilen süzgeç silinsin mi?</string>
 	<string name="edit_filter_delete_message">{0} süzgeci silindi</string>
 	<string name="edit_filter_create_message">{0} süzgeci oluşturuldu</string>
-	<string name="av_camera_focus">Kamera odaklama tipi</string>
-	<string name="av_camera_focus_descr">Dahili kamera odaklama tipini seçin</string>
-	<string name="av_camera_focus_auto">Kendiliğinden odaklama</string>
+    <string name="av_camera_focus_auto">Kendiliğinden odaklama</string>
 	<string name="av_camera_focus_edof">Genişletilmiş alan derinliği (EDOF)</string>
 	<string name="av_camera_focus_infinity">Sonsuzlukta odaklansın</string>
 	<string name="av_camera_focus_macro">Makro (yakın çekim) odak kipi</string>
-	<string name="av_camera_focus_continuous">Kamera devamlı odaklamaya çalışıyor</string>
-	<string name="basemap_missing">Küçük yakınlaştırmalarda tüm dünyayı kaplayan temel dünya haritası eksik. Tam deneyim için lütfen World_basemap_x.obf indirin.</string>
+    <string name="basemap_missing">Küçük yakınlaştırmalarda tüm dünyayı kaplayan temel dünya haritası eksik. Tam deneyim için lütfen World_basemap_x.obf indirin.</string>
 	<string name="local_index_no_items_to_do">%1$s\'a öğe yok</string>
 	<string name="tts_language_not_supported">Seçtiğiniz dil yüklü olan Android TTS (yazıdan-sese) motoru tarafından desteklenmiyor. Mağazada başka TTS motoruna bakmak ister misiniz? Aksi halde önceden yüklenen TTS dili kullanılacak.</string>
 	<string name="gpx_option_reverse_route">GPX yönünü tersine çevir</string>
@@ -1099,9 +1088,7 @@
 	<string name="shared_string_my_location">Konumum</string>
 	<string name="shared_string_my_places">Yerlerim</string>
 	<string name="shared_string_my_favorites">Favorilerim</string>
-	<string name="shared_string_audio">Ses</string>
-    <string name="shared_string_photo">Fotoğraf</string>
-	<string name="days_behind">gün geride</string>
+    <string name="days_behind">gün geride</string>
 	<string name="back_to_map">Haritaya dön</string>
     <string name="watch">İzle</string>
 	<string name="notes">Notlar</string>
@@ -1380,8 +1367,6 @@
 	<string name="poi_dialog_other_tags_message">Tüm diğer etiketler korunur</string>
 	<string name="default_buttons_commit">İşlemek</string>
 	<string name="av_camera_focus_hiperfocal">Hiperodak odak</string>
-	<string name="av_camera_pic_size">Kamera Resim Boyutu</string>
-	<string name="av_camera_pic_size_descr">İç kamera Resim Boyutu seçin</string>
     <string name="navigation_intent_invalid">Geçersiz format:%s</string>
 	<string name="plugin_description_title">Açıklama</string>
 	<string name="plugin_install_needs_network">Bu eklentiyi yüklemek için bir internet bağlantısına ihtiyacınız vardır.</string>
@@ -1745,8 +1730,6 @@
     <string name="traffic_warning_railways">Demiryolu geçidi</string>
     <string name="show_railway_warnings">Demiryolu geçitleri göster</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerikan yol atlası</string>
-    <string name="routing_attr_no_new_routing_name">Hiçbir v1.9 yönlendirme kuralları</string>
-    <string name="routing_attr_no_new_routing_description">V1.9 tanıtılan yönlendirme kuralları kullanmayın</string>
     <string name="rendering_attr_transportStops_name">Ulaşım durakları</string>
 
     <string name="navigate_point_zone">Bölge</string>
@@ -1864,7 +1847,6 @@
     <string name="no_location_permission">App\'in konum verilerine erişme izni yok.</string>
     <string name="live_updates">Canlı güncellemeler</string>
     <string name="available_maps">Mevcut haritalar</string>
-    <string name="no_camera_permission">App\'in kameraya erişmek için izni yok.</string>
     <string name="no_microphone_permission">App\'in mikrofona erişmek için izni yok.</string>
     <string name="last_update">Son güncelleme:% s</string>
     
@@ -1905,8 +1887,7 @@
     <string name="shared_string_read_more">Devamını oku</string>
     
     <string name="show_polygons">Çokgenleri göster</string>
-    
-    <string name="find_parking">Park yeri bul</string>
+
     <string name="rendering_attr_showMtbRoutes_name">MTB rotaları göster</string>
     
     <string name="map_marker_1st">İlk harita işaretleyicisi</string>
@@ -2061,14 +2042,8 @@
     <string name="store_tracks_in_monthly_directories_descrp">Kayıtlı parçaları, kayıt ayına (2017-01 gibi) alt klasörler halinde depolayın.</string>
     <string name="shared_string_reset">Reset</string>
     <string name="shared_string_reload">Tekrar yükle</string>
-    <string name="mapillary_menu_descr_tile_cache">Güncel verileri görmek için döşemeleri yeniden yükleyin.</string>
-    <string name="mapillary_menu_title_tile_cache">Karo önbellek</string>
     <string name="wrong_user_name">Yanlış kullanıcı-adı!</string>
     <string name="shared_string_to">Buraya</string>
-    <string name="mapillary_menu_descr_dates">Yalnızca eklenmiş görüntüleri görüntüleyin</string>
-    <string name="mapillary_menu_title_dates">Tarih</string>
-    <string name="mapillary_menu_edit_text_hint">Kullanıcı-adını yazın</string>
-    <string name="mapillary_menu_descr_username">Yalnızca şu kişi tarafından eklenen görüntüler görüntülensin</string>
     <string name="route_point">Rota noktası</string>
     <string name="nearest_cities">En yakındaki şehirler</string>
     <string name="select_city">Şehir seç</string>
@@ -2204,14 +2179,8 @@
     <string name="quick_action_show_navigation_finish_dialog">Navigasyon tamamlandı iletisi göster</string>
     <string name="quick_action_start_stop_navigation">Navigasyonu başlat/durdur</string>
     <string name="quick_action_start_stop_navigation_descr">Navigasyonu başlatmak ya da sonlandırmak için bu düğmeye tıklayınız.</string>
-    <string name="mapillary_menu_date_from">Buradan</string>
-    <string name="mapillary_menu_title_username">Kullanıcı adı</string>
     <string name="shared_string_permissions">İzinler</string>
     <string name="import_gpx_failed_descr">OsmAnd dosyayı içe aktaramıyor. Lütfen OsmAnd\'ın dosyanın konumundan okuma izni olduğunu kontrol ediniz.</string>
-    <string name="improve_coverage_mapillary">Mapillary ile fotoğraf kapsama alanını geliştir</string>
-    <string name="improve_coverage_install_mapillary_desc">Kendi fotoğraflarınızı ya da bir dizi fotoğrafınızı çekebilir ve bu harita lokasyonuna ekleyebilirsiniz. 
-\n 
-\nBunu yapabilmek için Google Play Store\'dan Mapillary uygulamasını kurmalısınız.</string>
     <string name="online_photos">Çevrim-içi fotoğraflar</string>
     <string name="shared_string_add_photos">Fotoğraf ekle</string>
     <string name="no_photos_descr">Bu lokasyon için fotoğrafa sahip değiliz.</string>
@@ -2278,15 +2247,7 @@
     <string name="none_point_error">Lütfen en az bir nokta ekleyiniz.</string>
     <string name="measurement_tool_action_bar">Haritayı görüntüle ve nokta ekle</string>
     <string name="store_tracks_in_monthly_directories">Kaydedilmiş track\'ları aylık klasörlerde depola</string>
-    <string name="mapillary_menu_filter_description">Resimleri yükleyicisine göre veya tarihe göre süzebilirsiniz. Süzgeçler yalnızca yakınlaştırılmış görüntü yaklaştırmada uygulanır.</string>
     <string name="distance_moving">Düzeltilmiş uzaklık</string>
-    <string name="mapillary_image">Mapillary görüntüsü</string>
-    <string name="open_mapillary">Mapillary\'yi aç</string>
-    <string name="mapillary_widget">Mapillary widget\'ı</string>
-    <string name="mapillary_widget_descr">Mapillary\'ye hızlıca katkıda bulunmanıza imkan verir.</string>
-    <string name="mapillary_descr">Herkes için sokak seviyesinde fotoğraflar. Yerler keşfedin, katkıda bulunun, dünyayı yakalatın.</string>
-    <string name="mapillary">Mapillary</string>
-    <string name="plugin_mapillary_descr">Herkes için sokak seviyesinde fotoğraflar. Yerler keşfedin, katkıda bulunun, dünyayı yakalayın.</string>
     <string name="routing_attr_allow_motorway_name">Otoyollara izin ver</string>
     <string name="routing_attr_allow_motorway_description">Otoyollara izin ver.</string>
     <string name="upload_poi">POI yükleyin</string>
@@ -2313,7 +2274,6 @@
     <string name="add_point_before">Öncesinde nokta ekle</string>
     <string name="add_point_after">Sonrasında nokta ekle</string>
     <string name="map_widget_ruler_control">Yarıçap cetveli</string>
-    <string name="mapillary_action_descr">Mapillary aracılığıyla, bu konuma ait kendi sokak seviyesi görüntülerinizle katkıda bulunun.</string>
     <string name="type_city_town">Şehir ya da kasaba yazınız</string>
     <string name="quick_action_auto_zoom_desc">Aksyion düğmesine basmak hızınıza bağlı olarak otomatik harita görüntü-yakınlaştırma özelliğini açar/kapatır.</string>
     <string name="quick_action_add_first_intermediate">Seyahatteki ilk ara-noktayı ekleyin</string>

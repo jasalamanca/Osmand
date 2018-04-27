@@ -31,31 +31,19 @@ import android.widget.Toast;
 import net.osmand.AndroidUtils;
 import net.osmand.binary.BinaryMapIndexReader;
 import net.osmand.data.Amenity;
-import net.osmand.data.FavouritePoint;
 import net.osmand.data.LatLon;
 import net.osmand.data.PointDescription;
 import net.osmand.data.QuadRect;
 import net.osmand.osm.PoiCategory;
-import net.osmand.plus.FavouritesDbHelper.FavoriteGroup;
-import net.osmand.plus.GPXUtilities.GPXFile;
-import net.osmand.plus.GPXUtilities.WptPt;
 import net.osmand.plus.IconsCache;
-import net.osmand.plus.OsmAndAppCustomization;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.OsmandSettings.OsmandPreference;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.activities.TrackActivity;
 import net.osmand.plus.helpers.FontCache;
-import net.osmand.plus.mapcontextmenu.builders.cards.AbstractCard;
-import net.osmand.plus.mapcontextmenu.builders.cards.CardsRowBuilder;
-import net.osmand.plus.mapcontextmenu.builders.cards.ImageCard;
-import net.osmand.plus.mapcontextmenu.builders.cards.ImageCard.GetImageCardsTask;
-import net.osmand.plus.mapcontextmenu.builders.cards.NoImagesCard;
-import net.osmand.plus.transport.TransportStopRoute;
-import net.osmand.plus.myplaces.FavoritesActivity;
 import net.osmand.plus.render.RenderingIcons;
+import net.osmand.plus.transport.TransportStopRoute;
 import net.osmand.plus.views.TransportStopsLayer;
 import net.osmand.plus.widgets.TextViewEx;
 import net.osmand.util.Algorithms;
@@ -66,10 +54,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import static android.util.TypedValue.COMPLEX_UNIT_DIP;
-import static net.osmand.plus.mapcontextmenu.builders.cards.ImageCard.GetImageCardsTask.*;
 
 public class MenuBuilder {
 
@@ -88,13 +74,9 @@ public class MenuBuilder {
 	private boolean hidden;
 	private boolean showTitleIfTruncated = true;
 	private boolean showNearestWiki = false;
-	private boolean showOnlinePhotos = true;
 	protected List<Amenity> nearestWiki = new ArrayList<>();
 	private List<OsmandPlugin> menuPlugins = new ArrayList<>();
 	private List<TransportStopRoute> routes = new ArrayList<>();
-	private CardsRowBuilder onlinePhotoCardsRow;
-	private List<AbstractCard> onlinePhotoCards;
-
 	private CollapseExpandListener collapseExpandListener;
 
 	private String preferredMapLang;
@@ -282,14 +264,6 @@ public class MenuBuilder {
 		this.showTitleIfTruncated = showTitleIfTruncated;
 	}
 
-	public boolean isShowOnlinePhotos() {
-		return showOnlinePhotos;
-	}
-
-	public void setShowOnlinePhotos(boolean showOnlinePhotos) {
-		this.showOnlinePhotos = showOnlinePhotos;
-	}
-
 	public void setShowNearestWiki(boolean showNearestWiki, long objectId) {
 		this.objectId = objectId;
 		this.showNearestWiki = showNearestWiki;
@@ -318,11 +292,7 @@ public class MenuBuilder {
 			buildPlainMenuItems(view);
 		}
 		buildInternal(view);
-		if (showOnlinePhotos) {
-			buildNearestPhotosRow(view);
-		}
 		buildPluginRows(view);
-//		buildAfter(view);
 	}
 
 	private boolean showTransportRoutes() {
@@ -334,8 +304,6 @@ public class MenuBuilder {
 	}
 
 	void onClose() {
-		onlinePhotoCardsRow = null;
-		onlinePhotoCards = null;
 		clearPluginRows();
 	}
 
@@ -381,66 +349,6 @@ public class MenuBuilder {
 					true, getCollapsableWikiView(view.getContext(), true),
 					false, 0, false, null, false);
 		}
-	}
-
-	protected void buildNearestPhotosRow(View view) {
-		if (!app.getSettings().isInternetConnectionAvailable()) {
-			return;
-		}
-
-		boolean needUpdateOnly = onlinePhotoCardsRow != null && onlinePhotoCardsRow.getMenuBuilder() == this;
-		onlinePhotoCardsRow = new CardsRowBuilder(this, view, false);
-		onlinePhotoCardsRow.build();
-		CollapsableView collapsableView = new CollapsableView(onlinePhotoCardsRow.getContentView(), this,
-				app.getSettings().ONLINE_PHOTOS_ROW_COLLAPSED);
-		collapsableView.setCollapseExpandListener(new CollapseExpandListener() {
-			@Override
-			public void onCollapseExpand(boolean collapsed) {
-				if (!collapsed && onlinePhotoCards == null) {
-					startLoadingImages();
-				}
-			}
-		});
-		buildRow(view, R.drawable.ic_action_photo_dark, null, app.getString(R.string.online_photos), 0, true,
-				collapsableView, false, 1, false, null, false);
-
-		if (needUpdateOnly && onlinePhotoCards != null) {
-			onlinePhotoCardsRow.setCards(onlinePhotoCards);
-		} else if (!collapsableView.isCollapsed()) {
-			startLoadingImages();
-		}
-	}
-
-	private void startLoadingImages() {
-		onlinePhotoCards = new ArrayList<>();
-		onlinePhotoCardsRow.setProgressCard();
-		execute(new GetImageCardsTask(mapActivity, getLatLon(), getAdditionalCardParams(),
-				new GetImageCardsListener() {
-					@Override
-					public void onPostProcess(List<ImageCard> cardList) {
-						processOnlinePhotosCards(cardList);
-					}
-
-					@Override
-					public void onFinish(List<ImageCard> cardList) {
-						if (!isHidden()) {
-							List<AbstractCard> cards = new ArrayList<>();
-							cards.addAll(cardList);
-							if (cardList.size() == 0) {
-								cards.add(new NoImagesCard(mapActivity));
-							}
-							onlinePhotoCardsRow.setCards(cards);
-							onlinePhotoCards = cards;
-						}
-					}
-				}));
-	}
-
-	protected Map<String, String> getAdditionalCardParams() {
-		return null;
-	}
-
-	protected void processOnlinePhotosCards(List<ImageCard> cardList) {
 	}
 
 	protected void buildInternal(View view) {

@@ -27,8 +27,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-//import net.osmand.plus.development.OsmandDevelopmentPlugin;
-
 public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 
 
@@ -71,7 +69,6 @@ public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 			public boolean onPreferenceClick(Preference preference) {
 				getMyApplication().getAppInitializer().resetFirstTimeRun();
 				getMyApplication().getSettings().FIRST_MAP_IS_DOWNLOADED.set(false);
-				getMyApplication().getSettings().MAPILLARY_FIRST_DIALOG_SHOWN.set(false);
 				getMyApplication().getSettings().WEBGL_SUPPORTED.set(true);
 				getMyApplication().getSettings().METRIC_SYSTEM_CHANGED_MANUALLY.set(false);
 				getMyApplication().showToastMessage(R.string.shared_string_ok);

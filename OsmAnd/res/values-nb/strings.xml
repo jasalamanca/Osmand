@@ -42,8 +42,6 @@
     <string name="auto_zoom_map">Auto-zoom kart</string>
     <string name="snap_to_road_descr">Hold posisjon på veien under navigering.</string>
     <string name="snap_to_road">Hold på vei</string>
-    <string name="osmand_short_description_80_chars">Global mobilkartvisning &amp; navigering for offline og nettbaserte OSM-kart</string>
-    <string name="osmand_plus_short_description_80_chars">Global mobilkartvisning &amp; navigering for offline og nettbaserte OSM-kart</string>
     <string name="recalculate_route_to_your_location">Transportmodus:</string>
     <string name="select_navigation_mode">Velg transportmåte</string>
     <string name="day_night_info_description">Soloppgang: %1$s \nSolnedgang: %2$s</string>
@@ -1002,7 +1000,6 @@
 
 
     <string name="stop_routing_confirm">Er du sikker på at du vil stoppe navigeringen?</string>
-    <string name="av_def_action_picture">Ta bilde</string>
     <string name="dropbox_plugin_name">Dropbox-programtillegg</string>
     <string name="monitoring_control_start">GPX</string>
 
@@ -1137,7 +1134,6 @@
     <string name="shared_string_my_places">Mine steder</string>
     <string name="shared_string_my_favorites">Mine favoritter</string>
     <string name="shared_string_my_tracks">Mine spor</string>
-    <string name="shared_string_photo">Foto</string>
 
     <string name="route_points">Rutepunkter</string>
     <string name="shared_string_ellipsis">…</string>
@@ -1204,7 +1200,6 @@
     <string name="local_index_items_restored">%1$d av %2$d element(er) er vellykket aktivert.</string>
     <string name="local_index_no_items_to_do">Aksjon %1$s: Ingen elementer finnes</string>
     <string name="local_index_action_do">%1$s: %2$s element(er). Fortsette?</string>
-    <string name="shared_string_audio">Lyd</string>
     <string name="index_name_netherlands">Europa - Nederland</string>
     <string name="user_name">Ditt OSM-brukernavn</string>
     <string name="user_password">Ditt OSM-passord</string>
@@ -1221,8 +1216,6 @@
     <string name="osb_author_dialog_password">OSM-passord (valgfritt)</string>
     <string name="osb_comment_dialog_author">Forfatternavn</string>
     <string name="av_camera_focus_edof">Utvidet dybdeskarphet (EDOF)</string>
-    <string name="av_camera_pic_size">Bildestørrelse til kamera</string>
-    <string name="av_camera_pic_size_descr">Velg bildestørrelsen for det interne kameraet.</string>
     <string name="action_create">Aksjon opprette</string>
     <string name="action_modify">Aksjon endre</string>
     <string name="action_delete">Aksjon slette</string>
@@ -1443,7 +1436,6 @@
     <string name="map_marker">Kartmarkør</string>
     <string name="rendering_attr_showMtbRoutes_name">Vis terrengsykkelruter</string>
     <string name="show_polygons">Vis polygoner</string>
-    <string name="find_parking">Finn parkeringsplass</string>
     <string name="shared_string_status">Status</string>
     <string name="shared_string_save_changes">Lagre endringer</string>
     <string name="shared_string_email_address">E-postadresse</string>
@@ -1583,7 +1575,6 @@
     <string name="storage_permission_restart_is_required">Nå har programmet lov til å skrive til ekstern lagring. En manuell programomstart kreves.</string>
     <string name="shared_string_undo_all">Angre alle</string>
     <string name="no_location_permission">OsmAnd har ingen tillatelse til å få tilgang til posisjonsdata.</string>
-    <string name="no_camera_permission">OsmAnd har ingen tillatelse til å få tilgang til kameraet.</string>
     <string name="no_microphone_permission">OsmAnd har ingen tillatelse til å få tilgang til mikrofonen.</string>
     <string name="shared_string_hide">Skjul</string>
     <string name="change_markers_position">Endre markørens posisjon</string>
@@ -1825,8 +1816,6 @@
     <string name="notes">Notater</string>
     <string name="navigation_over_track">Starte navigering langs spor?</string>
     <string name="avoid_roads_msg">Du kan utløse en alternativ rute ved å velge veier å unngå</string>
-    <string name="routing_attr_no_new_routing_name">Ingen v1.9-regler for ruteplanlegging</string>
-    <string name="routing_attr_no_new_routing_description">Ikke bruk ruteplanleggingsregler introdusert i v1.9.</string>
     <string name="navigate_point_olc">Open Location Code (OLC)</string>
     <string name="navigate_point_olc_info_invalid">Ugyldig OLC
 \n</string>
@@ -1913,8 +1902,6 @@
     <string name="precise_routing_mode">Presis ruteplanlegging (alfa)</string>
     <string name="av_widget_action_descr">Velg standard miniprogram-handling.</string>
     <string name="av_widget_action">Standard miniprogram-handling</string>
-    <string name="av_use_external_camera_descr">Bruk systemprogrammet til foto.</string>
-    <string name="av_use_external_camera">Bruk kameraprogram</string>
     <string name="rendering_attr_alpineHiking_description">Gjengi stier i henhold til SAC-skalaen.</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Gjengi stier i henhold til OSMC-spor.</string>
 
@@ -2063,10 +2050,6 @@
     <string name="shared_string_reload">Last på nytt</string>
     <string name="wrong_user_name">Feil brukernavn!</string>
     <string name="shared_string_to">Til</string>
-    <string name="mapillary_menu_date_from">Fra</string>
-    <string name="mapillary_menu_title_dates">Dato</string>
-    <string name="mapillary_menu_edit_text_hint">Skriv inn brukernavn</string>
-    <string name="mapillary_menu_title_username">Brukernavn</string>
     <string name="shared_string_reset">Tilbakestill</string>
     <string name="show_on_map_after_saving">Vis på kart etter lagring</string>
     <string name="measurement_tool_action_bar">Se gjennom kartet og legg til punkter</string>
@@ -2090,9 +2073,6 @@
     <string name="quick_action_start_stop_navigation_descr">Trykk på denne knappen for å starte eller avslutte navigeringen.</string>
     <string name="store_tracks_in_monthly_directories">Lagre spor som er tatt opp i månedlige mapper</string>
     <string name="store_tracks_in_monthly_directories_descrp">Lagre spor som er tatt opp, i undermapper per opptaksmåned (f.eks. 2017-01).</string>
-    <string name="mapillary_menu_descr_tile_cache">Last kartfliser på nytt for å se oppdaterte data.</string>
-    <string name="mapillary_menu_title_tile_cache">Kartflis-hurtigbuffer</string>
-    <string name="mapillary_menu_descr_dates">Vis bare bilder lagt til</string>
     <string name="measurement_tool_altitude">Høyde: %1$s</string>
     <string name="measurement_tool_speed">Hastighet: %1$s</string>
     <string name="line">Linje</string>
@@ -2120,19 +2100,10 @@
     <string name="do_not_use_animations_descr">Slår av animasjoner i programmet.</string>
     <string name="keep_showing_on_map">Fortsett å vise på kartet</string>
     <string name="exit_without_saving">Avslutte uten å lagre?</string>
-    <string name="mapillary_menu_descr_username">Vis bare bilder lagt til av</string>
-    <string name="mapillary_image">Mapillary-bilde</string>
-    <string name="open_mapillary">Åpne Mapillary</string>
     <string name="shared_string_install">Installer</string>
-    <string name="improve_coverage_mapillary">Forbedre billeddekningen med Mapillary</string>
     <string name="online_photos">Nettbaserte bilder</string>
     <string name="shared_string_add_photos">Legg til bilder</string>
     <string name="no_photos_descr">Vi har ingen bilder fra dette stedet.</string>
-    <string name="mapillary_action_descr">Bidra med dine egne gatenivåvisninger av dette stedet via Mapillary.</string>
-    <string name="mapillary_widget">Mapillary-miniprogram</string>
-    <string name="mapillary_widget_descr">Lar deg bidra raskt til Mapillary.</string>
-    <string name="mapillary_descr">Nettbaserte bilder på gatenivå for alle. Oppdag steder, samarbeid, fang inn verden.</string>
-    <string name="mapillary">Mapillary</string>
     <string name="restore_purchases">Gjenopprett kjøp</string>
     <string name="do_not_send_anonymous_app_usage">Ikke send anonym bruksstatistikk</string>
     <string name="full_version_thanks">Takk for at du kjøpte fullversjonen av OsmAnd!</string>
@@ -2177,11 +2148,6 @@
     <string name="marker_moved_to_active">Kartmarkør flyttet til aktive</string>
     <string name="shared_string_list">Liste</string>
     <string name="passed">Sist brukt: %1$s</string>
-    <string name="mapillary_menu_filter_description">Du kan filtrere bilder etter innsender eller etter dato. Filtere gjelder kun for høyere zoomnivåer.</string>
-    <string name="improve_coverage_install_mapillary_desc">Du kan ta dine egne bilder eller bildeserier og legge dem til denne kartposisjonen.
-\n
-\nFor å gjøre dette må du installere Mapillary-appen fra Google Play Store.</string>
-    <string name="plugin_mapillary_descr">Foto på gatenivå for alle. Oppdag plasser, samarbeid, fang inn verden.</string>
     <string name="quick_action_showhide_osmbugs_title">Vis/skjul OSM-notater</string>
     <string name="quick_action_osmbugs_show">Vis OSM-notater</string>
     <string name="quick_action_osmbugs_hide">Skjul OSM-notater</string>
@@ -2269,11 +2235,8 @@
     <string name="new_route_calculated_dist">Ny rute beregnet, distanse</string>
     <string name="saving_gpx_tracks">Lagrer GPX-spor til SD-kort…</string>
     <string name="data_settings_descr">Angi språk, last ned/gjeninnlast data.</string>
-    <string name="av_camera_focus">Kameraets fokusmetode</string>
-    <string name="av_camera_focus_descr">Velg fokusmodus for kameraet.</string>
     <string name="av_camera_focus_infinity">Uendelig fokus</string>
     <string name="av_camera_focus_macro">Makrofokus (nærbilde)</string>
-    <string name="av_camera_focus_continuous">Kameraet prøver kontinuerlig å fokusere</string>
     <string name="use_fast_recalculation">Smart omberegning av rute</string>
     <string name="rate_this_app">Vurder dette programmet</string>
     <string name="rate_this_app_long">Gi OsmAnd en poengsum på Google Play</string>
@@ -2303,7 +2266,6 @@
     <string name="quick_action_add_create_items">Opprett elementer</string>
     <string name="quick_action_fav_name_descr">La stå tomt for å automatisk bruke adressen eller stedsnavnet.</string>
     <string name="quick_action_bug_descr">Denne meldingen vil bli auto-fullført i kommentarfeltet.</string>
-    <string name="mappilary_no_internet_desc">Du trenger internett for å vise bilder fra Mapillary.</string>
     <string name="enter_new_name">Oppfør nytt navn</string>
 	<string name="shared_string_back">Tilbake</string>
 	<string name="waypoints_added_to_map_markers">Rutepunkter lagt til kartmarkører</string>
@@ -2383,7 +2345,6 @@
     <string name="download_files_question_space_with_temp">Laste ned {0} fil(er)? Brukt lagringsplass er {3} MB midlertidig, {1} MB permanent. (Tilgjengelig plass er {2} MB.)</string>
     <string name="simulate_initial_startup_descr">Setter flagget som indikerer første programoppstart, alle andre innstillinger forblir uendret.</string>
     <string name="local_osm_changes_backup_successful">OSM-endringsfil opprettet uten problem %1$s</string>
-    <string name="dropbox_plugin_description">Dropbox-tillegget lar deg synkronisere spor og lyd/video-notater med din Dropbox-konto.</string>
     <string name="local_openstreetmap_were_uploaded">{0} interessepunkter/notater opplastet</string>
     <string name="local_openstreetmap_settings">Lokalt lagrede OSM-interessepunkter/notater</string>
     <string name="local_openstreetmap_settings_descr">Vis og behandle OSM-interessepunkter/notater i lokal database.</string>

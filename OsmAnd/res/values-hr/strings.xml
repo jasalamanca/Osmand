@@ -11,12 +11,9 @@
 
     <string name="stop_routing_confirm">Jeste li sigurni da želite zaustaviti navigaciju?</string>
     <string name="clear_dest_confirm">Jeste li sigurni da želite ukloniti odredišnu točku?</string>
-    <string name="av_def_action_picture">Fotografiraj</string>
-    <string name="dropbox_plugin_description">Dropbox dodatak omogućuje sinkronizaciju staza i audio/video zapisa s vašim računom.</string>
     <string name="dropbox_plugin_name">Dodatak Dropbox</string>
     
     <string name="intermediate_points_change_order">Promjeni redoslijed</string>
-    <string name="av_use_external_camera">Koristite aplikaciju kamere</string>
     <string name="recording_delete_confirm">Želite li izbrisati ovaj zapis?</string>
     <string name="recording_context_menu_play">Pokreni</string>
     <string name="shared_string_control_stop">stani</string>
@@ -74,7 +71,6 @@
 	<string name="avoid_motorway">Izbjegavaj autoceste</string>
 	<string name="show_warnings_descr">Konfiguracija prometnih upozorenja (ograničenja brzine, prisilno zaustavljanje, ležeći policajci), kontrola brzine i informacije</string>
 	<string name="auto_zoom_map">Automatsko zumiranje karte</string>
-	<string name="av_use_external_camera_descr">Koristite sistemsku aplikaciju za fotografiranje</string>
     <string name="filterpoi_activity">Stvori POI filter</string>
 	<string name="recalculate_route_to_your_location">Način prijevoza:</string>
 	<string name="select_navigation_mode">Odaberite načina prijevoza</string>
@@ -934,10 +930,8 @@
 	<string name="shared_string_downloading">Preuzimanje</string>
 	<string name="osm_settings_descr">Navedite Openstreetmap.org (OSM) postavke potrebne za OSM prijavu</string>
 	<string name="osb_author_dialog_password">OSM zaporka (opcija)</string>
-	<string name="av_camera_focus">Tip fokusa fotoaparat</string>
-	<string name="av_camera_focus_auto">Autofokus</string>
-	<string name="av_camera_focus_continuous">Fotoaparat kontinuirano pokušava fokusirati</string>
-	<string name="av_camera_focus_infinity">Fokus je postavljen na beskonačno</string>
+    <string name="av_camera_focus_auto">Autofokus</string>
+    <string name="av_camera_focus_infinity">Fokus je postavljen na beskonačno</string>
 	<string name="poi_error_unexpected_template">Došlo je do neočekivane pogreške tijekom izvođenja radnje {0}.</string>
 	<string name="poi_error_io_error_template">Dogodila se I/O pogreška tijekom izvođenja radnje {0}.</string>
 	<string name="poi_error_info_not_loaded">Info o točki koja nije učitana</string>
@@ -1313,9 +1307,7 @@
 	<string name="shared_string_my_location">Moja lokacija</string>
 	<string name="shared_string_currently_recording_track">Snimanje trase</string>
 	<string name="shared_string_my_tracks">Moje trase</string>
-	<string name="shared_string_audio">Zvučni zapis</string>
-    <string name="shared_string_photo">Fotografija</string>
-	<string name="route_points">Točke rute</string>
+    <string name="route_points">Točke rute</string>
     <string name="rename_failed">Preimenovanje nije uspjelo.</string>
 	<string name="back_to_map">Natrag na kartu</string>
 	<string name="location_on_map">Lokacija:\n Širina %1$s\n Dužina %2$s</string>
@@ -1417,7 +1409,6 @@
 	<string name="record_plugin_name">Bilježenje putovanja</string>
 	<string name="rendering_attr_roadStyle_name">Stil ceste</string>
     <string name="points">Točke</string>
-    <string name="routing_attr_no_new_routing_description">Nemojte koristiti pravila usmjeravanje uvedena u v1.9</string>
     <string name="osmo_share_location">Dijeli</string>
     <string name="osmo_pause_location">Pauziraj</string>
     <string name="osmo_service_running">OsMo usluga je pokrenuta</string>

@@ -46,8 +46,7 @@
 	<string name="shared_string_sound">Soníu</string>
 	<string name="impassable_road_desc">Esbilla les estraes que quies evitar na navegación.</string>
 	<string name="no_location_permission">L\'aplicación nun tien permisu p\'acceder a los datos d\'allugamientu.</string>
-	<string name="no_camera_permission">L\'aplicación nun tien permisu p\'acceder a la cámara.</string>
-	<string name="no_microphone_permission">L\'aplicación nun tien permisu p\'acceder al micrófonu.</string>
+    <string name="no_microphone_permission">L\'aplicación nun tien permisu p\'acceder al micrófonu.</string>
 	<string name="route_distance">Distancia:</string>
 	<string name="osn_add_dialog_success">Creóse con ésitu la nota</string>
 	<string name="osb_author_dialog_password">Contraseña d\'OSM (opcional)</string>
@@ -155,9 +154,7 @@
 	<string name="shared_string_my_location">La mio posición</string>
 	<string name="shared_string_my_places">Los mios llugares</string>
 	<string name="shared_string_my_favorites">Los mios favoritos</string>
-	<string name="shared_string_audio">Audiu</string>
-	<string name="shared_string_photo">Semeya</string>
-	<string name="shared_string_online_maps">Mapes en llinia</string>
+    <string name="shared_string_online_maps">Mapes en llinia</string>
 	<string name="shared_string_accessibility">Accesibilidá</string>
 	<string name="osm_settings">Edición d\'OSM</string>
 	<string name="debugging_and_development">Desendolcu d\'OsmAnd</string>
@@ -416,7 +413,6 @@
     <string name="osmo_connect_to_my_nickname">Nomatu</string>
     <string name="storage_permission_restart_is_required">Agora l\'aplicación tien permisu pa escribir nel almacenamientu esternu. Ríquese un reaniciu a mano de l\'aplicación.</string>
     <string name="show_polygons">Amosar polígonos</string>
-    <string name="find_parking">Alcontrar aparcaderu</string>
     <string name="shared_string_status">Estáu</string>
     <string name="shared_string_save_changes">Guardar camudancies</string>
     <string name="shared_string_email_address">Direición de corréu</string>
@@ -745,21 +741,10 @@ Puntos</string>
 
     <string name="search_another_country">Esbillar otra rexón</string>
     <string name="shared_string_change">Camudar</string>
-    <string name="mapillary_image">Imaxe de Mapillary</string>
-    <string name="open_mapillary">Abrir Mapillary</string>
     <string name="shared_string_install">Instalar</string>
-    <string name="improve_coverage_install_mapillary_desc">Pues facer les tos propies semeyes o series de semeyes y axuntales a esti allugamientu.
-\n
-\nPa facelo precises instalar l\'aplicación Mapillary dende la Google Play Store.</string>
     <string name="online_photos">Semeyes en llinia</string>
     <string name="shared_string_add_photos">Amestar semeyes</string>
     <string name="no_photos_descr">Nun tenemos semeyes pa esti llugar.</string>
-    <string name="mapillary_action_descr">Collabora coles tos vistes dende la cai d\'esti allugamientu per Mapillary.</string>
-    <string name="mapillary_widget">Widget de Mapillary</string>
-    <string name="mapillary_widget_descr">Permítete collaborar aína con Mapillary.</string>
-    <string name="mapillary_descr">Semeyes en llinia a nivel de cai. Escubri llugares, collabora o captura\'l mundu.</string>
-    <string name="mapillary">Mapillary</string>
-    <string name="plugin_mapillary_descr">Semeyes a nivel de cai pa tol mundu. Descubri llugares, collabora y captura\'l mundu.</string>
     <string name="private_access_routing_req">El to destín allúgase nun área con accesu priváu. ¿Quies permitir l\'accesu a les carreteres privaes nesti viaxe?</string>
     <string name="restart_search">Reaniciar gueta</string>
     <string name="increase_search_radius">Aumentar radiu de gueta</string>
@@ -838,22 +823,12 @@ Puntos</string>
     <string name="distance_moving">Distancia correxida</string>
     <string name="wrong_user_name">¡Nome d\\\'usuariu incorreutu!</string>
     <string name="shared_string_to">A</string>
-    <string name="mapillary_menu_date_from">Dende</string>
-    <string name="mapillary_menu_descr_dates">Ver namái les imaxes añadíes</string>
-    <string name="mapillary_menu_title_dates">Data</string>
-    <string name="mapillary_menu_edit_text_hint">Escribe\\\'l nome d\\\'usuariu</string>
-    <string name="mapillary_menu_descr_username">Ver namái les imaxes añadíes por</string>
-    <string name="mapillary_menu_title_username">Nome del usuariu</string>
-    <string name="mapillary_menu_filter_description">Pueden filtriase les imaxes pol remitente o pola data. Los filtros aplíquense solo nes escales cercanes.</string>
-    
+
     <string name="map_widget_ruler_control">Regla de radiu</string>
-    <string name="improve_coverage_mapillary">Ameyorar la cobertura de fotos con Mapillary</string>
     <string name="store_tracks_in_monthly_directories">Almacenar les traces grabaes en carpetes mensuales</string>
     <string name="store_tracks_in_monthly_directories_descrp">Almacenar les traces grabaes en subcarpetes por mes de grabación (como 2017 - 01).</string>
     <string name="shared_string_reset">Reaniciar</string>
     <string name="shared_string_reload">Recargar</string>
-    <string name="mapillary_menu_descr_tile_cache">Recargar los mosaicos pa ver los datos actualizaos.</string>
-    <string name="mapillary_menu_title_tile_cache">Caché de mosaicos</string>
     <string name="show_from_zoom_level">Amosar dende\'l nivel de zoom</string>
     <string name="display_zoom_level">Nivel de zoom: %1$s</string>
     <string name="quick_action_auto_zoom">Zoom automáticu del mapa sí/non</string>

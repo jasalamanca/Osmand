@@ -643,7 +643,6 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
     
     <string name="rendering_attr_trainLightrailRoutes_name">Đào tạo và lightrail tuyến</string>
     <string name="rendering_attr_tramRoutes_name">Định tuyến xe điện</string>
-    <string name="find_parking">Tìm bải đậu xe</string>
     <string name="shared_string_save_changes">Lưu thay đổi</string>
     <string name="shared_string_email_address">Địa chỉ E-mail</string>
     <string name="rendering_attr_hideUnderground_name">Ẩn vật dưới đất</string>

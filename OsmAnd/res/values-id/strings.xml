@@ -211,37 +211,16 @@
     <string name="store_tracks_in_monthly_directories_descrp">Simpan rekaman yang direkam di sub-folder per bulan rekaman (seperti 2017-01).</string>
     <string name="shared_string_reset">Reset</string>
     <string name="shared_string_reload">Memuat kembali</string>
-    <string name="mapillary_menu_descr_tile_cache">Muat ulang ubin untuk melihat data terbaru.</string>
-    <string name="mapillary_menu_title_tile_cache">Cache ubin</string>
     <string name="wrong_user_name">Nama pengguna salah!</string>
     <string name="shared_string_to">Untuk</string>
-    <string name="mapillary_menu_date_from">Dari</string>
-    <string name="mapillary_menu_descr_dates">Lihat hanya gambar yang ditambahkan</string>
-    <string name="mapillary_menu_title_dates">Tanggal</string>
-    <string name="mapillary_menu_edit_text_hint">Ketik nama pengguna</string>
-    <string name="mapillary_menu_descr_username">"Lihat hanya gambar yang ditambahkan  dengan"</string>
-    <string name="mapillary_menu_title_username">Nama pengguna</string>
-    <string name="mapillary_menu_filter_description">Anda dapat memfilter gambar dengan submitter atau tanggal. Filter hanya berlaku untuk zoom closeup.</string>
     <string name="map_widget_ruler_control">Jarak ruler</string>
     <string name="shared_string_permissions">Perizinan</string>
     <string name="import_gpx_failed_descr">OsmAnd tidak bisa mengimpor file Silakan periksa apakah OsmAnd memiliki izin untuk membaca file dari lokasinya.</string>
     <string name="distance_moving">Jarak benar</string>
-    <string name="mapillary_image">Citra mapil</string>
-    <string name="open_mapillary">Buka Mapillary</string>
     <string name="shared_string_install">Instal</string>
-    <string name="improve_coverage_mapillary">Tingkatkan cakupan foto dengan Mapillary</string>
-    <string name="improve_coverage_install_mapillary_desc">Anda dapat mengambil foto atau rangkaian foto Anda sendiri dan menempelkannya ke lokasi peta ini.
-\n
-\nUntuk melakukan ini, Anda perlu memasang aplikasi Mapillary dari Google Play Store.</string>
     <string name="online_photos">Foto online</string>
     <string name="shared_string_add_photos">Tambahkan foto</string>
     <string name="no_photos_descr">Kami tidak memiliki foto untuk lokasi ini.</string>
-    <string name="mapillary_action_descr">Berkontribusi dengan pemandangan jalan Anda sendiri dari lokasi ini melalui Mapillary.</string>
-    <string name="mapillary_widget">Widget Mapillary</string>
-    <string name="mapillary_widget_descr">Memungkinkan Anda untuk segera berkontribusi pada Mapillary.</string>
-    <string name="mapillary_descr">Foto tingkat jalanan online untuk semua orang. Temukan tempat, berkolaborasi, tangkap dunia.</string>
-    <string name="mapillary">Mapil</string>
-    <string name="plugin_mapillary_descr">Foto di tingkat jalan untuk semua orang. Temukan tempat, berkolaborasi, tangkap dunia.</string>
     <string name="private_access_routing_req">Tujuan Anda terletak di area dengan akses pribadi. Apakah Anda ingin mengizinkan akses ke jalan pribadi untuk perjalanan ini?</string>
     <string name="restart_search">Ulangi pencarian</string>
     <string name="increase_search_radius">Naikkan jarak pencarian</string>

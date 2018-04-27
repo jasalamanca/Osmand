@@ -1,10 +1,5 @@
 package net.osmand.data;
 
-import net.osmand.LocationConvert;
-import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.OsmandSettings;
-import net.osmand.plus.R;
-import net.osmand.util.Algorithms;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,6 +7,12 @@ import android.support.annotation.Nullable;
 import com.google.openlocationcode.OpenLocationCode;
 import com.jwetherell.openmap.common.LatLonPoint;
 import com.jwetherell.openmap.common.UTMPoint;
+
+import net.osmand.LocationConvert;
+import net.osmand.plus.OsmandApplication;
+import net.osmand.plus.OsmandSettings;
+import net.osmand.plus.R;
+import net.osmand.util.Algorithms;
 
 public class PointDescription {
 	private String type = "";
@@ -29,10 +30,6 @@ public class PointDescription {
 	public static final String POINT_TYPE_ADDRESS = "address";
 	public static final String POINT_TYPE_OSM_NOTE= "osm_note";
 	public static final String POINT_TYPE_MARKER = "marker";
-	public static final String POINT_TYPE_PARKING_MARKER = "parking_marker";
-	public static final String POINT_TYPE_AUDIO_NOTE = "audionote";
-	public static final String POINT_TYPE_VIDEO_NOTE = "videonote";
-	public static final String POINT_TYPE_PHOTO_NOTE = "photonote";
 	public static final String POINT_TYPE_LOCATION = "location";
 	public static final String POINT_TYPE_MY_LOCATION = "my_location";
 	public static final String POINT_TYPE_ALARM = "alarm";
@@ -40,12 +37,10 @@ public class PointDescription {
 	public static final String POINT_TYPE_MAP_MARKER = "map_marker";
 	public static final String POINT_TYPE_OSM_BUG = "bug";
 	public static final String POINT_TYPE_WORLD_REGION = "world_region";
-	public static final String POINT_TYPE_GPX_ITEM = "gpx_item";
 	public static final String POINT_TYPE_WORLD_REGION_SHOW_ON_MAP = "world_region_show_on_map";
 	public static final String POINT_TYPE_BLOCKED_ROAD = "blocked_road";
 	public static final String POINT_TYPE_TRANSPORT_ROUTE = "transport_route";
 	public static final String POINT_TYPE_TRANSPORT_STOP = "transport_stop";
-	public static final String POINT_TYPE_MAPILLARY_IMAGE = "mapillary_image";
 
 
 	public static final PointDescription LOCATION_POINT = new PointDescription(POINT_TYPE_LOCATION, "");
@@ -225,28 +220,12 @@ public class PointDescription {
 		return POINT_TYPE_FAVORITE.equals(type);
 	}
 
-	public boolean isAudioNote() {
-		return POINT_TYPE_AUDIO_NOTE.equals(type);
-	}
-
-	public boolean isVideoNote() {
-		return POINT_TYPE_VIDEO_NOTE.equals(type);
-	}
-
-	public boolean isPhotoNote() {
-		return POINT_TYPE_PHOTO_NOTE.equals(type);
-	}
-
 	public boolean isDestination() {
 		return POINT_TYPE_TARGET.equals(type);
 	}
 
 	public boolean isMapMarker() {
 		return POINT_TYPE_MAP_MARKER.equals(type);
-	}
-
-	public boolean isParking() {
-		return POINT_TYPE_PARKING_MARKER.equals(type);
 	}
 
 	public boolean isMyLocation() {
@@ -373,5 +352,4 @@ public class PointDescription {
 				return "Unknown format";
 		}
 	}
-
 }
