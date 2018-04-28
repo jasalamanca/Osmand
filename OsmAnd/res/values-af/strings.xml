@@ -1116,14 +1116,9 @@
     
     <string name="shared_string_and">en</string>
     <string name="shared_string_or">of</string>
-	
-    
-    <string name="osmo_settings_uuid">Unieke toestel ID</string>
-    <string name="osmo_settings_descr">Sien unieke toestel registrasie kode en ander monitor spesifieke stellings </string>
-    <string name="osmo_plugin_description">OpenStreetMap-Monitering - Gevorderde Lewendige Monitering met baie features vir afstandbeheer http://osmo.mobi</string>
-    <string name="osmo_plugin_name">OSMo (Gevorderde Lewendige Monitering)</string>
-    <string name="osmo_settings">OSMo</string>
-   	<string name="always_center_position_on_map">Wys posisie altyd in senter</string>
+
+
+  <string name="always_center_position_on_map">Wys posisie altyd in senter</string>
     <string name="voice_pref_title">Stem</string>
     <string name="misc_pref_title">Allerlei</string>
     <string name="localization_pref_title">lokalisering</string>
@@ -1143,18 +1138,9 @@
 	<string name="rendering_value_pink_name">pienk</string>
 	
 	<string name="rendering_value_brown_name">bruin</string>
-	
-	
-	
-	
-	
-    <string name="osmo_edit_device">Verander gebruiker eienskappe</string>
-    <string name="osmo_edit_color">Vertoon kleur</string>
-    <string name="osmo_group_info">Inligting</string>
-    <string name="osmo_group">OsMo groep</string>
-    <string name="osmo_group_share">Om by groep %2$s in te skakel, spesifiseer groep id (%1$s)</string>
-    <string name="osmo_share_connect_device">Volg hierdie toestel permanent</string>
-    <string name="rendering_value_high_name">Hoog</string>
+
+
+  <string name="rendering_value_high_name">Hoog</string>
     <string name="rendering_value_medium_w_name">Gemiddeld</string>
     <string name="rendering_value_low_name">Laag</string>
     <string name="rendering_attr_hideWaterPolygons_description">Water</string>

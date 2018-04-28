@@ -35,7 +35,6 @@
 	<string name="fav_point_dublicate_message">Specified favourite name already in use, was changed to %1$s to avoid duplication.</string>
 	<string name="speak_favorites">Nearby Favourites</string>
 	<string name="rendering_attr_coloredBuildings_name">Colour-code buildings by type</string>
-	<string name="osmo_edit_color">Display colour</string>
 	<string name="favourites_list_activity">Select favourite</string>
 	<string name="rendering_attr_roadColors_description">Select a road colour scheme:</string>
 	<string name="rendering_attr_roadColors_name">Road colour scheme</string>
@@ -59,8 +58,7 @@
 	<string name="favourites_remove_dialog_msg">Delete favourite point \'%s\'?</string>
 	<string name="favourites_remove_dialog_success">Favourite point {0} was successfully deleted.</string>
 	<string name="replace_favorite_confirmation">Are you sure you want to replace favourite %1$s?</string>
-	<string name="osmo_center_location">Centre on the screen</string>
-	<string name="always_center_position_on_map">Display position always in centre</string>
+    <string name="always_center_position_on_map">Display position always in centre</string>
 	<string name="choose_auto_follow_route">Auto-centre map view</string>
 	<string name="auto_follow_route_navigation">Auto-centre nav only</string>
 	<string name="auto_follow_route_navigation_descr">Auto-centre map view only while navigating.</string>

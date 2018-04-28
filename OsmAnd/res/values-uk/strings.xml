@@ -1092,59 +1092,21 @@
 	
     
     <string name="map_magnifier">Лупа</string>
-    <string name="osmo_group_info">Інформація</string>
     <string name="int_days">днів</string>
-    <string name="osmo_group_description">Опис</string>
-    <string name="osmo_connect_to_device_name">Ім’я пристрою</string>
-    <string name="osmo_create_group">Створити групу</string>
-    <string name="osmo_connect">Приєднатись</string>
-    <string name="osmo_enable_tracker">Надіслати мої місцезнаходження</string>
     <string name="hours_ago">годин тому</string>
     <string name="minutes_ago">хвилин тому</string>
     <string name="seconds_ago">секунд тому</string>
-    <string name="osmo_connected_devices">Під’єднані пристрої</string>
-    <string name="osmo_groups">OsMo Групи</string>
-    <string name="osmo_auto_send_locations_descr">Автоматичний початок подорожі та надсилання місцезнаходження після запуска застосунка.</string>
-    <string name="osmo_auto_send_locations">Автоматичний запуск подорожі</string>
-    <string name="osmo_tracker_id">ID трекера</string>
-    <string name="osmo_tracker_id_descr">Натисніть, щоб подивитися ідентифікатор трекера.</string>
-    <string name="osmo_server_operation_failed">OsMo Server збій виконання операції</string>
-    <string name="osmo_activity">OpenStreetMap Моніторинг</string>
-    <string name="osmo_control">OsMo швидкий доступ</string>
     <string name="gpx_file_is_empty">Трек GPX порожній</string>
     
     <string name="shared_string_my_tracks">Всі треки</string>
     <string name="shared_string_my_favorites">Мої закладки</string>
     <string name="shared_string_my_places">Мої місця</string>
-    
-    <string name="osmo_user_joined">Користувач %1$s приєднався до групи %2$s</string>
-    <string name="osmo_user_left">Користувач %1$s покинув групу %2$s</string>
-    <string name="osmo_show_group_notifications">Показувати сповіщення групи</string>
-    <string name="osmo_show_group_notifications_descr">Показувати сповіщення, коли користувач приєднується або залишає групу.</string>
-    <string name="osmo_follow">Стежити</string>
-    <string name="osmo_sign_in">Увійти</string>
-    <string name="osmo_create_groups_confirm">Для створення групи, Ви повинні бути зареєстрованим користувачем OsMo.</string>
-    <string name="osmo_credentials_not_valid">Ваші облікові дані OsMo хибні.</string>
-    <string name="osmo_regenerate_login_ids_confirm">Ви впевнені у потребі перестворення персональних ID? Усі пристрої, зв’язані з Вами не зможуть відстежити ваше місцезнаходження.</string>
-    <string name="osmo_regenerate_login_ids">Перестворити ID користувача</string>
-    <string name="osmo_cancel_moving_target">Скасувати стеження</string>
-    <string name="osmo_center_location">По центру екрану</string>
-    <string name="osmo_set_moving_target">Почати стеження</string>
-    <string name="osmo_use_server_name">Зареєстроване ім’я</string>
-    <string name="osmo_connect_to_my_nickname">Прізвисько</string>
-    <string name="osmo_user_name">Користувач</string>
-	
-	<string name="rendering_value_pink_name">рожевий</string>
+
+    <string name="rendering_value_pink_name">рожевий</string>
 	
 	<string name="rendering_value_brown_name">Коричневий</string>
-	
-	
-	
-	
-	
-    <string name="osmo_edit_device">Змінити властивості користувача</string>
-    <string name="osmo_edit_color">Колір</string>
-    <string name="osmo_group">Група OsMo</string>
+
+
     <string name="keep_navigation_service">Продовжувати</string>
 	<string name="stop_navigation_service">Зупинити</string>
 	<string name="enable_sleep_mode">Ввімкнути фоновий режим GPS</string>
@@ -1176,27 +1138,6 @@
     <string name="rendering_attr_showSurfaceGrade_name">Показувати якість доріг</string>
     <string name="rendering_attr_showSurfaces_name">Показати тип покриття</string>
     <string name="rendering_attr_showCycleRoutes_name">Показати веломаршрути</string>
-    <string name="osmo_auth_error_short">Збій авторизації</string>
-    <string name="osmo_auth_error">Збій авторизації OsMo: %1$s.
-
- Можливо служба тимчасово не працює або закінчилась реєстрація.
-
- Бажаєте продовжити з новими реєстраційними даними?</string>
-    <string name="osmo_group_by_invite">Увійти за запрошенням</string>
-    <string name="osmo_group_information_desc">"- Створюючи групу вкажіть її назву та додайте опис 
-\n  - Тут ви можете створити лише Просту(Simple) групу, більш докладно — https://osmo.mobi/g/new 
-\n  - На веб-сайті ви можете керувати групою, додавати треки та точки, що будуть доступні усім 
-\n  - Ми не підтримуємо групи що складаються тільки з одного користувача, якщо це не група POI 
-\n  - Приватні групи мають обмеження у 8 осіб 
-\n  - Більш докладні умови та вимоги завжди є на сайті OsMo.mobi 
-\n  - Якщо вам потрібні особливі умови, ви можете звернутись за підтримкою: osmo.mobi@gmail.com"</string>
-    <string name="osmo_group_information">Будь ласка, прочитайте перед створенням групи!</string>
-    <string name="osmo_not_signed_in">Збій входу до OsMo</string>
-    <string name="osmo_gpx_points_downloaded">Завантажено %1$s точок OsMo.</string>
-    <string name="osmo_auto_connect_descr">Автоматичне під’єднання до сервісу під час запуску програми.</string>
-    <string name="osmo_auto_connect">Автоматичне під’єднання</string>
-    <string name="osmo_start_service">Служба OsMo</string>
-    <string name="osmo_gpx_track_downloaded">Завантажено %1$s треків OsMo.</string>
     <string name="no_index_file_to_download">Завантажень не знайдено. Будь ласка, перевірте з’єднання з Інтернет.</string>
     <string name="none_selected_gpx">GPX-файли не вибрані. Щоб вибрати довго утримуйте наявний трек.</string>
     
@@ -1239,45 +1180,9 @@
 \nТочок</string>
     <string name="gpx_selection_track">%1$s
 \nТрек %2$s</string>
-    
-    <string name="osmo_group_share">Щоб під’єднатись до групи %2$s, вкажіть id групи (%1$s) або натисніть %3$s.</string>
-    <string name="osmo_share_connect_device">Дозволити стежити за цим пристроєм</string>
-    <string name="osmo_share_current_session">Поділитися поточною сесією в оглядачі</string>
-    <string name="osmo_session_not_available">Сесія недоступна, будь ласка, перевірте що «Надсилання місцеположення» активоване.</string>
-    <string name="osmo_share_session">Поділитися сесією</string>
-    <string name="osmo_session_id_share">URL сесії для відстеження пристрою (%1$s)</string>
-    <string name="osmo_tracker_id_share">Для стеження за пристроєм %2$s, натисніть на посилання %3$s або вкажіть id (%1$s) пристрою</string>
-    <string name="osmo_track_interval">Інтервал надсилання</string>
-	<string name="osmo_track_interval_descr">Оберіть інтервал часу для надсилання даних про розташування.</string>
-    <string name="osmo_connect_menu">З’єднатись</string>
-    <string name="osmo_expire_group">Термін дії</string>
-    <string name="osmo_group_policy">Правила</string>
-    <string name="osmo_connect_to_device_tracker_id">ID трекера</string>
-    <string name="osmo_connect_to_group_id">ID групи</string>
-    <string name="osmo_group_name">Назва групи</string>
-    <string name="osmo_connect_to_device">Зв’язатись з пристроєм</string>
-    <string name="osmo_connect_to_group">Приєднатись до групи</string>
-    <string name="osmo_session_token">Мітка сесії: %1$s</string>
-    <string name="osmo_auth_pending">Очікування авторизації…</string>
-    <string name="osmo_locations_sent">"Місцезнаходження надіслане %1$d (в буфері %2$d) "</string>
-    <string name="osmo_conn_successfull">З’єднання встановлене: %1$s</string>
-    <string name="osmo_io_error">Проблема з’єднання з OsMo:</string>
-    <string name="osmo_settings_uuid">Унікальний ключ пристрою</string>
-    
+
     <string name="use_points_as_intermediates">Розрахувати маршрут між точками</string>
-    <string name="osmo_mode_restart">Рестарт сесії OsMo</string>
-    <string name="osmo_mode_on">Зупинити сесію OsMo</string>    
-    <string name="osmo_mode_off">Старт сесії OsMo</string>
-    <string name="osmo_settings_debug">Інформація для відлагодження</string>
-    <string name="osmo_settings_descr">Налаштування параметрів моніторингу та встановлення персонального каналу моніторингу.</string>
-    <string name="osmo_settings">OsMo</string>
-    <string name="osmo_plugin_description">Цей втулок частково надає можливості OpenStreetMap Monitoring, дивіться https://osmo.mobi 
-\n 
-\nВи можете відстежувати пристрої учасників з вашої групи в поточному часі. Також, ви можете бачити точки та треки вивантажені в групу, до якої ви належите. 
-\n 
-\nГрупи, що не були вилучені впродовж місяців, повинні привести свій стан у відповідність до груп створених на сайті OsMo.mobi</string>
-    <string name="osmo_plugin_name">OpenStreetMap моніторинг</string>
-   	<string name="always_center_position_on_map">Відображати позицію завжди в центрі</string>
+    <string name="always_center_position_on_map">Відображати позицію завжди в центрі</string>
     <string name="voice_pref_title">Голос</string>
     <string name="misc_pref_title">Різне</string>
     <string name="localization_pref_title">Локалізація</string>
@@ -1424,9 +1329,6 @@
 	<string name="share_fav_subject">Закладки, якими поділились через OsmAnd</string>
 	<string name="navigation_intent_invalid">Невірний формат: %s</string>
 <string name="rendering_attr_coloredBuildings_name">Кольорове маркування будівель за типом</string>
-    <string name="osmo_invite">Запросити…</string>
-    <string name="osmo_leave_confirmation_msg">Ви бажаєте вийти з групи %1$s?</string>
-    <string name="osmo_specify_tracker_id">Будь ласка, вкажіть ID</string>
     <string name="continue_navigation">Продовжити навігацію</string>
     <string name="pause_navigation">Призупинити навігацію</string>
     <string name="rendering_attr_subwayMode_name">Маршрути метро</string>
@@ -1502,8 +1404,6 @@
     <string name="shared_string_show">Показати</string>
 	<string name="configure_map">Налаштування мапи</string>
     <string name="search_radius_proximity">В межах</string>
-    <string name="osmo_device_not_found">Пристрій не знайдено</string>
-    <string name="osmo_no_connection_msg">Неможливо з\'єднатися із сервером OsMo:\n- перевірте Ваше інтернет з’єднання;\n- перевірте налаштування;\n- перевірте наш Twitter: https://twitter.com/OsMomobi</string>
     <string name="anonymous_user_hint">Анонімний користувач не в змозі:\n- створювати групи;\n- синхронізувати групи та пристрої з сервером;\n- керувати групами та пристроями в персональній панелі керування на вебсайті.</string>
     <string name="anonymous_user">Анонімний користувач</string>
     <string name="logged_as">Ви увійшли як %1$s</string>
@@ -1649,8 +1549,7 @@
     <string name="current_route">Поточний маршрут</string>
     <string name="osm_changes_added_to_local_edits">Зміни OSM додані до локального набору змін</string>
    	<string name="mark_to_delete">Позначити для вилучення</string>
-	<string name="osmo_grop_name_length_alert">Назва групи має складатись принаймні з 3-х символів!</string>
-	<string name="delay_to_start_navigation">Розпочати навігацію після…</string>
+    <string name="delay_to_start_navigation">Розпочати навігацію після…</string>
     <string name="shared_string_go">Вирушаємо</string>
 	<string name="shared_string_do_not_use">Не використовувати</string>
 	<string name="shared_string_address">Адреса</string>
@@ -1749,7 +1648,6 @@
     <string name="rendering_value_disabled_name">Вимкнено</string>
     <string name="rendering_value_walkingRoutesScopeOSMC_name">Забарвлення згідно приналежності мережі</string>
     <string name="rendering_value_walkingRoutesOSMC_name">Розмальовування відповідно пішохідній символіці OSMC</string>
-    <string name="osmo_share_my_location">Повідомляти про місцезнаходження</string>
     <string name="shared_string_logoff">Вийти</string>
     <string name="download_wikipedia_maps">Вікіпедія</string>
     <string name="rendering_value_default13_name">Типово (13)</string>
@@ -2128,9 +2026,6 @@
     <string name="gpx_no_tracks_title_folder">Ви також можете додати треки у теку</string>
     <string name="gpx_add_track">Додати трек</string>
     <string name="gpx_appearance">Вигляд</string>
-    <string name="osmo_share_location">Поділитися</string>
-    <string name="osmo_pause_location">Пауза</string>
-    <string name="osmo_service_running">Сервіс OsMo запущений</string>
     <string name="trip_rec_notification_settings">Включити швидкий запуск запису</string>
     <string name="trip_rec_notification_settings_desc">Показувати сповіщення, яке дозволить почати запис подорожі.</string>
     <string name="shared_string_notifications">Повідомлення</string>

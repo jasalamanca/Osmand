@@ -1180,72 +1180,18 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="share_route_subject">Objavi pot preko spletišča OsmAnd</string>
     <string name="navigation_intent_invalid">Neveljaven zapis: %s</string>
 
-    <string name="osmo_settings_uuid">Enolični ID naprave</string>
-    <string name="osmo_settings_descr">Nastavi možnosti sledenja in osebni sledilni kanal.</string>
-    <string name="osmo_plugin_description">Vstavek OsMo omogoča delno podporo sledenja z OpenStreetMap. Za več informacij si oglejte spletno stran http://osmo.mobi. 
-\n
-\nSledilnik Osmo omogoča sledenje napravam, ki objavljajo položaj in ustvarjanje točk, ki so vidne celotni skupini. 
-\n
-\nSkupine, ki že mesece niso odstranjene, je treba uskladiti z novimi pravili prek spletišča OsMo.mobi.</string>
-    <string name="osmo_plugin_name">Sledilnik OpenStreetMap</string>
     <string name="keep_informing_never">Samo ročno (pritisnite na puščico)</string>
     <string name="keep_informing_descr">Ponovno najavi obvestila navigacije v rednih časovnih razmikih.</string>
     <string name="keep_informing">Ponavljanje navigacijskih navodil</string>
-    <string name="osmo_settings">OsMo</string>
     <string name="arrival_distance_descr">Kako hitro naj se najavi napovedan čas prihoda?</string>
     <string name="arrival_distance">Najava prihoda</string>
 
-    <string name="osmo_io_error">Povezava s storitvijo OsMo je spodletela:</string>
-    <string name="osmo_mode_on">Končaj sejo OsMo</string>
-    <string name="osmo_mode_off">Začni sejo OsMo</string>
-    <string name="osmo_sign_in">Prijava</string>
-    <string name="osmo_create_groups_confirm">Skupino lahko ustvarijo le registrirani uporabniki OsMo.</string>
-    <string name="osmo_credentials_not_valid">Poverila OsMo niso veljavna.</string>
-    <string name="osmo_follow">Sledi</string>
-    <string name="osmo_regenerate_login_ids">Ustvari nov ID uporabnika</string>
-    <string name="osmo_set_moving_target">Nastavi kot premikajočo se tarčo</string>
-    <string name="osmo_cancel_moving_target">Opusti premikajočo se tarčo</string>
-    <string name="osmo_connect_to_my_nickname">Vzdevek</string>
-    <string name="osmo_user_name">Uporabnik</string>
-    
     <string name="rendering_value_pink_name">Rožnata</string>
     
     <string name="rendering_value_brown_name">Rjava</string>
-    
-    
-    
-    
 
-    <string name="osmo_edit_device">Spremeni nastavitve uporabnika</string>
-    <string name="osmo_edit_color">Barva oznake točke:</string>
-    <string name="osmo_group_info">Podrobnosti</string>
-    <string name="osmo_group">Skupina OsMo</string>
-    <string name="osmo_group_share">Za povezavo v skupino %2$s določite ID skupine (%1$s) ali pritisnite %3$s.</string>
-    <string name="osmo_share_connect_device">Trajno dovoli sledenje tej napravi</string>
-    <string name="osmo_share_current_session">Objavi trenutno sejo v brskalniku</string>
-    <string name="osmo_session_not_available">Seja ni na voljo. Preverite, ali je \'Pošiljanje trenutne točke\' omogočeno.</string>
-    <string name="osmo_share_session">Objavi sejo</string>
+
     <string name="int_days">dni</string>
-    <string name="osmo_group_description">Opis</string>
-    <string name="osmo_group_policy">Pravila</string>
-    <string name="osmo_center_location">Pomakni na sredino zaslona</string>
-    <string name="osmo_use_server_name">Vpisano ime</string>
-    <string name="osmo_track_interval">Interval beleženja</string>
-    <string name="osmo_expire_group">Poteče čez</string>
-    <string name="osmo_connect_to_device_name">Uporabniško ime</string>
-    <string name="osmo_connect_to_group_id">ID skupine</string>
-    <string name="osmo_group_name">Ime skupine</string>
-    <string name="osmo_connect_to_device">Povezava z napravo</string>
-    <string name="osmo_connect_to_group">Povezava s skupino</string>
-    <string name="osmo_create_group">Ustvari skupino</string>
-    <string name="osmo_activity">Sledenje OpenStreetMap</string>
-    <string name="osmo_enable_tracker">Objavi trenutno mesto</string>
-    <string name="osmo_control">Hitri dostop OsMo</string>
-    <string name="osmo_connected_devices">Povezane naprave</string>
-    <string name="osmo_auth_pending">Preverjanje overitve …</string>
-    <string name="osmo_regenerate_login_ids_confirm">Ali ste prepričani, da želite ustvariti nov ID uporabnika? S spremembo bodo izgubljene vse trenutne povezave z drugimi napravami.</string>
-    <string name="osmo_track_interval_descr">Izbor časovnega razmika za pošiljanje podatkov trenutne točke.</string>
-    <string name="osmo_connect_menu">Poveži</string>
     <string name="gpx_info_distance">Razdalja: %1$s (%2$s točk) </string>
     <string name="gpx_info_start_time">Čas začetka: %1$tF,  %1$tT </string>
     <string name="gpx_info_end_time">Čas konca: %1$tF,  %1$tT </string>
@@ -1265,14 +1211,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="shared_string_my_tracks">Shranjene sledi</string>
     <string name="shared_string_my_places">Shranjene točke</string>
 
-    <string name="osmo_user_joined">Uporabnik %1$s se je pridružil skupini %2$s</string>
-    <string name="osmo_user_left">Uporabnik %1$s je zapustil skupino %2$s</string>
-    <string name="osmo_show_group_notifications">Pokaži obvestila skupine</string>
-    <string name="osmo_show_group_notifications_descr">Pokaži pojavna obvestila, ko se uporabnik pridruži ali zapusti skupino.</string>
-    <string name="osmo_session_id_share">Naslov URL seje za sledenje napravi (%1$s)</string>
-
-    <string name="osmo_conn_successfull">Povezava je vzpostavljena: %1$s</string>
-    <string name="osmo_session_token">Žeton seje: %1$s</string>
     <string name="gpx_timemoving">Čas premikanja: %1$s</string>
     <string name="local_index_select_gpx_file">Izberite za prikaz</string>
     <string name="sort_by_distance">Razvrsti po razdalji</string>
@@ -1302,25 +1240,12 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="import_file_favourites">Ali želite podatke shrani v datoteko GPX ali pa jih uvoziti kot vmesne točke med priljubljene?</string>
 
     <string name="route_descr_destination">Cilj</string>
-    <string name="osmo_settings_debug">Podatki razhroščevanja</string>
     <string name="use_points_as_intermediates">Izračun poti med točkami</string>
-    <string name="osmo_locations_sent">Poslana trenutna mesta %1$d (v medpomnilniku %2$d)</string>
     <string name="seconds_ago">sekund nazaj</string>
     <string name="minutes_ago">minut nazaj</string>
     <string name="hours_ago">ur nazaj</string>
-    <string name="osmo_connect">Pridruži se</string>
     <string name="none_selected_gpx">Ni izbranih datotek GPX. Datoteke je mogoče izbrati z zadržanim pritiskom na imenu želene sledi.</string>
     <string name="gpx_split_interval">Interval za razdelitev</string>
-    <string name="osmo_server_operation_failed">Opravilo strežnika OsMo je spodletelo</string>
-    <string name="osmo_groups">Skupine OsMo</string>
-    <string name="osmo_auto_send_locations">Samodejno začni potovanje</string>
-    <string name="osmo_tracker_id">ID sledilnika</string>
-    <string name="osmo_tracker_id_descr">Pritisnite za ogled ID sledilnika.</string>
-    <string name="osmo_mode_restart">Ponovno zaženi sejo OsMo</string>
-
-    <string name="osmo_tracker_id_share">Za povezavo s ciljno napravo %2$s, pritisnite na povezavo %3$s ali določite ID sledilnika (%1$s)</string>
-    <string name="osmo_connect_to_device_tracker_id">ID sledilnika</string>
-    <string name="osmo_auto_send_locations_descr">Samodejno začni potovanje in pošiljaj trenutno mesto po zagonu programa.</string>
 
     <string name="no_index_file_to_download">Prejetih datotek ni mogoče najti. Preverite internetno povezavo.</string>
     <string name="keep_navigation_service">Obdrži</string>
@@ -1354,28 +1279,7 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="rendering_attr_showSurfaceGrade_name">Pokaži kakovost cest</string>
     <string name="rendering_attr_showSurfaces_name">Pokaži površino cest</string>
     <string name="rendering_attr_showCycleRoutes_name">Kolesarske poti</string>
-    <string name="osmo_auth_error_short">Dovoljenje je spodletelo</string>
-    <string name="osmo_group_by_invite">Vstop s povabilom</string>
-    <string name="osmo_group_information">Natančno preberite pravila delovanja, preden ustvarite skupino!</string>
-    <string name="osmo_not_signed_in">Prijava v sledilnik OsMo je spodletela</string>
-    <string name="osmo_gpx_points_downloaded">Prejetih je %1$s točk OsMo.</string>
-    <string name="osmo_auto_connect_descr">Samodejno vzpostavi povezavo s storitvijo ob zagonu programa.</string>
-    <string name="osmo_auto_connect">Samodejno poveži</string>
-    <string name="osmo_start_service">Storitev OsMo</string>
-    <string name="osmo_gpx_track_downloaded">Prejeta je sled OsMo %1$s.</string>
     <string name="lang_fa">Perzijščina</string>
-    <string name="osmo_auth_error">Overitev s sledilnikom OsMo je spodletelo: %1$s.
-
-Problem je lahko začasen zaradi nedelovanja storitve, ali pa je vaša registracija potekla.
-
-Ali želite nadaljevati z obnovitvijo registracije?</string>
-    <string name="osmo_group_information_desc">- Za ustvarjanje skupine vpišite ime in izpolnite opis.
-\n - Iz programa so lahko ustvarjene le enostavne skupine. Več o tem si lahko preberete na https://osmo.mobi/g/new.
-\n - Prek spletnega vmesnika lahko urejate skupine, postavljate sledi in dodajate točke, ki so na voljo vsem. 
-\n - Ne podpiramo možnosti skupin z enim uporabnikom. To niso skupine POI.
-\n - V zasebnih skupinah je lahko največ 8 oseb.
-\n - Podrobnosti možnosti in dovoljenja uporabe so na spletni strani OsMo.mobi.
-\n - Za ustvarjanje skupin, ki ne sledijo zgornjim omejitvam, stopite v stik s podporo na osmo.mobi@gmail.com.</string>
     <string name="lang_al">Albanščina</string>
     <string name="lang_ar">Arabščina</string>
     <string name="lang_sr">Srbščina</string>
@@ -1385,15 +1289,12 @@ Ali želite nadaljevati z obnovitvijo registracije?</string>
     <string name="rendering_attr_subwayMode_name">Proge podzemne železnice</string>
     <string name="continue_navigation">Nadaljuj z navigacijo</string>
     <string name="rendering_attr_alpineHiking_name">Lestvica alpskega pohodništva (SAC)</string>
-    <string name="osmo_invite">Povabi …</string>
-    <string name="osmo_specify_tracker_id">Določite ID</string>
     <string name="arrival_distance_factor_early">Predčasno</string>
     <string name="arrival_distance_factor_normally">Pravočasno</string>
     <string name="arrival_distance_factor_late">Pozno</string>
     <string name="arrival_distance_factor_at_last">Zadnji metri pred ciljem</string>
 
     <string name="rendering_attr_coloredBuildings_name">Z barvo označi vrsto stavbe</string>
-    <string name="osmo_leave_confirmation_msg">Ali želite zapustiti skupino %1$s?</string>
 
     <string name="download_additional_maps">Prejem manjkajočih zemljevidov %1$s (%2$d MB)?</string>
     <string name="shared_string_more">Več …</string>
@@ -1461,8 +1362,6 @@ Ali želite nadaljevati z obnovitvijo registracije?</string>
     <string name="shared_string_show">Pokaži</string>
     <string name="configure_map">Nastavitve zemljevida</string>
     <string name="search_radius_proximity">Znotraj</string>
-    <string name="osmo_device_not_found">Naprave ni mogoče najti</string>
-    <string name="osmo_no_connection_msg">Ni se mogoče povezati s strežnikom OsMo:\n- Preverite internetno povezavo\n- Preverite nastavitve\n- Spremljajte novice na Twitterju: https://twitter.com/OsMomobi</string>
     <string name="anonymous_user_hint">Brezimni uporabnik ne more:
 - ustvariti skupin,
 - usklajevati skupin in naprav s strežnikom,
@@ -1615,7 +1514,6 @@ ZŠ (β) %2$s</string>
     <string name="current_route">Trenutna pot</string>
     <string name="osm_changes_added_to_local_edits">Spremembe nastavitev OSM so dodane med nastavitve.</string>
     <string name="mark_to_delete">Označi za brisanje</string>
-    <string name="osmo_grop_name_length_alert">Ime skupine mora biti daljše od 3 znakov!</string>
     <string name="local_osm_changes_upload_all_confirm">Poslanih bo %1$d sprememb. Ali ste prepričani, da želite nadaljevati?</string>
     <string name="confirmation_to_clear_history">Ali želite počistiti zgodovino?</string>
     <string name="delay_to_start_navigation">Začni vodenje od zavoja do zavoja po …</string>
@@ -1646,7 +1544,6 @@ ZŠ (β) %2$s</string>
     <string name="routing_attr_height_description">Določitev omejitve višine vozila za določeno pot.</string>
     <string name="use_fast_recalculation">Pametno preračunavanje poti</string>
     <string name="use_fast_recalculation_desc">Na dolgih poteh preračunaj le začetni del poti.</string>
-    <string name="osmo_share_my_location">Objavi trenutni položaj</string>
     <string name="shared_string_logoff">Odjava</string>
     <string name="rendering_value_disabled_name">Onemogočeno</string>
     <string name="rendering_value_walkingRoutesScopeOSMC_name">Barvanje poti po vrsti poti</string>
@@ -2167,8 +2064,6 @@ Del prihodka se vrne skupnosti OSM in se izplačuje za vsako opravljeno dejavnos
     <string name="rendering_value_dark_brown_name">Temnorjava</string>
     <string name="rendering_attr_surfaceIntegrity_name">Kakovost površine ceste</string>
     <string name="search_hint">Vpišite mesto, naslov ali ime točke</string>
-    <string name="osmo_pause_location">Premor</string>
-    <string name="osmo_service_running">Storitev OsMo je zagnana</string>
     <string name="trip_rec_notification_settings">Omogoči hitro beleženje potovanja</string>
     <string name="shared_string_notifications">Obvestila</string>
     <string name="save_track_min_speed">Najmanjša hitrost beleženja</string>
@@ -2177,7 +2072,6 @@ Del prihodka se vrne skupnosti OSM in se izplačuje za vsako opravljeno dejavnos
     <string name="save_track_min_distance_descr">Filter: nastavitev najmanjše razdalje beleženja točk na zemljevidu.</string>
     <string name="save_track_precision">Najmanjša natančnost beleženja</string>
     <string name="save_track_precision_descr">Filter: nastavitev najmanjše natančnosti beleženja točk na zemljevidu.</string>
-    <string name="osmo_share_location">Objavi</string>
     <string name="trip_rec_notification_settings_desc">Pokaži obvestilo za možnost začetka beleženja potovanja.</string>
     <string name="christmas_desc">V zadnjih dneh koledarskega leta je mogoče izbrati prikaz točk POI, ki so povezane z božičnimi in novoletnimi dogodki: postavljena novoletna drevesca, božične jasli, prodajalne, razstave ...</string>
     <string name="upload_poi">Pošlji točko POI</string>

@@ -1049,71 +1049,17 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="misc_pref_title">Různé</string>
     <string name="voice_pref_title">Hlas</string>
     <string name="always_center_position_on_map">Zobrazit pozici vždy uprostřed</string>
-    <string name="osmo_plugin_name">OpenStreetMap monitorování</string>
-    <string name="osmo_settings">OsMo</string>
-    <string name="osmo_settings_descr">Konfigurovat sledování a nastavit osobní monitorovací kanál.</string>
-    <string name="osmo_settings_debug">Informace ladění</string>
-    <string name="osmo_mode_restart">Restartovat OsMo relaci</string>
-    <string name="osmo_mode_on">Zastavit OsMo relaci</string>
-    <string name="osmo_mode_off">Spustit OsMo relaci</string>
     <string name="use_points_as_intermediates">Vypočítat trasu mezi body</string>
-    <string name="osmo_plugin_description">Tento modul částečně poskytuje funkcionalitu pro OpenStreetMap monitorování, podívejte se na https://osmo.mobi.
-\n
-\nMůžete sledovat všechna zařízení spolupracující skupiny v reálném čase. Můžete také vidět body a trasy nahrané do skupiny, které jste členem.
-\n
-\nThe group has not been removed after months, bring it in line with the rules you create groups on the website OsMo.mobi</string>
-    
+
     <string name="rendering_value_pink_name">růžová</string>
     
     <string name="rendering_value_brown_name">hnědá</string>
-    
-    
-    
-    <string name="osmo_edit_device">Změnit vlastnosti uživatele</string>
-    <string name="osmo_edit_color">Zobrazit barvu</string>
-    <string name="osmo_group_info">Informace</string>
-    <string name="osmo_group">Skupina OsMo</string>
-    <string name="osmo_group_share">Aby se bylo možné připojit ke skupině %2$s, určete id skupiny (%1$s) nebo stiskněte %3$s.</string>
-    <string name="osmo_share_connect_device">Trvale sledovat toto zařízení</string>
-    <string name="osmo_share_current_session">Sdílet aktuální relaci v prohlížeči</string>
-    <string name="osmo_session_not_available">Relace není k dispozici, prosím zkontrolujte že je zapnuta volba \'Odesílat pozice\'.</string>
-    <string name="osmo_share_session">Sdílet relaci</string>
-    <string name="osmo_session_id_share">Relace URL k sledování zařízení (%1$s)</string>
-    <string name="osmo_tracker_id_share">Aby bylo možné připojit cílové zařízení %2$s, stiskněte link %3$s nebo určete ID sledovaného zařízení (%1$s)</string>
-    <string name="osmo_track_interval">Interval logování</string>
-    <string name="osmo_track_interval_descr">Vyberte časový interval odesílání dat o poloze.</string>
+
+
     <string name="int_days">dnů</string>
-    <string name="osmo_connect_menu">Připojit</string>
-    <string name="osmo_expire_group">Vyprší za</string>
-    <string name="osmo_group_description">Popis</string>
-    <string name="osmo_group_policy">Politika</string>
-    <string name="osmo_connect_to_device_tracker_id">ID sledovaného zařízení</string>
-    <string name="osmo_connect_to_device_name">Jméno uživatele</string>
-    <string name="osmo_connect_to_group_id">ID skupiny</string>
-    <string name="osmo_group_name">Název skupiny</string>
-    <string name="osmo_connect_to_device">Připojit k zařízení</string>
-    <string name="osmo_connect_to_group">Připojit ke skupině</string>
-    <string name="osmo_connect">Připojit</string>
-    <string name="osmo_create_group">Vytvořit skupinu</string>
-    <string name="osmo_server_operation_failed">Chyba operace na serveru OsMo</string>
-    <string name="osmo_activity">OpenStreetMap sledování</string>
-    <string name="osmo_enable_tracker">Odesílat mé pozice</string>
-    <string name="osmo_control">OsMo rychlý přístup</string>
     <string name="hours_ago">hodin dozadu</string>
     <string name="minutes_ago">minut dozadu</string>
     <string name="seconds_ago">sekund dozadu</string>
-    <string name="osmo_connected_devices">Připojená zařízení</string>
-    <string name="osmo_groups">OsMo skupiny</string>
-    <string name="osmo_auto_send_locations_descr">Automaticky spustit cestu a odesílat polohu po spuštění aplikace.</string>
-    <string name="osmo_auto_send_locations">Automaticky spustit cestu</string>
-    <string name="osmo_tracker_id">ID sledovaného zařízení</string>
-    <string name="osmo_tracker_id_descr">Stiskněte pro zobrazení ID sledovaného zařízení.</string>
-    <string name="osmo_session_token">Token relace: %1$s</string>
-    <string name="osmo_auth_pending">Čekání na autorizaci…</string>
-    <string name="osmo_locations_sent">Odeslané polohy %1$d (v zásobníku %2$d) </string>
-    <string name="osmo_conn_successfull">Vytvořená spojení: %1$s </string>
-    <string name="osmo_io_error">Problém s připojením OsMo: </string>
-    <string name="osmo_settings_uuid">Jedinečné ID zařízení</string>
     <string name="interrupt_music_descr">Hlasové pokyny nesníží jen hlasitost, ale pozastaví hudbu.</string>
     <string name="interrupt_music">Pozastavit hudbu</string>
     <string name="share_route_as_gpx">Sdílet trasu jako GPX soubor</string>
@@ -1127,27 +1073,11 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="shared_string_share">Sdílet</string>
     <string name="share_fav_subject">Oblíbené body sdílené přes OsmAnd</string>
     <string name="navigation_intent_invalid">Neplatný formát: %s</string>
-    <string name="osmo_follow">Sledovat</string>
-    <string name="osmo_sign_in">Přihlásit se</string>
-    <string name="osmo_create_groups_confirm">Aby bylo možné vytvořit skupiny musíte být registrovaným uživatelem OsMo.</string>
-    <string name="osmo_credentials_not_valid">Zadané přihlašovací údaje OsMo nejsou správné.</string>
-    <string name="osmo_regenerate_login_ids_confirm">Opravdu chcete vytvořit nové osobní ID? Všechna aktuálně připojená zařízení vás již nebudou moct sledovat.</string>
-    <string name="osmo_regenerate_login_ids">Regenerovat uživatelské ID</string>
-    <string name="osmo_use_server_name">Registrované jméno</string>
-    <string name="osmo_connect_to_my_nickname">Přezdívka</string>
-    <string name="osmo_user_name">Uživatel</string>
-    <string name="osmo_user_joined">Uživatel %1$s připojen ke skupině %2$s</string>
-    <string name="osmo_user_left">Uživatel %1$s odebrán ze skupiny %2$s</string>
-    
+
     <string name="gpx_file_is_empty">GPX trasa je prázdná</string>
     <string name="shared_string_my_tracks">Všechny trasy</string>
     <string name="shared_string_my_favorites">Moje oblíbené</string>
     <string name="shared_string_my_places">Moje místa</string>
-    <string name="osmo_show_group_notifications">Zobrazovat upozornění skupin</string>
-    <string name="osmo_show_group_notifications_descr">Zobrazovat informační zprávu o připojení nebo odpojení uživatele ke skupině.</string>
-    <string name="osmo_cancel_moving_target">Zrušit pohyblivý cíl</string>
-    <string name="osmo_center_location">Zarovnat na střed obrazovky</string>
-    <string name="osmo_set_moving_target">Nastavit jako pohyblivý cíl</string>
     <string name="loading_smth">Načítání %1$s…</string>
     <string name="map_widget_plain_time">Aktuální čas</string>
     <string name="delay_navigation_start">Spustit navigaci automaticky</string>
@@ -1184,29 +1114,12 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="sort_by_distance">Třídit podle vzdálenosti</string>
     <string name="sort_by_name">Třídit podle jména</string>
     <string name="local_index_select_gpx_file">Vybrat k zobrazení</string>
-    <string name="osmo_not_signed_in">Selhání autentizace OsMo</string>
-    <string name="osmo_gpx_points_downloaded">OsMo body %1$s stažené.</string>
-    <string name="osmo_auto_connect_descr">Připojit ke službě automaticky po spuštění aplikace.</string>
-    <string name="osmo_auto_connect">Automatické připojení</string>
-    <string name="osmo_start_service">OsMo služba</string>
-    <string name="osmo_gpx_track_downloaded">OsMo trasa %1$s stažena.</string>
     <string name="no_index_file_to_download">Není nic ke stažení, prosím zkontrolujte své připojení k Internetu.</string>
     <string name="none_selected_gpx">Nebyl vybrán žádný GPX soubor. Podržením vyberte jednu z dostupných tras.</string>
     <string name="rendering_attr_hideBuildings_name">Budovy</string>
     <string name="rendering_attr_hideText_name">Text</string>
     <string name="rendering_attr_hideWoodScrubs_name">Lesy a křoviny</string>
     <string name="rendering_attr_showSurfaces_name">Zobrazit povrch cesty</string>
-    <string name="osmo_group_information">Prosím čtěte před vytvářením skupiny!</string>
-    <string name="osmo_group_information_desc">- Vyplňte jméno a popis skupiny při vytvoření
-\n - Z aplikace se vytváří pouze skupiny jednoduchého typu, více se dozvíte na stránkách https://osmo.mobi/g/new
-\n - Skupiny můžete spravovat přes webové stránky, umísťování tras a bodů je k dispozici všem
-\n - Nepodporujeme použití skupiny pouze jedním uživatelem, pokud to není POI skupina
-\n - Soukromé skupiny jsou omezené na 8 lidí.
-\n - Detailní pravidla a podmínky jsou vždy na stránkách OsMo.mobi
-\n - Pokud potřebujete zvláštní podmínky, prosím kontaktujte podporu: osmo.mobi@gmail.com</string>
-    <string name="osmo_auth_error">Chyba při autorizaci OsMo: %1$s.\n Služba může být dočasně nedostupná nebo vám vypršela registrace.
-\n Chcete pokračovat v nové registraci?</string>
-    <string name="osmo_auth_error_short">Autorizace selhala</string>
     <string name="rendering_attr_showCycleRoutes_name">Zobrazit cyklostezky</string>
     <string name="forward">Vpřed</string>
     <string name="home">Domovská stránka</string>
@@ -1232,13 +1145,9 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="rendering_attr_hideAccess_name">Omezení přístupu</string>
     <string name="rendering_attr_showAccess_name">Zobrazit omezení přístupu a mýtné</string>
     <string name="rendering_attr_showSurfaceGrade_name">Zobrazit kvalitu cesty</string>
-    <string name="osmo_group_by_invite">Vstoupit na pozvánku</string>
     <string name="rendering_attr_subwayMode_name">Trasy metra</string>
     <string name="pause_navigation">Pozastavit navigaci</string>
     <string name="continue_navigation">Pokračování v navigaci</string>
-    <string name="osmo_invite">Pozvat…</string>
-    <string name="osmo_leave_confirmation_msg">Chcete opustit skupinu %1$s?</string>
-    <string name="osmo_specify_tracker_id">Prosím zadejte ID</string>
     <string name="rendering_attr_coloredBuildings_name">Barvy budov podle typu</string>
     <string name="lang_sw">Svahilština (Kiswahili)</string>
     <string name="lang_he">Hebrejština</string>
@@ -1301,11 +1210,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="fav_point_emoticons_message">Název oblíbeného bodu byl změněn na %1$s, aby bylo možné uložit název emotikonu do souboru.</string>
     <string name="speed_limit_exceed">Tolerance překročení rychlosti</string>
     <string name="speed_limit_exceed_message">Zvolte toleranci překročení povolené rychlosti, po které uslyšíte hlasové varování.</string>
-    <string name="osmo_device_not_found">Zařízení nenalezeno</string>
-    <string name="osmo_no_connection_msg">Nelze se připojit k serveru OsMo:
-\n• zkontrolujte své internetové připojení;
-\n• zkontrolujte nastavení;
-\n• zkontrolujte náš Twitter: https://twitter.com/OsMomobi</string>
     <string name="anonymous_user_hint">Anonymní uživatel nemůže:
 - vytvářet skupiny;
 - synchronizovat skupiny a zařízení se serverem;
@@ -1451,7 +1355,6 @@ Délka %2$s</string>
     <string name="current_route">Současná trasa</string>
     <string name="osm_changes_added_to_local_edits">OSM změny přidány do lokální změnové sady</string>
     <string name="mark_to_delete">Označit pro smazání</string>
-    <string name="osmo_grop_name_length_alert">Název skupiny by měl být minimálně 3 znaky dlouhý!</string>
     <string name="welcome_select_region">Pro správné zobrazení dopravních značek a předpisů, vyberte prosím svoji dopravní oblast:</string>
     <string name="welcome_text">OsmAnd poskytuje celosvětové prohlížení map a celosvětovou off-line navigaci!</string>
     <string name="confirm_usage_speed_cameras">V mnoha zemích (Německo, Francie, Itálie a dalších) je použití varování před rychlostními kamerami zakázané zákonem. OsmAnd nepřebírá žádnou zodpovědnost pokud porušíte zákon. Prosím označte Ano pouze v případě, pokud máte oprávnění používat tuto vlastnost.</string>
@@ -1496,7 +1399,6 @@ Délka %2$s</string>
     <string name="routing_attr_height_description">Zadejte výšku vozidla, jaká má být povolena na cestách.</string>
     <string name="use_fast_recalculation">Inteligentní přepočítávání trasy</string>
     <string name="use_fast_recalculation_desc">Pro dlouhé cesty přepočítat pouze počáteční úsek trasy.</string>
-    <string name="osmo_share_my_location">Odeslat polohu</string>
     <string name="shared_string_logoff">Odhlásit</string>
     <string name="shared_string_import2osmand">Importovat do OsmAnd</string>
     <string name="read_full_article">Přečíst celý článek (on-line)</string>
@@ -1975,9 +1877,6 @@ Pokud máte rádi OsmAnd a OSM a chcete je podpořit, toto je výborný způsob,
     <string name="gpx_no_tracks_title_folder">Můžete také přidat trasy do složky</string>
     <string name="gpx_add_track">Přidat trasu</string>
     <string name="gpx_appearance">Vzhled</string>
-    <string name="osmo_share_location">Sdílet</string>
-    <string name="osmo_pause_location">Pozastavit</string>
-    <string name="osmo_service_running">Služba OsMo běží</string>
     <string name="trip_rec_notification_settings">Povolit rychlé spuštění záznamu</string>
     <string name="trip_rec_notification_settings_desc">Zobrazit systémové oznámení, které umožňuje spustit nahrávání.</string>
     <string name="shared_string_notifications">Oznámení</string>

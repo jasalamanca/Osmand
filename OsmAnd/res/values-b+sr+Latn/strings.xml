@@ -216,9 +216,7 @@
     <string name="everything_up_to_date">Sve datoteke su sveže</string>
     <string name="use_opengl_render">Koristi OpenGL za prikaz</string>
     <string name="use_opengl_render_descr">Koristi hardversko ubrzanje OpenGL-a za prikaz (možda ne radi na nekim uređajima)</string>
-    
-    <string name="osmo_use_https">Koristi HTTPS</string>
-	
+
 	<string name="map_update">Dostupne su nadogradnje %1$s karata</string>
 	<string name="search_for">Potraži</string>
 	
@@ -300,7 +298,6 @@
 	<string name="map_widget_left">Leva površ</string>
     <string name="shared_string_show">Prikaži</string>
 	<string name="configure_map">Podesite mapu</string>
-    <string name="osmo_device_not_found">Nije pronađen uređaj</string>
     <string name="anonymous_user_hint">Bezimeni korisnik ne može\n- da pravi skupove;\n- da usklađuje skupove i uređaje sa serverom;\n- da upravlja skupovima i uređajima u ličnom uredu.</string>
     <string name="anonymous_user">Bezimeni korisnik</string>
     <string name="logged_as">Prijavljen kao %1$s</string>

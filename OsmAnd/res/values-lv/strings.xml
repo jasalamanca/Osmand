@@ -1200,18 +1200,8 @@
     <string name="voice_pref_title">Balss</string>
     <string name="misc_pref_title">Dažādi</string>
     <string name="localization_pref_title">Lokalizācija</string>
-    
-    <string name="osmo_settings_uuid">Ierīces identifikators</string>
-    <string name="osmo_settings_descr">Konfigurēt monitoringa iestatījumus un personīgo monitoringa kanālu</string>
-    <string name="osmo_plugin_description">"Šis spraudnis nodrošina vienkāršotu OpenStreetMap monitoringu, vairāk šeit https://osmo.mobi
-\n
-\nJūs varat sekot grupas mobilajām ierīcēm reālajā laikā, kā arī redzēt savas grupas augšupielādētos punktus un trekus.
-\n
-\nReģistrētu lietotāju grupām ir pieejamas tādas papildiespējas kā grupu administrēšana un attālinātā kontrole. "</string>
-    <string name="osmo_plugin_name">OpenStreetMap monitorings</string>
-    <string name="osmo_settings">OSMo</string>
-   	
-    
+
+
     <string name="interrupt_music">Pauzēt mūziku</string>
 	<string name="share_route_subject">Maršruts kopīgots caur OsmAnd</string>
 	<string name="arrival_distance">Ierašanās galamērķī</string>
@@ -1222,91 +1212,25 @@
 	<string name="navigation_intent_invalid">Nepareizs formāts: %s</string>
 <string name="interrupt_music_descr">Pilnībā nopauzēt mūziku paziņojumu brīžos</string>
 	<string name="share_route_as_gpx">Koplietot maršrutu kā GPX failu</string>
-	<string name="osmo_io_error">"OsMo savienojuma problēma: "</string>
-    <string name="osmo_mode_on">Apturēt OSMo sesiju</string>    
-    <string name="osmo_mode_off">Sākt OSMo sesiju</string>
-    
+
     <string name="shared_string_share">Kopīgot</string>
 	<string name="share_fav_subject">Izlase kopīgota ar OsmAnd</string>
 	<string name="use_points_as_intermediates">Rēķināt maršrutu starp punktiem</string>
-    
-    <string name="osmo_group_info">Informācija</string>
-    <string name="osmo_group">OsMo grupa</string>
-    <string name="osmo_group_share">Lai pievienotos grupai %2$s, norādiet grupas id (%1$s) vai spiediet %3$s.</string>
-    <string name="osmo_share_connect_device">Atļaut patstāvīgi sekot ierīcei</string>
-    <string name="osmo_share_current_session">Dalīties tekošajā sesijā pārlūkā</string>
-    <string name="osmo_session_not_available">Sesija nav pieejama, lūdzu, pārbaudiet vai \'sūtīt pozīciju\' ir ieslēgts.</string>
-    <string name="osmo_share_session">Dalīties sesijā</string>
-    <string name="osmo_session_id_share">Sesijas url ierīces izsekošanai (%1$s)</string>
-    <string name="osmo_tracker_id_share">"Lai pievienotos ierīcei %2$s, spiediet uz linka  %3$s vai norādiet trakera id (%1$s)"</string>
-    <string name="osmo_track_interval">Logošanas intervāls</string>
-	<string name="osmo_track_interval_descr">Laika intervāls lokācijas nosūtīšanai</string>
+
     <string name="int_days">Dienas</string>
-    <string name="osmo_connect_menu">Pieslēgties</string>
-    <string name="osmo_expire_group">Derīgs līdz</string>
-    <string name="osmo_group_description">Apraksts</string>
-    <string name="osmo_group_policy">Politika</string>
-    <string name="osmo_connect_to_device_tracker_id">Trekera ID</string>
-    <string name="osmo_connect_to_device_name">Ierīces nosaukums</string>
-    <string name="osmo_connect_to_group_id">Grupas ID</string>
-    <string name="osmo_group_name">Grupas nosaukums</string>
-    <string name="osmo_connect_to_device">Savienot ar ierīci</string>
-    <string name="osmo_connect_to_group">Savienot ar grupu</string>
-    <string name="osmo_connect">Pievienoties</string>
-    <string name="osmo_create_group">Izveidot grupu</string>
-    <string name="osmo_server_operation_failed">OsMO servera darbības kļūda</string>
-    <string name="osmo_activity">OSM Monitorings</string>
-    <string name="osmo_enable_tracker">Sūtīt manas atrašanās vietas</string>
-    <string name="osmo_control">OsMo ātrā piekļuve</string>
     <string name="hours_ago">stundas atpakaļ</string>
     <string name="minutes_ago">minūtes atpakaļ</string>
-    <string name="osmo_connected_devices">Savienotās ierīces</string>
-    <string name="osmo_groups">OsMo grupas</string>
-    <string name="osmo_auto_send_locations_descr">Palaižot aplikāciju, automātiski uzsākt sekošanu un sūtīt atrašanās vietas datus.</string>
-    <string name="osmo_auto_send_locations">Automātiski sākt sekošanu</string>
-    <string name="osmo_tracker_id">Trekera ID</string>
-    <string name="osmo_tracker_id_descr">Nospiediet, lai parādītu trekera ID</string>
-    <string name="osmo_session_token">Sesijas laiks: %1$s</string>
-    <string name="osmo_auth_pending">Gaida autorizāciju…</string>
-    <string name="osmo_locations_sent">Atrašanās vieta nosūtīta %1$d (buferī %2$d) </string>
-    <string name="osmo_conn_successfull">"Izveidots savienojums: %1$s "</string>
-    <string name="osmo_mode_restart">Restartēt OsMo sesiju</string>
-    <string name="osmo_settings_debug">Atkļūdošanas informācija</string>
-    
-    
-	<string name="import_file_favourites">Saglabāt datus GPX failā vai importēt izlasē?</string>
+
+
+    <string name="import_file_favourites">Saglabāt datus GPX failā vai importēt izlasē?</string>
 	
 	<string name="seconds_ago">sekundes atpakaļ</string>
     
 	<string name="rendering_value_pink_name">rozā</string>
 	
 	<string name="rendering_value_brown_name">brūns</string>
-	
-	
-	
-	
-	
-    <string name="osmo_edit_device">Mainīt lietotāja iestatījumus</string>
-    <string name="osmo_edit_color">Ekrāna krāsa</string>
-    <string name="osmo_sign_in">Pierakstīties</string>
-    <string name="osmo_create_groups_confirm">Lai izveidotu grupas, jums jābūt reģistrētam OsMo lietotājam.</string>
-    <string name="osmo_credentials_not_valid">Jūsu OsMo lietotāja dati nav derīgi.</string>
-    <string name="osmo_regenerate_login_ids_confirm">Vai tiešām gribat reģenerēt personīgo id? Savienotie lietotāji vairs nevarēs jums sekot.</string>
-    <string name="osmo_regenerate_login_ids">Reģenerēt lietotāja id</string>
-    <string name="osmo_cancel_moving_target">Atcelt kustīgo mērķi</string>
-    <string name="osmo_center_location">Centrēt ekrānu</string>
-    <string name="osmo_set_moving_target">Uzstādīt kā kustīgo mērķi</string>
-    <string name="osmo_use_server_name">Reģistrētais vārds</string>
-    <string name="osmo_connect_to_my_nickname">Segvārds</string>
-    <string name="osmo_user_name">Lietotājs</string>
-	
-	
-    <string name="osmo_follow">Sekot</string>
-    <string name="osmo_user_joined">Lietotājs %1$s pievienojās %2$s grupai</string>
-    <string name="osmo_user_left">Lietotājs %1$s pameta %2$s grupu</string>
-    <string name="osmo_show_group_notifications">Rādīt grupas ziņojumus</string>
-    <string name="osmo_show_group_notifications_descr">Rādīt paziņojumu, kad lietotājs pievienojas vai pamet grupu</string>
-    
+
+
     <string name="shared_string_my_tracks">Visi treki</string>
     <string name="shared_string_my_favorites">Mana izlase</string>
     <string name="shared_string_my_places">Izlase</string>
@@ -1352,7 +1276,6 @@
 	<string name="download_additional_maps">Lejupielādēt trūkstošās kartes %1$s (%2$d MB)?</string>
     <string name="shared_string_more">Vēl…</string>
     <string name="lang_he">Ebreju</string>
-    <string name="osmo_auth_error_short">Autorizācija neizdevās</string>
     <string name="sort_by_distance">Kārtot pēc attāluma</string>
     <string name="sort_by_name">Kārtot pēc nosaukuma</string>
     <string name="lang_al">Albāņu</string>
@@ -1375,9 +1298,6 @@
     <string name="rendering_value_bicycle_name">Velobraucējs</string>
     <string name="rendering_value_pedestrian_name">Gājējs</string>
     <string name="rendering_attr_coloredBuildings_name">Krāsas pēc apbūves tipa</string>
-    <string name="osmo_invite">Ielūgt…</string>
-    <string name="osmo_leave_confirmation_msg">Vai gribat atstāt grupu %1$s?</string>
-    <string name="osmo_specify_tracker_id">Lūdzu norādiet ID</string>
     <string name="continue_navigation">Turpināt navigāciju</string>
     <string name="pause_navigation">Nopauzēt navigāciju</string>
     <string name="rendering_attr_subwayMode_name">Metro maršruti</string>
@@ -1406,19 +1326,6 @@
     <string name="rendering_attr_showSurfaceGrade_name">Rādīt ceļa kvalitāti</string>
     <string name="rendering_attr_showSurfaces_name">Rādīt ceļa segumu</string>
     <string name="rendering_attr_showCycleRoutes_name">Veloceliņi</string>
-    <string name="osmo_auth_error">OsMo autorizācijas kļūda: %1$s↵
-
-Iespējams īslaicīgs sakaru pārtraukums vai reģistrācijai ir iztecējis termiņš↵
-
-Vai gribat veikt jaunu reģistrāciju?</string>
-    <string name="osmo_group_by_invite">Ienākt pēc uzaicinājuma</string>
-    <string name="osmo_group_information">Lūdzu izlasiet sekojošo, pirms veidojiet jaunu grupu!</string>
-    <string name="osmo_not_signed_in">OsMo pieteikšanās neizdevās</string>
-    <string name="osmo_gpx_points_downloaded">OsMo punkti %1$s lejupielādēti.</string>
-    <string name="osmo_auto_connect_descr">Automātiski izveidot savienojumu pie aplikācijas palaišanas</string>
-    <string name="osmo_auto_connect">Pieslēgties automātiski</string>
-    <string name="osmo_start_service">OsMo serviss</string>
-    <string name="osmo_gpx_track_downloaded">OsMo ceļš %1$s lejupielādēts.</string>
     <string name="no_index_file_to_download">Lejupielāde neizdevās, lūdzu pārbaudiet interneta savienojumu.</string>
     <string name="none_selected_gpx">Nav atzīmēti GPX faili. Lai atzīmētu, turiet nospiestu izvēlēto ierakstu.</string>
     
@@ -1482,16 +1389,11 @@ Vai gribat veikt jaunu reģistrāciju?</string>
 	<string name="map_widget_left">Kreisā puse</string>
     <string name="shared_string_show">Rādīt</string>
 	<string name="configure_map">Kartes attēlošana</string>
-    <string name="osmo_device_not_found">Ierīce nav atrasta</string>
     <string name="anonymous_user">Anonīms lietotājs</string>
     <string name="anonymous_user_hint">Anonīms lietotājs nevar:
 - izveidot grupas
 - sinhronizēt grupas un ierīces ar serveri
 - pārvaldīt grupas un ierīces no sava lietotāja paneļa interneta lapā.</string>
-    <string name="osmo_no_connection_msg">Nevar pievienoties OsMo serverim:
-- pārbaudiet interneta savienojumu
-- pārbaudiet iestatījumus
-- atveriet mūsu tvīteri: https://twitter.com/OsMomobi</string>
     <string name="logged_as">Pievienojies kā %1$s</string>
 	<string name="speed_limit_exceed">Ātruma tolerance</string>
 	<string name="speed_limit_exceed_message">Pārsniedzot noteikto ātrumu, saņemsiet balss brīdinājumu.</string>
@@ -1519,8 +1421,7 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="current_route">Pašreizējais maršruts</string>
     <string name="osm_changes_added_to_local_edits">OSM izmaiņas pievienotas lokālām izmaiņām</string>
    	<string name="mark_to_delete">Atzīmēt dzēšanai</string>
-	<string name="osmo_grop_name_length_alert">Grupas nosaukumam jābūt vismaz 3 simbolu garam!</string>
-	<string name="local_osm_changes_upload_all_confirm">Jūs augšupielādēsiet %1$d izmaiņas uz OSM. Vai turpināt?</string>
+    <string name="local_osm_changes_upload_all_confirm">Jūs augšupielādēsiet %1$d izmaiņas uz OSM. Vai turpināt?</string>
     <string name="confirmation_to_clear_history">Vai nodzēst vēsturi?</string>
     <string name="delay_to_start_navigation_descr">Norādīt maršruta plānošanas uzvednes rādīšanas laiku</string>
     <string name="delay_to_start_navigation">Izlaist maršruta plānošanu…</string>
@@ -1884,7 +1785,6 @@ Vai gribat veikt jaunu reģistrāciju?</string>
     <string name="rendering_value_disabled_name">Atslēgts</string>
     <string name="rendering_value_walkingRoutesScopeOSMC_name">Krāsas pēc infrastruktūras veida</string>
     <string name="rendering_value_walkingRoutesOSMC_name">Krāsas pēc OSMC simbola</string>
-    <string name="osmo_share_my_location">Sūtīt manu atrašanās vietu</string>
     <string name="rendering_attr_roadStyle_description">Stila veidi</string>
     <string name="routing_attr_avoid_stairs_name">Izvairīties no kāpnēm</string>
     <string name="routing_attr_avoid_stairs_description">Izvairīties no kāpnēm</string>
@@ -2048,15 +1948,6 @@ failu(s)?
     <string name="access_widget_expand">Paplašināt</string>
     <string name="access_shared_string_navigate_up">Uz augšu</string>
     <string name="access_sort">Sakārtot</string>
-    <string name="osmo_group_information_desc">"
- - Veidojot grupu, piešķiriet tai vārdu un aprakstu
-- No aplikācijas loga var izveidot tikai vienkāršu grupu, vairāk lasiet https://osmo.mobi/g/new interneta lapā
-- Caur interneta lapu ir iespējams organizēt grupu, kā arī pievienot visiem pieejamus trekus un punktus
-- Mēs neatbalstam vienas grupas lietošanu vienpersoniski, ja vien tā nav POI grupa
-- Privātās grupas ir ierobežotas līdz 8 personām
-- Detalizētākus noteikumus un nosacījumus lasiet OsMo.mobi interneta lapā
-- Ja jums ir īpašas prasības un vajadzības - lūdzu rakstiet uz atbalsta epastu osmo.mobi@gmail.com
- "</string>
     <string name="move_marker_bottom_sheet_title">Velciet karti, lai pārvietotu marķieri</string>
     <!-- string name="lat_lon_pattern">Plat: %1$.5f Gar: %2$.5f</string -->
     <string name="follow_us">Sekojiet mums</string>
@@ -2150,9 +2041,6 @@ failu(s)?
     <string name="gpx_no_tracks_title_folder">Trekus varat pievienot arī mapei</string>
     <string name="gpx_add_track">Pievienot treku</string>
     <string name="gpx_appearance">Izskats</string>
-    <string name="osmo_share_location">Dalīties</string>
-    <string name="osmo_pause_location">Pauze</string>
-    <string name="osmo_service_running">Darbojas OsMo serviss</string>
     <string name="trip_rec_notification_settings">Ceļa ieraksts (nav datu)</string>
     <string name="trip_rec_notification_settings_desc">Rādīt ziņojumu, kas ļauj sākt ierakstu, nospiežot ieraksta pogu</string>
     <string name="shared_string_notifications">Ziņojumi</string>

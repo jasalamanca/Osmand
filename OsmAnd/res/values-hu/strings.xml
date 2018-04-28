@@ -1170,15 +1170,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="index_name_gb">Európa - Nagy-Britannia</string>
     <string name="calculate_osmand_route_without_internet">OsmAnd útvonalszakasz számítása internet nélkül</string>
     <string name="gpx_option_calculate_first_last_segment">OsmAnd útvonal számítása az első és utolsó útszakaszra</string>
-    <string name="osmo_settings_uuid">Egyedi eszközazonosító</string>
-    <string name="osmo_settings_descr">Monitorozási beállítások és személyes monitorozási csatorna.</string>
-    <string name="osmo_plugin_description">Ez a bővítmény biztosítja az úgynevezett OsMo speciális valós idejű megfigyelésének lehetőségét. Bővebben: http://osmo.mobi 
-\n 
-\nValós időben követheted egy résztvevő csoport összes eszközét. Láthatod a csoportnak feltöltött megosztott pontokat és nyomvonalakat. 
-\n 
-\nA csoport nem lesz törölve néhány hónap múlva, az OsMo.mobi weboldalon létrehozott csoportokra vonatkozó szabályozásnak megfelelően</string>
-    <string name="osmo_plugin_name">OpenStreetMap Monitoring</string>
-    <string name="osmo_settings">OsMo</string>
     <string name="always_center_position_on_map">Pozíció megjelenítése mindig középen</string>
     <string name="voice_pref_title">Hang</string>
     <string name="misc_pref_title">Egyebek</string>
@@ -1202,21 +1193,8 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="rendering_value_pink_name">rózsaszín</string>
     
     <string name="rendering_value_brown_name">Barna</string>
-    
-    
-    
 
 
-    <string name="osmo_edit_device">Felhasználói tulajdonságok módosítása</string>
-    <string name="osmo_edit_color">Megjelenítési szín</string>
-    <string name="osmo_group_info">Infó</string>
-    <string name="osmo_group">OsMo csoport</string>
-    <string name="osmo_group_share">%2$s csoporthoz csatlakozáshoz add meg a csoportazonosítót (%1$s).</string>
-    <string name="osmo_share_connect_device">Eszköz állandó követésének engedélyezése</string>
-    <string name="osmo_share_current_session">Aktuális munkamenet megosztása böngészőben</string>
-    <string name="osmo_session_not_available">Munkamenet nem elérhető, kérlek ellenőrizd, hogy a \'Hely küldése\' be van-e kapcsolva.</string>
-    <string name="osmo_share_session">Munkamenet megosztása</string>
-    <string name="osmo_session_id_share">Munkamenet URL az eszköz követéséhez (%1$s)</string>
     <string name="show_zoom_buttons_navigation_descr">Zoom gombok megjelenítése navigáció közben.</string>
     <string name="show_zoom_buttons_navigation">Zoom gombok megjelenítése</string>
     <string name="save_as_favorites_points">Mentés kedvencek csoportként</string>
@@ -1255,51 +1233,11 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="shared_string_my_favorites">Kedvenceim</string>
     <string name="shared_string_my_places">Saját helyek</string>
 
-    <string name="osmo_user_joined">%1$s felhasználó csatlakozott a(z) %2$s csoporthoz</string>
-    <string name="osmo_user_left">%1$s felhasználó elhagyta a(z) %2$s csoportot</string>
-    <string name="osmo_show_group_notifications">Csoportértesítések megjelenítése</string>
-    <string name="osmo_show_group_notifications_descr">Értesítő üzenet megjelenítése, ha egy felhasználó csatlakozik a csoporthoz, vagy elhagyja.</string>
-    <string name="osmo_follow">Követés</string>
-    <string name="osmo_sign_in">Bejelentkezés</string>
-    <string name="osmo_create_groups_confirm">Csoport létre hozásáshoz regisztrált OsMo felhasználó kell legyél.</string>
-    <string name="osmo_credentials_not_valid">Az OsMo hitelesítő adataid érvénytelenek.</string>
-    <string name="osmo_regenerate_login_ids_confirm">Biztosan újragenerálod a személyes azonosítód? A hozzád kapcsolt összes készülék képtelen lesz követni téged.</string>
-    <string name="osmo_regenerate_login_ids">Felhasználói azonosító újragenerálása</string>
-    <string name="osmo_cancel_moving_target">Mozgó célpont visszavonása</string>
-    <string name="osmo_center_location">Képernyő közepére</string>
-    <string name="osmo_set_moving_target">Beállítás mozgó célpontnak</string>
-    <string name="osmo_use_server_name">Regisztrált név</string>
-    <string name="osmo_connect_to_my_nickname">Felhasználónév</string>
-    <string name="osmo_user_name">Felhasználó</string>
-    
 
-    <string name="osmo_track_interval">Rögzítési intervallum</string>
-    <string name="osmo_track_interval_descr">Válaszd ki a pozícióküldés gyakoriságát.</string>
     <string name="int_days">nap</string>
-    <string name="osmo_connect_menu">Kapcsolódás</string>
-    <string name="osmo_expire_group">Lejár</string>
-    <string name="osmo_group_description">Leírás</string>
-    <string name="osmo_group_policy">Irányelv</string>
-    <string name="osmo_connect_to_device_tracker_id">Követő ID</string>
-    <string name="osmo_connect_to_device_name">Felhasználónév</string>
-    <string name="osmo_connect_to_group_id">Csoport ID</string>
-    <string name="osmo_group_name">Csoportnév</string>
-    <string name="osmo_connect_to_device">Összekötés eszközzel</string>
-    <string name="osmo_connect_to_group">Összekötés csoporttal</string>
-    <string name="osmo_connect">Csatlakozás</string>
-    <string name="osmo_create_group">Csoport létrehozása</string>
-    <string name="osmo_server_operation_failed">OsMo kiszolgáló művelet sikertelen</string>
-    <string name="osmo_activity">OpenStreetMap Monitoring</string>
-    <string name="osmo_enable_tracker">Pozícióm küldése</string>
-    <string name="osmo_control">OsMo gyors elérés</string>
     <string name="hours_ago">órával ezelőtt</string>
     <string name="minutes_ago">perce</string>
     <string name="seconds_ago">másodperce</string>
-    <string name="osmo_connected_devices">Összekapcsolt eszközök</string>
-    <string name="osmo_groups">OsMo Csoportok</string>
-    <string name="osmo_auto_send_locations_descr">A programindítás után a nyomvonal automatikus indítása és pozícióküldés.</string>
-    <string name="osmo_auto_send_locations">Nyomvonal automatikus indítása</string>
-    <string name="osmo_tracker_id">Nyomkövető ID</string>
 
     <string name="use_points_as_intermediates">Útvonal tervezése pontok között</string>
 
@@ -1345,11 +1283,9 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="rendering_attr_showSurfaceGrade_name">Útminőség megjelenítése</string>
     <string name="rendering_attr_showSurfaces_name">Útfelület</string>
     <string name="rendering_attr_showCycleRoutes_name">Kerékpáros útvonalak</string>
-    <string name="osmo_auth_error_short">Azonosítás sikertelen</string>
     <string name="home">Műszerfal</string>
     <string name="lang_fa">perzsa</string>
     <string name="rendering_attr_coloredBuildings_name">Épületek színezése típus szerint</string>
-    <string name="osmo_invite">Meghívás…</string>
     <string name="continue_navigation">Navigáció folytatása</string>
     <string name="pause_navigation">Navigáció szüneteltetése</string>
     <string name="rendering_attr_subwayMode_name">Metró útvonalak</string>
@@ -1368,39 +1304,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="arrival_distance_factor_at_last">Utolsó métereken</string>
 
 
-    <string name="osmo_leave_confirmation_msg">Szeretnéd elhagyni a(z) %1$s csoportot?</string>
-    <string name="osmo_specify_tracker_id">Kérlek adj meg azonosítót</string>
-    <string name="osmo_auth_error">Az OsMo engedélyezési hiba történt: %1$s.
-
- Ez lehet egy átmeneti szolgáltatáskimaradás, vagy a regisztrációd járt le.
-
- Szeretnéd új regisztrációval folytatni?</string>
-    <string name="osmo_group_by_invite">Belépés meghívásra</string>
-    <string name="osmo_group_information_desc">- Csoport létrehozásához add meg a csoport nevét és töltsd ki a leírását 
-\n - A programmal létrehozott csoport Egyszerű csoport lesz, további információ a weboldalon: https://osmo.mobi/g/new 
-\n - Weboldalon keresztül kezelhetsz egy csoportot, nyomvonalakat és útpontokat tehetsz elérhetővé bárkinek a csoportban 
-\n - Nem engedélyezzük a csoport használatát egy fővel, ha ez nem a POI csoport 
-\n - A személyes csoportok 8 személyre vannak korlátozva 
-\n - Részletes felhasználási feltételek mindig elérhetőek az OsMo.mobi weboldalon 
-\n - Ha más feltételekkel kéne csoportot létrehoznod, lépj kapcsolatba velünk: osmo.mobi@gmail.com</string>
-    <string name="osmo_group_information">Csoport létrehozása előtt kérlek olvasd el!</string>
-    <string name="osmo_not_signed_in">OsMo bejelentkezés sikertelen</string>
-    <string name="osmo_gpx_points_downloaded">OsMo pont %1$s letöltve.</string>
-    <string name="osmo_auto_connect_descr">Automatikus csatlakozás az alkalmazás elindításakor.</string>
-    <string name="osmo_auto_connect">Auto-connect</string>
-    <string name="osmo_start_service">OsMo szolgáltatás</string>
-    <string name="osmo_gpx_track_downloaded">OsMo nyomvonal %1$s letöltve.</string>
-    <string name="osmo_tracker_id_share">A(z) %2$s cél eszközhöz csatlakozáshoz kattints a %3$s linkre vagy add meg a tracker id-t (%1$s)</string>
-    <string name="osmo_tracker_id_descr">Kattints a tracker ID megtekintéséhez.</string>
-    <string name="osmo_session_token">Munkamenet token: %1$s</string>
-    <string name="osmo_auth_pending">Várakozás engedélyeztetésre…</string>
-    <string name="osmo_locations_sent">Pozíció elküldve %1$s (pufferben %2$s)</string>
-    <string name="osmo_conn_successfull">Kapcsolat létrejött: %1$s</string>
-    <string name="osmo_io_error">OsMo kapcsolódási probléma:</string>
-    <string name="osmo_mode_restart">OsMo munkamenet újraindítása</string>
-    <string name="osmo_mode_on">OsMo munkamenet leállítása</string>
-    <string name="osmo_mode_off">OsMo munkamenet elindítása</string>
-    <string name="osmo_settings_debug">Hibakeresési információk</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Jelzett turistautak megjelenítése (OSMC).</string>
 
     <string name="index_tours">Túrák</string>
@@ -1449,11 +1352,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="speed_limit_exceed_message">Válaszd ki a sebességkorlátozás toleranciájának határát, amely fölött hangos figyelmeztetést fogsz kapni.</string>
     <string name="fav_point_emoticons_message">A kedvenc hely neve erre módosult: %1$s, hogy lehetővé váljék a hangulatjeleket tartalmazó szöveg fájlba mentése.</string>
     <string name="print_route">Útvonal nyomtatása</string>
-    <string name="osmo_device_not_found">Eszköz nem található</string>
-    <string name="osmo_no_connection_msg">Nem sikerült csatlakozni az OsMo szerverhez:
-- ellenőrizd az internetkapcsolatot;
-- ellenőrizd a beállításokat;
-- nézz rá a Twitterünkre: https://twitter.com/OsMomobi</string>
     <string name="anonymous_user_hint">Egy anonim felhasználó nem tud:\n- csoportot létrehozni;\n- csoportokat és eszközöket szinkronizálni a kiszolgálóval;\n- csoportokat és eszközöket kezelni egy személyes beállítási felületen a weboldalon.</string>
     <string name="anonymous_user">Anonim felhasználó</string>
     <string name="logged_as">Bejelentkezve mint %1$s</string>
@@ -1607,7 +1505,6 @@ Hosszúság: %2$s</string>
     <string name="welcome_select_region">A jelzőtáblák és szabályok helyes értelmezéséhez jelöld ki a vezetési régiódat:</string>
     <string name="welcome_text">Az OsmAnd lehetővé teszi a térképek és a navigáció offline használatát az egész világon!</string>
     <string name="current_route">Jelenlegi útvonal</string>
-    <string name="osmo_grop_name_length_alert">A csoportnévnek legalább 3 karakter hosszúnak kell lennie!</string>
     <string name="local_osm_changes_upload_all_confirm">%1$d módosítást fogsz feltölteni OSM-re. Biztos vagy benne?</string>
     <string name="waypoint_visit_before">Megtekintés ez előtt:</string>
     <string name="agps_info">A-GPS információk</string>
@@ -1657,7 +1554,6 @@ Hosszúság: %2$s</string>
     <string name="routing_attr_height_description">Az utakon engedélyezett járműmagasság megadása.</string>
     <string name="use_fast_recalculation">Intelligens útvonal újraszámítás</string>
     <string name="use_fast_recalculation_desc">Hosszú utaknál csak az útvonal kezdeti részének újraszámítása.</string>
-    <string name="osmo_share_my_location">Pozíció továbbítása</string>
     <string name="shared_string_logoff">Naplózás ki</string>
     <string name="rendering_value_disabled_name">Letiltva</string>
     <string name="rendering_value_walkingRoutesScopeOSMC_name">Színezés hálózati kapcsolat szerint</string>
@@ -2162,9 +2058,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="gpx_no_tracks_title_folder">Te is hozzáadhatsz nyomvonalakat a könyvtárhoz</string>
     <string name="gpx_add_track">Nyomvonal hozzáadása</string>
     <string name="gpx_appearance">Megjelenés</string>
-    <string name="osmo_share_location">Megosztás</string>
-    <string name="osmo_pause_location">Szünet</string>
-    <string name="osmo_service_running">Az OsMo szolgáltatás fut</string>
     <string name="trip_rec_notification_settings">Nyomvonalrögzítés (nincs adat)</string>
     <string name="trip_rec_notification_settings_desc">Rendszerértesítés megjelenítése, amivel egy gombnyomással elindítható az útvonalrögzítés.</string>
     <string name="shared_string_notifications">Értesítések</string>

@@ -1,7 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources><string name="search_map_hint">Leita að borg eða héraði</string>
-    <string name="osmo_share_location">Deila</string>
-    <string name="osmo_pause_location">Í bið</string>
     <string name="gpx_appearance">Útlit</string>
     <string name="gpx_add_track">Bæta við ferli</string>
     <string name="shared_string_notifications">Tilkynningar</string>
@@ -49,9 +47,6 @@
     <string name="rendering_value_bold_name">Feitt</string>
     <string name="no_waypoints_found">Engir ferilpunktar fundust</string>
     <string name="report">Skýrsla</string>
-    <string name="osmo_connect_to_group_id">Hópauðkenni</string>
-    <string name="osmo_connect">Taka þátt</string>
-    <string name="osmo_connect_to_my_nickname">Gælunafn</string>
     <string name="shared_string_move_up">Færa upp</string>
     <string name="shared_string_move_down">Færa niður</string>
     <string name="storage_directory_shared">Samnýtt minni</string>
@@ -295,7 +290,6 @@
     <string name="rendering_value_car_name">Bíll</string>
     <string name="rendering_value_bicycle_name">Reiðhjól</string>
     <string name="rendering_value_pedestrian_name">Fótgangandi</string>
-    <string name="osmo_invite">Bjóða…</string>
     <string name="keep_navigation_service">Halda</string>
     <string name="lang_sw">Svahílí</string>
     <string name="lang_he">Hebreska</string>
@@ -305,8 +299,6 @@
     <string name="rendering_attr_hideText_name">Texti</string>
     <string name="rendering_attr_moreDetailed_name">Nánari upplýsingar</string>
     <string name="rendering_attr_hideAccess_name">Aðgangstakmarkanir</string>
-    <string name="osmo_auth_error_short">Auðkenning brást</string>
-    <string name="osmo_auto_connect">Tengjast sjálfvirkt</string>
     <string name="sort_by_name">Raða eftir nafni</string>
     <string name="select_destination_and_intermediate_points">Velja áfangastaði</string>
     <string name="loading_smth">Hleð inn %1$s…</string>
@@ -316,26 +308,10 @@
     <string name="gpx_selection_segment_title">Bútur</string>
     <string name="gpx_selection_number_of_points">%1$s punktar</string>
     <string name="gpx_selection_point">Punktur %1$s</string>
-    <string name="osmo_follow">Fylgja</string>
-    <string name="osmo_sign_in">Skrá inn</string>
-    <string name="osmo_use_server_name">Skráð heiti</string>
-    <string name="osmo_user_name">Notandi</string>
-    <string name="osmo_group_info">Upplýsingar</string>
     <string name="int_days">dagar</string>
-    <string name="osmo_connect_menu">Tengjast</string>
-    <string name="osmo_expire_group">Rennur út</string>
-    <string name="osmo_group_description">Lýsing</string>
-    <string name="osmo_group_policy">Stefna</string>
-    <string name="osmo_connect_to_device_name">Notandanafn</string>
-    <string name="osmo_group_name">Heiti hóps</string>
-    <string name="osmo_create_group">Búa til hóp</string>
     <string name="hours_ago">klukkustundum síðan</string>
     <string name="minutes_ago">mín síðan</string>
     <string name="seconds_ago">sek síðan</string>
-    <string name="osmo_connected_devices">Tengd tæki</string>
-    <string name="osmo_auth_pending">Bíð eftir heimild…</string>
-    <string name="osmo_settings_debug">Villuupplýsingar</string>
-    <string name="osmo_settings">OsMo</string>
     <string name="voice_pref_title">Tal</string>
     <string name="misc_pref_title">Ýmislegt</string>
     <string name="localization_pref_title">Staðfærsla</string>
@@ -720,7 +696,6 @@
     <string name="route_calculation">Útreikningur leiðar</string>
     <string name="gpx_no_tracks_title">Þú ert ekki með neina ferla ennþá</string>
     <string name="gpx_no_tracks_title_folder">Þú getur líka bætt ferlum í möppuna</string>
-    <string name="osmo_service_running">OsMo þjónustan er í gangi</string>
     <string name="trip_rec_notification_settings">Virkja hraðskráningu ferðar</string>
     <string name="shared_string_trip">Ferð</string>
     <string name="shared_string_recorded">Skráð</string>
@@ -749,7 +724,6 @@
     <string name="access_expanded_list">Útliðaður listi</string>
     <string name="map_mode">Kortahamur</string>
     <string name="number_of_gpx_files_selected_pattern">%s GPX-skrár valdar</string>
-    <string name="osmo_groups">OsMo-hópar</string>
     <string name="finish_navigation">Hætta leiðsögn</string>
     <string name="avoid_road">Forðast veg</string>
     <string name="number_of_recipients">Fjöldi viðtakenda</string>
@@ -850,7 +824,6 @@
     <string name="rendering_attr_trainLightrailRoutes_name">Leiðir lesta</string>
     <string name="rendering_attr_tramRoutes_name">Leiðir sporvagna</string>
     <string name="rendering_attr_busRoutes_name">Leiðir strætisvagna</string>
-    <string name="osmo_device_not_found">Tæki fannst ekki</string>
     <string name="logged_as">Skráð inn sem %1$s</string>
     <string name="print_route">Prenta leið</string>
     <string name="traffic_warning_payment">Tollverðir</string>
@@ -1159,7 +1132,6 @@ Sólsetur: %2$s</string>
     <string name="donation_to_osm">Styrkur til OpenStreetMap samfélagsins</string>
     <string name="skip_map_downloading">Sleppa því að ná í kort</string>
     <string name="rendering_attr_hideOverground_name">Hlutir á yfirborði</string>
-    <string name="osmo_plugin_name">OpenStreetMap vöktun</string>
     <string name="open_street_map_login_and_pass">Innskráning og lykilorð á OpenStreetMap</string>
     <string name="map_markers">Kortamerki</string>
     <string name="map_marker">Kortamerki</string>
@@ -1364,16 +1336,10 @@ Sólsetur: %2$s</string>
     <string name="access_no_destination">Áfangastaður er ekki stilltur</string>
     <string name="map_widget_bearing">Hlutfallsleg stefna</string>
     <string name="no_map_markers_found">Bættu við kortamerkjum á kortinu</string>
-    <string name="osmo_specify_tracker_id">Tilgreindu auðkenni</string>
     <string name="anonymous_user_hint">Nafnlaus notandi getur ekki:
 - búið til hópa;
 - samstillt hópa og tæki við vefþjón;
 - sýslað með hópa og tæki á eigin stjórnborði á vefsvæðinu.</string>
-    <string name="osmo_connect_to_device_tracker_id">Auðkenni skrásetjara (tracker)</string>
-    <string name="osmo_auto_send_locations">Byrja ferð sjálfkrafa</string>
-    <string name="osmo_tracker_id">Auðkenni skrásetjara (tracker)</string>
-    <string name="osmo_tracker_id_descr">Bankaðu til að skoða auðkenni skrásetjara.</string>
-    <string name="osmo_share_my_location">Senda inn staðsetninguna</string>
     <string name="shared_string_topbar">Toppstika</string>
     <string name="full_report">Full skýrsla</string>
     <string name="osm_live_hide_user_name">Ekki birta nafnið mitt í skýrslum</string>
@@ -1440,9 +1406,7 @@ Len %2$s</string>
     <string name="save_track_interval_globally">Millibil skráninga</string>
     <string name="gpx_monitoring_start">Byrja GPX-skráningu</string>
     <string name="gpx_monitoring_stop">Stöðva GPX-skráningu</string>
-    <string name="osmo_not_signed_in">Innskráning á OsMo mistókst</string>
     <string name="gpx_info_distance">Vegalengd: %1$s (%2$s punktar)</string>
-    <string name="osmo_track_interval">Millibil skráninga</string>
     <string name="recording_delete_confirm">Viltu eyða þessari upptöku?</string>
     <string name="gps_not_available">Virkjaðu GPS í stillingunum</string>
     <string name="map_widget_monitoring_services">Leiðarskráningarþjónustur</string>
@@ -1507,7 +1471,6 @@ Len %2$s</string>
     <string name="proxy_host_descr">Settu inn vélarheiti milliþjónsins þíns (t.d. 127.0.0.1).</string>
     <string name="proxy_port_descr">Settu inn númerið á gátt milliþjónsins þíns (t.d. 8118).</string>
     <string name="monitoring_settings_descr">Stilltu hvernig ferðir þínar eru skráðar.</string>
-    <string name="osmo_leave_confirmation_msg">Viltu yfirgefa hópinn %1$s?</string>
     <string name="continue_navigation">Halda leiðsögn áfram</string>
     <string name="pause_navigation">Setja leiðsögn í bið</string>
     <string name="map_preferred_locale_descr">Forgangstungumál fyrir merki á kortinu (ef það er ekki tiltækt verður skipt ýfir í ensk heiti eða staðarheiti).</string>
@@ -1521,12 +1484,6 @@ Len %2$s</string>
     <string name="rendering_attr_hideWoodScrubs_name">Tré og runnar</string>
     <string name="rendering_attr_buildings15zoom_name">Byggingar í aðdrætti 15</string>
     <string name="rendering_attr_lessDetailed_name">Færri smáatriði</string>
-    <string name="osmo_group_by_invite">Fara inn með boðskorti</string>
-    <string name="osmo_group_information">Lestu þetta áður en þú býrð til hóp!</string>
-    <string name="osmo_gpx_points_downloaded">OsMo punktum %1$s hlaðið inn.</string>
-    <string name="osmo_auto_connect_descr">Tengjast þjónustunni sjálfkrafa eftir ræsingu forrits.</string>
-    <string name="osmo_start_service">OsMo-þjónusta</string>
-    <string name="osmo_gpx_track_downloaded">OsMo ferli %1$s hlaðið inn.</string>
     <string name="no_index_file_to_download">Fann ekki niðurhöl, athugaðu internettenginguna þína.</string>
     <string name="local_index_select_gpx_file">Veldu til birtingar</string>
     <string name="sort_by_distance">Raða eftir vegalengd</string>
@@ -1552,26 +1509,7 @@ Len %2$s</string>
 \nLeiðarpunktar %2$s</string>
     <string name="gpx_selection_points">%1$s 
 Punktar</string>
-    <string name="osmo_user_joined">Notandinn %1$s hefur gengið í hópinn %2$s</string>
-    <string name="osmo_user_left">Notandinn %1$s gekk úr hópnum %2$s</string>
-    <string name="osmo_show_group_notifications">Birta tilkynningar hóps</string>
-    <string name="osmo_center_location">Miðja á skjánum</string>
-    <string name="osmo_edit_device">Breyta eiginleikum notanda</string>
-    <string name="osmo_edit_color">Litur á skjá</string>
-    <string name="osmo_group">OsMo-hópur</string>
-    <string name="osmo_connect_to_device">Tengja með tæki</string>
-    <string name="osmo_connect_to_group">Tengja með hópi</string>
-    <string name="osmo_server_operation_failed">Aðgerð tókst ekki á OsMo-þjóni</string>
-    <string name="osmo_activity">OpenStreetMap vöktun</string>
-    <string name="osmo_enable_tracker">Senda staðsetningar mínar</string>
-    <string name="osmo_control">Flýtiaðgangur OsMo</string>
-    <string name="osmo_session_token">Setuteikn: %1$s</string>
-    <string name="osmo_conn_successfull">Tengingu komið á: %1$s</string>
-    <string name="osmo_io_error">Vandamál í OsMo-tengingu:</string>
     <string name="use_points_as_intermediates">Reikna leið milli punkta</string>
-    <string name="osmo_mode_restart">Endurræsa OsMo-setu</string>
-    <string name="osmo_mode_on">Stöðva OsMo-setu</string>
-    <string name="osmo_mode_off">Hefja OsMo-setu</string>
     <string name="always_center_position_on_map">Staðsetning skjás alltaf á miðju</string>
     <string name="index_item_world_altitude_correction">Hæðarleiðrétting á heimsvísu</string>
     <string name="calculate_osmand_route_without_internet">Reikna OsmAnd leiðarbút án internettengingar</string>
@@ -1845,10 +1783,6 @@ Punktar</string>
     <string name="total_distance">Heildarvegalengd</string>
     <string name="routing_attr_height_obstacles_name">Nota hæðargögn</string>
     <string name="move_marker_bottom_sheet_title">Færa kortið til að breyta staðsetningu kortamerkis</string>
-    <string name="osmo_no_connection_msg">Get ekki tengst við OsMo-þjóninn
-- athugaðu nettenginguna þína
-- skoðaðu stillingarnar þínar
-- kíktu á Twitter-reikninginn okkar: https://twitter.com/OsMomobi</string>
     <string name="osm_user_stat">Breytingar %1$s, vægi %2$s, heildarfjöldi breytinga %3$s</string>
     <string name="osm_editors_ranking">Vægisröðun OSM-ritsjóra</string>
     <string name="download_files_error_not_enough_space">Ekki nægilegt geymslupláss!
@@ -1880,7 +1814,6 @@ Punktar</string>
     <string name="lang_ber">Berberska</string>
     <string name="gps_network_not_enabled">Staðsetningarþjónustan er ekki virk. Viltu kveikja á henni?</string>
     <string name="application_dir_change_warning3">Viltu að OsmAnd afriti einnig gagnaskrárnar sínar á nýja áfangastaðinn?</string>
-    <string name="osmo_grop_name_length_alert">Heiti hóps verður að vera a.m.k 3 stafa langt!</string>
     <string name="action_create">Aðgerðin útbúa</string>
     <string name="action_modify">Aðgerðin breyta</string>
     <string name="action_delete">Aðgerðin eyða</string>
@@ -1917,11 +1850,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="none_selected_gpx">Engar GPX-skrár valdar. Til að velja, ýttu á tiltækan feril og haltu niðri.</string>
     <string name="gpx_split_interval">Skipta millibili</string>
     <string name="gpx_timespan">Tímarammi: %1$s</string>
-    <string name="osmo_regenerate_login_ids">Endurgera auðkenni notanda</string>
-    <string name="osmo_cancel_moving_target">Hætta við hreyfanlegt mark</string>
-    <string name="osmo_set_moving_target">Setja sem hreyfanlegt mark</string>
-    <string name="osmo_share_current_session">Deila núverandi setu í vafra</string>
-    <string name="osmo_share_session">Deila setu</string>
     <string name="local_osm_changes_delete_all_confirm">Þú ert að fara að eyða %1$d breytingum í OSM. Ertu viss?</string>
     <string name="animate_routing_route">Herma með því að nota reiknaða leið</string>
     <string name="search_street_in_neighborhood_cities">Leita að götu í nágrannabæjum</string>
@@ -1956,7 +1884,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="install_selected_build">Viltu setja upp OsmAnd - {0} af {1} {2} MB ?</string>
     <string name="quick_action_map_overlay_switch">Yfirlagi kortsins var breytt yfir í \"%s\".</string>
     <string name="quick_action_map_underlay_switch">Undirlagi kortsins var breytt yfir í \"%s\".</string>
-    <string name="osmo_locations_sent">Sendar %1$d staðsetningar (í biðminni %2$d)</string>
     <string name="keep_and_add_destination_point">Bæta við sem áfangastað í framhaldinu</string>
     <string name="routing_preferences_descr">Stillingar leiðavals</string>
     <string name="disable_complex_routing">Gera flókið leiðaval óvirkt</string>
@@ -2029,8 +1956,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="access_autoannounce_period_descr">Lágmarkstími á milli tilkynninga.</string>
     <string name="osm_live_thanks">Takk fyrir að vera áskrifandi að síuppfærslum!</string>
     <string name="delay_to_start_navigation">Hefja beygju-fyrir-beygju leiðsögn eftir…</string>
-    <string name="osmo_credentials_not_valid">Uppgefin OsMo-auðkenni eru ekki gild.</string>
-    <string name="osmo_settings_uuid">Einkvæmt auðkenni tækis</string>
     <string name="index_item_nation_addresses">heimilisföng á landsvísu</string>
     <string name="gpx_option_calculate_first_last_segment">Reikna OsmAnd-leið fyrir fyrsta og síðasta leiðarbút</string>
     <string name="app_modes_choose">Forritssnið</string>
@@ -2074,9 +1999,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="access_disable_wrong_direction_recalc_descr">Kemur í veg fyrir að leið sé endurreiknuð þegar aðeins stefnt er í öfuga átt.</string>
     <string name="access_smart_autoannounce_descr">Einungis tilkynna þegar stefnu á markpunkt er breytt.</string>
     <string name="rendering_attr_shareTaxiRoutes_name">Leiðir deilileigubíla</string>
-    <string name="osmo_share_connect_device">Fylgjast framvegis með þessu tæki</string>
-    <string name="osmo_session_not_available">Seta ekki tiltæk, gakktu úr skugga um að kveikt sé á \'Senda staðsetningu\'.</string>
-    <string name="osmo_track_interval_descr">Veldu tíma milli þess sem staðsetningargögn eru send.</string>
     <string name="enter_gpx_name">Nafn GPX skráar:</string>
     <string name="show_on_map_after_saving">Sýna í korti eftir vistun</string>
     <string name="measurement_tool">Mæla vegalengd</string>
@@ -2262,7 +2184,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="plan_route_no_markers_toast">Þú verður að bæta við a.m.k. einni merkingu til að geta notað þessa aðgerð.</string>
     <string name="osm_recipient_stat">Breytingar %1$s, upphæð %2$s mBTC</string>
     <string name="select_index_file_to_download">Ekkert fannst. Ef þú finnur ekki héraðið þitt, geturðu útbúið það sjálf(ur) (skoðaðu http://osmand.net).</string>
-    <string name="osmo_show_group_notifications_descr">Birta spretttilkynningar þegar notandi kemur í eða yfirgefur hópinn.</string>
     <string name="index_item_world_bitcoin_payments">Bitcoin-greiðslur um víða veröld</string>
     <string name="app_modes_choose_descr">Veldu notkunarsnið sem eiga að vera sýnileg í forriti.</string>
     <string name="speak_descr">Stilla til að tilkynna götuheiti og fá umferðaraðvaranir (lokanir, umferðarhnúta, hraðahindranir), aðvaranir um hraðamyndavélar og hraðatakmarkanir.</string>
@@ -2301,8 +2222,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="osmand_accessibility_description">Þessi viðbót gerir aðgengiseiginleika tækisins nothæfa beint í OsmAnd. Það auðveldar t.d. aðlögun á talhraða TTS-radda talgervils, uppsetningu á stefnuvirkri skjáleiðsögn, notkun á músarkúlu fyrir stýringu á aðdrætti, eða svörun með texta-í-tal eins og þegar tilkynnt er upphátt um staðsetningar.</string>
     <string name="osm_editing_plugin_description">Í gegnum þessa viðbót er hægt að nota OsmAnd beint til að bæta inn í OSM-kortagrunninn, eins og til dæmis að búa til eða breyta merkisstöðum í OSM (POI objects), opna eða gera athugasemdir í OSM Notes, og að setja inn skráðar GPX-skrár. OSM er samfélagsdrifinn allsherjar kortagerðargrunnur sem skoða má nánar á https://openstreetmap.org. Virk þáttaka er vel þegin, og með þessari viðbót er því hægt að vinna beint úr OsmAnd með því að setja OSM-persónuauðkennin þín upp í forritinu.</string>
     <string name="osmand_development_plugin_description">Þessi viðbót birtir stillingar fyrir þróun og aflúsun, eins og fyrir prófanir eða leiðahermingu, upplýsingar um afköst skjásins, eða raddskilaboð. Þessar stillingar eru ætlaðar fyrir forritara en eru ekki nauðsynlegar fyrir almenna notendur.</string>
-    <string name="osmo_group_share">Til að tengjast við hópinn %2$s, tilgreindu hópauðkenni (%1$s) eða bankaðu á %3$s.</string>
-    <string name="osmo_tracker_id_share">Til að tengjast við marktækið %2$s, bankaðu á tengilinn %3$s eða tilgreindu rakningarauðkenni (%1$s)</string>
     <string name="use_distance_measurement_help">* Bankaðu til að merkja punkt.
 \n * Ýta og halda á kortið til að eyða fyrri punkti.
 \n * Ýta og halda á punkt til að skoða og bæta við lýsingu.
@@ -2347,7 +2266,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="osm_live_banner_desc">Fáðu ótakmörkuð niðurhöl korta og kortauppfærslur oftar en mánaðarlega: vikulega, daglega eða á klukkustundar fresti.</string>
     <string name="osmand_plus_banner_desc">Ótakmörkuð niðurhöl korta, uppfærslur og Wikipedia-viðbót.</string>
     <string name="use_osm_live_routing_description">Virkja leiðsögn fyrir breytingar í OsmAnd Live.</string>
-    <string name="osmo_auto_send_locations_descr">Hefja ferð sjálfkrafa og senda inn staðsetningar eftir ræsingu forrits.</string>
     <string name="storage_directory_readonly_desc">Sú mappa sem er valin undir geymslugögn er einungis lesanleg. Geymslumappan er því tímabundið sett í innra minnið. Veldu endilega gilda geymslumöppu.</string>
     <string name="osm_live_email_desc">Nauðsynlegt til að geta gefið þér upplýsingar um framlög.</string>
     <string name="osm_live_region_desc">Hluti styrktarfjárhæðarinnar verður sendur til OSM-notendanna sem senda inn breytingar á kortinu á þessu svæði.</string>
@@ -2357,16 +2275,11 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="disable_recording_once_app_killed">Hindra sjálfstæða skráningu ferils</string>
     <string name="save_track_to_gpx_globally_headline">Ferilskráning eftir þörfum</string>
     <string name="save_track_interval_descr">Veldu millibil skráninga í leiðarskráningu á meðan leiðsögn stendur.</string>
-    <string name="osmo_create_groups_confirm">Til þess að geta útbúið hópa þarftu að vera skráður notandi í OsMo.</string>
-    <string name="osmo_session_id_share">Slóð setu til að rekja tæki (%1$s)</string>
     <string name="day_off_label">slökkt</string>
     <string name="winter_and_ski_renderer">Vetur og skíði</string>
     <string name="touring_view_renderer">Ferðakort (birtuskil og ítarefni)</string>
     <string name="simulate_initial_startup_descr">Stillir flaggið sem gefur til kynna fyrstu keyrslu forrits, heldur öllum öðrum stillingum óbreyttum.</string>
     <string name="fav_point_dublicate_message">"Tilgreint heiti eftirlætis er þegar  í notkun, var breytt í %1$s til að koma í veg fyrir tvítekningu."</string>
-    <string name="osmo_auth_error">Villa kom upp í OsMo-auðkenningu: %1$s.
-\nÞað gæti verið tímabundin röskun á þjónustu eða að skráning þín sé útrunnin.
-\nViltu halda áfram með nýskráningu?</string>
     <string name="intermediate_items_sort_by_distance">Raða dyr-til-dyra</string>
     <string name="osmand_background_plugin_description">Sýnir stillingar til að virkja ham fyrir rakningu og leiðsögn í bakgrunni (slökkt á skjá) með því að vekja GPS-tækið reglulega.</string>
     <string name="save_global_track_interval_descr">Veldu millibil skráninga í almenna leiðarskráningu (virkjað með viðmótshlutanum fyrir GPX-skráningu á kortinu).</string>

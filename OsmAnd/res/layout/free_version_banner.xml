@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/osmo_header_dark"
+    android:background="@color/search_background_dark"
     android:orientation="vertical"
     android:theme="@style/FreeVersionBanner">
 

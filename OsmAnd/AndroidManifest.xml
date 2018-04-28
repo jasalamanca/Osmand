@@ -172,22 +172,13 @@
 
 		</activity>
 
-		<receiver android:name="net.osmand.plus.audionotes.MediaRemoteControlReceiver">
-			<intent-filter>
-				<action android:name="android.intent.action.CAMERA_BUTTON" />
-				<action android:name="android.intent.action.MEDIA_BUTTON" />
-			</intent-filter>
-		</receiver>
-
 		<activity android:name="net.osmand.plus.activities.SettingsActivity" android:label="@string/shared_string_settings" android:configChanges="keyboardHidden|orientation" />
 		<activity android:name="net.osmand.plus.activities.SettingsGeneralActivity" android:configChanges="keyboardHidden|orientation" />
 		<activity android:name="net.osmand.plus.activities.SettingsNavigationActivity" android:configChanges="keyboardHidden|orientation" />
 		<activity android:name="net.osmand.plus.monitoring.SettingsMonitoringActivity" android:configChanges="keyboardHidden|orientation" />
-		<activity android:name="net.osmand.plus.rastermaps.SettingsRasterMapsActivity" android:configChanges="keyboardHidden|orientation" />
 
 		<activity android:name="net.osmand.plus.osmedit.SettingsOsmEditingActivity" android:configChanges="keyboardHidden|orientation" />
 		<activity android:name="net.osmand.plus.development.SettingsDevelopmentActivity" android:configChanges="keyboardHidden|orientation" />
-		<activity android:name="net.osmand.plus.audionotes.SettingsAudioVideoActivity" android:configChanges="keyboardHidden|orientation" />
 		<activity android:name="net.osmand.access.SettingsAccessibilityActivity" android:configChanges="keyboardHidden|orientation" />
 
 		<activity android:name="net.osmand.plus.activities.search.SearchActivity" android:label="@string/search_activity" />
@@ -198,17 +189,6 @@
 		<activity android:name="net.osmand.plus.activities.PluginActivity" />
 		<activity android:name="net.osmand.plus.activities.ContributionVersionActivity" android:configChanges="keyboardHidden|orientation" android:label="@string/contribution_activity" />
 
-
-		<activity android:name="net.osmand.plus.osmo.SettingsOsMoActivity" android:configChanges="keyboardHidden|orientation" />
-		<activity android:name="net.osmand.plus.osmo.OsMoGroupsActivity">
-			<intent-filter>
-				<data android:scheme="http" android:host="z.osmo.mobi" />
-				<action android:name="android.intent.action.VIEW" />
-				<category android:name="android.intent.category.DEFAULT" />
-				<category android:name="android.intent.category.BROWSABLE" />
-			</intent-filter>
-		</activity>
-
 		<activity android:name="net.osmand.plus.activities.search.SearchPOIActivity" android:label="@string/searchpoi_activity" />
 		<activity android:name="net.osmand.plus.activities.search.SearchAddressActivity" android:label="@string/select_address_activity" />
 		<activity android:name="net.osmand.plus.activities.search.SearchCityByNameActivity" />
@@ -216,8 +196,6 @@
 		<activity android:name="net.osmand.plus.activities.search.SearchStreetByNameActivity" />
 		<activity android:name="net.osmand.plus.activities.search.SearchStreet2ByNameActivity" />
 		<activity android:name="net.osmand.plus.activities.search.SearchBuildingByNameActivity" />
-		<activity android:name="net.osmand.plus.sherpafy.TourViewActivity" android:exported="true"
-			android:launchMode= "singleInstance" android:label="Sherpafy" />
 		<activity android:name="net.osmand.plus.activities.EditPOIFilterActivity" />
 
 		<activity android:name="net.osmand.plus.activities.search.GeoIntentActivity" android:label="@string/app_name">
@@ -278,14 +256,6 @@
 				<category android:name="android.intent.category.CAR_DOCK" />
 				<category android:name="android.intent.category.DESK_DOCK" />
 			</intent-filter>
-			<!-- requires read permission -->
-			<!--
-			<intent-filter android:label="OsmAnd">
-			<action android:name="android.intent.action.VIEW" />
-				<category android:name="android.intent.category.DEFAULT" />
-				<data android:mimeType="vnd.android.cursor.item/postal-address_v2" />
-			</intent-filter>
-			-->
 			<!-- generated from https://en.wikipedia.org/wiki/List_of_Google_domains -->
 			<intent-filter>
 				<action android:name="android.intent.action.VIEW" />

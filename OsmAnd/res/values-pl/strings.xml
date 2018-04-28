@@ -1198,102 +1198,31 @@
     <string name="share_route_as_gpx">Udostępnij trasę jako plik GPX</string>
     <string name="share_route_subject">Trasa udostępniona przez OsmAnd</string>
     <string name="navigation_intent_invalid">Nieprawidłowy format: %s</string>
-    <string name="osmo_settings_uuid">Unikatowy identyfikator urządzenia</string>
-    <string name="osmo_settings_descr">Skonfiguruj monitorowanie i ustaw osobisty kanał monitorowania.</string>
-    <string name="osmo_plugin_description">Zapewnia częściową funkcjonalność monitoringu OpenStreetMap. Więcej szczegółów na http://osmo.mobi.
-\n
-\nZa jej pomocą można śledzić wszystkie urządzenia z danej grupy w czasie rzeczywistym, oglądać punkty i trasy przesłane przez ich uczestników.
-\n
-\nGrupa nie została usunięta po kilku miesiącach, wprowadza się ją zgodnie z regułą tworzenia grup na stronie OsMo.mobi</string>
-    <string name="osmo_plugin_name">Monitoring OpenStreetMap</string>
-    <string name="osmo_settings">OsMo</string>
     <string name="keep_informing_never">Tylko ręcznie (naciśnij strzałkę)</string>
     <string name="keep_informing_descr">Powtarza instrukcje nawigacji w regularnych odstępach czasu.</string>
     <string name="keep_informing">Powtarzanie instrukcji</string>
     <string name="arrival_distance">Powiadomienia osiągnięcia celu</string>
     <string name="arrival_distance_descr">Określa moment powiadamiania o osiągnięciu celu</string>
-    <string name="osmo_io_error">Problem z połączeniem OsMo: </string>
-    <string name="osmo_mode_on">Zatrzymaj sesję OsMo</string>
-    <string name="osmo_mode_off">Uruchom sesję OsMo</string>
 
     <string name="shared_string_share">Udostępnij</string>
     <string name="share_fav_subject">Ulubione miejsca udostępnione przez OsmAnd</string>
     <string name="use_points_as_intermediates">Wyznacz trasę pomiędzy punktami</string>
 
-    <string name="osmo_auto_send_locations_descr">Po uruchomieniu aplikacji automatycznie uruchom trackera i przesyłaj pozycję.</string>
-    <string name="osmo_auto_send_locations">Automatycznie uruchom trackera</string>
-    <string name="osmo_tracker_id">Identyfikator serwera śledzącego</string>
-    <string name="osmo_session_token">Token sesji: %1$s</string>
-    <string name="osmo_auth_pending">Oczekiwanie na uwierzytelnienie…</string>
-    <string name="osmo_conn_successfull">Nawiązano połączenie: %1$s</string>
-    <string name="osmo_mode_restart">Uruchom ponownie sesję OsMo</string>
-    <string name="osmo_settings_debug">Diagnozowanie błędów</string>
     <string name="hours_ago">godzin temu</string>
     <string name="minutes_ago">minut temu</string>
     <string name="seconds_ago">sekund temu</string>
-    <string name="osmo_connect_to_device_name">Nazwa użytkownika</string>
-    <string name="osmo_connect_to_device_tracker_id">Identyfikator serwera śledzącego</string>
-    <string name="osmo_connect_to_device">Sparuj z urządzeniem</string>
 
-
-    <string name="osmo_connected_devices">Podłączone urządzenia</string>
-    <string name="osmo_groups">Grupy OsMo</string>
-    <string name="osmo_tracker_id_descr">Naciśnij, aby wyświetlić identyfikator serwera śledzącego.</string>
-    <string name="osmo_locations_sent">Położenie wysłane %1$d (w buforze %2$d) </string>
 
     <string name="rendering_value_pink_name">Różowy</string>
 
     <string name="rendering_value_brown_name">Brązowy</string>
 
 
-    <string name="osmo_edit_device">Zmień właściwości użytkownika</string>
-    <string name="osmo_edit_color">Kolor</string>
-    <string name="osmo_group_info">Informacje</string>
-    <string name="osmo_group">Grupa OsMo</string>
-    <string name="osmo_group_share">W celu dołączenia do grupy %2$s, proszę określić identyfikator grupy (%1$s) lub kliknąć %3$s.</string>
-    <string name="osmo_share_connect_device">Pozwól na stałe śledzenie tego urządzenia</string>
-    <string name="osmo_share_current_session">Udostępnij bieżącą sesję w przeglądarce</string>
-    <string name="osmo_session_not_available">Sesja niedostępna, proszę sprawdzić, czy „Wyślij położenie” jest włączone.</string>
-    <string name="osmo_share_session">Udostępnij sesję</string>
-    <string name="osmo_session_id_share">Adres sesji, aby śledzić urządzenie (%1$s)</string>
-    <string name="osmo_tracker_id_share">W celu połączenia się z docelowym urządzeniem %2$s, kliknij w link %3$s lub określ identyfikator trackera (%1$s)</string>
-    <string name="osmo_track_interval">Częstość rejestrowania położenia</string>
-    <string name="osmo_track_interval_descr">Wybiera tempo wysyłania bieżącego położenia.</string>
     <string name="int_days">dni</string>
-    <string name="osmo_connect_menu">Połącz</string>
-    <string name="osmo_expire_group">Wygasa za</string>
-    <string name="osmo_group_description">Opis</string>
-    <string name="osmo_group_policy">Polityka grup</string>
-    <string name="osmo_connect_to_group_id">Identyfikator grupy</string>
-    <string name="osmo_group_name">Nazwa grupy</string>
-    <string name="osmo_connect_to_group">Sparuj z grupą</string>
-    <string name="osmo_connect">Dołącz</string>
-    <string name="osmo_create_group">Utwórz grupę</string>
-    <string name="osmo_server_operation_failed">Błąd działania Serwera OsMo</string>
-    <string name="osmo_activity">Monitorowanie OpenStreetMap</string>
-    <string name="osmo_enable_tracker">Wysyłaj moją pozycję</string>
-    <string name="osmo_control">Szybki dostęp do OsMo</string>
 
     <string name="import_file_favourites">Zapisać dane jako plik GPX czy zaimportować je do Ulubionych?</string>
 
-    <string name="osmo_follow">Śledź</string>
-    <string name="osmo_sign_in">Zarejestruj</string>
-    <string name="osmo_create_groups_confirm">Aby tworzyć grupy, należy być zarejestrowanym użytkownikiem OsMo.</string>
-    <string name="osmo_credentials_not_valid">Dane uwierzytelniające do OsMo są nieprawidłowe.</string>
-    <string name="osmo_regenerate_login_ids_confirm">Wygenerować identyfikator ponownie? Wszystkie połączone urządzenia nie będą mogły już Ciebie śledzić.</string>
-    <string name="osmo_regenerate_login_ids">Ponowne generowanie identyfikatora użytkownika</string>
-    <string name="osmo_cancel_moving_target">Anuluj poruszający się cel</string>
-    <string name="osmo_center_location">Wyśrodkuj na ekranie</string>
-    <string name="osmo_set_moving_target">Ustaw jako cel w ruchu</string>
-    <string name="osmo_use_server_name">Zarejestrowana nazwa</string>
-    <string name="osmo_connect_to_my_nickname">Ksywa</string>
-    <string name="osmo_user_name">Użytkownik</string>
 
-
-    <string name="osmo_user_joined">Użytkownik %1$s dołączył do grupy %2$s</string>
-    <string name="osmo_user_left">Użytkownik %1$s opuścił grupę %2$s</string>
-    <string name="osmo_show_group_notifications">Wyświetlanie powiadomień grup</string>
-    <string name="osmo_show_group_notifications_descr">Wyświetla powiadomienia, gdy użytkownik dołącza do grupy lub opuszcza grupę.</string>
     <string name="gpx_file_is_empty">Ślad GPX jest pusty</string>
 
     <string name="shared_string_my_tracks">Ślady</string>
@@ -1341,28 +1270,7 @@
     <string name="none_selected_gpx">Nie wybrano żadnego pliku GPX. Aby wybrać przytrzymaj nacisk na dostępnej ścieżce.</string>
 
     <string name="local_index_select_gpx_file">Wybierz aby wyświetlić</string>
-    <string name="osmo_group_by_invite">Dołącz do grupy przez zaproszenie</string>
-    <string name="osmo_group_information_desc">- Tworząc grupę należy nadać jej nazwę i wypełnić opis
-\n - Poprzez aplikację są tworzone tylko grupy prostego typu, czytaj więcej na stronie https://osmo.mobi/g/new
-\n - Poprzez stronę możesz zarządzać grupą, i ustawiać trasy i punkty dostępne dla wszystkich
-\n - Nie aprobujemy grup jednoosobowych, jeżeli nie jest to grupa typu użyteczne miejsce
-\n - Prywatne grupy są ograniczone do 8 osób
-\n - Szczegółowe regulaminy użytkowania są dostępne na stronie OsMo.mobi
-\n - Jeśli trzeba utworzyć grupę, ale z innymi warunkami, prosimy o kontakt osmo.mobi@gmail.com</string>
-    <string name="osmo_group_information">Proszę przeczytać przed założeniem grupy!</string>
-    <string name="osmo_not_signed_in">Nie udało się zalogować do OsMo</string>
-    <string name="osmo_gpx_points_downloaded">Pobrano %1$s punktów OsMo.</string>
-    <string name="osmo_auto_connect_descr">Łączy z usługą automatycznie po uruchomieniu programu.</string>
-    <string name="osmo_auto_connect">Automatyczne łączenie</string>
-    <string name="osmo_start_service">Usługa OsMo</string>
-    <string name="osmo_gpx_track_downloaded">Pobrano %1$s ścieżek OsMo.</string>
     <string name="no_index_file_to_download">Nie znaleziono pobranych danych, proszę sprawdzić połączenie internetowe.</string>
-    <string name="osmo_auth_error_short">Nie udało się uwierzytelnić</string>
-    <string name="osmo_auth_error">Wystąpił błąd uwierzytelnienia OsMo: %1$s.
-
- Może to być wina przerwy w działaniu usługi lub rejestracja użytkownika straciła ważność.
-
- Kontynuować z nową rejestracją?</string>
     <string name="keep_navigation_service">Utrzymuj</string>
     <string name="stop_navigation_service">Wyłącz</string>
     <string name="enable_sleep_mode">Włącz tryb działania GPS w tle</string>
@@ -1409,9 +1317,6 @@
     <string name="rendering_value_bicycle_name">Rower</string>
     <string name="rendering_value_pedestrian_name">Pieszy</string>
     <string name="rendering_attr_coloredBuildings_name">Różne kolory typów budynków</string>
-    <string name="osmo_invite">Zaproś…</string>
-    <string name="osmo_leave_confirmation_msg">Opuścić grupę %1$s?</string>
-    <string name="osmo_specify_tracker_id">Proszę określić identyfikator</string>
     <string name="continue_navigation">Kontynuuj nawigację</string>
     <string name="pause_navigation">Wstrzymaj nawigację</string>
     <string name="rendering_attr_alpineHiking_name">Klasyfikacja trudności wspinaczki alpinistycznej (SAC)</string>
@@ -1464,8 +1369,6 @@
     <string name="speed_limit_exceed_message">Wybiera zakres tolerancji ograniczenia prędkości, powyżej którego zostanie użyte ostrzeżenie głosowe.</string>
     <string name="fav_point_emoticons_message">Nazwa ulubionego miejsca została zmieniona na %1$s, aby prawidłowo ułatwić zapisywanie do pliku ciągu z emotikonem.</string>
     <string name="print_route">Drukuj trasę</string>
-    <string name="osmo_device_not_found">Nie odnaleziono urządzenia</string>
-    <string name="osmo_no_connection_msg">Nie można połączyć się z serwisem OsMo:\n- sprawdź połączenie internetowe,\n- sprawdź ustawienia,\n- sprawdź nasz Twitter: https://twitter.com/OsMomobi</string>
     <string name="anonymous_user_hint">Anonimowy użytkownik nie może:
 - tworzyć grup,
 - synchronizować grup i urządzeń z serwerem,
@@ -1630,7 +1533,6 @@ Długość %2$s</string>
     <string name="current_route">Bieżąca trasa</string>
     <string name="osm_changes_added_to_local_edits">Zmiany OSM dodane do zestawu zmian lokalnych</string>
     <string name="mark_to_delete">Zaznacz, aby usunąć</string>
-    <string name="osmo_grop_name_length_alert">Nazwa grupy powinna zawierać co najmniej 3 znaki!</string>
     <string name="shared_string_go">Nawiguj</string>
 
     <string name="shared_string_message">Wiadomość</string>
@@ -1664,7 +1566,6 @@ Długość %2$s</string>
     <string name="use_fast_recalculation">Inteligentne przeliczanie trasy</string>
     <string name="use_fast_recalculation_desc">Wyznacza ponownie tylko początkową część trasy dla długich podróży.</string>
     <string name="shared_string_logoff">Wyloguj się</string>
-    <string name="osmo_share_my_location">Udostępnianie położenia</string>
     <string name="rendering_value_walkingRoutesOSMC_name">Linia w kolorze oznakowania OSMC</string>
     <string name="rendering_value_disabled_name">Wyłączenie</string>
     <string name="rendering_value_walkingRoutesScopeOSMC_name">Linia w kolorze przeznaczenia</string>
@@ -2185,9 +2086,6 @@ Długość %2$s</string>
     <string name="trip_rec_notification_settings">Aktywuj szybkie rejestrowanie</string>
     <string name="trip_rec_notification_settings_desc">Wyświetl powiadomienie systemowe z opcją rozpoczęcia rejestrowania śladu.</string>
     <string name="shared_string_notifications">Powiadomienia</string>
-    <string name="osmo_share_location">Udostępnij</string>
-    <string name="osmo_pause_location">Wstrzymaj</string>
-    <string name="osmo_service_running">Usługa OsMo jest uruchomiona</string>
     <string name="gpx_no_tracks_title">Nie ma na razie żadnych śladów</string>
     <string name="gpx_no_tracks_title_folder">Można także dodać ślady do katalogu</string>
     <string name="gpx_add_track">Dodaj ślad</string>

@@ -151,9 +151,6 @@
     <string name="gpx_add_track">Добавить</string>
     <string name="gpx_appearance">Вид</string>
 
-    <string name="osmo_share_location">Поделиться</string>
-    <string name="osmo_pause_location">Пауза</string>
-    <string name="osmo_service_running">OsMo запущен</string>
     <string name="trip_rec_notification_settings">Включить быстрый запуск записи</string>
     <string name="trip_rec_notification_settings_desc">Показывать уведомление, которое позволит начать запись путешествия.</string>
     <string name="shared_string_notifications">Уведомления</string>
@@ -1269,15 +1266,6 @@
     <string name="interrupt_music_descr">Голосовые подсказки приостанавливают музыку, а не только приглушают ее.</string>
     <string name="interrupt_music">Прерывание музыки</string>
     <string name="share_route_as_gpx">Поделиться маршрутом используя файл GPX</string>
-    <string name="osmo_settings_uuid">Ключ доступа</string>
-    <string name="osmo_settings_descr">Настройка параметров мониторинга и установка персонального канала мониторинга.</string>
-    <string name="osmo_plugin_description">Этот плагин предоставляет некоторые функциональные возможности для мониторинга OpenStreetMap см. https://osmo.mobi
-\n
-\nВы можете отслеживать все устройства, включенные в группу в режиме реального времени. Вы также можете увидеть точки и маршруты, загруженные в вашу группу.
-\n
-\nЧтобы группа не была удалена после нескольких месяцев, необходимо привести ее в соответствие с правилами, с которыми вы создаете группы на сайте OsMo.mobi</string>
-    <string name="osmo_plugin_name">OpenStreetMap Мониторинг</string>
-    <string name="osmo_settings">OsMo</string>
     <string name="navigation_intent_invalid">Неправильный формат: %s</string>
     <string name="share_route_subject">Маршрут предоставленный через OsmAnd</string>
 
@@ -1286,79 +1274,21 @@
     <string name="keep_informing">Повторять навигационные инструкции</string>
     <string name="arrival_distance">Объявление прибытия</string>
     <string name="arrival_distance_descr">Как скоро вы хотите объявить о прибытии?</string>
-    <string name="osmo_io_error">Проблема подключения OsMo: </string>
     <string name="share_fav_subject">Избранные точки расшаренные через OsmAnd</string>
     <string name="use_points_as_intermediates">Рассчитать маршрут между точками</string>
-    <string name="osmo_connect_to_device_name">Имя пользователя</string>
-    <string name="osmo_connected_devices">Устройства</string>
-    <string name="osmo_groups">Группы OsMo</string>
-    <string name="osmo_connect_to_device">Подключиться к устройству</string>
-    <string name="osmo_auth_pending">Ожидание авторизации…</string>
-    <string name="osmo_conn_successfull">Соединение установлено: %1$s </string>
     <string name="hours_ago">часов назад</string>
     <string name="minutes_ago">минут назад</string>
     <string name="seconds_ago">секунд назад</string>
-    <string name="osmo_locations_sent">Местоположение отправлено %1$d (в буфере %2$d) </string>
-    <string name="osmo_mode_restart">Рестарт сессии</string>
-    <string name="osmo_mode_on">Остановить сессию</string>
-    <string name="osmo_mode_off">Старт сессии</string>
-    <string name="osmo_settings_debug">Отладочная информация</string>
-    <string name="osmo_connect_to_device_tracker_id">Трекер ID</string>
-    <string name="osmo_auto_send_locations_descr">Автоматический старт поездки и отправка местоположения после запуска приложения.</string>
-    <string name="osmo_auto_send_locations">Автоматический старт поездки</string>
-    <string name="osmo_tracker_id">ID трекера</string>
-    <string name="osmo_session_token">Токен сессии: %1$s</string>
-    <string name="osmo_tracker_id_descr">Нажмите для просмотра ID трекера.</string>
     <string name="index_item_world_bitcoin_payments">Мировые пункты обмена bitcoin</string>
-    <string name="osmo_connect_to_group_id">ID группы</string>
-    <string name="osmo_group_name">Название группы</string>
-    <string name="osmo_connect_to_group">Подключиться к группе</string>
-    <string name="osmo_create_group">Создать группу</string>
-    <string name="osmo_enable_tracker">Отправить мои местоположения</string>
-    <string name="osmo_group_description">Описание</string>
     <string name="int_days">дней</string>
-    <string name="osmo_track_interval">Интервал отправки</string>
-    <string name="osmo_group">Группа OsMo</string>
-    <string name="osmo_track_interval_descr">Выберите временной интервал для отправки местоположения.</string>
-    <string name="osmo_activity">OpenStreetMap Мониторинг</string>
-    <string name="osmo_share_current_session">Поделиться текущей сессией в браузере</string>
-    <string name="osmo_share_session">Поделиться сессией</string>
-    <string name="osmo_session_id_share">URL сессии для отслеживания устройства (%1$s)</string>
-    <string name="osmo_group_info">Информация</string>
-    <string name="osmo_group_share">Чтобы подключиться к группе %2$s, укажите ID группы (%1$s) или нажмите %3$s.</string>
-    <string name="osmo_share_connect_device">Поделиться ID трекера</string>
-    <string name="osmo_connect_menu">Соединение</string>
-    <string name="osmo_connect">Войти</string>
-    <string name="osmo_server_operation_failed">OsMo: не удалось правильно обработать команду</string>
     <string name="import_file_favourites">Сохранить данные как файл GPX или импортировать путевые точки в избранное?</string>
     
     <string name="rendering_value_pink_name">Розовый</string>
     
     <string name="rendering_value_brown_name">Коричневый</string>
-    
-    
-    
-    <string name="osmo_create_groups_confirm">Чтобы создавать группы Вы должны быть зарегистрированным пользователем OsMo.</string>
-    <string name="osmo_sign_in">Войти</string>
-    <string name="osmo_regenerate_login_ids_confirm">Вы уверены, что хотите пересоздать персональные ID? Все устройства, связанные с Вами, больше не будут отслеживать Вас.</string>
-    <string name="osmo_regenerate_login_ids">Регенерировать ID пользователя</string>
-    <string name="osmo_use_server_name">Зарегистрированное имя</string>
-    <string name="osmo_connect_to_my_nickname">Ник</string>
-    <string name="osmo_user_name">Пользователь</string>
-    
-    <string name="osmo_credentials_not_valid">Ваши учётные данные OsMo не верны.</string>
-    <string name="osmo_follow">Следить</string>
-    <string name="osmo_edit_device">Изменить пользовательские настройки</string>
+
+
     <string name="gpx_file_is_empty">Трек GPX пуст</string>
-    <string name="osmo_user_joined">Пользователь %1$s присоединился к группе %2$s</string>
-    <string name="osmo_user_left">Пользователь %1$s покинул группу %2$s</string>
-    <string name="osmo_show_group_notifications">Показывать извещения группы</string>
-    <string name="osmo_show_group_notifications_descr">Показывать сообщения, когда пользователь присоединяется или покидает группу.</string>
-    <string name="osmo_group_policy">Правила</string>
-    <string name="osmo_control">Быстрый доступ к OsMo</string>
-    <string name="osmo_cancel_moving_target">Отменить движущуюся цель</string>
-    <string name="osmo_set_moving_target">Движущаяся цель</string>
-    <string name="osmo_center_location">По центру экрана</string>
     <string name="gpx_selection_segment_title">Сегмент</string>
     <string name="gpx_info_distance">Расстояние: %1$s (%2$s точек) </string>
     <string name="gpx_info_start_time">Время старта: %1$tF, %1$tT </string>
@@ -1391,10 +1321,8 @@
     <string name="show_zoom_buttons_navigation">Кнопки масштаба</string>
     <string name="sort_by_distance">Сортировать по дистанции</string>
     <string name="sort_by_name">Сортировать по имени</string>
-    <string name="osmo_edit_color">Цвет метки</string>
     <string name="none_selected_gpx">Нет выбранных файлов GPX. Используйте длительное нажатие для выбора доступного трека.</string>
     <string name="local_index_select_gpx_file">Выбрать для отображения</string>
-    <string name="osmo_group_by_invite">Войти по приглашению</string>
     <string name="rendering_attr_hideBuildings_name">Строения</string>
     <string name="rendering_attr_hideText_name">Текст</string>
     <string name="rendering_attr_hideWoodScrubs_name">Леса и кустарники</string>
@@ -1407,17 +1335,12 @@
     <string name="rendering_attr_hideAccess_name">Ограничения доступа</string>
     <string name="rendering_attr_showAccess_name">Отображать ограничения доступа</string>
     <string name="rendering_attr_showCycleRoutes_name">Отображать веломаршруты</string>
-    <string name="osmo_auth_error_short">Сбой авторизации</string>
     <string name="map_preferred_locale_descr">Предпочтительный язык для меток на карте (если он не доступен, то английский язык или местные названия).</string>
     <string name="map_preferred_locale">Предпочтительный язык на карте</string>
     <string name="lang_sw">Суахили</string>
     <string name="lang_he">Иврит</string>
     <string name="forward">Вперёд</string>
     <string name="home">Домашняя страница</string>
-    <string name="osmo_group_information">Пожалуйста, прочтите перед созданием группы!</string>
-    <string name="osmo_auto_connect_descr">Автоматическое подключение к сервису при запуске приложения.</string>
-    <string name="osmo_auto_connect">Автоматическое подключение</string>
-    <string name="osmo_start_service">Сервис OsMo</string>
     <string name="local_map_names">Местные названия</string>
     <string name="gpx_monitoring_start">Начать запись GPX</string>
     <string name="gpx_monitoring_stop">Остановить запись GPX</string>
@@ -1431,14 +1354,7 @@
     <string name="live_monitoring_m">Онлайн слежение (требуется GPX)</string>
     <string name="live_monitoring_start">Начать онлайн слежение</string>
     <string name="live_monitoring_stop">Остановить онлайн слежение</string>
-    <string name="osmo_auth_error">Ошибка авторизации OsMo : %1$s.↵\n Это может быть временно недоступный сервис или срок вашей регистрации истек.↵\n Желаете продолжить с новой регистрацией?</string>
-    <string name="osmo_not_signed_in">Не удалось войти в OsMo</string>
-    <string name="osmo_gpx_track_downloaded">OsMo трек %1$s загружен.</string>
     <string name="no_index_file_to_download">Загрузок не найдено, проверьте подключение к Интернет.</string>
-    <string name="osmo_expire_group">Истекает</string>
-    <string name="osmo_gpx_points_downloaded">Точки OsMo %1$s загружены.</string>
-    <string name="osmo_session_not_available">Сессия недоступна, пожалуйста проверьте, что \"отправка местоположения\" включена.</string>
-    <string name="osmo_tracker_id_share">Чтобы присоединиться к устройству %2$s, нажмите на ссылку %3$s или укажите ID трекера (%1$s)</string>
     <string name="lang_al">Албанский</string>
     <string name="lang_ar">Арабский</string>
     <string name="lang_fa">Персидский</string>
@@ -1447,9 +1363,6 @@
     <string name="lang_zh_cn">Китайский (упрощенный)</string>
     <string name="lang_zh_tw">Китайский (традиционный)</string>
     <string name="rendering_attr_subwayMode_name">Маршруты метро</string>
-    <string name="osmo_invite">Пригласить…</string>
-    <string name="osmo_leave_confirmation_msg">Вы хотите выйти из группы %1$s?</string>
-    <string name="osmo_specify_tracker_id">Пожалуйста, укажите ID</string>
     <string name="continue_navigation">Продолжить навигацию</string>
     <string name="pause_navigation">Приостановить навигацию</string>
     <string name="rendering_attr_alpineHiking_description">Визуализация пути по шкале SAC.</string>
@@ -1458,13 +1371,6 @@
     <string name="arrival_distance_factor_normally">Как обычно</string>
     <string name="arrival_distance_factor_late">Попозже</string>
     <string name="arrival_distance_factor_at_last">На последних метрах</string>
-    <string name="osmo_group_information_desc">- Введите название и описание группы при создании
-\n - С приложением создаются только группы простого типа, подробнее на сайте https://osmo.mobi/g/new
-\n - Группами можно управлять через веб-сайт, предоставляя маршруты и точки доступные всем
-\n - Мы не поддерживаем использование только одного пользователя, если эта группа не POI
-\n - Частные группы ограничены до 8 человек
-\n - Подробные условия всегда есть на сайте osMo.mobi
-\n - Если вам нужны специальные условия, пожалуйста, свяжитесь со службой поддержки: osmo.mobi @ gmail.com</string>
     <string name="rendering_attr_alpineHiking_name">Пеший горный туризм по шкале (SAC)</string>
     <string name="rendering_attr_hikingRoutesOSMC_name">Визуализация пути согласно трассам OSMC</string>
     <string name="rendering_attr_coloredBuildings_name">Цветовая маркировка зданий по типу</string>
@@ -1513,9 +1419,7 @@
     <string name="text_size_descr">Установите размер текста для карты.</string>
     <string name="text_size">Размер текста</string>
     <string name="local_index_description">Нажмите на любой элемент списка для просмотра более подробной информации, долго удерживайте, чтобы поместить в архив или удалить. Текущие данные на устройстве (%1$s свободно):</string>
-    <string name="osmo_device_not_found">Устройство не обнаружено</string>
     <string name="anonymous_user">Анонимный пользователь</string>
-    <string name="osmo_no_connection_msg">Сервис OsMo не доступен:\n- проверьте интернет соединение;\n- проверьте настройки;\n- проверьте наш Twitter: https://twitter.com/OsMomobi</string>
     <string name="anonymous_user_hint">Анонимному пользователю недоступно:\n- создание групп;\n- синхронизация групп и устройств с сервером;\n- управление группами и устройствами в личном кабинете.</string>
     <string name="logged_as">Вы вошли как %1$s</string>
     <string name="rendering_category_routes">Маршруты</string>
@@ -1683,7 +1587,6 @@
     <string name="shared_string_go">Поехали</string>
     <string name="local_osm_changes_upload_all_confirm">Вы собираетесь отправить %1$d изменений в OSM. Вы уверены?</string>
     <string name="confirmation_to_clear_history">Вы хотите очистить историю?</string>
-    <string name="osmo_grop_name_length_alert">Имя группы должно быть минимум 3 символа!</string>
     <string name="current_route">Текущий маршрут</string>
     <string name="welmode_download_maps">Скачать карты</string>
     <string name="welcome_select_region">Для правильного отображения дорожных знаков и правил, пожалуйста, выберите свой регион вождения:</string>
@@ -1728,7 +1631,6 @@
     <string name="rendering_value_disabled_name">Отключено</string>
     <string name="rendering_value_walkingRoutesScopeOSMC_name">Раскраска по сетевой принадлежности</string>
     <string name="rendering_value_walkingRoutesOSMC_name">Раскраска туристических меток по OSMC</string>
-    <string name="osmo_share_my_location">Передача местоположения</string>
     <string name="shared_string_logoff">Выход</string>
     <string name="index_name_netherlands">Европа - Нидерланды</string>
     <string name="shared_string_wikipedia">Википедия</string>

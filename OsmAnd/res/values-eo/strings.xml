@@ -297,7 +297,6 @@
     <string name="rendering_value_disabled_name">Malaktiva</string>
     <string name="rendering_value_walkingRoutesScopeOSMC_name">Kolorigi laŭ speco de kurs-reto</string>
     <string name="rendering_value_walkingRoutesOSMC_name">Kolorigi laŭ OSMC piedirada simbolo</string>
-    <string name="osmo_share_my_location">Transsendi mian pozicion</string>
     <string name="shared_string_logoff">Elsaluti</string>
     <string name="rendering_attr_hideHouseNumbers_name">Numeroj de domoj</string>
     <string name="application_dir_change_warning3">Ĉu vi ankaŭ volas kopii dutumdosierojn de OsmAnd al la nova loko?</string>
@@ -390,35 +389,8 @@
     <string name="about_settings_descr">Informoj, permesiloj, kontribuintoj</string>
     <string name="choose_osmand_theme">Etoso</string>
     <string name="choose_osmand_theme_descr">Elekti etoson de la aplikaĵo.</string>
-    <string name="osmo_group_information_desc">- Por krei grupon, bonvolu nomi kaj priskribi ĝin
-\n - Per la aplikaĵo oni povas krei nur grupoj de simpla tipo, legu pli ĉe la retpaĝo https://osmo.mobi/g/new 
-\n - Per retpaĝo vi povas administri grupon, loki kursojn kaj punktojn videblajn por ĉiujn 
-\n - Ni ne rekomendas uzi gropon nur de unu persono, se tiu ne estas intereseja gropo 
-\n - Privataj grupoj estas limigitaj ĝis 8 personoj 
-\n - Detalaj kondiĉoj estas ĉiam disponeblaj ĉe retpaĝo OsMo.mobi 
-\n - Se vi bezonas specialajn kondiĉojn - bonvolu kontakti kun servantoj: osmo.mobi@gmail.com</string>
-    <string name="osmo_specify_tracker_id">Bonvolu difini identigilon</string>
-    <string name="osmo_no_connection_msg">Ne povas konekti al la servilo de OsMo:
-- kontrolu vian retkonekton;
-- kontrolu agordojn;
-- vizitu nian Twitter: https://twitter.com/OsMomobi</string>
     <string name="anonymous_user_hint">Anonima uzanto ne povas:\n- krei grupojn;\n- samtempigi grupojn kaj aparatojn kun la servilo;\n- administri grupojn kaj aparatojn per persona stirpanelo en retejo.</string>
     <string name="report">Raportoj</string>
-    <string name="osmo_connect_to_group_id">Grupa ID</string>
-    <string name="osmo_connect_to_device_tracker_id">Kursospurila ID</string>
-    <string name="osmo_connect">Konekti</string>
-    <string name="osmo_groups">Grupoj OsMo</string>
-    <string name="osmo_auto_send_locations_descr">Aŭtomate komenci registri ekskurson kaj sendi lokojn post starto de aplikaĵo.</string>
-    <string name="osmo_auto_send_locations">Aŭtomate ekigi ekskurs-registrilon</string>
-    <string name="osmo_tracker_id">Kursospurila ID</string>
-    <string name="osmo_tracker_id_descr">Frapetu por vidi identigilon de kursospurilo.</string>
-    <string name="osmo_connect_to_my_nickname">Kaŝnomo</string>
-    <string name="osmo_plugin_name">OpenStreetMap Observado</string>
-    <string name="osmo_plugin_description">Tiu ĉi kromprogramo parte liveras eblojn de la OpenStreetMap Observado, rigardu https://osmo.mobi 
-\n 
-\nVi povas spuri ĉiujn aparatojn de partoprenanta grupo realtempe. Ankaŭ vi povas vidi interesejojn kaj kursojn alŝutitajn al la grupo al kiu vi apartenas.
-\n
-\nSe grupo ne estis forigita post monatoj, restarigi ĝin per reguloj de grup-kreado en la retejo OsMo.mobi</string>
     <string name="storage_permission_restart_is_required">Nun la aplikaĵo estas permesita por skribi en ekstera memorejo. Permana restarto de aplikaĵo nepras.</string>
     <string name="full_report">Plena raporto</string>
     <string name="open_street_map_login_and_pass">Uzantnomo kaj pasvorto al OpenStreetMap</string>
@@ -435,7 +407,6 @@
     <string name="current_route">Nuna kurso</string>
     <string name="osm_changes_added_to_local_edits">OSM-ŝanĝoj aldonitaj al loka ŝanĝaro</string>
     <string name="mark_to_delete">Marki por forigi</string>
-    <string name="osmo_grop_name_length_alert">Grupa nomo devas enhavi almenaŭ 3 signojn!</string>
     <string name="local_osm_changes_upload_all_confirm">Ĉu vi certe volas alŝuti %1$d ŝanĝo(j)n al OSM?</string>
     <string name="confirmation_to_clear_history">Ĉu vi volas forviŝi la historion?</string>
     <string name="delay_to_start_navigation">Ekigi navigadon turnon-post-turno post…</string>
@@ -555,7 +526,6 @@ Lon: %2$s</string>
     <string name="map_widget_left">Maldekstra panelo</string>
     <string name="configure_map">Agordi mapon</string>
     <string name="search_radius_proximity">En proksime de</string>
-    <string name="osmo_device_not_found">Ne trovis aparaton</string>
     <string name="anonymous_user">Anonima uzanto</string>
     <string name="logged_as">Ensalutinta kiel %1$s</string>
     <string name="speed_limit_exceed">Tolerado de rapidlimo</string>
@@ -613,9 +583,7 @@ Lon: %2$s</string>
     <string name="rendering_value_car_name">Aŭto</string>
     <string name="rendering_value_bicycle_name">Biciklo</string>
     <string name="rendering_value_pedestrian_name">Piediranto</string>
-    <string name="osmo_invite">Inviti…</string>
     <string name="rendering_attr_coloredBuildings_name">Kolorigi konstruaĵojn laŭspece</string>
-    <string name="osmo_leave_confirmation_msg">Ĉu vi volas forlasi grupon %1$s?</string>
     <string name="continue_navigation">Pluigi navigadon</string>
     <string name="pause_navigation">Paŭzigi navigadon</string>
     <string name="keep_navigation_service">Daŭrigi</string>
@@ -643,20 +611,6 @@ Lon: %2$s</string>
     <string name="rendering_attr_showSurfaceGrade_name">Kvalito de vojoj</string>
     <string name="rendering_attr_showSurfaces_name">Pavimo de vojoj</string>
     <string name="rendering_attr_showCycleRoutes_name">Biciklovojoj</string>
-    <string name="osmo_auth_error_short">Rajtigo malsukcesis</string>
-    <string name="osmo_auth_error">OsMo-a eraro de rajtigado okazis: %1$s.
-
- Verŝajne la servo dumtempe malfunkcias aŭ via registrado senvalidiĝis.
-
- Ĉu vi volas registri denove?</string>
-    <string name="osmo_group_information">Bonvolu legi antaŭ krei grupon!</string>
-    <string name="osmo_group_by_invite">Aniĝi per invito</string>
-    <string name="osmo_not_signed_in">Ensaluto al OsMo malsukcesis</string>
-    <string name="osmo_gpx_points_downloaded">Elŝutis %1$s OsMo-ajn punktojn.</string>
-    <string name="osmo_auto_connect">Aŭtomate konekti</string>
-    <string name="osmo_auto_connect_descr">Aŭtomate konekti kun servo post starto de la aplikaĵo.</string>
-    <string name="osmo_start_service">OsMo servo</string>
-    <string name="osmo_gpx_track_downloaded">Elŝutis %1$s OsMo-ajn kursojn.</string>
     <string name="no_index_file_to_download">Elŝutoj ne trovitaj, bonvolu kontroli vian retkonekton.</string>
     <string name="select_index_file_to_download">Trovis nenion. Se vi ne povas trovi vian regionon, vi povas fari ĝin mem (rigardu http://osmand.net).</string>
     <string name="none_selected_gpx">Neniu GPX-dosiero elektita. Por elekti premtenu disponeblan kurson.</string>
@@ -746,65 +700,11 @@ Lon: %2$s</string>
     <string name="gpx_selection_points">%1$s\nPunktoj</string>
     <string name="gpx_selection_track">%1$s\nKurso %2$s</string>
     <string name="gpx_file_is_empty">GPX-spur-dosiero estas malplena</string>
-    <string name="osmo_user_joined">Uzanto %1$s aniĝis la grupo %2$s</string>
-    <string name="osmo_user_left">Uzanto %1$s forlasis grupon %2$s</string>
-    <string name="osmo_show_group_notifications_descr">Montri atentigojn kiam uzanto aniĝas aŭ forlasas la grupon.</string>
-    <string name="osmo_follow">Sekvi</string>
-    <string name="osmo_sign_in">Registri</string>
-    <string name="osmo_create_groups_confirm">Por krei grupojn, vi devas registriĝi kiel uzanto de OsMo.</string>
-    <string name="osmo_credentials_not_valid">Viaj ensalutiloj al OsMo estas eraraj.</string>
-    <string name="osmo_regenerate_login_ids_confirm">Ĉu vi certe volas rekrei personan identigilon? Ĉiuj aparatoj kiuj konektas al vi, ne povos plue spuri vin.</string>
-    <string name="osmo_regenerate_login_ids">Rekrei identigilon de uzanto</string>
-    <string name="osmo_cancel_moving_target">Nuligi movadan celon</string>
-    <string name="osmo_center_location">Centrigi sur la ekrano</string>
-    <string name="osmo_set_moving_target">Agordi kiel movadan celon</string>
-    <string name="osmo_user_name">Uzanto</string>
-    <string name="osmo_use_server_name">Registrita nomo</string>
-    <string name="osmo_edit_device">Ŝanĝi ecojn de uzanto</string>
-    <string name="osmo_edit_color">Vidiga koloro</string>
-    <string name="osmo_group_info">Informoj</string>
-    <string name="osmo_group">OsMo-grupo</string>
-    <string name="osmo_group_share">Por konekti la grupon %2$s, difinu grupan identigilon aŭ premu %3$s.</string>
-    <string name="osmo_share_connect_device">Permesu por permanenta spurado de tiu ĉi aparato</string>
-    <string name="osmo_share_current_session">Kunhavigi nuntempan seancon per ret-foliumilo</string>
-    <string name="osmo_share_session">Kunhavigi seancon</string>
-    <string name="osmo_session_not_available">Seanco ne disponebla, bonvolu kontroli ĉu \'Sendi poziciojn\' estas ŝaltita.</string>
-    <string name="osmo_show_group_notifications">Montri atentigojn pri grupo</string>
-    <string name="osmo_session_id_share">Seanca retadreso por spuri aparaton (%1$s)</string>
-    <string name="osmo_tracker_id_share">Por konekti al cela aparato %2$s, premu ligilon %3$s aŭ difinu identigilon de kursospurilo (%1$s)</string>
-    <string name="osmo_track_interval">Protokolada intervalo</string>
-    <string name="osmo_track_interval_descr">Agordi oftecon de sendado de pozicio.</string>
     <string name="int_days">tagoj</string>
-    <string name="osmo_connect_menu">Konekti</string>
-    <string name="osmo_group_description">Priskribo</string>
-    <string name="osmo_expire_group">Senvalidiĝos post</string>
-    <string name="osmo_group_policy">Politiko</string>
-    <string name="osmo_connect_to_device_name">Uzantnomo</string>
-    <string name="osmo_group_name">Grupnomo</string>
-    <string name="osmo_connect_to_device">Kupli kun aparato</string>
-    <string name="osmo_connect_to_group">Kupli kun grupo</string>
-    <string name="osmo_create_group">Krei grupon</string>
-    <string name="osmo_server_operation_failed">Servilo de OsMo malfunkciis</string>
-    <string name="osmo_activity">OpenStreetMap Observado</string>
-    <string name="osmo_enable_tracker">Sendi mian pozicion</string>
-    <string name="osmo_control">Rapidaliro al OsMo</string>
     <string name="hours_ago">horoj antaŭe</string>
     <string name="minutes_ago">minutoj antaŭe</string>
     <string name="seconds_ago">sekundoj antaŭe</string>
-    <string name="osmo_connected_devices">Konektitaj aparatoj</string>
-    <string name="osmo_session_token">Seanca ĵetono: %1$s</string>
-    <string name="osmo_auth_pending">Atendado je rajtigado…</string>
-    <string name="osmo_locations_sent">Pozicioj senditaj %1$d (en bufro %2$d)</string>
-    <string name="osmo_conn_successfull">Konektita: %1$s</string>
-    <string name="osmo_io_error">Problemo kun OsMo konekto:</string>
-    <string name="osmo_settings_uuid">Ununura aparata identigilo</string>
     <string name="use_points_as_intermediates">Prikalkuli kurson inter punktojn</string>
-    <string name="osmo_mode_restart">Restartigi OsMo seancon</string>
-    <string name="osmo_mode_on">Ĉesigi OsMo seancon</string>
-    <string name="osmo_mode_off">Ekigi OsMo seancon</string>
-    <string name="osmo_settings_debug">Informoj pri senerarigo</string>
-    <string name="osmo_settings_descr">Agordi observadon kaj personan observadan kanalon.</string>
-    <string name="osmo_settings">OsMo</string>
     <string name="always_center_position_on_map">Ĉiam montri centrigitan pozicion</string>
     <string name="localization_pref_title">Loko</string>
     <string name="index_item_nation_addresses">adresoj tutmondaj</string>
@@ -1989,9 +1889,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="trip_rec_notification_settings">Aktivigi rapid-starton de registrado</string>
     <string name="trip_rec_notification_settings_desc">Montri sisteman sciigon kun eblo ekigi registradon de kurso.</string>
     <string name="shared_string_notifications">Sciigoj</string>
-    <string name="osmo_share_location">Kunhavigi</string>
-    <string name="osmo_service_running">OsMo-servo estas aktiva</string>
-    <string name="osmo_pause_location">Paŭzi</string>
     <string name="gpx_no_tracks_title">Vi ankoraŭ havas neniujn spurojn</string>
     <string name="gpx_no_tracks_title_folder">Vi ankaŭ povas aldoni spurojn al la dosierujo</string>
     <string name="gpx_add_track">Aldoni spuron</string>
