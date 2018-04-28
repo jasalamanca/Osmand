@@ -21,7 +21,6 @@ import net.osmand.StateChangedListener;
 import net.osmand.ValueHolder;
 import net.osmand.data.LatLon;
 import net.osmand.data.PointDescription;
-import net.osmand.map.ITileSource;
 import net.osmand.map.TileSourceManager;
 import net.osmand.map.TileSourceManager.TileSourceTemplate;
 import net.osmand.plus.access.AccessibilityMode;
@@ -727,9 +726,6 @@ public class OsmandSettings {
 
 	public final CommonPreference<Integer> NUMBER_OF_STARTS_FIRST_XMAS_SHOWN = new IntPreference("number_of_starts_first_xmas_shown", 0).makeGlobal();
 
-	// this value string is synchronized with settings_pref.xml preference name
-	public final CommonPreference<Boolean> USE_INTERNET_TO_DOWNLOAD_TILES = new BooleanPreference("use_internet_to_download_tiles", true).makeGlobal().cache();
-
 	public final OsmandPreference<String> AVAILABLE_APP_MODES = new StringPreference("available_application_modes", "car,bicycle,pedestrian,").makeGlobal().cache();
 
 	public final OsmandPreference<String> LAST_FAV_CATEGORY_ENTERED = new StringPreference("last_fav_category", "").makeGlobal();
@@ -1249,20 +1245,11 @@ public class OsmandSettings {
 	public final CommonPreference<Boolean> CENTER_POSITION_ON_MAP = new BooleanPreference("center_position_on_map", false).makeProfile();
 
 	// this value string is synchronized with settings_pref.xml preference name
-	public final OsmandPreference<Integer> MAX_LEVEL_TO_DOWNLOAD_TILE = new IntPreference("max_level_download_tile", 20).makeProfile().cache();
-
-	// this value string is synchronized with settings_pref.xml preference name
-	public final OsmandPreference<Integer> LEVEL_TO_SWITCH_VECTOR_RASTER = new IntPreference("level_to_switch_vector_raster", 1).makeGlobal().cache();
-
-	// this value string is synchronized with settings_pref.xml preference name
 	public final OsmandPreference<Integer> AUDIO_STREAM_GUIDANCE = new IntPreference("audio_stream",
 			3/*AudioManager.STREAM_MUSIC*/).makeProfile();
 
 	// For now this can be changed only in TestVoiceActivity
 	public final OsmandPreference<Integer> BT_SCO_DELAY = new IntPreference("bt_sco_delay",	1500).makeGlobal().cache();
-
-	// this value string is synchronized with settings_pref.xml preference name
-	public final CommonPreference<Boolean> MAP_ONLINE_DATA = new BooleanPreference("map_online_data", false).makeGlobal();
 
 	// this value string is synchronized with settings_pref.xml preference name
 	public final CommonPreference<String> MAP_OVERLAY = new StringPreference("map_overlay", null).makeGlobal().cache();
@@ -1277,10 +1264,6 @@ public class OsmandSettings {
 	// this value string is synchronized with settings_pref.xml preference name
 	public final CommonPreference<Integer> MAP_TRANSPARENCY = new IntPreference("map_transparency",
 			255).makeGlobal().cache();
-
-	// this value string is synchronized with settings_pref.xml preference name
-	public final CommonPreference<String> MAP_TILE_SOURCES = new StringPreference("map_tile_sources",
-			TileSourceManager.getMapnikSource().getName()).makeGlobal();
 
 	public final CommonPreference<LayerTransparencySeekbarMode> LAYER_TRANSPARENCY_SEEKBAR_MODE =
 			new EnumIntPreference<>("layer_transparency_seekbar_mode", LayerTransparencySeekbarMode.UNDEFINED, LayerTransparencySeekbarMode.values());
@@ -1313,68 +1296,10 @@ public class OsmandSettings {
 		MAP_MARKERS_MODE.setModeDefaultValue(ApplicationMode.PEDESTRIAN, MapMarkersMode.TOOLBAR);
 	}
 
-	public final CommonPreference<NotesSortByMode> NOTES_SORT_BY_MODE = new EnumIntPreference<>("notes_sort_by_mode", NotesSortByMode.BY_DATE, NotesSortByMode.values());
-
 	public final OsmandPreference<Boolean> ANIMATE_MY_LOCATION = new BooleanPreference("animate_my_location", true).makeGlobal().cache();
 
 	public final OsmandPreference<Boolean> ROUTE_MAP_MARKERS_START_MY_LOC = new BooleanPreference("route_map_markers_start_my_loc", false).makeGlobal().cache();
 	public final OsmandPreference<Boolean> ROUTE_MAP_MARKERS_ROUND_TRIP = new BooleanPreference("route_map_markers_round_trip", false).makeGlobal().cache();
-
-	public ITileSource getMapTileSource(boolean warnWhenSelected) {
-		String tileName = MAP_TILE_SOURCES.get();
-		if (tileName != null) {
-			ITileSource ts = getTileSourceByName(tileName, warnWhenSelected);
-			if (ts != null) {
-				return ts;
-			}
-		}
-		return TileSourceManager.getMapnikSource();
-	}
-
-	private TileSourceTemplate checkAmongAvailableTileSources(File dir, List<TileSourceTemplate> list) {
-		if (list != null) {
-			for (TileSourceTemplate l : list) {
-				if (dir.getName().equals(l.getName())) {
-					try {
-						dir.mkdirs();
-						TileSourceManager.createMetaInfoFile(dir, l, true);
-					} catch (IOException e) {
-					}
-					return l;
-				}
-
-			}
-		}
-		return null;
-	}
-
-
-	public ITileSource getTileSourceByName(String tileName, boolean warnWhenSelected) {
-		if (tileName == null || tileName.length() == 0) {
-			return null;
-		}
-		List<TileSourceTemplate> knownTemplates = TileSourceManager.getKnownSourceTemplates();
-		File tPath = ctx.getAppPath(IndexConstants.TILES_INDEX_DIR);
-		File dir = new File(tPath, tileName);
-		if (!dir.exists()) {
-			return checkAmongAvailableTileSources(dir, knownTemplates);
-		} else if (tileName.endsWith(IndexConstants.SQLITE_EXT)) {
-			return new SQLiteTileSource(ctx, dir, knownTemplates);
-		} else if (dir.isDirectory() && !dir.getName().startsWith(".")) {
-			TileSourceTemplate t = TileSourceManager.createTileSourceTemplate(dir);
-			if (warnWhenSelected && !t.isRuleAcceptable()) {
-				ctx.showToastMessage(R.string.warning_tile_layer_not_downloadable, dir.getName());
-			}
-			if (!TileSourceManager.isTileSourceMetaInfoExist(dir)) {
-				TileSourceTemplate ret = checkAmongAvailableTileSources(dir, knownTemplates);
-				if (ret != null) {
-					t = ret;
-				}
-			}
-			return t;
-		}
-		return null;
-	}
 
 	public boolean installTileSource(TileSourceTemplate toInstall) {
 		File tPath = ctx.getAppPath(IndexConstants.TILES_INDEX_DIR);
@@ -1388,11 +1313,6 @@ public class OsmandSettings {
 			}
 		}
 		return true;
-	}
-
-	public Map<String, String> getTileSourceEntries() {
-		return getTileSourceEntries(true);
-
 	}
 
 	public Map<String, String> getTileSourceEntries(boolean sqlite) {

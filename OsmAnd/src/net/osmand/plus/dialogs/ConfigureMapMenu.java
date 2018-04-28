@@ -450,7 +450,7 @@ public class ConfigureMapMenu {
 		adapter.addItem(new ContextMenuItem.ItemBuilder()
 				.setTitleId(R.string.layer_map, activity)
 				.setIcon(R.drawable.ic_world_globe_dark)
-				.setDescription(settings.MAP_ONLINE_DATA.get() ? settings.MAP_TILE_SOURCES.get() : null)
+				.setDescription(null)
 				.setListener(l).createItem());
 
 		OsmandPlugin.registerLayerContextMenu(activity.getMapView(), adapter, activity);

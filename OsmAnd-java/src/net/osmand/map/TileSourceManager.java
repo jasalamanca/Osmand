@@ -35,11 +35,6 @@ public class TileSourceManager {
 	public static final String RULE_YANDEX_TRAFFIC = "yandex_traffic";
 	private static final String RULE_WMS = "wms_tile";
 
-	private static final TileSourceTemplate MAPNIK_SOURCE =
-			new TileSourceTemplate("OsmAnd (online tiles)", "http://tile.osmand.net/hd/{0}/{1}/{2}.png", ".png", 19, 1, 512, 8, 18000);  //$NON-NLS-1$//$NON-NLS-2$ //$NON-NLS-3$
-	private static final TileSourceTemplate CYCLE_MAP_SOURCE =
-			new TileSourceTemplate("CycleMap", "https://b.tile.thunderforest.com/cycle/{0}/{1}/{2}.png?apikey=a778ae1a212641d38f46dc11f20ac116", ".png", 16, 1, 256, 32, 18000);  //$NON-NLS-1$//$NON-NLS-2$ //$NON-NLS-3$ http://b.tile.opencyclemap.org/cycle/{0}/{1}/{2}.png
-
 	public static class TileSourceTemplate implements ITileSource, Cloneable {
 		private int maxZoom;
 		private int minZoom;
@@ -167,18 +162,6 @@ public class TileSourceManager {
 			return ext;
 		}
 		
-		public void setTileFormat(String ext) {
-			this.ext = ext;
-		}
-		
-		public void setUrlToLoad(String urlToLoad) {
-			this.urlToLoad = urlToLoad;
-		}
-		
-		public boolean isRuleAcceptable() {
-			return isRuleAcceptable;
-		}
-		
 		public void setRuleAcceptable(boolean isRuleAcceptable) {
 			this.isRuleAcceptable = isRuleAcceptable;
 		}
@@ -263,8 +246,7 @@ public class TileSourceManager {
 			bous.close();
 			return bous.toByteArray();
 		}
-		
-		
+
 		@Override
 		public void deleteTiles(String path) {
 			File pf = new File(path);
@@ -381,10 +363,6 @@ public class TileSourceManager {
 					BufferedReader reader = new BufferedReader(new InputStreamReader(
 							new FileInputStream(readUrl), "UTF-8")); //$NON-NLS-1$
 					url = reader.readLine();
-					// 
-					//url = url.replaceAll("\\{\\$z\\}", "{0}"); //$NON-NLS-1$ //$NON-NLS-2$
-					//url = url.replaceAll("\\{\\$x\\}", "{1}"); //$NON-NLS-1$//$NON-NLS-2$
-					//url = url.replaceAll("\\{\\$y\\}", "{2}"); //$NON-NLS-1$ //$NON-NLS-2$
 					url = TileSourceTemplate.normalizeUrl(url);
 					reader.close();
 				}
@@ -423,17 +401,7 @@ public class TileSourceManager {
 	
 	public static java.util.List<TileSourceTemplate> getKnownSourceTemplates() {
 		java.util.List<TileSourceTemplate> list = new ArrayList<TileSourceTemplate>();
-		list.add(getMapnikSource());
-		list.add(getCycleMapSource());
 		return list;
-	}
-
-	public static TileSourceTemplate getMapnikSource(){
-		return MAPNIK_SOURCE;
-	}
-
-	public static TileSourceTemplate getCycleMapSource(){
-		return CYCLE_MAP_SOURCE;
 	}
 
 	public static List<TileSourceTemplate> downloadTileSourceTemplates(String versionAsUrl) {
@@ -507,8 +475,6 @@ public class TileSourceManager {
 		TileSourceTemplate templ = new TileSourceTemplate(name, urlTemplate, ext, maxZoom, minZoom, tileSize, bitDensity, avgTileSize);
 		return templ;
 	}
-	
-
 
 	private static TileSourceTemplate createSimpleTileSourceTemplate(Map<String, String> attributes, boolean ignoreTemplate) {
 		String name = attributes.get("name");
@@ -516,10 +482,6 @@ public class TileSourceManager {
 		if (name == null || (urlTemplate == null && !ignoreTemplate)) {
 			return null;
 		}
-		//As I see, here is no changes to urlTemplate  
-		//if(urlTemplate != null){
-			//urlTemplate.replace("${x}", "{1}").replace("${y}", "{2}").replace("${z}", "{0}");
-		//}
 		urlTemplate = TileSourceTemplate.normalizeUrl(urlTemplate);
 
 		int maxZoom = parseInt(attributes, "max_zoom", 18);
@@ -607,8 +569,5 @@ public class TileSourceManager {
 				return null;
 			}
 		}
-		
 	}
-
-	
 }

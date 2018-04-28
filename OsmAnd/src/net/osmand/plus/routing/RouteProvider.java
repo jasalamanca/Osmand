@@ -79,7 +79,6 @@ public class RouteProvider {
 
 	public enum RouteService {
 			OSMAND("OsmAnd (offline)"), YOURS("YOURS"), 
-//			ORS("OpenRouteService"), // disable ors due to no public rest service (testing2015 doesn't seem stable) 
 			OSRM("OSRM (only car)"),
 			BROUTER("BRouter (offline)"), STRAIGHT("Straight line");
 

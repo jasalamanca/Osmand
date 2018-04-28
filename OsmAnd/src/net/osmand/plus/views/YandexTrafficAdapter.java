@@ -1,25 +1,22 @@
 package net.osmand.plus.views;
 
+import android.graphics.Canvas;
+
+import net.osmand.IndexConstants;
+import net.osmand.PlatformUtil;
+import net.osmand.data.RotatedTileBox;
+import net.osmand.map.TileSourceManager.TileSourceTemplate;
+import net.osmand.osm.io.NetworkUtils;
+import net.osmand.util.Algorithms;
+
+import org.apache.commons.logging.Log;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.net.URLConnection;
-
-import net.osmand.IndexConstants;
-import net.osmand.PlatformUtil;
-import net.osmand.data.RotatedTileBox;
-import net.osmand.osm.io.NetworkUtils;
-import net.osmand.map.TileSourceManager.TileSourceTemplate;
-import net.osmand.util.Algorithms;
-
-import org.apache.commons.logging.Log;
-
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.os.Build;
 
 public class YandexTrafficAdapter  extends MapTileAdapter {
 
@@ -59,11 +56,7 @@ public class YandexTrafficAdapter  extends MapTileAdapter {
 	}
 
 	protected void updateTimeStampImpl() {
-		String YANDEX_BASE_URL;
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD)
-			YANDEX_BASE_URL = "https://jgo.maps.yandex.net";
-		else
-			YANDEX_BASE_URL = "http://jgo.maps.yandex.net";
+		String YANDEX_BASE_URL = "http://jgo.maps.yandex.net";
 		if (mTimestamp == null || (System.currentTimeMillis() - lastTimestampUpdated) > DELTA) {
 			log.info("Updating timestamp"); //$NON-NLS-1$
 			try {

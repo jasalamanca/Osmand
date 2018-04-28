@@ -38,7 +38,6 @@ public class RendererRegistry {
 	public final static String DEFAULT_RENDER_FILE_PATH = "default.render.xml";
 	public final static String TOURING_VIEW = "Touring view (contrast and details)";  //$NON-NLS-1$
 	public final static String TOPO_RENDER = "Topo";  //$NON-NLS-1$
-	public final static String MAPNIK_RENDER = "Mapnik";  //$NON-NLS-1$
 
 	private RenderingRulesStorage defaultRender = null;
 	private RenderingRulesStorage currentSelectedRender = null;
@@ -61,7 +60,6 @@ public class RendererRegistry {
 		internalRenderers.put(DEFAULT_RENDER, DEFAULT_RENDER_FILE_PATH);
 		internalRenderers.put(TOURING_VIEW, "Touring-view_(more-contrast-and-details)" +".render.xml");
 		internalRenderers.put(TOPO_RENDER, "topo" + ".render.xml");
-		internalRenderers.put(MAPNIK_RENDER, "mapnik" + ".render.xml");
 		internalRenderers.put("UniRS", "UniRS" + ".render.xml");
 		internalRenderers.put("LightRS", "LightRS" + ".render.xml");
 	}

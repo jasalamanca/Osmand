@@ -146,7 +146,7 @@ public class MapTileLayer extends BaseMapLayer {
 		int width = (int) Math.ceil(tilesRect.right - left);
 		int height = (int) Math.ceil(tilesRect.bottom + ellipticTileCorrection - top);
 
-		boolean useInternet = settings.USE_INTERNET_TO_DOWNLOAD_TILES.get()
+		boolean useInternet = false
 				&& settings.isInternetConnectionAvailable()
 				&& map.couldBeDownloadedFromInternet();
 		int maxLevel = map.getMaximumZoomSupported();
