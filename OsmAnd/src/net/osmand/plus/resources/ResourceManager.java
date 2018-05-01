@@ -82,8 +82,8 @@ public class ResourceManager {
 	protected File dirWithTiles ;
 
 	private List<TilesCache> tilesCacheList = new ArrayList<>();
-	private BitmapTilesCache bitmapTilesCache;
-	private GeometryTilesCache geometryTilesCache;
+//	private BitmapTilesCache bitmapTilesCache;
+//	private GeometryTilesCache geometryTilesCache;
 
 	private final OsmandApplication context;
 	private List<ResourceListener> resourceListeners = new ArrayList<>();
@@ -201,10 +201,10 @@ public class ResourceManager {
 		this.context = context;
 		this.renderer = new MapRenderRepositories(context);
 
-		bitmapTilesCache = new BitmapTilesCache(asyncLoadingThread);
-		geometryTilesCache = new GeometryTilesCache(asyncLoadingThread);
-		tilesCacheList.add(bitmapTilesCache);
-		tilesCacheList.add(geometryTilesCache);
+//		bitmapTilesCache = new BitmapTilesCache(asyncLoadingThread);
+//		geometryTilesCache = new GeometryTilesCache(asyncLoadingThread);
+//		tilesCacheList.add(bitmapTilesCache);
+//		tilesCacheList.add(geometryTilesCache);
 
 		asyncLoadingThread.start();
 		renderingBufferImageThread = new HandlerThread("RenderingBaseImage");
@@ -219,9 +219,9 @@ public class ResourceManager {
 		mgr.getDefaultDisplay().getMetrics(dm);
 		// Only 8 MB (from 16 Mb whole mem) available for images : image 64K * 128 = 8 MB (8 bit), 64 - 16 bit, 32 - 32 bit
 		// at least 3*9?
-		float tiles = (dm.widthPixels / 256 + 2) * (dm.heightPixels / 256 + 2) * 3;
-		log.info("Bitmap tiles to load in memory : " + tiles);
-		bitmapTilesCache.setMaxCacheSize((int) (tiles));
+//		float tiles = (dm.widthPixels / 256 + 2) * (dm.heightPixels / 256 + 2) * 3;
+//		log.info("Bitmap tiles to load in memory : " + tiles);
+//		bitmapTilesCache.setMaxCacheSize((int) (tiles));
 	}
 
 	public MapTileDownloader getMapTileDownloader() {
