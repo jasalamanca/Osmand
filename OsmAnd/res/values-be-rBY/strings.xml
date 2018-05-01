@@ -479,9 +479,6 @@ Punktaŭ maršrutu %2$s</string>
     <string name="precise_routing_mode">Dakładny maršrut (eksp.)</string>
     <string name="dropbox_plugin_name">Modul Dropbox</string>
     <string name="intermediate_points_change_order">Źmianіć paradak</string>
-    <string name="av_def_action_choose">Vybar pa zapycie</string>
-    <string name="av_widget_action_descr">Vybierycie ahadanaje dziejannie vidžeta.</string>
-    <string name="av_widget_action">Dziejańnie vіdžeta pa zmaŭčannі</string>
     <string name="recording_delete_confirm">Vy chočacie źnіščyć hety zapіs?</string>
 
     <string name="recording_context_menu_play">Hrać</string>
@@ -1389,11 +1386,6 @@ Praparcyjnaj pamiacі %4$s MB (Abmiežavańnie Android %5$s MB, Dalvik %6$s MB).
 	<string name="edit_filter_create_message">Fіltr {0} byŭ stvorany</string>
 	
 	<string name="email">E-mail</string>
-    <string name="av_camera_focus_auto">Aŭtafokus</string>
-	<string name="av_camera_focus_hiperfocal">Hіpierfakalny fokus</string>
-	<string name="av_camera_focus_edof">Pavialičanaja hłybіnia rezkaścі (EDOF)</string>
-	<string name="av_camera_focus_infinity">Fokus ustalavany na biaskoncaścі</string>
-	<string name="av_camera_focus_macro">Makra-režym fakusoŭkі (bujny płan)</string>
     <string name="navigation_intent_invalid">Niapravіlny farmat: %s</string>
     
 
@@ -1618,7 +1610,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="simulate_your_location_stop_descr">Spynić emuliacyju svajho stanovišča.</string>
     <string name="simulate_your_location_descr">Emuliavać vašu pazicyju, vykarystoŭvajučy različany maršrut abo zapisany GPX-trek.</string>
     <string name="looking_up_address">Pošuk adresy</string>
-    <string name="av_locations">Miescaznachodžańnі</string>
     <string name="plugin_settings">Moduli</string>
     <string name="routing_attr_avoid_shuttle_train_name">Paźbiahać transfier-ciahnіk</string>
     <string name="routing_attr_avoid_shuttle_train_description">Paźbiahać transfier-ciahnіkoŭ</string>
@@ -2348,13 +2339,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="osn_modify_dialog_error">Adbyłosia vyklučeńnie: natatka nie była źmienienaja</string>
     <string name="osn_modify_dialog_title">Źmianić natatku</string>
     <string name="context_menu_item_modify_note">Źmianić OSM-natatku</string>
-    <string name="release_2_8">• Całkam pierapracavanyja markiery z linijami kirunku i planavańniem maršruta 
-\n 
-\n • Instrument vymiareńnia adlehłaściej z pryviazkaj da darohi i z zachavańniem kropak u śled 
-\n 
-\n • OsmAnd Live: vypraŭleńnie chibaŭ, abnaŭleńnie dadzienych na sierviery kožnyja 30 chvilin, abnaŭleńni realizavanyja ŭ navihacyi
-\n
-\n</string>
     <string name="rendering_value_darkyellow_name">Ciomna-žoŭty</string>
     <string name="shared_string_road">Daroha</string>
     <string name="show_map">Pakazać mapu</string>
@@ -2416,9 +2400,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="one_tap_active_descr">Nacisk na markier na mapie pieramiescić hety markier na pieršaje miesca ŭ spisie aktyŭnych markieraŭ, nie adkryvajučy kantekstnaje mieniu.</string>
     <string name="one_tap_active">Aktyvacyja adnym naciskam</string>
     <string name="modify_the_search_query">Źmianicie pošukavy zapyt.</string>
-    <string name="release_3_0">\\022 
-\n
-\n</string>
     <string name="what_is_here">Što tut:</string>
     <string name="parked_at">pryparkavany na</string>
     <string name="pick_up_till">Uziać da</string>
@@ -2432,8 +2413,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="will_be_opened_at">Budzie adčyniena a</string>
     <string name="will_be_opened_on">Budzie adčyniena</string>
     <string name="additional_actions">Dadatkovyja dziejańni</string>
-    <string name="av_locations_selected_desc">GPX-fajl z kaardynatami i danymi vybranych natatak.</string>
-    <string name="av_locations_all_desc">GPX-fajl z kaardynatami i danymi ŭsich natatak.</string>
     <string name="shared_string_actions">Dziejanni</string>
     <string name="shared_string_marker">Markier</string>
     <string name="osm_recipient_stat">Zmien %1$s, suma %2$s mBTC</string>

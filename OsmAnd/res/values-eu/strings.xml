@@ -118,9 +118,6 @@
     <string name="dropbox_plugin_name">Dropbox gehigarria</string>
   
   <string name="intermediate_points_change_order">Ordena aldatu</string>
-    <string name="av_def_action_choose">Eskariaren arabera hautatu</string>
-    <string name="av_widget_action_descr">Aukeratu trepetaren ekintza lehenetsia.</string>
-  <string name="av_widget_action">Trepetaren ekintza lehenetsia</string>
     <string name="recording_delete_confirm">Grabaketa hau ezabatu nahi al duzu?</string>
 
     <string name="recording_context_menu_play">Erreproduzitu</string>
@@ -1042,11 +1039,6 @@ Biltegiratzean {1} MB erabiliko dira.
   <string name="edit_filter_create_message">{0} filtroa sortua izan da</string>
   
   <string name="email">eposta</string>
-    <string name="av_camera_focus_auto">Auto fokalizazioa</string>
-  <string name="av_camera_focus_hiperfocal">Foko hiperfokala</string>
-  <string name="av_camera_focus_edof">Hedatutako eremu-sakonera (EDOF)</string>
-  <string name="av_camera_focus_infinity">Fokatzea infinitoan dago ezarria</string>
-  <string name="av_camera_focus_macro">Macro (gertuko) enfokatze modua</string>
     <string name="use_displayed_track_for_navigation">Bistaratutako lorratza erabili nahi duzu nabigatzeko?</string>
     <string name="keep_and_add_destination_point">Gehitu ondorengo helmuga gisa</string>
     <string name="select_gpx">Aukeratu GPX…</string>
@@ -1407,7 +1399,6 @@ Lorratza %2$s</string>
     <string name="favourites_edit_dialog_title">Gogokoaren informazioa</string>
     <string name="simulate_your_location_stop_descr">Utzi kokapena simulatzeari.</string>
     <string name="looking_up_address">Helbidea bilatzen</string>
-    <string name="av_locations">Kokapenak</string>
     <string name="plugin_settings">Gehigarriak</string>
     <string name="routing_attr_avoid_shuttle_train_name">Saihestu tren transbordadorea</string>
     <string name="no_updates_available">Ez dago eguneraketarik eskuragarri</string>
@@ -2346,11 +2337,6 @@ Area honi dagokio: %1$s x %2$s</string>
     <string name="will_open_on">Irekitze-ordua</string>
     <string name="additional_actions">Ekintza gehigarriak</string>
     <string name="shared_string_without_name">Izenik gabe</string>
-    <string name="av_locations_selected_desc">Hautatutako oharren koordenatuak eta datuak dituen GPX fitxategia.</string>
-    <string name="av_locations_all_desc">Ohar guztien koordenatuak eta datuak dituen GPX fitxategia.</string>
-    <string name="release_3_0">\\022 
-\n
-\n</string>
     <string name="modify_the_search_query">Aldatu bilaketaren galdera.</string>
     <string name="shared_string_actions">Ekintzak</string>
     <string name="shared_string_marker">Markatzailea</string>
@@ -2446,13 +2432,6 @@ Area honi dagokio: %1$s x %2$s</string>
     <string name="date_added">Data honetan gehituta</string>
     <string name="order_by">Ordenatu honela:</string>
     <string name="marker_show_distance_descr">Aukeratu nola adierazi mapa-markatzaileetara distantzia eta norabidea maparen pantailan:</string>
-    <string name="release_2_8">\\022 Guztiz eraldatutako mapa-markatzaileak gida-lerroekin eta ibilbide plangintzarekin
-\n
-\n • Distantzien neurketarako tresna errepidera itsasteko eta puntuak lorratz gisa gordetzeko aukerekin
-\n
-\n • OsmAnd Live: akatsen konponketa, datu berriak zerbitzarian 30 minutuero, nabigazioan ezarritako eguneraketak
-\n
-\n</string>
     <string name="osm_recipient_stat">Edizioak %1$s, guztira %2$s mBTC</string>
     <string name="rendering_value_darkyellow_name">Hori iluna</string>
     <string name="lang_lo">Laosera</string>

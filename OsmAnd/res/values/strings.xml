@@ -40,11 +40,6 @@
     <string name="will_open_at">Will open at</string>
     <string name="will_open_on">Will open at</string>
     <string name="additional_actions">Additional actions</string>
-    <string name="av_locations_selected_desc">GPX file with coordinates and data of the selected notes.</string>
-    <string name="av_locations_all_desc">GPX file with coordinates and data of all notes.</string>
-    <string name="release_3_0">
-	\u2022 \n\n
-	</string>
     <string name="modify_the_search_query">Modify the search query.</string>
     <string name="shared_string_actions">Actions</string>
     <string name="shared_string_marker">Marker</string>
@@ -288,11 +283,6 @@
     <string name="routing_attr_relief_smoothness_factor_name">Select elevation fluctuation</string>
     <string name="routing_attr_height_obstacles_name">Use elevation data</string>
     <string name="routing_attr_height_obstacles_description">Use terrain elevation data provided by SRTM, ASTER, and EU-DEM.</string>
-    <string name="release_2_8">
-	\u2022 Completely reworked map markers with guide lines and route planning\n\n
-	\u2022 Measure distance tool offering snap to road feature and saving points as track\n\n
-	\u2022 OsmAnd Live: bug fixes, fresh data on the server every 30 minutes, updates implemented into the navigation\n\n
-	</string>
     <string name="release_2_9">
 	\u2022 Updated the context menu: show when the POI opens / closes\n\n
 	\u2022 Transport menu: all available routes are now at the top\n\n
@@ -648,7 +638,6 @@
     <string name="simulate_your_location_stop_descr">Stop simulating your position.</string>
     <string name="simulate_your_location_descr">Simulate your position using a calculated route or a recorded GPX track.</string>
     <string name="looking_up_address">Looking up address</string>
-    <string name="av_locations">Locations</string>
     <string name="plugin_settings">Plugins</string>
     <string name="routing_attr_avoid_shuttle_train_name">Avoid shuttle train</string>
     <string name="routing_attr_avoid_shuttle_train_description">Avoid shuttle train</string>
@@ -1332,9 +1321,6 @@
     <string name="precise_routing_mode">Precise routing (alpha)</string>
     <string name="dropbox_plugin_name">Dropbox plugin</string>
     <string name="intermediate_points_change_order">Change order</string>
-    <string name="av_def_action_choose">Select on request</string>
-    <string name="av_widget_action_descr">Select default widget action.</string>
-    <string name="av_widget_action">Default widget action</string>
     <string name="recording_delete_confirm">Do you want to delete this recording?</string>
     <string name="recording_context_menu_play">Play</string>
     <string name="map_widget_distancemeasurement">Distance measurement</string>
@@ -2088,11 +2074,6 @@
     <string name="edit_filter_delete_message">Filter {0} has been deleted</string>
     <string name="edit_filter_create_message">Filter {0} has been created</string>
     <string name="email">email</string>
-    <string name="av_camera_focus_auto">Auto focus</string>
-    <string name="av_camera_focus_hiperfocal">Hyperfocal focus</string>
-    <string name="av_camera_focus_edof">Extended depth of field (EDOF)</string>
-    <string name="av_camera_focus_infinity">Focus is set at infinity</string>
-    <string name="av_camera_focus_macro">Macro (close-up) focus mode</string>
     <string name="navigation_intent_invalid">Invalid format: %s</string>
     <string name="plugin_description_title">Description</string>
     <string name="plugin_install_needs_network">You need an Internet connection to install this plugin.</string>

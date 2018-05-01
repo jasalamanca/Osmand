@@ -25,9 +25,7 @@
     <string name="download_select_map_types">Ostale karte</string>
     <string name="download_roads_only_item">Samo ceste</string>
     <string name="download_regular_maps">Regularne karte</string>
-    <string name="av_widget_action_descr">Odaberite zadanu radnju widgeta</string>
-    <string name="av_widget_action">Zadana radnja widgeta</string>
-	<string name="rendering_attr_noAdminboundaries_name">Sakrij granice</string>
+    <string name="rendering_attr_noAdminboundaries_name">Sakrij granice</string>
 	<string name="download_roads_only_maps">Samo cestovne karte</string>
 
 	<string name="rendering_attr_noAdminboundaries_description">Prikrivanje prikaza regionalnih granica (admin razine 5-9)</string>
@@ -520,7 +518,6 @@
 	
 	<string name="local_index_installed">Izdanje</string>
 	<string name="precise_routing_mode">Precizni način navođenja (alfa)</string>
-    <string name="av_def_action_choose">Odaberite na zahtjev</string>
     <string name="max_speed_none">bez</string>
 
 
@@ -927,9 +924,7 @@
 	<string name="shared_string_downloading">Preuzimanje</string>
 	<string name="osm_settings_descr">Navedite Openstreetmap.org (OSM) postavke potrebne za OSM prijavu</string>
 	<string name="osb_author_dialog_password">OSM zaporka (opcija)</string>
-    <string name="av_camera_focus_auto">Autofokus</string>
-    <string name="av_camera_focus_infinity">Fokus je postavljen na beskonačno</string>
-	<string name="poi_error_unexpected_template">Došlo je do neočekivane pogreške tijekom izvođenja radnje {0}.</string>
+    <string name="poi_error_unexpected_template">Došlo je do neočekivane pogreške tijekom izvođenja radnje {0}.</string>
 	<string name="poi_error_io_error_template">Dogodila se I/O pogreška tijekom izvođenja radnje {0}.</string>
 	<string name="poi_error_info_not_loaded">Info o točki koja nije učitana</string>
 

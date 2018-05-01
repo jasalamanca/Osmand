@@ -4,9 +4,6 @@
     
     <string name="about_settings_descr">Verzija info, licence, članovi projekta</string>
 
-    <string name="av_camera_focus_infinity">Fokus je podešen na beskonačno</string>
-	<string name="av_camera_focus_macro">Makro režim fokusa</string>
-	<string name="av_camera_focus_auto">Auto fokus</string>
 	<string name="shared_string_delete_all">Obriši sve</string>
     <string name="animate_routing_route_not_calculated">Prvo izračunajte putanju</string>
     <string name="animate_routing_route">Simulacija pomoću izračunate putanje </string>

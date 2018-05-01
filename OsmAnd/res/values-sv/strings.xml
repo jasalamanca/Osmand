@@ -793,8 +793,6 @@ Nyttjat utrymme är {1} MB.
 
     <string name="intermediate_points_change_order">Ändra ordning</string>
     <string name="precise_routing_mode">Exakt ruttning (alfa)</string>
-    <string name="av_widget_action_descr">Välj standardåtgärd för widget.</string>
-    <string name="av_widget_action">Standardåtgärd för widget</string>
     <string name="delete_target_point">Ta bort destination</string>
     <string name="intermediate_point">Mellanliggande destination %1$s</string>
     <string name="poi_filter_nominatim">Online Nominatim</string>
@@ -883,7 +881,6 @@ Nyttjat utrymme är {1} MB.
     <string name="prefer_in_routing_descr">Föredra motorvägar.</string>
     <string name="item_checked">markerad</string>
     <string name="item_unchecked">ej markerad</string>
-    <string name="av_def_action_choose">Välj vid användning</string>
 
     <string name="enable_plugin_monitoring_services">Aktivera Trippinspelningspluginen för att använda positionsloggningstjänster (GPX-loggning, online-spårning)</string>
     <string name="access_arrival_time">Ankomsttid</string>
@@ -992,11 +989,6 @@ Nyttjat utrymme är {1} MB.
 
 
     <string name="base_world_map">Baskarta (världen)</string>
-    <string name="av_camera_focus_auto">Autofokus</string>
-    <string name="av_camera_focus_hiperfocal">Hyperfokal fokus</string>
-    <string name="av_camera_focus_edof">Utökat skärpedjup (EDOF)</string>
-    <string name="av_camera_focus_infinity">Fokus på oändligt</string>
-    <string name="av_camera_focus_macro">Makrofokusläge (närbild)</string>
 
 
     <string name="map_magnifier">Kartförstoring</string>
@@ -1608,7 +1600,6 @@ Long %2$s</string>
     <string name="next_proceed">Nästa</string>
     <string name="opening_at">Öppnar</string>
     <string name="closing_at">Stänger</string>
-    <string name="av_locations">Platser</string>
     <string name="poi_dialog_poi_type">Typ av POI</string>
     <string name="add_opening_hours">Lägg till öppettider</string>
     <string name="description">Beskrivning</string>

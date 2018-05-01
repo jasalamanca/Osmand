@@ -23,7 +23,6 @@
     <string name="share_menu_location">Bḍu adγar</string>
     <string name="favorite_category_add_new_title">Rnu taggayt tamaynut</string>
     <string name="favorite_category_add_new">Rnu amaynut</string>
-    <string name="av_locations">Idγaren</string>
     <string name="rendering_value_red_name">Azeggaγ</string>
     <string name="rendering_value_yellow_name">Awraγ</string>
     <string name="rendering_value_lightgreen_name">Adal afessas</string>
@@ -636,8 +635,6 @@
     <string name="will_open_at">Ad yeldi γef</string>
     <string name="will_open_on">Ad yeldi ass</string>
     <string name="additional_actions">Tiggawin nniḍen</string>
-    <string name="av_locations_selected_desc">Afaylu GPX igebren adig akked isefka n tezmilin ittwafernen.</string>
-    <string name="av_locations_all_desc">Afaylu igebren adig akked tizmilin.</string>
     <string name="shared_string_actions">Tigawin</string>
     <string name="parked_at">Sers deg</string>
     <string name="without_time_limit">Ulac tilist deg wakud</string>

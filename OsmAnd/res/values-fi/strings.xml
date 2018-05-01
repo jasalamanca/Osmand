@@ -1134,7 +1134,6 @@ Nauhoitetut jäljet voidaan jakaa ystävillesi tai käyttää OSM osallistumisis
     <string name="favourites_edit_dialog_title">Suosikkitiedot</string>
     <string name="simulate_your_location_stop_descr">Lopeta sijainnin simulointi</string>
     <string name="simulate_your_location_descr">Simuloi laskettua reittiä tai tallennettua GPX-reittiä</string>
-    <string name="av_locations">Sijainnit</string>
     <string name="routing_attr_avoid_shuttle_train_name">Vältä liityntäjunaa</string>
     <string name="routing_attr_avoid_shuttle_train_description">Vältä liityntäjunaa</string>
     <string name="traffic_warning_hazard">Varoitus</string>
@@ -1707,9 +1706,6 @@ Paina ja pidä nähdäksesi kartalla</string>
 
     <string name="download_using_mobile_internet">Wi-Fi ei ole nyt yhdistetty. Haluatko käyttää nykyistä internet yhteytttä lataukseen?</string>
     <string name="precise_routing_mode_descr">Ota käyttöön laskenta tarkalle reitille ilman pikkuvirheitä. Vielä etäisyysrajoitteinen ja hidas.</string>
-    <string name="av_def_action_choose">Valitse käytettäessä</string>
-    <string name="av_widget_action_descr">Valitse oletustyökalutoiminto</string>
-    <string name="av_widget_action">Oletustyökalutoiminto</string>
     <string name="rendering_attr_hikingRoutesOSMC_name">Retkeilysymbolit kartan päällä</string>
     <string name="rendering_attr_noAdminboundaries_description">Pidä piilossa alueellisten rajojen näyttö (hallintotasot 5-9)</string>
     <string name="safe_mode_description">Suorita sovellus turvatilassa (käyttäen hitaampaa Androidia natiivin koodin sijasta).</string>

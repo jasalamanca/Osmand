@@ -69,13 +69,6 @@
     <string name="osm_live_ask_for_purchase">Harap beli berlangganan OSM Live terlebih dahulu</string>
 
     <string name="sort_by">Urutkan dengan</string>
-    <string name="release_3_0">\\022 mendeteksi tanda Berhenti sekarang dan beranggapan itu arah mengemudi.
-\n
-\n• algoritma baru memberikan nilai pendakian/turunan yang bermakna trek GPX.
-\n
-\n• Terrain (pendakian) sadar waktu hiking (aturan Naismith)
-\n
-\n</string>
     <string name="modify_the_search_query">Ubah kueri penelusuran.</string>
     <string name="empty_state_osm_edits">Buat atau Modifikasi objek OSM</string>
     <string name="empty_state_osm_edits_descr">Buat atau Modifikasi OSM POI, Buka atau Beri komentar pada Catatan OSM, dan berkontribusi dalam file GPX yang direkam.</string>
@@ -311,15 +304,6 @@
     <string name="routing_attr_relief_smoothness_factor_name">Pilih fluktuasi ketinggian</string>
     <string name="routing_attr_height_obstacles_name">Gunakan Data Ketinggian</string>
     <string name="routing_attr_height_obstacles_description">Gunakan data elevasi medan yang disediakan oleh SRTM, ASTER, dan EU-DEM.</string>
-    <string name="release_2_8">\\ 022 Mapillary plugin dengan citra tingkat jalan
-\n
-\n • Ruler widget untuk pengukuran jarak jauh
-\n
-\n • interval split GPX dengan info rinci tentang trek Anda
-\n
-\n • Perbaikan dan perbaikan bug lainnya
-\n
-\n</string>
     <string name="auto_split_recording_title">Rekaman split otomatis setelah jeda</string>
     <string name="auto_split_recording_descr">Mulai segmen baru setelah jeda 6 menit, lintasan baru setelah jeda 2 jam, atau file baru setelah jeda lebih lama jika tanggalnya sudah berubah.</string>
     <string name="rendering_value_high_name">Tinggi</string>

@@ -31,7 +31,6 @@
     <string name="clear_dest_confirm">هل أنت متأكد أنك تريد مسح نقطة الوجهة (والوجهات المتوسطة) ؟</string>
     <string name="precise_routing_mode">التوجيه الدقيق (ألفا)</string>
     <string name="dropbox_plugin_name">ملحق دروب بوكس</string>
-    <string name="av_def_action_choose">حدد بناء على طلبها</string>
     <string name="recording_delete_confirm">هل تريد إزالة هذا التسجيل ؟</string>
     <string name="recording_context_menu_play">شغّل</string>
     <string name="shared_string_control_stop">توقف</string>
@@ -402,8 +401,6 @@
     <string name="use_kalman_filter_compass_descr">يقلل الشوشرة في قراءة البوصلة ولكن يضيف قصور ذاتي.</string>
     <string name="use_kalman_filter_compass">استخدم مُرشّح كالمان</string>
     <string name="use_magnetic_sensor">استخدم الاستشعار المغناطيسي</string>
-    <string name="av_widget_action_descr">حدد عمل الودجة الافتراضي.</string>
-    <string name="av_widget_action">عمل الودجة الافتراضي</string>
     <string name="context_menu_item_add_parking_point">أشر إليه كموقف السيارات</string>
     <string name="asap">في أسرع وقت ممكن</string>
 	<string name="route_roundabout">دوّار: خذ المخرج %1$d ثم استمر</string>
@@ -477,10 +474,6 @@
 	<string name="rendering_out_of_memory">ذاكرة التشغيل غير كافية لعرض المنطقة المختارة</string>
 	<string name="offline_edition">التحرير دون اتصال</string>
 	<string name="offline_edition_descr">استخدام التحرير دون اتصال دائماً.</string>
-	<string name="av_camera_focus_infinity">التركيز عين بشكل غير محدود</string>
-	<string name="av_camera_focus_macro">وضع التركيز الكلي (عن قرب)</string>
-	<string name="av_camera_focus_auto">تركيز تلقائي</string>
-	<string name="av_camera_focus_hiperfocal">التركيز البؤري</string>
     <string name="use_distance_measurement_help">* انقر لتُعلّم نقطة.
 \n * انقر مطولا على الخريطة لتحذف النقطة السّابقة.
 \n * انقر مطولا على النقطة لعرضها و ارفاق وصف.
@@ -515,8 +508,7 @@
 	<string name="live_monitoring_interval_descr">تحديد فاصل التعقب الشبكي الزمني.</string>
 	<string name="live_monitoring_interval">فاصل التّتبع باستخدام الشّابكة</string>
 	<string name="live_monitoring_url">عنوان التّتبع باستخدام الشّابكة</string>
-	<string name="av_camera_focus_edof">وضع التركيز الكلي (عن قرب)</string>
-	<string name="edit_filter_create_message">عامل تصفية {0} تم إنشاؤه</string>
+    <string name="edit_filter_create_message">عامل تصفية {0} تم إنشاؤه</string>
 	
 	<string name="edit_filter_delete_message">عامل تصفية {0} تم حذفه</string>
 	<string name="edit_filter_delete_dialog_title">حذف عامل التصفية المحدد؟</string>
@@ -1604,7 +1596,6 @@
     <string name="no_address_found">لم يتم تحديد أي عنوان</string>
     <string name="shared_string_location">الموقع</string>
     <string name="share_menu_location">شارك الموقع</string>
-    <string name="av_locations">المواقع</string>
     <string name="gps_network_not_enabled">إن خدمة تحديد المواقع ليست مفعلة. هل تريد تشغيلها ؟</string>
     <string name="update_now">حدث الآن</string>
     <string name="last_map_change">آخر تغيير طرأ على الخريطة : %s</string>
@@ -2349,13 +2340,6 @@
     <string name="osn_modify_dialog_error">حدث استثناء: لم يتم تعديل الملاحظة</string>
     <string name="osn_modify_dialog_title">تعديل ملاحظة</string>
     <string name="context_menu_item_modify_note">تعديل ملاحظة OSM</string>
-    <string name="release_2_8">\\022 علامات خريطة معاد صياغتها بالكامل مع القواعد الارشادية وتخطيط الطريق
-\n
-\n • أداة قياس المسافة عرض الأداة الإضافية لميزة الطريق وحفظ النقاط كما تتبع
-\n
-\n • أوسماند مباشر: إصلاحات الشوائب، بيانات جديدة على السرفر كل 30 دقيقة، التحديثات مدرجة في الملاحة
-\n
-\n</string>
     <string name="rendering_value_darkyellow_name">أصفر داكن</string>
     <string name="shared_string_road">طريق</string>
     <string name="show_map">اظهر الخريطة</string>

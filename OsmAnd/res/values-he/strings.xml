@@ -936,8 +936,6 @@
     <string name="recording_context_menu_play">נגינה</string>
     <string name="shared_string_control_stop">עצירה</string>
     <string name="shared_string_control_start">הקלטה</string>
-    <string name="av_widget_action_descr">בחירת פעולת הווידג׳ט כבררת המחדל.</string>
-    <string name="av_widget_action">פעולת הווידג׳ט כבררת המחדל</string>
 
     <string name="intermediate_points_change_order">שינוי הסדר</string>
     <string name="dropbox_plugin_name">תוסף Dropbox</string>
@@ -954,7 +952,6 @@
     <string name="prefer_motorways">העדפת כבישים סלולים</string>
 	<string name="prefer_in_routing_title">העדפה…</string>
 	<string name="prefer_in_routing_descr">העדפת כבישים סלולים.</string>
-    <string name="av_def_action_choose">נא לבחור בקשה</string>
     <string name="item_checked">לאחר בדיקה</string>
     <string name="item_unchecked">ללא בדיקה</string>
     <string name="shared_string_map">מפה</string>
@@ -1342,7 +1339,6 @@
     <string name="shared_string_select">בחירה</string>
     <string name="switch_start_finish">היפוך בין נקודות ההתחלה והיעד</string>
     <string name="rendering_attr_hideIcons_name">סמלי נקודות עניין</string>
-    <string name="av_locations">מיקומים</string>
     <string name="plugin_settings">תוספים</string>
     <string name="traffic_warning_hazard">סכנה</string>
     <string name="no_updates_available">אין עדכונים זמינים</string>
@@ -2088,11 +2084,6 @@
     <string name="favourites_context_menu_add">הוספה למועדפים</string>
     <string name="poi_action_delete">מחיקה</string>
     <string name="poi_dialog_reopen">פתיחה מחדש</string>
-    <string name="av_camera_focus_auto">מיקוד אוטומטי</string>
-    <string name="av_camera_focus_hiperfocal">מיקוד רב מוקדי</string>
-    <string name="av_camera_focus_edof">עומק שדה מורחב (EDOF)</string>
-    <string name="av_camera_focus_infinity">המיקוד מוגדר לאינסוף</string>
-    <string name="av_camera_focus_macro">מצב מיקוד לעצמים זעירים (תקריב)</string>
     <string name="navigation_intent_invalid">תבנית שגויה: %s</string>
     <string name="plugin_description_title">תיאור</string>
     <string name="plugin_install_needs_network">כדי להתקין את התוסף הזה צריך חיבור לאינטרנט.</string>
@@ -2184,9 +2175,6 @@
     <string name="animate_my_location_desc">הפעלת הנפשת גלישת מפה של המיקום שלי במהלך ניווט.</string>
     <string name="shared_string_in_name">ב־%1$s</string>
     <string name="one_tap_active_descr">ניתן לגעת בסמן על המפה כדי להעביר אותו לראש הסמנים הפעילים מבלי לפתוח את תפריט ההקשר.</string>
-    <string name="release_3_0">\\022 
-\n
-\n</string>
     <string name="one_tap_active">הפעלה בנגיעה אחת</string>
     <string name="map_orientation_change_in_accordance_with_speed_descr">נא לבחור להלן באיזו מהירות כיוון המפה יתחלף ממצב ‚לפי כיוון התנועה’ למצב ‚לפי מצפן’.</string>
     <string name="do_not_send_anonymous_app_usage_desc">ב־OsmAnd נאסף מידע על אילו חלקים ביישומון משמשים אותך. המיקום שלך אף פעם לא נשלח, גם לא הקלט שלך ביישומון או פרטים על אזורים בהם צפית, חיפשת או הורדת.</string>
@@ -2208,8 +2196,6 @@
     <string name="will_open_at">פתיחה בשעה</string>
     <string name="will_open_on">פתיחה ב־</string>
     <string name="additional_actions">פעולות נוספות</string>
-    <string name="av_locations_selected_desc">קובץ GPX עם נקודות ציון ונתונים על ההערות הנבחרות.</string>
-    <string name="av_locations_all_desc">קובץ GPX עם נקודות ציון ונתונים על כל ההערות.</string>
     <string name="shared_string_actions">פעולות</string>
     <string name="shared_string_marker">סמן</string>
     <string name="do_not_show_startup_messages_desc">מעלימה הודעות על הנחות ביישומון ואירועים מקומיים מיוחדים.</string>

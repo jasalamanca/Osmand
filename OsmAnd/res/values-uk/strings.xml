@@ -854,15 +854,12 @@
     <string name="dropbox_plugin_name">Втулок Dropbox</string>
     
     <string name="intermediate_points_change_order">Змінити порядок</string>
-    <string name="av_widget_action_descr">Вибрати типову дію для віджету.</string>
-    <string name="av_widget_action">Дія для віджета</string>
-    
+
     <string name="precise_routing_mode_descr">Ввімкніть, для обчислення точних маршрутів без збоїв. Цей режим працює на обмеженій відстані та є повільним.</string>
     <string name="precise_routing_mode">Точний маршрут (alpha)</string>
     <string name="shared_string_control_stop">Стоп</string>
     <string name="shared_string_control_start">Старт</string>
 
-    <string name="av_def_action_choose">Обрати за запитом</string>
     <string name="recording_context_menu_play">Грати</string>
     
     
@@ -1029,11 +1026,6 @@
 	<string name="destination_point">Пункт призначення %1$s</string>
 
 
-    <string name="av_camera_focus_auto">Автофокус</string>
-	<string name="av_camera_focus_macro">Макро-режим фокусування (крупний план)</string>
-    <string name="av_camera_focus_hiperfocal">Гіперфокальне фокусування</string>
-	<string name="av_camera_focus_edof">Збільшення глибини різкості</string>
-	<string name="av_camera_focus_infinity">Фокус встановлюється на нескінченність</string>
     <string name="osmand_net_previously_installed">У вас встановлена попередня версія OsmAnd. Всі локальні дані підтримуються новою версією. Але збережені точки закладок потрібно експортувати з попередньої версії і імпортувати в нову.</string>
 	
 	
@@ -1718,7 +1710,6 @@
     <string name="favourites_edit_dialog_title">Інформація по закладці</string>
     <string name="simulate_your_location_stop_descr">Зупинити симуляцію вашої позиції.</string>
     <string name="looking_up_address">Пошук адреси</string>
-    <string name="av_locations">Місця</string>
     <string name="plugin_settings">Втулки</string>
     <string name="routing_attr_avoid_shuttle_train_name">Уникати приміських поїздів</string>
     <string name="routing_attr_avoid_shuttle_train_description">Уникати приміських поїздів</string>
@@ -2418,11 +2409,6 @@
     <string name="route_is_calculated">Маршрут розраховується</string>
     <string name="round_trip">Подорож туди і назад</string>
     <string name="plan_route_no_markers_toast">Ви повинні додати принаймні один маркер, щоб використовувати цю функцію.</string>
-    <string name="release_2_8">• Повністю перероблені маркери мапи, з направляючими лініями і плануванням маршруту 
-\n• Інструмент вимірювання відстані, з прив’язкою до дороги і збереженням точок в якості треку 
-\n• OsmAnd Live: виправлення помилок, оновлення даних на сервері кожні 30 хвилин, поновлення враховуються в навігації
-\n
-\n</string>
     <string name="rendering_value_darkyellow_name">Темно-жовтий</string>
     <string name="enter_new_name">Введіть нове ім’я</string>
     <string name="shared_string_back">Назад</string>
@@ -2477,13 +2463,6 @@
     <string name="by_date">За датою</string>
     <string name="by_type">За типом</string>
     <string name="modify_the_search_query">Змінити пошуковий запит.</string>
-    <string name="release_3_0">• Виявлення стоп-сигналів тепер враховує напрямок руху 
-\n
-\n• Новий алгоритм, що надає дійсні значення підйому/спуску для треків GPX 
-\n
-\n• Час ходьби в залежності від місцевості (підйому) (правило Нейсміта)
-\n
-\n</string>
     <string name="what_is_here">Що тут:</string>
     <string name="parked_at">припаркований біля</string>
     <string name="pick_up_till">Забрати до</string>
@@ -2497,8 +2476,6 @@
     <string name="will_open_at">Буде відкрито в</string>
     <string name="will_open_on">Буде відкрито</string>
     <string name="additional_actions">Додаткові дії</string>
-    <string name="av_locations_selected_desc">Файл GPX з координатами та даними вибраних нотаток.</string>
-    <string name="av_locations_all_desc">Файл GPX з координатами та даними всіх нотаток.</string>
     <string name="shared_string_actions">Дія</string>
     <string name="shared_string_marker">Маркер</string>
     <string name="osm_recipient_stat">Редагувань %1$s, сума %2$s mBTC</string>

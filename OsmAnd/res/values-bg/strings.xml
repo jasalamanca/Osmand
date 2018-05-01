@@ -101,9 +101,6 @@
     <string name="dropbox_plugin_name">Приставка Dropbox</string>
 
     <string name="intermediate_points_change_order">Смяна на реда</string>
-    <string name="av_def_action_choose">Избери при заявка</string>
-    <string name="av_widget_action_descr">Изберете действие по подразбиране</string>
-    <string name="av_widget_action">Действие по подразбиране</string>
     <string name="recording_delete_confirm">Искате ли да изтриете този запис?</string>
 
     <string name="recording_context_menu_play">Старт</string>
@@ -993,11 +990,6 @@
     <string name="edit_filter_create_message">Филтърът {0} беше създаден</string>
 
     <string name="email">ел.поща</string>
-    <string name="av_camera_focus_auto">Авто-фокус (auto)</string>
-    <string name="av_camera_focus_hiperfocal">Хиперфокален фокус (hyper-focal)</string>
-    <string name="av_camera_focus_edof">Разширена дълбочина на рязкост (EDOF)</string>
-    <string name="av_camera_focus_infinity">Безкрайност (infinity)</string>
-    <string name="av_camera_focus_macro">Макро (close-up)</string>
     <string name="announce_gpx_waypoints">GPX точки</string>
     <string name="speak_title">Обявяване…</string>
     <string name="speak_street_names">Имена на улици (синтезиран глас)</string>
@@ -1594,7 +1586,6 @@
     <string name="shared_string_location">Местоположение</string>
     <string name="simulate_your_location_stop_descr">Спиране на симулацията на място</string>
     <string name="simulate_your_location_descr">Симулира с помощта на изчисления маршрут или записана GPX следа</string>
-    <string name="av_locations">Места</string>
     <string name="routing_attr_avoid_shuttle_train_name">Избягване на трансферен влак</string>
     <string name="routing_attr_avoid_shuttle_train_description">Избягване на трансферен влак</string>
     <string name="traffic_warning_hazard">Опасност</string>

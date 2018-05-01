@@ -946,11 +946,8 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="close_changeset">Änderungssatz schließen</string>
 	<string name="incomplete_locale">unvollständig</string>
     <string name="download_select_map_types">Andere Karten</string>
-    <string name="av_widget_action_descr">Standard-Steuerelement-Aktion auswählen.</string>
-	<string name="av_widget_action">Standard-Steuerelement-Aktion</string>
     <string name="shared_string_control_stop">Stopp</string>
     <string name="shared_string_control_start">Start</string>
-    <string name="av_def_action_choose">Bei Anfrage auswählen</string>
     <string name="dropbox_plugin_name">Dropbox-Modul</string>
 	<string name="intermediate_points_change_order">Reihenfolge ändern</string>
 
@@ -1026,8 +1023,6 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="distance_measurement_finish_subtrack">Weitere Messung anlegen</string>
 	<string name="please_select_address">Zuerst Stadt oder Straße auswählen</string>
 	<string name="destination_point">Ziel %1$s</string>
-    <string name="av_camera_focus_auto">Autofokus</string>
-	<string name="av_camera_focus_infinity">Fokus auf unendlich setzen</string>
 
     <string name="speak_speed_limit">Tempolimit</string>
 	<string name="speak_cameras">Blitzer</string>
@@ -1043,10 +1038,7 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="route_from">Von:</string>
 	<string name="osb_author_dialog_password">OSM-Passwort (optional)</string>
 	<string name="context_menu_item_directions_from">Navigiere von</string>
-	<string name="av_camera_focus_hiperfocal">Hyperfokaler Fokus</string>
-	<string name="av_camera_focus_edof">Erweiterte Schärfentiefe (EDOF)</string>
-	<string name="av_camera_focus_macro">Makro-Fokusmodus (Nahaufnahme)</string>
-	<string name="speak_title">Ansagen …</string>
+    <string name="speak_title">Ansagen …</string>
 	<string name="speak_descr">Ansagen zu Straßennamen, Verkehrswarnungen (Stoppzeichen, Rüttelschwellen), stationäre Radarkontrollen, Tempolimits konfigurieren.</string>
 	<string name="speak_street_names">Straßennamen (TTS)</string>
 	<string name="map_widget_fps_info">FPS-Debug-Info</string>
@@ -1733,8 +1725,7 @@ Lon %2$s</string>
 
     <string name="shared_string_location">Standort</string>
     <string name="shared_string_commit">OSM-Notiz</string>
-	
-    <string name="av_locations">Standorte</string>
+
     <string name="shared_string_hide">verbergen</string>
     <string name="rendering_attr_horseRoutes_name">Pferdewege</string>
     <string name="update">Aktualisierungsintervall</string>
@@ -2321,14 +2312,7 @@ Abgedeckte Fläche: %1$s x %2$s</string>
     <string name="shared_string_finish">Beenden</string>
     <string name="use_system_keyboard">Gerätetastatur verwenden</string>
     <string name="marker_moved_to_active">Kartenmarkierung auf Karte verschoben</string>
-    <string name="release_2_8">• Komplett überarbeitete Kartenmarkierungen mit Linien und Routenplanung 
-\n 
-\n• Entfernungsmesser bietet ausrichten auf Straße Funktion und speichern als Track 
-\n 
-\n• Bug-Fixes, neue Daten auf dem Server alle 30 Minuten, Updates implementiert in der Navigation
-\n
-\n</string>
-	<string name="release_2_9">\\022 Erkennung von Stoppschildern jetzt nach Fahrtrichtung 
+    <string name="release_2_9">\\022 Erkennung von Stoppschildern jetzt nach Fahrtrichtung
 \n 
 \n • Neuer Algorithmus für die Bereitstellung von sinnvollen Auf-/Abstieg-Werten für GPX-Spuren
 \n 
@@ -2400,9 +2384,6 @@ Abgedeckte Fläche: %1$s x %2$s</string>
     <string name="by_type">Nach Typ</string>
     <string name="import_gpx_file_description">kann als Favoriten-Punkte oder als Track-Datei importiert werden.</string>
     <string name="tap_on_map_to_hide_interface_descr">Ein Tippen auf die Karte schaltet die Steuerschaltflächen und Bedienelemente um.</string>
-    <string name="release_3_0">\\022 
-\n
-\n</string>
     <string name="one_tap_active">Aktivieren mit einem Tap</string>
     <string name="what_is_here">Was ist hier:</string>
     <string name="without_time_limit">Ohne Zeitbegrenzung</string>
@@ -2417,8 +2398,6 @@ Abgedeckte Fläche: %1$s x %2$s</string>
     <string name="additional_actions">Zusätzliche Aktionen</string>
     <string name="parked_at">geparkt um</string>
     <string name="pick_up_till">Abholung bis</string>
-    <string name="av_locations_selected_desc">GPX-Datei mit Koordinaten und Daten der ausgewählten Notizen.</string>
-    <string name="av_locations_all_desc">GPX-Datei mit Koordinaten und Daten aller Notizen.</string>
     <string name="shared_string_actions">Aktionen</string>
     <string name="shared_string_marker">Markierung</string>
     <string name="add_track_to_markers_descr">Wählen Sie eine Spur aus, um ihre Wegpunkte zu den Markierungen hinzuzufügen. (Nur Spuren mit Wegpunkten werden aufgelistet.)</string>

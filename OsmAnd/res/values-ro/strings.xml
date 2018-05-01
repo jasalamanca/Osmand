@@ -934,8 +934,6 @@
 
     <string name="map_widget_distancemeasurement">Măsurarea distanței</string>
     <string name="recording_context_menu_play">Play</string>
-    <string name="av_widget_action_descr">Selectați acțiunea implicită a iconiței</string>
-    <string name="av_widget_action">Acțiune implicită iconiță</string>
     <string name="dropbox_plugin_name">Plugin Dropbox</string>
     
     <string name="intermediate_points_change_order">Schimbare ordine</string>
@@ -1167,10 +1165,6 @@
 	<string name="gpx_info_avg_altitude">Altitudinea medie: %1$s</string>
 	<string name="gpx_selection_segment_title">Segment</string>
     <string name="record_plugin_description">Salvează înregistrările cu o singură atingere a ecranului. Arată setările pentru înregistrarea traseelor și stocarea locală în fișiere GPX folosind un serviciu web.</string>
-    <string name="av_camera_focus_auto">Auto focalizare</string>
-	<string name="av_camera_focus_hiperfocal">Focalizare hiperfocală</string>
-	<string name="av_camera_focus_infinity">Focalizarea este setata la infinit</string>
-	<string name="av_camera_focus_macro">Macro(de aproape) mod de focalizare</string>
     <string name="rendering_attr_hideWoodScrubs_name">Ascunde paduri si arbori</string>
     <string name="gpx_info_diff_altitude">Limită altitudine: %1$s</string>
 	<string name="gpx_info_asc_altitude">Coboară/urcă: %1$s</string>
@@ -1353,7 +1347,6 @@
     <string name="rendering_attr_currentTrackWidth_name">Lățime GPX</string>
     <string name="download_live_updates">Actualizări in timp real</string>
 	<string name="rendering_value_boldOutline_name">Bold contur</string>
-    <string name="av_locations">Locații</string>
     <string name="rendering_value_red_name">Roșu</string>
     <string name="rendering_value_translucent_red_name">Roșu translucid</string>
     <string name="rendering_value_translucent_orange_name">Portocaliu translucid</string>

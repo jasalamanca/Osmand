@@ -127,9 +127,6 @@
     <string name="dropbox_plugin_name">Модуль Dropbox</string>
     
     <string name="intermediate_points_change_order">Зьмяніць парадак</string>
-    <string name="av_def_action_choose">Выбар па запыце</string>
-    <string name="av_widget_action_descr">Выберыце агаданае дзеянне віджэта.</string>
-    <string name="av_widget_action">Дзеяньне віджэта па змаўчанні</string>
     <string name="recording_delete_confirm">Вы хочаце зьнішчыць гэты запіс?</string>
     <string name="recording_context_menu_play">Граць</string>
     <string name="map_widget_distancemeasurement">Вымярэньне адлегласьці</string>
@@ -1005,11 +1002,6 @@
 	<string name="edit_filter_create_message">Фільтр {0} быў створаны</string>
 	
 	<string name="email">E-mail</string>
-    <string name="av_camera_focus_auto">Аўтафокус</string>
-	<string name="av_camera_focus_hiperfocal">Гіперфакальны фокус</string>
-	<string name="av_camera_focus_edof">Павялічаная глыбіня рэзкасьці (EDOF)</string>
-	<string name="av_camera_focus_infinity">Фокус усталяваны на бясконцасьці</string>
-	<string name="av_camera_focus_macro">Макра-рэжым факусоўкі (буйны план)</string>
 
 
     <string name="lang_hr">Харвацкая</string>
@@ -1652,7 +1644,6 @@
 	<string name="add_opening_hours">Дадаць гадзіны працы</string>
 	<string name="poi_dialog_poi_type">Тып POI</string>
 	<string name="please_specify_poi_type">Калі ласка, пазначце тып POI.</string>
-    <string name="av_locations">Месцазнаходжаньні</string>
     <string name="number_of_rows_in_dash">Колькасьць радкоў на галоўным экране %1$s</string>
 	
 	<string name="poi_action_delete">выдаліць</string>
@@ -2390,13 +2381,6 @@
     <string name="osn_modify_dialog_error">Адбылося выключэньне: нататка не была зьмененая</string>
     <string name="osn_modify_dialog_title">Зьмяніць нататку</string>
     <string name="context_menu_item_modify_note">Зьмяніць OSM-нататку</string>
-    <string name="release_2_8">• Цалкам перапрацаваныя маркеры з лініямі кірунку і плянаваньнем маршрута 
-\n 
-\n • Інструмэнт вымярэньня адлегласьцей з прывязкай да дарогі і з захаваньнем кропак у сьлед 
-\n 
-\n • OsmAnd Live: выпраўленьне хібаў, абнаўленьне дадзеных на серверы кожныя 30 хвілін, абнаўленьні рэалізаваныя ў навігацыі
-\n
-\n</string>
     <string name="rendering_value_darkyellow_name">Цёмна-жоўты</string>
     <string name="show_map">Паказаць мапу</string>
     <string name="route_is_calculated">Маршрут разлічаны</string>
@@ -2458,9 +2442,6 @@
     <string name="one_tap_active_descr">Націск на маркер на мапе перамесціць гэты маркер на першае месца ў спісе актыўных маркераў, не адкрываючы кантэкстнае меню.</string>
     <string name="one_tap_active">Актывацыя адным націскам</string>
     <string name="modify_the_search_query">Зьмяніце пошукавы запыт.</string>
-    <string name="release_3_0">\\022 
-\n
-\n</string>
     <string name="what_is_here">Што тут:</string>
     <string name="parked_at">прыпаркаваны на</string>
     <string name="pick_up_till">Узяць да</string>
@@ -2474,8 +2455,6 @@
     <string name="will_be_opened_at">Будзе адчынена а</string>
     <string name="will_be_opened_on">Будзе адчынена</string>
     <string name="additional_actions">Дадатковыя дзеяньні</string>
-    <string name="av_locations_selected_desc">GPX-файл з каардынатамі і данымі выбраных нататак.</string>
-    <string name="av_locations_all_desc">GPX-файл з каардынатамі і данымі ўсіх нататак.</string>
     <string name="shared_string_actions">Дзеянні</string>
     <string name="shared_string_marker">Маркер</string>
     <string name="osm_recipient_stat">Змен %1$s, сума %2$s mBTC</string>

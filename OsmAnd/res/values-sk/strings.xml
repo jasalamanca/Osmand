@@ -777,8 +777,6 @@ Proporčná pamäť %4$s MB (Limit Androidu %5$s MB, Dalvik %6$s MB).</string>
     <string name="monitoring_control_start">GPX</string>
     <string name="rendering_attr_noAdminboundaries_name">Hranice oblastí</string>
     <string name="rendering_attr_noAdminboundaries_description">Potlačiť zobrazenie hraníc regiónov (administratívne úrovne 5 až 9).</string>
-    <string name="av_widget_action_descr">Vybrať predvolenú akciu pre nástroj.</string>
-    <string name="av_widget_action">Predvolená akcia pre nástroj</string>
     <string name="recording_delete_confirm">Chcete odstrániť tento záznam?</string>
     <string name="recording_context_menu_play">Prehrať</string>
     <string name="map_widget_distancemeasurement">Meranie vzdialenosti</string>
@@ -796,7 +794,6 @@ Proporčná pamäť %4$s MB (Limit Androidu %5$s MB, Dalvik %6$s MB).</string>
     <string name="prefer_in_routing_descr">Uprednostniť diaľnice.</string>
     <string name="item_checked">označené</string>
     <string name="item_unchecked">neoznačené</string>
-    <string name="av_def_action_choose">Vybrať pri požiadaní</string>
     <string name="access_arrival_time">Čas príchodu</string>
     <string name="precise_routing_mode_descr">Umožní výpočet presnej trasy bez závad. Výpočet je však zatiaľ obmedzený na menšiu vzdialenosť a je pomalší.</string>
     <string name="map_widget_gps_info">Informácie o GPS</string>
@@ -882,11 +879,6 @@ Proporčná pamäť %4$s MB (Limit Androidu %5$s MB, Dalvik %6$s MB).</string>
     <string name="osb_author_or_password_not_specified">Prosím, zadajte používateľa OSM a heslo v nastaveniach</string>
     <string name="clear_intermediate_points">Zmazať prechodné body</string>
     <string name="osb_author_dialog_password">Heslo k OSM (voliteľné)</string>
-    <string name="av_camera_focus_auto">Automatické ostrenie</string>
-    <string name="av_camera_focus_hiperfocal">Hyperfokálne ostrenie</string>
-    <string name="av_camera_focus_edof">Rozšírená hĺbka poľa (EDOF)</string>
-    <string name="av_camera_focus_infinity">Ostrenie je nastavené na nekonečno</string>
-    <string name="av_camera_focus_macro">Makro (z blízka) režim ostrenia</string>
     <string name="base_world_map">Základná mapa sveta</string>
     <string name="map_magnifier">Zväčšenie mapy</string>
     
@@ -1469,7 +1461,6 @@ Dĺžka %2$s</string>
     <string name="shared_string_skip">Preskočiť</string>
     <string name="app_name_osmand">OsmAnd</string>
     <string name="commit_poi">Odoslať POI</string>
-    <string name="av_locations">Pozície</string>
     <string name="plugin_settings">Zásuvné moduly</string>
     <string name="routing_attr_avoid_shuttle_train_name">Nepoužiť autovlak</string>
     <string name="routing_attr_avoid_shuttle_train_description">Nepoužiť autovlak</string>
@@ -2226,13 +2217,6 @@ Zodpovedá oblasti: %1$s x %2$s</string>
     <string name="make_round_trip_descr">Pridať kópiu počiatočného bodu ako cieľ.</string>
     <string name="make_round_trip">Vytvoriť okružnú trasu</string>
     <string name="shared_string_navigate">Navigovať</string>
-    <string name="release_2_8">\\022 Prepracované mapové značky s vodiacimi čiarami a plánovaním trasy
-\n 
-\n • Nástroj na meranie vzdialeností má funkciu prichytenia k ceste a uloženie bodov ako stopu 
-\n 
-\n • OsmAnd Live: opravy chýb, nové dáta na serveri každých 30 minút, aktualizácie začlenené do navigácie
-\n
-\n</string>
     <string name="rendering_value_darkyellow_name">Tmavožltá</string>
     <string name="shared_string_road">Cesta</string>
     <string name="wrong_input">Nesprávny vstup</string>
@@ -2289,13 +2273,6 @@ Zodpovedá oblasti: %1$s x %2$s</string>
     <string name="by_type">Podľa typu</string>
     <string name="one_tap_active">Jedno stlačenie aktívne</string>
     <string name="modify_the_search_query">Upraviť vyhľadávacie kritériá.</string>
-    <string name="release_3_0">\\022 Detekcia značiek \"stop\" zohľadňuje smer jazdy
-\n
-\n • Nový algoritmus poskytuje zmysluplné hodnoty pre stúpanie/klesanie v stopách GPX
-\n
-\n • Čas pešej trasy zohľadňuje terén/stúpanie (Naismithovo pravidlo)
-\n
-\n</string>
     <string name="what_is_here">Čo je tu:</string>
     <string name="parked_at">zaparkované o</string>
     <string name="pick_up_till">Vyzdvihnúť do</string>
@@ -2309,8 +2286,6 @@ Zodpovedá oblasti: %1$s x %2$s</string>
     <string name="will_open_at">Bude otvorené o</string>
     <string name="will_open_on">Bude otvorené o</string>
     <string name="additional_actions">Ďalšie akcie</string>
-    <string name="av_locations_selected_desc">Súbor GPX so súradnicami a údajmi vybraných poznámok.</string>
-    <string name="av_locations_all_desc">Súbor GPX so súradnicami a údajmi všetkých poznámok.</string>
     <string name="shared_string_actions">Akcie</string>
     <string name="shared_string_marker">Značka</string>
     <string name="osm_recipient_stat">Počet úprav %1$s, suma %2$s mBTC</string>

@@ -916,8 +916,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
 
     <string name="map_widget_distancemeasurement">Távolságmérés</string>
     <string name="shared_string_control_stop">Leállítás</string>
-    <string name="av_widget_action_descr">Vezérlőgomb alapértelmezett működési módja.</string>
-    <string name="av_widget_action">Alapértelmezett mód</string>
 
     <string name="intermediate_points_change_order">Más sorrend</string>
     <string name="dropbox_plugin_name">Dropbox bővítmény</string>
@@ -937,7 +935,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="item_checked">kijelölt</string>
     <string name="item_unchecked">kijelöletlen</string>
     <string name="shared_string_map">Térkép</string>
-    <string name="av_def_action_choose">Kijelölés kérésre</string>
 
     <string name="map_widget_gps_info">GPS infó</string>
 
@@ -1018,11 +1015,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="context_menu_item_destination_point">Beállítás célpontnak</string>
     <string name="please_select_address">Előbb válassz települést vagy utcát</string>
     <string name="search_street_in_neighborhood_cities">Utca keresése közeli városrészekben</string>
-    <string name="av_camera_focus_auto">Autófókusz</string>
-    <string name="av_camera_focus_hiperfocal">Végtelen fókusz</string>
-    <string name="av_camera_focus_edof">Kiterjesztett mélységélesség (EDOF)</string>
-    <string name="av_camera_focus_infinity">Végtelenre állított fókusz</string>
-    <string name="av_camera_focus_macro">Makró (közeli) fókuszmód</string>
     <string name="driving_region_descr">Vezetési területet kijelölése: USA, Európa, Egyesült Királyság, Ázsia és egyebek.</string>
     <string name="driving_region">Vezetési terület</string>
     <string name="driving_region_japan">Japán</string>
@@ -1681,7 +1673,6 @@ Hosszúság: %2$s</string>
     <string name="osmand_running_in_background">Háttérben fut</string>
     <string name="simulate_your_location_stop_descr">Pozíciószimuláció leállítása.</string>
     <string name="simulate_your_location_descr">Szimuláció megtervezett útvonallal vagy felvett GPX-szel.</string>
-    <string name="av_locations">Helyszín</string>
     <string name="routing_attr_avoid_shuttle_train_name">Autószállító vonat elkerülése</string>
     <string name="routing_attr_avoid_shuttle_train_description">Autószállító vonat elkerülése</string>
     <string name="favourites_context_menu_add">Kedvenc létrehozása</string>
@@ -2363,13 +2354,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="add_point_after">Pont hozzáadása utána</string>
     <string name="measurement_tool_snap_to_road_descr">Az OsmAnd össze fogja kötni a pontokat a kiválasztott profilnak megfelelő útvonallal.</string>
     <string name="measurement_tool_save_as_new_track_descr">A pontok útvonalpontként vagy vonalként is menthetők.</string>
-    <string name="release_2_8">• Teljesen átalakított térképjelölők, irányjelző vonalakkal és útvonaltervezéssel 
-\n 
-\n • A távolságmérő eszköz tud úthoz rögzítetten is mérni és el tudja menteni a pontokat útvonalként 
-\n 
-\n • OsmAnd Live: hibajavítások, friss adatok a szerveren 30 percenként, a frissítéseket figyelembe veszi a navigáció is
-\n
-\n</string>
     <string name="rendering_value_darkyellow_name">Sötétsárga</string>
     <string name="retry">Újra</string>
     <string name="add_route_points">Hozzáadás útvonalpontokként</string>
@@ -2453,15 +2437,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="will_open_at">Ekkor fog kinyitni:</string>
     <string name="will_open_on">Ekkor fog kinyitni:</string>
     <string name="additional_actions">További műveletek</string>
-    <string name="av_locations_selected_desc">"GPX fájl a kiválasztott pont  koordinátáival és adataival."</string>
-    <string name="av_locations_all_desc">"GPX fájl az összes jegyzet  koordinátáival és adataival."</string>
-    <string name="release_3_0">• A stoptáblák felismerése már figyelembe veszi a vezetési irányt
-\n
-\n • Új GPX nyomvonal feldolgozási algoritmus, ami valósabb szintemelkedés/szintvesztés adatokat számol
-\n
-\n • Terep (emelkedőket) figyelembe vevő gyaloglási idő számítás (Naismith-szabály)
-\n
-\n</string>
     <string name="modify_the_search_query">Keresési kifejezés módosítása.</string>
     <string name="shared_string_actions">Műveletek</string>
     <string name="shared_string_marker">Jelölő</string>

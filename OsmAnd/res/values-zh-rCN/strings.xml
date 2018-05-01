@@ -460,8 +460,6 @@
     <string name="available_downloads_left">%1$d 个文件可下载</string>
     <string name="cancel_route">取消路线</string>
     <string name="contribution_activity">安装版本</string>
-    <string name="av_widget_action_descr">选择缺省窗体动作</string>
-    <string name="av_widget_action">缺省窗体动作</string>
     <string name="map_widget_distancemeasurement">距离测量</string>
     <string name="download_roads_only_maps">仅包含道路的地图</string>
     
@@ -844,8 +842,7 @@
 	<string name="edit_filter_delete_dialog_title">是否删除选中的过滤器？</string>
 	<string name="edit_filter_delete_message">过滤器 {0} 已被删除</string>
 	<string name="edit_filter_create_message">过滤器 {0} 已创建</string>
-	<string name="av_camera_focus_auto">自动聚焦</string>
-	<string name="clear_intermediate_points">清除中途点</string>
+    <string name="clear_intermediate_points">清除中途点</string>
     <string name="keep_intermediate_points">保持中途点</string>
     <string name="new_directions_point_dialog">您已经有中途点集了。</string>
     
@@ -1004,7 +1001,6 @@
     <string name="simulate_your_location_stop_descr">停止模拟您的位置</string>
     <string name="simulate_your_location_descr">使用计算得到的路线或者一条 GPX 记录模拟您的位置</string>
     <string name="looking_up_address">查询地址</string>
-    <string name="av_locations">位置</string>
     <string name="plugin_settings">插件</string>
     <string name="traffic_warning_hazard">危险</string>
     <string name="rendering_value_boldOutline_name">粗边框</string>
@@ -1868,7 +1864,6 @@
     <string name="use_magnetic_sensor_descr">使用磁传感器来确定罗盘值而不是方向传感器</string>
     <string name="use_magnetic_sensor">使用磁传感器</string>
     <string name="osmand_background_plugin_description">透过周期性的唤醒 GPS 设备，在背景模式下（屏幕关闭）显示设置，以启用追踪与导航。</string>
-    <string name="av_def_action_choose">在请求时选择</string>
     <string name="recording_delete_confirm">你想要删除此记录吗？</string>
     <string name="rendering_attr_alpineHiking_name">高山远足规模 (SAC)</string>
     <string name="rendering_attr_alpineHiking_description">依据 SAC 分级计算路径</string>
@@ -2018,10 +2013,6 @@
     <string name="Closest_Amenities">最近的设施</string>
     <string name="poi_action_delete">删除</string>
     <string name="poi_dialog_reopen">重新打开</string>
-    <string name="av_camera_focus_hiperfocal">超焦距对焦</string>
-    <string name="av_camera_focus_edof">扩展的景深 (EDOF)</string>
-    <string name="av_camera_focus_infinity">将焦点设置在无穷远</string>
-    <string name="av_camera_focus_macro">微距（特写）对焦模式</string>
     <string name="navigation_intent_invalid">格式无效: %s</string>
     <string name="plugin_description_title">描述</string>
     <string name="plugin_install_needs_network">你需要互联网连接来安装这个插件。</string>
@@ -2206,13 +2197,6 @@
     <string name="yesterday">昨天</string>
     <string name="context_menu_read_full_article">阅读完整文章</string>
     <string name="context_menu_read_article">阅读文章</string>
-    <string name="release_2_8">\\022 彻底重新实现了地图标记功能，带有辅助线和路径规划
-\n
-\n • 距离测量工具，提供道路吸附功能和将点保存为轨迹的功能
-\n
-\n • OsmAnd 实时：缺陷修复、每 30 分钟即从服务器更新最新数据、在导航界面中实现了更新功能
-\n
-\n</string>
     <string name="shared_string_without_name">没有名称</string>
     <string name="what_is_here">这里的内容:</string>
     <string name="parked_at">停在</string>
@@ -2224,11 +2208,6 @@
     <string name="will_open_at">将要打开于</string>
     <string name="will_open_on">将要打开于</string>
     <string name="additional_actions">额外的活动</string>
-    <string name="av_locations_selected_desc">GPX文件，包含所选笔记的坐标和数据。</string>
-    <string name="av_locations_all_desc">GPX文件，包含所有注释的坐标和数据。</string>
-    <string name="release_3_0">\\022 
-\n
-\n</string>
     <string name="modify_the_search_query">修改搜索查询。</string>
     <string name="shared_string_actions">操作</string>
     <string name="shared_string_marker">标记</string>

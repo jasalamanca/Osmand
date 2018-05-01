@@ -928,8 +928,6 @@
     <string name="dropbox_plugin_name">Dropbox-ის დამატება</string>
     
     <string name="intermediate_points_change_order">წყობის შეცვლა</string>
-    <string name="av_widget_action_descr">ღილაკის ნაგულისხმევი ქცევის არჩევა</string>
-    <string name="av_widget_action">ღილაკის ნაგულისხმევი ქცევა</string>
     <string name="recording_delete_confirm">გნებავთ ჩანაწერის წაშლა?</string>
 
     <string name="recording_context_menu_play">დაკვრა</string>
@@ -1076,15 +1074,9 @@
 	<string name="prefer_in_routing_descr">მოტოციკლების გზებისათვის უპირატესობის მინიჭება</string>
     <string name="max_speed_none">არა</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
-    <string name="av_def_action_choose">მოთხოვნისას არჩევა</string>
     <string name="support_new_features_descr">შემომწირეთ აპლიკაციაში ახალი მახასიათებლების სანახავად</string>
 	<string name="shared_string_downloading">ჩამოტვირთვა</string>
 	<string name="osb_author_dialog_password">OSM პაროლი(არასავალდებულო)</string>
-    <string name="av_camera_focus_auto">ავტოფოკუსი</string>
-	<string name="av_camera_focus_hiperfocal">ზემაღალი ფოკუსი</string>
-	<string name="av_camera_focus_edof">ველის გაფართოებული სიღრმავე (EDOF)</string>
-	<string name="av_camera_focus_infinity">ფოკუსი უსასრულოა</string>
-	<string name="av_camera_focus_macro">მაკრო (მიახლოებული) ფოკუსის რეჟიმი</string>
     <string name="traffic_warning_hazard">საშიშროება</string>
     <string name="no_updates_available">განახლებები ნაპოვნი არაა</string>
     <string name="download_live_updates">ცოცხალი განახლებები</string>

@@ -21,7 +21,6 @@
     <string name="shared_string_location">സ്ഥാനം</string>
     <string name="nm">നോ. മൈല്‍</string>
     <string name="si_nm">നോട്ടിക്കല്‍ മൈല്‍</string>
-    <string name="av_locations">സ്ഥലങ്ങള്‍</string>
     <string name="rendering_value_orange_name">ഓറഞ്ച്</string>
     <string name="shared_string_wikipedia">വിക്കിപീഡിയ</string>
     <string name="local_indexes_cat_wiki">വിക്കിപീഡിയ</string>
@@ -972,8 +971,6 @@
     <string name="only_show">റൂട്ട് പ്രദര്‍ശിപ്പിക്കുക</string>
     <string name="show_poi_over_map">"പി ഓ ഐ കാണിക്കൂക "</string>
     <string name="Closest_Amenities">"അടുത്തുള്ള  സൗകര്യങ്ങള്‍"</string>
-    <string name="av_camera_focus_edof">വികസിത ആഴമുള്ള ഫീ‌ല്‍ഡ് (ഇഡിഓഎഫ്)</string>
-    <string name="av_camera_focus_macro">ക്ളോസപ്പില്‍ ഫോക്ക്സ് ചെയ്യുക</string>
     <string name="user_hates_app_get_feedback">എന്ത് കൊണ്ട് എന്ന് പറയുക.</string>
     <string name="shared_string_undo">കഴിഞ്ഞ നീക്കം ഉപേക്ഷിച്ചു പൂര്‍വ്വസ്ഥിതിയിലേക്കു തിരിച്ചു പോകുക</string>
     <string name="shared_string_skip">ഒഴിവാക്കുക</string>
@@ -1201,8 +1198,6 @@
     <string name="use_magnetic_sensor">"കാന്തിക  സെന്‍സര്‍ ഉപയോഗിക്കൂ"</string>
     <string name="choose_osmand_theme">"ആപ്പ് തീം "</string>
     <string name="select_address_activity">വിലാസം തെരഞ്ഞെടുക്കുക</string>
-    <string name="av_widget_action_descr">വിഡ്ജറ്റിന്റെ സ്വതവേയുള്ള പ്രവൃത്തി തെരഞ്ഞെടുക്കുക</string>
-    <string name="av_widget_action">വിഡ്ജറ്റിന്റെ സ്വതവേയുള്ള പ്രവൃത്തി</string>
     <string name="rendering_attr_showRoadMaps_name">വഴികൾ മാത്രമുള്ള ഭൂപടം</string>
     <string name="replace_destination_point">ലക്ഷ്യസ്ഥാനം മാറ്റിവയ്‌ക്കുക</string>
     <string name="interrupt_music_descr">ശബ്ദസൂചനയുടെ സമയത്ത് പാട്ടുകള്‍ പാടുന്നത് താല്‍ക്കാലികമായി നിര്‍ത്തുക (വോള്യം കുറക്കുന്നതിന് പകരം)</string>
@@ -1266,9 +1261,6 @@
     <string name="search_POI_level_btn">കൂടുതല്‍ കണ്ടെത്തുക</string>
     <string name="choose_intersected_street">"കുറുകെയുള്ള തെരുവ് തെരഞ്ഞെടുക്കുക "</string>
     <string name="poi_create_title">"പി ഓ ഐക്ക്  രുപം നല്‍കുക"</string>
-    <string name="av_camera_focus_auto">ഓട്ടോ ഫോക്കസ്</string>
-    <string name="av_camera_focus_hiperfocal">ഹൈപ്പര്‍ഫോക്കല്‍ ഫോക്കസ്</string>
-    <string name="av_camera_focus_infinity">"അനന്തതയിലുള്ള  ഫോക്കസ് "</string>
     <string name="show_gpx">ജിപിഎക്സ് കാണിക്കുക</string>
     <string name="update_all">എല്ലാം പരിഷ്കരിക്കട്ടെ (%1$s MB)</string>
     <string name="search_on_the_map_item">"ഭൂപടത്തില്‍ തിരയുന്നു "</string>

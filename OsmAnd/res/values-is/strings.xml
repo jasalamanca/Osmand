@@ -112,7 +112,6 @@
     <string name="min_km">min/km</string>
     <string name="m_s">m/sek</string>
     <string name="shared_string_navigation">Leiðsögn</string>
-    <string name="av_locations">Staðsetningar</string>
     <string name="plugin_settings">Viðbætur</string>
     <string name="traffic_warning_hazard">Slysahætta</string>
     <string name="download_live_updates">Síuppfærslur</string>
@@ -977,7 +976,6 @@ Ferill %2$s</string>
     <string name="poi_dialog_other_tags_message">Öll önnur merki voru varðveitt</string>
     <string name="edit_filter_delete_message">Síunni {0} hefur verið eytt</string>
     <string name="edit_filter_create_message">Sían {0} var búin til</string>
-    <string name="av_camera_focus_auto">Sjálfvirkur fókus</string>
     <string name="navigation_intent_invalid">Ógilt snið: %s</string>
     <string name="do_you_like_osmand">Kanntu vel við OsmAnd?</string>
     <string name="we_really_care_about_your_opinion">Skoðun þín er okkur mikilvæg og við viljum gjarnan fá svörun frá þér.</string>
@@ -1571,10 +1569,6 @@ Punktar</string>
     <string name="poi_action_succeded_template">Tókst að ljúka {0} aðgerðinni.</string>
     <string name="poi_error_unexpected_template">Óvænt villa kom upp við að framkvæma aðgerð {0}.</string>
     <string name="poi_error_io_error_template">I/O-villa kom upp við að framkvæma aðgerð {0}.</string>
-    <string name="av_camera_focus_hiperfocal">Ofurfókus (hyperfocal - næstum allt skarpt)</string>
-    <string name="av_camera_focus_edof">Útvíkkuð dýpt sjónsviðs (EDOF)</string>
-    <string name="av_camera_focus_infinity">Fókus er stilltur á óendanleika</string>
-    <string name="av_camera_focus_macro">Makrófókus (nærmynd)</string>
     <string name="shared_string_card_was_hidden">Kort var falið</string>
     <string name="number_of_rows_in_dash">Fjöldi raða á stjórnborði %1$s</string>
     <string name="downloads_left_template">%1$s niðurhöl eftir</string>
@@ -1602,9 +1596,6 @@ Punktar</string>
     <string name="stop_routing_confirm">Ertu viss um að þú viljir stöðva leiðsögnina?</string>
     <string name="precise_routing_mode_descr">Virkja þetta til að reikna nákvæmar leiðir án hnökra. Er ennþá takmarkað út frá vegalengdum og fremur hægvirkt.</string>
     <string name="precise_routing_mode">Nákvæmt leiðaval (alfa-tilraunaútgáfa)</string>
-    <string name="av_def_action_choose">Velja eftir beiðni</string>
-    <string name="av_widget_action_descr">Veldu sjálfgefna aðgerð viðmótshluta.</string>
-    <string name="av_widget_action">Sjálfgefin aðgerð viðmótshluta</string>
     <string name="local_openstreetmap_were_uploaded">{0} merkisstaðir/minnispunktar voru sendir inn</string>
     <string name="local_openstreetmap_settings">Merkisstaðir/minnispunktar sem vistaðir eru á tæki</string>
     <string name="local_openstreetmap_settings_descr">Birta og sýsla með merkisstaði/minnispunkta sem skráðir eru í staðværum gagnagrunni.</string>
@@ -2213,15 +2204,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
 \n * Ýta og halda á punkt til að skoða og bæta við lýsingu.
 \n * Bankaðu á mælingamerkið til að sjá fleiri aðgerðir.</string>
     <string name="non_optimal_route_calculation">Reikna leiðir yfir langar fjarlægðir sem hugsanlega eru ekki þær bestu</string>
-    <string name="av_locations_selected_desc">GPX-skrá með hnitum og gögnum valinna minnispunkta.</string>
-    <string name="av_locations_all_desc">GPX-skrá með hnitum og gögnum allra minnispunkta.</string>
-    <string name="release_3_0">\\022 Greining á stöðvunarmerkjum er núna einnig notuð til ákvörðunar akstursstefnu
-\n 
-\n • Nýtt reiknirit gefur nothæfari upplýsingar um hækkun/lækkun í GPX-ferlum
-\n 
-\n • Göngutímar taka núna mið af landslagi/hækkun (Naismith-reglan)
-\n 
-\n</string>
     <string name="empty_state_osm_edits_descr">Búðu til eða breyttu merkisstöðum í OSM (POI), opnaðu eða gerðu athugasemdir í OSM og sendu inn skráða ferla í GPX-skrám.</string>
     <string name="one_tap_active_descr">Bankaðu á merki á kortinu til að færa það efst í virk kortamerki án þess að opna samhengisvalmyndina.</string>
     <string name="add_track_to_markers_descr">Veldu feril úr hverjum ferilpunktum verður bætt í kortamerkin. (Einungis ferlar með ferilpunktum eru taldir upp.)</string>

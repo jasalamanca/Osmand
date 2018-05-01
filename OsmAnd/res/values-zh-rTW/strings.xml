@@ -889,9 +889,6 @@
     <string name="dropbox_plugin_name">Dropbox 外掛程式</string>
 
     <string name="intermediate_points_change_order">變動排列</string>
-    <string name="av_def_action_choose">應需求選取</string>
-    <string name="av_widget_action_descr">選擇預設小工具的作用。</string>
-    <string name="av_widget_action">預設小工具作用</string>
 
     <string name="search_street_in_neighborhood_cities">在附近一帶的城市查尋街道</string>
     <string name="recording_delete_confirm">您想刪除此錄製嗎？</string>
@@ -944,12 +941,6 @@
 
     <string name="monitoring_control_start">GPX</string>
 
-
-    <string name="av_camera_focus_auto">自動對焦</string>
-    <string name="av_camera_focus_hiperfocal">超焦距對焦</string>
-    <string name="av_camera_focus_edof">全幅對焦 (EDOF)</string>
-    <string name="av_camera_focus_infinity">焦距設為無限大</string>
-    <string name="av_camera_focus_macro">微距(特寫)對焦模式</string>
 
     <string name="osb_author_or_password_not_specified">請在設定裡指定 OSM 的使用者名稱和密碼</string>
     <string name="clear_intermediate_points">清除中轉地點</string>
@@ -1617,9 +1608,8 @@
     <string name="opening_at">營業於</string>
     <string name="closing_at">結束於</string>
     <string name="next_proceed">下頁</string>
-    <string name="av_locations">地點</string>
 
-    
+
     <string name="contact_info">連絡資訊</string>
     <string name="description">記述</string>
     <string name="add_opening_hours">增加營業時間</string>
@@ -2374,13 +2364,6 @@
     <string name="osn_modify_dialog_error">發生異常：註解未被修改</string>
     <string name="osn_modify_dialog_title">修改註解</string>
     <string name="context_menu_item_modify_note">修改 OSM 註解</string>
-    <string name="release_2_8">\\022 完全重做地圖標記偕同指標和路線規劃 
-\n 
-\n • 測量距離工具嵌入快照於道路樣貌和儲存標點為軌跡 
-\n 
-\n • OsmAnd Live：修復錯誤，每30分鐘伺服器上最新的資料，更新應用到導航裡
-\n
-\n</string>
     <string name="rendering_value_darkyellow_name">暗黃色</string>
     <string name="show_map">顯示地圖</string>
     <string name="route_is_calculated">路線計算</string>
@@ -2442,11 +2425,7 @@
     <string name="by_type">按照類型</string>
     <string name="one_tap_active_descr">輕點在地圖上的標記，將其移動到活動標記的頂端，而不用打開內容選單。</string>
     <string name="modify_the_search_query">變更搜尋的查詢。</string>
-    <string name="release_3_0">"\\022 
-\n "</string>
-    <string name="av_locations_selected_desc">包括座標和所選註解資料的 GPX 檔案。</string>
-    <string name="av_locations_all_desc">包括座標和所有註解資料的 GPX 檔案。</string>
-	<string name="osm_recipient_stat">編輯 %1$s，合計 %2$s mBTC</string>
+    <string name="osm_recipient_stat">編輯 %1$s，合計 %2$s mBTC</string>
     <string name="osm_recipients_label">OSM 收件人</string>
     <string name="total_donations">捐款總計</string>
 <string name="parked_at">停在</string>

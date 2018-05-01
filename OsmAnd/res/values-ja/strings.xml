@@ -713,9 +713,6 @@ POIの更新は利用できません</string>
     <string name="dropbox_plugin_name">Dropboxプラグイン</string>
     
     <string name="intermediate_points_change_order">順序を変更</string>
-    <string name="av_def_action_choose">ウィジェット起動毎に選択</string>
-    <string name="av_widget_action_descr">ウィジェットボタンの(音声、ビデオ、写真記録)のデフォルト動作を選択します</string>
-    <string name="av_widget_action">ウィジェット機能のデフォルト設定</string>
     <string name="recording_delete_confirm">この記録を削除しますか？</string>
     <string name="recording_context_menu_play">再生</string>
     <string name="shared_string_control_stop">停止</string>
@@ -976,8 +973,6 @@ POIの更新は利用できません</string>
 	<string name="auto_zoom_close">ズーム 大</string>
 	<string name="auto_zoom_far">ズーム 中</string>
 	<string name="auto_zoom_farthest">ズーム 小</string>
-    <string name="av_camera_focus_infinity">フォーカスを無限遠(∞)にセット</string>
-	<string name="av_camera_focus_macro">マクロ(近距離)フォーカスモード</string>
     <string name="download_select_map_types">他のマップ</string>
     <string name="download_regular_maps">標準マップ</string>
     <string name="rendering_attr_noAdminboundaries_description">地域の境界線表示(管理者レベル 5-9)を隠す</string>
@@ -1122,9 +1117,6 @@ POIの更新は利用できません</string>
 	<string name="shared_string_downloading">ダウンロード中</string>
 	<string name="osb_author_dialog_password">OSMパスワード(オプション)</string>
 	<string name="email">Eメール</string>
-    <string name="av_camera_focus_auto">オートフォーカス</string>
-	<string name="av_camera_focus_hiperfocal">過焦点フォーカス</string>
-	<string name="av_camera_focus_edof">拡張被写界深度(EDOF)</string>
     <string name="amenity_type_seamark">満潮線(Seamark)</string>
     <string name="app_modes_choose_descr">アプリケーション内で表示する移動手段別プロファイルを選択します(乗用車、自転車、徒歩、その他…)</string>
     <string name="app_modes_choose">アプリケーションプロファイル</string>
@@ -1712,7 +1704,6 @@ POIの更新は利用できません</string>
 	<string name="shared_string_skip">スキップ</string>
 	<string name="app_name_osmand">OsmAnd</string>
     <string name="commit_poi">POIを申請する</string>
-    <string name="av_locations">位置</string>
     <string name="poi_action_delete">削除</string>
 	<string name="shared_string_card_was_hidden">項目は非表示</string>
 	<string name="building_number">棟の番号</string>
@@ -2426,13 +2417,6 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="quick_action_show_navigation_finish_dialog">ナビゲーション終了の確認ダイアログを表示</string>
     <string name="quick_action_start_stop_navigation">ナビゲーションの開始/停止</string>
     <string name="quick_action_start_stop_navigation_descr">このボタンをタップするとナビゲーションを開始または終了します。</string>
-    <string name="release_2_8">\\022 複数の目的地とそれを踏まえたルート計画用に新しく生まれ変わったマップマーカーシステム
-\n
-\n • 距離測定ツールで道に沿って計測できる機能とそれを保存できる機能の追加
-\n
-\n • OsmAnd Liveのバグ修正、30分ごとに提供される新しいデータ、ナビゲーション内に実装された機能の更新
-\n
-\n</string>
     <string name="access_map_linked_to_location">マップの場所にリンクされています</string>
     <string name="rendering_value_darkyellow_name">ダークイエロー</string>
     <string name="rendering_value_translucent_pink_name">半透明ピンク</string>
@@ -2473,19 +2457,10 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="tap_on_map_to_hide_interface">フルスクリーンモード</string>
     <string name="live_monitoring_max_interval_to_send">オンライン追跡用のバッファ指定</string>
     <string name="live_monitoring_max_interval_to_send_desrc">送信用現在地データをネット接続せずにどのくらいの時間記録するか、バッファを指定します</string>
-    <string name="release_3_0">• 停止標識の案内は運転方向を考慮するように変更
-\n
-\n • GPX経路に残す上昇下降値に有意かつ新しいアルゴリズムを採用
-\n
-\n • 地形(上り坂)を考慮した徒歩移動時間を算出するように改良(ネイスミスのルール／Naismith\'s ruleを適用)
-\n
-\n</string>
     <string name="rendering_attr_hidePOILabels_name">POIのラベル</string>
     <string name="context_menu_read_article">記事を読む</string>
     <string name="context_menu_points_of_group">グループのすべてのポイント</string>
     <string name="additional_actions">追加のアクション</string>
-    <string name="av_locations_selected_desc">選択された注釈と座標が付属しているGPXファイル。</string>
-    <string name="av_locations_all_desc">全ての注釈と座標が付属していGPXファイル。</string>
     <string name="modify_the_search_query">検索クエリを変更します。</string>
     <string name="shared_string_marker">マーカー</string>
     <string name="empty_state_osm_edits">OSMオブジェクトの作成または変更</string>

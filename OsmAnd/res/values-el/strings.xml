@@ -899,8 +899,6 @@
     <string name="recording_delete_confirm">Θέλετε να αφαιρέσετε αυτή την εγγραφή;</string>
 
     <string name="recording_context_menu_play">Αναπαραγωγή</string>
-    <string name="av_widget_action_descr">Επιλέξτε προκαθορισμένη ενέργεια γραφικού στοιχείου</string>
-    <string name="av_widget_action">Προκαθορισμένη ενέργεια γραφικού στοιχείου</string>
     <string name="shared_string_control_stop">Σταμάτημα</string>
 
 	<string name="dropbox_plugin_name">Πρόσθετο dropbox</string>
@@ -936,8 +934,7 @@
     <string name="favourites_list_activity">Επιλογή αγαπημένου</string>
     <string name="local_openstreetmap_act_title">Τροποποιήσεις OSM</string>
     <string name="shared_string_more_actions">Άλλες ενέργειες</string>
-    <string name="av_def_action_choose">Επιλογή κατά την ζήτηση</string>
-    
+
     <string name="download_using_mobile_internet">Προς το παρόν το WiFi δεν είναι συνδεδεμένο. Θέλετε να συνεχίσετε τη λήψη με την τρέχουσα σύνδεση internet;</string>
     <string name="cancel_route">Απόρριψη διαδρομής</string>
     <string name="cancel_navigation">Διακοπή πλοήγησης</string>
@@ -989,9 +986,6 @@
 	<string name="search_street_in_neighborhood_cities">Αναζήτηση οδού σε γειτονικές πόλεις</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
     <string name="osb_author_dialog_password">Κωδικός OSM Προαιρετικό)</string>
-	<string name="av_camera_focus_auto">Αυτόματη εστίαση</string>
-	<string name="av_camera_focus_edof">Εκτεταμένου βάθους πεδίου (EDOF)</string>
-	<string name="av_camera_focus_infinity">Η εστίαση ρυθμίστηκε στο άπειρο</string>
     <string name="announce_gpx_waypoints">GPX σημεία διαδρομής</string>
     <string name="speak_title">Εκφώνηση…</string>
 	<string name="speak_descr">Ρυθμίστε για εκφώνηση ονομάτων οδών, προειδοποιήσεων κυκλοφορίας (αναγκαστικές στάσεις, σαμαράκια), κάμερες ταχύτητας, όρια ταχύτητας</string>
@@ -1483,7 +1477,6 @@
     <string name="print_route">Εκτύπωση διαδρομής</string>
     <string name="simulate_your_location">Προσομοίωση της θέση σας</string>
 	<string name="plugin_settings">Πρόσθετα</string>
-	<string name="av_locations">Τοποθεσίες</string>
     <string name="favorite_category_dublicate_message">Το συγκεκριμένο όνομα κατηγορίας υπάρχει ήδη. Παρακαλώ ορίστε διαφορετικό όνομα.</string>
     <string name="favorite_category_name">Όνομα κατηγορίας</string>
     <string name="favorite_category_add_new_title">Προσθήκη νέας κατηγορίας</string>
@@ -1558,15 +1551,6 @@
     <string name="will_open_at">Θα ανοίξει στις</string>
     <string name="will_open_on">Θα ανοίξει στις</string>
     <string name="additional_actions">Πρόσθετες ενέργειες</string>
-    <string name="av_locations_selected_desc">Αρχείο GPX με συντεταγμένες και δεδομένα από τις επιλεγμένες σημειώσεις.</string>
-    <string name="av_locations_all_desc">Αρχείο GPX με συντεταγμένες και δεδομένα από όλες τις σημειώσεις.</string>
-    <string name="release_3_0">\\022 Η ανίχνευση των πινακίδων \"stop\" τώρα λαμβάνει υπόψη την κατεύθυνση οδήγησης
-\n
-\n• Νέος αλγόριθμος που παρέχει ουσιαστικές τιμές ανάβασης/κατάβασης για τα ίχνη GPX
-\n
-\n• Χρόνος πεζοπορίας με επίγνωση του εδάφους (ανάβαση) (κανόνας του Naismith)
-\n
-\n</string>
     <string name="modify_the_search_query">Τροποποίηση ερωτήματος αναζήτησης.</string>
     <string name="shared_string_actions">Ενέργειες</string>
     <string name="shared_string_marker">Δείκτης</string>

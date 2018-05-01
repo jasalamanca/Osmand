@@ -923,8 +923,6 @@
     
     <string name="search_villages_and_postcodes">Pesquisa por CEP</string>
 
-    <string name="av_widget_action_descr">Escolha a acção widget padrão</string>
-    <string name="av_widget_action">Ação widget padrão</string>
     <string name="recording_delete_confirm">Quer remover esta gravação?</string>
 
     <string name="recording_context_menu_play">Tocar</string>
@@ -944,7 +942,6 @@
     <string name="precise_routing_mode">Roteamento preciso (alfa)</string>
     <string name="dropbox_plugin_name">Plugin Dropbox</string>
     <string name="intermediate_points_change_order">Alterar ordem</string>
-    <string name="av_def_action_choose">Selecionar na altura</string>
     <string name="shared_string_control_stop">Parar</string>
     <string name="shared_string_control_start">Iniciar</string>
 
@@ -1062,11 +1059,6 @@ Clique no widget de medição para ver mais ações.</string>
 
     <string name="shared_string_downloading">Baixando</string>
 	<string name="osb_author_dialog_password">Password do OSM (opcional)</string>
-    <string name="av_camera_focus_auto">Auto foco</string>
-	<string name="av_camera_focus_hiperfocal">Foco hiperfocal</string>
-	<string name="av_camera_focus_edof">Profundidade de visão estendida</string>
-	<string name="av_camera_focus_infinity">Foco está definido no infinito</string>
-	<string name="av_camera_focus_macro">Foco Macro (close-up)</string>
     <string name="driving_region_canada">Canadá</string>
 	
 	<string name="about_version">Versão:</string>
@@ -1548,7 +1540,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="simulate_your_location_stop_descr">Parar de simular a sua posição</string>
     <string name="simulate_your_location_descr">Simular usando uma rota calculada ou trilha GPX armazenada</string>
     <string name="looking_up_address">Procurar endereço</string>
-    <string name="av_locations">Localizações</string>
     <string name="plugin_settings">Plugins</string>
     <string name="routing_attr_avoid_shuttle_train_name">Evitar de transporte de comboio</string>
     <string name="routing_attr_avoid_shuttle_train_description">Evitar de transporte de comboio</string>

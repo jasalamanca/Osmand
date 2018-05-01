@@ -918,9 +918,6 @@
     <string name="precise_routing_mode">Presiese roetebepaling (alfa)</string>
   <string name="dropbox_plugin_name">Dropbox inlasmodule</string>
     <string name="intermediate_points_change_order">Verander volgorde</string>
-    <string name="av_def_action_choose">Kies op versoek</string>
-    <string name="av_widget_action_descr">Kies verstek programmetjie-aksie</string>
-    <string name="av_widget_action">Verstek programmetjie-aksie</string>
 
   <string name="recording_delete_confirm">Wil jy hierdie opname verwyder?</string>
 
@@ -1018,13 +1015,6 @@
     <string name="distance_measurement_clear_route">Verwyder all punte</string>
     
     <string name="distance_measurement_load_gpx">Maak bestaande GPX oop</string>
-
-
-  <string name="av_camera_focus_auto">Outo fokus</string>
-	<string name="av_camera_focus_hiperfocal">Hiperfokale fokus</string>
-	<string name="av_camera_focus_edof">Uitgebreide velddiepte (EDOF)</string>
-	<string name="av_camera_focus_infinity">Fokus is op oneindig gestel</string>
-	<string name="av_camera_focus_macro">Makro (naby) fokus</string>
 
 
   <string name="speak_speed_limit">Kondig spoedbeperking aan</string>

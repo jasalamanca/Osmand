@@ -914,8 +914,6 @@
     <string name="download_select_map_types">Inne mapy</string>
 
 
-    <string name="av_widget_action_descr">Wybiera domyślną funkcję widżetu.</string>
-    <string name="av_widget_action">Domyślne działanie widżetu</string>
     <string name="recording_delete_confirm">Usunąć ten ślad?</string>
 
     <string name="recording_context_menu_play">Odtwórz</string>
@@ -943,7 +941,6 @@
     <string name="shared_string_map">Mapa</string>
     <string name="item_checked">zaznaczone</string>
     <string name="item_unchecked">niezaznaczone</string>
-    <string name="av_def_action_choose">Wybranie czynności</string>
     <string name="access_arrival_time">Czas przybycia</string>
     <string name="map_widget_gps_info">Dane GPS</string>
 
@@ -1007,12 +1004,6 @@
     <string name="please_select_address">Wybierz miasto lub ulicę</string>
     <string name="destination_point">Cel trasy %1$s</string>
 
-
-    <string name="av_camera_focus_auto">Autofokus</string>
-    <string name="av_camera_focus_hiperfocal">Fokus hiperfokalny</string>
-    <string name="av_camera_focus_edof">Rozszerzona głębia ostrości (EDOF)</string>
-    <string name="av_camera_focus_infinity">Fokus jest ustawiony na nieskończoność</string>
-    <string name="av_camera_focus_macro">Makro fokus (zbliżenie)</string>
 
     <string name="osb_author_or_password_not_specified">Proszę wprowadzić nazwę użytkownika i hasło OSM w ustawieniach</string>
     <string name="clear_intermediate_points">Wyczyść cele pośrednie</string>
@@ -1636,7 +1627,6 @@ Długość %2$s</string>
     <string name="successfully_uploaded_pattern">Wysłano {0}/{1}</string>
     <string name="try_again">Spróbuj ponownie</string>
     <string name="error_message_pattern">Błąd: {0}</string>
-    <string name="av_locations">Położenia</string>
     <string name="plugin_settings">Wtyczki</string>
     <string name="routing_attr_avoid_shuttle_train_name">Omijanie pociągów wahadłowych</string>
     <string name="routing_attr_avoid_shuttle_train_description">Omijanie pociągów wahadłowych transportujących auta</string>
@@ -2402,13 +2392,6 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="shared_string_navigate">Nawiguj</string>
     <string name="fast_coordinates_input">Szybkie wprowadzanie współrzędnych</string>
     <string name="add_location_as_first_point_descr">Dodaj swoje położenie jako pierwszy punkt, aby zaplanować idealną trasę.</string>
-    <string name="release_2_8">• Całkowicie odświeżone znaczniki mapy ze wskazówkami odnośnie planowania trasy
-\n
-\n• Narzędzie do pomiaru odległości z opcją przybliżania do drogi i zapisu punktów jako trasy
-\n
-\n• OsmAnd Live: poprawki błędów, świeże dane na serwerze co 30 minut, aktualizacje uwzględniane przy nawigacji
-\n
-\n</string>
     <string name="rendering_value_darkyellow_name">Ciemno żółty</string>
     <string name="wrong_input">Nieprawidłowe dane</string>
 	<string name="enter_new_name">Wprowadź nową nazwę</string>
@@ -2447,13 +2430,6 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="will_open_at">Zostanie otwarty o</string>
     <string name="will_open_on">Zostanie otwarty o</string>
     <string name="additional_actions">Dodatkowe czynności</string>
-    <string name="release_3_0">• Wykrywanie znaków stop uwzględnia teraz kierunek jazdy,
-\n
-\n • nowy algorytm udostępnia bardziej precyzyjne wartości podejścia/zejścia dla śladów GPX,
-\n
-\n • czas wędrówki uwzględnia ukształtowanie terenu (reguła Naismitha).
-\n
-\n</string>
     <string name="shared_string_actions">Czynności</string>
     <string name="shared_string_marker">Znacznik</string>
     <string name="marker_activated">Uaktywniono znacznik %s.</string>

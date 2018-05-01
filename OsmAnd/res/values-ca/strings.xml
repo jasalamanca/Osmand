@@ -737,8 +737,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="map_widget_monitoring_services">Serveis d\'enregistrament</string>
     <string name="recording_context_menu_play">Reprodueix</string>
     <string name="dropbox_plugin_name">Connector del Dropbox</string>
-    <string name="av_widget_action_descr">Seleccioneu l\'acció per defecte del giny.</string>
-    <string name="av_widget_action">Acció per defecte del giny</string>
     <string name="download_select_map_types">Altres mapes</string>
     <string name="rendering_attr_noAdminboundaries_name">Límits administratius</string>
     <string name="download_roads_only_maps">Mapa només de carreteres</string>
@@ -864,7 +862,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
 \n * Premeu contínuament al mapa per suprimir el punt anterior.
 \n * Premeu contínuament un punt per veure\'n i afegir-hi una descripció.
 \n * Premeu en el giny de mesura per veure més accions.</string>
-    <string name="av_def_action_choose">Selecciona sota demanda</string>
     <string name="background_service_provider">Proveïdor de la ubicació</string>
     <string name="converting_names">S\'estan convertint els noms nadius / en anglès…</string>
     <string name="save_track_interval_descr">Trieu l\'interval d\'enregistrament de traces a desar durant la navegació.</string>
@@ -896,8 +893,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="local_osm_changes_backup_failed">La còpia dels canvis OSM ha fallat</string>
     <string name="local_osm_changes_backup">Fes una còpia com a canvi OSM</string>
     <string name="index_name_openmaps">OpenMaps.eu</string>
-    <string name="av_camera_focus_hiperfocal">Enfocament de nitidesa màxima</string>
-    <string name="av_camera_focus_auto">Enfocament automàtic</string>
     <string name="osb_comment_dialog_error">S\'ha produït una excepció: no s\'ha afegit el comentari</string>
     <string name="osb_author_dialog_password">Contrasenya de l\'OSM (opcional)</string>
     <string name="amenity_type_seamark">Balisa marina</string>
@@ -969,9 +964,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="routing_attr_weight_name">Límit de pes</string>
     <string name="routing_attr_weight_description">Especifiqueu el pes del vehicle que les rutes han d\'admetre.</string>
     <string name="background_service_int_descr">Trieu l\'interval d\'activació que seguirà el servei en segon pla.</string>
-    <string name="av_camera_focus_macro">Mode macro (per a enfocar de prop)</string>
-    <string name="av_camera_focus_infinity">Focus regulat a l\'infinit</string>
-    <string name="av_camera_focus_edof">Profunditat de camp estesa (EDOF)</string>
     <string name="poi_error_unexpected_template">S\'ha produït un error inesperat en fer l\'acció {0}.</string>
 
     <string name="previous_run_crashed">La darrera execució de l\'OsmAnd ha fallat. El fitxer log és a {0}. Si us plau informeu del problema i adjunteu el fitxer log.</string>
@@ -1483,7 +1475,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="next_proceed">Següent</string>
     <string name="opening_at">Obert a les</string>
     <string name="closing_at">Tanquen a les</string>
-    <string name="av_locations">Ubicacions</string>
     <string name="contact_info">Informació de contacte</string>
     <string name="description">Descripció</string>
     <string name="add_opening_hours">Afegeix l\'horari de servei</string>
@@ -2222,13 +2213,6 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="osn_modify_dialog_error">S\'ha produït una excepció: la nota no s\'ha modificat</string>
     <string name="osn_modify_dialog_title">Modifica nota</string>
     <string name="context_menu_item_modify_note">Modifica nota d\'OSM</string>
-    <string name="release_2_8">\\022 Marcadors revisats totalment amb orientacions i planificació de la ruta 
-\n 
-\n • Eina de mesura de distàncies amb capacitat per resseguir les vies i desar els punts com una traça 
-\n 
-\n • OsmAnd Live: correcció d\'errors, actualització de dades al servidor cada 30 minuts, implementació d\'actualitzacions durant la navegació
-\n
-\n</string>
     <string name="rendering_value_darkyellow_name">Groc fosc</string>
     <string name="show_map">Mostra el mapa</string>
     <string name="route_is_calculated">S\'ha calculat la ruta</string>
@@ -2289,13 +2273,6 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="by_date">Per data</string>
     <string name="by_type">Per tipus</string>
     <string name="modify_the_search_query">Modifica la consulta de cerca.</string>
-    <string name="release_3_0">\\022 La detecció de senyals d\'estop ara té en compte la direcció
-\n
-\n • El nou algoritme proporciona valors d\'ascens/descens significatius a les traces GPX
-\n
-\n • Territori (pujades) contempla durades realistes de senderisme (norma Naismith)
-\n
-\n</string>
     <string name="one_tap_active">S\'activa amb un toc</string>
     <string name="what_is_here">El que hi ha aquí:</string>
     <string name="parked_at">aparcat a</string>
@@ -2310,8 +2287,6 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="will_open_at">S\'obrirà a</string>
     <string name="will_open_on">S\'obrirà a les</string>
     <string name="additional_actions">Accions addicionals</string>
-    <string name="av_locations_selected_desc">Arxiu GPX amb coordenades i dades de les notes seleccionades.</string>
-    <string name="av_locations_all_desc">Fitxer GPX amb coordenades i dades de totes les notes.</string>
     <string name="shared_string_actions">Accions</string>
     <string name="shared_string_marker">Marcador</string>
     <string name="osm_recipient_stat">%1$s edicions, %2$s mBTC en total</string>

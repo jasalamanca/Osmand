@@ -804,7 +804,6 @@
     <string name="poi_dialog_opening_hours">Wotewrjenske časy</string>
     <string name="edit_filter_save_as_menu_item">Składuj jako</string>
     <string name="email">mejlka</string>
-    <string name="av_camera_focus_auto">Awtofokus</string>
     <string name="navigation_intent_invalid">Njepłaćiwy format: %s</string>
     <string name="plugin_description_title">Wopisanje</string>
     <string name="plugin_install_needs_network">Trjebaš zwisk z internetom za instalowanje.</string>
@@ -1246,8 +1245,6 @@
     <string name="open_from">Wočinjene wot</string>
     <string name="open_till">Wočinjene hač do</string>
     <string name="additional_actions">Přidatne akcije</string>
-    <string name="av_locations_selected_desc">GPX-dataja z koordinatami a datami wubranych noticow.</string>
-    <string name="av_locations_all_desc">GPX-dataja z koordinatami a datami wšěch noticow.</string>
     <string name="modify_the_search_query">Pytanske naprašowanje přiměrić.</string>
     <string name="shared_string_actions">Akcije</string>
     <string name="empty_state_osm_edits">OSM-objekty wutworić abo wobdźěłać</string>
@@ -1313,7 +1310,6 @@
     <string name="shared_string_type">Družina</string>
     <string name="no_address_found">Žana adresa postajena</string>
     <string name="nm">nmi</string>
-    <string name="av_locations">Městna</string>
     <string name="rendering_value_pink_name">pink</string>
     <string name="rendering_value_translucent_pink_name">transparentny pink</string>
     <string name="shared_string_logoff">Wotzjewić</string>

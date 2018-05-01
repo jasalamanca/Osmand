@@ -1,7 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="av_locations_selected_desc">Файл GPX с координатами и данными выбранных заметок.</string>
-    <string name="av_locations_all_desc">Файл GPX с координатами и данными всех заметок.</string>
     <string name="favorite_empty_place_name">Место</string>
     <string name="private_access_routing_req">Ваш пункт назначения находится на частной территории. Вы хотите разрешить доступ к частным дорогам для этой поездки?</string>
     <string name="restart_search">Искать снова</string>
@@ -242,8 +240,6 @@
     <string name="rendering_attr_hideProposed_name">Планируемые объекты</string>
 
 
-    <string name="av_widget_action_descr">Выбрать действие по умолчанию для виджета.</string>
-    <string name="av_widget_action">Действие по умолчанию для виджета</string>
     <string name="recording_delete_confirm">Вы хотите удалить эту запись?</string>
     <string name="recording_context_menu_play">Проиграть</string>
     <string name="map_widget_distancemeasurement">Измерение расстояний</string>
@@ -1065,7 +1061,6 @@
     <string name="select_address_activity">Выбор адреса</string>
     <string name="favourites_list_activity">Выбор избранной</string>
     <string name="local_openstreetmap_act_title">Модификации OSM</string>
-    <string name="av_def_action_choose">Выберите по запросу</string>
     <string name="use_kalman_filter_compass_descr">Уменьшает \"шум\" компаса, но добавляет инерцию.</string>
     <string name="use_kalman_filter_compass">Использовать фильтр Калмана</string>
     <string name="cancel_navigation">Прекратить навигацию</string>
@@ -1106,11 +1101,6 @@
     <string name="context_menu_item_destination_point">Установить как пункт назначения</string>
     <string name="please_select_address">Сначала выберите город или улицу</string>
     <string name="destination_point">Пункт назначения %1$s</string>
-    <string name="av_camera_focus_auto">Автоматический фокус</string>
-    <string name="av_camera_focus_hiperfocal">Гиперфокальная фокусировка</string>
-    <string name="av_camera_focus_edof">Увеличенная глубина резкозти (EDOF)</string>
-    <string name="av_camera_focus_infinity">Фокус на бесконечность</string>
-    <string name="av_camera_focus_macro">Макро-режим</string>
     <string name="speak_speed_limit">Ограничение скорости</string>
     <string name="speak_cameras">Камеры контроля скорости</string>
     <string name="speak_traffic_warnings">Дорожные предупреждения</string>
@@ -1807,7 +1797,6 @@
     <string name="osm_edit_created_poi">Создана OSM POI</string>
     
     <string name="osmand_running_in_background">Работа в фоне</string>
-    <string name="av_locations">Места</string>
     <string name="downloading_number_of_files">Загрузка файла - %1$d</string>
 
 <string name="read_more">Подробнее</string>
@@ -2164,14 +2153,7 @@
     <string name="marker_moved_to_history">Маркер карты перемещен в историю</string>
     <string name="marker_moved_to_active">Маркер карты перемещен в действующие</string>
     <string name="show_direction">Указатель расстояния</string>
-    <string name="release_2_8">• Полностью переработанные маркеры карты, с направляющими линиями и планированием маршрута 
-\n 
-\n• Инструмент измерения расстояния, с привязкой к дороге и сохранением точек в качестве трека 
-\n 
-\n• OsmAnd Live: исправления ошибок, обновление данных на сервере каждые 30 минут, обновления учитываются в навигации
-\n
-\n</string>
-    <string name="release_2_9">• Обнаружение стоп-сигналов теперь учитывает направление движения 
+    <string name="release_2_9">• Обнаружение стоп-сигналов теперь учитывает направление движения
 \n 
 \n • Новый алгоритм, предоставляющий действительные значения подъема/спуска для треков GPX 
 \n 
@@ -2302,8 +2284,6 @@
     <string name="by_date">По дате</string>
     <string name="by_type">По типу</string>
     <string name="modify_the_search_query">Изменить поисковый запрос.</string>
-    <string name="release_3_0">• 
-\n</string>
     <string name="osm_recipient_stat">Правок %1$s, сумма %2$s mBTC</string>
     <string name="osm_recipients_label">OSM получатели</string>
     <string name="total_donations">Всего пожертвований</string>

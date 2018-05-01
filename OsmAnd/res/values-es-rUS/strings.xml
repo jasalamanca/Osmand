@@ -590,9 +590,6 @@ Lon %2$s</string>
     <string name="precise_routing_mode">Enrutado preciso (alfa)</string>
     <string name="dropbox_plugin_name">Complemento Dropbox</string>
     <string name="intermediate_points_change_order">Cambiar orden</string>
-    <string name="av_def_action_choose">Elegir a petición</string>
-    <string name="av_widget_action_descr">Elige la acción predefinida.</string>
-    <string name="av_widget_action">Acción predefinida</string>
     <string name="recording_delete_confirm">¿Quieres borrar esta grabación?</string>
     <string name="recording_context_menu_play">Reproducir</string>
     <string name="map_widget_distancemeasurement">Medición de distancia</string>
@@ -1372,11 +1369,6 @@ Lon %2$s</string>
     <string name="edit_filter_delete_message">Se borró el filtro {0}</string>
     <string name="edit_filter_create_message">Se creó el filtro {0}</string>
     <string name="email">correo electrónico</string>
-    <string name="av_camera_focus_auto">Enfoque automático</string>
-    <string name="av_camera_focus_hiperfocal">Enfoque hiperfocal</string>
-    <string name="av_camera_focus_edof">Profundidad de campo extendido (EDOF)</string>
-    <string name="av_camera_focus_infinity">Enfoque al infinito</string>
-    <string name="av_camera_focus_macro">Modo de enfoque macro (primer plano)</string>
     <string name="navigation_intent_invalid">Formato inválido: %s</string>
     <string name="plugin_description_title">Descripción</string>
     <string name="plugin_install_needs_network">Necesitas una conexión a Internet para instalar este complemento.</string>
@@ -1485,7 +1477,6 @@ Lon %2$s</string>
     <string name="next_proceed">Siguiente</string>
     <string name="opening_at">Abren a las</string>
     <string name="closing_at">Cierran a las</string>
-    <string name="av_locations">Ubicaciones</string>
     <string name="contact_info">Información de contacto</string>
     <string name="description">Descripción</string>
     <string name="add_opening_hours">Añadir horario de atención</string>
@@ -2227,13 +2218,6 @@ Proporciona un código completo</string>
     <string name="osn_modify_dialog_error">Excepción ocurrida: nota no modificada</string>
     <string name="osn_modify_dialog_title">Modificar nota</string>
     <string name="context_menu_item_modify_note">Modificar nota de OSM</string>
-    <string name="release_2_8">• Marcadores del mapa totalmente rediseñados con líneas guía y planificación de rutas 
-\n 
-\n • La herramienta de medición de distancias permite el ajuste al camino y guardar puntos como una traza 
-\n 
-\n • OSM Live: corrección de errores, nuevos datos en el servidor cada 30 minutos, actualizaciones implementadas en la navegación
-\n
-\n</string>
     <string name="rendering_value_darkyellow_name">Amarillo oscuro</string>
     <string name="show_map">Mostrar mapa</string>
     <string name="route_is_calculated">Ruta calculada</string>
@@ -2295,9 +2279,6 @@ Proporciona un código completo</string>
     <string name="by_date">Por fecha</string>
     <string name="by_type">Por tipo</string>
     <string name="modify_the_search_query">Modificar la consulta de búsqueda.</string>
-    <string name="release_3_0">\\022 
-\n
-\n</string>
     <string name="what_is_here">Aquí hay:</string>
     <string name="parked_at">estacionado a las</string>
     <string name="pick_up_till">Recoger hasta las</string>
@@ -2311,8 +2292,6 @@ Proporciona un código completo</string>
     <string name="will_open_at">Abrirá a las</string>
     <string name="will_open_on">Abrirá a las</string>
     <string name="additional_actions">Acciones adicionales</string>
-    <string name="av_locations_selected_desc">Archivo GPX con coordenadas y datos de las notas elegidas.</string>
-    <string name="av_locations_all_desc">Archivo GPX con coordenadas y datos de todas las notas.</string>
     <string name="shared_string_actions">Acciones</string>
     <string name="shared_string_marker">Marcador</string>
     <string name="osm_recipient_stat">%1$s ediciones, suman %2$s mBTC</string>

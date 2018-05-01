@@ -1014,7 +1014,6 @@
     <string name="loading_poi_obj">Laster interessepunkt…</string>
     <string name="converting_names">Konverterer lokale/engelske navn…</string>
     <string name="data_settings">Data</string>
-    <string name="av_camera_focus_auto">Autofokus</string>
     <string name="update_poi_success">Interessepunktdata ble vellykket oppdatert ({0} ble lastet)</string>
     <string name="rendering_value_default_name">Standard</string>
     <string name="rendering_value_orange_name">Orange</string>
@@ -1023,7 +1022,6 @@
     <string name="show_railway_warnings">Jernbaneoverganger</string>
     <string name="show_pedestrian_warnings">Fotgjengeroverganger</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerikansk veiatlas</string>
-    <string name="av_camera_focus_hiperfocal">Hyperfokal fokus</string>
     <string name="lock_screen_request_explanation">%1$s trenger denne tillatelsen til å slå av skjermen (Strømsparingsfunksjon).</string>
     <string name="shared_string_show_all">Vis alle</string>
     <string name="speak_pedestrian">Fotgjengeroverganger</string>
@@ -1192,7 +1190,6 @@
     <string name="reading_indexes">Leser lokale data…</string>
     <string name="osb_author_dialog_password">OSM-passord (valgfritt)</string>
     <string name="osb_comment_dialog_author">Forfatternavn</string>
-    <string name="av_camera_focus_edof">Utvidet dybdeskarphet (EDOF)</string>
     <string name="action_create">Aksjon opprette</string>
     <string name="action_modify">Aksjon endre</string>
     <string name="action_delete">Aksjon slette</string>
@@ -1359,7 +1356,6 @@
     <string name="si_kmh">Kilometer i timen</string>
     <string name="si_m_s">Meter per sekund</string>
     <string name="si_min_km">Minutter per kilometer</string>
-    <string name="av_locations">Posisjoner</string>
     <string name="plugin_settings">Programtillegg</string>
 	<string name="rendering_value_boldOutline_name">Tykke omriss</string>
     <string name="routing_attr_avoid_borders_name">Unngå grensepassering</string>
@@ -1464,7 +1460,6 @@
     <string name="local_openstreetmap_act_title">OSM-endringer</string>
     <string name="download_wikipedia_maps">Wikipedia</string>
     <string name="intermediate_points_change_order">Endre rekkefølge</string>
-    <string name="av_def_action_choose">Velg på forespørsel</string>
     <string name="recording_context_menu_play">Spill av</string>
     <string name="int_continuosly">Sammenhengende</string>
     <string name="gpxup_trackable">Sporbar</string>
@@ -1804,8 +1799,6 @@
     <string name="index_name_openmaps">OpenMaps EU</string>
     <string name="precise_routing_mode_descr">Aktiver for å beregne presise ruter uten feil. Fremdeles distanse-begrenset og treg.</string>
     <string name="precise_routing_mode">Presis ruteplanlegging (alfa)</string>
-    <string name="av_widget_action_descr">Velg standard miniprogram-handling.</string>
-    <string name="av_widget_action">Standard miniprogram-handling</string>
     <string name="rendering_attr_alpineHiking_description">Gjengi stier i henhold til SAC-skalaen.</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Gjengi stier i henhold til OSMC-spor.</string>
 
@@ -2122,8 +2115,6 @@
     <string name="new_route_calculated_dist">Ny rute beregnet, distanse</string>
     <string name="saving_gpx_tracks">Lagrer GPX-spor til SD-kort…</string>
     <string name="data_settings_descr">Angi språk, last ned/gjeninnlast data.</string>
-    <string name="av_camera_focus_infinity">Uendelig fokus</string>
-    <string name="av_camera_focus_macro">Makrofokus (nærbilde)</string>
     <string name="use_fast_recalculation">Smart omberegning av rute</string>
     <string name="rate_this_app">Vurder dette programmet</string>
     <string name="rate_this_app_long">Gi OsmAnd en poengsum på Google Play</string>
@@ -2218,9 +2209,6 @@
     <string name="distance_indication_descr">Velg hvordan avstanden til aktive markører skal vises.</string>
     <string name="active_markers_descr">Velg hvor mange retningsindikatorer som vises.</string>
     <string name="tap_on_map_to_hide_interface_descr">Et trykk på kartet skjuler/viser kontrollknappene og miniprogrammene.</string>
-    <string name="release_3_0">\\022 
-\n
-\n</string>
     <string name="mark_passed">Marker som passert</string>
     <string name="osn_modify_dialog_error">Unntak oppstod: Notat ble ikke endret</string>
     <string name="quick_action_auto_zoom_desc">Trykk på handlingsknappen vil slå av/på automatisk kartzoom i henhold til din hastighet.</string>
@@ -2283,8 +2271,6 @@
     <string name="will_be_closed_at">Stenger</string>
     <string name="will_be_opened_at">Åpner</string>
     <string name="will_be_opened_on">Åpner</string>
-    <string name="av_locations_selected_desc">GPX-fil med de valgte notatenes koordinater og data.</string>
-    <string name="av_locations_all_desc">GPX-fil med alle notaters koordinater og data.</string>
     <string name="quick_action_add_poi_descr">Trykk på handlingsknappen vil legge til et interessepunkt midt på skjermen.</string>
     <string name="open_from">Åpen fra</string>
     <string name="open_till">Åpen til</string>

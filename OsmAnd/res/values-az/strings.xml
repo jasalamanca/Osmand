@@ -1122,7 +1122,6 @@
     <string name="si_nm">Dəniz mili</string>
     <string name="si_nm_h">Saatda dəniz mili (düyün)</string>
     <string name="favourites_edit_dialog_title">Favorit məlumatı</string>
-    <string name="av_locations">Məkanlar</string>
     <string name="traffic_warning_hazard">Təhlükə</string>
     <string name="rendering_value_boldOutline_name">Qalın kontur</string>
     <string name="no_updates_available">Yeniləmə mövcud deyil</string>
@@ -1146,11 +1145,6 @@
     <string name="archive_wikipedia_data">Endirilmiş köhnə uyğunsuz Vikipediya məlumatlarınız var. Arxivləmək istəyirsiniz?</string>
     <string name="read_full_article">Tam məqaləni oxu (onlayn)</string>
     <string name="edit_filter_save_as_menu_item">Fərqli saxla</string>
-    <string name="av_camera_focus_auto">Avtomatik fokus</string>
-    <string name="av_camera_focus_hiperfocal">Hiperfokal fokus</string>
-    <string name="av_camera_focus_edof">Genişlədilmiş sahə dərinliyi (EDOF)</string>
-    <string name="av_camera_focus_infinity">Sonsuzluğa fokusla</string>
-    <string name="av_camera_focus_macro">Makro (iri plan) fokus rejimi</string>
     <string name="avoid_in_routing_title">Yayın…</string>
     <string name="map_widget_distance">Təyinat nöqtəsi</string>
     <string name="quick_action_add_first_intermediate">Birinci aralığı əlavə et</string>
@@ -1558,8 +1552,6 @@
     <string name="what_is_here">Burada nə var:</string>
     <string name="context_menu_points_of_group">Qrupun bütün nöqtələri</string>
     <string name="additional_actions">Əlavə fəaliyyətlər</string>
-    <string name="av_locations_selected_desc">Seçilən qeydlərin koordinatları və məlumatları olan GPX faylı.</string>
-    <string name="av_locations_all_desc">Bütün qeydlərin koordinatları və məlumatları olan GPX faylı.</string>
     <string name="shared_string_actions">Fəaliyyətlər</string>
     <string name="shared_string_marker">İşarə</string>
     <string name="empty_state_osm_edits">OSM obyektlər yarat və ya dəyiş</string>

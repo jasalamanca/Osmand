@@ -1033,9 +1033,6 @@
     <string name="precise_routing_mode">Precīzāka maršrutēšana (alfa)</string>
     <string name="dropbox_plugin_name">Dropbox spraudnis</string>
     <string name="intermediate_points_change_order">Mainīt kārtību</string>
-    <string name="av_def_action_choose">Atlasīt pēc pieprasījuma</string>
-    <string name="av_widget_action_descr">Izvēlieties noklusēto logrīka darbību</string>
-    <string name="av_widget_action">Noklusētā logrīka darbība</string>
     <string name="recording_delete_confirm">Vai vēlaties dzēst ierakstu?</string>
     <string name="recording_context_menu_play">Atskaņot</string>
     <string name="shared_string_control_stop">Apturēt</string>
@@ -1074,11 +1071,6 @@
     <string name="support_new_features_descr">Lūdzu atbalstiet programmu ar ziedojumiem, lai palīdzētu to uzlabot un attīstīt</string>
 	<string name="incomplete_locale">Nepabeigts</string>
 	<string name="shared_string_downloading">Lejupielādē</string>
-    <string name="av_camera_focus_auto">Auto fokuss</string>
-	<string name="av_camera_focus_hiperfocal">Hiperfokāls fokuss</string>
-	<string name="av_camera_focus_edof">Paplašināts lauka dziļums (EDOF)</string>
-	<string name="av_camera_focus_infinity">Bezgalīgi tālu</string>
-	<string name="av_camera_focus_macro">Makro (tuvu klāt) režīms</string>
     <string name="amenity_type_seamark">Bojas</string>
     <string name="app_mode_aircraft">Aviācija</string>
 
@@ -1720,7 +1712,6 @@
     <string name="simulate_your_location_stop_descr">Pārtraukt pozīcijas imitāciju</string>
     <string name="simulate_your_location_descr">Imitēt pēc aprēķinātā maršruta vai ierakstītā GPX</string>
     <string name="looking_up_address">Adreses meklēšana</string>
-    <string name="av_locations">Vietas</string>
     <string name="routing_attr_avoid_shuttle_train_name">Izvairīties no piepilsētas vilcieniem</string>
     <string name="traffic_warning_hazard">Bīstamība</string>
     <string name="rendering_value_boldOutline_name">Biezas kontūras</string>

@@ -915,8 +915,6 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
     <string name="recording_delete_confirm">Wil je deze opname wissen?</string>
 
     <string name="recording_context_menu_play">Afspelen</string>
-    <string name="av_widget_action_descr">Kies standaardactie voor widget</string>
-    <string name="av_widget_action">Standaard widget-actie</string>
 
     <string name="intermediate_points_change_order">Volgorde wijzigen</string>
     <string name="dropbox_plugin_name">Dropbox-Plugin</string>
@@ -933,7 +931,6 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
     <string name="prefer_motorways">Bij voorkeur snelwegen</string>
 	<string name="prefer_in_routing_title">Bij voorkeur…</string>
 	<string name="prefer_in_routing_descr">Bij voorkeur snelwegen</string>
-    <string name="av_def_action_choose">Altijd vragen</string>
     <string name="item_checked">aangevinkt</string>
     <string name="item_unchecked">niet aangevinkt</string>
     <string name="access_arrival_time">Aankomsttijd</string>
@@ -995,13 +992,6 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
     <string name="please_select_address">Kies eerst een plaats of straat</string>
     <string name="context_menu_item_destination_point">Als Bestemming\ninstellen</string>
     <string name="destination_point">Bestemming %1$s</string>
-
-
-    <string name="av_camera_focus_auto">Automatisch scherpstellen</string>
-	<string name="av_camera_focus_hiperfocal">Hyperfocaal scherpstellen</string>
-	<string name="av_camera_focus_edof">Grote scherptediepte (EDOF)</string>
-	<string name="av_camera_focus_infinity">Scherpstellen op oneindig</string>
-	<string name="av_camera_focus_macro">Macromodus (dichtbij scherpstellen)</string>
 
 
     <string name="speak_speed_limit">Snelheidsbeperking</string>
@@ -1685,7 +1675,6 @@ Lengtegraad:\t\t%2$s</string>
     <string name="favourites_edit_dialog_title">Informatie over favoriet</string>
     <string name="simulate_your_location_stop_descr">Stop simulatie</string>
     <string name="simulate_your_location_descr">Routesimulatie met een berekende route of een GPX-track</string>
-    <string name="av_locations">Locaties van geselecteerde AV-Notities</string>
     <string name="plugin_settings">Plugins</string>
 	<string name="routing_attr_avoid_shuttle_train_name">Vermijd autotreinen</string>
 	<string name="routing_attr_avoid_shuttle_train_description">Vermijd autotreinen</string>
@@ -2411,13 +2400,6 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="route_is_calculated">Route wordt berekend</string>
     <string name="round_trip">Retour</string>
     <string name="osn_modify_dialog_error">Er was een probleem: opmerking is niet opgeslagen</string>
-    <string name="release_2_8">\\022 Geheel vernieuwde kaartmarkeringen met lijnen en routeplanning
-\n
-\n• Afstandmeter kan vastklikken aan wegen en als track opslaan
-\n
-\n• OsmAnd Live: bugfixes, data op de server elke 15 minuten ververst, en updates van de navigatie
-\n
-\n</string>
     <string name="rendering_value_darkyellow_name">Donkergeel</string>
     <string name="wrong_input">Foutieve invoer</string>
 	<string name="enter_new_name">Kies een nieuwe naam</string>
@@ -2468,8 +2450,6 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="shared_string_deleted">Verwijderd</string>
     <string name="shared_string_edited">Gewijzigd</string>
     <string name="shared_string_added">Toegevoegd</string>
-    <string name="av_locations_selected_desc">GPX-bestand met coördinaten en gegevens van de geselecteerde notities.</string>
-    <string name="av_locations_all_desc">GPX-bestand met coördinaten en gegevens van alle notities.</string>
     <string name="empty_state_osm_edits_descr">Creëer of wijzig OSM POI, maak of becommentarieer een OSM-notities en draag opgenomen GPX-bestanden bij.</string>
     <string name="marker_activated">Markering %s is geactiveerd.</string>
     <string name="by_date">Op datum</string>

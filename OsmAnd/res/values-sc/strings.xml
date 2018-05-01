@@ -251,9 +251,6 @@
     <string name="precise_routing_mode">Calculu pretzisu de s’àndala (alfa)</string>
     <string name="dropbox_plugin_name">Estensione Dropbox</string>
     <string name="intermediate_points_change_order">Muda s’òrdine</string>
-    <string name="av_def_action_choose">Issèbera su rechesta</string>
-    <string name="av_widget_action_descr">Issèbera s’atzione predefinida de su widget.</string>
-    <string name="av_widget_action">Azione predefinida de su widget</string>
     <string name="recording_delete_confirm">Boles iscantzellare custa registratzione?</string>
 
     <string name="recording_context_menu_play">Reprodui</string>
@@ -1268,11 +1265,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="edit_filter_delete_message">Su filtru {0} est istadu iscantzelladu</string>
     <string name="edit_filter_create_message">Su filtru {0} est istadu iscantzelladu</string>
     <string name="email">post.el.</string>
-    <string name="av_camera_focus_auto">Fogu automàticu</string>
-    <string name="av_camera_focus_hiperfocal">Fogu a s’iperfocale</string>
-    <string name="av_camera_focus_edof">Profundidade de campu estesa (EDOF)</string>
-    <string name="av_camera_focus_infinity">Fogu impostadu a s’infinitu</string>
-    <string name="av_camera_focus_macro">Modalidade de fogu macro (particulare)</string>
     <string name="navigation_intent_invalid">Formatu non bàlidu: %s</string>
 
 
@@ -1621,8 +1613,7 @@ Lon %2$s</string>
     <string name="next_proceed">Imbeniente</string>
     <string name="opening_at">Aberit a sas</string>
     <string name="closing_at">Serrat a sas</string>
-    <string name="av_locations">Localidades</string>
-    
+
     <string name="contact_info">Informatziones de cuntatu</string>
     <string name="description">Descritzione</string>
     <string name="add_opening_hours">Annanghe s’oràriu de abertura</string>
@@ -2374,13 +2365,6 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="route_is_calculated">Àndala torrada a calculare</string>
     <string name="round_trip">Àndala tzirculare</string>
     <string name="plan_route_no_markers_toast">Depes annànghere a su mancu unu marcadore pro impreare custa funtzionalidade.</string>
-    <string name="release_2_8">\\022 Marcadores de mapa noos cun lìnias de ghia e càlculu de s\'àndala 
-\n 
-\n • Aina pro sa medidura de sas distàntzias chi permitit de ischertare puntos particulares de sa mapa e de sarvare puntos comente una rasta 
-\n 
-\n • OsmAnd Live: curretzione de errores, agiornamentu de sos datos in su server cada 30 minutos, agiornamentos impostados in su mentres de su nàvigu
-\n
-\n</string>
     <string name="rendering_value_darkyellow_name">Grogu iscuru</string>
     <string name="wrong_format">Formatu isballiadu</string>
     <string name="wrong_input">Insertadura isballiada</string>
@@ -2437,13 +2421,6 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="by_date">Pro data</string>
     <string name="by_type">Pro casta</string>
     <string name="modify_the_search_query">Modìfica sa rechesta de chirca.</string>
-    <string name="release_3_0">\\022 S\'individuatzione de sos sinnales de stop como cunsiderat sa diretzione de ghia 
-\n 
-\n • Algoritmu nou chi frunit valores significativos ascendentes e discendentes pro sas rastas GPX 
-\n 
-\n • Su tempus calculadu pro acabare sas àndalas pro s\'escursionismu como tenet in cunsìderu sas artiadas (règula de Naismith)
-\n
-\n</string>
     <string name="what_is_here">Ite b\'est inoghe:</string>
     <string name="parked_at">parchegiadu in</string>
     <string name="pick_up_till">Piga intre</string>
@@ -2457,8 +2434,6 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="will_open_at">At a abèrrere a sas</string>
     <string name="will_open_on">At a abèrrere a sas</string>
     <string name="additional_actions">Atziones additzionales</string>
-    <string name="av_locations_selected_desc">Documentu GPX cun coordinatas e datos de sas notas ichertadas.</string>
-    <string name="av_locations_all_desc">Documentu GPX cun coordinatas e datos de totu sas notas.</string>
     <string name="shared_string_actions">Atziones</string>
     <string name="shared_string_marker">Marcadore</string>
     <string name="osm_recipient_stat">Modìficas %1$s, sum %2$s mBTC</string>

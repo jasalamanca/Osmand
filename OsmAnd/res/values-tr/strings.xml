@@ -89,10 +89,8 @@
     <string name="dropbox_plugin_name">Dropbox eklentisi</string>
     
     <string name="intermediate_points_change_order">Sıralamayı değiştir</string>
-    <string name="av_widget_action_descr">Varsayılan eklenti eylemini seçin</string>
-    <string name="av_widget_action">Varsayılan eklenti eylemi</string>
 
-	<string name="index_name_openmaps">AB Açık haritası</string>
+    <string name="index_name_openmaps">AB Açık haritası</string>
     
     
     <string name="precise_routing_mode_descr">Glitches olmadan kesin yolları hesaplamak için etkinleştirin. Yine uzaktan sınırlı ve yavaş.</string>
@@ -577,8 +575,7 @@
 	<string name="prefer_in_routing_title">Tercih et…</string>
 	<string name="prefer_in_routing_descr">Otoyolları tercih et</string>
     <string name="max_speed_none">hiçbiri</string>
-    <string name="av_def_action_choose">Talep üzerine seç</string>
-	<string name="gpx_navigation">GPX Rotası</string>
+    <string name="gpx_navigation">GPX Rotası</string>
 	<string name="poi_query_by_name_matches_categories">Sorgunuza uyan çeşitli POI kategorileri bulundu:</string>
 	<string name="data_to_search_poi_not_available">POI araması yapmak için yerel veri mevcut değil.</string>
 	<string name="old_poi_file_should_be_deleted">POI veri dosyası \'%1$s\' gereksiz ve silinebilir.</string>
@@ -904,10 +901,6 @@
 	<string name="edit_filter_delete_dialog_title">Seçilen süzgeç silinsin mi?</string>
 	<string name="edit_filter_delete_message">{0} süzgeci silindi</string>
 	<string name="edit_filter_create_message">{0} süzgeci oluşturuldu</string>
-    <string name="av_camera_focus_auto">Kendiliğinden odaklama</string>
-	<string name="av_camera_focus_edof">Genişletilmiş alan derinliği (EDOF)</string>
-	<string name="av_camera_focus_infinity">Sonsuzlukta odaklansın</string>
-	<string name="av_camera_focus_macro">Makro (yakın çekim) odak kipi</string>
     <string name="basemap_missing">Küçük yakınlaştırmalarda tüm dünyayı kaplayan temel dünya haritası eksik. Tam deneyim için lütfen World_basemap_x.obf indirin.</string>
 	<string name="local_index_no_items_to_do">%1$s\'a öğe yok</string>
 	<string name="tts_language_not_supported">Seçtiğiniz dil yüklü olan Android TTS (yazıdan-sese) motoru tarafından desteklenmiyor. Mağazada başka TTS motoruna bakmak ister misiniz? Aksi halde önceden yüklenen TTS dili kullanılacak.</string>
@@ -1151,7 +1144,6 @@
 	<string name="rendering_value_brown_name">Kahverengi</string>
 
 
-    <string name="av_locations">Lokasyonlar</string>
     <string name="plugin_settings">Eklentiler</string>
 	<string name="routing_attr_avoid_shuttle_train_description">Mekik treninden kaçın</string>
     <string name="traffic_warning_hazard">Tehlike</string>
@@ -1352,7 +1344,6 @@
 	<string name="poi_dialog_comment_default">POI Değişen</string>
 	<string name="poi_dialog_other_tags_message">Tüm diğer etiketler korunur</string>
 	<string name="default_buttons_commit">İşlemek</string>
-	<string name="av_camera_focus_hiperfocal">Hiperodak odak</string>
     <string name="navigation_intent_invalid">Geçersiz format:%s</string>
 	<string name="plugin_description_title">Açıklama</string>
 	<string name="plugin_install_needs_network">Bu eklentiyi yüklemek için bir internet bağlantısına ihtiyacınız vardır.</string>

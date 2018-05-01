@@ -882,8 +882,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
 
     <string name="map_widget_distancemeasurement">Misurazione della distanza</string>
 
-    <string name="av_widget_action_descr">Seleziona l\'azione predefinita del widget.</string>
-    <string name="av_widget_action">Azione predefinita del widget</string>
     <string name="recording_delete_confirm">Vuoi cancellare questa registrazione?</string>
 
     <string name="recording_context_menu_play">Riproduci</string>
@@ -903,7 +901,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="prefer_in_routing_descr">Preferisci autostrade.</string>
     <string name="prefer_motorways">Preferisci le autostrade</string>
     <string name="prefer_in_routing_title">Preferisci…</string>
-    <string name="av_def_action_choose">Seleziona su richiesta</string>
     <string name="item_checked">segnato</string>
     <string name="item_unchecked">non segnato</string>
     <string name="access_arrival_time">Orario arrivo</string>
@@ -965,12 +962,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="please_select_address">Scegli prima la città o la strada</string>
     <string name="context_menu_item_destination_point">Imposta come destinazione</string>
     <string name="destination_point">Destinazione %1$s</string>
-
-    <string name="av_camera_focus_auto">Fuoco automatico</string>
-    <string name="av_camera_focus_hiperfocal">Fuoco all\'iperfocale</string>
-    <string name="av_camera_focus_edof">Profondità di campo estesa (EDOF)</string>
-    <string name="av_camera_focus_infinity">Fuoco impostato all\'infinito</string>
-    <string name="av_camera_focus_macro">Modalità di fuoco macro (particolare)</string>
 
 
     <string name="speak_speed_limit">Limiti di velocità</string>
@@ -1641,7 +1632,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="next_proceed">Avanti</string>
     <string name="opening_at">Apre alle</string>
     <string name="closing_at">Chiude alle</string>
-    <string name="av_locations">Posizioni</string>
 
 
     <string name="contact_info">Informazioni di contatto</string>
@@ -2399,13 +2389,6 @@ Rappresenta l\'area: %1$s x %2$s</string>
 	<string name="view">Visualizza</string>
 	<string name="waypoints_added_to_map_markers">Punti intermedi aggiunti ai marcatori della mappa</string>
 	<string name="wrong_format">Formato errato</string>
-    <string name="release_2_8">\\022 Rivisti completamente i marcatori, le indicazioni e la pianificazione del percorso 
-\n 
-\n • Lo strumento di misura della distanza offre l\'aderisci alle strade e il salvataggio come traccia 
-\n 
-\n • OsmAnd Live: correzione di errori, dati aggiornati sul server ogni 30 minuti, aggiornamenti implementati nella navigazione
-\n
-\n</string>
     <string name="rendering_value_darkyellow_name">Giallo scuro</string>
     <string name="import_as_gpx">Importa come file GPX</string>
     <string name="import_as_favorites">Importa come Preferito</string>
@@ -2455,9 +2438,6 @@ Rappresenta l\'area: %1$s x %2$s</string>
     <string name="one_tap_active">Un solo tap attivo</string>
     <string name="by_date">Per data</string>
     <string name="by_type">Per tipo</string>
-    <string name="release_3_0">\\022
-\n
-\n</string>
     <string name="modify_the_search_query">Modifica la richiesta di ricerca.</string>
     <string name="what_is_here">Cosa c\'è qui:</string>
     <string name="parked_at">parcheggiato alle</string>
@@ -2472,8 +2452,6 @@ Rappresenta l\'area: %1$s x %2$s</string>
     <string name="will_open_at">Aprirà alle</string>
     <string name="will_open_on">Aprirà alle</string>
     <string name="additional_actions">Altre azioni</string>
-    <string name="av_locations_selected_desc">File GPX con le coordinate e i dati delle note selezionate</string>
-    <string name="av_locations_all_desc">File GPX con le coordinate e i dati di tutte le note.</string>
     <string name="shared_string_actions">Azioni</string>
     <string name="shared_string_marker">Marcatore</string>
     <string name="shared_string_without_name">Senza nome</string>

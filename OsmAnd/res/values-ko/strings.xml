@@ -962,9 +962,6 @@
     <string name="precise_routing_mode">정확한 라우팅 모드</string>
     <string name="dropbox_plugin_name">드롭박스 플러그인</string>
     <string name="intermediate_points_change_order">순서 변경</string>
-    <string name="av_def_action_choose">요청에 대한 선택</string>
-    <string name="av_widget_action_descr">기본 위젯의 동작을 선택합니다</string>
-    <string name="av_widget_action">기본 위젯 작업</string>
     <string name="recording_delete_confirm">이 기록을 삭제하시겠습니까 ?</string>
 	<string name="recording_context_menu_play">재생</string>
     <string name="map_widget_distancemeasurement">거리 측정</string>
@@ -1183,17 +1180,12 @@
     <string name="monitoring_control_start">GPX</string>
     <string name="osb_author_dialog_password">OSM 패스워드(선택)</string>
 	<string name="email">이메일</string>
-    <string name="av_camera_focus_auto">자동 포커스</string>
-	<string name="av_camera_focus_infinity">포커스는 무한대로 설정</string>
-	<string name="av_camera_focus_macro">접사모드</string>
 
-    <string name="av_camera_focus_edof">필드의 확장된 깊이(EDoF )</string>
-	<string name="local_index_installed">로컬 버전</string>
+    <string name="local_index_installed">로컬 버전</string>
 	
 	<string name="incomplete_locale">불완성</string>
 	<string name="favourites_remove_dialog_msg">즐겨찾기 포인트를 삭제 하시겠습니까 \'%s\'?</string>
-	<string name="av_camera_focus_hiperfocal">지나친 초점 포커스</string>
-	<string name="use_distance_measurement_help">* 포인트를 탭하여 표시하기.\n* 이전 포인트를 지우기 위해 지도에서 누르고 홀드하기
+    <string name="use_distance_measurement_help">* 포인트를 탭하여 표시하기.\n* 이전 포인트를 지우기 위해 지도에서 누르고 홀드하기
 \n* 설명을 읽고 알리기 위해 포인트에서누르고 홀드하기
 \n* 더 많은 액션을 보기 위해 측정위젯 클릭하기.</string>
 
@@ -1708,7 +1700,6 @@
 	<string name="shared_string_skip">건너뛰기</string>
 	<string name="app_name_osmand">OsmAnd</string>
     <string name="commit_poi">POI 커밋</string>
-    <string name="av_locations">위치</string>
     <string name="poi_action_delete">삭제</string>
 	<string name="show_on_start">시작할 때 보여주기</string>
 	<string name="tab_title_basic">기본</string>

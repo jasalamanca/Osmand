@@ -411,9 +411,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="precise_routing_mode">Cálculo de rutas preciso (alfa)</string>
     <string name="dropbox_plugin_name">Engadido de Dropbox</string>
     <string name="intermediate_points_change_order">Cambiar a orde</string>
-    <string name="av_def_action_choose">Seleccionar ao ser pedido</string>
-    <string name="av_widget_action_descr">Seleccionar a acción predeterminada do trebello</string>
-    <string name="av_widget_action">Acción predeterminada do trebello</string>
     <string name="recording_delete_confirm">Desexa eliminar esta gravación?</string>
 
     <string name="recording_context_menu_play">Reproducir</string>
@@ -1323,11 +1320,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="edit_filter_create_message">Creouse o filtro {0}</string>
 	
 	<string name="email">correo electrónico</string>
-    <string name="av_camera_focus_auto">Enfoque automático</string>
-	<string name="av_camera_focus_hiperfocal">Foco hiperfocal</string>
-	<string name="av_camera_focus_edof">Profundidade de campo extendida (EDOF)</string>
-	<string name="av_camera_focus_infinity">O foco está no infinito</string>
-	<string name="av_camera_focus_macro">Modo de macro (primeiro plano)</string>
     <string name="navigation_intent_invalid">O formato é incorrecto: %s</string>
     
 <string name="speed_limit_exceed">Tolerancia no límite de velocidade</string>
@@ -1597,7 +1589,6 @@ Lon %2$s</string>
 	<string name="working_days">Días laborábeis</string>
 	<string name="recent_places">Lugares recentes</string>
 	<string name="favourites">Favoritos</string>
-<string name="av_locations">Lugares</string>
     <string name="rendering_value_boldOutline_name">Bordo groso</string>
     <string name="lang_nv">Navaho</string>
     <string name="disable_recording_once_app_killed_descrp">Detén o rexistro de GPX cando se mata o aplicativo (mediante apps recentes). (A indicación de OsmAnd desaparece da barra de notificacións de Android).</string>

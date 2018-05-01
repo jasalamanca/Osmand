@@ -815,8 +815,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="recording_delete_confirm">Chcete smazat tento záznam?</string>
     <string name="recording_context_menu_play">Přehrát</string>
     <string name="map_widget_distancemeasurement">Měření vzdálenosti</string>
-    <string name="av_widget_action_descr">Zvolte výchozí funkci.</string>
-    <string name="av_widget_action">Výchozí funkce</string>
     <string name="shared_string_control_start">Start</string>
     <string name="dropbox_plugin_name">Modul Dropbox</string>
     <string name="intermediate_points_change_order">Změnit pořadí</string>
@@ -831,7 +829,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="max_speed_none">žádná</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
     <string name="prefer_in_routing_descr">Upřednostňovat dálnice.</string>
-    <string name="av_def_action_choose">Vybrat při použití</string>
     <string name="access_arrival_time">Čas příjezdu</string>
     <string name="map_widget_gps_info">Info o GPS</string>
     <string name="shared_string_map">Mapa</string>
@@ -901,11 +898,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="speak_cameras">Rychlostní radary</string>
     <string name="speak_traffic_warnings">Dopravní varování</string>
     <string name="osb_author_dialog_password">Heslo OSM (volitelné)</string>
-    <string name="av_camera_focus_auto">Automatické ostření</string>
-    <string name="av_camera_focus_hiperfocal">Fix-focus</string>
-    <string name="av_camera_focus_edof">Fix-focus</string>
-    <string name="av_camera_focus_infinity">Ostření na nekonečno</string>
-    <string name="av_camera_focus_macro">Makro</string>
     <string name="new_directions_point_dialog">Mezicíle jsou již nastaveny.</string>
     <string name="context_menu_item_directions_to">Navigovat sem</string>
     <string name="context_menu_item_directions_from">Navigovat odsud</string>
@@ -1449,7 +1441,6 @@ Délka %2$s</string>
     <string name="shared_string_skip">Přeskočit</string>
     <string name="app_name_osmand">OsmAnd</string>
     <string name="plugin_settings">Moduly</string>
-    <string name="av_locations">Umístění</string>
     <string name="routing_attr_avoid_shuttle_train_name">Vyhnout se kyvadlovému vlaku</string>
     <string name="routing_attr_avoid_shuttle_train_description">Nepoužít kyvadlový vlak</string>
     <string name="lang_la">Latina</string>
@@ -2234,13 +2225,6 @@ Zobrazená oblast: %1$s x %2$s</string>
     <string name="route_is_calculated">Trasa je vypočítaná</string>
     <string name="round_trip">Okružní trasa</string>
     <string name="plan_route_no_markers_toast">Pro použití této funkce musíte přidat alespoň jednu značku .</string>
-    <string name="release_2_8">\\022 Zcela přepracované mapové značky s vodítky a plánováním trasy 
-\n 
-\n• Nástroj měření vzdálenosti nabízí funkci přichycení k cestě a uložení bodů jako trasu 
-\n 
-\n• OsmAnd Live: opravy chyb, nová data na serveru každých 30 minut, aktualizace začleněné do navigace
-\n
-\n</string>
     <string name="rendering_value_darkyellow_name">Tmavě žlutá</string>
     <string name="empty_state_osm_edits">Vytvořit nebo upravit OSM objekty</string>
     <string name="looking_for_tracks_with_waypoints">Hledání tras s trasovými body</string>
@@ -2286,13 +2270,6 @@ Zobrazená oblast: %1$s x %2$s</string>
     <string name="empty_state_markers_active_desc">Klepnutím nebo přidržením označte místa, pak klepněte na tlačítko značky s vlajkou.</string>
     <string name="modify_the_search_query">Upravit vyhledávací dotaz.</string>
     <string name="one_tap_active">Jedním klepnutím aktivní</string>
-    <string name="release_3_0">\\022 Detekce značek \"stop\" zohledňuje směr jízdy 
-\n 
-\n • Nový algoritmus poskytuje smysluplné hodnoty pro stoupání/klesání v GPX trasách 
-\n 
-\n • Čas pěší trasy zohledňuje terén/stoupání (Naismithovo pravidlo)
-\n
-\n</string>
     <string name="rendering_attr_hidePOILabels_name">Popisky bodů</string>
     <string name="shared_string_without_name">Bez názvu</string>
     <string name="what_is_here">Co je zde:</string>
@@ -2308,8 +2285,6 @@ Zobrazená oblast: %1$s x %2$s</string>
     <string name="will_open_at">Otevírají v</string>
     <string name="will_open_on">Otevřou v</string>
     <string name="additional_actions">Další akce</string>
-    <string name="av_locations_selected_desc">GPX soubor se souřadnicemi a daty vybraných poznámek.</string>
-    <string name="av_locations_all_desc">GPS soubor se souřadnicemi a daty všech poznámek.</string>
     <string name="shared_string_actions">Akce</string>
     <string name="winter_and_ski_renderer">Zima a lyžování</string>
     <string name="touring_view_renderer">Cestování (vysoký kontrast a detaily)</string>

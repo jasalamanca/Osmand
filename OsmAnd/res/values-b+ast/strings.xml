@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-	<string name="av_locations">Allugamientos</string>
-	<string name="plugin_settings">Complementos</string>
+    <string name="plugin_settings">Complementos</string>
 	<string name="no_updates_available">Nun hai anovamientos disponibles</string>
 	<string name="download_live_updates">Anovamientos en direuto</string>
 	<string name="copied_to_clipboard">Copióse al cartafueyu</string>
@@ -912,15 +911,6 @@ Puntos</string>
     <string name="will_open_at">Abrirá a les</string>
     <string name="will_open_on">Abrirá a les</string>
     <string name="additional_actions">Más aiciones</string>
-    <string name="av_locations_selected_desc">Ficheru GPX con coordenaes y datos de les notes esbillaes.</string>
-    <string name="av_locations_all_desc">Ficheru GPX con coordenaes y datos de toles notes.</string>
-    <string name="release_3_0">\\022 La detección de señales de stop agora considera la direición de conducción 
-\n 
-\n • Nuevu algoritmu qu\\\'ufre valores significativos d\\\'ascensu y descensu pa les traces GPX. 
-\n 
-\n • La duración de la caminata tien en cuenta lo pindio del terrén (regla de Naismith).
-\n
-\n</string>
     <string name="modify_the_search_query">Cambiar la consulta de la gueta.</string>
     <string name="shared_string_actions">Aiciones</string>
     <string name="shared_string_marker">Marcador</string>

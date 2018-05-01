@@ -804,8 +804,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="recording_context_menu_play">Reproducir</string>
     <string name="shared_string_control_stop">Parar</string>
     <string name="shared_string_control_start">Iniciar</string>
-    <string name="av_widget_action">Acción del control predeterminado</string>
-    <string name="av_widget_action_descr">Seleccione la acción del control predeterminado.</string>
     <string name="dropbox_plugin_name">Complemento Dropbox</string>
     <string name="intermediate_points_change_order">Cambiar orden</string>
     <string name="stop_routing_confirm">¿Está seguro que quiere parar la navegación?</string>
@@ -818,7 +816,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="prefer_in_routing_title">Preferir…</string>
     <string name="prefer_in_routing_descr">Preferir autopistas.</string>
     <string name="max_speed_none">ninguna</string>
-    <string name="av_def_action_choose">Seleccionar a petición</string>
     <string name="item_checked">marcado</string>
     <string name="item_unchecked">desmarcado</string>
     <string name="shared_string_map">Mapa</string>
@@ -879,11 +876,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="distance_measurement_finish_subtrack">Empezar una nueva subtraza</string>
     <string name="distance_measurement_clear_route">Borrar todos los puntos</string>
     <string name="distance_measurement_load_gpx">Abrir GPX existente</string>
-    <string name="av_camera_focus_auto">Enfoque automático</string>
-    <string name="av_camera_focus_hiperfocal">Enfoque hiperfocal</string>
-    <string name="av_camera_focus_edof">Profundidad de campo extendido (EDOF)</string>
-    <string name="av_camera_focus_infinity">Enfocado al infinito</string>
-    <string name="av_camera_focus_macro">Modo de enfoque macro (close-up)</string>
     <string name="context_menu_item_directions_from">Ir desde aquí</string>
     <string name="route_via">Vía:</string>
     <string name="route_from">Desde:</string>
@@ -1472,7 +1464,6 @@ Lon %2$s</string>
     <string name="next_proceed">Siguiente</string>
     <string name="opening_at">Abren a las</string>
     <string name="closing_at">Cierran a las</string>
-    <string name="av_locations">Ubicaciones</string>
     <string name="contact_info">Información de contacto</string>
     <string name="description">Descripción</string>
     <string name="add_opening_hours">Añadir horario de atención</string>
@@ -2210,13 +2201,6 @@ Por favor proporciona un código completo</string>
     <string name="route_is_calculated">Ruta calculada</string>
     <string name="round_trip">Ruta circular</string>
     <string name="plan_route_no_markers_toast">Debes añadir al menos un marcador para usar esta función.</string>
-    <string name="release_2_8">"• Marcadores del mapa totalmente rediseñados con  indicaciones y planificación de rutas 
-\n 
-\n • La herramienta de medición de distancias permite el ajuste al camino y guardar puntos como una traza 
-\n 
-\n • OSM Live: corrección de errores, nuevos datos en el servidor cada 30 minutos, actualizaciones implementadas en la navegación
-\n
-\n"</string>
     <string name="rendering_value_darkyellow_name">Amarillo oscuro</string>
     <string name="wrong_input">Entrada incorrecta</string>
     <string name="enter_new_name">Ingresar nuevo nombre</string>
@@ -2261,13 +2245,6 @@ Por favor proporciona un código completo</string>
     <string name="shared_string_more_without_dots">Más</string>
     <string name="empty_state_markers_history">\@string/shared_string_history</string>
     <string name="looking_for_tracks_with_waypoints">Buscando trazas con puntos de ruta</string>
-    <string name="release_3_0">• La detección de señales de stop ahora considera la dirección de desplazamiento 
-\n 
-\n • Nuevo algoritmo que proporciona valores significativos de ascenso y descenso para trazas GPX. 
-\n 
-\n • La duración del recorrido a pie tiene en cuenta si el terreno es ascendente (regla de Naismith).
-\n
-\n</string>
     <string name="modify_the_search_query">Modificar la consulta de búsqueda.</string>
     <string name="empty_state_osm_edits">Crear o modificar objetos OSM</string>
     <string name="empty_state_osm_edits_descr">Crea o modifica puntos de interés, abre o comenta notas de OSM y aporta grabaciones GPX.</string>
@@ -2292,8 +2269,6 @@ Por favor proporciona un código completo</string>
     <string name="will_open_at">Abrirá a las</string>
     <string name="will_open_on">Abrirá a las</string>
     <string name="additional_actions">Acciones adicionales</string>
-    <string name="av_locations_selected_desc">Archivo GPX con coordenadas y datos de las notas seleccionadas.</string>
-    <string name="av_locations_all_desc">Archivo GPX con las coordenadas y los datos de todas las notas.</string>
     <string name="shared_string_actions">Acciones</string>
     <string name="shared_string_marker">Marcador</string>
     <string name="osm_recipient_stat">%1$s ediciones, suman %2$s mBTC</string>

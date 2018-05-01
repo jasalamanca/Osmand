@@ -911,9 +911,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="shared_string_control_start">Izmeri ↦</string>
 
 
-    <string name="av_widget_action_descr">Izberite privzeto dejanje gradnika.</string>
-    <string name="av_widget_action">Privzeto dejanje gradnika</string>
-
     <string name="intermediate_points_change_order">Spremeni vrstni red</string>
     <string name="dropbox_plugin_name">Vstavek Dropbox</string>
     <string name="stop_routing_confirm">Ali ste prepričani, da želite prekiniti navigacijo?</string>
@@ -929,7 +926,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="prefer_in_routing_title">Prednostno usmerjanje …</string>
     <string name="prefer_in_routing_descr">Prednostno naj bo izbrana navigacija po avtocestah.</string>
     <string name="max_speed_none">brez</string>
-    <string name="av_def_action_choose">Izberite na zahtevo</string>
     <string name="item_checked">izbrano</string>
     <string name="item_unchecked">ni izbrano</string>
     <string name="shared_string_map">Zemljevid</string>
@@ -995,13 +991,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
 \n* Zadržite pritisk na zemljevidu za brisanje predhodne točke.
 \n* Zadržite pritisk na točki za ogled in dodajanje opisa.
 \n* Za prikaz več možnosti, kliknite na gradnik za merjenje.</string>
-
-
-    <string name="av_camera_focus_auto">Samodejno ostrenje</string>
-    <string name="av_camera_focus_hiperfocal">Daljinsko ostrenje</string>
-    <string name="av_camera_focus_edof">Povečana globinska ostrina (EDOF)</string>
-    <string name="av_camera_focus_infinity">Ostrenje je nastavljeno na neskončno</string>
-    <string name="av_camera_focus_macro">Makro (close-up) način ostrenja</string>
 
 
     <string name="speak_speed_limit">Omejitve hitrosti</string>
@@ -1635,7 +1624,6 @@ ZŠ (β) %2$s</string>
     <string name="routing_attr_avoid_shuttle_train_name">Izogni se vožnji z vlakom</string>
     <string name="routing_attr_avoid_shuttle_train_description">Izogni se vožnji z vlakom</string>
     <string name="favourites">Priljubljene</string>
-    <string name="av_locations">Mesta</string>
     <string name="poi_action_delete">izbriši</string>
     <string name="tab_title_basic">Osnovno</string>
     <string name="tab_title_advanced">Napredno</string>
@@ -2436,20 +2424,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="waypoints_added_to_map_markers">Vmesne točke so dodane med označbe zemljevida.</string>
 	<string name="plan_route_no_markers_toast">Za uporabo te zmožnosti je treba dodati vsaj eno označbo.</string>
     <string name="marker_moved_to_active">Označba zemljevida je premaknjena med dejavne</string>
-    <string name="release_2_8">• Popolnoma predelane označbe zemljevida z vodilnimi črtami in načrtovanjem poti 
-\n 
-\n • Orodje za merjenje razdalje sedaj omogoča prilagajanje potem in shranjevanje točk kot sledi 
-\n 
-\n • OsmAnd Live: razrešeni hrošči in posodobitve, ki so samodejno vključene v navigacijo, se objavljajo vsakih 30 minut
-\n
-\n</string>
-    <string name="release_3_0">• Zaznava znakov STOP po novem vpliva na usmerjanje vožnje 
-\n 
-\n • Z novim algoritmom so vrednosti spustov in vzponov na sledeh GPX bolj smiselne 
-\n 
-\n • Čas hoje upošteva tudi vrsto terena (vzpon) po Naismithovem pravilu
-\n
-\n</string>
     <string name="empty_state_osm_edits_descr">Ustvari ali spremeni točke POI, ureja opombe OSM in omogoča objavljanje zabeleženih sledi GPX.</string>
     <string name="coordinate_input_accuracy_description">Samodejno preklopi na naslednje polje, ko je vpisana %1$d decimalka.</string>
     <string name="tap_on_map_to_hide_interface_descr">S pritiskom na zemljevid se preklopi prikaz gumbov in gradnikov.</string>
@@ -2469,8 +2443,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="will_open_at">Odpre se ob</string>
     <string name="will_open_on">Odprto bo ob</string>
     <string name="additional_actions">Dodatna dejanja</string>
-    <string name="av_locations_selected_desc">Datoteka GPX s koordinatami in podatki izbranih sporočil.</string>
-    <string name="av_locations_all_desc">Datoteka GPX s koordinatami in podatki vseh sporočil.</string>
     <string name="shared_string_actions">Dejanja</string>
     <string name="shared_string_marker">Označba</string>
     <string name="osm_recipient_stat">Število urejanj %1$s, vsota %2$s mBTC</string>

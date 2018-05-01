@@ -913,8 +913,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="map_widget_distancemeasurement">Atstumo matavimas</string>
 
 
-    <string name="av_widget_action_descr">Pasirinkti numatytą įrankio veiksmą.</string>
-    <string name="av_widget_action">Numatytas įrankio veiksmas</string>
     <string name="recording_delete_confirm">Ar norite ištrinti šį įrašą?</string>
 
     <string name="recording_context_menu_play">Groti</string>
@@ -939,7 +937,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="item_checked">patikrinta</string>
     <string name="item_unchecked">nepatikrinta</string>
     <string name="shared_string_map">Žemėlapis</string>
-    <string name="av_def_action_choose">Pasirinkti paprašius</string>
     <string name="access_arrival_time">Atvykimo laikas</string>
     <string name="map_widget_gps_info">GPS informacija</string>
 
@@ -1033,11 +1030,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
 
 
     <string name="osb_author_dialog_password">OSM slaptažodis (neprivaloma)</string>
-    <string name="av_camera_focus_auto">Automatinis fokusas</string>
-    <string name="av_camera_focus_hiperfocal">Hyperfocalins fokusas</string>
-    <string name="av_camera_focus_edof">Išplėstinis gylis (EDOF)</string>
-    <string name="av_camera_focus_infinity">Fokusas yra begalinis</string>
-    <string name="av_camera_focus_macro">Makro fokusas</string>
     <string name="about_version">Versija :</string>
     <string name="shared_string_about">Apie</string>
     <string name="about_settings_descr">Versijos informacija, licencijos, projekto nariai</string>
@@ -1637,7 +1629,6 @@ Ilguma %2$s</string>
     <string name="shared_string_undo">ATŠAUKTI</string>
     <string name="shared_string_card_was_hidden">Kortelė paslėpta</string>
     <string name="plugin_settings">Įskiepiai</string>
-    <string name="av_locations">Vietovės</string>
     <string name="building_number">Pastato numeris</string>
     <string name="next_proceed">Toliau</string>
     
@@ -2379,14 +2370,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="will_open_at">Atsidarys</string>
     <string name="will_open_on">Atsidarys</string>
     <string name="additional_actions">Papildomi veiksmai</string>
-    <string name="av_locations_selected_desc">GPX failas su koordinačių ir pasirinktų pastabų duomenimis.</string>
-    <string name="av_locations_all_desc">GPX failas su koordinačių ir visų pastabų duomenimis.</string>
-    <string name="release_3_0">\\022 Stop ženklo nutatymas atliekamas atsižvelgiant į judėjimo kryptį
-\n
-\n• Naujas algoritmas, pateikiantis prasmingas pakilimo/nusileidimo vertes GPX trekams
-\n
-\n• Vaikšiojimo trukmė atsižvelgiant į reljefą (pakilimą) (Naismith taisyklė)
-\n</string>
     <string name="shared_string_actions">Veiksmai</string>
     <string name="shared_string_marker">Žymeklis</string>
     <string name="empty_state_osm_edits_descr">Kurkite arba keiskite OSM LV-as, užrašykite arba komentuokite OSM pastabas bei dalinkitės įrašytais GPX failais.</string>

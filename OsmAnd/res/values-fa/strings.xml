@@ -155,7 +155,6 @@
     <string name="item_unchecked">انتخاب‌نشده</string>
     <string name="prefer_in_routing_title">ترجیح‌دادن…</string>
     <string name="precise_routing_mode">مسیریابی دقیق (آلفا)</string>
-    <string name="av_widget_action">عملکرد پیش‌فرض ابزارک</string>
     <string name="destination_point">مقصد %1$s</string>
     <string name="context_menu_item_destination_point">تنظیم به عنوان مقصد</string>
     <string name="email">ایمیل</string>
@@ -528,7 +527,6 @@
 	<string name="prefer_motorways">ترجیح‌دادن آزادراه‌ها</string>
 	<string name="prefer_in_routing_descr">آزادراه‌ها را ترجیح می‌دهم.</string>
     <string name="precise_routing_mode_descr">این را فعال کنید تا مسیرها دقیق و بدون اشکال محاسبه شوند. البته این حالت محدودیت مسافت دارد و کُند است.</string>
-    <string name="av_widget_action_descr">عملکرد پیش‌فرض ابزارک را انتخاب کنید.</string>
     <string name="recording_delete_confirm">آیا این مورد ضبط‌شده را پاک می‌کنید؟</string>
     <string name="use_magnetic_sensor_descr">برای مقدار قطب‌نما به‌جای حسگر جهتی از حسگر مغناطیسی استفاده کن.</string>
     <string name="show_poi_over_map">نشان‌دادن لایهٔ نقاط POI</string>
@@ -578,18 +576,12 @@
 	<string name="settings_preset">پروفایل پیش‌فرض</string>
 	<string name="settings_preset_descr">نمای نقشه و تنظیمات راهبری برای هر پروفایل جداگانه ذخیره می‌شود. پروفایل پیش‌فرض خود را اینجا تنظیم کنید.</string>
     <string name="osmand_background_plugin_description">تنظیمات مربوط به فعال‌سازی ردگیری و راهبری در حالت پس‌زمینه (صفحه خاموش) را نشان می‌دهد که با ارسال بیدارباش‌های متناوب به جی‌پی‌اس دستگاه این کار را انجام می‌دهد.</string>
-    <string name="av_def_action_choose">انتخاب برحسب تقاضا</string>
     <string name="rendering_attr_showRoadMaps_description">انتخاب کنید چه زمانی نقشه‌های فقط-جاده‌ای نشان داده شود:</string>
 	<string name="target_points">مقصدها</string>
     <string name="ending_point_too_far">نقطهٔ پایانی از نزدیک‌ترین جاده خیلی دور است.</string>
     <string name="map_widget_vector_attributes">خصوصیات رندر نقشه</string>
 
 
-    <string name="av_camera_focus_auto">فوکوس خودکار</string>
-	<string name="av_camera_focus_hiperfocal">فوکوس فراکانونی</string>
-	<string name="av_camera_focus_edof">عمق میدان گسترده (EDOF)</string>
-	<string name="av_camera_focus_infinity">فوکوس بر روی بینهایت تنظیم شده است</string>
-	<string name="av_camera_focus_macro">فوکوس ماکرو (از نزدیک)</string>
     <string name="choose_intersected_street">تقاطع را انتخاب کنید</string>
 	<string name="osm_settings">ویرایش نقشهٔ OSM</string>
 	<string name="save_current_track_descr">مسیر جاری را همین الآن روی کارت حافظه ذخیره کن.</string>
@@ -2299,7 +2291,6 @@
     <string name="lang_mk">مقدونی</string>
     <string name="lang_fy">فریسی غربی</string>
     <string name="lang_als">آلبانیایی (تُسک)</string>
-    <string name="av_locations">مکان‌ها</string>
     <string name="routing_attr_avoid_shuttle_train_name">اجتناب از قطار خطی</string>
     <string name="routing_attr_avoid_shuttle_train_description">از قطار خطی اجتناب کن</string>
     <string name="traffic_warning_hazard">خطر</string>
@@ -2362,13 +2353,6 @@
     <string name="legacy_search">جست‌وجوی دنباله‌ای</string>
     <string name="show_legacy_search">نمایش جست‌وجوی دنباله‌ای</string>
     <string name="show_legacy_search_desc">جست‌وجوی دنباله‌ای را به منو اضافه می‌کند.</string>
-    <string name="release_2_8">• نشانه‌های نقشه را به‌صورت کامل بازسازی کردیم و قابلیت‌های خطوط راهنما و طرح‌ریزی مسیر نیز به آن افزوده شد
-\n 
-\n • قابلیت چسبیدن به راه و ذخیره‌کردن نقاط به‌عنوان مسیر، به ابزار مسافت‌سنج اضافه شد 
-\n 
-\n • به‌روزرسانی پویا (OsmAnd Live): رفع ایرادات - داده‌های سرور هر ۳۰ دقیقه به‌روز می‌شود - به‌روزرسانی‌ها در مسیریابی استفاده می‌شود
-\n
-\n</string>
     <string name="context_menu_item_delete_waypoint">نقطهٔ بین‌راهی GPX را حذف می‌کنید؟</string>
     <string name="context_menu_item_edit_waypoint">ویرایش نقطهٔ بین‌راهی GPX</string>
     <string name="rendering_value_darkyellow_name">زرد تیره</string>
@@ -2451,9 +2435,6 @@
     <string name="by_type">بر اساس نوع</string>
     <string name="empty_state_markers_history">\@string/shared_string_history</string>
     <string name="modify_the_search_query">عبارت جست‌وجوشده را اصلاح کنید.</string>
-    <string name="release_3_0">\\022 
-\n
-\n</string>
     <string name="what_is_here">چیزهایی که اینجاست:</string>
     <string name="parked_at">ساعت پارک‌کردن</string>
     <string name="pick_up_till">برداشتن تا</string>
@@ -2467,8 +2448,6 @@
     <string name="will_open_at">ساعت بازکردن</string>
     <string name="will_open_on">زمان بازشدن</string>
     <string name="additional_actions">عملیات بیشتر</string>
-    <string name="av_locations_selected_desc">فایل GPX با مختصات و داده‌های یادداشت‌هایی که انتخاب شده است.</string>
-    <string name="av_locations_all_desc">فایل GPX با مختصات و داده‌های یادداشت‌هایی که انتخاب شده است.</string>
     <string name="shared_string_actions">عملیات</string>
     <string name="shared_string_marker">نشانه</string>
     <string name="osm_recipient_stat">ویرایش‌ها: %1$s، مبلغ: %2$s هزارم بیت‌کوین</string>

@@ -225,7 +225,6 @@
     <string name="simulate_your_location_stop_descr">Ĉesigi simuladon de pozicio.</string>
     <string name="simulate_your_location_descr">Simuli vian pozicion uzante komputitan kurson aŭ registritan GPX-spuron.</string>
     <string name="looking_up_address">Serĉado de adreso</string>
-    <string name="av_locations">Lokoj</string>
     <string name="plugin_settings">Kromprogramoj</string>
     <string name="routing_attr_avoid_shuttle_train_name">Eviti aŭt-ŝarĝovagonarojn</string>
     <string name="routing_attr_avoid_shuttle_train_description">Eviti ŝarĝvagonarojn por transporti aŭtojn</string>
@@ -899,9 +898,6 @@ Lon: %2$s</string>
     <string name="precise_routing_mode_descr">Aktivigas kalkuladon de precizaj seneraraj kursoj. Nuntempe ĝi estas malrapida kaj nur por limigitaj distancoj.</string>
     <string name="dropbox_plugin_name">Dropbox kromprogramo</string>
     <string name="intermediate_points_change_order">Ŝanĝi ordon</string>
-    <string name="av_def_action_choose">Elekti laŭvole</string>
-    <string name="av_widget_action_descr">Elekti implicitan agon por fenestraĵo.</string>
-    <string name="av_widget_action">Implicita fenestraĵo ago</string>
     <string name="recording_delete_confirm">Ĉu vi volas forigi tiun ĉi registraĵon?</string>
     <string name="recording_context_menu_play">Ludi</string>
     <string name="map_widget_distancemeasurement">Mezuro de distanco</string>
@@ -1678,11 +1674,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="edit_filter_delete_message">Filtrilo {0} forigita</string>
     <string name="edit_filter_create_message">Filtrilo {0} kreita</string>
     <string name="email">retpoŝto</string>
-    <string name="av_camera_focus_auto">Aŭtomata fokuso</string>
-    <string name="av_camera_focus_hiperfocal">Hiperfokala fokuso</string>
-    <string name="av_camera_focus_edof">Plilarĝigita profundo kampa (EDOF)</string>
-    <string name="av_camera_focus_infinity">Fokuso agordita je infinito</string>
-    <string name="av_camera_focus_macro">Makrofokuso (alproksimigo)</string>
     <string name="navigation_intent_invalid">Erara formo: %s</string>
     <string name="plugin_install_needs_network">Vi bezonas retkonekton por instali tiun ĉi kromprogramon.</string>
     <string name="use_fast_recalculation">Inteligenta rekalkulado de kurso</string>
@@ -2202,13 +2193,6 @@ Indikas lokon:  %1$s x %2$s"</string>
     <string name="osn_modify_dialog_error">Eraro okazis: rimarko ne estis ŝanĝita</string>
     <string name="osn_modify_dialog_title">Redakti rimarkon</string>
     <string name="context_menu_item_modify_note">Redakti OSM-rimarkon</string>
-    <string name="release_2_8">• Tute refaritaj map-markoj kun gvid-linioj kaj planado de vojaĝo
-\n 
-\n• Ilo por mezuri distancoj kun ebloj proksimumigi pozicion al vojo kaj konservi punktojn kiel kurson 
-\n 
-\n• OsmAnd-Live: erar-riparoj, freŝaj datumoj ĉe servilo je ĉiu 30 minutoj, ĝisdatigoj funkcias kun navigado
-\n
-\n</string>
     <string name="rendering_value_darkyellow_name">Flava malhela</string>
     <string name="shared_string_road">Vojo</string>
     <string name="show_map">Montri mapon</string>
@@ -2269,9 +2253,6 @@ Indikas lokon:  %1$s x %2$s"</string>
     <string name="by_date">Laŭ dato</string>
     <string name="by_type">Laŭ speco</string>
     <string name="modify_the_search_query">Modifi serĉpeton</string>
-    <string name="release_3_0">\\022 
-\n
-\n</string>
     <string name="empty_state_markers_history">\@string/shared_string_history</string>
     <string name="what_is_here">Tie ĉi:</string>
     <string name="parked_at">parkumita je</string>
@@ -2286,8 +2267,6 @@ Indikas lokon:  %1$s x %2$s"</string>
     <string name="will_open_at">Estos malfermita je</string>
     <string name="will_open_on">Estos malfermita je</string>
     <string name="additional_actions">Pliaj agoj</string>
-    <string name="av_locations_selected_desc">GPX-dosiero enhavanta koordinatojn kaj datumojn de elektitaj notoj.</string>
-    <string name="av_locations_all_desc">GPX-dosiero kun koordinatoj kaj datumoj de ĉiuj notoj.</string>
     <string name="shared_string_actions">Agoj</string>
     <string name="shared_string_marker">Marko</string>
     <string name="osm_recipient_stat">%1$s redaktoj, %2$s m₿ tute</string>
