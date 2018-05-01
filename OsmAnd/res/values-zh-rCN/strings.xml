@@ -342,8 +342,7 @@
 	
 	<string name="map_view_3d_descr">启用3D的地图视图</string>
 	<string name="map_view_3d">查看3D地图</string>
-	<string name="use_internet">使用互联网</string>
-	<string name="show_gps_coordinates_text">在地图上显示GPS坐标</string>
+    <string name="show_gps_coordinates_text">在地图上显示GPS坐标</string>
 	<string name="shared_string_exit">出口</string>
 	
 	
@@ -390,10 +389,8 @@
     <string name="about_version">版本：</string>
     <string name="shared_string_about">关于</string>
     <string name="about_settings_descr">版本信息，许可证，项目成员</string>
-    
-    
-    <string name="local_index_tile_data_expire">过期(分钟)：%1$s</string>
-    <string name="local_index_tile_data_name">地图瓦片数据：%1$s</string>
+
+
     <string name="edit_tilesource_maxzoom">最大显示级别</string>
     <string name="edit_tilesource_minzoom">最小显示级别</string>
     <string name="maps_define_edit">定义/编辑…</string>
@@ -526,11 +523,9 @@
 	
 	<string name="modify_transparency">修改透明度(0 - 透明，255 - 不透明)</string>
 	<string name="confirm_interrupt_download">是否终止文件下载？</string>
-	<string name="local_indexes_cat_tile">在线与瓦片地图</string>
-	<string name="local_indexes_cat_map">离线地图(矢量)</string>
+    <string name="local_indexes_cat_map">离线地图(矢量)</string>
 	<string name="index_settings_descr">下载地图以及管理您设备上存储的离线数据</string>
 	<string name="map_online_plugin_is_not_installed">启用在线地图插件以选择不同的地图来源</string>
-	<string name="map_online_data">在线瓦片地图</string>
     <string name="shared_string_online_maps">在线地图</string>
 
 
@@ -633,8 +628,7 @@
 	<string name="gpx_option_destination_point">使用当前终点</string>
 	<string name="voice_stream_notification">提醒语音音频</string>
 	<string name="voice_stream_music">媒体/音乐音频</string>
-	<string name="warning_tile_layer_not_downloadable">应用程序无法下载地图图层 %1$s，请尝试重新安装。</string>
-	<string name="overlay_transparency_descr">修改叠加层透明度</string>
+    <string name="overlay_transparency_descr">修改叠加层透明度</string>
 	<string name="overlay_transparency">叠加层透明度</string>
 	<string name="map_transparency_descr">修改基础地图透明度</string>
 	<string name="map_transparency">基础地图透明度</string>
@@ -739,8 +733,7 @@
 	<string name="hint_search_online">门牌号，街道，城市</string>
 	<string name="search_offline_address">离线搜索</string>
 	<string name="search_online_address">在线搜索</string>
-	<string name="max_level_download_tile">最大在线显示级别</string>
-	<string name="route_general_information">总距离 %1$s \n 旅行时间 %2$d 小时 %3$d 分钟。</string>
+    <string name="route_general_information">总距离 %1$s \n 旅行时间 %2$d 小时 %3$d 分钟。</string>
 	<string name="router_service_descr">选择一个在线或离线导航服务</string>
 	<string name="router_service">导航服务</string>
 	<string name="sd_dir_not_accessible">SD卡上的数据存储目录无法访问！</string>
@@ -1225,8 +1218,6 @@
     <string name="text_size_descr">选择地图上的字体大小。</string>
     <string name="text_size">字体大小</string>
     <string name="map_locale">地图语言</string>
-    <string name="rendering_attr_roadStyle_name">道路风格</string>
-    <string name="rendering_attr_roadStyle_description">道路风格</string>
     <string name="rendering_value__name">默认</string>
     <string name="rendering_value_default_name">默认</string>
     <string name="rendering_value_americanRoadAtlas_name">美国道路地图</string>
@@ -1262,7 +1253,6 @@
     <string name="change_color">改变颜色</string>
     <string name="edit_name">编辑名称</string>
     <string name="display_zoom_level">显示缩放等级：%1$s</string>
-    <string name="online_map">在线地图</string>
     <string name="roads_only">仅道路</string>
     <string name="device_memory">设备内存</string>
     <string name="first_usage_item">初次使用</string>
@@ -1320,7 +1310,6 @@
     <string name="show_pedestrian_warnings">人行横道</string>
     <string name="rendering_attr_busRoutes_name">公交线路</string>
     <string name="traffic_warning_railways">铁道交口</string>
-    <string name="routing_attr_driving_style_name">驾驶风格</string>
     <string name="enable_proxy_title">启用 HTTP 代理</string>
     <string name="enable_proxy_descr">为所有网络请求配置 HTTP 代理</string>
     <string name="proxy_host_title">代理主机</string>
@@ -1343,7 +1332,6 @@
 \n 注2：使用新的存储位置后，您无法将这些文件在 OsmAnd 和 OsmAnd+ 之间进行共享。</string>
     <string name="copying_osmand_one_file_descr">正在将文件（%s）复制到新位置……</string>
     <string name="shared_string_install">安装</string>
-    <string name="online_photos">在线照片</string>
     <string name="distance_moving">距离已修正</string>
     <string name="no_photos_descr">我们没有该地点的照片。</string>
     <string name="routing_attr_short_way_name">节油道路</string>
@@ -1514,8 +1502,6 @@
     <string name="access_shared_string_navigate_up">向上导航</string>
     <string name="access_sort">排序</string>
     <string name="number_of_gpx_files_selected_pattern">已选择 %s GPX 文件</string>
-    <string name="rendering_value_fine_name">精细</string>
-    <string name="rendering_value_thin_name">细的</string>
     <string name="rendering_value_medium_name">中等</string>
     <string name="rendering_value_bold_name">加粗</string>
     <string name="anonymous_user_hint">匿名用户不能：

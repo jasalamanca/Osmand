@@ -229,7 +229,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="local_indexes_cat_tts">Gépi hang (TTS)</string>
     <string name="local_indexes_cat_voice">Beszédhang (felvett)</string>
 
-    <string name="local_indexes_cat_tile">Online és gyorsítótárazott térképcsempék</string>
     <string name="local_indexes_cat_map">Normál térképek (vektoros)</string>
     <string name="local_indexes_cat_poi">POI-adat</string>
     <string name="ttsvoice">TTS felolvasó hang</string>
@@ -255,7 +254,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="voice_stream_voice_call">Telefonhívás hangcsatorna (megszakítja a Bluetooth zenelejátszást)</string>
     <string name="voice_stream_notification">Üzenetjel hangcsatorna</string>
     <string name="voice_stream_music">Zene hangcsatorna</string>
-    <string name="warning_tile_layer_not_downloadable">%1$s térkép réteget nem tudja az alkalmazás letölteni, meg kell próbálni újratelepíteni.</string>
     <string name="overlay_transparency_descr">Rátét átlátszóságának módosítása.</string>
     <string name="overlay_transparency">Rátét átlátszósága</string>
     <string name="map_transparency_descr">Alaptérkép átlátszóságának módosítása.</string>
@@ -531,7 +529,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="hint_search_online">Online keresés: Házszám, utca, település</string>
     <string name="search_offline_address">Offline</string>
     <string name="search_online_address">Internet</string>
-    <string name="max_level_download_tile">Max. online nagyítás</string>
     <string name="route_general_information">Teljes távolság %1$s, utazási idő %2$d óra %3$d perc.</string>
     <string name="router_service_descr">Online vagy offline útvonaltervező szolgáltatás kiválasztása.</string>
     <string name="router_service">Útvonaltervező szolgáltatás</string>
@@ -623,7 +620,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="show_poi_over_map_description">Utoljára használt POI kategória megjelenítése a térképen.</string>
     <string name="show_poi_over_map">POI-réteg megjelenítése</string>
     <string name="map_source">Térkép forrása</string>
-    <string name="use_internet">Internet használata</string>
     <string name="show_location">Pozíció megjelenítése</string>
 
 
@@ -729,7 +725,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="basemap_was_selected_to_download">Az alaptérképre szükség van az alkalmazás megfelelő működéséhez, ezért ki lett jelölve letöltésre.</string>
 
     <string name="map_online_plugin_is_not_installed">További térképforrások kijelöléséhez engedélyezd az online térképek bővítményt</string>
-    <string name="map_online_data">Online térképcsempék</string>
     <string name="shared_string_online_maps">Online térképek</string>
 
 
@@ -1049,8 +1044,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="about_settings_descr">Verzióinfó, licencek, csapattagok</string>
 
 
-    <string name="local_index_tile_data_expire">Lejárat (perc): %1$s</string>
-    <string name="local_index_tile_data_name">Csempeadat: %1$s</string>
     <string name="edit_tilesource_maxzoom">Max zoom</string>
     <string name="edit_tilesource_minzoom">Min zoom</string>
     <string name="maps_define_edit">Megad/Szerkeszt…</string>
@@ -1409,7 +1402,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="voices">Hangutasítások</string>
     <string name="navigate_point_northing">Északi</string>
     <string name="navigate_point_easting">Keleti</string>
-    <string name="rendering_attr_roadStyle_name">Útstílus</string>
     <string name="rendering_value_default_name">Alapértelmezett</string>
     <string name="rendering_value_orange_name">Narancs</string>
     <string name="traffic_warning_railways">Vasúti kereszteződés</string>
@@ -1455,7 +1447,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="roads_only">Csak utak</string>
     <string name="watch">Óra</string>
     <string name="notes">Megjegyzések</string>
-    <string name="online_map">Online térkép</string>
 
 
     <string name="shared_string_export">Exportálás</string>
@@ -1791,7 +1782,6 @@ Hosszúság: %2$s</string>
     <string name="shared_string_location">Pozíció</string>
     <string name="rendering_attr_currentTrackColor_description">GPX szín</string>
     <string name="rendering_attr_currentTrackWidth_description">GPX vastagság</string>
-    <string name="rendering_attr_roadStyle_description">Útstílus</string>
     <string name="poi_dialog_reopen">Újranyitás</string>
 	<string name="save_poi_without_poi_type_message">Biztosan elmented a POI-t típus nélkül?</string>
     <string name="poi_context_menu_modify_osm_change">OSM-szerkesztés módosítása</string>
@@ -1948,7 +1938,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="access_sort">Rendezés</string>
     <string name="map_mode">Térképmód</string>
     <string name="number_of_gpx_files_selected_pattern">%s GPX-fájl kijelölve</string>
-    <string name="rendering_value_thin_name">Vékony</string>
     <string name="rendering_value_medium_name">Közepes</string>
     <string name="rendering_value_bold_name">Vastag</string>
     <string name="shared_string_widgets">Vezérlőgomb</string>
@@ -2080,7 +2069,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="search_hint">Város, cím, POI név megadása</string>
     <string name="translit_name_if_miss">Átírás, ha a(z) %1$s név hiányzik</string>
     <string name="translit_names">Nevek átírása</string>
-    <string name="rendering_value_fine_name">Finom</string>
     <string name="wiki_around">Közeli Wikipédia-cikkek</string>
     <string name="search_map_hint">Város, régió keresése</string>
     <string name="legacy_search">Régi kereső</string>
@@ -2175,8 +2163,7 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="file_can_not_be_moved">A fájl nem helyezhető át.</string>
     <string name="shared_string_move">Áthelyezés</string>
     <string name="shared_string_tracks">Nyomvonalak</string>
-    <string name="routing_attr_driving_style_name">Vezetési stílus</string>
-    
+
     <string name="route_altitude">Útvonal magassága</string>
     <string name="altitude_descent">Lejtő</string>
     <string name="altitude_ascent">Emelkedő</string>
@@ -2275,7 +2262,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="nothing_found_descr">Módosítsd a keresőkifejezést vagy növeld a keresés sugarát.</string>
     <string name="shared_string_add_photos">Fényképek hozzáadása</string>
     <string name="no_photos_descr">Erről a helyről nincsenek fényképeink.</string>
-    <string name="online_photos">Online fényképek</string>
     <string name="shared_string_install">Telepítés</string>
     <string name="distance_moving">Korrigált távolság</string>
     <string name="shared_string_permissions">Engedélyek</string>

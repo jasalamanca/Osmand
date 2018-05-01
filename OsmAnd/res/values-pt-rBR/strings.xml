@@ -151,8 +151,7 @@
 	<string name="back_to_map">Voltar ao mapa</string>
     <string name="location_on_map">Posição:\n Lat %1$s\n Lon %2$s</string>
 	<string name="notes">Notas</string>
-	<string name="online_map">Mapa on-line</string>
-	<string name="roads_only">Apenas estradas</string>
+    <string name="roads_only">Apenas estradas</string>
     <string name="free">"Livre %1$s "</string>
 	<string name="device_memory">Memória do aparelho</string>
     <string name="edit_group">Editar grupo</string>
@@ -170,7 +169,6 @@
     <string name="points">Pontos</string>
 	<string name="navigation_over_track">Iniciar a navegação pela trilha?</string>
 	<string name="speak_pedestrian">Travessias de pedestre</string>
-    <string name="rendering_attr_roadStyle_name">Estilo das vias</string>
     <string name="avoid_roads_msg">Você pode obter uma rota alternativa, selecionando quais vias evitar</string>
 	<string name="rendering_value__name">Predefinido</string>
     <string name="rendering_value_default_name">Predefinido</string>
@@ -505,8 +503,6 @@
     <string name="about_settings_descr">Versão, licenças, membros do projeto</string>
 
 
-    <string name="local_index_tile_data_expire">Expirar (minutos): %1$s</string>
-    <string name="local_index_tile_data_name">Dados da quadrícula: %1$s</string>
     <string name="edit_tilesource_maxzoom">Zoom máximo</string>
     <string name="edit_tilesource_minzoom">Zoom mínimo</string>
     <string name="maps_define_edit">Definir/Editar…</string>
@@ -795,10 +791,8 @@ Pôr do Sol: %2$s</string>
 	<string name="modify_transparency">Modificar transparência (0 - transparente, 255 - opaco)</string>
 	<string name="confirm_interrupt_download">Você quer cancelar a transferência do arquivo?</string>
 	<string name="basemap_was_selected_to_download">O Mapa Base é necessário para o funcionamento adequado do aplicativo e foi selecionado para baixar.</string>
-	<string name="local_indexes_cat_tile">Quadrículas de mapa online e em cache</string>
-	<string name="local_indexes_cat_map">Mapa padrão (vectorial)</string>
+    <string name="local_indexes_cat_map">Mapa padrão (vectorial)</string>
 	<string name="map_online_plugin_is_not_installed">Ativar o complemento de mapas on-line, para selecionar diferentes fontes de mapa</string>
-	<string name="map_online_data">Mapas e quadrículas on-line</string>
     <string name="prefs_plugins">Complementos</string>
 	
 	<string name="vector_maps_may_display_faster_on_some_devices">Mapas vectoriais são visualizados mais rápido. Podem não funcionar bem em alguns aparelhos.</string>
@@ -1073,8 +1067,7 @@ Pôr do Sol: %2$s</string>
 	<string name="choose_audio_stream_descr">Escolha o canal para orientação por voz</string>
 	<string name="voice_stream_voice_call">Áudio de chamada de voz</string>
 	<string name="voice_stream_music">Áudio de media/música</string>
-	<string name="warning_tile_layer_not_downloadable">Aplicativo não pode baixar camada %1$s do mapa, por favor, tente reinstalá-lo.</string>
-	<string name="overlay_transparency_descr">Modificar a transparência da sobreposição</string>
+    <string name="overlay_transparency_descr">Modificar a transparência da sobreposição</string>
 	<string name="overlay_transparency">Transparência da sobreposição</string>
 	<string name="map_transparency_descr">Modificar transparência do mapa base</string>
 	<string name="map_transparency">Transparência do mapa base</string>
@@ -1287,7 +1280,6 @@ Pôr do Sol: %2$s</string>
 	<string name="hint_search_online">Pesquisa on-line: número de porta, rua, cidade</string>
 	<string name="search_offline_address">Pesquisa off-line</string>
 	<string name="search_online_address">Pesquisa on-line</string>
-	<string name="max_level_download_tile">Max. zoom on-line</string>
     <string name="route_general_information">Distância total %1$s, tempo de viagem %2$d h %3$d min.</string>
 	<string name="router_service_descr">Escolher um serviço de navegação on-line ou off-line</string>
 	<string name="router_service">Serviço de navegação</string>
@@ -1345,8 +1337,7 @@ Pôr do Sol: %2$s</string>
 	<string name="map_view_3d_descr">Ativar a visualização em 3D do mapa</string>
 	<string name="map_view_3d">Visão em 3D</string>
     <string name="map_source">Fonte do mapa</string>
-	<string name="use_internet">Usar a Internet</string>
-	<string name="show_location">Mostrar sua posição</string>
+    <string name="show_location">Mostrar sua posição</string>
 	<string name="show_gps_coordinates_text">Mostrar coordenadas GPS no mapa</string>
     <string name="app_description">Aplicativo de navegação</string>
 	<string name="search_button">Pesquisar</string>
@@ -1642,7 +1633,6 @@ Pôr do Sol: %2$s</string>
     <string name="simulate_your_location_descr">Simular a sua posição usando uma rota calculada ou uma trilha GPX gravada.</string>
     <string name="rendering_attr_currentTrackColor_description">Cor do GPX</string>
     <string name="rendering_attr_currentTrackWidth_description">Largura do GPX</string>
-    <string name="rendering_attr_roadStyle_description">Estilo das vias</string>
     <string name="routing_attr_avoid_stairs_name">Evitar escadas</string>
 	<string name="routing_attr_avoid_stairs_description">Evitar passar por escadas</string>
 	<string name="routing_attr_avoid_borders_name">Evitar passagem por fronteira</string>
@@ -1932,7 +1922,6 @@ Pôr do Sol: %2$s</string>
     <string name="import_gpx_failed_descr">O OsmAnd não pode importar o arquivo. Favor verificar se o OsmAnd tem permissão para ler arquivo de sua localização.</string>
     <string name="distance_moving">Distância corrigida</string>
     <string name="shared_string_install">Instalar</string>
-    <string name="online_photos">Fotos on-line</string>
     <string name="shared_string_add_photos">Adicionar fotos</string>
     <string name="no_photos_descr">Não temos fotos para este local.</string>
     <string name="private_access_routing_req">Seu destino está localizado em uma área de acesso privado. Você quer permitir acesso à estradas privadas para esta viagem?</string>
@@ -2079,7 +2068,6 @@ Pôr do Sol: %2$s</string>
     <string name="file_can_not_be_moved">Arquivo não pode ser movido.</string>
     <string name="shared_string_move">Mover</string>
     <string name="shared_string_tracks">Trilhas</string>
-    <string name="routing_attr_driving_style_name">Estilo de condução</string>
     <string name="route_altitude">Altitude da rota</string>
     <string name="routing_attr_relief_smoothness_factor_name">Selecionar a flutuação de altimetria</string>
     <string name="routing_attr_height_obstacles_name">Usar dados altimétricos</string>
@@ -2201,8 +2189,6 @@ Pôr do Sol: %2$s</string>
     <string name="access_map_linked_to_location">Mapa está vinculado a localização</string>
     <string name="access_shared_string_navigate_up">Navegue até</string>
     <string name="number_of_gpx_files_selected_pattern">%s arquivos GPX selecionados</string>
-    <string name="rendering_value_fine_name">Mais fino</string>
-    <string name="rendering_value_thin_name">Fino</string>
     <string name="rendering_value_bold_name">Grosso</string>
     <string name="storage_directory_readonly_desc">A pasta de armazenamento de dados selecionada é somente leitura. A pasta de armazenamento foi alterada temporariamente para memória interna. Por favor, escolha uma pasta de armazenamento válida.</string>
     <string name="storage_directory_shared">Memória compartilhada</string>

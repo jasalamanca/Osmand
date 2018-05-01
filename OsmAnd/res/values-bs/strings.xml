@@ -26,12 +26,10 @@
   <string name="first_time_msg">Da bi koristili glavne funkcije ove aplikacije, potrebno je da preuzmete osnovne regionalne podatke za korištenje van mreže, koje možete preuzeti (koristite Podešavanja, Podaci van mreže). Nakon toga, imaćete mogućnost pretrage po adresi, da pogledate zanimljivosti i da nađete javni prevoz.</string>
   <string name="basemap_was_selected_to_download">Osnovna mapa je neophodna za pravilno funkcionisanje aplikacije i izabrana je za preuzimanje.</string>
   <string name="select_index_file_to_download">Ništa nije pronađeno. Ako ne možete pronaći svoju regiju, možete ju sami napraviti (opširnije na http://osmand.net).</string>
-  <string name="local_indexes_cat_tile">Mape van mreže (u sličicama)</string>
-  <string name="local_indexes_cat_map">Mape van mreže (vektori)</string>
+    <string name="local_indexes_cat_map">Mape van mreže (vektori)</string>
   
   <string name="index_settings_descr">Preuzmite, pogledajte detalje i uredite mape van mreže</string>
   <string name="map_online_plugin_is_not_installed">Omogući nadogradnju za izbor drugačijih izvora javnih mapa</string>
-  <string name="map_online_data">Javne mape (u sličicama)</string>
     <string name="shared_string_online_maps">Javne mape</string>
 
 

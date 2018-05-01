@@ -5,7 +5,6 @@
 	<string name="app_mode_bus">ബസ്</string>
  	<string name="app_mode_train">ട്രെയിന്‍</string>
     <string name="access_widget_expand">വികസിപ്പിക്കുക</string>
-    <string name="rendering_value_thin_name">കട്ടികുറഞ്ഞ</string>
     <string name="rendering_value_medium_name">ഇടത്തരം</string>
     <string name="osm_live_active">"സജീവം "</string>
     <string name="osm_live_not_active">നിര്‍ജ്ജീവം</string>
@@ -249,8 +248,6 @@
     <string name="version_settings_descr">നൈറ്റിലി ബില്‍ഡ് വേര്‍ഷന്‍ ഡൗണ്‍ലോഡ് ചെയ്യുക</string>
     <string name="rendering_attr_streetLighting_name">"തെരുവിളക്ക് "</string>
     <string name="points">പോയിന്റുകള്‍</string>
-    <string name="rendering_attr_roadStyle_name">റോഡ് സ്ടൈല്‍</string>
-    <string name="rendering_attr_roadStyle_description">റോഡ് സ്ടൈല്‍</string>
     <string name="map_locale">ഭൂപട ഭാഷ(Map Language)</string>
     <string name="search_for">"തെരയുക "</string>
     <string name="wake_on_voice">"സ്ക്രീന്‍ ഓണ്‍ ആക്കുക "</string>
@@ -456,7 +453,6 @@
     <string name="amenity_type_shop">കട</string>
     <string name="background_router_service_descr">"സ്ക്രീന്‍ ഓഫായിരിക്കുമ്പോള്‍ ഓഎസ്എം ആന്റ് നെ ബാക്ക്ഗ്രൗണ്ടില്‍ പാത റിക്കോഡ് ചെയ്യാന്‍ പ്രവര്‍ത്തിപ്പിക്കുക "</string>
     <string name="background_router_service">"ഓഎസ്എം ആന്റ് നെ ബാക്ക്ഗ്രൗണ്ടില്‍ പ്രവര്‍ത്തിപ്പിക്കുക "</string>
-    <string name="max_level_download_tile">ഓണ്‍ലൈനില്‍ ഏറ്റവും കൂടിയ സൂം</string>
     <string name="loading_poi_obj">"സ്ഥലങ്ങള്‍  (POI) നിറച്ചുകൊണ്ടിരിക്കുന്നു…"</string>
     <string name="loading_streets_buildings">തെരുവുക/കെട്ടിടങ്ങള്‍ നിറച്ചുകൊണ്ടിരിക്കുന്നു…</string>
     <string name="loading_postcodes">പോസ്റ്റ്കോഡുകള്‍ നിറച്ചുകൊണ്ടിരിക്കുന്നു…</string>
@@ -695,7 +691,6 @@
     <string name="update_tile">"ഭൂപടം  പരിഷ്ക്കരിക്കുക"</string>
     <string name="choose_building">"കെട്ടിടം തെരഞ്ഞെടുക്കുക "</string>
     <string name="choose_street">"തെരുവ് തെരഞ്ഞെടുക്കുക "</string>
-    <string name="use_internet">ഇന്റര്‍നെറ്റ് ഉപയോഗിക്കുക</string>
     <string name="choose_available_region">പട്ടികയില്‍ നിന്നും റീജിയന്‍ തെരഞ്ഞെടുക്കുക</string>
     <string name="favourites_context_menu_add">"താല്‍പര്യമുള്ളവയില്‍ കൂട്ടുക "</string>
     <string name="favourites_context_menu_delete">താല്‍പര്യമുള്ളവയില്‍ നിന്ന് ഒഴിവാക്കുക</string>
@@ -915,7 +910,6 @@
     <string name="delay_to_start_navigation">"ടേണ്-ബൈ-ടേണ്‍ നിര്‍ദേശങ്ങള്‍ ആരംഭിക്കുന്നതിനു മുമ്പ്  …"</string>
     <string name="simulate_your_location">"നിങ്ങളുടെ സ്ഥാനം  സിമുലേറ്റ് ചെയ്യുക "</string>
     <string name="notes">കുറിപ്പുകള്‍</string>
-    <string name="online_map">ഓണ്‍ലൈന്‍ ഭൂപടം</string>
     <string name="version_settings">ബില്‍ഡുകള്‍</string>
     <string name="show_railway_warnings">റയില്‍വെ ക്രോ‌സിങ്ങ്</string>
     <string name="use_opengl_render">"ഓപ്പണ്‍ ജി എല്‍ ഉപയോഗിച്ച് വരച്ച് കാണിക്കുക "</string>
@@ -1407,7 +1401,6 @@
     <string name="lock_screen_request_explanation">" സ്ക്രീന്‍ ഓഫ് ചെയ്ത് പവര്‍ ഉപയോഗം കുറക്കാന്‍ %1$s ന് ഈ അനുമതി വേണം."</string>
     <string name="none_selected_gpx">ജിപിഎക്സ് ഫയലുകളൊന്നും തെരഞ്ഞെടുത്തിട്ടില്ല. തെരഞ്ഞെടുക്കാനായി ലഭ്യമായ പാതയില്‍ ഞെക്കിപിടിക്കുക.</string>
     <string name="layer_amenity_label">ബിന്ദുവിന്റെ പേരുചീട്ട്</string>
-    <string name="local_index_tile_data_expire">കാലഹരണം(മിനിറ്റുകള്‍): %1$s</string>
     <string name="osb_author_or_password_not_specified">ദയവായി ഓഎസ്എം യൂസര്‍,പാസ്വോഡ് എന്നിവ സജ്ജീകരണത്തില്‍ പറയുക</string>
     <string name="keep_intermediate_points">ഇടലക്ഷ്യസ്ഥാനങ്ങള്‍ സൂക്ഷിക്കുക</string>
     <string name="plugin_distance_point_time">സമയം</string>
@@ -1521,7 +1514,6 @@
     <string name="local_index_poi_data">താല്‍പര്യ ബിന്ദു (പി ഓ ഐ ) വിവരങ്ങള്‍</string>
     <string name="map_text_size_descr">"ഭൂപടത്തിലെ  നാമങ്ങളുടെ അക്ഷരവലിപ്പം ക്രമീകരിക്കുക"</string>
     <string name="voice_stream_voice_call">ഫോണ്‍ കോളിന്റെ ഓഡിയോ(കാറിന്റെ ബ്ളൂടൂത്ത് സ്റ്റീരിയോയിലൂടെയും)</string>
-    <string name="warning_tile_layer_not_downloadable">"ഭൂപടപാളി  %1$s ഡൗണ്‍ലോഡ് ചെയ്യാനായില്ല, ദയവായി ഇത് റീഇന്‍സ്ടാള്‍ ചെയ്യന്‍ ശ്രമിക്കുക."</string>
     <string name="map_transparency_descr">അടിസ്ഥാന ഭൂപടത്തിന്റെ സുതാര്യത മാറ്റുക</string>
     <string name="incomplete_locale">അപൂര്‍ണ്ണം</string>
     <string name="add_waypoint_dialog_added">"ജിപിഎക്സ് പാതബിന്ദു  \'\'{0}\'\' വിജയകരമായി ചേര്‍ത്തിരിക്കുന്നു"</string>
@@ -1610,7 +1602,6 @@
     <string name="shared_string_permissions">അനുമതികള്‍</string>
     <string name="import_gpx_failed_descr">"ഓഎസ്എംആന്‍ഡിന് ഫയല്‍ തുറക്കാനായില്ല. ദയവായ് ഓഎസ്എംആന്‍ഡിന് ആ ഫയല്‍ വായിക്കാനുള്ള അനുമതിയുണ്ട്  എന്ന് ഉറപ്പാക്കുക "</string>
     <string name="distance_moving">ദൂരം (തെറ്റുതിരുത്തിയത് )</string>
-    <string name="online_photos">"ഓണ്‍ലൈന്‍ ഫോട്ടോകള്‍ "</string>
     <string name="shared_string_add_photos">"ഫോട്ടോകള്‍ ചേര്‍ക്കുക "</string>
     <string name="private_access_routing_req">"നിങ്ങളുടെ ലക്ഷ്യസ്ഥാനം പൊതുസ്ഥലമല്ല. ഈ യാത്രയില്‍ സ്വകാര്യ വഴികളില്‍ പ്രവേശിക്കാമോ? "</string>
     <string name="restart_search">"വീണ്ടും തെരയുക "</string>

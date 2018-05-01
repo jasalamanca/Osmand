@@ -16,9 +16,8 @@
     <string name="shared_string_or">ili</string>
 	<string name="auto_zoom_none">Bez auto-zuma</string>
 	<string name="base_world_map">Osnovna karta sveta</string>
-	
-	<string name="local_index_tile_data_expire">Ističe(minuta): %1$s</string>
-	<string name="edit_tilesource_maxzoom">Maksimalno uveličanje</string>
+
+    <string name="edit_tilesource_maxzoom">Maksimalno uveličanje</string>
     <string name="edit_tilesource_minzoom">Minimalno uveličanje</string>
 	<string name="map_widget_fps_info">Podaci o greškama brzine prikaza sličica</string>
 	<string name="driving_region_japan">Japan</string>
@@ -311,7 +310,6 @@
     <string name="traffic_warning_speed_limit">Ograničenje brzine</string>
     <string name="traffic_warning_stop">Znak stop</string>
     <string name="speak_pedestrian">Najavljuj prešačke prelaze</string>
-    <string name="rendering_attr_roadStyle_name">Vrsta puta</string>
     <string name="avoid_roads_msg">Možete da izaberete zamensku putanju izborom puteva za izbegavanje</string>
     <string name="navigation_over_track">Da li započeti navođenje po stazi?</string>
 	<string name="rendering_value_orange_name">Narandžasta</string>
@@ -333,8 +331,7 @@
     <string name="location_on_map">Geografski položaj:\nŠirina %1$s↵\nDužina %2$s</string>
 	<string name="watch">Pregledaj</string>
 	<string name="notes">Beležnica</string>
-	<string name="online_map">Karta sa mreže</string>
-	<string name="roads_only">Samo putevi</string>
+    <string name="roads_only">Samo putevi</string>
     <string name="free">"Slobodno %1$s "</string>
 	<string name="device_memory">Skladište uređaja</string>
     <string name="edit_group">Uredi skup</string>

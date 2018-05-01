@@ -37,12 +37,10 @@
     <string name="first_time_msg">Ačiū kad naudojate OsmAnd. Pagrindinių programos funkcijų naudojimui įrenginyje turi būti regiono duomenys, kuriuos galite parsisiųsti \'Nustatymai\' → \'Valdyti žemėlapius\'. Tik po to galėsite ieškoti adreso, LV ar viešojo transporto.</string>
     <string name="basemap_was_selected_to_download">Programos funkcionavimui reikalingas bazinis žemėlapis. Jis buvo pažymėtas parsiuntimui.</string>
     <string name="select_index_file_to_download">Nieko nerasta. Jei nerandate savo regiono, jį galite pasigaminti patys (eikite į http://osmand.net).</string>
-    <string name="local_indexes_cat_tile">Žemėlapiai internete ir laikinai išsaugoti žemėlapiai</string>
     <string name="local_indexes_cat_map">Įprastiniai žemėlapiai (vektoriniai)</string>
 
     <string name="index_settings_descr">Parsisiųsti, peržiūrėti detalią informaciją ir valdyti parsiųstus žemėlapius.</string>
     <string name="map_online_plugin_is_not_installed">Įjunkite interneto žemėlapių įskiepį norėdami pasirinkti kitus žemėlapių šaltinius</string>
-    <string name="map_online_data">Interneto žemėlapiai</string>
     <string name="shared_string_online_maps">Interneto žemėlapiai</string>
 
 
@@ -317,7 +315,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="voice_stream_voice_call">Balso skambučio audio (taip pat bando įsiterpti į automobilio Bluetooth audio sistemą)</string>
     <string name="voice_stream_notification">Perspėjimų audio</string>
     <string name="voice_stream_music">Multimedijos/muzikos audio</string>
-    <string name="warning_tile_layer_not_downloadable">Programai neišeina parsiųsti žemėlapio sluoksnio %1$s, todėl įdiekite programą iš naujo.</string>
     <string name="overlay_transparency_descr">Pakeisti viršutinio sluoksnio skaidrumą.</string>
     <string name="overlay_transparency">Viršutinio sluoksnio skaidrumas</string>
     <string name="map_transparency_descr">Pakeisti bazinio žemėlapio skaidrumą.</string>
@@ -590,7 +587,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="hint_search_online">Paieška tinkle: namo numeris, gatvė, miestas</string>
     <string name="search_offline_address">Be interneto</string>
     <string name="search_online_address">Internete</string>
-    <string name="max_level_download_tile">Didžiausias mastelis interneto žemėlapiui</string>
     <string name="route_general_information">Visas atstumas %1$s, kelionės trukmė %2$d h %3$d min.</string>
     <string name="router_service_descr">Pasirinkti navigacijos paslaugą internete arba įrenginyje.</string>
     <string name="router_service">Navigacijos paslauga</string>
@@ -681,7 +677,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="show_poi_over_map_description">Rodyti LV žemėlapyje (pagal paskutinį naudotą filtrą).</string>
     <string name="show_poi_over_map">Rodyti LV sluoksnį</string>
     <string name="map_source">Žemėlapio šaltinis</string>
-    <string name="use_internet">Naudoti internetą</string>
     <string name="show_location">Rodyti vietą</string>
 
 
@@ -1048,8 +1043,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="about_settings_descr">Versijos informacija, licencijos, projekto nariai</string>
 
 
-    <string name="local_index_tile_data_expire">Nustos galioti (minutės): %1$s</string>
-    <string name="local_index_tile_data_name">Žemėlapių lakštų duomenys: %1$s</string>
     <string name="edit_tilesource_maxzoom">Maksimalus mąstelis</string>
     <string name="edit_tilesource_minzoom">Mažiausias mąstelis</string>
     <string name="maps_define_edit">Nustatyti/redaguoti…</string>
@@ -1412,7 +1405,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="dash_download_new_one">Atsisiųsti naują žemėlapį</string>
     <string name="dash_download_manage">Valdyti</string>
     <string name="voices">Balso pranešimai</string>
-    <string name="rendering_attr_roadStyle_name">Kelių vaizdavimo stilius</string>
     <string name="rendering_value_default_name">Numatytasis</string>
     <string name="rendering_value_orange_name">Oranžinis</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerikos kelių atlasas</string>
@@ -1461,7 +1453,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="roads_only">Tik keliai</string>
     <string name="watch">Žiūrėti</string>
     <string name="notes">Pastabos</string>
-    <string name="online_map">Žemėlapis online</string>
 
 
     <string name="location_on_map">Vieta:\n Plat. %1$s\n Ilg. %2$s</string>
@@ -1776,7 +1767,6 @@ Ilguma %2$s</string>
     <string name="osn_add_dialog_title">Sukurti pastabą</string>
 	<string name="osn_comment_dialog_title">Pridėti komentarą</string>
 	<string name="shared_string_location">Vietovė</string>
-    <string name="rendering_attr_roadStyle_description">Kelių vaizdavimo stilius</string>
     <string name="save_poi_without_poi_type_message">Ar tikrai norite išsaugoti LV nenurodydami jos tipo?</string>
     <string name="osm_save_offline">Išsaugoti įrenginyje</string>
     <string name="lang_nds">Vokiečių žemaičių</string>
@@ -1909,7 +1899,6 @@ Failams reikalinga {3} MB laikinam ir {1} MB pastoviam saugojimui.
     <string name="access_empty_list">Tuščias sąrašas</string>
     <string name="access_shared_string_not_installed">Neįdiegtas</string>
     <string name="access_sort">Rūšiuoti</string>
-    <string name="rendering_value_thin_name">Plonas</string>
     <string name="rendering_value_medium_name">Vidutinis</string>
     <string name="rendering_value_bold_name">Storas</string>
     <string name="open_street_map_login_and_pass">OpenStreetMap vartotojo vardas ir slaptažodis</string>
@@ -2149,7 +2138,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="shared_string_end_time">Pabaigos laikas</string>
     <string name="file_can_not_be_moved">Failas negali būti perkeltas.</string>
     <string name="shared_string_move">Perkelti</string>
-    <string name="routing_attr_driving_style_name">Vairavimo stilius</string>
     <string name="altitude_range">Aukščio diapazonas</string>
     <string name="average_altitude">Vidutinis aukštis virš jūros lygio</string>
     <string name="legacy_search">Senoji paieška</string>
@@ -2161,7 +2149,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="christmas_desc">Artėjant Kalėdų ir Naujųjų metų šventėms, galite pasirinkti rodyti LV, susijusius su Kalėdos: kalėdines eglutes, muges ir pan.</string>
     <string name="rendering_attr_surfaceIntegrity_name">Kelių paviršiaus vientisumas</string>
     <string name="translit_names">Pavadinimų transliteravimas</string>
-    <string name="rendering_value_fine_name">Bauda</string>
     <string name="lang_ber">Berberų</string>
     <string name="navigate_point_olc_info_invalid">Netinkamas OLC
 \n</string>
@@ -2194,7 +2181,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="quick_action_map_source_switch">Žemėlapio šaltinis buvo pakeistas į \'%s\'.</string>
     <string name="quick_action_btn_tutorial_title">Pakeisti mygtuko padėtį</string>
     <string name="shared_string_action_name">Veiksmo pavadinimas</string>
-    <string name="online_photos">Nuotraukas internete</string>
     <string name="shared_string_permissions">Teisės</string>
     <string name="sorted_by_distance">Surūšiuota pagal atstumą</string>
     <string name="shared_string_visible">Matomas</string>

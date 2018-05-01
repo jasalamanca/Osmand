@@ -452,7 +452,6 @@ Lon: %2$s</string>
     <string name="location_on_map">Loko:\nLat %1$s\nLon %2$s</string>
     <string name="watch">Montri</string>
     <string name="notes">Notoj</string>
-    <string name="online_map">Enreta mapo</string>
     <string name="roads_only">Nur vojoj</string>
     <string name="free">Libera %1$s</string>
     <string name="gps_status">GPS-a stato</string>
@@ -470,8 +469,6 @@ Lon: %2$s</string>
     <string name="navigation_over_track">Ĉu ekigi navigadon laŭlonge de spuro?</string>
     <string name="avoid_roads_msg">Vi povas vidi alternativan kurson per elekti vojojn evitindajn</string>
     <string name="speak_pedestrian">Pasejoj zebrostriaj</string>
-    <string name="rendering_attr_roadStyle_name">Voja stilo</string>
-    <string name="rendering_attr_roadStyle_description">Kiel vidigi vojojn</string>
     <string name="rendering_value__name">Norma</string>
     <string name="rendering_value_default_name">Norma</string>
     <string name="traffic_warning_railways">Traknivela pasejo</string>
@@ -735,7 +732,6 @@ Lon: %2$s</string>
     <string name="access_sort">Ordigi</string>
     <string name="map_mode">Map-reĝimo</string>
     <string name="number_of_gpx_files_selected_pattern">%s GPX-dosieroj elektitaj</string>
-    <string name="rendering_value_thin_name">Maldika</string>
     <string name="rendering_value_medium_name">Meza</string>
     <string name="rendering_value_bold_name">Dika</string>
     <string name="access_no_destination">Celo ne estas precizigita</string>
@@ -809,8 +805,6 @@ Lon: %2$s</string>
     <string name="auto_zoom_farthest">Malproksime</string>
     <string name="base_world_map">Monda bazmapo</string>
     <string name="map_magnifier">Map-skalado</string>
-    <string name="local_index_tile_data_expire">Senvalidiĝos (minutoj): %1$s</string>
-    <string name="local_index_tile_data_name">Kahelaj datumoj: %1$s</string>
     <string name="edit_tilesource_maxzoom">Maksimuma skalo</string>
     <string name="edit_tilesource_minzoom">Minimuma skalo</string>
     <string name="maps_define_edit">Difini/redakti…</string>
@@ -1070,7 +1064,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="first_time_msg">Dankon por uzi OsmAnd. Por uzi plejparte da ebloj de tiu ĉi aplikaĵo, vi bezonas elŝuti eksterretajn regionajn datumojn en \'Agordoj\' → \'Administri map-dosierojn\'. Poste vi povos esplori mapojn, serĉi adresojn, interesejojn kaj transporton publikan.</string>
     <string name="basemap_was_selected_to_download">Bazmapo endas por ĝusta agado de aplikaĵo kaj ĝi estas elektita por elŝuto.</string>
     <string name="plugins_screen">Kromprogramoj</string>
-    <string name="local_indexes_cat_tile">Enretaj mapoj kaj kaŝmemorigitaj kaheloj</string>
     <string name="local_indexes_cat_map">Normaj mapoj (vektoraj)</string>
     <string name="index_settings_descr">Elŝuti kaj administri eksterretajn mapojn konservitajn en via aparato.</string>
     <string name="i_am_here">Mi estas tie ĉi</string>
@@ -1079,7 +1072,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="preferred_locale">Fasada lingvo</string>
     <string name="incomplete_locale">nekompleta</string>
     <string name="map_online_plugin_is_not_installed">Aktivigi la kromprogramo \'Enretaj mapoj\' por elekti aliajn fontojn de mapoj</string>
-    <string name="map_online_data">Enretaj kaj kahelaj mapoj</string>
     <string name="prefs_plugins">Kromprogramoj</string>
     <string name="vector_maps_may_display_faster_on_some_devices">Vektoraj mapoj verŝajne funkcias pli rapide. Estas eble, ke tio ne funkcias en kelkaj aparatoj.</string>
     <string name="play_commands_of_currently_selected_voice">Elekti voĉon kaj provi ĝin ludante avertojn</string>
@@ -1294,7 +1286,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="choose_audio_stream_descr">Elekti laŭtparolilon por ludi gvidadan voĉon.</string>
     <string name="voice_stream_notification">Sciiga aŭd-kanalo</string>
     <string name="voice_stream_music">Aŭdvidaĵa/muzika kanalo</string>
-    <string name="warning_tile_layer_not_downloadable">Programo ne povas elŝuti map-tavolon %1$s, bonvolu provi reinstali ĝin.</string>
     <string name="overlay_transparency_descr">Modifi diafanecon de surtavolo.</string>
     <string name="overlay_transparency">Tavola diafaneco</string>
     <string name="map_transparency">Bazmapa diafaneco</string>
@@ -1577,7 +1568,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="uploading">Alŝutado…</string>
     <string name="search_osm_nominatim">Serĉi enrete per OSM Nominatim</string>
     <string name="hint_search_online">Serĉi enrete: dom-numero, strato, urbo</string>
-    <string name="max_level_download_tile">Maks. enreta pligrandigo</string>
     <string name="route_general_information">Tuta distanco %1$s, vojaĝ-tempo %2$d h %3$d min.</string>
     <string name="router_service">Navigada servo</string>
     <string name="router_service_descr">Elekti enretan aŭ eksterretan servon por navigado.</string>
@@ -1635,7 +1625,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="show_poi_over_map">Montri interesejojn</string>
     <string name="show_poi_over_map_description">Montri surtavolon de laste elektita interesejo sur la mapo.</string>
     <string name="map_source">Map-fonto</string>
-    <string name="use_internet">Uzi Interreton</string>
     <string name="show_location">Montri vian pozicion</string>
     <string name="show_gps_coordinates_text">Montri GPS-ajn koordinatojn sur mapo</string>
     <string name="app_description">Navigada programo</string>
@@ -1893,7 +1882,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="gpx_no_tracks_title_folder">Vi ankaŭ povas aldoni spurojn al la dosierujo</string>
     <string name="gpx_add_track">Aldoni spuron</string>
     <string name="gpx_appearance">Aspekto</string>
-    <string name="rendering_value_fine_name">Eteta</string>
     <string name="route_calculation">Difinado de vojo</string>
     <string name="upload_poi">Alŝuti interesejo(j)n</string>
     <string name="route_roundabout_short">Elveturu al %1$d-a elveturejo</string>
@@ -2001,8 +1989,7 @@ Indikas lokon:  %1$s x %2$s"</string>
     <string name="average_altitude">Mezuma altitudo</string>
     <string name="shared_string_time">Tempo</string>
     <string name="total_distance">Tuta distanco</string>
-    <string name="routing_attr_driving_style_name">Veturada stilo</string>
-    
+
     <string name="shared_string_tracks">Spuroj</string>
     <string name="select_gpx_folder">Elektu dosierujon por spuroj</string>
     <string name="file_can_not_be_moved">Ne povas movi dosieron.</string>
@@ -2090,7 +2077,6 @@ Indikas lokon:  %1$s x %2$s"</string>
     <string name="nothing_found_descr">Bonvolu provi ŝanĝi serĉpeton aŭ pliigi radiuson de serĉo.</string>
     <string name="private_access_routing_req">Via celloko troviĝas en privata tereno. Ĉu vi volas permesi aliron al privataj vojoj por tiu ĉi kurso?</string>
     <string name="shared_string_add_photos">Aldoni fotojn</string>
-    <string name="online_photos">Enretaj fotoj</string>
     <string name="no_photos_descr">Ni ne havas fotojn pri tiu ĉi loko.</string>
     <string name="shared_string_install">Instali</string>
     <string name="distance_moving">Korektita distanco</string>

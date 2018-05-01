@@ -157,12 +157,10 @@
 	<string name="first_time_msg">תודה לך על השימוש ב־OsmAnd. עבור תכונות רבות של יישום זה יש צורך בנתונים אזוריים בלתי מקוונים אותם ניתן להוריד דרך \'הגדרות\' -&gt; \'נתונים בלתי מקוונים\'. לאחר מכן יתאפשר לך לצפות במקום, לאתר כתובות, לחפש נקודות עניין ולמצוא תחבורה ציבורית.</string>    
 	<string name="basemap_was_selected_to_download">נדרשת מפת בסיס לצורך התפקוד התקין של התכנה ונבחרה אחת כזאת להורדה.</string>
 	<string name="select_index_file_to_download">לא נמצא כלום. אם האזור שלך לא נמצא, ניתן ליצור אותו בעצמך (לפרטים http://osmand.net).</string>
-	<string name="local_indexes_cat_tile">מפות מקוונות ואריחים</string>
-	<string name="local_indexes_cat_map">מפות בלתי מקוונות (וקטור)</string>
+    <string name="local_indexes_cat_map">מפות בלתי מקוונות (וקטור)</string>
 	
 	<string name="index_settings_descr">הורדה וניהול של מפות בלתי מקוונות שמאוחסנות בהתקן שלך.</string>
 	<string name="map_online_plugin_is_not_installed">ניתן להפעיל את תוסף המפות המקוונות כדי לבחור במקורות שונים למפה</string>
-	<string name="map_online_data">מפות מקוונות ואריחים</string>
     <string name="shared_string_online_maps">מפות מקוונות</string>
 
 
@@ -440,8 +438,7 @@
 	<string name="voice_stream_voice_call">שמע שיחה (גם כדי להפריע לרמקולי ה־BT של האוטו)</string>
 	<string name="voice_stream_notification">שמע להתרעה</string>
 	<string name="voice_stream_music">שמע למוזיקה/מדיה</string>
-	<string name="warning_tile_layer_not_downloadable">היישום לא יכול להוריד את שכבת המפה %1$s, נא לנסות להתקין אותה מחדש.</string>
-	<string name="overlay_transparency_descr">שינוי שקיפות שכבת העל.</string>
+    <string name="overlay_transparency_descr">שינוי שקיפות שכבת העל.</string>
 	<string name="overlay_transparency">שקיפות שכבת העל</string>
 	<string name="map_transparency_descr">שינוי שקיפות מפת הבסיס.</string>
 	<string name="map_transparency">שקיפות מפת הבסיס</string>
@@ -718,7 +715,6 @@
 	<string name="hint_search_online">חיפוש מקוון: מספר בית, רחוב, עיר</string>
 	<string name="search_offline_address">בלתי מקוון</string>
 	<string name="search_online_address">אינטרנט</string>
-	<string name="max_level_download_tile">תקריב מרבי מקוון</string>
     <string name="route_general_information">סך כל המרחק: %1$s, זמן הנסיעה: %2$d שע׳ %3$d דק׳.</string>
 	<string name="router_service_descr">בחירה בשירות ניווט מקוון או בלתי מקוון.</string>
 	<string name="router_service">שירות ניווט</string>
@@ -811,8 +807,7 @@
 	<string name="show_poi_over_map_description">הצגת שכבת נקודות העניין האחרונות שנבחרו על גבי המפה.</string>
 	<string name="show_poi_over_map">הצגת שכבת נ״ע</string>
     <string name="map_source">מקור המפה</string>
-	<string name="use_internet">להשתמש באינטרנט</string>
-	<string name="show_location">הצגת המיקום שלך</string>
+    <string name="show_location">הצגת המיקום שלך</string>
 	
 	
 	<string name="show_gps_coordinates_text">הצגת קואורדינטות איכון במפה</string>
@@ -1099,7 +1094,6 @@
     <string name="quick_action_start_stop_navigation_descr">יש ללחוץ על כפתור זה כדי להתחיל בניווט או כדי לסיים אותו.</string>
     <string name="store_tracks_in_monthly_directories_descrp">אחסון המסלולים המוקלטים בתת־תיקיות לפי חודש ההקלטה (למשל: 2017-01).</string>
     <string name="shared_string_install">התקנה</string>
-    <string name="online_photos">תמונות מקוונות</string>
     <string name="shared_string_add_photos">הוספת תמונות</string>
     <string name="no_photos_descr">אין לנו תמונות של המיקום הזה.</string>
     <string name="private_access_routing_req">היעד שלך ממוקם באיזור עם גישה פרטית לאפשר גישה לכבישים הפרטיים לצורך טיול זה?</string>
@@ -1423,7 +1417,6 @@
 \n רוחב %1$s
 \n אורך %2$s</string>
     <string name="notes">הערות</string>
-    <string name="online_map">מפה מקוונת</string>
     <string name="roads_only">דרכים בלבד</string>
     <string name="free">%1$s פנויים</string>
     <string name="device_memory">זיכרון המכשיר</string>
@@ -1439,8 +1432,6 @@
     <string name="points">נקודות</string>
     <string name="navigation_over_track">להתחיל ניווט לאורך המסלול?</string>
     <string name="speak_pedestrian">מעברי חציה</string>
-    <string name="rendering_attr_roadStyle_name">סגנון דרך</string>
-    <string name="rendering_attr_roadStyle_description">סגנון דרך</string>
     <string name="rendering_value__name">בררת מחדל</string>
     <string name="rendering_value_default_name">בררת מחדל</string>
     <string name="traffic_warning_railways">מפגש רכבת</string>
@@ -2087,7 +2078,6 @@
     <string name="file_can_not_be_moved">אי אפשר להעביר את הקובץ.</string>
     <string name="shared_string_move">העברה</string>
     <string name="shared_string_tracks">מסלולים</string>
-    <string name="routing_attr_driving_style_name">סגנון נהיגה</string>
     <string name="route_altitude">תוואי נתיב</string>
     <string name="altitude_descent">עלייה</string>
     <string name="altitude_ascent">ירידה</string>
@@ -2189,8 +2179,6 @@
     <string name="auto_zoom_farthest">טווח ארוך</string>
     <string name="map_magnifier">מגדיל מפה</string>
     <string name="about_settings_descr">פרטי גרסה, רשיונות, חברי המיזם</string>
-    <string name="local_index_tile_data_expire">תפוגה (דקות): %1$s</string>
-    <string name="local_index_tile_data_name">נתוני אריח: %1$s</string>
     <string name="driving_region_descr">נא לבחור את איזור הנהיגה: ארה״ב, אירופה, הממלכה המאוחדת, אסיה ואחרות.</string>
     <string name="speak_descr">יש להגדיר כדי לצורך הקראה של שמות רחובות, אזהרות תנועה (עצירות מאולצות, פסי האטה), אזהרות על מצלמות מהירות, מגבלת מהירות.</string>
     <string name="animate_my_location_desc">הפעלת הנפשת גלישת מפה של המיקום שלי במהלך ניווט.</string>
@@ -2262,8 +2250,6 @@
     <string name="access_smart_autoannounce_descr">יש להודיע רק כאשר הכיוון ליעד משתנה.</string>
     <string name="access_autoannounce_period">טווח הכרזה אוטומטית</string>
     <string name="access_autoannounce_period_descr">מרווח הזמן המזערי בין הכרזות.</string>
-    <string name="rendering_value_fine_name">עדין</string>
-    <string name="rendering_value_thin_name">דק</string>
     <string name="rendering_value_medium_name">בינוני</string>
     <string name="rendering_value_bold_name">מודגש</string>
     <string name="anonymous_user_hint">משתמש אלמוני לא יכול:

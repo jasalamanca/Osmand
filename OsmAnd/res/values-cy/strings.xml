@@ -114,12 +114,10 @@ Cyfrannol cof %4$s MB (terfyn Android %5$s MB, Dalvik %6$s MB).</string>
 <string name="confirm_interrupt_download">Ydych chi eisiau i dorri ar draws llwytho ffeil?</string>
 <string name="basemap_was_selected_to_download">Basemap yn ofynnol ar gyfer gweithredu\'n briodol cais a dewiswyd ef i lawrlwytho.</string>
 <string name="select_index_file_to_download">Ni ddaethpwyd o hyd. Os gallwch ni all ddod o hyd i\'ch rhanbarth, gallwch wneud eich hun (gweler http://osmand.net).</string>
-<string name="local_indexes_cat_tile">Mapiau Ar-lein (teils)</string>
-<string name="local_indexes_cat_map">Fapiau all-lein (fector)</string>
+    <string name="local_indexes_cat_map">Fapiau all-lein (fector)</string>
 
 <string name="index_settings_descr">Lawrlwythwch, gweld y manylion, a rheoli mapiau all-lein</string>
 <string name="map_online_plugin_is_not_installed">Galluogi mapiau plugin ar-lein i ddewis ffynonellau map gwahanol</string>
-<string name="map_online_data">Mapiau Ar-lein (teils)</string>
     <string name="shared_string_online_maps">Mapiau Ar-lein</string>
 
 

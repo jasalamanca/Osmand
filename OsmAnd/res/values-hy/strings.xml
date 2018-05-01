@@ -198,7 +198,6 @@
     <string name="import_gpx_failed_descr">OsmAnd-ը չի կարող ներմուծել ֆայլը: Ստուգեք, արդյոք OsmAnd-ը իրավունք ունի կարդալ ֆայլը իր գտնվելու վայրից:</string>
     <string name="distance_moving">Ուղղված հեռավորությունը</string>
     <string name="shared_string_install">Տեղադրել</string>
-    <string name="online_photos">Առցանց լուսանկարներ</string>
     <string name="shared_string_add_photos">Ավելացնել լուսանկարներ</string>
     <string name="no_photos_descr">Այս վայրի համար լուսանկարներ չունենք։</string>
     <string name="private_access_routing_req">"Նպատակակետը գտնվում է մասնավորի տարածքում: Ցանկանում եք թույլատրել այս ուղեւորությանը  մասնավոր ճանապարհներ մուտք գործել?"</string>
@@ -278,7 +277,6 @@
     <string name="file_can_not_be_moved">Ֆայլը չի կարող տեղափոխվել:</string>
     <string name="shared_string_move">Տեղափոխել</string>
     <string name="shared_string_tracks">Տրեկեր</string>
-    <string name="routing_attr_driving_style_name">Վարորդական ոճ</string>
     <string name="route_altitude">Երթուղու բարձրությունը</string>
     <string name="altitude_descent">Վայրեջք</string>
     <string name="altitude_ascent">Վերելք</string>
@@ -434,8 +432,6 @@
     <string name="access_sort">Դասակարգել</string>
     <string name="map_mode">Քարտեզի ռեժիմը</string>
     <string name="number_of_gpx_files_selected_pattern">%s GPX Ֆայլ(եր) ընտրված են</string>
-    <string name="rendering_value_fine_name">Ճշգրիտ</string>
-    <string name="rendering_value_thin_name">Բարակ</string>
     <string name="rendering_value_medium_name">Միջին</string>
     <string name="rendering_value_bold_name">Թավատառ</string>
     <string name="no_map_markers_found">Խնդրում ենք ավելացնել մարկերներ քարտեզի վրա</string>
@@ -879,7 +875,6 @@
 \nԵրկայնություն %2$s</string>
     <string name="watch">Դիտել</string>
     <string name="notes">Նշումներ</string>
-    <string name="online_map">Առցանց քարտեզ</string>
     <string name="roads_only">Միայն ճանապարհները</string>
     <string name="free">Ազատ է %1$s</string>
     <string name="device_memory">Սարքի հիշողությունը</string>
@@ -896,8 +891,6 @@
     <string name="navigation_over_track">Ցանկանում եք սկսել նավարկությունը ըստ տրեկի?</string>
     <string name="avoid_roads_msg">Կարող եք ընտրել այլընտրանքային երթուղի, ընտրելով ճանապարհներ, որոնք պետք է խուսափել</string>
     <string name="speak_pedestrian">Հետիոտնային անցումներ</string>
-    <string name="rendering_attr_roadStyle_name">Ճանապարհների ոճը</string>
-    <string name="rendering_attr_roadStyle_description">Ճանապարհների ոճը</string>
     <string name="rendering_value__name">Սկզբնական</string>
     <string name="rendering_value_default_name">Սկզբնական</string>
     <string name="traffic_warning_railways">Երկաթուղային անցում</string>
@@ -1214,8 +1207,6 @@
     <string name="base_world_map">Աշխարհի հիմնական քարտեզ</string>
     <string name="shared_string_about">Ծրագրի մասին</string>
     <string name="about_settings_descr">Թողարկման տեղեկություն, լիցենզիաներ, նախագծի անդամներ</string>
-    <string name="local_index_tile_data_expire">Լրանում է (րոպե)՜ %1$s</string>
-    <string name="local_index_tile_data_name">Տայլերի տվյալները՝ %1$s</string>
     <string name="edit_tilesource_maxzoom">Առավելագույն խոշորացում</string>
     <string name="edit_tilesource_minzoom">Նվազագույն խոշորացում</string>
     <string name="maps_define_edit">Սահմանել/Խմբագրել …</string>
@@ -1421,11 +1412,9 @@
     <string name="confirm_interrupt_download">Ընդհատել ֆայլի ներբեռնումը?</string>
     <string name="first_time_msg">"Հավելվածի հիմնական հնարավորությունները օգտագործելու համար պահանջվում  են մանրամասն քարտեզներ, որոնք կարելի է ներբեռնել Ինտերնետից հետևյալ կերպ \"Կառավարում\" → \" Քարտեզների կառավարում\". Ներբեռնումից  հետո Դուք կարող եք դիտել քարտեզներ, որոնել հասցեներ, POI և հասարակական տրանսպորտ։"</string>
     <string name="basemap_was_selected_to_download">"Հիմնական քարտեզը անհրաժեշտ է  հավելվածի ճիշտ աշխատանքի համար և ավտոմատ ընտրված է ներբեռնելու համար:"</string>
-    <string name="local_indexes_cat_tile">Առցանց և քեշավորված քարտեզներ (tile maps)</string>
     <string name="local_indexes_cat_map">Ստանդարտ քարտեզներ (վեկտորային)</string>
     <string name="index_settings_descr">"Քարտեզների ֆայլերը ներբեռնում և կառավարում  ձեր սարքում։"</string>
     <string name="map_online_plugin_is_not_installed">"Միացրեք առցանց քարտեզների plugin-ը  տարբեր քարտեզային աղբյուրներ ընտրելու համար"</string>
-    <string name="map_online_data">Առցանց քարտեզներ</string>
     <string name="plugins_screen">Պլագիններ</string>
     <string name="prefs_plugins">Պլագիններ</string>
     <string name="vector_maps_may_display_faster_on_some_devices">Վեկտորային քարտեզները կարող են ավելի արագ ցուցադրվել: Բոլոր սարքերը չեն աջակցում:</string>
@@ -1654,7 +1643,6 @@
     <string name="voice_stream_voice_call">Հեռախոսազանգի աուդիո (նաև ընդհատում BT)</string>
     <string name="voice_stream_notification">Ծանուցման հոսքը</string>
     <string name="voice_stream_music">Երաժշտության հոսքը</string>
-    <string name="warning_tile_layer_not_downloadable">"Քարտեզի շերտը %1$s  չի կարող ներբեռնված լինել հավելվածով, փորձեք կրկին տեղադրեք այն:"</string>
     <string name="overlay_transparency_descr">"Փոխել  overlay քարտեզի թափանցիկությունը։"</string>
     <string name="overlay_transparency">Ծածկույթի թափանցիկությունը</string>
     <string name="map_transparency_descr">Փոխել հիմնական քարտեզի թափանցիկությունը։</string>
@@ -1890,7 +1878,6 @@
     <string name="hint_search_online">Առցանց որոնում՝ Տան համարը, փողոց, քաղաք</string>
     <string name="search_offline_address">Անցանց որոնում</string>
     <string name="search_online_address">Առցանց որոնում</string>
-    <string name="max_level_download_tile">Մանրամասների մակարդակ</string>
     <string name="route_general_information">Ընդհանուր հեռավորությունը = %1$s, ճանապարհորդության ժամանակը = %2$d ժ %3$d րոպ․։</string>
     <string name="router_service_descr">Ընտրեք առցանց կամ անցանց նավարկության ծառայություն:</string>
     <string name="router_service">Երթուղու հաշվարկում</string>
@@ -1953,7 +1940,6 @@
     <string name="show_poi_over_map_description">Ցուցադրել վերջին ընտրած POI-ին քարտեզի վրա:</string>
     <string name="show_poi_over_map">Ցույց տալ POI-ի</string>
     <string name="map_source">Քարտեզի աղբյուրը</string>
-    <string name="use_internet">Օգտագործել Ինտերնետը</string>
     <string name="show_location">Ցույց տալ ձեր դիրքը</string>
     <string name="show_gps_coordinates_text">Ցույց տալ GPS կոորդինատները քարտեզի վրա</string>
     <string name="use_english_names_descr">Ընտրեք մայրենի և անգլերեն անունների միջև:</string>

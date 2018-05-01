@@ -68,8 +68,7 @@
 	<string name="back_to_map">Tagasi kaardile</string>
     <string name="location_on_map">Asukoht:\n Lat %1$s\n Lon %2$s</string>
 	<string name="notes">Märkmed</string>
-	<string name="online_map">Online kaart</string>
-	<string name="roads_only">Ainult teed</string>
+    <string name="roads_only">Ainult teed</string>
     <string name="free">Vaba %1$s</string>
 	<string name="device_memory">Seadme mälu</string>
     <string name="edit_group">Grupi muutmine</string>
@@ -124,7 +123,6 @@
     <string name="access_sort">Sorteeri</string>
     <string name="map_mode">Kaardi režiim</string>
     <string name="number_of_gpx_files_selected_pattern">%s GPX faili valitud</string>
-    <string name="rendering_value_thin_name">Õhuke</string>
     <string name="rendering_value_medium_name">Keskmine</string>
     <string name="rendering_value_bold_name">Rasvane</string>
     <string name="no_map_markers_found">Palun lisa kaardi markerid kaardi abil</string>
@@ -137,7 +135,6 @@
     <string name="import_gpx_failed_descr">OsmAnd ei saa faili importida. Palun veendu, et OsmAnd\'il on õigus lugeda faili selle asukohast.</string>
     <string name="distance_moving">Kaugus parandatud</string>
     <string name="shared_string_install">Paigalda</string>
-    <string name="online_photos">Veebi fotod</string>
     <string name="shared_string_add_photos">Lisa fotosid</string>
     <string name="shared_string_reset">Lähtesta</string>
     <string name="shared_string_reload">Laadi uuesti</string>

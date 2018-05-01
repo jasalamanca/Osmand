@@ -367,8 +367,7 @@
 	<string name="choose_street">Valitse katu</string>
 	<string name="choose_city">Valitse kaupunki tai postinuero</string>
 	<string name="ChooseCountry">Valitse maa</string>
-	<string name="use_internet">Käytä internettiä</string>
-	<string name="show_location">Näytä sijainti</string>
+    <string name="show_location">Näytä sijainti</string>
 	
 	
 	<string name="show_gps_coordinates_text">Näytä GPS-koordinaatit kartalla</string>
@@ -455,9 +454,8 @@
 	<string name="left_side_navigation_descr">Valitse maissa joissa on käytössä vasen kaista</string>
 	
 	<string name="unknown_location">Sijaintia ei tiedetä vielä</string>
-	<string name="local_indexes_cat_tile">Online ja välimuistin kuvakekartat</string>
-	
-	<string name="amenity_type_finance">Rahoitus</string>
+
+    <string name="amenity_type_finance">Rahoitus</string>
 	<string name="amenity_type_barrier">Este</string>
 	<string name="amenity_type_education">Koulutus</string>
 	<string name="amenity_type_emergency">Ensiapu</string>
@@ -917,8 +915,6 @@ Nauhoitetut jäljet voidaan jakaa ystävillesi tai käyttää OSM osallistumisis
     <string name="access_sort">Lajittele</string>
     <string name="map_mode">Karttatila</string>
     <string name="number_of_gpx_files_selected_pattern">%s GPX-tiedostoa valittu</string>
-    <string name="rendering_value_fine_name">Hieno</string>
-    <string name="rendering_value_thin_name">Ohut</string>
     <string name="rendering_value_medium_name">Keskipaksu</string>
     <string name="rendering_value_bold_name">Paksu</string>
     <string name="no_waypoints_found">Väyläpisteitä ei löytynyt</string>
@@ -1180,8 +1176,7 @@ Nauhoitetut jäljet voidaan jakaa ystävillesi tai käyttää OSM osallistumisis
  Lat %1$s
  Lon %2$s</string>
     <string name="watch">Katso</string>
-    <string name="online_map">Online kartta</string>
-	<string name="device_memory">Laitteen muisti</string>
+    <string name="device_memory">Laitteen muisti</string>
 	<string name="remove_the_tag">POISTA TAGI</string>
     <string name="gps_status">GPS tila</string>
     <string name="version_settings_descr">Lataa yöllinen julkaisu</string>
@@ -1193,8 +1188,6 @@ Nauhoitetut jäljet voidaan jakaa ystävillesi tai käyttää OSM osallistumisis
     <string name="points">Pisteet</string>
     <string name="navigation_over_track">Aloita suunnistus jäljen mukaan?</string>
     <string name="speak_pedestrian">Suojatiet</string>
-    <string name="rendering_attr_roadStyle_name">Tien tyyli</string>
-    <string name="rendering_attr_roadStyle_description">Tien tyyli</string>
     <string name="rendering_value__name">Oletus</string>
     <string name="rendering_value_default_name">Oletus</string>
 	<string name="traffic_warning_railways">Rautatieristeys</string>
@@ -1313,9 +1306,7 @@ Nauhoitetut jäljet voidaan jakaa ystävillesi tai käyttää OSM osallistumisis
     <string name="auto_zoom_farthest">Loitonna</string>
     <string name="map_magnifier">Karttasuurennos</string>
     <string name="base_world_map">Maailman peruskartta</string>
-	<string name="local_index_tile_data_expire">Vanhenemisaika (minuuteissa): %1$s</string>
-    <string name="local_index_tile_data_name">Kuvakedata: %1$s</string>
-	<string name="maps_define_edit">Määritä/Muokkaa…</string>
+    <string name="maps_define_edit">Määritä/Muokkaa…</string>
     <string name="map_widget_fps_info">FPS testausinfo</string>
     <string name="driving_region_australia">Australia</string>
     <string name="speak_title">Ilmoita…</string>
@@ -1442,7 +1433,6 @@ Jälki %2$s</string>
     <string name="rendering_attr_hmRendered_description">Lisää kartan näytettävien yksityiskohtien määrää</string>
     <string name="rendering_attr_hmRendered_name">Näytä lisää kartan yksityiskohtia</string>
     <string name="local_index_routing_data">Reititystiedot</string>
-    <string name="map_online_data">Online ja kuvakekartat</string>
     <string name="play_commands_of_currently_selected_voice">Käytä komentoja valitulla äänellä</string>
     <string name="test_voice_prompts">Testaa ääniohjeita</string>
     <string name="support_new_features_descr">Lahjoita nähdäksesi uusia ominaisuuksia totetettavaksi sovellutukseen</string>
@@ -1691,8 +1681,7 @@ Jälki %2$s</string>
     <string name="opening_hours_not_supported">Aukioloaikojen formaattia ei tueta editoinnissa</string>
     <string name="update_poi_no_offline_poi_index">Tälle alueelle ei ole käytettävissä offline POI tietoja</string>
     <string name="update_poi_is_not_available_for_zoom">POI päivittäminen pienille zoomaustasoille ei ole käytettävissä</string>
-    <string name="max_level_download_tile">Maksimi online zoomaus</string>
-	<string name="router_service_descr">Valitse online- tai offline-navigaatiopalvelu</string>
+    <string name="router_service_descr">Valitse online- tai offline-navigaatiopalvelu</string>
     <string name="download_question_exist">Offline data {0} on jo olemassa ({1}). Haluatko päivittää sen ({2}) ?</string>
     <string name="opening_changeset">Avataan muutosjoukkoa…</string>
     <string name="closing_changeset">Suljetaan muutosjoukkoa…</string>
@@ -1882,7 +1871,6 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
     <string name="old_poi_file_should_be_deleted">POI datatiedosto \'%1$s\' on tarpeeton ja se voidaan poistaa.</string>
     <string name="local_index_action_do">Olet %1$s %2$s jäsentä. Jatkatko?</string>
     <string name="choose_audio_stream">Ääniohjauksen tuloste</string>
-    <string name="warning_tile_layer_not_downloadable">Sovellutus ei voi ladata karttatasoa %1$s, ole hyvä ja yritä asentaa se uudelleen.</string>
     <string name="quick_action_map_styles">Karttatyylit</string>
     <string name="quick_action_map_style_action">Lisää karttatyyli</string>
     <string name="quick_action_poi_list">POI lista</string>
@@ -1962,7 +1950,6 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
 	<string name="shared_string_permissions">Käyttöoikeudet</string>
     <string name="distance_moving">Etäisyys korjattu</string>
 	<string name="shared_string_install">Asenna</string>
-    <string name="online_photos">Online kuvat</string>
     <string name="shared_string_add_photos">Lisää kuviin</string>
     <string name="no_photos_descr">Tälle sijainnille ei ole kuvia</string>
     <string name="restart_search">Käynnistä haku uudelleen</string>

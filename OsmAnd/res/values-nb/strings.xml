@@ -102,12 +102,10 @@
 
     <string name="unknown_from_location">Startpunkt er ennå ikke bestemt</string>
     <string name="unknown_location">Posisjon ennå ikke kjent</string>
-    <string name="local_indexes_cat_tile">Nettbaserte kart og hurtigbufrede fliskart</string>
     <string name="local_indexes_cat_map">Standardkart (vektor)</string>
 
     <string name="index_settings_descr">Last ned og håndter offline-kart lagret på enheten.</string>
     <string name="map_online_plugin_is_not_installed">Aktiver programtillegget for nettbaserte kart for å velge ulike kartkilder</string>
-    <string name="map_online_data">Nettbaserte- og flis-kart</string>
     <string name="shared_string_online_maps">Nettbaserte kart</string>
 
 
@@ -428,7 +426,6 @@
     <string name="hint_search_online">Nettbasert søk: Husnummer, gate, by</string>
     <string name="search_offline_address">Offline-søk</string>
     <string name="search_online_address">Nettbasert søk</string>
-    <string name="max_level_download_tile">Maks. nettbasert zoom</string>
     <string name="route_general_information">Total distanse %1$s, reisetid %2$d t %3$d min.</string>
     <string name="router_service_descr">Velg en nettbasert eller offline navigeringstjeneste.</string>
     <string name="router_service">Navigeringstjeneste</string>
@@ -477,7 +474,6 @@
     <string name="show_poi_over_map_description">Vis det sist valgte interessepunktoverlegget på kartet.</string>
     <string name="show_poi_over_map">Vis interessepunktoverlegg</string>
     <string name="map_source">Kartkilde</string>
-    <string name="use_internet">Bruk internett</string>
     <string name="show_location">Vis din posisjon</string>
 
 
@@ -866,7 +862,6 @@
     <string name="route_info">Ruteinformasjon</string>
     <string name="calculate_osmand_route_gpx">Beregn OsmAnd offline-rute</string>
     <string name="app_mode_truck">Lastebil</string>
-    <string name="local_index_tile_data_name">Flisdata: %1$s</string>
     <string name="delete_point">Slett punkt</string>
     <string name="plugin_distance_point_time">tid</string>
     <string name="plugin_distance_point_hdop">nøyaktighet</string>
@@ -1021,7 +1016,6 @@
     <string name="data_settings">Data</string>
     <string name="av_camera_focus_auto">Autofokus</string>
     <string name="update_poi_success">Interessepunktdata ble vellykket oppdatert ({0} ble lastet)</string>
-    <string name="rendering_attr_roadStyle_name">Veistil</string>
     <string name="rendering_value_default_name">Standard</string>
     <string name="rendering_value_orange_name">Orange</string>
     <string name="traffic_warning_railways">Jernbaneovergang</string>
@@ -1042,7 +1036,6 @@
     <string name="location_on_map">Posisjon:
 \n B.gr. %1$s
 \n L.gr. %2$s</string>
-    <string name="online_map">Nettbasert kart</string>
     <string name="roads_only">Bare veier</string>
     <string name="free">Ledig %1$s</string>
     <string name="device_memory">Enhetsminne</string>
@@ -1369,7 +1362,6 @@
     <string name="av_locations">Posisjoner</string>
     <string name="plugin_settings">Programtillegg</string>
 	<string name="rendering_value_boldOutline_name">Tykke omriss</string>
-    <string name="rendering_attr_roadStyle_description">Veistil</string>
     <string name="routing_attr_avoid_borders_name">Unngå grensepassering</string>
 	<string name="routing_attr_height_name">Høydegrense</string>
 	<string name="routing_attr_height_description">Spesifiser kjøretøyhøyde som tillates på ruter.</string>
@@ -1451,7 +1443,6 @@
     <string name="looking_up_address">Ser etter adresse</string>
     <string name="cancel_route">Forkast rute</string>
     <string name="file_name_containes_illegal_char">Filnavn inneholder ulovlig tegn</string>
-<string name="rendering_value_thin_name">Tynn</string>
     <string name="rendering_value_medium_name">Middels</string>
     <string name="rendering_value_bold_name">Fet</string>
     <string name="donations">Donasjoner</string>
@@ -1593,7 +1584,6 @@
     <string name="get_started">Kom i gang</string>
     <string name="routing_attr_short_way_name">Drivstoff-effektiv vei</string>
     <string name="routing_attr_short_way_description">Bruk drivstoffeffektiv vei (vanligvis kortere).</string>
-    <string name="local_index_tile_data_expire">Utløper (minutter): %1$s</string>
     <string name="current_track">Aktuelle spor</string>
     <string name="show_current_gpx_title">Vis aktuelle spor</string>
     <string name="rendering_attr_currentTrackWidth_description">GPX-bredde</string>
@@ -1663,7 +1653,6 @@
     <string name="access_disable_wrong_direction_recalc">Ingen ny ruteberegning ved motsatt retning</string>
     <string name="access_disable_wrong_direction_recalc_descr">Forhindre automatisk ny ruteberegning ved bevegelse i motsatt retning.</string>
     <string name="access_smart_autoannounce">Smart auto-annonsering</string>
-    <string name="rendering_value_fine_name">Fin</string>
     <string name="report">Rapport</string>
     <string name="live_updates">Live-oppdateringer</string>
     <string name="shared_string_update">Oppdater</string>
@@ -1850,8 +1839,7 @@
     <string name="file_can_not_be_moved">Filen kan ikke flyttes.</string>
     <string name="shared_string_move">Flytt</string>
     <string name="shared_string_tracks">Spor</string>
-    <string name="routing_attr_driving_style_name">Kjørestil</string>
-    
+
     <string name="shared_string_time">Tid</string>
     <string name="total_distance">Total distanse</string>
     <string name="shared_string_plugin">Programtillegg</string>
@@ -2009,7 +1997,6 @@
     <string name="keep_showing_on_map">Fortsett å vise på kartet</string>
     <string name="exit_without_saving">Avslutte uten å lagre?</string>
     <string name="shared_string_install">Installer</string>
-    <string name="online_photos">Nettbaserte bilder</string>
     <string name="shared_string_add_photos">Legg til bilder</string>
     <string name="no_photos_descr">Vi har ingen bilder fra dette stedet.</string>
     <string name="restore_purchases">Gjenopprett kjøp</string>
@@ -2109,7 +2096,6 @@
     <string name="tts_missing_language_data">Ingen data for valgt språk installert. Vil du gå til markedet for å installere det?</string>
     <string name="gpx_option_reverse_route">Snu GPX-retning</string>
     <string name="gpx_option_from_start_point">Passer langs hele sporet</string>
-    <string name="warning_tile_layer_not_downloadable">Programmet kan ikke laste ned kartlaget %1$s, prøv å installere det på nytt.</string>
     <string name="downloading_build">Laster ned byggversjon…</string>
     <string name="install_selected_build">Ønsker du å installere OsmAnd - {0} av {1}{2} MB?</string>
     <string name="loading_builds_failed">Innhenting av liste over OsmAnd-byggversjoner mislyktes</string>

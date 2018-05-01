@@ -201,7 +201,6 @@
     <string name="local_indexes_cat_backup">Záloha</string>
     <string name="local_indexes_cat_tts">Hlasové pokyny (TTS)</string>
     <string name="local_indexes_cat_voice">Hlasové pokyny (media)</string>
-    <string name="local_indexes_cat_tile">On-line mapy a dlaždice v mezipaměti</string>
     <string name="local_indexes_cat_map">Standardní mapy (vektorové)</string>
     <string name="local_indexes_cat_poi">Data POI</string>
     <string name="ttsvoice">TTS hlas</string>
@@ -272,7 +271,6 @@
     <string name="voice_stream_voice_call">Zvuk telefonního hovoru (také přeruší Bluetooth autorádio)</string>
     <string name="voice_stream_notification">Upozornění</string>
     <string name="voice_stream_music">Hudba</string>
-    <string name="warning_tile_layer_not_downloadable">Data pro mapovou vrstvu %1$s nelze stáhnout, zkuste je prosím znovu nainstalovat.</string>
     <string name="overlay_transparency_descr">Upravit průhlednost překryvné mapy.</string>
     <string name="overlay_transparency">Průhlednost překryvu</string>
     <string name="map_transparency_descr">Upravit průhlednost základní mapy.</string>
@@ -487,7 +485,6 @@
     <string name="hint_search_online">Hledat on-line: číslo domu, ulice, město</string>
     <string name="search_offline_address">Hledání off-line</string>
     <string name="search_online_address">Hledat on-line</string>
-    <string name="max_level_download_tile">Maximální zvětšení</string>
     <string name="route_general_information">Celková vzdálenost %1$s, doba cesty %2$d h %3$d min.</string>
     <string name="router_service_descr">Vyberte online nebo offline navigační službu.</string>
     <string name="router_service">Navigace</string>
@@ -567,7 +564,6 @@
     <string name="show_poi_over_map_description">Zobrazit naposledy vybrané POI jako vrstvu na mapě.</string>
     <string name="show_poi_over_map">Zobrazit vrstvu POI</string>
     <string name="map_source">Zdroj map</string>
-    <string name="use_internet">Používat internet</string>
     <string name="show_location">Zobrazit mou polohu</string>
     <string name="show_gps_coordinates_text">Zobrazit GPS souřadnice na mapě</string>
     <string name="app_description">Navigační aplikace</string>
@@ -660,7 +656,6 @@
     <string name="confirm_interrupt_download">Chcete přerušit stahování souboru?</string>
     <string name="basemap_was_selected_to_download">Pro správnou funkci aplikace je třeba základní mapa. Proto byla automaticky vybrána ke stažení.</string>
     <string name="map_online_plugin_is_not_installed">Pro výběr různých zdrojů map povolte modul „On-line mapy“</string>
-    <string name="map_online_data">On-line mapy a dlaždice</string>
     <string name="shared_string_online_maps">On-line mapy</string>
     <string name="osmand_background_plugin_description">Zobrazí nastavení na povolení záznamu trasy a navigace v úsporném režimu (při vypnuté obrazovce) pravidelným probouzením GPS zařízení.</string>
     <string name="osmand_accessibility_description">Tento modul zobrazí nastavení pro speciální funkce ulehčení přístupu přímo v OsmAnd. Například je možné měnit rychlost TTS hlasu, použít trackball na přibližování nebo například použít hlasové předčítání pro oznamování polohy.</string>
@@ -931,7 +926,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="maps_define_edit">Vytvořit/Upravit…</string>
     <string name="driving_region_descr">Vyberte dopravní oblast: USA, Evropa, Británie, Asie a další.</string>
     <string name="driving_region">Dopravní oblast</string>
-    <string name="local_index_tile_data_expire">Doba platnosti (minut): %1$s</string>
     <string name="map_widget_fps_info">Snímků za sekundu (ladění)</string>
     <string name="base_world_map">Základní mapa světa</string>
     <string name="map_magnifier">Lupa mapy</string>
@@ -940,7 +934,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="auto_zoom_close">Na malou vzdálenost</string>
     <string name="auto_zoom_far">Na střední vzdálenost</string>
 
-    <string name="local_index_tile_data_name">Data dlaždic: %1$s</string>
     <string name="shared_string_remember_my_choice">Zapamatovat mou volbu</string>
     <string name="shared_string_and">a</string>
     <string name="shared_string_or">nebo</string>
@@ -1266,7 +1259,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="dash_download_manage">Spravovat</string>
     <string name="dash_download_msg_none">Chcete stáhnout off-line mapy?</string>
     <string name="voices">Hlasové pokyny</string>
-    <string name="rendering_attr_roadStyle_name">Styl cesty</string>
     <string name="rendering_value_default_name">Výchozí</string>
     <string name="rendering_value_orange_name">Oranžová</string>
     <string name="traffic_warning_railways">Železniční přejezd</string>
@@ -1299,7 +1291,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="plugin_description_title">Popisek</string>
     <string name="edit_group">Upravit skupinu</string>
     <string name="notes">Poznámky</string>
-    <string name="online_map">On-line mapa</string>
     <string name="roads_only">Pouze cesty</string>
     <string name="free">%1$s volných</string>
     <string name="device_memory">Paměť zařízení</string>
@@ -1634,7 +1625,6 @@ Délka %2$s</string>
     <string name="shared_string_location">Poloha</string>
     <string name="rendering_attr_currentTrackColor_description">Barva GPX</string>
     <string name="rendering_attr_currentTrackWidth_description">Šířka GPX</string>
-    <string name="rendering_attr_roadStyle_description">Styl cesty</string>
     <string name="poi_dialog_reopen">Znovuotevřít</string>
 	<string name="poi_context_menu_modify_osm_change">Upravit změnu OSM</string>
     <string name="use_dashboard_btn">Použít domovskou obrazovku</string>
@@ -1793,7 +1783,6 @@ Pokud máte rádi OsmAnd a OSM a chcete je podpořit, toto je výborný způsob,
     <string name="access_sort">Setřídit</string>
     <string name="map_mode">Režim mapy</string>
     <string name="number_of_gpx_files_selected_pattern">%s vybraných GPX souborů</string>
-    <string name="rendering_value_thin_name">Tenké</string>
     <string name="rendering_value_medium_name">Střední</string>
     <string name="rendering_value_bold_name">Tučné</string>
     <string name="no_map_markers_found">Prosím přidejte mapové značky pomocí mapy</string>
@@ -1912,7 +1901,6 @@ Pokud máte rádi OsmAnd a OSM a chcete je podpořit, toto je výborný způsob,
     <string name="delete_filter">Odstranit filtr</string>
     <string name="new_filter">Nový filtr</string>
     <string name="new_filter_desc">Zadejte prosím název pro nový filtr, který bude přidán na kartu „Kategorie“.</string>
-    <string name="rendering_value_fine_name">Jemné</string>
     <string name="lang_kab">Kabylsky</string>
     <string name="driving_region_australia">Austrálie</string>
     <string name="route_calculation">Výpočet trasy</string>
@@ -2022,8 +2010,6 @@ Zobrazená oblast: %1$s x %2$s</string>
     <string name="routing_attr_height_obstacles_name">Použít údaje o nadmořské výšce</string>
     <string name="routing_attr_height_obstacles_description">Použít údaje o nadmořské výšce terénu od SRTM, ASTER a EU-DEM.</string>
 
-    <string name="routing_attr_driving_style_name">Styl jízdy</string>
-
     <string name="select_gpx_folder">Vybrat adresář trasy</string>
     <string name="file_can_not_be_moved">Soubor nemůže být přesunut.</string>
     <string name="shared_string_move">Přesunout</string>
@@ -2114,7 +2100,6 @@ Zobrazená oblast: %1$s x %2$s</string>
     <string name="import_gpx_failed_descr">OsmAnd nemůže naimportovat soubor. Prosím zkontrolujte, že má oprávnění číst soubor z tohoto umístění.</string>
     <string name="distance_moving">Vzdálenost opravená</string>
     <string name="shared_string_install">Instalovat</string>
-    <string name="online_photos">On-line fotografie</string>
     <string name="shared_string_add_photos">Přidat fotografie</string>
     <string name="no_photos_descr">Nemáme fotografie pro toto umístění.</string>
 

@@ -297,8 +297,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="about_settings_descr">Información sobre a versión, licenzas, participantes no proxecto</string>
 
 
-    <string name="local_index_tile_data_expire">Caducidade (minutos): %1$s</string>
-    <string name="local_index_tile_data_name">Datos das deselas: %1$s</string>
     <string name="edit_tilesource_maxzoom">Ampliación máxima</string>
     <string name="edit_tilesource_minzoom">Ampliación mínima</string>
     <string name="maps_define_edit">Definir/Editar…</string>
@@ -598,11 +596,9 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="confirm_interrupt_download">Desexa interromper a descarga de ficheiros?</string>
 	<string name="first_time_msg">Grazas por empregar o OsmAnd. Para moitas das funcionalidades deste aplicativo fan falta algúns datos rexionais sen conexión que poden ser descargados desde «Configuración» → «Xestionar os ficheiros de mapas». Posteriormente é posíbel ver mapas, atopar enderezos, consultar puntos de interese (PDI) e atopar transporte público.</string>    
 	<string name="basemap_was_selected_to_download">Requírese o mapa base para que o aplicativo funcione axeitadamente e foi seleccionado para ser descargado.</string>
-	<string name="local_indexes_cat_tile">Mapas con conexión e en teselas descargadas</string>
-	<string name="local_indexes_cat_map">Mapas normais (vectoriais)</string>
+    <string name="local_indexes_cat_map">Mapas normais (vectoriais)</string>
 	<string name="index_settings_descr">Descargar e xestionar ficheiros de mapas sen conexión almacenados no dispositivo</string>
 	<string name="map_online_plugin_is_not_installed">Activar o engadido de mapas con conexión para seleccionar fontes de mapas diferentes</string>
-	<string name="map_online_data">Mapas con conexión e en teselas</string>
     <string name="shared_string_online_maps">Mapas con conexión</string>
 
 
@@ -878,8 +874,7 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="voice_stream_voice_call">Son de chamada telefónica</string>
 	<string name="voice_stream_notification">Son de notificaión</string>
 	<string name="voice_stream_music">Son de música</string>
-	<string name="warning_tile_layer_not_downloadable">O aplicativo non pode descargar a capa de mapa %1$s; tente reinstalala.</string>
-	<string name="overlay_transparency_descr">Modificar a transferencia da sobreposición</string>
+    <string name="overlay_transparency_descr">Modificar a transferencia da sobreposición</string>
 	<string name="overlay_transparency">Transparencia da sobreposición</string>
 	<string name="map_transparency_descr">Modificar a transparencia do mapa base</string>
 	<string name="map_transparency">Transparencia do mapa base</string>
@@ -1148,7 +1143,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="hint_search_online">Busca na rede: Número da casa, rúa, cidade</string>
 	<string name="search_offline_address">Busca sen conexión</string>
 	<string name="search_online_address">Busca con conexión</string>
-	<string name="max_level_download_tile">Max. online zoom</string>
     <string name="route_general_information">Distancia total %1$s, tempo de viaxe %2$d h %3$d m.</string>
 	<string name="router_service_descr">Escoller un servizo de navegación con ou sen conexión</string>
 	<string name="router_service">Navigation service</string>
@@ -1231,8 +1225,7 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="show_poi_over_map_description">Mostrar os PDI no mapa (empregar o último filtro escollido)</string>
 	<string name="show_poi_over_map">Mostrar os PDI</string>
     <string name="map_source">Fonte do mapa</string>
-	<string name="use_internet">Empregar a Internet</string>
-	<string name="show_location">Mostrar a súa situación</string>
+    <string name="show_location">Mostrar a súa situación</string>
 	
 	
 	<string name="show_gps_coordinates_text">Mostrar as coordenadas de GPS no mapa</string>
@@ -1394,7 +1387,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="logged_as">Identificado como %1$s</string>
 	
 	<string name="speak_pedestrian">Pasos de peón</string>
-    <string name="rendering_attr_roadStyle_name">Estilo de estrada</string>
     <string name="rendering_value_default_name">Predeterminado</string>
     <string name="rendering_value_orange_name">Laranxa</string>
     <string name="traffic_warning_pedestrian">Paso de peóns</string>
@@ -1522,8 +1514,7 @@ Lon %2$s</string>
     <string name="location_on_map">Situación:\n Lat %1$s\n Lon %2$s</string>
 	<string name="watch">Vixiar</string>
 	<string name="notes">Notas</string>
-	<string name="online_map">Mapa na rede</string>
-	<string name="roads_only">Só estradas</string>
+    <string name="roads_only">Só estradas</string>
     <string name="device_memory">Memoria do dispositivo</string>
     <string name="remove_the_tag">RETIRAR A ETIQUETA</string>
     <string name="gps_status">Estado do GPS</string>
@@ -1767,7 +1758,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="rendering_attr_currentTrackColor_description">Cor de GPX</string>
     <string name="rendering_attr_currentTrackWidth_description">Largo do GPX</string>
     <string name="free">"Libre %s1$s "</string>
-    <string name="rendering_attr_roadStyle_description">Estilo de estrada</string>
     <string name="routing_attr_avoid_stairs_name">Evitar escaleiras</string>
     <string name="routing_attr_avoid_stairs_description">Evitar escaleiras</string>
     <string name="routing_attr_avoid_borders_name">Evitar cruzar fronteiras</string>
@@ -1848,7 +1838,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="item_removed">Elemento retirado</string>
     <string name="n_items_removed">elementos retirados</string>
     <string name="shared_string_undo_all">DESFACER TODO</string>
-    <string name="rendering_value_thin_name">Delgado</string>
     <string name="rendering_value_medium_name">Mediano</string>
     <string name="rendering_value_bold_name">Gordo</string>
     <string name="no_map_markers_found">Engada marcadores de mapa a través do mapa</string>
@@ -2154,7 +2143,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="file_can_not_be_moved">Non é posíbel mover o ficheiro.</string>
     <string name="shared_string_move">Mover</string>
     <string name="shared_string_tracks">Pistas</string>
-    <string name="routing_attr_driving_style_name">Estilo de condución</string>
     <string name="route_altitude">Altitude da ruta</string>
     <string name="altitude_descent">Descenso</string>
     <string name="altitude_ascent">Ascenso</string>
@@ -2173,7 +2161,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="lang_ber">Bérber</string>
     <string name="lang_kn">Kannada</string>
     <string name="shared_string_install">Instalar</string>
-    <string name="online_photos">Fotos da rede</string>
     <string name="quick_action_resume_pause_navigation">Retomar/Deter a navegación</string>
     <string name="quick_action_resume_pause_navigation_descr">Prema neste botón para deter a navegación, ou para retomala se xa estaba detida.</string>
     <string name="quick_action_start_stop_navigation">Iniciar/Rematar a navegación</string>

@@ -16,8 +16,7 @@
     <string name="shared_string_or">или</string>
 	<string name="auto_zoom_none">Без ауто-зума</string>
 	<string name="base_world_map">Основна карта света</string>
-	
-	<string name="local_index_tile_data_expire">Истиче(минута): %1$s</string>
+
     <string name="edit_tilesource_maxzoom">Максимално увеличање</string>
     <string name="edit_tilesource_minzoom">Минимално увеличање</string>
     <string name="map_widget_fps_info">Подаци о грешкама брзине приказа сличица</string>
@@ -311,7 +310,6 @@
     <string name="traffic_warning_speed_limit">Ограничење брзине</string>
     <string name="traffic_warning_stop">Знак стоп</string>
     <string name="speak_pedestrian">Пешачки прелази</string>
-    <string name="rendering_attr_roadStyle_name">Врста пута</string>
     <string name="avoid_roads_msg">Можете да изаберете заменску путању избором путева за избегавање</string>
     <string name="navigation_over_track">Да започнем навођење дуж стазе?</string>
 	<string name="rendering_value_orange_name">Наранџаста</string>
@@ -333,8 +331,7 @@
     <string name="location_on_map">Географски положај:\nШирина %1$s↵\nДужина %2$s</string>
 	<string name="watch">Прегледај</string>
 	<string name="notes">Бележница</string>
-	<string name="online_map">Карта са мреже</string>
-	<string name="roads_only">Само путеви</string>
+    <string name="roads_only">Само путеви</string>
     <string name="free">"Слободно %1$s "</string>
 	<string name="device_memory">Складиште уређаја</string>
     <string name="edit_group">Уреди скуп</string>
@@ -590,7 +587,6 @@
     <string name="osm_settings">Уређивање ОСМ-а</string>
     <string name="debugging_and_development">Развој ОсмАнда</string>
     <string name="days_behind">претходни дани</string>
-    <string name="rendering_attr_roadStyle_description">Врсте путева</string>
     <string name="rendering_value__name">Подразумевано</string>
     <string name="rendering_category_transport">Превоз</string>
     <string name="print_route">Штампај путању</string>
@@ -1123,8 +1119,6 @@
     <string name="access_sort">Разврстај</string>
     <string name="map_mode">Приказ карте</string>
     <string name="number_of_gpx_files_selected_pattern">%s датотека ГПИкса је одабрано</string>
-    <string name="rendering_value_fine_name">Нежно</string>
-    <string name="rendering_value_thin_name">Танко</string>
     <string name="rendering_value_medium_name">Средње</string>
     <string name="rendering_value_bold_name">Дебело</string>
     <string name="report">Извештај</string>
@@ -1193,7 +1187,6 @@
     <string name="edit_name">Промени име</string>
     <string name="animate_my_location">Оживи мој положај</string>
     <string name="shared_string_install">Угради</string>
-    <string name="online_photos">Слике на мрежи</string>
     <string name="shared_string_add_photos">Додај слике</string>
     <string name="no_photos_descr">Нема слика овог положаја.</string>
     <string name="private_access_routing_req">Ваше одредиште се налази у подручју са личним приступом. Желите ли дозволити приступ личним путевима овом путовању?</string>
@@ -1269,7 +1262,6 @@
     <string name="file_can_not_be_moved">Датотека се не може преместити.</string>
     <string name="shared_string_move">Премести</string>
     <string name="shared_string_tracks">Стазе</string>
-    <string name="routing_attr_driving_style_name">Начин вожње</string>
     <string name="route_altitude">Успон пута</string>
     <string name="altitude_descent">Силазан</string>
     <string name="altitude_ascent">Узлазан</string>

@@ -60,10 +60,8 @@
     <string name="bg_service_sleep_mode_on">Atura\n…el mode en segon pla</string>
     <string name="confirm_interrupt_download">Voleu cancel·lar la baixada del fitxer?</string>
     <string name="select_index_file_to_download">No s\'ha trobat res. Si no trobeu la vostra regió, podeu crear-la vosaltres mateixos (vegeu http://osmand.net).</string>
-    <string name="local_indexes_cat_tile">Mapes de tessel·les en línia i cau</string>
     <string name="local_indexes_cat_map">Mapes estàndards (vectorials)</string>
     <string name="map_online_plugin_is_not_installed">Activeu el connector Mapes en línia per poder seleccionar diferents fonts de mapes</string>
-    <string name="map_online_data">Mapes en línia (tessel·les)</string>
     <string name="shared_string_online_maps">Mapes en línia</string>
     <string name="osmand_accessibility_description">"Aquest connector fa disponible directament des OsmAnd  les característiques d\'accessibilitat del dispositiu. Us permet, per exemple,  ajustar la velocitat de la veu en la síntesi TTS , configurar la pantalla de navegació, l\'ús del ratolí de bola pel zoom o de la veu sintetitzada, com per anunciar automàticament la vostra posició."</string>
     <string name="plugins_screen">Gestor de connectors</string>
@@ -493,7 +491,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="pref_overlay">Capa de fons/Cap superposada</string>
     <string name="map_version_changed_info">El servidor conté fitxers de mapes que no són compatibles amb la versió actual de l\'aplicació. Per descarregar-los i usar-los actualitzeu a l\'última versió.</string>
     <string name="local_index_action_do">Estas a punt de %1$s %2$s element(s). Continuar?</string>
-    <string name="warning_tile_layer_not_downloadable">L\'aplicació no pot descarregar la capa del mapa %1$s, si us plau prova a reinstal·lar-lo.</string>
     <string name="layer_overlay">Mapa sobreposat…</string>
     <string name="map_overlay">Mapa superposat</string>
     <string name="choose_auto_follow_route_descr">Temps de sincronització del mapa seguint la nova posició.</string>
@@ -526,7 +523,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="add_new_rule">Afegir nova regla</string>
     <string name="update_poi_no_offline_poi_index">No hi ha dades PDI fora de linía per a aquesta area</string>
     <string name="update_poi_error_local">Error actualitzant la llista de PDIs</string>
-    <string name="max_level_download_tile">Max. zooms en linía</string>
     <string name="router_service">Servei de navegació</string>
     <string name="downloading_list_indexes">Baixant llista de les regions disponibles…</string>
     <string name="get_directions">Direccions</string>
@@ -554,7 +550,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="search_POI_level_btn">Cerca\'n més</string>
     <string name="map_source">Font del mapa</string>
     <string name="show_poi_over_map_description">Mostra la darrera superposició de PDI seleccionada en el mapa.</string>
-    <string name="use_internet">Usa Internet</string>
     <string name="search_address_top_text">Selecció de l\'adreça</string>
     <string name="favourites_context_menu_edit">Edita el preferit</string>
     <string name="favourites_context_menu_delete">Elimina el preferit</string>
@@ -930,8 +925,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="about_version">Versió:</string>
     <string name="shared_string_about">Quant a</string>
     <string name="about_settings_descr">Informació de la versió, llicències, membres del projecte</string>
-    <string name="local_index_tile_data_expire">Expira (minuts): %1$s</string>
-    <string name="local_index_tile_data_name">Dades de les tessel·les: %1$s</string>
     <string name="edit_tilesource_maxzoom">Escalat màxim</string>
     <string name="edit_tilesource_minzoom">Escalat mínim</string>
     <string name="maps_define_edit">Defineix/edita…</string>
@@ -1263,7 +1256,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="dash_download_msg">Heu baixat %1$s mapes</string>
     <string name="dash_download_new_one">Baixa un mapa nou</string>
     <string name="dash_download_manage">Gestiona</string>
-    <string name="rendering_attr_roadStyle_name">Estil de via</string>
     <string name="rendering_value_default_name">Per defecte</string>
     <string name="rendering_value_orange_name">Taronja</string>
     <string name="traffic_warning_railways">Pas a nivell</string>
@@ -1303,7 +1295,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="device_memory">Memòria del dispositiu</string>
     <string name="watch">Visualitza</string>
     <string name="notes">Notes</string>
-    <string name="online_map">Mapa en línia</string>
     <string name="roads_only">Només carreteres</string>
     <string name="days_behind">dies desfasat</string>
     <string name="track_segments">Segments de traça</string>
@@ -1627,7 +1618,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
 	
     <string name="rendering_attr_currentTrackColor_description">Color de la traça GPX</string>
     <string name="rendering_attr_currentTrackWidth_description">Amplada traça GPX</string>
-    <string name="rendering_attr_roadStyle_description">Estil de via</string>
     <string name="poi_dialog_reopen">Reobre</string>
 	
     
@@ -1730,7 +1720,6 @@ L\'ús de memòria serà de {3} MB temporalment i {1} MB permanentment.
     <string name="no_waypoints_found">No s\'ha trobat cap fita</string>
     <string name="report">Informe</string>
     <string name="storage_permission_restart_is_required">L\'aplicació ja permet escriure a un emmagatzemament extern. Cal una reinicialització manual de l\'aplicació.</string>
-    <string name="rendering_value_thin_name">Estilitzat</string>
     <string name="rendering_value_medium_name">Normal</string>
     <string name="rendering_value_bold_name">Negreta</string>
     <string name="finish_navigation">Atura la navegació</string>
@@ -1912,7 +1901,6 @@ L\'ús de memòria serà de {3} MB temporalment i {1} MB permanentment.
     <string name="gpx_no_tracks_title_folder">També podeu afegir traces a la carpeta</string>
     <string name="gpx_add_track">Afegeix traça</string>
     <string name="gpx_appearance">Aparença</string>
-    <string name="rendering_value_fine_name">Bé</string>
     <string name="route_calculation">Càlcul de ruta</string>
     <string name="upload_poi">Puja PDI</string>
     <string name="route_roundabout_short">Agafeu la %1$d sortida i continueu</string>
@@ -2021,8 +2009,7 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="average_altitude">Altitud mitjana</string>
     <string name="shared_string_time">Durada</string>
     <string name="total_distance">Distància total</string>
-    <string name="routing_attr_driving_style_name">Estil de conducció</string>
-    
+
     <string name="shared_string_tracks">Pistes</string>
     <string name="select_gpx_folder">Seleccioneu la carpeta de traces</string>
     <string name="file_can_not_be_moved">El fitxer no es pot moure.</string>
@@ -2111,7 +2098,6 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="nothing_found_descr">Modifiqueu la consulta de cerca o augmenteu el radi de cerca.</string>
     <string name="shared_string_add_photos">Afegeix fotos</string>
     <string name="shared_string_install">Instal·la</string>
-    <string name="online_photos">Fotos en línia</string>
     <string name="no_photos_descr">No tenim fotos per aquesta ubicació.</string>
     <string name="distance_moving">Distància corregida</string>
     <string name="shared_string_permissions">Permisos</string>

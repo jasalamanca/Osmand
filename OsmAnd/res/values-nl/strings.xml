@@ -247,9 +247,8 @@ Er is nu {2} MB beschikbaar</string>
   <string name="local_indexes_cat_backup">Gedeactiveerd</string>
   <string name="local_indexes_cat_tts">Gesproken aanwijzingen (TTS)</string>
   <string name="local_indexes_cat_voice">Gesproken aanwijzingen (opgenomen)</string>
-  
-  <string name="local_indexes_cat_tile">Online en opgeslagen tegelkaarten</string>
-  <string name="local_indexes_cat_map">Normale kaarten (vector)</string>
+
+    <string name="local_indexes_cat_map">Normale kaarten (vector)</string>
   <string name="local_indexes_cat_poi">Interessepunt-gegevens</string>
   <string name="ttsvoice">Stemmen van spraaksynthese</string>
   <string name="search_offline_clear_search">Nieuwe zoekactie</string>
@@ -277,8 +276,7 @@ Er is nu {2} MB beschikbaar</string>
   <string name="voice_stream_voice_call">als Telefoonoproep (onderbreekt BT-autoradio)</string>
   <string name="voice_stream_notification">als melding</string>
   <string name="voice_stream_music">als media/muziek</string>
-  <string name="warning_tile_layer_not_downloadable">Kaartlaag %1$s kan niet worden gedownload. Probeer deze opnieuw te installeren.</string>
-  <string name="overlay_transparency_descr">Wijzig overlay-transparantie</string>
+    <string name="overlay_transparency_descr">Wijzig overlay-transparantie</string>
   <string name="overlay_transparency">Overlay-transparantie</string>
   <string name="map_transparency_descr">Wijzig basiskaart-transparantie</string>
   <string name="map_transparency">Basiskaart-transparantie</string>
@@ -553,7 +551,6 @@ Er is nu {2} MB beschikbaar</string>
   <string name="hint_search_online">Online zoeken: Huisnummer, Straat, Plaats</string>
   <string name="search_offline_address">Offline</string>
   <string name="search_online_address">Internet</string>
-  <string name="max_level_download_tile">Max. online zoom</string>
     <string name="route_general_information">Totale afstand %1$s, reistijd %2$d u %3$d min.</string>
   <string name="router_service_descr">Kies een online of offline routeberekening</string>
   <string name="router_service">Routeberekening</string>
@@ -646,8 +643,7 @@ Er is nu {2} MB beschikbaar</string>
   <string name="show_poi_over_map_description">Toon interessepunten op kaart (met laatst gebruikte filter)</string>
   <string name="show_poi_over_map">Toon Interessepunten</string>
     <string name="map_source">Kaartbron</string>
-  <string name="use_internet">Gebruik internet</string>
-  <string name="show_location">Toon Huidige Positie</string>
+    <string name="show_location">Toon Huidige Positie</string>
   
   
   <string name="show_gps_coordinates_text">Toon GPS-coördinaten op kaart</string>
@@ -745,7 +741,6 @@ Er is nu {2} MB beschikbaar</string>
   <string name="basemap_was_selected_to_download">De basiskaart is nodig voor OsmAnd en is al geselecteerd om te downloaden.</string>
   
   <string name="map_online_plugin_is_not_installed">Activeer de Online Kaarten-plugin om andere kaartbronnen te kunnen selecteren</string>
-  <string name="map_online_data">Online (raster-) kaarten</string>
     <string name="shared_string_online_maps">Online kaarten</string>
 
 
@@ -1038,8 +1033,6 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
 	<string name="driving_region_europe_asia">Europa, Azië en Zuid-Amerika enz.</string>
 	<string name="driving_region_uk">Verenigd Koninkrijk, India, etc.</string>
 	<string name="map_widget_fps_info">FPS-debuginformatie</string>
-    <string name="local_index_tile_data_expire">Verlopen (minuten): %1$s</string>
-    <string name="local_index_tile_data_name">Kaartsegmentgegevens: %1$s</string>
     <string name="edit_tilesource_maxzoom">Max zoomniveau</string>
     <string name="edit_tilesource_minzoom">Min zoomniveau</string>
     <string name="maps_define_edit">Definieer/bewerk…</string>
@@ -1384,7 +1377,6 @@ Wil je een nieuwe map maken op de toegestane locatie en de OsmAnd-bestanden daar
     <string name="dash_download_msg">Je hebt %1$s kaarten gedownload</string>
     <string name="dash_download_new_one">Download een nieuwe kaart</string>
     <string name="dash_download_manage">Beheer</string>
-    <string name="rendering_attr_roadStyle_name">Weergave van wegen</string>
     <string name="rendering_value_default_name">Standaard</string>
     <string name="rendering_value_orange_name">Oranje</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerikaanse wegenkaart</string>
@@ -1442,8 +1434,7 @@ Wil je een nieuwe map maken op de toegestane locatie en de OsmAnd-bestanden daar
 
     <string name="location_on_map">Locatie:\n Lat %1$s\n Lon %2$s</string>
 	<string name="notes">AV-Notities</string>
-	<string name="online_map">Online kaart</string>
-	<string name="roads_only">Alleen wegen</string>
+    <string name="roads_only">Alleen wegen</string>
     <string name="free">%1$s beschikbaar</string>
 	<string name="device_memory">Apparaatgeheugen</string>
  	<string name="route_points">Route punten</string>
@@ -1821,7 +1812,6 @@ Lengtegraad:\t\t%2$s</string>
     <string name="context_menu_item_edit_waypoint">GPX-routepunt bewerken</string>
     <string name="rendering_attr_currentTrackColor_description">GPX-kleur</string>
     <string name="rendering_attr_currentTrackWidth_description">GPX breedte</string>
-    <string name="rendering_attr_roadStyle_description">Stijl van wegen</string>
     <string name="poi_dialog_reopen">Heropenen</string>
     <string name="get_full_version">Volledige versie</string>
     <string name="save_poi_without_poi_type_message">Deze POI echt bewaren zonder het type aan te geven?</string>
@@ -1963,7 +1953,6 @@ Er is nu {2} MB beschikbaar</string>
     <string name="file_name_containes_illegal_char">Bestandsnaam bevat verkeerd teken</string>
 <string name="no_map_markers_found">Markeervlaggetjes kun je via de kaart toevoegen</string>
     <string name="no_waypoints_found">Geen punten gevonden</string>
-    <string name="rendering_value_thin_name">Dun</string>
     <string name="rendering_value_medium_name">Normaal</string>
     <string name="rendering_value_bold_name">Vet</string>
     <string name="map_mode">Dag-Nacht stijl</string>
@@ -2110,7 +2099,6 @@ Er is nu {2} MB beschikbaar</string>
     <string name="trip_rec_notification_settings_desc">Toon Android-melding waarmee de GPX-opname gestart kan worden.</string>
     <string name="shared_string_notifications">Meldingen</string>
     <string name="route_calculation">Route berekening</string>
-    <string name="rendering_value_fine_name">Fijn</string>
     <string name="search_map_hint">Zoek stad of regio</string>
     <string name="route_roundabout_short">Neem %1$de afslag</string>
     <string name="upload_poi">POI Uploaden</string>
@@ -2224,8 +2212,7 @@ voor Gebied: %1$s x %2$s</string>
     <string name="shared_string_color">Kleur</string>
     <string name="shared_string_time_span">Tijdsduur</string>
     <string name="shared_string_time_moving">Tijd in beweging</string>
-    <string name="routing_attr_driving_style_name">Rijstijl</string>
-    
+
     <string name="routing_attr_height_obstacles_name">Gebruik hoogtegegevens</string>
     <string name="routing_attr_height_obstacles_description">Gebruik hoogtegegevens van SRTM, ASTER en EU-DEM.</string>
 
@@ -2305,7 +2292,6 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="increase_search_radius">Zoekgebied vergroten</string>
     <string name="nothing_found">Niets gevonden :(</string>
     <string name="nothing_found_descr">Probeer een andere zoekterm of vergroot het zoekgebied.</string>
-    <string name="online_photos">Online foto\'s</string>
     <string name="shared_string_add_photos">Foto\'s toevoegen</string>
     <string name="no_photos_descr">Geen foto\'s beschikbaar voor deze locatie.</string>
     <string name="shared_string_install">Installeren</string>

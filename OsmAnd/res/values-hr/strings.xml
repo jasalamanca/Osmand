@@ -274,9 +274,8 @@
 	
 	<string name="show_gps_coordinates_text">Prikaži GPS koordinate na karti</string>
 	<string name="shared_string_exit">Izlaz</string>
-	
-	<string name="use_internet">Koristi Internet</string>
-	<string name="show_location">Prikaži lokaciju</string>
+
+    <string name="show_location">Prikaži lokaciju</string>
 	
 	<string name="show_poi_over_map">Prikaži POI</string>
 	<string name="map_source">Izvor karte</string>
@@ -659,8 +658,7 @@
 	<string name="voice_stream_voice_call">Zvuk glasovnog poziva</string>
 	<string name="voice_stream_notification">Zvuk obavijesti</string>
 	<string name="voice_stream_music">Zvuk medija/glazbe</string>
-	<string name="warning_tile_layer_not_downloadable">Program ne može preuzeti sloj karte %1$s, pokušajte ga ponovno instalirati.</string>
-	<string name="tts_language_not_supported">Odabrani jezik nije podržan od strane instaliranog Android TTS (text-to-speech) engina. Želite li tražiti drugi TTS engin u Market trgovini? Inače će se koristiti unaprijed odabran TTS jezik.</string>
+    <string name="tts_language_not_supported">Odabrani jezik nije podržan od strane instaliranog Android TTS (text-to-speech) engina. Želite li tražiti drugi TTS engin u Market trgovini? Inače će se koristiti unaprijed odabran TTS jezik.</string>
 	<string name="internet_connection_required_for_online_route">Online navigacija je odabrana, ali internet veza nije dostupna.</string>
 	
 	<string name="map_text_size_descr">Odaberite veličinu teksta za imena na karti</string>
@@ -877,9 +875,8 @@
     <string name="app_modes_choose">Profili aplikacije</string>
 	<string name="app_modes_choose_descr">Odaberite profil koji će se koristiti u aplikaciji</string>
     <string name="local_osm_changes_delete_all_confirm">Izbrisati ćete %1$d osm promjene. Jeste li sigurni?</string>
-    
-	
-    <string name="local_index_tile_data_expire">Expire za (minutes): %1$s</string>
+
+
     <string name="speak_street_names">Najavi imena ulica (TTS)</string>
     <string name="osb_author_or_password_not_specified">Molimo vas da u postavkama navedete OSM korisničko ime i lozinku</string>
     <string name="search_street_in_neighborhood_cities">Traži ulicu u susjedstvu</string>
@@ -1276,8 +1273,7 @@
 	<string name="back_to_map">Natrag na kartu</string>
 	<string name="location_on_map">Lokacija:\n Širina %1$s\n Dužina %2$s</string>
 	<string name="notes">Bilješke</string>
-	<string name="online_map">Online karta</string>
-	<string name="roads_only">Samo ceste</string>
+    <string name="roads_only">Samo ceste</string>
     <string name="free">"Slobodno %1$s "</string>
 	<string name="device_memory">Memorija uređaja</string>
     <string name="edit_group">Uredi grupu</string>
@@ -1346,7 +1342,6 @@
     <string name="specified_directiory_not_writeable">Karte se ne mogu stvoriti u navedenoj mapi</string>
     <string name="rendering_attr_OSMMapperAssistant_name">OSM asistent za mapiranje</string>
 	<string name="record_plugin_name">Bilježenje putovanja</string>
-	<string name="rendering_attr_roadStyle_name">Stil ceste</string>
     <string name="points">Točke</string>
     <string name="trip_rec_notification_settings">Snimanje puta (nema podataka)</string>
     <string name="trip_rec_notification_settings_desc">Prikaži obavijest koja omogućuje pokretanje snimanja puta tako da pritisnete tipku za snimanje</string>
@@ -1367,8 +1362,7 @@
     <string name="shared_string_color">Boja</string>
     <string name="file_can_not_be_moved">Datoteke se ne mogu premjestiti.</string>
     <string name="shared_string_move">Premjestiti</string>
-    <string name="routing_attr_driving_style_name">Stil vožnje</string>
-    
+
     <string name="altitude_descent">nizbrdica</string>
     <string name="altitude_ascent">Uzbrdica</string>
     <string name="altitude_range">Visinska razlika</string>

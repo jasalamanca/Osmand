@@ -10,12 +10,10 @@
   <string name="first_time_msg">პროგრამის მთავარი თვისებების გამოსაყენებლად თქვენ გჭირდებათ მონაცემები რომლებიც გამოიყენება გათიშულ რეჟიმში, რომელიც შეგიძლიათ ჩამოტვირთოთ (პარამეტრები-&gt;მონაცემები გათიშვისას). ამის შემდეგ თქვენ შეგეძლებათ ძებნა როგორც მისამართის, ასევე საჯარო ტრანსპორტის მიხედვით.</string>
   <string name="basemap_was_selected_to_download">ბაზური რუკა საჭიროა პროგრამის ფუნქციონირებისათვის და არჩეულ იქნა გადმოსაწერად.</string>
   <string name="select_index_file_to_download">არაფერი არ იქნა ნაპოვნი. თუ ვერ პოულობთ თქვენი რეგიონის რუკას, შეგიძლიათ შექმნათ თვითონ. (იხილეთ http://osmand.net).</string>
-  <string name="local_indexes_cat_tile">მიმდინარე რუკები (ნახაზები)</string>
-  <string name="local_indexes_cat_map">გათიშული რუკები (ვექტორული)</string>
+    <string name="local_indexes_cat_map">გათიშული რუკები (ვექტორული)</string>
   
   <string name="index_settings_descr">გათიშული რუკების ჩამოტვირთვა, მართვა და დეტალები</string>
   <string name="map_online_plugin_is_not_installed">"ჩართეთ მიმდინარე რუკების დამატება სხვადასხვა წყაროების სანახავად"</string>
-  <string name="map_online_data">მიმდინარე რუკები</string>
     <string name="shared_string_online_maps">მიმდინარე რუკები</string>
 
 
@@ -298,8 +296,7 @@
   <string name="voice_stream_voice_call">ხმოვანი დარეკვა</string>
   <string name="voice_stream_notification">შეტყობინების ხმა</string>
   <string name="voice_stream_music">მუსიკის ხმა</string>
-  <string name="warning_tile_layer_not_downloadable">შეუძლებელია %1$s -ის ჩამოტვირთვა, გთხოვთ თავიდან დააყენოთ აპლიკაცია.</string>
-  <string name="overlay_transparency_descr">გამჭირვალობის შეცვლა</string>
+    <string name="overlay_transparency_descr">გამჭირვალობის შეცვლა</string>
   <string name="overlay_transparency">გამჭირვალობა</string>
   <string name="map_transparency_descr">ბაზური რუკის გამჭირვალობის შეცვლა</string>
   <string name="map_transparency">ბაზური რუკის გამჭირვალობა</string>
@@ -583,7 +580,6 @@
   <string name="hint_search_online">სახლის ნომერი, ქუჩა, ქალაქი</string>
   <string name="search_offline_address">გათიშული</string>
   <string name="search_online_address">ინტერნეტი</string>
-  <string name="max_level_download_tile">მაქს. მიმდინარე გადიდება</string>
     <string name="route_general_information">ჯამური სიშორე %1$s,\n მოგზაურობის დრო %2$d სთ %3$d წთ.</string>
   <string name="router_service_descr">აირჩიეთ მიმდინარე ან გათიშული ნავიგაციის სერვისი</string>
   <string name="router_service">ნავიგაციის სერვისი</string>
@@ -679,8 +675,7 @@
   <string name="show_poi_over_map_description">POI-ის რუკაზე ჩვენება (ბოლოს არჩეული ფილტრის გამოყენებით)</string>
   <string name="show_poi_over_map">POI-ის ჩვენება</string>
     <string name="map_source">რუკის წყარო</string>
-  <string name="use_internet">ინტერნეტის გამოყენება</string>
-  <string name="show_location">მდებარეობის ჩვენება</string>
+    <string name="show_location">მდებარეობის ჩვენება</string>
   
   
   <string name="show_gps_coordinates_text">GPS კოორდინატების რუკაზე ჩვენება</string>
@@ -988,8 +983,6 @@
     <string name="shared_string_about">შესახებ</string>
     <string name="about_settings_descr">ინფორმაცია ვერსიის, ლიცენზიების და პროექტის წევრების შესახებ</string>
 
-    <string name="local_index_tile_data_expire">დროის გასვლა (წთ): %1$s</string>
-    <string name="local_index_tile_data_name">ინდექსი: %1$s</string>
     <string name="amenity_type_seamark">ზღვის დონიდან</string>
     <string name="edit_tilesource_maxzoom">მაქს. გადიდება</string>
     <string name="edit_tilesource_minzoom">მინ. გადიდება</string>
@@ -1192,7 +1185,6 @@
     <string name="file_can_not_be_moved">ფაილის გადაადგილება შეუძლებელია.</string>
     <string name="shared_string_move">გადატანა</string>
     <string name="shared_string_tracks">ბილიკები</string>
-    <string name="routing_attr_driving_style_name">მართვის სტილი</string>
     <string name="route_altitude">გზის სიმაღლე</string>
     <string name="altitude_descent">დაშვება</string>
     <string name="altitude_ascent">ასვლა</string>

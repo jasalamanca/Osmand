@@ -22,8 +22,7 @@
      <string name="voice_stream_voice_call">通話ストリーム(BT接続カーステレオも中断)</string>
      <string name="voice_stream_notification">通知ストリーム</string>
      <string name="voice_stream_music">音楽ストリーム</string>
-     <string name="warning_tile_layer_not_downloadable">アプリケーションはマップレイヤー %1$sをダウンロードできません、再度インストールしてみてください。</string>
-     <string name="overlay_transparency_descr">オーバーレイマップの透明度を設定します</string>
+    <string name="overlay_transparency_descr">オーバーレイマップの透明度を設定します</string>
      <string name="overlay_transparency">オーバーレイ透明度</string>
      <string name="map_transparency_descr">ベースマップの透明度を設定します</string>
      <string name="map_transparency">ベースマップ透明度</string>
@@ -366,7 +365,6 @@ POIの更新は利用できません</string>
      <string name="hint_search_online">オンライン検索:番地、町名、市町村</string>
      <string name="search_offline_address">オフライン</string>
      <string name="search_online_address">インターネット</string>
-     <string name="max_level_download_tile">最大オンラインズーム</string>
     <string name="route_general_information">総距離 %1$s, 移動時間 %2$d 時間 %3$d 分。</string>
      <string name="router_service_descr">オンラインまたはオフラインで使用する経路案内方法を選択します</string>
      <string name="router_service">経路案内サービス</string>
@@ -476,8 +474,7 @@ POIの更新は利用できません</string>
 (前回選択したフィルタを使用)</string>
  <string name="show_poi_over_map">POIを表示</string>
     <string name="map_source">マップソース</string>
- <string name="use_internet">インターネットを使用</string>
- <string name="show_location">現在地を表示</string>
+    <string name="show_location">現在地を表示</string>
  
  
  <string name="show_gps_coordinates_text">マップ上にGPS座標を表示</string>
@@ -604,8 +601,6 @@ POIの更新は利用できません</string>
     <string name="about_settings_descr">バージョン情報、ライセンス、プロジェクトメンバー</string>
 
 
-    <string name="local_index_tile_data_expire">有効期限 (分): %1$s</string>
-    <string name="local_index_tile_data_name">タイルデータ: %1$s</string>
     <string name="edit_tilesource_maxzoom">最大ズーム</string>
     <string name="edit_tilesource_minzoom">最小ズーム</string>
     <string name="maps_define_edit">マップの定義と編集…</string>
@@ -876,11 +871,9 @@ POIの更新は利用できません</string>
 
     <string name="unknown_from_location">出発点は、まだ決定されていません</string>
 	<string name="basemap_was_selected_to_download">ベースマップはアプリケーションの動作に必要なので、ダウンロード候補として選択されました。</string>
-	<string name="local_indexes_cat_tile">オンライン(またはキャッシュ済み)タイルマップ</string>
-	<string name="local_indexes_cat_map">標準マップ(ベクター形式)</string>
+    <string name="local_indexes_cat_map">標準マップ(ベクター形式)</string>
 	<string name="map_online_plugin_is_not_installed">別のマップソースを選択するためにオンラインマッププラグインを有効にする</string>
-	<string name="map_online_data">オンラインタイルマップ</string>
-	<string name="shared_string_online_maps">オンラインマップ</string>
+    <string name="shared_string_online_maps">オンラインマップ</string>
 
 
     <string name="osmand_accessibility_description">このプラグインはデバイスのユーザー補助機能をOsmAndから直接利用できるようになります。例：TTS音声の発声速度の調整や、ナビゲーション画面を操作するパッドの設定、トラックボールを利用したズームコントロール、テキスト発声機能を使ってのあなたの現在地を自動でお知らせするフィードバック機能など。</string>
@@ -1491,7 +1484,6 @@ POIの更新は利用できません</string>
 	<string name="avoid_roads_msg">使用しない道路を選択することで、別の経路を検索することができます</string>
     
 	<string name="speak_pedestrian">横断歩道</string>
-    <string name="rendering_attr_roadStyle_name">道路の表示形式</string>
     <string name="rendering_value_default_name">標準</string>
     <string name="rendering_value_orange_name">オレンジ</string>
     <string name="traffic_warning_railways">踏切</string>
@@ -1579,8 +1571,7 @@ POIの更新は利用できません</string>
     <string name="location_on_map">位置:\n緯度 %1$s\n経度 %2$s</string>
 	<string name="watch">表示</string>
 	<string name="notes">メモ全部</string>
-	<string name="online_map">オンラインマップ</string>
-	<string name="roads_only">道路のみ</string>
+    <string name="roads_only">道路のみ</string>
     <string name="free">空き %1$s</string>
 	<string name="device_memory">デバイス容量</string>
     <string name="edit_group">グループ編集</string>
@@ -1845,7 +1836,6 @@ POIの更新は利用できません</string>
     <string name="shared_string_send">送信</string>
     <string name="rendering_attr_currentTrackColor_description">GPX経路の色</string>
     <string name="rendering_attr_currentTrackWidth_description">GPX経路の幅</string>
-    <string name="rendering_attr_roadStyle_description">道路の表示形式</string>
     <string name="poi_dialog_reopen">再び開く</string>
 	<string name="application_dir_description">マップやその他データファイルを保存する場所を選択します。</string>
     
@@ -2038,7 +2028,6 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="access_sort">並べ替え</string>
     <string name="map_mode">昼夜モード切替</string>
     <string name="number_of_gpx_files_selected_pattern">%s個のGPXファイルが選択済み</string>
-    <string name="rendering_value_thin_name">細線</string>
     <string name="rendering_value_medium_name">中線</string>
     <string name="rendering_value_bold_name">太線</string>
     <string name="lang_es_us">スペイン語 (アメリカ)</string>
@@ -2151,8 +2140,7 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="file_can_not_be_moved">ファイルを移動することはできません。</string>
     <string name="shared_string_move">移動</string>
     <string name="shared_string_tracks">経路</string>
-    <string name="routing_attr_driving_style_name">運転スタイル</string>
-    
+
     <string name="route_altitude">ルートの標高</string>
     <string name="altitude_descent">下り</string>
     <string name="altitude_ascent">上り</string>
@@ -2340,14 +2328,12 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="save_poi_too_many_uppercase">名前に大文字が多すぎます。 続行しますか？</string>
     <string name="shared_string_add_photos">写真を追加</string>
     <string name="no_photos_descr">この近辺の写真はありません</string>
-    <string name="online_photos">近隣の写真(要オンライン)</string>
     <string name="shared_string_install">インストール</string>
     <string name="import_gpx_failed_descr">OsmAndは指定したファイルをインポートできません。OsmAndにその場所からファイルを読み取る権限があるか確認して下さい。</string>
     <string name="map_widget_ruler_control">同心円測定器</string>
     
     <string name="shared_string_permissions">権限</string>
     <string name="access_shared_string_navigate_up">上に移動</string>
-    <string name="rendering_value_fine_name">美麗</string>
     <string name="shared_string_reload">再読み込み</string>
     <string name="wrong_user_name">存在しないユーザー名です！</string>
     <string name="shared_string_to">この日付以前</string>

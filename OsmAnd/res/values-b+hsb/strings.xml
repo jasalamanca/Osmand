@@ -763,7 +763,6 @@
     <string name="show_poi_over_map_description">Njedawno wužiwane dypki na karće pokazać.</string>
     <string name="show_poi_over_map">Pokazaj runinu z dypkami</string>
     <string name="map_source">Žórło karty</string>
-    <string name="use_internet">Internet wužiwać</string>
     <string name="show_location">Moje stejišćo pokazać</string>
     <string name="show_gps_coordinates_text">GPS-koordinaty na karće pokazać</string>
     <string name="app_description">Nawigaciska aplikacija</string>
@@ -882,7 +881,6 @@
     <string name="shared_string_to">Do</string>
     <string name="import_gpx_failed_descr">OsmAnd njemóže importować dataju. Prošu přepruwuj hač ma OsmAnd dowolnosć za začitanje dataje z tutoho městna.</string>
     <string name="distance_moving">Zdalenosć skorigowana</string>
-    <string name="online_photos">Fota online</string>
     <string name="private_access_routing_req">Twój cil leži w priwatnej kónčinje. Chceš dowolić za tutu jězbu přistup k priwatnym pućam?</string>
     <string name="restart_search">Pytanje wospjetować</string>
     <string name="increase_search_radius">Pytanski radius powjetšić</string>
@@ -936,7 +934,6 @@
     <string name="select_gpx_folder">Rjadowak za čary wubrać</string>
     <string name="file_can_not_be_moved">Dataja njehodźi so přesunyć.</string>
     <string name="shared_string_tracks">Čary</string>
-    <string name="routing_attr_driving_style_name">Stil jědźenja</string>
     <string name="route_altitude">Wysokosć čary</string>
     <string name="altitude_descent">Wotstup</string>
     <string name="altitude_ascent">Postup</string>
@@ -1127,8 +1124,6 @@
     <string name="shared_string_do_not_show_again">Wjace njepokazać</string>
     <string name="record_plugin_name">Nahrawanje jězbow</string>
     <string name="osm_settings">Wobdźěłanje OSM</string>
-    <string name="rendering_attr_roadStyle_name">Stil pućow</string>
-    <string name="rendering_attr_roadStyle_description">Stil pućow</string>
     <string name="rendering_value__name">Standard</string>
     <string name="rendering_value_default_name">Standard</string>
     <string name="traffic_warning_railways">Železniski přechod</string>

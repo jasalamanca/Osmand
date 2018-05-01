@@ -267,9 +267,8 @@
 	
 	
 	<string name="show_gps_coordinates_text">عرض الإحداثيات على الخريطة</string>
-	
-	<string name="use_internet">استخدام الإنترنت</string>
-	<string name="show_location">عرض موقعك</string>
+
+    <string name="show_location">عرض موقعك</string>
 	
 	<string name="shared_string_exit">خروج</string>
 	
@@ -289,7 +288,6 @@
     
     <string name="map_magnifier">مكبر الخريطة</string>
     <string name="base_world_map">خريطة العالم الأساسية</string>
-	<string name="local_index_tile_data_expire">الانتهاء (دقائق):  %1$s</string>
     <string name="maps_define_edit">تعريف/تعديل…</string>
 	    
     
@@ -353,7 +351,6 @@
     <string name="add_tag">أضف وسما</string>
     <string name="show_warnings_descr">ضبط تحذيرات المرور ( حدود السرعة، والتوقف القسري، والمطبات الصناعية ) ، وتحذيرات كاميرا السرعة ، ومعلومات الممرات.</string>
 
-    <string name="local_index_tile_data_name">معلومات التّجانب: %1$s</string>
     <string name="use_compass_navigation_descr">استخدم البوصلة عندما لا تكون هناك أي وجهة محددة.</string>
 	<string name="auto_zoom_map_descr">ملائمة تقريب الخريطة وفقا لسرعتك (هذا بينما تتزامن الخريطة مع الموقع الحالي).</string>
 	<string name="auto_zoom_map">تقريب الخريطة تلقائيًا</string>
@@ -428,9 +425,7 @@
 	<string name="auto_zoom_close">إلى الصورة عن قرب</string>
 	<string name="auto_zoom_none">تعطيل التكبير التلقائي</string>
 	<string name="auto_zoom_far">قم بتوسيط الخريطة هنا</string>
-	<string name="local_indexes_cat_tile">قراميد خرائط متصلة بالإنترنت وتجانبية</string>
-	<string name="map_online_plugin_is_not_installed">تمكين ملحق الخرائط على الإنترنت من تحديد مصادر مختلفة للخرائط</string>
-	<string name="map_online_data">خرائط من الانترنت وتجانبية</string>
+    <string name="map_online_plugin_is_not_installed">تمكين ملحق الخرائط على الإنترنت من تحديد مصادر مختلفة للخرائط</string>
     <string name="shared_string_online_maps">الخرائط المتصلة بالانترنت</string>
     <string name="auto_zoom_farthest">إلى مدى الطويل</string>
 	<string name="use_magnetic_sensor_descr">لقراءة البوصلة، استخدام المستشعر المغناطيسي بدلاً من مستشعر التوجيه.</string>
@@ -702,8 +697,7 @@
 	<string name="voice_stream_voice_call">صوت المكالمة الهاتفية ( أيضا لقطع ستريو بلوتوث السيارة )</string>
 	<string name="voice_stream_notification">صوت الاشعارات</string>
 	<string name="voice_stream_music">صوت الوسائط</string>
-	<string name="warning_tile_layer_not_downloadable">تعذر على التطبيق تنزيل طبقة الخريطة %1$s، نرجو أن تحاول إعادة تثبيته.</string>
-	<string name="overlay_transparency_descr">تعديل شفافية التراكب.</string>
+    <string name="overlay_transparency_descr">تعديل شفافية التراكب.</string>
 	<string name="overlay_transparency">شفافية التراكب</string>
 	<string name="map_transparency_descr">تعديل شفافية الخريطة القاعدية.</string>
 	<string name="map_transparency">شفافية الخريطة القاعدة</string>
@@ -1025,8 +1019,7 @@
 	<string name="back_to_map">عودة إلى الخريطة</string>
     <string name="location_on_map">"الموقع :\nالعرض %1$s\nالطول  %2$s"</string>
 	<string name="notes">ملاحظات</string>
-	<string name="online_map">خريطة نت</string>
-	<string name="roads_only">الطرق فقط</string>
+    <string name="roads_only">الطرق فقط</string>
     <string name="device_memory">ذاكرة الجهاز</string>
     <string name="edit_group">تعديل مجموعة</string>
     <string name="remove_the_tag">إزالة العلامة</string>
@@ -1038,7 +1031,6 @@
     <string name="points">نقاط</string>
 	<string name="navigation_over_track">بدء الملاحة على طول المسار؟</string>
 	<string name="avoid_roads_msg">يمكنك تشغيل مسار بديل بتحديد طرق متجنبة</string>
-	<string name="rendering_attr_roadStyle_name">نمط الطريق</string>
     <string name="rendering_value__name">الافتراضي</string>
     <string name="rendering_value_default_name">الافتراضي</string>
     <string name="rendering_value_orange_name">برتقالي</string>
@@ -1400,7 +1392,6 @@
     <string name="access_sort">الفرز</string>
     <string name="map_mode">وضع الخريطة</string>
     <string name="number_of_gpx_files_selected_pattern">%s ملفات GPX المحددة</string>
-    <string name="rendering_value_thin_name">رقيقة</string>
     <string name="rendering_value_medium_name">متوسط</string>
     <string name="no_map_markers_found">الرجاء إضافة علامات الخريطة عن طريق الخريطة</string>
     <string name="no_waypoints_found">لم يتم العثور على نقاط الطريق</string>
@@ -1708,7 +1699,6 @@
     <string name="shared_string_wikipedia">ويكيبيديا</string>
     <string name="local_indexes_cat_wiki">ويكيبيديا</string>
     <string name="shared_string_show_details">إظهار التفاصيل</string>
-    <string name="rendering_attr_roadStyle_description">نمط الطريق</string>
     <string name="proxy_host_title">وكيل البروكسي</string>
     <string name="proxy_port_title">منفذ وكيل البروكسي</string>
     <string name="proxy_port_descr">رقم منفذ البروكسي (مثلا 8118).</string>
@@ -1917,7 +1907,6 @@
     <string name="update_poi_no_offline_poi_index">لا توجد بيانات POI حاليا المتاحة في هاته المنطقة</string>
     <string name="update_poi_is_not_available_for_zoom">تحديث الـ POI غير متاح لمستويات الزوم الصغيرة</string>
     <string name="search_history_building">المبنى: {0}، {1}، {2}</string>
-    <string name="max_level_download_tile">التكبير الأقصى بالانترنت</string>
     <string name="download_question_exist">البيانات المحلية لـ {0} موجودة مسبقا ({1}). هل تريد تحديثها ({2}) ؟</string>
     <string name="commiting_node">إنشاء نقطة…</string>
     <string name="converting_names">تحويل الأسماء باللغة المحلية/ الإنجليزية…</string>
@@ -2043,7 +2032,6 @@
     <string name="upload_poi">رفع POI</string>
     <string name="route_calculation">حساب المسار</string>
     <string name="gpx_no_tracks_title">ليس لديك مسارات بعد</string>
-    <string name="rendering_value_fine_name">غرامة</string>
     <string name="route_roundabout_short">خذ المخرج %1$d ثم واصل</string>
     <string name="search_map_hint">بحث عن مدينة أو منطقة</string>
     <string name="wiki_around">"تنصل وتذكير :
@@ -2150,7 +2138,6 @@
     <string name="shared_string_max">أقصى</string>
     <string name="shared_string_start_time">ساعة البداية</string>
     <string name="shared_string_end_time">ساعة النهاية</string>
-    <string name="routing_attr_driving_style_name">نوع السياقة</string>
     <string name="altitude_descent">منحدر</string>
     <string name="altitude_ascent">مرتفع</string>
     <string name="altitude_range">مدى الإرتفاع</string>
@@ -2211,7 +2198,6 @@
     <string name="import_gpx_failed_descr">لا يمكن للتطبيق استيراد الملف. الرجاء التحقق إذا كان التطبيق لديه إذن قراءة الملف من موقعه.</string>
     <string name="distance_moving">تم تصحيح المسافة</string>
     <string name="shared_string_install">تثبيت</string>
-    <string name="online_photos">صور على الإنترنت</string>
     <string name="shared_string_add_photos">إضافة صور</string>
     <string name="no_photos_descr">ليس لدينا صور لهذا الموقع.</string>
     <string name="private_access_routing_req">الوجهة الخاص بك تقع في منطقة ذات ولوج خاص. هل تريد تفعيل خاصية السماح بالوصول إلى هاته الأماكن لهذه الرحلة؟</string>

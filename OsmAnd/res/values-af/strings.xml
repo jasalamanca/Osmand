@@ -45,12 +45,10 @@
   <string name="first_time_msg">Om die belangrikste funksies van hierdie toepassing te gebruik, benodig jy sommige streeksverwante van-lyn-af inligting, wat jy kan aflaai (gebruik \'Stellings\'→\'Aflyn inligting\'). Daarna sal jy kan soek na adresse, POIs en publieke vervoer.</string>
   <string name="basemap_was_selected_to_download">`n Basiskaart is nodig vir die toepassing om behoorlik te werk, en was gemerk om af te laai.</string>
   <string name="select_index_file_to_download">Niks gevind nie. As jy nie jou streek kan vind nie, kan jy dit self maak (besoek http://osmand.net).</string>
-  <string name="local_indexes_cat_tile">Internet kaarte (teëls)</string>
-  <string name="local_indexes_cat_map">Aflyn kaarte (Vektor)</string>
+    <string name="local_indexes_cat_map">Aflyn kaarte (Vektor)</string>
   
   <string name="index_settings_descr">Laai kaarte af, beskou inligting en bestuur aflyn kaarte</string>
   <string name="map_online_plugin_is_not_installed">Skakel die internet kaarte inlasmodule aan om ander kaartbronne te kies</string>
-  <string name="map_online_data">Internet kaarte (teëls)</string>
     <string name="shared_string_online_maps">Internet kaarte</string>
 
 
@@ -334,8 +332,7 @@
   <string name="voice_stream_voice_call">Stem oproep klank</string>
   <string name="voice_stream_notification">Kennisgewing klank</string>
   <string name="voice_stream_music">Media/musiek klank</string>
-  <string name="warning_tile_layer_not_downloadable">Toepassing kan nie kaart %1$s aflaai nie, kan jy probeer om dit weer te installeer.</string>
-  <string name="overlay_transparency_descr">Verander oorlegkaart deursigtigheid</string>
+    <string name="overlay_transparency_descr">Verander oorlegkaart deursigtigheid</string>
   <string name="overlay_transparency">Oorlegkaart deursigtigheid</string>
   <string name="map_transparency_descr">Verander basis kaart deursigtigheid</string>
   <string name="map_transparency">Basis kaart deursigtigheid</string>
@@ -607,7 +604,6 @@
   <string name="hint_search_online">Huis nommer, straat, stad</string>
   <string name="search_offline_address">Aflyn</string>
   <string name="search_online_address">Internet</string>
-  <string name="max_level_download_tile">Maksimum aanlyn vergroting</string>
     <string name="route_general_information">Totale afstand %1$s,\n reistyd %2$d h %3$d m.</string>
   <string name="router_service_descr">Kies \'n aanlyn of aflyn navigasie diens</string>
   <string name="router_service">Navigasie diens</string>
@@ -703,8 +699,7 @@
   <string name="show_poi_over_map_description">Wys interessante plekke bo-oor die kaart (gebruik die vorige gekose filter)</string>
   <string name="show_poi_over_map">Wys POI</string>
     <string name="map_source">Kaartbron</string>
-  <string name="use_internet">Gebruik Internet</string>
-  <string name="show_location">Wys ligging</string>
+    <string name="show_location">Wys ligging</string>
   
   
   <string name="show_gps_coordinates_text">Wys die GPS koordinate op die kaart</string>
@@ -1066,8 +1061,6 @@
     <string name="about_settings_descr">Weergawe inligting, lisensie, projeklede</string>
 
 
-    <string name="local_index_tile_data_expire">Verstryk (minute): %1$s</string>
-    <string name="local_index_tile_data_name">Teël inligting: %1$s</string>
     <string name="edit_tilesource_maxzoom">Maks vergroting</string>
     <string name="edit_tilesource_minzoom">Min vergroting</string>
     <string name="maps_define_edit">Definieer/Wysig…</string>

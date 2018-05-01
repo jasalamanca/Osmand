@@ -233,8 +233,7 @@
 	<string name="map_view_3d_descr">حالت سه‌بعدی نقشه را فعال کن.</string>
 	<string name="map_view_3d">نمایش سه‌بعدی نقشه</string>
 	<string name="map_source">منبع نقشه</string>
-	<string name="use_internet">استفاده از اینترنت</string>
-	<string name="show_location">نشان‌دادن موقعیت شما</string>
+    <string name="show_location">نشان‌دادن موقعیت شما</string>
 	
 	
 	<string name="show_gps_coordinates_text">مختصات GPS را روی نقشه نمایش بده</string>
@@ -296,8 +295,7 @@
 	<string name="searching_address">در حال جست‌وجوی نشانی…</string>
 	<string name="search_offline_address">جست‌وجوی آفلاین</string>
 	<string name="search_online_address">جست‌وجوی آنلاین</string>
-	<string name="max_level_download_tile">حداکثر زوم آنلاین</string>
-	<string name="download_question">آیا {0} - {1} دانلود شود؟</string>
+    <string name="download_question">آیا {0} - {1} دانلود شود؟</string>
 	<string name="route_general_information">مسافت کل %1$s، مدت سفر %2$d ساعت و %3$d دقیقه.</string>
 	<string name="shared_string_next">بعدی</string>
 	<string name="shared_string_previous">قبلی</string>
@@ -630,8 +628,6 @@
 	<string name="navigate_point_format">قالب</string>
 	<string name="basemap_was_selected_to_download">نقشهٔ پایه جهت عملکرد صحیح برنامه لازم است و برای دانلود علامت‌گذاری شد.</string>
 	<string name="select_index_file_to_download">چیزی پیدا نشد. اگر نمی‌توانید ناحیهٔ خود را پیدا کنید، خودتان آن را بسازید (http://osmand.net را ببینید).</string>
-	<string name="local_indexes_cat_tile">نقشه‌های آنلاین و کاشی‌های ذخیره‌شده</string>
-	<string name="map_online_data">نقشه‌ها و کاشی‌های آنلاین</string>
     <string name="shared_string_online_maps">نقشه‌های آنلاین</string>
 
     <string name="vector_maps_may_display_faster_on_some_devices">نقشه‌های بُرداری معمولاً زودتر نمایش داده می‌شوند. شاید روی برخی دستگاه‌ها خوب کار نکند.</string>
@@ -1002,8 +998,7 @@
 	<string name="voice_stream_voice_call">منبع صدای تماس تلفنی (همچنین برای وقفه‌انداختن در دستگاه پخش خودرو)</string>
 	<string name="voice_stream_notification">منبع صدای اعلان</string>
 	<string name="voice_stream_music">منبع پخش صدای موسیقی/رسانه</string>
-	<string name="warning_tile_layer_not_downloadable">برنامه نمی‌تواند لایهٔ %1$s را دانلود کند، لطفاً برنامه را مجدداً نصب کنید.</string>
-	<string name="overlay_transparency_descr">شفافیت لایهٔ رویی را تغییر دهید.</string>
+    <string name="overlay_transparency_descr">شفافیت لایهٔ رویی را تغییر دهید.</string>
 	<string name="overlay_transparency">شفافیت لایهٔ رویی</string>
 	<string name="map_transparency_descr">شفافیت نقشهٔ پایه را تغییر دهید.</string>
 	<string name="map_transparency">شفافیت نقشهٔ پایه</string>
@@ -1074,8 +1069,6 @@
     <string name="about_settings_descr">دربارهٔ نسخه، گواهی‌ها، اعضای پروژه</string>
 
 
-    <string name="local_index_tile_data_expire">انقضا (به دقیقه): %1$s</string>
-    <string name="local_index_tile_data_name">منبع کاشی‌ها: %1$s</string>
     <string name="edit_tilesource_maxzoom">بیشترین زوم</string>
     <string name="edit_tilesource_minzoom">کمترین زوم</string>
     <string name="maps_define_edit">تعریف/ویرایش…</string>
@@ -1376,8 +1369,7 @@
 \n طول %2$s</string>
 	<string name="watch">مشاهده</string>
 	<string name="notes">یادداشت‌ها</string>
-	<string name="online_map">نقشهٔ آنلاین</string>
-	<string name="roads_only">فقط راه‌ها</string>
+    <string name="roads_only">فقط راه‌ها</string>
     <string name="device_memory">حافظهٔ دستگاه</string>
     <string name="edit_group">ویرایش گروه</string>
     <string name="remove_the_tag">برداشتن برچسب</string>
@@ -1389,10 +1381,8 @@
     <string name="points">نقاط</string>
     
     <string name="shared_string_my_location">موقعیت من</string>
-    
-    
-	
-	<string name="rendering_attr_roadStyle_name">ظاهر جاده</string>
+
+
     <string name="rendering_value_default_name">پیش‌فرض</string>
     <string name="rendering_value_orange_name">نارنجی</string>
     <string name="traffic_warning_railways">تقاطع جاده با راه‌آهن</string>
@@ -1739,7 +1729,6 @@
     <string name="access_widget_expand">بازکردن</string>
     <string name="access_shared_string_navigate_up">برو به بالا</string>
     <string name="map_mode">حالت نقشه</string>
-    <string name="rendering_value_thin_name">باریک</string>
     <string name="rendering_value_medium_name">متوسط</string>
     <string name="rendering_value_bold_name">ضخیم</string>
     <string name="no_map_markers_found">لطفاً نشانه‌ها را از طریق نقشه اضافه کنید</string>
@@ -1807,7 +1796,6 @@
     <string name="shared_string_color">رنگ</string>
     <string name="file_can_not_be_moved">امکان انتقال فایل وجود ندارد.</string>
     <string name="shared_string_move">جابه‌جایی</string>
-    <string name="routing_attr_driving_style_name">حالت رانندگی</string>
     <string name="shared_string_time">زمان</string>
     <string name="rendering_value_high_name">زیاد</string>
     <string name="rendering_value_medium_w_name">متوسط</string>
@@ -2028,7 +2016,6 @@
     <string name="osmand_parking_hour">س</string>
     <string name="osmand_parking_minute">دق‍</string>
     <string name="shared_string_collapse">مخفی شود</string>
-    <string name="rendering_attr_roadStyle_description">ظاهر جاده</string>
     <string name="navigate_point_olc">کدِ مکانی باز (OLC)</string>
     <string name="navigate_point_olc_info_invalid">کد OLC نامعتبر است
 \n</string>
@@ -2263,7 +2250,6 @@
     <string name="shared_string_permissions">مجوزها</string>
     <string name="import_gpx_failed_descr">‏OsmAnd نمی‌تواند فایل را وارد کند. لطفاً بررسی کنید OsmAnd اجازهٔ خواندن فایل را داشته باشد.</string>
     <string name="shared_string_install">نصب</string>
-    <string name="online_photos">تصاویر آنلاین</string>
     <string name="shared_string_add_photos">افزودن تصویر</string>
     <string name="no_photos_descr">برای این مکان تصویری نداریم.</string>
     <string name="private_access_routing_req">مقصد شما در ناحیه‌ای با دسترسی خصوصی قرار دارد. آیا دسترسی به مسیرهای خصوصی برای این سفر مجاز شود؟</string>
@@ -2372,7 +2358,6 @@
     <string name="route_point_one">نقطهٔ مسیر 1</string>
     <string name="shared_string_navigate">مسیریابی کن</string>
     <string name="animate_my_location_desc">در هنگام راهبری نقشه بتواند برای نشان‌دادن موقعیت من جابه‌جا شود.</string>
-    <string name="rendering_value_fine_name">خوب</string>
     <string name="distance_moving">مسافت اصلاح‌شده</string>
     <string name="legacy_search">جست‌وجوی دنباله‌ای</string>
     <string name="show_legacy_search">نمایش جست‌وجوی دنباله‌ای</string>

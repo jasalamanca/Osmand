@@ -18,7 +18,6 @@
     <string name="shared_string_color">Rəng</string>
     <string name="file_can_not_be_moved">Fayl daşına bilmədi.</string>
     <string name="shared_string_move">Daşı</string>
-    <string name="routing_attr_driving_style_name">Sürmə stili</string>
     <string name="shared_string_time">Vaxt</string>
     <string name="total_distance">Toplam məsafə</string>
     <string name="rendering_value_high_name">Yüksək</string>
@@ -252,7 +251,6 @@
     <string name="back_to_map">Xəritəyə qayıt</string>
     <string name="watch">İzlə</string>
     <string name="notes">Qeydlər</string>
-    <string name="online_map">Onlayn xəritə</string>
     <string name="free">%1$s boş</string>
     <string name="device_memory">Cihaz yaddaşı</string>
     <string name="edit_group">Qrupa düzəliş et</string>
@@ -627,7 +625,6 @@
     <string name="map_view_3d_descr">Xəritədə 3D görünüşü aktivləşdir.</string>
     <string name="map_view_3d">3D xəritə görünüşü</string>
     <string name="show_poi_over_map">POI göstər</string>
-    <string name="use_internet">İnternet istifadə et</string>
     <string name="show_gps_coordinates_text">Xəritədə GPS koordinatları göstər</string>
     <string name="search_button">Axtar</string>
     <string name="search_activity">Axtar</string>
@@ -861,7 +858,6 @@
     <string name="restore_purchases">Alışları bərpa et</string>
     <string name="full_version_thanks">OsmAnd-ın tam versiyasını aldığınız üçün təşəkkür edirik!</string>
     <string name="shared_string_install">Quraşdır</string>
-    <string name="online_photos">Onlayn şəkillər</string>
     <string name="shared_string_add_photos">Şəkillər əlavə et</string>
     <string name="live_updates">Canlı yeniləmələr</string>
     <string name="access_from_map_description">Menyu düyməsi menyunu yox, alət panelini açır.</string>
@@ -923,8 +919,6 @@
     <string name="impassable_road_desc">Naviqasiya zamanı yayınmaq istədiyiniz yolları seçin.</string>
     <string name="roads_only">Yalnız yollar</string>
     <string name="avoid_roads_msg">Yayınmaq üçün yollar seçərək alternativ marşrut yarada bilərsiniz</string>
-    <string name="rendering_attr_roadStyle_name">Yol stili</string>
-    <string name="rendering_attr_roadStyle_description">Yol stili</string>
     <string name="traffic_warning_railways">Dəmir yolu keçidi</string>
     <string name="show_railway_warnings">Dəmir yolu keçidləri</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerika yol atlası</string>
@@ -1169,7 +1163,6 @@
     <string name="routing_preferences_descr">Marşrutlama seçimləri</string>
     <string name="profile_settings">Profil parametrləri</string>
     <string name="about_settings_descr">Versiya məlumatı, lisenziyalar, layihə üzvləri</string>
-    <string name="local_index_tile_data_expire">Başa çatır (dəqiqə): %1$s</string>
     <string name="maps_define_edit">Müəyyənləşdir/Düzəliş et…</string>
     <string name="driving_region_europe_asia">Avropa, Asiya, Latın Amerikası və oxşar</string>
     <string name="driving_region_uk">Böyük Britaniya, Hindistan və oxşar</string>

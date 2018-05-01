@@ -20,7 +20,6 @@
 	<string name="about_version">Versioni :</string>
     <string name="shared_string_about">Rreth</string>
     <string name="about_settings_descr">Informacion versioni, liçensat, anëtarët e projektit</string>
-    <string name="local_index_tile_data_expire">Skadon (minuta): %1$s</string>
     <string name="driving_region_japan">Japoni</string>
 	<string name="driving_region_us">Shtetet e Bashkuara</string>
 	<string name="driving_region_canada">Kanada</string>
@@ -42,7 +41,6 @@
 	<string name="shared_string_currently_recording_track">Gjurmët e deritanishme të rregjistruara</string>
     <string name="days_behind">ditët pas</string>
 	<string name="watch">Kujdes</string>
-	<string name="rendering_attr_roadStyle_name">Stil i rrugës</string>
     <string name="traffic_warning_pedestrian">Mbikalim për këmbësorë</string>
     <string name="navigate_point_northing">Vlera veriore</string>
     <string name="navigate_point_easting">Vlera lindore</string>

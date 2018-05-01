@@ -127,12 +127,10 @@
 	<string name="first_time_msg">Ευχαριστούμε που χρησιμοποιείτε το OsmAnd. Για πολλά χαρακτηριστικά αυτής της εφαρμογής χρειάζεστε μερικά τοπικά offline δεδομένα τα οποία μπορείτε να κατεβάσετε μέσω του \'Ρυθμίσεις\' → \'Διαχείριση αρχείων χάρτη\'. Μετά από αυτό θα μπορείτε να δείτε χάρτες, να εντοπίσετε διευθύνσεις, να ψάξετε Σημ. Ενδ. και να βρείτε δημόσιες μεταφορές.</string>    
 	<string name="basemap_was_selected_to_download">Ο βασικός χάρτης είναι απαραίτητος για τη σωστή λειτουργία της εφαρμογής και επιλέχθηκε προς λήψη.</string>
 	<string name="select_index_file_to_download">Δεν βρέθηκε τίποτα. Εάν δεν μπορείτε να βρείτε την περιοχή σας, μπορείτε να τη φτιάξετε μόνοι σας (βλέπε http://osmand.net).</string>
-	<string name="local_indexes_cat_tile">Online και πλακίδια χάρτες</string>
-	<string name="local_indexes_cat_map">Offline χάρτες (διανυσματικοί)</string>
+    <string name="local_indexes_cat_map">Offline χάρτες (διανυσματικοί)</string>
 	
 	<string name="index_settings_descr">Λήψη και διαχείριση εκτός σύνδεσης αρχείων χαρτών αποθηκευμένων στη συσκευή σας</string>
 	<string name="map_online_plugin_is_not_installed">Ενεργοποιήστε το πρόσθετο για τους online χάρτες για να επιλέξετε διαφορετικές πηγές χάρτη</string>
-	<string name="map_online_data">Online και χάρτες πλακίδια</string>
     <string name="shared_string_online_maps">Online χάρτες</string>
 
 
@@ -401,8 +399,7 @@
 	<string name="voice_stream_voice_call">Ήχος κλήσης φωνής</string>
 	<string name="voice_stream_notification">Ήχος ειδοποίησης</string>
 	<string name="voice_stream_music">Ήχος πολυμέσων/μουσικής</string>
-	<string name="warning_tile_layer_not_downloadable">Η εφαρμογή δεν μπορεί να κάνει λήψη του επιπέδου χάρτη %1$s, παρακαλούμε προσπαθήστε να το εγκαταστήσετε ξανά.</string>
-	<string name="overlay_transparency_descr">Τροποποίηση διαφάνειας επικάλυψης</string>
+    <string name="overlay_transparency_descr">Τροποποίηση διαφάνειας επικάλυψης</string>
 	<string name="overlay_transparency">Διαφάνεια επικάλυψης</string>
 	<string name="map_transparency_descr">Τροποποίηση διαφάνειας βασικού χάρτη</string>
 	<string name="map_transparency">Διαφάνεια βασικού χάρτη</string>
@@ -672,7 +669,6 @@
 	<string name="hint_search_online">Online αναζήτηση: Αριθμός σπιτιού, οδός, πόλη</string>
 	<string name="search_offline_address">Χωρίς σύνδεση</string>
 	<string name="search_online_address">Διαδίκτυο</string>
-	<string name="max_level_download_tile">Μεγ. online κλίμακα</string>
     <string name="route_general_information">Συνολική απόσταση %1$s, χρόνος ταξιδιού %2$d ω %3$d λ.</string>
 	<string name="router_service_descr">Επιλέξτε μια online ή offline υπηρεσία πλοήγησης</string>
 	<string name="router_service">Υπηρεσία πλοήγησης</string>
@@ -754,8 +750,7 @@
 	<string name="show_poi_over_map_description">Εμφάνιση ΣΕ πάνω στο χάρτη (χρήση τελευταίου επιλεγμένου φίλτρου)</string>
 	<string name="show_poi_over_map">Εμφάνιση ΣΕ</string>
     <string name="map_source">Πηγή χάρτη</string>
-	<string name="use_internet">Χρήση Διαδικτύου</string>
-	<string name="show_location">Εμφάνιση τοποθεσίας σου</string>
+    <string name="show_location">Εμφάνιση τοποθεσίας σου</string>
 	
 	
 	<string name="show_gps_coordinates_text">Εμφάνιση συντεταγμένων GPS στο χάρτη</string>
@@ -1017,13 +1012,11 @@
 	<string name="about_version">Εκδοχή :</string>
     <string name="shared_string_about">Περί</string>
     <string name="about_settings_descr">Πληροφορίες έκδοσης, άδειες, μέλη έργου</string>
-    
-    <string name="local_index_tile_data_expire">Λήξη (λεπτά): %1$s</string>
+
     <string name="edit_tilesource_maxzoom">Μεγ Εστίαση</string>
     <string name="edit_tilesource_minzoom">Ελαχ εστίαση</string>
     <string name="maps_define_edit">Καθορισμός/Επεξεργασία…</string>
 
-    <string name="local_index_tile_data_name">Δεδομένα πλακιδίου: %1$s</string>
     <string name="driving_region_descr">Επιλέξτε περιοχή οδήγησης: ΗΠΑ, Ευρώπη, ΗΒ, Ασία, κλπ</string>
 	<string name="driving_region">Περιοχή οδήγησης</string>
     <string name="app_modes_choose">Προφίλ εφαρμογής</string>
@@ -1291,7 +1284,6 @@
 	<string name="dash_download_msg">Έχετε κατεβάσει %1$s χάρτες</string>
     <string name="dash_download_new_one">Λήψη Νέου Χάρτη</string>
     <string name="map_locale">Γλώσσα χάρτη</string>
-    <string name="rendering_attr_roadStyle_name">Στυλ δρόμου</string>
     <string name="rendering_value_default_name">Προκαθορισμένο</string>
     <string name="rendering_value_orange_name">Πορτοκαλί</string>
     <string name="traffic_warning_railways">Διασταύρωση σιδηροτροχιάς</string>
@@ -1532,7 +1524,6 @@
     <string name="access_hint_enter_category">Εισαγωγή κατηγορίας</string>
     <string name="access_hint_enter_description">Εισαγωγή περιγραφής</string>
     <string name="number_of_gpx_files_selected_pattern">%s GPX αρχεία επιλέχτηκαν</string>
-    <string name="rendering_value_thin_name">Λεπτό</string>
     <string name="rendering_value_medium_name">Μέτριο</string>
     <string name="rendering_value_bold_name">Παχύ</string>
     <string name="report">Αναφορά</string>
@@ -1546,7 +1537,6 @@
     <string name="shared_string_permissions">Άδειες</string>
     <string name="distance_moving">Η απόσταση διορθώθηκε</string>
     <string name="shared_string_install">Εγκατάσταση</string>
-    <string name="online_photos">Online φωτογραφίες</string>
     <string name="shared_string_add_photos">Προσθήκη φωτογραφιών</string>
     <string name="nothing_found">Δεν βρέθηκε κάτι :(</string>
     <string name="quick_action_showhide_osmbugs_title">Εμφάνιση/απόκρυψη σημειώσεων OSM</string>

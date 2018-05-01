@@ -131,7 +131,6 @@ Lon %2$s</string>
     <string name="location_on_map">Ubicación:\n Lat %1$s\n Lon %2$s</string>
     <string name="watch">Ver</string>
     <string name="notes">Notas</string>
-    <string name="online_map">Mapa en línea</string>
     <string name="roads_only">Sólo caminos</string>
     <string name="edit_group">Editar grupo</string>
     <string name="gps_status">Estado del GPS</string>
@@ -143,7 +142,6 @@ Lon %2$s</string>
     <string name="points">Puntos</string>
     <string name="navigation_over_track">¿Iniciar la navegación a lo largo de la traza?</string>
     <string name="speak_pedestrian">Cruces peatonales</string>
-    <string name="rendering_attr_roadStyle_name">Estilo vial</string>
     <string name="rendering_value_orange_name">Anaranjado</string>
     <string name="traffic_warning_railways">Paso a nivel</string>
     <string name="traffic_warning_pedestrian">Cruce peatonal</string>
@@ -493,8 +491,6 @@ Lon %2$s</string>
     <string name="about_version">Versión:</string>
     <string name="shared_string_about">Acerca de</string>
     <string name="about_settings_descr">Información de la versión, licencias, miembros del proyecto</string>
-    <string name="local_index_tile_data_expire">Expira (minutos): %1$s</string>
-    <string name="local_index_tile_data_name">Datos de teselas: %1$s</string>
     <string name="edit_tilesource_maxzoom">Máxima ampliación</string>
     <string name="edit_tilesource_minzoom">Mínima ampliación</string>
     <string name="maps_define_edit">Definir/Editar…</string>
@@ -757,11 +753,9 @@ Lon %2$s</string>
     <string name="confirm_interrupt_download">¿Cancelar la descarga del archivo?</string>
     <string name="first_time_msg">Gracias por usar OsmAnd. Para muchas funciones de la aplicación, necesitas algunos datos regionales sin conexión que puedes descargar mediante «Ajustes» → «Gestionar mapas». Luego serás capaz de ver los mapas, ubicar direcciones, buscar PDI y transporte público.</string>
     <string name="basemap_was_selected_to_download">Para el correcto funcionamiento de la aplicación, se necesita el mapa base (World Basemap) y se marcó para tu descarga.</string>
-    <string name="local_indexes_cat_tile">Mapas de teselas en línea y en caché</string>
     <string name="local_indexes_cat_map">Mapas descargados (vectores)</string>
     <string name="index_settings_descr">Descarga y gestiona mapas sin conexión almacenados en tu dispositivo.</string>
     <string name="map_online_plugin_is_not_installed">Activa el complemento de mapas en línea, para seleccionar diferentes fuentes de mapas</string>
-    <string name="map_online_data">Mapas en línea y teselas</string>
     <string name="plugins_screen">Complementos</string>
     <string name="prefs_plugins">Complementos</string>
     <string name="vector_maps_may_display_faster_on_some_devices">Los mapas vectoriales pueden mostrarse más rápido. Puede no funcionar correctamente en algunos dispositivos.</string>
@@ -995,7 +989,6 @@ Lon %2$s</string>
     <string name="voice_stream_voice_call">Audio de llamada telefónica (también en altavoces estéreos con Bluetooth)</string>
     <string name="voice_stream_notification">Notificación auditiva</string>
     <string name="voice_stream_music">Audio de multimedia</string>
-    <string name="warning_tile_layer_not_downloadable">La aplicación no puede descargar la capa %1$s del mapa, intenta reinstalando.</string>
     <string name="overlay_transparency_descr">Modifica la transparencia de la capa superpuesta.</string>
     <string name="overlay_transparency">Transparencia de superposición</string>
     <string name="map_transparency_descr">Modifica la transparencia del mapa base.</string>
@@ -1235,7 +1228,6 @@ Lon %2$s</string>
     <string name="hint_search_online">Búsqueda en línea: Número de casa, calle, ciudad</string>
     <string name="search_offline_address">Búsqueda sin conexión</string>
     <string name="search_online_address">Búsqueda en línea</string>
-    <string name="max_level_download_tile">Máxima ampliación en línea</string>
     <string name="route_general_information">Distancia total %1$s, tiempo de viaje %2$d h %3$d min.</string>
     <string name="router_service_descr">Elige un servicio de navegación con o sin conexión.</string>
     <string name="router_service">Servicio de navegación</string>
@@ -1300,7 +1292,6 @@ Lon %2$s</string>
     <string name="show_poi_over_map_description">Muestra la última superposición de PDI elegida en el mapa.</string>
     <string name="show_poi_over_map">Mostrar superposición de PDI</string>
     <string name="map_source">Fuente de mapa</string>
-    <string name="use_internet">Usar Internet</string>
     <string name="show_location">Mostrar tu ubicación</string>
     <string name="show_gps_coordinates_text">Mostrar coordenadas GPS en el mapa</string>
     <string name="app_description">Aplicación de navegación</string>
@@ -1627,7 +1618,6 @@ Lon %2$s</string>
     <string name="context_menu_item_edit_waypoint">Editar punto GPX</string>
     <string name="rendering_attr_currentTrackColor_description">Color del GPX</string>
     <string name="rendering_attr_currentTrackWidth_description">Ancho del GPX</string>
-    <string name="rendering_attr_roadStyle_description">Estilo del camino</string>
     <string name="poi_dialog_reopen">Reabrir</string>
 	<string name="osm_save_offline">Guardar sin conexión</string>
     <string name="copied_to_clipboard">Copiado al portapapeles</string>
@@ -1771,7 +1761,6 @@ Lon %2$s</string>
     <string name="file_name_containes_illegal_char">El nombre del archivo contiene caracteres ilegales</string>
 <string name="no_map_markers_found">Añade marcadores a través del mapa</string>
     <string name="no_waypoints_found">No se encontraron puntos de referencia</string>
-    <string name="rendering_value_thin_name">Fino</string>
     <string name="rendering_value_medium_name">Mediano</string>
     <string name="rendering_value_bold_name">Grueso</string>
     <string name="map_mode">Modo del mapa</string>
@@ -1919,7 +1908,6 @@ Lon %2$s</string>
     <string name="gpx_no_tracks_title_folder">También puedes añadir trazas a la carpeta</string>
     <string name="gpx_add_track">Añadir traza</string>
     <string name="gpx_appearance">Aspecto</string>
-    <string name="rendering_value_fine_name">Muy fino</string>
     <string name="route_calculation">Cálculo de la ruta</string>
     <string name="upload_poi">Subir PDI</string>
     <string name="route_roundabout_short">Toma la %1$dª salida y continúa</string>
@@ -2027,8 +2015,6 @@ Proporciona un código completo</string>
     <string name="routing_attr_height_obstacles_name">Usar datos de elevación</string>
     <string name="routing_attr_height_obstacles_description">Usa datos de elevación del terreno provistos por SRTM, ASTER y EU-DEM.</string>
 
-    <string name="routing_attr_driving_style_name">Estilo de conducción</string>
-    
     <string name="select_gpx_folder">Marcar carpeta de traza</string>
     <string name="file_can_not_be_moved">Archivo inamovible.</string>
     <string name="shared_string_move">Mover</string>
@@ -2116,7 +2102,6 @@ Proporciona un código completo</string>
     <string name="nothing_found_descr">Modifica la consulta de búsqueda o aumenta el radio de búsqueda.</string>
     <string name="private_access_routing_req">El destino se ubica en un área de acceso privado. ¿Quieres acceder en este viaje a los caminos privados?</string>
     <string name="shared_string_add_photos">Añadir fotos</string>
-    <string name="online_photos">Fotos en línea</string>
     <string name="no_photos_descr">No se encontraron fotos en esta ubicación.</string>
     <string name="shared_string_install">Instalar</string>
     <string name="distance_moving">Distancia corregida</string>

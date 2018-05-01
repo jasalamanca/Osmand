@@ -339,8 +339,7 @@
 	<string name="map_view_3d_descr">3D harita görünümünü etkinleştir</string>
 	<string name="show_poi_over_map">POI göster</string>
 	<string name="map_source">Harita kaynağı</string>
-	<string name="use_internet">İnterneti kullan</string>
-	<string name="show_location">Pozisyonunuzu göster</string>
+    <string name="show_location">Pozisyonunuzu göster</string>
 	
 	
 	<string name="shared_string_exit">Çıkış</string>
@@ -421,11 +420,9 @@
 	<string name="modify_transparency">"Şeffaflık değiştir(0 -Şeffaf,255-opak) "</string>
 	<string name="first_time_msg">OsmAnd kullandığınız için teşekkür ederiz. Bu uygulamanın bir çok özelliği için \'Ayarlar\' → \'Veri Yönetimi\' kısmından edinebileceğiniz bölgesel çevrim dışı veriye ihtiyacınız var. Daha sonra haritaları görebilir, adres bulabilir, POI (İhtiyaç Noktalarına) bakabilir ve toplu taşıma bulabilirsiniz.</string>    
 	<string name="basemap_was_selected_to_download">Baz haritası doğru uygulama çalışması için gereklidir ve indirmek için seçildi.</string>
-	<string name="local_indexes_cat_tile">Çevrim içi ve önbelleğe alınan döşeme haritalar</string>
-	
-	<string name="index_settings_descr">Aygıtınızda saklanan çevrim dışı harita dosyaları yönet ve indir</string>
+
+    <string name="index_settings_descr">Aygıtınızda saklanan çevrim dışı harita dosyaları yönet ve indir</string>
 	<string name="map_online_plugin_is_not_installed">Farklı harita kaynaklarını seçmek için Online haritalar eklentisi etkinleştirme</string>
-	<string name="map_online_data">Çevrimiçi ve çini harita</string>
 
     <string name="osmand_accessibility_description">Bu eklenti Osmand doğrudan cihazın erişilebilirlik özellikleri kullanılabilir hale getirir. Bu, örneğin kolaylaştırır TTS sesler konuşma hızını, yön-pad ekran navigasyon yapılandırmak yakınlaştırma kontrolü için bir topunu kullanarak, ya da konumunu duyuran oto için olduğu gibi, text-to-speech geribildirim kullanarak ayarlama.</string>
 	
@@ -705,8 +702,7 @@
     <string name="about_version">Sürüm :</string>
     <string name="shared_string_about">Hakkında</string>
     <string name="about_settings_descr">Sürüm bilgisi, lisanslar, proje üyeleri</string>
-    
-    <string name="local_index_tile_data_expire">Sona erecek (dakika): %1$s</string>
+
     <string name="maps_define_edit">Tanımla/Düzenle…</string>
 	<string name="clear_intermediate_points"/>
     <string name="keep_intermediate_points">Ara hedefler tutun</string>
@@ -753,8 +749,7 @@
 	<string name="gpx_option_destination_point">Mevcut varış noktasını kullan</string>
 	<string name="voice_stream_notification">Bildirim sesi</string>
 	<string name="voice_stream_music">Ortam/müzik sesi</string>
-	<string name="warning_tile_layer_not_downloadable">Uygulama %1$s harita katmanını indiremiyor, lütfen tekrar yüklemeyi deneyin.</string>
-	<string name="overlay_transparency_descr">Katman şeffaflığını değiştir</string>
+    <string name="overlay_transparency_descr">Katman şeffaflığını değiştir</string>
 	<string name="overlay_transparency">Katman şeffaflığı</string>
 	<string name="internet_not_available">İşlem için gerekli genel ağ (internet) bağlantısı mevcut değil</string>
 	<string name="install_more">Daha fazla yükle…</string>
@@ -986,7 +981,6 @@
 	<string name="map_magnifier">Harita büyüteci</string>
 	<string name="base_world_map">Dünya Haritası</string>
 
-    <string name="local_index_tile_data_name">Döşeme verisi : %1$s</string>
     <string name="edit_tilesource_maxzoom">maksimum Yakınlaştırma</string>
     
     <string name="specified_directiory_not_writeable">Haritalar belirtilen dizinde oluşturulamadı</string>
@@ -1090,13 +1084,11 @@
 	<string name="back_to_map">Haritaya dön</string>
     <string name="watch">İzle</string>
 	<string name="notes">Notlar</string>
-	<string name="online_map">Çevrim içi harita</string>
-	<string name="roads_only">Sadece yollar</string>
+    <string name="roads_only">Sadece yollar</string>
     <string name="device_memory">Aygıt belleği</string>
     <string name="edit_group">Grubu düzenle</string>
 	<string name="gps_status">GPS durumu</string>
     <string name="points">Noktalar</string>
-	<string name="rendering_attr_roadStyle_name">Yol tarzı</string>
     <string name="rendering_value__name">Varsayılan</string>
     <string name="rendering_value_default_name">Standart</string>
     <string name="traffic_warning_pedestrian">Yaya geçidi</string>
@@ -1402,7 +1394,6 @@
 	<string name="search_history_int_streets">Kesişim: {0} x {1} {2} içinde</string>
 	<string name="favorite">Favori</string>
 	<string name="search_osm_nominatim">OSM Nominatim kullanarak çevrimiçi arama</string>
-	<string name="max_level_download_tile">Max. Online zoom</string>
     <string name="fav_points_edited">En sevdiğim nokta düzenlendi</string>
 	<string name="fav_points_not_exist">Hiçbir favori noktalar var</string>
 	<string name="opening_changeset">Changeset Açılış …</string>
@@ -1649,7 +1640,6 @@
     <string name="navigation_over_track">Yol-izi boyunca navigasyon başlat?</string>
     <string name="avoid_roads_msg">Kaçınılacak yolları seçerek bir başka güzergah başlatabilirsin</string>
     <string name="speak_pedestrian">Yaya geçitleri</string>
-    <string name="rendering_attr_roadStyle_description">Yol tarzı</string>
     <string name="traffic_warning_railways">Demiryolu geçidi</string>
     <string name="show_railway_warnings">Demiryolu geçitleri göster</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerikan yol atlası</string>
@@ -1877,7 +1867,6 @@
     <string name="access_sort">Sırala</string>
     <string name="map_mode">Harita kipi</string>
     <string name="number_of_gpx_files_selected_pattern">%s GPX dosyalar seçildi</string>
-    <string name="rendering_value_thin_name">İnce</string>
     <string name="rendering_value_medium_name">Orta</string>
     <string name="rendering_value_bold_name">Kalın</string>
     <string name="storage_permission_restart_is_required">Şimdi uygulamaya harici kayıt yerine yazma izni verildi. Elle uygulamanın baştan başlatılması gereklidir.</string>
@@ -1918,8 +1907,7 @@
     <string name="shared_string_color">Renk</string>
     <string name="file_can_not_be_moved">Dosya taşınamadı.</string>
     <string name="shared_string_move">Taşı</string>
-    <string name="routing_attr_driving_style_name">Sürüş tarzı</string>
-    
+
     <string name="shared_string_time">Zaman</string>
     <string name="total_distance">Toplam uzaklık</string>
     <string name="rendering_value_high_name">Yüksek</string>
@@ -2095,7 +2083,6 @@
     <string name="quick_action_start_stop_navigation_descr">Navigasyonu başlatmak ya da sonlandırmak için bu düğmeye tıklayınız.</string>
     <string name="shared_string_permissions">İzinler</string>
     <string name="import_gpx_failed_descr">OsmAnd dosyayı içe aktaramıyor. Lütfen OsmAnd\'ın dosyanın konumundan okuma izni olduğunu kontrol ediniz.</string>
-    <string name="online_photos">Çevrim-içi fotoğraflar</string>
     <string name="shared_string_add_photos">Fotoğraf ekle</string>
     <string name="no_photos_descr">Bu lokasyon için fotoğrafa sahip değiliz.</string>
     <string name="private_access_routing_req">Varış noktanız özel-arazi erişimi gerektiren bir yerde. Bu seyahat için özel-arazi yollarından geçiş izni vermek istiyor musunuz?</string>

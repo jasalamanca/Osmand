@@ -2,9 +2,7 @@
   <string name="unknown_location">अजून स्थान माहित नाही</string>
   <string name="modify_transparency">पारदर्शकता बदला (० - पारदर्शक, २५५ - अपारदर्शक)</string>
   <string name="confirm_interrupt_download">फाइल डाउनलोड थांबवायचे का?</string>
-  <string name="local_indexes_cat_tile">ऑनलाइन नकाशे (टाइल्स)</string>
-  <string name="local_indexes_cat_map">साधारण नकाशे (वेक्टर)</string>
-  <string name="map_online_data">ऑनलाइन नकाशे (टाइल्स)</string>
+    <string name="local_indexes_cat_map">साधारण नकाशे (वेक्टर)</string>
     <string name="shared_string_online_maps">ऑनलाइन नकाशे</string>
 
     <string name="plugins_screen">प्लगिन्स</string>
@@ -276,8 +274,7 @@
   <string name="choose_city">शहर किंवा पोस्टकोड निवडा</string>
   <string name="ChooseCountry">देश निवडा</string>
   <string name="map_source">नकाशाचा स्त्रोत</string>
-  <string name="use_internet">इंटरनेट वापरा</string>
-  <string name="show_location">तुमचे स्थान दाखवा</string>
+    <string name="show_location">तुमचे स्थान दाखवा</string>
 
 
     <string name="app_description">दिशादर्शन ऍप्लिकेशन</string>

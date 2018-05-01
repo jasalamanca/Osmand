@@ -218,7 +218,6 @@
     <string name="import_gpx_failed_descr">OsmAnd tidak bisa mengimpor file Silakan periksa apakah OsmAnd memiliki izin untuk membaca file dari lokasinya.</string>
     <string name="distance_moving">Jarak benar</string>
     <string name="shared_string_install">Instal</string>
-    <string name="online_photos">Foto online</string>
     <string name="shared_string_add_photos">Tambahkan foto</string>
     <string name="no_photos_descr">Kami tidak memiliki foto untuk lokasi ini.</string>
     <string name="private_access_routing_req">Tujuan Anda terletak di area dengan akses pribadi. Apakah Anda ingin mengizinkan akses ke jalan pribadi untuk perjalanan ini?</string>
@@ -302,7 +301,6 @@
     <string name="file_can_not_be_moved">File tidak bisa dipindahkan.</string>
     <string name="shared_string_move">Pindah</string>
     <string name="shared_string_tracks">Jalur</string>
-    <string name="routing_attr_driving_style_name">Gaya Berkendara</string>
     <string name="route_altitude">Ketinggian Rute</string>
     <string name="altitude_descent">Turun</string>
     <string name="altitude_ascent">Naik</string>

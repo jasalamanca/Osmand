@@ -248,9 +248,8 @@
   <string name="local_indexes_cat_backup">Arhivēts</string>
   <string name="local_indexes_cat_tts">Balss uzvednes (TTS)</string>
   <string name="local_indexes_cat_voice">Balss uzvednes (ierakstītas)</string>
-  
-  <string name="local_indexes_cat_tile">Tiešsaistes un kešotās kartes (bildes)</string>
-  <string name="local_indexes_cat_map">Standarta kartes (vektoru)</string>
+
+    <string name="local_indexes_cat_map">Standarta kartes (vektoru)</string>
   <string name="local_indexes_cat_poi">POI dati</string>
   <string name="ttsvoice">TTS balss</string>
   <string name="search_offline_clear_search">Jauna meklēšana</string>
@@ -277,8 +276,7 @@
   <string name="voice_stream_voice_call">Tālruņa skaļrunis (ietverot auto bluetooth)</string>
   <string name="voice_stream_notification">Ziņojumu kanāls</string>
   <string name="voice_stream_music">Multimēdiju skaļrunis</string>
-  <string name="warning_tile_layer_not_downloadable">Aplikācija nevar lejupielādēt kartes slāni %1$s, lūdzu mēģiniet to pārinstalēt.</string>
-  <string name="overlay_transparency_descr">Modificēt pārklāja caurspīdīgumu</string>
+    <string name="overlay_transparency_descr">Modificēt pārklāja caurspīdīgumu</string>
   <string name="overlay_transparency">Pārklāja caurspīdīgums</string>
   <string name="map_transparency_descr">Modificēt bāzes kartes caurspīdīgumu</string>
   <string name="map_transparency">Bāzes kartes caurspīdīgums</string>
@@ -565,7 +563,6 @@
   <string name="hint_search_online">Meklēt tiešsaistē: Mājas numuru, ielu, pilsētu</string>
   <string name="search_offline_address">Meklēšana bezsaistē</string>
   <string name="search_online_address">Meklēšana tiešsaistē</string>
-  <string name="max_level_download_tile">Detalizācijas pakāpe</string>
     <string name="route_general_information">Kopējā distance %1$s, ceļojuma laiks %2$d h %3$d min.</string>
   <string name="router_service_descr">Izvēlieties tiešsaites vai netiešsaites maršrutēšanas pakalpojumu</string>
   <string name="router_service">Maršrutēšanas pakalpojums</string>
@@ -662,8 +659,7 @@
   <string name="show_poi_over_map_description">Rādīt POI uz kartes (lietot pēdējo izvēlēto filtru)</string>
   <string name="show_poi_over_map">Rādīt POI</string>
     <string name="map_source">Kartes Avots</string>
-  <string name="use_internet">Lietot internetu</string>
-  <string name="show_location">Rādīt atrašanās vietu</string>
+    <string name="show_location">Rādīt atrašanās vietu</string>
   
   
   <string name="show_gps_coordinates_text">Rādīt uz kartes GPS koordinātes</string>
@@ -769,7 +765,6 @@
   <string name="basemap_was_selected_to_download">Pamatkarte, kas ir nepieciešama aplikācijas normālai darbībai, tika pievienota lejupielādei.</string>
   
   <string name="map_online_plugin_is_not_installed">Aktivizēt tiešsaistes karšu spraudni, lai atlasītu citus karšu avotus</string>
-  <string name="map_online_data">Tiešsaistes kartes</string>
     <string name="shared_string_online_maps">Tiešsaistes kartes</string>
 
 
@@ -1086,9 +1081,6 @@
 	<string name="av_camera_focus_macro">Makro (tuvu klāt) režīms</string>
     <string name="amenity_type_seamark">Bojas</string>
     <string name="app_mode_aircraft">Aviācija</string>
-    
-    <string name="local_index_tile_data_expire">Derīgums (minūtēs): %1$s</string>
-    <string name="local_index_tile_data_name">Attēlu dati: %1$s</string>
 
 
     <string name="delete_point">Noņemt punktu</string>
@@ -1466,8 +1458,7 @@
     <string name="location_on_map">Atrašanās vieta:\n Lat %1$s\n Lon %2$s</string>
 	<string name="watch">Skatīties</string>
 	<string name="notes">Ieraksti</string>
-	<string name="online_map">Karte tiešsaistē</string>
-	<string name="roads_only">Tikai ceļus</string>
+    <string name="roads_only">Tikai ceļus</string>
     <string name="free">"Brīvi %1$s "</string>
 	<string name="device_memory">Ierīces atmiņa</string>
     <string name="edit_group">Labot grupu</string>
@@ -1484,7 +1475,6 @@
 	<string name="navigation_over_track">Sākt navigāciju pa trasi?</string>
 	<string name="avoid_roads_msg">Jūs varat izmainīt maršrutu, atzīmējot ceļus, pa kuriem nebraukt</string>
 	<string name="speak_pedestrian">Gājēju pārejas</string>
-    <string name="rendering_attr_roadStyle_name">Ceļa zīmēšana</string>
     <string name="search_radius_proximity">Attālumā līdz</string>
     <string name="sleep_mode_stop_dialog">Vai izslēgt GPS darbību fonā?</string>
 	<string name="stop_navigation_service">Izslēgt</string>
@@ -1785,7 +1775,6 @@
     <string name="rendering_value_disabled_name">Atslēgts</string>
     <string name="rendering_value_walkingRoutesScopeOSMC_name">Krāsas pēc infrastruktūras veida</string>
     <string name="rendering_value_walkingRoutesOSMC_name">Krāsas pēc OSMC simbola</string>
-    <string name="rendering_attr_roadStyle_description">Stila veidi</string>
     <string name="routing_attr_avoid_stairs_name">Izvairīties no kāpnēm</string>
     <string name="routing_attr_avoid_stairs_description">Izvairīties no kāpnēm</string>
     <string name="routing_attr_avoid_borders_name">Izvairīties no robežu šķēršošanas</string>
@@ -1916,7 +1905,6 @@ failu(s)?
 \nŠo karti var atkārtoti deaktivizēt šeit vai galvenajā izvēlē - kartes attēlošana. "</string>
     <string name="map_mode">Apgaismojums</string>
     <string name="number_of_gpx_files_selected_pattern">%s GPX faili atzīmēti</string>
-    <string name="rendering_value_thin_name">Tievi</string>
     <string name="rendering_value_medium_name">Viduvēji</string>
     <string name="rendering_value_bold_name">Trekni</string>
     <string name="no_map_markers_found">Lūdzu, pievienojiet marķierus caur karti</string>
@@ -2076,7 +2064,6 @@ failu(s)?
     <string name="new_filter">Jauns filtrs</string>
     <string name="new_filter_desc">Ievadiet jaunā filtra vārdu,
 kas tiks pievienots jūsu Kategorijas sadaļai.</string>
-    <string name="rendering_value_fine_name">Smalki</string>
     <string name="lang_kab">Kabuļu</string>
     <string name="driving_region_australia">Austrālija</string>
     <string name="rendering_value_high_name">Augsts</string>
@@ -2190,8 +2177,7 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="file_can_not_be_moved">Fails nevar tikt pārvietots.</string>
     <string name="shared_string_move">Pārvietot</string>
     <string name="shared_string_tracks">Treki</string>
-    <string name="routing_attr_driving_style_name">Braukšanas stils</string>
-    
+
     <string name="route_altitude">Maršruta altitūda</string>
     <string name="altitude_descent">Pazeminās</string>
     <string name="altitude_ascent">Paaugstinās</string>
@@ -2278,7 +2264,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="quick_action_auto_zoom_off">Automērogošana izslēgta</string>
     <string name="shared_string_add_photos">Pievienot fotogrāfijas</string>
     <string name="shared_string_install">Instalēt</string>
-    <string name="online_photos">Tiešsaistes fotoattēli</string>
     <string name="no_photos_descr">Mums nav fotogrāfiju šai vietai.</string>
     <string name="hide_from_zoom_level">Paslēpt no zoom līmeņa</string>
     <string name="show_from_zoom_level">Rādīt no zoom līmeņa</string>

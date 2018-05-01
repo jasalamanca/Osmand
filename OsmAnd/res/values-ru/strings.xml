@@ -94,8 +94,6 @@
     <string name="shared_string_time">Время</string>
     <string name="total_distance">Длина маршрута</string>
 
-    <string name="routing_attr_driving_style_name">Стиль вождения</string>
-    
     <string name="routing_attr_relief_smoothness_factor_name">Выберите пересеченность местности</string>
     
     <string name="routing_attr_height_obstacles_name">Использовать данные о высотах</string>
@@ -197,7 +195,6 @@
     <string name="map_widget_magnetic_bearing">Магнитный пеленг</string>
     <string name="map_widget_bearing">Курсовой угол</string>
     <string name="map_mode">Режим карты</string>
-    <string name="rendering_value_thin_name">Тонкий</string>
     <string name="rendering_value_medium_name">Средний</string>
     <string name="rendering_value_bold_name">Толстый</string>
     <string name="select_map_markers">Выберите маркеры</string>
@@ -238,7 +235,6 @@
     <string name="rendering_attr_currentTrackColor_description">Цвет трека GPX</string>
     <string name="rendering_attr_currentTrackWidth_description">Толщина трека GPX</string>
     <string name="copied_to_clipboard">Скопировано в буфер обмена</string>
-    <string name="rendering_attr_roadStyle_description">Стиль отображения дорог</string>
     <string name="lang_nds">Нижненемецкий</string>
     <string name="lang_mk">Македонский</string>
     <string name="lang_fy">Западнофризский</string>
@@ -276,11 +272,9 @@
     <string name="first_time_msg">Для работы большинства основных возможностей приложения требуются детальные карты регионов, которые можно загрузить из Интернета с помощью пункта меню \"Настройки\" → \"Управление файлами карт\". После загрузки Вы сможете просматривать карты, осуществлять поиск адресов, POI и общественного транспорта.</string>
     <string name="basemap_was_selected_to_download">Базовая карта необходима для корректной работы приложения и автоматически была выбрана для загрузки.</string>
     <string name="select_index_file_to_download">Ничего не было найдено. Вы можете создать карту самостоятельно (смотрите на osmand.net).</string>
-    <string name="local_indexes_cat_tile">Онлайн и кэшированные карты (растровые)</string>
     <string name="local_indexes_cat_map">Стандартные карты (векторные)</string>
     <string name="index_settings_descr">Загрузка и управление локальными файлами карт на вашем устройстве.</string>
     <string name="map_online_plugin_is_not_installed">Активируйте плагин онлайн карт, чтобы выбирать различные источники карт</string>
-    <string name="map_online_data">Онлайн карты</string>
     <string name="shared_string_online_maps">Онлайн карты</string>
     <string name="osmand_background_plugin_description">Этот плагин предоставляет навигацию и запись маршрутов в энергосберегающем режиме. Плагин работает в фоновом режиме и периодически активизирует GPS для записи маршрута или воспроизведения голосовых команд.</string>
     <string name="osmand_accessibility_description">"Плагин добавляет поддержку специальных возможностей устройства непосредственно в OsmAnd. Это облегчает, например, регулировку скорости речи для голоса TTS, настройку направленности  экрана навигации, управление масштабом при помощи трекбола или использование голосовых команд обратной связи для авто аннотации вашего местоположения."</string>
@@ -436,7 +430,6 @@
     <string name="voice_stream_voice_call">Поток голосовых звонков (также прерывает BT стерео авто)</string>
     <string name="voice_stream_notification">Поток уведомлений</string>
     <string name="voice_stream_music">Поток музыки</string>
-    <string name="warning_tile_layer_not_downloadable">Слой карты %1$s не может быть загружен приложением, попробуйте установить его заново.</string>
     <string name="overlay_transparency_descr">Изменить прозрачность карты покрытия.</string>
     <string name="overlay_transparency">Прозрачность покрытия</string>
     <string name="map_transparency_descr">Изменить прозрачность основной карты.</string>
@@ -693,7 +686,6 @@
     <string name="hint_search_online">Онлайн поиск: Номер дома, улица, Город</string>
     <string name="search_offline_address">Офлайн поиск</string>
     <string name="search_online_address">Онлайн поиск</string>
-    <string name="max_level_download_tile">Уровень детализации</string>
     <string name="route_general_information">Общая протяженность = %1$s, время в пути = %2$d ч %3$d мин.</string>
     <string name="router_service_descr">Выберите онлайн или оффлайн сервис для прокладки маршрута.</string>
     <string name="router_service">Прокладка маршрута</string>
@@ -774,7 +766,6 @@
     <string name="show_poi_over_map_description">Показывать на карте последние выбранные POI.</string>
     <string name="show_poi_over_map">Отображать POI</string>
     <string name="map_source">Источник карты</string>
-    <string name="use_internet">Использовать Интернет</string>
     <string name="show_location">Показать ваше местоположение</string>
     <string name="show_gps_coordinates_text">Показать координаты GPS на карте</string>
     <string name="app_description">Навигационное приложение</string>
@@ -1146,13 +1137,11 @@
     <string name="context_menu_item_directions_from">Пункт отправления</string>
     <string name="driving_region_canada">Канада</string>
     <string name="about_version">Версия:</string>
-    <string name="local_index_tile_data_expire">Время действия (в минутах): %1$s</string>
     <string name="edit_tilesource_maxzoom">Максимальное увеличение</string>
     <string name="edit_tilesource_minzoom">Минимальное увеличение</string>
     <string name="map_widget_fps_info">Отладочная информация FPS</string>
     <string name="shared_string_about">О программе</string>
     <string name="about_settings_descr">Информация о версии, участниках проекта</string>
-    <string name="local_index_tile_data_name">Данные о тайлах: %1$s</string>
     <string name="base_world_map">Обзорная карта мира</string>
 
     <string name="app_mode_aircraft">Самолёт</string>
@@ -1466,7 +1455,6 @@
     <string name="navigate_point_easting">Восточной долготы</string>
     <string name="voices">Голосовые данные</string>
     <string name="error_avoid_specific_road">Объезд не найден</string>
-    <string name="rendering_attr_roadStyle_name">Стиль дорог</string>
     <string name="rendering_value_default_name">По умолчанию</string>
     <string name="rendering_value_orange_name">Оранжевый</string>
     <string name="rendering_value_americanRoadAtlas_name">Атлас дорог Америки</string>
@@ -1503,7 +1491,6 @@
     <string name="device_memory">Память устройства</string>
     <string name="free">Свободно %1$s</string>
     <string name="roads_only">Только дороги</string>
-    <string name="online_map">Онлайн карта</string>
     <string name="rename_failed">Не удалось переименовать.</string>
     <string name="back_to_map">Вернуться на карту</string>
     <string name="location_on_map">Координаты:\n Широта %1$s\n Долгота %2$s</string>
@@ -2086,7 +2073,6 @@
     <string name="file_can_not_be_moved">Файл не может быть перемещен.</string>
     <string name="shared_string_add_photos">Добавить фотографии</string>
     <string name="shared_string_permissions">Разрешения</string>
-    <string name="online_photos">Онлайн фотографии</string>
     <string name="no_photos_descr">У нас нет фотографий для этого места.</string>
     <string name="save_poi_too_many_uppercase">Название содержит слишком много заглавных букв. Вы действительно хотите продолжить?</string>
     <string name="quick_action_resume_pause_navigation_descr">Нажмите эту кнопку, чтобы приостановить или возобновить навигацию.</string>
@@ -2099,7 +2085,6 @@
     <string name="map_widget_ruler_control">Радиус-линейка</string>
     <string name="shared_string_install">Установить</string>
     <string name="shared_string_paused">Приостановлено</string>
-    <string name="rendering_value_fine_name">Правильно</string>
     <string name="average">Средняя</string>
     <string name="ascent_descent">Подъём/Спуск</string>
     <string name="moving_time">Время в движении</string>

@@ -159,8 +159,7 @@
 	<string name="osm_settings">Edición d\'OSM</string>
 	<string name="debugging_and_development">Desendolcu d\'OsmAnd</string>
 	<string name="notes">Notes</string>
-	<string name="online_map">Mapa en llinia</string>
-	<string name="roads_only">Namái carreteres</string>
+    <string name="roads_only">Namái carreteres</string>
 	<string name="device_memory">Memoria del preséu</string>
     <string name="gps_status">Estáu de GPS</string>
 	<string name="settings_privacy">Privacidá</string>
@@ -674,7 +673,6 @@ Puntos</string>
     <string name="file_can_not_be_moved">El ficheru nun puede movese.</string>
     <string name="shared_string_move">Mover</string>
     <string name="shared_string_tracks">Traces</string>
-    <string name="routing_attr_driving_style_name">Estilu de conducción</string>
     <string name="route_altitude">Altor de la ruta</string>
     <string name="altitude_descent">Descensu</string>
     <string name="altitude_ascent">Ascensu</string>
@@ -689,7 +687,6 @@ Puntos</string>
     <string name="search_another_country">Esbillar otra rexón</string>
     <string name="shared_string_change">Camudar</string>
     <string name="shared_string_install">Instalar</string>
-    <string name="online_photos">Semeyes en llinia</string>
     <string name="shared_string_add_photos">Amestar semeyes</string>
     <string name="no_photos_descr">Nun tenemos semeyes pa esti llugar.</string>
     <string name="private_access_routing_req">El to destín allúgase nun área con accesu priváu. ¿Quies permitir l\'accesu a les carreteres privaes nesti viaxe?</string>

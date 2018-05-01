@@ -80,7 +80,6 @@
     <string name="context_menu_item_update_map">Uppdatera kartan</string>
     
     <string name="context_menu_item_create_poi">Skapa POI</string>
-    <string name="use_internet">Använd Internet</string>
     <string name="map_widget_config">Konfigurera skärmen</string>
     <string name="map_widget_next_turn_small">Nästa sväng (liten)</string>
     <string name="map_widget_next_next_turn">Nästnästa sväng</string>
@@ -121,7 +120,6 @@ Proportionellt minne %4$s MB (Android-gräns %5$s MB, Dalvik %6$s MB).</string>
     <string name="unknown_from_location">Startpunkten är ännu inte bestämd</string>
     <string name="unknown_location">Positionen är ännu inte känd</string>
     <string name="confirm_interrupt_download">Vill du avbryta nedladdningen av filen?</string>
-    <string name="local_indexes_cat_tile">Online-kartor och mellanlagrade kartbitar (tiles)</string>
     <string name="local_indexes_cat_map">Standardkartor (vektor)</string>
 
     <string name="index_settings_descr">Ladda ner och hantera offline-kartor lagrade på din enhet.</string>
@@ -191,7 +189,6 @@ Proportionellt minne %4$s MB (Android-gräns %5$s MB, Dalvik %6$s MB).</string>
     <string name="basemap_was_selected_to_download">En baskarta krävs för att appen ska fungera korrekt och den har markerats för nedladdning.</string>
     <string name="select_index_file_to_download">Hittade ingenting. Om du inte kan hitta din region, kan du skapa den själv (se http://osmand.net).</string>
     <string name="map_online_plugin_is_not_installed">Aktivera modulen online-kartor för att välja olika kartkällor</string>
-    <string name="map_online_data">Online-kartor och kartbitar (tiles)</string>
 
 
     <string name="osmand_background_plugin_description">Visa inställningarna för att aktivera spårning och navigering i bakgrundsläge (skärm av) genom att periodvis väcka GPS-enheten.</string>
@@ -405,7 +402,6 @@ Nyttjat utrymme är {1} MB.
     <string name="voice_stream_voice_call">Telefonsamtalsljud (även för att avbryta bluetooth-bilstereo)</string>
     <string name="voice_stream_notification">Ljudnotifiering</string>
     <string name="voice_stream_music">Media-/musikljud</string>
-    <string name="warning_tile_layer_not_downloadable">Appen kan inte hämta kartlager %1$s. Försök installera om det.</string>
     <string name="overlay_transparency_descr">Ändra överläggstransparens.</string>
     <string name="overlay_transparency">Överläggstransparens</string>
     <string name="map_transparency_descr">Ändra transparens för baskartan.</string>
@@ -805,7 +801,6 @@ Nyttjat utrymme är {1} MB.
     <string name="local_index_descr_title">Hantera kartfiler.</string>
     <string name="incomplete_locale">ofullständig</string>
     <string name="search_osm_nominatim">Sök adress med OSM Nominatim</string>
-    <string name="max_level_download_tile">Max. online-zoom</string>
     <string name="fav_points_not_exist">Det finns inga favoritpunkter</string>
     <string name="only_show">Visa bara</string>
     <string name="auth_failed">Åtkomst nekades</string>
@@ -991,8 +986,6 @@ Nyttjat utrymme är {1} MB.
     <string name="about_settings_descr">Versionsinformation, licenser, projektmedlemmar</string>
 
 
-    <string name="local_index_tile_data_expire">Förfallotid (minuter): %1$s</string>
-    <string name="local_index_tile_data_name">Kartbitsdata: %1$s</string>
     <string name="edit_tilesource_maxzoom">Max. zoom</string>
     <string name="edit_tilesource_minzoom">Min. zoom</string>
     <string name="maps_define_edit">Definiera/Redigera …</string>
@@ -1333,7 +1326,6 @@ Nyttjat utrymme är {1} MB.
     <string name="use_opengl_render">Använd OpenGL-rendering</string>
     <string name="use_opengl_render_descr">Använd hårdvaruaccelererad OpenGL-rendering (fungerar kanske inte på vissa enheter).</string>
     <string name="no_internet_connection">Kan inte ladda ner; kontrollera din internetsanslutning.</string>
-    <string name="rendering_attr_roadStyle_name">Vägtyp</string>
     <string name="rendering_value_default_name">Standard</string>
     <string name="rendering_value_orange_name">Brandgul</string>
     <string name="traffic_warning_railways">Järnvägskorsning</string>
@@ -1391,7 +1383,6 @@ Nyttjat utrymme är {1} MB.
     <string name="device_memory">Intern lagring</string>
     <string name="roads_only">Endast vägar</string>
     <string name="notes">Anteckningar</string>
-    <string name="online_map">Online-karta</string>
     <string name="plugin_touringview_descr">"Om du aktiverar denna vy ändras kartan till \'Vägkartsvy\', som är en speciell vy med mycket detaljer för resenärer och yrkesförare.
 \n\nDenna vy ger, vid varje zoomnivå, maximalt antal detaljer som är tillgängliga i kartdatat (speciellt vägar, stigar och orienteringsmärken).\n\nDen visar också alla vägtyper på ett mycket tydligt sätt via färgkoder något som är användbart t.ex vid framförande av stora fordon.
 \n\nOch den erbjuder också speciella alternativ såsom visning av cykelrutter eller rutter i Alperna.\n\nIngen speciell hämtning av någon karta krävs; denna vy skapas med våra standardkartor.
@@ -1767,7 +1758,6 @@ Long %2$s</string>
 	<string name="shared_string_commit">Skicka in</string>
 	
     <string name="please_specify_poi_type_only_from_list">Ange rätt POI-typ eller hoppa över det.</string>
-    <string name="rendering_attr_roadStyle_description">Vägtyp</string>
     <string name="osm_edit_reopened_note">Öppnat OSM-anteckning igen</string>
     <string name="routing_attr_avoid_stairs_name">Undvik trappor</string>
 	<string name="routing_attr_avoid_stairs_description">Undvik trappor.</string>
@@ -1919,7 +1909,6 @@ Detta kräver {3} MB temporärt och {1} MB permanent.
     <string name="access_sort">Sortera</string>
     <string name="map_mode">Kartläge</string>
     <string name="number_of_gpx_files_selected_pattern">%s GPX-filer valda</string>
-    <string name="rendering_value_thin_name">Tunn</string>
     <string name="rendering_value_medium_name">Mellan</string>
     <string name="rendering_value_bold_name">Tjock</string>
     <string name="report">Rapporter</string>
@@ -2089,7 +2078,6 @@ Om du tycker om OsmAnd och OSM och vill stödja dem så är detta ett utmärkt s
     <string name="quick_action_map_underlay_title">Kartunderlägg</string>
     <string name="quick_action_map_underlay">Ändra kartunderlägg</string>
     <string name="quick_action_map_underlay_switch">Kartunderlägget har ändrats till \"%s\".</string>
-    <string name="rendering_value_fine_name">Fin</string>
     <string name="navigate_point_olc">Öppna platskod</string>
     <string name="navigate_point_olc_info_invalid">Ogiltig OLC
 </string>
@@ -2098,8 +2086,7 @@ Vänligen tillhandahåll fullständig kod</string>
     <string name="file_can_not_be_moved">Filen kan inte flyttas.</string>
     <string name="shared_string_move">Flytta</string>
     <string name="shared_string_tracks">Spår</string>
-    <string name="routing_attr_driving_style_name">Körstil</string>
-    
+
     <string name="route_altitude">Rutthöjd</string>
     <string name="altitude_descent">Sänkning</string>
     <string name="altitude_ascent">Stigning</string>
@@ -2193,7 +2180,6 @@ Vänligen tillhandahåll fullständig kod</string>
     <string name="no_underlay">Inget underlägg</string>
     <string name="subscribe_email_error">Fel</string>
     <string name="shared_string_visible">Synlig</string>
-    <string name="online_photos">Online-foton</string>
     <string name="shared_string_add_photos">Lägg till foton</string>
     <string name="no_photos_descr">Vi har inga foton från denna plats.</string>
     <string name="shared_string_install">Installera</string>

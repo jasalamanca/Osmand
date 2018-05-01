@@ -110,14 +110,12 @@
 	<string name="back_to_map">ನಕ್ಷೆಗೆ ಹಿಂದುರುಗಿ</string>
     <string name="watch">ನೋಡಿ</string>
 	<string name="notes">ಟಿಪ್ಪಣಿಗಳು</string>
-	<string name="online_map">ಮಿಂಬಲೆ ನಕ್ಷೆ</string>
-	<string name="roads_only">ಕೇವಲ ರಸ್ತೆಗಳು</string>
+    <string name="roads_only">ಕೇವಲ ರಸ್ತೆಗಳು</string>
     <string name="edit_group">ಗುಂಪನ್ನು ಸಂಪಾದಿಸಿ</string>
     <string name="remove_the_tag">ಟ್ಯಾಗ್ಅನ್ನು ತೆಗೆಯಿರಿ</string>
     <string name="gps_status">ಜಿಪಿಎಸ್ ಮಟ್ಟ</string>
     <string name="rendering_attr_streetLighting_name">ದಾರಿ ದೀಪಗಳು</string>
     <string name="settings_privacy">ಗುಪ್ತತೆ</string>
-    <string name="rendering_attr_roadStyle_name">ರಸ್ತೆ ಶೈಲಿ</string>
     <string name="rendering_value__name">ಮೊದಲ್ಗಾಣುವ</string>
     <string name="rendering_value_default_name">ಮೊದಲ್ಗಾಣುವ</string>
     <string name="rendering_value_orange_name">ಕಿತ್ತಲೆ</string>

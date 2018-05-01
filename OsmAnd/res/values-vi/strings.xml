@@ -96,9 +96,8 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
 	<string name="local_indexes_cat_backup">Sao lưu</string>
 	<string name="local_indexes_cat_tts">Dữ liệu giọng nói (TTS)</string>
 	<string name="local_indexes_cat_voice">Dữ liệu giọng nói (media)</string>
-	
-	<string name="local_indexes_cat_tile">Dữ liệu bản đồ (tiles)</string>
-	<string name="local_indexes_cat_map">Dữ liệu bản đồ (vector)</string>
+
+    <string name="local_indexes_cat_map">Dữ liệu bản đồ (vector)</string>
 	<string name="local_indexes_cat_poi">Dữ liệu địa điểm</string>
 
 	<string name="ttsvoice">Giọng đọc TTS</string>
@@ -129,8 +128,7 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
 	<string name="voice_stream_voice_call">Voice call audio</string>
 	<string name="voice_stream_notification">Âm thanh thông báo</string>
 	<string name="voice_stream_music">Media/Nhạc</string>
-	<string name="warning_tile_layer_not_downloadable">Ứng dụng không thể tải về lớp bản đồ %1$s, hãy thử cài lại.</string>
-	<string name="overlay_transparency_descr">Thay đổi độ trong suốt cho lớp phủ</string>
+    <string name="overlay_transparency_descr">Thay đổi độ trong suốt cho lớp phủ</string>
 	<string name="overlay_transparency">Độ trong suốt lớp phủ</string>
 	<string name="map_transparency_descr">Thay đổi độ trong suốt cho bản đồ nền</string>
 	<string name="map_transparency">Độ trong suốt bản đồ nền</string>
@@ -425,8 +423,7 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
 	<string name="hint_search_online">Số nhà, phố, thành phố</string>
 	<string name="search_offline_address">Offline</string>
 	<string name="search_online_address">Internet</string>
-	<string name="max_level_download_tile">Online zoom lớn nhất</string>
-	<string name="route_general_information">Tổng khoảng cách %1$s \n thời gian đi %2$d h %3$d m.</string>
+    <string name="route_general_information">Tổng khoảng cách %1$s \n thời gian đi %2$d h %3$d m.</string>
 	<string name="router_service_descr">Chọn dịch vụ tìm đường Online hoặc Offline</string>
 	<string name="router_service">Dịch vụ tìm đường</string>
 	<string name="sd_dir_not_accessible">Không truy xuất được thư mục trên thẻ nhớ!</string>
@@ -527,7 +524,6 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
     <string name="show_poi_over_map_description">Hiện địa điểm trên bản đồ (sử dụng bộ lọc gần đây nhất)</string>
     <string name="show_poi_over_map">Hiện địa điểm</string>
 	<string name="map_source">Nguồn bản đồ</string>
-    <string name="use_internet">Dùng Internet</string>
     <string name="show_location">Hiện vị trí</string>
     
     

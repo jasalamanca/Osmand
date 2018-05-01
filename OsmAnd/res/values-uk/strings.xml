@@ -29,12 +29,10 @@
   <string name="first_time_msg">Дякуємо вам за використання OsmAnd. Для роботи більшості основних можливостей програми потрібні детальні мапи регіонів, які можна завантажити з Інтернету за допомогою пункту меню \'Налаштування\' → \'Управління мапами\'. Після завантаження цих мап Ви зможете здійснювати пошук за адресою, POI і зупинками громадського транспорту.</string>
   <string name="basemap_was_selected_to_download">Базова мапа необхідна для коректної роботи програми і автоматично була вибрана для завантаження.</string>
   <string name="select_index_file_to_download">Нічого не знайдено. Якщо ви не знайшли свій регіон, ви можете створити карту самостійно (див. http://osmand.net).</string>
-  <string name="local_indexes_cat_tile">Онлайн та кешовані растрові мапи</string>
-  <string name="local_indexes_cat_map">Стандартні мапи (векторні)</string>
+    <string name="local_indexes_cat_map">Стандартні мапи (векторні)</string>
   
   <string name="index_settings_descr">Завантаження, перегляд деталей, та управління локальними мапами.</string>
   <string name="map_online_plugin_is_not_installed">Активуйте втулок онлайн мап, щоб мати можливість вибирати різні джерела для мап</string>
-  <string name="map_online_data">Онлайн мапи (растрові)</string>
     <string name="shared_string_online_maps">Онлайн мапи</string>
 
 
@@ -315,8 +313,7 @@
   <string name="voice_stream_voice_call">Голосовий канал (також призупиняє музику з динаміків)</string>
   <string name="voice_stream_notification">Повідомлення аудіо</string>
   <string name="voice_stream_music">Медіа / аудіо музика</string>
-  <string name="warning_tile_layer_not_downloadable">Програма не може завантажити шар мапи %1$s, спробуйте ще раз встановити його.</string>
-  <string name="overlay_transparency_descr">Змінити прозорість мапи.</string>
+    <string name="overlay_transparency_descr">Змінити прозорість мапи.</string>
   <string name="overlay_transparency">Прозорість</string>
   <string name="map_transparency_descr">Змінити прозорість основної мапи.</string>
   <string name="map_transparency">Прозорість мапи</string>
@@ -597,7 +594,6 @@
   <string name="hint_search_online">Онлайн пошук: Номер будинку, вулиця, місто</string>
   <string name="search_offline_address">Оффлайн пошук</string>
   <string name="search_online_address">Інтернет</string>
-  <string name="max_level_download_tile">Макс. рівень деталізації</string>
     <string name="route_general_information">Загальна відстань %1$s, час в дорозі %2$d г %3$d хв.</string>
   <string name="router_service_descr">Виберіть сервіс для прокладання маршруту.</string>
   <string name="router_service">Прокладання маршруту</string>
@@ -693,8 +689,7 @@
   <string name="show_poi_over_map_description">Відображати останні вибрані POI на мапі.</string>
   <string name="show_poi_over_map">Відображати POI</string>
     <string name="map_source">Джерело мапи</string>
-  <string name="use_internet">Використовувати інтернет</string>
-  <string name="show_location">Показати ваше місцерозташування</string>
+    <string name="show_location">Показати ваше місцерозташування</string>
   
   
   <string name="show_gps_coordinates_text">Показати GPS координати на мапі</string>
@@ -1081,8 +1076,6 @@
     <string name="about_settings_descr">Версія, ліцензії, учасники проекту</string>
 
 
-    <string name="local_index_tile_data_expire">Термін дії (у хвилинах): %1$s</string>
-    <string name="local_index_tile_data_name">Дата квадрату: %1$s</string>
     <string name="edit_tilesource_maxzoom">Макс.масштаб</string>
     <string name="edit_tilesource_minzoom">Мін.масштаб</string>
     <string name="maps_define_edit">Визначити/змінити…</string>
@@ -1433,8 +1426,7 @@
 
 
     <string name="notes">Нотатки</string>
-	<string name="online_map">Онлайн мапа</string>
-	<string name="roads_only">Тільки дороги</string>
+    <string name="roads_only">Тільки дороги</string>
     <string name="free">Вільно %1$s</string>
 	<string name="device_memory">Пам’ять пристрою</string>
     <string name="edit_group">Редагувати групу</string>
@@ -1455,7 +1447,6 @@
 	<string name="avoid_roads_msg">Ви можете вибрати альтернативний маршрут, вибравши дороги, які варто уникати</string>
     
 	<string name="speak_pedestrian">Пішохідні переходи</string>
-    <string name="rendering_attr_roadStyle_name">Стиль доріг</string>
     <string name="rendering_value_default_name">Типово</string>
     <string name="rendering_value_orange_name">Помаранчевий</string>
     <string name="traffic_warning_railways">Залізничний переїзд</string>
@@ -1738,7 +1729,6 @@
     <string name="rendering_attr_currentTrackColor_description">Колір GPX</string>
     <string name="rendering_attr_currentTrackWidth_description">Товщина GPX</string>
     <string name="shared_string_wikipedia">Вікіпедія</string>
-    <string name="rendering_attr_roadStyle_description">Стиль доріг</string>
     <string name="routing_attr_avoid_stairs_name">Уникати сходів</string>
     <string name="routing_attr_avoid_stairs_description">Уникати сходів.</string>
     <string name="routing_attr_avoid_borders_name">Уникати перетину кордону</string>
@@ -1957,7 +1947,6 @@
     <string name="access_sort">Впорядкувати</string>
     <string name="map_mode">Режим мапи</string>
     <string name="number_of_gpx_files_selected_pattern">%s GPX файл(ів) виділено</string>
-    <string name="rendering_value_thin_name">Тонко</string>
     <string name="rendering_value_medium_name">Середньо</string>
     <string name="rendering_value_bold_name">Жирно</string>
     <string name="no_map_markers_found">Додайте позначки на мапі</string>
@@ -2166,8 +2155,7 @@
     <string name="file_can_not_be_moved">Файл не може бути переміщений.</string>
     <string name="shared_string_move">Перемістити</string>
     <string name="shared_string_tracks">Треки</string>
-    <string name="routing_attr_driving_style_name">Стиль водіння</string>
-    
+
     <string name="route_altitude">Висота маршруту</string>
     <string name="altitude_descent">Спуск</string>
     <string name="altitude_ascent">Підіймання</string>
@@ -2208,7 +2196,6 @@
     <string name="quick_action_map_source">Змінити джерело мапи</string>
     <string name="quick_action_btn_tutorial_descr">Довге натиснення й перетягування дозволить перемістити кнопку.</string>
 	<string name="quick_action_add_osm_bug">Додати нотатку OSM</string>
-    <string name="rendering_value_fine_name">Дуже тонкий</string>
     <string name="navigate_point_olc">Відкритий код розташування (OLC)</string>
     <string name="quick_favorites_name_preset">Найменування</string>
     <string name="quick_action_add_marker_descr">При натисканні на кнопку дії додасть маркер мапи в центрі екрану.</string>
@@ -2302,7 +2289,6 @@
     <string name="route_is_too_long_v2">Цей маршрут може бути надто довгим для розрахунку. Будь ласка, додайте проміжні пункти призначення, якщо протягом 10 хвилин не знайдено жодного результату.</string>
     <string name="save_poi_too_many_uppercase">Назва містить занадто багато заголовних букв. Ви хочете продовжити?</string>
     <string name="shared_string_add_photos">Додати фотографії</string>
-    <string name="online_photos">Онлайн-фотографії</string>
     <string name="no_photos_descr">У нас немає фотографій для цього місця.</string>
     <string name="shared_string_install">Встановити</string>
     <string name="distance_moving">Відстань виправлена</string>

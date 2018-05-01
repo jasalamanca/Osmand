@@ -230,9 +230,8 @@
 	<string name="local_indexes_cat_backup">비활성화</string>
 	<string name="local_indexes_cat_tts">음성 데이터 (TTS)</string>
 	<string name="local_indexes_cat_voice">음성 데이터 (녹음)</string>
-	
-	<string name="local_indexes_cat_tile">온라인 및 타일 지도</string>
-	<string name="local_indexes_cat_map">오프라인 지도(벡터)</string>
+
+    <string name="local_indexes_cat_map">오프라인 지도(벡터)</string>
 	<string name="local_indexes_cat_poi">POI 데이터</string>
 
 	<string name="ttsvoice">TTS 음성</string>
@@ -262,8 +261,7 @@
 	<string name="voice_stream_voice_call">음성 호출 스트림(통화음)</string>
 	<string name="voice_stream_notification">소리 알림</string>
 	<string name="voice_stream_music">미디어/음악 스트림(통화음)</string>
-	<string name="warning_tile_layer_not_downloadable">OsmAnd 앱이 계층 지도 %1$s 를 다운로드할 수 없으니, 재설치 하세요.</string>
-	<string name="overlay_transparency_descr">오버레이 맵 투명도를 수정합니다</string>
+    <string name="overlay_transparency_descr">오버레이 맵 투명도를 수정합니다</string>
 	<string name="overlay_transparency">오버레이 투명도</string>
 	<string name="map_transparency_descr">언더레이 맵 투명도를 수정합니다</string>
 	<string name="map_transparency">언더레이 투명도</string>
@@ -558,7 +556,6 @@
 	<string name="hint_search_online">온라인 검색: 주소, 거리, 도시</string>
 	<string name="search_offline_address">오프라인 검색</string>
 	<string name="search_online_address">온라인 검색</string>
-	<string name="max_level_download_tile">최대 온라인 줌</string>
     <string name="route_general_information">전체거리 %1$s, 여행시간 %2$d h %3$d m.</string>
 	<string name="router_service_descr">온라인 또는 오프라인 라우팅 서비스를 선택합니다</string>
 	<string name="router_service">운행 서비스</string>
@@ -650,7 +647,6 @@
     <string name="show_poi_over_map_description">POI를 지도에 표시합니다 (최근에 선택된 필터 사용)</string>
     <string name="show_poi_over_map">POI 표시</string>
     <string name="map_source">지도 소스</string>
-    <string name="use_internet">인터넷 사용</string>
     <string name="show_location">위치 표시</string>
     
     
@@ -846,8 +842,6 @@
     <string name="about_settings_descr">버전 정보, 라이센스, 프로젝트 멤버</string>
     
     <string name="shared_string_about">소개</string>
-    <string name="local_index_tile_data_expire">만료(분) : %1$s</string>
-    <string name="local_index_tile_data_name">타일 데이터 : %1$s</string>
     <string name="edit_tilesource_maxzoom">최대 줌</string>
     <string name="edit_tilesource_minzoom">최소 줌</string>
     <string name="map_widget_fps_info">FPS 디버그 정보</string>
@@ -1133,7 +1127,6 @@
 	<string name="confirm_interrupt_download">파일 다운로드를 중단 하시겠습니까 ?</string>
 	<string name="basemap_was_selected_to_download">베이스맵은 적절한 앱의 작동에 필요하며, 다운로드하기 위해  베이스맵을 선택 했습니다.</string>
 	<string name="map_online_plugin_is_not_installed">다른 지도 소스를 선택하려면 온라인지도 플러그인을 활성화하세요</string>
-	<string name="map_online_data">온라인 및 타일 지도</string>
     <string name="shared_string_online_maps">온라인지도</string>
 
 
@@ -1437,7 +1430,6 @@
     <string name="dash_download_msg">%1$s 지도 다운로드됨</string>
     <string name="dash_download_new_one">새로운 지도 다운로드</string>
     <string name="dash_download_manage">관리</string>
-    <string name="rendering_attr_roadStyle_name">도로 스타일</string>
     <string name="rendering_value_default_name">기본</string>
     <string name="rendering_value_orange_name">오렌지</string>
     <string name="rendering_value_americanRoadAtlas_name">미국 도로 지도</string>
@@ -1478,7 +1470,6 @@
     <string name="roads_only">도로 전용</string>
     <string name="watch">보기(Watch)</string>
 	<string name="notes">노트</string>
-	<string name="online_map">온라인 지도</string>
 
     <string name="days_behind">하루가 저물 때</string>
     <string name="plugin_touringview_descr">"OsmAnd의 지도 스타일을  \'여행 보기\'로 변경합니다, 이는 여행자와 전문 드라이버을 위한 특별한 상세 보기를 지원합니다.\n\t\t\n\n이 보기는 다음을 제공 합니다, 어떤 주어진 된 지도 줌레벨에서, 여행의 최대 용량으로 지도 데이터 (특히 도로, 트랙, 경로 및 방향 표시)에서 사용할 수 있다. 그것은 또한 명확하게 (예를 들면 대형 차량 운전 하는 경우, 컬러 코딩으로) 모든 유형의 도로를 묘사합니다.\n\t\t\n\n특별한 지도 다운로드는 필요 하지 않습니다, 보기(View)는 표준 지도에서 만들어집니다.\n\t\t\n\n다시 비활성화 하거나, 또는 \'지도 구성\' 의 하위메뉴인  \'지도 스타일\'을 변경하여 보기(View)를 되돌릴 수 있습니다. "</string>
@@ -1822,7 +1813,6 @@
     <string name="access_sort"/>
     <string name="map_mode"/>
     <string name="number_of_gpx_files_selected_pattern"/>
-    <string name="rendering_value_thin_name"/>
     <string name="rendering_value_medium_name"/>
     <string name="rendering_value_bold_name"/>
     <string name="no_map_markers_found"/>

@@ -154,12 +154,10 @@
 	<string name="first_time_msg">Mulțumim pentru că folosiți OsmAnd. Pentru a beneficia de toate funcționalitățile acestei aplicații aveți nevoie de un set de date regionale pe care le puteți descărca via \'Setări\' -&gt; \'Organizează fișierele cu hărți\'. După aceea veți putea să vizualizați hărți, să găsiți adrese, să localizați puncte de interes (POI), și să găsiți transport public.</string>    
 	<string name="basemap_was_selected_to_download">Harta de bază (basemap) este necesară pentru corecta funcționare a aplicației și a fost automat selectată pentru descărcare.</string>
 	<string name="select_index_file_to_download">Nu s-a găsit nimic. Dacă nu puteți localiza harta regiunii care vă interesează, o puteți crea dvs. (vedeți http://osmand.net).</string>
-	<string name="local_indexes_cat_tile">Hărți raster și online</string>
-	<string name="local_indexes_cat_map">Hărți offline (vectoriale)</string>
+    <string name="local_indexes_cat_map">Hărți offline (vectoriale)</string>
 	
 	<string name="index_settings_descr">Descarcă și organizează hărțile offline stocate pe dispozitivul tău</string>
 	<string name="map_online_plugin_is_not_installed">Activează plugin-ul pentru hărți online ca să beneficiezi și de alte surse de date</string>
-	<string name="map_online_data">Hărți online și în format raster</string>
     <string name="shared_string_online_maps">Hărți online</string>
 
 
@@ -436,8 +434,7 @@
 	<string name="voice_stream_voice_call">Canal voce apel telefonic</string>
 	<string name="voice_stream_notification">Canal audio notificări de sistem</string>
 	<string name="voice_stream_music">Canal muzică/media</string>
-	<string name="warning_tile_layer_not_downloadable">Aplicația nu poate încărca stratul %1$s al hărții, încercați reinstalarea.</string>
-	<string name="overlay_transparency_descr">Modificare transparență strat</string>
+    <string name="overlay_transparency_descr">Modificare transparență strat</string>
 	<string name="overlay_transparency">Transparență strat</string>
 	<string name="map_transparency_descr">Modificare transparență a hărții de bază</string>
 	<string name="map_transparency">Transparență hartă de bază</string>
@@ -715,7 +712,6 @@
 	<string name="hint_search_online">Număr, stradă, oraș</string>
 	<string name="search_offline_address">Offline</string>
 	<string name="search_online_address">Internet</string>
-	<string name="max_level_download_tile">Nivel max. zoom online</string>
     <string name="route_general_information">Distanța totală %1$s,\n timp %2$d h %3$d m.</string>
 	<string name="router_service_descr">Alegeți un serviciu de rutare online sau offline</string>
 	<string name="router_service">Serviciu de rutare</string>
@@ -805,8 +801,7 @@
 	<string name="show_poi_over_map_description">Arată punctele POI pe hartă (se folosește ultimul filtru ales)</string>
 	<string name="show_poi_over_map">Arată POI</string>
     <string name="map_source">Sursă hartă</string>
-	<string name="use_internet">Acces hartă online</string>
-	<string name="show_location">Arată poziția</string>
+    <string name="show_location">Arată poziția</string>
 	
 	
 	<string name="show_gps_coordinates_text">Arată coordonatele GPS pe hartă</string>
@@ -993,8 +988,7 @@
 	<string name="about_version">Versiune :</string>
     <string name="shared_string_about">Despre</string>
     <string name="about_settings_descr">Informații versiune, licențe, membrii proiect</string>
-    
-    <string name="local_index_tile_data_expire">Expiră (minute): %1$s</string>
+
     <string name="maps_define_edit">Definește/Editează…</string>
 	<string name="map_widget_fps_info">Informații depanare FPS</string>
 	<string name="driving_region_descr">Selectați regiunea de conducere: US, Europa, UK, Asia și altele</string>
@@ -1210,7 +1204,6 @@
     
     
 	<string name="speak_pedestrian">Anunţă treceri pietonale</string>
-    <string name="rendering_attr_roadStyle_name">Stil drum</string>
     <string name="rendering_value_default_name">Implicit</string>
     <string name="rendering_value_orange_name">Portocaliu</string>
     <string name="traffic_warning_railways">Trecere de cale ferată</string>

@@ -202,12 +202,10 @@ Proportional hukommelse %4$s MB (Android grænse %5$s MB, Dalvik %6$s MB).</stri
     <string name="first_time_msg">Til mange af funktionerne i programmet skal der bruges nogle område offline data som kan hentes via \'Indstillinger\' → \'Administrer kortfiler\'. Bagefter kan man se kort, søge adresser, finde interessepunkter (IP) og kolllektivtrafik.</string>
     <string name="basemap_was_selected_to_download">Grundkort er nødvendige for korrekt programfunktion og blev automatisk valgt.</string>
     <string name="select_index_file_to_download">Fandt intet. Hvis man ikke kan finde sit område kan man lave den selv (se http://osmand.net).</string>
-    <string name="local_indexes_cat_tile">Onlinekort og cachelagrede kortbrikker</string>
     <string name="local_indexes_cat_map">Standardkort (vektor)</string>
 
     <string name="index_settings_descr">Hent og administrer offline kortfiler gemt på enheden.</string>
     <string name="map_online_plugin_is_not_installed">Aktiver onlinekort udvidelsen for at vælge andre kortkilder</string>
-    <string name="map_online_data">Onlinekort og kortbrikker</string>
     <string name="shared_string_online_maps">Onlinekort</string>
 
 
@@ -467,7 +465,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="voice_stream_voice_call">Telefonopkald lyd (afbryder også Bluetooth bilradio)</string>
     <string name="voice_stream_notification">Meddelelselyd</string>
     <string name="voice_stream_music">Medie-/musiklyd</string>
-    <string name="warning_tile_layer_not_downloadable">Programmet kan ikke hente kortlaget %1$s, prøv at installere igen.</string>
     <string name="overlay_transparency_descr">Ændre gennemsigtigheden for overlejring.</string>
     <string name="overlay_transparency">Overlejrings-gennemsigtighed</string>
     <string name="map_transparency_descr">Ændre gennemsigtigheden for grundkort.</string>
@@ -772,7 +769,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="search_osm_nominatim">Online søgning ved hjælp af OSM Nominatim</string>
     <string name="hint_search_online">Online-søgning: husnummer, gade, by</string>
     <string name="search_online_address">Online søgning</string>
-    <string name="max_level_download_tile">Maks online zoom</string>
 
 
     <string name="search_offline_address">Offline søgning</string>
@@ -856,7 +852,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="show_poi_over_map_description">Vis den sidst valgte IP overlejring på kortet.</string>
     <string name="show_poi_over_map">Vis IP overlejring</string>
     <string name="map_source">Kortkilde</string>
-    <string name="use_internet">Brug internettet</string>
     <string name="show_location">Vis position</string>
 
 
@@ -998,11 +993,9 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="driving_region">Region</string>
     <string name="driving_region_descr">Vælg region: USA, Europa, Storbritannien, Asien og andre.</string>
     <string name="map_widget_fps_info">FPS-fejlsøgningssinfo</string>
-    <string name="local_index_tile_data_expire">Udløber (minutter): %1$s</string>
     <string name="edit_tilesource_maxzoom">Maks. zoomniveau</string>
     <string name="edit_tilesource_minzoom">Min. zoomniveau</string>
     <string name="maps_define_edit">Definer/rediger…</string>
-    <string name="local_index_tile_data_name">Kortbrik-data: %1$s</string>
 
     <string name="about_version">Version:</string>
     <string name="shared_string_about">Om</string>
@@ -1355,7 +1348,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="dash_download_new_one">Hent nye kort</string>
     <string name="dash_download_manage">Administrer</string>
     <string name="voices">Talevejledning</string>
-    <string name="rendering_attr_roadStyle_name">Vejformat</string>
     <string name="rendering_value_default_name">Standard</string>
     <string name="rendering_value_orange_name">Orange</string>
     <string name="rendering_value_americanRoadAtlas_name">Amerikansk vejkort</string>
@@ -1395,7 +1387,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="device_memory">Lagerplads</string>
     <string name="roads_only">Kun veje</string>
     <string name="notes">Noter</string>
-    <string name="online_map">Online kort</string>
     <string name="watch">Vis</string>
 
     <string name="plugin_touringview_name">Touring kortvisning</string>
@@ -1805,7 +1796,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="osm_save_offline">Gem offline</string>
     <string name="rendering_attr_currentTrackColor_description">GPX-farve</string>
     <string name="rendering_attr_currentTrackWidth_description">GPX-bredde</string>
-    <string name="rendering_attr_roadStyle_description">Vejformat</string>
     <string name="copied_to_clipboard">Kopieret til udklipsholder</string>
     
     
@@ -1951,7 +1941,6 @@ Hvis du  ønsker at støtte OsmAnd og OSM, er dette en god måde at gøre det p�
     <string name="file_name_containes_illegal_char">Filnavnet indeholder ikke tilladte tegn</string>
 <string name="no_map_markers_found">Tilføj kortmarkører via kort</string>
     <string name="no_waypoints_found">Ingen rutepunkter fundet</string>
-    <string name="rendering_value_thin_name">Tynd</string>
     <string name="rendering_value_medium_name">Mellem</string>
     <string name="rendering_value_bold_name">Fed</string>
     <string name="number_of_gpx_files_selected_pattern">%s GPX filer valgt</string>
@@ -2100,7 +2089,6 @@ Hvis du  ønsker at støtte OsmAnd og OSM, er dette en god måde at gøre det p�
     <string name="gpx_no_tracks_title_folder">Tilføj også spor til mappen</string>
     <string name="gpx_add_track">Tilføj spor</string>
     <string name="gpx_appearance">Udseende</string>
-    <string name="rendering_value_fine_name">Fin</string>
     <string name="route_calculation">Ruteberegning</string>
     <string name="upload_poi">Overfør IP</string>
     <string name="route_roundabout_short">Tag %1$d afkørsel og forsæt</string>
@@ -2208,8 +2196,7 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="average_altitude">Gennemsnitshøjde</string>
     <string name="shared_string_time">Tid</string>
     <string name="total_distance">Total afstand</string>
-    <string name="routing_attr_driving_style_name">Kørestil</string>
-    
+
     <string name="shared_string_tracks">Spor</string>
     <string name="select_gpx_folder">Vælg mappe til spor</string>
     <string name="file_can_not_be_moved">Filen kan ikke flyttes.</string>
@@ -2297,7 +2284,6 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="nothing_found_descr">Ændre søgningen eller øg søgeradius.</string>
     <string name="private_access_routing_req">Destination ligger i et område med privat adgang. Giv adgang til de private veje for turen?</string>
     <string name="shared_string_add_photos">Tilføj fotos</string>
-    <string name="online_photos">Online fotos</string>
     <string name="no_photos_descr">Ingen fotos til denne placering.</string>
     <string name="shared_string_install">Installer</string>
     <string name="distance_moving">Korrigeret afstand</string>

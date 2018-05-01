@@ -127,8 +127,7 @@
     <string name="rendering_attr_hmRendered_description">Erhöht den dargestellten Detailgrad der Karte.</string>
 	<string name="rendering_attr_hmRendered_name">Mehr Details in Karte</string>
 	<string name="map_online_plugin_is_not_installed">Aktivieren Sie das Online-Karten-Modul, um andere Kartenquellen nutzen zu können</string>
-	<string name="map_online_data">Online- und Kachel-Karten</string>
-    <string name="shared_string_online_maps">Online-Karten</string>
+	<string name="shared_string_online_maps">Online-Karten</string>
 
     <string name="osmand_background_plugin_description">Zeigt die Einstellungen für die Standortaufzeichnung oder die Navigation während das Gerät im Standby-Modus ist (periodisches Aufwecken des GPS-Empfängers).</string>
 	<string name="osmand_accessibility_description">Diese Erweiterung verschafft den direkten Zugriff auf die System-Eingabehilfen in OsmAnd. Dadurch kann z.B. die Abspielgeschwindigkeit der Synthesizer-Stimme, die Bildschirmnavigation mittels Steuerkreuz, die Benutzung eines Trackballs zur Zoomsteuerung oder die Sprachausgabe, wie die automatische Ansage Ihrer Position, konfiguriert werden.</string>
@@ -376,9 +375,8 @@
 	<string name="local_indexes_cat_backup">Deaktiviert</string>
 	<string name="local_indexes_cat_tts">Sprachansagen (TTS)</string>
 	<string name="local_indexes_cat_voice">Sprachansagen (Aufnahmen)</string>
-	
-	<string name="local_indexes_cat_tile">Online- und zwischengespeicherte Karten (Kacheln)</string>
-	<string name="local_indexes_cat_map">Standardkarten (Vektor)</string>
+
+    <string name="local_indexes_cat_map">Standardkarten (Vektor)</string>
 	<string name="local_indexes_cat_poi">POI-Daten</string>
 	<string name="ttsvoice">TTS-Sprachansage</string>
 	<string name="search_offline_clear_search">Neue Suche</string>
@@ -401,7 +399,6 @@
 	<string name="voice_stream_voice_call">Wie Anrufe (über Bluetooth auch zur Stereoanlage im Auto)</string>
 	<string name="voice_stream_notification">Wie Benachrichtigungen</string>
 	<string name="voice_stream_music">Wie Medien/Musik</string>
-	<string name="warning_tile_layer_not_downloadable">Kartenebene %1$s wurde nicht heruntergeladen, bitte nochmal laden.</string>
 	<string name="overlay_transparency_descr">Transparenz der Overlay-Karte ändern.</string>
 	<string name="overlay_transparency">Overlay-Transparenz</string>
 	<string name="map_transparency_descr">Transparenz der Hauptkarte ändern.</string>
@@ -673,8 +670,7 @@
 	<string name="hint_search_online">Online-Suche: Hausnummer, Straße, Ort</string>
 	<string name="search_offline_address">Offline-Suche</string>
 	<string name="search_online_address">Online-Suche</string>
-	<string name="max_level_download_tile">Max. Online-Zoom</string>
-    <string name="route_general_information">Gesamtentfernung %1$s, Reisezeit %2$d h %3$d min.</string>
+	<string name="route_general_information">Gesamtentfernung %1$s, Reisezeit %2$d h %3$d min.</string>
 	<string name="router_service_descr">Online- oder Offline-Dienst zur Routenberechnung wählen.</string>
 	<string name="router_service">Navigationsdienst</string>
 	<string name="sd_dir_not_accessible">Auf den Daten-Ordner auf der SD-Karte kann nicht zugegriffen werden!</string>
@@ -753,7 +749,6 @@
 	<string name="show_poi_over_map_description">Zuletzt gewähltes POIs Overlax auf der Karte anzeigen.</string>
 	<string name="show_poi_over_map">POI Overlay anzeigen</string>
     <string name="map_source">Kartenquelle</string>
-	<string name="use_internet">Internet verwenden</string>
 	<string name="show_location">Standort anzeigen</string>
 
 	<string name="show_gps_coordinates_text">GPS-Koordinaten auf der Karte anzeigen</string>
@@ -1067,9 +1062,7 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="about_version">Version:</string>
 	<string name="shared_string_about">Über</string>
 	<string name="about_settings_descr">Versionsinfo, Lizenz, Projektmitglieder</string>
-    <string name="local_index_tile_data_expire">Gültigkeit endet in (Minuten): %1$s</string>
-    <string name="local_index_tile_data_name">Kacheldaten: %1$s</string>
-    <string name="edit_tilesource_maxzoom">Max Zoom</string>
+	<string name="edit_tilesource_maxzoom">Max Zoom</string>
     <string name="edit_tilesource_minzoom">Min Zoom</string>
     <string name="maps_define_edit">Definieren/Bearbeiten…</string>
 	<string name="shared_string_and">und</string>
@@ -1368,9 +1361,7 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
     <string name="dash_download_msg">%1$s heruntergeladene Karten</string>
     <string name="dash_download_new_one">Neue Karte herunterladen</string>
     <string name="dash_download_manage">Karten verwalten</string>
-    <string name="rendering_attr_roadStyle_name">Straßendarstellung</string>
-    <string name="rendering_attr_roadStyle_description">Straßendarstellung</string>
-    <string name="rendering_value__name">Standard</string>
+	<string name="rendering_value__name">Standard</string>
     <string name="rendering_value_default_name">Standard</string>
     <string name="rendering_value_orange_name">Orange</string>
 	<string name="traffic_warning_railways">Bahnübergang</string>
@@ -1431,7 +1422,6 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
  Lat %1$s
  Lon %2$s</string>
 	<string name="notes">Notizen</string>
-	<string name="online_map">Online-Karte</string>
 	<string name="roads_only">Nur Straßen</string>
 	<string name="shared_string_export">Export</string>
 	<string name="watch">Ansehen</string>
@@ -1866,9 +1856,7 @@ Wenn Sie OsmAnd und OSM lieben und unterstützen wollen, so ist dies die perfekt
     <string name="file_name_containes_illegal_char">Dateiname beinhaltet nicht erlaubte Zeichen</string>
 <string name="no_waypoints_found">Keine Wegpunkte gefunden</string>
     <string name="no_map_markers_found">Bitte Kartenmarkierungen über die Karte hinzufügen</string>
-    <string name="rendering_value_fine_name">Fein</string>
-    <string name="rendering_value_thin_name">Dünn</string>
-    <string name="rendering_value_medium_name">Mittel</string>
+	<string name="rendering_value_medium_name">Mittel</string>
     <string name="rendering_value_bold_name">Fett</string>
     <string name="map_mode">Kartenmodus</string>
     <string name="number_of_gpx_files_selected_pattern">%s GPX-Dateien ausgewählt</string>
@@ -2119,9 +2107,8 @@ Abgedeckte Fläche: %1$s x %2$s</string>
     <string name="average_altitude">Durchschnittliche Höhe</string>
     <string name="shared_string_time">Zeit</string>
     <string name="total_distance">Gesamtstrecke</string>
-    <string name="routing_attr_driving_style_name">Fahrweise</string>
-    
-    <string name="select_gpx_folder">Track-Ordner wählen</string>
+
+	<string name="select_gpx_folder">Track-Ordner wählen</string>
     <string name="file_can_not_be_moved">Datei kann nicht verschoben werden.</string>
     <string name="shared_string_move">Verschieben</string>
     <string name="shared_string_tracks">Tracks</string>
@@ -2215,8 +2202,7 @@ Abgedeckte Fläche: %1$s x %2$s</string>
     <string name="show_from_zoom_level">Darstellen ab Zoomstufe</string>
     <string name="shared_string_add_photos">Fotos hinzufügen</string>
     <string name="shared_string_install">Installieren</string>
-    <string name="online_photos">Online-Fotos</string>
-    <string name="no_photos_descr">Es gibt keine Fotos von diesem Ort.</string>
+	<string name="no_photos_descr">Es gibt keine Fotos von diesem Ort.</string>
     <string name="shared_string_permissions">Berechtigungen</string>
     <string name="import_gpx_failed_descr">OsmAnd kann die Datei nicht importieren. Überprüfen Sie, ob OsmAnd Leserechte für den Dateispeicherort besitzt.</string>
     <string name="shared_string_reload">Erneut laden</string>

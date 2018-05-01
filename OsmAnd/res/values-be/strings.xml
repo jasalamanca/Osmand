@@ -10,8 +10,6 @@
     <string name="about_settings_descr">Вэрсія, ліцэнзіі, удзельнікі праекту</string>
 
 
-    <string name="local_index_tile_data_expire">Тэрмін дзеяньня (у хвілінах): %1$s</string>
-    <string name="local_index_tile_data_name">Зьвесткі фрагмэнту: %1$s</string>
     <string name="edit_tilesource_maxzoom">Максімальнае павелічэньне</string>
     <string name="edit_tilesource_minzoom">Мінімальнае павелічэньне</string>
     <string name="maps_define_edit">Вызначыць/зьмянiць…</string>
@@ -308,11 +306,9 @@
 	<string name="first_time_msg">Дзякуй за карыстаньне OsmAnd. Каб карыстацца ўсімі магчымасьцямі дастасаваньня, вам патрэбныя некаторыя пазасеціўныя зьвесткі для вашага рэгіёну. Іх можна cьцягнуць праз \'Налады\' → \'Кіраваць файламі мапаў\'. Пасьля гэтага вы зможаце глядзець мапу, шукаць адрасы, бачыць POI і грамадзкі транспарт.</string>    
 	<string name="basemap_was_selected_to_download">Базавая мапа неабходная для карэктнай працы дастасаваньня і аўтаматычна была абраная для cьцягваньня.</string>
 	<string name="select_index_file_to_download">Нічога не знойдзена. Калі вы не знайшлі свой рэгіён, вы можаце стварыць мапу самастойна (гл. http://osmand.net).</string>
-	<string name="local_indexes_cat_tile">Сеціўныя і кэшаваныя растравыя мапы</string>
-	<string name="local_indexes_cat_map">Стандартныя мапы (вэктарныя)</string>
+    <string name="local_indexes_cat_map">Стандартныя мапы (вэктарныя)</string>
 	<string name="index_settings_descr">Сцягванне і кіраванне файламі мапаў, што захоўваюцца на вашым прыстасаванні.</string>
 	<string name="map_online_plugin_is_not_installed">Актывуйце модуль анлайн мапаў, каб выбіраць розныя крыніцы для мапаў</string>
-	<string name="map_online_data">Сеціўныя і растравыя мапы</string>
     <string name="shared_string_online_maps">Сеціўныя мапы</string>
 
 
@@ -580,8 +576,7 @@
 	<string name="voice_stream_voice_call">Канал телефанаваньня (таксама спыняе музыку з дынамікаў)</string>
 	<string name="voice_stream_notification">Канал апавяшчэньня</string>
 	<string name="voice_stream_music">Мэдыя/музычны канал</string>
-	<string name="warning_tile_layer_not_downloadable">Дастасаваньне не можа сьцягнуць слой мапы %1$s, паспрабуйце пераўсталяваць яе.</string>
-	<string name="overlay_transparency_descr">Змяніць празрыстасьць накладзенага слою.</string>
+    <string name="overlay_transparency_descr">Змяніць празрыстасьць накладзенага слою.</string>
 	<string name="overlay_transparency">Празрыстасьць накладаньня</string>
 	<string name="map_transparency_descr">Змяніць празрыстасць асноўнай мапы.</string>
 	<string name="map_transparency">Празрыстасьць асноўнай мапы</string>
@@ -837,7 +832,6 @@
 	<string name="hint_search_online">Інтэрнэт-пошук: горад, вуліца, дом</string>
 	<string name="search_offline_address">Пазасеціўны пошук</string>
 	<string name="search_online_address">Сеціўны пошук</string>
-	<string name="max_level_download_tile">Максімальнае павелічэньне онлайн мапаў</string>
     <string name="route_general_information">Агульная адлегласьць %1$s, час у дарозе %2$d г. %3$d хв.</string>
 	<string name="router_service_descr">Абраць сеціўны ці пазасеціўны сэрвіс навігацыі.</string>
 	<string name="router_service">Сэрвіс навігацыі</string>
@@ -922,8 +916,7 @@
 	<string name="show_poi_over_map_description">Паказаць апошнюю POI-накладку на мапе.</string>
 	<string name="show_poi_over_map">Паказаць POI-накладку</string>
     <string name="map_source">Крыніца мапы</string>
-	<string name="use_internet">Выкарыстоўваць Інтэрнэт</string>
-	<string name="show_location">Паказаць ваша становішча</string>
+    <string name="show_location">Паказаць ваша становішча</string>
 	
 	
 	<string name="show_gps_coordinates_text">Паказаць GPS каардынаты на мапе</string>
@@ -1361,7 +1354,6 @@
 	<string name="rendering_value_orange_name">Аранжавы</string>
     <string name="rendering_value_americanRoadAtlas_name">Амэрыканскі атлас аўтадарог</string>
     <string name="rendering_value_default_name">Па змоўчаньні</string>
-    <string name="rendering_attr_roadStyle_name">Стыль аўтадарог</string>
     <string name="show_pedestrian_warnings">Пешаходныя пераходы</string>
     <string name="traffic_warning_pedestrian">Пешаходны пераход</string>
 	<string name="traffic_warning_railways">Чыгуначны пераезд</string>
@@ -1400,7 +1392,6 @@
     <string name="roads_only">Толькі дарогі</string>
     <string name="watch">Сачыць</string>
 	<string name="notes">Нататкі</string>
-	<string name="online_map">Інтэрнэт мапа</string>
 
     <string name="back_to_map">Вярнуцца да мапы</string>
 	<string name="track_segments">Адрэзкі сьледу</string>
@@ -1792,8 +1783,7 @@
 	<string name="osn_close_dialog_success">Нататка была пасьпяхова зачынена</string>
 	<string name="osn_close_dialog_error">Памылка: нататка ня была зачынена</string>
 	<string name="shared_string_commit">Адаслаць</string>
-	
-    <string name="rendering_attr_roadStyle_description">Стыль адлюстраваньня дарог</string>
+
     <string name="poi_context_menu_modify_osm_change">Рэдагаваць POI</string>
     <string name="rendering_attr_currentTrackWidth_description">Шырыня сьледу GPX</string>
     <string name="rendering_attr_currentTrackColor_description">Колер сьледу GPX</string>
@@ -1928,7 +1918,6 @@
     <string name="osm_live_enter_user_name">Калі ласка ўвядзіце імя</string>
     <string name="select_map_markers">Абярыце маркеры</string>
     <string name="file_name_containes_illegal_char">Назва файлу зьмяшчае недапушчальны сымбаль</string>
-<string name="rendering_value_thin_name">Тонкі</string>
     <string name="rendering_value_medium_name">Сярэдні</string>
     <string name="rendering_value_bold_name">Тоўсты</string>
     <string name="map_mode">Рэжым мапы</string>
@@ -2079,7 +2068,6 @@
     <string name="upload_poi">Выгрузіць POI</string>
     <string name="search_map_hint">Пошук горада ці краіны</string>
     <string name="wiki_around">Блізкія артыкулы ў Вікіпэдыі</string>
-    <string name="rendering_value_fine_name">Вельмі тонкі</string>
     <string name="save_track_min_speed">Мінімальная хуткасьць для запісу</string>
     <string name="christmas_desc">Напярэдадні калядных і навагодніх сьвятаў, вы можаце выбраць для адлюстраваньня POI, зьвязаныя з Калядамі: елкі, кірмашы і да т.п.</string>
     <string name="routing_attr_allow_motorway_name">Дазволіць аўтамагістралі</string>
@@ -2164,8 +2152,7 @@
     <string name="file_can_not_be_moved">Файл не можа быць перамешчаны.</string>
     <string name="shared_string_move">Перамясціць</string>
     <string name="shared_string_tracks">Трэкі</string>
-    <string name="routing_attr_driving_style_name">Стыль язды</string>
-    
+
     <string name="route_altitude">Вышыня маршруту</string>
     <string name="altitude_descent">Спуск</string>
     <string name="altitude_ascent">Пад\'ём</string>
@@ -2278,7 +2265,6 @@
     <string name="route_is_too_long_v2">Гэты маршрут, магчыма, занадта вялікі для разьліку. Калі ласка, дадайце прамежкавыя пункты, калі разьлік не завяршыўся цягам 10 хвілін.</string>
     <string name="save_poi_too_many_uppercase">Назва змяшчае занадта шмат вялікіх літар. Вы хочаце прадоўжыць?</string>
     <string name="shared_string_add_photos">Дадаць фатаграфій</string>
-    <string name="online_photos">Анлайн-фатаграфіі</string>
     <string name="no_photos_descr">Мы не маем фатаграфій для гэтага месца.</string>
     <string name="shared_string_install">Усталяваць</string>
     <string name="distance_moving">Дыстанцыя папраўленая</string>

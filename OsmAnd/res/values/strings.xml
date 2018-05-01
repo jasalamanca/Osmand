@@ -195,7 +195,6 @@
     <string name="import_gpx_failed_descr">OsmAnd cannot import the file. Please check if OsmAnd has permission to read file from its location.</string>
     <string name="distance_moving">Distance corrected</string>
     <string name="shared_string_install">Install</string>
-    <string name="online_photos">Online photos</string>
     <string name="shared_string_add_photos">Add photos</string>
     <string name="no_photos_descr">We do not have photos for this location.</string>
     <string name="private_access_routing_req">Your destination is located in an area with private access. Do you want to allow access to the private roads for this trip?</string>
@@ -279,7 +278,6 @@
     <string name="file_can_not_be_moved">File can not be moved.</string>
     <string name="shared_string_move">Move</string>
     <string name="shared_string_tracks">Tracks</string>
-    <string name="routing_attr_driving_style_name">Driving style</string>
     <string name="route_altitude">Route elevation</string>
     <string name="altitude_descent">Descent</string>
     <string name="altitude_ascent">Ascent</string>
@@ -459,8 +457,6 @@
     <string name="access_sort">Sort</string>
     <string name="map_mode">Map mode</string>
     <string name="number_of_gpx_files_selected_pattern">%s GPX files selected</string>
-    <string name="rendering_value_fine_name">Fine</string>
-    <string name="rendering_value_thin_name">Thin</string>
     <string name="rendering_value_medium_name">Medium</string>
     <string name="rendering_value_bold_name">Bold</string>
     <string name="no_map_markers_found">Please add map markers via map</string>
@@ -893,7 +889,6 @@
     <string name="location_on_map">Location:\n Lat %1$s\n Lon %2$s</string>
     <string name="watch">Watch</string>
     <string name="notes">Notes</string>
-    <string name="online_map">Online map</string>
     <string name="roads_only">Roads only</string>
     <string name="free">Free %1$s </string>
     <string name="device_memory">Device memory</string>
@@ -910,8 +905,6 @@
     <string name="navigation_over_track">Start navigation along track?</string>
     <string name="avoid_roads_msg">You can trigger an alternative route by selecting roads to avoid</string>
     <string name="speak_pedestrian">Pedestrian crosswalks</string>
-    <string name="rendering_attr_roadStyle_name">Road style</string>
-    <string name="rendering_attr_roadStyle_description">Road style</string>
     <string name="rendering_value__name">Default</string>
     <string name="rendering_value_default_name">Default</string>
     <string name="traffic_warning_railways">Railroad crossing</string>
@@ -1238,8 +1231,6 @@
     <string name="about_version">Version :</string>
     <string name="shared_string_about">About</string>
     <string name="about_settings_descr">Version info, licenses, project members</string>
-    <string name="local_index_tile_data_expire">Expire (minutes): %1$s</string>
-    <string name="local_index_tile_data_name">Tile data: %1$s</string>
     <string name="edit_tilesource_maxzoom">Max zoom</string>
     <string name="edit_tilesource_minzoom">Min zoom</string>
     <string name="maps_define_edit">Define/Edit…</string>
@@ -1501,11 +1492,9 @@
     <string name="confirm_interrupt_download">Do you want to cancel downloading the file?</string>
     <string name="first_time_msg">Thank you for using OsmAnd. For many features of this application you need some regional offline data which you can download via \'Settings\' →  \'Manage map files\'. Afterwards you will be able to view maps, locate addresses, look up POIs, and find public transport.</string>
     <string name="basemap_was_selected_to_download">Basemap is required for proper application functioning and was selected to download.</string>
-    <string name="local_indexes_cat_tile">Online and cached tile maps</string>
     <string name="local_indexes_cat_map">Standard maps (vector)</string>
     <string name="index_settings_descr">Download and manage offline map files stored on your device.</string>
     <string name="map_online_plugin_is_not_installed">Enable the Online maps plugin to select different map sources</string>
-    <string name="map_online_data">Online and tile maps</string>
     <string name="plugins_screen">Plugins</string>
     <string name="prefs_plugins">Plugins</string>
     <string name="vector_maps_may_display_faster_on_some_devices">Vector maps likely display faster. May not work well on some devices.</string>
@@ -1736,7 +1725,6 @@
     <string name="voice_stream_voice_call">Phone call audio (also to interrupt car BT stereos)</string>
     <string name="voice_stream_notification">Notification audio</string>
     <string name="voice_stream_music">Media/music audio</string>
-    <string name="warning_tile_layer_not_downloadable">Application cannot download map layer %1$s, please try to reinstall it.</string>
     <string name="overlay_transparency_descr">Modify the overlay transparency.</string>
     <string name="overlay_transparency">Overlay transparency</string>
     <string name="map_transparency_descr">Modify the base map transparency.</string>
@@ -1970,7 +1958,6 @@
     <string name="hint_search_online">Online search: House number, street, city</string>
     <string name="search_offline_address">Offline search</string>
     <string name="search_online_address">Online search</string>
-    <string name="max_level_download_tile">Max. online zoom</string>
     <string name="route_general_information">Total distance %1$s, traveling time %2$d h %3$d min.</string>
     <string name="router_service_descr">Select an online or offline navigation service.</string>
     <string name="router_service">Navigation service</string>
@@ -2035,7 +2022,6 @@
     <string name="show_poi_over_map_description">Show the last selected POI overlay on the map.</string>
     <string name="show_poi_over_map">Show POI overlay</string>
     <string name="map_source">Map source</string>
-    <string name="use_internet">Use Internet</string>
     <string name="show_location">Show your position</string>
     <string name="show_gps_coordinates_text">Show GPS coordinates on map</string>
     <string name="app_description">Navigation application</string>

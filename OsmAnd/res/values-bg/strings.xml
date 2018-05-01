@@ -285,11 +285,9 @@
     <string name="first_time_msg">Благодарим Ви, че изтеглихте OsmAnd. Необходими са също и карти, които можете да изтеглите сега или по-късно от \'Настройки\'/\'Управление на карти\'. След това ще можете да използвате пълната функционалност на програмата.</string>
     <string name="basemap_was_selected_to_download">Базовата карта се изисква за правилна работа на приложението и тя беше автоматично избрана за сваляне.</string>
     <string name="select_index_file_to_download">Нищо не е намерено. Ако не намирате Вашия регион, можете да си направите сами карти (виж http://osmand.net).</string>
-    <string name="local_indexes_cat_tile">Онлайн и кеширани карти</string>
     <string name="local_indexes_cat_map">Стандартни карти (векторни)</string>
     <string name="index_settings_descr">Сваляне и управление на свалените данни във Вашето устройство</string>
     <string name="map_online_plugin_is_not_installed">Включете добавката за онлайн карти и ще можете да избирате различни източници на карти</string>
-    <string name="map_online_data">Онлайн карти</string>
     <string name="shared_string_online_maps">Онлайн карти</string>
 
 
@@ -556,7 +554,6 @@
     <string name="voice_stream_voice_call">Канал за гласови данни (за предпочитане)</string>
     <string name="voice_stream_notification">Канал за системни предупреждения</string>
     <string name="voice_stream_music">Канал за медия/музика</string>
-    <string name="warning_tile_layer_not_downloadable">Приложението не може да свали картната подложка %1$s. Моля, преинсталирайте.</string>
     <string name="overlay_transparency_descr">Промяна прозрачността на допълнителния горен слой</string>
     <string name="overlay_transparency">Прозрачност на допълнителния горен слой</string>
     <string name="map_transparency_descr">Промяна прозрачността на базовата карта</string>
@@ -819,7 +816,6 @@
     <string name="hint_search_online">Търсене в Интернет: Номер, улица, град</string>
     <string name="search_offline_address">Търсене офлайн</string>
     <string name="search_online_address">Търсене онлайн</string>
-    <string name="max_level_download_tile">Максимален мащаб при онлайн</string>
     <string name="route_general_information">Разстояние: %1$s, време до целта: %2$d ч. %3$d мин.</string>
     <string name="router_service_descr">Изберете онлайн или офлайн услуга за навигация</string>
     <string name="router_service">Услуга за навигация</string>
@@ -906,7 +902,6 @@
     <string name="show_poi_over_map_description">Покажи POI на картата (ползвай последния избран филтър)</string>
     <string name="show_poi_over_map">Покажи POI</string>
     <string name="map_source">Източник на карти</string>
-    <string name="use_internet">Ползвай интернет</string>
     <string name="show_location">Показване Вашата позиция</string>
 
 
@@ -1052,8 +1047,6 @@
     <string name="local_osm_changes_delete_all_confirm">Ще изтриете %1$d промени в картата OSM. Сигурни ли сте?</string>
 
 
-    <string name="local_index_tile_data_expire">Изтича след %1$s минути</string>
-    <string name="local_index_tile_data_name">Данни: %1$s</string>
     <string name="edit_tilesource_maxzoom">Максимално увеличение</string>
     <string name="edit_tilesource_minzoom">Минимално увеличение</string>
 
@@ -1243,7 +1236,6 @@
     <string name="show_railway_warnings">Покажи ЖП прелези</string>
     <string name="show_pedestrian_warnings">Покажи пешеходни пътеки</string>
     <string name="rendering_attr_streetLighting_name">Улично осветление</string>
-    <string name="rendering_attr_roadStyle_name">Оцветяване на пътищата</string>
     <string name="rendering_value_americanRoadAtlas_name">Американски стил</string>
     <string name="rendering_value_orange_name">оранжев</string>
 
@@ -1311,7 +1303,6 @@
     <string name="location_on_map">Позиция:\n шир: %1$s\n дълж: %2$s</string>
     <string name="watch">Виж</string>
     <string name="notes">Бележки</string>
-    <string name="online_map">Онлайн карта</string>
     <string name="roads_only">Само пътища</string>
     <string name="free">"Свободни %1$s "</string>
     <string name="device_memory">Памет на устройството</string>
@@ -1631,7 +1622,6 @@
     <string name="lang_te">Телугу</string>
     <string name="lang_new">Непал Бхаса</string>
     <string name="lang_gl">Галски</string>
-    <string name="rendering_attr_roadStyle_description">Оцветяване на пътищата</string>
     <string name="misc_pref_title">Разни</string>
     <string name="localization_pref_title">Локализация</string>
     <string name="index_item_nation_addresses">адреси в цялата страна</string>
@@ -1920,7 +1910,6 @@
     <string name="get_started">Първи стъпки</string>
     <string name="route_stops_before">%1$s спирания преди</string>
     <string name="shared_string_install">Инсталиране</string>
-    <string name="online_photos">Онлайн снимки</string>
     <string name="shared_string_add_photos">Добавяне на снимки</string>
     <string name="no_photos_descr">Ние нямаме снимки за това местоположение</string>
 </resources>
