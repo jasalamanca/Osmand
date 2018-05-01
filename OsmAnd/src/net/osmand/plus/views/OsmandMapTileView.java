@@ -36,7 +36,6 @@ import net.osmand.data.QuadPoint;
 import net.osmand.data.QuadPointDouble;
 import net.osmand.data.RotatedTileBox;
 import net.osmand.map.IMapLocationListener;
-import net.osmand.map.MapTileDownloader.DownloadRequest;
 import net.osmand.map.MapTileDownloader.IMapDownloaderCallback;
 import net.osmand.plus.OsmAndConstants;
 import net.osmand.plus.OsmAndFormatter;
@@ -98,10 +97,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		}
 	}
 
-
-	protected static final int emptyTileDivisor = 16;
-
-
 	public interface OnTrackBallListener {
 		public boolean onTrackBallEvent(MotionEvent e);
 	}
@@ -119,7 +114,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	}
 
 	protected static final Log LOG = PlatformUtil.getLog(OsmandMapTileView.class);
-
 
 	private RotatedTileBox currentViewport;
 
@@ -176,7 +170,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	private MultiTouchSupport multiTouchSupport;
 	private DoubleTapScaleDetector doubleTapScaleDetector;
 	private TwoFingerTapDetector twoFingersTapDetector;
-	//private boolean afterTwoFingersTap = false;
 	private boolean afterDoubleTap = false;
 	private boolean wasMapLinkedBeforeGesture = false;
 
@@ -223,7 +216,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 
 		paintImg = new Paint();
 		paintImg.setFilterBitmap(true);
-//		paintImg.setDither(true);
 
 		handler = new Handler();
 		baseHandler = new Handler(application.getResourceManager().getRenderingBufferImageThread().getLooper());
@@ -245,7 +237,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		twoFingersTapDetector = new TwoFingerTapDetector() {
 			@Override
 			public void onTwoFingerTap() {
-				//afterTwoFingersTap = true;
 				if (!mapGestureAllowed(OsmandMapLayer.MapGestureType.TWO_POINTERS_ZOOM_OUT)) {
 					return;
 				}
@@ -301,12 +292,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		layer.destroyLayer();
 	}
 
-	public synchronized void removeAllLayers() {
-		while (layers.size() > 0) {
-			removeLayer(layers.get(0));
-		}
-	}
-
 	public List<OsmandMapLayer> getLayers() {
 		return layers;
 	}
@@ -319,14 +304,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 			}
 		}
 		return null;
-	}
-
-	public int getViewHeight() {
-		if (view != null) {
-			return view.getHeight();
-		} else {
-			return 0;
-		}
 	}
 
 	public OsmandApplication getApplication() {
@@ -388,7 +365,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		}
 	}
 
-
 	public boolean isMapRotateEnabled() {
 		return getZoom() > LOWEST_ZOOM_TO_ROTATE;
 	}
@@ -413,7 +389,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	public float getRotate() {
 		return currentViewport.getRotate();
 	}
-
 
 	public void setLatLon(double latitude, double longitude) {
 		animatedDraggingThread.stopAnimating();
@@ -441,7 +416,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		return (getSettings().MAP_DENSITY.get()) * Math.max(1, getDensity());
 	}
 
-
 	public boolean isZooming() {
 		return currentViewport.isZoomAnimated();
 	}
@@ -450,21 +424,11 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		locationListener = l;
 	}
 
-	/**
-	 * Adds listener to control when map is dragging
-	 */
-	public IMapLocationListener setMapLocationListener() {
-		return locationListener;
-	}
-
 	public void setOnDrawMapListener(OnDrawMapListener onDrawMapListener) {
 		this.onDrawMapListener = onDrawMapListener;
 	}
 
 	// ////////////////////////////// DRAWING MAP PART /////////////////////////////////////////////
-	public BaseMapLayer getMainLayer() {
-		return mainLayer;
-	}
 
 	public void setMainLayer(BaseMapLayer mainLayer) {
 		this.mainLayer = mainLayer;
@@ -547,12 +511,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 			final float x2 = calc.getPixXFromTile(rb.x, rb.y, cz);
 			final float y1 = calc.getPixYFromTile(lt.x, lt.y, cz);
 			final float y2 = calc.getPixYFromTile(rb.x, rb.y, cz);
-//			LatLon lt = bufferImgLoc.getLeftTopLatLon();
-//			LatLon rb = bufferImgLoc.getRightBottomLatLon();
-//			final float x1 = calc.getPixXFromLatLon(lt.getLatitude(), lt.getLongitude());
-//			final float x2 = calc.getPixXFromLatLon(rb.getLatitude(), rb.getLongitude());
-//			final float y1 = calc.getPixYFromLatLon(lt.getLatitude(), lt.getLongitude());
-//			final float y2 = calc.getPixYFromLatLon(rb.getLatitude(), rb.getLongitude());
 			if (!bufferBitmap.isRecycled()) {
 				RectF rct = new RectF(x1, y1, x2, y2);
 				canvas.drawBitmap(bufferBitmap, null, rct, paintImg);
@@ -750,7 +708,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		}
 	}
 
-
 	protected void drawMapPosition(Canvas canvas, float x, float y) {
 		canvas.drawCircle(x, y, 3 * dm.density, paintCenter);
 		canvas.drawCircle(x, y, 7 * dm.density, paintCenter);
@@ -786,7 +743,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 				}
 			});
 			msg.what = drawSettings.isUpdateVectorRendering() ? MAP_FORCE_REFRESH_MESSAGE : BASE_REFRESH_MESSAGE;
-			// baseHandler.sendMessageDelayed(msg, 0);
 			baseHandler.sendMessage(msg);
 		}
 	}
@@ -833,7 +789,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	}
 
 	@Override
-	public void tileDownloaded(DownloadRequest request) {
+	public void tileDownloaded() {
 		refreshMap();
 	}
 
@@ -1071,7 +1027,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		accessibilityActions = actions;
 	}
 
-
 	public AnimateDraggingMapThread getAnimatedDraggingThread() {
 		return animatedDraggingThread;
 	}
@@ -1084,7 +1039,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 			}
 		});
 	}
-
 
 	private class MapTileViewMultiTouchZoomListener implements MultiTouchZoomListener,
 			DoubleTapScaleDetector.DoubleTapZoomListener {
@@ -1136,7 +1090,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 				}
 			}
 		}
-
 
 		@Override
 		public void onGestureInit(float x1, float y1, float x2, float y2) {

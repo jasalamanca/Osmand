@@ -23,7 +23,6 @@ import net.osmand.binary.CachedOsmandIndexes;
 import net.osmand.data.Amenity;
 import net.osmand.data.RotatedTileBox;
 import net.osmand.data.TransportStop;
-import net.osmand.map.MapTileDownloader;
 import net.osmand.map.OsmandRegions;
 import net.osmand.osm.PoiCategory;
 import net.osmand.plus.AppInitializer;
@@ -179,7 +178,7 @@ public class ResourceManager {
 	
 	protected final MapRenderRepositories renderer;
 
-	protected final MapTileDownloader tileDownloader;
+//	protected final MapTileDownloader tileDownloader;
 	
 	public final AsyncLoadingThread asyncLoadingThread = new AsyncLoadingThread(this);
 	
@@ -196,7 +195,7 @@ public class ResourceManager {
 		renderingBufferImageThread = new HandlerThread("RenderingBaseImage");
 		renderingBufferImageThread.start();
 
-		tileDownloader = MapTileDownloader.getInstance(Version.getFullVersion(context));
+//		tileDownloader = MapTileDownloader.getInstance();
 		dateFormat = DateFormat.getDateFormat(context);
 		resetStoreDirectory();
 
@@ -205,9 +204,9 @@ public class ResourceManager {
 		mgr.getDefaultDisplay().getMetrics(dm);
 	}
 
-	public MapTileDownloader getMapTileDownloader() {
-		return tileDownloader;
-	}
+//	public MapTileDownloader getMapTileDownloader() {
+//		return tileDownloader;
+//	}
 	
 	public HandlerThread getRenderingBufferImageThread() {
 		return renderingBufferImageThread;

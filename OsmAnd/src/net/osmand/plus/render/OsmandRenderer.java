@@ -543,7 +543,7 @@ public class OsmandRenderer {
 
 	private void notifyListeners(MapTileDownloader mapTileDownloader) {
 		if (mapTileDownloader != null) {
-			mapTileDownloader.fireLoadCallback(null);
+			mapTileDownloader.fireLoadCallback();
 		}
 	}
 
@@ -567,10 +567,9 @@ public class OsmandRenderer {
 		return calcPoint(o.getPoint31XTile(ind), o.getPoint31YTile(ind), rc);
 	}
 
-
-	public void clearCachedResources(){
-		shaders.clear();
-	}
+//	public void clearCachedResources(){
+//		shaders.clear();
+//	}
 	
 	private void drawPolygon(BinaryMapDataObject obj, RenderingRuleSearchRequest render, Canvas canvas, RenderingContext rc, TagValuePair pair, 
 			double area) {

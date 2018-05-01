@@ -3,6 +3,7 @@ package net.osmand.plus.resources;
 
 import net.osmand.PlatformUtil;
 import net.osmand.data.RotatedTileBox;
+import net.osmand.map.MapTileDownloader;
 
 import org.apache.commons.logging.Log;
 
@@ -32,7 +33,7 @@ public class AsyncLoadingThread extends Thread {
 					if (req instanceof MapLoadRequest) {
 						if (!mapLoaded) {
 							MapLoadRequest r = (MapLoadRequest) req;
-							resourceManger.getRenderer().loadMap(r.tileBox, resourceManger.getMapTileDownloader());
+							resourceManger.getRenderer().loadMap(r.tileBox, MapTileDownloader.getInstance());
 							mapLoaded = !resourceManger.getRenderer().wasInterrupted();
 							if (r.mapLoadedListener != null) {
 								r.mapLoadedListener.onMapLoaded(!mapLoaded);
@@ -42,7 +43,7 @@ public class AsyncLoadingThread extends Thread {
 				}
 				if (mapLoaded) {
 					// use downloader callback
-					resourceManger.getMapTileDownloader().fireLoadCallback(null);
+					MapTileDownloader.getInstance().fireLoadCallback();
 				}
 				sleep(750);
 			} catch (InterruptedException e) {

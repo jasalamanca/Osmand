@@ -53,7 +53,7 @@ import net.osmand.data.PointDescription;
 import net.osmand.data.QuadPoint;
 import net.osmand.data.QuadRect;
 import net.osmand.data.RotatedTileBox;
-import net.osmand.map.MapTileDownloader.DownloadRequest;
+import net.osmand.map.MapTileDownloader;
 import net.osmand.map.MapTileDownloader.IMapDownloaderCallback;
 import net.osmand.plus.AppInitializer;
 import net.osmand.plus.AppInitializer.AppInitializeListener;
@@ -106,7 +106,6 @@ import net.osmand.plus.measurementtool.MeasurementEditingContext;
 import net.osmand.plus.measurementtool.MeasurementToolFragment;
 import net.osmand.plus.measurementtool.NewGpxData;
 import net.osmand.plus.render.RendererRegistry;
-import net.osmand.plus.resources.ResourceManager;
 import net.osmand.plus.routing.RoutingHelper;
 import net.osmand.plus.routing.RoutingHelper.IRouteInformationListener;
 import net.osmand.plus.routing.RoutingHelper.RouteCalculationProgressCallback;
@@ -137,13 +136,14 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+//import net.osmand.plus.resources.ResourceManager;
 
 public class MapActivity extends OsmandActionBarActivity implements DownloadEvents,
 		OnRequestPermissionsResultCallback, IRouteInformationListener,
@@ -194,7 +194,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 
 	private DashboardOnMap dashboardOnMap = new DashboardOnMap(this);
 	private AppInitializeListener initListener;
-	private IMapDownloaderCallback downloaderCallback;
+//	private IMapDownloaderCallback downloaderCallback;
 	private DrawerLayout drawerLayout;
 	private boolean drawerDisabled;
 
@@ -224,8 +224,6 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		mapContextMenu.setMapActivity(this);
 
 		super.onCreate(savedInstanceState);
-		// Full screen is not used here
-		// getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.main);
 
 		if (Build.VERSION.SDK_INT >= 21) {
@@ -269,23 +267,17 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		mapViewTrackingUtilities.setMapView(mapView);
 
 		// to not let it gc
-		downloaderCallback = new IMapDownloaderCallback() {
-			@Override
-			public void tileDownloaded(DownloadRequest request) {
-//				if (request != null && !request.error && request.fileToSave != null) {
-//					ResourceManager mgr = app.getResourceManager();
-//					mgr.tileDownloaded(request);
-//				}
-				if (request == null || !request.error) {
-					mapView.tileDownloaded(request);
-				}
-			}
-		};
-		app.getResourceManager().getMapTileDownloader().addDownloaderCallback(downloaderCallback);
+//		downloaderCallback = new IMapDownloaderCallback() {
+//			@Override
+//			public void tileDownloaded() {
+//					mapView.tileDownloaded();
+//			}
+//		};
+		MapTileDownloader.getInstance().addDownloaderCallback(mapView);//downloaderCallback);
 		createProgressBarForRouting();
 		mapLayers.createLayers(mapView);
 		updateStatusBarColor();
-		// This situtation could be when navigation suddenly crashed and after restarting
+		// This situation could be when navigation suddenly crashed and after restarting
 		// it tries to continue the last route
 		if (settings.FOLLOW_THE_ROUTE.get() && !app.getRoutingHelper().isRouteCalculated()
 				&& !app.getRoutingHelper().isRouteBeingCalculated()) {
@@ -512,15 +504,15 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		return gpxImportHelper;
 	}
 
-	@SuppressWarnings("rawtypes")
-	public Object getLastNonConfigurationInstanceByKey(String key) {
-		Object k = super.getLastNonConfigurationInstance();
-		if (k instanceof Map) {
-
-			return ((Map) k).get(key);
-		}
-		return null;
-	}
+//	@SuppressWarnings("rawtypes")
+//	public Object getLastNonConfigurationInstanceByKey(String key) {
+//		Object k = super.getLastNonConfigurationInstance();
+//		if (k instanceof Map) {
+//
+//			return ((Map) k).get(key);
+//		}
+//		return null;
+//	}
 
 	@Override
 	public Object onRetainCustomNonConfigurationInstance() {
@@ -661,7 +653,6 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		};
 		settings.APPLICATION_MODE.addListener(applicationModeListener);
 		updateApplicationModeSettings();
-
 
 		// if destination point was changed try to recalculate route
 		TargetPointsHelper targets = app.getTargetPointsHelper();
@@ -956,7 +947,6 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 						//kill the application
 						res = true;
 						android.os.Process.killProcess(android.os.Process.myPid());
-						//System.exit(0);
 					} else {
 						LOG.error("Was not able to restart application, mStartActivity null");
 					}
@@ -1121,16 +1111,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 	}
 
 	public void changeZoom(int stp) {
-		// delta = Math.round(delta * OsmandMapTileView.ZOOM_DELTA) * OsmandMapTileView.ZOOM_DELTA_1;
 		boolean changeLocation = false;
-		// if (settings.AUTO_ZOOM_MAP.get() == AutoZoomMap.NONE) {
-		// changeLocation = false;
-		// }
-
-		// double curZoom = mapView.getZoom() + mapView.getZoomFractionalPart() + stp * 0.3;
-		// int newZoom = (int) Math.round(curZoom);
-		// double zoomFrac = curZoom - newZoom;
-
 		final int newZoom = mapView.getZoom() + stp;
 		final double zoomFrac = mapView.getZoomFractionalPart();
 		if (newZoom > mapView.getMaxZoom()) {
@@ -1166,7 +1147,6 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		return super.onTrackballEvent(event);
 	}
 
-
 	@Override
 	protected void onStart() {
 		super.onStart();
@@ -1174,22 +1154,16 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		getMyApplication().getNotificationHelper().showNotifications();
 	}
 
-	protected void setProgressDlg(Dialog progressDlg) {
-		this.progressDlg = progressDlg;
-	}
+//	protected void setProgressDlg(Dialog progressDlg) {
+//		this.progressDlg = progressDlg;
+//	}
 
-	protected Dialog getProgressDlg() {
-		return progressDlg;
-	}
+//	protected Dialog getProgressDlg() {
+//		return progressDlg;
+//	}
 
 	@Override
 	protected void onStop() {
-	//	if (app.getRoutingHelper().isFollowingMode()) {
-	//		mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-	//		if (mNotificationManager != null) {
-	//			mNotificationManager.notify(APP_NOTIFICATION_ID, getNotification());
-	//		}
-	//	}
 		wakeLockHelper.onStop(this);
 		getMyApplication().getNotificationHelper().removeNotifications();
 		super.onStop();
@@ -1204,7 +1178,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		OsmandPlugin.onMapActivityDestroy(this);
 		getMyApplication().unsubscribeInitListener(initListener);
 		mapViewTrackingUtilities.setMapView(null);
-		app.getResourceManager().getMapTileDownloader().removeDownloaderCallback(mapView);
+		MapTileDownloader.getInstance().removeDownloaderCallback(mapView);
 		if (atlasMapRendererView != null) {
 			atlasMapRendererView.handleOnDestroy();
 		}
@@ -1270,7 +1244,6 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		changeKeyguardFlags();
 		updateMapSettings();
 		mapViewTrackingUtilities.updateSettings();
-		//app.getRoutingHelper().setAppMode(settings.getApplicationMode());
 		if (mapLayers.getMapInfoLayer() != null) {
 			mapLayers.getMapInfoLayer().recreateControls();
 		}
@@ -1711,7 +1684,6 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		public void onReceive(Context context, Intent intent) {
 			OsmandPlugin.onMapActivityScreenOff(MapActivity.this);
 		}
-
 	}
 
 	public boolean isLandscapeLayout() {
