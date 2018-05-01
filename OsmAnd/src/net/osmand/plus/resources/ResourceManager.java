@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.database.sqlite.SQLiteException;
 import android.os.HandlerThread;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.format.DateFormat;
 import android.util.DisplayMetrics;
@@ -26,9 +25,7 @@ import net.osmand.data.RotatedTileBox;
 import net.osmand.data.TransportStop;
 import net.osmand.map.ITileSource;
 import net.osmand.map.MapTileDownloader;
-import net.osmand.map.MapTileDownloader.DownloadRequest;
 import net.osmand.map.OsmandRegions;
-import net.osmand.osm.MapPoiTypes;
 import net.osmand.osm.PoiCategory;
 import net.osmand.plus.AppInitializer;
 import net.osmand.plus.AppInitializer.InitEvents;
@@ -139,7 +136,6 @@ public class ResourceManager {
 			return filename.getName();
 		}
 
-		
 		// should not use methods to read from file!
 		public BinaryMapIndexReader getShallowReader() {
 			return initialReader;
@@ -182,7 +178,6 @@ public class ResourceManager {
 	
 	private final Map<String, RegionAddressRepository> addressMap = new ConcurrentHashMap<String, RegionAddressRepository>();
 	protected final Map<String, AmenityIndexRepository> amenityRepositories =  new ConcurrentHashMap<String, AmenityIndexRepository>();
-//	protected final Map<String, BinaryMapIndexReader> routingMapFiles = new ConcurrentHashMap<String, BinaryMapIndexReader>();
 	protected final Map<String, TransportIndexRepository> transportRepositories = new ConcurrentHashMap<String, TransportIndexRepository>();
 	
 	protected final Map<String, String> indexFileNames = new ConcurrentHashMap<String, String>();
@@ -199,7 +194,6 @@ public class ResourceManager {
 	
 	private HandlerThread renderingBufferImageThread;
 	
-	protected boolean internetIsNotAccessible = false;
 	private java.text.DateFormat dateFormat;
 
 	public ResourceManager(OsmandApplication context) {
@@ -230,14 +224,6 @@ public class ResourceManager {
 		bitmapTilesCache.setMaxCacheSize((int) (tiles));
 	}
 
-	public BitmapTilesCache getBitmapTilesCache() {
-		return bitmapTilesCache;
-	}
-
-	public GeometryTilesCache getGeometryTilesCache() {
-		return geometryTilesCache;
-	}
-
 	public MapTileDownloader getMapTileDownloader() {
 		return tileDownloader;
 	}
@@ -250,10 +236,6 @@ public class ResourceManager {
 		if (!resourceListeners.contains(listener)) {
 			resourceListeners.add(listener);
 		}
-	}
-
-	public void removeResourceListener(ResourceListener listener) {
-		resourceListeners.remove(listener);
 	}
 
 	public void resetStoreDirectory() {
@@ -289,55 +271,12 @@ public class ResourceManager {
 		return null;
 	}
 
-	public synchronized void tileDownloaded(DownloadRequest request){
-		if (request instanceof TileLoadDownloadRequest) {
-			TileLoadDownloadRequest req = ((TileLoadDownloadRequest) request);
-			TilesCache cache = getTilesCache(req.tileSource);
-			if (cache != null) {
-				cache.tilesOnFS.put(req.tileId, Boolean.TRUE);
-			}
-		}
-	}
-	
-	public synchronized boolean tileExistOnFileSystem(String file, ITileSource map, int x, int y, int zoom) {
-		TilesCache cache = getTilesCache(map);
-		return cache != null && cache.tileExistOnFileSystem(file, map, x, y, zoom);
-	}
-	
-	public void clearTileForMap(String file, ITileSource map, int x, int y, int zoom){
-		TilesCache cache = getTilesCache(map);
-		if (cache != null) {
-			cache.getTileForMap(file, map, x, y, zoom, true, false, true, true);
-		}
-	}
-
 	private GeoidAltitudeCorrection geoidAltitudeCorrection;
 	private boolean searchAmenitiesInProgress;
-
-	public synchronized String calculateTileId(ITileSource map, int x, int y, int zoom) {
-		TilesCache cache = getTilesCache(map);
-		if (cache != null) {
-			return cache.calculateTileId(map, x, y, zoom);
-		}
-		return null;
-	}
 
 	protected boolean hasRequestedTile(TileLoadDownloadRequest req) {
 		TilesCache cache = getTilesCache(req.tileSource);
 		return cache != null && cache.getRequestedTile(req) != null;
-	}
-
-	public boolean hasTileForMapSync(String file, ITileSource map, int x, int y, int zoom, boolean loadFromInternetIfNeeded) {
-		TilesCache cache = getTilesCache(map);
-		return cache != null && cache.getTileForMapSync(file, map, x, y, zoom, loadFromInternetIfNeeded) != null;
-	}
-
-	public void clearCacheAndTiles(@NonNull ITileSource map) {
-		map.deleteTiles(new File(dirWithTiles, map.getName()).getAbsolutePath());
-		TilesCache cache = getTilesCache(map);
-		if (cache != null) {
-			cache.clearTiles();
-		}
 	}
 
 	////////////////////////////////////////////// Working with indexes ////////////////////////////////////////////////
@@ -355,7 +294,6 @@ public class ResourceManager {
 	public List<String> reloadIndexes(IProgress progress, List<String> warnings) {
 		geoidAltitudeCorrection = new GeoidAltitudeCorrection(context.getAppPath(null));
 		// do it lazy
-		// indexingImageTiles(progress);
 		warnings.addAll(indexingMaps(progress));
 		warnings.addAll(indexVoiceFiles(progress));
 		warnings.addAll(indexFontFiles(progress));
@@ -367,7 +305,6 @@ public class ResourceManager {
 	public List<String> indexAdditionalMaps(IProgress progress) {
 		return context.getAppCustomization().onIndexingFiles(progress, indexFileNames);
 	}
-
 
 	public List<String> indexVoiceFiles(IProgress progress){
 		File file = context.getAppPath(IndexConstants.VOICE_INDEX_DIR);
@@ -422,8 +359,6 @@ public class ResourceManager {
 					unpackBundledAssets(assetManager, applicationDataDir, progress, isFirstInstall || forceUpdate);
 					context.getSettings().PREVIOUS_INSTALLED_VERSION.set(fv);
 					copyRegionsBoundaries();
-					// see Issue #3381
-					//copyPoiTypes();
 					for (String internalStyle : context.getRendererRegistry().getInternalRenderers().keySet()) {
 						File fl = context.getRendererRegistry().getFileForInternalStyle(internalStyle);
 						if (fl.exists()) {
@@ -455,19 +390,6 @@ public class ResourceManager {
 		}
 	}
 	
-	private void copyPoiTypes() {
-		try {
-			File file = context.getAppPath("poi_types.xml");
-			if (file != null) {
-				FileOutputStream fout = new FileOutputStream(file);
-				Algorithms.streamCopy(MapPoiTypes.class.getResourceAsStream("poi_types.xml"), fout);
-				fout.close();
-			}
-		} catch (Exception e) {
-			log.error(e.getMessage(), e);
-		}
-	}
-
 	private final static String ASSET_INSTALL_MODE__alwaysCopyOnFirstInstall = "alwaysCopyOnFirstInstall";
 	private final static String ASSET_COPY_MODE__overwriteOnlyIfExists = "overwriteOnlyIfExists";
 	private final static String ASSET_COPY_MODE__alwaysOverwriteOrCopy = "alwaysOverwriteOrCopy";
@@ -549,9 +471,7 @@ public class ResourceManager {
 		}
 		return files;
 	}
-	
-	
-	
+
 	private void renameRoadsFiles(ArrayList<File> files, File roadsPath) {
 		Iterator<File> it = files.iterator();
 		while(it.hasNext()) {
@@ -678,8 +598,6 @@ public class ResourceManager {
 		}
 		return warnings;
 	}
-
-	
 
 	public void initMapBoundariesCacheNative() {
 		File indCache = context.getAppPath(INDEXES_CACHE);
@@ -808,10 +726,6 @@ public class ResourceManager {
 		}
 		
 		// Not using boundares results in very slow initial search if user has many maps installed
-//		int left = 0;
-//		int top = 0;
-//		int right = Integer.MAX_VALUE;
-//		int bottom = Integer.MAX_VALUE;
 		for (AmenityIndexRepositoryBinary index : list) {
 			if (matcher != null && matcher.isCancelled()) {
 				break;
@@ -836,7 +750,6 @@ public class ResourceManager {
 		}
 		return map;
 	}
-	
 	
 	////////////////////////////////////////////// Working with address ///////////////////////////////////////////
 	
@@ -863,7 +776,6 @@ public class ResourceManager {
 		}
 		return repos;
 	}
-	
 	
 	public List<TransportStop> searchTransportSync(double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude, ResultMatcher<TransportStop> matcher){
 		List<TransportIndexRepository> repos = new ArrayList<TransportIndexRepository>();
@@ -933,8 +845,7 @@ public class ResourceManager {
 		}
 		fileReaders.clear();
 	}
-	
-	
+
 	public BinaryMapIndexReader[] getRoutingMapFiles() {
 		List<BinaryMapIndexReader> readers = new ArrayList<>(fileReaders.size());
 		for(BinaryMapReaderResource r : fileReaders.values()) {
@@ -960,8 +871,7 @@ public class ResourceManager {
 	public Map<String, String> getIndexFileNames() {
 		return new LinkedHashMap<String, String>(indexFileNames);
 	}
-	
-	
+
 	public boolean containsBasemap(){
 		return !basemapFileNames.isEmpty();
 	}
