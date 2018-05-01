@@ -334,9 +334,6 @@ public class DownloadedRegionsLayer extends OsmandMapLayer implements IContextMe
 
 	@Override
 	public void onDraw(Canvas canvas, RotatedTileBox tileBox, DrawSettings nightMode) {
-		if(view.getMainLayer() instanceof MapTileLayer) {
-			return;
-		}
 		// query from UI thread because of Android AsyncTask bug (Handler init)
 		data.queryNewData(tileBox);
 	}

@@ -2,16 +2,12 @@ package net.osmand.plus.activities;
 
 
 import android.content.Context;
-import android.os.Build;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 
 import net.osmand.IndexConstants;
-import net.osmand.map.ITileSource;
-import net.osmand.map.TileSourceManager;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
-import net.osmand.plus.SQLiteTileSource;
 import net.osmand.plus.download.ui.AbstractLoadLocalIndexTask;
 import net.osmand.plus.voice.MediaCommandPlayerImpl;
 import net.osmand.plus.voice.TTSCommandPlayerImpl;
@@ -63,22 +59,6 @@ public class LocalIndexHelper {
 			} else {
 				info.setDescription(getInstalledDate(f));
 			}
-		} else if (info.getType() == LocalIndexType.TILES_DATA) {
-			ITileSource template;
-			if (f.isDirectory() && TileSourceManager.isTileSourceMetaInfoExist(f)) {
-				template = TileSourceManager.createTileSourceTemplate(new File(info.getPathToData()));
-			} else if (f.isFile() && f.getName().endsWith(SQLiteTileSource.EXT)) {
-				template = new SQLiteTileSource(app, f, TileSourceManager.getKnownSourceTemplates());
-			} else {
-				return;
-			}
-			String descr = "";
-			descr += app.getString(R.string.local_index_tile_data_name, template.getName());
-			if (template.getExpirationTimeMinutes() >= 0) {
-				descr += "\n" + app.getString(R.string.local_index_tile_data_expire, template.getExpirationTimeMinutes());
-			}
-			info.setAttachedObject(template);
-			info.setDescription(descr);
 		} else if (info.getType() == LocalIndexType.WIKI_DATA) {
 			info.setDescription(getInstalledDate(f));
 		} else if (info.getType() == LocalIndexType.TTS_VOICE_DATA) {
@@ -187,7 +167,6 @@ public class LocalIndexHelper {
 
 		loadObfData(app.getAppPath(IndexConstants.MAPS_PATH), result, false, loadTask, loadedMaps);
 		loadObfData(app.getAppPath(IndexConstants.ROADS_INDEX_DIR), result, false, loadTask, loadedMaps);
-		loadTilesData(app.getAppPath(IndexConstants.TILES_INDEX_DIR), result, false, loadTask);
 		loadWikiData(app.getAppPath(IndexConstants.WIKI_INDEX_DIR), result, loadTask);
 		//loadVoiceData(app.getAppPath(IndexConstants.TTSVOICE_INDEX_EXT_ZIP), result, true, loadTask);
 		loadVoiceData(app.getAppPath(IndexConstants.VOICE_INDEX_DIR), result, false, loadTask);
@@ -209,7 +188,7 @@ public class LocalIndexHelper {
 		if (voiceDir.canRead()) {
 			//First list TTS files, they are preferred
 			for (File voiceF : listFilesSorted(voiceDir)) {
-				if (voiceF.isDirectory() && !MediaCommandPlayerImpl.isMyData(voiceF) && (Build.VERSION.SDK_INT >= 4)) {
+				if (voiceF.isDirectory() && !MediaCommandPlayerImpl.isMyData(voiceF)) {
 					LocalIndexInfo info = null;
 					if (TTSCommandPlayerImpl.isMyData(voiceF)) {
 						info = new LocalIndexInfo(LocalIndexType.TTS_VOICE_DATA, voiceF, backup, app);
@@ -243,28 +222,6 @@ public class LocalIndexHelper {
 				if (fontFile.isFile() && fontFile.getName().endsWith(IndexConstants.FONT_INDEX_EXT)) {
 					LocalIndexType lt = LocalIndexType.FONT_DATA;
 					LocalIndexInfo info = new LocalIndexInfo(lt, fontFile, backup, app);
-					updateDescription(info);
-					result.add(info);
-					loadTask.loadFile(info);
-				}
-			}
-		}
-	}
-
-	private void loadTilesData(File tilesPath, List<LocalIndexInfo> result, boolean backup, AbstractLoadLocalIndexTask loadTask) {
-		if (tilesPath.canRead()) {
-			for (File tileFile : listFilesSorted(tilesPath)) {
-				if (tileFile.isFile() && tileFile.getName().endsWith(SQLiteTileSource.EXT)) {
-					LocalIndexInfo info = new LocalIndexInfo(LocalIndexType.TILES_DATA, tileFile, backup, app);
-					updateDescription(info);
-					result.add(info);
-					loadTask.loadFile(info);
-				} else if (tileFile.isDirectory()) {
-					LocalIndexInfo info = new LocalIndexInfo(LocalIndexType.TILES_DATA, tileFile, backup, app);
-
-					if (!TileSourceManager.isTileSourceMetaInfoExist(tileFile)) {
-						info.setCorrupted(true);
-					}
 					updateDescription(info);
 					result.add(info);
 					loadTask.loadFile(info);
@@ -317,7 +274,6 @@ public class LocalIndexHelper {
 
 	public enum LocalIndexType {
 		MAP_DATA(R.string.local_indexes_cat_map, R.drawable.ic_map, 10),
-		TILES_DATA(R.string.local_indexes_cat_tile, R.drawable.ic_map, 60),
 		WIKI_DATA(R.string.local_indexes_cat_wiki, R.drawable.ic_plugin_wikipedia, 50),
 		TTS_VOICE_DATA(R.string.local_indexes_cat_tts, R.drawable.ic_action_volume_up, 20),
 		VOICE_DATA(R.string.local_indexes_cat_voice, R.drawable.ic_action_volume_up, 30),
@@ -387,5 +343,4 @@ public class LocalIndexHelper {
 			return fileName;
 		}
 	}
-
 }

@@ -121,9 +121,6 @@ public class DownloadActivityType {
 	
 	public File getDownloadFolder(OsmandApplication ctx, IndexItem indexItem) {
 		if (NORMAL_FILE == this) {
-			if (indexItem.fileName.endsWith(IndexConstants.SQLITE_EXT)) {
-				return ctx.getAppPath(IndexConstants.TILES_INDEX_DIR);
-			}
 			return ctx.getAppPath(IndexConstants.MAPS_PATH);
 		} else if (VOICE_FILE == this) {
 			return ctx.getAppPath(IndexConstants.VOICE_INDEX_DIR);

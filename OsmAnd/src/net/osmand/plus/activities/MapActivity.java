@@ -272,10 +272,10 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		downloaderCallback = new IMapDownloaderCallback() {
 			@Override
 			public void tileDownloaded(DownloadRequest request) {
-				if (request != null && !request.error && request.fileToSave != null) {
-					ResourceManager mgr = app.getResourceManager();
-					mgr.tileDownloaded(request);
-				}
+//				if (request != null && !request.error && request.fileToSave != null) {
+//					ResourceManager mgr = app.getResourceManager();
+//					mgr.tileDownloaded(request);
+//				}
 				if (request == null || !request.error) {
 					mapView.tileDownloaded(request);
 				}

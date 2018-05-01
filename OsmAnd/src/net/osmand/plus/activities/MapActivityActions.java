@@ -25,9 +25,6 @@ import net.osmand.Location;
 import net.osmand.PlatformUtil;
 import net.osmand.data.LatLon;
 import net.osmand.data.PointDescription;
-import net.osmand.data.QuadRect;
-import net.osmand.data.RotatedTileBox;
-import net.osmand.map.ITileSource;
 import net.osmand.plus.ApplicationMode;
 import net.osmand.plus.ContextMenuAdapter;
 import net.osmand.plus.ContextMenuAdapter.ItemClickListener;
@@ -58,9 +55,7 @@ import net.osmand.plus.measurementtool.MeasurementToolFragment;
 import net.osmand.plus.monitoring.OsmandMonitoringPlugin;
 import net.osmand.plus.routing.RouteProvider.GPXRouteParamsBuilder;
 import net.osmand.plus.routing.RoutingHelper;
-import net.osmand.plus.views.BaseMapLayer;
 import net.osmand.plus.views.MapControlsLayer;
-import net.osmand.plus.views.MapTileLayer;
 import net.osmand.plus.views.OsmandMapTileView;
 import net.osmand.router.GeneralRouter;
 
@@ -83,7 +78,6 @@ public class MapActivityActions implements DialogProvider {
 	private static final int DIALOG_ADD_FAVORITE = 100;
 	private static final int DIALOG_REPLACE_FAVORITE = 101;
 	private static final int DIALOG_ADD_WAYPOINT = 102;
-	private static final int DIALOG_RELOAD_TITLE = 103;
 
 	private static final int DIALOG_SAVE_DIRECTIONS = 106;
 	// make static
@@ -160,11 +154,6 @@ public class MapActivityActions implements DialogProvider {
 			}
 		});
 		return alertDialog;
-	}
-
-	public void reloadTile(final int zoom, final double latitude, final double longitude) {
-		enhance(dialogBundle, latitude, longitude, zoom);
-		mapActivity.showDialog(DIALOG_RELOAD_TITLE);
 	}
 
 	protected String getString(int res) {
@@ -534,46 +523,6 @@ public class MapActivityActions implements DialogProvider {
 		contextMenuPoint(latitude, longitude, null, null);
 	}
 
-	private Dialog createReloadTitleDialog(final Bundle args) {
-		AlertDialog.Builder builder = new AlertDialog.Builder(mapActivity);
-		builder.setMessage(R.string.context_menu_item_update_map_confirm);
-		builder.setNegativeButton(R.string.shared_string_cancel, null);
-		final OsmandMapTileView mapView = mapActivity.getMapView();
-		builder.setPositiveButton(R.string.context_menu_item_update_map, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				int zoom = args.getInt(KEY_ZOOM);
-				BaseMapLayer mainLayer = mapView.getMainLayer();
-				if (!(mainLayer instanceof MapTileLayer) || !((MapTileLayer) mainLayer).isVisible()) {
-					Toast.makeText(mapActivity, R.string.maps_could_not_be_downloaded, Toast.LENGTH_SHORT).show();
-					return;
-				}
-				final ITileSource mapSource = ((MapTileLayer) mainLayer).getMap();
-				if (mapSource == null || !mapSource.couldBeDownloadedFromInternet()) {
-					Toast.makeText(mapActivity, R.string.maps_could_not_be_downloaded, Toast.LENGTH_SHORT).show();
-					return;
-				}
-				final RotatedTileBox tb = mapView.getCurrentRotatedTileBox();
-				final QuadRect tilesRect = tb.getTileBounds();
-				int left = (int) Math.floor(tilesRect.left);
-				int top = (int) Math.floor(tilesRect.top);
-				int width = (int) (Math.ceil(tilesRect.right) - left);
-				int height = (int) (Math.ceil(tilesRect.bottom) - top);
-				for (int i = 0; i < width; i++) {
-					for (int j = 0; j < height; j++) {
-						((OsmandApplication) mapActivity.getApplication()).getResourceManager().
-								clearTileForMap(null, mapSource, i + left, j + top, zoom);
-					}
-				}
-
-
-				mapView.refreshMap();
-			}
-		});
-		return builder.create();
-	}
-
-
 	@Override
 	public Dialog onCreateDialog(int id) {
 		Bundle args = dialogBundle;
@@ -584,8 +533,6 @@ public class MapActivityActions implements DialogProvider {
 				return FavoriteDialogs.createReplaceFavouriteDialog(mapActivity, args);
 			case DIALOG_ADD_WAYPOINT:
 				return createAddWaypointDialog(args);
-			case DIALOG_RELOAD_TITLE:
-				return createReloadTitleDialog(args);
 			case DIALOG_SAVE_DIRECTIONS:
 				return createSaveDirections(mapActivity, mapActivity.getRoutingHelper());
 		}

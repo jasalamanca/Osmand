@@ -570,7 +570,4 @@ public class RotatedTileBox {
 				+ cx + ", cy=" + cy + ", pixWidth=" + pixWidth + ", pixHeight="
 				+ pixHeight + "]";
 	}
-
-	
-	
 }

@@ -1,33 +1,5 @@
 package net.osmand.plus.render;
 
-import gnu.trove.list.array.TIntArrayList;
-import gnu.trove.map.hash.TIntObjectHashMap;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-
-import net.osmand.NativeLibrary;
-import net.osmand.NativeLibrary.NativeSearchResult;
-import net.osmand.PlatformUtil;
-import net.osmand.binary.BinaryMapDataObject;
-import net.osmand.binary.BinaryMapIndexReader.TagValuePair;
-import net.osmand.data.QuadRect;
-import net.osmand.data.QuadTree;
-import net.osmand.map.MapTileDownloader;
-import net.osmand.map.MapTileDownloader.IMapDownloaderCallback;
-import net.osmand.plus.render.TextRenderer.TextDrawInfo;
-import net.osmand.render.RenderingRuleProperty;
-import net.osmand.render.RenderingRuleSearchRequest;
-import net.osmand.render.RenderingRulesStorage;
-import net.osmand.util.Algorithms;
-import net.osmand.util.MapUtils;
-
-import org.apache.commons.logging.Log;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
@@ -52,6 +24,33 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
+
+import net.osmand.NativeLibrary;
+import net.osmand.NativeLibrary.NativeSearchResult;
+import net.osmand.PlatformUtil;
+import net.osmand.binary.BinaryMapDataObject;
+import net.osmand.binary.BinaryMapIndexReader.TagValuePair;
+import net.osmand.data.QuadRect;
+import net.osmand.data.QuadTree;
+import net.osmand.map.MapTileDownloader;
+import net.osmand.plus.render.TextRenderer.TextDrawInfo;
+import net.osmand.render.RenderingRuleProperty;
+import net.osmand.render.RenderingRuleSearchRequest;
+import net.osmand.render.RenderingRulesStorage;
+import net.osmand.util.Algorithms;
+import net.osmand.util.MapUtils;
+
+import org.apache.commons.logging.Log;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import gnu.trove.list.array.TIntArrayList;
+import gnu.trove.map.hash.TIntObjectHashMap;
 
 public class OsmandRenderer {
 	private static final Log log = PlatformUtil.getLog(OsmandRenderer.class);
@@ -524,44 +523,6 @@ public class OsmandRenderer {
 	
 	void filterLinesByDensity(RenderingContext rc, List<MapDataObjectPrimitive>  linesResArray,
 			List<MapDataObjectPrimitive> linesArray) {
-//		int roadsLimit = rc->roadsDensityLimitPerTile;
-//		int densityZ = rc->roadDensityZoomTile;
-//		if(densityZ == 0 || roadsLimit == 0) {
-//			linesResArray = linesArray;
-//			return;
-//		}
-//		linesResArray.reserve(linesArray.size());
-//		UNORDERED(map)<int64_t, pair<int, int> > densityMap;
-//		for (int i = linesArray.size() - 1; i >= 0; i--) {
-//			bool accept = true;
-//			int o = linesArray[i].order;
-//			MapDataObject* line = linesArray[i].obj;
-//			tag_value& ts = line->types[linesArray[i].typeInd];
-//			if (ts.first == "highway") {
-//				accept = false;
-//				int64_t prev = 0;
-//				for (uint k = 0; k < line->points.size(); k++) {
-//					int dz = rc->getZoom() + densityZ;
-//					int64_t x = (line->points[k].first) >> (31 - dz);
-//					int64_t y = (line->points[k].second) >> (31 - dz);
-//					int64_t tl = (x << dz) + y;
-//					if (prev != tl) {
-//						prev = tl;
-//						pair<int, int>& p = densityMap[tl];
-//						if (p.first < roadsLimit/* && p.second > o */) {
-//							accept = true;
-//							p.first++;
-//							p.second = o;
-//							densityMap[tl] = p;
-//						}
-//					}
-//				}
-//			}
-//			if(accept) {
-//				linesResArray.push_back(linesArray[i]);
-//			}
-//		}
-//		reverse(linesResArray.begin(), linesResArray.end());
 		// TODO
 		linesResArray.addAll(linesArray);
 	}
@@ -629,14 +590,6 @@ public class OsmandRenderer {
 		}
 		rc.visible++;
 		int len = obj.getPointsLength();
-//		if(len > 150) {
-//			int[] ts = obj.getTypes();
-//			System.err.println("Polygon " + len);
-//			for(int i=0; i<ts.length; i++) {
-//				System.err.println(obj.getMapIndex().decodeType(ts[i]));
-//			}
-//			return;
-//		}
 		for (int i = 0; i < obj.getPointsLength(); i++) {
 
 			PointF p = calcPoint(obj, i, rc);
@@ -942,11 +895,6 @@ public class OsmandRenderer {
 			prev = p;
 		}
 		if (!intersect) {
-//			System.err.println("Not intersect ");
-//			int[] ts = obj.getTypes();
-//			for(int i=0; i<ts.length; i++) {
-//				System.err.println(obj.getMapIndex().decodeType(ts[i]));
-//			}
 			return;
 		}
 		if (path != null) {

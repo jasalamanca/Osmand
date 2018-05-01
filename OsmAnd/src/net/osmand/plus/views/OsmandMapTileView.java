@@ -834,9 +834,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 
 	@Override
 	public void tileDownloaded(DownloadRequest request) {
-		// force to refresh map because image can be loaded from different threads
-		// and threads can block each other especially for sqlite images when they
-		// are inserting into db they block main thread
 		refreshMap();
 	}
 
@@ -912,8 +909,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		final LatLon latlon = currentViewport.getLatLonFromPixel(cp.x + dx, cp.y + dy);
 		currentViewport.setLatLonCenter(latlon.getLatitude(), latlon.getLongitude());
 		refreshMap();
-		// do not notify here listener
-
 	}
 
 	public void fitRectToMap(double left, double right, double top, double bottom,
@@ -1259,7 +1254,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 			zoomToAnimate(baseZoom, dz, !(doubleTapScaleDetector.isInZoomMode()));
 			rotateToAnimate(calcRotate);
 		}
-
 	}
 
 	private boolean isZoomingAllowed(int baseZoom, float dz) {
@@ -1298,8 +1292,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 			if (multiTouchSupport.isInZoomMode()
 					|| doubleTapScaleDetector.isInZoomMode()
 					|| doubleTapScaleDetector.isDoubleTapping()) {
-				//	|| afterTwoFingersTap) {
-				//afterTwoFingersTap = false;
 				return;
 			}
 			if (LOG.isDebugEnabled()) {

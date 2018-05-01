@@ -500,8 +500,6 @@ public class MapDataMenuController extends MenuController {
 				} else {
 					parent = app.getAppPath(IndexConstants.MAPS_PATH);
 				}
-			} else if (i.getOriginalType() == LocalIndexType.TILES_DATA) {
-				parent = app.getAppPath(IndexConstants.TILES_INDEX_DIR);
 			} else if (i.getOriginalType() == LocalIndexType.WIKI_DATA) {
 				parent = app.getAppPath(IndexConstants.WIKI_INDEX_DIR);
 			} else if (i.getOriginalType() == LocalIndexType.TTS_VOICE_DATA) {

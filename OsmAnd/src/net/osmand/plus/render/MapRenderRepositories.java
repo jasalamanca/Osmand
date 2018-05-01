@@ -1,25 +1,12 @@
 package net.osmand.plus.render;
 
 
-import gnu.trove.iterator.TIntObjectIterator;
-import gnu.trove.list.TLongList;
-import gnu.trove.list.array.TIntArrayList;
-import gnu.trove.list.array.TLongArrayList;
-import gnu.trove.map.hash.TIntObjectHashMap;
-import gnu.trove.set.TLongSet;
-import gnu.trove.set.hash.TLongHashSet;
-
-import java.io.File;
-import java.io.IOException;
-import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
+import android.os.Handler;
+import android.os.Looper;
+import android.widget.Toast;
 
 import net.osmand.IProgress;
 import net.osmand.NativeLibrary.NativeSearchResult;
@@ -56,12 +43,25 @@ import net.osmand.util.MapUtils;
 
 import org.apache.commons.logging.Log;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
-import android.os.Handler;
-import android.os.Looper;
-import android.widget.Toast;
+import java.io.File;
+import java.io.IOException;
+import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import gnu.trove.iterator.TIntObjectIterator;
+import gnu.trove.list.TLongList;
+import gnu.trove.list.array.TIntArrayList;
+import gnu.trove.list.array.TLongArrayList;
+import gnu.trove.map.hash.TIntObjectHashMap;
+import gnu.trove.set.TLongSet;
+import gnu.trove.set.hash.TLongHashSet;
 
 public class MapRenderRepositories {
 
@@ -606,8 +606,6 @@ public class MapRenderRepositories {
 		return checkedRenderedState;
 	}
 
-	
-
 	public synchronized void loadMap(RotatedTileBox tileRect, MapTileDownloader mapTileDownloader) {
 		boolean prevInterrupted = interrupted;
 		interrupted = false;
@@ -623,7 +621,6 @@ public class MapRenderRepositories {
 			// find selected rendering type
 			OsmandApplication app = ((OsmandApplication) context.getApplicationContext());
 			boolean nightMode = app.getDaynightHelper().isNightMode();
-			// boolean moreDetail = prefs.SHOW_MORE_MAP_DETAIL.get();
 			RenderingRulesStorage storage = app.getRendererRegistry().getCurrentSelectedRenderer();
 			RenderingRuleSearchRequest renderingReq = new RenderingRuleSearchRequest(storage);
 			renderingReq.setBooleanFilter(renderingReq.ALL.R_NIGHT_MODE, nightMode);
@@ -665,7 +662,6 @@ public class MapRenderRepositories {
 			}
 			renderingReq.saveState();
 			NativeOsmandLibrary nativeLib = !prefs.SAFE_MODE.get() ? NativeOsmandLibrary.getLibrary(storage, context) : null;
-
 
 			// calculate data box
 			QuadRect dataBox = requestedBox.getLatLonBounds();
@@ -720,7 +716,6 @@ public class MapRenderRepositories {
 			double cfd = MapUtils.getPowZoom(requestedBox.getZoomFloatPart())* requestedBox.getMapDensity();
 			lt.x *= cfd;
 			lt.y *= cfd;
-//			LatLon ltn = requestedBox.getLeftTopLatLon();
 			final double tileDivisor = MapUtils.getPowZoom(31 - requestedBox.getZoom()) / cfd;
 			
 			currentRenderingContext.leftX = lt.x;
@@ -744,9 +739,7 @@ public class MapRenderRepositories {
 			}
 			final float mapDensity = (float) requestedBox.getMapDensity();
 			currentRenderingContext.setDensityValue(mapDensity);
-			//Text/icon scales according to mapDensity (so text is size of road)
-//			currentRenderingContext.textScale = (requestedBox.getDensity()*app.getSettings().TEXT_SCALE.get()); 
-			//Text/icon stays same for all sizes 
+			//Text/icon stays same for all sizes
 			currentRenderingContext.textScale = (requestedBox.getDensity() * app.getSettings().TEXT_SCALE.get())
 					/ mapDensity;
 			
@@ -849,11 +842,7 @@ public class MapRenderRepositories {
 			handler.post(new Runnable() {
 				@Override
 				public void run() {
-//					ActivityManager activityManager = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
-//					ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
-//					activityManager.getMemoryInfo(memoryInfo);
-//					int avl = (int) (memoryInfo.availMem / (1 << 20));
-					int max = (int) (Runtime.getRuntime().maxMemory() / (1 << 20)); 
+					int max = (int) (Runtime.getRuntime().maxMemory() / (1 << 20));
 					int avl = (int) (Runtime.getRuntime().freeMemory() / (1 << 20));
 					String s = " (" + avl + " MB available of " + max  + ") ";
 					Toast.makeText(context, context.getString(R.string.rendering_out_of_memory) + s , Toast.LENGTH_SHORT).show();
@@ -880,10 +869,6 @@ public class MapRenderRepositories {
 		cObjectsBox = new QuadRect();
 
 		requestedBox = prevBmpLocation = null;
-		// Do not clear main bitmap to not cause a screen refresh
-//		prevBmp = null;
-//		bmp = null;
-//		bmpLocation = null;
 	}
 	
 	public Map<String, BinaryMapIndexReader> getMetaInfoFiles() {
@@ -1219,8 +1204,4 @@ public class MapRenderRepositories {
 
 		return lineEnded;
 	}
-
-	
-
-
 }

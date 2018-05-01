@@ -37,7 +37,6 @@ import android.widget.Toast;
 
 import net.osmand.AndroidUtils;
 import net.osmand.IndexConstants;
-import net.osmand.map.ITileSource;
 import net.osmand.plus.ContextMenuAdapter;
 import net.osmand.plus.ContextMenuAdapter.ItemClickListener;
 import net.osmand.plus.ContextMenuItem;
@@ -219,20 +218,20 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 					getDownloadActivity().reloadLocalIndexes();
 				}
 			});
-		} else if (resId == R.string.clear_tile_data) {		
-			AlertDialog.Builder confirm = new AlertDialog.Builder(getActivity());
-			confirm.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					new LocalIndexOperationTask(getDownloadActivity(), listAdapter, LocalIndexOperationTask.CLEAR_TILES_OPERATION).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, info);
-				}
-			});
-			confirm.setNegativeButton(R.string.shared_string_no, null);
-			String fn = FileNameTranslationHelper.getFileName(getActivity(),
-					getMyApplication().getResourceManager().getOsmandRegions(),
-					info.getFileName());
-			confirm.setMessage(getString(R.string.delete_confirmation_msg, fn));
-			confirm.show();
+//		} else if (resId == R.string.clear_tile_data) {
+//			AlertDialog.Builder confirm = new AlertDialog.Builder(getActivity());
+//			confirm.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
+//				@Override
+//				public void onClick(DialogInterface dialog, int which) {
+//					new LocalIndexOperationTask(getDownloadActivity(), listAdapter, LocalIndexOperationTask.CLEAR_TILES_OPERATION).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, info);
+//				}
+//			});
+//			confirm.setNegativeButton(R.string.shared_string_no, null);
+//			String fn = FileNameTranslationHelper.getFileName(getActivity(),
+//					getMyApplication().getResourceManager().getOsmandRegions(),
+//					info.getFileName());
+//			confirm.setMessage(getString(R.string.delete_confirmation_msg, fn));
+//			confirm.show();
 		} else if (resId == R.string.local_index_mi_restore) {
 			new LocalIndexOperationTask(getDownloadActivity(), listAdapter, LocalIndexOperationTask.RESTORE_OPERATION).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, info);
 		} else if (resId == R.string.shared_string_delete) {
@@ -398,7 +397,6 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 		protected static int DELETE_OPERATION = 1;
 		protected static int BACKUP_OPERATION = 2;
 		protected static int RESTORE_OPERATION = 3;
-		protected static int CLEAR_TILES_OPERATION = 4;
 
 		private final int operation;
 		private DownloadActivity a;
@@ -438,8 +436,6 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 					} else {
 						parent = getMyApplication().getAppPath(IndexConstants.MAPS_PATH);
 					}
-				} else if (i.getOriginalType() == LocalIndexType.TILES_DATA) {
-					parent = getMyApplication().getAppPath(IndexConstants.TILES_INDEX_DIR);
 				} else if (i.getOriginalType() == LocalIndexType.WIKI_DATA) {
 					parent = getMyApplication().getAppPath(IndexConstants.WIKI_INDEX_DIR);
 				} else if (i.getOriginalType() == LocalIndexType.TTS_VOICE_DATA) {
@@ -484,11 +480,6 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 						if (successfull) {
 							info.setBackupedData(true);
 							getMyApplication().getResourceManager().closeFile(info.getFileName());
-						}
-					} else if (operation == CLEAR_TILES_OPERATION) {
-						ITileSource src =  (ITileSource) info.getAttachedObject();
-						if(src != null) {
-							src.deleteTiles(info.getPathToData());
 						}
 					}
 					total++;
@@ -539,7 +530,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 				Toast.makeText(a, result, Toast.LENGTH_LONG).show();
 			}
 			
-			if (operation == RESTORE_OPERATION || operation == BACKUP_OPERATION || operation == CLEAR_TILES_OPERATION) {
+			if (operation == RESTORE_OPERATION || operation == BACKUP_OPERATION) {
 				a.reloadLocalIndexes();
 			} else {
 				a.newDownloadIndexes();
@@ -1062,9 +1053,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 
 
 		private String getMapDescription(LocalIndexInfo child) {
-			if (child.getType() == LocalIndexType.TILES_DATA) {
-				return ctx.getString(R.string.online_map);
-			} else if (child.getFileName().endsWith(IndexConstants.BINARY_ROAD_MAP_INDEX_EXT)) {
+			if (child.getFileName().endsWith(IndexConstants.BINARY_ROAD_MAP_INDEX_EXT)) {
 				return ctx.getString(R.string.download_roads_only_item);
 			} else if (child.isBackupedData() && child.getFileName().endsWith(IndexConstants.BINARY_WIKI_MAP_INDEX_EXT)) {
 				return ctx.getString(R.string.download_wikipedia_maps);
@@ -1073,7 +1062,6 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 		}
 
 		private class LocalIndexInfoViewHolder {
-
 			private final TextView nameTextView;
 			private final ImageButton options;
 			private final ImageView icon;
@@ -1200,18 +1188,6 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 				return true;
 			}
 		});
-		if (info.getType() == LocalIndexType.TILES_DATA && (info.getAttachedObject() instanceof ITileSource) &&
-				((ITileSource)info.getAttachedObject()).couldBeDownloadedFromInternet()) {
-			item = optionsMenu.getMenu().add(R.string.clear_tile_data)
-					.setIcon(iconsCache.getThemedIcon(R.drawable.ic_action_remove_dark));
-			item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-				@Override
-				public boolean onMenuItemClick(MenuItem item) {
-					performBasicOperation(R.string.clear_tile_data, info);
-					return true;
-				}
-			});	
-		}
 		final IndexItem update = filesToUpdate.get(info.getFileName());
 		if (update != null) {
 			item = optionsMenu.getMenu().add(R.string.update_tile)

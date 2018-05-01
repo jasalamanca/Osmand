@@ -21,8 +21,6 @@ import net.osmand.StateChangedListener;
 import net.osmand.ValueHolder;
 import net.osmand.data.LatLon;
 import net.osmand.data.PointDescription;
-import net.osmand.map.TileSourceManager;
-import net.osmand.map.TileSourceManager.TileSourceTemplate;
 import net.osmand.plus.access.AccessibilityMode;
 import net.osmand.plus.access.RelativeDirectionStyle;
 import net.osmand.plus.api.SettingsAPI;
@@ -39,7 +37,6 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -1300,62 +1297,6 @@ public class OsmandSettings {
 
 	public final OsmandPreference<Boolean> ROUTE_MAP_MARKERS_START_MY_LOC = new BooleanPreference("route_map_markers_start_my_loc", false).makeGlobal().cache();
 	public final OsmandPreference<Boolean> ROUTE_MAP_MARKERS_ROUND_TRIP = new BooleanPreference("route_map_markers_round_trip", false).makeGlobal().cache();
-
-	public boolean installTileSource(TileSourceTemplate toInstall) {
-		File tPath = ctx.getAppPath(IndexConstants.TILES_INDEX_DIR);
-		File dir = new File(tPath, toInstall.getName());
-		dir.mkdirs();
-		if (dir.exists() && dir.isDirectory()) {
-			try {
-				TileSourceManager.createMetaInfoFile(dir, toInstall, true);
-			} catch (IOException e) {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	public Map<String, String> getTileSourceEntries(boolean sqlite) {
-		Map<String, String> map = new LinkedHashMap<String, String>();
-		File dir = ctx.getAppPath(IndexConstants.TILES_INDEX_DIR);
-		if (dir != null && dir.canRead()) {
-			File[] files = dir.listFiles();
-			Arrays.sort(files, new Comparator<File>() {
-				@Override
-				public int compare(File object1, File object2) {
-					if (object1.lastModified() > object2.lastModified()) {
-						return -1;
-					} else if (object1.lastModified() == object2.lastModified()) {
-						return 0;
-					}
-					return 1;
-				}
-
-			});
-			if (files != null) {
-				for (File f : files) {
-					if (f.getName().endsWith(IndexConstants.SQLITE_EXT)) {
-						if (sqlite) {
-							String n = f.getName();
-							map.put(f.getName(), n.substring(0, n.lastIndexOf('.')));
-						}
-					} else if (f.isDirectory() && !f.getName().equals(IndexConstants.TEMP_SOURCE_TO_LOAD)
-							&& !f.getName().startsWith(".")) {
-						map.put(f.getName(), f.getName());
-					}
-				}
-			}
-		}
-		for (TileSourceTemplate l : TileSourceManager.getKnownSourceTemplates()) {
-			if (!l.isHidden()) {
-				map.put(l.getName(), l.getName());
-			} else {
-				map.remove(l.getName());
-			}
-		}
-		return map;
-
-	}
 
 	public static final String EXTERNAL_STORAGE_DIR = "external_storage_dir"; //$NON-NLS-1$
 

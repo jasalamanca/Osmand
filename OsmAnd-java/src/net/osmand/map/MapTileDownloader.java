@@ -129,13 +129,9 @@ public class MapTileDownloader {
 		}
 	}
 
-
 	public MapTileDownloader(int numberOfThreads) {
-
 		threadPoolExecutor = new ThreadPoolExecutor(numberOfThreads, numberOfThreads, TILE_DOWNLOAD_SECONDS_TO_WORK,
 				TimeUnit.SECONDS, createQueue());
-		// 1.6 method but very useful to kill non-running threads
-//		threadPoolExecutor.allowCoreThreadTimeOut(true);
 		pendingToDownload = Collections.synchronizedSet(new HashSet<File>());
 		currentlyDownloaded = Collections.synchronizedSet(new HashSet<File>());
 
@@ -164,7 +160,7 @@ public class MapTileDownloader {
 		LinkedList<WeakReference<IMapDownloaderCallback>> ncall = new LinkedList<WeakReference<IMapDownloaderCallback>>(callbacks);
 		ncall.add(new WeakReference<MapTileDownloader.IMapDownloaderCallback>(callback));
 		callbacks = ncall;
-	}
+		}
 
 	public void removeDownloaderCallback(IMapDownloaderCallback callback) {
 		LinkedList<WeakReference<IMapDownloaderCallback>> ncall = new LinkedList<WeakReference<IMapDownloaderCallback>>(callbacks);
@@ -173,25 +169,9 @@ public class MapTileDownloader {
 			IMapDownloaderCallback c = it.next().get();
 			if (c == callback) {
 				it.remove();
+				}
 			}
-		}
 		callbacks = ncall;
-	}
-
-
-	public void clearCallbacks() {
-		callbacks = new LinkedList<WeakReference<IMapDownloaderCallback>>();
-	}
-
-	public List<IMapDownloaderCallback> getDownloaderCallbacks() {
-		ArrayList<IMapDownloaderCallback> lst = new ArrayList<IMapDownloaderCallback>();
-		for (WeakReference<IMapDownloaderCallback> c : callbacks) {
-			IMapDownloaderCallback ct = c.get();
-			if (ct != null) {
-				lst.add(ct);
-			}
-		}
-		return lst;
 	}
 
 	public boolean isFilePendingToDownload(File f) {
@@ -212,7 +192,6 @@ public class MapTileDownloader {
 
 	public void refuseAllPreviousRequests() {
 		// That's very strange because exception in impl of queue (possibly wrong impl)
-//		threadPoolExecutor.getQueue().clear();
 		while (!threadPoolExecutor.getQueue().isEmpty()) {
 			threadPoolExecutor.getQueue().poll();
 		}
@@ -237,7 +216,6 @@ public class MapTileDownloader {
 			threadPoolExecutor.execute(new DownloadMapWorker(request));
 		}
 	}
-
 
 	private class DownloadMapWorker implements Runnable, Comparable<DownloadMapWorker> {
 
@@ -290,16 +268,13 @@ public class MapTileDownloader {
 					fireLoadCallback(request);
 				}
 			}
-
 		}
 
 		@Override
 		public int compareTo(DownloadMapWorker o) {
-			return 0; //(int) (time - o.time);
+			return 0;
 		}
-
 	}
-
 
 	public void fireLoadCallback(DownloadRequest request) {
 		Iterator<WeakReference<IMapDownloaderCallback>> it = callbacks.iterator();

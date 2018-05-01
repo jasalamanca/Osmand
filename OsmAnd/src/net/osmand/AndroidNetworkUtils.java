@@ -7,9 +7,7 @@ import android.os.AsyncTask;
 import net.osmand.osm.io.NetworkUtils;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
-import net.osmand.plus.SQLiteTileSource;
 import net.osmand.plus.Version;
-import net.osmand.plus.resources.ResourceManager;
 import net.osmand.util.Algorithms;
 
 import org.apache.commons.logging.Log;
@@ -17,8 +15,6 @@ import org.apache.commons.logging.Log;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
