@@ -23,7 +23,6 @@ import net.osmand.binary.CachedOsmandIndexes;
 import net.osmand.data.Amenity;
 import net.osmand.data.RotatedTileBox;
 import net.osmand.data.TransportStop;
-import net.osmand.map.ITileSource;
 import net.osmand.map.MapTileDownloader;
 import net.osmand.map.OsmandRegions;
 import net.osmand.osm.PoiCategory;
@@ -37,7 +36,6 @@ import net.osmand.plus.render.MapRenderRepositories;
 import net.osmand.plus.render.NativeOsmandLibrary;
 import net.osmand.plus.resources.AsyncLoadingThread.MapLoadRequest;
 import net.osmand.plus.resources.AsyncLoadingThread.OnMapLoadedListener;
-import net.osmand.plus.resources.AsyncLoadingThread.TileLoadDownloadRequest;
 import net.osmand.plus.views.OsmandMapLayer.DrawSettings;
 import net.osmand.util.Algorithms;
 import net.osmand.util.MapUtils;
@@ -79,17 +77,10 @@ public class ResourceManager {
 	
 	protected static ResourceManager manager = null;
 
-	protected File dirWithTiles ;
-
-	private List<TilesCache> tilesCacheList = new ArrayList<>();
-//	private BitmapTilesCache bitmapTilesCache;
-//	private GeometryTilesCache geometryTilesCache;
-
 	private final OsmandApplication context;
 	private List<ResourceListener> resourceListeners = new ArrayList<>();
 
 	public interface ResourceListener {
-
 		void onMapsIndexed();
 	}
 
@@ -201,11 +192,6 @@ public class ResourceManager {
 		this.context = context;
 		this.renderer = new MapRenderRepositories(context);
 
-//		bitmapTilesCache = new BitmapTilesCache(asyncLoadingThread);
-//		geometryTilesCache = new GeometryTilesCache(asyncLoadingThread);
-//		tilesCacheList.add(bitmapTilesCache);
-//		tilesCacheList.add(geometryTilesCache);
-
 		asyncLoadingThread.start();
 		renderingBufferImageThread = new HandlerThread("RenderingBaseImage");
 		renderingBufferImageThread.start();
@@ -217,11 +203,6 @@ public class ResourceManager {
 		WindowManager mgr = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
 		DisplayMetrics dm = new DisplayMetrics();
 		mgr.getDefaultDisplay().getMetrics(dm);
-		// Only 8 MB (from 16 Mb whole mem) available for images : image 64K * 128 = 8 MB (8 bit), 64 - 16 bit, 32 - 32 bit
-		// at least 3*9?
-//		float tiles = (dm.widthPixels / 256 + 2) * (dm.heightPixels / 256 + 2) * 3;
-//		log.info("Bitmap tiles to load in memory : " + tiles);
-//		bitmapTilesCache.setMaxCacheSize((int) (tiles));
 	}
 
 	public MapTileDownloader getMapTileDownloader() {
@@ -239,16 +220,11 @@ public class ResourceManager {
 	}
 
 	public void resetStoreDirectory() {
-		dirWithTiles = context.getAppPath(IndexConstants.TILES_INDEX_DIR);
-		dirWithTiles.mkdirs();
 		context.getAppPath(IndexConstants.GPX_INDEX_DIR).mkdirs();
 		// ".nomedia" indicates there are no pictures and no music to list in this dir for the Gallery app
 		try {
 			context.getAppPath(".nomedia").createNewFile(); //$NON-NLS-1$
 		} catch( Exception e ) {
-		}
-		for (TilesCache tilesCache : tilesCacheList) {
-			tilesCache.setDirWithTiles(dirWithTiles);
 		}
 	}
 	
@@ -260,26 +236,9 @@ public class ResourceManager {
 		return context;
 	}
 
-	////////////////////////////////////////////// Working with tiles ////////////////////////////////////////////////
-
-	private TilesCache getTilesCache(ITileSource map) {
-		for (TilesCache tc : tilesCacheList) {
-			if (tc.isTileSourceSupported(map)) {
-				return tc;
-			}
-		}
-		return null;
-	}
-
-	private GeoidAltitudeCorrection geoidAltitudeCorrection;
-	private boolean searchAmenitiesInProgress;
-
-	protected boolean hasRequestedTile(TileLoadDownloadRequest req) {
-		TilesCache cache = getTilesCache(req.tileSource);
-		return cache != null && cache.getRequestedTile(req) != null;
-	}
-
 	////////////////////////////////////////////// Working with indexes ////////////////////////////////////////////////
+
+   	private GeoidAltitudeCorrection geoidAltitudeCorrection;
 
 	public List<String> reloadIndexesOnStart(AppInitializer progress, List<String> warnings){
 		close();
@@ -610,6 +569,8 @@ public class ResourceManager {
 	}
 	
 	////////////////////////////////////////////// Working with amenities ////////////////////////////////////////////////
+	private boolean searchAmenitiesInProgress;
+
 	public List<Amenity> searchAmenities(SearchPoiTypeFilter filter,
 			double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude, int zoom, final ResultMatcher<Amenity> matcher) {
 		final List<Amenity> amenities = new ArrayList<Amenity>();
@@ -808,10 +769,6 @@ public class ResourceManager {
 		renderer.interruptLoadingMap();
 	}
 	
-	public boolean isSearchAmenitiesInProgress() {
-		return searchAmenitiesInProgress;
-	}
-	
 	public MapRenderRepositories getRenderer() {
 		return renderer;
 	}
@@ -831,9 +788,6 @@ public class ResourceManager {
 	}	
 
 	public synchronized void close(){
-		for (TilesCache tc : tilesCacheList) {
-			tc.close();
-		}
 		indexFileNames.clear();
 		basemapFileNames.clear();
 		renderer.clearAllResources();
@@ -906,16 +860,9 @@ public class ResourceManager {
 		return map;
 	}
 	
-	public synchronized void reloadTilesFromFS() {
-		for (TilesCache tc : tilesCacheList) {
-			tc.tilesOnFS.clear();
-		}
-	}
-	
 	/// On low memory method ///
 	public void onLowMemory() {
 		log.info("On low memory");
-		clearTiles();
 		for (RegionAddressRepository r : addressMap.values()) {
 			r.clearCache();
 		}
@@ -932,13 +879,6 @@ public class ResourceManager {
 		return context.getRegions();
 	}
 
-	protected synchronized void clearTiles() {
-		log.info("Cleaning tiles...");
-		for (TilesCache tc : tilesCacheList) {
-			tc.clearTiles();
-		}
-	}
-	
 	public IncrementalChangesManager getChangesManager() {
 		return changesManager;
 	}
