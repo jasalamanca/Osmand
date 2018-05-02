@@ -126,8 +126,6 @@
 	<string name="rendering_attr_appMode_name">Darstellungsmodus</string>
     <string name="rendering_attr_hmRendered_description">Erhöht den dargestellten Detailgrad der Karte.</string>
 	<string name="rendering_attr_hmRendered_name">Mehr Details in Karte</string>
-	<string name="map_online_plugin_is_not_installed">Aktivieren Sie das Online-Karten-Modul, um andere Kartenquellen nutzen zu können</string>
-	<string name="shared_string_online_maps">Online-Karten</string>
 
     <string name="osmand_background_plugin_description">Zeigt die Einstellungen für die Standortaufzeichnung oder die Navigation während das Gerät im Standby-Modus ist (periodisches Aufwecken des GPS-Empfängers).</string>
 	<string name="osmand_accessibility_description">Diese Erweiterung verschafft den direkten Zugriff auf die System-Eingabehilfen in OsmAnd. Dadurch kann z.B. die Abspielgeschwindigkeit der Synthesizer-Stimme, die Bildschirmnavigation mittels Steuerkreuz, die Benutzung eines Trackballs zur Zoomsteuerung oder die Sprachausgabe, wie die automatische Ansage Ihrer Position, konfiguriert werden.</string>
@@ -720,10 +718,8 @@
 	<string name="previous_run_crashed">Die vorherige Programminstanz war abgestürzt. Logdatei unter {0}. Fehler bitte melden und Logdatei anhängen.</string>
 	<string name="saving_gpx_tracks">GPX-Track wird auf der SD-Karte gespeichert…</string>
 	<string name="finished_task">Abgeschlossen</string>
-	
-	<string name="use_online_routing_descr">Internet zur Routenberechnung verwenden.</string>
-	<string name="use_online_routing">Online-Navigation</string>
-	<string name="osm_settings_descr">Einstellungen für OpenStreetMap.org (OSM).</string>
+
+    <string name="osm_settings_descr">Einstellungen für OpenStreetMap.org (OSM).</string>
 	<string name="data_settings_descr">Dateneinstellungen festlegen: Sprache, Daten laden oder aktualisieren.</string>
 	<string name="data_settings">Daten</string>
 	
@@ -1397,18 +1393,6 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
     <string name="rename_failed">Umbenennen fehlgeschlagen.</string>
 	<string name="shared_string_currently_recording_track">Momentane Track-Aufzeichnung</string>
 	<string name="back_to_map">Zurück zur Karte</string>
-	<string name="plugin_touringview_descr">Bei Aktivierung dieser Ansicht wechselt die Kartendarstellung zur \'Tourenkarte\', einer besonders detaillierten Darstellung für Fernreisende und Berufsfahrer.
-\n 
-\nDiese Darstellung liefert für jeden Maßstab den größtmöglichen Umfang an Details zu Fernreisen, die die Kartendaten enthalten (insbesondere alle Straßen, Wege, Pfade und Orientierungspunkte). 
-\n
-\n 
-\nAlle Straßenarten werden in der Darstellung farblich klar unterschieden, was speziell für Fahrer großer Fahrzeuge unabdingbar sein kann. 
-\n 
-\nUnd sie bietet spezielle Touring-Optionen wie die Anzeige von Radrouten oder alpiner Bergrouten. 
-\n 
-\nEin spezieller Kartendownload ist nicht notwendig, die Ansicht wird aus den Standardkarten generiert. 
-\n 
-\nDiese Ansicht kann zurückgestellt werden, indem sie hier wieder deaktiviert oder indem die \'Kartendarstellung\' unter \'Karte konfigurieren\' wie gewünscht geändert wird.</string>
 
     <string name="location_on_map">Standort:
  Lat %1$s
@@ -1924,7 +1908,6 @@ Wenn Sie OsmAnd und OSM lieben und unterstützen wollen, so ist dies die perfekt
     <string name="shared_string_change">Ändern</string>
     <string name="get_started">Erste Schritte</string>
     <string name="update_all_maps_now">Wollen Sie jetzt alle Karten aktualisieren?</string>
-    <string name="clear_tile_data">Alle Kartenkacheln löschen</string>
     <string name="skip_map_downloading_desc">Es sind keine Offline-Karten installiert. Sie können jetzt eine Karte auswählen oder später Karten über “Menü - %1$s“ herunterladen.</string>
     <string name="search_another_country">Eine andere Region auswählen</string>
     <string name="search_map">Karten werden gesucht …</string>

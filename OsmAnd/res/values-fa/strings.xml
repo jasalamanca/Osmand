@@ -130,9 +130,8 @@
 	<string name="confirm_interrupt_download">آیا دانلود فایل را متوقف می‌کنید؟</string>
 	<string name="local_indexes_cat_map">نقشه‌های استاندارد (بُرداری)</string>
 	<string name="index_settings_descr">نقشه‌های آفلاین را دانلود کنید و آن‌ها را روی گوشی خود مدیریت کنید.</string>
-	<string name="map_online_plugin_is_not_installed">افزونهٔ نقشه‌های آنلاین را فعال کنید تا منابع مختلفی را برای نقشه انتخاب کنید</string>
-	
-	<string name="local_osm_changes_backup">پشتیبان‌گیری به‌عنوان تغییر OSM</string>
+
+    <string name="local_osm_changes_backup">پشتیبان‌گیری به‌عنوان تغییر OSM</string>
     <string name="delete_point">حذف نقطه</string>
     <string name="use_kalman_filter_compass">استفاده از فیلتر کالمن</string>
     <string name="cancel_route">کنارگذاشتن مسیر</string>
@@ -536,10 +535,8 @@
 	<string name="shared_string_settings">تنظیمات</string>
 	<string name="additional_settings">تنظیمات دیگر</string>
 	<string name="update_tile">به‌روزرسانی نقشه</string>
-	
-	<string name="use_online_routing_descr">برای محاسبهٔ مسیر از اینترنت استفاده کن.</string>
-	<string name="use_online_routing">استفاده از مسیریابی آنلاین</string>
-	<string name="error_occurred_saving_gpx">خطا در هنگام ذخیره‌کردن GPX</string>
+
+    <string name="error_occurred_saving_gpx">خطا در هنگام ذخیره‌کردن GPX</string>
 	<string name="loading_poi_obj">بارگیری POI…</string>
 	<string name="loading_streets_buildings">بارگیری خیابان‌ها/ساختمان‌ها…</string>
 	<string name="loading_streets">بارگیری خیابان‌ها…</string>
@@ -620,7 +617,6 @@
 	<string name="navigate_point_format">قالب</string>
 	<string name="basemap_was_selected_to_download">نقشهٔ پایه جهت عملکرد صحیح برنامه لازم است و برای دانلود علامت‌گذاری شد.</string>
 	<string name="select_index_file_to_download">چیزی پیدا نشد. اگر نمی‌توانید ناحیهٔ خود را پیدا کنید، خودتان آن را بسازید (http://osmand.net را ببینید).</string>
-    <string name="shared_string_online_maps">نقشه‌های آنلاین</string>
 
     <string name="vector_maps_may_display_faster_on_some_devices">نقشه‌های بُرداری معمولاً زودتر نمایش داده می‌شوند. شاید روی برخی دستگاه‌ها خوب کار نکند.</string>
 	<string name="test_voice_prompts">امتحان‌کردن پیام‌های صوتی</string>
@@ -1662,7 +1658,6 @@
     <string name="no_update_info_desc">بررسی خودکار برای به‌روزرسانی‌های برنامه یا تخفیف‌های OsmAnd را غیرفعال می‌کند.</string>
     <string name="no_update_info">به‌روزرسانی‌ها را نشان نده</string>
     <string name="update_all_maps_now">آیا الآن همهٔ نقشه‌ها را به‌روز می‌کنید؟</string>
-    <string name="clear_tile_data">پاک‌کردن همهٔ کاشی‌ها</string>
     <string name="routing_attr_short_way_name">راه صرفه‌جویی سوخت</string>
     <string name="routing_attr_short_way_description">انتخاب راه مناسب برای مصرف سوخت کمتر (معمولاً کوتاه‌تر).</string>
     <string name="replace_favorite_confirmation">آیا این نقطهٔ جدید را جایگزین «%1$s» می‌کنید؟</string>
@@ -2368,17 +2363,6 @@
     <string name="round_trip">سفر رفت‌وبرگشتی</string>
     <string name="plan_route_no_markers_toast">برای استفاده از این قابلیت باید حداقل یک نشانه اضافه کنید.</string>
     <string name="shared_string_road">جاده</string>
-    <string name="plugin_touringview_descr">با فعال‌کردن این نما سبک نقشهٔ OsmAnd به نمای گردشگری (Touring view) تغییر می‌کند که سبکی با جزئیات فراوان و مناسب برای مسافران و رانندگان حرفه‌ای است.
-\n
-\nدر این نما و با هر سطحی از بزرگ‌نمایی، بیشترین مقدار جزئیات نقشه نمایش داده می‌شود (به‌خصوص جاده‌ها، مسیرها، راه‌ها و نشان‌های جهت‌نما).
-\n
-\nهمچنین همهٔ انواع جاده‌ها با رنگ‌بندی مناسب و بی‌ابهام نشان داده می‌شوند که مخصوصاً برای رانندگی با ماشین‌های سنگین مفید است.
-\n
-\nاین نما همچنین گزینه‌های گردشگری خاص مانند مسیرهای دوچرخه یا مسیرهای کوهستانی آلپاین را در اختیارتان می‌گذارد.
-\n
-\nبرای استفاده از این نما لازم نیست نقشهٔ خاصی را دانلود کنید. این نما بر اساس نقشه‌های استاندارد ایجاد می‌شود.
-\n
-\nبرای غیرفعال‌کردن این نما دو راه دارید: از همین‌جا غیرفعالش کنید یا اینکه به این قسمت بروید: منو ← پیکربندی نقشه ← سبک نقشه؛ سپس سبک دیگری را انتخاب کنید.</string>
     <string name="wrong_format">قالب نادرست</string>
     <string name="number_of_rows_in_dash">تعداد ردیف‌ها در هر صفحه %1$s</string>
     <string name="wrong_input">ورودی نادرست</string>

@@ -365,7 +365,6 @@
     <string name="no_update_info_desc">Չստուգել թարմացումների համար կամ թարմացումներ կապված OsmAnd-ի զեղչեր հետ։</string>
     <string name="no_update_info">Չցուցադրել թարմացումներ</string>
     <string name="update_all_maps_now">Ցանկանում եք թարմացնել բոլոր քարտեզները հիմա?</string>
-    <string name="clear_tile_data">"Ջնջել  բոլոր տայլերը"</string>
     <string name="routing_attr_short_way_name">Վառելիք տնտեսող ճանապարհ</string>
     <string name="routing_attr_short_way_description">Կիրառել վառելիք տնտեսող ճանապարհ (սովորաբար ավելի կարճ)։</string>
     <string name="replace_favorite_confirmation">Վստահ եք, որ ցանկանում եք փոխարինել սիրածները %1$s?</string>
@@ -828,23 +827,11 @@
     <string name="route_points">Երթուղու կետերը</string>
     <string name="track_segments">Տրեկի հատվածներ</string>
     <string name="track_points">Տրեկի կետերը</string>
-    <string name="shared_string_online_maps">Առցանց քարտեզներ</string>
     <string name="record_plugin_name">Ուղեւորության գրանցում</string>
     <string name="record_plugin_description">"Այս plugin-նը ակտիվացնում է հետևյալ ֆունկցիաները`գրանցում և պահպանում ձեր տրեկերը, ձեռքով հպելով GPX-ի գրանցման վիջեթը քարտեզի էկրանին կամ ավտոմատ կերպով մուտքագրելու ձեր բոլոր նավիգացիոն երթուղիները GPX ֆայլում:
 \n
 \nԳրանցված տրեկերը կարող են տարածվել ձեր ընկերների հետ կամ օգտագործել OSM-ի ներդրումների համար: Մարզիկները կարող են օգտվել արձանագրված տրեկերից, որոնք կարող են վերահսկել իրենց դասընթացները: Որոշ հիմնական տրեկերի  վերլուծություն կարելի է իրականացնել ուղղակիորեն OsmAnd-ում, նման գրիչ անգամները, միջին արագությունը և այլն, և տրեկերը կարող են նաև վերլուծվել հատուկ 3-րդ կողմի վերլուծության գործիքներում:"</string>
     <string name="plugin_touringview_name">Տուրիստական քարտեզ</string>
-    <string name="plugin_touringview_descr">"Այս դիտարկումը ակտիվացնելուց OsmAnd-ի քարտեզի ոճը փոխվում է «Touring view»-ի ոճի , սա հատուկ բարձր մանրամասն դիտարկում է ճանապարհորդների և պրոֆեսիոնալ վարորդների համար:
-\n
-\nԱյս դիտումը ապահովում է քարտեզի վրա առկա առավելագույն քանակի ճամփորդության մանրամասները(մասնավորապես, ճանապարհներ, տրեկներ, ուղիներ և կողմնորոշման նշաններ):
-\n
-\nԱյն նաեւ հստակ պատկերում է բոլոր տեսակի ճանապարհների միանգամայն գունավոր կոդավորումով, ինչը օգտակար է, երբ, օրինակ,  մեծ մեքենաներ վարելու դեպքում:
-\n
-\nԵվ այն ապահովում է հատուկ զբոսաշրջային տարբերակներ, ինչպիսիք են հեծանվային երթուղիները կամ Ալպիական լեռնային ճանապարհները:
-\n
-\nՀատուկ քարտեզի ներբեռնում չի պահանջվում, դիտումը հնարավոր է մեր ստանդարտ քարտեզներից:
-\n
-\nԱյս դիտումը կարող է վերադարձվել կամ կրկին անջատել այն այս կետից, կամ փոխելով «Քարտեզի ոճը», «Կարգավորել քարտեզը» կետից, ըստ ցանկության:"</string>
     <string name="shared_string_accessibility">Հատուկ հնարավորություններ</string>
     <string name="osmand_accessibility_description">The plugin-ն սարքի համար ավելացնում հատուկ հնարավորությունների աջակցում ուղղակիորեն OsmAnd-ում: Սա հեշտացնում է, օրինակ, TTS-ի ձայնի ելքային արագությունը հարմարեցնելու համար, կարգավորել նավիգացիայի ուղղվածությունը էկրանի վրա, վերահսկեք սանդղակը կամ օգտագործեք ձայնային հետադարձ կապի հրամանները ավտո անոտացիաներ անելու դեպքում ձեր դիրքի վերաբերյալ:</string>
     <string name="wrong_input">Սխալ մուտքագրում</string>
@@ -1403,7 +1390,6 @@
     <string name="basemap_was_selected_to_download">"Հիմնական քարտեզը անհրաժեշտ է  հավելվածի ճիշտ աշխատանքի համար և ավտոմատ ընտրված է ներբեռնելու համար:"</string>
     <string name="local_indexes_cat_map">Ստանդարտ քարտեզներ (վեկտորային)</string>
     <string name="index_settings_descr">"Քարտեզների ֆայլերը ներբեռնում և կառավարում  ձեր սարքում։"</string>
-    <string name="map_online_plugin_is_not_installed">"Միացրեք առցանց քարտեզների plugin-ը  տարբեր քարտեզային աղբյուրներ ընտրելու համար"</string>
     <string name="plugins_screen">Պլագիններ</string>
     <string name="prefs_plugins">Պլագիններ</string>
     <string name="vector_maps_may_display_faster_on_some_devices">Վեկտորային քարտեզները կարող են ավելի արագ ցուցադրվել: Բոլոր սարքերը չեն աջակցում:</string>
@@ -1909,8 +1895,6 @@
     <string name="previous_run_crashed">Հավելվածը ճիշտ չի ավարտվել իր աշխատանքը: «Log» ֆայլը գտնվում է {0}։ Տեղեկացրեք ծրագրավորողներին սխալի մասին և կցեք «Log» ֆայլը:</string>
     <string name="saving_gpx_tracks">Պահպանում GPX տրեկները SD քարտում…</string>
     <string name="finished_task">Ավարտված է</string>
-    <string name="use_online_routing_descr">Օգտվեք Ինտերնետից երթուղին հաշվարկելու համար:</string>
-    <string name="use_online_routing">Օգտագործել առցանց նավարկություն</string>
     <string name="osm_settings_descr">Նշեք OpenStreetMap.org (OSM) պարամետրերը OSM-ի ներկայացման համար:</string>
     <string name="data_settings_descr">Նշեք լեզուն, ներբեռնման/վերբեռնման տվյալները:</string>
     <string name="data_settings">Տվյալներ</string>

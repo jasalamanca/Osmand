@@ -169,10 +169,9 @@
 	<string name="confirm_interrupt_download">Dosya indirirken iptal etmek istiyor musunuz?</string>
 	<string name="select_index_file_to_download">Hiçbir şey bulunamadı. Eğer bölgenizi bulamıyorsanız, kendiniz yapabilirsiniz (bakınız: http://osmand.net).</string>
 	<string name="local_indexes_cat_map">Standart haritalar (vektör)</string>
-	<string name="shared_string_online_maps">Çevrim içi haritalar</string>
-	
-	
-	<string name="default_buttons_support">Destek</string>
+
+
+    <string name="default_buttons_support">Destek</string>
 	<string name="shared_string_help">Yardım</string>
 	
 	<string name="shared_string_on">Açık</string>
@@ -320,13 +319,9 @@
 	<string name="shared_string_close">Kapat</string>
 	<string name="loading_data">Veri yükleniyor…</string>
 	<string name="finished_task">Tamamlandı</string>
-	
-	
-	
-	
-	<string name="use_online_routing_descr">Rotayı hesaplamak için interneti kullanın</string>
-	<string name="use_online_routing">Çevrim içi yolbulu kullan</string>
-	<string name="data_settings">Veriler</string>
+
+
+    <string name="data_settings">Veriler</string>
 	<string name="additional_settings">İlave ayarlar</string>
 	<string name="shared_string_settings">Ayarlar</string>
 	<string name="update_tile">Haritayı güncelle</string>
@@ -420,7 +415,6 @@
 	<string name="basemap_was_selected_to_download">Baz haritası doğru uygulama çalışması için gereklidir ve indirmek için seçildi.</string>
 
     <string name="index_settings_descr">Aygıtınızda saklanan çevrim dışı harita dosyaları yönet ve indir</string>
-	<string name="map_online_plugin_is_not_installed">Farklı harita kaynaklarını seçmek için Online haritalar eklentisi etkinleştirme</string>
 
     <string name="osmand_accessibility_description">Bu eklenti Osmand doğrudan cihazın erişilebilirlik özellikleri kullanılabilir hale getirir. Bu, örneğin kolaylaştırır TTS sesler konuşma hızını, yön-pad ekran navigasyon yapılandırmak yakınlaştırma kontrolü için bir topunu kullanarak, ya da konumunu duyuran oto için olduğu gibi, text-to-speech geribildirim kullanarak ayarlama.</string>
 	
@@ -1614,7 +1608,6 @@
     <string name="rendering_attr_currentTrackColor_description">GPX renk</string>
     <string name="rendering_attr_currentTrackWidth_description">GPX genişliği</string>
     <string name="shared_string_wikipedia">Wikipedia</string>
-    <string name="plugin_touringview_descr">"Bu görünüm etkinleştirilmesi \'Touring görünümü\' için Osmand haritasında tarzını değiştirir, bu seyahat ve profesyonel sürücüler için özel yüksek detay görünümüdür.\n\nBu görüş, herhangi bir harita zoom sağlar, harita verilerinin mevcut seyahat ayrıntıları maksimum miktarı (özellikle yollar, parça, yolları ve yönlendirme işaretleri).\n\nAynı zamanda açıkça net bir şekilde yararlıdır, örneğin bir renk kodlama ile yolların her türlü tasvir Büyük araçlar sürüş.\n\nVe bu bisiklet yolları veya Alp dağ yolları gösteren gibi özel turne seçenekleri sağlar.\n\nÖzel bir harita indir görünümü standart haritalar oluşturulur, gerekli değildir.\n\nBu görünüm, ya tekrar buraya de aktive ya da istediğiniz gibi \'Yapılandırma haritası\' başlığı altında \'Harita stilini\' değiştirilerek tarafından geri alınabilir. "</string>
     <string name="osmand_distance_planning_plugin_description">Bu eklenti bir gezi planı ve nokta arasındaki mesafeyi ölçmek için, mevcut GPX dosyalarını harita üzerinde dokunarak yolları oluşturmak veya kullanmak veya değiştirmek için izin veren bir harita ekranı widget\'ı sağlar. Sonuçlar daha sonra rehberlik için kullanılabilecek bir GPX dosyası olarak kaydedilebilir.</string>
     <string name="rename_failed">Yeniden adlandırma başarısız oldu.</string>
     <string name="location_on_map">Yer:

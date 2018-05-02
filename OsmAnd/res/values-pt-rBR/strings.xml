@@ -131,17 +131,10 @@
 	<string name="shared_string_currently_recording_track">Gravando trilha</string>
     <string name="route_points">Pontos da rota</string>
 	<string name="track_segments">Segmentos da trilha</string>
-	<string name="shared_string_online_maps">Mapas on-line</string>
     <string name="record_plugin_name">Gravação de viagem</string>
 	<string name="record_plugin_description">"Este complemento ativa a funcionalidade para gravar e salvar suas trilhas manualmente tocando o widget de registro de GPX na tela do mapa ou também fazendo automaticamente o registro de todas as suas rotas de navegação para um arquivo GPX.
 \n\nTrilhas gravadas podem ser compartilhadas com seus amigos ou serem usadas para contribuições ao OSM. Atletas podem usar trilhas gravadas para monitorar seus treinos. Algumas análises básicas da trilha podem ser feitas diretamente no OsmAnd, como tempos de percurso, velocidade média, etc. E, claro, trilhas também podem ser analisadas mais tarde em ferramentas de terceiros. "</string>
     <string name="plugin_touringview_name">Visão de mapa turístico</string>
-	<string name="plugin_touringview_descr">"Ativar este modo de exibição altera o estilo do mapa do OsmAnd para \'Visão turística\', que é uma visão detalhada especial para os viajantes e motoristas profissionais.
-\n\nEssa visão fornece, em qualquer zoom determinado do mapa, o máximo de detalhes de viagem disponíveis nos dados de mapa (particularmente as estradas, trilhas, caminhos e marcas de orientação).
-\n\nTambém retrata claramente todos os tipos de estradas pela codificação por cores, que é útil quando, por exemplo, dirigir veículos grandes.
-\n\nE ele oferece opções de turismo especiais como mostrando rotas de bicicleta ou rotas de montanha.
-\n\nNão é necessário baixar mapa especial, pois esse modo de exibição é criado a partir do mapa padrão.
-\n\nEssa visão pode ser revertida desativando aqui mesmo ou alterando o \'Estilo do mapa\' em \'Configurar mapa\' quando desejar. "</string>
     <string name="osmand_distance_planning_plugin_description">Este complemento fornece um widget da tela mapa permitindo criar caminhos tocando no mapa, ou usar ou modificar arquivos GPX existentes, para planejar uma viagem e medir a distância entre pontos. Os resultados podem ser salvos como um arquivo GPX, que mais tarde pode ser usado para orientação.</string>
 	<string name="shared_string_accessibility">Acessibilidade</string>
 	<string name="osmand_accessibility_description">Este complemento disponibiliza recursos de acessibilidade do dispositivo diretamente no OsmAnd. Facilita, por exemplo, o ajuste da velocidade para vozes TTS, configuração da navegação direcional na tela, uso do trackball para controle de zoom, ou retorno de texto para fala, como para anunciar automaticamente sua posição.</string>
@@ -789,7 +782,6 @@ Pôr do Sol: %2$s</string>
 	<string name="confirm_interrupt_download">Você quer cancelar a transferência do arquivo?</string>
 	<string name="basemap_was_selected_to_download">O Mapa Base é necessário para o funcionamento adequado do aplicativo e foi selecionado para baixar.</string>
     <string name="local_indexes_cat_map">Mapa padrão (vectorial)</string>
-	<string name="map_online_plugin_is_not_installed">Ativar o complemento de mapas on-line, para selecionar diferentes fontes de mapa</string>
     <string name="prefs_plugins">Complementos</string>
 	
 	<string name="vector_maps_may_display_faster_on_some_devices">Mapas vectoriais são visualizados mais rápido. Podem não funcionar bem em alguns aparelhos.</string>
@@ -1316,9 +1308,7 @@ Pôr do Sol: %2$s</string>
 	<string name="previous_run_crashed">A última execução do OsmAnd falhou. O arquivo de log está em {0}. Por favor, informe o problema e inclua o arquivo de log.</string>
 	<string name="saving_gpx_tracks">Salvando trilhas GPX no cartão SD…</string>
 	<string name="finished_task">Concluído</string>
-	<string name="use_online_routing_descr">Usar a Internet para calcular a rota</string>
-	<string name="use_online_routing">Usar a navegação on-line</string>
-	<string name="osm_settings_descr">Especificar configurações de Openstreetmap.org (OSM) necessárias para envios ao OSM</string>
+    <string name="osm_settings_descr">Especificar configurações de Openstreetmap.org (OSM) necessárias para envios ao OSM</string>
 	<string name="data_settings_descr">Especificar o idioma, baixar/atualizar dados</string>
 	<string name="data_settings">Dados</string>
 	<string name="additional_settings">Configurações adicionais</string>
@@ -1790,7 +1780,6 @@ Pôr do Sol: %2$s</string>
     <string name="no_update_info_desc">Não verificar se há atualizações de versão ou descontos relacionados ao OsmAnd.</string>
     <string name="no_update_info">Não mostrar atualizações</string>
     <string name="update_all_maps_now">Você deseja atualizar todos os seus mapas agora?</string>
-    <string name="clear_tile_data">Limpar todos os títulos</string>
     <string name="replace_favorite_confirmation">Você tem certeza que deseja substituir seu favorito %1$s?</string>
     <string name="shared_string_change">Mudar</string>
     <string name="coords_search">Busca de coordenadas</string>

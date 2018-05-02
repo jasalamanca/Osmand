@@ -270,8 +270,6 @@
     <string name="select_index_file_to_download">Ничего не было найдено. Вы можете создать карту самостоятельно (смотрите на osmand.net).</string>
     <string name="local_indexes_cat_map">Стандартные карты (векторные)</string>
     <string name="index_settings_descr">Загрузка и управление локальными файлами карт на вашем устройстве.</string>
-    <string name="map_online_plugin_is_not_installed">Активируйте плагин онлайн карт, чтобы выбирать различные источники карт</string>
-    <string name="shared_string_online_maps">Онлайн карты</string>
     <string name="osmand_background_plugin_description">Этот плагин предоставляет навигацию и запись маршрутов в энергосберегающем режиме. Плагин работает в фоновом режиме и периодически активизирует GPS для записи маршрута или воспроизведения голосовых команд.</string>
     <string name="osmand_accessibility_description">"Плагин добавляет поддержку специальных возможностей устройства непосредственно в OsmAnd. Это облегчает, например, регулировку скорости речи для голоса TTS, настройку направленности  экрана навигации, управление масштабом при помощи трекбола или использование голосовых команд обратной связи для авто аннотации вашего местоположения."</string>
     <string name="osmand_development_plugin_description">Плагин отображает параметры для разработки и отладки функций, таких как, проверка или моделирование маршрута, отображение производительности отрисовки, проверка голосовых подсказок. Эти настройки предназначены для разработчиков и не требуются для обычного пользователя.</string>
@@ -727,9 +725,7 @@
     <string name="previous_run_crashed">Приложение завершилось некорректно. Лог-файл в {0}. Сообщите разработчику об ошибке и приложите лог-файл.</string>
     <string name="saving_gpx_tracks">Сохранение треков GPX на SD-карту…</string>
     <string name="finished_task">Окончен</string>
-    <string name="use_online_routing_descr">Использовать Интернет-сервис для прокладки маршрута.</string>
-    <string name="use_online_routing">Онлайн маршрутизация</string>
-    
+
     <string name="user_password">Пароль</string>
     <string name="osm_settings_descr">Укажите настройки для загрузки данных в Openstreetmap.org (OSM).</string>
     <string name="data_settings_descr">Настройка данных: язык, обновление данных.</string>
@@ -1978,7 +1974,6 @@
     <string name="no_update_info_desc">Не проверять информацию о новых версиях и скидках от OsmAnd.</string>
     <string name="no_update_info">Не показывать обновления</string>
     <string name="update_all_maps_now">Вы хотите обновить все карты сейчас?</string>
-    <string name="clear_tile_data">Очистить всю плитку</string>
     <string name="routing_attr_short_way_name">Экономичный путь</string>
     <string name="routing_attr_short_way_description">Использование топливо-сберегающего пути (обычно короче).</string>
     <string name="replace_favorite_confirmation">Вы уверены, что хотите заменить любимые %1$s?</string>
@@ -2242,17 +2237,6 @@
     <string name="keep_showing_on_map">Продолжать показывать на карте</string>
     <string name="line">Линия</string>
     <string name="looking_for_tracks_with_waypoints">Поиск треков с путевыми точками</string>
-    <string name="plugin_touringview_descr">Активация этого вида меняет стиль карты OsmAnd на «Туристическую карту\", это особый высоко детализированный вид для путешественников и профессиональных водителей.
-\n
-\nЭтот стиль на любом масштабе карты показывает максимальное количество подробностей для поездки, имеющихся в картографических данных (в частности, дороги, дорожки, тропинки, и ориентиры).
-\n
-\n Он также ясно показывает все виды дорог через цветовое кодирование, что полезно, для, например, управления большими транспортными средствами.
-\n
-\n И он добавляет специальные туристические настройки, такие как велосипедные маршруты или альпийские горные маршруты. 
-\n
-\nДополнительное скачивание не требуется, вид создается из наших стандартных карт.
-\n
-\nЭтот вид может быть отменен путем деактивации его здесь или путем изменения «Стиля карты» в разделе «Настройки карты» по желанию.</string>
     <string name="navigate_point_olc">Открытый код местоположения (OLC)</string>
     <string name="quick_action_item_screen">Экран %d</string>
     <string name="quick_favorites_show_favorites_dialog">Показать диалог избранных</string>

@@ -390,7 +390,6 @@
     <string name="no_update_info_desc">Jangan cek untuk update versi atau diskon terkait OsmAnd.</string>
     <string name="no_update_info">Jangan Tampilkan Pembaruan</string>
     <string name="update_all_maps_now">Apakah anda ingin memperbahurui semua peta sekarang?</string>
-    <string name="clear_tile_data">Bersihkan Semua ubin</string>
     <string name="routing_attr_short_way_name">Cara hemat bahan bakar</string>
     <string name="routing_attr_short_way_description">Gunakan cara hemat bahan bakar (biasanya lebih pendek).</string>
     <string name="replace_favorite_confirmation">Apakah kamu yakin kamu ingin mengganti favorit %1$s?</string>

@@ -246,7 +246,6 @@
     <string name="shared_string_my_location">Mövqeyim</string>
     <string name="shared_string_my_places">Yerlərim</string>
     <string name="shared_string_my_favorites">Favoritlərim</string>
-    <string name="shared_string_online_maps">Onlayn xəritələr</string>
     <string name="rename_failed">Yenidən adlandırıla bilmədi.</string>
     <string name="back_to_map">Xəritəyə qayıt</string>
     <string name="watch">İzlə</string>
@@ -911,7 +910,6 @@
     <string name="shared_string_plugin">Qoşma</string>
     <string name="plugin_settings">Qoşmalar</string>
     <string name="dropbox_plugin_name">Dropbox qoşması</string>
-    <string name="map_online_plugin_is_not_installed">Müxtəlif xəritə mənbələrini seçmək üçün Onlayn xəritələr qoşmasını aktivləşdirin</string>
     <string name="plugins_screen">Qoşmalar</string>
     <string name="prefs_plugins">Qoşmalar</string>
     <string name="plugin_install_needs_network">Bu qoşmanı quraşdırmaq üçün internet bağlantınız olmalıdır.</string>
@@ -1043,8 +1041,6 @@
     <string name="new_route_calculated_dist">Yeni marşrut hesablandı, məsafə</string>
     <string name="arrived_at_destination">Təyinat nöqtənizə gəlib çatdınız</string>
     <string name="invalid_locations">Koordinatlar etibarsızdır!</string>
-    <string name="use_online_routing_descr">Marşrutu hesablamaq üçün internet istifadə et.</string>
-    <string name="use_online_routing">Onlayn naviqasiya istifadə et</string>
     <string name="data_settings_descr">Dil seçin, məlumatları endirin/yeniləyin.</string>
     <string name="use_english_names_descr">Yerli və ingiliscə adlar arasında seçim edin.</string>
     <string name="choose_building">Bina seçin</string>

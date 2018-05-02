@@ -601,13 +601,9 @@ Er is nu {2} MB beschikbaar</string>
   <string name="previous_run_crashed">OsmAnd is de vorige keer gecrashed. Logbestand staat op {0}. Gelieve het probleem te rapporteren en het logbestand mee te sturen.</string>
   <string name="saving_gpx_tracks">GPX-tracks worden opgeslagen op SD…</string>
   <string name="finished_task">Gereed</string>
-  
-  
-  
-  
-  <string name="use_online_routing_descr">Gebruik internet voor routeberekening</string>
-  <string name="use_online_routing">Gebruik online routeberekening</string>
-  <string name="osm_settings_descr">Instellingen voor OpenStreetMap.org (OSM)</string>
+
+
+    <string name="osm_settings_descr">Instellingen voor OpenStreetMap.org (OSM)</string>
   <string name="data_settings_descr">Specificeer taal, download gegevens</string>
   <string name="data_settings">Gegevens</string>
   
@@ -739,9 +735,6 @@ Er is nu {2} MB beschikbaar</string>
   <string name="unknown_from_location">Startlocatie is nog niet bepaald</string>
   <string name="confirm_interrupt_download">Downloaden afbreken?</string>
   <string name="basemap_was_selected_to_download">De basiskaart is nodig voor OsmAnd en is al geselecteerd om te downloaden.</string>
-  
-  <string name="map_online_plugin_is_not_installed">Activeer de Online Kaarten-plugin om andere kaartbronnen te kunnen selecteren</string>
-    <string name="shared_string_online_maps">Online kaarten</string>
 
 
     <string name="osmand_background_plugin_description">Instellingen om tracking en navigatie te kunnen gebruiken met het scherm uit (schakelt de GPS periodiek in).</string>
@@ -1406,17 +1399,6 @@ Wil je een nieuwe map maken op de toegestane locatie en de OsmAnd-bestanden daar
     <string name="track_segments">GPX-track-segmenten</string>
 	<string name="track_points">GPX-track-punten</string>
 	<string name="plugin_touringview_name">Touring-kaartweergave</string>
-	<string name="plugin_touringview_descr">"Verandert de kaartstijl in \'Touring-weergave (meer contrast en detail)\'. Dit is een speciale, meer gedetailleerde weergave voor reizigers en professionele chauffeurs.
-\n
-\nDeze weergave biedt, op ieder zoom niveau van de kaart, de maximale hoeveelheid aan reisgegevens die beschikbaar is in de kaart (met name wegen, onverharde wegen, paden, en oriëntatiepunten).
-\n
-\nAlle soorten wegen zijn goed te herkennen door een eenduidige kleurcodering, wat bijvoorbeeld handig is bij het besturen van een groot voertuig.
-\n
-\nOok zijn er speciale touring-opties zoals fietsroutes en bergwandelpaden.
-\n
-\nEen speciale kaart downloaden is niet nodig; de weergave wordt gecreëerd van de gewone kaartgegevens.
-\n
-\nDeze weergave kan worden aan- en uitgezet door het kiezen van \'Touring-weergave (meer contrast en detail)\' onder \'Kaart instellen\' en dan \'Kaartstijl\'. "</string>
 
 
     <string name="rename_failed">Hernoemen mislukt.</string>
@@ -2032,7 +2014,6 @@ Er is nu {2} MB beschikbaar</string>
     <string name="first_usage_greeting">"Krijg routebeschrijvingen en ontdek nieuwe plaatsen,  zonder Internetverbinding"</string>
     <string name="search_my_location">Vind mijn positie</string>
     <string name="no_update_info">Geen updates tonen</string>
-    <string name="clear_tile_data">Alle opgeslagen kaarttegels wissen</string>
     <string name="osm_live_payment_desc">Het abonnementsgeld is maandelijks. Het abonnement kan elk moment via Google Play worden gestopt.</string>
     <string name="donation_to_osm">Doneer aan de OpenStreetMap-community</string>
     <string name="donation_to_osm_desc">Een deel van de donatie wordt gegeven aan OSM-gebruikers die de kaart verbeteren. Het abonnementsgeld verandert niet.</string>

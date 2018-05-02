@@ -328,10 +328,8 @@
 	<string name="shared_string_close">关闭</string>
 	<string name="saving_gpx_tracks">将GPX轨迹保存到SD卡…</string>
 	<string name="finished_task">成品</string>
-	
-	
-	<string name="use_online_routing_descr">使用互联网来计算路由</string>
-	<string name="use_online_routing">使用在线导航</string>
+
+
 	<string name="osm_settings_descr">，指定Openstreetmap.org（OSM）OSM提交所需的设置</string>
 	<string name="data_settings">数据</string>
 	<string name="osm_settings">OSM编辑</string>
@@ -523,11 +521,9 @@
 	<string name="confirm_interrupt_download">是否终止文件下载？</string>
     <string name="local_indexes_cat_map">离线地图(矢量)</string>
 	<string name="index_settings_descr">下载地图以及管理您设备上存储的离线数据</string>
-	<string name="map_online_plugin_is_not_installed">启用在线地图插件以选择不同的地图来源</string>
-    <string name="shared_string_online_maps">在线地图</string>
 
 
-    <string name="osmand_accessibility_description">显示特殊可用性功能的设置。</string>
+	<string name="osmand_accessibility_description">显示特殊可用性功能的设置。</string>
 	
 	<string name="vector_maps_may_display_faster_on_some_devices">矢量地图很可能显示更快速。但在某些设备上不能正常工作。</string>
 	<string name="test_voice_prompts">测试语音提示</string>
@@ -1441,7 +1437,6 @@
     <string name="no_update_info_desc">不检查版本更新或与 OsmAnd 有关折扣的信息</string>
     <string name="no_update_info">不显示更新</string>
     <string name="update_all_maps_now">你想现在更新所有的地图吗？</string>
-    <string name="clear_tile_data">清除所有的图砖</string>
     <string name="replace_favorite_confirmation">你确定你想要替换收藏的 %1$s？</string>
     <string name="rendering_attr_hideOverground_name">地上的对象</string>
     <string name="shared_string_change">更改</string>
@@ -1663,18 +1658,7 @@
     <string name="int_hour">小时</string>
     <string name="duration">持续时间</string>
     <string name="distance">距离</string>
-    <string name="plugin_touringview_descr">启动此预览的地图样式更改为“旅游查看”，这是给旅客和职业司机的一种特殊的高细节查看。 
-\n
-\n此预览提供了在任何给与的地图缩放，（特别是公路、轨道、路径和定位标记）在地图数据中最大量可获得的详细行程。 
-\n
-\n它也清楚地描绘了各类道路明确地色码，例如驾驶大型车辆时，这是非常有用的。 
-\n
-\n并提供了特别的旅游选项，比如显示自行车路线或高山的路线。 
-\n
-\n此预览是从我们的标准地图所创建，不需要下载特殊的地图。 
-\n
-\n此预览可以在这里经由再次取消启动，或透过“配置地图”下的“地图样式”这两者中任何一个的更改而恢复它。</string>
-    <string name="index_tours">旅游</string>
+	<string name="index_tours">旅游</string>
     <string name="shared_string_all">全部</string>
     <string name="waypoints">路标</string>
     <string name="targets">目的地</string>

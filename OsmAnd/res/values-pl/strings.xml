@@ -460,9 +460,6 @@
     <string name="finished_task">Zakończono</string>
 
 
-    <string name="use_online_routing_descr">Użyj Internetu do wyznaczenia trasy.</string>
-    <string name="use_online_routing">Użyj routingu online</string>
-    
     <string name="user_password">Hasło konta OSM</string>
     <string name="osm_settings_descr">Skonfiguruj ustawienia potrzebne do wysyłania danych do Openstreetmap.org (OSM).</string>
 
@@ -604,9 +601,6 @@
     <string name="unknown_from_location">Nie ustalono jeszcze położenia początkowego</string>
     <string name="confirm_interrupt_download">Anulować pobieranie pliku?</string>
     <string name="basemap_was_selected_to_download">Do pobrania została wybrana mapa bazowa wymagana do prawidłowego funkcjonowania programu.</string>
-
-    <string name="map_online_plugin_is_not_installed">Aktywuj wtyczkę map online, aby wybrać inne źródła mapy</string>
-    <string name="shared_string_online_maps">Mapy online</string>
 
 
     <string name="osmand_background_plugin_description">Wyświetla ustawienia umożliwiające włączenie śledzenia i nawigacji w tle (wyłączony ekran) poprzez okresowe wybudzanie urządzenia GPS.</string>
@@ -1477,17 +1471,6 @@ Długość %2$s</string>
     <string name="track_segments">Segmenty</string>
     <string name="track_points">Punkty trasy</string>
     <string name="plugin_touringview_name">Widok mapy turystycznej</string>
-    <string name="plugin_touringview_descr">Zmienia styl mapy OsmAnd na „turystyczny”, który jest specjalnym trybem wysokiej rozdzielczości dla turystów i kierowców zawodowych. 
-\n 
-\nTen widok dostarcza w danych mapy przy każdym poziomie przybliżenia maksymalną ilość dostępnych detali (w szczególności dróg, szlaków, ścieżek oraz znaków orientacyjnych). 
-\n 
-\nW sposób jasny i jednoznaczny szereguje typy dróg wg przypisanych kolorów, co jest przydatne, np. podczas prowadzenia dużych pojazdów. 
-\n 
-\nUdostępnia specjalne opcje turystyczne, jak np. trasy rowerowe lub alpejskie szlaki górskie. 
-\n 
-\nNie potrzeba pobierać specjalnej mapy, ten widok jest tworzony z map standardowych. 
-\n 
-\nMożna go wyłączyć używając obecnej tutaj opcji lub zmieniając styl mapy w menu konfiguracji mapy.</string>
     <string name="watch">Oglądaj</string>
     <string name="remove_the_tag">Usuń znacznik</string>
     <string name="version_settings">Kompilacje</string>
@@ -2023,7 +2006,6 @@ Długość %2$s</string>
     <string name="no_update_info_desc">Nie sprawdza aktualizacji dotyczących nowych wersji i rabatów związanych z OsmAnd.</string>
     <string name="no_update_info">Pomijanie aktualizacji</string>
     <string name="update_all_maps_now">Uaktualnić wszystkie mapy?</string>
-    <string name="clear_tile_data">Wyczyść wszystkie kafelki</string>
     <string name="osm_live_payment_desc">Opłaty za subskrypcję pobierane będą co miesiąc. Zawsze można z niej zrezygnować za pośrednictwem Google Play.</string>
     <string name="donation_to_osm">Dotacja dla społeczności OpenStreetMap</string>
     <string name="donation_to_osm_desc">Część z dotacji zostanie przekazana użytkownikom OSM, którzy wprowadzają zmiany na mapie OpenStreetMap. Koszt subskrypcji pozostaje taki sam.</string>

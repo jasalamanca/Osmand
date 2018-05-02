@@ -157,8 +157,6 @@
     <string name="local_indexes_cat_map">Hărți offline (vectoriale)</string>
 	
 	<string name="index_settings_descr">Descarcă și organizează hărțile offline stocate pe dispozitivul tău</string>
-	<string name="map_online_plugin_is_not_installed">Activează plugin-ul pentru hărți online ca să beneficiezi și de alte surse de date</string>
-    <string name="shared_string_online_maps">Hărți online</string>
 
 
     <string name="osmand_background_plugin_description">Arată setări pentru activarea navigării cu dispozitivul în standby (ecran închis/blocat) prin accesarea periodică a modulului GPS.</string>
@@ -762,13 +760,9 @@
 	<string name="previous_run_crashed">Ultima rulare OsmAnd s-a terminat anormal. Fișierul log este în {0}. Vă rog să raportați acest lucru și să atașați fișierul log.</string>
 	<string name="saving_gpx_tracks">Se salvează traseul GPX pe cardul SD…</string>
 	<string name="finished_task">Încheiat</string>
-	
-	
-	
-	
-	<string name="use_online_routing_descr">Se folosește internetul pentru determinarea rutei</string>
-	<string name="use_online_routing">Folosește rutare online</string>
-	<string name="osm_settings_descr">Specifică setările Openstreetmap.org (OSM) necesare pentru trimiterea erorilor hărții</string>
+
+
+    <string name="osm_settings_descr">Specifică setările Openstreetmap.org (OSM) necesare pentru trimiterea erorilor hărții</string>
 	<string name="data_settings_descr">Limbă, descărcare/reîncărcare date</string>
 	<string name="data_settings">Date</string>
 	

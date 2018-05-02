@@ -48,8 +48,6 @@
     <string name="local_indexes_cat_map">Aflyn kaarte (Vektor)</string>
   
   <string name="index_settings_descr">Laai kaarte af, beskou inligting en bestuur aflyn kaarte</string>
-  <string name="map_online_plugin_is_not_installed">Skakel die internet kaarte inlasmodule aan om ander kaartbronne te kies</string>
-    <string name="shared_string_online_maps">Internet kaarte</string>
 
 
     <string name="osmand_background_plugin_description">Wys stellings om spoor-natrek en navigasie aan te skakel in sluimertoestand (skerm af) deur kort-kort die GPS aan te sit.</string>
@@ -655,13 +653,9 @@
   <string name="previous_run_crashed">Die vorige gebruik van OsmAnd het gefaal. Die Log lêer is by {0}. Raporteer asseblief die probleem en heg die log lêer daarby aan.</string>
   <string name="saving_gpx_tracks">Besig om GPX spore op SD te berg…</string>
   <string name="finished_task">Klaar</string>
-  
-  
-  
-  
-  <string name="use_online_routing_descr">Gebruik Internet om die roete te bereken</string>
-  <string name="use_online_routing">Gebruik aanlyn navigasie</string>
-  <string name="osm_settings_descr">Spesifiseer Openstreetmap.org (OSM) stellings benodig vir OSM toevoegings</string>
+
+
+    <string name="osm_settings_descr">Spesifiseer Openstreetmap.org (OSM) stellings benodig vir OSM toevoegings</string>
   <string name="data_settings_descr">Spesifiseer taal, aflaai/herlaai inligting</string>
   <string name="data_settings">Inligting</string>
   

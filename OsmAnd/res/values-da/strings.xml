@@ -202,8 +202,6 @@ Proportional hukommelse %4$s MB (Android grænse %5$s MB, Dalvik %6$s MB).</stri
     <string name="local_indexes_cat_map">Standardkort (vektor)</string>
 
     <string name="index_settings_descr">Hent og administrer offline kortfiler gemt på enheden.</string>
-    <string name="map_online_plugin_is_not_installed">Aktiver onlinekort udvidelsen for at vælge andre kortkilder</string>
-    <string name="shared_string_online_maps">Onlinekort</string>
 
 
     <string name="osmand_background_plugin_description">"Viser indstillinger til at aktivere sporing og navigation i baggrunden (slukket skærm)  via periodisk at vække GPS-enheden."</string>
@@ -817,8 +815,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="finished_task">Færdig</string>
 
 
-    <string name="use_online_routing_descr">Brug internettet til at beregne rute.</string>
-    <string name="use_online_routing">Brug online-navigation</string>
     <string name="osm_settings_descr">Indstillinger for OpenStreetMap.org (OSM), som kræves for bidrag til OSM.</string>
     <string name="data_settings_descr">Angiv sprog, hent/genindlæs data.</string>
     <string name="data_settings">Data</string>
@@ -1382,17 +1378,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="watch">Vis</string>
 
     <string name="plugin_touringview_name">Touring kortvisning</string>
-    <string name="plugin_touringview_descr">Aktivering ændrer kortformat til \'Touring\', det er en særlig højdetaljevisning for rejsende og erhvervschauffører.
-\n
-\nVisning giver, på et givet kortzoom, den maksimale mængde rejseoplysninger til rådighed i kortdata (især veje, spor, stier, og orienteringsmærker).
-\n
-\nViser også tydeligt alle vejtyper utvetydigt med farvekoder, som er nyttigt, f.eks ved med kørsel store køretøjer. 
-\n
-\nGiver særlige touring muligheder såsom cykelruter eller alpine bjergruter.
-\n
-\nEt særligt kort er ikke nødvendigt, visningen er skabt ud fra standardkort. 
-\n
-\nVisningen kan altid nulstilles ved enten at deaktivere den igen her, eller ved at ændre \'Kortformat\' under \'Konfigurer kort\' som ønsket.</string>
     <string name="location_on_map">Placering:
 \n Lat %1$s
 \n Lon %2$s</string>
@@ -2011,7 +1996,6 @@ Hvis du  ønsker at støtte OsmAnd og OSM, er dette en god måde at gøre det p�
     <string name="shared_string_change">Skift</string>
     <string name="get_started">Kom i gang</string>
     <string name="update_all_maps_now">Opdater alle kort nu?</string>
-    <string name="clear_tile_data">Ryd alle kortbrikker</string>
     <string name="no_update_info_desc">Kontroller ikke for opdateringer eller rabatter.</string>
     <string name="no_update_info">Vis ikke opdateringer</string>
     <string name="search_my_location">Find position</string>

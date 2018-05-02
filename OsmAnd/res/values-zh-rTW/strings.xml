@@ -149,8 +149,6 @@
     <string name="local_indexes_cat_map">標準地圖(向量地圖)</string>
 
     <string name="index_settings_descr">在您的裝置下載與管理離線地圖和檔案的存儲。</string>
-    <string name="map_online_plugin_is_not_installed">啟用線上地圖外掛元件，來選擇不同的地圖來源</string>
-    <string name="shared_string_online_maps">線上地圖</string>
 
 
     <string name="osmand_background_plugin_description">透過週期性的喚醒 GPS 裝置，在背景模式下(螢幕關閉)顯示設定，以啟用追蹤與導航。</string>
@@ -708,8 +706,6 @@
     <string name="finished_task">完成</string>
 
 
-    <string name="use_online_routing_descr">使用網際網路估算一條路線。</string>
-    <string name="use_online_routing">使用線上導航</string>
     <string name="osm_settings_descr">向 OSM 提出意見，需指定 OpenStreetMap.org (OSM) 設定。</string>
     <string name="data_settings_descr">指定語言，下載/重載資料。</string>
     <string name="data_settings">資料</string>
@@ -1371,17 +1367,6 @@
     <string name="watch">觀看</string>
     <string name="notes">註解</string>
     <string name="plugin_touringview_name">旅遊地圖檢視</string>
-    <string name="plugin_touringview_descr">啟動此檢視的地圖樣式更改為\'旅遊檢視\'，這是給旅客和職業司機的一種特殊的高細節檢視。
-\n 
-\n此檢視提供了在任何給與的地圖縮放，（特別是公路、軌道、路徑和定位標記）在地圖資料中最大量可獲得的詳細行程。 
-\n 
-\n它也清楚地描繪了各類道路明確地色碼，例如駕駛大型車輛時，這是非常有用的。 
-\n 
-\n並提供了特別的旅遊選項，比如顯示自行車路線或高山的路線。 
-\n 
-\n此檢視是從我們的標準地圖所建立，不需要下載特殊的地圖。 
-\n 
-\n此檢視可以在這裡經由再次取消啟動，或透過 \'組態地圖\' 之下的 \'地圖樣式\' 這兩者中任何一個的更改而恢復它。</string>
     <string name="days_behind">天前</string>
     <string name="location_on_map">位置：\n 緯度 %1$s\n 經度 %2$s</string>
     <string name="rename_failed">重新命名失敗。</string>
@@ -1975,7 +1960,6 @@
     <string name="shared_string_change">更換</string>
     <string name="get_started">開始</string>
     <string name="update_all_maps_now">您現在想要更新所有地圖？</string>
-    <string name="clear_tile_data">清除所有圖磚</string>
     <string name="skip_map_downloading">跳過下載中地圖</string>
     <string name="skip_map_downloading_desc">您沒有安裝離線地圖。您可以從清單中選取一個地圖或稍後透過選單下載地圖 - %1$s。</string>
     <string name="search_another_country">選擇其它地區</string>

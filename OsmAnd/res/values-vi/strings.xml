@@ -473,14 +473,9 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
 	<string name="reading_indexes">Đang đọc dữ liệu…</string>
 	<string name="saving_gpx_tracks">Đang lưu tracks GPX vào thẻ nhớ SD…</string>
 	<string name="finished_task">Đã xong</string>
-    
-    
-    
-    
-    <string name="use_online_routing_descr">Tìm đường qua Internet</string>
-    <string name="use_online_routing">Tìm đường qua Internet</string>
-    
-    <string name="user_password">Mật khẩu OSM</string>
+
+
+	<string name="user_password">Mật khẩu OSM</string>
     <string name="osm_settings_descr">Thiết lập Openstreetmap.org (OSM)</string>
     
     <string name="data_settings_descr">Lựa chọn ngôn ngữ, dữ liệu</string>

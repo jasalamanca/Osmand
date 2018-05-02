@@ -582,8 +582,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="finished_task">Befejezve</string>
 
 
-    <string name="use_online_routing_descr">Internet használata útvonaltervezéshez.</string>
-    <string name="use_online_routing">Online útvonaltervezés</string>
     <string name="osm_settings_descr">Add meg az OSM feltöltéshez szükséges OpenStreetMap.org (OSM) adataidat.</string>
     <string name="data_settings_descr">Nyelv kiválasztása, adatok letöltése, újratöltése.</string>
 
@@ -723,9 +721,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="unknown_from_location">Kezdőpozíció még nem meghatározható</string>
     <string name="confirm_interrupt_download">Meg szeretnéd szakítani a fájl letöltését?</string>
     <string name="basemap_was_selected_to_download">Az alaptérképre szükség van az alkalmazás megfelelő működéséhez, ezért ki lett jelölve letöltésre.</string>
-
-    <string name="map_online_plugin_is_not_installed">További térképforrások kijelöléséhez engedélyezd az online térképek bővítményt</string>
-    <string name="shared_string_online_maps">Online térképek</string>
 
 
     <string name="osmand_background_plugin_description">"Megjeleníti a háttér üzemmódban  (kikapcsolt képernyővel) való útvonalrögzítéshez és navigációhoz tartozó beállításokat. (A készülék bizonyos időközönként felébreszti a GPS-t.)"</string>
@@ -1505,17 +1500,6 @@ Hosszúság: %2$s</string>
     <string name="shared_string_is_open">Nyitva van</string>
     <string name="shared_string_manage">Kezelés</string>
     <string name="shared_string_edit">Szerkesztés</string>
-    <string name="plugin_touringview_descr">A nézet aktiválása megváltoztatja az OsmAnd térképstílusát „Túra nézet”-re, amely egy speciális, nagy részletezettségű nézet az utazóknak és a hivatásos sofőröknek. 
-\n 
-\nEz a nézet bármely megadott térképnagyításon a térképadatokban elérhető utazási részletek legnagyobb mennyiségét biztosítja (főként utak, ösvények, csapások és tájékozódási pontok). 
-\n 
-\nÉrthetően ábrázolja az utak minden típusát is egyértelmű színkódolásokkal, amely annak hasznos, aki például nagy járműveket vezet. 
-\n 
-\nTovábbá speciális túralehetőségeket is biztosít, úgymint kerékpárutak vagy az Alpok hegyi útjainak megjelenítése. 
-\n 
-\nNem szükséges speciális térképet letölteni, a nézet a szabványos térképeinkből kerül előállításra. 
-\n 
-\nEz a nézet visszaállítható, ha újra kikapcsolja az aktiválást itt, vagy a „Térképstílus” megváltoztatásával a „Térkép beállítása” alatt igény szerint.</string>
     <string name="filter_poi_hint">Szűrés név szerint</string>
     <string name="search_poi_category_hint">Gépelj az összes kereséséhez</string>
     <string name="specified_directiory_not_writeable">A térképeket nem sikerült létrehozni a megadott könyvtárban</string>
@@ -2011,7 +1995,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="no_update_info_desc">Ne keressen verziófrissítéseket és OsmAnddel kapcsolatos kedvezményeket.</string>
     <string name="no_update_info">Ne mutass frissítéseket</string>
     <string name="update_all_maps_now">Szeretnéd most frissíteni az összes térképet?</string>
-    <string name="clear_tile_data">Összes csempe törlése</string>
     <string name="routing_attr_short_way_name">Üzemanyag-takarékos útvonal</string>
     <string name="routing_attr_short_way_description">Üzemanyag-takarékos útvonal tervezése (általában rövidebb).</string>
     <string name="replace_favorite_confirmation">Le szeretnéd cserélni a(z) %1$s kedvenc helyet?</string>

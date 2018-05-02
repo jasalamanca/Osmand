@@ -545,7 +545,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="modify_transparency">Muda sa trasparèntzia (0 - trasparente, 255 - annapau)</string>
     <string name="confirm_interrupt_download">Boles firmare s’iscarrigamentu de su documentu?</string>
     <string name="local_indexes_cat_map">Mapas regulares (vetoriales)</string>
-    <string name="shared_string_online_maps">Mapas in lìnia</string>
 
 
     <string name="osmand_accessibility_description">Custa estensione permitit de impreare sas funtzionalidades pro s\'atzessibilidade de su dispositivu detetamente in OsmAnd, e fatzilitat, pro nàrrere, sa modìfica de sa lestresa de sas boghes TTS, sa cunfiguratzione de su movimentu de s\'ischermu, s’impreu de una trackball pro s\'ismanniamentu o de un’interfàtzia vocale pro cosas comente s\'annùntziu de sa positzione tua.</string>
@@ -673,7 +672,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
 
 
     <string name="index_settings_descr">Iscàrriga e amministra sas mapas non in lìnia sarvadas in su dispositivu.</string>
-    <string name="map_online_plugin_is_not_installed">Abìlita s’estensione pro sas mapas chene lìnia pro ammustrare àteras mitzas</string>
 
 
     <string name="filter_current_poiButton">Filtru</string>
@@ -1150,8 +1148,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="finished_task">Cumpridu</string>
 
 
-    <string name="use_online_routing_descr">Imprea ìnternet pro calculare un\'àndala.</string>
-    <string name="use_online_routing">Imprea s’ingendradore de àndalas in lìnia</string>
     <string name="osm_settings_descr">Dislinda sas impostatziones OpenStreetMap.org (OSM) netzessàrias pro contribuire a OSM.</string>
     <string name="data_settings_descr">Dislinda sa limba, iscàrriga/torra a carrigare sos datos.</string>
     <string name="data_settings">Datos</string>
@@ -1418,19 +1414,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="notes">Notas</string>
 
     <string name="shared_string_export">Esporta</string>
-
-
-    <string name="plugin_touringview_descr">Alluende custa vista s’istile de sa mapa at a colare a \'Vista turìstica\', una vista fata a sa minuda pro turistas, biagiatores e autistas professionistas.
-\n 
-\nCusta vista frunit, pro cada livellu de ismanniamentu (zoom), su màssimu de sas minujas de biàgiu disponìbiles in sos datos de sa mapa (in particulare minujas de de sas istradas e de sas àndalas e sinnos de orientamentu). 
-\n 
-\nRapresentat fintzas totu sas castas de istradas in manera crara tramite colores diferentes, agiudende meda, pro nàrrere, sos chi ghiant veìculos mannos meda. 
-\n 
-\nE frunit optziones ispetziales de nàvigu, comente sa visualizatzione de sas àndalas pro sas bitzicletas e s\'alpinismu. 
-\n 
-\nNo est netzessàriu iscarrigare una mapa ispetziale, sa vista est creada dae sas mapas istandard. 
-\n 
-\nCusta vista podet èssere furriada istudende·la inoghe torra o cambiende s’\'Istile mapa\' in \'Cunfigura mapa\' comente boles.</string>
 
 
     <string name="days_behind">dies faghet</string>
@@ -1993,7 +1976,6 @@ Si istimas OsmAnd e OSM e los boles suportare, custa est una manera perfeta pro 
     <string name="no_update_info_desc">Non chircare pro agiornamentos a versiones noas o pro ofertas promotzionales pro OsmAnd.</string>
     <string name="no_update_info">No ammustres sos agiornamentos</string>
     <string name="update_all_maps_now">Cheres agiornare totu sas mapas como?</string>
-    <string name="clear_tile_data">Iscantzella totu sos tasseddos</string>
     <string name="first_usage_greeting">Retzi indicatziones e iscoberi logos noos chene una connessione a ìnternet</string>
     <string name="get_for">Retzi pro %1$s</string>
     <string name="get_for_month">Retzi pro %1$s a su mese</string>

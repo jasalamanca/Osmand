@@ -61,8 +61,6 @@
     <string name="confirm_interrupt_download">Voleu cancel·lar la baixada del fitxer?</string>
     <string name="select_index_file_to_download">No s\'ha trobat res. Si no trobeu la vostra regió, podeu crear-la vosaltres mateixos (vegeu http://osmand.net).</string>
     <string name="local_indexes_cat_map">Mapes estàndards (vectorials)</string>
-    <string name="map_online_plugin_is_not_installed">Activeu el connector Mapes en línia per poder seleccionar diferents fonts de mapes</string>
-    <string name="shared_string_online_maps">Mapes en línia</string>
     <string name="osmand_accessibility_description">"Aquest connector fa disponible directament des OsmAnd  les característiques d\'accessibilitat del dispositiu. Us permet, per exemple,  ajustar la velocitat de la veu en la síntesi TTS , configurar la pantalla de navegació, l\'ús del ratolí de bola pel zoom o de la veu sintetitzada, com per anunciar automàticament la vostra posició."</string>
     <string name="plugins_screen">Gestor de connectors</string>
     <string name="poi_search_desc">Cerca de PDI (punt d\'interès)</string>
@@ -537,7 +535,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="save_track_interval">Interval d\'enregistrament durant la navegació</string>
     <string name="additional_settings">Preferències addicionals</string>
     <string name="data_settings_descr">Especifiqueu l\'idioma, baixada/recàrrega de dades.</string>
-    <string name="use_online_routing">Utilitza la navegació en línia</string>
     <string name="save_current_track_descr">Desa la traça actual a la SD ara mateix.</string>
     <string name="shared_string_add_to_favorites">Afegeix a Preferits</string>
     <string name="ChooseCountry">Trieu el país</string>
@@ -700,7 +697,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="empty_route_calculated">S\'ha produït un error: la ruta calculada és buida</string>
     <string name="go_back_to_osmand">Torna enrere al mapa de l\'OsmAnd</string>
     <string name="reading_indexes">S\'estan llegint les dades locals…</string>
-    <string name="use_online_routing_descr">Utilitzeu Internet per calcular una ruta.</string>
     <string name="save_current_track">Desa la traça GPX actual</string>
     <string name="save_track_to_gpx_descrp">Durant la navegació es desa automàticament una traça GPX a la carpeta de traces.</string>
     <string name="mark_point">Objectiu</string>
@@ -1292,17 +1288,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="track_segments">Segments de traça</string>
     <string name="track_points">Punts de traça</string>
     <string name="plugin_touringview_name">Vista turística del mapa</string>
-    <string name="plugin_touringview_descr">En activar el canvi en l\'estil del mapa de l\'OsmAnd a «Vista de viatge», es mostra una vista especial de gran detall per viatgers i conductors professionals. 
-\n 
-\nAquesta vista proporciona, a qualsevol nivell de zoom del mapa, el màxim detall disponible a les dades del mapa per viatjar (particularment carreteres, pistes, camins i senyals d\'orientació). 
-\n 
-\nTambé es discrimina amb nitidesa tots els tipus de carreteres pel codi de colors, la qual cosa és molt útil, per exemple, conduint vehicles pesats. 
-\n
-\nI ofereix opcions de viatge concretes com representar les rutes ciclistes o d\'alpinisme a la muntanya.
-\n 
-\nNo cal baixar un mapa específic, aquesta vista es crea amb els nostres mapes estàndards. 
-\n 
-\nAquesta vista es pot desfer tornant a fer la mateixa selecció, o en canviar l\'«Estil del mapa» de «Configuració del mapa» a la vista que es desitgi.</string>
     <string name="local_osm_changes_upload_all_confirm">"Esteu a punt de pujar %1$d modificacio(ns)  a OSM. N\'esteu segur?"</string>
     <string name="confirmation_to_clear_history">Voleu esborrar l\'historial?</string>
     <string name="delay_to_start_navigation_descr">Indiqueu el temps d\'espera sense canvis per tancar la pantalla de planificació de la ruta.</string>
@@ -1823,7 +1808,6 @@ L\'ús de memòria serà de {3} MB temporalment i {1} MB permanentment.
     <string name="routing_attr_short_way_description">Utilitza la ruta de menys consum (normalment la més curta).</string>
     <string name="replace_favorite_confirmation">Confirmeu que voleu substituir la preferència %1$s?</string>
     <string name="update_all_maps_now">Voleu actualitzar tots els mapes ara mateix?</string>
-    <string name="clear_tile_data">Esborra totes les tessel·les</string>
     <string name="search_map">Cercant mapes…</string>
     <string name="first_usage_wizard_desc">"Permeteu a OsmAnd determinar la vostra localització i suggerir-vos els  mapes a baixar d\'aquesta zona."</string>
     <string name="location_not_found">No s\'ha determinat la localització</string>

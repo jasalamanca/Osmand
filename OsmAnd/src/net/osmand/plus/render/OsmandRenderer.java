@@ -117,7 +117,6 @@ public class OsmandRenderer {
 
 		boolean ended = false;
 
-		
 		@Override
 		protected byte[] getIconRawData(String data) {
 			return RenderingIcons.getIconRawData(ctx, data);
@@ -140,7 +139,7 @@ public class OsmandRenderer {
 		wmgr.getDefaultDisplay().getMetrics(dm);
 	}
 
-	public PathEffect getDashEffect(RenderingContext rc, float[] cachedValues, float st){
+	private PathEffect getDashEffect(RenderingContext rc, float[] cachedValues, float st){
 		float[] dashes = new float[cachedValues.length / 2];
 		for (int i = 0; i < dashes.length; i++) {
 			dashes[i] = rc.getDensityValue(cachedValues[i * 2]) + cachedValues[i * 2 + 1];
@@ -165,13 +164,6 @@ public class OsmandRenderer {
 		return shaders.get(resId);
 	}
 	
-//	private void put(TIntObjectHashMap<TIntArrayList> map, int k, int v){
-//		if(!map.containsKey(k)){
-//			map.put(k, new TIntArrayList());
-//		}
-//		map.get(k).add(v);
-//	}
-
 	/**
 	 * @return if map could be replaced
 	 */
@@ -403,18 +395,6 @@ public class OsmandRenderer {
 		};
 	}
 	
-//	Comparator<MapDataObjectPrimitive> sortPolygonsOrder() {
-//		return new Comparator<MapDataObjectPrimitive>() {
-//
-//			@Override
-//			public int compare(MapDataObjectPrimitive i, MapDataObjectPrimitive j) {
-//				if (i.order == j.order)
-//					return i.typeInd < j.typeInd ? -1 : 1;
-//				return (i.order > j.order) ? -1 : 1;
-//			}
-//		};
-//	}
-
 	private void sortObjectsByProperOrder(RenderingContext rc, List<BinaryMapDataObject> objects,
 			RenderingRuleSearchRequest render, 
 			List<MapDataObjectPrimitive>  pointsArray, List<MapDataObjectPrimitive> polygonsArray,

@@ -381,7 +381,6 @@
     <string name="no_update_info_desc">Do not check for version updates or OsmAnd related discounts.</string>
     <string name="no_update_info">Do not show updates</string>
     <string name="update_all_maps_now">Do you want to update all maps now?</string>
-    <string name="clear_tile_data">Clear all tiles</string>
     <string name="routing_attr_short_way_name">Fuel-efficient way</string>
     <string name="routing_attr_short_way_description">Use fuel-efficient way (usually shorter).</string>
     <string name="replace_favorite_confirmation">Are you sure you want to replace favorite %1$s?</string>
@@ -852,19 +851,11 @@
     <string name="route_points">Route points</string>
     <string name="track_segments">Track segments</string>
     <string name="track_points">Track points</string>
-    <string name="shared_string_online_maps">Online maps</string>
     <string name="record_plugin_name">Trip recording</string>
     <string name="record_plugin_description">This plugin activates the functionality to record and save your tracks by manually touching the GPX logging widget on the map screen, or also to automatically log all of your navigation routes to a GPX file.
 		\n\nRecorded tracks can be shared with your friends or be used for OSM contributions. Athletes can use recorded tracks to monitor their trainings. Some basic track analysis can be performed directly in OsmAnd, like lap times, average speed etc., and tracks can of course also later be analyzed in special 3rd party analysis tools.
 	</string>
     <string name="plugin_touringview_name">Touring map view</string>
-    <string name="plugin_touringview_descr">Activating this view changes OsmAnd\'s map style to \'Touring view\', this is a special high-detail view for travelers and professional drivers.
-		\n\nThis view provides, at any given map zoom, the maximum amount of travel details available in the map data (particularly roads, tracks, paths, and orientation marks).
-		\n\nIt also clearly depicts all types of roads unambiguously by color coding, which is useful when e.g. driving large vehicles.
-		\n\nAnd it provides special touring options like showing bicycle routes or Alpine mountain routes.
-		\n\nA special map download is not needed, the view is created from our standard maps.
-		\n\nThis view can be reverted by either de-activating it again here, or by changing the \'Map style\' under \'Configure map\' as desired.
-	</string>
     <string name="osmand_distance_planning_plugin_description">This plugin provides a map screen widget allowing to create paths by tapping on the map, or use or modify existing GPX files, to plan a trip and measure the distance between points. The results can be saved as a GPX file, which can later be used for guidance.</string>
     <string name="shared_string_accessibility">Accessibility</string>
     <string name="osmand_accessibility_description">This plugin makes the device\'s accessibility features available directly in OsmAnd. It facilitates e.g. adjusting the speech rate for TTS voices, configuring directional-pad screen navigation, using a trackball for zoom control, or using text-to-speech feedback, like for auto announcing your position.</string>
@@ -1480,7 +1471,6 @@
     <string name="basemap_was_selected_to_download">Basemap is required for proper application functioning and was selected to download.</string>
     <string name="local_indexes_cat_map">Standard maps (vector)</string>
     <string name="index_settings_descr">Download and manage offline map files stored on your device.</string>
-    <string name="map_online_plugin_is_not_installed">Enable the Online maps plugin to select different map sources</string>
     <string name="plugins_screen">Plugins</string>
     <string name="prefs_plugins">Plugins</string>
     <string name="vector_maps_may_display_faster_on_some_devices">Vector maps likely display faster. May not work well on some devices.</string>
@@ -1986,8 +1976,6 @@
     <string name="previous_run_crashed">Last OsmAnd run crashed. Log file is at {0}. Please report the issue and attach the log file.</string>
     <string name="saving_gpx_tracks">Saving GPX tracks to SD…</string>
     <string name="finished_task">Finished</string>
-    <string name="use_online_routing_descr">Use the Internet to calculate a route.</string>
-    <string name="use_online_routing">Use online navigation</string>
     <string name="osm_settings_descr">Specify OpenStreetMap.org (OSM) settings needed for OSM submissions.</string>
     <string name="data_settings_descr">Specify language, download/reload data.</string>
     <string name="data_settings">Data</string>

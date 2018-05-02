@@ -218,20 +218,6 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 					getDownloadActivity().reloadLocalIndexes();
 				}
 			});
-//		} else if (resId == R.string.clear_tile_data) {
-//			AlertDialog.Builder confirm = new AlertDialog.Builder(getActivity());
-//			confirm.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-//				@Override
-//				public void onClick(DialogInterface dialog, int which) {
-//					new LocalIndexOperationTask(getDownloadActivity(), listAdapter, LocalIndexOperationTask.CLEAR_TILES_OPERATION).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, info);
-//				}
-//			});
-//			confirm.setNegativeButton(R.string.shared_string_no, null);
-//			String fn = FileNameTranslationHelper.getFileName(getActivity(),
-//					getMyApplication().getResourceManager().getOsmandRegions(),
-//					info.getFileName());
-//			confirm.setMessage(getString(R.string.delete_confirmation_msg, fn));
-//			confirm.show();
 		} else if (resId == R.string.local_index_mi_restore) {
 			new LocalIndexOperationTask(getDownloadActivity(), listAdapter, LocalIndexOperationTask.RESTORE_OPERATION).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, info);
 		} else if (resId == R.string.shared_string_delete) {

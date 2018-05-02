@@ -347,10 +347,8 @@
 	<string name="previous_run_crashed">Viime kerralla OsmAnd kaatui. Logitiedosto sijaitsee {0}. Ole hyvä ja raportoi ongelma ja liitä logitiedosto.</string>
 	<string name="saving_gpx_tracks">Tallennetaan GPX reittejä muistikortille…</string>
 	<string name="finished_task">Valmis</string>
-	
-	<string name="use_online_routing_descr">Käytä internettiä reitin laskentaan</string>
-	<string name="use_online_routing">Käytä online navigointia</string>
-	<string name="additional_settings">Lisäasetukset</string>
+
+    <string name="additional_settings">Lisäasetukset</string>
 	<string name="shared_string_settings">Asetukset</string>
 	<string name="save_current_track_descr">Tallenna nykyinen reitti muistikortille nyt</string>
 	<string name="save_current_track">Tallenna nykyinen GPX reitti</string>
@@ -569,8 +567,7 @@
 	<string name="local_indexes_cat_map">Tavalliset kartat (vektori)</string>
 	
 	<string name="index_settings_descr">Lataa ja hallinnoi offline karttoja jotka on talletettu laitteeseesi</string>
-	<string name="shared_string_online_maps">Online kartat</string>
-	<string name="process_navigation_service">OsmAnd navigointipalvelu</string>
+    <string name="process_navigation_service">OsmAnd navigointipalvelu</string>
 	<string name="network_provider">Verkko</string>
 	<string name="background_router_service_descr">Suorita OsmAnd-sovellusta taustalla seurataksesi sijaintia silloin kun näyttö on pois päältä</string>
 	<string name="background_router_service">Suorita OsmAnd taustalla</string>
@@ -878,7 +875,6 @@ Nauhoitetut jäljet voidaan jakaa ystävillesi tai käyttää OSM osallistumisis
     <string name="search_my_location">Hae sijaintini</string>
     <string name="no_update_info">Älä näytä päivityksiä</string>
     <string name="update_all_maps_now">Haluatko päivittää kaikki kartat nyt?</string>
-    <string name="clear_tile_data">Poista kaikki tiilet</string>
     <string name="routing_attr_short_way_name">Polttoainetaloudellinen reitti</string>
     <string name="routing_attr_short_way_description">Käytä polttoainetaloudellista reittiä (tavallisesti lyhin)</string>
     <string name="shared_string_change">Muuta</string>

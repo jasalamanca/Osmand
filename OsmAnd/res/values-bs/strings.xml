@@ -29,8 +29,6 @@
     <string name="local_indexes_cat_map">Mape van mreže (vektori)</string>
   
   <string name="index_settings_descr">Preuzmite, pogledajte detalje i uredite mape van mreže</string>
-  <string name="map_online_plugin_is_not_installed">Omogući nadogradnju za izbor drugačijih izvora javnih mapa</string>
-    <string name="shared_string_online_maps">Javne mape</string>
 
 
     <string name="use_compass_navigation">Koristi kompas</string>

@@ -575,8 +575,7 @@
     <string name="route_points">Тачке путање</string>
     <string name="track_segments">Одсечци путање</string>
     <string name="track_points">Тачке путање</string>
-    <string name="shared_string_online_maps">Карте на мрежи</string>
-	<string name="record_plugin_name">Снимци путовања</string>
+    <string name="record_plugin_name">Снимци путовања</string>
     <string name="plugin_touringview_name">Возачки преглед катре</string>
     <string name="osmand_distance_planning_plugin_description">Овај прикључак додаје справицу на приказу карте која омогућава стварање путањи тапкањем на карту, или употребу и измену постојећих датотека ГПИкс-а, ради зацртавања путовања и мерења растојања између тачака. Добијени излази се могу сачувати као датотеке ГПИкс-а које се касније могу користити као водичи.</string>
     <string name="shared_string_accessibility">Приступачност</string>
@@ -978,7 +977,6 @@
     <string name="no_update_info_desc">Не проверавај надоградње нових издања, попуст се односи на ОсмАнд</string>
     <string name="no_update_info">Не приказуј надоградње</string>
     <string name="update_all_maps_now">Желите ли освежити све карте сада?</string>
-    <string name="clear_tile_data">Очисти све плочице</string>
     <string name="routing_attr_short_way_name">Пут који штеди гориво</string>
     <string name="routing_attr_short_way_description">Користи пут који штеди гориво (обично краћи).</string>
     <string name="replace_favorite_confirmation">Да ли сте сигурни да желите заменити омиљени %1$s?</string>

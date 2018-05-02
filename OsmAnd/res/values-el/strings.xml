@@ -130,11 +130,9 @@
     <string name="local_indexes_cat_map">Offline χάρτες (διανυσματικοί)</string>
 	
 	<string name="index_settings_descr">Λήψη και διαχείριση εκτός σύνδεσης αρχείων χαρτών αποθηκευμένων στη συσκευή σας</string>
-	<string name="map_online_plugin_is_not_installed">Ενεργοποιήστε το πρόσθετο για τους online χάρτες για να επιλέξετε διαφορετικές πηγές χάρτη</string>
-    <string name="shared_string_online_maps">Online χάρτες</string>
 
 
-    <string name="osmand_background_plugin_description">Εμφάνιση των ρυθμίσεων για ενεργοποίηση ιχνηλάτησης και δρομολόγησης στο παρασκήνιο (οθόνη κλειστή) μέσω περιοδικής αφύπνισης της συσκευής GPS.</string>
+	<string name="osmand_background_plugin_description">Εμφάνιση των ρυθμίσεων για ενεργοποίηση ιχνηλάτησης και δρομολόγησης στο παρασκήνιο (οθόνη κλειστή) μέσω περιοδικής αφύπνισης της συσκευής GPS.</string>
 	<string name="osmand_accessibility_description">Εμφάνιση ρυθμίσεων για ενεργοποίηση των ειδικών χαρακτηριστικών προσβασιμότητας.</string>
 	
 	
@@ -714,12 +712,8 @@
 	<string name="previous_run_crashed">Η τελευταία εκτέλεση του OsmAnd κατέρρευσε. Το αρχείο καταγραφής είναι στο {0}. Παρακαλώ αναφέρετε το συμβάν και επισυνάψτε το αρχείο καταγραφής.</string>
 	<string name="saving_gpx_tracks">Αποθήκευση ιχνών GPX στην SD…</string>
 	<string name="finished_task">Ολοκληρώθηκε</string>
-	
-	
-	
-	
-	<string name="use_online_routing_descr">Χρήση Διαδικτύου για υπολογισμό διαδρομής</string>
-	<string name="use_online_routing">Χρήση πλοήγησης με σύνδεση</string>
+
+
 	<string name="osm_settings_descr">Καθορίστε τις ρυθμίσεις που απαιτούνται για τις υποβολές προς το Openstreetmap.org (OSM)</string>
 	<string name="data_settings_descr">Καθορισμός γλώσσας, λήψη/επαναφόρτωση δεδομένων</string>
 	<string name="data_settings">Δεδομένα</string>

@@ -606,13 +606,9 @@
 	<string name="previous_run_crashed">이전에 실행한 앱이 죽었습니다. 로그 파일은 {0}입니다. 문제를 알리고 로그 파일을 첨부하세요.</string>
 	<string name="saving_gpx_tracks">GPX 경로를 SD에 저장 중…</string>
 	<string name="finished_task">종료되었습니다</string>
-    
-    
-    
-    
-    <string name="use_online_routing_descr">경로를 찾기위해 인터넷을 사용합니다</string>
-    <string name="use_online_routing">온라인 라우팅 사용</string>
-    <string name="osm_settings_descr">OSM 로그인에 필요한 OSM 설정을 지정합니다</string>
+
+
+	<string name="osm_settings_descr">OSM 로그인에 필요한 OSM 설정을 지정합니다</string>
     <string name="data_settings_descr">언어를 지정하고, 데이터를 다운로드/재로드 합니다</string>
     <string name="data_settings">데이터</string>
     
@@ -1123,11 +1119,9 @@
 	<string name="unknown_from_location">시작 포인트은 아직 결정되지 않았습니다</string>
 	<string name="confirm_interrupt_download">파일 다운로드를 중단 하시겠습니까 ?</string>
 	<string name="basemap_was_selected_to_download">베이스맵은 적절한 앱의 작동에 필요하며, 다운로드하기 위해  베이스맵을 선택 했습니다.</string>
-	<string name="map_online_plugin_is_not_installed">다른 지도 소스를 선택하려면 온라인지도 플러그인을 활성화하세요</string>
-    <string name="shared_string_online_maps">온라인지도</string>
 
 
-    <string name="osmand_accessibility_description">"이 플러그인은 기기의 accessibility 기능을 OsmAnd에 직접 제공 합니다. 예: TTS 음성 속도 조절 용이, 방향 패드 화면 운행 구성 용이,  트랙볼을 사용하여 확대/축소 컨트롤 용이,  또는 TTS 음성 피드백을 사용하여 자동으로 현재위치 발표 용이."</string>
+	<string name="osmand_accessibility_description">"이 플러그인은 기기의 accessibility 기능을 OsmAnd에 직접 제공 합니다. 예: TTS 음성 속도 조절 용이, 방향 패드 화면 운행 구성 용이,  트랙볼을 사용하여 확대/축소 컨트롤 용이,  또는 TTS 음성 피드백을 사용하여 자동으로 현재위치 발표 용이."</string>
 	
 	
 	
@@ -1464,8 +1458,7 @@
 	<string name="notes">노트</string>
 
     <string name="days_behind">하루가 저물 때</string>
-    <string name="plugin_touringview_descr">"OsmAnd의 지도 스타일을  \'여행 보기\'로 변경합니다, 이는 여행자와 전문 드라이버을 위한 특별한 상세 보기를 지원합니다.\n\t\t\n\n이 보기는 다음을 제공 합니다, 어떤 주어진 된 지도 줌레벨에서, 여행의 최대 용량으로 지도 데이터 (특히 도로, 트랙, 경로 및 방향 표시)에서 사용할 수 있다. 그것은 또한 명확하게 (예를 들면 대형 차량 운전 하는 경우, 컬러 코딩으로) 모든 유형의 도로를 묘사합니다.\n\t\t\n\n특별한 지도 다운로드는 필요 하지 않습니다, 보기(View)는 표준 지도에서 만들어집니다.\n\t\t\n\n다시 비활성화 하거나, 또는 \'지도 구성\' 의 하위메뉴인  \'지도 스타일\'을 변경하여 보기(View)를 되돌릴 수 있습니다. "</string>
-	<string name="plugin_touringview_name">여행중인 지도 보기</string>
+    <string name="plugin_touringview_name">여행중인 지도 보기</string>
 	<string name="location_on_map">위치:
 \n위도 %1$s\n경도 %2$s</string>
 	

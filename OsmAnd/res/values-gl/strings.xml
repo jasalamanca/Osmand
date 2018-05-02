@@ -595,8 +595,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="basemap_was_selected_to_download">Requírese o mapa base para que o aplicativo funcione axeitadamente e foi seleccionado para ser descargado.</string>
     <string name="local_indexes_cat_map">Mapas normais (vectoriais)</string>
 	<string name="index_settings_descr">Descargar e xestionar ficheiros de mapas sen conexión almacenados no dispositivo</string>
-	<string name="map_online_plugin_is_not_installed">Activar o engadido de mapas con conexión para seleccionar fontes de mapas diferentes</string>
-    <string name="shared_string_online_maps">Mapas con conexión</string>
 
 
     <string name="osmand_accessibility_description">Este engadido pon as funcións de accesibilidade do dispositivo a disposición directamente desde o OsmAnd. Facilita que, por exemplo, se poida axustar a velocidade da fala nas voces de TTS, se configure a navegación da pantalla, se use unha trackball para controlar a ampliación ou se use a resposta de texto a fala, como cando se anuncia automaticamente a posición.</string>
@@ -1189,13 +1187,9 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="previous_run_crashed">O OsmAnd fallou catastroficamente na última execución. O ficheiro de rexistro está en {0}. Informe, se pode, deste problema e achegue o ficheiro de rexistro.</string>
 	<string name="saving_gpx_tracks">A gardar as pistas de GPX no SD…</string>
 	<string name="finished_task">Rematado</string>
-	
-	
-	
-	
-	<string name="use_online_routing_descr">Empregar a Internet para calcular a ruta</string>
-	<string name="use_online_routing">Empregar a navegación con conexión</string>
-	<string name="osm_settings_descr">Indicar a configuración de Openstreetmap.org (OSM) precisa para os envíos a OSM</string>
+
+
+    <string name="osm_settings_descr">Indicar a configuración de Openstreetmap.org (OSM) precisa para os envíos a OSM</string>
 	<string name="data_settings_descr">Indique o idioma, datos de descarga/recarga</string>
 	<string name="data_settings">Data</string>
 	
@@ -1685,23 +1679,6 @@ Lon %2$s</string>
     <string name="contact_us">Contacte connosco</string>
     <string name="map_legend">Lenda do mapa</string>
     <string name="plugin_touringview_name">Vista de mapa turístico</string>
-	<string name="plugin_touringview_descr">"Ao activar esta vista cámbiase o estilo do mapa de OsmAnd a «Vista turística», que é unha vista especial moi detallada para viaxeiros e condutores profesionais.
-
-
-Esta vista fornece, en todas as ampliacións do mapa, o nivel máximo de detalles de viaxe dispoñíbeis cos datos do mapa (en concreto, estradas, pistas, camiños e marcas de orientación).
-
-
-Tamén mostra claramente todos os tipos de estrada, distinguíndoas sen ambigüidades pola súa cor, o que é útil especialmente cando se conducen vehículos grandes.
-
-
-Tamén fornece opcións de turismo especiais, como rutas de ciclismo ou rutas de montaña.
-
-
-Non se precisa descargar ningún mapa especial, xa que a vista se crea a partir dos mapas normais.
-
-
-Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa» en «Configurar o mapa» como se desexe.
- "</string>
     <string name="impassable_road_desc">Seleccione as estradas que desexe evitar durante a navegación</string>
     <string name="shared_string_sound">Son</string>
     <string name="no_location_permission">O aplicativo non ten permiso para acceder aos datos de localización.</string>
@@ -1903,7 +1880,6 @@ Pódese pechar esta vista desactivándoa aquí ou cambiando o «Estilo de mapa»
     <string name="no_update_info_desc">Non comprobar as actualizacións de versións novas nin descontos relacionados co OsmAnd</string>
     <string name="no_update_info">Non mostrar as actualizacións</string>
     <string name="update_all_maps_now">Desexa actualizar todos os mapas agora?</string>
-    <string name="clear_tile_data">Limpar todas as teselas</string>
     <string name="replace_favorite_confirmation">Confirma que desexa substituír o %1$s favorito?</string>
     <string name="coords_search">Busca por coordenadas</string>
     <string name="advanced_coords_search">Busca avanzada por coordenadas</string>

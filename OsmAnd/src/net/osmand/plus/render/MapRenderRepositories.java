@@ -168,16 +168,16 @@ public class MapRenderRepositories {
 		}
 	}
 
-	public boolean containsLatLonMapData(double lat, double lon, int zoom) {
-		int x = MapUtils.get31TileNumberX(lon);
-		int y = MapUtils.get31TileNumberY(lat);
-		for (BinaryMapIndexReader reader : files.values()) {
-			if (reader.containsMapData(x, y, zoom)) {
-				return true;
-			}
-		}
-		return false;
-	}
+//	public boolean containsLatLonMapData(double lat, double lon, int zoom) {
+//		int x = MapUtils.get31TileNumberX(lon);
+//		int y = MapUtils.get31TileNumberY(lat);
+//		for (BinaryMapIndexReader reader : files.values()) {
+//			if (reader.containsMapData(x, y, zoom)) {
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
 
 	public void clearAllResources() {
 		clearCache();
@@ -258,8 +258,7 @@ public class MapRenderRepositories {
 		}
 		return false;
 	}
-	
-	
+
 	private boolean loadVectorDataNative(QuadRect dataBox, final int zoom, final RenderingRuleSearchRequest renderingReq, 
 			NativeOsmandLibrary library) {
 		int leftX = MapUtils.get31TileNumberX(dataBox.left);
@@ -381,7 +380,6 @@ public class MapRenderRepositories {
 		}
 	}
 
-
 	private boolean loadVectorData(QuadRect dataBox, final int zoom, final RenderingRuleSearchRequest renderingReq) {
 		double cBottomLatitude = dataBox.bottom;
 		double cTopLatitude = dataBox.top;
@@ -470,7 +468,6 @@ public class MapRenderRepositories {
 			tempResult.addAll(basemapResult);
 		}
 
-
 		if (count[0] > 0) {
 			log.info(String.format("BLat=%s, TLat=%s, LLong=%s, RLong=%s, zoom=%s", //$NON-NLS-1$
 					cBottomLatitude, cTopLatitude, cLeftLongitude, cRightLongitude, zoom));
@@ -484,8 +481,6 @@ public class MapRenderRepositories {
 
 		return true;
 	}
-
-	
 
 	private MapIndex readMapObjectsForRendering(final int zoom, final RenderingRuleSearchRequest renderingReq,
 			ArrayList<BinaryMapDataObject> tempResult, ArrayList<BinaryMapDataObject> basemapResult, 
@@ -596,16 +591,16 @@ public class MapRenderRepositories {
 		}
 	}
 
-	public RotatedTileBox getCheckedBox() {
-		return checkedBox;
-	}
+//	public RotatedTileBox getCheckedBox() {
+//		return checkedBox;
+//	}
 	
 	public int getCheckedRenderedState() {
 		// to track necessity of map download (1 (if basemap) + 2 (if normal map)
 		return checkedRenderedState;
 	}
 
-	public synchronized void loadMap(RotatedTileBox tileRect) {//, MapTileDownloader mapTileDownloader) {
+	public synchronized void loadMap(RotatedTileBox tileRect) {
 		boolean prevInterrupted = interrupted;
 		interrupted = false;
 		// added to avoid zoomAnimation != 0 which produces wrong map position on the screen

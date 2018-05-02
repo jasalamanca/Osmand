@@ -741,8 +741,6 @@
     <string name="loading_data">Začituja so daty…</string>
     <string name="saving_gpx_tracks">GPX-čara składuje so na SD-karće…</string>
     <string name="finished_task">Hotowo</string>
-    <string name="use_online_routing_descr">Wužiwaj internet za wobličenje čary.</string>
-    <string name="use_online_routing">Nawigacija online</string>
     <string name="osm_settings_descr">Nastajenja za Openstreetmap.org (OSM).</string>
     <string name="data_settings_descr">Rěč wubrać, daty sćahnyć abo zaktualizować.</string>
     <string name="data_settings">Daty</string>
@@ -1344,6 +1342,5 @@
     <string name="route_points">Čarowe dypki</string>
     <string name="track_segments">Pućne wotrězki</string>
     <string name="track_points">Pućne dypki</string>
-    <string name="shared_string_online_maps">Online-karty</string>
     <string name="mark_to_delete">Za wotstronjenje markěrować</string>
 </resources>

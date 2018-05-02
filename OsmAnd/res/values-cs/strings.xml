@@ -531,8 +531,6 @@
     <string name="previous_run_crashed">Aplikace při minulém běhu spadla. Soubor s hlášením je v {0}. Prosím ohlaste problém vývojářům a přiložte hlášení o chybě.</string>
     <string name="saving_gpx_tracks">Ukládání GPX trasy na SD kartu…</string>
     <string name="finished_task">Hotovo</string>
-    <string name="use_online_routing_descr">Použít Internet k výpočtu trasy.</string>
-    <string name="use_online_routing">Použít on-line navigaci</string>
     <string name="osm_settings_descr">Určete nastavení OpenStreetMap.org (OSM) potřebné pro přispívání.</string>
     <string name="data_settings_descr">Volba jazyka, stažení a aktualizace dat.</string>
     <string name="data_settings">Data</string>
@@ -655,8 +653,6 @@
     <string name="unknown_from_location">Startovní bod navigace ještě není zvolen</string>
     <string name="confirm_interrupt_download">Chcete přerušit stahování souboru?</string>
     <string name="basemap_was_selected_to_download">Pro správnou funkci aplikace je třeba základní mapa. Proto byla automaticky vybrána ke stažení.</string>
-    <string name="map_online_plugin_is_not_installed">Pro výběr různých zdrojů map povolte modul „On-line mapy“</string>
-    <string name="shared_string_online_maps">On-line mapy</string>
     <string name="osmand_background_plugin_description">Zobrazí nastavení na povolení záznamu trasy a navigace v úsporném režimu (při vypnuté obrazovce) pravidelným probouzením GPS zařízení.</string>
     <string name="osmand_accessibility_description">Tento modul zobrazí nastavení pro speciální funkce ulehčení přístupu přímo v OsmAnd. Například je možné měnit rychlost TTS hlasu, použít trackball na přibližování nebo například použít hlasové předčítání pro oznamování polohy.</string>
     <string name="osmand_development_plugin_description">Tento modul zobrazí nastavení vývojových a ladících funkcí, jako jsou simulace navigace, informace o rychlosti vykreslování nebo hlasová oznámení. Tato nastavení jsou určené pro vývojáře a nejsou potřebné pro běžné použití.</string>
@@ -1352,17 +1348,6 @@ Délka %2$s</string>
     <string name="rendering_attr_OSMMapperAssistant_name">Pomocník OSM editorů</string>
     <string name="filter_poi_hint">Filtrovat podle jména</string>
     <string name="search_poi_category_hint">Pište pro vyhledání ve všech</string>
-    <string name="plugin_touringview_descr">Aktivováním tohoto pohledu se změní styl mapy na „Cestování“, který obsahuje víc detailů pro cestovatele a profesionální řidiče. 
-\n 
-\nTento pohled poskytuje ve všech přiblíženích mapy maximum cestovních detailů (např. silnice, cesty, pěšiny a orientační značky). 
-\n 
-\nTaké zobrazuje typy cest v jednoznačně odlišných barvách, což je užitečné například pro velká vozidla. 
-\n 
-\nPoskytuje také speciální možnosti pro cestování jako cyklotrasy a skialpinistické trasy. 
-\n 
-\nNení potřeba stahovat samostatný soubor, tento pohled používá standardní mapové soubory. 
-\n 
-\nTento pohled může být vypnut jeho deaktivováním zde, nebo změnou hodnoty možnosti „Styl mapy“ v „Nastavení mapy“.</string>
     <string name="index_name_netherlands">Evropa - Holandsko</string>
     <string name="rendering_value__name">Výchozí</string>
     <string name="application_dir_change_warning3">Chcete aby OsmAnd také zkopíroval datové soubory do nového cíle?</string>
@@ -1835,7 +1820,6 @@ Pokud máte rádi OsmAnd a OSM a chcete je podpořit, toto je výborný způsob,
     <string name="no_update_info_desc">Nekontrolovat aktualizace nových verzí a slevy související s OsmAnd.</string>
     <string name="no_update_info">Nezobrazovat aktualizace</string>
     <string name="update_all_maps_now">Chcete aktualizovat všechny mapy ihned?</string>
-    <string name="clear_tile_data">Vymazat všechny dlaždice</string>
     <string name="routing_attr_short_way_name">Ekonomická trasa</string>
     <string name="routing_attr_short_way_description">Použít ekonomickou trasu (obvykle kratší).</string>
     <string name="replace_favorite_confirmation">Opravdu chcete nahradit oblíbené místo „%1$s“?</string>

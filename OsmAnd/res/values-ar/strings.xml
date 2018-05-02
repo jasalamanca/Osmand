@@ -422,8 +422,6 @@
 	<string name="auto_zoom_close">إلى الصورة عن قرب</string>
 	<string name="auto_zoom_none">تعطيل التكبير التلقائي</string>
 	<string name="auto_zoom_far">قم بتوسيط الخريطة هنا</string>
-    <string name="map_online_plugin_is_not_installed">تمكين ملحق الخرائط على الإنترنت من تحديد مصادر مختلفة للخرائط</string>
-    <string name="shared_string_online_maps">الخرائط المتصلة بالانترنت</string>
     <string name="auto_zoom_farthest">إلى مدى الطويل</string>
 	<string name="use_magnetic_sensor_descr">لقراءة البوصلة، استخدام المستشعر المغناطيسي بدلاً من مستشعر التوجيه.</string>
     
@@ -1329,9 +1327,7 @@
 	<string name="loading_data">تحميل البيانات…</string>
 	<string name="reading_indexes">قراءة البيانات المحلية…</string>
 	<string name="finished_task">تم الإنتهاء</string>
-	<string name="use_online_routing_descr">استخدم الإنترنت لحساب مسار ما.</string>
-	<string name="use_online_routing">استخدم الملاحة على الإنترنت</string>
-	<string name="use_english_names_descr">اختر بين الأسماء المجلية أو الإنجليزية.</string>
+    <string name="use_english_names_descr">اختر بين الأسماء المجلية أو الإنجليزية.</string>
 	<string name="data_settings">بيانات</string>
 	<string name="map_view_3d_descr">تمكن عرض الخريطة ثلاثي الأبعاد.</string>
 	<string name="map_view_3d">عرض الخريطة ثلاثي الأبعاد</string>
@@ -1909,17 +1905,6 @@
     <string name="navigate_point_format_DM">ددد دد.دد</string>
     <string name="navigate_point_format_DMS">ددد دد ث ث.ث ث</string>
     <string name="poi_error_poi_not_found">لم يتم العثور على النقطة أو أن المكان عبارة عن عدة نقاط وليست مدعومة بعدُ على التطبيق.</string>
-    <string name="plugin_touringview_descr">تفعيل هذا الرؤية يغير نمط خريطة OsmAnd إلى \'نمط التجوال\'، هذا النمط يوفر رؤية غنية بالتفاصيل للمسافرين والسائقين المحترفين.
-\n
-\nتوفر هاته الرؤية في أي تكبير معين للخريطة أكبر قدر ممكن من تفاصيل السفر المتاحة في بيانات الخريطة (خاصة الطرق، المسارات، المعابر وعلامات التوجيه).
-\n
-\nكما تصور بوضوح جميع أنواع الطرق بترميز لوني، والذي هو جد مفيد لاسيما عند قيادة المركبات الكبيرة.
-\n
-\nوتوفر كذلك خيارات تجول خاصة كإظهار طرق الدراجات الهوائية أو الطرق جبال الألب الجبلية.
-\n
-\nليست هناك حاجة لتحميل خريطة خاصة، الرؤية يتم إنشاءها من خلال خرائطنا المحلية.
-\n
-\nهاته الرؤية يمكن التراجع عنها إما عن طريق تعطيلها هنا، أو تغيير \'نمط الخريطة\' في \'ضبط الخريطة\' حسب الرغبة.</string>
     <string name="create_poi_link_to_osm_doc">تصنيف الخريطة <u>على الإنترنت</u> مع الصور.</string>
     <string name="background_service_wait_int_descr">تعيين الحد الأقصى لوقت الانتظار لكل إصلاح موقع في الخلفية.</string>
     <string name="background_service_wait_int">الانتظار الأقصى للإصلاح</string>
@@ -1951,7 +1936,6 @@
     <string name="routing_attr_short_way_name">طريق أقل استهلاكا للوقود</string>
     <string name="routing_attr_short_way_description">استخدم طريق أقل استهلاكا للوقود (عادة أقصر).</string>
     <string name="replace_favorite_confirmation">هل أنت متأكد من أنك تريد استبدال المفضلة %1$s؟</string>
-    <string name="clear_tile_data">مسح كافة البيانات الجزئية</string>
     <string name="update_all_maps_now">هل تريد تحديث كافة الخرائط الآن؟</string>
     <string name="no_update_info_desc">لا تتحقق من وجود تحديثات الإصدار أو الخصومات المتعلقة بالتطبيق.</string>
     <string name="no_update_info">لا تظهر التحديثات</string>

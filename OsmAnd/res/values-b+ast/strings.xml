@@ -153,8 +153,7 @@
 	<string name="shared_string_my_location">La mio posición</string>
 	<string name="shared_string_my_places">Los mios llugares</string>
 	<string name="shared_string_my_favorites">Los mios favoritos</string>
-    <string name="shared_string_online_maps">Mapes en llinia</string>
-	<string name="shared_string_accessibility">Accesibilidá</string>
+    <string name="shared_string_accessibility">Accesibilidá</string>
 	<string name="osm_settings">Edición d\'OSM</string>
 	<string name="debugging_and_development">Desendolcu d\'OsmAnd</string>
 	<string name="notes">Notes</string>

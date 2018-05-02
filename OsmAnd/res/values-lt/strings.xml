@@ -40,8 +40,6 @@
     <string name="local_indexes_cat_map">Įprastiniai žemėlapiai (vektoriniai)</string>
 
     <string name="index_settings_descr">Parsisiųsti, peržiūrėti detalią informaciją ir valdyti parsiųstus žemėlapius.</string>
-    <string name="map_online_plugin_is_not_installed">Įjunkite interneto žemėlapių įskiepį norėdami pasirinkti kitus žemėlapių šaltinius</string>
-    <string name="shared_string_online_maps">Interneto žemėlapiai</string>
 
 
     <string name="osmand_background_plugin_description">Rodyti nustatymus sekimui ir navigacijai foniniame režime (išjungus ekraną) periodiškai žadinant GPS įrenginį.</string>
@@ -639,8 +637,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="finished_task">Baigta</string>
 
 
-    <string name="use_online_routing_descr">Naudoti internetą maršruto skaičiavimui.</string>
-    <string name="use_online_routing">Naudoti interneto navigacijos paslaugą</string>
     <string name="osm_settings_descr">Nurodyti Openstreetmap.org (OSM) nustatymus, reikalingus informacijai į OSM pateikti.</string>
     <string name="data_settings_descr">Nurodyti kalbą, parsiųsti/atnaujinti duomenis.</string>
     <string name="data_settings">Data</string>
@@ -1518,18 +1514,7 @@ Ilguma %2$s</string>
     <string name="rendering_value__name">Numatytasis</string>
     <string name="application_dir_change_warning3">Ar norite, kad OsmAnd taip pat nukopijuotų duomenų failus į naują vietą?</string>
     <string name="shared_string_currently_recording_track">Šiuo metu įrašomas maršrutas</string>
-    <string name="plugin_touringview_descr">Aktyvus šį rodinį, OsmAnd\'s žemėlapių stilius pasikeis į \"Kelionių rodinį\", kuris labai detalus rodynys skirtas keliautojams ir profesionaliems vairuotojams.
-\n 
-\nŠis rodinys visuose žemėlapio masteliuose pateikia maksimalų įmanomą žemėlapio informacijos kiekį (ypač kelius, vieškelius, takus ir orientyrus).
-\n 
-\nJis tai pat aiškiai pateikia visus kelių tipus aiškiu spalviniu žymėjimu, kuris naudingas pvz. vairuojant didelius automobilius.
-\n 
-\nRodinys pateikia specialius kelionių maršrutus su galimybe pasirinkti dviračių maršrutus ar kalnų slidinėjimo trasas.
-\n 
-\nSpecialiai atskiro žemėlapio atsisiųsti nereikia, šis rodinys bus sukurtas iš standartinių žemėlapių.
-\n 
-\nŠį rodinį galima išjungti čia arba pakeitus \'Žemėlapio stilių\' skyriuje \'Žemėlapio konfigūravimas\' kai to reikės.</string>
-    
+
     <string name="routing_attr_avoid_borders_description">Vengti kirsti sieną išvažiuojant užsienio šalin.</string>
     <string name="routing_attr_height_name">Aukščio ribojimas</string>
     <string name="use_fast_recalculation">Išmanusis maršruto perskaičiavimas</string>
@@ -2016,7 +2001,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="first_usage_greeting">Gaukite maršruto nurodymus ir atraskite naujas vietas be interneto ryšio</string>
     <string name="search_my_location">Ieškoti mano vietos</string>
     <string name="no_update_info_desc">Netikrinti informacijos apie atnaujinimus ar OsmAnd siūlomas nuolaidas.</string>
-    <string name="clear_tile_data">Išvalyti visus lakštus</string>
     <string name="replace_favorite_confirmation">Ar tikrai norite pakeisti išsaugotą vietą %1$s?</string>
     <string name="shared_string_widgets">Valdikliai</string>
     <string name="add_points_to_map_markers_q">Ar norite pridėti visus taškus kaip žemėlapio žymes?</string>

@@ -65,8 +65,6 @@
     <string name="bg_service_screen_lock">Zamknúť obrazovku</string>
     <string name="bg_service_screen_lock_toast">Obrazovka je uzamknutá</string>
     <string name="bg_service_interval">Nastaviť prebúdzací interval:</string>
-    <string name="map_online_plugin_is_not_installed">Povoľte zásuvný modul Online mapy, aby bolo možné vybrať rozličné mapové zdroje</string>
-    <string name="shared_string_online_maps">Online mapy</string>
     <string name="osmand_background_plugin_description">Zobrazí nastavenia na povolenie stopovania a navigácie v pozadí systému (vypnutá obrazovka) pravidelným prebúdzaním GPS zariadenia.</string>
     <string name="osmand_accessibility_description">Tento modul zobrazí funkcie uľahčenia prístupu priamo v OsmAnd. Napr. je možné zmeniť rýchlosť TTS hlasu, použiť trackball na približovanie, alebo automaticky oznamovať polohu hlasom.</string>
     <string name="osmand_development_plugin_description">Tento modul zobrazí nastavenia pre funkcie vývoja a ladenia, ako simulácia trasy, zobrazenie výkonu vykresľovania alebo hlasové oznamy. Tieto nastavenia sú určené pre vývojárov a nie sú potrebné pre bežné použitie programu.</string>
@@ -577,9 +575,7 @@
     <string name="previous_run_crashed">Predošlé spustenie aplikácie malo kritickú chybu. Záznamový súbor je v {0}. Prosím, nahláste problém a priložte záznamový súbor.</string>
     <string name="saving_gpx_tracks">Ukladajú sa GPX stopy na SD kartu…</string>
     <string name="finished_task">Dokončené</string>
-    <string name="use_online_routing_descr">Použiť Internet na výpočet trasy.</string>
-    <string name="use_online_routing">Použiť online navigáciu</string>
-    
+
     <string name="user_password">OSM heslo</string>
     <string name="osm_settings_descr">Určiť nastavenia Openstreetmap.org (OSM) potrebné pre prispievanie do OSM.</string>
     <string name="data_settings_descr">Vybrať jazyk, stiahnutie/znovu načítanie údajov.</string>
@@ -1222,17 +1218,6 @@ Proporčná pamäť %4$s MB (Limit Androidu %5$s MB, Dalvik %6$s MB).</string>
     <string name="device_memory">Pamäť zariadenia</string>
     <string name="notes">Poznámky</string>
     <string name="roads_only">Iba cesty</string>
-    <string name="plugin_touringview_descr">Aktivovaním tohto pohľadu sa zmení štýl mapy na \"Cestovanie\", ktorý obsahuje viac detailov pre cestovateľov a profesionálnych vodičov.
-\n 
-\nTento pohľad poskytuje vo všetkých priblíženiach mapy maximum cestovných detailov (napr. cesty, chodníky a orientačné značky). 
-\n 
-\nTaktiež zobrazuje typy ciest v jednoznačne odlišných farbách, čo je užitočné napríklad pre veľké vozidlá. 
-\n 
-\nPoskytuje aj špeciálne možnosti pre cestovanie ako cyklotrasy a turistické značkované chodníky. 
-\n 
-\nNie je potrebné stiahnuť samostatný súbor, tento pohľad používa štandardné mapové súbory. 
-\n 
-\nTento pohľad môže byť vypnutý jeho deaktivovaním tu alebo zmenou hodnoty v \"Štýl vykresľovania\" v \"Nastaviť mapu\".</string>
     <string name="plugin_touringview_name">Cestovný mapový pohľad (Touring view)</string>
     <string name="location_on_map">Umiestnenie:\n Šírka %1$s\n Dĺžka %2$s</string>
     <string name="watch">Zobraziť</string>
@@ -1841,7 +1826,6 @@ Ak máte radi OsmAnd a OSM a chcete ich podporiť, toto je výborný spôsob ako
     <string name="no_update_info_desc">Nekontrolovať aktualizácie nových verzií a zľavy súvisiace s OsmAnd.</string>
     <string name="no_update_info">Nezobrazovať aktualizácie</string>
     <string name="update_all_maps_now">Chcete teraz aktualizovať všetky mapy?</string>
-    <string name="clear_tile_data">Vymazať všetky dlaždice</string>
     <string name="get_it">Získať</string>
     <string name="get_for">Získať za %1$s</string>
     <string name="get_for_month">Získať za %1$s mesiac</string>

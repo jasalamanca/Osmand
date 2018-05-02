@@ -615,13 +615,9 @@
   <string name="previous_run_crashed">Pēdējā OsmAnd palaišana beidzās ar avāriju. Žurnāla fails atrodas {0}. Lūdzu nosūtiet ziņojumu par kļūdu un klāt pievienojiet žurnāla failu.</string>
   <string name="saving_gpx_tracks">Saglabā GPX trasi SD kartē…</string>
   <string name="finished_task">Pabeigts</string>
-  
-  
-  
-  
-  <string name="use_online_routing_descr">Izmantot internetu, lai aprēķinātu maršrutu</string>
-  <string name="use_online_routing">Lietot tiešsaites navigāciju</string>
-  <string name="osm_settings_descr">Norādiet Openstreetmap.org (OSM) iestatījumus datu nosūtīšanai OSM</string>
+
+
+    <string name="osm_settings_descr">Norādiet Openstreetmap.org (OSM) iestatījumus datu nosūtīšanai OSM</string>
   <string name="data_settings_descr">Iestatiet valodu, lejupielādējiet/atjaunojiet datus</string>
   <string name="data_settings">Dati</string>
   
@@ -763,9 +759,6 @@
   <string name="unknown_from_location">Sākuma punkts vēl nav noteikts</string>
   <string name="confirm_interrupt_download">Vai pārtraukt faila lejupielādi?</string>
   <string name="basemap_was_selected_to_download">Pamatkarte, kas ir nepieciešama aplikācijas normālai darbībai, tika pievienota lejupielādei.</string>
-  
-  <string name="map_online_plugin_is_not_installed">Aktivizēt tiešsaistes karšu spraudni, lai atlasītu citus karšu avotus</string>
-    <string name="shared_string_online_maps">Tiešsaistes kartes</string>
 
 
     <string name="osmand_background_plugin_description">Rāda iestatījumus navigācijas darbībai fonā (izslēgts ekrāns), periodiski ieslēdzot GPS.</string>
@@ -1885,15 +1878,6 @@ failu(s)?
     <string name="osm_user_stat">Labojumi %1$s, vieta %2$s, kopējie labojumi %3$s</string>
     <string name="osm_editors_ranking">OSM labotāju reitings</string>
     <string name="lang_nds">Zemvācu</string>
-    <string name="plugin_touringview_descr">"Tūrisma karte attēlo maksimāli daudz detaļas ceļotājiem un profesionālajiem braucējiem, īpaši izceļot ceļus, trekus, norādes un orientācijas zīmes.
-\n
-\nVisi ceļi, atkarībā no to tipa, ir iezīmēti ar atšķirīgām krāsām, ko īpaši novērtēs lielu kravu pārvadātāji.
-\n
-\nTāpat tiek nodrošinātas īpašas, uz tūrismu orientētas opcijas, kā veloceļiņu vai kalnu taciņu maršrutu rādīšana kartē.
-\n
-\nNav nepieciešama speciālas kartes lejupielāde.
-\n
-\nŠo karti var atkārtoti deaktivizēt šeit vai galvenajā izvēlē - kartes attēlošana. "</string>
     <string name="map_mode">Apgaismojums</string>
     <string name="number_of_gpx_files_selected_pattern">%s GPX faili atzīmēti</string>
     <string name="rendering_value_medium_name">Viduvēji</string>
@@ -1986,7 +1970,6 @@ failu(s)?
     <string name="no_update_info_desc">Nepārbaudīt jauninājumus par jaunām versijām un akcijām no OsmAnd</string>
     <string name="no_update_info">Nerādīt jauninājumus</string>
     <string name="update_all_maps_now">Vai vēlaties atjaunot visas kartes?</string>
-    <string name="clear_tile_data">Iztīrīt bilžu kešatmiņu</string>
     <string name="routing_attr_short_way_name">Ekonomiskais maršruts</string>
     <string name="routing_attr_short_way_description">Lietot ekonomisko maršrutu (parasti īsākais).</string>
     <string name="replace_favorite_confirmation">Vai nomainīt izlases vienību %1$s?</string>

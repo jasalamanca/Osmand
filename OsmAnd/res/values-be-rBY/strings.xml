@@ -660,8 +660,6 @@ Praparcyjnaj pamiacі %4$s MB (Abmiežavańnie Android %5$s MB, Dalvik %6$s MB).
 	<string name="basemap_was_selected_to_download">Bazavaja mapa nieabchodnaja dla karektnaj pracy dastasavańnia і aŭtamatyčna była abranaja dla cciahvańnia.</string>
     <string name="local_indexes_cat_map">Standartnyja mapy (vektarnyja)</string>
 	<string name="index_settings_descr">Sciahvannie i kiravannie fajlami mapaŭ, što zachoŭvajucca na vašym prystasavanni.</string>
-	<string name="map_online_plugin_is_not_installed">Aktyvujcie modul anłajn mapaŭ, kab vybіrać roznyja krynіcy dla mapaŭ</string>
-    <string name="shared_string_online_maps">Siecіŭnyja mapy</string>
 
 
     <string name="osmand_accessibility_description">Modul dadaje padtrymku dapamožnych mahčymaściaŭ niepasredna ŭ OsmAnd. Heta palahčaje, naprykład, rehulavańnie chutkaścі pramovy dla hołasu TTS, naładu nakіravanaścі ekrana navіhacyі, kіravańnie maštabam pry dapamozie trekboła abo vykarystańnie hałasavych kamand zvarotnaj suviazі dla aŭtamatyčnaha ahałošvańnia vašaha miescaznachodžańnia.</string>
@@ -1255,13 +1253,9 @@ Praparcyjnaj pamiacі %4$s MB (Abmiežavańnie Android %5$s MB, Dalvik %6$s MB).
 	<string name="previous_run_crashed">Papiarednі start OsmAnd skončyŭsia avaryjna. Chronіka zapіsanaja ŭ fajł {0}. Kali łaska, paviedamіcie pra prablemu j pryčapіcie fajł chronіkі.</string>
 	<string name="saving_gpx_tracks">Zachavańnie GPX-śladoŭ na SD…</string>
 	<string name="finished_task">Skončana</string>
-	
-	
-	
-	
-	<string name="use_online_routing_descr">Vykarystoŭvać Internet dlia razliku maršrutu.</string>
-	<string name="use_online_routing">Vykarystoŭvać onłajn navіhacyju</string>
-	<string name="osm_settings_descr">Zadać nalady dlia OpenStreetMap.org (OSM), nieabchodnyja dlia ŭnioska.</string>
+
+
+    <string name="osm_settings_descr">Zadać nalady dlia OpenStreetMap.org (OSM), nieabchodnyja dlia ŭnioska.</string>
 	<string name="data_settings_descr">Vybar movy, abnaŭliennie dadzienych.</string>
 	<string name="data_settings">Źviestkі</string>
 	
@@ -1757,17 +1751,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="track_segments">Adrezkі śledu</string>
     <string name="track_points">Punkty śledu</string>
     <string name="plugin_touringview_name">Turystyčnaja mapa</string>
-	<string name="plugin_touringview_descr">Aktyvacyja hetaha styliu mianiaje styĺ mapy OsmAnd na «Turystyčnuju mapu», heta admyslovy vysoka detaliavany vyhliad dlia padarožnikaŭ i prafiesijnych kiroŭcaŭ. 
-\n 
-\nHety styĺ na liubym maštabie mapy pakazvaje maksimaĺnuju koĺkasć padrabiaznasciaŭ dlia pajezdki, najaŭnych u kartahrafičnych dadzienych (u pryvatnasci, darohi, darožki, sciažynki, i aryjenciry). 
-\n 
-\nJon taksama jasna pakazvaje ŭsie vidy daroh praz kolieravaje kadavannie, što karysna, dlia, napryklad, kiravańnia vialikimi transpartnymi srodkami. 
-\n 
-\nI jon dadaje spiecyjaĺnyja turystyčnyja nalady, takija jak vielasipiednyja maršruty abo aĺpijskija hornyja maršruty. 
-\n 
-\nDadatkovaje sciahvańnie nie patrabujecca, vyhliad stvarajecca z našych standartnych mapaŭ. 
-\n 
-\nHety vyhliad moža być deaktyvavany tut, abo šliacham zmieny «Styliu mapy» u razdzielie «Nalady mapy» pa žadańni.</string>
     <string name="rename_failed">Nie atrymałasia pierajmienavać.</string>
     <string name="days_behind">d. tamu abnaŭlali</string>
     <string name="back_to_map">Viarnucca da mapy</string>
@@ -1949,7 +1932,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="no_update_info_desc">Nie praviarać abnaŭlienni viersij i znižki ad OsmAnd.</string>
     <string name="no_update_info">Nie pakazvać abnaŭlienni</string>
     <string name="update_all_maps_now">Vy chočacie abnavіć usie mapy zaraz?</string>
-    <string name="clear_tile_data">Ačyścіć keš siecіŭnych mapaŭ</string>
     <string name="routing_attr_short_way_name">Paliŭna-aščadny maršrut</string>
     <string name="routing_attr_short_way_description">Različvaje paliva-aščadny maršrut (zvyčajna najkaraciejšy).</string>
     <string name="replace_favorite_confirmation">Vy sapraŭdy chočacie zamianіć ulubiony punkt %1$s?</string>

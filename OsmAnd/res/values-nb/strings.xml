@@ -105,8 +105,6 @@
     <string name="local_indexes_cat_map">Standardkart (vektor)</string>
 
     <string name="index_settings_descr">Last ned og håndter offline-kart lagret på enheten.</string>
-    <string name="map_online_plugin_is_not_installed">Aktiver programtillegget for nettbaserte kart for å velge ulike kartkilder</string>
-    <string name="shared_string_online_maps">Nettbaserte kart</string>
 
 
     <string name="vector_maps_may_display_faster_on_some_devices">Vektorkart vises trolig raskere. Fungerer kanskje ikke bra på enkelte enheter.</string>
@@ -818,9 +816,6 @@
     <string name="update_poi_is_not_available_for_zoom">Oppdatering av interessepunkter er ikke tilgjengelig ved lave zoomnivåer</string>
     <string name="arrived_at_destination">Du har ankommet ditt reisemål</string>
 
-
-    <string name="use_online_routing_descr">Bruk internett til å beregne en rute.</string>
-    <string name="use_online_routing">Bruk nettbasert navigering</string>
 
     <string name="navigation_intent_invalid">Ugyldig format: %s</string>
 
@@ -1574,7 +1569,6 @@
     <string name="no_inet_connection">Ingen internettforbindelse</string>
     <string name="no_inet_connection_desc_map">Kreves for å laste ned kart.</string>
     <string name="storage_free_space">Ledig lagerplass</string>
-    <string name="clear_tile_data">Slett alle kartfliser</string>
     <string name="replace_favorite_confirmation">Er du sikker på at du vil erstatte favoritt %1$s?</string>
     <string name="get_started">Kom i gang</string>
     <string name="routing_attr_short_way_name">Drivstoff-effektiv vei</string>

@@ -444,8 +444,7 @@ Lon: %2$s</string>
     <string name="route_points">Punktoj de kurso</string>
     <string name="track_segments">Kurs-sekcioj</string>
     <string name="track_points">Punktoj de kurso</string>
-    <string name="shared_string_online_maps">Enretaj mapoj</string>
-	<string name="rename_failed">Alinomado malsukcesis.</string>
+    <string name="rename_failed">Alinomado malsukcesis.</string>
     <string name="days_behind">tagoj antaŭ</string>
     <string name="back_to_map">Reen mapen</string>
     <string name="location_on_map">Loko:\nLat %1$s\nLon %2$s</string>
@@ -615,17 +614,6 @@ Lon: %2$s</string>
     <string name="sort_by_distance">Ordigi laŭ distanco</string>
     <string name="sort_by_name">Ordigi laŭ nomo</string>
     <string name="plugin_touringview_name">Turisma map-vido</string>
-	<string name="plugin_touringview_descr">Aktivigo de tiu ĉi ŝanĝas OsmAnd-an map-stilon al ‘turisma vido’, tiu ĉi estas speciala altdetala vido por vojaĝantoj kaj aŭtistoj. 
-\n 
-\nTiu ĉi vido ebligas ĉe iu ajna skalo maksimuman kvanton de vojaĝaj detaloj disponeblaj (precipe vojoj, kursoj, padoj kaj rekoniloj). 
-\n 
-\nĜi ankaŭ distingigas ĉiujn specojn de vojoj nekonfuzeble per kolor-kodoj, kio helpas ekz. direkti grandajn veturilojn. 
-\n 
-\nĜi ebligas specialajn turismajn funkciojn kiel montradon de biciklovojoj aŭ montaraj turismaj vojoj. 
-\n 
-\nElŝutado de speciala mapo ne endas, la vido estas kreita de normalaj mapoj. 
-\n 
-\nTiu ĉi vido oni povas nuligi per malaktivigi ĝin tie ĉi, aŭ per ŝanĝi la ‘map-aspekton’ en la menuo ‘agordi mapon’.</string>
     <string name="show_zoom_buttons_navigation_descr">Montri butonojn por pligrandigo kaj malgrandigo dum navigado.</string>
     <string name="show_zoom_buttons_navigation">Montri butonojn de skalado</string>
     <string name="save_as_favorites_points">Konservi kiel grupon da ŝatatoj</string>
@@ -1067,7 +1055,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="favorite_home_category">Hejmo</string>
     <string name="preferred_locale">Fasada lingvo</string>
     <string name="incomplete_locale">nekompleta</string>
-    <string name="map_online_plugin_is_not_installed">Aktivigi la kromprogramo \'Enretaj mapoj\' por elekti aliajn fontojn de mapoj</string>
     <string name="prefs_plugins">Kromprogramoj</string>
     <string name="vector_maps_may_display_faster_on_some_devices">Vektoraj mapoj verŝajne funkcias pli rapide. Estas eble, ke tio ne funkcias en kelkaj aparatoj.</string>
     <string name="play_commands_of_currently_selected_voice">Elekti voĉon kaj provi ĝin ludante avertojn</string>
@@ -1603,8 +1590,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="previous_run_crashed">OsmAnd antaŭe kolapsis. Protokol-dosiero estas en {0}. Bonvolu raporti la problemon kaj aldoni la protokol-dosieron.</string>
     <string name="saving_gpx_tracks">Konservado de GPX-kursoj al memorkarto…</string>
     <string name="finished_task">Finita</string>
-    <string name="use_online_routing_descr">Uzi Interreton por kalkuli kurson.</string>
-    <string name="use_online_routing">Uzi enretan navigadon</string>
     <string name="data_settings_descr">Agordi lingvon, elŝuti/reŝargi datumojn.</string>
     <string name="osm_settings_descr">Agordoj bezonataj por sendoj al OpenStreetMap.org.</string>
     <string name="data_settings">Datumoj</string>
@@ -1803,7 +1788,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="routing_attr_short_way_name">Brulaĵ-ŝparema kurso</string>
     <string name="routing_attr_short_way_description">Kalkuli brulaĵ-ŝpareman kurson (kutime plej mallongan).</string>
     <string name="replace_favorite_confirmation">Ĉu vi volas anstataŭigi la ŝatatan ejon %1$s?</string>
-    <string name="clear_tile_data">Forviŝi ĉiujn kahelojn</string>
     <string name="update_all_maps_now">Ĉu vi volas ĝisdatigi ĉiujn mapojn nun?</string>
     <string name="skip_map_downloading">Transsalti elŝuton de mapoj</string>
     <string name="skip_map_downloading_desc">Vi havas neniun eksterretan mapon instalitan. Vi povus elekti iun el la listo aŭ elŝuti mapojn poste per la menuo - %1$s.</string>

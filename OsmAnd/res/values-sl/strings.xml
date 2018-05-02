@@ -521,8 +521,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="select_index_file_to_download">Ni najdenih ustreznih podatkov. Če izbranega področja ni, ga lahko ustvarite sami (več informacij na http://osmand.net).</string>
     <string name="local_indexes_cat_map">Standardni zemljevidi (vektorski)</string>
     <string name="index_settings_descr">Prejemanje in upravljanje datotek zemljevidov, shranjenih na napravi.</string>
-    <string name="map_online_plugin_is_not_installed">Omogočite vstavek spletnih zemljevidov za izbiro različnih virov zemljevidov</string>
-    <string name="shared_string_online_maps">Spletni zemljevidi</string>
     <string name="osm_editing_plugin_description">Vstavek omogoča upravljanje nastavitev, ki so namenjene pošiljanju poročil, hroščev in odzivov na delovanje programa OsmAnd (posodabljanje podatkov točk POI, objavljanje sledi GPX (zahteva ustrezna poverila OSM) in drugo). OSM je javni odprtokodni projekt, katerega kakovost je odvisna tudi od vaše dejavnosti. Za več podrobnosti obiščite spletišče https://openstreetmap.org. Dejavno sodelovanje je zelo zaželeno, objave pa je mogoče narediti neposredno iz programa OsmAnd, če navedene osebna poverila OSM.</string>
     <string name="vector_maps_may_display_faster_on_some_devices">Vektorski zemljevidi se običajno izrisujejo hitreje, zgodi pa se, da na nekaterih napravah ne delujejo.</string>
     <string name="debugging_and_development">Razhroščevalnik OsmAnd</string>
@@ -879,8 +877,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="finished_task">Končano</string>
 
 
-    <string name="use_online_routing_descr">Uporabi spletna orodja za izračun poti.</string>
-    <string name="use_online_routing">Uporabi spletno navigacijo</string>
     <string name="osm_settings_descr">Določi nastavitve OpenStreetMap.org (OSM), ki so zahtevane za pošiljanje podatkov na strežnik.</string>
     <string name="data_settings_descr">Določi jezik, prejmi/ponovno naloži podatke.</string>
     <string name="data_settings">Podatki</string>
@@ -1507,17 +1503,6 @@ ZŠ (β) %2$s</string>
     <string name="rendering_attr_hideHouseNumbers_name">Pokaži hišne številke</string>
     <string name="index_name_netherlands">Evropa – Nizozemska</string>
     <string name="delay_to_start_navigation_descr">Določite čas, preden se zapre zaslon načrtovanja poti.</string>
-    <string name="plugin_touringview_descr">S spreminjanjem tega pogleda, se spremeni slog prikazovanja zemljevidov za »potovalni način« (Touring view). To je poseben, podroben pogled za popotnike in profesionalne voznike.
-\n
-\nPogled omogoča največji možni nabor podrobnosti pri katerikoli povečavi. To vključuje podrobnosti zemljevida s poudarkom na cestah, poteh, sledeh in oznak za hitro orientacijo v okolju.
-\n
-\nEnostavno je razločevanje tudi med različnimi vrstami cest. Te so označene z različnimi barvami glede na vrsto vozišča, ker je še posebej uporabno za voznike velikih oziroma težkih vozil.
-\n
-\nOmogoča tudi posebne načine potovanja, kot je kolesarjenje ali pohodništvo v odročnih, gorskih ali težko prehodnih krajih.
-\n
-\nZa uporabo te možnosti je uporabljen podroben izris obstoječih zemljevidov, zato posebni zemljevidi niso zahtevani.
-\n
-\nPodrobni izris je mogoče prekiniti z onemogočanjem možnosti, ali pa s spreminjanjem vrste prikaza zemljevida.</string>
 
     <string name="routing_attr_avoid_borders_description">Izogibanje prehodom meje z drugimi državami.</string>
     <string name="routing_attr_height_name">Omejitev višine</string>
@@ -2000,7 +1985,6 @@ Del prihodka se vrne skupnosti OSM in se izplačuje za vsako opravljeno dejavnos
     <string name="search_my_location">Najdi moje mesto</string>
     <string name="no_update_info">Ne pokaži posodobitev</string>
     <string name="update_all_maps_now">Ali želite posodobiti vse zemljevide?</string>
-    <string name="clear_tile_data">Počisti vse sličice</string>
     <string name="skip_map_downloading_desc">Nameščenega ni nobenega zemljevida za delo brez povezave. Izbrati je mogoče zemljevid s seznama, ali pa ga prejeti preko menija %1$s.</string>
     <string name="first_usage_wizard_desc">Naj program OsmAnd določi trenutno mesto in predlaga zemljevid za prejem.</string>
     <string name="no_update_info_desc">Ne preverjaj za posodobitve programa OsmAnd in drugih ugodnosti.</string>

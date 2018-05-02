@@ -420,14 +420,9 @@ POIの更新は利用できません</string>
      <string name="previous_run_crashed">前回アプリケーション実行中にクラッシュしました。 詳細は{0}に記録されています。報告する場合はログファイルの添付をお願いします。</string>
      <string name="saving_gpx_tracks">GPX経路をSDに保存中…</string>
      <string name="finished_task">終了</string>
- 
- 
- 
- 
- <string name="use_online_routing_descr">ルート計算にインターネットを使用します</string>
- <string name="use_online_routing">オンラインルーティングを使用</string>
- 
- <string name="user_password">OSM パスワード</string>
+
+
+    <string name="user_password">OSM パスワード</string>
  <string name="osm_settings_descr">Openstreetmap.org (OSM)にデータを提出する際に必要な項目の設定します</string>
  
  <string name="data_settings_descr">言語、データのダウンロード/リロードを指定します</string>
@@ -869,8 +864,6 @@ POIの更新は利用できません</string>
     <string name="unknown_from_location">出発点は、まだ決定されていません</string>
 	<string name="basemap_was_selected_to_download">ベースマップはアプリケーションの動作に必要なので、ダウンロード候補として選択されました。</string>
     <string name="local_indexes_cat_map">標準マップ(ベクター形式)</string>
-	<string name="map_online_plugin_is_not_installed">別のマップソースを選択するためにオンラインマッププラグインを有効にする</string>
-    <string name="shared_string_online_maps">オンラインマップ</string>
 
 
     <string name="osmand_accessibility_description">このプラグインはデバイスのユーザー補助機能をOsmAndから直接利用できるようになります。例：TTS音声の発声速度の調整や、ナビゲーション画面を操作するパッドの設定、トラックボールを利用したズームコントロール、テキスト発声機能を使ってのあなたの現在地を自動でお知らせするフィードバック機能など。</string>
@@ -1545,17 +1538,6 @@ POIの更新は利用できません</string>
 	
 	<string name="plugin_touringview_name">ツーリングマップ表示</string>
 	<string name="confirmation_to_clear_history">履歴を消去しますか？</string>
-    <string name="plugin_touringview_descr">これを有効にすると、OsmAndのマップスタイルを変更し\'ツーリングビュー\'表示になります。これは旅行者やプロドライバー向けの特殊な詳細図です。 
-\n 
-\nこの表示では任意のズームで、マップデータ内の情報を可能な限り最大限表示します(特に高速を含む一般道路、未舗装道路、小規模通路、およびオリエンテーションマーク)。 
-\n 
-\nまた道路種別を色別で分け、大型車等で走行時に道を判別しやすいようになっています。 
-\n 
-\nさらに自転車用ルートや登山用ルートを示すような特別なツーリングオプションも用意されています。 
-\n 
-\n特別なマップのダウンロードは必要なく、標準マップから生成されます。 
-\n 
-\n設定の有効無効化で元に戻せますが、\'マップ設定\'下の\'マップスタイル \'を変更することで必要に応じて切り替えることも出来ます。</string>
     <string name="local_osm_changes_upload_all_confirm">OSMに%1$dカ所の変更をアップロードします。よろしいですか？</string>
     <string name="rename_failed">リネーム出来ませんでした</string>
 	<string name="days_behind">日前</string>
@@ -2154,7 +2136,6 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="gpx_logging_no_data">データなし</string>
     <string name="routing_attr_short_way_name">燃費を抑えたルート</string>
     <string name="routing_attr_short_way_description">燃費を抑えることを重視した(通常より短い)ルートにします</string>
-    <string name="clear_tile_data">すべてのタイルを消去</string>
     <string name="navigate_point_olc">オープンロケーションコード(OLC)</string>
     <string name="navigate_point_olc_info_invalid">無効なOLCです
 </string>

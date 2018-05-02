@@ -242,7 +242,6 @@
     <string name="shared_string_download">" ഡൗണ്‍ലോഡ്"</string>
     <string name="shared_string_currently_recording_track">"നിലവില്‍ റിക്കോഡ് ചെയ്യുന്ന പാത "</string>
     <string name="track_segments">വഴി കഷണം (ട്രാക്ക് സെഗ്.)</string>
-    <string name="shared_string_online_maps">ഓണ്‍ലൈന്‍ ഭൂപടങ്ങള്‍</string>
     <string name="edit_group">"ഗ്രൂപ്പ് എഡിറ്റ് ചെയ്യുക "</string>
     <string name="version_settings_descr">നൈറ്റിലി ബില്‍ഡ് വേര്‍ഷന്‍ ഡൗണ്‍ലോഡ് ചെയ്യുക</string>
     <string name="rendering_attr_streetLighting_name">"തെരുവിളക്ക് "</string>
@@ -890,7 +889,6 @@
     <string name="plugins_menu_group">പ്ളഗ്-ഇനുകള്‍</string>
     <string name="night">"രാത്രി "</string>
     <string name="storage_free_space">ഫ്രീ സ്പേസ്</string>
-    <string name="clear_tile_data">"എല്ലാ ടൈലുകളും കളയുക "</string>
     <string name="anonymous_user_hint">പേരുവയ്‌ക്കാത്ത ഉപയോക്താവിനു:
 -ഗ്രൂപ്പുണ്ടാക്കാനവില്ല; 
 -ഗ്രൂപ്പുകളും ഉപകരണങ്ങളും സേര്‍വറുമായ് പൊരുത്തപെടുത്താനവില്ല;
@@ -1253,8 +1251,6 @@
     <string name="search_online_address">ഓണ്‍ലൈനില്‍ തെരയുക</string>
     <string name="list_index_files_was_not_loaded">ഓഎസ്എംആന്ഡ്.നെറ്റ്(osmand.net) നിന്നും പ്രദേശങ്ങളുടെ(റീജിയന്‍) പട്ടിക പുതുക്കാനായില്ല.</string>
     <string name="auth_failed">"പ്രവേശനാനുമതി കിട്ടിയില്ല "</string>
-    <string name="use_online_routing_descr">"ഇന്റര്‍നെറ്റ് ഉപയോഗിച്ച്  റൂട്ട്  കണ്ട്പിടിക്കുക "</string>
-    <string name="use_online_routing">ഓണ്‍ലൈന്‍ വഴികാട്ടി ഉപയോഗിക്കൂ</string>
     <string name="show_view_angle">കാണുന്ന ദിശ കാണിക്കുക</string>
     <string name="show_location">നിങ്ങളുടെ സ്ഥാനം കാണിക്കുക</string>
     <string name="searchpoi_activity">" പിഓഐ തെരഞ്ഞെടുക്കുക"</string>

@@ -486,8 +486,6 @@ La memoria utilizzata è  {1} MB.
     <string name="finished_task">Completato</string>
 
 
-    <string name="use_online_routing_descr">Utilizza internet per calcolare il percorso</string>
-    <string name="use_online_routing">Utilizza il generatore di percorsi online</string>
     <string name="osm_settings_descr">Specifica le impostazioni Openstreetmap.org (OSM) necessarie per contribuire a OSM</string>
     <string name="data_settings_descr">Specifica la lingua, scarica/ricarica i dati</string>
     <string name="data_settings">Dati</string>
@@ -616,9 +614,6 @@ La memoria utilizzata è  {1} MB.
     <string name="unknown_from_location">La posizione di partenza non è ancora stata determinata</string>
     <string name="confirm_interrupt_download">Vuoi annullare il download del file?</string>
     <string name="basemap_was_selected_to_download">La mappa di base è richiesta per il funzionamento corretto dell\'applicazione ed è stata selezionata per il download.</string>
-
-    <string name="map_online_plugin_is_not_installed">Abilita il plugin Mappe Online per scegliere altre sorgenti di mappe</string>
-    <string name="shared_string_online_maps">Mappe online</string>
 
 
     <string name="osmand_background_plugin_description">Visualizza le impostazioni per abilitare il tracking e navigazione in background (a schermo spento) tramite il risveglio periodico del GPS.</string>
@@ -1383,12 +1378,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="watch">Guarda</string>
     <string name="notes">Note</string>
 
-    <string name="plugin_touringview_descr">"Attivando questa visualizzazione lo stile della mappa cambierà in \'Vista turistica\', questa è una visualizzazione speciale particolarmente dettagliata per i turisti e autisti professionali.
-\n\nQuesta visualizzazione fornisce, per ogni livello di zoom, il massimo dei dettagli di viaggio disponibili nei dati della mappa (particolari delle strade, sentieri e segni di orientamento).
-\n\nRappresenta anche chiaramente tutte le strade ambigue tramite la colorazione distintiva, ciò risulta utile per esempio guidando autoveicoli di grandi dimensioni.
-\n\nInoltre fornisce opzioni speciali dedicate ai viaggi quali la visualizzazione degli itinerari per bicicletta o quelli per l\'alpinismo.\n\nNon è necessaria una mappa speciale, la visualizzazione è creata dalle mappe standard.
-\n\nQuesta visualizzazione può essere ripristinata sia disattivandola nuovamente da qui che cambiando lo \'Stile della mappa\' in \' Configura mappa\' come desiderato. "</string>
-
     <string name="plugin_touringview_name">Visualizzazione mappa turistica</string>
     <string name="location_on_map">Localizzazione:\n Lat %1$s\n Lon %2$s</string>
     <string name="back_to_map">Torna alla mappa</string>
@@ -2023,7 +2012,6 @@ Se ami OsmAnd e OSM e vuoi sostenerli, questo è un modo perfetto per farlo.</st
     <string name="no_update_info_desc">Non controllare aggiornamenti alle nuove versioni e sconti per OsmAnd.</string>
     <string name="no_update_info">Non mostrare gli aggiornamenti</string>
     <string name="update_all_maps_now">Vuoi aggiornare tutte le mappe ora?</string>
-    <string name="clear_tile_data">Cancella tutte le mattonelle</string>
     <string name="driving_region_australia">Australia</string>
     <string name="lang_kab">Cabila</string>
     <string name="translit_names">Traslittera i nomi</string>

@@ -3,7 +3,6 @@
   <string name="modify_transparency">पारदर्शकता बदला (० - पारदर्शक, २५५ - अपारदर्शक)</string>
   <string name="confirm_interrupt_download">फाइल डाउनलोड थांबवायचे का?</string>
     <string name="local_indexes_cat_map">साधारण नकाशे (वेक्टर)</string>
-    <string name="shared_string_online_maps">ऑनलाइन नकाशे</string>
 
     <string name="plugins_screen">प्लगिन्स</string>
   <string name="prefs_plugins">प्लगिन्स</string>
@@ -256,10 +255,8 @@
   <string name="shared_string_close">बंद करा</string>
   <string name="loading_data">डेटा लोड करत आहे…</string>
   <string name="finished_task">समाप्त</string>
-  
-  <string name="use_online_routing_descr">मार्ग गणना करण्य़ासाठी इंटरनेटचा वापर करा</string>
-  <string name="use_online_routing">ऑनलाइन दिशादर्शन वापरा</string>
-  <string name="data_settings">डेटा</string>
+
+    <string name="data_settings">डेटा</string>
   <string name="additional_settings">आधिक सेटिंग्स</string>
   <string name="shared_string_settings">सेटिंग्स</string>
   <string name="update_tile">नकाशा अपडेट करा</string>

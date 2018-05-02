@@ -284,8 +284,6 @@
     <string name="select_index_file_to_download">Нищо не е намерено. Ако не намирате Вашия регион, можете да си направите сами карти (виж http://osmand.net).</string>
     <string name="local_indexes_cat_map">Стандартни карти (векторни)</string>
     <string name="index_settings_descr">Сваляне и управление на свалените данни във Вашето устройство</string>
-    <string name="map_online_plugin_is_not_installed">Включете добавката за онлайн карти и ще можете да избирате различни източници на карти</string>
-    <string name="shared_string_online_maps">Онлайн карти</string>
 
 
     <string name="osmand_accessibility_description">Настройки на специалните функции за достъпност. Настройване скоростта на гласовите напътствия и допълнителни настройки за хора със специални потребности.</string>
@@ -865,8 +863,6 @@
     <string name="finished_task">Приключено</string>
 
 
-    <string name="use_online_routing_descr">Използване на Интернет за изчисляване на дистанцията</string>
-    <string name="use_online_routing">Използване на онлайн навигация</string>
     <string name="osm_settings_descr">Настройки за изпращане на данни в Openstreetmap.org (OSM)</string>
     <string name="data_settings_descr">Задаване на език, сваляне/повторно зареждане на данни</string>
     <string name="data_settings">Данни</string>
@@ -1219,12 +1215,6 @@
     <string name="save_global_track_interval">Интервал за запис</string>
     <string name="search_for">Търси</string>
     <string name="shared_string_show_all">Покажи всички</string>
-	<string name="plugin_touringview_descr">"Този изглед превключва OsmAnd към \'Touring view\'. Той е предназначен специално за пътуващи и професионални шофьори.
-\n\nИзгледът предоставя при всякакво увеличение максимално количество подробности по картата (пътища, пътеки, ориентири).
-\n\nВсички видове пътища са изобразени с отделен цвят, което е особено полезно при управление на големи превозни средства.
-\n\nAnd it provides special touring options like showing bicycle routes or Alpine mountain routes.
-\n\nНе се изисква специална карта, изгледът се създава от стандартните карти на приложението.
-\n\nThis view can be reverted by either de-activating it again here, or by changing the \'Map style\' under \"Настройка на картата\" as desired. "</string>
     <string name="show_railway_warnings">Покажи ЖП прелези</string>
     <string name="show_pedestrian_warnings">Покажи пешеходни пътеки</string>
     <string name="rendering_attr_streetLighting_name">Улично осветление</string>
@@ -1888,7 +1878,6 @@
     <string name="no_update_info_desc">Да не се проверява за нови версии, промоции свързани с OsmAnd</string>
     <string name="no_update_info">Да не се показват актуализации</string>
     <string name="update_all_maps_now">Искате ли да обновите всички карти сега?</string>
-    <string name="clear_tile_data">Изчистване на всички плочки</string>
     <string name="routing_attr_short_way_name">Икономичен маршрут</string>
     <string name="routing_attr_short_way_description">Използване на икономичен маршрут (по-къс)</string>
     <string name="replace_favorite_confirmation">Наистина ли искате да заместите %1$s?</string>

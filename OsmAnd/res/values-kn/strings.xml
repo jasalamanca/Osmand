@@ -100,8 +100,7 @@
 	<string name="shared_string_my_favorites">ನನ್ನ ಇಷ್ಟವಾದವುಗಳು</string>
 	<string name="shared_string_my_tracks">ನನ್ನ ಟ್ರ್ಯಾಕ್ ಗಳು</string>
 	<string name="shared_string_currently_recording_track">ಈಗ ದಾಖಲಿಸಿಕೊಳ್ಳುತ್ತಿರುವ ಟ್ರ್ಯಾಕ್</string>
-    <string name="shared_string_online_maps">ಮಿಂಬಲೆ ನಕ್ಷೆಗಳು</string>
-	<string name="record_plugin_name">ಪ್ರಯಾಣ ದಾಖಲಿಸಿಕೊಳ್ಳುವುದು</string>
+    <string name="record_plugin_name">ಪ್ರಯಾಣ ದಾಖಲಿಸಿಕೊಳ್ಳುವುದು</string>
     <string name="shared_string_accessibility">ಲಭ್ಯಾರ್ಹತೆ</string>
 	<string name="osm_settings">ಒಎಸ್ಎಂ ಸಂಪಾದನೆ</string>
 	<string name="debugging_and_development">ಒಸ್ಮಾಂಡ್ ತಂತ್ರಾಶ ಅಭಿವೃದ್ಧಿ</string>

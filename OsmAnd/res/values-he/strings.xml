@@ -160,8 +160,6 @@
     <string name="local_indexes_cat_map">מפות בלתי מקוונות (וקטור)</string>
 	
 	<string name="index_settings_descr">הורדה וניהול של מפות בלתי מקוונות שמאוחסנות בהתקן שלך.</string>
-	<string name="map_online_plugin_is_not_installed">ניתן להפעיל את תוסף המפות המקוונות כדי לבחור במקורות שונים למפה</string>
-    <string name="shared_string_online_maps">מפות מקוונות</string>
 
 
     <string name="osmand_background_plugin_description">הצגת הגדרות להפעלת מעקב וניווט במצב רקע (מסך כבוי) על ידי השכמת רכיב האיכון מדי פעם בפעם.</string>
@@ -768,13 +766,9 @@
 	<string name="previous_run_crashed">ההפעלה האחרונה של OsmAnd קרסה. קובץ היומן נמצא תחת {0}. נא לדווח על התקלה ולצרף את קובץ היומן.</string>
 	<string name="saving_gpx_tracks">דרכי ה־GPX נשמרות על ה־SD…</string>
 	<string name="finished_task">בוצע</string>
-	
-	
-	
-	
-	<string name="use_online_routing_descr">שימוש באינטרנט כדי לחשב מסלול.</string>
-	<string name="use_online_routing">שימוש בניווט מקוון</string>
-	<string name="osm_settings_descr">נא לציין הגדרות Openstreetmap.org‏ (OSM) הנדרשות לשליחות אל OSM.</string>
+
+
+    <string name="osm_settings_descr">נא לציין הגדרות Openstreetmap.org‏ (OSM) הנדרשות לשליחות אל OSM.</string>
 	<string name="data_settings_descr">הגדרת שפה, הורדה/רענון של הנתונים.</string>
 	<string name="data_settings">נתונים</string>
 	
@@ -1967,7 +1961,6 @@
     <string name="no_update_info_desc">לא לחפש עדכוני גרסה או הנחות שקשורות ב־OsmAnd.</string>
     <string name="no_update_info">לא להציג עדכונים</string>
     <string name="update_all_maps_now">לעדכן את כל המפות כעת?</string>
-    <string name="clear_tile_data">מחיקת כל האריחים</string>
     <string name="routing_attr_short_way_name">דרך חסכונית בדלק</string>
     <string name="routing_attr_short_way_description">שימוש בדרך חסכונית בדלק (בד״כ קצרה יותר).</string>
     <string name="replace_favorite_confirmation">להחליף את המועדף %1$s?</string>

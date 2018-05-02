@@ -516,8 +516,6 @@
     <string name="finished_task">Terminé</string>
 
 
-    <string name="use_online_routing_descr">Utiliser Internet pour calculer l\'itinéraire</string>
-    <string name="use_online_routing">Utiliser la navigation en ligne</string>
     <string name="osm_settings_descr">Indiquez les paramètres de connexion à OpenStreetMap.org (OSM) pour vos contributions.</string>
     <string name="data_settings_descr">Indiquez la langue, télécharger / mettre à jour les données.</string>
     <string name="data_settings">Données</string>
@@ -652,9 +650,6 @@
     <string name="unknown_from_location">Point de départ inconnu</string>
     <string name="confirm_interrupt_download">Souhaitez-vous annuler le téléchargement ?</string>
     <string name="basemap_was_selected_to_download">Carte mondiale de base requise pour le bon fonctionnement, sélectionnée pour téléchargement.</string>
-
-    <string name="map_online_plugin_is_not_installed">Activez le greffon \"Cartes en ligne\" pour sélectionner différentes sources de cartes</string>
-    <string name="shared_string_online_maps">Cartes en ligne</string>
 
 
     <string name="osmand_background_plugin_description">Affiche les préférences afin d\'activer le suivi et la navigation en tâche de fond (écran éteint) en réveillant périodiquement le GPS.</string>
@@ -1446,17 +1441,6 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
 
 
     <string name="shared_string_export">Exporter</string>
-    <string name="plugin_touringview_descr">Activer cette vue bascule vers le style d\'affichage \"Grand tourisme\", affichant une carte très détaillée adaptée aux voyageurs et chauffeurs routiers.
-\n
-\nCet affichage, quel que soit le niveau de zoom, fournit le maximum de détails disponibles. 
-\n
-\nChaque type de voie (routes, pistes, chemins …) est distingué de manière explicite grâce à des codes couleurs, ce qui est particulièrement utile en cas de conduite de grands véhicules. 
-\n
-\nIl existe aussi des options pour l\'affichage des itinéraires cyclables ou des chemins de randonnée.
-\n
-\nIl n\'est pas nécessaire de télécharger une carte supplémentaire, cet affichage s\'appuyant sur les cartes standards.
-\n
-\nCet affichage peut être annulé soit en le désactivant ici, soit en modifiant le Style de la carte dans \"Configurer la carte\".</string>
     <string name="plugin_touringview_name">Grand tourisme</string>
     <string name="location_on_map">Position :\n Lat. %1$s\n Lon. %2$s</string>
     <string name="days_behind">jours passés</string>
@@ -1995,7 +1979,6 @@ Si vous appréciez OsmAnd et OSM et que vous souhaitez soutenir ces projets, c\'
     <string name="advanced_coords_search">Recherche avancée de coordonnées</string>
     <string name="dist_away_from_my_location">Recherche %1$s autour</string>
     <string name="update_all_maps_now">Souhaitez-vous mettre à jour toutes les cartes maintenant ?</string>
-    <string name="clear_tile_data">Supprimer toutes les tuiles</string>
     <string name="replace_favorite_confirmation">Êtes-vous sûr de vouloir remplacer le favori %1$s ?</string>
     <string name="shared_string_change">Modifier</string>
     <string name="get_started">Démarrer</string>

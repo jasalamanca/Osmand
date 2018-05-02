@@ -117,8 +117,6 @@ Cyfrannol cof %4$s MB (terfyn Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="local_indexes_cat_map">Fapiau all-lein (fector)</string>
 
 <string name="index_settings_descr">Lawrlwythwch, gweld y manylion, a rheoli mapiau all-lein</string>
-<string name="map_online_plugin_is_not_installed">Galluogi mapiau plugin ar-lein i ddewis ffynonellau map gwahanol</string>
-    <string name="shared_string_online_maps">Mapiau Ar-lein</string>
 
 
     <string name="osmand_accessibility_description">Dangos gosodiadau ar gyfer nodweddion hygyrchedd arbennig.</string>
