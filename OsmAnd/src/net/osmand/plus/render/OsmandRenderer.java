@@ -32,7 +32,6 @@ import net.osmand.binary.BinaryMapDataObject;
 import net.osmand.binary.BinaryMapIndexReader.TagValuePair;
 import net.osmand.data.QuadRect;
 import net.osmand.data.QuadTree;
-import net.osmand.map.MapTileDownloader;
 import net.osmand.plus.render.TextRenderer.TextDrawInfo;
 import net.osmand.render.RenderingRuleProperty;
 import net.osmand.render.RenderingRuleSearchRequest;
@@ -48,9 +47,6 @@ import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
-import gnu.trove.list.array.TIntArrayList;
-import gnu.trove.map.hash.TIntObjectHashMap;
 
 public class OsmandRenderer {
 	private static final Log log = PlatformUtil.getLog(OsmandRenderer.class);
@@ -99,9 +95,6 @@ public class OsmandRenderer {
 		float iconSize;
 	}
 	
-	
-	
-
 	/* package */
 	public static class RenderingContext extends net.osmand.RenderingContext {
 		List<TextDrawInfo> textToDraw = new ArrayList<TextDrawInfo>();
@@ -172,20 +165,19 @@ public class OsmandRenderer {
 		return shaders.get(resId);
 	}
 	
-	private void put(TIntObjectHashMap<TIntArrayList> map, int k, int v){
-		if(!map.containsKey(k)){
-			map.put(k, new TIntArrayList());
-		}
-		map.get(k).add(v);
-	}
-
+//	private void put(TIntObjectHashMap<TIntArrayList> map, int k, int v){
+//		if(!map.containsKey(k)){
+//			map.put(k, new TIntArrayList());
+//		}
+//		map.get(k).add(v);
+//	}
 
 	/**
 	 * @return if map could be replaced
 	 */
 	public void generateNewBitmapNative(RenderingContext rc, NativeOsmandLibrary library, 
 			NativeSearchResult searchResultHandler, 
-			Bitmap bmp, RenderingRuleSearchRequest render, final MapTileDownloader mapTileDownloader) {
+			Bitmap bmp, RenderingRuleSearchRequest render) {
 		long now = System.currentTimeMillis();
 		if (rc.width > 0 && rc.height > 0 && searchResultHandler != null) {
 			rc.cosRotateTileSize = (float) (Math.cos(Math.toRadians(rc.rotate)) * TILE_SIZE);
@@ -193,7 +185,6 @@ public class OsmandRenderer {
 			try {
 				if(Looper.getMainLooper() != null && library.useDirectRendering()) {
 					final Handler h = new Handler(Looper.getMainLooper());
-					notifyListenersWithDelay(rc, mapTileDownloader, h);
 				}
 				
 				// Native library will decide on it's own best way of rendering
@@ -202,7 +193,6 @@ public class OsmandRenderer {
 				final NativeLibrary.RenderingGenerationResult res = library.generateRendering(
 					rc, searchResultHandler, bmp, bmp.hasAlpha(), render);
 				rc.ended = true;
-				notifyListeners(mapTileDownloader);
 				long time = System.currentTimeMillis() - now;
 				rc.renderingDebugInfo = String.format("Rendering: %s ms  (%s text)\n"
 						+ "(%s points, %s points inside, %s of %s objects visible)\n",//$NON-NLS-1$
@@ -220,8 +210,6 @@ public class OsmandRenderer {
 	
 	void drawObject(RenderingContext rc,  Canvas cv, RenderingRuleSearchRequest req,
 			List<MapDataObjectPrimitive> array, int objOrder) {
-			//double polygonLimit = 100;
-			//float orderToSwitch = 0;
 			double minPolygonSize = 1. / rc.polygonMinSizeToDisplay;
 			for (int i = 0; i < array.size(); i++) {
 				rc.allObjects++;
@@ -246,7 +234,7 @@ public class OsmandRenderer {
 		}
 	
 	public void generateNewBitmap(RenderingContext rc, List<BinaryMapDataObject> objects, Bitmap bmp, 
-				RenderingRuleSearchRequest render, final MapTileDownloader mapTileDownloader) {
+				RenderingRuleSearchRequest render) {
 		long now = System.currentTimeMillis();
 		// fill area
 		Canvas cv = new Canvas(bmp);
@@ -277,12 +265,8 @@ public class OsmandRenderer {
 			drawObject(rc, cv, render, pointsArray, 3);
 			rc.lastRenderedKey = DEFAULT_POINTS_MAX;
 
-
 			long beforeIconTextTime = System.currentTimeMillis() - now;
-			notifyListeners(mapTileDownloader);
 			drawIconsOverCanvas(rc, cv);
-
-			notifyListeners(mapTileDownloader);
 			textRenderer.drawTextOverCanvas(rc, cv, rc.preferredLocale);
 
 			long time = System.currentTimeMillis() - now;
@@ -290,22 +274,9 @@ public class OsmandRenderer {
 					+ "(%s points, %s points inside, %s of %s objects visible)",//$NON-NLS-1$
 					time, time - beforeIconTextTime, rc.pointCount, rc.pointInsideCount, rc.visible, rc.allObjects);
 			log.info(rc.renderingDebugInfo);
-
 		}
 	}
 
-	private void notifyListenersWithDelay(final RenderingContext rc, final MapTileDownloader mapTileDownloader, final Handler h) {
-		h.postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				if(!rc.ended) {
-					notifyListeners(mapTileDownloader);
-					notifyListenersWithDelay(rc, mapTileDownloader, h);
-				}
-			}
-		}, 800);
-	}
-	
 	public float getDensity(){
 		return dm.density;
 	}
@@ -412,7 +383,7 @@ public class OsmandRenderer {
 		return rf;
 	}
 	
-	Comparator<MapDataObjectPrimitive> sortByOrder() {
+	private Comparator<MapDataObjectPrimitive> sortByOrder() {
 		return new Comparator<MapDataObjectPrimitive>() {
 
 			@Override
@@ -432,17 +403,17 @@ public class OsmandRenderer {
 		};
 	}
 	
-	Comparator<MapDataObjectPrimitive> sortPolygonsOrder() {
-		return new Comparator<MapDataObjectPrimitive>() {
-
-			@Override
-			public int compare(MapDataObjectPrimitive i, MapDataObjectPrimitive j) {
-				if (i.order == j.order)
-					return i.typeInd < j.typeInd ? -1 : 1;
-				return (i.order > j.order) ? -1 : 1;
-			}
-		};
-	}
+//	Comparator<MapDataObjectPrimitive> sortPolygonsOrder() {
+//		return new Comparator<MapDataObjectPrimitive>() {
+//
+//			@Override
+//			public int compare(MapDataObjectPrimitive i, MapDataObjectPrimitive j) {
+//				if (i.order == j.order)
+//					return i.typeInd < j.typeInd ? -1 : 1;
+//				return (i.order > j.order) ? -1 : 1;
+//			}
+//		};
+//	}
 
 	private void sortObjectsByProperOrder(RenderingContext rc, List<BinaryMapDataObject> objects,
 			RenderingRuleSearchRequest render, 
@@ -521,7 +492,7 @@ public class OsmandRenderer {
 		filterLinesByDensity(rc, linesResArray, linesArray);
 	}
 	
-	void filterLinesByDensity(RenderingContext rc, List<MapDataObjectPrimitive>  linesResArray,
+	private void filterLinesByDensity(RenderingContext rc, List<MapDataObjectPrimitive>  linesResArray,
 			List<MapDataObjectPrimitive> linesArray) {
 		// TODO
 		linesResArray.addAll(linesArray);
@@ -539,12 +510,6 @@ public class OsmandRenderer {
 			j = i;
 		}
 		return Math.abs(area) * mult * mult * .5;
-	}
-
-	private void notifyListeners(MapTileDownloader mapTileDownloader) {
-		if (mapTileDownloader != null) {
-			mapTileDownloader.fireLoadCallback();
-		}
 	}
 
 	private PointF calcPoint(int xt, int yt, RenderingContext rc){
@@ -567,11 +532,7 @@ public class OsmandRenderer {
 		return calcPoint(o.getPoint31XTile(ind), o.getPoint31YTile(ind), rc);
 	}
 
-//	public void clearCachedResources(){
-//		shaders.clear();
-//	}
-	
-	private void drawPolygon(BinaryMapDataObject obj, RenderingRuleSearchRequest render, Canvas canvas, RenderingContext rc, TagValuePair pair, 
+	private void drawPolygon(BinaryMapDataObject obj, RenderingRuleSearchRequest render, Canvas canvas, RenderingContext rc, TagValuePair pair,
 			double area) {
 		if(render == null || pair == null){
 			return;
@@ -581,7 +542,6 @@ public class OsmandRenderer {
 		int zoom = rc.zoom;
 		Path path = null;
 		
-		// rc.main.color = Color.rgb(245, 245, 245);
 		render.setInitialTagValueZoom(pair.tag, pair.value, zoom, obj);
 		boolean rendered = render.search(RenderingRulesStorage.POLYGON_RULES);
 		if(!rendered || !updatePaint(render, paint, 0, true, rc)){
@@ -754,7 +714,6 @@ public class OsmandRenderer {
 		return true;
 		
 	}
-	
 
 	private void drawPoint(BinaryMapDataObject obj, RenderingRuleSearchRequest render, Canvas canvas, RenderingContext rc, TagValuePair pair, boolean renderText) {
 		if(render == null || pair == null){
@@ -805,9 +764,6 @@ public class OsmandRenderer {
 	private void drawPolylineShadow(Canvas canvas, RenderingContext rc, Path path, int shadowColor, int shadowRadius) {
 		// blurred shadows
 		if (rc.shadowRenderingMode == 2 && shadowRadius > 0) {
-			// simply draw shadow? difference from option 3 ?
-			// paint.setColor(shadowRadius);
-			// paint.setColor(0xffffffff);
 			paint.setShadowLayer(shadowRadius, 0, 0, shadowColor);
 			canvas.drawPath(path, paint);
 		}
@@ -818,13 +774,10 @@ public class OsmandRenderer {
 			paint.setStrokeWidth(paint.getStrokeWidth() + shadowRadius * 2);
 			ColorFilter cf = new PorterDuffColorFilter(shadowColor, Mode.SRC_IN);
 			paint.setColorFilter(cf);
-//			 paint.setColor(0xffbababa);
-//			paint.setColor(shadowColor);
 			canvas.drawPath(path, paint);
 		}
 	}
 
-	
 	private void drawPolyline(BinaryMapDataObject obj, RenderingRuleSearchRequest render, Canvas canvas, RenderingContext rc, TagValuePair pair, int layer,
 			boolean drawOnlyShadow) {
 		if(render == null || pair == null){
@@ -948,7 +901,6 @@ public class OsmandRenderer {
 		}
 	}
 
-		
 	private static Paint oneWayPaint(){
 		Paint oneWay = new Paint();
 		oneWay.setStyle(Style.STROKE);

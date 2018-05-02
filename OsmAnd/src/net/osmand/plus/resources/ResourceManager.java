@@ -69,7 +69,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ResourceManager {
 
-	public static final String VECTOR_MAP = "#vector_map"; //$NON-NLS-1$
+//	public static final String VECTOR_MAP = "#vector_map"; //$NON-NLS-1$
 	private static final String INDEXES_CACHE = "ind.cache";
 
 	private static final Log log = PlatformUtil.getLog(ResourceManager.class);
@@ -178,8 +178,6 @@ public class ResourceManager {
 	
 	protected final MapRenderRepositories renderer;
 
-//	protected final MapTileDownloader tileDownloader;
-	
 	public final AsyncLoadingThread asyncLoadingThread = new AsyncLoadingThread(this);
 	
 	private HandlerThread renderingBufferImageThread;
@@ -195,7 +193,6 @@ public class ResourceManager {
 		renderingBufferImageThread = new HandlerThread("RenderingBaseImage");
 		renderingBufferImageThread.start();
 
-//		tileDownloader = MapTileDownloader.getInstance();
 		dateFormat = DateFormat.getDateFormat(context);
 		resetStoreDirectory();
 
@@ -204,10 +201,6 @@ public class ResourceManager {
 		mgr.getDefaultDisplay().getMetrics(dm);
 	}
 
-//	public MapTileDownloader getMapTileDownloader() {
-//		return tileDownloader;
-//	}
-	
 	public HandlerThread getRenderingBufferImageThread() {
 		return renderingBufferImageThread;
 	}
@@ -685,7 +678,7 @@ public class ResourceManager {
 			}
 		}
 		
-		// Not using boundares results in very slow initial search if user has many maps installed
+		// Not using boundaries results in very slow initial search if user has many maps installed
 		for (AmenityIndexRepositoryBinary index : list) {
 			if (matcher != null && matcher.isCancelled()) {
 				break;

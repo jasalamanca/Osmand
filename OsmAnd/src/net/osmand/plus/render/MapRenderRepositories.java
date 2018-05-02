@@ -24,7 +24,6 @@ import net.osmand.binary.RouteDataObject;
 import net.osmand.data.QuadPointDouble;
 import net.osmand.data.QuadRect;
 import net.osmand.data.RotatedTileBox;
-import net.osmand.map.MapTileDownloader;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.OsmandSettings;
@@ -606,7 +605,7 @@ public class MapRenderRepositories {
 		return checkedRenderedState;
 	}
 
-	public synchronized void loadMap(RotatedTileBox tileRect, MapTileDownloader mapTileDownloader) {
+	public synchronized void loadMap(RotatedTileBox tileRect) {//, MapTileDownloader mapTileDownloader) {
 		boolean prevInterrupted = interrupted;
 		interrupted = false;
 		// added to avoid zoomAnimation != 0 which produces wrong map position on the screen
@@ -780,9 +779,9 @@ public class MapRenderRepositories {
 			this.bmp = bmp;
 			this.bmpLocation = tileRect;
 			if(nativeLib != null) {
-				renderer.generateNewBitmapNative(currentRenderingContext, nativeLib, cNativeObjects, bmp, renderingReq, mapTileDownloader);
+				renderer.generateNewBitmapNative(currentRenderingContext, nativeLib, cNativeObjects, bmp, renderingReq);
 			} else {
-				renderer.generateNewBitmap(currentRenderingContext, cObjects, bmp, renderingReq, mapTileDownloader);
+				renderer.generateNewBitmap(currentRenderingContext, cObjects, bmp, renderingReq);
 			}
 			// Force to use rendering request in order to prevent Garbage Collector when it is used in C++
 			if(renderingReq != null){

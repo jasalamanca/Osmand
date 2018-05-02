@@ -143,8 +143,6 @@ import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-//import net.osmand.plus.resources.ResourceManager;
-
 public class MapActivity extends OsmandActionBarActivity implements DownloadEvents,
 		OnRequestPermissionsResultCallback, IRouteInformationListener,
 		MapMarkerChangedListener, OnDismissDialogFragmentListener, OnDrawMapListener {
@@ -194,7 +192,6 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 
 	private DashboardOnMap dashboardOnMap = new DashboardOnMap(this);
 	private AppInitializeListener initListener;
-//	private IMapDownloaderCallback downloaderCallback;
 	private DrawerLayout drawerLayout;
 	private boolean drawerDisabled;
 
@@ -266,14 +263,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		mapView.setAccessibilityActions(new MapAccessibilityActions(this));
 		mapViewTrackingUtilities.setMapView(mapView);
 
-		// to not let it gc
-//		downloaderCallback = new IMapDownloaderCallback() {
-//			@Override
-//			public void tileDownloaded() {
-//					mapView.tileDownloaded();
-//			}
-//		};
-		MapTileDownloader.getInstance().addDownloaderCallback(mapView);//downloaderCallback);
+		MapTileDownloader.getInstance().addDownloaderCallback(mapView);
 		createProgressBarForRouting();
 		mapLayers.createLayers(mapView);
 		updateStatusBarColor();
