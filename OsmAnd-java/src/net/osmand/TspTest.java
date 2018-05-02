@@ -1,11 +1,11 @@
 package net.osmand;
 
+import net.osmand.data.LatLon;
+import net.osmand.util.MapUtils;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-
-import net.osmand.data.LatLon;
-import net.osmand.util.MapUtils;
 
 public class TspTest {
 	public static void main(String[] args) {
@@ -35,7 +35,6 @@ public class TspTest {
 			}
 		}
 		System.out.println("] ");
-//		ans = new TspHeldKarp().readInput(sh, true).solve();
 		LatLon end = farest;
 		TspAnt t = new TspAnt().readGraph(sh, start, end);
 		int [] ans = t.solve();

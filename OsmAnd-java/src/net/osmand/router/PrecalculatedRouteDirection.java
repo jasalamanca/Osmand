@@ -1,16 +1,16 @@
 package net.osmand.router;
 
-import gnu.trove.list.array.TIntArrayList;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import net.osmand.binary.RouteDataObject;
 import net.osmand.data.LatLon;
 import net.osmand.data.QuadPoint;
 import net.osmand.data.QuadRect;
 import net.osmand.data.QuadTree;
 import net.osmand.util.MapUtils;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import gnu.trove.list.array.TIntArrayList;
 
 public class PrecalculatedRouteDirection {
 	
@@ -28,7 +28,6 @@ public class PrecalculatedRouteDirection {
 	
 	private long startPoint = 0;
 	private long endPoint = 0;
-//	private DataTileManager<Integer> indexedPoints = new DataTileManager<Integer>(17);
 	QuadTree<Integer> quadTree = new QuadTree<Integer>(new QuadRect(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE),
 			8, 0.55f);
 	private float startFinishTime;
