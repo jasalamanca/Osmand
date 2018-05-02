@@ -2,7 +2,6 @@ package net.osmand.plus.routing;
 
 
 import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
 
 import net.osmand.Location;
@@ -168,12 +167,9 @@ public class RouteProvider {
 			return passWholeRoute;
 		}
 
-		public GPXRouteParams build(Location start, OsmandSettings settings) {
+		public GPXRouteParams build() {
 			GPXRouteParams res = new GPXRouteParams();
 			res.prepareGPXFile(this);
-//			if (passWholeRoute && start != null) {
-//				res.points.add(0, start);
-//			}
 			return res;
 		}
 
@@ -205,29 +201,6 @@ public class RouteProvider {
 
 		public List<Location> getPoints() {
 			return points;
-		}
-
-		public Location getStartPointForRoute(){
-			if(!points.isEmpty()){
-				return points.get(0);
-			}
-			return null;
-		}
-
-		public Location getEndPointForRoute(){
-			if(!points.isEmpty()){
-				return points.get(points.size());
-			}
-			return null;
-		}
-
-		public LatLon getLastPoint() {
-			if(!points.isEmpty()){
-				Location l = points.get(points.size() - 1);
-				LatLon point = new LatLon(l.getLatitude(), l.getLongitude());
-				return point;
-			}
-			return null;
 		}
 
 		public GPXRouteParams prepareGPXFile(GPXRouteParamsBuilder builder) {
@@ -311,8 +284,6 @@ public class RouteProvider {
 					res = findBROUTERRoute(params);
 				} else if (params.type == RouteService.YOURS) {
 					res = findYOURSRoute(params);
-//				} else if (params.type == RouteService.ORS) {
-//					res = findORSRoute(params);
 				} else if (params.type == RouteService.OSRM) {
 					res = findOSRMRoute(params);
 				} else if (params.type == RouteService.STRAIGHT){
@@ -657,10 +628,9 @@ public class RouteProvider {
 			}
 			precalculated = PrecalculatedRouteDirection.build(latLon, generalRouter.getMaxDefaultSpeed());
 			precalculated.setFollowNext(true);
-			//cf.planRoadDirection = 1;
 		}
 		// BUILD context
-		NativeOsmandLibrary lib = settings.SAFE_MODE.get() ? null : NativeOsmandLibrary.getLoadedLibrary();
+		NativeOsmandLibrary lib = NativeOsmandLibrary.getLoadedLibrary();
 		// check loaded files
 		int leftX = MapUtils.get31TileNumberX(params.start.getLongitude());
 		int rightX = leftX;
@@ -819,11 +789,7 @@ public class RouteProvider {
 		} catch (InterruptedException e) {
 			return interrupted();
 		} catch (OutOfMemoryError e) {
-//			ActivityManager activityManager = (ActivityManager)app.getSystemService(Context.ACTIVITY_SERVICE);
-//			ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
-//			activityManager.getMemoryInfo(memoryInfo);
-//			int avl = (int) (memoryInfo.availMem / (1 << 20));
-			int max = (int) (Runtime.getRuntime().maxMemory() / (1 << 20)); 
+			int max = (int) (Runtime.getRuntime().maxMemory() / (1 << 20));
 			int avl = (int) (Runtime.getRuntime().freeMemory() / (1 << 20));
 			String s = " (" + avl + " MB available of " + max  + ") ";
 			return new RouteCalculationResult("Not enough process memory "+ s);
@@ -1110,13 +1076,7 @@ public class RouteProvider {
 		StringBuilder uri = new StringBuilder();
 		// possibly hide that API key because it is privacy of osmand
 		// A6421860EBB04234AB5EF2D049F2CD8F key is compromised
-		String scheme = "";
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
-			scheme = "https";
-		} else {
-			scheme = "http";
-		}
-		uri.append(scheme + "://router.project-osrm.org/route/v1/driving/"); //$NON-NLS-1$
+		uri.append("https://router.project-osrm.org/route/v1/driving/"); //$NON-NLS-1$
 		uri.append(String.valueOf(params.start.getLongitude()));
 		uri.append(",").append(String.valueOf(params.start.getLatitude()));
 		if(params.intermediates != null && params.intermediates.size() > 0) {
@@ -1125,9 +1085,6 @@ public class RouteProvider {
 			}
 		}
 		appendOSRMLoc(uri, params.end);
-// to get more waypoints, add overview=full option
-//		uri.append("?overview=full")
-
 		log.info("URL route " + uri);
 
 		URLConnection connection = NetworkUtils.getHttpURLConnection(uri.toString());

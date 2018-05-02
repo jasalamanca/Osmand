@@ -168,17 +168,6 @@ public class MapRenderRepositories {
 		}
 	}
 
-//	public boolean containsLatLonMapData(double lat, double lon, int zoom) {
-//		int x = MapUtils.get31TileNumberX(lon);
-//		int y = MapUtils.get31TileNumberY(lat);
-//		for (BinaryMapIndexReader reader : files.values()) {
-//			if (reader.containsMapData(x, y, zoom)) {
-//				return true;
-//			}
-//		}
-//		return false;
-//	}
-
 	public void clearAllResources() {
 		clearCache();
 		bmp = null;
@@ -591,10 +580,6 @@ public class MapRenderRepositories {
 		}
 	}
 
-//	public RotatedTileBox getCheckedBox() {
-//		return checkedBox;
-//	}
-	
 	public int getCheckedRenderedState() {
 		// to track necessity of map download (1 (if basemap) + 2 (if normal map)
 		return checkedRenderedState;
@@ -655,7 +640,7 @@ public class MapRenderRepositories {
 				}
 			}
 			renderingReq.saveState();
-			NativeOsmandLibrary nativeLib = !prefs.SAFE_MODE.get() ? NativeOsmandLibrary.getLibrary(storage, context) : null;
+			NativeOsmandLibrary nativeLib = NativeOsmandLibrary.getLibrary(storage, context);
 
 			// calculate data box
 			QuadRect dataBox = requestedBox.getLatLonBounds();
@@ -773,11 +758,7 @@ public class MapRenderRepositories {
 			}
 			this.bmp = bmp;
 			this.bmpLocation = tileRect;
-			if(nativeLib != null) {
-				renderer.generateNewBitmapNative(currentRenderingContext, nativeLib, cNativeObjects, bmp, renderingReq);
-			} else {
-				renderer.generateNewBitmap(currentRenderingContext, cObjects, bmp, renderingReq);
-			}
+			renderer.generateNewBitmapNative(currentRenderingContext, nativeLib, cNativeObjects, bmp, renderingReq);
 			// Force to use rendering request in order to prevent Garbage Collector when it is used in C++
 			if(renderingReq != null){
 				log.info("Debug :" + renderingReq != null);				

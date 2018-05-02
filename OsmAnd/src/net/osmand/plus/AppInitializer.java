@@ -70,28 +70,20 @@ import static net.osmand.plus.liveupdates.LiveUpdatesHelper.preferenceUpdateFreq
 import static net.osmand.plus.liveupdates.LiveUpdatesHelper.runLiveUpdate;
 import static net.osmand.plus.liveupdates.LiveUpdatesHelper.setAlarmForPendingIntent;
 
-/**
- */
 public class AppInitializer implements IProgress {
 	// 22 - 2.2
 	public static final int VERSION_2_2 = 22;
 	// 23 - 2.3
 	public static final int VERSION_2_3 = 23;
 
-
-	public static final boolean TIPS_AND_TRICKS = false;
 	public static final String FIRST_TIME_APP_RUN = "FIRST_TIME_APP_RUN"; //$NON-NLS-1$
 	public static final String VERSION_INSTALLED_NUMBER = "VERSION_INSTALLED_NUMBER"; //$NON-NLS-1$
 	public static final String NUMBER_OF_STARTS = "NUMBER_OF_STARTS"; //$NON-NLS-1$
 	public static final String FIRST_INSTALLED = "FIRST_INSTALLED"; //$NON-NLS-1$
-	private static final String VECTOR_INDEXES_CHECK = "VECTOR_INDEXES_CHECK"; //$NON-NLS-1$
 	private static final String VERSION_INSTALLED = "VERSION_INSTALLED"; //$NON-NLS-1$
 	private static final String EXCEPTION_FILE_SIZE = "EXCEPTION_FS"; //$NON-NLS-1$
 
 	public static final String LATEST_CHANGES_URL = "https://osmand.net/blog?id=osmand-2-8-released";
-//	public static final String LATEST_CHANGES_URL = null; // not enough to read
-	public static final int APP_EXIT_CODE = 4;
-	public static final String APP_EXIT_KEY = "APP_EXIT_KEY";
 	private OsmandApplication app;
 	private static final org.apache.commons.logging.Log LOG = PlatformUtil.getLog(AppInitializer.class);
 
@@ -116,17 +108,13 @@ public class AppInitializer implements IProgress {
 	}
 
 	public interface AppInitializeListener {
-
 		void onProgress(AppInitializer init, InitEvents event);
-
 		void onFinish(AppInitializer init);
 	}
-
 
 	public AppInitializer(OsmandApplication app) {
 		this.app = app;
 	}
-
 
 	public List<String> getWarnings() {
 		return warnings;
@@ -135,7 +123,6 @@ public class AppInitializer implements IProgress {
 	public boolean isAppInitializing() {
 		return appInitializing;
 	}
-
 
 	@SuppressLint("CommitPrefEdits")
 	public void initVariables() {
@@ -213,7 +200,6 @@ public class AppInitializer implements IProgress {
 	public boolean checkAppVersionChanged() {
 		initVariables();
 		boolean showRecentChangesDialog = !firstTime && appVersionChanged;
-//		showRecentChangesDialog = true;
 		if (showRecentChangesDialog && !activityChangesShowed) {
 			activityChangesShowed = true;
 			return true;
@@ -228,8 +214,6 @@ public class AppInitializer implements IProgress {
 		if (diff >= 2 * 24 * 60 * 60l  && new Random().nextInt(5) == 0 &&
 				app.getSettings().isInternetConnectionAvailable()) {
 			app.getDownloadThread().runReloadIndexFiles();
-		} else if (Version.isDeveloperVersion(app)) {
-//			app.getDownloadThread().runReloadIndexFiles();
 		}
 	}
 
@@ -252,42 +236,6 @@ public class AppInitializer implements IProgress {
 		return false;
 	}
 
-	// TODO
-	public void checkVectorIndexesDownloaded(final Activity ctx) {
-		OsmandApplication app = (OsmandApplication)ctx.getApplication();
-		MapRenderRepositories maps = app.getResourceManager().getRenderer();
-		SharedPreferences pref = ctx.getPreferences(Context.MODE_WORLD_WRITEABLE);
-		boolean check = pref.getBoolean(VECTOR_INDEXES_CHECK, true);
-		// do not show each time
-		if (check && new Random().nextInt() % 5 == 1) {
-			AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
-			if (maps.isEmpty()) {
-				builder.setMessage(R.string.vector_data_missing);
-			} else if (!maps.basemapExists()) {
-				builder.setMessage(R.string.basemap_missing);
-			} else {
-				return;
-			}
-			builder.setPositiveButton(R.string.shared_string_download, new DialogInterface.OnClickListener() {
-
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					ctx.startActivity(new Intent(ctx, DownloadActivity.class));
-				}
-
-			});
-			builder.setNeutralButton(R.string.shared_string_no_thanks, new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					ctx.getPreferences(Context.MODE_WORLD_WRITEABLE).edit().putBoolean(VECTOR_INDEXES_CHECK, false).commit();
-				}
-			});
-			builder.setNegativeButton(R.string.first_time_continue, null);
-			builder.show();
-		}
-
-	}
-
 	private void indexRegionsBoundaries(List<String> warnings) {
 		File file = app.getAppPath("regions.ocbf");
 		try {
@@ -306,7 +254,6 @@ public class AppInitializer implements IProgress {
 		}
 	}
 
-
 	private void initPoiTypes() {
 		if(app.getAppPath("poi_types.xml").exists()) {
 			app.poiTypes.init(app.getAppPath("poi_types.xml").getAbsolutePath());
@@ -314,8 +261,6 @@ public class AppInitializer implements IProgress {
 			app.poiTypes.init();
 		}
 		app.poiTypes.setPoiTranslator(new MapPoiTypes.PoiTranslator() {
-
-
 			@Override
 			public String getTranslation(AbstractPoiType type) {
 				if(type.getBaseLangType() != null) {
@@ -339,7 +284,6 @@ public class AppInitializer implements IProgress {
 			}
 		});
 	}
-
 
 	public void onCreateApplication() {
 		// always update application mode to default
@@ -423,7 +367,6 @@ public class AppInitializer implements IProgress {
 		app.regions.setLocale(app.getLanguage());
 	}
 
-
 	private <T> T startupInit(T object, Class<T> class1) {
 		long t = System.currentTimeMillis();
 		if(t - startTime > 7) {
@@ -432,7 +375,6 @@ public class AppInitializer implements IProgress {
 		startTime = t;
 		return object;
 	}
-
 
 	public net.osmand.router.RoutingConfiguration.Builder getLazyDefaultRoutingConfig() {
 		long tm = System.currentTimeMillis();
@@ -455,15 +397,11 @@ public class AppInitializer implements IProgress {
 		}
 	}
 
-
-
-
 	public synchronized void initVoiceDataInDifferentThread(final Activity uiContext,
 															final ApplicationMode applicationMode,
 															final String voiceProvider,
 															final Runnable run,
 															boolean showDialog) {
-
 		final ProgressDialog dlg = showDialog ? ProgressDialog.show(uiContext, app.getString(R.string.loading_data),
 				app.getString(R.string.voice_data_initializing)) : null;
 		new Thread(new Runnable() {
@@ -542,7 +480,6 @@ public class AppInitializer implements IProgress {
 			notifyEvent(InitEvents.RESTORE_BACKUPS);
 			app.searchUICore.initSearchUICore();
 			checkLiveUpdatesAlerts();
-			
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 			warnings.add(e.getMessage());
@@ -600,7 +537,6 @@ public class AppInitializer implements IProgress {
 		}
 	}
 
-
 	private void saveGPXTracks() {
 		if (app.savingTrackHelper.hasDataToSave()) {
 			long timeUpdated = app.savingTrackHelper.getLastTrackPointTime();
@@ -621,7 +557,6 @@ public class AppInitializer implements IProgress {
 		}
 	}
 
-
 	private void initNativeCore() {
 		if (!"qnx".equals(System.getProperty("os.name"))) {
 			OsmandSettings osmandSettings = app.getSettings();
@@ -640,30 +575,14 @@ public class AppInitializer implements IProgress {
 					warnings.add("Native OpenGL library is not supported. Please try again after exit");
 				}
 			}
-			if (osmandSettings.NATIVE_RENDERING_FAILED.get()) {
-				osmandSettings.SAFE_MODE.set(true);
-				osmandSettings.NATIVE_RENDERING_FAILED.set(false);
-				warnings.add(app.getString(R.string.native_library_not_supported));
-			} else {
-				osmandSettings.SAFE_MODE.set(false);
-				osmandSettings.NATIVE_RENDERING_FAILED.set(true);
-				startTask(app.getString(R.string.init_native_library), -1);
-				RenderingRulesStorage storage = app.getRendererRegistry().getCurrentSelectedRenderer();
-				NativeOsmandLibrary lib = NativeOsmandLibrary.getLibrary(storage, app);
-				boolean initialized =  lib != null;
-				osmandSettings.NATIVE_RENDERING_FAILED.set(false);
-				if (!initialized) {
-					LOG.info("Native library could not be loaded!");
-				} else {
-					File ls = app.getAppPath("fonts");
-					lib.loadFontData(ls);
-				}
-
-			}
+			startTask(app.getString(R.string.init_native_library), -1);
+			RenderingRulesStorage storage = app.getRendererRegistry().getCurrentSelectedRenderer();
+			NativeOsmandLibrary lib = NativeOsmandLibrary.getLibrary(storage, app);
+			File ls = app.getAppPath("fonts");
+			lib.loadFontData(ls);
 			app.getResourceManager().initMapBoundariesCacheNative();
 		}
 	}
-
 
 	private StringBuilder formatWarnings(List<String> warnings) {
 		final StringBuilder b = new StringBuilder();
@@ -679,7 +598,6 @@ public class AppInitializer implements IProgress {
 		return b;
 	}
 
-
 	public void notifyFinish() {
 		app.uiHandler.post(new Runnable() {
 
@@ -691,6 +609,7 @@ public class AppInitializer implements IProgress {
 			}
 		});
 	}
+
 	public void notifyEvent(final InitEvents event) {
 		if (event != InitEvents.TASK_CHANGED) {
 			long time = System.currentTimeMillis();
@@ -706,9 +625,7 @@ public class AppInitializer implements IProgress {
 				}
 			}
 		});
-
 	}
-
 
 	@Override
 	public void startTask(String taskName, int work) {
@@ -716,21 +633,17 @@ public class AppInitializer implements IProgress {
 		notifyEvent(InitEvents.TASK_CHANGED);
 	}
 
-
 	@Override
 	public void startWork(int work) {
 	}
-
 
 	@Override
 	public void progress(int deltaWork) {
 	}
 
-
 	@Override
 	public void remaining(int remainingWork) {
 	}
-
 
 	@Override
 	public void finishTask() {
@@ -742,21 +655,17 @@ public class AppInitializer implements IProgress {
 		return taskName;
 	}
 
-
 	@Override
 	public boolean isIndeterminate() {
 		return true;
 	}
-
 
 	@Override
 	public boolean isInterrupted() {
 		return false;
 	}
 
-
 	private boolean applicationBgInitializing = false;
-
 
 	public synchronized void startApplication() {
 		if (applicationBgInitializing) {
@@ -775,14 +684,12 @@ public class AppInitializer implements IProgress {
 				}, "Initializing app").start();
 	}
 
-
 	public void addListener(AppInitializeListener listener) {
 		this.listeners.add(listener);
 		if(!appInitializing) {
 			listener.onFinish(this);
 		}
 	}
-
 
 	public void removeListener(AppInitializeListener listener) {
 		this.listeners.remove(listener);

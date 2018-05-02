@@ -82,13 +82,9 @@ public class RoutingHelper {
 
 	private static boolean isDeviatedFromRoute = false;
 	private long deviateFromRouteDetected = 0;
-	//private long wrongMovementDetected = 0;
 	private boolean voiceRouterStopped = false;
 
 	private RouteCalculationProgressCallback progressRoute;
-
-//	private ProgressBar progress;
-//	private Handler progressHandler;
 
 	public boolean isDeviatedFromRoute() {
 		return isDeviatedFromRoute;
@@ -101,7 +97,6 @@ public class RoutingHelper {
 		provider = new RouteProvider();
 		setAppMode(settings.APPLICATION_MODE.get());
 	}
-
 
 	public boolean isFollowingMode() {
 		return isFollowingMode;
@@ -159,8 +154,6 @@ public class RoutingHelper {
 	public void setRoutePlanningMode(boolean isRoutePlanningMode) {
 		this.isRoutePlanningMode = isRoutePlanningMode;
 	}
-
-
 
 	public synchronized void setFinalAndCurrentLocation(LatLon finalLocation, List<LatLon> intermediatePoints, Location currentLocation){
 		RouteCalculationResult previousRoute = route;
@@ -224,8 +217,6 @@ public class RoutingHelper {
 	public GPXRouteParamsBuilder getCurrentGPXRoute() {
 		return currentGPXRoute;
 	}
-
-
 
 	public void setGpxParams(GPXRouteParamsBuilder params) {
 		currentGPXRoute = params;
@@ -533,7 +524,6 @@ public class RoutingHelper {
 		if (currentRoute > routeNodes.size() - 3
 				&& currentLocation.distanceTo(lastPoint) < getArrivalDistance()
 				&& !isRoutePlanningMode) {
-			//showMessage(app.getString(R.string.arrived_at_destination));
 			TargetPointsHelper targets = app.getTargetPointsHelper();
 			TargetPoint tp = targets.getPointToNavigate();
 			String description = tp == null ? "" : tp.getOnlyName();
@@ -549,7 +539,6 @@ public class RoutingHelper {
 					@Override
 					public void run() {
 						settings.LAST_ROUTING_APPLICATION_MODE = settings.APPLICATION_MODE.get();
-						//settings.APPLICATION_MODE.set(settings.DEFAULT_APPLICATION_MODE.get());
 					}
 				});
 				finishCurrentRoute();
@@ -564,7 +553,6 @@ public class RoutingHelper {
 	private float getArrivalDistance() {
 		return ((float)settings.getApplicationMode().getArrivalDistance()) * settings.ARRIVAL_DISTANCE_FACTOR.get();
 	}
-
 
 	private boolean identifyUTurnIsNeeded(Location currentLocation, float posTolerance) {
 		if (finalLocation == null || currentLocation == null || !route.isCalculated()) {
@@ -587,7 +575,6 @@ public class RoutingHelper {
 						deviateFromRouteDetected = System.currentTimeMillis();
 					} else if ((System.currentTimeMillis() - deviateFromRouteDetected > 10000)) {
 						isOffRoute = true;
-						//log.info("bearingMotion is opposite to bearingRoute"); //$NON-NLS-1$
 					}
 				}
 			} else {
@@ -610,20 +597,8 @@ public class RoutingHelper {
 			float bearingMotion = currentLocation.getBearing();
 			float bearingToRoute = currentLocation.bearingTo(nextRouteLocation);
 			double diff = MapUtils.degreesDiff(bearingMotion, bearingToRoute);
-			if (Math.abs(diff) > 60f) {
-				// require delay interval since first detection, to avoid false positive
-				//but leave out for now, as late detection is worse than false positive (it may reset voice router then cause bogus turn and u-turn prompting)
-				//if (wrongMovementDetected == 0) {
-				//	wrongMovementDetected = System.currentTimeMillis();
-				//} else if ((System.currentTimeMillis() - wrongMovementDetected > 500)) {
-					return true;
-				//}
-			} else {
-				//wrongMovementDetected = 0;
-				return false;
-			}
+			return (Math.abs(diff) > 60f);
 		}
-		//wrongMovementDetected = 0;
 		return false;
 	}
 
@@ -651,7 +626,6 @@ public class RoutingHelper {
 
 				}
 			}
-
 
 			// trigger voice prompt only if new route is in forward direction
 			// If route is in wrong direction after one more setLocation it will be recalculated
@@ -728,11 +702,9 @@ public class RoutingHelper {
 		return route.getCurrentMaxSpeed();
 	}
 
-
 	public static String formatStreetName(String name, String ref, String destination, String towards) {
 	//Hardy, 2016-08-05:
 	//Now returns: (ref) + ((" ")+name) + ((" ")+"toward "+dest) or ""
-
 		String formattedStreetName = "";
 		if (ref != null && ref.length() > 0) {
 			formattedStreetName = ref;
@@ -752,13 +724,6 @@ public class RoutingHelper {
 		return formattedStreetName.replace(";", ", ");
 
 	}
-
-//	protected boolean isDistanceLess(float currentSpeed, double dist, double etalon, float defSpeed){
-//		if(dist < etalon || ((dist / currentSpeed) < (etalon / defSpeed))){
-//			return true;
-//		}
-//		return false;
-//	}
 
 	public synchronized String getCurrentName(TurnType[] next){
 		NextDirectionInfo n = getNextRouteDirectionInfo(new NextDirectionInfo(), true);
@@ -807,8 +772,6 @@ public class RoutingHelper {
 	public List<RouteDirectionInfo> getRouteDirections(){
 		return route.getRouteDirections();
 	}
-
-
 
 	private class RouteRecalculationThread extends Thread {
 
@@ -930,7 +893,7 @@ public class RoutingHelper {
 			params.start = start;
 			params.end = end;
 			params.intermediates = intermediates;
-			params.gpxRoute = gpxRoute == null ? null : gpxRoute.build(start, settings);
+			params.gpxRoute = gpxRoute == null ? null : gpxRoute.build();
 			params.onlyStartPointChanged = onlyStartPointChanged;
 			if(recalculateCountInInterval < RECALCULATE_THRESHOLD_COUNT_CAUSING_FULL_RECALCULATE) {
 				params.previousToRecalculate = previousRoute;
@@ -1021,13 +984,10 @@ public class RoutingHelper {
 	}
 
 	public interface RouteCalculationProgressCallback {
-
-		// set visibility
 		public void updateProgress(int progress);
 		public void requestPrivateAccessRouting();
 		public void finish();
 	}
-
 
 	public boolean isRouteBeingCalculated(){
 		return currentRunningJob instanceof RouteRecalculationThread;
@@ -1042,7 +1002,6 @@ public class RoutingHelper {
 		});
 	}
 
-
 	// NEVER returns null
 	public RouteCalculationResult getRoute() {
 		return route;
@@ -1052,12 +1011,9 @@ public class RoutingHelper {
 		return provider.createOsmandRouterGPX(route, app);
 	}
 
-
 	public void notifyIfRouteIsCalculated() {
 		if(route.isCalculated()) {
 			voiceRouter.newRouteIsCalculated(true)	;
 		}
 	}
-
-
 }

@@ -347,13 +347,7 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 		if (!getResources().getString(R.string.preferred_locale).equals(getResources().getString(R.string.preferred_locale_no_translate))) {
 			((ListPreference) screen.findPreference(settings.PREFERRED_LOCALE.getId())).setTitle(getString(R.string.preferred_locale) + " (" + getString(R.string.preferred_locale_no_translate) + ")");
 		}
-
-		// This setting now only in "Confgure map" menu
-		//String[] values = ConfigureMapMenu.getMapNamesValues(this, ConfigureMapMenu.mapNamesIds);
-		//String[] ids = ConfigureMapMenu.getSortedMapNamesIds(this, ConfigureMapMenu.mapNamesIds, values);
-		//registerListPreference(settings.MAP_PREFERRED_LOCALE, screen, ConfigureMapMenu.getMapNamesValues(this, ids), ids);
 	}
-
 
 	protected void enableProxy(boolean enable) {
 		settings.ENABLE_PROXY.set(enable);
@@ -408,7 +402,6 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 		});
 	}
 
-
 	public void showAppDirDialog() {
 		if (Build.VERSION.SDK_INT >= 19) {
 			showAppDirDialogV19();
@@ -452,7 +445,6 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 		chooseAppDirFragment.setDialog(dlg);
 	}
 
-
 	private void addMiscPreferences(PreferenceGroup misc) {
 		if (!Version.isBlackberry(getMyApplication())) {
 			applicationDir = new Preference(this);
@@ -467,14 +459,6 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 				}
 			});
 			misc.addPreference(applicationDir);
-			CheckBoxPreference nativeCheckbox = createCheckBoxPreference(settings.SAFE_MODE, R.string.safe_mode,
-					R.string.safe_mode_description);
-			// disable the checkbox if the library cannot be used
-			if ((NativeOsmandLibrary.isLoaded() && !NativeOsmandLibrary.isSupported()) || settings.NATIVE_RENDERING_FAILED.get()) {
-				nativeCheckbox.setEnabled(false);
-				nativeCheckbox.setChecked(true);
-			}
-			misc.addPreference(nativeCheckbox);
 
 			int nav = getResources().getConfiguration().navigation;
 			if (nav == Configuration.NAVIGATION_DPAD || nav == Configuration.NAVIGATION_TRACKBALL ||
@@ -501,7 +485,6 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 		}
 	}
 
-
 	private void updateApplicationDirTextAndSummary() {
 		if (applicationDir != null) {
 			String storageDir = settings.getExternalStorageDirectory().getAbsolutePath();
@@ -522,11 +505,7 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
 		String id = preference.getKey();
 		super.onPreferenceChange(preference, newValue);
-		if (id.equals(settings.SAFE_MODE.getId())) {
-			if ((Boolean) newValue) {
-				loadNativeLibrary();
-			}
-		} else if (preference == applicationDir) {
+		if (preference == applicationDir) {
 			return false;
 		} else if (id.equals(settings.APPLICATION_MODE.getId())) {
 			settings.DEFAULT_APPLICATION_MODE.set(settings.APPLICATION_MODE.get());
@@ -547,7 +526,6 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 		return true;
 	}
 
-
 	private void restartApp() {
 		AlertDialog.Builder bld = new AlertDialog.Builder(this);
 		bld.setMessage(R.string.restart_is_required);
@@ -556,14 +534,10 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				android.os.Process.killProcess(android.os.Process.myPid());
-//				Intent intent = getIntent();
-//				finish();
-//				startActivity(intent);				
 			}
 		});
 		bld.show();
 	}
-
 
 	private void warnAboutChangingStorage(final String newValue) {
 		String newDir = newValue != null ? newValue.trim() : newValue;
@@ -636,34 +610,6 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 		}.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 	}
 
-	public void loadNativeLibrary() {
-		if (!NativeOsmandLibrary.isLoaded()) {
-			final RenderingRulesStorage storage = getMyApplication().getRendererRegistry().getCurrentSelectedRenderer();
-			new AsyncTask<Void, Void, Void>() {
-
-				@Override
-				protected void onPreExecute() {
-					setProgressVisibility(true);
-				}
-
-				@Override
-				protected Void doInBackground(Void... params) {
-					NativeOsmandLibrary.getLibrary(storage, getMyApplication());
-					return null;
-				}
-
-				@Override
-				protected void onPostExecute(Void result) {
-					setProgressVisibility(false);
-					if (!NativeOsmandLibrary.isNativeSupported(storage, getMyApplication())) {
-						Toast.makeText(SettingsGeneralActivity.this, R.string.native_library_not_supported, Toast.LENGTH_LONG).show();
-					}
-				}
-			}.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-		}
-	}
-
-
 	protected void showWarnings(List<String> warnings) {
 		if (!warnings.isEmpty()) {
 			final StringBuilder b = new StringBuilder();
@@ -680,7 +626,6 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 				@Override
 				public void run() {
 					Toast.makeText(SettingsGeneralActivity.this, b.toString(), Toast.LENGTH_LONG).show();
-
 				}
 			});
 		}
