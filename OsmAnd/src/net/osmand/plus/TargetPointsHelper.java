@@ -10,7 +10,6 @@ import net.osmand.data.LatLon;
 import net.osmand.data.LocationPoint;
 import net.osmand.data.PointDescription;
 import net.osmand.plus.GeocodingLookupService.AddressLookupRequest;
-import net.osmand.plus.routing.RouteProvider.RouteService;
 import net.osmand.plus.routing.RoutingHelper;
 import net.osmand.util.Algorithms;
 import net.osmand.util.MapUtils;
@@ -134,7 +133,6 @@ public class TargetPointsHelper {
 		public boolean isVisible() {
 			return false;
 		}
-		
 	}
 
 	public TargetPointsHelper(OsmandApplication ctx){
@@ -241,12 +239,7 @@ public class TargetPointsHelper {
 	public TargetPoint getPointToStart() {
 		return pointToStart;
 	}
-	
-	public PointDescription getStartPointDescription(){
-		return settings.getStartPointDescription();
-	}
-	
-	
+
 	public List<TargetPoint> getIntermediatePoints() {
 		return intermediatePoints;
 	}
@@ -400,7 +393,6 @@ public class TargetPointsHelper {
 		}
 	}
 
-
 	private Location wrap(LatLon l) {
 		if(l == null) {
 			return null;
@@ -425,7 +417,6 @@ public class TargetPointsHelper {
 		listeners.add(l);
 	}
 
-
 	private void updateListeners() {
 		for(StateChangedListener<Void> l : listeners) {
 			l.stateChanged(null);
@@ -449,7 +440,6 @@ public class TargetPointsHelper {
 		updateRouteAndRefresh(updateRoute);
 	}
 
-
 	public void reorderAllTargetPoints(List<TargetPoint> point, boolean updateRoute) {
 		cancelTargetPointAddressRequest();
 		cancelAllIntermediatePointsAddressRequests();
@@ -472,11 +462,7 @@ public class TargetPointsHelper {
 		updateRouteAndRefresh(updateRoute);
 	}
 
-
 	public boolean hasTooLongDistanceToNavigate() {
-		if(settings.ROUTER_SERVICE.getModeValue(routingHelper.getAppMode()) != RouteService.OSMAND) {
-			return false;
-		}
 		Location current = routingHelper.getLastProjection();
         double dist = 400000;
         if (ApplicationMode.BICYCLE.isDerivedRoutingFrom(routingHelper.getAppMode())
@@ -596,10 +582,6 @@ public class TargetPointsHelper {
 		if (!pointListeners.contains(l)) {
 			pointListeners.add(l);
 		}
-	}
-
-	public void removePointListener(TargetPointChangedListener l) {
-		pointListeners.remove(l);
 	}
 
 	private void updateTargetPoint(TargetPoint targetPoint) {

@@ -75,19 +75,7 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		return p;
 	}
 
-
 	public CheckBoxPreference createCheckBoxPreference(OsmandPreference<Boolean> b, int title, int summary) {
-		CheckBoxPreference p = new CheckBoxPreference(this);
-		p.setTitle(title);
-		p.setKey(b.getId());
-		p.setSummary(summary);
-		p.setOnPreferenceChangeListener(this);
-		screenPreferences.put(b.getId(), p);
-		booleanPreferences.put(b.getId(), b);
-		return p;
-	}
-	
-	public CheckBoxPreference createCheckBoxPreference(OsmandPreference<Boolean> b, String title, String summary) {
 		CheckBoxPreference p = new CheckBoxPreference(this);
 		p.setTitle(title);
 		p.setKey(b.getId());
@@ -107,13 +95,6 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		return p;
 	}
 
-	public void registerSeekBarPreference(OsmandPreference<Integer> b, PreferenceScreen screen) {
-		SeekBarPreference p = (SeekBarPreference) screen.findPreference(b.getId());
-		p.setOnPreferenceChangeListener(this);
-		screenPreferences.put(b.getId(), p);
-		seekBarPreferences.put(b.getId(), b);
-	}
-	
 	public static String getRoutingStringPropertyName(Context ctx, String propertyName, String defValue) {
 		try {
 			Field f = R.string.class.getField("routing_attr_" + propertyName + "_name");
@@ -161,7 +142,6 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 				return ctx.getString(in);
 			}
 		} catch (Exception e) {
-			//e.printStackTrace();
 			System.err.println(e.getMessage());
 		}
 		return defValue;
@@ -182,18 +162,6 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 			System.err.println(e.getMessage());
 		}
 		return propertyValue;
-	}
-
-	public SeekBarPreference createSeekBarPreference(OsmandPreference<Integer> b, int title, int summary, int dialogTextId, int defValue,
-			int maxValue) {
-		SeekBarPreference p = new SeekBarPreference(this, dialogTextId, defValue, maxValue);
-		p.setTitle(title);
-		p.setKey(b.getId());
-		p.setSummary(summary);
-		p.setOnPreferenceChangeListener(this);
-		screenPreferences.put(b.getId(), p);
-		seekBarPreferences.put(b.getId(), b);
-		return p;
 	}
 
 	public <T> void registerListPreference(OsmandPreference<T> b, PreferenceGroup screen, String[] names, T[] values) {
@@ -221,13 +189,6 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		return p;
 	}
 	
-	public <T> ListPreference createListPreference(OsmandPreference<T> b, String[] names, T[] values) {
-		ListPreference p = new ListPreference(this);
-		p.setKey(b.getId());
-		prepareListPreference(b, names, values, p);
-		return p;
-	}
-
 	private <T> void prepareListPreference(OsmandPreference<T> b, String[] names, T[] values, ListPreference p) {
 		p.setOnPreferenceChangeListener(this);
 		LinkedHashMap<String, Object> vals = new LinkedHashMap<String, Object>();
@@ -245,13 +206,6 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		vals.put(value, disable);
 	}
 
-	public void registerEditTextPreference(OsmandPreference<String> b, PreferenceScreen screen) {
-		EditTextPreference p = (EditTextPreference) screen.findPreference(b.getId());
-		p.setOnPreferenceChangeListener(this);
-		screenPreferences.put(b.getId(), p);
-		editTextPreferences.put(b.getId(), b);
-	}
-
 	public EditTextPreference createEditTextPreference(OsmandPreference<String> b, int title, int summary) {
 		EditTextPreference p = new EditTextPreference(this);
 		p.setTitle(title);
@@ -262,22 +216,6 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		screenPreferences.put(b.getId(), p);
 		editTextPreferences.put(b.getId(), b);
 		return p;
-	}
-
-	public void registerTimeListPreference(OsmandPreference<Integer> b, PreferenceScreen screen, int[] seconds, int[] minutes, int coeff) {
-		int minutesLength = minutes == null ? 0 : minutes.length;
-		int secondsLength = seconds == null ? 0 : seconds.length;
-		Integer[] ints = new Integer[secondsLength + minutesLength];
-		String[] intDescriptions = new String[ints.length];
-		for (int i = 0; i < secondsLength; i++) {
-			ints[i] = seconds[i] * coeff;
-			intDescriptions[i] = seconds[i] + " " + getString(R.string.int_seconds); //$NON-NLS-1$
-		}
-		for (int i = 0; i < minutesLength; i++) {
-			ints[secondsLength + i] = (minutes[i] * 60) * coeff;
-			intDescriptions[secondsLength + i] = minutes[i] + " " + getString(R.string.int_min); //$NON-NLS-1$
-		}
-		registerListPreference(b, screen, intDescriptions, ints);
 	}
 
 	public ListPreference createTimeListPreference(OsmandPreference<Integer> b, int[] seconds, int[] minutes, int coeff, int title, int summary) {
@@ -307,7 +245,6 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		return lp;
 	}
 
-
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int itemId = item.getItemId();
@@ -315,7 +252,6 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		case android.R.id.home:
 			finish();
 			return true;
-
 		}
 		return false;
 	}
@@ -341,7 +277,6 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 			}
 			SpinnerAdapter spinnerAdapter = new SpinnerAdapter(this,
 					R.layout.spinner_item, s);
-//			android.R.layout.simple_spinner_dropdown_item
 			spinnerAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 			getSpinner().setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 				@Override
@@ -361,10 +296,7 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		setPreferenceScreen(getPreferenceManager().createPreferenceScreen(this));
     }
 
-
 	class SpinnerAdapter extends ArrayAdapter<String>{
-
-
 		public SpinnerAdapter(Context context, int resource, List<String> objects) {
 			super(context, resource, objects);
 		}
@@ -379,8 +311,6 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 			return view;
 		}
 	}
-	
-
 
 	@Override
 	protected void onResume() {
@@ -446,7 +376,6 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 			settings.APPLICATION_MODE.set(previousAppMode);
 		}
 	}
-
 
 	public void updateAllSettings() {
 		for (OsmandPreference<Boolean> b : booleanPreferences.values()) {
@@ -539,28 +468,8 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		}
 	}
 	
-
-	
-
-	public void showBooleanSettings(String[] vals, final OsmandPreference<Boolean>[] prefs) {
-		AlertDialog.Builder bld = new AlertDialog.Builder(this);
-		boolean[] checkedItems = new boolean[prefs.length];
-		for (int i = 0; i < prefs.length; i++) {
-			checkedItems[i] = prefs[i].get();
-		}
-		bld.setMultiChoiceItems(vals, checkedItems, new OnMultiChoiceClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-				prefs[which].set(isChecked);
-			}
-		});
-		bld.show();
-	}
-
 	@Override
 	public boolean onPreferenceClick(Preference preference) {
 		return false;
 	}
-
 }

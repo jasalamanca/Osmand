@@ -62,7 +62,6 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 	private Preference autoZoom;
 	private Preference showAlarms;
 	private Preference speakAlarms;
-	private ListPreference routerServicePreference;
 	private ListPreference speedLimitExceed;
 	
 	private ComponentName mDeviceAdmin;
@@ -91,10 +90,8 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		super.onActivityResult(requestCode, resultCode, data);
 		if (requestCode == DEVICE_ADMIN_REQUEST) {
 			if (resultCode == RESULT_OK) {
-//				Log.d("DeviceAdmin", "Lock screen permission approved.");
 			} else {
 				settings.WAKE_ON_VOICE_INT.set(0);
-//				Log.d("DeviceAdmin", "Lock screen permission refused.");
 			}
 			return;
 		}
@@ -120,25 +117,15 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		}
 	};
 
-
 	private void createUI() {
 		addPreferencesFromResource(R.xml.navigation_settings);
 		PreferenceScreen screen = getPreferenceScreen();
 		settings = getMyApplication().getSettings();
-		routerServicePreference = (ListPreference) screen.findPreference(settings.ROUTER_SERVICE.getId());
-		
-		RouteService[] vls = RouteService.getAvailableRouters(getMyApplication());
-		String[] entries = new String[vls.length];
-		for(int i=0; i<entries.length; i++){
-			entries[i] = vls[i].getName();
-		}
-		registerListPreference(settings.ROUTER_SERVICE, screen, entries, vls);
-		
-		
+
 		registerBooleanPreference(settings.SNAP_TO_ROAD, screen);
 
 		Integer[] intValues = new Integer[] { 0, 5, 10, 15, 20, 25, 30, 45, 60, 90};
-		entries = new String[intValues.length];
+		String[] entries = new String[intValues.length];
 		entries[0] = getString(R.string.shared_string_never);
 		for (int i = 1; i < intValues.length; i++) {
 			entries[i] = (int) intValues[i] + " " + getString(R.string.int_seconds);
@@ -157,7 +144,6 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
             keepInformingNames[i] = keepInformingValues[i] + " " + getString(R.string.int_min);
         }
         registerListPreference(settings.KEEP_INFORMING, screen, keepInformingNames, keepInformingValues);
-        
 
 		SpeedConstants[] speedValues = SpeedConstants.values();
 		String[] speedNamesVls = new String[speedValues.length];
@@ -176,8 +162,6 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		}
 		registerListPreference(settings.WAKE_ON_VOICE_INT, screen, screenPowerSaveNames, screenPowerSaveValues);
         
-//         registerBooleanPreference(settings.SHOW_ZOOM_BUTTONS_NAVIGATION, screen);
-		
 		showAlarms = (Preference) screen.findPreference("show_routing_alarms");
 		showAlarms.setOnPreferenceClickListener(this);
 		
@@ -219,19 +203,6 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 			category.removePreference(speedLimitExceed);
 		}
 
-		// deprecated 2.2
-//		Integer[] delayIntervals = new Integer[] { -1, 3, 5, 7, 10, 15, 20 };
-//		String[] delayIntervalNames = new String[delayIntervals.length];
-//		for (int i = 0; i < delayIntervals.length; i++) {
-//			if (i == 0) {
-//				delayIntervalNames[i] = getString(R.string.auto_follow_route_never);
-//			} else {
-//				delayIntervalNames[i] = delayIntervals[i] + " " + getString(R.string.int_seconds);
-//			}
-//		}
-		// registerListPreference(settings.DELAY_TO_START_NAVIGATION, screen, delayIntervalNames, delayIntervals);
-
-
 		if(getIntent() != null && getIntent().hasExtra(INTENT_SKIP_DIALOG)) {
 			setSelectedAppMode(settings.getApplicationMode());
 		} else {
@@ -248,7 +219,6 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		entries = new String[voiceFiles.size() + 2];
 		entrieValues = new String[voiceFiles.size() + 2];
 		int k = 0;
-		// entries[k++] = getString(R.string.shared_string_none);
 		entrieValues[k] = OsmandSettings.VOICE_PROVIDER_NOT_USE;
 		entries[k++] = getString(R.string.shared_string_do_not_use);
 		for (String s : voiceFiles) {
@@ -261,7 +231,6 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		entries[k] = getString(R.string.install_more);
 		registerListPreference(settings.VOICE_PROVIDER, screen, entries, entrieValues);
 	}
-
 
 	private Set<String> getVoiceFiles() {
 		// read available voice data
@@ -310,83 +279,79 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		PreferenceCategory cat = (PreferenceCategory) screen.findPreference("routing_preferences");
 		cat.removeAll();
 		CheckBoxPreference fastRoute = createCheckBoxPreference(settings.FAST_ROUTE_MODE, R.string.fast_route_mode, R.string.fast_route_mode_descr);
-		if(settings.ROUTER_SERVICE.get() != RouteService.OSMAND) {
-			cat.addPreference(fastRoute);
+		ApplicationMode am = settings.getApplicationMode();
+		GeneralRouter router = getRouter(getMyApplication().getDefaultRoutingConfig(), am);
+		clearParameters();
+		if (router != null) {
+			Map<String, RoutingParameter> parameters = router.getParameters();
+			if(parameters.containsKey("short_way")) {
+				cat.addPreference(fastRoute);
+			}
+			List<RoutingParameter> others = new ArrayList<GeneralRouter.RoutingParameter>();
+			for(Map.Entry<String, RoutingParameter> e : parameters.entrySet()) {
+				String param = e.getKey();
+				RoutingParameter routingParameter = e.getValue();
+				if (param.startsWith("avoid_")) {
+					avoidParameters.add(routingParameter);
+				} else if (param.startsWith("prefer_")) {
+					preferParameters.add(routingParameter);
+				} else if ("relief_smoothness_factor".equals(routingParameter.getGroup())) {
+					reliefFactorParameters.add(routingParameter);
+				} else if (!param.equals("short_way") && !"driving_style".equals(routingParameter.getGroup())) {
+					others.add(routingParameter);
+				}
+			}
+			if (avoidParameters.size() > 0) {
+				avoidRouting = new Preference(this);
+				avoidRouting.setTitle(R.string.avoid_in_routing_title);
+				avoidRouting.setSummary(R.string.avoid_in_routing_descr);
+				avoidRouting.setOnPreferenceClickListener(this);
+				cat.addPreference(avoidRouting);
+			}
+			if (preferParameters.size() > 0) {
+				preferRouting = new Preference(this);
+				preferRouting.setTitle(R.string.prefer_in_routing_title);
+				preferRouting.setSummary(R.string.prefer_in_routing_descr);
+				preferRouting.setOnPreferenceClickListener(this);
+				cat.addPreference(preferRouting);
+			}
+			if (reliefFactorParameters.size() > 0) {
+				reliefFactorRouting = new Preference(this);
+				reliefFactorRouting.setTitle(SettingsBaseActivity.getRoutingStringPropertyName(this, reliefFactorParameters.get(0).getGroup(),
+						Algorithms.capitalizeFirstLetterAndLowercase(reliefFactorParameters.get(0).getGroup().replace('_', ' '))));
+				reliefFactorRouting.setSummary(R.string.relief_smoothness_factor_descr);
+				reliefFactorRouting.setOnPreferenceClickListener(this);
+				cat.addPreference(reliefFactorRouting);
+			}
+			for(RoutingParameter p : others) {
+				Preference basePref;
+				if(p.getType() == RoutingParameterType.BOOLEAN) {
+					basePref = createCheckBoxPreference(settings.getCustomRoutingBooleanProperty(p.getId(), p.getDefaultBoolean()));
+				} else {
+					Object[] vls = p.getPossibleValues();
+					String[] svlss = new String[vls.length];
+					int i = 0;
+					for(Object o : vls) {
+						svlss[i++] = o.toString();
+					}
+					basePref = createListPreference(settings.getCustomRoutingProperty(p.getId(),
+							p.getType() == RoutingParameterType.NUMERIC ? "0.0" : "-"),
+							p.getPossibleValueDescriptions(), svlss,
+							SettingsBaseActivity.getRoutingStringPropertyName(this, p.getId(), p.getName()),
+							SettingsBaseActivity.getRoutingStringPropertyDescription(this, p.getId(), p.getDescription()));
+				}
+				basePref.setTitle(SettingsBaseActivity.getRoutingStringPropertyName(this, p.getId(), p.getName()));
+				basePref.setSummary(SettingsBaseActivity.getRoutingStringPropertyDescription(this, p.getId(), p.getDescription()));
+				cat.addPreference(basePref);
+			}
+		}
+		ApplicationMode mode = getMyApplication().getSettings().getApplicationMode();
+		if (mode.isDerivedRoutingFrom(ApplicationMode.CAR)) {
+			PreferenceCategory category = (PreferenceCategory) screen.findPreference("guidance_preferences");
+			category.addPreference(speedLimitExceed);
 		} else {
-			ApplicationMode am = settings.getApplicationMode();
-			GeneralRouter router = getRouter(getMyApplication().getDefaultRoutingConfig(), am);
-			clearParameters();
-			if (router != null) {
-				Map<String, RoutingParameter> parameters = router.getParameters();
-				if(parameters.containsKey("short_way")) {
-					cat.addPreference(fastRoute);
-				}
-				List<RoutingParameter> others = new ArrayList<GeneralRouter.RoutingParameter>();
-				for(Map.Entry<String, RoutingParameter> e : parameters.entrySet()) {
-					String param = e.getKey();
-					RoutingParameter routingParameter = e.getValue();
-					if (param.startsWith("avoid_")) {
-						avoidParameters.add(routingParameter);
-					} else if (param.startsWith("prefer_")) {
-						preferParameters.add(routingParameter);
-					} else if ("relief_smoothness_factor".equals(routingParameter.getGroup())) {
-						reliefFactorParameters.add(routingParameter);
-					} else if (!param.equals("short_way") && !"driving_style".equals(routingParameter.getGroup())) {
-						others.add(routingParameter);
-					}
-				}
-				if (avoidParameters.size() > 0) {
-					avoidRouting = new Preference(this);
-					avoidRouting.setTitle(R.string.avoid_in_routing_title);
-					avoidRouting.setSummary(R.string.avoid_in_routing_descr);
-					avoidRouting.setOnPreferenceClickListener(this);
-					cat.addPreference(avoidRouting);
-				}
-				if (preferParameters.size() > 0) {
-					preferRouting = new Preference(this);
-					preferRouting.setTitle(R.string.prefer_in_routing_title);
-					preferRouting.setSummary(R.string.prefer_in_routing_descr);
-					preferRouting.setOnPreferenceClickListener(this);
-					cat.addPreference(preferRouting);
-				}
-				if (reliefFactorParameters.size() > 0) {
-					reliefFactorRouting = new Preference(this);
-					reliefFactorRouting.setTitle(SettingsBaseActivity.getRoutingStringPropertyName(this, reliefFactorParameters.get(0).getGroup(),
-							Algorithms.capitalizeFirstLetterAndLowercase(reliefFactorParameters.get(0).getGroup().replace('_', ' '))));
-					reliefFactorRouting.setSummary(R.string.relief_smoothness_factor_descr);
-					reliefFactorRouting.setOnPreferenceClickListener(this);
-					cat.addPreference(reliefFactorRouting);
-				}
-				for(RoutingParameter p : others) {
-					Preference basePref;
-					if(p.getType() == RoutingParameterType.BOOLEAN) {
-						basePref = createCheckBoxPreference(settings.getCustomRoutingBooleanProperty(p.getId(), p.getDefaultBoolean()));
-					} else {
-						Object[] vls = p.getPossibleValues();
-						String[] svlss = new String[vls.length];
-						int i = 0;
-						for(Object o : vls) {
-							svlss[i++] = o.toString();
-						}
-						basePref = createListPreference(settings.getCustomRoutingProperty(p.getId(), 
-								p.getType() == RoutingParameterType.NUMERIC ? "0.0" : "-"), 
-								p.getPossibleValueDescriptions(), svlss, 
-								SettingsBaseActivity.getRoutingStringPropertyName(this, p.getId(), p.getName()), 
-								SettingsBaseActivity.getRoutingStringPropertyDescription(this, p.getId(), p.getDescription()));
-					}
-					basePref.setTitle(SettingsBaseActivity.getRoutingStringPropertyName(this, p.getId(), p.getName()));
-					basePref.setSummary(SettingsBaseActivity.getRoutingStringPropertyDescription(this, p.getId(), p.getDescription()));
-					cat.addPreference(basePref);
-				}
-			}
-			ApplicationMode mode = getMyApplication().getSettings().getApplicationMode();
-			if (mode.isDerivedRoutingFrom(ApplicationMode.CAR)) {
-				PreferenceCategory category = (PreferenceCategory) screen.findPreference("guidance_preferences");
-				category.addPreference(speedLimitExceed);
-			} else {
-				PreferenceCategory category = (PreferenceCategory) screen.findPreference("guidance_preferences");
-				category.removePreference(speedLimitExceed);
-			}
+			PreferenceCategory category = (PreferenceCategory) screen.findPreference("guidance_preferences");
+			category.removePreference(speedLimitExceed);
 		}
 	}
 
@@ -415,13 +380,11 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		}
 	}
 
-
 	private void clearParameters() {
 		preferParameters.clear();
 		avoidParameters.clear();
 		reliefFactorParameters.clear();
 	}
-
 
 	public static GeneralRouter getRouter(net.osmand.router.RoutingConfiguration.Builder builder, ApplicationMode am) {
 		GeneralRouter router = builder.getRouter(am.getStringKey());
@@ -435,7 +398,6 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		prepareRoutingPrefs(getPreferenceScreen());
 		reloadVoiceListPreference(getPreferenceScreen());
 		super.updateAllSettings();
-		routerServicePreference.setSummary(getString(R.string.router_service_descr) + "  [" + settings.ROUTER_SERVICE.get() + "]");
 	}
 
 	@Override
@@ -456,12 +418,7 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 			return true;
 		}
 		super.onPreferenceChange(preference, newValue);
-		if (id.equals(settings.ROUTER_SERVICE.getId())) {
-			routerServicePreference.setSummary(getString(R.string.router_service_descr) + "  ["
-					+ settings.ROUTER_SERVICE.get() + "]");
-			prepareRoutingPrefs(getPreferenceScreen());
-			super.updateAllSettings();
-		} else if (id.equals(settings.WAKE_ON_VOICE_INT.getId())) {
+		if (id.equals(settings.WAKE_ON_VOICE_INT.getId())) {
 			Integer value;
 			try {
 				value = Integer.parseInt(newValue.toString());
@@ -474,7 +431,6 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		}
 		return true;
 	}
-
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -547,7 +503,6 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
-
 							int position = selectedPosition[0];
 							if (position == 0) {
 								settings.AUTO_ZOOM_MAP.set(false);
@@ -619,8 +574,6 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 								for (int i = 0; i < reliefFactorParameters.size(); i++) {
 									setRoutingParameterSelected(settings, am, reliefFactorParameters.get(i), i == position);
 								}
-								//mapActivity.getRoutingHelper().recalculateRouteDueToSettingsChange();
-								//updateParameters();
 							}
 						}
 					})
@@ -645,7 +598,6 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 			final boolean initialSpeedCam = settings.SPEAK_SPEED_CAMERA.get();
 			final boolean initialFavorites = settings.ANNOUNCE_NEARBY_FAVORITES.get();
 			final boolean initialPOI = settings.ANNOUNCE_NEARBY_POI.get();
-			// final boolean initialWpt = settings.ANNOUNCE_WPT.get();
 
 			dlg.setOnDismissListener(new DialogInterface.OnDismissListener() {
 
@@ -666,9 +618,7 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 							confirmSpeedCamerasDlg();
 						}
 					}
-
 				}
-
 			});
 			return true;
 		}
@@ -723,6 +673,4 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		
 		return bld.show();
 	}
-
-	
 }

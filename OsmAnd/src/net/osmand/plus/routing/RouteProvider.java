@@ -2,16 +2,13 @@ package net.osmand.plus.routing;
 
 
 import android.content.Context;
-import android.os.Bundle;
 
 import net.osmand.Location;
 import net.osmand.PlatformUtil;
 import net.osmand.binary.BinaryMapIndexReader;
 import net.osmand.data.LatLon;
 import net.osmand.data.LocationPoint;
-import net.osmand.osm.io.NetworkUtils;
 import net.osmand.plus.ApplicationMode;
-import net.osmand.plus.GPXUtilities;
 import net.osmand.plus.GPXUtilities.GPXFile;
 import net.osmand.plus.GPXUtilities.Route;
 import net.osmand.plus.GPXUtilities.Track;
@@ -23,7 +20,6 @@ import net.osmand.plus.OsmandSettings.CommonPreference;
 import net.osmand.plus.R;
 import net.osmand.plus.TargetPointsHelper;
 import net.osmand.plus.TargetPointsHelper.TargetPoint;
-import net.osmand.plus.Version;
 import net.osmand.plus.activities.SettingsNavigationActivity;
 import net.osmand.plus.render.NativeOsmandLibrary;
 import net.osmand.router.GeneralRouter;
@@ -39,24 +35,10 @@ import net.osmand.router.RoutingConfiguration.Builder;
 import net.osmand.router.RoutingContext;
 import net.osmand.router.TurnType;
 import net.osmand.util.Algorithms;
-import net.osmand.util.GeoPolylineParserUtil;
 import net.osmand.util.MapUtils;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -64,22 +46,13 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.FactoryConfigurationError;
-import javax.xml.parsers.ParserConfigurationException;
-
-import btools.routingapp.IBRouterService;
-
 
 public class RouteProvider {
 	private static final org.apache.commons.logging.Log log = PlatformUtil.getLog(RouteProvider.class);
 	private static final String OSMAND_ROUTER = "OsmAndRouter";
 
 	public enum RouteService {
-			OSMAND("OsmAnd (offline)"), YOURS("YOURS"), 
-			OSRM("OSRM (only car)"),
-			BROUTER("BRouter (offline)"), STRAIGHT("Straight line");
+			OSMAND("OsmAnd (offline)");
 
 		private final String name;
 
@@ -89,27 +62,6 @@ public class RouteProvider {
 
 		public String getName() {
 			return name;
-		}
-
-		public boolean isOnline() {
-			return this != OSMAND && this != BROUTER;
-		}
-
-		boolean isAvailable(OsmandApplication ctx) {
-			if (this == BROUTER) {
-				return ctx.getBRouterService() != null;
-			}
-			return true;
-		}
-
-		public static RouteService[] getAvailableRouters(OsmandApplication ctx) {
-			List<RouteService> list = new ArrayList<RouteProvider.RouteService>();
-			for(RouteService r : values()) {
-				if (r.isAvailable(ctx)) {
-					list.add(r);
-				}
-			}
-			return list.toArray(new RouteService[list.size()]);
 		}
 	}
 
@@ -280,14 +232,6 @@ public class RouteProvider {
 					res = calculateGpxRoute(params);
 				} else if (params.type == RouteService.OSMAND) {
 					res = findVectorMapsRoute(params, calcGPXRoute);
-				} else if (params.type == RouteService.BROUTER) {
-					res = findBROUTERRoute(params);
-				} else if (params.type == RouteService.YOURS) {
-					res = findYOURSRoute(params);
-				} else if (params.type == RouteService.OSRM) {
-					res = findOSRMRoute(params);
-				} else if (params.type == RouteService.STRAIGHT){
-					res = findStraightRoute(params);
 				}
 				else {
 					res = new RouteCalculationResult("Selected route service is not available");
@@ -298,32 +242,26 @@ public class RouteProvider {
 				return res; 
 			} catch (IOException e) {
 				log.error("Failed to find route ", e); //$NON-NLS-1$
-			} catch (ParserConfigurationException e) {
-				log.error("Failed to find route ", e); //$NON-NLS-1$
-			} catch (SAXException e) {
-				log.error("Failed to find route ", e); //$NON-NLS-1$
-			} catch (JSONException e) {
-				log.error("Failed to find route ", e); //$NON-NLS-1$
 			}
 		}
 		return new RouteCalculationResult(null);
 	}
 
-	public RouteCalculationResult recalculatePartOfflineRoute(RouteCalculationResult res, RouteCalculationParams params) {
-		RouteCalculationResult rcr = params.previousToRecalculate;
-		List<Location> locs = new ArrayList<Location>(rcr.getRouteLocations());
-		try {
-			int[] startI = new int[]{0};
-			int[] endI = new int[]{locs.size()}; 
-			locs = findStartAndEndLocationsFromRoute(locs, params.start, params.end, startI, endI);
-			List<RouteDirectionInfo> directions = calcDirections(startI, endI, rcr.getRouteDirections());
-			insertInitialSegment(params, locs, directions, true);
-			res = new RouteCalculationResult(locs, directions, params, null, true);
-		} catch (RuntimeException e) {
-			e.printStackTrace();
-		}
-		return res;
-	}
+//	public RouteCalculationResult recalculatePartOfflineRoute(RouteCalculationResult res, RouteCalculationParams params) {
+//		RouteCalculationResult rcr = params.previousToRecalculate;
+//		List<Location> locs = new ArrayList<Location>(rcr.getRouteLocations());
+//		try {
+//			int[] startI = new int[]{0};
+//			int[] endI = new int[]{locs.size()};
+//			locs = findStartAndEndLocationsFromRoute(locs, params.start, params.end, startI, endI);
+//			List<RouteDirectionInfo> directions = calcDirections(startI, endI, rcr.getRouteDirections());
+//			insertInitialSegment(params, locs, directions, true);
+//			res = new RouteCalculationResult(locs, directions, params, null, true);
+//		} catch (RuntimeException e) {
+//			e.printStackTrace();
+//		}
+//		return res;
+//	}
 
 	private RouteCalculationResult calculateGpxRoute(RouteCalculationParams routeParams) throws IOException {
 		// get the closest point to start and to end
@@ -541,66 +479,6 @@ public class RouteProvider {
 			return ""; //$NON-NLS-1$
 		}
 		return ctx.getString(resId);
-	}
-
-	protected RouteCalculationResult findYOURSRoute(RouteCalculationParams params) throws MalformedURLException, IOException,
-			ParserConfigurationException, FactoryConfigurationError, SAXException {
-		List<Location> res = new ArrayList<Location>();
-		StringBuilder uri = new StringBuilder();
-		uri.append("http://www.yournavigation.org/api/1.0/gosmore.php?format=kml"); //$NON-NLS-1$
-		uri.append("&flat=").append(params.start.getLatitude()); //$NON-NLS-1$
-		uri.append("&flon=").append(params.start.getLongitude()); //$NON-NLS-1$
-		uri.append("&tlat=").append(params.end.getLatitude()); //$NON-NLS-1$
-		uri.append("&tlon=").append(params.end.getLongitude()); //$NON-NLS-1$
-		if (params.mode.isDerivedRoutingFrom(ApplicationMode.BICYCLE)) {
-			uri.append("&v=bicycle") ; //$NON-NLS-1$
-		} else if (params.mode.isDerivedRoutingFrom(ApplicationMode.PEDESTRIAN)) {
-			uri.append("&v=foot") ; //$NON-NLS-1$
-		} else if(params.mode.isDerivedRoutingFrom(ApplicationMode.CAR)){
-			uri.append("&v=motorcar"); //$NON-NLS-1$
-		} else {
-			return applicationModeNotSupported(params);
-		}
-		uri.append("&fast=").append(params.fast ? "1" : "0").append("&layer=mapnik"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-		log.info("URL route " + uri);
-		URLConnection connection = NetworkUtils.getHttpURLConnection(uri.toString());
-		connection.setRequestProperty("User-Agent", Version.getFullVersion(params.ctx));
-		DocumentBuilder dom = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-		Document doc = dom.parse(new InputSource(new InputStreamReader(connection.getInputStream())));
-		NodeList list = doc.getElementsByTagName("coordinates"); //$NON-NLS-1$
-		for(int i=0; i<list.getLength(); i++){
-			Node item = list.item(i);
-			String str = item.getFirstChild().getNodeValue();
-			if(str == null){
-				continue;
-			}
-			int st = 0;
-			int next = 0;
-			while((next = str.indexOf('\n', st)) != -1){
-				String coordinate = str.substring(st, next + 1);
-				int s = coordinate.indexOf(',');
-				if (s != -1) {
-					try {
-						double lon = Double.parseDouble(coordinate.substring(0, s));
-						double lat = Double.parseDouble(coordinate.substring(s + 1));
-						Location l = new Location("router"); //$NON-NLS-1$
-						l.setLatitude(lat);
-						l.setLongitude(lon);
-						res.add(l);
-					} catch (NumberFormatException e) {
-					}
-				}
-				st = next + 1;
-			}
-		}
-		if(list.getLength() == 0){
-			if(doc.getChildNodes().getLength() == 1){
-				Node item = doc.getChildNodes().item(0);
-				return new RouteCalculationResult(item.getNodeValue());
-			}
-		}
-		params.intermediates = null;
-		return new RouteCalculationResult(res, null, params, null, true);
 	}
 
 	protected RouteCalculationResult findVectorMapsRoute(final RouteCalculationParams params, boolean calcGPXRoute) throws IOException {
@@ -913,7 +791,6 @@ public class RouteProvider {
 					}
 
 					directions.add(dirInfo);
-
 					previous = dirInfo;
 				} catch (NumberFormatException e) {
 					log.info("Exception", e); //$NON-NLS-1$
@@ -1062,152 +939,5 @@ public class RouteProvider {
 			gpx.addPoint(pt);
 		}
 	return gpx;
-	}
-
-	private void appendOSRMLoc(StringBuilder uri, LatLon il) {
-		uri.append(";").append(String.valueOf(il.getLongitude()));
-		uri.append(",").append(String.valueOf(il.getLatitude()));
-	}
-
-	protected RouteCalculationResult findOSRMRoute(RouteCalculationParams params)
-			throws MalformedURLException, IOException, JSONException {
-		// http://router.project-osrm.org/route/v1/driving/4.83,52.28;4.95,52.28
-		List<Location> res = new ArrayList<Location>();
-		StringBuilder uri = new StringBuilder();
-		// possibly hide that API key because it is privacy of osmand
-		// A6421860EBB04234AB5EF2D049F2CD8F key is compromised
-		uri.append("https://router.project-osrm.org/route/v1/driving/"); //$NON-NLS-1$
-		uri.append(String.valueOf(params.start.getLongitude()));
-		uri.append(",").append(String.valueOf(params.start.getLatitude()));
-		if(params.intermediates != null && params.intermediates.size() > 0) {
-			for(LatLon il : params.intermediates) {
-				appendOSRMLoc(uri, il);
-			}
-		}
-		appendOSRMLoc(uri, params.end);
-		log.info("URL route " + uri);
-
-		URLConnection connection = NetworkUtils.getHttpURLConnection(uri.toString());
-		connection.setRequestProperty("User-Agent", Version.getFullVersion(params.ctx));
-		StringBuilder content = new StringBuilder();
-		BufferedReader rs = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-		String s;
-		while((s = rs.readLine()) != null) {
-			content.append(s);
-		}
-		JSONObject obj = new JSONObject(content.toString());
-		try {
-			rs.close();
-		} catch(IOException e){
-		}
-		List<LatLon> route = GeoPolylineParserUtil.parse(obj.getJSONArray("routes").getJSONObject(0).getString("geometry"),
-				GeoPolylineParserUtil.PRECISION_5);
-		if (route.isEmpty()) {
-			return new RouteCalculationResult("Route is empty");
-		}
-		for (LatLon pt : route) {
-			WptPt wpt = new WptPt();
-			wpt.lat = pt.getLatitude();
-			wpt.lon = pt.getLongitude();
-			res.add(createLocation(wpt));
-		}
-		params.intermediates = null;
-		return new RouteCalculationResult(res, null, params, null, true);
-	}
-
-	protected RouteCalculationResult findBROUTERRoute(RouteCalculationParams params) throws MalformedURLException,
-			IOException, ParserConfigurationException, FactoryConfigurationError, SAXException {
-		int numpoints = 2 + (params.intermediates != null ? params.intermediates.size() : 0);
-		double[] lats = new double[numpoints];
-		double[] lons = new double[numpoints];
-		int index = 0;
-		String mode;
-		lats[index] = params.start.getLatitude();
-		lons[index] = params.start.getLongitude();
-		index++;
-		if(params.intermediates != null && params.intermediates.size() > 0) {
-			for(LatLon il : params.intermediates) {
-				lats[index] = il.getLatitude();
-				lons[index] = il.getLongitude();
-				index++;
-			}
-		}
-		lats[index] = params.end.getLatitude();
-		lons[index] = params.end.getLongitude();
-		if (ApplicationMode.PEDESTRIAN == params.mode) {
-			mode = "foot"; //$NON-NLS-1$
-		} else if (ApplicationMode.BICYCLE == params.mode) {
-			mode = "bicycle"; //$NON-NLS-1$
-		} else {
-			mode = "motorcar"; //$NON-NLS-1$
-		}
-		Bundle bpars = new Bundle();
-		bpars.putDoubleArray("lats", lats);
-		bpars.putDoubleArray("lons", lons);
-		bpars.putString("fast", params.fast ? "1" : "0");
-		bpars.putString("v", mode);
-		bpars.putString("trackFormat", "gpx");
-
-		OsmandApplication ctx = (OsmandApplication) params.ctx;
-		List<Location> res = new ArrayList<Location>();
-
-		IBRouterService brouterService = ctx.getBRouterService();
-		if (brouterService == null) {
-			return new RouteCalculationResult("BRouter service is not available");
-		}
-		try {
-			String gpxMessage = brouterService.getTrackFromParams(bpars);
-			if (gpxMessage == null)
-				gpxMessage = "no result from brouter";
-			if (!gpxMessage.startsWith("<")) {
-				return new RouteCalculationResult(gpxMessage);
-			}
-
-			GPXFile gpxFile = GPXUtilities.loadGPXFile(
-					ctx, new ByteArrayInputStream(gpxMessage.getBytes("UTF-8")));
-
-			for (Track track : gpxFile.tracks) {
-				for (TrkSegment ts : track.segments) {
-					for (WptPt p : ts.points) {
-						Location l = new Location("router"); //$NON-NLS-1$
-						l.setLatitude(p.lat);
-						l.setLongitude(p.lon);
-						if (p.ele != Double.NaN) {
-							l.setAltitude(p.ele);
-						}
-						res.add(l);
-					}
-				}
-			}
-		} catch (Exception e) {
-			return new RouteCalculationResult("Exception calling BRouter: " + e); //$NON-NLS-1$
-		}
-		return new RouteCalculationResult(res, null, params, null, true);
-	}
-
-	private RouteCalculationResult findStraightRoute(RouteCalculationParams params) {
-		double[] lats = new double[] { params.start.getLatitude(), params.end.getLatitude() };
-		double[] lons = new double[] { params.start.getLongitude(), params.end.getLongitude() };
-		List<LatLon> intermediates = params.intermediates;
-		List<Location> dots = new ArrayList<Location>();
-		//writing start location
-		Location location = new Location(String.valueOf("start"));
-		location.setLatitude(lats[0]);
-		location.setLongitude(lons[0]);
-		//adding intermediate dots if they exists
-		if (intermediates != null){
-			for(int i =0; i<intermediates.size();i++){
-				location = new Location(String.valueOf(i));
-				location.setLatitude(intermediates.get(i).getLatitude());
-				location.setLongitude(intermediates.get(i).getLongitude());
-				dots.add(location);
-			}
-		}
-		//writing end location
-		location = new Location(String.valueOf("end"));
-		location.setLatitude(lats[1]);
-		location.setLongitude(lons[1]);
-		dots.add(location);
-		return new RouteCalculationResult(dots, null, params, null, true);
 	}
 }

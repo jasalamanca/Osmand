@@ -60,8 +60,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import btools.routingapp.BRouterServiceConnection;
-
 import static net.osmand.plus.liveupdates.LiveUpdatesHelper.getPendingIntent;
 import static net.osmand.plus.liveupdates.LiveUpdatesHelper.preferenceLastCheck;
 import static net.osmand.plus.liveupdates.LiveUpdatesHelper.preferenceLiveUpdatesOn;
@@ -292,11 +290,6 @@ public class AppInitializer implements IProgress {
 			osmandSettings.APPLICATION_MODE.set(osmandSettings.DEFAULT_APPLICATION_MODE.get());
 		}
 		startTime = System.currentTimeMillis();
-		try {
-			app.bRouterServiceConnection = startupInit(BRouterServiceConnection.connect(app), BRouterServiceConnection.class);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		app.applyTheme(app);
 		app.poiTypes = startupInit(MapPoiTypes.getDefaultNoInit(), MapPoiTypes.class);
 		app.routingHelper = startupInit(new RoutingHelper(app), RoutingHelper.class);

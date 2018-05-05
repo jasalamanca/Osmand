@@ -70,8 +70,6 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import btools.routingapp.BRouterServiceConnection;
-import btools.routingapp.IBRouterService;
 
 public class OsmandApplication extends MultiDexApplication {
 	public static final String EXCEPTION_PATH = "exception.log"; //$NON-NLS-1$
@@ -112,7 +110,6 @@ public class OsmandApplication extends MultiDexApplication {
 	WaypointHelper waypointHelper;
 	DownloadIndexesThread downloadIndexesThread;
 	AvoidSpecificRoads avoidSpecificRoads;
-	BRouterServiceConnection bRouterServiceConnection;
 	OsmandRegions regions;
 	GeocodingLookupService geocodingLookupService;
 	QuickSearchHelper searchUICore;
@@ -131,12 +128,10 @@ public class OsmandApplication extends MultiDexApplication {
 	public void onCreate() {
 		long timeToStart = System.currentTimeMillis();
 		if (Version.isDeveloperVersion(this)) {
-			if (android.os.Build.VERSION.SDK_INT >= 9) {
-				try {
-					Class.forName("net.osmand.plus.base.EnableStrictMode").newInstance();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+			try {
+				Class.forName("net.osmand.plus.base.EnableStrictMode").newInstance();
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 		super.onCreate();
@@ -160,9 +155,6 @@ public class OsmandApplication extends MultiDexApplication {
 		
 		checkPreferredLocale();
 		appInitializer.onCreateApplication();
-//		if(!osmandSettings.FOLLOW_THE_ROUTE.get()) {
-//			targetPointsHelper.clearPointToNavigate(false);
-//		}
 
 		InAppHelper.initialize(this);
 		initRemoteConfig();
@@ -725,13 +717,6 @@ public class OsmandApplication extends MultiDexApplication {
 		c.setTheme(t);
 	}
 	
-	public IBRouterService getBRouterService() {
-		if(bRouterServiceConnection == null) {
-			return null;
-		}
-		return bRouterServiceConnection.getBrouterService();
-	}
-	
 	public void setLanguage(Context context) {
 		if (preferredLocale != null) {
 			Configuration config = context.getResources().getConfiguration();
@@ -817,7 +802,6 @@ public class OsmandApplication extends MultiDexApplication {
 		serviceIntent.putExtra(NavigationService.USAGE_INTENT, intent);
 		serviceIntent.putExtra(NavigationService.USAGE_OFF_INTERVAL, interval);
 		startService(serviceIntent);
-		//getNotificationHelper().showNotifications();
 	}
 
 

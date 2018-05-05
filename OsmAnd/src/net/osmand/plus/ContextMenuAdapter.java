@@ -66,10 +66,6 @@ public class ContextMenuAdapter {
 		return items.get(position);
 	}
 
-	public void removeItem(int position) {
-		items.remove(position);
-	}
-
 	public void setDefaultLayoutId(int defaultLayoutId) {
 		this.DEFAULT_LAYOUT_ID = defaultLayoutId;
 	}

@@ -112,7 +112,6 @@ public class RoutePreferencesMenu {
 	}
 
 	private static class LocalRoutingParameterGroup extends LocalRoutingParameter {
-
 		private String groupName;
 		private List<LocalRoutingParameter> routingParameters = new ArrayList<>();
 
@@ -161,43 +160,36 @@ public class RoutePreferencesMenu {
 	}
 
 	private static class MuteSoundRoutingParameter extends LocalRoutingParameter {
-
 		public MuteSoundRoutingParameter() {
 			super(null);
 		}
 	}
 
 	private static class InterruptMusicRoutingParameter extends LocalRoutingParameter {
-
 		public InterruptMusicRoutingParameter() {
 			super(null);
 		}
 	}
 
 	private static class VoiceGuidanceRoutingParameter extends LocalRoutingParameter {
-
 		public VoiceGuidanceRoutingParameter() {
 			super(null);
 		}
 	}
 
 	private static class AvoidRoadsRoutingParameter extends LocalRoutingParameter {
-
 		public AvoidRoadsRoutingParameter() {
 			super(null);
 		}
-		
 	}
 
 	private static class GpxLocalRoutingParameter extends LocalRoutingParameter {
-
 		public GpxLocalRoutingParameter() {
 			super(null);
 		}
 	}
 
 	private static class OtherSettingsRoutingParameter extends LocalRoutingParameter {
-
 		public OtherSettingsRoutingParameter() {
 			super(null);
 		}
@@ -444,7 +436,7 @@ public class RoutePreferencesMenu {
 	public ArrayAdapter<LocalRoutingParameter> getRoutePreferencesDrawerAdapter(final boolean nightMode) {
 
 		listAdapter = new ArrayAdapter<LocalRoutingParameter>(mapActivity, R.layout.layers_list_activity_item, R.id.title,
-				getRoutingParameters(routingHelper.getAppMode()/*settings.APPLICATION_MODE.get()*/)) {
+				getRoutingParameters(routingHelper.getAppMode())) {
 			@Override
 			public View getView(final int position, View convertView, ViewGroup parent) {
 				LocalRoutingParameter parameter = getItem(position);
@@ -700,15 +692,6 @@ public class RoutePreferencesMenu {
 	private List<LocalRoutingParameter> getRoutingParametersInner(ApplicationMode am) {
 		List<LocalRoutingParameter> list = new ArrayList<LocalRoutingParameter>();
 		RouteProvider.GPXRouteParamsBuilder rparams = mapActivity.getRoutingHelper().getCurrentGPXRoute();
-		boolean osmandRouter = settings.ROUTER_SERVICE.getModeValue(am) == RouteProvider.RouteService.OSMAND;
-		if (!osmandRouter) {
-			list.add(new OtherLocalRoutingParameter(R.string.calculate_osmand_route_without_internet,
-					getString(R.string.calculate_osmand_route_without_internet), settings.GPX_ROUTE_CALC_OSMAND_PARTS
-					.get()));
-			list.add(new OtherLocalRoutingParameter(R.string.fast_route_mode, getString(R.string.fast_route_mode),
-					settings.FAST_ROUTE_MODE.get()));
-			return list;
-		}
 		if (rparams != null) {
 			GPXUtilities.GPXFile fl = rparams.getFile();
 			if (fl.hasRtePt()) {
@@ -762,7 +745,6 @@ public class RoutePreferencesMenu {
 	}
 
 	private void updateParameters() {
-		//ApplicationMode am = settings.APPLICATION_MODE.get();
 		ApplicationMode am = routingHelper.getAppMode();
 		listAdapter.setNotifyOnChange(false);
 		listAdapter.clear();

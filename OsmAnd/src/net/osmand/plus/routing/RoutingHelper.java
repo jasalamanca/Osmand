@@ -37,16 +37,12 @@ public class RoutingHelper {
 	private static final org.apache.commons.logging.Log log = PlatformUtil.getLog(RoutingHelper.class);
 
 	public interface IRouteInformationListener {
-
 		void newRouteIsCalculated(boolean newRoute, ValueHolder<Boolean> showToast);
-
 		void routeWasCancelled();
-
 		void routeWasFinished();
 	}
 
 	private static final float POSITION_TOLERANCE = 60;
-
 
 	private List<WeakReference<IRouteInformationListener>> listeners = new LinkedList<WeakReference<IRouteInformationListener>>();
 
@@ -104,10 +100,6 @@ public class RoutingHelper {
 
 	public OsmandApplication getApplication() {
 		return app;
-	}
-
-	public String getLastRouteCalcError() {
-		return lastRouteCalcError;
 	}
 
 	public String getLastRouteCalcErrorShort() {
@@ -545,7 +537,6 @@ public class RoutingHelper {
 				// targets.clearPointToNavigate(false);
 				return true;
 			}
-
 		}
 		return false;
 	}
@@ -722,7 +713,6 @@ public class RoutingHelper {
 			formattedStreetName = formattedStreetName + towards + " " + destination;
 		}
 		return formattedStreetName.replace(";", ", ");
-
 	}
 
 	public synchronized String getCurrentName(TurnType[] next){
@@ -796,7 +786,6 @@ public class RoutingHelper {
 			params.calculationProgress.isCancelled = true;
 		}
 
-
 		@Override
 		public void run() {
 			synchronized (RoutingHelper.this) {
@@ -823,12 +812,6 @@ public class RoutingHelper {
 				}
 				return;
 			}
-			final boolean onlineSourceWithoutInternet = !res.isCalculated() && params.type.isOnline() && !settings.isInternetConnectionAvailable();
-			if (onlineSourceWithoutInternet && settings.GPX_ROUTE_CALC_OSMAND_PARTS.get()) {
-				if (params.previousToRecalculate != null && params.previousToRecalculate.isCalculated()) {
-					res = provider.recalculatePartOfflineRoute(res, params);
-				}
-			}
 			RouteCalculationResult prev = route;
 			synchronized (RoutingHelper.this) {
 				if (res.isCalculated()) {
@@ -848,11 +831,6 @@ public class RoutingHelper {
 				if (!params.inSnapToRoadMode) {
 					setNewRoute(prev, res, params.start);
 				}
-			} else if (onlineSourceWithoutInternet) {
-				lastRouteCalcError = app.getString(R.string.error_calculating_route)
-						+ ":\n" + app.getString(R.string.internet_connection_required_for_online_route);
-				lastRouteCalcErrorShort = app.getString(R.string.error_calculating_route);
-				showMessage(lastRouteCalcError); //$NON-NLS-1$
 			} else {
 				if (res.getErrorMessage() != null) {
 					lastRouteCalcError = app.getString(R.string.error_calculating_route) + ":\n" + res.getErrorMessage();
