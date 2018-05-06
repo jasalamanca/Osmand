@@ -36,6 +36,7 @@ import net.osmand.plus.render.NativeOsmandLibrary;
 import net.osmand.plus.resources.AsyncLoadingThread.MapLoadRequest;
 import net.osmand.plus.resources.AsyncLoadingThread.OnMapLoadedListener;
 import net.osmand.plus.views.OsmandMapLayer.DrawSettings;
+import net.osmand.render.RenderingRulesStorage;
 import net.osmand.util.Algorithms;
 import net.osmand.util.MapUtils;
 
@@ -550,7 +551,9 @@ public class ResourceManager {
 	public void initMapBoundariesCacheNative() {
 		File indCache = context.getAppPath(INDEXES_CACHE);
 		if (indCache.exists()) {
-			NativeOsmandLibrary nativeLib = NativeOsmandLibrary.getLoadedLibrary();
+			OsmandApplication app = ((OsmandApplication) context.getApplicationContext());
+			RenderingRulesStorage storage = app.getRendererRegistry().getCurrentSelectedRenderer();
+			NativeOsmandLibrary nativeLib = NativeOsmandLibrary.getLibrary(storage);
 			if (nativeLib != null) {
 				nativeLib.initCacheMapFile(indCache.getAbsolutePath());
 			}

@@ -6,11 +6,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AlertDialog;
-
 import net.osmand.IProgress;
 import net.osmand.IndexConstants;
 import net.osmand.PlatformUtil;
@@ -24,7 +20,6 @@ import net.osmand.plus.activities.DayNightHelper;
 import net.osmand.plus.activities.LocalIndexHelper;
 import net.osmand.plus.activities.LocalIndexInfo;
 import net.osmand.plus.activities.SavingTrackHelper;
-import net.osmand.plus.download.DownloadActivity;
 import net.osmand.plus.download.ui.AbstractLoadLocalIndexTask;
 import net.osmand.plus.helpers.AvoidSpecificRoads;
 import net.osmand.plus.helpers.WaypointHelper;
@@ -33,7 +28,6 @@ import net.osmand.plus.mapmarkers.MapMarkersDbHelper;
 import net.osmand.plus.monitoring.LiveMonitoringHelper;
 import net.osmand.plus.monitoring.OsmandMonitoringPlugin;
 import net.osmand.plus.poi.PoiFiltersHelper;
-import net.osmand.plus.render.MapRenderRepositories;
 import net.osmand.plus.render.NativeOsmandLibrary;
 import net.osmand.plus.render.RendererRegistry;
 import net.osmand.plus.resources.ResourceManager;
@@ -570,7 +564,7 @@ public class AppInitializer implements IProgress {
 			}
 			startTask(app.getString(R.string.init_native_library), -1);
 			RenderingRulesStorage storage = app.getRendererRegistry().getCurrentSelectedRenderer();
-			NativeOsmandLibrary lib = NativeOsmandLibrary.getLibrary(storage, app);
+			NativeOsmandLibrary lib = NativeOsmandLibrary.getLibrary(storage);
 			File ls = app.getAppPath("fonts");
 			lib.loadFontData(ls);
 			app.getResourceManager().initMapBoundariesCacheNative();

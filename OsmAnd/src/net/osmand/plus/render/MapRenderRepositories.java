@@ -152,7 +152,9 @@ public class MapRenderRepositories {
 		BinaryMapIndexReader bmir = cpfiles.remove(file);
 		files = cpfiles;
 		if (nativeFiles.contains(file)) {
-			NativeOsmandLibrary lib = NativeOsmandLibrary.getLoadedLibrary();
+            OsmandApplication app = ((OsmandApplication) context.getApplicationContext());
+			RenderingRulesStorage storage = app.getRendererRegistry().getCurrentSelectedRenderer();
+			NativeOsmandLibrary lib = NativeOsmandLibrary.getLibrary(storage);
 			if (lib != null) {
 				lib.closeMapFile(bmir != null ? bmir.getFile().getAbsolutePath() : file);
 				nativeFiles.remove(file);
@@ -630,7 +632,7 @@ public class MapRenderRepositories {
 				}
 			}
 			renderingReq.saveState();
-			NativeOsmandLibrary nativeLib = NativeOsmandLibrary.getLibrary(storage, context);
+			NativeOsmandLibrary nativeLib = NativeOsmandLibrary.getLibrary(storage);
 
 			// calculate data box
 			QuadRect dataBox = requestedBox.getLatLonBounds();

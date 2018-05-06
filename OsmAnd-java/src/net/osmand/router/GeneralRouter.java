@@ -26,11 +26,6 @@ public class GeneralRouter implements VehicleRouter {
 	private static final float CAR_SHORTEST_DEFAULT_SPEED = 55/3.6f;
 	public static final String USE_SHORTEST_WAY = "short_way";
 	public static final String USE_HEIGHT_OBSTACLES = "height_obstacles";
-	public static final String AVOID_FERRIES = "avoid_ferries";
-	public static final String AVOID_TOLL = "avoid_toll";
-	public static final String AVOID_MOTORWAY = "avoid_motorway";
-	public static final String AVOID_UNPAVED = "avoid_unpaved";
-	public static final String PREFER_MOTORWAYS = "prefer_motorway";
 	public static final String ALLOW_PRIVATE = "allow_private";
 
 	private final RouteAttributeContext[] objectAttributes;
@@ -58,8 +53,7 @@ public class GeneralRouter implements VehicleRouter {
 	
 	private TLongHashSet impassableRoads;
 	private GeneralRouterProfile profile;
-	
-	
+
 	public enum RouteDataObjectAttribute {
 		ROAD_SPEED("speed"),
 		ROAD_PRIORITIES("priority"),
@@ -91,7 +85,6 @@ public class GeneralRouter implements VehicleRouter {
 		BOAT
 	}
 
-	
 	public enum RoutingParameterType {
 		NUMERIC,
 		BOOLEAN,

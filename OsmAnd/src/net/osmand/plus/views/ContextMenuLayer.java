@@ -51,7 +51,6 @@ import java.util.Map.Entry;
 import gnu.trove.list.array.TIntArrayList;
 
 public class ContextMenuLayer extends OsmandMapLayer {
-	//private static final Log LOG = PlatformUtil.getLog(ContextMenuLayer.class);
 	public static final int VIBRATE_SHORT = 100;
 
 	private OsmandMapTileView view;

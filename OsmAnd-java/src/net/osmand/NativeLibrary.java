@@ -34,8 +34,6 @@ import net.osmand.util.Algorithms;
 import org.apache.commons.logging.Log;
 
 public class NativeLibrary {
-
-
     public NativeLibrary() {
     }
 
@@ -48,7 +46,6 @@ public class NativeLibrary {
 	}
 
 	public static class NativeSearchResult {
-
 		public long nativeHandler;
 
 		private NativeSearchResult(long nativeHandler) {
@@ -70,7 +67,6 @@ public class NativeLibrary {
 	}
 
 	public static class NativeRouteSearchResult {
-
 		public long nativeHandler;
 		public RouteDataObject[] objects;
 		public RouteSubregion region;
@@ -357,9 +353,9 @@ public class NativeLibrary {
 			return iconRes;
 		}
 		
-//		public void setIconRes(String iconRes) {
-//			this.iconRes = iconRes;
-//		}
+		public void setIconRes(String iconRes) {
+			this.iconRes = iconRes;
+		}
 		
 		public void setVisible(boolean visible) {
 			this.visible = visible;
@@ -373,21 +369,20 @@ public class NativeLibrary {
 			return y;
 		}
 		
-//		public void setBbox(int left, int top, int right, int bottom) {
-//			bbox = new QuadRect(left, top, right, bottom);
-//		}
+		public void setBbox(int left, int top, int right, int bottom) {
+			bbox = new QuadRect(left, top, right, bottom);
+		}
 		
 		public QuadRect getBbox() {
 			return bbox;
 		}
 		
-//		public void setNativeId(long id) {
-//			setId(id);
-//		}
-//
-//		public void putTag(String t, String v) {
-//			tags.put(t, v);
-//		}
-			
+		public void setNativeId(long id) {
+			setId(id);
+		}
+
+		public void putTag(String t, String v) {
+			tags.put(t, v);
+		}
 	}
 }

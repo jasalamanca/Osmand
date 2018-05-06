@@ -130,10 +130,10 @@ public class CurrentPositionHelper {
 			}
 			RoutingConfiguration cfg = app.getDefaultRoutingConfig().build(p, 10,
 					new HashMap<String, String>());
-			ctx = new RoutePlannerFrontEnd(false).buildRoutingContext(cfg, null, rs);
+			ctx = new RoutePlannerFrontEnd().buildRoutingContext(cfg, null, rs);
 			RoutingConfiguration defCfg = app.getDefaultRoutingConfig().build("geocoding", 10,
 					new HashMap<String, String>());
-			defCtx = new RoutePlannerFrontEnd(false).buildRoutingContext(defCfg, null, rs);
+			defCtx = new RoutePlannerFrontEnd().buildRoutingContext(defCfg, null, rs);
 		} else {
 			ctx = null;
 			defCtx = null;
@@ -266,9 +266,6 @@ public class CurrentPositionHelper {
 			return;
 		}
 		Collections.sort(complete, GeocodingUtilities.DISTANCE_COMPARATOR);
-//		for(GeocodingResult rt : complete) {
-//			System.out.println(rt.toString());
-//		}
 		final GeocodingResult rts = complete.size() > 0 ? complete.get(0) : new GeocodingResult();
 		app.runInUIThread(new Runnable() {
 			public void run() {
@@ -295,10 +292,4 @@ public class CurrentPositionHelper {
 		}
 		return d;
 	}
-	
-
-	
-	
-
-	
 }

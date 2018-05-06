@@ -1,6 +1,11 @@
 package net.osmand.router;
 
-import gnu.trove.map.hash.TLongObjectHashMap;
+import net.osmand.PlatformUtil;
+import net.osmand.binary.RouteDataObject;
+import net.osmand.osm.MapRenderingTypes;
+import net.osmand.util.MapUtils;
+
+import org.apache.commons.logging.Log;
 
 import java.io.IOException;
 import java.text.MessageFormat;
@@ -9,15 +14,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-import net.osmand.PlatformUtil;
-import net.osmand.binary.RouteDataObject;
-import net.osmand.osm.MapRenderingTypes;
-import net.osmand.util.MapUtils;
-
-import org.apache.commons.logging.Log;
+import gnu.trove.map.hash.TLongObjectHashMap;
 
 public class BinaryRoutePlanner {
-
 	private static final int TEST_ID = 77031244;
 	private static final boolean TEST_SPECIFIC = false;
 
@@ -30,12 +29,9 @@ public class BinaryRoutePlanner {
 	private static final int ROUTE_POINTS = 11;
 	private static final boolean TRACE_ROUTING = false;
 
-
 	public static double squareRootDist(int x1, int y1, int x2, int y2) {
 		return MapUtils.squareRootDist31(x1, y1, x2, y2);
-//		return MapUtils.measuredDist31(x1, y1, x2, y2);
 	}
-
 
 	private static class SegmentsComparator implements Comparator<RouteSegment> {
 		final RoutingContext ctx;
@@ -73,7 +69,6 @@ public class BinaryRoutePlanner {
 		ctx.memoryOverhead = 1000;
 		ctx.timeToCalculate = System.nanoTime();
 
-
 		// Initializing priority queue to visit way segments 
 		Comparator<RouteSegment> nonHeuristicSegmentsComparator = new NonHeuristicSegmentsComparator();
 		PriorityQueue<RouteSegment> graphDirectSegments = new PriorityQueue<RouteSegment>(50, new SegmentsComparator(ctx));
@@ -104,8 +99,6 @@ public class BinaryRoutePlanner {
 			if (TRACE_ROUTING) {
 				printRoad(">", segment, !forwardSearch);
 			}
-//			if(segment.getParentRoute() != null)
-//			System.out.println(segment.getRoad().getId() + " - " + segment.getParentRoute().getRoad().getId());
 			if (segment instanceof FinalRouteSegment) {
 				if (RoutingContext.SHOW_GC_SIZE) {
 					log.warn("Estimated overhead " + (ctx.memoryOverhead / (1 << 20)) + " mb");
@@ -141,11 +134,6 @@ public class BinaryRoutePlanner {
 					"Route is not found from selected start point.");
 			if (ctx.planRouteIn2Directions()) {
 				forwardSearch = (nonHeuristicSegmentsComparator.compare(graphDirectSegments.peek(), graphReverseSegments.peek()) < 0);
-//				if (graphDirectSegments.size() * 2 > graphReverseSegments.size()) {
-//					forwardSearch = false;
-//				} else if (graphDirectSegments.size() < 2 * graphReverseSegments.size()) {
-//					forwardSearch = true;
-//				}
 			} else {
 				// different strategy : use onedirectional graph
 				forwardSearch = onlyForward;
@@ -214,7 +202,6 @@ public class BinaryRoutePlanner {
 	public RouteSegment initRouteSegment(final RoutingContext ctx, RouteSegment segment, boolean positiveDirection) {
 		if (segment.getSegmentStart() == 0 && !positiveDirection && segment.getRoad().getPointsLength() > 0) {
 			segment = loadSameSegment(ctx, segment, 1);
-//		} else if (segment.getSegmentStart() == segment.getRoad().getPointsLength() - 1 && positiveDirection && segment.getSegmentStart() > 0) {
 		// assymetric cause we calculate initial point differently (segmentStart means that point is between ]segmentStart-1, segmentStart]
 		} else if (segment.getSegmentStart() > 0 && positiveDirection) {
 			segment = loadSameSegment(ctx, segment, segment.getSegmentStart() - 1);
@@ -224,7 +211,6 @@ public class BinaryRoutePlanner {
 		}
 		return segment.initRouteSegment(positiveDirection);
 	}
-
 
 	protected RouteSegment loadSameSegment(final RoutingContext ctx, RouteSegment segment, int ind) {
 		int x31 = segment.getRoad().getPoint31XTile(ind);
@@ -239,7 +225,6 @@ public class BinaryRoutePlanner {
 		}
 		return segment;
 	}
-
 
 	private void initQueuesWithStartEnd(final RoutingContext ctx, RouteSegment start, RouteSegment end,
 			RouteSegment recalculationEnd, PriorityQueue<RouteSegment> graphDirectSegments, PriorityQueue<RouteSegment> graphReverseSegments, 
@@ -296,13 +281,11 @@ public class BinaryRoutePlanner {
 		}
 	}
 
-
 	private void printMemoryConsumption(String string) {
 		long h1 = RoutingContext.runGCUsedMemory();
 		float mb = (1 << 20);
 		log.warn(string + h1 / mb);
 	}
-
 
 	private void updateCalculationProgress(final RoutingContext ctx, PriorityQueue<RouteSegment> graphDirectSegments,
 			PriorityQueue<RouteSegment> graphReverseSegments) {
@@ -323,7 +306,6 @@ public class BinaryRoutePlanner {
 			}
 		}
 	}
-
 
 	private void printRoad(String prefix, RouteSegment segment, Boolean reverseWaySearch) {
 		String pr;
@@ -360,7 +342,6 @@ public class BinaryRoutePlanner {
 
 
 	private static void println(String logMsg) {
-//		log.info(logMsg);
 		System.out.println(logMsg);
 	}
 
@@ -387,7 +368,6 @@ public class BinaryRoutePlanner {
 		}
 
 	}
-
 
 	@SuppressWarnings("unused")
 	private void processRouteSegment(final RoutingContext ctx, boolean reverseWaySearch,
@@ -462,15 +442,6 @@ public class BinaryRoutePlanner {
 			}
 			// correct way of handling precalculatedRouteDirection 
 			if (ctx.precalculatedRouteDirection != null) {
-//				long nt = System.nanoTime();
-//				float devDistance = ctx.precalculatedRouteDirection.getDeviationDistance(x, y);
-//				// 1. linear method
-//				 segmentDist = segmentDist * (1 + devDistance / ctx.config.DEVIATION_RADIUS);
-//				// 2. exponential method
-//				segmentDist = segmentDist * (float) Math.pow(1.5, devDistance / 500);
-				// 3. next by method
-//				segmentDist = devDistance ;
-//				ctx.timeNanoToCalcDeviation += (System.nanoTime() - nt);
 			}
 			// could be expensive calculation
 			// 3. get intersected ways
@@ -478,7 +449,6 @@ public class BinaryRoutePlanner {
 			float distStartObstacles = segment.distanceFromStart + calculateTimeWithObstacles(ctx, road, segmentDist, obstaclesTime);
 			if (ctx.precalculatedRouteDirection != null && ctx.precalculatedRouteDirection.isFollowNext()) {
 				// reset to f
-//				distStartObstacles = 0;
 				// more precise but slower
 				distStartObstacles = ctx.precalculatedRouteDirection.getDeviationDistance(x, y) / ctx.getRouter().getMaxDefaultSpeed();
 			}
@@ -610,7 +580,6 @@ public class BinaryRoutePlanner {
 				direction ? segm.getSegmentStart() : segm.getSegmentStart() - 1, direction);
 	}
 
-
 	private boolean proccessRestrictions(RoutingContext ctx, RouteSegment segment, RouteSegment inputNext, boolean reverseWay) {
 		if (!ctx.getRouter().restrictionsAware()) {
 			return false;
@@ -629,7 +598,6 @@ public class BinaryRoutePlanner {
 		}
 		return true;
 	}
-
 
 	protected void processRestriction(RoutingContext ctx, RouteSegment inputNext, boolean reverseWay, boolean via,
 			RouteDataObject road) {
@@ -705,7 +673,6 @@ public class BinaryRoutePlanner {
 		}
 	}
 
-
 	private RouteSegment processIntersections(RoutingContext ctx, PriorityQueue<RouteSegment> graphSegments,
 			TLongObjectHashMap<RouteSegment> visitedSegments,  float distFromStart, RouteSegment segment,
 			short segmentPoint, RouteSegment inputNext, boolean reverseWaySearch, boolean doNotAddIntersections, 
@@ -775,7 +742,6 @@ public class BinaryRoutePlanner {
 		return itself;
 	}
 
-
 	@SuppressWarnings("unused")
 	private void processOneRoadIntersection(RoutingContext ctx, PriorityQueue<RouteSegment> graphSegments,
 			TLongObjectHashMap<RouteSegment> visitedSegments, float distFromStart, float distanceToEnd,  RouteSegment segment,
@@ -816,28 +782,18 @@ public class BinaryRoutePlanner {
 						System.err.println("! Alert distance from start " + distFromStart + " < "
 								+ next.distanceFromStart + " id=" + next.road.id);
 					}
-					// A: we can't change parent route just here, because we need to update visitedSegments
-					// presumably we can do visitedSegments.put(calculateRoutePointId(next), next);
-//					next.distanceFromStart = distFromStart;
-//					next.setParentRoute(segment);
-//					next.setParentSegmentEnd(segmentPoint);
-					if (ctx.visitor != null) {
-						// ctx.visitor.visitSegment(next, false);
-					}
 				}
 			}
 		}
 	}
 	
-
-	/*public */static int roadPriorityComparator(double o1DistanceFromStart, double o1DistanceToEnd, 
+	/*public */static int roadPriorityComparator(double o1DistanceFromStart, double o1DistanceToEnd,
 			double o2DistanceFromStart, double o2DistanceToEnd, double heuristicCoefficient ) {
 		// f(x) = g(x) + h(x)  --- g(x) - distanceFromStart, h(x) - distanceToEnd (not exact)
 		return Double.compare(o1DistanceFromStart + heuristicCoefficient * o1DistanceToEnd, 
 				o2DistanceFromStart + heuristicCoefficient *  o2DistanceToEnd);
 	}
 
-	
 	public interface RouteSegmentVisitor {
 		
 		public void visitSegment(RouteSegment segment, int segmentEnd, boolean poll);
@@ -919,10 +875,6 @@ public class BinaryRoutePlanner {
 			this.parentRoute = parentRoute;
 		}
 
-		public void assignDirection(byte b) {
-			directionAssgn = b;
-		}
-
 		public void setParentSegmentEnd(int parentSegmentEnd) {
 			this.parentSegmentEnd = (short) parentSegmentEnd;
 		}
@@ -955,7 +907,6 @@ public class BinaryRoutePlanner {
 			return MessageFormat.format("s{0,number,#.##} e{1,number,#.##}", ((float) distanceFromStart), ((float) distanceToEnd));
 		}
 
-
 		public Iterator<RouteSegment> getIterator() {
 			return new Iterator<BinaryRoutePlanner.RouteSegment>() {
 				RouteSegment next = RouteSegment.this;
@@ -983,14 +934,11 @@ public class BinaryRoutePlanner {
 	}
 
 	static class FinalRouteSegment extends RouteSegment {
-
 		boolean reverseWaySearch;
 		RouteSegment opposite;
 
 		public FinalRouteSegment(RouteDataObject road, int segmentStart) {
 			super(road, segmentStart);
 		}
-
 	}
-
 }

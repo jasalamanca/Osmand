@@ -1,15 +1,14 @@
 package net.osmand.plus.render;
 
+import android.graphics.Bitmap;
+
 import net.osmand.NativeLibrary;
 import net.osmand.PlatformUtil;
-import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.render.OsmandRenderer.RenderingContext;
 import net.osmand.render.RenderingRuleSearchRequest;
 import net.osmand.render.RenderingRulesStorage;
 
 import org.apache.commons.logging.Log;
-
-import android.graphics.Bitmap;
 
 public class NativeOsmandLibrary extends NativeLibrary {
 	private static final Log log = PlatformUtil.getLog(NativeOsmandLibrary.class);
@@ -17,7 +16,7 @@ public class NativeOsmandLibrary extends NativeLibrary {
 	private static NativeOsmandLibrary library;
 	private static Boolean isNativeSupported = null;
 
-    public NativeOsmandLibrary() {
+    private NativeOsmandLibrary() {
         super();
     }
 
@@ -27,7 +26,7 @@ public class NativeOsmandLibrary extends NativeLibrary {
 		}
 	}
 
-    public static NativeOsmandLibrary getLibrary(RenderingRulesStorage storage, OsmandApplication ctx) {
+    public static NativeOsmandLibrary getLibrary(RenderingRulesStorage storage) {
 		if (!isLoaded()) {
 			synchronized (NativeOsmandLibrary.class) {
 				if (!isLoaded()) {
@@ -47,7 +46,6 @@ public class NativeOsmandLibrary extends NativeLibrary {
 					}
 				}
 			}
-			
 		}
 		return library;
 	}
@@ -61,17 +59,6 @@ public class NativeOsmandLibrary extends NativeLibrary {
 		return isNativeSupported != null;  
 	}
 	
-	public static boolean isNativeSupported(RenderingRulesStorage storage, OsmandApplication ctx) {
-		if(storage != null) {
-			getLibrary(storage, ctx);
-		}
-		return isSupported();
-	}
-	
-	public boolean useDirectRendering(){
-		return android.os.Build.VERSION.SDK_INT >= 8;
-	}
-
 	public RenderingGenerationResult generateRendering(RenderingContext rc, NativeSearchResult searchResultHandler,
 			Bitmap bitmap, boolean isTransparent, RenderingRuleSearchRequest render) {
 		if (searchResultHandler == null) {
@@ -79,15 +66,9 @@ public class NativeOsmandLibrary extends NativeLibrary {
 			return new RenderingGenerationResult(null);
 		}
 		
-		// Android 2.2+
-		if(android.os.Build.VERSION.SDK_INT >= 8) { 
-			return generateRenderingDirect(rc, searchResultHandler.nativeHandler, bitmap, render);
-		} else {
-			return generateRenderingIndirect(rc, searchResultHandler.nativeHandler, isTransparent, render, false);
-		}
+        return generateRenderingDirect(rc, searchResultHandler.nativeHandler, bitmap, render);
 	}
 
-	
 	private static native RenderingGenerationResult generateRenderingDirect(RenderingContext rc, long searchResultHandler,
 			Bitmap bitmap, RenderingRuleSearchRequest render);
 }

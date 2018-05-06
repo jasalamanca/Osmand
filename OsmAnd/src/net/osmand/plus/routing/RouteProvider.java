@@ -22,6 +22,7 @@ import net.osmand.plus.TargetPointsHelper;
 import net.osmand.plus.TargetPointsHelper.TargetPoint;
 import net.osmand.plus.activities.SettingsNavigationActivity;
 import net.osmand.plus.render.NativeOsmandLibrary;
+import net.osmand.render.RenderingRulesStorage;
 import net.osmand.router.GeneralRouter;
 import net.osmand.router.GeneralRouter.GeneralRouterProfile;
 import net.osmand.router.GeneralRouter.RoutingParameter;
@@ -444,7 +445,7 @@ public class RouteProvider {
 
 	protected RouteCalculationResult findVectorMapsRoute(final RouteCalculationParams params, boolean calcGPXRoute) throws IOException {
 		BinaryMapIndexReader[] files = params.ctx.getResourceManager().getRoutingMapFiles();
-		RoutePlannerFrontEnd router = new RoutePlannerFrontEnd(false);
+		RoutePlannerFrontEnd router = new RoutePlannerFrontEnd();
 		OsmandSettings settings = params.ctx.getSettings();
 		router.setUseFastRecalculation(settings.USE_FAST_RECALCULATION.get());
 		
@@ -469,7 +470,7 @@ public class RouteProvider {
 			precalculated.setFollowNext(true);
 		}
 		// BUILD context
-		NativeOsmandLibrary lib = NativeOsmandLibrary.getLoadedLibrary();
+        NativeOsmandLibrary lib = NativeOsmandLibrary.getLoadedLibrary();
 		// check loaded files
 		int leftX = MapUtils.get31TileNumberX(params.start.getLongitude());
 		int rightX = leftX;

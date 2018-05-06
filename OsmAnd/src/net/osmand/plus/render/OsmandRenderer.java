@@ -116,7 +116,7 @@ public class OsmandRenderer {
 			rc.cosRotateTileSize = (float) (Math.cos(Math.toRadians(rc.rotate)) * TILE_SIZE);
 			rc.sinRotateTileSize = (float) (Math.sin(Math.toRadians(rc.rotate)) * TILE_SIZE);
 			try {
-				if(Looper.getMainLooper() != null && library.useDirectRendering()) {
+				if(Looper.getMainLooper() != null) {
 					final Handler h = new Handler(Looper.getMainLooper());
 				}
 				

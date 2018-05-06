@@ -1,6 +1,5 @@
 package net.osmand.router;
 
-
 import net.osmand.NativeLibrary;
 import net.osmand.PlatformUtil;
 import net.osmand.binary.BinaryMapIndexReader;
@@ -24,14 +23,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 public class RoutePlannerFrontEnd {
-
-	private boolean useOldVersion;
 	protected static final Log log = PlatformUtil.getLog(RoutePlannerFrontEnd.class);
 	public boolean useSmartRouteRecalculation = true;
 
-	public RoutePlannerFrontEnd(boolean useOldVersion) {
-		this.useOldVersion = useOldVersion;
-	}
+	public RoutePlannerFrontEnd(){};
 
 	public enum RouteCalculationMode {
 		BASE,
@@ -46,7 +41,6 @@ public class RoutePlannerFrontEnd {
 	public RoutingContext buildRoutingContext(RoutingConfiguration config, NativeLibrary nativeLibrary, BinaryMapIndexReader[] map) {
 		return new RoutingContext(config, nativeLibrary, map, RouteCalculationMode.NORMAL);
 	}
-
 
 	private static double squareDist(int x1, int y1, int x2, int y2) {
 		// translate into meters 
@@ -100,7 +94,6 @@ public class RoutePlannerFrontEnd {
 		return null;
 	}
 
-
 	public List<RouteSegmentResult> searchRoute(final RoutingContext ctx, LatLon start, LatLon end, List<LatLon> intermediates) throws IOException, InterruptedException {
 		return searchRoute(ctx, start, end, intermediates, null);
 	}
@@ -108,7 +101,6 @@ public class RoutePlannerFrontEnd {
 	public void setUseFastRecalculation(boolean use) {
 		useSmartRouteRecalculation = use;
 	}
-
 
 	private boolean needRequestPrivateAccessRouting(RoutingContext ctx, List<LatLon> points) throws IOException {
 		boolean res = false;
@@ -308,9 +300,7 @@ public class RoutePlannerFrontEnd {
 			} else {
 				r.insert(pind, (int) i.x, (int) i.y);
 			}
-
 		}
-
 	}
 
 	private boolean addSegment(LatLon s, RoutingContext ctx, int indexNotFound, List<RouteSegmentPoint> res) throws IOException {
@@ -337,19 +327,7 @@ public class RoutePlannerFrontEnd {
 		if (routeDirection != null) {
 			ctx.precalculatedRouteDirection = routeDirection.adopt(ctx);
 		}
-		if (ctx.nativeLib != null) {
-			return runNativeRouting(ctx, recalculationEnd);
-		} else {
-			refreshProgressDistance(ctx);
-			// Split into 2 methods to let GC work in between
-			if (useOldVersion) {
-				new BinaryRoutePlannerOld().searchRouteInternal(ctx, start, end);
-			} else {
-				ctx.finalRouteSegment = new BinaryRoutePlanner().searchRouteInternal(ctx, start, end, recalculationEnd);
-			}
-			// 4. Route is found : collect all segments and prepare result
-			return new RouteResultPreparation().prepareResult(ctx, ctx.finalRouteSegment);
-		}
+        return runNativeRouting(ctx, recalculationEnd);
 	}
 
 	public RouteSegment getRecalculationEnd(final RoutingContext ctx) {
@@ -385,7 +363,6 @@ public class RoutePlannerFrontEnd {
 		return recalculationEnd;
 	}
 
-
 	private void refreshProgressDistance(RoutingContext ctx) {
 		if (ctx.calculationProgress != null) {
 			ctx.calculationProgress.distanceFromBegin = 0;
@@ -396,7 +373,6 @@ public class RoutePlannerFrontEnd {
 			float speed = 0.9f * ctx.config.router.getMaxDefaultSpeed();
 			ctx.calculationProgress.totalEstimatedDistance = (float) (rd / speed);
 		}
-
 	}
 
 	private List<RouteSegmentResult> runNativeRouting(final RoutingContext ctx, RouteSegment recalculationEnd) throws IOException {
@@ -424,7 +400,6 @@ public class RoutePlannerFrontEnd {
 		ctx.loadedTiles = ctx.calculationProgress.loadedTiles;
 		return new RouteResultPreparation().prepareResult(ctx, result);
 	}
-
 
 	private List<RouteSegmentResult> searchRoute(final RoutingContext ctx, List<RouteSegmentPoint> points, PrecalculatedRouteDirection routeDirection)
 			throws IOException, InterruptedException {
@@ -494,7 +469,6 @@ public class RoutePlannerFrontEnd {
 		}
 		ctx.unloadAllData();
 		return results;
-
 	}
 
 	@SuppressWarnings("static-access")
@@ -519,6 +493,4 @@ public class RoutePlannerFrontEnd {
 		}
 		return result;
 	}
-
-
 }

@@ -1,8 +1,8 @@
 package net.osmand.binary;
 
+import net.osmand.CollatorStringMatcher.StringMatcherMode;
 import net.osmand.PlatformUtil;
 import net.osmand.ResultMatcher;
-import net.osmand.CollatorStringMatcher.StringMatcherMode;
 import net.osmand.binary.BinaryMapIndexReader.SearchRequest;
 import net.osmand.data.Building;
 import net.osmand.data.Building.BuildingInterpolation;
@@ -22,14 +22,12 @@ import org.apache.commons.logging.Log;
 import java.io.IOException;
 import java.text.Collator;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import java.util.TreeSet;
 
 import gnu.trove.set.hash.TLongHashSet;
 
@@ -138,7 +136,7 @@ public class GeocodingUtilities {
 
 
 	public List<GeocodingResult> reverseGeocodingSearch(RoutingContext ctx, double lat, double lon, boolean allowEmptyNames) throws IOException {
-		RoutePlannerFrontEnd rp = new RoutePlannerFrontEnd(false);
+		RoutePlannerFrontEnd rp = new RoutePlannerFrontEnd();
 		List<GeocodingResult> lst = new ArrayList<GeocodingUtilities.GeocodingResult>();
 		List<RouteSegmentPoint> listR = new ArrayList<BinaryRoutePlanner.RouteSegmentPoint>();
 		rp.findRouteSegment(lat, lon, ctx, listR);
