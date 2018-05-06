@@ -131,11 +131,9 @@ public class NativeLibrary {
 	public RouteSegmentResult[] runNativeRouting(int sx31, int sy31, int ex31, int ey31, RoutingConfiguration config,
 			RouteRegion[] regions, RouteCalculationProgress progress, PrecalculatedRouteDirection precalculatedRouteDirection, 
 			boolean basemap) {
-//		config.router.printRules(System.out);
 		return nativeRouting(new int[] { sx31, sy31, ex31, ey31 }, config, config.initialDirection == null ? -360 : config.initialDirection.floatValue(),
 				regions, progress, precalculatedRouteDirection, basemap);
 	}
-
 
 	public NativeRouteSearchResult loadRouteRegion(RouteSubregion sub, boolean loadObjects) {
 		NativeRouteSearchResult lr = loadRoutingData(sub.routeReg, sub.routeReg.getName(), sub.routeReg.getFilePointer(), sub, loadObjects);
@@ -187,45 +185,8 @@ public class NativeLibrary {
 		return searchRenderedObjects(context, x, y, notvisible);
 	}
 
-	/**/
-	// Empty native impl
-	/*
-	 * protected static NativeRouteSearchResult loadRoutingData(RouteRegion reg, String regName, int regfp,RouteSubregion subreg, boolean
-	 * loadObjects) { return null;}
-	 * 
-	 * protected static void deleteRouteSearchResult(long searchResultHandle) {}
-	 * 
-	 * protected static RouteDataObject[] getRouteDataObjects(RouteRegion reg, long rs, int x31, int y31){return null;}
-	 * 
-	 * protected static RouteSegmentResult[] nativeRouting(int[] coordinates, int[] state, String[] keyConfig, String[] valueConfig, float
-	 * initDirection, RouteRegion[] regions, RouteCalculationProgress progress) {return null;}
-	 * 
-	 * protected static void deleteSearchResult(long searchResultHandle) {}
-	 * 
-	 * protected static boolean initBinaryMapFile(String filePath) {return false;}
-	 * 
-	 * protected static boolean initCacheMapFiles(String filePath) {return false;}
-	 * 
-	 * protected static boolean closeBinaryMapFile(String filePath) {return false;}
-	 * 
-	 * protected static void initRenderingRulesStorage(RenderingRulesStorage storage) {}
-	 * 
-	 * 
-	 * protected static RenderingGenerationResult generateRenderingIndirect(RenderingContext rc, long searchResultHandler, boolean
-	 * isTransparent, RenderingRuleSearchRequest render, boolean encodePng) { return null; }
-	 * 
-	 * protected static long searchNativeObjectsForRendering(int sleft, int sright, int stop, int sbottom, int zoom,
-	 * RenderingRuleSearchRequest request, boolean skipDuplicates, int renderRouteDataFile, Object objectWithInterruptedField, String
-	 * msgIfNothingFound) { return 0; }
-	 * 
-	 * public static void testRoutingPing() {}
-	 * 
-	 * public static int testNativeRouting(String obfPath, double sLat, double sLon, double eLat, double eLon) {return 0;} /*
-	 */
-
 	private static final Log log = PlatformUtil.getLog(NativeLibrary.class);
-	
-	
+
 	public static boolean loadNewLib(String path) {
 		return load("OsmAndJNI", path);
 	}
@@ -309,7 +270,6 @@ public class NativeLibrary {
 		ArrayList<File> lst = new ArrayList<File>(Arrays.asList(lf));
 		Collections.sort(lst, new Comparator<File>() {
 			
-
 			@Override
 			public int compare(File arg0, File arg1) {
 				return ccmp(order(arg0), order(arg1));
@@ -348,11 +308,8 @@ public class NativeLibrary {
 				e.printStackTrace();
 			}
 		}
-		
 	}
 	
-
-
 	public static class RenderedObject extends MapObject {
 		private Map<String, String> tags = new LinkedHashMap<>();
 		private QuadRect bbox = new QuadRect(); 
@@ -400,9 +357,9 @@ public class NativeLibrary {
 			return iconRes;
 		}
 		
-		public void setIconRes(String iconRes) {
-			this.iconRes = iconRes;
-		}
+//		public void setIconRes(String iconRes) {
+//			this.iconRes = iconRes;
+//		}
 		
 		public void setVisible(boolean visible) {
 			this.visible = visible;
@@ -416,22 +373,21 @@ public class NativeLibrary {
 			return y;
 		}
 		
-		public void setBbox(int left, int top, int right, int bottom) {
-			bbox = new QuadRect(left, top, right, bottom);
-		}
+//		public void setBbox(int left, int top, int right, int bottom) {
+//			bbox = new QuadRect(left, top, right, bottom);
+//		}
 		
 		public QuadRect getBbox() {
 			return bbox;
 		}
 		
-		public void setNativeId(long id) {
-			setId(id);
-		}
-		
-		public void putTag(String t, String v) {
-			tags.put(t, v);
-		}
+//		public void setNativeId(long id) {
+//			setId(id);
+//		}
+//
+//		public void putTag(String t, String v) {
+//			tags.put(t, v);
+//		}
 			
 	}
-
 }

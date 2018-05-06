@@ -28,8 +28,6 @@ import java.util.List;
 import java.util.Set;
 
 public class SettingsDevelopmentActivity extends SettingsBaseActivity {
-
-
 	@SuppressLint("SimpleDateFormat")
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,10 +49,6 @@ public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 
 		final CheckBoxPreference openGlRender = createCheckBoxPreference(settings.USE_OPENGL_RENDER, R.string.use_opengl_render,R.string.use_opengl_render_descr);
 		cat.addPreference(openGlRender);
-
-		cat.addPreference(createCheckBoxPreference(settings.USE_OSM_LIVE_FOR_ROUTING,
-				R.string.use_osm_live_routing,
-				R.string.use_osm_live_routing_description));
 
 		cat.addPreference(createCheckBoxPreference(settings.ANIMATE_MY_LOCATION,
 				R.string.animate_my_location,
@@ -87,11 +81,6 @@ public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 		cat.addPreference(createCheckBoxPreference(settings.SHOW_LEGACY_SEARCH,
 				R.string.show_legacy_search, R.string.show_legacy_search_desc));
 
-		// FIXME delete USE_MAP_MARKERS
-//		cat.addPreference(createCheckBoxPreference(settings.USE_MAP_MARKERS,
-//				R.string.map_markers,
-//				R.string.show_map_markers_description));
-
 		Preference pref = new Preference(this);
 		final Preference simulate = pref;
 		final OsmAndLocationSimulation sim = getMyApplication().getLocationProvider().getLocationSimulation();
@@ -115,8 +104,6 @@ public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 			}
 		});
 		cat.addPreference(pref);
-		
-
 
 		pref = new Preference(this);
 		pref.setTitle(R.string.test_voice_prompts);
@@ -156,14 +143,8 @@ public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 		long dalvikSize = android.os.Debug.getNativeHeapAllocatedSize() / (1024*1024l);
 		pref.setSummary(getString(R.string.global_app_allocated_memory_descr, javaAvailMem, javaTotal, dalvikSize));
 		pref.setSelectable(false);
-		//setEnabled(false) creates bad readability on some devices
-		//pref.setEnabled(false);
 		info.addPreference(pref);
 
-//		ActivityManager activityManager = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
-//		ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
-//		activityManager.getMemoryInfo(memoryInfo);
-//		long totalSize = memoryInfo.availMem / (1024*1024l);
 		MemoryInfo mem = new Debug.MemoryInfo();
 		Debug.getMemoryInfo(mem);
 		pref = new Preference(this);
@@ -172,8 +153,6 @@ public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 				, mem.nativePrivateDirty / 1024, mem.dalvikPrivateDirty / 1024 , mem.otherPrivateDirty / 1024
 				, mem.nativePss / 1024, mem.dalvikPss / 1024 , mem.otherPss / 1024));
 		pref.setSelectable(false);
-		//setEnabled(false) creates bad readability on some devices
-		//pref.setEnabled(false);
 		info.addPreference(pref);
 
 		final Preference agpspref = new Preference(this);
@@ -185,8 +164,6 @@ public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 			agpspref.setSummary(getString(R.string.agps_data_last_downloaded, "--"));
 		}
 		agpspref.setSelectable(true);
-		//setEnabled(false) creates bad readability on some devices
-		//pref.setEnabled(false);
 		agpspref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			@Override
 			public boolean onPreferenceClick(Preference preference) {
@@ -211,8 +188,6 @@ public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 			pref.setSummary(getString(R.string.day_night_info_description, "null", "null"));
 		}
 		pref.setSelectable(false);
-		//setEnabled(false) creates bad readability on some devices
-		//pref.setEnabled(false);
 		info.addPreference(pref);
 	}
 
@@ -241,7 +216,4 @@ public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 		b.setView(v);
 		b.show();
 	}
-
-
-
 }

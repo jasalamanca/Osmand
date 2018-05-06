@@ -62,7 +62,6 @@
     <string name="accessibility_preferences_descr">Konfigurace usnadnění pro uživatele s omezením zraku.</string>
     <string name="shared_string_accessibility">Usnadnění</string>
     <string name="use_fluorescent_overlays">Fluorescentní barvy</string>
-    <string name="use_fluorescent_overlays_descr">Použít fluorescentní barvy pro zobrazení cest a tras.</string>
     <string name="offline_edition">Off-line editace</string>
     <string name="offline_edition_descr">Vždy používat off-line editaci.</string>
     <string name="update_poi_does_not_change_indexes">Změny POI bodů v aplikaci nemají vliv na zobrazení stažených map, změny se ukládají do lokálního souboru.</string>
@@ -255,7 +254,6 @@
     <string name="map_text_size_descr">Zvolte velikost písma ve jménech na mapě.</string>
     <string name="map_text_size">Velikost písma</string>
     <string name="installing_new_resources">Rozbalování nových dat…</string>
-    <string name="internet_connection_required_for_online_route">On-line navigaci nelze použít, protože připojení k Internetu není k dispozici.</string>
     <string name="tts_language_not_supported_title">Jazyk není podporován</string>
     <string name="tts_language_not_supported">Vybraný jazyk není podporován nainstalovaným TTS enginem. Chcete zkusit nainstalovat jiný z Marketu? Jinak bude použit výchozí jazyk.</string>
     <string name="tts_missing_language_data_title">Chybějící data</string>
@@ -408,8 +406,6 @@
     <string name="background_service_int">Interval zaměřování GPS</string>
     <string name="background_service_provider_descr">Vyberte poskytovatele polohy pro službu na pozadí.</string>
     <string name="background_service_provider">Poskytovatel polohy</string>
-    <string name="background_router_service_descr">Spustí OsmAnd na pozadí, aby bylo možno zaznamenávat pozici i při vypnuté obrazovce.</string>
-    <string name="background_router_service">Sledování polohy na pozadí</string>
     <string name="off_router_service_no_gps_available">Služba pro navigaci na pozadí vyžaduje zapnutý zdroj polohy.</string>
     <string name="hide_poi_filter">Skrýt filtr</string>
     <string name="show_poi_filter">Zobrazit filtr</string>
@@ -743,7 +739,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="layer_map_appearance">Nastavení obrazovky</string>
     <string name="int_continuosly">Souvisle</string>
     <string name="gps_wakeup_interval">Interval zaměřování GPS: %s</string>
-    <string name="map_widget_fluorescent">Svítivé barvy trasy</string>
     <string name="map_widget_view_direction">Zorné pole</string>
     <string name="day_night_info_description">Východ slunce: %1$s
 \nZápad slunce: %2$s</string>
@@ -778,12 +773,10 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="target_point">Cíl %1$s</string>
     <string name="target_points">Cíle</string>
     <string name="map_widget_monitoring_services">Sledování polohy</string>
-    <string name="no_route">Žádná cesta</string>
     <string name="delete_target_point">Smazat cíl</string>
     <string name="intermediate_point">Mezicíl %1$s</string>
     <string name="map_widget_show_destination_arrow">Zobrazit směr do cíle</string>
     <string name="enable_plugin_monitoring_services">Zapněte modul „služba na pozadí“ pro záznam trasy a přímý přenos souřadnic (zaznamenávání GPX, on-line sledování)</string>
-    <string name="non_optimal_route_calculation">Při dlouhých vzdálenostech zrychlit výpočet, i kdyby to nemuselo najít nejvhodnější trasu</string>
     <string name="gps_not_available">Prosím zapněte GPS přijímač v nastavení</string>
     <string name="rendering_attr_roadColors_description">Vyberte barevné schéma:</string>
     <string name="rendering_attr_roadColors_name">Barevné schéma</string>
@@ -817,8 +810,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="shared_string_control_stop">Zastavit</string>
     <string name="stop_routing_confirm">Opravdu chcete zastavit navigaci?</string>
     <string name="clear_dest_confirm">Opravdu chcete smazat svůj cíl (a mezicíle)?</string>
-    <string name="precise_routing_mode_descr">Umožní výpočet přesné cesty pro navigaci. Omezené vzdáleností a pomalé.</string>
-    <string name="precise_routing_mode">Přesná navigace (alfa)</string>
     <string name="support_new_features_descr">Prosím sponzorujte vývoj nových funkcí v aplikaci.</string>
     <string name="prefer_motorways">Upřednostňovat dálnice</string>
     <string name="prefer_in_routing_title">Upřednostňovat…</string>
@@ -876,7 +867,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="distance_measurement_finish_subtrack">Začít novou podtrasu</string>
     <string name="distance_measurement_clear_route">Vymazat všechny body</string>
     <string name="distance_measurement_load_gpx">Otevřít soubor GPX</string>
-    <string name="osmand_distance_planning_plugin_description">Tento modul poskytuje nástroj na vytvoření trasy klikáním na mapu nebo úpravu stávajících GPX souborů pro plánování výletů a měření vzdálenosti mezi body. Výsledek je možné uložit jako GPX a použito později jako pomůcku.</string>
     <string name="destination_point">Cíl %1$s</string>
     <string name="context_menu_item_destination_point">Nastavit jako cíl</string>
     <string name="please_select_address">Zvolte nejprve město nebo ulici</string>
@@ -1311,7 +1301,6 @@ Délka %2$s</string>
     <string name="tips_and_tricks_descr">Často pokládané dotazy, nedávné změny a další.</string>
     <string name="days_behind">dnů novější</string>
     <string name="shared_string_release">Vydáno</string>
-    <string name="delay_to_start_navigation_descr">Zadejte dobu setrvání na obrazovce plánování trasy.</string>
     <string name="delay_to_start_navigation">Spustit navigaci krok za krokem za…</string>
     <string name="shared_string_go">Start</string>
     <string name="action_create">Vytvořit akci</string>
@@ -1973,7 +1962,6 @@ Zobrazená oblast: %1$s x %2$s</string>
     <string name="quick_action_interim_dialog">Zobrazit dočasné okno</string>
     <string name="quick_action_page_list_descr">Aktivace tlačítka akce posune seznam na další stranu.</string>
     <string name="navigate_point_olc">Open Location Code (OLC)</string>
-    <string name="route_altitude">Stoupání trasy</string>
     <string name="altitude_descent">Klesání</string>
     <string name="altitude_ascent">Stoupání</string>
     <string name="altitude_range">Výškový rozdíl</string>
@@ -2106,7 +2094,6 @@ Zobrazená oblast: %1$s x %2$s</string>
     <string name="live_monitoring_max_interval_to_send">Časový zásobník pro online sledování</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Zadejte čas pro podržení pozic k odeslání, pokud není připojení</string>
     <string name="retry">Zkusit znovu</string>
-    <string name="add_route_point">Přidat bod trasy</string>
     <string name="add_waypoint">Přidat trasový bod</string>
     <string name="save_gpx_waypoint">Uložit trasový bod GPX</string>
     <string name="save_route_point">Uložit bod trasy</string>
@@ -2136,7 +2123,6 @@ Zobrazená oblast: %1$s x %2$s</string>
     <string name="move_point">Přesunout bod</string>
     <string name="add_segment_to_the_track">Přidat do GPX trasy</string>
 <string name="move_all_to_history">Přesunout vše do historie</string>
-    <string name="build_route">Vytvořit trasu</string>
     <string name="show_direction">Indikace vzdálenosti</string>
     <string name="sort_by">Seřadit podle</string>
     <string name="marker_options">Možnosti značek</string>
@@ -2160,7 +2146,6 @@ Zobrazená oblast: %1$s x %2$s</string>
     <string name="widget">Nástroj</string>
     <string name="top_bar">Horní lišta</string>
     <string name="use_location">Použít umístění</string>
-    <string name="add_location_as_first_point_descr">Přidat svou polohu jako první bod do plánu ideální trasy.</string>
     <string name="my_location">Moje poloha</string>
     <string name="shared_string_finish">Dokončit</string>
     <string name="plan_route">Naplánovat trasu</string>

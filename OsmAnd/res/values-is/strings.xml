@@ -1071,7 +1071,6 @@ Ferill %2$s</string>
     <string name="no_buildings_found">Engar byggingar fundust.</string>
     <string name="rendering_attr_showRoadMaps_name">Kort einungis með vegum</string>
     <string name="safe_mode">Öryggishamur</string>
-    <string name="no_route">Engin leið</string>
     <string name="delete_target_point">Fjarlægja áfangastað</string>
     <string name="target_point">Áfangastaður %1$s</string>
     <string name="replace_destination_point">Skipta út áfangastaðnum</string>
@@ -1149,7 +1148,6 @@ Sólsetur: %2$s</string>
     <string name="app_mode_truck">Flutningabifreið</string>
     <string name="map_magnifier">Stækkun korts</string>
     <string name="map_widget_show_destination_arrow">Sýna stefnu á ákvörðunarstað</string>
-    <string name="map_widget_fluorescent">Flúrlýstar leiðir</string>
     <string name="context_menu_item_add_parking_point">Merkja sem bílastæði</string>
     <string name="route_roundabout">Hringtorg: Beygðu útaf við %1$d afrein og haltu áfram</string>
     <string name="route_kl">Vertu til vinstri og haltu áfram</string>
@@ -1165,8 +1163,6 @@ Sólsetur: %2$s</string>
     <string name="local_index_transport_data">Gögn um almenningssamgöngur</string>
     <string name="map_text_size">Stærð leturs á korti</string>
     <string name="layer_poi">Yfirlag merkisstaða…</string>
-    <string name="background_router_service_descr">Keyrir OsmAnd í bakgrunni þannig að rakin er staðsetning þín á meðan slökkt er á skjánum.</string>
-    <string name="background_router_service">Keyra OsmAnd í bakgrunni</string>
     <string name="route_tr">Beygðu til hægri og haltu áfram</string>
     <string name="route_tshr">Beygðu skarpt til hægri og haltu áfram</string>
     <string name="route_tslr">Beygðu örlítið til hægri og haltu áfram</string>
@@ -1590,8 +1586,6 @@ Punktar</string>
     <string name="rendering_attr_hideWaterPolygons_description">Vatn</string>
     <string name="speech_rate_descr">Tilgreindu talhraða fyrir TTS.</string>
     <string name="stop_routing_confirm">Ertu viss um að þú viljir stöðva leiðsögnina?</string>
-    <string name="precise_routing_mode_descr">Virkja þetta til að reikna nákvæmar leiðir án hnökra. Er ennþá takmarkað út frá vegalengdum og fremur hægvirkt.</string>
-    <string name="precise_routing_mode">Nákvæmt leiðaval (alfa-tilraunaútgáfa)</string>
     <string name="local_openstreetmap_were_uploaded">{0} merkisstaðir/minnispunktar voru sendir inn</string>
     <string name="local_openstreetmap_settings">Merkisstaðir/minnispunktar sem vistaðir eru á tæki</string>
     <string name="local_openstreetmap_settings_descr">Birta og sýsla með merkisstaði/minnispunkta sem skráðir eru í staðværum gagnagrunni.</string>
@@ -1748,7 +1742,6 @@ Punktar</string>
     <string name="file_can_not_be_moved">Ekki er hægt að færa skrá.</string>
     <string name="shared_string_move">Færa</string>
     <string name="shared_string_tracks">Ferlar</string>
-    <string name="route_altitude">Hæð leiðar</string>
     <string name="altitude_descent">Lækkun</string>
     <string name="altitude_ascent">Hækkun</string>
     <string name="altitude_range">Hæðarsvið</string>
@@ -1780,7 +1773,6 @@ Punktar</string>
     <string name="animate_routing_gpx">Herma með því að nota GPX-feril</string>
     <string name="zoom_by_trackball_descr">Breyta aðdrætti á kort með láréttum hreyfingum bendilkúlu.</string>
     <string name="zoom_by_trackball">Nota bendilkúlu til að stýra aðdrætti</string>
-    <string name="use_fluorescent_overlays_descr">Nota flúrliti til að birta ferla og leiðir.</string>
     <string name="gpx_option_from_start_point">Fara eftir öllum ferlinum</string>
     <string name="routing_attr_avoid_shuttle_train_name">Forðast tengilest</string>
     <string name="routing_attr_avoid_shuttle_train_description">Forðast tengilest</string>
@@ -1847,7 +1839,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="update_poi_file_not_found">Staðvær skrá til að halda utan um breytingar á merkisstöðum fannst ekki og var ekki hægt að útbúa hana.</string>
     <string name="show_more_map_detail_descr">Sýna fleiri smáatriði á vektorkorti (vegi o.þ.h.) við minni aðdrátt.</string>
     <string name="favorite_delete_multiple">Þú ert að fara að eyða %1$d eftirlæti/eftirlætum og %2$d eftirlætahóp/um. Ertu viss?</string>
-    <string name="internet_connection_required_for_online_route">Nettengd leiðsagnarþjónusta er valin, en engin nettenging er tiltæk.</string>
     <string name="tts_language_not_supported">Valið tungumál er ekki stutt af Android TTS (text-to-speech) talherminum. Viltu athuga með annan TTS-talhermi á markaðnum? Annars verður forstillt TTS-tungumál notað.</string>
     <string name="tts_missing_language_data">Engin gögn eru uppsett fyrir valið tungumál. Viltu fara á markaðinn og setja það upp?</string>
     <string name="switch_to_vector_map_to_see">Ónettengt vektorkort til fyrir þessa staðsetningu. 
@@ -2031,7 +2022,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="routing_attr_avoid_ice_roads_fords_name">Forðast hála vegi, vöð</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Forðast hála vegi og vöð.</string>
     <string name="use_location">Nota staðsetningu</string>
-    <string name="add_location_as_first_point_descr">Nota staðsetningu þína sem fyrsta punkt til að skipuleggja óaðfinnanlega leið.</string>
     <string name="my_location">Staðsetning mín</string>
     <string name="shared_string_finish">Ljúka</string>
     <string name="plan_route">Skipuleggja leið</string>
@@ -2178,8 +2168,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="welcome_select_region">Til að rétt sé farið með umferðarmerki og umferðarreglur, skaltu velja svæðið þar sem þú ert að aka:</string>
     <string name="welcome_text">OsmAnd gefur kost á ónettengdum kortum og ónettengdri leiðsögn um víða veröld!</string>
     <string name="osm_changes_added_to_local_edits">OSM-breytingum var bætt í staðvært breytingasett</string>
-    <string name="delay_to_start_navigation_descr">Tilgreindu biðtímann sem leiðavalsskjárinn á að haldast opinn.</string>
-    <string name="osmand_distance_planning_plugin_description">Þessi viðbót kemur með viðmótsshluta á kortaskjáinn sem gerir kleift að útbúa ferla með því aeinu að banka á kortið, eða nota eða breyta fyrirliggjandi GPX-skrám, í þeim tilgangi að skipuleggja ferðir og mæla vegalengdir milli tveggja punkta. Niðurstöðurnar má vista sem GPX-skrá sem hægt er að nota síðar við leiðsögn.</string>
     <string name="osmand_accessibility_description">Þessi viðbót gerir aðgengiseiginleika tækisins nothæfa beint í OsmAnd. Það auðveldar t.d. aðlögun á talhraða TTS-radda talgervils, uppsetningu á stefnuvirkri skjáleiðsögn, notkun á músarkúlu fyrir stýringu á aðdrætti, eða svörun með texta-í-tal eins og þegar tilkynnt er upphátt um staðsetningar.</string>
     <string name="osm_editing_plugin_description">Í gegnum þessa viðbót er hægt að nota OsmAnd beint til að bæta inn í OSM-kortagrunninn, eins og til dæmis að búa til eða breyta merkisstöðum í OSM (POI objects), opna eða gera athugasemdir í OSM Notes, og að setja inn skráðar GPX-skrár. OSM er samfélagsdrifinn allsherjar kortagerðargrunnur sem skoða má nánar á https://openstreetmap.org. Virk þáttaka er vel þegin, og með þessari viðbót er því hægt að vinna beint úr OsmAnd með því að setja OSM-persónuauðkennin þín upp í forritinu.</string>
     <string name="osmand_development_plugin_description">Þessi viðbót birtir stillingar fyrir þróun og aflúsun, eins og fyrir prófanir eða leiðahermingu, upplýsingar um afköst skjásins, eða raddskilaboð. Þessar stillingar eru ætlaðar fyrir forritara en eru ekki nauðsynlegar fyrir almenna notendur.</string>
@@ -2187,7 +2175,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
 \n * Ýta og halda á kortið til að eyða fyrri punkti.
 \n * Ýta og halda á punkt til að skoða og bæta við lýsingu.
 \n * Bankaðu á mælingamerkið til að sjá fleiri aðgerðir.</string>
-    <string name="non_optimal_route_calculation">Reikna leiðir yfir langar fjarlægðir sem hugsanlega eru ekki þær bestu</string>
     <string name="empty_state_osm_edits_descr">Búðu til eða breyttu merkisstöðum í OSM (POI), opnaðu eða gerðu athugasemdir í OSM og sendu inn skráða ferla í GPX-skrám.</string>
     <string name="one_tap_active_descr">Bankaðu á merki á kortinu til að færa það efst í virk kortamerki án þess að opna samhengisvalmyndina.</string>
     <string name="add_track_to_markers_descr">Veldu feril úr hverjum ferilpunktum verður bætt í kortamerkin. (Einungis ferlar með ferilpunktum eru taldir upp.)</string>

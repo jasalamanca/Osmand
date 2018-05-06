@@ -115,7 +115,6 @@
     <string name="routing_attr_avoid_ice_roads_fords_name">Avoid ice roads, fords</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Avoid ice roads and fords.</string>
     <string name="use_location">Use position</string>
-    <string name="add_location_as_first_point_descr">Add your position as first point to plan perfect route.</string>
     <string name="my_location">My position</string>
     <string name="shared_string_finish">Finish</string>
     <string name="plan_route">Plan route</string>
@@ -273,7 +272,6 @@
     <string name="file_can_not_be_moved">File can not be moved.</string>
     <string name="shared_string_move">Move</string>
     <string name="shared_string_tracks">Tracks</string>
-    <string name="route_altitude">Route elevation</string>
     <string name="altitude_descent">Descent</string>
     <string name="altitude_ascent">Ascent</string>
     <string name="altitude_range">Altitude range</string>
@@ -758,7 +756,6 @@
     <string name="mark_to_delete">Mark to delete</string>
     <string name="local_osm_changes_upload_all_confirm">You are going to upload %1$d change(s) to OSM. Are you sure?</string>
     <string name="confirmation_to_clear_history">Do you want to clear the history?</string>
-    <string name="delay_to_start_navigation_descr">Specify wait time to remain on the route planning screen.</string>
     <string name="delay_to_start_navigation">Start turn-by-turn navigation after…</string>
     <string name="shared_string_go">Go</string>
     <string name="action_create">Action create</string>
@@ -856,7 +853,6 @@
 		\n\nRecorded tracks can be shared with your friends or be used for OSM contributions. Athletes can use recorded tracks to monitor their trainings. Some basic track analysis can be performed directly in OsmAnd, like lap times, average speed etc., and tracks can of course also later be analyzed in special 3rd party analysis tools.
 	</string>
     <string name="plugin_touringview_name">Touring map view</string>
-    <string name="osmand_distance_planning_plugin_description">This plugin provides a map screen widget allowing to create paths by tapping on the map, or use or modify existing GPX files, to plan a trip and measure the distance between points. The results can be saved as a GPX file, which can later be used for guidance.</string>
     <string name="shared_string_accessibility">Accessibility</string>
     <string name="osmand_accessibility_description">This plugin makes the device\'s accessibility features available directly in OsmAnd. It facilitates e.g. adjusting the speech rate for TTS voices, configuring directional-pad screen navigation, using a trackball for zoom control, or using text-to-speech feedback, like for auto announcing your position.</string>
     <string name="osm_settings">OSM editing</string>
@@ -1308,8 +1304,6 @@
     <string name="download_wikipedia_maps">Wikipedia</string>
     <string name="stop_routing_confirm">Are you sure you want to stop the navigation?</string>
     <string name="clear_dest_confirm">Are you sure you want to clear your destination (and intermediate destinations)?</string>
-    <string name="precise_routing_mode_descr">Enable to calculate precise routes without glitches. Still distance-limited and slow.</string>
-    <string name="precise_routing_mode">Precise routing (alpha)</string>
     <string name="dropbox_plugin_name">Dropbox plugin</string>
     <string name="intermediate_points_change_order">Change order</string>
     <string name="recording_delete_confirm">Do you want to delete this recording?</string>
@@ -1341,10 +1335,8 @@
     <string name="rendering_attr_roadColors_name">Road color scheme</string>
     <string name="map_widget_show_destination_arrow">Show destination direction</string>
     <string name="enable_plugin_monitoring_services">Enable the Trip recording plugin to use position logging services (GPX logging, online tracking)</string>
-    <string name="non_optimal_route_calculation">Calculate possibly non-optimal route over long distances</string>
     <string name="gps_not_available">Please enable GPS in the settings</string>
     <string name="map_widget_monitoring_services">Logging services</string>
-    <string name="no_route">No route</string>
     <string name="delete_target_point">Remove destination</string>
     <string name="target_point">Destination %1$s</string>
     <string name="intermediate_point">Intermediate destination %1$s</string>
@@ -1395,7 +1387,6 @@
     <string name="avoid_ferries">Avoid ferries</string>
     <string name="avoid_in_routing_title">Avoid…</string>
     <string name="avoid_in_routing_descr">Avoid toll roads, unpaved, ferries.</string>
-    <string name="map_widget_fluorescent">Fluorescent routes</string>
     <string name="map_widget_show_ruler">Ruler</string>
     <string name="map_widget_view_direction">Viewing direction</string>
     <string name="map_widget_transparent">Transparent widgets</string>
@@ -1542,7 +1533,6 @@
     <string name="arrival_distance_descr">How soon do you want the arrival announcement?</string>
     <string name="rendering_out_of_memory">Not enough process memory to display selected area</string>
     <string name="use_fluorescent_overlays">Fluorescent overlays</string>
-    <string name="use_fluorescent_overlays_descr">Use fluorescent colors to display tracks and routes.</string>
     <string name="offline_edition">Offline editing</string>
     <string name="offline_edition_descr">Always use offline editing.</string>
     <string name="update_poi_does_not_change_indexes">POI changes inside application do not affect downloaded map files, changes are saved to local file instead.</string>
@@ -1687,7 +1677,6 @@
     <string name="trace_rendering">Rendering debug info</string>
     <string name="trace_rendering_descr">Display the rendering performance.</string>
     <string name="installing_new_resources">Unpacking new data…</string>
-    <string name="internet_connection_required_for_online_route">An online navigation service is selected but no Internet connection is available.</string>
     <string name="tts_language_not_supported_title">Language not supported</string>
     <string name="tts_language_not_supported">The selected language is not supported by the installed Android TTS (text-to-speech) engine. Do you want to look for another TTS engine in Market? Otherwise the preset TTS language will be used.</string>
     <string name="tts_missing_language_data_title">Missing data</string>
@@ -1863,8 +1852,6 @@
     <string name="background_service_int_descr">Set wake-up interval used by the background service.</string>
     <string name="background_service_provider_descr">Select the location provider used by the background service.</string>
     <string name="background_service_provider">Location provider</string>
-    <string name="background_router_service_descr">Runs OsmAnd in the background to track your position while screen is off.</string>
-    <string name="background_router_service">Run OsmAnd in background</string>
     <string name="off_router_service_no_gps_available">The background navigation service requires a location provider to be turned on.</string>
     <string name="hide_poi_filter">Hide filter</string>
     <string name="show_poi_filter">Show filter</string>

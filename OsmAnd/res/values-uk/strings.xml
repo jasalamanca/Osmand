@@ -116,8 +116,7 @@
   <string name="shared_string_accessibility">Спеціальні можливості</string>
   <string name="rendering_out_of_memory">Недостатньо пам’яті для процесу показу мапи для виділеної ділянки</string>
   <string name="use_fluorescent_overlays">Флуоресцентні кольори</string>
-  <string name="use_fluorescent_overlays_descr">Використовувати флуоресцентні кольори для відображення треків.</string>
-  <string name="offline_edition">Оффлайн редагування</string>
+    <string name="offline_edition">Оффлайн редагування</string>
   <string name="offline_edition_descr">Завжди використовувати оффлайн редагування.</string>
   <string name="update_poi_does_not_change_indexes">Змінення POI в застосунку не впливають на POI завантажені з інтернету, всі зміни записуються в локальний файл.</string>
   <string name="local_openstreetmap_uploading">Вивантаження …</string>
@@ -297,8 +296,7 @@
   
   
   <string name="installing_new_resources">Розпаковуються нові дані…</string>
-  <string name="internet_connection_required_for_online_route">Обраний навігаційний онлайн-сервіс, але немає з’єднання з Інтернетом.</string>
-  <string name="tts_language_not_supported_title">Мова не підтримується</string>
+    <string name="tts_language_not_supported_title">Мова не підтримується</string>
   <string name="tts_language_not_supported">Вибрана мова не підтримується встановленим рушієм Android TTS (перетворення тексту в мову). Ви бажаєте пошукати інший рушій TTS? Якщо ні, буде використовуватись інша встановлена мова рушія TTS.</string>
   <string name="tts_missing_language_data_title">Дані відсутні</string>
   <string name="tts_missing_language_data">Для даної мови відсутні дані TTS. Завантажити дані з Маркету?</string>
@@ -515,9 +513,7 @@
   <string name="background_service_int">Інтервал вмикання GPS</string>
   <string name="background_service_provider_descr">Виберіть джерело позиціювання для фонового сервісу.</string>
   <string name="background_service_provider">Джерело позиціювання</string>
-  <string name="background_router_service_descr">Запускає OsmAnd у фоновому режимі для відслідковування місцерозташування при вимкненому екрані.</string>
-  <string name="background_router_service">Запустити OsmAnd у фоні</string>
-  <string name="off_router_service_no_gps_available">Фоновому сервісу навігації необхідно, аби постачальник позиціювання був активним.</string>
+    <string name="off_router_service_no_gps_available">Фоновому сервісу навігації необхідно, аби постачальник позиціювання був активним.</string>
   <string name="hide_poi_filter">Сховати фільтр</string>
   <string name="show_poi_filter">Показати фільтр</string>
   <string name="search_poi_filter">Фільтр</string>
@@ -849,8 +845,6 @@
     
     <string name="intermediate_points_change_order">Змінити порядок</string>
 
-    <string name="precise_routing_mode_descr">Ввімкніть, для обчислення точних маршрутів без збоїв. Цей режим працює на обмеженій відстані та є повільним.</string>
-    <string name="precise_routing_mode">Точний маршрут (alpha)</string>
     <string name="shared_string_control_stop">Стоп</string>
     <string name="shared_string_control_start">Старт</string>
 
@@ -892,8 +886,7 @@
     <string name="map_widget_show_destination_arrow">Відображати напрямок до пункту призначення</string>
     <string name="gps_not_available">Ввімкнути GPS в налаштуваннях</string>
     <string name="map_widget_monitoring_services">Служби моніторингу</string>
-	<string name="no_route">Відмінити</string>
-	<string name="delete_target_point">Вилучити точку призначення</string>
+    <string name="delete_target_point">Вилучити точку призначення</string>
 	<string name="target_point">Пункт призначення %1$s</string>
     <string name="intermediate_point">Проміжний пункт %1$s</string>
     <string name="context_menu_item_last_intermediate_point">Додати як останню проміжну точку</string>
@@ -916,10 +909,9 @@
     <string name="poi_filter_sightseeing">Огляд визначних пам’яток</string>
     <string name="show_warnings_title">Показувати попередження…</string>
 	<string name="poi_filter_emergency">Аварійні служби</string>
-    
-    
-    <string name="non_optimal_route_calculation">Швидка побудова маршруту (можливо неоптимальна)</string>
-	<string name="show_warnings_descr">Налаштувати попередження дорожнього руху (обмеження швидкості, вимушені зупинки, лежачі поліцейські), попередження про камери контролю швидкості та інформацію про рух по смугах.</string>
+
+
+    <string name="show_warnings_descr">Налаштувати попередження дорожнього руху (обмеження швидкості, вимушені зупинки, лежачі поліцейські), попередження про камери контролю швидкості та інформацію про рух по смугах.</string>
 	<string name="avoid_motorway">Уникати автомагістралей</string>
 	<string name="snap_to_road_descr">Прив\'язуватися до доріг під час навігації.</string>
 	<string name="snap_to_road">Прив’язуватися до доріг</string>
@@ -941,8 +933,7 @@
 	<string name="avoid_ferries">Уникати поромів</string>
 	<string name="avoid_in_routing_title">Уникати…</string>
 	<string name="avoid_in_routing_descr">Уникати платних і доріг без покриття, поромів.</string>
-	<string name="map_widget_fluorescent">Флуоресцентні маршрути</string>
-	<string name="map_widget_show_ruler">Лінійка</string>
+    <string name="map_widget_show_ruler">Лінійка</string>
 	
 	<string name="map_widget_transparent">Прозорі віджети</string>
 	
@@ -1004,7 +995,6 @@
     <string name="intermediate_items_sort_by_distance">Впорядкувати за відстанню</string>
     <string name="local_osm_changes_backup_successful">Файл змін OSM успішно створений в %1$s</string>
     <string name="please_select_address">Виберіть місто або вулицю</string>
-    <string name="osmand_distance_planning_plugin_description">Цей втулок активує віджет для створення маршрутів натисканням на мапі (чи використати наявний GPX-файл) для підрахунку відстані між точками. Результат може бути збережений як GPX для подальшого використання.</string>
     <string name="distance_measurement_finish_subtrack">Виміряти нову ділянку</string>
 
 
@@ -1507,7 +1497,6 @@
 	<string name="shared_string_release">Дата випуску</string>
 	<string name="local_osm_changes_upload_all_confirm">Ви збираєтесь вивантажити %1$d змін до OSM. Ви впевнені?</string>
     <string name="confirmation_to_clear_history">Бажаєте очистити історію?</string>
-    <string name="delay_to_start_navigation_descr">Вкажіть час очікування для перебування на екрані планування маршруту.</string>
     <string name="shared_string_is_open">Відкрито</string>
     <string name="rendering_attr_OSMMapperAssistant_name">Помічник мапера OSM</string>
 	<string name="agps_info">Інформація A-GPS</string>
@@ -2129,7 +2118,6 @@
     <string name="shared_string_move">Перемістити</string>
     <string name="shared_string_tracks">Треки</string>
 
-    <string name="route_altitude">Висота маршруту</string>
     <string name="altitude_descent">Спуск</string>
     <string name="altitude_ascent">Підіймання</string>
     <string name="altitude_range">Діапазон висот</string>
@@ -2298,7 +2286,6 @@
 <string name="none_point_error">Необхідно додати хоча б одну точку.</string>
     <string name="enter_gpx_name">Ім’я GPX файлу:</string>
     <string name="show_on_map_after_saving">Показати на мапі після збереження</string>
-    <string name="add_route_point">Додати точку маршруту</string>
     <string name="add_waypoint">Додати шляхову точку</string>
     <string name="save_gpx_waypoint">Зберегти GPX-точку шляху</string>
     <string name="save_route_point">Зберегти точку маршруту</string>
@@ -2330,7 +2317,6 @@
 <string name="keep_showing_on_map">Продовжувати показувати на мапі</string>
     <string name="exit_without_saving">Вийти без збереження?</string>
     <string name="move_all_to_history">Перемістити усе в історію</string>
-    <string name="build_route">Побудувати маршрут</string>
     <string name="show_direction">Відображення відстані</string>
     <string name="sort_by">Сортувати за</string>
     <string name="marker_options">Параметри маркера</string>
@@ -2356,7 +2342,6 @@
     <string name="date_added">Дата додавання</string>
     <string name="order_by">Сортувати за:</string>
     <string name="use_location">Використовувати розташування</string>
-    <string name="add_location_as_first_point_descr">Додати Ваше місце розташування як першу точку при плануванні маршруту.</string>
     <string name="my_location">Моє місцезнаходження</string>
     <string name="shared_string_finish">Фініш</string>
     <string name="plan_route">Планувати маршрут</string>

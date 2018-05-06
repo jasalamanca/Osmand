@@ -113,9 +113,8 @@
 	<string name="show_lanes">Прикажи траке</string>
 	<string name="avoid_unpaved">Избегавај неасфалтиране путеве</string>
 	<string name="avoid_ferries">Избегавај трајекте</string>
-	<string name="map_widget_fluorescent">Флуоресцентне руте</string>
-	
-	<string name="bg_service_sleep_mode_off">Омогући\n режим спавања</string>
+
+    <string name="bg_service_sleep_mode_off">Омогући\n режим спавања</string>
 	<string name="map_widget_top_text">Назив улице</string>
 	<string name="map_widget_config">Подешавање екрана</string>
 	<string name="map_widget_back_to_loc">Где сам</string>
@@ -274,8 +273,7 @@
 	
 	
 	<string name="installing_new_resources">Распакујем нове податке…</string>
-	<string name="internet_connection_required_for_online_route">Изабрана је услуга навођења преко мрежне везе, али је мрежна веза недоступна.</string>
-	<string name="tts_language_not_supported_title">Језик није подржан</string>
+    <string name="tts_language_not_supported_title">Језик није подржан</string>
 	<string name="tts_missing_language_data_title">Недостају подаци</string>
 	<string name="tts_missing_language_data">Нема уграђених података изабраног језика. Да ли желите да одете до продавнице ради уградње?</string>
 	<string name="gpx_option_reverse_route">Супротан правац ГПИкс-а</string>
@@ -504,7 +502,6 @@
     <string name="mark_to_delete">Означи за брисање</string>
     <string name="local_osm_changes_upload_all_confirm">Отпремићете %1$d измена на ОСМ-и. Да ли сте сигурни?</string>
     <string name="confirmation_to_clear_history">Да ли желите да очистите записе програма?</string>
-    <string name="delay_to_start_navigation_descr">Одредите преостало време за чекање екрана за исцртавање путање</string>
     <string name="delay_to_start_navigation">Покрени навођење скретања након…</string>
     <string name="action_modify">Дејство измене</string>
     <string name="action_delete">Дејство брисања</string>
@@ -577,7 +574,6 @@
     <string name="track_points">Тачке путање</string>
     <string name="record_plugin_name">Снимци путовања</string>
     <string name="plugin_touringview_name">Возачки преглед катре</string>
-    <string name="osmand_distance_planning_plugin_description">Овај прикључак додаје справицу на приказу карте која омогућава стварање путањи тапкањем на карту, или употребу и измену постојећих датотека ГПИкс-а, ради зацртавања путовања и мерења растојања између тачака. Добијени излази се могу сачувати као датотеке ГПИкс-а које се касније могу користити као водичи.</string>
     <string name="shared_string_accessibility">Приступачност</string>
     <string name="osm_settings">Уређивање ОСМ-а</string>
     <string name="debugging_and_development">Развој ОсмАнда</string>
@@ -864,8 +860,6 @@
     <string name="map_widget_gps_info">Подаци ГПС-а</string>
     <string name="index_name_openmaps">Отворене карте ЕУ-а</string>
     <string name="clear_dest_confirm">Да ли сигурно желите да очистите тачку одредишта (и пролазна одредишта)?</string>
-    <string name="precise_routing_mode_descr">Омогући рачунање тачних путања без грешака. Радња је ограничена даљином и спора.</string>
-    <string name="precise_routing_mode">Тачно рачунање путања (споро)</string>
     <string name="rendering_attr_alpineHiking_description">Приказуј путеве према лествици САЦ-а</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Приказуј путеве према путањама ОСМЦ-а</string>
 
@@ -877,10 +871,8 @@
     <string name="rendering_attr_roadColors_description">Изаберите образац боја путева:</string>
     <string name="rendering_attr_roadColors_name">Образац боја путева</string>
     <string name="enable_plugin_monitoring_services">Омогућите прикључак снимања путовања ради коришћења услуга бележења (бележење ГПИксом, праћење положаја на мрежи)</string>
-    <string name="non_optimal_route_calculation">Рачунај могућу приближну путању за велике раздаљине</string>
     <string name="gps_not_available">Молим, омогућите ГПС у поставкама</string>
     <string name="map_widget_monitoring_services">Услуге бележења путање</string>
-    <string name="no_route">Нема пута</string>
     <string name="arrived_at_intermediate_point">Стигли сте на пролазно одредиште</string>
     <string name="context_menu_item_intermediate_point">Додај као пролазно одредиште</string>
     <string name="map_widget_intermediate_distance">Пролазно одредиште</string>
@@ -1253,7 +1245,6 @@
     <string name="file_can_not_be_moved">Датотека се не може преместити.</string>
     <string name="shared_string_move">Премести</string>
     <string name="shared_string_tracks">Стазе</string>
-    <string name="route_altitude">Успон пута</string>
     <string name="altitude_descent">Силазан</string>
     <string name="altitude_ascent">Узлазан</string>
     <string name="altitude_range">Распон висине</string>
@@ -1354,7 +1345,6 @@
     <string name="routing_attr_avoid_ice_roads_fords_name">Избегавај поледице, плићаке</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Избегавајте путеве са поледицама и плићацима</string>
     <string name="use_location">Користи положај</string>
-    <string name="add_location_as_first_point_descr">Додајте свој положај као почетну тачку плана савршеног путовања.</string>
     <string name="my_location">Мој положај</string>
     <string name="shared_string_finish">Крај</string>
     <string name="plan_route">План путовања</string>

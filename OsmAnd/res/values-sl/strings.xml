@@ -280,10 +280,8 @@
     <string name="preferred_locale_descr">Izbor jezika uporabniškega vmesnika (zahteva ponovni zagon programa).</string>
     <string name="map_widget_show_destination_arrow">Pokaži smer cilja</string>
     <string name="enable_plugin_monitoring_services">Omogoči uporabo storitev določanja trenutnega položaja pri zagonu vstavka za beleženje poti (beleženje, sledenje trenutnega mesta v živo).</string>
-    <string name="non_optimal_route_calculation">Izračunaj morda ne-optimalne poti na dolge razdalje</string>
     <string name="gps_not_available">Možnosti GPS je treba omogočiti med nastavitvami</string>
     <string name="map_widget_monitoring_services">Storitve beleženja</string>
-    <string name="no_route">Ni določene poti</string>
     <string name="delete_target_point">Odstrani cilj</string>
     <string name="target_point">Ciljna točka %1$s</string>
     <string name="intermediate_point">Vmesni cilj %1$s</string>
@@ -312,7 +310,6 @@
     <string name="avoid_unpaved">Izogni se neasfaltiranim potem</string>
     <string name="avoid_in_routing_descr">Izogibanje cestninam, makadamskim potem, trajektom.</string>
 
-    <string name="map_widget_fluorescent">Fluorescentne poti</string>
     <string name="map_widget_show_ruler">Merilo</string>
 
     <string name="map_widget_view_direction">Smer gledanja</string>
@@ -571,7 +568,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="shared_string_accessibility">Dostopnost</string>
     <string name="rendering_out_of_memory">Ni dovolj pomnilnika za prikaz izbranega področja</string>
     <string name="use_fluorescent_overlays">Fluorescentne prekrivne plasti</string>
-    <string name="use_fluorescent_overlays_descr">Uporabi fluorescentne barve za prikaz poti.</string>
     <string name="offline_edition">Krajevno urejanje</string>
     <string name="offline_edition_descr">Vedno uporabi krajevno urejanje.</string>
     <string name="update_poi_does_not_change_indexes">Spremembe točk POI v programu ne vplivajo na prejete datoteke zemljevidov. Spremembe so shranjene v krajevno datoteko.</string>
@@ -658,7 +654,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="trace_rendering_descr">Pokaži zmogljivost izvajanja izrisovanja.</string>
 
 
-    <string name="internet_connection_required_for_online_route">Izbrana je storitev navigacije s spletnimi zemljevidi, vendar povezava v omrežje ni na voljo.</string>
     <string name="tts_missing_language_data_title">Podatki niso na voljo</string>
     <string name="gpx_option_reverse_route">Obratna smer GPX</string>
     <string name="gpx_option_destination_point">Uporabi trenutni cilj</string>
@@ -782,8 +777,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="background_service_int">Interval prebujanja sprejemnika GPS</string>
     <string name="background_service_provider_descr">Izberite ponudnika določevanja mesta med izvajanjem v ozadju.</string>
     <string name="background_service_provider">Ponudnik mesta</string>
-    <string name="background_router_service_descr">Izvaja OsmAnd v ozadju in omogoča spremljanje položaja, ko je zaslon izklopljen.</string>
-    <string name="background_router_service">Zaženi OsmAnd v ozadju</string>
     <string name="off_router_service_no_gps_available">Storitev navigacije v ozadju zahteva, da je zagnan vsaj en program, ki zahteva te podatke.</string>
     <string name="search_poi_filter">Filter</string>
 
@@ -911,8 +904,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="dropbox_plugin_name">Vstavek Dropbox</string>
     <string name="stop_routing_confirm">Ali ste prepričani, da želite prekiniti navigacijo?</string>
     <string name="clear_dest_confirm">Ali ste prepričani, da želite izbrisati celotno pot do cilja?</string>
-    <string name="precise_routing_mode_descr">Omogočite možnost za natančno izračunavanje poti. Možnost je še vedno omejena na točke, ki niso preveč oddaljene, storitev pa je tudi časovno zahtevnejša.</string>
-    <string name="precise_routing_mode">Natančno usmerjanje (preizkusno)</string>
 
     <string name="support_new_features_descr">Donirajte in pripomogli boste k razvoju novih zmožnosti programa.</string>
 
@@ -970,7 +961,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="destination_point">Cilj %1$s</string>
 
     <string name="intermediate_items_sort_by_distance">Razvrsti od vrat do vrat</string>
-    <string name="osmand_distance_planning_plugin_description">Vstavek omogoča načrtovanje poti (ali uporabo/spreminjanje obstoječih datotek GPX) in merjenje razdalj med točkami na sledi. Podatke je mogoče shraniti kot poti GPX in jih kasneje uporabiti tudi na poti.</string>
     <string name="distance_measurement_finish_subtrack">Začni z novo podrejeno sledjo</string>
     <string name="wait_current_task_finished">Počakajte na končanje trenutne naloge</string>
     <string name="use_kalman_filter_compass_descr">Zmanjša napake podatkov kompasa, vendar doda zamik.</string>
@@ -1502,7 +1492,6 @@ ZŠ (β) %2$s</string>
     <string name="rendering_value__name">Privzeto</string>
     <string name="rendering_attr_hideHouseNumbers_name">Pokaži hišne številke</string>
     <string name="index_name_netherlands">Evropa – Nizozemska</string>
-    <string name="delay_to_start_navigation_descr">Določite čas, preden se zapre zaslon načrtovanja poti.</string>
 
     <string name="routing_attr_avoid_borders_description">Izogibanje prehodom meje z drugimi državami.</string>
     <string name="routing_attr_height_name">Omejitev višine</string>
@@ -2134,7 +2123,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="quick_action_showhide_favorites_descr">S pritiskom na gumb dejanja bodo pokazana ali skrita priljubljena mesta na zemljevidu.</string>
     <string name="quick_action_showhide_poi_descr">S pritiskom na gumb dejanja bodo pokazane ali skrite točke POI na zemljevidu.</string>
     <string name="quick_action_btn_tutorial_descr">Z dolgim pritiskom in vlekom je mogoče postaviti gumb na poljubno mesto na zaslonu.</string>
-    <string name="route_altitude">Višinske spremembe poti</string>
     <string name="altitude_descent">Spust</string>
     <string name="altitude_ascent">Vzpon</string>
     <string name="altitude_range">Obseg nadmorske višine</string>
@@ -2297,7 +2285,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="add_segment_to_the_track">Dodaj na sled GPX</string>
 <string name="empty_state_favourites_desc">Dodaj priljubljene na zemljevid, ali pa jih uvozi iz datoteke.</string>
     <string name="move_all_to_history">Premakni vse v zgodovino</string>
-    <string name="build_route">Preračunaj pot</string>
     <string name="show_direction">Kazalec smeri</string>
     <string name="sort_by">Razvrsti po</string>
     <string name="marker_options">Možnosti označb</string>
@@ -2328,7 +2315,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="routing_attr_avoid_ice_roads_fords_name">Izogni se zaledenelim cestam in plitvinam</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Izogni se zaledenelim cestam in plitvinam.</string>
     <string name="use_location">Uporabi položaj</string>
-    <string name="add_location_as_first_point_descr">Dodajte trenutno mesto kot prvo točko za načrtovanje poti.</string>
     <string name="my_location">Moja trenutna točka</string>
     <string name="shared_string_finish">Cilj</string>
     <string name="plan_route">Planiranje poti</string>

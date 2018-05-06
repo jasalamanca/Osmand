@@ -44,8 +44,7 @@
 	
 	<string name="rendering_out_of_memory">선택 영역을 표시할 충분한 프로세스 메모리가 없습니다</string>
 	<string name="use_fluorescent_overlays">형광색상 중첩(오버레이)</string>
-	<string name="use_fluorescent_overlays_descr">경로(트랙과 루트)를 표시하기 위해 형광색을 사용합니다</string>
-	<string name="offline_edition">오프라인 편집</string>
+    <string name="offline_edition">오프라인 편집</string>
 	<string name="offline_edition_descr">오프라인 편집을 항상 사용합니다</string>
 
    	
@@ -244,8 +243,7 @@
 	
 	
 	<string name="installing_new_resources">새로운 데이터 풀기(Unpacking)…</string>
-	<string name="internet_connection_required_for_online_route">온라인 운행 서비스를 선택하였지만 인터넷 연결이 되지 않습니다.</string>
-	<string name="tts_language_not_supported_title">지원되지 않은 언어</string>
+    <string name="tts_language_not_supported_title">지원되지 않은 언어</string>
 	<string name="tts_language_not_supported">선택한 언어는  설치된 안드로이드 TTS (text-to-speech) 엔진이 지원되지 않습니다. 다른 TTS 엔진을 찾기 위해 구글마켓으로 가시겠습니까? 아니면 미리설정된 TTS 언어가 사용될 것입니다.</string>
 	<string name="tts_missing_language_data_title">누락된 데이터</string>
 	<string name="tts_missing_language_data">선택한 언어에 대한 데이터가 설치되지 않았습니다. 설치하기 위해 구글마켓으로 가시겠습니까?</string>
@@ -479,9 +477,7 @@
 	<string name="background_service_int">GPS 위치탐색 간격</string>
 	<string name="background_service_provider_descr">백그라운드 서비스를 위한 위치 제공자를 선택합니다</string>
 	<string name="background_service_provider">위치 제공자</string>
-	<string name="background_router_service_descr">오랫동안 위치를 추적하기 위해 백그라운드 서비스를 활성화합니다</string>
-	<string name="background_router_service">절전 모드에서 실행</string>
-	<string name="off_router_service_no_gps_available">절전모드 운행 서비스를 위해 GPS가 켜져 있어야 합니다.</string>
+    <string name="off_router_service_no_gps_available">절전모드 운행 서비스를 위해 GPS가 켜져 있어야 합니다.</string>
 	<string name="hide_poi_filter">필터 숨김</string>
 	<string name="show_poi_filter">필터 보이기</string>
 	<string name="search_poi_filter">필터</string>
@@ -908,7 +904,6 @@
     <string name="plugin_distance_point">포인트</string>
     <string name="gpx_file_name">GPX 파일 이름</string>
     <string name="gpx_saved_sucessfully">GPX 파일이 성공적으로 {0} 에 저장</string>
-    <string name="osmand_distance_planning_plugin_description">"이 플러그인은 지도 화면 위젯을 제공하며, 지도를 클릭하여 경로를 만들 수 있으며 . 또는 여행을 계획하고 지점 사이의 거리를 측정할 수 있으며, 기존 GPX 파일을  사용하거나 수정할 수 있습니다. 나중에 길안내에 사용할 수 있도록  결과물을 GPX 파일로 저장 할 수있습니다."</string>
     <string name="distance_measurement_start_editing">편집 시작</string>
     <string name="distance_measurement_finish_editing">편집 끝내기</string>
     <string name="distance_measurement_finish_subtrack">새로운 subtrack(세그먼트) 시작</string>
@@ -954,8 +949,6 @@
 
     <string name="stop_routing_confirm">운행을 중지하시겠습니까 ?</string>
     <string name="clear_dest_confirm">도착지 (및 경유지) 를 지우겠습니까?</string>
-    <string name="precise_routing_mode_descr">고장없이 정확한 경로를 계산(라우팅) 할 수 있습니다. 현 단계에서는 거리가 한정되어있고 게다가 느립니다.</string>
-    <string name="precise_routing_mode">정확한 라우팅 모드</string>
     <string name="dropbox_plugin_name">드롭박스 플러그인</string>
     <string name="intermediate_points_change_order">순서 변경</string>
     <string name="recording_delete_confirm">이 기록을 삭제하시겠습니까 ?</string>
@@ -990,11 +983,9 @@
 	<string name="rendering_attr_roadColors_name">도로 색상</string>
     <string name="map_widget_show_destination_arrow">도착지 방향 표시</string>
     <string name="enable_plugin_monitoring_services">위치 로깅 서비스(GPX 로깅, 온라인 트래킹)를 사용하여 트립 레코딩 플러그인을 활성화</string>
-    <string name="non_optimal_route_calculation">장거리를 가능하게 하는 비-최적 경로 계산</string>
-	<string name="gps_not_available">설정에서 GPS를 활성화하십시오</string>
+    <string name="gps_not_available">설정에서 GPS를 활성화하십시오</string>
     <string name="map_widget_monitoring_services">로깅 서비스</string>
-	<string name="no_route">경로 없음</string>
-	<string name="delete_target_point">경유지 제거</string>
+    <string name="delete_target_point">경유지 제거</string>
 	<string name="target_point">경유지 %1$s</string>
     <string name="intermediate_point">경유지 %1$s</string>
     <string name="context_menu_item_last_intermediate_point">마지막 경유지로 추가</string>
@@ -1041,8 +1032,7 @@
 	<string name="avoid_ferries">뱃길 회피</string>
 	<string name="avoid_in_routing_title">회피하기…</string>
 	<string name="avoid_in_routing_descr">유료도로, 비포장, 뱃길 회피하기</string>
-	<string name="map_widget_fluorescent">깜박이는 경로</string>
-	<string name="map_widget_show_ruler">축척(Ruler)</string>
+    <string name="map_widget_show_ruler">축척(Ruler)</string>
 	<string name="map_widget_view_direction">방향 보기</string>
 	<string name="map_widget_transparent">투명 스킨</string>
 	
@@ -1554,7 +1544,6 @@
 	<string name="osm_edits">OSM 편집</string>
 	<string name="osmand_parking_hour">시간</string><string name="osmand_parking_minute">분</string>
 	<string name="your_edits">편집</string>
-    <string name="delay_to_start_navigation_descr">지정된 시간 경과후 자동으로 운행 시작</string>
     <string name="delay_to_start_navigation">~ 이후 턴-바이-턴 운행을 시작…</string>
     <string name="shared_string_go">실행</string>
 	

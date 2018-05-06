@@ -133,7 +133,6 @@
   <string name="shared_string_accessibility">Toeganklikheid</string>
   <string name="rendering_out_of_memory">Nie genoeg proses geheue om geselekteerde area te vertoon nie</string>
   <string name="use_fluorescent_overlays">Helder oorleggings</string>
-  <string name="use_fluorescent_overlays_descr">Gebruik helder kleure om paaie en roetes te vertoon</string>
   <string name="offline_edition">Aflyn redigering</string>
   <string name="offline_edition_descr">Gebruik altyd aflyn redigering</string>
   
@@ -316,7 +315,6 @@
   
   
   <string name="installing_new_resources">Besig om nuwe inligting uit te pak…</string>
-  <string name="internet_connection_required_for_online_route">\'n Aanlyn navigasie diens is gekies, maar geen internetverbinding is beskikbaar nie.</string>
   <string name="tts_language_not_supported_title">Taal word nie ondersteun nie</string>
   <string name="tts_language_not_supported">Die gekose taal word nie ondersteun deur die geïnstalleerde Android TTS (teks-tot-spraak) enjin nie. Wil jy in die mark soek vir \'n ander TTS-enjin? Andersins sal die beskikbare TTS taal gebruik word.</string>
   <string name="tts_missing_language_data_title">Vermiste inligting</string>
@@ -525,8 +523,6 @@
   <string name="background_service_int">Wakkerword tussenpose</string>
   <string name="background_service_provider_descr">Kies \'n ligging verskaffer tydens agtergrond gebruikswyse</string>
   <string name="background_service_provider">ligging verskaffer</string>
-  <string name="background_router_service_descr">Gebruik OsmAnd in die agtergrond om jou posisie na te trek terwyl die skerm af is</string>
-  <string name="background_router_service">Werk in die agtergrond</string>
   <string name="off_router_service_no_gps_available">Die agtergrond navigasie diens vereis dat \'n plek verskaffer aangeskakel word.</string>
   <string name="hide_poi_filter">Steek filter weg</string>
   <string name="show_poi_filter">Wys filter</string>
@@ -841,8 +837,7 @@
 	<string name="avoid_ferries">Vermy veerbote</string>
 	<string name="avoid_in_routing_title">Vermy…</string>
 	<string name="avoid_in_routing_descr">Vermy tolpaaie, grondpaaie, veerbote</string>
-	<string name="map_widget_fluorescent">Helder roetes</string>
-	<string name="map_widget_show_ruler">Liniaal</string>
+  <string name="map_widget_show_ruler">Liniaal</string>
 	
 	<string name="map_widget_view_direction">Kykrigting</string>
 	<string name="map_widget_transparent">Deursigtige vel</string>
@@ -851,13 +846,11 @@
 	<string name="int_continuosly">Aaneenlopende</string>
 	<string name="zxing_barcode_scanner_not_found">ZXing Barcode Scanner toepassing is nie geïnstaleer nie. Wil jy dit in die mark soek?</string>
 	<string name="enable_plugin_monitoring_services">Aktiveer spoorsny inlasmodule om ligging aanteken diens te gebruik (aantekening, lewende spoor-natrek)</string>
-    <string name="non_optimal_route_calculation">Bereken moontlike ongunstige roete oor lang afstande</string>
-    
-	<string name="gps_not_available">Aktiveer GPS onder instellings</string>
+
+  <string name="gps_not_available">Aktiveer GPS onder instellings</string>
     
 	<string name="map_widget_monitoring_services">Aanteken dienste</string>
-	<string name="no_route">Geen roete</string>
-	<string name="delete_target_point">Verwyder oorgangspunt</string>
+  <string name="delete_target_point">Verwyder oorgangspunt</string>
 	<string name="target_point">Oorgangspunt %1$s</string>
     <string name="intermediate_point">Oorgangspunt %1$s</string>
     <string name="context_menu_item_last_intermediate_point">Voeg by as laaste oorgangspunt</string>
@@ -908,8 +901,6 @@
 
     <string name="stop_routing_confirm">Is jy seker jy wil die navigasie staak?</string>
     <string name="clear_dest_confirm">Is jy seker jy wil jou bestemmingspunt verwyder?</string>
-    <string name="precise_routing_mode_descr">Aktiveer presiese roetebepaling om presiese roetes te bereken sonder probleme. Dit is baie beperk deur afstand en maak nie gebruik van die inheemse biblioteek nie.</string>
-    <string name="precise_routing_mode">Presiese roetebepaling (alfa)</string>
   <string name="dropbox_plugin_name">Dropbox inlasmodule</string>
     <string name="intermediate_points_change_order">Verander volgorde</string>
 
@@ -991,7 +982,6 @@
     <string name="plugin_distance_point">Punt</string>
     <string name="gpx_file_name">GPX lêernaam</string>
     <string name="gpx_saved_sucessfully">GPX lëer suksesvol geberg na {0}</string>
-    <string name="osmand_distance_planning_plugin_description">Skep paaie (of gebruik / pas bestaande GPX lêers aan) om die afstand tussen punte te meet. Berg as GPX, kan gebruik word om GPX roetes te beplan.</string>
     <string name="local_osm_changes_backup_successful">OSM veranderingslëer %1$s suskesvol geskep</string>
     <string name="destination_point">Bestemming %1$s</string>
     <string name="context_menu_item_destination_point">Stel as bestemming</string>

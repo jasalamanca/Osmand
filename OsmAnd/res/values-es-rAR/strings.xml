@@ -34,7 +34,6 @@
     <string name="application_dir_change_warning3">¿Quieres que OsmAnd también copie los archivos de datos al nuevo destino?</string>
     <string name="storage_directory">Almacenamiento del mapa</string>
     <string name="shared_string_places">Lugares</string>
-    <string name="delay_to_start_navigation_descr">Indica el tiempo de espera para permanecer en la pantalla de planificación de ruta.</string>
     <string name="delay_to_start_navigation">Iniciar navegación giro-a-giro luego de…</string>
     <string name="shared_string_go">Ir</string>
     <string name="action_create">Acción crear</string>
@@ -371,7 +370,6 @@ Lon %2$s</string>
     <string name="record_plugin_description">Este complemento activa la funcionalidad para registrar y guardar tus trazas manualmente tocando el control de grabación GPX en la pantalla del mapa, o automáticamente registrando todas tus rutas navegadas en un archivo GPX.
 \n
 \nLas trazas grabadas pueden ser compartidas con tus amigos o ser usadas para contribuir a OSM. Los atletas pueden usar las trazas grabadas para seguir sus entrenamientos. Algunos análisis básicos de trazas se pueden realizar directamente en OsmAnd, como tiempos por vuelta, velocidad media, etc., y por supuesto las trazas pueden analizarse posteriormente con herramientas de análisis de terceros.</string>
-    <string name="osmand_distance_planning_plugin_description">Este complemento proporciona un control en la pantalla del mapa, permitiendo crear caminos pulsando en el mapa, o usar o modificar archivos GPX existentes, para planificar un viaje y medir la distancia entre puntos. Los resultados pueden guardarse como un archivo GPX y usarse luego para la orientación.</string>
     <string name="osmand_accessibility_description">Este complemento activa las funciones de accesibilidad del dispositivo, directamente en OsmAnd. Facilita por ejemplo, el ajuste de la velocidad de la voz para voces TTS, la configuración de navegación de pantalla con el panel direccional, usando la rueda de desplazamiento para el control de ampliación, o el uso de comentarios de conversión de texto a voz, o para el anuncio automático de tu ubicación.</string>
     <string name="osm_editing_plugin_description">Este complemento puede usarse para hacer contribuciones en OSM, como el crear o modificar objetos PDI, abrir o comentar notas de OSM y contribuir con archivos de trazas GPX. OSM es un proyecto de mapeo global impulsado por la comunidad y de dominio público. Para más detalles, consulta https://openstreetmap.org. Se aprecia la participación activa, y las contribuciones pueden hacerse directamente desde OsmAnd, especificando las credenciales personales de OSM en la aplicación.</string>
     <string name="osmand_development_plugin_description">Este complemento muestra los ajustes de funciones de desarrollo y depuración para probar la simulación de rutas, el rendimiento del renderizado en pantalla, o las indicaciones por voz. Estos ajustes están destinados para los desarrolladores y no son necesarios para el usuario general.</string>
@@ -574,8 +572,6 @@ Lon %2$s</string>
     <string name="index_name_openmaps">OpenMaps UE</string>
     <string name="stop_routing_confirm">¿Quieres parar la navegación?</string>
     <string name="clear_dest_confirm">¿Quieres quitar el destino (y los destinos intermedios)?</string>
-    <string name="precise_routing_mode_descr">Habilita el cálculo de rutas precisas sin interferencias. Aún está limitado por la distancia y es lento.</string>
-    <string name="precise_routing_mode">Enrutado preciso (alfa)</string>
     <string name="dropbox_plugin_name">Complemento Dropbox</string>
     <string name="intermediate_points_change_order">Cambiar orden</string>
     <string name="recording_delete_confirm">¿Quieres borrar esta grabación?</string>
@@ -607,10 +603,8 @@ Lon %2$s</string>
     <string name="rendering_attr_roadColors_name">Esquema de color del camino</string>
     <string name="map_widget_show_destination_arrow">Mostrar dirección de destino</string>
     <string name="enable_plugin_monitoring_services">Activa el complemento de rastreo para usar el servicio de registro de ubicación (grabación GPX, rastreo en línea)</string>
-    <string name="non_optimal_route_calculation">Calcular ruta posiblemente no óptima en largas distancias</string>
     <string name="gps_not_available">Activa el GPS en ajustes</string>
     <string name="map_widget_monitoring_services">Servicios de registro</string>
-    <string name="no_route">Sin ruta</string>
     <string name="delete_target_point">Quitar destino</string>
     <string name="target_point">Destino «%1$s»</string>
     <string name="intermediate_point">Destino intermedio «%1$s»</string>
@@ -664,7 +658,6 @@ Lon %2$s</string>
     <string name="avoid_ferries">Evitar ferris/transbordadores</string>
     <string name="avoid_in_routing_title">Evitar…</string>
     <string name="avoid_in_routing_descr">Evita caminos con peajes, sin pavimentar, transbordadores y otros.</string>
-    <string name="map_widget_fluorescent">Rutas fluorescentes</string>
     <string name="map_widget_show_ruler">Escala</string>
     <string name="map_widget_view_direction">Dirección de visualización</string>
     <string name="map_widget_transparent">Controles transparente</string>
@@ -811,7 +804,6 @@ Lon %2$s</string>
     <string name="arrival_distance_descr">¿Cuándo quieres el anuncio de llegada?</string>
     <string name="rendering_out_of_memory">Sin memoria suficiente para mostrar el área elegida</string>
     <string name="use_fluorescent_overlays">Usar superpuestos fluorescentes</string>
-    <string name="use_fluorescent_overlays_descr">Usa colores fluorescentes para mostrar trazas y rutas.</string>
     <string name="offline_edition">Edición sin conexión</string>
     <string name="offline_edition_descr">Usa siempre edición sin conexión.</string>
     <string name="update_poi_does_not_change_indexes">Los cambios de PDI dentro de la aplicación, no afectan a los archivos del mapa descargados. Estos se guardan en un archivo local.</string>
@@ -957,7 +949,6 @@ Lon %2$s</string>
     <string name="trace_rendering">Información de depuración de visualización</string>
     <string name="trace_rendering_descr">Muestra el rendimiento de visualización.</string>
     <string name="installing_new_resources">Desempaquetando nuevos datos…</string>
-    <string name="internet_connection_required_for_online_route">Se seleccionó un servicio de navegación en línea, pero no hay conexión a Internet.</string>
     <string name="tts_language_not_supported_title">Idioma no soportado</string>
     <string name="tts_language_not_supported">El idioma elegido no está soportado por el sintetizador de voz (TTS) de Android. ¿Quieres ir a la Tienda a buscar otro motor TTS? Si no, se usará el idioma TTS preseleccionado.</string>
     <string name="tts_missing_language_data_title">Faltan datos</string>
@@ -1140,8 +1131,6 @@ Lon %2$s</string>
     <string name="background_service_int_descr">Define el intervalo de activación del servicio de fondo.</string>
     <string name="background_service_provider_descr">Elige el proveedor de ubicación del servicio de fondo.</string>
     <string name="background_service_provider">Proveedor de ubicación</string>
-    <string name="background_router_service_descr">Ejecuta OsmAnd de fondo para trazar tu ubicación con la pantalla apagada.</string>
-    <string name="background_router_service">Ejecutar en segundo plano</string>
     <string name="off_router_service_no_gps_available">El servicio de navegación en segundo plano, necesita un proveedor de ubicación para activarse.</string>
     <string name="hide_poi_filter">Ocultar filtro</string>
     <string name="show_poi_filter">Mostrar filtro</string>
@@ -1978,7 +1967,6 @@ Proporciona un código completo</string>
     <string name="quick_action_page_list_descr">Pulsar el botón de acción mostrará la siguiente lista.</string>
     <string name="auto_split_recording_title">División automática de grabaciones en intervalos</string>
 	<string name="auto_split_recording_descr">Iniciar nuevo segmento en el lapso de 6 min, nueva traza en el lapso de 2 h, o nuevo archivo en el lapso más largo si la fecha se cambió.</string>
-    <string name="route_altitude">Elevación de la ruta</string>
     <string name="altitude_descent">Descenso</string>
     <string name="altitude_ascent">Ascenso</string>
     <string name="altitude_range">Rango de altitud</string>
@@ -2114,7 +2102,6 @@ Proporciona un código completo</string>
 <string name="none_point_error">Añadir al menos un punto.</string>
     <string name="enter_gpx_name">Nombre del GPX:</string>
     <string name="show_on_map_after_saving">Mostrar en el mapa al guardar</string>
-    <string name="add_route_point">Añadir punto de ruta</string>
     <string name="add_waypoint">Añadir punto de referencia</string>
     <string name="save_gpx_waypoint">Guardar punto GPX</string>
     <string name="save_route_point">Guardar punto de ruta</string>
@@ -2148,7 +2135,6 @@ Proporciona un código completo</string>
     <string name="do_not_use_animations">No usar animaciones</string>
     <string name="do_not_use_animations_descr">Desactiva las animaciones en la aplicación.</string>
     <string name="move_all_to_history">Mover todo al historial</string>
-    <string name="build_route">Crear ruta</string>
     <string name="show_direction">Indicación de distancia</string>
     <string name="sort_by">Ordenar por</string>
     <string name="marker_options">Opciones del marcador</string>
@@ -2178,7 +2164,6 @@ Proporciona un código completo</string>
     <string name="show_passed">Mostrar descartados</string>
     <string name="hide_passed">Ocultar descartados</string>
     <string name="use_location">Usar ubicación</string>
-    <string name="add_location_as_first_point_descr">Añade la ubicación como primer punto para planificar la ruta perfecta.</string>
     <string name="my_location">Mi ubicación</string>
     <string name="shared_string_finish">Finalizar</string>
     <string name="plan_route">Planificar ruta</string>

@@ -8,12 +8,10 @@
 	<string name="rendering_attr_roadColors_name">Schema de culori drumuri</string>
     <string name="map_widget_show_destination_arrow">Arată direcția spre destinație</string>
     <string name="enable_plugin_monitoring_services">Activează plugin pentru înregistrare trasee (logging, live tracking) pentru a putea folosi serviciile online de înregistrare a traseelor și a poziției curente</string>
-    <string name="non_optimal_route_calculation">Calculează rute mai puțin optime pentru distanțe foarte mari</string>
     <string name="gps_not_available">Vă rog să activați GPS-ul în setările dispozitivului</string>
     
 	<string name="map_widget_monitoring_services">Servicii de Logging</string>
-	<string name="no_route">Nu există rută</string>
-	<string name="delete_target_point">Șterge punctul intermediar</string>
+    <string name="delete_target_point">Șterge punctul intermediar</string>
 	<string name="target_point">Destinația %1$s</string>
     <string name="intermediate_point">Punct intermediar %1$s</string>
     <string name="context_menu_item_last_intermediate_point">Adaugă ca ultim punct intermediar</string>
@@ -70,8 +68,7 @@
 	<string name="avoid_ferries">Evită ferry</string>
 	<string name="avoid_in_routing_title">Evitare drumuri…</string>
 	<string name="avoid_in_routing_descr">Evită drumuri cu taxă, nepavate, ferry</string>
-	<string name="map_widget_fluorescent">Rute fluorescente</string>
-	<string name="map_widget_show_ruler">Scara hărții</string>
+    <string name="map_widget_show_ruler">Scara hărții</string>
 	
 	<string name="map_widget_view_direction">Direcția de deplasare</string>
 	<string name="map_widget_transparent">Skin transparent</string>
@@ -239,8 +236,7 @@
 	<string name="shared_string_accessibility">Accesibilitate</string>
 	<string name="rendering_out_of_memory">Nu există suficientă memorie disponibilă pentru a afișa zona selectată</string>
 	<string name="use_fluorescent_overlays">Straturi fluorescente</string>
-	<string name="use_fluorescent_overlays_descr">Folosește culori fluorescente pentru reprezentarea rutelor și traseelor</string>
-	<string name="offline_edition">Editare offline</string>
+    <string name="offline_edition">Editare offline</string>
 	<string name="offline_edition_descr">Folosește întotdeauna editarea offline</string>
 	
 	<string name="update_poi_does_not_change_indexes">Modificările aduse POI-urior nu afectează hărțile descărcate, schimbările sunt păstrate într-un fișier separat.</string>
@@ -418,8 +414,7 @@
 	
 	
 	<string name="installing_new_resources">Dezarhivare date noi…</string>
-	<string name="internet_connection_required_for_online_route">Este selectat un serviciu de navigație online dar nu există conexiune la Internet.</string>
-	<string name="tts_language_not_supported_title">Limba nu este suportată</string>
+    <string name="tts_language_not_supported_title">Limba nu este suportată</string>
 	<string name="tts_language_not_supported">Limba selectată nu este suportată de motorul Android TTS selectat. Doriți să mergeți la Market și să căutați un alt motor TTS? Dacă nu, se va folosi limba TTS curentă.</string>
 	<string name="tts_missing_language_data_title">Lipsă date despre limbă</string>
 	<string name="tts_missing_language_data">Limba selectată nu este instalată. Doriți să mergeți la Market pentru a o instala?</string>
@@ -633,9 +628,7 @@
 	<string name="background_service_int">Interval menținere activă GPS</string>
 	<string name="background_service_provider_descr">Alege furnizorul serviciului de localizare pe timpul navigării în fundal</string>
 	<string name="background_service_provider">Furnizorul serviciului de localizare</string>
-	<string name="background_router_service_descr">Rulează OsmAnd în fundal pentru determinarea poziției în timp ce ecranul este oprit</string>
-	<string name="background_router_service">Rulează în fundal</string>
-	<string name="off_router_service_no_gps_available">Serviciul de navigare în fundal necesită un serviciu de localizare pornit.</string>
+    <string name="off_router_service_no_gps_available">Serviciul de navigare în fundal necesită un serviciu de localizare pornit.</string>
 	<string name="hide_poi_filter">Ascunde filtrul POI</string>
 	<string name="show_poi_filter">Arată filtrul POI</string>
 	<string name="search_poi_filter">Filtrează</string>
@@ -1051,7 +1044,6 @@
     <string name="index_name_openmaps">OpenMaps EU</string>
     <string name="stop_routing_confirm">Sigur doriți să opriți navigarea?</string>
     <string name="clear_dest_confirm">Sigur doriți să ștergeți punctul de destinație (și puncte intermediare)?</string>
-    <string name="precise_routing_mode">Rutare precisă (alpha)</string>
     <string name="use_displayed_track_for_navigation">Doriți să utilizați traseul afișat pentru navigare?</string>
     <string name="keep_and_add_destination_point">Adaugă ca și punct destinație</string>
     <string name="shared_string_select_on_map">Selectează pe hartă</string>
@@ -1598,7 +1590,6 @@
     <string name="shared_string_select">Selectează</string>
     <string name="switch_start_finish">Inversează punctul de plecare și destinația</string>
     <string name="rendering_attr_hideIcons_name">Ascunde pictogramele POI</string>
-    <string name="delay_to_start_navigation_descr">Specifică timpul de așteptare pentru a rămâne pe ecran planificarea traseului</string>
     <string name="delay_to_start_navigation">Începe navigarea rând pe rând după…</string>
     <string name="shared_string_go">Pleacă</string>
     <string name="action_create">Action create</string>

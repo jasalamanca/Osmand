@@ -4,11 +4,9 @@
     <string name="rendering_attr_roadColors_name">道路的色彩調配</string>
     <string name="map_widget_show_destination_arrow">顯示目的地方向</string>
     <string name="enable_plugin_monitoring_services">啟用旅程錄製外掛元件，以使用位置日誌服務(GPX 記錄，線上追蹤)</string>
-    <string name="non_optimal_route_calculation">預估過遠的距離，可能不是最佳的路線</string>
 
     <string name="gps_not_available">請在設定中啟用 GPS</string>
     <string name="map_widget_monitoring_services">日誌記錄服務</string>
-    <string name="no_route">沒有路線</string>
     <string name="delete_target_point">移除目的地</string>
     <string name="target_point">目的地 %1$s</string>
     <string name="intermediate_point">中轉地點 %1$s</string>
@@ -65,7 +63,6 @@
     <string name="avoid_ferries">避開渡輪</string>
     <string name="avoid_in_routing_title">避開…</string>
     <string name="avoid_in_routing_descr">避開收費道路、顛頗路面、渡輪。</string>
-    <string name="map_widget_fluorescent">螢光導航路線</string>
     <string name="map_widget_show_ruler">比例尺</string>
 
     <string name="map_widget_view_direction">目視方向</string>
@@ -227,7 +224,6 @@
     <string name="shared_string_accessibility">無障礙</string>
     <string name="rendering_out_of_memory">處理記憶體不足，無法顯示已選取的區域</string>
     <string name="use_fluorescent_overlays">螢光層</string>
-    <string name="use_fluorescent_overlays_descr">使用螢光色彩來顯示軌跡與導航路線。</string>
     <string name="offline_edition">離線編輯</string>
     <string name="offline_edition_descr">永遠使用離線編輯。</string>
     <string name="update_poi_does_not_change_indexes">在程式中修改 POI，不會影響到下載的地圖檔案，修改的資料是另外存在裝置上的內部檔案。</string>
@@ -387,7 +383,6 @@
 
 
     <string name="installing_new_resources">安裝新資料…</string>
-    <string name="internet_connection_required_for_online_route">選用線上導航服務，但是無可用的網路連線。</string>
     <string name="tts_language_not_supported_title">該語言未支援</string>
     <string name="tts_language_not_supported">選用的語言 Android TTS 引擎未支援，您要到 Play 商場找其它引擎嗎？否則使用之前設定的語言。</string>
     <string name="tts_missing_language_data_title">資料遺失</string>
@@ -584,8 +579,6 @@
     <string name="background_service_int">GPS 喚醒間隔</string>
     <string name="background_service_provider_descr">選擇位置提供者，使用於背景服務。</string>
     <string name="background_service_provider">位置提供</string>
-    <string name="background_router_service_descr">當螢幕關閉時，讓 OsmAnd 在背景執行，追蹤您的位置。</string>
-    <string name="background_router_service">在背景執行 OsmAnd</string>
     <string name="off_router_service_no_gps_available">背景導航服務，需要提供一個已開啟的位置。</string>
     <string name="hide_poi_filter">隱藏篩選器</string>
     <string name="show_poi_filter">顯示篩選</string>
@@ -833,7 +826,6 @@
     <string name="plugin_distance_point_ele">海拔</string>
     <string name="gpx_file_name">GPX 檔案名稱</string>
     <string name="gpx_saved_sucessfully">GPX 檔案已完全成功儲存到{0}</string>
-    <string name="osmand_distance_planning_plugin_description">這個外掛元件提供了地圖螢幕小工具，允許在地圖上透過點觸建立路徑或是使用，又或修改現有的 GPX 檔案，來規劃行程和測量兩點之間的距離。其結果可以存為 GPX 檔案，以後可以用於導航。</string>
     <string name="local_osm_changes_backup_failed">備份 OSM 的變更失敗</string>
     <string name="local_osm_changes_backup">備份 OSM 的變更</string>
     <string name="plugin_distance_point_hdop">精確度</string>
@@ -880,8 +872,6 @@
 
     <string name="stop_routing_confirm">您確定要停止導航嗎？</string>
     <string name="clear_dest_confirm">您確定想要清除您的目的地(含中轉地點)？</string>
-    <string name="precise_routing_mode">精確的路線 (alpha)</string>
-    <string name="precise_routing_mode_descr">允許去預估精確而無差錯的路線。仍然有距離限制並且緩慢。</string>
     <string name="dropbox_plugin_name">Dropbox 外掛程式</string>
 
     <string name="intermediate_points_change_order">變動排列</string>
@@ -1447,7 +1437,6 @@
     <string name="action_create">建立動作</string>
     <string name="action_modify">修改動作</string>
     <string name="action_delete">刪除動作</string>
-    <string name="delay_to_start_navigation_descr">在導航規劃螢幕上，指示剩餘等待時間。</string>
     <string name="delay_to_start_navigation">導航後開始轉向建議…</string>
     <string name="shared_string_go">執行</string>
 
@@ -2128,7 +2117,6 @@
     <string name="routing_attr_height_obstacles_name">使用海拔資料</string>
     <string name="routing_attr_height_obstacles_description">使用 SRTM、ASTER 和 EU-DEM 提供的地形海拔資料。</string>
 
-    <string name="route_altitude">路線的海拔</string>
     <string name="altitude_descent">下坡</string>
     <string name="altitude_ascent">上坡</string>
     <string name="altitude_range">海拔高度範圍</string>
@@ -2260,7 +2248,6 @@
 <string name="none_point_error">請至少增加一個標點。</string>
     <string name="enter_gpx_name">GPX 檔案名稱：</string>
     <string name="show_on_map_after_saving">儲存後在地圖上顯示</string>
-    <string name="add_route_point">增加路線標點</string>
     <string name="add_waypoint">增加航點</string>
     <string name="save_gpx_waypoint">儲存 GPX 航點</string>
     <string name="save_route_point">儲存路線標點</string>
@@ -2294,7 +2281,6 @@
     <string name="do_not_use_animations">不使用動畫</string>
     <string name="do_not_use_animations_descr">停用在應用程式中的動畫。</string>
     <string name="move_all_to_history">全部移動到歷程</string>
-    <string name="build_route">建立路線</string>
     <string name="show_direction">距離指示</string>
     <string name="sort_by">排序方式</string>
     <string name="marker_options">標記選項</string>
@@ -2324,7 +2310,6 @@
     <string name="show_passed">顯示已經過的</string>
     <string name="hide_passed">隱藏已經過的</string>
     <string name="use_location">使用位置</string>
-    <string name="add_location_as_first_point_descr">將您的位置增加為第一個標點，來計劃完美路線。</string>
     <string name="my_location">我的位置</string>
     <string name="shared_string_finish">完成</string>
     <string name="plan_route">計畫路線</string>

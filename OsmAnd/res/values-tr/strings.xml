@@ -5,12 +5,10 @@
 	<string name="rendering_attr_roadColors_name">Yol renk şeması</string>
     <string name="map_widget_show_destination_arrow">Hedef yönü göster</string>
     <string name="enable_plugin_monitoring_services">Konum kayıt tutma hizmetlerini (GPX kaydı tutma, çevrim içi tracking) kullanmak için seyahat kaydetme eklentisini etkinleştir</string>
-    <string name="non_optimal_route_calculation">Uzak hedefler için tahmini rotayı hesapla</string>
-    
-	<string name="gps_not_available">Lütfen GPS\'yi ayarlardan açık konuma getirin</string>
+
+    <string name="gps_not_available">Lütfen GPS\'yi ayarlardan açık konuma getirin</string>
     <string name="map_widget_monitoring_services">Log servisi</string>
-	<string name="no_route">Rota yok</string>
-	<string name="delete_target_point">Varış Noktasını kaldır</string>
+    <string name="delete_target_point">Varış Noktasını kaldır</string>
 	<string name="target_point">Varış noktası %1$s</string>
     <string name="intermediate_point">Intermediate hedef %1$s</string>
     <string name="context_menu_item_last_intermediate_point">Son ara nokta olarak ekle</string>
@@ -85,15 +83,13 @@
 
     <string name="stop_routing_confirm">Navigasyonu durdurmak istediğinize emin misiniz?</string>
     <string name="clear_dest_confirm">Varış noktasını silmek istediğinizden emin misiniz (ve ara hedefler)?</string>
-    <string name="precise_routing_mode">Hassas yönlendirme (alfa)</string>
     <string name="dropbox_plugin_name">Dropbox eklentisi</string>
     
     <string name="intermediate_points_change_order">Sıralamayı değiştir</string>
 
     <string name="index_name_openmaps">AB Açık haritası</string>
-    
-    
-    <string name="precise_routing_mode_descr">Glitches olmadan kesin yolları hesaplamak için etkinleştirin. Yine uzaktan sınırlı ve yavaş.</string>
+
+
     <string name="recording_delete_confirm">Bu kaydı silmek istiyor musunuz?</string>
 
 	<string name="shared_string_control_stop">Durdur</string>
@@ -141,8 +137,7 @@
 	<string name="avoid_ferries">Feribotlardan kaçın</string>
 	<string name="avoid_in_routing_title">Kaçın…</string>
 	<string name="avoid_in_routing_descr">Paralı yollardan, asfaltsız yollardan, feribotlardan kaçın</string>
-	<string name="map_widget_fluorescent">Floresan rotalar</string>
-	<string name="map_widget_show_ruler">Cetvel</string>
+    <string name="map_widget_show_ruler">Cetvel</string>
 	
 	<string name="map_widget_transparent">Şeffaf widget\'lar</string>
 	
@@ -485,8 +480,7 @@
 	<string name="shared_string_accessibility">Erişilebilirlik</string>
 	<string name="rendering_out_of_memory">Seçilen alanı görüntülemek için işlem belleği yeterli değil</string>
 	<string name="use_fluorescent_overlays">Floresan bindirmeleri</string>
-	<string name="use_fluorescent_overlays_descr">Parkur ve güzergah görüntülemek için floresan renkler kullan</string>
-	<string name="offline_edition">Çevrim dışı düzenleme</string>
+    <string name="offline_edition">Çevrim dışı düzenleme</string>
 	<string name="offline_edition_descr">Her zaman çevrim dışı düzenlemeyi kullan</string>
 	
 	<string name="update_poi_does_not_change_indexes">Uygulama içinde POI değişiklikleri indirilen harita dosyaları etkilemez, bunun yerine yerel bir dosyaya kaydedilir.</string>
@@ -617,7 +611,6 @@
 	<string name="trace_rendering">Hata ayıklama bilgisi dönüştürülüyor</string>
 	<string name="trace_rendering_descr">Dönüştürme performansını göster</string>
 	<string name="installing_new_resources">Yeni veri(ler) açılıyor…</string>
-	<string name="internet_connection_required_for_online_route">Çevrimiçi navigasyon servisi seçildi ancak İnternet bağlantısı kullanılabilir değil.</string>
     <string name="map_widget_fps_info">FPS hata ayıklama bilgisi</string>
 	<string name="driving_region_descr">Sürüş bölgesini seç: ABD, Avrupa, İngiltere, Asya ve Diğerleri.</string>
 	<string name="driving_region">Sürüş bölgesi</string>
@@ -807,9 +800,7 @@
 	<string name="background_service_wait_int">Düzeltme için azami bekleme</string>
 	<string name="gps_provider">GPS</string>
 	<string name="background_service_provider">Konum sağlayıcı</string>
-	<string name="background_router_service_descr">Ekran kapalıyken konumu izlemek için OsmAnd\'ı arka planda çalıştırır</string>
-	<string name="background_router_service">Arka planda Osmand başlat</string>
-	<string name="off_router_service_no_gps_available">Arka plan navigasyon hizmeti açık olması bir konum sağlayıcı gerektirir.</string>
+    <string name="off_router_service_no_gps_available">Arka plan navigasyon hizmeti açık olması bir konum sağlayıcı gerektirir.</string>
 	<string name="hide_poi_filter">Süzgeci gizle</string>
 	<string name="show_poi_filter">Süzgeci göster</string>
 	<string name="search_poi_filter">Süzgeç</string>
@@ -1182,7 +1173,6 @@
     <string name="welcome_select_region">Doğru trafik işaretleri ve düzenlemeleri yansıtmak için sürüş bölgenizi seçin:</string>
 	<string name="welcome_text">OsmAnd küresel çevrim dışı harita tarama ve küresel çevrim dışı yolbul sunar!</string>
 	<string name="osm_changes_added_to_local_edits">OSM değişiklikleri yerel değişiklik kümesine eklendi</string>
-   	<string name="delay_to_start_navigation_descr">Rota planlama ekranındayken beklenecek süreyi belirtin.</string>
     <string name="delay_to_start_navigation">Sonra adım-adım navigasyona başla…</string>
 	<string name="waypoint_visit_after">Sonra ziyaret edin</string>
     <string name="waypoint_visit_before">Önce ziyaret et</string>
@@ -1608,7 +1598,6 @@
     <string name="rendering_attr_currentTrackColor_description">GPX renk</string>
     <string name="rendering_attr_currentTrackWidth_description">GPX genişliği</string>
     <string name="shared_string_wikipedia">Wikipedia</string>
-    <string name="osmand_distance_planning_plugin_description">Bu eklenti bir gezi planı ve nokta arasındaki mesafeyi ölçmek için, mevcut GPX dosyalarını harita üzerinde dokunarak yolları oluşturmak veya kullanmak veya değiştirmek için izin veren bir harita ekranı widget\'ı sağlar. Sonuçlar daha sonra rehberlik için kullanılabilecek bir GPX dosyası olarak kaydedilebilir.</string>
     <string name="rename_failed">Yeniden adlandırma başarısız oldu.</string>
     <string name="location_on_map">Yer:
 \nEnl %1$s
@@ -2054,7 +2043,6 @@
     <string name="show_on_map_after_saving">Kaydettikten sonra haritada göster</string>
     <string name="measurement_tool">Uzaklığı ölç</string>
     <string name="show_number_pad">Rakam tuşları panelini göster</string>
-    <string name="add_location_as_first_point_descr">Mükemmel rotayı planlamak için konumunuzu ilk nokta olarak ekleyin.</string>
     <string name="group_will_be_removed_after_restart">Uygulamanın yeniden başlatılmasının ardından Grup kaldırılacaktır.</string>
     <string name="remove_from_map_markers">Harita işaretleyicilerinden kaldır</string>
     <string name="all_markers_moved_to_history">Tüm harita işaretleyicileri Geçmiş\'e taşındı</string>
@@ -2173,7 +2161,6 @@
     <string name="shared_string_time_span">Zaman aralığı</string>
     <string name="select_gpx_folder">Yol-izi klasörü seç</string>
     <string name="shared_string_tracks">Yol-izleri</string>
-    <string name="route_altitude">Rota yüksekliği</string>
     <string name="altitude_descent">yükselikte azalma</string>
     <string name="altitude_ascent">Yükseklikte artış</string>
     <string name="altitude_range">Yükseklik aralığı</string>

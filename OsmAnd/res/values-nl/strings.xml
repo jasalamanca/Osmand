@@ -9,8 +9,7 @@
   <string name="avoid_in_routing_descr">Wel of geen tolwegen, onverharde wegen, veerboten</string>
   <string name="show_warnings_title">Toon waarschuwingen…</string>
   <string name="show_warnings_descr">Wel of geen rijstroken, snelheidslimieten, snelheidscamera\'s en verkeersdrempels</string>
-  <string name="map_widget_fluorescent">Fluorescerende routes</string>
-  <string name="map_widget_show_ruler">Schaalaanduiding</string>
+    <string name="map_widget_show_ruler">Schaalaanduiding</string>
   
   <string name="map_widget_view_direction">Kijkrichting</string>
   <string name="map_widget_transparent">Transparante widgets</string>
@@ -86,8 +85,7 @@
   <string name="shared_string_accessibility">Toegankelijkheid</string>
   <string name="rendering_out_of_memory">Niet genoeg werkgeheugen voor weergave van het geselecteerde gebied</string>
   <string name="use_fluorescent_overlays">Fluorescerende overlays</string>
-  <string name="use_fluorescent_overlays_descr">Gebruik fluorescerende kleuren voor de weergave van tracks and routes</string>
-  <string name="offline_edition">Offline bewerking</string>
+    <string name="offline_edition">Offline bewerking</string>
   <string name="offline_edition_descr">Gebruik altijd offline bewerking</string>
   
   <string name="update_poi_does_not_change_indexes">Wijzigingen aan interessepunten hebben geen invloed op de gedownloade kaartbestanden, maar worden opgeslagen in een lokaal bestand.</string>
@@ -261,8 +259,7 @@ Er is nu {2} MB beschikbaar</string>
   
   
   <string name="installing_new_resources">Installeren nieuwe gegevens…</string>
-  <string name="internet_connection_required_for_online_route">Er is een online routeberekening gekozen, maar er is geen verbinding met internet.</string>
-  <string name="tts_language_not_supported_title">Taal niet ondersteund</string>
+    <string name="tts_language_not_supported_title">Taal niet ondersteund</string>
   <string name="tts_language_not_supported">De gekozen taal is niet ondersteund door de geïnstalleerde Android stemgenerator. Wil je een andere stemgenerator zoeken op de Play-store? Anders wordt de huidige stemgenerator gebruikt.</string>
   <string name="tts_missing_language_data_title">Ontbrekende gegevens</string>
   <string name="tts_missing_language_data">Geen gegevens voor de geselecteerde taal geïnstalleerd. Wil je naar de Play-store gaan om deze te installeren?</string>
@@ -476,9 +473,7 @@ Er is nu {2} MB beschikbaar</string>
   <string name="background_service_int">GPS ontwaak-interval</string>
   <string name="background_service_provider_descr">Kies hoe de achtergrondservice de locatie bepaalt</string>
   <string name="background_service_provider">Achtergrondservice-provider</string>
-  <string name="background_router_service_descr">Gebruikt een achtergrondservice voor plaatsbepaling als het scherm uit is</string>
-  <string name="background_router_service">Gebruik OsmAnd achtergrondservice</string>
-  <string name="off_router_service_no_gps_available">Voor de achtergrondservice moet een locatiebron gekozen worden.</string>
+    <string name="off_router_service_no_gps_available">Voor de achtergrondservice moet een locatiebron gekozen worden.</string>
   <string name="hide_poi_filter">Verberg filter</string>
   <string name="show_poi_filter">Toon filter</string>
   <string name="search_poi_filter">Filter</string>
@@ -863,13 +858,11 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
     <string name="target_point">Bestemming %1$s</string>
     <string name="target_points">Bestemmingen</string>
     <string name="map_widget_monitoring_services">Registratiediensten</string>
-	<string name="no_route">Geen route</string>
-	<string name="delete_target_point">Verwijder Bestemming</string>
+    <string name="delete_target_point">Verwijder Bestemming</string>
 	<string name="intermediate_point">"Tussenpunt  %1$s"</string>
     <string name="gps_not_available">Schakel GPS in via de instellingen</string>
     <string name="map_widget_show_destination_arrow">Toon richting van de Bestemming</string>
     <string name="enable_plugin_monitoring_services">Activeer de GPX-Track opnemen- Plugin om de afgelegde weg vast te leggen (GPX-track, online tracking)</string>
-    <string name="non_optimal_route_calculation">Bereken mogelijk niet-optimale route voor lange afstanden</string>
     <string name="rendering_attr_roadColors_description">Kies kleurschema voor wegen:</string>
 	<string name="rendering_attr_roadColors_name">Kleurschema voor wegen</string>
     <string name="zxing_barcode_scanner_not_found">ZXing Barcode Scanner app is niet geïnstalleerd. In Google Play zoeken?</string>
@@ -913,8 +906,6 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
     <string name="dropbox_plugin_name">Dropbox-Plugin</string>
     <string name="stop_routing_confirm">Navigatie stoppen?</string>
     <string name="clear_dest_confirm">Bestemming (en Tussenpunten) wissen?</string>
-    <string name="precise_routing_mode_descr">Schakel nauwkeurige routeberekening in om precieze routes te berekenen zonder fouten. Nog beperkt in afstand en langzaam.</string>
-    <string name="precise_routing_mode">Nauwkeurige routeberekening (alpha)</string>
 
     <string name="support_new_features_descr">Doe een donatie om OsmAnd uit te laten breiden met nieuwe functies</string>
 
@@ -964,7 +955,6 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
     <string name="plugin_distance_point">Punt</string>
     <string name="gpx_file_name">GPX-bestandsnaam</string>
     <string name="gpx_saved_sucessfully">GPX-bestand succesvol opgeslagen als {0}</string>
-    <string name="osmand_distance_planning_plugin_description">Maak een route door op de kaart te tikken of gebruik of wijzig GPX-bestanden. Plan een reis en bereken de afstand tussen punten. Het resultaat kan worden bewaard als GPX-bestand, om later te gebruiken als navigatieroute.</string>
     <string name="use_distance_measurement_help">* Tik om een punt te markeren.
 \n* Druk lang op de kaart om het vorige punt te verwijderen. 
 \n* Druk lang en houd vast op een punt om de beschrijving te zien en toe te voegen. 
@@ -1477,7 +1467,6 @@ Wil je een nieuwe map maken op de toegestane locatie en de OsmAnd-bestanden daar
 	<string name="shared_string_my_places">Mijn Plaatsen</string>
 
 
-    <string name="delay_to_start_navigation_descr">Stel in hoe lang het routeplanning-scherm getoond wordt voordat de navigatie start</string>
     <string name="delay_to_start_navigation">Start navigatie na…</string>
     <string name="shared_string_go">Start</string>
 	
@@ -2166,8 +2155,7 @@ voor Gebied: %1$s x %2$s</string>
     <string name="file_can_not_be_moved">Bestand kan niet verplaatst worden.</string>
     <string name="shared_string_move">Verplaats</string>
     <string name="shared_string_tracks">Tracks</string>
-    
-    <string name="route_altitude">Route hoogteprofiel</string>
+
     <string name="altitude_descent">Daling</string>
     <string name="altitude_ascent">Stijging</string>
     <string name="altitude_range">Hoogtebereik</string>
@@ -2273,7 +2261,6 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="wrong_user_name">Verkeerde gebruikersnaam!</string>
     <string name="shared_string_to">Tot</string>
     <string name="move_all_to_history">Verplaats alles naar geschiedenis</string>
-    <string name="build_route">Route maken</string>
     <string name="show_direction">Toon afstand</string>
     <string name="sort_by">Sorteren op</string>
     <string name="marker_options">Opties voor Markeervlaggetjes</string>
@@ -2319,7 +2306,6 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="routing_attr_avoid_ice_roads_fords_name">Vermijd ijswegen en wegen die (deels) onder water staan</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Vermijd ijswegen en wegen die (deels) onder water staan.</string>
     <string name="use_location">Gebruik mijn positie</string>
-    <string name="add_location_as_first_point_descr">Voeg uw poistie toe als eerste routepunt.</string>
     <string name="my_location">Mijn positie</string>
     <string name="shared_string_finish">Einde</string>
     <string name="plan_route">Plan route</string>

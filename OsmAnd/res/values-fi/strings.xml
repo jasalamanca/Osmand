@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="no_route">Ei reittiä</string>
-	<string name="delete_target_point">Poista päämäärä</string>
+<resources>
+    <string name="delete_target_point">Poista päämäärä</string>
 	<string name="target_point">Päämäärä %1$s</string>
     <string name="intermediate_point">Välietappi %1$s</string>
     <string name="context_menu_item_last_intermediate_point">Lisää viimeiseksi välietapiksi</string>
@@ -46,8 +46,7 @@
 	<string name="avoid_ferries">Vältä lauttoja</string>
 	<string name="avoid_in_routing_title">Vältä…</string>
 	<string name="avoid_in_routing_descr">Vältä tietulleja, päällystämättömiä, lauttoja</string>
-	<string name="map_widget_fluorescent">Valaistut tiet</string>
-	<string name="map_widget_show_ruler">Viivoitin</string>
+    <string name="map_widget_show_ruler">Viivoitin</string>
 	
 	<string name="map_widget_view_direction">Katseen suunta</string>
 	<string name="map_widget_transparent">Läpikuultavat työkalut</string>
@@ -520,7 +519,6 @@
 	<string name="zxing_barcode_scanner_not_found">ZXing viivakoodinlukusovellusta ei ole asennettuna. Etsitäänkö se Google Playstä?</string>
 	<string name="rendering_attr_roadColors_name">Tien väriteema</string>
     <string name="map_widget_show_destination_arrow">Näytä kohteen suunta</string>
-    <string name="non_optimal_route_calculation">Laske mahdollisesti epäoptimaalinen reitti pitkille matkoille</string>
     <string name="offline_edition_descr">Käytä aina offline editointia</string>
 	<string name="free_version_message">Tämä ilmainen OsmAnd versio on rajoitettu %1$s lataukseen ja ei tue offline wikipedia artikkeleita.</string>
 	<string name="index_name_voice">Äänikehotteet (nauhoitettu, rajoitetut ominaisuudet)</string>
@@ -569,9 +567,7 @@
 	<string name="index_settings_descr">Lataa ja hallinnoi offline karttoja jotka on talletettu laitteeseesi</string>
     <string name="process_navigation_service">OsmAnd navigointipalvelu</string>
 	<string name="network_provider">Verkko</string>
-	<string name="background_router_service_descr">Suorita OsmAnd-sovellusta taustalla seurataksesi sijaintia silloin kun näyttö on pois päältä</string>
-	<string name="background_router_service">Suorita OsmAnd taustalla</string>
-	<string name="hide_poi_filter">Piilota suodatin</string>
+    <string name="hide_poi_filter">Piilota suodatin</string>
 	<string name="show_poi_filter">Näytä suodatin</string>
 	<string name="search_poi_filter">Suodatin</string>
 	<string name="failed_op">epäonnistui</string>
@@ -592,7 +588,6 @@
 	
     <string name="stop_routing_confirm">Oletko varma että haluat lopettaa navigoinnin?</string>
     <string name="clear_dest_confirm">Haluatko varmasti poistaa päämääräsi (ja välillä sijaitsevat kohteet)?</string>
-    <string name="precise_routing_mode">Tarkka reititys (alpha)</string>
 
     <string name="application_dir">Datan tallennuskansio</string>
 	<string name="access_arrival_time">Saapumisaika</string>
@@ -732,7 +727,6 @@
 	<string name="osm_changes_added_to_local_edits">OSM muutokset lisätty paikalliseen muutosjoukkoon</string>
 	<string name="local_osm_changes_upload_all_confirm">Olet lähettämässä %1$d muutosta(ksia) OSMiin. Oletko varma?</string>
     <string name="confirmation_to_clear_history">Haluatko tyhjentää historian?</string>
-    <string name="delay_to_start_navigation_descr">Määritä odotusaika jona pysyt reittisuunnittelu näytöllä</string>
     <string name="delay_to_start_navigation">Aloita navigointi sen jälkeen kun…</string>
     <string name="delay_navigation_start">Aloita navigointi automaattisesti</string>
     <string name="action_create">Luo toiminto</string>
@@ -1701,7 +1695,6 @@ Paina ja pidä nähdäksesi kartalla</string>
     <string name="route_from">Mistä:</string>
 
     <string name="download_using_mobile_internet">Wi-Fi ei ole nyt yhdistetty. Haluatko käyttää nykyistä internet yhteytttä lataukseen?</string>
-    <string name="precise_routing_mode_descr">Ota käyttöön laskenta tarkalle reitille ilman pikkuvirheitä. Vielä etäisyysrajoitteinen ja hidas.</string>
     <string name="rendering_attr_hikingRoutesOSMC_name">Retkeilysymbolit kartan päällä</string>
     <string name="rendering_attr_noAdminboundaries_description">Pidä piilossa alueellisten rajojen näyttö (hallintotasot 5-9)</string>
     <string name="safe_mode_description">Suorita sovellus turvatilassa (käyttäen hitaampaa Androidia natiivin koodin sijasta).</string>
@@ -1836,7 +1829,6 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
     <string name="rendering_value_medium_w_name">Keskitaso</string>
 
     <string name="routing_attr_driving_style_description">Turvallista, nopeaa tai tasapainoista ajoa</string>
-    <string name="route_altitude">Reitin korkeus</string>
     <string name="altitude_descent">Lasku</string>
     <string name="altitude_ascent">Nousu</string>
     <string name="altitude_range">Korkeuserot</string>
@@ -1888,7 +1880,6 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
     <string name="routing_attr_avoid_ice_roads_fords_name">Vältä jääteitä, kahlaamoja</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Vältä jääteitä ja kahlaamoja</string>
     <string name="use_location">Käytä sijaintia</string>
-    <string name="add_location_as_first_point_descr">Lisää sijaintisi täydellisen reittisuunnitelmasi lähtöpisteeksi.</string>
     <string name="my_location">Sijaintini</string>
     <string name="shared_string_finish">Päätepiste</string>
     <string name="plan_route">Suunnittele reitti</string>

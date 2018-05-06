@@ -110,8 +110,7 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
 	
 	
 	<string name="installing_new_resources">Đang giải nén dữ liệu mới…</string>
-	<string name="internet_connection_required_for_online_route">Một dịch vụ định tuyến trực tuyến được chọn nhưng không có kết nối Internet có sẵn.</string>
-	<string name="tts_language_not_supported_title">Ngôn ngữ không được hỗ trợ</string>
+    <string name="tts_language_not_supported_title">Ngôn ngữ không được hỗ trợ</string>
 	<string name="tts_language_not_supported">Ngôn ngữ được chọn không được hỗ trợ bởi công cụ Android TTS (text-to-speech) đã cài đặt. Bạn có muốn đi đến Market để tìm kiếm một công cụ TTS? Nếu không, ngôn ngữ TTS cài sẵn sẽ được sử dụng.</string>
 	<string name="tts_missing_language_data_title">Thiếu dữ liệu</string>
 	<string name="tts_missing_language_data">Ngôn ngữ được chọn không có dữ liệu. Bạn có muốn vào Market để cài đặt?</string>
@@ -344,8 +343,6 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
 	<string name="background_service_int">Khoảng cách Định vị</string>
 	<string name="background_service_provider_descr">Chọn nhà cung cấp địa điểm cho dịch vụ nền</string>
 	<string name="background_service_provider">Nhà cung cấp địa điểm</string>
-	<string name="background_router_service_descr">Bật chế độ chạy ngầm để lưu vị trí của bạn khi dùng trong thời gian dài</string>
-	<string name="background_router_service">Dùng dịch vụ chạy ngầm</string>
 	<string name="off_router_service_no_gps_available">Cần phải bật GPS khi sử dụng dịch vụ chạy ngầm.</string>
 	<string name="routing_settings_descr">Các thiết lập tìm đường</string>
 	<string name="routing_settings">Tìm đường</string>

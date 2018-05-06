@@ -98,8 +98,7 @@
   <string name="shared_string_accessibility">წვდომა</string>
   <string name="rendering_out_of_memory">არასაკმარისი მეხსიერება არჩეული ადგილის საჩვენებლად</string>
   <string name="use_fluorescent_overlays">მანათობელი დაფარვები</string>
-  <string name="use_fluorescent_overlays_descr">ბილიკებისა და გზების მანათობელი ფერებით ჩვენება</string>
-  <string name="offline_edition">POI-ს ჩასწორება გათიშულ რეჟიმში</string>
+    <string name="offline_edition">POI-ს ჩასწორება გათიშულ რეჟიმში</string>
   <string name="offline_edition_descr">ყოველთვის გამოვიყენოთ POI-ს ჩასწორების გათიშული რეჟიმი</string>
   
   <string name="update_poi_does_not_change_indexes">აპლიკაციაში POI-ის ცვლილებები არ ეხება ჩამოტვირთულ რუკის ფაილებს. ცვლილებები ინახება ლოკალურ ფაილში.</string>
@@ -280,8 +279,7 @@
   
   
   <string name="installing_new_resources">ახალი მონაცემების განშლა…</string>
-  <string name="internet_connection_required_for_online_route">არჩეულია მიმდინარე ნავიგაციის სერვისი მაგრამ ინტერნეტთან შეერთება წვდომადი არაა.</string>
-  <string name="tts_language_not_supported_title">ენა მხარდაჭერილი არაა</string>
+    <string name="tts_language_not_supported_title">ენა მხარდაჭერილი არაა</string>
   <string name="tts_language_not_supported">არჩეული ენა არაა მხარდაჭერილი ანდროიდის მიმდინარე ვერსიის TTS ძრავის მიერ. გნებავთ მოვძებნოთ სხვა ძრავი market-ში? წინააღმდეგ შემთხვევაში გამოყენებულ იქნება მიმდინარე TTS ენა.</string>
   <string name="tts_missing_language_data_title">ნაკლული მონაცემები</string>
   <string name="tts_missing_language_data">არჩეული ენის შესაბამისი მონაცემების პოვნა შეუძლებელია. გნებავთ მაღაზიაში მათი მოძებნა?</string>
@@ -501,9 +499,7 @@
   <string name="background_service_int">გაღვიძების ინტერვალი</string>
   <string name="background_service_provider_descr">აირჩიეთ მდებარეობის მომწოდებელი ფონური რეჟიმის დროს</string>
   <string name="background_service_provider">მდებარეობის მომწოდებელი</string>
-  <string name="background_router_service_descr">როდესაც ეკრანი გამორთულია, OsmAnd დარჩეს გაშვებული ფონურ რეჟიმში</string>
-  <string name="background_router_service">ფონად გაშვება</string>
-  <string name="off_router_service_no_gps_available">ფონური ნავიგაციის სერვისი მოითხოვს მდებარეობის მომწოდებლის ჩართვას.</string>
+    <string name="off_router_service_no_gps_available">ფონური ნავიგაციის სერვისი მოითხოვს მდებარეობის მომწოდებლის ჩართვას.</string>
   <string name="hide_poi_filter">ფილტრის დამალვა</string>
   <string name="show_poi_filter">ფილტრის ჩვენება</string>
   <string name="search_poi_filter">ფილტრი</string>
@@ -851,8 +847,7 @@
 <string name="avoid_in_routing_descr">ცუდი გზებისათვის თავის არიდება</string>
 <string name="show_warnings_title">გაფრთხილებების ჩვენება…</string>
 <string name="show_warnings_descr">სიჩქარის ლიმიტის, კამერებისა და საცობების ჩვენება</string>
-<string name="map_widget_fluorescent">მანათობელი გზები</string>
-<string name="map_widget_show_ruler">სახაზავის ჩვენება</string>
+    <string name="map_widget_show_ruler">სახაზავის ჩვენება</string>
 
 <string name="map_widget_view_direction">ხედვის მიმართულება</string>
 <string name="map_widget_transparent">გამჭირვალე ხედი</string>
@@ -883,12 +878,10 @@
     <string name="no_buildings_found">შენობები ნაპოვნი არაა.</string>
     <string name="search_villages_and_postcodes">ძებნა დასახლებებითა და საფოსტო კოდებით</string>
 	<string name="enable_plugin_monitoring_services">ჩართეთ დევნის დამატება პიზიცირების ჟურნალირების სერვისის გამოსაყენებლად(ჟურნალირება, ცოცხალი დევნა)</string>
-    <string name="non_optimal_route_calculation">გრძელი გზის შემთხვევაში მოსალოდნელი არაოპტიმალური მარშრუტის დათვლა</string>
-	<string name="gps_not_available">გთხოვთ ჩართოთ GPS</string>
+    <string name="gps_not_available">გთხოვთ ჩართოთ GPS</string>
     
 	<string name="map_widget_monitoring_services">ჟურნალირების სერვისები</string>
-	<string name="no_route">გზა ვერ მოიძებნა</string>
-	<string name="delete_target_point">გზის სანიშნის მოცილება</string>
+    <string name="delete_target_point">გზის სანიშნის მოცილება</string>
 	<string name="target_point">გზის სანიშნი %1$s</string>
     <string name="intermediate_point">გზის სანიშნი %1$s</string>
     <string name="context_menu_item_last_intermediate_point">გზის ბოლო ნიშნის დამატება</string>
@@ -917,8 +910,6 @@
 
     <string name="stop_routing_confirm">დარწმუნებული ბრძანდებით რომ გნებავთ ნავიგაციის შეწყვეტა?</string>
     <string name="clear_dest_confirm">დარწმუნებული ბრძანდებით რომ გნებავთ გაასუფთაოთ თქვენი დანიშნულების წერტილი?</string>
-    <string name="precise_routing_mode_descr">ჩართეთ ზუსტი გზები მათი მანძილის ზუსტად დასათვლელად. მაგრამ ის ძალიან შეზღუდულია მანძილით და არ იყენებს ადგილობრივ ბიბლიოთეკას.</string>
-    <string name="precise_routing_mode">გზის ზუსტი დათვლა (ალფა)</string>
     <string name="dropbox_plugin_name">Dropbox-ის დამატება</string>
     
     <string name="intermediate_points_change_order">წყობის შეცვლა</string>
@@ -1023,7 +1014,6 @@
     <string name="plugin_distance_point">წერტილი</string>
     <string name="gpx_file_name">GPX ფაილის სახელი</string>
     <string name="gpx_saved_sucessfully">GPX ფაილი წარმატებით იქნა შენახული {0}</string>
-    <string name="osmand_distance_planning_plugin_description">გზების შექმნა (ან არსებული GPX ფაილების გამოყენება/შეცვლა) წერტილებს შორის მანძილის დასათვლელად. GPX შენახვა შეიძლება გამოყენებულ იქნას GPS გზების დასათვლელად.</string>
     <string name="shared_string_do_not_show_again">აღარ მაჩვენო</string>
     <string name="distance_measurement_start_editing">ჩასწორების დაწყება</string>
     <string name="distance_measurement_finish_editing">ჩასწორების დამთავრება</string>
@@ -1171,7 +1161,6 @@
     <string name="file_can_not_be_moved">ფაილის გადაადგილება შეუძლებელია.</string>
     <string name="shared_string_move">გადატანა</string>
     <string name="shared_string_tracks">ბილიკები</string>
-    <string name="route_altitude">გზის სიმაღლე</string>
     <string name="altitude_descent">დაშვება</string>
     <string name="altitude_ascent">ასვლა</string>
     <string name="altitude_range">სიმაღლის შუალედი</string>

@@ -17,8 +17,7 @@
 	<string name="shared_string_import2osmand">Nach OsmAnd importieren</string>
 	<string name="tips_and_tricks_descr">Häufig gestellte Fragen, neueste Änderungen und anderes.</string>
 	<string name="delay_to_start_navigation">Routenführung beginnen nach…</string>
-	<string name="delay_to_start_navigation_descr">Wartezeit festlegen, um mit der Routenführung zu beginnen.</string>
-	<string name="simulate_your_location">Standort simulieren</string>
+    <string name="simulate_your_location">Standort simulieren</string>
 	<string name="rendering_attr_OSMMapperAssistant_name">OSM-Mapper-Assistent</string>
 	<string name="traffic_warning_speed_limit">Tempolimit</string>
 	<string name="traffic_warning_border_control">Grenzkontrolle</string>
@@ -37,9 +36,7 @@
 	<string name="sleep_mode_stop_dialog">GPS-Hintergrunddienst beenden?</string>
 	<string name="bg_service_sleep_mode_off">Hintergrunddienst\n einschalten</string>
 	<string name="bg_service_sleep_mode_on">Hintergrunddienst\n ausschalten</string>
-	<string name="background_router_service_descr">Aktiviere OsmAnd-Hintergrunddienst für Funktionalitäten bei ausgeschalteter Anzeige.</string>
-	<string name="background_router_service">Hintergrunddienst</string>
-	<string name="background_service_int_descr">GPS Aufwach-Intervall für den Hintergrunddienst.</string>
+    <string name="background_service_int_descr">GPS Aufwach-Intervall für den Hintergrunddienst.</string>
 	<string name="background_service_int">GPS-Aufwachintervall</string>
 	<string name="save_track_to_gpx_globally">Aufzeichnung in GPX-Datei</string>
 	<string name="save_track_to_gpx_globally_headline">GPX-Aufzeichnung bei Bedarf</string>
@@ -205,8 +202,7 @@
 	<string name="shared_string_accessibility">Bedienungshilfen</string>
 	<string name="rendering_out_of_memory">Nicht genug Arbeitsspeicher zum Anzeigen des gewählten Gebietes</string>
 	<string name="use_fluorescent_overlays">Fluoreszierende Overlays</string>
-	<string name="use_fluorescent_overlays_descr">Fluoreszierende Anzeige von Tracks und Routen.</string>
-	<string name="offline_edition">Offline-Bearbeitung</string>
+    <string name="offline_edition">Offline-Bearbeitung</string>
 	<string name="offline_edition_descr">Immer Offline-Bearbeitung verwenden.</string>
 	<string name="update_poi_does_not_change_indexes">Das Bearbeiten von POIs innerhalb von OsmAnd beeinflusst nicht die Offline-Karten, sondern wird in einer eigenen Datei gespeichert.</string>
 	<string name="local_openstreetmap_uploading">Hochladen…</string>
@@ -384,8 +380,7 @@
 	<string name="trace_rendering">Rendering Debug-Info</string>
 	<string name="trace_rendering_descr">Flag zur Prüfung der Rendering-Performance (Geschwindigkeit des Offline-Bildaufbaus).</string>
 	<string name="installing_new_resources">Entpacke neue Daten…</string>
-	<string name="internet_connection_required_for_online_route">Ein Online-Navigationsdienst ist ausgewählt, aber es besteht keine Internetverbindung.</string>
-	<string name="tts_language_not_supported_title">Sprache nicht unterstützt</string>
+    <string name="tts_language_not_supported_title">Sprache nicht unterstützt</string>
 	<string name="tts_language_not_supported">Die gewählte Sprache wird von der installierten Android-TTS-Engine nicht unterstützt. Soll im Market nach einer anderen TTS-Engine gesucht werden? Andernfalls wird die voreingestellte Standard-Sprache verwendet.</string>
 	<string name="tts_missing_language_data_title">Fehlendes Sprachpaket</string>
 	<string name="tts_missing_language_data">Es ist kein Sprachpaket für die gewählte Sprache installiert. Soll aus dem Market eines installiert werden?</string>
@@ -897,8 +892,7 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="avoid_ferries">Fähren vermeiden</string>
 	<string name="avoid_in_routing_title">Vermeiden von …</string>
 	<string name="avoid_in_routing_descr">Mautstraßen, unbefestigte Straßen, Fähren vermeiden.</string>
-	<string name="map_widget_fluorescent">Routen in Leuchtfarbe</string>
-	<string name="map_widget_show_ruler">Maßstab</string>
+    <string name="map_widget_show_ruler">Maßstab</string>
 	
 	<string name="map_widget_view_direction">Blickrichtung einblenden</string>
 	<string name="map_widget_map_rendering">Kartendarstellung</string>
@@ -932,11 +926,9 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="new_destination_point_dialog">Sie haben bereits ein Ziel gewählt:</string>
 	<string name="delete_target_point">Ziel löschen</string>
 	<string name="map_widget_monitoring_services">Aufzeichnungsdienste</string>
-	<string name="no_route">Keine Route</string>
-	<string name="intermediate_point">Zwischenziel %1$s</string>
+    <string name="intermediate_point">Zwischenziel %1$s</string>
 	<string name="map_widget_show_destination_arrow">Richtung zum Ziel anzeigen</string>
-	<string name="non_optimal_route_calculation">Auch nicht optimale Routen über lange Distanzen berechnen</string>
-	<string name="gps_not_available">Bitte GPS-Ortung in den Einstellungen aktivieren</string>
+    <string name="gps_not_available">Bitte GPS-Ortung in den Einstellungen aktivieren</string>
 	<string name="enable_plugin_monitoring_services">Streckenaufzeichnungs-Modul aktivieren, um Aufzeichnungsdienste (GPX-Aufzeichnung, Online-Aufzeichnung) zu verwenden</string>
 	<string name="zxing_barcode_scanner_not_found">Barcode-Scanner-Anwendung nicht installiert. Soll im Google Play-Store danach gesucht werden?</string>
 	<string name="close_changeset">Änderungssatz schließen</string>
@@ -957,8 +949,6 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 
     <string name="stop_routing_confirm">Sind Sie sicher, dass Sie die Navigation stoppen möchten?</string>
 	<string name="clear_dest_confirm">Sind Sie sicher, dass Sie Ihr Ziel (und die Zwischenziele) löschen möchten?</string>
-	<string name="precise_routing_mode_descr">Aktivieren, um Routen fehlerfrei zu berechnen. Diese Funktion ist weiterhin auf kurze Entfernung begrenzt und langsam.</string>
-	<string name="precise_routing_mode">Präzises Routing (experimentell)</string>
     <string name="prefer_motorways">Autobahnen bevorzugen</string>
 	<string name="prefer_in_routing_title">Bevorzugen von …</string>
 	<string name="prefer_in_routing_descr">Autobahnen bevorzugen.</string>
@@ -1004,8 +994,7 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="distance_measurement_clear_route">Alle Punkte löschen</string>
 	<string name="intermediate_items_sort_return">Die Anordnung der Zwischenziele auf der Route zum Ziel wurde optimiert.</string>
 	<string name="plugin_distance_point">Punkt</string>
-	<string name="osmand_distance_planning_plugin_description">Diese Erweiterung beinhaltet ein Kartenbildschirm-Steuerelement, über das Wege erstellt werden können. Entweder durch Auswahl von Punkten auf der Karte oder durch Verwendung/Veränderung bereits vorhandener GPX-Dateien kann so die Streckenplanung und Entfernungsmessung zwischen Punkten erfolgen. Die Ergebnisse können als GPX-Datei gespeichert und für eine Navigation verwendet werden.</string>
-	<string name="shared_string_do_not_show_again">Nicht erneut anzeigen</string>
+    <string name="shared_string_do_not_show_again">Nicht erneut anzeigen</string>
 	
 	<string name="distance_measurement_load_gpx">Vorhandene GPX-Datei öffnen</string>
 	<string name="search_street_in_neighborhood_cities">Straßennamen in benachbarten Orten suchen</string>
@@ -2074,7 +2063,6 @@ Abgedeckte Fläche: %1$s x %2$s</string>
     <string name="routing_attr_height_obstacles_name">Höhendaten verwenden</string>
     <string name="routing_attr_height_obstacles_description">Von SRTM, ASTER und EU-DEM bereitgestellte Geländeprofildaten verwenden.</string>
 
-    <string name="route_altitude">Routenhöhenprofil</string>
     <string name="altitude_descent">Abstieg</string>
     <string name="altitude_ascent">Aufstieg</string>
     <string name="altitude_range">Höhendifferenz</string>
@@ -2209,7 +2197,6 @@ Abgedeckte Fläche: %1$s x %2$s</string>
 	<string name="none_point_error">Bitte mindestens einen Punkt hinzufügen.</string>
 	<string name="enter_gpx_name">GPX Dateiname:</string>
 <string name="show_on_map_after_saving">Nach dem Speichern auf der Karte anzeigen</string>
-    <string name="add_route_point">Routenpunkt hinzufügen</string>
     <string name="add_waypoint">Wegpunkt hinzufügen</string>
     <string name="save_gpx_waypoint">GPX Wegpunkt speichern</string>
     <string name="save_route_point">Routenpunkt speichern</string>
@@ -2243,7 +2230,6 @@ Abgedeckte Fläche: %1$s x %2$s</string>
     <string name="keep_showing_on_map">Weiterhin auf der Karte anzeigen</string>
     <string name="exit_without_saving">Beenden ohne zu speichern?</string>
     <string name="move_all_to_history">Alles in den Verlauf verschieben</string>
-    <string name="build_route">Route erstellen</string>
     <string name="show_direction">Angabe der Entfernung</string>
     <string name="sort_by">Sortieren nach</string>
     <string name="marker_options">Marker-Optionen</string>
@@ -2270,7 +2256,6 @@ Abgedeckte Fläche: %1$s x %2$s</string>
     <string name="routing_attr_avoid_ice_roads_fords_name">Eispisten, Furten meiden</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Eispisten und Furten ausschließen.</string>
     <string name="use_location">Position verwenden</string>
-    <string name="add_location_as_first_point_descr">Zur genaueren Routenplanung eigene Position als ersten Punkt hinzufügen.</string>
     <string name="plan_route">Route planen</string>
     <string name="shared_string_sort">Sortieren</string>
     <string name="coordinate_input">Koordinateneingabe</string>

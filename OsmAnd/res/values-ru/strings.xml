@@ -259,7 +259,6 @@
     <string name="background_service_is_enabled_question">Фоновый режим всё ещё запущен. Вы хотите прервать его тоже?</string>
     <string name="close_changeset">Закрыть changeset</string>
     <string name="zxing_barcode_scanner_not_found">Приложение ZXing Barcode Scanner не найдено. Искать в Google Play?</string>
-    <string name="non_optimal_route_calculation">Быстрое построение маршрута (возможно неоптимально)</string>
     <string name="oclock">ч.</string>
     <string name="unknown_from_location">Начальное местоположение ещё не определено</string>
     <string name="unknown_location">Определяем местоположение</string>
@@ -291,7 +290,6 @@
     <string name="show_ruler_level">Показывать масштаб</string>
     <string name="info_button">Информация</string>
     <string name="use_fluorescent_overlays">Флуоресцентные цвета</string>
-    <string name="use_fluorescent_overlays_descr">Использовать флуоресцентные цвета для отображения треков и маршрутов.</string>
     <string name="offline_edition">Локальное редактирование</string>
     <string name="offline_edition_descr">Всегда использовать локальное редактирование.</string>
     <string name="update_poi_does_not_change_indexes">Изменение POI в приложении не меняет POI загруженные из интернета, однако все изменения сохраняются в локальный файл.</string>
@@ -408,7 +406,6 @@
     <string name="map_text_size_descr">Выберите размер текста для наименований на карте.</string>
     <string name="map_text_size">Размер текста</string>
     <string name="installing_new_resources">Распаковываются новые данные…</string>
-    <string name="internet_connection_required_for_online_route">Вы собираетесь использовать Интернет-маршрутизацию, но у Вас нет активного Интернет соединения.</string>
     <string name="tts_language_not_supported_title">Язык не поддерживается</string>
     <string name="tts_language_not_supported">Выбранный язык не поддерживается активным Android TTS (text-to-speech). Будет использован язык по-умолчанию. Хотите найти в Google Play другой TTS? Иначе будет использоваться предустановленный язык TTS.</string>
     <string name="tts_missing_language_data_title">Данные отсутствуют</string>
@@ -602,8 +599,6 @@
     <string name="background_service_int">Интервал пробуждения GPS</string>
     <string name="background_service_provider_descr">Выберите источник позиционирования для фоновой службы.</string>
     <string name="background_service_provider">Источник позиционирования</string>
-    <string name="background_router_service_descr">Запускает OsmAnd в фоновом режиме для отслеживания вашего местоположения при выключенном экране.</string>
-    <string name="background_router_service">Запуск приложения в фоновом режиме</string>
     <string name="off_router_service_no_gps_available">Сервис маршрутизации OsmAnd включён, если отключить позиционирование, он перестанет вести по маршруту.</string>
     <string name="routing_settings_descr">Укажите настройки для навигации.</string>
     <string name="routing_settings">Навигация</string>
@@ -975,7 +970,6 @@
     <string name="avoid_in_routing_title">Избегать при прокладке маршрута…</string>
     <string name="avoid_in_routing_descr">Избегать платных и просёлочных дорог, паромов.</string>
     <string name="show_warnings_descr">Настройка оповещений (ограничения скорости, вынужденные остановки, искусственные неровности), камеры скорости, информацию о полосах.</string>
-    <string name="map_widget_fluorescent">Флуоресцентные маршруты</string>
     <string name="show_warnings_title">Показывать сигналы…</string>
     <string name="map_widget_show_ruler">Линейка</string>
     <string name="map_widget_view_direction">Направление взгляда</string>
@@ -1018,7 +1012,6 @@
     <string name="intermediate_point">Промежуточный пункт %1$s</string>
     <string name="delete_target_point">Удалить пункт</string>
     <string name="map_widget_monitoring_services">Службы мониторинга</string>
-    <string name="no_route">Нет маршрута</string>
     <string name="gps_not_available">Включите GPS в настройках</string>
     <string name="map_widget_show_destination_arrow">Отображать направление к пункту назначения</string>
     <string name="enable_plugin_monitoring_services">"Включите плагин \"Запись поездки\" для использования сервисов мониторинга  (запись GPX, сопровождение в реальном времени)"</string>
@@ -1034,9 +1027,7 @@
     <string name="dropbox_plugin_name">Плагин Dropbox</string>
     <string name="stop_routing_confirm">Вы уверены, что хотите остановить навигацию?</string>
     <string name="clear_dest_confirm">Вы уверены, что хотите удалить пункт назначения (и промежуточные пункты)?</string>
-    <string name="precise_routing_mode">Точный маршрут (alpha)</string>
     <string name="support_new_features_descr">Пожертвуйте, чтобы увидеть новые опции реализованными в приложении.</string>
-    <string name="precise_routing_mode_descr">Включите, для расчёта точных маршрутов без затруднений. Всё ещё ограниченн расстоянием и медленный.</string>
     <string name="index_name_openmaps">OpenMaps - Европа</string>
     <string name="prefer_motorways">Предпочитать автомагистрали</string>
     <string name="prefer_in_routing_title">Предпочитать…</string>
@@ -1093,7 +1084,6 @@
     <string name="use_magnetic_sensor_descr">Использовать магнитный датчик вместо датчика ориентации.</string>
     <string name="other_location">Другие</string>
     <string name="shared_string_downloading">Загрузка</string>
-    <string name="osmand_distance_planning_plugin_description">Плагин добавляет виджет на экран карты, позволяющий создавать маршруты, нажав на карте, а также использовать или изменять существующие файлы GPX, планировать поездку и измерять расстояние между точками. Результаты могут быть сохранены в виде файла GPX, который впоследствии может быть использован для навигации.</string>
     <string name="context_menu_item_destination_point">Установить как пункт назначения</string>
     <string name="please_select_address">Сначала выберите город или улицу</string>
     <string name="destination_point">Пункт назначения %1$s</string>
@@ -1555,7 +1545,6 @@
     <string name="waypoint_visit_after">Посетить после</string>
     <string name="waypoint_visit_before">Посетить до</string>
     <string name="plugin_touringview_name">Туристическая карта</string>
-    <string name="delay_to_start_navigation_descr">Укажите время задержки на экране планирования маршрута.</string>
     <string name="delay_to_start_navigation">Задержка начала навигации…</string>
     <string name="shared_string_go">Поехали</string>
     <string name="local_osm_changes_upload_all_confirm">Вы собираетесь отправить %1$d изменений в OSM. Вы уверены?</string>
@@ -2080,7 +2069,6 @@
     <string name="shared_string_reload">Обновить</string>
     <string name="import_gpx_failed_descr">OsmAnd не удается импортировать файл. Проверьте имеет ли OsmAnd разрешение на чтение файла из его местоположения.</string>
     <string name="distance_moving">Откорректированное расстояние</string>
-    <string name="route_altitude">Высота маршрута</string>
     <string name="enter_gpx_name">Имя GPX файла:</string>
     <string name="show_on_map_after_saving">Показать на карте после сохранения</string>
     <string name="measurement_tool_action_bar">Просмотрите карту и добавьте точки</string>
@@ -2229,7 +2217,6 @@
 	<string name="waypoints_added_to_map_markers">Путевые точки добавлены в маркеры карты</string>
 	<string name="route_is_calculated">Маршрут рассчитан</string>
     <string name="round_trip">Путешествие</string>
-    <string name="add_location_as_first_point_descr">Добавить ваше местоположение как первую точку при планировании маршрута.</string>
     <string name="is_saved">сохранено</string>
     <string name="show_passed">Показывать пройденные</string>
     <string name="hide_passed">Скрыть пройденные</string>

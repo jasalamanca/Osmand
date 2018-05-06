@@ -349,7 +349,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="plugin_distance_point">Punto</string>
     <string name="gpx_file_name">Nome de ficheiro GPX</string>
     <string name="gpx_saved_sucessfully">O ficheiro GPX foi gravado correctametne en {0}</string>
-    <string name="osmand_distance_planning_plugin_description">Este engadido fornece un trebello da pantalla do mapa que permite crear camiños tocando no mapa ou usar ou modificar ficheiros GPX existentes e así planificar unha viaxe e medir a distancia entre distintos puntos. Os resultados pódense gardar nun ficheiro GPX, que máis tarde pode servir de guía.</string>
     <string name="use_distance_measurement_help">* Toque para marcar un punto.
 
  * Manteña premido o mapa para eliminar un punto anterior.
@@ -407,8 +406,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 
     <string name="stop_routing_confirm">Confirma que desexa parar a navegación?</string>
     <string name="clear_dest_confirm">Confirma que desexa limpar o destino (e os destinos intermedios)?</string>
-    <string name="precise_routing_mode_descr">Permitir calcular rutas precisas sen fallo. Aínda se ve limitado polas distancias e é lento.</string>
-    <string name="precise_routing_mode">Cálculo de rutas preciso (alfa)</string>
     <string name="dropbox_plugin_name">Engadido de Dropbox</string>
     <string name="intermediate_points_change_order">Cambiar a orde</string>
     <string name="recording_delete_confirm">Desexa eliminar esta gravación?</string>
@@ -452,12 +449,10 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="rendering_attr_roadColors_name">Esquema de cores de estrada</string>
     <string name="map_widget_show_destination_arrow">Mostrar en que dirección está o destino</string>
     <string name="enable_plugin_monitoring_services">Permitir que o engadido de gravación de viaxes empregue os servizos de rexistro da posición (rexistro de GPX, seguimento na rede)</string>
-    <string name="non_optimal_route_calculation">Calcular rutas posibelmente non óptimas en distnacias longas</string>
-	<string name="gps_not_available">Active o GPS na configuración</string>
+    <string name="gps_not_available">Active o GPS na configuración</string>
     
 	<string name="map_widget_monitoring_services">Servizos de rexistro</string>
-	<string name="no_route">Sen itinerario</string>
-	<string name="delete_target_point">Retirar o destino</string>
+    <string name="delete_target_point">Retirar o destino</string>
 	<string name="target_point">Destino %1$s</string>
     <string name="intermediate_point">Destino intermedio %1$s</string>
     <string name="context_menu_item_last_intermediate_point">Engadir como último destino intermedio</string>
@@ -513,8 +508,7 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="avoid_ferries">Evitar os ferries</string>
 	<string name="avoid_in_routing_title">Evitar…</string>
 	<string name="avoid_in_routing_descr">Evitar estradas de portaxe, sen asfaltar, ferries</string>
-	<string name="map_widget_fluorescent">Rutas fluorescentes</string>
-	<string name="map_widget_show_ruler">Regra</string>
+    <string name="map_widget_show_ruler">Regra</string>
 	<string name="map_widget_view_direction">Dirección da vista</string>
 	<string name="map_widget_transparent">Trebellos transparentes</string>
 	<string name="bg_service_sleep_mode_off">Executar\n o aplicativo en segundo plano</string>
@@ -683,8 +677,7 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="arrival_distance_descr">Con que antelación desexa o anuncio de chegada?</string>
     <string name="rendering_out_of_memory">Non abonda a memoria de procesamento para mostrar a área seleccionada</string>
 	<string name="use_fluorescent_overlays">Sobreposicións fluorescentes</string>
-	<string name="use_fluorescent_overlays_descr">Empregar cores fluorescentes para mostrar as pistas e rutas</string>
-	<string name="offline_edition">Edición sen conexión</string>
+    <string name="offline_edition">Edición sen conexión</string>
 	<string name="offline_edition_descr">Empregar sempre a edición sen conexión</string>
 	
 	<string name="update_poi_does_not_change_indexes">Os cambios nos puntos de interese dentro do aplicativo non afectan aos ficheiros de mapas descargados, pois eses cambios gárdanse só nun ficheiro local.</string>
@@ -855,8 +848,7 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	
 	
 	<string name="installing_new_resources">A desempaquetar datos novos…</string>
-	<string name="internet_connection_required_for_online_route">Hai un servizo de navegación con conexión seleccionado mais non hai ningunha conexión á Internet dispoñíbel.</string>
-	<string name="tts_language_not_supported_title">Este idioma non está dispoñíbel</string>
+    <string name="tts_language_not_supported_title">Este idioma non está dispoñíbel</string>
 	<string name="tts_language_not_supported">O idioma seleccionado non está dispoñíbel no motor TTS (texto lido) de Android. Desexa buscar outro motor de TTS no Market? Se non, hase empregar o idioma de TTS predeterminado.</string>
 	<string name="tts_missing_language_data_title">faltan datos</string>
 	<string name="tts_missing_language_data">Non hai datos instalados para o idioma seleccionado. Desexa ir ao Market para instalalos?</string>
@@ -1064,9 +1056,7 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="background_service_int_descr">Estabelecer o intervalo para espertar empregado polo servizo de segundo plano</string>
 	<string name="background_service_provider_descr">Empregar o fornecedor de situación empregado polo servizo de segundo plano</string>
 	<string name="background_service_provider">Fornecedor de situación</string>
-	<string name="background_router_service_descr">Executa OsmAnd no fondo para seguir a posición mentres a pantalla está apagada</string>
-	<string name="background_router_service">Executar OsmAnd en segundo plano</string>
-	<string name="off_router_service_no_gps_available">O servizo de navegación en segundo plano require que se active un fornecedor de situación.</string>
+    <string name="off_router_service_no_gps_available">O servizo de navegación en segundo plano require que se active un fornecedor de situación.</string>
 	<string name="hide_poi_filter">Agochar o filtro</string>
 	<string name="show_poi_filter">Mostrar o filtro</string>
 	<string name="search_poi_filter">Filter</string>
@@ -1588,7 +1578,6 @@ Lon %2$s</string>
     <string name="disable_recording_once_app_killed_descrp">Detén o rexistro de GPX cando se mata o aplicativo (mediante apps recentes). (A indicación de OsmAnd desaparece da barra de notificacións de Android).</string>
     <string name="agps_info">Información de A-GPS</string>
 	<string name="agps_data_last_downloaded">Datos de A-GPS descargados por última vez: %1$s</string>
-    <string name="delay_to_start_navigation_descr">Indicar o tempo de agarda durante o que ficar na pantalla de planificación de rutas</string>
     <string name="delay_to_start_navigation">Iniciar a navegación paso a paso despois de…</string>
     <string name="save_track_to_gpx_globally_headline">Rexistro de pistas baixo petición</string>
 	<string name="shared_string_send">Engadir</string>
@@ -2110,7 +2099,6 @@ Lon %2$s</string>
     <string name="file_can_not_be_moved">Non é posíbel mover o ficheiro.</string>
     <string name="shared_string_move">Mover</string>
     <string name="shared_string_tracks">Pistas</string>
-    <string name="route_altitude">Altitude da ruta</string>
     <string name="altitude_descent">Descenso</string>
     <string name="altitude_ascent">Ascenso</string>
     <string name="altitude_range">Intervalo de altitude</string>
@@ -2170,7 +2158,6 @@ Lon %2$s</string>
     <string name="routing_attr_avoid_ice_roads_fords_name">evitar estradas de xeo, vaos</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Evitar estradas de xeo e vaos</string>
     <string name="use_location">Empregar posición</string>
-    <string name="add_location_as_first_point_descr">Engada a súa posición como primeiro punto para planificar unha ruta perfecta.</string>
     <string name="my_location">A miña posición</string>
     <string name="shared_string_finish">Rematar</string>
     <string name="plan_route">Planear ruta</string>

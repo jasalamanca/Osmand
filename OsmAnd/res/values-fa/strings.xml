@@ -140,8 +140,7 @@
 
     <string name="map_widget_distancemeasurement">اندازه‌گیری مسافت</string>
     <string name="map_widget_show_destination_arrow">نشان‌دادن جهت مقصد</string>
-    <string name="no_route">مسیری وجود ندارد</string>
-	<string name="add_tag">افزودن برچسب</string>
+    <string name="add_tag">افزودن برچسب</string>
     <string name="btn_advanced_mode">حالت پیشرفته…</string>
     <string name="show_warnings_title">نمایش هشدارها…</string>
 	<string name="use_compass_navigation">استفاده از قطب‌نما</string>
@@ -153,7 +152,6 @@
     <string name="item_checked">انتخاب‌شده</string>
     <string name="item_unchecked">انتخاب‌نشده</string>
     <string name="prefer_in_routing_title">ترجیح‌دادن…</string>
-    <string name="precise_routing_mode">مسیریابی دقیق (آلفا)</string>
     <string name="destination_point">مقصد %1$s</string>
     <string name="context_menu_item_destination_point">تنظیم به عنوان مقصد</string>
     <string name="email">ایمیل</string>
@@ -504,8 +502,7 @@
 	<string name="rendering_attr_roadColors_description">یکی از رنگ‌بندی‌های راه را انتخاب کنید:</string>
 	<string name="rendering_attr_roadColors_name">رنگ‌بندی راه</string>
     <string name="enable_plugin_monitoring_services">افزونهٔ ضبط مسیر را فعال کنید تا بتوانید از سرویس‌های ثبت مکان استفاده کنید (ضبط GPX، ردگیری آنلاین)</string>
-    <string name="non_optimal_route_calculation">برای مسافت‌های طولانی شاید بهینه‌ترین مسیر محاسبه نشود</string>
-	<string name="gps_not_available">لطفاً GPS را از طریق تنظیمات فعال کنید</string>
+    <string name="gps_not_available">لطفاً GPS را از طریق تنظیمات فعال کنید</string>
     <string name="map_widget_monitoring_services">خدمات ثبت و ضبط</string>
 	
     <string name="show_warnings_descr">پیکربندی‌های مربوط به هشدارهای ترافیکی (مانند محدودیت‌های سرعت، توقف‌های اجباری، سرعتگیرها)، هشدارهای دوربین کنترل سرعت و اطلاعات خط عبوری را انجام دهید.</string>
@@ -525,7 +522,6 @@
     
 	<string name="prefer_motorways">ترجیح‌دادن آزادراه‌ها</string>
 	<string name="prefer_in_routing_descr">آزادراه‌ها را ترجیح می‌دهم.</string>
-    <string name="precise_routing_mode_descr">این را فعال کنید تا مسیرها دقیق و بدون اشکال محاسبه شوند. البته این حالت محدودیت مسافت دارد و کُند است.</string>
     <string name="recording_delete_confirm">آیا این مورد ضبط‌شده را پاک می‌کنید؟</string>
     <string name="use_magnetic_sensor_descr">برای مقدار قطب‌نما به‌جای حسگر جهتی از حسگر مغناطیسی استفاده کن.</string>
     <string name="show_poi_over_map">نشان‌دادن لایهٔ نقاط POI</string>
@@ -595,9 +591,8 @@
     <string name="show_lanes">خطوط عبوری</string>
 	<string name="avoid_unpaved">اجتناب از راه‌های روسازی‌نشده</string>
 	<string name="avoid_ferries">اجتناب از گذرگاه‌های آبی</string>
-	
-	<string name="map_widget_fluorescent">مسیرهای شب‌نما</string>
-	<string name="bg_service_sleep_mode_off">اجراکردن
+
+    <string name="bg_service_sleep_mode_off">اجراکردن
 \n برنامه در پس‌زمینه</string>
 	<string name="bg_service_sleep_mode_on">پایان‌دادن 
 \n به اجرا در پس‌زمینه</string>
@@ -626,8 +621,7 @@
 	<string name="settings_direction_style_descr">مشخص کنید در هنگام حرکت، جهت‌ها به چه شیوه‌ای بیان شوند.</string>
 	<string name="auto_announce_on">شروع اعلام خودکار</string>
 	<string name="auto_announce_off">توقف اعلام خودکار</string>
-	<string name="use_fluorescent_overlays_descr">برای نمایش مسیرها و جاده‌ها از رنگ‌های شب‌نما استفاده شود.</string>
-	<string name="offline_edition">ویرایش آفلاین</string>
+    <string name="offline_edition">ویرایش آفلاین</string>
 	<string name="offline_edition_descr">ویرایش‌ها را همیشه آفلاین انجام می‌دهم.</string>
 	<string name="local_openstreetmap_uploading">در حال آپلود…</string>
 	<string name="local_openstreetmap_were_uploaded">تعداد {0} یادداشت/POI آپلود شد</string>
@@ -704,8 +698,7 @@
 	
 	
 	<string name="installing_new_resources">بازکردن داده‌های جدید…</string>
-	<string name="internet_connection_required_for_online_route">یکی از سرویس‌های مسیریابی آنلاین انتخاب شده است اما اتصال اینترنتی وجود ندارد.</string>
-	<string name="tts_missing_language_data_title">داده‌ها وجود ندارد</string>
+    <string name="tts_missing_language_data_title">داده‌ها وجود ندارد</string>
 	<string name="gpx_option_reverse_route">معکوس‌کردن مسیر GPX</string>
 	<string name="gpx_option_destination_point">از مقصد جاری استفاده کن</string>
 	<string name="gpx_option_from_start_point">از سرتاسر مسیر عبور کن</string>
@@ -760,8 +753,6 @@
     <string name="speak_speed_limit">سرعت مجاز</string>
     <string name="speak_cameras">دوربین‌های سرعت‌سنج</string>
 	<string name="speak_traffic_warnings">هشدارهای ترافیکی</string>
-	
-    <string name="osmand_distance_planning_plugin_description">این افزونه، یک ابزارک روی صفحهٔ نقشه می‌گذارد که با آن می‌توانید مسیرهایی را روی نقشه رسم کنید یا فایل‌های GPX موجود را تغییر دهید تا برای سفر طرح‌ریزی کنید و مسافت بین نقاط را اندازه بگیرید. نتیجه را هم می‌توانید به‌صورت فایل GPX ذخیره کنید تا بعداً از آن برای راهنمایی استفاده کنید.</string>
 
 
     <string name="index_name_openmaps">نقشه‌های اتحادیهٔ اروپا</string>
@@ -834,9 +825,7 @@
 	<string name="background_service_int">بازهٔ زمانی بیدارباش GPS</string>
 	<string name="background_service_provider_descr">مشخص کنید سرویس پس‌زمینه اطلاعات مکانی را چگونه دریافت کند.</string>
 	<string name="background_service_provider">ارائه‌دهندهٔ موقعیت</string>
-	<string name="background_router_service_descr">برنامهٔ OsmAnd در پس‌زمینه اجرا می‌ماند تا در زمانی‌که صفحه خاموش است موقعیت شما را ردگیری کند.</string>
-	<string name="background_router_service">اجرای OsmAnd در پس‌زمینه</string>
-	<string name="off_router_service_no_gps_available">برای استفاده از سرویس راهبری موقعیت مکانی را روشن کنید.</string>
+    <string name="off_router_service_no_gps_available">برای استفاده از سرویس راهبری موقعیت مکانی را روشن کنید.</string>
 	<string name="hide_poi_filter">مخفی‌کردن فیلتر</string>
 	<string name="show_poi_filter">نمایش فیلتر</string>
 	<string name="search_poi_filter">فیلتر</string>
@@ -1498,7 +1487,6 @@
    	<string name="mark_to_delete">برای حذف‌کردن علامت بزنید</string>
     <string name="local_osm_changes_upload_all_confirm">دارید %1$d تغییر را به OSM ارسال می‌کنید. مطمئن هستید؟</string>
     <string name="confirmation_to_clear_history">آیا سوابق را پاک می‌کنید؟</string>
-    <string name="delay_to_start_navigation_descr">زمان انتظار برای باقی‌ماندن در صفحهٔ طراحی مسیر را مشخص کنید.</string>
     <string name="delay_to_start_navigation">مسیریابی مرحله‌به‌مرحله را بعد از … شروع کن</string>
     <string name="shared_string_go">برو</string>
     <string name="general_settings_2">تنظیمات کلی</string>
@@ -1804,7 +1792,6 @@
     <string name="shared_string_time_span">مدت‌زمان</string>
     <string name="select_gpx_folder">پوشهٔ مسیر را انتخاب کنید</string>
     <string name="shared_string_tracks">Tracks</string>
-    <string name="route_altitude">ارتفاع مسیر</string>
     <string name="altitude_descent">نزول</string>
     <string name="altitude_ascent">صعود</string>
     <string name="altitude_range">دامنهٔ ارتفاع</string>
@@ -2200,7 +2187,6 @@
     <string name="routing_attr_avoid_ice_roads_fords_name">اجتناب از از گُدارها و راه‌های یخی</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">از راه‌های یخی و گُدارها اجتناب شود.</string>
     <string name="use_location">استفاده از موقعیت</string>
-    <string name="add_location_as_first_point_descr">برای طراحی یک مسیر کامل موقعیتتان را به‌عنوان نقطهٔ شروع اضافه کنید.</string>
     <string name="my_location">موقعیت من</string>
     <string name="shared_string_finish">پایان</string>
     <string name="plan_route">طراحی مسیر</string>

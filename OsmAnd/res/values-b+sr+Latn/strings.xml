@@ -115,9 +115,8 @@
 	<string name="show_lanes">Prikaži trake</string>
 	<string name="avoid_unpaved">Izbegavaj neasfaltirane puteve</string>
 	<string name="avoid_ferries">Izbegavaj trajekte</string>
-	<string name="map_widget_fluorescent">Fluorescentne rute</string>
-	
-	<string name="bg_service_sleep_mode_off">Omogući\n režim spavanja</string>
+
+    <string name="bg_service_sleep_mode_off">Omogući\n režim spavanja</string>
 	<string name="map_widget_top_text">Naziv ulice</string>
 	<string name="map_widget_config">Podešavanje ekrana</string>
 	<string name="map_widget_back_to_loc">Gde sam</string>
@@ -274,7 +273,6 @@
 	<string name="voice_not_use">Ne koristi</string>
 	
 	<string name="installing_new_resources">Raspakujem nove podatke…</string>
-	<string name="internet_connection_required_for_online_route">Izabrana je usluga navođenja preko mrežne veze, ali je mrežna veza nedostupna.</string>
 	<string name="tts_language_not_supported_title">Jezik nije podržan</string>
 	<string name="tts_missing_language_data_title">Nedostaju podaci</string>
 	<string name="tts_missing_language_data">Nema ugrađenih podataka izabranog jezika. Da li želite da odete do prodavnice radi ugradnje?</string>

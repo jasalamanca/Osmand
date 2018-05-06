@@ -29,7 +29,6 @@
 
     <string name="stop_routing_confirm">هل أنت متأكد أنك تريد إيقاف الملاحة؟</string>
     <string name="clear_dest_confirm">هل أنت متأكد أنك تريد مسح نقطة الوجهة (والوجهات المتوسطة) ؟</string>
-    <string name="precise_routing_mode">التوجيه الدقيق (ألفا)</string>
     <string name="dropbox_plugin_name">ملحق دروب بوكس</string>
     <string name="recording_delete_confirm">هل تريد إزالة هذا التسجيل ؟</string>
     <string name="recording_context_menu_play">شغّل</string>
@@ -51,11 +50,9 @@
     <string name="safe_mode">الوضع الآمن</string>
     <string name="close_changeset">إغلاق تغيير تعيين</string>
 	<string name="enable_plugin_monitoring_services">تمكين البرنامج المساعد لتسجيل الرحلة باستعمال خدمات تحديد المواقع (تسجيل GPX، وتتبع عبر الإنترنت)</string>
-    <string name="non_optimal_route_calculation">ربما لا يكون من الأحسن حساب الطريق لمسافات طويلة</string>
-	<string name="map_widget_show_destination_arrow">أظهر إتجاه المقصد</string>
+    <string name="map_widget_show_destination_arrow">أظهر إتجاه المقصد</string>
     <string name="map_widget_monitoring_services">خدمات التسجيل</string>
-	<string name="no_route">لا طريق</string>
-	<string name="delete_target_point">إزالة الوجهة</string>
+    <string name="delete_target_point">إزالة الوجهة</string>
     <string name="new_destination_point_dialog">لقد حددت نقطة وجهة سابقا:</string>
     <string name="target_points">الوجهات</string>
     <string name="btn_advanced_mode">الوضع المتقدم…</string>
@@ -201,7 +198,6 @@
     <string name="plugin_distance_point">نقطة</string>
     <string name="gpx_file_name">GPX اسم الملف</string>
     <string name="gpx_saved_sucessfully">ملف GPX حفظها بنجاح {0}</string>
-    <string name="osmand_distance_planning_plugin_description">هاته الاضافة تتيح مؤشر على الخريطة يسمح بانشاء مسارات بالنقر على الخريطة، استعمال أو تعديل ملف GPX موجود، تخطيط رحلة أو حساب المسافة بين نقاط ما. النتائج يمكن حفظها كملف GPX الذي يمكن استخدامه للارشاد في وقت لاحق.</string>
     <string name="shared_string_do_not_show_again">لا تظهر مرة أخرى</string>
     <string name="distance_measurement_start_editing">بدء تحرير</string>
     <string name="distance_measurement_finish_editing">الانتهاء من تحرير</string>
@@ -339,7 +335,6 @@
     <string name="files_limit">%1$d ملف بقى</string>
     
     <string name="osmand_background_plugin_description">يظهر الإعدادات لتمكين التتبع والملاحة في وضعية السكون ( الشاشة مغلقة ) عبر إيقاظ دوري لجهاز GPS.</string>
-    <string name="precise_routing_mode_descr">تمكين لحساب المسارات بدقة دون أخطاء. لا يزال محدود المسافة وبطيء.</string>
     <string name="add_as_last_destination_point">أضف كآخر وجهة وسيطة</string>
     <string name="add_as_first_destination_point">أضف كأول وجهة وسيطة</string>
     <string name="intermediate_point_too_far">الوجهة %1$s بعيدة جدا من أقرب طريق.</string>
@@ -368,8 +363,7 @@
 	
 	
 	<string name="layer_map_appearance">ضبط الشاشة</string>
-	<string name="map_widget_fluorescent">طرق فلورية</string>
-	<string name="map_widget_show_ruler">مسطرة</string>
+    <string name="map_widget_show_ruler">مسطرة</string>
 	
 	<string name="map_widget_view_direction">عرض الاتجاه</string>
 	<string name="map_widget_transparent">حاجيات شفافة</string>
@@ -496,8 +490,7 @@
 	<string name="zoom_by_trackball_descr">غيّر نمط تكبير الخريطة بواسطة حركات كرة التّتبع الأفقية.</string>
 	<string name="zoom_by_trackball">استخدم كرة التّتبع للتّحكم في التّكبير</string>
 	<string name="use_fluorescent_overlays">تراكب فلوري</string>
-	<string name="use_fluorescent_overlays_descr">استخدم الألوان الفلورية لعرض المسارات و الطّرق.</string>
-	<string name="local_openstreetmap_upload">ارفع التّعديلات إلى OSM</string>
+    <string name="local_openstreetmap_upload">ارفع التّعديلات إلى OSM</string>
 	<string name="local_openstreetmap_descr_title">التّحرير غير المتزامن مع OSM:</string>
 	<string name="local_openstreetmap_settings">العلل أو الـ POI المحفوظة محليًا</string>
 	<string name="local_openstreetmap_settings_descr">أظهر و أدر العلل أو الـ POI الموجودة على قاعدة البيانات المحلية.</string>
@@ -671,8 +664,7 @@
 	
 	
 	<string name="installing_new_resources">يثبت البيانات الجديدة…</string>
-	<string name="internet_connection_required_for_online_route">خدمة الملاحة على الانترنت محدّدة ولكن لا اتصال متاح بالإنترنت.</string>
-	<string name="tts_language_not_supported_title">لغة غير مدعومة</string>
+    <string name="tts_language_not_supported_title">لغة غير مدعومة</string>
 	<string name="tts_language_not_supported">اللغة المحددة غير مدعومة من قبل محرك أندرويد لتحويل النص إلى كلام (TTS). هل تريد البحث عن محركات أخرى في السوق؟ إذا لم يكن، ستُستخدم اللغة السابقة في المحرك.</string>
 	<string name="tts_missing_language_data_title">البيانات ناقصة</string>
 	<string name="tts_missing_language_data">لا توجد بيانات مُثبّتة للغة المحددة. هل تريد أن تذهب إلى السوق لتثبيتها؟</string>
@@ -1130,7 +1122,6 @@
     <string name="confirm_usage_speed_cameras">غير مسموح استخدام تحذيرات كاميرا السرعة بالقانون في العديد من البلدان (ألمانيا وفرنسا، وإيطاليا، وغيرها). أوسماند لا تتحمل أي مسؤولية إذا كنت تنتهك القانون. الرجاء انقر نعم فقط إذا كنت مؤهلاً استخدام هذه الميزة.</string>
 	<string name="osm_changes_added_to_local_edits">تم إضافة تعديلات OSM إلى التغييرات المحلية</string>
    	<string name="local_osm_changes_upload_all_confirm">ستقوم برفع %1$d تغيير إلى الموقع. هل أنت متأكد؟</string>
-    <string name="delay_to_start_navigation_descr">تحديد وقت الانتظار للبقاء في شاشة تخطيط الطريق.</string>
     <string name="delay_to_start_navigation">ابدأ الملاحة دوران بدوران بعد…</string>
     <string name="action_create">إنشاء إجراء</string>
 	<string name="action_modify">تعديل إجراء</string>
@@ -1264,8 +1255,7 @@
 	<string name="menu_mute_off">تشغيل الصوت</string>
 	<string name="show_poi_filter">عرض الفلتر</string>
 	<string name="hide_poi_filter">إخفاء الفلتر</string>
-	<string name="background_router_service">تشغيل أوسماند OSMAnd في الخلفية</string>
-	<string name="background_service_provider">مزود تحديد المواقع</string>
+    <string name="background_service_provider">مزود تحديد المواقع</string>
 	<string name="background_service_provider_descr">تحديد مزود تحديد المواقع المستخدَم من قبل التطبيق في الخلفية.</string>
 	<string name="int_seconds">ثانية</string>
 	<string name="int_min">دقيقة</string>
@@ -1304,8 +1294,7 @@
 	<string name="any_poi">أي</string>
 	
 	<string name="background_service_int_descr">حدد الفاصل الزمني للإيقاظ لخدمة الخلفية.</string>
-	<string name="background_router_service_descr">تُشغل OsmAnd في الخلفية بحيث يتتبع موقعك أثناء إغلاق الشاشة.</string>
-	<string name="off_router_service_no_gps_available">خدمة الملاحة في الخلفية تتطلب تفعيل مزود مواقع.</string>
+    <string name="off_router_service_no_gps_available">خدمة الملاحة في الخلفية تتطلب تفعيل مزود مواقع.</string>
 	<string name="first_time_download">تحميل المناطق</string>
 	<string name="transport_finish_search">إنهاء البحث</string>
 	<string name="search_nothing_found">لم يتم العثور على أي شيء</string>
@@ -2166,7 +2155,6 @@
     <string name="do_not_send_anonymous_app_usage">لا ترسل إحصاءات مجهولة عن استخدام التطبيق</string>
     <string name="shared_string_time_moving">زمن التنقل</string>
     <string name="shared_string_time_span">الفترة الزمنية</string>
-    <string name="route_altitude">ارتفاع الطريق</string>
     <string name="routing_attr_relief_smoothness_factor_name">تحديد تذبذب الإرتفاع</string>
     <string name="map_widget_ruler_control">حساب نصف القطر</string>
     <string name="shared_string_permissions">ترخيصات</string>
@@ -2237,7 +2225,6 @@
 <string name="none_point_error">الرجاء إضافة نقطة واحدة على الأقل.</string>
     <string name="enter_gpx_name">اسم ملف GPX:</string>
     <string name="show_on_map_after_saving">إظهار على الخريطة بعد الحفظ</string>
-    <string name="add_route_point">إضافة نقطة مسار</string>
     <string name="add_waypoint">إضافة إحداثية</string>
     <string name="save_gpx_waypoint">حفظ إحداثية GPX</string>
     <string name="save_route_point">حفظ نقطة مسار</string>
@@ -2282,7 +2269,6 @@
     <string name="widget">ويدجت</string>
     <string name="top_bar">الشريط العلوي</string>
     <string name="move_all_to_history">نقل الكل إلى السجل الزمني</string>
-    <string name="build_route">بناء الطريق</string>
     <string name="show_direction">مؤشر المسافة</string>
     <string name="sort_by">فرز حسب</string>
     <string name="do_not_use_animations">عدم استخدام الرسوم المتحركة</string>
@@ -2300,7 +2286,6 @@
     <string name="order_by">ترتيب حسب:</string>
     <string name="marker_show_distance_descr">حدد كيفية الإشارة إلى المسافة والاتجاه لعلامات الخريطة على شاشة الخريطة:</string>
     <string name="use_location">استخدم الموقع</string>
-    <string name="add_location_as_first_point_descr">أضف موقعك كنقطة أولى لتخطيط طريق مثالي.</string>
     <string name="my_location">موقعي</string>
     <string name="shared_string_finish">إنهاء</string>
     <string name="plan_route">تخطيط الطريق</string>

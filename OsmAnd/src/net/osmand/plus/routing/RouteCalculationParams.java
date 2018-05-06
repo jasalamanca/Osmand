@@ -5,7 +5,6 @@ import net.osmand.data.LatLon;
 import net.osmand.plus.ApplicationMode;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.routing.RouteProvider.GPXRouteParams;
-import net.osmand.plus.routing.RouteProvider.RouteService;
 import net.osmand.plus.routing.RoutingHelper.RouteCalculationProgressCallback;
 import net.osmand.router.RouteCalculationProgress;
 import net.osmand.router.RoutingContext;
@@ -22,7 +21,6 @@ public class RouteCalculationParams {
 	public OsmandApplication ctx;
 	public RoutingContext cachedRoutingContext;
 	public ApplicationMode mode;
-	public RouteService type;
 	public GPXRouteParams gpxRoute;
 	public RouteCalculationResult previousToRecalculate;
 	public boolean onlyStartPointChanged;

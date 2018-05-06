@@ -37,7 +37,6 @@
     <string name="plugin_distance_point">Точка</string>
     <string name="gpx_file_name">име на GPX файл</string>
     <string name="gpx_saved_sucessfully">GPX успешно записан в {0}</string>
-    <string name="osmand_distance_planning_plugin_description">Добавката предоставя джаджа за създаване на маршрути като натискате върху картата, да редактирате съществуващи GPX файлове за планиране на пътешествие и измерване на разстояние между точки. Резултатите могат да бъдат записани в GPX файл, който по-късно да бъде ползван като маршрут за навигацията.</string>
     <string name="use_distance_measurement_help">* Маркирайте точка.\n
         * Натиснете и задръжте върху картата за изтриване на предна точка.\n
         * Натиснете и задръжте върху точка за разглеждане и добавяне на описание.\n
@@ -96,8 +95,6 @@
 
     <string name="stop_routing_confirm">Наистина ли искате да спрете навигацията?</string>
     <string name="clear_dest_confirm">Наистина ли искате да изтриете крайната цел (и междинните точки)?</string>
-    <string name="precise_routing_mode_descr">Прецизното изчисляване на маршрута. Все още е ограничено по дистанция и е по-бавно.</string>
-    <string name="precise_routing_mode">Прецизно изчисляване на маршрута (алфа)</string>
     <string name="dropbox_plugin_name">Приставка Dropbox</string>
 
     <string name="intermediate_points_change_order">Смяна на реда</string>
@@ -139,11 +136,9 @@
     <string name="rendering_attr_roadColors_name">Схема на оцветяването на пътищата</string>
     <string name="map_widget_show_destination_arrow">Покажи посоката към крайната цел</string>
     <string name="enable_plugin_monitoring_services">Включете добавката за запис на следа за да ползвате онлайн проследяване (онлайн GPX проследяване)</string>
-    <string name="non_optimal_route_calculation">Изчисляване на вероятно не най-оптималния маршрут при дълги разстояния</string>
     <string name="gps_not_available">Моля, включете GPS-а в настройките</string>
 
     <string name="map_widget_monitoring_services">Услуги за записи</string>
-    <string name="no_route">Няма маршрут</string>
     <string name="delete_target_point">Премахни точката</string>
     <string name="target_point">Междинна точка \'%1$s\'</string>
     <string name="intermediate_point">Междинна точка \'%1$s\'</string>
@@ -198,7 +193,6 @@
     <string name="avoid_ferries">Без фериботи</string>
     <string name="avoid_in_routing_title">Избягване на…</string>
     <string name="avoid_in_routing_descr">Избягване на платени пътища, пътища без настилка, фериботи</string>
-    <string name="map_widget_fluorescent">Светещи маршрути</string>
     <string name="map_widget_show_ruler">Линийка</string>
 
     <string name="map_widget_view_direction">Посока на изгледа</string>
@@ -365,7 +359,6 @@
     <string name="shared_string_accessibility">Достъпност</string>
     <string name="rendering_out_of_memory">Няма достатъчно памет за избрания район</string>
     <string name="use_fluorescent_overlays">Светещ допълнителен слой</string>
-    <string name="use_fluorescent_overlays_descr">Използване на ярки цветове за осветяване на пътища и маршрути</string>
     <string name="offline_edition">Офлайн редактиране</string>
     <string name="offline_edition_descr">Винаги ползвай офлайн редактиране</string>
 
@@ -535,7 +528,6 @@
 
 
     <string name="installing_new_resources">Отваряне на нови данни…</string>
-    <string name="internet_connection_required_for_online_route">Избрана е онлайн навигация, но няма връзка с интернет.</string>
     <string name="tts_language_not_supported_title">Езикът не се поддържа</string>
     <string name="tts_language_not_supported">Избраният език не се поддържа от инсталираният Android TTS (синтез на глас). Искате ли да изтеглите друг TTS генератор на глас от Market? В противен случай ще бъде използван TTS по подразбиране.</string>
     <string name="tts_missing_language_data_title">Липсващи данни</string>
@@ -735,8 +727,6 @@
     <string name="background_service_int">Интервал за събуждане на GPS</string>
     <string name="background_service_provider_descr">Избор на доставчик на позиция за ползване в фонов режим</string>
     <string name="background_service_provider">Доставчик на позиция</string>
-    <string name="background_router_service_descr">Стартира OsmAnd във фонов режим за запис на пътуването при изключен екран</string>
-    <string name="background_router_service">Работа на OsmAnd във фонов режим</string>
     <string name="off_router_service_no_gps_available">Навигацията във фонов режим изисква да бъде включено определянето на мястото.</string>
     <string name="hide_poi_filter">Скрий филтъра</string>
     <string name="show_poi_filter">Покажи филтъра</string>
@@ -1277,7 +1267,6 @@
     <string name="navigate_point_easting">Източно</string>
     <string name="navigate_point_zone">Зона</string>
     <string name="search_poi_category_hint">Въведете за търсене</string>
-    <string name="delay_to_start_navigation_descr">Време за изчакване</string>
     <string name="plugin_touringview_name">Изглед за автомобилисти</string>
     <string name="rename_failed">Неуспешно преименуване.</string>
     <string name="days_behind">дена по-рано</string>

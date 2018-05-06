@@ -76,8 +76,7 @@
   <string name="shared_string_accessibility">Pieejamība</string>
   <string name="rendering_out_of_memory">Nepietiek atmiņas, lai attēlotu izvēlēto apgabalu</string>
   <string name="use_fluorescent_overlays">Fluorescenti slāņi</string>
-  <string name="use_fluorescent_overlays_descr">Lietot flurescentās krāsas, lai attēlotu maršruta ceļus</string>
-  <string name="offline_edition">Bezsaistes rediģēšana</string>
+    <string name="offline_edition">Bezsaistes rediģēšana</string>
   <string name="offline_edition_descr">Viemēr lietot bezsaistes rediģēšanu</string>
   
   <string name="update_poi_does_not_change_indexes">POI izmaiņas aplikācijā neietekmē lejupielādētās kartes, izmaiņas tiek glabātas atsevišķā failā.</string>
@@ -262,8 +261,7 @@
   
   
   <string name="installing_new_resources">Atpako jaunos datus…</string>
-  <string name="internet_connection_required_for_online_route">Lai darbotos tiešsaistes navigācijas serviss, ir nepieciešams interneta savienojums.</string>
-  <string name="tts_language_not_supported_title">Valoda netiek atbalstīta</string>
+    <string name="tts_language_not_supported_title">Valoda netiek atbalstīta</string>
   <string name="tts_language_not_supported">Izvēlētā valoda nav atbalstīta instalētajā ierīces Android TTS (teksta izrunāšana) dzinējā. Vai vēlaties meklēt citu TTS dzinēju? Pretējā gadījumā tiks lietota iepriekš uzstādītā TTS valoda.</string>
   <string name="tts_missing_language_data_title">Iztrūkst dati</string>
   <string name="tts_missing_language_data">Valodas dati nav instalēti. Vai atvērt Google Play veikalu, lai instalētu?</string>
@@ -485,9 +483,7 @@
   <string name="background_service_int">GPS pamošanās intervāls</string>
   <string name="background_service_provider_descr">Izvēlēties vietas noteicēju miega režīmam</string>
   <string name="background_service_provider">Vietas noteicējs</string>
-  <string name="background_router_service_descr">Darbina OsmAnd fonā, lai sekotu atrašanās vietai, kamēr ekrāns ir izslēgts</string>
-  <string name="background_router_service">OsmAnd ieslēgts fona režīms</string>
-  <string name="off_router_service_no_gps_available">Navigācijas fona servisam nepieciešams ieslēgt atrašanās vietas noteicēju.</string>
+    <string name="off_router_service_no_gps_available">Navigācijas fona servisam nepieciešams ieslēgt atrašanās vietas noteicēju.</string>
   <string name="hide_poi_filter">Nerādīt filtru</string>
   <string name="show_poi_filter">Rādīt filtru</string>
   <string name="search_poi_filter">Filtrs</string>
@@ -848,8 +844,7 @@
 <string name="avoid_in_routing_descr">Izvairīties no maksas ceļiem, pārceltuvēm un ceļiem bez seguma</string>
 <string name="show_warnings_title">Rādīt signālus…</string>
 <string name="show_warnings_descr">Satiksmes ierobežojumus (ātruma limitus, stopzīmes, rampas), gājēju pārejas, fotoradarus, ceļa joslas</string>
-<string name="map_widget_fluorescent">Fluorescējošs maršruts</string>
-<string name="map_widget_show_ruler">Lineāls</string>
+    <string name="map_widget_show_ruler">Lineāls</string>
 
 <string name="map_widget_view_direction">Skata virziens</string>
 <string name="map_widget_transparent">Caurspīdīgi logrīki</string>
@@ -894,11 +889,9 @@
 	<string name="int_continuosly">Nepārtraukti</string>
 	<string name="map_widget_show_destination_arrow">Rādīt mērķa virzienu</string>
     <string name="enable_plugin_monitoring_services">Izmantot ceļa ieraksta spraudni monitorēšanas servisiem (GPX ierakstiem, sekošanai tiešsaistē)</string>
-    <string name="non_optimal_route_calculation">Aprēķināt, iespējams neoptionālu maršrutu, lielākiem attālumiem</string>
     <string name="gps_not_available">Lūdzu, ieslēdziet GPS</string>
     <string name="map_widget_monitoring_services">Monitorēšanas servisi</string>
-	<string name="no_route">Nav maršruta</string>
-	<string name="delete_target_point">Noņemt punktu</string>
+    <string name="delete_target_point">Noņemt punktu</string>
 	<string name="intermediate_point">Starpposma punkts %1$s</string>
     
 		
@@ -974,7 +967,6 @@
     <string name="plugin_distance_point_ele">Augstums</string>
     <string name="gpx_file_name">GPX faila nosaukums</string>
     <string name="gpx_saved_sucessfully">GPX fails tika saglabāts {0}</string>
-    <string name="osmand_distance_planning_plugin_description">Spraudnis ļauj izveidot ceļa posmus, mērīt attālumu starp tiem un plānot maršrutus, atliekot punktus uz kartes vai izmantot/labot esošos GPX failus un rezultātus saglabāt jaunā GPX failā, ko vēlāk var izmantot navigācijai.</string>
     <string name="shared_string_do_not_show_again">Vairs nerādīt</string>
     <string name="distance_measurement_start_editing">Sākt labot</string>
     <string name="distance_measurement_finish_editing">Beigt labot</string>
@@ -1022,8 +1014,6 @@
 
     <string name="stop_routing_confirm">Vai vēlaties apturēt navigāciju?</string>
     <string name="clear_dest_confirm">Vai vēlaties noņemt galamērķi (ieskaitot ceļa punktus)?</string>
-    <string name="precise_routing_mode_descr">Ieslēgt precīzāku maršruta aprēķināšanu bez kļūdām. Pagaidām darbojas ierobežotā attālumā un ir lēna.</string>
-    <string name="precise_routing_mode">Precīzāka maršrutēšana (alfa)</string>
     <string name="dropbox_plugin_name">Dropbox spraudnis</string>
     <string name="intermediate_points_change_order">Mainīt kārtību</string>
     <string name="recording_delete_confirm">Vai vēlaties dzēst ierakstu?</string>
@@ -1400,7 +1390,6 @@
    	<string name="mark_to_delete">Atzīmēt dzēšanai</string>
     <string name="local_osm_changes_upload_all_confirm">Jūs augšupielādēsiet %1$d izmaiņas uz OSM. Vai turpināt?</string>
     <string name="confirmation_to_clear_history">Vai nodzēst vēsturi?</string>
-    <string name="delay_to_start_navigation_descr">Norādīt maršruta plānošanas uzvednes rādīšanas laiku</string>
     <string name="delay_to_start_navigation">Izlaist maršruta plānošanu…</string>
     <string name="shared_string_go">Aiziet</string>
     <string name="action_create">Darbības izveide</string>
@@ -2152,7 +2141,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="shared_string_move">Pārvietot</string>
     <string name="shared_string_tracks">Treki</string>
 
-    <string name="route_altitude">Maršruta altitūda</string>
     <string name="altitude_descent">Pazeminās</string>
     <string name="altitude_ascent">Paaugstinās</string>
     <string name="altitude_range">Altitūdas diapazons</string>
@@ -2279,7 +2267,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="routing_attr_avoid_ice_roads_fords_name">No ledus ceļiem un brasla</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Izvairīties no ledus ceļiem un brasliem.</string>
     <string name="use_location">Lietot pozīciju</string>
-    <string name="add_location_as_first_point_descr">Pievienot jūsu pozīciju kā sākuma punktu maršruta plānošanai.</string>
     <string name="my_location">Mana pozīcija</string>
     <string name="shared_string_finish">Finišs</string>
     <string name="plan_route">Plānot maršrutu</string>

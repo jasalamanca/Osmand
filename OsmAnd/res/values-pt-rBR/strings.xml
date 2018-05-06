@@ -42,7 +42,6 @@
    	<string name="mark_to_delete">Selecione para apagar</string>
     <string name="local_osm_changes_upload_all_confirm">Você enviará %1$d alterações ao OSM. Tem certeza?</string>
     <string name="confirmation_to_clear_history">Você quer limpar o histórico?</string>
-    <string name="delay_to_start_navigation_descr">Especifique o tempo de espera para permanecer na tela de planejamento de rota.</string>
     <string name="delay_to_start_navigation">Iniciar navegação curva a curva depois de…</string>
     <string name="shared_string_go">Ir</string>
     <string name="action_create">Criar ação</string>
@@ -135,8 +134,7 @@
 	<string name="record_plugin_description">"Este complemento ativa a funcionalidade para gravar e salvar suas trilhas manualmente tocando o widget de registro de GPX na tela do mapa ou também fazendo automaticamente o registro de todas as suas rotas de navegação para um arquivo GPX.
 \n\nTrilhas gravadas podem ser compartilhadas com seus amigos ou serem usadas para contribuições ao OSM. Atletas podem usar trilhas gravadas para monitorar seus treinos. Algumas análises básicas da trilha podem ser feitas diretamente no OsmAnd, como tempos de percurso, velocidade média, etc. E, claro, trilhas também podem ser analisadas mais tarde em ferramentas de terceiros. "</string>
     <string name="plugin_touringview_name">Visão de mapa turístico</string>
-    <string name="osmand_distance_planning_plugin_description">Este complemento fornece um widget da tela mapa permitindo criar caminhos tocando no mapa, ou usar ou modificar arquivos GPX existentes, para planejar uma viagem e medir a distância entre pontos. Os resultados podem ser salvos como um arquivo GPX, que mais tarde pode ser usado para orientação.</string>
-	<string name="shared_string_accessibility">Acessibilidade</string>
+    <string name="shared_string_accessibility">Acessibilidade</string>
 	<string name="osmand_accessibility_description">Este complemento disponibiliza recursos de acessibilidade do dispositivo diretamente no OsmAnd. Facilita, por exemplo, o ajuste da velocidade para vozes TTS, configuração da navegação direcional na tela, uso do trackball para controle de zoom, ou retorno de texto para fala, como para anunciar automaticamente sua posição.</string>
 	<string name="osm_settings">Edição no OSM</string>
 	<string name="debugging_and_development">Desenvolvimento OsmAnd</string>
@@ -601,8 +599,6 @@ Pôr do Sol: %2$s</string>
     <string name="index_name_openmaps">OpenMaps UE</string>
 
 
-    <string name="precise_routing_mode_descr">Permitir calcular rotas precisas sem falhas. Está limitado pela distância e é lento.</string>
-    <string name="precise_routing_mode">Roteamento preciso (alfa)</string>
     <string name="dropbox_plugin_name">Complemento Dropbox</string>
     <string name="intermediate_points_change_order">Alterar ordem</string>
     <string name="recording_delete_confirm">Você quer excluir esta gravação?</string>
@@ -640,8 +636,7 @@ Pôr do Sol: %2$s</string>
 	<string name="show_lanes">Mostrar faixas de rolamento</string>
 	<string name="avoid_ferries">Evitar balsas</string>
 	<string name="avoid_in_routing_title">Evitar…</string>
-	<string name="map_widget_fluorescent">Rotas fluorescentes</string>
-	<string name="map_widget_show_ruler">Régua</string>
+    <string name="map_widget_show_ruler">Régua</string>
 	<string name="map_widget_view_direction">Direção da visão</string>
 	<string name="map_widget_transparent">Widgets transparentes</string>
 	<string name="bg_service_sleep_mode_on">Parar\n modo segundo plano</string>
@@ -710,12 +705,10 @@ Pôr do Sol: %2$s</string>
 	<string name="rendering_attr_roadColors_name">Esquema de cores das vias</string>
     <string name="map_widget_show_destination_arrow">Mostrar a direção do destino</string>
     <string name="enable_plugin_monitoring_services">Ativar complemento de gravação de viagem para usar serviços de registro de posição (registro de GPX, rastreamento on-line)</string>
-    <string name="non_optimal_route_calculation">Calcular rota possivelmente não ideal em longas distâncias</string>
-	<string name="gps_not_available">Por favor, ative o GPS nas configurações</string>
+    <string name="gps_not_available">Por favor, ative o GPS nas configurações</string>
     
 	<string name="map_widget_monitoring_services">Serviços de registro</string>
-	<string name="no_route">Sem rota</string>
-	<string name="delete_target_point">Remover destino</string>
+    <string name="delete_target_point">Remover destino</string>
 	<string name="context_menu_item_last_intermediate_point">Adicionar como último destino intermediário</string>
     <string name="context_menu_item_first_intermediate_point">Adicionar como primeiro destino intermediário</string>
     <string name="add_as_last_destination_point">Adicionar como último destino intermediário</string>
@@ -848,8 +841,7 @@ Pôr do Sol: %2$s</string>
     <string name="arrival_distance_descr">Em quanto tempo você quer o anúncio da chegada?</string>
     <string name="rendering_out_of_memory">Não há memória suficiente para exibir a área selecionada</string>
 	<string name="use_fluorescent_overlays">Sobreposições fluorescentes</string>
-	<string name="use_fluorescent_overlays_descr">Usar cores fluorescentes para exibir as trilhas e rotas</string>
-	<string name="offline_edition">Edição off-line</string>
+    <string name="offline_edition">Edição off-line</string>
 	<string name="offline_edition_descr">Sempre usar edição off-line</string>
 	<string name="update_poi_does_not_change_indexes">As alterações de POIs dentro do aplicativo não tem efeito imediato nos mapas baixados, pois são salvas em arquivo local.</string>
 	<string name="local_openstreetmap_uploading">Enviando…</string>
@@ -930,8 +922,7 @@ Pôr do Sol: %2$s</string>
     <string name="pref_vector_map">Configurações de mapa vetorial</string>
 	<string name="delete_confirmation_msg">Apagar %1$s?</string>
 	<string name="local_index_items_uploaded">%1$d de %2$d itens enviados com sucesso.</string>
-	<string name="internet_connection_required_for_online_route">Um serviço de navegação on-line está selecionado, mas não há conexão com a Internet.</string>
-	<string name="voice_stream_notification">Áudio de Notificação (viva voz)</string>
+    <string name="voice_stream_notification">Áudio de Notificação (viva voz)</string>
 	<string name="search_osm_offline">Pesquisar posição geográfica</string>
 	
 	
@@ -1217,9 +1208,7 @@ Pôr do Sol: %2$s</string>
 	<string name="background_service_int_descr">Definir intervalo de ativação usado pelo serviço em segundo plano</string>
 	<string name="background_service_provider_descr">Escolher o provedor de posição usado pelo serviço em segundo plano.</string>
 	<string name="background_service_provider">Provedor de posição</string>
-	<string name="background_router_service_descr">Executar OsmAnd em segundo plano para monitorar sua posição enquanto a tela estiver desligada</string>
-	<string name="background_router_service">Executar em segundo plano</string>
-	<string name="off_router_service_no_gps_available">O serviço em segundo plano exige a ativação de algum provedor de posição.</string>
+    <string name="off_router_service_no_gps_available">O serviço em segundo plano exige a ativação de algum provedor de posição.</string>
 	<string name="hide_poi_filter">Ocultar filtro</string>
 	<string name="show_poi_filter">Mostrar filtro</string>
 	<string name="search_poi_filter">Filtro</string>
@@ -1835,7 +1824,6 @@ Pôr do Sol: %2$s</string>
     <string name="fast_coordinates_input_descr">Escolha o formato de inserção de coordenadas. Você sempre pode alterá-la tocando em Opções.</string>
     <string name="fast_coordinates_input">Inserção de coordenadas rápida</string>
     <string name="use_location">Usar posição</string>
-    <string name="add_location_as_first_point_descr">Adicione sua posição como ponto de partida para planejar uma rota perfeita.</string>
     <string name="my_location">Minha posição</string>
     <string name="shared_string_finish">Terminar</string>
     <string name="plan_route">Planejar rota</string>
@@ -2048,7 +2036,6 @@ Pôr do Sol: %2$s</string>
     <string name="file_can_not_be_moved">Arquivo não pode ser movido.</string>
     <string name="shared_string_move">Mover</string>
     <string name="shared_string_tracks">Trilhas</string>
-    <string name="route_altitude">Altitude da rota</string>
     <string name="routing_attr_relief_smoothness_factor_name">Selecionar a flutuação de altimetria</string>
     <string name="routing_attr_height_obstacles_name">Usar dados altimétricos</string>
     <string name="routing_attr_height_obstacles_description">Usar dados altimétricos do terreno fornecidos pelo SRTM, ASTER, e EU-DEM.</string>

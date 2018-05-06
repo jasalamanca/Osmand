@@ -36,10 +36,8 @@
     <string name="rendering_attr_roadColors_name">Farveskema for veje</string>
     <string name="map_widget_show_destination_arrow">Vis destinationsretning</string>
     <string name="enable_plugin_monitoring_services">Aktiver Optag ture udvidelsen for at bruge positionlogningstjenester (GPX-logning, online sporing)</string>
-    <string name="non_optimal_route_calculation">Beregn en muligvis ikke-optimal rute over lange afstande</string>
     <string name="gps_not_available">Aktiver GPS i indstillinger</string>
     <string name="map_widget_monitoring_services">Logningstjenester</string>
-    <string name="no_route">Ingen rute</string>
     <string name="delete_target_point">Fjern destination</string>
     <string name="context_menu_item_last_intermediate_point">Tilføj som sidste mellemliggende destination</string>
     <string name="context_menu_item_first_intermediate_point">Tilføj som første mellemliggende destination</string>
@@ -49,8 +47,6 @@
     <string name="new_destination_point_dialog">Destinationen er allerede sat:</string>
     <string name="stop_routing_confirm">Stop navigationen?</string>
     <string name="clear_dest_confirm">Slet destinationen (og mellemliggende destinationer)?</string>
-    <string name="precise_routing_mode_descr">Aktiver for at beregne præcise ruter uden fejl. Stadig begrænset af afstand og langsom.</string>
-    <string name="precise_routing_mode">Nøjagtig ruteplanlægning (alfa)</string>
     <string name="target_point">Destination %1$s</string>
     <string name="intermediate_point_too_far">Mellemliggende destination %1$s er for langt væk fra den nærmeste vej.</string>
     <string name="arrived_at_intermediate_point">Ankommet til mellemliggende destination</string>
@@ -111,7 +107,6 @@
     <string name="avoid_ferries">Undgå færger</string>
     <string name="avoid_in_routing_title">Undgå…</string>
     <string name="avoid_in_routing_descr">Undgå betalingsveje, grusveje, færger.</string>
-    <string name="map_widget_fluorescent">Fluorescerende ruter</string>
     <string name="map_widget_show_ruler">Lineal</string>
 
     <string name="map_widget_view_direction">Synsretning</string>
@@ -282,7 +277,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="shared_string_accessibility">Tilgængelighed</string>
     <string name="rendering_out_of_memory">Ikke nok proceshukommelse til at vise det valgte område</string>
     <string name="use_fluorescent_overlays">Fluorescerende overlejringer</string>
-    <string name="use_fluorescent_overlays_descr">Brug fluorescerende farver til at vise spor og ruter.</string>
     <string name="offline_edition">Offline redigering</string>
     <string name="offline_edition_descr">Brug altid offline redigering.</string>
     <string name="update_poi_does_not_change_indexes">Interessepunkt ændringer lavet i programmet påvirker ikke hentede kort. Ændringer gemmes i lokal fil i stedet.</string>
@@ -445,7 +439,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
 
 
     <string name="installing_new_resources">Udpakker nye data…</string>
-    <string name="internet_connection_required_for_online_route">En online navigationstjeneste er valgt, men der er ingen tilgængelig internet forbindelse.</string>
     <string name="tts_language_not_supported_title">Sproget er ikke understøttet</string>
     <string name="tts_language_not_supported">Det valgte sprog er ikke understøttet af den installerede Android TTS (tekst-til-tale)-motor. Søg på Google Play efter en anden TTS-motor? Ellers vil standard TTS-sprog blive brugt.</string>
     <string name="tts_missing_language_data_title">Manglende data</string>
@@ -638,8 +631,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="background_service_int">GPS vågn-op interval</string>
     <string name="background_service_provider_descr">Vælg placeringsudbyder som bruges af baggrundstjenesten.</string>
     <string name="background_service_provider">Placeringsudbyder</string>
-    <string name="background_router_service_descr">Kør OsmAnd i baggrunden for at spore positionen, mens skærmen er slukket.</string>
-    <string name="background_router_service">Kør OsmAnd i baggrunden</string>
     <string name="off_router_service_no_gps_available">Baggrund navigationstjenesten kræver en placeringsudbyder for kunne aktiveres.</string>
     <string name="hide_poi_filter">Skjul filter</string>
     <string name="show_poi_filter">Vis filter</string>
@@ -932,7 +923,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="distance_measurement_finish_subtrack">Begynd et nyt underspor</string>
     <string name="distance_measurement_clear_route">Slet alle punkter</string>
     <string name="plugin_distance_point_ele">højde</string>
-    <string name="osmand_distance_planning_plugin_description">"Udvidelsen giver et modul som gør det muligt at oprette stier, ved at trykke på kortet, eller bruge eller ændre en  eksisterende GPX-fil, til at planlægge en tur og måle afstanden mellem punkter. Resultaterne kan gemmes som en GPX-fil, som senere kan bruges til rutevejledning."</string>
     <string name="use_distance_measurement_help">* Tryk for at markere et punkt.
 \n* Langt tryk på kortet for at slette tidligere punkt. 
 \n* Langt tryk på punkt for at se og vedhæfte beskrivelse. 
@@ -1477,7 +1467,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="osmand_parking_hour">t</string>
     <string name="osmand_parking_minute">min</string>
     <string name="your_edits">Redigeringer</string>
-    <string name="delay_to_start_navigation_descr">Angiv ventetiden til at forblive på skærmen for ruteplanlægning.</string>
     <string name="delay_to_start_navigation">Start sving-for-sving navigation efter…</string>
     <string name="shared_string_go">Udfør</string>
 
@@ -2163,8 +2152,7 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="routing_attr_height_obstacles_name">Brug højdedata</string>
     <string name="routing_attr_height_obstacles_description">Brug terrænhøjdedata fra SRTM, ASTER og EU-DEM.</string>
 
-    
-    <string name="route_altitude">Rutehøjde</string>
+
     <string name="altitude_descent">Fald</string>
     <string name="altitude_ascent">Stigning</string>
     <string name="altitude_range">Højdeinterval</string>
@@ -2296,7 +2284,6 @@ Repræsenterer område: %1$s x %2$s</string>
 <string name="none_point_error">Tilføj mindst ét punkt.</string>
     <string name="enter_gpx_name">GPX filnavn:</string>
     <string name="show_on_map_after_saving">Vis på kort efter at have gemt</string>
-    <string name="add_route_point">Tilføj rutepunkt</string>
     <string name="add_waypoint">Tilføj rutepunkt</string>
     <string name="save_gpx_waypoint">Gem GPX rutepunkt</string>
     <string name="save_route_point">Gem rutepunkt</string>
@@ -2330,7 +2317,6 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="do_not_use_animations">Brug ikke animationer</string>
     <string name="do_not_use_animations_descr">Deaktiverer animationer i programmet.</string>
     <string name="move_all_to_history">Flyt alle til historik</string>
-    <string name="build_route">Beregn rute</string>
     <string name="show_direction">Afstandsangivelse</string>
     <string name="sort_by">Sorter efter</string>
     <string name="marker_options">Markør indstillinger</string>
@@ -2359,7 +2345,6 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="show_passed">Vis passeret</string>
     <string name="hide_passed">Skjul passeret</string>
     <string name="use_location">Brug position</string>
-    <string name="add_location_as_first_point_descr">Tilføj position som første punkt for at planlægge en perfekt rute.</string>
     <string name="my_location">Position</string>
     <string name="shared_string_finish">Afslut</string>
     <string name="plan_route">Planlæg rute</string>

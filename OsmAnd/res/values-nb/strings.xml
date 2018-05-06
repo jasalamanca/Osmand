@@ -5,7 +5,6 @@
     <string name="map_widget_show_destination_arrow">Vis retning til målet</string>
     <string name="gps_not_available">Aktiver GPS i innstillingene</string>
     <string name="map_widget_monitoring_services">Loggingstjenester</string>
-    <string name="no_route">Ingen rute</string>
     <string name="delete_target_point">Fjern reisemål</string>
     <string name="target_point">Reisemål %1$s</string>
     <string name="intermediate_point">Mellomliggende reisemål %1$s</string>
@@ -55,7 +54,6 @@
     <string name="avoid_ferries">Unngå ferger</string>
     <string name="avoid_in_routing_title">Unngå…</string>
     <string name="avoid_in_routing_descr">Unngå bomveier, uasfalterte, ferger.</string>
-    <string name="map_widget_fluorescent">Fluorescerende ruter</string>
     <string name="map_widget_show_ruler">Målestokk</string>
 
     <string name="map_widget_top_text">Gatenavn</string>
@@ -164,7 +162,6 @@
     <string name="shared_string_accessibility">Tilgjengelighet</string>
     <string name="rendering_out_of_memory">Ikke nok prosessminne til å vise valgt område</string>
     <string name="use_fluorescent_overlays">Fluorescerende overlegg</string>
-    <string name="use_fluorescent_overlays_descr">Bruk fluorescerende farger til å vise spor og ruter.</string>
     <string name="offline_edition">Frakoblet redigering</string>
     <string name="offline_edition_descr">Bruk alltid frakoblet redigering.</string>
 
@@ -273,7 +270,6 @@
     <string name="map_text_size">Skriftstørrelse for kart</string>
 
 
-    <string name="internet_connection_required_for_online_route">En nettbasert navigeringstjeneste er valgt, men ingen internettforbindelse er tilgjengelig.</string>
     <string name="tts_language_not_supported_title">Språk ikke støttet</string>
     <string name="tts_language_not_supported">Det valgte språket støttes ikke av den installerte Android TTS (tekst-til-tale)-motoren. Vil du gå til markedet for å se etter en annen TTS-motor? Ellers vil det forhåndsinnstilte TTS-språket brukes.</string>
     <string name="tts_missing_language_data_title">Manglende data</string>
@@ -993,7 +989,6 @@
     <string name="map_transparency_descr">Endre gjennomsiktighet for basiskartet.</string>
     <string name="map_transparency">Gjennomsiktighet for basiskart</string>
     <string name="send_location_sms_pattern">Posisjon: %1$s\n%2$s</string>
-    <string name="background_router_service">Kjør OsmAnd i bakgrunnen</string>
     <string name="menu_mute_off">Lyd er på</string>
     <string name="menu_mute_on">Lyd er av</string>
     <string name="route_tr">Ta til høyre og fortsett</string>
@@ -1147,7 +1142,6 @@
     <string name="filter_poi_hint">Filtrer etter navn</string>
     <string name="shared_string_edit">Rediger</string>
     <string name="search_poi_category_hint">Søk alle</string>
-    <string name="delay_to_start_navigation_descr">Spesifiser ventetid til å forbli på ruteplanleggingsskjermen.</string>
     <string name="days_behind">dager etter</string>
     <string name="settings_privacy">Personvern</string>
     <string name="download_type_to_filter">Filtrer</string>
@@ -1538,7 +1532,6 @@
     <string name="voice_data_unavailable">Valgte taledata er ikke tilgjengelig</string>
     <string name="voice_data_corrupted">Spesifisert taledata er ødelagt</string>
     <string name="voice_data_not_supported">Taledataversjon som ikke støttes</string>
-    <string name="background_router_service_descr">Kjører OsmAnd i bakgrunnen for å spore posisjonen din mens skjermen er slått av.</string>
     <string name="share_fav_subject">Favoritter delt via OsmAnd</string>
     <string name="import_file_favourites">Lagre data som GPX-fil eller importere rutepunkter til favoritter?</string>
     <string name="coords_format_descr">Format for geografiske koordinater.</string>
@@ -1791,8 +1784,6 @@
     <string name="item_checked">valgt</string>
     <string name="item_unchecked">fravalgt</string>
     <string name="index_name_openmaps">OpenMaps EU</string>
-    <string name="precise_routing_mode_descr">Aktiver for å beregne presise ruter uten feil. Fremdeles distanse-begrenset og treg.</string>
-    <string name="precise_routing_mode">Presis ruteplanlegging (alfa)</string>
     <string name="rendering_attr_alpineHiking_description">Gjengi stier i henhold til SAC-skalaen.</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Gjengi stier i henhold til OSMC-spor.</string>
 
@@ -1903,7 +1894,6 @@
     <string name="nothing_found_descr">Endre søkekriteriet eller øk søkeradiusen.</string>
     <string name="analyze_on_map">Analyser på kartet</string>
     <string name="shared_string_slope">Helning</string>
-    <string name="route_altitude">Rutehøydeprofil</string>
     <string name="altitude_descent">Fall</string>
     <string name="altitude_ascent">Stigning</string>
     <string name="altitude_range">Høydeintervall</string>
@@ -1942,7 +1932,6 @@
     <string name="map_widget_ruler_control">Radiusmåler</string>
     <string name="quick_action_btn_tutorial_title">Endre knappeplassering</string>
     <string name="retry">Prøv igjen</string>
-    <string name="add_route_point">Legg til rutepunkt</string>
     <string name="add_waypoint">Legg til rutepunkt</string>
     <string name="save_gpx_waypoint">Lagre GPX-rutepunkt</string>
     <string name="save_route_point">Lagre rutepunkt</string>
@@ -1997,7 +1986,6 @@
     <string name="shared_string_max">Maks.</string>
     <string name="routing_attr_relief_smoothness_factor_name">Velg preferanse for høydeforskjeller</string>
     <string name="move_all_to_history">Flytt alle til historikk</string>
-    <string name="build_route">Lag rute</string>
     <string name="show_direction">Avstandsangivelse</string>
     <string name="sort_by">Sorter etter</string>
     <string name="marker_options">Markøralternativer</string>
@@ -2016,7 +2004,6 @@
     <string name="routing_attr_avoid_ice_roads_fords_name">Unngå isete veier, vadesteder</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Unngå isete veier og vadesteder.</string>
     <string name="use_location">Bruk posisjon</string>
-    <string name="add_location_as_first_point_descr">Legg til din posisjon som første punkt for planlegging av den perfekte ruten.</string>
     <string name="my_location">Min posisjon</string>
     <string name="shared_string_finish">Fullfør</string>
     <string name="plan_route">Planlegg rute</string>

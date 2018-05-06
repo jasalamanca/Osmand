@@ -17,7 +17,6 @@
     <string name="monitoring_control_start">GPX</string>
     
     <string name="safe_mode">“安全模式”</string>
-    <string name="no_route">沒有路由</string>
 	<string name="delete_target_point">删除目的地</string>
     <string name="target_points">目的地</string>
     <string name="map_widget_intermediate_distance">途径目的地</string>
@@ -41,7 +40,6 @@
 	<string name="map_widget_renderer">地图风格</string>
 	
 	<string name="avoid_in_routing_descr">避开收费公路、土路、渡轮</string>
-	<string name="map_widget_fluorescent">熒光路線</string>
 	<string name="map_widget_show_ruler">統治者</string>
 	
 	<string name="map_widget_view_direction">觀察方向</string>
@@ -379,12 +377,10 @@
     <string name="prefer_in_routing_descr">首选高速公路</string>
     <string name="stop_routing_confirm">是否确定停止导航？</string>
     <string name="clear_dest_confirm">是否确定清楚目标点？</string>
-    <string name="precise_routing_mode_descr">启用精确路径计算，受实地距离限制不使用本地库。</string>
-    <string name="dropbox_plugin_name">Dropbox插件</string>
-    <string name="precise_routing_mode">精确路径（alpha）</string>
+	<string name="dropbox_plugin_name">Dropbox插件</string>
 
 
-    <string name="about_version">版本：</string>
+	<string name="about_version">版本：</string>
     <string name="shared_string_about">关于</string>
     <string name="about_settings_descr">版本信息，许可证，项目成员</string>
 
@@ -474,7 +470,6 @@
 	<string name="zxing_barcode_scanner_not_found">ZXing 条形码扫描应用未安装，是否转到应用市场中搜索？</string>
 	<string name="rendering_attr_roadColors_description">选择道路颜色主题：</string>
 	<string name="rendering_attr_roadColors_name">道路颜色主题</string>
-    <string name="non_optimal_route_calculation">长距离时计算结果可能非最优</string>
 	<string name="map_widget_monitoring_services">日志服务</string>
 	<string name="replace_destination_point">替换终点</string>
     <string name="new_destination_point_dialog">您已经设置了终点：</string>
@@ -616,7 +611,6 @@
 	<string name="trace_rendering_descr">显示渲染性能</string>
 	
 	<string name="installing_new_resources">解包新数据…</string>
-	<string name="internet_connection_required_for_online_route">已选择在线导航服务，但网络连接不可用。</string>
 	<string name="tts_language_not_supported_title">语言不支持</string>
 	<string name="tts_missing_language_data_title">数据丢失</string>
 	<string name="gpx_option_destination_point">使用当前终点</string>
@@ -1375,7 +1369,6 @@
     <string name="shared_string_time_span">时间跨度</string>
     <string name="select_gpx_folder">选择轨迹文件夹</string>
     <string name="shared_string_tracks">轨迹</string>
-    <string name="route_altitude">路线标高</string>
     <string name="altitude_descent">下坡</string>
     <string name="altitude_ascent">上坡</string>
     <string name="altitude_range">海拔高度范围</string>
@@ -1561,8 +1554,7 @@
     <string name="welcome_text">OsmAnd 提供了全球的离线地图浏览和全球的离线导航 ！</string>
     <string name="osm_changes_added_to_local_edits">OSM 更改添加到本地的变更集</string>
     <string name="local_osm_changes_upload_all_confirm">你将要上传 %1$d 个更改到 OSM。是否确定？</string>
-    <string name="delay_to_start_navigation_descr">指定等待时间以便继续留在航路规划屏幕</string>
-    <string name="delay_to_start_navigation">开始转弯提醒前…</string>
+	<string name="delay_to_start_navigation">开始转弯提醒前…</string>
     <string name="waypoint_visit_after">造访之前先</string>
     <string name="waypoint_visit_before">造访之后</string>
     <string name="short_location_on_map">纬度 %1$s 经度 %2$s</string>
@@ -1584,8 +1576,7 @@
 \n
 \n录制的轨迹可以与您的朋友共享或用作为 OSM 的贡献。运动选手可以使用录制的轨迹，监看他们的训练。一些基本的轨迹分析，可以直接在 OsmAnd 进行，如一圈的时间、平均速度等，而轨迹当然也可于事后在专门的第三方分析工具解析。</string>
     <string name="plugin_touringview_name">旅游地图视图</string>
-    <string name="osmand_distance_planning_plugin_description">这个插件提供一个允许通过在地图上，点击创建路径或使用或修改现有的 GPX 文件，计划一次旅行和测量点之间的距离的地图屏幕小部件。结果可以保存为 GPX 文件，以后可以用于导航。</string>
-    <string name="osm_editing_plugin_description">透过这个插件组件 OsmAnd 可以用来对 OSM 作贡献，如创建或修改 OSM POI 对象、开启或评论 OSM 的注解和提供录制的 GPX 文件。OSM 是一个社区推动，相关的详细信息，请参阅 https://openstreetmap.org。如果您在应用程序中指定您个人的 OSM 帐号，可直接从 OsmAnd 进行贡献，积极参与是令人感激的 。</string>
+	<string name="osm_editing_plugin_description">透过这个插件组件 OsmAnd 可以用来对 OSM 作贡献，如创建或修改 OSM POI 对象、开启或评论 OSM 的注解和提供录制的 GPX 文件。OSM 是一个社区推动，相关的详细信息，请参阅 https://openstreetmap.org。如果您在应用程序中指定您个人的 OSM 帐号，可直接从 OsmAnd 进行贡献，积极参与是令人感激的 。</string>
     <string name="osmand_development_plugin_description">这个插件可以显示设置为开发和调试功能想测试或模拟路由、 屏幕渲染性能，或语音提示。这些设置是为开发人员和一般用户不需要。</string>
     <string name="rename_failed">重命名失败。</string>
     <string name="days_behind">天前</string>
@@ -1895,8 +1886,7 @@
     <string name="arrival_distance">到达通知</string>
     <string name="arrival_distance_descr">你想到达通知何时通知？</string>
     <string name="use_fluorescent_overlays">荧光覆盖</string>
-    <string name="use_fluorescent_overlays_descr">使用荧光颜色来显示轨迹和路线</string>
-    <string name="local_openstreetmap_settings_descr">显示和管理在设备端数据库的 OSM 兴趣点/注解</string>
+	<string name="local_openstreetmap_settings_descr">显示和管理在设备端数据库的 OSM 兴趣点/注解</string>
     <string name="live_monitoring_interval_descr">指定在线追踪间隔时间</string>
     <string name="live_monitoring_interval">在线跟踪时间间隔</string>
     <string name="live_monitoring_url_descr">指定位置的 Web 地址参数语法：lat={0}, lon={1}, timestamp={2}, hdop={3}, altitude={4}, speed={5}, bearing={6}</string>
@@ -1973,9 +1963,7 @@
     <string name="background_service_int_descr">设置的后台服务所使用的唤醒间隔</string>
     <string name="background_service_provider_descr">选择位置提供程序使用的后台服务</string>
     <string name="background_service_provider">位置提供程序</string>
-    <string name="background_router_service_descr">在后台，追踪你的位置，屏幕关闭时运行 OsmAnd</string>
-    <string name="background_router_service">在背景中运行 OsmAnd</string>
-    <string name="off_router_service_no_gps_available">背景导航服务所需的位置提供程序，必须打开。</string>
+	<string name="off_router_service_no_gps_available">背景导航服务所需的位置提供程序，必须打开。</string>
     <string name="hide_poi_filter">隐藏筛选器</string>
     <string name="show_poi_filter">显示筛选器</string>
     <string name="search_poi_filter">筛选器</string>

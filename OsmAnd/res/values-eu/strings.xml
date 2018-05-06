@@ -56,7 +56,6 @@
   <string name="plugin_distance_point">Puntua</string>
   <string name="gpx_file_name">GPX fitxategi izena</string>
   <string name="gpx_saved_sucessfully">GPX fitxategia ongi gorde da hona {0}</string>
-  <string name="osmand_distance_planning_plugin_description">Gehigarri honek maparen pantailan trepeta bat ezartzen du, non ibilbideak sortu daitezkeen mapan ukituz, edo aurretik dituzun GPX fitxategiak aldatu, bidaia prestatzeko eta puntuen arteko distantzia neurtzeko. Emaitza GPX fitxategi gisa gorde daiteke, eta gero gidaritzarako erabili.</string>
     <string name="use_distance_measurement_help">* Ukitu puntu bat markatzeko. * Sakatu luze mapan aurreko puntua ezabatzeko. * Sakatu luze puntu bat deskribapena ikusi eta atxikitzeko. * Sakatu neurgailuan ekintza gehiago ikusteko.</string>
   <string name="shared_string_do_not_show_again">Ez erakutsi berriro</string>
   <string name="distance_measurement_start_editing">Editatzen hasi</string>
@@ -113,8 +112,6 @@
 
     <string name="stop_routing_confirm">Ziur nabigazioa gelditu nahi duzula?</string>
   <string name="clear_dest_confirm">Ziur zaude zure helmuga (eta erdibideko helburuak) garbitu nahi dituzula?</string>
-  <string name="precise_routing_mode_descr">Gaitu errorerik gabeko ibilbide zehatza kalkulatzeko. Distantzia motzetara dago mugatua eta motela da.</string>
-  <string name="precise_routing_mode">Ibilbide kalkulu zehatza (alpha)</string>
     <string name="dropbox_plugin_name">Dropbox gehigarria</string>
   
   <string name="intermediate_points_change_order">Ordena aldatu</string>
@@ -155,12 +152,10 @@
   <string name="rendering_attr_roadColors_name">Errepideentzako kolore paleta</string>
   <string name="map_widget_show_destination_arrow">Erakutsi helmugara noranzkoa</string>
   <string name="enable_plugin_monitoring_services">Gaitu bidai grabaketa gehigarria kokapen erregistro zerbitzuak erabiltzeko (GPX grabaketak, sare bidezko jarraipena)</string>
-  <string name="non_optimal_route_calculation">Kalkulatu distantzia luzeetan hoberena izan ez daitekeen ibilbidea</string>
-  <string name="gps_not_available">Mesedez gaitu GPSa ezarpenetan</string>
+    <string name="gps_not_available">Mesedez gaitu GPSa ezarpenetan</string>
   
   <string name="map_widget_monitoring_services">Jarraipen zerbitzuak</string>
-  <string name="no_route">Ibilbiderik ez</string>
-  <string name="delete_target_point">Ezabatu helburua</string>
+    <string name="delete_target_point">Ezabatu helburua</string>
   <string name="target_point">%1$s helburua</string>
   <string name="intermediate_point">%1$s erdibideko helburua</string>
   <string name="context_menu_item_last_intermediate_point">Gehitu azken erdibideko helburu gisa</string>
@@ -216,8 +211,7 @@
   <string name="avoid_ferries">Saihestu ferryak</string>
   <string name="avoid_in_routing_title">Saihestu…</string>
   <string name="avoid_in_routing_descr">Saihestu bidesariak, asfaltatu gabekoak, ferryak.</string>
-  <string name="map_widget_fluorescent">Ibilbide fluoreszenteak</string>
-  <string name="map_widget_show_ruler">Erregela</string>
+    <string name="map_widget_show_ruler">Erregela</string>
   
   <string name="map_widget_view_direction">Ikuspegiaren norabidea</string>
   <string name="map_widget_transparent">Trepeta gardenak</string>
@@ -383,8 +377,7 @@
   <string name="shared_string_accessibility">Irisgarritasuna</string>
   <string name="rendering_out_of_memory">Aukeratutako area erakusteko ez dago memoria nahikorik</string>
   <string name="use_fluorescent_overlays">Gain-azal fluoreszenteak</string>
-  <string name="use_fluorescent_overlays_descr">Erabili kolore fluoreszenteak lorratzak eta ibilbideak bistaratzeko.</string>
-  <string name="offline_edition">Lineaz kanpoko edizioa</string>
+    <string name="offline_edition">Lineaz kanpoko edizioa</string>
   <string name="offline_edition_descr">Erabili beti lineaz kanpoko edizioa.</string>
   
   <string name="update_poi_does_not_change_indexes">Aplikazioaren barneko POI aldaketek ez diete deskargatutako mapa-fitxategiei eragiten, aldaketak modu lokalean gordetzen dira.</string>
@@ -561,8 +554,7 @@ Biltegiratzean {1} MB erabiliko dira.
   
   
   <string name="installing_new_resources">Datu berriak desenpaketatzen…</string>
-  <string name="internet_connection_required_for_online_route">Sareko nabigazio zerbitzu bat aukeratu da baina ez dago interneterako konexiorik.</string>
-  <string name="tts_language_not_supported_title">Hizkuntza ez da onartzen</string>
+    <string name="tts_language_not_supported_title">Hizkuntza ez da onartzen</string>
   <string name="tts_language_not_supported">Aukeratutako hizkuntza instalatutako Android TTS (text-to-speech) motorrak ez du jasaten. Beste TTS motor bat bilatu nahi duzu Marketen? Bestela, oraingo TTS hizkuntza erabiliko da.</string>
   <string name="tts_missing_language_data_title">Falta diren datuak</string>
   <string name="tts_missing_language_data">Ez dago aukeratutako hizkuntzaren daturik instalatua. Marketera joan nahi duzu instalatzera?</string>
@@ -774,9 +766,7 @@ Biltegiratzean {1} MB erabiliko dira.
   <string name="background_service_int">GPSaren esnarazte tartea</string>
   <string name="background_service_provider_descr">Aukeratu bigarren planoko zerbitzuak darabilen kokapen hornitzailea.</string>
   <string name="background_service_provider">Kokapen hornitzailea</string>
-  <string name="background_router_service_descr">OsmAnd bigarren planoan exekutatzen du zure kokapena pantaila itzalia dagoenean jarraitzeko.</string>
-  <string name="background_router_service">Abiatu OsmAnd bigarren planoan</string>
-  <string name="off_router_service_no_gps_available">Bigarren planoko nabigazio zerbitzuak kokapen hornitzaile bat gaitua behar du.</string>
+    <string name="off_router_service_no_gps_available">Bigarren planoko nabigazio zerbitzuak kokapen hornitzaile bat gaitua behar du.</string>
   <string name="hide_poi_filter">Filtroa ezkutatu</string>
   <string name="show_poi_filter">Erakutsi iragazkia</string>
   <string name="search_poi_filter">Iragazkia</string>
@@ -1506,7 +1496,6 @@ Lorratza %2$s</string>
     <string name="rendering_attr_horseRoutes_name">Zaldi ibilbideak</string>
     <string name="simulate_your_location_descr">Simulatu kalkulatutako ibilbidea edo grabatutako GPX lorratza erabiliz.</string>
     <string name="rendering_value_walkingRoutesScopeOSMC_name">Koloreztatu sare afiliazioaren arabera</string>
-    <string name="delay_to_start_navigation_descr">Zehaztu itxarote denbora ibilbidea planifikatzeko pantailan mantentzeko.</string>
     <string name="avoid_roads_msg">Beste ibilbide bat lor dezakezu saihestu beharreko errepideak hautatuz</string>
     <string name="rendering_attr_publicTransportMode_name">Autobus, trolebus, eta hurbileko garraioaren ibilbideak</string>
     <string name="rendering_attr_tramTrainRoutes_name">Tranbia eta tren ibilbideak</string>
@@ -2131,7 +2120,6 @@ Area honi dagokio: %1$s x %2$s</string>
     <string name="shared_string_move">Lekuz aldatu</string>
     <string name="shared_string_tracks">Lorratzak</string>
 
-    <string name="route_altitude">Ibilbidearen elebazioa</string>
     <string name="altitude_descent">Jaitsiera</string>
     <string name="altitude_ascent">Igoera</string>
     <string name="altitude_range">Garaiera-barrutia</string>
@@ -2249,7 +2237,6 @@ Area honi dagokio: %1$s x %2$s</string>
 <string name="none_point_error">Gehitu puntu bat gutxienez.</string>
     <string name="enter_gpx_name">GPX fitxategiaren izena:</string>
     <string name="show_on_map_after_saving">Erakutsi mapan gorde eta gero</string>
-    <string name="add_route_point">Gehitu puntua ibilbidean</string>
     <string name="add_waypoint">Gehitu bide-puntua</string>
     <string name="save_gpx_waypoint">Gorde GPX bide-puntua</string>
     <string name="save_route_point">Gorde ibilbideko puntua</string>
@@ -2265,7 +2252,6 @@ Area honi dagokio: %1$s x %2$s</string>
     <string name="add_point_after">Gehitu puntua atzetik</string>
     <string name="shared_string_options">Aukerak</string>
     <string name="move_all_to_history">Eraman guztia historialera</string>
-    <string name="build_route">Kalkulatu ibilbidea</string>
     <string name="show_direction">Distantziaren adierazlea</string>
     <string name="sort_by">Ordenatu honela</string>
     <string name="marker_options">Markatzaile-aukerak</string>
@@ -2384,7 +2370,6 @@ Area honi dagokio: %1$s x %2$s</string>
     <string name="fast_coordinates_input_descr">Hautatu koordenatuen sarrera formatua. Aukeretan aldatu dezakezu nahi duzunean.</string>
     <string name="fast_coordinates_input">Koordenatuen sarrera azkarra</string>
     <string name="use_location">Erabili kokalekua</string>
-    <string name="add_location_as_first_point_descr">Gehitu zure kokalekua lehen puntu gisa ibilbide perfektua planifikatzeko.</string>
     <string name="my_location">Nire kokalekua</string>
     <string name="coordinate_input_accuracy_description">Aldatu hurrengo eremura automatikoki %1$d digitu dezimal sartu eta gero.</string>
     <string name="tap_on_map_to_hide_interface_descr">Mapan ukitzean botoiak eta trepetak txandakatzen dira.</string>

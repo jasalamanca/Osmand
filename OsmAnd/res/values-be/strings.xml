@@ -66,7 +66,6 @@
     <string name="plugin_distance_point">Пункт</string>
     <string name="gpx_file_name">Назва GPX файлу</string>
     <string name="gpx_saved_sucessfully">GPX файл пасьпяхова захаваны ў {0}</string>
-    <string name="osmand_distance_planning_plugin_description">Модуль дадае віджэт на экран мапы, які дазваляе ствараць маршруты, націснуўшы на мапе, а таксама выкарыстоўваць ці зьмяняць наяўныя файлы GPX, планаваць паездку і вымяраць адлегласьць паміж пунктамі. Вынікі могуць быць захаваны ў выглядзе файла GPX, які пасля можа быць выкарыстаны для навігацыі.</string>
     <string name="use_distance_measurement_help">* Націсніце, каб адзначыць пункт.
 \n * Доўга ўтрымлівайце на мапе, каб выдаліць папярэдні пункт.
 \n * Доўга ўтрымлівайце на пункце, каб паглядзець і дадаць апісанне.
@@ -122,8 +121,6 @@
 
     <string name="stop_routing_confirm">Сапраўды спыніць навігацыю?</string>
     <string name="clear_dest_confirm">Сапраўды сьцерці месца прызначэньня (і прамежкавыя пункты прызначэньня)?</string>
-    <string name="precise_routing_mode_descr">Дазволіць дакладную навігацыю каб шукаць шлях без памылак. Усё яшчэ абмежавана адлегласцю і павольная.</string>
-    <string name="precise_routing_mode">Дакладны маршрут (эксп.)</string>
     <string name="dropbox_plugin_name">Модуль Dropbox</string>
     
     <string name="intermediate_points_change_order">Зьмяніць парадак</string>
@@ -159,12 +156,10 @@
 	<string name="rendering_attr_roadColors_name">Схема колераў дарог</string>
     <string name="map_widget_show_destination_arrow">Паказваць напрамак да месца прызначэньня</string>
     <string name="enable_plugin_monitoring_services">Дазволіць модулю запісу падарожжа выкарыстоўваць сэрвісы запісу сьледу (запіс GPX, адсочваньне праз сетку)</string>
-    <string name="non_optimal_route_calculation">Разлічваць прыблізны шлях на вялікія адлегласьці</string>
-	<string name="gps_not_available">Калі ласка, уключыце GPS у наладах</string>
+    <string name="gps_not_available">Калі ласка, уключыце GPS у наладах</string>
     
 	<string name="map_widget_monitoring_services">Службы адсочваньня</string>
-	<string name="no_route">Няма маршруту</string>
-	<string name="delete_target_point">Выдаліць пункт прызначэньня</string>
+    <string name="delete_target_point">Выдаліць пункт прызначэньня</string>
 	<string name="target_point">Пункт прызначэньня %1$s</string>
     <string name="intermediate_point">Прамежкавы пункт %1$s</string>
     <string name="context_menu_item_last_intermediate_point">Дадаць апошнім пунктам прызначэньня</string>
@@ -220,8 +215,7 @@
 	<string name="avoid_ferries">Пазьбягаць паромаў</string>
 	<string name="avoid_in_routing_title">Пазбягаць…</string>
 	<string name="avoid_in_routing_descr">Пазбягаць платных і дарог без пакрыцця, паромаў.</string>
-	<string name="map_widget_fluorescent">Люмінесцэнтныя маршруты</string>
-	<string name="map_widget_show_ruler">Лінейка</string>
+    <string name="map_widget_show_ruler">Лінейка</string>
 	
 	<string name="map_widget_view_direction">Кірунак погляду</string>
 	<string name="map_widget_transparent">Празрыстае афармленьне</string>
@@ -384,8 +378,7 @@
 	<string name="shared_string_accessibility">Даступнасьць</string>
 	<string name="rendering_out_of_memory">Недастаткова памяці каб паказаць абраную прастору</string>
 	<string name="use_fluorescent_overlays">Флюарэсцэнтныя пласты</string>
-	<string name="use_fluorescent_overlays_descr">Ужываць флюарэсцэнтныя колеры для трэкаў і шляхоў.</string>
-	<string name="offline_edition">Аўтаномнае рэдагаваньне</string>
+    <string name="offline_edition">Аўтаномнае рэдагаваньне</string>
 	<string name="offline_edition_descr">Заўсёды выкарыстоўваць аўтаномнае рэдагаванне.</string>
 	
 	<string name="update_poi_does_not_change_indexes">Зьмены POI у дастасаваньні не ўплываюць на cьцягнутыя файлы мапаў, зьмены захоўваюцца толькі ў лякальныя файлы.</string>
@@ -557,8 +550,7 @@
 	
 	
 	<string name="installing_new_resources">Распакоўваюцца новыя дадзеныя…</string>
-	<string name="internet_connection_required_for_online_route">Абраны навігацыйны анлайн-сэрвіс, але няма злучэньня з Інтэрнэтам.</string>
-	<string name="tts_language_not_supported_title">Мова не падтрымліваецца</string>
+    <string name="tts_language_not_supported_title">Мова не падтрымліваецца</string>
 	<string name="tts_language_not_supported">Абраная мова не падтрымліваецца устаноўленым Android TTS (пераўтварэньне тэксту ў гук). Вы хочаце пашукаць іншы TTS? Калі не, то будзе выкарыстоўвацца другая ўстаноўленая мова TTS.</string>
 	<string name="tts_missing_language_data_title">Адсутнічаюць дадзеныя</string>
 	<string name="tts_missing_language_data">Няма ўсталяваных дадзеных для абранай мовы. Вы хочаце пайсьці на Google Play, каб усталяваць?</string>
@@ -754,9 +746,7 @@
 	<string name="background_service_int">Інтэрвал абуджэньня GPS</string>
 	<string name="background_service_provider_descr">Абярыце крыніцу каардынат для выкарыстання фонавым сэрвісам.</string>
 	<string name="background_service_provider">Крыніца каардынат</string>
-	<string name="background_router_service_descr">Запускае OsmAnd ў фонавым рэжыме для адсочвання становішча пры выключаным экране.</string>
-	<string name="background_router_service">Запусьціць OsmAnd у фоне</string>
-	<string name="off_router_service_no_gps_available">Фонаваму сэрвісу неабходная інфармацыя пра месцазнаходжаньне.</string>
+    <string name="off_router_service_no_gps_available">Фонаваму сэрвісу неабходная інфармацыя пра месцазнаходжаньне.</string>
 	<string name="hide_poi_filter">Схаваць фільтр</string>
 	<string name="show_poi_filter">Паказаць фільтр</string>
 	<string name="search_poi_filter">Фільтраваць</string>
@@ -1476,7 +1466,6 @@
 	<string name="shared_string_release">Выдана</string>
 	<string name="shared_string_my_favorites">Мае Ўлюбёныя</string>
 	<string name="confirmation_to_clear_history">Вы хочаце вычысьціць гісторыю?</string>
-    <string name="delay_to_start_navigation_descr">Задайце час затрымкі на экране планавання маршруту.</string>
     <string name="delay_to_start_navigation">Пачаць пакрокавую навігацыю праз…</string>
     <string name="shared_string_go">Паехалі</string>
 	
@@ -2126,7 +2115,6 @@
     <string name="shared_string_move">Перамясціць</string>
     <string name="shared_string_tracks">Трэкі</string>
 
-    <string name="route_altitude">Вышыня маршруту</string>
     <string name="altitude_descent">Спуск</string>
     <string name="altitude_ascent">Пад\'ём</string>
     <string name="altitude_range">Дыяпазон вышынь</string>
@@ -2275,7 +2263,6 @@
 <string name="none_point_error">Калі ласка, дадайце па меншай меры адну кропку.</string>
     <string name="enter_gpx_name">Імя файла GPX:</string>
     <string name="show_on_map_after_saving">Паказаць на мапе пасьля захаваньня</string>
-    <string name="add_route_point">Дадаць кропку маршруту</string>
     <string name="add_waypoint">Дадаць кропку шляху</string>
     <string name="save_gpx_waypoint">Захаваць GPX-кропку шляху</string>
     <string name="save_route_point">Захаваць кропку маршруту</string>
@@ -2309,7 +2296,6 @@
     <string name="do_not_use_animations">Не ўжываць анімацыю</string>
     <string name="do_not_use_animations_descr">Адключэнне анімацыі ў праграме.</string>
     <string name="move_all_to_history">Перамясьціць усё ў гісторыю</string>
-    <string name="build_route">Пабудаваць маршрут</string>
     <string name="show_direction">Індыкацыя адлегласьці</string>
     <string name="sort_by">Сартаваць па</string>
     <string name="marker_options">Налады маркера</string>
@@ -2339,7 +2325,6 @@
     <string name="show_passed">Паказаць пройдзеныя</string>
     <string name="hide_passed">Схаваць пройдзеныя</string>
     <string name="use_location">Выкарыстоўваць становішча</string>
-    <string name="add_location_as_first_point_descr">Дадаць ваша становішча як першую кропку пры планаванні маршруту.</string>
     <string name="my_location">Маё становішча</string>
     <string name="shared_string_finish">Фініш</string>
     <string name="plan_route">Плянаваць маршрут</string>

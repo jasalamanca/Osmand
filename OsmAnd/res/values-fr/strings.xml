@@ -170,7 +170,6 @@
 
 
     <string name="installing_new_resources">Dépaquetage de nouvelles données…</string>
-    <string name="internet_connection_required_for_online_route">Vous avez sélectionné un moteur de calcul d\'itinéraire en ligne, mais il n\'y a aucune connexion Internet.</string>
     <string name="tts_language_not_supported_title">Langue non disponible</string>
     <string name="tts_language_not_supported">La langue sélectionnée n\'est pas disponible dans le moteur de synthèse vocale installé. Voulez-vous allez sur Google Play et chercher d\'autres moteurs de synthèse vocale ? Sinon la langue par défaut sera utilisée.</string>
     <string name="tts_missing_language_data_title">Données manquantes</string>
@@ -383,8 +382,6 @@
     <string name="background_service_int">Intervalle de réveil du GPS</string>
     <string name="background_service_provider_descr">Sélectionnez une source de géolocalisation pour le service arrière-plan</string>
     <string name="background_service_provider">Fournisseur de géolocalisation</string>
-    <string name="background_router_service_descr">Exécutez OsmAnd en arrière-plan pour suivre votre position lorsque l\'écran est éteint.</string>
-    <string name="background_router_service">Exécuter OsmAnd en tâche de fond</string>
     <string name="off_router_service_no_gps_available">Le service d\'arrière-plan requiert l\'activation de la géolocalisation.</string>
     <string name="hide_poi_filter">Masquer le filtre</string>
     <string name="show_poi_filter">Afficher le filtre</string>
@@ -733,7 +730,6 @@
     <string name="accessibility_preferences_descr">Configurer les paramètres liés à l\'accessibilité.</string>
     <string name="shared_string_accessibility">Accessibilité</string>
     <string name="use_fluorescent_overlays">Sur-couches fluorescentes</string>
-    <string name="use_fluorescent_overlays_descr">Utiliser des couleurs fluorescentes pour les traces et routes.</string>
     <string name="shared_string_name">Nom</string>
     <string name="favourites_edit_dialog_category">Catégorie</string>
     <string name="navigate_point_format_D">DDD.DDDDD</string>
@@ -819,7 +815,6 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="avoid_in_routing_descr">Éviter les routes à péage, les voies non revêtues, les ferries.</string>
     <string name="show_warnings_title">Annonces visuelles…</string>
     <string name="show_warnings_descr">Paramétrer les avertissements de circulation (limites de vitesse, stops, ralentisseurs), les radars et les informations sur les voies de circulation.</string>
-    <string name="map_widget_fluorescent">Itinéraires fluorescents</string>
     <string name="map_widget_show_ruler">Échelle</string>
 
     <string name="map_widget_view_direction">Orientation</string>
@@ -867,13 +862,11 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="poi_filter_sightseeing">Tourisme</string>
     <string name="poi_filter_accomodation">Hébergement</string>
     <string name="map_widget_monitoring_services">Services de suivi</string>
-    <string name="no_route">Pas de route</string>
     <string name="delete_target_point">Effacer la destination</string>
     <string name="intermediate_point">Étape %1$s</string>
     <string name="gps_not_available">Veuillez activer le GPS dans les paramètres</string>
     <string name="map_widget_show_destination_arrow">Direction de la destination</string>
     <string name="enable_plugin_monitoring_services">Activez le greffon d\'enregistrement d\'itinéraire pour utiliser les services d\'enregistrement de position (journalisation GPX, suivi en ligne)</string>
-    <string name="non_optimal_route_calculation">Calcule un itinéraire éventuellement non optimal pour les trajets longues distances</string>
     <string name="rendering_attr_roadColors_description">Sélectionnez un thème de couleurs pour les routes :</string>
     <string name="rendering_attr_roadColors_name">Thème de couleurs pour les routes</string>
     <string name="zxing_barcode_scanner_not_found">L’application ZXing Barcode Scanner n\'est pas installée. Souhaitez-vous l\'installer depuis Google Play ?</string>
@@ -916,8 +909,6 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="dropbox_plugin_name">Greffon Dropbox</string>
     <string name="stop_routing_confirm">Êtes-vous sûr de vouloir arrêter la navigation ?</string>
     <string name="clear_dest_confirm">Souhaitez-vous vraiment supprimer votre destination (et vos étapes) ?</string>
-    <string name="precise_routing_mode">Routage précis (alpha)</string>
-    <string name="precise_routing_mode_descr">Activer pour calculer des itinéraires précis et sans surprises. Actuellement fonctionne sur des distances limitées et reste lent.</string>
 
     <string name="support_new_features_descr">Effectuer un don pour encourager la création de nouvelles fonctionnalités dans l\'application.</string>
 
@@ -972,7 +963,6 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="plugin_distance_point_ele">altitude</string>
     <string name="gpx_file_name">Nom du fichier GPX</string>
     <string name="gpx_saved_sucessfully">L\`enregistrement du fichier GPX {0} a réussi</string>
-    <string name="osmand_distance_planning_plugin_description">Ce greffon permet, depuis la carte, de créer un itinéraire soit un cliquant sur la carte, soit en ouvrant ou en modifiant un fichier GPX existant; ainsi que de mesurer la distance entre des points. L\'itinéraire peut être enregistré dans un fichier GPX qui peut lui-même être utilisé plus tard pour une navigation.</string>
     <string name="shared_string_do_not_show_again">Ne plus afficher</string>
     <string name="local_osm_changes_backup_successful">Fichier de modifications OSM %1$s généré avec succès</string>
     <string name="local_osm_changes_backup_failed">Échec de la sauvegarde des modifications OSM</string>
@@ -1475,7 +1465,6 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="osmand_parking_hour">h</string>
     <string name="osmand_parking_minute">min</string>
     <string name="your_edits">Vos modifications</string>
-    <string name="delay_to_start_navigation_descr">Indiquez le délai d\'affichage de l\'itinéraire détaillé, avant de démarrer la navigation.</string>
     <string name="shared_string_go">Aller</string>
 
     <string name="confirmation_to_clear_history">Souhaitez-vous effacer l\'historique ?</string>
@@ -2157,7 +2146,6 @@ représentant la zone : %1$s x %2$s</string>
     <string name="average_altitude">Altitude moyenne</string>
     <string name="total_distance">Distance totale</string>
     <string name="shared_string_time">Durée</string>
-    <string name="route_altitude">Altitude de la route</string>
     <string name="altitude_descent">Descente</string>
     <string name="altitude_ascent">Montée</string>
 
@@ -2290,7 +2278,6 @@ représentant la zone : %1$s x %2$s</string>
     <string name="enter_gpx_name">Nom du fichier GPX :</string>
     <string name="waypoint_one">Étape 1</string>
     <string name="save_route_point">Enregistrer comme point d\'itinéraire</string>
-    <string name="add_route_point">Ajouter un point à l\'itinéraire</string>
     <string name="add_waypoint">Ajouter une étape</string>
     <string name="save_gpx_waypoint">Enregistrer le point GPX</string>
     <string name="live_monitoring_max_interval_to_send">Durée de mémorisation pour le suivi en ligne</string>
@@ -2323,7 +2310,6 @@ représentant la zone : %1$s x %2$s</string>
     <string name="do_not_use_animations">Ne pas utiliser les animations</string>
     <string name="do_not_use_animations_descr">Désactive les animations dans l\'application.</string>
     <string name="move_all_to_history">Déplacer tout dans l\'historique</string>
-    <string name="build_route">Calculer l\'itinéraire</string>
     <string name="show_direction">Indication de distance</string>
     <string name="sort_by">Trier par</string>
     <string name="marker_options">Options de la marque</string>
@@ -2352,7 +2338,6 @@ représentant la zone : %1$s x %2$s</string>
     <string name="hide_passed">Masquer les visités</string>
     <string name="marker_moved_to_active">Marque activée</string>
     <string name="use_location">Utiliser ma position</string>
-    <string name="add_location_as_first_point_descr">Ajouter ma position comme point de départ.</string>
     <string name="my_location">Ma position</string>
     <string name="shared_string_finish">Terminer</string>
     <string name="plan_route">Itinéraire planifié</string>

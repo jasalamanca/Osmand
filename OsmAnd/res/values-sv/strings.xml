@@ -195,7 +195,6 @@ Proportionellt minne %4$s MB (Android-gräns %5$s MB, Dalvik %6$s MB).</string>
     <string name="plugins_screen">Hantera insticksmoduler</string>
 
 
-    <string name="map_widget_fluorescent">Fluorescerande rutter</string>
     <string name="bg_service_sleep_mode_off">Kör\n appen i bakgrunden</string>
     <string name="bg_service_sleep_mode_on">Stoppa\n körning i bakgrunden</string>
 
@@ -228,7 +227,6 @@ Proportionellt minne %4$s MB (Android-gräns %5$s MB, Dalvik %6$s MB).</string>
     <string name="shared_string_accessibility">Tillgänglighet</string>
     <string name="rendering_out_of_memory">Inte tillräckligt med processminne för att visa valt område</string>
     <string name="use_fluorescent_overlays">Fluorescerande överlägg</string>
-    <string name="use_fluorescent_overlays_descr">Använd fluorescerande färger för att visa spår och rutter.</string>
     <string name="offline_edition">Offline-redigering</string>
     <string name="offline_edition_descr">Använd alltid offline-redigering.</string>
 
@@ -385,7 +383,6 @@ Nyttjat utrymme är {1} MB.
 
 
     <string name="installing_new_resources">Packar upp nya data …</string>
-    <string name="internet_connection_required_for_online_route">En online-navigeringstjänst är vald men ingen internetanslutning är tillgänglig.</string>
     <string name="tts_language_not_supported_title">Språket stöds inte</string>
     <string name="tts_language_not_supported">Det valda språket stöds inte av den installerade Android TTS (text-till-tal)-motorn. Vill du söka efter en annan TTS-motor på Market? Annars kommer det förinställda TTS-språket att användas.</string>
     <string name="tts_missing_language_data_title">Data saknas</string>
@@ -609,8 +606,6 @@ Nyttjat utrymme är {1} MB.
     <string name="background_service_int">GPS-väckningsintervall</string>
     <string name="background_service_provider_descr">Välj platsleverantör för bakgrundstjänsten.</string>
     <string name="background_service_provider">Platsleverantör</string>
-    <string name="background_router_service_descr">Kör OsmAnd i bakgrunden för att spåra din position medan skärmen är avstängd.</string>
-    <string name="background_router_service">Kör OsmAnd i bakgrunden</string>
     <string name="off_router_service_no_gps_available">Tjänsten bakgrundsnavigering kräver en platsleverantör för att vara påslagen.</string>
     <string name="hide_poi_filter">Dölj filter</string>
     <string name="show_poi_filter">Visa filter</string>
@@ -718,7 +713,6 @@ Nyttjat utrymme är {1} MB.
     <string name="zxing_barcode_scanner_not_found">Appen ZXing Barcode Scanner är inte installerad. Vill du söka på Google Play?</string>
     <string name="rendering_attr_roadColors_description">Välj färgschema för vägar:</string>
     <string name="rendering_attr_roadColors_name">Färgschema för vägar</string>
-    <string name="no_route">Ingen rutt</string>
 
     <string name="rendering_attr_noAdminboundaries_name">Gränser</string>
     <string name="rendering_attr_noAdminboundaries_description">Undertryck visning av regionala gränser (adminnivåer 5-9).</string>
@@ -790,7 +784,6 @@ Nyttjat utrymme är {1} MB.
     <string name="dropbox_plugin_name">Modul för Dropbox</string>
 
     <string name="intermediate_points_change_order">Ändra ordning</string>
-    <string name="precise_routing_mode">Exakt ruttning (alfa)</string>
     <string name="delete_target_point">Ta bort destination</string>
     <string name="intermediate_point">Mellanliggande destination %1$s</string>
     <string name="poi_filter_nominatim">Online Nominatim</string>
@@ -862,9 +855,7 @@ Nyttjat utrymme är {1} MB.
     <string name="navigate_point_format_DM">DDD MM.MM</string>
     <string name="navigate_point_format_DMS">DDD MM SS.SS</string>
     <string name="get_directions">Vägvisning</string>
-    <string name="precise_routing_mode_descr">Aktivera exakt ruttning för beräkning utan småfel. Mycket begränsad av avståndet samt långsam.</string>
     <string name="route_descr_lat_lon">Lat %1$.3f, long %2$.3f</string>
-    <string name="non_optimal_route_calculation">Beräkna kanske icke-optimal rutt över långa avstånd</string>
     <string name="incremental_search_street">Sök gator stegvis</string>
     <string name="incremental_search_building">Sök byggnader stegvis</string>
     <string name="show_view_angle">Visa färdriktning</string>
@@ -926,7 +917,6 @@ Nyttjat utrymme är {1} MB.
     <string name="plugin_distance_point">Punkt</string>
     <string name="gpx_file_name">GPX-filnamn</string>
     <string name="gpx_saved_sucessfully">GPX-filen sparades utan problem till {0}</string>
-    <string name="osmand_distance_planning_plugin_description">Denna modul erbjuder en widget på kartskärmen för att skapa spår genom att peta på kartan (eller använda/modifiera befintliga GPX-filer) för att planera en resa samt att mäta avståndet mellan punkter. Resultatet kan sparas i GPX-format som kan användas för att planera GPX-rutter.</string>
     <string name="use_distance_measurement_help">* Tryck på kartan för att markera en punkt.
 \n* Tryck och håll på kartan för att ta bort en tidigare punkt.
 \n* Tryck och håll på en punkt för att visa den och lägga till en beskrivning.
@@ -1451,7 +1441,6 @@ Long %2$s</string>
     <string name="osmand_parking_hour">h</string>
     <string name="osmand_parking_minute">min</string>
     <string name="your_edits">Dina redigeringar</string>
-    <string name="delay_to_start_navigation_descr">Ange väntetid att stanna kvar på ruttplaneringsskärmen.</string>
     <string name="delay_to_start_navigation">Börja sväng-efter-sväng-navigering efter …</string>
     <string name="shared_string_go">Kör</string>
     <string name="local_osm_changes_upload_all_confirm">Du håller på att skicka %1$d ändring(ar) till OSM. Är du säker?</string>
@@ -2069,7 +2058,6 @@ Vänligen tillhandahåll fullständig kod</string>
     <string name="shared_string_move">Flytta</string>
     <string name="shared_string_tracks">Spår</string>
 
-    <string name="route_altitude">Rutthöjd</string>
     <string name="altitude_descent">Sänkning</string>
     <string name="altitude_ascent">Stigning</string>
     <string name="average_altitude">Genomsnittshöjd</string>
@@ -2262,7 +2250,6 @@ Vänligen tillhandahåll fullständig kod</string>
 	<string name="waypoints_added_to_map_markers">Waypoints tillagda i kartmarkörer</string>
 	<string name="make_round_trip_descr">Lägg till kopia av startpunkten som destination.</string>
     <string name="fast_coordinates_input">Snabbinmatning av koordinater</string>
-    <string name="add_location_as_first_point_descr">Lägg till din position som första punkt för att planera en perfekt rutt.</string>
     <string name="coordinate_input">Koordinatinmatning</string>
     <string name="modify_the_search_query">Ändra sökningen.</string>
     <string name="empty_state_osm_edits">Skapa eller ändra OSM-objekt</string>

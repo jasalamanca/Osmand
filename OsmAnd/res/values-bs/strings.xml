@@ -81,8 +81,7 @@
 	<string name="map_widget_max_speed">Ograničenje brzine</string>
     <string name="monitoring_control_start">GPX</string>
     <string name="map_widget_show_destination_arrow">Prikaži smjer odredišta</string>
-    <string name="no_route">Nema rute</string>
-	<string name="replace_destination_point">Promjeni odredište</string>
+    <string name="replace_destination_point">Promjeni odredište</string>
     <string name="add_tag">Dodaj oznaku</string>
     <string name="poi_filter_public_transport">Javni prijevoz</string>
     <string name="poi_filter_entertainment">Zabava</string>

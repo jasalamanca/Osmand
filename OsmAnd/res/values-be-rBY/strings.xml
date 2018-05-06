@@ -420,7 +420,6 @@ Punktaŭ maršrutu %2$s</string>
     <string name="plugin_distance_point">Punkt</string>
     <string name="gpx_file_name">Nazva GPX fajłu</string>
     <string name="gpx_saved_sucessfully">GPX fajł paśpiachova zachavany ŭ {0}</string>
-    <string name="osmand_distance_planning_plugin_description">Modul dadaje vіdžet na ekran mapy, jakі dazvalaje stvarać maršruty, nacіsnuŭšy na mapie, a taksama vykarystoŭvać cі źmianiać іsnujučyja fajły GPX, płanavać pajezdku і vymiarać adlehłaść pamіž punktamі. Vynіkі mohuć być zachavany ŭ vyhladzie fajła GPX, jakі pasla moža być vykarystany dla navіhacyі.</string>
     <string name="use_distance_measurement_help">* Nacisnicie, kab adznačyć punkt.
 \n * Doŭha ŭtrymlivajcie na mapie, kab vydalić papiaredni punkt.
 \n * Doŭha ŭtrymlivajcie na punkcie, kab pahliadzieć i dadać apisannie.
@@ -475,8 +474,6 @@ Punktaŭ maršrutu %2$s</string>
 
     <string name="stop_routing_confirm">Sapraŭdy spynіć navіhacyju?</string>
     <string name="clear_dest_confirm">Sapraŭdy ściercі miesca pryznačeńnia (і pramiežkavyja punkty pryznačeńnia)?</string>
-    <string name="precise_routing_mode_descr">Dazvolić dakładnuju navіhacyju kab šukać šlach biez pamyłak. Usio jašče abmiežavana adlehłasciu і pavolnaja.</string>
-    <string name="precise_routing_mode">Dakładny maršrut (eksp.)</string>
     <string name="dropbox_plugin_name">Modul Dropbox</string>
     <string name="intermediate_points_change_order">Źmianіć paradak</string>
     <string name="recording_delete_confirm">Vy chočacie źnіščyć hety zapіs?</string>
@@ -520,12 +517,10 @@ Punktaŭ maršrutu %2$s</string>
 	<string name="rendering_attr_roadColors_name">Schiema koleraŭ daroh</string>
     <string name="map_widget_show_destination_arrow">Pakazvać napramak da miesca pryznačeńnia</string>
     <string name="enable_plugin_monitoring_services">Dazvolić modulu zapіsu padarožža vykarystoŭvać servіsy zapіsu śledu (zapіs GPX, adsočvańnie praz sietku)</string>
-    <string name="non_optimal_route_calculation">Raźličvać pryblizny šlach na vialikіja adlehłaścі</string>
-	<string name="gps_not_available">Kali łaska, uklučycie GPS u naładach</string>
+    <string name="gps_not_available">Kali łaska, uklučycie GPS u naładach</string>
     
 	<string name="map_widget_monitoring_services">Słužby adsočvańnia</string>
-	<string name="no_route">Niama maršrutu</string>
-	<string name="delete_target_point">Vydalić punkt pryznačeńnia</string>
+    <string name="delete_target_point">Vydalić punkt pryznačeńnia</string>
 	<string name="target_point">Punkt pryznačeńnia %1$s</string>
     <string name="intermediate_point">Pramiežkavy punkt %1$s</string>
     <string name="context_menu_item_last_intermediate_point">Dadać apošnіm punktam pryznačeńnia</string>
@@ -580,8 +575,7 @@ Zachod: %2$s</string>
 	<string name="avoid_ferries">Paźbiahać paromaŭ</string>
 	<string name="avoid_in_routing_title">Paźbiahać…</string>
 	<string name="avoid_in_routing_descr">Pazbiahać platnych i daroh biez pakryccia, paromaŭ.</string>
-	<string name="map_widget_fluorescent">Lumіniescentnyja maršruty</string>
-	<string name="map_widget_show_ruler">Liniejka</string>
+    <string name="map_widget_show_ruler">Liniejka</string>
 	<string name="map_widget_view_direction">Kіrunak pohladu</string>
 	<string name="map_widget_transparent">Prazrystaje afarmleńnie</string>
 	<string name="bg_service_sleep_mode_off">Zapuścіć u\n fonavym režymie</string>
@@ -748,8 +742,7 @@ Praparcyjnaj pamiacі %4$s MB (Abmiežavańnie Android %5$s MB, Dalvik %6$s MB).
     <string name="arrival_distance_descr">Jak chutka vy chočacie čuć paviedamleńnie pra prybyćcio?</string>
     <string name="rendering_out_of_memory">Niedastatkova pamiacі kab pakazać abranuju prastoru</string>
 	<string name="use_fluorescent_overlays">Fluarescentnyja płasty</string>
-	<string name="use_fluorescent_overlays_descr">Užyvać fliuarescentnyja koliery dlia trekaŭ i šliachoŭ.</string>
-	<string name="offline_edition">Aŭtanomnaje redahavańnie</string>
+    <string name="offline_edition">Aŭtanomnaje redahavańnie</string>
 	<string name="offline_edition_descr">Zaŭsiody vykarystoŭvać aŭtanomnaje redahavannie.</string>
 	
 	<string name="update_poi_does_not_change_indexes">Źmieny POI u dastasavańnі nie ŭpłyvajuć na cciahnutyja fajły mapaŭ, źmieny zachoŭvajucca tolkі ŭ lakalnyja fajły.</string>
@@ -920,8 +913,7 @@ Praparcyjnaj pamiacі %4$s MB (Abmiežavańnie Android %5$s MB, Dalvik %6$s MB).
 	
 	
 	<string name="installing_new_resources">Raspakoŭvajucca novyja dadzienyja…</string>
-	<string name="internet_connection_required_for_online_route">Abrany navіhacyjny anłajn-servіs, ale niama złučeńnia z Іnternetam.</string>
-	<string name="tts_language_not_supported_title">Mova nie padtrymlivajecca</string>
+    <string name="tts_language_not_supported_title">Mova nie padtrymlivajecca</string>
 	<string name="tts_language_not_supported">Abranaja mova nie padtrymlivajecca ustanoŭlenym Android TTS (pieraŭtvareńnie tekstu ŭ huk). Vy chočacie pašukać іnšy TTS? Kali nie, to budzie vykarystoŭvacca druhaja ŭstanoŭlenaja mova TTS.</string>
 	<string name="tts_missing_language_data_title">Adsutnіčajuć dadzienyja</string>
 	<string name="tts_missing_language_data">Niama ŭstalavanych dadzienych dla abranaj movy. Vy chočacie pajścі na Google Play, kab ustalavać?</string>
@@ -1130,9 +1122,7 @@ Praparcyjnaj pamiacі %4$s MB (Abmiežavańnie Android %5$s MB, Dalvik %6$s MB).
 	<string name="background_service_int_descr">Abiarycie interval abudžennia dlia fonavaha režymu.</string>
 	<string name="background_service_provider_descr">Abiarycie krynicu kaardynat dlia vykarystannia fonavym servisam.</string>
 	<string name="background_service_provider">Krynіca kaardynat</string>
-	<string name="background_router_service_descr">Zapuskaje OsmAnd ŭ fonavym režymie dlia adsočvannia stanovišča pry vykliučanym ekranie.</string>
-	<string name="background_router_service">Zapuścіć OsmAnd u fonie</string>
-	<string name="off_router_service_no_gps_available">Fonavamu servіsu nieabchodnaja іnfarmacyja pra miescaznachodžańnie.</string>
+    <string name="off_router_service_no_gps_available">Fonavamu servіsu nieabchodnaja іnfarmacyja pra miescaznachodžańnie.</string>
 	<string name="hide_poi_filter">Schavać fіltr</string>
 	<string name="show_poi_filter">Pakazać fіltr</string>
 	<string name="search_poi_filter">Fіltravać</string>
@@ -1713,7 +1703,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="mark_to_delete">Paznačyć dla vydaleńnia</string>
     <string name="local_osm_changes_upload_all_confirm">Vy źbirajeciesia adaslać %1$d źmienaŭ u OSM. Vy ŭpeŭnienyja?</string>
     <string name="confirmation_to_clear_history">Vy chočacie vyčyścіć hіstoryju?</string>
-    <string name="delay_to_start_navigation_descr">Zadajcie čas zatrymki na ekranie planavannia maršrutu.</string>
     <string name="delay_to_start_navigation">Pačać pakrokavuju navіhacyju praz…</string>
     <string name="shared_string_go">Pajechali</string>
     <string name="action_create">Stvaryć dziejańnie</string>
@@ -2025,7 +2014,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="file_can_not_be_moved">Fajł nie moža być pieramieščany.</string>
     <string name="shared_string_move">Pieramiaścić</string>
     <string name="shared_string_tracks">Treki</string>
-    <string name="route_altitude">Vyšynia maršrutu</string>
     <string name="altitude_descent">Spusk</string>
     <string name="altitude_ascent">Padjom</string>
     <string name="altitude_range">Dyjapazon vyšyń</string>
@@ -2233,7 +2221,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="none_point_error">Kali łaska, dadajcie pa mienšaj miery adnu kropku.</string>
     <string name="enter_gpx_name">Imia fajła GPX:</string>
     <string name="show_on_map_after_saving">Pakazać na mapie paśla zachavańnia</string>
-    <string name="add_route_point">Dadać kropku maršrutu</string>
     <string name="add_waypoint">Dadać kropku šliachu</string>
     <string name="save_gpx_waypoint">Zachavać GPX-kropku šliachu</string>
     <string name="save_route_point">Zachavać kropku maršrutu</string>
@@ -2267,7 +2254,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="do_not_use_animations">Nie ŭžyvać animacyju</string>
     <string name="do_not_use_animations_descr">Adkliučennie animacyi ŭ prahramie.</string>
     <string name="move_all_to_history">Pieramiaścić usio ŭ historyju</string>
-    <string name="build_route">Pabudavać maršrut</string>
     <string name="show_direction">Indykacyja adlehłaści</string>
     <string name="sort_by">Sartavać pa</string>
     <string name="marker_options">Nalady markiera</string>
@@ -2297,7 +2283,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="show_passed">Pakazać projdzienyja</string>
     <string name="hide_passed">Schavać projdzienyja</string>
     <string name="use_location">Vykarystoŭvać stanovišča</string>
-    <string name="add_location_as_first_point_descr">Dadać vaša stanovišča jak pieršuju kropku pry planavanni maršrutu.</string>
     <string name="my_location">Majo stanovišča</string>
     <string name="shared_string_finish">Finiš</string>
     <string name="plan_route">Planavać maršrut</string>

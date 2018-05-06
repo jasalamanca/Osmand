@@ -51,23 +51,6 @@ public class RouteProvider {
 	private static final org.apache.commons.logging.Log log = PlatformUtil.getLog(RouteProvider.class);
 	private static final String OSMAND_ROUTER = "OsmAndRouter";
 
-	public enum RouteService {
-			OSMAND("OsmAnd (offline)");
-
-		private final String name;
-
-		private RouteService(String name) {
-			this.name = name;
-		}
-
-		public String getName() {
-			return name;
-		}
-	}
-
-	public RouteProvider() {
-	}
-
 	public static class GPXRouteParamsBuilder {
 		boolean calculateOsmAndRoute = false;
 		// parameters
@@ -222,19 +205,15 @@ public class RouteProvider {
 		long time = System.currentTimeMillis();
 		if (params.start != null && params.end != null) {
 			if(log.isInfoEnabled()){
-				log.info("Start finding route from " + params.start + " to " + params.end +" using " + 
-						params.type.getName()); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				log.info("Start finding route from " + params.start + " to " + params.end +" using OsmAnd (offline)"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 			}
 			try {
 				RouteCalculationResult res;
 				boolean calcGPXRoute = params.gpxRoute != null && !params.gpxRoute.points.isEmpty();
 				if(calcGPXRoute && !params.gpxRoute.calculateOsmAndRoute){
 					res = calculateGpxRoute(params);
-				} else if (params.type == RouteService.OSMAND) {
+				} else {
 					res = findVectorMapsRoute(params, calcGPXRoute);
-				}
-				else {
-					res = new RouteCalculationResult("Selected route service is not available");
 				}
 				if(log.isInfoEnabled() ){
 					log.info("Finding route contained " + res.getImmutableAllLocations().size() + " points for " + (System.currentTimeMillis() - time) + " ms"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
@@ -246,22 +225,6 @@ public class RouteProvider {
 		}
 		return new RouteCalculationResult(null);
 	}
-
-//	public RouteCalculationResult recalculatePartOfflineRoute(RouteCalculationResult res, RouteCalculationParams params) {
-//		RouteCalculationResult rcr = params.previousToRecalculate;
-//		List<Location> locs = new ArrayList<Location>(rcr.getRouteLocations());
-//		try {
-//			int[] startI = new int[]{0};
-//			int[] endI = new int[]{locs.size()};
-//			locs = findStartAndEndLocationsFromRoute(locs, params.start, params.end, startI, endI);
-//			List<RouteDirectionInfo> directions = calcDirections(startI, endI, rcr.getRouteDirections());
-//			insertInitialSegment(params, locs, directions, true);
-//			res = new RouteCalculationResult(locs, directions, params, null, true);
-//		} catch (RuntimeException e) {
-//			e.printStackTrace();
-//		}
-//		return res;
-//	}
 
 	private RouteCalculationResult calculateGpxRoute(RouteCalculationParams routeParams) throws IOException {
 		// get the closest point to start and to end
@@ -303,7 +266,6 @@ public class RouteProvider {
 		rp.start = routeParams.start;
 		rp.end = routeParams.end;
 		rp.leftSide = routeParams.leftSide;
-		rp.type = routeParams.type;
 		rp.fast = routeParams.fast;
 		rp.onlyStartPointChanged = routeParams.onlyStartPointChanged;
 		rp.previousToRecalculate =  routeParams.previousToRecalculate;
@@ -426,7 +388,6 @@ public class RouteProvider {
 		newParams.ctx = rParams.ctx;
 		newParams.calculationProgress = rParams.calculationProgress;
 		newParams.mode = rParams.mode;
-		newParams.type = RouteService.OSMAND;
 		newParams.leftSide = rParams.leftSide;
 		RouteCalculationResult newRes = null;
 		try {

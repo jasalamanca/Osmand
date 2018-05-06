@@ -3,7 +3,6 @@
 
     <string name="clear_dest_confirm">Վստահ ե՞ք, որ ցանկանում եք ջնջել ձեր նպատակակետը(և միջանկյալ նպատակակետը)?</string>
     <string name="stop_routing_confirm">Վստահ ե՞ք որ ցանկանում եք դադարեցնել նավիգացիան?</string>
-    <string name="precise_routing_mode">Ճշգրիտ ճանապարհ (ալֆա)</string>
 
     <string name="intermediate_points_change_order">Փոխել հերթականությունը</string>
     <string name="email">էլ-փոստ</string>
@@ -74,7 +73,6 @@
 	<string name="prefer_in_routing_descr">Նախնտրել մայրուղիներ։</string>
     <string name="max_speed_none">Ոչ</string>
     <string name="index_name_openmaps">OpenMaps - Եվրոպա</string>
-    <string name="precise_routing_mode_descr">Միացնել ճշգրիտ երթուղիների հաշվարկի ռեժիմը։ Այս ռեժիմը դեր սահմանափակված է հեռավորությամբ և դանդախ է։</string>
     <string name="dropbox_plugin_name">Dropbox փլագին</string>
     <string name="recording_delete_confirm">Դուք ուզու՞մ եք ջնջել գրառումը?</string>
     <string name="recording_context_menu_play">Նվագել</string>
@@ -105,7 +103,6 @@
 	<string name="routing_attr_avoid_motorway_description">Խուսափել ավտոճանապարհները։</string>
 	<string name="routing_attr_weight_name">Առավելագույն քաշը</string>
 	<string name="routing_attr_weight_description">Նշել մեքենայի քաշը երթուղին հաշվառկելու համար։</string>
-    <string name="osmand_distance_planning_plugin_description">Այս plugin-նը ապահովում է քարտեզի էկրանի վրա վիջեթ, որը հնարավորություն է տալիս ստեղծել ուղիներ, քարտեզի վրա կտտացնելով, նաև օգտագործել կամ փոփոխել առկա GPX ֆայլերը, ուղեւորություն պլանավորել և չափել կետերի միջև հեռավորությունը։</string>
     <string name="shared_string_no">Ոչ</string>
 	<string name="shared_string_yes">Այո</string>
 	<string name="osn_modify_dialog_error">Բացառություն է տեղի ունեցել՝ նշումը չի փոփոխվել</string>
@@ -122,7 +119,6 @@
     <string name="routing_attr_avoid_ice_roads_fords_name">Խուսափել սառույցի ճանապարհներից, ծանծաղուտ</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Խուսափել սառույցի ճանապարհներից և ծանծաղուտներից։</string>
     <string name="use_location">Օգտագործել դիրքը</string>
-    <string name="add_location_as_first_point_descr">Ավելացրեք ձեր դիրքը, որպես առաջին կետ, երթուղին կատարյալ պլանավորելու համար։</string>
     <string name="my_location">Իմ դիրքը</string>
     <string name="shared_string_finish">Վերջ</string>
     <string name="plan_route">Պլանավորել երթուղին</string>
@@ -274,7 +270,6 @@
     <string name="file_can_not_be_moved">Ֆայլը չի կարող տեղափոխվել:</string>
     <string name="shared_string_move">Տեղափոխել</string>
     <string name="shared_string_tracks">Տրեկեր</string>
-    <string name="route_altitude">Երթուղու բարձրությունը</string>
     <string name="altitude_descent">Վայրեջք</string>
     <string name="altitude_ascent">Վերելք</string>
     <string name="altitude_range">Բարձրությունների շարք</string>
@@ -743,7 +738,6 @@
     <string name="mark_to_delete">Նշել ջնջելու համար</string>
     <string name="local_osm_changes_upload_all_confirm">Դուք մտադիր եք %1$d փոփոխություններ ուղարկել OSM- ին: Համոզված եք?</string>
     <string name="confirmation_to_clear_history">Ցանկանում եք մաքրել պատմությունը?</string>
-    <string name="delay_to_start_navigation_descr">Նշեք սպասման ժամանակը երթուղու պլանավորման էկրանին։</string>
     <string name="delay_to_start_navigation">Նավիգացիաի մեկնարկի հետաձքումը…</string>
     <string name="shared_string_go">Գնացինք</string>
     <string name="action_create">Ստեղծել գործողություն</string>
@@ -1252,10 +1246,8 @@
     <string name="rendering_attr_roadColors_name">Ճանապարհների գունավորման սխեման</string>
     <string name="map_widget_show_destination_arrow">Ցուցադրել ուղղությունը դեպի նպատակակետը</string>
     <string name="enable_plugin_monitoring_services">"Միացնել  «Ուղևորության գրանցում» plugin-ը մոնիտորինգի ծառայություններից օգտվելու համար (GPX գրանցում, online ուղեկցում)"</string>
-    <string name="non_optimal_route_calculation">Արագ երթուղու հաշվառկում (հավանաբար ոչ օպտիմալ)</string>
     <string name="gps_not_available">Միացրեք GPS-ը «Կարգավորումներ»-ում</string>
     <string name="map_widget_monitoring_services">Մոնիտորինգի ծառայություններ</string>
-    <string name="no_route">Երթուղի չկա</string>
     <string name="delete_target_point">Ջնջել նպատակակետը</string>
     <string name="target_point">Նպատակակետ %1$s</string>
     <string name="intermediate_point">Միջանկյալ նպատակակետ %1$s</string>
@@ -1313,7 +1305,6 @@
     <string name="avoid_ferries">Խուսափել լաստանավերից</string>
     <string name="avoid_in_routing_title">Երթուղին կառուցման ժամանակ խուսափել…</string>
     <string name="avoid_in_routing_descr">Խուսափել վճարովի ճանապարհներից, երկաթգծերից և լաստանավերից։</string>
-    <string name="map_widget_fluorescent">Լյումինեսցենտային երթուղիներ</string>
     <string name="map_widget_show_ruler">Քանոն</string>
     <string name="map_widget_view_direction">Տեսակետի ուղղությունը</string>
     <string name="map_widget_transparent">Թափանցիկ Widgets</string>
@@ -1461,7 +1452,6 @@
     <string name="arrival_distance_descr">Որքան շուտ եք ուզում հայտարարել ժամանելու մասին?</string>
     <string name="rendering_out_of_memory">Սխալ. գործընթացի անբավարար հիշողություն քարտեզի ցուցադրման համար</string>
     <string name="use_fluorescent_overlays">Լյումինեսցենտային գույներ</string>
-    <string name="use_fluorescent_overlays_descr">Օգտագործեք լյումինեսցենտային գույներ, track-ի և երթուղիների ցուցադրելու համար։</string>
     <string name="offline_edition">Անցանց խմբագրում</string>
     <string name="offline_edition_descr">Միշտ օգտագործել անցանց խմբագրումը։</string>
     <string name="update_poi_does_not_change_indexes">POI-ի փոփոխությունը հավելվածի մեջ չի ազդում ներբեռնված POI-րի վրա, փոփոխությունները պահպանվում են տեղական ֆայլում:</string>
@@ -1602,7 +1592,6 @@
     <string name="trace_rendering">Տրամադրել տեղեկություն խնդիրների վերաբերյալ</string>
     <string name="trace_rendering_descr">Ցուցադրում մատուցման կատարողականը։</string>
     <string name="installing_new_resources">Բացվում են նոր տվյալները…</string>
-    <string name="internet_connection_required_for_online_route">"Դուք պատրաստվում եք օգտագործել Ինտերնետ  երթուղիները, սակայն ակտիվ ինտերնետ կապ չեք ունենում:"</string>
     <string name="tts_language_not_supported_title">Լեզուն չի աջակցվում</string>
     <string name="tts_language_not_supported">Ընտրված լեզուն չի աջակցվում ակտիվ Android TTS-ի կողմից( text-to-speech): Նախադրված լեզուն կօգտագործվի: Ցանկանում եք գտնել մեկ այլ TTS Google Play-ում? Հակառակ դեպքում, օգտագործվում է նախադրված TTS լեզուն:</string>
     <string name="tts_missing_language_data_title">Տվյալները բացակայում են</string>
@@ -1781,8 +1770,6 @@
     <string name="background_service_int_descr">Ընտրեք արթնացման ժամանակի ընդմիջումը ֆոնային ծառայության համար։</string>
     <string name="background_service_provider_descr">Ֆոնային ծառայության համար ընտրել դիրքորոշման աղբյուր։</string>
     <string name="background_service_provider">Դիրքորոշման աղբյուր</string>
-    <string name="background_router_service_descr">Միացնում է OsmAnd-ը ֆոնային ռեժիմում, ձեր գտնվելու վայրը հետեւելու համար, երբ էկրանը անջատված է։</string>
-    <string name="background_router_service">Միացնում է OsmAnd-ը ֆոնին ռեժիմում</string>
     <string name="off_router_service_no_gps_available">OsmAnd-ի երթուղայնացման ծառայությունը միացված է, եթե անջատեք դիրքավորումը, այն կդադարի երթուղով շարժվել:</string>
     <string name="hide_poi_filter">Թաքցնել ֆիլտր</string>
     <string name="show_poi_filter">Ցուցադրել ֆիլտր</string>

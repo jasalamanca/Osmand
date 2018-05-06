@@ -64,7 +64,6 @@
     <string name="shared_string_accessibility">Akadálymentesítés</string>
     <string name="rendering_out_of_memory">Kevés a folyamatmemória a kijelölt terület megjelenítéséhez</string>
     <string name="use_fluorescent_overlays">Fluoreszkáló színek</string>
-    <string name="use_fluorescent_overlays_descr">Élénk színek használata az útvonalak megjelenítéséhez.</string>
     <string name="offline_edition">Offline szerkesztés</string>
     <string name="offline_edition_descr">Szerkesztés mindig offline módban.</string>
 
@@ -240,7 +239,6 @@ Ehhez {1} MB helyre van szükség.
 
 
     <string name="installing_new_resources">Új adatok kicsomagolása…</string>
-    <string name="internet_connection_required_for_online_route">Online navigáció használata internetkapcsolat nélkül nem lehetséges.</string>
     <string name="tts_language_not_supported_title">Nem támogatott nyelv</string>
     <string name="tts_language_not_supported">A kijelölt nyelvet az Android TTS rendszere nem támogatja. A Marketből letölthetsz másik TTS rendszert, egyébként a jelenlegi TTS-t használja a program.</string>
     <string name="tts_missing_language_data_title">Hiányzó adat</string>
@@ -451,8 +449,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="background_service_int">GPS felébredési időköz</string>
     <string name="background_service_provider_descr">Helymeghatározási szolgáltatás kiválasztása a háttérszolgáltatáshoz.</string>
     <string name="background_service_provider">Helymeghatározási szolgáltatás</string>
-    <string name="background_router_service_descr">OsmAnd futtatása a háttérben, hogy kikapcsolt képernyővel is kövesse a pozíciódat.</string>
-    <string name="background_router_service">Működés háttér üzemmódban</string>
     <string name="off_router_service_no_gps_available">Az navigációs háttérszolgáltatásnak szüksége van bekapcsolt GPS-re.</string>
     <string name="hide_poi_filter">Szűrő elrejtése</string>
     <string name="show_poi_filter">Szűrő megjelenítése</string>
@@ -814,7 +810,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="avoid_in_routing_descr">Fizetős utak, kompok, földutak elkerülése.</string>
     <string name="show_warnings_title">Figyelmeztetések megjelenítése…</string>
     <string name="show_warnings_descr">Sebességkorlátozások, traffipaxok, fekvőrendőrök, sávinformációk jelzése.</string>
-    <string name="map_widget_fluorescent">Élénk színű utak</string>
     <string name="map_widget_show_ruler">Vonalzó</string>
 
     <string name="map_widget_view_direction">Látómező</string>
@@ -866,13 +861,11 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="context_menu_item_last_intermediate_point">Beállítás utolsó köztes célpontnak</string>
     <string name="context_menu_item_first_intermediate_point">Beállítás első célpontnak</string>
     <string name="map_widget_monitoring_services">Rögzítési szolgáltatások</string>
-    <string name="no_route">Nincs út</string>
     <string name="delete_target_point">Célpont törlése</string>
     <string name="intermediate_point">%1$s köztes célpont</string>
     <string name="gps_not_available">Kérlek engedélyezd a GPS-t a beállításokban</string>
     <string name="map_widget_show_destination_arrow">Célpont irányának megjelenítése</string>
     <string name="enable_plugin_monitoring_services">A pozíciónaplózási szolgáltatások (GPX naplózás, online követés) használatához engedélyed az Útvonalrögzítés bővítményt</string>
-    <string name="non_optimal_route_calculation">Esetleg nem optimális útvonal számítása nagyobb távolságokra</string>
     <string name="rendering_attr_roadColors_description">Útszínséma kiválasztása:</string>
     <string name="rendering_attr_roadColors_name">Útszín séma</string>
     <string name="close_changeset">Módosításcsomag lezárása</string>
@@ -916,8 +909,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="dropbox_plugin_name">Dropbox bővítmény</string>
     <string name="stop_routing_confirm">Biztosan megállítod a navigációt?</string>
     <string name="clear_dest_confirm">Biztosan törlöd a célpontot (és a köztes célpontokat)?</string>
-    <string name="precise_routing_mode_descr">Pontos útvonaltervező engedélyezése hibamentes, pontos útvonalak tervezéséhez. Jelenleg lassú, kis távolságokra működik.</string>
-    <string name="precise_routing_mode">Pontos útvonaltervezés (kísérleti)</string>
 
 
     <string name="support_new_features_descr">Adományozz, hogy új funkciók kerülhessenek az alkalmazásba.</string>
@@ -969,7 +960,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="plugin_distance_point">Pont</string>
     <string name="gpx_file_name">GPX fájlnév</string>
     <string name="gpx_saved_sucessfully">GPX fájl sikeresen elmentve ide: {0}</string>
-    <string name="osmand_distance_planning_plugin_description">Ez a bővítmény lehetővé teszi útvonalak létrehozását a térképen való koppintással, vagy meglévő GPX fájlok használatát, módosítását egy út megtervezéséhez és a pontok közötti távolság méréséhez. Az eszközt a térkép képernyőn elhelyezett gombbal lehet indítani. Az eredmény elmenthető GPX fájlként, amely később használható a vezetéshez.</string>
     <string name="use_distance_measurement_help">* Pont lerakásához koppints.
 \n* Nyomd meg hosszan a térképet az előző pont törléséhez. 
 \n* Nyomd meg hosszan a pontot leírás csatolásához és megtekintéséhez. 
@@ -1456,7 +1446,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="osmand_parking_hour">ó</string>
     <string name="osmand_parking_minute">perc</string>
     <string name="confirmation_to_clear_history">Szeretnéd törölni az előzményeket?</string>
-    <string name="delay_to_start_navigation_descr">A hátralévő várakozási idő megadása az útvonaltervezés képernyőn.</string>
     <string name="delay_to_start_navigation">Turn-by-turn navigáció indítása ez után…</string>
     <string name="shared_string_go">Indítás</string>
 
@@ -2138,7 +2127,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="shared_string_move">Áthelyezés</string>
     <string name="shared_string_tracks">Nyomvonalak</string>
 
-    <string name="route_altitude">Útvonal magassága</string>
     <string name="altitude_descent">Lejtő</string>
     <string name="altitude_ascent">Emelkedő</string>
     <string name="altitude_range">Magasságtartomány</string>
@@ -2270,7 +2258,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="routing_attr_avoid_ice_roads_fords_name">Jeges utak, gázlók elkerülése</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Jeges utak és gázlók elkerülése.</string>
     <string name="use_location">Pozíció használata</string>
-    <string name="add_location_as_first_point_descr">Tökéletes útvonaltervezéshez első pontként a saját pozícióját adja meg.</string>
     <string name="my_location">Saját pozícióm</string>
     <string name="shared_string_finish">Befejezés</string>
     <string name="plan_route">Útvonal tervezése</string>

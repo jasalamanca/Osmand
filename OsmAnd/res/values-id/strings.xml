@@ -139,7 +139,6 @@
     <string name="fast_coordinates_input_descr">Pilih koordinat format input. Anda selalu bisa mengubahnya dengan menekan Options.</string>
     <string name="fast_coordinates_input">Masukan koordinat cepat</string>
     <string name="use_location">Gunakan posisi</string>
-    <string name="add_location_as_first_point_descr">Tambahkan posisi Anda sebagai titik awal untuk merencanakan rute yang sempurna.</string>
     <string name="my_location">Posisi saya</string>
     <string name="shared_string_finish">Selesai</string>
     <string name="plan_route">Rute rencana</string>
@@ -294,7 +293,6 @@
     <string name="file_can_not_be_moved">File tidak bisa dipindahkan.</string>
     <string name="shared_string_move">Pindah</string>
     <string name="shared_string_tracks">Jalur</string>
-    <string name="route_altitude">Ketinggian Rute</string>
     <string name="altitude_descent">Turun</string>
     <string name="altitude_ascent">Naik</string>
     <string name="altitude_range">Ketinggian Jangkauan</string>

@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string name="use_fluorescent_overlays">Sovrapposizioni fluorescenti</string>
-    <string name="use_fluorescent_overlays_descr">Usa colori fluorescenti per visualizzare tracce e percorsi.</string>
     <string name="offline_edition">Modifiche offline</string>
     <string name="offline_edition_descr">Usa sempre la modifica offline.</string>
 
@@ -155,7 +154,6 @@ La memoria utilizzata è  {1} MB.
 
 
     <string name="installing_new_resources">Scompattazione nuovi dati…</string>
-    <string name="internet_connection_required_for_online_route">È stato selezionato un servizio di navigazione online, ma la connessione a Internet non è disponibile.</string>
     <string name="tts_language_not_supported_title">Lingua non supportata</string>
     <string name="tts_language_not_supported">La lingua selezionata non è supportata nel motore TTS (text-to-speech) Android installato. Vuoi vedere in Market un altro motore TTS? Altrimenti verrà utilizzata la lingua TTS preimpostata.</string>
     <string name="tts_missing_language_data_title">Dati mancanti</string>
@@ -358,8 +356,6 @@ La memoria utilizzata è  {1} MB.
     <string name="background_service_int">Intervallo di risveglio GPS</string>
     <string name="background_service_provider_descr">Scegli il fornitore di posizione utilizzato dal servizio in background</string>
     <string name="background_service_provider">Fornitore di posizionamento</string>
-    <string name="background_router_service_descr">Lancia il servizio in background di OsmAnd per il tracking della posizione mentre lo schermo è spento</string>
-    <string name="background_router_service">Esegui OsmAnd in background</string>
     <string name="off_router_service_no_gps_available">Il servizio di navigazione in background di OsmAnd necessita del sistema di posizionamento attivato.</string>
     <string name="hide_poi_filter">Nascondi filtro</string>
     <string name="show_poi_filter">Visualizza filtro</string>
@@ -798,7 +794,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="avoid_in_routing_descr">Evita strade a pagamento, sterrate, traghetti.</string>
     <string name="show_warnings_title">Mostra avvisi…</string>
     <string name="show_warnings_descr">Configura gli avvisi sul traffico (limiti velocità, fermate forzate, dossi rallentatori), avvisi autovelox e indicazioni di corsia.</string>
-    <string name="map_widget_fluorescent">Itinerari fluorescenti</string>
     <string name="map_widget_show_ruler">Righello</string>
 
     <string name="map_widget_view_direction">Direzione della visuale</string>
@@ -836,12 +831,10 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="target_point">Destinazione %1$s</string>
     <string name="target_points">Destinazioni</string>
     <string name="map_widget_monitoring_services">Servizi di registrazione</string>
-    <string name="no_route">Nessun percorso</string>
     <string name="delete_target_point">Rimuovi la destinazione</string>
     <string name="intermediate_point">Destinazione intermedia %1$s</string>
     <string name="gps_not_available">Attiva il GPS nelle impostazioni</string>
     <string name="map_widget_show_destination_arrow">Visualizza la direzione della destinazione</string>
-    <string name="non_optimal_route_calculation">Calcola un percorso, eventualmente anche non ottimale, su lunghe distanze</string>
     <string name="enable_plugin_monitoring_services">Abilita il plugin di registrazione del viaggio per utilizzare i servizi di registrazione della posizione (registrazione GPX, monitoraggio in tempo reale)</string>
     <string name="rendering_attr_roadColors_description">Seleziona una combinazione di colori per le strade:</string>
     <string name="rendering_attr_roadColors_name">Schema di colorazioni per le strade</string>
@@ -885,8 +878,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="dropbox_plugin_name">Plugin Dropbox</string>
     <string name="stop_routing_confirm">Sei sicuro di voler fermare la navigazione?</string>
     <string name="clear_dest_confirm">Sei sicuro di voler eliminare la tua destinazione (e le destinazioni intermedie)?</string>
-    <string name="precise_routing_mode_descr">Abilita per calcolare percorsi precisi senza intoppi. È lento e limitato in distanza.</string>
-    <string name="precise_routing_mode">Calcolo della rotta preciso (alfa)</string>
 
 
     <string name="support_new_features_descr">Fai una donazione per avere nuove funzionalità implementate nell\'applicazione.</string>
@@ -935,7 +926,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="plugin_distance_point">Punto</string>
     <string name="gpx_file_name">Nome del file GPX</string>
     <string name="gpx_saved_sucessfully">File GPX salvato con successo in {0}</string>
-    <string name="osmand_distance_planning_plugin_description">Questo plugin fornisce un widget nella finestra della mappa che permette di creare percorsi toccando la mappa o usare o modificare file GPX esistenti, per pianificare un viaggio e misurare la distanza tra i punti. I risultati possono essere salvati come file GPX, che possono essere utilizzati in seguito come guida.</string>
     <string name="use_distance_measurement_help">* Toccare per segnare un punto.
 \n* Premere e tenere premuto sulla mappa per eliminare il punto precedente.
 \n* Premere e tenere premuto sul punto per vedere e allegare una descrizione.
@@ -1475,7 +1465,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="osmand_parking_hour">h</string>
     <string name="osmand_parking_minute">min</string>
     <string name="your_edits">Le tue modifiche</string>
-    <string name="delay_to_start_navigation_descr">Specifica il tempo di permanenza nella schermata di pianificazione dell\'itinerario.</string>
     <string name="delay_to_start_navigation">Avvia la navigazione svolta per svolta dopo…</string>
     <string name="shared_string_go">Vai</string>
 
@@ -2149,7 +2138,6 @@ Rappresenta l\'area: %1$s x %2$s</string>
     <string name="auto_split_recording_title">Divisione automatica delle registrazioni dopo un periodo</string>
 	<string name="auto_split_recording_descr">Inizia un nuovo segmento dopo 6 minuti, una nuova traccia dopo 2 ore, o un nuovo file dopo un intervallo maggiore.</string>
 
-    <string name="route_altitude">Profilo altimetrico del percorso</string>
     <string name="altitude_descent">Discesa</string>
     <string name="altitude_ascent">Salita</string>
     <string name="altitude_range">Gamma altitudini</string>
@@ -2307,7 +2295,6 @@ Rappresenta l\'area: %1$s x %2$s</string>
     <string name="route_point_one">Punto Percorso 1</string>
     <string name="empty_state_my_tracks">Aggiungi e registra Tracce</string>
     <string name="move_all_to_history">Sposta tutto nella cronologia</string>
-    <string name="build_route">Costruisci un percorso</string>
     <string name="show_direction">Indicazione della direzione</string>
     <string name="sort_by">Ordina per</string>
     <string name="marker_options">Opzioni marcatori</string>
@@ -2337,7 +2324,6 @@ Rappresenta l\'area: %1$s x %2$s</string>
     <string name="routing_attr_avoid_ice_roads_fords_name">Evita strade di ghiaccio e guadi</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Evita strade di ghiaccio e guadi.</string>
     <string name="use_location">Utilizza la posizione</string>
-    <string name="add_location_as_first_point_descr">Aggiungi la tua posizione come primo punto per pianificare un percorso perfetto.</string>
     <string name="my_location">Mia posizione</string>
     <string name="shared_string_finish">Fine</string>
     <string name="plan_route">Pianifica percorso</string>

@@ -104,7 +104,6 @@
 
 
     <string name="installing_new_resources">Rozpakowywanie nowych danych…</string>
-    <string name="internet_connection_required_for_online_route">Wybrano sieciową usługę nawigacyjną, ale nie nawiązano połączenia sieciowego.</string>
     <string name="tts_language_not_supported_title">Nieobsługiwany język</string>
     <string name="tts_language_not_supported">Wybrany język nie jest obsługiwany przez zainstalowany moduł syntezy mowy. Odwiedzić Android Market, w poszukiwaniu innego mechanizmu syntezy mowy? W przeciwnym przypadku zostanie użyty aktualny język.</string>
     <string name="tts_missing_language_data_title">Brakujące dane</string>
@@ -327,8 +326,6 @@
     <string name="background_service_int">Częstość wybudzania GPS</string>
     <string name="background_service_provider_descr">Wybierz dostawcę położenia dla trybu działania w tle.</string>
     <string name="background_service_provider">Określanie położenia</string>
-    <string name="background_router_service_descr">Uruchamia usługę śledzenia położenia w tle podczas kiedy ekran jest wyłączony.</string>
-    <string name="background_router_service">Uruchom OsmAnd w tle</string>
     <string name="off_router_service_no_gps_available">Usługa nawigacji w tle wymaga wybrania dostawcy lokacji zanim zostanie włączona.</string>
     <string name="routing_settings_descr">Określa opcje nawigacji.</string>
     <string name="routing_settings">Nawigacja</string>
@@ -684,7 +681,6 @@
     <string name="accessibility_preferences_descr">Ustawienia ułatwień dostępu.</string>
     <string name="shared_string_accessibility">Ułatwienia dostępu</string>
     <string name="use_fluorescent_overlays">Odblaskowe nakładki</string>
-    <string name="use_fluorescent_overlays_descr">Użyj odblaskowych kolorów do wyświetlania ścieżek i tras.</string>
     <string name="offline_edition">Edycja w trybie offline</string>
     <string name="offline_edition_descr">Zawsze wprowadza modyfikacje w trybie offline.</string>
 
@@ -835,7 +831,6 @@
 
     <string name="gps_not_available">Włącz w ustawieniach odbiornik GPS</string>
     <string name="map_widget_monitoring_services">Usługi rejestrowania</string>
-    <string name="no_route">Brak trasy</string>
     <string name="delete_target_point">Usuń cel</string>
     <string name="target_point">Cel podróży %1$s</string>
     <string name="intermediate_point">Pośredni cel %1$s</string>
@@ -862,7 +857,6 @@
     <string name="select_navigation_mode">Wybierz tryb poruszania się</string>
 
 
-    <string name="map_widget_fluorescent">Odblaskowe trasy</string>
     <string name="map_widget_show_ruler">Linijka</string>
 
     <string name="map_widget_view_direction">Kierunek patrzenia</string>
@@ -876,7 +870,6 @@
     <string name="rendering_attr_roadColors_name">Zestaw kolorów dróg</string>
     <string name="map_widget_show_destination_arrow">Kierunek do celu</string>
     <string name="rendering_attr_roadColors_description">Wybierz zestaw kolorów dróg:</string>
-    <string name="non_optimal_route_calculation">Duża odległość (trasa może być nieoptymalna)</string>
     <string name="enable_plugin_monitoring_services">Włącz wtyczkę nagrywania Podróży, aby skorzystać z usług rejestrowania pozycji (rejestrowanie GPX, śledzenie online)</string>
     <string name="no_buildings_found">Nie odnaleziono budynków.</string>
     <string name="search_villages_and_postcodes">Szukaj więcej wsi/kodów pocztowych</string>
@@ -921,8 +914,6 @@
     <string name="intermediate_points_change_order">Zmień kolejność</string>
     <string name="stop_routing_confirm">Zatrzymać nawigowanie?</string>
     <string name="clear_dest_confirm">Usunąć cel trasy i jej cele pośrednie?</string>
-    <string name="precise_routing_mode">Precyzyjne trasy (alpha)</string>
-    <string name="precise_routing_mode_descr">Włącz obliczanie precyzyjnych tras w nawigacji. Funkcja dość powolna, nadal jest ograniczona odległością.</string>
 
     <string name="support_new_features_descr">Wesprzyj prace nad nowymi funkcjami przez przekazanie darowizny.</string>
 
@@ -974,7 +965,6 @@
     <string name="plugin_distance_point">Punkt</string>
     <string name="gpx_file_name">Nazwa pliku GPX</string>
     <string name="gpx_saved_sucessfully">Zapisano plik GPX do {0}</string>
-    <string name="osmand_distance_planning_plugin_description">Dodaje widżet za pomocą, którego można tworzyć ślady klikając na mapie. Dostarcza również możliwość użycia lub modyfikowania istniejących już plików GPX, co przydaje się do planowania wycieczek lub mierzenia odległości pomiędzy punktami. Wynik może zostać zapisany jako plik GPX i użyty ponownie.</string>
     <string name="use_distance_measurement_help">* Naciśnij, aby zaznaczyć punkt.
 \n * Naciśnij i przytrzymaj mapę, aby usunąć poprzedni punkt. 
 \n * Naciśnij i przytrzymaj punkt, aby przejrzeć i dołączyć opis. 
@@ -1484,7 +1474,6 @@ Długość %2$s</string>
     <string name="get_plugin">Pobierz</string>
     <string name="local_osm_changes_upload_all_confirm">Wysłać %1$d zmian do OSM?</string>
     <string name="confirmation_to_clear_history">Wyczyścić historię?</string>
-    <string name="delay_to_start_navigation_descr">Wyświetla pozostały czas oczekiwania na ekranie planowania trasy.</string>
     <string name="delay_to_start_navigation">Rozpocznij nawigację zakręt-po-zakręcie za…</string>
     <string name="drawer">Płaska lista</string>
     <string name="days_behind">dni za najnowszą wersją</string>
@@ -2151,7 +2140,6 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="routing_attr_height_obstacles_name">Użyj danych wysokościowych</string>
     <string name="routing_attr_height_obstacles_description">Używa danych wysokościowych dostarczanych przez SRTM, ASTER i EU-DEM.</string>
 
-    <string name="route_altitude">Wysokość trasy</string>
     <string name="altitude_descent">Zjazdy</string>
     <string name="altitude_ascent">Wzniesienia</string>
     <string name="altitude_range">Zakres wysokości</string>
@@ -2278,7 +2266,6 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="rendering_value_translucent_pink_name">Przezroczysty różowy</string>
     <string name="min_max">Min./Maks.</string>
     <string name="retry">Ponów</string>
-    <string name="add_route_point">Dodaj punkt trasy</string>
     <string name="save_route_point">Zapisz punkt trasy</string>
     <string name="route_point_one">Punkt 1 trasy</string>
     <string name="live_monitoring_max_interval_to_send">Bufor czasowy do śledzenia online</string>
@@ -2314,7 +2301,6 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="do_not_use_animations">Wyłączenie animacji</string>
     <string name="do_not_use_animations_descr">Wyłącza animacje w aplikacji.</string>
     <string name="move_all_to_history">Przenieś wszystkie do historii</string>
-    <string name="build_route">Wyznacz trasę</string>
     <string name="show_direction">Wskaźnik odległości</string>
     <string name="sort_by">Kolejność sortowania</string>
     <string name="marker_options">Opcje znacznika</string>
@@ -2373,7 +2359,6 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="make_round_trip">Zamknięta trasa</string>
     <string name="shared_string_navigate">Nawiguj</string>
     <string name="fast_coordinates_input">Szybkie wprowadzanie współrzędnych</string>
-    <string name="add_location_as_first_point_descr">Dodaj swoje położenie jako pierwszy punkt, aby zaplanować idealną trasę.</string>
     <string name="rendering_value_darkyellow_name">Ciemno żółty</string>
     <string name="wrong_input">Nieprawidłowe dane</string>
 	<string name="enter_new_name">Wprowadź nową nazwę</string>

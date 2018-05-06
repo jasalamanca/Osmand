@@ -295,7 +295,6 @@
     <string name="other_location">മറ്റുളള സ്ഥലങ്ങള്‍</string>
     <string name="access_arrival_time">"ആഗമന സമയം "</string>
     <string name="stop_routing_confirm">ഉറപ്പായിട്ടും വഴികാട്ടല്‍ നിര്‍ത്തണമോ?</string>
-    <string name="precise_routing_mode">"സൂക്ഷ്മതയുള്ള  വഴികണ്ടെത്തല്‍(alpha)"</string>
     <string name="recording_context_menu_play">പ്രവര്‍ത്തിപ്പിക്കുക</string>
     <string name="download_select_map_types">മറ്റുളള ഭൂപടങ്ങള്‍</string>
     <string name="rendering_attr_noAdminboundaries_name">"അതിരുകള്‍ മറച്ചുവക്കുക "</string>
@@ -449,8 +448,6 @@
     <string name="amenity_type_entertainment">കലാപ്രകടനം</string>
     <string name="amenity_type_historic">ചരിത്രപ്രാധാനമായത്</string>
     <string name="amenity_type_shop">കട</string>
-    <string name="background_router_service_descr">"സ്ക്രീന്‍ ഓഫായിരിക്കുമ്പോള്‍ ഓഎസ്എം ആന്റ് നെ ബാക്ക്ഗ്രൗണ്ടില്‍ പാത റിക്കോഡ് ചെയ്യാന്‍ പ്രവര്‍ത്തിപ്പിക്കുക "</string>
-    <string name="background_router_service">"ഓഎസ്എം ആന്റ് നെ ബാക്ക്ഗ്രൗണ്ടില്‍ പ്രവര്‍ത്തിപ്പിക്കുക "</string>
     <string name="loading_poi_obj">"സ്ഥലങ്ങള്‍  (POI) നിറച്ചുകൊണ്ടിരിക്കുന്നു…"</string>
     <string name="loading_streets_buildings">തെരുവുക/കെട്ടിടങ്ങള്‍ നിറച്ചുകൊണ്ടിരിക്കുന്നു…</string>
     <string name="loading_postcodes">പോസ്റ്റ്കോഡുകള്‍ നിറച്ചുകൊണ്ടിരിക്കുന്നു…</string>
@@ -903,7 +900,6 @@
     <string name="application_dir_change_warning3">പുതിയ സ്ഥലത്തെക്ക് ഓഎസ്എംആന്ഡിന്റെ വിവരങ്ങളടങ്ങിയ ഫയലുകളും പകര്‍ത്തണോ?</string>
     <string name="storage_directory_multiuser">ഒന്നിലധികം ഉപഭോക്താക്കളുടെ സംഭരണസ്ഥലം</string>
     <string name="agps_data_last_downloaded">അവസാനം ഡൗണ്‍ലോഡ് ചെയ്തത്: %1$s</string>
-    <string name="delay_to_start_navigation_descr">റൂട്ട് തയ്യാറാക്കുള്ള സ്ക്രീനില്‍ എത്രസമയം ചെലവഴിക്കണം എന്ന് പറയുക</string>
     <string name="delay_to_start_navigation">"ടേണ്-ബൈ-ടേണ്‍ നിര്‍ദേശങ്ങള്‍ ആരംഭിക്കുന്നതിനു മുമ്പ്  …"</string>
     <string name="simulate_your_location">"നിങ്ങളുടെ സ്ഥാനം  സിമുലേറ്റ് ചെയ്യുക "</string>
     <string name="notes">കുറിപ്പുകള്‍</string>
@@ -1037,13 +1033,11 @@
     <string name="monitoring_control_start">ജിപിഎക്സ്</string>
     <string name="no_buildings_found">"കെട്ടിടം  കണ്ടുപിടിക്കാനായില്ല."</string>
     <string name="gps_not_available">ഉപകരണ സജ്ജീകരണത്തില്‍ നിന്നും ജിപിഎസ് സജീവമാക്കുക</string>
-    <string name="no_route">"വഴി കണ്ടെത്തിയില്ല "</string>
     <string name="new_destination_point_dialog">"ഇപ്പോഴെ ഒരു ലക്ഷ്യസ്ഥാനം  നിങ്ങളുടെ കയ്യിലുണ്ട്:"</string>
     <string name="context_menu_item_intermediate_point">" ഇട-ലക്ഷ്യസ്ഥാനമായി ചേര്‍ക്കുക"</string>
     <string name="map_widget_intermediate_distance">"  ഇട-ലക്ഷ്യസ്ഥാനം "</string>
     <string name="filterpoi_activity">"പി ഓ ഐ അരിപ്പക്ക്  രുപം നല്‍കുക"</string>
     <string name="map_widget_renderer">ഭൂപടത്തിന്റെ ശൈലി</string>
-    <string name="map_widget_fluorescent">തിളങ്ങുന്ന റൂട്ടുകള്‍</string>
     <string name="map_widget_view_direction">കാണുന്ന ദിശ</string>
     <string name="map_widget_transparent">സുതാര്യമായ വിഡ്ജെറ്റ്</string>
     <string name="map_widget_config">സ്ക്രീന്‍ സജ്ജീകരിക്കുക</string>
@@ -1488,7 +1482,6 @@
     <string name="first_time_msg">"ഓഎസ്എം ആന്ഡ് ഉപയോഗിക്കുന്നതിനു നന്ദി. ഈ ആപ്ളിക്കേഷന്റെ പ്രവര്‍ത്തനത്തിനാവശ്യമായ  ചില പ്രാദേശിക വിവരങ്ങള്‍ നിങ്ങള്‍ക്ക് \'സജ്ജീകരണങ്ങള്‍-&gt;ഭൂപട ഫയലുകളുടെ നിയന്ത്രണം\' വഴി ഡൗണ്‍ലോഡ് ചെയ്യാവുന്നതാണ്. അതിന് ശേഷം നിങ്ങള്‍ക്ക് ഭൂപടങ്ങള്‍ കാണനും, വിലാസങ്ങള്‍ കണ്ട്പിടിക്കാനും, താല്‍പര്യബിന്ദുക്കള്‍ തെരഞ്ഞെടുക്കനും, പൊതുഗതാഗതസംവിധാനം കണ്ടെത്താനും സാധിക്കും."</string>
     <string name="validate_gpx_upload_name_pwd">ജിപിഎക്സ് ഫയല്‍ അപ്ലോഡ് ചെയ്യാനായ് ദയവായ് ഓഎസ്എം യൂസെര്‍നേം പാസ്വോഡ് എന്നിവ തരുക.</string>
     <string name="i_am_here">ഞാന്‍ ഇവിടെയാണ്</string>
-    <string name="use_fluorescent_overlays_descr">തിളക്കമാര്‍ന്ന നിറങ്ങള്‍ പാതകളും റൂട്ടുകളും കാണിക്കാനുപയോഗിക്കുക</string>
     <string name="free_version_message">ഈ സൗജന്യ ഓഎസ്എം ആന്ഡ് പതിപ്പ് %1$s ഡൗണ്‍ലോഡുകളെ അനുവദിക്കൂ, ഓഫ്ലൈന് വിക്കിപീഡിയ ലേഖനങ്ങളുമില്ല. ഈ നിയന്ത്രണമൊഴിവാക്കാന്‍ ദയവായി ഓഎസ്ംആന്ഡ്+ അല്ലെങ്കില്‍ എഫ്ഡ്രോയിഡ് പതിപ്പിലേക്ക് പരിഷ്കരിക്കുക.</string>
     <string name="index_name_other">ലോകമെമ്പാടും പ്രത്യേക വിഷയം സംബന്ധിച്ചതുമായ ഭൂപടങ്ങള്‍</string>
     <string name="fav_export_confirmation">ഇഷ്ടമുള്ളവ നേരത്തെ സംഭരിച്ച ഫയല്‍ ഉണ്ട്. അത് മാറ്റിയെഴുതണോ?</string>

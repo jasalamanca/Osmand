@@ -380,8 +380,7 @@
     
     <string name="no_buildings_found">इमारत सापडली नाही.</string>
     <string name="map_widget_show_destination_arrow">इच्छित स्थळाची दिशा दाखवा</string>
-    <string name="no_route">मार्ग नाही</string>
-	<string name="poi_filter_accomodation">राहण्याची व्यवस्था</string>
+    <string name="poi_filter_accomodation">राहण्याची व्यवस्था</string>
     
 	
 	<string name="map_widget_top_text">रस्त्याचे नाव</string>

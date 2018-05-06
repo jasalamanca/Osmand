@@ -146,9 +146,7 @@
   <string name="background_service_int">Intervalo de posição</string>
   <string name="background_service_provider_descr">Escolha um provedor de localização para o serviço em segundo plano</string>
   <string name="background_service_provider">Provedor de localização</string>
-  <string name="background_router_service_descr">Activar o serviço em segundo plano para monitorar sua posição por longos períodos</string>
-  <string name="background_router_service">Usar serviço em segundo plano</string>
-  <string name="off_router_service_no_gps_available">O serviço em segundo plano exige a ativação de alguma fonte de localização.</string>
+    <string name="off_router_service_no_gps_available">O serviço em segundo plano exige a ativação de alguma fonte de localização.</string>
   <string name="routing_settings_descr">Especifique opções da rota</string>
   <string name="routing_settings">Navegação</string>
   <string name="hide_poi_filter">Ocultar filtro</string>
@@ -522,8 +520,7 @@
   <string name="accessibility_preferences_descr">Preferências relacionadas com a acessibilidade</string>
   <string name="shared_string_accessibility">Acessibilidade</string>
   <string name="use_fluorescent_overlays">Sobreposições Fluorescentes</string>
-  <string name="use_fluorescent_overlays_descr">Use cores fluorescentes para exibir faixas e rotas</string>
-  <string name="offline_edition">Edição offline</string>
+    <string name="offline_edition">Edição offline</string>
   <string name="offline_edition_descr">Usar sempre edição offline</string>
   
   <string name="update_poi_does_not_change_indexes">As alterações são apenas armazenadas na memória local. Para serem introduzidas nos mapas tem que ir a \"Editar Offline\" -&gt; \"Enviar\".</string>
@@ -683,8 +680,7 @@
   
   
   <string name="installing_new_resources">Preparando novos dados…</string>
-  <string name="internet_connection_required_for_online_route">Para usar o serviço de navegação on-line, precisa de uma ligação à Internet.</string>
-  <string name="tts_language_not_supported_title">Linguagem não suportada</string>
+    <string name="tts_language_not_supported_title">Linguagem não suportada</string>
   <string name="tts_language_not_supported">O idioma selecionado não é suportados pelo mecanismo Android TTS (text-to-speech) instalado. Você quer procurar por outro mecanismos TTS na loja de apps? Caso contrário, o idioma TTS predefinido será usado.</string>
   <string name="tts_missing_language_data_title">Faltam dados de voz TTS</string>
   <string name="tts_missing_language_data">Nenhum dado para o idioma selecionado está instalado. Você quer ir para a loja de apps?</string>
@@ -856,8 +852,7 @@
 <string name="avoid_ferries">Evite ferries</string>
 <string name="avoid_in_routing_title">Evitar…</string>
 <string name="avoid_in_routing_descr">Evitar estradas com portagem, não pavimentadas, balsas</string>
-<string name="map_widget_fluorescent">Rotas fluorescentes</string>
-<string name="map_widget_show_ruler">Regua</string>
+    <string name="map_widget_show_ruler">Regua</string>
 
 <string name="map_widget_view_direction">A direção da visão</string>
 <string name="map_widget_transparent">Pele transparente</string>
@@ -870,11 +865,9 @@
 	<string name="rendering_attr_roadColors_name">Esquema de cores</string>
     <string name="map_widget_show_destination_arrow">Ver direção para o destino</string>
     <string name="enable_plugin_monitoring_services">Habilitar plugin de rastreamento para utilizar serviços de registro de posição (log, acompanhamento ao vivo)</string>
-    <string name="non_optimal_route_calculation">Calcular rota possivelmente não-ideal em longas distâncias</string>
     <string name="gps_not_available">Ative o GPS nas configurações</string>
     <string name="map_widget_monitoring_services">Serviços de registro</string>
-	<string name="no_route">Sem rota</string>
-	<string name="delete_target_point">Remover o waypoint</string>
+    <string name="delete_target_point">Remover o waypoint</string>
 	<string name="target_point">Ponto de trilha %1$s</string>
     <string name="intermediate_point">Pnto de trilha %1$s</string>
     <string name="context_menu_item_last_intermediate_point">Adicionar como último waypoint</string>
@@ -930,8 +923,6 @@
 
     <string name="stop_routing_confirm">Quer parar a navegação?</string>
     <string name="clear_dest_confirm">Confirma que deseja apagar o seu ponto de destino?</string>
-    <string name="precise_routing_mode_descr">Ativar o roteamento preciso para calcular rotas precisas sem falhas. É muito limitado pela distância e não usa a biblioteca nativa.</string>
-    <string name="precise_routing_mode">Roteamento preciso (alfa)</string>
     <string name="dropbox_plugin_name">Plugin Dropbox</string>
     <string name="intermediate_points_change_order">Alterar ordem</string>
     <string name="shared_string_control_stop">Parar</string>
@@ -989,9 +980,8 @@
     <string name="plugin_distance_point">Ponto</string>
     <string name="gpx_file_name">Nome do arquivo GPX</string>
     <string name="gpx_saved_sucessfully">Arquivo GPX guardado com sucesso em {0}</string>
-    <string name="osmand_distance_planning_plugin_description">Este plugin fornece um widget na tela do mapa que permite criar caminhos ao tocar no mapa, ou usar/modificar arquivos GPX existentes, para planear uma viagem e medir a distância entre os pontos. Os resultados podem ser guardados como um arquivo GPX, que pode ser usado posteriormente para orientação.</string>
-    
-	<string name="driving_region_descr">Selecione região: EUA, Europa, RU, Ásia e outros</string>
+
+    <string name="driving_region_descr">Selecione região: EUA, Europa, RU, Ásia e outros</string>
 	<string name="driving_region">Região</string>
 	<string name="driving_region_japan">Japão</string>
 	<string name="driving_region_us">Estados Unidos</string>
@@ -1380,7 +1370,6 @@ Clique no widget de medição para ver mais ações.</string>
    	<string name="mark_to_delete">Selecione para apagar</string>
     <string name="local_osm_changes_upload_all_confirm">Você enviará %1$d de mudanças ao OSM. Você está certo?</string>
     <string name="confirmation_to_clear_history">Você quer limpar o histórico?</string>
-    <string name="delay_to_start_navigation_descr">Especifique o tempo de espera para permanecer na tela de planejamento de rota</string>
     <string name="delay_to_start_navigation">Iniciar navegação curva a curva depois de…</string>
     <string name="action_create">Criar ação</string>
 	<string name="action_modify">Modificar ação</string>
@@ -1794,7 +1783,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="routing_attr_avoid_ice_roads_fords_name">Evitar estradas com gelo, vales</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Evitar estradas com gelo e vales</string>
     <string name="use_location">Usar posição</string>
-    <string name="add_location_as_first_point_descr">Adicione a sua posição como primeiro ponto para planear o percurso perfeito.</string>
     <string name="my_location">A minha posição</string>
     <string name="shared_string_finish">Terminar</string>
     <string name="plan_route">Planear percurso</string>
@@ -1950,7 +1938,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="file_can_not_be_moved">Ficheiro não pode ser movido.</string>
     <string name="shared_string_move">Mover</string>
     <string name="shared_string_tracks">Percursos</string>
-    <string name="route_altitude">Elevação do percurso</string>
     <string name="altitude_descent">Descida</string>
     <string name="altitude_ascent">Subida</string>
     <string name="altitude_range">Alcance de altitude</string>

@@ -124,7 +124,6 @@
     <string name="shared_string_accessibility">Prieiga</string>
     <string name="rendering_out_of_memory">Pasirinktos vietos atvaizdavimui nepakanka atminties</string>
     <string name="use_fluorescent_overlays">Fluorescentiniai viršutiniai sluoksniai</string>
-    <string name="use_fluorescent_overlays_descr">Maršruto ir kelionės istorijos rodymui naudoti fluorescentines spalvas.</string>
     <string name="offline_edition">Redagavimas be interneto</string>
     <string name="offline_edition_descr">Visada redaguoti neprisijungus prie interneto.</string>
 
@@ -298,7 +297,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
 
 
     <string name="installing_new_resources">Išpakuojami nauji duomenys…</string>
-    <string name="internet_connection_required_for_online_route">Pasirinkta internetinė maršruto skaičiavimo paslauga, tačiau nėra ryšio su internetu.</string>
     <string name="tts_language_not_supported_title">Ši kalba nepalaikoma</string>
     <string name="tts_language_not_supported">Įdiegtas Android TTS (teksto skaitymo balsu) variklis jūsų pasirinktos kalbos nepalaiko. Ar norite Parduotuvėje ieškoti kito TTS variklio? Priešingu atveju bus naudojama anksčiau nustatyta TTS kalba.</string>
     <string name="tts_missing_language_data_title">Trūksta duomenų</string>
@@ -508,8 +506,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="background_service_int">GPS pabudimo intervalas</string>
     <string name="background_service_provider_descr">Pasirinkite vietos nustatymo būdą naudojant foninį režimą.</string>
     <string name="background_service_provider">Vietos nustatymo būdas</string>
-    <string name="background_router_service_descr">OsmAnd veikia fone ir seka jūsų buvimo vietą kai ekranas išjungtas.</string>
-    <string name="background_router_service">Veikti fone</string>
     <string name="off_router_service_no_gps_available">Foniniam navigacijos režimui reikia parinkti vietos nustatymo būdą.</string>
     <string name="hide_poi_filter">Paslėpti filtrą</string>
     <string name="show_poi_filter">Rodyti filtrą</string>
@@ -825,7 +821,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="avoid_in_routing_descr">Vengti mokamų, negrįstų kelių ir keltų.</string>
     <string name="show_warnings_title">Rodyti įspėjimus…</string>
     <string name="show_warnings_descr">Rodyti greičio ribojimus, matuoklius, greičio ribojimo gūbrelius ir kitus perspėjimus.</string>
-    <string name="map_widget_fluorescent">Fluorescenciniai maršrutai</string>
 
     <string name="map_widget_view_direction">Žiūrėjimo kryptis</string>
     <string name="map_widget_transparent">Permatomi įrankiai</string>
@@ -867,12 +862,10 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="poi_filter_restaurants">Restoranai</string>
     <string name="poi_filter_sightseeing">Įžymybės</string>
     <string name="map_widget_monitoring_services">Stebėjimo paslaugos</string>
-    <string name="no_route">Nėra maršruto</string>
     <string name="delete_target_point">Pašalinti tikslą</string>
     <string name="intermediate_point">Tarpinis tikslas %1$s</string>
     <string name="map_widget_show_destination_arrow">Rodyti kryptį į kelionės tikslą</string>
     <string name="enable_plugin_monitoring_services">Jei norite naudoti sekimo paslaugas (sekimo ir sekimo gyvai), įjunkite Kelionės sekimo įskiepį</string>
-    <string name="non_optimal_route_calculation">Apskaičiuoti (tikėtinai) neoptimalų ilgo nuotolio maršrutą</string>
     <string name="gps_not_available">Įjunkite GPS telefono nustatymuose</string>
     <string name="rendering_attr_roadColors_description">Pasirinkti kelių spalvinimo schemą:</string>
     <string name="rendering_attr_roadColors_name">Kelių spalvinimo schema</string>
@@ -919,8 +912,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="intermediate_points_change_order">Pakeisti tvarką</string>
     <string name="stop_routing_confirm">Ar tikrai norite sustabdyti navigaciją?</string>
     <string name="clear_dest_confirm">Ar tikrai norite panaikinti savo kelionės tikslą (ir tarpinius taškus)?</string>
-    <string name="precise_routing_mode_descr">Igalinti tikslų maršruto skaičiavimą be trikdžių. Jis naudotinas labai ribotam atstumui ir veikia lėtai.</string>
-    <string name="precise_routing_mode">Tikslus maršruto skaičiavias (alpha)</string>
 
 
     <string name="support_new_features_descr">Paremkite finansiškai naujo funkcionalumo vystymą.</string>
@@ -976,7 +967,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="plugin_distance_point">Taškas</string>
     <string name="gpx_file_name">GPX failo pavadinimas</string>
     <string name="gpx_saved_sucessfully">GPX failas sėkmingai išsaugotas {0}</string>
-    <string name="osmand_distance_planning_plugin_description">Įskiepis prideda programėle žemėlapio ekrane, kuri leidžia kurti maršrutus spūstelėjus žemėlapį, taip pat naudoti/keisti egzistuojančius GPX failus, planuoti maršrutus bei matuoti atstumus tarp taškų. Išsaugotą GPX failą galima naudoti maršruto planavimui.</string>
     <string name="use_distance_measurement_help">* Palieskite taškui pažymėti.
 \n* Paspauskite ant žemėlapio ir laikykite ankstesnio taško pašalinimui. 
 \n* Paspauskite ant taško ir laikykite aprašymo peržiūrai ar sukūrimui. 
@@ -1462,7 +1452,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="mark_to_delete">Pažymėkite, jei norite ištrinti</string>
     <string name="local_osm_changes_upload_all_confirm">Jūs ketinate nusiųsti %1$d pakeitimų į OSM. Ar tikrai?</string>
     <string name="confirmation_to_clear_history">Ar norite išvalyti istoriją?</string>
-    <string name="delay_to_start_navigation_descr">Nurodykite maršuto planavimo ekrane delsos laiką.</string>
     <string name="shared_string_go">Pirmyn</string>
     <string name="action_modify">Pakeisti veiksmą</string>
     <string name="action_delete">Ištrinti veiksmą</string>
@@ -2200,7 +2189,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="shared_string_time_span">Trukmė</string>
     <string name="select_gpx_folder">Pasirinkite kelio segtuvą</string>
     <string name="shared_string_tracks">Keliai</string>
-    <string name="route_altitude">Maršruto sukilimas</string>
     <string name="altitude_descent">Nusileidimas</string>
     <string name="altitude_ascent">Sukilimas</string>
     <string name="total_distance">Bendras atstumas</string>
@@ -2245,7 +2233,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="widget">Valdiklis</string>
     <string name="top_bar">Viršutinė juosta</string>
     <string name="move_all_to_history">Perkelti visus į istoriją</string>
-    <string name="build_route">Sukurti maršrutą</string>
     <string name="show_direction">Atstumo nuoroda</string>
     <string name="sort_by">Rūšiuoti pagal</string>
     <string name="do_not_use_animations">Nenaudoti animacijos</string>

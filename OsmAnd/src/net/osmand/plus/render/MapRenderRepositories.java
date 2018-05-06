@@ -239,16 +239,7 @@ public class MapRenderRepositories {
 		return false;
 	}
 
-	public boolean basemapExists() {
-		for (BinaryMapIndexReader f : files.values()) {
-			if (f.isBasemap()) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	private boolean loadVectorDataNative(QuadRect dataBox, final int zoom, final RenderingRuleSearchRequest renderingReq, 
+	private boolean loadVectorDataNative(QuadRect dataBox, final int zoom, final RenderingRuleSearchRequest renderingReq,
 			NativeOsmandLibrary library) {
 		int leftX = MapUtils.get31TileNumberX(dataBox.left);
 		int rightX = MapUtils.get31TileNumberX(dataBox.right);
@@ -281,7 +272,6 @@ public class MapRenderRepositories {
 		if(library == null) {
 			return;
 		}
-		boolean useLive = context.getSettings().USE_OSM_LIVE_FOR_ROUTING.get();
 		for (String mapName : files.keySet()) {
 			BinaryMapIndexReader fr = files.get(mapName);
 			if (fr != null && (fr.containsMapData(leftX, topY, rightX, bottomY, zoom) || 
@@ -289,7 +279,7 @@ public class MapRenderRepositories {
 				if (!nativeFiles.contains(mapName)) {
 					long time = System.currentTimeMillis();
 					nativeFiles.add(mapName);
-					if (!library.initMapFile(fr.getFile().getAbsolutePath(), useLive)) {
+					if (!library.initMapFile(fr.getFile().getAbsolutePath(), false)) {//useLive)) {
 						continue;
 					}
 					log.debug("Native resource " + mapName + " initialized " + (System.currentTimeMillis() - time) + " ms"); //$NON-NLS-1$ //$NON-NLS-2$

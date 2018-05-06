@@ -68,8 +68,6 @@ import java.util.concurrent.ConcurrentHashMap;
  *  can't be loaded fully into memory & clear them on request. 
  */
 public class ResourceManager {
-
-//	public static final String VECTOR_MAP = "#vector_map"; //$NON-NLS-1$
 	private static final String INDEXES_CACHE = "ind.cache";
 
 	private static final Log log = PlatformUtil.getLog(ResourceManager.class);
@@ -514,8 +512,7 @@ public class ResourceManager {
 						transportRepositories.put(f.getName(), new TransportIndexRepositoryBinary(resource));
 					}
 					// disable osmc for routing temporarily due to some bugs
-					if (mapReader.containsRouteData() && (!f.getParentFile().equals(liveDir) || 
-							context.getSettings().USE_OSM_LIVE_FOR_ROUTING.get())) {
+					if (mapReader.containsRouteData() && (!f.getParentFile().equals(liveDir))) {
 						resource.setUseForRouting(true);
 					}
 					if (mapReader.containsPoiData()) {
@@ -561,12 +558,10 @@ public class ResourceManager {
 	}
 	
 	////////////////////////////////////////////// Working with amenities ////////////////////////////////////////////////
-	private boolean searchAmenitiesInProgress;
 
 	public List<Amenity> searchAmenities(SearchPoiTypeFilter filter,
 			double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude, int zoom, final ResultMatcher<Amenity> matcher) {
 		final List<Amenity> amenities = new ArrayList<Amenity>();
-		searchAmenitiesInProgress = true;
 		try {
 			if (!filter.isEmpty()) {
 				int top31 = MapUtils.get31TileNumberY(topLatitude);
@@ -577,7 +572,6 @@ public class ResourceManager {
 				Collections.sort(fileNames, Algorithms.getStringVersionComparator());
 				for (String name : fileNames) {
 					if (matcher != null && matcher.isCancelled()) {
-						searchAmenitiesInProgress = false;
 						break;
 					}
 					AmenityIndexRepository index = amenityRepositories.get(name);
@@ -591,14 +585,12 @@ public class ResourceManager {
 				}
 			}
 		} finally {
-			searchAmenitiesInProgress = false;
 		}
 		return amenities;
 	}
 
     public List<Amenity> searchAmenitiesOnThePath(List<Location> locations, double radius, SearchPoiTypeFilter filter,
 			ResultMatcher<Amenity> matcher) {
-		searchAmenitiesInProgress = true;
 		final List<Amenity> amenities = new ArrayList<Amenity>();
 		try {
 			if (locations != null && locations.size() > 0) {
@@ -634,7 +626,6 @@ public class ResourceManager {
 				}
 			}
 		} finally {
-			searchAmenitiesInProgress = false;
 		}
 		return amenities;
 	}

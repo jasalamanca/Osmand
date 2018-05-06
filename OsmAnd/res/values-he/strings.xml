@@ -8,13 +8,11 @@
 	<string name="rendering_attr_roadColors_name">ערכת צבעי דרך</string>
     <string name="map_widget_show_destination_arrow">הצגת הכיוון ליעד</string>
     <string name="enable_plugin_monitoring_services">יש להפעיל את תוסף המעקב כדי להשתמש בשירותי רישום מיקום (מעקב חי, רישום)</string>
-    <string name="non_optimal_route_calculation">יש לחשב מסלול בלתי יעיל למרחקים ארוכים</string>
-    
-	<string name="gps_not_available">נא להפעיל את רכיב האיכון (GPS) בהגדרות</string>
+
+    <string name="gps_not_available">נא להפעיל את רכיב האיכון (GPS) בהגדרות</string>
     
 	<string name="map_widget_monitoring_services">שירותי רישום</string>
-	<string name="no_route">אין מסלול</string>
-	<string name="delete_target_point">הסרת יעד</string>
+    <string name="delete_target_point">הסרת יעד</string>
 	<string name="target_point">יעד %1$s</string>
     <string name="intermediate_point">יעד ביניים %1$s</string>
     <string name="context_menu_item_last_intermediate_point">הוספה כיעד הביניים הסופי</string>
@@ -114,9 +112,8 @@
 	<string name="unknown_location">המיקום עדיין לא ידוע</string>
 	<string name="modify_transparency">שינוי השקיפות (0 - שקוף, 255 - אטום)</string>
 	<string name="confirm_interrupt_download">האם לבטל את הורדת הקובץ?</string>
-	
-	<string name="map_widget_fluorescent">הארת מסלולים</string>
-	<string name="map_widget_time">משך הנסיעה</string>
+
+    <string name="map_widget_time">משך הנסיעה</string>
 	<string name="map_widget_mini_route">מפת מסלול ממוזערת</string>
 	<string name="bg_service_screen_lock">נעילת המסך</string>
 	<string name="bg_service_screen_unlock">שחרור המסך</string>
@@ -242,8 +239,7 @@
 	<string name="shared_string_accessibility">נגישות</string>
 	<string name="rendering_out_of_memory">אין די זיכרון לתהליך כדי להציג את האיזור הנבחר</string>
 	<string name="use_fluorescent_overlays">שכבות מוארות</string>
-	<string name="use_fluorescent_overlays_descr">ניתן להשתמש בצבעים מוארים כדי להציג דרכים ומסלולים.</string>
-	<string name="offline_edition">עריכה בלתי מקוונת</string>
+    <string name="offline_edition">עריכה בלתי מקוונת</string>
 	<string name="offline_edition_descr">תמיד להשתמש בעריכה בלתי מקוונת.</string>
 	
 	<string name="update_poi_does_not_change_indexes">שינויי הנ״ע בתוך היישום אינם משפיעים על קובצי המפה שהתקבלו, השינויים נשמרים לקבצים מקומיים במקום זאת.</string>
@@ -421,8 +417,7 @@
 	
 	
 	<string name="installing_new_resources">הנתונים החדשים נפרסים…</string>
-	<string name="internet_connection_required_for_online_route">נבחר שירות ניווט מקוון אך אין חיבור זמין לאינטרנט.</string>
-	<string name="tts_language_not_supported_title">השפה אינה נתמכת</string>
+    <string name="tts_language_not_supported_title">השפה אינה נתמכת</string>
 	<string name="tts_language_not_supported">השפה הנבחרת אינה נתמכת על ידי המנגנון הממיר טקסט לדיבור. האם ברצונך לגשת לחנות כדי לחפש אחר מנגנון המרה אחר? בכל מצב אחר ייעשה שימוש בשפות הקיימות.</string>
 	<string name="tts_missing_language_data_title">חסרים נתונים</string>
 	<string name="tts_missing_language_data">לא מותקנים נתונים עבור השפה הנבחרת. האם ברצונך לגשת לחנות כדי להתקין?</string>
@@ -663,9 +658,7 @@
 	<string name="search_history_city">עיר:\n {0}</string>
 	<string name="background_service_provider_descr">נא לבחור את ספק המיקום שמשמש להפעלה במצב רקע.</string>
 	<string name="background_service_provider">ספק מיקום</string>
-	<string name="background_router_service_descr">הפעלת OsmAnd ברקע כדי לעקוב אחר המיקום שלך כשהמסך כבוי.</string>
-	<string name="background_router_service">הפעלת OsmAnd ברקע</string>
-	<string name="off_router_service_no_gps_available">שירות הניווט ברקע דורש הפעלה של ספק מיקום.</string>
+    <string name="off_router_service_no_gps_available">שירות הניווט ברקע דורש הפעלה של ספק מיקום.</string>
 	<string name="hide_poi_filter">הסתרת מסנן</string>
 	<string name="show_poi_filter">הצגת מסנן</string>
 	<string name="search_poi_filter">מסנן</string>
@@ -935,8 +928,6 @@
     <string name="dropbox_plugin_name">תוסף Dropbox</string>
     <string name="stop_routing_confirm">האם אכן לעצור את הניווט?</string>
     <string name="clear_dest_confirm">למחוק את נקודת היעד (ואת נקודות הביניים)?</string>
-    <string name="precise_routing_mode_descr">יש להפעיל כדי לחשב נתיבים מדויקים ללא סטיות. עדיין קיימת הגבלת מרחק ואטיות.</string>
-    <string name="precise_routing_mode">ניתוב מדויק (אלפא)</string>
 
     <string name="support_new_features_descr">ניתן לתרום כדי לגלות תכונות חדשות שהוטמעו ביישום</string>
 
@@ -989,7 +980,6 @@
     <string name="plugin_distance_point">נקודה</string>
     <string name="gpx_file_name">קובץ שם ה־GPX</string>
     <string name="gpx_saved_sucessfully">קובץ ה־GPX נשמר בהצלחה אל {0}</string>
-    <string name="osmand_distance_planning_plugin_description">יש ליצור נתיב (או להשתמש / לשנות קובצי GPX קיימים) כדי למדוד את המרחק בין נקודות. לשמור כ־GPX, ניתן להשתמש בזה כדי לתכנן נתיב לפי GPX.</string>
     <string name="shared_string_do_not_show_again">לא להציג שוב</string>
     <string name="distance_measurement_start_editing">להתחיל בעריכה</string>
     <string name="distance_measurement_finish_editing">סיום העריכה</string>
@@ -1300,7 +1290,6 @@
     <string name="fast_coordinates_input">קלט נקודות ציון מהיר</string>
     <string name="routing_attr_avoid_ice_roads_fords_name">הימנעות מכבישי קרח, מעברי מים</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">הימנעות מכבישי קרח וממעברים על מים זורמים.</string>
-    <string name="add_location_as_first_point_descr">ניתן להוסיף המיקום שלך כנקודה ראשונה כדי לתכנן מסלול מושלם.</string>
     <string name="coordinate_input">קלט נקודות ציון</string>
     <string name="marker_save_as_track_descr">ייצוא הסמנים שלך לקובץ שניתן לציין כאן:</string>
     <string name="group_will_be_removed_after_restart">הקבוצה תוסר לאחר ההפעלה הבאה מחדש של היישומון.</string>
@@ -2067,7 +2056,6 @@
     <string name="file_can_not_be_moved">אי אפשר להעביר את הקובץ.</string>
     <string name="shared_string_move">העברה</string>
     <string name="shared_string_tracks">מסלולים</string>
-    <string name="route_altitude">תוואי נתיב</string>
     <string name="altitude_descent">עלייה</string>
     <string name="altitude_ascent">ירידה</string>
     <string name="average_altitude">גובה ממוצע</string>
@@ -2262,7 +2250,6 @@
     <string name="osm_recipients_label">נמעני OSM</string>
     <string name="total_donations">סך כל התרומות</string>
 <string name="access_direction_audio_feedback_descr">ציון כיוון נקודת היעד עם צליל.</string>
-    <string name="delay_to_start_navigation_descr">נא לציין את זמן ההמתנה להישאר במסך תכנון הנתיב.</string>
     <string name="shared_string_without_name">ללא שם</string>
     <string name="will_open_tomorrow_at">ייפתח מחר ב־</string>
     <string name="rendering_attr_hidePOILabels_name">תוויות נ״ע</string>

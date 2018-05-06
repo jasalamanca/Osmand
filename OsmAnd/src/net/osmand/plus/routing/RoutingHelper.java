@@ -18,7 +18,6 @@ import net.osmand.plus.TargetPointsHelper.TargetPoint;
 import net.osmand.plus.notifications.OsmandNotification.NotificationType;
 import net.osmand.plus.routing.RouteCalculationResult.NextDirectionInfo;
 import net.osmand.plus.routing.RouteProvider.GPXRouteParamsBuilder;
-import net.osmand.plus.routing.RouteProvider.RouteService;
 import net.osmand.router.RouteCalculationProgress;
 import net.osmand.router.RouteSegmentResult;
 import net.osmand.router.TurnType;
@@ -880,14 +879,14 @@ public class RoutingHelper {
 			}
 			params.leftSide = settings.DRIVING_REGION.get().leftHandDriving;
 			params.fast = settings.FAST_ROUTE_MODE.getModeValue(mode);
-			params.type = settings.ROUTER_SERVICE.getModeValue(mode);
+//			params.type = settings.ROUTER_SERVICE.getModeValue(mode);
 			params.mode = mode;
 			params.ctx = app;
 			boolean updateProgress = false;
-			if (params.type == RouteService.OSMAND) {
+//			if (params.type == RouteService.OSMAND) {
 				params.calculationProgress = new RouteCalculationProgress();
 				updateProgress = true;
-			}
+//			}
 			startRouteCalculationThread(params, paramsChanged, updateProgress);
 		}
 	}
@@ -954,7 +953,7 @@ public class RoutingHelper {
 	public static void applyApplicationSettings(RouteCalculationParams params, OsmandSettings settings, ApplicationMode mode) {
 		params.leftSide = settings.DRIVING_REGION.get().leftHandDriving;
 		params.fast = settings.FAST_ROUTE_MODE.getModeValue(mode);
-		params.type = settings.ROUTER_SERVICE.getModeValue(mode);
+//		params.type = settings.ROUTER_SERVICE.getModeValue(mode);
 	}
 
 	public void setProgressBar(RouteCalculationProgressCallback progressRoute) {

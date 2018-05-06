@@ -899,7 +899,6 @@
     <string name="rendering_attr_roadColors_description">Yol rəng sxemi seçin:</string>
     <string name="rendering_attr_roadColors_name">Yol rəng sxemi</string>
     <string name="map_widget_show_destination_arrow">Təyinat nöqtəsi istiqamətini göstər</string>
-    <string name="no_route">Marşrut yoxdur</string>
     <string name="delete_target_point">Təyinat nöqtəsini sil</string>
     <string name="target_point">Təyinat nöqtəsi %1$s</string>
     <string name="replace_destination_point">Təyinat nöqtəsini əvəz et</string>
@@ -1164,7 +1163,6 @@
     <string name="quick_action_map_source_action">Xəritə mənbəyi əlavə et</string>
     <string name="quick_action_map_source_switch">Xəritə mənbəyi “%s” olaraq dəyişdirildi.</string>
     <string name="distance_moving">Məsafə dəqiqləşdirildi</string>
-    <string name="route_altitude">Marşrut yüksəkliyi</string>
     <string name="translit_names">Adları başqa dildə yaz</string>
     <string name="osm_live_banner_desc">Limitsiz xəritə endirmələri və xəritələri ayda bir dəfədən çox yeniləmək imkanı əldə edin: həftəlik, günlük və ya saatlıq.</string>
     <string name="first_usage_wizard_desc">OsmAnd-a məkanınızı müəyyənləşdirmək və həmin region üçün xəritə endirməsi təklif etmək icazəsi verin.</string>
@@ -1230,7 +1228,6 @@
     <string name="add_waypoint_dialog_title">Qeyd edilən GPX izinə yol nöqtəsi əlavə et</string>
     <string name="gpx_files_not_found">İzlər qovluğunda GPX faylları tapılmadı</string>
     <string name="layer_gpx_layer">GPX iz…</string>
-    <string name="background_router_service_descr">Ekran sönülü olarkən mövqeyinizi izləmək üçün OsmAnd arxa fonda işləyir.</string>
     <string name="saving_gpx_tracks">GPX izlər SD kartda saxlanır…</string>
     <string name="use_points_as_intermediates">Nöqtələr arasındakı marşrutu hesabla</string>
     <string name="localization_pref_title">Lokallaşdırma</string>
@@ -1344,7 +1341,6 @@
     <string name="local_index_action_do">%2$s obyekti %1$smək üzrəsiniz. Davam edilsin?</string>
     <string name="local_indexes_cat_backup">Qeyri-aktiv edilmiş</string>
     <string name="ttsvoice">TTS səsi</string>
-    <string name="internet_connection_required_for_online_route">Onlayn naviqasiya xidməti seçildi, amma internet bağlantısı yoxdur.</string>
     <string name="gpx_option_destination_point">Hazırki təyinat nöqtəsini istifadə et</string>
     <string name="home">Alət paneli</string>
     <string name="dahboard_options_dialog_title">Alət panelini tənzimlə</string>

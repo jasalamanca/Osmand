@@ -2,8 +2,7 @@
 <string name="avoid_in_routing_descr">Osgoi tollffyrdd, ffyrdd garw, fferïau</string>
 <string name="show_warnings_title">Dangos larymau…</string>
 <string name="show_warnings_descr">Dangos cyfyngiad cyflymder, camerâu cyflymder a thwmpathau traffig</string>
-<string name="map_widget_fluorescent">Lliwiau fflwroleuol</string>
-<string name="map_widget_show_ruler">Mesurydd</string>
+    <string name="map_widget_show_ruler">Mesurydd</string>
 
 <string name="map_widget_view_direction">Golwg cyfeiriad</string>
 <string name="map_widget_transparent">Golwg tryloyw</string>
