@@ -474,23 +474,6 @@ public class RoutePlannerFrontEnd {
 	@SuppressWarnings("static-access")
 	private List<RouteSegmentResult> searchRoute(final RoutingContext ctx, RouteSegmentPoint start, RouteSegmentPoint end,
 	                                             PrecalculatedRouteDirection routeDirection) throws IOException, InterruptedException {
-		if (ctx.SHOW_GC_SIZE) {
-			long h1 = ctx.runGCUsedMemory();
-			float mb = (1 << 20);
-			log.warn("Used before routing " + h1 / mb + " actual");
-		}
-		List<RouteSegmentResult> result = searchRouteInternalPrepare(ctx, start, end, routeDirection);
-		if (RoutingContext.SHOW_GC_SIZE) {
-			int sz = ctx.global.size;
-			log.warn("Subregion size " + ctx.subregionTiles.size() + " " + " tiles " + ctx.indexedSubregions.size());
-			ctx.runGCUsedMemory();
-			long h1 = ctx.runGCUsedMemory();
-			ctx.unloadAllData();
-			ctx.runGCUsedMemory();
-			long h2 = ctx.runGCUsedMemory();
-			float mb = (1 << 20);
-			log.warn("Unload context :  estimated " + sz / mb + " ?= " + (h1 - h2) / mb + " actual");
-		}
-		return result;
+		return searchRouteInternalPrepare(ctx, start, end, routeDirection);
 	}
 }

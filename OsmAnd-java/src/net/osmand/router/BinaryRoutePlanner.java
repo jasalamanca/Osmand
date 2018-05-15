@@ -100,18 +100,11 @@ public class BinaryRoutePlanner {
 				printRoad(">", segment, !forwardSearch);
 			}
 			if (segment instanceof FinalRouteSegment) {
-				if (RoutingContext.SHOW_GC_SIZE) {
-					log.warn("Estimated overhead " + (ctx.memoryOverhead / (1 << 20)) + " mb");
-					printMemoryConsumption("Memory occupied after calculation : ");
-				}
 				finalSegment = (FinalRouteSegment) segment;
 				if (TRACE_ROUTING) {
 					println("Final segment found");
 				}
 				break;
-			}
-			if (ctx.memoryOverhead > ctx.config.memoryLimitation * 0.95 && RoutingContext.SHOW_GC_SIZE) {
-				printMemoryConsumption("Memory occupied before exception : ");
 			}
 			if (ctx.memoryOverhead > ctx.config.memoryLimitation * 0.95) {
 				throw new IllegalStateException("There is no enough memory " + ctx.config.memoryLimitation / (1 << 20) + " Mb");

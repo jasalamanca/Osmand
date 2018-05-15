@@ -148,7 +148,6 @@ public class GeocodingUtilities {
 			if (!set.add(road.getId())) {
 				continue;
 			}
-//			System.out.println(road.toString() +  " " + Math.sqrt(p.distSquare));
 			String name = Algorithms.isEmpty(road.getName()) ? road.getRef("", false, true) : road.getName();
 			if (allowEmptyNames || !Algorithms.isEmpty(name)) {
 				if (distSquare == 0 || distSquare > p.distSquare) {

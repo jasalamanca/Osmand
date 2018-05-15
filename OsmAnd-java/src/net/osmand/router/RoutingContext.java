@@ -36,8 +36,6 @@ import gnu.trove.set.hash.TLongHashSet;
 
 
 public class RoutingContext {
-	public static final boolean SHOW_GC_SIZE = false;
-
 	private final static Log log = PlatformUtil.getLog(RoutingContext.class);
 	public static final int OPTION_NO_LOAD = 0;
 	public static final int OPTION_SMART_LOAD = 1;
@@ -281,7 +279,7 @@ public class RoutingContext {
 		return original;
 	}
 	
-	public void loadSubregionTile(final RoutingSubregionTile ts, boolean loadObjectsInMemory, List<RouteDataObject> toLoad, TLongHashSet excludeNotAllowed) {
+	public void loadSubregionTile(final RoutingSubregionTile ts, boolean loadObjectsInMemory) {
 		boolean wasUnloaded = ts.isUnloaded();
 		int ucount = ts.getUnloadCont();
 		long now = System.nanoTime();
@@ -404,32 +402,17 @@ public class RoutingContext {
 			if( memoryLimit == 0){
 				memoryLimit = config.memoryLimitation;
 			}
-			if (getCurrentEstimatedSize() > 0.9 * memoryLimit) {
-				int sz1 = getCurrentEstimatedSize();
-				long h1 = 0;
-				if (SHOW_GC_SIZE && sz1 > 0.7 * memoryLimit) {
-					runGCUsedMemory();
-					h1 = runGCUsedMemory();
-				}
-				int clt = getCurrentlyLoadedTiles();
+            int sz1 = getCurrentEstimatedSize();
+			if (sz1 > 0.9 * memoryLimit) {
+//				getCurrentlyLoadedTiles();
 				long us1 = (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory());
 				unloadUnusedTiles(memoryLimit);
-				if (h1 != 0 && getCurrentlyLoadedTiles() != clt) {
-					int sz2 = getCurrentEstimatedSize();
-					runGCUsedMemory();
-					long h2 = runGCUsedMemory();
-					float mb = (1 << 20);
-					log.warn("Unload tiles :  estimated " + (sz1 - sz2) / mb + " ?= " + (h1 - h2) / mb + " actual");
-					log.warn("Used after " + h2 / mb + " of " + Runtime.getRuntime().totalMemory() / mb + " max "
-							+ maxMemory() / mb);
-				} else {
-					 float mb = (1 << 20);
-					 int sz2 = getCurrentEstimatedSize();
-					 log.warn("Unload tiles :  occupied before " + sz1 / mb + " Mb - now  " + sz2 / mb + "MB " + 
-					 memoryLimit/mb + " limit MB " + config.memoryLimitation/mb);
-					 long us2 = (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory());
-					 log.warn("Used memory before " + us1 / mb + "after " + us1 / mb + " of max " + maxMemory() / mb);
-				}
+				 float mb = (1 << 20);
+				 int sz2 = getCurrentEstimatedSize();
+				 log.warn("Unload tiles :  occupied before " + sz1 / mb + " Mb - now  " + sz2 / mb + "MB " +
+				 memoryLimit/mb + " limit MB " + config.memoryLimitation/mb);
+				 long us2 = (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory());
+				 log.warn("Used memory before " + us1 / mb + "after " + us2 / mb + " of max " + maxMemory() / mb);
 			}
 			if (!indexedSubregions.containsKey(tileId)) {
 				List<RoutingSubregionTile> collection = loadTileHeaders(x31, y31);
@@ -447,7 +430,7 @@ public class RoutingContext {
 					TLongHashSet excludeIds = new TLongHashSet();
 					for (RoutingSubregionTile ts : subregions) {
 						if (!ts.isLoaded()) {
-							loadSubregionTile(ts, loadOptions == OPTION_IN_MEMORY_LOAD, null, excludeIds);
+							loadSubregionTile(ts, loadOptions == OPTION_IN_MEMORY_LOAD);
 						} else {
 							if(ts.excludedIds != null) {
 								excludeIds.addAll(ts.excludedIds);

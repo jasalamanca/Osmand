@@ -470,7 +470,7 @@ public class RouteProvider {
 			precalculated.setFollowNext(true);
 		}
 		// BUILD context
-        NativeOsmandLibrary lib = NativeOsmandLibrary.getLoadedLibrary();
+		NativeOsmandLibrary lib = NativeOsmandLibrary.getLoadedLibrary();
 		// check loaded files
 		int leftX = MapUtils.get31TileNumberX(params.start.getLongitude());
 		int rightX = leftX;

@@ -12,6 +12,7 @@ import net.osmand.binary.BinaryMapRouteReaderAdapter.RouteRegion;
 import net.osmand.binary.GeocodingUtilities;
 import net.osmand.binary.GeocodingUtilities.GeocodingResult;
 import net.osmand.binary.RouteDataObject;
+import net.osmand.plus.render.NativeOsmandLibrary;
 import net.osmand.plus.resources.ResourceManager.BinaryMapReaderResource;
 import net.osmand.plus.resources.ResourceManager.BinaryMapReaderResourceType;
 import net.osmand.router.GeneralRouter.GeneralRouterProfile;
@@ -45,9 +46,9 @@ public class CurrentPositionHelper {
 	}
 	
 	
-	public Location getLastAskedLocation() {
-		return lastAskedLocation;
-	}
+//	public Location getLastAskedLocation() {
+//		return lastAskedLocation;
+//	}
 	
 	public boolean getRouteSegment(Location loc, @Nullable ApplicationMode appMode,
 								   ResultMatcher<RouteDataObject> result) {
@@ -130,10 +131,11 @@ public class CurrentPositionHelper {
 			}
 			RoutingConfiguration cfg = app.getDefaultRoutingConfig().build(p, 10,
 					new HashMap<String, String>());
-			ctx = new RoutePlannerFrontEnd().buildRoutingContext(cfg, null, rs);
+			NativeOsmandLibrary l1 = NativeOsmandLibrary.getLoadedLibrary();
+			ctx = new RoutePlannerFrontEnd().buildRoutingContext(cfg, l1, rs);
 			RoutingConfiguration defCfg = app.getDefaultRoutingConfig().build("geocoding", 10,
 					new HashMap<String, String>());
-			defCtx = new RoutePlannerFrontEnd().buildRoutingContext(defCfg, null, rs);
+			defCtx = new RoutePlannerFrontEnd().buildRoutingContext(defCfg, l1, rs);
 		} else {
 			ctx = null;
 			defCtx = null;
