@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
-import android.support.v4.view.ViewCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -428,7 +427,7 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 				}
 			}
 		}
-		ViewCompat.setAccessibilityDelegate(view, accessibilityAssistant);
+		view.setAccessibilityDelegate(accessibilityAssistant);
 		return view;
 	}
 

@@ -2,12 +2,9 @@ package net.osmand.plus.download.ui;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.PopupMenu;
 import android.util.TypedValue;
@@ -18,10 +15,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import net.osmand.map.WorldRegion;
-import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.LocalIndexHelper.LocalIndexType;
 import net.osmand.plus.activities.LocalIndexInfo;
@@ -29,7 +24,6 @@ import net.osmand.plus.download.CityItem;
 import net.osmand.plus.download.DownloadActivity;
 import net.osmand.plus.download.DownloadActivityType;
 import net.osmand.plus.download.DownloadResourceGroup;
-import net.osmand.plus.download.DownloadResources;
 import net.osmand.plus.download.IndexItem;
 import net.osmand.plus.download.ui.LocalIndexesFragment.LocalIndexOperationTask;
 import net.osmand.plus.helpers.FileNameTranslationHelper;
@@ -80,9 +74,9 @@ public class ItemViewHolder {
 		rightImageButton = (ImageView) view.findViewById(R.id.secondaryIcon);
 		nameTextView = (TextView) view.findViewById(R.id.title);
 
-		ViewCompat.setAccessibilityDelegate(view, context.getAccessibilityAssistant());
-		ViewCompat.setAccessibilityDelegate(rightButton, context.getAccessibilityAssistant());
-		ViewCompat.setAccessibilityDelegate(rightImageButton, context.getAccessibilityAssistant());
+		view.setAccessibilityDelegate(context.getAccessibilityAssistant());
+		rightButton.setAccessibilityDelegate(context.getAccessibilityAssistant());
+		rightImageButton.setAccessibilityDelegate(context.getAccessibilityAssistant());
 
 		TypedValue typedValue = new TypedValue();
 		Resources.Theme theme = context.getTheme();

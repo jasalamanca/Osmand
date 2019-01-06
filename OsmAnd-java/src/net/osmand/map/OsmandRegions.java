@@ -1,6 +1,5 @@
 package net.osmand.map;
 
-
 import net.osmand.OsmAndCollator;
 import net.osmand.PlatformUtil;
 import net.osmand.ResultMatcher;
@@ -37,33 +36,32 @@ import gnu.trove.list.array.TIntArrayList;
 
 public class OsmandRegions {
 
-	public static final String MAP_TYPE = "region_map";
+	private static final String MAP_TYPE = "region_map";
 
-	public static final String FIELD_DOWNLOAD_NAME = "download_name";
-	public static final String FIELD_NAME = "name";
-	public static final String FIELD_NAME_EN = "name:en";
-	public static final String FIELD_REGION_PARENT_NAME = "region_parent_name";
-	public static final String FIELD_REGION_FULL_NAME = "region_full_name";
-	public static final String FIELD_LANG = "region_lang";
-	public static final String FIELD_METRIC = "region_metric";
-	public static final String FIELD_ROAD_SIGNS = "region_road_signs";
-	public static final String FIELD_LEFT_HAND_DRIVING = "region_left_hand_navigation";
-	public static final String FIELD_WIKI_LINK = "region_wiki_link";
-	public static final String FIELD_POPULATION = "region_population";
+	private static final String FIELD_DOWNLOAD_NAME = "download_name";
+	private static final String FIELD_NAME = "name";
+	private static final String FIELD_NAME_EN = "name:en";
+	private static final String FIELD_REGION_PARENT_NAME = "region_parent_name";
+	private static final String FIELD_REGION_FULL_NAME = "region_full_name";
+	private static final String FIELD_LANG = "region_lang";
+	private static final String FIELD_METRIC = "region_metric";
+	private static final String FIELD_ROAD_SIGNS = "region_road_signs";
+	private static final String FIELD_LEFT_HAND_DRIVING = "region_left_hand_navigation";
+	private static final String FIELD_WIKI_LINK = "region_wiki_link";
+	private static final String FIELD_POPULATION = "region_population";
 
 	private BinaryMapIndexReader reader;
 	private String locale = "en";
 	private static final org.apache.commons.logging.Log LOG = PlatformUtil.getLog(OsmandRegions.class);
 
-	WorldRegion worldRegion = new WorldRegion(WorldRegion.WORLD);
-	Map<String, WorldRegion> fullNamesToRegionData = new HashMap<String, WorldRegion>();
-	Map<String, String> downloadNamesToFullNames = new HashMap<String, String>();
-	Map<String, LinkedList<BinaryMapDataObject>> countriesByDownloadName = new HashMap<String, LinkedList<BinaryMapDataObject>>();
+	private WorldRegion worldRegion = new WorldRegion(WorldRegion.WORLD);
+	private final Map<String, WorldRegion> fullNamesToRegionData = new HashMap<String, WorldRegion>();
+	private final Map<String, String> downloadNamesToFullNames = new HashMap<String, String>();
+	private final Map<String, LinkedList<BinaryMapDataObject>> countriesByDownloadName = new HashMap<String, LinkedList<BinaryMapDataObject>>();
 
-
-	QuadTree<String> quadTree;
-	MapIndexFields mapIndexFields;
-	RegionTranslation translator;
+	private QuadTree<String> quadTree;
+	private MapIndexFields mapIndexFields;
+	private RegionTranslation translator;
 
 	private class MapIndexFields {
 		Integer parentFullName = null;
@@ -79,7 +77,7 @@ public class OsmandRegions {
 		Integer wikiLinkType = null;
 		Integer populationType = null;
 
-		public String get(Integer tp, BinaryMapDataObject object) {
+		String get(Integer tp, BinaryMapDataObject object) {
 			if (tp == null) {
 				return null;
 			}
@@ -87,15 +85,12 @@ public class OsmandRegions {
 		}
 	}
 
-
 	public void setTranslator(RegionTranslation translator) {
 		this.translator = translator;
 	}
 
-
 	public BinaryMapIndexReader prepareFile(String fileName) throws IOException {
 		reader = new BinaryMapIndexReader(new RandomAccessFile(fileName, "r"), new File(fileName));
-//		final Collator clt = OsmAndCollator.primaryCollator();
 		final Map<String, String> parentRelations = new LinkedHashMap<String, String>();
 		final ResultMatcher<BinaryMapDataObject> resultMatcher = new ResultMatcher<BinaryMapDataObject>() {
 
@@ -103,12 +98,12 @@ public class OsmandRegions {
 			public boolean publish(BinaryMapDataObject object) {
 				initTypes(object);
 				int[] types = object.getTypes();
-				for (int i = 0; i < types.length; i++) {
-					TagValuePair tp = object.getMapIndex().decodeType(types[i]);
-					if ("boundary".equals(tp.value)) {
-						return false;
-					}
-				}
+                for (int type : types) {
+                    TagValuePair tp = object.getMapIndex().decodeType(type);
+                    if ("boundary".equals(tp.value)) {
+                        return false;
+                    }
+                }
 				WorldRegion rd = initRegionData(parentRelations, object);
 				if (rd == null) {
 					return false;
@@ -130,7 +125,6 @@ public class OsmandRegions {
 		for (Map.Entry<String, String> e : parentRelations.entrySet()) {
 			String fullName = e.getKey();
 			String parentFullName = e.getValue();
-			// String parentParentFulName = parentRelations.get(parentFullName); // could be used for japan/russia
 			WorldRegion rd = fullNamesToRegionData.get(fullName);
 			WorldRegion parent = fullNamesToRegionData.get(parentFullName);
 			if (parent != null && rd != null) {
@@ -141,10 +135,11 @@ public class OsmandRegions {
 		return reader;
 	}
 
-	public boolean containsCountry(String name) {
-		return countriesByDownloadName.containsKey(name);
-	}
-
+// --Commented out by Inspection START (6/01/19 19:21):
+//	public boolean containsCountry(String name) {
+//		return countriesByDownloadName.containsKey(name);
+//	}
+// --Commented out by Inspection STOP (6/01/19 19:21)
 
 	public String getLocaleName(String downloadName, boolean includingParent) {
 		final String lc = downloadName.toLowerCase();
@@ -155,7 +150,7 @@ public class OsmandRegions {
 		return downloadName.replace('_', ' ');
 	}
 
-	public String getLocaleNameByFullName(String fullName, boolean includingParent) {
+	private String getLocaleNameByFullName(String fullName, boolean includingParent) {
 		WorldRegion rd = fullNamesToRegionData.get(fullName);
 		if (rd == null) {
 			return fullName.replace('_', ' ');
@@ -183,7 +178,6 @@ public class OsmandRegions {
 		return worldRegion;
 	}
 
-
 	public boolean isInitialized() {
 		return reader != null;
 	}
@@ -202,43 +196,45 @@ public class OsmandRegions {
 		return t % 2 == 1;
 	}
 
-	public boolean intersect(BinaryMapDataObject bo, int lx, int ty, int rx, int by) {
-		// 1. polygon in object 
-		if (contain(bo, lx, ty)) {
-			return true;
-		}
-		// 2. object in polygon
-		if (bo.getPointsLength() == 0) {
-			return false;
-		}
-		if (bo.getPoint31XTile(0) >= lx && bo.getPoint31XTile(0) <= rx &&
-				bo.getPoint31YTile(0) >= ty && bo.getPoint31YTile(0) <= by) {
-			return true;
-		}
-
-		// 3. find intersection
-		for (int i = 1; i < bo.getPointsLength(); i++) {
-			int px = bo.getPoint31XTile(i - 1);
-			int x = bo.getPoint31XTile(i);
-			int py = bo.getPoint31YTile(i - 1);
-			int y = bo.getPoint31YTile(i);
-			if (x < lx && px < lx) {
-				continue;
-			} else if (x > rx && px > rx) {
-				continue;
-			} else if (y > by && py > by) {
-				continue;
-			} else if (y < ty && py < ty) {
-				continue;
-			}
-			long in = MapAlgorithms.calculateIntersection(px, py, x, y, lx, rx, by, ty);
-			if (in != -1) {
-				return true;
-			}
-		}
-
-		return false;
-	}
+// --Commented out by Inspection START (6/01/19 19:25):
+//	public boolean intersect(BinaryMapDataObject bo, int lx, int ty, int rx, int by) {
+//		// 1. polygon in object
+//		if (contain(bo, lx, ty)) {
+//			return true;
+//		}
+//		// 2. object in polygon
+//		if (bo.getPointsLength() == 0) {
+//			return false;
+//		}
+//		if (bo.getPoint31XTile(0) >= lx && bo.getPoint31XTile(0) <= rx &&
+//				bo.getPoint31YTile(0) >= ty && bo.getPoint31YTile(0) <= by) {
+//			return true;
+//		}
+//
+//		// 3. find intersection
+//		for (int i = 1; i < bo.getPointsLength(); i++) {
+//			int px = bo.getPoint31XTile(i - 1);
+//			int x = bo.getPoint31XTile(i);
+//			int py = bo.getPoint31YTile(i - 1);
+//			int y = bo.getPoint31YTile(i);
+//			if (x < lx && px < lx) {
+//				continue;
+//			} else if (x > rx && px > rx) {
+//				continue;
+//			} else if (y > by && py > by) {
+//				continue;
+//			} else if (y < ty && py < ty) {
+//				continue;
+//			}
+//			long in = MapAlgorithms.calculateIntersection(px, py, x, y, lx, rx, by, ty);
+//			if (in != -1) {
+//				return true;
+//			}
+//		}
+//
+//		return false;
+//	}
+// --Commented out by Inspection STOP (6/01/19 19:25)
 
 	public static double getArea(BinaryMapDataObject bo) {
 		double area = 0.0;
@@ -258,23 +254,21 @@ public class OsmandRegions {
 		HashSet<String> set = new HashSet<String>(quadTree.queryInBox(new QuadRect(tile31x, tile31y, tile31x, tile31y),
 				new ArrayList<String>()));
 		List<BinaryMapDataObject> result = new ArrayList<BinaryMapDataObject>();
-		Iterator<String> it = set.iterator();
 
-		while (it.hasNext()) {
-			String cname = it.next();
-			BinaryMapDataObject container = null;
-			int count = 0;
-			for (BinaryMapDataObject bo : countriesByDownloadName.get(cname)) {
-				if (contain(bo, tile31x, tile31y)) {
-					count++;
-					container = bo;
-					break;
-				}
-			}
-			if (count % 2 == 1) {
-				result.add(container);
-			}
-		}
+        for (String cname : set) {
+            BinaryMapDataObject container = null;
+            int count = 0;
+            for (BinaryMapDataObject bo : countriesByDownloadName.get(cname)) {
+                if (contain(bo, tile31x, tile31y)) {
+                    count++;
+                    container = bo;
+                    break;
+                }
+            }
+            if (count % 2 == 1) {
+                result.add(container);
+            }
+        }
 		return result;
 	}
 	
@@ -299,8 +293,7 @@ public class OsmandRegions {
 		return null;
 	}
 
-
-	public List<BinaryMapDataObject> query(final int tile31x, final int tile31y) throws IOException {
+	private List<BinaryMapDataObject> query(final int tile31x, final int tile31y) throws IOException {
 		if (quadTree != null) {
 			return getCountries(tile31x, tile31y);
 		}
@@ -316,7 +309,6 @@ public class OsmandRegions {
 						return true;
 					}
 				}, new ResultMatcher<BinaryMapDataObject>() {
-
 
 					@Override
 					public boolean publish(BinaryMapDataObject object) {
@@ -341,7 +333,6 @@ public class OsmandRegions {
 		}
 		return result;
 	}
-
 
 	public synchronized List<BinaryMapDataObject> queryBbox(int lx, int rx, int ty, int by) throws IOException {
 		final List<BinaryMapDataObject> result = new ArrayList<BinaryMapDataObject>();
@@ -382,7 +373,6 @@ public class OsmandRegions {
 		this.locale = locale;
 	}
 
-
 	public WorldRegion getRegionData(String fullname) {
 		return fullNamesToRegionData.get(fullname);
 	}
@@ -403,10 +393,11 @@ public class OsmandRegions {
 		return mapIndexFields.get(mapIndexFields.fullNameType, o);
 	}
 
-	public List<WorldRegion> getAllRegionData() {
-		return new ArrayList<WorldRegion>(fullNamesToRegionData.values());
-	}
-
+// --Commented out by Inspection START (6/01/19 19:25):
+//	public List<WorldRegion> getAllRegionData() {
+//		return new ArrayList<WorldRegion>(fullNamesToRegionData.values());
+//	}
+// --Commented out by Inspection STOP (6/01/19 19:25)
 
 	private WorldRegion initRegionData(final Map<String, String> parentRelations, BinaryMapDataObject object) {
 		String regionDownloadName = mapIndexFields.get(mapIndexFields.downloadNameType, object);
@@ -441,7 +432,7 @@ public class OsmandRegions {
 		rd.params.wikiLink = mapIndexFields.get(mapIndexFields.wikiLinkType, object);
 		rd.params.population = mapIndexFields.get(mapIndexFields.populationType, object);
 		rd.regionSearchText = getSearchIndex(object);
-		rd.regionMapDownload = isDownloadOfType(object, MAP_TYPE);
+		rd.regionMapDownload = isDownloadOfType(object);
 		return rd;
 	}
 
@@ -454,7 +445,6 @@ public class OsmandRegions {
 			TagValuePair tp = mi.decodeType(it.key());
 			if (tp.tag.startsWith("name") || tp.tag.equals("key_name")) {
 				final String vl = it.value().toLowerCase();
-//				if (!CollatorStringMatcher.ccontains(clt, ind.toString(), vl)) {
 				if (ind.indexOf(vl) == -1) {
 					ind.append(" ").append(vl);
 				}
@@ -463,24 +453,21 @@ public class OsmandRegions {
 		return ind.toString();
 	}
 
-
-	public boolean isDownloadOfType(BinaryMapDataObject object, String type) {
+	private boolean isDownloadOfType(BinaryMapDataObject object) {
 		int[] addtypes = object.getAdditionalTypes();
-		for (int i = 0; i < addtypes.length; i++) {
-			TagValuePair tp = object.getMapIndex().decodeType(addtypes[i]);
-			if (type.equals(tp.tag) && "yes".equals(tp.value)) {
-				return true;
-			}
-		}
+        for (int addtype : addtypes) {
+            TagValuePair tp = object.getMapIndex().decodeType(addtype);
+            if (OsmandRegions.MAP_TYPE.equals(tp.tag) && "yes".equals(tp.value)) {
+                return true;
+            }
+        }
 		return false;
 	}
 
-
-	public Map<String, LinkedList<BinaryMapDataObject>> cacheAllCountries() throws IOException {
+	private Map<String, LinkedList<BinaryMapDataObject>> cacheAllCountries() throws IOException {
 		quadTree = new QuadTree<String>(new QuadRect(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE),
 				8, 0.55f);
 		final ResultMatcher<BinaryMapDataObject> resultMatcher = new ResultMatcher<BinaryMapDataObject>() {
-//			int c = 0;
 			@Override
 			public boolean publish(BinaryMapDataObject object) {
 				if (object.getPointsLength() < 1) {
@@ -539,11 +526,9 @@ public class OsmandRegions {
 		}
 	}
 
-
 	private void initTypes(BinaryMapDataObject object) {
 		if (mapIndexFields == null) {
 			mapIndexFields = new MapIndexFields();
-			// mapIndexFields.mapIndex = object.getMapIndex();
 			mapIndexFields.downloadNameType = object.getMapIndex().getRule(FIELD_DOWNLOAD_NAME, null);
 			mapIndexFields.nameType = object.getMapIndex().getRule(FIELD_NAME, null);
 			mapIndexFields.nameEnType = object.getMapIndex().getRule(FIELD_NAME_EN, null);
@@ -559,7 +544,6 @@ public class OsmandRegions {
 		}
 	}
 
-
 	private static void testCountry(OsmandRegions or, double lat, double lon, String... test) throws IOException {
 		long t = System.currentTimeMillis();
 		List<BinaryMapDataObject> cs = or.query(MapUtils.get31TileNumberX(lon), MapUtils.get31TileNumberY(lat));
@@ -571,7 +555,7 @@ public class OsmandRegions {
 			if (nm == null) {
 				nm = b.getName();
 			}
-			if (or.isDownloadOfType(b, MAP_TYPE)) {
+			if (or.isDownloadOfType(b)) {
 				found.add(nm.toLowerCase());
 			}
 		}
@@ -582,41 +566,9 @@ public class OsmandRegions {
 		System.out.println("Found " + expected + " in " + (System.currentTimeMillis() - t) + " ms");
 	}
 
-
-	public static void main(String[] args) throws IOException {
-		OsmandRegions or = new OsmandRegions();
-		or.prepareFile("/Users/victorshcherb/osmand/repos/resources/countries-info/regions.ocbf");
-		LinkedList<WorldRegion> lst = new LinkedList<WorldRegion>();
-		lst.add(or.getWorldRegion());
-//		int i =0;
-		while (!lst.isEmpty()) {
-			WorldRegion wd = lst.pollFirst();
-			System.out.println((wd.superregion == null ? "" : wd.superregion.getLocaleName()) + " "
-					+ wd.getLocaleName() + " " + wd.getRegionDownloadName());
-//			if(i++ <=5)
-//				lst.addAll(wd.getSubregions());
-		}
-
-
-		or.cacheAllCountries();
-//		long t = System.currentTimeMillis();
-//		or.cacheAllCountries();
-//		System.out.println("Init " + (System.currentTimeMillis() - t));
-
-		//testCountry(or, 15.8, 23.09, "chad");
-		testCountry(or, 52.10, 4.92, "the netherlands", "utrecht");
-		testCountry(or, 52.15, 7.50, "north rhine-westphalia");
-		testCountry(or, 28.8056, 29.9858, "egypt");
-//		testCountry(or, 40.0760, 9.2807, "italy", "sardinia");
-		testCountry(or, 35.7521, 139.7887, "japan");
-		testCountry(or, 46.5145, 102.2580, "mongolia");
-		testCountry(or, 62.54, 43.36, "arkhangelsk oblast", "northwestern federal district");
-	}
-
-
 	public interface RegionTranslation {
 
-		public String getTranslation(String id);
+		String getTranslation(String id);
 	}
 
 	private void initWorldRegion(WorldRegion world, String id) {
@@ -629,7 +581,7 @@ public class OsmandRegions {
 
 	}
 
-	public void structureWorldRegions(List<WorldRegion> loadedItems) {
+	private void structureWorldRegions(List<WorldRegion> loadedItems) {
 		if (loadedItems.size() == 0) {
 			return;
 		}
@@ -742,6 +694,36 @@ public class OsmandRegions {
 			}
 		}
 		return res;
+	}
+
+	//TODO jsala TEST
+	public static void main(String[] args) throws IOException {
+		OsmandRegions or = new OsmandRegions();
+		or.prepareFile("/Users/victorshcherb/osmand/repos/resources/countries-info/regions.ocbf");
+		LinkedList<WorldRegion> lst = new LinkedList<WorldRegion>();
+		lst.add(or.getWorldRegion());
+//		int i =0;
+		while (!lst.isEmpty()) {
+			WorldRegion wd = lst.pollFirst();
+			System.out.println((wd.superregion == null ? "" : wd.superregion.getLocaleName()) + " "
+					+ wd.getLocaleName() + " " + wd.getRegionDownloadName());
+//			if(i++ <=5)
+//				lst.addAll(wd.getSubregions());
+		}
+
+		or.cacheAllCountries();
+//		long t = System.currentTimeMillis();
+//		or.cacheAllCountries();
+//		System.out.println("Init " + (System.currentTimeMillis() - t));
+
+		//testCountry(or, 15.8, 23.09, "chad");
+		testCountry(or, 52.10, 4.92, "the netherlands", "utrecht");
+		testCountry(or, 52.15, 7.50, "north rhine-westphalia");
+		testCountry(or, 28.8056, 29.9858, "egypt");
+//		testCountry(or, 40.0760, 9.2807, "italy", "sardinia");
+		testCountry(or, 35.7521, 139.7887, "japan");
+		testCountry(or, 46.5145, 102.2580, "mongolia");
+		testCountry(or, 62.54, 43.36, "arkhangelsk oblast", "northwestern federal district");
 	}
 
 }

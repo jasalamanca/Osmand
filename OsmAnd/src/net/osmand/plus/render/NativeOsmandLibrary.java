@@ -59,7 +59,7 @@ public class NativeOsmandLibrary extends NativeLibrary {
 		return isNativeSupported != null;  
 	}
 	
-	public RenderingGenerationResult generateRendering(RenderingContext rc, NativeSearchResult searchResultHandler,
+	RenderingGenerationResult generateRendering(RenderingContext rc, NativeSearchResult searchResultHandler,
 			Bitmap bitmap, boolean isTransparent, RenderingRuleSearchRequest render) {
 		if (searchResultHandler == null) {
 			log.error("Error search result = null"); //$NON-NLS-1$

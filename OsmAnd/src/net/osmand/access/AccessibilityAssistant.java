@@ -2,8 +2,6 @@ package net.osmand.access;
 
 import android.app.Activity;
 import android.os.Build;
-import android.support.v4.view.AccessibilityDelegateCompat;
-import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.SparseArray;
 import android.view.View;
@@ -15,7 +13,7 @@ import android.widget.ImageView;
 
 import net.osmand.plus.OsmandApplication;
 
-public class AccessibilityAssistant extends AccessibilityDelegateCompat implements OnPageChangeListener {
+public class AccessibilityAssistant extends View.AccessibilityDelegate implements OnPageChangeListener {
 
     private final Activity hostActivity;
     private final OsmandApplication app;
@@ -69,9 +67,8 @@ public class AccessibilityAssistant extends AccessibilityDelegateCompat implemen
         monitoredPages.put(id, page);
         if (id == visiblePageId)
             visiblePage = page;
-        ViewCompat.setAccessibilityDelegate(page, this);
+        page.setAccessibilityDelegate(this);
     }
-
 
     @Override
     public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child, AccessibilityEvent event) {
@@ -95,7 +92,6 @@ public class AccessibilityAssistant extends AccessibilityDelegateCompat implemen
         notifyEvent(host, eventType, passed);
     }
 
-
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
     }
@@ -109,7 +105,6 @@ public class AccessibilityAssistant extends AccessibilityDelegateCompat implemen
     @Override
     public void onPageScrollStateChanged(int state) {
     }
-
 
     private void processFocusChange(View view, boolean isFocused, boolean eventPassed) {
         if (view.isClickable() && ((view instanceof ImageView) || (view instanceof ImageButton) || (view instanceof Button))) {

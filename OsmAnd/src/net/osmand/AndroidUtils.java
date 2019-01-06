@@ -1,19 +1,17 @@
 package net.osmand;
 
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.graphics.PointF;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
 import android.os.IBinder;
 import android.support.annotation.ColorRes;
-import android.support.annotation.DrawableRes;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -24,7 +22,6 @@ import android.text.style.URLSpan;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
-import android.view.ViewParent;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
@@ -48,10 +45,9 @@ import static android.util.TypedValue.COMPLEX_UNIT_SP;
 public class AndroidUtils {
 
 	/**
-	 * @param context
 	 * @return true if Hardware keyboard is available
 	 */
-	public static boolean isHardwareKeyboardAvailable(Context context) {
+	private static boolean isHardwareKeyboardAvailable(Context context) {
 		return context.getResources().getConfiguration().keyboard != Configuration.KEYBOARD_NOKEYS;
 	}
 	
@@ -104,7 +100,7 @@ public class AndroidUtils {
 			s.removeSpan(span);
 			span = new URLSpan(span.getURL()) {
 				@Override
-				public void updateDrawState(TextPaint ds) {
+				public void updateDrawState(@NonNull TextPaint ds) {
 					super.updateDrawState(ds);
 					ds.setUnderlineText(false);
 				}
@@ -124,23 +120,27 @@ public class AndroidUtils {
 				" " + DateFormat.getTimeFormat(ctx).format(d);
 	}
 	
-	public static String formatTime(Context ctx, long time) {
-		return DateFormat.getTimeFormat(ctx).format(new Date(time));
-	}
+// --Commented out by Inspection START (6/01/19 19:49):
+//	public static String formatTime(Context ctx, long time) {
+//		return DateFormat.getTimeFormat(ctx).format(new Date(time));
+//	}
+// --Commented out by Inspection STOP (6/01/19 19:49)
 
-	public static View findParentViewById(View view, int id) {
-		ViewParent viewParent = view.getParent();
-
-		while (viewParent != null && viewParent instanceof View) {
-			View parentView = (View)viewParent;
-			if (parentView.getId() == id)
-				return parentView;
-
-			viewParent = parentView.getParent();
-		}
-
-		return null;
-	}
+// --Commented out by Inspection START (6/01/19 19:49):
+//	public static View findParentViewById(View view, int id) {
+//		ViewParent viewParent = view.getParent();
+//
+//		while (viewParent instanceof View) {
+//			View parentView = (View)viewParent;
+//			if (parentView.getId() == id)
+//				return parentView;
+//
+//			viewParent = parentView.getParent();
+//		}
+//
+//		return null;
+//	}
+// --Commented out by Inspection STOP (6/01/19 19:49)
 
 	public static ColorStateList createColorStateList(Context ctx, boolean night,
 													  @ColorRes int lightNormal, @ColorRes int lightPressed,
@@ -157,12 +157,14 @@ public class AndroidUtils {
 		);
 	}
 
-	public static StateListDrawable createStateListDrawable(Context ctx, boolean night,
-															@DrawableRes int lightNormal, @DrawableRes int lightPressed,
-															@DrawableRes int darkNormal, @DrawableRes int darkPressed) {
-		return createStateListDrawable(ContextCompat.getDrawable(ctx, night ? darkNormal : lightNormal),
-				ContextCompat.getDrawable(ctx, night ? darkPressed : lightPressed));
-	}
+// --Commented out by Inspection START (6/01/19 19:49):
+//	public static StateListDrawable createStateListDrawable(Context ctx, boolean night,
+//															@DrawableRes int lightNormal, @DrawableRes int lightPressed,
+//															@DrawableRes int darkNormal, @DrawableRes int darkPressed) {
+//		return createStateListDrawable(ContextCompat.getDrawable(ctx, night ? darkNormal : lightNormal),
+//				ContextCompat.getDrawable(ctx, night ? darkPressed : lightPressed));
+//	}
+// --Commented out by Inspection STOP (6/01/19 19:49)
 
 	public static StateListDrawable createStateListDrawable(Drawable normal, Drawable pressed) {
 		StateListDrawable res = new StateListDrawable();
@@ -171,22 +173,22 @@ public class AndroidUtils {
 		return res;
 	}
 
-	@SuppressLint("NewApi")
-	@SuppressWarnings("deprecation")
 	public static void setBackground(Context ctx, View view, boolean night, int lightResId, int darkResId) {
 		if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
 			view.setBackground(ctx.getResources().getDrawable(night ? darkResId : lightResId,
 					ctx.getTheme()));
 		} else {
-			view.setBackgroundDrawable(ctx.getResources().getDrawable(night ? darkResId : lightResId));
+			view.setBackground(ctx.getResources().getDrawable(night ? darkResId : lightResId));
 		}
 	}
 
-	public static void setDashButtonBackground(Context ctx, View view, boolean night) {
-		setBackground(ctx, view, night, R.drawable.dashboard_button_light, R.drawable.dashboard_button_dark);
-	}
+// --Commented out by Inspection START (6/01/19 19:50):
+//	public static void setDashButtonBackground(Context ctx, View view, boolean night) {
+//		setBackground(ctx, view, night, R.drawable.dashboard_button_light, R.drawable.dashboard_button_dark);
+//	}
+// --Commented out by Inspection STOP (6/01/19 19:50)
 
-	public static void setBackgroundColor(Context ctx, View view, boolean night, int lightResId, int darkResId) {
+	private static void setBackgroundColor(Context ctx, View view, boolean night, int lightResId, int darkResId) {
 		view.setBackgroundColor(ctx.getResources().getColor(night ? darkResId : lightResId));
 	}
 
@@ -275,7 +277,7 @@ public class AndroidUtils {
 		return 0;
 	}
 
-	public static boolean hasNavBar(Context ctx) {
+	private static boolean hasNavBar(Context ctx) {
 		int id = ctx.getResources().getIdentifier("config_showNavigationBar", "bool", "android");
 		return id > 0 && ctx.getResources().getBoolean(id);
 	}
@@ -310,15 +312,17 @@ public class AndroidUtils {
 		}
 	}
 
-	public static PointF centroidForPoly(PointF[] points) {
-		float centroidX = 0, centroidY = 0;
-
-		for (PointF point : points) {
-			centroidX += point.x / points.length;
-			centroidY += point.y / points.length;
-		}
-		return new PointF(centroidX, centroidY);
-	}
+// --Commented out by Inspection START (6/01/19 19:49):
+//	public static PointF centroidForPoly(PointF[] points) {
+//		float centroidX = 0, centroidY = 0;
+//
+//		for (PointF point : points) {
+//			centroidX += point.x / points.length;
+//			centroidY += point.y / points.length;
+//		}
+//		return new PointF(centroidX, centroidY);
+//	}
+// --Commented out by Inspection STOP (6/01/19 19:49)
 
 	public static void showNavBar(Activity activity) {
 		if (Build.VERSION.SDK_INT >= 19 && !isNavBarVisible(activity)) {
@@ -332,7 +336,7 @@ public class AndroidUtils {
 		}
 	}
 
-	public static boolean isNavBarVisible(Activity activity) {
+	private static boolean isNavBarVisible(Activity activity) {
 		if (Build.VERSION.SDK_INT >= 19) {
 			int uiOptions = activity.getWindow().getDecorView().getSystemUiVisibility();
 			return !((uiOptions | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION) == uiOptions);
@@ -340,7 +344,7 @@ public class AndroidUtils {
 		return true;
 	}
 
-	public static void switchNavBarVisibility(Activity activity) {
+	private static void switchNavBarVisibility(Activity activity) {
 		if (Build.VERSION.SDK_INT < 19) {
 			return;
 		}

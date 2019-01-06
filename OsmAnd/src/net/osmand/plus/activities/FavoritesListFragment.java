@@ -6,7 +6,6 @@ package net.osmand.plus.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.ViewCompat;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -245,7 +244,7 @@ public class FavoritesListFragment extends OsmAndListFragment implements SearchA
 			icon.setVisibility(View.VISIBLE);
 			ch.setVisibility(View.GONE);
 			if (activity instanceof SearchActivity)
-				ViewCompat.setAccessibilityDelegate(row, ((SearchActivity)activity).getAccessibilityAssistant());
+				row.setAccessibilityDelegate(((SearchActivity)activity).getAccessibilityAssistant());
 			return row;
 		}
 

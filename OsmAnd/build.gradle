@@ -154,7 +154,7 @@ android {
 	}
 }
 
-def replaceNoTranslate(line) {
+static def replaceNoTranslate(line) {
 	if (line.contains("\"app_name\"") && System.getenv("TARGET_APP_NAME")) {
 		return line.replaceAll(">[^<]*<", ">" + System.getenv("TARGET_APP_NAME") + "<")
 	}
@@ -187,7 +187,7 @@ task updateNoTranslate(type: Copy) {
 }
 
 task validateTranslate {
-	file("res").eachFileRecurse groovy.io.FileType.FILES, {
+	file("res").eachFileRecurse FileType.FILES, {
 		if (it.name == "strings.xml" || it.name == "phrases.xml") {
 			it.eachLine { line ->
 				if (line.contains("\$ s") || line.contains("\$ d") || line.contains("\$ f") ||
@@ -292,6 +292,7 @@ collectExternalResources.dependsOn collectVoiceAssets,
 		validateTranslate
 
 // Legacy core
+import groovy.io.FileType
 import org.apache.tools.ant.taskdefs.condition.Os
 
 task configureOsmAndCoreExternals(type: Exec) {

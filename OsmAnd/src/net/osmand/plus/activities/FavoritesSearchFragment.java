@@ -13,7 +13,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -479,7 +478,7 @@ public class FavoritesSearchFragment extends DialogFragment {
 					divider.setVisibility(View.VISIBLE);
 				}
 			}
-			ViewCompat.setAccessibilityDelegate(view, accessibilityAssistant);
+			view.setAccessibilityDelegate(accessibilityAssistant);
 			return view;
 		}
 

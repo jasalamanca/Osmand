@@ -145,7 +145,7 @@ public class DownloadResourceGroupFragment extends DialogFragment implements Dow
 			listView.addHeaderView(subscribeEmailView);
 			IndexItem worldBaseMapItem = activity.getDownloadThread().getIndexes().getWorldBaseMapItem();
 			if (worldBaseMapItem == null || !worldBaseMapItem.isDownloaded()
-					|| DownloadActivity.isDownlodingPermitted(activity.getMyApplication().getSettings())) {
+					|| DownloadActivity.isDownloadingPermitted(activity.getMyApplication().getSettings())) {
 				subscribeEmailView.findViewById(R.id.container).setVisibility(View.GONE);
 			}
 		}
@@ -214,7 +214,7 @@ public class DownloadResourceGroupFragment extends DialogFragment implements Dow
 
 	private void updateSubscribeEmailView() {
 		if (subscribeEmailView != null && subscribeEmailView.findViewById(R.id.container).getVisibility() == View.GONE
-				&& !DownloadActivity.isDownlodingPermitted(getMyApplication().getSettings())
+				&& !DownloadActivity.isDownloadingPermitted(getMyApplication().getSettings())
 				&& !getMyApplication().getSettings().EMAIL_SUBSCRIBED.get()) {
 			IndexItem worldBaseMapItem = activity.getDownloadThread().getIndexes().getWorldBaseMapItem();
 			if (worldBaseMapItem != null && worldBaseMapItem.isDownloaded()) {
@@ -422,7 +422,7 @@ public class DownloadResourceGroupFragment extends DialogFragment implements Dow
 			banner.updateBannerInProgress();
 		}
 		if (subscribeEmailView != null
-				&& !DownloadActivity.isDownlodingPermitted(activity.getMyApplication().getSettings())
+				&& !DownloadActivity.isDownloadingPermitted(activity.getMyApplication().getSettings())
 				&& !getMyApplication().getSettings().EMAIL_SUBSCRIBED.get()) {
 			subscribeEmailView.findViewById(R.id.container).setVisibility(View.VISIBLE);
 		}
