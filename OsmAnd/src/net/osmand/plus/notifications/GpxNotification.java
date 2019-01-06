@@ -1,13 +1,11 @@
 package net.osmand.plus.notifications;
 
+import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.support.v4.app.NotificationCompat.BigTextStyle;
-import android.support.v4.app.NotificationCompat.Builder;
-import android.support.v7.app.NotificationCompat;
 
 import net.osmand.plus.NavigationService;
 import net.osmand.plus.OsmAndFormatter;
@@ -81,7 +79,7 @@ public class GpxNotification extends OsmandNotification {
 
 	@Override
 	public int getPriority() {
-		return NotificationCompat.PRIORITY_DEFAULT;
+		return Notification.PRIORITY_DEFAULT;
 	}
 
 	@Override
@@ -105,7 +103,7 @@ public class GpxNotification extends OsmandNotification {
 	}
 
 	@Override
-	public Builder buildNotification(boolean wearable) {
+	public Notification.Builder buildNotification(boolean wearable) {
 		if (!isEnabled()) {
 			return null;
 		}
@@ -141,9 +139,9 @@ public class GpxNotification extends OsmandNotification {
 			return null;
 		}
 
-		final Builder notificationBuilder = createBuilder(wearable)
+		final Notification.Builder notificationBuilder = createBuilder(wearable)
 				.setContentTitle(notificationTitle)
-				.setStyle(new BigTextStyle().bigText(notificationText));
+				.setStyle(new Notification.BigTextStyle().bigText(notificationText));
 
 		Intent saveIntent = new Intent(OSMAND_SAVE_GPX_SERVICE_ACTION);
 		PendingIntent savePendingIntent = PendingIntent.getBroadcast(app, 0, saveIntent,

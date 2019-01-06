@@ -1,6 +1,5 @@
 package net.osmand.plus;
 
-
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -14,7 +13,7 @@ import android.os.Environment;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
-import android.support.v4.util.Pair;
+import android.util.Pair;
 
 import net.osmand.IndexConstants;
 import net.osmand.StateChangedListener;

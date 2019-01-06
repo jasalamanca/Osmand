@@ -2,7 +2,7 @@ package net.osmand.plus.base;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v4.util.Pair;
+import android.util.Pair;
 import android.view.WindowManager;
 
 import net.osmand.Location;
@@ -207,7 +207,6 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 				boolean smallSpeedForDirectionOfMovement = speedForDirectionOfMovement != 0 && isSmallSpeedForDirectionOfMovement(location, speedForDirectionOfMovement);
 				boolean smallSpeedForCompass = isSmallSpeedForCompass(location);
 				boolean smallSpeedForAnimation = isSmallSpeedForAnimation(location);
-				// boolean virtualBearing = fMode && settings.SNAP_TO_ROAD.get();
 				showViewAngle = (!location.hasBearing() || smallSpeedForCompass) && (tb != null &&
 						tb.containsLatLon(location.getLatitude(), location.getLongitude()));
 				if (currentMapRotation == OsmandSettings.ROTATE_MAP_BEARING) {
@@ -274,7 +273,6 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 		return showViewAngle;
 	}
 
-
 	public void switchToRoutePlanningMode() {
 		RoutingHelper routingHelper = app.getRoutingHelper();
 		routePlanningMode = routingHelper.isRoutePlanningMode();
@@ -282,7 +280,6 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 		if(!routePlanningMode && followingMode) {
 			backToLocationImpl();
 		}
-
 	}
 
 	public void updateSettings(){
@@ -331,7 +328,7 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 			long now = System.currentTimeMillis();
 			final RotatedTileBox tb = mapView.getCurrentRotatedTileBox();
 			float zdelta = defineZoomFromSpeed(tb, location.getSpeed());
-			if (Math.abs(zdelta) >= 0.5/*?Math.sqrt(0.5)*/) {
+			if (Math.abs(zdelta) >= 0.5) {
 				// prevent ui hysteresis (check time interval for autozoom)
 				if (zdelta >= 2) {
 					// decrease a bit
@@ -345,9 +342,6 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 				if (now - lastTimeAutoZooming > 4500 && (now - lastTimeAutoZooming > threshold || !isUserZoomed)) {
 					isUserZoomed = false;
 					lastTimeAutoZooming = now;
-//					double settingsZoomScale = Math.log(mapView.getSettingsMapDensity()) / Math.log(2.0f);
-//					double zoomScale = Math.log(tb.getMapDensity()) / Math.log(2.0f);
-//					double complexZoom = tb.getZoom() + zoomScale + zdelta;
 					// round to 0.33
 					targetZoom = Math.round(targetZoom * 3) / 3f;
 					int newIntegerZoom = (int)Math.round(targetZoom);
@@ -468,5 +462,4 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 		lastTimeAutoZooming = time;
 		isUserZoomed = true;
 	}
-
 }

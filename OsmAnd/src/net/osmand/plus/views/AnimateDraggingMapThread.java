@@ -1,17 +1,18 @@
 package net.osmand.plus.views;
 
 import android.os.SystemClock;
-import android.support.v4.util.Pair;
+import android.util.Pair;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 
 import net.osmand.PlatformUtil;
-import net.osmand.core.android.MapRendererView;
 import net.osmand.data.RotatedTileBox;
 import net.osmand.util.MapUtils;
 
 import org.apache.commons.logging.Log;
+
+import net.osmand.core.android.MapRendererView;
 
 /**
  * Thread for animated dragging.
@@ -36,7 +37,7 @@ public class AnimateDraggingMapThread {
 	private double targetLatitude = 0;
 	private double targetLongitude = 0;
 	private int targetIntZoom = 0;
-	private int targetFloatZoom = 0;
+//	private int targetFloatZoom = 0;
 
 	private boolean isAnimatingZoom;
 	
@@ -44,8 +45,6 @@ public class AnimateDraggingMapThread {
 	public AnimateDraggingMapThread(OsmandMapTileView tileView){
 		this.tileView = tileView;
 	}
-	
-	
 	
 	private void pendingRotateAnimation() {
 		boolean conditionToCountinue = false;

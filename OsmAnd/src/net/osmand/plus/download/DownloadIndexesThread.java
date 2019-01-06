@@ -1,6 +1,5 @@
 package net.osmand.plus.download;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -12,14 +11,12 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.AsyncTask.Status;
-import android.os.Build;
 import android.os.StatFs;
 import android.support.annotation.UiThread;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.NotificationCompat;
-import android.support.v7.app.NotificationCompat.Builder;
 import android.view.View;
 import android.widget.Toast;
+
 import net.osmand.IndexConstants;
 import net.osmand.PlatformUtil;
 import net.osmand.map.WorldRegion;
@@ -46,7 +43,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-@SuppressLint({ "NewApi", "DefaultLocale" })
 public class DownloadIndexesThread {
 	private final static Log LOG = PlatformUtil.getLog(DownloadIndexesThread.class);
 	private static final int NOTIFICATION_ID = 45;
@@ -112,7 +108,7 @@ public class DownloadIndexesThread {
 			Intent contentIntent = new Intent(app, DownloadActivity.class);
 			PendingIntent contentPendingIntent = PendingIntent.getActivity(app, 0, contentIntent,
 					PendingIntent.FLAG_UPDATE_CURRENT);
-			Builder bld = new NotificationCompat.Builder(app);
+			Notification.Builder bld = new Notification.Builder(app);
 			String msg = Version.getAppName(app);
 			if(!isFinished) {
 				msg = task.getDescription();
@@ -126,7 +122,6 @@ public class DownloadIndexesThread {
 				contentText.append(i.getVisibleName(app, app.getRegions()));
 			}
 			bld.setContentTitle(msg).setSmallIcon(android.R.drawable.stat_sys_download)
-					.setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
 					.setContentText(contentText.toString())
 					.setContentIntent(contentPendingIntent).setOngoing(true);
 			int progress = getCurrentDownloadingItemProgress();

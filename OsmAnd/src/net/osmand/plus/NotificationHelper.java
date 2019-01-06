@@ -1,8 +1,8 @@
 package net.osmand.plus;
 
 import android.app.Notification;
-import android.support.v4.app.NotificationCompat.Builder;
-import android.support.v4.app.NotificationManagerCompat;
+import android.app.NotificationManager;
+import android.content.Context;
 
 import net.osmand.plus.notifications.GpxNotification;
 import net.osmand.plus.notifications.NavigationNotification;
@@ -37,7 +37,7 @@ public class NotificationHelper {
 		if (notification != null) {
 			removeNotification(notification.getType());
 			setTopNotification(notification);
-			Builder notificationBuilder = notification.buildNotification(false);
+			Notification.Builder notificationBuilder = notification.buildNotification(false);
 			return notificationBuilder.build();
 		}
 		return null;
@@ -110,7 +110,7 @@ public class NotificationHelper {
 	}
 
 	public void removeTopNotification() {
-		NotificationManagerCompat notificationManager = NotificationManagerCompat.from(app);
+		NotificationManager notificationManager = (NotificationManager) app.getSystemService(Context.NOTIFICATION_SERVICE);
 		notificationManager.cancel(OsmandNotification.TOP_NOTIFICATION_SERVICE_ID);
 	}
 

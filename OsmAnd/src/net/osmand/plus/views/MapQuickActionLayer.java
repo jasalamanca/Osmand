@@ -11,7 +11,7 @@ import android.os.Build;
 import android.os.Vibrator;
 import android.support.annotation.DimenRes;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.util.Pair;
+import android.util.Pair;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewAnimationUtils;

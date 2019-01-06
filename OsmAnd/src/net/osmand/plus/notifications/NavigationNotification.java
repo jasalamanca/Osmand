@@ -11,9 +11,6 @@ import android.graphics.Canvas;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationCompat.BigTextStyle;
-import android.support.v4.app.NotificationCompat.Builder;
 import android.view.View;
 
 import net.osmand.plus.NavigationService;
@@ -94,7 +91,7 @@ public class NavigationNotification extends OsmandNotification {
 
 	@Override
 	public int getPriority() {
-		return NotificationCompat.PRIORITY_HIGH;
+		return Notification.PRIORITY_HIGH;
 	}
 
 	@Override
@@ -113,7 +110,7 @@ public class NavigationNotification extends OsmandNotification {
 	}
 
 	@Override
-	public Builder buildNotification(boolean wearable) {
+	public Notification.Builder buildNotification(boolean wearable) {
 		if (!isEnabled()) {
 			return null;
 		}
@@ -213,9 +210,9 @@ public class NavigationNotification extends OsmandNotification {
 			return null;
 		}
 
-		final Builder notificationBuilder = createBuilder(wearable)
+		final Notification.Builder notificationBuilder = createBuilder(wearable)
 				.setContentTitle(notificationTitle)
-				.setStyle(new BigTextStyle().bigText(notificationText))
+				.setStyle(new Notification.BigTextStyle().bigText(notificationText))
 				.setLargeIcon(turnBitmap);
 
 		Intent stopIntent = new Intent(OSMAND_STOP_NAVIGATION_SERVICE_ACTION);
