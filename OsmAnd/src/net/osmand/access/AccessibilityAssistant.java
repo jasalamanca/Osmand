@@ -22,7 +22,7 @@ public class AccessibilityAssistant extends View.AccessibilityDelegate implement
     private volatile boolean eventsLocked;
     private volatile View focusedView;
 
-    private SparseArray<View> monitoredPages;
+    private final SparseArray<View> monitoredPages;
     private View visiblePage;
     private int visiblePageId;
 
@@ -115,18 +115,15 @@ public class AccessibilityAssistant extends View.AccessibilityDelegate implement
     }
 
     private void notifyEvent(View view, int eventType, boolean passed) {
-        if (Build.VERSION.SDK_INT >= 16) {
-            switch (eventType) {
-            case AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED:
-                processFocusChange(view, true, passed);
-                break;
-            case AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUS_CLEARED:
-                processFocusChange(view, false, passed);
-                break;
-            default:
-                break;
-            }
+        switch (eventType) {
+        case AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED:
+            processFocusChange(view, true, passed);
+            break;
+        case AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUS_CLEARED:
+            processFocusChange(view, false, passed);
+            break;
+        default:
+            break;
         }
     }
-
 }

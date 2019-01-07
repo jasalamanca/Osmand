@@ -5,7 +5,7 @@ import android.os.Bundle;
 import net.osmand.plus.activities.ActionBarProgressActivity;
 
 public class AbstractDownloadActivity extends ActionBarProgressActivity {
-	protected DownloadValidationManager downloadValidationManager;
+	private DownloadValidationManager downloadValidationManager;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

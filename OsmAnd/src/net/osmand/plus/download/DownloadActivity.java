@@ -19,7 +19,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
-import android.widget.Space;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatButton;
 import android.text.method.LinkMovementMethod;
@@ -33,6 +32,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.Space;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -733,7 +733,7 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 			@Override
 			protected void onPreExecute() {
 				super.onPreExecute();
-				setSupportProgressBarIndeterminateVisibility(true);
+//				setSupportProgressBarIndeterminateVisibility(true);
 			}
 
 			@Override
@@ -745,7 +745,7 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 
 			@Override
 			protected void onPostExecute(List<String> warnings) {
-				setSupportProgressBarIndeterminateVisibility(false);
+//				setSupportProgressBarIndeterminateVisibility(false);
 				if (!warnings.isEmpty()) {
 					final StringBuilder b = new StringBuilder();
 					boolean f = true;

@@ -4,6 +4,7 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -25,11 +26,11 @@ public class SecondSplashScreenFragment extends Fragment {
 	public static boolean SHOW = true;
 	public static boolean VISIBLE = false;
 
-	public OsmandApplication getMyApplication() {
+	private OsmandApplication getMyApplication() {
 		return ((OsmandApplication) getActivity().getApplication());
 	}
 
-	public MapActivity getMapActivity() {
+	private MapActivity getMapActivity() {
 		return (MapActivity) getActivity();
 	}
 
@@ -79,7 +80,7 @@ public class SecondSplashScreenFragment extends Fragment {
 
 	@Nullable
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		OsmandApplication app = getMyApplication();
 		OsmandSettings settings = app.getSettings();
 		FragmentActivity activity = getActivity();

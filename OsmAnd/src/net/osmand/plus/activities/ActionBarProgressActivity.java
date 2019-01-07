@@ -9,7 +9,6 @@ import android.widget.ProgressBar;
 
 import net.osmand.AndroidUtils;
 import net.osmand.plus.R;
-import net.osmand.plus.myplaces.FavoritesActivity;
 
 public class ActionBarProgressActivity extends OsmandActionBarActivity {
 
@@ -19,22 +18,22 @@ public class ActionBarProgressActivity extends OsmandActionBarActivity {
 		setupIntermediateProgressBar();
 	}
 
-	protected void setupIntermediateProgressBar() {
+	private void setupIntermediateProgressBar() {
 		ProgressBar progressBar = new ProgressBar(this);
 		progressBar.setVisibility(View.GONE);
 		progressBar.setIndeterminate(true);
 		getSupportActionBar().setDisplayShowCustomEnabled(true);
 		getSupportActionBar().setCustomView(progressBar);
-		setSupportProgressBarIndeterminateVisibility(false);
+//		setSupportProgressBarIndeterminateVisibility(false);
 	}
 
-	@Override
-	public void setSupportProgressBarIndeterminateVisibility(boolean visible) {
-		getSupportActionBar().getCustomView().setVisibility(visible ? View.VISIBLE : View.GONE);
-	}
+//	@Override
+//	public void setSupportProgressBarIndeterminateVisibility(boolean visible) {
+//		getSupportActionBar().getCustomView().setVisibility(visible ? View.VISIBLE : View.GONE);
+//	}
 
 	public Toolbar getClearToolbar(boolean visible) {
-		final Toolbar tb = (Toolbar) findViewById(R.id.bottomControls);
+		final Toolbar tb = findViewById(R.id.bottomControls);
 		if (tb == null) {
 			return null;
 		}
@@ -51,7 +50,7 @@ public class ActionBarProgressActivity extends OsmandActionBarActivity {
 		}
 	}
 
-	public boolean isToolbarVisible() {
+	private boolean isToolbarVisible() {
 		View toolbar = findViewById(R.id.bottomControls);
 		return toolbar != null && toolbar.getVisibility() == View.VISIBLE;
 	}

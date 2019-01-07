@@ -8,7 +8,6 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.view.ActionMode;
@@ -35,7 +34,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import net.osmand.AndroidUtils;
 import net.osmand.IndexConstants;
 import net.osmand.plus.ContextMenuAdapter;
 import net.osmand.plus.ContextMenuAdapter.ItemClickListener;
@@ -71,17 +69,16 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-
 public class LocalIndexesFragment extends OsmandExpandableListFragment implements DownloadEvents {
-	public static final Pattern ILLEGAL_FILE_NAME_CHARACTERS = Pattern.compile("[?:\"*|/\\<>]");
+	private static final Pattern ILLEGAL_FILE_NAME_CHARACTERS = Pattern.compile("[?:\"*|/\\<>]");
 
 	private LoadLocalIndexTask asyncLoader;
-	private Map<String, IndexItem> filesToUpdate = new HashMap<>();
+	private final Map<String, IndexItem> filesToUpdate = new HashMap<>();
 	private LocalIndexesAdapter listAdapter;
 	private AsyncTask<LocalIndexInfo, ?, ?> operationTask;
 
 	private boolean selectionMode = false;
-	private Set<LocalIndexInfo> selectedItems = new LinkedHashSet<>();
+	private final Set<LocalIndexInfo> selectedItems = new LinkedHashSet<>();
 
 	private ContextMenuAdapter optionsMenuAdapter;
 	private ActionMode actionMode;
@@ -93,7 +90,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 		getDownloadActivity().setSupportProgressBarIndeterminateVisibility(false);
 		getDownloadActivity().getAccessibilityAssistant().registerPage(view, DownloadActivity.LOCAL_TAB_NUMBER);
 
-		ExpandableListView listView = (ExpandableListView) view.findViewById(android.R.id.list);
+		ExpandableListView listView = view.findViewById(android.R.id.list);
 		listAdapter = new LocalIndexesAdapter(getDownloadActivity());
 		listView.setAdapter(listAdapter);
 		expandAllGroups();
@@ -138,7 +135,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 		});
 	}
 
-	public void reloadData() {
+	private void reloadData() {
 		List<IndexItem> itemsToUpdate = getDownloadActivity().getDownloadThread().getIndexes().getItemsToUpdate();
 		filesToUpdate.clear();
 		for (IndexItem ii : itemsToUpdate) {
@@ -268,9 +265,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 				}
 			});
 			b.setTitle(R.string.shared_string_rename);
-			int leftPadding = AndroidUtils.dpToPx(a, 24f);
-			int topPadding = AndroidUtils.dpToPx(a, 4f);
-			b.setView(editText, leftPadding, topPadding, leftPadding, topPadding);
+			b.setView(editText);
 			// Behaviour will be overwritten later;
 			b.setPositiveButton(R.string.shared_string_save, null);
 			b.setNegativeButton(R.string.shared_string_cancel, null);
@@ -316,7 +311,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 	}
 
 
-	public class LoadLocalIndexTask extends AsyncTask<Void, LocalIndexInfo, List<LocalIndexInfo>>
+	class LoadLocalIndexTask extends AsyncTask<Void, LocalIndexInfo, List<LocalIndexInfo>>
 			implements AbstractLoadLocalIndexTask {
 
 		private List<LocalIndexInfo> result;
@@ -349,7 +344,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			expandAllGroups();
 		}
 
-		public void setResult(List<LocalIndexInfo> result) {
+		void setResult(List<LocalIndexInfo> result) {
 			this.result = result;
 			listAdapter.clear();
 			if (result != null) {
@@ -372,7 +367,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			}
 		}
 
-		public List<LocalIndexInfo> getResult() {
+		List<LocalIndexInfo> getResult() {
 			return result;
 		}
 
@@ -380,13 +375,13 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 
 
 	public static class LocalIndexOperationTask extends AsyncTask<LocalIndexInfo, LocalIndexInfo, String> {
-		protected static int DELETE_OPERATION = 1;
-		protected static int BACKUP_OPERATION = 2;
-		protected static int RESTORE_OPERATION = 3;
+		protected static final int DELETE_OPERATION = 1;
+		static final int BACKUP_OPERATION = 2;
+		static final int RESTORE_OPERATION = 3;
 
 		private final int operation;
-		private DownloadActivity a;
-		private LocalIndexesAdapter listAdapter;
+		private final DownloadActivity a;
+		private final LocalIndexesAdapter listAdapter;
 
 		public LocalIndexOperationTask(DownloadActivity a, LocalIndexesAdapter listAdapter, int operation) {
 			this.a = a;
@@ -550,9 +545,11 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 		return true;
 	}
 
-	public Set<LocalIndexInfo> getSelectedItems() {
-		return selectedItems;
-	}
+// --Commented out by Inspection START (6/01/19 22:28):
+//	public Set<LocalIndexInfo> getSelectedItems() {
+//		return selectedItems;
+//	}
+// --Commented out by Inspection STOP (6/01/19 22:28)
 
 
 	@Override
@@ -578,7 +575,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 		}
 
 		//fixes issue when local files not shown after switching tabs
-		//Next line throws NPE in some circumstances when called from dashboard and listAdpater=null is not checked for. (Checking !this.isAdded above is not sufficient!)
+		//Next line throws NPE in some circumstances when called from dashboard and listAdapter=null is not checked for. (Checking !this.isAdded above is not sufficient!)
 		if (listAdapter != null && listAdapter.getGroupCount() == 0 && getDownloadActivity().getLocalIndexInfos().size() > 0) {
 			for (LocalIndexInfo info : getDownloadActivity().getLocalIndexInfos()) {
 				listAdapter.addLocalIndexInfo(info);
@@ -628,14 +625,13 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 				if (split == null) {
 					split = menu.addSubMenu(0, 1, j + 1, R.string.shared_string_more_actions);
 					split.setIcon(R.drawable.ic_overflow_menu_white);
-					split.getItem();
-					MenuItemCompat.setShowAsAction(split.getItem(), MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+					split.getItem().setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 				}
 				item = split.add(0, contextMenuItem.getTitleId(), j + 1, contextMenuItem.getTitle());
-				MenuItemCompat.setShowAsAction(item, MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+				item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 			} else {
 				item = menu.add(0, contextMenuItem.getTitleId(), j + 1, contextMenuItem.getTitle());
-				MenuItemCompat.setShowAsAction(item, MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+				item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 			}
 			if (contextMenuItem.getIcon() != -1) {
 				item.setIcon(contextMenuItem.getIcon());
@@ -663,7 +659,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void doAction(int actionResId) {
+	private void doAction(int actionResId) {
 		if (actionResId == R.string.local_index_mi_backup) {
 			operationTask = new LocalIndexOperationTask(getDownloadActivity(), listAdapter, LocalIndexOperationTask.BACKUP_OPERATION);
 		} else if (actionResId == R.string.shared_string_delete) {
@@ -715,8 +711,8 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 				if (actionIconId != 0) {
 					it.setIcon(actionIconId);
 				}
-				MenuItemCompat.setShowAsAction(it, MenuItemCompat.SHOW_AS_ACTION_IF_ROOM |
-						MenuItemCompat.SHOW_AS_ACTION_WITH_TEXT);
+				it.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
+						MenuItem.SHOW_AS_ACTION_WITH_TEXT);
 				return true;
 			}
 
@@ -754,7 +750,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 		listAdapter.notifyDataSetChanged();
 	}
 
-	public void localOptionsMenu(final int itemId) {
+	private void localOptionsMenu(final int itemId) {
 		if (itemId == R.string.local_index_mi_reload) {
 			getDownloadActivity().reloadLocalIndexes();
 		} else if (itemId == R.string.shared_string_delete) {
@@ -787,8 +783,8 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 		}
 	}
 
-	public void openSelectionMode(int stringRes, int darkIcon, DialogInterface.OnClickListener listener,
-								  EnumSet<LocalIndexType> filter) {
+	private void openSelectionMode(int stringRes, int darkIcon, DialogInterface.OnClickListener listener,
+                                   EnumSet<LocalIndexType> filter) {
 		if (filter != null) {
 			listAdapter.filterCategories(filter);
 		}
@@ -796,17 +792,17 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 	}
 
 
-	protected class LocalIndexesAdapter extends OsmandBaseExpandableListAdapter {
+	class LocalIndexesAdapter extends OsmandBaseExpandableListAdapter {
 
-		Map<LocalIndexInfo, List<LocalIndexInfo>> data = new LinkedHashMap<>();
-		List<LocalIndexInfo> category = new ArrayList<>();
+		final Map<LocalIndexInfo, List<LocalIndexInfo>> data = new LinkedHashMap<>();
+		final List<LocalIndexInfo> category = new ArrayList<>();
 		List<LocalIndexInfo> filterCategory = null;
-		int warningColor;
-		int okColor;
-		int corruptedColor;
-		DownloadActivity ctx;
+		final int warningColor;
+		final int okColor;
+		final int corruptedColor;
+		final DownloadActivity ctx;
 
-		public LocalIndexesAdapter(DownloadActivity ctx) {
+		LocalIndexesAdapter(DownloadActivity ctx) {
 			this.ctx = ctx;
 			warningColor = ContextCompat.getColor(ctx, R.color.color_warning);
 			boolean light = ctx.getMyApplication().getSettings().isLightContent();
@@ -814,14 +810,14 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			corruptedColor = ContextCompat.getColor(ctx, R.color.color_invalid);
 		}
 
-		public void clear() {
+		void clear() {
 			data.clear();
 			category.clear();
 			filterCategory = null;
 			notifyDataSetChanged();
 		}
 
-		public void sortData() {
+		void sortData() {
 			final Collator cl = Collator.getInstance();
 			for (List<LocalIndexInfo> i : data.values()) {
 				Collections.sort(i, new Comparator<LocalIndexInfo>() {
@@ -833,7 +829,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			}
 		}
 
-		public LocalIndexInfo findCategory(LocalIndexInfo val, boolean backuped) {
+		LocalIndexInfo findCategory(LocalIndexInfo val, boolean backuped) {
 			for (LocalIndexInfo i : category) {
 				if (i.isBackupedData() == backuped && val.getType() == i.getType() &&
 						Algorithms.objectEquals(i.getSubfolder(), val.getSubfolder())) {
@@ -846,7 +842,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			return newCat;
 		}
 
-		public void delete(LocalIndexInfo[] values) {
+		void delete(LocalIndexInfo[] values) {
 			for (LocalIndexInfo i : values) {
 				LocalIndexInfo c = findCategory(i, i.isBackupedData());
 				if (c != null) {
@@ -860,7 +856,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			notifyDataSetChanged();
 		}
 
-		public void move(LocalIndexInfo[] values, boolean oldBackupState) {
+		void move(LocalIndexInfo[] values, boolean oldBackupState) {
 			for (LocalIndexInfo i : values) {
 				LocalIndexInfo c = findCategory(i, oldBackupState);
 				if (c != null) {
@@ -875,12 +871,12 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			expandAllGroups();
 		}
 
-		public void cancelFilter() {
+		void cancelFilter() {
 			filterCategory = null;
 			notifyDataSetChanged();
 		}
 
-		public void filterCategories(EnumSet<LocalIndexType> types) {
+		void filterCategories(EnumSet<LocalIndexType> types) {
 			List<LocalIndexInfo> filter = new ArrayList<>();
 			List<LocalIndexInfo> source = filterCategory == null ? category : filterCategory;
 			for (LocalIndexInfo info : source) {
@@ -892,19 +888,21 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			notifyDataSetChanged();
 		}
 
-		public void filterCategories(boolean backup) {
-			List<LocalIndexInfo> filter = new ArrayList<>();
-			List<LocalIndexInfo> source = filterCategory == null ? category : filterCategory;
-			for (LocalIndexInfo info : source) {
-				if (info.isBackupedData() == backup) {
-					filter.add(info);
-				}
-			}
-			filterCategory = filter;
-			notifyDataSetChanged();
-		}
+// --Commented out by Inspection START (6/01/19 22:28):
+//		public void filterCategories(boolean backup) {
+//			List<LocalIndexInfo> filter = new ArrayList<>();
+//			List<LocalIndexInfo> source = filterCategory == null ? category : filterCategory;
+//			for (LocalIndexInfo info : source) {
+//				if (info.isBackupedData() == backup) {
+//					filter.add(info);
+//				}
+//			}
+//			filterCategory = filter;
+//			notifyDataSetChanged();
+//		}
+// --Commented out by Inspection STOP (6/01/19 22:28)
 
-		public void addLocalIndexInfo(LocalIndexInfo info) {
+		void addLocalIndexInfo(LocalIndexInfo info) {
 			int found = -1;
 			// search from end
 			for (int i = category.size() - 1; i >= 0; i--) {
@@ -972,8 +970,8 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			if (group.getSubfolder() != null) {
 				name.append(" ").append(group.getSubfolder());
 			}
-			TextView nameView = ((TextView) v.findViewById(R.id.title));
-			TextView sizeView = ((TextView) v.findViewById(R.id.section_description));
+			TextView nameView = v.findViewById(R.id.title);
+			TextView sizeView = v.findViewById(R.id.section_description);
 			List<LocalIndexInfo> list = data.get(group);
 			int size = 0;
 			for (LocalIndexInfo aList : list) {
@@ -1054,15 +1052,15 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			private final TextView descriptionTextView;
 			private final CheckBox checkbox;
 
-			public LocalIndexInfoViewHolder(View view) {
-				nameTextView = ((TextView) view.findViewById(R.id.nameTextView));
-				options = (ImageButton) view.findViewById(R.id.options);
-				icon = (ImageView) view.findViewById(R.id.icon);
-				descriptionTextView = (TextView) view.findViewById(R.id.descriptionTextView);
-				checkbox = (CheckBox) view.findViewById(R.id.check_local_index);
+			LocalIndexInfoViewHolder(View view) {
+				nameTextView = view.findViewById(R.id.nameTextView);
+				options = view.findViewById(R.id.options);
+				icon = view.findViewById(R.id.icon);
+				descriptionTextView = view.findViewById(R.id.descriptionTextView);
+				checkbox = view.findViewById(R.id.check_local_index);
 			}
 
-			public void bindLocalIndexInfo(final LocalIndexInfo child) {
+			void bindLocalIndexInfo(final LocalIndexInfo child) {
 
 				options.setImageDrawable(ctx.getMyApplication().getIconsCache()
 						.getThemedIcon(R.drawable.ic_overflow_menu_white));
@@ -1197,7 +1195,6 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			}
 		});
 
-
 		optionsMenu.show();
 	}
 
@@ -1206,7 +1203,6 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 	}
 
 	public interface RenameCallback {
-
-		public void renamedTo(File file);
+		void renamedTo(File file);
 	}
 }
