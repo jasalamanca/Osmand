@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnDismissListener;
 import android.graphics.PointF;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.view.MotionEvent;
@@ -60,28 +61,27 @@ import java.util.Set;
 
 public class MapRouteInfoMenu implements IRouteInformationListener {
 	public static int directionInfo = -1;
-	public static boolean controlVisible = false;
 	private final MapContextMenu contextMenu;
 	private final RoutingHelper routingHelper;
-	private OsmandMapTileView mapView;
-	private GeocodingLookupService geocodingLookupService;
+	private final OsmandMapTileView mapView;
+	private final GeocodingLookupService geocodingLookupService;
 	private boolean selectFromMapTouch;
 	private boolean selectFromMapForTarget;
 
 	private boolean showMenu = false;
 	private static boolean visible;
-	private MapActivity mapActivity;
-	private MapControlsLayer mapControlsLayer;
-	public static final String TARGET_SELECT = "TARGET_SELECT";
+	private final MapActivity mapActivity;
+	private final MapControlsLayer mapControlsLayer;
+	// --Commented out by Inspection (7/01/19 18:06):public static final String TARGET_SELECT = "TARGET_SELECT";
 	private boolean nightMode;
 	private boolean switched;
 
 	private AddressLookupRequest startPointRequest;
 	private AddressLookupRequest targetPointRequest;
-	private List<LatLon> intermediateRequestsLatLon = new ArrayList<>();
+	private final List<LatLon> intermediateRequestsLatLon = new ArrayList<>();
 	private OnDismissListener onDismissListener;
 
-	private OnMarkerSelectListener onMarkerSelectListener;
+	private final OnMarkerSelectListener onMarkerSelectListener;
 
 	private static final long SPINNER_MY_LOCATION_ID = 1;
 	private static final long SPINNER_FAV_ID = 2;
@@ -115,9 +115,11 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 		};
 	}
 
-	public OnDismissListener getOnDismissListener() {
-		return onDismissListener;
-	}
+// --Commented out by Inspection START (7/01/19 18:06):
+//	public OnDismissListener getOnDismissListener() {
+//		return onDismissListener;
+//	}
+// --Commented out by Inspection STOP (7/01/19 18:06)
 
 	public void setOnDismissListener(OnDismissListener onDismissListener) {
 		this.onDismissListener = onDismissListener;
@@ -161,18 +163,18 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 	}
 
 	public void setVisible(boolean visible) {
+//		boolean controlVisible = false;
 		if (visible) {
 			if (showMenu) {
 				show();
 				showMenu = false;
 			}
-			controlVisible = true;
+//			controlVisible = true;
 		} else {
 			hide();
-			controlVisible = false;
+//			controlVisible = false;
 		}
 	}
-
 
 	public void showHideMenu() {
 		intermediateRequestsLatLon.clear();
@@ -189,7 +191,7 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 			fragmentRef.get().updateInfo();
 	}
 
-	public void updateFromIcon() {
+	private void updateFromIcon() {
 		WeakReference<MapRouteInfoMenuFragment> fragmentRef = findMenuFragment();
 		if (fragmentRef != null)
 			fragmentRef.get().updateFromIcon();
@@ -215,8 +217,8 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 		if (targets.hasTooLongDistanceToNavigate()) {
 			main.findViewById(R.id.dividerToDropDown).setVisibility(View.VISIBLE);
 			main.findViewById(R.id.RouteInfoControls).setVisibility(View.VISIBLE);
-			TextView textView = (TextView) main.findViewById(R.id.InfoTextView);
-			ImageView iconView = (ImageView) main.findViewById(R.id.InfoIcon);
+			TextView textView = main.findViewById(R.id.InfoTextView);
+			ImageView iconView = main.findViewById(R.id.InfoIcon);
 			main.findViewById(R.id.Prev).setVisibility(View.GONE);
 			main.findViewById(R.id.Next).setVisibility(View.GONE);
 			main.findViewById(R.id.InfoIcon).setVisibility(View.GONE);
@@ -233,12 +235,10 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 	}
 
 	private void updateApplicationModes(final View parentView) {
-		//final OsmandSettings settings = mapActivity.getMyApplication().getSettings();
-		//ApplicationMode am = settings.APPLICATION_MODE.get();
 		final ApplicationMode am = routingHelper.getAppMode();
 		final Set<ApplicationMode> selected = new HashSet<>();
 		selected.add(am);
-		ViewGroup vg = (ViewGroup) parentView.findViewById(R.id.app_modes);
+		ViewGroup vg = parentView.findViewById(R.id.app_modes);
 		vg.removeAllViews();
 		AppModeDialog.prepareAppModeView(mapActivity, selected, false,
 				vg, true, false,true, new View.OnClickListener() {
@@ -264,7 +264,7 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 		String via = generateViaDescription();
 		View viaLayout = parentView.findViewById(R.id.ViaLayout);
 		View viaLayoutDivider = parentView.findViewById(R.id.viaLayoutDivider);
-		ImageView swapDirectionView = (ImageView) parentView.findViewById(R.id.swap_direction_image_view);
+		ImageView swapDirectionView = parentView.findViewById(R.id.swap_direction_image_view);
 		if (via.length() == 0) {
 			viaLayout.setVisibility(View.GONE);
 			viaLayoutDivider.setVisibility(View.GONE);
@@ -285,7 +285,7 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 			}
 		});
 
-		ImageView viaIcon = (ImageView) parentView.findViewById(R.id.viaIcon);
+		ImageView viaIcon = parentView.findViewById(R.id.viaIcon);
 		viaIcon.setImageDrawable(getIconOrig(R.drawable.list_intermediate));
 
 		swapDirectionView.setImageDrawable(mapActivity.getMyApplication().getIconsCache().getIcon(R.drawable.ic_action_change_navigation_points,
@@ -371,12 +371,12 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 
 		updateToIcon(parentView);
 
-		ImageView toDropDownIcon = (ImageView) parentView.findViewById(R.id.toDropDownIcon);
+		ImageView toDropDownIcon = parentView.findViewById(R.id.toDropDownIcon);
 		toDropDownIcon.setImageDrawable(mapActivity.getMyApplication().getIconsCache().getIcon(R.drawable.ic_action_arrow_drop_down, isLight()));
 	}
 
 	private void updateToIcon(View parentView) {
-		ImageView toIcon = (ImageView) parentView.findViewById(R.id.toIcon);
+		ImageView toIcon = parentView.findViewById(R.id.toIcon);
 		toIcon.setImageDrawable(getIconOrig(R.drawable.list_destination));
 	}
 
@@ -441,7 +441,7 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 
 		updateFromIcon(parentView);
 
-		ImageView fromDropDownIcon = (ImageView) parentView.findViewById(R.id.fromDropDownIcon);
+		ImageView fromDropDownIcon = parentView.findViewById(R.id.fromDropDownIcon);
 		fromDropDownIcon.setImageDrawable(mapActivity.getMyApplication().getIconsCache().getIcon(R.drawable.ic_action_arrow_drop_down, isLight()));
 	}
 
@@ -450,7 +450,7 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 				getTargets().getPointToStart() == null ? R.drawable.ic_action_location_color : R.drawable.list_startpoint));
 	}
 
-	protected void selectOnScreen(boolean target) {
+	private void selectOnScreen(boolean target) {
 		selectFromMapTouch = true;
 		selectFromMapForTarget = target;
 		hide();
@@ -466,7 +466,7 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 		updateMenu();
 	}
 
-	protected void selectFavorite(final View parentView, final boolean target) {
+	private void selectFavorite(final View parentView, final boolean target) {
 		final FavouritesAdapter favouritesAdapter = new FavouritesAdapter(mapActivity, mapActivity.getMyApplication()
 				.getFavorites().getVisibleFavouritePoints(), false);
 		Dialog[] dlgHolder = new Dialog[1];
@@ -551,15 +551,17 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 		}
 	}
 
-	public static boolean isControlVisible() {
-		return controlVisible;
-	}
+// --Commented out by Inspection START (7/01/19 18:06):
+//	public static boolean isControlVisible() {
+//		return controlVisible;
+//	}
+// --Commented out by Inspection STOP (7/01/19 18:06)
 
 	private void updateRouteButtons(final View mainView) {
 		mainView.findViewById(R.id.dividerToDropDown).setVisibility(View.VISIBLE);
 		mainView.findViewById(R.id.RouteInfoControls).setVisibility(View.VISIBLE);
 		final OsmandApplication ctx = mapActivity.getMyApplication();
-		ImageView prev = (ImageView) mainView.findViewById(R.id.Prev);
+		ImageView prev = mainView.findViewById(R.id.Prev);
 		prev.setImageDrawable(ctx.getIconsCache().getIcon(R.drawable.ic_prev, isLight()));
 		if (directionInfo >= 0) {
 			prev.setVisibility(View.VISIBLE);
@@ -586,7 +588,7 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 		} else {
 			prev.setVisibility(View.GONE);
 		}
-		ImageView next = (ImageView) mainView.findViewById(R.id.Next);
+		ImageView next = mainView.findViewById(R.id.Next);
 		next.setVisibility(View.VISIBLE);
 		next.setImageDrawable(ctx.getIconsCache().getIcon(R.drawable.ic_next, isLight()));
 		next.setOnClickListener(new View.OnClickListener() {
@@ -612,9 +614,9 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 			}
 		});
 
-		TextView textView = (TextView) mainView.findViewById(R.id.InfoTextView);
-		ImageView infoIcon = (ImageView) mainView.findViewById(R.id.InfoIcon);
-		ImageView durationIcon = (ImageView) mainView.findViewById(R.id.DurationIcon);
+		TextView textView = mainView.findViewById(R.id.InfoTextView);
+		ImageView infoIcon = mainView.findViewById(R.id.InfoIcon);
+		ImageView durationIcon = mainView.findViewById(R.id.DurationIcon);
 		View infoDistanceView = mainView.findViewById(R.id.InfoDistance);
 		View infoDurationView = mainView.findViewById(R.id.InfoDuration);
 		if (directionInfo >= 0) {
@@ -641,8 +643,8 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 				textView.setText((directionInfo + 1) + ". " + ri.getDescriptionRoutePart());
 			}
 		} else {
-			TextView distanceText = (TextView) mainView.findViewById(R.id.DistanceText);
-			TextView durationText = (TextView) mainView.findViewById(R.id.DurationText);
+			TextView distanceText = mainView.findViewById(R.id.DistanceText);
+			TextView durationText = mainView.findViewById(R.id.DurationText);
 			distanceText.setText(OsmAndFormatter.getFormattedDistance(ctx.getRoutingHelper().getLeftDistance(), ctx));
 			durationText.setText(OsmAndFormatter.getFormattedDuration(ctx.getRoutingHelper().getLeftTime(), ctx));
 		}
@@ -676,7 +678,7 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 		}
 	}
 
-	public String generateViaDescription() {
+	private String generateViaDescription() {
 		TargetPointsHelper targets = getTargets();
 		List<TargetPoint> points = targets.getIntermediatePointsNavigation();
 		if (points.size() == 0) {
@@ -706,11 +708,11 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 		return via.toString();
 	}
 
-	public String getRoutePointDescription(double lat, double lon) {
+	private String getRoutePointDescription(double lat, double lon) {
 		return mapActivity.getString(R.string.route_descr_lat_lon, lat, lon);
 	}
 
-	public String getRoutePointDescription(LatLon l, String d) {
+	private String getRoutePointDescription(LatLon l, String d) {
 		if (d != null && d.length() > 0) {
 			return d.replace(':', ' ');
 		}
@@ -757,7 +759,7 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 
 		addMarkersToSpinner(fromActions);
 
-		final Spinner fromSpinner = ((Spinner) view.findViewById(R.id.FromSpinner));
+		final Spinner fromSpinner = view.findViewById(R.id.FromSpinner);
 		RouteSpinnerArrayAdapter fromAdapter = new RouteSpinnerArrayAdapter(view.getContext());
 		for (RouteSpinnerRow row : fromActions) {
 			fromAdapter.add(row);
@@ -769,13 +771,12 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 			if (mapActivity.getMyApplication().getLocationProvider().getLastKnownLocation() == null) {
 				fromSpinner.setPromptId(R.string.search_poi_location);
 			}
-			//fromSpinner.setSelection(0);
 		}
 		return fromSpinner;
 	}
 
 	private Spinner setupToSpinner(View view) {
-		final Spinner toSpinner = ((Spinner) view.findViewById(R.id.ToSpinner));
+		final Spinner toSpinner = view.findViewById(R.id.ToSpinner);
 		final TargetPointsHelper targets = getTargets();
 		List<RouteSpinnerRow> toActions = new ArrayList<>();
 
@@ -837,14 +838,6 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 					MapMarkerDialogHelper.getMapMarkerIcon(mapActivity.getMyApplication(), m.colorIndex),
 					m.getName(mapActivity)));
 		}
-		/*
-		if (markers.size() > 2) {
-			MapMarker m = markers.get(2);
-			actions.add(new RouteSpinnerRow(SPINNER_MAP_MARKER_3_ID,
-					MapMarkerDialogHelper.getMapMarkerIcon(mapActivity.getMyApplication(), m.colorIndex),
-					m.getOnlyName()));
-		}
-		*/
 		if (markers.size() > 2) {
 			actions.add(new RouteSpinnerRow(SPINNER_MAP_MARKER_MORE_ID, 0,
 					mapActivity.getString(R.string.map_markers_other)));
@@ -922,22 +915,24 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 	}
 
 	private class RouteSpinnerRow {
-		long id;
+		final long id;
 		int iconId;
 		Drawable icon;
-		String text;
+		final String text;
 
-		public RouteSpinnerRow(long id) {
-			this.id = id;
-		}
+// --Commented out by Inspection START (7/01/19 18:06):
+//		public RouteSpinnerRow(long id) {
+//			this.id = id;
+//		}
+// --Commented out by Inspection STOP (7/01/19 18:06)
 
-		public RouteSpinnerRow(long id, int iconId, String text) {
+		RouteSpinnerRow(long id, int iconId, String text) {
 			this.id = id;
 			this.iconId = iconId;
 			this.text = text;
 		}
 
-		public RouteSpinnerRow(long id, Drawable icon, String text) {
+		RouteSpinnerRow(long id, Drawable icon, String text) {
 			this.id = id;
 			this.icon = icon;
 			this.text = text;
@@ -946,7 +941,7 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 
 	private class RouteSpinnerArrayAdapter extends ArrayAdapter<RouteSpinnerRow> {
 
-		public RouteSpinnerArrayAdapter(Context context) {
+		RouteSpinnerArrayAdapter(Context context) {
 			super(context, android.R.layout.simple_spinner_item);
 			setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		}
@@ -968,8 +963,9 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 			return id != SPINNER_HINT_ID;
 		}
 
+		@NonNull
 		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
+		public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 			TextView label = (TextView) super.getView(position, convertView, parent);
 			RouteSpinnerRow row = getItem(position);
 			label.setText(row.text);
@@ -979,7 +975,7 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 		}
 
 		@Override
-		public View getDropDownView(int position, View convertView, ViewGroup parent) {
+		public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent) {
 			long id = getItemId(position);
 			TextView label = (TextView) super.getDropDownView(position, convertView, parent);
 

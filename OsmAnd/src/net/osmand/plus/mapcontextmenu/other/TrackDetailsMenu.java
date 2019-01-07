@@ -2,7 +2,7 @@ package net.osmand.plus.mapcontextmenu.other;
 
 import android.graphics.Matrix;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.PopupMenu;
+import android.widget.PopupMenu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -48,7 +48,7 @@ import java.util.List;
 
 public class TrackDetailsMenu {
 
-	private MapActivity mapActivity;
+	private final MapActivity mapActivity;
 	private GpxDisplayItem gpxItem;
 	private TrackDetailsBarController toolbarController;
 	private TrkSegment segment;
@@ -118,14 +118,14 @@ public class TrackDetailsMenu {
 		}
 	}
 
-	public void update() {
+	private void update() {
 		WeakReference<TrackDetailsMenuFragment> fragmentRef = findMenuFragment();
 		if (fragmentRef != null) {
 			fragmentRef.get().updateInfo();
 		}
 	}
 
-	public WeakReference<TrackDetailsMenuFragment> findMenuFragment() {
+	private WeakReference<TrackDetailsMenuFragment> findMenuFragment() {
 		Fragment fragment = mapActivity.getSupportFragmentManager().findFragmentByTag(TrackDetailsMenuFragment.TAG);
 		if (fragment != null && !fragment.isDetached()) {
 			return new WeakReference<>((TrackDetailsMenuFragment) fragment);
@@ -269,33 +269,30 @@ public class TrackDetailsMenu {
 
 	private void fitTrackOnMap(LineChart chart, LatLon location, boolean forceFit) {
 		QuadRect rect = getRect(chart, chart.getLowestVisibleX(), chart.getHighestVisibleX());
-		if (rect != null) {
-			RotatedTileBox tb = mapActivity.getMapView().getCurrentRotatedTileBox().copy();
-			int tileBoxWidthPx = 0;
-			int tileBoxHeightPx = 0;
+		RotatedTileBox tb = mapActivity.getMapView().getCurrentRotatedTileBox().copy();
+		int tileBoxWidthPx = 0;
+		int tileBoxHeightPx = 0;
 
-			WeakReference<TrackDetailsMenuFragment> fragmentRef = findMenuFragment();
-			if (fragmentRef != null) {
-				TrackDetailsMenuFragment f = fragmentRef.get();
-				boolean portrait = AndroidUiHelper.isOrientationPortrait(mapActivity);
-				if (!portrait) {
-					tileBoxWidthPx = tb.getPixWidth() - f.getWidth();
-				} else {
-					tileBoxHeightPx = tb.getPixHeight() - f.getHeight();
-				}
-			}
-			if (forceFit) {
-				mapActivity.getMapView().fitRectToMap(rect.left, rect.right, rect.top, rect.bottom,
-						tileBoxWidthPx, tileBoxHeightPx, 0);
-			} else if (location != null &&
-					!mapActivity.getMapView().getTileBox(tileBoxWidthPx, tileBoxHeightPx, 0).containsLatLon(location)) {
-				boolean animating = mapActivity.getMapView().getAnimatedDraggingThread().isAnimating();
-				mapActivity.getMapView().fitLocationToMap(location.getLatitude(), location.getLongitude(),
-						mapActivity.getMapView().getZoom(), tileBoxWidthPx, tileBoxHeightPx, 0, !animating);
+		WeakReference<TrackDetailsMenuFragment> fragmentRef = findMenuFragment();
+		if (fragmentRef != null) {
+			TrackDetailsMenuFragment f = fragmentRef.get();
+			boolean portrait = AndroidUiHelper.isOrientationPortrait(mapActivity);
+			if (!portrait) {
+				tileBoxWidthPx = tb.getPixWidth() - f.getWidth();
 			} else {
-				mapActivity.refreshMap();
+				tileBoxHeightPx = tb.getPixHeight() - f.getHeight();
 			}
-
+		}
+		if (forceFit) {
+			mapActivity.getMapView().fitRectToMap(rect.left, rect.right, rect.top, rect.bottom,
+					tileBoxWidthPx, tileBoxHeightPx, 0);
+		} else if (location != null &&
+				!mapActivity.getMapView().getTileBox(tileBoxWidthPx, tileBoxHeightPx, 0).containsLatLon(location)) {
+			boolean animating = mapActivity.getMapView().getAnimatedDraggingThread().isAnimating();
+			mapActivity.getMapView().fitLocationToMap(location.getLatitude(), location.getLongitude(),
+					mapActivity.getMapView().getZoom(), tileBoxWidthPx, tileBoxHeightPx, 0, !animating);
+		} else {
+			mapActivity.refreshMap();
 		}
 	}
 
@@ -376,7 +373,7 @@ public class TrackDetailsMenu {
 			return;
 		}
 
-		final LineChart chart = (LineChart) parentView.findViewById(R.id.chart);
+		final LineChart chart = parentView.findViewById(R.id.chart);
 		chart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
 			@Override
 			public void onValueSelected(Entry e, Highlight h) {
@@ -490,8 +487,8 @@ public class TrackDetailsMenu {
 		updateChart(chart);
 
 		View yAxis = parentView.findViewById(R.id.y_axis);
-		ImageView yAxisIcon = (ImageView) parentView.findViewById(R.id.y_axis_icon);
-		TextView yAxisTitle = (TextView) parentView.findViewById(R.id.y_axis_title);
+		ImageView yAxisIcon = parentView.findViewById(R.id.y_axis_icon);
+		TextView yAxisTitle = parentView.findViewById(R.id.y_axis_title);
 		View yAxisArrow = parentView.findViewById(R.id.y_axis_arrow);
 		final List<GPXDataSetType[]> availableTypes = new ArrayList<>();
 		boolean hasSlopeChart = false;
@@ -550,8 +547,8 @@ public class TrackDetailsMenu {
 		}
 
 		View xAxis = parentView.findViewById(R.id.x_axis);
-		ImageView xAxisIcon = (ImageView) parentView.findViewById(R.id.x_axis_icon);
-		TextView xAxisTitle = (TextView) parentView.findViewById(R.id.x_axis_title);
+		ImageView xAxisIcon = parentView.findViewById(R.id.x_axis_icon);
+		TextView xAxisTitle = parentView.findViewById(R.id.x_axis_title);
 		View xAxisArrow = parentView.findViewById(R.id.x_axis_arrow);
 		if (gpxItem.chartAxisType == GPXDataSetAxisType.TIME) {
 			xAxisIcon.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_time));
@@ -651,11 +648,11 @@ public class TrackDetailsMenu {
 			return gpx;
 		}
 
-		public void setXAxisPoints(List<WptPt> xAxisPoints) {
+		void setXAxisPoints(List<WptPt> xAxisPoints) {
 			this.xAxisPoints = xAxisPoints;
 		}
 
-		public void setHighlightedPoint(LatLon highlightedPoint) {
+		void setHighlightedPoint(LatLon highlightedPoint) {
 			this.highlightedPoint = highlightedPoint;
 		}
 
@@ -663,7 +660,7 @@ public class TrackDetailsMenu {
 			this.segmentColor = segmentColor;
 		}
 
-		public void setGpx(GPXFile gpx) {
+		void setGpx(GPXFile gpx) {
 			this.gpx = gpx;
 		}
 	}

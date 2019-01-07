@@ -11,7 +11,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.view.ActionMode;
-import android.support.v7.widget.PopupMenu;
+import android.widget.PopupMenu;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.TypedValue;

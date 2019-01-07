@@ -1,6 +1,7 @@
 package net.osmand.plus.myplaces;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,16 +10,12 @@ import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.view.ActionMode;
-import android.support.v7.widget.PopupMenu;
-import android.support.v7.widget.SearchView;
+import android.widget.SearchView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -39,10 +36,10 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import net.osmand.AndroidUtils;
 import net.osmand.IndexConstants;
 import net.osmand.data.PointDescription;
 import net.osmand.plus.ContextMenuAdapter;
@@ -405,11 +402,10 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		menu.clear();
 		MenuItem mi = createMenuItem(menu, SEARCH_ID, R.string.search_poi_filter, R.drawable.ic_action_search_dark,
-				R.drawable.ic_action_search_dark, MenuItemCompat.SHOW_AS_ACTION_ALWAYS
-						| MenuItemCompat.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+				R.drawable.ic_action_search_dark, MenuItem.SHOW_AS_ACTION_ALWAYS
+						| MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
 		SearchView searchView = new SearchView(getActivity());
-		FavoritesActivity.updateSearchView(getActivity(), searchView);
-		MenuItemCompat.setActionView(mi, searchView);
+		mi.setActionView(searchView);
 		searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
 			@Override
@@ -424,7 +420,7 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 				return true;
 			}
 		});
-		MenuItemCompat.setOnActionExpandListener(mi, new MenuItemCompat.OnActionExpandListener() {
+		mi.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
 			@Override
 			public boolean onMenuItemActionExpand(MenuItem item) {
 				return true;
@@ -488,7 +484,7 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 			final MenuItem item;
 			ContextMenuItem contextMenuItem = optionsMenuAdapter.getItem(j);
 			item = menu.add(0, contextMenuItem.getTitleId(), j + 1, contextMenuItem.getTitle());
-			MenuItemCompat.setShowAsAction(item, MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+			item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 			if (AndroidUiHelper.isOrientationPortrait(getActivity())) {
 				item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
 					@Override
@@ -534,12 +530,12 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 	}
 
 	public void showProgressBar() {
-		((FavoritesActivity) getActivity()).setSupportProgressBarIndeterminateVisibility(true);
+		((FavoritesActivity) getActivity()).setProgressBarIndeterminateVisibility(true);
 	}
 
 	public void hideProgressBar() {
 		if (getActivity() != null) {
-			((FavoritesActivity) getActivity()).setSupportProgressBarIndeterminateVisibility(false);
+			((FavoritesActivity) getActivity()).setProgressBarIndeterminateVisibility(false);
 		}
 	}
 
@@ -576,8 +572,8 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 				updateSelectionMode(mode);
 				MenuItem it = menu.add(R.string.shared_string_show_on_map);
 				it.setIcon(R.drawable.ic_action_done);
-				MenuItemCompat.setShowAsAction(it, MenuItemCompat.SHOW_AS_ACTION_IF_ROOM
-						| MenuItemCompat.SHOW_AS_ACTION_WITH_TEXT);
+				it.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM
+						| MenuItem.SHOW_AS_ACTION_WITH_TEXT);
 				updateCurrentTrack();
 				return true;
 			}
@@ -641,8 +637,8 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 				if (actionIconId != 0) {
 					it.setIcon(actionIconId);
 				}
-				MenuItemCompat.setShowAsAction(it, MenuItemCompat.SHOW_AS_ACTION_IF_ROOM
-						| MenuItemCompat.SHOW_AS_ACTION_WITH_TEXT);
+				it.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM
+						| MenuItem.SHOW_AS_ACTION_WITH_TEXT);
 				return true;
 			}
 
@@ -773,9 +769,7 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 							}
 						}
 					});
-					int leftPadding = AndroidUtils.dpToPx(a, 24f);
-					int topPadding = AndroidUtils.dpToPx(a, 4f);
-					b.setView(editText, leftPadding, topPadding, leftPadding, topPadding);
+					b.setView(editText);
 					// Behaviour will be overwritten later;
 					b.setPositiveButton(R.string.shared_string_ok, null);
 					b.setNegativeButton(R.string.shared_string_cancel, null);

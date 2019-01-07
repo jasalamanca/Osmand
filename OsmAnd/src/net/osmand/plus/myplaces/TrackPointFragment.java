@@ -11,10 +11,9 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.support.v7.view.ActionMode;
-import android.support.v7.widget.PopupMenu;
+import android.widget.PopupMenu;
 import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -246,7 +245,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 	}
 
 	private void openMenu() {
-		menuFab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_action_remove_dark));
+		menuFab.setImageDrawable(getContext().getDrawable(R.drawable.ic_action_remove_dark));
 		waypointFab.setVisibility(View.VISIBLE);
 		waypointTextLayout.setVisibility(View.VISIBLE);
 		routePointFab.setVisibility(View.VISIBLE);
@@ -257,7 +256,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 	}
 
 	private void closeMenu() {
-		menuFab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_action_plus));
+		menuFab.setImageDrawable(getContext().getDrawable(R.drawable.ic_action_plus));
 		waypointFab.setVisibility(View.GONE);
 		waypointTextLayout.setVisibility(View.GONE);
 		routePointFab.setVisibility(View.GONE);
@@ -398,10 +397,9 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 		menu.clear();
 		getTrackActivity().getClearToolbar(false);
 		MenuItem mi = createMenuItem(menu, SEARCH_ID, R.string.search_poi_filter, R.drawable.ic_action_search_dark,
-				R.drawable.ic_action_search_dark, MenuItemCompat.SHOW_AS_ACTION_ALWAYS | MenuItemCompat.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+				R.drawable.ic_action_search_dark, MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
 		searchView = new SearchView(getActivity());
-		FavoritesActivity.updateSearchView(getActivity(), searchView);
-		MenuItemCompat.setActionView(mi, searchView);
+		mi.setActionView(searchView);
 		searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 			@Override
 			public boolean onQueryTextSubmit(String query) {
@@ -415,7 +413,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 				return true;
 			}
 		});
-		MenuItemCompat.setOnActionExpandListener(mi, new MenuItemCompat.OnActionExpandListener() {
+		mi.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
 			@Override
 			public boolean onMenuItemActionExpand(MenuItem item) {
 				return true;
@@ -436,20 +434,20 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 			}
 		});
 
-		if (!MenuItemCompat.isActionViewExpanded(mi)) {
+		if (!mi.isActionViewExpanded()) {
 			createMenuItem(menu, SHARE_ID, R.string.shared_string_share, R.drawable.ic_action_gshare_dark,
-					R.drawable.ic_action_gshare_dark, MenuItemCompat.SHOW_AS_ACTION_NEVER);
+					R.drawable.ic_action_gshare_dark, MenuItem.SHOW_AS_ACTION_NEVER);
 			if (getSettings().USE_MAP_MARKERS.get()) {
 				createMenuItem(menu, SELECT_MAP_MARKERS_ID, R.string.shared_string_add_to_map_markers, R.drawable.ic_action_flag_dark,
-						R.drawable.ic_action_flag_dark, MenuItemCompat.SHOW_AS_ACTION_NEVER);
+						R.drawable.ic_action_flag_dark, MenuItem.SHOW_AS_ACTION_NEVER);
 			} else {
 				createMenuItem(menu, SELECT_MAP_MARKERS_ID, R.string.select_destination_and_intermediate_points, R.drawable.ic_action_intermediate,
-						R.drawable.ic_action_intermediate, MenuItemCompat.SHOW_AS_ACTION_NEVER);
+						R.drawable.ic_action_intermediate, MenuItem.SHOW_AS_ACTION_NEVER);
 			}
 			createMenuItem(menu, SELECT_FAVORITES_ID, R.string.shared_string_add_to_favorites, R.drawable.ic_action_fav_dark,
-					R.drawable.ic_action_fav_dark, MenuItemCompat.SHOW_AS_ACTION_NEVER);
+					R.drawable.ic_action_fav_dark, MenuItem.SHOW_AS_ACTION_NEVER);
 			createMenuItem(menu, DELETE_ID, R.string.shared_string_delete, R.drawable.ic_action_delete_dark,
-					R.drawable.ic_action_delete_dark, MenuItemCompat.SHOW_AS_ACTION_NEVER);
+					R.drawable.ic_action_delete_dark, MenuItem.SHOW_AS_ACTION_NEVER);
 		}
 	}
 
@@ -480,7 +478,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 				enableSelectionMode(true);
 				createMenuItem(menu, DELETE_ACTION_ID, R.string.shared_string_delete,
 						R.drawable.ic_action_delete_dark, R.drawable.ic_action_delete_dark,
-						MenuItemCompat.SHOW_AS_ACTION_IF_ROOM);
+						MenuItem.SHOW_AS_ACTION_IF_ROOM);
 				selectedItems.clear();
 				selectedGroups.clear();
 				adapter.notifyDataSetInvalidated();
@@ -598,7 +596,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 					enableSelectionMode(true);
 					createMenuItem(menu, SELECT_MAP_MARKERS_ACTION_MODE_ID, R.string.select_destination_and_intermediate_points,
 							R.drawable.ic_action_intermediate, R.drawable.ic_action_intermediate,
-							MenuItemCompat.SHOW_AS_ACTION_IF_ROOM);
+							MenuItem.SHOW_AS_ACTION_IF_ROOM);
 					selectedItems.clear();
 					selectedGroups.clear();
 					adapter.notifyDataSetInvalidated();
@@ -712,7 +710,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 				enableSelectionMode(true);
 				createMenuItem(menu, SELECT_FAVORITES_ACTION_MODE_ID, R.string.shared_string_add_to_favorites,
 						R.drawable.ic_action_fav_dark, R.drawable.ic_action_fav_dark,
-						MenuItemCompat.SHOW_AS_ACTION_IF_ROOM);
+						MenuItem.SHOW_AS_ACTION_IF_ROOM);
 				selectedItems.clear();
 				selectedGroups.clear();
 				adapter.notifyDataSetInvalidated();

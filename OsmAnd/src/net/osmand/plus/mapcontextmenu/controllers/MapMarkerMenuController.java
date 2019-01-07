@@ -111,7 +111,7 @@ public class MapMarkerMenuController extends MenuController {
 		return mapMarker;
 	}
 
-	public MapMarker getMapMarker() {
+	private MapMarker getMapMarker() {
 		return mapMarker;
 	}
 

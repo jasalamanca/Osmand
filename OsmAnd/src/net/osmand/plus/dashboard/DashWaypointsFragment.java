@@ -3,8 +3,8 @@ package net.osmand.plus.dashboard;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.PopupMenu;
+import android.app.AlertDialog;
+import android.widget.PopupMenu;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,12 +33,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- */
 public class DashWaypointsFragment extends DashLocationFragment {
 	public static final String TAG = "DASH_WAYPOINTS_FRAGMENT";
-	public static final int TITLE_ID = R.string.waypoints;
-	List<TargetPoint> points = new ArrayList<TargetPoint>();
+	private static final int TITLE_ID = R.string.waypoints;
 	private static boolean SHOW_ALL;
 	public static final DashFragmentData.ShouldShowFunction SHOULD_SHOW_FUNCTION =
 			new DashboardOnMap.DefaultShouldShow() {
@@ -61,7 +58,7 @@ public class DashWaypointsFragment extends DashLocationFragment {
 		setupView();
 	}
 	
-	public void setupView() {
+	private void setupView() {
 		if(getMyApplication().getWaypointHelper().isRouteCalculated()) {
 			setupWaypoints();
 		} else {
@@ -81,17 +78,17 @@ public class DashWaypointsFragment extends DashLocationFragment {
 		}		
 		((TextView) mainView.findViewById(R.id.fav_text)).setText(getString(R.string.waypoints));
 		((Button) mainView.findViewById(R.id.show_all)).setText(getString(R.string.shared_string_show_all));
-		((Button) mainView.findViewById(R.id.show_all)).setVisibility(View.VISIBLE);
-		((Button) mainView.findViewById(R.id.show_all)).setOnClickListener(new View.OnClickListener() {
+		mainView.findViewById(R.id.show_all).setVisibility(View.VISIBLE);
+		mainView.findViewById(R.id.show_all).setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				dashboard.setDashboardVisibility(true, DashboardType.WAYPOINTS, AndroidUtils.getCenterViewCoordinates(v));
 			}
 		});
-		LinearLayout favorites = (LinearLayout) mainView.findViewById(R.id.items);
+		LinearLayout favorites = mainView.findViewById(R.id.items);
 		favorites.removeAllViews();
-		List<DashLocationView> distances = new ArrayList<DashLocationFragment.DashLocationView>();
+		List<DashLocationView> distances = new ArrayList<>();
 		for(int i = 0; i < 3 && i < allPoints.size(); i++) {
 			LocationPointWrapper ps = allPoints.get(i);
 			View dv = getActivity().getLayoutInflater().inflate(R.layout.divider, null);
@@ -104,7 +101,7 @@ public class DashWaypointsFragment extends DashLocationFragment {
 		this.distances = distances;
 	}
 
-	public void setupTargets() {
+	private void setupTargets() {
 		View mainView = getView();
 		final TargetPointsHelper helper = getMyApplication().getTargetPointsHelper();
 		if (helper.getPointToNavigate() == null) {
@@ -113,30 +110,30 @@ public class DashWaypointsFragment extends DashLocationFragment {
 		} else {
 			(mainView.findViewById(R.id.main_fav)).setVisibility(View.VISIBLE);
 		}
-		points = SHOW_ALL ? helper.getIntermediatePointsWithTarget() :
-			Collections.singletonList(helper.getPointToNavigate());
+		List<TargetPoint> points = SHOW_ALL ? helper.getIntermediatePointsWithTarget() :
+				Collections.singletonList(helper.getPointToNavigate());
 		((Button) mainView.findViewById(R.id.show_all)).setText(SHOW_ALL? getString(R.string.shared_string_collapse) : 
 			getString(R.string.shared_string_show_all));
-		((Button) mainView.findViewById(R.id.show_all)).setOnClickListener(new View.OnClickListener() {
+		mainView.findViewById(R.id.show_all).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
 				SHOW_ALL = !SHOW_ALL;
 				setupView();
 			}
 		});
-		((Button) mainView.findViewById(R.id.show_all)).setVisibility(
+		mainView.findViewById(R.id.show_all).setVisibility(
 				helper.getIntermediatePoints().size() == 0 ? View.INVISIBLE : View.VISIBLE);
 		((TextView) mainView.findViewById(R.id.fav_text)).setText(getString(R.string.waypoints) + " (" + 
 				helper.getIntermediatePointsWithTarget().size()+")");
-		LinearLayout favorites = (LinearLayout) mainView.findViewById(R.id.items);
+		LinearLayout favorites = mainView.findViewById(R.id.items);
 		favorites.removeAllViews();
-		List<DashLocationView> distances = new ArrayList<DashLocationFragment.DashLocationView>();
+		List<DashLocationView> distances = new ArrayList<>();
 		for (final TargetPoint point : points) {
 			LayoutInflater inflater = getActivity().getLayoutInflater();
 			View view = inflater.inflate(R.layout.favorites_list_item, null, false);
-			TextView name = (TextView) view.findViewById(R.id.favourite_label);
-			TextView label = (TextView) view.findViewById(R.id.distance);
-			ImageView direction = (ImageView) view.findViewById(R.id.direction);
+			TextView name = view.findViewById(R.id.favourite_label);
+			TextView label = view.findViewById(R.id.distance);
+			ImageView direction = view.findViewById(R.id.direction);
 			direction.setVisibility(View.VISIBLE);
 			label.setVisibility(View.VISIBLE);
 			view.findViewById(R.id.divider).setVisibility(View.VISIBLE);
@@ -157,7 +154,7 @@ public class DashWaypointsFragment extends DashLocationFragment {
 			distances.add(dv);
 
 			name.setText(PointDescription.getSimpleName(point, getActivity()));
-			ImageButton options =  ((ImageButton)view.findViewById(R.id.options));
+			ImageButton options = view.findViewById(R.id.options);
 			options.setVisibility(View.VISIBLE);
 			final boolean optionsVisible = (SHOW_ALL && getMyApplication().getTargetPointsHelper().getIntermediatePoints().size() > 0); 
 			
@@ -175,7 +172,7 @@ public class DashWaypointsFragment extends DashLocationFragment {
 				}
 			});
 			
-			ImageButton navigate =  ((ImageButton)view.findViewById(R.id.navigate_to));
+			ImageButton navigate = view.findViewById(R.id.navigate_to);
 			navigate.setImageDrawable(getMyApplication().getIconsCache().
 					getThemedIcon(R.drawable.ic_action_gdirections_dark));
 			navigate.setVisibility(target? View.VISIBLE : View.GONE);
@@ -200,7 +197,7 @@ public class DashWaypointsFragment extends DashLocationFragment {
 		this.distances = distances;
 	}
 	
-	protected void deletePointConfirm(final TargetPoint point, View view) {
+	private void deletePointConfirm(final TargetPoint point, View view) {
 		final boolean target = point == getMyApplication().getTargetPointsHelper().getPointToNavigate();
 		AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
 		// Stop the navigation
@@ -221,20 +218,6 @@ public class DashWaypointsFragment extends DashLocationFragment {
 		final PopupMenu optionsMenu = new PopupMenu(getActivity(), view);
 		DirectionsDialogs.setupPopUpMenuIcon(optionsMenu);
 		MenuItem item; 
-//		item = optionsMenu.getMenu().add(
-//				R.string.shared_string_add_to_favorites).setIcon(getMyApplication().getIconsCache().
-//						getIcon(R.drawable.ic_action_fav_dark));
-//		item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-//			@Override
-//			public boolean onMenuItemClick(MenuItem item) {
-//				Bundle args = new Bundle();
-//				Dialog dlg = FavoriteDialogs.createAddFavouriteDialog(getActivity(), args);
-//				dlg.show();
-//				FavoriteDialogs.prepareAddFavouriteDialog(getActivity(), dlg, args, model.getLatitude(), model.getLongitude(),
-//						model.getOriginalPointDescription());
-//				return true;
-//			}
-//		});
 		final boolean target = point == getMyApplication().getTargetPointsHelper().getPointToNavigate();
 		if(SHOW_ALL && getMyApplication().getTargetPointsHelper().getIntermediatePoints().size() > 0) {
 			final List<TargetPoint> allTargets = getMyApplication().getTargetPointsHelper().getIntermediatePointsWithTarget();

@@ -2,6 +2,7 @@ package net.osmand.plus.mapmarkers;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,7 +43,7 @@ public class MapMarkerSelectionFragment extends BaseOsmAndDialogFragment {
 
 	@Nullable
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 		Bundle bundle = null;
 		if (getArguments() != null) {
@@ -82,7 +83,7 @@ public class MapMarkerSelectionFragment extends BaseOsmAndDialogFragment {
 		nightMode = !app.getSettings().isLightContent();
 
 		View view = inflater.inflate(R.layout.map_marker_selection_fragment, container, false);
-		ImageButton closeButton = (ImageButton) view.findViewById(R.id.closeButton);
+		ImageButton closeButton = view.findViewById(R.id.closeButton);
 		closeButton.setImageDrawable(getMyApplication().getIconsCache().getIcon(R.drawable.ic_action_mode_back));
 		closeButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -91,7 +92,7 @@ public class MapMarkerSelectionFragment extends BaseOsmAndDialogFragment {
 			}
 		});
 
-		ListView listView = (ListView) view.findViewById(android.R.id.list);
+		ListView listView = view.findViewById(android.R.id.list);
 		final ArrayAdapter<MapMarker> adapter = new MapMarkersListAdapter();
 		List<MapMarker> markers = getMyApplication().getMapMarkersHelper().getMapMarkers();
 		if (markers.size() > 0) {
@@ -120,12 +121,13 @@ public class MapMarkerSelectionFragment extends BaseOsmAndDialogFragment {
 
 	private class MapMarkersListAdapter extends ArrayAdapter<MapMarker> {
 
-		public MapMarkersListAdapter() {
+		MapMarkersListAdapter() {
 			super(getMapActivity(), R.layout.map_marker_item);
 		}
 
+		@NonNull
 		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
+		public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 			MapMarker marker = getItem(position);
 			if (convertView == null) {
 				convertView = getMapActivity().getLayoutInflater().inflate(R.layout.map_marker_item, null);
@@ -148,7 +150,7 @@ public class MapMarkerSelectionFragment extends BaseOsmAndDialogFragment {
 		return fragment;
 	}
 
-	public MapActivity getMapActivity() {
+	private MapActivity getMapActivity() {
 		Context ctx = getContext();
 		if (ctx instanceof MapActivity) {
 			return (MapActivity) ctx;
