@@ -183,7 +183,6 @@ public class MapActivityLayers {
 		app.getSettings().MAP_TRANSPARENCY.addListener(transparencyListener);
 
 		OsmandPlugin.createLayers(mapView, activity);
-		app.getAppCustomization().createLayers(mapView, activity);
 		app.getAidlApi().registerMapLayers(activity);
 	}
 

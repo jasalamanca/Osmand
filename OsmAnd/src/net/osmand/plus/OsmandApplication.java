@@ -804,7 +804,6 @@ public class OsmandApplication extends MultiDexApplication {
 		startService(serviceIntent);
 	}
 
-
 	public String getLangTranslation(String l) {
 		try {
 			java.lang.reflect.Field f = R.string.class.getField("lang_"+l);

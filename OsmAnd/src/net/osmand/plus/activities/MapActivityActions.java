@@ -819,7 +819,6 @@ public class MapActivityActions implements DialogProvider {
 		divider.setPosition(dividerItemIndex >= 0 ? dividerItemIndex : 8);
 		optionsMenuHelper.addItem(divider.createItem());
 
-		getMyApplication().getAppCustomization().prepareOptionsMenu(mapActivity, optionsMenuHelper);
 		return optionsMenuHelper;
 	}
 
@@ -901,7 +900,6 @@ public class MapActivityActions implements DialogProvider {
 		menuItemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				mapActivity.dismissCardDialog();
 				ContextMenuItem item = contextMenuAdapter.getItem(position);
 				ContextMenuAdapter.ItemClickListener click = item.getItemClickListener();
 				if (click != null && click.onContextMenuClick(simpleListAdapter, item.getTitleId(),

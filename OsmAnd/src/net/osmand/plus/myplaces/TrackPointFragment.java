@@ -77,25 +77,24 @@ import java.util.Set;
 
 public class TrackPointFragment extends OsmandExpandableListFragment {
 
-	public static final String ARG_TO_FILTER_SHORT_TRACKS = "ARG_TO_FILTER_SHORT_TRACKS";
+	private static final String ARG_TO_FILTER_SHORT_TRACKS = "ARG_TO_FILTER_SHORT_TRACKS";
 
-	public static final int SEARCH_ID = -1;
-	public static final int DELETE_ID = 2;
-	public static final int DELETE_ACTION_ID = 3;
-	public static final int SHARE_ID = 4;
-	public static final int SELECT_MAP_MARKERS_ID = 5;
-	public static final int SELECT_MAP_MARKERS_ACTION_MODE_ID = 6;
-	public static final int SELECT_FAVORITES_ID = 7;
-	public static final int SELECT_FAVORITES_ACTION_MODE_ID = 8;
+	private static final int SEARCH_ID = -1;
+	private static final int DELETE_ID = 2;
+	private static final int DELETE_ACTION_ID = 3;
+	private static final int SHARE_ID = 4;
+	private static final int SELECT_MAP_MARKERS_ID = 5;
+	private static final int SELECT_MAP_MARKERS_ACTION_MODE_ID = 6;
+	private static final int SELECT_FAVORITES_ID = 7;
+	private static final int SELECT_FAVORITES_ACTION_MODE_ID = 8;
 
 	private OsmandApplication app;
 	final private PointGPXAdapter adapter = new PointGPXAdapter();
-	private GpxDisplayItemType[] filterTypes = {GpxDisplayItemType.TRACK_POINTS, GpxDisplayItemType.TRACK_ROUTE_POINTS};
+	private final GpxDisplayItemType[] filterTypes = {GpxDisplayItemType.TRACK_POINTS, GpxDisplayItemType.TRACK_ROUTE_POINTS};
 	private boolean selectionMode = false;
-	private LinkedHashMap<GpxDisplayItemType, Set<GpxDisplayItem>> selectedItems = new LinkedHashMap<>();
-	private Set<Integer> selectedGroups = new LinkedHashSet<>();
+	private final LinkedHashMap<GpxDisplayItemType, Set<GpxDisplayItem>> selectedItems = new LinkedHashMap<>();
+	private final Set<Integer> selectedGroups = new LinkedHashSet<>();
 	private ActionMode actionMode;
-	private SearchView searchView;
 	private boolean menuOpened = false;
 	private FloatingActionButton menuFab;
 	private FloatingActionButton waypointFab;
@@ -144,7 +143,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 		overlayView.setVisibility(View.VISIBLE);
 	}
 
-	private View.OnClickListener onFabClickListener = new View.OnClickListener() {
+	private final View.OnClickListener onFabClickListener = new View.OnClickListener() {
 		@Override
 		public void onClick(View view) {
 			switch (view.getId()) {
@@ -181,26 +180,26 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		mainView = inflater.inflate(R.layout.track_points_tree, container, false);
-		ExpandableListView listView = (ExpandableListView) mainView.findViewById(android.R.id.list);
+		ExpandableListView listView = mainView.findViewById(android.R.id.list);
 		setHasOptionsMenu(true);
 
 		overlayView = mainView.findViewById(R.id.overlay_view);
 		overlayView.setOnClickListener(onFabClickListener);
 
-		menuFab = (FloatingActionButton) mainView.findViewById(R.id.menu_fab);
+		menuFab = mainView.findViewById(R.id.menu_fab);
 		menuFab.setOnClickListener(onFabClickListener);
 
-		waypointFab = (FloatingActionButton) mainView.findViewById(R.id.waypoint_fab);
+		waypointFab = mainView.findViewById(R.id.waypoint_fab);
 		waypointFab.setOnClickListener(onFabClickListener);
 		waypointTextLayout = mainView.findViewById(R.id.waypoint_text_layout);
 		waypointTextLayout.setOnClickListener(onFabClickListener);
 
-		routePointFab = (FloatingActionButton) mainView.findViewById(R.id.route_fab);
+		routePointFab = mainView.findViewById(R.id.route_fab);
 		routePointFab.setOnClickListener(onFabClickListener);
 		routePointTextLayout = mainView.findViewById(R.id.route_text_layout);
 		routePointTextLayout.setOnClickListener(onFabClickListener);
 
-		lineFab = (FloatingActionButton) mainView.findViewById(R.id.line_fab);
+		lineFab = mainView.findViewById(R.id.line_fab);
 		lineFab.setOnClickListener(onFabClickListener);
 		lineTextLayout = mainView.findViewById(R.id.line_text_layout);
 		lineTextLayout.setOnClickListener(onFabClickListener);
@@ -245,7 +244,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 	}
 
 	private void openMenu() {
-		menuFab.setImageDrawable(getContext().getDrawable(R.drawable.ic_action_remove_dark));
+		menuFab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_action_remove_dark));
 		waypointFab.setVisibility(View.VISIBLE);
 		waypointTextLayout.setVisibility(View.VISIBLE);
 		routePointFab.setVisibility(View.VISIBLE);
@@ -256,7 +255,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 	}
 
 	private void closeMenu() {
-		menuFab.setImageDrawable(getContext().getDrawable(R.drawable.ic_action_plus));
+		menuFab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_action_plus));
 		waypointFab.setVisibility(View.GONE);
 		waypointTextLayout.setVisibility(View.GONE);
 		routePointFab.setVisibility(View.GONE);
@@ -266,7 +265,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 		menuOpened = false;
 	}
 
-	public TrackActivity getTrackActivity() {
+	private TrackActivity getTrackActivity() {
 		return (TrackActivity) getActivity();
 	}
 
@@ -341,7 +340,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 		expandAllGroups();
 	}
 
-	public void setContent(ExpandableListView listView) {
+	private void setContent(ExpandableListView listView) {
 		adapter.synchronizeGroups(filterGroups());
 		setupListView(listView);
 		if (listView.getAdapter() == null) {
@@ -349,13 +348,15 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 		}
 	}
 
-	protected List<GpxDisplayItem> flatten(List<GpxDisplayGroup> groups) {
-		ArrayList<GpxDisplayItem> list = new ArrayList<>();
-		for (GpxDisplayGroup g : groups) {
-			list.addAll(g.getModifiableList());
-		}
-		return list;
-	}
+// --Commented out by Inspection START (7/01/19 20:05):
+//	protected List<GpxDisplayItem> flatten(List<GpxDisplayGroup> groups) {
+//		ArrayList<GpxDisplayItem> list = new ArrayList<>();
+//		for (GpxDisplayGroup g : groups) {
+//			list.addAll(g.getModifiableList());
+//		}
+//		return list;
+//	}
+// --Commented out by Inspection STOP (7/01/19 20:05)
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -398,7 +399,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 		getTrackActivity().getClearToolbar(false);
 		MenuItem mi = createMenuItem(menu, SEARCH_ID, R.string.search_poi_filter, R.drawable.ic_action_search_dark,
 				R.drawable.ic_action_search_dark, MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
-		searchView = new SearchView(getActivity());
+		SearchView searchView = new SearchView(getActivity());
 		mi.setActionView(searchView);
 		searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 			@Override
@@ -451,17 +452,17 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 		}
 	}
 
-	public void showProgressBar() {
+	private void showProgressBar() {
 		OsmandActionBarActivity activity = getActionBarActivity();
 		if (activity != null) {
-			activity.setSupportProgressBarIndeterminateVisibility(true);
+			activity.setProgressBarIndeterminateVisibility(true);
 		}
 	}
 
-	public void hideProgressBar() {
+	private void hideProgressBar() {
 		OsmandActionBarActivity activity = getActionBarActivity();
 		if (activity != null) {
-			activity.setSupportProgressBarIndeterminateVisibility(false);
+			activity.setProgressBarIndeterminateVisibility(false);
 		}
 	}
 
@@ -658,7 +659,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 			}
 		});
 		View snackBarView = snackbar.getView();
-		TextView tv = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_action);
+		TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
 		tv.setTextColor(ContextCompat.getColor(getContext(), R.color.color_dialog_buttons_dark));
 		snackbar.show();
 	}
@@ -792,7 +793,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 	@Override
 	public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 		if (selectionMode) {
-			CheckBox ch = (CheckBox) v.findViewById(R.id.toggle_item);
+			CheckBox ch = v.findViewById(R.id.toggle_item);
 			GpxDisplayItem item = adapter.getChild(groupPosition, childPosition);
 			ch.setChecked(!ch.isChecked());
 			if (ch.isChecked()) {
@@ -833,12 +834,12 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 
 	class PointGPXAdapter extends OsmandBaseExpandableListAdapter implements Filterable {
 
-		Map<GpxDisplayGroup, List<GpxDisplayItem>> itemGroups = new LinkedHashMap<>();
-		List<GpxDisplayGroup> groups = new ArrayList<>();
+		final Map<GpxDisplayGroup, List<GpxDisplayItem>> itemGroups = new LinkedHashMap<>();
+		final List<GpxDisplayGroup> groups = new ArrayList<>();
 		Filter myFilter;
 		private Set<?> filter;
 
-		public void synchronizeGroups(List<GpxDisplayGroup> gs) {
+		void synchronizeGroups(List<GpxDisplayGroup> gs) {
 			itemGroups.clear();
 			groups.clear();
 			Set<?> flt = filter;
@@ -927,8 +928,8 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 			}
 			row.setOnClickListener(null);
 			row.findViewById(R.id.group_divider).setVisibility(groupPosition == 0 ? View.GONE : View.VISIBLE);
-			TextView label = (TextView) row.findViewById(R.id.category_name);
-			TextView description = (TextView) row.findViewById(R.id.category_desc);
+			TextView label = row.findViewById(R.id.category_name);
+			TextView description = row.findViewById(R.id.category_desc);
 			if (group.getType() == GpxDisplayItemType.TRACK_POINTS) {
 				label.setText(getString(R.string.waypoints));
 				description.setText(getString(R.string.track_points_category_name));
@@ -938,7 +939,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 			}
 
 			if (selectionMode) {
-				final CheckBox ch = (CheckBox) row.findViewById(R.id.toggle_item);
+				final CheckBox ch = row.findViewById(R.id.toggle_item);
 				ch.setVisibility(View.VISIBLE);
 				ch.setChecked(selectedGroups.contains(groupPosition));
 
@@ -966,7 +967,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 					}
 				});
 			} else {
-				final CheckBox ch = (CheckBox) row.findViewById(R.id.toggle_item);
+				final CheckBox ch = row.findViewById(R.id.toggle_item);
 				ch.setVisibility(View.GONE);
 			}
 			row.findViewById(R.id.category_icon).setVisibility(View.GONE);
@@ -991,13 +992,13 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 				row.findViewById(R.id.list_divider).setVisibility(View.VISIBLE);
 			}
 
-			ImageView icon = (ImageView) row.findViewById(R.id.icon);
-			TextView title = (TextView) row.findViewById(R.id.label);
-			TextView description = (TextView) row.findViewById(R.id.description);
+			ImageView icon = row.findViewById(R.id.icon);
+			TextView title = row.findViewById(R.id.label);
+			TextView description = row.findViewById(R.id.description);
 
 			final GpxDisplayItem gpxItem = getChild(groupPosition, childPosition);
 			boolean isWpt = gpxItem.group.getType() == GpxDisplayItemType.TRACK_POINTS;
-			ImageView options = (ImageView) row.findViewById(R.id.options);
+			ImageView options = row.findViewById(R.id.options);
 			if (isWpt) {
 				options.setFocusable(false);
 				options.setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(
@@ -1053,7 +1054,7 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 				description.setVisibility(View.GONE);
 			}
 
-			final CheckBox ch = (CheckBox) row.findViewById(R.id.toggle_item);
+			final CheckBox ch = row.findViewById(R.id.toggle_item);
 			if (selectionMode) {
 				ch.setVisibility(View.VISIBLE);
 				ch.setChecked(selectedItems.get(gpxItem.group.getType()) != null && selectedItems.get(gpxItem.group.getType()).contains(gpxItem));
@@ -1095,14 +1096,14 @@ public class TrackPointFragment extends OsmandExpandableListFragment {
 			return myFilter;
 		}
 
-		public void setFilterResults(Set<?> values) {
+		void setFilterResults(Set<?> values) {
 			this.filter = values;
 		}
 	}
 
-	public class PointsFilter extends Filter {
+	class PointsFilter extends Filter {
 
-		public PointsFilter() {
+		PointsFilter() {
 		}
 
 		@Override

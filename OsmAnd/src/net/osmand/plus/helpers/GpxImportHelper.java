@@ -14,7 +14,7 @@ import android.provider.OpenableColumns;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -59,8 +59,8 @@ import java.util.zip.ZipInputStream;
  */
 public class GpxImportHelper {
 
-	public static final String KML_SUFFIX = ".kml";
-	public static final String KMZ_SUFFIX = ".kmz";
+	private static final String KML_SUFFIX = ".kml";
+	private static final String KMZ_SUFFIX = ".kmz";
 	public static final String GPX_SUFFIX = ".gpx";
 	private final AppCompatActivity activity;
 	private final OsmandApplication app;
@@ -600,7 +600,7 @@ public class GpxImportHelper {
 	 * @param child  the suspected child directory.
 	 * @return true if the child is a subdirectory of the parent directory.
 	 */
-	public boolean isSubDirectory(File parent, File child) {
+	private boolean isSubDirectory(File parent, File child) {
 		try {
 			parent = parent.getCanonicalFile();
 			child = child.getCanonicalFile();
@@ -629,23 +629,23 @@ public class GpxImportHelper {
 		private boolean save;
 		private boolean useImportDir;
 
-		public void setGpxImportHelper(GpxImportHelper gpxImportHelper) {
+		void setGpxImportHelper(GpxImportHelper gpxImportHelper) {
 			this.gpxImportHelper = gpxImportHelper;
 		}
 
-		public void setGpxFile(GPXFile gpxFile) {
+		void setGpxFile(GPXFile gpxFile) {
 			this.gpxFile = gpxFile;
 		}
 
-		public void setFileName(String fileName) {
+		void setFileName(String fileName) {
 			this.fileName = fileName;
 		}
 
-		public void setSave(boolean save) {
+		void setSave(boolean save) {
 			this.save = save;
 		}
 
-		public void setUseImportDir(boolean useImportDir) {
+		void setUseImportDir(boolean useImportDir) {
 			this.useImportDir = useImportDir;
 		}
 

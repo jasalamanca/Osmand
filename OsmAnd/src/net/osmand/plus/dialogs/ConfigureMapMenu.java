@@ -3,7 +3,6 @@ package net.osmand.plus.dialogs;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
-import android.content.Intent;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
@@ -40,7 +39,6 @@ import net.osmand.plus.OsmandSettings.ListStringPreference;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.activities.MapActivityLayers;
-import net.osmand.plus.activities.PluginActivity;
 import net.osmand.plus.activities.SettingsActivity;
 import net.osmand.plus.poi.PoiFiltersHelper;
 import net.osmand.plus.render.RendererRegistry;
@@ -454,7 +452,6 @@ public class ConfigureMapMenu {
 				.setListener(l).createItem());
 
 		OsmandPlugin.registerLayerContextMenu(activity.getMapView(), adapter, activity);
-		app.getAppCustomization().prepareLayerContextMenu(activity, adapter);
 	}
 
 	public static void refreshMapComplete(final MapActivity activity) {

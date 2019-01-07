@@ -11,11 +11,9 @@ import net.osmand.plus.activities.SettingsActivity;
 import net.osmand.plus.activities.TrackActivity;
 import net.osmand.plus.activities.search.SearchActivity;
 import net.osmand.plus.download.DownloadActivity;
-import net.osmand.plus.download.DownloadActivityType;
 import net.osmand.plus.helpers.WaypointHelper;
 import net.osmand.plus.myplaces.FavoritesActivity;
 import net.osmand.plus.routing.RouteCalculationResult;
-import net.osmand.plus.views.OsmandMapTileView;
 
 import java.io.File;
 import java.util.Collections;
@@ -24,8 +22,8 @@ import java.util.Map;
 
 public class OsmAndAppCustomization {
 	
-	protected OsmandApplication app;
-	protected OsmandSettings osmandSettings;
+	private OsmandApplication app;
+	private OsmandSettings osmandSettings;
 
 	public void setup(OsmandApplication app) {
 		this.app = app;
@@ -33,20 +31,7 @@ public class OsmAndAppCustomization {
 	}
 
 	public OsmandSettings getOsmandSettings(){ return osmandSettings;}
-	// Main menu
-	public boolean checkExceptionsOnStart() {
-		return true;
-	}
 
-	public boolean showFirstTimeRunAndTips(boolean firstTime, boolean appVersionChanged) {
-		return true;
-	}
-
-	public boolean checkBasemapDownloadedOnStart() {
-		return true;
-	}
-
-	
 	// Activities
 	public Class<? extends Activity> getSettingsActivity(){
 		return SettingsActivity.class;
@@ -71,7 +56,7 @@ public class OsmAndAppCustomization {
 	public Class<? extends Activity> getDownloadIndexActivity() {
 		return DownloadActivity.class;
 	}
-	
+
 	public Class<? extends Activity> getPluginsActivity() {
 		return PluginsActivity.class;
 	}
@@ -80,22 +65,9 @@ public class OsmAndAppCustomization {
 		return DownloadActivity.class;
 	}
 
-	// Download screen
-	public void getDownloadTypes(List<DownloadActivityType> items) {
-		
-	}
-
-
 	public List<String> onIndexingFiles(IProgress progress, Map<String, String> indexFileNames) {
 		return Collections.emptyList();
 	}
-
-	public void prepareLayerContextMenu(MapActivity activity, ContextMenuAdapter adapter) {
-	}
-
-	public void prepareOptionsMenu(MapActivity mapActivity, ContextMenuAdapter optionsMenuHelper) {
-	}
-
 
 	public String getIndexesUrl() {
 		return "http://"+IndexConstants.INDEX_DOWNLOAD_DOMAIN+"/get_indexes?gzip&" + Version.getVersionAsURLParam(app); //$NON-NLS-1$;
@@ -105,15 +77,10 @@ public class OsmAndAppCustomization {
 		return true;
 	}
 
-
 	public File getTracksDir() {
 		return app.getAppPath(IndexConstants.GPX_RECORDED_INDEX_DIR);
 	}
 
-	public void createLayers(OsmandMapTileView mapView, MapActivity activity) {
-		
-	}
-	
 	public List<? extends LocationPoint> getWaypoints() {
 		return Collections.emptyList();
 	}
@@ -127,22 +94,7 @@ public class OsmAndAppCustomization {
 		return true;
 	}
 
-	public void showLocationPoint(MapActivity ctx, LocationPoint locationPoint) {
-	}
-	
 	public boolean onDestinationReached() {
 		return true;
 	}
-
-
-	public boolean onlyTourDownload() {
-		return false;
-	}
-
-	public <T> void resumeActivity(Class<T> class1, T d) {
-	}
-	
-	public <T> void pauseActivity(Class<T> class1) {
-	}
-
 }
