@@ -1,10 +1,9 @@
 package net.osmand.plus.download.ui;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
+import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -58,9 +57,9 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 	}
 	
 	@Override
-	public void onAttach(Activity activity) {
-		super.onAttach(activity);
-		invalidateListView(activity);
+	public void onAttach(Context context) {
+		super.onAttach(context);
+		invalidateListView(context);
 	}
 
 	@Override
@@ -85,14 +84,14 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 		updateUpdateAllButton();
 	}
 
-	public void invalidateListView(Activity a) {
+	private void invalidateListView(Context c) {
 		DownloadResources indexes = getMyApplication().getDownloadThread().getIndexes();
 		List<IndexItem> indexItems = indexes.getItemsToUpdate();
 
 		final OsmandRegions osmandRegions =
 				getMyApplication().getResourceManager().getOsmandRegions();
 		OsmandSettings settings = getMyApplication().getSettings();
-		listAdapter = new UpdateIndexAdapter(a, R.layout.download_index_list_item, indexItems,
+		listAdapter = new UpdateIndexAdapter(c, R.layout.download_index_list_item, indexItems,
 				!settings.LIVE_UPDATES_PURCHASED.get() || settings.SHOULD_SHOW_FREE_VERSION_BANNER.get());
 		listAdapter.sort(new Comparator<IndexItem>() {
 			@Override
@@ -103,7 +102,6 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 		});
 		setListAdapter(listAdapter);
 		updateErrorMessage();
-
 	}
 
 	private void updateErrorMessage() {
@@ -130,7 +128,7 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 		}
 		DownloadResources indexes = getMyActivity().getDownloadThread().getIndexes();
 		final List<IndexItem> indexItems = indexes.getItemsToUpdate();
-		final TextView updateAllButton = (TextView) view.findViewById(R.id.updateAllButton);
+		final TextView updateAllButton = view.findViewById(R.id.updateAllButton);
 		if (indexItems.size() == 0 || indexItems.get(0).getType() == null) {
 			if (!Algorithms.isEmpty(errorMessage)) {
 				updateAllButton.setText(errorMessage);
@@ -178,11 +176,10 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 		}
 	}
 
-	public DownloadActivity getMyActivity() {
+	private DownloadActivity getMyActivity() {
 		return (DownloadActivity) getActivity();
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		ActionBar actionBar = getMyActivity().getSupportActionBar();
@@ -191,7 +188,8 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 		if (getMyApplication().getAppCustomization().showDownloadExtraActions()) {
 			MenuItem item = menu.add(0, RELOAD_ID, 0, R.string.shared_string_refresh);
 			item.setIcon(R.drawable.ic_action_refresh_dark);
-			MenuItemCompat.setShowAsAction(item, MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+			item.setShowAsAction(MenuItem
+					.SHOW_AS_ACTION_ALWAYS);
 		}
 	}
 
@@ -214,16 +212,14 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 		static final int INDEX_ITEM = 0;
 		static final int OSM_LIVE_BANNER = 1;
 
-		List<IndexItem> items;
-		boolean showOsmLiveBanner;
+		final boolean showOsmLiveBanner;
 
-		public UpdateIndexAdapter(Context context, int resource, List<IndexItem> items, boolean showOsmLiveBanner) {
+		UpdateIndexAdapter(Context context, int resource, List<IndexItem> items, boolean showOsmLiveBanner) {
 			super(context, resource, items);
-			this.items = items;
 			this.showOsmLiveBanner = showOsmLiveBanner;
 		}
 
-		public boolean isShowOsmLiveBanner() {
+		boolean isShowOsmLiveBanner() {
 			return showOsmLiveBanner;
 		}
 
@@ -256,8 +252,9 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 			return showOsmLiveBanner && position == 0 ? OSM_LIVE_BANNER : INDEX_ITEM;
 		}
 
-		@Override
-		public View getView(final int position, final View convertView, final ViewGroup parent) {
+		@NonNull
+        @Override
+		public View getView(final int position, final View convertView, @NonNull final ViewGroup parent) {
 			View v = convertView;
 			int viewType = getItemViewType(position);
 			if (v == null) {

@@ -7,8 +7,8 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
@@ -56,17 +56,15 @@ import java.util.Map;
 
 public class DownloadResourceGroupFragment extends DialogFragment implements DownloadEvents,
 		InAppListener, OnChildClickListener {
-	public static final int RELOAD_ID = 0;
-	public static final int SEARCH_ID = 1;
-	public static final String TAG = "RegionDialogFragment";
+	private static final int RELOAD_ID = 0;
+	private static final int SEARCH_ID = 1;
+	// --Commented out by Inspection (7/01/19 12:33):public static final String TAG = "RegionDialogFragment";
 	private static final String REGION_ID_DLG_KEY = "world_region_dialog_key";
 	private String groupId;
-	private View view;
 	private BannerAndDownloadFreeVersion banner;
-	protected ExpandableListView listView;
-	protected DownloadResourceGroupAdapter listAdapter;
-	private DownloadResourceGroup group;
-	private DownloadActivity activity;
+	private ExpandableListView listView;
+	private DownloadResourceGroupAdapter listAdapter;
+    private DownloadActivity activity;
 	private Toolbar toolbar;
 	private View searchView;
 	private View restorePurchasesView;
@@ -81,13 +79,13 @@ public class DownloadResourceGroupFragment extends DialogFragment implements Dow
 		setHasOptionsMenu(true);
 	}
 
-	public boolean openAsDialog() {
+	private boolean openAsDialog() {
 		return !Algorithms.isEmpty(groupId);
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		view = inflater.inflate(R.layout.maps_in_category_fragment, container, false);
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		View view = inflater.inflate(R.layout.maps_in_category_fragment, container, false);
 		if (savedInstanceState != null) {
 			groupId = savedInstanceState.getString(REGION_ID_DLG_KEY);
 		}
@@ -100,7 +98,7 @@ public class DownloadResourceGroupFragment extends DialogFragment implements Dow
 		activity = (DownloadActivity) getActivity();
 		activity.getAccessibilityAssistant().registerPage(view, DownloadActivity.DOWNLOAD_TAB_NUMBER);
 
-		toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+		toolbar = view.findViewById(R.id.toolbar);
 		toolbar.setNavigationIcon(getMyApplication().getIconsCache().getIcon(R.drawable.ic_arrow_back));
 		toolbar.setNavigationContentDescription(R.string.access_shared_string_navigate_up);
 		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -121,7 +119,7 @@ public class DownloadResourceGroupFragment extends DialogFragment implements Dow
 			banner = null;
 			view.findViewById(R.id.freeVersionBanner).setVisibility(View.GONE);
 		}
-		listView = (ExpandableListView) view.findViewById(android.R.id.list);
+		listView = view.findViewById(android.R.id.list);
 		addSubscribeEmailRow();
 		addSearchRow();
 		addRestorePurchasesRow();
@@ -176,7 +174,7 @@ public class DownloadResourceGroupFragment extends DialogFragment implements Dow
 		if (!openAsDialog() ) {
 			searchView = activity.getLayoutInflater().inflate(R.layout.simple_list_menu_item, null);
 			searchView.setBackgroundResource(android.R.drawable.list_selector_background);
-			TextView title = (TextView) searchView.findViewById(R.id.title);
+			TextView title = searchView.findViewById(R.id.title);
 			title.setCompoundDrawablesWithIntrinsicBounds(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_search_dark), null, null, null);
 			title.setHint(R.string.search_map_hint);
 			searchView.setOnClickListener(new OnClickListener() {
@@ -233,9 +231,7 @@ public class DownloadResourceGroupFragment extends DialogFragment implements Dow
 		AlertDialog.Builder b = new AlertDialog.Builder(activity);
 		b.setTitle(R.string.shared_string_email_address);
 		final EditText editText = new EditText(activity);
-		int leftPadding = AndroidUtils.dpToPx(activity, 24f);
-		int topPadding = AndroidUtils.dpToPx(activity, 4f);
-		b.setView(editText, leftPadding, topPadding, leftPadding, topPadding);
+		b.setView(editText);
 		b.setPositiveButton(R.string.shared_string_ok, null);
 		b.setNegativeButton(R.string.shared_string_cancel, null);
 		final AlertDialog alertDialog = b.create();
@@ -306,7 +302,7 @@ public class DownloadResourceGroupFragment extends DialogFragment implements Dow
 						if (!email.equalsIgnoreCase(responseEmail)) {
 							app.showShortToastMessage(activity.getString(R.string.shared_string_unexpected_error));
 						} else {
-							int newDownloads = app.getSettings().NUMBER_OF_FREE_DOWNLOADS.get().intValue() - 3;
+							int newDownloads = app.getSettings().NUMBER_OF_FREE_DOWNLOADS.get() - 3;
 							if(newDownloads < 0) {
 								newDownloads = 0;
 							} else if(newDownloads > DownloadValidationManager.MAXIMUM_AVAILABLE_FREE_DOWNLOADS - 3) {
@@ -386,7 +382,7 @@ public class DownloadResourceGroupFragment extends DialogFragment implements Dow
 		}
 		updateSubscribeEmailView();
 		DownloadResources indexes = activity.getDownloadThread().getIndexes();
-		group = indexes.getGroupById(groupId);
+        DownloadResourceGroup group = indexes.getGroupById(groupId);
 		if (group != null) {
 			listAdapter.update(group);
 			toolbar.setTitle(group.getName(activity));
@@ -477,11 +473,11 @@ public class DownloadResourceGroupFragment extends DialogFragment implements Dow
 		if (!openAsDialog()) {
 			MenuItem itemReload = menu.add(0, RELOAD_ID, 0, R.string.shared_string_refresh);
 			itemReload.setIcon(R.drawable.ic_action_refresh_dark);
-			MenuItemCompat.setShowAsAction(itemReload, MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+			itemReload.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 
 			MenuItem itemSearch = menu.add(0, SEARCH_ID, 1, R.string.shared_string_search);
 			itemSearch.setIcon(R.drawable.ic_action_search_dark);
-			MenuItemCompat.setShowAsAction(itemSearch, MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+			itemSearch.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 		}
 	}
 
@@ -511,12 +507,12 @@ public class DownloadResourceGroupFragment extends DialogFragment implements Dow
 	
 	
 	private static class DownloadGroupViewHolder {
-		TextView textView;
-		private DownloadActivity ctx;
+		final TextView textView;
+		private final DownloadActivity ctx;
 
-		public DownloadGroupViewHolder(DownloadActivity ctx, View v) {
+		DownloadGroupViewHolder(DownloadActivity ctx, View v) {
 			this.ctx = ctx;
-			textView = (TextView) v.findViewById(R.id.title);
+			textView = v.findViewById(R.id.title);
 		}
 		
 		private boolean isParentWorld(DownloadResourceGroup group) {
@@ -563,7 +559,7 @@ public class DownloadResourceGroupFragment extends DialogFragment implements Dow
 			return iconLeft;
 		}
 
-		public void bindItem(DownloadResourceGroup group) {
+		void bindItem(DownloadResourceGroup group) {
 			Drawable iconLeft = getIconForGroup(group);
 			textView.setCompoundDrawablesWithIntrinsicBounds(iconLeft, null, null, null);
 			String name = group.getName(ctx);
@@ -571,19 +567,19 @@ public class DownloadResourceGroupFragment extends DialogFragment implements Dow
 		}
 	}
 
-	public static class DownloadResourceGroupAdapter extends OsmandBaseExpandableListAdapter {
+	static class DownloadResourceGroupAdapter extends OsmandBaseExpandableListAdapter {
 
-		private List<DownloadResourceGroup> data = new ArrayList<DownloadResourceGroup>();
-		private DownloadActivity ctx;
+		private List<DownloadResourceGroup> data = new ArrayList<>();
+		private final DownloadActivity ctx;
 		private DownloadResourceGroup mainGroup;
 
 		
 
-		public DownloadResourceGroupAdapter(DownloadActivity ctx) {
+		DownloadResourceGroupAdapter(DownloadActivity ctx) {
 			this.ctx = ctx;
 		}
 
-		public void update(DownloadResourceGroup mainGroup) {
+		void update(DownloadResourceGroup mainGroup) {
 			this.mainGroup = mainGroup;
 			data = mainGroup.getGroups();
 			notifyDataSetChanged();
@@ -656,7 +652,7 @@ public class DownloadResourceGroupFragment extends DialogFragment implements Dow
 				LayoutInflater inflater = LayoutInflater.from(ctx);
 				v = inflater.inflate(R.layout.download_item_list_section, parent, false);
 			}
-			TextView nameView = ((TextView) v.findViewById(R.id.title));
+			TextView nameView = v.findViewById(R.id.title);
 			nameView.setText(section);
 			v.setOnClickListener(null);
 			TypedValue typedValue = new TypedValue();
@@ -672,7 +668,7 @@ public class DownloadResourceGroupFragment extends DialogFragment implements Dow
 			return data.get(groupPosition).size();
 		}
 		
-		public DownloadResourceGroup getGroupObj(int groupPosition) {
+		DownloadResourceGroup getGroupObj(int groupPosition) {
 			return data.get(groupPosition);
 		}
 
