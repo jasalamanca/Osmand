@@ -20,12 +20,9 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.support.v7.widget.ListPopupWindow;
-import android.support.v7.widget.SwitchCompat;
 import android.util.DisplayMetrics;
 import android.util.SparseArray;
 import android.view.Gravity;
@@ -44,6 +41,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
@@ -124,10 +122,10 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 	private OsmandApplication app;
 	private SegmentGPXAdapter adapter;
 
-	private GpxDisplayItemType[] filterTypes = {GpxSelectionHelper.GpxDisplayItemType.TRACK_SEGMENT};
-	private List<String> options = new ArrayList<>();
-	private List<Double> distanceSplit = new ArrayList<>();
-	private TIntArrayList timeSplit = new TIntArrayList();
+	private final GpxDisplayItemType[] filterTypes = {GpxSelectionHelper.GpxDisplayItemType.TRACK_SEGMENT};
+	private final List<String> options = new ArrayList<>();
+	private final List<Double> distanceSplit = new ArrayList<>();
+	private final TIntArrayList timeSplit = new TIntArrayList();
 	private int selectedSplitInterval;
 	private boolean updateEnable;
 	private View headerView;
@@ -139,7 +137,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 	private int defPointColor;
 	private Paint paintIcon;
 	private Bitmap pointSmall;
-	private SwitchCompat vis;
+	private Switch vis;
 
 	private ImageView imageView;
 	private RotatedTileBox rotatedTileBox;
@@ -193,7 +191,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 		overlayView.setVisibility(View.VISIBLE);
 	}
 
-	private View.OnClickListener onFabClickListener = new View.OnClickListener() {
+	private final View.OnClickListener onFabClickListener = new View.OnClickListener() {
 		@Override
 		public void onClick(View view) {
 			switch (view.getId()) {
@@ -232,7 +230,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 		setHasOptionsMenu(true);
 		View view = getActivity().getLayoutInflater().inflate(R.layout.track_segments_tree, container, false);
 
-		ListView listView = (ListView) view.findViewById(android.R.id.list);
+		ListView listView = view.findViewById(android.R.id.list);
 		listView.setDivider(null);
 		listView.setDividerHeight(0);
 
@@ -244,20 +242,20 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 		overlayView = view.findViewById(R.id.overlay_view);
 		overlayView.setOnClickListener(onFabClickListener);
 
-		menuFab = (FloatingActionButton) view.findViewById(R.id.menu_fab);
+		menuFab = view.findViewById(R.id.menu_fab);
 		menuFab.setOnClickListener(onFabClickListener);
 
-		waypointFab = (FloatingActionButton) view.findViewById(R.id.waypoint_fab);
+		waypointFab = view.findViewById(R.id.waypoint_fab);
 		waypointFab.setOnClickListener(onFabClickListener);
 		waypointTextLayout = view.findViewById(R.id.waypoint_text_layout);
 		waypointTextLayout.setOnClickListener(onFabClickListener);
 
-		routePointFab = (FloatingActionButton) view.findViewById(R.id.route_fab);
+		routePointFab = view.findViewById(R.id.route_fab);
 		routePointFab.setOnClickListener(onFabClickListener);
 		routePointTextLayout = view.findViewById(R.id.route_text_layout);
 		routePointTextLayout.setOnClickListener(onFabClickListener);
 
-		lineFab = (FloatingActionButton) view.findViewById(R.id.line_fab);
+		lineFab = view.findViewById(R.id.line_fab);
 		lineFab.setOnClickListener(onFabClickListener);
 		lineTextLayout = view.findViewById(R.id.line_text_layout);
 		lineTextLayout.setOnClickListener(onFabClickListener);
@@ -319,17 +317,12 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 		menuOpened = false;
 	}
 
-	public TrackActivity getTrackActivity() {
+	private TrackActivity getTrackActivity() {
 		return (TrackActivity) getActivity();
 	}
 
 	public ArrayAdapter<?> getAdapter() {
 		return adapter;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		return super.onOptionsItemSelected(item);
 	}
 
 	@Override
@@ -349,7 +342,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 							return true;
 						}
 					});
-			MenuItemCompat.setShowAsAction(item, MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+			item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 		}
 		if (getGpx() != null && getGpx().showCurrentTrack) {
 			MenuItem item = menu.add(R.string.shared_string_refresh).setIcon(R.drawable.ic_action_refresh_dark)
@@ -363,7 +356,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 							return true;
 						}
 					});
-			MenuItemCompat.setShowAsAction(item, MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+			item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 		}
 	}
 
@@ -398,9 +391,6 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 		super.onResume();
 		updateContent();
 		updateEnable = true;
-		if (getGpx() != null && getGpx().showCurrentTrack) {
-			//startHandler();
-		}
 	}
 
 	@Override
@@ -410,7 +400,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 	}
 
 	private void updateHeader() {
-		imageView = (ImageView) headerView.findViewById(R.id.imageView);
+		imageView = headerView.findViewById(R.id.imageView);
 		imageView.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -444,8 +434,8 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 		final View divider = headerView.findViewById(R.id.divider);
 		final View splitIntervalView = headerView.findViewById(R.id.split_interval_view);
 		final View colorView = headerView.findViewById(R.id.color_view);
-		vis = (SwitchCompat) headerView.findViewById(R.id.showOnMapToggle);
-		final ProgressBar progressBar = (ProgressBar) headerView.findViewById(R.id.mapLoadProgress);
+		vis = headerView.findViewById(R.id.showOnMapToggle);
+		final ProgressBar progressBar = headerView.findViewById(R.id.mapLoadProgress);
 		final boolean selected = getGpx() != null &&
 				((getGpx().showCurrentTrack && app.getSelectedGpxHelper().getSelectedCurrentRecordingTrack() != null) ||
 						(getGpx().path != null && app.getSelectedGpxHelper().getSelectedFileByPath(getGpx().path) != null));
@@ -488,7 +478,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 					public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 						AppearanceListItem item = gpxApprAdapter.getItem(position);
 						if (item != null) {
-							if (item.getAttrName() == CURRENT_TRACK_COLOR_ATTR) {
+							if (CURRENT_TRACK_COLOR_ATTR.equals(item.getAttrName())) {
 								int clr = item.getColor();
 								if (vis.isChecked()) {
 									SelectedGpxFile sf = app.getSelectedGpxHelper().selectGpxFile(getGpx(), vis.isChecked(), false);
@@ -638,10 +628,10 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 
 	public void updateSplitView() {
 		if (getGpx() != null) {
-			SelectedGpxFile sf = app.getSelectedGpxHelper().selectGpxFile(getGpx(), ((SwitchCompat) headerView.findViewById(R.id.showOnMapToggle)).isChecked(), false);
+			SelectedGpxFile sf = app.getSelectedGpxHelper().selectGpxFile(getGpx(), ((Switch) headerView.findViewById(R.id.showOnMapToggle)).isChecked(), false);
 			final List<GpxDisplayGroup> groups = getDisplayGroups();
 			if (groups.size() > 0) {
-				updateSplit(groups, ((SwitchCompat) headerView.findViewById(R.id.showOnMapToggle)).isChecked() ? sf : null);
+				updateSplit(groups, ((Switch) headerView.findViewById(R.id.showOnMapToggle)).isChecked() ? sf : null);
 				if (getGpxDataItem() != null) {
 					updateSplitInDatabase();
 				}
@@ -742,9 +732,9 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 	}
 
 	private void setupSplitIntervalView(View view) {
-		final TextView title = (TextView) view.findViewById(R.id.split_interval_title);
-		final TextView text = (TextView) view.findViewById(R.id.split_interval_text);
-		final ImageView img = (ImageView) view.findViewById(R.id.split_interval_arrow);
+		final TextView title = view.findViewById(R.id.split_interval_title);
+		final TextView text = view.findViewById(R.id.split_interval_text);
+		final ImageView img = view.findViewById(R.id.split_interval_arrow);
 		int colorId;
 		final List<GpxDisplayGroup> groups = getDisplayGroups();
 		if (groups.size() > 0) {
@@ -761,7 +751,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 	}
 
 	private void updateSplitIntervalView(View view) {
-		final TextView text = (TextView) view.findViewById(R.id.split_interval_text);
+		final TextView text = view.findViewById(R.id.split_interval_text);
 		if (selectedSplitInterval == 0) {
 			text.setText(getString(R.string.shared_string_none));
 		} else {
@@ -770,7 +760,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 	}
 
 	private void updateColorView(View colorView) {
-		final ImageView colorImageView = (ImageView) colorView.findViewById(R.id.colorImage);
+		final ImageView colorImageView = colorView.findViewById(R.id.colorImage);
 		int color = getGpxDataItem() != null ? getGpxDataItem().getColor() : 0;
 		if (color == 0 && getGpx() != null) {
 			if (getGpx().showCurrentTrack) {
@@ -797,7 +787,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 		return getArguments() != null && getArguments().getBoolean(arg);
 	}
 
-	protected boolean hasFilterType(GpxDisplayItemType filterType) {
+	private boolean hasFilterType(GpxDisplayItemType filterType) {
 		for (GpxDisplayItemType type : filterTypes) {
 			if (type == filterType) {
 				return true;
@@ -846,7 +836,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 		}
 	}
 
-	protected List<GpxDisplayItem> flatten(List<GpxDisplayGroup> groups) {
+	private List<GpxDisplayItem> flatten(List<GpxDisplayGroup> groups) {
 		ArrayList<GpxDisplayItem> list = new ArrayList<>();
 		for (GpxDisplayGroup g : groups) {
 			list.addAll(g.getModifiableList());
@@ -939,7 +929,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 				row = inflater.inflate(R.layout.gpx_list_item_tab_content, parent, false);
 
 				boolean light = app.getSettings().isLightContent();
-				tabLayout = (PagerSlidingTabStrip) row.findViewById(R.id.sliding_tabs);
+				tabLayout = row.findViewById(R.id.sliding_tabs);
 				tabLayout.setTabBackground(R.color.color_transparent);
 				tabLayout.setIndicatorColorResource(light ? R.color.color_dialog_buttons_light : R.color.color_dialog_buttons_dark);
 				tabLayout.setIndicatorBgColorResource(light ? R.color.dashboard_divider_light : R.color.dashboard_divider_dark);
@@ -948,13 +938,13 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 				tabLayout.setTextSize(AndroidUtils.spToPx(app, 12f));
 				tabLayout.setShouldExpand(true);
 				tabLayout.setTabSelectionType(PagerSlidingTabStrip.TabSelectionType.SOLID_COLOR);
-				pager = (WrapContentHeightViewPager) row.findViewById(R.id.pager);
+				pager = row.findViewById(R.id.pager);
 				pager.setSwipeable(false);
 				pager.setOffscreenPageLimit(2);
 				create = true;
 			} else {
-				tabLayout = (PagerSlidingTabStrip) row.findViewById(R.id.sliding_tabs);
-				pager = (WrapContentHeightViewPager) row.findViewById(R.id.pager);
+				tabLayout = row.findViewById(R.id.sliding_tabs);
+				pager = row.findViewById(R.id.pager);
 			}
 			GpxDisplayItem item = getItem(position);
 			if (item != null) {
@@ -977,12 +967,12 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 
 	private class GPXItemPagerAdapter extends PagerAdapter implements CustomTabProvider, ViewAtPositionInterface {
 
-		protected SparseArray<View> views = new SparseArray<>();
-		private PagerSlidingTabStrip tabs;
-		private GpxDisplayItem gpxItem;
+		final SparseArray<View> views = new SparseArray<>();
+		private final PagerSlidingTabStrip tabs;
+		private final GpxDisplayItem gpxItem;
 		private GPXTabItemType[] tabTypes;
 		private String[] titles;
-		private Map<GPXTabItemType, List<ILineDataSet>> dataSetsMap = new HashMap<>();
+		private final Map<GPXTabItemType, List<ILineDataSet>> dataSetsMap = new HashMap<>();
 		private TrkSegment segment;
 		private float listViewYPos;
 
@@ -1152,8 +1142,9 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 			return titles[position];
 		}
 
+		@NonNull
 		@Override
-		public Object instantiateItem(ViewGroup container, int position) {
+		public Object instantiateItem(@NonNull ViewGroup container, int position) {
 
 			chartClicked = false;
 			GPXTabItemType tabType = tabTypes[position];
@@ -1173,7 +1164,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 			if (view != null) {
 				if (gpxItem != null) {
 					GPXTrackAnalysis analysis = gpxItem.analysis;
-					final LineChart chart = (LineChart) view.findViewById(R.id.chart);
+					final LineChart chart = view.findViewById(R.id.chart);
 					chart.setHighlightPerDragEnabled(false);
 					chart.setOnClickListener(new View.OnClickListener() {
 						@Override
@@ -1606,13 +1597,13 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 		}
 
 		@Override
-		public void destroyItem(ViewGroup collection, int position, Object view) {
+		public void destroyItem(@NonNull ViewGroup collection, int position, @NonNull Object view) {
 			views.remove(position);
 			collection.removeView((View) view);
 		}
 
 		@Override
-		public boolean isViewFromObject(View view, Object object) {
+		public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
 			return view == object;
 		}
 
@@ -1645,11 +1636,11 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 		@Override
 		public void select(View tab) {
 			GPXTabItemType tabType = GPXTabItemType.valueOf((String) tab.getTag());
-			ImageView img = (ImageView) tab.findViewById(R.id.tab_image);
+			ImageView img = tab.findViewById(R.id.tab_image);
 			int imageId = getImageId(tabType);
 			switch (tabs.getTabSelectionType()) {
 				case ALPHA:
-					ViewCompat.setAlpha(img, tabs.getTabTextSelectedAlpha());
+					img.setAlpha(tabs.getTabTextSelectedAlpha());
 					break;
 				case SOLID_COLOR:
 					img.setImageDrawable(app.getIconsCache().getPaintedIcon(imageId, tabs.getTextColor()));
@@ -1660,11 +1651,11 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 		@Override
 		public void deselect(View tab) {
 			GPXTabItemType tabType = GPXTabItemType.valueOf((String) tab.getTag());
-			ImageView img = (ImageView) tab.findViewById(R.id.tab_image);
+			ImageView img = tab.findViewById(R.id.tab_image);
 			int imageId = getImageId(tabType);
 			switch (tabs.getTabSelectionType()) {
 				case ALPHA:
-					ViewCompat.setAlpha(img, tabs.getTabTextAlpha());
+					img.setAlpha(tabs.getTabTextAlpha());
 					break;
 				case SOLID_COLOR:
 					img.setImageDrawable(app.getIconsCache().getPaintedIcon(imageId, tabs.getTabInactiveTextColor()));
@@ -1771,7 +1762,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 		}
 	}
 
-	void openSplitIntervalScreen() {
+	private void openSplitIntervalScreen() {
 		SplitSegmentDialogFragment.showInstance(getTrackActivity());
 	}
 
@@ -1788,7 +1779,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 
 		@Override
 		protected void onPreExecute() {
-			mActivity.setSupportProgressBarIndeterminateVisibility(true);
+			mActivity.setProgressBarIndeterminateVisibility(true);
 		}
 
 		@Override
@@ -1806,7 +1797,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 			}
 			updateContent();
 			if (!mActivity.isFinishing()) {
-				mActivity.setSupportProgressBarIndeterminateVisibility(false);
+				mActivity.setProgressBarIndeterminateVisibility(false);
 			}
 		}
 	}
@@ -1815,34 +1806,28 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 		@Nullable
 		private final SelectedGpxFile mSelectedGpxFile;
 		@NonNull
-		private final TrackSegmentFragment mFragment;
-		@NonNull
 		private final TrackActivity mActivity;
 
 		private final List<GpxDisplayGroup> groups;
 
 		SplitTrackAsyncTask(@Nullable SelectedGpxFile selectedGpxFile, List<GpxDisplayGroup> groups) {
 			mSelectedGpxFile = selectedGpxFile;
-			mFragment = TrackSegmentFragment.this;
 			mActivity = getTrackActivity();
 			this.groups = groups;
 		}
 
 		protected void onPostExecute(Void result) {
 			if (!mActivity.isFinishing()) {
-				mActivity.setSupportProgressBarIndeterminateVisibility(false);
+				mActivity.setProgressBarIndeterminateVisibility(false);
 			}
 			if (mSelectedGpxFile != null) {
 				List<GpxDisplayGroup> groups = getDisplayGroups();
 				mSelectedGpxFile.setDisplayGroups(groups);
 			}
-			if (mFragment.isVisible()) {
-				//mFragment.updateContent();
-			}
 		}
 
 		protected void onPreExecute() {
-			mActivity.setSupportProgressBarIndeterminateVisibility(true);
+			mActivity.setProgressBarIndeterminateVisibility(true);
 		}
 
 		@Override

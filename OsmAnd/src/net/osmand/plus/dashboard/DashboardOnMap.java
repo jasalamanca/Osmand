@@ -4,8 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
@@ -16,7 +14,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -24,7 +21,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewTreeObserver;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -34,7 +30,6 @@ import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
-import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -104,7 +99,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 	public static DashboardType staticVisibleType = DashboardType.DASHBOARD;
 	public static final String SHOULD_SHOW = "should_show";
 
-
 	private final DashFragmentData[] fragmentsData = new DashFragmentData[]{
 			new DashFragmentData(DashRateUsFragment.TAG, DashRateUsFragment.class,
 					DashRateUsFragment.SHOULD_SHOW_FUNCTION, 0, null),
@@ -124,22 +118,19 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 					DashPluginsFragment.SHOULD_SHOW_FUNCTION, 140, null)
 	};
 
-	private MapActivity mapActivity;
+	private final MapActivity mapActivity;
 	private ImageView actionButton;
 	private View compassButton;
 	private FrameLayout dashboardView;
-	private float cachedRotate = 0;
-
 	private ArrayAdapter<?> listAdapter;
 	private OnItemClickListener listAdapterOnClickListener;
 	private SwipeDismissListViewTouchListener swipeDismissListener;
-
 	private boolean visible = false;
 	private DashboardType visibleType;
 	private DashboardType previousVisibleType;
 	private ApplicationMode previousAppMode;
 	private boolean landscape;
-	private List<WeakReference<DashBaseFragment>> fragList = new LinkedList<>();
+	private final List<WeakReference<DashBaseFragment>> fragList = new LinkedList<>();
 	private net.osmand.Location myLocation;
 	private LatLon mapViewLocation;
 	private float heading;
@@ -153,17 +144,14 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 	private int mFlexibleSpaceImageHeight;
 	private int mFlexibleBlurSpaceHeight;
 	private boolean portrait;
-	private long lastUpOrCancelMotionEventTime;
 	private TextView listEmptyTextView;
 	private int[] animationCoordinates;
-
-	int baseColor;
-
+	private int baseColor;
 	private WaypointDialogHelper waypointDialogHelper;
 	private final int[] running = new int[]{-1};
-	private List<LocationPointWrapper> deletedPoints = new ArrayList<>();
+	private final List<LocationPointWrapper> deletedPoints = new ArrayList<>();
 	private Drawable gradientToolbar;
-	boolean nightMode;
+	private boolean nightMode;
 
 	public DashFragmentData[] getFragmentsData() {
 		return fragmentsData;
@@ -182,7 +170,7 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		OSM_NOTES
 	}
 
-	private Map<DashboardActionButtonType, DashboardActionButton> actionButtons = new HashMap<>();
+	private final Map<DashboardActionButtonType, DashboardActionButton> actionButtons = new HashMap<>();
 
 	public enum DashboardActionButtonType {
 		MY_LOCATION,
@@ -200,13 +188,12 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		this.mapActivity = ma;
 	}
 
-
 	public void createDashboardView() {
 		baseColor = ContextCompat.getColor(mapActivity, R.color.osmand_orange) & 0x00ffffff;
 		waypointDialogHelper = new WaypointDialogHelper(mapActivity);
 		waypointDialogHelper.setHelperCallbacks(this);
 		landscape = !AndroidUiHelper.isOrientationPortrait(mapActivity);
-		dashboardView = (FrameLayout) mapActivity.findViewById(R.id.dashboard);
+		dashboardView = mapActivity.findViewById(R.id.dashboard);
 		AndroidUtils.addStatusBarPadding21v(mapActivity, dashboardView);
 		final View.OnClickListener listener = new View.OnClickListener() {
 			@Override
@@ -214,13 +201,12 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 				hideDashboard();
 			}
 		};
-		toolbar = ((Toolbar) dashboardView.findViewById(R.id.toolbar));
-		ObservableScrollView scrollView = ((ObservableScrollView) dashboardView.findViewById(R.id.main_scroll));
-		listView = (DynamicListView) dashboardView.findViewById(R.id.dash_list_view);
-		//listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+		toolbar = dashboardView.findViewById(R.id.toolbar);
+		ObservableScrollView scrollView = dashboardView.findViewById(R.id.main_scroll);
+		listView = dashboardView.findViewById(R.id.dash_list_view);
 		listView.setDrawSelectorOnTop(true);
 		listView.setDynamicListViewCallbacks(this);
-		listEmptyTextView = (TextView) dashboardView.findViewById(R.id.emptyTextView);
+		listEmptyTextView = dashboardView.findViewById(R.id.emptyTextView);
 
 		// Create a ListView-specific touch listener. ListViews are given special treatment because
 		// by default they handle touches for their list items... i.e. they're in charge of drawing
@@ -397,7 +383,7 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 	}
 
 	private void updateToolbarActions() {
-		TextView tv = (TextView) dashboardView.findViewById(R.id.toolbar_text);
+		TextView tv = dashboardView.findViewById(R.id.toolbar_text);
 		tv.setText("");
 		boolean waypointsVisible = visibleType == DashboardType.WAYPOINTS || visibleType == DashboardType.WAYPOINTS_FLAT;
 		if (waypointsVisible) {
@@ -415,20 +401,20 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		} else if (visibleType == DashboardType.OSM_NOTES) {
 			tv.setText(R.string.osm_notes);
 		}
-		ImageView edit = (ImageView) dashboardView.findViewById(R.id.toolbar_edit);
+		ImageView edit = dashboardView.findViewById(R.id.toolbar_edit);
 		edit.setVisibility(View.GONE);
-		ImageView sort = (ImageView) dashboardView.findViewById(R.id.toolbar_sort);
+		ImageView sort = dashboardView.findViewById(R.id.toolbar_sort);
 		sort.setVisibility(View.GONE);
-		ImageView ok = (ImageView) dashboardView.findViewById(R.id.toolbar_ok);
+		ImageView ok = dashboardView.findViewById(R.id.toolbar_ok);
 		ok.setVisibility(View.GONE);
-		ImageView flat = (ImageView) dashboardView.findViewById(R.id.toolbar_flat);
+		ImageView flat = dashboardView.findViewById(R.id.toolbar_flat);
 		flat.setVisibility(View.GONE);
-		ImageView settingsButton = (ImageView) dashboardView.findViewById(R.id.toolbar_settings);
+		ImageView settingsButton = dashboardView.findViewById(R.id.toolbar_settings);
 		settingsButton.setVisibility(View.GONE);
 		IconsCache iconsCache = mapActivity.getMyApplication().getIconsCache();
-		ImageView lst = (ImageView) dashboardView.findViewById(R.id.toolbar_list);
+		ImageView lst = dashboardView.findViewById(R.id.toolbar_list);
 		lst.setVisibility(View.GONE);
-		ImageView back = (ImageView) dashboardView.findViewById(R.id.toolbar_back);
+		ImageView back = dashboardView.findViewById(R.id.toolbar_back);
 		back.setImageDrawable(
 				getMyApplication().getIconsCache().getIcon(R.drawable.ic_arrow_back));
 		back.setOnClickListener(new View.OnClickListener() {
@@ -515,7 +501,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		actionButton.setScaleType(ScaleType.CENTER);
 		actionButton.setBackgroundResource(R.drawable.btn_circle_blue);
 		hideActionButton();
-
 
 		DashboardActionButton myLocationButton = new DashboardActionButton();
 		myLocationButton.icon = ContextCompat.getDrawable(mapActivity, R.drawable.map_my_location);
@@ -626,13 +611,17 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		return mapActivity.getMyApplication();
 	}
 
-	public ArrayAdapter<?> getListAdapter() {
-		return listAdapter;
-	}
+// --Commented out by Inspection START (9/01/19 19:51):
+//	public ArrayAdapter<?> getListAdapter() {
+//		return listAdapter;
+//	}
+// --Commented out by Inspection STOP (9/01/19 19:51)
 
-	public OnItemClickListener getListAdapterOnClickListener() {
-		return listAdapterOnClickListener;
-	}
+// --Commented out by Inspection START (9/01/19 19:51):
+//	public OnItemClickListener getListAdapterOnClickListener() {
+//		return listAdapterOnClickListener;
+//	}
+// --Commented out by Inspection STOP (9/01/19 19:51)
 
 	public void hideDashboard() {
 		setDashboardVisibility(false, visibleType);
@@ -651,11 +640,11 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		setDashboardVisibility(visible, type, this.visible ? visibleType : null, animate, animationCoordinates);
 	}
 
-	public void setDashboardVisibility(boolean visible, DashboardType type, boolean animation) {
+	private void setDashboardVisibility(boolean visible, DashboardType type, boolean animation) {
 		setDashboardVisibility(visible, type, animation, null);
 	}
 
-	public void setDashboardVisibility(boolean visible, DashboardType type, boolean animation, int[] animationCoordinates) {
+	private void setDashboardVisibility(boolean visible, DashboardType type, boolean animation, int[] animationCoordinates) {
 		setDashboardVisibility(visible, type, this.visible ? visibleType : null, animation, animationCoordinates);
 	}
 
@@ -668,7 +657,7 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		return R.color.status_bar_transparent_gradient;
 	}
 
-	public void setDashboardVisibility(boolean visible, DashboardType type, DashboardType prevItem, boolean animation, int[] animationCoordinates) {
+	private void setDashboardVisibility(boolean visible, DashboardType type, DashboardType prevItem, boolean animation, int[] animationCoordinates) {
 		if (visible == this.visible && type == visibleType) {
 			return;
 		}
@@ -712,7 +701,7 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 			}
 			updateDownloadBtn();
 			View listViewLayout = dashboardView.findViewById(R.id.dash_list_view_layout);
-			ScrollView scrollView = (ScrollView) dashboardView.findViewById(R.id.main_scroll);
+			ScrollView scrollView = dashboardView.findViewById(R.id.main_scroll);
 			if (visibleType == DashboardType.DASHBOARD) {
 				addOrUpdateDashboardFragments();
 				scrollView.setVisibility(View.VISIBLE);
@@ -743,10 +732,8 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 			}
 
 			updateToolbarActions();
-			//fabButton.showFloatingActionButton();
 			open(animation, animationCoordinates);
 			updateLocation(true, true, false);
-//			addOrUpdateDashboardFragments();
 			mapActivity.getRoutingHelper().addListener(this);
 		} else {
 			mapActivity.getMapViewTrackingUtilities().setDashboard(null);
@@ -786,7 +773,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		if (listBackgroundView != null) {
 			listBackgroundView.setBackgroundColor(backgroundColor);
 		} else {
-//			listView.setBackgroundColor(backgroundColor);
 			listEmptyTextView.setBackgroundColor(backgroundColor);
 		}
 		if (visibleType != DashboardType.WAYPOINTS
@@ -864,7 +850,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 	public void onNewDownloadIndexes() {
 	}
 
-	@SuppressWarnings("unchecked")
 	public void onDownloadInProgress() {
 	}
 
@@ -882,7 +867,7 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 			View v = listView.getChildAt(0);
 			int top = (v == null) ? 0 : (v.getTop() - listView.getPaddingTop());
 			updateListAdapter();
-			((ListView) listView).setSelectionFromTop(index, top);
+			listView.setSelectionFromTop(index, top);
 		} else {
 			listAdapter.notifyDataSetChanged();
 		}
@@ -910,7 +895,7 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 						hideDashboard();
 					}
 				} else if (click != null) {
-					CompoundButton btn = (CompoundButton) view.findViewById(R.id.toggle_item);
+					CompoundButton btn = view.findViewById(R.id.toggle_item);
 					if (btn != null && btn.getVisibility() == View.VISIBLE) {
 						btn.setChecked(!btn.isChecked());
 					} else {
@@ -928,7 +913,7 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 	}
 
 	private void updateDownloadBtn() {
-		Button btn = (Button) dashboardView.findViewById(R.id.map_download_button);
+		Button btn = dashboardView.findViewById(R.id.map_download_button);
 		String filter = null;
 		String txt = "";
 		OsmandMapTileView mv = mapActivity.getMapView();
@@ -1020,7 +1005,7 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 			animators.add(ObjectAnimator.ofFloat(content, View.TRANSLATION_X, initialValueX, finalValueX));
 			animators.add(ObjectAnimator.ofFloat(content, View.TRANSLATION_Y, initialValueY, finalValueY));
 		}
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && ViewCompat.isAttachedToWindow(content)) {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && content.isAttachedToWindow()) {
 			int centerX = content.getMeasuredWidth() / 2;
 			int centerY = content.getMeasuredHeight() / 2;
 			float initialRadius = show ? 0 : (float) Math.sqrt(Math.pow(content.getWidth() / 2, 2) + Math.pow(content.getHeight() / 2, 2));
@@ -1079,7 +1064,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		animationCoordinates = null;
 	}
 
-
 	private void addOrUpdateDashboardFragments() {
 		OsmandSettings settings = getMyApplication().getSettings();
 		TransactionBuilder builder =
@@ -1103,7 +1087,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		}
 	}
 
-
 	public void updateLocation(final boolean centerChanged, final boolean locationChanged,
 							   final boolean compassChanged) {
 		if (inLocationUpdate) {
@@ -1121,7 +1104,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 				}
 			}
 		});
-
 	}
 
 	public void updateMyLocation(net.osmand.Location location) {
@@ -1138,18 +1120,21 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		fragList.add(new WeakReference<>(dashBaseFragment));
 	}
 
-	public void requestLayout() {
-		dashboardView.requestLayout();
-	}
+// --Commented out by Inspection START (9/01/19 19:49):
+//	public void requestLayout() {
+//		dashboardView.requestLayout();
+//	}
+// --Commented out by Inspection STOP (9/01/19 19:49)
 
-
-	public void onMenuPressed() {
-		if (!isVisible()) {
-			setDashboardVisibility(true, DashboardType.DASHBOARD);
-		} else {
-			hideDashboard();
-		}
-	}
+// --Commented out by Inspection START (9/01/19 19:50):
+//	public void onMenuPressed() {
+//		if (!isVisible()) {
+//			setDashboardVisibility(true, DashboardType.DASHBOARD);
+//		} else {
+//			hideDashboard();
+//		}
+//	}
+// --Commented out by Inspection STOP (9/01/19 19:50)
 
 
 	public boolean onBackPressed() {
@@ -1160,7 +1145,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		return false;
 	}
 
-
 	private void backPressed() {
 		if (previousVisibleType != visibleType && previousVisibleType != null) {
 			visibleType = null;
@@ -1170,13 +1154,15 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		}
 	}
 
-	private void hideKeyboard() {
-		View currentFocus = mapActivity.getCurrentFocus();
-		if (currentFocus != null) {
-			InputMethodManager imm = (InputMethodManager) mapActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
-			imm.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
-		}
-	}
+// --Commented out by Inspection START (9/01/19 19:51):
+//	private void hideKeyboard() {
+//		View currentFocus = mapActivity.getCurrentFocus();
+//		if (currentFocus != null) {
+//			InputMethodManager imm = (InputMethodManager) mapActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
+//			imm.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
+//		}
+//	}
+// --Commented out by Inspection STOP (9/01/19 19:51)
 
 
 	@Override
@@ -1192,7 +1178,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		}
 		updateColorOfToolbar(scrollY);
 		updateTopButton(scrollY);
-//		updateMapShadow(scrollY);
 	}
 
 	private boolean isActionButtonVisible() {
@@ -1207,18 +1192,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 	private boolean isBackButtonVisible() {
 		return !(visibleType == DashboardType.DASHBOARD || visibleType == DashboardType.LIST_MENU);
 	}
-
-//	private void updateMapShadow(int scrollY) {
-//		View shadowOnMap = dashboardView.findViewById(R.id.shadow_on_map);
-//		if (shadowOnMap != null) {
-//			int minTop = dashboardView.findViewById(R.id.map_part_dashboard).getHeight() - toolbar.getHeight();
-//			if (scrollY >= minTop) {
-//				shadowOnMap.setVisibility(View.GONE);
-//			} else {
-//				shadowOnMap.setVisibility(View.VISIBLE);
-//			}
-//		}
-//	}
 
 	private void updateTopButton(int scrollY) {
 
@@ -1264,22 +1237,13 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 			gradientToolbar.setAlpha((int) ((1 - t) * 255));
 			setAlpha(dashboardView, (int) (t * 128), 0);
 			View toolbar = dashboardView.findViewById(R.id.toolbar);
-//			updateMapShadowColor(malpha);
 			if (t < 1) {
-				//noinspection deprecation
-				toolbar.setBackgroundDrawable(gradientToolbar);
+				toolbar.setBackground(gradientToolbar);
 			} else {
 				toolbar.setBackgroundColor(0xff000000 | baseColor);
 			}
 		}
 	}
-
-//	private void updateMapShadowColor(int alpha) {
-//		View shadowOnMap = dashboardView.findViewById(R.id.shadow_on_map);
-//		if (shadowOnMap != null) {
-//            setAlpha(shadowOnMap, alpha, baseColor);
-//        }
-//	}
 
 	private void updateListAdapter(ArrayAdapter<?> listAdapter, OnItemClickListener listener) {
 		this.listAdapter = listAdapter;
@@ -1303,29 +1267,22 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 	}
 
 	private void setTranslationY(View v, int y) {
-		ViewCompat.setTranslationY(v, y);
+		v.setTranslationY(y);
 	}
 
-	@SuppressLint("NewApi")
 	private void setAlpha(View v, int alpha, int clr) {
-//		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-//			v.setAlpha(alpha/255.f);
-//		} else {
 		int colr = (alpha << 24) | clr;
 		v.setBackgroundColor(colr);
-//		}
 	}
 
 	@Override
 	public void onDownMotionEvent() {
 	}
 
-
 	@Override
 	public void onUpOrCancelMotionEvent(ScrollState scrollState) {
-		lastUpOrCancelMotionEventTime = System.currentTimeMillis();
+//		long lastUpOrCancelMotionEventTime = System.currentTimeMillis();
 	}
-
 
 	public <T extends DashBaseFragment> T getFragmentByClass(Class<T> class1) {
 		for (WeakReference<DashBaseFragment> f : fragList) {
@@ -1471,7 +1428,7 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 
 	@Override
 	public void reloadAdapter() {
-		if (listAdapter != null && listAdapter instanceof StableArrayAdapter) {
+		if (listAdapter instanceof StableArrayAdapter) {
 			StableArrayAdapter stableAdapter = (StableArrayAdapter) listAdapter;
 			if (DashboardType.WAYPOINTS == visibleType || DashboardType.WAYPOINTS_FLAT == visibleType) {
 				waypointDialogHelper.reloadListAdapter(stableAdapter);

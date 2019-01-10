@@ -1,5 +1,6 @@
 package net.osmand.plus.dialogs;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
@@ -7,19 +8,19 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.AppCompatCheckedTextView;
 import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckedTextView;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -375,7 +376,7 @@ public class ConfigureMapMenu {
 								v.findViewById(R.id.divider).setVisibility(View.GONE);
 								v.findViewById(R.id.description).setVisibility(View.GONE);
 								v.findViewById(R.id.secondary_icon).setVisibility(View.GONE);
-								final SwitchCompat check = (SwitchCompat) v.findViewById(R.id.toggle_item);
+								final Switch check = (Switch) v.findViewById(R.id.toggle_item);
 								check.setOnCheckedChangeListener(null);
 								check.setChecked(checkedItems[position]);
 								check.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -690,7 +691,7 @@ public class ConfigureMapMenu {
 							@Override
 							public View getView(int position, View convertView, ViewGroup parent) {
 								View v = super.getView(position, convertView, parent);
-								AppCompatCheckedTextView checkedTextView = (AppCompatCheckedTextView) v.findViewById(R.id.text1);
+								CheckedTextView checkedTextView = (CheckedTextView) v.findViewById(R.id.text1);
 								if (position == selectedLanguageIndex && position > 0) {
 									checkedTextView.setChecked(true);
 									v.findViewById(R.id.topDivider).setVisibility(View.VISIBLE);

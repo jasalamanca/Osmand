@@ -19,7 +19,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.support.v7.widget.AppCompatButton;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
@@ -91,7 +91,7 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 
 	private List<LocalIndexInfo> localIndexInfos = new ArrayList<>();
 
-	private final List<TabActivity.TabItem> mTabs = new ArrayList<TabActivity.TabItem>();
+	private final List<TabActivity.TabItem> mTabs = new ArrayList<>();
 	public static final String FILTER_KEY = "filter";
 	public static final String FILTER_CAT = "filter_cat";
 	private static final String FILTER_GROUP = "filter_group";
@@ -268,7 +268,7 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 
 	@Override
 	public void onAttachFragment(Fragment fragment) {
-		fragSet.add(new WeakReference<Fragment>(fragment));
+		fragSet.add(new WeakReference<>(fragment));
 	}
 
 	@Override
@@ -731,7 +731,7 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 			@Override
 			protected void onPreExecute() {
 				super.onPreExecute();
-//				setSupportProgressBarIndeterminateVisibility(true);
+				setProgressBarIndeterminateVisibility(true);
 			}
 
 			@Override

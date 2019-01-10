@@ -32,7 +32,7 @@
                 android:textAppearance="@style/TextAppearance.ListItemTitle"
                 tools:text="Some title text"/>
 
-            <android.support.v7.widget.AppCompatTextView
+            <TextView
                 android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
 
         </LinearLayout>
 
-        <android.support.v7.widget.SwitchCompat
+        <Switch
             android:id="@+id/toggle_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

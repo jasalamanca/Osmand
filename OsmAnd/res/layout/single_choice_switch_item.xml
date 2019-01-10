@@ -10,7 +10,7 @@
         android:layout_height="1dp"
         android:layout_width="wrap_content"/>
 
-    <android.support.v7.widget.AppCompatCheckedTextView
+    <CheckedTextView
         android:checkMark="?android:attr/listChoiceIndicatorSingle"
         android:gravity="center_vertical"
         android:id="@+id/text1"
