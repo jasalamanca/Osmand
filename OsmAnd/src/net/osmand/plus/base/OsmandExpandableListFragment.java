@@ -4,7 +4,7 @@ import android.graphics.Shader.TileMode;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
+import android.support.annotation.NonNull;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,15 +18,13 @@ import net.osmand.plus.activities.OsmandActionBarActivity;
 
 public abstract class OsmandExpandableListFragment extends BaseOsmAndFragment
 		implements OnChildClickListener {
-	
-	
 	protected ExpandableListView listView;
 	protected ExpandableListAdapter adapter;
 	
 	@Override
-	public View onCreateView(android.view.LayoutInflater inflater, android.view.ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(@NonNull android.view.LayoutInflater inflater, android.view.ViewGroup container, Bundle savedInstanceState) {
 		View v = createView(inflater, container);
-		listView = (ExpandableListView) v.findViewById(android.R.id.list);
+		listView = v.findViewById(android.R.id.list);
 		listView.setOnChildClickListener(this);
 		if(this.adapter != null) {
 			listView.setAdapter(this.adapter);
@@ -43,7 +41,7 @@ public abstract class OsmandExpandableListFragment extends BaseOsmAndFragment
 								: R.color.bg_color_dark));
 	}
 
-	public View createView(android.view.LayoutInflater inflater, android.view.ViewGroup container) {
+	private View createView(android.view.LayoutInflater inflater, android.view.ViewGroup container) {
 		setHasOptionsMenu(true);
 		return inflater.inflate(R.layout.expandable_list, container, false);
 	}
@@ -56,16 +54,11 @@ public abstract class OsmandExpandableListFragment extends BaseOsmAndFragment
 		
 	}
 	
-	public ExpandableListAdapter getAdapter() {
-		return adapter;
-	}
-	
 	public void fixBackgroundRepeat(View view) {
 		Drawable bg = view.getBackground();
 		if (bg != null) {
 			if (bg instanceof BitmapDrawable) {
 				BitmapDrawable bmp = (BitmapDrawable) bg;
-				// bmp.mutate(); // make sure that we aren't sharing state anymore
 				bmp.setTileModeXY(TileMode.REPEAT, TileMode.REPEAT);
 			}
 		}
@@ -92,16 +85,14 @@ public abstract class OsmandExpandableListFragment extends BaseOsmAndFragment
 				return onOptionsItemSelected(item);
 			}
 		});
-		MenuItemCompat.setShowAsAction(menuItem, menuItemType);
+		menuItem.setShowAsAction(menuItemType);
 		return menuItem;
 	}
-	
-	
+
 	public boolean isLightActionBar() {
 		return ((OsmandApplication) getActivity().getApplication()).getSettings().isLightActionBar();
 	}
-	
-	
+
 	public void collapseTrees(final int count) {
 		getActivity().runOnUiThread(new Runnable() {
 			@Override

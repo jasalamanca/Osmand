@@ -13,7 +13,6 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp">
 
-
         <CheckBox
             android:id="@+id/toggle_item"
             android:layout_width="wrap_content"

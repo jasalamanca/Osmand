@@ -3,8 +3,8 @@ package net.osmand.plus.activities;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.MenuItemCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -31,24 +31,21 @@ import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.search.SearchActivity;
 import net.osmand.plus.activities.search.SearchActivity.SearchActivityChild;
-import net.osmand.plus.helpers.AndroidUiHelper;
 import net.osmand.util.Algorithms;
 import net.osmand.util.MapUtils;
 
 public class NavigatePointFragment extends Fragment implements SearchActivityChild {
-	int currentFormat = Location.FORMAT_DEGREES;
+	private int currentFormat = Location.FORMAT_DEGREES;
 	
-	public static final String SEARCH_LAT = SearchActivity.SEARCH_LAT;
-	public static final String SEARCH_LON = SearchActivity.SEARCH_LON;
-
+	private static final String SEARCH_LAT = SearchActivity.SEARCH_LAT;
+	private static final String SEARCH_LON = SearchActivity.SEARCH_LON;
 	private static final int SHOW_ON_MAP = 3;
 
 	private View view;
 	private LatLon location;
-
 	private OsmandApplication app;
 
-	public View onCreateView(android.view.LayoutInflater inflater, android.view.ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(@NonNull android.view.LayoutInflater inflater, android.view.ViewGroup container, Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.search_point, container, false);
 		setHasOptionsMenu(true);
 
@@ -83,29 +80,26 @@ public class NavigatePointFragment extends Fragment implements SearchActivityChi
 	}
 	
 	@Override
-	public void onSaveInstanceState(Bundle outState) {
+	public void onSaveInstanceState(@NonNull Bundle outState) {
 		super.onSaveInstanceState(outState);
 		if(view != null) {
-			final TextView latEdit = ((TextView)view.findViewById(R.id.LatitudeEdit));
-			final TextView lonEdit = ((TextView)view.findViewById(R.id.LongitudeEdit));
+			final TextView latEdit = view.findViewById(R.id.LatitudeEdit);
+			final TextView lonEdit = view.findViewById(R.id.LongitudeEdit);
 			outState.putString(SEARCH_LAT, latEdit.getText().toString());
 			outState.putString(SEARCH_LON, lonEdit.getText().toString());
 		}
 	}
-	
-	
+
 	@Override
-	public void onCreateOptionsMenu(Menu onCreate, MenuInflater inflater) {
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		OsmandApplication app = (OsmandApplication) getActivity().getApplication();
-		boolean portrait = AndroidUiHelper.isOrientationPortrait(getActivity());
 		boolean light = app.getSettings().isLightActionBar();
-		Menu menu = onCreate;
 		if(getActivity() instanceof SearchActivity) {
 			((SearchActivity) getActivity()).getClearToolbar(false);
 			light = false;
 		}
 		MenuItem menuItem = menu.add(0, SHOW_ON_MAP, 0, R.string.shared_string_show_on_map);
-		MenuItemCompat.setShowAsAction(menuItem, MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+		menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 		menuItem = menuItem.setIcon(app.getIconsCache().getIcon(R.drawable.ic_action_marker_dark, light));
 
 		menuItem.setOnMenuItemClickListener(new OnMenuItemClickListener() {
@@ -115,15 +109,12 @@ public class NavigatePointFragment extends Fragment implements SearchActivityChi
 				return true;
 			}
 		});
-		
 	}
 	
 	@Override
 	public void onResume() {
 		super.onResume();
-
 		OsmandApplication app = (OsmandApplication) getActivity().getApplication();
-
 		LatLon loc = null;
 		if (getActivity() instanceof SearchActivity) {
 			loc = ((SearchActivity) getActivity()).getSearchPoint();
@@ -149,9 +140,9 @@ public class NavigatePointFragment extends Fragment implements SearchActivityChi
 		}
 	}
 	
-	protected void showCurrentFormat(LatLon l) {
-		final EditText latEdit = ((EditText)view.findViewById(R.id.LatitudeEdit));
-		final EditText lonEdit = ((EditText)view.findViewById(R.id.LongitudeEdit));
+	private void showCurrentFormat(LatLon l) {
+		final EditText latEdit = view.findViewById(R.id.LatitudeEdit);
+		final EditText lonEdit = view.findViewById(R.id.LongitudeEdit);
 		boolean utm = currentFormat == PointDescription.UTM_FORMAT;
 		view.findViewById(R.id.easting_row).setVisibility(utm ? View.VISIBLE : View.GONE);
 		view.findViewById(R.id.northing_row).setVisibility(utm ? View.VISIBLE : View.GONE);
@@ -159,9 +150,9 @@ public class NavigatePointFragment extends Fragment implements SearchActivityChi
 		view.findViewById(R.id.lat_row).setVisibility(!utm ? View.VISIBLE : View.GONE);
 		view.findViewById(R.id.lon_row).setVisibility(!utm ? View.VISIBLE : View.GONE);
 		if(currentFormat == PointDescription.UTM_FORMAT) {
-			final EditText northingEdit = ((EditText)view.findViewById(R.id.NorthingEdit));
-			final EditText eastingEdit = ((EditText)view.findViewById(R.id.EastingEdit));
-			final EditText zoneEdit = ((EditText)view.findViewById(R.id.ZoneEdit));
+			final EditText northingEdit = view.findViewById(R.id.NorthingEdit);
+			final EditText eastingEdit = view.findViewById(R.id.EastingEdit);
+			final EditText zoneEdit = view.findViewById(R.id.ZoneEdit);
 			UTMPoint pnt = new UTMPoint(new LatLonPoint(l.getLatitude(), l.getLongitude()));
 			zoneEdit.setText(pnt.zone_number + ""+pnt.zone_letter);
 			northingEdit.setText(((long)pnt.northing)+"");
@@ -172,7 +163,7 @@ public class NavigatePointFragment extends Fragment implements SearchActivityChi
 		}
 	}
 
-	protected LatLon parseLocation() {
+	private LatLon parseLocation() {
 		LatLon loc ;
 		if(currentFormat == LocationConvert.UTM_FORMAT) { 
 			double northing = Double.parseDouble(((EditText)view.findViewById(R.id.NorthingEdit)).getText().toString());
@@ -191,10 +182,10 @@ public class NavigatePointFragment extends Fragment implements SearchActivityChi
 		return loc;
 	}
 	
-	public void initUI(double latitude, double longitude){
+	private void initUI(double latitude, double longitude){
 		showCurrentFormat(new LatLon(latitude, longitude));
-		final Spinner format = ((Spinner)view.findViewById(R.id.Format));
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, new String[] {
+		final Spinner format = view.findViewById(R.id.Format);
+		ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, new String[]{
 				PointDescription.formatToHumanString(this.getContext(), PointDescription.FORMAT_DEGREES),
 				PointDescription.formatToHumanString(this.getContext(), PointDescription.FORMAT_MINUTES),
 				PointDescription.formatToHumanString(this.getContext(), PointDescription.FORMAT_SECONDS),
@@ -229,10 +220,7 @@ public class NavigatePointFragment extends Fragment implements SearchActivityChi
 					((TextView) view.findViewById(R.id.ValidateTextView)).setText(R.string.invalid_locations);
 					Log.w(PlatformUtil.TAG, "Convertion failed", e); //$NON-NLS-1$
 				}
-				
 			}
-
-		
 
 			@Override
 			public void onNothingSelected(AdapterView<?> parent) {
@@ -241,9 +229,9 @@ public class NavigatePointFragment extends Fragment implements SearchActivityChi
 		addPasteListeners();
 	}
 
-	protected void addPasteListeners() {
-		final EditText latEdit = ((EditText)view.findViewById(R.id.LatitudeEdit));
-		final EditText lonEdit = ((EditText)view.findViewById(R.id.LongitudeEdit));
+	private void addPasteListeners() {
+		final EditText latEdit = view.findViewById(R.id.LatitudeEdit);
+		final EditText lonEdit = view.findViewById(R.id.LongitudeEdit);
 		TextWatcher textWatcher = new TextWatcher() {
 			String pasteString = null;
 			@Override
@@ -316,8 +304,7 @@ public class NavigatePointFragment extends Fragment implements SearchActivityChi
 		lonEdit.addTextChangedListener(textWatcher);
 	}
 
-
-	public void select(int mode){
+	private void select(int mode){
 		try {
 			LatLon loc = parseLocation();
 			double lat = loc.getLatitude();
@@ -336,5 +323,4 @@ public class NavigatePointFragment extends Fragment implements SearchActivityChi
 			Log.w(PlatformUtil.TAG, "Convertion failed", e); //$NON-NLS-1$
 		}
 	}
-	
 }

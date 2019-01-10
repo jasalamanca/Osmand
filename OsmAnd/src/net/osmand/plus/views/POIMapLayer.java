@@ -2,7 +2,6 @@ package net.osmand.plus.views;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -13,29 +12,17 @@ import android.graphics.PointF;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.text.util.Linkify;
 import android.util.TypedValue;
-import android.view.Gravity;
-import android.view.MenuItem;
-import android.view.MenuItem.OnMenuItemClickListener;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import net.osmand.AndroidUtils;
 import net.osmand.PlatformUtil;
 import net.osmand.ResultMatcher;
 import net.osmand.ValueHolder;
@@ -49,7 +36,6 @@ import net.osmand.osm.PoiType;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.helpers.FileNameTranslationHelper;
 import net.osmand.plus.poi.PoiUIFilter;
 import net.osmand.plus.render.RenderingIcons;
 import net.osmand.plus.routing.RoutingHelper;
@@ -60,9 +46,7 @@ import net.osmand.util.Algorithms;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -71,27 +55,21 @@ import static android.util.TypedValue.COMPLEX_UNIT_DIP;
 public class POIMapLayer extends OsmandMapLayer implements ContextMenuLayer.IContextMenuProvider,
 		MapTextProvider<Amenity>, IRouteInformationListener {
 	private static final int startZoom = 9;
-
 	public static final org.apache.commons.logging.Log log = PlatformUtil.getLog(POIMapLayer.class);
 
 	private Paint paintIcon;
-
 	private Paint paintIconBackground;
 	private Bitmap poiBackground;
 	private Bitmap poiBackgroundSmall;
-
 	private OsmandMapTileView view;
-
-	private RoutingHelper routingHelper;
+	private final RoutingHelper routingHelper;
 	private Set<PoiUIFilter> filters = new TreeSet<>();
 	private MapTextLayer mapTextLayer;
 
 	/// cache for displayed POI
 	// Work with cache (for map copied from AmenityIndexRepositoryOdb)
-	private MapLayerData<List<Amenity>> data;
-
-	private OsmandApplication app;
-
+	private final MapLayerData<List<Amenity>> data;
+	private final OsmandApplication app;
 
 	public POIMapLayer(final MapActivity activity) {
 		routingHelper = activity.getRoutingHelper();
@@ -150,8 +128,7 @@ public class POIMapLayer extends OsmandMapLayer implements ContextMenuLayer.ICon
 		};
 	}
 
-
-	public void getAmenityFromPoint(RotatedTileBox tb, PointF point, List<? super Amenity> am) {
+	private void getAmenityFromPoint(RotatedTileBox tb, PointF point, List<? super Amenity> am) {
 		List<Amenity> objects = data.getResults();
 		if (objects != null) {
 			int ex = (int) point.x;
@@ -175,25 +152,19 @@ public class POIMapLayer extends OsmandMapLayer implements ContextMenuLayer.ICon
 		}
 	}
 
-
 	@Override
 	public void initLayer(OsmandMapTileView view) {
 		this.view = view;
 
 		paintIcon = new Paint();
-		//paintIcon.setStrokeWidth(1);
-		//paintIcon.setStyle(Style.STROKE);
-		//paintIcon.setColor(Color.BLUE);
 		paintIcon.setColorFilter(new PorterDuffColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN));
 		paintIconBackground = new Paint();
 		poiBackground = BitmapFactory.decodeResource(view.getResources(), R.drawable.map_white_orange_poi_shield);
 		poiBackgroundSmall = BitmapFactory.decodeResource(view.getResources(), R.drawable.map_white_orange_poi_shield_small);
-
 		mapTextLayer = view.getLayerByClass(MapTextLayer.class);
 	}
 
-
-	public int getRadiusPoi(RotatedTileBox tb) {
+	private int getRadiusPoi(RotatedTileBox tb) {
 		int r;
 		final double zoom = tb.getZoom();
 		if (zoom < startZoom) {
@@ -294,7 +265,7 @@ public class POIMapLayer extends OsmandMapLayer implements ContextMenuLayer.ICon
 		showText(ctx, app, text, title);
 	}
 
-	static int getResIdFromAttribute(final Context ctx, final int attr) {
+	private static int getResIdFromAttribute(final Context ctx, final int attr) {
 		if (attr == 0) {
 			return 0;
 		}
@@ -430,7 +401,7 @@ public class POIMapLayer extends OsmandMapLayer implements ContextMenuLayer.ICon
 	public void routeWasFinished() {
 	}
 
-	public static int dpToPx(Context ctx, float dp) {
+	private static int dpToPx(Context ctx, float dp) {
 		Resources r = ctx.getResources();
 		return (int) TypedValue.applyDimension(
 				COMPLEX_UNIT_DIP,
@@ -438,6 +409,4 @@ public class POIMapLayer extends OsmandMapLayer implements ContextMenuLayer.ICon
 				r.getDisplayMetrics()
 		);
 	}
-
-
 }

@@ -8,7 +8,6 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +24,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import net.osmand.AndroidUtils;
-import net.osmand.PlatformUtil;
 import net.osmand.core.android.MapRendererContext;
 import net.osmand.plus.ContextMenuAdapter;
 import net.osmand.plus.ContextMenuAdapter.ItemClickListener;
@@ -51,8 +49,6 @@ import net.osmand.render.RenderingRuleStorageProperties;
 import net.osmand.render.RenderingRulesStorage;
 import net.osmand.util.Algorithms;
 
-import org.apache.commons.logging.Log;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -66,12 +62,11 @@ import java.util.Map;
 import gnu.trove.list.array.TIntArrayList;
 
 public class ConfigureMapMenu {
-	private static final Log LOG = PlatformUtil.getLog(ConfigureMapMenu.class);
-	public static final String HIKING_ROUTES_OSMC_ATTR = "hikingRoutesOSMC";
+	private static final String HIKING_ROUTES_OSMC_ATTR = "hikingRoutesOSMC";
 	public static final String CURRENT_TRACK_COLOR_ATTR = "currentTrackColor";
 	public static final String CURRENT_TRACK_WIDTH_ATTR = "currentTrackWidth";
-	public static final String COLOR_ATTR = "color";
-	public static final String ROAD_STYLE_ATTR = "roadStyle";
+	private static final String COLOR_ATTR = "color";
+	private static final String ROAD_STYLE_ATTR = "roadStyle";
 	private int hikingRouteOSMCValue;
 	private int selectedLanguageIndex;
 	private boolean transliterateNames;
@@ -108,8 +103,8 @@ public class ConfigureMapMenu {
 	}
 
 	private final class LayerMenuListener extends OnRowItemClick {
-		private MapActivity ma;
-		private ContextMenuAdapter cm;
+		private final MapActivity ma;
+		private final ContextMenuAdapter cm;
 
 		private LayerMenuListener(MapActivity ma, ContextMenuAdapter cm) {
 			this.ma = ma;
@@ -135,7 +130,7 @@ public class ConfigureMapMenu {
 				showGpxSelectionDialog(adapter, adapter.getItem(pos));
 				return false;
 			} else {
-				CompoundButton btn = (CompoundButton) view.findViewById(R.id.toggle_item);
+				CompoundButton btn = view.findViewById(R.id.toggle_item);
 				if (btn != null && btn.getVisibility() == View.VISIBLE) {
 					btn.setChecked(!btn.isChecked());
 					cm.getItem(pos).setColorRes(btn.isChecked() ? R.color.osmand_orange : ContextMenuItem.INVALID_ID);
@@ -201,8 +196,8 @@ public class ConfigureMapMenu {
 			});
 		}
 
-		protected void showPoiFilterDialog(final ArrayAdapter<ContextMenuItem> adapter,
-										   final ContextMenuItem item) {
+		void showPoiFilterDialog(final ArrayAdapter<ContextMenuItem> adapter,
+								 final ContextMenuItem item) {
 			final PoiFiltersHelper poiFiltersHelper = ma.getMyApplication().getPoiFilters();
 			MapActivityLayers.DismissListener dismissListener =
 					new MapActivityLayers.DismissListener() {
@@ -303,7 +298,7 @@ public class ConfigureMapMenu {
 							showTransportDialog(adapter, position);
 							return false;
 						} else {
-							CompoundButton btn = (CompoundButton) view.findViewById(R.id.toggle_item);
+							CompoundButton btn = view.findViewById(R.id.toggle_item);
 							if (btn != null && btn.getVisibility() == View.VISIBLE) {
 								btn.setChecked(!btn.isChecked());
 								adapter.getItem(position).setColorRes(btn.isChecked() ? R.color.osmand_orange : ContextMenuItem.INVALID_ID);
@@ -335,7 +330,7 @@ public class ConfigureMapMenu {
 					}
 
 					private void showTransportDialog(final ArrayAdapter<ContextMenuItem> ad, final int pos) {
-						final AlertDialog.Builder b = new AlertDialog.Builder(activity);
+						final android.support.v7.app.AlertDialog.Builder b = new android.support.v7.app.AlertDialog.Builder(activity);
 						b.setTitle(activity.getString(R.string.rendering_category_transport));
 
 						final int[] iconIds = new int[transportPrefs.size()];
@@ -365,9 +360,9 @@ public class ConfigureMapMenu {
 						adapter = new ArrayAdapter<CharSequence>(activity, R.layout.popup_list_item_icon24_and_menu, R.id.title, vals) {
 							@NonNull
 							@Override
-							public View getView(final int position, View convertView, ViewGroup parent) {
+							public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
 								View v = super.getView(position, convertView, parent);
-								final ImageView icon = (ImageView) v.findViewById(R.id.icon);
+								final ImageView icon = v.findViewById(R.id.icon);
 								if (checkedItems[position]) {
 									icon.setImageDrawable(app.getIconsCache().getIcon(iconIds[position], R.color.osmand_orange));
 								} else {
@@ -376,7 +371,7 @@ public class ConfigureMapMenu {
 								v.findViewById(R.id.divider).setVisibility(View.GONE);
 								v.findViewById(R.id.description).setVisibility(View.GONE);
 								v.findViewById(R.id.secondary_icon).setVisibility(View.GONE);
-								final Switch check = (Switch) v.findViewById(R.id.toggle_item);
+								final Switch check = v.findViewById(R.id.toggle_item);
 								check.setOnCheckedChangeListener(null);
 								check.setChecked(checkedItems[position]);
 								check.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -479,9 +474,7 @@ public class ConfigureMapMenu {
 						int selected = -1;
 						final String selectedName = app.getRendererRegistry().getCurrentSelectedRenderer().getName();
 						int i = 0;
-						Iterator<String> iterator = items.iterator();
-						while (iterator.hasNext()) {
-							String item = iterator.next();
+						for (String item : items) {
 							if (item.equals(selectedName)) {
 								selected = i;
 							}
@@ -689,17 +682,17 @@ public class ConfigureMapMenu {
 						final ArrayAdapter<CharSequence> singleChoiceAdapter = new ArrayAdapter<CharSequence>(activity, R.layout.single_choice_switch_item, R.id.text1, txtValues) {
 							@NonNull
 							@Override
-							public View getView(int position, View convertView, ViewGroup parent) {
+							public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 								View v = super.getView(position, convertView, parent);
-								CheckedTextView checkedTextView = (CheckedTextView) v.findViewById(R.id.text1);
+								CheckedTextView checkedTextView = v.findViewById(R.id.text1);
 								if (position == selectedLanguageIndex && position > 0) {
 									checkedTextView.setChecked(true);
 									v.findViewById(R.id.topDivider).setVisibility(View.VISIBLE);
 									v.findViewById(R.id.bottomDivider).setVisibility(View.VISIBLE);
 									v.findViewById(R.id.switchLayout).setVisibility(View.VISIBLE);
-									TextView switchText = (TextView) v.findViewById(R.id.switchText);
+									TextView switchText = v.findViewById(R.id.switchText);
 									switchText.setText(activity.getString(R.string.translit_name_if_miss, txtValues[position]));
-									SwitchCompat check = (SwitchCompat) v.findViewById(R.id.check);
+									Switch check = v.findViewById(R.id.check);
 									check.setChecked(transliterateNames);
 									check.setOnCheckedChangeListener(translitChangdListener);
 								} else {
@@ -779,7 +772,7 @@ public class ConfigureMapMenu {
 		}
 	}
 
-	public static String[] mapNamesIds = new String[]{"", "en", "af", "als", "ar", "az", "be", "ber", "bg", "bn", "bpy", "br", "bs", "ca", "ceb", "cs", "cy", "da", "de", "el", "eo", "es", "et", "eu", "fa", "fi", "fr", "fy", "ga", "gl", "he", "hi", "hsb", "hr", "ht", "hu", "hy", "id", "is", "it", "ja", "ka", "kab", "ko", "ku", "la", "lb", "lo", "lt", "lv", "mk", "ml", "mr", "ms", "nds", "new", "nl", "nn", "no", "nv", "os", "pl", "pms", "pt", "ro", "ru", "sc", "sh", "sk", "sl", "sq", "sr", "sv", "sw", "ta", "te", "th", "tl", "tr", "uk", "vi", "vo", "zh"};
+	private static final String[] mapNamesIds = new String[]{"", "en", "af", "als", "ar", "az", "be", "ber", "bg", "bn", "bpy", "br", "bs", "ca", "ceb", "cs", "cy", "da", "de", "el", "eo", "es", "et", "eu", "fa", "fi", "fr", "fy", "ga", "gl", "he", "hi", "hsb", "hr", "ht", "hu", "hy", "id", "is", "it", "ja", "ka", "kab", "ko", "ku", "la", "lb", "lo", "lt", "lv", "mk", "ml", "mr", "ms", "nds", "new", "nl", "nn", "no", "nv", "os", "pl", "pms", "pt", "ro", "ru", "sc", "sh", "sk", "sl", "sq", "sr", "sv", "sw", "ta", "te", "th", "tl", "tr", "uk", "vi", "vo", "zh"};
 
 	public static String[] getSortedMapNamesIds(Context ctx, String[] ids, String[] values) {
 		final Map<String, String> mp = new HashMap<>();
@@ -808,7 +801,7 @@ public class ConfigureMapMenu {
 		return lst.toArray(new String[lst.size()]);
 	}
 
-	public static String[] getMapNamesValues(Context ctx, String[] ids) {
+	private static String[] getMapNamesValues(Context ctx, String[] ids) {
 		String[] translates = new String[ids.length];
 		for (int i = 0; i < translates.length; i++) {
 			if (Algorithms.isEmpty(ids[i])) {
@@ -929,8 +922,8 @@ public class ConfigureMapMenu {
 		return null;
 	}
 
-	protected String getDescription(final List<OsmandSettings.CommonPreference<Boolean>> prefs,
-									final List<OsmandSettings.CommonPreference<String>> includedPrefs) {
+	private String getDescription(final List<OsmandSettings.CommonPreference<Boolean>> prefs,
+								  final List<OsmandSettings.CommonPreference<String>> includedPrefs) {
 		int count = 0;
 		int enabled = 0;
 		for (OsmandSettings.CommonPreference<Boolean> p : prefs) {
@@ -948,17 +941,17 @@ public class ConfigureMapMenu {
 		return enabled + "/" + count;
 	}
 
-	protected void showPreferencesDialog(final ContextMenuAdapter adapter,
-										 final ArrayAdapter<?> a,
-										 final int pos,
-										 final MapActivity activity,
-										 String category,
-										 List<RenderingRuleProperty> ps,
-										 final List<CommonPreference<Boolean>> prefs,
-										 final boolean useDescription,
-										 ListStringPreference defaultSettings,
-										 boolean useDefault,
-										 final List<RenderingRuleProperty> customRulesIncluded) {
+	private void showPreferencesDialog(final ContextMenuAdapter adapter,
+									   final ArrayAdapter<?> a,
+									   final int pos,
+									   final MapActivity activity,
+									   String category,
+									   List<RenderingRuleProperty> ps,
+									   final List<CommonPreference<Boolean>> prefs,
+									   final boolean useDescription,
+									   ListStringPreference defaultSettings,
+									   boolean useDefault,
+									   final List<RenderingRuleProperty> customRulesIncluded) {
 
 		AlertDialog.Builder bld = new AlertDialog.Builder(activity);
 		boolean[] checkedItems = new boolean[prefs.size()];
@@ -1045,9 +1038,9 @@ public class ConfigureMapMenu {
 
 					LayoutInflater inflater = activity.getLayoutInflater();
 					View spinnerView = inflater.inflate(R.layout.spinner_rule_layout, null);
-					TextView title = (TextView) spinnerView.findViewById(R.id.title);
-					final Spinner spinner = (Spinner) spinnerView.findViewById(R.id.spinner);
-					TextView description = (TextView) spinnerView.findViewById(R.id.description);
+					TextView title = spinnerView.findViewById(R.id.title);
+					final Spinner spinner = spinnerView.findViewById(R.id.spinner);
+					TextView description = spinnerView.findViewById(R.id.description);
 
 					String propertyName = SettingsActivity.getStringPropertyName(activity, p.getAttrName(),
 							p.getName());
@@ -1098,7 +1091,7 @@ public class ConfigureMapMenu {
 		dialog.show();
 	}
 
-	protected String getRenderDescr(final MapActivity activity) {
+	private String getRenderDescr(final MapActivity activity) {
 		RendererRegistry rr = activity.getMyApplication().getRendererRegistry();
 		RenderingRulesStorage storage = rr.getCurrentSelectedRenderer();
 		if (storage == null) {
@@ -1108,16 +1101,16 @@ public class ConfigureMapMenu {
 		return translation == null ? storage.getName() : translation;
 	}
 
-	protected String getDayNightDescr(final MapActivity activity) {
+	private String getDayNightDescr(final MapActivity activity) {
 		return activity.getMyApplication().getSettings().DAYNIGHT_MODE.get().toHumanString(activity);
 	}
 
 	@DrawableRes
-	protected int getDayNightIcon(final MapActivity activity) {
+	private int getDayNightIcon(final MapActivity activity) {
 		return activity.getMyApplication().getSettings().DAYNIGHT_MODE.get().getIconRes();
 	}
 
-	protected String getScale(final MapActivity activity) {
+	private String getScale(final MapActivity activity) {
 		int scale = (int) (activity.getMyApplication().getSettings().TEXT_SCALE.get() * 100);
 		return scale + " %";
 	}
@@ -1251,17 +1244,18 @@ public class ConfigureMapMenu {
 
 	private class StringSpinnerArrayAdapter extends ArrayAdapter<String> {
 
-		private boolean lightTheme;
+		private final boolean lightTheme;
 
-		public StringSpinnerArrayAdapter(Context context) {
+		StringSpinnerArrayAdapter(Context context) {
 			super(context, android.R.layout.simple_spinner_item);
 			setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 			OsmandApplication app = (OsmandApplication )getContext().getApplicationContext();
 			lightTheme = app.getSettings().isLightContent();
 		}
 
+		@NonNull
 		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
+		public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 			TextView label = (TextView) super.getView(position, convertView, parent);
 
 			String text = getItem(position);
@@ -1272,7 +1266,7 @@ public class ConfigureMapMenu {
 		}
 
 		@Override
-		public View getDropDownView(int position, View convertView, ViewGroup parent) {
+		public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent) {
 			TextView label = (TextView) super.getDropDownView(position, convertView, parent);
 
 			String text = getItem(position);
@@ -1286,8 +1280,8 @@ public class ConfigureMapMenu {
 
 	public static class GpxAppearanceAdapter extends ArrayAdapter<AppearanceListItem> {
 
-		private OsmandApplication app;
-		private int currentColor;
+		private final OsmandApplication app;
+		private final int currentColor;
 		private GpxAppearanceAdapterType adapterType = GpxAppearanceAdapterType.TRACK_WIDTH_COLOR;
 
 		public enum GpxAppearanceAdapterType {
@@ -1313,7 +1307,7 @@ public class ConfigureMapMenu {
 			init();
 		}
 
-		public void init() {
+		void init() {
 			RenderingRuleProperty trackWidthProp = null;
 			RenderingRuleProperty trackColorProp = null;
 			RenderingRulesStorage renderer = app.getRendererRegistry().getCurrentSelectedRenderer();
@@ -1381,9 +1375,9 @@ public class ConfigureMapMenu {
 				v = LayoutInflater.from(getContext()).inflate(R.layout.rendering_prop_menu_item, null);
 			}
 			if (item != null) {
-				TextView textView = (TextView) v.findViewById(R.id.text1);
+				TextView textView = v.findViewById(R.id.text1);
 				textView.setText(item.localizedValue);
-				if (item.attrName == CURRENT_TRACK_WIDTH_ATTR) {
+				if (CURRENT_TRACK_WIDTH_ATTR.equals(item.attrName)) {
 					int iconId;
 					if (item.value.equals("bold")) {
 						iconId = R.drawable.ic_action_gpx_width_bold;
@@ -1412,19 +1406,19 @@ public class ConfigureMapMenu {
 	}
 
 	public static class AppearanceListItem {
-		private String attrName;
-		private String value;
-		private String localizedValue;
+		private final String attrName;
+		private final String value;
+		private final String localizedValue;
 		private int color;
 		private boolean lastItem;
 
-		public AppearanceListItem(String attrName, String value, String localizedValue) {
+		AppearanceListItem(String attrName, String value, String localizedValue) {
 			this.attrName = attrName;
 			this.value = value;
 			this.localizedValue = localizedValue;
 		}
 
-		public AppearanceListItem(String attrName, String value, String localizedValue, int color) {
+		AppearanceListItem(String attrName, String value, String localizedValue, int color) {
 			this.attrName = attrName;
 			this.value = value;
 			this.localizedValue = localizedValue;
@@ -1439,19 +1433,23 @@ public class ConfigureMapMenu {
 			return value;
 		}
 
-		public String getLocalizedValue() {
-			return localizedValue;
-		}
+// --Commented out by Inspection START (10/01/19 20:57):
+//		public String getLocalizedValue() {
+//			return localizedValue;
+//		}
+// --Commented out by Inspection STOP (10/01/19 20:57)
 
 		public int getColor() {
 			return color;
 		}
 
-		public boolean isLastItem() {
-			return lastItem;
-		}
+// --Commented out by Inspection START (10/01/19 20:56):
+//		public boolean isLastItem() {
+//			return lastItem;
+//		}
+// --Commented out by Inspection STOP (10/01/19 20:56)
 
-		public void setLastItem(boolean lastItem) {
+		void setLastItem(boolean lastItem) {
 			this.lastItem = lastItem;
 		}
 	}

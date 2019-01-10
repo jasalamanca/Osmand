@@ -10,7 +10,6 @@ import net.osmand.data.City;
 import net.osmand.data.LatLon;
 import net.osmand.data.Street;
 import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.search.SearchAddressFragment.AddressInformation;
 import net.osmand.plus.resources.RegionAddressRepository;
@@ -126,13 +125,13 @@ public class SearchBuildingByNameActivity extends SearchByNameAbstractActivity<B
 		if(isSelectAddres()) {
 			finish();
 		} else {
-			showOnMap(loc, AddressInformation.buildBuilding(this, settings));
+			showOnMap(loc, AddressInformation.buildBuilding(settings));
 		}
 	}
 	
 	@Override
 	protected AddressInformation getAddressInformation() {
-		return AddressInformation.buildStreet(this, settings);
+		return AddressInformation.buildStreet(settings);
 	}
 	
 	

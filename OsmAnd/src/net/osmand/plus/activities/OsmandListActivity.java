@@ -1,10 +1,7 @@
 package net.osmand.plus.activities;
 
-import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.R;
 import android.app.ActionBar;
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +9,9 @@ import android.widget.AdapterView;
 import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+
+import net.osmand.plus.OsmandApplication;
+import net.osmand.plus.R;
 
 
 public abstract class OsmandListActivity extends
@@ -62,7 +62,7 @@ public abstract class OsmandListActivity extends
 				return onOptionsItemSelected(item);
 			}
 		});
-		MenuItemCompat.setShowAsAction(menuItem, menuItemType);
+		menuItem.setShowAsAction(menuItemType);
 		return menuItem;
 	}
 
@@ -89,9 +89,11 @@ public abstract class OsmandListActivity extends
 		((ListView)findViewById(android.R.id.list)).setOnItemClickListener(childClickListener);
 	}
 
-	public boolean isLightActionBar() {
-		return ((OsmandApplication) getApplication()).getSettings().isLightActionBar();
-	}
+// --Commented out by Inspection START (10/01/19 21:03):
+//	public boolean isLightActionBar() {
+//		return ((OsmandApplication) getApplication()).getSettings().isLightActionBar();
+//	}
+// --Commented out by Inspection STOP (10/01/19 21:03)
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

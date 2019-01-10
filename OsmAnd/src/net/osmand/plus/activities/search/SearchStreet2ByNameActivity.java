@@ -67,7 +67,7 @@ public class SearchStreet2ByNameActivity extends SearchByNameAbstractActivity<St
 	
 	@Override
 	protected AddressInformation getAddressInformation() {
-		return AddressInformation.buildStreet(this, settings);
+		return AddressInformation.buildStreet(settings);
 	}	
 	
 	@Override
@@ -81,7 +81,7 @@ public class SearchStreet2ByNameActivity extends SearchByNameAbstractActivity<St
 		if(isSelectAddres()) {
 			finish();
 		} else {
-			showOnMap(obj.getLocation(), AddressInformation.build2StreetIntersection(this, settings));
+			showOnMap(obj.getLocation(), AddressInformation.build2StreetIntersection(settings));
 		}
 	}
 }

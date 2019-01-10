@@ -2,6 +2,7 @@ package net.osmand.plus.liveupdates;
 
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.AlertDialog.Builder;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -10,16 +11,11 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AlertDialog.Builder;
-import android.support.v7.widget.SwitchCompat;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -36,7 +32,9 @@ import android.widget.ExpandableListView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.TextView;
+
 import net.osmand.map.WorldRegion;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandSettings;
@@ -76,7 +74,7 @@ import static net.osmand.plus.liveupdates.LiveUpdatesHelper.setAlarmForPendingIn
 public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppListener {
 	public static final int TITLE = R.string.live_updates;
 	private static final int SUBSCRIPTION_SETTINGS = 5;
-	public static final Comparator<LocalIndexInfo> LOCAL_INDEX_INFO_COMPARATOR = new Comparator<LocalIndexInfo>() {
+	private static final Comparator<LocalIndexInfo> LOCAL_INDEX_INFO_COMPARATOR = new Comparator<LocalIndexInfo>() {
 		@Override
 		public int compare(LocalIndexInfo lhs, LocalIndexInfo rhs) {
 			return lhs.getName().compareTo(rhs.getName());
@@ -90,7 +88,7 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 	private ProgressBar progressBar;
 	private boolean processing;
 
-	public InAppHelper getInAppHelper() {
+	private InAppHelper getInAppHelper() {
 		Activity activity = getActivity();
 		if (activity instanceof OsmLiveActivity) {
 			return ((OsmLiveActivity) activity).getInAppHelper();
@@ -110,10 +108,10 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_live_updates, container, false);
-		listView = (ExpandableListView) view.findViewById(android.R.id.list);
+		listView = view.findViewById(android.R.id.list);
 
 		View bottomShadowView = inflater.inflate(R.layout.card_bottom_divider, listView, false);
 		listView.addFooterView(bottomShadowView);
@@ -133,7 +131,7 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 			}
 		});
 
-		progressBar = (ProgressBar) view.findViewById(R.id.progress);
+		progressBar = view.findViewById(R.id.progress);
 
 		if (!Version.isDeveloperVersion(getMyApplication())) {
 			subscriptionHeader = inflater.inflate(R.layout.live_updates_header, listView, false);
@@ -162,9 +160,9 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 			View subscriptionBanner = subscriptionHeader.findViewById(R.id.subscription_banner);
 			View subscriptionInfo = subscriptionHeader.findViewById(R.id.subscription_info);
 			if (getSettings().LIVE_UPDATES_PURCHASED.get()) {
-				ImageView statusIcon = (ImageView) subscriptionHeader.findViewById(R.id.statusIcon);
-				TextView statusTextView = (TextView) subscriptionHeader.findViewById(R.id.statusTextView);
-				TextView regionNameTextView = (TextView) subscriptionHeader.findViewById(R.id.regionTextView);
+				ImageView statusIcon = subscriptionHeader.findViewById(R.id.statusIcon);
+				TextView statusTextView = subscriptionHeader.findViewById(R.id.statusTextView);
+				TextView regionNameTextView = subscriptionHeader.findViewById(R.id.regionTextView);
 				statusTextView.setText(getString(R.string.osm_live_active));
 				statusIcon.setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_done));
 
@@ -178,7 +176,7 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 				subscriptionBanner.setVisibility(View.GONE);
 				subscriptionInfo.setVisibility(View.VISIBLE);
 			} else {
-				Button readMoreBtn = (Button) subscriptionHeader.findViewById(R.id.read_more_button);
+				Button readMoreBtn = subscriptionHeader.findViewById(R.id.read_more_button);
 				readMoreBtn.setEnabled(!processing);
 				readMoreBtn.setOnClickListener(new View.OnClickListener() {
 					@Override
@@ -188,7 +186,7 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 						startActivity(goToOsmLive);
 					}
 				});
-				Button subscriptionButton = (Button) subscriptionHeader.findViewById(R.id.subscription_button);
+				Button subscriptionButton = subscriptionHeader.findViewById(R.id.subscription_button);
 				subscriptionButton.setEnabled(!processing);
 				subscriptionButton.setOnClickListener(new View.OnClickListener() {
 					@Override
@@ -254,9 +252,9 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 
 			SubMenu split = menu.addSubMenu(R.string.shared_string_more_actions);
 			split.setIcon(R.drawable.ic_overflow_menu_white);
-			MenuItemCompat.setShowAsAction(split.getItem(), MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+			split.getItem().setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 			MenuItem item = split.add(0, SUBSCRIPTION_SETTINGS, 0, R.string.osm_live_subscription_settings);
-			MenuItemCompat.setShowAsAction(item, MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+			item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 		}
 	}
 
@@ -271,20 +269,20 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 		return super.onOptionsItemSelected(item);
 	}
 
-	protected class LocalIndexesAdapter extends OsmandBaseExpandableListAdapter {
-		public static final int SHOULD_UPDATE_GROUP_POSITION = 0;
-		public static final int SHOULD_NOT_UPDATE_GROUP_POSITION = 1;
+	class LocalIndexesAdapter extends OsmandBaseExpandableListAdapter {
+		static final int SHOULD_UPDATE_GROUP_POSITION = 0;
+		static final int SHOULD_NOT_UPDATE_GROUP_POSITION = 1;
 		final ArrayList<LocalIndexInfo> dataShouldUpdate = new ArrayList<>();
 		final ArrayList<LocalIndexInfo> dataShouldNotUpdate = new ArrayList<>();
 		final LiveUpdatesFragment fragment;
 		final Context ctx;
 
-		public LocalIndexesAdapter(LiveUpdatesFragment fragment) {
+		LocalIndexesAdapter(LiveUpdatesFragment fragment) {
 			this.fragment = fragment;
 			ctx = fragment.getActivity();
 		}
 
-		public void add(LocalIndexInfo info) {
+		void add(LocalIndexInfo info) {
 			OsmandSettings.CommonPreference<Boolean> preference = preferenceLiveUpdatesOn(
 					info.getFileName(), getSettings());
 			if (preference.get()) {
@@ -294,7 +292,7 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 			}
 		}
 
-		public void notifyLiveUpdatesChanged() {
+		void notifyLiveUpdatesChanged() {
 			Set<LocalIndexInfo> changedSet = new HashSet<>();
 			for (LocalIndexInfo localIndexInfo : dataShouldUpdate) {
 				OsmandSettings.CommonPreference<Boolean> preference =
@@ -319,7 +317,7 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 			expandAllGroups();
 		}
 
-		public void sort() {
+		void sort() {
 			Collections.sort(dataShouldUpdate, LOCAL_INDEX_INFO_COMPARATOR);
 			Collections.sort(dataShouldNotUpdate, LOCAL_INDEX_INFO_COMPARATOR);
 		}
@@ -365,12 +363,12 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 				LayoutInflater inflater = LayoutInflater.from(ctx);
 				view = inflater.inflate(R.layout.list_group_title_with_switch, parent, false);
 			}
-			TextView nameView = ((TextView) view.findViewById(R.id.title));
+			TextView nameView = view.findViewById(R.id.title);
 			nameView.setText(group);
 
 			view.setOnClickListener(null);
 
-			final SwitchCompat liveUpdatesSwitch = (SwitchCompat) view.findViewById(R.id.toggle_item);
+			final Switch liveUpdatesSwitch = view.findViewById(R.id.toggle_item);
 			View topShadowView = view.findViewById(R.id.bottomShadowView);
 			if (groupPosition == SHOULD_UPDATE_GROUP_POSITION) {
 				topShadowView.setVisibility(View.GONE);
@@ -415,7 +413,7 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 			settings.IS_LIVE_UPDATES_ON.set(true);
 			enableLiveUpdates(true);
 			if(dataShouldUpdate.size() > 0) {
-				Builder bld = new AlertDialog.Builder(getActivity());
+				Builder bld = new Builder(getActivity());
 				bld.setMessage(R.string.update_all_maps_now);
 				bld.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
 					
@@ -505,8 +503,8 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 	}
 
 	private static class LocalFullMapsViewHolder {
-		public static final int UPDATES_ENABLED_ITEM_HEIGHT = 72;
-		public static final int UPDATES_DISABLED_ITEM_HEIGHT = 50;
+		static final int UPDATES_ENABLED_ITEM_HEIGHT = 72;
+		static final int UPDATES_DISABLED_ITEM_HEIGHT = 50;
 		private final ImageView icon;
 		private final TextView nameTextView;
 		private final TextView subheaderTextView;
@@ -518,11 +516,11 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 		private final View divider;
 
 		private LocalFullMapsViewHolder(View view, LiveUpdatesFragment context) {
-			icon = (ImageView) view.findViewById(R.id.icon);
-			nameTextView = (TextView) view.findViewById(R.id.nameTextView);
-			subheaderTextView = (TextView) view.findViewById(R.id.subheaderTextView);
-			descriptionTextView = (TextView) view.findViewById(R.id.descriptionTextView);
-			options = (ImageButton) view.findViewById(R.id.options);
+			icon = view.findViewById(R.id.icon);
+			nameTextView = view.findViewById(R.id.nameTextView);
+			subheaderTextView = view.findViewById(R.id.subheaderTextView);
+			descriptionTextView = view.findViewById(R.id.descriptionTextView);
+			options = view.findViewById(R.id.options);
 			this.view = view;
 			this.fragment = context;
 
@@ -533,7 +531,7 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 			divider = view.findViewById(R.id.divider);
 		}
 
-		public void bindLocalIndexInfo(@NonNull final String item, boolean isLastChild) {
+		void bindLocalIndexInfo(@NonNull final String item, boolean isLastChild) {
 			OsmandApplication context = fragment.getMyActivity().getMyApplication();
 			final OsmandSettings.CommonPreference<Boolean> shouldUpdatePreference =
 					preferenceLiveUpdatesOn(item, fragment.getSettings());
@@ -605,17 +603,17 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 		}
 	}
 
-	public static class LoadLocalIndexTask
+	static class LoadLocalIndexTask
 			extends AsyncTask<Void, LocalIndexInfo, List<LocalIndexInfo>>
 			implements AbstractLoadLocalIndexTask {
 
 		//private List<LocalIndexInfo> result;
-		private LocalIndexesAdapter adapter;
-		private LiveUpdatesFragment fragment;
-		private LocalIndexHelper helper;
+		private final LocalIndexesAdapter adapter;
+		private final LiveUpdatesFragment fragment;
+		private final LocalIndexHelper helper;
 
-		public LoadLocalIndexTask(LocalIndexesAdapter adapter,
-								  LiveUpdatesFragment fragment) {
+		LoadLocalIndexTask(LocalIndexesAdapter adapter,
+						   LiveUpdatesFragment fragment) {
 			this.adapter = adapter;
 			this.fragment = fragment;
 			helper = new LocalIndexHelper(fragment.getMyActivity().getMyApplication());
@@ -668,7 +666,7 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 		adapter.notifyDataSetChanged();
 	}
 
-	public static float dpToPx(final Context context, final float dp) {
+	private static float dpToPx(final Context context, final float dp) {
 		return dp * context.getResources().getDisplayMetrics().density;
 	}
 

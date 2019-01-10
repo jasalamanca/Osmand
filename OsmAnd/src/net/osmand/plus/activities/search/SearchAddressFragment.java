@@ -4,15 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.MenuItemCompat;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -58,7 +57,7 @@ public class SearchAddressFragment extends Fragment {
 	private View view;
 	
 
-	public View onCreateView(android.view.LayoutInflater inflater, android.view.ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(@NonNull android.view.LayoutInflater inflater, android.view.ViewGroup container, Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.search_address, container, false);
 		
 		streetButton = (Button) findViewById(R.id.StreetButton);
@@ -71,17 +70,14 @@ public class SearchAddressFragment extends Fragment {
 		return view;
 	}
 
-
-
 	@Override
-	public void onCreateOptionsMenu(Menu onCreate, MenuInflater inflater) {
-		Menu menu = onCreate;
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		if(getActivity() instanceof SearchActivity) {
 			((SearchActivity) getActivity()).getClearToolbar(false);
 		}
 		if(getActivity() instanceof SearchAddressActivity) {
 			MenuItem menuItem = menu.add(0, SELECT_POINT, 0, "");
-			MenuItemCompat.setShowAsAction(menuItem, MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+			menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 			if (getApplication().accessibilityEnabled())
 				menuItem.setTitle(R.string.shared_string_ok);
 			menuItem = menuItem.setIcon(R.drawable.ic_action_done);
@@ -94,7 +90,7 @@ public class SearchAddressFragment extends Fragment {
 			});
 		} else {
 			MenuItem menuItem = menu.add(0, SHOW_ON_MAP, 0, R.string.shared_string_show_on_map);
-			MenuItemCompat.setShowAsAction(menuItem, MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+			menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 			menuItem = menuItem.setIcon(R.drawable.ic_action_marker_dark);
 
 			menuItem.setOnMenuItemClickListener(new OnMenuItemClickListener() {
@@ -106,7 +102,7 @@ public class SearchAddressFragment extends Fragment {
 			});
 			if (ENABLE_ONLINE_ADDRESS) {
 				menuItem = menu.add(0, ONLINE_SEARCH, 0, R.string.search_online_address);
-				MenuItemCompat.setShowAsAction(menuItem, MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+				menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 				menuItem = menuItem.setIcon(R.drawable.ic_world_globe_dark);
 				menuItem.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 					@Override
@@ -117,7 +113,6 @@ public class SearchAddressFragment extends Fragment {
 				});
 			}
 		}
-
 	}
 	
 	private OsmandApplication getApplication() {
@@ -178,9 +173,8 @@ public class SearchAddressFragment extends Fragment {
 				}
 			}
 		});
-		OsmandApplication app = getApplication();
 		Drawable icon = getApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_remove_dark);
-		((ImageView)findViewById(R.id.ResetBuilding)).setBackgroundDrawable(icon);
+		findViewById(R.id.ResetBuilding).setBackground(icon);
 		findViewById(R.id.ResetBuilding).setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
@@ -191,7 +185,7 @@ public class SearchAddressFragment extends Fragment {
 				updateUI();
 			}
 		 });
-		((ImageView)findViewById(R.id.ResetStreet)).setBackgroundDrawable(icon);
+		findViewById(R.id.ResetStreet).setBackground(icon);
 		 findViewById(R.id.ResetStreet).setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
@@ -204,7 +198,7 @@ public class SearchAddressFragment extends Fragment {
 				updateUI();
 			}
 		 });
-		 ((ImageView)findViewById(R.id.ResetCity)).setBackgroundDrawable(icon);
+		 findViewById(R.id.ResetCity).setBackground(icon);
 		 findViewById(R.id.ResetCity).setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
@@ -219,7 +213,7 @@ public class SearchAddressFragment extends Fragment {
 				updateUI();
 			}
 		 });
-		 ((ImageView)findViewById(R.id.ResetCountry)).setBackgroundDrawable(icon);
+		 findViewById(R.id.ResetCountry).setBackground(icon);
 		 findViewById(R.id.ResetCountry).setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
@@ -231,7 +225,7 @@ public class SearchAddressFragment extends Fragment {
 				building = null;
 				searchPoint = null;
 				osmandSettings.setLastSearchedRegion("", null);
-				// also empties City, Postcode, Street, (Interseting street), Building, Point
+				// also empties City, Postcode, Street, (Intersecting street), Building, Point
 				updateUI();
 			}
 		});
@@ -258,7 +252,7 @@ public class SearchAddressFragment extends Fragment {
 			return new PointDescription(PointDescription.POINT_TYPE_ADDRESS, objectType, objectName);
 		}
 		
-		public static AddressInformation build2StreetIntersection(Context ctx, OsmandSettings settings){
+		public static AddressInformation build2StreetIntersection(OsmandSettings settings){
 			AddressInformation ai = new AddressInformation();
 			String cityName = getCityName(settings);
 			ai.objectName = settings.getLastSearchedStreet() +" x " +
@@ -268,18 +262,16 @@ public class SearchAddressFragment extends Fragment {
 			return ai;
 		}
 		
-		public static AddressInformation buildStreet(Context ctx, OsmandSettings settings){
+		public static AddressInformation buildStreet(OsmandSettings settings){
 			AddressInformation ai = new AddressInformation();
 			String cityName = getCityName(settings);
-			String street = settings.getLastSearchedStreet();
-			ai.objectName = street;
+			ai.objectName = settings.getLastSearchedStreet(); // street
 			ai.objectType = cityName;
 			ai.zoom = 16;
 			return ai;
 		}
-		
-		
-		public static AddressInformation buildBuilding(Context ctx, OsmandSettings settings){
+
+		public static AddressInformation buildBuilding(OsmandSettings settings){
 			AddressInformation ai = new AddressInformation();
 			String cityName = getCityName(settings);
 			String street = settings.getLastSearchedStreet();
@@ -293,8 +285,7 @@ public class SearchAddressFragment extends Fragment {
 		private static String getCityName(OsmandSettings settings) {
 			String postcode = settings.getLastSearchedPostcode();
 			String city = settings.getLastSearchedCityName();
-			String cityName = !Algorithms.isEmpty(postcode) ? postcode : city;
-			return cityName;
+			return !Algorithms.isEmpty(postcode) ? postcode : city;
 		}
 
 		private static String getRegionName(Context ctx, OsmandSettings settings) {
@@ -310,15 +301,14 @@ public class SearchAddressFragment extends Fragment {
 		
 		public static AddressInformation buildCity(Context ctx, OsmandSettings settings){
 			AddressInformation ai = new AddressInformation();
-			String city = settings.getLastSearchedCityName();
-			ai.objectName = city;
+			ai.objectName = settings.getLastSearchedCityName(); // city
 			ai.objectType = getRegionName(ctx, settings);
 			ai.zoom = 14;
 			return ai;
 		}
 	}
 	
-	public void select(int mode) {
+	private void select(int mode) {
 		if (searchPoint == null) {
 			Toast.makeText(getActivity(), R.string.please_select_address, Toast.LENGTH_SHORT).show();
 			return;
@@ -326,15 +316,15 @@ public class SearchAddressFragment extends Fragment {
 		AddressInformation ai = new AddressInformation();
 		PointDescription pointDescription = ai.getHistoryName();
 		if (!Algorithms.isEmpty(street2) && !Algorithms.isEmpty(street)) {
-			ai = AddressInformation.build2StreetIntersection(getActivity(), osmandSettings);
+			ai = AddressInformation.build2StreetIntersection(osmandSettings);
 			pointDescription.setName(street2);
 			pointDescription.setTypeName(getRegionName() + ", " + city);
 		} else if (!Algorithms.isEmpty(building)) {
-			ai = AddressInformation.buildBuilding(getActivity(), osmandSettings);
+			ai = AddressInformation.buildBuilding(osmandSettings);
 			pointDescription.setName(street + ", " + building);
 			pointDescription.setTypeName(getRegionName() + ", " + city);
 		} else if (!Algorithms.isEmpty(street)) {
-			ai = AddressInformation.buildStreet(getActivity(), osmandSettings);
+			ai = AddressInformation.buildStreet(osmandSettings);
 			pointDescription.setName(street);
 			pointDescription.setTypeName(getRegionName() + ", " + city);
 		} else if(!Algorithms.isEmpty(city)) {
@@ -359,7 +349,7 @@ public class SearchAddressFragment extends Fragment {
 	}
 	
 	
-	protected void updateBuildingSection(){
+	private void updateBuildingSection(){
 		if(radioBuilding){
 			((TextView)findViewById(R.id.BuildingText)).setText(R.string.search_address_building);
 			if(Algorithms.isEmpty(building)){
@@ -382,7 +372,7 @@ public class SearchAddressFragment extends Fragment {
 		return view.findViewById(resId);
 	}
 
-	protected void updateUI(){
+	private void updateUI(){
 		findViewById(R.id.ResetCountry).setEnabled(!Algorithms.isEmpty(region));
 		if(Algorithms.isEmpty(region)){
 			countryButton.setText(R.string.ChooseCountry);
@@ -434,7 +424,7 @@ public class SearchAddressFragment extends Fragment {
 		}
 	}
 	
-	public void loadData() {
+	private void loadData() {
 		if (!Algorithms.isEmpty(region)) {
 			String postcodeStr = osmandSettings.getLastSearchedPostcode();
 			if (!Algorithms.isEmpty(postcodeStr)) {
