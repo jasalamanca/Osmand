@@ -1,13 +1,13 @@
 package net.osmand.plus.dashboard;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,17 +35,17 @@ public abstract class DashBaseFragment extends Fragment {
 	}
 
 	@Override
-	public void onAttach(Activity activity) {
-		super.onAttach(activity);
-		if (activity instanceof MapActivity) {
-			dashboard = ((MapActivity) activity).getDashboard();
+	public void onAttach(Context context) {
+		super.onAttach(context);
+		if (context instanceof MapActivity) {
+			dashboard = ((MapActivity) context).getDashboard();
 			dashboard.onAttach(this);
 		}
 	}
 
-	@Nullable
+	@NonNull
 	@Override
-	final public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+	final public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
 								   @Nullable Bundle savedInstanceState) {
 		View childView = initView(inflater, container, savedInstanceState);
 		FrameLayout.LayoutParams layoutParams =
@@ -90,13 +90,8 @@ public abstract class DashBaseFragment extends Fragment {
 		return defaultDismissListener;
 	}
 
-	public boolean isDismissAllowed() {
+	private boolean isDismissAllowed() {
 		return true;
-	}
-
-	@Override
-	public boolean getUserVisibleHint() {
-		return super.getUserVisibleHint();
 	}
 
 	public abstract void onOpenDash();
@@ -125,8 +120,10 @@ public abstract class DashBaseFragment extends Fragment {
 	}
 
 
-	public void onLocationCompassChanged(Location l, double compassValue) {
-	}
+// --Commented out by Inspection START (13/01/19 17:21):
+//	public void onLocationCompassChanged(Location l, double compassValue) {
+//	}
+// --Commented out by Inspection STOP (13/01/19 17:21)
 
 	@Override
 	public void onDetach() {
@@ -153,13 +150,13 @@ public abstract class DashBaseFragment extends Fragment {
 	private DismissListener defaultDismissListener;
 
 	public static class DefaultDismissListener implements DismissListener {
-		private View parentView;
-		private DashboardOnMap dashboardOnMap;
-		private String fragmentTag;
-		private View fragmentView;
+		private final View parentView;
+		private final DashboardOnMap dashboardOnMap;
+		private final String fragmentTag;
+		private final View fragmentView;
 
-		public DefaultDismissListener(View parentView, DashboardOnMap dashboardOnMap,
-									  String fragmentTag, View fragmentView) {
+		DefaultDismissListener(View parentView, DashboardOnMap dashboardOnMap,
+							   String fragmentTag, View fragmentView) {
 			this.parentView = parentView;
 			this.dashboardOnMap = dashboardOnMap;
 			this.fragmentTag = fragmentTag;
@@ -169,8 +166,8 @@ public abstract class DashBaseFragment extends Fragment {
 		@Override
 		public void onDismiss() {
 			dashboardOnMap.blacklistFragmentByTag(fragmentTag);
-			ViewCompat.setTranslationX(fragmentView, 0);
-			ViewCompat.setAlpha(fragmentView, 1);
+			fragmentView.setTranslationX(0);
+			fragmentView.setAlpha(1);
 			Snackbar.make(parentView, dashboardOnMap.getMyApplication().getResources()
 					.getString(R.string.shared_string_card_was_hidden), Snackbar.LENGTH_LONG)
 					.setAction(R.string.shared_string_undo, new View.OnClickListener() {
@@ -182,10 +179,10 @@ public abstract class DashBaseFragment extends Fragment {
 					.show();
 		}
 
-		public void onUndo() {
+		void onUndo() {
 			dashboardOnMap.unblacklistFragmentClass(fragmentTag);
-			ViewCompat.setTranslationX(fragmentView, 0);
-			ViewCompat.setAlpha(fragmentView, 1);
+			fragmentView.setTranslationX(0);
+			fragmentView.setAlpha(1);
 		}
 	}
 }

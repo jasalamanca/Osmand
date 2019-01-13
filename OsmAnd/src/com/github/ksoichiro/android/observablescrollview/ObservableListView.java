@@ -50,7 +50,7 @@ public class ObservableListView extends ListView implements Scrollable {
     private ViewGroup mTouchInterceptionViewGroup;
 
     private OnScrollListener mOriginalScrollListener;
-    private OnScrollListener mScrollListener = new OnScrollListener() {
+    private final OnScrollListener mScrollListener = new OnScrollListener() {
         @Override
         public void onScrollStateChanged(AbsListView view, int scrollState) {
             if (mOriginalScrollListener != null) {
@@ -85,9 +85,11 @@ public class ObservableListView extends ListView implements Scrollable {
         init();
     }
 
-	public boolean isDragging() {
-		return mDragging;
-	}
+// --Commented out by Inspection START (13/01/19 17:51):
+//	public boolean isDragging() {
+//		return mDragging;
+//	}
+// --Commented out by Inspection STOP (13/01/19 17:51)
 
 	public void clearParams() {
 		mPrevFirstVisiblePosition = 0;

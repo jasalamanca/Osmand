@@ -29,7 +29,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
-import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.GestureDetector;
@@ -45,20 +44,21 @@ import com.github.ksoichiro.android.observablescrollview.ObservableListView;
 
 import java.util.List;
 
+//TODO jsala quitar y sustituir por RecyclerView
 public class DynamicListView extends ObservableListView {
 
-	protected final int SMOOTH_SCROLL_AMOUNT_AT_EDGE = 15;
-	protected final int MOVE_DURATION = 150;
+	private final int SMOOTH_SCROLL_AMOUNT_AT_EDGE = 15;
+	private final int MOVE_DURATION = 150;
 
-	protected List<Object> mItemsList;
-	protected List<Object> mActiveItemsList;
+	private List<Object> mItemsList;
+	private List<Object> mActiveItemsList;
 
 	private DynamicListViewCallbacks dCallbacks;
 
 	private int mLastEventY = -1;
 
-	protected int mDownY = -1;
-	protected int mDownX = -1;
+	private int mDownY = -1;
+	private int mDownX = -1;
 
 	private int mTotalOffset = 0;
 
@@ -67,7 +67,7 @@ public class DynamicListView extends ObservableListView {
 	private int mSmoothScrollAmountAtEdge = 0;
 	private boolean itemsSwapped = false;
 
-	protected final int INVALID_ID = -1;
+	private final int INVALID_ID = -1;
 	private long mAboveItemId = INVALID_ID;
 	private long mMobileItemId = INVALID_ID;
 	private long mBelowItemId = INVALID_ID;
@@ -76,7 +76,7 @@ public class DynamicListView extends ObservableListView {
 	private Rect mHoverCellCurrentBounds;
 	private Rect mHoverCellOriginalBounds;
 
-	protected final int INVALID_POINTER_ID = -1;
+	private final int INVALID_POINTER_ID = -1;
 	private int mActivePointerId = INVALID_POINTER_ID;
 
 	private boolean mIsWaitingForScrollFinish = false;
@@ -104,7 +104,7 @@ public class DynamicListView extends ObservableListView {
 		init(context);
 	}
 
-	public void init(Context context) {
+	private void init(Context context) {
 		setOnScrollListener(mScrollListener);
 		DisplayMetrics metrics = context.getResources().getDisplayMetrics();
 		mSmoothScrollAmountAtEdge = (int) (SMOOTH_SCROLL_AMOUNT_AT_EDGE / metrics.density);
@@ -157,7 +157,7 @@ public class DynamicListView extends ObservableListView {
 		return bitmapOut;
 	}
 
-	public StableArrayAdapter getStableAdapter() {
+	private StableArrayAdapter getStableAdapter() {
 		ListAdapter listAdapter = getAdapter();
 		if (listAdapter instanceof HeaderViewListAdapter) {
 			listAdapter = ((HeaderViewListAdapter) listAdapter).getWrappedAdapter();
@@ -206,7 +206,7 @@ public class DynamicListView extends ObservableListView {
 	/**
 	 * Retrieves the view in the list corresponding to itemID
 	 */
-	public View getViewForID(long itemID) {
+	private View getViewForID(long itemID) {
 		if (itemID != INVALID_ID) {
 			int firstVisiblePosition = getFirstVisiblePosition();
 			ListAdapter adapter = getAdapter();
@@ -222,7 +222,7 @@ public class DynamicListView extends ObservableListView {
 		return null;
 	}
 
-	public void setAllVisible() {
+	private void setAllVisible() {
 		for (int i = 0; i < getChildCount(); i++) {
 			View v = getChildAt(i);
 			if (v != null && v.getVisibility() != VISIBLE) {
@@ -234,7 +234,7 @@ public class DynamicListView extends ObservableListView {
 	/**
 	 * Retrieves the position in the list corresponding to itemID
 	 */
-	public int getPositionForID(long itemID) {
+	private int getPositionForID(long itemID) {
 		View v = getViewForID(itemID);
 		if (v == null) {
 			return -1;
@@ -296,7 +296,7 @@ public class DynamicListView extends ObservableListView {
 		}
 	}
 
-	void drawDivider(Canvas canvas, Drawable divider, Rect bounds) {
+	private void drawDivider(Canvas canvas, Drawable divider, Rect bounds) {
 		divider.setBounds(bounds);
 		divider.draw(canvas);
 	}
@@ -457,18 +457,12 @@ public class DynamicListView extends ObservableListView {
 					int switchViewNewTop = switchView.getTop();
 					int delta = switchViewStartTop - switchViewNewTop;
 
-					ViewCompat.setTranslationY(switchView, delta);
+					switchView.setTranslationY(delta);
 
-					if (android.os.Build.VERSION.SDK_INT < 12) {
-						ViewCompat.animate(switchView)
-								.translationY(0)
-								.setDuration(MOVE_DURATION);
-					} else {
-						ObjectAnimator animator = ObjectAnimator.ofFloat(switchView,
-								View.TRANSLATION_Y, 0);
-						animator.setDuration(MOVE_DURATION);
-						animator.start();
-					}
+					ObjectAnimator animator = ObjectAnimator.ofFloat(switchView,
+							View.TRANSLATION_Y, 0);
+					animator.setDuration(MOVE_DURATION);
+					animator.start();
 
 					return true;
 				}
@@ -514,48 +508,44 @@ public class DynamicListView extends ObservableListView {
 
 			mHoverCellCurrentBounds.offsetTo(mHoverCellOriginalBounds.left, mobileView.getTop());
 
-			if (android.os.Build.VERSION.SDK_INT < 12) {
-				finishTouch();
-			} else {
-				/**
-				 * This TypeEvaluator is used to animate the BitmapDrawable back to its
-				 * final location when the user lifts his finger by modifying the
-				 * BitmapDrawable's bounds.
-				 */
-				TypeEvaluator<Rect> sBoundEvaluator = new TypeEvaluator<Rect>() {
-					public Rect evaluate(float fraction, Rect startValue, Rect endValue) {
-						return new Rect(interpolate(startValue.left, endValue.left, fraction),
-								interpolate(startValue.top, endValue.top, fraction),
-								interpolate(startValue.right, endValue.right, fraction),
-								interpolate(startValue.bottom, endValue.bottom, fraction));
-					}
+			/**
+			 * This TypeEvaluator is used to animate the BitmapDrawable back to its
+			 * final location when the user lifts his finger by modifying the
+			 * BitmapDrawable's bounds.
+			 */
+			TypeEvaluator<Rect> sBoundEvaluator = new TypeEvaluator<Rect>() {
+				public Rect evaluate(float fraction, Rect startValue, Rect endValue) {
+					return new Rect(interpolate(startValue.left, endValue.left, fraction),
+							interpolate(startValue.top, endValue.top, fraction),
+							interpolate(startValue.right, endValue.right, fraction),
+							interpolate(startValue.bottom, endValue.bottom, fraction));
+				}
 
-					public int interpolate(int start, int end, float fraction) {
-						return (int) (start + fraction * (end - start));
-					}
-				};
+				int interpolate(int start, int end, float fraction) {
+					return (int) (start + fraction * (end - start));
+				}
+			};
 
-				ObjectAnimator hoverViewAnimator = ObjectAnimator.ofObject(mHoverCell, "bounds",
-						sBoundEvaluator, mHoverCellCurrentBounds);
-				hoverViewAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-					@Override
-					public void onAnimationUpdate(ValueAnimator valueAnimator) {
-						invalidate();
-					}
-				});
-				hoverViewAnimator.addListener(new AnimatorListenerAdapter() {
-					@Override
-					public void onAnimationStart(Animator animation) {
-						setEnabled(false);
-					}
+			ObjectAnimator hoverViewAnimator = ObjectAnimator.ofObject(mHoverCell, "bounds",
+					sBoundEvaluator, mHoverCellCurrentBounds);
+			hoverViewAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+				@Override
+				public void onAnimationUpdate(ValueAnimator valueAnimator) {
+					invalidate();
+				}
+			});
+			hoverViewAnimator.addListener(new AnimatorListenerAdapter() {
+				@Override
+				public void onAnimationStart(Animator animation) {
+					setEnabled(false);
+				}
 
-					@Override
-					public void onAnimationEnd(Animator animation) {
-						finishTouch();
-					}
-				});
-				hoverViewAnimator.start();
-			}
+				@Override
+				public void onAnimationEnd(Animator animation) {
+					finishTouch();
+				}
+			});
+			hoverViewAnimator.start();
 		} else {
 			touchEventsCancelled();
 		}
@@ -608,7 +598,7 @@ public class DynamicListView extends ObservableListView {
 	 * or below the bounds of the listview. If so, the listview does an appropriate
 	 * upward or downward smooth scroll so as to reveal new items.
 	 */
-	public boolean handleMobileCellScroll(Rect r) {
+	private boolean handleMobileCellScroll(Rect r) {
 		int offset = computeVerticalScrollOffset();
 		int height = getHeight();
 		int extent = computeVerticalScrollExtent();
@@ -648,7 +638,7 @@ public class DynamicListView extends ObservableListView {
 	 * scrolling takes place, the listview continuously checks if new cells became visible
 	 * and determines whether they are potential candidates for a cell swap.
 	 */
-	private AbsListView.OnScrollListener mScrollListener = new AbsListView.OnScrollListener() {
+	private final AbsListView.OnScrollListener mScrollListener = new AbsListView.OnScrollListener() {
 
 		private int mPreviousFirstVisibleItem = -1;
 		private int mPreviousVisibleItemCount = -1;
@@ -702,7 +692,7 @@ public class DynamicListView extends ObservableListView {
 		 * Determines if the listview scrolled up enough to reveal a new cell at the
 		 * top of the list. If so, then the appropriate parameters are updated.
 		 */
-		public void checkAndHandleFirstVisibleCellChange() {
+		void checkAndHandleFirstVisibleCellChange() {
 			if (mCurrentFirstVisibleItem != mPreviousFirstVisibleItem) {
 				if (mCellIsMobile && mMobileItemId != INVALID_ID) {
 					updateNeighborViewsForID(mMobileItemId);
@@ -715,7 +705,7 @@ public class DynamicListView extends ObservableListView {
 		 * Determines if the listview scrolled down enough to reveal a new cell at the
 		 * bottom of the list. If so, then the appropriate parameters are updated.
 		 */
-		public void checkAndHandleLastVisibleCellChange() {
+		void checkAndHandleLastVisibleCellChange() {
 			int currentLastVisibleItem = mCurrentFirstVisibleItem + mCurrentVisibleItemCount;
 			int previousLastVisibleItem = mPreviousFirstVisibleItem + mPreviousVisibleItemCount;
 			if (currentLastVisibleItem != previousLastVisibleItem) {

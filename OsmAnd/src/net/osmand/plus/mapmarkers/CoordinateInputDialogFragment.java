@@ -89,7 +89,7 @@ public class CoordinateInputDialogFragment extends DialogFragment implements Osm
 	private static final String NAME_LABEL = "name";
 
 	private OnMapMarkersSavedListener listener;
-	private List<MapMarker> mapMarkers = new ArrayList<>();
+	private final List<MapMarker> mapMarkers = new ArrayList<>();
 	private CoordinateInputAdapter adapter;
 	private boolean lightTheme;
 	private boolean useOsmandKeyboard = true;
@@ -143,7 +143,7 @@ public class CoordinateInputDialogFragment extends DialogFragment implements Osm
 
 	@Nullable
 	@Override
-	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		mainView = inflater.inflate(R.layout.fragment_coordinate_input_dialog, container);
 		final MapActivity mapActivity = getMapActivity();
 		iconsCache = getMyApplication().getIconsCache();
@@ -169,7 +169,7 @@ public class CoordinateInputDialogFragment extends DialogFragment implements Osm
 			@Override
 			public void onClick(View view) {
 				View focusedView = getDialog().getCurrentFocus();
-				if (focusedView != null && focusedView instanceof EditText) {
+				if (focusedView instanceof EditText) {
 					focusedView.clearFocus();
 					AndroidUtils.hideSoftKeyboard(getMapActivity(), focusedView);
 				}
@@ -187,11 +187,11 @@ public class CoordinateInputDialogFragment extends DialogFragment implements Osm
 		});
 
 		textFieldBoxes = new ArrayList<>();
-		final OsmandTextFieldBoxes latitudeBox = (OsmandTextFieldBoxes) mainView.findViewById(R.id.latitude_box);
+		final OsmandTextFieldBoxes latitudeBox = mainView.findViewById(R.id.latitude_box);
 		textFieldBoxes.add(latitudeBox);
-		final OsmandTextFieldBoxes longitudeBox = (OsmandTextFieldBoxes) mainView.findViewById(R.id.longitude_box);
+		final OsmandTextFieldBoxes longitudeBox = mainView.findViewById(R.id.longitude_box);
 		textFieldBoxes.add(longitudeBox);
-		final OsmandTextFieldBoxes nameBox = (OsmandTextFieldBoxes) mainView.findViewById(R.id.name_box);
+		final OsmandTextFieldBoxes nameBox = mainView.findViewById(R.id.name_box);
 		nameBox.setEndIcon(iconsCache.getIcon(R.drawable.ic_action_keyboard, R.color.coordinate_input_keyboard_icon_color));
 		nameBox.getEndIconImageButton().setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -222,7 +222,7 @@ public class CoordinateInputDialogFragment extends DialogFragment implements Osm
 
 		if (mapActivity != null) {
 			if (!orientationPortrait) {
-				LinearLayout handContainer = (LinearLayout) mainView.findViewById(R.id.hand_container);
+				LinearLayout handContainer = mainView.findViewById(R.id.hand_container);
 				if (rightHand) {
 					View.inflate(getContext(), R.layout.coordinate_input_land_map_markers_list, handContainer);
 					View.inflate(getContext(), R.layout.coordinate_input_land_osmand_keyboard, handContainer);
@@ -234,7 +234,7 @@ public class CoordinateInputDialogFragment extends DialogFragment implements Osm
 
 			final View mapMarkersLayout = mainView.findViewById(R.id.map_markers_layout);
 
-			RecyclerView recyclerView = (RecyclerView) mainView.findViewById(R.id.markers_recycler_view);
+			RecyclerView recyclerView = mainView.findViewById(R.id.markers_recycler_view);
 			recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 			adapter = new CoordinateInputAdapter(mapActivity, mapMarkers);
 			if (mapMarkersLayout != null) {
@@ -255,7 +255,7 @@ public class CoordinateInputDialogFragment extends DialogFragment implements Osm
 				}
 			});
 
-			TextView addButton = (TextView) mainView.findViewById(R.id.add_marker_button);
+			TextView addButton = mainView.findViewById(R.id.add_marker_button);
 			addButton.setBackgroundResource(lightTheme ? R.drawable.keyboard_item_add_button_light_bg : R.drawable.keyboard_item_add_button_dark_bg);
 			addButton.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -280,7 +280,7 @@ public class CoordinateInputDialogFragment extends DialogFragment implements Osm
 					"4", "5", "6", "-",
 					"7", "8", "9", R.drawable.ic_keyboard_backspace,
 					":", "0", ".", getString(R.string.shared_string_clear)};
-			final GridView keyboardGrid = (GridView) mainView.findViewById(R.id.keyboard_grid_view);
+			final GridView keyboardGrid = mainView.findViewById(R.id.keyboard_grid_view);
 			keyboardGrid.setBackgroundColor(ContextCompat.getColor(getContext(), lightTheme ? R.color.keyboard_divider_light : R.color.keyboard_divider_dark));
 			final KeyboardAdapter keyboardAdapter = new KeyboardAdapter(mapActivity, keyboardItems);
 			keyboardGrid.setAdapter(keyboardAdapter);
@@ -289,7 +289,7 @@ public class CoordinateInputDialogFragment extends DialogFragment implements Osm
 				public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 					if (useOsmandKeyboard) {
 						View focusedView = getDialog().getCurrentFocus();
-						if (focusedView != null && focusedView instanceof EditText) {
+						if (focusedView instanceof EditText) {
 							EditText focusedEditText = (EditText) focusedView;
 							switch (i) {
 								case CLEAR_BUTTON_POSITION:
@@ -318,7 +318,7 @@ public class CoordinateInputDialogFragment extends DialogFragment implements Osm
 			});
 
 			if (orientationPortrait) {
-				final ImageView showHideKeyboardIcon = (ImageView) mainView.findViewById(R.id.show_hide_keyboard_icon);
+				final ImageView showHideKeyboardIcon = mainView.findViewById(R.id.show_hide_keyboard_icon);
 				showHideKeyboardIcon.setBackgroundResource(lightTheme ? R.drawable.keyboard_item_add_button_light_bg : R.drawable.keyboard_item_add_button_dark_bg);
 				showHideKeyboardIcon.setImageDrawable(iconsCache.getIcon(R.drawable.ic_action_arrow_down, R.color.keyboard_item_button_text_color));
 				showHideKeyboardIcon.setOnClickListener(new View.OnClickListener() {
@@ -398,7 +398,7 @@ public class CoordinateInputDialogFragment extends DialogFragment implements Osm
 			public void afterTextChanged(Editable editable) {
 				if (goToNextField) {
 					View focusedView = getDialog().getCurrentFocus();
-					if (focusedView != null && focusedView instanceof EditText) {
+					if (focusedView instanceof EditText) {
 						EditText focusedEditText = (EditText) focusedView;
 						String str = focusedEditText.getText().toString();
 						int currentLength = str.length();
@@ -574,7 +574,7 @@ public class CoordinateInputDialogFragment extends DialogFragment implements Osm
 	}
 
 	private void changeHand() {
-		LinearLayout handContainer = (LinearLayout) mainView.findViewById(R.id.hand_container);
+		LinearLayout handContainer = mainView.findViewById(R.id.hand_container);
 		handContainer.removeAllViewsInLayout();
 		registerMainView();
 	}
@@ -754,10 +754,10 @@ public class CoordinateInputDialogFragment extends DialogFragment implements Osm
 
 	private class KeyboardAdapter extends ArrayAdapter<Object> {
 
-		private ColorStateList dividerControlColorStateList = AndroidUtils.createColorStateList(getContext(), false,
+		private final ColorStateList dividerControlColorStateList = AndroidUtils.createColorStateList(getContext(), false,
 				R.color.keyboard_item_divider_control_color_light, R.color.keyboard_item_divider_control_color_light_pressed,
 				0, 0);
-		private ColorStateList numberColorStateList = AndroidUtils.createColorStateList(getContext(), false,
+		private final ColorStateList numberColorStateList = AndroidUtils.createColorStateList(getContext(), false,
 				R.color.keyboard_item_text_color_light, R.color.keyboard_item_text_color_light_pressed,
 				0, 0);
 
@@ -788,8 +788,8 @@ public class CoordinateInputDialogFragment extends DialogFragment implements Osm
 			}
 			View keyboardItemTopSpacing = convertView.findViewById(R.id.keyboard_item_top_spacing);
 			View keyboardItemBottomSpacing = convertView.findViewById(R.id.keyboard_item_bottom_spacing);
-			TextView keyboardItemText = (TextView) convertView.findViewById(R.id.keyboard_item_text);
-			ImageView keyboardItemImage = (ImageView) convertView.findViewById(R.id.keyboard_item_image);
+			TextView keyboardItemText = convertView.findViewById(R.id.keyboard_item_text);
+			ImageView keyboardItemImage = convertView.findViewById(R.id.keyboard_item_image);
 			Object item = getItem(position);
 			if (item instanceof String) {
 				if (position == CLEAR_BUTTON_POSITION) {

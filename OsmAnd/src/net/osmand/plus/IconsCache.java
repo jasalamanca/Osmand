@@ -8,21 +8,20 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
-import android.view.MenuItem;
 
 import gnu.trove.map.hash.TLongObjectHashMap;
 
 public class IconsCache {
 
-	private TLongObjectHashMap<Drawable> drawable = new TLongObjectHashMap<>();
-	private OsmandApplication app;
+	private final TLongObjectHashMap<Drawable> drawable = new TLongObjectHashMap<>();
+	private final OsmandApplication app;
 	
 	public IconsCache(OsmandApplication app) {
 		this.app = app;
 	}
 
 	private Drawable getDrawable(@DrawableRes int resId, @ColorRes int clrId) {
-		long hash = ((long)resId << 31l) + clrId;
+		long hash = ((long)resId << 31L) + clrId;
 		Drawable d = drawable.get(hash);
 		if (d == null) {
 			d = ContextCompat.getDrawable(app, resId);
@@ -37,7 +36,7 @@ public class IconsCache {
 	}
 
 	private Drawable getPaintedDrawable(@DrawableRes int resId, @ColorInt int color){
-		long hash = ((long)resId << 31l) + color;
+		long hash = ((long)resId << 31L) + color;
 		Drawable d = drawable.get(hash);
 		if(d == null) {
 			d = ContextCompat.getDrawable(app, resId);

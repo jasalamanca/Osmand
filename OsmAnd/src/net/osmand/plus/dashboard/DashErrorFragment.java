@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.support.v4.view.ViewCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,12 +47,12 @@ public class DashErrorFragment extends DashBaseFragment {
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_error_fragment, container, false);
 		String msg = MessageFormat.format(getString(R.string.previous_run_crashed), OsmandApplication.EXCEPTION_PATH);
 		Typeface typeface = FontCache.getRobotoMedium(getActivity());
-		ImageView iv = ((ImageView) view.findViewById(R.id.error_icon));
+		ImageView iv = view.findViewById(R.id.error_icon);
 		iv.setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_crashlog));
-		TextView message = ((TextView) view.findViewById(R.id.error_header));
+		TextView message = view.findViewById(R.id.error_header);
 		message.setTypeface(typeface);
 		message.setText(msg);
-		Button errorBtn = ((Button) view.findViewById(R.id.error_btn));
+		Button errorBtn = view.findViewById(R.id.error_btn);
 		errorBtn.setTypeface(typeface);
 		errorBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -86,7 +85,7 @@ public class DashErrorFragment extends DashBaseFragment {
 			}
 		});
 
-		Button cancelBtn = ((Button) view.findViewById(R.id.error_cancel));
+		Button cancelBtn = view.findViewById(R.id.error_cancel);
 		cancelBtn.setTypeface(typeface);
 		cancelBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -112,13 +111,13 @@ public class DashErrorFragment extends DashBaseFragment {
 	}
 
 	private static class ErrorDismissListener implements DismissListener {
-		private View parentView;
-		private DashboardOnMap dashboardOnMap;
-		private String fragmentTag;
-		private View fragmentView;
+		private final View parentView;
+		private final DashboardOnMap dashboardOnMap;
+		private final String fragmentTag;
+		private final View fragmentView;
 
-		public ErrorDismissListener(View parentView, DashboardOnMap dashboardOnMap,
-									String fragmentTag, View fragmentView) {
+		ErrorDismissListener(View parentView, DashboardOnMap dashboardOnMap,
+							 String fragmentTag, View fragmentView) {
 			this.parentView = parentView;
 			this.dashboardOnMap = dashboardOnMap;
 			this.fragmentTag = fragmentTag;
@@ -128,8 +127,8 @@ public class DashErrorFragment extends DashBaseFragment {
 		@Override
 		public void onDismiss() {
 			dashboardOnMap.hideFragmentByTag(fragmentTag);
-			ViewCompat.setTranslationX(fragmentView, 0);
-			ViewCompat.setAlpha(fragmentView, 1);
+			fragmentView.setTranslationX(0);
+			fragmentView.setAlpha(1);
 			Snackbar.make(parentView, dashboardOnMap.getMyApplication().getResources()
 					.getString(R.string.shared_string_card_was_hidden), Snackbar.LENGTH_LONG)
 					.setAction(R.string.shared_string_undo, new View.OnClickListener() {
@@ -141,10 +140,10 @@ public class DashErrorFragment extends DashBaseFragment {
 					.show();
 		}
 
-		public void onUndo() {
+		void onUndo() {
 			dashboardOnMap.unhideFragmentByTag(fragmentTag);
-			ViewCompat.setTranslationX(fragmentView, 0);
-			ViewCompat.setAlpha(fragmentView, 1);
+			fragmentView.setTranslationX(0);
+			fragmentView.setAlpha(1);
 		}
 	}
 }

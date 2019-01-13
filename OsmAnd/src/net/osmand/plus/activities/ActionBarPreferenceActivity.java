@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
 import android.view.View;
@@ -17,7 +16,6 @@ import net.osmand.plus.R;
 
 public abstract class ActionBarPreferenceActivity extends AppCompatPreferenceActivity {
 	private Toolbar tb;
-	private View shadowView;
 
 	public Toolbar getToolbar() {
 		return tb;
@@ -36,12 +34,11 @@ public abstract class ActionBarPreferenceActivity extends AppCompatPreferenceAct
 		setTheme(t);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.preference_activity);
-		tb = (Toolbar) findViewById(R.id.toolbar);
+		tb = findViewById(R.id.toolbar);
 		if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
-			shadowView = findViewById(R.id.shadowView);
+			View shadowView = findViewById(R.id.shadowView);
 			final ViewGroup parent = (ViewGroup) shadowView.getParent();
 			parent.removeView(shadowView);
-			shadowView = null;
 		}
 		tb.setClickable(true);
 		tb.setNavigationIcon(((OsmandApplication) getApplication()).getIconsCache().getIcon(R.drawable.ic_arrow_back));
@@ -59,7 +56,7 @@ public abstract class ActionBarPreferenceActivity extends AppCompatPreferenceAct
 		setProgressVisibility(false);
 	}
 
-	static int getResIdFromAttribute(final Activity activity, final int attr) {
+	private static int getResIdFromAttribute(final Activity activity, final int attr) {
 		if (attr == 0)
 			return 0;
 		final TypedValue typedvalueattr = new TypedValue();
@@ -67,15 +64,17 @@ public abstract class ActionBarPreferenceActivity extends AppCompatPreferenceAct
 		return typedvalueattr.resourceId;
 	}
 
-	protected void setEnabledActionBarShadow(final boolean enable) {
-		if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
-			ViewCompat.setElevation(tb, enable ? 4 : 0);
-		} else {
-			if (shadowView == null)
-				shadowView = findViewById(R.id.shadowView);
-			shadowView.setVisibility(enable ? View.VISIBLE : View.GONE);
-		}
-	}
+// --Commented out by Inspection START (13/01/19 17:11):
+//	protected void setEnabledActionBarShadow(final boolean enable) {
+//		if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
+//			tb.setElevation(enable ? 4 : 0);
+//		} else {
+//			if (shadowView == null)
+//				shadowView = findViewById(R.id.shadowView);
+//			shadowView.setVisibility(enable ? View.VISIBLE : View.GONE);
+//		}
+//	}
+// --Commented out by Inspection STOP (13/01/19 17:11)
 
 	protected Spinner getSpinner() {
 		return (Spinner) findViewById(R.id.spinner_nav);

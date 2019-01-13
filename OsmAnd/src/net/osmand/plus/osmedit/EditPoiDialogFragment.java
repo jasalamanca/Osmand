@@ -1,6 +1,7 @@
 package net.osmand.plus.osmedit;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -21,7 +22,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -33,7 +33,6 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
@@ -48,7 +47,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import net.osmand.CallbackWithObject;
-import net.osmand.PlatformUtil;
 import net.osmand.data.Amenity;
 import net.osmand.data.LatLon;
 import net.osmand.osm.PoiCategory;
@@ -67,8 +65,6 @@ import net.osmand.plus.osmedit.dialogs.PoiSubTypeDialogFragment;
 import net.osmand.plus.osmedit.dialogs.PoiTypeDialogFragment;
 import net.osmand.util.Algorithms;
 
-import org.apache.commons.logging.Log;
-
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.Comparator;
@@ -80,7 +76,6 @@ import java.util.Set;
 
 public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 	public static final String TAG = "EditPoiDialogFragment";
-	private static final Log LOG = PlatformUtil.getLog(EditPoiDialogFragment.class);
 
 	private static final String KEY_AMENITY_NODE = "key_amenity_node";
 	private static final String TAGS_LIST = "tags_list";
@@ -169,38 +164,15 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 		final TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
 		tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
-		// tabLayout.setupWithViewPager(viewPager);
-		// Hack due to bug in design support library v22.2.1
-		// https://code.google.com/p/android/issues/detail?id=180462
-		// TODO remove in new version
-		if (Build.VERSION.SDK_INT >= 11) {
-			if (ViewCompat.isLaidOut(tabLayout)) {
-				tabLayout.setupWithViewPager(viewPager);
-			} else {
-				tabLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
-					@Override
-					public void onLayoutChange(View v, int left, int top, int right, int bottom,
-											   int oldLeft, int oldTop, int oldRight, int oldBottom) {
-						tabLayout.setupWithViewPager(viewPager);
-						tabLayout.removeOnLayoutChangeListener(this);
-					}
-				});
-			}
+		if (ViewCompat.isLaidOut(tabLayout)) {
+			tabLayout.setupWithViewPager(viewPager);
 		} else {
-			ViewTreeObserver vto = view.getViewTreeObserver();
-			vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-
+			tabLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
 				@Override
-				public void onGlobalLayout() {
-
-					ViewTreeObserver obs = view.getViewTreeObserver();
-					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-						obs.removeGlobalOnLayoutListener(this);
-					}
-
-					if (getActivity() != null) {
-						tabLayout.setupWithViewPager(viewPager);
-					}
+				public void onLayoutChange(View v, int left, int top, int right, int bottom,
+										   int oldLeft, int oldTop, int oldRight, int oldBottom) {
+					tabLayout.setupWithViewPager(viewPager);
+					tabLayout.removeOnLayoutChangeListener(this);
 				}
 			});
 		}
@@ -523,7 +495,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 		return editPoiData;
 	}
 
-	public void setSubCategory(String subCategory) {
+	private void setSubCategory(String subCategory) {
 		poiTypeEditText.setText(subCategory);
 	}
 
@@ -564,7 +536,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 		}.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 	}
 
-	public void setPoiCategory(PoiCategory type) {
+	private void setPoiCategory(PoiCategory type) {
 		editPoiData.updateType(type);
 		poiTypeEditText.setText(editPoiData.getPoiTypeString());
 		setAdapterForPoiTypeEditText();
@@ -692,12 +664,12 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 		}.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 	}
 
-	public static class MyAdapter extends FragmentPagerAdapter {
+	static class MyAdapter extends FragmentPagerAdapter {
 		private final Fragment[] fragments = new Fragment[]{new BasicEditPoiFragment(),
 				new AdvancedEditPoiFragment()};
 		private final String[] titles;
 
-		public MyAdapter(FragmentManager fm, String basicTitle, String extendedTitle) {
+		MyAdapter(FragmentManager fm, String basicTitle, String extendedTitle) {
 			super(fm);
 			titles = new String[]{basicTitle, extendedTitle};
 		}
@@ -718,16 +690,16 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 		}
 	}
 
-	public static class DeletePoiHelper {
+	static class DeletePoiHelper {
 		private final OpenstreetmapUtil openstreetmapUtil;
 		private final AppCompatActivity activity;
 		private DeletePoiCallback callback;
 
-		public void setCallback(DeletePoiCallback callback) {
+		void setCallback(DeletePoiCallback callback) {
 			this.callback = callback;
 		}
 
-		public DeletePoiHelper(AppCompatActivity activity) {
+		DeletePoiHelper(AppCompatActivity activity) {
 			this.activity = activity;
 			OsmandSettings settings = ((OsmandApplication) activity.getApplication()).getSettings();
 			OsmEditingPlugin plugin = OsmandPlugin.getPlugin(OsmEditingPlugin.class);
@@ -738,22 +710,24 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 			}
 		}
 
-		public void deletePoiWithDialog(Amenity amenity) {
-			new AsyncTask<Amenity, Void, Node>() {
+// --Commented out by Inspection START (13/01/19 18:58):
+//		public void deletePoiWithDialog(Amenity amenity) {
+//			new AsyncTask<Amenity, Void, Node>() {
+//
+//				@Override
+//				protected Node doInBackground(Amenity... params) {
+//					return openstreetmapUtil.loadNode(params[0]);
+//				}
+//
+//				@Override
+//				protected void onPostExecute(Node node) {
+//					deletePoiWithDialog(node);
+//				}
+//			}.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, amenity);
+//		}
+// --Commented out by Inspection STOP (13/01/19 18:58)
 
-				@Override
-				protected Node doInBackground(Amenity... params) {
-					return openstreetmapUtil.loadNode(params[0]);
-				}
-
-				@Override
-				protected void onPostExecute(Node node) {
-					deletePoiWithDialog(node);
-				}
-			}.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, amenity);
-		}
-
-		public void deletePoiWithDialog(final Node n) {
+		void deletePoiWithDialog(final Node n) {
 			if (n == null) {
 				Toast.makeText(activity, activity.getResources().getString(R.string.poi_error_poi_not_found), Toast.LENGTH_LONG).show();
 				return;
@@ -820,7 +794,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 					}, activity, openstreetmapUtil, null);
 		}
 
-		public interface DeletePoiCallback {
+		interface DeletePoiCallback {
 			void poiDeleted();
 		}
 	}
@@ -866,7 +840,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 		}
 	}
 
-	private TextView.OnEditorActionListener mOnEditorActionListener =
+	private final TextView.OnEditorActionListener mOnEditorActionListener =
 			new TextView.OnEditorActionListener() {
 				@Override
 				public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {

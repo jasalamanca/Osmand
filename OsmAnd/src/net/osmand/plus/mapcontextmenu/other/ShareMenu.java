@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.text.TextUtilsCompat;
-import android.support.v4.view.ViewCompat;
+import android.view.View;
 import android.widget.Toast;
 
 import net.osmand.data.LatLon;
@@ -66,13 +66,17 @@ public class ShareMenu extends BaseMenuController {
 		return list;
 	}
 
-	public LatLon getLatLon() {
-		return latLon;
-	}
+// --Commented out by Inspection START (13/01/19 20:04):
+//	public LatLon getLatLon() {
+//		return latLon;
+//	}
+// --Commented out by Inspection STOP (13/01/19 20:04)
 
-	public String getTitle() {
-		return title;
-	}
+// --Commented out by Inspection START (13/01/19 20:04):
+//	public String getTitle() {
+//		return title;
+//	}
+// --Commented out by Inspection STOP (13/01/19 20:04)
 
 	public static void show(LatLon latLon, String title, String address, MapActivity mapActivity) {
 
@@ -98,7 +102,7 @@ public class ShareMenu extends BaseMenuController {
 			sb.append(address).append("\n");
 		}
 		sb.append(getMapActivity().getString(R.string.shared_string_location)).append(": ");
-		if (TextUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == ViewCompat.LAYOUT_DIRECTION_RTL) {
+		if (TextUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == View.LAYOUT_DIRECTION_RTL) {
 			sb.append("\n");
 		}
 		sb.append(geoUrl).append("\n").append(httpUrl);

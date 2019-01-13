@@ -88,18 +88,17 @@ import java.util.TreeSet;
  */
 public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 	// Cached ViewConfiguration and system-wide constant values
-	private int mSlop;
-	private int mMinFlingVelocity;
-	private int mMaxFlingVelocity;
-	private long mAnimationTime;
+	private final int mSlop;
+	private final int mMinFlingVelocity;
+	private final int mMaxFlingVelocity;
+	private final long mAnimationTime;
 
 	// Fixed properties
-	private ListView mListView;
-	private DismissCallbacks mCallbacks;
+	private final ListView mListView;
+	private final DismissCallbacks mCallbacks;
 	private int mViewWidth = 1; // 1 and not 0 to prevent dividing by zero
 
 	// Transient properties
-	//private List<PendingDismissData> mPendingDismisses = new ArrayList<PendingDismissData>();
 	private int mDismissAnimationRefCount = 0;
 	private float mDownX;
 	private float mDownY;
@@ -110,25 +109,23 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 	private boolean mSwipePaused;
 	private boolean mSwipeCanceled;
 
-	private PopupWindow mUndoPopup;
+	private final PopupWindow mUndoPopup;
 	private int mValidDelayedMsgId;
-	private Handler mHideUndoHandler = new HideUndoPopupHandler();
-	private Button mUndoButton;
+	private final Handler mHideUndoHandler = new HideUndoPopupHandler();
+	private final Button mUndoButton;
 
-	private UndoStyle mUndoStyle = UndoStyle.SINGLE_POPUP;
-	private boolean mTouchBeforeAutoHide = false;
-	private SwipeDirection mSwipeDirection = SwipeDirection.BOTH;
-	private int mUndoHideDelay = 5000;
-	private int mSwipingLayout;
+	private final UndoStyle mUndoStyle = UndoStyle.SINGLE_POPUP;
+	private final SwipeDirection mSwipeDirection = SwipeDirection.BOTH;
+	// --Commented out by Inspection (13/01/19 18:26):private int mSwipingLayout;
 
 	private final Object[] mAnimationLock = new Object[0];
-	private List<Undoable> mUndoActions = new ArrayList<>();
-	private SortedSet<PendingDismissData> mPendingDismisses = new TreeSet<>();
-	private List<View> mAnimatedViews = new LinkedList<>();
+	private final List<Undoable> mUndoActions = new ArrayList<>();
+	private final SortedSet<PendingDismissData> mPendingDismisses = new TreeSet<>();
+	private final List<View> mAnimatedViews = new LinkedList<>();
 
 	private View mSwipeDownChild;
-	private TextView mUndoPopupTextView;
-	private float mScreenDensity;
+	private final TextView mUndoPopupTextView;
+	private final float mScreenDensity;
 
 	/**
 	 * Defines the direction in which list items can be swiped out to delete them.
@@ -199,7 +196,7 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 		 * (whereas in onKeyDown(int, android.view.KeyEvent) you should only remove it from the
 		 * list adapter).
 		 */
-		public void discard() {
+		void discard() {
 		}
 
 	}
@@ -238,15 +235,15 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 
 	private class PendingDismissData implements Comparable<PendingDismissData> {
 
-		public int position;
+		final int position;
 		/**
 		 * The view that should get swiped out.
 		 */
-		public View view;
+		final View view;
 		/**
 		 * The whole list item view.
 		 */
-		public View childView;
+		final View childView;
 
 		PendingDismissData(int position, View view, View childView) {
 			this.position = position;
@@ -362,7 +359,7 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 		// Initialize undo popup
 		LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View undoView = inflater.inflate(R.layout.undo_popup, null);
-		mUndoButton = (Button) undoView.findViewById(R.id.undo);
+		mUndoButton = undoView.findViewById(R.id.undo);
 		mUndoButton.setOnClickListener(new UndoClickListener());
 		mUndoButton.setOnTouchListener(new View.OnTouchListener() {
 			@Override
@@ -373,7 +370,7 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 				return false;
 			}
 		});
-		mUndoPopupTextView = (TextView) undoView.findViewById(R.id.text);
+		mUndoPopupTextView = undoView.findViewById(R.id.text);
 
 		mUndoPopup = new PopupWindow(undoView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, false);
 		mUndoPopup.setAnimationStyle(R.style.Animations_PopUpMenu_Fade);
@@ -392,62 +389,72 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 	 *
 	 * @param enabled Whether or not to watch for gestures.
 	 */
-	public void setEnabled(boolean enabled) {
+	private void setEnabled(boolean enabled) {
 		mSwipePaused = !enabled;
 	}
 
-	/**
-	 * Sets the undo style of this list.
-	 *
-	 * @param undoStyle The style of this listview.
-	 */
-	public void setUndoStyle(UndoStyle undoStyle) {
-		mUndoStyle = undoStyle;
-	}
+// --Commented out by Inspection START (13/01/19 18:19):
+//	/**
+//	 * Sets the undo style of this list.
+//	 *
+//	 * @param undoStyle The style of this listview.
+//	 */
+//	public void setUndoStyle(UndoStyle undoStyle) {
+//		mUndoStyle = undoStyle;
+//	}
+// --Commented out by Inspection STOP (13/01/19 18:19)
 
-	/**
-	 * Sets the time in milliseconds after which the undo popup automatically disappears.
-	 * The countdown will start when the user touches the screen. If you want to start the countdown
-	 * immediately when the popups appears, call {@link #setRequireTouchBeforeDismiss(boolean)} with
-	 * {@code false}.
-	 *
-	 * @param hideDelay The delay in milliseconds.
-	 */
-	public void setUndoHideDelay(int hideDelay) {
-		mUndoHideDelay = hideDelay;
-	}
+// --Commented out by Inspection START (13/01/19 18:20):
+//	/**
+//	 * Sets the time in milliseconds after which the undo popup automatically disappears.
+//	 * The countdown will start when the user touches the screen. If you want to start the countdown
+//	 * immediately when the popups appears, call {@link #setRequireTouchBeforeDismiss(boolean)} with
+//	 * {@code false}.
+//	 *
+//	 * @param hideDelay The delay in milliseconds.
+//	 */
+//	public void setUndoHideDelay(int hideDelay) {
+//		mUndoHideDelay = hideDelay;
+//	}
+// --Commented out by Inspection STOP (13/01/19 18:20)
 
-	/**
-	 * Sets whether another touch on the view is required before the popup counts down to dismiss
-	 * the undo popup. By default this is set to {@code true}.
-	 *
-	 * @param touchBeforeDismiss Whether the screen needs to be touched before the countdown starts.
-	 * @see #setUndoHideDelay(int)
-	 */
-	public void setRequireTouchBeforeDismiss(boolean touchBeforeDismiss) {
-		mTouchBeforeAutoHide = touchBeforeDismiss;
-	}
+// --Commented out by Inspection START (13/01/19 18:22):
+//	/**
+//	 * Sets whether another touch on the view is required before the popup counts down to dismiss
+//	 * the undo popup. By default this is set to {@code true}.
+//	 *
+//	 * @param touchBeforeDismiss Whether the screen needs to be touched before the countdown starts.
+//	 * @see #setUndoHideDelay(int)
+//	 */
+//	public void setRequireTouchBeforeDismiss(boolean touchBeforeDismiss) {
+//		mTouchBeforeAutoHide = touchBeforeDismiss;
+//	}
+// --Commented out by Inspection STOP (13/01/19 18:22)
 
-	/**
-	 * Sets the directions in which a list item can be swiped to delete.
-	 * By default this is set to {@link SwipeDirection#BOTH} so that an item
-	 * can be swiped into both directions.
-	 */
-	public void setSwipeDirection(SwipeDirection direction) {
-		mSwipeDirection = direction;
-	}
+// --Commented out by Inspection START (13/01/19 18:20):
+//	/**
+//	 * Sets the directions in which a list item can be swiped to delete.
+//	 * By default this is set to {@link SwipeDirection#BOTH} so that an item
+//	 * can be swiped into both directions.
+//	 */
+//	public void setSwipeDirection(SwipeDirection direction) {
+//		mSwipeDirection = direction;
+//	}
+// --Commented out by Inspection STOP (13/01/19 18:20)
 
-	/**
-	 * Sets the id of the view, that should be moved, when the user swipes an item.
-	 * Only the view with the specified id will move, while all other views in the list item, will
-	 * stay where they are. This might be usefull to have a background behind the view that is swiped
-	 * out, to stay where it is (and maybe explain that the item is going to be deleted).
-	 * If you never call this method (or call it with 0), the whole view will be swiped. Also if there
-	 * is no view in a list item, with the given id, the whole view will be swiped.
-	 */
-	public void setSwipingLayout(int swipingLayoutId) {
-		mSwipingLayout = swipingLayoutId;
-	}
+// --Commented out by Inspection START (13/01/19 18:20):
+//	/**
+//	 * Sets the id of the view, that should be moved, when the user swipes an item.
+//	 * Only the view with the specified id will move, while all other views in the list item, will
+//	 * stay where they are. This might be usefull to have a background behind the view that is swiped
+//	 * out, to stay where it is (and maybe explain that the item is going to be deleted).
+//	 * If you never call this method (or call it with 0), the whole view will be swiped. Also if there
+//	 * is no view in a list item, with the given id, the whole view will be swiped.
+//	 */
+//	public void setSwipingLayout(int swipingLayoutId) {
+//		mSwipingLayout = swipingLayoutId;
+//	}
+// --Commented out by Inspection STOP (13/01/19 18:20)
 
 	/**
 	 * Discard all stored undos and hide the undo popup dialog.
@@ -484,14 +491,15 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 			throw new IndexOutOfBoundsException(String.format("Tried to delete item %d. #items in list: %d", pos, mListView.getCount()));
 		}
 		View childView = mListView.getChildAt(pos - mListView.getFirstVisiblePosition());
-		View view = null;
-		if (mSwipingLayout > 0) {
-			view = childView.findViewById(mSwipingLayout);
-		}
-		if (view == null) {
-			view = childView;
-		}
-		slideOutView(view, childView, position, true);
+//		View view = null;
+//		if (mSwipingLayout > 0) {
+//			view = childView.findViewById(mSwipingLayout);
+//		}
+//		if (view == null) {
+//			view = childView;
+//		}
+//		slideOutView(view, childView, position, true);
+		slideOutView(childView, childView, position, true);
 	}
 
 	/**
@@ -544,7 +552,7 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 	 *
 	 * @see SwipeDismissListViewTouchListener
 	 */
-	public AbsListView.OnScrollListener makeScrollListener() {
+	private AbsListView.OnScrollListener makeScrollListener() {
 		return new AbsListView.OnScrollListener() {
 			@Override
 			public void onScrollStateChanged(AbsListView absListView, int scrollState) {
@@ -583,14 +591,14 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 						child.getHitRect(rect);
 						if (rect.contains(x, y)) {
 							// if a specific swiping layout has been giving, use this to swipe.
-							if (mSwipingLayout > 0) {
-								View swipingView = child.findViewById(mSwipingLayout);
-								if (swipingView != null) {
-									mSwipeDownView = swipingView;
-									mSwipeDownChild = child;
-									break;
-								}
-							}
+//							if (mSwipingLayout > 0) {
+//								View swipingView = child.findViewById(mSwipingLayout);
+//								if (swipingView != null) {
+//									mSwipeDownView = swipingView;
+//									mSwipeDownChild = child;
+//									break;
+//								}
+//							}
 							// If no swiping layout has been found, swipe the whole child
 							mSwipeDownView = mSwipeDownChild = child;
 							break;
@@ -724,8 +732,8 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 				}
 
 				if (mSwiping) {
-					ViewCompat.setTranslationX(mSwipeDownView, deltaX);
-					ViewCompat.setAlpha(mSwipeDownView, Math.max(0f, Math.min(1f,
+					mSwipeDownView.setTranslationX(deltaX);
+					mSwipeDownView.setAlpha(Math.max(0f, Math.min(1f,
 							1f - 2f * Math.abs(deltaX) / mViewWidth)));
 					return true;
 				}
@@ -749,31 +757,26 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 		final ViewGroup.LayoutParams lp = listItemView.getLayoutParams();
 		final int originalLayoutHeight = lp.height;
 
-		if (android.os.Build.VERSION.SDK_INT < 12) {
-			mPendingDismisses.add(new PendingDismissData(dismissPosition, dismissView, listItemView));
-			finishDismiss(dismissView, originalLayoutHeight);
-		} else {
-			int originalHeight = listItemView.getHeight();
-			ValueAnimator animator = ValueAnimator.ofInt(originalHeight, 1).setDuration(mAnimationTime);
+		int originalHeight = listItemView.getHeight();
+		ValueAnimator animator = ValueAnimator.ofInt(originalHeight, 1).setDuration(mAnimationTime);
 
-			animator.addListener(new AnimatorListenerAdapter() {
-				@Override
-				public void onAnimationEnd(Animator animation) {
-					finishDismiss(dismissView, originalLayoutHeight);
-				}
-			});
+		animator.addListener(new AnimatorListenerAdapter() {
+			@Override
+			public void onAnimationEnd(Animator animation) {
+				finishDismiss(dismissView, originalLayoutHeight);
+			}
+		});
 
-			animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-				@Override
-				public void onAnimationUpdate(ValueAnimator valueAnimator) {
-					lp.height = (Integer) valueAnimator.getAnimatedValue();
-					listItemView.setLayoutParams(lp);
-				}
-			});
+		animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+			@Override
+			public void onAnimationUpdate(ValueAnimator valueAnimator) {
+				lp.height = (Integer) valueAnimator.getAnimatedValue();
+				listItemView.setLayoutParams(lp);
+			}
+		});
 
-			mPendingDismisses.add(new PendingDismissData(dismissPosition, dismissView, listItemView));
-			animator.start();
-		}
+		mPendingDismisses.add(new PendingDismissData(dismissPosition, dismissView, listItemView));
+		animator.start();
 	}
 
 	private void finishDismiss(View dismissView, int originalLayoutHeight) {
@@ -813,18 +816,16 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 						Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM,
 						0, (int) yLocationOffset);
 
-				// Queue the dismiss only if required
-				if (!mTouchBeforeAutoHide) {
-					// Send a delayed message to hide popup
-					mHideUndoHandler.sendMessageDelayed(mHideUndoHandler.obtainMessage(mValidDelayedMsgId),
-							mUndoHideDelay);
-				}
+				// Send a delayed message to hide popup
+				int mUndoHideDelay = 5000;
+				mHideUndoHandler.sendMessageDelayed(mHideUndoHandler.obtainMessage(mValidDelayedMsgId),
+						mUndoHideDelay);
 			}
 
 			ViewGroup.LayoutParams lp;
 			for (PendingDismissData pendingDismiss : mPendingDismisses) {
-				ViewCompat.setAlpha(pendingDismiss.view, 1f);
-				ViewCompat.setTranslationX(pendingDismiss.view, 0);
+				pendingDismiss.view.setAlpha(1f);
+				pendingDismiss.view.setTranslationX(0);
 				lp = pendingDismiss.childView.getLayoutParams();
 				lp.height = originalLayoutHeight;
 				pendingDismiss.childView.setLayoutParams(lp);
