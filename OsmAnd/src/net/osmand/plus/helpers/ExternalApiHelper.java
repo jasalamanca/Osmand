@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.ParcelFileDescriptor;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 
 import net.osmand.AndroidUtils;
 import net.osmand.IndexConstants;
@@ -42,76 +42,76 @@ import java.util.Arrays;
 public class ExternalApiHelper {
 	private static final org.apache.commons.logging.Log LOG = PlatformUtil.getLog(ExternalApiHelper.class);
 
-	public static final String API_CMD_SHOW_GPX = "show_gpx";
-	public static final String API_CMD_NAVIGATE_GPX = "navigate_gpx";
+	private static final String API_CMD_SHOW_GPX = "show_gpx";
+	private static final String API_CMD_NAVIGATE_GPX = "navigate_gpx";
 
-	public static final String API_CMD_NAVIGATE = "navigate";
+	private static final String API_CMD_NAVIGATE = "navigate";
 
-	public static final String API_CMD_GET_INFO = "get_info";
+	private static final String API_CMD_GET_INFO = "get_info";
 
-	public static final String API_CMD_ADD_FAVORITE = "add_favorite";
-	public static final String API_CMD_ADD_MAP_MARKER = "add_map_marker";
+	private static final String API_CMD_ADD_FAVORITE = "add_favorite";
+	private static final String API_CMD_ADD_MAP_MARKER = "add_map_marker";
 
-	public static final String API_CMD_START_GPX_REC = "start_gpx_rec";
-	public static final String API_CMD_STOP_GPX_REC = "stop_gpx_rec";
+	private static final String API_CMD_START_GPX_REC = "start_gpx_rec";
+	private static final String API_CMD_STOP_GPX_REC = "stop_gpx_rec";
 
-	public static final String API_CMD_SUBSCRIBE_VOICE_NOTIFICATIONS = "subscribe_voice_notifications";
-	public static final int VERSION_CODE = 1;
-
-
-	public static final String PARAM_NAME = "name";
-	public static final String PARAM_DESC = "desc";
-	public static final String PARAM_CATEGORY = "category";
-	public static final String PARAM_LAT = "lat";
-	public static final String PARAM_LON = "lon";
-	public static final String PARAM_COLOR = "color";
-	public static final String PARAM_VISIBLE = "visible";
-
-	public static final String PARAM_PATH = "path";
-	public static final String PARAM_URI = "uri";
-	public static final String PARAM_DATA = "data";
-	public static final String PARAM_FORCE = "force";
-
-	public static final String PARAM_START_NAME = "start_name";
-	public static final String PARAM_DEST_NAME = "dest_name";
-	public static final String PARAM_START_LAT = "start_lat";
-	public static final String PARAM_START_LON = "start_lon";
-	public static final String PARAM_DEST_LAT = "dest_lat";
-	public static final String PARAM_DEST_LON = "dest_lon";
-	public static final String PARAM_PROFILE = "profile";
-
-	public static final String PARAM_VERSION = "version";
-	public static final String PARAM_ETA = "eta";
-	public static final String PARAM_TIME_LEFT = "time_left";
-	public static final String PARAM_DISTANCE_LEFT = "time_distance_left";
-	public static final String PARAM_NT_DISTANCE = "turn_distance";
-	public static final String PARAM_NT_IMMINENT = "turn_imminent";
-	public static final String PARAM_NT_DIRECTION_NAME = "turn_name";
-	public static final String PARAM_NT_DIRECTION_TURN = "turn_type";
-	public static final String PARAM_NT_DIRECTION_LANES = "turn_lanes";
-
-	public static final String PARAM_CLOSE_AFTER_COMMAND = "close_after_command";
+	private static final String API_CMD_SUBSCRIBE_VOICE_NOTIFICATIONS = "subscribe_voice_notifications";
+	private static final int VERSION_CODE = 1;
 
 
-	public static final ApplicationMode[] VALID_PROFILES = new ApplicationMode[]{
+	private static final String PARAM_NAME = "name";
+	private static final String PARAM_DESC = "desc";
+	private static final String PARAM_CATEGORY = "category";
+	private static final String PARAM_LAT = "lat";
+	private static final String PARAM_LON = "lon";
+	private static final String PARAM_COLOR = "color";
+	private static final String PARAM_VISIBLE = "visible";
+
+	private static final String PARAM_PATH = "path";
+	private static final String PARAM_URI = "uri";
+	private static final String PARAM_DATA = "data";
+	private static final String PARAM_FORCE = "force";
+
+	private static final String PARAM_START_NAME = "start_name";
+	private static final String PARAM_DEST_NAME = "dest_name";
+	private static final String PARAM_START_LAT = "start_lat";
+	private static final String PARAM_START_LON = "start_lon";
+	private static final String PARAM_DEST_LAT = "dest_lat";
+	private static final String PARAM_DEST_LON = "dest_lon";
+	private static final String PARAM_PROFILE = "profile";
+
+	private static final String PARAM_VERSION = "version";
+	private static final String PARAM_ETA = "eta";
+	private static final String PARAM_TIME_LEFT = "time_left";
+	private static final String PARAM_DISTANCE_LEFT = "time_distance_left";
+	private static final String PARAM_NT_DISTANCE = "turn_distance";
+	private static final String PARAM_NT_IMMINENT = "turn_imminent";
+	private static final String PARAM_NT_DIRECTION_NAME = "turn_name";
+	private static final String PARAM_NT_DIRECTION_TURN = "turn_type";
+	private static final String PARAM_NT_DIRECTION_LANES = "turn_lanes";
+
+	private static final String PARAM_CLOSE_AFTER_COMMAND = "close_after_command";
+
+
+	private static final ApplicationMode[] VALID_PROFILES = new ApplicationMode[]{
 			ApplicationMode.CAR,
 			ApplicationMode.BICYCLE,
 			ApplicationMode.PEDESTRIAN
 	};
 
-	public static final ApplicationMode DEFAULT_PROFILE = ApplicationMode.CAR;
+	private static final ApplicationMode DEFAULT_PROFILE = ApplicationMode.CAR;
 
 	// RESULT_OK == -1
 	// RESULT_CANCELED == 0
 	// RESULT_FIRST_USER == 1
 	// from Activity
-	public static final int RESULT_CODE_ERROR_UNKNOWN = 1001;
-	public static final int RESULT_CODE_ERROR_NOT_IMPLEMENTED = 1002;
-	public static final int RESULT_CODE_ERROR_PLUGIN_INACTIVE = 1003;
-	public static final int RESULT_CODE_ERROR_GPX_NOT_FOUND = 1004;
-	public static final int RESULT_CODE_ERROR_INVALID_PROFILE = 1005;
+	private static final int RESULT_CODE_ERROR_UNKNOWN = 1001;
+	private static final int RESULT_CODE_ERROR_NOT_IMPLEMENTED = 1002;
+	private static final int RESULT_CODE_ERROR_PLUGIN_INACTIVE = 1003;
+	private static final int RESULT_CODE_ERROR_GPX_NOT_FOUND = 1004;
+	private static final int RESULT_CODE_ERROR_INVALID_PROFILE = 1005;
 
-	private MapActivity mapActivity;
+	private final MapActivity mapActivity;
 	private int resultCode;
 	private boolean finish;
 

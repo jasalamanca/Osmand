@@ -13,7 +13,7 @@ import android.os.AsyncTask;
 import android.os.AsyncTask.Status;
 import android.os.StatFs;
 import android.support.annotation.UiThread;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.view.View;
 import android.widget.Toast;
 
@@ -46,13 +46,13 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class DownloadIndexesThread {
 	private final static Log LOG = PlatformUtil.getLog(DownloadIndexesThread.class);
 	private static final int NOTIFICATION_ID = 45;
-	private OsmandApplication app;
+	private final OsmandApplication app;
 
 	private DownloadEvents uiActivity = null;
-	private DatabaseHelper dbHelper;
-	private DownloadFileHelper downloadFileHelper;
-	private List<BasicProgressAsyncTask<?, ?, ?, ?>> currentRunningTask = Collections.synchronizedList(new ArrayList<BasicProgressAsyncTask<?, ?, ?, ?>>());
-	private ConcurrentLinkedQueue<IndexItem> indexItemDownloading = new ConcurrentLinkedQueue<IndexItem>();
+	private final DatabaseHelper dbHelper;
+	private final DownloadFileHelper downloadFileHelper;
+	private final List<BasicProgressAsyncTask<?, ?, ?, ?>> currentRunningTask = Collections.synchronizedList(new ArrayList<BasicProgressAsyncTask<?, ?, ?, ?>>());
+	private final ConcurrentLinkedQueue<IndexItem> indexItemDownloading = new ConcurrentLinkedQueue<>();
 	private IndexItem currentDownloadingItem = null;
 	private int currentDownloadingItemProgress = 0;
 
@@ -93,7 +93,7 @@ public class DownloadIndexesThread {
 	}
 	
 	@UiThread
-	protected void downloadInProgress() {
+	private void downloadInProgress() {
 		if (uiActivity != null) {
 			uiActivity.downloadInProgress();
 		}
@@ -141,7 +141,7 @@ public class DownloadIndexesThread {
 	
 
 	@UiThread
-	protected void downloadHasFinished() {
+	private void downloadHasFinished() {
 		if (uiActivity != null) {
 			uiActivity.downloadHasFinished();
 		}
@@ -176,7 +176,7 @@ public class DownloadIndexesThread {
 	}
 	
 	@UiThread
-	protected void newDownloadIndexes() {
+	private void newDownloadIndexes() {
 		if (uiActivity != null) {
 			uiActivity.newDownloadIndexes();
 		}
@@ -191,7 +191,7 @@ public class DownloadIndexesThread {
 	}
 	
 	public List<IndexItem> getCurrentDownloadingItems() {
-		List<IndexItem> res = new ArrayList<IndexItem>();
+		List<IndexItem> res = new ArrayList<>();
 		IndexItem ii = currentDownloadingItem;
 		if(ii != null) {
 			res.add(ii);
@@ -324,7 +324,7 @@ public class DownloadIndexesThread {
 
 	private class ReloadIndexesTask extends BasicProgressAsyncTask<Void, Void, Void, DownloadResources> {
 
-		public ReloadIndexesTask() {
+		ReloadIndexesTask() {
 			super(app);
 		}
 
@@ -395,13 +395,12 @@ public class DownloadIndexesThread {
 		}
 	}
 
-
 	private class DownloadIndexesAsyncTask extends BasicProgressAsyncTask<IndexItem, IndexItem, Object, String> implements DownloadFileShowWarning {
 
-		private OsmandPreference<Integer> downloads;
+		private final OsmandPreference<Integer> downloads;
 
 
-		public DownloadIndexesAsyncTask() {
+		DownloadIndexesAsyncTask() {
 			super(app);
 			downloads = app.getSettings().NUMBER_OF_FREE_DOWNLOADS;
 		}
@@ -476,12 +475,12 @@ public class DownloadIndexesThread {
 		@Override
 		protected String doInBackground(IndexItem... filesToDownload) {
 			try {
-				List<File> filesToReindex = new ArrayList<File>();
+				List<File> filesToReindex = new ArrayList<>();
 				boolean forceWifi = downloadFileHelper.isWifiConnected();
-				Set<IndexItem> currentDownloads = new HashSet<IndexItem>();
-				String warn = "";
+				Set<IndexItem> currentDownloads = new HashSet<>();
+				StringBuilder warn = new StringBuilder();
 				try {
-					downloadCycle: while (!indexItemDownloading.isEmpty()) {
+					while (!indexItemDownloading.isEmpty()) {
 						IndexItem item = indexItemDownloading.poll();
 						currentDownloadingItem = item;
 						currentDownloadingItemProgress = 0;
@@ -489,16 +488,16 @@ public class DownloadIndexesThread {
 							continue;
 						}
 						currentDownloads.add(item);
-						boolean success = false;
+//						boolean success = false;
 						if(!validateEnoughSpace(item)) {
-							break downloadCycle;
+							break;
 						}
 						if(!validateNotExceedsFreeLimit(item)) {
-							break downloadCycle;
+							break;
 						}
 						setTag(item);
 						boolean result = downloadFile(item, filesToReindex, forceWifi);
-						success = result || success;
+//						success = result || success;
 						if (result) {
 							if (DownloadActivityType.isCountedInDownloads(item)) {
 								downloads.set(downloads.get() + 1);
@@ -511,7 +510,7 @@ public class DownloadIndexesThread {
 							publishProgress(item);
 							String wn = reindexFiles(filesToReindex);
 							if(!Algorithms.isEmpty(wn)) {
-								warn += " " + wn;
+								warn.append(" ").append(wn);
 							}
 							filesToReindex.clear();
 							// slow down but let update all button work properly
@@ -523,10 +522,10 @@ public class DownloadIndexesThread {
 					currentDownloadingItemProgress = 0;
 				}
 				//String warn = reindexFiles(filesToReindex);
-				if(warn.trim().length() == 0) {
+				if(warn.toString().trim().length() == 0) {
 					return null;
 				}
-				return warn.trim();
+				return warn.toString().trim();
 			} catch (InterruptedException e) {
 				LOG.info("Download Interrupted");
 				// do not dismiss dialog
@@ -571,7 +570,7 @@ public class DownloadIndexesThread {
 					vectorMapsToReindex = true;
 				}
 			}
-			List<String> warnings = new ArrayList<String>();
+			List<String> warnings = new ArrayList<>();
 			manager.indexVoiceFiles(this);
 			manager.indexFontFiles(this);
 			if (vectorMapsToReindex) {
@@ -604,7 +603,7 @@ public class DownloadIndexesThread {
 			publishProgress(warning);
 		}
 
-		public boolean downloadFile(IndexItem item, List<File> filesToReindex, boolean forceWifi)
+		boolean downloadFile(IndexItem item, List<File> filesToReindex, boolean forceWifi)
 				throws InterruptedException {
 			downloadFileHelper.setInterruptDownloading(false);
 			IndexItem.DownloadEntry de = item.createDownloadEntry(app);

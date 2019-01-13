@@ -1,11 +1,10 @@
 package net.osmand.plus.download.ui;
 
-import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.PopupMenu;
 import android.util.TypedValue;
 import android.view.MenuItem;
@@ -34,28 +33,28 @@ import java.text.DateFormat;
 
 public class ItemViewHolder {
 
-	protected final TextView nameTextView;
-	protected final TextView descrTextView;
-	protected final ImageView leftImageView;
-	protected final ImageView rightImageButton;
-	protected final Button rightButton;
-	protected final ProgressBar progressBar;
+	private final TextView nameTextView;
+	private final TextView descrTextView;
+	private final ImageView leftImageView;
+	private final ImageView rightImageButton;
+	private final Button rightButton;
+	private final ProgressBar progressBar;
 
 	private boolean freeVersion;
 
-	protected final DownloadActivity context;
+	private final DownloadActivity context;
 	
-	private int textColorPrimary;
-	private int textColorSecondary;
+	private final int textColorPrimary;
+	private final int textColorSecondary;
 	
-	boolean showTypeInDesc;
-	boolean showTypeInName;
-	boolean showParentRegionName;
-	boolean showRemoteDate;
-	boolean silentCancelDownload;
-	boolean showProgressInDesc;
+	private boolean showTypeInDesc;
+	private boolean showTypeInName;
+	private boolean showParentRegionName;
+	private boolean showRemoteDate;
+	private boolean silentCancelDownload;
+	private boolean showProgressInDesc;
 	
-	private DateFormat dateFormat;
+	private final DateFormat dateFormat;
 
 
 	private enum RightButtonAction {
@@ -67,12 +66,12 @@ public class ItemViewHolder {
 	public ItemViewHolder(View view, DownloadActivity context) {
 		this.context = context;
 		dateFormat = android.text.format.DateFormat.getMediumDateFormat(context);
-		progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
-		rightButton = (Button) view.findViewById(R.id.rightButton);
-		leftImageView = (ImageView) view.findViewById(R.id.icon);
-		descrTextView = (TextView) view.findViewById(R.id.description);
-		rightImageButton = (ImageView) view.findViewById(R.id.secondaryIcon);
-		nameTextView = (TextView) view.findViewById(R.id.title);
+		progressBar = view.findViewById(R.id.progressBar);
+		rightButton = view.findViewById(R.id.rightButton);
+		leftImageView = view.findViewById(R.id.icon);
+		descrTextView = view.findViewById(R.id.description);
+		rightImageButton = view.findViewById(R.id.secondaryIcon);
+		nameTextView = view.findViewById(R.id.title);
 
 		view.setAccessibilityDelegate(context.getAccessibilityAssistant());
 		rightButton.setAccessibilityDelegate(context.getAccessibilityAssistant());
@@ -207,7 +206,7 @@ public class ItemViewHolder {
 		}
 	}
 
-	protected void download(IndexItem indexItem, DownloadResourceGroup parentOptional) {
+	private void download(IndexItem indexItem, DownloadResourceGroup parentOptional) {
 		boolean handled = false;
 		if(parentOptional != null) {
 			WorldRegion region = DownloadResourceGroup.getRegion(parentOptional);
@@ -273,7 +272,6 @@ public class ItemViewHolder {
 		return disabled;
 	}
 
-	@SuppressLint("DefaultLocale")
 	public RightButtonAction getClickAction(final IndexItem indexItem) {
 		RightButtonAction clickAction = RightButtonAction.DOWNLOAD;
 		if (indexItem.getType() == DownloadActivityType.WIKIPEDIA_FILE && freeVersion
@@ -319,7 +317,7 @@ public class ItemViewHolder {
 		}
 	}
 
-	protected void contextMenu(View v, final IndexItem indexItem, final DownloadResourceGroup parentOptional) {
+	private void contextMenu(View v, final IndexItem indexItem, final DownloadResourceGroup parentOptional) {
 		final PopupMenu optionsMenu = new PopupMenu(context, v);
 		MenuItem item;
 		

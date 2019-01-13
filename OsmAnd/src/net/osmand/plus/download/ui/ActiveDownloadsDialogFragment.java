@@ -4,7 +4,7 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,8 +34,8 @@ public class ActiveDownloadsDialogFragment extends DialogFragment implements Dow
 	
 	public void newDownloadIndexes() {
 		adapter.refreshAllData();
-	};
-	
+	}
+
 	@Override
 	public void downloadHasFinished() {
 		adapter.refreshAllData();		
@@ -43,25 +43,25 @@ public class ActiveDownloadsDialogFragment extends DialogFragment implements Dow
 	
 	public void downloadInProgress() {
 		adapter.notifyDataSetChanged();
-	};
-	
-	
-	DownloadActivity getDownloadActivity() {
+	}
+
+
+	private DownloadActivity getDownloadActivity() {
 		return (DownloadActivity) getActivity();
 	}
 
-	public static class IndexItemAdapter extends ArrayAdapter<IndexItem> {
+	static class IndexItemAdapter extends ArrayAdapter<IndexItem> {
 		private final DownloadActivity context;
-		private DialogFragment dlgFragment;
+		private final DialogFragment dlgFragment;
 
-		public IndexItemAdapter(DialogFragment dlgFragment, DownloadActivity context) {
+		IndexItemAdapter(DialogFragment dlgFragment, DownloadActivity context) {
 			super(context, R.layout.two_line_with_images_list_item, new ArrayList<IndexItem>());
 			this.dlgFragment = dlgFragment;
 			this.context = context;
 			refreshAllData();
 		}
 
-		public void refreshAllData() {
+		void refreshAllData() {
 			clear();
 			List<IndexItem> items = context.getDownloadThread().getCurrentDownloadingItems();
 			if(items.isEmpty()) {
@@ -72,8 +72,9 @@ public class ActiveDownloadsDialogFragment extends DialogFragment implements Dow
 			}
 		}
 
+		@NonNull
 		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
+		public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 			if (convertView == null) {
 				convertView = LayoutInflater.from(parent.getContext())
 						.inflate(R.layout.two_line_with_images_list_item, parent, false);

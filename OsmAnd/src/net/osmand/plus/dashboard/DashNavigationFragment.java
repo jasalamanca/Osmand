@@ -3,7 +3,7 @@ package net.osmand.plus.dashboard;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,8 +18,6 @@ import net.osmand.plus.activities.ShowRouteInfoDialogFragment;
 import net.osmand.plus.dashboard.tools.DashFragmentData;
 import net.osmand.plus.routing.RoutingHelper;
 
-/**
- */
 public class DashNavigationFragment extends DashBaseFragment {
 	public static final String TAG = "DASH_NAVIGATION_FRAGMENT";
 	private static final int TITLE_ID = R.string.current_route;
@@ -51,7 +49,7 @@ public class DashNavigationFragment extends DashBaseFragment {
 		setupNavigation();
 	}
 
-	public void setupNavigation() {
+	private void setupNavigation() {
 		View mainView = getView();
 		final RoutingHelper routingHelper = getMyApplication().getRoutingHelper();
 		getActivity();
@@ -63,14 +61,14 @@ public class DashNavigationFragment extends DashBaseFragment {
 			(mainView.findViewById(R.id.main_fav)).setVisibility(View.VISIBLE);
 		}
 		final MapActivity map =  (MapActivity) getActivity();
-		LinearLayout favorites = (LinearLayout) mainView.findViewById(R.id.items);
+		LinearLayout favorites = mainView.findViewById(R.id.items);
 		favorites.removeAllViews();
 		LayoutInflater inflater = getActivity().getLayoutInflater();
 		View view = inflater.inflate(R.layout.dash_navigation, null, false);			
-		TextView name = (TextView) view.findViewById(R.id.name);
-		ImageView icon = (ImageView) view.findViewById(R.id.icon);
-		ImageView cancel = (ImageView) view.findViewById(R.id.cancel);
-		ImageView play = (ImageView) view.findViewById(R.id.play);
+		TextView name = view.findViewById(R.id.name);
+		ImageView icon = view.findViewById(R.id.icon);
+		ImageView cancel = view.findViewById(R.id.cancel);
+		ImageView play = view.findViewById(R.id.play);
 		name.setText(routingHelper.getGeneralRouteInformation());
 		icon.setImageDrawable(getMyApplication().getIconsCache().getIcon(R.drawable.ic_action_start_navigation, 
 				R.color.color_myloc_distance));

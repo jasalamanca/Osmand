@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.SystemClock;
 import android.os.Vibrator;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 
 import net.osmand.Location;
 import net.osmand.data.LatLon;
@@ -45,30 +45,30 @@ public class NavigationInfo implements OsmAndCompassListener, OsmAndLocationList
 		private RelativeDirectionStyle style;
 		private int value;
 
-		public RelativeDirection() {
+		RelativeDirection() {
 			style = settings.DIRECTION_STYLE.get();
 			clear();
 		}
 
 		// The argument must be not null as well as the currentLocation
 		// and currentLocation must have bearing.
-		public RelativeDirection(final Location point) {
+		RelativeDirection(final Location point) {
 			style = settings.DIRECTION_STYLE.get();
 			value = directionTo(point, currentLocation.getBearing());
 		}
 
 		// The first argument must be not null as well as the currentLocation.
-		public RelativeDirection(final Location point, float heading) {
+		RelativeDirection(final Location point, float heading) {
 			style = settings.DIRECTION_STYLE.get();
 			value = directionTo(point, heading);
 		}
 
-		public void clear() {
+		void clear() {
 			value = UNKNOWN;
 		}
 
 		// The first argument must be not null as well as the currentLocation.
-		public boolean update(final Location point, float heading) {
+		boolean update(final Location point, float heading) {
 			boolean result = false;
 			final RelativeDirectionStyle newStyle = settings.DIRECTION_STYLE.get();
 			if (style != newStyle) {
@@ -85,11 +85,11 @@ public class NavigationInfo implements OsmAndCompassListener, OsmAndLocationList
 
 		// The argument must be not null as well as the currentLocation
 		// and currentLocation must have bearing.
-		public boolean update(final Location point) {
+		boolean update(final Location point) {
 			return update(point, currentLocation.getBearing());
 		}
 
-		public String getString() {
+		String getString() {
 			if (value < 0) // unknown direction
 				return null;
 			if (style == RelativeDirectionStyle.CLOCKWISE) {
@@ -102,7 +102,7 @@ public class NavigationInfo implements OsmAndCompassListener, OsmAndLocationList
 			}
 		}
 
-		public Integer getInclination() {
+		Integer getInclination() {
 			if (value < 0) // unknown direction
 				return null;
 			final int nSectors = (style == RelativeDirectionStyle.CLOCKWISE) ? 12 : direction.length;
@@ -114,7 +114,7 @@ public class NavigationInfo implements OsmAndCompassListener, OsmAndLocationList
 			return value;
 		}
 
-		protected int getValue() {
+		int getValue() {
 			return value;
 		}
 
@@ -153,7 +153,7 @@ public class NavigationInfo implements OsmAndCompassListener, OsmAndLocationList
 	private final OsmandApplication app;
 	private final OsmandSettings settings;
 	private Location currentLocation;
-	private RelativeDirection lastDirection;
+	private final RelativeDirection lastDirection;
 	private long lastNotificationTime;
 	private volatile boolean autoAnnounce;
 	private volatile boolean targetDirectionFlag;
@@ -212,7 +212,7 @@ public class NavigationInfo implements OsmAndCompassListener, OsmAndLocationList
 	}
 
 	// Get current travelling speed and direction
-	public synchronized String getSpeedString() {
+	private synchronized String getSpeedString() {
 		if ((currentLocation != null) && currentLocation.hasSpeed()) {
 			String result = OsmAndFormatter.getFormattedSpeed(currentLocation.getSpeed(), app);
 			if (currentLocation.hasBearing())
@@ -223,7 +223,7 @@ public class NavigationInfo implements OsmAndCompassListener, OsmAndLocationList
 	}
 
 	// Get positioning accuracy and provider information if available
-	public synchronized String getAccuracyString() {
+	private synchronized String getAccuracyString() {
 		String result = null;
 		if (currentLocation != null) {
 			String provider = currentLocation.getProvider();
@@ -238,7 +238,7 @@ public class NavigationInfo implements OsmAndCompassListener, OsmAndLocationList
 	}
 
 	// Get altitude information string
-	public synchronized String getAltitudeString() {
+	private synchronized String getAltitudeString() {
 		if ((currentLocation != null) && currentLocation.hasAltitude())
 			return getString(R.string.altitude)
 					+ " " + OsmAndFormatter.getFormattedDistance((float) currentLocation.getAltitude(), app); //$NON-NLS-1$
@@ -275,7 +275,7 @@ public class NavigationInfo implements OsmAndCompassListener, OsmAndLocationList
 		}
 	}
 
-	public synchronized void updateTargetDirection(final Location point, float heading) {
+	private synchronized void updateTargetDirection(final Location point, float heading) {
 		if ((currentLocation != null) && (point != null)) {
 			RelativeDirection direction = new RelativeDirection(point, heading);
 			Integer inclination = direction.getInclination();
@@ -338,7 +338,7 @@ public class NavigationInfo implements OsmAndCompassListener, OsmAndLocationList
 
 	// Show all available info
 	public void show(final TargetPoint point, Float heading, Context ctx) {
-		final List<String> attributes = new ArrayList<String>();
+		final List<String> attributes = new ArrayList<>();
 		String item;
 
 		item = getDirectionString(point == null ? null : point.point, heading);

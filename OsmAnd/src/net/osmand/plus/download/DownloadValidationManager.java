@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.widget.Toast;
 
 import net.osmand.plus.OsmandApplication;
@@ -23,9 +23,9 @@ import java.text.MessageFormat;
 
 public class DownloadValidationManager {
 	public static final int MAXIMUM_AVAILABLE_FREE_DOWNLOADS = 7;
-	protected OsmandSettings settings;
-	private OsmandApplication app;
-	private DownloadIndexesThread downloadThread;
+	private final OsmandSettings settings;
+	private final OsmandApplication app;
+	private final DownloadIndexesThread downloadThread;
 
 	public DownloadValidationManager(OsmandApplication app) {
 		this.app = app;
@@ -34,7 +34,7 @@ public class DownloadValidationManager {
 	}
 
 
-	public DownloadIndexesThread getDownloadThread() {
+	private DownloadIndexesThread getDownloadThread() {
 		return downloadThread;
 	}
 
@@ -42,7 +42,7 @@ public class DownloadValidationManager {
 		downloadFilesWithAllChecks(context, items);
 	}
 
-	public OsmandApplication getMyApplication() {
+	private OsmandApplication getMyApplication() {
 		return app;
 	}
 
@@ -78,7 +78,7 @@ public class DownloadValidationManager {
 		double szChange = ((double) szChangeLong) / (1 << 20);
 		double szMaxTemp = szChange + ((double) szMaxTempLong) / (1 << 20);
 
-		// get availabile space
+		// get available space
 		double asz = downloadThread.getAvailableSpace();
 		if (asz != -1 && asz > 0 && (szMaxTemp > asz)) {
 			if (showAlert) {
@@ -93,7 +93,7 @@ public class DownloadValidationManager {
 		}
 	}
 
-	public void downloadFilesCheck_3_ValidateSpace(final FragmentActivity context, final IndexItem... items) {
+	private void downloadFilesCheck_3_ValidateSpace(final FragmentActivity context, final IndexItem... items) {
 		long szChangeLong = 0;
 		long szMaxTempLong = 0;
 		int i = 0;
@@ -149,19 +149,18 @@ public class DownloadValidationManager {
 	}
 
 
-	protected void downloadFilesWithAllChecks(FragmentActivity context, IndexItem[] items) {
+	private void downloadFilesWithAllChecks(FragmentActivity context, IndexItem[] items) {
 		downloadFilesCheck_1_FreeVersion(context, items);
 	}
 
-	protected void downloadFilesCheck_1_FreeVersion(FragmentActivity context, IndexItem[] items) {
+	private void downloadFilesCheck_1_FreeVersion(FragmentActivity context, IndexItem[] items) {
 		if (Version.isFreeVersion(getMyApplication()) && !app.getSettings().LIVE_UPDATES_PURCHASED.get()
 				&& !app.getSettings().FULL_VERSION_PURCHASED.get()) {
 			int total = settings.NUMBER_OF_FREE_DOWNLOADS.get();
 			if (total > MAXIMUM_AVAILABLE_FREE_DOWNLOADS) {
-				if (context instanceof FragmentActivity) {
-					FragmentActivity activity = context;
+				if (context != null) {
 					new InstallPaidVersionDialogFragment()
-							.show(activity.getSupportFragmentManager(), InstallPaidVersionDialogFragment.TAG);
+							.show(context.getSupportFragmentManager(), InstallPaidVersionDialogFragment.TAG);
 				}
 			} else {
 				downloadFilesCheck_2_Internet(context, items);
@@ -171,7 +170,7 @@ public class DownloadValidationManager {
 		}
 	}
 
-	protected void downloadFilesCheck_2_Internet(final FragmentActivity context, final IndexItem[] items) {
+	private void downloadFilesCheck_2_Internet(final FragmentActivity context, final IndexItem[] items) {
 		if (!getMyApplication().getSettings().isWifiConnected()) {
 			if (getMyApplication().getSettings().isInternetConnectionAvailable()) {
 				AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -209,7 +208,7 @@ public class DownloadValidationManager {
 	}
 
 	public static class InstallPaidVersionDialogFragment extends DialogFragment {
-		public static final String TAG = "InstallPaidVersionDialogFragment";
+		static final String TAG = "InstallPaidVersionDialogFragment";
 
 		@NonNull
 		@Override

@@ -9,7 +9,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.ParcelFileDescriptor;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.view.View;
 
 import net.osmand.IndexConstants;
@@ -102,11 +102,11 @@ public class OsmandAidlApi {
 			ApplicationMode.PEDESTRIAN
 	};
 
-	private OsmandApplication app;
-	private Map<String, AMapWidget> widgets = new ConcurrentHashMap<>();
-	private Map<String, TextInfoWidget> widgetControls = new ConcurrentHashMap<>();
-	private Map<String, AMapLayer> layers = new ConcurrentHashMap<>();
-	private Map<String, OsmandMapLayer> mapLayers = new ConcurrentHashMap<>();
+	private final OsmandApplication app;
+	private final Map<String, AMapWidget> widgets = new ConcurrentHashMap<>();
+	private final Map<String, TextInfoWidget> widgetControls = new ConcurrentHashMap<>();
+	private final Map<String, AMapLayer> layers = new ConcurrentHashMap<>();
+	private final Map<String, OsmandMapLayer> mapLayers = new ConcurrentHashMap<>();
 
 	private BroadcastReceiver refreshMapReceiver;
 	private BroadcastReceiver setMapLocationReceiver;
