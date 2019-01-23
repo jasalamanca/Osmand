@@ -1,12 +1,13 @@
 package net.osmand.plus.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnShowListener;
 import android.graphics.Color;
 import android.os.AsyncTask;
-import android.support.v7.app.AlertDialog;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -15,7 +16,6 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -65,19 +65,14 @@ public class IntermediatePointsDialog {
 			ll.addView(pb);
 			ll.addView(textInfo);
 			contentView = ll;
-			
-//			lv.addFooterView(pb);
-//			lv.addFooterView(textInfo);
 		}
 		lv.setAdapter(listadapter);
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				if (activity instanceof MapActivity) {
-					// AnimateDraggingMapThread thread = mapActivity.getMapView().getAnimatedDraggingThread();
 					TargetPoint pointToNavigate = intermediates.get(position);
 					int fZoom = ((MapActivity) activity).getMapView().getZoom() < 15 ? 15 : ((MapActivity) activity).getMapView().getZoom();
-					// thread.startMoving(pointToNavigate.getLatitude(), pointToNavigate.getLongitude(), fZoom, true);
 					((MapActivity) activity).getMapView().setIntZoom(fZoom);
 					((MapActivity) activity).getMapView().setLatLon(pointToNavigate.getLatitude(), pointToNavigate.getLongitude());
 					listadapter.notifyDataSetInvalidated();
@@ -136,12 +131,12 @@ public class IntermediatePointsDialog {
 							protected void onPreExecute() {
 								pb.setVisibility(View.VISIBLE);
 								textInfo.setVisibility(View.VISIBLE);
-							};
+							}
 
 							protected int[] doInBackground(Void[] params) {
 								OsmandApplication app = (OsmandApplication) activity.getApplication();
 								Location cll = app.getLocationProvider().getLastKnownLocation();
-								ArrayList<TargetPoint> lt = new ArrayList<TargetPoint>(intermediates);
+								ArrayList<TargetPoint> lt = new ArrayList<>(intermediates);
 								TargetPoint start ;
 								
 								if(cll != null) {
@@ -151,27 +146,24 @@ public class IntermediatePointsDialog {
 									TargetPoint ps = app.getTargetPointsHelper().getPointToStart();
 									LatLon ll = new LatLon(ps.getLatitude(), ps.getLongitude());
 									start = TargetPoint.create(ll, null);
-//								} else if(activity instanceof MapActivity) {
-//									LatLon ll = new LatLon(((MapActivity) activity).getMapView().getLatitude(), ((MapActivity) activity).getMapView().getLongitude());
-//									start = TargetPoint.create(ll, null);
 								} else {
 									start = lt.get(0);
 								}
 								TargetPoint end = lt.remove(lt.size() - 1);
-								ArrayList<LatLon> al = new ArrayList<LatLon>();
+								ArrayList<LatLon> al = new ArrayList<>();
 								for(TargetPoint p : lt){
 									al.add(p.point);
 								}
 								return new TspAnt().readGraph(al, start.point, end.point).solve();
-							};
+							}
 
 							protected void onPostExecute(int[] result) {
 								pb.setVisibility(View.GONE);
-								List<TargetPoint> alocs = new ArrayList<TargetPoint>();
+								List<TargetPoint> alocs = new ArrayList<>();
 								TIntArrayList newOriginalPositions = new TIntArrayList();
-								for (int i = 0; i < result.length; i++) {
-									if (result[i] > 0) {
-										TargetPoint loc = intermediates.get(result[i] - 1);
+								for (int aResult : result) {
+									if (aResult > 0) {
+										TargetPoint loc = intermediates.get(aResult - 1);
 										alocs.add(loc);
 										newOriginalPositions.add(originalPositions.get(intermediates.indexOf(loc)));
 									}
@@ -181,7 +173,7 @@ public class IntermediatePointsDialog {
 								originalPositions.clear();
 								originalPositions.addAll(newOriginalPositions);
 								listadapter.notifyDataSetChanged();
-							};
+							}
 						}.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Void[0]);
 
 					}
@@ -190,8 +182,6 @@ public class IntermediatePointsDialog {
 			}
 		});
 	}
-	
-	
 
 	private static ArrayAdapter<TargetPoint> getListAdapter(final OsmandApplication app, final Activity activity, final boolean changeOrder,
 			final List<TargetPoint> intermediates, final TIntArrayList originalPositions,  final boolean[] checkedIntermediates) {
@@ -199,12 +189,13 @@ public class IntermediatePointsDialog {
 		final ArrayAdapter<TargetPoint> listadapter = new ArrayAdapter<TargetPoint>(app, 
 				changeOrder? R.layout.change_order_item : R.layout.list_menu_item_native, R.id.title,
 				intermediates) {
+			@NonNull
 			@Override
-			public View getView(final int position, View convertView, ViewGroup parent) {
+			public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
 				
 				// User super class to create the View
 				View v = super.getView(position, convertView, parent);
-				TextView tv = (TextView) v.findViewById(R.id.title);
+				TextView tv = v.findViewById(R.id.title);
 				String nm = originalPositions.get(position) + ". ";
 				TargetPoint tp = intermediates.get(position);
 				String distString = "";
@@ -225,7 +216,7 @@ public class IntermediatePointsDialog {
 				}
 				tv.setText(nm);
 				if (changeOrder) {
-					((ImageButton) v.findViewById(R.id.up)).setOnClickListener(new View.OnClickListener(){
+					v.findViewById(R.id.up).setOnClickListener(new View.OnClickListener(){
 						@Override
 						public void onClick(View v) {
 							if(position > 0) {
@@ -237,7 +228,7 @@ public class IntermediatePointsDialog {
 							}
 						}
 					});
-					((ImageButton) v.findViewById(R.id.down)).setOnClickListener(new View.OnClickListener(){
+					v.findViewById(R.id.down).setOnClickListener(new View.OnClickListener(){
 						@Override
 						public void onClick(View v) {
 							if(position < intermediates.size() - 1) {
@@ -254,7 +245,7 @@ public class IntermediatePointsDialog {
 						R.drawable.ic_action_intermediate;
 					tv.setCompoundDrawablesWithIntrinsicBounds(app.getIconsCache().getThemedIcon(icon), null, null, null);
 					tv.setCompoundDrawablePadding(padding);
-					final CheckBox ch = ((CheckBox) v.findViewById(R.id.toggle_item));
+					final CheckBox ch = v.findViewById(R.id.toggle_item);
 					ch.setVisibility(View.VISIBLE);
 					ch.setOnCheckedChangeListener(null);
 					ch.setChecked(checkedIntermediates[position]);

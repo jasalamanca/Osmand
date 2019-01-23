@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.support.v7.view.ActionMode;
 import android.widget.PopupMenu;
 import android.text.Editable;
@@ -88,7 +88,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.local_index, container, false);
 
-		getDownloadActivity().setSupportProgressBarIndeterminateVisibility(false);
+		getDownloadActivity().setProgressBarIndeterminateVisibility(false);
 		getDownloadActivity().getAccessibilityAssistant().registerPage(view, DownloadActivity.LOCAL_TAB_NUMBER);
 
 		ExpandableListView listView = view.findViewById(android.R.id.list);
@@ -332,7 +332,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 
 		@Override
 		protected void onPreExecute() {
-			getDownloadActivity().setSupportProgressBarIndeterminateVisibility(true);
+			getDownloadActivity().setProgressBarIndeterminateVisibility(true);
 			listAdapter.clear();
 		}
 
@@ -363,7 +363,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			this.result = result;
 			listAdapter.sortData();
 			if (getDownloadActivity() != null) {
-				getDownloadActivity().setSupportProgressBarIndeterminateVisibility(false);
+				getDownloadActivity().setProgressBarIndeterminateVisibility(false);
 				getDownloadActivity().setLocalIndexInfos(result);
 			}
 		}
@@ -438,10 +438,10 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			int total = 0;
 			for (LocalIndexInfo info : params) {
 				if (!isCancelled()) {
-					boolean successfull = false;
+					boolean successful = false;
 					if (operation == DELETE_OPERATION) {
 						File f = new File(info.getPathToData());
-						successfull = Algorithms.removeAllFiles(f);
+						successful = Algorithms.removeAllFiles(f);
 						if (getMyApplication().getSettings().LIVE_UPDATES_PURCHASED.get()) {
 							String fileNameWithoutExtension =
 									Algorithms.getFileNameWithoutExtension(f);
@@ -449,23 +449,23 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 									getMyApplication().getResourceManager().getChangesManager();
 							changesManager.deleteUpdates(fileNameWithoutExtension);
 						}
-						if (successfull) {
+						if (successful) {
 							getMyApplication().getResourceManager().closeFile(info.getFileName());
 						}
 					} else if (operation == RESTORE_OPERATION) {
-						successfull = move(new File(info.getPathToData()), getFileToRestore(info));
-						if (successfull) {
+						successful = move(new File(info.getPathToData()), getFileToRestore(info));
+						if (successful) {
 							info.setBackupedData(false);
 						}
 					} else if (operation == BACKUP_OPERATION) {
-						successfull = move(new File(info.getPathToData()), getFileToBackup(info));
-						if (successfull) {
+						successful = move(new File(info.getPathToData()), getFileToBackup(info));
+						if (successful) {
 							info.setBackupedData(true);
 							getMyApplication().getResourceManager().closeFile(info.getFileName());
 						}
 					}
 					total++;
-					if (successfull) {
+					if (successful) {
 						count++;
 						publishProgress(info);
 					}
@@ -747,7 +747,6 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			}
 
 		});
-		//findViewById(R.id.DescriptionText).setVisibility(View.GONE);
 		listAdapter.notifyDataSetChanged();
 	}
 

@@ -1,7 +1,5 @@
 package net.osmand.plus.development;
 
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Debug;
@@ -11,7 +9,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.view.View;
 
 import net.osmand.plus.ApplicationMode;
@@ -28,15 +26,13 @@ import java.util.List;
 import java.util.Set;
 
 public class SettingsDevelopmentActivity extends SettingsBaseActivity {
-	@SuppressLint("SimpleDateFormat")
 	@Override
     public void onCreate(Bundle savedInstanceState) {
 		((OsmandApplication) getApplication()).applyTheme(this);
 		super.onCreate(savedInstanceState);
 		getToolbar().setTitle(R.string.debugging_and_development);
 		PreferenceScreen cat = getPreferenceScreen();
-		
-		
+
 		CheckBoxPreference dbg = createCheckBoxPreference(settings.DEBUG_RENDERING_INFO,
 				R.string.trace_rendering, R.string.trace_rendering_descr);
 		cat.addPreference(dbg);
@@ -138,9 +134,9 @@ public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 		pref = new Preference(this);
 		pref.setTitle(R.string.global_app_allocated_memory);
 
-		long javaAvailMem = (Runtime.getRuntime().totalMemory() -  Runtime.getRuntime().freeMemory())/ (1024*1024l);
-		long javaTotal = Runtime.getRuntime().totalMemory() / (1024*1024l);
-		long dalvikSize = android.os.Debug.getNativeHeapAllocatedSize() / (1024*1024l);
+		long javaAvailMem = (Runtime.getRuntime().totalMemory() -  Runtime.getRuntime().freeMemory())/ (1024*1024L);
+		long javaTotal = Runtime.getRuntime().totalMemory() / (1024*1024L);
+		long dalvikSize = android.os.Debug.getNativeHeapAllocatedSize() / (1024*1024L);
 		pref.setSummary(getString(R.string.global_app_allocated_memory_descr, javaAvailMem, javaTotal, dalvikSize));
 		pref.setSelectable(false);
 		info.addPreference(pref);
@@ -191,11 +187,11 @@ public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 		info.addPreference(pref);
 	}
 
-	protected void availableProfileDialog() {
+	private void availableProfileDialog() {
 		AlertDialog.Builder b = new AlertDialog.Builder(this);
 		final List<ApplicationMode> modes = ApplicationMode.allPossibleValues();
 		modes.remove(ApplicationMode.DEFAULT);
-		final Set<ApplicationMode> selected = new LinkedHashSet<ApplicationMode>(ApplicationMode.values(settings));
+		final Set<ApplicationMode> selected = new LinkedHashSet<>(ApplicationMode.values(settings));
 		selected.remove(ApplicationMode.DEFAULT);
 		View v = AppModeDialog.prepareAppModeView(this, modes, selected, null, false, true, false,
 				new View.OnClickListener() {

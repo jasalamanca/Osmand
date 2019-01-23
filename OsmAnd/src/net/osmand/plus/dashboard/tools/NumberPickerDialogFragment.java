@@ -1,22 +1,19 @@
 package net.osmand.plus.dashboard.tools;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import net.osmand.PlatformUtil;
 import net.osmand.plus.R;
 
 public class NumberPickerDialogFragment extends DialogFragment {
 	public static final String TAG = "NumberPickerDialogFragment";
-	private static final org.apache.commons.logging.Log LOG =
-			PlatformUtil.getLog(NumberPickerDialogFragment.class);
 
 	private static final String NUMBER_TAG = "number_tag";
 	private static final String HEADER_TEXT = "header_text";
@@ -55,9 +52,9 @@ public class NumberPickerDialogFragment extends DialogFragment {
 		if (subHeaderText != null) {
 			View titleView = LayoutInflater.from(getActivity())
 					.inflate(R.layout.number_picker_dialog_title, null);
-			TextView titleTextView = (TextView) titleView.findViewById(R.id.titleTextView);
+			TextView titleTextView = titleView.findViewById(R.id.titleTextView);
 			titleTextView.setText(headerText);
-			TextView subtitleTextView = (TextView) titleView.findViewById(R.id.subtitleTextView);
+			TextView subtitleTextView = titleView.findViewById(R.id.subtitleTextView);
 			subtitleTextView.setText(subHeaderText);
 			builder.setCustomTitle(titleView);
 		} else {

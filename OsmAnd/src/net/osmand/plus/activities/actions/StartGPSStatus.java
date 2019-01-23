@@ -9,7 +9,8 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -30,30 +31,30 @@ import net.osmand.plus.activities.MapActivity;
 public class StartGPSStatus extends OsmAndAction {
 
 	public enum GpsStatusApps {
-		GPC_CONNECTED("GPS Connected", "org.bruxo.gpsconnected", "", ""),
-		GPS_STATUS("GPS Status & Toolbox", "com.eclipsim.gpsstatus2", "", "com.eclipsim.gpsstatus2.GPSStatus"),
-		GPS_TEST("GPS Test", "com.chartcross.gpstest", "com.chartcross.gpstestplus", ""),
-		INVIU_GPS("inViu GPS-details ", "de.enaikoon.android.inviu.gpsdetails", "", ""),
-		ANDROI_TS_GPS_TEST("AndroiTS GPS Test", "com.androits.gps.test.free", "com.androits.gps.test.pro", ""),
-		SAT_STAT("SatStat (F-droid)", "com.vonglasow.michael.satstat", "", "");
+		GPC_CONNECTED("GPS Connected", "org.bruxo.gpsconnected", ""),//, ""),
+		GPS_STATUS("GPS Status & Toolbox", "com.eclipsim.gpsstatus2", ""),//, "com.eclipsim.gpsstatus2.GPSStatus"),
+		GPS_TEST("GPS Test", "com.chartcross.gpstest", "com.chartcross.gpstestplus"),//, ""),
+		INVIU_GPS("inViu GPS-details ", "de.enaikoon.android.inviu.gpsdetails", ""),//, ""),
+		ANDROI_TS_GPS_TEST("AndroiTS GPS Test", "com.androits.gps.test.free", "com.androits.gps.test.pro"),//, ""),
+		SAT_STAT("SatStat (F-droid)", "com.vonglasow.michael.satstat", "");//, "");
 		
-		public final String stringRes;
-		public final String appName;
-		public final String paidAppName;
-		public final String activity;
+		final String stringRes;
+		final String appName;
+		final String paidAppName;
+//		public final String activity;
 
-		GpsStatusApps(String res, String appName, String paidAppName, String activity) {
+		GpsStatusApps(String res, String appName, String paidAppName) {//}, String activity) {
 			this.stringRes = res;
 			this.appName = appName;
 			this.paidAppName = paidAppName;
-			this.activity = activity;
+//			this.activity = activity;
 		}
 		
-		public boolean installed(Activity a) {
+		boolean installed(Activity a) {
 			return installed(a, appName, paidAppName);
 		}
 		
-		public boolean installed(Activity a, String... appName) {
+		boolean installed(Activity a, String... appName) {
 			boolean installed = false;
 			PackageManager packageManager = a.getPackageManager();
 			for (String app: appName) {
@@ -96,12 +97,12 @@ public class StartGPSStatus extends OsmAndAction {
 	
 	@Override
 	public Dialog createDialog(Activity activity, Bundle args) {
-		GpsStatusApps[] values = GpsStatusApps.values();
-		String[] res = new String[values.length];
-		int i = 0;
-		for(GpsStatusApps g : values) {
-			res[i++] = g.stringRes;
-		}
+//		GpsStatusApps[] values = GpsStatusApps.values();
+//		String[] res = new String[values.length];
+//		int i = 0;
+//		for(GpsStatusApps g : values) {
+//			res[i++] = g.stringRes;
+//		}
 		AlertDialog.Builder builder = new AlertDialog.Builder(mapActivity);
 		builder.setTitle(R.string.gps_status);
 		LinearLayout ll = new LinearLayout(activity);
@@ -118,10 +119,11 @@ public class StartGPSStatus extends OsmAndAction {
 		
 		final int layout = R.layout.list_menu_item_native;
 		final ArrayAdapter<GpsStatusApps> adapter = new ArrayAdapter<GpsStatusApps>(mapActivity, layout, GpsStatusApps.values()) {
-			@Override
-			public View getView(int position, View convertView, ViewGroup parent) {
+			@NonNull
+            @Override
+			public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 				View v = mapActivity.getLayoutInflater().inflate(layout, null);
-	            TextView tv = (TextView)v.findViewById(R.id.title);
+	            TextView tv = v.findViewById(R.id.title);
 				tv.setPadding(dp12, 0, dp24, 0);
 	            tv.setText(getItem(position).stringRes);		
 	            v.findViewById(R.id.toggle_item).setVisibility(View.INVISIBLE);
@@ -153,7 +155,6 @@ public class StartGPSStatus extends OsmAndAction {
 	private void runChosenGPSStatus(final GpsStatusApps g) {
 		if (g.installed(mapActivity)) {
 			Intent intent = null;
-			// if (g.activity.length() == 0) {
 				PackageManager pm = mapActivity.getPackageManager();
 				try {
 					String appName = !g.paidAppName.equals("") &&
@@ -161,10 +162,6 @@ public class StartGPSStatus extends OsmAndAction {
 					intent = pm.getLaunchIntentForPackage(appName);
 				} catch (RuntimeException e) {
 				}
-//			} else {
-//				intent = new Intent();
-//				intent.setComponent(new ComponentName(g.appName, g.activity));
-//			}
 			if(intent == null) {
 				return;
 			}
@@ -191,7 +188,4 @@ public class StartGPSStatus extends OsmAndAction {
 			}
 		}
 	}
-
-	
-	
 }

@@ -20,10 +20,10 @@ import java.util.List;
  */
 public final class TransactionBuilder {
 	private static final String TAG = "TransactionBuilder";
-	private FragmentManager manager;
+	private final FragmentManager manager;
 	private final List<DashFragmentData> fragments;
-	private OsmandSettings settings;
-	private MapActivity mapActivity;
+	private final OsmandSettings settings;
+	private final MapActivity mapActivity;
 
 	public TransactionBuilder(FragmentManager manager, OsmandSettings settings,
 							  MapActivity mapActivity) {
@@ -43,10 +43,12 @@ public final class TransactionBuilder {
 		return this;
 	}
 
-	public TransactionBuilder addFragment(DashFragmentData fragmentData) {
-		fragments.add(fragmentData);
-		return this;
-	}
+// --Commented out by Inspection START (23/01/19 22:40):
+//	public TransactionBuilder addFragment(DashFragmentData fragmentData) {
+//		fragments.add(fragmentData);
+//		return this;
+//	}
+// --Commented out by Inspection STOP (23/01/19 22:40)
 
 	public FragmentTransaction getFragmentTransaction() {
 		FragmentTransaction fragmentTransaction = manager.beginTransaction();

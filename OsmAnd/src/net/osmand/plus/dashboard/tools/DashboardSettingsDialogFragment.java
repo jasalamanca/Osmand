@@ -1,6 +1,6 @@
 package net.osmand.plus.dashboard.tools;
 
-import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -8,7 +8,6 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AlertDialog;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +17,6 @@ import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import net.osmand.PlatformUtil;
 import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.OsmandSettings.CommonPreference;
@@ -32,8 +30,6 @@ import java.util.List;
 
 public class DashboardSettingsDialogFragment extends DialogFragment
 		implements NumberPickerDialogFragment.CanAcceptNumber {
-	private static final org.apache.commons.logging.Log LOG =
-			PlatformUtil.getLog(NumberPickerDialogFragment.class);
 	private static final String CHECKED_ITEMS = "checked_items";
 	private static final String NUMBER_OF_ROWS_ARRAY = "number_of_rows_array";
 	private MapActivity mapActivity;
@@ -45,9 +41,9 @@ public class DashboardSettingsDialogFragment extends DialogFragment
 	private static final int DEFAULT_NUMBER_OF_ROWS = 5;
 
 	@Override
-	public void onAttach(Activity activity) {
-		super.onAttach(activity);
-		mapActivity = (MapActivity) activity;
+	public void onAttach(Context context) {
+		super.onAttach(context);
+		mapActivity = (MapActivity) context;
 		mFragmentsData = new ArrayList<>();
 		for (DashFragmentData fragmentData : mapActivity.getDashboard().getFragmentsData()) {
 			if (fragmentData.canBeDisabled()) mFragmentsData.add(fragmentData);
@@ -117,11 +113,11 @@ public class DashboardSettingsDialogFragment extends DialogFragment
 	private View createCheckboxItem(final CommonPreference<Boolean> pref, int text, int description) {
 		final View view = LayoutInflater.from(getActivity()).inflate(
 				R.layout.show_dashboard_on_start_dialog_item, null, false);
-		final TextView textView = (TextView) view.findViewById(R.id.text);
-		final TextView subtextView = (TextView) view.findViewById(R.id.subtext);
+		final TextView textView = view.findViewById(R.id.text);
+		final TextView subtextView = view.findViewById(R.id.subtext);
 		textView.setText(text);
 		subtextView.setText(description);
-		final CompoundButton compoundButton = (CompoundButton) view.findViewById(R.id.toggle_item);
+		final CompoundButton compoundButton = view.findViewById(R.id.toggle_item);
 		compoundButton.setChecked(pref.get());
 		textView.setTextColor(pref.get() ? textColorPrimary
 				: textColorSecondary);
@@ -152,16 +148,16 @@ public class DashboardSettingsDialogFragment extends DialogFragment
 		private final boolean[] checkedItems;
 		private final int[] numbersOfRows;
 
-		public DashFragmentAdapter(@NonNull Context context, @NonNull List<DashFragmentData> objects,
-				@NonNull boolean[] checkedItems, @NonNull int[] numbersOfRows) {
+		DashFragmentAdapter(@NonNull Context context, @NonNull List<DashFragmentData> objects,
+							@NonNull boolean[] checkedItems, @NonNull int[] numbersOfRows) {
 			super(context, 0, objects);
 			this.checkedItems = checkedItems;
 			this.numbersOfRows = numbersOfRows;
 
 		}
 
-		public DashFragmentAdapter(@NonNull Context context, @NonNull List<DashFragmentData> objects,
-				@NonNull OsmandSettings settings) {
+		DashFragmentAdapter(@NonNull Context context, @NonNull List<DashFragmentData> objects,
+							@NonNull OsmandSettings settings) {
 			super(context, 0, objects);
 			numbersOfRows = new int[objects.size()];
 			checkedItems = new boolean[objects.size()];
@@ -176,8 +172,9 @@ public class DashboardSettingsDialogFragment extends DialogFragment
 			}
 		}
 
+		@NonNull
 		@Override
-		public View getView(final int position, View convertView, ViewGroup parent) {
+		public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
 			final DashViewHolder viewHolder;
 			if (convertView == null) {
 				convertView = LayoutInflater.from(getContext()).inflate(R.layout.dashboard_settings_dialog_item,
@@ -191,19 +188,19 @@ public class DashboardSettingsDialogFragment extends DialogFragment
 			return convertView;
 		}
 
-		public boolean[] getCheckedItems() {
+		boolean[] getCheckedItems() {
 			return checkedItems;
 		}
 
-		public int[] getNumbersOfRows() {
+		int[] getNumbersOfRows() {
 			return numbersOfRows;
 		}
 
-		public boolean isChecked(int position) {
+		boolean isChecked(int position) {
 			return checkedItems[position];
 		}
 
-		public int getNumberOfRows(int position) {
+		int getNumberOfRows(int position) {
 			return numbersOfRows[position];
 		}
 
@@ -240,18 +237,18 @@ public class DashboardSettingsDialogFragment extends DialogFragment
 		final CompoundButton compoundButton;
 		final TextView numberOfRowsTextView;
 		private int position;
-		private int colorBlue;
-		private DashFragmentAdapter dashFragmentAdapter;
+		private final int colorBlue;
+		private final DashFragmentAdapter dashFragmentAdapter;
 
-		public DashViewHolder(DashFragmentAdapter dashFragmentAdapter, View view, Context ctx) {
+		DashViewHolder(DashFragmentAdapter dashFragmentAdapter, View view, Context ctx) {
 			this.dashFragmentAdapter = dashFragmentAdapter;
-			this.numberOfRowsTextView = (TextView) view.findViewById(R.id.numberOfRowsTextView);
-			this.textView = (TextView) view.findViewById(R.id.text);
-			this.compoundButton = (CompoundButton) view.findViewById(R.id.toggle_item);
+			this.numberOfRowsTextView = view.findViewById(R.id.numberOfRowsTextView);
+			this.textView = view.findViewById(R.id.text);
+			this.compoundButton = view.findViewById(R.id.toggle_item);
 			colorBlue = ctx.getResources().getColor(R.color.dashboard_blue);
 		}
 
-		public void bindDashView(DashFragmentData fragmentData, int position) {
+		void bindDashView(DashFragmentData fragmentData, int position) {
 			if (fragmentData.hasRows()) {
 				numberOfRowsTextView.setVisibility(View.VISIBLE);
 				numberOfRowsTextView.setText(String.valueOf(dashFragmentAdapter.getNumberOfRows(position)));

@@ -15,7 +15,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -39,23 +39,19 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.text.MessageFormat;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 
 import gnu.trove.list.array.TIntArrayList;
 
 public class DashChooseAppDirFragment {
-
-	
 	public static class ChooseAppDirFragment {
-		public static final int VERSION_DEFAULTLOCATION_CHANGED = 19;
+		// --Commented out by Inspection (23/01/19 22:27):public static final int VERSION_DEFAULTLOCATION_CHANGED = 19;
 		private TextView locationPath;
 		private TextView locationDesc;
-		MessageFormat formatGb = new MessageFormat("{0, number,#.##} GB", Locale.US);
+		final MessageFormat formatGb = new MessageFormat("{0, number,#.##} GB", Locale.US);
 		private View copyMapsBtn;
 		private ImageView editBtn;
 		private View confirmBtn;
@@ -65,17 +61,19 @@ public class DashChooseAppDirFragment {
 		private File selectedFile = new File("/");
 		private File currentAppFile;
 		private OsmandSettings settings;
-		private Activity activity;
+		private final Activity activity;
 		private Fragment fragment;
 		private Dialog dlg;
 
 		private static int typeTemp = -1;
 		private static String selectePathTemp;
 
-		public ChooseAppDirFragment(Activity activity, Fragment f) {
-			this.activity = activity;
-			this.fragment = f;
-		}
+// --Commented out by Inspection START (23/01/19 22:28):
+//		public ChooseAppDirFragment(Activity activity, Fragment f) {
+//			this.activity = activity;
+//			this.fragment = f;
+//		}
+// --Commented out by Inspection STOP (23/01/19 22:28)
 
 		public ChooseAppDirFragment(Activity activity, Dialog dlg) {
 			this.activity = activity;
@@ -96,7 +94,7 @@ public class DashChooseAppDirFragment {
 			return "";
 		}
 
-		public void updateView() {
+		void updateView() {
 			if (type == OsmandSettings.EXTERNAL_STORAGE_TYPE_INTERNAL_FILE) {
 				locationPath.setText(R.string.storage_directory_internal_app);
 			} else if (type == OsmandSettings.EXTERNAL_STORAGE_TYPE_DEFAULT) {
@@ -141,15 +139,15 @@ public class DashChooseAppDirFragment {
 							 @Nullable Bundle savedInstanceState) {
 			View view = inflater.inflate(R.layout.dash_storage_type_fragment, container, false);
 			settings = getMyApplication().getSettings();
-			locationPath = (TextView) view.findViewById(R.id.location_path);
-			locationDesc = (TextView) view.findViewById(R.id.location_desc);
-			warningReadonly = (TextView) view.findViewById(R.id.android_19_location_changed);
+			locationPath = view.findViewById(R.id.location_path);
+			locationDesc = view.findViewById(R.id.location_desc);
+			warningReadonly = view.findViewById(R.id.android_19_location_changed);
 			currentAppFile = settings.getExternalStorageDirectory();
 			selectedFile = currentAppFile;
 			if (settings.getExternalStorageDirectoryTypeV19() >= 0) {
 				type = settings.getExternalStorageDirectoryTypeV19();
 			} else {
-				ValueHolder<Integer> vh = new ValueHolder<Integer>();
+				ValueHolder<Integer> vh = new ValueHolder<>();
 				settings.getExternalStorageDirectory(vh);
 				if (vh.value != null && vh.value >= 0) {
 					type = vh.value;
@@ -157,7 +155,7 @@ public class DashChooseAppDirFragment {
 					type = 0;
 				}
 			}
-			editBtn = (ImageView) view.findViewById(R.id.edit_icon);
+			editBtn = view.findViewById(R.id.edit_icon);
 			copyMapsBtn = view.findViewById(R.id.copy_maps);
 			confirmBtn = view.findViewById(R.id.confirm);
 			addListeners();
@@ -166,16 +164,16 @@ public class DashChooseAppDirFragment {
 			return view;
 		}
 		
-		public String getString(int string) {
+		String getString(int string) {
 			return activity.getString(string);
 		}
 
 		@TargetApi(Build.VERSION_CODES.KITKAT)
-		protected void showSelectDialog19() {
+		void showSelectDialog19() {
 			AlertDialog.Builder editalert = new AlertDialog.Builder(activity);
 			editalert.setTitle(R.string.application_dir);
-			final List<String> items = new ArrayList<String>();
-			final List<String> paths = new ArrayList<String>();
+			final List<String> items = new ArrayList<>();
+			final List<String> paths = new ArrayList<>();
 			final TIntArrayList types = new TIntArrayList();
 			int selected = -1;
 			if (type == OsmandSettings.EXTERNAL_STORAGE_TYPE_SPECIFIED) {
@@ -282,7 +280,7 @@ public class DashChooseAppDirFragment {
 			}
 		}
 
-		public void showOtherDialog() {
+		void showOtherDialog() {
 			AlertDialog.Builder editalert = new AlertDialog.Builder(activity);
 			editalert.setTitle(R.string.application_dir);
 			final EditText input = new EditText(activity);
@@ -343,7 +341,7 @@ public class DashChooseAppDirFragment {
 
 		}
 
-		public OnClickListener getConfirmListener() {
+		OnClickListener getConfirmListener() {
 			return new View.OnClickListener() {
 
 				@Override
@@ -374,53 +372,52 @@ public class DashChooseAppDirFragment {
 		// To be implemented by subclass
 		protected void successCallback() {}
 
-		protected void reloadData() {
+		void reloadData() {
 			new ReloadData(activity, getMyApplication()).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, (Void) null);
 		}
 
-		public OsmandApplication getMyApplication() {
+		OsmandApplication getMyApplication() {
 			if (activity == null) {
 				return null;
 			}
 			return (OsmandApplication) activity.getApplication();
 		}
 
-
-		
-
-		public static HashSet<String> getExternalMounts() {
-			final HashSet<String> out = new HashSet<String>();
-			String reg = "(?i).*vold.*(vfat|ntfs|exfat|fat32|ext3|ext4).*rw.*";
-			String s = "";
-			try {
-				final Process process = new ProcessBuilder().command("mount").redirectErrorStream(true).start();
-				process.waitFor();
-				final InputStream is = process.getInputStream();
-				final byte[] buffer = new byte[1024];
-				while (is.read(buffer) != -1) {
-					s = s + new String(buffer);
-				}
-				is.close();
-			} catch (final Exception e) {
-				e.printStackTrace();
-			}
-
-			// parse output
-			final String[] lines = s.split("\n");
-			for (String line : lines) {
-				if (!line.toLowerCase(Locale.US).contains("asec")) {
-					if (line.matches(reg)) {
-						String[] parts = line.split(" ");
-						for (String part : parts) {
-							if (part.startsWith("/"))
-								if (!part.toLowerCase(Locale.US).contains("vold"))
-									out.add(part);
-						}
-					}
-				}
-			}
-			return out;
-		}
+// --Commented out by Inspection START (23/01/19 22:27):
+//		public static HashSet<String> getExternalMounts() {
+//			final HashSet<String> out = new HashSet<>();
+//			String reg = "(?i).*vold.*(vfat|ntfs|exfat|fat32|ext3|ext4).*rw.*";
+//			StringBuilder s = new StringBuilder();
+//			try {
+//				final Process process = new ProcessBuilder().command("mount").redirectErrorStream(true).start();
+//				process.waitFor();
+//				final InputStream is = process.getInputStream();
+//				final byte[] buffer = new byte[1024];
+//				while (is.read(buffer) != -1) {
+//					s.append(new String(buffer));
+//				}
+//				is.close();
+//			} catch (final Exception e) {
+//				e.printStackTrace();
+//			}
+//
+//			// parse output
+//			final String[] lines = s.toString().split("\n");
+//			for (String line : lines) {
+//				if (!line.toLowerCase(Locale.US).contains("asec")) {
+//					if (line.matches(reg)) {
+//						String[] parts = line.split(" ");
+//						for (String part : parts) {
+//							if (part.startsWith("/"))
+//								if (!part.toLowerCase(Locale.US).contains("vold"))
+//									out.add(part);
+//						}
+//					}
+//				}
+//			}
+//			return out;
+//		}
+// --Commented out by Inspection STOP (23/01/19 22:27)
 
 		public void setDialog(Dialog dlg) {
 			this.dlg = dlg;
@@ -430,10 +427,10 @@ public class DashChooseAppDirFragment {
 	
 	public static class MoveFilesToDifferentDirectory extends AsyncTask<Void, Void, Boolean> {
 
-		private File to;
-		private Context ctx;
-		private File from;
-		protected ProgressImplementation progress;
+		private final File to;
+		private final Context ctx;
+		private final File from;
+		ProgressImplementation progress;
 		private Runnable runOnSuccess;
 
 		public MoveFilesToDifferentDirectory(Context ctx, File from, File to) {
@@ -457,9 +454,9 @@ public class DashChooseAppDirFragment {
 		@Override
 		protected void onPostExecute(Boolean result) {
 			if (result != null) {
-				if (result.booleanValue() && runOnSuccess != null) {
+				if (result && runOnSuccess != null) {
 					runOnSuccess.run();
-				} else if (!result.booleanValue()) {
+				} else if (!result) {
 					Toast.makeText(ctx, R.string.shared_string_io_error, Toast.LENGTH_LONG).show();
 				}
 			}
@@ -480,9 +477,9 @@ public class DashChooseAppDirFragment {
 				t.mkdirs();
 				File[] lf = f.listFiles();
 				if (lf != null) {
-					for (int i = 0; i < lf.length; i++) {
-						if (lf[i] != null) {
-							movingFiles(lf[i], new File(t, lf[i].getName()), depth + 1);
+					for (File aLf : lf) {
+						if (aLf != null) {
+							movingFiles(aLf, new File(t, aLf.getName()), depth + 1);
 						}
 					}
 				}
@@ -528,9 +525,9 @@ public class DashChooseAppDirFragment {
 	}
 	
 	public static class ReloadData extends AsyncTask<Void, Void, Boolean> {
-		private Context ctx;
-		protected ProgressImplementation progress;
-		private OsmandApplication app;
+		private final Context ctx;
+		ProgressImplementation progress;
+		private final OsmandApplication app;
 
 		public ReloadData(Context ctx, OsmandApplication app) {
 			this.ctx = ctx;

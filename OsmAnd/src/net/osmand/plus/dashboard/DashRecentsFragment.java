@@ -1,6 +1,5 @@
 package net.osmand.plus.dashboard;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -11,11 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import net.osmand.data.LatLon;
-import net.osmand.plus.OsmAndAppCustomization;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.activities.search.SearchActivity;
 import net.osmand.plus.activities.search.SearchHistoryFragment;
 import net.osmand.plus.dashboard.tools.DashFragmentData;
 import net.osmand.plus.dialogs.DirectionsDialogs;
@@ -86,7 +83,7 @@ public class DashRecentsFragment extends DashLocationFragment {
 		for (final HistoryEntry historyEntry : points) {
 			LayoutInflater inflater = getActivity().getLayoutInflater();
 			View view = inflater.inflate(R.layout.search_history_list_item, null, false);
-			SearchHistoryFragment.udpateHistoryItem(historyEntry, view, loc, getActivity(), getMyApplication());
+			SearchHistoryFragment.updateHistoryItem(historyEntry, view, loc, getActivity(), getMyApplication());
 			view.findViewById(R.id.divider).setVisibility(View.VISIBLE);
 			view.findViewById(R.id.navigate_to).setVisibility(View.VISIBLE);
 			((ImageView) view.findViewById(R.id.navigate_to)).setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_gdirections_dark));

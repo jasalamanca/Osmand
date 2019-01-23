@@ -1,15 +1,14 @@
 package net.osmand.plus.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.ListPopupWindow;
-import android.support.v7.widget.SwitchCompat;
+import android.widget.ListPopupWindow;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import net.osmand.AndroidUtils;
@@ -36,12 +36,11 @@ import net.osmand.util.Algorithms;
 
 public class EditFavoriteGroupDialogFragment extends BottomSheetDialogFragment {
 
-	public static final String TAG = "EditFavoriteGroupDialogFragment";
+	private static final String TAG = "EditFavoriteGroupDialogFragment";
 	private static final String GROUP_NAME_KEY = "group_name_key";
 
 	private OsmandApplication app;
 	private FavoriteGroup group;
-	private FavouritesDbHelper helper;
 
 	@Override
 	public void onStart() {
@@ -60,7 +59,7 @@ public class EditFavoriteGroupDialogFragment extends BottomSheetDialogFragment {
 
 		final Activity activity = getActivity();
 		app = (OsmandApplication) activity.getApplicationContext();
-		helper = app.getFavorites();
+		FavouritesDbHelper helper = app.getFavorites();
 
 		Bundle args = null;
 		if (savedInstanceState != null) {
@@ -84,7 +83,7 @@ public class EditFavoriteGroupDialogFragment extends BottomSheetDialogFragment {
 
 		IconsCache ic = app.getIconsCache();
 
-		final TextView title = (TextView) view.findViewById(R.id.title);
+		final TextView title = view.findViewById(R.id.title);
 		title.setText(Algorithms.isEmpty(group.name) ? app.getString(R.string.shared_string_favorites) : group.name);
 		View editNameView = view.findViewById(R.id.edit_name_view);
 		((ImageView) view.findViewById(R.id.edit_name_icon))
@@ -96,9 +95,9 @@ public class EditFavoriteGroupDialogFragment extends BottomSheetDialogFragment {
 				b.setTitle(R.string.favorite_group_name);
 				final EditText nameEditText = new EditText(activity);
 				nameEditText.setText(group.name);
-				int leftPadding = AndroidUtils.dpToPx(activity, 24f);
-				int topPadding = AndroidUtils.dpToPx(activity, 4f);
-				b.setView(nameEditText, leftPadding, topPadding, leftPadding, topPadding);
+//				int leftPadding = AndroidUtils.dpToPx(activity, 24f);
+//				int topPadding = AndroidUtils.dpToPx(activity, 4f);
+				b.setView(nameEditText);
 				b.setNegativeButton(R.string.shared_string_cancel, null);
 				b.setPositiveButton(R.string.shared_string_save, new DialogInterface.OnClickListener() {
 					@Override
@@ -128,7 +127,7 @@ public class EditFavoriteGroupDialogFragment extends BottomSheetDialogFragment {
 				popup.setAnchorView(changeColorView);
 				popup.setContentWidth(AndroidUtils.dpToPx(app, 200f));
 				popup.setModal(true);
-				popup.setDropDownGravity(Gravity.RIGHT | Gravity.TOP);
+//				popup.setDropDownGravity(Gravity.RIGHT | Gravity.TOP);
 				popup.setVerticalOffset(AndroidUtils.dpToPx(app, -48f));
 				popup.setHorizontalOffset(AndroidUtils.dpToPx(app, -6f));
 				final FavoriteColorAdapter colorAdapter = new FavoriteColorAdapter(getActivity());
@@ -156,7 +155,7 @@ public class EditFavoriteGroupDialogFragment extends BottomSheetDialogFragment {
 		View showOnMapView = view.findViewById(R.id.show_on_map_view);
 		((ImageView) view.findViewById(R.id.show_on_map_icon))
 				.setImageDrawable(ic.getThemedIcon(R.drawable.ic_map));
-		final SwitchCompat checkbox = (SwitchCompat) view.findViewById(R.id.show_on_map_switch);
+		final Switch checkbox = view.findViewById(R.id.show_on_map_switch);
 		checkbox.setChecked(group.visible);
 		showOnMapView.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -254,7 +253,7 @@ public class EditFavoriteGroupDialogFragment extends BottomSheetDialogFragment {
 	}
 
 	private void updateColorView(View colorView) {
-		ImageView colorImageView = (ImageView) colorView.findViewById(R.id.colorImage);
+		ImageView colorImageView = colorView.findViewById(R.id.colorImage);
 		int color = group.color == 0 ? getResources().getColor(R.color.color_favorite) : group.color;
 		if (color == 0) {
 			colorImageView.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_action_circle));
@@ -271,17 +270,17 @@ public class EditFavoriteGroupDialogFragment extends BottomSheetDialogFragment {
 		f.show(fragmentManager, EditFavoriteGroupDialogFragment.TAG);
 	}
 
-	public static class FavoriteColorAdapter extends ArrayAdapter<Integer> {
+	static class FavoriteColorAdapter extends ArrayAdapter<Integer> {
 
-		private OsmandApplication app;
+		private final OsmandApplication app;
 
-		public FavoriteColorAdapter(Context context) {
+		FavoriteColorAdapter(Context context) {
 			super(context, R.layout.rendering_prop_menu_item);
 			this.app = (OsmandApplication) getContext().getApplicationContext();
 			init();
 		}
 
-		public void init() {
+		void init() {
 			for (int color : ColorDialogs.pallette) {
 				add(color);
 			}
@@ -296,7 +295,7 @@ public class EditFavoriteGroupDialogFragment extends BottomSheetDialogFragment {
 				v = LayoutInflater.from(getContext()).inflate(R.layout.rendering_prop_menu_item, null);
 			}
 			if (color != null) {
-				TextView textView = (TextView) v.findViewById(R.id.text1);
+				TextView textView = v.findViewById(R.id.text1);
 				textView.setText(app.getString(ColorDialogs.paletteColors[position]));
 				textView.setCompoundDrawablesWithIntrinsicBounds(null, null,
 						app.getIconsCache().getPaintedIcon(R.drawable.ic_action_circle, color), null);

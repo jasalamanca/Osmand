@@ -1,6 +1,7 @@
 package net.osmand.plus.liveupdates;
 
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -8,17 +9,15 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 
-import net.osmand.PlatformUtil;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.R;
@@ -28,8 +27,6 @@ import net.osmand.plus.liveupdates.LiveUpdatesHelper.TimeOfDay;
 import net.osmand.plus.liveupdates.LiveUpdatesHelper.UpdateFrequency;
 import net.osmand.plus.resources.IncrementalChangesManager;
 import net.osmand.util.Algorithms;
-
-import org.apache.commons.logging.Log;
 
 import java.io.File;
 
@@ -47,7 +44,6 @@ import static net.osmand.plus.liveupdates.LiveUpdatesHelper.runLiveUpdate;
 import static net.osmand.plus.liveupdates.LiveUpdatesHelper.setAlarmForPendingIntent;
 
 public class LiveUpdatesSettingsDialogFragment extends DialogFragment {
-	private static final Log LOG = PlatformUtil.getLog(LiveUpdatesSettingsDialogFragment.class);
 	private static final String LOCAL_INDEX_FILE_NAME = "local_index_file_name";
 
 	@NonNull
@@ -59,15 +55,15 @@ public class LiveUpdatesSettingsDialogFragment extends DialogFragment {
 
 		View view = LayoutInflater.from(getActivity())
 				.inflate(R.layout.dialog_live_updates_item_settings, null);
-		final TextView regionNameTextView = (TextView) view.findViewById(R.id.regionNameTextView);
-		final TextView lastMapChangeTextView = (TextView) view.findViewById(R.id.lastMapChangeTextView);
-		final TextView lastUpdateTextView = (TextView) view.findViewById(R.id.lastUpdateTextView);
-		final SwitchCompat liveUpdatesSwitch = (SwitchCompat) view.findViewById(R.id.toggle_item);
-		final CheckBox downloadOverWiFiCheckBox = (CheckBox) view.findViewById(R.id.downloadOverWiFiSwitch);
-		final Spinner updateFrequencySpinner = (Spinner) view.findViewById(R.id.updateFrequencySpinner);
-		final Spinner updateTimesOfDaySpinner = (Spinner) view.findViewById(R.id.updateTimesOfDaySpinner);
+		final TextView regionNameTextView = view.findViewById(R.id.regionNameTextView);
+		final TextView lastMapChangeTextView = view.findViewById(R.id.lastMapChangeTextView);
+		final TextView lastUpdateTextView = view.findViewById(R.id.lastUpdateTextView);
+		final Switch liveUpdatesSwitch = view.findViewById(R.id.toggle_item);
+		final CheckBox downloadOverWiFiCheckBox = view.findViewById(R.id.downloadOverWiFiSwitch);
+		final Spinner updateFrequencySpinner = view.findViewById(R.id.updateFrequencySpinner);
+		final Spinner updateTimesOfDaySpinner = view.findViewById(R.id.updateTimesOfDaySpinner);
 		final View updateTimesOfDayLayout = view.findViewById(R.id.updateTimesOfDayLayout);
-		final TextView sizeTextView = (TextView) view.findViewById(R.id.sizeTextView);
+		final TextView sizeTextView = view.findViewById(R.id.sizeTextView);
 
 		regionNameTextView.setText(getNameToDisplay(fileName, getMyActivity()));
 		final String fileNameWithoutExtension =
@@ -259,7 +255,7 @@ public class LiveUpdatesSettingsDialogFragment extends DialogFragment {
 			return (OsmandApplication) getActivity().getApplication();
 		}
 
-		public static ClearUpdatesDialogFragment createInstance(String fileName) {
+		static ClearUpdatesDialogFragment createInstance(String fileName) {
 			ClearUpdatesDialogFragment fragment = new ClearUpdatesDialogFragment();
 			Bundle args = new Bundle();
 			args.putString(LOCAL_INDEX_FILE_NAME, fileName);

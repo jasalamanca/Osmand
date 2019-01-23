@@ -1,15 +1,14 @@
 package net.osmand.plus.development;
 
 import android.app.ActionBar;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Gravity;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
@@ -21,11 +20,11 @@ import net.osmand.IndexConstants;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.OsmandActionBarActivity;
+import net.osmand.plus.routing.VoiceRouter;
 import net.osmand.plus.voice.AbstractPrologCommandPlayer;
-import net.osmand.plus.voice.TTSCommandPlayerImpl;
 import net.osmand.plus.voice.CommandBuilder;
 import net.osmand.plus.voice.CommandPlayer;
-import net.osmand.plus.routing.VoiceRouter;
+import net.osmand.plus.voice.TTSCommandPlayerImpl;
 import net.osmand.util.Algorithms;
 
 import java.io.File;
@@ -49,12 +48,10 @@ public class TestVoiceActivity extends OsmandActionBarActivity {
 	public void onCreate(Bundle icicle) {
 		((OsmandApplication) getApplication()).applyTheme(this);
 		super.onCreate(icicle);
-		if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-			getWindow().setUiOptions(ActivityInfo.UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW);
-		}
+		getWindow().setUiOptions(ActivityInfo.UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW);
 		getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
 
-		final OsmandApplication app = ((OsmandApplication) getApplication());
+//		final OsmandApplication app = ((OsmandApplication) getApplication());
 		
 		
 		LinearLayout gl = new LinearLayout(this);
@@ -66,12 +63,12 @@ public class TestVoiceActivity extends OsmandActionBarActivity {
 		tv.setPadding(0, 5, 0, 7);
 		
 		ScrollView sv = new ScrollView(this);
-		gl.addView(sv, new LayoutParams(android.view.ViewGroup.LayoutParams.FILL_PARENT, 
-				android.view.ViewGroup.LayoutParams.FILL_PARENT));
+		gl.addView(sv, new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+				android.view.ViewGroup.LayoutParams.MATCH_PARENT));
 		final LinearLayout ll = new LinearLayout(this);
 		ll.setOrientation(LinearLayout.VERTICAL);
-		sv.addView(ll, new LayoutParams(android.view.ViewGroup.LayoutParams.FILL_PARENT, 
-				android.view.ViewGroup.LayoutParams.FILL_PARENT));
+		sv.addView(ll, new LayoutParams(android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+				android.view.ViewGroup.LayoutParams.MATCH_PARENT));
 		
 		// add buttons
 		setContentView(gl);
@@ -83,7 +80,7 @@ public class TestVoiceActivity extends OsmandActionBarActivity {
 	private Set<String> getVoiceFiles() {
 		// read available voice data
 		File extStorage = ((OsmandApplication) getApplication()).getAppPath(IndexConstants.VOICE_INDEX_DIR);
-		Set<String> setFiles = new LinkedHashSet<String>();
+		Set<String> setFiles = new LinkedHashSet<>();
 		if (extStorage.exists()) {
 			for (File f : extStorage.listFiles()) {
 				if (f.isDirectory()) {
@@ -94,15 +91,15 @@ public class TestVoiceActivity extends OsmandActionBarActivity {
 		return setFiles;
 	}
 	private void selectVoice(final LinearLayout ll) {
-		String[] entries;
+//		String[] entries;
 		final String[] entrieValues;
 		Set<String> voiceFiles = getVoiceFiles();
-		entries = new String[voiceFiles.size() ];
+//		entries = new String[voiceFiles.size() ];
 		entrieValues = new String[voiceFiles.size() ];
 		int k = 0;
 		int selected = 0;
 		for (String s : voiceFiles) {
-			entries[k] = s;
+//			entries[k] = s;
 			entrieValues[k] = s;
 			if(s.equals(((OsmandApplication) getApplication()).getSettings().VOICE_PROVIDER.get())) {
 				selected = k;
@@ -295,12 +292,12 @@ public class TestVoiceActivity extends OsmandActionBarActivity {
 		return p.newCommandBuilder();
 	}
 
-	public void addButton(ViewGroup layout, final String description, final CommandBuilder builder){
+	private void addButton(ViewGroup layout, final String description, final CommandBuilder builder){
 		final Button button = new Button(this);
 		button.setGravity(Gravity.LEFT);
 		button.setTransformationMethod(null); //or else button text is all upper case
 		button.setText(description);
-		button.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+		button.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		if (!description.startsWith("\u25BA (")) {
 			// Section headline buttons
 			button.setPadding(10, 20, 10, 5);

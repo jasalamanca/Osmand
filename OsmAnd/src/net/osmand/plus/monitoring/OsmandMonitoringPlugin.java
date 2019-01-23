@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
@@ -42,11 +42,11 @@ import gnu.trove.list.array.TIntArrayList;
 
 public class OsmandMonitoringPlugin extends OsmandPlugin {
 	public static final String ID = "osmand.monitoring";
-	public final static String OSMAND_SAVE_SERVICE_ACTION = "OSMAND_SAVE_SERVICE_ACTION";
-	private OsmandSettings settings;
-	private OsmandApplication app;
+//	public final static String OSMAND_SAVE_SERVICE_ACTION = "OSMAND_SAVE_SERVICE_ACTION";
+	private final OsmandSettings settings;
+	private final OsmandApplication app;
 	private TextInfoWidget monitoringControl;
-	private LiveMonitoringHelper liveMonitoringHelper;
+	private final LiveMonitoringHelper liveMonitoringHelper;
 	private boolean isSaving;
 
 	public OsmandMonitoringPlugin(OsmandApplication app) {
@@ -299,7 +299,7 @@ public class OsmandMonitoringPlugin extends OsmandPlugin {
 				} else if(item == R.string.live_monitoring_stop) {
 					settings.LIVE_MONITORING.set(false);
 				} else if(item == R.string.live_monitoring_start) {
-					final ValueHolder<Integer> vs = new ValueHolder<Integer>();
+					final ValueHolder<Integer> vs = new ValueHolder<>();
 					vs.value = settings.LIVE_MONITORING_INTERVAL.get();
 					showIntervalChooseDialog(map, app.getString(R.string.live_monitoring_interval) + " : %s", 
 							app.getString(R.string.save_track_to_gpx_globally), SECONDS, MINUTES,
@@ -375,9 +375,9 @@ public class OsmandMonitoringPlugin extends OsmandPlugin {
 		startGPXMonitoring(map, true);
 	}
 
-	public void startGPXMonitoring(final Activity map, final boolean showTrackSelection) {
-		final ValueHolder<Integer> vs = new ValueHolder<Integer>();
-		final ValueHolder<Boolean> choice = new ValueHolder<Boolean>();
+	private void startGPXMonitoring(final Activity map, final boolean showTrackSelection) {
+		final ValueHolder<Integer> vs = new ValueHolder<>();
+		final ValueHolder<Boolean> choice = new ValueHolder<>();
 		vs.value = settings.SAVE_GLOBAL_TRACK_INTERVAL.get();
 		choice.value = settings.SAVE_GLOBAL_TRACK_REMEMBER.get();
 		final Runnable runnable = new Runnable() {
@@ -405,28 +405,28 @@ public class OsmandMonitoringPlugin extends OsmandPlugin {
 	}
 
 
-	public static void showIntervalChooseDialog(final Context uiCtx, final String patternMsg,
-												String title, final int[] seconds, final int[] minutes,
-												final ValueHolder<Boolean> choice, final ValueHolder<Integer> v,
-												final boolean showTrackSelection, OnClickListener onclick){
+	private static void showIntervalChooseDialog(final Context uiCtx, final String patternMsg,
+												 String title, final int[] seconds, final int[] minutes,
+												 final ValueHolder<Boolean> choice, final ValueHolder<Integer> v,
+												 final boolean showTrackSelection, OnClickListener onclick){
 		AlertDialog.Builder dlg = new AlertDialog.Builder(uiCtx);
 		dlg.setTitle(title);
 		WindowManager mgr = (WindowManager) uiCtx.getSystemService(Context.WINDOW_SERVICE);
 		DisplayMetrics dm = new DisplayMetrics();
 		mgr.getDefaultDisplay().getMetrics(dm);
 		LinearLayout ll = createIntervalChooseLayout(uiCtx, patternMsg, seconds, minutes,
-				choice, v, showTrackSelection, dm);
+				choice, v, showTrackSelection);
 		dlg.setView(ll);
 		dlg.setPositiveButton(R.string.shared_string_ok, onclick);
 		dlg.setNegativeButton(R.string.shared_string_cancel, null);
 		dlg.show();
 	}
 
-	public static LinearLayout createIntervalChooseLayout(final Context uiCtx,
-														  final String patternMsg, final int[] seconds,
-														  final int[] minutes, final ValueHolder<Boolean> choice,
-														  final ValueHolder<Integer> v,
-														  final boolean showTrackSelection, DisplayMetrics dm) {
+	private static LinearLayout createIntervalChooseLayout(final Context uiCtx,
+														   final String patternMsg, final int[] seconds,
+														   final int[] minutes, final ValueHolder<Boolean> choice,
+														   final ValueHolder<Integer> v,
+														   final boolean showTrackSelection) {
 		LinearLayout ll = new LinearLayout(uiCtx);
 		final int dp24 = AndroidUtils.dpToPx(uiCtx, 24f);
 		final int dp8 = AndroidUtils.dpToPx(uiCtx, 8f);

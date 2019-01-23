@@ -5,7 +5,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,8 +48,8 @@ public class ContributionVersionActivity extends OsmandListActivity {
 	private ProgressDialog progressDlg;
 	private Date currentInstalledDate;
 
-	private List<OsmAndBuild> downloadedBuilds = new ArrayList<OsmAndBuild>();
-	private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.US);
+	private final List<OsmAndBuild> downloadedBuilds = new ArrayList<>();
+	private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.US);
 	private File pathToDownload;
 	private OsmAndBuild currentSelectedBuild = null;
 	
@@ -95,7 +96,7 @@ public class ContributionVersionActivity extends OsmandListActivity {
 		}
 	}
 	
-	protected void endThreadOperation(int operationId, Exception e){
+	private void endThreadOperation(int operationId, Exception e){
 		if(progressDlg != null){
 			progressDlg.dismiss();
 			progressDlg = null;
@@ -135,7 +136,7 @@ public class ContributionVersionActivity extends OsmandListActivity {
 		getMyApplication().getSettings().CONTRIBUTION_INSTALL_APP_DATE.set(dateFormat.format(d));
 	}
 	
-	protected void executeThreadOperation(int operationId) throws Exception {
+	private void executeThreadOperation(int operationId) throws Exception {
 		if(operationId == DOWNLOAD_BUILDS_LIST){
 			URLConnection connection = NetworkUtils.getHttpURLConnection(URL_TO_RETRIEVE_BUILDS);
 			XmlPullParser parser = XmlPullParserFactory.newInstance().newPullParser();
@@ -207,7 +208,7 @@ public class ContributionVersionActivity extends OsmandListActivity {
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		final OsmAndBuild item = (OsmAndBuild) getListAdapter().getItem(position);
+		final OsmAndBuild item = getListAdapter().getItem(position);
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setMessage(MessageFormat.format(getString(R.string.install_selected_build), item.tag,
 				AndroidUtils.formatDateTime(getMyApplication(), item.date.getTime()), item.size));
@@ -229,12 +230,13 @@ public class ContributionVersionActivity extends OsmandListActivity {
 	protected class OsmandBuildsAdapter extends ArrayAdapter<OsmAndBuild> implements Filterable {
 		
 
-		public OsmandBuildsAdapter(List<OsmAndBuild> builds) {
+		OsmandBuildsAdapter(List<OsmAndBuild> builds) {
 			super(ContributionVersionActivity.this, R.layout.download_build_list_item, builds);
 		}
 
+		@NonNull
 		@Override
-		public View getView(final int position, View convertView, ViewGroup parent) {
+		public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
 			View v = convertView;
 			if (v == null) {
 				LayoutInflater inflater = getLayoutInflater();
@@ -242,13 +244,11 @@ public class ContributionVersionActivity extends OsmandListActivity {
 			}
 			final View row = v;
 			OsmAndBuild build = getItem(position);
-			TextView tagView = (TextView) row.findViewById(R.id.download_tag);
+			TextView tagView = row.findViewById(R.id.download_tag);
 			tagView.setText(build.tag);
 			
-			TextView description = (TextView) row.findViewById(R.id.download_descr);
-			StringBuilder format = new StringBuilder();
-			format.append(AndroidUtils.formatDateTime(getMyApplication(), build.date.getTime()))/*.append(" : ").append(build.size).append(" MB")*/;
-			description.setText(format.toString());
+			TextView description = row.findViewById(R.id.download_descr);
+			description.setText(AndroidUtils.formatDateTime(getMyApplication(), build.date.getTime()));
 
 			int color = getResources().getColor(R.color.color_unknown);
 			if(currentInstalledDate != null){
@@ -268,15 +268,15 @@ public class ContributionVersionActivity extends OsmandListActivity {
 		private ContributionVersionActivity activity;
 		private int operationId;
 		
-		public void setActivity(ContributionVersionActivity activity) {
+		void setActivity(ContributionVersionActivity activity) {
 			this.activity = activity;
 		}
 		
-		public int getOperationId() {
+		int getOperationId() {
 			return operationId;
 		}
 		
-		public void setOperationId(int operationId) {
+		void setOperationId(int operationId) {
 			this.operationId = operationId;
 		}
 
@@ -305,12 +305,12 @@ public class ContributionVersionActivity extends OsmandListActivity {
 	}
 	
 	private static class OsmAndBuild {
-		public String path;
-		public String size;
-		public Date date;
-		public String tag;
+		final String path;
+		final String size;
+		final Date date;
+		final String tag;
 		
-		public OsmAndBuild(String path, String size, Date date, String tag) {
+		OsmAndBuild(String path, String size, Date date, String tag) {
 			super();
 			this.path = path;
 			this.size = size;

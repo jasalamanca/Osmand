@@ -1,6 +1,7 @@
 package net.osmand.plus.activities;
 
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
@@ -20,7 +21,6 @@ import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat.OnRequestPermissionsResultCallback;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatCheckedTextView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,13 +43,10 @@ import net.osmand.plus.OsmandSettings.MetricsConstants;
 import net.osmand.plus.R;
 import net.osmand.plus.Version;
 import net.osmand.plus.base.MapViewTrackingUtilities;
-import net.osmand.plus.dashboard.DashChooseAppDirFragment;
 import net.osmand.plus.dashboard.DashChooseAppDirFragment.ChooseAppDirFragment;
 import net.osmand.plus.dashboard.DashChooseAppDirFragment.MoveFilesToDifferentDirectory;
 import net.osmand.plus.dialogs.ConfigureMapMenu;
 import net.osmand.plus.download.DownloadActivity;
-import net.osmand.plus.render.NativeOsmandLibrary;
-import net.osmand.render.RenderingRulesStorage;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -68,7 +65,6 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 	private Preference applicationDir;
 	private ListPreference applicationModePreference;
 	private Preference drivingRegionPreference;
-	private ChooseAppDirFragment chooseAppDirFragment;
 	private boolean permissionRequested;
 	private boolean permissionGranted;
 
@@ -79,7 +75,6 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 		getToolbar().setTitle(R.string.global_app_settings);
 		addPreferencesFromResource(R.xml.general_settings);
 		String[] entries;
-		String[] entrieValues;
 		PreferenceScreen screen = getPreferenceScreen();
 		settings = getMyApplication().getSettings();
 
@@ -147,8 +142,8 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 							v = inflater.inflate(R.layout.single_choice_description_item, parent, false);
 						}
 						DrivingRegion item = getItem(position);
-						AppCompatCheckedTextView title = (AppCompatCheckedTextView) v.findViewById(R.id.text1);
-						TextView desc = (TextView) v.findViewById(R.id.description);
+						AppCompatCheckedTextView title = v.findViewById(R.id.text1);
+						TextView desc = v.findViewById(R.id.description);
 						if (item != null) {
 							title.setText(getString(item.name));
 							desc.setVisibility(View.VISIBLE);
@@ -186,7 +181,7 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 		});
 
 		String[] entries;
-		String[] entrieValues;
+		String[] entryValues;
 
 		MetricsConstants[] mvls = MetricsConstants.values();
 		entries = new String[mvls.length];
@@ -219,7 +214,7 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 		String latinSystemDefaultSuffix = " (" + getString(R.string.system_locale_no_translate) + ")";
 
 		//getResources().getAssets().getLocales();
-		entrieValues = new String[]{"",
+		entryValues = new String[]{"",
 				"en",
 				"af",
 				"ar",
@@ -340,16 +335,16 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 				getString(R.string.lang_zh_cn) + incompleteSuffix,
 				getString(R.string.lang_zh_tw)};
 		String[] valuesPl = ConfigureMapMenu.getSortedMapNamesIds(this, entries, entries);
-		String[] idsPl = ConfigureMapMenu.getSortedMapNamesIds(this, entrieValues, entries);
+		String[] idsPl = ConfigureMapMenu.getSortedMapNamesIds(this, entryValues, entries);
 		registerListPreference(settings.PREFERRED_LOCALE, screen, valuesPl, idsPl);
 
 		// Add " (Display language)" to menu title in Latin letters for all non-en languages
 		if (!getResources().getString(R.string.preferred_locale).equals(getResources().getString(R.string.preferred_locale_no_translate))) {
-			((ListPreference) screen.findPreference(settings.PREFERRED_LOCALE.getId())).setTitle(getString(R.string.preferred_locale) + " (" + getString(R.string.preferred_locale_no_translate) + ")");
+			screen.findPreference(settings.PREFERRED_LOCALE.getId()).setTitle(getString(R.string.preferred_locale) + " (" + getString(R.string.preferred_locale_no_translate) + ")");
 		}
 	}
 
-	protected void enableProxy(boolean enable) {
+	private void enableProxy(boolean enable) {
 		settings.ENABLE_PROXY.set(enable);
 		if (enable) {
 			NetworkUtils.setProxy(settings.PROXY_HOST.get(), settings.PROXY_PORT.get());
@@ -402,7 +397,7 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 		});
 	}
 
-	public void showAppDirDialog() {
+	private void showAppDirDialog() {
 		if (Build.VERSION.SDK_INT >= 19) {
 			showAppDirDialogV19();
 			return;
@@ -431,7 +426,7 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 
 	private void showAppDirDialogV19() {
 		AlertDialog.Builder bld = new AlertDialog.Builder(this);
-		chooseAppDirFragment = new DashChooseAppDirFragment.ChooseAppDirFragment(this, (Dialog) null) {
+		ChooseAppDirFragment chooseAppDirFragment = new ChooseAppDirFragment(this, (Dialog) null) {
 			@Override
 			protected void successCallback() {
 				updateApplicationDirTextAndSummary();
@@ -587,7 +582,7 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 		updateApplicationDirTextAndSummary();
 	}
 
-	public void reloadIndexes() {
+	private void reloadIndexes() {
 		setProgressVisibility(true);
 		final CharSequence oldTitle = getToolbar().getTitle();
 		getToolbar().setTitle(getString(R.string.loading_data));
@@ -642,7 +637,7 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 
 	@Override
 	public void onRequestPermissionsResult(int requestCode,
-										   String permissions[], int[] grantResults) {
+										   @NonNull String permissions[], @NonNull int[] grantResults) {
 		permissionRequested = requestCode == DownloadActivity.PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE;
 		if (permissionRequested
 				&& grantResults.length > 0

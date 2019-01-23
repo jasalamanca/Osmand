@@ -10,7 +10,7 @@ public final class DashFragmentData implements Comparable<DashFragmentData> {
 	public final String tag;
 	public final Class<? extends DashBaseFragment> fragmentClass;
 	public final ShouldShowFunction shouldShowFunction;
-	public final int position;
+	private final int position;
 	public final String rowNumberTag;
 
 	public DashFragmentData(String tag, Class<? extends DashBaseFragment> fragmentClass,
@@ -42,5 +42,4 @@ public final class DashFragmentData implements Comparable<DashFragmentData> {
 			return -1;
 		}
 	}
-
 }
