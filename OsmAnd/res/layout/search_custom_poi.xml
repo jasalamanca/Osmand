@@ -94,7 +94,7 @@
             android:background="?attr/selectableItemBackground"
             android:orientation="horizontal">
 
-            <android.support.v7.widget.AppCompatTextView
+            <TextView
                 android:id="@+id/barTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

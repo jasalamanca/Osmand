@@ -7,7 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -51,7 +51,7 @@ import static android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD;
 
 public class QuickSearchCoordinatesFragment extends DialogFragment implements OsmAndCompassListener, OsmAndLocationListener {
 
-	public static final String TAG = "QuickSearchCoordinatesFragment";
+	private static final String TAG = "QuickSearchCoordinatesFragment";
 	private static final String QUICK_SEARCH_COORDS_LAT_KEY = "quick_search_coords_lat_key";
 	private static final String QUICK_SEARCH_COORDS_LON_KEY = "quick_search_coords_lon_key";
 	private static final String QUICK_SEARCH_COORDS_NORTH_KEY = "quick_search_coords_north_key";
@@ -107,12 +107,12 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 
 	@Override
 	@SuppressLint("PrivateResource")
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
 		final OsmandApplication app = getMyApplication();
 		view = inflater.inflate(R.layout.search_advanced_coords, container, false);
 
-		Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+		Toolbar toolbar = view.findViewById(R.id.toolbar);
 		toolbar.setNavigationIcon(app.getIconsCache().getIcon(R.drawable.ic_arrow_back));
 		toolbar.setNavigationContentDescription(R.string.access_shared_string_navigate_up);
 		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -126,14 +126,14 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 		myLocation = app.getLocationProvider().getLastKnownLocation();
 		currentFormat = app.getSettings().COORDINATES_FORMAT.get();
 
-		latEdit = ((EditText) view.findViewById(R.id.latitudeEditText));
-		lonEdit = ((EditText) view.findViewById(R.id.longitudeEditText));
-		northingEdit = ((EditText) view.findViewById(R.id.northingEditText));
-		eastingEdit = ((EditText) view.findViewById(R.id.eastingEditText));
-		zoneEdit = ((EditText) view.findViewById(R.id.zoneEditText));
-		olcEdit = ((EditText) view.findViewById(R.id.olcEditText));
-		olcInfo = ((TextView) view.findViewById(R.id.olcInfoTextView));
-		formatEdit = ((EditText) view.findViewById(R.id.formatEditText));
+		latEdit = view.findViewById(R.id.latitudeEditText);
+		lonEdit = view.findViewById(R.id.longitudeEditText);
+		northingEdit = view.findViewById(R.id.northingEditText);
+		eastingEdit = view.findViewById(R.id.eastingEditText);
+		zoneEdit = view.findViewById(R.id.zoneEditText);
+		olcEdit = view.findViewById(R.id.olcEditText);
+		olcInfo = view.findViewById(R.id.olcInfoTextView);
+		formatEdit = view.findViewById(R.id.formatEditText);
 
 		String defaultLat = "";
 		String defaultZone = "";
@@ -252,7 +252,7 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 		((ImageView) view.findViewById(R.id.eastingImage))
 				.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_coordinates_longitude));
 
-		ImageButton latitudeClearButton = (ImageButton) view.findViewById(R.id.latitudeClearButton);
+		ImageButton latitudeClearButton = view.findViewById(R.id.latitudeClearButton);
 		latitudeClearButton.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_remove_dark));
 		latitudeClearButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -260,7 +260,7 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 				latEdit.setText("");
 			}
 		});
-		ImageButton longitudeClearButton = (ImageButton) view.findViewById(R.id.longitudeClearButton);
+		ImageButton longitudeClearButton = view.findViewById(R.id.longitudeClearButton);
 		longitudeClearButton.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_remove_dark));
 		longitudeClearButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -268,7 +268,7 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 				lonEdit.setText("");
 			}
 		});
-		ImageButton northingClearButton = (ImageButton) view.findViewById(R.id.northingClearButton);
+		ImageButton northingClearButton = view.findViewById(R.id.northingClearButton);
 		northingClearButton.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_remove_dark));
 		northingClearButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -276,7 +276,7 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 				northingEdit.setText("");
 			}
 		});
-		ImageButton eastingClearButton = (ImageButton) view.findViewById(R.id.eastingClearButton);
+		ImageButton eastingClearButton = view.findViewById(R.id.eastingClearButton);
 		eastingClearButton.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_remove_dark));
 		eastingClearButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -284,7 +284,7 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 				eastingEdit.setText("");
 			}
 		});
-		ImageButton zoneClearButton = (ImageButton) view.findViewById(R.id.zoneClearButton);
+		ImageButton zoneClearButton = view.findViewById(R.id.zoneClearButton);
 		zoneClearButton.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_remove_dark));
 		zoneClearButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -292,7 +292,7 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 				olcEdit.setText("");
 			}
 		});
-		ImageButton olcClearButton = (ImageButton) view.findViewById(R.id.olcClearButton);
+		ImageButton olcClearButton = view.findViewById(R.id.olcClearButton);
 		olcClearButton.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_remove_dark));
 		olcClearButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -300,7 +300,7 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 				olcEdit.setText("");
 			}
 		});
-		ImageButton formatSelectButton = (ImageButton) view.findViewById(R.id.formatSelectButton);
+		ImageButton formatSelectButton = view.findViewById(R.id.formatSelectButton);
 		formatSelectButton.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_arrow_drop_down));
 		formatSelectButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -341,13 +341,13 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 	public void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
 		if (view != null) {
-			final TextView latEdit = ((TextView) view.findViewById(R.id.latitudeEditText));
-			final TextView lonEdit = ((TextView) view.findViewById(R.id.longitudeEditText));
-			final TextView northEdit = ((TextView) view.findViewById(R.id.northingEditText));
-			final TextView eastEdit = ((TextView) view.findViewById(R.id.eastingEditText));
-			final TextView zoneEdit = ((TextView) view.findViewById(R.id.zoneEditText));
-			final TextView olcEdit = ((TextView) view.findViewById(R.id.olcEditText));
-			final TextView olcInfo = ((TextView) view.findViewById(R.id.olcInfoTextView));
+			final TextView latEdit = view.findViewById(R.id.latitudeEditText);
+			final TextView lonEdit = view.findViewById(R.id.longitudeEditText);
+			final TextView northEdit = view.findViewById(R.id.northingEditText);
+			final TextView eastEdit = view.findViewById(R.id.eastingEditText);
+			final TextView zoneEdit = view.findViewById(R.id.zoneEditText);
+			final TextView olcEdit = view.findViewById(R.id.olcEditText);
+			final TextView olcInfo = view.findViewById(R.id.olcInfoTextView);
 			outState.putString(QUICK_SEARCH_COORDS_LAT_KEY, latEdit.getText().toString());
 			outState.putString(QUICK_SEARCH_COORDS_LON_KEY, lonEdit.getText().toString());
 			outState.putString(QUICK_SEARCH_COORDS_NORTH_KEY, northEdit.getText().toString());
@@ -463,7 +463,7 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 			updateCompassVisibility(coordsView, latLon, heading);
 			dialogFragment.getAccessibilityAssistant().unlockEvents();
 			if(heading != null) {
-				dialogFragment.getNavigationInfo().updateTargetDirection(currentLatLon, heading.floatValue());
+				dialogFragment.getNavigationInfo().updateTargetDirection(currentLatLon, heading);
 			}
 		}
 	}
@@ -520,19 +520,19 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 		}
 	}
 
-	private boolean applyFormat(int format, boolean forceApply) {
+	private void applyFormat(int format, boolean forceApply) {
 		if (currentFormat != format || forceApply) {
 			int prevFormat = currentFormat;
 			currentFormat = format;
 			formatEdit.setText(PointDescription.formatToHumanString(getMyApplication(), currentFormat));
-			final EditText latEdit = ((EditText) view.findViewById(R.id.latitudeEditText));
-			final EditText lonEdit = ((EditText) view.findViewById(R.id.longitudeEditText));
+			final EditText latEdit = view.findViewById(R.id.latitudeEditText);
+			final EditText lonEdit = view.findViewById(R.id.longitudeEditText);
             setInputTypeDependingOnFormat(new EditText[]{latEdit, lonEdit});
             updateControlsVisibility();
 			if (currentFormat == PointDescription.UTM_FORMAT) {
-				final EditText northingEdit = ((EditText) view.findViewById(R.id.northingEditText));
-				final EditText eastingEdit = ((EditText) view.findViewById(R.id.eastingEditText));
-				final EditText zoneEdit = ((EditText) view.findViewById(R.id.zoneEditText));
+				final EditText northingEdit = view.findViewById(R.id.northingEditText);
+				final EditText eastingEdit = view.findViewById(R.id.eastingEditText);
+				final EditText zoneEdit = view.findViewById(R.id.zoneEditText);
 				if (currentLatLon != null) {
 					UTMPoint pnt = new UTMPoint(new LatLonPoint(currentLatLon.getLatitude(), currentLatLon.getLongitude()));
 					zoneEdit.setText(pnt.zone_number + "" + pnt.zone_letter);
@@ -571,9 +571,7 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 					lonEdit.setText("");
 				}
 			}
-			return currentLatLon != null;
 		} else {
-			return false;
 		}
 	}
 
@@ -613,8 +611,8 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 			coordsView.setVisibility(View.GONE);
 			errorView.setVisibility(View.VISIBLE);
 		} else {
-			final TextView titleView = (TextView) coordsView.findViewById(R.id.title);
-			final TextView subtitleView = (TextView) coordsView.findViewById(R.id.subtitle);
+			final TextView titleView = coordsView.findViewById(R.id.title);
+			final TextView subtitleView = coordsView.findViewById(R.id.subtitle);
 			titleView.setText(PointDescription.getLocationNamePlain(app, latLon.getLatitude(), latLon.getLongitude()));
 			new AsyncTask<LatLon, Void, String>() {
 				@Override
@@ -652,8 +650,8 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 	}
 
 	private void updateDistanceDirection(View view, LatLon myLatLon, LatLon location, Float heading) {
-		TextView distanceText = (TextView) view.findViewById(R.id.distance);
-		ImageView direction = (ImageView) view.findViewById(R.id.direction);
+		TextView distanceText = view.findViewById(R.id.distance);
+		ImageView direction = view.findViewById(R.id.direction);
 
 		DashLocationFragment.updateLocationView(useMapCenter, myLatLon,
 				heading, direction, distanceText,

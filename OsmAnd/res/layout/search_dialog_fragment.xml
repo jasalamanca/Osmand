@@ -125,7 +125,8 @@
                     android:background="?attr/selectableItemBackground"
                     android:clickable="true"
                     android:minHeight="48dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:focusable="true">
 
                     <ImageView
                         android:id="@+id/buttonToolbarImage"
@@ -193,12 +194,14 @@
         android:contentDescription="@string/save_filter"
         android:layout_width="@dimen/fab_size_with_shadow"
         android:layout_height="@dimen/fab_size_with_shadow"
-        android:layout_gravity="right|bottom"
+        android:layout_gravity="end|bottom"
         android:layout_marginRight="@dimen/fab_margin_right"
+        android:layout_marginEnd="@dimen/fab_margin_right"
         android:layout_marginBottom="@dimen/fab_margin_right"
         android:background="@drawable/fab_background_style"
         android:scaleType="center"
         android:clickable="true"
-        android:src="@drawable/ic_action_save"/>
+        android:src="@drawable/ic_action_save"
+        android:focusable="true" />
 
 </FrameLayout>

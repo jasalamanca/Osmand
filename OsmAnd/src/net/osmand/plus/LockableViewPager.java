@@ -16,10 +16,6 @@ public class LockableViewPager extends ViewPager {
 		super(context, attrs);
 	}
 
-	public boolean getSwipeLocked() {
-		return swipeLocked;
-	}
-
 	public void setSwipeLocked(boolean swipeLocked) {
 		this.swipeLocked = swipeLocked;
 	}

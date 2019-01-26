@@ -1,6 +1,7 @@
 package net.osmand.plus.search;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -18,7 +19,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.Spannable;
@@ -65,7 +65,6 @@ import net.osmand.plus.OsmAndFormatter;
 import net.osmand.plus.OsmAndLocationProvider.OsmAndCompassListener;
 import net.osmand.plus.OsmAndLocationProvider.OsmAndLocationListener;
 import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
@@ -126,13 +125,10 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 
 	private Toolbar toolbar;
 	private LockableViewPager viewPager;
-	private SearchFragmentPagerAdapter pagerAdapter;
-	private TabLayout tabLayout;
 	private View tabToolbarView;
 	private View tabsView;
 	private View searchView;
 	private View buttonToolbarView;
-	private ImageView buttonToolbarImage;
 	private ImageButton buttonToolbarFilter;
 	private TextView buttonToolbarText;
 	private QuickSearchMainListFragment mainSearchFragment;
@@ -212,7 +208,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 
 	@Override
 	@SuppressLint("PrivateResource, ValidFragment")
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
 		final MapActivity mapActivity = getMapActivity();
 		final View view = inflater.inflate(R.layout.search_dialog_fragment, container, false);
@@ -280,9 +276,9 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		searchView = view.findViewById(R.id.search_view);
 
 		buttonToolbarView = view.findViewById(R.id.button_toolbar_layout);
-		buttonToolbarImage = (ImageView) view.findViewById(R.id.buttonToolbarImage);
+		ImageView buttonToolbarImage = view.findViewById(R.id.buttonToolbarImage);
 		buttonToolbarImage.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_action_marker_dark));
-		buttonToolbarFilter = (ImageButton) view.findViewById(R.id.filterButton);
+		buttonToolbarFilter = view.findViewById(R.id.filterButton);
 		buttonToolbarFilter.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_action_filter));
 		buttonToolbarFilter.setOnClickListener(new OnClickListener() {
 			@Override
@@ -316,7 +312,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 			}
 		});
 
-		buttonToolbarText = (TextView) view.findViewById(R.id.buttonToolbarTitle);
+		buttonToolbarText = view.findViewById(R.id.buttonToolbarTitle);
 		view.findViewById(R.id.buttonToolbar).setOnClickListener(
 				new OnClickListener() {
 					@Override
@@ -419,7 +415,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 
 		);
 
-		toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+		toolbar = view.findViewById(R.id.toolbar);
 		if (!app.getSettings().isLightContent()) {
 			toolbar.setBackgroundColor(ContextCompat.getColor(mapActivity, R.color.actionbar_dark_color));
 		}
@@ -436,7 +432,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 				}
 		);
 
-		toolbarEdit = (Toolbar) view.findViewById(R.id.toolbar_edit);
+		toolbarEdit = view.findViewById(R.id.toolbar_edit);
 		toolbarEdit.setNavigationIcon(app.getIconsCache().getIcon(R.drawable.ic_action_remove_dark));
 		toolbarEdit.setNavigationContentDescription(R.string.shared_string_cancel);
 		toolbarEdit.setNavigationOnClickListener(
@@ -448,12 +444,12 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 				}
 		);
 
-		titleEdit = (TextView) view.findViewById(R.id.titleEdit);
+		titleEdit = view.findViewById(R.id.titleEdit);
 		view.findViewById(R.id.shareButton).setOnClickListener(
 				new OnClickListener() {
 					@Override
 					public void onClick(View v) {
-						List<HistoryEntry> historyEntries = new ArrayList<HistoryEntry>();
+						List<HistoryEntry> historyEntries = new ArrayList<>();
 						List<QuickSearchListItem> selectedItems = historySearchFragment.getListAdapter().getSelectedItems();
 						for (QuickSearchListItem searchListItem : selectedItems) {
 							HistoryEntry historyEntry = (HistoryEntry) searchListItem.getSearchResult().object;
@@ -477,9 +473,9 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 				}
 		);
 
-		viewPager = (LockableViewPager) view.findViewById(R.id.pager);
+		viewPager = view.findViewById(R.id.pager);
 		viewPager.setOffscreenPageLimit(2);
-		pagerAdapter = new SearchFragmentPagerAdapter(getChildFragmentManager(), getResources());
+		SearchFragmentPagerAdapter pagerAdapter = new SearchFragmentPagerAdapter(getChildFragmentManager(), getResources());
 		viewPager.setAdapter(pagerAdapter);
 		switch (showSearchTab) {
 			case HISTORY:
@@ -493,7 +489,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 				break;
 		}
 
-		tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
+		TabLayout tabLayout = view.findViewById(R.id.tab_layout);
 		tabLayout.setupWithViewPager(viewPager);
 		viewPager.addOnPageChangeListener(
 				new ViewPager.OnPageChangeListener() {
@@ -520,7 +516,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 				}
 		);
 
-		searchEditText = (EditText) view.findViewById(R.id.searchEditText);
+		searchEditText = view.findViewById(R.id.searchEditText);
 		searchEditText.addTextChangedListener(
 				new TextWatcher() {
 					@Override
@@ -569,8 +565,8 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 				}
 		);
 
-		progressBar = (ProgressBar) view.findViewById(R.id.searchProgressBar);
-		clearButton = (ImageButton) view.findViewById(R.id.clearButton);
+		progressBar = view.findViewById(R.id.searchProgressBar);
+		clearButton = view.findViewById(R.id.clearButton);
 		clearButton.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_action_remove_dark));
 		clearButton.setOnClickListener(
 				new OnClickListener() {
@@ -612,7 +608,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 	}
 
 	@Override
-	public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 
 		updateToolbarButton();
@@ -642,7 +638,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		return dialog;
 	}
 
-	public void saveCustomFilter() {
+	private void saveCustomFilter() {
 		final OsmandApplication app = getMyApplication();
 		final PoiUIFilter filter = app.getPoiFilters().getCustomPOIFilter();
 		AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
@@ -697,11 +693,11 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		}
 	}
 
-	public void showToolbar() {
+	private void showToolbar() {
 		showToolbar(getText());
 	}
 
-	public void showToolbar(String title) {
+	private void showToolbar(String title) {
 		toolbarVisible = true;
 		toolbarTitle = title;
 		toolbarController.setTitle(toolbarTitle);
@@ -717,11 +713,11 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		return searchType;
 	}
 
-	public String getText() {
+	private String getText() {
 		return searchEditText.getText().toString();
 	}
 
-	public boolean isTextEmpty() {
+	private boolean isTextEmpty() {
 		return Algorithms.isEmpty(getText());
 	}
 
@@ -787,7 +783,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		dismiss();
 	}
 
-	public void addMainSearchFragment() {
+	private void addMainSearchFragment() {
 		mainSearchFragment = (QuickSearchMainListFragment) Fragment.instantiate(this.getContext(), QuickSearchMainListFragment.class.getName());
 		FragmentManager childFragMan = getChildFragmentManager();
 		FragmentTransaction childFragTrans = childFragMan.beginTransaction();
@@ -948,9 +944,11 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		return false;
 	}
 
-	public Toolbar getToolbar() {
-		return toolbar;
-	}
+// --Commented out by Inspection START (26/01/19 18:29):
+//	public Toolbar getToolbar() {
+//		return toolbar;
+//	}
+// --Commented out by Inspection STOP (26/01/19 18:29)
 
 	public boolean isUseMapCenter() {
 		return useMapCenter;
@@ -1029,15 +1027,15 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		return searchView.getVisibility() == View.VISIBLE;
 	}
 
-	public void setResultCollection(SearchResultCollection resultCollection) {
+	private void setResultCollection(SearchResultCollection resultCollection) {
 		searchHelper.setResultCollection(resultCollection);
 	}
 
-	public SearchResultCollection getResultCollection() {
+	private SearchResultCollection getResultCollection() {
 		return searchHelper.getResultCollection();
 	}
 
-	public boolean isResultEmpty() {
+	private boolean isResultEmpty() {
 		SearchResultCollection res = getResultCollection();
 		return res == null || res.getCurrentSearchResults().size() == 0;
 	}
@@ -1132,7 +1130,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		}
 	}
 
-	public void reloadCities() {
+	private void reloadCities() {
 		if (app.isApplicationInitializing()) {
 			showProgressBar();
 			app.getAppInitializer().addListener(new AppInitializeListener() {
@@ -1661,7 +1659,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		if (addressSearch) {
 			startAddressSearch();
 			if (sr.objectType == ObjectType.CITY) {
-				if (sr.relatedObject != null && sr.relatedObject instanceof BinaryMapIndexReader) {
+				if (sr.relatedObject instanceof BinaryMapIndexReader) {
 					File f = ((BinaryMapIndexReader) sr.relatedObject).getFile();
 					if (f != null) {
 						RegionAddressRepository region = app.getResourceManager().getRegionRepository(f.getName());
@@ -1686,7 +1684,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		AndroidUtils.softKeyboardDelayed(searchEditText);
 	}
 
-	public void replaceQueryWithText(String txt) {
+	private void replaceQueryWithText(String txt) {
 		searchQuery = txt;
 		searchEditText.setText(txt);
 		searchEditText.setSelection(txt.length());
@@ -1923,7 +1921,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		}
 	}
 
-	public void enableSelectionMode(boolean selectionMode, int position) {
+	private void enableSelectionMode(boolean selectionMode, int position) {
 		historySearchFragment.setSelectionMode(selectionMode, position);
 		tabToolbarView.setVisibility(selectionMode ? View.GONE : View.VISIBLE);
 		buttonToolbarView.setVisibility(View.GONE);
@@ -1932,7 +1930,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		viewPager.setSwipeLocked(selectionMode);
 	}
 
-	public void updateSelectionMode(List<QuickSearchListItem> selectedItems) {
+	private void updateSelectionMode(List<QuickSearchListItem> selectedItems) {
 		if (selectedItems.size() > 0) {
 			String text = selectedItems.size() + " " + app.getString(R.string.shared_string_selected_lowercase);
 			titleEdit.setText(text);
@@ -2023,14 +2021,14 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		fab.setVisibility(fabVisible ? View.VISIBLE : View.GONE);
 	}
 
-	public interface SearchResultListener {
+	interface SearchResultListener {
 		void searchStarted(SearchPhrase phrase);
 		void publish(SearchResultCollection res, boolean append);
 		// return true if search done, false if next search will be ran immediately
 		boolean searchFinished(SearchPhrase phrase);
 	}
 
-	public class SearchFragmentPagerAdapter extends FragmentPagerAdapter {
+	class SearchFragmentPagerAdapter extends FragmentPagerAdapter {
 		private final String[] fragments = new String[] {
 				QuickSearchHistoryListFragment.class.getName(),
 				QuickSearchCategoriesListFragment.class.getName(),
@@ -2043,7 +2041,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		};
 		private final String[] titles;
 
-		public SearchFragmentPagerAdapter(FragmentManager fm, Resources res) {
+		SearchFragmentPagerAdapter(FragmentManager fm, Resources res) {
 			super(fm);
 			titles = new String[titleIds.length];
 			for (int i = 0; i < titleIds.length; i++) {
@@ -2068,7 +2066,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 	}
 
 	public static class QuickSearchHistoryListFragment extends QuickSearchListFragment {
-		public static final int TITLE = R.string.shared_string_history;
+		static final int TITLE = R.string.shared_string_history;
 		private boolean selectionMode;
 
 		@Override
@@ -2076,11 +2074,13 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 			return SearchListFragmentType.HISTORY;
 		}
 
-		public boolean isSelectionMode() {
-			return selectionMode;
-		}
+// --Commented out by Inspection START (26/01/19 18:29):
+//		public boolean isSelectionMode() {
+//			return selectionMode;
+//		}
+// --Commented out by Inspection STOP (26/01/19 18:29)
 
-		public void setSelectionMode(boolean selectionMode, int position) {
+		void setSelectionMode(boolean selectionMode, int position) {
 			this.selectionMode = selectionMode;
 			getListAdapter().setSelectionMode(selectionMode, position);
 		}
@@ -2115,7 +2115,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		@Override
 		public void onListItemClick(ListView l, View view, int position, long id) {
 			if (selectionMode) {
-				CheckBox ch = (CheckBox) view.findViewById(R.id.toggle_item);
+				CheckBox ch = view.findViewById(R.id.toggle_item);
 				ch.setChecked(!ch.isChecked());
 				getListAdapter().toggleCheckbox(position - l.getHeaderViewsCount(), ch);
 			} else {
@@ -2125,7 +2125,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 	}
 
 	public static class QuickSearchCategoriesListFragment extends QuickSearchListFragment {
-		public static final int TITLE = R.string.search_categories;
+		static final int TITLE = R.string.search_categories;
 
 		@Override
 		public SearchListFragmentType getType() {
@@ -2134,7 +2134,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 	}
 
 	public static class QuickSearchAddressListFragment extends QuickSearchListFragment {
-		public static final int TITLE = R.string.address;
+		static final int TITLE = R.string.address;
 
 		@Override
 		public SearchListFragmentType getType() {
@@ -2150,9 +2150,9 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		}
 	}
 
-	public static class QuickSearchToolbarController extends TopToolbarController {
+	static class QuickSearchToolbarController extends TopToolbarController {
 
-		public QuickSearchToolbarController() {
+		QuickSearchToolbarController() {
 			super(TopToolbarControllerType.QUICK_SEARCH);
 		}
 	}
@@ -2161,7 +2161,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 
 		private List<QuickSearchListItem> selectedItems;
 
-		public void setSelectedItems(List<QuickSearchListItem> selectedItems) {
+		void setSelectedItems(List<QuickSearchListItem> selectedItems) {
 			this.selectedItems = selectedItems;
 		}
 

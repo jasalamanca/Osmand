@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    android:id="@+id/freeVersionBanner"
+<LinearLayout android:id="@+id/freeVersionBanner"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:osmand="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -101,7 +99,7 @@
                     android:orientation="horizontal"
                     android:visibility="visible">
 
-                    <android.support.v7.widget.AppCompatImageView
+                    <ImageView
                         android:layout_width="54dp"
                         android:layout_height="32dp"
                         android:scaleType="center"
@@ -112,6 +110,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/list_content_padding"
+                        android:layout_marginEnd="@dimen/list_content_padding"
                         android:orientation="vertical">
 
                         <TextView
@@ -137,7 +136,7 @@
                             android:indeterminate="true"
                             android:visibility="gone"/>
 
-                        <android.support.v7.widget.AppCompatButton
+                        <Button
                             android:id="@+id/fullVersionButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -160,6 +159,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginLeft="54dp"
+                    android:layout_marginStart="54dp"
                     android:layout_marginTop="@dimen/list_content_padding"
                     android:background="@color/dashboard_divider_dark"
                     android:visibility="visible"/>
@@ -172,7 +172,7 @@
                     android:layout_marginBottom="@dimen/list_content_padding"
                     android:orientation="horizontal">
 
-                    <android.support.v7.widget.AppCompatImageView
+                    <ImageView
                         android:layout_width="54dp"
                         android:layout_height="32dp"
                         android:scaleType="center"
@@ -183,6 +183,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/list_content_padding"
+                        android:layout_marginEnd="@dimen/list_content_padding"
                         android:orientation="vertical">
 
                         <TextView
@@ -208,7 +209,7 @@
                             android:indeterminate="true"
                             android:visibility="gone"/>
 
-                        <android.support.v7.widget.AppCompatButton
+                        <Button
                             android:id="@+id/osmLiveButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

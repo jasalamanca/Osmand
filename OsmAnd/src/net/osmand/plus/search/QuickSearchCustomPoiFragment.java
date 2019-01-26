@@ -1,15 +1,12 @@
 package net.osmand.plus.search;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.AppCompatImageView;
-import android.support.v7.widget.AppCompatTextView;
-import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +15,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import net.osmand.osm.PoiCategory;
@@ -42,10 +41,9 @@ import java.util.Set;
 
 public class QuickSearchCustomPoiFragment extends DialogFragment {
 
-	public static final String TAG = "QuickSearchCustomPoiFragment";
+	private static final String TAG = "QuickSearchCustomPoiFragment";
 	private static final String QUICK_SEARCH_CUSTOM_POI_FILTER_ID_KEY = "quick_search_custom_poi_filter_id_key";
 
-	private View view;
 	private ListView listView;
 	private CategoryListAdapter listAdapter;
 	private String filterId;
@@ -54,7 +52,6 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 	private View bottomBarShadow;
 	private View bottomBar;
 	private TextView barTitle;
-	private TextView barButton;
 	private boolean editMode;
 
 
@@ -74,8 +71,8 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-							 Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 		final OsmandApplication app = getMyApplication();
 		helper = app.getPoiFilters();
 		if (getArguments() != null) {
@@ -92,9 +89,9 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 		}
 		editMode = !filterId.equals(helper.getCustomPOIFilter().getFilterId());
 
-		view = inflater.inflate(R.layout.search_custom_poi, container, false);
+		View view = inflater.inflate(R.layout.search_custom_poi, container, false);
 
-		Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+		Toolbar toolbar = view.findViewById(R.id.toolbar);
 		toolbar.setNavigationIcon(app.getIconsCache().getIcon(R.drawable.ic_action_remove_dark));
 		toolbar.setNavigationContentDescription(R.string.shared_string_close);
 		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -104,17 +101,18 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 			}
 		});
 
-		TextView title = (TextView) view.findViewById(R.id.title);
+		TextView title = view.findViewById(R.id.title);
 		if (editMode) {
 			title.setText(filter.getName());
 		}
 
-		listView = (ListView) view.findViewById(android.R.id.list);
+		listView = view.findViewById(android.R.id.list);
 		listView.setBackgroundColor(getResources().getColor(
 				app.getSettings().isLightContent() ? R.color.ctx_menu_info_view_bg_light
 						: R.color.ctx_menu_info_view_bg_dark));
 
-		View header = getLayoutInflater(savedInstanceState).inflate(R.layout.list_shadow_header, null);
+//		View header = getLayoutInflater(savedInstanceState).inflate(R.layout.list_shadow_header, null);
+		View header = inflater.inflate(R.layout.list_shadow_header, null);
 		listView.addHeaderView(header, null, false);
 		View footer = inflater.inflate(R.layout.list_shadow_footer, listView, false);
 		listView.addFooterView(footer, null, false);
@@ -130,8 +128,7 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 
 		bottomBarShadow = view.findViewById(R.id.bottomBarShadow);
 		bottomBar = view.findViewById(R.id.bottomBar);
-		barTitle = (TextView) view.findViewById(R.id.barTitle);
-		barButton = (TextView) view.findViewById(R.id.barButton);
+		barTitle = view.findViewById(R.id.barTitle);
 		bottomBar.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -178,7 +175,6 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 	}
 
 	private int getIconId(PoiCategory category) {
-		OsmandApplication app = getMyApplication();
 		String id = null;
 		if (category != null) {
 			if (RenderingIcons.containsBigIcon(category.getIconKeyName())) {
@@ -203,7 +199,7 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 	}
 
 	private class CategoryListAdapter extends ArrayAdapter<PoiCategory> {
-		private OsmandApplication app;
+		private final OsmandApplication app;
 
 		CategoryListAdapter(OsmandApplication app, List<PoiCategory> items) {
 			super(app, R.layout.list_item_icon24_and_menu, items);
@@ -212,7 +208,7 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 
 		@NonNull
 		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
+		public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 			LayoutInflater inflater = (LayoutInflater) app.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			View row = convertView;
 			if (row == null) {
@@ -220,11 +216,11 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 			}
 			PoiCategory category = getItem(position);
 			if (category != null) {
-				AppCompatImageView iconView = (AppCompatImageView) row.findViewById(R.id.icon);
-				AppCompatImageView secondaryIconView = (AppCompatImageView) row.findViewById(R.id.secondary_icon);
-				AppCompatTextView titleView = (AppCompatTextView) row.findViewById(R.id.title);
-				AppCompatTextView descView = (AppCompatTextView) row.findViewById(R.id.description);
-				SwitchCompat check = (SwitchCompat) row.findViewById(R.id.toggle_item);
+				ImageView iconView = row.findViewById(R.id.icon);
+				ImageView secondaryIconView = row.findViewById(R.id.secondary_icon);
+				TextView titleView = row.findViewById(R.id.title);
+				TextView descView = row.findViewById(R.id.description);
+				Switch check = row.findViewById(R.id.toggle_item);
 
 				boolean categorySelected = filter.isTypeAccepted(category);
 				IconsCache ic = app.getIconsCache();
@@ -268,7 +264,7 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 			return (row);
 		}
 
-		private void addRowListener(final PoiCategory category, final SwitchCompat check) {
+		private void addRowListener(final PoiCategory category, final Switch check) {
 			check.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 				@Override
 				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -303,7 +299,7 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 		View v = listView.getChildAt(0);
 		final int top = (v == null) ? 0 : v.getTop();
 		final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-		final LinkedHashMap<String, String> subCategories = new LinkedHashMap<String, String>();
+		final LinkedHashMap<String, String> subCategories = new LinkedHashMap<>();
 		Set<String> acceptedCategories = filter.getAcceptedSubtypes(poiCategory);
 		if (acceptedCategories != null) {
 			for(String s : acceptedCategories) {
@@ -344,9 +340,9 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 
 		View titleView = LayoutInflater.from(getActivity())
 				.inflate(R.layout.subcategories_dialog_title, null);
-		TextView titleTextView = (TextView) titleView.findViewById(R.id.title);
+		TextView titleTextView = titleView.findViewById(R.id.title);
 		titleTextView.setText(poiCategory.getTranslation());
-		SwitchCompat check = (SwitchCompat) titleView.findViewById(R.id.check);
+		Switch check = titleView.findViewById(R.id.check);
 		check.setChecked(allSelected);
 		builder.setCustomTitle(titleView);
 
@@ -362,7 +358,7 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				LinkedHashSet<String> accepted = new LinkedHashSet<String>();
+				LinkedHashSet<String> accepted = new LinkedHashSet<>();
 				for (int i = 0; i < selected.length; i++) {
 					if(selected[i]){
 						accepted.add(array[i]);

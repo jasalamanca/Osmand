@@ -1,13 +1,11 @@
 package net.osmand.plus.search;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AlertDialog;
-import android.widget.PopupMenu;
-import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -24,6 +22,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupMenu;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,7 +58,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class QuickSearchPoiFilterFragment extends DialogFragment {
-	public static final String TAG = "QuickSearchPoiFilterFragment";
+	private static final String TAG = "QuickSearchPoiFilterFragment";
 
 	private static final String QUICK_SEARCH_POI_FILTER_ID_KEY = "quick_search_poi_filter_id_key";
 	private static final String QUICK_SEARCH_POI_FILTER_BY_NAME_KEY = "quick_search_poi_filter_by_name_key";
@@ -66,7 +66,6 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 	private static final String QUICK_SEARCH_POI_FILTER_COLLAPSED_CATEGORIES = "quick_search_poi_filter_collapsed_categories";
 	private static final String QUICK_SEARCH_POI_FILTER_SHOW_ALL_CATEGORIES = "quick_search_poi_filter_show_all_categories";
 
-	private View view;
 	private ListView listView;
 	private PoiFilterListAdapter adapter;
 	private PoiUIFilter filter;
@@ -76,11 +75,11 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 	private EditText editText;
 	private TextView applyFilterButton;
 	private View applyFilterButtonShadow;
-	private Set<String> selectedPoiAdditionals = new TreeSet<>();
+	private final Set<String> selectedPoiAdditionals = new TreeSet<>();
 	private Set<String> selectedPoiAdditionalsOrig = new TreeSet<>();
-	private ArrayList<String> collapsedCategories = new ArrayList<>();
-	private ArrayList<String> showAllCategories = new ArrayList<>();
-	private Map<PoiType, String> poiAdditionalsTranslations = new HashMap<>();
+	private final ArrayList<String> collapsedCategories = new ArrayList<>();
+	private final ArrayList<String> showAllCategories = new ArrayList<>();
+	private final Map<PoiType, String> poiAdditionalsTranslations = new HashMap<>();
 
 	public QuickSearchPoiFilterFragment() {
 	}
@@ -98,7 +97,7 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
 		final OsmandApplication app = getMyApplication();
 
@@ -137,12 +136,12 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 		}
 		selectedPoiAdditionalsOrig = new TreeSet<>(selectedPoiAdditionals);
 
-		view = inflater.inflate(R.layout.search_poi_filter, container, false);
+		View view = inflater.inflate(R.layout.search_poi_filter, container, false);
 
-		TextView description = (TextView) view.findViewById(R.id.description);
+		TextView description = view.findViewById(R.id.description);
 		description.setText(filter.getName());
 
-		Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+		Toolbar toolbar = view.findViewById(R.id.toolbar);
 		toolbar.setNavigationIcon(app.getIconsCache().getIcon(R.drawable.ic_action_remove_dark));
 		toolbar.setNavigationContentDescription(R.string.shared_string_close);
 		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -152,7 +151,7 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 			}
 		});
 
-		ImageButton moreButton = (ImageButton) view.findViewById(R.id.moreButton);
+		ImageButton moreButton = view.findViewById(R.id.moreButton);
 		moreButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -204,13 +203,13 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 			}
 		});
 
-		listView = (ListView) view.findViewById(android.R.id.list);
+		listView = view.findViewById(android.R.id.list);
 		listView.setBackgroundColor(getResources().getColor(
 				app.getSettings().isLightContent() ? R.color.ctx_menu_info_view_bg_light
 						: R.color.ctx_menu_info_view_bg_dark));
 
 		View editTextView = inflater.inflate(R.layout.poi_filter_list_item, listView, false);
-		editText = (EditText) editTextView.findViewById(R.id.editText);
+		editText = editTextView.findViewById(R.id.editText);
 		editTextView.findViewById(R.id.divider).setVisibility(View.GONE);
 		editText.setText(nameFilterText);
 		editText.addTextChangedListener(new TextWatcher() {
@@ -232,7 +231,7 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 		});
 
 		editText.setVisibility(View.VISIBLE);
-		final ImageView textEditIcon = (ImageView) editTextView.findViewById(R.id.icon);
+		final ImageView textEditIcon = editTextView.findViewById(R.id.icon);
 		textEditIcon.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_action_search_dark));
 		textEditIcon.setVisibility(View.VISIBLE);
 		editTextView.findViewById(R.id.titleBold).setVisibility(View.GONE);
@@ -264,7 +263,7 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 							}
 							break;
 						case CHECKBOX_ITEM:
-							CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkboxItem);
+							CheckBox checkBox = view.findViewById(R.id.checkboxItem);
 							adapter.toggleCheckbox(item, checkBox, !checkBox.isChecked());
 							break;
 						case BUTTON_ITEM:
@@ -279,7 +278,7 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 		});
 
 		applyFilterButtonShadow = view.findViewById(R.id.bottomButtonShadow);
-		applyFilterButton = (TextView) view.findViewById(R.id.bottomButton);
+		applyFilterButton = view.findViewById(R.id.bottomButton);
 		applyFilterButton.setText(app.getString(R.string.apply_filters));
 		applyFilterButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -707,14 +706,14 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 	}
 
 	private class PoiFilterListAdapter extends ArrayAdapter<PoiFilterListItem> {
-		private OsmandApplication app;
+		private final OsmandApplication app;
 
 		PoiFilterListAdapter(OsmandApplication app, List<PoiFilterListItem> items) {
 			super(app, R.layout.poi_filter_list_item, items);
 			this.app = app;
 		}
 
-		public void setListItems(List<PoiFilterListItem> items) {
+		void setListItems(List<PoiFilterListItem> items) {
 			setNotifyOnChange(false);
 			clear();
 			for (PoiFilterListItem item : items) {
@@ -735,7 +734,7 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 			return 2;
 		}
 
-		public void toggleSwitch(PoiFilterListItem item, boolean isChecked) {
+		void toggleSwitch(PoiFilterListItem item, boolean isChecked) {
 			item.checked = isChecked;
 			if (item.checked) {
 				selectedPoiAdditionals.add(item.keyName);
@@ -745,7 +744,7 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 			updateApplyButton();
 		}
 
-		public void toggleCheckbox(PoiFilterListItem item, CheckBox checkBox, boolean isChecked) {
+		void toggleCheckbox(PoiFilterListItem item, CheckBox checkBox, boolean isChecked) {
 			if (checkBox != null) {
 				checkBox.setChecked(isChecked);
 			}
@@ -760,7 +759,7 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 
 		@NonNull
 		@Override
-		public View getView(final int position, View convertView, ViewGroup parent) {
+		public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
 			final PoiFilterListItem item = getItem(position);
 			final PoiFilterListItem nextItem = position < getCount() - 1 ? getItem(position + 1) : null;
 
@@ -783,13 +782,13 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 				return view;
 			}
 
-			final ImageView icon = (ImageView) view.findViewById(R.id.icon);
-			final TextViewEx titleRegular = (TextViewEx) view.findViewById(R.id.titleRegular);
-			final TextViewEx titleBold = (TextViewEx) view.findViewById(R.id.titleBold);
-			final TextViewEx titleButton = (TextViewEx) view.findViewById(R.id.titleButton);
-			final SwitchCompat switchItem = (SwitchCompat) view.findViewById(R.id.switchItem);
-			final CheckBox checkBoxItem = (CheckBox) view.findViewById(R.id.checkboxItem);
-			final ImageView expandItem = (ImageView) view.findViewById(R.id.expandItem);
+			final ImageView icon = view.findViewById(R.id.icon);
+			final TextViewEx titleRegular = view.findViewById(R.id.titleRegular);
+			final TextViewEx titleBold = view.findViewById(R.id.titleBold);
+			final TextViewEx titleButton = view.findViewById(R.id.titleButton);
+			final Switch switchItem = view.findViewById(R.id.switchItem);
+			final CheckBox checkBoxItem = view.findViewById(R.id.checkboxItem);
+			final ImageView expandItem = view.findViewById(R.id.expandItem);
 			final View divider = view.findViewById(R.id.divider);
 
 			if (item != null) {
@@ -879,20 +878,20 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 		BUTTON_ITEM
 	}
 
-	public static class PoiFilterListItem {
-		private PoiFilterListItemType type;
-		private int iconId;
-		private String text;
-		private int groupIndex;
-		private boolean expandable;
-		private boolean expanded;
+	static class PoiFilterListItem {
+		private final PoiFilterListItemType type;
+		private final int iconId;
+		private final String text;
+		private final int groupIndex;
+		private final boolean expandable;
+		private final boolean expanded;
 		private boolean checked;
-		private String category;
-		private String keyName;
+		private final String category;
+		private final String keyName;
 
-		public PoiFilterListItem(PoiFilterListItemType type, int iconId, String text, int groupIndex,
-								 boolean expandable, boolean expanded, boolean checked, String category,
-								 String keyName) {
+		PoiFilterListItem(PoiFilterListItemType type, int iconId, String text, int groupIndex,
+						  boolean expandable, boolean expanded, boolean checked, String category,
+						  String keyName) {
 			this.type = type;
 			this.iconId = iconId;
 			this.text = text;
