@@ -14,7 +14,7 @@ public class AMapLayer implements Parcelable {
 	private String id;
 	private String name;
 	private float zOrder = 5.5f;
-	private Map<String, AMapPoint> points = new ConcurrentHashMap<>();
+	private final Map<String, AMapPoint> points = new ConcurrentHashMap<>();
 
 	public AMapLayer(String id, String name, float zOrder, List<AMapPoint> pointList) {
 		this.id = id;
@@ -46,20 +46,12 @@ public class AMapLayer implements Parcelable {
 		return id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
 	public float getZOrder() {
 		return zOrder;
 	}
 
 	public List<AMapPoint> getPoints() {
 		return new ArrayList<>(points.values());
-	}
-
-	public boolean hasPoint(String pointId) {
-		return points.containsKey(pointId);
 	}
 
 	public void putPoint(AMapPoint point) {

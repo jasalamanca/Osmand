@@ -20,7 +20,7 @@ public class SearchSettings {
 	private boolean emptyQueryAllowed;
 	private boolean sortByName;
 
-	public SearchSettings(SearchSettings s) {
+	private SearchSettings(SearchSettings s) {
 		if(s != null) {
 			this.radiusLevel = s.radiusLevel;
 			this.lang = s.lang;

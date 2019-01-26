@@ -44,8 +44,8 @@ import java.util.List;
  */
 public class DashTrackFragment extends DashBaseFragment {
 
-	public static final String TAG = "DASH_TRACK_FRAGMENT";
-	public static final int TITLE_ID = R.string.shared_string_my_tracks;
+	private static final String TAG = "DASH_TRACK_FRAGMENT";
+	private static final int TITLE_ID = R.string.shared_string_my_tracks;
 
 	private static final String ROW_NUMBER_TAG = TAG + "_row_number";
 
@@ -64,7 +64,7 @@ public class DashTrackFragment extends DashBaseFragment {
 	@Override
 	public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_common_fragment, container, false);
-		TextView header = (TextView) view.findViewById(R.id.fav_text);
+		TextView header = view.findViewById(R.id.fav_text);
 		header.setText(TITLE_ID);
 
 		(view.findViewById(R.id.show_all)).setOnClickListener(new View.OnClickListener() {
@@ -138,7 +138,7 @@ public class DashTrackFragment extends DashBaseFragment {
 					getMyApplication().getSettings(), ROW_NUMBER_TAG);
 		}
 
-		LinearLayout tracks = (LinearLayout) mainView.findViewById(R.id.items);
+		LinearLayout tracks = mainView.findViewById(R.id.items);
 		tracks.removeAllViews();
 
 		LayoutInflater inflater = getActivity().getLayoutInflater();
@@ -173,7 +173,7 @@ public class DashTrackFragment extends DashBaseFragment {
 					AvailableGPXFragment.openTrack(getActivity(), f);
 				}
 			});
-			ImageButton showOnMap = ((ImageButton) v.findViewById(R.id.show_on_map));
+			ImageButton showOnMap = v.findViewById(R.id.show_on_map);
 			showOnMap.setVisibility(View.VISIBLE);
 			showOnMap.setContentDescription(getString(R.string.shared_string_show_on_map));
 			updateShowOnMap(app, f, v, showOnMap);
@@ -181,7 +181,7 @@ public class DashTrackFragment extends DashBaseFragment {
 		}
 	}
 
-	public static void createCurrentTrackView(View v, final OsmandApplication app) {
+	private static void createCurrentTrackView(View v, final OsmandApplication app) {
 		((TextView) v.findViewById(R.id.name)).setText(R.string.shared_string_currently_recording_track);
 		v.findViewById(R.id.icon).setVisibility(View.GONE);
 		v.findViewById(R.id.time_icon).setVisibility(View.GONE);
@@ -192,13 +192,13 @@ public class DashTrackFragment extends DashBaseFragment {
 		v.findViewById(R.id.check_item).setVisibility(View.GONE);
 	}
 
-	public static void updateCurrentTrack(View v, final Activity ctx, final OsmandApplication app) {
+	private static void updateCurrentTrack(View v, final Activity ctx, final OsmandApplication app) {
 		final OsmandMonitoringPlugin plugin = OsmandPlugin.getEnabledPlugin(OsmandMonitoringPlugin.class);
 		if (v == null || ctx == null || app == null || plugin == null) {
 			return;
 		}
 		final boolean isRecording = app.getSettings().SAVE_GLOBAL_TRACK_TO_GPX.get();
-		ImageButton stop = ((ImageButton) v.findViewById(R.id.stop));
+		ImageButton stop = v.findViewById(R.id.stop);
 		if (isRecording) {
 			stop.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_action_rec_stop));
 			stop.setContentDescription(app.getString(R.string.gpx_monitoring_stop));
@@ -218,7 +218,7 @@ public class DashTrackFragment extends DashBaseFragment {
 			}
 		});
 		SavingTrackHelper sth = app.getSavingTrackHelper();
-		ImageButton save = ((ImageButton) v.findViewById(R.id.show_on_map));
+		ImageButton save = v.findViewById(R.id.show_on_map);
 		save.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -237,10 +237,10 @@ public class DashTrackFragment extends DashBaseFragment {
 		((TextView) v.findViewById(R.id.distance))
 				.setText(OsmAndFormatter.getFormattedDistance(sth.getDistance(), app));
 		v.findViewById(R.id.points_icon).setVisibility(View.VISIBLE);
-		ImageView distance = (ImageView) v.findViewById(R.id.distance_icon);
+		ImageView distance = v.findViewById(R.id.distance_icon);
 		distance.setVisibility(View.VISIBLE);
 		distance.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_small_distance));
-		ImageView pointsCount = (ImageView) v.findViewById(R.id.points_icon);
+		ImageView pointsCount = v.findViewById(R.id.points_icon);
 		pointsCount.setVisibility(View.VISIBLE);
 		pointsCount.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_small_point));
 	}

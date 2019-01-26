@@ -24,13 +24,7 @@ public class ActionBarProgressActivity extends OsmandActionBarActivity {
 		progressBar.setIndeterminate(true);
 		getSupportActionBar().setDisplayShowCustomEnabled(true);
 		getSupportActionBar().setCustomView(progressBar);
-//		setSupportProgressBarIndeterminateVisibility(false);
 	}
-
-//	@Override
-//	public void setSupportProgressBarIndeterminateVisibility(boolean visible) {
-//		getSupportActionBar().getCustomView().setVisibility(visible ? View.VISIBLE : View.GONE);
-//	}
 
 	public Toolbar getClearToolbar(boolean visible) {
 		final Toolbar tb = findViewById(R.id.bottomControls);

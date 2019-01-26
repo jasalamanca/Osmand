@@ -29,13 +29,13 @@ import net.osmand.router.TurnType;
 
 public class NextTurnInfoWidget extends TextInfoWidget {
 
-	protected boolean horisontalMini;
+	private final boolean horisontalMini;
 	
-	protected int deviatedPath = 0;
-	protected int nextTurnDistance = 0;
+	private int deviatedPath = 0;
+	private int nextTurnDistance = 0;
 	
-	private TurnDrawable turnDrawable;
-	private OsmandApplication app;
+	private final TurnDrawable turnDrawable;
+	private final OsmandApplication app;
 	
 
 	public NextTurnInfoWidget(Activity activity, OsmandApplication app, boolean horisontalMini) {
@@ -52,7 +52,7 @@ public class NextTurnInfoWidget extends TextInfoWidget {
 		}
 	}
 	
-	public TurnType getTurnType() {
+	private TurnType getTurnType() {
 		return turnDrawable.turnType;
 	}
 	
@@ -118,16 +118,16 @@ public class NextTurnInfoWidget extends TextInfoWidget {
 	}
 	
 	public static class TurnDrawable extends Drawable {
-		protected Paint paintBlack;
-		protected Paint paintRouteDirection;
-		protected Path pathForTurn = new Path();
-		protected Path pathForTurnOutlay = new Path();
-		protected TurnType turnType = null;
-		protected int turnImminent;
-		protected boolean deviatedFromRoute;
-		private Context ctx;
-		private boolean mini;
-		private PointF centerText;
+		final Paint paintBlack;
+		final Paint paintRouteDirection;
+		final Path pathForTurn = new Path();
+		final Path pathForTurnOutlay = new Path();
+		TurnType turnType = null;
+		int turnImminent;
+		boolean deviatedFromRoute;
+		private final Context ctx;
+		private final boolean mini;
+		private final PointF centerText;
 		private TextPaint textPaint;
 		private int clr;
 		
@@ -200,7 +200,7 @@ public class NextTurnInfoWidget extends TextInfoWidget {
 			}
 		}
 		
-		public void setTextPaint(TextPaint textPaint) {
+		void setTextPaint(TextPaint textPaint) {
 			this.textPaint = textPaint;
 			this.textPaint.setTextAlign(Align.CENTER);
 		}

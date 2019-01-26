@@ -48,7 +48,7 @@ package com.google.protobuf;
  *
  * @author kenton@google.com Kenton Varda
  */
-public interface RpcController {
+interface RpcController {
   // -----------------------------------------------------------------
   // These calls may be made from the client side only.  Their results
   // are undefined on the server side (may throw RuntimeExceptions).

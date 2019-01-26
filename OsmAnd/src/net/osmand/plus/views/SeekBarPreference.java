@@ -31,7 +31,7 @@ public class SeekBarPreference extends DialogPreference implements
 	private static final String ANDROID_NS = "http://schemas.android.com/apk/res/android";
 
 	private SeekBar seekBar;
-	private TextView dialogTextView, valueTextView;
+    private TextView valueTextView;
 	private final Context context;
 
 	private final String dialogText, valueText;
@@ -103,7 +103,7 @@ public class SeekBarPreference extends DialogPreference implements
 		layout.setOrientation(LinearLayout.VERTICAL);
 		layout.setPadding(6, 6, 6, 6);
 
-		dialogTextView = new TextView(context);
+        TextView dialogTextView = new TextView(context);
 		if (dialogText != null) {
 			dialogTextView.setText(dialogText);
 		}

@@ -36,8 +36,8 @@ import java.util.Map;
 
 public class SendPoiDialogFragment extends DialogFragment {
 	public static final String TAG = "SendPoiDialogFragment";
-	public static final String OPENSTREETMAP_POINT = "openstreetmap_point";
-	public static final String POI_UPLOADER_TYPE = "poi_uploader_type";
+	private static final String OPENSTREETMAP_POINT = "openstreetmap_point";
+	private static final String POI_UPLOADER_TYPE = "poi_uploader_type";
 	private OsmPoint[] poi;
 
 	public enum PoiUploaderType {
@@ -56,15 +56,15 @@ public class SendPoiDialogFragment extends DialogFragment {
 		final PoiUploaderType poiUploaderType = PoiUploaderType.valueOf(getArguments().getString(POI_UPLOADER_TYPE, PoiUploaderType.SIMPLE.name()));
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		View view = getActivity().getLayoutInflater().inflate(R.layout.send_poi_dialog, null);
-		final SwitchCompat uploadAnonymously = (SwitchCompat) view.findViewById(R.id.upload_anonymously_switch);
-		final EditText messageEditText = (EditText) view.findViewById(R.id.message_field);
-		final EditText userNameEditText = (EditText) view.findViewById(R.id.user_name_field);
-		final EditText passwordEditText = (EditText) view.findViewById(R.id.password_field);
+		final SwitchCompat uploadAnonymously = view.findViewById(R.id.upload_anonymously_switch);
+		final EditText messageEditText = view.findViewById(R.id.message_field);
+		final EditText userNameEditText = view.findViewById(R.id.user_name_field);
+		final EditText passwordEditText = view.findViewById(R.id.password_field);
 		final View messageLabel = view.findViewById(R.id.message_label);
 		final View userNameLabel = view.findViewById(R.id.osm_user_name_label);
 		final View passwordLabel = view.findViewById(R.id.osm_user_password_label);
 		final CheckBox closeChangeSetCheckBox =
-				(CheckBox) view.findViewById(R.id.close_change_set_checkbox);
+                view.findViewById(R.id.close_change_set_checkbox);
 		final OsmandSettings settings = ((OsmandApplication) getActivity().getApplication())
 				.getSettings();
 		userNameEditText.setText(settings.USER_NAME.get());
@@ -244,9 +244,9 @@ public class SendPoiDialogFragment extends DialogFragment {
 
 	public static class SimpleProgressDialogPoiUploader implements ProgressDialogPoiUploader {
 
-		private MapActivity mapActivity;
+		private final MapActivity mapActivity;
 
-		public SimpleProgressDialogPoiUploader(MapActivity mapActivity) {
+		SimpleProgressDialogPoiUploader(MapActivity mapActivity) {
 			this.mapActivity = mapActivity;
 		}
 

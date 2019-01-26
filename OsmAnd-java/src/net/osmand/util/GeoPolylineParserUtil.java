@@ -4,7 +4,7 @@ import net.osmand.data.LatLon;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GeoPolylineParserUtil {
+class GeoPolylineParserUtil {
 	
 	public static final double PRECISION_6 = 1E6;
 	public static final double PRECISION_5 = 1E5;

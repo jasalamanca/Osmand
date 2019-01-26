@@ -28,9 +28,9 @@ import android.widget.TextView;
 
 public class SettingsActivity extends SettingsBaseActivity {
 
-	public static final String INTENT_KEY_SETTINGS_SCREEN = "INTENT_KEY_SETTINGS_SCREEN";
-	public static final int SCREEN_GENERAL_SETTINGS = 1;
-	public static final int SCREEN_NAVIGATION_SETTINGS = 2;
+	private static final String INTENT_KEY_SETTINGS_SCREEN = "INTENT_KEY_SETTINGS_SCREEN";
+	private static final int SCREEN_GENERAL_SETTINGS = 1;
+	private static final int SCREEN_NAVIGATION_SETTINGS = 2;
 
 	private static final int PLUGINS_SELECTION_REQUEST = 1;
     private static final String CONTRIBUTION_VERSION_FLAG = "CONTRIBUTION_VERSION_FLAG";
@@ -46,9 +46,9 @@ public class SettingsActivity extends SettingsBaseActivity {
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.settings_pref);
 		PreferenceScreen screen = getPreferenceScreen();
-		general = (Preference) screen.findPreference("general_settings");
+		general = screen.findPreference("general_settings");
 		general.setOnPreferenceClickListener(this);
-		routing = (Preference) screen.findPreference("routing_settings");
+		routing = screen.findPreference("routing_settings");
 		routing .setOnPreferenceClickListener(this);
 		
 		getToolbar().setTitle(Version.getFullVersion(getMyApplication()));

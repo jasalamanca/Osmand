@@ -6,10 +6,10 @@ import android.widget.TextView;
 
 import net.osmand.plus.R;
 
-public class MapMarkersGroupHeaderViewHolder extends RecyclerView.ViewHolder {
+class MapMarkersGroupHeaderViewHolder extends RecyclerView.ViewHolder {
 
-	TextView title;
-	TextView description;
+	final TextView title;
+	final TextView description;
 
 	public MapMarkersGroupHeaderViewHolder(View itemView) {
 		super(itemView);

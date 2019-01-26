@@ -209,7 +209,7 @@ public final class ExtensionRegistry extends ExtensionRegistryLite {
 
   private ExtensionRegistry(boolean empty) {
     super(ExtensionRegistryLite.getEmptyRegistry());
-    this.extensionsByName = Collections.<String, ExtensionInfo>emptyMap();
+    this.extensionsByName = Collections.emptyMap();
     this.extensionsByNumber =
         Collections.<DescriptorIntPair, ExtensionInfo>emptyMap();
   }

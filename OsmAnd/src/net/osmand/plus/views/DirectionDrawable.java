@@ -19,13 +19,13 @@ import android.view.WindowManager;
  * on 10.12.2014.
  */
 public class DirectionDrawable extends Drawable {
-	Paint paintRouteDirection;
-	float width;
-	float height;
-	Context ctx;
+	private final Paint paintRouteDirection;
+	private float width;
+	private float height;
+	private final Context ctx;
 	private float angle;
-	int resourceId = -1;
-	Drawable arrowImage ;
+	private int resourceId = -1;
+	private Drawable arrowImage ;
 
 	public DirectionDrawable(Context ctx, float width, float height, int resourceId, int clrId) {
 		this(ctx, width, height);

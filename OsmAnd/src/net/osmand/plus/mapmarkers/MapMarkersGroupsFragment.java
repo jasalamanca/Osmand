@@ -50,9 +50,9 @@ public class MapMarkersGroupsFragment extends Fragment implements OsmAndCompassL
 	private Float heading;
 	private Location location;
 	private boolean locationUpdateStarted;
-	private Paint backgroundPaint = new Paint();
-	private Paint iconPaint = new Paint();
-	private Paint textPaint = new Paint();
+	private final Paint backgroundPaint = new Paint();
+	private final Paint iconPaint = new Paint();
+	private final Paint textPaint = new Paint();
 	private Snackbar snackbar;
 	private boolean compassUpdateAllowed = true;
 	private View mainView;
@@ -78,7 +78,7 @@ public class MapMarkersGroupsFragment extends Fragment implements OsmAndCompassL
 			((HistoryMarkerMenuBottomSheetDialogFragment) historyMarkerMenuFragment).setListener(createHistoryMarkerMenuListener());
 		}
 
-		final EmptyStateRecyclerView recyclerView = (EmptyStateRecyclerView) mainView.findViewById(R.id.list);
+		final EmptyStateRecyclerView recyclerView = mainView.findViewById(R.id.list);
 		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 		recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
 			@Override
@@ -107,9 +107,9 @@ public class MapMarkersGroupsFragment extends Fragment implements OsmAndCompassL
 		final int textHeight = bounds.height();
 
 		ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-			private float marginSides = getResources().getDimension(R.dimen.list_content_padding);
-			private Bitmap deleteBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_delete_dark);
-			private Bitmap historyBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_history);
+			private final float marginSides = getResources().getDimension(R.dimen.list_content_padding);
+			private final Bitmap deleteBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_delete_dark);
+			private final Bitmap historyBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_history);
 			private boolean iconHidden;
 
 			@Override
@@ -211,7 +211,7 @@ public class MapMarkersGroupsFragment extends Fragment implements OsmAndCompassL
 								}
 							});
 					View snackBarView = snackbar.getView();
-					TextView tv = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_action);
+					TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
 					tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
 					snackbar.show();
 				}
@@ -309,7 +309,7 @@ public class MapMarkersGroupsFragment extends Fragment implements OsmAndCompassL
 				openAddGroupMenu();
 			}
 		});
-		ImageView emptyImageView = (ImageView) emptyView.findViewById(R.id.empty_state_image_view);
+		ImageView emptyImageView = emptyView.findViewById(R.id.empty_state_image_view);
 		emptyImageView.setImageResource(night ? R.drawable.ic_empty_state_marker_group_night : R.drawable.ic_empty_state_marker_group_day);
 		recyclerView.setEmptyView(emptyView);
 		recyclerView.setAdapter(adapter);

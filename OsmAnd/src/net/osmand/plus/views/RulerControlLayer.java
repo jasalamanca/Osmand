@@ -68,9 +68,9 @@ public class RulerControlLayer extends OsmandMapLayer {
 	private boolean touched;
 	private boolean wasZoom;
 
-	private TIntArrayList tx = new TIntArrayList();
-	private TIntArrayList ty = new TIntArrayList();
-	private Path linePath = new Path();
+	private final TIntArrayList tx = new TIntArrayList();
+	private final TIntArrayList ty = new TIntArrayList();
+	private final Path linePath = new Path();
 
 	private Bitmap centerIconDay;
 	private Bitmap centerIconNight;

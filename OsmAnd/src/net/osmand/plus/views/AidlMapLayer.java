@@ -21,11 +21,10 @@ import net.osmand.plus.views.ContextMenuLayer.IContextMenuProvider;
 import java.util.List;
 
 public class AidlMapLayer extends OsmandMapLayer implements IContextMenuProvider {
-	private static int POINT_OUTER_COLOR = 0x88555555;
-	private static int PAINT_TEXT_ICON_COLOR = Color.BLACK;
+	private static final int POINT_OUTER_COLOR = 0x88555555;
+	private static final int PAINT_TEXT_ICON_COLOR = Color.BLACK;
 
-	private final MapActivity map;
-	private AMapLayer aidlLayer;
+    private final AMapLayer aidlLayer;
 	private OsmandMapTileView view;
 	private Paint pointInnerCircle;
 	private Paint pointOuter;
@@ -33,7 +32,7 @@ public class AidlMapLayer extends OsmandMapLayer implements IContextMenuProvider
 	private Paint paintTextIcon;
 
 	public AidlMapLayer(MapActivity map, AMapLayer aidlLayer) {
-		this.map = map;
+        MapActivity map1 = map;
 		this.aidlLayer = aidlLayer;
 	}
 

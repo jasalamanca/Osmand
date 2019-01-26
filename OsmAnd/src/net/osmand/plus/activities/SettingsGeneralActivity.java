@@ -426,7 +426,7 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 
 	private void showAppDirDialogV19() {
 		AlertDialog.Builder bld = new AlertDialog.Builder(this);
-		ChooseAppDirFragment chooseAppDirFragment = new ChooseAppDirFragment(this, (Dialog) null) {
+		ChooseAppDirFragment chooseAppDirFragment = new ChooseAppDirFragment(this, null) {
 			@Override
 			protected void successCallback() {
 				updateApplicationDirTextAndSummary();

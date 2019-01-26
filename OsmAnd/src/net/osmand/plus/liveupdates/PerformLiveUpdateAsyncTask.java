@@ -22,7 +22,7 @@ import java.util.List;
 
 import static net.osmand.plus.liveupdates.LiveUpdatesHelper.preferenceUpdateFrequency;
 
-public class PerformLiveUpdateAsyncTask
+class PerformLiveUpdateAsyncTask
 		extends AsyncTask<String, Object, IncrementalChangesManager.IncrementalUpdateList> {
 	private final static Log LOG = PlatformUtil.getLog(PerformLiveUpdateAsyncTask.class);
 

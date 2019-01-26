@@ -18,7 +18,7 @@ public class RenderingRule {
 	private float[] floatProperties;
 	private List<RenderingRule> ifElseChildren;
 	private List<RenderingRule> ifChildren;
-	private boolean isGroup;
+	private final boolean isGroup;
 	
 	private final RenderingRulesStorage storage;
 	private Map<String, String> attributes;
@@ -93,7 +93,7 @@ public class RenderingRule {
 		return null;
 	}
 	
-	public float getFloatPropertyValue(String property) {
+	private float getFloatPropertyValue(String property) {
 		int i = getPropertyIndex(property);
 		if(i >= 0 && floatProperties != null){
 			return floatProperties[i];
@@ -101,7 +101,7 @@ public class RenderingRule {
 		return 0;
 	}
 	
-	public String getColorPropertyValue(String property) {
+	private String getColorPropertyValue(String property) {
 		int i = getPropertyIndex(property);
 		if(i >= 0){
 			return Algorithms.colorToString(intProperties[i]);
@@ -117,18 +117,18 @@ public class RenderingRule {
 		return -1;
 	}
 	
-	protected int getIntProp(int ind){
+	int getIntProp(int ind){
 		return intProperties[ind];
 	}
 	
-	protected RenderingRule getAttrProp(int ind) {
+	RenderingRule getAttrProp(int ind) {
 		if(attributesRef == null) {
 			return null;
 		}
 		return attributesRef[ind];
 	}
 	
-	protected float getFloatProp(int ind){
+	float getFloatProp(int ind){
 		return floatProperties[ind];
 	}
 	
@@ -208,7 +208,7 @@ public class RenderingRule {
 	}
 	
 
-	protected void printAttrs(StringBuilder bls, boolean in) {
+	private void printAttrs(StringBuilder bls, boolean in) {
 		for(RenderingRuleProperty p : getProperties()){
 			if(p.isInputProperty() != in) {
 				continue;

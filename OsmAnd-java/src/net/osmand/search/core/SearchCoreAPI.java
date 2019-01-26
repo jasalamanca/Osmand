@@ -10,15 +10,15 @@ public interface SearchCoreAPI {
 	 * @param p
 	 * @return order in which search core apis should be called, -1 means do not call
 	 */
-	public int getSearchPriority(SearchPhrase p);
+    int getSearchPriority(SearchPhrase p);
 
-	public boolean search(SearchPhrase phrase, SearchResultMatcher resultMatcher) throws IOException;
+	boolean search(SearchPhrase phrase, SearchResultMatcher resultMatcher) throws IOException;
 
 	/**
 	 * @param phrase
 	 * @return true if search more available (should be consistent with -1 search priority)
 	 */
-	public boolean isSearchMoreAvailable(SearchPhrase phrase);
+    boolean isSearchMoreAvailable(SearchPhrase phrase);
 
 	boolean isSearchAvailable(SearchPhrase p);
 }

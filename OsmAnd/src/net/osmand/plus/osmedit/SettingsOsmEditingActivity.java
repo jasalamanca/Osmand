@@ -58,11 +58,11 @@ public class SettingsOsmEditingActivity extends SettingsBaseActivity {
 		grp.addPreference(pref);
     }
 
-	public class OsmLoginDataDialogPreference extends DialogPreference {
+	class OsmLoginDataDialogPreference extends DialogPreference {
 		private TextView userNameEditText;
 		private TextView passwordEditText;
 
-		public OsmLoginDataDialogPreference(Context context, AttributeSet attrs) {
+		OsmLoginDataDialogPreference(Context context, AttributeSet attrs) {
 			super(context, attrs);
 
 			setDialogLayoutResource(R.layout.osm_user_login_details);
@@ -78,9 +78,9 @@ public class SettingsOsmEditingActivity extends SettingsBaseActivity {
 
 		@Override
 		protected void onBindDialogView(View view) {
-			userNameEditText = (TextView) view.findViewById(R.id.user_name_field);
+			userNameEditText = view.findViewById(R.id.user_name_field);
 			userNameEditText.setText(settings.USER_NAME.get());
-			passwordEditText = (TextView) view.findViewById(R.id.password_field);
+			passwordEditText = view.findViewById(R.id.password_field);
 			passwordEditText.setText(settings.USER_PASSWORD.get());
 			super.onBindDialogView(view);
 		}
@@ -98,7 +98,7 @@ public class SettingsOsmEditingActivity extends SettingsBaseActivity {
 	private static class ValidateOsmLoginDetailsTask extends AsyncTask<Void, Void, OsmBugsUtil.OsmBugResult> {
 		private final Context context;
 
-		public ValidateOsmLoginDetailsTask(Context context) {
+		ValidateOsmLoginDetailsTask(Context context) {
 			this.context = context;
 		}
 

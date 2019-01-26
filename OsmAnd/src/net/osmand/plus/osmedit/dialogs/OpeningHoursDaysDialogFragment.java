@@ -19,8 +19,8 @@ import java.util.Calendar;
 
 public class OpeningHoursDaysDialogFragment extends DialogFragment {
 	private static final Log LOG = PlatformUtil.getLog(OpeningHoursDaysDialogFragment.class);
-	public static final String POSITION_TO_ADD = "position_to_add";
-	public static final String ITEM = "item";
+	private static final String POSITION_TO_ADD = "position_to_add";
+	private static final String ITEM = "item";
 
 	@NonNull
 	@Override

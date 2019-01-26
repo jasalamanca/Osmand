@@ -18,8 +18,8 @@ public class TabActivity extends ActionBarProgressActivity {
 	}
 
 	public static class TabItem {
-		public final CharSequence mTitle;
-		public final Class<?> fragment;
+		final CharSequence mTitle;
+		final Class<?> fragment;
 		public final int resId;
 
 		public TabItem(int resId, CharSequence mTitle, Class<?> fragment) {
@@ -36,7 +36,7 @@ public class TabActivity extends ActionBarProgressActivity {
 
 	public static class OsmandFragmentPagerAdapter extends FragmentStatePagerAdapter {
 
-		private List<TabItem> mTabs;
+		private final List<TabItem> mTabs;
 
 		public OsmandFragmentPagerAdapter(FragmentManager fm, List<TabItem> items) {
 			super(fm);

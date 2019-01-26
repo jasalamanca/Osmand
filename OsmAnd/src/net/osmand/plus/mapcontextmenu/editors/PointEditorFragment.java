@@ -49,7 +49,7 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 		getEditor().updateLandscapePortrait();
 		getEditor().updateNightMode();
 
-		Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+		Toolbar toolbar = view.findViewById(R.id.toolbar);
 		toolbar.setTitle(getToolbarTitle());
 		toolbar.setNavigationIcon(getMyApplication().getIconsCache().getIcon(R.drawable.ic_arrow_back));
 		toolbar.setNavigationContentDescription(R.string.access_shared_string_navigate_up);
@@ -61,7 +61,7 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 			}
 		});
 
-		Button saveButton = (Button) view.findViewById(R.id.save_button);
+		Button saveButton = view.findViewById(R.id.save_button);
 		saveButton.setTextColor(getResources().getColor(!getEditor().isLight() ? R.color.osmand_orange : R.color.map_widget_blue));
 		saveButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -70,7 +70,7 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 			}
 		});
 
-		Button cancelButton = (Button) view.findViewById(R.id.cancel_button);
+		Button cancelButton = view.findViewById(R.id.cancel_button);
 		cancelButton.setTextColor(getResources().getColor(!getEditor().isLight() ? R.color.osmand_orange : R.color.map_widget_blue));
 		cancelButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -80,7 +80,7 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 			}
 		});
 
-		Button deleteButton = (Button) view.findViewById(R.id.delete_button);
+		Button deleteButton = view.findViewById(R.id.delete_button);
 		deleteButton.setTextColor(getResources().getColor(!getEditor().isLight() ? R.color.osmand_orange : R.color.map_widget_blue));
 		deleteButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -100,18 +100,18 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 		view.findViewById(R.id.title_view).setBackgroundResource(!getEditor().isLight() ? R.color.bg_color_dark : R.color.bg_color_light);
 		view.findViewById(R.id.description_info_view).setBackgroundResource(!getEditor().isLight() ? R.color.ctx_menu_info_view_bg_dark : R.color.ctx_menu_info_view_bg_light);
 
-		TextView nameCaption = (TextView) view.findViewById(R.id.name_caption);
+		TextView nameCaption = view.findViewById(R.id.name_caption);
 		AndroidUtils.setTextSecondaryColor(view.getContext(), nameCaption, !getEditor().isLight());
 		nameCaption.setText(getNameCaption());
-		TextView categoryCaption = (TextView) view.findViewById(R.id.category_caption);
+		TextView categoryCaption = view.findViewById(R.id.category_caption);
 		AndroidUtils.setTextSecondaryColor(view.getContext(), categoryCaption, !getEditor().isLight());
 		categoryCaption.setText(getCategoryCaption());
 
-		nameEdit = (EditText) view.findViewById(R.id.name_edit);
+		nameEdit = view.findViewById(R.id.name_edit);
 		AndroidUtils.setTextPrimaryColor(view.getContext(), nameEdit, !getEditor().isLight());
 		AndroidUtils.setHintTextSecondaryColor(view.getContext(), nameEdit, !getEditor().isLight());
 		nameEdit.setText(getNameInitValue());
-		AutoCompleteTextViewEx categoryEdit = (AutoCompleteTextViewEx) view.findViewById(R.id.category_edit);
+		AutoCompleteTextViewEx categoryEdit = view.findViewById(R.id.category_edit);
 		AndroidUtils.setTextPrimaryColor(view.getContext(), categoryEdit, !getEditor().isLight());
 		categoryEdit.setText(getCategoryInitValue());
 		categoryEdit.setFocusable(false);
@@ -128,7 +128,7 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 			}
 		});
 
-		final EditText descriptionEdit = (EditText) view.findViewById(R.id.description_edit);
+		final EditText descriptionEdit = view.findViewById(R.id.description_edit);
 		AndroidUtils.setTextPrimaryColor(view.getContext(), descriptionEdit, !getEditor().isLight());
 		AndroidUtils.setHintTextSecondaryColor(view.getContext(), descriptionEdit, !getEditor().isLight());
 		if (getDescriptionInitValue() != null) {
@@ -140,7 +140,7 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 				@Override
 				public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
 					if (descriptionEdit.isFocused()) {
-						ScrollView scrollView = (ScrollView) view.findViewById(R.id.editor_scroll_view);
+						ScrollView scrollView = view.findViewById(R.id.editor_scroll_view);
 						scrollView.scrollTo(0, bottom);
 					}
 					if (Build.VERSION.SDK_INT >= 21 && AndroidUiHelper.isOrientationPortrait(getActivity())) {
@@ -158,19 +158,19 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 				@Override
 				public void onGlobalLayout() {
 					if (descriptionEdit.isFocused()) {
-						ScrollView scrollView = (ScrollView) view.findViewById(R.id.editor_scroll_view);
+						ScrollView scrollView = view.findViewById(R.id.editor_scroll_view);
 						scrollView.scrollTo(0, view.getBottom());
 					}
 				}
 			});
 		}
 
-		ImageView nameImage = (ImageView) view.findViewById(R.id.name_image);
+		ImageView nameImage = view.findViewById(R.id.name_image);
 		nameImage.setImageDrawable(getNameIcon());
-		ImageView categoryImage = (ImageView) view.findViewById(R.id.category_image);
+		ImageView categoryImage = view.findViewById(R.id.category_image);
 		categoryImage.setImageDrawable(getCategoryIcon());
 
-		ImageView descriptionImage = (ImageView) view.findViewById(R.id.description_image);
+		ImageView descriptionImage = view.findViewById(R.id.description_image);
 		descriptionImage.setImageDrawable(getRowIcon(R.drawable.ic_action_note_dark));
 
 		if (getMyApplication().accessibilityEnabled()) {
@@ -184,11 +184,11 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 		return view;
 	}
 
-	protected DialogFragment createSelectCategoryDialog() {
+	DialogFragment createSelectCategoryDialog() {
 		return SelectCategoryDialogFragment.createInstance(getEditor().getFragmentTag());
 	}
 
-	public Drawable getRowIcon(int iconId) {
+	private Drawable getRowIcon(int iconId) {
 		return getIcon(iconId, getEditor().isLight() ? R.color.icon_color : R.color.icon_color_light);
 	}
 
@@ -241,11 +241,11 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 		}
 	}
 
-	protected void savePressed() {
+	private void savePressed() {
 		save(true);
 	}
 
-	protected void deletePressed() {
+	private void deletePressed() {
 		delete(true);
 	}
 
@@ -253,7 +253,7 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 	protected abstract void save(boolean needDismiss);
 	protected abstract void delete(boolean needDismiss);
 
-	static int getResIdFromAttribute(final Context ctx, final int attr) {
+	private static int getResIdFromAttribute(final Context ctx, final int attr) {
 		if (attr == 0)
 			return 0;
 		final TypedValue typedvalueattr = new TypedValue();
@@ -261,24 +261,24 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 		return typedvalueattr.resourceId;
 	}
 
-	public abstract PointEditor getEditor();
-	public abstract String getToolbarTitle();
+	protected abstract PointEditor getEditor();
+	protected abstract String getToolbarTitle();
 
 	public void setCategory(String name) {
-		AutoCompleteTextViewEx categoryEdit = (AutoCompleteTextViewEx) view.findViewById(R.id.category_edit);
+		AutoCompleteTextViewEx categoryEdit = view.findViewById(R.id.category_edit);
 		String n = name.length() == 0 ? getDefaultCategoryName() : name;
 		categoryEdit.setText(n);
-		ImageView categoryImage = (ImageView) view.findViewById(R.id.category_image);
+		ImageView categoryImage = view.findViewById(R.id.category_image);
 		categoryImage.setImageDrawable(getCategoryIcon());
-		ImageView nameImage = (ImageView) view.findViewById(R.id.name_image);
+		ImageView nameImage = view.findViewById(R.id.name_image);
 		nameImage.setImageDrawable(getNameIcon());
 	}
 
-	protected String getDefaultCategoryName() {
+	String getDefaultCategoryName() {
 		return getString(R.string.shared_string_none);
 	}
 
-	protected MapActivity getMapActivity() {
+	MapActivity getMapActivity() {
 		return (MapActivity)getActivity();
 	}
 
@@ -293,7 +293,7 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 		dismiss(false);
 	}
 
-	public void dismiss(boolean includingMenu) {
+	void dismiss(boolean includingMenu) {
 		if (includingMenu) {
 			getMapActivity().getSupportFragmentManager().popBackStack();
 			getMapActivity().getContextMenu().close();
@@ -304,38 +304,38 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 
 	public abstract String getHeaderCaption();
 
-	public String getNameCaption() {
+	private String getNameCaption() {
 		return getMapActivity().getResources().getString(R.string.shared_string_name);
 	}
-	public String getCategoryCaption() {
+	private String getCategoryCaption() {
 		return getMapActivity().getResources().getString(R.string.favourites_edit_dialog_category);
 	}
 
-	public abstract String getNameInitValue();
-	public abstract String getCategoryInitValue();
-	public abstract String getDescriptionInitValue();
+	protected abstract String getNameInitValue();
+	protected abstract String getCategoryInitValue();
+	protected abstract String getDescriptionInitValue();
 
-	public abstract Drawable getNameIcon();
-	public abstract Drawable getCategoryIcon();
+	protected abstract Drawable getNameIcon();
+	protected abstract Drawable getCategoryIcon();
 
-	public String getNameTextValue() {
-		EditText nameEdit = (EditText) view.findViewById(R.id.name_edit);
+	String getNameTextValue() {
+		EditText nameEdit = view.findViewById(R.id.name_edit);
 		return nameEdit.getText().toString().trim();
 	}
 
-	public String getCategoryTextValue() {
-		AutoCompleteTextViewEx categoryEdit = (AutoCompleteTextViewEx) view.findViewById(R.id.category_edit);
+	String getCategoryTextValue() {
+		AutoCompleteTextViewEx categoryEdit = view.findViewById(R.id.category_edit);
 		String name = categoryEdit.getText().toString().trim();
 		return name.equals(getDefaultCategoryName()) ? "" : name;
 	}
 
-	public String getDescriptionTextValue() {
-		EditText descriptionEdit = (EditText) view.findViewById(R.id.description_edit);
+	String getDescriptionTextValue() {
+		EditText descriptionEdit = view.findViewById(R.id.description_edit);
 		String res = descriptionEdit.getText().toString().trim();
 		return Algorithms.isEmpty(res) ? null : res;
 	}
 
-	protected Drawable getPaintedIcon(int iconId, int color) {
+	Drawable getPaintedIcon(int iconId, int color) {
 		return getPaintedContentIcon(iconId, color);
 	}
 }

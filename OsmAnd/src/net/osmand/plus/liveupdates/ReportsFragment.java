@@ -42,17 +42,17 @@ import java.util.Locale;
 
 public class ReportsFragment extends BaseOsmAndFragment implements CountrySelectionFragment.OnFragmentInteractionListener {
 	public static final int TITLE = R.string.report;
-	public static final String DOMAIN = "http://download.osmand.net/";
-	public static final String TOTAL_CHANGES_BY_MONTH_URL_PATTERN = DOMAIN +
+	private static final String DOMAIN = "http://download.osmand.net/";
+	private static final String TOTAL_CHANGES_BY_MONTH_URL_PATTERN = DOMAIN +
 			"reports/query_report.php?report=total_changes_by_month&month=%s&region=%s";
-	public static final String USERS_RANKING_BY_MONTH =  DOMAIN +
+	private static final String USERS_RANKING_BY_MONTH =  DOMAIN +
 			"reports/query_report.php?report=ranking_users_by_month&month=%s&region=%s";
-	public static final String RECIPIENTS_BY_MONTH =  DOMAIN +
+	private static final String RECIPIENTS_BY_MONTH =  DOMAIN +
 			"reports/query_report.php?report=recipients_by_month&month=%s&region=%s";
 
 
 	private static final Log LOG = PlatformUtil.getLog(ReportsFragment.class);
-	public static final String OSM_LIVE_URL = "https://osmand.net/osm_live";
+	private static final String OSM_LIVE_URL = "https://osmand.net/osm_live";
 	public static final String EDITS_FRAGMENT = "NumberOfEditsFragment";
 	public static final String RECIPIENTS_FRAGMENT = "RecipientsFragment";
 
@@ -64,8 +64,8 @@ public class ReportsFragment extends BaseOsmAndFragment implements CountrySelect
 	private Spinner monthReportsSpinner;
 	private MonthsForReportsAdapter monthsForReportsAdapter;
 
-	private CountrySelectionFragment countrySelectionFragment = new CountrySelectionFragment();
-	private UsersReportFragment userReportFragment = new UsersReportFragment();
+	private final CountrySelectionFragment countrySelectionFragment = new CountrySelectionFragment();
+	private final UsersReportFragment userReportFragment = new UsersReportFragment();
 	private TextView countryNameTextView;
 	private CountryItem selectedCountryItem;
 
@@ -91,7 +91,7 @@ public class ReportsFragment extends BaseOsmAndFragment implements CountrySelect
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_reports, container, false);
-		monthReportsSpinner = (Spinner) view.findViewById(R.id.monthReportsSpinner);
+		monthReportsSpinner = view.findViewById(R.id.monthReportsSpinner);
 		final View monthButton = view.findViewById(R.id.monthButton);
 		monthReportsSpinner.setOnTouchListener(new View.OnTouchListener() {
 			@Override
@@ -152,7 +152,7 @@ public class ReportsFragment extends BaseOsmAndFragment implements CountrySelect
 		selectedCountryItem = countrySelectionFragment.getCountryItems().get(0);
 		
 
-		countryNameTextView = (TextView) regionReportsButton.findViewById(android.R.id.text1);
+		countryNameTextView = regionReportsButton.findViewById(android.R.id.text1);
 		countryNameTextView.setText(selectedCountryItem.getLocalName());
 
 		setThemedDrawable(view, R.id.calendarImageView, R.drawable.ic_action_data);
@@ -160,11 +160,11 @@ public class ReportsFragment extends BaseOsmAndFragment implements CountrySelect
 		setThemedDrawable(view, R.id.regionIconImageView, R.drawable.ic_world_globe_dark);
 		setThemedDrawable(view, R.id.countryDropDownIcon, R.drawable.ic_action_arrow_drop_down);
 
-		numberOfContributorsIcon = (ImageView) view.findViewById(R.id.numberOfContributorsIcon);
-		numberOfEditsIcon = (ImageView) view.findViewById(R.id.numberOfEditsIcon);
-		numberOfRecipientsIcon = (ImageView) view.findViewById(R.id.numberOfRecipientsIcon);
-		donationsIcon = (ImageView) view.findViewById(R.id.donationsIcon);
-		donationsTotalIcon = (ImageView) view.findViewById(R.id.donationsTotalIcon);
+		numberOfContributorsIcon = view.findViewById(R.id.numberOfContributorsIcon);
+		numberOfEditsIcon = view.findViewById(R.id.numberOfEditsIcon);
+		numberOfRecipientsIcon = view.findViewById(R.id.numberOfRecipientsIcon);
+		donationsIcon = view.findViewById(R.id.donationsIcon);
+		donationsTotalIcon = view.findViewById(R.id.donationsTotalIcon);
 		setThemedDrawable(numberOfContributorsIcon, R.drawable.ic_action_group2);
 		setThemedDrawable(numberOfRecipientsIcon, R.drawable.ic_group);
 		setThemedDrawable(donationsIcon, R.drawable.ic_action_bitcoin);
@@ -172,21 +172,21 @@ public class ReportsFragment extends BaseOsmAndFragment implements CountrySelect
 		setThemedDrawable(numberOfEditsIcon, R.drawable.ic_map);
 		
 		
-		numberOfContributorsTitle = (TextView) view.findViewById(R.id.numberOfContributorsTitle);
-		numberOfEditsTitle = (TextView) view.findViewById(R.id.numberOfEditsTitle);
-		donationsTitle = (TextView) view.findViewById(R.id.donationsTitle);
-		numberOfRecipientsTitle = (TextView) view.findViewById(R.id.numberOfRecipientsTitle);
-		donationsTotalLayout = (LinearLayout) view.findViewById(R.id.donationsTotal);
-		donationsTotalTitle = (TextView) view.findViewById(R.id.donationsTotalTitle);
-		donationsTotalTextView = (TextView) view.findViewById(R.id.donationsTotalTextView);
+		numberOfContributorsTitle = view.findViewById(R.id.numberOfContributorsTitle);
+		numberOfEditsTitle = view.findViewById(R.id.numberOfEditsTitle);
+		donationsTitle = view.findViewById(R.id.donationsTitle);
+		numberOfRecipientsTitle = view.findViewById(R.id.numberOfRecipientsTitle);
+		donationsTotalLayout = view.findViewById(R.id.donationsTotal);
+		donationsTotalTitle = view.findViewById(R.id.donationsTotalTitle);
+		donationsTotalTextView = view.findViewById(R.id.donationsTotalTextView);
 
 		
-		progressBar = (ProgressBar) view.findViewById(R.id.progress);
+		progressBar = view.findViewById(R.id.progress);
 
-		contributorsTextView = (TextView) view.findViewById(R.id.contributorsTextView);
-		editsTextView = (TextView) view.findViewById(R.id.editsTextView);
-		donationsTextView = (TextView) view.findViewById(R.id.donationsTextView);
-		recipientsTextView = (TextView) view.findViewById(R.id.recipientsTextView);
+		contributorsTextView = view.findViewById(R.id.contributorsTextView);
+		editsTextView = view.findViewById(R.id.editsTextView);
+		donationsTextView = view.findViewById(R.id.donationsTextView);
+		recipientsTextView = view.findViewById(R.id.recipientsTextView);
 
 		requestAndUpdateUi();
 
@@ -210,7 +210,7 @@ public class ReportsFragment extends BaseOsmAndFragment implements CountrySelect
 		return view;
 	}
 
-	public void requestAndUpdateUi() {
+	private void requestAndUpdateUi() {
 		int monthItemPosition = monthReportsSpinner.getSelectedItemPosition();
 		String monthUrlString = monthsForReportsAdapter.getQueryString(monthItemPosition);
 		String countryUrlString = selectedCountryItem.getDownloadName();
@@ -304,9 +304,9 @@ public class ReportsFragment extends BaseOsmAndFragment implements CountrySelect
 		@SuppressLint("SimpleDateFormat")
 		private static final SimpleDateFormat humanFormat = new SimpleDateFormat("LLLL yyyy");
 
-		ArrayList<String> queryString = new ArrayList<>();
+		final ArrayList<String> queryString = new ArrayList<>();
 
-		public MonthsForReportsAdapter(Context context) {
+		MonthsForReportsAdapter(Context context) {
 			super(context, android.R.layout.simple_spinner_item);
 			Calendar startDate = Calendar.getInstance();
 			startDate.set(Calendar.MONTH, Calendar.SEPTEMBER);
@@ -322,7 +322,7 @@ public class ReportsFragment extends BaseOsmAndFragment implements CountrySelect
 			setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		}
 
-		public String getQueryString(int position) {
+		String getQueryString(int position) {
 			return queryString.get(position);
 		}
 	}
@@ -369,7 +369,7 @@ public class ReportsFragment extends BaseOsmAndFragment implements CountrySelect
 			this.onResponseListener = onResponseListener;
 		}
 
-		public void setOnErrorListener(OnErrorListener onErrorListener) {
+		void setOnErrorListener(OnErrorListener onErrorListener) {
 			this.onErrorListener = onErrorListener;
 		}
 
@@ -377,7 +377,7 @@ public class ReportsFragment extends BaseOsmAndFragment implements CountrySelect
 			void onResponse(Protocol response);
 		}
 
-		public interface OnErrorListener {
+		interface OnErrorListener {
 			void onError(String error);
 		}
 	}

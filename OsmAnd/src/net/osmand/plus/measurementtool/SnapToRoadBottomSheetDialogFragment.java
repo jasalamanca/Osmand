@@ -75,7 +75,7 @@ public class SnapToRoadBottomSheetDialogFragment extends android.support.design.
 					.setTextColor(ContextCompat.getColor(getActivity(), R.color.ctx_menu_info_text_dark));
 		}
 
-		LinearLayout container = (LinearLayout) mainView.findViewById(R.id.navigation_types_container);
+		LinearLayout container = mainView.findViewById(R.id.navigation_types_container);
 		final List<ApplicationMode> modes = new ArrayList<>(ApplicationMode.values(settings));
 		if (removeDefaultMode) {
 			modes.remove(ApplicationMode.DEFAULT);
@@ -107,7 +107,7 @@ public class SnapToRoadBottomSheetDialogFragment extends android.support.design.
 				@Override
 				public void onShow(DialogInterface dialogInterface) {
 					BottomSheetDialog dialog = (BottomSheetDialog) dialogInterface;
-					FrameLayout bottomSheet = (FrameLayout) dialog.findViewById(android.support.design.R.id.design_bottom_sheet);
+					FrameLayout bottomSheet = dialog.findViewById(android.support.design.R.id.design_bottom_sheet);
 					BottomSheetBehavior.from(bottomSheet).setState(BottomSheetBehavior.STATE_EXPANDED);
 				}
 			});

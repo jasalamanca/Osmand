@@ -56,8 +56,8 @@ public class ContextMenuLayer extends OsmandMapLayer {
 	private OsmandMapTileView view;
 
 	private final MapActivity activity;
-	private MapContextMenu menu;
-	private MapMultiSelectionMenu multiSelectionMenu;
+	private final MapContextMenu menu;
+	private final MapMultiSelectionMenu multiSelectionMenu;
 	private CallbackWithObject<LatLon> selectOnMap = null;
 	private MapQuickActionLayer mapQuickActionLayer;
 
@@ -69,7 +69,7 @@ public class ContextMenuLayer extends OsmandMapLayer {
 	private List<LatLon> pressedLatLonFull = new ArrayList<>();
 	private List<LatLon> pressedLatLonSmall = new ArrayList<>();
 
-	private GestureDetector movementListener;
+	private final GestureDetector movementListener;
 
 	private final MoveMarkerBottomSheetHelper mMoveMarkerBottomSheetHelper;
 	private final AddGpxPointBottomSheetHelper mAddGpxPointBottomSheetHelper;
@@ -298,11 +298,10 @@ public class ContextMenuLayer extends OsmandMapLayer {
 		return mInAddGpxPointMode;
 	}
 
-	public boolean isObjectMoveable(Object o) {
+	private boolean isObjectMoveable(Object o) {
 		if (o == null) {
 			return true;
-		} else if (selectedObjectContextMenuProvider != null
-				&& selectedObjectContextMenuProvider instanceof ContextMenuLayer.IMoveObjectProvider) {
+		} else if (selectedObjectContextMenuProvider instanceof IMoveObjectProvider) {
 			final IMoveObjectProvider l = (ContextMenuLayer.IMoveObjectProvider) selectedObjectContextMenuProvider;
 			if (l.isObjectMovable(o)) {
 				return true;
@@ -311,7 +310,7 @@ public class ContextMenuLayer extends OsmandMapLayer {
 		return false;
 	}
 
-	public void applyMovedObject(Object o, LatLon position, ApplyMovedObjectCallback callback) {
+	private void applyMovedObject(Object o, LatLon position, ApplyMovedObjectCallback callback) {
 		if (selectedObjectContextMenuProvider != null && !isInAddGpxPointMode()) {
 			if (selectedObjectContextMenuProvider instanceof IMoveObjectProvider) {
 				final IMoveObjectProvider l = (IMoveObjectProvider) selectedObjectContextMenuProvider;
@@ -694,7 +693,7 @@ public class ContextMenuLayer extends OsmandMapLayer {
 		return latLon;
 	}
 
-	public boolean disableSingleTap() {
+	private boolean disableSingleTap() {
 		boolean res = false;
 		for (OsmandMapLayer lt : view.getLayers()) {
 			if (lt instanceof ContextMenuLayer.IContextMenuProvider) {
@@ -707,7 +706,7 @@ public class ContextMenuLayer extends OsmandMapLayer {
 		return res;
 	}
 
-	public boolean disableLongPressOnMap() {
+	private boolean disableLongPressOnMap() {
 		if (mInChangeMarkerPositionMode || mInGpxDetailsMode || mInAddGpxPointMode) {
 			return true;
 		}
@@ -760,7 +759,7 @@ public class ContextMenuLayer extends OsmandMapLayer {
 		return true;
 	}
 
-	public boolean pressedContextMarker(RotatedTileBox tb, float px, float py) {
+	private boolean pressedContextMarker(RotatedTileBox tb, float px, float py) {
 		float markerX;
 		float markerY;
 		if (mInChangeMarkerPositionMode) {

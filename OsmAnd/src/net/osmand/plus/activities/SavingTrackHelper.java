@@ -37,30 +37,30 @@ import java.util.TimeZone;
 
 public class SavingTrackHelper extends SQLiteOpenHelper {
 	
-	public final static String DATABASE_NAME = "tracks"; //$NON-NLS-1$
-	public final static int DATABASE_VERSION = 5;
+	private final static String DATABASE_NAME = "tracks"; //$NON-NLS-1$
+	private final static int DATABASE_VERSION = 5;
 	
-	public final static String TRACK_NAME = "track"; //$NON-NLS-1$
-	public final static String TRACK_COL_DATE = "date"; //$NON-NLS-1$
-	public final static String TRACK_COL_LAT = "lat"; //$NON-NLS-1$
-	public final static String TRACK_COL_LON = "lon"; //$NON-NLS-1$
-	public final static String TRACK_COL_ALTITUDE = "altitude"; //$NON-NLS-1$
-	public final static String TRACK_COL_SPEED = "speed"; //$NON-NLS-1$
-	public final static String TRACK_COL_HDOP = "hdop"; //$NON-NLS-1$
+	private final static String TRACK_NAME = "track"; //$NON-NLS-1$
+	private final static String TRACK_COL_DATE = "date"; //$NON-NLS-1$
+	private final static String TRACK_COL_LAT = "lat"; //$NON-NLS-1$
+	private final static String TRACK_COL_LON = "lon"; //$NON-NLS-1$
+	private final static String TRACK_COL_ALTITUDE = "altitude"; //$NON-NLS-1$
+	private final static String TRACK_COL_SPEED = "speed"; //$NON-NLS-1$
+	private final static String TRACK_COL_HDOP = "hdop"; //$NON-NLS-1$
 	
-	public final static String POINT_NAME = "point"; //$NON-NLS-1$
-	public final static String POINT_COL_DATE = "date"; //$NON-NLS-1$
-	public final static String POINT_COL_LAT = "lat"; //$NON-NLS-1$
-	public final static String POINT_COL_LON = "lon"; //$NON-NLS-1$
-	public final static String POINT_COL_NAME = "pname"; //$NON-NLS-1$
-	public final static String POINT_COL_CATEGORY = "category"; //$NON-NLS-1$
-	public final static String POINT_COL_DESCRIPTION = "description"; //$NON-NLS-1$
-	public final static String POINT_COL_COLOR = "color"; //$NON-NLS-1$
+	private final static String POINT_NAME = "point"; //$NON-NLS-1$
+	private final static String POINT_COL_DATE = "date"; //$NON-NLS-1$
+	private final static String POINT_COL_LAT = "lat"; //$NON-NLS-1$
+	private final static String POINT_COL_LON = "lon"; //$NON-NLS-1$
+	private final static String POINT_COL_NAME = "pname"; //$NON-NLS-1$
+	private final static String POINT_COL_CATEGORY = "category"; //$NON-NLS-1$
+	private final static String POINT_COL_DESCRIPTION = "description"; //$NON-NLS-1$
+	private final static String POINT_COL_COLOR = "color"; //$NON-NLS-1$
 
 	public final static Log log = PlatformUtil.getLog(SavingTrackHelper.class);
 
-	private String updateScript;
-	private String insertPointsScript;
+	private final String updateScript;
+	private final String insertPointsScript;
 
 	private long lastTimeUpdated = 0;
 	private final OsmandApplication ctx;
@@ -68,7 +68,7 @@ public class SavingTrackHelper extends SQLiteOpenHelper {
 	private LatLon lastPoint;
 	private float distance = 0;
 	private long duration = 0;
-	private SelectedGpxFile currentTrack;
+	private final SelectedGpxFile currentTrack;
 	private int points;
 	
 	public SavingTrackHelper(OsmandApplication ctx){
@@ -257,7 +257,7 @@ public class SavingTrackHelper extends SQLiteOpenHelper {
 		return warnings;
 	}
 
-	public Map<String, GPXFile> collectRecordedData() {
+	private Map<String, GPXFile> collectRecordedData() {
 		Map<String, GPXFile> data = new LinkedHashMap<String, GPXFile>();
 		SQLiteDatabase db = getReadableDatabase();
 		if (db != null && db.isOpen()) {
@@ -409,8 +409,8 @@ public class SavingTrackHelper extends SQLiteOpenHelper {
 		}
 	}
 	
-	public void insertData(double lat, double lon, double alt, double speed, double hdop, long time,
-			OsmandSettings settings) {
+	private void insertData(double lat, double lon, double alt, double speed, double hdop, long time,
+                            OsmandSettings settings) {
 		// * 1000 in next line seems to be wrong with new IntervalChooseDialog
 		// if (time - lastTimeUpdated > settings.SAVE_TRACK_INTERVAL.get() * 1000) {
 		execWithClose(updateScript, new Object[] { lat, lon, alt, speed, hdop, time });

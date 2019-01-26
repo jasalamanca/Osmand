@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 
 import net.osmand.plus.R;
 
-public class BottomSheetDialog extends Dialog {
+class BottomSheetDialog extends Dialog {
 
 	private boolean cancelable = true;
 	private boolean canceledOnTouchOutside = true;
@@ -84,7 +84,7 @@ public class BottomSheetDialog extends Dialog {
 	@NonNull
 	private View wrapInContainer(int layoutResId, View view, LayoutParams params) {
 		final View res = View.inflate(getContext(), R.layout.bottom_sheet_dialog, null);
-		final FrameLayout container = (FrameLayout) res.findViewById(R.id.content_container);
+		final FrameLayout container = res.findViewById(R.id.content_container);
 
 		if (layoutResId != 0 && view == null) {
 			view = getLayoutInflater().inflate(layoutResId, container, false);

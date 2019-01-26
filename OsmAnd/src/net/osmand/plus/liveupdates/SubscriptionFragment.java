@@ -53,13 +53,13 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 	private String prevEmail;
 	private CountryItem selectedCountryItem;
 
-	private CountrySelectionFragment countrySelectionFragment = new CountrySelectionFragment();
+	private final CountrySelectionFragment countrySelectionFragment = new CountrySelectionFragment();
 
 	public void setEditMode(boolean editMode) {
 		this.editMode = editMode;
 	}
 
-	public InAppHelper getInAppHelper() {
+	private InAppHelper getInAppHelper() {
 		Activity activity = getActivity();
 		if (activity instanceof OsmLiveActivity) {
 			return ((OsmLiveActivity) activity).getInAppHelper();
@@ -74,13 +74,13 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 
 		View view = getView();
 		if (view != null) {
-			EditText userNameEdit = (EditText) view.findViewById(R.id.userNameEdit);
+			EditText userNameEdit = view.findViewById(R.id.userNameEdit);
 			outState.putString(USER_NAME_ID, userNameEdit.getText().toString());
-			EditText emailEdit = (EditText) view.findViewById(R.id.emailEdit);
+			EditText emailEdit = view.findViewById(R.id.emailEdit);
 			outState.putString(EMAIL_ID, emailEdit.getText().toString());
-			CheckBox hideUserNameCheckbox = (CheckBox) view.findViewById(R.id.hideUserNameCheckbox);
+			CheckBox hideUserNameCheckbox = view.findViewById(R.id.hideUserNameCheckbox);
 			outState.putBoolean(HIDE_USER_NAME_ID, hideUserNameCheckbox.isChecked());
-			CheckBox donationCheckbox = (CheckBox) view.findViewById(R.id.donationCheckbox);
+			CheckBox donationCheckbox = view.findViewById(R.id.donationCheckbox);
 			outState.putBoolean(DONATION_ID, donationCheckbox.isChecked());
 			if (selectedCountryItem != null) {
 				outState.putSerializable(COUNTRY_ITEM_ID, selectedCountryItem);
@@ -133,7 +133,7 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 		}
 
 		View view = inflater.inflate(R.layout.subscription_fragment, container, false);
-		ImageButton closeButton = (ImageButton) view.findViewById(R.id.closeButton);
+		ImageButton closeButton = view.findViewById(R.id.closeButton);
 		if (editMode) {
 			closeButton.setImageDrawable(getMyApplication().getIconsCache().getIcon(R.drawable.ic_action_mode_back));
 		} else {
@@ -146,7 +146,7 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 			}
 		});
 
-		TextView title = (TextView) view.findViewById(R.id.titleTextView);
+		TextView title = view.findViewById(R.id.titleTextView);
 		if (editMode) {
 			title.setText(getString(R.string.osm_live_subscription_settings));
 		} else {
@@ -155,7 +155,7 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 
 		final View headerLayout = view.findViewById(R.id.headerLayout);
 		final View paramsLayout = view.findViewById(R.id.paramsLayout);
-		AppCompatCheckBox donationCheckbox = (AppCompatCheckBox) view.findViewById(R.id.donationCheckbox);
+		AppCompatCheckBox donationCheckbox = view.findViewById(R.id.donationCheckbox);
 		donationCheckbox.setChecked(donation);
 		donationCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
@@ -167,12 +167,12 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 		headerLayout.setVisibility(View.VISIBLE);
 		paramsLayout.setVisibility(donation ? View.VISIBLE : View.GONE);
 
-		final EditText userNameEdit = (EditText) view.findViewById(R.id.userNameEdit);
+		final EditText userNameEdit = view.findViewById(R.id.userNameEdit);
 		if (!Algorithms.isEmpty(userName)) {
 			userNameEdit.setText(userName);
 		}
 
-		final EditText emailEdit = (EditText) view.findViewById(R.id.emailEdit);
+		final EditText emailEdit = view.findViewById(R.id.emailEdit);
 		if (!Algorithms.isEmpty(email)) {
 			emailEdit.setText(email);
 		}
@@ -184,7 +184,7 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 			selectedCountryItem = countrySelectionFragment.getCountryItem(countryDownloadName);
 		}
 
-		final EditText selectCountryEdit = (EditText) view.findViewById(R.id.selectCountryEdit);
+		final EditText selectCountryEdit = view.findViewById(R.id.selectCountryEdit);
 		if (selectedCountryItem != null) {
 			selectCountryEdit.setText(selectedCountryItem.getLocalName());
 		}
@@ -201,7 +201,7 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 			}
 		});
 
-		final CheckBox hideUserNameCheckbox = (CheckBox) view.findViewById(R.id.hideUserNameCheckbox);
+		final CheckBox hideUserNameCheckbox = view.findViewById(R.id.hideUserNameCheckbox);
 		hideUserNameCheckbox.setChecked(hideUserName);
 
 		View editModeBottomView = view.findViewById(R.id.editModeBottomView);
@@ -210,7 +210,7 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 			editModeBottomView.setVisibility(View.VISIBLE);
 			purchaseCard.setVisibility(View.GONE);
 
-			Button saveChangesButton = (Button) view.findViewById(R.id.saveChangesButton);
+			Button saveChangesButton = view.findViewById(R.id.saveChangesButton);
 			saveChangesButton.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
@@ -254,7 +254,7 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 													app.getSettings().BILLING_USER_COUNTRY_DOWNLOAD_NAME.set(preferredCountry);
 
 													Fragment parent = getParentFragment();
-													if (parent != null && parent instanceof LiveUpdatesFragment) {
+													if (parent instanceof LiveUpdatesFragment) {
 														((LiveUpdatesFragment) parent).updateSubscriptionHeader();
 													}
 
@@ -279,7 +279,7 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 			purchaseCard.setVisibility(View.VISIBLE);
 
 			updatePrice(view);
-			final Button subscribeButton = (Button) view.findViewById(R.id.subscribeButton);
+			final Button subscribeButton = view.findViewById(R.id.subscribeButton);
 			subscribeButton.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
@@ -389,7 +389,7 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 		selectedCountryItem = item;
 		View view = getView();
 		if (view != null) {
-			EditText selectCountryEdit = (EditText) view.findViewById(R.id.selectCountryEdit);
+			EditText selectCountryEdit = view.findViewById(R.id.selectCountryEdit);
 			if (selectCountryEdit != null) {
 				selectCountryEdit.setText(item.getLocalName());
 			}
@@ -401,7 +401,7 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 			view = getView();
 		}
 		if (view != null) {
-			TextView priceTextView = (TextView) view.findViewById(R.id.priceTextView);
+			TextView priceTextView = view.findViewById(R.id.priceTextView);
 			if (InAppHelper.getLiveUpdatesPrice() != null) {
 				priceTextView.setText(InAppHelper.getLiveUpdatesPrice());
 			}

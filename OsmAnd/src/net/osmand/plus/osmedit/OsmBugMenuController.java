@@ -13,7 +13,7 @@ import net.osmand.plus.osmedit.OsmBugsLayer.OpenStreetNote;
 
 public class OsmBugMenuController extends MenuController {
 
-	private OsmEditingPlugin plugin;
+	private final OsmEditingPlugin plugin;
 	private OpenStreetNote bug;
 
 	public OsmBugMenuController(MapActivity mapActivity, PointDescription pointDescription, OpenStreetNote bug) {
@@ -68,7 +68,7 @@ public class OsmBugMenuController extends MenuController {
 		return bug;
 	}
 
-	public OpenStreetNote getBug() {
+	private OpenStreetNote getBug() {
 		return bug;
 	}
 

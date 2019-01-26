@@ -35,7 +35,7 @@ public class AmenityMenuController extends MenuController {
 	private Amenity amenity;
 	private List<TransportStopRoute> routes = new ArrayList<>();
 
-	private MapMarker marker;
+	private final MapMarker marker;
 
 	public AmenityMenuController(final MapActivity mapActivity, PointDescription pointDescription, final Amenity amenity) {
 		super(new AmenityMenuBuilder(mapActivity, amenity), pointDescription, mapActivity);
@@ -143,7 +143,7 @@ public class AmenityMenuController extends MenuController {
 		return getTypeStr(amenity);
 	}
 
-	public static String getTypeStr(Amenity amenity) {
+	private static String getTypeStr(Amenity amenity) {
 		PoiCategory pc = amenity.getType();
 		PoiType pt = pc.getPoiTypeByKeyName(amenity.getSubType());
 		String typeStr = amenity.getSubType();

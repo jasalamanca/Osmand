@@ -35,28 +35,28 @@ public class RenderingRulesStorage {
 	public final static int LINE_RULES = 2;
 	public final static int POLYGON_RULES = 3;
 	public final static int TEXT_RULES = 4;
-	public final static int ORDER_RULES = 5;
+	private final static int ORDER_RULES = 5;
 	public final static int LENGTH_RULES = 6;
 	
 	private final static int SHIFT_TAG_VAL = 16;
 	
 	// C++
 	List<String> dictionary = new ArrayList<String>();
-	Map<String, Integer> dictionaryMap = new LinkedHashMap<String, Integer>();
+	private Map<String, Integer> dictionaryMap = new LinkedHashMap<String, Integer>();
 	
 	public RenderingRuleStorageProperties PROPS = new RenderingRuleStorageProperties();
 
 	@SuppressWarnings("unchecked")
-	public TIntObjectHashMap<RenderingRule>[] tagValueGlobalRules = new TIntObjectHashMap[LENGTH_RULES];
+	public final TIntObjectHashMap<RenderingRule>[] tagValueGlobalRules = new TIntObjectHashMap[LENGTH_RULES];
 	
-	protected Map<String, RenderingRule> renderingAttributes = new LinkedHashMap<String, RenderingRule>();
-	protected Map<String, String> renderingConstants = new LinkedHashMap<String, String>();
+	final Map<String, RenderingRule> renderingAttributes = new LinkedHashMap<String, RenderingRule>();
+	final Map<String, String> renderingConstants = new LinkedHashMap<String, String>();
 	
-	protected String renderingName;
-	protected String internalRenderingName;
+	final String renderingName;
+	String internalRenderingName;
 	
 	
-	public static interface RenderingRulesStorageResolver {
+	public interface RenderingRulesStorageResolver {
 		
 		RenderingRulesStorage resolve(String name, RenderingRulesStorageResolver ref) throws XmlPullParserException, IOException;
 	}
@@ -187,20 +187,20 @@ public class RenderingRulesStorage {
 		private final XmlPullParser parser;
 		private int state;
 
-		Stack<RenderingRule> stack = new Stack<RenderingRule>();
+		final Stack<RenderingRule> stack = new Stack<RenderingRule>();
 		
-		Map<String, String> attrsMap = new LinkedHashMap<String, String>();
+		final Map<String, String> attrsMap = new LinkedHashMap<String, String>();
 		private final RenderingRulesStorageResolver resolver;
 		private RenderingRulesStorage dependsStorage;
 		
 		
 		
-		public RenderingRulesHandler(XmlPullParser parser, RenderingRulesStorageResolver resolver){
+		RenderingRulesHandler(XmlPullParser parser, RenderingRulesStorageResolver resolver){
 			this.parser = parser;
 			this.resolver = resolver;
 		}
 		
-		public void parse(InputStream is) throws XmlPullParserException, IOException {
+		void parse(InputStream is) throws XmlPullParserException, IOException {
 			parser.setInput(is, "UTF-8");
 			int tok;
 			while ((tok = parser.next()) != XmlPullParser.END_DOCUMENT) {
@@ -213,7 +213,7 @@ public class RenderingRulesStorage {
 			
 		}
 
-		public RenderingRulesStorage getDependsStorage() {
+		RenderingRulesStorage getDependsStorage() {
 			return dependsStorage;
 		}
 		
@@ -226,7 +226,7 @@ public class RenderingRulesStorage {
 			return true;
 		}
 		
-		public void startElement(String name) throws XmlPullParserException, IOException {
+		void startElement(String name) throws XmlPullParserException, IOException {
 			boolean stateChanged = false;
 			final boolean isCase = isCase(name);
 			final boolean isSwitch = isSwitch(name);
@@ -239,7 +239,7 @@ public class RenderingRulesStorage {
 					renderingRule.storeAttributes(attrsMap);
 				}
 				if (stack.size() > 0 && stack.peek() instanceof RenderingRule) {
-					RenderingRule parent = ((RenderingRule) stack.peek());
+					RenderingRule parent = stack.peek();
 					parent.addIfElseChildren(renderingRule);
 				}
 				stack.push(renderingRule);
@@ -251,7 +251,7 @@ public class RenderingRulesStorage {
 					renderingRule.storeAttributes(attrsMap);
 				}
 				if (stack.size() > 0 && stack.peek() instanceof RenderingRule) {
-					((RenderingRule) stack.peek()).addIfChildren(renderingRule);
+					stack.peek().addIfChildren(renderingRule);
 				} else {
 					throw new XmlPullParserException("Apply (groupFilter) without parent");
 				}
@@ -325,15 +325,15 @@ public class RenderingRulesStorage {
 			
 		}
 
-		protected boolean isCase(String name) {
+		boolean isCase(String name) {
 			return "filter".equals(name) || "case".equals(name);
 		}
 
-		protected boolean isApply(String name) {
+		boolean isApply(String name) {
 			return "groupFilter".equals(name) || "apply".equals(name) || "apply_if".equals(name);
 		}
 
-		protected boolean isSwitch(String name) {
+		boolean isSwitch(String name) {
 			return "group".equals(name) || "switch".equals(name);
 		}
 		
@@ -357,9 +357,9 @@ public class RenderingRulesStorage {
 		}
 
 
-		public void endElement(String name) throws XmlPullParserException  {
+		void endElement(String name) throws XmlPullParserException  {
 			if (isCase(name) || isSwitch(name)) { 
-				RenderingRule renderingRule = (RenderingRule) stack.pop();
+				RenderingRule renderingRule = stack.pop();
 				if(stack.size() == 0) {
 					registerTopLevel(renderingRule, null, Collections.EMPTY_MAP);
 				}
@@ -370,7 +370,7 @@ public class RenderingRulesStorage {
 			}
 		}
 
-		protected void registerTopLevel(RenderingRule renderingRule, List<RenderingRule> applyRules, Map<String, String> attrs) throws XmlPullParserException {
+		void registerTopLevel(RenderingRule renderingRule, List<RenderingRule> applyRules, Map<String, String> attrs) throws XmlPullParserException {
 			if(renderingRule.isGroup() && (renderingRule.getIntPropertyValue(RenderingRuleStorageProperties.TAG) == -1 ||
 					renderingRule.getIntPropertyValue(RenderingRuleStorageProperties.VALUE) == -1)){
 				List<RenderingRule> caseChildren = renderingRule.getIfElseChildren();
@@ -417,15 +417,15 @@ public class RenderingRulesStorage {
 		return (itag << SHIFT_TAG_VAL) | ivalue; 
 	}
 	
-	public String getValueString(int tagValueKey){
+	private String getValueString(int tagValueKey){
 		return getStringValue(tagValueKey & ((1 << SHIFT_TAG_VAL) - 1)); 
 	}
 	
-	public String getTagString(int tagValueKey){
+	private String getTagString(int tagValueKey){
 		return getStringValue(tagValueKey >> SHIFT_TAG_VAL); 
 	}
 	
-	protected RenderingRule getRule(int state, int itag, int ivalue){
+	RenderingRule getRule(int state, int itag, int ivalue){
 		if(tagValueGlobalRules[state] != null){
 			return tagValueGlobalRules[state].get((itag << SHIFT_TAG_VAL) | ivalue);
 		}
@@ -455,7 +455,7 @@ public class RenderingRulesStorage {
 	}
 	
 	
-	public void printDebug(int state, PrintStream out){
+	private void printDebug(int state, PrintStream out){
 		for(int key : tagValueGlobalRules[state].keys()) {
 			RenderingRule rr = tagValueGlobalRules[state].get(key);
 			out.print("\n\n"+getTagString(key) + " : " + getValueString(key) + "\n ");

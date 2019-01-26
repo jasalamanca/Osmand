@@ -16,26 +16,26 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 
-public class BaseLocationIndexRepository<T extends MapObject> {
+class BaseLocationIndexRepository<T extends MapObject> {
 	private static final Log log = PlatformUtil.getLog(BaseLocationIndexRepository.class);
-	protected SQLiteDatabase db;
-	protected double dataTopLatitude;
-	protected double dataBottomLatitude;
-	protected double dataLeftLongitude;
-	protected double dataRightLongitude;
+	private SQLiteDatabase db;
+	private double dataTopLatitude;
+	private double dataBottomLatitude;
+	private double dataLeftLongitude;
+	private double dataRightLongitude;
 	
-	protected String name;
+	private String name;
 	
-	protected List<T> cachedObjects = new ArrayList<T>(); 
-	protected double cTopLatitude;
-	protected double cBottomLatitude;
-	protected double cLeftLongitude;
-	protected double cRightLongitude;
-	protected int cZoom;
+	private final List<T> cachedObjects = new ArrayList<T>();
+	private double cTopLatitude;
+	private double cBottomLatitude;
+	private double cLeftLongitude;
+	private double cRightLongitude;
+	private int cZoom;
 
 	
 
-	public synchronized void clearCache(){
+	private synchronized void clearCache(){
 		cachedObjects.clear();
 		cTopLatitude = 0;
 		cBottomLatitude = 0;
@@ -44,7 +44,7 @@ public class BaseLocationIndexRepository<T extends MapObject> {
 		cZoom = 0;
 	}
 	
-	protected String getMetaLocation(String tableLocation) {
+	private String getMetaLocation(String tableLocation) {
 		return "loc_meta_" + tableLocation;
 	}
 	
@@ -124,7 +124,7 @@ public class BaseLocationIndexRepository<T extends MapObject> {
 		return true;
 	}
 	
-	protected void updateMaxMinBoundaries(String tableLocation){
+	private void updateMaxMinBoundaries(String tableLocation){
 		String metatable = getMetaLocation(tableLocation);
 		db.execSQL("DELETE FROM " + metatable + " WHERE 1= 1" ) ;
 		db.execSQL("INSERT INTO " + metatable + " VALUES (?, ?, ? ,?)", new Double[]{dataTopLatitude, dataRightLongitude, dataBottomLatitude, dataLeftLongitude}); //$NON-NLS-1$ //$NON-NLS-2$
@@ -156,7 +156,7 @@ public class BaseLocationIndexRepository<T extends MapObject> {
 		return checkCachedObjects(topLatitude, leftLongitude, bottomLatitude, rightLongitude, zoom, toFill, false);
 	}
 	
-	public synchronized boolean checkCachedObjects(double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude, int zoom, List<T> toFill, boolean fillFound){
+	private synchronized boolean checkCachedObjects(double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude, int zoom, List<T> toFill, boolean fillFound){
 		if (db == null) {
 			return true;
 		}

@@ -35,12 +35,12 @@ public class ErrorBottomSheetDialog extends BottomSheetDialogFragment {
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_error_fragment, container, false);
 		String msg = MessageFormat.format(getString(R.string.previous_run_crashed), OsmandApplication.EXCEPTION_PATH);
 		Typeface typeface = FontCache.getRobotoMedium(getActivity());
-		ImageView iv = ((ImageView) view.findViewById(R.id.error_icon));
+		ImageView iv = view.findViewById(R.id.error_icon);
 		iv.setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_crashlog));
-		TextView message = ((TextView) view.findViewById(R.id.error_header));
+		TextView message = view.findViewById(R.id.error_header);
 		message.setTypeface(typeface);
 		message.setText(msg);
-		Button errorBtn = ((Button) view.findViewById(R.id.error_btn));
+		Button errorBtn = view.findViewById(R.id.error_btn);
 		errorBtn.setTypeface(typeface);
 		errorBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -74,7 +74,7 @@ public class ErrorBottomSheetDialog extends BottomSheetDialogFragment {
 			}
 		});
 
-		Button cancelBtn = ((Button) view.findViewById(R.id.error_cancel));
+		Button cancelBtn = view.findViewById(R.id.error_cancel);
 		cancelBtn.setTypeface(typeface);
 		cancelBtn.setOnClickListener(new View.OnClickListener() {
 			@Override

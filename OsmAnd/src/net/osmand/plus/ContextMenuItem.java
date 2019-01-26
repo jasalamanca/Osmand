@@ -99,7 +99,7 @@ public class ContextMenuItem {
 	}
 
 	@ColorRes
-	public int getThemedColorRes(Context context) {
+    private int getThemedColorRes(Context context) {
 		if (skipPaintingWithoutColor || getColorRes() != INVALID_ID) {
 			return getColorRes();
 		} else {

@@ -13,7 +13,7 @@ import net.osmand.plus.IconsCache;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 
-public class MoveMarkerBottomSheetHelper {
+class MoveMarkerBottomSheetHelper {
 	private final View mView;
 	private final TextView mDescription;
 	private final Context mContext;
@@ -23,8 +23,8 @@ public class MoveMarkerBottomSheetHelper {
 	public MoveMarkerBottomSheetHelper(MapActivity activity, ContextMenuLayer contextMenuLayer) {
 		mContextMenuLayer = contextMenuLayer;
 		this.mView = activity.findViewById(R.id.move_marker_bottom_sheet);
-		ImageView icon = (ImageView) mView.findViewById(R.id.icon);
-		this.mDescription = (TextView) mView.findViewById(R.id.description);
+		ImageView icon = mView.findViewById(R.id.icon);
+		this.mDescription = mView.findViewById(R.id.description);
 		this.mContext = activity;
 
 		IconsCache iconsCache = activity.getMyApplication().getIconsCache();

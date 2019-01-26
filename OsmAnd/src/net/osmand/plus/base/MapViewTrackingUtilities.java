@@ -37,12 +37,11 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 	private static final int AUTO_FOLLOW_MSG_ID = OsmAndConstants.UI_HANDLER_LOCATION_SERVICE + 4;
 
 	private long lastTimeAutoZooming = 0;
-	private boolean sensorRegistered = false;
-	private OsmandMapTileView mapView;
+    private OsmandMapTileView mapView;
 	private DashboardOnMap dashboard;
 	private MapContextMenu contextMenu;
-	private OsmandSettings settings;
-	private OsmandApplication app;
+	private final OsmandSettings settings;
+	private final OsmandApplication app;
 	private boolean isMapLinkedToLocation = true;
 	private boolean followingMode;
 	private boolean routePlanningMode;
@@ -257,7 +256,7 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 		}
 	}
 
-	public static boolean isSmallSpeedForDirectionOfMovement(Location location, float speedToDirectionOfMovement) {
+	private static boolean isSmallSpeedForDirectionOfMovement(Location location, float speedToDirectionOfMovement) {
 		return !location.hasSpeed() || location.getSpeed() < speedToDirectionOfMovement;
 	}
 
@@ -302,7 +301,8 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 				|| (currentMapRotation == OsmandSettings.ROTATE_MAP_COMPASS && !routePlanningMode)
 				|| (currentMapRotation == OsmandSettings.ROTATE_MAP_BEARING && smallSpeedForDirectionOfMovement);
 		// show point view only if gps enabled
-		if(sensorRegistered != registerCompassListener) {
+        boolean sensorRegistered = false;
+        if(sensorRegistered != registerCompassListener) {
 			app.getLocationProvider().registerOrUnregisterCompassListener(registerCompassListener);
 		}
 	}
@@ -323,7 +323,7 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 		return zoomDelta;
 	}
 
-	public Pair<Integer, Double> autozoom(Location location) {
+	private Pair<Integer, Double> autozoom(Location location) {
 		if (location.hasSpeed()) {
 			long now = System.currentTimeMillis();
 			final RotatedTileBox tb = mapView.getCurrentRotatedTileBox();

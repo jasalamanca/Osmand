@@ -20,9 +20,9 @@ import net.osmand.osm.edit.OSMSettings.OSMTagKey;
 import net.osmand.osm.edit.Relation.RelationMember;
 import net.osmand.util.Algorithms;
 
-public class EntityParser {
+class EntityParser {
 	
-	public static void parseMapObject(MapObject mo, Entity e, Map<String, String> tags) {
+	private static void parseMapObject(MapObject mo, Entity e, Map<String, String> tags) {
 		mo.setId(e.getId());
 		if(mo instanceof Amenity) {
 			mo.setId((e.getId() << 1) + ((EntityType.valueOf(e) == EntityType.NODE) ? 0 : 1));
@@ -229,7 +229,7 @@ public class EntityParser {
 		return parseCity(el, CityType.valueFromString(el.getTag(OSMTagKey.PLACE.getValue())));
 	}
 	
-	public static City parseCity(Entity el, CityType t) {
+	private static City parseCity(Entity el, CityType t) {
 		if(t == null) {
 			return null;
 		}

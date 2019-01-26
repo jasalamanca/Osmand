@@ -8,17 +8,17 @@ import android.view.animation.Animation;
 import android.view.animation.Interpolator;
 import android.view.animation.RotateAnimation;
 
-public class BusyIndicator {
+class BusyIndicator {
 	
-	private View bar;
-	private Handler uiHandler;
+	private final View bar;
+	private final Handler uiHandler;
 	private int status;
 	private final Context ctx;
 	
 	public static final int STATUS_INVISIBLE = 0;
-	public static final int STATUS_GREEN = 1;
-	public static final int STATUS_ORANGE = 2;
-	public static final int STATUS_BLACK = 3;
+	private static final int STATUS_GREEN = 1;
+	private static final int STATUS_ORANGE = 2;
+	private static final int STATUS_BLACK = 3;
 	
 	public BusyIndicator(Context ctx, View bar){
 		this.ctx = ctx;

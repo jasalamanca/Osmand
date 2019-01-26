@@ -54,7 +54,7 @@ public class MapMarkersLayer extends OsmandMapLayer implements IContextMenuProvi
 
 	private static final long USE_FINGER_LOCATION_DELAY = 1000;
 	private static final int MAP_REFRESH_MESSAGE = OsmAndConstants.UI_HANDLER_MAP_VIEW + 6;
-	protected static final int DIST_TO_SHOW = 80;
+	private static final int DIST_TO_SHOW = 80;
 
 	private final MapActivity map;
 	private OsmandMapTileView view;
@@ -80,7 +80,7 @@ public class MapMarkersLayer extends OsmandMapLayer implements IContextMenuProvi
 	private Bitmap arrowLight;
 	private Bitmap arrowToDestination;
 	private Bitmap arrowShadow;
-	private float[] calculations = new float[2];
+	private final float[] calculations = new float[2];
 
 	private final RenderingLineAttributes lineAttrs = new RenderingLineAttributes("measureDistanceLine");
 	private final RenderingLineAttributes textAttrs = new RenderingLineAttributes("rulerLineFont");
@@ -90,9 +90,9 @@ public class MapMarkersLayer extends OsmandMapLayer implements IContextMenuProvi
 	private float textSize;
 	private int verticalOffset;
 
-	private TIntArrayList tx = new TIntArrayList();
-	private TIntArrayList ty = new TIntArrayList();
-	private Path linePath = new Path();
+	private final TIntArrayList tx = new TIntArrayList();
+	private final TIntArrayList ty = new TIntArrayList();
+	private final Path linePath = new Path();
 
 	private LatLon fingerLocation;
 	private boolean hasMoved;
@@ -388,7 +388,7 @@ public class MapMarkersLayer extends OsmandMapLayer implements IContextMenuProvi
 		return marker.equals(contextMenuLayer.getMoveableObject());
 	}
 
-	public boolean isLocationVisible(RotatedTileBox tb, MapMarker marker) {
+	private boolean isLocationVisible(RotatedTileBox tb, MapMarker marker) {
 		//noinspection SimplifiableIfStatement
 		if (marker == null || tb == null) {
 			return false;
@@ -396,7 +396,7 @@ public class MapMarkersLayer extends OsmandMapLayer implements IContextMenuProvi
 		return containsLatLon(tb, marker.getLatitude(), marker.getLongitude());
 	}
 
-	public boolean containsLatLon(RotatedTileBox tb, double lat, double lon) {
+	private boolean containsLatLon(RotatedTileBox tb, double lat, double lon) {
 		double widgetHeight = 0;
 		if (widgetsFactory.isTopBarVisible()) {
 			widgetHeight = widgetsFactory.getTopBarHeight();
@@ -406,7 +406,7 @@ public class MapMarkersLayer extends OsmandMapLayer implements IContextMenuProvi
 		return tx >= 0 && tx <= tb.getPixWidth() && ty >= widgetHeight && ty <= tb.getPixHeight();
 	}
 
-	public boolean overlappedByWaypoint(MapMarker marker) {
+	private boolean overlappedByWaypoint(MapMarker marker) {
 		List<TargetPoint> targetPoints = map.getMyApplication().getTargetPointsHelper().getAllPoints();
 		for (TargetPoint t : targetPoints) {
 			if (t.point.equals(marker.point)) {
@@ -493,8 +493,8 @@ public class MapMarkersLayer extends OsmandMapLayer implements IContextMenuProvi
 
 	@Override
 	public boolean runExclusiveAction(Object o, boolean unknownLocation) {
-		if (unknownLocation || o == null || !(o instanceof MapMarker)
-				|| !map.getMyApplication().getSettings().SELECT_MARKER_ON_SINGLE_TAP.get()) {
+		if (unknownLocation || !(o instanceof MapMarker)
+                || !map.getMyApplication().getSettings().SELECT_MARKER_ON_SINGLE_TAP.get()) {
 			return false;
 		}
 		final MapMarkersHelper helper = map.getMyApplication().getMapMarkersHelper();

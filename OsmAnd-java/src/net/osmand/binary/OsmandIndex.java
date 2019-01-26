@@ -17,7 +17,7 @@ public final class OsmandIndex {
     private OsmAndStoredIndex(boolean noInit) {}
     
     private static final OsmAndStoredIndex defaultInstance;
-    public static OsmAndStoredIndex getDefaultInstance() {
+    static OsmAndStoredIndex getDefaultInstance() {
       return defaultInstance;
     }
     
@@ -29,15 +29,15 @@ public final class OsmandIndex {
     public static final int VERSION_FIELD_NUMBER = 1;
     private boolean hasVersion;
     private int version_ = 0;
-    public boolean hasVersion() { return hasVersion; }
+    boolean hasVersion() { return hasVersion; }
     public int getVersion() { return version_; }
     
     // required int64 dateCreated = 18;
     public static final int DATECREATED_FIELD_NUMBER = 18;
     private boolean hasDateCreated;
     private long dateCreated_ = 0L;
-    public boolean hasDateCreated() { return hasDateCreated; }
-    public long getDateCreated() { return dateCreated_; }
+    boolean hasDateCreated() { return hasDateCreated; }
+    long getDateCreated() { return dateCreated_; }
     
     // repeated .FileIndex fileIndex = 7;
     public static final int FILEINDEX_FIELD_NUMBER = 7;
@@ -167,7 +167,7 @@ public final class OsmandIndex {
     
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandIndex.OsmAndStoredIndex prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandIndex.OsmAndStoredIndex prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -399,7 +399,7 @@ public final class OsmandIndex {
     private FileIndex(boolean noInit) {}
     
     private static final FileIndex defaultInstance;
-    public static FileIndex getDefaultInstance() {
+    static FileIndex getDefaultInstance() {
       return defaultInstance;
     }
     
@@ -411,28 +411,28 @@ public final class OsmandIndex {
     public static final int SIZE_FIELD_NUMBER = 1;
     private boolean hasSize;
     private long size_ = 0L;
-    public boolean hasSize() { return hasSize; }
+    boolean hasSize() { return hasSize; }
     public long getSize() { return size_; }
     
     // required int64 dateModified = 2;
     public static final int DATEMODIFIED_FIELD_NUMBER = 2;
     private boolean hasDateModified;
     private long dateModified_ = 0L;
-    public boolean hasDateModified() { return hasDateModified; }
+    boolean hasDateModified() { return hasDateModified; }
     public long getDateModified() { return dateModified_; }
     
     // required string fileName = 3;
     public static final int FILENAME_FIELD_NUMBER = 3;
     private boolean hasFileName;
     private java.lang.String fileName_ = "";
-    public boolean hasFileName() { return hasFileName; }
+    boolean hasFileName() { return hasFileName; }
     public java.lang.String getFileName() { return fileName_; }
     
     // required int32 version = 4;
     public static final int VERSION_FIELD_NUMBER = 4;
     private boolean hasVersion;
     private int version_ = 0;
-    public boolean hasVersion() { return hasVersion; }
+    boolean hasVersion() { return hasVersion; }
     public int getVersion() { return version_; }
     
     // repeated .AddressPart addressIndex = 8;
@@ -442,8 +442,8 @@ public final class OsmandIndex {
     public java.util.List<net.osmand.binary.OsmandIndex.AddressPart> getAddressIndexList() {
       return addressIndex_;
     }
-    public int getAddressIndexCount() { return addressIndex_.size(); }
-    public net.osmand.binary.OsmandIndex.AddressPart getAddressIndex(int index) {
+    int getAddressIndexCount() { return addressIndex_.size(); }
+    net.osmand.binary.OsmandIndex.AddressPart getAddressIndex(int index) {
       return addressIndex_.get(index);
     }
     
@@ -454,8 +454,8 @@ public final class OsmandIndex {
     public java.util.List<net.osmand.binary.OsmandIndex.TransportPart> getTransportIndexList() {
       return transportIndex_;
     }
-    public int getTransportIndexCount() { return transportIndex_.size(); }
-    public net.osmand.binary.OsmandIndex.TransportPart getTransportIndex(int index) {
+    int getTransportIndexCount() { return transportIndex_.size(); }
+    net.osmand.binary.OsmandIndex.TransportPart getTransportIndex(int index) {
       return transportIndex_.get(index);
     }
     
@@ -466,8 +466,8 @@ public final class OsmandIndex {
     public java.util.List<net.osmand.binary.OsmandIndex.PoiPart> getPoiIndexList() {
       return poiIndex_;
     }
-    public int getPoiIndexCount() { return poiIndex_.size(); }
-    public net.osmand.binary.OsmandIndex.PoiPart getPoiIndex(int index) {
+    int getPoiIndexCount() { return poiIndex_.size(); }
+    net.osmand.binary.OsmandIndex.PoiPart getPoiIndex(int index) {
       return poiIndex_.get(index);
     }
     
@@ -478,8 +478,8 @@ public final class OsmandIndex {
     public java.util.List<net.osmand.binary.OsmandIndex.MapPart> getMapIndexList() {
       return mapIndex_;
     }
-    public int getMapIndexCount() { return mapIndex_.size(); }
-    public net.osmand.binary.OsmandIndex.MapPart getMapIndex(int index) {
+    int getMapIndexCount() { return mapIndex_.size(); }
+    net.osmand.binary.OsmandIndex.MapPart getMapIndex(int index) {
       return mapIndex_.get(index);
     }
     
@@ -490,8 +490,8 @@ public final class OsmandIndex {
     public java.util.List<net.osmand.binary.OsmandIndex.RoutingPart> getRoutingIndexList() {
       return routingIndex_;
     }
-    public int getRoutingIndexCount() { return routingIndex_.size(); }
-    public net.osmand.binary.OsmandIndex.RoutingPart getRoutingIndex(int index) {
+    int getRoutingIndexCount() { return routingIndex_.size(); }
+    net.osmand.binary.OsmandIndex.RoutingPart getRoutingIndex(int index) {
       return routingIndex_.get(index);
     }
     
@@ -667,7 +667,7 @@ public final class OsmandIndex {
     
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandIndex.FileIndex prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandIndex.FileIndex prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -965,7 +965,7 @@ public final class OsmandIndex {
         result.addressIndex_.set(index, builderForValue.build());
         return this;
       }
-      public Builder addAddressIndex(net.osmand.binary.OsmandIndex.AddressPart value) {
+      Builder addAddressIndex(net.osmand.binary.OsmandIndex.AddressPart value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1016,7 +1016,7 @@ public final class OsmandIndex {
         result.transportIndex_.set(index, builderForValue.build());
         return this;
       }
-      public Builder addTransportIndex(net.osmand.binary.OsmandIndex.TransportPart value) {
+      Builder addTransportIndex(net.osmand.binary.OsmandIndex.TransportPart value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1118,7 +1118,7 @@ public final class OsmandIndex {
         result.mapIndex_.set(index, builderForValue.build());
         return this;
       }
-      public Builder addMapIndex(net.osmand.binary.OsmandIndex.MapPart value) {
+      Builder addMapIndex(net.osmand.binary.OsmandIndex.MapPart value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1169,7 +1169,7 @@ public final class OsmandIndex {
         result.routingIndex_.set(index, builderForValue.build());
         return this;
       }
-      public Builder addRoutingIndex(net.osmand.binary.OsmandIndex.RoutingPart value) {
+      Builder addRoutingIndex(net.osmand.binary.OsmandIndex.RoutingPart value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1220,7 +1220,7 @@ public final class OsmandIndex {
     private AddressPart(boolean noInit) {}
     
     private static final AddressPart defaultInstance;
-    public static AddressPart getDefaultInstance() {
+    static AddressPart getDefaultInstance() {
       return defaultInstance;
     }
     
@@ -1232,35 +1232,35 @@ public final class OsmandIndex {
     public static final int SIZE_FIELD_NUMBER = 1;
     private boolean hasSize;
     private long size_ = 0L;
-    public boolean hasSize() { return hasSize; }
+    boolean hasSize() { return hasSize; }
     public long getSize() { return size_; }
     
     // required int64 offset = 2;
     public static final int OFFSET_FIELD_NUMBER = 2;
     private boolean hasOffset;
     private long offset_ = 0L;
-    public boolean hasOffset() { return hasOffset; }
+    boolean hasOffset() { return hasOffset; }
     public long getOffset() { return offset_; }
     
     // optional string name = 3;
     public static final int NAME_FIELD_NUMBER = 3;
     private boolean hasName;
     private java.lang.String name_ = "";
-    public boolean hasName() { return hasName; }
+    boolean hasName() { return hasName; }
     public java.lang.String getName() { return name_; }
     
     // optional string nameEn = 4;
     public static final int NAMEEN_FIELD_NUMBER = 4;
     private boolean hasNameEn;
     private java.lang.String nameEn_ = "";
-    public boolean hasNameEn() { return hasNameEn; }
+    boolean hasNameEn() { return hasNameEn; }
     public java.lang.String getNameEn() { return nameEn_; }
     
     // optional int32 indexNameOffset = 5;
     public static final int INDEXNAMEOFFSET_FIELD_NUMBER = 5;
     private boolean hasIndexNameOffset;
     private int indexNameOffset_ = 0;
-    public boolean hasIndexNameOffset() { return hasIndexNameOffset; }
+    boolean hasIndexNameOffset() { return hasIndexNameOffset; }
     public int getIndexNameOffset() { return indexNameOffset_; }
     
     // repeated .CityBlock cities = 8;
@@ -1270,8 +1270,8 @@ public final class OsmandIndex {
     public java.util.List<net.osmand.binary.OsmandIndex.CityBlock> getCitiesList() {
       return cities_;
     }
-    public int getCitiesCount() { return cities_.size(); }
-    public net.osmand.binary.OsmandIndex.CityBlock getCities(int index) {
+    int getCitiesCount() { return cities_.size(); }
+    net.osmand.binary.OsmandIndex.CityBlock getCities(int index) {
       return cities_.get(index);
     }
     
@@ -1282,8 +1282,8 @@ public final class OsmandIndex {
     public java.util.List<java.lang.String> getAdditionalTagsList() {
       return additionalTags_;
     }
-    public int getAdditionalTagsCount() { return additionalTags_.size(); }
-    public java.lang.String getAdditionalTags(int index) {
+    int getAdditionalTagsCount() { return additionalTags_.size(); }
+    java.lang.String getAdditionalTags(int index) {
       return additionalTags_.get(index);
     }
     
@@ -1436,7 +1436,7 @@ public final class OsmandIndex {
     
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandIndex.AddressPart prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandIndex.AddressPart prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -1712,7 +1712,7 @@ public final class OsmandIndex {
         result.cities_.set(index, builderForValue.build());
         return this;
       }
-      public Builder addCities(net.osmand.binary.OsmandIndex.CityBlock value) {
+      Builder addCities(net.osmand.binary.OsmandIndex.CityBlock value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1803,7 +1803,7 @@ public final class OsmandIndex {
     private CityBlock(boolean noInit) {}
     
     private static final CityBlock defaultInstance;
-    public static CityBlock getDefaultInstance() {
+    static CityBlock getDefaultInstance() {
       return defaultInstance;
     }
     
@@ -1815,21 +1815,21 @@ public final class OsmandIndex {
     public static final int SIZE_FIELD_NUMBER = 1;
     private boolean hasSize;
     private long size_ = 0L;
-    public boolean hasSize() { return hasSize; }
+    boolean hasSize() { return hasSize; }
     public long getSize() { return size_; }
     
     // required int64 offset = 2;
     public static final int OFFSET_FIELD_NUMBER = 2;
     private boolean hasOffset;
     private long offset_ = 0L;
-    public boolean hasOffset() { return hasOffset; }
+    boolean hasOffset() { return hasOffset; }
     public long getOffset() { return offset_; }
     
     // required int32 type = 3;
     public static final int TYPE_FIELD_NUMBER = 3;
     private boolean hasType;
     private int type_ = 0;
-    public boolean hasType() { return hasType; }
+    boolean hasType() { return hasType; }
     public int getType() { return type_; }
     
     private void initFields() {
@@ -1946,7 +1946,7 @@ public final class OsmandIndex {
     
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandIndex.CityBlock prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandIndex.CityBlock prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -2136,7 +2136,7 @@ public final class OsmandIndex {
     private PoiPart(boolean noInit) {}
     
     private static final PoiPart defaultInstance;
-    public static PoiPart getDefaultInstance() {
+    static PoiPart getDefaultInstance() {
       return defaultInstance;
     }
     
@@ -2148,49 +2148,49 @@ public final class OsmandIndex {
     public static final int SIZE_FIELD_NUMBER = 1;
     private boolean hasSize;
     private long size_ = 0L;
-    public boolean hasSize() { return hasSize; }
+    boolean hasSize() { return hasSize; }
     public long getSize() { return size_; }
     
     // required int64 offset = 2;
     public static final int OFFSET_FIELD_NUMBER = 2;
     private boolean hasOffset;
     private long offset_ = 0L;
-    public boolean hasOffset() { return hasOffset; }
+    boolean hasOffset() { return hasOffset; }
     public long getOffset() { return offset_; }
     
     // optional string name = 3;
     public static final int NAME_FIELD_NUMBER = 3;
     private boolean hasName;
     private java.lang.String name_ = "";
-    public boolean hasName() { return hasName; }
+    boolean hasName() { return hasName; }
     public java.lang.String getName() { return name_; }
     
     // required int32 left = 4;
     public static final int LEFT_FIELD_NUMBER = 4;
     private boolean hasLeft;
     private int left_ = 0;
-    public boolean hasLeft() { return hasLeft; }
+    boolean hasLeft() { return hasLeft; }
     public int getLeft() { return left_; }
     
     // required int32 right = 5;
     public static final int RIGHT_FIELD_NUMBER = 5;
     private boolean hasRight;
     private int right_ = 0;
-    public boolean hasRight() { return hasRight; }
+    boolean hasRight() { return hasRight; }
     public int getRight() { return right_; }
     
     // required int32 top = 6;
     public static final int TOP_FIELD_NUMBER = 6;
     private boolean hasTop;
     private int top_ = 0;
-    public boolean hasTop() { return hasTop; }
+    boolean hasTop() { return hasTop; }
     public int getTop() { return top_; }
     
     // required int32 bottom = 7;
     public static final int BOTTOM_FIELD_NUMBER = 7;
     private boolean hasBottom;
     private int bottom_ = 0;
-    public boolean hasBottom() { return hasBottom; }
+    boolean hasBottom() { return hasBottom; }
     public int getBottom() { return bottom_; }
     
     private void initFields() {
@@ -2338,7 +2338,7 @@ public final class OsmandIndex {
     
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandIndex.PoiPart prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandIndex.PoiPart prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -2631,7 +2631,7 @@ public final class OsmandIndex {
     private MapLevel(boolean noInit) {}
     
     private static final MapLevel defaultInstance;
-    public static MapLevel getDefaultInstance() {
+    static MapLevel getDefaultInstance() {
       return defaultInstance;
     }
     
@@ -2643,56 +2643,56 @@ public final class OsmandIndex {
     public static final int SIZE_FIELD_NUMBER = 1;
     private boolean hasSize;
     private long size_ = 0L;
-    public boolean hasSize() { return hasSize; }
+    boolean hasSize() { return hasSize; }
     public long getSize() { return size_; }
     
     // required int64 offset = 2;
     public static final int OFFSET_FIELD_NUMBER = 2;
     private boolean hasOffset;
     private long offset_ = 0L;
-    public boolean hasOffset() { return hasOffset; }
+    boolean hasOffset() { return hasOffset; }
     public long getOffset() { return offset_; }
     
     // required int32 left = 4;
     public static final int LEFT_FIELD_NUMBER = 4;
     private boolean hasLeft;
     private int left_ = 0;
-    public boolean hasLeft() { return hasLeft; }
+    boolean hasLeft() { return hasLeft; }
     public int getLeft() { return left_; }
     
     // required int32 right = 5;
     public static final int RIGHT_FIELD_NUMBER = 5;
     private boolean hasRight;
     private int right_ = 0;
-    public boolean hasRight() { return hasRight; }
+    boolean hasRight() { return hasRight; }
     public int getRight() { return right_; }
     
     // required int32 top = 6;
     public static final int TOP_FIELD_NUMBER = 6;
     private boolean hasTop;
     private int top_ = 0;
-    public boolean hasTop() { return hasTop; }
+    boolean hasTop() { return hasTop; }
     public int getTop() { return top_; }
     
     // required int32 bottom = 7;
     public static final int BOTTOM_FIELD_NUMBER = 7;
     private boolean hasBottom;
     private int bottom_ = 0;
-    public boolean hasBottom() { return hasBottom; }
+    boolean hasBottom() { return hasBottom; }
     public int getBottom() { return bottom_; }
     
     // optional int32 minzoom = 8;
     public static final int MINZOOM_FIELD_NUMBER = 8;
     private boolean hasMinzoom;
     private int minzoom_ = 0;
-    public boolean hasMinzoom() { return hasMinzoom; }
+    boolean hasMinzoom() { return hasMinzoom; }
     public int getMinzoom() { return minzoom_; }
     
     // optional int32 maxzoom = 9;
     public static final int MAXZOOM_FIELD_NUMBER = 9;
     private boolean hasMaxzoom;
     private int maxzoom_ = 0;
-    public boolean hasMaxzoom() { return hasMaxzoom; }
+    boolean hasMaxzoom() { return hasMaxzoom; }
     public int getMaxzoom() { return maxzoom_; }
     
     private void initFields() {
@@ -2847,7 +2847,7 @@ public final class OsmandIndex {
     
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandIndex.MapLevel prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandIndex.MapLevel prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -3162,7 +3162,7 @@ public final class OsmandIndex {
     private MapPart(boolean noInit) {}
     
     private static final MapPart defaultInstance;
-    public static MapPart getDefaultInstance() {
+    static MapPart getDefaultInstance() {
       return defaultInstance;
     }
     
@@ -3174,21 +3174,21 @@ public final class OsmandIndex {
     public static final int SIZE_FIELD_NUMBER = 1;
     private boolean hasSize;
     private long size_ = 0L;
-    public boolean hasSize() { return hasSize; }
+    boolean hasSize() { return hasSize; }
     public long getSize() { return size_; }
     
     // required int64 offset = 2;
     public static final int OFFSET_FIELD_NUMBER = 2;
     private boolean hasOffset;
     private long offset_ = 0L;
-    public boolean hasOffset() { return hasOffset; }
+    boolean hasOffset() { return hasOffset; }
     public long getOffset() { return offset_; }
     
     // optional string name = 3;
     public static final int NAME_FIELD_NUMBER = 3;
     private boolean hasName;
     private java.lang.String name_ = "";
-    public boolean hasName() { return hasName; }
+    boolean hasName() { return hasName; }
     public java.lang.String getName() { return name_; }
     
     // repeated .MapLevel levels = 5;
@@ -3198,8 +3198,8 @@ public final class OsmandIndex {
     public java.util.List<net.osmand.binary.OsmandIndex.MapLevel> getLevelsList() {
       return levels_;
     }
-    public int getLevelsCount() { return levels_.size(); }
-    public net.osmand.binary.OsmandIndex.MapLevel getLevels(int index) {
+    int getLevelsCount() { return levels_.size(); }
+    net.osmand.binary.OsmandIndex.MapLevel getLevels(int index) {
       return levels_.get(index);
     }
     
@@ -3326,7 +3326,7 @@ public final class OsmandIndex {
     
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandIndex.MapPart prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandIndex.MapPart prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -3535,7 +3535,7 @@ public final class OsmandIndex {
         result.levels_.set(index, builderForValue.build());
         return this;
       }
-      public Builder addLevels(net.osmand.binary.OsmandIndex.MapLevel value) {
+      Builder addLevels(net.osmand.binary.OsmandIndex.MapLevel value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -3586,7 +3586,7 @@ public final class OsmandIndex {
     private RoutingSubregion(boolean noInit) {}
     
     private static final RoutingSubregion defaultInstance;
-    public static RoutingSubregion getDefaultInstance() {
+    static RoutingSubregion getDefaultInstance() {
       return defaultInstance;
     }
     
@@ -3598,56 +3598,56 @@ public final class OsmandIndex {
     public static final int SIZE_FIELD_NUMBER = 1;
     private boolean hasSize;
     private long size_ = 0L;
-    public boolean hasSize() { return hasSize; }
+    boolean hasSize() { return hasSize; }
     public long getSize() { return size_; }
     
     // required int64 offset = 2;
     public static final int OFFSET_FIELD_NUMBER = 2;
     private boolean hasOffset;
     private long offset_ = 0L;
-    public boolean hasOffset() { return hasOffset; }
+    boolean hasOffset() { return hasOffset; }
     public long getOffset() { return offset_; }
     
     // optional bool basemap = 3;
     public static final int BASEMAP_FIELD_NUMBER = 3;
     private boolean hasBasemap;
     private boolean basemap_ = false;
-    public boolean hasBasemap() { return hasBasemap; }
+    boolean hasBasemap() { return hasBasemap; }
     public boolean getBasemap() { return basemap_; }
     
     // required int32 left = 4;
     public static final int LEFT_FIELD_NUMBER = 4;
     private boolean hasLeft;
     private int left_ = 0;
-    public boolean hasLeft() { return hasLeft; }
+    boolean hasLeft() { return hasLeft; }
     public int getLeft() { return left_; }
     
     // required int32 right = 5;
     public static final int RIGHT_FIELD_NUMBER = 5;
     private boolean hasRight;
     private int right_ = 0;
-    public boolean hasRight() { return hasRight; }
+    boolean hasRight() { return hasRight; }
     public int getRight() { return right_; }
     
     // required int32 top = 6;
     public static final int TOP_FIELD_NUMBER = 6;
     private boolean hasTop;
     private int top_ = 0;
-    public boolean hasTop() { return hasTop; }
+    boolean hasTop() { return hasTop; }
     public int getTop() { return top_; }
     
     // required int32 bottom = 7;
     public static final int BOTTOM_FIELD_NUMBER = 7;
     private boolean hasBottom;
     private int bottom_ = 0;
-    public boolean hasBottom() { return hasBottom; }
+    boolean hasBottom() { return hasBottom; }
     public int getBottom() { return bottom_; }
     
     // required uint32 shifToData = 8;
     public static final int SHIFTODATA_FIELD_NUMBER = 8;
     private boolean hasShifToData;
     private int shifToData_ = 0;
-    public boolean hasShifToData() { return hasShifToData; }
+    boolean hasShifToData() { return hasShifToData; }
     public int getShifToData() { return shifToData_; }
     
     private void initFields() {
@@ -3803,7 +3803,7 @@ public final class OsmandIndex {
     
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandIndex.RoutingSubregion prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandIndex.RoutingSubregion prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -4118,7 +4118,7 @@ public final class OsmandIndex {
     private RoutingPart(boolean noInit) {}
     
     private static final RoutingPart defaultInstance;
-    public static RoutingPart getDefaultInstance() {
+    static RoutingPart getDefaultInstance() {
       return defaultInstance;
     }
     
@@ -4130,21 +4130,21 @@ public final class OsmandIndex {
     public static final int SIZE_FIELD_NUMBER = 1;
     private boolean hasSize;
     private long size_ = 0L;
-    public boolean hasSize() { return hasSize; }
+    boolean hasSize() { return hasSize; }
     public long getSize() { return size_; }
     
     // required int64 offset = 2;
     public static final int OFFSET_FIELD_NUMBER = 2;
     private boolean hasOffset;
     private long offset_ = 0L;
-    public boolean hasOffset() { return hasOffset; }
+    boolean hasOffset() { return hasOffset; }
     public long getOffset() { return offset_; }
     
     // optional string name = 3;
     public static final int NAME_FIELD_NUMBER = 3;
     private boolean hasName;
     private java.lang.String name_ = "";
-    public boolean hasName() { return hasName; }
+    boolean hasName() { return hasName; }
     public java.lang.String getName() { return name_; }
     
     // repeated .RoutingSubregion subregions = 5;
@@ -4154,8 +4154,8 @@ public final class OsmandIndex {
     public java.util.List<net.osmand.binary.OsmandIndex.RoutingSubregion> getSubregionsList() {
       return subregions_;
     }
-    public int getSubregionsCount() { return subregions_.size(); }
-    public net.osmand.binary.OsmandIndex.RoutingSubregion getSubregions(int index) {
+    int getSubregionsCount() { return subregions_.size(); }
+    net.osmand.binary.OsmandIndex.RoutingSubregion getSubregions(int index) {
       return subregions_.get(index);
     }
     
@@ -4282,7 +4282,7 @@ public final class OsmandIndex {
     
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandIndex.RoutingPart prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandIndex.RoutingPart prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -4491,7 +4491,7 @@ public final class OsmandIndex {
         result.subregions_.set(index, builderForValue.build());
         return this;
       }
-      public Builder addSubregions(net.osmand.binary.OsmandIndex.RoutingSubregion value) {
+      Builder addSubregions(net.osmand.binary.OsmandIndex.RoutingSubregion value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -4542,7 +4542,7 @@ public final class OsmandIndex {
     private TransportPart(boolean noInit) {}
     
     private static final TransportPart defaultInstance;
-    public static TransportPart getDefaultInstance() {
+    static TransportPart getDefaultInstance() {
       return defaultInstance;
     }
     
@@ -4554,77 +4554,77 @@ public final class OsmandIndex {
     public static final int SIZE_FIELD_NUMBER = 1;
     private boolean hasSize;
     private long size_ = 0L;
-    public boolean hasSize() { return hasSize; }
+    boolean hasSize() { return hasSize; }
     public long getSize() { return size_; }
     
     // required int64 offset = 2;
     public static final int OFFSET_FIELD_NUMBER = 2;
     private boolean hasOffset;
     private long offset_ = 0L;
-    public boolean hasOffset() { return hasOffset; }
+    boolean hasOffset() { return hasOffset; }
     public long getOffset() { return offset_; }
     
     // optional string name = 3;
     public static final int NAME_FIELD_NUMBER = 3;
     private boolean hasName;
     private java.lang.String name_ = "";
-    public boolean hasName() { return hasName; }
+    boolean hasName() { return hasName; }
     public java.lang.String getName() { return name_; }
     
     // optional int32 left = 4;
     public static final int LEFT_FIELD_NUMBER = 4;
     private boolean hasLeft;
     private int left_ = 0;
-    public boolean hasLeft() { return hasLeft; }
+    boolean hasLeft() { return hasLeft; }
     public int getLeft() { return left_; }
     
     // optional int32 right = 5;
     public static final int RIGHT_FIELD_NUMBER = 5;
     private boolean hasRight;
     private int right_ = 0;
-    public boolean hasRight() { return hasRight; }
+    boolean hasRight() { return hasRight; }
     public int getRight() { return right_; }
     
     // optional int32 top = 6;
     public static final int TOP_FIELD_NUMBER = 6;
     private boolean hasTop;
     private int top_ = 0;
-    public boolean hasTop() { return hasTop; }
+    boolean hasTop() { return hasTop; }
     public int getTop() { return top_; }
     
     // optional int32 bottom = 7;
     public static final int BOTTOM_FIELD_NUMBER = 7;
     private boolean hasBottom;
     private int bottom_ = 0;
-    public boolean hasBottom() { return hasBottom; }
+    boolean hasBottom() { return hasBottom; }
     public int getBottom() { return bottom_; }
     
     // optional uint32 stringTableOffset = 8;
     public static final int STRINGTABLEOFFSET_FIELD_NUMBER = 8;
     private boolean hasStringTableOffset;
     private int stringTableOffset_ = 0;
-    public boolean hasStringTableOffset() { return hasStringTableOffset; }
+    boolean hasStringTableOffset() { return hasStringTableOffset; }
     public int getStringTableOffset() { return stringTableOffset_; }
     
     // optional uint32 stringTableLength = 9;
     public static final int STRINGTABLELENGTH_FIELD_NUMBER = 9;
     private boolean hasStringTableLength;
     private int stringTableLength_ = 0;
-    public boolean hasStringTableLength() { return hasStringTableLength; }
+    boolean hasStringTableLength() { return hasStringTableLength; }
     public int getStringTableLength() { return stringTableLength_; }
     
     // optional uint32 stopsTableOffset = 10;
     public static final int STOPSTABLEOFFSET_FIELD_NUMBER = 10;
     private boolean hasStopsTableOffset;
     private int stopsTableOffset_ = 0;
-    public boolean hasStopsTableOffset() { return hasStopsTableOffset; }
+    boolean hasStopsTableOffset() { return hasStopsTableOffset; }
     public int getStopsTableOffset() { return stopsTableOffset_; }
     
     // optional uint32 stopsTableLength = 11;
     public static final int STOPSTABLELENGTH_FIELD_NUMBER = 11;
     private boolean hasStopsTableLength;
     private int stopsTableLength_ = 0;
-    public boolean hasStopsTableLength() { return hasStopsTableLength; }
+    boolean hasStopsTableLength() { return hasStopsTableLength; }
     public int getStopsTableLength() { return stopsTableLength_; }
     
     private void initFields() {
@@ -4796,7 +4796,7 @@ public final class OsmandIndex {
     
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandIndex.TransportPart prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandIndex.TransportPart prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -5184,7 +5184,7 @@ public final class OsmandIndex {
   static {
   }
   
-  public static void internalForceInit() {}
+  private static void internalForceInit() {}
   
   // @@protoc_insertion_point(outer_class_scope)
 }

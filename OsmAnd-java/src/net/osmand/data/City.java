@@ -12,7 +12,7 @@ public class City extends MapObject {
 		// district special type and it is not registered as a city
 		CITY(10000), TOWN(4000), VILLAGE(1300), HAMLET(1000), SUBURB(400), DISTRICT(400), NEIGHBOURHOOD(300);
 
-		private double radius;
+		private final double radius;
 
 		CityType(double radius) {
 			this.radius = radius;
@@ -46,7 +46,7 @@ public class City extends MapObject {
 	}
 
 	private CityType type = null;
-	private List<Street> listOfStreets = new ArrayList<Street>();
+	private final List<Street> listOfStreets = new ArrayList<Street>();
 	private String postcode = null;
 	private City closestCity = null;
 	
@@ -63,7 +63,7 @@ public class City extends MapObject {
 		this.type = type;
 	}
 	
-	public City(String postcode, long id) {
+	private City(String postcode, long id) {
 		this.type = null;
 		this.name = this.enName = postcode;
 		this.id = id;

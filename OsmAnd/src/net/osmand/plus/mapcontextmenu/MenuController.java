@@ -90,7 +90,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 	}
 
 	protected MapContextMenu mapContextMenu;
-	protected MenuBuilder builder;
+	protected final MenuBuilder builder;
 	private int currentMenuState;
 	private MenuType menuType = MenuType.STANDARD;
 	private PointDescription pointDescription;
@@ -115,7 +115,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 
 	protected List<OpeningHours.Info> openingHoursInfo;
 
-	public MenuController(MenuBuilder builder, PointDescription pointDescription, MapActivity mapActivity) {
+	protected MenuController(MenuBuilder builder, PointDescription pointDescription, MapActivity mapActivity) {
 		super(mapActivity);
 		this.pointDescription = pointDescription;
 		this.builder = builder;
@@ -124,7 +124,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		this.builder.setLight(isLight());
 	}
 
-	protected void onCreated() {
+	private void onCreated() {
 	}
 
 	@Override
@@ -134,15 +134,15 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		}
 	}
 
-	public String getPreferredMapLang() {
+	protected String getPreferredMapLang() {
 		return builder.getPreferredMapLang();
 	}
 
-	public String getPreferredMapAppLang() {
+	protected String getPreferredMapAppLang() {
 		return builder.getPreferredMapAppLang();
 	}
 
-	public boolean isTransliterateNames() {
+	protected boolean isTransliterateNames() {
 		return builder.isTransliterateNames();
 	}
 
@@ -215,7 +215,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		setObject(object);
 	}
 
-	protected void setPointDescription(PointDescription pointDescription) {
+	private void setPointDescription(PointDescription pointDescription) {
 		this.pointDescription = pointDescription;
 	}
 
@@ -232,7 +232,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		return true;
 	}
 
-	public void addPlainMenuItem(int iconId, String buttonText, String text, boolean needLinks, boolean isUrl, OnClickListener onClickListener) {
+	protected void addPlainMenuItem(int iconId, String buttonText, String text, boolean needLinks, boolean isUrl, OnClickListener onClickListener) {
 		builder.addPlainMenuItem(iconId, buttonText, text, needLinks, isUrl, onClickListener);
 	}
 
@@ -253,7 +253,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		return pointDescription;
 	}
 
-	public int getInitialMenuState() {
+	private int getInitialMenuState() {
 		if (isLandscapeLayout()) {
 			return MenuState.FULL_SCREEN;
 		} else {
@@ -261,7 +261,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		}
 	}
 
-	public int getSupportedMenuStates() {
+	private int getSupportedMenuStates() {
 		if (isLandscapeLayout()) {
 			return MenuState.FULL_SCREEN;
 		} else {
@@ -269,11 +269,11 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		}
 	}
 
-	protected int getInitialMenuStatePortrait() {
+	private int getInitialMenuStatePortrait() {
 		return MenuState.HEADER_ONLY;
 	}
 
-	protected int getSupportedMenuStatesPortrait() {
+	private int getSupportedMenuStatesPortrait() {
 		return MenuState.HEADER_ONLY | MenuState.HALF_SCREEN | MenuState.FULL_SCREEN;
 	}
 
@@ -281,7 +281,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		return currentMenuState;
 	}
 
-	public MenuType getMenuType() {
+	protected MenuType getMenuType() {
 		return menuType;
 	}
 
@@ -582,13 +582,13 @@ public abstract class MenuController extends BaseMenuController implements Colla
 	public abstract class TitleButtonController {
 		public String caption = "";
 		public int leftIconId = 0;
-		public int rightIconId = 0;
-		public boolean needRightText = false;
-		public String rightTextCaption = "";
+		int rightIconId = 0;
+		public final boolean needRightText = false;
+		public final String rightTextCaption = "";
 		public boolean visible = true;
-		public boolean needColorizeIcon = true;
+		final boolean needColorizeIcon = true;
 		public Drawable leftIcon;
-		public Drawable rightIcon;
+		Drawable rightIcon;
 		public boolean enabled = true;
 
 		@Nullable
@@ -717,7 +717,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		return downloaded;
 	}
 
-	public void setLatLon(@NonNull LatLon latLon) {
+	private void setLatLon(@NonNull LatLon latLon) {
 		this.latLon = latLon;
 		if (builder != null) {
 			builder.setLatLon(latLon);
@@ -874,7 +874,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 
 	public static class ContextMenuToolbarController extends TopToolbarController {
 
-		private MenuController menuController;
+		private final MenuController menuController;
 
 		public ContextMenuToolbarController(MenuController menuController) {
 			super(TopToolbarControllerType.CONTEXT_MENU);

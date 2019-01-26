@@ -603,7 +603,7 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		return mapLinkedToLocation;
 	}
 
-	protected OsmandApplication getMyApplication() {
+	OsmandApplication getMyApplication() {
 		return mapActivity.getMyApplication();
 	}
 

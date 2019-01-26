@@ -20,16 +20,16 @@ public abstract class MapObject implements Comparable<MapObject> {
 	public static final MapObjectComparator BY_NAME_COMPARATOR = new MapObjectComparator();
 
 
-	protected String name = null;
-	protected String enName = null;
+	String name = null;
+	String enName = null;
 	/**
 	 * Looks like: {ru=Москва, dz=མོསི་ཀོ...} and does not contain values of OSM tags "name" and "name:en",
 	 * see {@link name} and {@link enName} respectively.
 	 */
-	protected Map<String, String> names = null;
-	protected LatLon location = null;
-	protected int fileOffset = 0;
-	protected Long id = null;
+    private Map<String, String> names = null;
+	private LatLon location = null;
+	private int fileOffset = 0;
+	Long id = null;
 	private Object referenceFile = null;
 
 
@@ -106,7 +106,7 @@ public abstract class MapObject implements Comparable<MapObject> {
 		return l;
 	}
 
-	public void copyNames(String otherName, String otherEnName, Map<String, String> otherNames, boolean overwrite) {
+	private void copyNames(String otherName, String otherEnName, Map<String, String> otherNames, boolean overwrite) {
 		if (!Algorithms.isEmpty(otherName) && (overwrite || Algorithms.isEmpty(name))) {
 			name = otherName;
 		}
@@ -139,11 +139,11 @@ public abstract class MapObject implements Comparable<MapObject> {
 		copyNames(otherName, otherEnName, otherNames, false);
 	}
 
-	public void copyNames(MapObject s, boolean copyName, boolean copyEnName, boolean overwrite) {
+	private void copyNames(MapObject s, boolean copyName, boolean copyEnName, boolean overwrite) {
 		copyNames((copyName ? s.name : null), (copyEnName ? s.enName : null), s.names, overwrite);
 	}
 
-	public void copyNames(MapObject s) {
+	void copyNames(MapObject s) {
 		copyNames(s, true, true, false);
 	}
 
@@ -242,10 +242,10 @@ public abstract class MapObject implements Comparable<MapObject> {
 
 	public static class MapObjectComparator implements Comparator<MapObject> {
 		private final String l;
-		Collator collator = OsmAndCollator.primaryCollator();
+		final Collator collator = OsmAndCollator.primaryCollator();
 		private boolean transliterate;
 
-		public MapObjectComparator() {
+		MapObjectComparator() {
 			this.l = null;
 		}
 

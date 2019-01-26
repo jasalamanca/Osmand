@@ -21,8 +21,8 @@ public class MapTextLayer extends OsmandMapLayer {
 	
 	private Map<OsmandMapLayer,
 			Collection<?>> textObjects = new LinkedHashMap<>();
-	public static final int TEXT_WRAP = 15;
-	public static final int TEXT_LINES = 3;
+	private static final int TEXT_WRAP = 15;
+	private static final int TEXT_LINES = 3;
 	private Paint paintTextIcon;
 	private OsmandMapTileView view;
 	private boolean alwaysVisible;
@@ -50,7 +50,7 @@ public class MapTextLayer extends OsmandMapLayer {
 		}
 	}
 	
-	public boolean isAlwaysVisible() {
+	private boolean isAlwaysVisible() {
 		return alwaysVisible;
 	}
 	

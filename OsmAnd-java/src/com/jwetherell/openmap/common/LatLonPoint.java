@@ -17,16 +17,16 @@ package com.jwetherell.openmap.common;
 
 public class LatLonPoint {
 
-    public final static double NORTH_POLE = 90.0;
-    public final static double SOUTH_POLE = -NORTH_POLE;
-    public final static double DATELINE = 180.0;
-    public final static double LON_RANGE = 360.0;
-    public final static double EQUIVALENT_TOLERANCE = 0.00001;
+    private final static double NORTH_POLE = 90.0;
+    private final static double SOUTH_POLE = -NORTH_POLE;
+    private final static double DATELINE = 180.0;
+    private final static double LON_RANGE = 360.0;
+    private final static double EQUIVALENT_TOLERANCE = 0.00001;
 
-    protected double lat;
-    protected double lon;
-    protected transient double radLat;
-    protected transient double radLon;
+    private double lat;
+    private double lon;
+    private transient double radLat;
+    private transient double radLon;
 
     /**
      * Default constructor, values set to 0, 0.
@@ -104,7 +104,7 @@ public class LatLonPoint {
      * @param isRadians
      *            true if lat/lon values are radians.
      */
-    public void setLatLon(double lat, double lon, boolean isRadians) {
+    private void setLatLon(double lat, double lon, boolean isRadians) {
         if (isRadians) {
             radLat = lat;
             radLon = lon;
@@ -209,7 +209,7 @@ public class LatLonPoint {
      * @return float normalized latitude in decimal degrees (&minus;90&deg; &le;
      *         &phi; &le; 90&deg;)
      */
-    public final static double normalizeLatitude(double lat) {
+    private static double normalizeLatitude(double lat) {
         if (lat > NORTH_POLE) {
             lat = NORTH_POLE;
         }
@@ -237,7 +237,7 @@ public class LatLonPoint {
      * @return float wrapped longitude in decimal degrees (&minus;180&deg; &le;
      *         &lambda; &le; 180&deg;)
      */
-    public final static double wrapLongitude(double lon) {
+    private static double wrapLongitude(double lon) {
         if ((lon < -DATELINE) || (lon > DATELINE)) {
             lon += DATELINE;
             lon = lon % LON_RANGE;

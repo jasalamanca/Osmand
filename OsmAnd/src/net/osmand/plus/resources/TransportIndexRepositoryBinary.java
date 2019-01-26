@@ -18,13 +18,13 @@ import org.apache.commons.logging.Log;
 
 public class TransportIndexRepositoryBinary implements TransportIndexRepository {
 	private static final Log log = PlatformUtil.getLog(TransportIndexRepositoryBinary.class);
-	private BinaryMapReaderResource resource;
+	private final BinaryMapReaderResource resource;
 
 	public TransportIndexRepositoryBinary(BinaryMapReaderResource resource) {
 		this.resource = resource;
 	}
 	
-	public BinaryMapIndexReader getOpenFile() {
+	private BinaryMapIndexReader getOpenFile() {
 		return resource.getReader(BinaryMapReaderResourceType.TRANSPORT);
 	}
 

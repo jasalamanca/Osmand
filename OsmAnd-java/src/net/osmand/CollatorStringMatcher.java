@@ -16,7 +16,7 @@ public class CollatorStringMatcher implements StringMatcher {
 	private final StringMatcherMode mode;
 	private final String part;
 	
-	public static enum StringMatcherMode {
+	public enum StringMatcherMode {
 		CHECK_ONLY_STARTS_WITH,
 		CHECK_STARTS_FROM_SPACE,
 		CHECK_STARTS_FROM_SPACE_NOT_BEGINNING,
@@ -65,7 +65,7 @@ public class CollatorStringMatcher implements StringMatcher {
 	 * @param base String where to search
 	 * @return true if part is contained in base
 	 */
-	public static boolean ccontains(Collator collator, String base, String part) {
+	private static boolean ccontains(Collator collator, String base, String part) {
 //		int pos = 0;
 //		if (part.length() > 3) {
 //			// improve searching by searching first 3 characters
@@ -114,8 +114,8 @@ public class CollatorStringMatcher implements StringMatcher {
 	 * @param theStart
 	 * @return true if searchIn starts with token
 	 */
-	public static boolean cstartsWith(Collator collator, String searchInParam, String theStart, 
-			boolean checkBeginning, boolean checkSpaces, boolean equals) {
+	private static boolean cstartsWith(Collator collator, String searchInParam, String theStart,
+                                       boolean checkBeginning, boolean checkSpaces, boolean equals) {
 		String searchIn = searchInParam.toLowerCase(Locale.getDefault());
 		int startLength = theStart.length();
 		int searchInLength = searchIn.length();

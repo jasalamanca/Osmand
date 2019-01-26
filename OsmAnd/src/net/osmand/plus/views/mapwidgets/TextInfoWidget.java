@@ -19,34 +19,34 @@ import android.widget.TextView;
 public class TextInfoWidget  {
 
 	private String contentTitle;
-	private View view;
-	private ImageView imageView;
-	private TextView textView;
-	private TextView textViewShadow;
-	private TextView smallTextView;
-	private TextView smallTextViewShadow;
-	private ImageView topImageView;
-	protected TextView topTextView;
+	private final View view;
+	private final ImageView imageView;
+	private final TextView textView;
+	private final TextView textViewShadow;
+	private final TextView smallTextView;
+	private final TextView smallTextViewShadow;
+	private final ImageView topImageView;
+	final TextView topTextView;
 	private boolean explicitlyVisible;
-	private OsmandApplication app;
+	private final OsmandApplication app;
 
 	private int dayIcon;
 	private int nightIcon;
 	private boolean isNight;
-	private ViewGroup bottomLayout;
+	private final ViewGroup bottomLayout;
 
 
 	public TextInfoWidget(Activity activity) {
 		app = (OsmandApplication) activity.getApplication();
 		view = activity.getLayoutInflater().inflate(R.layout.map_hud_widget, null);
-		bottomLayout = (ViewGroup) view.findViewById(R.id.widget_bottom_layout);
-		topImageView = (ImageView) view.findViewById(R.id.widget_top_icon);
-		topTextView = (TextView) view.findViewById(R.id.widget_top_icon_text);
-		imageView = (ImageView) view.findViewById(R.id.widget_icon);
-		textView = (TextView) view.findViewById(R.id.widget_text);
-		textViewShadow = (TextView) view.findViewById(R.id.widget_text_shadow);
-		smallTextViewShadow = (TextView) view.findViewById(R.id.widget_text_small_shadow);
-		smallTextView = (TextView) view.findViewById(R.id.widget_text_small);
+		bottomLayout = view.findViewById(R.id.widget_bottom_layout);
+		topImageView = view.findViewById(R.id.widget_top_icon);
+		topTextView = view.findViewById(R.id.widget_top_icon_text);
+		imageView = view.findViewById(R.id.widget_icon);
+		textView = view.findViewById(R.id.widget_text);
+		textViewShadow = view.findViewById(R.id.widget_text_shadow);
+		smallTextViewShadow = view.findViewById(R.id.widget_text_small_shadow);
+		smallTextView = view.findViewById(R.id.widget_text_small);
 	}
 
 	public OsmandApplication getOsmandApplication() {
@@ -66,7 +66,7 @@ public class TextInfoWidget  {
 	}
 	
 	
-	public void setImageDrawable(Drawable imageDrawable, boolean gone) {
+	void setImageDrawable(Drawable imageDrawable, boolean gone) {
 		if(imageDrawable != null) {
 			imageView.setImageDrawable(imageDrawable);
 			imageView.setVisibility(View.VISIBLE);
@@ -76,7 +76,7 @@ public class TextInfoWidget  {
 		imageView.invalidate();
 	}
 	
-	public void setTopImageDrawable(Drawable imageDrawable, String topText) {
+	void setTopImageDrawable(Drawable imageDrawable, String topText) {
 		if(imageDrawable != null) {
 			topImageView.setImageDrawable(imageDrawable);
 			topImageView.setVisibility(View.VISIBLE);
@@ -109,7 +109,7 @@ public class TextInfoWidget  {
 		}
 	}
 
-	public boolean isNight() {
+	boolean isNight() {
 		return isNight;
 	}
 
@@ -122,7 +122,7 @@ public class TextInfoWidget  {
 		return text + " " + subtext; //$NON-NLS-1$
 	}
 
-	public void setContentDescription(CharSequence text) {
+	void setContentDescription(CharSequence text) {
 		view.setContentDescription(combine(contentTitle, text));
 	}
 	
@@ -140,7 +140,7 @@ public class TextInfoWidget  {
 		updateVisibility(text != null);
 	}
 
-	protected void setTextNoUpdateVisibility(String text, String subtext) {
+	void setTextNoUpdateVisibility(String text, String subtext) {
 		setContentDescription(combine(text, subtext));
 //		if(this.text != null && this.text.length() > 7) {
 //			this.text = this.text.substring(0, 6) +"..";
@@ -161,7 +161,7 @@ public class TextInfoWidget  {
 		}
 	}
 	
-	protected boolean updateVisibility(boolean visible) {
+	boolean updateVisibility(boolean visible) {
 		if (visible != (view.getVisibility() == View.VISIBLE)) {
 			if (visible) {
 				view.setVisibility(View.VISIBLE);

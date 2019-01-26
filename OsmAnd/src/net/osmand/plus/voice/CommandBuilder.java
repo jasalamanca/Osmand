@@ -18,44 +18,44 @@ public class CommandBuilder {
 	
 	private static final Log log = PlatformUtil.getLog(CommandBuilder.class);
 	
-	protected static final String C_PREPARE_TURN = "prepare_turn";  //$NON-NLS-1$
-	protected static final String C_PREPARE_ROUNDABOUT = "prepare_roundabout";  //$NON-NLS-1$
-	protected static final String C_PREPARE_MAKE_UT = "prepare_make_ut";  //$NON-NLS-1$
-	protected static final String C_ROUNDABOUT = "roundabout";  //$NON-NLS-1$
-	protected static final String C_GO_AHEAD = "go_ahead";  //$NON-NLS-1$
-	protected static final String C_TURN = "turn";  //$NON-NLS-1$
-	protected static final String C_MAKE_UT = "make_ut";  //$NON-NLS-1$
-	protected static final String C_MAKE_UTWP = "make_ut_wp";  //$NON-NLS-1$
-	protected static final String C_AND_ARRIVE_DESTINATION = "and_arrive_destination";  //$NON-NLS-1$
-	protected static final String C_REACHED_DESTINATION = "reached_destination";  //$NON-NLS-1$
-	protected static final String C_AND_ARRIVE_INTERMEDIATE = "and_arrive_intermediate";  //$NON-NLS-1$
-	protected static final String C_REACHED_INTERMEDIATE = "reached_intermediate";  //$NON-NLS-1$
-	protected static final String C_AND_ARRIVE_WAYPOINT = "and_arrive_waypoint";  //$NON-NLS-1$
-	protected static final String C_AND_ARRIVE_FAVORITE = "and_arrive_favorite";  //$NON-NLS-1$
-	protected static final String C_AND_ARRIVE_POI_WAYPOINT = "and_arrive_poi";  //$NON-NLS-1$
-	protected static final String C_REACHED_WAYPOINT = "reached_waypoint";  //$NON-NLS-1$
-	protected static final String C_REACHED_FAVORITE = "reached_favorite";  //$NON-NLS-1$
-	protected static final String C_REACHED_POI = "reached_poi";  //$NON-NLS-1$
-	protected static final String C_THEN = "then";  //$NON-NLS-1$
-	protected static final String C_SPEAD_ALARM = "speed_alarm";  //$NON-NLS-1$
-	protected static final String C_ATTENTION = "attention";  //$NON-NLS-1$
-	protected static final String C_OFF_ROUTE = "off_route";  //$NON-NLS-1$
-	protected static final String C_BACK_ON_ROUTE ="back_on_route"; //$NON-NLS-1$
+	private static final String C_PREPARE_TURN = "prepare_turn";  //$NON-NLS-1$
+	private static final String C_PREPARE_ROUNDABOUT = "prepare_roundabout";  //$NON-NLS-1$
+	private static final String C_PREPARE_MAKE_UT = "prepare_make_ut";  //$NON-NLS-1$
+	private static final String C_ROUNDABOUT = "roundabout";  //$NON-NLS-1$
+	private static final String C_GO_AHEAD = "go_ahead";  //$NON-NLS-1$
+	private static final String C_TURN = "turn";  //$NON-NLS-1$
+	private static final String C_MAKE_UT = "make_ut";  //$NON-NLS-1$
+	private static final String C_MAKE_UTWP = "make_ut_wp";  //$NON-NLS-1$
+	private static final String C_AND_ARRIVE_DESTINATION = "and_arrive_destination";  //$NON-NLS-1$
+	private static final String C_REACHED_DESTINATION = "reached_destination";  //$NON-NLS-1$
+	private static final String C_AND_ARRIVE_INTERMEDIATE = "and_arrive_intermediate";  //$NON-NLS-1$
+	private static final String C_REACHED_INTERMEDIATE = "reached_intermediate";  //$NON-NLS-1$
+	private static final String C_AND_ARRIVE_WAYPOINT = "and_arrive_waypoint";  //$NON-NLS-1$
+	private static final String C_AND_ARRIVE_FAVORITE = "and_arrive_favorite";  //$NON-NLS-1$
+	private static final String C_AND_ARRIVE_POI_WAYPOINT = "and_arrive_poi";  //$NON-NLS-1$
+	private static final String C_REACHED_WAYPOINT = "reached_waypoint";  //$NON-NLS-1$
+	private static final String C_REACHED_FAVORITE = "reached_favorite";  //$NON-NLS-1$
+	private static final String C_REACHED_POI = "reached_poi";  //$NON-NLS-1$
+	private static final String C_THEN = "then";  //$NON-NLS-1$
+	private static final String C_SPEAD_ALARM = "speed_alarm";  //$NON-NLS-1$
+	private static final String C_ATTENTION = "attention";  //$NON-NLS-1$
+	private static final String C_OFF_ROUTE = "off_route";  //$NON-NLS-1$
+	private static final String C_BACK_ON_ROUTE ="back_on_route"; //$NON-NLS-1$
 	
 	
-	protected static final String C_BEAR_LEFT = "bear_left";  //$NON-NLS-1$
-	protected static final String C_BEAR_RIGHT = "bear_right";  //$NON-NLS-1$
-	protected static final String C_ROUTE_RECALC = "route_recalc";  //$NON-NLS-1$
-	protected static final String C_ROUTE_NEW_CALC = "route_new_calc";  //$NON-NLS-1$
-	protected static final String C_LOCATION_LOST = "location_lost";  //$NON-NLS-1$
-	protected static final String C_LOCATION_RECOVERED = "location_recovered";  //$NON-NLS-1$
+	private static final String C_BEAR_LEFT = "bear_left";  //$NON-NLS-1$
+	private static final String C_BEAR_RIGHT = "bear_right";  //$NON-NLS-1$
+	private static final String C_ROUTE_RECALC = "route_recalc";  //$NON-NLS-1$
+	private static final String C_ROUTE_NEW_CALC = "route_new_calc";  //$NON-NLS-1$
+	private static final String C_LOCATION_LOST = "location_lost";  //$NON-NLS-1$
+	private static final String C_LOCATION_RECOVERED = "location_recovered";  //$NON-NLS-1$
 	
 	/**
 	 * 
 	 */
 	private final CommandPlayer commandPlayer;
 	private boolean alreadyExecuted = false;
-	private List<Struct> listStruct = new ArrayList<Struct>();
+	private final List<Struct> listStruct = new ArrayList<Struct>();
 	
 	public CommandBuilder(CommandPlayer commandPlayer){
 		this.commandPlayer = commandPlayer;
@@ -258,7 +258,7 @@ public class CommandBuilder {
 	}
 	
 	
-	protected List<String> execute(){
+	List<String> execute(){
 		alreadyExecuted = true;
 		return this.commandPlayer.execute(listStruct);
 	}

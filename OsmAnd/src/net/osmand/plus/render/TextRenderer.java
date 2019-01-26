@@ -30,19 +30,19 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 
-public class TextRenderer {
+class TextRenderer {
 
-	private Paint paintText;
+	private final Paint paintText;
 	private final Context context;
-	private Paint paintIcon;
-	private Typeface defaultTypeface;
-	private Typeface boldItalicTypeface;
-	private Typeface italicTypeface;
-	private Typeface boldTypeface;
+	private final Paint paintIcon;
+	private final Typeface defaultTypeface;
+	private final Typeface boldItalicTypeface;
+	private final Typeface italicTypeface;
+	private final Typeface boldTypeface;
 
 	static class TextDrawInfo {
 
-		public TextDrawInfo(String text) {
+		TextDrawInfo(String text) {
 			this.text = text;
 		}
 
@@ -65,7 +65,7 @@ public class TextRenderer {
 		int textOrder = 100;
 		int textShadowColor = Color.WHITE;
 
-		public void fillProperties(RenderingContext rc, RenderingRuleSearchRequest render, float centerX, float centerY) {
+		void fillProperties(RenderingContext rc, RenderingRuleSearchRequest render, float centerX, float centerY) {
 			this.centerX = centerX;
 			// used only for draw on path where centerY doesn't play role
 			this.vOffset = (int) rc.getComplexValue(render, render.ALL.R_TEXT_DY);
@@ -125,7 +125,7 @@ public class TextRenderer {
 		return a * a;
 	}
 
-	boolean intersects(QuadRect tRect, float tRot, QuadRect sRect, float sRot) {
+	private boolean intersects(QuadRect tRect, float tRot, QuadRect sRect, float sRot) {
 		if (Math.abs(tRot) < Math.PI / 15 && Math.abs(sRot) < Math.PI / 15) {
 			return QuadRect.intersects(tRect, sRect);
 		}
@@ -173,7 +173,7 @@ public class TextRenderer {
 		cv.restore();
 	}
 
-	List<TextDrawInfo> tempSearch = new ArrayList<TextDrawInfo>();
+	private final List<TextDrawInfo> tempSearch = new ArrayList<TextDrawInfo>();
 
 	private boolean findTextIntersection(Canvas cv, RenderingContext rc, QuadTree<TextDrawInfo> boundIntersections, TextDrawInfo text) {
 		// for test purposes
@@ -426,7 +426,7 @@ public class TextRenderer {
 	}
 
 	
-	boolean calculatePathToRotate(RenderingContext rc, TextDrawInfo p, PointF[] points, boolean drawOnPath) {
+	private boolean calculatePathToRotate(RenderingContext rc, TextDrawInfo p, PointF[] points, boolean drawOnPath) {
 		int len = points.length;
 		if (!drawOnPath) {
 			p.drawOnPath = null;

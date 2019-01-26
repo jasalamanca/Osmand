@@ -20,11 +20,11 @@ public class DatabaseHelper {
     private static final String DOWNLOAD_TABLE_CREATE =   "CREATE TABLE " + DOWNLOADS_TABLE_NAME + " (" + //$NON-NLS-1$ //$NON-NLS-2$
             HISTORY_COL_NAME + " TEXT, " + HISTORY_COL_COUNT + " long);"; //$NON-NLS-1$ //$NON-NLS-2$
 
-    private OsmandApplication app;
+    private final OsmandApplication app;
 
     public static class HistoryDownloadEntry {
-    	int count;
-        String name;
+    	final int count;
+        final String name;
 
         public HistoryDownloadEntry(String name, int count){
             this.count = count;
@@ -32,11 +32,11 @@ public class DatabaseHelper {
 
         }
 
-        public String getName() {
+        String getName() {
             return name;
         }
 
-        public int getCount() {
+        int getCount() {
             return count;
         }
     }
@@ -63,11 +63,11 @@ public class DatabaseHelper {
         return conn;
     }
 
-    public void onCreate(SQLiteAPI.SQLiteConnection db) {
+    private void onCreate(SQLiteAPI.SQLiteConnection db) {
         db.execSQL(DOWNLOAD_TABLE_CREATE);
     }
 
-    public void onUpgrade(SQLiteAPI.SQLiteConnection db, int oldVersion, int newVersion) {
+    private void onUpgrade(SQLiteAPI.SQLiteConnection db, int oldVersion, int newVersion) {
     }
 
     public boolean remove(HistoryDownloadEntry e, int type){

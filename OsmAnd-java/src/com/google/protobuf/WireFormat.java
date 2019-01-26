@@ -54,8 +54,8 @@ public final class WireFormat {
   // Osmand Delta change
   public static final int WIRETYPE_FIXED32_LENGTH_DELIMITED = 6;
 
-  static final int TAG_TYPE_BITS = 3;
-  static final int TAG_TYPE_MASK = (1 << TAG_TYPE_BITS) - 1;
+  private static final int TAG_TYPE_BITS = 3;
+  private static final int TAG_TYPE_MASK = (1 << TAG_TYPE_BITS) - 1;
 
   /** Given a tag value, determines the wire type (the lower 3 bits). */
   public static int getTagWireType(final int tag) {

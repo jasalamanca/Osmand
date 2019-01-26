@@ -72,7 +72,7 @@ class LazyField {
    * LazyField is not thread-safe for write access. Synchronizations are needed
    * under read/write situations.
    */
-  public MessageLite setValue(MessageLite value) {
+  private MessageLite setValue(MessageLite value) {
     MessageLite originalValue = this.value;
     this.value = value;
     bytes = null;
@@ -151,7 +151,7 @@ class LazyField {
    * users iterate all fields from FieldSet.
    */
   static class LazyEntry<K> implements Entry<K, Object> {
-    private Entry<K, LazyField> entry;
+    private final Entry<K, LazyField> entry;
 
     private LazyEntry(Entry<K, LazyField> entry) {
       this.entry = entry;
@@ -184,7 +184,7 @@ class LazyField {
   }
 
   static class LazyIterator<K> implements Iterator<Entry<K, Object>> {
-    private Iterator<Entry<K, Object>> iterator;
+    private final Iterator<Entry<K, Object>> iterator;
 
     public LazyIterator(Iterator<Entry<K, Object>> iterator) {
       this.iterator = iterator;

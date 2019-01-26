@@ -64,19 +64,19 @@ import static net.osmand.plus.liveupdates.LiveUpdatesHelper.setAlarmForPendingIn
 
 public class AppInitializer implements IProgress {
 	// 22 - 2.2
-	public static final int VERSION_2_2 = 22;
+	private static final int VERSION_2_2 = 22;
 	// 23 - 2.3
 	public static final int VERSION_2_3 = 23;
 
-	public static final String FIRST_TIME_APP_RUN = "FIRST_TIME_APP_RUN"; //$NON-NLS-1$
-	public static final String VERSION_INSTALLED_NUMBER = "VERSION_INSTALLED_NUMBER"; //$NON-NLS-1$
-	public static final String NUMBER_OF_STARTS = "NUMBER_OF_STARTS"; //$NON-NLS-1$
-	public static final String FIRST_INSTALLED = "FIRST_INSTALLED"; //$NON-NLS-1$
+	private static final String FIRST_TIME_APP_RUN = "FIRST_TIME_APP_RUN"; //$NON-NLS-1$
+	private static final String VERSION_INSTALLED_NUMBER = "VERSION_INSTALLED_NUMBER"; //$NON-NLS-1$
+	private static final String NUMBER_OF_STARTS = "NUMBER_OF_STARTS"; //$NON-NLS-1$
+	private static final String FIRST_INSTALLED = "FIRST_INSTALLED"; //$NON-NLS-1$
 	private static final String VERSION_INSTALLED = "VERSION_INSTALLED"; //$NON-NLS-1$
 	private static final String EXCEPTION_FILE_SIZE = "EXCEPTION_FS"; //$NON-NLS-1$
 
 	public static final String LATEST_CHANGES_URL = "https://osmand.net/blog?id=osmand-2-8-released";
-	private OsmandApplication app;
+	private final OsmandApplication app;
 	private static final org.apache.commons.logging.Log LOG = PlatformUtil.getLog(AppInitializer.class);
 
 	private boolean initSettings = false;
@@ -87,9 +87,9 @@ public class AppInitializer implements IProgress {
 	private long startTime;
 	private long startBgTime;
 	private boolean appInitializing = true;
-	private List<String> warnings = new ArrayList<>();
+	private final List<String> warnings = new ArrayList<>();
 	private String taskName;
-	private List<AppInitializeListener> listeners = new ArrayList<>();
+	private final List<AppInitializeListener> listeners = new ArrayList<>();
 	private SharedPreferences startPrefs;
 
 	public enum InitEvents {
@@ -393,8 +393,8 @@ public class AppInitializer implements IProgress {
 				app.getString(R.string.voice_data_initializing)) : null;
 		new Thread(new Runnable() {
 
-			public CommandPlayer createCommandPlayer(String voiceProvider, ApplicationMode applicationMode,
-													 OsmandApplication osmandApplication, Activity ctx)
+			CommandPlayer createCommandPlayer(String voiceProvider, ApplicationMode applicationMode,
+                                              OsmandApplication osmandApplication, Activity ctx)
 					throws CommandPlayerException {
 				if (voiceProvider != null) {
 					File parent = osmandApplication.getAppPath(IndexConstants.VOICE_INDEX_DIR);
@@ -585,7 +585,7 @@ public class AppInitializer implements IProgress {
 		return b;
 	}
 
-	public void notifyFinish() {
+	private void notifyFinish() {
 		app.uiHandler.post(new Runnable() {
 
 			@Override

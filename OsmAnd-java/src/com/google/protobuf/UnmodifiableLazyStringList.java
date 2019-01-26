@@ -74,7 +74,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String>
   //@Override (Java 1.6 override semantics, but we must support 1.5)
   public ListIterator<String> listIterator(final int index) {
     return new ListIterator<String>() {
-      ListIterator<String> iter = list.listIterator(index);
+      final ListIterator<String> iter = list.listIterator(index);
 
       //@Override (Java 1.6 override semantics, but we must support 1.5)
       public boolean hasNext() {
@@ -126,7 +126,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String>
   @Override
   public Iterator<String> iterator() {
     return new Iterator<String>() {
-      Iterator<String> iter = list.iterator();
+      final Iterator<String> iter = list.iterator();
 
       //@Override (Java 1.6 override semantics, but we must support 1.5)
       public boolean hasNext() {

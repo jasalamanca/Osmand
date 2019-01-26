@@ -55,8 +55,8 @@ public class AddQuickActionDialog extends DialogFragment {
         View root = inflater.inflate(R.layout.quick_action_add_dialog, container, false);
         Adapter adapter = new Adapter(QuickActionFactory.produceTypeActionsListWithHeaders(active));
 
-        RecyclerView recyclerView = (RecyclerView) root.findViewById(R.id.recycler_view);
-        Button btnDismiss = (Button) root.findViewById(R.id.btnDismiss);
+        RecyclerView recyclerView = root.findViewById(R.id.recycler_view);
+        Button btnDismiss = root.findViewById(R.id.btnDismiss);
 
         btnDismiss.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,40 +75,40 @@ public class AddQuickActionDialog extends DialogFragment {
         super.onViewCreated(view, savedInstanceState);
     }
 
-    public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         private static final int HEADER = 1;
         private static final int ITEM = 2;
 
-        private List<QuickAction> data;
+        private final List<QuickAction> data;
 
-        public class ItemViewHolder extends RecyclerView.ViewHolder {
+        class ItemViewHolder extends RecyclerView.ViewHolder {
 
-            private TextView title;
-            private ImageView icon;
+            private final TextView title;
+            private final ImageView icon;
 
-            public ItemViewHolder(View v) {
+            ItemViewHolder(View v) {
                 super(v);
 
-                title = (TextView) v.findViewById(R.id.title);
-                icon = (ImageView) v.findViewById(R.id.image);
+                title = v.findViewById(R.id.title);
+                icon = v.findViewById(R.id.image);
             }
         }
 
-        public class HeaderViewHolder extends RecyclerView.ViewHolder {
+        class HeaderViewHolder extends RecyclerView.ViewHolder {
 
-            private TextView header;
-            private View divider;
+            private final TextView header;
+            private final View divider;
 
-            public HeaderViewHolder(View v) {
+            HeaderViewHolder(View v) {
                 super(v);
 
-                header = (TextView) v.findViewById(R.id.header);
+                header = v.findViewById(R.id.header);
                 divider = v.findViewById(R.id.divider);
             }
         }
 
-        public Adapter(List<QuickAction> data) {
+        Adapter(List<QuickAction> data) {
             this.data = data;
         }
 

@@ -8,11 +8,11 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
 
-public class OsmAndAction {
+class OsmAndAction {
 
-	protected MapActivity mapActivity;
+	final MapActivity mapActivity;
 
-	public OsmAndAction(MapActivity mapActivity) {
+	OsmAndAction(MapActivity mapActivity) {
 		this.mapActivity = mapActivity;
 		OsmAndDialogs.registerDialogAction(this);
 	}
@@ -25,11 +25,11 @@ public class OsmAndAction {
 		return mapActivity.getMapView();
 	}
 	
-	public OsmandSettings getSettings() {
+	OsmandSettings getSettings() {
 		return mapActivity.getMyApplication().getSettings();
 	}
 	
-	protected OsmandApplication getMyApplication() {
+	OsmandApplication getMyApplication() {
 		return mapActivity.getMyApplication();
 	}
 	
@@ -52,7 +52,7 @@ public class OsmAndAction {
 	public void prepareDialog(Activity activity, Bundle args, Dialog dlg) {
 	}
 
-	public void showDialog() {
+	void showDialog() {
 		mapActivity.showDialog(getDialogID());		
 	}
 }

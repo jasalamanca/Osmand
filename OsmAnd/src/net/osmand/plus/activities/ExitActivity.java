@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 
 public class ExitActivity extends Activity {
-	public final static String DISABLE_SERVICE  = "DISABLE_SERVICE";
+	private final static String DISABLE_SERVICE  = "DISABLE_SERVICE";
 	private boolean dis;
 
 	@Override

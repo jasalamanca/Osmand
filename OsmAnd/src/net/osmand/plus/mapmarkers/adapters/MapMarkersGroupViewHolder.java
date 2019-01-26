@@ -7,11 +7,11 @@ import android.widget.TextView;
 
 import net.osmand.plus.R;
 
-public class MapMarkersGroupViewHolder extends RecyclerView.ViewHolder {
+class MapMarkersGroupViewHolder extends RecyclerView.ViewHolder {
 
-	ImageView icon;
-	TextView name;
-	TextView numberCount;
+	final ImageView icon;
+	final TextView name;
+	final TextView numberCount;
 
 	public MapMarkersGroupViewHolder(View itemView) {
 		super(itemView);

@@ -37,26 +37,26 @@ public abstract class MapRenderingTypes {
 	public final static byte RESTRICTION_ONLY_LEFT_TURN = 6;
 	public final static byte RESTRICTION_ONLY_STRAIGHT_ON = 7;
 	
-	private static char TAG_DELIMETER = '/'; //$NON-NLS-1$
+	private static final char TAG_DELIMETER = '/'; //$NON-NLS-1$
 	
 	private String resourceName = null;
 	
-	protected Map<String, MapRulType> types = null;
-	protected List<MapRulType> typeList = new ArrayList<MapRulType>();
-	protected MapRulType nameRuleType;
-	protected MapRulType nameEnRuleType;
+	private Map<String, MapRulType> types = null;
+	private final List<MapRulType> typeList = new ArrayList<MapRulType>();
+	private MapRulType nameRuleType;
+	private MapRulType nameEnRuleType;
 
 	public MapRenderingTypes(String fileName){
 		this.resourceName = fileName;
 	}
 	
-	public Map<String, MapRulType> getEncodingRuleTypes(){
+	private Map<String, MapRulType> getEncodingRuleTypes(){
 		checkIfInitNeeded();
 		return types;
 	}
 	
 	
-	protected void checkIfInitNeeded() {
+	private void checkIfInitNeeded() {
 		if(types == null) {
 			types = new LinkedHashMap<String, MapRulType>();
 			typeList.clear();
@@ -79,7 +79,7 @@ public abstract class MapRenderingTypes {
 		}
 	}
 
-	protected static boolean splitIsNeeded(final Map<String, String> tags) {
+	private static boolean splitIsNeeded(final Map<String, String> tags) {
 		boolean seamark = false;
 		for(String s : tags.keySet()) {
 			if(s.startsWith("seamark:")) {
@@ -188,7 +188,7 @@ public abstract class MapRenderingTypes {
 	}
 	
 	
-	protected void init(){
+	private void init(){
 		InputStream is;
 		try {
 			if(resourceName == null){
@@ -290,7 +290,7 @@ public abstract class MapRenderingTypes {
 		
 	}
 
-	protected MapRulType registerRuleType(MapRulType rt) {
+	private MapRulType registerRuleType(MapRulType rt) {
 		String tag = rt.tagValuePattern.tag;
 		String val = rt.tagValuePattern.value;
 		String keyVal = constructRuleKey(tag, val);
@@ -322,7 +322,7 @@ public abstract class MapRenderingTypes {
 		}
 	}
 
-	protected MapRulType parseCategoryFromXml(XmlPullParser parser) {
+	private MapRulType parseCategoryFromXml(XmlPullParser parser) {
 		MapRulType rtype = new MapRulType();
 		rtype.category = parser.getAttributeValue("", "name");
 		if (!Algorithms.isEmpty(parser.getAttributeValue("", "order"))) {
@@ -331,7 +331,7 @@ public abstract class MapRenderingTypes {
 		return rtype;
 	}
 	
-	protected static String constructRuleKey(String tag, String val) {
+	private static String constructRuleKey(String tag, String val) {
 		if(val == null || val.length() == 0){
 			return tag;
 		}
@@ -356,12 +356,12 @@ public abstract class MapRenderingTypes {
 	
 		
 	protected static class TagValuePattern {
-		protected String tag;
-		protected String value;
+		final String tag;
+		final String value;
 		protected String tagPrefix;
 		protected int substrSt = 0;
 		protected int substrEnd = 0;
-		protected TagValuePattern(String t, String v) {
+		TagValuePattern(String t, String v) {
 			this.tag = t;
 			this.value = v;
 			if(tag == null && value == null) {
@@ -416,41 +416,41 @@ public abstract class MapRenderingTypes {
 	}
 	
 	public static class MapRulType {
-		protected MapRulType[] names;
-		protected TagValuePattern tagValuePattern;
-		protected boolean additional;
-		protected boolean additionalText;
-		protected boolean main;
-		protected int order = 50;
+		MapRulType[] names;
+		TagValuePattern tagValuePattern;
+		boolean additional;
+		boolean additionalText;
+		boolean main;
+		int order = 50;
 		
-		protected String category = null;
-		protected boolean relation;
-		protected boolean relationGroup;
+		String category = null;
+		boolean relation;
+		boolean relationGroup;
 		// creation of only section
-		protected boolean map = true;
-		protected boolean poi = true;
+        boolean map = true;
+		boolean poi = true;
 		
 		// Needed only for map rules
-		protected int minzoom;
-		protected int maxzoom;
-		protected boolean onlyPoint;
-		protected String namePrefix ="";
+        int minzoom;
+		int maxzoom;
+		boolean onlyPoint;
+		String namePrefix ="";
 		
 		
 		// inner id
-		protected int id = -1;
-		protected int freq;
-		protected int targetId ;
-		protected int targetPoiId = -1;
+        int id = -1;
+		int freq;
+		int targetId ;
+		int targetPoiId = -1;
 		
 		private MapRulType(){
 		}
 		
-		public boolean isPOI(){
+		boolean isPOI(){
 			return poi;
 		}
 		
-		public boolean isMap(){
+		boolean isMap(){
 			return map;
 		}
 		
@@ -458,14 +458,14 @@ public abstract class MapRenderingTypes {
 			return order;
 		}
 		
-		public static MapRulType createMainEntity(String tag, String value) {
+		static MapRulType createMainEntity(String tag, String value) {
 			MapRulType rt = new MapRulType();
 			rt.tagValuePattern = new TagValuePattern(tag, value);
 			rt.main = true;
 			return rt;
 		}
 		
-		public static MapRulType createText(String tag) {
+		static MapRulType createText(String tag) {
 			MapRulType rt = new MapRulType();
 			rt.additionalText = true;
 			rt.minzoom = 2;
@@ -474,7 +474,7 @@ public abstract class MapRenderingTypes {
 			return rt;
 		}
 		
-		public static MapRulType createAdditional(String tag, String value) {
+		static MapRulType createAdditional(String tag, String value) {
 			MapRulType rt = new MapRulType();
 			rt.additional = true;
 			rt.minzoom = 2;
@@ -484,7 +484,7 @@ public abstract class MapRenderingTypes {
 		}
 
 
-		public String getTag() {
+		String getTag() {
 			return tagValuePattern.tag;
 		}
 		
@@ -515,7 +515,7 @@ public abstract class MapRenderingTypes {
 			this.targetId = targetId;
 		}
 		
-		public String getValue() {
+		String getValue() {
 			return tagValuePattern.value;
 		}
 		
@@ -523,7 +523,7 @@ public abstract class MapRenderingTypes {
 			return minzoom;
 		}
 		
-		public boolean isAdditional() {
+		boolean isAdditional() {
 			return additional;
 		}
 		
@@ -531,11 +531,11 @@ public abstract class MapRenderingTypes {
 			return additional || additionalText;
 		}
 		
-		public boolean isMain() {
+		boolean isMain() {
 			return main;
 		}
 		
-		public boolean isText() {
+		boolean isText() {
 			return additionalText;
 		}
 		

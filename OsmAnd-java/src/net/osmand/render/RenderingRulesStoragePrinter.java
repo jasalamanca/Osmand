@@ -18,7 +18,7 @@ import net.osmand.render.RenderingRulesStorage.RenderingRulesStorageResolver;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-public class RenderingRulesStoragePrinter {
+class RenderingRulesStoragePrinter {
 	
 	public static void main(String[] args) throws XmlPullParserException, IOException {
 		RenderingRulesStorage.STORE_ATTTRIBUTES = true;
@@ -68,7 +68,7 @@ public class RenderingRulesStoragePrinter {
 	
 	}
 	
-	protected void printJavaFile(String path, String name, RenderingRulesStorage storage) throws IOException {
+	private void printJavaFile(String path, String name, RenderingRulesStorage storage) throws IOException {
 		PrintStream out = System.out;
 		out = new PrintStream(new File(path, name + "RenderingRulesStorage.java"));
 		out.println("\n\npackage net.osmand.render;\n\npublic class " + name + "RenderingRulesStorage {");

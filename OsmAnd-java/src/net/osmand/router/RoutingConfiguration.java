@@ -22,9 +22,9 @@ import java.util.Stack;
 
 public class RoutingConfiguration {
 	
-	public static final int DEFAULT_MEMORY_LIMIT = 30;
+	private static final int DEFAULT_MEMORY_LIMIT = 30;
 	public final float DEVIATION_RADIUS = 3000;
-	public Map<String, String> attributes = new LinkedHashMap<String, String>();
+	private final Map<String, String> attributes = new LinkedHashMap<String, String>();
 
 	// 1. parameters of routing and different tweaks
 	// Influence on A* : f(x) + heuristicCoefficient*g(X)
@@ -53,10 +53,10 @@ public class RoutingConfiguration {
 	public static class Builder {
 		// Design time storage
 		private String defaultRouter = "";
-		private Map<String, GeneralRouter> routers = new LinkedHashMap<String, GeneralRouter>();
-		private Map<String, String> attributes = new LinkedHashMap<String, String>();
-		private HashMap<Long, Location> impassableRoadLocations = new HashMap<Long, Location>();
-		private List<RouteDataObject> impassableRoads = new ArrayList<RouteDataObject>();  
+		private final Map<String, GeneralRouter> routers = new LinkedHashMap<String, GeneralRouter>();
+		private final Map<String, String> attributes = new LinkedHashMap<String, String>();
+		private final HashMap<Long, Location> impassableRoadLocations = new HashMap<Long, Location>();
+		private final List<RouteDataObject> impassableRoads = new ArrayList<RouteDataObject>();
 		
 		// Example
 //		{

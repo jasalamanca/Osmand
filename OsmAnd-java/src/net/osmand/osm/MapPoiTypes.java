@@ -32,17 +32,17 @@ public class MapPoiTypes {
 	private static MapPoiTypes DEFAULT_INSTANCE = null;
 	private static final Log log = PlatformUtil.getLog(MapRenderingTypes.class);
 	private String resourceName;
-	private List<PoiCategory> categories = new ArrayList<PoiCategory>();
+	private final List<PoiCategory> categories = new ArrayList<PoiCategory>();
 	private PoiCategory otherCategory;
 	private PoiCategory otherMapCategory;
 
 	static final String OSM_WIKI_CATEGORY = "osmwiki";
 	private PoiTranslator poiTranslator = null;
 	private boolean init;
-	Map<String, PoiType> poiTypesByTag = new LinkedHashMap<String, PoiType>();
-	Map<String, String> deprecatedTags = new LinkedHashMap<String, String>();
-	Map<String, String> poiAdditionalCategoryIconNames = new LinkedHashMap<String, String>();
-	List<PoiType> textPoiAdditionals = new ArrayList<PoiType>();
+	private final Map<String, PoiType> poiTypesByTag = new LinkedHashMap<String, PoiType>();
+	private final Map<String, String> deprecatedTags = new LinkedHashMap<String, String>();
+	private final Map<String, String> poiAdditionalCategoryIconNames = new LinkedHashMap<String, String>();
+	private final List<PoiType> textPoiAdditionals = new ArrayList<PoiType>();
 
 
 	public MapPoiTypes(String fileName) {
@@ -299,7 +299,7 @@ public class MapPoiTypes {
 		}
 	}
 
-	public void initFromInputStream(InputStream is) {
+	private void initFromInputStream(InputStream is) {
 		long time = System.currentTimeMillis();
 		List<PoiType> referenceTypes = new ArrayList<PoiType>();
 		final Map<String, PoiType> allTypes = new LinkedHashMap<String, PoiType>();
@@ -730,7 +730,7 @@ public class MapPoiTypes {
 		return getPoiCategoryByName(t.getKeyName()) != otherCategory;
 	}
 
-	public void initPoiTypesByTag() {
+	private void initPoiTypesByTag() {
 		if (!poiTypesByTag.isEmpty()) {
 			return;
 		}

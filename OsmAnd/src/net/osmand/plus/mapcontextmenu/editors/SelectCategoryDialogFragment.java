@@ -65,7 +65,7 @@ public class SelectCategoryDialogFragment extends DialogFragment {
 		builder.setTitle(R.string.favorite_category_select);
 		final View v = getActivity().getLayoutInflater().inflate(R.layout.favorite_categories_dialog, null, false);
 
-		LinearLayout ll = (LinearLayout) v.findViewById(R.id.list_container);
+		LinearLayout ll = v.findViewById(R.id.list_container);
 
 		final FavouritesDbHelper helper = ((OsmandApplication) getActivity().getApplication()).getFavorites();
 		if (gpxFile != null) {
@@ -80,7 +80,7 @@ public class SelectCategoryDialogFragment extends DialogFragment {
 			}
 		}
 		View itemView = getActivity().getLayoutInflater().inflate(R.layout.favorite_category_dialog_item, null);
-		Button button = (Button)itemView.findViewById(R.id.button);
+		Button button = itemView.findViewById(R.id.button);
 		button.setCompoundDrawablesWithIntrinsicBounds(getIcon(getActivity(), R.drawable.map_zoom_in), null, null, null);
 		button.setCompoundDrawablePadding(dpToPx(15f));
 		button.setText(getActivity().getResources().getText(R.string.favorite_category_add_new));
@@ -103,7 +103,7 @@ public class SelectCategoryDialogFragment extends DialogFragment {
 
 	private void addCategory(LinearLayout ll, final String categoryName, final int categoryColor) {
 		View itemView = getActivity().getLayoutInflater().inflate(R.layout.favorite_category_dialog_item, null);
-		Button button = (Button)itemView.findViewById(R.id.button);
+		Button button = itemView.findViewById(R.id.button);
 		if (categoryColor != 0) {
 			button.setCompoundDrawablesWithIntrinsicBounds(getIcon(getActivity(), R.drawable.ic_action_folder, categoryColor), null, null, null);
 		} else {
@@ -151,7 +151,7 @@ public class SelectCategoryDialogFragment extends DialogFragment {
 		bundle.putString(KEY_CTX_SEL_CAT_EDITOR_TAG, editorTag);
 	}
 
-	public void restoreState(Bundle bundle) {
+	private void restoreState(Bundle bundle) {
 		editorTag = bundle.getString(KEY_CTX_SEL_CAT_EDITOR_TAG);
 	}
 

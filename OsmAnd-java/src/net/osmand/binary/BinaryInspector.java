@@ -59,7 +59,7 @@ import com.google.protobuf.WireFormat;
 public class BinaryInspector {
 
 
-	public static final int BUFFER_SIZE = 1 << 20;
+	private static final int BUFFER_SIZE = 1 << 20;
 	public static final int SHIFT_ID = 6;
 	private VerboseInfo vInfo;
 	public static void main(String[] args) throws IOException {
@@ -115,7 +115,7 @@ public class BinaryInspector {
 		}
 	}
 
-	protected static class VerboseInfo {
+	static class VerboseInfo {
 		boolean vaddress;
 		boolean vcities;
 		boolean vcitynames;
@@ -139,35 +139,35 @@ public class BinaryInspector {
 		String lang = null;
 		int zoom = 15;
 
-		public boolean isVaddress() {
+		boolean isVaddress() {
 			return vaddress;
 		}
 
-		public int getZoom() {
+		int getZoom() {
 			return zoom;
 		}
 
-		public boolean isVmap() {
+		boolean isVmap() {
 			return vmap;
 		}
 
-		public boolean isVrouting() {
+		boolean isVrouting() {
 			return vrouting;
 		}
 
-		public boolean isVpoi() {
+		boolean isVpoi() {
 			return vpoi;
 		}
 
-		public boolean isVtransport() {
+		boolean isVtransport() {
 			return vtransport;
 		}
 
-		public boolean isVStats() {
+		boolean isVStats() {
 			return vstats;
 		}
 
-		public VerboseInfo(String[] params) throws FileNotFoundException {
+		VerboseInfo(String[] params) throws FileNotFoundException {
 			for (int i = 0; i < params.length; i++) {
 				if (params[i].equals("-vaddress")) {
 					vaddress = true;
@@ -216,13 +216,13 @@ public class BinaryInspector {
 			}
 		}
 
-		public boolean contains(MapObject o) {
+		boolean contains(MapObject o) {
 			return lattop >= o.getLocation().getLatitude() && latbottom <= o.getLocation().getLatitude()
 					&& lonleft <= o.getLocation().getLongitude() && lonright >= o.getLocation().getLongitude();
 
 		}
 
-		public void close() throws IOException {
+		void close() throws IOException {
 			if (osmOut != null) {
 				osmOut.close();
 				osmOut = null;
@@ -231,7 +231,7 @@ public class BinaryInspector {
 		}
 	}
 
-	public void inspector(String[] args) throws IOException {
+	private void inspector(String[] args) throws IOException {
 		String f = args[0];
 		if (f.charAt(0) == '-') {
 			// command
@@ -276,7 +276,7 @@ public class BinaryInspector {
 		}
 	}
 
-	public static final void writeInt(CodedOutputStream ous, int v) throws IOException {
+	private static void writeInt(CodedOutputStream ous, int v) throws IOException {
 		ous.writeRawByte((v >>> 24) & 0xFF);
 		ous.writeRawByte((v >>> 16) & 0xFF);
 		ous.writeRawByte((v >>>  8) & 0xFF);
@@ -285,7 +285,7 @@ public class BinaryInspector {
 	}
 
 	@SuppressWarnings("unchecked")
-	public  static List<Float> combineParts(File fileToExtract, Map<File, String> partsToExtractFrom) throws IOException {
+    private static List<Float> combineParts(File fileToExtract, Map<File, String> partsToExtractFrom) throws IOException {
 		BinaryMapIndexReader[] indexes = new BinaryMapIndexReader[partsToExtractFrom.size()];
 		RandomAccessFile[] rafs = new RandomAccessFile[partsToExtractFrom.size()];
 
@@ -415,7 +415,7 @@ public class BinaryInspector {
 	}
 
 
-	public static void copyBinaryPart(CodedOutputStream ous, byte[] BUFFER, RandomAccessFile raf, long fp, int length)
+	private static void copyBinaryPart(CodedOutputStream ous, byte[] BUFFER, RandomAccessFile raf, long fp, int length)
 			throws IOException {
 		raf.seek(fp);
 		int toRead = length;
@@ -433,7 +433,7 @@ public class BinaryInspector {
 	}
 
 
-	protected String formatBounds(int left, int right, int top, int bottom) {
+	private String formatBounds(int left, int right, int top, int bottom) {
 		double l = MapUtils.get31LongitudeX(left);
 		double r = MapUtils.get31LongitudeX(right);
 		double t = MapUtils.get31LatitudeY(top);
@@ -441,12 +441,12 @@ public class BinaryInspector {
 		return formatLatBounds(l, r, t, b);
 	}
 
-	protected String formatLatBounds(double l, double r, double t, double b) {
+	private String formatLatBounds(double l, double r, double t, double b) {
 		MessageFormat format = new MessageFormat("(left top - right bottom) : {0,number,#.####}, {1,number,#.####} NE - {2,number,#.####}, {3,number,#.####} NE", new Locale("EN", "US"));
 		return format.format(new Object[]{l, t, r, b});
 	}
 
-	public void printFileInformation(String fileName) throws IOException {
+	private void printFileInformation(String fileName) throws IOException {
 		File file = new File(fileName);
 		if (!file.exists()) {
 			println("Binary OsmAnd index " + fileName + " was not found.");
@@ -455,12 +455,12 @@ public class BinaryInspector {
 		printFileInformation(file);
 	}
 
-	public void printFileInformation(File file) throws IOException {
+	private void printFileInformation(File file) throws IOException {
 		RandomAccessFile r = new RandomAccessFile(file.getAbsolutePath(), "r");
 		printFileInformation(r, file);
 	}
 
-	public void printFileInformation(RandomAccessFile r, File file) throws IOException {
+	private void printFileInformation(RandomAccessFile r, File file) throws IOException {
 		String filename = file.getName();
 		try {
 			BinaryMapIndexReader index = new BinaryMapIndexReader(r, file);
@@ -726,21 +726,21 @@ public class BinaryInspector {
 	}
 
 	private class MapStats {
-		public int lastStringNamesSize;
-		public int lastObjectIdSize;
-		public int lastObjectHeaderInfo;
-		public int lastObjectAdditionalTypes;
-		public int lastObjectTypes;
-		public int lastObjectCoordinates;
-		public int lastObjectCoordinatesCount;
+		int lastStringNamesSize;
+		int lastObjectIdSize;
+		int lastObjectHeaderInfo;
+		int lastObjectAdditionalTypes;
+		int lastObjectTypes;
+		int lastObjectCoordinates;
+		int lastObjectCoordinatesCount;
 
-		public int lastObjectSize;
+		int lastObjectSize;
 
-		private Map<String, MapStatKey> types = new LinkedHashMap<String, BinaryInspector.MapStatKey>();
+		private final Map<String, MapStatKey> types = new LinkedHashMap<String, BinaryInspector.MapStatKey>();
 		private SearchRequest<BinaryMapDataObject> req;
 
-		public void processKey(String simpleString, MapObjectStat st, TIntObjectHashMap<String> objectNames,
-		                       int coordinates, boolean names) {
+		void processKey(String simpleString, MapObjectStat st, TIntObjectHashMap<String> objectNames,
+                        int coordinates, boolean names) {
 			TIntObjectIterator<String> it = objectNames.iterator();
 			int nameLen = 0;
 			while (it.hasNext()) {
@@ -765,7 +765,7 @@ public class BinaryInspector {
 		}
 
 
-		public void process(BinaryMapDataObject obj) {
+		void process(BinaryMapDataObject obj) {
 			MapObjectStat st = req.stat;
 			int cnt = 0;
 			boolean names = st.lastObjectCoordinates == 0;
@@ -798,7 +798,7 @@ public class BinaryInspector {
 
 		}
 
-		public void print() {
+		void print() {
 			MapObjectStat st = req.stat;
 			println("MAP BLOCK INFO:");
 			long b = 0;
@@ -826,7 +826,7 @@ public class BinaryInspector {
 					return compare(o1.statObjectSize, o2.statObjectSize);
 				}
 
-				public int compare(long x, long y) {
+				int compare(long x, long y) {
 			        return (x < y) ? -1 : ((x == y) ? 0 : 1);
 			    }
 			});
@@ -850,7 +850,7 @@ public class BinaryInspector {
 		}
 
 
-		public void setReq(SearchRequest<BinaryMapDataObject> req) {
+		void setReq(SearchRequest<BinaryMapDataObject> req) {
 			this.req = req;
 		}
 
@@ -921,7 +921,7 @@ public class BinaryInspector {
 	}
 
 
-	public static void printMapDetails(BinaryMapDataObject obj, StringBuilder b, boolean vmapCoordinates) {
+	private static void printMapDetails(BinaryMapDataObject obj, StringBuilder b, boolean vmapCoordinates) {
 		boolean multipolygon = obj.getPolygonInnerCoordinates() != null && obj.getPolygonInnerCoordinates().length > 0;
 		if (multipolygon) {
 			b.append("Multipolygon");
@@ -1273,7 +1273,7 @@ public class BinaryInspector {
 
 	}
 
-	public static void printUsage(String warning) {
+	private static void printUsage(String warning) {
 		if (warning != null) {
 			System.out.println(warning);
 		}

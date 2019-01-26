@@ -63,7 +63,7 @@ public class OrderByBottomSheetDialogFragment extends MenuBottomSheetDialogFragm
 		return mainView;
 	}
 
-	private View.OnClickListener orderByModeOnClickListener = new View.OnClickListener() {
+	private final View.OnClickListener orderByModeOnClickListener = new View.OnClickListener() {
 
 		@Override
 		public void onClick(View view) {

@@ -24,24 +24,24 @@ import org.xmlpull.v1.XmlPullParserException;
 
 public class TestRouting {
 	
-	public static int MEMORY_TEST_LIMIT = 800;
-	public static boolean TEST_WO_HEURISTIC = false; 
-	public static boolean TEST_BOTH_DIRECTION = false;
-	public static NativeLibrary lib = null;
+	private static final int MEMORY_TEST_LIMIT = 800;
+	private static final boolean TEST_WO_HEURISTIC = false;
+	private static final boolean TEST_BOTH_DIRECTION = false;
+	private static final NativeLibrary lib = null;
 	private static String vehicle = "car";
 	
 	
 	public static class Parameters {
-		public File obfDir;
-		public List<File> tests = new ArrayList<File>();
-		public double startLat = 0;
-		public double startLon = 0;
-		public double endLat = 0;
-		public double endLon = 0;
-		public RoutingConfiguration.Builder configBuilder;
-		public String vehicle = "car";
+		File obfDir;
+		final List<File> tests = new ArrayList<File>();
+		double startLat = 0;
+		double startLon = 0;
+		double endLat = 0;
+		double endLon = 0;
+		RoutingConfiguration.Builder configBuilder;
+		String vehicle = "car";
 		
-		public static Parameters init(String[] args) throws IOException, XmlPullParserException {
+		static Parameters init(String[] args) throws IOException, XmlPullParserException {
 			Parameters p = new Parameters();
 			String routingXmlFile = null;
 			String obfDirectory = null;
@@ -123,7 +123,7 @@ public class TestRouting {
 	}
 
 
-	public static boolean runAllTests(Parameters params, NativeLibrary lib) throws FileNotFoundException, IOException, Exception {
+	private static boolean runAllTests(Parameters params, NativeLibrary lib) throws FileNotFoundException, IOException, Exception {
 		BinaryMapIndexReader[] rs = collectFiles(params.obfDir.getAbsolutePath());
 		
 		boolean allSuccess = true;
@@ -136,7 +136,7 @@ public class TestRouting {
 	}
 
 
-	public static void info() {
+	private static void info() {
 		println("Run router tests is console utility to test route calculation for osmand. It is also possible to calculate one route from -start to -end.");
 		println("\nUsage for run tests : runTestsSuite [-routingXmlPath=PATH] [-verbose] [-obfDir=PATH] [-vehicle=VEHICLE_STRING] [-start=lat;lon] [-end=lat;lon]  [-testDir=PATH] {individualTestPath}");
     }
@@ -147,7 +147,7 @@ public class TestRouting {
 	}
 
 
-	public static boolean test(NativeLibrary lib, InputStream resource, BinaryMapIndexReader[] rs, RoutingConfiguration.Builder config) throws Exception {
+	private static boolean test(NativeLibrary lib, InputStream resource, BinaryMapIndexReader[] rs, RoutingConfiguration.Builder config) throws Exception {
 		XmlPullParser parser = PlatformUtil.newXMLPullParser();
 		parser.setInput(resource, "UTF-8");
 		int tok;

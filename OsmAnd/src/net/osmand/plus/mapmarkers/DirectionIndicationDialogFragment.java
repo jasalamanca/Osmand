@@ -62,7 +62,7 @@ public class DirectionIndicationDialogFragment extends BaseOsmAndDialogFragment 
 
 		mainView = inflater.inflate(R.layout.fragment_direction_indication_dialog, container);
 
-		Toolbar toolbar = (Toolbar) mainView.findViewById(R.id.toolbar);
+		Toolbar toolbar = mainView.findViewById(R.id.toolbar);
 		toolbar.setNavigationIcon(getIconsCache().getIcon(R.drawable.ic_arrow_back));
 		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
 			@Override
@@ -71,7 +71,7 @@ public class DirectionIndicationDialogFragment extends BaseOsmAndDialogFragment 
 			}
 		});
 
-		TextView appModeTv = (TextView) mainView.findViewById(R.id.app_mode_text_view);
+		TextView appModeTv = mainView.findViewById(R.id.app_mode_text_view);
 		ApplicationMode appMode = settings.APPLICATION_MODE.get();
 		appModeTv.setText(appMode.getStringResource());
 		appModeTv.setCompoundDrawablesWithIntrinsicBounds(null, null, getIconsCache().getIcon(appMode.getSmallIconDark()), null);
@@ -105,7 +105,7 @@ public class DirectionIndicationDialogFragment extends BaseOsmAndDialogFragment 
 
 		updateHelpImage();
 
-		final TextView menuTv = (TextView) mainView.findViewById(R.id.active_markers_text_view);
+		final TextView menuTv = mainView.findViewById(R.id.active_markers_text_view);
 		menuTv.setText(settings.DISPLAYED_MARKERS_WIDGETS_COUNT.get() == 1 ? R.string.shared_string_one : R.string.shared_string_two);
 		menuTv.setCompoundDrawablesWithIntrinsicBounds(null, null, getContentIcon(R.drawable.ic_action_arrow_drop_down), null);
 		menuTv.setOnClickListener(new View.OnClickListener() {
@@ -136,7 +136,7 @@ public class DirectionIndicationDialogFragment extends BaseOsmAndDialogFragment 
 			}
 		});
 
-		final CompoundButton distanceIndicationToggle = (CompoundButton) mainView.findViewById(R.id.distance_indication_switch);
+		final CompoundButton distanceIndicationToggle = mainView.findViewById(R.id.distance_indication_switch);
 		distanceIndicationToggle.setChecked(settings.MARKERS_DISTANCE_INDICATION_ENABLED.get());
 		mainView.findViewById(R.id.distance_indication_row).setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -164,7 +164,7 @@ public class DirectionIndicationDialogFragment extends BaseOsmAndDialogFragment 
 
 		updateSelection(false);
 
-		final CompoundButton showArrowsToggle = (CompoundButton) mainView.findViewById(R.id.show_arrows_switch);
+		final CompoundButton showArrowsToggle = mainView.findViewById(R.id.show_arrows_switch);
 		showArrowsToggle.setChecked(settings.SHOW_ARROWS_TO_FIRST_MARKERS.get());
 		mainView.findViewById(R.id.show_arrows_row).setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -173,7 +173,7 @@ public class DirectionIndicationDialogFragment extends BaseOsmAndDialogFragment 
 			}
 		});
 
-		final CompoundButton showLinesToggle = (CompoundButton) mainView.findViewById(R.id.show_guide_line_switch);
+		final CompoundButton showLinesToggle = mainView.findViewById(R.id.show_guide_line_switch);
 		showLinesToggle.setChecked(settings.SHOW_LINES_TO_FIRST_MARKERS.get());
 		mainView.findViewById(R.id.show_guide_line_row).setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -182,7 +182,7 @@ public class DirectionIndicationDialogFragment extends BaseOsmAndDialogFragment 
 			}
 		});
 
-		final CompoundButton oneTapActiveToggle = (CompoundButton) mainView.findViewById(R.id.one_tap_active_switch);
+		final CompoundButton oneTapActiveToggle = mainView.findViewById(R.id.one_tap_active_switch);
 		oneTapActiveToggle.setChecked(settings.SELECT_MARKER_ON_SINGLE_TAP.get());
 		mainView.findViewById(R.id.one_tap_active_row).setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -201,7 +201,7 @@ public class DirectionIndicationDialogFragment extends BaseOsmAndDialogFragment 
 
 	private MapActivity getMapActivity() {
 		Activity activity = getActivity();
-		if (activity != null && activity instanceof MapActivity) {
+		if (activity instanceof MapActivity) {
 			return (MapActivity) activity;
 		}
 		return null;
@@ -354,14 +354,14 @@ public class DirectionIndicationDialogFragment extends BaseOsmAndDialogFragment 
 	}
 
 	private void updateIcon(int imageViewId, int drawableId, boolean active) {
-		ImageView iv = (ImageView) mainView.findViewById(imageViewId);
+		ImageView iv = mainView.findViewById(imageViewId);
 		iv.setBackgroundDrawable(getIconBackground(active));
 		iv.setImageDrawable(getIconTop(drawableId, active));
 	}
 
 	private void updateMarkerModeRow(int rowId, int radioButtonId, boolean checked, boolean active) {
 		boolean night = !getSettings().isLightContent();
-		RadioButton rb = (RadioButton) mainView.findViewById(radioButtonId);
+		RadioButton rb = mainView.findViewById(radioButtonId);
 		int colorId = active ? night ? R.color.osmand_orange : R.color.dashboard_blue
 				: night ? R.color.ctx_menu_info_text_dark : R.color.icon_color;
 		rb.setChecked(checked);

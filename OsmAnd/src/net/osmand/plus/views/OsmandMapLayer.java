@@ -82,11 +82,11 @@ public abstract class OsmandMapLayer {
 	}
 
 
-	public <Params> void executeTaskInBackground(AsyncTask<Params, ?, ?> task, Params... params) {
+	protected <Params> void executeTaskInBackground(AsyncTask<Params, ?, ?> task, Params... params) {
 		task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, params);
 	}
 
-	public boolean isPresentInFullObjects(LatLon latLon) {
+	boolean isPresentInFullObjects(LatLon latLon) {
 		if (fullObjectsLatLon == null) {
 			return true;
 		} else if (latLon != null) {
@@ -95,7 +95,7 @@ public abstract class OsmandMapLayer {
 		return false;
 	}
 
-	public boolean isPresentInSmallObjects(LatLon latLon) {
+	boolean isPresentInSmallObjects(LatLon latLon) {
 		if (smallObjectsLatLon != null && latLon != null) {
 			return smallObjectsLatLon.contains(latLon);
 		}
@@ -133,12 +133,12 @@ public abstract class OsmandMapLayer {
 	}
 
 
-	protected boolean isIn(int x, int y, int lx, int ty, int rx, int by) {
+	boolean isIn(int x, int y, int lx, int ty, int rx, int by) {
 		return x >= lx && x <= rx && y >= ty && y <= by;
 	}
 
 
-	public int calculatePath(RotatedTileBox tb, TIntArrayList xs, TIntArrayList ys, Path path) {
+	protected int calculatePath(RotatedTileBox tb, TIntArrayList xs, TIntArrayList ys, Path path) {
 		boolean segmentStarted = false;
 		int prevX = xs.get(0);
 		int prevY = ys.get(0);
@@ -191,13 +191,13 @@ public abstract class OsmandMapLayer {
 	}
 
 	@NonNull
-	public QuadTree<QuadRect> initBoundIntersections(RotatedTileBox tileBox) {
+    protected QuadTree<QuadRect> initBoundIntersections(RotatedTileBox tileBox) {
 		QuadRect bounds = new QuadRect(0, 0, tileBox.getPixWidth(), tileBox.getPixHeight());
 		bounds.inset(-bounds.width() / 4, -bounds.height() / 4);
 		return new QuadTree<>(bounds, 4, 0.6f);
 	}
 
-	public boolean intersects(QuadTree<QuadRect> boundIntersections, float x, float y, float width, float height) {
+	protected boolean intersects(QuadTree<QuadRect> boundIntersections, float x, float y, float width, float height) {
 		List<QuadRect> result = new ArrayList<>();
 		QuadRect visibleRect = calculateRect(x, y, width, height);
 		boundIntersections.queryInBox(new QuadRect(visibleRect.left, visibleRect.top, visibleRect.right, visibleRect.bottom), result);
@@ -211,7 +211,7 @@ public abstract class OsmandMapLayer {
 		return false;
 	}
 
-	public QuadRect calculateRect(float x, float y, float width, float height) {
+	private QuadRect calculateRect(float x, float y, float width, float height) {
 		QuadRect rf;
 		double left = x - width / 2.0d;
 		double top = y - height / 2.0d;
@@ -221,7 +221,7 @@ public abstract class OsmandMapLayer {
 		return rf;
 	}
 
-	public Amenity findAmenity(OsmandApplication app, long id, List<String> names, LatLon latLon, int radius) {
+	Amenity findAmenity(OsmandApplication app, long id, List<String> names, LatLon latLon, int radius) {
 		QuadRect rect = MapUtils.calculateLatLonBbox(latLon.getLatitude(), latLon.getLongitude(), radius);
 		List<Amenity> amenities = app.getResourceManager().searchAmenities(
 				new BinaryMapIndexReader.SearchPoiTypeFilter() {
@@ -261,7 +261,7 @@ public abstract class OsmandMapLayer {
 		return res;
 	}
 
-	public int getDefaultRadiusPoi(RotatedTileBox tb) {
+	int getDefaultRadiusPoi(RotatedTileBox tb) {
 		int r;
 		final double zoom = tb.getZoom();
 		if (zoom <= 15) {
@@ -277,13 +277,13 @@ public abstract class OsmandMapLayer {
 	}
 
 	public abstract class MapLayerData<T> {
-		public int ZOOM_THRESHOLD = 1;
-		public RotatedTileBox queriedBox;
-		protected T results;
-		protected Task currentTask;
-		protected Task pendingTask;
+		protected int ZOOM_THRESHOLD = 1;
+		RotatedTileBox queriedBox;
+		T results;
+		Task currentTask;
+		Task pendingTask;
 
-		public RotatedTileBox getQueriedBox() {
+		RotatedTileBox getQueriedBox() {
 			return queriedBox;
 		}
 
@@ -322,11 +322,11 @@ public abstract class OsmandMapLayer {
 
 		protected abstract T calculateResult(RotatedTileBox tileBox);
 
-		public class Task extends AsyncTask<Object, Object, T> {
-			private RotatedTileBox dataBox;
-			private RotatedTileBox requestedBox;
+		protected class Task extends AsyncTask<Object, Object, T> {
+			private final RotatedTileBox dataBox;
+			private final RotatedTileBox requestedBox;
 
-			public Task(RotatedTileBox requestedBox, RotatedTileBox dataBox) {
+			Task(RotatedTileBox requestedBox, RotatedTileBox dataBox) {
 				this.requestedBox = requestedBox;
 				this.dataBox = dataBox;
 			}
@@ -335,7 +335,7 @@ public abstract class OsmandMapLayer {
 				return requestedBox;
 			}
 
-			public RotatedTileBox getDataBox() {
+			RotatedTileBox getDataBox() {
 				return dataBox;
 			}
 
@@ -377,23 +377,23 @@ public abstract class OsmandMapLayer {
 	}
 
 	protected static class RenderingLineAttributes {
-		protected int cachedHash;
-		public Paint paint;
-		public int defaultWidth = 0;
-		public int defaultColor = 0;
-		public boolean isPaint2;
-		public Paint paint2;
-		public int defaultWidth2 = 0;
-		public boolean isPaint3;
-		public Paint paint3;
-		public int defaultWidth3 = 0;
-		public Paint shadowPaint;
-		public boolean isShadowPaint;
-		public int defaultShadowWidthExtent = 2;
-		public Paint paint_1;
-		public boolean isPaint_1;
-		public int defaultWidth_1 = 0;
-		private String renderingAttribute;
+		int cachedHash;
+		public final Paint paint;
+		int defaultWidth = 0;
+		int defaultColor = 0;
+		boolean isPaint2;
+		final Paint paint2;
+		final int defaultWidth2 = 0;
+		boolean isPaint3;
+		final Paint paint3;
+		int defaultWidth3 = 0;
+		final Paint shadowPaint;
+		boolean isShadowPaint;
+		final int defaultShadowWidthExtent = 2;
+		final Paint paint_1;
+		boolean isPaint_1;
+		final int defaultWidth_1 = 0;
+		private final String renderingAttribute;
 
 		public RenderingLineAttributes(String renderingAttribute) {
 			this.renderingAttribute = renderingAttribute;
@@ -428,7 +428,7 @@ public abstract class OsmandMapLayer {
 					req.setBooleanFilter(rrs.PROPS.R_NIGHT_MODE, isNight);
 					if (req.searchRenderingAttribute(renderingAttribute)) {
 						RenderingContext rc = new OsmandRenderer.RenderingContext(app);
-						rc.setDensityValue((float) tileBox.getDensity());
+						rc.setDensityValue(tileBox.getDensity());
 						// cachedColor = req.getIntPropertyValue(rrs.PROPS.R_COLOR);
 						renderer.updatePaint(req, paint, 0, false, rc);
 						isPaint2 = renderer.updatePaint(req, paint2, 1, false, rc);
@@ -475,7 +475,7 @@ public abstract class OsmandMapLayer {
 			return Arrays.hashCode(o);
 		}
 
-		public void drawPath(Canvas canvas, Path path) {
+		void drawPath(Canvas canvas, Path path) {
 			if (isPaint_1) {
 				canvas.drawPath(path, paint_1);
 			}

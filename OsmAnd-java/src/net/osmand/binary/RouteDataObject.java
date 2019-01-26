@@ -17,7 +17,7 @@ import net.sf.junidecode.Junidecode;
 public class RouteDataObject {
 	/*private */static final int RESTRICTION_SHIFT = 3;
 	/*private */static final int RESTRICTION_MASK = 7;
-	public static int HEIGHT_UNDEFINED = -80000;
+	public static final int HEIGHT_UNDEFINED = -80000;
 	
 	public final RouteRegion region;
 	// all these arrays supposed to be immutable!
@@ -298,10 +298,10 @@ public class RouteDataObject {
 		return null;
 	}
 
-	public String getDestinationRef(boolean direction) {
+	private String getDestinationRef(boolean direction) {
 		if (names != null) {
 			int[] kt = names.keys();
-			String refTag = (direction == true) ? "destination:ref:forward" : "destination:ref:backward";
+			String refTag = (direction) ? "destination:ref:forward" : "destination:ref:backward";
 			String refTagDefault = "destination:ref";
 			String refDefault = null;
 
@@ -340,9 +340,9 @@ public class RouteDataObject {
 
 			String destinationTagLangFB = "destination:lang:XX";
 			if(!Algorithms.isEmpty(lang)) {
-				destinationTagLangFB = (direction == true) ? "destination:lang:" + lang + ":forward" : "destination:lang:" + lang + ":backward";
+				destinationTagLangFB = (direction) ? "destination:lang:" + lang + ":forward" : "destination:lang:" + lang + ":backward";
 			}
-			String destinationTagFB = (direction == true) ? "destination:forward" : "destination:backward";
+			String destinationTagFB = (direction) ? "destination:forward" : "destination:backward";
 			String destinationTagLang = "destination:lang:XX";
 			if(!Algorithms.isEmpty(lang)) {
 				destinationTagLang = "destination:lang:" + lang;
@@ -558,7 +558,7 @@ public class RouteDataObject {
 		return def;
 	}
 	
-	public boolean loop(){
+	private boolean loop(){
 		return pointsX[0] == pointsX[pointsX.length - 1] && pointsY[0] == pointsY[pointsY.length - 1] ; 
 	}
 	
@@ -643,7 +643,7 @@ public class RouteDataObject {
 		return null;
 	}
 	
-	public static String getHighway(int[] types, RouteRegion region) {
+	private static String getHighway(int[] types, RouteRegion region) {
 		String highway = null;
 		int sz = types.length;
 		for (int i = 0; i < sz; i++) {
@@ -693,9 +693,9 @@ public class RouteDataObject {
 			// Evaluate direction tag if present
 			if (r.getTag().equals("direction")) {
 				String dv = r.getValue();
-				if ((dv.equals("forward") && direction == true) || (dv.equals("backward") && direction == false)) {
+				if ((dv.equals("forward") && direction) || (dv.equals("backward") && !direction)) {
 					return true;
-				} else if ((dv.equals("forward") && direction == false) || (dv.equals("backward") && direction == true)) {
+				} else if ((dv.equals("forward") && !direction) || (dv.equals("backward") && direction)) {
 					return false;
 				}
 			}
@@ -734,7 +734,7 @@ public class RouteDataObject {
 	}
 
 	// Gives route direction of EAST degrees from NORTH ]-PI, PI]
-	public double directionRoute(int startPoint, boolean plus, float dist) {
+    private double directionRoute(int startPoint, boolean plus, float dist) {
 		int x = getPoint31XTile(startPoint);
 		int y = getPoint31YTile(startPoint);
 		int nx = startPoint;

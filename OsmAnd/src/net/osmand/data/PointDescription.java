@@ -25,7 +25,7 @@ public class PointDescription {
 
 	public static final String POINT_TYPE_FAVORITE = "favorite";
 	public static final String POINT_TYPE_WPT = "wpt";
-	public static final String POINT_TYPE_RTE = "rte";
+	private static final String POINT_TYPE_RTE = "rte";
 	public static final String POINT_TYPE_POI = "poi";
 	public static final String POINT_TYPE_ADDRESS = "address";
 	public static final String POINT_TYPE_OSM_NOTE= "osm_note";
@@ -188,7 +188,7 @@ public class PointDescription {
 		}
 	}
 
-	public static String getLocationOlcName(double lat, double lon) {
+	private static String getLocationOlcName(double lat, double lon) {
 		return OpenLocationCode.encode(lat, lon);
 	}
 

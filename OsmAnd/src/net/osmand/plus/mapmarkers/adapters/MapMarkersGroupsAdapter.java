@@ -39,10 +39,10 @@ public class MapMarkersGroupsAdapter extends RecyclerView.Adapter<RecyclerView.V
 	private static final int LAST_SEVEN_DAYS_HEADER = 58;
 	private static final int THIS_YEAR_HEADER = 59;
 
-	private MapActivity mapActivity;
-	private OsmandApplication app;
+	private final MapActivity mapActivity;
+	private final OsmandApplication app;
 	private List<Object> items = new ArrayList<>();
-	private boolean night;
+	private final boolean night;
 	private int screenOrientation;
 	private LatLon location;
 	private Float heading;
@@ -317,7 +317,7 @@ public class MapMarkersGroupsAdapter extends RecyclerView.Adapter<RecyclerView.V
 									}
 								});
 						View snackBarView = snackbar.getView();
-						TextView tv = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_action);
+						TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
 						tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
 						snackbar.show();
 					}
@@ -392,7 +392,7 @@ public class MapMarkersGroupsAdapter extends RecyclerView.Adapter<RecyclerView.V
 										}
 									});
 							View snackBarView = snackbar.getView();
-							TextView tv = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_action);
+							TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
 							tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
 							snackbar.show();
 						}

@@ -119,7 +119,7 @@ public class OsmandSettings {
     private boolean internetConnectionAvailable = true;
 
 
-	protected OsmandSettings(OsmandApplication clientContext, SettingsAPI settingsAPI) {
+	OsmandSettings(OsmandApplication clientContext, SettingsAPI settingsAPI) {
 		ctx = clientContext;
 		this.settingsAPI = settingsAPI;
 		initPrefs();
@@ -1057,7 +1057,7 @@ public class OsmandSettings {
 	public final CommonPreference<LayerTransparencySeekbarMode> LAYER_TRANSPARENCY_SEEKBAR_MODE =
 			new EnumIntPreference<>("layer_transparency_seekbar_mode", LayerTransparencySeekbarMode.UNDEFINED, LayerTransparencySeekbarMode.values());
 
-	public CommonPreference<String> PREVIOUS_INSTALLED_VERSION = new StringPreference("previous_installed_version", "").makeGlobal();
+	public final CommonPreference<String> PREVIOUS_INSTALLED_VERSION = new StringPreference("previous_installed_version", "").makeGlobal();
 
 	public final OsmandPreference<Boolean> SHOULD_SHOW_FREE_VERSION_BANNER = new BooleanPreference("should_show_free_version_banner", false).makeGlobal().cache();
 

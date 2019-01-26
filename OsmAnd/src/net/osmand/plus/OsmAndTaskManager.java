@@ -4,10 +4,8 @@ import android.os.AsyncTask;
 
 public class OsmAndTaskManager {
 
-	private OsmandApplication app;
-
 	public OsmAndTaskManager(OsmandApplication app) {
-		this.app = app;
+		OsmandApplication app1 = app;
 	}
 
 	
@@ -59,17 +57,17 @@ public class OsmAndTaskManager {
 	
 	public interface OsmAndTask<Params, Progress, Result> {
 		
-		public boolean isCancelled();
+		boolean isCancelled();
 		
-		public boolean cancel(boolean mayInterruptDuringRun);
+		boolean cancel(boolean mayInterruptDuringRun);
 		
-		public void executeWithParams(Params... params);
+		void executeWithParams(Params... params);
 		
 	}
 	
 	public static abstract class OsmAndTaskRunnable<Params, Progress, Result> {
 		
-		public OsmAndTask<Params, Progress, Result> exec;
+		OsmAndTask<Params, Progress, Result> exec;
 		
 		protected void onPreExecute() {}
 		
@@ -79,7 +77,7 @@ public class OsmAndTaskManager {
 		
 		protected void onPostExecute(Result result) {}
 		
-		protected void onProgressUpdate(Progress... values) {}
+		void onProgressUpdate(Progress... values) {}
 		
 	}
 }

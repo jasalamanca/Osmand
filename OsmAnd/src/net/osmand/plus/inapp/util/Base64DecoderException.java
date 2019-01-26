@@ -19,7 +19,7 @@ package net.osmand.plus.inapp.util;
  *
  * @author nelson
  */
-public class Base64DecoderException extends Exception {
+class Base64DecoderException extends Exception {
     public Base64DecoderException() {
         super();
     }

@@ -34,8 +34,8 @@ import java.util.Map;
  */
 public class DashOsmEditsFragment extends DashBaseFragment
 		implements SendPoiDialogFragment.ProgressDialogPoiUploader {
-	public static final String TAG = "DASH_OSM_EDITS_FRAGMENT";
-	public static final int TITLE_ID = R.string.osm_settings;
+	private static final String TAG = "DASH_OSM_EDITS_FRAGMENT";
+	private static final int TITLE_ID = R.string.osm_settings;
 
 	private static final String ROW_NUMBER_TAG = TAG + "_row_number";
 
@@ -49,16 +49,16 @@ public class DashOsmEditsFragment extends DashBaseFragment
 	static final DashFragmentData FRAGMENT_DATA =
 			new DashFragmentData(TAG, DashOsmEditsFragment.class, SHOULD_SHOW_FUNCTION, 130, ROW_NUMBER_TAG);
 
-	OsmEditingPlugin plugin;
+	private OsmEditingPlugin plugin;
 
 	@Override
 	public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		plugin = OsmandPlugin.getEnabledPlugin(OsmEditingPlugin.class);
 
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_common_fragment, container, false);
-		TextView header = ((TextView) view.findViewById(R.id.fav_text));
+		TextView header = view.findViewById(R.id.fav_text);
 		header.setText(TITLE_ID);
-		Button manage = ((Button) view.findViewById(R.id.show_all));
+		Button manage = view.findViewById(R.id.show_all);
 		manage.setText(R.string.shared_string_manage);
 		(view.findViewById(R.id.show_all)).setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -99,7 +99,7 @@ public class DashOsmEditsFragment extends DashBaseFragment
 					getMyApplication().getSettings(), ROW_NUMBER_TAG);
 		}
 
-		LinearLayout osmLayout = (LinearLayout) mainView.findViewById(R.id.items);
+		LinearLayout osmLayout = mainView.findViewById(R.id.items);
 		osmLayout.removeAllViews();
 
 		for (final OsmPoint point : dataPoints) {
@@ -107,7 +107,7 @@ public class DashOsmEditsFragment extends DashBaseFragment
 			View view = inflater.inflate(R.layout.note, null, false);
 
 			OsmEditsFragment.getOsmEditView(view, point, getMyApplication());
-			ImageButton send = (ImageButton) view.findViewById(R.id.play);
+			ImageButton send = view.findViewById(R.id.play);
 			send.setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_export));
 			send.setOnClickListener(new View.OnClickListener() {
 				@Override

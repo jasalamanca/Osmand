@@ -58,8 +58,8 @@ public class AddOSMBugAction extends QuickAction {
 		View view = LayoutInflater.from(parent.getContext())
 				.inflate(R.layout.quick_action_add_bug, parent, false);
 
-		SwitchCompat showDialog = (SwitchCompat) view.findViewById(R.id.dialogSwitch);
-		EditText message = (EditText) view.findViewById(R.id.message_edit);
+		SwitchCompat showDialog = view.findViewById(R.id.dialogSwitch);
+		EditText message = view.findViewById(R.id.message_edit);
 
 		if (!getParams().isEmpty()) {
 
@@ -73,8 +73,8 @@ public class AddOSMBugAction extends QuickAction {
 	@Override
 	public boolean fillParams(View root, MapActivity activity) {
 
-		SwitchCompat showDialog = (SwitchCompat) root.findViewById(R.id.dialogSwitch);
-		EditText message = (EditText) root.findViewById(R.id.message_edit);
+		SwitchCompat showDialog = root.findViewById(R.id.dialogSwitch);
+		EditText message = root.findViewById(R.id.message_edit);
 
 		getParams().put(KEY_SHO_DIALOG, String.valueOf(showDialog.isChecked()));
 		getParams().put(KEY_MESSAGE, message.getText().toString());

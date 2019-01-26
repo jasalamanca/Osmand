@@ -32,20 +32,20 @@ public class LocalIndexHelper {
 	}
 
 
-	public String getInstalledDate(File f) {
+	private String getInstalledDate(File f) {
 		return android.text.format.DateFormat.getMediumDateFormat(app).format(getInstalationDate(f));
 	}
 
-	public Date getInstalationDate(File f) {
+	private Date getInstalationDate(File f) {
 		final long t = f.lastModified();
 		return new Date(t);
 	}
 
-	public String getInstalledDate(long t, TimeZone timeZone) {
+	private String getInstalledDate(long t, TimeZone timeZone) {
 		return android.text.format.DateFormat.getMediumDateFormat(app).format(new Date(t));
 	}
 
-	public void updateDescription(LocalIndexInfo info) {
+	private void updateDescription(LocalIndexInfo info) {
 		File f = new File(info.getPathToData());
 		if (info.getType() == LocalIndexType.MAP_DATA) {
 			Map<String, String> ifns = app.getResourceManager().getIndexFileNames();
@@ -283,7 +283,7 @@ public class LocalIndexHelper {
 		@StringRes
 		private final int resId;
 		@DrawableRes
-		private int iconResource;
+		private final int iconResource;
 		private final int orderIndex;
 
 		LocalIndexType(@StringRes int resId, @DrawableRes int iconResource, int orderIndex) {

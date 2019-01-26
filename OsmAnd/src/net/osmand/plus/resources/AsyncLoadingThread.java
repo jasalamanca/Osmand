@@ -15,7 +15,7 @@ import java.util.Stack;
 public class AsyncLoadingThread extends Thread {
 	private static final Log log = PlatformUtil.getLog(AsyncLoadingThread.class);
 	
-	Stack<Object> requests = new Stack<Object>();
+	private final Stack<Object> requests = new Stack<Object>();
 	private final ResourceManager resourceManger;
 
 	public AsyncLoadingThread(ResourceManager resourceManger) {
@@ -62,9 +62,9 @@ public class AsyncLoadingThread extends Thread {
 		void onMapLoaded(boolean interrupted);
 	}
 
-	protected static class MapLoadRequest {
-		public final RotatedTileBox tileBox;
-		public final OnMapLoadedListener mapLoadedListener;
+	static class MapLoadRequest {
+		final RotatedTileBox tileBox;
+		final OnMapLoadedListener mapLoadedListener;
 
 		public MapLoadRequest(RotatedTileBox tileBox, OnMapLoadedListener mapLoadedListener) {
 			super();

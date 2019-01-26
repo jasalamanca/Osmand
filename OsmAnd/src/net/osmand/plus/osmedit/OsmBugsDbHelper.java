@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class OsmBugsDbHelper extends SQLiteOpenHelper {
 
 	private static final int DATABASE_VERSION = 1;
-	public static final String OSMBUGS_DB_NAME = "osmbugs"; //$NON-NLS-1$
+	private static final String OSMBUGS_DB_NAME = "osmbugs"; //$NON-NLS-1$
 	private static final String OSMBUGS_TABLE_NAME = "osmbugs"; //$NON-NLS-1$
 	private static final String OSMBUGS_COL_ID = "id"; //$NON-NLS-1$
 	private static final String OSMBUGS_COL_TEXT = "text"; //$NON-NLS-1$
@@ -23,7 +23,7 @@ public class OsmBugsDbHelper extends SQLiteOpenHelper {
 			OSMBUGS_COL_ID + " INTEGER, " + OSMBUGS_COL_TEXT + " TEXT,  " + //$NON-NLS-1$ //$NON-NLS-2$
 			OSMBUGS_COL_LAT + " double, " + OSMBUGS_COL_LON + " double, " + //$NON-NLS-1$ //$NON-NLS-2$
 			OSMBUGS_COL_ACTION + " TEXT, " + OSMBUGS_COL_AUTHOR + " TEXT);"; //$NON-NLS-1$ //$NON-NLS-2$
-	List<OsmNotesPoint> cache = null;
+	private List<OsmNotesPoint> cache = null;
 	public OsmBugsDbHelper(Context context) {
 		super(context, OSMBUGS_DB_NAME, null, DATABASE_VERSION);
 	}

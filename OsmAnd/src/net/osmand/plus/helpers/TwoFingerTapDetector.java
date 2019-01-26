@@ -45,5 +45,5 @@ public abstract class TwoFingerTapDetector {
 		return false;
 	}
 
-	public abstract void onTwoFingerTap();
+	protected abstract void onTwoFingerTap();
 }

@@ -79,7 +79,7 @@ public class OSMSettings {
 		;
 		
 		private final String value;
-		private OSMTagKey(String value) {
+		OSMTagKey(String value) {
 			this.value = value;
 		}
 		

@@ -22,13 +22,13 @@ public class OpenstreetmapLocalUtil implements OpenstreetmapUtil {
 
 	public final static Log LOG = PlatformUtil.getLog(OpenstreetmapLocalUtil.class);
 
-	private OsmEditingPlugin plugin;
+	private final OsmEditingPlugin plugin;
 
 	public OpenstreetmapLocalUtil(OsmEditingPlugin plugin) {
 		this.plugin = plugin;
 	}
 
-	private List<OnNodeCommittedListener> listeners = new ArrayList<>();
+	private final List<OnNodeCommittedListener> listeners = new ArrayList<>();
 
 	public void addNodeCommittedListener(OnNodeCommittedListener listener) {
 		if (!listeners.contains(listener)) {
@@ -94,7 +94,7 @@ public class OpenstreetmapLocalUtil implements OpenstreetmapUtil {
 
 		for (Map.Entry<String, String> entry : n.getAdditionalInfo().entrySet()) {
 			AbstractPoiType abstractPoi = MapPoiTypes.getDefault().getAnyPoiAdditionalTypeByKey(entry.getKey());
-			if (abstractPoi != null && abstractPoi instanceof PoiType) {
+			if (abstractPoi instanceof PoiType) {
 				PoiType p = (PoiType) abstractPoi;
 				if (!p.isNotEditableOsm() && !Algorithms.isEmpty(p.getOsmTag())) {
 					entity.putTagNoLC(p.getOsmTag(), entry.getValue());

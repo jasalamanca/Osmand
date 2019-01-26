@@ -20,9 +20,9 @@ public class ProgressImplementation implements IProgress {
 	private int work;
 	private String message = ""; //$NON-NLS-1$
 	
-	private Handler mViewUpdateHandler;
+	private final Handler mViewUpdateHandler;
 	private Thread run;
-	private Context context;
+	private final Context context;
 	private ProgressDialog dialog = null;
 	private ProgressBar progressBar = null;
 	private Runnable finishRunnable = null;
@@ -30,7 +30,7 @@ public class ProgressImplementation implements IProgress {
 	private TextView tv;
 	
 
-	public ProgressImplementation(Context ctx, ProgressDialog dlg, boolean cancelable) {
+	private ProgressImplementation(Context ctx, ProgressDialog dlg, boolean cancelable) {
 		this.cancelable = cancelable;
 		context = ctx;
 		setDialog(dlg);
@@ -78,7 +78,7 @@ public class ProgressImplementation implements IProgress {
 		};
 	}
 		
-	public ProgressImplementation(ProgressDialog dlg, boolean cancelable){
+	private ProgressImplementation(ProgressDialog dlg, boolean cancelable){
 		this(dlg.getContext(), dlg, cancelable);
 	}
 
@@ -87,7 +87,7 @@ public class ProgressImplementation implements IProgress {
 		return createProgressDialog(ctx, title, message, style, null);
 	}
 	
-	public static ProgressImplementation createProgressDialog(Context ctx, String title, String message, int style, final DialogInterface.OnCancelListener listener) {
+	private static ProgressImplementation createProgressDialog(Context ctx, String title, String message, int style, final DialogInterface.OnCancelListener listener) {
 		ProgressDialog dlg = new ProgressDialog(ctx) {
 			@Override
 			public void cancel() {
@@ -125,7 +125,7 @@ public class ProgressImplementation implements IProgress {
 		this.finishRunnable = finish;
 	}
 
-	public void setDialog(ProgressDialog dlg){
+	private void setDialog(ProgressDialog dlg){
 		if(dlg != null){
 			if(cancelable){
 				dlg.setOnCancelListener(new OnCancelListener(){

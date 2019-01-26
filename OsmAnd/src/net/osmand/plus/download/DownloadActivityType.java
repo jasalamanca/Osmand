@@ -26,8 +26,8 @@ import java.util.Map;
 import static net.osmand.IndexConstants.BINARY_MAP_INDEX_EXT;
 
 public class DownloadActivityType {
-	private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.US);
-	private static Map<String, DownloadActivityType> byTag = new HashMap<>();
+	private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.US);
+	private static final Map<String, DownloadActivityType> byTag = new HashMap<>();
 	
 	public static final DownloadActivityType NORMAL_FILE =
 			new DownloadActivityType(R.string.download_regular_maps, "map", 10);
@@ -44,10 +44,10 @@ public class DownloadActivityType {
 	private final int stringResource;
 	private final int iconResource;
 
-	private String tag;
-	private int orderIndex;
+	private final String tag;
+	private final int orderIndex;
 
-	public DownloadActivityType(int stringResource, int iconResource, String tag, int orderIndex) {
+	private DownloadActivityType(int stringResource, int iconResource, String tag, int orderIndex) {
 		this.stringResource = stringResource;
 		this.tag = tag;
 		this.orderIndex = orderIndex;
@@ -55,7 +55,7 @@ public class DownloadActivityType {
 		this.iconResource = iconResource;
 	}
 
-	public DownloadActivityType(int stringResource, String tag, int orderIndex) {
+	private DownloadActivityType(int stringResource, String tag, int orderIndex) {
 		this.stringResource = stringResource;
 		this.tag = tag;
 		this.orderIndex = orderIndex;
@@ -97,11 +97,11 @@ public class DownloadActivityType {
 		return byTag.get(tagName);
 	}
 	
-	protected static String addVersionToExt(String ext, int version) {
+	static String addVersionToExt(String ext, int version) {
 		return "_" + version + ext;
 	}
 	
-	public boolean isAccepted(String fileName) {
+	private boolean isAccepted(String fileName) {
 		if(NORMAL_FILE == this) {
 			return fileName.endsWith(addVersionToExt(IndexConstants.BINARY_MAP_INDEX_EXT_ZIP, IndexConstants.BINARY_MAP_VERSION)) 
 					|| fileName.endsWith(IndexConstants.EXTRA_ZIP_EXT)
@@ -194,7 +194,7 @@ public class DownloadActivityType {
 	}
 
 
-	protected String encode(String fileName) {
+	private String encode(String fileName) {
 		try {
 			return URLEncoder.encode(fileName, "UTF-8");
 		} catch (IOException e) {

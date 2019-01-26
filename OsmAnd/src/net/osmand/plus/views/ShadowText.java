@@ -5,9 +5,9 @@ import android.graphics.Paint;
 import android.graphics.Paint.Style;
 
 public class ShadowText {
-	private String text;
+	private final String text;
 	
-	public ShadowText(String text) {
+	private ShadowText(String text) {
 		this.text = text;
 	}
 	public static ShadowText create(String text) {
@@ -19,7 +19,7 @@ public class ShadowText {
 	public void draw(Canvas cv, float centerX, float centerY, Paint textPaint, int shadowColor) {
 		draw(text, cv, centerX, centerY, textPaint, shadowColor);
 	}
-	public static void draw(String text, Canvas cv, float centerX, float centerY, Paint textPaint, int shadowColor) {
+	private static void draw(String text, Canvas cv, float centerX, float centerY, Paint textPaint, int shadowColor) {
 		int c = textPaint.getColor();
 		textPaint.setStyle(Style.STROKE);
 		textPaint.setColor(shadowColor);

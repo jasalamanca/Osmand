@@ -23,12 +23,12 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 public class RoutePlannerFrontEnd {
-	protected static final Log log = PlatformUtil.getLog(RoutePlannerFrontEnd.class);
-	public boolean useSmartRouteRecalculation = true;
+	private static final Log log = PlatformUtil.getLog(RoutePlannerFrontEnd.class);
+	private boolean useSmartRouteRecalculation = true;
 
-	public RoutePlannerFrontEnd(){};
+	public RoutePlannerFrontEnd(){}
 
-	public enum RouteCalculationMode {
+    public enum RouteCalculationMode {
 		BASE,
 		NORMAL,
 		COMPLEX
@@ -49,7 +49,7 @@ public class RoutePlannerFrontEnd {
 		return dx * dx + dy * dy;
 	}
 
-	public RouteSegmentPoint findRouteSegment(double lat, double lon, RoutingContext ctx, List<RouteSegmentPoint> list) throws IOException {
+	public RouteSegmentPoint findRouteSegment(double lat, double lon, RoutingContext ctx, List<RouteSegmentPoint> list) {
 		int px = MapUtils.get31TileNumberX(lon);
 		int py = MapUtils.get31TileNumberY(lat);
 		ArrayList<RouteDataObject> dataObjects = new ArrayList<RouteDataObject>();
@@ -198,7 +198,7 @@ public class RoutePlannerFrontEnd {
 		return res;
 	}
 
-	protected void makeStartEndPointsPrecise(List<RouteSegmentResult> res, LatLon start, LatLon end, List<LatLon> intermediates) {
+	private void makeStartEndPointsPrecise(List<RouteSegmentResult> res, LatLon start, LatLon end, List<LatLon> intermediates) {
 		if (res.size() > 0) {
 			updateResult(res.get(0), start, true);
 			updateResult(res.get(res.size() - 1), end, false);
@@ -232,7 +232,7 @@ public class RoutePlannerFrontEnd {
 		}
 	}
 
-	protected double projectDistance(List<RouteSegmentResult> res, int k, int px, int py) {
+	private double projectDistance(List<RouteSegmentResult> res, int k, int px, int py) {
 		RouteSegmentResult sr = res.get(k);
 		RouteDataObject r = sr.getObject();
 		QuadPoint pp = MapUtils.getProjectionPoint31(px, py,
@@ -317,7 +317,7 @@ public class RoutePlannerFrontEnd {
 	}
 
 	private List<RouteSegmentResult> searchRouteInternalPrepare(final RoutingContext ctx, RouteSegmentPoint start, RouteSegmentPoint end,
-	                                                            PrecalculatedRouteDirection routeDirection) throws IOException, InterruptedException {
+	                                                            PrecalculatedRouteDirection routeDirection) throws IOException {
 		RouteSegment recalculationEnd = getRecalculationEnd(ctx);
 		if (recalculationEnd != null) {
 			ctx.initStartAndTargetPoints(start, recalculationEnd);
@@ -371,7 +371,7 @@ public class RoutePlannerFrontEnd {
 			ctx.calculationProgress.directSegmentQueueSize = 0;
 			float rd = (float) MapUtils.squareRootDist31(ctx.startX, ctx.startY, ctx.targetX, ctx.targetY);
 			float speed = 0.9f * ctx.config.router.getMaxDefaultSpeed();
-			ctx.calculationProgress.totalEstimatedDistance = (float) (rd / speed);
+			ctx.calculationProgress.totalEstimatedDistance = rd / speed;
 		}
 	}
 

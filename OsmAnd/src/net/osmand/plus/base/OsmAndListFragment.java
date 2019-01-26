@@ -20,7 +20,7 @@ public abstract class OsmAndListFragment extends ListFragment {
 	
 	public abstract ArrayAdapter<?> getAdapter();
 
-	public OsmandApplication getMyApplication() {
+	protected OsmandApplication getMyApplication() {
 		return (OsmandApplication)getActivity().getApplication();
 	}
 	

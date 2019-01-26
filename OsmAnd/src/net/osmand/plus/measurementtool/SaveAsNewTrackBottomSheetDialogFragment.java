@@ -33,8 +33,8 @@ public class SaveAsNewTrackBottomSheetDialogFragment extends MenuBottomSheetDial
 		if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
 			mainView.findViewById(R.id.images_row).setVisibility(View.GONE);
 		} else {
-			final ImageView routePointImage = (ImageView) mainView.findViewById(R.id.route_point_image);
-			ImageView lineImage = (ImageView) mainView.findViewById(R.id.line_image);
+			final ImageView routePointImage = mainView.findViewById(R.id.route_point_image);
+			ImageView lineImage = mainView.findViewById(R.id.line_image);
 			if (nightMode) {
 				routePointImage.setImageResource(R.drawable.img_help_trip_route_points_night);
 				lineImage.setImageResource(R.drawable.img_help_trip_track_night);
@@ -82,7 +82,7 @@ public class SaveAsNewTrackBottomSheetDialogFragment extends MenuBottomSheetDial
 		return mainView;
 	}
 
-	private View.OnClickListener saveAsLineOnClickListener = new View.OnClickListener() {
+	private final View.OnClickListener saveAsLineOnClickListener = new View.OnClickListener() {
 		@Override
 		public void onClick(View view) {
 			if (listener != null) {
@@ -92,7 +92,7 @@ public class SaveAsNewTrackBottomSheetDialogFragment extends MenuBottomSheetDial
 		}
 	};
 
-	private View.OnClickListener saveAsRoutePointOnClickListener = new View.OnClickListener() {
+	private final View.OnClickListener saveAsRoutePointOnClickListener = new View.OnClickListener() {
 		@Override
 		public void onClick(View view) {
 			if (listener != null) {

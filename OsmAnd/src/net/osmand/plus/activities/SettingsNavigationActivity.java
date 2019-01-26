@@ -53,7 +53,7 @@ import java.util.Set;
 
 public class SettingsNavigationActivity extends SettingsBaseActivity {
 
-	public static final String MORE_VALUE = "MORE_VALUE";
+	private static final String MORE_VALUE = "MORE_VALUE";
 
 	private Preference avoidRouting;
 	private Preference preferRouting;
@@ -62,13 +62,12 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 	private Preference showAlarms;
 	private Preference speakAlarms;
 	private ListPreference speedLimitExceed;
-	
-	private ComponentName mDeviceAdmin;
+
 	private static final int DEVICE_ADMIN_REQUEST = 5;
 	
-	private List<RoutingParameter> avoidParameters = new ArrayList<RoutingParameter>();
-	private List<RoutingParameter> preferParameters = new ArrayList<RoutingParameter>();
-	private List<RoutingParameter> reliefFactorParameters = new ArrayList<RoutingParameter>();
+	private final List<RoutingParameter> avoidParameters = new ArrayList<RoutingParameter>();
+	private final List<RoutingParameter> preferParameters = new ArrayList<RoutingParameter>();
+	private final List<RoutingParameter> reliefFactorParameters = new ArrayList<RoutingParameter>();
 	public static final String INTENT_SKIP_DIALOG = "INTENT_SKIP_DIALOG";
 	
 	public SettingsNavigationActivity() {
@@ -97,7 +96,7 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 	}
 
 	private void requestLockScreenAdmin() {
-		mDeviceAdmin = new ComponentName(getApplicationContext(),
+		ComponentName mDeviceAdmin = new ComponentName(getApplicationContext(),
 				DeviceAdminRecv.class);
 
 		DevicePolicyManager mDevicePolicyManager = (DevicePolicyManager) getSystemService(DEVICE_POLICY_SERVICE);
@@ -114,9 +113,9 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 							Version.getAppName(getMyApplication())));
 			startActivityForResult(intent, DEVICE_ADMIN_REQUEST);
 		}
-	};
+	}
 
-	private void createUI() {
+    private void createUI() {
 		addPreferencesFromResource(R.xml.navigation_settings);
 		PreferenceScreen screen = getPreferenceScreen();
 		settings = getMyApplication().getSettings();
@@ -127,7 +126,7 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		String[] entries = new String[intValues.length];
 		entries[0] = getString(R.string.shared_string_never);
 		for (int i = 1; i < intValues.length; i++) {
-			entries[i] = (int) intValues[i] + " " + getString(R.string.int_seconds);
+			entries[i] = intValues[i] + " " + getString(R.string.int_seconds);
 		}
 		registerListPreference(settings.AUTO_FOLLOW_ROUTE, screen, entries, intValues);
 
@@ -148,8 +147,8 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		String[] speedNamesVls = new String[speedValues.length];
 		for(int i = 0; i < speedValues.length; i++) {
 			speedNamesVls[i] = speedValues[i].toHumanString(this);
-		};
-		registerListPreference(settings.SPEED_SYSTEM, screen, speedNamesVls, speedValues);
+		}
+        registerListPreference(settings.SPEED_SYSTEM, screen, speedNamesVls, speedValues);
         
 		// screen power save option:
 		Integer[] screenPowerSaveValues = new Integer[] { 0, 5, 10, 15, 20, 30, 45, 60 };
@@ -161,10 +160,10 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		}
 		registerListPreference(settings.WAKE_ON_VOICE_INT, screen, screenPowerSaveNames, screenPowerSaveValues);
         
-		showAlarms = (Preference) screen.findPreference("show_routing_alarms");
+		showAlarms = screen.findPreference("show_routing_alarms");
 		showAlarms.setOnPreferenceClickListener(this);
 		
-		speakAlarms = (Preference) screen.findPreference("speak_routing_alarms");
+		speakAlarms = screen.findPreference("speak_routing_alarms");
 		speakAlarms.setOnPreferenceClickListener(this);
 		
 		Float[] arrivalValues = new Float[] {1.5f, 1f, 0.5f, 0.25f} ;
@@ -354,12 +353,12 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		}
 	}
 
-	public String getRoutinParameterTitle(Context context, RoutingParameter routingParameter) {
+	private String getRoutinParameterTitle(Context context, RoutingParameter routingParameter) {
 		return SettingsBaseActivity.getRoutingStringPropertyName(context, routingParameter.getId(),
 				routingParameter.getName());
 	}
 
-	public boolean isRoutingParameterSelected(OsmandSettings settings, ApplicationMode am, RoutingParameter routingParameter) {
+	private boolean isRoutingParameterSelected(OsmandSettings settings, ApplicationMode am, RoutingParameter routingParameter) {
 		final OsmandSettings.CommonPreference<Boolean> property =
 				settings.getCustomRoutingBooleanProperty(routingParameter.getId(), routingParameter.getDefaultBoolean());
 		if(am != null) {
@@ -369,7 +368,7 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		}
 	}
 
-	public void setRoutingParameterSelected(OsmandSettings settings, ApplicationMode am, RoutingParameter routingParameter, boolean isChecked) {
+	private void setRoutingParameterSelected(OsmandSettings settings, ApplicationMode am, RoutingParameter routingParameter, boolean isChecked) {
 		final OsmandSettings.CommonPreference<Boolean> property =
 				settings.getCustomRoutingBooleanProperty(routingParameter.getId(), routingParameter.getDefaultBoolean());
 		if(am != null) {
@@ -482,7 +481,7 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 						v = SettingsNavigationActivity.this.getLayoutInflater().inflate(layout, null);
 					}
 					final ContextMenuItem item = adapter.getItem(position);
-					TextView tv = (TextView) v.findViewById(R.id.text1);
+					TextView tv = v.findViewById(R.id.text1);
 					tv.setText(item.getTitle());
 					tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f);
 
@@ -546,7 +545,7 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 						v = SettingsNavigationActivity.this.getLayoutInflater().inflate(layout, null);
 					}
 					final ContextMenuItem item = adapter.getItem(position);
-					TextView tv = (TextView) v.findViewById(R.id.text1);
+					TextView tv = v.findViewById(R.id.text1);
 					tv.setText(item.getTitle());
 					tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f);
 
@@ -638,7 +637,7 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		bld.show();
 	}
 
-	public AlertDialog showBooleanSettings(String[] vals, final OsmandPreference<Boolean>[] prefs, final CharSequence title) {
+	private AlertDialog showBooleanSettings(String[] vals, final OsmandPreference<Boolean>[] prefs, final CharSequence title) {
 		AlertDialog.Builder bld = new AlertDialog.Builder(this);
 		boolean[] checkedItems = new boolean[prefs.length];
 		for (int i = 0; i < prefs.length; i++) {

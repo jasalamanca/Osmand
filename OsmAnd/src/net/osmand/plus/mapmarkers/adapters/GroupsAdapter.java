@@ -16,10 +16,10 @@ public abstract class GroupsAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 	private static final int TYPE_ITEM = 13;
 
 	private GroupsAdapterListener listener;
-	protected OsmandApplication app;
-	protected IconsCache iconsCache;
+	final OsmandApplication app;
+	final IconsCache iconsCache;
 
-	public GroupsAdapter(Context context) {
+	GroupsAdapter(Context context) {
 		this.app = (OsmandApplication) context.getApplicationContext();
 		this.iconsCache = app.getIconsCache();
 	}

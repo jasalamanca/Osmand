@@ -41,10 +41,10 @@ public class DownloadOsmandIndexesHelper {
 
 		private boolean downloadedFromInternet = false;
 		IndexItem basemap;
-		ArrayList<IndexItem> indexFiles = new ArrayList<IndexItem>();
+		final ArrayList<IndexItem> indexFiles = new ArrayList<IndexItem>();
 		private String mapversion;
 		
-		private Comparator<IndexItem> comparator = new Comparator<IndexItem>(){
+		private final Comparator<IndexItem> comparator = new Comparator<IndexItem>(){
 			@Override
 			public int compare(IndexItem o1, IndexItem o2) {
 				String object1 = o1.getFileName();
@@ -62,7 +62,7 @@ public class DownloadOsmandIndexesHelper {
 			}
 		};
 		
-		public void setDownloadedFromInternet(boolean downloadedFromInternet) {
+		void setDownloadedFromInternet(boolean downloadedFromInternet) {
 			this.downloadedFromInternet = downloadedFromInternet;
 		}
 		
@@ -70,23 +70,23 @@ public class DownloadOsmandIndexesHelper {
 			return downloadedFromInternet;
 		}
 
-		public void setMapVersion(String mapversion) {
+		void setMapVersion(String mapversion) {
 			this.mapversion = mapversion;
 		}
 
 		@SuppressLint("DefaultLocale")
-		public void add(IndexItem indexItem) {
+        void add(IndexItem indexItem) {
 			indexFiles.add(indexItem);
 			if(indexItem.getFileName().toLowerCase().startsWith("world_basemap")) {
 				basemap = indexItem;
 			}
 		}
 		
-		public void sort(){
+		void sort(){
 			Collections.sort(indexFiles, comparator);
 		}
 
-		public boolean isAcceptable() {
+		boolean isAcceptable() {
 			return (indexFiles != null && !indexFiles.isEmpty()) || (mapversion != null);
 		}
 
@@ -152,7 +152,7 @@ public class DownloadOsmandIndexesHelper {
 			try {
 				ApplicationInfo appInfo = pm.getApplicationInfo(OsmandApplication.class.getPackage().getName(), 0);
 				dateModified =  new File(appInfo.sourceDir).lastModified();
-				date = AndroidUtils.formatDate((Context) settings.getContext(), dateModified);
+				date = AndroidUtils.formatDate(settings.getContext(), dateModified);
 			} catch (NameNotFoundException e) {
 				//do nothing...
 			}
@@ -241,8 +241,8 @@ public class DownloadOsmandIndexesHelper {
 		private final String destFile;
 		private final long dateModified;
 
-		public AssetIndexItem(String fileName, String description, String date,
-				long dateModified, String size, long sizeL, String assetName, String destFile, DownloadActivityType type) {
+		AssetIndexItem(String fileName, String description, String date,
+                       long dateModified, String size, long sizeL, String assetName, String destFile, DownloadActivityType type) {
 			super(fileName, description, dateModified, size, sizeL, sizeL, type);
 			this.dateModified = dateModified;
 			this.assetName = assetName;

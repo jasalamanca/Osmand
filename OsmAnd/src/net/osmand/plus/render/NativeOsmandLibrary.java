@@ -55,7 +55,7 @@ public class NativeOsmandLibrary extends NativeLibrary {
 		return isNativeSupported != null && isNativeSupported;
 	}
 	
-	public static boolean isLoaded() {
+	private static boolean isLoaded() {
 		return isNativeSupported != null;  
 	}
 	

@@ -8,7 +8,7 @@ public final class OsmandOdb {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
-  public interface OsmAndStructureOrBuilder
+  interface OsmAndStructureOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
     // required uint32 version = 1;
@@ -316,7 +316,7 @@ public final class OsmandOdb {
     private OsmAndStructure(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndStructure defaultInstance;
-    public static OsmAndStructure getDefaultInstance() {
+    static OsmAndStructure getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -447,7 +447,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndStructure.class, net.osmand.binary.OsmandOdb.OsmAndStructure.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndStructure> PARSER =
+    static final com.google.protobuf.Parser<OsmAndStructure> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndStructure>() {
       public OsmAndStructure parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -1016,9 +1016,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndStructure prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndStructure prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -1212,7 +1212,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndStructure other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndStructure other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndStructure.getDefaultInstance()) return this;
         if (other.hasVersion()) {
           setVersion(other.getVersion());
@@ -1439,7 +1439,7 @@ public final class OsmandOdb {
       /**
        * <code>required uint32 version = 1;</code>
        */
-      public Builder setVersion(int value) {
+      Builder setVersion(int value) {
         bitField0_ |= 0x00000001;
         version_ = value;
         onChanged();
@@ -1484,7 +1484,7 @@ public final class OsmandOdb {
        * System.currentTimeMillis()
        * </pre>
        */
-      public Builder setDateCreated(long value) {
+      Builder setDateCreated(long value) {
         bitField0_ |= 0x00000002;
         dateCreated_ = value;
         onChanged();
@@ -3147,7 +3147,7 @@ public final class OsmandOdb {
        * last field should version again (to check consistency)
        * </pre>
        */
-      public Builder setVersionConfirm(int value) {
+      Builder setVersionConfirm(int value) {
         bitField0_ |= 0x00000080;
         versionConfirm_ = value;
         onChanged();
@@ -3243,7 +3243,7 @@ public final class OsmandOdb {
     private OsmAndTileBox(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndTileBox defaultInstance;
-    public static OsmAndTileBox getDefaultInstance() {
+    static OsmAndTileBox getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -3324,7 +3324,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndTileBox.class, net.osmand.binary.OsmandOdb.OsmAndTileBox.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndTileBox> PARSER =
+    static final com.google.protobuf.Parser<OsmAndTileBox> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndTileBox>() {
       public OsmAndTileBox parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -3548,9 +3548,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndTileBox prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndTileBox prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -3665,7 +3665,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndTileBox other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndTileBox other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndTileBox.getDefaultInstance()) return this;
         if (other.hasLeft()) {
           setLeft(other.getLeft());
@@ -3751,7 +3751,7 @@ public final class OsmandOdb {
        * everything is encoded as 31 tile zoom
        * </pre>
        */
-      public Builder setLeft(int value) {
+      Builder setLeft(int value) {
         bitField0_ |= 0x00000001;
         left_ = value;
         onChanged();
@@ -3788,7 +3788,7 @@ public final class OsmandOdb {
       /**
        * <code>required uint32 right = 2;</code>
        */
-      public Builder setRight(int value) {
+      Builder setRight(int value) {
         bitField0_ |= 0x00000002;
         right_ = value;
         onChanged();
@@ -3821,7 +3821,7 @@ public final class OsmandOdb {
       /**
        * <code>required uint32 top = 3;</code>
        */
-      public Builder setTop(int value) {
+      Builder setTop(int value) {
         bitField0_ |= 0x00000004;
         top_ = value;
         onChanged();
@@ -3854,7 +3854,7 @@ public final class OsmandOdb {
       /**
        * <code>required uint32 bottom = 4;</code>
        */
-      public Builder setBottom(int value) {
+      Builder setBottom(int value) {
         bitField0_ |= 0x00000008;
         bottom_ = value;
         onChanged();
@@ -3922,7 +3922,7 @@ public final class OsmandOdb {
     private StringTable(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final StringTable defaultInstance;
-    public static StringTable getDefaultInstance() {
+    static StringTable getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -3994,7 +3994,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.StringTable.class, net.osmand.binary.OsmandOdb.StringTable.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<StringTable> PARSER =
+    static final com.google.protobuf.Parser<StringTable> PARSER =
         new com.google.protobuf.AbstractParser<StringTable>() {
       public StringTable parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -4140,9 +4140,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.StringTable prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.StringTable prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -4243,7 +4243,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.StringTable other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.StringTable other) {
         if (other == net.osmand.binary.OsmandOdb.StringTable.getDefaultInstance()) return this;
         if (!other.s_.isEmpty()) {
           if (s_.isEmpty()) {
@@ -4546,7 +4546,7 @@ public final class OsmandOdb {
     private IndexedStringTable(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final IndexedStringTable defaultInstance;
-    public static IndexedStringTable getDefaultInstance() {
+    static IndexedStringTable getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -4658,7 +4658,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.IndexedStringTable.class, net.osmand.binary.OsmandOdb.IndexedStringTable.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<IndexedStringTable> PARSER =
+    static final com.google.protobuf.Parser<IndexedStringTable> PARSER =
         new com.google.protobuf.AbstractParser<IndexedStringTable>() {
       public IndexedStringTable parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -5002,9 +5002,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.IndexedStringTable prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.IndexedStringTable prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -5132,7 +5132,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.IndexedStringTable other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.IndexedStringTable other) {
         if (other == net.osmand.binary.OsmandOdb.IndexedStringTable.getDefaultInstance()) return this;
         if (other.hasPrefix()) {
           bitField0_ |= 0x00000001;
@@ -5991,7 +5991,7 @@ public final class OsmandOdb {
     private OsmAndMapIndex(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndMapIndex defaultInstance;
-    public static OsmAndMapIndex getDefaultInstance() {
+    static OsmAndMapIndex getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -6079,7 +6079,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndMapIndex.class, net.osmand.binary.OsmandOdb.OsmAndMapIndex.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndMapIndex> PARSER =
+    static final com.google.protobuf.Parser<OsmAndMapIndex> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndMapIndex>() {
       public OsmAndMapIndex parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -6197,7 +6197,7 @@ public final class OsmandOdb {
       private MapEncodingRule(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
       private static final MapEncodingRule defaultInstance;
-      public static MapEncodingRule getDefaultInstance() {
+      static MapEncodingRule getDefaultInstance() {
         return defaultInstance;
       }
 
@@ -6283,7 +6283,7 @@ public final class OsmandOdb {
                 net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRule.class, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRule.Builder.class);
       }
 
-      public static com.google.protobuf.Parser<MapEncodingRule> PARSER =
+      static final com.google.protobuf.Parser<MapEncodingRule> PARSER =
           new com.google.protobuf.AbstractParser<MapEncodingRule>() {
         public MapEncodingRule parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
@@ -6591,9 +6591,9 @@ public final class OsmandOdb {
         return PARSER.parseFrom(input, extensionRegistry);
       }
 
-      public static Builder newBuilder() { return Builder.create(); }
+      static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRule prototype) {
+      static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRule prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
@@ -6714,7 +6714,7 @@ public final class OsmandOdb {
           }
         }
 
-        public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRule other) {
+        Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRule other) {
           if (other == net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRule.getDefaultInstance()) return this;
           if (other.hasTag()) {
             bitField0_ |= 0x00000001;
@@ -6946,7 +6946,7 @@ public final class OsmandOdb {
          * is the same as id (id is 1-based and order)
          * </pre>
          */
-        public Builder setId(int value) {
+        Builder setId(int value) {
           bitField0_ |= 0x00000004;
           id_ = value;
           onChanged();
@@ -6996,7 +6996,7 @@ public final class OsmandOdb {
          * min zoom combination exists
          * </pre>
          */
-        public Builder setMinZoom(int value) {
+        Builder setMinZoom(int value) {
           bitField0_ |= 0x00000008;
           minZoom_ = value;
           onChanged();
@@ -7045,7 +7045,7 @@ public final class OsmandOdb {
          * "additional" flag is encoded as %2 == 1
          * </pre>
          */
-        public Builder setType(int value) {
+        Builder setType(int value) {
           bitField0_ |= 0x00000010;
           type_ = value;
           onChanged();
@@ -7203,7 +7203,7 @@ public final class OsmandOdb {
       private MapRootLevel(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
       private static final MapRootLevel defaultInstance;
-      public static MapRootLevel getDefaultInstance() {
+      static MapRootLevel getDefaultInstance() {
         return defaultInstance;
       }
 
@@ -7316,7 +7316,7 @@ public final class OsmandOdb {
                 net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevel.class, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevel.Builder.class);
       }
 
-      public static com.google.protobuf.Parser<MapRootLevel> PARSER =
+      static final com.google.protobuf.Parser<MapRootLevel> PARSER =
           new com.google.protobuf.AbstractParser<MapRootLevel>() {
         public MapRootLevel parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
@@ -7688,9 +7688,9 @@ public final class OsmandOdb {
         return PARSER.parseFrom(input, extensionRegistry);
       }
 
-      public static Builder newBuilder() { return Builder.create(); }
+      static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevel prototype) {
+      static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevel prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
@@ -7849,7 +7849,7 @@ public final class OsmandOdb {
           }
         }
 
-        public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevel other) {
+        Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevel other) {
           if (other == net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevel.getDefaultInstance()) return this;
           if (other.hasMaxZoom()) {
             setMaxZoom(other.getMaxZoom());
@@ -8001,7 +8001,7 @@ public final class OsmandOdb {
         /**
          * <code>required int32 maxZoom = 1;</code>
          */
-        public Builder setMaxZoom(int value) {
+        Builder setMaxZoom(int value) {
           bitField0_ |= 0x00000001;
           maxZoom_ = value;
           onChanged();
@@ -8034,7 +8034,7 @@ public final class OsmandOdb {
         /**
          * <code>required int32 minZoom = 2;</code>
          */
-        public Builder setMinZoom(int value) {
+        Builder setMinZoom(int value) {
           bitField0_ |= 0x00000002;
           minZoom_ = value;
           onChanged();
@@ -8067,7 +8067,7 @@ public final class OsmandOdb {
         /**
          * <code>required int32 left = 3;</code>
          */
-        public Builder setLeft(int value) {
+        Builder setLeft(int value) {
           bitField0_ |= 0x00000004;
           left_ = value;
           onChanged();
@@ -8100,7 +8100,7 @@ public final class OsmandOdb {
         /**
          * <code>required int32 right = 4;</code>
          */
-        public Builder setRight(int value) {
+        Builder setRight(int value) {
           bitField0_ |= 0x00000008;
           right_ = value;
           onChanged();
@@ -8133,7 +8133,7 @@ public final class OsmandOdb {
         /**
          * <code>required int32 top = 5;</code>
          */
-        public Builder setTop(int value) {
+        Builder setTop(int value) {
           bitField0_ |= 0x00000010;
           top_ = value;
           onChanged();
@@ -8166,7 +8166,7 @@ public final class OsmandOdb {
         /**
          * <code>required int32 bottom = 6;</code>
          */
-        public Builder setBottom(int value) {
+        Builder setBottom(int value) {
           bitField0_ |= 0x00000020;
           bottom_ = value;
           onChanged();
@@ -8823,7 +8823,7 @@ public final class OsmandOdb {
       private MapDataBox(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
       private static final MapDataBox defaultInstance;
-      public static MapDataBox getDefaultInstance() {
+      static MapDataBox getDefaultInstance() {
         return defaultInstance;
       }
 
@@ -8925,7 +8925,7 @@ public final class OsmandOdb {
                 net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox.class, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox.Builder.class);
       }
 
-      public static com.google.protobuf.Parser<MapDataBox> PARSER =
+      static final com.google.protobuf.Parser<MapDataBox> PARSER =
           new com.google.protobuf.AbstractParser<MapDataBox>() {
         public MapDataBox parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
@@ -9287,9 +9287,9 @@ public final class OsmandOdb {
         return PARSER.parseFrom(input, extensionRegistry);
       }
 
-      public static Builder newBuilder() { return Builder.create(); }
+      static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox prototype) {
+      static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
@@ -9432,7 +9432,7 @@ public final class OsmandOdb {
           }
         }
 
-        public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox other) {
+        Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox other) {
           if (other == net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox.getDefaultInstance()) return this;
           if (other.hasLeft()) {
             setLeft(other.getLeft());
@@ -9556,7 +9556,7 @@ public final class OsmandOdb {
          * delta encoded
          * </pre>
          */
-        public Builder setLeft(int value) {
+        Builder setLeft(int value) {
           bitField0_ |= 0x00000001;
           left_ = value;
           onChanged();
@@ -9605,7 +9605,7 @@ public final class OsmandOdb {
          * delta encoded
          * </pre>
          */
-        public Builder setRight(int value) {
+        Builder setRight(int value) {
           bitField0_ |= 0x00000002;
           right_ = value;
           onChanged();
@@ -9654,7 +9654,7 @@ public final class OsmandOdb {
          * delta encoded
          * </pre>
          */
-        public Builder setTop(int value) {
+        Builder setTop(int value) {
           bitField0_ |= 0x00000004;
           top_ = value;
           onChanged();
@@ -9703,7 +9703,7 @@ public final class OsmandOdb {
          * delta encoded
          * </pre>
          */
-        public Builder setBottom(int value) {
+        Builder setBottom(int value) {
           bitField0_ |= 0x00000008;
           bottom_ = value;
           onChanged();
@@ -9752,7 +9752,7 @@ public final class OsmandOdb {
          *shift from mapdatabox start to message MapDataBlock
          * </pre>
          */
-        public Builder setShiftToMapData(int value) {
+        Builder setShiftToMapData(int value) {
           bitField0_ |= 0x00000010;
           shiftToMapData_ = value;
           onChanged();
@@ -9801,7 +9801,7 @@ public final class OsmandOdb {
          * true (byte = 1) - full ocean, false (byte = 0) - full land
          * </pre>
          */
-        public Builder setOcean(boolean value) {
+        Builder setOcean(boolean value) {
           bitField0_ |= 0x00000020;
           ocean_ = value;
           onChanged();
@@ -10336,9 +10336,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndMapIndex prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndMapIndex prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -10473,7 +10473,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndMapIndex other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndMapIndex other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndMapIndex.getDefaultInstance()) return this;
         if (other.hasName()) {
           bitField0_ |= 0x00000001;
@@ -11306,7 +11306,7 @@ public final class OsmandOdb {
     private MapDataBlock(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final MapDataBlock defaultInstance;
-    public static MapDataBlock getDefaultInstance() {
+    static MapDataBlock getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -11396,7 +11396,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.MapDataBlock.class, net.osmand.binary.OsmandOdb.MapDataBlock.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<MapDataBlock> PARSER =
+    static final com.google.protobuf.Parser<MapDataBlock> PARSER =
         new com.google.protobuf.AbstractParser<MapDataBlock>() {
       public MapDataBlock parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -11624,9 +11624,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.MapDataBlock prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.MapDataBlock prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -11762,7 +11762,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.MapDataBlock other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.MapDataBlock other) {
         if (other == net.osmand.binary.OsmandOdb.MapDataBlock.getDefaultInstance()) return this;
         if (other.hasBaseId()) {
           setBaseId(other.getBaseId());
@@ -11846,7 +11846,7 @@ public final class OsmandOdb {
       /**
        * <code>optional uint64 baseId = 10;</code>
        */
-      public Builder setBaseId(long value) {
+      Builder setBaseId(long value) {
         bitField0_ |= 0x00000001;
         baseId_ = value;
         onChanged();
@@ -12227,7 +12227,7 @@ public final class OsmandOdb {
       /**
        * <code>optional .OsmAnd.OBF.StringTable stringTable = 15;</code>
        */
-      public Builder mergeStringTable(net.osmand.binary.OsmandOdb.StringTable value) {
+      Builder mergeStringTable(net.osmand.binary.OsmandOdb.StringTable value) {
         if (stringTableBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004) &&
               stringTable_ != net.osmand.binary.OsmandOdb.StringTable.getDefaultInstance()) {
@@ -12447,7 +12447,7 @@ public final class OsmandOdb {
     private MapData(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final MapData defaultInstance;
-    public static MapData getDefaultInstance() {
+    static MapData getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -12554,7 +12554,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.MapData.class, net.osmand.binary.OsmandOdb.MapData.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<MapData> PARSER =
+    static final com.google.protobuf.Parser<MapData> PARSER =
         new com.google.protobuf.AbstractParser<MapData>() {
       public MapData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -12914,9 +12914,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.MapData prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.MapData prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -13056,7 +13056,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.MapData other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.MapData other) {
         if (other == net.osmand.binary.OsmandOdb.MapData.getDefaultInstance()) return this;
         if (other.hasCoordinates()) {
           setCoordinates(other.getCoordinates());
@@ -13159,7 +13159,7 @@ public final class OsmandOdb {
        * point, line or outer polygon coordinates
        * </pre>
        */
-      public Builder setCoordinates(com.google.protobuf.ByteString value) {
+      Builder setCoordinates(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -13201,7 +13201,7 @@ public final class OsmandOdb {
       /**
        * <code>optional bytes areaCoordinates = 2;</code>
        */
-      public Builder setAreaCoordinates(com.google.protobuf.ByteString value) {
+      Builder setAreaCoordinates(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -13321,7 +13321,7 @@ public final class OsmandOdb {
        * array of raw var int types
        * </pre>
        */
-      public Builder setAdditionalTypes(com.google.protobuf.ByteString value) {
+      Builder setAdditionalTypes(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -13373,7 +13373,7 @@ public final class OsmandOdb {
        * array of raw var int types
        * </pre>
        */
-      public Builder setTypes(com.google.protobuf.ByteString value) {
+      Builder setTypes(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -13425,7 +13425,7 @@ public final class OsmandOdb {
        * repeated array&lt;pair&lt;tagId : raw_var_int, indexOfStringInParent : raw_var_int&gt; &gt;
        * </pre>
        */
-      public Builder setStringNames(com.google.protobuf.ByteString value) {
+      Builder setStringNames(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -13477,7 +13477,7 @@ public final class OsmandOdb {
        * delta encoded
        * </pre>
        */
-      public Builder setId(long value) {
+      Builder setId(long value) {
         bitField0_ |= 0x00000040;
         id_ = value;
         onChanged();
@@ -13514,7 +13514,7 @@ public final class OsmandOdb {
       /**
        * <code>optional bytes rasterBytes = 15;</code>
        */
-      public Builder setRasterBytes(com.google.protobuf.ByteString value) {
+      Builder setRasterBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -13707,7 +13707,7 @@ public final class OsmandOdb {
     private OsmAndAddressIndex(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndAddressIndex defaultInstance;
-    public static OsmAndAddressIndex getDefaultInstance() {
+    static OsmAndAddressIndex getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -13828,7 +13828,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndAddressIndex.class, net.osmand.binary.OsmandOdb.OsmAndAddressIndex.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndAddressIndex> PARSER =
+    static final com.google.protobuf.Parser<OsmAndAddressIndex> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndAddressIndex>() {
       public OsmAndAddressIndex parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -13945,7 +13945,7 @@ public final class OsmandOdb {
       private CitiesIndex(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
       private static final CitiesIndex defaultInstance;
-      public static CitiesIndex getDefaultInstance() {
+      static CitiesIndex getDefaultInstance() {
         return defaultInstance;
       }
 
@@ -14027,7 +14027,7 @@ public final class OsmandOdb {
           makeExtensionsImmutable();
         }
       }
-      public static final com.google.protobuf.Descriptors.Descriptor
+      static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return net.osmand.binary.OsmandOdb.internal_static_OsmAnd_OBF_OsmAndAddressIndex_CitiesIndex_descriptor;
       }
@@ -14039,7 +14039,7 @@ public final class OsmandOdb {
                 net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex.class, net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex.Builder.class);
       }
 
-      public static com.google.protobuf.Parser<CitiesIndex> PARSER =
+      static final com.google.protobuf.Parser<CitiesIndex> PARSER =
           new com.google.protobuf.AbstractParser<CitiesIndex>() {
         public CitiesIndex parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
@@ -14089,7 +14089,7 @@ public final class OsmandOdb {
 
         public final int getNumber() { return value; }
 
-        public static CitiesType valueOf(int value) {
+        static CitiesType valueOf(int value) {
           switch (value) {
             case 1: return CitiesOrTowns;
             case 2: return Postcodes;
@@ -14102,7 +14102,7 @@ public final class OsmandOdb {
             internalGetValueMap() {
           return internalValueMap;
         }
-        private static com.google.protobuf.Internal.EnumLiteMap<CitiesType>
+        private static final com.google.protobuf.Internal.EnumLiteMap<CitiesType>
             internalValueMap =
               new com.google.protobuf.Internal.EnumLiteMap<CitiesType>() {
                 public CitiesType findValueByNumber(int number) {
@@ -14118,7 +14118,7 @@ public final class OsmandOdb {
             getDescriptorForType() {
           return getDescriptor();
         }
-        public static final com.google.protobuf.Descriptors.EnumDescriptor
+        static final com.google.protobuf.Descriptors.EnumDescriptor
             getDescriptor() {
           return net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex.getDescriptor().getEnumTypes().get(0);
         }
@@ -14137,7 +14137,7 @@ public final class OsmandOdb {
         private final int index;
         private final int value;
 
-        private CitiesType(int index, int value) {
+        CitiesType(int index, int value) {
           this.index = index;
           this.value = value;
         }
@@ -14387,9 +14387,9 @@ public final class OsmandOdb {
         return PARSER.parseFrom(input, extensionRegistry);
       }
 
-      public static Builder newBuilder() { return Builder.create(); }
+      static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex prototype) {
+      static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
@@ -14518,7 +14518,7 @@ public final class OsmandOdb {
           }
         }
 
-        public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex other) {
+        Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex other) {
           if (other == net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex.getDefaultInstance()) return this;
           if (other.hasType()) {
             setType(other.getType());
@@ -14635,7 +14635,7 @@ public final class OsmandOdb {
         /**
          * <code>required .OsmAnd.OBF.OsmAndAddressIndex.CitiesIndex.CitiesType type = 2;</code>
          */
-        public Builder setType(net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex.CitiesType value) {
+        Builder setType(net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex.CitiesType value) {
           if (value == null) {
             throw new NullPointerException();
           }
@@ -15631,9 +15631,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndAddressIndex prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndAddressIndex prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -15797,7 +15797,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndAddressIndex other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndAddressIndex other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndAddressIndex.getDefaultInstance()) return this;
         if (other.hasName()) {
           bitField0_ |= 0x00000001;
@@ -16094,7 +16094,7 @@ public final class OsmandOdb {
       /**
        * <code>optional .OsmAnd.OBF.OsmAndTileBox boundaries = 3;</code>
        */
-      public Builder mergeBoundaries(net.osmand.binary.OsmandOdb.OsmAndTileBox value) {
+      Builder mergeBoundaries(net.osmand.binary.OsmandOdb.OsmAndTileBox value) {
         if (boundariesBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004) &&
               boundaries_ != net.osmand.binary.OsmandOdb.OsmAndTileBox.getDefaultInstance()) {
@@ -16231,7 +16231,7 @@ public final class OsmandOdb {
        * before cities
        * </pre>
        */
-      public Builder mergeAttributeTagsTable(net.osmand.binary.OsmandOdb.StringTable value) {
+      Builder mergeAttributeTagsTable(net.osmand.binary.OsmandOdb.StringTable value) {
         if (attributeTagsTableBuilder_ == null) {
           if (((bitField0_ & 0x00000008) == 0x00000008) &&
               attributeTagsTable_ != net.osmand.binary.OsmandOdb.StringTable.getDefaultInstance()) {
@@ -16714,7 +16714,7 @@ public final class OsmandOdb {
        * encoded as fixed32 length delimited
        * </pre>
        */
-      public Builder mergeNameIndex(net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData value) {
+      Builder mergeNameIndex(net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData value) {
         if (nameIndexBuilder_ == null) {
           if (((bitField0_ & 0x00000020) == 0x00000020) &&
               nameIndex_ != net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.getDefaultInstance()) {
@@ -16876,7 +16876,7 @@ public final class OsmandOdb {
     private OsmAndAddressNameIndexData(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndAddressNameIndexData defaultInstance;
-    public static OsmAndAddressNameIndexData getDefaultInstance() {
+    static OsmAndAddressNameIndexData getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -16961,7 +16961,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.class, net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndAddressNameIndexData> PARSER =
+    static final com.google.protobuf.Parser<OsmAndAddressNameIndexData> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndAddressNameIndexData>() {
       public OsmAndAddressNameIndexData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -17038,7 +17038,7 @@ public final class OsmandOdb {
       private AddressNameIndexData(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
       private static final AddressNameIndexData defaultInstance;
-      public static AddressNameIndexData getDefaultInstance() {
+      static AddressNameIndexData getDefaultInstance() {
         return defaultInstance;
       }
 
@@ -17110,7 +17110,7 @@ public final class OsmandOdb {
                 net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexData.class, net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexData.Builder.class);
       }
 
-      public static com.google.protobuf.Parser<AddressNameIndexData> PARSER =
+      static final com.google.protobuf.Parser<AddressNameIndexData> PARSER =
           new com.google.protobuf.AbstractParser<AddressNameIndexData>() {
         public AddressNameIndexData parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
@@ -17283,9 +17283,9 @@ public final class OsmandOdb {
         return PARSER.parseFrom(input, extensionRegistry);
       }
 
-      public static Builder newBuilder() { return Builder.create(); }
+      static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexData prototype) {
+      static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexData prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
@@ -17390,7 +17390,7 @@ public final class OsmandOdb {
           }
         }
 
-        public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexData other) {
+        Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexData other) {
           if (other == net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexData.getDefaultInstance()) return this;
           if (atomBuilder_ == null) {
             if (!other.atom_.isEmpty()) {
@@ -17962,9 +17962,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -18086,7 +18086,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.getDefaultInstance()) return this;
         if (other.hasTable()) {
           mergeTable(other.getTable());
@@ -18232,7 +18232,7 @@ public final class OsmandOdb {
        * encoded as fixed32 length delimited
        * </pre>
        */
-      public Builder mergeTable(net.osmand.binary.OsmandOdb.IndexedStringTable value) {
+      Builder mergeTable(net.osmand.binary.OsmandOdb.IndexedStringTable value) {
         if (tableBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001) &&
               table_ != net.osmand.binary.OsmandOdb.IndexedStringTable.getDefaultInstance()) {
@@ -18713,7 +18713,7 @@ public final class OsmandOdb {
     private AddressNameIndexDataAtom(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final AddressNameIndexDataAtom defaultInstance;
-    public static AddressNameIndexDataAtom getDefaultInstance() {
+    static AddressNameIndexDataAtom getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -18861,7 +18861,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.AddressNameIndexDataAtom.class, net.osmand.binary.OsmandOdb.AddressNameIndexDataAtom.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<AddressNameIndexDataAtom> PARSER =
+    static final com.google.protobuf.Parser<AddressNameIndexDataAtom> PARSER =
         new com.google.protobuf.AbstractParser<AddressNameIndexDataAtom>() {
       public AddressNameIndexDataAtom parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -19250,9 +19250,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.AddressNameIndexDataAtom prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.AddressNameIndexDataAtom prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -19382,7 +19382,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.AddressNameIndexDataAtom other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.AddressNameIndexDataAtom other) {
         if (other == net.osmand.binary.OsmandOdb.AddressNameIndexDataAtom.getDefaultInstance()) return this;
         if (other.hasName()) {
           bitField0_ |= 0x00000001;
@@ -19635,7 +19635,7 @@ public final class OsmandOdb {
        * 1 - city, 2 - postcode, 3 - village,  4 - street
        * </pre>
        */
-      public Builder setType(int value) {
+      Builder setType(int value) {
         bitField0_ |= 0x00000004;
         type_ = value;
         onChanged();
@@ -20118,7 +20118,7 @@ public final class OsmandOdb {
     private CityIndex(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final CityIndex defaultInstance;
-    public static CityIndex getDefaultInstance() {
+    static CityIndex getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -20249,7 +20249,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.CityIndex.class, net.osmand.binary.OsmandOdb.CityIndex.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<CityIndex> PARSER =
+    static final com.google.protobuf.Parser<CityIndex> PARSER =
         new com.google.protobuf.AbstractParser<CityIndex>() {
       public CityIndex parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -20698,9 +20698,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.CityIndex prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.CityIndex prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -20848,7 +20848,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.CityIndex other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.CityIndex other) {
         if (other == net.osmand.binary.OsmandOdb.CityIndex.getDefaultInstance()) return this;
         if (other.hasCityType()) {
           setCityType(other.getCityType());
@@ -20963,7 +20963,7 @@ public final class OsmandOdb {
        * should be written the first (for city), for postcode is optional
        * </pre>
        */
-      public Builder setCityType(int value) {
+      Builder setCityType(int value) {
         bitField0_ |= 0x00000001;
         cityType_ = value;
         onChanged();
@@ -21148,7 +21148,7 @@ public final class OsmandOdb {
       /**
        * <code>optional uint64 id = 4;</code>
        */
-      public Builder setId(long value) {
+      Builder setId(long value) {
         bitField0_ |= 0x00000008;
         id_ = value;
         onChanged();
@@ -21193,7 +21193,7 @@ public final class OsmandOdb {
        * x tile of 31 zoom
        * </pre>
        */
-      public Builder setX(int value) {
+      Builder setX(int value) {
         bitField0_ |= 0x00000010;
         x_ = value;
         onChanged();
@@ -21242,7 +21242,7 @@ public final class OsmandOdb {
        * y tile of 31 zoom
        * </pre>
        */
-      public Builder setY(int value) {
+      Builder setY(int value) {
         bitField0_ |= 0x00000020;
         y_ = value;
         onChanged();
@@ -21450,7 +21450,7 @@ public final class OsmandOdb {
        * shift from start CityIndex (without length) to cityBlockIndex
        * </pre>
        */
-      public Builder setShiftToCityBlockIndex(int value) {
+      Builder setShiftToCityBlockIndex(int value) {
         bitField0_ |= 0x00000100;
         shiftToCityBlockIndex_ = value;
         onChanged();
@@ -21586,7 +21586,7 @@ public final class OsmandOdb {
     private CityBlockIndex(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final CityBlockIndex defaultInstance;
-    public static CityBlockIndex getDefaultInstance() {
+    static CityBlockIndex getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -21674,7 +21674,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.CityBlockIndex.class, net.osmand.binary.OsmandOdb.CityBlockIndex.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<CityBlockIndex> PARSER =
+    static final com.google.protobuf.Parser<CityBlockIndex> PARSER =
         new com.google.protobuf.AbstractParser<CityBlockIndex>() {
       public CityBlockIndex parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -21930,9 +21930,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.CityBlockIndex prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.CityBlockIndex prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -22061,7 +22061,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.CityBlockIndex other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.CityBlockIndex other) {
         if (other == net.osmand.binary.OsmandOdb.CityBlockIndex.getDefaultInstance()) return this;
         if (other.hasShiftToCityIndex()) {
           setShiftToCityIndex(other.getShiftToCityIndex());
@@ -22186,7 +22186,7 @@ public final class OsmandOdb {
        * shift from start cityBlockIndex to CityIndex 
        * </pre>
        */
-      public Builder setShiftToCityIndex(int value) {
+      Builder setShiftToCityIndex(int value) {
         bitField0_ |= 0x00000001;
         shiftToCityIndex_ = value;
         onChanged();
@@ -22946,7 +22946,7 @@ public final class OsmandOdb {
     private StreetIndex(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final StreetIndex defaultInstance;
-    public static StreetIndex getDefaultInstance() {
+    static StreetIndex getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -23089,7 +23089,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.StreetIndex.class, net.osmand.binary.OsmandOdb.StreetIndex.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<StreetIndex> PARSER =
+    static final com.google.protobuf.Parser<StreetIndex> PARSER =
         new com.google.protobuf.AbstractParser<StreetIndex>() {
       public StreetIndex parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -23574,9 +23574,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.StreetIndex prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.StreetIndex prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -23744,7 +23744,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.StreetIndex other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.StreetIndex other) {
         if (other == net.osmand.binary.OsmandOdb.StreetIndex.getDefaultInstance()) return this;
         if (other.hasName()) {
           bitField0_ |= 0x00000001;
@@ -24065,7 +24065,7 @@ public final class OsmandOdb {
        * delta encoded to parent 24 zoom
        * </pre>
        */
-      public Builder setX(int value) {
+      Builder setX(int value) {
         bitField0_ |= 0x00000004;
         x_ = value;
         onChanged();
@@ -24114,7 +24114,7 @@ public final class OsmandOdb {
        * delta encoded to parent 24 zoom
        * </pre>
        */
-      public Builder setY(int value) {
+      Builder setY(int value) {
         bitField0_ |= 0x00000008;
         y_ = value;
         onChanged();
@@ -24391,7 +24391,7 @@ public final class OsmandOdb {
       /**
        * <code>optional uint64 id = 6;</code>
        */
-      public Builder setId(long value) {
+      Builder setId(long value) {
         bitField0_ |= 0x00000020;
         id_ = value;
         onChanged();
@@ -24934,7 +24934,7 @@ public final class OsmandOdb {
     private StreetIntersection(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final StreetIntersection defaultInstance;
-    public static StreetIntersection getDefaultInstance() {
+    static StreetIntersection getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -25050,7 +25050,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.StreetIntersection.class, net.osmand.binary.OsmandOdb.StreetIntersection.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<StreetIntersection> PARSER =
+    static final com.google.protobuf.Parser<StreetIntersection> PARSER =
         new com.google.protobuf.AbstractParser<StreetIntersection>() {
       public StreetIntersection parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -25411,9 +25411,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.StreetIntersection prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.StreetIntersection prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -25543,7 +25543,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.StreetIntersection other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.StreetIntersection other) {
         if (other == net.osmand.binary.OsmandOdb.StreetIntersection.getDefaultInstance()) return this;
         if (other.hasName()) {
           bitField0_ |= 0x00000001;
@@ -25797,7 +25797,7 @@ public final class OsmandOdb {
        * delta encoded to parent street x 24 zoom
        * </pre>
        */
-      public Builder setIntersectedX(int value) {
+      Builder setIntersectedX(int value) {
         bitField0_ |= 0x00000004;
         intersectedX_ = value;
         onChanged();
@@ -25846,7 +25846,7 @@ public final class OsmandOdb {
        * delta encoded to parent street y 24 zoom
        * </pre>
        */
-      public Builder setIntersectedY(int value) {
+      Builder setIntersectedY(int value) {
         bitField0_ |= 0x00000008;
         intersectedY_ = value;
         onChanged();
@@ -26310,7 +26310,7 @@ public final class OsmandOdb {
     private BuildingIndex(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final BuildingIndex defaultInstance;
-    public static BuildingIndex getDefaultInstance() {
+    static BuildingIndex getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -26496,7 +26496,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.BuildingIndex.class, net.osmand.binary.OsmandOdb.BuildingIndex.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<BuildingIndex> PARSER =
+    static final com.google.protobuf.Parser<BuildingIndex> PARSER =
         new com.google.protobuf.AbstractParser<BuildingIndex>() {
       public BuildingIndex parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -27223,9 +27223,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.BuildingIndex prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.BuildingIndex prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -27412,7 +27412,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.BuildingIndex other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.BuildingIndex other) {
         if (other == net.osmand.binary.OsmandOdb.BuildingIndex.getDefaultInstance()) return this;
         if (other.hasName()) {
           bitField0_ |= 0x00000001;
@@ -27888,7 +27888,7 @@ public final class OsmandOdb {
        * positive - just positive interpolation 
        * </pre>
        */
-      public Builder setInterpolation(int value) {
+      Builder setInterpolation(int value) {
         bitField0_ |= 0x00000010;
         interpolation_ = value;
         onChanged();
@@ -27938,7 +27938,7 @@ public final class OsmandOdb {
        * delta encoded to parent 24 zoom
        * </pre>
        */
-      public Builder setX(int value) {
+      Builder setX(int value) {
         bitField0_ |= 0x00000020;
         x_ = value;
         onChanged();
@@ -27987,7 +27987,7 @@ public final class OsmandOdb {
        * delta encoded to parent 24 zoom
        * </pre>
        */
-      public Builder setY(int value) {
+      Builder setY(int value) {
         bitField0_ |= 0x00000040;
         y_ = value;
         onChanged();
@@ -28036,7 +28036,7 @@ public final class OsmandOdb {
        * used for interpolation
        * </pre>
        */
-      public Builder setX2(int value) {
+      Builder setX2(int value) {
         bitField0_ |= 0x00000080;
         x2_ = value;
         onChanged();
@@ -28085,7 +28085,7 @@ public final class OsmandOdb {
        * delta encoded to parent 24 zoom
        * </pre>
        */
-      public Builder setY2(int value) {
+      Builder setY2(int value) {
         bitField0_ |= 0x00000100;
         y2_ = value;
         onChanged();
@@ -28122,7 +28122,7 @@ public final class OsmandOdb {
       /**
        * <code>optional uint64 id = 13;</code>
        */
-      public Builder setId(long value) {
+      Builder setId(long value) {
         bitField0_ |= 0x00000200;
         id_ = value;
         onChanged();
@@ -28583,7 +28583,7 @@ public final class OsmandOdb {
     private TransportRoutes(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final TransportRoutes defaultInstance;
-    public static TransportRoutes getDefaultInstance() {
+    static TransportRoutes getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -28655,7 +28655,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.TransportRoutes.class, net.osmand.binary.OsmandOdb.TransportRoutes.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<TransportRoutes> PARSER =
+    static final com.google.protobuf.Parser<TransportRoutes> PARSER =
         new com.google.protobuf.AbstractParser<TransportRoutes>() {
       public TransportRoutes parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -28808,9 +28808,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.TransportRoutes prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.TransportRoutes prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -28915,7 +28915,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.TransportRoutes other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.TransportRoutes other) {
         if (other == net.osmand.binary.OsmandOdb.TransportRoutes.getDefaultInstance()) return this;
         if (routesBuilder_ == null) {
           if (!other.routes_.isEmpty()) {
@@ -29453,7 +29453,7 @@ public final class OsmandOdb {
     private TransportRoute(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final TransportRoute defaultInstance;
-    public static TransportRoute getDefaultInstance() {
+    static TransportRoute getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -29576,7 +29576,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.TransportRoute.class, net.osmand.binary.OsmandOdb.TransportRoute.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<TransportRoute> PARSER =
+    static final com.google.protobuf.Parser<TransportRoute> PARSER =
         new com.google.protobuf.AbstractParser<TransportRoute>() {
       public TransportRoute parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -30077,9 +30077,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.TransportRoute prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.TransportRoute prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -30250,7 +30250,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.TransportRoute other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.TransportRoute other) {
         if (other == net.osmand.binary.OsmandOdb.TransportRoute.getDefaultInstance()) return this;
         if (other.hasId()) {
           setId(other.getId());
@@ -30390,7 +30390,7 @@ public final class OsmandOdb {
       /**
        * <code>required uint64 id = 1;</code>
        */
-      public Builder setId(long value) {
+      Builder setId(long value) {
         bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
@@ -30435,7 +30435,7 @@ public final class OsmandOdb {
        * reference in string table
        * </pre>
        */
-      public Builder setType(int value) {
+      Builder setType(int value) {
         bitField0_ |= 0x00000002;
         type_ = value;
         onChanged();
@@ -30484,7 +30484,7 @@ public final class OsmandOdb {
        * reference in string table
        * </pre>
        */
-      public Builder setOperator(int value) {
+      Builder setOperator(int value) {
         bitField0_ |= 0x00000004;
         operator_ = value;
         onChanged();
@@ -30607,7 +30607,7 @@ public final class OsmandOdb {
        * reference in string table
        * </pre>
        */
-      public Builder setName(int value) {
+      Builder setName(int value) {
         bitField0_ |= 0x00000010;
         name_ = value;
         onChanged();
@@ -30656,7 +30656,7 @@ public final class OsmandOdb {
        * reference in string table
        * </pre>
        */
-      public Builder setNameEn(int value) {
+      Builder setNameEn(int value) {
         bitField0_ |= 0x00000020;
         nameEn_ = value;
         onChanged();
@@ -30705,7 +30705,7 @@ public final class OsmandOdb {
        * distance in meters
        * </pre>
        */
-      public Builder setDistance(int value) {
+      Builder setDistance(int value) {
         bitField0_ |= 0x00000040;
         distance_ = value;
         onChanged();
@@ -31315,7 +31315,7 @@ public final class OsmandOdb {
        * 0, 0 split geometry (for not connected segments)
        * </pre>
        */
-      public Builder setGeometry(com.google.protobuf.ByteString value) {
+      Builder setGeometry(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -31459,7 +31459,7 @@ public final class OsmandOdb {
     private TransportRouteStop(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final TransportRouteStop defaultInstance;
-    public static TransportRouteStop getDefaultInstance() {
+    static TransportRouteStop getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -31545,7 +31545,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.TransportRouteStop.class, net.osmand.binary.OsmandOdb.TransportRouteStop.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<TransportRouteStop> PARSER =
+    static final com.google.protobuf.Parser<TransportRouteStop> PARSER =
         new com.google.protobuf.AbstractParser<TransportRouteStop>() {
       public TransportRouteStop parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -31825,9 +31825,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.TransportRouteStop prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.TransportRouteStop prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -31948,7 +31948,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.TransportRouteStop other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.TransportRouteStop other) {
         if (other == net.osmand.binary.OsmandOdb.TransportRouteStop.getDefaultInstance()) return this;
         if (other.hasId()) {
           setId(other.getId());
@@ -32037,7 +32037,7 @@ public final class OsmandOdb {
        * delta encoded to previous stop (first stop is delta to 0)
        * </pre>
        */
-      public Builder setId(long value) {
+      Builder setId(long value) {
         bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
@@ -32086,7 +32086,7 @@ public final class OsmandOdb {
        * delta encoded to previous stop (24 zoom)
        * </pre>
        */
-      public Builder setDx(int value) {
+      Builder setDx(int value) {
         bitField0_ |= 0x00000002;
         dx_ = value;
         onChanged();
@@ -32135,7 +32135,7 @@ public final class OsmandOdb {
        * delta encoded to previous stop (24 zoom)
        * </pre>
        */
-      public Builder setDy(int value) {
+      Builder setDy(int value) {
         bitField0_ |= 0x00000004;
         dy_ = value;
         onChanged();
@@ -32184,7 +32184,7 @@ public final class OsmandOdb {
        * index in message table
        * </pre>
        */
-      public Builder setName(int value) {
+      Builder setName(int value) {
         bitField0_ |= 0x00000008;
         name_ = value;
         onChanged();
@@ -32233,7 +32233,7 @@ public final class OsmandOdb {
        * index in message table
        * </pre>
        */
-      public Builder setNameEn(int value) {
+      Builder setNameEn(int value) {
         bitField0_ |= 0x00000010;
         nameEn_ = value;
         onChanged();
@@ -32397,7 +32397,7 @@ public final class OsmandOdb {
     private TransportStop(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final TransportStop defaultInstance;
-    public static TransportStop getDefaultInstance() {
+    static TransportStop getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -32507,7 +32507,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.TransportStop.class, net.osmand.binary.OsmandOdb.TransportStop.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<TransportStop> PARSER =
+    static final com.google.protobuf.Parser<TransportStop> PARSER =
         new com.google.protobuf.AbstractParser<TransportStop>() {
       public TransportStop parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -32835,9 +32835,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.TransportStop prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.TransportStop prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -32965,7 +32965,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.TransportStop other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.TransportStop other) {
         if (other == net.osmand.binary.OsmandOdb.TransportStop.getDefaultInstance()) return this;
         if (other.hasDx()) {
           setDx(other.getDx());
@@ -33064,7 +33064,7 @@ public final class OsmandOdb {
        * delta encoded to parent (24 zoom) to left
        * </pre>
        */
-      public Builder setDx(int value) {
+      Builder setDx(int value) {
         bitField0_ |= 0x00000001;
         dx_ = value;
         onChanged();
@@ -33113,7 +33113,7 @@ public final class OsmandOdb {
        * delta encoded to parent (24 zoom) to top
        * </pre>
        */
-      public Builder setDy(int value) {
+      Builder setDy(int value) {
         bitField0_ |= 0x00000002;
         dy_ = value;
         onChanged();
@@ -33162,7 +33162,7 @@ public final class OsmandOdb {
        * delta encoded to parent base id 
        * </pre>
        */
-      public Builder setId(long value) {
+      Builder setId(long value) {
         bitField0_ |= 0x00000004;
         id_ = value;
         onChanged();
@@ -33211,7 +33211,7 @@ public final class OsmandOdb {
        * index in message table
        * </pre>
        */
-      public Builder setName(int value) {
+      Builder setName(int value) {
         bitField0_ |= 0x00000008;
         name_ = value;
         onChanged();
@@ -33260,7 +33260,7 @@ public final class OsmandOdb {
        * index in message table
        * </pre>
        */
-      public Builder setNameEn(int value) {
+      Builder setNameEn(int value) {
         bitField0_ |= 0x00000010;
         nameEn_ = value;
         onChanged();
@@ -33562,7 +33562,7 @@ public final class OsmandOdb {
     private TransportStopsTree(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final TransportStopsTree defaultInstance;
-    public static TransportStopsTree getDefaultInstance() {
+    static TransportStopsTree getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -33670,7 +33670,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.TransportStopsTree.class, net.osmand.binary.OsmandOdb.TransportStopsTree.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<TransportStopsTree> PARSER =
+    static final com.google.protobuf.Parser<TransportStopsTree> PARSER =
         new com.google.protobuf.AbstractParser<TransportStopsTree>() {
       public TransportStopsTree parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -34070,9 +34070,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.TransportStopsTree prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.TransportStopsTree prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -34225,7 +34225,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.TransportStopsTree other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.TransportStopsTree other) {
         if (other == net.osmand.binary.OsmandOdb.TransportStopsTree.getDefaultInstance()) return this;
         if (other.hasLeft()) {
           setLeft(other.getLeft());
@@ -34378,7 +34378,7 @@ public final class OsmandOdb {
        * delta encoded (24 zoom)
        * </pre>
        */
-      public Builder setLeft(int value) {
+      Builder setLeft(int value) {
         bitField0_ |= 0x00000001;
         left_ = value;
         onChanged();
@@ -34427,7 +34427,7 @@ public final class OsmandOdb {
        * delta encoded (24 zoom)
        * </pre>
        */
-      public Builder setRight(int value) {
+      Builder setRight(int value) {
         bitField0_ |= 0x00000002;
         right_ = value;
         onChanged();
@@ -34476,7 +34476,7 @@ public final class OsmandOdb {
        * delta encoded (24 zoom)
        * </pre>
        */
-      public Builder setTop(int value) {
+      Builder setTop(int value) {
         bitField0_ |= 0x00000004;
         top_ = value;
         onChanged();
@@ -34525,7 +34525,7 @@ public final class OsmandOdb {
        * delta encoded (24 zoom)
        * </pre>
        */
-      public Builder setBottom(int value) {
+      Builder setBottom(int value) {
         bitField0_ |= 0x00000008;
         bottom_ = value;
         onChanged();
@@ -35126,7 +35126,7 @@ public final class OsmandOdb {
        * written as last
        * </pre>
        */
-      public Builder setBaseId(long value) {
+      Builder setBaseId(long value) {
         bitField0_ |= 0x00000040;
         baseId_ = value;
         onChanged();
@@ -35255,7 +35255,7 @@ public final class OsmandOdb {
     private OsmAndTransportIndex(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndTransportIndex defaultInstance;
-    public static OsmAndTransportIndex getDefaultInstance() {
+    static OsmAndTransportIndex getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -35360,7 +35360,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndTransportIndex.class, net.osmand.binary.OsmandOdb.OsmAndTransportIndex.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndTransportIndex> PARSER =
+    static final com.google.protobuf.Parser<OsmAndTransportIndex> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndTransportIndex>() {
       public OsmAndTransportIndex parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -35645,9 +35645,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndTransportIndex prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndTransportIndex prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -35789,7 +35789,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndTransportIndex other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndTransportIndex other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndTransportIndex.getDefaultInstance()) return this;
         if (other.hasName()) {
           bitField0_ |= 0x00000001;
@@ -35995,7 +35995,7 @@ public final class OsmandOdb {
        * encoded as fixed32 length delimited
        * </pre>
        */
-      public Builder mergeRoutes(net.osmand.binary.OsmandOdb.TransportRoutes value) {
+      Builder mergeRoutes(net.osmand.binary.OsmandOdb.TransportRoutes value) {
         if (routesBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
               routes_ != net.osmand.binary.OsmandOdb.TransportRoutes.getDefaultInstance()) {
@@ -36148,7 +36148,7 @@ public final class OsmandOdb {
        * encoded as fixed32 length delimited
        * </pre>
        */
-      public Builder mergeStops(net.osmand.binary.OsmandOdb.TransportStopsTree value) {
+      Builder mergeStops(net.osmand.binary.OsmandOdb.TransportStopsTree value) {
         if (stopsBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004) &&
               stops_ != net.osmand.binary.OsmandOdb.TransportStopsTree.getDefaultInstance()) {
@@ -36281,7 +36281,7 @@ public final class OsmandOdb {
       /**
        * <code>required .OsmAnd.OBF.StringTable stringTable = 9;</code>
        */
-      public Builder mergeStringTable(net.osmand.binary.OsmandOdb.StringTable value) {
+      Builder mergeStringTable(net.osmand.binary.OsmandOdb.StringTable value) {
         if (stringTableBuilder_ == null) {
           if (((bitField0_ & 0x00000008) == 0x00000008) &&
               stringTable_ != net.osmand.binary.OsmandOdb.StringTable.getDefaultInstance()) {
@@ -36557,7 +36557,7 @@ public final class OsmandOdb {
     private OsmAndPoiIndex(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndPoiIndex defaultInstance;
-    public static OsmAndPoiIndex getDefaultInstance() {
+    static OsmAndPoiIndex getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -36695,7 +36695,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndPoiIndex.class, net.osmand.binary.OsmandOdb.OsmAndPoiIndex.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndPoiIndex> PARSER =
+    static final com.google.protobuf.Parser<OsmAndPoiIndex> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndPoiIndex>() {
       public OsmAndPoiIndex parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -37166,9 +37166,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiIndex prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiIndex prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -37358,7 +37358,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiIndex other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiIndex other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndPoiIndex.getDefaultInstance()) return this;
         if (other.hasName()) {
           bitField0_ |= 0x00000001;
@@ -37648,7 +37648,7 @@ public final class OsmandOdb {
       /**
        * <code>required .OsmAnd.OBF.OsmAndTileBox boundaries = 2;</code>
        */
-      public Builder mergeBoundaries(net.osmand.binary.OsmandOdb.OsmAndTileBox value) {
+      Builder mergeBoundaries(net.osmand.binary.OsmandOdb.OsmAndTileBox value) {
         if (boundariesBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
               boundaries_ != net.osmand.binary.OsmandOdb.OsmAndTileBox.getDefaultInstance()) {
@@ -38025,7 +38025,7 @@ public final class OsmandOdb {
        * encoded as fixed32 length delimited
        * </pre>
        */
-      public Builder mergeNameIndex(net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex value) {
+      Builder mergeNameIndex(net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex value) {
         if (nameIndexBuilder_ == null) {
           if (((bitField0_ & 0x00000008) == 0x00000008) &&
               nameIndex_ != net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.getDefaultInstance()) {
@@ -38158,7 +38158,7 @@ public final class OsmandOdb {
       /**
        * <code>optional .OsmAnd.OBF.OsmAndSubtypesTable subtypesTable = 5;</code>
        */
-      public Builder mergeSubtypesTable(net.osmand.binary.OsmandOdb.OsmAndSubtypesTable value) {
+      Builder mergeSubtypesTable(net.osmand.binary.OsmandOdb.OsmAndSubtypesTable value) {
         if (subtypesTableBuilder_ == null) {
           if (((bitField0_ & 0x00000010) == 0x00000010) &&
               subtypesTable_ != net.osmand.binary.OsmandOdb.OsmAndSubtypesTable.getDefaultInstance()) {
@@ -38928,7 +38928,7 @@ public final class OsmandOdb {
     private OsmAndPoiNameIndex(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndPoiNameIndex defaultInstance;
-    public static OsmAndPoiNameIndex getDefaultInstance() {
+    static OsmAndPoiNameIndex getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -39013,7 +39013,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.class, net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndPoiNameIndex> PARSER =
+    static final com.google.protobuf.Parser<OsmAndPoiNameIndex> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndPoiNameIndex>() {
       public OsmAndPoiNameIndex parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -39090,7 +39090,7 @@ public final class OsmandOdb {
       private OsmAndPoiNameIndexData(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
       private static final OsmAndPoiNameIndexData defaultInstance;
-      public static OsmAndPoiNameIndexData getDefaultInstance() {
+      static OsmAndPoiNameIndexData getDefaultInstance() {
         return defaultInstance;
       }
 
@@ -39162,7 +39162,7 @@ public final class OsmandOdb {
                 net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexData.class, net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexData.Builder.class);
       }
 
-      public static com.google.protobuf.Parser<OsmAndPoiNameIndexData> PARSER =
+      static final com.google.protobuf.Parser<OsmAndPoiNameIndexData> PARSER =
           new com.google.protobuf.AbstractParser<OsmAndPoiNameIndexData>() {
         public OsmAndPoiNameIndexData parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
@@ -39329,9 +39329,9 @@ public final class OsmandOdb {
         return PARSER.parseFrom(input, extensionRegistry);
       }
 
-      public static Builder newBuilder() { return Builder.create(); }
+      static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexData prototype) {
+      static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexData prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
@@ -39436,7 +39436,7 @@ public final class OsmandOdb {
           }
         }
 
-        public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexData other) {
+        Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexData other) {
           if (other == net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexData.getDefaultInstance()) return this;
           if (atomsBuilder_ == null) {
             if (!other.atoms_.isEmpty()) {
@@ -39996,9 +39996,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -40120,7 +40120,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.getDefaultInstance()) return this;
         if (other.hasTable()) {
           mergeTable(other.getTable());
@@ -40260,7 +40260,7 @@ public final class OsmandOdb {
        * encoded as fixed32 length delimited
        * </pre>
        */
-      public Builder mergeTable(net.osmand.binary.OsmandOdb.IndexedStringTable value) {
+      Builder mergeTable(net.osmand.binary.OsmandOdb.IndexedStringTable value) {
         if (tableBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001) &&
               table_ != net.osmand.binary.OsmandOdb.IndexedStringTable.getDefaultInstance()) {
@@ -40670,7 +40670,7 @@ public final class OsmandOdb {
     private OsmAndPoiNameIndexDataAtom(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndPoiNameIndexDataAtom defaultInstance;
-    public static OsmAndPoiNameIndexDataAtom getDefaultInstance() {
+    static OsmAndPoiNameIndexDataAtom getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -40751,7 +40751,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtom.class, net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtom.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndPoiNameIndexDataAtom> PARSER =
+    static final com.google.protobuf.Parser<OsmAndPoiNameIndexDataAtom> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndPoiNameIndexDataAtom>() {
       public OsmAndPoiNameIndexDataAtom parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -40969,9 +40969,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtom prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtom prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -41086,7 +41086,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtom other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtom other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtom.getDefaultInstance()) return this;
         if (other.hasZoom()) {
           setZoom(other.getZoom());
@@ -41156,7 +41156,7 @@ public final class OsmandOdb {
        * fields do not preserve order define, they are repeating 
        * </pre>
        */
-      public Builder setZoom(int value) {
+      Builder setZoom(int value) {
         bitField0_ |= 0x00000001;
         zoom_ = value;
         onChanged();
@@ -41193,7 +41193,7 @@ public final class OsmandOdb {
       /**
        * <code>optional uint32 x = 3;</code>
        */
-      public Builder setX(int value) {
+      Builder setX(int value) {
         bitField0_ |= 0x00000002;
         x_ = value;
         onChanged();
@@ -41226,7 +41226,7 @@ public final class OsmandOdb {
       /**
        * <code>optional uint32 y = 4;</code>
        */
-      public Builder setY(int value) {
+      Builder setY(int value) {
         bitField0_ |= 0x00000004;
         y_ = value;
         onChanged();
@@ -41274,7 +41274,7 @@ public final class OsmandOdb {
        * message is started when body is started
        * </pre>
        */
-      public Builder setShiftTo(int value) {
+      Builder setShiftTo(int value) {
         bitField0_ |= 0x00000008;
         shiftTo_ = value;
         onChanged();
@@ -41370,7 +41370,7 @@ public final class OsmandOdb {
     private OsmAndCategoryTable(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndCategoryTable defaultInstance;
-    public static OsmAndCategoryTable getDefaultInstance() {
+    static OsmAndCategoryTable getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -41447,7 +41447,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndCategoryTable.class, net.osmand.binary.OsmandOdb.OsmAndCategoryTable.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndCategoryTable> PARSER =
+    static final com.google.protobuf.Parser<OsmAndCategoryTable> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndCategoryTable>() {
       public OsmAndCategoryTable parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -41661,9 +41661,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndCategoryTable prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndCategoryTable prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -41768,7 +41768,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndCategoryTable other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndCategoryTable other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndCategoryTable.getDefaultInstance()) return this;
         if (other.hasCategory()) {
           bitField0_ |= 0x00000001;
@@ -42090,7 +42090,7 @@ public final class OsmandOdb {
     private OsmAndSubtypesTable(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndSubtypesTable defaultInstance;
-    public static OsmAndSubtypesTable getDefaultInstance() {
+    static OsmAndSubtypesTable getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -42162,7 +42162,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndSubtypesTable.class, net.osmand.binary.OsmandOdb.OsmAndSubtypesTable.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndSubtypesTable> PARSER =
+    static final com.google.protobuf.Parser<OsmAndSubtypesTable> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndSubtypesTable>() {
       public OsmAndSubtypesTable parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -42345,9 +42345,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndSubtypesTable prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndSubtypesTable prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -42452,7 +42452,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndSubtypesTable other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndSubtypesTable other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndSubtypesTable.getDefaultInstance()) return this;
         if (subtypesBuilder_ == null) {
           if (!other.subtypes_.isEmpty()) {
@@ -42981,7 +42981,7 @@ public final class OsmandOdb {
     private OsmAndPoiSubtype(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndPoiSubtype defaultInstance;
-    public static OsmAndPoiSubtype getDefaultInstance() {
+    static OsmAndPoiSubtype getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -43078,7 +43078,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndPoiSubtype.class, net.osmand.binary.OsmandOdb.OsmAndPoiSubtype.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndPoiSubtype> PARSER =
+    static final com.google.protobuf.Parser<OsmAndPoiSubtype> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndPoiSubtype>() {
       public OsmAndPoiSubtype parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -43419,9 +43419,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiSubtype prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiSubtype prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -43550,7 +43550,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiSubtype other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiSubtype other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndPoiSubtype.getDefaultInstance()) return this;
         if (other.hasName()) {
           bitField0_ |= 0x00000001;
@@ -43805,7 +43805,7 @@ public final class OsmandOdb {
       /**
        * <code>required bool isText = 3;</code>
        */
-      public Builder setIsText(boolean value) {
+      Builder setIsText(boolean value) {
         bitField0_ |= 0x00000004;
         isText_ = value;
         onChanged();
@@ -43838,7 +43838,7 @@ public final class OsmandOdb {
       /**
        * <code>optional uint32 frequency = 5;</code>
        */
-      public Builder setFrequency(int value) {
+      Builder setFrequency(int value) {
         bitField0_ |= 0x00000008;
         frequency_ = value;
         onChanged();
@@ -43871,7 +43871,7 @@ public final class OsmandOdb {
       /**
        * <code>optional uint32 subtypeValuesSize = 6;</code>
        */
-      public Builder setSubtypeValuesSize(int value) {
+      Builder setSubtypeValuesSize(int value) {
         bitField0_ |= 0x00000010;
         subtypeValuesSize_ = value;
         onChanged();
@@ -44139,7 +44139,7 @@ public final class OsmandOdb {
     private OsmAndPoiBox(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndPoiBox defaultInstance;
-    public static OsmAndPoiBox getDefaultInstance() {
+    static OsmAndPoiBox getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -44244,7 +44244,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndPoiBox.class, net.osmand.binary.OsmandOdb.OsmAndPoiBox.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndPoiBox> PARSER =
+    static final com.google.protobuf.Parser<OsmAndPoiBox> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndPoiBox>() {
       public OsmAndPoiBox parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -44588,9 +44588,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiBox prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiBox prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -44736,7 +44736,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiBox other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiBox other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndPoiBox.getDefaultInstance()) return this;
         if (other.hasZoom()) {
           setZoom(other.getZoom());
@@ -44853,7 +44853,7 @@ public final class OsmandOdb {
        * delta encoded to parent
        * </pre>
        */
-      public Builder setZoom(int value) {
+      Builder setZoom(int value) {
         bitField0_ |= 0x00000001;
         zoom_ = value;
         onChanged();
@@ -44902,7 +44902,7 @@ public final class OsmandOdb {
        * size is one tile
        * </pre>
        */
-      public Builder setLeft(int value) {
+      Builder setLeft(int value) {
         bitField0_ |= 0x00000002;
         left_ = value;
         onChanged();
@@ -44951,7 +44951,7 @@ public final class OsmandOdb {
        * delta encoded (zoom)
        * </pre>
        */
-      public Builder setTop(int value) {
+      Builder setTop(int value) {
         bitField0_ |= 0x00000004;
         top_ = value;
         onChanged();
@@ -45024,7 +45024,7 @@ public final class OsmandOdb {
       /**
        * <code>optional .OsmAnd.OBF.OsmAndPoiCategories categories = 4;</code>
        */
-      public Builder mergeCategories(net.osmand.binary.OsmandOdb.OsmAndPoiCategories value) {
+      Builder mergeCategories(net.osmand.binary.OsmandOdb.OsmAndPoiCategories value) {
         if (categoriesBuilder_ == null) {
           if (((bitField0_ & 0x00000008) == 0x00000008) &&
               categories_ != net.osmand.binary.OsmandOdb.OsmAndPoiCategories.getDefaultInstance()) {
@@ -45429,7 +45429,7 @@ public final class OsmandOdb {
        * must be the last
        * </pre>
        */
-      public Builder setShiftToData(int value) {
+      Builder setShiftToData(int value) {
         bitField0_ |= 0x00000020;
         shiftToData_ = value;
         onChanged();
@@ -45517,7 +45517,7 @@ public final class OsmandOdb {
     private OsmAndPoiCategories(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndPoiCategories defaultInstance;
-    public static OsmAndPoiCategories getDefaultInstance() {
+    static OsmAndPoiCategories getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -45626,7 +45626,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndPoiCategories.class, net.osmand.binary.OsmandOdb.OsmAndPoiCategories.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndPoiCategories> PARSER =
+    static final com.google.protobuf.Parser<OsmAndPoiCategories> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndPoiCategories>() {
       public OsmAndPoiCategories parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -45813,9 +45813,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiCategories prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiCategories prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -45918,7 +45918,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiCategories other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiCategories other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndPoiCategories.getDefaultInstance()) return this;
         if (!other.categories_.isEmpty()) {
           if (categories_.isEmpty()) {
@@ -46234,7 +46234,7 @@ public final class OsmandOdb {
     private OsmAndPoiBoxData(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndPoiBoxData defaultInstance;
-    public static OsmAndPoiBoxData getDefaultInstance() {
+    static OsmAndPoiBoxData getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -46321,7 +46321,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndPoiBoxData.class, net.osmand.binary.OsmandOdb.OsmAndPoiBoxData.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndPoiBoxData> PARSER =
+    static final com.google.protobuf.Parser<OsmAndPoiBoxData> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndPoiBoxData>() {
       public OsmAndPoiBoxData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -46571,9 +46571,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiBoxData prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiBoxData prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -46698,7 +46698,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiBoxData other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiBoxData other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndPoiBoxData.getDefaultInstance()) return this;
         if (other.hasZoom()) {
           setZoom(other.getZoom());
@@ -46797,7 +46797,7 @@ public final class OsmandOdb {
        * zoom level
        * </pre>
        */
-      public Builder setZoom(int value) {
+      Builder setZoom(int value) {
         bitField0_ |= 0x00000001;
         zoom_ = value;
         onChanged();
@@ -46846,7 +46846,7 @@ public final class OsmandOdb {
        * x tile
        * </pre>
        */
-      public Builder setX(int value) {
+      Builder setX(int value) {
         bitField0_ |= 0x00000002;
         x_ = value;
         onChanged();
@@ -46895,7 +46895,7 @@ public final class OsmandOdb {
        * y tile
        * </pre>
        */
-      public Builder setY(int value) {
+      Builder setY(int value) {
         bitField0_ |= 0x00000004;
         y_ = value;
         onChanged();
@@ -47417,7 +47417,7 @@ public final class OsmandOdb {
     private OsmAndPoiBoxDataAtom(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndPoiBoxDataAtom defaultInstance;
-    public static OsmAndPoiBoxDataAtom getDefaultInstance() {
+    static OsmAndPoiBoxDataAtom getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -47606,7 +47606,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtom.class, net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtom.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndPoiBoxDataAtom> PARSER =
+    static final com.google.protobuf.Parser<OsmAndPoiBoxDataAtom> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndPoiBoxDataAtom>() {
       public OsmAndPoiBoxDataAtom parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -48299,9 +48299,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtom prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtom prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -48475,7 +48475,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtom other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtom other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtom.getDefaultInstance()) return this;
         if (other.hasDx()) {
           setDx(other.getDx());
@@ -48620,7 +48620,7 @@ public final class OsmandOdb {
        * delta encoded to OsmAndPoiBox on 24 zoom
        * </pre>
        */
-      public Builder setDx(int value) {
+      Builder setDx(int value) {
         bitField0_ |= 0x00000001;
         dx_ = value;
         onChanged();
@@ -48669,7 +48669,7 @@ public final class OsmandOdb {
        * delta encoded to OsmAndPoiBox on 24 zoom
        * </pre>
        */
-      public Builder setDy(int value) {
+      Builder setDy(int value) {
         bitField0_ |= 0x00000002;
         dy_ = value;
         onChanged();
@@ -49014,7 +49014,7 @@ public final class OsmandOdb {
       /**
        * <code>optional uint64 id = 8;</code>
        */
-      public Builder setId(long value) {
+      Builder setId(long value) {
         bitField0_ |= 0x00000040;
         id_ = value;
         onChanged();
@@ -49598,7 +49598,7 @@ public final class OsmandOdb {
     private IdTable(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final IdTable defaultInstance;
-    public static IdTable getDefaultInstance() {
+    static IdTable getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -49683,7 +49683,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.IdTable.class, net.osmand.binary.OsmandOdb.IdTable.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<IdTable> PARSER =
+    static final com.google.protobuf.Parser<IdTable> PARSER =
         new com.google.protobuf.AbstractParser<IdTable>() {
       public IdTable parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -49834,9 +49834,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.IdTable prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.IdTable prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -49939,7 +49939,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.IdTable other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.IdTable other) {
         if (other == net.osmand.binary.OsmandOdb.IdTable.getDefaultInstance()) return this;
         if (!other.routeId_.isEmpty()) {
           if (routeId_.isEmpty()) {
@@ -50140,7 +50140,7 @@ public final class OsmandOdb {
     private RestrictionData(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final RestrictionData defaultInstance;
-    public static RestrictionData getDefaultInstance() {
+    static RestrictionData getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -50221,7 +50221,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.RestrictionData.class, net.osmand.binary.OsmandOdb.RestrictionData.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<RestrictionData> PARSER =
+    static final com.google.protobuf.Parser<RestrictionData> PARSER =
         new com.google.protobuf.AbstractParser<RestrictionData>() {
       public RestrictionData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -50433,9 +50433,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.RestrictionData prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.RestrictionData prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -50550,7 +50550,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.RestrictionData other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.RestrictionData other) {
         if (other == net.osmand.binary.OsmandOdb.RestrictionData.getDefaultInstance()) return this;
         if (other.hasType()) {
           setType(other.getType());
@@ -50620,7 +50620,7 @@ public final class OsmandOdb {
       /**
        * <code>required int32 type = 1;</code>
        */
-      public Builder setType(int value) {
+      Builder setType(int value) {
         bitField0_ |= 0x00000001;
         type_ = value;
         onChanged();
@@ -50653,7 +50653,7 @@ public final class OsmandOdb {
       /**
        * <code>required int32 from = 2;</code>
        */
-      public Builder setFrom(int value) {
+      Builder setFrom(int value) {
         bitField0_ |= 0x00000002;
         from_ = value;
         onChanged();
@@ -50686,7 +50686,7 @@ public final class OsmandOdb {
       /**
        * <code>required int32 to = 3;</code>
        */
-      public Builder setTo(int value) {
+      Builder setTo(int value) {
         bitField0_ |= 0x00000004;
         to_ = value;
         onChanged();
@@ -50719,7 +50719,7 @@ public final class OsmandOdb {
       /**
        * <code>optional int32 via = 4;</code>
        */
-      public Builder setVia(int value) {
+      Builder setVia(int value) {
         bitField0_ |= 0x00000008;
         via_ = value;
         onChanged();
@@ -50879,7 +50879,7 @@ public final class OsmandOdb {
     private RouteData(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final RouteData defaultInstance;
-    public static RouteData getDefaultInstance() {
+    static RouteData getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -50970,7 +50970,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.RouteData.class, net.osmand.binary.OsmandOdb.RouteData.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<RouteData> PARSER =
+    static final com.google.protobuf.Parser<RouteData> PARSER =
         new com.google.protobuf.AbstractParser<RouteData>() {
       public RouteData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -51286,9 +51286,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.RouteData prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.RouteData prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -51415,7 +51415,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.RouteData other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.RouteData other) {
         if (other == net.osmand.binary.OsmandOdb.RouteData.getDefaultInstance()) return this;
         if (other.hasPoints()) {
           setPoints(other.getPoints());
@@ -51506,7 +51506,7 @@ public final class OsmandOdb {
        * first x delta to Tree.left, y to delta Tree.top (next delta to previous)
        * </pre>
        */
-      public Builder setPoints(com.google.protobuf.ByteString value) {
+      Builder setPoints(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -51565,7 +51565,7 @@ public final class OsmandOdb {
        * bytes - array of raw var int types
        * </pre>
        */
-      public Builder setPointTypes(com.google.protobuf.ByteString value) {
+      Builder setPointTypes(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -51622,7 +51622,7 @@ public final class OsmandOdb {
        * [pointIndex - int32, tagId - raw_var_int, indexOfStringInParent : raw_var_int]
        * </pre>
        */
-      public Builder setPointNames(com.google.protobuf.ByteString value) {
+      Builder setPointNames(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -51675,7 +51675,7 @@ public final class OsmandOdb {
        * array of raw var int types
        * </pre>
        */
-      public Builder setTypes(com.google.protobuf.ByteString value) {
+      Builder setTypes(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -51727,7 +51727,7 @@ public final class OsmandOdb {
        * id internal
        * </pre>
        */
-      public Builder setRouteId(int value) {
+      Builder setRouteId(int value) {
         bitField0_ |= 0x00000010;
         routeId_ = value;
         onChanged();
@@ -51776,7 +51776,7 @@ public final class OsmandOdb {
        * repeated array&lt;pair&lt;tagId : raw_var_int, indexOfStringInParent : raw_var_int&gt; &gt;
        * </pre>
        */
-      public Builder setStringNames(com.google.protobuf.ByteString value) {
+      Builder setStringNames(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -51982,7 +51982,7 @@ public final class OsmandOdb {
     private OsmAndRoutingIndex(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
     private static final OsmAndRoutingIndex defaultInstance;
-    public static OsmAndRoutingIndex getDefaultInstance() {
+    static OsmAndRoutingIndex getDefaultInstance() {
       return defaultInstance;
     }
 
@@ -52092,7 +52092,7 @@ public final class OsmandOdb {
               net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.class, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<OsmAndRoutingIndex> PARSER =
+    static final com.google.protobuf.Parser<OsmAndRoutingIndex> PARSER =
         new com.google.protobuf.AbstractParser<OsmAndRoutingIndex>() {
       public OsmAndRoutingIndex parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -52174,7 +52174,7 @@ public final class OsmandOdb {
       private RouteEncodingRule(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
       private static final RouteEncodingRule defaultInstance;
-      public static RouteEncodingRule getDefaultInstance() {
+      static RouteEncodingRule getDefaultInstance() {
         return defaultInstance;
       }
 
@@ -52250,7 +52250,7 @@ public final class OsmandOdb {
                 net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRule.class, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRule.Builder.class);
       }
 
-      public static com.google.protobuf.Parser<RouteEncodingRule> PARSER =
+      static final com.google.protobuf.Parser<RouteEncodingRule> PARSER =
           new com.google.protobuf.AbstractParser<RouteEncodingRule>() {
         public RouteEncodingRule parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
@@ -52498,9 +52498,9 @@ public final class OsmandOdb {
         return PARSER.parseFrom(input, extensionRegistry);
       }
 
-      public static Builder newBuilder() { return Builder.create(); }
+      static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRule prototype) {
+      static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRule prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
@@ -52609,7 +52609,7 @@ public final class OsmandOdb {
           }
         }
 
-        public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRule other) {
+        Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRule other) {
           if (other == net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRule.getDefaultInstance()) return this;
           if (other.hasTag()) {
             bitField0_ |= 0x00000001;
@@ -52839,7 +52839,7 @@ public final class OsmandOdb {
          * is the same as id (id is 1-based and order)
          * </pre>
          */
-        public Builder setId(int value) {
+        Builder setId(int value) {
           bitField0_ |= 0x00000004;
           id_ = value;
           onChanged();
@@ -53003,7 +53003,7 @@ public final class OsmandOdb {
       private RouteDataBox(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
       private static final RouteDataBox defaultInstance;
-      public static RouteDataBox getDefaultInstance() {
+      static RouteDataBox getDefaultInstance() {
         return defaultInstance;
       }
 
@@ -53100,7 +53100,7 @@ public final class OsmandOdb {
                 net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox.class, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox.Builder.class);
       }
 
-      public static com.google.protobuf.Parser<RouteDataBox> PARSER =
+      static final com.google.protobuf.Parser<RouteDataBox> PARSER =
           new com.google.protobuf.AbstractParser<RouteDataBox>() {
         public RouteDataBox parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
@@ -53430,9 +53430,9 @@ public final class OsmandOdb {
         return PARSER.parseFrom(input, extensionRegistry);
       }
 
-      public static Builder newBuilder() { return Builder.create(); }
+      static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox prototype) {
+      static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
@@ -53569,7 +53569,7 @@ public final class OsmandOdb {
           }
         }
 
-        public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox other) {
+        Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox other) {
           if (other == net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox.getDefaultInstance()) return this;
           if (other.hasLeft()) {
             setLeft(other.getLeft());
@@ -53690,7 +53690,7 @@ public final class OsmandOdb {
          * for root box is absolute coordinates
          * </pre>
          */
-        public Builder setLeft(int value) {
+        Builder setLeft(int value) {
           bitField0_ |= 0x00000001;
           left_ = value;
           onChanged();
@@ -53739,7 +53739,7 @@ public final class OsmandOdb {
          * delta encoded
          * </pre>
          */
-        public Builder setRight(int value) {
+        Builder setRight(int value) {
           bitField0_ |= 0x00000002;
           right_ = value;
           onChanged();
@@ -53788,7 +53788,7 @@ public final class OsmandOdb {
          * delta encoded
          * </pre>
          */
-        public Builder setTop(int value) {
+        Builder setTop(int value) {
           bitField0_ |= 0x00000004;
           top_ = value;
           onChanged();
@@ -53837,7 +53837,7 @@ public final class OsmandOdb {
          * delta encoded
          * </pre>
          */
-        public Builder setBottom(int value) {
+        Builder setBottom(int value) {
           bitField0_ |= 0x00000008;
           bottom_ = value;
           onChanged();
@@ -53886,7 +53886,7 @@ public final class OsmandOdb {
          *shift from routeDataBox start to message RouteDataBlock
          * </pre>
          */
-        public Builder setShiftToData(int value) {
+        Builder setShiftToData(int value) {
           bitField0_ |= 0x00000010;
           shiftToData_ = value;
           onChanged();
@@ -54276,7 +54276,7 @@ public final class OsmandOdb {
       private RouteDataBlock(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
       private static final RouteDataBlock defaultInstance;
-      public static RouteDataBlock getDefaultInstance() {
+      static RouteDataBlock getDefaultInstance() {
         return defaultInstance;
       }
 
@@ -54385,7 +54385,7 @@ public final class OsmandOdb {
                 net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlock.class, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlock.Builder.class);
       }
 
-      public static com.google.protobuf.Parser<RouteDataBlock> PARSER =
+      static final com.google.protobuf.Parser<RouteDataBlock> PARSER =
           new com.google.protobuf.AbstractParser<RouteDataBlock>() {
         public RouteDataBlock parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
@@ -54673,9 +54673,9 @@ public final class OsmandOdb {
         return PARSER.parseFrom(input, extensionRegistry);
       }
 
-      public static Builder newBuilder() { return Builder.create(); }
+      static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlock prototype) {
+      static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlock prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
@@ -54828,7 +54828,7 @@ public final class OsmandOdb {
           }
         }
 
-        public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlock other) {
+        Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlock other) {
           if (other == net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlock.getDefaultInstance()) return this;
           if (other.hasIdTable()) {
             mergeIdTable(other.getIdTable());
@@ -55020,7 +55020,7 @@ public final class OsmandOdb {
          *   required sint32 bottom = 4; // delta encoded
          * </pre>
          */
-        public Builder mergeIdTable(net.osmand.binary.OsmandOdb.IdTable value) {
+        Builder mergeIdTable(net.osmand.binary.OsmandOdb.IdTable value) {
           if (idTableBuilder_ == null) {
             if (((bitField0_ & 0x00000001) == 0x00000001) &&
                 idTable_ != net.osmand.binary.OsmandOdb.IdTable.getDefaultInstance()) {
@@ -55649,7 +55649,7 @@ public final class OsmandOdb {
         /**
          * <code>optional .OsmAnd.OBF.StringTable stringTable = 8;</code>
          */
-        public Builder mergeStringTable(net.osmand.binary.OsmandOdb.StringTable value) {
+        Builder mergeStringTable(net.osmand.binary.OsmandOdb.StringTable value) {
           if (stringTableBuilder_ == null) {
             if (((bitField0_ & 0x00000008) == 0x00000008) &&
                 stringTable_ != net.osmand.binary.OsmandOdb.StringTable.getDefaultInstance()) {
@@ -56108,9 +56108,9 @@ public final class OsmandOdb {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
+    static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex prototype) {
+    static Builder newBuilder(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -56271,7 +56271,7 @@ public final class OsmandOdb {
         }
       }
 
-      public Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex other) {
+      Builder mergeFrom(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex other) {
         if (other == net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.getDefaultInstance()) return this;
         if (other.hasName()) {
           bitField0_ |= 0x00000001;
@@ -57847,7 +57847,7 @@ public final class OsmandOdb {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_OsmAnd_OBF_OsmAndRoutingIndex_RouteDataBlock_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  private static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }

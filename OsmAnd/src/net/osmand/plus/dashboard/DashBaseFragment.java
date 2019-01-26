@@ -27,7 +27,7 @@ public abstract class DashBaseFragment extends Fragment {
 		void onDismiss();
 	}
 
-	public OsmandApplication getMyApplication() {
+	protected OsmandApplication getMyApplication() {
 		if (getActivity() == null) {
 			return null;
 		}
@@ -83,10 +83,10 @@ public abstract class DashBaseFragment extends Fragment {
 		return frameLayout;
 	}
 
-	public abstract View initView(LayoutInflater inflater, @Nullable ViewGroup container,
-								  @Nullable Bundle savedInstanceState);
+	protected abstract View initView(LayoutInflater inflater, @Nullable ViewGroup container,
+                                     @Nullable Bundle savedInstanceState);
 
-	public DismissListener getDismissCallback() {
+	DismissListener getDismissCallback() {
 		return defaultDismissListener;
 	}
 
@@ -106,7 +106,7 @@ public abstract class DashBaseFragment extends Fragment {
 		onCloseDash();
 	}
 
-	public void closeDashboard() {
+	protected void closeDashboard() {
 		dashboard.hideDashboard(false);
 	}
 
@@ -143,7 +143,7 @@ public abstract class DashBaseFragment extends Fragment {
 		activity.startActivity(favorites);
 	}
 
-	protected View getParentView() {
+	View getParentView() {
 		return dashboard.getParentView();
 	}
 

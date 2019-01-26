@@ -9,15 +9,15 @@ import net.osmand.plus.helpers.AndroidUiHelper;
 
 public abstract class PointEditor {
 
-	protected OsmandApplication app;
-	protected MapActivity mapActivity;
+	final OsmandApplication app;
+	MapActivity mapActivity;
 
-	protected boolean isNew;
+	boolean isNew;
 
 	private boolean portraitMode;
 	private boolean nightMode;
 
-	public PointEditor(MapActivity mapActivity) {
+	PointEditor(MapActivity mapActivity) {
 		this.app = mapActivity.getMyApplication();
 		this.mapActivity = mapActivity;
 		updateLandscapePortrait();
@@ -32,7 +32,7 @@ public abstract class PointEditor {
 		return isNew;
 	}
 
-	public boolean isLandscapeLayout() {
+	private boolean isLandscapeLayout() {
 		return !portraitMode;
 	}
 

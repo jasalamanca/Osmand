@@ -608,7 +608,7 @@ public class RepeatedFieldBuilder
       IType extends MessageOrBuilder>
       extends AbstractList<MType> implements List<MType> {
 
-    RepeatedFieldBuilder<MType, BType, IType> builder;
+    final RepeatedFieldBuilder<MType, BType, IType> builder;
 
     MessageExternalList(
         RepeatedFieldBuilder<MType, BType, IType> builder) {
@@ -641,7 +641,7 @@ public class RepeatedFieldBuilder
       IType extends MessageOrBuilder>
       extends AbstractList<BType> implements List<BType> {
 
-    RepeatedFieldBuilder<MType, BType, IType> builder;
+    final RepeatedFieldBuilder<MType, BType, IType> builder;
 
     BuilderExternalList(
         RepeatedFieldBuilder<MType, BType, IType> builder) {
@@ -674,7 +674,7 @@ public class RepeatedFieldBuilder
       IType extends MessageOrBuilder>
       extends AbstractList<IType> implements List<IType> {
 
-    RepeatedFieldBuilder<MType, BType, IType> builder;
+    final RepeatedFieldBuilder<MType, BType, IType> builder;
 
     MessageOrBuilderExternalList(
         RepeatedFieldBuilder<MType, BType, IType> builder) {

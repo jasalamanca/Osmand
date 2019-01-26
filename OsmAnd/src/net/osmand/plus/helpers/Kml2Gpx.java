@@ -13,9 +13,9 @@ import java.io.StringWriter;
 /**
  * @author Koen Rabaey
  */
-public class Kml2Gpx {
+class Kml2Gpx {
 
-	public static final Log LOG = PlatformUtil.getLog(Kml2Gpx.class);
+	private static final Log LOG = PlatformUtil.getLog(Kml2Gpx.class);
 
 	@TargetApi(8)
 	public static String toGpx(final InputStream kml) {

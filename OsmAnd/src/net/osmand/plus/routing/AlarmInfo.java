@@ -21,26 +21,26 @@ public class AlarmInfo implements LocationPoint {
 		MAXIMUM(10, R.string.traffic_warning),
 		TUNNEL(8, R.string.tunnel_warning);
 		
-		private int priority;
-		private int string;
+		private final int priority;
+		private final int string;
 
-		private AlarmInfoType(int p, int string) {
+		AlarmInfoType(int p, int string) {
 			this.priority = p;
 			this.string = string;
 		}
 		
-		public int getPriority(){
+		int getPriority(){
 			return priority;
 		}
 		
 		
-		public String getVisualName(Context ctx) {
+		String getVisualName(Context ctx) {
 			return ctx.getString(string);
 		}
 	}
 	
-	private AlarmInfoType type;
-	protected final int locationIndex;
+	private final AlarmInfoType type;
+	private final int locationIndex;
 	private int intValue;
 	private float floatValue;
 	private double latitude;
@@ -82,7 +82,7 @@ public class AlarmInfo implements LocationPoint {
 		return locationIndex;
 	}
 	
-	public void setIntValue(int intValue) {
+	private void setIntValue(int intValue) {
 		this.intValue = intValue;
 	}
 	

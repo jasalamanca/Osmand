@@ -28,7 +28,7 @@ import java.util.Locale;
 public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemViewHolder>
 		implements MapMarkersItemTouchHelperCallback.ItemTouchHelperAdapter {
 
-	private MapActivity mapActivity;
+	private final MapActivity mapActivity;
 	private List<MapMarker> markers;
 	private MapMarkersActiveAdapterListener listener;
 	private Snackbar snackbar;
@@ -38,7 +38,7 @@ public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemV
 	private Float heading;
 	private boolean useCenter;
 	private int screenOrientation;
-	private boolean night;
+	private final boolean night;
 
 	public MapMarkersActiveAdapter(MapActivity mapActivity) {
 		setHasStableIds(true);
@@ -185,7 +185,7 @@ public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemV
 							}
 						});
 				View snackBarView = snackbar.getView();
-				TextView tv = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_action);
+				TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
 				tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
 				snackbar.show();
 			}
@@ -253,7 +253,7 @@ public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemV
 					}
 				});
 		View snackBarView = snackbar.getView();
-		TextView tv = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_action);
+		TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
 		tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
 		snackbar.show();
 	}

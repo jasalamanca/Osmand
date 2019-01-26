@@ -43,17 +43,17 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 	public static final String INTENT_APP_MODE = "INTENT_APP_MODE";
 
 	protected OsmandSettings settings;
-	protected final boolean profileSettings;
-	protected List<ApplicationMode> modes = new ArrayList<ApplicationMode>();
+	private final boolean profileSettings;
+	private final List<ApplicationMode> modes = new ArrayList<ApplicationMode>();
 	private ApplicationMode previousAppMode; 
 
-	private Map<String, Preference> screenPreferences = new LinkedHashMap<String, Preference>();
-	private Map<String, OsmandPreference<Boolean>> booleanPreferences = new LinkedHashMap<String, OsmandPreference<Boolean>>();
-	private Map<String, OsmandPreference<?>> listPreferences = new LinkedHashMap<String, OsmandPreference<?>>();
-	private Map<String, OsmandPreference<String>> editTextPreferences = new LinkedHashMap<String, OsmandPreference<String>>();
-	private Map<String, OsmandPreference<Integer>> seekBarPreferences = new LinkedHashMap<String, OsmandPreference<Integer>>();
+	private final Map<String, Preference> screenPreferences = new LinkedHashMap<String, Preference>();
+	private final Map<String, OsmandPreference<Boolean>> booleanPreferences = new LinkedHashMap<String, OsmandPreference<Boolean>>();
+	private final Map<String, OsmandPreference<?>> listPreferences = new LinkedHashMap<String, OsmandPreference<?>>();
+	private final Map<String, OsmandPreference<String>> editTextPreferences = new LinkedHashMap<String, OsmandPreference<String>>();
+	private final Map<String, OsmandPreference<Integer>> seekBarPreferences = new LinkedHashMap<String, OsmandPreference<Integer>>();
 
-	private Map<String, Map<String, ?>> listPrefValues = new LinkedHashMap<String, Map<String, ?>>();
+	private final Map<String, Map<String, ?>> listPrefValues = new LinkedHashMap<String, Map<String, ?>>();
 	private AlertDialog profileDialog;
 	
 	public SettingsBaseActivity() {
@@ -64,7 +64,7 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		profileSettings = profile;
 	}
 
-	public CheckBoxPreference registerBooleanPreference(OsmandPreference<Boolean> b, PreferenceGroup screen) {
+	CheckBoxPreference registerBooleanPreference(OsmandPreference<Boolean> b, PreferenceGroup screen) {
 		CheckBoxPreference p = (CheckBoxPreference) screen.findPreference(b.getId());
 		p.setOnPreferenceChangeListener(this);
 		screenPreferences.put(b.getId(), p);
@@ -72,7 +72,7 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		return p;
 	}
 
-	public CheckBoxPreference createCheckBoxPreference(OsmandPreference<Boolean> b, int title, int summary) {
+	protected CheckBoxPreference createCheckBoxPreference(OsmandPreference<Boolean> b, int title, int summary) {
 		CheckBoxPreference p = new CheckBoxPreference(this);
 		p.setTitle(title);
 		p.setKey(b.getId());
@@ -83,7 +83,7 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		return p;
 	}
 	
-	public CheckBoxPreference createCheckBoxPreference(OsmandPreference<Boolean> b) {
+	CheckBoxPreference createCheckBoxPreference(OsmandPreference<Boolean> b) {
 		CheckBoxPreference p = new CheckBoxPreference(this);
 		p.setKey(b.getId());
 		p.setOnPreferenceChangeListener(this);
@@ -105,7 +105,7 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		return defValue;
 	}
 	
-	public static String getRoutingStringPropertyDescription(Context ctx, String propertyName, String defValue) {
+	static String getRoutingStringPropertyDescription(Context ctx, String propertyName, String defValue) {
 		try {
 			Field f = R.string.class.getField("routing_attr_" + propertyName + "_description");
 			if (f != null) {
@@ -161,12 +161,12 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		return propertyValue;
 	}
 
-	public <T> void registerListPreference(OsmandPreference<T> b, PreferenceGroup screen, String[] names, T[] values) {
+	<T> void registerListPreference(OsmandPreference<T> b, PreferenceGroup screen, String[] names, T[] values) {
 		ListPreference p = (ListPreference) screen.findPreference(b.getId());
 		prepareListPreference(b, names, values, p);
 	}
 
-	public <T> ListPreference createListPreference(OsmandPreference<T> b, String[] names, T[] values, int title, int summary) {
+	protected <T> ListPreference createListPreference(OsmandPreference<T> b, String[] names, T[] values, int title, int summary) {
 		ListPreference p = new ListPreference(this);
 		p.setTitle(title);
 		p.setKey(b.getId());
@@ -176,7 +176,7 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		return p;
 	}
 	
-	public <T> ListPreference createListPreference(OsmandPreference<T> b, String[] names, T[] values, String title, String summary) {
+	<T> ListPreference createListPreference(OsmandPreference<T> b, String[] names, T[] values, String title, String summary) {
 		ListPreference p = new ListPreference(this);
 		p.setTitle(title);
 		p.setKey(b.getId());
@@ -203,7 +203,7 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		vals.put(value, disable);
 	}
 
-	public EditTextPreference createEditTextPreference(OsmandPreference<String> b, int title, int summary) {
+	protected EditTextPreference createEditTextPreference(OsmandPreference<String> b, int title, int summary) {
 		EditTextPreference p = new EditTextPreference(this);
 		p.setTitle(title);
 		p.setKey(b.getId());
@@ -215,11 +215,11 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		return p;
 	}
 
-	public ListPreference createTimeListPreference(OsmandPreference<Integer> b, int[] seconds, int[] minutes, int coeff, int title, int summary) {
+	protected ListPreference createTimeListPreference(OsmandPreference<Integer> b, int[] seconds, int[] minutes, int coeff, int title, int summary) {
 		return createTimeListPreference(b, seconds, minutes, coeff, null, title, summary);
 	}
-	public ListPreference createTimeListPreference(OsmandPreference<Integer> b, int[] seconds, int[] minutes, int coeff, CommonPreference<Boolean> disable, int title,
-			int summary) {
+	protected ListPreference createTimeListPreference(OsmandPreference<Integer> b, int[] seconds, int[] minutes, int coeff, CommonPreference<Boolean> disable, int title,
+                                                      int summary) {
 		int minutesLength = minutes == null ? 0 : minutes.length;
 		int secondsLength = seconds == null ? 0 : seconds.length;
 		Integer[] ints = new Integer[secondsLength + minutesLength];
@@ -294,7 +294,7 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
     }
 
 	class SpinnerAdapter extends ArrayAdapter<String>{
-		public SpinnerAdapter(Context context, int resource, List<String> objects) {
+		SpinnerAdapter(Context context, int resource, List<String> objects) {
 			super(context, resource, objects);
 		}
 
@@ -302,7 +302,7 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		public View getDropDownView(int position, View convertView, ViewGroup parent) {
 			View view = super.getDropDownView(position, convertView, parent);
 			if (!settings.isLightActionBar()){
-				TextView textView = (TextView) view.findViewById(android.R.id.text1);
+				TextView textView = view.findViewById(android.R.id.text1);
 				textView.setBackgroundColor(getResources().getColor(R.color.actionbar_dark_color));
 			}
 			return view;
@@ -352,7 +352,7 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		profileDialog = b.show();
 	}
 
-	protected boolean setSelectedAppMode(ApplicationMode am) {
+	boolean setSelectedAppMode(ApplicationMode am) {
 		int ind = 0;
 		boolean found = false;
 		for (ApplicationMode a : modes) {

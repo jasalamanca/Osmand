@@ -61,7 +61,7 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 	private Bitmap resolvedNoteSmall;
 
 	private final MapActivity activity;
-	private OsmBugsLocalUtil local;
+	private final OsmBugsLocalUtil local;
 	private MapLayerData<List<OpenStreetNote>> data;
 
 	private int startZoom;
@@ -72,7 +72,7 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 		local = plugin.getOsmNotesLocalUtil();
 	}
 
-	public OsmBugsUtil getOsmbugsUtil(OpenStreetNote bug) {
+	private OsmBugsUtil getOsmbugsUtil(OpenStreetNote bug) {
 		OsmandSettings settings = ((OsmandApplication) activity.getApplication()).getSettings();
 		if ((bug != null && bug.isLocal()) || settings.OFFLINE_EDITION.get()
 				|| !settings.isInternetConnectionAvailable(true)) {
@@ -176,7 +176,7 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 
 	}
 
-	public int getRadiusBug(RotatedTileBox tb) {
+	private int getRadiusBug(RotatedTileBox tb) {
 		int z;
 		final double zoom = tb.getZoom();
 		if (zoom < startZoom) {
@@ -201,7 +201,7 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 		return false;
 	}
 
-	public void getBugFromPoint(RotatedTileBox tb, PointF point, List<? super OpenStreetNote> res) {
+	private void getBugFromPoint(RotatedTileBox tb, PointF point, List<? super OpenStreetNote> res) {
 		List<OpenStreetNote> objects = data.getResults();
 		if (objects != null && view != null) {
 			int ex = (int) point.x;
@@ -250,7 +250,7 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 	}
 
 
-	protected List<OpenStreetNote> loadingBugs(double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude) {
+	private List<OpenStreetNote> loadingBugs(double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude) {
 		final int deviceApiVersion = android.os.Build.VERSION.SDK_INT;
 
 		String SITE_API;
@@ -552,9 +552,9 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 		private double longitude;
 		private String description;
 		private String typeName;
-		private List<String> dates = new ArrayList<>();
-		private List<String> comments = new ArrayList<>();
-		private List<String> users = new ArrayList<>();
+		private final List<String> dates = new ArrayList<>();
+		private final List<String> comments = new ArrayList<>();
+		private final List<String> users = new ArrayList<>();
 		private long id;
 		private boolean opened;
 
@@ -583,19 +583,19 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 			}
 		}
 
-		public double getLatitude() {
+		double getLatitude() {
 			return latitude;
 		}
 
-		public void setLatitude(double latitude) {
+		void setLatitude(double latitude) {
 			this.latitude = latitude;
 		}
 
-		public double getLongitude() {
+		double getLongitude() {
 			return longitude;
 		}
 
-		public void setLongitude(double longitude) {
+		void setLongitude(double longitude) {
 			this.longitude = longitude;
 		}
 
@@ -640,7 +640,7 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 			return res;
 		}
 
-		public long getId() {
+		long getId() {
 			return id;
 		}
 
@@ -652,11 +652,11 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 			return opened;
 		}
 
-		public void setOpened(boolean opened) {
+		void setOpened(boolean opened) {
 			this.opened = opened;
 		}
 
-		public boolean isLocal() {
+		boolean isLocal() {
 			return local;
 		}
 

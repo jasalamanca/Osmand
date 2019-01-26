@@ -14,11 +14,11 @@ import java.util.List;
 
 public class NotificationHelper {
 
-	private OsmandApplication app;
+	private final OsmandApplication app;
 
 	private NavigationNotification navigationNotification;
 	private GpxNotification gpxNotification;
-	private List<OsmandNotification> all = new ArrayList<>();
+	private final List<OsmandNotification> all = new ArrayList<>();
 
 	public NotificationHelper(OsmandApplication app) {
 		this.app = app;
@@ -91,7 +91,7 @@ public class NotificationHelper {
 		}
 	}
 
-	public boolean hasAnyTopNotification() {
+	private boolean hasAnyTopNotification() {
 		for (OsmandNotification notification : all) {
 			if (notification.isTop()) {
 				return true;
@@ -109,12 +109,12 @@ public class NotificationHelper {
 		}
 	}
 
-	public void removeTopNotification() {
+	private void removeTopNotification() {
 		NotificationManager notificationManager = (NotificationManager) app.getSystemService(Context.NOTIFICATION_SERVICE);
 		notificationManager.cancel(OsmandNotification.TOP_NOTIFICATION_SERVICE_ID);
 	}
 
-	public void removeNotification(NotificationType notificationType) {
+	private void removeNotification(NotificationType notificationType) {
 		for (OsmandNotification notification : all) {
 			if (notification.getType() == notificationType) {
 				notification.removeNotification();

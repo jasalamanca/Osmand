@@ -18,19 +18,19 @@ import java.util.Set;
 
 public class EditPoiData {
 	private static final Log LOG = PlatformUtil.getLog(EditPoiData.class);
-	private Set<TagsChangedListener> mListeners = new HashSet<>();
-	private LinkedHashMap<String, String > tagValues = new LinkedHashMap<String, String>();
+	private final Set<TagsChangedListener> mListeners = new HashSet<>();
+	private final LinkedHashMap<String, String > tagValues = new LinkedHashMap<String, String>();
 	private boolean isInEdit = false;
-	private Node entity;
+	private final Node entity;
 	
 	public static final String POI_TYPE_TAG = "poi_type_tag";
 	public static final String REMOVE_TAG_PREFIX = "----";
-	public static final String REMOVE_TAG_VALUE = "DELETE";
+	private static final String REMOVE_TAG_VALUE = "DELETE";
 	private boolean hasChangesBeenMade = false;
-	private Map<String, PoiType> allTranslatedSubTypes;
+	private final Map<String, PoiType> allTranslatedSubTypes;
 	private PoiCategory category;
 
-	private Set<String> changedTags = new HashSet<>();
+	private final Set<String> changedTags = new HashSet<>();
 	
 	public EditPoiData(Node node, OsmandApplication app) {
 		allTranslatedSubTypes = app.getPoiTypes().getAllTranslatedNames(true);

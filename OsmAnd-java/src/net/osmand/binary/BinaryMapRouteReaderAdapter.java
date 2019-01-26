@@ -1,19 +1,8 @@
 package net.osmand.binary;
 
-import gnu.trove.iterator.TLongObjectIterator;
-import gnu.trove.list.array.TIntArrayList;
-import gnu.trove.list.array.TLongArrayList;
-import gnu.trove.map.hash.TIntObjectHashMap;
-import gnu.trove.map.hash.TLongObjectHashMap;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import com.google.protobuf.CodedInputStream;
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.WireFormat;
 
 import net.osmand.PlatformUtil;
 import net.osmand.ResultMatcher;
@@ -29,9 +18,20 @@ import net.osmand.util.OpeningHoursParser;
 
 import org.apache.commons.logging.Log;
 
-import com.google.protobuf.CodedInputStream;
-import com.google.protobuf.InvalidProtocolBufferException;
-import com.google.protobuf.WireFormat;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import gnu.trove.iterator.TLongObjectIterator;
+import gnu.trove.list.array.TIntArrayList;
+import gnu.trove.list.array.TLongArrayList;
+import gnu.trove.map.hash.TIntObjectHashMap;
+import gnu.trove.map.hash.TLongObjectHashMap;
 
 public class BinaryMapRouteReaderAdapter {
 	protected static final Log LOG = PlatformUtil.getLog(BinaryMapRouteReaderAdapter.class);
@@ -49,8 +49,8 @@ public class BinaryMapRouteReaderAdapter {
 		private final static int HIGHWAY_TYPE = 3;
 		private final static int MAXSPEED = 4;
 		private final static int ROUNDABOUT = 5;
-		public final static int TRAFFIC_SIGNALS = 6;
-		public final static int RAILWAY_CROSSING = 7;
+		final static int TRAFFIC_SIGNALS = 6;
+		final static int RAILWAY_CROSSING = 7;
 		private final static int LANES = 8;
 		private final String t;
 		private final String v;
@@ -60,7 +60,7 @@ public class BinaryMapRouteReaderAdapter {
 		private List<RouteTypeCondition> conditions = null;
 		private int forward;
 
-		public RouteTypeRule(String t, String v) {
+		RouteTypeRule(String t, String v) {
 			this.t = t.intern();
 			if("true".equals(v)) {
 				v = "yes";
@@ -206,11 +206,11 @@ public class BinaryMapRouteReaderAdapter {
 	}
 
 	public static class RouteRegion extends BinaryIndexPart {
-		public int regionsRead;
-		public List<RouteTypeRule> routeEncodingRules = new ArrayList<BinaryMapRouteReaderAdapter.RouteTypeRule>();
-		public Map<String, Integer> decodingRules = null;
-		List<RouteSubregion> subregions = new ArrayList<RouteSubregion>();
-		List<RouteSubregion> basesubregions = new ArrayList<RouteSubregion>();
+		int regionsRead;
+		public final List<RouteTypeRule> routeEncodingRules = new ArrayList<BinaryMapRouteReaderAdapter.RouteTypeRule>();
+		Map<String, Integer> decodingRules = null;
+		final List<RouteSubregion> subregions = new ArrayList<RouteSubregion>();
+		final List<RouteSubregion> basesubregions = new ArrayList<RouteSubregion>();
 		
 		int nameTypeRule = -1;
 		int refTypeRule = -1;
@@ -227,7 +227,7 @@ public class BinaryMapRouteReaderAdapter {
 			return OsmandOdb.OsmAndStructure.ROUTINGINDEX_FIELD_NUMBER;
 		}
 		
-		public int searchRouteEncodingRule(String tag, String value) {
+		int searchRouteEncodingRule(String tag, String value) {
 			if(decodingRules == null) {
 				decodingRules = new LinkedHashMap<String, Integer>();
 				for(int i = 1; i < routeEncodingRules.size(); i++) {
@@ -247,7 +247,7 @@ public class BinaryMapRouteReaderAdapter {
 			return routeEncodingRules.get(id);
 		}
 
-		public void initRouteEncodingRule(int id, String tags, String val) {
+		void initRouteEncodingRule(int id, String tags, String val) {
 			decodingRules = null;
 			while (routeEncodingRules.size() <= id) {
 				routeEncodingRules.add(null);
@@ -433,10 +433,10 @@ public class BinaryMapRouteReaderAdapter {
 		public int top;
 		public int bottom;
 		public int shiftToData;
-		public List<RouteSubregion> subregions = null;
-		public List<RouteDataObject> dataObjects = null;
+		List<RouteSubregion> subregions = null;
+		List<RouteDataObject> dataObjects = null;
 		
-		public int getEstimatedSize(){
+		int getEstimatedSize(){
 			int shallow = 7 * INT_SIZE + 4*3;
 			if (subregions != null) {
 				shallow += 8;
@@ -447,7 +447,7 @@ public class BinaryMapRouteReaderAdapter {
 			return shallow;
 		}
 		
-		public int countSubregions(){
+		int countSubregions(){
 			int cnt = 1;
 			if (subregions != null) {
 				for (RouteSubregion s : subregions) {
@@ -458,10 +458,10 @@ public class BinaryMapRouteReaderAdapter {
 		}
 	}
 	
-	private CodedInputStream codedIS;
+	private final CodedInputStream codedIS;
 	private final BinaryMapIndexReader map;
 	
-	protected BinaryMapRouteReaderAdapter(BinaryMapIndexReader map){
+	BinaryMapRouteReaderAdapter(BinaryMapIndexReader map){
 		this.codedIS = map.codedIS;
 		this.map = map;
 	}
@@ -475,7 +475,7 @@ public class BinaryMapRouteReaderAdapter {
 	}
 	
 	
-	protected void readRouteIndex(RouteRegion region) throws IOException {
+	void readRouteIndex(RouteRegion region) throws IOException {
 		int routeEncodingRule = 1;
 		while(true){
 			int t = codedIS.readTag();
@@ -667,7 +667,7 @@ public class BinaryMapRouteReaderAdapter {
 					fromr.restrictions = new long[it.value().size()];
 					for (int k = 0; k < fromr.restrictions.length; k++) {
 						int to = (int) (it.value().get(k) >> RouteDataObject.RESTRICTION_SHIFT);
-						long valto = (idTables.get(to) << RouteDataObject.RESTRICTION_SHIFT) | ((long) it.value().get(k) & RouteDataObject.RESTRICTION_MASK);
+						long valto = (idTables.get(to) << RouteDataObject.RESTRICTION_SHIFT) | (it.value().get(k) & RouteDataObject.RESTRICTION_MASK);
 						fromr.restrictions[k] = valto;
 					}
 				}

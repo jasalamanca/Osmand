@@ -30,11 +30,11 @@ public class MapMarkersHistoryAdapter extends RecyclerView.Adapter<RecyclerView.
 	private static final int LAST_SEVEN_DAYS_HEADER = 58;
 	private static final int THIS_YEAR_HEADER = 59;
 
-	private OsmandApplication app;
+	private final OsmandApplication app;
 	private List<Object> items = new ArrayList<>();
 	private MapMarkersHistoryAdapterListener listener;
 	private Snackbar snackbar;
-	private boolean night;
+	private final boolean night;
 
 	public MapMarkersHistoryAdapter(OsmandApplication app) {
 		this.app = app;
@@ -158,7 +158,7 @@ public class MapMarkersHistoryAdapter extends RecyclerView.Adapter<RecyclerView.
 								}
 							});
 					View snackBarView = snackbar.getView();
-					TextView tv = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_action);
+					TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
 					tv.setTextColor(ContextCompat.getColor(app, R.color.color_dialog_buttons_dark));
 					snackbar.show();
 				}

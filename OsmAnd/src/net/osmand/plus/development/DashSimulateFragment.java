@@ -39,7 +39,7 @@ public class DashSimulateFragment extends DashBaseFragment {
 		boolean routeAnimating = loc.getLocationSimulation().isRouteAnimating();
 		((TextView) getView().findViewById(R.id.name)).setText(routeAnimating ? R.string.animate_route_off
 				: R.string.animate_route);
-		ImageButton actionButton = (ImageButton) getView().findViewById(R.id.stop);
+		ImageButton actionButton = getView().findViewById(R.id.stop);
 		actionButton.setImageDrawable(
 				!routeAnimating ? getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_play_dark)
 						: getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_rec_stop));
@@ -50,10 +50,10 @@ public class DashSimulateFragment extends DashBaseFragment {
 	@Override
 	public View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_common_fragment, container, false);
-		TextView header = (TextView) view.findViewById(R.id.fav_text);
+		TextView header = view.findViewById(R.id.fav_text);
 		header.setText(TITLE_ID);
-		((Button) view.findViewById(R.id.show_all)).setVisibility(View.GONE);
-		LinearLayout tracks = (LinearLayout) view.findViewById(R.id.items);
+		view.findViewById(R.id.show_all).setVisibility(View.GONE);
+		LinearLayout tracks = view.findViewById(R.id.items);
 		View item = inflater.inflate(R.layout.dash_simulate_item, null, false);
 		tracks.addView(item);
 		final OsmAndLocationProvider loc = getMyApplication().getLocationProvider();
@@ -66,7 +66,7 @@ public class DashSimulateFragment extends DashBaseFragment {
 			}
 		};
 		item.setOnClickListener(listener);
-		ImageButton actionButton = (ImageButton) item.findViewById(R.id.stop);
+		ImageButton actionButton = item.findViewById(R.id.stop);
 		actionButton.setOnClickListener(listener);
 		actionButton.setContentDescription(getString(R.string.animate_route));
 		((TextView) item.findViewById(R.id.name)).setText(R.string.animate_route);

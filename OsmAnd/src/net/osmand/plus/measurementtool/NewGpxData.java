@@ -11,10 +11,10 @@ public class NewGpxData {
 		EDIT_SEGMENT
 	}
 
-	private GPXUtilities.GPXFile gpxFile;
-	private GPXUtilities.TrkSegment trkSegment;
-	private QuadRect rect;
-	private ActionType actionType;
+	private final GPXUtilities.GPXFile gpxFile;
+	private final GPXUtilities.TrkSegment trkSegment;
+	private final QuadRect rect;
+	private final ActionType actionType;
 
 	public NewGpxData(GPXUtilities.GPXFile gpxFile, QuadRect rect, ActionType actionType, GPXUtilities.TrkSegment trkSegment) {
 		this.gpxFile = gpxFile;

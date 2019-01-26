@@ -14,7 +14,7 @@ public abstract class BaseMenuController {
 	private boolean nightMode;
 	private int landscapeWidthPx;
 
-	public BaseMenuController(MapActivity mapActivity) {
+	protected BaseMenuController(MapActivity mapActivity) {
 		this.mapActivity = mapActivity;
 		init();
 	}
@@ -38,7 +38,7 @@ public abstract class BaseMenuController {
 		return !nightMode;
 	}
 
-	public void updateNightMode() {
+	protected void updateNightMode() {
 		nightMode = mapActivity.getMyApplication().getDaynightHelper().isNightModeForMapControls();
 	}
 

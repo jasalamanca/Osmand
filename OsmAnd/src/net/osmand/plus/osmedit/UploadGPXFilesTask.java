@@ -10,12 +10,12 @@ import android.app.Activity;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-public class UploadGPXFilesTask extends AsyncTask<GpxInfo, String, String> {
+class UploadGPXFilesTask extends AsyncTask<GpxInfo, String, String> {
 
 	private final String visibility;
 	private final String description;
 	private final String tagstring;
-	private Activity la;
+	private final Activity la;
 
 	public UploadGPXFilesTask(Activity la,
 			String description, String tagstring, UploadVisibility visibility) {

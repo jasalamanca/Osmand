@@ -96,7 +96,7 @@ public class OsmEditsFragment extends OsmAndListFragment implements SendPoiDialo
 
 	private List<OsmPoint> osmEdits = new ArrayList<>();
 	private OsmEditsAdapter listAdapter;
-	private ArrayList<OsmPoint> osmEditsSelected = new ArrayList<>();
+	private final ArrayList<OsmPoint> osmEditsSelected = new ArrayList<>();
 
 	private ActionMode actionMode;
 	private long refreshId;
@@ -104,8 +104,8 @@ public class OsmEditsFragment extends OsmAndListFragment implements SendPoiDialo
 	private int exportType;
 
 	public static void getOsmEditView(View v, OsmPoint child, OsmandApplication app) {
-		TextView viewName = ((TextView) v.findViewById(R.id.name));
-		ImageView icon = (ImageView) v.findViewById(R.id.icon);
+		TextView viewName = v.findViewById(R.id.name);
+		ImageView icon = v.findViewById(R.id.icon);
 		String name = OsmEditingPlugin.getEditName(child);
 		viewName.setText(name);
 		if (child.getGroup() == Group.POI) {
@@ -114,7 +114,7 @@ public class OsmEditsFragment extends OsmAndListFragment implements SendPoiDialo
 			icon.setImageDrawable(app.getIconsCache().getIcon(R.drawable.ic_type_bug, R.color.color_distance));
 		}
 
-		TextView descr = (TextView) v.findViewById(R.id.description);
+		TextView descr = v.findViewById(R.id.description);
 		if (child.getAction() == OsmPoint.Action.CREATE) {
 			descr.setText(R.string.action_create);
 		} else if (child.getAction() == OsmPoint.Action.MODIFY) {
@@ -137,7 +137,7 @@ public class OsmEditsFragment extends OsmAndListFragment implements SendPoiDialo
 
 		View view = inflater.inflate(R.layout.update_index, container, false);
 		view.findViewById(R.id.header_layout).setVisibility(View.GONE);
-		ViewStub emptyStub = (ViewStub) view.findViewById(R.id.empty_view_stub);
+		ViewStub emptyStub = view.findViewById(R.id.empty_view_stub);
 		emptyStub.setLayoutResource(R.layout.empty_state_osm_edits);
 		emptyView = emptyStub.inflate();
 		int icRes = getMyApplication().getSettings().isLightContent()
@@ -373,7 +373,7 @@ public class OsmEditsFragment extends OsmAndListFragment implements SendPoiDialo
 		((FavoritesActivity) getActivity()).updateListViewFooter(footerView);
 	}
 
-	public OsmandActionBarActivity getActionBarActivity() {
+	private OsmandActionBarActivity getActionBarActivity() {
 		if (getActivity() instanceof OsmandActionBarActivity) {
 			return (OsmandActionBarActivity) getActivity();
 		}
@@ -588,7 +588,7 @@ public class OsmEditsFragment extends OsmAndListFragment implements SendPoiDialo
 		return osmEdits;
 	}
 
-	protected OsmPoint getPointAfterModify(OsmPoint info) {
+	private OsmPoint getPointAfterModify(OsmPoint info) {
 		if (info instanceof OpenstreetmapPoint && info.getId() == refreshId) {
 			for (OpenstreetmapPoint p : plugin.getDBPOI().getOpenstreetmapPoints()) {
 				if (p.getId() == info.getId()) {
@@ -653,11 +653,11 @@ public class OsmEditsFragment extends OsmAndListFragment implements SendPoiDialo
 	}
 
 	public static class DeleteOsmEditsConfirmDialogFragment extends DialogFragment {
-		public static final String TAG = "DeleteOsmEditsConfirmDialogFragment";
+		static final String TAG = "DeleteOsmEditsConfirmDialogFragment";
 		private static final String POINTS_LIST = "points_list";
 
-		public static DeleteOsmEditsConfirmDialogFragment createInstance(
-				ArrayList<OsmPoint> points) {
+		static DeleteOsmEditsConfirmDialogFragment createInstance(
+                ArrayList<OsmPoint> points) {
 			DeleteOsmEditsConfirmDialogFragment fragment = new DeleteOsmEditsConfirmDialogFragment();
 			Bundle args = new Bundle();
 			args.putSerializable(POINTS_LIST, points);
@@ -700,12 +700,12 @@ public class OsmEditsFragment extends OsmAndListFragment implements SendPoiDialo
 		}
 	}
 
-	public class BackupOpenstreetmapPointAsyncTask extends AsyncTask<OsmPoint, OsmPoint, String> {
+	class BackupOpenstreetmapPointAsyncTask extends AsyncTask<OsmPoint, OsmPoint, String> {
 
-		private File osmchange;
-		private boolean oscFile;
+		private final File osmchange;
+		private final boolean oscFile;
 
-		public BackupOpenstreetmapPointAsyncTask(int fileType, int exportType) {
+		BackupOpenstreetmapPointAsyncTask(int fileType, int exportType) {
 			OsmandApplication app = (OsmandApplication) getActivity().getApplication();
 			oscFile = fileType == FILE_TYPE_OSC;
 			osmchange = app.getAppPath(getFileName(exportType));

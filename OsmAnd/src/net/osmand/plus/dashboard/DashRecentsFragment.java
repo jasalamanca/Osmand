@@ -26,11 +26,11 @@ import java.util.List;
  * Created by Denis on 24.11.2014.
  */
 public class DashRecentsFragment extends DashLocationFragment {
-	public static final String TAG = "DASH_RECENTS_FRAGMENT";
-	public static final int TITLE_ID = R.string.shared_string_history;
+	private static final String TAG = "DASH_RECENTS_FRAGMENT";
+	private static final int TITLE_ID = R.string.shared_string_history;
 
-	private List<ImageView> arrows = new ArrayList<ImageView>();
-	List<HistoryEntry> points = new ArrayList<HistoryEntry>();
+	private final List<ImageView> arrows = new ArrayList<ImageView>();
+	private List<HistoryEntry> points = new ArrayList<HistoryEntry>();
 	private static final String ROW_NUMBER_TAG = TAG + "_row_number";
 	private static final DashFragmentData.ShouldShowFunction SHOULD_SHOW_FUNCTION =
 			new DashboardOnMap.DefaultShouldShow() {
@@ -62,7 +62,7 @@ public class DashRecentsFragment extends DashLocationFragment {
 		setupRecents();
 	}
 
-	public void setupRecents() {
+	private void setupRecents() {
 		View mainView = getView();
 		SearchHistoryHelper helper = SearchHistoryHelper.getInstance((OsmandApplication) getActivity()
 				.getApplicationContext());
@@ -75,7 +75,7 @@ public class DashRecentsFragment extends DashLocationFragment {
 			(mainView.findViewById(R.id.main_fav)).setVisibility(View.VISIBLE);
 		}
 
-		LinearLayout recents = (LinearLayout) mainView.findViewById(R.id.items);
+		LinearLayout recents = mainView.findViewById(R.id.items);
 		recents.removeAllViews();
 		DashboardOnMap.handleNumberOfRows(points, getMyApplication().getSettings(), ROW_NUMBER_TAG);
 		LatLon loc = getDefaultLocation();

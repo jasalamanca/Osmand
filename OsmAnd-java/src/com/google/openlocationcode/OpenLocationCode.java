@@ -48,11 +48,11 @@ public final class OpenLocationCode {
     private final BigDecimal northLatitude;
     private final BigDecimal eastLongitude;
 
-    public CodeArea(
-        BigDecimal southLatitude,
-        BigDecimal westLongitude,
-        BigDecimal northLatitude,
-        BigDecimal eastLongitude) {
+    CodeArea(
+            BigDecimal southLatitude,
+            BigDecimal westLongitude,
+            BigDecimal northLatitude,
+            BigDecimal eastLongitude) {
       this.southLatitude = southLatitude;
       this.westLongitude = westLongitude;
       this.northLatitude = northLatitude;
@@ -106,7 +106,7 @@ public final class OpenLocationCode {
   }
 
   /** Creates Open Location Code from the provided latitude, longitude and desired code length. */
-  public OpenLocationCode(double latitude, double longitude, int codeLength)
+  private OpenLocationCode(double latitude, double longitude, int codeLength)
       throws IllegalArgumentException {
     if (codeLength < 4 || (codeLength < 10 & codeLength % 2 == 1)) {
       throw new IllegalArgumentException("Illegal code length " + codeLength);
@@ -173,11 +173,11 @@ public final class OpenLocationCode {
   }
 
   /** Creates Open Location Code with code length 10 from the provided latitude, longitude. */
-  public OpenLocationCode(double latitude, double longitude) {
+  private OpenLocationCode(double latitude, double longitude) {
     this(latitude, longitude, 10);
   }
 
-  public String getCode() {
+  private String getCode() {
     return code;
   }
 
@@ -485,7 +485,7 @@ public final class OpenLocationCode {
   }
 
   /** Returns if the code is a valid full Open Location Code. */
-  public static boolean isFullCode(String code) {
+  private static boolean isFullCode(String code) {
     try {
       return new OpenLocationCode(code).isFull();
     } catch (IllegalArgumentException e) {

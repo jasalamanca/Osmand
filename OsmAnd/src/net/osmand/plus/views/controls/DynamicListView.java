@@ -47,8 +47,7 @@ import java.util.List;
 //TODO jsala quitar y sustituir por RecyclerView
 public class DynamicListView extends ObservableListView {
 
-	private final int SMOOTH_SCROLL_AMOUNT_AT_EDGE = 15;
-	private final int MOVE_DURATION = 150;
+    private final int MOVE_DURATION = 150;
 
 	private List<Object> mItemsList;
 	private List<Object> mActiveItemsList;
@@ -58,9 +57,8 @@ public class DynamicListView extends ObservableListView {
 	private int mLastEventY = -1;
 
 	private int mDownY = -1;
-	private int mDownX = -1;
 
-	private int mTotalOffset = 0;
+    private int mTotalOffset = 0;
 
 	private boolean mCellIsMobile = false;
 	private boolean mIsMobileScrolling = false;
@@ -107,7 +105,8 @@ public class DynamicListView extends ObservableListView {
 	private void init(Context context) {
 		setOnScrollListener(mScrollListener);
 		DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-		mSmoothScrollAmountAtEdge = (int) (SMOOTH_SCROLL_AMOUNT_AT_EDGE / metrics.density);
+        int SMOOTH_SCROLL_AMOUNT_AT_EDGE = 15;
+        mSmoothScrollAmountAtEdge = (int) (SMOOTH_SCROLL_AMOUNT_AT_EDGE / metrics.density);
 		singleTapDetector = new GestureDetector(context, new SingleTapConfirm());
 	}
 
@@ -321,7 +320,7 @@ public class DynamicListView extends ObservableListView {
 					// If the view contains a tag set to "DragIcon" class, it means that the user wants to
 					// reorder the list item.
 					if ((v != null) && (v.getTag() != null) && (v.getTag() instanceof DragIcon)) {
-						mDownX = (int) event.getX();
+                        int mDownX = (int) event.getX();
 						mDownY = (int) event.getY();
 						mActivePointerId = event.getPointerId(0);
 						mTotalOffset = 0;

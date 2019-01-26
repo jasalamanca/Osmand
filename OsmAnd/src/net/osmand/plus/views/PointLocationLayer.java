@@ -27,7 +27,7 @@ public class PointLocationLayer extends OsmandMapLayer implements ContextMenuLay
 	private static final Log LOG = PlatformUtil.getLog(PointLocationLayer.class);
 
 
-	protected final static int RADIUS = 7;
+	private final static int RADIUS = 7;
 
 	private Paint locationPaint;
 	private Paint area;
@@ -40,7 +40,7 @@ public class PointLocationLayer extends OsmandMapLayer implements ContextMenuLay
 	private Bitmap headingIcon;
 	private Bitmap locationIcon;
 	private OsmAndLocationProvider locationProvider;
-	private MapViewTrackingUtilities mapViewTrackingUtilities;
+	private final MapViewTrackingUtilities mapViewTrackingUtilities;
 	private boolean nm;
 	private boolean locationOutdated;
 
@@ -137,7 +137,7 @@ public class PointLocationLayer extends OsmandMapLayer implements ContextMenuLay
 		}
 	}
 
-	public boolean isLocationVisible(RotatedTileBox tb, Location l) {
+	private boolean isLocationVisible(RotatedTileBox tb, Location l) {
 		return l != null && tb.containsLatLon(l.getLatitude(), l.getLongitude());
 	}
 
@@ -146,7 +146,7 @@ public class PointLocationLayer extends OsmandMapLayer implements ContextMenuLay
 	public void destroyLayer() {
 
 	}
-	public void updateIcons(ApplicationMode appMode, boolean nighMode, boolean locationOutdated) {
+	private void updateIcons(ApplicationMode appMode, boolean nighMode, boolean locationOutdated) {
 		if (appMode != this.appMode || this.nm != nighMode || this.locationOutdated != locationOutdated) {
 			this.appMode = appMode;
 			this.nm = nighMode;

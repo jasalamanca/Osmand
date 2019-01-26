@@ -28,57 +28,57 @@ import org.xmlpull.v1.XmlPullParserException;
 
 public class OsmBaseStorage {
 
-	protected static final String ELEM_OSM = "osm"; //$NON-NLS-1$
-	protected static final String ELEM_OSMCHANGE = "osmChange"; //$NON-NLS-1$
-	protected static final String ELEM_NODE = "node"; //$NON-NLS-1$
-	protected static final String ELEM_TAG = "tag"; //$NON-NLS-1$
-	protected static final String ELEM_WAY = "way"; //$NON-NLS-1$
-	protected static final String ELEM_ND = "nd"; //$NON-NLS-1$
-	protected static final String ELEM_RELATION = "relation"; //$NON-NLS-1$
-	protected static final String ELEM_MEMBER = "member"; //$NON-NLS-1$
-	protected static final String ELEM_MODIFY = "modify"; //$NON-NLS-1$
-	protected static final String ELEM_CREATE = "create"; //$NON-NLS-1$
-	protected static final String ELEM_DELETE = "delete"; //$NON-NLS-1$
+	private static final String ELEM_OSM = "osm"; //$NON-NLS-1$
+	private static final String ELEM_OSMCHANGE = "osmChange"; //$NON-NLS-1$
+	private static final String ELEM_NODE = "node"; //$NON-NLS-1$
+	private static final String ELEM_TAG = "tag"; //$NON-NLS-1$
+	private static final String ELEM_WAY = "way"; //$NON-NLS-1$
+	private static final String ELEM_ND = "nd"; //$NON-NLS-1$
+	private static final String ELEM_RELATION = "relation"; //$NON-NLS-1$
+	private static final String ELEM_MEMBER = "member"; //$NON-NLS-1$
+	private static final String ELEM_MODIFY = "modify"; //$NON-NLS-1$
+	private static final String ELEM_CREATE = "create"; //$NON-NLS-1$
+	private static final String ELEM_DELETE = "delete"; //$NON-NLS-1$
 	
 	
-	protected static final String ATTR_VERSION = "version"; //$NON-NLS-1$
-	protected static final String ATTR_ID = "id"; //$NON-NLS-1$
-	protected static final String ATTR_LAT = "lat"; //$NON-NLS-1$
-	protected static final String ATTR_LON = "lon"; //$NON-NLS-1$
-	protected static final String ATTR_TIMESTAMP = "timestamp"; //$NON-NLS-1$
-	protected static final String ATTR_UID = "uid"; //$NON-NLS-1$
-	protected static final String ATTR_USER = "user"; //$NON-NLS-1$
-	protected static final String ATTR_VISIBLE = "visible"; //$NON-NLS-1$
-	protected static final String ATTR_CHANGESET = "changeset"; //$NON-NLS-1$
-	protected static final String ATTR_K = "k"; //$NON-NLS-1$
-	protected static final String ATTR_V = "v"; //$NON-NLS-1$
+	private static final String ATTR_VERSION = "version"; //$NON-NLS-1$
+	private static final String ATTR_ID = "id"; //$NON-NLS-1$
+	private static final String ATTR_LAT = "lat"; //$NON-NLS-1$
+	private static final String ATTR_LON = "lon"; //$NON-NLS-1$
+	private static final String ATTR_TIMESTAMP = "timestamp"; //$NON-NLS-1$
+	private static final String ATTR_UID = "uid"; //$NON-NLS-1$
+	private static final String ATTR_USER = "user"; //$NON-NLS-1$
+	private static final String ATTR_VISIBLE = "visible"; //$NON-NLS-1$
+	private static final String ATTR_CHANGESET = "changeset"; //$NON-NLS-1$
+	private static final String ATTR_K = "k"; //$NON-NLS-1$
+	private static final String ATTR_V = "v"; //$NON-NLS-1$
 	
-	protected static final String ATTR_TYPE = "type"; //$NON-NLS-1$
-	protected static final String ATTR_REF = "ref"; //$NON-NLS-1$
-	protected static final String ATTR_ROLE = "role"; //$NON-NLS-1$
+	private static final String ATTR_TYPE = "type"; //$NON-NLS-1$
+	private static final String ATTR_REF = "ref"; //$NON-NLS-1$
+	private static final String ATTR_ROLE = "role"; //$NON-NLS-1$
 	
-	protected Entity currentParsedEntity = null;
-	protected int currentModify = 0;
-	protected EntityInfo currentParsedEntityInfo = null;
+	private Entity currentParsedEntity = null;
+	private int currentModify = 0;
+	private EntityInfo currentParsedEntityInfo = null;
 	
-	protected boolean parseStarted;
+	private boolean parseStarted;
 	
-	protected Map<EntityId, Entity> entities = new LinkedHashMap<EntityId, Entity>();
-	protected Map<EntityId, EntityInfo> entityInfo = new LinkedHashMap<EntityId, EntityInfo>();
+	private final Map<EntityId, Entity> entities = new LinkedHashMap<EntityId, Entity>();
+	private final Map<EntityId, EntityInfo> entityInfo = new LinkedHashMap<EntityId, EntityInfo>();
 	
 	// this is used to show feedback to user
-	protected int progressEntity = 0;
-	protected IProgress progress;
-	protected InputStream inputStream;
-	protected InputStream streamForProgress;
-	protected List<IOsmStorageFilter> filters = new ArrayList<IOsmStorageFilter>();
-	protected boolean supressWarnings = true;
-	protected boolean convertTagsToLC = true;
-	protected boolean parseEntityInfo;
+    private int progressEntity = 0;
+	private IProgress progress;
+	private InputStream inputStream;
+	private InputStream streamForProgress;
+	private final List<IOsmStorageFilter> filters = new ArrayList<IOsmStorageFilter>();
+	private boolean supressWarnings = true;
+	private boolean convertTagsToLC = true;
+	private boolean parseEntityInfo;
 	
 	
 	
-	public static void main(String[] args) throws IOException, SAXException, XmlPullParserException {
+	public static void main(String[] args) throws IOException, XmlPullParserException {
 		GZIPInputStream is = new GZIPInputStream(
 				new FileInputStream("/Users/victorshcherb/osmand/temp/m.m001508233.osc.gz"));
 		new OsmBaseStorage().parseOSM(is, IProgress.EMPTY_PROGRESS);
@@ -120,7 +120,7 @@ public class OsmBaseStorage {
 	 * @throws IOException
 	 * @throws SAXException - could be
 	 */
-	public synchronized void parseOSM(InputStream stream, IProgress progress) throws IOException, XmlPullParserException {
+	private synchronized void parseOSM(InputStream stream, IProgress progress) throws IOException, XmlPullParserException {
 		parseOSM(stream, progress, null, true);
 		
 	}
@@ -142,7 +142,7 @@ public class OsmBaseStorage {
 		return osmChange;
 	}
 	
-	protected Long parseId(XmlPullParser parser, String name, long defId){
+	private Long parseId(XmlPullParser parser, String name, long defId){
 		long id = defId; 
 		String value = parser.getAttributeValue("",name);
 		try {
@@ -152,7 +152,7 @@ public class OsmBaseStorage {
 		return id;
 	}
 	
-	protected double parseDouble(XmlPullParser parser, String name, double defVal){
+	private double parseDouble(XmlPullParser parser, String name, double defVal){
 		double ret = defVal; 
 		String value = parser.getAttributeValue("", name);
 		if(value == null) {
@@ -165,13 +165,13 @@ public class OsmBaseStorage {
 		return ret;
 	}
 	
-	protected static final Set<String> supportedVersions = new HashSet<String>();
+	private static final Set<String> supportedVersions = new HashSet<String>();
 	static {
 		supportedVersions.add("0.6"); //$NON-NLS-1$
 		supportedVersions.add("0.5"); //$NON-NLS-1$
 	}
 	
-	protected void initRootElement(XmlPullParser parser, String name) throws OsmVersionNotSupported {
+	private void initRootElement(XmlPullParser parser, String name) throws OsmVersionNotSupported {
 		if ((!ELEM_OSM.equals(name) && !ELEM_OSMCHANGE.equals(name))
 				|| !supportedVersions.contains(parser.getAttributeValue("", ATTR_VERSION))) {
 			throw new OsmVersionNotSupported();
@@ -180,9 +180,9 @@ public class OsmBaseStorage {
 		parseStarted = true;
 	}
 	
-	protected static final int moduleProgress = 1 << 10;
+	private static final int moduleProgress = 1 << 10;
 	
-	public void startElement(XmlPullParser parser, String name)  {
+	private void startElement(XmlPullParser parser, String name)  {
 		if(!parseStarted){
 			initRootElement(parser, name);
 		}
@@ -265,7 +265,7 @@ public class OsmBaseStorage {
 		return 0;
 	}
 
-	public void endElement(XmlPullParser parser, String name) {
+	private void endElement(XmlPullParser parser, String name) {
 		EntityType type = null;
 		if (ELEM_NODE.equals(name)){
 			type = EntityType.NODE; 
@@ -307,7 +307,7 @@ public class OsmBaseStorage {
     }
 	
 	
-	protected boolean acceptEntityToLoad(EntityId entityId, Entity entity) {
+	private boolean acceptEntityToLoad(EntityId entityId, Entity entity) {
 		for(IOsmStorageFilter f : filters){
 			if(!f.acceptEntityToLoad(this, entityId, entity)){
 				return false;
@@ -316,7 +316,7 @@ public class OsmBaseStorage {
 		return true;
 	}
 
-	public void completeReading(){
+	private void completeReading(){
 		for(Entity e : entities.values()){
 			e.initializeLinks(entities);
 		}
@@ -338,7 +338,7 @@ public class OsmBaseStorage {
 	/**
 	 * Thrown when version is not supported
 	 */
-	public static class OsmVersionNotSupported extends RuntimeException {
+	static class OsmVersionNotSupported extends RuntimeException {
 		private static final long serialVersionUID = -127558215143984838L;
 
 	}

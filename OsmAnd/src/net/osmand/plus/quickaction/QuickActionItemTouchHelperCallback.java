@@ -7,7 +7,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
  * Created by okorsun on 21.12.16.
  */
 
-public class QuickActionItemTouchHelperCallback extends ItemTouchHelper.Callback {
+class QuickActionItemTouchHelperCallback extends ItemTouchHelper.Callback {
 
     private OnItemMoveCallback itemMoveCallback;
 

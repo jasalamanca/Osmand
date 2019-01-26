@@ -195,7 +195,7 @@ public abstract class AbstractMessage extends AbstractMessageLite
 
   /** Get a hash code for given fields and values, using the given seed. */
   @SuppressWarnings("unchecked")
-  protected int hashFields(int hash, Map<FieldDescriptor, Object> map) {
+  private int hashFields(int hash, Map<FieldDescriptor, Object> map) {
     for (Map.Entry<FieldDescriptor, Object> entry : map.entrySet()) {
       FieldDescriptor field = entry.getKey();
       Object value = entry.getValue();
@@ -244,12 +244,12 @@ public abstract class AbstractMessage extends AbstractMessageLite
    * need to use the field number as the hash code to ensure compatibility
    * between statically and dynamically generated enum objects.
    */
-  protected static int hashEnum(EnumLite e) {
+  private static int hashEnum(EnumLite e) {
     return e.getNumber();
   }
 
   /** Helper method for implementing {@link Message#hashCode()}. */
-  protected static int hashEnumList(List<? extends EnumLite> list) {
+  private static int hashEnumList(List<? extends EnumLite> list) {
     int hash = 1;
     for (EnumLite e : list) {
       hash = 31 * hash + hashEnum(e);

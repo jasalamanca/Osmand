@@ -26,7 +26,7 @@ public class DownloadResources extends DownloadResourceGroup {
 	public boolean isDownloadedFromInternet = false;
 	public boolean downloadFromInternetFailed = false;
 	public boolean mapVersionIsIncreased = false;
-	public OsmandApplication app;
+	public final OsmandApplication app;
 	private Map<String, String> indexFileNames = new LinkedHashMap<>();
 	private Map<String, String> indexActivatedFileNames = new LinkedHashMap<>();
 	private List<IndexItem> rawResources;
@@ -100,7 +100,7 @@ public class DownloadResources extends DownloadResourceGroup {
 		this.indexActivatedFileNames = indexActivatedFileNames;
 	}
 
-	public boolean checkIfItemOutdated(IndexItem item, java.text.DateFormat format) {
+	private boolean checkIfItemOutdated(IndexItem item, java.text.DateFormat format) {
 		boolean outdated = false;
 		String sfName = item.getTargetFileName();
 		String indexActivatedDate = indexActivatedFileNames.get(sfName);
@@ -171,7 +171,7 @@ public class DownloadResources extends DownloadResourceGroup {
 
 	
 
-	protected void updateFilesToUpdate() {
+	void updateFilesToUpdate() {
 		initAlreadyLoadedFiles();
 		recalculateFilesToUpdate();
 	}
@@ -237,7 +237,7 @@ public class DownloadResources extends DownloadResourceGroup {
 		}
 	}
 	
-	protected boolean prepareData(List<IndexItem> resources) {
+	boolean prepareData(List<IndexItem> resources) {
 		this.rawResources = resources;
 
 		DownloadResourceGroup otherGroup = new DownloadResourceGroup(this, DownloadResourceGroupType.OTHER_GROUP);

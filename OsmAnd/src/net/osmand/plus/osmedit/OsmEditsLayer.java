@@ -32,8 +32,7 @@ public class OsmEditsLayer extends OsmandMapLayer implements ContextMenuLayer.IC
 	private final OsmBugsLocalUtil mOsmBugsUtil;
 	private Bitmap poi;
 	private Bitmap bug;
-	private OsmandMapTileView view;
-	private Paint paintIcon;
+    private Paint paintIcon;
 
 	private ContextMenuLayer contextMenuLayer;
 
@@ -46,7 +45,7 @@ public class OsmEditsLayer extends OsmandMapLayer implements ContextMenuLayer.IC
 
 	@Override
 	public void initLayer(OsmandMapTileView view) {
-		this.view = view;
+        OsmandMapTileView view1 = view;
 
 		poi = BitmapFactory.decodeResource(view.getResources(), R.drawable.map_pin_poi);
 		bug = poi;
@@ -109,7 +108,7 @@ public class OsmEditsLayer extends OsmandMapLayer implements ContextMenuLayer.IC
 	}
 
 
-	public void getOsmEditsFromPoint(PointF point, RotatedTileBox tileBox, List<? super OsmPoint> am) {
+	private void getOsmEditsFromPoint(PointF point, RotatedTileBox tileBox, List<? super OsmPoint> am) {
 		int ex = (int) point.x;
 		int ey = (int) point.y;
 		int compare = getRadiusPoi(tileBox);
@@ -135,7 +134,7 @@ public class OsmEditsLayer extends OsmandMapLayer implements ContextMenuLayer.IC
 		return Math.abs(objx - ex) <= radius && (ey - objy) <= radius / 2 && (objy - ey) <= 3 * radius;
 	}
 
-	public int getRadiusPoi(RotatedTileBox tb) {
+	private int getRadiusPoi(RotatedTileBox tb) {
 		int r;
 		if (tb.getZoom() < startZoom) {
 			r = 0;
@@ -257,12 +256,12 @@ public class OsmEditsLayer extends OsmandMapLayer implements ContextMenuLayer.IC
 		@Nullable
 		private final ContextMenuLayer.ApplyMovedObjectCallback mCallback;
 		private final OsmEditingPlugin plugin;
-		private OsmBugsUtil mOsmbugsUtil;
+		private final OsmBugsUtil mOsmbugsUtil;
 
-		public SaveOsmNoteAsyncTask(String text,
-									MapActivity activity,
-									@Nullable ContextMenuLayer.ApplyMovedObjectCallback callback,
-									OsmEditingPlugin plugin, OsmBugsUtil osmbugsUtil) {
+		SaveOsmNoteAsyncTask(String text,
+                             MapActivity activity,
+                             @Nullable ContextMenuLayer.ApplyMovedObjectCallback callback,
+                             OsmEditingPlugin plugin, OsmBugsUtil osmbugsUtil) {
 			mText = text;
 			mActivity = activity;
 			mCallback = callback;

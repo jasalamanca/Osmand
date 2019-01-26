@@ -41,7 +41,7 @@ public class RouteLayer extends OsmandMapLayer {
 	
 	private final RoutingHelper helper;
 	// keep array lists created
-	private List<Location> actionPoints = new ArrayList<Location>();
+	private final List<Location> actionPoints = new ArrayList<Location>();
 	
 	private Path path;
 
@@ -322,10 +322,10 @@ public class RouteLayer extends OsmandMapLayer {
 	
 	private static class RouteGeometryZoom {
 		final TByteArrayList simplifyPoints;
-		List<Double> distances;
-		List<Double> angles;
+		final List<Double> distances;
+		final List<Double> angles;
 		
-		public RouteGeometryZoom(List<Location> locations, RotatedTileBox tb) {
+		RouteGeometryZoom(List<Location> locations, RotatedTileBox tb) {
 			//  this.locations = locations;
 			tb = new RotatedTileBox(tb);
 			tb.setZoomAndAnimation(tb.getZoom(), 0, tb.getZoomFloatPart());
@@ -366,7 +366,7 @@ public class RouteLayer extends OsmandMapLayer {
 		}
 		
 		
-		public List<Double> getDistances() {
+		List<Double> getDistances() {
 			return distances;
 		}
 		
@@ -394,7 +394,7 @@ public class RouteLayer extends OsmandMapLayer {
 	        }
 	    }
 		
-		public TByteArrayList getSimplifyPoints() {
+		TByteArrayList getSimplifyPoints() {
 			return simplifyPoints;
 		}
 	}
@@ -402,16 +402,16 @@ public class RouteLayer extends OsmandMapLayer {
 	private class RouteSimplificationGeometry {
 		RouteCalculationResult route;
 		double mapDensity;
-		TreeMap<Integer, RouteGeometryZoom> zooms = new TreeMap<>();
+		final TreeMap<Integer, RouteGeometryZoom> zooms = new TreeMap<>();
 		List<Location> locations = Collections.emptyList(); 
 		
 		// cache arrays
-		TIntArrayList tx = new TIntArrayList();
-		TIntArrayList ty = new TIntArrayList();
-		List<Double> angles = new ArrayList<>();
-		List<Double> distances = new ArrayList<>();
+        final TIntArrayList tx = new TIntArrayList();
+		final TIntArrayList ty = new TIntArrayList();
+		final List<Double> angles = new ArrayList<>();
+		final List<Double> distances = new ArrayList<>();
 		
-		public void updateRoute(RotatedTileBox tb, RouteCalculationResult route) {
+		void updateRoute(RotatedTileBox tb, RouteCalculationResult route) {
 			if(tb.getMapDensity() != mapDensity || this.route != route) {
 				this.route = route;
 				if(route == null) {
@@ -522,7 +522,7 @@ public class RouteLayer extends OsmandMapLayer {
 		}
 	}
 	
-	RouteSimplificationGeometry routeGeometry  = new RouteSimplificationGeometry();
+	private final RouteSimplificationGeometry routeGeometry  = new RouteSimplificationGeometry();
 	
 	private void drawRouteSegment(RotatedTileBox tb, Canvas canvas, TIntArrayList tx, TIntArrayList ty,
 			List<Double> angles, List<Double> distances, double distToFinish) {
@@ -542,7 +542,7 @@ public class RouteLayer extends OsmandMapLayer {
 		}
 	}
 	
-	public void drawLocations(RotatedTileBox tb, Canvas canvas, double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude) {
+	private void drawLocations(RotatedTileBox tb, Canvas canvas, double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude) {
 		RouteCalculationResult route = helper.getRoute();
 		routeGeometry.updateRoute(tb, route);
 		routeGeometry.drawSegments(tb, canvas, topLatitude, leftLongitude, bottomLatitude, rightLongitude, 

@@ -35,7 +35,7 @@ package com.google.protobuf;
  *
  * @author kenton@google.com Kenton Varda
  */
-public final class RpcUtil {
+final class RpcUtil {
   private RpcUtil() {}
 
   /**
@@ -124,10 +124,10 @@ public final class RpcUtil {
   /**
    * Exception thrown when a one-time callback is called more than once.
    */
-  public static final class AlreadyCalledException extends RuntimeException {
+  static final class AlreadyCalledException extends RuntimeException {
     private static final long serialVersionUID = 5469741279507848266L;
 
-    public AlreadyCalledException() {
+    AlreadyCalledException() {
       super("This RpcCallback was already called and cannot be called " +
             "multiple times.");
     }

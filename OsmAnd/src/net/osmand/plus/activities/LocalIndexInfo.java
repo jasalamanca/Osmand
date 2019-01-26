@@ -10,7 +10,7 @@ import android.support.annotation.NonNull;
 
 public class LocalIndexInfo {
 
-	private LocalIndexType type;
+	private final LocalIndexType type;
 	private String description = "";
 	private String name;
 

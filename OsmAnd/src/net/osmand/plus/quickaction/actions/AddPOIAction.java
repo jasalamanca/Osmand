@@ -46,7 +46,6 @@ import net.osmand.plus.osmedit.OpenstreetmapUtil;
 import net.osmand.plus.osmedit.OsmEditingPlugin;
 import net.osmand.plus.osmedit.OsmPoint;
 import net.osmand.plus.osmedit.dialogs.PoiSubTypeDialogFragment;
-import net.osmand.plus.quickaction.CreateEditActionDialog;
 import net.osmand.plus.quickaction.QuickAction;
 import net.osmand.util.Algorithms;
 
@@ -64,8 +63,8 @@ import static net.osmand.plus.osmedit.EditPoiData.POI_TYPE_TAG;
 
 public class AddPOIAction extends QuickAction {
 	public static final int TYPE = 13;
-	public static final String KEY_TAG = "key_tag";
-	public static final String KEY_DIALOG = "dialog";
+	private static final String KEY_TAG = "key_tag";
+	private static final String KEY_DIALOG = "dialog";
 
 	private transient EditText title;
 	private transient String prevType = "";
@@ -177,7 +176,7 @@ public class AddPOIAction extends QuickAction {
 				activity.getResources().getColor(R.color.dash_search_icon_dark));
 
 		final LinearLayout editTagsLineaLayout =
-				(LinearLayout) view.findViewById(R.id.editTagsList);
+                view.findViewById(R.id.editTagsList);
 
 		final MapPoiTypes poiTypes = application.getPoiTypes();
 		final Map<String, PoiType> allTranslatedNames = poiTypes.getAllTranslatedNames(true);
@@ -193,7 +192,7 @@ public class AddPOIAction extends QuickAction {
 		tagKeys.addAll(EditPoiDialogFragment.BASIC_TAGS);
 		mAdapter.setTagData(tagKeys.toArray(new String[tagKeys.size()]));
 		mAdapter.setValueData(valueKeys.toArray(new String[valueKeys.size()]));
-		Button addTagButton = (Button) view.findViewById(R.id.addTagButton);
+		Button addTagButton = view.findViewById(R.id.addTagButton);
 		addTagButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -209,9 +208,9 @@ public class AddPOIAction extends QuickAction {
 
 		mAdapter.updateViews();
 
-		final TextInputLayout poiTypeTextInputLayout = (TextInputLayout) view.findViewById(R.id.poiTypeTextInputLayout);
-		final AutoCompleteTextView poiTypeEditText = (AutoCompleteTextView) view.findViewById(R.id.poiTypeEditText);
-		final SwitchCompat showDialog = (SwitchCompat) view.findViewById(R.id.saveButton);
+		final TextInputLayout poiTypeTextInputLayout = view.findViewById(R.id.poiTypeTextInputLayout);
+		final AutoCompleteTextView poiTypeEditText = view.findViewById(R.id.poiTypeEditText);
+		final SwitchCompat showDialog = view.findViewById(R.id.saveButton);
 //            showDialog.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 //                @Override
 //                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -278,7 +277,7 @@ public class AddPOIAction extends QuickAction {
 							}
 						});
 
-						CreateEditActionDialog parentFragment = (CreateEditActionDialog) activity.getSupportFragmentManager().findFragmentByTag(CreateEditActionDialog.TAG);
+//						CreateEditActionDialog parentFragment = (CreateEditActionDialog) activity.getSupportFragmentManager().findFragmentByTag(CreateEditActionDialog.TAG);
 						f.show(activity.getSupportFragmentManager(), "PoiSubTypeDialogFragment");
 
 						return true;
@@ -291,7 +290,7 @@ public class AddPOIAction extends QuickAction {
 		setUpAdapterForPoiTypeEditText(activity, allTranslatedNames, poiTypeEditText);
 
 		ImageButton onlineDocumentationButton =
-				(ImageButton) view.findViewById(R.id.onlineDocumentationButton);
+                view.findViewById(R.id.onlineDocumentationButton);
 		onlineDocumentationButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -407,9 +406,9 @@ public class AddPOIAction extends QuickAction {
 		private final ArrayAdapter<String> valueAdapter;
 		private final Drawable deleteDrawable;
 
-		public TagAdapterLinearLayoutHack(LinearLayout linearLayout,
-										  Map<String, String> tagsData,
-										  Drawable deleteDrawable) {
+		TagAdapterLinearLayoutHack(LinearLayout linearLayout,
+                                   Map<String, String> tagsData,
+                                   Drawable deleteDrawable) {
 			this.linearLayout = linearLayout;
 			this.tagsData = tagsData;
 			this.deleteDrawable = deleteDrawable;
@@ -418,7 +417,7 @@ public class AddPOIAction extends QuickAction {
 			valueAdapter = new ArrayAdapter<>(linearLayout.getContext(), R.layout.list_textview);
 		}
 
-		public void updateViews() {
+		void updateViews() {
 			linearLayout.removeAllViews();
 			List<Map.Entry<String, String>> entries = new ArrayList<>(tagsData.entrySet());
 			for (Map.Entry<String, String> tag : entries) {
@@ -429,13 +428,13 @@ public class AddPOIAction extends QuickAction {
 			}
 		}
 
-		public void addTagView(String tg, String vl) {
+		void addTagView(String tg, String vl) {
 			View convertView = LayoutInflater.from(linearLayout.getContext())
 					.inflate(R.layout.poi_tag_list_item, null, false);
 			final AutoCompleteTextView tagEditText =
-					(AutoCompleteTextView) convertView.findViewById(R.id.tagEditText);
+                    convertView.findViewById(R.id.tagEditText);
 			ImageButton deleteItemImageButton =
-					(ImageButton) convertView.findViewById(R.id.deleteItemImageButton);
+                    convertView.findViewById(R.id.deleteItemImageButton);
 			deleteItemImageButton.setImageDrawable(deleteDrawable);
 			final String[] previousTag = new String[]{tg};
 			deleteItemImageButton.setOnClickListener(new View.OnClickListener() {
@@ -447,7 +446,7 @@ public class AddPOIAction extends QuickAction {
 				}
 			});
 			final AutoCompleteTextView valueEditText =
-					(AutoCompleteTextView) convertView.findViewById(R.id.valueEditText);
+                    convertView.findViewById(R.id.valueEditText);
 			tagEditText.setText(tg);
 			tagEditText.setAdapter(tagAdapter);
 			tagEditText.setThreshold(1);
@@ -457,8 +456,8 @@ public class AddPOIAction extends QuickAction {
 					if (!hasFocus) {
 						String s = tagEditText.getText().toString();
 						tagsData.remove(previousTag[0]);
-						tagsData.put(s.toString(), valueEditText.getText().toString());
-						previousTag[0] = s.toString();
+						tagsData.put(s, valueEditText.getText().toString());
+						previousTag[0] = s;
 						setTagsIntoParams(tagsData);
 					} else {
 						tagAdapter.getFilter().filter(tagEditText.getText());
@@ -489,7 +488,7 @@ public class AddPOIAction extends QuickAction {
 			tagEditText.requestFocus();
 		}
 
-		public void setTagData(String[] tags) {
+		void setTagData(String[] tags) {
 			tagAdapter.clear();
 			for (String s : tags) {
 				tagAdapter.add(s);
@@ -498,7 +497,7 @@ public class AddPOIAction extends QuickAction {
 			tagAdapter.notifyDataSetChanged();
 		}
 
-		public void setValueData(String[] values) {
+		void setValueData(String[] values) {
 			valueAdapter.clear();
 			for (String s : values) {
 				valueAdapter.add(s);

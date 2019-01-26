@@ -46,16 +46,16 @@ public class TrackActivity extends TabActivity {
 	public static final String OPEN_POINTS_TAB = "OPEN_POINTS_TAB";
 	public static final String OPEN_TRACKS_LIST = "OPEN_TRACKS_LIST";
 	public static final String CURRENT_RECORDING = "CURRENT_RECORDING";
-	protected List<WeakReference<Fragment>> fragList = new ArrayList<>();
+	private final List<WeakReference<Fragment>> fragList = new ArrayList<>();
 	private OsmandApplication app;
-	protected PagerSlidingTabStrip slidingTabLayout;
+	private PagerSlidingTabStrip slidingTabLayout;
 	private File file = null;
 	private GPXFile gpxFile;
 	private GpxDataItem gpxDataItem;
-	ViewPager mViewPager;
+	private ViewPager mViewPager;
 	private long modifiedTime = -1;
 	private List<GpxDisplayGroup> displayGroups;
-	private List<GpxDisplayGroup> originalGroups = new ArrayList<>();
+	private final List<GpxDisplayGroup> originalGroups = new ArrayList<>();
 	private boolean stopped = false;
 	private boolean openPointsTab = false;
 	private boolean openTracksList = false;
@@ -190,11 +190,11 @@ public class TrackActivity extends TabActivity {
 		return new QuadRect(left, top, right, bottom);
 	}
 
-	protected void setGpxDataItem(GpxDataItem gpxDataItem) {
+	private void setGpxDataItem(GpxDataItem gpxDataItem) {
 		this.gpxDataItem = gpxDataItem;
 	}
 
-	protected void setGpx(GPXFile result) {
+	private void setGpx(GPXFile result) {
 		this.gpxFile = result;
 		if (file == null) {
 			this.gpxFile = getMyApplication().getSavingTrackHelper().getCurrentGpx();
@@ -236,11 +236,11 @@ public class TrackActivity extends TabActivity {
 	protected void onResume() {
 		super.onResume();
 		stopped = false;
-		slidingTabLayout = (PagerSlidingTabStrip) findViewById(R.id.sliding_tabs);
+		slidingTabLayout = findViewById(R.id.sliding_tabs);
 		if (slidingTabLayout != null) {
 			slidingTabLayout.setShouldExpand(true);
 
-			mViewPager = (ViewPager) findViewById(R.id.pager);
+			mViewPager = findViewById(R.id.pager);
 
 			setViewPagerAdapter(mViewPager, new ArrayList<TabActivity.TabItem>());
 			slidingTabLayout.setViewPager(mViewPager);
@@ -329,7 +329,7 @@ public class TrackActivity extends TabActivity {
 	}
 
 	public Toolbar getClearToolbar(boolean visible) {
-		final Toolbar tb = (Toolbar) findViewById(R.id.bottomControls);
+		final Toolbar tb = findViewById(R.id.bottomControls);
 		if (tb != null) {
 			tb.setTitle(null);
 			tb.getMenu().clear();
@@ -378,11 +378,11 @@ public class TrackActivity extends TabActivity {
 		super.onBackPressed();
 	}
 
-	boolean isHavingWayPoints() {
+	private boolean isHavingWayPoints() {
 		return getGpx() != null && getGpx().hasWptPt();
 	}
 
-	boolean isHavingRoutePoints() {
+	private boolean isHavingRoutePoints() {
 		return getGpx() != null && getGpx().hasRtePt();
 	}
 

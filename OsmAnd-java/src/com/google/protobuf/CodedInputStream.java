@@ -168,7 +168,7 @@ public final class CodedInputStream {
    * Reads and discards an entire message.  This will read either until EOF
    * or until an endgroup tag, whichever comes first.
    */
-  public void skipMessage() throws IOException {
+  private void skipMessage() throws IOException {
     while (true) {
       final int tag = readTag();
       if (tag == 0 || !skipField(tag)) {
@@ -461,7 +461,7 @@ public final class CodedInputStream {
   }
 
   /** Read a raw Varint from the stream. */
-  public long readRawVarint64() throws IOException {
+  private long readRawVarint64() throws IOException {
     int shift = 0;
     long result = 0;
     while (shift < 64) {
@@ -476,7 +476,7 @@ public final class CodedInputStream {
   }
 
   /** Read a 32-bit little-endian integer from the stream. */
-  public int readRawLittleEndian32() throws IOException {
+  private int readRawLittleEndian32() throws IOException {
     final byte b1 = readRawByte();
     final byte b2 = readRawByte();
     final byte b3 = readRawByte();
@@ -488,7 +488,7 @@ public final class CodedInputStream {
   }
 
   /** Read a 64-bit little-endian integer from the stream. */
-  public long readRawLittleEndian64() throws IOException {
+  private long readRawLittleEndian64() throws IOException {
     final byte b1 = readRawByte();
     final byte b2 = readRawByte();
     final byte b3 = readRawByte();
@@ -517,7 +517,7 @@ public final class CodedInputStream {
    *          Java has no explicit unsigned support.
    * @return A signed 32-bit integer.
    */
-  public static int decodeZigZag32(final int n) {
+  private static int decodeZigZag32(final int n) {
     return (n >>> 1) ^ -(n & 1);
   }
 
@@ -531,7 +531,7 @@ public final class CodedInputStream {
    *          Java has no explicit unsigned support.
    * @return A signed 64-bit integer.
    */
-  public static long decodeZigZag64(final long n) {
+  private static long decodeZigZag64(final long n) {
     return (n >>> 1) ^ -(n & 1);
   }
 
@@ -714,7 +714,7 @@ public final class CodedInputStream {
    * case if either the end of the underlying input source has been reached or
    * if the stream has reached a limit created using {@link #pushLimit(int)}.
    */
-  public boolean isAtEnd() throws IOException {
+  private boolean isAtEnd() throws IOException {
     return bufferPos == bufferSize && !refillBuffer(false);
   }
 
@@ -806,7 +806,7 @@ public final class CodedInputStream {
    * @throws InvalidProtocolBufferException The end of the stream or the current
    *                                        limit was reached.
    */
-  public byte[] readRawBytes(final int size) throws IOException {
+  private byte[] readRawBytes(final int size) throws IOException {
     if (size < 0) {
       throw InvalidProtocolBufferException.negativeSize();
     }

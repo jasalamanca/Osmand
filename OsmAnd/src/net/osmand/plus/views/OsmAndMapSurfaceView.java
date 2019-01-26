@@ -13,9 +13,8 @@ import android.view.SurfaceView;
 public class OsmAndMapSurfaceView extends SurfaceView implements Callback {
 	
 	private OsmandMapTileView mapView;
-	private OnClickListener onClickListener;
 
-	public OsmAndMapSurfaceView(Context context, AttributeSet attrs) {
+    public OsmAndMapSurfaceView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		init();
 
@@ -29,7 +28,7 @@ public class OsmAndMapSurfaceView extends SurfaceView implements Callback {
 	@Override
 	public void setOnClickListener(OnClickListener l) {
 		super.setOnClickListener(l);
-		this.onClickListener = l;
+        OnClickListener onClickListener = l;
 	}
 	
 

@@ -5,13 +5,13 @@ import net.osmand.render.RenderingRuleSearchRequest;
 
 
 public class RenderingContext {
-	static enum ShadowRenderingMode {
+	enum ShadowRenderingMode {
 		// int shadowRenderingMode = 0; // no shadow (minumum CPU)
 		// int shadowRenderingMode = 1; // classic shadow (the implementaton in master)
 		// int shadowRenderingMode = 2; // blur shadow (most CPU, but still reasonable)
 		// int shadowRenderingMode = 3; solid border (CPU use like classic version or even smaller)
 		NO_SHADOW(0), ONE_STEP(1), BLUR_SHADOW(2), SOLID_SHADOW(3);
-		public final int value;
+		final int value;
 
 		ShadowRenderingMode(int v) {
 			this.value = v;
@@ -26,7 +26,7 @@ public class RenderingContext {
 	public boolean transliterate = false;
 	public int defaultColor = 0xf1eee8;
 
-	public RenderingContext() {
+	protected RenderingContext() {
 	}
 
 	public double leftX;
@@ -39,12 +39,12 @@ public class RenderingContext {
 	public float rotate;
 
 	// debug purpose
-	public int pointCount = 0;
-	public int pointInsideCount = 0;
-	public int visible = 0;
-	public int allObjects = 0;
-	public int textRenderingTime = 0;
-	public int lastRenderedKey = 0;
+	public final int pointCount = 0;
+	public final int pointInsideCount = 0;
+	public final int visible = 0;
+	public final int allObjects = 0;
+	public final int textRenderingTime = 0;
+	public final int lastRenderedKey = 0;
 
 	// be aware field is using in C++
 	public float screenDensityRatio = 1;
@@ -53,7 +53,7 @@ public class RenderingContext {
 	public int shadowRenderingColor = 0xff969696;
 	public String renderingDebugInfo;
 	public double polygonMinSizeToDisplay;
-	public long renderingContextHandle;
+	private long renderingContextHandle;
 	
 	private float density = 1;
 	

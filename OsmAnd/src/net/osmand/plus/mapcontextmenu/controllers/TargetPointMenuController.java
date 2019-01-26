@@ -63,7 +63,7 @@ public class TargetPointMenuController extends MenuController {
 		return targetPoint;
 	}
 
-	public TargetPoint getTargetPoint() {
+	private TargetPoint getTargetPoint() {
 		return targetPoint;
 	}
 

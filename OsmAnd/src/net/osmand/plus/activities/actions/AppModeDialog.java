@@ -73,7 +73,7 @@ public class AppModeDialog {
 			View tb = buttons[i];
 			final ApplicationMode mode = visible.get(i);
 			final boolean checked = selected.contains(mode);
-			ImageView iv = (ImageView) tb.findViewById(R.id.app_mode_icon);
+			ImageView iv = tb.findViewById(R.id.app_mode_icon);
 			boolean nightMode = isNightMode(ctx, useMapTheme);
 			if (checked) {
 				iv.setImageDrawable(ctx.getIconsCache().getIcon(mode.getSmallIconDark(), nightMode ? R.color.route_info_checked_mode_icon_color_dark : R.color.route_info_checked_mode_icon_color_light));
@@ -122,7 +122,7 @@ public class AppModeDialog {
 		int metricsX = (int) ctx.getResources().getDimension(R.dimen.route_info_modes_height);
 		int metricsY = (int) ctx.getResources().getDimension(R.dimen.route_info_modes_height);
 		View tb = layoutInflater.inflate(R.layout.mode_view, null);
-		ImageView iv = (ImageView) tb.findViewById(R.id.app_mode_icon);
+		ImageView iv = tb.findViewById(R.id.app_mode_icon);
 		iv.setImageDrawable(ctx.getIconsCache().getIcon(mode.getSmallIconDark(), isNightMode(ctx, useMapTheme) ? R.color.route_info_checked_mode_icon_color_dark : R.color.route_info_checked_mode_icon_color_light));
 		iv.setContentDescription(mode.toHumanString(ctx));
 //		tb.setCompoundDrawablesWithIntrinsicBounds(null, ctx.getIconsCache().getIcon(mode.getIconId(), R.color.app_mode_icon_color), null, null);

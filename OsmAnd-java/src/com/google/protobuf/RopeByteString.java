@@ -816,7 +816,7 @@ class RopeByteString extends ByteString {
     // Offset in the buffer at which user called mark();
     private int mark;
 
-    public RopeInputStream() {
+    RopeInputStream() {
       initialize();
     }
 
@@ -877,7 +877,7 @@ class RopeByteString extends ByteString {
     }
 
     @Override
-    public int read() throws IOException {
+    public int read() {
       advanceIfCurrentPieceFullyRead();
       if (currentPiece == null) {
         return -1;
@@ -887,7 +887,7 @@ class RopeByteString extends ByteString {
     }
 
     @Override
-    public int available() throws IOException {
+    public int available() {
       int bytesRead = currentPieceOffsetInRope + currentPieceIndex;
       return RopeByteString.this.size() - bytesRead;
     }

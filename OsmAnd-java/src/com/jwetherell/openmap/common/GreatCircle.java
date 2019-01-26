@@ -14,7 +14,7 @@
 
 package com.jwetherell.openmap.common;
 
-public abstract class GreatCircle {
+abstract class GreatCircle {
 
     /**
      * Calculate spherical arc distance between two points.
@@ -474,7 +474,7 @@ public abstract class GreatCircle {
      * @return float[n] radian lat,lon pairs along earth circle.
      * 
      */
-    public static final float[] earthCircle(float phi1, float lambda0, float c, float s, float e, int n, float[] ret_val) {
+    private static float[] earthCircle(float phi1, float lambda0, float c, float s, float e, int n, float[] ret_val) {
         double Az, cosAz, sinAz;
         double cosphi1 = Math.cos(phi1);
         double sinphi1 = Math.sin(phi1);
@@ -606,7 +606,7 @@ public abstract class GreatCircle {
      * @return double[n] radian lat,lon pairs along earth circle.
      * 
      */
-    public static final double[] earthCircle(double phi1, double lambda0, double c, double s, double e, int n, double[] ret_val) {
+    private static double[] earthCircle(double phi1, double lambda0, double c, double s, double e, int n, double[] ret_val) {
         double Az, cosAz, sinAz;
         double cosphi1 = Math.cos(phi1);
         double sinphi1 = Math.sin(phi1);

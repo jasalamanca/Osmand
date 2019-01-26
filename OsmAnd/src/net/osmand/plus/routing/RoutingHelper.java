@@ -43,9 +43,9 @@ public class RoutingHelper {
 
 	private static final float POSITION_TOLERANCE = 60;
 
-	private List<WeakReference<IRouteInformationListener>> listeners = new LinkedList<WeakReference<IRouteInformationListener>>();
+	private final List<WeakReference<IRouteInformationListener>> listeners = new LinkedList<WeakReference<IRouteInformationListener>>();
 
-	private OsmandApplication app;
+	private final OsmandApplication app;
 
 	private boolean isFollowingMode = false;
 	private boolean isRoutePlanningMode = false;
@@ -64,16 +64,15 @@ public class RoutingHelper {
 	private static final int RECALCULATE_THRESHOLD_CAUSING_FULL_RECALCULATE_INTERVAL = 2*60*1000;
 	private Thread currentRunningJob;
 	private long lastTimeEvaluatedRoute = 0;
-	private String lastRouteCalcError;
 	private String lastRouteCalcErrorShort;
 	private long recalculateCountInInterval = 0;
 	private int evalWaitInterval = 0;
 
 	private ApplicationMode mode;
-	private OsmandSettings settings;
+	private final OsmandSettings settings;
 
-	private RouteProvider provider;
-	private VoiceRouter voiceRouter;
+	private final RouteProvider provider;
+	private final VoiceRouter voiceRouter;
 
 	private static boolean isDeviatedFromRoute = false;
 	private long deviateFromRouteDetected = 0;
@@ -580,7 +579,7 @@ public class RoutingHelper {
 	 * and bearing from currentLocation to next (current) point
 	 * the difference is more than 60 degrees
 	 */
-	public boolean checkWrongMovementDirection(Location currentLocation, Location nextRouteLocation) {
+	private boolean checkWrongMovementDirection(Location currentLocation, Location nextRouteLocation) {
 		// measuring without bearing could be really error prone (with last fixed location)
 		// this code has an effect on route recalculation which should be detected without mistakes
 		if (currentLocation.hasBearing() && nextRouteLocation != null) {
@@ -765,10 +764,10 @@ public class RoutingHelper {
 	private class RouteRecalculationThread extends Thread {
 
 		private final RouteCalculationParams params;
-		private boolean paramsChanged;
+		private final boolean paramsChanged;
 		private Thread prevRunningJob;
 
-		public RouteRecalculationThread(String name, RouteCalculationParams params, boolean paramsChanged) {
+		RouteRecalculationThread(String name, RouteCalculationParams params, boolean paramsChanged) {
 			super(name);
 			this.params = params;
 			this.paramsChanged = paramsChanged;
@@ -777,11 +776,11 @@ public class RoutingHelper {
 			}
 		}
 
-		public boolean isParamsChanged() {
+		boolean isParamsChanged() {
 			return paramsChanged;
 		}
 
-		public void stopCalculation(){
+		void stopCalculation(){
 			params.calculationProgress.isCancelled = true;
 		}
 
@@ -802,7 +801,7 @@ public class RoutingHelper {
 					currentRunningJob = this;
 				}
 			}
-			lastRouteCalcError = null;
+			String lastRouteCalcError = null;
 			lastRouteCalcErrorShort = null;
 			RouteCalculationResult res = provider.calculateRouteImpl(params);
 			if (params.calculationProgress.isCancelled) {
@@ -845,7 +844,7 @@ public class RoutingHelper {
 			lastTimeEvaluatedRoute = System.currentTimeMillis();
 		}
 
-		public void setWaitPrevJob(Thread prevRunningJob) {
+		void setWaitPrevJob(Thread prevRunningJob) {
 			this.prevRunningJob = prevRunningJob;
 		}
 	}
@@ -961,9 +960,9 @@ public class RoutingHelper {
 	}
 
 	public interface RouteCalculationProgressCallback {
-		public void updateProgress(int progress);
-		public void requestPrivateAccessRouting();
-		public void finish();
+		void updateProgress(int progress);
+		void requestPrivateAccessRouting();
+		void finish();
 	}
 
 	public boolean isRouteBeingCalculated(){

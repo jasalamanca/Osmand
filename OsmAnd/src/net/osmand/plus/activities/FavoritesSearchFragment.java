@@ -57,15 +57,14 @@ import java.util.Set;
 
 public class FavoritesSearchFragment extends DialogFragment {
 
-	public static final String TAG = "FavoritesSearchFragment";
+	private static final String TAG = "FavoritesSearchFragment";
 
 	private OsmandApplication app;
 	private AccessibilityAssistant accessibilityAssistant;
 
 	private static final String FAV_SEARCH_QUERY_KEY = "fav_search_query_key";
 
-	private Toolbar toolbar;
-	private EditText searchEditText;
+    private EditText searchEditText;
 	private ProgressBar progressBar;
 	private ImageButton clearButton;
 
@@ -103,7 +102,7 @@ public class FavoritesSearchFragment extends DialogFragment {
 			searchQuery = "";
 		}
 
-		toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
 		toolbar.setNavigationIcon(app.getIconsCache().getThemedIcon(R.drawable.ic_arrow_back));
 		toolbar.setNavigationContentDescription(R.string.access_shared_string_navigate_up);
 		toolbar.setNavigationOnClickListener(
@@ -115,7 +114,7 @@ public class FavoritesSearchFragment extends DialogFragment {
 				}
 		);
 
-		searchEditText = (EditText) view.findViewById(R.id.searchEditText);
+		searchEditText = view.findViewById(R.id.searchEditText);
 		searchEditText.setHint(R.string.search_favorites);
 		searchEditText.addTextChangedListener(
 				new TextWatcher() {
@@ -138,8 +137,8 @@ public class FavoritesSearchFragment extends DialogFragment {
 				}
 		);
 
-		progressBar = (ProgressBar) view.findViewById(R.id.searchProgressBar);
-		clearButton = (ImageButton) view.findViewById(R.id.clearButton);
+		progressBar = view.findViewById(R.id.searchProgressBar);
+		clearButton = view.findViewById(R.id.clearButton);
 		clearButton.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_action_remove_dark));
 		clearButton.setOnClickListener(
 				new View.OnClickListener() {
@@ -153,7 +152,7 @@ public class FavoritesSearchFragment extends DialogFragment {
 				}
 		);
 
-		listView = (ListView) view.findViewById(android.R.id.list);
+		listView = view.findViewById(android.R.id.list);
 
 		return view;
 	}
@@ -223,7 +222,7 @@ public class FavoritesSearchFragment extends DialogFragment {
 		super.onDismiss(dialog);
 	}
 
-	public void showOnMap(final FavouritePoint point) {
+	private void showOnMap(final FavouritePoint point) {
 		getMyApplication().getSettings().FAVORITES_TAB.set(FavoritesActivity.FAV_TAB);
 
 		final OsmandSettings settings = getMyApplication().getSettings();
@@ -245,7 +244,7 @@ public class FavoritesSearchFragment extends DialogFragment {
 		AndroidUtils.softKeyboardDelayed(searchEditText);
 	}
 
-	public void hideKeyboard() {
+	private void hideKeyboard() {
 		if (searchEditText.hasFocus()) {
 			AndroidUtils.hideSoftKeyboard(getActivity(), searchEditText);
 		}
@@ -294,19 +293,19 @@ public class FavoritesSearchFragment extends DialogFragment {
 		private static final int HEADER_TYPE = 2;
 		private static final int FOOTER_SHADOW_TYPE = 3;
 
-		private OsmandApplication app;
-		private Activity activity;
+		private final OsmandApplication app;
+		private final Activity activity;
 		private AccessibilityAssistant accessibilityAssistant;
-		private FavouritesDbHelper helper;
+		private final FavouritesDbHelper helper;
 
 		private LatLon location;
-		private Drawable arrowImage;
+		private final Drawable arrowImage;
 
-		List<FavouritePoint> points = new ArrayList<>();
+		final List<FavouritePoint> points = new ArrayList<>();
 		Filter myFilter;
 		private Set<?> filter;
 
-		public FavoritesSearchListAdapter(OsmandApplication app, Activity activity) {
+		FavoritesSearchListAdapter(OsmandApplication app, Activity activity) {
 			super(app, R.layout.search_list_item);
 			this.app = app;
 			this.activity = activity;
@@ -317,11 +316,11 @@ public class FavoritesSearchFragment extends DialogFragment {
 			arrowImage.setColorFilter(ContextCompat.getColor(activity, R.color.color_distance), PorterDuff.Mode.MULTIPLY);
 		}
 
-		public void setAccessibilityAssistant(AccessibilityAssistant accessibilityAssistant) {
+		void setAccessibilityAssistant(AccessibilityAssistant accessibilityAssistant) {
 			this.accessibilityAssistant = accessibilityAssistant;
 		}
 
-		public void synchronizePoints() {
+		void synchronizePoints() {
 			points.clear();
 			List<FavoriteGroup> gs = helper.getFavoriteGroups();
 			Set<?> flt = filter;
@@ -451,9 +450,9 @@ public class FavoritesSearchFragment extends DialogFragment {
 				}
 
 				if (point != null) {
-					ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
-					TextView title = (TextView) view.findViewById(R.id.title);
-					TextView subtitle = (TextView) view.findViewById(R.id.subtitle);
+					ImageView imageView = view.findViewById(R.id.imageView);
+					TextView title = view.findViewById(R.id.title);
+					TextView subtitle = view.findViewById(R.id.subtitle);
 
 					imageView.setImageDrawable(FavoriteImageDrawable.getOrCreate(activity, point.getColor(), false));
 					title.setText(point.getName());
@@ -461,9 +460,9 @@ public class FavoritesSearchFragment extends DialogFragment {
 					int dist = (int) (MapUtils.getDistance(point.getLatitude(), point.getLongitude(),
 							location.getLatitude(), location.getLongitude()));
 					String distance = OsmAndFormatter.getFormattedDistance(dist, app) + "  ";
-					ImageView direction = (ImageView) view.findViewById(R.id.direction);
+					ImageView direction = view.findViewById(R.id.direction);
 					direction.setImageDrawable(arrowImage);
-					TextView distanceText = (TextView) view.findViewById(R.id.distance);
+					TextView distanceText = view.findViewById(R.id.distance);
 					distanceText.setText(distance);
 					distanceText.setTextColor(app.getResources().getColor(R.color.color_distance));
 
@@ -498,7 +497,7 @@ public class FavoritesSearchFragment extends DialogFragment {
 
 	class FavoritesFilter extends Filter {
 
-		FavouritesDbHelper helper;
+		final FavouritesDbHelper helper;
 
 		FavoritesFilter() {
 			helper = app.getFavorites();

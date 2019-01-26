@@ -106,7 +106,7 @@ public class SettingsAccessibilityActivity extends SettingsBaseActivity {
 	}
 
 
-	protected void addSpeechRateSetting(PreferenceGroup grp) {
+	private void addSpeechRateSetting(PreferenceGroup grp) {
 		Float[] sprValues = new Float[] {0.5f, 0.75f, 1f, 1.25f, 1.5f, 2f} ;
 		String[] sprNames = new String[sprValues.length];
 		for(int i = 0; i < sprNames.length; i++) {

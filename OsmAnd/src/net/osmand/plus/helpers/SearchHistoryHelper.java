@@ -18,11 +18,11 @@ import java.util.Map;
 public class SearchHistoryHelper {
 	
 	private static final int HISTORY_LIMIT = 1500;
-	private OsmandApplication context;
+	private final OsmandApplication context;
 	private List<HistoryEntry> loadedEntries = null;
-	private Map<PointDescription, HistoryEntry> mp = new HashMap<PointDescription, SearchHistoryHelper.HistoryEntry>();
+	private final Map<PointDescription, HistoryEntry> mp = new HashMap<PointDescription, SearchHistoryHelper.HistoryEntry>();
 	
-	public SearchHistoryHelper(OsmandApplication context) {
+	private SearchHistoryHelper(OsmandApplication context) {
 		this.context = context;
 	}
 
@@ -40,7 +40,7 @@ public class SearchHistoryHelper {
 	};
 	
 	private static class HistoryEntryComparator implements Comparator<HistoryEntry> {
-		long time = System.currentTimeMillis();
+		final long time = System.currentTimeMillis();
 		
 		@Override
 		public int compare(HistoryEntry lhs, HistoryEntry rhs) {
@@ -48,17 +48,17 @@ public class SearchHistoryHelper {
 			double r = rhs.getRank(time);
 			return -Double.compare(l, r);
 		}
-	};
-	
-	public static class HistoryEntry {
-		double lat;
-		double lon;
-		PointDescription name;
+	}
+
+    public static class HistoryEntry {
+		final double lat;
+		final double lon;
+		final PointDescription name;
 		private long lastAccessedTime;
 		private int[] intervals = new int[0];
 		private double[] intervalValues = new double[0];
 		
-		public HistoryEntry(double lat, double lon, PointDescription name){
+		HistoryEntry(double lat, double lon, PointDescription name){
 			this.lat = lat;
 			this.lon = lon;
 			this.name = name;
@@ -71,7 +71,7 @@ public class SearchHistoryHelper {
 			return cf / timeDiff;
 		}
 
-		public double getRank(long time) {
+		double getRank(long time) {
 			double baseTimeDiff = ((time - lastAccessedTime) / 1000) + 1;
 			double timeDiff = 0;
 			double vl = 1;
@@ -93,7 +93,7 @@ public class SearchHistoryHelper {
 			return name;
 		}
 		
-		public String getSerializedName() {
+		String getSerializedName() {
 			return PointDescription.serializeToString(name);
 		}
 		
@@ -104,7 +104,7 @@ public class SearchHistoryHelper {
 			return lon;
 		}
 		
-		public void markAsAccessed(long time) {
+		void markAsAccessed(long time) {
 			int[] nintervals = new int[DEF_INTERVALS_MIN.length];
 			double[] nintervalValues = new double[DEF_INTERVALS_MIN.length];
 			for(int k = 0; k < nintervals.length; k++) {
@@ -116,7 +116,7 @@ public class SearchHistoryHelper {
 			this.lastAccessedTime = time;
 		}
 		
-		public double getUsageLastTime(long time, int days, int hours, int minutes) {
+		double getUsageLastTime(long time, int days, int hours, int minutes) {
 			long mins = (minutes + (hours + 24 * days) * 60);
 			long timeInPast = time - mins * 60 * 1000;
 			if (this.lastAccessedTime <= timeInPast) {
@@ -138,7 +138,7 @@ public class SearchHistoryHelper {
 			return res;
 		}
 
-		public void setFrequency(String intervalsString, String values) {
+		void setFrequency(String intervalsString, String values) {
 			if(Algorithms.isEmpty(intervalsString) || Algorithms.isEmpty(values)) {
 				markAsAccessed(this.lastAccessedTime);
 				return;
@@ -157,11 +157,11 @@ public class SearchHistoryHelper {
 			}
 		}
 		
-		public long getLastAccessTime() {
+		long getLastAccessTime() {
 			return lastAccessedTime;
 		}
 		
-		public String getIntervalsValues() {
+		String getIntervalsValues() {
 			StringBuilder s = new StringBuilder();
 			for(int i = 0; i < intervalValues.length; i++) {
 				if(i > 0) {
@@ -172,7 +172,7 @@ public class SearchHistoryHelper {
 			return s.toString();
 		}
 		
-		public String getIntervals() {
+		String getIntervals() {
 			StringBuilder s = new StringBuilder();
 			for(int i = 0; i < intervals.length; i++) {
 				if(i > 0) {
@@ -183,7 +183,7 @@ public class SearchHistoryHelper {
 			return s.toString();
 		}
 
-		public void setLastAccessTime(long time) {
+		void setLastAccessTime(long time) {
 			this.lastAccessedTime = time;
 		}
 
@@ -224,7 +224,7 @@ public class SearchHistoryHelper {
 		}
 	}
 
-	public void addNewItemToHistory(HistoryEntry model) {
+	private void addNewItemToHistory(HistoryEntry model) {
 		HistoryItemDBHelper helper = checkLoadedEntries();
 		if(mp.containsKey(model.getName())) {
 			model = mp.get(model.getName());
@@ -264,7 +264,7 @@ public class SearchHistoryHelper {
 	    			HISTORY_COL_LAT + " double, " +HISTORY_COL_LON + " double);"; //$NON-NLS-1$ //$NON-NLS-2$
 
 		
-		public HistoryItemDBHelper() {
+		HistoryItemDBHelper() {
 		}
 		
 		private SQLiteConnection openConnection(boolean readonly) {
@@ -285,11 +285,11 @@ public class SearchHistoryHelper {
 			return conn;
 		}
 
-		public void onCreate(SQLiteConnection db) {
+		void onCreate(SQLiteConnection db) {
 			db.execSQL(HISTORY_TABLE_CREATE);
 		}
 
-		public void onUpgrade(SQLiteConnection db, int oldVersion, int newVersion) {
+		void onUpgrade(SQLiteConnection db, int oldVersion, int newVersion) {
 			if(newVersion == 2) {
 				db.execSQL(HISTORY_TABLE_CREATE);
 				for(HistoryEntry he : getLegacyEntries(db)) {
@@ -298,7 +298,7 @@ public class SearchHistoryHelper {
 			}
 		}
 		
-		public boolean remove(HistoryEntry e){
+		boolean remove(HistoryEntry e){
 			SQLiteConnection db = openConnection(false);
 			if(db != null){
 				try {
@@ -316,7 +316,7 @@ public class SearchHistoryHelper {
 					new Object[] { name }); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		}
 		
-		public boolean removeAll(){
+		boolean removeAll(){
 			SQLiteConnection db = openConnection(false);
 			if(db != null){
 				try {
@@ -329,7 +329,7 @@ public class SearchHistoryHelper {
 			return false;
 		}
 		
-		public boolean update(HistoryEntry e){
+		boolean update(HistoryEntry e){
 			SQLiteConnection db = openConnection(false);
 			if(db != null){
 				try {
@@ -348,7 +348,7 @@ public class SearchHistoryHelper {
 			return false;
 		}
 		
-		public boolean add(HistoryEntry e){
+		boolean add(HistoryEntry e){
 			SQLiteConnection db = openConnection(false);
 			if(db != null){
 				try {
@@ -368,7 +368,7 @@ public class SearchHistoryHelper {
 							e.getIntervals(), e.getIntervalsValues(), e.getLat(), e.getLon() }); //$NON-NLS-1$ //$NON-NLS-2$
 		} 
 		
-		public List<HistoryEntry> getLegacyEntries(SQLiteConnection db){
+		List<HistoryEntry> getLegacyEntries(SQLiteConnection db){
 			List<HistoryEntry> entries = new ArrayList<HistoryEntry>();
 			if (db != null) {
 				// LEGACY QUERY !!
@@ -406,7 +406,7 @@ public class SearchHistoryHelper {
 			return entries;
 		}
 		
-		public List<HistoryEntry> getEntries(){
+		List<HistoryEntry> getEntries(){
 			List<HistoryEntry> entries = new ArrayList<HistoryEntry>();
 			SQLiteConnection db = openConnection(true);
 			if(db != null){

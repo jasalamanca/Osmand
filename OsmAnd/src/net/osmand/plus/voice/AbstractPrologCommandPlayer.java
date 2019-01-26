@@ -39,8 +39,8 @@ public abstract class AbstractPrologCommandPlayer implements CommandPlayer, Stat
 
 	private static final Log log = PlatformUtil.getLog(AbstractPrologCommandPlayer.class);
 
-	protected OsmandApplication ctx;
-	protected File voiceDir;
+	OsmandApplication ctx;
+	File voiceDir;
 	private Prolog prologSystem;
 	private static final String P_VERSION = "version";
 	private static final String P_RESOLVE = "resolve";
@@ -54,18 +54,18 @@ public abstract class AbstractPrologCommandPlayer implements CommandPlayer, Stat
 	public static final String A_RIGHT_SL = "right_sl";
 	public static final String A_RIGHT_KEEP = "right_keep";
 
-	protected static final String DELAY_CONST = "delay_";
+	static final String DELAY_CONST = "delay_";
 	/** Must be sorted array! */
 	private final int[] sortedVoiceVersions;
 	private static AudioFocusHelper mAudioFocusHelper;
-	protected String language = "";
-	protected int streamType;
+	String language = "";
+	int streamType;
 	private static int currentVersion;
 	private final ApplicationMode applicationMode;
 
 
-	protected AbstractPrologCommandPlayer(OsmandApplication ctx, ApplicationMode applicationMode,
-										  String voiceProvider, String configFile, int[] sortedVoiceVersions)
+	AbstractPrologCommandPlayer(OsmandApplication ctx, ApplicationMode applicationMode,
+								String voiceProvider, String configFile, int[] sortedVoiceVersions)
 			throws CommandPlayerException {
 		this.ctx = ctx;
 		this.sortedVoiceVersions = sortedVoiceVersions;
@@ -89,7 +89,7 @@ public abstract class AbstractPrologCommandPlayer implements CommandPlayer, Stat
 		}
 	}
 
-	public ApplicationMode getApplicationMode() {
+	ApplicationMode getApplicationMode() {
 		return applicationMode;
 	}
 
@@ -246,7 +246,7 @@ public abstract class AbstractPrologCommandPlayer implements CommandPlayer, Stat
 		this.streamType = streamType;
 	}
 
-	protected synchronized void requestAudioFocus() {
+	synchronized void requestAudioFocus() {
 		log.debug("requestAudioFocus");
 		mAudioFocusHelper = getAudioFocus();
 		if (mAudioFocusHelper != null && ctx != null) {
@@ -267,7 +267,7 @@ public abstract class AbstractPrologCommandPlayer implements CommandPlayer, Stat
 		return null;
 	}
 	
-	protected synchronized void abandonAudioFocus() {
+	synchronized void abandonAudioFocus() {
 		log.debug("abandonAudioFocus");
 		if ((ctx != null && ctx.getSettings().AUDIO_STREAM_GUIDANCE.getModeValue(applicationMode) == 0) || (btScoStatus)) {
 			toggleBtSco(false);

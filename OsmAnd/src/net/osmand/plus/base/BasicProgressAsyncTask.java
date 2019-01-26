@@ -9,17 +9,17 @@ import android.os.Handler;
 import android.os.Message;
 
 public abstract class BasicProgressAsyncTask<Tag, Params, Progress, Result> extends AsyncTask<Params, Progress, Result> implements IProgress {
-	protected String taskName;
-	protected int progress;
-	protected int deltaProgress;
-	protected int work;
+	private String taskName;
+	private int progress;
+	private int deltaProgress;
+	private int work;
 	protected String message = ""; //$NON-NLS-1$
-	protected OsmandApplication ctx;
-	protected boolean interrupted = false;
-	protected Tag tag;
+	protected final OsmandApplication ctx;
+	private boolean interrupted = false;
+	private Tag tag;
 	private Handler uiHandler;
 
-	public BasicProgressAsyncTask(OsmandApplication app) {
+	protected BasicProgressAsyncTask(OsmandApplication app) {
 		this.ctx = app;
 		this.work = -1;
 	}

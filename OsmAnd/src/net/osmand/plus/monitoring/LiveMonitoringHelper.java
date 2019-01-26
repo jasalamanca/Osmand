@@ -30,12 +30,12 @@ import android.os.AsyncTask;
 
 public class LiveMonitoringHelper  {
 	
-	protected Context ctx;
-	private OsmandSettings settings;
+	private final Context ctx;
+	private final OsmandSettings settings;
 	private long lastTimeUpdated;
 	private LatLon lastPoint;
 	private final static Log log = PlatformUtil.getLog(LiveMonitoringHelper.class);
-	private ConcurrentLinkedQueue<LiveMonitoringData> queue;
+	private final ConcurrentLinkedQueue<LiveMonitoringData> queue;
 	private boolean started = false;
 
 	public LiveMonitoringHelper(Context ctx){
@@ -99,7 +99,7 @@ public class LiveMonitoringHelper  {
 		private final float hdop;
 		private final long time;
 
-		public LiveMonitoringData(float lat, float lon, float alt, float speed, float hdop, float bearing, long time) {
+		LiveMonitoringData(float lat, float lon, float alt, float speed, float hdop, float bearing, long time) {
 			this.lat = lat;
 			this.lon = lon;
 			this.alt = alt;
@@ -131,7 +131,7 @@ public class LiveMonitoringHelper  {
 		}
 	}
 
-	public void sendData(LiveMonitoringData data) {
+	private void sendData(LiveMonitoringData data) {
 		String st = settings.LIVE_MONITORING_URL.get();
 		List<String> prm = new ArrayList<String>();
 		int maxLen = 0;

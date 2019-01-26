@@ -15,7 +15,7 @@ public class WptPtEditor extends PointEditor {
 	private boolean gpxSelected;
 	private boolean newGpxPointProcessing;
 
-	public static final String TAG = "WptPtEditorFragment";
+	private static final String TAG = "WptPtEditorFragment";
 
 	public WptPtEditor(MapActivity mapActivity) {
 		super(mapActivity);
@@ -126,11 +126,11 @@ public class WptPtEditor extends PointEditor {
 		showEditorFragment();
 	}
 
-	public void showEditorFragment() {
+	void showEditorFragment() {
 		WptPtEditorFragment.showInstance(mapActivity);
 	}
 
-	public void showEditorFragment(boolean skipDialog) {
+	void showEditorFragment(boolean skipDialog) {
 		WptPtEditorFragment.showInstance(mapActivity, skipDialog);
 	}
 }

@@ -37,15 +37,15 @@ public class GeocodingUtilities {
 
 	// Location to test parameters https://www.openstreetmap.org/#map=18/53.896473/27.540071 (hno 44)
 	// BUG https://www.openstreetmap.org/#map=19/50.9356/13.35348 (hno 26) street is 
-	public static final float THRESHOLD_MULTIPLIER_SKIP_STREETS_AFTER = 5;
-	public static final float STOP_SEARCHING_STREET_WITH_MULTIPLIER_RADIUS = 250;
-	public static final float STOP_SEARCHING_STREET_WITHOUT_MULTIPLIER_RADIUS = 400;
+	private static final float THRESHOLD_MULTIPLIER_SKIP_STREETS_AFTER = 5;
+	private static final float STOP_SEARCHING_STREET_WITH_MULTIPLIER_RADIUS = 250;
+	private static final float STOP_SEARCHING_STREET_WITHOUT_MULTIPLIER_RADIUS = 400;
 
-	public static final int DISTANCE_STREET_NAME_PROXIMITY_BY_NAME = 15000;
-	public static final float DISTANCE_STREET_FROM_CLOSEST_WITH_SAME_NAME = 1000;
+	private static final int DISTANCE_STREET_NAME_PROXIMITY_BY_NAME = 15000;
+	private static final float DISTANCE_STREET_FROM_CLOSEST_WITH_SAME_NAME = 1000;
 
-	public static final float THRESHOLD_MULTIPLIER_SKIP_BUILDINGS_AFTER = 1.5f;
-	public static final float DISTANCE_BUILDING_PROXIMITY = 100;
+	private static final float THRESHOLD_MULTIPLIER_SKIP_BUILDINGS_AFTER = 1.5f;
+	private static final float DISTANCE_BUILDING_PROXIMITY = 100;
 
 
 	public static final Comparator<GeocodingResult> DISTANCE_COMPARATOR = new Comparator<GeocodingResult>() {
@@ -66,7 +66,7 @@ public class GeocodingUtilities {
 		public GeocodingResult() {
 		}
 
-		public GeocodingResult(GeocodingResult r) {
+		GeocodingResult(GeocodingResult r) {
 			this.searchPoint = r.searchPoint;
 			this.regionFP = r.regionFP;
 			this.regionLen = r.regionLen;
@@ -79,13 +79,13 @@ public class GeocodingUtilities {
 		}
 
 		// input
-		public LatLon searchPoint;
+        LatLon searchPoint;
 		// 1st step
-		public LatLon connectionPoint;
+        LatLon connectionPoint;
 		public int regionFP;
 		public int regionLen;
 		public RouteSegmentPoint point;
-		public String streetName;
+		String streetName;
 		// justification
 		public Building building;
 		public String buildingInterpolation;
@@ -93,7 +93,7 @@ public class GeocodingUtilities {
 		public City city;
 		private double dist = -1;
 
-		public LatLon getLocation() {
+		LatLon getLocation() {
 			return connectionPoint;
 		}
 
@@ -176,7 +176,7 @@ public class GeocodingUtilities {
 		return lst;
 	}
 
-	public List<String> prepareStreetName(String s, boolean addCommonWords) {
+	private List<String> prepareStreetName(String s, boolean addCommonWords) {
 		List<String> ls = new ArrayList<String>();
 		int beginning = 0;
 		for (int i = 1; i < s.length(); i++) {

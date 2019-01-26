@@ -41,7 +41,7 @@ public class BasicEditPoiFragment extends BaseOsmAndFragment
 	private EditText phoneEditText;
 	private EditText webSiteEditText;
 	private EditText descriptionEditText;
-	OpeningHoursAdapter mOpeningHoursAdapter;
+	private OpeningHoursAdapter mOpeningHoursAdapter;
 
 	@Nullable
 	@Override
@@ -53,36 +53,36 @@ public class BasicEditPoiFragment extends BaseOsmAndFragment
 		theme.resolveAttribute(android.R.attr.textColorSecondary, typedValue, true);
 		int iconColor = typedValue.data;
 
-		ImageView streetImageView = (ImageView) view.findViewById(R.id.streetImageView);
+		ImageView streetImageView = view.findViewById(R.id.streetImageView);
 		streetImageView.setImageDrawable(
 				getPaintedContentIcon(R.drawable.ic_action_street_name, iconColor));
-		ImageView houseNumberImageView = (ImageView) view.findViewById(R.id.houseNumberImageView);
+		ImageView houseNumberImageView = view.findViewById(R.id.houseNumberImageView);
 		houseNumberImageView.setImageDrawable(
 				getPaintedContentIcon(R.drawable.ic_action_building_number, iconColor));
-		ImageView phoneImageView = (ImageView) view.findViewById(R.id.phoneImageView);
+		ImageView phoneImageView = view.findViewById(R.id.phoneImageView);
 		phoneImageView.setImageDrawable(
 				getPaintedContentIcon(R.drawable.ic_action_call_dark, iconColor));
-		ImageView webSiteImageView = (ImageView) view.findViewById(R.id.webSiteImageView);
+		ImageView webSiteImageView = view.findViewById(R.id.webSiteImageView);
 		webSiteImageView.setImageDrawable(
 				getPaintedContentIcon(R.drawable.ic_world_globe_dark, iconColor));
-		ImageView descriptionImageView = (ImageView) view.findViewById(R.id.descriptionImageView);
+		ImageView descriptionImageView = view.findViewById(R.id.descriptionImageView);
 		descriptionImageView.setImageDrawable(
 				getPaintedContentIcon(R.drawable.ic_action_description, iconColor));
-		ImageView openingHoursImageView = (ImageView) view.findViewById(R.id.openingHoursImageView);
+		ImageView openingHoursImageView = view.findViewById(R.id.openingHoursImageView);
 		openingHoursImageView.setImageDrawable(
 				getPaintedContentIcon(R.drawable.ic_action_time, iconColor));
 
-		streetEditText = (EditText) view.findViewById(R.id.streetEditText);
-		houseNumberEditText = (EditText) view.findViewById(R.id.houseNumberEditText);
-		phoneEditText = (EditText) view.findViewById(R.id.phoneEditText);
-		webSiteEditText = (EditText) view.findViewById(R.id.webSiteEditText);
-		descriptionEditText = (EditText) view.findViewById(R.id.descriptionEditText);
+		streetEditText = view.findViewById(R.id.streetEditText);
+		houseNumberEditText = view.findViewById(R.id.houseNumberEditText);
+		phoneEditText = view.findViewById(R.id.phoneEditText);
+		webSiteEditText = view.findViewById(R.id.webSiteEditText);
+		descriptionEditText = view.findViewById(R.id.descriptionEditText);
 		addTextWatcher(OSMSettings.OSMTagKey.ADDR_STREET.getValue(), streetEditText);
 		addTextWatcher(OSMSettings.OSMTagKey.WEBSITE.getValue(), webSiteEditText);
 		addTextWatcher(OSMSettings.OSMTagKey.PHONE.getValue(), phoneEditText);
 		addTextWatcher(OSMSettings.OSMTagKey.ADDR_HOUSE_NUMBER.getValue(), houseNumberEditText);
 		addTextWatcher(OSMSettings.OSMTagKey.DESCRIPTION.getValue(), descriptionEditText);
-		Button addOpeningHoursButton = (Button) view.findViewById(R.id.addOpeningHoursButton);
+		Button addOpeningHoursButton = view.findViewById(R.id.addOpeningHoursButton);
 		addOpeningHoursButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -93,7 +93,7 @@ public class BasicEditPoiFragment extends BaseOsmAndFragment
 				fragment.show(getChildFragmentManager(), "OpenTimeDialogFragment");
 			}
 		});
-		LinearLayout openHoursContainer = (LinearLayout) view.findViewById(R.id.openHoursContainer);
+		LinearLayout openHoursContainer = view.findViewById(R.id.openHoursContainer);
 		Drawable clockDrawable = getPaintedContentIcon(R.drawable.ic_action_time, iconColor);
 		Drawable deleteDrawable = getPaintedContentIcon(R.drawable.ic_action_remove_dark, iconColor);
 		if (savedInstanceState != null && savedInstanceState.containsKey(OPENING_HOURS)) {
@@ -109,7 +109,7 @@ public class BasicEditPoiFragment extends BaseOsmAndFragment
 		return view;
 	}
 
-	protected void addTextWatcher(final String tag, final EditText e) {
+	private void addTextWatcher(final String tag, final EditText e) {
 		e.addTextChangedListener(new TextWatcher() {
 
 			@Override
@@ -183,9 +183,9 @@ public class BasicEditPoiFragment extends BaseOsmAndFragment
 		private final Drawable clockDrawable;
 		private final Drawable deleteDrawable;
 
-		public OpeningHoursAdapter(OpeningHoursParser.OpeningHours openingHours,
-								   LinearLayout linearLayout, EditPoiData data,
-								   Drawable clockDrawable, Drawable deleteDrawable) {
+		OpeningHoursAdapter(OpeningHoursParser.OpeningHours openingHours,
+                            LinearLayout linearLayout, EditPoiData data,
+                            Drawable clockDrawable, Drawable deleteDrawable) {
 			this.openingHours = openingHours;
 			this.linearLayout = linearLayout;
 			this.data = data;
@@ -193,7 +193,7 @@ public class BasicEditPoiFragment extends BaseOsmAndFragment
 			this.deleteDrawable = deleteDrawable;
 		}
 
-		public void setOpeningHoursRule(OpeningHoursParser.BasicOpeningHourRule rule, int position) {
+		void setOpeningHoursRule(OpeningHoursParser.BasicOpeningHourRule rule, int position) {
 			if (position == -1) {
 				openingHours.addRule(rule);
 			} else {
@@ -202,11 +202,11 @@ public class BasicEditPoiFragment extends BaseOsmAndFragment
 			updateViews();
 		}
 
-		public void replaceOpeningHours(OpeningHoursParser.OpeningHours openingHours) {
+		void replaceOpeningHours(OpeningHoursParser.OpeningHours openingHours) {
 			this.openingHours = openingHours;
 		}
 
-		public void updateViews() {
+		void updateViews() {
 			linearLayout.removeAllViews();
 			for (int i = 0; i < openingHours.getRules().size(); i++) {
 				linearLayout.addView(getView(i));
@@ -229,14 +229,14 @@ public class BasicEditPoiFragment extends BaseOsmAndFragment
 			final View view = LayoutInflater.from(linearLayout.getContext())
 					.inflate(R.layout.open_time_list_item, null, false);
 
-			ImageView clockIconImageView = (ImageView) view.findViewById(R.id.clockIconImageView);
+			ImageView clockIconImageView = view.findViewById(R.id.clockIconImageView);
 			clockIconImageView.setImageDrawable(clockDrawable);
 
-			TextView daysTextView = (TextView) view.findViewById(R.id.daysTextView);
-			LinearLayout timeListContainer = (LinearLayout) view.findViewById(R.id.timeListContainer);
+			TextView daysTextView = view.findViewById(R.id.daysTextView);
+			LinearLayout timeListContainer = view.findViewById(R.id.timeListContainer);
 
-			ImageButton deleteItemImageButton = (ImageButton) view.findViewById(R.id.deleteItemImageButton);
-			Button addTimeSpanButton = (Button) view.findViewById(R.id.addTimeSpanButton);
+			ImageButton deleteItemImageButton = view.findViewById(R.id.deleteItemImageButton);
+			Button addTimeSpanButton = view.findViewById(R.id.addTimeSpanButton);
 
 			if (openingHours.getRules().get(position) instanceof BasicOpeningHourRule) {
 				final OpeningHoursParser.BasicOpeningHourRule rule =
@@ -260,11 +260,11 @@ public class BasicEditPoiFragment extends BaseOsmAndFragment
 					View timeFromToLayout = LayoutInflater.from(linearLayout.getContext())
 							.inflate(R.layout.time_from_to_layout, timeListContainer, false);
 					TextView openingTextView =
-							(TextView) timeFromToLayout.findViewById(R.id.openingTextView);
+                            timeFromToLayout.findViewById(R.id.openingTextView);
 					openingTextView.setText(Algorithms.formatMinutesDuration(startTimes.get(i)));
 
 					TextView closingTextView =
-							(TextView) timeFromToLayout.findViewById(R.id.closingTextView);
+                            timeFromToLayout.findViewById(R.id.closingTextView);
 					closingTextView.setText(Algorithms.formatMinutesDuration(endTimes.get(i)));
 
 					openingTextView.setTag(i);
@@ -286,7 +286,7 @@ public class BasicEditPoiFragment extends BaseOsmAndFragment
 						}
 					});
 
-					ImageButton deleteTimespanImageButton = (ImageButton) timeFromToLayout
+					ImageButton deleteTimespanImageButton = timeFromToLayout
 							.findViewById(R.id.deleteTimespanImageButton);
 					deleteTimespanImageButton.setImageDrawable(deleteDrawable);
 					final int timespanPosition = i;

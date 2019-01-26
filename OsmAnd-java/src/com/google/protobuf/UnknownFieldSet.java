@@ -415,7 +415,7 @@ public final class UnknownFieldSet implements MessageLite {
     }
 
     /** Check if the given field number is present in the set. */
-    public boolean hasField(final int number) {
+    boolean hasField(final int number) {
       if (number == 0) {
         throw new IllegalArgumentException("Zero is not a valid field number.");
       }
@@ -426,7 +426,7 @@ public final class UnknownFieldSet implements MessageLite {
      * Add a field to the {@code UnknownFieldSet}.  If a field with the same
      * number already exists, it is removed.
      */
-    public Builder addField(final int number, final Field field) {
+    Builder addField(final int number, final Field field) {
       if (number == 0) {
         throw new IllegalArgumentException("Zero is not a valid field number.");
       }
@@ -670,7 +670,7 @@ public final class UnknownFieldSet implements MessageLite {
     }
 
     /** Get an empty {@code Field}. */
-    public static Field getDefaultInstance() {
+    static Field getDefaultInstance() {
       return fieldDefaultInstance;
     }
     private static final Field fieldDefaultInstance = newBuilder().build();
@@ -728,7 +728,7 @@ public final class UnknownFieldSet implements MessageLite {
      * Serializes the field, including field number, and writes it to
      * {@code output}.
      */
-    public void writeTo(final int fieldNumber, final CodedOutputStream output)
+    void writeTo(final int fieldNumber, final CodedOutputStream output)
                         throws IOException {
       for (final long value : varint) {
         output.writeUInt64(fieldNumber, value);
@@ -751,7 +751,7 @@ public final class UnknownFieldSet implements MessageLite {
      * Get the number of bytes required to encode this field, including field
      * number.
      */
-    public int getSerializedSize(final int fieldNumber) {
+    int getSerializedSize(final int fieldNumber) {
       int result = 0;
       for (final long value : varint) {
         result += CodedOutputStream.computeUInt64Size(fieldNumber, value);
@@ -775,9 +775,9 @@ public final class UnknownFieldSet implements MessageLite {
      * Serializes the field, including field number, and writes it to
      * {@code output}, using {@code MessageSet} wire format.
      */
-    public void writeAsMessageSetExtensionTo(
-        final int fieldNumber,
-        final CodedOutputStream output)
+    void writeAsMessageSetExtensionTo(
+            final int fieldNumber,
+            final CodedOutputStream output)
         throws IOException {
       for (final ByteString value : lengthDelimited) {
         output.writeRawMessageSetExtension(fieldNumber, value);
@@ -788,7 +788,7 @@ public final class UnknownFieldSet implements MessageLite {
      * Get the number of bytes required to encode this field, including field
      * number, using {@code MessageSet} wire format.
      */
-    public int getSerializedSizeAsMessageSetExtension(final int fieldNumber) {
+    int getSerializedSizeAsMessageSetExtension(final int fieldNumber) {
       int result = 0;
       for (final ByteString value : lengthDelimited) {
         result += CodedOutputStream.computeRawMessageSetExtensionSize(
@@ -870,7 +870,7 @@ public final class UnknownFieldSet implements MessageLite {
        * of values, {@code other}'s values are append to the ones in this
        * field.
        */
-      public Builder mergeFrom(final Field other) {
+      Builder mergeFrom(final Field other) {
         if (!other.varint.isEmpty()) {
           if (result.varint == null) {
             result.varint = new ArrayList<Long>();
@@ -905,7 +905,7 @@ public final class UnknownFieldSet implements MessageLite {
       }
 
       /** Add a varint value. */
-      public Builder addVarint(final long value) {
+      Builder addVarint(final long value) {
         if (result.varint == null) {
           result.varint = new ArrayList<Long>();
         }
@@ -914,7 +914,7 @@ public final class UnknownFieldSet implements MessageLite {
       }
 
       /** Add a fixed32 value. */
-      public Builder addFixed32(final int value) {
+      Builder addFixed32(final int value) {
         if (result.fixed32 == null) {
           result.fixed32 = new ArrayList<Integer>();
         }
@@ -923,7 +923,7 @@ public final class UnknownFieldSet implements MessageLite {
       }
 
       /** Add a fixed64 value. */
-      public Builder addFixed64(final long value) {
+      Builder addFixed64(final long value) {
         if (result.fixed64 == null) {
           result.fixed64 = new ArrayList<Long>();
         }
@@ -941,7 +941,7 @@ public final class UnknownFieldSet implements MessageLite {
       }
 
       /** Add an embedded group. */
-      public Builder addGroup(final UnknownFieldSet value) {
+      Builder addGroup(final UnknownFieldSet value) {
         if (result.group == null) {
           result.group = new ArrayList<UnknownFieldSet>();
         }

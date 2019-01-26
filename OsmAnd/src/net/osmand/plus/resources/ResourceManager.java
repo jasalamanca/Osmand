@@ -76,7 +76,7 @@ public class ResourceManager {
 	protected static ResourceManager manager = null;
 
 	private final OsmandApplication context;
-	private List<ResourceListener> resourceListeners = new ArrayList<>();
+	private final List<ResourceListener> resourceListeners = new ArrayList<>();
 
 	public interface ResourceListener {
 		void onMapsIndexed();
@@ -95,10 +95,10 @@ public class ResourceManager {
 	
 	public static class BinaryMapReaderResource {
 		private BinaryMapIndexReader initialReader;
-		private File filename;
-		private List<BinaryMapIndexReader> readers = new ArrayList<>(BinaryMapReaderResourceType.values().length);
+		private final File filename;
+		private final List<BinaryMapIndexReader> readers = new ArrayList<>(BinaryMapReaderResourceType.values().length);
 		private boolean useForRouting;
-		public BinaryMapReaderResource(File f, BinaryMapIndexReader initialReader) {
+		BinaryMapReaderResource(File f, BinaryMapIndexReader initialReader) {
 			this.filename = f;
 			this.initialReader = initialReader;
 			while(readers.size() < BinaryMapReaderResourceType.values().length) {
@@ -130,7 +130,7 @@ public class ResourceManager {
 			return initialReader;
 		}
 
-		public void close() {
+		void close() {
 			close(initialReader);
 			for(BinaryMapIndexReader rr : readers) {
 				if(rr != null) {
@@ -153,35 +153,35 @@ public class ResourceManager {
 			}
 		}
 
-		public void setUseForRouting(boolean useForRouting) {
+		void setUseForRouting(boolean useForRouting) {
 			this.useForRouting = useForRouting;
 		}
 		
-		public boolean isUseForRouting() {
+		boolean isUseForRouting() {
 			return useForRouting;
 		}
 	}
 	
-	protected final Map<String, BinaryMapReaderResource> fileReaders = new ConcurrentHashMap<String, BinaryMapReaderResource>();
+	private final Map<String, BinaryMapReaderResource> fileReaders = new ConcurrentHashMap<String, BinaryMapReaderResource>();
 	
 	
 	private final Map<String, RegionAddressRepository> addressMap = new ConcurrentHashMap<String, RegionAddressRepository>();
-	protected final Map<String, AmenityIndexRepository> amenityRepositories =  new ConcurrentHashMap<String, AmenityIndexRepository>();
-	protected final Map<String, TransportIndexRepository> transportRepositories = new ConcurrentHashMap<String, TransportIndexRepository>();
+	private final Map<String, AmenityIndexRepository> amenityRepositories =  new ConcurrentHashMap<String, AmenityIndexRepository>();
+	private final Map<String, TransportIndexRepository> transportRepositories = new ConcurrentHashMap<String, TransportIndexRepository>();
 	
-	protected final Map<String, String> indexFileNames = new ConcurrentHashMap<String, String>();
-	protected final Map<String, String> basemapFileNames = new ConcurrentHashMap<String, String>();
+	private final Map<String, String> indexFileNames = new ConcurrentHashMap<String, String>();
+	private final Map<String, String> basemapFileNames = new ConcurrentHashMap<String, String>();
 	
 	
-	protected final IncrementalChangesManager changesManager = new IncrementalChangesManager(this);
+	private final IncrementalChangesManager changesManager = new IncrementalChangesManager(this);
 	
-	protected final MapRenderRepositories renderer;
+	private final MapRenderRepositories renderer;
 
-	public final AsyncLoadingThread asyncLoadingThread = new AsyncLoadingThread(this);
+	private final AsyncLoadingThread asyncLoadingThread = new AsyncLoadingThread(this);
 	
-	private HandlerThread renderingBufferImageThread;
+	private final HandlerThread renderingBufferImageThread;
 	
-	private java.text.DateFormat dateFormat;
+	private final java.text.DateFormat dateFormat;
 
 	public ResourceManager(OsmandApplication context) {
 		

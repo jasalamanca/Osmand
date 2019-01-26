@@ -248,7 +248,7 @@ public class PlanRouteFragment extends BaseOsmAndFragment implements OsmAndLocat
 			}
 		}
 
-		Toolbar toolbar = (Toolbar) mainView.findViewById(R.id.plan_route_toolbar);
+		Toolbar toolbar = mainView.findViewById(R.id.plan_route_toolbar);
 		toolbar.setNavigationIcon(getContentIcon(R.drawable.ic_arrow_back));
 		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
 			@Override
@@ -485,7 +485,7 @@ public class PlanRouteFragment extends BaseOsmAndFragment implements OsmAndLocat
 	private PlanRouteOptionsFragmentListener createOptionsFragmentListener() {
 		return new PlanRouteOptionsFragmentListener() {
 
-			private MapActivity mapActivity = getMapActivity();
+			private final MapActivity mapActivity = getMapActivity();
 
 			@Override
 			public void selectOnClick() {
@@ -605,7 +605,7 @@ public class PlanRouteFragment extends BaseOsmAndFragment implements OsmAndLocat
 	}
 
 	private void showProgressBar() {
-		ProgressBar progressBar = (ProgressBar) mainView.findViewById(R.id.snap_to_road_progress_bar);
+		ProgressBar progressBar = mainView.findViewById(R.id.snap_to_road_progress_bar);
 		progressBar.setVisibility(View.VISIBLE);
 		progressBar.setMinimumHeight(0);
 		progressBar.setProgress(0);
@@ -659,7 +659,7 @@ public class PlanRouteFragment extends BaseOsmAndFragment implements OsmAndLocat
 	private void setupAppModesBtn() {
 		final MapActivity mapActivity = getMapActivity();
 		if (mapActivity != null) {
-			final ImageButton appModesBtn = (ImageButton) mapActivity.findViewById(R.id.snap_to_road_image_button);
+			final ImageButton appModesBtn = mapActivity.findViewById(R.id.snap_to_road_image_button);
 			appModesBtn.setBackgroundResource(nightMode ? R.drawable.btn_circle_night : R.drawable.btn_circle);
 			appModesBtn.setImageDrawable(getActiveIcon(planRouteContext.getSnappedMode().getMapIconId()));
 			appModesBtn.setOnClickListener(new View.OnClickListener() {
@@ -734,9 +734,9 @@ public class PlanRouteFragment extends BaseOsmAndFragment implements OsmAndLocat
 	private void updateText() {
 		MapActivity mapActivity = getMapActivity();
 		if (mapActivity != null) {
-			TextView distanceTv = (TextView) mainView.findViewById(R.id.markers_distance_text_view);
-			TextView timeTv = (TextView) mainView.findViewById(R.id.markers_time_text_view);
-			TextView countTv = (TextView) mainView.findViewById(R.id.markers_count_text_view);
+			TextView distanceTv = mainView.findViewById(R.id.markers_distance_text_view);
+			TextView timeTv = mainView.findViewById(R.id.markers_time_text_view);
+			TextView countTv = mainView.findViewById(R.id.markers_count_text_view);
 
 			ApplicationMode appMode = planRouteContext.getSnappedMode();
 			TrkSegment snapTrkSegment = planRouteContext.getSnapTrkSegment();

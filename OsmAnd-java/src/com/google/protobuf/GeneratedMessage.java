@@ -265,7 +265,7 @@ public abstract class GeneratedMessage extends AbstractMessage
      * Called by the subclass or a builder to notify us that a message was
      * built and may be cached and therefore invalidations are needed.
      */
-    protected void markClean() {
+    void markClean() {
       this.isClean = true;
     }
 
@@ -567,12 +567,12 @@ public abstract class GeneratedMessage extends AbstractMessage
 
     private final FieldSet<FieldDescriptor> extensions;
 
-    protected ExtendableMessage() {
+    ExtendableMessage() {
       this.extensions = FieldSet.newFieldSet();
     }
 
-    protected ExtendableMessage(
-        ExtendableBuilder<MessageType, ?> builder) {
+    ExtendableMessage(
+            ExtendableBuilder<MessageType, ?> builder) {
       super(builder);
       this.extensions = builder.buildExtensions();
     }
@@ -643,7 +643,7 @@ public abstract class GeneratedMessage extends AbstractMessage
     }
 
     /** Called by subclasses to check if all extensions are initialized. */
-    protected boolean extensionsAreInitialized() {
+    boolean extensionsAreInitialized() {
       return extensions.isInitialized();
     }
 
@@ -693,7 +693,7 @@ public abstract class GeneratedMessage extends AbstractMessage
         this.messageSetWireFormat = messageSetWireFormat;
       }
 
-      public void writeUntil(final int end, final CodedOutputStream output)
+      void writeUntil(final int end, final CodedOutputStream output)
                              throws IOException {
         while (next != null && next.getKey().getNumber() < end) {
           FieldDescriptor descriptor = next.getKey();
@@ -726,7 +726,7 @@ public abstract class GeneratedMessage extends AbstractMessage
       }
     }
 
-    protected ExtensionWriter newExtensionWriter() {
+    ExtensionWriter newExtensionWriter() {
       return new ExtensionWriter(false);
     }
     protected ExtensionWriter newMessageSetExtensionWriter() {
@@ -734,7 +734,7 @@ public abstract class GeneratedMessage extends AbstractMessage
     }
 
     /** Called by subclasses to compute the size of extensions. */
-    protected int extensionsSerializedSize() {
+    int extensionsSerializedSize() {
       return extensions.getSerializedSize();
     }
     protected int extensionsSerializedSizeAsMessageSet() {
@@ -744,7 +744,7 @@ public abstract class GeneratedMessage extends AbstractMessage
     // ---------------------------------------------------------------
     // Reflection
 
-    protected Map<FieldDescriptor, Object> getExtensionFields() {
+    Map<FieldDescriptor, Object> getExtensionFields() {
       return extensions.getAllFields();
     }
 
@@ -861,10 +861,10 @@ public abstract class GeneratedMessage extends AbstractMessage
 
     private FieldSet<FieldDescriptor> extensions = FieldSet.emptySet();
 
-    protected ExtendableBuilder() {}
+    ExtendableBuilder() {}
 
-    protected ExtendableBuilder(
-        BuilderParent parent) {
+    ExtendableBuilder(
+            BuilderParent parent) {
       super(parent);
     }
 
@@ -1002,7 +1002,7 @@ public abstract class GeneratedMessage extends AbstractMessage
     }
 
     /** Called by subclasses to check if all extensions are initialized. */
-    protected boolean extensionsAreInitialized() {
+    boolean extensionsAreInitialized() {
       return extensions.isInitialized();
     }
 
@@ -1152,7 +1152,7 @@ public abstract class GeneratedMessage extends AbstractMessage
       }
     }
 
-    protected final void mergeExtensionFields(final ExtendableMessage other) {
+    final void mergeExtensionFields(final ExtendableMessage other) {
       ensureExtensionsIsMutable();
       extensions.mergeFrom(other.extensions);
       onChanged();
@@ -1172,7 +1172,7 @@ public abstract class GeneratedMessage extends AbstractMessage
    * Gets the descriptor for an extension. The implementation depends on whether
    * the extension is scoped in the top level of a file or scoped in a Message.
    */
-  private static interface ExtensionDescriptorRetriever {
+  private interface ExtensionDescriptorRetriever {
     FieldDescriptor getDescriptor();
   }
 
@@ -1587,13 +1587,13 @@ public abstract class GeneratedMessage extends AbstractMessage
       // Note:  We use Java reflection to call public methods rather than
       //   access private fields directly as this avoids runtime security
       //   checks.
-      protected final Class<?> type;
-      protected final Method getMethod;
-      protected final Method getMethodBuilder;
-      protected final Method setMethod;
-      protected final Method hasMethod;
-      protected final Method hasMethodBuilder;
-      protected final Method clearMethod;
+      final Class<?> type;
+      final Method getMethod;
+      final Method getMethodBuilder;
+      final Method setMethod;
+      final Method hasMethod;
+      final Method hasMethodBuilder;
+      final Method clearMethod;
 
       public Object get(final GeneratedMessage message) {
         return invokeOrDie(getMethod, message);
@@ -1650,16 +1650,16 @@ public abstract class GeneratedMessage extends AbstractMessage
     }
 
     private static class RepeatedFieldAccessor implements FieldAccessor {
-      protected final Class type;
-      protected final Method getMethod;
-      protected final Method getMethodBuilder;
-      protected final Method getRepeatedMethod;
-      protected final Method getRepeatedMethodBuilder;
-      protected final Method setRepeatedMethod;
-      protected final Method addRepeatedMethod;
-      protected final Method getCountMethod;
-      protected final Method getCountMethodBuilder;
-      protected final Method clearMethod;
+      final Class type;
+      final Method getMethod;
+      final Method getMethodBuilder;
+      final Method getRepeatedMethod;
+      final Method getRepeatedMethodBuilder;
+      final Method setRepeatedMethod;
+      final Method addRepeatedMethod;
+      final Method getCountMethod;
+      final Method getCountMethodBuilder;
+      final Method clearMethod;
 
       RepeatedFieldAccessor(
           final FieldDescriptor descriptor, final String camelCaseName,
@@ -1760,8 +1760,8 @@ public abstract class GeneratedMessage extends AbstractMessage
           getMethodOrDie(type, "getValueDescriptor");
       }
 
-      private Method valueOfMethod;
-      private Method getValueDescriptorMethod;
+      private final Method valueOfMethod;
+      private final Method getValueDescriptorMethod;
 
       @Override
       public Object get(final GeneratedMessage message) {

@@ -48,8 +48,8 @@ import java.util.List;
 public class OsmEditingPlugin extends OsmandPlugin {
 	private static final Log LOG = PlatformUtil.getLog(OsmEditingPlugin.class);
 	private static final String ID = "osm.editing";
-	private OsmandSettings settings;
-	private OsmandApplication app;
+	private final OsmandSettings settings;
+	private final OsmandApplication app;
 	private OpenstreetmapsDbHelper dbpoi;
 	private OsmBugsDbHelper dbbug;
 	private OpenstreetmapLocalUtil localUtil;
@@ -229,7 +229,7 @@ public class OsmEditingPlugin extends OsmandPlugin {
 		}
 	}
 
-	public void openOsmNote(MapActivity mapActivity, double latitude, double longitude) {
+	private void openOsmNote(MapActivity mapActivity, double latitude, double longitude) {
 		if (osmBugsLayer == null) {
             registerLayers(mapActivity);
         }
@@ -243,7 +243,7 @@ public class OsmEditingPlugin extends OsmandPlugin {
 		osmBugsLayer.openBug(latitude, longitude, message, autofill);
 	}
 
-	public void modifyOsmNote(MapActivity mapActivity, OsmNotesPoint point) {
+	private void modifyOsmNote(MapActivity mapActivity, OsmNotesPoint point) {
 		if (osmBugsLayer == null) {
 			registerLayers(mapActivity);
 		}
@@ -376,13 +376,13 @@ public class OsmEditingPlugin extends OsmandPlugin {
 		AlertDialog.Builder bldr = new AlertDialog.Builder(la);
 		LayoutInflater inflater = (LayoutInflater) la.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		final View view = inflater.inflate(R.layout.send_gpx_osm, null);
-		final EditText descr = (EditText) view.findViewById(R.id.memory_size);
+		final EditText descr = view.findViewById(R.id.memory_size);
 		if (info.length > 0 && info[0].getFileName() != null) {
 			int dt = info[0].getFileName().indexOf('.');
 			descr.setText(info[0].getFileName().substring(0, dt));
 		}
-		final EditText tags = (EditText) view.findViewById(R.id.TagsText);
-		final Spinner visibility = ((Spinner) view.findViewById(R.id.Visibility));
+		final EditText tags = view.findViewById(R.id.TagsText);
+		final Spinner visibility = view.findViewById(R.id.Visibility);
 		EnumAdapter<UploadVisibility> adapter = new EnumAdapter<>(la, android.R.layout.simple_spinner_item, UploadVisibility.values());
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		visibility.setAdapter(adapter);

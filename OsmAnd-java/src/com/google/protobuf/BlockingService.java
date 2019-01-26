@@ -50,7 +50,7 @@ public interface BlockingService {
    */
   Message callBlockingMethod(Descriptors.MethodDescriptor method,
                              RpcController controller,
-                             Message request) throws ServiceException;
+                             Message request);
 
   /**
    * Equivalent to {@link Service#getRequestPrototype}.

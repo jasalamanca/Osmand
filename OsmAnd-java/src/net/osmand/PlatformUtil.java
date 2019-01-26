@@ -22,7 +22,7 @@ public class PlatformUtil {
 		return LogFactory.getLog(cl);
 	}
 	
-	public static XmlPullParser newXMLPullParser() throws XmlPullParserException{
+	public static XmlPullParser newXMLPullParser() {
 		return new org.kxml2.io.KXmlParser();
 	}
 

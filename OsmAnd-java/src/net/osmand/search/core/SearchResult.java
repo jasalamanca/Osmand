@@ -8,7 +8,7 @@ import net.osmand.util.MapUtils;
 
 public class SearchResult {
 	// search phrase that makes search result valid 
-	public SearchPhrase requiredSearchPhrase;
+	public final SearchPhrase requiredSearchPhrase;
 	
 	public Object object;
 	public ObjectType objectType;

@@ -8,9 +8,9 @@ import java.util.Map;
 
 public class PoiFilter extends AbstractPoiType {
 	
-	private PoiCategory pc; 
-	private List<PoiType> poiTypes = new ArrayList<PoiType>();
-	private Map<String, PoiType> map = new LinkedHashMap<String, PoiType>();
+	private final PoiCategory pc;
+	private final List<PoiType> poiTypes = new ArrayList<PoiType>();
+	private final Map<String, PoiType> map = new LinkedHashMap<String, PoiType>();
 
 	public PoiFilter(MapPoiTypes registry, PoiCategory pc, String keyName){
 		super(keyName, registry);
@@ -51,7 +51,7 @@ public class PoiFilter extends AbstractPoiType {
 		return acceptedTypes;
 	}
 
-	protected void addReferenceTypes(Map<PoiCategory, LinkedHashSet<String>> acceptedTypes) {
+	void addReferenceTypes(Map<PoiCategory, LinkedHashSet<String>> acceptedTypes) {
 		for (PoiType pt : getPoiTypes()) {
 			if (pt.isReference()) {
 				PoiCategory refCat = pt.getReferenceType().getCategory();

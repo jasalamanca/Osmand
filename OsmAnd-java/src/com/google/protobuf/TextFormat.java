@@ -66,14 +66,14 @@ public final class TextFormat {
    * the parameter output. (This representation is the new version of the
    * classic "ProtocolPrinter" output from the original Protocol Buffer system)
    */
-  public static void print(final MessageOrBuilder message, final Appendable output)
+  private static void print(final MessageOrBuilder message, final Appendable output)
                            throws IOException {
     DEFAULT_PRINTER.print(message, new TextGenerator(output));
   }
 
   /** Outputs a textual representation of {@code fields} to {@code output}. */
-  public static void print(final UnknownFieldSet fields,
-                           final Appendable output)
+  private static void print(final UnknownFieldSet fields,
+                            final Appendable output)
                            throws IOException {
     DEFAULT_PRINTER.printUnknownFields(fields, new TextGenerator(output));
   }
@@ -164,9 +164,9 @@ public final class TextFormat {
     }
   }
 
-  public static void printField(final FieldDescriptor field,
-                                final Object value,
-                                final Appendable output)
+  private static void printField(final FieldDescriptor field,
+                                 final Object value,
+                                 final Appendable output)
                                 throws IOException {
     DEFAULT_PRINTER.printField(field, value, new TextGenerator(output));
   }
@@ -364,11 +364,11 @@ public final class TextFormat {
           break;
 
         case FLOAT:
-          generator.print(((Float) value).toString());
+          generator.print(value.toString());
           break;
 
         case DOUBLE:
-          generator.print(((Double) value).toString());
+          generator.print(value.toString());
           break;
 
         case UINT32:
@@ -492,7 +492,7 @@ public final class TextFormat {
      * inserted at the beginning of each line of text.  Indent() may be called
      * multiple times to produce deeper indents.
      */
-    public void indent() {
+    void indent() {
       indent.append("  ");
     }
 
@@ -500,7 +500,7 @@ public final class TextFormat {
      * Reduces the current indent level by two spaces, or crashes if the indent
      * level is zero.
      */
-    public void outdent() {
+    void outdent() {
       final int length = indent.length();
       if (length == 0) {
         throw new IllegalArgumentException(
@@ -512,7 +512,7 @@ public final class TextFormat {
     /**
      * Print text to the output stream.
      */
-    public void print(final CharSequence text) throws IOException {
+    void print(final CharSequence text) throws IOException {
       final int size = text.length();
       int pos = 0;
 
@@ -617,12 +617,12 @@ public final class TextFormat {
     }
 
     /** Are we at the end of the input? */
-    public boolean atEnd() {
+    boolean atEnd() {
       return currentToken.length() == 0;
     }
 
     /** Advance to the next token. */
-    public void nextToken() {
+    void nextToken() {
       previousLine = line;
       previousColumn = column;
 
@@ -671,7 +671,7 @@ public final class TextFormat {
      * If the next token exactly matches {@code token}, consume it and return
      * {@code true}.  Otherwise, return {@code false} without doing anything.
      */
-    public boolean tryConsume(final String token) {
+    boolean tryConsume(final String token) {
       if (currentToken.equals(token)) {
         nextToken();
         return true;
@@ -684,7 +684,7 @@ public final class TextFormat {
      * If the next token exactly matches {@code token}, consume it.  Otherwise,
      * throw a {@link ParseException}.
      */
-    public void consume(final String token) throws ParseException {
+    void consume(final String token) throws ParseException {
       if (!tryConsume(token)) {
         throw parseException("Expected \"" + token + "\".");
       }
@@ -694,7 +694,7 @@ public final class TextFormat {
      * Returns {@code true} if the next token is an integer, but does
      * not consume it.
      */
-    public boolean lookingAtInteger() {
+    boolean lookingAtInteger() {
       if (currentToken.length() == 0) {
         return false;
       }
@@ -708,7 +708,7 @@ public final class TextFormat {
      * If the next token is an identifier, consume it and return its value.
      * Otherwise, throw a {@link ParseException}.
      */
-    public String consumeIdentifier() throws ParseException {
+    String consumeIdentifier() throws ParseException {
       for (int i = 0; i < currentToken.length(); i++) {
         final char c = currentToken.charAt(i);
         if (('a' <= c && c <= 'z') ||
@@ -730,7 +730,7 @@ public final class TextFormat {
      * If the next token is a 32-bit signed integer, consume it and return its
      * value.  Otherwise, throw a {@link ParseException}.
      */
-    public int consumeInt32() throws ParseException {
+    int consumeInt32() throws ParseException {
       try {
         final int result = parseInt32(currentToken);
         nextToken();
@@ -744,7 +744,7 @@ public final class TextFormat {
      * If the next token is a 32-bit unsigned integer, consume it and return its
      * value.  Otherwise, throw a {@link ParseException}.
      */
-    public int consumeUInt32() throws ParseException {
+    int consumeUInt32() throws ParseException {
       try {
         final int result = parseUInt32(currentToken);
         nextToken();
@@ -758,7 +758,7 @@ public final class TextFormat {
      * If the next token is a 64-bit signed integer, consume it and return its
      * value.  Otherwise, throw a {@link ParseException}.
      */
-    public long consumeInt64() throws ParseException {
+    long consumeInt64() throws ParseException {
       try {
         final long result = parseInt64(currentToken);
         nextToken();
@@ -772,7 +772,7 @@ public final class TextFormat {
      * If the next token is a 64-bit unsigned integer, consume it and return its
      * value.  Otherwise, throw a {@link ParseException}.
      */
-    public long consumeUInt64() throws ParseException {
+    long consumeUInt64() throws ParseException {
       try {
         final long result = parseUInt64(currentToken);
         nextToken();
@@ -786,7 +786,7 @@ public final class TextFormat {
      * If the next token is a double, consume it and return its value.
      * Otherwise, throw a {@link ParseException}.
      */
-    public double consumeDouble() throws ParseException {
+    double consumeDouble() throws ParseException {
       // We need to parse infinity and nan separately because
       // Double.parseDouble() does not accept "inf", "infinity", or "nan".
       if (DOUBLE_INFINITY.matcher(currentToken).matches()) {
@@ -811,7 +811,7 @@ public final class TextFormat {
      * If the next token is a float, consume it and return its value.
      * Otherwise, throw a {@link ParseException}.
      */
-    public float consumeFloat() throws ParseException {
+    float consumeFloat() throws ParseException {
       // We need to parse infinity and nan separately because
       // Float.parseFloat() does not accept "inf", "infinity", or "nan".
       if (FLOAT_INFINITY.matcher(currentToken).matches()) {
@@ -836,7 +836,7 @@ public final class TextFormat {
      * If the next token is a boolean, consume it and return its value.
      * Otherwise, throw a {@link ParseException}.
      */
-    public boolean consumeBoolean() throws ParseException {
+    boolean consumeBoolean() throws ParseException {
       if (currentToken.equals("true") ||
           currentToken.equals("t") ||
           currentToken.equals("1")) {
@@ -856,7 +856,7 @@ public final class TextFormat {
      * If the next token is a string, consume it and return its (unescaped)
      * value.  Otherwise, throw a {@link ParseException}.
      */
-    public String consumeString() throws ParseException {
+    String consumeString() throws ParseException {
       return consumeByteString().toStringUtf8();
     }
 
@@ -865,7 +865,7 @@ public final class TextFormat {
      * {@link ByteString}, and return it.  Otherwise, throw a
      * {@link ParseException}.
      */
-    public ByteString consumeByteString() throws ParseException {
+    ByteString consumeByteString() throws ParseException {
       List<ByteString> list = new ArrayList<ByteString>();
       consumeByteString(list);
       while (currentToken.startsWith("'") || currentToken.startsWith("\"")) {
@@ -907,7 +907,7 @@ public final class TextFormat {
      * Returns a {@link ParseException} with the current line and column
      * numbers in the description, suitable for throwing.
      */
-    public ParseException parseException(final String description) {
+    ParseException parseException(final String description) {
       // Note:  People generally prefer one-based line and column numbers.
       return new ParseException(
         line + 1, column + 1, description);
@@ -917,8 +917,8 @@ public final class TextFormat {
      * Returns a {@link ParseException} with the line and column numbers of
      * the previous token in the description, suitable for throwing.
      */
-    public ParseException parseExceptionPreviousToken(
-        final String description) {
+    ParseException parseExceptionPreviousToken(
+            final String description) {
       // Note:  People generally prefer one-based line and column numbers.
       return new ParseException(
         previousLine + 1, previousColumn + 1, description);
@@ -962,8 +962,8 @@ public final class TextFormat {
      * @param column the column number where the parser error occurred,
      * using 1-offset.
      */
-    public ParseException(final int line, final int column,
-        final String message) {
+    ParseException(final int line, final int column,
+                   final String message) {
       super(Integer.toString(line) + ":" + column + ": " + message);
       this.line = line;
       this.column = column;
@@ -1013,9 +1013,9 @@ public final class TextFormat {
    * into {@code builder}.  Extensions will be recognized if they are
    * registered in {@code extensionRegistry}.
    */
-  public static void merge(final Readable input,
-                           final ExtensionRegistry extensionRegistry,
-                           final Message.Builder builder)
+  private static void merge(final Readable input,
+                            final ExtensionRegistry extensionRegistry,
+                            final Message.Builder builder)
                            throws IOException {
     // Read the entire input to a String then parse that.
 
@@ -1052,9 +1052,9 @@ public final class TextFormat {
    * into {@code builder}.  Extensions will be recognized if they are
    * registered in {@code extensionRegistry}.
    */
-  public static void merge(final CharSequence input,
-                           final ExtensionRegistry extensionRegistry,
-                           final Message.Builder builder)
+  private static void merge(final CharSequence input,
+                            final ExtensionRegistry extensionRegistry,
+                            final Message.Builder builder)
                            throws ParseException {
     final Tokenizer tokenizer = new Tokenizer(input);
 
@@ -1254,7 +1254,7 @@ public final class TextFormat {
    * which no defined short-hand escape sequence is defined will be escaped
    * using 3-digit octal sequences.
    */
-  static String escapeBytes(final ByteString input) {
+  private static String escapeBytes(final ByteString input) {
     final StringBuilder builder = new StringBuilder(input.size());
     for (int i = 0; i < input.size(); i++) {
       final byte b = input.byteAt(i);
@@ -1389,7 +1389,7 @@ public final class TextFormat {
    * Non-ASCII characters are first encoded as UTF-8, then each byte is escaped
    * individually as a 3-digit octal escape.  Yes, it's weird.
    */
-  static String escapeText(final String input) {
+  private static String escapeText(final String input) {
     return escapeBytes(ByteString.copyFromUtf8(input));
   }
 

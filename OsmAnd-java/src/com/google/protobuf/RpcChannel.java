@@ -52,7 +52,7 @@ package com.google.protobuf;
  *
  * @author kenton@google.com Kenton Varda
  */
-public interface RpcChannel {
+interface RpcChannel {
   /**
    * Call the given method of the remote service.  This method is similar to
    * {@code Service.callMethod()} with one important difference:  the caller

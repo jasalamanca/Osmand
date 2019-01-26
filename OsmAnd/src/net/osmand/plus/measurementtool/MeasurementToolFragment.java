@@ -140,7 +140,7 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 
 			@Override
 			public void hideProgressBar() {
-				((ProgressBar) mainView.findViewById(R.id.snap_to_road_progress_bar)).setVisibility(View.GONE);
+				mainView.findViewById(R.id.snap_to_road_progress_bar).setVisibility(View.GONE);
 				progressBarVisible = false;
 			}
 
@@ -202,11 +202,11 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 			showProgressBar();
 		}
 
-		distanceTv = (TextView) mainView.findViewById(R.id.measurement_distance_text_view);
-		pointsTv = (TextView) mainView.findViewById(R.id.measurement_points_text_view);
-		distanceToCenterTv = (TextView) mainView.findViewById(R.id.distance_to_center_text_view);
+		distanceTv = mainView.findViewById(R.id.measurement_distance_text_view);
+		pointsTv = mainView.findViewById(R.id.measurement_points_text_view);
+		distanceToCenterTv = mainView.findViewById(R.id.distance_to_center_text_view);
 
-		mainIcon = (ImageView) mainView.findViewById(R.id.main_icon);
+		mainIcon = mainView.findViewById(R.id.main_icon);
 		final NewGpxData newGpxData = editingCtx.getNewGpxData();
 		if (editingCtx.getNewGpxData() != null) {
 			ActionType actionType = newGpxData.getActionType();
@@ -219,7 +219,7 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 			mainIcon.setImageDrawable(getActiveIcon(R.drawable.ic_action_ruler));
 		}
 
-		upDownBtn = (ImageView) mainView.findViewById(R.id.up_down_button);
+		upDownBtn = mainView.findViewById(R.id.up_down_button);
 		upDownBtn.setImageDrawable(upIcon);
 
 		mainView.findViewById(R.id.cancel_move_point_button).setOnClickListener(new View.OnClickListener() {
@@ -506,7 +506,7 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 	}
 
 	private void showProgressBar() {
-		ProgressBar progressBar = (ProgressBar) mainView.findViewById(R.id.snap_to_road_progress_bar);
+		ProgressBar progressBar = mainView.findViewById(R.id.snap_to_road_progress_bar);
 		progressBar.setVisibility(View.VISIBLE);
 		progressBar.setMinimumHeight(0);
 		progressBar.setProgress(0);
@@ -759,7 +759,7 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 			toolBarController.setTopBarSwitchChecked(true);
 			mainIcon.setImageDrawable(getActiveIcon(R.drawable.ic_action_snap_to_road));
 
-			ImageButton snapToRoadBtn = (ImageButton) mapActivity.findViewById(R.id.snap_to_road_image_button);
+			ImageButton snapToRoadBtn = mapActivity.findViewById(R.id.snap_to_road_image_button);
 			snapToRoadBtn.setBackgroundResource(nightMode ? R.drawable.btn_circle_night : R.drawable.btn_circle);
 			snapToRoadBtn.setImageDrawable(getActiveIcon(appMode.getMapIconId()));
 			snapToRoadBtn.setOnClickListener(new View.OnClickListener() {
@@ -868,7 +868,7 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 		}
 	}
 
-	void exitMovePointMode(boolean saveOriginalPoint) {
+	private void exitMovePointMode(boolean saveOriginalPoint) {
 		if (saveOriginalPoint) {
 			WptPt pt = editingCtx.getOriginalPointToMove();
 			editingCtx.addPoint(pt);
@@ -1096,9 +1096,9 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 			final File dir = mapActivity.getMyApplication().getAppPath(IndexConstants.GPX_INDEX_DIR);
 			final LayoutInflater inflater = mapActivity.getLayoutInflater();
 			final View view = inflater.inflate(R.layout.save_gpx_dialog, null);
-			final EditText nameEt = (EditText) view.findViewById(R.id.gpx_name_et);
-			final TextView fileExistsTv = (TextView) view.findViewById(R.id.file_exists_text_view);
-			final SwitchCompat showOnMapToggle = (SwitchCompat) view.findViewById(R.id.toggle_show_on_map);
+			final EditText nameEt = view.findViewById(R.id.gpx_name_et);
+			final TextView fileExistsTv = view.findViewById(R.id.file_exists_text_view);
+			final SwitchCompat showOnMapToggle = view.findViewById(R.id.toggle_show_on_map);
 			showOnMapToggle.setChecked(true);
 
 			final String suggestedName = new SimpleDateFormat("yyyy-MM-dd_HH-mm_EEE", Locale.US).format(new Date());
@@ -1432,7 +1432,7 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 				final File dir = mapActivity.getMyApplication().getAppPath(IndexConstants.GPX_INDEX_DIR);
 				final LayoutInflater inflater = mapActivity.getLayoutInflater();
 				final View view = inflater.inflate(R.layout.close_measurement_tool_dialog, null);
-				final SwitchCompat showOnMapToggle = (SwitchCompat) view.findViewById(R.id.toggle_show_on_map);
+				final SwitchCompat showOnMapToggle = view.findViewById(R.id.toggle_show_on_map);
 
 				builder.setView(view);
 				builder.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {

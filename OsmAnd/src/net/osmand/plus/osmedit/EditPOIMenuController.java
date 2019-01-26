@@ -19,9 +19,9 @@ import java.util.Map;
 public class EditPOIMenuController extends MenuController {
 
 	private OsmPoint osmPoint;
-	private OsmEditingPlugin plugin;
-	private String category;
-	private String actionStr;
+	private final OsmEditingPlugin plugin;
+	private final String category;
+	private final String actionStr;
 
 	public EditPOIMenuController(final MapActivity mapActivity, PointDescription pointDescription, OsmPoint osmPoint) {
 		super(new EditPOIMenuBuilder(mapActivity, osmPoint), pointDescription, mapActivity);
@@ -116,7 +116,7 @@ public class EditPOIMenuController extends MenuController {
 		return osmPoint;
 	}
 
-	public OsmPoint getOsmPoint() {
+	private OsmPoint getOsmPoint() {
 		return osmPoint;
 	}
 

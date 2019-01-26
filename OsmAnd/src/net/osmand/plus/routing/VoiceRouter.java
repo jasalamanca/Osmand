@@ -54,26 +54,26 @@ public class VoiceRouter {
 	private static long lastAnnouncement = 0;
 
 	// Default speed to have comfortable announcements (Speed in m/s)
-	protected float DEFAULT_SPEED = 12;
-	protected float TURN_DEFAULT_SPEED = 5;
+	private float DEFAULT_SPEED = 12;
+	private float TURN_DEFAULT_SPEED = 5;
 		
-	protected int PREPARE_LONG_DISTANCE = 0;
-	protected int PREPARE_LONG_DISTANCE_END = 0;
-	protected int PREPARE_DISTANCE = 0;
-	protected int PREPARE_DISTANCE_END = 0;
-	protected int TURN_IN_DISTANCE = 0;
-	protected int TURN_IN_DISTANCE_END = 0;
-	protected int TURN_DISTANCE = 0;
+	private int PREPARE_LONG_DISTANCE = 0;
+	private int PREPARE_LONG_DISTANCE_END = 0;
+	int PREPARE_DISTANCE = 0;
+	private int PREPARE_DISTANCE_END = 0;
+	private int TURN_IN_DISTANCE = 0;
+	private int TURN_IN_DISTANCE_END = 0;
+	private int TURN_DISTANCE = 0;
 	
-	protected static VoiceCommandPending pendingCommand = null;
+	private static VoiceCommandPending pendingCommand = null;
 	private static RouteDirectionInfo nextRouteDirection;
-	private Term empty;
+	private final Term empty;
 
 	public interface VoiceMessageListener {
 		void onVoiceMessage();
 	}
 
-	private ConcurrentHashMap<VoiceMessageListener, Integer> voiceMessageListeners;
+	private final ConcurrentHashMap<VoiceMessageListener, Integer> voiceMessageListeners;
     
 	public VoiceRouter(RoutingHelper router, final OsmandSettings settings) {
 		this.router = router;
@@ -106,7 +106,7 @@ public class VoiceRouter {
 		return mute;
 	}
 
-	protected CommandBuilder getNewCommandPlayerToPlay() {
+	private CommandBuilder getNewCommandPlayerToPlay() {
 		if (player == null) {
 			return null;
 		}
@@ -234,7 +234,7 @@ public class VoiceRouter {
 
 	public void announceBackOnRoute() {
 		CommandBuilder p = getNewCommandPlayerToPlay();
-		if (announceBackOnRoute == true) {
+		if (announceBackOnRoute) {
 			if (p != null) {
 				notifyOnVoiceMessage();
 				p.backOnRoute().play();
@@ -311,7 +311,7 @@ public class VoiceRouter {
 		p.arrivedAtPoi(text).play();
 	}
 
-	protected String getText(Location location, List<LocationPointWrapper> points, double[] dist) {
+	private String getText(Location location, List<LocationPointWrapper> points, double[] dist) {
 		String text = "";
 		for (LocationPointWrapper point : points) {
 			// Need to calculate distance to nearest point
@@ -407,7 +407,7 @@ public class VoiceRouter {
 	* Updates status of voice guidance
 	* @param currentLocation
 	*/
-	protected void updateStatus(Location currentLocation, boolean repeat) {
+	void updateStatus(Location currentLocation, boolean repeat) {
 		// Directly after turn: goAhead (dist), unless:
 		// < PREPARE_LONG_DISTANCE (e.g. 3500m):         playPrepareTurn (-not played any more-)
 		// < PREPARE_DISTANCE      (e.g. 1500m):         playPrepareTurn ("Turn after ...")
@@ -565,14 +565,14 @@ public class VoiceRouter {
 		}
 	}
 
-	public Term getSpeakableStreetName(RouteSegmentResult currentSegment, RouteDirectionInfo i, boolean includeDest) {
+	private Term getSpeakableStreetName(RouteSegmentResult currentSegment, RouteDirectionInfo i, boolean includeDest) {
 		if (i == null || !router.getSettings().SPEAK_STREET_NAMES.get()) {
 			return empty;
 		}
 		if (player != null && player.supportsStructuredStreetNames()) {
 			Term next = empty;
 			// Issue 2377: Play Dest here only if not already previously announced, to avoid repetition
-			if (includeDest == true) {
+			if (includeDest) {
 				next = new Struct(new Term[] { getTermString(getSpeakablePointName(i.getRef())),
 						getTermString(getSpeakablePointName(i.getStreetName())),
 						getTermString(getSpeakablePointName(i.getDestinationName())) });
@@ -584,7 +584,7 @@ public class VoiceRouter {
 			Term current = empty;
 			if (currentSegment != null) {
 				// Issue 2377: Play Dest here only if not already previously announced, to avoid repetition
-				if (includeDest == true) {
+				if (includeDest) {
 					RouteDataObject obj = currentSegment.getObject();
 					current = new Struct(new Term[] { getTermString(getSpeakablePointName(obj.getRef(settings.MAP_PREFERRED_LOCALE.get(), 
 									settings.MAP_TRANSLITERATE_NAMES.get(), currentSegment.isForwardDirection()))),
@@ -871,17 +871,17 @@ public class VoiceRouter {
 	 * Command to wait until voice player is initialized 
 	 */
 	private class VoiceCommandPending {
-		public static final int ROUTE_CALCULATED = 1;
-		public static final int ROUTE_RECALCULATED = 2;
-		protected final int type;
+		static final int ROUTE_CALCULATED = 1;
+		static final int ROUTE_RECALCULATED = 2;
+		final int type;
 		private final VoiceRouter voiceRouter;
 		
-		public VoiceCommandPending(int type, VoiceRouter voiceRouter) {
+		VoiceCommandPending(int type, VoiceRouter voiceRouter) {
 			this.type = type;
 			this.voiceRouter = voiceRouter;
 		}
 
-		public void play(CommandBuilder newCommand) {
+		void play(CommandBuilder newCommand) {
 			int left = voiceRouter.router.getLeftDistance();
 			int time = voiceRouter.router.getLeftTime();
 			if (left > 0) {
@@ -923,7 +923,7 @@ public class VoiceRouter {
 		voiceMessageListeners.remove(voiceMessageListener);
 	}
 
-	public void notifyOnVoiceMessage() {
+	private void notifyOnVoiceMessage() {
 		if (settings.WAKE_ON_VOICE_INT.get() > 0) {
 			router.getApplication().runInUIThread(new Runnable() {
 				@Override

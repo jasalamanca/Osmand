@@ -9,7 +9,7 @@ import com.ibm.icu.text.ArabicShapingException;
 import com.ibm.icu.text.Bidi;
 import com.ibm.icu.text.BidiRun;
 
-public class Reshaper {
+class Reshaper {
 	private final static Log LOG = PlatformUtil.getLog(Reshaper.class);
 	
 	public static String reshape(byte[] bytes) {
@@ -19,7 +19,7 @@ public class Reshaper {
 			return "";
 		}
 	}
-	public static String reshape(String s) {
+	private static String reshape(String s) {
 //		if(true) {
 //			return s;
 //		}

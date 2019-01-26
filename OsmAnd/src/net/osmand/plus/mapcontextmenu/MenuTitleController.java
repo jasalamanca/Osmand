@@ -11,28 +11,28 @@ import net.osmand.util.Algorithms;
 
 public abstract class MenuTitleController {
 
-	protected int rightIconId;
-	protected Drawable rightIcon;
-	protected String nameStr = "";
-	protected String typeStr = "";
-	protected String commonTypeStr = "";
-	protected Drawable secondLineTypeIcon;
-	protected String streetStr = "";
+	private int rightIconId;
+	private Drawable rightIcon;
+	String nameStr = "";
+	String typeStr = "";
+	private String commonTypeStr = "";
+	private Drawable secondLineTypeIcon;
+	String streetStr = "";
 
 	private AddressLookupRequest addressLookupRequest;
 
-	protected String searchAddressStr;
-	protected String addressNotFoundStr;
+	String searchAddressStr;
+	private String addressNotFoundStr;
 
-	public abstract MapActivity getMapActivity();
+	protected abstract MapActivity getMapActivity();
 
-	public abstract LatLon getLatLon();
+	protected abstract LatLon getLatLon();
 
-	public abstract PointDescription getPointDescription();
+	protected abstract PointDescription getPointDescription();
 
-	public abstract Object getObject();
+	protected abstract Object getObject();
 
-	public abstract MenuController getMenuController();
+	protected abstract MenuController getMenuController();
 
 	public String getTitleStr() {
 		if (displayStreetNameInTitle() && searchingAddress()) {
@@ -42,11 +42,11 @@ public abstract class MenuTitleController {
 		}
 	}
 
-	public boolean searchingAddress() {
+	boolean searchingAddress() {
 		return addressLookupRequest != null;
 	}
 
-	public void cancelSearchAddress() {
+	void cancelSearchAddress() {
 		if (addressLookupRequest != null) {
 			getMapActivity().getMyApplication().getGeocodingLookupService().cancel(addressLookupRequest);
 			addressLookupRequest = null;
@@ -60,7 +60,7 @@ public abstract class MenuTitleController {
 	}
 
 	// Has title which does not equal to "Looking up address" and "No address determined"
-	public boolean hasValidTitle() {
+    boolean hasValidTitle() {
 		String title = getTitleStr();
 		return !addressNotFoundStr.equals(title) && !searchAddressStr.equals(title);
 	}
@@ -122,7 +122,7 @@ public abstract class MenuTitleController {
 		return res;
 	}
 
-	protected void acquireIcons() {
+	void acquireIcons() {
 		MenuController menuController = getMenuController();
 
 		rightIconId = 0;
@@ -136,7 +136,7 @@ public abstract class MenuTitleController {
 		}
 	}
 
-	protected void acquireNameAndType() {
+	private void acquireNameAndType() {
 		nameStr = "";
 		typeStr = "";
 		commonTypeStr = "";
@@ -157,7 +157,7 @@ public abstract class MenuTitleController {
 		}
 	}
 
-	protected void acquireStreetName() {
+	private void acquireStreetName() {
 		addressLookupRequest = new AddressLookupRequest(getLatLon(), new GeocodingLookupService.OnAddressLookupResult() {
 			@Override
 			public void geocodingDone(String address) {
@@ -186,7 +186,7 @@ public abstract class MenuTitleController {
 		getMapActivity().getMyApplication().getGeocodingLookupService().lookupAddress(addressLookupRequest);
 	}
 
-	protected void onSearchAddressDone() {
+	void onSearchAddressDone() {
 	}
 
 }

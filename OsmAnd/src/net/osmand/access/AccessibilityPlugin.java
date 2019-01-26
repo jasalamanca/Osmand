@@ -20,9 +20,9 @@ public class AccessibilityPlugin extends OsmandPlugin {
 	public static final int INCLINATION_RIGHT = 3;
 
 	private static final String ID = "osmand.accessibility";
-	private OsmandApplication app;
+	private final OsmandApplication app;
 	private SoundPool sounds;
-	private Map<Integer, Integer> soundIcons = new HashMap<Integer, Integer>();
+	private final Map<Integer, Integer> soundIcons = new HashMap<Integer, Integer>();
 
 	public AccessibilityPlugin(OsmandApplication app) {
 		this.app = app;

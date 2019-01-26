@@ -20,23 +20,23 @@ import java.util.TreeMap;
 
 public class FavoriteImageDrawable extends Drawable {
 
-	private int color;
-	private Paint paintIcon;
-	private Paint paintBackground;
-	private Bitmap favIcon;
-	private Bitmap favBackground;
-	private Bitmap syncedStroke;
-	private Bitmap syncedColor;
-	private Bitmap syncedShadow;
-	private Bitmap syncedIcon;
-	private Resources resources;
-	private boolean withShadow;
-	private boolean synced;
-	private Paint paintOuter;
-	private Paint paintInnerCircle;
-	private Drawable listDrawable;
+	private final int color;
+	private final Paint paintIcon;
+	private final Paint paintBackground;
+	private final Bitmap favIcon;
+	private final Bitmap favBackground;
+	private final Bitmap syncedStroke;
+	private final Bitmap syncedColor;
+	private final Bitmap syncedShadow;
+	private final Bitmap syncedIcon;
+	private final Resources resources;
+	private final boolean withShadow;
+	private final boolean synced;
+	private final Paint paintOuter;
+	private final Paint paintInnerCircle;
+	private final Drawable listDrawable;
 
-	public FavoriteImageDrawable(Context ctx, int color, boolean withShadow, boolean synced) {
+	private FavoriteImageDrawable(Context ctx, int color, boolean withShadow, boolean synced) {
 		this.withShadow = withShadow;
 		this.synced = synced;
 		this.resources = ctx.getResources();
@@ -90,7 +90,7 @@ public class FavoriteImageDrawable extends Drawable {
 		return color;
 	}
 
-	public Resources getResources() {
+	private Resources getResources() {
 		return resources;
 	}
 
@@ -146,7 +146,7 @@ public class FavoriteImageDrawable extends Drawable {
 		paintIcon.setColorFilter(cf);
 	}
 
-	private static TreeMap<Integer, FavoriteImageDrawable> cache = new TreeMap<>();
+	private static final TreeMap<Integer, FavoriteImageDrawable> cache = new TreeMap<>();
 
 	private static FavoriteImageDrawable getOrCreate(Context a, int color, boolean withShadow, boolean synced) {
 		color = color | 0xff000000;

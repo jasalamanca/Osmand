@@ -16,7 +16,7 @@ import net.osmand.util.MapUtils;
 
 public class SearchByNameFilter extends PoiUIFilter {
 
-	public static final String FILTER_ID = PoiUIFilter.BY_NAME_FILTER_ID; //$NON-NLS-1$
+	private static final String FILTER_ID = PoiUIFilter.BY_NAME_FILTER_ID; //$NON-NLS-1$
 	
 	public SearchByNameFilter(OsmandApplication application) {
 		super(application);

@@ -60,14 +60,14 @@ import static android.util.TypedValue.COMPLEX_UNIT_DIP;
 public class MenuBuilder {
 
 	public static final float SHADOW_HEIGHT_TOP_DP = 17f;
-	public static final int TITLE_LIMIT = 60;
+	private static final int TITLE_LIMIT = 60;
 
-	protected MapActivity mapActivity;
-	protected MapContextMenu mapContextMenu;
-	protected OsmandApplication app;
-	protected LinkedList<PlainMenuItem> plainMenuItems;
+	protected final MapActivity mapActivity;
+	private MapContextMenu mapContextMenu;
+	protected final OsmandApplication app;
+	private final LinkedList<PlainMenuItem> plainMenuItems;
 	private boolean firstRow;
-	protected boolean matchWidthDivider;
+	private boolean matchWidthDivider;
 	protected boolean light;
 	private long objectId;
 	private LatLon latLon;
@@ -75,31 +75,31 @@ public class MenuBuilder {
 	private boolean showTitleIfTruncated = true;
 	private boolean showNearestWiki = false;
 	protected List<Amenity> nearestWiki = new ArrayList<>();
-	private List<OsmandPlugin> menuPlugins = new ArrayList<>();
+	private final List<OsmandPlugin> menuPlugins = new ArrayList<>();
 	private List<TransportStopRoute> routes = new ArrayList<>();
 	private CollapseExpandListener collapseExpandListener;
 
-	private String preferredMapLang;
+	private final String preferredMapLang;
 	private String preferredMapAppLang;
-	private boolean transliterateNames;
+	private final boolean transliterateNames;
 
 	public interface CollapseExpandListener {
 		void onCollapseExpand(boolean collapsed);
 	}
 
-	public class PlainMenuItem {
-		private int iconId;
-		private String buttonText;
-		private String text;
-		private boolean needLinks;
-		private boolean url;
-		private boolean collapsable;
-		private CollapsableView collapsableView;
-		private OnClickListener onClickListener;
+	class PlainMenuItem {
+		private final int iconId;
+		private final String buttonText;
+		private final String text;
+		private final boolean needLinks;
+		private final boolean url;
+		private final boolean collapsable;
+		private final CollapsableView collapsableView;
+		private final OnClickListener onClickListener;
 
-		public PlainMenuItem(int iconId, String buttonText, String text, boolean needLinks, boolean url,
-							 boolean collapsable, CollapsableView collapsableView,
-							 OnClickListener onClickListener) {
+		PlainMenuItem(int iconId, String buttonText, String text, boolean needLinks, boolean url,
+                      boolean collapsable, CollapsableView collapsableView,
+                      OnClickListener onClickListener) {
 			this.iconId = iconId;
 			this.buttonText = buttonText;
 			this.text = text;
@@ -110,23 +110,23 @@ public class MenuBuilder {
 			this.onClickListener = onClickListener;
 		}
 
-		public int getIconId() {
+		int getIconId() {
 			return iconId;
 		}
 
-		public String getButtonText() {
+		String getButtonText() {
 			return buttonText;
 		}
 
-		public String getText() {
+		String getText() {
 			return text;
 		}
 
-		public boolean isNeedLinks() {
+		boolean isNeedLinks() {
 			return needLinks;
 		}
 
-		public boolean isUrl() {
+		boolean isUrl() {
 			return url;
 		}
 
@@ -138,15 +138,15 @@ public class MenuBuilder {
 			return collapsableView;
 		}
 
-		public OnClickListener getOnClickListener() {
+		OnClickListener getOnClickListener() {
 			return onClickListener;
 		}
 	}
 
 	public static class CollapsableView {
 
-		private View contenView;
-		private MenuBuilder menuBuilder;
+		private final View contenView;
+		private final MenuBuilder menuBuilder;
 		private OsmandPreference<Boolean> collapsedPref;
 		private boolean collapsed;
 		private CollapseExpandListener collapseExpandListener;
@@ -232,15 +232,15 @@ public class MenuBuilder {
 		return transliterateNames;
 	}
 
-	public MapActivity getMapActivity() {
+	protected MapActivity getMapActivity() {
 		return mapActivity;
 	}
 
-	public OsmandApplication getApplication() {
+	private OsmandApplication getApplication() {
 		return app;
 	}
 
-	public LatLon getLatLon() {
+	protected LatLon getLatLon() {
 		return latLon;
 	}
 
@@ -264,7 +264,7 @@ public class MenuBuilder {
 		this.showTitleIfTruncated = showTitleIfTruncated;
 	}
 
-	public void setShowNearestWiki(boolean showNearestWiki, long objectId) {
+	protected void setShowNearestWiki(boolean showNearestWiki, long objectId) {
 		this.objectId = objectId;
 		this.showNearestWiki = showNearestWiki;
 	}
@@ -322,19 +322,19 @@ public class MenuBuilder {
 		return true;
 	}
 
-	protected void buildPluginRows(View view) {
+	private void buildPluginRows(View view) {
 		for (OsmandPlugin plugin : menuPlugins) {
 			plugin.buildContextMenuRows(this, view);
 		}
 	}
 
-	protected void clearPluginRows() {
+	private void clearPluginRows() {
 		for (OsmandPlugin plugin : menuPlugins) {
 			plugin.clearContextMenuRows();
 		}
 	}
 
-	public void buildTitleRow(View view) {
+	private void buildTitleRow(View view) {
 		if (mapContextMenu != null) {
 			String title = mapContextMenu.getTitleStr();
 			if (title.length() > TITLE_LIMIT) {
@@ -358,24 +358,24 @@ public class MenuBuilder {
 		buildRowDivider(view);
 	}
 
-	public boolean isFirstRow() {
+	protected boolean isFirstRow() {
 		return firstRow;
 	}
 
-	public void rowBuilt() {
+	protected void rowBuilt() {
 		firstRow = false;
 	}
 
-	public View buildRow(View view, int iconId, String buttonText, String text, int textColor,
-							boolean collapsable, final CollapsableView collapsableView,
-							boolean needLinks, int textLinesLimit, boolean isUrl, OnClickListener onClickListener, boolean matchWidthDivider) {
+	protected View buildRow(View view, int iconId, String buttonText, String text, int textColor,
+                            boolean collapsable, final CollapsableView collapsableView,
+                            boolean needLinks, int textLinesLimit, boolean isUrl, OnClickListener onClickListener, boolean matchWidthDivider) {
 		return buildRow(view, iconId == 0 ? null : getRowIcon(iconId), buttonText, text, textColor, null, collapsable, collapsableView,
 				needLinks, textLinesLimit, isUrl, onClickListener, matchWidthDivider);
 	}
 
-	public View buildRow(final View view, Drawable icon, final String buttonText, final String text, int textColor, String secondaryText,
-							boolean collapsable, final CollapsableView collapsableView, boolean needLinks,
-							int textLinesLimit, boolean isUrl, OnClickListener onClickListener, boolean matchWidthDivider) {
+	protected View buildRow(final View view, Drawable icon, final String buttonText, final String text, int textColor, String secondaryText,
+                            boolean collapsable, final CollapsableView collapsableView, boolean needLinks,
+                            int textLinesLimit, boolean isUrl, OnClickListener onClickListener, boolean matchWidthDivider) {
 
 		if (!isFirstRow()) {
 			buildRowDivider(view);
@@ -597,7 +597,7 @@ public class MenuBuilder {
 		rowBuilt();
 	}
 
-	public void buildRowDivider(View view) {
+	protected void buildRowDivider(View view) {
 		View horizontalLine = new View(view.getContext());
 		LinearLayout.LayoutParams llHorLineParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dpToPx(1f));
 		llHorLineParams.gravity = Gravity.BOTTOM;
@@ -634,12 +634,12 @@ public class MenuBuilder {
 		plainMenuItems.clear();
 	}
 
-	public Drawable getRowIcon(int iconId) {
+	protected Drawable getRowIcon(int iconId) {
 		IconsCache iconsCache = app.getIconsCache();
 		return iconsCache.getIcon(iconId, light ? R.color.ctx_menu_bottom_view_icon_light : R.color.ctx_menu_bottom_view_icon_dark);
 	}
 
-	public Drawable getRowIcon(Context ctx, String fileName) {
+	protected Drawable getRowIcon(Context ctx, String fileName) {
 		Drawable d = RenderingIcons.getBigIcon(ctx, fileName);
 		if (d != null) {
 			d.setColorFilter(app.getResources().getColor(light ? R.color.ctx_menu_bottom_view_icon_light : R.color.ctx_menu_bottom_view_icon_dark), PorterDuff.Mode.SRC_IN);
@@ -649,7 +649,7 @@ public class MenuBuilder {
 		}
 	}
 
-	public int dpToPx(float dp) {
+	protected int dpToPx(float dp) {
 		Resources r = app.getResources();
 		return (int) TypedValue.applyDimension(
 				COMPLEX_UNIT_DIP,
@@ -658,7 +658,7 @@ public class MenuBuilder {
 		);
 	}
 
-	public Drawable getCollapseIcon(boolean collapsed) {
+	protected Drawable getCollapseIcon(boolean collapsed) {
 		return app.getIconsCache().getIcon(collapsed ? R.drawable.ic_action_arrow_down : R.drawable.ic_action_arrow_up,
 				light ? R.color.ctx_menu_collapse_icon_color_light : R.color.ctx_menu_collapse_icon_color_dark);
 	}
@@ -744,7 +744,7 @@ public class MenuBuilder {
 	}
 
 	private CollapsableView getCollapsableTransportStopRoutesView(final Context context, boolean collapsed) {
-		LinearLayout view = (LinearLayout) buildCollapsableContentView(context, collapsed, false);
+		LinearLayout view = buildCollapsableContentView(context, collapsed, false);
 
 		for (int i = 0; i < routes.size(); i++) {
 			final TransportStopRoute r  = routes.get(i);
@@ -782,7 +782,7 @@ public class MenuBuilder {
 	}
 
 	protected CollapsableView getCollapsableWikiView(Context context, boolean collapsed) {
-		LinearLayout view = (LinearLayout) buildCollapsableContentView(context, collapsed, true);
+		LinearLayout view = buildCollapsableContentView(context, collapsed, true);
 
 		for (final Amenity wiki : nearestWiki) {
 			TextViewEx button = buildButtonInCollapsableView(context, false, false);

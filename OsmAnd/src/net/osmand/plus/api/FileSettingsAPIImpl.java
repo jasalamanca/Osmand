@@ -16,8 +16,8 @@ import net.osmand.plus.OsmandApplication;
 public class FileSettingsAPIImpl implements SettingsAPI {
 
 	protected OsmandApplication app;
-	protected ConcurrentHashMap<String, Object> map = new ConcurrentHashMap<String, Object>();
-	protected File file;
+	private final ConcurrentHashMap<String, Object> map = new ConcurrentHashMap<String, Object>();
+	private final File file;
 
 	public FileSettingsAPIImpl(OsmandApplication app, File file) throws IOException {
 		this.file = file;
@@ -43,7 +43,7 @@ public class FileSettingsAPIImpl implements SettingsAPI {
 	@Override
 	public SettingsEditor edit(final Object pref) {
 		return new SettingsEditor() {
-			Map<String, Object> modified = new LinkedHashMap<String, Object>();
+			final Map<String, Object> modified = new LinkedHashMap<String, Object>();
 			
 			@Override
 			public SettingsEditor remove(String key) {
@@ -101,7 +101,7 @@ public class FileSettingsAPIImpl implements SettingsAPI {
 		return saveFile();
 	}
 
-	public boolean saveFile() {
+	private boolean saveFile() {
 		try {
 			Properties ps = new Properties();
 			Iterator<Entry<String, Object>> it = map.entrySet().iterator();

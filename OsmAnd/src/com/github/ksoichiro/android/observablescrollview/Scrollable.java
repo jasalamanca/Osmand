@@ -21,7 +21,7 @@ import android.view.ViewGroup;
 /**
  * Provides common API for observable and scrollable widgets.
  */
-public interface Scrollable {
+interface Scrollable {
     /**
      * Sets a callback listener.
      *

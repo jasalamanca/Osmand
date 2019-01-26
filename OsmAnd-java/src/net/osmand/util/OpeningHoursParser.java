@@ -109,12 +109,12 @@ public class OpeningHoursParser {
 	 */
 	public static class OpeningHours implements Serializable {
 
-		public static final int ALL_SEQUENCES = -1;
+		static final int ALL_SEQUENCES = -1;
 
 		/**
 		 * list of the different rules
 		 */
-		private ArrayList<OpeningHoursRule> rules;
+		private final ArrayList<OpeningHoursRule> rules;
 		private String original;
 		private int sequenceCount;
 
@@ -181,11 +181,11 @@ public class OpeningHoursParser {
 			rules = new ArrayList<OpeningHoursRule>();
 		}
 
-		public List<Info> getInfo() {
+		List<Info> getInfo() {
 			return getInfo(Calendar.getInstance());
 		}
 		
-		public List<Info> getInfo(Calendar cal) {
+		List<Info> getInfo(Calendar cal) {
 			List<Info> res = new ArrayList<>();
 			for (int i = 0; i < sequenceCount; i++) {
 				Info info = getInfo(cal, i);
@@ -198,7 +198,7 @@ public class OpeningHoursParser {
 			return getCombinedInfo(Calendar.getInstance());
 		}
 		
-		public Info getCombinedInfo(Calendar cal) {
+		Info getCombinedInfo(Calendar cal) {
 			return getInfo(cal, ALL_SEQUENCES);
 		}
 
@@ -234,7 +234,7 @@ public class OpeningHoursParser {
 		 *
 		 * @param rules to add
 		 */
-		public void addRules(List<? extends OpeningHoursRule> rules) {
+        void addRules(List<? extends OpeningHoursRule> rules) {
 			this.rules.addAll(rules);
 		}
 
@@ -242,7 +242,7 @@ public class OpeningHoursParser {
 			return sequenceCount;
 		}
 
-		public void setSequenceCount(int sequenceCount) {
+		void setSequenceCount(int sequenceCount) {
 			this.sequenceCount = sequenceCount;
 		}
 
@@ -255,7 +255,7 @@ public class OpeningHoursParser {
 			return rules;
 		}
 
-		public ArrayList<OpeningHoursRule> getRules(int sequenceIndex) {
+		ArrayList<OpeningHoursRule> getRules(int sequenceIndex) {
 			if (sequenceIndex == ALL_SEQUENCES) {
 				return rules;
 			} else {
@@ -275,7 +275,7 @@ public class OpeningHoursParser {
 		 * @param cal the time to check
 		 * @return true if feature is open
 		 */
-		public boolean isOpenedForTimeV2(Calendar cal, int sequenceIndex) {
+        boolean isOpenedForTimeV2(Calendar cal, int sequenceIndex) {
 			// make exception for overlapping times i.e.
 			// (1) Mo 14:00-16:00; Tu off
 			// (2) Mo 14:00-02:00; Tu off
@@ -343,7 +343,7 @@ public class OpeningHoursParser {
 			return isOpenDay || isOpenPrevious;
 		}
 
-		public boolean isOpened24_7(int sequenceIndex) {
+		boolean isOpened24_7(int sequenceIndex) {
 			boolean opened24_7 = false;
 			ArrayList<OpeningHoursRule> rules = getRules(sequenceIndex);
 			for (OpeningHoursRule r : rules) {
@@ -352,23 +352,23 @@ public class OpeningHoursParser {
 			return opened24_7;
 		}
 
-		public String getNearToOpeningTime(Calendar cal, int sequenceIndex) {
+		String getNearToOpeningTime(Calendar cal, int sequenceIndex) {
 			return getTime(cal, LOW_TIME_LIMIT, true, sequenceIndex);
 		}
 
-		public String getOpeningTime(Calendar cal, int sequenceIndex) {
+		String getOpeningTime(Calendar cal, int sequenceIndex) {
 			return getTime(cal, CURRENT_DAY_TIME_LIMIT, true, sequenceIndex);
 		}
 
-		public String getNearToClosingTime(Calendar cal, int sequenceIndex) {
+		String getNearToClosingTime(Calendar cal, int sequenceIndex) {
 			return getTime(cal, LOW_TIME_LIMIT, false, sequenceIndex);
 		}
 
-		public String getClosingTime(Calendar cal, int sequenceIndex) {
+		String getClosingTime(Calendar cal, int sequenceIndex) {
 			return getTime(cal, WITHOUT_TIME_LIMIT, false, sequenceIndex);
 		}
 
-		public String getOpeningTomorrow(Calendar calendar, int sequenceIndex) {
+		String getOpeningTomorrow(Calendar calendar, int sequenceIndex) {
 			Calendar cal = (Calendar) calendar.clone();
 			String openingTime = "";
 			ArrayList<OpeningHoursRule> rules = getRules(sequenceIndex);
@@ -381,7 +381,7 @@ public class OpeningHoursParser {
 			return openingTime;
 		}
 
-		public String getOpeningDay(Calendar calendar, int sequenceIndex) {
+		String getOpeningDay(Calendar calendar, int sequenceIndex) {
 			Calendar cal = (Calendar) calendar.clone();
 			String openingTime = "";
 			ArrayList<OpeningHoursRule> rules = getRules(sequenceIndex);
@@ -434,7 +434,7 @@ public class OpeningHoursParser {
 			return getCurrentRuleTime(cal, ALL_SEQUENCES);
 		}
 
-		public String getCurrentRuleTime(Calendar cal, int sequenceIndex) {
+		String getCurrentRuleTime(Calendar cal, int sequenceIndex) {
 			// make exception for overlapping times i.e.
 			// (1) Mo 14:00-16:00; Tu off
 			// (2) Mo 14:00-02:00; Tu off
@@ -517,7 +517,7 @@ public class OpeningHoursParser {
 			return s.substring(0, s.length() - 2);
 		}
 
-		public void setOriginal(String original) {
+		void setOriginal(String original) {
 			this.original = original;
 		}
 		
@@ -533,7 +533,7 @@ public class OpeningHoursParser {
 	 * - a collection of days/dates
 	 * - a time range
 	 */
-	public static interface OpeningHoursRule extends Serializable {
+	public interface OpeningHoursRule extends Serializable {
 
 		/**
 		 * Check if, for this rule, the feature is opened for time "cal"
@@ -542,14 +542,14 @@ public class OpeningHoursParser {
 		 * @param checkPrevious only check for overflowing times (after midnight) or don't check for it
 		 * @return true if the feature is open
 		 */
-		public boolean isOpenedForTime(Calendar cal, boolean checkPrevious);
+		boolean isOpenedForTime(Calendar cal, boolean checkPrevious);
 		
 		/**
 		 * Check if, for this rule, the feature is opened for time "cal" 
 		 * @param cal
 		 * @return true if the feature is open
 		 */
-		public boolean isOpenedForTime(Calendar cal);
+		boolean isOpenedForTime(Calendar cal);
 
 		/**
 		 * Check if the previous day before "cal" is part of this rule
@@ -557,7 +557,7 @@ public class OpeningHoursParser {
 		 * @param cal; the time to check
 		 * @return true if the previous day is part of the rule
 		 */
-		public boolean containsPreviousDay(Calendar cal);
+		boolean containsPreviousDay(Calendar cal);
 
 		/**
 		 * Check if the day of "cal" is part of this rule
@@ -565,7 +565,7 @@ public class OpeningHoursParser {
 		 * @param cal the time to check
 		 * @return true if the day is part of the rule
 		 */
-		public boolean containsDay(Calendar cal);
+		boolean containsDay(Calendar cal);
 
 		/**
 		 * Check if the next day after "cal" is part of this rule
@@ -581,24 +581,24 @@ public class OpeningHoursParser {
 		 * @param cal the time to check
 		 * @return true if the month is part of the rule
 		 */
-		public boolean containsMonth(Calendar cal);
+		boolean containsMonth(Calendar cal);
 		
 		/**
 		 * @return true if the rule overlap to the next day
 		 */
-		public boolean hasOverlapTimes();
+		boolean hasOverlapTimes();
 		
 		/**
 		 * @param cal
 		 * @return true if rule applies for current time
 		 */
-		public boolean contains(Calendar cal);
+		boolean contains(Calendar cal);
 
-		public int getSequenceIndex();
+		int getSequenceIndex();
 
-		public String toRuleString();
+		String toRuleString();
 
-		public String toLocalRuleString();
+		String toLocalRuleString();
 
 		boolean isOpened24_7();
 
@@ -615,23 +615,24 @@ public class OpeningHoursParser {
 		 * represents the list on which days it is open.
 		 * Day number 0 is MONDAY
 		 */
-		private boolean[] days = new boolean[7];
+		private final boolean[] days = new boolean[7];
 
 		/**
 		 * represents the list on which month it is open.
 		 * Day number 0 is JANUARY.
 		 */
-		private boolean[] months = new boolean[12];
+		private final boolean[] months = new boolean[12];
 		
 		/**
 		 * represents the list on which day it is open.
 		 */
-		private boolean[] dayMonths = new boolean[31];
+		private final boolean[] dayMonths = new boolean[31];
 
 		/**
 		 * lists of equal size representing the start and end times
 		 */
-		private TIntArrayList startTimes = new TIntArrayList(), endTimes = new TIntArrayList();
+		private final TIntArrayList startTimes = new TIntArrayList();
+        private final TIntArrayList endTimes = new TIntArrayList();
 		
 		private boolean publicHoliday = false;
 		private boolean schoolHoliday = false;
@@ -648,13 +649,13 @@ public class OpeningHoursParser {
 		 */
 		private String comment;
 
-		private int sequenceIndex;
+		private final int sequenceIndex;
 
 		public BasicOpeningHourRule() {
 			this.sequenceIndex = 0;
 		}
 
-		public BasicOpeningHourRule(int sequenceIndex) {
+		BasicOpeningHourRule(int sequenceIndex) {
 			this.sequenceIndex = sequenceIndex;
 		}
 
@@ -674,7 +675,7 @@ public class OpeningHoursParser {
 		/**
 		 * @return the day months of the rule
 		 */
-		public boolean[] getDayMonths() {
+        boolean[] getDayMonths() {
 			return dayMonths;
 		}
 
@@ -683,7 +684,7 @@ public class OpeningHoursParser {
 		 *
 		 * @return the months of the rule
 		 */
-		public boolean[] getMonths() {
+        boolean[] getMonths() {
 			return months;
 		}
 		
@@ -699,11 +700,11 @@ public class OpeningHoursParser {
 			return schoolHoliday;
 		}
 
-		public String getComment() {
+		String getComment() {
 			return comment;
 		}
 
-		public void setComment(String comment) {
+		void setComment(String comment) {
 			this.comment = comment;
 		}
 
@@ -1150,7 +1151,7 @@ public class OpeningHoursParser {
 			appendDaysString(builder, daysStr);
 		}
 
-		public void appendDaysString(StringBuilder builder, String[] daysNames) {
+		void appendDaysString(StringBuilder builder, String[] daysNames) {
 			boolean dash = false;
 			boolean first = true;
 			for (int i = 0; i < 7; i++) {
@@ -1292,7 +1293,7 @@ public class OpeningHoursParser {
 	}
 
 	public static class UnparseableRule implements OpeningHoursRule {
-		private String ruleString;
+		private final String ruleString;
 
 		public UnparseableRule(String ruleString) {
 			this.ruleString = ruleString;
@@ -1381,20 +1382,20 @@ public class OpeningHoursParser {
 		TOKEN_DAY_WEEK(6),
 		TOKEN_HOUR_MINUTES (7),
 		TOKEN_OFF_ON(8);
-		public final int ord;
+		final int ord;
 
-		private TokenType(int ord) {
+		TokenType(int ord) {
 			this.ord = ord;
 		}
 
-		public int ord() {
+		int ord() {
 			return ord;
 		}
 
 	}
 	
 	private static class Token {
-		public Token(TokenType tokenType, String string) {
+		Token(TokenType tokenType, String string) {
 			type = tokenType;
 			text = string;
 			try {
@@ -1404,7 +1405,7 @@ public class OpeningHoursParser {
 		}
 		int mainNumber = -1;
 		TokenType type;
-		String text;
+		final String text;
 		
 		@Override
 		public String toString() {
@@ -1412,7 +1413,7 @@ public class OpeningHoursParser {
 		}
 	}
 
-	public static void parseRuleV2(String r, int sequenceIndex, List<OpeningHoursRule> rules) {
+	private static void parseRuleV2(String r, int sequenceIndex, List<OpeningHoursRule> rules) {
 		String comment = null;
 		int q1Index = r.indexOf('"');
 		if (q1Index >= 0) {
@@ -1696,7 +1697,7 @@ public class OpeningHoursParser {
 	 * @param r the string to parse
 	 * @return BasicRule if the String is successfully parsed and UnparseableRule otherwise
 	 */
-	public static void parseRules(String r, int sequenceIndex, List<OpeningHoursRule> rules) {
+	private static void parseRules(String r, int sequenceIndex, List<OpeningHoursRule> rules) {
 		parseRuleV2(r, sequenceIndex, rules);
 	}
 

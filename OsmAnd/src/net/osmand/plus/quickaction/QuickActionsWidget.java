@@ -46,8 +46,6 @@ public class QuickActionsWidget extends LinearLayout {
 
     private ViewPager viewPager;
     private LinearLayout dots;
-    private LinearLayout controls;
-    private View container;
 
     public QuickActionsWidget(Context context) {
         super(context);
@@ -83,8 +81,8 @@ public class QuickActionsWidget extends LinearLayout {
                 ? R.style.OsmandLightTheme
                 : R.style.OsmandDarkTheme), R.layout.quick_action_widget, this);
 
-        container = findViewById(R.id.container);
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        View container = findViewById(R.id.container);
+        viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(new ViewsPagerAdapter());
 
         container.setBackgroundResource(light
@@ -114,8 +112,8 @@ public class QuickActionsWidget extends LinearLayout {
             }
         });
 
-        next = (ImageButton) findViewById(R.id.btnNext);
-        prev = (ImageButton) findViewById(R.id.btnPrev);
+        next = findViewById(R.id.btnNext);
+        prev = findViewById(R.id.btnPrev);
 
         next.setOnClickListener(new OnClickListener() {
             @Override
@@ -137,7 +135,7 @@ public class QuickActionsWidget extends LinearLayout {
             }
         });
 
-        dots = (LinearLayout) findViewById(R.id.dots);
+        dots = findViewById(R.id.dots);
         dots.removeAllViews();
 
         if (pageCount > 1) {
@@ -157,7 +155,7 @@ public class QuickActionsWidget extends LinearLayout {
             }
         }
 
-        controls = (LinearLayout) findViewById(R.id.controls);
+        LinearLayout controls = findViewById(R.id.controls);
         controls.setVisibility(pageCount > 1 ? VISIBLE : GONE);
 
         Drawable background = controls.getBackground();
@@ -209,7 +207,7 @@ public class QuickActionsWidget extends LinearLayout {
                 : R.style.OsmandDarkTheme);
 
         View page = li.inflate(R.layout.quick_action_widget_page, container, false);
-        GridLayout gridLayout = (GridLayout) page.findViewById(R.id.grid);
+        GridLayout gridLayout = page.findViewById(R.id.grid);
 
         final boolean land = !AndroidUiHelper.isOrientationPortrait((Activity) getContext());
         final int maxItems = actions.size() == 1 ? 1 : ELEMENT_PER_PAGE;

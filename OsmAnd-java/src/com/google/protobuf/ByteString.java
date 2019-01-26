@@ -72,8 +72,8 @@ public abstract class ByteString implements Iterable<Byte> {
    * the chunks in the underlying rope start at 256 bytes, but double
    * each iteration up to 8192 bytes.
    */
-  static final int MIN_READ_FROM_CHUNK_SIZE = 0x100;  // 256b
-  static final int MAX_READ_FROM_CHUNK_SIZE = 0x2000;  // 8k
+  private static final int MIN_READ_FROM_CHUNK_SIZE = 0x100;  // 256b
+  private static final int MAX_READ_FROM_CHUNK_SIZE = 0x2000;  // 8k
 
   /**
    * Empty {@code ByteString}.
@@ -131,7 +131,7 @@ public abstract class ByteString implements Iterable<Byte> {
    *
    * @return true if this is zero bytes long
    */
-  public boolean isEmpty() {
+  boolean isEmpty() {
     return size() == 0;
   }
 
@@ -147,7 +147,7 @@ public abstract class ByteString implements Iterable<Byte> {
    * @throws IndexOutOfBoundsException if {@code beginIndex < 0} or
    *     {@code beginIndex > size()}.
    */
-  public ByteString substring(int beginIndex) {
+  ByteString substring(int beginIndex) {
     return substring(beginIndex, size());
   }
 
@@ -161,7 +161,7 @@ public abstract class ByteString implements Iterable<Byte> {
    * @throws IndexOutOfBoundsException if {@code beginIndex < 0},
    *     {@code endIndex > size()}, or {@code beginIndex > endIndex}.
    */
-  public abstract ByteString substring(int beginIndex, int endIndex);
+  protected abstract ByteString substring(int beginIndex, int endIndex);
 
   /**
    * Tests if this bytestring starts with the specified prefix.
@@ -212,7 +212,7 @@ public abstract class ByteString implements Iterable<Byte> {
    * @param size number of bytes to copy
    * @return new {@code ByteString}
    */
-  public static ByteString copyFrom(ByteBuffer bytes, int size) {
+  private static ByteString copyFrom(ByteBuffer bytes, int size) {
     byte[] copy = new byte[size];
     bytes.get(copy);
     return new LiteralByteString(copy);
@@ -317,8 +317,8 @@ public abstract class ByteString implements Iterable<Byte> {
   }
 
   // Helper method that takes the chunk size range as a parameter.
-  public static ByteString readFrom(InputStream streamToDrain, int minChunkSize,
-      int maxChunkSize) throws IOException {
+  private static ByteString readFrom(InputStream streamToDrain, int minChunkSize,
+                                     int maxChunkSize) throws IOException {
     Collection<ByteString> results = new ArrayList<ByteString>();
 
     // copy the inbound bytes into a list of chunks; the chunk size
@@ -378,7 +378,7 @@ public abstract class ByteString implements Iterable<Byte> {
    * @param other string to concatenate
    * @return a new {@code ByteString} instance
    */
-  public ByteString concat(ByteString other) {
+  private ByteString concat(ByteString other) {
     int thisSize = size();
     int otherSize = other.size();
     if ((long) thisSize + otherSize >= Integer.MAX_VALUE) {
@@ -503,14 +503,14 @@ public abstract class ByteString implements Iterable<Byte> {
    * @throws java.nio.BufferOverflowException if the {@code target}'s
    *     remaining() space is not large enough to hold the data.
    */
-  public abstract void copyTo(ByteBuffer target);
+  protected abstract void copyTo(ByteBuffer target);
 
   /**
    * Copies bytes to a {@code byte[]}.
    *
    * @return copied bytes
    */
-  public byte[] toByteArray() {
+  byte[] toByteArray() {
     int size = size();
     byte[] result = new byte[size];
     copyToInternal(result, 0, 0, size);
@@ -524,7 +524,7 @@ public abstract class ByteString implements Iterable<Byte> {
    * @param  out  the output stream to which to write the data.
    * @throws IOException  if an I/O error occurs.
    */
-  public abstract void writeTo(OutputStream out) throws IOException;
+  protected abstract void writeTo(OutputStream out) throws IOException;
 
   /**
    * Constructs a read-only {@code java.nio.ByteBuffer} whose content
@@ -556,7 +556,7 @@ public abstract class ByteString implements Iterable<Byte> {
    * @return new string
    * @throws UnsupportedEncodingException if charset isn't recognized
    */
-  public abstract String toString(String charsetName)
+  protected abstract String toString(String charsetName)
       throws UnsupportedEncodingException;
 
   // =================================================================
@@ -816,7 +816,7 @@ public abstract class ByteString implements Iterable<Byte> {
      *
      * @return  the current size of the output stream
      */
-    public synchronized int size() {
+    synchronized int size() {
       return flushedBuffersTotalBytes + bufferPos;
     }
 

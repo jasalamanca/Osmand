@@ -15,7 +15,7 @@ public class AMapPoint implements Parcelable {
 	private String typeName;
 	private int color;
 	private ALatLon location;
-	private List<String> details = new ArrayList<>();
+	private final List<String> details = new ArrayList<>();
 
 	public AMapPoint(String id, String shortName, String fullName, String typeName, int color,
 					 ALatLon location, List<String> details) {

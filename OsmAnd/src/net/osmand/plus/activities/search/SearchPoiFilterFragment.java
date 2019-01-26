@@ -1,6 +1,3 @@
-/**
- *
- */
 package net.osmand.plus.activities.search;
 
 import android.content.Intent;
@@ -32,7 +29,6 @@ import net.osmand.osm.AbstractPoiType;
 import net.osmand.osm.PoiType;
 import net.osmand.plus.IconsCache;
 import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.search.SearchActivity.SearchActivityChild;
 import net.osmand.plus.base.OsmAndListFragment;
@@ -139,7 +135,7 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 		poiFitlersAdapter.setResult(getFilters(searchEditText == null ? "" : searchEditText.getText().toString()));
 	}
 
-	public List<Object> getFilters(String s) {
+	private List<Object> getFilters(String s) {
 		List<Object> filters = new ArrayList<Object>();
 		OsmandApplication app = getApp();
 		if (app == null) {
@@ -172,7 +168,7 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 		return filters;
 	}
 
-	public OsmandApplication getApp() {
+	private OsmandApplication getApp() {
 		FragmentActivity activity = getActivity();
 		if (activity == null) {
 			return null;
@@ -265,7 +261,7 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 			super(getActivity(), R.layout.searchpoifolder_list, list);
 		}
 
-		public void setResult(List<Object> filters) {
+		void setResult(List<Object> filters) {
 			setNotifyOnChange(false);
 			clear();
 			for (Object o : filters) {
@@ -282,8 +278,8 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 				LayoutInflater inflater = getActivity().getLayoutInflater();
 				row = inflater.inflate(R.layout.searchpoifolder_list, parent, false);
 			}
-			TextView label = (TextView) row.findViewById(R.id.folder_label);
-			ImageView icon = (ImageView) row.findViewById(R.id.folder_icon);
+			TextView label = row.findViewById(R.id.folder_label);
+			ImageView icon = row.findViewById(R.id.folder_icon);
 			Object item = getItem(position);
 			String name;
 			if (item instanceof PoiUIFilter) {

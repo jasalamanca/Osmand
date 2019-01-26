@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class TspTest {
+class TspTest {
 	public static void main(String[] args) {
 		ArrayList<LatLon> l = new ArrayList<LatLon>();
 		LatLon start = new LatLon(52.2956, 4.95);

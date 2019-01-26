@@ -62,15 +62,15 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	private static final int MAP_REFRESH_MESSAGE = OsmAndConstants.UI_HANDLER_MAP_VIEW + 4;
 	private static final int MAP_FORCE_REFRESH_MESSAGE = OsmAndConstants.UI_HANDLER_MAP_VIEW + 5;
 	private static final int BASE_REFRESH_MESSAGE = OsmAndConstants.UI_HANDLER_MAP_VIEW + 3;
-	protected final static int LOWEST_ZOOM_TO_ROTATE = 9;
+	private final static int LOWEST_ZOOM_TO_ROTATE = 9;
 	private static final int MAP_DEFAULT_COLOR = 0xffebe7e4;
 	private boolean MEASURE_FPS = false;
-	private FPSMeasurement main = new FPSMeasurement();
-	private FPSMeasurement additional = new FPSMeasurement();
+	private final FPSMeasurement main = new FPSMeasurement();
+	private final FPSMeasurement additional = new FPSMeasurement();
 	private View view;
-	private Activity activity;
+	private final Activity activity;
 	private OsmandApplication application;
-	protected OsmandSettings settings = null;
+	private OsmandSettings settings = null;
 	private CanvasColors canvasColors = null;
 	private Boolean nightMode = null;
 
@@ -98,22 +98,22 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	}
 
 	public interface OnTrackBallListener {
-		public boolean onTrackBallEvent(MotionEvent e);
+		boolean onTrackBallEvent(MotionEvent e);
 	}
 
-	public interface OnLongClickListener {
-		public boolean onLongPressEvent(PointF point);
+	interface OnLongClickListener {
+		boolean onLongPressEvent(PointF point);
 	}
 
-	public interface OnClickListener {
-		public boolean onPressEvent(PointF point);
+	interface OnClickListener {
+		boolean onPressEvent(PointF point);
 	}
 
 	public interface OnDrawMapListener {
-		public void onDrawOverMap();
+		void onDrawOverMap();
 	}
 
-	protected static final Log LOG = PlatformUtil.getLog(OsmandMapTileView.class);
+	private static final Log LOG = PlatformUtil.getLog(OsmandMapTileView.class);
 
 	private RotatedTileBox currentViewport;
 
@@ -137,25 +137,25 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 
 	private AccessibilityActionsProvider accessibilityActions;
 
-	private List<OsmandMapLayer> layers = new ArrayList<>();
+	private final List<OsmandMapLayer> layers = new ArrayList<>();
 
 	private BaseMapLayer mainLayer;
 
-	private Map<OsmandMapLayer, Float> zOrders = new HashMap<OsmandMapLayer, Float>();
+	private final Map<OsmandMapLayer, Float> zOrders = new HashMap<OsmandMapLayer, Float>();
 
 	private OnDrawMapListener onDrawMapListener;
 
 	// UI Part
 	// handler to refresh map (in ui thread - ui thread is not necessary, but msg queue is required).
-	protected Handler handler;
+    private Handler handler;
 	private Handler baseHandler;
 
 	private AnimateDraggingMapThread animatedDraggingThread;
 
-	Paint paintGrayFill;
-	Paint paintBlackFill;
-	Paint paintWhiteFill;
-	Paint paintCenter;
+	private Paint paintGrayFill;
+	private Paint paintBlackFill;
+	private Paint paintWhiteFill;
+	private Paint paintCenter;
 
 	private DisplayMetrics dm;
 	private MapRendererView mapRenderer;
@@ -186,7 +186,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	}
 
 	// ///////////////////////////// INITIALIZING UI PART ///////////////////////////////////
-	public void init(final MapActivity ctx, int w, int h) {
+    private void init(final MapActivity ctx, int w, int h) {
 		application = (OsmandApplication) ctx.getApplicationContext();
 		settings = application.getSettings();
 
@@ -708,7 +708,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		}
 	}
 
-	protected void drawMapPosition(Canvas canvas, float x, float y) {
+	private void drawMapPosition(Canvas canvas, float x, float y) {
 		canvas.drawCircle(x, y, 3 * dm.density, paintCenter);
 		canvas.drawCircle(x, y, 7 * dm.density, paintCenter);
 	}
@@ -815,7 +815,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	/**
 	 * These methods do not consider rotating
 	 */
-	protected void dragToAnimate(float fromX, float fromY, float toX, float toY, boolean notify) {
+    void dragToAnimate(float fromX, float fromY, float toX, float toY, boolean notify) {
 		float dx = (fromX - toX);
 		float dy = (fromY - toY);
 		moveTo(dx, dy);
@@ -824,7 +824,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		}
 	}
 
-	protected void rotateToAnimate(float rotate) {
+	void rotateToAnimate(float rotate) {
 		if (isMapRotateEnabled()) {
 			this.rotate = MapUtils.unifyRotationTo360(rotate);
 			currentViewport.setRotate(this.rotate);
@@ -832,7 +832,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		}
 	}
 
-	protected void setLatLonAnimate(double latitude, double longitude, boolean notify) {
+	void setLatLonAnimate(double latitude, double longitude, boolean notify) {
 		currentViewport.setLatLonCenter(latitude, longitude);
 		refreshMap();
 		if (locationListener != null && notify) {
@@ -840,7 +840,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		}
 	}
 
-	protected void setFractionalZoom(int zoom, double zoomPart, boolean notify) {
+	void setFractionalZoom(int zoom, double zoomPart, boolean notify) {
 		currentViewport.setZoomAndAnimation(zoom, 0, zoomPart);
 		refreshMap();
 		if (locationListener != null && notify) {
@@ -849,7 +849,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	}
 
 	// for internal usage
-	protected void zoomToAnimate(int zoom, double zoomToAnimate, boolean notify) {
+    void zoomToAnimate(int zoom, double zoomToAnimate, boolean notify) {
 		if (mainLayer != null && getMaxZoom() >= zoom && getMinZoom() <= zoom) {
 			currentViewport.setZoomAndAnimation(zoom, zoomToAnimate);
 			currentViewport.setRotate(zoom > LOWEST_ZOOM_TO_ROTATE ? rotate : 0);
@@ -860,7 +860,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		}
 	}
 
-	public void moveTo(float dx, float dy) {
+	private void moveTo(float dx, float dy) {
 		final QuadPoint cp = currentViewport.getCenterPixelPoint();
 		final LatLon latlon = currentViewport.getLatLonFromPixel(cp.x + dx, cp.y + dy);
 		currentViewport.setLatLonCenter(latlon.getLatitude(), latlon.getLongitude());
@@ -1031,7 +1031,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		return animatedDraggingThread;
 	}
 
-	public void showMessage(final String msg) {
+	private void showMessage(final String msg) {
 		handler.post(new Runnable() {
 			@Override
 			public void run() {

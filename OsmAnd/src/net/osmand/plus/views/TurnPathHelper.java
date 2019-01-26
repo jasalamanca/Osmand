@@ -29,30 +29,30 @@ public class TurnPathHelper {
 	
 	private static class TurnVariables {
 		
-		float radEndOfArrow = 44;
-		float radInnerCircle = 10;
-		float radOuterCircle = radInnerCircle + 8;
+		final float radEndOfArrow = 44;
+		final float radInnerCircle = 10;
+		final float radOuterCircle = radInnerCircle + 8;
 	
-		float radBottom = radOuterCircle + 10;
-		float radStepInter = radOuterCircle + 6;
-		float radArrowTriangle1 = radOuterCircle + 7;
+		final float radBottom = radOuterCircle + 10;
+		final float radStepInter = radOuterCircle + 6;
+		final float radArrowTriangle1 = radOuterCircle + 7;
 	
-		float widthStepIn = 8;
-		float widthStepInter = 6;
+		final float widthStepIn = 8;
+		final float widthStepInter = 6;
 		float widthArrow = 22;
-		float radArrowTriangle2;
-		private double dfL;
-		private double dfAr2;
-		private double dfStepInter;
-		private double dfAr;
-		private double dfOut;
-		private double dfStepOut;
-		private double dfIn;
-		private double minDelta;
+		final float radArrowTriangle2;
+		private final double dfL;
+		private final double dfAr2;
+		private final double dfStepInter;
+		private final double dfAr;
+		private final double dfOut;
+		private final double dfStepOut;
+		private final double dfIn;
+		private final double minDelta;
 		private double rot;
 		private float cx;
 		private float cy;
-		private float scaleTriangle;
+		private final float scaleTriangle;
 		
 		private TurnVariables(boolean leftSide, float turnAngle, int out, int wa, int ha, float scaleTriangle) {
 			this.scaleTriangle = scaleTriangle;
@@ -96,23 +96,23 @@ public class TurnPathHelper {
 			return getY(angle, radius) + cy;
 		}
 		
-		public float getTriangle2X() {
+		float getTriangle2X() {
 			return getProjX(rot + dfAr, radArrowTriangle1);
 		}
 		
-		public float getTriangle1X() {
+		float getTriangle1X() {
 			return getProjX(rot - dfAr, radArrowTriangle1);
 		}
 		
-		public float getTriangle2Y() {
+		float getTriangle2Y() {
 			return getProjY(rot + dfAr, radArrowTriangle1);
 		}
 		
-		public float getTriangle1Y() {
+		float getTriangle1Y() {
 			return getProjY(rot - dfAr, radArrowTriangle1);
 		}
 
-		public void drawTriangle(Path pathForTurn) {
+		void drawTriangle(Path pathForTurn) {
 			// up from arc
 			arcLineTo(pathForTurn, rot - dfAr, cx, cy, radArrowTriangle1);
 			// left triangle
@@ -245,8 +245,8 @@ public class TurnPathHelper {
 			}
 			RectF innerOval = new RectF(centerCircleX - r, centerCircleY - r, centerCircleX + r, centerCircleY + r);
 			pathForTurn.moveTo(centerCircleX + b * tv.widthStepIn / 2, ha - lowMargin);
-			pathForTurn.lineTo(centerCircleX + b * tv.widthStepIn / 2, (float) (centerCircleY +
-					2 * r));
+			pathForTurn.lineTo(centerCircleX + b * tv.widthStepIn / 2, centerCircleY +
+					2 * r);
 //			pathForTurn.arcTo(innerOval, -90 - b * 90, b * 45);
 			tv.drawTriangle(pathForTurn);
 //			pathForTurn.lineTo(centerCircleX - b * tv.widthStepIn / 2, (float) (centerCircleY - 2 *r));
@@ -438,8 +438,8 @@ public class TurnPathHelper {
 		float Y2 = getProjY(angle2, cx, cy, radius2);
 		float l2 = (float) Math.sqrt((X-X2)*(X-X2) + (Y-Y2)*(Y-Y2));
 		float l0 = (float) Math.sqrt((X-X0)*(X-X0) + (Y-Y0)*(Y-Y0));
-		float proc2 = (float) (dl / l2);
-		float proc = (float) (dl / l0);
+		float proc2 = dl / l2;
+		float proc = dl / l0;
 		pathForTurn.lineTo(X0 * proc + X * (1 - proc), Y0 * proc + Y * (1 - proc));
 		pathForTurn.quadTo(X, Y, X2 * proc2 + X * (1 - proc2), Y2 * proc2 + Y * (1 - proc2));
 	}
@@ -472,13 +472,13 @@ public class TurnPathHelper {
 	}
 	
 	public static class RouteDrawable extends Drawable {
-		Paint paintRouteDirection;
-		Paint paintRouteDirectionOutlay;
-		Path p = new Path();
-		Path dp = new Path();
-		Path pOutlay = new Path();
-		Path dpOutlay = new Path();
-		private boolean mini;
+		final Paint paintRouteDirection;
+		final Paint paintRouteDirectionOutlay;
+		final Path p = new Path();
+		final Path dp = new Path();
+		final Path pOutlay = new Path();
+		final Path dpOutlay = new Path();
+		private final boolean mini;
 		
 		public RouteDrawable(Resources resources, boolean mini){
 			this.mini = mini;

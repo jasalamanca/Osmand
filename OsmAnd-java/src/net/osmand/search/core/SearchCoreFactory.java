@@ -55,35 +55,35 @@ import gnu.trove.set.hash.TLongHashSet;
 
 public class SearchCoreFactory {
 
-	public static final int MAX_DEFAULT_SEARCH_RADIUS = 7;
+	private static final int MAX_DEFAULT_SEARCH_RADIUS = 7;
 
 	//////////////// CONSTANTS //////////
-	public static final int SEARCH_REGION_API_PRIORITY = 300;
-	public static final int SEARCH_REGION_OBJECT_PRIORITY = 1000;
+	private static final int SEARCH_REGION_API_PRIORITY = 300;
+	private static final int SEARCH_REGION_OBJECT_PRIORITY = 1000;
 
 	// context less
-	public static final int SEARCH_LOCATION_PRIORITY = 0;
+	private static final int SEARCH_LOCATION_PRIORITY = 0;
 	public static final int SEARCH_AMENITY_TYPE_PRIORITY = 100;
-	public static final int SEARCH_AMENITY_TYPE_API_PRIORITY = 100;
+	private static final int SEARCH_AMENITY_TYPE_API_PRIORITY = 100;
 
 	// context
-	public static final int SEARCH_STREET_BY_CITY_PRIORITY = 200;
-	public static final int SEARCH_BUILDING_BY_CITY_PRIORITY = 300;
-	public static final int SEARCH_BUILDING_BY_STREET_PRIORITY = 100;
-	public static final int SEARCH_AMENITY_BY_TYPE_PRIORITY = 300;
+	private static final int SEARCH_STREET_BY_CITY_PRIORITY = 200;
+	private static final int SEARCH_BUILDING_BY_CITY_PRIORITY = 300;
+	private static final int SEARCH_BUILDING_BY_STREET_PRIORITY = 100;
+	private static final int SEARCH_AMENITY_BY_TYPE_PRIORITY = 300;
 
 	// context less (slow)
-	public static final int SEARCH_ADDRESS_BY_NAME_API_PRIORITY = 500;
-	public static final int SEARCH_ADDRESS_BY_NAME_API_PRIORITY_RADIUS2 = 500;
-	public static final int SEARCH_ADDRESS_BY_NAME_PRIORITY = 500;
-	public static final int SEARCH_ADDRESS_BY_NAME_PRIORITY_RADIUS2 = 500;
+	private static final int SEARCH_ADDRESS_BY_NAME_API_PRIORITY = 500;
+	private static final int SEARCH_ADDRESS_BY_NAME_API_PRIORITY_RADIUS2 = 500;
+	private static final int SEARCH_ADDRESS_BY_NAME_PRIORITY = 500;
+	private static final int SEARCH_ADDRESS_BY_NAME_PRIORITY_RADIUS2 = 500;
 
 	// context less (slower)
-	public static final int SEARCH_AMENITY_BY_NAME_PRIORITY = 700;
+	private static final int SEARCH_AMENITY_BY_NAME_PRIORITY = 700;
 	public static final int SEARCH_AMENITY_BY_NAME_API_PRIORITY_IF_POI_TYPE = 700;
-	public static final int SEARCH_AMENITY_BY_NAME_API_PRIORITY_IF_3_CHAR = 700;
-	protected static final double SEARCH_AMENITY_BY_NAME_CITY_PRIORITY_DISTANCE = 0.001;
-	protected static final double SEARCH_AMENITY_BY_NAME_TOWN_PRIORITY_DISTANCE = 0.005;
+	private static final int SEARCH_AMENITY_BY_NAME_API_PRIORITY_IF_3_CHAR = 700;
+	private static final double SEARCH_AMENITY_BY_NAME_CITY_PRIORITY_DISTANCE = 0.001;
+	private static final double SEARCH_AMENITY_BY_NAME_TOWN_PRIORITY_DISTANCE = 0.005;
 
 	public static abstract class SearchBaseAPI implements SearchCoreAPI {
 
@@ -131,8 +131,8 @@ public class SearchCoreFactory {
 			return phrase.getRadiusLevel() < MAX_DEFAULT_SEARCH_RADIUS;
 		}
 
-		protected void subSearchApiOrPublish(SearchPhrase phrase,
-											 SearchResultMatcher resultMatcher, SearchResult res, SearchBaseAPI api)
+		void subSearchApiOrPublish(SearchPhrase phrase,
+                                   SearchResultMatcher resultMatcher, SearchResult res, SearchBaseAPI api)
 				throws IOException {
 			phrase.countUnknownWordsMatch(res);
 			int cnt = resultMatcher.getCount();
@@ -165,7 +165,7 @@ public class SearchCoreFactory {
 		}
 
 		@Override
-		public boolean search(SearchPhrase phrase, SearchResultMatcher resultMatcher) throws IOException {
+		public boolean search(SearchPhrase phrase, SearchResultMatcher resultMatcher) {
 			for (BinaryMapIndexReader bmir : phrase.getOfflineIndexes()) {
 				if (bmir.getRegionCenter() != null) {
 					SearchResult sr = new SearchResult(phrase);
@@ -220,12 +220,12 @@ public class SearchCoreFactory {
 		private static final int DEFAULT_ADDRESS_BBOX_RADIUS = 100 * 1000;
 		private static final int LIMIT = 10000;
 
-		private Map<BinaryMapIndexReader, List<City>> townCities = new LinkedHashMap<>();
-		private QuadTree<City> townCitiesQR = new QuadTree<City>(new QuadRect(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE),
+		private final Map<BinaryMapIndexReader, List<City>> townCities = new LinkedHashMap<>();
+		private final QuadTree<City> townCitiesQR = new QuadTree<City>(new QuadRect(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE),
 				8, 0.55f);
 		private List<City> resArray = new ArrayList<>();
-		private SearchStreetByCityAPI cityApi;
-		private SearchBuildingAndIntersectionsByStreetAPI streetsApi;
+		private final SearchStreetByCityAPI cityApi;
+		private final SearchBuildingAndIntersectionsByStreetAPI streetsApi;
 
 		public SearchAddressByNameAPI(SearchBuildingAndIntersectionsByStreetAPI streetsApi,
 									  SearchStreetByCityAPI cityApi) {
@@ -581,9 +581,9 @@ public class SearchCoreFactory {
 		private Map<String, PoiType> translatedNames = new LinkedHashMap<>();
 		private List<PoiFilter> topVisibleFilters;
 		private List<PoiCategory> categories;
-		private List<CustomSearchPoiFilter> customPoiFilters = new ArrayList<>();
-		private TIntArrayList customPoiFiltersPriorites = new TIntArrayList();
-		private MapPoiTypes types;
+		private final List<CustomSearchPoiFilter> customPoiFilters = new ArrayList<>();
+		private final TIntArrayList customPoiFiltersPriorites = new TIntArrayList();
+		private final MapPoiTypes types;
 
 		public SearchAmenityTypesAPI(MapPoiTypes types) {
 			super(ObjectType.POI_TYPE);
@@ -601,7 +601,7 @@ public class SearchCoreFactory {
 		}
 
 		@Override
-		public boolean search(SearchPhrase phrase, SearchResultMatcher resultMatcher) throws IOException {
+		public boolean search(SearchPhrase phrase, SearchResultMatcher resultMatcher) {
 			if (translatedNames.isEmpty()) {
 				translatedNames = types.getAllTranslatedNames(false);
 				topVisibleFilters = types.getTopVisibleFilters();
@@ -686,7 +686,7 @@ public class SearchCoreFactory {
 
 	public static class SearchAmenityByTypeAPI extends SearchBaseAPI {
 
-		private MapPoiTypes types;
+		private final MapPoiTypes types;
 
 		public SearchAmenityByTypeAPI(MapPoiTypes types) {
 			super(ObjectType.POI);
@@ -698,12 +698,12 @@ public class SearchCoreFactory {
 			return getSearchPriority(phrase) != -1 && super.isSearchMoreAvailable(phrase);
 		}
 
-		private Map<PoiCategory, LinkedHashSet<String>> acceptedTypes = new LinkedHashMap<PoiCategory,
+		private final Map<PoiCategory, LinkedHashSet<String>> acceptedTypes = new LinkedHashMap<PoiCategory,
 				LinkedHashSet<String>>();
-		private Map<String, PoiType> poiAdditionals = new HashMap<String, PoiType>();
-		public void updateTypesToAccept(AbstractPoiType pt) {
+		private final Map<String, PoiType> poiAdditionals = new HashMap<String, PoiType>();
+		void updateTypesToAccept(AbstractPoiType pt) {
 			pt.putTypes(acceptedTypes);
-			if (pt instanceof PoiType && ((PoiType) pt).isAdditional() && ((PoiType) pt).getParentType() != null) {
+			if (pt instanceof PoiType && pt.isAdditional() && ((PoiType) pt).getParentType() != null) {
 				fillPoiAdditionals(((PoiType) pt).getParentType());
 			} else {
 				fillPoiAdditionals(pt);
@@ -849,7 +849,7 @@ public class SearchCoreFactory {
 
 	public static class SearchStreetByCityAPI extends SearchBaseAPI {
 
-		private SearchBaseAPI streetsAPI;
+		private final SearchBaseAPI streetsAPI;
 		public SearchStreetByCityAPI(SearchBuildingAndIntersectionsByStreetAPI streetsAPI) {
 			super(ObjectType.HOUSE, ObjectType.STREET, ObjectType.STREET_INTERSECTION);
 			this.streetsAPI = streetsAPI;
@@ -861,7 +861,7 @@ public class SearchCoreFactory {
 			return phrase.getRadiusLevel() == 1 && getSearchPriority(phrase) != -1;
 		}
 
-		private static int LIMIT = 10000;
+		private static final int LIMIT = 10000;
 		@Override
 		public boolean search(SearchPhrase phrase, SearchResultMatcher resultMatcher) throws IOException {
 			SearchWord sw = phrase.getLastSelectedWord();
@@ -920,7 +920,7 @@ public class SearchCoreFactory {
 
 	}
 
-	public static boolean isLastWordCityGroup(SearchPhrase p ) {
+	private static boolean isLastWordCityGroup(SearchPhrase p) {
 		return p.isLastWord(ObjectType.CITY) || p.isLastWord(ObjectType.POSTCODE) ||
 				p.isLastWord(ObjectType.VILLAGE);
 	}

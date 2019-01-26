@@ -10,9 +10,9 @@ import java.util.Set;
 
 public class PoiCategory extends PoiFilter {
 
-	private List<PoiFilter> poiFilters = new ArrayList<PoiFilter>();
+	private final List<PoiFilter> poiFilters = new ArrayList<PoiFilter>();
 	private Set<PoiType> basemapPoi = null;
-	private int regId;
+	private final int regId;
 	private String defaultTag;
 
 	public PoiCategory(MapPoiTypes registry, String keyName, int regId) {

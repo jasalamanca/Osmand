@@ -35,17 +35,17 @@ public class RendererRegistry {
 	private final static Log log = PlatformUtil.getLog(RendererRegistry.class);
 	
 	public final static String DEFAULT_RENDER = "OsmAnd";  //$NON-NLS-1$
-	public final static String DEFAULT_RENDER_FILE_PATH = "default.render.xml";
-	public final static String TOURING_VIEW = "Touring view (contrast and details)";  //$NON-NLS-1$
-	public final static String TOPO_RENDER = "Topo";  //$NON-NLS-1$
+	private final static String DEFAULT_RENDER_FILE_PATH = "default.render.xml";
+	private final static String TOURING_VIEW = "Touring view (contrast and details)";  //$NON-NLS-1$
+	private final static String TOPO_RENDER = "Topo";  //$NON-NLS-1$
 
 	private RenderingRulesStorage defaultRender = null;
 	private RenderingRulesStorage currentSelectedRender = null;
 	
 	private Map<String, File> externalRenderers = new LinkedHashMap<String, File>();
-	private Map<String, String> internalRenderers = new LinkedHashMap<String, String>();
+	private final Map<String, String> internalRenderers = new LinkedHashMap<String, String>();
 	
-	private Map<String, RenderingRulesStorage> renderers = new LinkedHashMap<String, RenderingRulesStorage>();
+	private final Map<String, RenderingRulesStorage> renderers = new LinkedHashMap<String, RenderingRulesStorage>();
 
     public interface IRendererLoadedEventListener {
         void onRendererLoaded(String name, RenderingRulesStorage rules, InputStream source);
@@ -53,7 +53,7 @@ public class RendererRegistry {
 
     private IRendererLoadedEventListener rendererLoadedEventListener;
 
-	private OsmandApplication app;
+	private final OsmandApplication app;
 	
 	public RendererRegistry(OsmandApplication app){
 		this.app = app;

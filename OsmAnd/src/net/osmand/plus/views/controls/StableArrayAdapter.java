@@ -9,11 +9,11 @@ import java.util.List;
 
 public class StableArrayAdapter extends ArrayAdapter<Object> {
 
-	final int INVALID_ID = -1;
+	private final int INVALID_ID = -1;
 
-	List<Object> objects;
-	List<Object> activeObjects;
-	HashMap<Object, Integer> mIdMap = new HashMap<>();
+	private List<Object> objects;
+	private List<Object> activeObjects;
+	private HashMap<Object, Integer> mIdMap = new HashMap<>();
 	protected List<Drawable> dividers;
 
 	public StableArrayAdapter(Context context, int textViewResourceId, int titleId,
@@ -57,7 +57,7 @@ public class StableArrayAdapter extends ArrayAdapter<Object> {
 		buildDividers();
 	}
 
-	public void buildDividers() {
+	protected void buildDividers() {
 	}
 
 	@Override

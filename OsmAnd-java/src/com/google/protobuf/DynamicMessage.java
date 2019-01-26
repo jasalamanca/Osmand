@@ -125,7 +125,7 @@ public final class DynamicMessage extends AbstractMessage {
   }
 
   /** Construct a {@link Message.Builder} for the given type. */
-  public static Builder newBuilder(Descriptor type) {
+  private static Builder newBuilder(Descriptor type) {
     return new Builder(type);
   }
 

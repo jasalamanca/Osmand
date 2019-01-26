@@ -29,10 +29,10 @@ public class MapTileDownloader {
 		 * once method is called
 		 * (in order to not create a collection of request & reduce calling times)
 		 */
-		public void tileDownloaded();
+        void tileDownloaded();
 	}
 
-	public MapTileDownloader() {
+	private MapTileDownloader() {
 	}
 
 	public void addDownloaderCallback(IMapDownloaderCallback callback) {

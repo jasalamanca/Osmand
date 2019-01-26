@@ -19,17 +19,17 @@ import android.view.View;
  * @since 5:00 PM - 1/27/14
  */
 public class IconPopupMenu implements MenuBuilder.Callback, MenuPresenter.Callback {
-	private Context mContext;
-	private MenuBuilder mMenu;
-	private View mAnchor;
-	private MenuPopupHelper mPopup;
+	private final Context mContext;
+	private final MenuBuilder mMenu;
+	private final View mAnchor;
+	private final MenuPopupHelper mPopup;
 	private OnMenuItemClickListener mMenuItemClickListener;
 	private OnDismissListener mDismissListener;
 
 	/**
 	 * Callback interface used to notify the application that the menu has closed.
 	 */
-	public interface OnDismissListener {
+    interface OnDismissListener {
 		/**
 		 * Called when the associated menu has been dismissed.
 		 *

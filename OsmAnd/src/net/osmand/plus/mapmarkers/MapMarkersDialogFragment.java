@@ -45,7 +45,7 @@ import static net.osmand.plus.mapmarkers.OptionsBottomSheetDialogFragment.HISTOR
 
 public class MapMarkersDialogFragment extends android.support.v4.app.DialogFragment {
 
-	public static final String TAG = "MapMarkersDialogFragment";
+	private static final String TAG = "MapMarkersDialogFragment";
 
 	public static final String OPEN_MAP_MARKERS_GROUPS = "open_map_markers_groups";
 
@@ -143,7 +143,7 @@ public class MapMarkersDialogFragment extends android.support.v4.app.DialogFragm
 
 		setOrderByMode(getMyApplication().getSettings().MAP_MARKERS_ORDER_BY_MODE.get());
 
-		Toolbar toolbar = (Toolbar) mainView.findViewById(R.id.map_markers_toolbar);
+		Toolbar toolbar = mainView.findViewById(R.id.map_markers_toolbar);
 		toolbar.setNavigationIcon(getMyApplication().getIconsCache().getIcon(R.drawable.ic_arrow_back));
 		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
 			@Override
@@ -410,7 +410,7 @@ public class MapMarkersDialogFragment extends android.support.v4.app.DialogFragm
 								}
 							});
 					View snackBarView = snackbar.getView();
-					TextView tv = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_action);
+					TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
 					tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
 					snackbar.show();
 				}
@@ -457,7 +457,7 @@ public class MapMarkersDialogFragment extends android.support.v4.app.DialogFragm
 							}
 						});
 				View snackBarView = snackbar.getView();
-				TextView tv = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_action);
+				TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
 				tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
 				snackbar.show();
 			}

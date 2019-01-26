@@ -20,7 +20,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Random;
 
-public class DownloadTracker {
+class DownloadTracker {
 	private static final Log log = PlatformUtil.getLog(DownloadTracker.class);
 
 	private Map<String, String> getCustomVars(OsmandApplication ctx) {
@@ -40,7 +40,7 @@ public class DownloadTracker {
 		return (new Random(System.currentTimeMillis()).nextInt(100000000) + 100000000) + "";
 	}
 
-	static final String analyticsVersion = "4.3"; // Analytics version - AnalyticsVersion
+	private static final String analyticsVersion = "4.3"; // Analytics version - AnalyticsVersion
 
 	public void trackEvent(OsmandApplication a,
 			String category, String action, String label, int value, String trackingAcount) {

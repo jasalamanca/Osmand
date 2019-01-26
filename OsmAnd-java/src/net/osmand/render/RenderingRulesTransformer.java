@@ -21,7 +21,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class RenderingRulesTransformer {
+class RenderingRulesTransformer {
 
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, TransformerException {
 		if(args.length == 0) {
@@ -43,9 +43,9 @@ public class RenderingRulesTransformer {
 	}
 	
 
-	static Map<String, Element> patterns = new HashMap<String, Element>(); 
+	private static final Map<String, Element> patterns = new HashMap<String, Element>();
 
-	public static void transform(Document document) {
+	private static void transform(Document document) {
 //		collectPatterns(document);
 //		applyPatterns(document);
 //		combineAllApplyTags(document);
@@ -120,7 +120,7 @@ public class RenderingRulesTransformer {
 	}
 
 
-	protected static void copyAndReplaceElement(Element oldElement, Element newElement) {
+	private static void copyAndReplaceElement(Element oldElement, Element newElement) {
 		while(oldElement.getChildNodes().getLength() > 0) {
 			newElement.appendChild(oldElement.getChildNodes().item(0));
 		}
@@ -129,6 +129,6 @@ public class RenderingRulesTransformer {
 			Node ns = attrs.item(i);
 			newElement.setAttribute(ns.getNodeName(), ns.getNodeValue());
 		}
-		((Element)oldElement.getParentNode()).replaceChild(newElement, oldElement);
+		oldElement.getParentNode().replaceChild(newElement, oldElement);
 	}
 }

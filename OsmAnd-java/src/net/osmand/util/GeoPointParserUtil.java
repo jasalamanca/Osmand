@@ -32,7 +32,7 @@ public class GeoPointParserUtil {
 			Map<String, String> map = getQueryParameters(uri);
 			System.out.print(s + " map: " + map.size() + "...");
 			if (map.size() != 0) {
-				System.out.println("");
+				System.out.println();
 				throw new RuntimeException("Map should be 0 but is " + map.size());
 			}
 			System.out.println(" Passed!");
@@ -756,8 +756,8 @@ public class GeoPointParserUtil {
 	}
 
 	private static boolean areCloseEnough(double a, double b, long howClose) {
-		long aRounded = (long) Math.round(a * Math.pow(10, howClose));
-		long bRounded = (long) Math.round(b * Math.pow(10, howClose));
+		long aRounded = Math.round(a * Math.pow(10, howClose));
+		long bRounded = Math.round(b * Math.pow(10, howClose));
 		return aRounded == bRounded;
 	}
 
@@ -1389,7 +1389,7 @@ public class GeoPointParserUtil {
 	}
 
 	public static class GeoParsedPoint {
-		public static final int NO_ZOOM = -1;
+		static final int NO_ZOOM = -1;
 
 		private double lat = 0;
 		private double lon = 0;
@@ -1399,14 +1399,14 @@ public class GeoPointParserUtil {
 		private boolean geoPoint;
 		private boolean geoAddress;
 
-		public GeoParsedPoint(double lat, double lon) {
+		GeoParsedPoint(double lat, double lon) {
 			super();
 			this.lat = lat;
 			this.lon = lon;
 			this.geoPoint = true;
 		}
 
-		public GeoParsedPoint(double lat, double lon, String label) {
+		GeoParsedPoint(double lat, double lon, String label) {
 			this(lat, lon);
 			if (label != null)
 				this.label = label.replaceAll("\\+", " ");
@@ -1417,17 +1417,17 @@ public class GeoPointParserUtil {
 			this.zoom = zoom;
 		}
 
-		public GeoParsedPoint(double lat, double lon, int zoom, String label) {
+		GeoParsedPoint(double lat, double lon, int zoom, String label) {
 			this(lat, lon, label);
 			this.zoom = zoom;
 		}
 
-		public GeoParsedPoint(String latString, String lonString, String zoomString, String label) throws NumberFormatException {
+		GeoParsedPoint(String latString, String lonString, String zoomString, String label) throws NumberFormatException {
 			this(latString, lonString, zoomString);
 			this.label = label;
 		}
 
-		public GeoParsedPoint(String latString, String lonString, String zoomString) throws NumberFormatException {
+		GeoParsedPoint(String latString, String lonString, String zoomString) throws NumberFormatException {
 			this(parseLat(latString), parseLon(lonString));
 			this.zoom = parseZoom(zoomString);
 		}
@@ -1450,7 +1450,7 @@ public class GeoPointParserUtil {
 			return Double.valueOf(latString);
 		}
 
-		public GeoParsedPoint(String latString, String lonString) throws NumberFormatException {
+		GeoParsedPoint(String latString, String lonString) throws NumberFormatException {
 			this(parseLat(latString), parseLon(lonString));
 			this.zoom = NO_ZOOM;
 		}
@@ -1458,7 +1458,7 @@ public class GeoPointParserUtil {
 		/**
 		 * Accepts a plain {@code String}, not URL-encoded
 		 */
-		public GeoParsedPoint(String query) {
+        GeoParsedPoint(String query) {
 			super();
 			this.query = query;
 			this.geoAddress = true;
@@ -1503,7 +1503,7 @@ public class GeoPointParserUtil {
 		 * Generates a URI string according to https://tools.ietf.org/html/rfc5870 and
 		 * https://developer.android.com/guide/components/intents-common.html#Maps
 		 */
-		public String getGeoUriString() {
+        String getGeoUriString() {
 			String uriString;
 			if (isGeoPoint()) {
 				String latlon = formatDouble(lat) + "," + formatDouble(lon);

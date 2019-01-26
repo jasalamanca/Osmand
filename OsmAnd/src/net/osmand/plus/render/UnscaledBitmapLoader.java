@@ -8,7 +8,7 @@ import android.util.DisplayMetrics;
 
 public abstract class UnscaledBitmapLoader {
 
-    public static final UnscaledBitmapLoader instance;
+    private static final UnscaledBitmapLoader instance;
 
     static {
         instance = Integer.parseInt(Build.VERSION.SDK) < 4 ? new Old() : new New();

@@ -63,7 +63,7 @@ public class OptionsBottomSheetDialogFragment extends BottomSheetDialogFragment 
 		((ImageView) mainView.findViewById(R.id.sort_by_icon)).setImageDrawable(getContentIcon(R.drawable.ic_sort_waypoint_dark));
 		OsmandSettings.MapMarkersMode mode = getMyApplication().getSettings().MAP_MARKERS_MODE.get();
 		int displayedCount = getMyApplication().getSettings().DISPLAYED_MARKERS_WIDGETS_COUNT.get();
-		ImageView showDirectionIcon = (ImageView) mainView.findViewById(R.id.show_direction_icon);
+		ImageView showDirectionIcon = mainView.findViewById(R.id.show_direction_icon);
 		int imageResId = 0;
 		switch (mode) {
 			case TOOLBAR:

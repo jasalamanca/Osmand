@@ -42,16 +42,16 @@ import java.util.List;
 import java.util.Locale;
 
 public class SearchActivity extends TabActivity implements OsmAndLocationListener {
-	public static final int POI_TAB_INDEX = 0;
-	public static final int ADDRESS_TAB_INDEX = 1;
-	public static final int LOCATION_TAB_INDEX = 2;
-	public static final int FAVORITES_TAB_INDEX = 3;
-	public static final int HISTORY_TAB_INDEX = 4;
+	private static final int POI_TAB_INDEX = 0;
+	private static final int ADDRESS_TAB_INDEX = 1;
+	private static final int LOCATION_TAB_INDEX = 2;
+	private static final int FAVORITES_TAB_INDEX = 3;
+	private static final int HISTORY_TAB_INDEX = 4;
 	
-	protected static final int POSITION_CURRENT_LOCATION = 1;
-	protected static final int POSITION_LAST_MAP_VIEW = 2;
-	protected static final int POSITION_FAVORITES = 3;
-	protected static final int POSITION_ADDRESS = 4;
+	private static final int POSITION_CURRENT_LOCATION = 1;
+	private static final int POSITION_LAST_MAP_VIEW = 2;
+	private static final int POSITION_FAVORITES = 3;
+	private static final int POSITION_ADDRESS = 4;
 	
 	private static final int REQUEST_FAVORITE_SELECT = 1;
 	private static final int REQUEST_ADDRESS_SELECT = 2;
@@ -59,7 +59,7 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 	public static final String SEARCH_NEARBY = "net.osmand.search_nearby"; //$NON-NLS-1$
 	public static final String SEARCH_LAT = "net.osmand.search_lat"; //$NON-NLS-1$
 	public static final String SEARCH_LON = "net.osmand.search_lon"; //$NON-NLS-1$
-	public static final String SHOW_ONLY_ONE_TAB = "SHOW_ONLY_ONE_TAB"; //$NON-NLS-1$
+	private static final String SHOW_ONLY_ONE_TAB = "SHOW_ONLY_ONE_TAB"; //$NON-NLS-1$
 
 	Button searchPOIButton;
 	private LatLon searchPoint = null;
@@ -69,16 +69,15 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 	private static boolean searchOnLine = false;
 	private ArrayAdapter<String> spinnerAdapter;
 	private OsmandSettings settings;
-	List<WeakReference<Fragment>> fragList = new ArrayList<WeakReference<Fragment>>();
+	private final List<WeakReference<Fragment>> fragList = new ArrayList<WeakReference<Fragment>>();
 	private boolean showOnlyOneTab;
 	
 	private AccessibilityAssistant accessibilityAssistant;
 	private NavigationInfo navigationInfo;
-	private View spinnerView;
-	
+
 	public interface SearchActivityChild {
 		
-		public void locationUpdate(LatLon l);
+		void locationUpdate(LatLon l);
 	}
 
 	@Override
@@ -97,8 +96,8 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 		getSupportActionBar().setElevation(0);
 		Integer tab = settings.SEARCH_TAB.get();
 		if (!showOnlyOneTab) {
-			ViewPager mViewPager = (ViewPager) findViewById(R.id.pager);
-			PagerSlidingTabStrip mSlidingTabLayout = (PagerSlidingTabStrip) findViewById(R.id.sliding_tabs);
+			ViewPager mViewPager = findViewById(R.id.pager);
+			PagerSlidingTabStrip mSlidingTabLayout = findViewById(R.id.sliding_tabs);
 			List<TabItem> mTabs = new ArrayList<TabItem>();
 			mTabs.add(getTabIndicator(R.string.poi, getFragment(POI_TAB_INDEX)));
 			mTabs.add(getTabIndicator(R.string.address, getFragment(ADDRESS_TAB_INDEX)));
@@ -168,7 +167,7 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 		}
     }
 
-	protected Class<?> getFragment(int tab) {
+	private Class<?> getFragment(int tab) {
 		if(tab == POI_TAB_INDEX) {
 			return SearchPoiFilterFragment.class;
 		} else if(tab == ADDRESS_TAB_INDEX) {
@@ -222,7 +221,7 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 					}
 				};
 		spinnerAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-		spinnerView = LayoutInflater.from(spinnerAdapter.getContext()).inflate(R.layout.spinner_item, null);
+		View spinnerView = LayoutInflater.from(spinnerAdapter.getContext()).inflate(R.layout.spinner_item, null);
         getSupportActionBar().setListNavigationCallbacks(spinnerAdapter, new OnNavigationListener() {
 			
 			@Override
@@ -292,7 +291,7 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 	}
 	
 	public Toolbar getClearToolbar(boolean visible) {
-		final Toolbar tb = (Toolbar) findViewById(R.id.bottomControls);
+		final Toolbar tb = findViewById(R.id.bottomControls);
 		tb.setTitle(null);
 		tb.getMenu().clear();
 		tb.setVisibility(visible? View.VISIBLE : View.GONE);
@@ -311,7 +310,7 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 //			}
 		}
 	}
-	public void startSearchCurrentLocation(){
+	private void startSearchCurrentLocation(){
 		getLocationProvider().resumeAllUpdates();
 		getLocationProvider().addLocationListener(this);
 		updateSearchPoint(null,
@@ -322,7 +321,7 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 		return ((OsmandApplication) getApplication()).getLocationProvider();
 	}
 	
-	public void endSearchCurrentLocation(){
+	private void endSearchCurrentLocation(){
 		getLocationProvider().pauseAllUpdates();
 		getLocationProvider().removeLocationListener(this);
 	}
@@ -332,7 +331,7 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 		super.onResume();
 		if (!showOnlyOneTab) {
 			Integer tab = settings.SEARCH_TAB.get();
-			ViewPager mViewPager = (ViewPager) findViewById(R.id.pager);
+			ViewPager mViewPager = findViewById(R.id.pager);
 			mViewPager.setCurrentItem(Math.min(tab, HISTORY_TAB_INDEX));
 		}
 	}
@@ -352,7 +351,7 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 	    fragList.add(new WeakReference<Fragment>(fragment));
 	}
 	
-	public void updateSearchPoint(LatLon searchPoint, String message, boolean showLoc){
+	private void updateSearchPoint(LatLon searchPoint, String message, boolean showLoc){
 		String oldState = spinnerAdapter.getItem(0);
                 String newState = message;
 		if(showLoc && searchPoint != null){
@@ -395,7 +394,7 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 		setAddressSpecContent();
 	}
 	
-	public void setAddressSpecContent() {
+	private void setAddressSpecContent() {
 		Intent intent = getIntent();
 		finish();
 		startActivity(intent);

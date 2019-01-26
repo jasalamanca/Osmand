@@ -19,7 +19,7 @@ import java.util.Set;
 public class OpenstreetmapsDbHelper extends SQLiteOpenHelper {
 
 	private static final int DATABASE_VERSION = 5;
-	public static final String OPENSTREETMAP_DB_NAME = "openstreetmap"; //$NON-NLS-1$
+	private static final String OPENSTREETMAP_DB_NAME = "openstreetmap"; //$NON-NLS-1$
 	private static final String OPENSTREETMAP_TABLE_NAME = "openstreetmaptable"; //$NON-NLS-1$
 	private static final String OPENSTREETMAP_COL_ID = "id"; //$NON-NLS-1$
 	private static final String OPENSTREETMAP_COL_LAT= "lat"; //$NON-NLS-1$
@@ -33,7 +33,7 @@ public class OpenstreetmapsDbHelper extends SQLiteOpenHelper {
 			OPENSTREETMAP_COL_LAT + " double," + OPENSTREETMAP_COL_LON + " double," +
 			OPENSTREETMAP_COL_TAGS + " VARCHAR(2048)," +
 			OPENSTREETMAP_COL_ACTION + " TEXT, " + OPENSTREETMAP_COL_COMMENT + " TEXT, " + OPENSTREETMAP_COL_CHANGED_TAGS + " TEXT);";
-	List<OpenstreetmapPoint> cache = null; 	
+	private List<OpenstreetmapPoint> cache = null;
 
 	public OpenstreetmapsDbHelper(Context context) {
 		super(context, OPENSTREETMAP_DB_NAME, null, DATABASE_VERSION);

@@ -13,6 +13,6 @@ public interface CallbackWithObject<T> {
 	 * @param result could be null depends on usage
 	 * @return processed or not
 	 */
-	public boolean processResult(T result);
+    boolean processResult(T result);
 
 }

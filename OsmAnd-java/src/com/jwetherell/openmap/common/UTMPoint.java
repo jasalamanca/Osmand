@@ -21,14 +21,14 @@ public class UTMPoint {
     public int zone_number;
     public char zone_letter;
 
-    public UTMPoint() {
+    private UTMPoint() {
     }
 
     public UTMPoint(LatLonPoint llpoint) {
         this(llpoint, Ellipsoid.WGS_84);
     }
 
-    public UTMPoint(LatLonPoint llpoint, Ellipsoid ellip) {
+    private UTMPoint(LatLonPoint llpoint, Ellipsoid ellip) {
         this();
         LLtoUTM(llpoint, ellip, this);
     }
@@ -47,7 +47,7 @@ public class UTMPoint {
      * @throws NumberFormatException
      *             if zone letter is invalid.
      */
-    protected char checkZone(char zone) {
+    private char checkZone(char zone) {
         zone = Character.toUpperCase(zone);
 
         if (zone != 'N' && zone != 'S') {
@@ -126,7 +126,7 @@ public class UTMPoint {
      *         conversion failed. If you pass in a UTMPoint, it will be returned
      *         as well if successful.
      */
-    public static UTMPoint LLtoUTM(LatLonPoint llpoint, Ellipsoid ellip, UTMPoint utmpoint) {
+    private static UTMPoint LLtoUTM(LatLonPoint llpoint, Ellipsoid ellip, UTMPoint utmpoint) {
         // find the native zone for the given latitude/longitude point
         int zoneNumber = getZoneNumber(llpoint.getY(), llpoint.getX());
         boolean isnorthern = (llpoint.getLatitude() >= 0f);
@@ -153,7 +153,7 @@ public class UTMPoint {
      *         conversion failed. If you pass in a UTMPoint, it will be returned
      *         as well if successful.
      */
-    public static UTMPoint LLtoUTM(LatLonPoint llpoint, Ellipsoid ellip, UTMPoint utmPoint, int zoneNumber, boolean isNorthern) {
+    private static UTMPoint LLtoUTM(LatLonPoint llpoint, Ellipsoid ellip, UTMPoint utmPoint, int zoneNumber, boolean isNorthern) {
         double a = ellip.radius;
         double k0 = 0.9996;
 
@@ -242,7 +242,7 @@ public class UTMPoint {
      *         <code>null</code> if conversion failed. If you pass in a
      *         LatLonPoint, it will be returned as well, if successful.
      */
-    public static LatLonPoint UTMtoLL(UTMPoint utm_point, Ellipsoid ellip, LatLonPoint llpoint) {
+    private static LatLonPoint UTMtoLL(UTMPoint utm_point, Ellipsoid ellip, LatLonPoint llpoint) {
         return UTMtoLL(ellip, utm_point.northing, utm_point.easting, utm_point.zone_number, utm_point.zone_letter, llpoint);
     }
 
@@ -354,7 +354,7 @@ public class UTMPoint {
      *         <code>null</code> if conversion failed. If you pass in a
      *         LatLonPoint, it will be returned as well, if successful.
      */
-    public static LatLonPoint UTMtoLL(Ellipsoid ellip, double UTMNorthing, double UTMEasting, int zoneNumber, char zoneLetter, LatLonPoint llpoint) {
+    private static LatLonPoint UTMtoLL(Ellipsoid ellip, double UTMNorthing, double UTMEasting, int zoneNumber, char zoneLetter, LatLonPoint llpoint) {
         // check the ZoneNummber is valid
         if (zoneNumber < 0 || zoneNumber > 60) {
             return null;

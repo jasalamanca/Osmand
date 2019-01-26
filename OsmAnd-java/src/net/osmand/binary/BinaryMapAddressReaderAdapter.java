@@ -41,17 +41,17 @@ public class BinaryMapAddressReaderAdapter {
 	// the correct type is -1, this is order in sections for postcode
 	public final static int POSTCODES_TYPE = 2;
 	public final static int VILLAGES_TYPE = 3;
-	public final static int STREET_TYPE = 4;
+	private final static int STREET_TYPE = 4;
 
 	private static final Log LOG = PlatformUtil.getLog(BinaryMapAddressReaderAdapter.class);
-	public final static List<Integer> TYPES = Arrays.asList(CITY_TOWN_TYPE, POSTCODES_TYPE, VILLAGES_TYPE, STREET_TYPE);
+	private final static List<Integer> TYPES = Arrays.asList(CITY_TOWN_TYPE, POSTCODES_TYPE, VILLAGES_TYPE, STREET_TYPE);
 	public final static int[] CITY_TYPES = {CITY_TOWN_TYPE, POSTCODES_TYPE, VILLAGES_TYPE};
 
 	public static class AddressRegion extends BinaryIndexPart {
 		String enName;
 		int indexNameOffset = -1;
 		List<String> attributeTagsTable = new ArrayList<String>();
-		List<CitiesBlock> cities = new ArrayList<BinaryMapAddressReaderAdapter.CitiesBlock>();
+		final List<CitiesBlock> cities = new ArrayList<BinaryMapAddressReaderAdapter.CitiesBlock>();
 
 		LatLon calculatedCenter = null;
 		int bottom31;
@@ -96,10 +96,10 @@ public class BinaryMapAddressReaderAdapter {
 		}
 	}
 
-	private CodedInputStream codedIS;
+	private final CodedInputStream codedIS;
 	private final BinaryMapIndexReader map;
 
-	protected BinaryMapAddressReaderAdapter(BinaryMapIndexReader map) {
+	BinaryMapAddressReaderAdapter(BinaryMapIndexReader map) {
 		this.codedIS = map.codedIS;
 		this.map = map;
 	}
@@ -139,7 +139,7 @@ public class BinaryMapAddressReaderAdapter {
 	}
 
 
-	protected void readAddressIndex(AddressRegion region) throws IOException {
+	void readAddressIndex(AddressRegion region) throws IOException {
 		while (true) {
 			int t = codedIS.readTag();
 			int tag = WireFormat.getTagFieldNumber(t);
@@ -205,8 +205,8 @@ public class BinaryMapAddressReaderAdapter {
 	}
 
 
-	protected void readCities(List<City> cities, SearchRequest<City> resultMatcher, StringMatcher matcher,
-			List<String> additionalTagsTable) throws IOException {
+	void readCities(List<City> cities, SearchRequest<City> resultMatcher, StringMatcher matcher,
+                    List<String> additionalTagsTable) throws IOException {
 		while (true) {
 			int t = codedIS.readTag();
 			int tag = WireFormat.getTagFieldNumber(t);
@@ -236,7 +236,7 @@ public class BinaryMapAddressReaderAdapter {
 	}
 
 
-	protected void readCityStreets(SearchRequest<Street> resultMatcher, City city, List<String> attributeTagsTable) throws IOException {
+	void readCityStreets(SearchRequest<Street> resultMatcher, City city, List<String> attributeTagsTable) throws IOException {
 		int x = MapUtils.get31TileNumberX(city.getLocation().getLongitude());
 		int y = MapUtils.get31TileNumberY(city.getLocation().getLatitude());
 		while (true) {
@@ -299,7 +299,7 @@ public class BinaryMapAddressReaderAdapter {
 		}
 	}
 
-	protected City readCityHeader(CityMatcher matcher, int filePointer, List<String> additionalTagsTable) throws IOException {
+	private City readCityHeader(CityMatcher matcher, int filePointer, List<String> additionalTagsTable) throws IOException {
 		int x = 0;
 		int y = 0;
 		City c = null;
@@ -365,9 +365,9 @@ public class BinaryMapAddressReaderAdapter {
 		}
 	}
 
-	protected Street readStreet(Street s, SearchRequest<Building> buildingsMatcher,
-			boolean loadBuildingsAndIntersected, int city24X, int city24Y, String postcodeFilter,
-			List<String> additionalTagsTable) throws IOException {
+	Street readStreet(Street s, SearchRequest<Building> buildingsMatcher,
+                      boolean loadBuildingsAndIntersected, int city24X, int city24Y, String postcodeFilter,
+                      List<String> additionalTagsTable) throws IOException {
 		int x = 0;
 		int y = 0;
 		LinkedList<String> additionalTags = null;
@@ -458,7 +458,7 @@ public class BinaryMapAddressReaderAdapter {
 		}
 	}
 
-	protected Street readIntersectedStreet(City c, int street24X, int street24Y, List<String> additionalTagsTable) throws IOException {
+	private Street readIntersectedStreet(City c, int street24X, int street24Y, List<String> additionalTagsTable) throws IOException {
 		int x = 0;
 		int y = 0;
 		Street s = new Street(c);
@@ -510,7 +510,7 @@ public class BinaryMapAddressReaderAdapter {
 		}
 	}
 
-	protected Building readBuilding(int fileOffset, int street24X, int street24Y, List<String> additionalTagsTable) throws IOException {
+	private Building readBuilding(int fileOffset, int street24X, int street24Y, List<String> additionalTagsTable) throws IOException {
 		int x = 0;
 		int y = 0;
 		int x2 = 0;

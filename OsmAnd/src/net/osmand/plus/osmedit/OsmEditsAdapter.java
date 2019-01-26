@@ -27,15 +27,15 @@ import net.osmand.util.Algorithms;
 import java.util.List;
 import java.util.Map;
 
-public class OsmEditsAdapter extends ArrayAdapter<Object> {
+class OsmEditsAdapter extends ArrayAdapter<Object> {
 
 	public static final int TYPE_HEADER = 0;
 	private static final int TYPE_ITEM = 1;
 	private static final int TYPE_COUNT = 2;
 
-	private OsmandApplication app;
+	private final OsmandApplication app;
 
-	private List<Object> items;
+	private final List<Object> items;
 	private boolean selectionMode;
 	private List<OsmPoint> selectedOsmEdits;
 	private boolean portrait;
@@ -333,37 +333,37 @@ public class OsmEditsAdapter extends ArrayAdapter<Object> {
 	}
 
 	private class HeaderViewHolder {
-		View mainView;
-		View topDivider;
-		View backgroundView;
-		CheckBox checkBox;
-		TextView title;
+		final View mainView;
+		final View topDivider;
+		final View backgroundView;
+		final CheckBox checkBox;
+		final TextView title;
 
 		HeaderViewHolder(View view) {
 			mainView = view;
 			topDivider = view.findViewById(R.id.top_divider);
 			backgroundView = view.findViewById(R.id.background_view);
-			checkBox = (CheckBox) view.findViewById(R.id.check_box);
-			title = (TextView) view.findViewById(R.id.title_text_view);
+			checkBox = view.findViewById(R.id.check_box);
+			title = view.findViewById(R.id.title_text_view);
 		}
 	}
 
 	private class OsmEditViewHolder {
-		View mainView;
-		ImageView icon;
-		CheckBox selectCheckBox;
-		ImageButton optionsImageButton;
-		TextView titleTextView;
-		TextView descriptionTextView;
-		View bottomDivider;
+		final View mainView;
+		final ImageView icon;
+		final CheckBox selectCheckBox;
+		final ImageButton optionsImageButton;
+		final TextView titleTextView;
+		final TextView descriptionTextView;
+		final View bottomDivider;
 
 		OsmEditViewHolder(View view) {
 			mainView = view;
-			icon = (ImageView) view.findViewById(R.id.icon);
-			selectCheckBox = (CheckBox) view.findViewById(R.id.check_box);
-			optionsImageButton = (ImageButton) view.findViewById(R.id.options);
-			titleTextView = (TextView) view.findViewById(R.id.title);
-			descriptionTextView = (TextView) view.findViewById(R.id.description);
+			icon = view.findViewById(R.id.icon);
+			selectCheckBox = view.findViewById(R.id.check_box);
+			optionsImageButton = view.findViewById(R.id.options);
+			titleTextView = view.findViewById(R.id.title);
+			descriptionTextView = view.findViewById(R.id.description);
 			bottomDivider = view.findViewById(R.id.bottom_divider);
 		}
 	}

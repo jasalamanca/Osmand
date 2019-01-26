@@ -2,7 +2,6 @@ package net.osmand.data;
 
 import net.osmand.Location;
 import net.osmand.osm.PoiCategory;
-import net.osmand.osm.edit.Node;
 import net.osmand.util.Algorithms;
 
 import java.io.BufferedReader;
@@ -11,11 +10,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.zip.GZIPInputStream;
 
 import gnu.trove.list.array.TIntArrayList;
@@ -28,11 +25,11 @@ public class Amenity extends MapObject {
 	public static final String DESCRIPTION = "description";
 	public static final String ROUTE = "route";
 	public static final String OPENING_HOURS = "opening_hours";
-	public static final String CONTENT = "content";
+	private static final String CONTENT = "content";
 	public static final String CUISINE = "cuisine";
 	public static final String DISH = "dish";
-	public static final String OSM_DELETE_VALUE = "delete";
-	public static final String OSM_DELETE_TAG = "osmand_change";
+	private static final String OSM_DELETE_VALUE = "delete";
+	private static final String OSM_DELETE_TAG = "osmand_change";
 
 	private String subType;
 	private PoiCategory type;
@@ -71,7 +68,6 @@ public class Amenity extends MapObject {
 	}
 
 	public String getOpeningHours() {
-//		 getAdditionalInfo("opening_hours");
 		return openingHours;
 	}
 
@@ -117,18 +113,6 @@ public class Amenity extends MapObject {
 			return Collections.emptyMap();
 		}
 		return additionalInfo;
-	}
-
-	public void setAdditionalInfo(Map<String, String> additionalInfo) {
-		this.additionalInfo = null;
-		openingHours = null;
-		if (additionalInfo != null) {
-			Iterator<Entry<String, String>> it = additionalInfo.entrySet().iterator();
-			while (it.hasNext()) {
-				Entry<String, String> e = it.next();
-				setAdditionalInfo(e.getKey(), e.getValue());
-			}
-		}
 	}
 
 	public void setRoutePoint(AmenityRoutePoint routePoint) {
@@ -223,7 +207,7 @@ public class Amenity extends MapObject {
 		return l;
 	}
 
-	public String getTagContent(String tag, String lang) {
+	private String getTagContent(String tag, String lang) {
 		if (lang != null) {
 			String translateName = getAdditionalInfo(tag + ":" + lang);
 			if (!Algorithms.isEmpty(translateName)) {
@@ -261,20 +245,8 @@ public class Amenity extends MapObject {
 	public void setOpeningHours(String openingHours) {
 		setAdditionalInfo(OPENING_HOURS, openingHours);
 	}
-	
 
-	public boolean comparePoi(Amenity thatObj) {
-		if (this.id.longValue() == thatObj.id.longValue() &&
-				Algorithms.objectEquals(this.type.getKeyName(), thatObj.type.getKeyName()) && 
-				Algorithms.objectEquals(getLocation(), thatObj.getLocation()) &&
-				Algorithms.objectEquals(this.subType, thatObj.subType) &&
-				Algorithms.objectEquals(this.additionalInfo, thatObj.additionalInfo) &&
-				Algorithms.objectEquals(this.getNamesMap(true), thatObj.getNamesMap(true))) {
-			return true;
-		}
-		return false;
-	}
-	
+
 	@Override
 	public int compareTo(MapObject o) {
 		int cmp = super.compareTo(o);

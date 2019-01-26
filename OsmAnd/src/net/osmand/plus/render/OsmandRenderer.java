@@ -32,23 +32,22 @@ import java.util.List;
 import java.util.Map;
 
 public class OsmandRenderer {
-	private Paint paint;
-	private Paint paintIcon;
+    private final Paint paintIcon;
 	public static final int DEFAULT_LINE_MAX = 100;
 
-	public static final int TILE_SIZE = 256; 
+	private static final int TILE_SIZE = 256;
 
-	private Map<float[], PathEffect> dashEffect = new LinkedHashMap<float[], PathEffect>();
-	private Map<String, float[]> parsedDashEffects = new LinkedHashMap<String, float[]>();
-	private Map<String, Shader> shaders = new LinkedHashMap<String, Shader>();
+	private final Map<float[], PathEffect> dashEffect = new LinkedHashMap<float[], PathEffect>();
+	private final Map<String, float[]> parsedDashEffects = new LinkedHashMap<String, float[]>();
+	private final Map<String, Shader> shaders = new LinkedHashMap<String, Shader>();
 
 	private final Context context;
 
-	private DisplayMetrics dm;
+	private final DisplayMetrics dm;
 
 	/* package */
 	public static class RenderingContext extends net.osmand.RenderingContext {
-		List<TextDrawInfo> textToDraw = new ArrayList<TextDrawInfo>();
+		final List<TextDrawInfo> textToDraw = new ArrayList<TextDrawInfo>();
 		final Context ctx;
 
 		public RenderingContext(Context ctx) {
@@ -73,7 +72,7 @@ public class OsmandRenderer {
 		paintIcon = new Paint();
 		paintIcon.setStyle(Style.STROKE);
 
-		paint = new Paint();
+        Paint paint = new Paint();
 		paint.setAntiAlias(true);
 
 		dm = new DisplayMetrics();
@@ -92,7 +91,7 @@ public class OsmandRenderer {
 		return dashEffect.get(dashes);
 	}
 
-	public Shader getShader(String resId){
+	private Shader getShader(String resId){
 		if(shaders.get(resId) == null){
 			Bitmap bmp = RenderingIcons.getIcon(context, resId, true);
 			if(bmp != null){

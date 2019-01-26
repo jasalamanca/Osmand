@@ -31,15 +31,15 @@ import java.io.File;
 
 public class WptPtEditorFragment extends PointEditorFragment {
 
-	protected WptPtEditor editor;
-	protected WptPt wpt;
+	WptPtEditor editor;
+	WptPt wpt;
 	private SavingTrackHelper savingTrackHelper;
 	private GpxSelectionHelper selectedGpxHelper;
 
 	private boolean saved;
 	private int color;
 	private int defaultColor;
-	protected boolean skipDialog;
+	boolean skipDialog;
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -60,7 +60,7 @@ public class WptPtEditorFragment extends PointEditorFragment {
 		return selectCategoryDialogFragment;
 	}
 
-	protected void assignEditor() {
+	void assignEditor() {
 		editor = getMapActivity().getContextMenu().getWptPtPointEditor();
 	}
 
@@ -209,7 +209,7 @@ public class WptPtEditorFragment extends PointEditorFragment {
 		}
 	}
 
-	protected void addWpt(GPXFile gpx, String description, String name, String category, int color) {
+	void addWpt(GPXFile gpx, String description, String name, String category, int color) {
 		wpt = gpx.addWptPt(wpt.getLatitude(), wpt.getLongitude(),
 				System.currentTimeMillis(), description, name, category, color);
 		syncGpx(gpx);
@@ -313,7 +313,7 @@ public class WptPtEditorFragment extends PointEditorFragment {
 		private final GPXFile gpx;
 		private final boolean gpxSelected;
 
-		public SaveGpxAsyncTask(OsmandApplication app, GPXFile gpx, boolean gpxSelected) {
+		SaveGpxAsyncTask(OsmandApplication app, GPXFile gpx, boolean gpxSelected) {
 			this.app = app;
 			this.gpx = gpx;
 			this.gpxSelected = gpxSelected;

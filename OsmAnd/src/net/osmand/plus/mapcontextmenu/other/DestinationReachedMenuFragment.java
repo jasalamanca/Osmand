@@ -27,7 +27,7 @@ import net.osmand.plus.poi.PoiFiltersHelper;
 import net.osmand.plus.poi.PoiUIFilter;
 
 public class DestinationReachedMenuFragment extends Fragment {
-	public static final String TAG = "DestinationReachedMenuFragment";
+	private static final String TAG = "DestinationReachedMenuFragment";
 	private static boolean exists = false;
 	private DestinationReachedMenu menu;
 
@@ -57,7 +57,7 @@ public class DestinationReachedMenuFragment extends Fragment {
 
 		IconsCache iconsCache = getMapActivity().getMyApplication().getIconsCache();
 
-		ImageButton closeImageButton = (ImageButton) view.findViewById(R.id.closeImageButton);
+		ImageButton closeImageButton = view.findViewById(R.id.closeImageButton);
 		closeImageButton.setImageDrawable(iconsCache.getIcon(R.drawable.ic_action_remove_dark, menu.isLight()));
 		closeImageButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -66,7 +66,7 @@ public class DestinationReachedMenuFragment extends Fragment {
 			}
 		});
 
-		Button removeDestButton = (Button) view.findViewById(R.id.removeDestButton);
+		Button removeDestButton = view.findViewById(R.id.removeDestButton);
 		removeDestButton.setCompoundDrawablesWithIntrinsicBounds(
 				iconsCache.getIcon(R.drawable.ic_action_done, menu.isLight()), null, null, null);
 		AndroidUtils.setTextPrimaryColor(view.getContext(), removeDestButton, !menu.isLight());
@@ -76,7 +76,7 @@ public class DestinationReachedMenuFragment extends Fragment {
 				getMapActivity().getMyApplication().getTargetPointsHelper().removeWayPoint(true, -1);
 				Object contextMenuObj = getMapActivity().getContextMenu().getObject();
 				if (getMapActivity().getContextMenu().isActive()
-						&& contextMenuObj != null && contextMenuObj instanceof TargetPoint) {
+                        && contextMenuObj instanceof TargetPoint) {
 					TargetPoint targetPoint = (TargetPoint) contextMenuObj;
 					if (!targetPoint.start && !targetPoint.intermediate) {
 						getMapActivity().getContextMenu().close();
@@ -89,7 +89,7 @@ public class DestinationReachedMenuFragment extends Fragment {
 			}
 		});
 
-		Button recalcDestButton = (Button) view.findViewById(R.id.recalcDestButton);
+		Button recalcDestButton = view.findViewById(R.id.recalcDestButton);
 		recalcDestButton.setCompoundDrawablesWithIntrinsicBounds(
 				iconsCache.getIcon(R.drawable.ic_action_gdirections_dark, menu.isLight()), null, null, null);
 		AndroidUtils.setTextPrimaryColor(view.getContext(), recalcDestButton, !menu.isLight());
@@ -118,7 +118,7 @@ public class DestinationReachedMenuFragment extends Fragment {
 			AndroidUtils.setBackground(view.getContext(), mainView, !menu.isLight(),
 					R.drawable.bg_bottom_menu_light, R.drawable.bg_bottom_menu_dark);
 		}
-		TextView title = (TextView) view.findViewById(R.id.titleTextView);
+		TextView title = view.findViewById(R.id.titleTextView);
 		AndroidUtils.setTextPrimaryColor(view.getContext(), title, !menu.isLight());
 
 		return view;
@@ -158,13 +158,13 @@ public class DestinationReachedMenuFragment extends Fragment {
 				.addToBackStack(TAG).commitAllowingStateLoss();
 	}
 
-	public void dismissMenu() {
+	private void dismissMenu() {
 		getMapActivity().getSupportFragmentManager().popBackStack();
 	}
 
-	public MapActivity getMapActivity() {
+	private MapActivity getMapActivity() {
 		Activity activity = getActivity();
-		if (activity != null && activity instanceof MapActivity) {
+		if (activity instanceof MapActivity) {
 			return (MapActivity) activity;
 		} else {
 			return null;

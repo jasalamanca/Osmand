@@ -1,14 +1,12 @@
 package net.osmand.binary;
 
 
-import java.io.IOException;
-
-public class BinaryInspectorNative {
+class BinaryInspectorNative {
 
 
 	public static final int BUFFER_SIZE = 1 << 20;
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		if(args == null || args.length == 0) {
 			printUsage(null);
 			return;
@@ -17,7 +15,7 @@ public class BinaryInspectorNative {
 		// test cases show info
 	}
 
-	public static void printUsage(String warning) {
+	private static void printUsage(String warning) {
 		if(warning != null){
 			println(warning);
 		}

@@ -13,7 +13,7 @@ import net.osmand.util.MapUtils;
 
 public class OsmMapUtils {
 
-	public static double getDistance(Node e1, Node e2) {
+	private static double getDistance(Node e1, Node e2) {
 		return MapUtils.getDistance(e1.getLatitude(), e1.getLongitude(), e2.getLatitude(), e2.getLongitude());
 	}
 
@@ -27,7 +27,7 @@ public class OsmMapUtils {
 
 	public static LatLon getCenter(Entity e) {
 		if (e instanceof Node) {
-			return ((Node) e).getLatLon();
+			return e.getLatLon();
 		} else if (e instanceof Way) {
 			return getWeightCenterForWay(((Way) e));
 		} else if (e instanceof Relation) {
@@ -47,7 +47,7 @@ public class OsmMapUtils {
 		return null;
 	}
 
-	public static LatLon getWeightCenter(Collection<LatLon> nodes) {
+	private static LatLon getWeightCenter(Collection<LatLon> nodes) {
 		if (nodes.isEmpty()) {
 			return null;
 		}
@@ -60,7 +60,7 @@ public class OsmMapUtils {
 		return new LatLon(latitude / nodes.size(), longitude / nodes.size());
 	}
 
-	public static LatLon getWeightCenterForNodes(Collection<Node> nodes ) {
+	private static LatLon getWeightCenterForNodes(Collection<Node> nodes) {
 		if (nodes.isEmpty()) {
 			return null;
 		}
@@ -110,7 +110,7 @@ public class OsmMapUtils {
 	}
 	
 
-	public static LatLon getMathWeightCenterForNodes(Collection<Node> nodes) {
+	private static LatLon getMathWeightCenterForNodes(Collection<Node> nodes) {
 		if (nodes.isEmpty()) {
 			return null;
 		}
@@ -155,13 +155,13 @@ public class OsmMapUtils {
 		}
 	}
 
-    public static boolean ccw(Node A, Node B, Node C) {
+    private static boolean ccw(Node A, Node B, Node C) {
         return (C.getLatitude()-A.getLatitude()) * (B.getLongitude()-A.getLongitude()) > (B.getLatitude()-A.getLatitude()) *
                 (C.getLongitude()-A.getLongitude());
     }
 
     // Return true if line segments AB and CD intersect
-    public static boolean intersect2Segments(Node A, Node B, Node C, Node D) {
+    private static boolean intersect2Segments(Node A, Node B, Node C, Node D) {
         return ccw(A, C, D) != ccw(B, C, D) && ccw(A, B, C) != ccw(A, B, D);
     }
 
@@ -281,7 +281,7 @@ public class OsmMapUtils {
 		return isClockwiseWay(Collections.singletonList(w));
 	}
 
-	public static boolean isClockwiseWay(List<Way> ways) {
+	private static boolean isClockwiseWay(List<Way> ways) {
 		if (ways.isEmpty()) {
 			return true;
 		}

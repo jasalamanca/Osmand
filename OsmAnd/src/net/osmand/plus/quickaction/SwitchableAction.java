@@ -29,7 +29,7 @@ public abstract class SwitchableAction<T> extends QuickAction {
 		super(type);
 	}
 
-	public SwitchableAction(QuickAction quickAction) {
+	protected SwitchableAction(QuickAction quickAction) {
 		super(quickAction);
 	}
 
@@ -44,7 +44,7 @@ public abstract class SwitchableAction<T> extends QuickAction {
 		View view = LayoutInflater.from(parent.getContext())
 				.inflate(R.layout.quick_action_switchable_action, parent, false);
 
-		final RecyclerView list = (RecyclerView) view.findViewById(R.id.list);
+		final RecyclerView list = view.findViewById(R.id.list);
 
 		final QuickActionItemTouchHelperCallback touchHelperCallback = new QuickActionItemTouchHelperCallback();
 		final ItemTouchHelper touchHelper = new ItemTouchHelper(touchHelperCallback);
@@ -65,9 +65,9 @@ public abstract class SwitchableAction<T> extends QuickAction {
 
 		list.setAdapter(adapter);
 
-		TextView dscrTitle = (TextView) view.findViewById(R.id.textDscrTitle);
-		TextView dscrHint = (TextView) view.findViewById(R.id.textDscrHint);
-		Button addBtn = (Button) view.findViewById(R.id.btnAdd);
+		TextView dscrTitle = view.findViewById(R.id.textDscrTitle);
+		TextView dscrHint = view.findViewById(R.id.textDscrHint);
+		Button addBtn = view.findViewById(R.id.btnAdd);
 
 		dscrTitle.setText(parent.getContext().getString(getDiscrTitle()) + ":");
 		dscrHint.setText(getDiscrHint());
@@ -80,7 +80,7 @@ public abstract class SwitchableAction<T> extends QuickAction {
 	@Override
 	public boolean fillParams(View root, MapActivity activity) {
 
-		final RecyclerView list = (RecyclerView) root.findViewById(R.id.list);
+		final RecyclerView list = root.findViewById(R.id.list);
 		final Adapter adapter = (Adapter) list.getAdapter();
 
 		boolean hasParams = adapter.itemsList != null && !adapter.itemsList.isEmpty();
@@ -95,7 +95,7 @@ public abstract class SwitchableAction<T> extends QuickAction {
 		private List<T> itemsList = new ArrayList<>();
 		private final QuickActionListFragment.OnStartDragListener onStartDragListener;
 
-		public Adapter(QuickActionListFragment.OnStartDragListener onStartDragListener) {
+		Adapter(QuickActionListFragment.OnStartDragListener onStartDragListener) {
 			this.onStartDragListener = onStartDragListener;
 			this.itemsList = new ArrayList<>();
 		}
@@ -146,7 +146,7 @@ public abstract class SwitchableAction<T> extends QuickAction {
 			return itemsList.size();
 		}
 
-		public void deleteItem(int position) {
+		void deleteItem(int position) {
 
 			if (position == -1) {
 				return;
@@ -156,7 +156,7 @@ public abstract class SwitchableAction<T> extends QuickAction {
 			notifyItemRemoved(position);
 		}
 
-		public void addItems(List<T> data) {
+		void addItems(List<T> data) {
 
 			if (!itemsList.containsAll(data)) {
 
@@ -231,16 +231,16 @@ public abstract class SwitchableAction<T> extends QuickAction {
 		}
 
 		public class ItemHolder extends RecyclerView.ViewHolder {
-			public TextView title;
-			public ImageView handleView;
-			public ImageView closeBtn;
+			final TextView title;
+			final ImageView handleView;
+			final ImageView closeBtn;
 
-			public ItemHolder(View itemView) {
+			ItemHolder(View itemView) {
 				super(itemView);
 
-				title = (TextView) itemView.findViewById(R.id.title);
-				handleView = (ImageView) itemView.findViewById(R.id.handle_view);
-				closeBtn = (ImageView) itemView.findViewById(R.id.closeImageButton);
+				title = itemView.findViewById(R.id.title);
+				handleView = itemView.findViewById(R.id.handle_view);
+				closeBtn = itemView.findViewById(R.id.closeImageButton);
 			}
 		}
 	}

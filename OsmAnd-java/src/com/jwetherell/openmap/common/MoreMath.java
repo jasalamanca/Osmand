@@ -14,7 +14,7 @@
 
 package com.jwetherell.openmap.common;
 
-public abstract class MoreMath {
+abstract class MoreMath {
 
     /**
      * 2*Math.PI
@@ -216,7 +216,7 @@ public abstract class MoreMath {
      *            short
      * @return boolean
      */
-    public static final boolean even(short x) {
+    private static boolean even(short x) {
         return ((x & 0x1) == 0);
     }
 
@@ -227,7 +227,7 @@ public abstract class MoreMath {
      *            int
      * @return boolean
      */
-    public static final boolean even(int x) {
+    private static boolean even(int x) {
         return ((x & 0x1) == 0);
     }
 
@@ -238,7 +238,7 @@ public abstract class MoreMath {
      *            long
      * @return boolean
      */
-    public static final boolean even(long x) {
+    private static boolean even(long x) {
         return ((x & 0x1) == 0);
     }
 
@@ -250,7 +250,7 @@ public abstract class MoreMath {
      *            (-128 &lt;= b &lt;= 127)
      * @return int (0 &lt;= b &lt;= 255)
      */
-    public static final int signedToInt(byte b) {
+    private static int signedToInt(byte b) {
         return (b & 0xff);
     }
 
@@ -299,7 +299,7 @@ public abstract class MoreMath {
      *            byte offset
      * @return short
      */
-    public static final short BuildShortBE(byte bytevec[], int offset) {
+    private static short BuildShortBE(byte bytevec[], int offset) {
         return (short) (((bytevec[0 + offset]) << 8) | (signedToInt(bytevec[1 + offset])));
     }
 
@@ -312,7 +312,7 @@ public abstract class MoreMath {
      *            byte offset
      * @return short
      */
-    public static final short BuildShortLE(byte bytevec[], int offset) {
+    private static short BuildShortLE(byte bytevec[], int offset) {
         return (short) (((bytevec[1 + offset]) << 8) | (signedToInt(bytevec[0 + offset])));
     }
 
@@ -327,7 +327,7 @@ public abstract class MoreMath {
      *            BE or LE?
      * @return short
      */
-    public static final short BuildShort(byte bytevec[], int offset, boolean MSBFirst) {
+    private static short BuildShort(byte bytevec[], int offset, boolean MSBFirst) {
         if (MSBFirst)
             return (BuildShortBE(bytevec, offset));
         // else
@@ -383,7 +383,7 @@ public abstract class MoreMath {
      *            byte offset
      * @return int
      */
-    public static final int BuildIntegerBE(byte bytevec[], int offset) {
+    private static int BuildIntegerBE(byte bytevec[], int offset) {
         return (((bytevec[0 + offset]) << 24) | (signedToInt(bytevec[1 + offset]) << 16) | (signedToInt(bytevec[2 + offset]) << 8) | (signedToInt(bytevec[3 + offset])));
     }
 
@@ -396,7 +396,7 @@ public abstract class MoreMath {
      *            byte offset
      * @return int
      */
-    public static final int BuildIntegerLE(byte bytevec[], int offset) {
+    private static int BuildIntegerLE(byte bytevec[], int offset) {
         return (((bytevec[3 + offset]) << 24) | (signedToInt(bytevec[2 + offset]) << 16) | (signedToInt(bytevec[1 + offset]) << 8) | (signedToInt(bytevec[0 + offset])));
     }
 
@@ -465,7 +465,7 @@ public abstract class MoreMath {
      *            byte offset
      * @return long
      */
-    public static final long BuildLongBE(byte bytevec[], int offset) {
+    private static long BuildLongBE(byte bytevec[], int offset) {
         return (((long) signedToInt(bytevec[0 + offset]) << 56) | ((long) signedToInt(bytevec[1 + offset]) << 48)
                 | ((long) signedToInt(bytevec[2 + offset]) << 40) | ((long) signedToInt(bytevec[3 + offset]) << 32)
                 | ((long) signedToInt(bytevec[4 + offset]) << 24) | ((long) signedToInt(bytevec[5 + offset]) << 16)
@@ -481,7 +481,7 @@ public abstract class MoreMath {
      *            byte offset
      * @return long
      */
-    public static final long BuildLongLE(byte bytevec[], int offset) {
+    private static long BuildLongLE(byte bytevec[], int offset) {
         return (((long) signedToInt(bytevec[7 + offset]) << 56) | ((long) signedToInt(bytevec[6 + offset]) << 48)
                 | ((long) signedToInt(bytevec[5 + offset]) << 40) | ((long) signedToInt(bytevec[4 + offset]) << 32)
                 | ((long) signedToInt(bytevec[3 + offset]) << 24) | ((long) signedToInt(bytevec[2 + offset]) << 16)

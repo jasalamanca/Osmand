@@ -59,7 +59,7 @@ public class WaypointHelper {
 	private static final int APPROACH_POI_LIMIT = 1;
 	private static final int ANNOUNCE_POI_LIMIT = 3;
 
-	OsmandApplication app;
+	private final OsmandApplication app;
 	// every time we modify this collection, we change the reference (copy on write list)
 	public static final int TARGETS = 0;
 	public static final int WAYPOINTS = 1;
@@ -71,7 +71,7 @@ public class WaypointHelper {
 	private static final double DISTANCE_IGNORE_DOUBLE_SPEEDCAMS = 150;
 
 	private List<List<LocationPointWrapper>> locationPoints = new ArrayList<List<LocationPointWrapper>>();
-	private ConcurrentHashMap<LocationPoint, Integer> locationPointsStates = new ConcurrentHashMap<LocationPoint, Integer>();
+	private final ConcurrentHashMap<LocationPoint, Integer> locationPointsStates = new ConcurrentHashMap<LocationPoint, Integer>();
 	private TIntArrayList pointsProgress = new TIntArrayList();
 	private RouteCalculationResult route;
 
@@ -314,7 +314,7 @@ public class WaypointHelper {
 	}
 
 
-	public void announceVisibleLocations() {
+	private void announceVisibleLocations() {
 		Location lastKnownLocation = app.getRoutingHelper().getLastProjection();
 		if (lastKnownLocation != null && app.getRoutingHelper().isFollowingMode()) {
 			for (int type = 0; type < locationPoints.size(); type++) {
@@ -394,7 +394,7 @@ public class WaypointHelper {
 	}
 
 
-	protected VoiceRouter getVoiceRouter() {
+	private VoiceRouter getVoiceRouter() {
 		return app.getRoutingHelper().getVoiceRouter();
 	}
 
@@ -418,7 +418,7 @@ public class WaypointHelper {
 	}
 
 
-	protected List<LocationPointWrapper> getTargets(List<LocationPointWrapper> points) {
+	private List<LocationPointWrapper> getTargets(List<LocationPointWrapper> points) {
 		List<TargetPoint> wts = app.getTargetPointsHelper().getIntermediatePointsWithTarget();
 		for (int k = 0; k < wts.size(); k++) {
 			final int index = wts.size() - k - 1;
@@ -448,7 +448,7 @@ public class WaypointHelper {
 	}
 
 
-	protected void recalculatePoints(RouteCalculationResult route, int type, List<List<LocationPointWrapper>> locationPoints) {
+	private void recalculatePoints(RouteCalculationResult route, int type, List<List<LocationPointWrapper>> locationPoints) {
 		boolean all = type == -1;
 		appMode = app.getSettings().getApplicationMode();
 		if (route != null && !route.isEmpty()) {
@@ -523,7 +523,7 @@ public class WaypointHelper {
 		return dist;
 	}
 
-	protected synchronized void setLocationPoints(List<List<LocationPointWrapper>> locationPoints, RouteCalculationResult route) {
+	private synchronized void setLocationPoints(List<List<LocationPointWrapper>> locationPoints, RouteCalculationResult route) {
 		this.locationPoints = locationPoints;
 		this.locationPointsStates.clear();
 		TIntArrayList list = new TIntArrayList(locationPoints.size());
@@ -533,7 +533,7 @@ public class WaypointHelper {
 	}
 
 
-	protected void sortList(List<LocationPointWrapper> list) {
+	private void sortList(List<LocationPointWrapper> list) {
 		Collections.sort(list, new Comparator<LocationPointWrapper>() {
 			@Override
 			public int compare(LocationPointWrapper olhs, LocationPointWrapper orhs) {
@@ -548,7 +548,7 @@ public class WaypointHelper {
 	}
 
 
-	protected void calculatePoi(RouteCalculationResult route, List<LocationPointWrapper> locationPoints, boolean announcePOI) {
+	private void calculatePoi(RouteCalculationResult route, List<LocationPointWrapper> locationPoints, boolean announcePOI) {
 		if (app.getPoiFilters().isShowingAnyPoi()) {
 			final List<Location> locs = route.getImmutableAllLocations();
 			List<Amenity> amenities = new ArrayList<>();
@@ -653,7 +653,7 @@ public class WaypointHelper {
 			this.routeIndex = routeIndex;
 		}
 
-		public void setAnnounce(boolean announce) {
+		void setAnnounce(boolean announce) {
 			this.announce = announce;
 		}
 
@@ -789,9 +789,9 @@ public class WaypointHelper {
 
 	private class AmenityLocationPoint implements LocationPoint {
 
-		Amenity a;
+		final Amenity a;
 
-		public AmenityLocationPoint(Amenity a) {
+		AmenityLocationPoint(Amenity a) {
 			this.a = a;
 		}
 

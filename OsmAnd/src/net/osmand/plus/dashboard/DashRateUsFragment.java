@@ -40,10 +40,10 @@ public class DashRateUsFragment extends DashBaseFragment {
 	@Override
 	public View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_rate_us_fragment, container, false);
-		TextView header = (TextView) view.findViewById(R.id.header);
-		TextView subheader = (TextView) view.findViewById(R.id.subheader);
-		Button positiveButton = (Button) view.findViewById(R.id.positive_button);
-		Button negativeButton = (Button) view.findViewById(R.id.negative_button);
+		TextView header = view.findViewById(R.id.header);
+		TextView subheader = view.findViewById(R.id.subheader);
+		Button positiveButton = view.findViewById(R.id.positive_button);
+		Button negativeButton = view.findViewById(R.id.negative_button);
 		positiveButton.setOnClickListener(
 				new PositiveButtonListener(header, subheader, positiveButton, negativeButton));
 		negativeButton.setOnClickListener(
@@ -58,14 +58,14 @@ public class DashRateUsFragment extends DashBaseFragment {
 		return mRateUsDismissListener;
 	}
 
-	public class PositiveButtonListener implements View.OnClickListener {
-		private TextView header;
-		private TextView subheader;
-		private Button positiveButton;
-		private Button negativeButton;
+	class PositiveButtonListener implements View.OnClickListener {
+		private final TextView header;
+		private final TextView subheader;
+		private final Button positiveButton;
+		private final Button negativeButton;
 
-		public PositiveButtonListener(TextView header, TextView subheader, Button positiveButton,
-									  Button negativeButton) {
+		PositiveButtonListener(TextView header, TextView subheader, Button positiveButton,
+                               Button negativeButton) {
 			this.header = header;
 			this.subheader = subheader;
 			this.positiveButton = positiveButton;
@@ -106,14 +106,14 @@ public class DashRateUsFragment extends DashBaseFragment {
 		}
 	}
 
-	public class NegativeButtonListener implements View.OnClickListener {
-		private TextView header;
-		private TextView subheader;
-		private Button positiveButton;
-		private Button negativeButton;
+	class NegativeButtonListener implements View.OnClickListener {
+		private final TextView header;
+		private final TextView subheader;
+		private final Button positiveButton;
+		private final Button negativeButton;
 
-		public NegativeButtonListener(TextView header, TextView subheader, Button positiveButton,
-									  Button negativeButton) {
+		NegativeButtonListener(TextView header, TextView subheader, Button positiveButton,
+                               Button negativeButton) {
 			this.header = header;
 			this.subheader = subheader;
 			this.positiveButton = positiveButton;
@@ -146,10 +146,10 @@ public class DashRateUsFragment extends DashBaseFragment {
 	}
 
 	private static class RateUsDismissListener implements DismissListener {
-		private DashboardOnMap dashboardOnMap;
-		private OsmandSettings settings;
+		private final DashboardOnMap dashboardOnMap;
+		private final OsmandSettings settings;
 
-		public RateUsDismissListener(DashboardOnMap dashboardOnMap, OsmandSettings settings) {
+		RateUsDismissListener(DashboardOnMap dashboardOnMap, OsmandSettings settings) {
 			this.dashboardOnMap = dashboardOnMap;
 			this.settings = settings;
 		}

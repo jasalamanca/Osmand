@@ -24,12 +24,12 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-public class DownloadFileHelper {
+class DownloadFileHelper {
 	
 	private final static Log log = PlatformUtil.getLog(DownloadFileHelper.class);
 	private static final int BUFFER_SIZE = 32256;
-	protected static final int TRIES_TO_DOWNLOAD = 15;
-	protected static final long TIMEOUT_BETWEEN_DOWNLOADS = 8000;
+	private static final int TRIES_TO_DOWNLOAD = 15;
+	private static final long TIMEOUT_BETWEEN_DOWNLOADS = 8000;
 	private final OsmandApplication ctx;
 	private boolean interruptDownloading = false;
 	
@@ -40,16 +40,16 @@ public class DownloadFileHelper {
 	
 	public interface DownloadFileShowWarning {
 		
-		public void showWarning(String warning);
+		void showWarning(String warning);
 	}
 	
 	public static boolean isInterruptedException(IOException e) {
 		return e != null && e.getMessage().equals("Interrupted");
 	}
 	
-	public InputStream getInputStreamToDownload(final URL url, final boolean forceWifi) throws IOException {
+	private InputStream getInputStreamToDownload(final URL url, final boolean forceWifi) throws IOException {
 		InputStream cis = new InputStream() {
-			byte[] buffer = new byte[BUFFER_SIZE];
+			final byte[] buffer = new byte[BUFFER_SIZE];
 			int bufLen = 0;
 			int bufRead = 0;
 			int length = 0;
@@ -201,7 +201,7 @@ public class DownloadFileHelper {
 	}
 	
 	public boolean downloadFile(IndexItem.DownloadEntry de, IProgress progress, 
-			List<File> toReIndex, DownloadFileShowWarning showWarningCallback, boolean forceWifi) throws InterruptedException {
+			List<File> toReIndex, DownloadFileShowWarning showWarningCallback, boolean forceWifi) {
 		try {
 			final List<InputStream> downloadInputStreams = new ArrayList<InputStream>();
 			URL url = new URL(de.urlToDownload); //$NON-NLS-1$
@@ -257,7 +257,7 @@ public class DownloadFileHelper {
 
 	private void unzipFile(IndexItem.DownloadEntry de, IProgress progress,  List<InputStream> is) throws IOException {
 		CountingMultiInputStream fin = new CountingMultiInputStream(is);
-		int len = (int) fin.available();
+		int len = fin.available();
 		int mb = (int) (len / (1024f*1024f));
 		if(mb == 0) {
 			mb = 1;
@@ -346,7 +346,7 @@ public class DownloadFileHelper {
 		private int count;
 		private int currentRead = 0;
 
-		public CountingMultiInputStream(List<InputStream> streams) {
+		CountingMultiInputStream(List<InputStream> streams) {
 			this.delegate = streams.toArray(new InputStream[streams.size()]);
 		}
 		
@@ -394,7 +394,7 @@ public class DownloadFileHelper {
 			return av;
 		}
 		
-		public int getAndClearReadCount() {
+		int getAndClearReadCount() {
 			int last = count;
 			count = 0;
 			return last;

@@ -13,10 +13,10 @@ import net.osmand.plus.R;
 
 public class OsmandActionBarActivity extends AppCompatActivity {
 
-	protected boolean haveHomeButton = true;
+	private final boolean haveHomeButton = true;
 
     //should be called after set content view
-    protected void setupHomeButton(){
+    void setupHomeButton(){
         Drawable back = ((OsmandApplication)getApplication()).getIconsCache().getIcon(R.drawable.ic_arrow_back);
         back.setColorFilter(ContextCompat.getColor(this, R.color.color_white), PorterDuff.Mode.MULTIPLY);
         final ActionBar supportActionBar = getSupportActionBar();

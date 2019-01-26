@@ -4,12 +4,12 @@ import net.osmand.plus.osmedit.OsmPoint.Action;
 
 public interface OsmBugsUtil {
 
-	public static class OsmBugResult {
+	class OsmBugResult {
 		OsmNotesPoint local;
 		String warning;
 	}
 	
-	public OsmBugResult commit(OsmNotesPoint bug, String text, Action action);
+	OsmBugResult commit(OsmNotesPoint bug, String text, Action action);
 
 	OsmBugResult modify(OsmNotesPoint bug, String text);
 	

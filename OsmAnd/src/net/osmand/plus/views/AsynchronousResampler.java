@@ -10,8 +10,8 @@ import java.util.List;
 
 public abstract class AsynchronousResampler extends AsyncTask<String,Integer,String> {
 
-    protected Renderable.RenderableSegment rs;
-    protected List<WptPt> culled = null;
+    Renderable.RenderableSegment rs;
+    List<WptPt> culled = null;
 
     AsynchronousResampler(Renderable.RenderableSegment rs) {
         assert rs != null;
@@ -27,7 +27,7 @@ public abstract class AsynchronousResampler extends AsyncTask<String,Integer,Str
 
     public static class RamerDouglasPeucer extends AsynchronousResampler {
 
-        private double epsilon;
+        private final double epsilon;
 
         public RamerDouglasPeucer(Renderable.RenderableSegment rs, double epsilon) {
             super(rs);

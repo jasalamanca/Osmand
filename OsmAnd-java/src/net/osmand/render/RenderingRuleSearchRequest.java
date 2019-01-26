@@ -7,15 +7,15 @@ import net.osmand.util.Algorithms;
 public class RenderingRuleSearchRequest {
 
 	private final RenderingRulesStorage storage;
-	RenderingRuleProperty[] props;
-	int[] values;
-	BinaryMapDataObject object;
-	float[] fvalues;
+	private final RenderingRuleProperty[] props;
+	private final int[] values;
+	private BinaryMapDataObject object;
+	private final float[] fvalues;
 
-	int[] savedValues;
-	float[] savedFvalues;
+	private int[] savedValues;
+	private float[] savedFvalues;
 	
-	boolean searchResult = false;
+	private boolean searchResult = false;
 	
 	
 	public final RenderingRuleStorageProperties ALL;
@@ -185,7 +185,7 @@ public class RenderingRuleSearchRequest {
 		
 	}
 
-	protected void loadOutputProperties(RenderingRule rule, boolean override) {
+	private void loadOutputProperties(RenderingRule rule, boolean override) {
 		RenderingRuleProperty[] properties = rule.getProperties();
 		for (int i = 0; i < properties.length; i++) {
 			RenderingRuleProperty rp = properties[i];
@@ -213,7 +213,7 @@ public class RenderingRuleSearchRequest {
 		}
 	}
 
-	protected boolean checkInputProperties(RenderingRule rule) {
+	private boolean checkInputProperties(RenderingRule rule) {
 		RenderingRuleProperty[] properties = rule.getProperties();
 		for (int i = 0; i < properties.length; i++) {
 			RenderingRuleProperty rp = properties[i];

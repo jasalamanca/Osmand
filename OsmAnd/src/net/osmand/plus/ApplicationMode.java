@@ -14,9 +14,9 @@ import java.util.Set;
 
 
 public class ApplicationMode {
-	private static Map<String, Set<ApplicationMode>> widgetsVisibilityMap = new LinkedHashMap<>();
-	private static Map<String, Set<ApplicationMode>> widgetsAvailabilityMap = new LinkedHashMap<>();
-	private static List<ApplicationMode> values = new ArrayList<>();
+	private static final Map<String, Set<ApplicationMode>> widgetsVisibilityMap = new LinkedHashMap<>();
+	private static final Map<String, Set<ApplicationMode>> widgetsAvailabilityMap = new LinkedHashMap<>();
+	private static final List<ApplicationMode> values = new ArrayList<>();
 	private static List<ApplicationMode> cachedFilteredValues = new ArrayList<>();
 	/*
 	 * DEFAULT("Browse map"), CAR("Car"), BICYCLE("Bicycle"), PEDESTRIAN("Pedestrian");
@@ -33,7 +33,7 @@ public class ApplicationMode {
 	public static final ApplicationMode PEDESTRIAN = create(R.string.app_mode_pedestrian, "pedestrian").speed(1.5f, 5).arrivalDistance(45).
 			icon(R.drawable.map_action_pedestrian_dark, R.drawable.ic_action_pedestrian_dark).reg();
 
-	public static final ApplicationMode AIRCRAFT = create(R.string.app_mode_aircraft, "aircraft").speed(40f, 100).carLocation().
+	private static final ApplicationMode AIRCRAFT = create(R.string.app_mode_aircraft, "aircraft").speed(40f, 100).carLocation().
 			icon(R.drawable.map_action_aircraft, R.drawable.ic_action_aircraft).reg();
 
 	public static final ApplicationMode BOAT = create(R.string.app_mode_boat, "boat").speed(5.5f, 20).carLocation().
@@ -50,11 +50,11 @@ public class ApplicationMode {
 			carLocation().parent(CAR).
 			icon(R.drawable.map_action_truck_dark, R.drawable.ic_action_truck_dark).reg();
 
-	public static final ApplicationMode BUS = create(R.string.app_mode_bus, "bus").speed(15.3f, 40).
+	private static final ApplicationMode BUS = create(R.string.app_mode_bus, "bus").speed(15.3f, 40).
 			carLocation().parent(CAR).
 			icon(R.drawable.map_action_bus_dark, R.drawable.ic_action_bus_dark).reg();
 
-	public static final ApplicationMode TRAIN = create(R.string.app_mode_train, "train").speed(25f, 40).
+	private static final ApplicationMode TRAIN = create(R.string.app_mode_train, "train").speed(25f, 40).
 			carLocation().icon(R.drawable.map_action_train, R.drawable.ic_action_train).reg();
 
 	static {
@@ -105,18 +105,18 @@ public class ApplicationMode {
 
 		private ApplicationMode applicationMode;
 
-		public ApplicationMode reg() {
+		ApplicationMode reg() {
 			values.add(applicationMode);
 			return applicationMode;
 		}
 
-		public ApplicationModeBuilder icon(int mapIcon, int smallIconDark) {
+		ApplicationModeBuilder icon(int mapIcon, int smallIconDark) {
 			applicationMode.mapIconId = mapIcon;
 			applicationMode.smallIconDark = smallIconDark;
 			return this;
 		}
 
-		public ApplicationModeBuilder carLocation() {
+		ApplicationModeBuilder carLocation() {
 			applicationMode.bearingIconDay = R.drawable.map_car_bearing;
 			applicationMode.bearingIconNight = R.drawable.map_car_bearing_night;
 			applicationMode.headingIconDay = R.drawable.map_car_location_view_angle;
@@ -128,12 +128,12 @@ public class ApplicationMode {
 			return this;
 		}
 
-		public ApplicationModeBuilder parent(ApplicationMode parent) {
+		ApplicationModeBuilder parent(ApplicationMode parent) {
 			applicationMode.parent = parent;
 			return this;
 		}
 
-		public ApplicationModeBuilder bicycleLocation() {
+		ApplicationModeBuilder bicycleLocation() {
 			applicationMode.bearingIconDay = R.drawable.map_bicycle_bearing;
 			applicationMode.bearingIconNight = R.drawable.map_bicycle_bearing_night;
 			applicationMode.headingIconDay = R.drawable.map_bicycle_location_view_angle;
@@ -145,7 +145,7 @@ public class ApplicationMode {
 			return this;
 		}
 
-		public ApplicationModeBuilder defLocation() {
+		ApplicationModeBuilder defLocation() {
 			applicationMode.bearingIconDay = R.drawable.map_pedestrian_bearing;
 			applicationMode.bearingIconNight = R.drawable.map_pedestrian_bearing_night;
 			applicationMode.headingIconDay = R.drawable.map_default_location_view_angle;
@@ -157,13 +157,13 @@ public class ApplicationMode {
 			return this;
 		}
 
-		public ApplicationModeBuilder speed(float defSpeed, int distForTurn) {
+		ApplicationModeBuilder speed(float defSpeed, int distForTurn) {
 			applicationMode.defaultSpeed = defSpeed;
 			applicationMode.minDistanceForTurn = distForTurn;
 			return this;
 		}
 
-		public ApplicationModeBuilder arrivalDistance(int arrivalDistance) {
+		ApplicationModeBuilder arrivalDistance(int arrivalDistance) {
 			applicationMode.arrivalDistance = arrivalDistance;
 			return this;
 		}
@@ -237,7 +237,7 @@ public class ApplicationMode {
 		return set.contains(this);
 	}
 
-	public static Set<ApplicationMode> regWidgetAvailability(String widgetId, ApplicationMode... am) {
+	private static Set<ApplicationMode> regWidgetAvailability(String widgetId, ApplicationMode... am) {
 		HashSet<ApplicationMode> set = new HashSet<>();
 		if (am == null) {
 			set.addAll(values);

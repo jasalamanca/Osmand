@@ -21,20 +21,20 @@ public class RenderingRuleProperty {
 	public static final int FALSE_VALUE = 0;
 	
 	// Fields C++
-	protected final int type;
-	protected final boolean input;
-	protected final String attrName;
+	final int type;
+	final boolean input;
+	final String attrName;
 	
-	protected int id = -1;
+	private int id = -1;
 
 	// use for custom rendering rule properties
-	protected String name;
-	protected String description;
-	protected String defaultValueDescription;
-	protected String[] possibleValues;
-	protected String category;
+    String name;
+	String description;
+	private String defaultValueDescription;
+	String[] possibleValues;
+	String category;
 	
-	protected RenderingRuleProperty(String attrName, int type, boolean input){
+	private RenderingRuleProperty(String attrName, int type, boolean input){
 		this.attrName = attrName;
 		this.type = type;
 		this.input = input;
@@ -79,11 +79,11 @@ public class RenderingRuleProperty {
 		return defaultValueDescription;
 	}
 	
-	protected void setName(String name) {
+	void setName(String name) {
 		this.name = name;
 	}
 	
-	protected void setDescription(String description) {
+	void setDescription(String description) {
 		this.description = description;
 	}
 	
@@ -95,7 +95,7 @@ public class RenderingRuleProperty {
 		this.category = category;
 	}
 	
-	protected void setPossibleValues(String[] possibleValues) {
+	void setPossibleValues(String[] possibleValues) {
 		this.possibleValues = possibleValues;
 	}
 	
@@ -327,7 +327,7 @@ public class RenderingRuleProperty {
      * 'red', 'blue', 'green', 'black', 'white', 'gray', 'cyan', 'magenta',
      * 'yellow', 'lightgray', 'darkgray'
      */
-    public static int parseColor(String colorString) {
+    private static int parseColor(String colorString) {
         if (colorString.charAt(0) == '#') {
             // Use a long to avoid rollovers on #ffXXXXXX
             long color = Long.parseLong(colorString.substring(1), 16);

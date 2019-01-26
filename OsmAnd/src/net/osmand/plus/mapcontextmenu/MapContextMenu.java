@@ -97,34 +97,34 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 
 	private MenuAction searchDoneAction;
 
-	private LinkedList<MapContextMenuData> historyStack = new LinkedList<>();
+	private final LinkedList<MapContextMenuData> historyStack = new LinkedList<>();
 
-	public static class MapContextMenuData {
-		private LatLon latLon;
-		private PointDescription pointDescription;
-		private Object object;
-		private boolean backAction;
+	static class MapContextMenuData {
+		private final LatLon latLon;
+		private final PointDescription pointDescription;
+		private final Object object;
+		private final boolean backAction;
 
-		public MapContextMenuData(LatLon latLon, PointDescription pointDescription, Object object, boolean backAction) {
+		MapContextMenuData(LatLon latLon, PointDescription pointDescription, Object object, boolean backAction) {
 			this.latLon = latLon;
 			this.pointDescription = pointDescription;
 			this.object = object;
 			this.backAction = backAction;
 		}
 
-		public LatLon getLatLon() {
+		LatLon getLatLon() {
 			return latLon;
 		}
 
-		public PointDescription getPointDescription() {
+		PointDescription getPointDescription() {
 			return pointDescription;
 		}
 
-		public Object getObject() {
+		Object getObject() {
 			return object;
 		}
 
-		public boolean hasBackAction() {
+		boolean hasBackAction() {
 			return backAction;
 		}
 	}
@@ -288,10 +288,10 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 		return init(latLon, pointDescription, object, false, false);
 	}
 
-	public boolean init(@NonNull LatLon latLon,
-						@Nullable PointDescription pointDescription,
-						@Nullable Object object,
-						boolean update, boolean restorePrevious) {
+	private boolean init(@NonNull LatLon latLon,
+                         @Nullable PointDescription pointDescription,
+                         @Nullable Object object,
+                         boolean update, boolean restorePrevious) {
 		OsmandApplication app = mapActivity.getMyApplication();
 
 		if (myLocation == null) {
@@ -460,7 +460,7 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 		return result;
 	}
 
-	public boolean hide(boolean animated) {
+	private boolean hide(boolean animated) {
 		boolean result = false;
 		if (mapPosition != 0) {
 			mapActivity.getMapView().setMapPosition(mapPosition);
@@ -500,11 +500,11 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 		return shouldShowTopControls(isVisible());
 	}
 
-	public boolean shouldShowTopControls(boolean menuVisible) {
+	private boolean shouldShowTopControls(boolean menuVisible) {
 		return !menuVisible || isLandscapeLayout() || getCurrentMenuState() == MenuController.MenuState.HEADER_ONLY;
 	}
 
-	public boolean shouldShowBottomControls(boolean menuVisible) {
+	private boolean shouldShowBottomControls(boolean menuVisible) {
 		return !menuVisible || isLandscapeLayout();
 	}
 
@@ -626,7 +626,7 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 		}
 	}
 
-	public boolean showPreviousMenu() {
+	private boolean showPreviousMenu() {
 		MapContextMenuData menuData;
 		if (hasHistoryStackBackAction()) {
 			do {
@@ -667,12 +667,12 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 
 	public boolean hasActiveToolbar() {
 		TopToolbarController toolbarController = mapActivity.getTopToolbarController(TopToolbarControllerType.CONTEXT_MENU);
-		return toolbarController != null && toolbarController instanceof ContextMenuToolbarController;
+		return toolbarController instanceof ContextMenuToolbarController;
 	}
 
 	public void closeActiveToolbar() {
 		TopToolbarController toolbarController = mapActivity.getTopToolbarController(TopToolbarControllerType.CONTEXT_MENU);
-		if (toolbarController != null && toolbarController instanceof ContextMenuToolbarController) {
+		if (toolbarController instanceof ContextMenuToolbarController) {
 			MenuController menuController = ((ContextMenuToolbarController) toolbarController).getMenuController();
 			closeToolbar(menuController);
 		}
@@ -818,7 +818,7 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 	}
 
 	public void buttonWaypointPressed() {
-		if (object != null && object instanceof MapMarker) {
+		if (object instanceof MapMarker) {
 			RenameMarkerBottomSheetDialogFragment
 					.showInstance(mapActivity.getSupportFragmentManager(), (MapMarker) object);
 		} else {
@@ -848,7 +848,7 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 
 
 	public void buttonFavoritePressed() {
-		if (object != null && object instanceof FavouritePoint) {
+		if (object instanceof FavouritePoint) {
 			getFavoritePointEditor().edit((FavouritePoint) object);
 		} else {
 			callMenuAction(true, new MenuAction() {
@@ -961,14 +961,14 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 	}
 
 	public void editWptPt() {
-		if (object != null && object instanceof WptPt) {
+		if (object instanceof WptPt) {
 			getWptPtPointEditor().edit((WptPt) object);
 		}
 	}
 
-	public AlertDialog addNewWptToGPXFile(final LatLon latLon, final String title,
-										  final String categoryName,
-										  final int categoryColor, final boolean skipDialog) {
+	private AlertDialog addNewWptToGPXFile(final LatLon latLon, final String title,
+                                           final String categoryName,
+                                           final int categoryColor, final boolean skipDialog) {
 		CallbackWithObject<GPXFile[]> callbackWithObject = new CallbackWithObject<GPXFile[]>() {
 			@Override
 			public boolean processResult(GPXFile[] result) {
@@ -986,7 +986,7 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 		return GpxUiHelper.selectSingleGPXFile(mapActivity, true, callbackWithObject);
 	}
 
-	public AlertDialog addNewWptToGPXFile(final String title) {
+	private AlertDialog addNewWptToGPXFile(final String title) {
 		CallbackWithObject<GPXFile[]> callbackWithObject = new CallbackWithObject<GPXFile[]>() {
 			@Override
 			public boolean processResult(GPXFile[] result) {
@@ -1013,7 +1013,7 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 		}
 	}
 
-	public PointDescription getPointDescriptionForMarker() {
+	private PointDescription getPointDescriptionForMarker() {
 		PointDescription pd = getPointDescriptionForTarget();
 		if (Algorithms.isEmpty(pd.getName()) && !Algorithms.isEmpty(nameStr)
 				&& !nameStr.equals(PointDescription.getAddressNotFoundStr(mapActivity))) {
@@ -1280,8 +1280,8 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 		}
 	}
 
-	public void updateLocation(final boolean centerChanged, final boolean locationChanged,
-							   final boolean compassChanged) {
+	private void updateLocation(final boolean centerChanged, final boolean locationChanged,
+                                final boolean compassChanged) {
 		if (inLocationUpdate) {
 			return;
 		}
@@ -1299,6 +1299,6 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 	}
 
 	private abstract class MenuAction implements Runnable {
-		protected ProgressDialog dlg;
+		ProgressDialog dlg;
 	}
 }

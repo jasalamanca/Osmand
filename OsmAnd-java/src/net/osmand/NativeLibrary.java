@@ -34,7 +34,7 @@ import net.osmand.util.Algorithms;
 import org.apache.commons.logging.Log;
 
 public class NativeLibrary {
-    public NativeLibrary() {
+    protected NativeLibrary() {
     }
 
     public static class RenderingGenerationResult {
@@ -67,9 +67,9 @@ public class NativeLibrary {
 	}
 
 	public static class NativeRouteSearchResult {
-		public long nativeHandler;
-		public RouteDataObject[] objects;
-		public RouteSubregion region;
+		long nativeHandler;
+		public final RouteDataObject[] objects;
+		RouteSubregion region;
 
 		public NativeRouteSearchResult(long nativeHandler, RouteDataObject[] objects) {
 			this.nativeHandler = nativeHandler;
@@ -193,7 +193,7 @@ public class NativeLibrary {
 		return b;
 	}
 
-	public static boolean load(String libBaseName, String path) {
+	private static boolean load(String libBaseName, String path) {
 		// look for a pre-installed library
 		if (path != null) {
 			try {
@@ -253,7 +253,7 @@ public class NativeLibrary {
      * @return 0 if lhs = rhs, less than 0 if lhs &lt; rhs, and greater than 0 if lhs &gt; rhs.
      * @since 1.7
      */
-    public static int ccmp(int lhs, int rhs) {
+    private static int ccmp(int lhs, int rhs) {
         return lhs < rhs ? -1 : (lhs == rhs ? 0 : 1);
     }
     
@@ -307,10 +307,10 @@ public class NativeLibrary {
 	}
 	
 	public static class RenderedObject extends MapObject {
-		private Map<String, String> tags = new LinkedHashMap<>();
+		private final Map<String, String> tags = new LinkedHashMap<>();
 		private QuadRect bbox = new QuadRect(); 
-		private TIntArrayList x = new TIntArrayList();
-		private TIntArrayList y = new TIntArrayList();
+		private final TIntArrayList x = new TIntArrayList();
+		private final TIntArrayList y = new TIntArrayList();
 		private String iconRes;
 		private int order;
 		private boolean visible;

@@ -27,9 +27,7 @@ import net.osmand.data.PointDescription;
 import net.osmand.osm.AbstractPoiType;
 import net.osmand.osm.MapPoiTypes;
 import net.osmand.osm.PoiType;
-import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandPlugin;
-import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.helpers.FontCache;
@@ -73,10 +71,10 @@ public class AmenityMenuBuilder extends MenuBuilder {
 				isWiki, isText, needLinks, isPhoneNumber, isUrl, matchWidthDivider, textLinesLimit);
 	}
 
-	protected void buildRow(final View view, Drawable icon, final String text, final String textPrefix,
-							boolean collapsable, final CollapsableView collapsableView,
-							int textColor, boolean isWiki, boolean isText, boolean needLinks,
-							boolean isPhoneNumber, boolean isUrl, boolean matchWidthDivider, int textLinesLimit) {
+	private void buildRow(final View view, Drawable icon, final String text, final String textPrefix,
+                          boolean collapsable, final CollapsableView collapsableView,
+                          int textColor, boolean isWiki, boolean isText, boolean needLinks,
+                          boolean isPhoneNumber, boolean isUrl, boolean matchWidthDivider, int textLinesLimit) {
 
 		if (!isFirstRow()) {
 			buildRowDivider(view);
@@ -588,7 +586,7 @@ public class AmenityMenuBuilder extends MenuBuilder {
 			buildAmenityRow(view, wikiInfo);
 		}
 
-		OsmandSettings st = ((OsmandApplication) mapActivity.getApplicationContext()).getSettings();
+//		OsmandSettings st = ((OsmandApplication) mapActivity.getApplicationContext()).getSettings();
 
 		boolean osmEditingEnabled = OsmandPlugin.getEnabledPlugin(OsmEditingPlugin.class) != null;
 		if (osmEditingEnabled && amenity.getId() != null
@@ -608,7 +606,7 @@ public class AmenityMenuBuilder extends MenuBuilder {
 				.replaceAll("\n", " "), 0, false, null, false, 0, false, null, false);
 	}
 
-	public void buildAmenityRow(View view, AmenityInfoRow info) {
+	private void buildAmenityRow(View view, AmenityInfoRow info) {
 		if (info.icon != null) {
 			buildRow(view, info.icon, info.text, info.textPrefix, info.collapsable, info.collapsableView,
 					info.textColor, info.isWiki, info.isText, info.needLinks, info.isPhoneNumber,
@@ -626,7 +624,7 @@ public class AmenityMenuBuilder extends MenuBuilder {
 
 		final List<TextViewEx> buttons = new ArrayList<>();
 
-		LinearLayout view = (LinearLayout) buildCollapsableContentView(context, collapsed, true);
+		LinearLayout view = buildCollapsableContentView(context, collapsed, true);
 
 		for (final PoiType pt : categoryTypes) {
 			TextViewEx button = buildButtonInCollapsableView(context, false, false);
@@ -683,29 +681,29 @@ public class AmenityMenuBuilder extends MenuBuilder {
 	}
 
 	private static class AmenityInfoRow {
-		private String key;
+		private final String key;
 		private Drawable icon;
 		private int iconId;
-		private String textPrefix;
-		private String text;
-		private CollapsableView collapsableView;
-		private boolean collapsable;
-		private int textColor;
-		private boolean isWiki;
-		private boolean isText;
-		private boolean needLinks;
-		private boolean isPhoneNumber;
-		private boolean isUrl;
-		private int order;
-		private String name;
-		private boolean matchWidthDivider;
-		private int textLinesLimit;
+		private final String textPrefix;
+		private final String text;
+		private final CollapsableView collapsableView;
+		private final boolean collapsable;
+		private final int textColor;
+		private final boolean isWiki;
+		private final boolean isText;
+		private final boolean needLinks;
+		private final boolean isPhoneNumber;
+		private final boolean isUrl;
+		private final int order;
+		private final String name;
+		private final boolean matchWidthDivider;
+		private final int textLinesLimit;
 
-		public AmenityInfoRow(String key, Drawable icon, String textPrefix, String text,
-							  boolean collapsable, CollapsableView collapsableView,
-							  int textColor, boolean isWiki, boolean isText, boolean needLinks,
-							  int order, String name, boolean isPhoneNumber, boolean isUrl,
-							  boolean matchWidthDivider, int textLinesLimit) {
+		AmenityInfoRow(String key, Drawable icon, String textPrefix, String text,
+                       boolean collapsable, CollapsableView collapsableView,
+                       int textColor, boolean isWiki, boolean isText, boolean needLinks,
+                       int order, String name, boolean isPhoneNumber, boolean isUrl,
+                       boolean matchWidthDivider, int textLinesLimit) {
 			this.key = key;
 			this.icon = icon;
 			this.textPrefix = textPrefix;
@@ -724,11 +722,11 @@ public class AmenityMenuBuilder extends MenuBuilder {
 			this.textLinesLimit = textLinesLimit;
 		}
 
-		public AmenityInfoRow(String key, int iconId, String textPrefix, String text,
-							  boolean collapsable, CollapsableView collapsableView,
-							  int textColor, boolean isWiki, boolean isText, boolean needLinks,
-							  int order, String name, boolean isPhoneNumber, boolean isUrl,
-							  boolean matchWidthDivider, int textLinesLimit) {
+		AmenityInfoRow(String key, int iconId, String textPrefix, String text,
+                       boolean collapsable, CollapsableView collapsableView,
+                       int textColor, boolean isWiki, boolean isText, boolean needLinks,
+                       int order, String name, boolean isPhoneNumber, boolean isUrl,
+                       boolean matchWidthDivider, int textLinesLimit) {
 			this.key = key;
 			this.iconId = iconId;
 			this.textPrefix = textPrefix;

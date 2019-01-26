@@ -18,7 +18,7 @@ public abstract class MenuBottomSheetDialogFragment extends BottomSheetDialogFra
 
 	private static final String USED_ON_MAP_KEY = "used_on_map";
 
-	protected boolean usedOnMap = true;
+	private boolean usedOnMap = true;
 	protected boolean nightMode;
 
 	public void setUsedOnMap(boolean usedOnMap) {
@@ -114,7 +114,7 @@ public abstract class MenuBottomSheetDialogFragment extends BottomSheetDialogFra
 		return nightMode ? R.drawable.bg_bottom_sheet_sides_landscape_dark : R.drawable.bg_bottom_sheet_sides_landscape_light;
 	}
 
-	protected boolean isNightMode() {
+	private boolean isNightMode() {
 		if (usedOnMap) {
 			return getMyApplication().getDaynightHelper().isNightModeForMapControls();
 		}

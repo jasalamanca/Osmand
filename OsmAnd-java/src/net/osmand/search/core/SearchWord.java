@@ -4,7 +4,7 @@ import net.osmand.data.LatLon;
 
 public class SearchWord {
 	private String word;
-	private SearchResult result;
+	private final SearchResult result;
 	
 	public SearchWord(String word, SearchResult res) {
 		this.word = word.trim();

@@ -1,11 +1,5 @@
-/**
- *
- */
 package net.osmand.plus.activities;
 
-import android.view.Window;
-import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.R;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -21,13 +15,16 @@ import android.print.PrintManager;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import net.osmand.plus.OsmandApplication;
+import net.osmand.plus.R;
+
 
 /**
  *
  */
 public class PrintDialogActivity extends ActionBarProgressActivity {
 	private WebView webView;
-	PrintJobId printJobId = null;
+	private PrintJobId printJobId = null;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -43,7 +40,7 @@ public class PrintDialogActivity extends ActionBarProgressActivity {
 		getSupportActionBar().setTitle(R.string.print_route);
 
 		setContentView(R.layout.print_dialog);
-		webView = (WebView) findViewById(R.id.printDialogWebview);
+		webView = findViewById(R.id.printDialogWebview);
 
 		Intent intent = getIntent();
 		if (intent != null) {

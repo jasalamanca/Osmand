@@ -20,7 +20,7 @@ public class SearchRegionByNameActivity extends SearchByNameAbstractActivity<Reg
 	@Override
 	protected Comparator<? super RegionAddressRepository> createComparator() {
 		return new Comparator<RegionAddressRepository>() {
-			Collator col = Collator.getInstance();
+			final Collator col = Collator.getInstance();
 			@Override
 			public int compare(RegionAddressRepository lhs,
 					RegionAddressRepository rhs) {

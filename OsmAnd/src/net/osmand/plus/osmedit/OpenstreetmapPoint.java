@@ -24,7 +24,7 @@ public class OpenstreetmapPoint extends OsmPoint {
 		return ret;
 	}
 
-	public String getType() {
+	private String getType() {
 		String type = "amenity";
 		for (String k : entity.getTagKeySet()) {
 			if (!OSMTagKey.NAME.getValue().equals(k) && !OSMTagKey.OPENING_HOURS.getValue().equals(k) && 

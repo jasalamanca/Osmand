@@ -113,8 +113,8 @@ public class TransportStopsLayer extends OsmandMapLayer implements ContextMenuLa
 		};
 	}
 	
-	public void getFromPoint(RotatedTileBox tb, PointF point, List<? super TransportStop> res,
-			List<TransportStop> objects) {
+	private void getFromPoint(RotatedTileBox tb, PointF point, List<? super TransportStop> res,
+                              List<TransportStop> objects) {
 		int ex = (int) point.x;
 		int ey = (int) point.y;
 		final int rp = getRadiusPoi(tb);
@@ -158,7 +158,7 @@ public class TransportStopsLayer extends OsmandMapLayer implements ContextMenuLa
 		this.showTransportStops = showTransportStops;
 	}
 
-	public int getRadiusPoi(RotatedTileBox tb){
+	private int getRadiusPoi(RotatedTileBox tb){
 		final double zoom = tb.getZoom();
 		int r;
 		if(zoom < startZoomRoute){

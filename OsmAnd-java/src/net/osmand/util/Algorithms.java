@@ -2,13 +2,11 @@ package net.osmand.util;
 
 import net.osmand.IProgress;
 import net.osmand.PlatformUtil;
-import net.osmand.binary.BinaryMapIndexReader;
 
 import org.apache.commons.logging.Log;
 
 import java.io.BufferedReader;
 import java.io.Closeable;
-import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -16,15 +14,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Map.Entry;
 
 
 /**
@@ -93,21 +88,7 @@ public class Algorithms {
 		return name;
 	}
 
-	public static String getFileExtension(File f) {
-		String name = f.getName();
-		int i = name.lastIndexOf(".");
-		return name.substring(i + 1);
-	}
-
-	public static File[] getSortedFilesVersions(File dir) {
-		File[] listFiles = dir.listFiles();
-		if (listFiles != null) {
-			Arrays.sort(listFiles, getFileVersionComparator());
-		}
-		return listFiles;
-	}
-
-	public static Comparator<File> getFileVersionComparator() {
+    public static Comparator<File> getFileVersionComparator() {
 		return new Comparator<File>() {
 			@Override
 			public int compare(File o1, File o2) {
@@ -162,22 +143,7 @@ public class Algorithms {
 		return names;
 	}
 
-	public static String encodeMap(Map<String, String> names) {
-		if (names != null) {
-			Iterator<Entry<String, String>> it = names.entrySet().iterator();
-			StringBuilder bld = new StringBuilder();
-			while (it.hasNext()) {
-				Entry<String, String> e = it.next();
-				bld.append(e.getKey()).append(CHAR_TOSPLIT)
-						.append(e.getValue().replace(CHAR_TOSPLIT, (char) (CHAR_TOSPLIT + 1)));
-				bld.append(CHAR_TOSPLIT);
-			}
-			return bld.toString();
-		}
-		return "";
-	}
-
-	public static int findFirstNumberEndIndex(String value) {
+    public static int findFirstNumberEndIndex(String value) {
 		int i = 0;
 		boolean valid = false;
 		if (value.length() > 0 && value.charAt(0) == '-') {
@@ -198,36 +164,7 @@ public class Algorithms {
 		return charAt >= '0' && charAt <= '9';
 	}
 
-	/**
-	 * Determine whether a file is a ZIP File.
-	 */
-	public static boolean isZipFile(File file) throws IOException {
-		if (file.isDirectory()) {
-			return false;
-		}
-		if (!file.canRead()) {
-			throw new IOException("Cannot read file " + file.getAbsolutePath());
-		}
-		if (file.length() < 4) {
-			return false;
-		}
-		FileInputStream in = new FileInputStream(file);
-		int test = readInt(in);
-		in.close();
-		return test == 0x504b0304;
-	}
-
-	private static int readInt(InputStream in) throws IOException {
-		int ch1 = in.read();
-		int ch2 = in.read();
-		int ch3 = in.read();
-		int ch4 = in.read();
-		if ((ch1 | ch2 | ch3 | ch4) < 0)
-			throw new EOFException();
-		return ((ch1 << 24) + (ch2 << 16) + (ch3 << 8) + ch4);
-	}
-
-	public static String capitalizeFirstLetterAndLowercase(String s) {
+    public static String capitalizeFirstLetterAndLowercase(String s) {
 		if (s != null && s.length() > 1) {
 			// not very efficient algorithm
 			return Character.toUpperCase(s.charAt(0)) + s.substring(1).toLowerCase();
@@ -324,17 +261,7 @@ public class Algorithms {
 		return "";
 	}
 
-	public static String extractOnlyIntegerSuffix(String s) {
-		int k = 0;
-		for (; k < s.length(); k++) {
-			if (Character.isDigit(s.charAt(k))) {
-				return s.substring(k);
-			}
-		}
-		return "";
-	}
-
-	public static String extractIntegerSuffix(String s) {
+    public static String extractIntegerSuffix(String s) {
 		int k = 0;
 		for (; k < s.length(); k++) {
 			if (!Character.isDigit(s.charAt(k))) {
@@ -344,8 +271,6 @@ public class Algorithms {
 		return "";
 	}
 
-
-	@SuppressWarnings("TryFinallyCanBeTryWithResources")
 	public static void fileCopy(File src, File dst) throws IOException {
 		FileOutputStream fout = new FileOutputStream(dst);
 		try {
@@ -383,14 +308,7 @@ public class Algorithms {
 		}
 	}
 
-	public static void oneByteStreamCopy(InputStream in, OutputStream out) throws IOException {
-		int read;
-		while ((read = in.read()) != -1) {
-			out.write(read);
-		}
-	}
-
-	public static void closeStream(Closeable stream) {
+    public static void closeStream(Closeable stream) {
 		try {
 			if (stream != null) {
 				stream.close();
@@ -400,21 +318,7 @@ public class Algorithms {
 		}
 	}
 
-	@SuppressWarnings("ResultOfMethodCallIgnored")
-	public static void updateAllExistingImgTilesToOsmandFormat(File f) {
-		if (f.isDirectory()) {
-			for (File c : f.listFiles()) {
-				updateAllExistingImgTilesToOsmandFormat(c);
-			}
-		} else if (f.getName().endsWith(".png") || f.getName().endsWith(".jpg")) { //$NON-NLS-1$ //$NON-NLS-2$
-			f.renameTo(new File(f.getAbsolutePath() + ".tile")); //$NON-NLS-1$
-		} else if (f.getName().endsWith(".andnav2")) { //$NON-NLS-1$
-			f.renameTo(new File(f.getAbsolutePath().substring(0, f.getAbsolutePath().length() - ".andnav2".length()) + ".tile")); //$NON-NLS-1$ //$NON-NLS-2$
-		}
-
-	}
-
-	public static StringBuilder readFromInputStream(InputStream i) throws IOException {
+    public static StringBuilder readFromInputStream(InputStream i) throws IOException {
 		StringBuilder responseBody = new StringBuilder();
 		responseBody.setLength(0);
 		if (i != null) {
@@ -451,76 +355,7 @@ public class Algorithms {
 	}
 
 
-	public static long parseLongFromBytes(byte[] bytes, int offset) {
-		long o = 0xff & bytes[offset + 7];
-		o = o << 8 | (0xff & bytes[offset + 6]);
-		o = o << 8 | (0xff & bytes[offset + 5]);
-		o = o << 8 | (0xff & bytes[offset + 4]);
-		o = o << 8 | (0xff & bytes[offset + 3]);
-		o = o << 8 | (0xff & bytes[offset + 2]);
-		o = o << 8 | (0xff & bytes[offset + 1]);
-		o = o << 8 | (0xff & bytes[offset]);
-		return o;
-	}
-
-
-	public static void putLongToBytes(byte[] bytes, int offset, long l) {
-		bytes[offset] = (byte) (l & 0xff);
-		l >>= 8;
-		bytes[offset + 1] = (byte) (l & 0xff);
-		l >>= 8;
-		bytes[offset + 2] = (byte) (l & 0xff);
-		l >>= 8;
-		bytes[offset + 3] = (byte) (l & 0xff);
-		l >>= 8;
-		bytes[offset + 4] = (byte) (l & 0xff);
-		l >>= 8;
-		bytes[offset + 5] = (byte) (l & 0xff);
-		l >>= 8;
-		bytes[offset + 6] = (byte) (l & 0xff);
-		l >>= 8;
-		bytes[offset + 7] = (byte) (l & 0xff);
-	}
-
-
-	public static int parseIntFromBytes(byte[] bytes, int offset) {
-		int o = (0xff & bytes[offset + 3]) << 24;
-		o |= (0xff & bytes[offset + 2]) << 16;
-		o |= (0xff & bytes[offset + 1]) << 8;
-		o |= (0xff & bytes[offset]);
-		return o;
-	}
-
-	public static void putIntToBytes(byte[] bytes, int offset, int l) {
-		bytes[offset] = (byte) (l & 0xff);
-		l >>= 8;
-		bytes[offset + 1] = (byte) (l & 0xff);
-		l >>= 8;
-		bytes[offset + 2] = (byte) (l & 0xff);
-		l >>= 8;
-		bytes[offset + 3] = (byte) (l & 0xff);
-	}
-
-
-	public static void writeLongInt(OutputStream stream, long l) throws IOException {
-		stream.write((int) (l & 0xff));
-		l >>= 8;
-		stream.write((int) (l & 0xff));
-		l >>= 8;
-		stream.write((int) (l & 0xff));
-		l >>= 8;
-		stream.write((int) (l & 0xff));
-		l >>= 8;
-		stream.write((int) (l & 0xff));
-		l >>= 8;
-		stream.write((int) (l & 0xff));
-		l >>= 8;
-		stream.write((int) (l & 0xff));
-		l >>= 8;
-		stream.write((int) (l & 0xff));
-	}
-
-	public static void writeInt(OutputStream stream, int l) throws IOException {
+    public static void writeInt(OutputStream stream, int l) throws IOException {
 		stream.write(l & 0xff);
 		l >>= 8;
 		stream.write(l & 0xff);
@@ -531,35 +366,7 @@ public class Algorithms {
 	}
 
 
-	public static void writeSmallInt(OutputStream stream, int l) throws IOException {
-		stream.write(l & 0xff);
-		l >>= 8;
-		stream.write(l & 0xff);
-	}
-
-	public static int parseSmallIntFromBytes(byte[] bytes, int offset) {
-		int s = (0xff & bytes[offset + 1]) << 8;
-		s |= (0xff & bytes[offset]);
-		return s;
-	}
-
-	public static void putSmallIntBytes(byte[] bytes, int offset, int s) {
-		bytes[offset] = (byte) (s & 0xff);
-		s >>= 8;
-		bytes[offset + 1] = (byte) (s & 0xff);
-	}
-
-	public static boolean containsDigit(String name) {
-		for (int i = 0; i < name.length(); i++) {
-			if (Character.isDigit(name.charAt(i))) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-
-	public static String formatDuration(int seconds, boolean fullForm) {
+    public static String formatDuration(int seconds, boolean fullForm) {
 		String sec;
 		if (seconds % 60 < 10) {
 			sec = "0" + (seconds % 60);
@@ -615,25 +422,7 @@ public class Algorithms {
 		return hexString;
 	}
 
-	public static int getRainbowColor(double percent) {
-
-		// Given an input percentage (0.0-1.0) this will produce a colour from a "wide rainbow"
-		// from purple (low) to red(high).  This is useful for producing value-based colourations (e.g., altitude)
-
-		double a = (1. - percent) * 5.;
-		int X = (int) Math.floor(a);
-		int Y = (int) (Math.floor(255 * (a - X)));
-		switch (X) {
-			case 0: return 0xFFFF0000 + (Y << 8);
-			case 1: return 0xFF00FF00 + ((255 - Y) << 16);
-			case 2: return 0xFF00FF00 + Y;
-			case 3: return 0xFF0000FF + ((255 - Y) << 8);
-			case 4: return 0xFF0000FF + (Y << 16);
-		}
-		return 0xFFFF00FF;
-	}
-
-	public static int compare(int x, int y) {
+    public static int compare(int x, int y) {
 		return (x < y) ? -1 : ((x == y) ? 0 : 1);
 	}
 	

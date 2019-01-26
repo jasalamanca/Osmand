@@ -25,7 +25,7 @@ import java.util.List;
 
 
 public class ShareMenuFragment extends MenuBottomSheetDialogFragment implements OnItemClickListener {
-	public static final String TAG = "ShareMenuFragment";
+	private static final String TAG = "ShareMenuFragment";
 
 	private ArrayAdapter<ShareItem> listAdapter;
 	private ShareMenu menu;
@@ -49,7 +49,7 @@ public class ShareMenuFragment extends MenuBottomSheetDialogFragment implements 
 			((TextViewEx) view.findViewById(R.id.title_text_view)).setTextColor(getResources().getColor(R.color.ctx_menu_info_text_dark));
 		}
 
-		ListView listView = (ListView) view.findViewById(R.id.list);
+		ListView listView = view.findViewById(R.id.list);
 		listAdapter = createAdapter();
 		listView.setAdapter(listAdapter);
 		listView.setOnItemClickListener(this);
@@ -91,10 +91,10 @@ public class ShareMenuFragment extends MenuBottomSheetDialogFragment implements 
 				}
 				AndroidUtils.setBackground(v.getContext(), v, nightMode, R.drawable.expandable_list_item_background_light, R.drawable.expandable_list_item_background_dark);
 				final ShareItem item = getItem(position);
-				ImageView icon = (ImageView) v.findViewById(R.id.icon);
+				ImageView icon = v.findViewById(R.id.icon);
 				icon.setImageDrawable(menu.getMapActivity().getMyApplication()
 						.getIconsCache().getIcon(item.getIconResourceId(), !nightMode));
-				TextView name = (TextView) v.findViewById(R.id.name);
+				TextView name = v.findViewById(R.id.name);
 				AndroidUtils.setTextPrimaryColor(v.getContext(), name, nightMode);
 				name.setText(getContext().getText(item.getTitleResourceId()));
 				return v;

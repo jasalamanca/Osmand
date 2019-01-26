@@ -7,7 +7,7 @@ import net.osmand.osm.edit.Way;
 import net.osmand.util.MapUtils;
 
 public class TransportRoute extends MapObject {
-	private List<TransportStop> forwardStops = new ArrayList<TransportStop>();
+	private final List<TransportStop> forwardStops = new ArrayList<TransportStop>();
 	private String ref;
 	private String operator;
 	private String type;

@@ -15,11 +15,11 @@ import net.osmand.plus.transport.TransportStopRoute;
 
 import java.util.List;
 
-public class TransportStopRouteAdapter extends ArrayAdapter<TransportStopRoute> {
+class TransportStopRouteAdapter extends ArrayAdapter<TransportStopRoute> {
 
-	private boolean nightMode;
+	private final boolean nightMode;
 	private OnClickListener listener;
-	private OsmandApplication app;
+	private final OsmandApplication app;
 
 	public TransportStopRouteAdapter(@NonNull OsmandApplication application, @NonNull List<TransportStopRoute> objects, boolean nightMode) {
 		super(application, 0, objects);
@@ -40,7 +40,7 @@ public class TransportStopRouteAdapter extends ArrayAdapter<TransportStopRoute> 
 
 		TransportStopRoute transportStopRoute = getItem(position);
 		if (transportStopRoute != null) {
-			TextView transportStopRouteTextView = (TextView) convertView.findViewById(R.id.transport_stop_route_text);
+			TextView transportStopRouteTextView = convertView.findViewById(R.id.transport_stop_route_text);
 			transportStopRouteTextView.setText(transportStopRoute.route.getRef());
 			GradientDrawable gradientDrawableBg = (GradientDrawable) transportStopRouteTextView.getBackground();
 			gradientDrawableBg.setColor(transportStopRoute.getColor(app, nightMode));

@@ -42,7 +42,7 @@ public class NativeCoreContext {
 		
 	}
 	
-	public static void init(OsmandApplication app) {
+	private static void init(OsmandApplication app) {
 		if (!init && NativeCore.isAvailable()) {
 			if (!NativeCore.isLoaded())
 				NativeCore.load(CoreResourcesFromAndroidAssets.loadFromCurrentApplication(app));

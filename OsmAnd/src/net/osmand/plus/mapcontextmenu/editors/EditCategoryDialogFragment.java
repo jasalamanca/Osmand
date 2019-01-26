@@ -39,7 +39,7 @@ public class EditCategoryDialogFragment extends DialogFragment {
 	private EditText nameEdit;
 	private Spinner colorSpinner;
 
-	FavouritesDbHelper helper;
+	private FavouritesDbHelper helper;
 
 	private SelectCategoryDialogFragment.CategorySelectionListener selectionListener;
 
@@ -61,10 +61,10 @@ public class EditCategoryDialogFragment extends DialogFragment {
 		builder.setTitle(R.string.favorite_category_add_new_title);
 		final View v = getActivity().getLayoutInflater().inflate(R.layout.favorite_category_edit_dialog, null, false);
 
-		nameEdit = (EditText)v.findViewById(R.id.edit_name);
+		nameEdit = v.findViewById(R.id.edit_name);
 		nameEdit.setText(name);
 
-		colorSpinner = (Spinner)v.findViewById(R.id.edit_color);
+		colorSpinner = v.findViewById(R.id.edit_color);
 		final TIntArrayList colors = new TIntArrayList();
 		final int intColor = color;
 		ColorDialogs.setupColorSpinnerEx(getActivity(), intColor, colorSpinner, colors, new AdapterView.OnItemSelectedListener() {
@@ -157,14 +157,14 @@ public class EditCategoryDialogFragment extends DialogFragment {
 		return fragment;
 	}
 
-	public void saveState(Bundle bundle) {
+	private void saveState(Bundle bundle) {
 		bundle.putString(KEY_CTX_EDIT_CAT_EDITOR_TAG, editorTag);
 		bundle.putString(KEY_CTX_EDIT_CAT_NEW, Boolean.valueOf(isNew).toString());
 		bundle.putString(KEY_CTX_EDIT_CAT_NAME, nameEdit.getText().toString().trim());
 		bundle.putString(KEY_CTX_EDIT_CAT_COLOR, "" + color);
 	}
 
-	public void restoreState(Bundle bundle) {
+	private void restoreState(Bundle bundle) {
 		editorTag = bundle.getString(KEY_CTX_EDIT_CAT_EDITOR_TAG);
 		String isNewStr = bundle.getString(KEY_CTX_EDIT_CAT_NEW);
 		if (isNewStr != null) {

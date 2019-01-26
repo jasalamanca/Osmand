@@ -6,10 +6,10 @@ import net.osmand.data.Amenity;
 
 public interface CustomSearchPoiFilter extends SearchPoiTypeFilter {
 
-	public String getName();
+	String getName();
 	
-	public Object getIconResource();
+	Object getIconResource();
 	
-	public ResultMatcher<Amenity> wrapResultMatcher(final ResultMatcher<Amenity> matcher);
+	ResultMatcher<Amenity> wrapResultMatcher(final ResultMatcher<Amenity> matcher);
 	
 }

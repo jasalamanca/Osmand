@@ -54,8 +54,8 @@ public class TextViewEx extends TextView {
 		applyAttribute_textAllCapsCompat(resolvedAttributes, target);
 	}
 
-	/*internal*/ static void applyAttribute_typeface(TypedArray resolvedAttributes,
-													 TextView target) {
+	/*internal*/ private static void applyAttribute_typeface(TypedArray resolvedAttributes,
+                                                             TextView target) {
 		if (!resolvedAttributes.hasValue(R.styleable.TextViewEx_typeface)
 				|| target.isInEditMode()) {
 			return;
@@ -90,8 +90,8 @@ public class TextViewEx extends TextView {
 		setAllCapsCompat(this, allCaps);
 	}
 
-	/*internal*/ static void applyAttribute_textAllCapsCompat(TypedArray resolvedAttributes,
-														TextView target) {
+	/*internal*/ private static void applyAttribute_textAllCapsCompat(TypedArray resolvedAttributes,
+                                                                      TextView target) {
 		if (!resolvedAttributes.hasValue(R.styleable.TextViewEx_textAllCapsCompat)) {
 			return;
 		}

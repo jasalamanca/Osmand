@@ -33,13 +33,12 @@ import java.util.List;
 public class FavouritesLayer extends OsmandMapLayer implements ContextMenuLayer.IContextMenuProvider,
 	ContextMenuLayer.IMoveObjectProvider, MapTextProvider<FavouritePoint> {
 
-	protected int startZoom = 6;
+	private final int startZoom = 6;
 	
-	protected OsmandMapTileView view;
-	private Paint paint;
-	private FavouritesDbHelper favorites;
+	private OsmandMapTileView view;
+    private FavouritesDbHelper favorites;
 	private MapMarkersHelper mapMarkersHelper;
-	protected List<FavouritePoint> cache = new ArrayList<>();
+	private final List<FavouritePoint> cache = new ArrayList<>();
 	private MapTextLayer textLayer;
 	private Paint paintIcon;
 	private Bitmap pointSmall;
@@ -53,14 +52,14 @@ public class FavouritesLayer extends OsmandMapLayer implements ContextMenuLayer.
 		return view.getContext().getString(R.string.favorite);
 	}
 	
-	protected List<? extends FavouritePoint> getPoints() {
+	private List<? extends FavouritePoint> getPoints() {
 		return favorites.getFavouritePoints();
 	}
 
 	@Override
 	public void initLayer(OsmandMapTileView view) {
 		this.view = view;
-		paint = new Paint();
+        Paint paint = new Paint();
 		paint.setAntiAlias(true);
 		paint.setFilterBitmap(true);
 		paint.setDither(true);
@@ -178,7 +177,7 @@ public class FavouritesLayer extends OsmandMapLayer implements ContextMenuLayer.
 		return false;
 	}
 
-	public void getFavoriteFromPoint(RotatedTileBox tb, PointF point, List<? super FavouritePoint> res) {
+	private void getFavoriteFromPoint(RotatedTileBox tb, PointF point, List<? super FavouritePoint> res) {
 		int r = getDefaultRadiusPoi(tb);
 		int ex = (int) point.x;
 		int ey = (int) point.y;

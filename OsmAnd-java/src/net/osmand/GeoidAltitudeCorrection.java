@@ -10,8 +10,7 @@ import org.apache.commons.logging.Log;
 public class GeoidAltitudeCorrection {
 
 	private final Log log = PlatformUtil.getLog(GeoidAltitudeCorrection.class);
-	private File f;
-	private RandomAccessFile rf;
+    private RandomAccessFile rf;
 	
 	private int cachedPointer = -1;
 	private short cachedValue = 0;
@@ -27,7 +26,7 @@ public class GeoidAltitudeCorrection {
 				}
 			}
 			if (fn != null) {
-				this.f = new File(dir, fn);
+                File f = new File(dir, fn);
 				if (f.exists()) {
 					try {
 						rf = new RandomAccessFile(f.getPath(), "r");
@@ -40,7 +39,7 @@ public class GeoidAltitudeCorrection {
 		
 	}
 	
-	public boolean isGeoidInformationAvailable(){
+	private boolean isGeoidInformationAvailable(){
 		return rf != null;
 	}
 	

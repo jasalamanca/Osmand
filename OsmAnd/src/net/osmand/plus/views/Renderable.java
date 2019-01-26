@@ -17,22 +17,22 @@ public class Renderable {
     public static abstract class RenderableSegment {
 
         public List<WptPt> points = null;                           // Original list of points
-        protected List<WptPt> culled = new ArrayList<>();           // Reduced/resampled list of points
-        protected int pointSize;
-        protected double segmentSize;
+        List<WptPt> culled = new ArrayList<>();           // Reduced/resampled list of points
+        int pointSize;
+        final double segmentSize;
 
-        protected QuadRect trackBounds;
-        protected double zoom = -1;
-        protected AsynchronousResampler culler = null;                        // The currently active resampler
-        protected Paint paint = null;                               // MUST be set by 'updateLocalPaint' before use
+        QuadRect trackBounds;
+        double zoom = -1;
+        AsynchronousResampler culler = null;                        // The currently active resampler
+        Paint paint = null;                               // MUST be set by 'updateLocalPaint' before use
 
-        public RenderableSegment(List <WptPt> points, double segmentSize) {
+        RenderableSegment(List<WptPt> points, double segmentSize) {
             this.points = points;
             calculateBounds(points);
             this.segmentSize = segmentSize;
         }
 
-        protected void updateLocalPaint(Paint p) {
+        void updateLocalPaint(Paint p) {
             if (paint == null) {
                 paint = new Paint(p);
                 paint.setStrokeCap(Paint.Cap.ROUND);
@@ -45,7 +45,7 @@ public class Renderable {
 
         protected abstract void startCuller(double newZoom);
 
-        protected void drawSingleSegment(double zoom, Paint p, Canvas canvas, RotatedTileBox tileBox) {}
+        void drawSingleSegment(double zoom, Paint p, Canvas canvas, RotatedTileBox tileBox) {}
 
         public void drawSegment(double zoom, Paint p, Canvas canvas, RotatedTileBox tileBox) {
             if (QuadRect.trivialOverlap(tileBox.getLatLonBounds(), trackBounds)) { // is visible?
@@ -60,7 +60,7 @@ public class Renderable {
             updateBounds(pts, 0);
         }
 
-        protected void updateBounds(List<WptPt> pts, int startIndex) {
+        void updateBounds(List<WptPt> pts, int startIndex) {
             pointSize = pts.size();
             for (int i = startIndex; i < pointSize; i++) {
                 WptPt pt = pts.get(i);
@@ -75,7 +75,7 @@ public class Renderable {
             culled = cull;
         }
 
-        protected void draw(List<WptPt> pts, Paint p, Canvas canvas, RotatedTileBox tileBox) {
+        void draw(List<WptPt> pts, Paint p, Canvas canvas, RotatedTileBox tileBox) {
 
             if (pts.size() > 1) {
 
@@ -162,7 +162,8 @@ public class Renderable {
 
         @Override protected void startCuller(double newZoom) {}
 
-        @Override public void drawSingleSegment(double zoom, Paint p, Canvas canvas, RotatedTileBox tileBox) {
+        @Override
+        protected void drawSingleSegment(double zoom, Paint p, Canvas canvas, RotatedTileBox tileBox) {
             draw(points, p, canvas, tileBox);
         }
     }

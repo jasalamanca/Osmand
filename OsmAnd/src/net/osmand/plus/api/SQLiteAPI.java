@@ -4,7 +4,7 @@ package net.osmand.plus.api;
 
 public interface SQLiteAPI {
 
-	public interface SQLiteConnection {
+	interface SQLiteConnection {
 		
 		void close();
 		
@@ -28,7 +28,7 @@ public interface SQLiteAPI {
 
 	}
 	
-	public interface SQLiteCursor {
+	interface SQLiteCursor {
 		
 		String[] getColumnNames();
 
@@ -55,7 +55,7 @@ public interface SQLiteAPI {
 		
 	}
 	
-	public interface SQLiteStatement {
+	interface SQLiteStatement {
 
 		// 1 based argument
 		void bindString(int i, String filterId);
@@ -77,7 +77,7 @@ public interface SQLiteAPI {
 
 	}
 	
-	public SQLiteConnection getOrCreateDatabase(String name, boolean readOnly);
+	SQLiteConnection getOrCreateDatabase(String name, boolean readOnly);
 	
-	public SQLiteConnection openByAbsolutePath(String path, boolean readOnly);
+	SQLiteConnection openByAbsolutePath(String path, boolean readOnly);
 }

@@ -18,7 +18,7 @@ import java.util.Arrays;
 
 public class OsmNotesMenu {
 
-	private static Integer[] zoomIntValues = {8, 9, 10, 11, 12, 13, 14, 15, 16};
+	private static final Integer[] zoomIntValues = {8, 9, 10, 11, 12, 13, 14, 15, 16};
 
 	public static ContextMenuAdapter createListAdapter(final MapActivity mapActivity) {
 		ContextMenuAdapter adapter = new ContextMenuAdapter();

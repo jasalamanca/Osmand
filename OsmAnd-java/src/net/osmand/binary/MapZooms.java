@@ -8,9 +8,9 @@ import java.util.List;
 public class MapZooms {
 
 	public static class MapZoomPair {
-		public static int MAX_ALLOWED_ZOOM = 22;
-		private int minZoom;
-		private int maxZoom;
+		static final int MAX_ALLOWED_ZOOM = 22;
+		private final int minZoom;
+		private final int maxZoom;
 
 		public MapZoomPair(int minZoom, int maxZoom) {
 			this.maxZoom = maxZoom;
@@ -21,7 +21,7 @@ public class MapZooms {
 			return minZoom;
 		}
 
-		public int getMaxZoom() {
+		int getMaxZoom() {
 			return maxZoom;
 		}
 		
@@ -65,7 +65,7 @@ public class MapZooms {
 		return levels;
 	}
 
-	public void setLevels(List<MapZoomPair> levels) {
+	private void setLevels(List<MapZoomPair> levels) {
 		this.levels = levels;
 		Collections.sort(levels, new Comparator<MapZoomPair>() {
 
@@ -78,7 +78,7 @@ public class MapZooms {
 	/**
 	 * @param zooms - could be 5-8;7-10;11-14;15-
 	 */
-	public static MapZooms parseZooms(String zooms) throws IllegalArgumentException {
+	private static MapZooms parseZooms(String zooms) throws IllegalArgumentException {
 		String[] split = zooms.split(";");
 		
 
@@ -125,7 +125,7 @@ public class MapZooms {
 	}
 
 	private static MapZooms DEFAULT = null;
-	public static String MAP_ZOOMS_DEFAULT = "11;12;13-14;15-";
+	private static final String MAP_ZOOMS_DEFAULT = "11;12;13-14;15-";
 	public static MapZooms getDefault(){
 		if(DEFAULT == null){
 			DEFAULT = parseZooms(MAP_ZOOMS_DEFAULT);

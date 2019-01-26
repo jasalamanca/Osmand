@@ -45,7 +45,7 @@ public class MapMultiSelectionMenuFragment extends Fragment implements MultiSele
 					R.drawable.multi_selection_menu_bg_light, R.drawable.multi_selection_menu_bg_dark);
 		}
 
-		ListView listView = (ListView) view.findViewById(R.id.list);
+		ListView listView = view.findViewById(R.id.list);
 		if (menu.isLandscapeLayout() && Build.VERSION.SDK_INT >= 21) {
 			AndroidUtils.addStatusBarPadding21v(getActivity(), listView);
 		}

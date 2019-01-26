@@ -70,23 +70,23 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 	private EditText searchText;
 	private AsyncTask<Object, ?, ?> initializeTask;
 	
-	protected static final int MESSAGE_CLEAR_LIST = OsmAndConstants.UI_HANDLER_SEARCH + 2;
-	protected static final int MESSAGE_ADD_ENTITY = OsmAndConstants.UI_HANDLER_SEARCH + 3;
-	protected static final int MESSAGE_ADD_ENTITIES = OsmAndConstants.UI_HANDLER_SEARCH + 4;
-	protected static final String SELECT_ADDRESS = "SEQUENTIAL_SEARCH";
+	private static final int MESSAGE_CLEAR_LIST = OsmAndConstants.UI_HANDLER_SEARCH + 2;
+	static final int MESSAGE_ADD_ENTITY = OsmAndConstants.UI_HANDLER_SEARCH + 3;
+	static final int MESSAGE_ADD_ENTITIES = OsmAndConstants.UI_HANDLER_SEARCH + 4;
+	static final String SELECT_ADDRESS = "SEQUENTIAL_SEARCH";
 	
-	protected ProgressBar progress;
-	protected LatLon locationToSearch;
-	protected OsmandSettings settings;
-	protected List<T> initialListToFilter = new ArrayList<>();
-	protected Handler uiHandler;
-	protected Collator collator;
-	protected NamesFilter namesFilter;
+	ProgressBar progress;
+	LatLon locationToSearch;
+	OsmandSettings settings;
+	List<T> initialListToFilter = new ArrayList<>();
+	Handler uiHandler;
+	Collator collator;
+	NamesFilter namesFilter;
 	private String currentFilter = "";
 	private boolean initFilter = false;
 	private String endingText = "";
 	private T endingObject;
-	private StyleSpan previousSpan = new StyleSpan(Typeface.BOLD_ITALIC);
+	private final StyleSpan previousSpan = new StyleSpan(Typeface.BOLD_ITALIC);
 	private static final Log log = PlatformUtil.getLog(SearchByNameAbstractActivity.class);
 	
 	private static final int NAVIGATE_TO = 3;
@@ -114,9 +114,9 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 		
 		collator = OsmAndCollator.primaryCollator();
 
-		progress = (ProgressBar) findViewById(R.id.ProgressBar);
+		progress = findViewById(R.id.ProgressBar);
 			
-		searchText = (EditText) findViewById(R.id.SearchText);
+		searchText = findViewById(R.id.SearchText);
 
 		// ppenguin 2016-03-07: try to avoid full screen input in landscape mode (when softKB too large)
 		searchText.setImeOptions(searchText.getImeOptions() | EditorInfo.IME_FLAG_NO_EXTRACT_UI | EditorInfo.IME_FLAG_NO_FULLSCREEN);
@@ -180,18 +180,18 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 		}
 	}
 	
-	protected void reset() {
+	void reset() {
 		searchText.setText("");
 	}
 	
-	public String getLangPreferredName(MapObject mo) {
+	String getLangPreferredName(MapObject mo) {
 		return mo.getName(settings.MAP_PREFERRED_LOCALE.get(), settings.MAP_TRANSLITERATE_NAMES.get());
 	}
 	
-	protected void addFooterViews() {
+	void addFooterViews() {
 	}
 	
-	public void setLabelText(int res) {
+	void setLabelText(int res) {
 		getSupportActionBar().setSubtitle(getString(res));
 	}
 	
@@ -207,27 +207,26 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 	}
 	
 
-	public AsyncTask<Object, ?, ?> getInitializeTask(){
+	AsyncTask<Object, ?, ?> getInitializeTask(){
 		return null;
 	}
 	
-	public Editable getFilter(){
+	Editable getFilter(){
 		return searchText.getText();
 	}
 	
-	public boolean initializeTaskIsFinished(){
+	boolean initializeTaskIsFinished(){
 		return initializeTask == null || initializeTask.getStatus() == Status.FINISHED;
 	}
+
+
+    private boolean selectAddress;
 	
-	
-	private int MAX_VISIBLE_NAME = 18;
-	private boolean selectAddress;
-	
-	public String getCurrentFilter() {
+	String getCurrentFilter() {
 		return currentFilter;
 	}
 
-	public void research() {
+	void research() {
 		initFilter = false;
 		querySearch(currentFilter);
 	}
@@ -251,7 +250,7 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 		super.onRestoreInstanceState(prevState);
 	}
 	
-	protected boolean isSelectAddres() {
+	boolean isSelectAddres() {
 		return selectAddress;
 	}
 	
@@ -283,7 +282,7 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 		}
 	}
 	
-	protected void addObjectToInitialList(T initial){
+	void addObjectToInitialList(T initial){
 		initialListToFilter.add(initial);
 		if (!namesFilter.active) {
 			if (filterObject(initial, currentFilter)) {
@@ -293,7 +292,7 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 		}
 	}
 	
-	protected void finishInitializing(List<T> list){
+	void finishInitializing(List<T> list){
 		Comparator<? super T> cmp = createComparator();
 		getListAdapter().sort(cmp);
 		if (list != null) {
@@ -305,25 +304,25 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 	
 	protected abstract Comparator<? super T> createComparator();
 	
-	public String getDistanceText(T obj) {
+	String getDistanceText(T obj) {
 		return null;
 	}
 
-	public abstract String getText(T obj);
+	protected abstract String getText(T obj);
 	
-	public String getAdditionalFilterText(T obj) {
+	String getAdditionalFilterText(T obj) {
 		return null;
 	}
 	
-	public String getShortText(T obj) {
+	String getShortText(T obj) {
 		return getText(obj);
 	}
-	public void itemSelectedBase(final T obj, View v) {
+	private void itemSelectedBase(final T obj, View v) {
 		itemSelected(obj);
 	}
-	public abstract void itemSelected(T obj);
+	protected abstract void itemSelected(T obj);
 	
-	public boolean filterObject(T obj, String filter){
+	boolean filterObject(T obj, String filter){
 		if(filter == null || filter.length() == 0){
 			return true;
 		}
@@ -369,7 +368,7 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 		namesFilter.cancelPreviousFilter(currentFilter);
 	}
 	
-	protected boolean filterLoop(String query, Collection<T> list) {
+	boolean filterLoop(String query, Collection<T> list) {
 		boolean result = false;
 		for (T obj : list) {
 			if (namesFilter.isCancelled){
@@ -386,7 +385,7 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 	
 	
 	class UIUpdateHandler extends Handler {
-		private Map<String, Integer> endingMap = new HashMap<>();
+		private final Map<String, Integer> endingMap = new HashMap<>();
 		private int minimalIndex = Integer.MAX_VALUE;
 		private String minimalText = null;
 		
@@ -431,7 +430,8 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 					} else {
 						locEndingText = " - " + shortText;
 					}
-					if (locEndingText.length() > MAX_VISIBLE_NAME) {
+                    int MAX_VISIBLE_NAME = 18;
+                    if (locEndingText.length() > MAX_VISIBLE_NAME) {
 						locEndingText = locEndingText.substring(0, MAX_VISIBLE_NAME) + "..";
 					}
 					updateTextBox(currentFilter, locEndingText, obj, true);
@@ -442,12 +442,12 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 	
 	class NamesFilter extends Filter {
 		
-		protected boolean isCancelled = false;
+		boolean isCancelled = false;
 		private String newFilter;
 		private boolean active = false;
 		private long startTime;
 		
-		protected void cancelPreviousFilter(String newFilter){
+		void cancelPreviousFilter(String newFilter){
 			this.newFilter = newFilter;
 			isCancelled = true;
 		}
@@ -499,7 +499,7 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 				LayoutInflater inflater = getLayoutInflater();
 				row = inflater.inflate(R.layout.searchbyname_list, parent, false);
 			}
-			TextView label = (TextView) row.findViewById(R.id.NameLabel);
+			TextView label = row.findViewById(R.id.NameLabel);
 			String distanceText = getDistanceText(getItem(position));
 			String text = getText(getItem(position));
 			if(distanceText == null) {
@@ -513,7 +513,7 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 		}
 	}
 	
-	protected void quitActivity(Class<? extends Activity> next) {
+	void quitActivity(Class<? extends Activity> next) {
 		finish();
 		if(next != null) {
 			Intent intent = new Intent(this, next);
@@ -553,11 +553,11 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 		return super.onCreateOptionsMenu(menu);
 	}
 	
-	protected AddressInformation getAddressInformation() {
+	AddressInformation getAddressInformation() {
 		return null;
 	}
 
-	protected void select(int mode) {
+	private void select(int mode) {
 		LatLon searchPoint = settings.getLastSearchedPoint();
 		AddressInformation ai = getAddressInformation();
 		if (ai != null && searchPoint != null) {
@@ -577,7 +577,7 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 		
 	}
 
-	public void showOnMap(LatLon searchPoint, AddressInformation ai) {
+	void showOnMap(LatLon searchPoint, AddressInformation ai) {
 		settings.setMapLocationToShow(searchPoint.getLatitude(), searchPoint.getLongitude(), ai.zoom,
 				ai.getHistoryName());
 		MapActivity.launchMapActivityMoveToTop(getActivity());

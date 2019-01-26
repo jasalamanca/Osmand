@@ -19,20 +19,20 @@ import java.util.Date;
 public class IndexItem implements Comparable<IndexItem> {
 	private static final Log log = PlatformUtil.getLog(IndexItem.class);
 	
-	String description;
-	String fileName;
-	String size;
-	long timestamp;
-	long contentSize;
-	long containerSize;
-	DownloadActivityType type;
+	private final String description;
+	final String fileName;
+	private final String size;
+	private final long timestamp;
+	final long contentSize;
+	private final long containerSize;
+	private final DownloadActivityType type;
 	boolean extra;
 	
 	// Update information
-	boolean outdated;
-	boolean downloaded;
-	long localTimestamp;
-	DownloadResourceGroup relatedGroup;
+    private boolean outdated;
+	private boolean downloaded;
+	private long localTimestamp;
+	private DownloadResourceGroup relatedGroup;
 
 
 	public IndexItem(String fileName, String description, long timestamp, String size, long contentSize,
@@ -67,7 +67,7 @@ public class IndexItem implements Comparable<IndexItem> {
 		return description;
 	}
 
-	public long getTimestamp() {
+	private long getTimestamp() {
 		return timestamp;
 	}
 	
@@ -214,7 +214,7 @@ public class IndexItem implements Comparable<IndexItem> {
 	
 	public static class DownloadEntry {
 		public long dateModified;
-		public double sizeMB;
+		double sizeMB;
 		
 		public File targetFile;
 		public boolean zipStream;
@@ -229,10 +229,10 @@ public class IndexItem implements Comparable<IndexItem> {
 		public DownloadActivityType type;
 		
 
-		public DownloadEntry() {
+		DownloadEntry() {
 		}
 		
-		public DownloadEntry(String assetName, String fileName, long dateModified) {
+		DownloadEntry(String assetName, String fileName, long dateModified) {
 			this.dateModified = dateModified;
 			targetFile = new File(fileName);
 			this.assetName = assetName;

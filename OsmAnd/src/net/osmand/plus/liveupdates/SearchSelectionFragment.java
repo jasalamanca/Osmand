@@ -28,7 +28,7 @@ public abstract class SearchSelectionFragment extends BaseOsmAndDialogFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_search_list, container, false);
-		ListView listView = (ListView) view.findViewById(android.R.id.list);
+		ListView listView = view.findViewById(android.R.id.list);
 		final ArrayAdapter<String> adapter = new ListAdapter(getActivity(), getListItemIcon());
 		if (getArray() != null) {
 			for (String s : getArray()) {
@@ -49,7 +49,7 @@ public abstract class SearchSelectionFragment extends BaseOsmAndDialogFragment {
 				dismiss();
 			}
 		});
-		final EditText searchEditText = (EditText) view.findViewById(R.id.searchEditText);
+		final EditText searchEditText = view.findViewById(R.id.searchEditText);
 		searchEditText.addTextChangedListener(new TextWatcher() {
 			@Override
 			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -64,7 +64,7 @@ public abstract class SearchSelectionFragment extends BaseOsmAndDialogFragment {
 				adapter.getFilter().filter(s);
 			}
 		});
-		ImageButton clearButton = (ImageButton) view.findViewById(R.id.clearButton);
+		ImageButton clearButton = view.findViewById(R.id.clearButton);
 		setThemedDrawable(clearButton, R.drawable.ic_action_remove_dark);
 		clearButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -88,16 +88,16 @@ public abstract class SearchSelectionFragment extends BaseOsmAndDialogFragment {
 		}
 	}
 
-	protected String[] getArray() {
+	private String[] getArray() {
 		return null;
 	}
 
-	protected ArrayList<String> getList() {
+	private ArrayList<String> getList() {
 		return null;
 	}
 
 	@DrawableRes
-	protected int getListItemIcon() {
+    private int getListItemIcon() {
 		return -1;
 	}
 
@@ -107,14 +107,14 @@ public abstract class SearchSelectionFragment extends BaseOsmAndDialogFragment {
 		mListener = null;
 	}
 
-	public interface OnFragmentInteractionListener {
+	interface OnFragmentInteractionListener {
 		void onSearchResult(String name);
 	}
 
 	private class ListAdapter extends ArrayAdapter<String> {
 		private final Drawable drawableLeft;
 
-		public ListAdapter(Context context, @DrawableRes int drawableLeftId) {
+		ListAdapter(Context context, @DrawableRes int drawableLeftId) {
 			super(getMyActivity(), R.layout.osmand_simple_list_item_1);
 			this.drawableLeft = drawableLeftId == -1 ? null : getContentIcon(drawableLeftId);
 		}

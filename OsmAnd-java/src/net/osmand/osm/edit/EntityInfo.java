@@ -4,13 +4,13 @@ package net.osmand.osm.edit;
  * Additional entity info
  */
 public class EntityInfo {
-	String timestamp;
-	String uid;
-	String user;
-	String visible;
-	String version;
-	String changeset;
-	String action;
+	private String timestamp;
+	private String uid;
+	private String user;
+	private String visible;
+	private String version;
+	private String changeset;
+	private String action;
 	
 	
 	public EntityInfo() {

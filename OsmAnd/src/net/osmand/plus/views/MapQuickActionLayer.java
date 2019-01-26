@@ -85,8 +85,8 @@ public class MapQuickActionLayer extends OsmandMapLayer implements QuickActionRe
     public void initLayer(OsmandMapTileView view) {
         this.view = view;
 
-        quickActionsWidget = (QuickActionsWidget) mapActivity.findViewById(R.id.quick_action_widget);
-        quickActionButton = (ImageButton) mapActivity.findViewById(R.id.map_quick_actions_button);
+        quickActionsWidget = mapActivity.findViewById(R.id.quick_action_widget);
+        quickActionButton = mapActivity.findViewById(R.id.map_quick_actions_button);
         setQuickActionButtonMargin();
         isLayerOn = quickActionRegistry.isQuickActionOn();
 		nightMode = app.getDaynightHelper().isNightModeForMapControls();
@@ -198,7 +198,7 @@ public class MapQuickActionLayer extends OsmandMapLayer implements QuickActionRe
      * @param showWidget
      * @return true, if state was changed
      */
-    public boolean setLayerState(boolean showWidget) {
+    private boolean setLayerState(boolean showWidget) {
         if (isWidgetVisible() == showWidget)    // check if state change is needed
             return false;
 
@@ -430,7 +430,7 @@ public class MapQuickActionLayer extends OsmandMapLayer implements QuickActionRe
         return setLayerState(false);
     }
 
-    View.OnTouchListener onQuickActionTouchListener = new View.OnTouchListener() {
+    private final View.OnTouchListener onQuickActionTouchListener = new View.OnTouchListener() {
         private int initialMarginX;
         private int initialMarginY;
         private float initialTouchX;

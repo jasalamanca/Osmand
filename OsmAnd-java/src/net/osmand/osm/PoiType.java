@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class PoiType extends AbstractPoiType {
 	
-	private PoiCategory category;
-	private PoiFilter filter;
+	private final PoiCategory category;
+	private final PoiFilter filter;
 	private AbstractPoiType parentType;
 	private PoiType referenceType;
 	private String osmTag;

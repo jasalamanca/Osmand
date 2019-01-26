@@ -33,8 +33,8 @@ import java.util.Map;
 
 public class InAppHelper {
 	// Debug tag, for logging
-	static final String TAG = "InAppHelper";
-	boolean mDebugLog = false;
+	private static final String TAG = "InAppHelper";
+	private final boolean mDebugLog = false;
 
 	private static boolean mSubscribedToLiveUpdates = false;
 	private static boolean mFullVersionPurchased = false;
@@ -60,8 +60,8 @@ public class InAppHelper {
 	private boolean inventoryRequesting = false;
 	private boolean stopRequested = false;
 
-	private OsmandApplication ctx;
-	private List<InAppListener> listeners = new ArrayList<>();
+	private final OsmandApplication ctx;
+	private final List<InAppListener> listeners = new ArrayList<>();
 
 	/* base64EncodedPublicKey should be YOUR APPLICATION'S PUBLIC KEY
  	 * (that you got from the Google Play developer console). This is not your
@@ -274,7 +274,7 @@ public class InAppHelper {
 	}
 
 	// Listener that's called when we finish querying the items and subscriptions we own
-	private QueryInventoryFinishedListener mGotInventoryListener = new QueryInventoryFinishedListener() {
+	private final QueryInventoryFinishedListener mGotInventoryListener = new QueryInventoryFinishedListener() {
 		public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
 			logDebug("Query inventory finished.");
 			inventoryRequesting = false;
@@ -524,7 +524,7 @@ public class InAppHelper {
 	}
 
 	// Callback for when a purchase is finished
-	private OnIabPurchaseFinishedListener mPurchaseFinishedListener = new OnIabPurchaseFinishedListener() {
+	private final OnIabPurchaseFinishedListener mPurchaseFinishedListener = new OnIabPurchaseFinishedListener() {
 		public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
 			logDebug("Purchase finished: " + result + ", purchase: " + purchase);
 

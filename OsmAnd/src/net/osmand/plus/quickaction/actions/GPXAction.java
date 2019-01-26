@@ -22,10 +22,10 @@ public class GPXAction extends QuickAction {
 
 	public static final int TYPE = 6;
 
-	public static final String KEY_NAME = "name";
-	public static final String KEY_DIALOG = "dialog";
-	public static final String KEY_CATEGORY_NAME = "category_name";
-	public static final String KEY_CATEGORY_COLOR = "category_color";
+	private static final String KEY_NAME = "name";
+	private static final String KEY_DIALOG = "dialog";
+	private static final String KEY_CATEGORY_NAME = "category_name";
+	private static final String KEY_CATEGORY_COLOR = "category_color";
 
 	public GPXAction() {
 		super(TYPE);
@@ -83,10 +83,10 @@ public class GPXAction extends QuickAction {
 
 		parent.addView(root);
 
-		AutoCompleteTextViewEx categoryEdit = (AutoCompleteTextViewEx) root.findViewById(R.id.category_edit);
-		SwitchCompat showDialog = (SwitchCompat) root.findViewById(R.id.saveButton);
-		ImageView categoryImage = (ImageView) root.findViewById(R.id.category_image);
-		EditText name = (EditText) root.findViewById(R.id.name_edit);
+		AutoCompleteTextViewEx categoryEdit = root.findViewById(R.id.category_edit);
+		SwitchCompat showDialog = root.findViewById(R.id.saveButton);
+		ImageView categoryImage = root.findViewById(R.id.category_image);
+		EditText name = root.findViewById(R.id.name_edit);
 
 		if (!getParams().isEmpty()) {
 

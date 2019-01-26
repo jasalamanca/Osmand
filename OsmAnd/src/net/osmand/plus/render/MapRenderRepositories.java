@@ -65,17 +65,17 @@ import gnu.trove.set.hash.TLongHashSet;
 public class MapRenderRepositories {
 
 	// It is needed to not draw object twice if user have map index that intersects by boundaries
-	public static boolean checkForDuplicateObjectIds = true;
+	private static final boolean checkForDuplicateObjectIds = true;
 	
 	private final static Log log = PlatformUtil.getLog(MapRenderRepositories.class);
 	private final OsmandApplication context;
 	private final static int zoomOnlyForBasemaps = 11;
 
-	static int zoomForBaseRouteRendering  = 14;
-	private Handler handler;
+	private static final int zoomForBaseRouteRendering  = 14;
+	private final Handler handler;
 	private Map<String, BinaryMapIndexReader> files = new LinkedHashMap<String, BinaryMapIndexReader>();
-	private Set<String> nativeFiles = new HashSet<String>();
-	private OsmandRenderer renderer;
+	private final Set<String> nativeFiles = new HashSet<String>();
+	private final OsmandRenderer renderer;
 	
 
 
@@ -96,9 +96,8 @@ public class MapRenderRepositories {
 	private Bitmap prevBmp;
 	// to track necessity of map download (1 (if basemap) + 2 (if normal map) 
 	private int checkedRenderedState;
-	private RotatedTileBox checkedBox;
 
-	// location of rendered bitmap
+    // location of rendered bitmap
 	private RotatedTileBox bmpLocation = null;
 	// already rendered bitmap
 	private Bitmap bmp;
@@ -108,7 +107,7 @@ public class MapRenderRepositories {
 	private RenderingContext currentRenderingContext;
 	private RenderingContext visibleRenderingContext;
 	private SearchRequest<BinaryMapDataObject> searchRequest;
-	private OsmandSettings prefs;
+	private final OsmandSettings prefs;
 
 	public MapRenderRepositories(OsmandApplication context) {
 		this.context = context;
@@ -772,7 +771,7 @@ public class MapRenderRepositories {
 			} else {
 				visibleRenderingContext = currentRenderingContext;
 				this.checkedRenderedState = renderedState;
-				this.checkedBox = this.bmpLocation;
+                RotatedTileBox checkedBox = this.bmpLocation;
 			}
 			currentRenderingContext = null;
 

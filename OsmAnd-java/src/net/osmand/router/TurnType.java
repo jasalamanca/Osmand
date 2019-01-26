@@ -16,8 +16,8 @@ public class TurnType {
 	public static final int TU = 10; // U-turn //$NON-NLS-1$
 	public static final int TRU = 11; // Right U-turn //$NON-NLS-1$
 	public static final int OFFR = 12; // Off route //$NON-NLS-1$
-	public static final int RNDB = 13; // Roundabout
-	public static final int RNLB = 14; // Roundabout left
+	private static final int RNDB = 13; // Roundabout
+	private static final int RNLB = 14; // Roundabout left
 	
 	public static TurnType straight() {
 		return valueOf(C, false);
@@ -232,7 +232,7 @@ public class TurnType {
 		return (laneValue >> 10);
 	}
 
-	public static String toString(int[] lns) {
+	private static String toString(int[] lns) {
         String s = "";
         for (int h = 0; h < lns.length; h++) {
             if (h > 0) {
@@ -354,7 +354,7 @@ public class TurnType {
 		return type == TR || type == TSHR || type == TSLR || type == KR;
 	}
 
-	public static boolean isSlightTurn(int type) {
+	private static boolean isSlightTurn(int type) {
 		return type == TSLL || type == TSLR || type == C || type == KL || type == KR;
 	}
 	

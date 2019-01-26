@@ -46,21 +46,20 @@ public class SearchUICore {
 	private SearchPhrase phrase;
 	private SearchResultCollection  currentSearchResult;
 
-	private ThreadPoolExecutor singleThreadedExecutor;
-	private LinkedBlockingQueue<Runnable> taskQueue;
-	private Runnable onSearchStart = null;
+	private final ThreadPoolExecutor singleThreadedExecutor;
+    private Runnable onSearchStart = null;
 	private Runnable onResultsComplete = null;
-	private AtomicInteger requestNumber = new AtomicInteger();
+	private final AtomicInteger requestNumber = new AtomicInteger();
 	private int totalLimit = -1; // -1 unlimited - not used
 
-	List<SearchCoreAPI> apis = new ArrayList<>();
+	private final List<SearchCoreAPI> apis = new ArrayList<>();
 	private SearchSettings searchSettings;
 	private MapPoiTypes poiTypes;
 
 
 	public SearchUICore(MapPoiTypes poiTypes, String locale, boolean transliterate) {
 		this.poiTypes = poiTypes;
-		taskQueue = new LinkedBlockingQueue<Runnable>();
+        LinkedBlockingQueue<Runnable> taskQueue = new LinkedBlockingQueue<Runnable>();
 		searchSettings = new SearchSettings(new ArrayList<BinaryMapIndexReader>());
 		searchSettings = searchSettings.setLang(locale, transliterate);
 		phrase = new SearchPhrase(searchSettings, OsmAndCollator.primaryCollator());
@@ -69,8 +68,8 @@ public class SearchUICore {
 	}
 
 	public static class SearchResultCollection {
-		private List<SearchResult> searchResults;
-		private SearchPhrase phrase;
+		private final List<SearchResult> searchResults;
+		private final SearchPhrase phrase;
 		private static final int DEPTH_TO_CHECK_SAME_SEARCH_RESULTS = 20;
 
 		public SearchResultCollection(SearchPhrase phrase) {
@@ -151,11 +150,11 @@ public class SearchUICore {
 			return phrase;
 		}
 
-		public void sortSearchResults() {
+		void sortSearchResults() {
 			Collections.sort(searchResults, new SearchResultComparator(phrase));
 		}
 
-		public void filterSearchDuplicateResults() {
+		void filterSearchDuplicateResults() {
 			filterSearchDuplicateResults(searchResults);
 		}
 
@@ -182,7 +181,7 @@ public class SearchUICore {
 			}
 		}
 
-		public boolean sameSearchResult(SearchResult r1, SearchResult r2) {
+		boolean sameSearchResult(SearchResult r1, SearchResult r2) {
 			if (r1.location != null && r2.location != null) {
 				if (r1.objectType == r2.objectType) {
 					if (r1.objectType == ObjectType.STREET) {
@@ -246,7 +245,7 @@ public class SearchUICore {
 	}
 
 	@SuppressWarnings("unchecked")
-	public <T> T getApiByClass(Class<T> cl) {
+    private <T> T getApiByClass(Class<T> cl) {
 		for (SearchCoreAPI a : apis) {
 			if (cl.isInstance(a)) {
 				return (T) a;
@@ -475,11 +474,11 @@ public class SearchUICore {
 		private SearchResult parentSearchResult;
 		private final AtomicInteger requestNumber;
 		int count = 0;
-		private SearchPhrase phrase;
+		private final SearchPhrase phrase;
 
 
-		public SearchResultMatcher(ResultMatcher<SearchResult> matcher, SearchPhrase phrase, int request,
-								   AtomicInteger requestNumber, int totalLimit) {
+		SearchResultMatcher(ResultMatcher<SearchResult> matcher, SearchPhrase phrase, int request,
+                            AtomicInteger requestNumber, int totalLimit) {
 			this.matcher = matcher;
 			this.phrase = phrase;
 			this.request = request;
@@ -493,7 +492,7 @@ public class SearchUICore {
 			return prev;
 		}
 
-		public List<SearchResult> getRequestResults() {
+		List<SearchResult> getRequestResults() {
 			return requestResults;
 		}
 
@@ -501,7 +500,7 @@ public class SearchUICore {
 			return requestResults.size();
 		}
 
-		public void searchStarted(SearchPhrase phrase) {
+		void searchStarted(SearchPhrase phrase) {
 			if (matcher != null) {
 				SearchResult sr = new SearchResult(phrase);
 				sr.objectType = ObjectType.SEARCH_STARTED;
@@ -509,7 +508,7 @@ public class SearchUICore {
 			}
 		}
 
-		public void searchFinished(SearchPhrase phrase) {
+		void searchFinished(SearchPhrase phrase) {
 			if (matcher != null) {
 				SearchResult sr = new SearchResult(phrase);
 				sr.objectType = ObjectType.SEARCH_FINISHED;
@@ -517,7 +516,7 @@ public class SearchUICore {
 			}
 		}
 
-		public void apiSearchFinished(SearchCoreAPI api, SearchPhrase phrase) {
+		void apiSearchFinished(SearchCoreAPI api, SearchPhrase phrase) {
 			if (matcher != null) {
 				SearchResult sr = new SearchResult(phrase);
 				sr.objectType = ObjectType.SEARCH_API_FINISHED;
@@ -569,13 +568,13 @@ public class SearchUICore {
 		}
 	}
 
-	public static class SearchResultComparator implements Comparator<SearchResult> {
-		private SearchPhrase sp;
-		private Collator collator;
-		private LatLon loc;
-		private boolean sortByName;
+	static class SearchResultComparator implements Comparator<SearchResult> {
+		private final SearchPhrase sp;
+		private final Collator collator;
+		private final LatLon loc;
+		private final boolean sortByName;
 
-		public SearchResultComparator(SearchPhrase sp) {
+		SearchResultComparator(SearchPhrase sp) {
 			this.sp = sp;
 			this.collator = sp.getCollator();
 			loc = sp.getLastTokenLocation();

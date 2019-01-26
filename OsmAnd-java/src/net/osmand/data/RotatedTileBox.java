@@ -68,7 +68,7 @@ public class RotatedTileBox {
 		}
 	}
 
-	public void calculateDerivedFields() {
+	private void calculateDerivedFields() {
 		zoomFactor = Math.pow(2, zoomAnimation + zoomFloatPart) * 256 * mapDensity;
 		double rad = Math.toRadians(this.rotate);
 		rotateCos = Math.cos(rad);
@@ -134,26 +134,26 @@ public class RotatedTileBox {
 		return oyTile;
 	}
 
-	protected double getTileXFromPixel(float x, float y) {
+	private double getTileXFromPixel(float x, float y) {
 		float dx = x - cx;
 		float dy = y - cy;
 		double dtilex;
 		if(isMapRotateEnabled()){
-			dtilex = (rotateCos * (float) dx + rotateSin * (float) dy);
+			dtilex = (rotateCos * dx + rotateSin * dy);
 		} else {
-			dtilex = (float) dx;
+			dtilex = dx;
 		}
 		return dtilex / zoomFactor + oxTile;
 	}
 
-	protected double getTileYFromPixel(float x, float y) {
+	private double getTileYFromPixel(float x, float y) {
 		float dx = x - cx;
 		float dy = y - cy;
 		double dtiley;
 		if(isMapRotateEnabled()){
-			dtiley = (-rotateSin * (float) dx + rotateCos * (float) dy);
+			dtiley = (-rotateSin * dx + rotateCos * dy);
 		} else {
-			dtiley = (float) dy;
+			dtiley = dy;
 		}
 		return dtiley / zoomFactor + oyTile;
 	}
@@ -164,7 +164,7 @@ public class RotatedTileBox {
 		return tileBounds;
 	}
 
-	public void calculateTileRectangle() {
+	private void calculateTileRectangle() {
 		double x1 = getTileXFromPixel(0, 0);
 		double x2 = getTileXFromPixel(pixWidth, 0);
 		double x3 = getTileXFromPixel(pixWidth, pixHeight);
@@ -222,7 +222,7 @@ public class RotatedTileBox {
 		return getPixXFromTile(xTile, yTile);
 	}
 
-	protected float getPixXFromTile(double xTile, double yTile) {
+	private float getPixXFromTile(double xTile, double yTile) {
 		double rotX;
 		final double dTileX = xTile - oxTile;
 		final double dTileY = yTile - oyTile;
@@ -249,7 +249,7 @@ public class RotatedTileBox {
 		return getPixYFromTile(xTile, yTile);
 	}
 
-	protected float getPixYFromTile(double  xTile, double  yTile) {
+	private float getPixYFromTile(double xTile, double yTile) {
 		final double dTileX = xTile - oxTile;
 		final double dTileY = yTile - oyTile;
 		double rotY;
@@ -454,7 +454,7 @@ public class RotatedTileBox {
 		return tx >= 0 && tx <= pixWidth && ty >= 0 && ty <= pixHeight;
 	}
 	
-	public boolean containsTilePoint(QuadPointDouble qp) {
+	private boolean containsTilePoint(QuadPointDouble qp) {
 		double tx = getPixXFromTile(qp.x, qp.y);
 		double ty = getPixYFromTile(qp.x, qp.y);
 		return tx >= 0 && tx <= pixWidth && ty >= 0 && ty <= pixHeight;

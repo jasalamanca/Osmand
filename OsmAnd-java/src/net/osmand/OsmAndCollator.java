@@ -14,7 +14,7 @@ public class OsmAndCollator {
 		return wrapCollator(instance);
 	}
 	
-	public static net.osmand.Collator wrapCollator(final java.text.Collator instance) {
+	private static net.osmand.Collator wrapCollator(final java.text.Collator instance) {
 		return new net.osmand.Collator() {
 			
 			@Override

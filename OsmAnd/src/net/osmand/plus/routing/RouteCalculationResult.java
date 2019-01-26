@@ -22,8 +22,7 @@ import java.util.List;
 import static net.osmand.binary.RouteDataObject.HEIGHT_UNDEFINED;
 
 public class RouteCalculationResult {
-	private static double distanceClosestToIntermediate = 400;
-	// could not be null and immodifiable!
+    // could not be null and immodifiable!
 	private final List<Location> locations;
 	private final List<RouteDirectionInfo> directions;
 	private final List<RouteSegmentResult> segments;
@@ -33,18 +32,18 @@ public class RouteCalculationResult {
 	private final int[] intermediatePoints;
 	private final float routingTime;
 	
-	protected int cacheCurrentTextDirectionInfo = -1;
-	protected List<RouteDirectionInfo> cacheAgreggatedDirections;
-	protected List<LocationPoint> locationPoints = new ArrayList<LocationPoint>();
+	private int cacheCurrentTextDirectionInfo = -1;
+	private List<RouteDirectionInfo> cacheAgreggatedDirections;
+	private final List<LocationPoint> locationPoints = new ArrayList<LocationPoint>();
 
 	// Note always currentRoute > get(currentDirectionInfo).routeOffset, 
 	//         but currentRoute <= get(currentDirectionInfo+1).routeOffset 
-	protected int currentDirectionInfo = 0;
-	protected int currentRoute = 0;
-	protected int nextIntermediate = 0;
+	int currentDirectionInfo = 0;
+	int currentRoute = 0;
+	private int nextIntermediate = 0;
 	protected int currentWaypointGPX = 0;
 	protected int lastWaypointGPX = 0;
-	protected ApplicationMode appMode;
+	private ApplicationMode appMode;
 
 	public RouteCalculationResult(String errorMessage) {
 		this.errorMessage = errorMessage;
@@ -135,7 +134,8 @@ public class RouteCalculationResult {
 			double prevDistance = distanceThreshold * 4;
 			while((currentIntermediate < intermediates.size() || prevDistance > distanceThreshold)
 				&& currentLocation < locations.size()){
-				if(currentIntermediate < intermediates.size() &&
+                double distanceClosestToIntermediate = 400;
+                if(currentIntermediate < intermediates.size() &&
 						getDistanceToLocation(locations, intermediates.get(currentIntermediate), currentLocation) < distanceClosestToIntermediate) {
 					prevDistance = getDistanceToLocation(locations, intermediates.get(currentIntermediate), currentLocation);
 					interLocations[currentIntermediate] = currentLocation;
@@ -329,9 +329,9 @@ public class RouteCalculationResult {
 		return segmentsToPopulate;
 	}
 	
-	protected static void addMissingTurnsToRoute(List<Location> locations, 
-			List<RouteDirectionInfo> originalDirections, Location start, LatLon end, ApplicationMode mode, Context ctx,
-			boolean leftSide){
+	private static void addMissingTurnsToRoute(List<Location> locations,
+											   List<RouteDirectionInfo> originalDirections, Location start, LatLon end, ApplicationMode mode, Context ctx,
+											   boolean leftSide){
 		if(locations.isEmpty()){
 			return;
 		}
@@ -343,7 +343,7 @@ public class RouteCalculationResult {
 		int[] listDistance = new int[locations.size()];
 		listDistance[locations.size() - 1] = 0;
 		for (int i = locations.size() - 1; i > 0; i--) {
-			listDistance[i - 1] = (int) Math.round(locations.get(i - 1).distanceTo(locations.get(i)));
+			listDistance[i - 1] = Math.round(locations.get(i - 1).distanceTo(locations.get(i)));
 			listDistance[i - 1] += listDistance[i];
 		}
 		
@@ -558,7 +558,7 @@ public class RouteCalculationResult {
 	 * PREPARATION
 	 * Check points for duplicates (it is very bad for routing) - cloudmade could return it
 	 */
-	public static void checkForDuplicatePoints(List<Location> locations, List<RouteDirectionInfo> directions) {
+	private static void checkForDuplicatePoints(List<Location> locations, List<RouteDirectionInfo> directions) {
 		// 
 		for (int i = 0; i < locations.size() - 1;) {
 			if (locations.get(i).distanceTo(locations.get(i + 1)) == 0) {
@@ -631,7 +631,7 @@ public class RouteCalculationResult {
 		if (listDistance.length > 0) {
 			listDistance[locations.size() - 1] = 0;
 			for (int i = locations.size() - 1; i > 0; i--) {
-				listDistance[i - 1] = (int) Math.round(locations.get(i - 1).distanceTo(locations.get(i)));
+				listDistance[i - 1] = Math.round(locations.get(i - 1).distanceTo(locations.get(i)));
 				listDistance[i - 1] += listDistance[i];
 			}
 		}

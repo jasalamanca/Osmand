@@ -17,7 +17,7 @@ import net.osmand.plus.mapcontextmenu.MenuBuilder;
 import net.osmand.util.Algorithms;
 
 public class GpxItemMenuBuilder extends MenuBuilder {
-	private GpxDisplayItem item;
+	private final GpxDisplayItem item;
 
 	public GpxItemMenuBuilder(MapActivity mapActivity, GpxDisplayItem item) {
 		super(mapActivity);

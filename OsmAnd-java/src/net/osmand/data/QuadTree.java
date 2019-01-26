@@ -11,7 +11,7 @@ public class QuadTree<T> {
 	private static class Node<T> {
 		List<T> data = null;
 		Node<T>[] children = null;
-		QuadRect bounds;
+		final QuadRect bounds;
 
 		@SuppressWarnings("unchecked")
 		private Node(QuadRect b) {
@@ -20,9 +20,9 @@ public class QuadTree<T> {
 		}
 	}
 
-    private float ratio;
-	private int maxDepth;
-	private Node<T> root;
+    private final float ratio;
+	private final int maxDepth;
+	private final Node<T> root;
 
 	public QuadTree(QuadRect r, int depth/* =8 */, float ratio /* = 0.55 */) {
 		this.ratio = ratio;
@@ -100,7 +100,7 @@ public class QuadTree<T> {
 		}
 	}
 
-	void splitBox(QuadRect node_extent, QuadRect[] n) {
+	private void splitBox(QuadRect node_extent, QuadRect[] n) {
 		// coord2d c=node_extent.center();
 
 		double width = node_extent.width();

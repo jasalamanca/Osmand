@@ -32,11 +32,11 @@ import java.util.List;
  * on 24.11.2014.
  */
 public class DashFavoritesFragment extends DashLocationFragment {
-	public static final String TAG = "DASH_FAVORITES_FRAGMENT";
-	public static final int TITLE_ID = R.string.shared_string_my_favorites;
-	List<FavouritePoint> points = new ArrayList<FavouritePoint>();
+	private static final String TAG = "DASH_FAVORITES_FRAGMENT";
+	private static final int TITLE_ID = R.string.shared_string_my_favorites;
+	private List<FavouritePoint> points = new ArrayList<FavouritePoint>();
 
-	public static final String ROW_NUMBER_TAG = TAG + "_row_number";
+	private static final String ROW_NUMBER_TAG = TAG + "_row_number";
 	private static final DashFragmentData.ShouldShowFunction SHOULD_SHOW_FUNCTION =
 			new DashboardOnMap.DefaultShouldShow() {
 				@Override
@@ -65,7 +65,7 @@ public class DashFavoritesFragment extends DashLocationFragment {
 		setupFavorites();
 	}
 
-	public void setupFavorites() {
+	private void setupFavorites() {
 		View mainView = getView();
 		final FavouritesDbHelper helper = getMyApplication().getFavorites();
 		points = new ArrayList<FavouritePoint>(helper.getFavouritePoints());
@@ -89,20 +89,20 @@ public class DashFavoritesFragment extends DashLocationFragment {
 				}
 			});
 		}
-		LinearLayout favorites = (LinearLayout) mainView.findViewById(R.id.items);
+		LinearLayout favorites = mainView.findViewById(R.id.items);
 		favorites.removeAllViews();
 		DashboardOnMap.handleNumberOfRows(points, getMyApplication().getSettings(), ROW_NUMBER_TAG);
 		List<DashLocationView> distances = new ArrayList<DashLocationFragment.DashLocationView>();
 		for (final FavouritePoint point : points) {
 			LayoutInflater inflater = getActivity().getLayoutInflater();
 			View view = inflater.inflate(R.layout.favorites_list_item, null, false);
-			TextView name = (TextView) view.findViewById(R.id.favourite_label);
-			TextView label = (TextView) view.findViewById(R.id.distance);
-			ImageView direction = (ImageView) view.findViewById(R.id.direction);
+			TextView name = view.findViewById(R.id.favourite_label);
+			TextView label = view.findViewById(R.id.distance);
+			ImageView direction = view.findViewById(R.id.direction);
 			direction.setVisibility(View.VISIBLE);
 			label.setVisibility(View.VISIBLE);
 			view.findViewById(R.id.divider).setVisibility(View.VISIBLE);
-			ImageView groupImage = (ImageView)view.findViewById(R.id.group_image);
+			ImageView groupImage = view.findViewById(R.id.group_image);
 			if (point.getCategory().length() > 0) {
 				((TextView) view.findViewById(R.id.group_name)).setText(point.getCategory());
 				groupImage.setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_small_group));

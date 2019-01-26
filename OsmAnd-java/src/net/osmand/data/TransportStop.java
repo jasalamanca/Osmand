@@ -1,7 +1,7 @@
 package net.osmand.data;
 
 public class TransportStop extends MapObject {
-	int[] referencesToRoutes = null;
+	private int[] referencesToRoutes = null;
 	
 	public TransportStop(){
 	}

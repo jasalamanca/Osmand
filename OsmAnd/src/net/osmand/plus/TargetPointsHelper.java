@@ -19,14 +19,14 @@ import java.util.List;
 
 public class TargetPointsHelper {
 
-	private List<TargetPoint> intermediatePoints = new ArrayList<>();
+	private final List<TargetPoint> intermediatePoints = new ArrayList<>();
 	private TargetPoint pointToNavigate = null;
 	private TargetPoint pointToStart = null;
-	private OsmandSettings settings;
-	private RoutingHelper routingHelper;
-	private List<StateChangedListener<Void>> listeners = new ArrayList<>();
-	private List<TargetPointChangedListener> pointListeners = new ArrayList<>();
-	private OsmandApplication ctx;
+	private final OsmandSettings settings;
+	private final RoutingHelper routingHelper;
+	private final List<StateChangedListener<Void>> listeners = new ArrayList<>();
+	private final List<TargetPointChangedListener> pointListeners = new ArrayList<>();
+	private final OsmandApplication ctx;
 
 	private AddressLookupRequest startPointRequest;
 	private AddressLookupRequest targetPointRequest;
@@ -36,8 +36,8 @@ public class TargetPointsHelper {
 	}
 
 	public static class TargetPoint implements LocationPoint {
-		public LatLon point;
-		private PointDescription pointDescription;
+		public final LatLon point;
+		private final PointDescription pointDescription;
 		public int index;
 		public boolean intermediate;
 		public boolean start;
@@ -47,7 +47,7 @@ public class TargetPointsHelper {
 			this.pointDescription = name;
 		}
 
-		public TargetPoint(LatLon point, PointDescription name, int index) {
+		TargetPoint(LatLon point, PointDescription name, int index) {
 			this.point = point;
 			this.pointDescription = name;
 			this.index = index;
@@ -96,7 +96,7 @@ public class TargetPointsHelper {
 			return pointDescription == null ? "" : pointDescription.getName();
 		}
 
-		public boolean isSearchingAddress(Context ctx) {
+		boolean isSearchingAddress(Context ctx) {
 			return pointDescription != null && pointDescription.isSearchingAddress(ctx);
 		}
 
@@ -254,7 +254,7 @@ public class TargetPointsHelper {
 		return intermediatePoints;
 	}
 	
-	public List<LatLon> getIntermediatePointsLatLon() {
+	private List<LatLon> getIntermediatePointsLatLon() {
 		List<LatLon> intermediatePointsLatLon = new ArrayList<>();
 		for (TargetPoint t : this.intermediatePoints) {
 			intermediatePointsLatLon.add(t.point);

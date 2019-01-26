@@ -887,7 +887,7 @@ public class MapActivityActions implements DialogProvider {
 		menu.show();
 	}
 
-	protected void updateDrawerMenu() {
+	void updateDrawerMenu() {
 		boolean nightMode = getMyApplication().getDaynightHelper().isNightModeForMapControls();
 		final ListView menuItemsListView = mapActivity.findViewById(R.id.menuItems);
 		if (nightMode) {

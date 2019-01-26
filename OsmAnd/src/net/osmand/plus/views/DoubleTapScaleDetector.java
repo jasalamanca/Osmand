@@ -13,17 +13,17 @@ import net.osmand.data.RotatedTileBox;
 
 import org.apache.commons.logging.Log;
 
-public class DoubleTapScaleDetector {
+class DoubleTapScaleDetector {
 	private static final Log LOG = PlatformUtil.getLog(DoubleTapScaleDetector.class);
 	private static final int DOUBLE_TAP_TIMEOUT = ViewConfiguration.getDoubleTapTimeout();
 	private static final int LONG_PRESS_TIMEOUT = ViewConfiguration.getLongPressTimeout();
 	public static final int SCALE_PER_SCREEN = 4;
 
 	private final DoubleTapZoomListener listener;
-	protected final OsmandMapTileView view;
+	private final OsmandMapTileView view;
 
-	private int displayHeightPx;
-	private PointF centerScreen;
+	private final int displayHeightPx;
+	private final PointF centerScreen;
 	private PointF zoomCenter;
 
 	private boolean mIsInZoomMode = false;
@@ -31,8 +31,8 @@ public class DoubleTapScaleDetector {
 	private MotionEvent firstDown;
 	private MotionEvent firstUp;
 	private MotionEvent secondDown;
-	private int mTouchSlopSquare;
-	private int mDoubleTapSlopSquare;
+	private final int mTouchSlopSquare;
+	private final int mDoubleTapSlopSquare;
 	private boolean mIsDoubleTapping;
 	private boolean mScrolling;
 

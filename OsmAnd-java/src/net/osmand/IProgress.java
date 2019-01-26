@@ -11,21 +11,21 @@ public interface IProgress {
 	 * @param work - -1 means that indeterminate task, 
 	 * otherwise number of could be specified 
 	 */
-	public void startTask(String taskName, int work);
+    void startTask(String taskName, int work);
 	
-	public void startWork(int work);
+	void startWork(int work);
 	
-	public void progress(int deltaWork);
+	void progress(int deltaWork);
 	
-	public void remaining(int remainingWork);
+	void remaining(int remainingWork);
 	
-	public void finishTask();
+	void finishTask();
 	
-	public boolean isIndeterminate();
+	boolean isIndeterminate();
 	
-	public boolean isInterrupted();
+	boolean isInterrupted();
 	
-	public IProgress EMPTY_PROGRESS = new IProgress() {
+	IProgress EMPTY_PROGRESS = new IProgress() {
 		
 		@Override
 		public void startWork(int work) {}

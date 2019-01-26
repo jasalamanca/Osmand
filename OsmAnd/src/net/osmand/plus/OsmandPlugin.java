@@ -36,7 +36,7 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class OsmandPlugin {
-	private static List<OsmandPlugin> allPlugins = new ArrayList<OsmandPlugin>();
+	private static final List<OsmandPlugin> allPlugins = new ArrayList<OsmandPlugin>();
 	private static final Log LOG = PlatformUtil.getLog(OsmandPlugin.class);
 
 	private boolean active;
@@ -64,11 +64,11 @@ public abstract class OsmandPlugin {
 	/**
 	 * Initialize plugin runs just after creation
 	 */
-	public boolean init(OsmandApplication app, Activity activity) {
+	protected boolean init(OsmandApplication app, Activity activity) {
 		return true;
 	}
 
-	public void setActive(boolean active) {
+	private void setActive(boolean active) {
 		this.active = active;
 	}
 
@@ -76,7 +76,7 @@ public abstract class OsmandPlugin {
 		return active;
 	}
 
-	public boolean isVisible() {
+	private boolean isVisible() {
 		return true;
 	}
 
@@ -185,37 +185,35 @@ public abstract class OsmandPlugin {
 		return true;
 	}
 
-	public void updateLayers(OsmandMapTileView mapView, MapActivity activity) {
+	protected void updateLayers(OsmandMapTileView mapView, MapActivity activity) {
 	}
 
-	;
-
-	/**
+    /**
 	 * Register layers calls when activity is created and before @mapActivityCreate
 	 *
 	 * @param activity
 	 */
-	public void registerLayers(MapActivity activity) {
+	protected void registerLayers(MapActivity activity) {
 	}
 
-	public void mapActivityCreate(MapActivity activity) {
+	private void mapActivityCreate(MapActivity activity) {
 	}
 
-	public void mapActivityResume(MapActivity activity) {
+	private void mapActivityResume(MapActivity activity) {
 	}
 
-	public void mapActivityPause(MapActivity activity) {
+	private void mapActivityPause(MapActivity activity) {
 	}
 
-	public void mapActivityDestroy(MapActivity activity) {
+	private void mapActivityDestroy(MapActivity activity) {
 	}
 
-	public void mapActivityScreenOff(MapActivity activity) {
+	private void mapActivityScreenOff(MapActivity activity) {
 	}
 
 	@TargetApi(Build.VERSION_CODES.M)
-	public void handleRequestPermissionsResult(int requestCode, String[] permissions,
-											   int[] grantResults) {
+	private void handleRequestPermissionsResult(int requestCode, String[] permissions,
+												int[] grantResults) {
 	}
 
 	public static final void onRequestPermissionsResult(int requestCode, String[] permissions,
@@ -225,45 +223,45 @@ public abstract class OsmandPlugin {
 		}
 	}
 
-	public boolean destinationReached() {
+	private boolean destinationReached() {
 		return true;
 	}
 
 
-	public void registerLayerContextMenuActions(OsmandMapTileView mapView, ContextMenuAdapter adapter, MapActivity mapActivity) {
+	protected void registerLayerContextMenuActions(OsmandMapTileView mapView, ContextMenuAdapter adapter, MapActivity mapActivity) {
 	}
 
-	public void registerMapContextMenuActions(MapActivity mapActivity, double latitude, double longitude, ContextMenuAdapter adapter, Object selectedObj) {
+	protected void registerMapContextMenuActions(MapActivity mapActivity, double latitude, double longitude, ContextMenuAdapter adapter, Object selectedObj) {
 	}
 
-	public void registerOptionsMenuItems(MapActivity mapActivity, ContextMenuAdapter helper) {
+	protected void registerOptionsMenuItems(MapActivity mapActivity, ContextMenuAdapter helper) {
 	}
 
-	public DashFragmentData getCardFragment() {
+	protected DashFragmentData getCardFragment() {
 		return null;
 	}
 
-	public void updateLocation(Location location) {
+	protected void updateLocation(Location location) {
 	}
 
-	public void addMyPlacesTab(FavoritesActivity favoritesActivity, List<TabItem> mTabs, Intent intent) {
+	protected void addMyPlacesTab(FavoritesActivity favoritesActivity, List<TabItem> mTabs, Intent intent) {
 	}
 
-	public void contextMenuFragment(Activity activity, Fragment fragment, Object info, ContextMenuAdapter adapter) {
+	protected void contextMenuFragment(Activity activity, Fragment fragment, Object info, ContextMenuAdapter adapter) {
 	}
 
-	public void optionsMenuFragment(Activity activity, Fragment fragment, ContextMenuAdapter optionsMenuAdapter) {
+	protected void optionsMenuFragment(Activity activity, Fragment fragment, ContextMenuAdapter optionsMenuAdapter) {
 	}
 
-	public List<String> indexingFiles(IProgress progress) {
+	private List<String> indexingFiles(IProgress progress) {
 		return null;
 	}
 
-	public boolean mapActivityKeyUp(MapActivity mapActivity, int keyCode) {
+	private boolean mapActivityKeyUp(MapActivity mapActivity, int keyCode) {
 		return false;
 	}
 
-	public void onMapActivityExternalResult(int requestCode, int resultCode, Intent data) {
+	private void onMapActivityExternalResult(int requestCode, int resultCode, Intent data) {
 	}
 
 	public static void refreshLayers(OsmandMapTileView mapView, MapActivity activity) {
@@ -451,7 +449,7 @@ public abstract class OsmandPlugin {
 		return collection;
 	}
 
-	public static boolean isPackageInstalled(String packageInfo, Context ctx) {
+	private static boolean isPackageInstalled(String packageInfo, Context ctx) {
 		if (packageInfo == null) {
 			return false;
 		}

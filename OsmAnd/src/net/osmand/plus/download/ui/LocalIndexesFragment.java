@@ -376,7 +376,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 
 
 	public static class LocalIndexOperationTask extends AsyncTask<LocalIndexInfo, LocalIndexInfo, String> {
-		protected static final int DELETE_OPERATION = 1;
+		static final int DELETE_OPERATION = 1;
 		static final int BACKUP_OPERATION = 2;
 		static final int RESTORE_OPERATION = 3;
 

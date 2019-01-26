@@ -19,7 +19,7 @@ public abstract class BaseMapLayer extends OsmandMapLayer {
 		this.alpha = alpha;
 	}
 	
-	public int getAlpha() {
+	protected int getAlpha() {
 		return alpha;
 	}
 	

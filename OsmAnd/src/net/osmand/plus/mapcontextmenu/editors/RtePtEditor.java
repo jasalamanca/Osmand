@@ -4,7 +4,7 @@ import net.osmand.plus.activities.MapActivity;
 
 public class RtePtEditor extends WptPtEditor {
 
-	public static final String TAG = "RtePtEditorFragment";
+	private static final String TAG = "RtePtEditorFragment";
 
 	public RtePtEditor(MapActivity mapActivity) {
 		super(mapActivity);

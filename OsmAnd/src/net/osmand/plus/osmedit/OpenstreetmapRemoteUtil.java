@@ -54,9 +54,9 @@ public class OpenstreetmapRemoteUtil implements OpenstreetmapUtil {
 	private long changeSetId = NO_CHANGESET_ID;
 	private long changeSetTimeStamp = NO_CHANGESET_ID;
 
-	public final static Log log = PlatformUtil.getLog(OpenstreetmapRemoteUtil.class);
+	private final static Log log = PlatformUtil.getLog(OpenstreetmapRemoteUtil.class);
 
-	private OsmandSettings settings;
+	private final OsmandSettings settings;
 
 
 	public OpenstreetmapRemoteUtil(OsmandApplication app) {
@@ -170,7 +170,7 @@ public class OpenstreetmapRemoteUtil implements OpenstreetmapUtil {
 		return null;
 	}
 
-	public long openChangeSet(String comment) {
+	private long openChangeSet(String comment) {
 		long id = -1;
 		StringWriter writer = new StringWriter(256);
 		XmlSerializer ser = Xml.newSerializer();

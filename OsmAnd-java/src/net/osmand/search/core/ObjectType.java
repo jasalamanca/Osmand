@@ -21,8 +21,8 @@ public enum ObjectType {
 	SEARCH_API_REGION_FINISHED(false),
 	UNKNOWN_NAME_FILTER(false);
 
-	private boolean hasLocation;
-	private ObjectType(boolean location) {
+	private final boolean hasLocation;
+	ObjectType(boolean location) {
 		this.hasLocation = location;
 	}
 	public boolean hasLocation() {

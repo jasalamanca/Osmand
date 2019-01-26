@@ -70,7 +70,7 @@ public class RouteInfoWidgetsFactory {
 		final OsmandSettings settings = app.getSettings();
 		final RoutingHelper routingHelper = app.getRoutingHelper();
 		final NextTurnInfoWidget nextTurnInfo = new NextTurnInfoWidget(activity, app, horisontalMini) {
-			NextDirectionInfo calc1 = new NextDirectionInfo();
+			final NextDirectionInfo calc1 = new NextDirectionInfo();
 
 			@Override
 			public boolean updateInfo(DrawSettings drawSettings) {
@@ -135,7 +135,7 @@ public class RouteInfoWidgetsFactory {
 			final OsmandApplication app, boolean horisontalMini) {
 		final RoutingHelper routingHelper = app.getRoutingHelper();
 		final NextTurnInfoWidget nextTurnInfo = new NextTurnInfoWidget(activity, app, horisontalMini) {
-			NextDirectionInfo calc1 = new NextDirectionInfo();
+			final NextDirectionInfo calc1 = new NextDirectionInfo();
 			@Override
 			public boolean updateInfo(DrawSettings drawSettings) {
 				boolean followingMode = routingHelper.isFollowingMode() || app.getLocationProvider().getLocationSimulation().isRouteAnimating();
@@ -194,8 +194,8 @@ public class RouteInfoWidgetsFactory {
 
 	public static class TimeControlWidgetState extends WidgetState {
 
-		public static final int TIME_CONTROL_WIDGET_STATE_ARRIVAL_TIME = R.id.time_control_widget_state_arrival_time;
-		public static final int TIME_CONTROL_WIDGET_STATE_TIME_TO_GO = R.id.time_control_widget_state_time_to_go;
+		static final int TIME_CONTROL_WIDGET_STATE_ARRIVAL_TIME = R.id.time_control_widget_state_arrival_time;
+		static final int TIME_CONTROL_WIDGET_STATE_TIME_TO_GO = R.id.time_control_widget_state_time_to_go;
 
 		private final OsmandPreference<Boolean> showArrival;
 
@@ -290,8 +290,8 @@ public class RouteInfoWidgetsFactory {
 					return true;
 				}
 				return false;
-			};
-		};
+			}
+        };
 		leftTimeControl.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -328,8 +328,8 @@ public class RouteInfoWidgetsFactory {
 					}
 				}
 				return false;
-			};
-		};
+			}
+        };
 		plainTimeControl.setText(null, null);
 		plainTimeControl.setIcons(R.drawable.widget_time_day, R.drawable.widget_time_night);
 		return plainTimeControl;
@@ -366,8 +366,8 @@ public class RouteInfoWidgetsFactory {
 					}
 				}
 				return false;
-			};
-		};
+			}
+        };
 		batteryControl.setText(null, null);
 		batteryControl.setIcons(battery, batteryN);
 		return batteryControl;
@@ -466,10 +466,10 @@ public class RouteInfoWidgetsFactory {
 	public abstract static class DistanceToPointInfoControl extends TextInfoWidget {
 
 		private final OsmandMapTileView view;
-		private float[] calculations = new float[1];
+		private final float[] calculations = new float[1];
 		private int cachedMeters;
 
-		public DistanceToPointInfoControl(MapActivity ma, int res, int resNight) {
+		DistanceToPointInfoControl(MapActivity ma, int res, int resNight) {
 			super(ma);
 			this.view = ma.getMapView();
 			if (res != 0 && resNight != 0) {
@@ -485,7 +485,7 @@ public class RouteInfoWidgetsFactory {
 			});
 		}
 
-		protected void click(final OsmandMapTileView view) {
+		void click(final OsmandMapTileView view) {
 			AnimateDraggingMapThread thread = view.getAnimatedDraggingThread();
 			LatLon pointToNavigate = getPointToNavigate();
 			if (pointToNavigate != null) {
@@ -516,9 +516,9 @@ public class RouteInfoWidgetsFactory {
 			return false;
 		}
 
-		public abstract LatLon getPointToNavigate();
+		protected abstract LatLon getPointToNavigate();
 
-		public int getDistance() {
+		int getDistance() {
 			int d = 0;
 			LatLon l = getPointToNavigate();
 			if (l != null) {
@@ -583,8 +583,8 @@ public class RouteInfoWidgetsFactory {
 
 	public static class BearingWidgetState extends WidgetState {
 
-		public static final int BEARING_WIDGET_STATE_RELATIVE_BEARING = R.id.bearing_widget_state_relative_bearing;
-		public static final int BEARING_WIDGET_STATE_MAGNETIC_BEARING = R.id.bearing_widget_state_magnetic_bearing;
+		static final int BEARING_WIDGET_STATE_RELATIVE_BEARING = R.id.bearing_widget_state_relative_bearing;
+		static final int BEARING_WIDGET_STATE_MAGNETIC_BEARING = R.id.bearing_widget_state_magnetic_bearing;
 
 		private final OsmandPreference<Boolean> showRelativeBearing;
 
@@ -639,9 +639,9 @@ public class RouteInfoWidgetsFactory {
 
 		final TextInfoWidget bearingControl = new TextInfoWidget(map) {
 			private int cachedDegrees;
-			private float MIN_SPEED_FOR_HEADING = 1f;
+			private final float MIN_SPEED_FOR_HEADING = 1f;
 
-			public LatLon getPointToNavigate() {
+			LatLon getPointToNavigate() {
 				TargetPoint p = map.getPointToNavigate();
 				return p == null ? null : p.point;
 			}
@@ -664,7 +664,7 @@ public class RouteInfoWidgetsFactory {
 				return false;
 			}
 
-			public int getBearing(boolean relative) {
+			int getBearing(boolean relative) {
 				int d = -1000;
 				Location myLocation = getOsmandApplication().getLocationProvider().getLastKnownLocation();
 				LatLon l = getPointToNavigate();
@@ -727,26 +727,26 @@ public class RouteInfoWidgetsFactory {
 
 
 	public static class LanesControl {
-		private MapViewTrackingUtilities trackingUtilities;
-		private OsmAndLocationProvider locationProvider;
-		private RoutingHelper rh;
-		private OsmandSettings settings;
-		private ImageView lanesView;
-		private TextView lanesText;
-		private TextView lanesShadowText;
-		private OsmandApplication app;
+		private final MapViewTrackingUtilities trackingUtilities;
+		private final OsmAndLocationProvider locationProvider;
+		private final RoutingHelper rh;
+		private final OsmandSettings settings;
+		private final ImageView lanesView;
+		private final TextView lanesText;
+		private final TextView lanesShadowText;
+		private final OsmandApplication app;
 		private int dist;
-		private LanesDrawable lanesDrawable;
-		private View centerInfo;
-		private View progress;
+		private final LanesDrawable lanesDrawable;
+		private final View centerInfo;
+		private final View progress;
 		private int shadowRadius;
 
-		public LanesControl(final MapActivity map, final OsmandMapTileView view) {
-			lanesView = (ImageView) map.findViewById(R.id.map_lanes);
-			lanesText = (TextView) map.findViewById(R.id.map_lanes_dist_text);
-			lanesShadowText = (TextView) map.findViewById(R.id.map_lanes_dist_text_shadow);
-			centerInfo = (View) map.findViewById(R.id.map_center_info);
-			progress = (View) map.findViewById(R.id.map_horizontal_progress);
+		LanesControl(final MapActivity map, final OsmandMapTileView view) {
+			lanesView = map.findViewById(R.id.map_lanes);
+			lanesText = map.findViewById(R.id.map_lanes_dist_text);
+			lanesShadowText = map.findViewById(R.id.map_lanes_dist_text_shadow);
+			centerInfo = map.findViewById(R.id.map_center_info);
+			progress = map.findViewById(R.id.map_horizontal_progress);
 			lanesDrawable = new LanesDrawable(map, map.getMapView().getScaleCoefficient());
 			lanesView.setImageDrawable(lanesDrawable);
 			trackingUtilities = map.getMapViewTrackingUtilities();
@@ -842,20 +842,20 @@ public class RouteInfoWidgetsFactory {
 	private static class LanesDrawable extends Drawable {
 		int[] lanes = null;
 		boolean imminent = false;
-		private Context ctx;
-		private Map<TurnResource, Path> pathsCache = new HashMap<>();
-		private Paint paintBlack;
-		private Paint paintRouteDirection;
-		private Paint paintSecondTurn;
-		private float scaleCoefficient;
+		private final Context ctx;
+		private final Map<TurnResource, Path> pathsCache = new HashMap<>();
+		private final Paint paintBlack;
+		private final Paint paintRouteDirection;
+		private final Paint paintSecondTurn;
+		private final float scaleCoefficient;
 		private int height;
 		private int width;
 		private float delta;
-		private float laneHalfSize;
+		private final float laneHalfSize;
 		private static final float miniCoeff = 2f;
 		private final boolean leftSide;
-		private int imgMinDelta;
-		private int imgMargin;
+		private final int imgMinDelta;
+		private final int imgMargin;
 
 		LanesDrawable(MapActivity ctx, float scaleCoefficent) {
 			this.ctx = ctx;
@@ -1119,26 +1119,26 @@ public class RouteInfoWidgetsFactory {
 
 	public static class RulerWidget  {
 		
-		private View layout;
-		private ImageView icon;
-		private TextView text;
-		private TextView textShadow;
-		private MapActivity ma;
+		private final View layout;
+		private final ImageView icon;
+		private final TextView text;
+		private final TextView textShadow;
+		private final MapActivity ma;
 		private String cacheRulerText;
-		private int maxWidth;
+		private final int maxWidth;
 		private float cacheMapDensity;
-		private OsmandSettings.OsmandPreference<Float> mapDensity;
+		private final OsmandSettings.OsmandPreference<Float> mapDensity;
 		private int cacheRulerZoom;
 		private double cacheRulerTileX;
 		private double cacheRulerTileY;
-		private boolean orientationPortrait;
+		private final boolean orientationPortrait;
 
-		public RulerWidget(final OsmandApplication app, MapActivity ma) {
+		RulerWidget(final OsmandApplication app, MapActivity ma) {
 			this.ma = ma;
 			layout = ma.findViewById(R.id.map_ruler_layout);
-			icon = (ImageView) ma.findViewById(R.id.map_ruler_image);
-			text = (TextView) ma.findViewById(R.id.map_ruler_text);
-			textShadow = (TextView) ma.findViewById(R.id.map_ruler_text_shadow);
+			icon = ma.findViewById(R.id.map_ruler_image);
+			text = ma.findViewById(R.id.map_ruler_text);
+			textShadow = ma.findViewById(R.id.map_ruler_text_shadow);
 			maxWidth = ma.getResources().getDimensionPixelSize(R.dimen.map_ruler_width);
 			orientationPortrait = AndroidUiHelper.isOrientationPortrait(ma);
 			mapDensity = ma.getMyApplication().getSettings().MAP_DENSITY;
@@ -1190,24 +1190,24 @@ public class RouteInfoWidgetsFactory {
 	
 	public static class AlarmWidget  {
 		
-		private View layout;
-		private ImageView icon;
-		private TextView text;
-		private TextView bottomText;
-		private OsmandSettings settings;
-		private RoutingHelper rh;
-		private MapViewTrackingUtilities trackingUtilities;
-		private OsmAndLocationProvider locationProvider;
-		private WaypointHelper wh;
+		private final View layout;
+		private final ImageView icon;
+		private final TextView text;
+		private final TextView bottomText;
+		private final OsmandSettings settings;
+		private final RoutingHelper rh;
+		private final MapViewTrackingUtilities trackingUtilities;
+		private final OsmAndLocationProvider locationProvider;
+		private final WaypointHelper wh;
 		private int imgId;
 		private String textString;
 		private String bottomTextString;
 
-		public AlarmWidget(final OsmandApplication app, MapActivity ma) {
+		AlarmWidget(final OsmandApplication app, MapActivity ma) {
 			layout = ma.findViewById(R.id.map_alarm_warning);
-			icon = (ImageView) ma.findViewById(R.id.map_alarm_warning_icon);
-			text = (TextView) ma.findViewById(R.id.map_alarm_warning_text);
-			bottomText = (TextView) ma.findViewById(R.id.map_alarm_warning_text_bottom);
+			icon = ma.findViewById(R.id.map_alarm_warning_icon);
+			text = ma.findViewById(R.id.map_alarm_warning_text);
+			bottomText = ma.findViewById(R.id.map_alarm_warning_text_bottom);
 			settings = app.getSettings();
 			rh = ma.getRoutingHelper();
 			trackingUtilities = ma.getMapViewTrackingUtilities();
@@ -1337,7 +1337,7 @@ public class RouteInfoWidgetsFactory {
 		return true;
 	}
 
-	public static boolean degreesChanged(int oldDegrees, int degrees){
+	private static boolean degreesChanged(int oldDegrees, int degrees){
 		return Math.abs(oldDegrees - degrees) >= 1;
 	}
 
@@ -1349,7 +1349,7 @@ public class RouteInfoWidgetsFactory {
 		return new RulerWidget(app, map);
 	}
 	
-	protected static boolean updateVisibility(View view, boolean visible) {
+	private static boolean updateVisibility(View view, boolean visible) {
 		if (visible != (view.getVisibility() == View.VISIBLE)) {
 			if (visible) {
 				view.setVisibility(View.VISIBLE);

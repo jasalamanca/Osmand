@@ -112,7 +112,7 @@ public class GpxUiHelper {
 
 	private static final int OPEN_GPX_DOCUMENT_REQUEST = 1005;
 
-	public static String getDescription(OsmandApplication app, GPXFile result, File f, boolean html) {
+	private static String getDescription(OsmandApplication app, GPXFile result, File f, boolean html) {
 		GPXTrackAnalysis analysis = result.getAnalysis(f == null ? 0 : f.lastModified());
 		return getDescription(app, analysis, html);
 	}
@@ -122,7 +122,7 @@ public class GpxUiHelper {
 	}
 
 
-	public static String getColorValue(String clr, String value, boolean html) {
+	private static String getColorValue(String clr, String value, boolean html) {
 		if (!html) {
 			return value;
 		}
@@ -287,8 +287,8 @@ public class GpxUiHelper {
 		return adapter;
 	}
 
-	protected static void updateSelection(List<String> selectedGpxList, boolean showCurrentTrack,
-										  final ContextMenuAdapter adapter, int position, String fileName) {
+	private static void updateSelection(List<String> selectedGpxList, boolean showCurrentTrack,
+										final ContextMenuAdapter adapter, int position, String fileName) {
 		ContextMenuItem item = adapter.getItem(position);
 		if (position == 0 && showCurrentTrack) {
 			if (selectedGpxList.contains("")) {
@@ -341,7 +341,7 @@ public class GpxUiHelper {
 					v = activity.getLayoutInflater().inflate(layout, null);
 				}
 				final ContextMenuItem item = adapter.getItem(position);
-				TextView tv = (TextView) v.findViewById(R.id.text1);
+				TextView tv = v.findViewById(R.id.text1);
 				Drawable icon;
 				if (showCurrentGpx && position == 0) {
 					icon = null;
@@ -473,7 +473,7 @@ public class GpxUiHelper {
 					v.findViewById(R.id.check_item).setVisibility(View.GONE);
 				} else {
 					if (checkLayout) {
-						final AppCompatCheckBox ch = ((AppCompatCheckBox) v.findViewById(R.id.toggle_checkbox_item));
+						final AppCompatCheckBox ch = v.findViewById(R.id.toggle_checkbox_item);
 						ch.setVisibility(View.VISIBLE);
 						v.findViewById(R.id.toggle_item).setVisibility(View.GONE);
 						ch.setOnCheckedChangeListener(null);
@@ -485,7 +485,7 @@ public class GpxUiHelper {
 							}
 						});
 					} else {
-						final SwitchCompat ch = ((SwitchCompat) v.findViewById(R.id.toggle_item));
+						final SwitchCompat ch = v.findViewById(R.id.toggle_item);
 						ch.setVisibility(View.VISIBLE);
 						v.findViewById(R.id.toggle_checkbox_item).setVisibility(View.GONE);
 						ch.setOnCheckedChangeListener(null);
@@ -619,7 +619,7 @@ public class GpxUiHelper {
 		dlg.setCanceledOnTouchOutside(true);
 		if (list.size() == 0 || showCurrentGpx && list.size() == 1) {
 			final View footerView = activity.getLayoutInflater().inflate(R.layout.no_gpx_files_list_footer, null);
-			TextView descTextView = (TextView)footerView.findViewById(R.id.descFolder);
+			TextView descTextView = footerView.findViewById(R.id.descFolder);
 			String descPrefix = app.getString(R.string.gpx_no_tracks_title_folder);
 			SpannableString spannableDesc = new SpannableString(descPrefix + ": " + dir.getAbsolutePath());
 			spannableDesc.setSpan(new StyleSpan(android.graphics.Typeface.BOLD),
@@ -704,10 +704,10 @@ public class GpxUiHelper {
 		return dlg;
 	}
 
-	public static void updateGpxInfoView(View v, ContextMenuItem item, GPXInfo info, GpxDataItem dataItem, boolean currentlyRecordingTrack, OsmandApplication app) {
-		TextView viewName = ((TextView) v.findViewById(R.id.name));
+	private static void updateGpxInfoView(View v, ContextMenuItem item, GPXInfo info, GpxDataItem dataItem, boolean currentlyRecordingTrack, OsmandApplication app) {
+		TextView viewName = v.findViewById(R.id.name);
 		viewName.setText(item.getTitle().replace("/", " • ").trim());
-		ImageView icon = (ImageView) v.findViewById(R.id.icon);
+		ImageView icon = v.findViewById(R.id.icon);
 		icon.setVisibility(View.GONE);
 		//icon.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_action_polygom_dark));
 		viewName.setTypeface(Typeface.DEFAULT, Typeface.NORMAL);
@@ -737,24 +737,24 @@ public class GpxUiHelper {
 			if (fd > 0) {
 				date = (df.format(new Date(fd)));
 			}
-			TextView sizeText = (TextView) v.findViewById(R.id.date_and_size_details);
+			TextView sizeText = v.findViewById(R.id.date_and_size_details);
 			sizeText.setText(date + " \u2022 " + size);
 
 		} else {
 			v.findViewById(R.id.read_section).setVisibility(View.VISIBLE);
 			v.findViewById(R.id.unknown_section).setVisibility(View.GONE);
-			ImageView distanceI = (ImageView) v.findViewById(R.id.distance_icon);
+			ImageView distanceI = v.findViewById(R.id.distance_icon);
 			distanceI.setVisibility(View.VISIBLE);
 			distanceI.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_small_distance));
-			ImageView pointsI = (ImageView) v.findViewById(R.id.points_icon);
+			ImageView pointsI = v.findViewById(R.id.points_icon);
 			pointsI.setVisibility(View.VISIBLE);
 			pointsI.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_small_point));
-			ImageView timeI = (ImageView) v.findViewById(R.id.time_icon);
+			ImageView timeI = v.findViewById(R.id.time_icon);
 			timeI.setVisibility(View.VISIBLE);
 			timeI.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_small_time));
-			TextView time = (TextView) v.findViewById(R.id.time);
-			TextView distance = (TextView) v.findViewById(R.id.distance);
-			TextView pointsCount = (TextView) v.findViewById(R.id.points_count);
+			TextView time = v.findViewById(R.id.time);
+			TextView distance = v.findViewById(R.id.distance);
+			TextView pointsCount = v.findViewById(R.id.points_count);
 			pointsCount.setText(analysis.wptPoints + "");
 			distance.setText(OsmAndFormatter.getFormattedDistance(analysis.totalDistance, app));
 
@@ -765,7 +765,7 @@ public class GpxUiHelper {
 			}
 		}
 
-		TextView descr = ((TextView) v.findViewById(R.id.description));
+		TextView descr = v.findViewById(R.id.description);
 		descr.setVisibility(View.GONE);
 
 		v.findViewById(R.id.check_item).setVisibility(View.GONE);
@@ -806,8 +806,8 @@ public class GpxUiHelper {
 											  View apprTitleView,
 											  String prefWidthValue,
 											  String prefColorValue) {
-		TextView widthTextView = (TextView) apprTitleView.findViewById(R.id.widthTitle);
-		ImageView colorImageView = (ImageView) apprTitleView.findViewById(R.id.colorImage);
+		TextView widthTextView = apprTitleView.findViewById(R.id.widthTitle);
+		ImageView colorImageView = apprTitleView.findViewById(R.id.colorImage);
 		if (Algorithms.isEmpty(prefWidthValue)) {
 			widthTextView.setText(SettingsActivity.getStringPropertyValue(activity, trackWidthProp.getDefaultValueDescription()));
 		} else {
@@ -836,7 +836,7 @@ public class GpxUiHelper {
 	}
 
 
-	public static List<GPXInfo> getSortedGPXFilesInfo(File dir, final List<String> selectedGpxList, boolean absolutePath) {
+	private static List<GPXInfo> getSortedGPXFilesInfo(File dir, final List<String> selectedGpxList, boolean absolutePath) {
 		final List<GPXInfo> list = new ArrayList<>();
 		readGpxDirectory(dir, list, "", absolutePath);
 		if (selectedGpxList != null) {
@@ -1581,15 +1581,15 @@ public class GpxUiHelper {
 		SPEED(R.string.map_widget_speed, R.drawable.ic_action_speed),
 		SLOPE(R.string.shared_string_slope, R.drawable.ic_action_altitude_ascent);
 
-		private int stringId;
-		private int imageId;
+		private final int stringId;
+		private final int imageId;
 
-		private GPXDataSetType(int stringId, int imageId) {
+		GPXDataSetType(int stringId, int imageId) {
 			this.stringId = stringId;
 			this.imageId = imageId;
 		}
 
-		public String getName(@NonNull Context ctx) {
+		String getName(@NonNull Context ctx) {
 			return ctx.getString(stringId);
 		}
 
@@ -1601,7 +1601,7 @@ public class GpxUiHelper {
 			return imageId;
 		}
 
-		public Drawable getImageDrawable(@NonNull OsmandApplication app) {
+		Drawable getImageDrawable(@NonNull OsmandApplication app) {
 			return app.getIconsCache().getThemedIcon(imageId);
 		}
 
@@ -1634,10 +1634,10 @@ public class GpxUiHelper {
 		DISTANCE(R.string.distance, R.drawable.ic_action_marker_dark),
 		TIME(R.string.shared_string_time, R.drawable.ic_action_time);
 
-		private int stringId;
-		private int imageId;
+		private final int stringId;
+		private final int imageId;
 
-		private GPXDataSetAxisType(int stringId, int imageId) {
+		GPXDataSetAxisType(int stringId, int imageId) {
 			this.stringId = stringId;
 			this.imageId = imageId;
 		}
@@ -1661,8 +1661,8 @@ public class GpxUiHelper {
 
 	public static class OrderedLineDataSet extends LineDataSet {
 
-		private GPXDataSetType dataSetType;
-		private GPXDataSetAxisType dataSetAxisType;
+		private final GPXDataSetType dataSetType;
+		private final GPXDataSetAxisType dataSetAxisType;
 
 		float priority;
 		String units;
@@ -1708,9 +1708,9 @@ public class GpxUiHelper {
 	@SuppressLint("ViewConstructor")
 	private static class GPXMarkerView extends MarkerView {
 
-		private View textAltView;
-		private View textSpdView;
-		private View textSlpView;
+		private final View textAltView;
+		private final View textSpdView;
+		private final View textSlpView;
 
 		public GPXMarkerView(Context context) {
 			super(context, R.layout.chart_marker_view);
@@ -1854,9 +1854,9 @@ public class GpxUiHelper {
 	}
 
 	public static class GPXInfo {
-		private String fileName;
-		private long lastModified;
-		private long fileSize;
+		private final String fileName;
+		private final long lastModified;
+		private final long fileSize;
 		private boolean selected;
 
 		GPXInfo(String fileName, long lastModified, long fileSize) {
@@ -1869,19 +1869,19 @@ public class GpxUiHelper {
 			return fileName;
 		}
 
-		public long getLastModified() {
+		long getLastModified() {
 			return lastModified;
 		}
 
-		public long getFileSize() {
+		long getFileSize() {
 			return fileSize;
 		}
 
-		public boolean isSelected() {
+		boolean isSelected() {
 			return selected;
 		}
 
-		public void setSelected(boolean selected) {
+		void setSelected(boolean selected) {
 			this.selected = selected;
 		}
 	}

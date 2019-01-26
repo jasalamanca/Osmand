@@ -47,5 +47,5 @@ public interface BlockingRpcChannel {
       Descriptors.MethodDescriptor method,
       RpcController controller,
       Message request,
-      Message responsePrototype) throws ServiceException;
+      Message responsePrototype);
 }

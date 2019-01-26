@@ -60,7 +60,7 @@ public final class CodedOutputStream {
   /**
    * The buffer size used in {@link #newInstance(OutputStream)}.
    */
-  public static final int DEFAULT_BUFFER_SIZE = 4096;
+  private static final int DEFAULT_BUFFER_SIZE = 4096;
 
   /**
    * Returns the buffer size to efficiently write dataLength bytes to this
@@ -124,9 +124,9 @@ public final class CodedOutputStream {
    * array is faster than writing to an {@code OutputStream}.  See also
    * {@link ByteString#newCodedBuilder}.
    */
-  public static CodedOutputStream newInstance(final byte[] flatArray,
-                                              final int offset,
-                                              final int length) {
+  private static CodedOutputStream newInstance(final byte[] flatArray,
+                                               final int offset,
+                                               final int length) {
     return new CodedOutputStream(flatArray, offset, length);
   }
 
@@ -544,8 +544,8 @@ public final class CodedOutputStream {
    * Compute the number of bytes that would be needed to encode an
    * embedded message in lazy field, including tag.
    */
-  public static int computeLazyFieldSize(final int fieldNumber,
-                                         final LazyField value) {
+  private static int computeLazyFieldSize(final int fieldNumber,
+                                          final LazyField value) {
     return computeTagSize(fieldNumber) + computeLazyFieldSizeNoTag(value);
   }
 
@@ -850,7 +850,7 @@ public final class CodedOutputStream {
    * If writing to a flat array, return the space left in the array.
    * Otherwise, throws {@code UnsupportedOperationException}.
    */
-  public int spaceLeft() {
+  private int spaceLeft() {
     if (output == null) {
       return limit - position;
     } else {
@@ -886,7 +886,7 @@ public final class CodedOutputStream {
    * not attempt to write more bytes than the array has space.  Otherwise,
    * this exception will be thrown.
    */
-  public static class OutOfSpaceException extends IOException {
+  static class OutOfSpaceException extends IOException {
     private static final long serialVersionUID = -6947486886997889499L;
 
     OutOfSpaceException() {
@@ -896,7 +896,7 @@ public final class CodedOutputStream {
   }
 
   /** Write a single byte. */
-  public void writeRawByte(final byte value) throws IOException {
+  private void writeRawByte(final byte value) throws IOException {
     if (position == limit) {
       refreshBuffer();
     }
@@ -910,12 +910,12 @@ public final class CodedOutputStream {
   }
 
   /** Write a byte string. */
-  public void writeRawBytes(final ByteString value) throws IOException {
+  private void writeRawBytes(final ByteString value) throws IOException {
     writeRawBytes(value, 0, value.size());
   }
 
   /** Write an array of bytes. */
-  public void writeRawBytes(final byte[] value) throws IOException {
+  private void writeRawBytes(final byte[] value) throws IOException {
     writeRawBytes(value, 0, value.length);
   }
 
@@ -952,7 +952,7 @@ public final class CodedOutputStream {
   }
 
   /** Write part of a byte string. */
-  public void writeRawBytes(final ByteString value, int offset, int length)
+  private void writeRawBytes(final ByteString value, int offset, int length)
                             throws IOException {
     if (limit - position >= length) {
       // We have room in the current buffer.
@@ -1040,7 +1040,7 @@ public final class CodedOutputStream {
   }
 
   /** Encode and write a varint. */
-  public void writeRawVarint64(long value) throws IOException {
+  private void writeRawVarint64(long value) throws IOException {
     while (true) {
       if ((value & ~0x7FL) == 0) {
         writeRawByte((int)value);
@@ -1053,7 +1053,7 @@ public final class CodedOutputStream {
   }
 
   /** Compute the number of bytes that would be needed to encode a varint. */
-  public static int computeRawVarint64Size(final long value) {
+  private static int computeRawVarint64Size(final long value) {
     if ((value & (0xffffffffffffffffL <<  7)) == 0) return 1;
     if ((value & (0xffffffffffffffffL << 14)) == 0) return 2;
     if ((value & (0xffffffffffffffffL << 21)) == 0) return 3;
@@ -1067,17 +1067,17 @@ public final class CodedOutputStream {
   }
 
   /** Write a little-endian 32-bit integer. */
-  public void writeRawLittleEndian32(final int value) throws IOException {
+  private void writeRawLittleEndian32(final int value) throws IOException {
     writeRawByte((value      ) & 0xFF);
     writeRawByte((value >>  8) & 0xFF);
     writeRawByte((value >> 16) & 0xFF);
     writeRawByte((value >> 24) & 0xFF);
   }
 
-  public static final int LITTLE_ENDIAN_32_SIZE = 4;
+  private static final int LITTLE_ENDIAN_32_SIZE = 4;
 
   /** Write a little-endian 64-bit integer. */
-  public void writeRawLittleEndian64(final long value) throws IOException {
+  private void writeRawLittleEndian64(final long value) throws IOException {
     writeRawByte((int)(value      ) & 0xFF);
     writeRawByte((int)(value >>  8) & 0xFF);
     writeRawByte((int)(value >> 16) & 0xFF);
@@ -1088,7 +1088,7 @@ public final class CodedOutputStream {
     writeRawByte((int)(value >> 56) & 0xFF);
   }
 
-  public static final int LITTLE_ENDIAN_64_SIZE = 8;
+  private static final int LITTLE_ENDIAN_64_SIZE = 8;
 
   /**
    * Encode a ZigZag-encoded 32-bit value.  ZigZag encodes signed integers
@@ -1100,7 +1100,7 @@ public final class CodedOutputStream {
    * @return An unsigned 32-bit integer, stored in a signed int because
    *         Java has no explicit unsigned support.
    */
-  public static int encodeZigZag32(final int n) {
+  private static int encodeZigZag32(final int n) {
     // Note:  the right-shift must be arithmetic
     return (n << 1) ^ (n >> 31);
   }
@@ -1115,7 +1115,7 @@ public final class CodedOutputStream {
    * @return An unsigned 64-bit integer, stored in a signed int because
    *         Java has no explicit unsigned support.
    */
-  public static long encodeZigZag64(final long n) {
+  private static long encodeZigZag64(final long n) {
     // Note:  the right-shift must be arithmetic
     return (n << 1) ^ (n >> 63);
   }

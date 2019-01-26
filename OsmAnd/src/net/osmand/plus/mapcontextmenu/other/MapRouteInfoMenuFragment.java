@@ -133,7 +133,7 @@ public class MapRouteInfoMenuFragment extends BaseOsmAndFragment {
 		}
 	}
 
-	public void applyDayNightMode() {
+	private void applyDayNightMode() {
 		MapActivity ctx = getMapActivity();
 		boolean portraitMode = AndroidUiHelper.isOrientationPortrait(ctx);
 		boolean landscapeLayout = !portraitMode;

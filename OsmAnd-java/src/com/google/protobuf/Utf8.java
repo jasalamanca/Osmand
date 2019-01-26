@@ -77,7 +77,7 @@ final class Utf8 {
    * State value indicating that the byte sequence is definitely not
    * well-formed.
    */
-  public static final int MALFORMED = -1;
+  private static final int MALFORMED = -1;
 
   // Other state values include the partial bytes of the incomplete
   // character to be decoded in the simplest way: we pack the bytes
@@ -245,8 +245,8 @@ final class Utf8 {
    * decode the character when passed to a subsequent invocation of a
    * partial decoding method.
    */
-  public static int partialIsValidUtf8(
-      byte[] bytes, int index, int limit) {
+  private static int partialIsValidUtf8(
+          byte[] bytes, int index, int limit) {
     // Optimize for 100% ASCII.
     // Hotspot loves small simple top-level loops like this.
     while (index < limit && bytes[index] >= 0) {

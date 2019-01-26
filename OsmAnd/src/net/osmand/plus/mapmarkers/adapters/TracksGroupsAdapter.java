@@ -10,7 +10,7 @@ import java.util.List;
 
 public class TracksGroupsAdapter extends GroupsAdapter {
 
-	private List<GpxDataItem> gpxFiles;
+	private final List<GpxDataItem> gpxFiles;
 
 	public TracksGroupsAdapter(Context context, List<GpxDataItem> gpxFiles) {
 		super(context);

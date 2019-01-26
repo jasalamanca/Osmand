@@ -31,7 +31,7 @@ public class MediaCommandPlayerImpl extends AbstractPrologCommandPlayer implemen
 	// playing media
 	private MediaPlayer mediaPlayer;
 	// indicates that player is ready to play first file
-	private List<String> filesToPlay = Collections.synchronizedList(new ArrayList<String>());
+	private final List<String> filesToPlay = Collections.synchronizedList(new ArrayList<String>());
 	private VoiceRouter vrt;
 
 	

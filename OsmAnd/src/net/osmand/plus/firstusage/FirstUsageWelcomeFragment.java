@@ -23,14 +23,14 @@ public class FirstUsageWelcomeFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.first_usage_welcome_fragment, container, false);
-		ImageView backgroundImage = (ImageView) view.findViewById(R.id.background_image);
+		ImageView backgroundImage = view.findViewById(R.id.background_image);
 		if (Build.VERSION.SDK_INT >= 14) {
 			backgroundImage.setImageResource(R.drawable.bg_first_usage);
 		} else {
 			backgroundImage.setImageDrawable(null);
 		}
 
-		AppCompatButton skipButton = (AppCompatButton) view.findViewById(R.id.start_button);
+		AppCompatButton skipButton = view.findViewById(R.id.start_button);
 		skipButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

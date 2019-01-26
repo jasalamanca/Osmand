@@ -11,9 +11,9 @@ public class RouteCalculationProgress {
 	public float reverseDistance;
 	public float totalEstimatedDistance = 0;
 	
-	public float routingCalculatedTime = 0;
-	public int loadedTiles = 0;
-	public int visitedSegments = 0;
+	public final float routingCalculatedTime = 0;
+	public final int loadedTiles = 0;
+	public final int visitedSegments = 0;
 	
 	public boolean isCancelled;
 	public boolean requestPrivateAccessRouting;

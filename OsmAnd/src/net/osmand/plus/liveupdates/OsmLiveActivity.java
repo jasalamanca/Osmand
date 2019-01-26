@@ -59,11 +59,11 @@ public class OsmLiveActivity extends AbstractDownloadActivity implements Downloa
 			openSubscription = intent.getExtras().getBoolean(OPEN_SUBSCRIPTION_INTENT_PARAM, false);
 		}
 
-		ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+		ViewPager viewPager = findViewById(R.id.viewpager);
 		pagerAdapter = new LiveUpdatesFragmentPagerAdapter(getSupportFragmentManager(), getResources());
 		viewPager.setAdapter(pagerAdapter);
 
-		final TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+		final TabLayout tabLayout = findViewById(R.id.tab_layout);
 		tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 		tabLayout.setupWithViewPager(viewPager);
 
@@ -161,12 +161,12 @@ public class OsmLiveActivity extends AbstractDownloadActivity implements Downloa
 		}
 	}
 
-	public static class LiveUpdatesFragmentPagerAdapter extends FragmentPagerAdapter {
+	static class LiveUpdatesFragmentPagerAdapter extends FragmentPagerAdapter {
 		private final Fragment[] fragments = new Fragment[] { new LiveUpdatesFragment(), new ReportsFragment() };
 		private static final int[] titleIds = new int[] { LiveUpdatesFragment.TITLE, ReportsFragment.TITLE };
 		private final String[] titles;
 
-		public LiveUpdatesFragmentPagerAdapter(FragmentManager fm, Resources res) {
+		LiveUpdatesFragmentPagerAdapter(FragmentManager fm, Resources res) {
 			super(fm);
 			titles = new String[titleIds.length];
 			for (int i = 0; i < titleIds.length; i++) {

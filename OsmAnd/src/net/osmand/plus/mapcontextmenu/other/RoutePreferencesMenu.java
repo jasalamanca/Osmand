@@ -55,11 +55,11 @@ import java.util.Set;
 
 public class RoutePreferencesMenu {
 
-	private OsmandSettings settings;
-	private OsmandApplication app;
-	private MapActivity mapActivity;
-	private MapControlsLayer controlsLayer;
-	private RoutingHelper routingHelper;
+	private final OsmandSettings settings;
+	private final OsmandApplication app;
+	private final MapActivity mapActivity;
+	private final MapControlsLayer controlsLayer;
+	private final RoutingHelper routingHelper;
 	private ArrayAdapter<LocalRoutingParameter> listAdapter;
 
 	public static final String MORE_VALUE = "MORE_VALUE";
@@ -74,19 +74,19 @@ public class RoutePreferencesMenu {
 
 	public static class LocalRoutingParameter {
 
-		public RoutingParameter routingParameter;
-		private ApplicationMode am;
+		RoutingParameter routingParameter;
+		private final ApplicationMode am;
 		
-		public LocalRoutingParameter(ApplicationMode am) {
+		LocalRoutingParameter(ApplicationMode am) {
 			this.am = am;
 		}
 
-		public String getText(MapActivity mapActivity) {
+		String getText(MapActivity mapActivity) {
 			return SettingsBaseActivity.getRoutingStringPropertyName(mapActivity, routingParameter.getId(),
 					routingParameter.getName());
 		}
 
-		public boolean isSelected(OsmandSettings settings) {
+		boolean isSelected(OsmandSettings settings) {
 			final OsmandSettings.CommonPreference<Boolean> property =
 					settings.getCustomRoutingBooleanProperty(routingParameter.getId(), routingParameter.getDefaultBoolean());
 			if(am != null) {
@@ -96,7 +96,7 @@ public class RoutePreferencesMenu {
 			}
 		}
 
-		public void setSelected(OsmandSettings settings, boolean isChecked) {
+		void setSelected(OsmandSettings settings, boolean isChecked) {
 			final OsmandSettings.CommonPreference<Boolean> property =
 					settings.getCustomRoutingBooleanProperty(routingParameter.getId(), routingParameter.getDefaultBoolean());
 			if(am != null) {
@@ -106,31 +106,31 @@ public class RoutePreferencesMenu {
 			}
 		}
 
-		public ApplicationMode getApplicationMode() {
+		ApplicationMode getApplicationMode() {
 			return am;
 		}
 	}
 
 	private static class LocalRoutingParameterGroup extends LocalRoutingParameter {
-		private String groupName;
-		private List<LocalRoutingParameter> routingParameters = new ArrayList<>();
+		private final String groupName;
+		private final List<LocalRoutingParameter> routingParameters = new ArrayList<>();
 
-		public LocalRoutingParameterGroup(ApplicationMode am, String groupName) {
+		LocalRoutingParameterGroup(ApplicationMode am, String groupName) {
 			super(am);
 			this.groupName = groupName;
 		}
 
-		public void addRoutingParameter(RoutingParameter routingParameter) {
+		void addRoutingParameter(RoutingParameter routingParameter) {
 			LocalRoutingParameter p = new LocalRoutingParameter(getApplicationMode());
 			p.routingParameter = routingParameter;
 			routingParameters.add(p);
 		}
 
-		public String getGroupName() {
+		String getGroupName() {
 			return groupName;
 		}
 
-		public List<LocalRoutingParameter> getRoutingParameters() {
+		List<LocalRoutingParameter> getRoutingParameters() {
 			return routingParameters;
 		}
 
@@ -149,7 +149,7 @@ public class RoutePreferencesMenu {
 		public void setSelected(OsmandSettings settings, boolean isChecked) {
 		}
 
-		public LocalRoutingParameter getSelected(OsmandSettings settings) {
+		LocalRoutingParameter getSelected(OsmandSettings settings) {
 			for (LocalRoutingParameter p : routingParameters) {
 				if (p.isSelected(settings)) {
 					return p;
@@ -160,47 +160,47 @@ public class RoutePreferencesMenu {
 	}
 
 	private static class MuteSoundRoutingParameter extends LocalRoutingParameter {
-		public MuteSoundRoutingParameter() {
+		MuteSoundRoutingParameter() {
 			super(null);
 		}
 	}
 
 	private static class InterruptMusicRoutingParameter extends LocalRoutingParameter {
-		public InterruptMusicRoutingParameter() {
+		InterruptMusicRoutingParameter() {
 			super(null);
 		}
 	}
 
 	private static class VoiceGuidanceRoutingParameter extends LocalRoutingParameter {
-		public VoiceGuidanceRoutingParameter() {
+		VoiceGuidanceRoutingParameter() {
 			super(null);
 		}
 	}
 
 	private static class AvoidRoadsRoutingParameter extends LocalRoutingParameter {
-		public AvoidRoadsRoutingParameter() {
+		AvoidRoadsRoutingParameter() {
 			super(null);
 		}
 	}
 
 	private static class GpxLocalRoutingParameter extends LocalRoutingParameter {
-		public GpxLocalRoutingParameter() {
+		GpxLocalRoutingParameter() {
 			super(null);
 		}
 	}
 
 	private static class OtherSettingsRoutingParameter extends LocalRoutingParameter {
-		public OtherSettingsRoutingParameter() {
+		OtherSettingsRoutingParameter() {
 			super(null);
 		}
 	}
 
 	private static class OtherLocalRoutingParameter extends LocalRoutingParameter {
-		public String text;
-		public boolean selected;
-		public int id;
+		final String text;
+		boolean selected;
+		final int id;
 
-		public OtherLocalRoutingParameter(int id, String text, boolean selected) {
+		OtherLocalRoutingParameter(int id, String text, boolean selected) {
 			super(null);
 			this.text = text;
 			this.selected = selected;
@@ -371,7 +371,7 @@ public class RoutePreferencesMenu {
 								v = mapActivity.getLayoutInflater().inflate(layout, null);
 							}
 							final ContextMenuItem item = adapter.getItem(position);
-							TextView tv = (TextView) v.findViewById(R.id.text1);
+							TextView tv = v.findViewById(R.id.text1);
 							tv.setText(item.getTitle());
 							tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f);
 
@@ -412,19 +412,19 @@ public class RoutePreferencesMenu {
 					settings.putExtra(SettingsBaseActivity.INTENT_APP_MODE, routingHelper.getAppMode().getStringKey());
 					mapActivity.startActivity(settings);
 				} else if (obj instanceof MuteSoundRoutingParameter) {
-					final CompoundButton btn = (CompoundButton) view.findViewById(R.id.toggle_item);
+					final CompoundButton btn = view.findViewById(R.id.toggle_item);
 					btn.performClick();
 				} else if (obj instanceof VoiceGuidanceRoutingParameter) {
 					doSelectVoiceGuidance();
 				} else if (obj instanceof InterruptMusicRoutingParameter) {
-					final CompoundButton btn = (CompoundButton) view.findViewById(R.id.toggle_item);
+					final CompoundButton btn = view.findViewById(R.id.toggle_item);
 					btn.performClick();
 				} else if (obj instanceof AvoidRoadsRoutingParameter) {
 					selectRestrictedRoads();
 				} else if (view.findViewById(R.id.GPXRouteSpinner) != null) {
 					showOptionsMenu((TextView) view.findViewById(R.id.GPXRouteSpinner));
 				} else {
-					CheckBox ch = (CheckBox) view.findViewById(R.id.toggle_item);
+					CheckBox ch = view.findViewById(R.id.toggle_item);
 					if (ch != null) {
 						ch.setChecked(!ch.isChecked());
 					}
@@ -447,7 +447,7 @@ public class RoutePreferencesMenu {
 					v.findViewById(R.id.select_button).setVisibility(View.GONE);
 					((ImageView) v.findViewById(R.id.icon))
 							.setImageDrawable(app.getIconsCache().getIcon(R.drawable.ic_action_volume_up, !nightMode));
-					final CompoundButton btn = (CompoundButton) v.findViewById(R.id.toggle_item);
+					final CompoundButton btn = v.findViewById(R.id.toggle_item);
 					btn.setVisibility(View.VISIBLE);
 					btn.setChecked(!routingHelper.getVoiceRouter().isMute());
 					btn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -457,7 +457,7 @@ public class RoutePreferencesMenu {
 						}
 					});
 
-					TextView tv = (TextView) v.findViewById(R.id.header_text);
+					TextView tv = v.findViewById(R.id.header_text);
 					AndroidUtils.setTextPrimaryColor(mapActivity, tv, nightMode);
 					tv.setText(getString(R.string.shared_string_sound));
 					return v;
@@ -468,7 +468,7 @@ public class RoutePreferencesMenu {
 					((ImageView) v.findViewById(R.id.icon))
 							.setImageDrawable(app.getIconsCache().getIcon(R.drawable.ic_action_road_works_dark, !nightMode));
 					v.findViewById(R.id.toggle_item).setVisibility(View.GONE);
-					final TextView btn = (TextView) v.findViewById(R.id.select_button);
+					final TextView btn = v.findViewById(R.id.select_button);
 					btn.setTextColor(btn.getLinkTextColors());
 					btn.setOnClickListener(new View.OnClickListener() {
 						@Override
@@ -477,11 +477,11 @@ public class RoutePreferencesMenu {
 						}
 					});
 
-					TextView tv = (TextView) v.findViewById(R.id.header_text);
+					TextView tv = v.findViewById(R.id.header_text);
 					AndroidUtils.setTextPrimaryColor(mapActivity, tv, nightMode);
 					tv.setText(getString(R.string.impassable_road));
 
-					TextView tvDesc = (TextView) v.findViewById(R.id.description_text);
+					TextView tvDesc = v.findViewById(R.id.description_text);
 					AndroidUtils.setTextSecondaryColor(mapActivity, tvDesc, nightMode);
 					tvDesc.setText(getString(R.string.impassable_road_desc));
 
@@ -493,7 +493,7 @@ public class RoutePreferencesMenu {
 					v.findViewById(R.id.icon).setVisibility(View.GONE);
 					v.findViewById(R.id.description_text).setVisibility(View.GONE);
 					v.findViewById(R.id.toggle_item).setVisibility(View.GONE);
-					final TextView btn = (TextView) v.findViewById(R.id.select_button);
+					final TextView btn = v.findViewById(R.id.select_button);
 					btn.setTextColor(btn.getLinkTextColors());
 					String voiceProvider = settings.VOICE_PROVIDER.get();
 					String voiceProviderStr;
@@ -515,7 +515,7 @@ public class RoutePreferencesMenu {
 						}
 					});
 
-					TextView tv = (TextView) v.findViewById(R.id.header_text);
+					TextView tv = v.findViewById(R.id.header_text);
 					AndroidUtils.setTextPrimaryColor(mapActivity, tv, nightMode);
 					tv.setText(getString(R.string.voice_provider));
 
@@ -526,7 +526,7 @@ public class RoutePreferencesMenu {
 					AndroidUtils.setListItemBackground(mapActivity, v, nightMode);
 					v.findViewById(R.id.select_button).setVisibility(View.GONE);
 					v.findViewById(R.id.icon).setVisibility(View.GONE);
-					final CompoundButton btn = (CompoundButton) v.findViewById(R.id.toggle_item);
+					final CompoundButton btn = v.findViewById(R.id.toggle_item);
 					btn.setVisibility(View.VISIBLE);
 					btn.setChecked(settings.INTERRUPT_MUSIC.get());
 					btn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -536,10 +536,10 @@ public class RoutePreferencesMenu {
 						}
 					});
 
-					TextView tv = (TextView) v.findViewById(R.id.header_text);
+					TextView tv = v.findViewById(R.id.header_text);
 					AndroidUtils.setTextPrimaryColor(mapActivity, tv, nightMode);
 					tv.setText(getString(R.string.interrupt_music));
-					TextView tvDesc = (TextView) v.findViewById(R.id.description_text);
+					TextView tvDesc = v.findViewById(R.id.description_text);
 					AndroidUtils.setTextSecondaryColor(mapActivity, tvDesc, nightMode);
 					tvDesc.setText(getString(R.string.interrupt_music_descr));
 
@@ -549,7 +549,7 @@ public class RoutePreferencesMenu {
 					View v = mapActivity.getLayoutInflater().inflate(R.layout.plan_route_gpx, null);
 					AndroidUtils.setListItemBackground(mapActivity, v, nightMode);
 					AndroidUtils.setTextPrimaryColor(mapActivity, (TextView) v.findViewById(R.id.GPXRouteTitle), nightMode);
-					final TextView gpxSpinner = (TextView) v.findViewById(R.id.GPXRouteSpinner);
+					final TextView gpxSpinner = v.findViewById(R.id.GPXRouteSpinner);
 					AndroidUtils.setTextPrimaryColor(mapActivity, gpxSpinner, nightMode);
 					((ImageView) v.findViewById(R.id.dropDownIcon))
 							.setImageDrawable(app.getIconsCache().getIcon(R.drawable.ic_action_arrow_drop_down, !nightMode));
@@ -559,10 +559,10 @@ public class RoutePreferencesMenu {
 				if (parameter instanceof OtherSettingsRoutingParameter) {
 					View v = mapActivity.getLayoutInflater().inflate(R.layout.layers_list_activity_item, null);
 					AndroidUtils.setListItemBackground(mapActivity, v, nightMode);
-					final ImageView icon = (ImageView) v.findViewById(R.id.icon);
+					final ImageView icon = v.findViewById(R.id.icon);
 					icon.setImageDrawable(app.getIconsCache().getIcon(R.drawable.map_action_settings, !nightMode));
 					icon.setVisibility(View.VISIBLE);
-					TextView titleView = (TextView) v.findViewById(R.id.title);
+					TextView titleView = v.findViewById(R.id.title);
 					titleView.setText(R.string.routing_settings_2);
 					AndroidUtils.setTextPrimaryColor(mapActivity, titleView, nightMode);
 					v.findViewById(R.id.toggle_item).setVisibility(View.GONE);
@@ -574,9 +574,9 @@ public class RoutePreferencesMenu {
 			private View inflateRoutingParameter(final int position) {
 				View v = mapActivity.getLayoutInflater().inflate(R.layout.layers_list_activity_item, null);
 				AndroidUtils.setListItemBackground(mapActivity, v, nightMode);
-				final TextView tv = (TextView) v.findViewById(R.id.title);
-				final TextView desc = (TextView) v.findViewById(R.id.description);
-				final CheckBox ch = ((CheckBox) v.findViewById(R.id.toggle_item));
+				final TextView tv = v.findViewById(R.id.title);
+				final TextView desc = v.findViewById(R.id.description);
+				final CheckBox ch = v.findViewById(R.id.toggle_item);
 				final LocalRoutingParameter rp = getItem(position);
 				AndroidUtils.setTextPrimaryColor(mapActivity, tv, nightMode);
 				tv.setText(rp.getText(mapActivity));
@@ -754,7 +754,7 @@ public class RoutePreferencesMenu {
 		listAdapter.notifyDataSetChanged();
 	}
 
-	protected void openGPXFileSelection(final TextView gpxSpinner) {
+	private void openGPXFileSelection(final TextView gpxSpinner) {
 		GpxUiHelper.selectGPXFile(mapActivity, false, false, new CallbackWithObject<GPXUtilities.GPXFile[]>() {
 
 			@Override

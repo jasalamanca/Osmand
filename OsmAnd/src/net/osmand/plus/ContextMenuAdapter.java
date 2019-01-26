@@ -39,7 +39,7 @@ public class ContextMenuAdapter {
 
 	@LayoutRes
 	private int DEFAULT_LAYOUT_ID = R.layout.list_menu_item_native;
-	List<ContextMenuItem> items = new ArrayList<>();
+	private final List<ContextMenuItem> items = new ArrayList<>();
 	private ConfigureMapMenu.OnClickListener changeAppModeListener = null;
 
 	public int length() {
@@ -83,21 +83,21 @@ public class ContextMenuAdapter {
 				items.toArray(new ContextMenuItem[items.size()]), app, lightTheme, changeAppModeListener);
 	}
 
-	public class ContextMenuArrayAdapter extends ArrayAdapter<ContextMenuItem> {
-		private OsmandApplication app;
-		private boolean lightTheme;
+	class ContextMenuArrayAdapter extends ArrayAdapter<ContextMenuItem> {
+		private final OsmandApplication app;
+		private final boolean lightTheme;
 		@LayoutRes
-		private int layoutId;
+		private final int layoutId;
 		private final ConfigureMapMenu.OnClickListener changeAppModeListener;
 		private final IconsCache mIconsCache;
 
-		public ContextMenuArrayAdapter(Activity context,
-									   @LayoutRes int layoutRes,
-									   @IdRes int textViewResourceId,
-									   ContextMenuItem[] objects,
-									   OsmandApplication app,
-									   boolean lightTheme,
-									   ConfigureMapMenu.OnClickListener changeAppModeListener) {
+		ContextMenuArrayAdapter(Activity context,
+                                @LayoutRes int layoutRes,
+                                @IdRes int textViewResourceId,
+                                ContextMenuItem[] objects,
+                                OsmandApplication app,
+                                boolean lightTheme,
+                                ConfigureMapMenu.OnClickListener changeAppModeListener) {
 			super(context, layoutRes, textViewResourceId, objects);
 			this.app = app;
 			this.lightTheme = lightTheme;
@@ -147,7 +147,7 @@ public class ContextMenuAdapter {
 				convertView.setMinimumHeight(item.getMinHeight());
 			}
 			if (layoutId == R.layout.help_to_improve_item) {
-				TextView feedbackButton = (TextView) convertView.findViewById(R.id.feedbackButton);
+				TextView feedbackButton = convertView.findViewById(R.id.feedbackButton);
 				Drawable pollIcon = app.getIconsCache().getThemedIcon(R.drawable.ic_action_big_poll);
 				feedbackButton.setCompoundDrawablesWithIntrinsicBounds(null, pollIcon, null, null);
 				feedbackButton.setOnClickListener(new View.OnClickListener() {
@@ -158,7 +158,7 @@ public class ContextMenuAdapter {
 								.show(((FragmentActivity) getContext()).getSupportFragmentManager(), null);
 					}
 				});
-				TextView contactUsButton = (TextView) convertView.findViewById(R.id.contactUsButton);
+				TextView contactUsButton = convertView.findViewById(R.id.contactUsButton);
 				Drawable contactUsIcon =
 						app.getIconsCache().getThemedIcon(R.drawable.ic_action_big_feedback);
 				contactUsButton.setCompoundDrawablesWithIntrinsicBounds(null, contactUsIcon, null,
@@ -178,7 +178,7 @@ public class ContextMenuAdapter {
 				return convertView;
 			}
 
-			TextView tv = (TextView) convertView.findViewById(R.id.title);
+			TextView tv = convertView.findViewById(R.id.title);
 			if (tv != null) {
 				tv.setText(item.getTitle());
 			}
@@ -224,18 +224,18 @@ public class ContextMenuAdapter {
 					colorRes = lightTheme ? R.color.icon_color : R.color.color_white;
 				}
 				Drawable drawable = mIconsCache.getIcon(item.getSecondaryIcon(), colorRes);
-				ImageView imageView = (ImageView) convertView.findViewById(R.id.secondary_icon);
+				ImageView imageView = convertView.findViewById(R.id.secondary_icon);
 				imageView.setImageDrawable(drawable);
 				imageView.setVisibility(View.VISIBLE);
 			} else {
-				ImageView imageView = (ImageView) convertView.findViewById(R.id.secondary_icon);
+				ImageView imageView = convertView.findViewById(R.id.secondary_icon);
 				if (imageView != null) {
 					imageView.setVisibility(View.GONE);
 				}
 			}
 
 			if (convertView.findViewById(R.id.toggle_item) != null && !item.isCategory()) {
-				final CompoundButton ch = (CompoundButton) convertView.findViewById(R.id.toggle_item);
+				final CompoundButton ch = convertView.findViewById(R.id.toggle_item);
 				if (item.getSelected() != null) {
 					ch.setOnCheckedChangeListener(null);
 					ch.setVisibility(View.VISIBLE);
@@ -260,7 +260,7 @@ public class ContextMenuAdapter {
 			}
 
 			if (convertView.findViewById(R.id.seekbar) != null) {
-				SeekBar seekBar = (SeekBar) convertView.findViewById(R.id.seekbar);
+				SeekBar seekBar = convertView.findViewById(R.id.seekbar);
 				if (item.getProgress() != ContextMenuItem.INVALID_ID) {
 					seekBar.setProgress(item.getProgress());
 					seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -364,7 +364,7 @@ public class ContextMenuAdapter {
 
 		//boolean return type needed to describe if drawer needed to be close or not
 		public boolean onRowItemClick(ArrayAdapter<ContextMenuItem> adapter, View view, int itemId, int position) {
-			CompoundButton btn = (CompoundButton) view.findViewById(R.id.toggle_item);
+			CompoundButton btn = view.findViewById(R.id.toggle_item);
 			if (btn != null && btn.getVisibility() == View.VISIBLE) {
 				btn.setChecked(!btn.isChecked());
 				return false;

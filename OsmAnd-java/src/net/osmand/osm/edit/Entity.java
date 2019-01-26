@@ -68,7 +68,7 @@ public abstract class Entity implements Serializable {
 			return id;
 		}
 
-		public String getOsmUrl() {
+		String getOsmUrl() {
 			final String browseUrl = "https://www.openstreetmap.org/browse/";
 			if (type == EntityType.NODE)
 				return browseUrl + "node/" + id;
@@ -113,12 +113,12 @@ public abstract class Entity implements Serializable {
 	public static final int MODIFY_MODIFIED = 1;
 	public static final int MODIFY_CREATED = 2;
 
-	public Entity(long id) {
+	Entity(long id) {
 		this.id = id;
 	}
 
 
-	public Entity(Entity copy, long id) {
+	Entity(Entity copy, long id) {
 		this.id = id;
 		for (String t : copy.getTagKeySet()) {
 			putTagNoLC(t, copy.getTag(t));

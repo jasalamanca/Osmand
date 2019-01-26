@@ -26,7 +26,7 @@ public class MapVectorLayer extends BaseMapLayer {
 	private ResourceManager resourceManager;
 	private Paint paintImg;
 
-	private RectF destImage = new RectF();
+	private final RectF destImage = new RectF();
 	private boolean visible = false;
 	private boolean oldRender = false;
 	private String cachedUnderlay;

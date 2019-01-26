@@ -240,7 +240,7 @@ public class ImpassableRoadsLayer extends OsmandMapLayer implements
 			this.latLon = latLon;
 		}
 
-		public LatLon getLatLon() {
+		LatLon getLatLon() {
 			return latLon;
 		}
 	}

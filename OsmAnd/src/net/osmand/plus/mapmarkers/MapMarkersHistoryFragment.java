@@ -35,9 +35,9 @@ public class MapMarkersHistoryFragment extends Fragment implements MapMarkersHel
 
 	private MapMarkersHistoryAdapter adapter;
 	private OsmandApplication app;
-	private Paint backgroundPaint = new Paint();
-	private Paint iconPaint = new Paint();
-	private Paint textPaint = new Paint();
+	private final Paint backgroundPaint = new Paint();
+	private final Paint iconPaint = new Paint();
+	private final Paint textPaint = new Paint();
 	private Snackbar snackbar;
 
 	@Override
@@ -76,13 +76,13 @@ public class MapMarkersHistoryFragment extends Fragment implements MapMarkersHel
 		}
 
 		final View mainView = inflater.inflate(R.layout.fragment_map_markers_history, container, false);
-		final EmptyStateRecyclerView recyclerView = (EmptyStateRecyclerView) mainView.findViewById(R.id.list);
+		final EmptyStateRecyclerView recyclerView = mainView.findViewById(R.id.list);
 		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
 		ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-			private float marginSides = getResources().getDimension(R.dimen.list_content_padding);
-			private Bitmap deleteBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_delete_dark);
-			private Bitmap resetBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_reset_to_default_dark);
+			private final float marginSides = getResources().getDimension(R.dimen.list_content_padding);
+			private final Bitmap deleteBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_delete_dark);
+			private final Bitmap resetBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_reset_to_default_dark);
 			private boolean iconHidden;
 
 			@Override
@@ -170,7 +170,7 @@ public class MapMarkersHistoryFragment extends Fragment implements MapMarkersHel
 								}
 							});
 					View snackBarView = snackbar.getView();
-					TextView tv = (TextView) snackBarView.findViewById(android.support.design.R.id.snackbar_action);
+					TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
 					tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
 					snackbar.show();
 				}
@@ -204,7 +204,7 @@ public class MapMarkersHistoryFragment extends Fragment implements MapMarkersHel
 			}
 		});
 		final View emptyView = mainView.findViewById(R.id.empty_view);
-		ImageView emptyImageView = (ImageView) emptyView.findViewById(R.id.empty_state_image_view);
+		ImageView emptyImageView = emptyView.findViewById(R.id.empty_state_image_view);
 		emptyImageView.setImageResource(night ? R.drawable.ic_empty_state_marker_history_night : R.drawable.ic_empty_state_marker_history_day);
 		recyclerView.setEmptyView(emptyView);
 		recyclerView.setAdapter(adapter);
@@ -256,7 +256,7 @@ public class MapMarkersHistoryFragment extends Fragment implements MapMarkersHel
 		}
 	}
 
-	public OsmandApplication getMyApplication() {
+	private OsmandApplication getMyApplication() {
 		return (OsmandApplication) getActivity().getApplication();
 	}
 

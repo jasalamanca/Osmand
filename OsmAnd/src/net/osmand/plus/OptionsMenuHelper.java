@@ -7,20 +7,20 @@ import java.util.ArrayList;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class OptionsMenuHelper {
+class OptionsMenuHelper {
 
-	public interface OnOptionsMenuClick {
+	interface OnOptionsMenuClick {
 		
-		public void prepareOptionsMenu(Menu menu, MenuItem item);
+		void prepareOptionsMenu(Menu menu, MenuItem item);
 		
-		public boolean onClick(MenuItem item);
+		boolean onClick(MenuItem item);
 	}
 	
-	final TIntArrayList items = new TIntArrayList();
-	final TIntArrayList itemNames = new TIntArrayList();
-	final TIntArrayList visible = new TIntArrayList();
-	final ArrayList<OnOptionsMenuClick> listeners = new ArrayList<OnOptionsMenuClick>();
-	final TIntArrayList iconList = new TIntArrayList();
+	private final TIntArrayList items = new TIntArrayList();
+	private final TIntArrayList itemNames = new TIntArrayList();
+	private final TIntArrayList visible = new TIntArrayList();
+	private final ArrayList<OnOptionsMenuClick> listeners = new ArrayList<OnOptionsMenuClick>();
+	private final TIntArrayList iconList = new TIntArrayList();
 	
 	public OptionsMenuHelper() {
 	}
@@ -58,7 +58,7 @@ public class OptionsMenuHelper {
 		}
 	}
 	
-	public void registerOptionsMenuItem(int resItemId, int resName, int resIcon, boolean visibility, OnOptionsMenuClick onClick) {
+	private void registerOptionsMenuItem(int resItemId, int resName, int resIcon, boolean visibility, OnOptionsMenuClick onClick) {
 		items.add(resItemId);
 		itemNames.add(resName);
 		visible.add(visibility ? 1 : 0);

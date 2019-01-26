@@ -22,7 +22,7 @@ public class WrapContentHeightViewPager extends ViewPager {
 
 	public interface ViewAtPositionInterface {
 
-		public View getViewAtPosition(int position);
+		View getViewAtPosition(int position);
 	}
 
 	public WrapContentHeightViewPager(Context context) {
@@ -142,7 +142,7 @@ public class WrapContentHeightViewPager extends ViewPager {
 		return view.getMeasuredHeight();
 	}
 
-	protected View getViewAtPosition(int position) {
+	private View getViewAtPosition(int position) {
 		if (getAdapter() != null) {
 			Object objectAtPosition = ((ViewAtPositionInterface) getAdapter()).getViewAtPosition(position);
 			if (objectAtPosition != null) {

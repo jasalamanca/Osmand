@@ -19,12 +19,12 @@ import net.osmand.util.GeoPointParserUtil.GeoParsedPoint;
  */
 public class MapUtils {
 
-	public static final double MIN_LATITUDE = -85.0511;
-	public static final double MAX_LATITUDE = 85.0511;
-	public static final double LATITUDE_TURN = 180.0;
-	public static final double MIN_LONGITUDE = -180.0;
-	public static final double MAX_LONGITUDE = 180.0;
-	public static final double LONGITUDE_TURN = 360.0;
+	private static final double MIN_LATITUDE = -85.0511;
+	private static final double MAX_LATITUDE = 85.0511;
+	private static final double LATITUDE_TURN = 180.0;
+	private static final double MIN_LONGITUDE = -180.0;
+	private static final double MAX_LONGITUDE = 180.0;
+	private static final double LONGITUDE_TURN = 360.0;
 
 	// TODO change the hostname back to osm.org once HTTPS works for it
 	// https://github.com/openstreetmap/operations/issues/2
@@ -204,11 +204,11 @@ public class MapUtils {
 	}
 
 	public static double getTileEllipsoidNumberY(float zoom, double latitude) {
-		final double E2 = (double) latitude * Math.PI / 180;
+		final double E2 = latitude * Math.PI / 180;
 		final long sradiusa = 6378137;
 		final long sradiusb = 6356752;
-		final double J2 = (double) Math.sqrt(sradiusa * sradiusa - sradiusb * sradiusb) / sradiusa;
-		final double M2 = (double) Math.log((1 + Math.sin(E2))
+		final double J2 = Math.sqrt(sradiusa * sradiusa - sradiusb * sradiusb) / sradiusa;
+		final double M2 = Math.log((1 + Math.sin(E2))
 				/ (1 - Math.sin(E2))) / 2 - J2 * Math.log((1 + J2 * Math.sin(E2)) / (1 - J2 * Math.sin(E2))) / 2;
 		final double B2 = getPowZoom(zoom);
 		return B2 / 2 - M2 * B2 / 2 / Math.PI;
@@ -218,7 +218,7 @@ public class MapUtils {
 		final double MerkElipsK = 0.0000001;
 		final long sradiusa = 6378137;
 		final long sradiusb = 6356752;
-		final double FExct = (double) Math.sqrt(sradiusa * sradiusa
+		final double FExct = Math.sqrt(sradiusa * sradiusa
 				- sradiusb * sradiusb)
 				/ sradiusa;
 		final double TilesAtZoom = getPowZoom(zoom);
@@ -307,7 +307,7 @@ public class MapUtils {
 		return BASE_SHORT_OSM_URL + createShortLinkString(latitude, longitude, zoom) + "?m";
 	}
 
-	public static String createShortLinkString(double latitude, double longitude, int zoom) {
+	private static String createShortLinkString(double latitude, double longitude, int zoom) {
 		long lat = (long) (((latitude + 90d)/180d)*(1L << 32));
 		long lon = (long) (((longitude + 180d)/360d)*(1L << 32));
 		long code = interleaveBits(lon, lat);
@@ -367,7 +367,7 @@ public class MapUtils {
 	/**
 	 * interleaves the bits of two 32-bit numbers. the result is known as a Morton code.
 	 */
-	public static long interleaveBits(long x, long y) {
+	private static long interleaveBits(long x, long y) {
 		long c = 0;
 		for (byte b = 31; b >= 0; b--) {
 			c = (c << 1) | ((x >> b) & 1);
@@ -444,7 +444,7 @@ public class MapUtils {
 	}
 
 
-	private static double[] coefficientsY = new double[1024];
+	private static final double[] coefficientsY = new double[1024];
 	private static boolean initializeYArray = false;
 
 	public static double convert31YToMeters(int y1, int y2, int x) {
@@ -479,7 +479,7 @@ public class MapUtils {
 		return res;
 	}
 
-	private static double[] coefficientsX = new double[1024];
+	private static final double[] coefficientsX = new double[1024];
 	public static double convert31XToMeters(int x1, int x2, int y) {
 		int ind = y >> (31 - 10);
 		if(coefficientsX[ind] == 0) {
@@ -535,7 +535,7 @@ public class MapUtils {
 		return dx * dx + dy * dy;
 	}
 
-	public static double calculateProjection31TileMetric(int xA, int yA, int xB, int yB, int xC, int yC) {
+	private static double calculateProjection31TileMetric(int xA, int yA, int xB, int yB, int xC, int yC) {
 		// Scalar multiplication between (AB, AC)
 		double multiple = MapUtils.convert31XToMeters(xB, xA, yA) * MapUtils.convert31XToMeters(xC, xA, yA) +
 				MapUtils.convert31YToMeters(yB, yA, xA) * MapUtils.convert31YToMeters(yC, yA, xA);

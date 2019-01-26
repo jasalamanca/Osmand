@@ -1,15 +1,6 @@
 package net.osmand.plus.resources;
 
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
-
 import net.osmand.Collator;
 import net.osmand.CollatorStringMatcher.StringMatcherMode;
 import net.osmand.OsmAndCollator;
@@ -18,8 +9,6 @@ import net.osmand.ResultMatcher;
 import net.osmand.binary.BinaryMapAddressReaderAdapter;
 import net.osmand.binary.BinaryMapIndexReader;
 import net.osmand.binary.BinaryMapIndexReader.SearchRequest;
-import net.osmand.binary.GeocodingUtilities;
-import net.osmand.binary.GeocodingUtilities.GeocodingResult;
 import net.osmand.data.Building;
 import net.osmand.data.City;
 import net.osmand.data.LatLon;
@@ -34,20 +23,27 @@ import net.osmand.util.MapUtils;
 
 import org.apache.commons.logging.Log;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
 
 public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 	private static final Log log = PlatformUtil.getLog(RegionAddressRepositoryBinary.class);
 
 	private LinkedHashMap<Long, City> cities = new LinkedHashMap<Long, City>();
-	private int POSTCODE_MIN_QUERY_LENGTH = 2;
-	private int ZOOM_QTREE = 10;
-	private QuadTree<City> citiesQtree = new QuadTree<City>(new QuadRect(0, 0, 1 << (ZOOM_QTREE + 1),
+    private final int ZOOM_QTREE = 10;
+	private final QuadTree<City> citiesQtree = new QuadTree<City>(new QuadRect(0, 0, 1 << (ZOOM_QTREE + 1),
 			1 << (ZOOM_QTREE + 1)), 8, 0.55f);
 	private final Map<String, City> postCodes;
 	private final Collator collator;
-	private OsmandPreference<String> langSetting;
-	private OsmandPreference<Boolean> transliterateSetting;
-	private BinaryMapReaderResource resource;
+	private final OsmandPreference<String> langSetting;
+	private final OsmandPreference<Boolean> transliterateSetting;
+	private final BinaryMapReaderResource resource;
 
 
 	public RegionAddressRepositoryBinary(ResourceManager mgr, BinaryMapReaderResource resource ) {
@@ -91,7 +87,7 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 		return resource.getReader(BinaryMapReaderResourceType.ADDRESS);
 	}
 
-	public City getClosestCity(LatLon l, List<City> cache) {
+	private City getClosestCity(LatLon l, List<City> cache) {
 		City closest = null;
 		if (l != null) {
 			int y31 = MapUtils.get31TileNumberY(l.getLatitude());
@@ -160,7 +156,7 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 //	private StringMatcherMode[] streetsCheckMode = new StringMatcherMode[] {StringMatcherMode.CHECK_ONLY_STARTS_WITH,
 //			StringMatcherMode.CHECK_STARTS_FROM_SPACE_NOT_BEGINNING};
 
-	public synchronized List<MapObject> searchMapObjectsByName(String name, ResultMatcher<MapObject> resultMatcher, List<Integer> typeFilter) {
+	private synchronized List<MapObject> searchMapObjectsByName(String name, ResultMatcher<MapObject> resultMatcher, List<Integer> typeFilter) {
 		SearchRequest<MapObject> req = BinaryMapIndexReader.buildAddressByNameRequest(resultMatcher, name,
 				StringMatcherMode.CHECK_STARTS_FROM_SPACE);
 		try {
@@ -176,10 +172,10 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 		return searchMapObjectsByName(name, resultMatcher, null);
 	}
 
-	private List<City> fillWithCities(String name, final ResultMatcher<City> resultMatcher, final List<Integer> typeFilter) throws IOException {
+	private List<City> fillWithCities(String name, final ResultMatcher<City> resultMatcher, final List<Integer> typeFilter) {
 		List<City> result = new ArrayList<City>();
 		ResultMatcher<MapObject> matcher = new ResultMatcher<MapObject>() {
-			List<City> cache = new ArrayList<City>();
+			final List<City> cache = new ArrayList<City>();
 
 			@Override
 			public boolean publish(MapObject o) {
@@ -215,7 +211,8 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 		cityTypes.add(BinaryMapAddressReaderAdapter.CITY_TOWN_TYPE);
 		if (searchVillages) {
 			cityTypes.add(BinaryMapAddressReaderAdapter.VILLAGES_TYPE);
-			if (name.length() >= POSTCODE_MIN_QUERY_LENGTH) {
+            int POSTCODE_MIN_QUERY_LENGTH = 2;
+            if (name.length() >= POSTCODE_MIN_QUERY_LENGTH) {
 				cityTypes.add(BinaryMapAddressReaderAdapter.POSTCODES_TYPE);
 			}
 		}
@@ -225,11 +222,7 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 	@Override
 	public synchronized List<City> fillWithSuggestedCities(String name, final ResultMatcher<City> resultMatcher, boolean searchVillages, LatLon currentLocation) {
 		List<City> citiesToFill = new ArrayList<>(cities.values());
-		try {
-			citiesToFill.addAll(fillWithCities(name, resultMatcher, getCityTypeFilter(name, searchVillages)));
-		} catch (IOException e) {
-			log.error("Disk operation failed", e); //$NON-NLS-1$
-		}
+        citiesToFill.addAll(fillWithCities(name, resultMatcher, getCityTypeFilter(name, searchVillages)));
 		return citiesToFill;
 	}
 
@@ -316,7 +309,7 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 								canceled = true;
 							}
 						} else if (object.getId() != null && object.getId().longValue() == id) {
-							addCityToPreloadedList((City) object);
+							addCityToPreloadedList(object);
 							canceled = true;
 						}
 						return false;

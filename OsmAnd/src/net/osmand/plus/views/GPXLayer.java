@@ -63,12 +63,9 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 
 	private Paint paint;
 	private Paint paint2;
-	private boolean isPaint2;
-	private Paint shadowPaint;
-	private boolean isShadowPaint;
-	private Paint paint_1;
-	private boolean isPaint_1;
-	private int cachedHash;
+    private Paint shadowPaint;
+    private Paint paint_1;
+    private int cachedHash;
 	private int cachedColor;
 	private Paint paintIcon;
 	private Bitmap pointSmall;
@@ -82,9 +79,8 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 
 	private GpxSelectionHelper selectedGpxHelper;
 	private MapMarkersHelper mapMarkersHelper;
-	private Paint paintBmp;
-	private List<WptPt> cache = new ArrayList<>();
-	private Map<WptPt, SelectedGpxFile> pointFileMap = new HashMap<>();
+    private final List<WptPt> cache = new ArrayList<>();
+	private final Map<WptPt, SelectedGpxFile> pointFileMap = new HashMap<>();
 	private MapTextLayer textLayer;
 
 	private Paint paintOuterRect;
@@ -98,9 +94,8 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 	private OsmandRenderer osmandRenderer;
 
 	private List<TrkSegment> points;
-	private GPXFile gpx;
 
-	private ContextMenuLayer contextMenuLayer;
+    private ContextMenuLayer contextMenuLayer;
 	@ColorInt
 	private int visitedColor;
 	@ColorInt
@@ -133,7 +128,7 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 		paint_1.setStyle(Style.STROKE);
 		paint_1.setAntiAlias(true);
 
-		paintBmp = new Paint();
+        Paint paintBmp = new Paint();
 		paintBmp.setAntiAlias(true);
 		paintBmp.setFilterBitmap(true);
 		paintBmp.setDither(true);
@@ -253,9 +248,9 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 					rc.setDensityValue((float) tileBox.getMapDensity());
 					cachedColor = req.getIntPropertyValue(rrs.PROPS.R_COLOR);
 					osmandRenderer.updatePaint(req, paint, 0, false, rc);
-					isPaint2 = osmandRenderer.updatePaint(req, paint2, 1, false, rc);
-					isPaint_1 = osmandRenderer.updatePaint(req, paint_1, -1, false, rc);
-					isShadowPaint = req.isSpecified(rrs.PROPS.R_SHADOW_RADIUS);
+                    boolean isPaint2 = osmandRenderer.updatePaint(req, paint2, 1, false, rc);
+                    boolean isPaint_1 = osmandRenderer.updatePaint(req, paint_1, -1, false, rc);
+                    boolean isShadowPaint = req.isSpecified(rrs.PROPS.R_SHADOW_RADIUS);
 					if (isShadowPaint) {
 						ColorFilter cf = new PorterDuffColorFilter(req.getIntPropertyValue(rrs.PROPS.R_SHADOW_COLOR),
 								Mode.SRC_IN);
@@ -537,7 +532,7 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 //		return Math.abs(objx - ex) <= radius && (ey - objy) <= radius / 2 && (objy - ey) <= 3 * radius ;
 	}
 
-	public void getWptFromPoint(RotatedTileBox tb, PointF point, List<? super WptPt> res) {
+	private void getWptFromPoint(RotatedTileBox tb, PointF point, List<? super WptPt> res) {
 		int r = getDefaultRadiusPoi(tb);
 		int ex = (int) point.x;
 		int ey = (int) point.y;
@@ -630,7 +625,7 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 
 
 	public void setGivenGpx(GPXFile gpx) {
-		this.gpx = gpx;
+        GPXFile gpx1 = gpx;
 		this.points = (gpx == null ? null : gpx.proccessPoints());
 	}
 

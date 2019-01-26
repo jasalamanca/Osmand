@@ -29,8 +29,8 @@ import java.util.regex.Pattern;
 public class SearchPhrase {
 	
 	private List<SearchWord> words = new ArrayList<>();
-	private List<String> unknownWords = new ArrayList<>();
-	private List<NameStringMatcher> unknownWordsMatcher = new ArrayList<>();
+	private final List<String> unknownWords = new ArrayList<>();
+	private final List<NameStringMatcher> unknownWordsMatcher = new ArrayList<>();
 	private String unknownSearchWordTrim;
 	private String unknownSearchPhrase = "";
 	
@@ -45,7 +45,7 @@ public class SearchPhrase {
 	private static final Pattern reg = Pattern.compile(ALLDELIMITERS);
 	private Collator clt;
 	
-	private static Set<String> conjunctions = new TreeSet<>();
+	private static final Set<String> conjunctions = new TreeSet<>();
 	static {
 		// the
 		conjunctions.add("the");
@@ -241,7 +241,7 @@ public class SearchPhrase {
 		return new QuadRect(topLeftX, topLeftY, bottomRightX, bottomRightY);
 	}
 	
-	public QuadRect get1km31Rect() {
+	private QuadRect get1km31Rect() {
 		if(cache1kmRect != null) {
 			return cache1kmRect;
 		}
@@ -473,7 +473,7 @@ public class SearchPhrase {
 		return sb.toString();
 	}
 
-	public String getStringRerpresentation() {
+	private String getStringRerpresentation() {
 		StringBuilder sb = new StringBuilder();
 		for(SearchWord s : words) {
 			sb.append(s.getWord()).append(" [" + s.getType() + "], ");
@@ -540,7 +540,7 @@ public class SearchPhrase {
         final LatLon ll = getLastTokenLocation();
         if (ll != null) {
             Collections.sort(indexes, new Comparator<BinaryMapIndexReader>() {
-                Map<BinaryMapIndexReader, LatLon> locations = new HashMap<>();
+                final Map<BinaryMapIndexReader, LatLon> locations = new HashMap<>();
 
                 @Override
                 public int compare(BinaryMapIndexReader o1, BinaryMapIndexReader o2) {
@@ -606,7 +606,7 @@ public class SearchPhrase {
 
 	public static class NameStringMatcher implements StringMatcher {
 
-		private CollatorStringMatcher sm;
+		private final CollatorStringMatcher sm;
 
 		public NameStringMatcher(String lastWordTrim, StringMatcherMode mode) {
 			sm = new CollatorStringMatcher(lastWordTrim, mode);
@@ -663,7 +663,7 @@ public class SearchPhrase {
 		return (1 << (getRadiusLevel() - 1)) * meters;
 	}
 
-	public static int icompare(int x, int y) {
+	private static int icompare(int x, int y) {
         return (x < y) ? -1 : ((x == y) ? 0 : 1);
     }
 	

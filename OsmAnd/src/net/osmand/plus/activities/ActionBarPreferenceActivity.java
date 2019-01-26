@@ -17,7 +17,7 @@ import net.osmand.plus.R;
 public abstract class ActionBarPreferenceActivity extends AppCompatPreferenceActivity {
 	private Toolbar tb;
 
-	public Toolbar getToolbar() {
+	protected Toolbar getToolbar() {
 		return tb;
 	}
 
@@ -76,7 +76,7 @@ public abstract class ActionBarPreferenceActivity extends AppCompatPreferenceAct
 //	}
 // --Commented out by Inspection STOP (13/01/19 17:11)
 
-	protected Spinner getSpinner() {
+	Spinner getSpinner() {
 		return (Spinner) findViewById(R.id.spinner_nav);
 	}
 

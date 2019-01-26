@@ -75,14 +75,14 @@ public class AddTracksGroupBottomSheetDialogFragment extends AddGroupBottomSheet
 		}
 	}
 
-	public class ProcessGpxTask extends AsyncTask<Void, GpxDataItem, Void> {
+	class ProcessGpxTask extends AsyncTask<Void, GpxDataItem, Void> {
 
-		private OsmandApplication app = getMyApplication();
-		private Map<File, GpxDataItem> processedDataFiles = new HashMap<>();
-		private GPXDatabase db = app.getGpxDatabase();
-		private ProgressBar progressBar = (ProgressBar) mainView.findViewById(R.id.progress_bar);;
-		private RecyclerView recyclerView = (RecyclerView) mainView.findViewById(R.id.groups_recycler_view);
-		private TextView lookingForTracksText = (TextView) mainView.findViewById(R.id.looking_for_tracks_text);
+		private final OsmandApplication app = getMyApplication();
+		private final Map<File, GpxDataItem> processedDataFiles = new HashMap<>();
+		private final GPXDatabase db = app.getGpxDatabase();
+		private final ProgressBar progressBar = (ProgressBar) mainView.findViewById(R.id.progress_bar);
+        private final RecyclerView recyclerView = (RecyclerView) mainView.findViewById(R.id.groups_recycler_view);
+		private final TextView lookingForTracksText = (TextView) mainView.findViewById(R.id.looking_for_tracks_text);
 
 		ProcessGpxTask() {
 			List<GpxDataItem> dataItems = db.getItems();

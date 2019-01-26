@@ -44,18 +44,18 @@ import java.util.TreeSet;
 
 public class WikipediaDialogFragment extends DialogFragment {
 
-	public static final String TAG = "WikipediaDialogFragment";
+	private static final String TAG = "WikipediaDialogFragment";
 
 	private View mainView;
 	private boolean darkMode;
 	private Amenity amenity;
 	private String lang;
 
-	public void setAmenity(Amenity amenity) {
+	private void setAmenity(Amenity amenity) {
 		this.amenity = amenity;
 	}
 
-	public void setLanguage(String lang) {
+	private void setLanguage(String lang) {
 		this.lang = lang;
 	}
 
@@ -85,12 +85,12 @@ public class WikipediaDialogFragment extends DialogFragment {
 
 		mainView.setBackgroundColor(ContextCompat.getColor(getContext(), darkMode ? R.color.ctx_menu_bottom_view_bg_dark : R.color.ctx_menu_bottom_view_bg_light));
 
-		AppBarLayout appBarLayout = (AppBarLayout) mainView.findViewById(R.id.app_bar);
+		AppBarLayout appBarLayout = mainView.findViewById(R.id.app_bar);
 		appBarLayout.setBackgroundColor(ContextCompat.getColor(getContext(), darkMode ? R.color.ctx_menu_buttons_bg_dark: R.color.ctx_menu_buttons_bg_light));
 
 		int toolbarTextColor = ContextCompat.getColor(getContext(), R.color.dashboard_subheader_text_light);
 
-		ImageButton backButton = (ImageButton) mainView.findViewById(R.id.back_button);
+		ImageButton backButton = mainView.findViewById(R.id.back_button);
 		backButton.setImageDrawable(getMyApplication().getIconsCache().getPaintedIcon(R.drawable.ic_arrow_back, toolbarTextColor));
 		backButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -99,14 +99,14 @@ public class WikipediaDialogFragment extends DialogFragment {
 			}
 		});
 
-		TextView titleTextView = (TextView) mainView.findViewById(R.id.title_text_view);
+		TextView titleTextView = mainView.findViewById(R.id.title_text_view);
 		titleTextView.setTextColor(toolbarTextColor);
 
 		ColorStateList buttonColorStateList = AndroidUtils.createColorStateList(getContext(), darkMode,
 				R.color.ctx_menu_controller_button_text_color_light_n, R.color.ctx_menu_controller_button_text_color_light_p,
 				R.color.ctx_menu_controller_button_text_color_dark_n, R.color.ctx_menu_controller_button_text_color_dark_p);
 
-		final TextView readFullArticleButton = (TextView) mainView.findViewById(R.id.read_full_article);
+		final TextView readFullArticleButton = mainView.findViewById(R.id.read_full_article);
 		CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) readFullArticleButton.getLayoutParams();
 		params.setBehavior(new CoordinatorLayout.Behavior() {
 			@Override
@@ -197,7 +197,7 @@ public class WikipediaDialogFragment extends DialogFragment {
 
 			String content = amenity.getDescription(langSelected);
 
-			TextView articleTextView = (TextView) mainView.findViewById(R.id.content);
+			TextView articleTextView = mainView.findViewById(R.id.content);
 			Spannable spannableContent = new SpannableString(Html.fromHtml(content));
 			int length = spannableContent.length();
 			spannableContent.setSpan(new RelativeSizeSpan(1.2f), 0, length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);

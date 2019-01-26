@@ -6,12 +6,12 @@ import java.util.Map;
 
 public abstract class OsmPoint  implements Serializable {
 
-	public static enum Group {BUG, POI};
+	public enum Group {BUG, POI}
 
-	public static enum Action {CREATE, MODIFY, DELETE, REOPEN};
+    public enum Action {CREATE, MODIFY, DELETE, REOPEN}
 
-	public static final Map<Action, String> stringAction = new HashMap<Action, String>();
-	public static final Map<String, Action> actionString = new HashMap<String, Action>();
+    public static final Map<Action, String> stringAction = new HashMap<Action, String>();
+	private static final Map<String, Action> actionString = new HashMap<String, Action>();
 	static {
 		stringAction.put(Action.CREATE, "create");
 		stringAction.put(Action.MODIFY, "modify");
@@ -22,11 +22,11 @@ public abstract class OsmPoint  implements Serializable {
 		actionString.put("modify", Action.MODIFY);
 		actionString.put("reopen", Action.REOPEN);
 		actionString.put("delete", Action.DELETE);
-	};
+	}
 
-	private Action action;
+    private Action action;
 
-	public OsmPoint(){
+	OsmPoint(){
 	}
 
 	public abstract long getId();

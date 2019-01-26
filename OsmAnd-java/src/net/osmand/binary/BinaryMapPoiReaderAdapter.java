@@ -36,7 +36,7 @@ import com.google.protobuf.WireFormat;
 public class BinaryMapPoiReaderAdapter {
 	private static final Log LOG = PlatformUtil.getLog(BinaryMapPoiReaderAdapter.class);
 
-	public static final int SHIFT_BITS_CATEGORY = 7;
+	private static final int SHIFT_BITS_CATEGORY = 7;
 	private static final int CATEGORY_MASK = (1 << SHIFT_BITS_CATEGORY) - 1;
 	private static final int ZOOM_TO_SKIP_FILTER_READ = 6;
 	private static final int ZOOM_TO_SKIP_FILTER = 3;
@@ -50,10 +50,10 @@ public class BinaryMapPoiReaderAdapter {
 	}
 
 	public static class PoiRegion extends BinaryIndexPart {
-		List<String> categories = new ArrayList<String>();
-		List<PoiCategory> categoriesType = new ArrayList<PoiCategory>();
-		List<List<String>> subcategories = new ArrayList<List<String>>();
-		List<PoiSubType> subTypes = new ArrayList<PoiSubType>();
+		final List<String> categories = new ArrayList<String>();
+		final List<PoiCategory> categoriesType = new ArrayList<PoiCategory>();
+		final List<List<String>> subcategories = new ArrayList<List<String>>();
+		final List<PoiSubType> subTypes = new ArrayList<PoiSubType>();
 
 		int left31;
 		int right31;
@@ -68,7 +68,7 @@ public class BinaryMapPoiReaderAdapter {
 			return OsmandOdb.OsmAndStructure.POIINDEX_FIELD_NUMBER;
 		}
 
-		public PoiSubType getSubtypeFromId(int id, StringBuilder returnValue) {
+		PoiSubType getSubtypeFromId(int id, StringBuilder returnValue) {
 			int tl;
 			int sl;
 			if (id % 2 == 0) {
@@ -92,12 +92,12 @@ public class BinaryMapPoiReaderAdapter {
 
 	}
 
-	private CodedInputStream codedIS;
+	private final CodedInputStream codedIS;
 	private final BinaryMapIndexReader map;
 
-	private MapPoiTypes poiTypes;
+	private final MapPoiTypes poiTypes;
 
-	protected BinaryMapPoiReaderAdapter(BinaryMapIndexReader map) {
+	BinaryMapPoiReaderAdapter(BinaryMapIndexReader map) {
 		this.codedIS = map.codedIS;
 		this.map = map;
 		this.poiTypes = MapPoiTypes.getDefault();
@@ -137,7 +137,7 @@ public class BinaryMapPoiReaderAdapter {
 		}
 	}
 
-	protected void readPoiIndex(PoiRegion region, boolean readCategories) throws IOException {
+	void readPoiIndex(PoiRegion region, boolean readCategories) throws IOException {
 		int length;
 		int oldLimit;
 		while (true) {
@@ -265,7 +265,7 @@ public class BinaryMapPoiReaderAdapter {
 		return query.replace("\"", "").toLowerCase();
 	}
 
-	protected void searchPoiByName(PoiRegion region, SearchRequest<Amenity> req) throws IOException {
+	void searchPoiByName(PoiRegion region, SearchRequest<Amenity> req) throws IOException {
 		TIntLongHashMap offsets = new TIntLongHashMap();
 		String query = normalizeSearchPoiByNameQuery(req.nameQuery);
 		CollatorStringMatcher matcher = new CollatorStringMatcher(query,
@@ -441,8 +441,8 @@ public class BinaryMapPoiReaderAdapter {
 		}
 	}
 
-	protected void searchPoiIndex(int left31, int right31, int top31, int bottom31,
-			SearchRequest<Amenity> req, PoiRegion region) throws IOException {
+	void searchPoiIndex(int left31, int right31, int top31, int bottom31,
+                        SearchRequest<Amenity> req, PoiRegion region) throws IOException {
 		int indexOffset = codedIS.getTotalBytesRead();
 		long time = System.currentTimeMillis();
 		TLongHashSet skipTiles = null;

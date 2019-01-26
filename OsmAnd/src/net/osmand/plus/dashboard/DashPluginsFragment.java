@@ -66,7 +66,7 @@ public class DashPluginsFragment extends DashBaseFragment {
 	@Override
 	public View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.dash_common_fragment, container, false);
-		TextView header = ((TextView) view.findViewById(R.id.fav_text));
+		TextView header = view.findViewById(R.id.fav_text);
 		header.setText(TITLE_ID);
 		view.findViewById(R.id.show_all).setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -106,7 +106,7 @@ public class DashPluginsFragment extends DashBaseFragment {
 	public void onOpenDash() {
 		View contentView = getView();
 		LayoutInflater inflater = getActivity().getLayoutInflater();
-		LinearLayout pluginsContainer = (LinearLayout) contentView.findViewById(R.id.items);
+		LinearLayout pluginsContainer = contentView.findViewById(R.id.items);
 		pluginsContainer.removeAllViews();
 		for (OsmandPlugin p : plugins) {
 			inflatePluginView(inflater, pluginsContainer, p);
@@ -114,8 +114,8 @@ public class DashPluginsFragment extends DashBaseFragment {
 	}
 
 	private void updatePluginState(View pluginView, OsmandPlugin plugin) {
-		CompoundButton enableDisableButton = (CompoundButton) pluginView.findViewById(R.id.plugin_enable_disable);
-		Button getButton = (Button) pluginView.findViewById(R.id.get_plugin);
+		CompoundButton enableDisableButton = pluginView.findViewById(R.id.plugin_enable_disable);
+		Button getButton = pluginView.findViewById(R.id.get_plugin);
 		enableDisableButton.setOnCheckedChangeListener(null);
 		if (plugin.needsInstallation()) {
 			getButton.setVisibility(View.VISIBLE);
@@ -127,7 +127,7 @@ public class DashPluginsFragment extends DashBaseFragment {
 		}
 		setListener(plugin, enableDisableButton, pluginView);
 
-		ImageButton logoView = (ImageButton) pluginView.findViewById(R.id.plugin_logo);
+		ImageButton logoView = pluginView.findViewById(R.id.plugin_logo);
 		if (plugin.isActive()) {
 			logoView.setBackgroundResource(R.drawable.bg_plugin_logo_enabled);
 			logoView.setContentDescription(getString(R.string.shared_string_disable));
@@ -144,14 +144,14 @@ public class DashPluginsFragment extends DashBaseFragment {
 		View view = inflater.inflate(R.layout.dash_plugin_item, container, false);
 		view.setOnClickListener(pluginDetailsListener(plugin));
 
-		TextView nameView = (TextView) view.findViewById(R.id.plugin_name);
+		TextView nameView = view.findViewById(R.id.plugin_name);
 		nameView.setText(plugin.getName());
 
-		ImageButton logoView = (ImageButton) view.findViewById(R.id.plugin_logo);
+		ImageButton logoView = view.findViewById(R.id.plugin_logo);
 		logoView.setImageResource(plugin.getLogoResourceId());
 
-		CompoundButton enableDisableButton = (CompoundButton) view.findViewById(R.id.plugin_enable_disable);
-		Button getButton = (Button) view.findViewById(R.id.get_plugin);
+		CompoundButton enableDisableButton = view.findViewById(R.id.plugin_enable_disable);
+		Button getButton = view.findViewById(R.id.get_plugin);
 		getButton.setOnClickListener(getListener(plugin));
 		enableDisableButton.setOnCheckedChangeListener(null);
 		updatePluginState(view, plugin);

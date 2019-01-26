@@ -21,13 +21,13 @@ import org.xmlpull.v1.XmlSerializer;
  *  
  */
 public class PlatformUtil {
-	public static String TAG = "net.osmand"; //$NON-NLS-1$
+	public static final String TAG = "net.osmand"; //$NON-NLS-1$
 	private static class OsmandLogImplementation implements Log {
 		
 		private final String fullName;
 		private final String name;
 
-		public OsmandLogImplementation(String name){
+		OsmandLogImplementation(String name){
 			this.fullName = name;
 			this.name = fullName.substring(fullName.lastIndexOf('.') + 1);
 		}
@@ -130,7 +130,7 @@ public class PlatformUtil {
 		}
 	}
 	
-	public static Log getLog(String name){
+	private static Log getLog(String name){
 		return new OsmandLogImplementation(name);
 	}
 	
@@ -138,7 +138,7 @@ public class PlatformUtil {
 		return getLog(cl.getName());
 	}
 	
-	public static XmlPullParser newXMLPullParser() throws XmlPullParserException {
+	public static XmlPullParser newXMLPullParser() {
 		// return XmlPullParserFactory.newInstance().newPullParser();
 		return Xml.newPullParser();
 	}

@@ -34,12 +34,12 @@ public class CachedOsmandIndexes {
 	
 	private OsmAndStoredIndex storedIndex;
 	private OsmAndStoredIndex.Builder storedIndexBuilder;
-	private Log log = PlatformUtil.getLog(CachedOsmandIndexes.class);
+	private final Log log = PlatformUtil.getLog(CachedOsmandIndexes.class);
 	private boolean hasChanged = true;
 	
 	public static final int VERSION = 2;
 
-	public void addToCache(BinaryMapIndexReader reader, File f) {
+	private void addToCache(BinaryMapIndexReader reader, File f) {
 		hasChanged = true;
 		if(storedIndexBuilder == null) {
 			storedIndexBuilder = OsmandIndex.OsmAndStoredIndex.newBuilder();

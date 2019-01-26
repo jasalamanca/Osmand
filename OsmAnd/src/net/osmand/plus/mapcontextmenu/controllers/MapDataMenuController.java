@@ -44,11 +44,11 @@ import java.util.Map;
 public class MapDataMenuController extends MenuController {
 	private DownloadMapObject mapObject;
 	private List<IndexItem> otherIndexItems;
-	private LocalIndexInfo localIndexInfo;
+	private final LocalIndexInfo localIndexInfo;
 	private List<LocalIndexInfo> otherLocalIndexInfos;
 	private boolean backuped;
 
-	private DownloadIndexesThread downloadThread;
+	private final DownloadIndexesThread downloadThread;
 
 	public MapDataMenuController(final MapActivity mapActivity, PointDescription pointDescription, final DownloadMapObject mapObject) {
 		super(new MenuBuilder(mapActivity), pointDescription, mapActivity);
@@ -408,7 +408,7 @@ public class MapDataMenuController extends MenuController {
 		}
 	}
 
-	public void deleteItem(final File fl) {
+	private void deleteItem(final File fl) {
 		final OsmandApplication app = getMapActivity().getMyApplication();
 		if (fl.exists()) {
 			AlertDialog.Builder confirm = new AlertDialog.Builder(getMapActivity());
@@ -452,7 +452,7 @@ public class MapDataMenuController extends MenuController {
 		}
 	}
 
-	public void restoreFromBackup() {
+	private void restoreFromBackup() {
 		final OsmandApplication app = getMapActivity().getMyApplication();
 		new AsyncTask<Void, Void, Void>() {
 
@@ -512,7 +512,7 @@ public class MapDataMenuController extends MenuController {
 		return new File(i.getPathToData());
 	}
 
-	public DownloadActivityType getDownloadActivityType() {
+	private DownloadActivityType getDownloadActivityType() {
 		if (indexItem != null) {
 			return indexItem.getType();
 		} else if (localIndexInfo != null) {

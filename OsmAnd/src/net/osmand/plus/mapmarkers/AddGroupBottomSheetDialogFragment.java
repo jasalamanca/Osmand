@@ -21,9 +21,9 @@ public abstract class AddGroupBottomSheetDialogFragment extends MenuBottomSheetD
 	public static final String TAG = "AddGroupBottomSheetDialogFragment";
 
 	private AddGroupListener listener;
-	protected View mainView;
-	protected GroupsAdapter adapter;
-	protected MapMarkersHelper mapMarkersHelper;
+	View mainView;
+	GroupsAdapter adapter;
+	private MapMarkersHelper mapMarkersHelper;
 
 	public void setListener(AddGroupListener listener) {
 		this.listener = listener;

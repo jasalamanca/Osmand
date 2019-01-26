@@ -44,7 +44,7 @@ public class TrackDetailsMenuFragment extends BaseOsmAndFragment {
 
 		mainView = view.findViewById(R.id.main_view);
 
-		TextView topBarTitle = (TextView) mainView.findViewById(R.id.top_bar_title);
+		TextView topBarTitle = mainView.findViewById(R.id.top_bar_title);
 		if (topBarTitle != null) {
 			if (menu.getGpxItem().group != null) {
 				topBarTitle.setText(menu.getGpxItem().group.getGpxName());
@@ -53,8 +53,8 @@ public class TrackDetailsMenuFragment extends BaseOsmAndFragment {
 			}
 		}
 
-		ImageButton backButton = (ImageButton) mainView.findViewById(R.id.top_bar_back_button);
-		ImageButton closeButton = (ImageButton) mainView.findViewById(R.id.top_bar_close_button);
+		ImageButton backButton = mainView.findViewById(R.id.top_bar_back_button);
+		ImageButton closeButton = mainView.findViewById(R.id.top_bar_close_button);
 		if (backButton != null) {
 			backButton.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -155,7 +155,7 @@ public class TrackDetailsMenuFragment extends BaseOsmAndFragment {
 		}
 	}
 
-	public void applyDayNightMode() {
+	private void applyDayNightMode() {
 		MapActivity ctx = getMapActivity();
 		boolean portraitMode = AndroidUiHelper.isOrientationPortrait(ctx);
 		boolean landscapeLayout = !portraitMode;
@@ -169,12 +169,12 @@ public class TrackDetailsMenuFragment extends BaseOsmAndFragment {
 		AndroidUtils.setTextPrimaryColor(ctx, (TextView) mainView.findViewById(R.id.y_axis_title), nightMode);
 		AndroidUtils.setTextPrimaryColor(ctx, (TextView) mainView.findViewById(R.id.x_axis_title), nightMode);
 
-		ImageView yAxisArrow = (ImageView) mainView.findViewById(R.id.y_axis_arrow);
-		ImageView xAxisArrow = (ImageView) mainView.findViewById(R.id.x_axis_arrow);
+		ImageView yAxisArrow = mainView.findViewById(R.id.y_axis_arrow);
+		ImageView xAxisArrow = mainView.findViewById(R.id.x_axis_arrow);
 		yAxisArrow.setImageDrawable(getContentIcon(R.drawable.ic_action_arrow_drop_down));
 		xAxisArrow.setImageDrawable(getContentIcon(R.drawable.ic_action_arrow_drop_down));
 
-		ImageButton backButton = (ImageButton) mainView.findViewById(R.id.top_bar_back_button);
+		ImageButton backButton = mainView.findViewById(R.id.top_bar_back_button);
 		if (backButton != null) {
 			backButton.setImageDrawable(getIcon(R.drawable.ic_arrow_back, R.color.color_white));
 		}

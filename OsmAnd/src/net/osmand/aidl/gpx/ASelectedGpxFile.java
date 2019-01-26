@@ -11,7 +11,7 @@ public class ASelectedGpxFile implements Parcelable {
 		this.fileName = fileName;
 	}
 
-	public ASelectedGpxFile(Parcel in) {
+	private ASelectedGpxFile(Parcel in) {
 		readFromParcel(in);
 	}
 

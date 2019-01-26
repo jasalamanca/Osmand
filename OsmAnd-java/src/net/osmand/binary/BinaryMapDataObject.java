@@ -13,18 +13,18 @@ import net.osmand.render.RenderingRulesStorage;
 import net.osmand.util.Algorithms;
 
 public class BinaryMapDataObject {
-	protected int[] coordinates = null;
-	protected int[][] polygonInnerCoordinates = null;
-	protected boolean area = false;
-	protected int[] types = null;
-	protected int[] additionalTypes = null;
-	protected int objectType = RenderingRulesStorage.POINT_RULES;
+	int[] coordinates = null;
+	int[][] polygonInnerCoordinates = null;
+	boolean area = false;
+	int[] types = null;
+	int[] additionalTypes = null;
+	int objectType = RenderingRulesStorage.POINT_RULES;
 	
-	protected TIntObjectHashMap<String> objectNames = null;
-	protected TIntArrayList namesOrder = null;
-	protected long id = 0;
+	TIntObjectHashMap<String> objectNames = null;
+	TIntArrayList namesOrder = null;
+	long id = 0;
 	
-	protected MapIndex mapIndex = null;
+	MapIndex mapIndex = null;
 	
 	
 	public BinaryMapDataObject(){
@@ -146,7 +146,7 @@ public class BinaryMapDataObject {
 		return id;
 	}
 	
-	protected void setId(long id) {
+	void setId(long id) {
 		this.id = id;
 	}
 	

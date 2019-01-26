@@ -51,7 +51,7 @@ public abstract class OsmandListActivity extends
 		return false;
 	}
 
-	public MenuItem createMenuItem(Menu m, int id, int titleRes, int iconDark, int menuItemType) {
+	protected MenuItem createMenuItem(Menu m, int id, int titleRes, int iconDark, int menuItemType) {
 		MenuItem menuItem = m.add(0, id, 0, titleRes);
 		if (iconDark != 0) {
 			menuItem.setIcon(getMyApplication().getIconsCache().getIcon(iconDark));
@@ -66,13 +66,13 @@ public abstract class OsmandListActivity extends
 		return menuItem;
 	}
 
-	public void setListAdapter(ListAdapter adapter){
+	protected void setListAdapter(ListAdapter adapter){
 		((ListView)findViewById(android.R.id.list)).setAdapter(adapter);
 		setOnItemClickListener(this);
 
 	}
 
-	public ListView getListView() {
+	protected ListView getListView() {
 		return (ListView)findViewById(android.R.id.list);
 	}
 
@@ -85,7 +85,7 @@ public abstract class OsmandListActivity extends
 		}
 	}
 
-	public void setOnItemClickListener(AdapterView.OnItemClickListener childClickListener){
+	protected void setOnItemClickListener(AdapterView.OnItemClickListener childClickListener){
 		((ListView)findViewById(android.R.id.list)).setOnItemClickListener(childClickListener);
 	}
 

@@ -21,11 +21,11 @@ import net.osmand.binary.BinaryMapIndexReader.TagValuePair;
 import net.osmand.render.RenderingRulesStorage;
 import net.osmand.util.MapUtils;
 
-public class BinaryMapIndexFilter {
+class BinaryMapIndexFilter {
 
 	private final BinaryMapIndexReader reader;
 
-	public BinaryMapIndexFilter(File file) throws IOException{
+	private BinaryMapIndexFilter(File file) throws IOException{
 		reader = new BinaryMapIndexReader(new RandomAccessFile(file.getPath(), "r"), file);
 	}
 	

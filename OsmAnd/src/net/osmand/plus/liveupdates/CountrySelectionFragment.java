@@ -33,7 +33,7 @@ import java.util.List;
 
 public class CountrySelectionFragment extends BaseOsmAndDialogFragment {
 
-	private List<CountryItem> countryItems = new ArrayList<>();
+	private final List<CountryItem> countryItems = new ArrayList<>();
 	private OnFragmentInteractionListener mListener;
 
 	public List<CountryItem> getCountryItems() {
@@ -59,7 +59,7 @@ public class CountrySelectionFragment extends BaseOsmAndDialogFragment {
 		}
 
 		View view = inflater.inflate(R.layout.fragment_search_list, container, false);
-		ListView listView = (ListView) view.findViewById(android.R.id.list);
+		ListView listView = view.findViewById(android.R.id.list);
 		final ArrayAdapter<CountryItem> adapter = new ListAdapter(getListItemIcon());
 		if (countryItems.size() > 0) {
 			for (CountryItem item : countryItems) {
@@ -74,7 +74,7 @@ public class CountrySelectionFragment extends BaseOsmAndDialogFragment {
 				dismiss();
 			}
 		});
-		final EditText searchEditText = (EditText) view.findViewById(R.id.searchEditText);
+		final EditText searchEditText = view.findViewById(R.id.searchEditText);
 		searchEditText.addTextChangedListener(new TextWatcher() {
 			@Override
 			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -89,7 +89,7 @@ public class CountrySelectionFragment extends BaseOsmAndDialogFragment {
 				adapter.getFilter().filter(s);
 			}
 		});
-		ImageButton clearButton = (ImageButton) view.findViewById(R.id.clearButton);
+		ImageButton clearButton = view.findViewById(R.id.clearButton);
 		setThemedDrawable(clearButton, R.drawable.ic_action_remove_dark);
 		clearButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -114,7 +114,7 @@ public class CountrySelectionFragment extends BaseOsmAndDialogFragment {
 	}
 
 	@DrawableRes
-	protected int getListItemIcon() {
+    private int getListItemIcon() {
 		return R.drawable.ic_map;
 	}
 
@@ -196,10 +196,10 @@ public class CountrySelectionFragment extends BaseOsmAndDialogFragment {
 	}
 
 	public static class CountryItem implements Serializable {
-		private String localName;
-		private String downloadName;
+		private final String localName;
+		private final String downloadName;
 
-		public CountryItem(String localName, String downloadName) {
+		CountryItem(String localName, String downloadName) {
 			this.localName = localName;
 			this.downloadName = downloadName;
 		}
@@ -223,7 +223,7 @@ public class CountrySelectionFragment extends BaseOsmAndDialogFragment {
 		@ColorInt
 		private final int textColor;
 
-		public ListAdapter(@DrawableRes int drawableLeftId) {
+		ListAdapter(@DrawableRes int drawableLeftId) {
 			super(getMyActivity(), android.R.layout.simple_list_item_1);
 			this.drawableLeft = drawableLeftId == -1 ? null : getContentIcon(drawableLeftId);
 			TypedValue typedValue = new TypedValue();

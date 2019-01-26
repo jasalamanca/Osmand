@@ -27,7 +27,7 @@ public class Version {
 		return isGooglePlayEnabled(ctx) || isAmazonEnabled(ctx);
 	}
 
-	public static boolean isGooglePlayInstalled(OsmandApplication ctx) {
+	private static boolean isGooglePlayInstalled(OsmandApplication ctx) {
 		try {
 			ctx.getPackageManager().getPackageInfo("com.android.vending", 0);
 		} catch (PackageManager.NameNotFoundException e) {
@@ -36,7 +36,7 @@ public class Version {
 		return true;
 	}
 	
-	public static String marketPrefix(OsmandApplication ctx) {
+	private static String marketPrefix(OsmandApplication ctx) {
 		if (isAmazonEnabled(ctx)) {
 			return "amzn://apps/android?p=";
 		} else if (isGooglePlayEnabled(ctx) && isGooglePlayInstalled(ctx)) {
@@ -129,7 +129,7 @@ public class Version {
 		return getAppName(ctx).contains("~") || ctx.getPackageName().equals(FREE_DEV_VERSION_NAME);
 	}
 	
-	public static String getVersionForTracker(OsmandApplication ctx) {
+	private static String getVersionForTracker(OsmandApplication ctx) {
 		String v = Version.getAppName(ctx);
 		if(Version.isProductionVersion(ctx)){
 			v = Version.getFullVersion(ctx);

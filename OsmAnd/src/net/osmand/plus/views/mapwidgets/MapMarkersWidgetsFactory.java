@@ -29,31 +29,27 @@ import java.util.List;
 
 public class MapMarkersWidgetsFactory {
 
-	public static final int MIN_DIST_OK_VISIBLE = 40; // meters
-	public static final int MIN_DIST_2ND_ROW_SHOW = 150; // meters
+	private static final int MIN_DIST_OK_VISIBLE = 40; // meters
+	private static final int MIN_DIST_2ND_ROW_SHOW = 150; // meters
 
 	private final MapActivity map;
-	private MapMarkersHelper helper;
-	private int screenOrientation;
-	private boolean portraitMode;
+	private final MapMarkersHelper helper;
+	private final int screenOrientation;
+	private final boolean portraitMode;
 
-	private View topBar;
-	private View addressTopBar;
-	private View topBar2nd;
-	private View rowView;
-	private View rowView2nd;
-	private ImageView arrowImg;
-	private ImageView arrowImg2nd;
-	private TextView distText;
-	private TextView distText2nd;
-	private TextView addressText;
-	private TextView addressText2nd;
-	private ImageButton okButton;
-	private ImageButton okButton2nd;
-	private ImageButton moreButton;
-	private ImageButton moreButton2nd;
+	private final View topBar;
+	private final View addressTopBar;
+	private final View topBar2nd;
+    private final ImageView arrowImg;
+	private final ImageView arrowImg2nd;
+	private final TextView distText;
+	private final TextView distText2nd;
+	private final TextView addressText;
+	private final TextView addressText2nd;
+	private final ImageButton okButton;
+	private final ImageButton okButton2nd;
 
-	private LatLon loc;
+    private LatLon loc;
 
 	private boolean cachedTopBarVisibility;
 
@@ -66,18 +62,18 @@ public class MapMarkersWidgetsFactory {
 		addressTopBar = map.findViewById(R.id.map_top_bar);
 		topBar = map.findViewById(R.id.map_markers_top_bar);
 		topBar2nd = map.findViewById(R.id.map_markers_top_bar_2nd);
-		rowView = map.findViewById(R.id.map_marker_row);
-		rowView2nd = map.findViewById(R.id.map_marker_row_2nd);
-		arrowImg = (ImageView) map.findViewById(R.id.map_marker_arrow);
-		arrowImg2nd = (ImageView) map.findViewById(R.id.map_marker_arrow_2nd);
-		distText = (TextView) map.findViewById(R.id.map_marker_dist);
-		distText2nd = (TextView) map.findViewById(R.id.map_marker_dist_2nd);
-		addressText = (TextView) map.findViewById(R.id.map_marker_address);
-		addressText2nd = (TextView) map.findViewById(R.id.map_marker_address_2nd);
-		okButton = (ImageButton) map.findViewById(R.id.marker_btn_ok);
-		okButton2nd = (ImageButton) map.findViewById(R.id.marker_btn_ok_2nd);
-		moreButton = (ImageButton) map.findViewById(R.id.marker_btn_more);
-		moreButton2nd = (ImageButton) map.findViewById(R.id.marker_btn_more_2nd);
+        View rowView = map.findViewById(R.id.map_marker_row);
+        View rowView2nd = map.findViewById(R.id.map_marker_row_2nd);
+		arrowImg = map.findViewById(R.id.map_marker_arrow);
+		arrowImg2nd = map.findViewById(R.id.map_marker_arrow_2nd);
+		distText = map.findViewById(R.id.map_marker_dist);
+		distText2nd = map.findViewById(R.id.map_marker_dist_2nd);
+		addressText = map.findViewById(R.id.map_marker_address);
+		addressText2nd = map.findViewById(R.id.map_marker_address_2nd);
+		okButton = map.findViewById(R.id.marker_btn_ok);
+		okButton2nd = map.findViewById(R.id.marker_btn_ok_2nd);
+        ImageButton moreButton = map.findViewById(R.id.marker_btn_more);
+        ImageButton moreButton2nd = map.findViewById(R.id.marker_btn_more_2nd);
 
 		rowView.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -153,7 +149,7 @@ public class MapMarkersWidgetsFactory {
 		}
 	}
 
-	public boolean updateVisibility(boolean visible) {
+	private boolean updateVisibility(boolean visible) {
 		boolean res = updateVisibility(topBar, visible);
 		if (visible != cachedTopBarVisibility) {
 			cachedTopBarVisibility = visible;
@@ -162,7 +158,7 @@ public class MapMarkersWidgetsFactory {
 		return res;
 	}
 
-	public boolean updateVisibility(View v, boolean visible) {
+	private boolean updateVisibility(View v, boolean visible) {
 		if (visible != (v.getVisibility() == View.VISIBLE)) {
 			if (visible) {
 				v.setVisibility(View.VISIBLE);
@@ -310,22 +306,22 @@ public class MapMarkersWidgetsFactory {
 		};
 	}
 
-	public boolean isLandscapeLayout() {
+	private boolean isLandscapeLayout() {
 		return !portraitMode;
 	}
 
 	public abstract static class DistanceToMapMarkerControl extends TextInfoWidget {
 
-		private boolean firstMarker;
+		private final boolean firstMarker;
 		private final OsmandMapTileView view;
-		private MapActivity map;
-		private MapMarkersHelper helper;
-		private float[] calculations = new float[1];
+		private final MapActivity map;
+		private final MapMarkersHelper helper;
+		private final float[] calculations = new float[1];
 		private int cachedMeters;
 		private int cachedMarkerColorIndex = -1;
 		private Boolean cachedNightMode = null;
 
-		public DistanceToMapMarkerControl(MapActivity map, boolean firstMarker) {
+		DistanceToMapMarkerControl(MapActivity map, boolean firstMarker) {
 			super(map);
 			this.map = map;
 			this.firstMarker = firstMarker;
@@ -343,7 +339,7 @@ public class MapMarkersWidgetsFactory {
 
 		protected abstract void click(OsmandMapTileView view);
 
-		public abstract LatLon getLatLon();
+		protected abstract LatLon getLatLon();
 
 		@Override
 		public boolean updateInfo(DrawSettings drawSettings) {
@@ -384,7 +380,7 @@ public class MapMarkersWidgetsFactory {
 			return res;
 		}
 
-		public LatLon getPointToNavigate() {
+		LatLon getPointToNavigate() {
 			MapMarker marker = getMarker();
 			if (marker != null) {
 				return marker.point;
@@ -406,7 +402,7 @@ public class MapMarkersWidgetsFactory {
 			return null;
 		}
 
-		public int getDistance() {
+		int getDistance() {
 			int d = 0;
 			LatLon l = getPointToNavigate();
 			if (l != null) {

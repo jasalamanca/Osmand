@@ -30,18 +30,18 @@ public abstract class DashLocationFragment extends DashBaseFragment {
 	private static final int ORIENTATION_90 = 3;
 	private static final int ORIENTATION_270 = 1;
 	private static final int ORIENTATION_180 = 2;
-	protected List<DashLocationView> distances = new ArrayList<DashLocationFragment.DashLocationView>();
+	List<DashLocationView> distances = new ArrayList<DashLocationFragment.DashLocationView>();
 	private int screenOrientation;
-	protected LatLon lastUpdatedLocation;
+	private LatLon lastUpdatedLocation;
 
-	public static class DashLocationView {
-		public ImageView arrow;
-		public TextView txt;
-		public LatLon loc;
-		public int arrowResId;
-		public boolean paint = true;
+	static class DashLocationView {
+		final ImageView arrow;
+		final TextView txt;
+		final LatLon loc;
+		int arrowResId;
+		final boolean paint = true;
 
-		public DashLocationView(ImageView arrow, TextView txt, LatLon loc) {
+		DashLocationView(ImageView arrow, TextView txt, LatLon loc) {
 			super();
 			this.arrow = arrow;
 			this.txt = txt;
@@ -82,7 +82,7 @@ public abstract class DashLocationFragment extends DashBaseFragment {
 		return screenOrientation;
 	}
 
-	public LatLon getDefaultLocation() {
+	LatLon getDefaultLocation() {
 		DashboardOnMap d = dashboard;
 		if (d == null) {
 			return null;
@@ -90,7 +90,7 @@ public abstract class DashLocationFragment extends DashBaseFragment {
 		return d.getMapViewLocation();
 	}
 
-	public void updateAllWidgets() {
+	private void updateAllWidgets() {
 		DashboardOnMap d = dashboard;
 		if (d == null) {
 			return;
@@ -135,9 +135,9 @@ public abstract class DashLocationFragment extends DashBaseFragment {
 		updateLocationView(useCenter, fromLoc, h, arrow, arrowResId, imgColor, txt, 0, toLoc, screenOrientation, app, ctx, paint);
 	}
 
-	public static void updateLocationView(boolean useCenter, LatLon fromLoc, Float h,
-										  ImageView arrow, int arrowResId, int imgColor, TextView txt, int textColor, LatLon toLoc,
-										  int screenOrientation, OsmandApplication app, Context ctx, boolean paint) {
+	private static void updateLocationView(boolean useCenter, LatLon fromLoc, Float h,
+                                           ImageView arrow, int arrowResId, int imgColor, TextView txt, int textColor, LatLon toLoc,
+                                           int screenOrientation, OsmandApplication app, Context ctx, boolean paint) {
 		float[] mes = new float[2];
 		if (fromLoc != null && toLoc != null) {
 			Location.distanceBetween(toLoc.getLatitude(), toLoc.getLongitude(), fromLoc.getLatitude(), fromLoc.getLongitude(), mes);

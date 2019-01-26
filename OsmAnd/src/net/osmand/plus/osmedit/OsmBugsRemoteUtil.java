@@ -26,7 +26,7 @@ public class OsmBugsRemoteUtil implements OsmBugsUtil {
 	private static final String GET = "GET";
 	private static final String POST = "POST";
 
-	static String getNotesApi() {
+	private static String getNotesApi() {
 		final int deviceApiVersion = android.os.Build.VERSION.SDK_INT;
 		String RETURN_API;
 		if (deviceApiVersion >= android.os.Build.VERSION_CODES.GINGERBREAD) {
@@ -37,7 +37,7 @@ public class OsmBugsRemoteUtil implements OsmBugsUtil {
 		return RETURN_API;
 	}
 
-	static String getUserDetailsApi() {
+	private static String getUserDetailsApi() {
 		final int deviceApiVersion = android.os.Build.VERSION.SDK_INT;
 		String RETURN_API;
 		if (deviceApiVersion >= android.os.Build.VERSION_CODES.GINGERBREAD) {
@@ -48,8 +48,8 @@ public class OsmBugsRemoteUtil implements OsmBugsUtil {
 		return RETURN_API;
 	}
 
-	private OsmandApplication app;
-	private OsmandSettings settings;
+	private final OsmandApplication app;
+	private final OsmandSettings settings;
 
 	public OsmBugsRemoteUtil(OsmandApplication app) {
 		this.app = app;

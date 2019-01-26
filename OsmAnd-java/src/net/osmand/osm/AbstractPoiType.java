@@ -8,8 +8,8 @@ import java.util.Map;
 
 public abstract class AbstractPoiType {
 
-	protected final String keyName;
-	protected final MapPoiTypes registry;
+	final String keyName;
+	private final MapPoiTypes registry;
 	private List<PoiType> poiAdditionals = null;
 	private List<PoiType> poiAdditionalsCategorized = null;
 	private boolean topVisible;
@@ -19,7 +19,7 @@ public abstract class AbstractPoiType {
 	private String poiAdditionalCategory;
 	private List<String> excludedPoiAdditionalCategoies;
 
-	public AbstractPoiType(String keyName, MapPoiTypes registry) {
+	AbstractPoiType(String keyName, MapPoiTypes registry) {
 		this.keyName = keyName;
 		this.registry = registry;
 	}
@@ -88,17 +88,6 @@ public abstract class AbstractPoiType {
 			}
 			poiAdditionalsCategorized.add(tp);
 		}
-	}
-
-	public void addPoiAdditionalsCategorized(List<PoiType> tps) {
-		if (poiAdditionals == null) {
-			poiAdditionals = new ArrayList<>();
-		}
-		poiAdditionals.addAll(tps);
-		if (poiAdditionalsCategorized == null) {
-			poiAdditionalsCategorized = new ArrayList<>();
-		}
-		poiAdditionalsCategorized.addAll(tps);
 	}
 
 	public List<PoiType> getPoiAdditionals() {

@@ -128,7 +128,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 
 		boolean isAddingPoi = getArguments().getBoolean(IS_ADDING_POI);
 
-		Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+		Toolbar toolbar = view.findViewById(R.id.toolbar);
 		toolbar.setTitle(isAddingPoi ? R.string.poi_create_title : R.string.poi_edit_title);
 		toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
 		toolbar.setNavigationContentDescription(R.string.access_shared_string_navigate_up);
@@ -139,7 +139,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 			}
 		});
 
-		viewPager = (ViewPager) view.findViewById(R.id.viewpager);
+		viewPager = view.findViewById(R.id.viewpager);
 		String basicTitle = getResources().getString(R.string.tab_title_basic);
 		String extendedTitle = getResources().getString(R.string.tab_title_advanced);
 		final MyAdapter pagerAdapter = new MyAdapter(getChildFragmentManager(), basicTitle, extendedTitle);
@@ -161,7 +161,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 			}
 		});
 
-		final TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
+		final TabLayout tabLayout = view.findViewById(R.id.tab_layout);
 		tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
 		if (ViewCompat.isLaidOut(tabLayout)) {
@@ -178,7 +178,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 		}
 
 		ImageButton onlineDocumentationButton =
-				(ImageButton) view.findViewById(R.id.onlineDocumentationButton);
+                view.findViewById(R.id.onlineDocumentationButton);
 		onlineDocumentationButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -190,7 +190,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 		final int colorId = isLightTheme ? R.color.inactive_item_orange : R.color.dash_search_icon_dark;
 		final int color = getResources().getColor(colorId);
 		onlineDocumentationButton.setImageDrawable(getPaintedContentIcon(R.drawable.ic_action_help, color));
-		final ImageButton poiTypeButton = (ImageButton) view.findViewById(R.id.poiTypeButton);
+		final ImageButton poiTypeButton = view.findViewById(R.id.poiTypeButton);
 		poiTypeButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -205,7 +205,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 			}
 		});
 
-		EditText poiNameEditText = (EditText) view.findViewById(R.id.poiNameEditText);
+		EditText poiNameEditText = view.findViewById(R.id.poiNameEditText);
 		poiNameEditText.addTextChangedListener(new TextWatcher() {
 			@Override
 			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -228,8 +228,8 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 			}
 		});
 		poiNameEditText.setText(editPoiData.getTag(OSMSettings.OSMTagKey.NAME.getValue()));
-		poiTypeTextInputLayout = (TextInputLayout) view.findViewById(R.id.poiTypeTextInputLayout);
-		poiTypeEditText = (AutoCompleteTextView) view.findViewById(R.id.poiTypeEditText);
+		poiTypeTextInputLayout = view.findViewById(R.id.poiTypeTextInputLayout);
+		poiTypeEditText = view.findViewById(R.id.poiTypeEditText);
 		poiTypeEditText.setText(editPoiData.getPoiTypeString());
 		poiTypeEditText.addTextChangedListener(new TextWatcher() {
 			@Override
@@ -281,7 +281,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 		});
 
 		if (!isAddingPoi) {
-			Button deleteButton = (Button) view.findViewById(R.id.deleteButton);
+			Button deleteButton = view.findViewById(R.id.deleteButton);
 			deleteButton.setVisibility(View.VISIBLE);
 			deleteButton.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -298,7 +298,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 			});
 		}
 
-		Button saveButton = (Button) view.findViewById(R.id.saveButton);
+		Button saveButton = view.findViewById(R.id.saveButton);
 		saveButton.setText(mOpenstreetmapUtil instanceof OpenstreetmapRemoteUtil
 				? R.string.shared_string_upload : R.string.shared_string_save);
 		saveButton.setOnClickListener(new View.OnClickListener() {
@@ -307,7 +307,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 				trySave();
 			}
 		});
-		Button cancelButton = (Button) view.findViewById(R.id.cancelButton);
+		Button cancelButton = view.findViewById(R.id.cancelButton);
 		cancelButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -472,7 +472,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 						} else {
 							OsmEditingPlugin plugin = OsmandPlugin.getPlugin(OsmEditingPlugin.class);
 							mOpenstreetmapUtil = plugin.getPoiModificationLocalUtil();
-							Button saveButton = (Button) view.findViewById(R.id.saveButton);
+							Button saveButton = view.findViewById(R.id.saveButton);
 							saveButton.setText(mOpenstreetmapUtil instanceof OpenstreetmapRemoteUtil
 									? R.string.shared_string_upload : R.string.shared_string_save);
 						}

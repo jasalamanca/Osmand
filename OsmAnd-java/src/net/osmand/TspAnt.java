@@ -39,56 +39,37 @@ import net.osmand.util.MapUtils;
 
 // https://github.com/lukedodd/ant-tsp
 public class TspAnt {
-    // Algorithm parameters:
-    // original amount of trail
-    private double c = 1.0;
-    // trail preference
-    private double alpha = 1;
-    // greedy preference
-    private double beta = 5;
-    // trail evaporation coefficient
-    private double evaporation = 0.5;
-    // new trail deposit coefficient;
-    private double Q = 500;
-    // number of ants used = numAntFactor*numTowns
-    private double numAntFactor = 0.8;
-    // probability of pure random selection of the next town
-    private double pr = 0.01;
 
-    // Reasonable number of iterations
-    // - results typically settle down by 500
-    private int maxIterations = 2000;
-
-    public int n = 0; // # towns
-    public int m = 0; // # ants
+    private int n = 0; // # towns
+    private int m = 0; // # ants
     private double graph[][] = null;
     private double trails[][] = null;
     private Ant ants[] = null;
-    private Random rand = new Random();
+    private final Random rand = new Random();
     private double probs[] = null;
 
     private int currentIndex = 0;
 
-    public int[] bestTour;
-    public double bestTourLength;
+    private int[] bestTour;
+    private double bestTourLength;
 
     // Ant class. Maintains tour and tabu information.
     private class Ant {
-        public int tour[] = new int[graph.length];
+        final int[] tour = new int[graph.length];
         // Maintain visited list for towns, much faster
         // than checking if in tour so far.
-        public boolean visited[] = new boolean[graph.length];
+        final boolean[] visited = new boolean[graph.length];
 
-        public void visitTown(int town) {
+        void visitTown(int town) {
             tour[currentIndex + 1] = town;
             visited[town] = true;
         }
 
-        public boolean visited(int i) {
+        boolean visited(int i) {
             return visited[i];
         }
 
-        public double tourLength() {
+        double tourLength() {
             double length = graph[tour[n - 1]][tour[0]];
             for (int i = 0; i < n - 1; i++) {
                 length += graph[tour[i]][tour[i + 1]];
@@ -96,7 +77,7 @@ public class TspAnt {
             return length;
         }
 
-        public void clear() {
+        void clear() {
             for (int i = 0; i < n; i++)
                 visited[i] = false;
         }
@@ -132,7 +113,9 @@ public class TspAnt {
 			}
 //			System.out.println(Arrays.toString(graph[i]));
 		}
-		
+
+        // number of ants used = numAntFactor*numTowns
+        double numAntFactor = 0.8;
         m = (int) (n * numAntFactor);
         // all memory allocations done here
         trails = new double[n][n];
@@ -150,7 +133,7 @@ public class TspAnt {
     // - >25 times faster
     // - Extreme cases can lead to error of 25% - but usually less.
     // - Does not harm results -- not surprising for a stochastic algorithm.
-    public static double pow(final double a, final double b) {
+    private static double pow(final double a, final double b) {
         final int x = (int) (Double.doubleToLongBits(a) >> 32);
         final int y = (int) (b * (x - 1072632447) + 1072632447);
         return Double.longBitsToDouble(((long) y) << 32);
@@ -163,6 +146,9 @@ public class TspAnt {
         int i = ant.tour[currentIndex];
 
         double denom = 0.0;
+        // greedy preference
+        double beta = 5;// trail preference
+        double alpha = 1;
         for (int l = 0; l < n; l++)
             if (!ant.visited(l))
                 denom += pow(trails[i][l], alpha)
@@ -186,6 +172,8 @@ public class TspAnt {
     // totally randomly (taking into account tabu list).
     private int selectNextTown(Ant ant) {
         // sometimes just randomly select
+        // probability of pure random selection of the next town
+        double pr = 0.01;
         if (rand.nextDouble() < pr) {
             int t = rand.nextInt(n - currentIndex); // random town
             int j = -1;
@@ -214,13 +202,17 @@ public class TspAnt {
     // Update trails based on ants tours
     private void updateTrails() {
         // evaporation
+        // trail evaporation coefficient
+        double evaporation = 0.5;
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
                 trails[i][j] *= evaporation;
 
         // each ants contribution
         for (Ant a : ants) {
-            double contribution = Q / a.tourLength();
+            // new trail deposit coefficient;
+            double q = 500;
+            double contribution = q / a.tourLength();
             for (int i = 0; i < n - 1; i++) {
                 trails[a.tour[i]][a.tour[i + 1]] += contribution;
             }
@@ -262,7 +254,7 @@ public class TspAnt {
         }
     }
 
-    public static String tourToString(int tour[]) {
+    private static String tourToString(int tour[]) {
         String t = "";
         for (int i : tour)
             t = t + " " + i;
@@ -271,6 +263,9 @@ public class TspAnt {
 
     public int[] solve() {
         // clear trails
+        // Algorithm parameters:
+        // original amount of trail
+        double c = 1.0;
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
                 trails[i][j] = c;
@@ -278,6 +273,9 @@ public class TspAnt {
         int iteration = 0;
         // run for maxIterations
         // preserve best tour
+        // Reasonable number of iterations
+        // - results typically settle down by 500
+        int maxIterations = 2000;
         while (iteration < maxIterations) {
             setupAnts();
             moveAnts();

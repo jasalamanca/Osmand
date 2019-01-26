@@ -37,7 +37,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class OsmEditsUploadListenerHelper implements OsmEditsUploadListener {
-	public static final String TAG = "OsmEditUploadListenerHe";
+	private static final String TAG = "OsmEditUploadListenerHe";
 	private final FragmentActivity activity;
 	private final String numberFormat;
 
@@ -139,8 +139,8 @@ public class OsmEditsUploadListenerHelper implements OsmEditsUploadListener {
 			return builder.create();
 		}
 
-		public static UploadingErrorDialogFragment getInstance(String errorMessage,
-															   OsmPoint point) {
+		static UploadingErrorDialogFragment getInstance(String errorMessage,
+                                                        OsmPoint point) {
 			UploadingErrorDialogFragment fragment = new UploadingErrorDialogFragment();
 			Bundle bundle = new Bundle();
 			bundle.putString(ERROR_MESSAGE, errorMessage);
@@ -190,8 +190,8 @@ public class OsmEditsUploadListenerHelper implements OsmEditsUploadListener {
 			return builder.create();
 		}
 
-		public static UploadingMultipleErrorDialogFragment createInstance(
-				Map<OsmPoint, String> loadErrorsMap) {
+		static UploadingMultipleErrorDialogFragment createInstance(
+                Map<OsmPoint, String> loadErrorsMap) {
 			String[] pointNames = new String[loadErrorsMap.keySet().size()];
 			boolean[] hasErrors = new boolean[loadErrorsMap.keySet().size()];
 			ArrayList<OsmPoint> pointsWithErrors = new ArrayList<>();
@@ -226,10 +226,10 @@ public class OsmEditsUploadListenerHelper implements OsmEditsUploadListener {
 	}
 
 	private static final class PointWithPotentialError {
-		String point;
-		boolean hasError;
+		final String point;
+		final boolean hasError;
 
-		public PointWithPotentialError(String point, boolean hasError) {
+		PointWithPotentialError(String point, boolean hasError) {
 			this.point = point;
 			this.hasError = hasError;
 		}
@@ -237,8 +237,8 @@ public class OsmEditsUploadListenerHelper implements OsmEditsUploadListener {
 
 	private static final class PointsWithErrorsAdapter extends ArrayAdapter<PointWithPotentialError> {
 		private final int layoutResourceId;
-		PointWithPotentialError[] data;
-		Activity context;
+		final PointWithPotentialError[] data;
+		final Activity context;
 
 		private PointsWithErrorsAdapter(Activity context, int layoutResourceId,
 										PointWithPotentialError[] objects) {
@@ -258,8 +258,8 @@ public class OsmEditsUploadListenerHelper implements OsmEditsUploadListener {
 				row = inflater.inflate(layoutResourceId, parent, false);
 
 				holder = new PointHolder();
-				holder.checkedUncheckedImageView = (ImageView) row.findViewById(R.id.iconImageView);
-				holder.pointNameTextView = (TextView) row.findViewById(R.id.nameTextView);
+				holder.checkedUncheckedImageView = row.findViewById(R.id.iconImageView);
+				holder.pointNameTextView = row.findViewById(R.id.nameTextView);
 
 				row.setTag(holder);
 			} else {
@@ -276,9 +276,9 @@ public class OsmEditsUploadListenerHelper implements OsmEditsUploadListener {
 			return row;
 		}
 
-		public static PointsWithErrorsAdapter createInstance(Activity activity,
-															 String[] pointNames,
-															 boolean[] hasError) {
+		static PointsWithErrorsAdapter createInstance(Activity activity,
+                                                      String[] pointNames,
+                                                      boolean[] hasError) {
 			PointWithPotentialError[] array = new PointWithPotentialError[pointNames.length];
 			for (int i = 0; i < pointNames.length; i++) {
 				array[i] = new PointWithPotentialError(pointNames[i], hasError[i]);

@@ -18,15 +18,15 @@ import java.util.List;
 
 public class CoordinateInputAdapter extends RecyclerView.Adapter<MapMarkerItemViewHolder> {
 
-	private MapActivity mapActivity;
-	private boolean nightTheme;
-	private IconsCache iconsCache;
-	private List<MapMarker> mapMarkers;
+	private final MapActivity mapActivity;
+	private final boolean nightTheme;
+	private final IconsCache iconsCache;
+	private final List<MapMarker> mapMarkers;
 	private LatLon location;
 	private Float heading;
 	private boolean useCenter;
 	private int screenOrientation;
-	private boolean portrait;
+	private final boolean portrait;
 
 	public CoordinateInputAdapter (MapActivity mapActivity, List<MapMarker> mapMarkers) {
 		this.mapActivity = mapActivity;
@@ -111,7 +111,7 @@ public class CoordinateInputAdapter extends RecyclerView.Adapter<MapMarkerItemVi
 		return getItemCount() == 0;
 	}
 
-	public MapMarker getItem(int position) {
+	private MapMarker getItem(int position) {
 		return mapMarkers.get(position);
 	}
 }

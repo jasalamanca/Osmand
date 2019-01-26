@@ -17,10 +17,10 @@ import com.google.protobuf.CodedInputStream;
 import com.google.protobuf.WireFormat;
 
 public class BinaryMapTransportReaderAdapter {
-	private CodedInputStream codedIS;
+	private final CodedInputStream codedIS;
 	private final BinaryMapIndexReader map;
 	
-	protected BinaryMapTransportReaderAdapter(BinaryMapIndexReader map){
+	BinaryMapTransportReaderAdapter(BinaryMapIndexReader map){
 		this.codedIS = map.codedIS;
 		this.map = map;
 	}
@@ -69,7 +69,7 @@ public class BinaryMapTransportReaderAdapter {
 		IndexStringTable stringTable = null;
 	}
 
-	protected static class IndexStringTable {
+	static class IndexStringTable {
 		int fileOffset = 0;
 		int length = 0;
 
@@ -80,7 +80,7 @@ public class BinaryMapTransportReaderAdapter {
 	}
 	
 	
-	protected void readTransportIndex(TransportIndex ind) throws IOException {
+	void readTransportIndex(TransportIndex ind) throws IOException {
 		while(true){
 			int t = codedIS.readTag();
 			int tag = WireFormat.getTagFieldNumber(t);
@@ -142,8 +142,8 @@ public class BinaryMapTransportReaderAdapter {
 		}
 	}
 	
-	protected void searchTransportTreeBounds(int pleft, int pright, int ptop, int pbottom,
-			SearchRequest<TransportStop> req) throws IOException {
+	void searchTransportTreeBounds(int pleft, int pright, int ptop, int pbottom,
+                                   SearchRequest<TransportStop> req) throws IOException {
 		int init = 0;
 		int lastIndexResult = -1;
 		int cright = 0;
@@ -330,7 +330,7 @@ public class BinaryMapTransportReaderAdapter {
 		return dataObject;
 	}
 	
-	protected void initializeStringTable(TransportIndex ind, TIntObjectHashMap<String> stringTable) throws IOException {
+	void initializeStringTable(TransportIndex ind, TIntObjectHashMap<String> stringTable) throws IOException {
 		int[] values = stringTable.keys();
 		Arrays.sort(values);
 		codedIS.seek(ind.stringTable.fileOffset);
@@ -361,8 +361,8 @@ public class BinaryMapTransportReaderAdapter {
 		codedIS.popLimit(oldLimit);
 	}
 
-	protected void initializeNames(boolean onlyDescription, net.osmand.data.TransportRoute dataObject,
-			TIntObjectHashMap<String> stringTable) throws IOException {
+	void initializeNames(boolean onlyDescription, net.osmand.data.TransportRoute dataObject,
+                         TIntObjectHashMap<String> stringTable) {
 		if(dataObject.getName().length() > 0){
 			dataObject.setName(stringTable.get(dataObject.getName().charAt(0)));
 		}
@@ -386,7 +386,7 @@ public class BinaryMapTransportReaderAdapter {
 		}
 	}
 
-	protected void initializeNames(TIntObjectHashMap<String> stringTable, TransportStop s) {
+	void initializeNames(TIntObjectHashMap<String> stringTable, TransportStop s) {
 		if (s.getName().length() > 0) {
 			s.setName(stringTable.get(s.getName().charAt(0)));
 		}

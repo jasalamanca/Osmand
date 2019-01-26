@@ -105,10 +105,10 @@ public class GPXDatabase {
 			GPX_COL_API_IMPORTED +
 			" FROM " +	GPX_TABLE_NAME;
 
-	private OsmandApplication context;
+	private final OsmandApplication context;
 
 	public static class GpxDataItem {
-		private File file;
+		private final File file;
 		private GPXTrackAnalysis analysis;
 		private int color;
 		private long fileLastModifiedTime;
@@ -443,7 +443,7 @@ public class GPXDatabase {
 		String fileName = query.getString(0);
 		String fileDir = query.getString(1);
 		float totalDistance = (float)query.getDouble(2);
-		int totalTracks = (int)query.getInt(3);
+		int totalTracks = query.getInt(3);
 		long startTime = query.getLong(4);
 		long endTime = query.getLong(5);
 		long timeSpan = query.getLong(6);
@@ -456,11 +456,11 @@ public class GPXDatabase {
 		double maxElevation = query.getDouble(13);
 		float maxSpeed = (float)query.getDouble(14);
 		float avgSpeed = (float)query.getDouble(15);
-		int points = (int)query.getInt(16);
-		int wptPoints = (int)query.getInt(17);
+		int points = query.getInt(16);
+		int wptPoints = query.getInt(17);
 		String color = query.getString(18);
 		long fileLastModifiedTime = query.getLong(19);
-		int splitType = (int)query.getInt(20);
+		int splitType = query.getInt(20);
 		double splitInterval = query.getDouble(21);
 		boolean apiImported = query.getInt(22) == 1;
 

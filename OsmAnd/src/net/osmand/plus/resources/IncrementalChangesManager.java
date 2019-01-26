@@ -27,7 +27,7 @@ public class IncrementalChangesManager {
 
 	private static final String URL = "http://download.osmand.net/check_live.php";
 	private static final org.apache.commons.logging.Log log = PlatformUtil.getLog(IncrementalChangesManager.class);
-	private ResourceManager resourceManager;
+	private final ResourceManager resourceManager;
 	private final Map<String, RegionUpdateFiles> regions = new ConcurrentHashMap<String, IncrementalChangesManager.RegionUpdateFiles>();
 	
 	
@@ -123,7 +123,7 @@ public class IncrementalChangesManager {
 		return (vl * 1000 / (1 << 20l)) / 1000.0f + "";
 	}
 	
-	public static long calculateSize(List<IncrementalUpdate> list) {
+	private static long calculateSize(List<IncrementalUpdate> list) {
 		long l = 0;
 		for(IncrementalUpdate iu : list) {
 			l += iu.containerSize;
@@ -131,24 +131,24 @@ public class IncrementalChangesManager {
 		return l;
 	}	
 	
-	protected class RegionUpdate {
-		protected File file;
-		protected String date;
-		protected long obfCreated; 
+	class RegionUpdate {
+		File file;
+		String date;
+		long obfCreated;
 	}
 	
 	protected class RegionUpdateFiles {
-		protected String nm;
-		protected File mainFile;
-		protected long mainFileInit;
-		TreeMap<String, List<RegionUpdate>> dayUpdates = new TreeMap<String, List<RegionUpdate>>();
-		TreeMap<String, RegionUpdate> monthUpdates = new TreeMap<String, RegionUpdate>();
+		final String nm;
+		File mainFile;
+		long mainFileInit;
+		final TreeMap<String, List<RegionUpdate>> dayUpdates = new TreeMap<String, List<RegionUpdate>>();
+		final TreeMap<String, RegionUpdate> monthUpdates = new TreeMap<String, RegionUpdate>();
 		
-		public RegionUpdateFiles(String nm) {
+		RegionUpdateFiles(String nm) {
 			this.nm = nm;
 		}
 		
-		public boolean addUpdate(String date, File file, long dateCreated) {
+		boolean addUpdate(String date, File file, long dateCreated) {
 			String monthYear = date.substring(0, 5);
 			RegionUpdate ru = new RegionUpdate();
 			ru.date = date;
@@ -168,13 +168,13 @@ public class IncrementalChangesManager {
 	}
 	
 	public class IncrementalUpdateList {
-		public TreeMap<String, IncrementalUpdateGroupByMonth> updateByMonth = 
+		final TreeMap<String, IncrementalUpdateGroupByMonth> updateByMonth =
 				new TreeMap<String, IncrementalUpdateGroupByMonth>();
 		public String errorMessage;
-		public RegionUpdateFiles updateFiles;
+		RegionUpdateFiles updateFiles;
 		
 		
-		public boolean isPreferrableLimitForDayUpdates(String monthYearPart, List<IncrementalUpdate> dayUpdates) {
+		boolean isPreferrableLimitForDayUpdates(String monthYearPart, List<IncrementalUpdate> dayUpdates) {
 			List<RegionUpdate> lst = updateFiles.dayUpdates.get(monthYearPart);
 			if(lst == null || lst.size() < 10) {
 				return true;
@@ -205,7 +205,7 @@ public class IncrementalChangesManager {
 			return ll;
 		}
 
-		public void addUpdate(IncrementalUpdate iu) {
+		void addUpdate(IncrementalUpdate iu) {
 			String dtMonth = iu.date.substring(0, 5);
 			if(!updateByMonth.containsKey(dtMonth)) {
 				IncrementalUpdateGroupByMonth iubm = new IncrementalUpdateGroupByMonth(dtMonth);
@@ -220,10 +220,10 @@ public class IncrementalChangesManager {
 		}
 	}
 	
-	protected static class IncrementalUpdateGroupByMonth {
-		public final String monthYearPart ;
-		public List<IncrementalUpdate> dayUpdates = new ArrayList<IncrementalUpdate>();
-		public IncrementalUpdate monthUpdate;
+	static class IncrementalUpdateGroupByMonth {
+		final String monthYearPart ;
+		final List<IncrementalUpdate> dayUpdates = new ArrayList<IncrementalUpdate>();
+		IncrementalUpdate monthUpdate;
 		
 		public long calculateSizeMonthUpdates() {
 			return calculateSize(getMonthUpdate());
@@ -233,11 +233,11 @@ public class IncrementalChangesManager {
 			return calculateSize(getDayUpdates());
 		}
 		
-		public boolean isMonthUpdateApplicable() {
+		boolean isMonthUpdateApplicable() {
 			return monthUpdate != null;
 		}
 		
-		public boolean isDayUpdateApplicable() {
+		boolean isDayUpdateApplicable() {
 			boolean inLimits = dayUpdates.size() > 0 && dayUpdates.size() < 4;
 			if(!inLimits) {
 				return false;
@@ -245,7 +245,7 @@ public class IncrementalChangesManager {
 			return true;
 		}
 		
-		public List<IncrementalUpdate> getMonthUpdate() {
+		List<IncrementalUpdate> getMonthUpdate() {
 			List<IncrementalUpdate> ll = new ArrayList<IncrementalUpdate>();
 			if(monthUpdate == null) {
 				return ll;
@@ -259,11 +259,11 @@ public class IncrementalChangesManager {
 			return ll;
 		}
 		
-		public List<IncrementalUpdate> getDayUpdates() {
+		List<IncrementalUpdate> getDayUpdates() {
 			return dayUpdates;
 		}
 		
-		public IncrementalUpdateGroupByMonth(String monthYearPart ) {
+		IncrementalUpdateGroupByMonth(String monthYearPart) {
 			this.monthYearPart = monthYearPart;
 		}
 	}
@@ -276,7 +276,7 @@ public class IncrementalChangesManager {
 		public long contentSize;
 		public String fileName;
 
-		public boolean isMonth() {
+		boolean isMonth() {
 			return date.endsWith("00");
 		}
 

@@ -38,14 +38,13 @@ import static net.osmand.plus.NavigationService.USED_BY_NAVIGATION;
 
 public class NavigationNotification extends OsmandNotification {
 
-	public final static String OSMAND_PAUSE_NAVIGATION_SERVICE_ACTION = "OSMAND_PAUSE_NAVIGATION_SERVICE_ACTION";
-	public final static String OSMAND_RESUME_NAVIGATION_SERVICE_ACTION = "OSMAND_RESUME_NAVIGATION_SERVICE_ACTION";
-	public final static String OSMAND_STOP_NAVIGATION_SERVICE_ACTION = "OSMAND_STOP_NAVIGATION_SERVICE_ACTION";
-	public final static String GROUP_NAME = "NAVIGATION";
+	private final static String OSMAND_PAUSE_NAVIGATION_SERVICE_ACTION = "OSMAND_PAUSE_NAVIGATION_SERVICE_ACTION";
+	private final static String OSMAND_RESUME_NAVIGATION_SERVICE_ACTION = "OSMAND_RESUME_NAVIGATION_SERVICE_ACTION";
+	private final static String OSMAND_STOP_NAVIGATION_SERVICE_ACTION = "OSMAND_STOP_NAVIGATION_SERVICE_ACTION";
+	private final static String GROUP_NAME = "NAVIGATION";
 
 	private Map<TurnPathHelper.TurnResource, Bitmap> bitmapCache = new HashMap<>();
-	private Bitmap turnBitmap;
-	private boolean leftSide;
+    private boolean leftSide;
 
 	public NavigationNotification(OsmandApplication app) {
 		super(app, GROUP_NAME);
@@ -119,7 +118,7 @@ public class NavigationNotification extends OsmandNotification {
 		StringBuilder notificationText = new StringBuilder();
 		color = 0;
 		icon = R.drawable.ic_action_start_navigation;
-		turnBitmap = null;
+        Bitmap turnBitmap = null;
 		ongoing = true;
 		RoutingHelper routingHelper = app.getRoutingHelper();
 		boolean followingMode = routingHelper.isFollowingMode() || app.getLocationProvider().getLocationSimulation().isRouteAnimating();
@@ -256,7 +255,7 @@ public class NavigationNotification extends OsmandNotification {
 		}
 	}
 
-	public Bitmap drawableToBitmap(Drawable drawable) {
+	private Bitmap drawableToBitmap(Drawable drawable) {
 		int height = (int) app.getResources().getDimension(android.R.dimen.notification_large_icon_height);
 		int width = (int) app.getResources().getDimension(android.R.dimen.notification_large_icon_width);
 

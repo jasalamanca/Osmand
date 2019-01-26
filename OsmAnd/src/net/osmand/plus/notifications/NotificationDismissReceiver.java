@@ -12,7 +12,7 @@ import net.osmand.util.Algorithms;
 
 public class NotificationDismissReceiver extends BroadcastReceiver {
 
-	public static final String NOTIFICATION_TYPE_KEY_NAME = "net.osmand.plus.notifications.NotificationType";
+	private static final String NOTIFICATION_TYPE_KEY_NAME = "net.osmand.plus.notifications.NotificationType";
 
 	@Override
 	public void onReceive(Context context, Intent intent) {

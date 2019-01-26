@@ -6,7 +6,7 @@ package net.osmand.plus.liveupdates;
 public final class Protocol {
 	private Protocol(){}
 
-	public static class RankingByMonthResponse {
+	private static class RankingByMonthResponse {
 		public String month;
 		public RankingByMonth[] rows;
 	}

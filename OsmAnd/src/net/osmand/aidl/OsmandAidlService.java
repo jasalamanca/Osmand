@@ -41,11 +41,11 @@ import java.util.List;
 
 public class OsmandAidlService extends Service {
 
-	OsmandApplication getApp() {
+	private OsmandApplication getApp() {
 		return (OsmandApplication) getApplication();
 	}
 
-	OsmandAidlApi getApi() {
+	private OsmandAidlApi getApi() {
 		return getApp().getAidlApi();
 	}
 
@@ -58,7 +58,7 @@ public class OsmandAidlService extends Service {
 	private final IOsmAndAidlInterface.Stub mBinder = new IOsmAndAidlInterface.Stub() {
 
 		@Override
-		public boolean refreshMap() throws RemoteException {
+		public boolean refreshMap() {
 			try {
 				return getApi().reloadMap();
 			} catch (Exception e) {
@@ -67,7 +67,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean addFavoriteGroup(AddFavoriteGroupParams params) throws RemoteException {
+		public boolean addFavoriteGroup(AddFavoriteGroupParams params) {
 			try {
 				return params != null && getApi().addFavoriteGroup(params.getFavoriteGroup());
 			} catch (Exception e) {
@@ -76,7 +76,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean removeFavoriteGroup(RemoveFavoriteGroupParams params) throws RemoteException {
+		public boolean removeFavoriteGroup(RemoveFavoriteGroupParams params) {
 			try {
 				return params != null && getApi().removeFavoriteGroup(params.getFavoriteGroup());
 			} catch (Exception e) {
@@ -85,7 +85,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean updateFavoriteGroup(UpdateFavoriteGroupParams params) throws RemoteException {
+		public boolean updateFavoriteGroup(UpdateFavoriteGroupParams params) {
 			try {
 				return params != null && getApi().updateFavoriteGroup(params.getFavoriteGroupPrev(), params.getFavoriteGroupNew());
 			} catch (Exception e) {
@@ -94,7 +94,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean addFavorite(AddFavoriteParams params) throws RemoteException {
+		public boolean addFavorite(AddFavoriteParams params) {
 			try {
 				return params != null && getApi().addFavorite(params.getFavorite());
 			} catch (Exception e) {
@@ -103,7 +103,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean removeFavorite(RemoveFavoriteParams params) throws RemoteException {
+		public boolean removeFavorite(RemoveFavoriteParams params) {
 			try {
 				return params != null && getApi().removeFavorite(params.getFavorite());
 			} catch (Exception e) {
@@ -112,7 +112,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean updateFavorite(UpdateFavoriteParams params) throws RemoteException {
+		public boolean updateFavorite(UpdateFavoriteParams params) {
 			try {
 				return params != null && getApi().updateFavorite(params.getFavoritePrev(), params.getFavoriteNew());
 			} catch (Exception e) {
@@ -121,7 +121,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean addMapMarker(AddMapMarkerParams params) throws RemoteException {
+		public boolean addMapMarker(AddMapMarkerParams params) {
 			try {
 				return params != null && getApi().addMapMarker(params.getMarker());
 			} catch (Exception e) {
@@ -130,7 +130,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean removeMapMarker(RemoveMapMarkerParams params) throws RemoteException {
+		public boolean removeMapMarker(RemoveMapMarkerParams params) {
 			try {
 				return params != null && getApi().removeMapMarker(params.getMarker());
 			} catch (Exception e) {
@@ -139,7 +139,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean updateMapMarker(UpdateMapMarkerParams params) throws RemoteException {
+		public boolean updateMapMarker(UpdateMapMarkerParams params) {
 			try {
 				return params != null && getApi().updateMapMarker(params.getMarkerPrev(), params.getMarkerNew());
 			} catch (Exception e) {
@@ -148,7 +148,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean addMapWidget(AddMapWidgetParams params) throws RemoteException {
+		public boolean addMapWidget(AddMapWidgetParams params) {
 			try {
 				return params != null && getApi().addMapWidget(params.getWidget());
 			} catch (Exception e) {
@@ -157,7 +157,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean removeMapWidget(RemoveMapWidgetParams params) throws RemoteException {
+		public boolean removeMapWidget(RemoveMapWidgetParams params) {
 			try {
 				return params != null && getApi().removeMapWidget(params.getId());
 			} catch (Exception e) {
@@ -166,7 +166,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean updateMapWidget(UpdateMapWidgetParams params) throws RemoteException {
+		public boolean updateMapWidget(UpdateMapWidgetParams params) {
 			try {
 				return params != null && getApi().updateMapWidget(params.getWidget());
 			} catch (Exception e) {
@@ -175,7 +175,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean addMapPoint(AddMapPointParams params) throws RemoteException {
+		public boolean addMapPoint(AddMapPointParams params) {
 			try {
 				return params != null && getApi().putMapPoint(params.getLayerId(), params.getPoint());
 			} catch (Exception e) {
@@ -184,7 +184,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean removeMapPoint(RemoveMapPointParams params) throws RemoteException {
+		public boolean removeMapPoint(RemoveMapPointParams params) {
 			try {
 				return params != null && getApi().removeMapPoint(params.getLayerId(), params.getPointId());
 			} catch (Exception e) {
@@ -193,7 +193,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean updateMapPoint(UpdateMapPointParams params) throws RemoteException {
+		public boolean updateMapPoint(UpdateMapPointParams params) {
 			try {
 				return params != null && getApi().putMapPoint(params.getLayerId(), params.getPoint());
 			} catch (Exception e) {
@@ -202,7 +202,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean addMapLayer(AddMapLayerParams params) throws RemoteException {
+		public boolean addMapLayer(AddMapLayerParams params) {
 			try {
 				return params != null && getApi().addMapLayer(params.getLayer());
 			} catch (Exception e) {
@@ -211,7 +211,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean removeMapLayer(RemoveMapLayerParams params) throws RemoteException {
+		public boolean removeMapLayer(RemoveMapLayerParams params) {
 			try {
 				return params != null && getApi().removeMapLayer(params.getId());
 			} catch (Exception e) {
@@ -220,7 +220,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean updateMapLayer(UpdateMapLayerParams params) throws RemoteException {
+		public boolean updateMapLayer(UpdateMapLayerParams params) {
 			try {
 				return params != null && getApi().updateMapLayer(params.getLayer());
 			} catch (Exception e) {
@@ -229,7 +229,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean importGpx(ImportGpxParams params) throws RemoteException {
+		public boolean importGpx(ImportGpxParams params) {
 			if (params != null && !Algorithms.isEmpty(params.getDestinationPath())) {
 				if (params.getGpxFile() != null) {
 					return getApi().importGpxFromFile(params.getGpxFile(), params.getDestinationPath(),
@@ -246,7 +246,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean showGpx(ShowGpxParams params) throws RemoteException {
+		public boolean showGpx(ShowGpxParams params) {
 			if (params != null && params.getFileName() != null) {
 				return getApi().showGpx(params.getFileName());
 			}
@@ -254,7 +254,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean hideGpx(HideGpxParams params) throws RemoteException {
+		public boolean hideGpx(HideGpxParams params) {
 			if (params != null && params.getFileName() != null) {
 				return getApi().hideGpx(params.getFileName());
 			}
@@ -262,12 +262,12 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean getActiveGpx(List<ASelectedGpxFile> files) throws RemoteException {
+		public boolean getActiveGpx(List<ASelectedGpxFile> files) {
 			return getApi().getActiveGpx(files);
 		}
 
 		@Override
-		public boolean removeGpx(RemoveGpxParams params) throws RemoteException {
+		public boolean removeGpx(RemoveGpxParams params) {
 			if (params != null && params.getFileName() != null) {
 				return getApi().removeGpx(params.getFileName());
 			}
@@ -275,7 +275,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean setMapLocation(SetMapLocationParams params) throws RemoteException {
+		public boolean setMapLocation(SetMapLocationParams params) {
 			if (params != null) {
 				return getApi().setMapLocation(params.getLatitude(), params.getLongitude(),
 						params.getZoom(), params.isAnimated());
@@ -284,7 +284,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean calculateRoute(CalculateRouteParams params) throws RemoteException {
+		public boolean calculateRoute(CalculateRouteParams params) {
 			if (params == null || params.getEndPoint() == null) {
 				return false;
 			} else {
@@ -335,7 +335,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean startGpxRecording(StartGpxRecordingParams params) throws RemoteException {
+		public boolean startGpxRecording(StartGpxRecordingParams params) {
 			try {
 				return getApi().startGpxRecording(params);
 			} catch (Exception e) {
@@ -344,7 +344,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean stopGpxRecording(StopGpxRecordingParams params) throws RemoteException {
+		public boolean stopGpxRecording(StopGpxRecordingParams params) {
 			try {
 				return getApi().stopGpxRecording(params);
 			} catch (Exception e) {
@@ -353,7 +353,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean navigate(NavigateParams params) throws RemoteException {
+		public boolean navigate(NavigateParams params) {
 			try {
 				return params != null && getApi().navigate(params.getStartName(), params.getStartLat(), params.getStartLon(), params.getDestName(), params.getDestLat(), params.getDestLon(), params.getProfile(), params.isForce());
 			} catch (Exception e) {
@@ -362,7 +362,7 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean navigateGpx(NavigateGpxParams params) throws RemoteException {
+		public boolean navigateGpx(NavigateGpxParams params) {
 			try {
 				return params != null && getApi().navigateGpx(params.getData(), params.getUri(), params.isForce());
 			} catch (Exception e) {

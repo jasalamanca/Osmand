@@ -21,21 +21,18 @@ public class MapMarkersItemTouchHelperCallback extends ItemTouchHelper.Callback 
 	private MapActivity mapActivity;
 	private boolean swipeEnabled = true;
 
-	private Paint backgroundPaint = new Paint();
-	private Paint iconPaint = new Paint();
-	private Paint textPaint = new Paint();
+	private final Paint backgroundPaint = new Paint();
+	private final Paint iconPaint = new Paint();
+	private final Paint textPaint = new Paint();
 
 	private float marginSides;
-	private Bitmap deleteBitmap;
-	private Bitmap historyBitmap;
+    private Bitmap historyBitmap;
 	private boolean iconHidden;
 	private boolean night;
 
-	private String delStr;
-	private String moveToHistoryStr;
+    private String moveToHistoryStr;
 
-	private int delStrWidth;
-	private int textHeight;
+    private int textHeight;
 
 	public MapMarkersItemTouchHelperCallback(ItemTouchHelperAdapter adapter) {
 		this.adapter = adapter;
@@ -46,7 +43,7 @@ public class MapMarkersItemTouchHelperCallback extends ItemTouchHelper.Callback 
 		this.mapActivity = mapActivity;
 		this.adapter = adapter;
 		marginSides = mapActivity.getResources().getDimension(R.dimen.list_content_padding);
-		deleteBitmap = BitmapFactory.decodeResource(mapActivity.getResources(), R.drawable.ic_action_delete_dark);
+        Bitmap deleteBitmap = BitmapFactory.decodeResource(mapActivity.getResources(), R.drawable.ic_action_delete_dark);
 		historyBitmap = BitmapFactory.decodeResource(mapActivity.getResources(), R.drawable.ic_action_history);
 		night = !mapActivity.getMyApplication().getSettings().isLightContent();
 
@@ -60,12 +57,12 @@ public class MapMarkersItemTouchHelperCallback extends ItemTouchHelper.Callback 
 		textPaint.setFakeBoldText(true);
 		textPaint.setAntiAlias(true);
 
-		delStr = mapActivity.getString(R.string.shared_string_delete).toUpperCase();
+        String delStr = mapActivity.getString(R.string.shared_string_delete).toUpperCase();
 		moveToHistoryStr = mapActivity.getString(R.string.move_to_history).toUpperCase();
 		Rect bounds = new Rect();
 
 		textPaint.getTextBounds(delStr, 0, delStr.length(), bounds);
-		delStrWidth = bounds.width();
+        int delStrWidth = bounds.width();
 		textHeight = bounds.height();
 	}
 

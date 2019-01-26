@@ -57,14 +57,14 @@ public class FavouritePointMenuBuilder extends MenuBuilder {
 
 	@Override
 	protected void buildNearestWikiRow(View view) {
-		if (originObject == null || !(originObject instanceof Amenity)) {
+		if (!(originObject instanceof Amenity)) {
 			super.buildNearestWikiRow(view);
 		}
 	}
 
 	@Override
 	public void buildInternal(View view) {
-		if (originObject != null && originObject instanceof Amenity) {
+		if (originObject instanceof Amenity) {
 			AmenityMenuBuilder builder = new AmenityMenuBuilder(mapActivity, (Amenity) originObject);
 			builder.setLatLon(getLatLon());
 			builder.setLight(light);
@@ -138,7 +138,7 @@ public class FavouritePointMenuBuilder extends MenuBuilder {
 	}
 
 	private CollapsableView getCollapsableFavouritesView(final Context context, boolean collapsed, @NonNull final FavoriteGroup group, FavouritePoint selectedPoint) {
-		LinearLayout view = (LinearLayout) buildCollapsableContentView(context, collapsed, true);
+		LinearLayout view = buildCollapsableContentView(context, collapsed, true);
 
 		List<FavouritePoint> points = group.points;
 		for (int i = 0; i < points.size() && i < 10; i++) {

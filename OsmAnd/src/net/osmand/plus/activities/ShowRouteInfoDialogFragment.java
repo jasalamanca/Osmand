@@ -72,7 +72,7 @@ import static net.osmand.binary.RouteDataObject.HEIGHT_UNDEFINED;
 
 public class ShowRouteInfoDialogFragment extends DialogFragment {
 
-	public static final String TAG = "ShowRouteInfoDialogFragment";
+	private static final String TAG = "ShowRouteInfoDialogFragment";
 
 	private RoutingHelper helper;
 	private View view;
@@ -80,8 +80,7 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 	private RouteInfoAdapter adapter;
 	private GPXFile gpx;
 	private OrderedLineDataSet elevationDataSet;
-	private OrderedLineDataSet slopeDataSet;
-	private GpxDisplayItem gpxItem;
+    private GpxDisplayItem gpxItem;
 	private boolean hasHeights;
 
 	public ShowRouteInfoDialogFragment() {
@@ -107,7 +106,7 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 
 		view = inflater.inflate(R.layout.route_info_layout, container, false);
 
-		Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+		Toolbar toolbar = view.findViewById(R.id.toolbar);
 		toolbar.setNavigationIcon(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_arrow_back));
 		toolbar.setNavigationContentDescription(R.string.shared_string_close);
 		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -124,7 +123,7 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 
 		buildMenuButtons();
 
-		listView = (ListView) view.findViewById(android.R.id.list);
+		listView = view.findViewById(android.R.id.list);
 		listView.setBackgroundColor(getResources().getColor(
 				app.getSettings().isLightContent() ? R.color.ctx_menu_info_view_bg_light
 						: R.color.ctx_menu_info_view_bg_dark));
@@ -236,7 +235,7 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 
 	private void buildHeader(View headerView) {
 		OsmandApplication app = getMyApplication();
-		final LineChart mChart = (LineChart) headerView.findViewById(R.id.chart);
+		final LineChart mChart = headerView.findViewById(R.id.chart);
 		GpxUiHelper.setupGPXChart(app, mChart, 4);
 		mChart.setOnTouchListener(new View.OnTouchListener() {
 			@Override
@@ -247,7 +246,8 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 		});
 
 		GPXTrackAnalysis analysis = gpx.getAnalysis(0);
-		if (analysis.hasElevationData) {
+        OrderedLineDataSet slopeDataSet;
+        if (analysis.hasElevationData) {
 			List<ILineDataSet> dataSets = new ArrayList<>();
 			elevationDataSet = GpxUiHelper.createGPXElevationDataSet(app, mChart, analysis,
 					GPXDataSetAxisType.DISTANCE, false, true);
@@ -353,7 +353,7 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 		});
 	}
 
-	void openDetails() {
+	private void openDetails() {
 		if (gpxItem != null) {
 			LatLon location = null;
 			WptPt wpt = null;
@@ -416,7 +416,7 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 
 	private void buildMenuButtons() {
 		IconsCache iconsCache = getMyApplication().getIconsCache();
-		ImageButton printRoute = (ImageButton) view.findViewById(R.id.print_route);
+		ImageButton printRoute = view.findViewById(R.id.print_route);
 		printRoute.setImageDrawable(iconsCache.getThemedIcon(R.drawable.ic_action_gprint_dark));
 		printRoute.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -425,7 +425,7 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 			}
 		});
 
-		ImageButton saveRoute = (ImageButton) view.findViewById(R.id.save_as_gpx);
+		ImageButton saveRoute = view.findViewById(R.id.save_as_gpx);
 		saveRoute.setImageDrawable(iconsCache.getThemedIcon(R.drawable.ic_action_gsave_dark));
 		saveRoute.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -434,7 +434,7 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 			}
 		});
 
-		ImageButton shareRoute = (ImageButton) view.findViewById(R.id.share_as_gpx);
+		ImageButton shareRoute = view.findViewById(R.id.share_as_gpx);
 		shareRoute.setImageDrawable(iconsCache.getThemedIcon(R.drawable.ic_action_gshare_dark));
 		shareRoute.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -478,17 +478,17 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 
 	class RouteInfoAdapter extends ArrayAdapter<RouteDirectionInfo> {
 		public class CumulativeInfo {
-			public int distance;
-			public int time;
+			int distance;
+			int time;
 
-			public CumulativeInfo() {
+			CumulativeInfo() {
 				distance = 0;
 				time = 0;
 			}
 		}
 
 		private final int lastItemIndex;
-		private boolean light;
+		private final boolean light;
 
 		RouteInfoAdapter(List<RouteDirectionInfo> list) {
 			super(getActivity(), R.layout.route_info_list_item, list);
@@ -507,12 +507,12 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 				row = inflater.inflate(R.layout.route_info_list_item, parent, false);
 			}
 			RouteDirectionInfo model = getItem(position);
-			TextView label = (TextView) row.findViewById(R.id.description);
-			TextView distanceLabel = (TextView) row.findViewById(R.id.distance);
-			TextView timeLabel = (TextView) row.findViewById(R.id.time);
-			TextView cumulativeDistanceLabel = (TextView) row.findViewById(R.id.cumulative_distance);
-			TextView cumulativeTimeLabel = (TextView) row.findViewById(R.id.cumulative_time);
-			ImageView icon = (ImageView) row.findViewById(R.id.direction);
+			TextView label = row.findViewById(R.id.description);
+			TextView distanceLabel = row.findViewById(R.id.distance);
+			TextView timeLabel = row.findViewById(R.id.time);
+			TextView cumulativeDistanceLabel = row.findViewById(R.id.cumulative_distance);
+			TextView cumulativeTimeLabel = row.findViewById(R.id.cumulative_time);
+			ImageView icon = row.findViewById(R.id.direction);
 			row.findViewById(R.id.divider).setVisibility(position == getCount() - 1 ? View.INVISIBLE : View.VISIBLE);
 
 			TurnPathHelper.RouteDrawable drawable = new TurnPathHelper.RouteDrawable(getResources(), true);
@@ -541,10 +541,10 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 			return row;
 		}
 
-		public CumulativeInfo getRouteDirectionCumulativeInfo(int position) {
+		CumulativeInfo getRouteDirectionCumulativeInfo(int position) {
 			CumulativeInfo cumulativeInfo = new CumulativeInfo();
 			for (int i = 0; i < position; i++) {
-				RouteDirectionInfo routeDirectionInfo = (RouteDirectionInfo) getItem(i);
+				RouteDirectionInfo routeDirectionInfo = getItem(i);
 				cumulativeInfo.time += routeDirectionInfo.getExpectedTime();
 				cumulativeInfo.distance += routeDirectionInfo.distance;
 			}
@@ -557,7 +557,7 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 		return Algorithms.formatDuration(timeInSeconds, getMyApplication().accessibilityEnabled());
 	}
 
-	void print() {
+	private void print() {
 		File file = generateRouteInfoHtml(adapter, helper.getGeneralRouteInformation());
 		if (file.exists()) {
 			Uri uri = Uri.fromFile(file);
@@ -614,7 +614,7 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 		final String NBSP = "&nbsp;";
 		final String BR = "<br>";
 		for (int i = 0; i < routeInfo.getCount(); i++) {
-			RouteDirectionInfo routeDirectionInfo = (RouteDirectionInfo) routeInfo.getItem(i);
+			RouteDirectionInfo routeDirectionInfo = routeInfo.getItem(i);
 			StringBuilder sb = new StringBuilder();
 			sb.append(OsmAndFormatter.getFormattedDistance(routeDirectionInfo.distance, getMyApplication()));
 			sb.append(", ").append(NBSP);
@@ -654,7 +654,7 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 		final String NBSP = "&nbsp;";
 		final String BR = "<br>";
 		for (int i = 0; i < routeInfo.getCount(); i++) {
-			RouteDirectionInfo routeDirectionInfo = (RouteDirectionInfo) routeInfo.getItem(i);
+			RouteDirectionInfo routeDirectionInfo = routeInfo.getItem(i);
 			html.append("<tr>");
 			StringBuilder sb = new StringBuilder();
 			sb.append(OsmAndFormatter.getFormattedDistance(routeDirectionInfo.distance, getMyApplication()));

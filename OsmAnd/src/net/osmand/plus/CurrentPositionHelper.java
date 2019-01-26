@@ -35,11 +35,11 @@ public class CurrentPositionHelper {
 	private Location lastAskedLocation = null;
 	private RoutingContext ctx;
 	private RoutingContext defCtx;
-	private OsmandApplication app;
+	private final OsmandApplication app;
 	private ApplicationMode am;
 	private List<BinaryMapReaderResource> usedReaders = new ArrayList<>();
 	private static final org.apache.commons.logging.Log log = PlatformUtil.getLog(CurrentPositionHelper.class);
-	private ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
+	private final ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
 
 	public CurrentPositionHelper(OsmandApplication app) {
 		this.app = app;
@@ -172,7 +172,7 @@ public class CurrentPositionHelper {
 	private List<GeocodingResult> runUpdateInThread(double lat, double lon,
 													boolean geocoding,
 													boolean allowEmptyNames,
-													@Nullable ApplicationMode appMode) throws IOException {
+													@Nullable ApplicationMode appMode) {
 
 		List<BinaryMapReaderResource> checkReaders = checkReaders(lat, lon, usedReaders);
 		if (appMode == null) {

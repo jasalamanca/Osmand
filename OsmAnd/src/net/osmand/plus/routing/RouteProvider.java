@@ -57,7 +57,7 @@ public class RouteProvider {
 		// parameters
 		private final GPXFile file;
 		private boolean reverse;
-		private boolean leftSide;
+		private final boolean leftSide;
 		private boolean passWholeRoute;
 		private boolean calculateOsmAndRouteParts;
 		private boolean useIntermediatePointsRTE;
@@ -125,7 +125,7 @@ public class RouteProvider {
 	}
 
 	public static class GPXRouteParams {
-		List<Location> points = new ArrayList<Location>();
+		final List<Location> points = new ArrayList<Location>();
 		List<RouteDirectionInfo> directions;
 		boolean calculateOsmAndRoute;
 		boolean passWholeRoute;
@@ -135,11 +135,11 @@ public class RouteProvider {
 
 		boolean addMissingTurns = true;
 
-		public List<Location> getPoints() {
+		List<Location> getPoints() {
 			return points;
 		}
 
-		public GPXRouteParams prepareGPXFile(GPXRouteParamsBuilder builder) {
+		GPXRouteParams prepareGPXFile(GPXRouteParamsBuilder builder) {
 			GPXFile file = builder.file;
 			boolean reverse = builder.reverse; 
 			passWholeRoute = builder.passWholeRoute;
@@ -353,8 +353,8 @@ public class RouteProvider {
 		}
 	}
 
-	public void insertInitialSegment(RouteCalculationParams routeParams, List<Location> points,
-			List<RouteDirectionInfo> directions, boolean calculateOsmAndRouteParts) {
+	private void insertInitialSegment(RouteCalculationParams routeParams, List<Location> points,
+                                      List<RouteDirectionInfo> directions, boolean calculateOsmAndRouteParts) {
 		Location realStart = routeParams.start;
 		if (realStart != null && points.size() > 0 && realStart.distanceTo(points.get(0)) > 60) {
 			Location trackStart = points.get(0);
@@ -443,7 +443,7 @@ public class RouteProvider {
 		return ctx.getString(resId);
 	}
 
-	protected RouteCalculationResult findVectorMapsRoute(final RouteCalculationParams params, boolean calcGPXRoute) throws IOException {
+	private RouteCalculationResult findVectorMapsRoute(final RouteCalculationParams params, boolean calcGPXRoute) throws IOException {
 		BinaryMapIndexReader[] files = params.ctx.getResourceManager().getRoutingMapFiles();
 		RoutePlannerFrontEnd router = new RoutePlannerFrontEnd();
 		OsmandSettings settings = params.ctx.getSettings();
@@ -529,7 +529,7 @@ public class RouteProvider {
 	}
 
 	private RoutingConfiguration initOsmAndRoutingConfig(Builder config, final RouteCalculationParams params, OsmandSettings settings,
-			GeneralRouter generalRouter) throws IOException, FileNotFoundException {
+			GeneralRouter generalRouter) {
 		GeneralRouterProfile p ;
 		if (params.mode.isDerivedRoutingFrom(ApplicationMode.BICYCLE)) {
 			p = GeneralRouterProfile.BICYCLE;
@@ -690,7 +690,7 @@ public class RouteProvider {
 						RouteDirectionInfo last = directions.get(directions.size() - 1);
 						// update speed using time and idstance
 						last.setAverageSpeed((distanceToEnd[last.routePointOffset] - distanceToEnd[offset])/last.getAverageSpeed());
-						last.distance = (int) Math.round(distanceToEnd[last.routePointOffset] - distanceToEnd[offset]);
+						last.distance = Math.round(distanceToEnd[last.routePointOffset] - distanceToEnd[offset]);
 					} 
 					// save time as a speed because we don't know distance of the route segment
 					float avgSpeed = time;

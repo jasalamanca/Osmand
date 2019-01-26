@@ -29,11 +29,11 @@ import net.osmand.plus.widgets.OsmandTextFieldBoxes;
 
 public class RenameMarkerBottomSheetDialogFragment extends BottomSheetDialogFragment {
 
-	public final static String TAG = "RenameMarkerBottomSheetDialogFragment";
+	private final static String TAG = "RenameMarkerBottomSheetDialogFragment";
 
 	private MapMarker marker;
 
-	public void setMarker(MapMarker marker) {
+	private void setMarker(MapMarker marker) {
 		this.marker = marker;
 	}
 
@@ -47,7 +47,7 @@ public class RenameMarkerBottomSheetDialogFragment extends BottomSheetDialogFrag
 
 		final View mainView = View.inflate(new ContextThemeWrapper(getContext(), themeRes), R.layout.fragment_rename_marker_bottom_sheet_dialog, container);
 
-		LinearLayout contentLayout = (LinearLayout) mainView.findViewById(R.id.content_linear_layout);
+		LinearLayout contentLayout = mainView.findViewById(R.id.content_linear_layout);
 		int layoutRes = Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH
 				? R.layout.markers_track_name_text_field_box
 				: R.layout.markers_track_name_edit_text;
@@ -57,7 +57,7 @@ public class RenameMarkerBottomSheetDialogFragment extends BottomSheetDialogFrag
 			AndroidUtils.setBackground(getActivity(), mainView, nightMode, R.drawable.bg_bottom_menu_light, R.drawable.bg_bottom_menu_dark);
 		}
 
-		final EditText nameEditText = (EditText) mainView.findViewById(R.id.name_edit_text);
+		final EditText nameEditText = mainView.findViewById(R.id.name_edit_text);
 		if (nightMode) {
 			nameEditText.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_white));
 		}

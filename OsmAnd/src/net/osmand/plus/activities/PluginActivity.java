@@ -58,14 +58,14 @@ public class PluginActivity extends OsmandActionBarActivity {
 		//noinspection ConstantConditions
 		getSupportActionBar().setTitle(plugin.getName());
 		if(plugin.getAssetResourceName() != 0 && Build.VERSION.SDK_INT >= 14) {
-			ImageView img = (ImageView) findViewById(R.id.plugin_image);
+			ImageView img = findViewById(R.id.plugin_image);
 			img.setImageResource(plugin.getAssetResourceName());
 		}
 
-		TextView descriptionView = (TextView)findViewById(R.id.plugin_description);
+		TextView descriptionView = findViewById(R.id.plugin_description);
 		descriptionView.setText(plugin.getDescription());
 
-		Button settingsButton = (Button)findViewById(R.id.plugin_settings);
+		Button settingsButton = findViewById(R.id.plugin_settings);
 		settingsButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -73,7 +73,7 @@ public class PluginActivity extends OsmandActionBarActivity {
 			}
 		});
 
-		CompoundButton enableDisableButton = (CompoundButton)findViewById(
+		CompoundButton enableDisableButton = findViewById(
 				R.id.plugin_enable_disable);
 		enableDisableButton.setOnCheckedChangeListener(
 				new CompoundButton.OnCheckedChangeListener() {
@@ -91,7 +91,7 @@ public class PluginActivity extends OsmandActionBarActivity {
 						updateState();
 					}
 				});
-		Button getButton = (Button)findViewById(R.id.plugin_get);
+		Button getButton = findViewById(R.id.plugin_get);
 		getButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -127,10 +127,10 @@ public class PluginActivity extends OsmandActionBarActivity {
 
 	@SuppressLint("NewApi")
 	private void updateState() {
-		CompoundButton enableDisableButton = (CompoundButton)findViewById(
+		CompoundButton enableDisableButton = findViewById(
 				R.id.plugin_enable_disable);
-		Button getButton = (Button)findViewById(R.id.plugin_get);
-		Button settingsButton = (Button)findViewById(R.id.plugin_settings);
+		Button getButton = findViewById(R.id.plugin_get);
+		Button settingsButton = findViewById(R.id.plugin_settings);
 		settingsButton.setCompoundDrawablesWithIntrinsicBounds(
 				getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_settings),
 				null, null, null);

@@ -24,18 +24,18 @@ import net.osmand.plus.notifications.OsmandNotification;
 
 public class NavigationService extends Service implements LocationListener {
 
-	public static class NavigationServiceBinder extends Binder {
+	static class NavigationServiceBinder extends Binder {
 
 	}
 
 	// global id don't conflict with others
-	public static int USED_BY_NAVIGATION = 1;
-	public static int USED_BY_GPX = 2;
+	public static final int USED_BY_NAVIGATION = 1;
+	public static final int USED_BY_GPX = 2;
 	public static int USED_BY_LIVE = 4;
 	public final static String USAGE_INTENT = "SERVICE_USED_BY";
 	public final static String USAGE_OFF_INTERVAL = "SERVICE_OFF_INTERVAL";
 
-	private NavigationServiceBinder binder = new NavigationServiceBinder();
+	private final NavigationServiceBinder binder = new NavigationServiceBinder();
 
 
 	private int serviceOffInterval;
@@ -47,7 +47,7 @@ public class NavigationService extends Service implements LocationListener {
 	private static WakeLock lockStatic;
 	private PendingIntent pendingIntent;
 	
-	protected int usedBy = 0;
+	private int usedBy = 0;
 	private OsmAndLocationProvider locationProvider;
 
 	@Override
@@ -55,7 +55,7 @@ public class NavigationService extends Service implements LocationListener {
 		return binder;
 	}
 
-	protected synchronized static PowerManager.WakeLock getLock(Context context) {
+	synchronized static PowerManager.WakeLock getLock(Context context) {
 		if (lockStatic == null) {
 			PowerManager mgr = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
 			lockStatic = mgr.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "OsmandServiceLock");
@@ -63,7 +63,7 @@ public class NavigationService extends Service implements LocationListener {
 		return lockStatic;
 	}
 
-	protected Handler getHandler() {
+	Handler getHandler() {
 		return handler;
 	}
 

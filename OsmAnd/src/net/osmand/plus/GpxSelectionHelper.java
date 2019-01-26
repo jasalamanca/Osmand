@@ -38,10 +38,10 @@ public class GpxSelectionHelper {
 	private static final String CURRENT_TRACK = "currentTrack";
 	private static final String FILE = "file";
 	private static final String COLOR = "color";
-	private OsmandApplication app;
+	private final OsmandApplication app;
 	@NonNull
-	private List<SelectedGpxFile> selectedGPXFiles = new java.util.ArrayList<>();
-	private SavingTrackHelper savingTrackHelper;
+	private final List<SelectedGpxFile> selectedGPXFiles = new java.util.ArrayList<>();
+	private final SavingTrackHelper savingTrackHelper;
 
 	public GpxSelectionHelper(OsmandApplication osmandApplication, SavingTrackHelper trackHelper) {
 		this.app = osmandApplication;
@@ -88,7 +88,7 @@ public class GpxSelectionHelper {
 		return null;
 	}
 
-	public void processSplit() {
+	private void processSplit() {
 		List<GpxDataItem> items = app.getGpxDatabase().getItems();
 		for (GpxDataItem dataItem : items) {
 			if (dataItem.getSplitType() != 0) {
@@ -666,7 +666,7 @@ public class GpxSelectionHelper {
 
 		private GpxDisplayItemType type = GpxDisplayItemType.TRACK_SEGMENT;
 		private List<GpxDisplayItem> list = new ArrayList<>();
-		private GPXFile gpx;
+		private final GPXFile gpx;
 		private String gpxName;
 		private String name;
 		private String description;
@@ -675,11 +675,11 @@ public class GpxSelectionHelper {
 		private int splitTime = -1;
 		private int color;
 
-		public GpxDisplayGroup(GPXFile gpx) {
+		GpxDisplayGroup(GPXFile gpx) {
 			this.gpx = gpx;
 		}
 
-		public void setTrack(Track track) {
+		void setTrack(Track track) {
 			this.track = track;
 		}
 
@@ -705,11 +705,11 @@ public class GpxSelectionHelper {
 			return description;
 		}
 
-		public void setDescription(String description) {
+		void setDescription(String description) {
 			this.description = description;
 		}
 
-		public void setName(String name) {
+		void setName(String name) {
 			this.name = name;
 		}
 
@@ -729,7 +729,7 @@ public class GpxSelectionHelper {
 			return type;
 		}
 
-		public void setType(GpxDisplayItemType type) {
+		void setType(GpxDisplayItemType type) {
 			this.type = type;
 		}
 
@@ -785,14 +785,14 @@ public class GpxSelectionHelper {
 		public GpxDisplayGroup group;
 		public WptPt locationStart;
 		public WptPt locationEnd;
-		public double splitMetric = -1;
-		public double secondarySplitMetric = -1;
+		double splitMetric = -1;
+		double secondarySplitMetric = -1;
 		public String splitName;
 		public String name;
 		public String description;
 		public String url;
 		public Bitmap image;
-		public boolean expanded;
+		boolean expanded;
 		public boolean route;
 		public boolean wasHidden = true;
 

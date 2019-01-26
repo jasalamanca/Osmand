@@ -233,7 +233,7 @@ public class DiscountHelper {
 
 	private static class DiscountBarController extends TopToolbarController {
 
-		public DiscountBarController() {
+		DiscountBarController() {
 			super(TopToolbarControllerType.DISCOUNT);
 			setSingleLineTitle(false);
 			setBackBtnIconClrIds(0, 0);

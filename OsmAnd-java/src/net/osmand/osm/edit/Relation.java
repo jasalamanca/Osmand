@@ -15,16 +15,16 @@ import net.osmand.osm.edit.Relation.RelationMember;
 public class Relation extends Entity {
 	
 	public static class RelationMember {
-		private EntityId entityId;
+		private final EntityId entityId;
 		private Entity entity;
-		private String role;
+		private final String role;
 		
-		public RelationMember(EntityId entityId, String role) {
+		RelationMember(EntityId entityId, String role) {
 			this.entityId = entityId;
 			this.role = role;
 		}
 
-		public EntityId getEntityId() {
+		EntityId getEntityId() {
 			if(entityId == null && entity != null) {
 				return EntityId.valueOf(entity);
 			}
@@ -47,7 +47,7 @@ public class Relation extends Entity {
 	}
 	
 	// lazy loading
-	List<RelationMember> members = null;
+    private List<RelationMember> members = null;
 	
 	public Relation(long id) {
 		super(id);

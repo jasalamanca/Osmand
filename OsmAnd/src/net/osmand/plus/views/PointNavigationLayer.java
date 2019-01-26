@@ -27,7 +27,6 @@ public class PointNavigationLayer extends OsmandMapLayer implements
 		IContextMenuProvider, ContextMenuLayer.IMoveObjectProvider {
 	protected final static int DIST_TO_SHOW = 80;
 
-	private Paint mPoint;
 	private Paint mBitmapPaint;
 
 	private OsmandMapTileView mView;
@@ -48,7 +47,7 @@ public class PointNavigationLayer extends OsmandMapLayer implements
 	}
 
 	private void initUI() {
-		mPoint = new Paint();
+		Paint mPoint = new Paint();
 		mPoint.setColor(ContextCompat.getColor(map, R.color.nav_point));
 		mPoint.setAntiAlias(true);
 		mPoint.setStyle(Style.FILL);
@@ -142,7 +141,7 @@ public class PointNavigationLayer extends OsmandMapLayer implements
 		}
 	}
 
-	public boolean isLocationVisible(RotatedTileBox tb, TargetPoint p) {
+	private boolean isLocationVisible(RotatedTileBox tb, TargetPoint p) {
 		if (contextMenuLayer.getMoveableObject() != null
 				&& p == contextMenuLayer.getMoveableObject()) {
 			return true;
@@ -227,7 +226,7 @@ public class PointNavigationLayer extends OsmandMapLayer implements
 
 	@Override
 	public boolean isObjectMovable(Object o) {
-		if (o != null && o instanceof TargetPoint) {
+		if (o instanceof TargetPoint) {
 			TargetPointsHelper targetPointsHelper = map.getMyApplication().getTargetPointsHelper();
 			return targetPointsHelper.getAllPoints().contains(o);
 		}

@@ -64,8 +64,7 @@ public class MapActivityLayers {
 	// the order of layer should be preserved ! when you are inserting new layer
 	private MapVectorLayer mapVectorLayer;
 	private GPXLayer gpxLayer;
-	private RouteLayer routeLayer;
-	private POIMapLayer poiMapLayer;
+    private POIMapLayer poiMapLayer;
 	private FavouritesLayer mFavouritesLayer;
 	private TransportStopsLayer transportStopsLayer;
 	private PointLocationLayer locationLayer;
@@ -79,13 +78,11 @@ public class MapActivityLayers {
 	private MapControlsLayer mapControlsLayer;
 	private MapQuickActionLayer mapQuickActionLayer;
 	private DownloadedRegionsLayer downloadedRegionsLayer;
-	private MapWidgetRegistry mapWidgetRegistry;
-	private QuickActionRegistry quickActionRegistry;
+	private final MapWidgetRegistry mapWidgetRegistry;
+	private final QuickActionRegistry quickActionRegistry;
 	private MeasurementToolLayer measurementToolLayer;
 
-	private StateChangedListener<Integer> transparencyListener;
-
-	public MapActivityLayers(MapActivity activity) {
+    public MapActivityLayers(MapActivity activity) {
 		this.activity = activity;
 		this.mapWidgetRegistry = new MapWidgetRegistry(activity.getMyApplication().getSettings());
 		this.quickActionRegistry = new QuickActionRegistry(activity.getMyApplication().getSettings());
@@ -99,7 +96,7 @@ public class MapActivityLayers {
 		return mapWidgetRegistry;
 	}
 
-	public OsmandApplication getApplication() {
+	private OsmandApplication getApplication() {
 		return (OsmandApplication) activity.getApplication();
 	}
 
@@ -128,7 +125,7 @@ public class MapActivityLayers {
 		mapView.addLayer(gpxLayer, 0.9f);
 
 		// 1. route layer
-		routeLayer = new RouteLayer(routingHelper);
+        RouteLayer routeLayer = new RouteLayer(routingHelper);
 		mapView.addLayer(routeLayer, 1);
 
 		// 2. osm bugs layer
@@ -173,13 +170,13 @@ public class MapActivityLayers {
 		contextMenuLayer.setMapQuickActionLayer(mapQuickActionLayer);
 		mapControlsLayer.setMapQuickActionLayer(mapQuickActionLayer);
 
-		transparencyListener = new StateChangedListener<Integer>() {
-			@Override
-			public void stateChanged(Integer change) {
-				mapVectorLayer.setAlpha(change);
-				mapView.refreshMap();
-			}
-		};
+        StateChangedListener<Integer> transparencyListener = new StateChangedListener<Integer>() {
+            @Override
+            public void stateChanged(Integer change) {
+                mapVectorLayer.setAlpha(change);
+                mapView.refreshMap();
+            }
+        };
 		app.getSettings().MAP_TRANSPARENCY.addListener(transparencyListener);
 
 		OsmandPlugin.createLayers(mapView, activity);
@@ -195,7 +192,7 @@ public class MapActivityLayers {
 		OsmandPlugin.refreshLayers(mapView, activity);
 	}
 
-	public void updateMapSource(OsmandMapTileView mapView) {
+	private void updateMapSource(OsmandMapTileView mapView) {
 		OsmandSettings settings = getApplication().getSettings();
 
 		// update transparency

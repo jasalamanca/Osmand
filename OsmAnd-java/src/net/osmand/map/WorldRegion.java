@@ -19,34 +19,34 @@ public class WorldRegion implements Serializable {
 	public static final String RUSSIA_REGION_ID = "russia";
 	public static final String JAPAN_REGION_ID = "japan_asia";
 	public static final String SOUTH_AMERICA_REGION_ID = "southamerica";
-	protected static final String WORLD = "world";
+	static final String WORLD = "world";
 
 	// Just a string constant
 	public static final String UNITED_KINGDOM_REGION_ID = "gb_europe";
 
 	// Hierarchy
-	protected WorldRegion superregion;
-	protected List<WorldRegion> subregions;
+    WorldRegion superregion;
+	final List<WorldRegion> subregions;
 	
 	// filled by osmand regions
-	protected RegionParams params = new RegionParams();
-	protected String regionFullName;
-	protected String regionParentFullName;
-	protected String regionName;
-	protected String regionNameEn;
-	protected String regionNameLocale;
-	protected String regionSearchText;
-	protected String regionDownloadName;
-	protected boolean regionMapDownload;
-	protected LatLon regionCenter;
+    final RegionParams params = new RegionParams();
+	final String regionFullName;
+	String regionParentFullName;
+	String regionName;
+	String regionNameEn;
+	String regionNameLocale;
+	String regionSearchText;
+	final String regionDownloadName;
+	boolean regionMapDownload;
+	LatLon regionCenter;
 
 	public static class RegionParams {
-		protected String regionLeftHandDriving;
-		protected String regionLang;
-		protected String regionMetric;
-		protected String regionRoadSigns;
-		protected String wikiLink;
-		protected String population;
+		String regionLeftHandDriving;
+		String regionLang;
+		String regionMetric;
+		String regionRoadSigns;
+		String wikiLink;
+		String population;
 
 		public String getRegionLeftHandDriving() {
 			return regionLeftHandDriving;

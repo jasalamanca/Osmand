@@ -12,40 +12,40 @@ import org.apache.commons.logging.Log;
 import java.lang.reflect.Method;
 
 
-public class MultiTouchSupport {
+class MultiTouchSupport {
 
 	private static final Log log = PlatformUtil.getLog(MultiTouchSupport.class);
 	
-	public static final int ACTION_MASK = 255;
+	private static final int ACTION_MASK = 255;
 	public static final int ACTION_POINTER_ID_SHIFT = 8;
-	public static final int ACTION_POINTER_DOWN     = 5;
-	public static final int ACTION_POINTER_UP     = 6;
+	private static final int ACTION_POINTER_DOWN     = 5;
+	private static final int ACTION_POINTER_UP     = 6;
 	private float angleStarted;
 	private float angleRelative;
 
 	public interface MultiTouchZoomListener {
 
-    		public void onZoomStarted(PointF centerPoint);
+    		void onZoomStarted(PointF centerPoint);
 
-    		public void onZoomingOrRotating(double relativeToStart, float angle);
+    		void onZoomingOrRotating(double relativeToStart, float angle);
 
-    		public void onZoomOrRotationEnded(double relativeToStart, float angleRelative);
+    		void onZoomOrRotationEnded(double relativeToStart, float angleRelative);
 
-    		public void onGestureInit(float x1, float y1, float x2, float y2);
+    		void onGestureInit(float x1, float y1, float x2, float y2);
 
-			public void onActionPointerUp();
+			void onActionPointerUp();
 
-			public void onActionCancel();
+			void onActionCancel();
 	}
 
 	private boolean multiTouchAPISupported = false;
 	private final MultiTouchZoomListener listener;
-	protected final Context ctx;
+	private final Context ctx;
 
-	protected Method getPointerCount;
-	protected Method getX;
-	protected Method getY;
-	protected Method getPointerId;
+	private Method getPointerCount;
+	private Method getX;
+	private Method getY;
+	private Method getPointerId;
 
 
 	public MultiTouchSupport(Context ctx, MultiTouchZoomListener listener){
@@ -54,7 +54,7 @@ public class MultiTouchSupport {
 		initMethods();
 	}
 
-	public boolean isMultiTouchSupported(){
+	private boolean isMultiTouchSupported(){
 		return multiTouchAPISupported;
 	}
 

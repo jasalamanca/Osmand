@@ -11,20 +11,20 @@ import net.osmand.plus.activities.MapActivity;
 
 public abstract class OsmandNotification {
 
-	public final static int NAVIGATION_NOTIFICATION_SERVICE_ID = 5;
-	public final static int GPX_NOTIFICATION_SERVICE_ID = 6;
+	final static int NAVIGATION_NOTIFICATION_SERVICE_ID = 5;
+	final static int GPX_NOTIFICATION_SERVICE_ID = 6;
 	public final static int TOP_NOTIFICATION_SERVICE_ID = 100;
 
-	public final static int WEAR_NAVIGATION_NOTIFICATION_SERVICE_ID = 1005;
-	public final static int WEAR_GPX_NOTIFICATION_SERVICE_ID = 1006;
+	final static int WEAR_NAVIGATION_NOTIFICATION_SERVICE_ID = 1005;
+	final static int WEAR_GPX_NOTIFICATION_SERVICE_ID = 1006;
 
-	protected OsmandApplication app;
-	protected boolean ongoing = true;
-	protected int color;
-	protected int icon;
-	protected boolean top;
+	final OsmandApplication app;
+	boolean ongoing = true;
+	int color;
+	int icon;
+	private boolean top;
 
-	private String groupName;
+	private final String groupName;
 
 	public enum NotificationType {
 		NAVIGATION,
@@ -32,13 +32,13 @@ public abstract class OsmandNotification {
 		GPS
 	}
 
-	public OsmandNotification(OsmandApplication app, String groupName) {
+	OsmandNotification(OsmandApplication app, String groupName) {
 		this.app = app;
 		this.groupName = groupName;
 		init();
 	}
 
-	public void init() {
+	void init() {
 	}
 
 	public String getGroupName() {
@@ -55,7 +55,7 @@ public abstract class OsmandNotification {
 		this.top = top;
 	}
 
-	protected Notification.Builder createBuilder(boolean wearable) {
+	Notification.Builder createBuilder(boolean wearable) {
 		Intent contentIntent = new Intent(app, MapActivity.class);
 		PendingIntent contentPendingIntent = PendingIntent.getActivity(app, 0, contentIntent,
 				PendingIntent.FLAG_UPDATE_CURRENT);
@@ -79,17 +79,17 @@ public abstract class OsmandNotification {
 
 	public abstract Notification.Builder buildNotification(boolean wearable);
 
-	public abstract int getOsmandNotificationId();
+	protected abstract int getOsmandNotificationId();
 
-	public abstract int getOsmandWearableNotificationId();
+	protected abstract int getOsmandWearableNotificationId();
 
-	public abstract int getPriority();
+	protected abstract int getPriority();
 
 	public abstract boolean isActive();
 
-	public abstract boolean isEnabled();
+	protected abstract boolean isEnabled();
 
-	public void setupNotification(Notification notification) {
+	void setupNotification(Notification notification) {
 	}
 
 	public void onNotificationDismissed() {

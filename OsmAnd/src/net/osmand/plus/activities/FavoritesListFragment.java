@@ -1,6 +1,3 @@
-/**
- *
- */
 package net.osmand.plus.activities;
 
 import android.app.Activity;
@@ -127,7 +124,7 @@ public class FavoritesListFragment extends OsmAndListFragment implements SearchA
 		}
 	}
 
-	public boolean isSelectFavoriteMode() {
+	private boolean isSelectFavoriteMode() {
 		return selectFavoriteMode;
 	}
 
@@ -154,13 +151,13 @@ public class FavoritesListFragment extends OsmAndListFragment implements SearchA
 	}
 
 	public static class FavouritesAdapter extends ArrayAdapter<FavouritePoint> {
-		private Activity activity;
+		private final Activity activity;
 		private LatLon location;
-		private OsmandApplication app;
+		private final OsmandApplication app;
 		private boolean searchAroundLocation;
 		private int screenOrientation;
 		private Float heading;
-		private boolean shoudShowMenuButton;
+		private final boolean shoudShowMenuButton;
 
 		public FavouritesAdapter(Activity activity, List<FavouritePoint> list,
 								 boolean shoudShowMenuButton) {
@@ -195,7 +192,7 @@ public class FavoritesListFragment extends OsmAndListFragment implements SearchA
 			});
 		}
 
-		public String getName(FavouritePoint model) {
+		String getName(FavouritePoint model) {
 			return model.getName();
 		}
 
@@ -207,15 +204,15 @@ public class FavoritesListFragment extends OsmAndListFragment implements SearchA
 				row = inflater.inflate(R.layout.favorites_list_item, parent, false);
 			}
 
-			TextView name = (TextView) row.findViewById(R.id.favourite_label);
-			TextView distanceText = (TextView) row.findViewById(R.id.distance);
-			ImageView icon = (ImageView) row.findViewById(R.id.favourite_icon);
-			ImageView direction = (ImageView) row.findViewById(R.id.direction);
-			ImageView giImage= (ImageView)row.findViewById(R.id.group_image);
+			TextView name = row.findViewById(R.id.favourite_label);
+			TextView distanceText = row.findViewById(R.id.distance);
+			ImageView icon = row.findViewById(R.id.favourite_icon);
+			ImageView direction = row.findViewById(R.id.direction);
+			ImageView giImage= row.findViewById(R.id.group_image);
 			direction.setVisibility(View.VISIBLE);
 			final FavouritePoint favorite = getItem(position);
 			if (shoudShowMenuButton) {
-				ImageButton options = (ImageButton) row.findViewById(R.id.options);
+				ImageButton options = row.findViewById(R.id.options);
 				options.setFocusable(false);
 				options.setImageDrawable(((OsmandApplication) activity.getApplication())
 						.getIconsCache().getThemedIcon(R.drawable.ic_overflow_menu_white));
@@ -240,7 +237,7 @@ public class FavoritesListFragment extends OsmAndListFragment implements SearchA
 					favorite.getLatitude(), favorite.getLongitude(), screenOrientation, app, activity);
 
 			name.setText(getName(favorite));
-			final CheckBox ch = (CheckBox) row.findViewById(R.id.toggle_item);
+			final CheckBox ch = row.findViewById(R.id.toggle_item);
 			icon.setVisibility(View.VISIBLE);
 			ch.setVisibility(View.GONE);
 			if (activity instanceof SearchActivity)
@@ -289,7 +286,7 @@ public class FavoritesListFragment extends OsmAndListFragment implements SearchA
 		}
 	}
 
-	public static void showOnMap(FavouritePoint point, Activity activity) {
+	private static void showOnMap(FavouritePoint point, Activity activity) {
 		OsmandApplication app = (OsmandApplication) activity.getApplication();
 		final OsmandSettings settings = app.getSettings();
 		LatLon location = new LatLon(point.getLatitude(), point.getLongitude());

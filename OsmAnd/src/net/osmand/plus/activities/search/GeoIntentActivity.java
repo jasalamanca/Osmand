@@ -29,8 +29,7 @@ import net.osmand.util.GeoPointParserUtil.GeoParsedPoint;
 public class GeoIntentActivity extends OsmandListActivity {
 
 	private ProgressDialog progressDlg;
-	private LatLon location;
-	protected static final boolean DO_NOT_SEARCH_ADDRESS = true;
+    protected static final boolean DO_NOT_SEARCH_ADDRESS = true;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +46,7 @@ public class GeoIntentActivity extends OsmandListActivity {
 			public void onFinish(AppInitializer init) {
 			}
 		});
-		location = getMyApplication().getSettings().getLastKnownMapLocation();
+        LatLon location = getMyApplication().getSettings().getLastKnownMapLocation();
 
 		final Intent intent = getIntent();
 		if (intent != null) {

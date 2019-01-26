@@ -27,7 +27,7 @@ import gnu.trove.list.array.TIntArrayList;
 import static android.util.TypedValue.COMPLEX_UNIT_DIP;
 
 public class ColorDialogs {
-	public static int[] paletteColors = new int[] {
+	public static final int[] paletteColors = new int[] {
 			R.string.rendering_value_darkyellow_name,
 			R.string.rendering_value_red_name,
 			R.string.rendering_value_orange_name,
@@ -41,7 +41,7 @@ public class ColorDialogs {
 			R.string.rendering_value_brown_name
 	};
 
-	public static int[] pallette = new int[] {
+	public static final int[] pallette = new int[] {
 			0xb4eecc22,
 			0xb4d00d0d,
 			0xb4ff5020,
@@ -55,7 +55,7 @@ public class ColorDialogs {
 			0xb48e2512
 	};
 
-	public static String[] paletteColorTags = new String[] {
+	private static final String[] paletteColorTags = new String[] {
 			"darkyellow",
 			"red",
 			"orange",
@@ -216,7 +216,7 @@ public class ColorDialogs {
 		return pallette[new Random().nextInt(pallette.length)];
 	}
 
-	public static String colorToString(int color) {
+	private static String colorToString(int color) {
 		String c = "";
 		if ((0xFF000000 & color) == 0xFF000000) {
 			c = Integer.toHexString(color & 0x00FFFFFF);

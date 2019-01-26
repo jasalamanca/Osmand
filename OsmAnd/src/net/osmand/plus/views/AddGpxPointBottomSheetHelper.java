@@ -40,9 +40,9 @@ public class AddGpxPointBottomSheetHelper implements OnDismissListener {
 		mapActivity = activity;
 		contextMenu = activity.getContextMenu();
 		view = activity.findViewById(R.id.add_gpx_point_bottom_sheet);
-		title = (TextView) view.findViewById(R.id.add_gpx_point_bottom_sheet_title);
-		description = (TextView) view.findViewById(R.id.description);
-		icon = (ImageView) view.findViewById(R.id.icon);
+		title = view.findViewById(R.id.add_gpx_point_bottom_sheet_title);
+		description = view.findViewById(R.id.description);
+		icon = view.findViewById(R.id.icon);
 
 		view.findViewById(R.id.create_button).setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -90,10 +90,6 @@ public class AddGpxPointBottomSheetHelper implements OnDismissListener {
 		}
 		titleText = title;
 		this.title.setText(titleText);
-	}
-
-	public boolean isVisible() {
-		return view.getVisibility() == View.VISIBLE;
 	}
 
 	public void show(NewGpxPoint newPoint) {
@@ -147,9 +143,9 @@ public class AddGpxPointBottomSheetHelper implements OnDismissListener {
 	}
 
 	public static class NewGpxPoint {
-		private PointDescription pointDescription;
-		private GPXFile gpx;
-		private QuadRect rect;
+		private final PointDescription pointDescription;
+		private final GPXFile gpx;
+		private final QuadRect rect;
 
 		public NewGpxPoint(GPXFile gpx, PointDescription pointDescription, QuadRect rect) {
 			this.gpx = gpx;
@@ -157,11 +153,11 @@ public class AddGpxPointBottomSheetHelper implements OnDismissListener {
 			this.rect = rect;
 		}
 
-		public GPXFile getGpx() {
+		GPXFile getGpx() {
 			return gpx;
 		}
 
-		public PointDescription getPointDescription() {
+		PointDescription getPointDescription() {
 			return pointDescription;
 		}
 

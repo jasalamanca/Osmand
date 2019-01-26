@@ -36,8 +36,8 @@ import java.util.List;
 
 public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 
-	private OsmandApplication app;
-	private Activity activity;
+	private final OsmandApplication app;
+	private final Activity activity;
 	private AccessibilityAssistant accessibilityAssistant;
 
 	private LatLon location;
@@ -45,15 +45,15 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 	private boolean useMapCenter;
 
 	private int screenOrientation;
-	private int dp56;
-	private int dp1;
+	private final int dp56;
+	private final int dp1;
 
 	private boolean hasSearchMoreItem;
 
 	private OnSelectionListener selectionListener;
 	private boolean selectionMode;
 	private boolean selectAll;
-	private List<QuickSearchListItem> selectedItems = new ArrayList<>();
+	private final List<QuickSearchListItem> selectedItems = new ArrayList<>();
 
 	public interface OnSelectionListener {
 
@@ -275,7 +275,7 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 			} else {
 				view = (LinearLayout) convertView;
 			}
-			final CheckBox ch = (CheckBox) view.findViewById(R.id.toggle_item);
+			final CheckBox ch = view.findViewById(R.id.toggle_item);
 			ch.setVisibility(View.VISIBLE);
 			ch.setChecked(selectAll);
 			ch.setOnClickListener(new View.OnClickListener() {
@@ -331,7 +331,7 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 				view = (LinearLayout) convertView;
 			}
 
-			final CheckBox ch = (CheckBox) view.findViewById(R.id.toggle_item);
+			final CheckBox ch = view.findViewById(R.id.toggle_item);
 			if (selectionMode) {
 				ch.setVisibility(View.VISIBLE);
 				ch.setChecked(selectedItems.contains(listItem));
@@ -346,9 +346,9 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 				ch.setVisibility(View.GONE);
 			}
 
-			ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
-			TextView title = (TextView) view.findViewById(R.id.title);
-			TextView subtitle = (TextView) view.findViewById(R.id.subtitle);
+			ImageView imageView = view.findViewById(R.id.imageView);
+			TextView title = view.findViewById(R.id.title);
+			TextView subtitle = view.findViewById(R.id.subtitle);
 
 			imageView.setImageDrawable(listItem.getIcon());
 			String name = listItem.getName();
@@ -369,7 +369,7 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 			}
 
 			Drawable typeIcon = listItem.getTypeIcon();
-			ImageView group = (ImageView) view.findViewById(R.id.type_name_icon);
+			ImageView group = view.findViewById(R.id.type_name_icon);
 			if (typeIcon != null && hasDesc) {
 				group.setImageDrawable(typeIcon);
 				group.setVisibility(View.VISIBLE);
@@ -377,9 +377,9 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 				group.setVisibility(View.GONE);
 			}
 
-			LinearLayout timeLayout = (LinearLayout) view.findViewById(R.id.time_layout);
-			TextView timeText = (TextView) view.findViewById(R.id.time);
-			ImageView timeIcon = (ImageView) view.findViewById(R.id.time_icon);
+			LinearLayout timeLayout = view.findViewById(R.id.time_layout);
+			TextView timeText = view.findViewById(R.id.time);
+			ImageView timeIcon = view.findViewById(R.id.time_icon);
 			if (listItem.getSearchResult().object instanceof Amenity
 					&& ((Amenity) listItem.getSearchResult().object).getOpeningHours() != null) {
 				Amenity amenity = (Amenity) listItem.getSearchResult().object;
@@ -480,8 +480,8 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 	}
 
 	private void updateDistanceDirection(View view, QuickSearchListItem listItem) {
-		TextView distanceText = (TextView) view.findViewById(R.id.distance);
-		ImageView direction = (ImageView) view.findViewById(R.id.direction);
+		TextView distanceText = view.findViewById(R.id.distance);
+		ImageView direction = view.findViewById(R.id.direction);
 		SearchPhrase phrase = listItem.getSearchResult().requiredSearchPhrase;
 		LatLon loc = location;
 		if(phrase != null && useMapCenter) {

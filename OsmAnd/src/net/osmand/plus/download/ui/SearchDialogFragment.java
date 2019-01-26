@@ -69,8 +69,7 @@ public class SearchDialogFragment extends DialogFragment implements DownloadEven
 	private SearchListAdapter listAdapter;
 	private BannerAndDownloadFreeVersion banner;
 	private String searchText;
-	private View searchView;
-	private EditText searchEditText;
+    private EditText searchEditText;
 	private ProgressBar progressBar;
 	private ImageButton clearButton;
 
@@ -96,7 +95,7 @@ public class SearchDialogFragment extends DialogFragment implements DownloadEven
 		if (searchText == null)
 			searchText = "";
 
-		Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+		Toolbar toolbar = view.findViewById(R.id.toolbar);
 		toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
 		toolbar.setNavigationContentDescription(R.string.access_shared_string_navigate_up);
 		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -109,7 +108,7 @@ public class SearchDialogFragment extends DialogFragment implements DownloadEven
 		banner = new BannerAndDownloadFreeVersion(view, (DownloadActivity) getActivity(), false);
 
 		LinearLayout ll = (LinearLayout) view;
-		ExpandableListView expandablelistView = (ExpandableListView) view.findViewById(android.R.id.list);
+		ExpandableListView expandablelistView = view.findViewById(android.R.id.list);
 		ll.removeView(expandablelistView);
 
 		listView = new ListView(getActivity());
@@ -127,18 +126,18 @@ public class SearchDialogFragment extends DialogFragment implements DownloadEven
 		TypedValue typedValue = new TypedValue();
 		getActivity().getTheme().resolveAttribute(R.attr.toolbar_theme, typedValue, true);
 
-		searchView = inflater.inflate(R.layout.search_text_layout, toolbar, false);
+        View searchView = inflater.inflate(R.layout.search_text_layout, toolbar, false);
 		toolbar.addView(searchView);
 
-		searchEditText = (EditText) view.findViewById(R.id.searchEditText);
+		searchEditText = view.findViewById(R.id.searchEditText);
 		searchEditText.setHint(R.string.search_map_hint);
 		searchEditText.setTextColor(Color.WHITE);
 		boolean isLight = getMyApplication().getSettings().isLightContent();
 		searchEditText.setHintTextColor(isLight ?
 				getMyApplication().getResources().getColor(R.color.inactive_item_orange) : getMyApplication().getResources().getColor(R.color.searchbar_tab_inactive_dark));
 
-		progressBar = (ProgressBar) view.findViewById(R.id.searchProgressBar);
-		clearButton = (ImageButton) view.findViewById(R.id.clearButton);
+		progressBar = view.findViewById(R.id.searchProgressBar);
+		clearButton = view.findViewById(R.id.clearButton);
 		clearButton.setVisibility(View.GONE);
 
 		searchEditText.addTextChangedListener(new TextWatcher() {
@@ -219,7 +218,7 @@ public class SearchDialogFragment extends DialogFragment implements DownloadEven
 		}
 	}
 
-	public void updateSearchText(String searchText) {
+	private void updateSearchText(String searchText) {
 		this.searchText = searchText;
 		SearchListAdapter.SearchIndexFilter filter = (SearchListAdapter.SearchIndexFilter) listAdapter.getFilter();
 		filter.cancelFilter();
@@ -279,12 +278,12 @@ public class SearchDialogFragment extends DialogFragment implements DownloadEven
 	private class SearchListAdapter extends BaseAdapter implements Filterable {
 
 		private SearchIndexFilter mFilter;
-		private OsmandRegions osmandRegions;
+		private final OsmandRegions osmandRegions;
 
-		private List<Object> items = new LinkedList<>();
-		private DownloadActivity ctx;
+		private final List<Object> items = new LinkedList<>();
+		private final DownloadActivity ctx;
 
-		public SearchListAdapter(DownloadActivity ctx) {
+		SearchListAdapter(DownloadActivity ctx) {
 			this.ctx = ctx;
 			this.osmandRegions = ctx.getMyApplication().getRegions();
 			TypedArray ta = ctx.getTheme().obtainStyledAttributes(new int[]{android.R.attr.textColorPrimary});
@@ -386,7 +385,7 @@ public class SearchDialogFragment extends DialogFragment implements DownloadEven
 			private final WeakReference<ItemViewHolder> viewHolderReference;
 			private final CityItem cityItem;
 
-			public IndexItemResolverTask(ItemViewHolder viewHolder, CityItem cityItem) {
+			IndexItemResolverTask(ItemViewHolder viewHolder, CityItem cityItem) {
 				this.viewHolderReference = new WeakReference<>(viewHolder);
 				this.cityItem = cityItem;
 			}
@@ -430,16 +429,16 @@ public class SearchDialogFragment extends DialogFragment implements DownloadEven
 
 		private final class SearchIndexFilter extends Filter {
 
-			private OsmandRegions osmandRegions;
+			private final OsmandRegions osmandRegions;
 			private final int searchCityLimit = 10000;
 			private final List<String> citySubTypes = Arrays.asList("city", "town");
 			private SearchRequest<Amenity> searchCityRequest;
 
-			public SearchIndexFilter() {
+			SearchIndexFilter() {
 				this.osmandRegions = ctx.getMyApplication().getRegions();
 			}
 
-			public void cancelFilter() {
+			void cancelFilter() {
 				if (searchCityRequest != null) {
 					searchCityRequest.setInterrupted(true);
 				}
@@ -497,7 +496,7 @@ public class SearchDialogFragment extends DialogFragment implements DownloadEven
 				}
 			}
 
-			public List<CityItem> searchCities(final OsmandApplication app, final String text) throws IOException {
+			List<CityItem> searchCities(final OsmandApplication app, final String text) throws IOException {
 				IndexItem worldBaseMapItem = app.getDownloadThread().getIndexes().getWorldBaseMapItem();
 				if (worldBaseMapItem == null || !worldBaseMapItem.isDownloaded()) {
 					return new ArrayList<>();

@@ -23,9 +23,9 @@ public class DownloadResourceGroup {
 	// ASSERT: individualResources are not empty if and only if groups are empty
 	private final List<IndexItem> individualResources;
 	private final List<DownloadResourceGroup> groups;
-	protected final String id;
+	private final String id;
 
-	protected WorldRegion region;
+	WorldRegion region;
 
 	public enum DownloadResourceGroupType {
 		// headers
@@ -48,7 +48,7 @@ public class DownloadResourceGroup {
 
 		final int resId;
 
-		private DownloadResourceGroupType(int resId) {
+		DownloadResourceGroupType(int resId) {
 			this.resId = resId;
 		}
 
@@ -69,7 +69,7 @@ public class DownloadResourceGroup {
 			return isHeader() && this != SUBREGIONS && this != OTHER_GROUP;
 		}
 
-		public boolean isHeader() {
+		boolean isHeader() {
 			return this == VOICE_HEADER_REC || this == VOICE_HEADER_TTS || this == SUBREGIONS
 					|| this == WORLD_MAPS || this == REGION_MAPS || this == OTHER_GROUP
 					|| this == FONTS_HEADER;
@@ -80,11 +80,11 @@ public class DownloadResourceGroup {
 		}
 	}
 	
-	public DownloadResourceGroup(DownloadResourceGroup parentGroup, DownloadResourceGroupType type) {
+	DownloadResourceGroup(DownloadResourceGroup parentGroup, DownloadResourceGroupType type) {
 		this(parentGroup, type, type.getDefaultId());
 	}
 
-	public DownloadResourceGroup(DownloadResourceGroup parentGroup, DownloadResourceGroupType type, String id) {
+	DownloadResourceGroup(DownloadResourceGroup parentGroup, DownloadResourceGroupType type, String id) {
 		boolean flat = type.containsIndexItem();
 		if (flat) {
 			this.individualResources = new ArrayList<IndexItem>();
@@ -112,7 +112,7 @@ public class DownloadResourceGroup {
 		}
 	}
 
-	public DownloadResourceGroup getRegionGroup(WorldRegion region) {
+	private DownloadResourceGroup getRegionGroup(WorldRegion region) {
 		DownloadResourceGroup res = null;
 		if (this.region == region) {
 			res = this;
@@ -132,7 +132,7 @@ public class DownloadResourceGroup {
 		return res;
 	}
 
-	public void trimEmptyGroups() {
+	void trimEmptyGroups() {
 		if(groups != null) {
 			for(DownloadResourceGroup gr : groups) {
 				gr.trimEmptyGroups();
@@ -152,7 +152,7 @@ public class DownloadResourceGroup {
 		return subGroupById == null || subGroupById.isEmpty();
 	}
 
-	public void addGroup(DownloadResourceGroup g) {
+	void addGroup(DownloadResourceGroup g) {
 		if(type.isScreen()) {
 			if(!g.type.isHeader()) {
 				throw new UnsupportedOperationException("Trying to add " + g.getUniqueId() + " to " + getUniqueId());
@@ -186,12 +186,12 @@ public class DownloadResourceGroup {
 		}
 	}
 	
-	public void addItem(IndexItem i) {
+	void addItem(IndexItem i) {
 		i.setRelatedGroup(this);
 		individualResources.add(i);
 	}
 	
-	public boolean isEmpty() {
+	private boolean isEmpty() {
 		return isEmpty(individualResources) && isEmpty(groups);
 	}
 
@@ -225,7 +225,7 @@ public class DownloadResourceGroup {
 		return null;
 	}
 
-	public DownloadResources getRoot() {
+	private DownloadResources getRoot() {
 		if (this instanceof DownloadResources) {
 			return (DownloadResources) this;
 		} else if (parentGroup != null) {

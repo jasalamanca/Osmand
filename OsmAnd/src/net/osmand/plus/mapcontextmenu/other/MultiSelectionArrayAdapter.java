@@ -16,9 +16,9 @@ import net.osmand.plus.R;
 
 import java.util.List;
 
-public class MultiSelectionArrayAdapter extends ArrayAdapter<MapMultiSelectionMenu.MenuObject> {
+class MultiSelectionArrayAdapter extends ArrayAdapter<MapMultiSelectionMenu.MenuObject> {
 
-	private MapMultiSelectionMenu menu;
+	private final MapMultiSelectionMenu menu;
 	private OnClickListener listener;
 
 	MultiSelectionArrayAdapter(@NonNull MapMultiSelectionMenu menu, int resource, @NonNull List<MapMultiSelectionMenu.MenuObject> objects) {
@@ -48,7 +48,7 @@ public class MultiSelectionArrayAdapter extends ArrayAdapter<MapMultiSelectionMe
 			});
 			IconsCache iconsCache = menu.getMapActivity().getMyApplication().getIconsCache();
 			final View iconLayout = convertView.findViewById(R.id.context_menu_icon_layout);
-			final ImageView iconView = (ImageView) convertView.findViewById(R.id.context_menu_icon_view);
+			final ImageView iconView = convertView.findViewById(R.id.context_menu_icon_view);
 			Drawable icon = item.getRightIcon();
 			int iconId = item.getRightIconId();
 			if (icon != null) {
@@ -63,14 +63,14 @@ public class MultiSelectionArrayAdapter extends ArrayAdapter<MapMultiSelectionMe
 			}
 
 			// Text line 1
-			TextView line1 = (TextView) convertView.findViewById(R.id.context_menu_line1);
+			TextView line1 = convertView.findViewById(R.id.context_menu_line1);
 			line1.setTextColor(ContextCompat.getColor(getContext(),
 					!menu.isLight() ? R.color.ctx_menu_title_color_dark : R.color.ctx_menu_title_color_light));
 			line1.setText(item.getTitleStr());
 
 			// Text line 2
-			TextView line2 = (TextView) convertView.findViewById(R.id.context_menu_line2);
-			((TextView) line2).setTextColor(ContextCompat.getColor(getContext(), R.color.ctx_menu_subtitle_color));
+			TextView line2 = convertView.findViewById(R.id.context_menu_line2);
+			line2.setTextColor(ContextCompat.getColor(getContext(), R.color.ctx_menu_subtitle_color));
 			line2.setText(item.getTypeStr());
 			Drawable slIcon = item.getTypeIcon();
 			line2.setCompoundDrawablesWithIntrinsicBounds(slIcon, null, null, null);

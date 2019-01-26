@@ -60,25 +60,22 @@ public class DownloadedRegionsLayer extends OsmandMapLayer implements IContextMe
 	private OsmandRegions osmandRegions;
 	private LocalIndexHelper helper;
 
-	private TextPaint textPaint;
-	private ResourceManager rm;
+    private ResourceManager rm;
 
 	private MapLayerData<List<BinaryMapDataObject>> data;
 	private List<BinaryMapDataObject> selectedObjects = new LinkedList<>();
 
-	private static int ZOOM_TO_SHOW_MAP_NAMES = 6;
-	private static int ZOOM_AFTER_BASEMAP = 12;
+	private static final int ZOOM_TO_SHOW_MAP_NAMES = 6;
+	private static final int ZOOM_AFTER_BASEMAP = 12;
 
-	private static int ZOOM_TO_SHOW_BORDERS_ST = 4;
-	private static int ZOOM_TO_SHOW_BORDERS = 7;
-	private static int ZOOM_TO_SHOW_SELECTION_ST = 3;
-	private static int ZOOM_TO_SHOW_SELECTION = 8;
+    private static final int ZOOM_TO_SHOW_SELECTION_ST = 3;
+	private static final int ZOOM_TO_SHOW_SELECTION = 8;
 
 	public static class DownloadMapObject {
-		private BinaryMapDataObject dataObject;
-		private WorldRegion worldRegion;
-		private IndexItem indexItem;
-		private LocalIndexInfo localIndexInfo;
+		private final BinaryMapDataObject dataObject;
+		private final WorldRegion worldRegion;
+		private final IndexItem indexItem;
+		private final LocalIndexInfo localIndexInfo;
 
 		public BinaryMapDataObject getDataObject() {
 			return dataObject;
@@ -117,7 +114,7 @@ public class DownloadedRegionsLayer extends OsmandMapLayer implements IContextMe
 		paintSelected = getPaint(view.getResources().getColor(R.color.region_selected));
 		paintBackuped = getPaint(view.getResources().getColor(R.color.region_backuped));
 
-		textPaint = new TextPaint();
+        TextPaint textPaint = new TextPaint();
 		final WindowManager wmgr = (WindowManager) view.getApplication().getSystemService(Context.WINDOW_SERVICE);
 		DisplayMetrics dm = new DisplayMetrics();
 		wmgr.getDefaultDisplay().getMetrics(dm);
@@ -193,7 +190,9 @@ public class DownloadedRegionsLayer extends OsmandMapLayer implements IContextMe
 				drawBorders(canvas, tileBox, selectedObjects, pathSelected, paintSelected);
 			}
 
-			if (zoom >= ZOOM_TO_SHOW_BORDERS_ST && zoom < ZOOM_TO_SHOW_BORDERS) {
+            int ZOOM_TO_SHOW_BORDERS = 7;
+            int ZOOM_TO_SHOW_BORDERS_ST = 4;
+            if (zoom >= ZOOM_TO_SHOW_BORDERS_ST && zoom < ZOOM_TO_SHOW_BORDERS) {
 				if (currentObjects.size() > 0) {
 					List<BinaryMapDataObject> downloadedObjects = new ArrayList<>();
 					List<BinaryMapDataObject> backupedObjects = new ArrayList<>();

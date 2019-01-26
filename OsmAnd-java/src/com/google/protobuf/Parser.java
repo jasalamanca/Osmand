@@ -46,7 +46,7 @@ public interface Parser<MessageType> {
    * verify that the last tag seen was the appropriate end-group tag,
    * or zero for EOF.
    */
-  public MessageType parseFrom(CodedInputStream input)
+  MessageType parseFrom(CodedInputStream input)
       throws InvalidProtocolBufferException;
 
   /**
@@ -55,8 +55,8 @@ public interface Parser<MessageType> {
    * {@code extensionRegistry}. Extensions not in the registry will be treated
    * as unknown fields.
    */
-  public MessageType parseFrom(CodedInputStream input,
-                               ExtensionRegistryLite extensionRegistry)
+  MessageType parseFrom(CodedInputStream input,
+                        ExtensionRegistryLite extensionRegistry)
       throws InvalidProtocolBufferException;
 
   /**
@@ -64,7 +64,7 @@ public interface Parser<MessageType> {
    * exception if the message is missing required fields. Instead, a partial
    * message is returned.
    */
-  public MessageType parsePartialFrom(CodedInputStream input)
+  MessageType parsePartialFrom(CodedInputStream input)
       throws InvalidProtocolBufferException;
 
   /**
@@ -72,8 +72,8 @@ public interface Parser<MessageType> {
    * but does not throw an exception if the message is missing required fields.
    * Instead, a partial message is returned.
    */
-  public MessageType parsePartialFrom(CodedInputStream input,
-                                      ExtensionRegistryLite extensionRegistry)
+  MessageType parsePartialFrom(CodedInputStream input,
+                               ExtensionRegistryLite extensionRegistry)
       throws InvalidProtocolBufferException;
 
   // ---------------------------------------------------------------
@@ -83,7 +83,7 @@ public interface Parser<MessageType> {
    * Parses {@code data} as a message of {@code MessageType}.
    * This is just a small wrapper around {@link #parseFrom(CodedInputStream)}.
    */
-  public MessageType parseFrom(ByteString data)
+  MessageType parseFrom(ByteString data)
       throws InvalidProtocolBufferException;
 
   /**
@@ -91,8 +91,8 @@ public interface Parser<MessageType> {
    * This is just a small wrapper around
    * {@link #parseFrom(CodedInputStream, ExtensionRegistryLite)}.
    */
-  public MessageType parseFrom(ByteString data,
-                               ExtensionRegistryLite extensionRegistry)
+  MessageType parseFrom(ByteString data,
+                        ExtensionRegistryLite extensionRegistry)
       throws InvalidProtocolBufferException;
 
   /**
@@ -100,7 +100,7 @@ public interface Parser<MessageType> {
    * exception if the message is missing required fields. Instead, a partial
    * message is returned.
    */
-  public MessageType parsePartialFrom(ByteString data)
+  MessageType parsePartialFrom(ByteString data)
       throws InvalidProtocolBufferException;
 
   /**
@@ -108,23 +108,7 @@ public interface Parser<MessageType> {
    * but does not throw an exception if the message is missing required fields.
    * Instead, a partial message is returned.
    */
-  public MessageType parsePartialFrom(ByteString data,
-                                      ExtensionRegistryLite extensionRegistry)
-      throws InvalidProtocolBufferException;
-
-  /**
-   * Parses {@code data} as a message of {@code MessageType}.
-   * This is just a small wrapper around {@link #parseFrom(CodedInputStream)}.
-   */
-  public MessageType parseFrom(byte[] data, int off, int len)
-      throws InvalidProtocolBufferException;
-
-  /**
-   * Parses {@code data} as a message of {@code MessageType}.
-   * This is just a small wrapper around
-   * {@link #parseFrom(CodedInputStream, ExtensionRegistryLite)}.
-   */
-  public MessageType parseFrom(byte[] data, int off, int len,
+  MessageType parsePartialFrom(ByteString data,
                                ExtensionRegistryLite extensionRegistry)
       throws InvalidProtocolBufferException;
 
@@ -132,7 +116,7 @@ public interface Parser<MessageType> {
    * Parses {@code data} as a message of {@code MessageType}.
    * This is just a small wrapper around {@link #parseFrom(CodedInputStream)}.
    */
-  public MessageType parseFrom(byte[] data)
+  MessageType parseFrom(byte[] data, int off, int len)
       throws InvalidProtocolBufferException;
 
   /**
@@ -140,8 +124,24 @@ public interface Parser<MessageType> {
    * This is just a small wrapper around
    * {@link #parseFrom(CodedInputStream, ExtensionRegistryLite)}.
    */
-  public MessageType parseFrom(byte[] data,
-                               ExtensionRegistryLite extensionRegistry)
+  MessageType parseFrom(byte[] data, int off, int len,
+                        ExtensionRegistryLite extensionRegistry)
+      throws InvalidProtocolBufferException;
+
+  /**
+   * Parses {@code data} as a message of {@code MessageType}.
+   * This is just a small wrapper around {@link #parseFrom(CodedInputStream)}.
+   */
+  MessageType parseFrom(byte[] data)
+      throws InvalidProtocolBufferException;
+
+  /**
+   * Parses {@code data} as a message of {@code MessageType}.
+   * This is just a small wrapper around
+   * {@link #parseFrom(CodedInputStream, ExtensionRegistryLite)}.
+   */
+  MessageType parseFrom(byte[] data,
+                        ExtensionRegistryLite extensionRegistry)
       throws InvalidProtocolBufferException;
 
   /**
@@ -149,7 +149,7 @@ public interface Parser<MessageType> {
    * exception if the message is missing required fields. Instead, a partial
    * message is returned.
    */
-  public MessageType parsePartialFrom(byte[] data, int off, int len)
+  MessageType parsePartialFrom(byte[] data, int off, int len)
       throws InvalidProtocolBufferException;
 
   /**
@@ -157,8 +157,8 @@ public interface Parser<MessageType> {
    * but does not throw an exception if the message is missing required fields.
    * Instead, a partial message is returned.
    */
-  public MessageType parsePartialFrom(byte[] data, int off, int len,
-                                      ExtensionRegistryLite extensionRegistry)
+  MessageType parsePartialFrom(byte[] data, int off, int len,
+                               ExtensionRegistryLite extensionRegistry)
       throws InvalidProtocolBufferException;
 
   /**
@@ -166,7 +166,7 @@ public interface Parser<MessageType> {
    * exception if the message is missing required fields. Instead, a partial
    * message is returned.
    */
-  public MessageType parsePartialFrom(byte[] data)
+  MessageType parsePartialFrom(byte[] data)
       throws InvalidProtocolBufferException;
 
   /**
@@ -174,8 +174,8 @@ public interface Parser<MessageType> {
    * but does not throw an exception if the message is missing required fields.
    * Instead, a partial message is returned.
    */
-  public MessageType parsePartialFrom(byte[] data,
-                                      ExtensionRegistryLite extensionRegistry)
+  MessageType parsePartialFrom(byte[] data,
+                               ExtensionRegistryLite extensionRegistry)
       throws InvalidProtocolBufferException;
 
   /**
@@ -189,7 +189,7 @@ public interface Parser<MessageType> {
    * <p>
    * Despite usually reading the entire input, this does not close the stream.
    */
-  public MessageType parseFrom(InputStream input)
+  MessageType parseFrom(InputStream input)
       throws InvalidProtocolBufferException;
 
   /**
@@ -197,8 +197,8 @@ public interface Parser<MessageType> {
    * This is just a small wrapper around
    * {@link #parseFrom(CodedInputStream, ExtensionRegistryLite)}.
    */
-  public MessageType parseFrom(InputStream input,
-                               ExtensionRegistryLite extensionRegistry)
+  MessageType parseFrom(InputStream input,
+                        ExtensionRegistryLite extensionRegistry)
       throws InvalidProtocolBufferException;
 
   /**
@@ -206,7 +206,7 @@ public interface Parser<MessageType> {
    * exception if the message is missing required fields. Instead, a partial
    * message is returned.
    */
-  public MessageType parsePartialFrom(InputStream input)
+  MessageType parsePartialFrom(InputStream input)
       throws InvalidProtocolBufferException;
 
   /**
@@ -214,8 +214,8 @@ public interface Parser<MessageType> {
    * but does not throw an exception if the message is missing required fields.
    * Instead, a partial message is returned.
    */
-  public MessageType parsePartialFrom(InputStream input,
-                                      ExtensionRegistryLite extensionRegistry)
+  MessageType parsePartialFrom(InputStream input,
+                               ExtensionRegistryLite extensionRegistry)
       throws InvalidProtocolBufferException;
 
   /**
@@ -229,14 +229,14 @@ public interface Parser<MessageType> {
    *         method starts. Any other error (including reaching EOF during
    *         parsing) will cause an exception to be thrown.
    */
-  public MessageType parseDelimitedFrom(InputStream input)
+  MessageType parseDelimitedFrom(InputStream input)
       throws InvalidProtocolBufferException;
 
   /**
    * Like {@link #parseDelimitedFrom(InputStream)} but supporting extensions.
    */
-  public MessageType parseDelimitedFrom(InputStream input,
-                                        ExtensionRegistryLite extensionRegistry)
+  MessageType parseDelimitedFrom(InputStream input,
+                                 ExtensionRegistryLite extensionRegistry)
       throws InvalidProtocolBufferException;
 
   /**
@@ -244,7 +244,7 @@ public interface Parser<MessageType> {
    * exception if the message is missing required fields. Instead, a partial
    * message is returned.
    */
-  public MessageType parsePartialDelimitedFrom(InputStream input)
+  MessageType parsePartialDelimitedFrom(InputStream input)
       throws InvalidProtocolBufferException;
 
   /**
@@ -252,8 +252,8 @@ public interface Parser<MessageType> {
    * but does not throw an exception if the message is missing required fields.
    * Instead, a partial message is returned.
    */
-  public MessageType parsePartialDelimitedFrom(
-      InputStream input,
-      ExtensionRegistryLite extensionRegistry)
+  MessageType parsePartialDelimitedFrom(
+          InputStream input,
+          ExtensionRegistryLite extensionRegistry)
       throws InvalidProtocolBufferException;
 }

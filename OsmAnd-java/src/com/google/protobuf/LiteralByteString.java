@@ -51,7 +51,7 @@ import java.util.NoSuchElementException;
  */
 class LiteralByteString extends ByteString {
 
-  protected final byte[] bytes;
+  final byte[] bytes;
 
   /**
    * Creates a {@code LiteralByteString} backed by the given array, without
@@ -343,7 +343,7 @@ class LiteralByteString extends ByteString {
    *
    * @return always 0 for this class
    */
-  protected int getOffsetIntoBytes() {
+  int getOffsetIntoBytes() {
     return 0;
   }
 }

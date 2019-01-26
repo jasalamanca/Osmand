@@ -24,11 +24,11 @@ public class PrecalculatedRouteDirection {
 	private static final int[] SHIFTS = new int[]{1 << (31 - 15), 1 << (31 - 13), 1 << (31 - 12), 
 		1 << (31 - 11), 1 << (31 - 7)};
 	
-	private List<Integer> cachedS = new ArrayList<Integer>();
+	private final List<Integer> cachedS = new ArrayList<Integer>();
 	
 	private long startPoint = 0;
 	private long endPoint = 0;
-	QuadTree<Integer> quadTree = new QuadTree<Integer>(new QuadRect(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE),
+	private final QuadTree<Integer> quadTree = new QuadTree<Integer>(new QuadRect(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE),
 			8, 0.55f);
 	private float startFinishTime;
 	private float endFinishTime; 
@@ -199,7 +199,7 @@ public class PrecalculatedRouteDirection {
 		return getDeviationDistance(x31, y31, ind);
 	}
 
-	public float getDeviationDistance(int x31, int y31, int ind) {
+	private float getDeviationDistance(int x31, int y31, int ind) {
 		float distToPoint = 0;
 		if(ind < pointsX.length - 1 && ind != 0) {
 			double nx = BinaryRoutePlanner.squareRootDist(x31, y31, pointsX[ind + 1], pointsY[ind + 1]);
@@ -211,7 +211,7 @@ public class PrecalculatedRouteDirection {
 		return distToPoint;
 	}
 
-	public int getIndex(int x31, int y31) {
+	private int getIndex(int x31, int y31) {
 		int ind = -1;
 		cachedS.clear();
 		quadTree.queryInBox(new QuadRect(x31 - SHIFT, y31 - SHIFT, x31 + SHIFT, y31 + SHIFT), cachedS);

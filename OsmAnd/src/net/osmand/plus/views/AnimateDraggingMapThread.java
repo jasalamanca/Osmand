@@ -7,12 +7,11 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 
 import net.osmand.PlatformUtil;
+import net.osmand.core.android.MapRendererView;
 import net.osmand.data.RotatedTileBox;
 import net.osmand.util.MapUtils;
 
 import org.apache.commons.logging.Log;
-
-import net.osmand.core.android.MapRendererView;
 
 /**
  * Thread for animated dragging.
@@ -98,7 +97,7 @@ public class AnimateDraggingMapThread {
 		}
 	}
 	
-	public synchronized void startThreadAnimating(final Runnable runnable){
+	private synchronized void startThreadAnimating(final Runnable runnable){
 		stopAnimatingSync();
 		stopped = false;
 		final Thread t = new Thread(new Runnable() {
@@ -186,7 +185,7 @@ public class AnimateDraggingMapThread {
 		final RotatedTileBox rb = tileView.getCurrentRotatedTileBox().copy();
 		double startLat = rb.getLatitude();
 		double startLon = rb.getLongitude();
-		float rotate = rb.getRotate();
+//		float rotate = rb.getRotate();
 		final int startZoom = rb.getZoom();
 		final double startZoomFP = rb.getZoomFloatPart();
 		

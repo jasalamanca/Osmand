@@ -113,9 +113,9 @@ public class OsmAndFormatter {
 		if (digits == 0) {
 			return (int) (meters / mainUnitInMeters + 0.5) + " " + ctx.getString(mainUnitStr); //$NON-NLS-1$
 		} else if (digits == 1) {
-			return fixed1.format(((float) meters) / mainUnitInMeters) + " " + ctx.getString(mainUnitStr); 
+			return fixed1.format(meters / mainUnitInMeters) + " " + ctx.getString(mainUnitStr);
 		} else {
-			return fixed2.format(((float) meters) / mainUnitInMeters) + " " + ctx.getString(mainUnitStr);
+			return fixed2.format(meters / mainUnitInMeters) + " " + ctx.getString(mainUnitStr);
 		}
 	}
 
@@ -154,17 +154,17 @@ public class OsmAndFormatter {
 		if (meters >= 100 * mainUnitInMeters) {
 			return (int) (meters / mainUnitInMeters + 0.5) + " " + ctx.getString(mainUnitStr); //$NON-NLS-1$
 		} else if (meters > 9.99f * mainUnitInMeters) {
-			return MessageFormat.format(format1 + ctx.getString(mainUnitStr), ((float) meters) / mainUnitInMeters).replace('\n', ' '); //$NON-NLS-1$
+			return MessageFormat.format(format1 + ctx.getString(mainUnitStr), meters / mainUnitInMeters).replace('\n', ' '); //$NON-NLS-1$
 		} else if (meters > 0.999f * mainUnitInMeters) {
-			return MessageFormat.format(format2 + ctx.getString(mainUnitStr), ((float) meters) / mainUnitInMeters).replace('\n', ' '); //$NON-NLS-1$
+			return MessageFormat.format(format2 + ctx.getString(mainUnitStr), meters / mainUnitInMeters).replace('\n', ' '); //$NON-NLS-1$
 		} else if (mc == MetricsConstants.MILES_AND_FEET && meters > 0.249f * mainUnitInMeters) {
-			return MessageFormat.format(format2 + ctx.getString(mainUnitStr), ((float) meters) / mainUnitInMeters).replace('\n', ' '); //$NON-NLS-1$
+			return MessageFormat.format(format2 + ctx.getString(mainUnitStr), meters / mainUnitInMeters).replace('\n', ' '); //$NON-NLS-1$
 		} else if (mc == MetricsConstants.MILES_AND_METERS && meters > 0.249f * mainUnitInMeters) {
-			return MessageFormat.format(format2 + ctx.getString(mainUnitStr), ((float) meters) / mainUnitInMeters).replace('\n', ' '); //$NON-NLS-1$
+			return MessageFormat.format(format2 + ctx.getString(mainUnitStr), meters / mainUnitInMeters).replace('\n', ' '); //$NON-NLS-1$
 		} else if (mc == MetricsConstants.MILES_AND_YARDS && meters > 0.249f * mainUnitInMeters) {
-			return MessageFormat.format(format2 + ctx.getString(mainUnitStr), ((float) meters) / mainUnitInMeters).replace('\n', ' '); //$NON-NLS-1$
+			return MessageFormat.format(format2 + ctx.getString(mainUnitStr), meters / mainUnitInMeters).replace('\n', ' '); //$NON-NLS-1$
 		} else if (mc == MetricsConstants.NAUTICAL_MILES && meters > 0.99f * mainUnitInMeters) {
-			return MessageFormat.format(format2 + ctx.getString(mainUnitStr), ((float) meters) / mainUnitInMeters).replace('\n', ' '); //$NON-NLS-1$
+			return MessageFormat.format(format2 + ctx.getString(mainUnitStr), meters / mainUnitInMeters).replace('\n', ' '); //$NON-NLS-1$
 		} else {
 			if (mc == MetricsConstants.KILOMETERS_AND_METERS || mc == MetricsConstants.MILES_AND_METERS) {
 				return ((int) (meters + 0.5)) + " " + ctx.getString(R.string.m); //$NON-NLS-1$
@@ -198,25 +198,25 @@ public class OsmAndFormatter {
 		if (mc == SpeedConstants.KILOMETERS_PER_HOUR) {
 			// e.g. car case and for high-speeds: Display rounded to 1 km/h (5% precision at 20 km/h)
 			if (kmh >= 20 || am.hasFastSpeed()) {
-				return ((int) Math.round(kmh)) + " " + mc.toShortString(ctx);
+				return Math.round(kmh) + " " + mc.toShortString(ctx);
 			}
 			// for smaller values display 1 decimal digit x.y km/h, (0.5% precision at 20 km/h)
-			int kmh10 = (int) Math.round(kmh * 10f);
+			int kmh10 = Math.round(kmh * 10f);
 			return (kmh10 / 10f) + " " + mc.toShortString(ctx);
 		} else if (mc == SpeedConstants.MILES_PER_HOUR) {
 			float mph = kmh * METERS_IN_KILOMETER / METERS_IN_ONE_MILE;
 			if (mph >= 20 || am.hasFastSpeed()) {
-				return ((int) Math.round(mph)) + " " + mc.toShortString(ctx);
+				return Math.round(mph) + " " + mc.toShortString(ctx);
 			} else {
-				int mph10 = (int) Math.round(mph * 10f);
+				int mph10 = Math.round(mph * 10f);
 				return (mph10 / 10f) + " " + mc.toShortString(ctx);
 			}
 		} else if (mc == SpeedConstants.NAUTICALMILES_PER_HOUR) {
 			float mph = kmh * METERS_IN_KILOMETER / METERS_IN_ONE_NAUTICALMILE;
 			if (mph >= 20 || am.hasFastSpeed()) {
-				return ((int) Math.round(mph)) + " " + mc.toShortString(ctx);
+				return Math.round(mph) + " " + mc.toShortString(ctx);
 			} else {
-				int mph10 = (int) Math.round(mph * 10f);
+				int mph10 = Math.round(mph * 10f);
 				return (mph10 / 10f) + " " + mc.toShortString(ctx);
 			}
 		} else if (mc == SpeedConstants.MINUTES_PER_KILOMETER) {
@@ -225,9 +225,9 @@ public class OsmAndFormatter {
 			}
 			float minperkm = METERS_IN_KILOMETER / (metersperseconds * 60);
 			if (minperkm >= 10) {
-				return ((int) Math.round(minperkm)) + " " + mc.toShortString(ctx);
+				return Math.round(minperkm) + " " + mc.toShortString(ctx);
 			} else {
-				int mph10 = (int) Math.round(minperkm * 10f);
+				int mph10 = Math.round(minperkm * 10f);
 				return (mph10 / 10f) + " " + mc.toShortString(ctx);
 			}
 		} else if (mc == SpeedConstants.MINUTES_PER_MILE) {
@@ -236,17 +236,17 @@ public class OsmAndFormatter {
 			}
 			float minperm = (METERS_IN_ONE_MILE) / (metersperseconds * 60);
 			if (minperm >= 10) {
-				return ((int) Math.round(minperm)) + " " + mc.toShortString(ctx);
+				return Math.round(minperm) + " " + mc.toShortString(ctx);
 			} else {
-				int mph10 = (int) Math.round(minperm * 10f);
+				int mph10 = Math.round(minperm * 10f);
 				return (mph10 / 10f) + " " + mc.toShortString(ctx);
 			}
 		} else /*if (mc == SpeedConstants.METERS_PER_SECOND) */ {
 			if (metersperseconds >= 10) {
-				return ((int) Math.round(metersperseconds)) + " " + SpeedConstants.METERS_PER_SECOND.toShortString(ctx);
+				return Math.round(metersperseconds) + " " + SpeedConstants.METERS_PER_SECOND.toShortString(ctx);
 			}
 			// for smaller values display 1 decimal digit x.y km/h, (0.5% precision at 20 km/h)
-			int kmh10 = (int) Math.round(metersperseconds * 10f);
+			int kmh10 = Math.round(metersperseconds * 10f);
 			return (kmh10 / 10f) + " " + SpeedConstants.METERS_PER_SECOND.toShortString(ctx);
 		}
 	}

@@ -41,7 +41,7 @@ public class MapRendererContext implements RendererRegistry.IRendererLoadedEvent
     private static final String TAG = "MapRendererContext";
 
 	private static final int OBF_RASTER_LAYER = 0;
-	private OsmandApplication app;
+	private final OsmandApplication app;
 	
 	// input parameters
 	private MapStylesCollection mapStylesCollection;
@@ -51,7 +51,7 @@ public class MapRendererContext implements RendererRegistry.IRendererLoadedEvent
 	private final float density;
 	
 	// ached objects
-	private Map<String, ResolvedMapStyle> mapStyles = new HashMap<String, ResolvedMapStyle>();
+	private final Map<String, ResolvedMapStyle> mapStyles = new HashMap<String, ResolvedMapStyle>();
 	private CachedMapPresentation presentationObjectParams;
 	private MapPresentationEnvironment mapPresentationEnvironment;
 	
@@ -108,7 +108,7 @@ public class MapRendererContext implements RendererRegistry.IRendererLoadedEvent
 		recreateRasterAndSymbolsProvider();
 	}
 
-	protected int getRasterTileSize() {
+	private int getRasterTileSize() {
 		return (int)(getReferenceTileSize() * app.getSettings().MAP_DENSITY.get());
 	}
 	
@@ -170,7 +170,7 @@ public class MapRendererContext implements RendererRegistry.IRendererLoadedEvent
 		}
 	}
 
-	protected QStringStringHash getMapStyleSettings() {
+	private QStringStringHash getMapStyleSettings() {
 		// Apply map style settings
 		OsmandSettings prefs = app.getSettings();
 		RenderingRulesStorage storage = app.getRendererRegistry().getCurrentSelectedRenderer();
@@ -259,18 +259,18 @@ public class MapRendererContext implements RendererRegistry.IRendererLoadedEvent
 	}
 
 	private class CachedMapPresentation {
-		String langId ;
-		LanguagePreference langPref;
-		ResolvedMapStyle mapStyle;
-		float displayDensityFactor;
-		float mapScaleFactor;
-		float symbolsScaleFactor;
+		final String langId ;
+		final LanguagePreference langPref;
+		final ResolvedMapStyle mapStyle;
+		final float displayDensityFactor;
+		final float mapScaleFactor;
+		final float symbolsScaleFactor;
 		
-		public CachedMapPresentation(String langId,
-				LanguagePreference langPref, ResolvedMapStyle mapStyle,
-				float displayDensityFactor,
-				float mapScaleFactor,
-				float symbolsScaleFactor) {
+		CachedMapPresentation(String langId,
+                              LanguagePreference langPref, ResolvedMapStyle mapStyle,
+                              float displayDensityFactor,
+                              float mapScaleFactor,
+                              float symbolsScaleFactor) {
 			this.langId = langId;
 			this.langPref = langPref;
 			this.mapStyle = mapStyle;
@@ -280,7 +280,7 @@ public class MapRendererContext implements RendererRegistry.IRendererLoadedEvent
 		}
 		
 		
-		public boolean equalsFields(CachedMapPresentation other ) {
+		boolean equalsFields(CachedMapPresentation other) {
 			if (Double.compare(displayDensityFactor, other.displayDensityFactor) != 0)
 				return false;
 			if (Double.compare(mapScaleFactor, other.mapScaleFactor) != 0)

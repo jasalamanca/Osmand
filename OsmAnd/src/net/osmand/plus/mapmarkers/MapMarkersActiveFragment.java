@@ -46,7 +46,7 @@ public class MapMarkersActiveFragment extends Fragment implements OsmAndCompassL
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		final MapActivity mapActivity = (MapActivity) getActivity();
 		final View mainView = inflater.inflate(R.layout.fragment_map_markers_active, container, false);
-		final EmptyStateRecyclerView recyclerView = (EmptyStateRecyclerView) mainView.findViewById(R.id.list);
+		final EmptyStateRecyclerView recyclerView = mainView.findViewById(R.id.list);
 		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
 		adapter = new MapMarkersActiveAdapter(mapActivity);
@@ -127,7 +127,7 @@ public class MapMarkersActiveFragment extends Fragment implements OsmAndCompassL
 		});
 
 		final View emptyView = mainView.findViewById(R.id.empty_view);
-		ImageView emptyImageView = (ImageView) emptyView.findViewById(R.id.empty_state_image_view);
+		ImageView emptyImageView = emptyView.findViewById(R.id.empty_state_image_view);
 		emptyImageView.setImageResource(mapActivity.getMyApplication().getSettings().isLightContent() ? R.drawable.ic_empty_state_marker_list_day : R.drawable.ic_empty_state_marker_list_night);
 		recyclerView.setEmptyView(emptyView);
 		recyclerView.setAdapter(adapter);

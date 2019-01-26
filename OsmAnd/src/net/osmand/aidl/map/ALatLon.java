@@ -72,7 +72,7 @@ public class ALatLon implements Parcelable {
 		out.writeDouble(longitude);
 	}
 
-	public void readFromParcel(Parcel in) {
+	private void readFromParcel(Parcel in) {
 		latitude = in.readDouble();
 		longitude = in.readDouble();
 	}

@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class SQLiteAPIImpl implements SQLiteAPI {
 
-	private OsmandApplication app;
+	private final OsmandApplication app;
 
 	public SQLiteAPIImpl(OsmandApplication app) {
 		this.app = app;
@@ -24,10 +24,10 @@ public class SQLiteAPIImpl implements SQLiteAPI {
 	
 	
 	public class SQLiteDatabaseWrapper implements SQLiteConnection {
-		android.database.sqlite.SQLiteDatabase ds;
+		final android.database.sqlite.SQLiteDatabase ds;
 
 		
-		public SQLiteDatabaseWrapper(android.database.sqlite.SQLiteDatabase ds) {
+		SQLiteDatabaseWrapper(android.database.sqlite.SQLiteDatabase ds) {
 			super();
 			this.ds = ds;
 		}

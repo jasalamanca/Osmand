@@ -32,7 +32,7 @@ public class EnumAdapter<T extends IEnumWithResource>
 		return textView;
 	}
 	
-	public static interface IEnumWithResource {
+	public interface IEnumWithResource {
 		int stringResource();
 	}
 }

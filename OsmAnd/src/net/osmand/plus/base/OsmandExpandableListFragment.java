@@ -46,7 +46,7 @@ public abstract class OsmandExpandableListFragment extends BaseOsmAndFragment
 		return inflater.inflate(R.layout.expandable_list, container, false);
 	}
 	
-	public void setAdapter(ExpandableListAdapter a) {
+	protected void setAdapter(ExpandableListAdapter a) {
 		this.adapter = a;
 		if(listView != null) {
 			listView.setAdapter(a);
@@ -54,7 +54,7 @@ public abstract class OsmandExpandableListFragment extends BaseOsmAndFragment
 		
 	}
 	
-	public void fixBackgroundRepeat(View view) {
+	protected void fixBackgroundRepeat(View view) {
 		Drawable bg = view.getBackground();
 		if (bg != null) {
 			if (bg instanceof BitmapDrawable) {
@@ -64,16 +64,16 @@ public abstract class OsmandExpandableListFragment extends BaseOsmAndFragment
 		}
 	}
 
-	public ExpandableListView getExpandableListView() {
+	protected ExpandableListView getExpandableListView() {
 		return listView;
 	}
 
-	public void setListView(ExpandableListView listView) {
+	protected void setListView(ExpandableListView listView) {
 		this.listView = listView;
 		listView.setOnChildClickListener(this);
 	}
 
-	public MenuItem createMenuItem(Menu m, int id, int titleRes, int iconLight, int iconDark, int menuItemType) {
+	protected MenuItem createMenuItem(Menu m, int id, int titleRes, int iconLight, int iconDark, int menuItemType) {
 		int r = isLightActionBar() ? iconLight : iconDark;
 		MenuItem menuItem = m.add(0, id, 0, titleRes);
 		if (r != 0) {
@@ -89,11 +89,11 @@ public abstract class OsmandExpandableListFragment extends BaseOsmAndFragment
 		return menuItem;
 	}
 
-	public boolean isLightActionBar() {
+	protected boolean isLightActionBar() {
 		return ((OsmandApplication) getActivity().getApplication()).getSettings().isLightActionBar();
 	}
 
-	public void collapseTrees(final int count) {
+	protected void collapseTrees(final int count) {
 		getActivity().runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
@@ -113,7 +113,7 @@ public abstract class OsmandExpandableListFragment extends BaseOsmAndFragment
 
 	}
 
-	public OsmandActionBarActivity getActionBarActivity() {
+	protected OsmandActionBarActivity getActionBarActivity() {
 		if (getActivity() instanceof OsmandActionBarActivity) {
 			return (OsmandActionBarActivity) getActivity();
 		}

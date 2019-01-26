@@ -282,7 +282,7 @@ public abstract class QuickSearchListFragment extends OsmAndListFragment {
 		}
 	}
 
-	public MapActivity getMapActivity() {
+	private MapActivity getMapActivity() {
 		return (MapActivity) getActivity();
 	}
 

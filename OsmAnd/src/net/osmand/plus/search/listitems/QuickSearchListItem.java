@@ -35,8 +35,8 @@ import java.io.File;
 
 public class QuickSearchListItem {
 
-	protected OsmandApplication app;
-	private SearchResult searchResult;
+	final OsmandApplication app;
+	private final SearchResult searchResult;
 
 	public QuickSearchListItem(OsmandApplication app, SearchResult searchResult) {
 		this.app = app;
@@ -51,7 +51,7 @@ public class QuickSearchListItem {
 		return searchResult;
 	}
 
-	public static String getCityTypeStr(Context ctx, CityType type) {
+	private static String getCityTypeStr(Context ctx, CityType type) {
 		switch (type) {
 			case CITY:
 				return ctx.getString(R.string.city_type_city);
@@ -252,7 +252,7 @@ public class QuickSearchListItem {
 		return getTypeIcon(app, searchResult);
 	}
 
-	public static Drawable getTypeIcon(OsmandApplication app, SearchResult searchResult) {
+	private static Drawable getTypeIcon(OsmandApplication app, SearchResult searchResult) {
 		switch (searchResult.objectType) {
 			case FAVORITE:
 			case FAVORITE_GROUP:
@@ -273,7 +273,7 @@ public class QuickSearchListItem {
 		return getIcon(app, searchResult);
 	}
 
-	public static String getPoiTypeIconName(AbstractPoiType abstractPoiType) {
+	private static String getPoiTypeIconName(AbstractPoiType abstractPoiType) {
 		if (RenderingIcons.containsBigIcon(abstractPoiType.getIconKeyName())) {
 			return abstractPoiType.getIconKeyName();
 		} else if (abstractPoiType instanceof PoiType
@@ -299,7 +299,7 @@ public class QuickSearchListItem {
 		return null;
 	}
 
-	public static Drawable getIcon(OsmandApplication app, SearchResult searchResult) {
+	private static Drawable getIcon(OsmandApplication app, SearchResult searchResult) {
 		if (searchResult == null || searchResult.objectType == null) {
 			return null;
 		}

@@ -108,7 +108,7 @@ public class BaseOsmAndFragment extends Fragment implements TransitionAnimator {
 		return (OsmandActionBarActivity) getActivity();
 	}
 
-	protected IconsCache getIconsCache() {
+	private IconsCache getIconsCache() {
 		if (iconsCache == null) {
 			iconsCache = getMyApplication().getIconsCache();
 		}

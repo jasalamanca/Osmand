@@ -33,8 +33,7 @@ import java.util.List;
 public class SearchStreetByNameActivity extends SearchByNameAbstractActivity<Street> {
 	private RegionAddressRepository region;
 	private City city;
-	private Button searchAllStrets;
-	private int searchWithCity = -1; // -1 - default, 0 - filter city, 1 - deep search
+    private int searchWithCity = -1; // -1 - default, 0 - filter city, 1 - deep search
 	private OsmandSettings osmandSettings;
 
 	@Override
@@ -64,7 +63,7 @@ public class SearchStreetByNameActivity extends SearchByNameAbstractActivity<Str
 	@Override
 	protected void addFooterViews() {
 		final FrameLayout ll = new FrameLayout(this);
-		searchAllStrets = new Button(this);
+        Button searchAllStrets = new Button(this);
 		android.widget.FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 		lp.gravity = Gravity.CENTER_HORIZONTAL;
 		searchAllStrets.setLayoutParams(lp);

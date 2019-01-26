@@ -122,7 +122,7 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite
   /**
    * Lite equivalent of {@link com.google.protobuf.GeneratedMessage.ExtendableMessageOrBuilder}.
    */
-  public interface ExtendableMessageOrBuilder<
+  interface ExtendableMessageOrBuilder<
       MessageType extends ExtendableMessage> extends MessageLiteOrBuilder {
 
     /** Check if a singular extension is present. */
@@ -745,8 +745,8 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite
   static final class SerializedForm implements Serializable {
     private static final long serialVersionUID = 0L;
 
-    private String messageClassName;
-    private byte[] asBytes;
+    private final String messageClassName;
+    private final byte[] asBytes;
 
     /**
      * Creates the serialized form by calling {@link com.google.protobuf.MessageLite#toByteArray}.
@@ -763,7 +763,7 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite
      * @return a GeneratedMessage of the type that was serialized
      */
     @SuppressWarnings("unchecked")
-    protected Object readResolve() throws ObjectStreamException {
+    protected Object readResolve() {
       try {
         Class messageClass = Class.forName(messageClassName);
         Method newBuilder = messageClass.getMethod("newBuilder");
@@ -791,7 +791,7 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite
    * this method by calling {@code return super.writeReplace();}
    * @return a SerializedForm of this message
    */
-  protected Object writeReplace() throws ObjectStreamException {
+  protected Object writeReplace() {
     return new SerializedForm(this);
   }
 }

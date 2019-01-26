@@ -40,18 +40,18 @@ import java.util.List;
 
 public class QuickSearchHelper implements ResourceListener {
 
-	public static final int SEARCH_FAVORITE_API_PRIORITY = 50;
-	public static final int SEARCH_FAVORITE_API_CATEGORY_PRIORITY = 50;
-	public static final int SEARCH_FAVORITE_OBJECT_PRIORITY = 50;
-	public static final int SEARCH_FAVORITE_CATEGORY_PRIORITY = 51;
-	public static final int SEARCH_WPT_API_PRIORITY = 50;
-	public static final int SEARCH_WPT_OBJECT_PRIORITY = 52;
-	public static final int SEARCH_HISTORY_API_PRIORITY = 50;
-	public static final int SEARCH_HISTORY_OBJECT_PRIORITY = 53;
-	public static final int SEARCH_ONLINE_API_PRIORITY = 500;
-	public static final int SEARCH_ONLINE_AMENITY_PRIORITY = 500;
-	private OsmandApplication app;
-	private SearchUICore core;
+	private static final int SEARCH_FAVORITE_API_PRIORITY = 50;
+	private static final int SEARCH_FAVORITE_API_CATEGORY_PRIORITY = 50;
+	private static final int SEARCH_FAVORITE_OBJECT_PRIORITY = 50;
+	private static final int SEARCH_FAVORITE_CATEGORY_PRIORITY = 51;
+	private static final int SEARCH_WPT_API_PRIORITY = 50;
+	private static final int SEARCH_WPT_OBJECT_PRIORITY = 52;
+	private static final int SEARCH_HISTORY_API_PRIORITY = 50;
+	private static final int SEARCH_HISTORY_OBJECT_PRIORITY = 53;
+	private static final int SEARCH_ONLINE_API_PRIORITY = 500;
+	private static final int SEARCH_ONLINE_AMENITY_PRIORITY = 500;
+	private final OsmandApplication app;
+	private final SearchUICore core;
 	private SearchResultCollection resultCollection;
 	private boolean mapsIndexed;
 
@@ -110,7 +110,7 @@ public class QuickSearchHelper implements ResourceListener {
 		core.addCustomSearchPoiFilter(poiFilters.getShowAllPOIFilter(), 1);
 	}
 
-	public void setRepositoriesForSearchUICore(final OsmandApplication app) {
+	private void setRepositoriesForSearchUICore(final OsmandApplication app) {
 		BinaryMapIndexReader[] binaryMapIndexReaderArray = app.getResourceManager().getQuickSearchFiles();
 		core.getSearchSettings().setOfflineIndexes(Arrays.asList(binaryMapIndexReaderArray));
 	}
@@ -156,9 +156,9 @@ public class QuickSearchHelper implements ResourceListener {
 
 	public static class SearchWptAPI extends SearchBaseAPI {
 
-		private OsmandApplication app;
+		private final OsmandApplication app;
 
-		public SearchWptAPI(OsmandApplication app) {
+		SearchWptAPI(OsmandApplication app) {
 			super(ObjectType.WPT);
 			this.app = app;
 		}
@@ -169,7 +169,7 @@ public class QuickSearchHelper implements ResourceListener {
 		}
 
 		@Override
-		public boolean search(SearchPhrase phrase, SearchResultMatcher resultMatcher) throws IOException {
+		public boolean search(SearchPhrase phrase, SearchResultMatcher resultMatcher) {
 			if (phrase.isEmpty()) {
 				return false;
 			}
@@ -209,10 +209,10 @@ public class QuickSearchHelper implements ResourceListener {
 
 	public static class SearchFavoriteCategoryAPI extends SearchBaseAPI {
 
-		private OsmandApplication app;
-		private FavouritesDbHelper helper;
+		private final OsmandApplication app;
+		private final FavouritesDbHelper helper;
 
-		public SearchFavoriteCategoryAPI(OsmandApplication app) {
+		SearchFavoriteCategoryAPI(OsmandApplication app) {
 			super(ObjectType.FAVORITE_GROUP);
 			this.app = app;
 			this.helper = app.getFavorites();
@@ -224,7 +224,7 @@ public class QuickSearchHelper implements ResourceListener {
 		}
 
 		@Override
-		public boolean search(SearchPhrase phrase, SearchResultMatcher resultMatcher) throws IOException {
+		public boolean search(SearchPhrase phrase, SearchResultMatcher resultMatcher) {
 			String baseGroupName = app.getString(R.string.shared_string_favorites);
 			List<FavoriteGroup> groups = app.getFavorites().getFavoriteGroups();
 			for (FavoriteGroup group : groups) {
@@ -267,9 +267,9 @@ public class QuickSearchHelper implements ResourceListener {
 
 	public static class SearchFavoriteAPI extends SearchBaseAPI {
 
-		private OsmandApplication app;
+		private final OsmandApplication app;
 
-		public SearchFavoriteAPI(OsmandApplication app) {
+		SearchFavoriteAPI(OsmandApplication app) {
 			super(ObjectType.FAVORITE);
 			this.app = app;
 		}
@@ -280,7 +280,7 @@ public class QuickSearchHelper implements ResourceListener {
 		}
 
 		@Override
-		public boolean search(SearchPhrase phrase, SearchResultMatcher resultMatcher) throws IOException {
+		public boolean search(SearchPhrase phrase, SearchResultMatcher resultMatcher) {
 			List<FavouritePoint> favList = app.getFavorites().getFavouritePoints();
 			for (FavouritePoint point : favList) {
 				if (!point.isVisible()) {
@@ -323,17 +323,17 @@ public class QuickSearchHelper implements ResourceListener {
 
 	public static class SearchOnlineApi extends SearchBaseAPI {
 
-		private OsmandApplication app;
-		private NominatimPoiFilter filter;
+		private final OsmandApplication app;
+		private final NominatimPoiFilter filter;
 
-		public SearchOnlineApi(OsmandApplication app) {
+		SearchOnlineApi(OsmandApplication app) {
 			super(ObjectType.ONLINE_SEARCH);
 			this.app = app;
 			this.filter = app.getPoiFilters().getNominatimPOIFilter();
 		}
 
 		@Override
-		public boolean search(SearchPhrase phrase, SearchResultMatcher matcher) throws IOException {
+		public boolean search(SearchPhrase phrase, SearchResultMatcher matcher) {
 			double lat = phrase.getSettings().getOriginalLocation().getLatitude();
 			double lon = phrase.getSettings().getOriginalLocation().getLongitude();
 			String text = phrase.getUnknownSearchPhrase();
@@ -381,7 +381,7 @@ public class QuickSearchHelper implements ResourceListener {
 
 	public static class SearchHistoryAPI extends SearchBaseAPI {
 
-		private OsmandApplication app;
+		private final OsmandApplication app;
 
 		public SearchHistoryAPI(OsmandApplication app) {
 			super(ObjectType.RECENT_OBJ);
@@ -394,7 +394,7 @@ public class QuickSearchHelper implements ResourceListener {
 		}
 
 		@Override
-		public boolean search(SearchPhrase phrase, SearchResultMatcher resultMatcher) throws IOException {
+		public boolean search(SearchPhrase phrase, SearchResultMatcher resultMatcher) {
 			SearchHistoryHelper helper = SearchHistoryHelper.getInstance(app);
 			List<SearchHistoryHelper.HistoryEntry> points = helper.getHistoryEntries();
 			int p = 0;

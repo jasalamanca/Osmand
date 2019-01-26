@@ -10,7 +10,7 @@ public class RouteDirectionInfo {
 	// location where direction end. useful for roundabouts.
 	public int routeEndPointOffset = 0;
 	// Type of action to take
-	private TurnType turnType;
+	private final TurnType turnType;
 	// Description of the turn and route after
 	private String descriptionRoute = ""; //$NON-NLS-1$
 	// Speed after the action till next turn
@@ -84,7 +84,7 @@ public class RouteDirectionInfo {
 
 	// expected time after route point
 	public int getExpectedTime() {
-		return (int) Math.round(distance / averageSpeed);
+		return Math.round(distance / averageSpeed);
 	}
 
 	

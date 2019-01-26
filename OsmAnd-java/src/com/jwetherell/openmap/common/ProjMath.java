@@ -14,32 +14,32 @@
 
 package com.jwetherell.openmap.common;
 
-public abstract class ProjMath {
+abstract class ProjMath {
 
     /**
      * North pole latitude in radians.
      */
-    public static final transient float NORTH_POLE_F = MoreMath.HALF_PI;
+    private static final transient float NORTH_POLE_F = MoreMath.HALF_PI;
 
     /**
      * South pole latitude in radians.
      */
-    public static final transient float SOUTH_POLE_F = -NORTH_POLE_F;
+    private static final transient float SOUTH_POLE_F = -NORTH_POLE_F;
 
     /**
      * North pole latitude in radians.
      */
-    public static final transient double NORTH_POLE_D = MoreMath.HALF_PI_D;
+    private static final transient double NORTH_POLE_D = MoreMath.HALF_PI_D;
 
     /**
      * North pole latitude in degrees.
      */
-    public static final transient double NORTH_POLE_DEG_D = 90d;
+    private static final transient double NORTH_POLE_DEG_D = 90d;
 
     /**
      * South pole latitude in radians.
      */
-    public static final transient double SOUTH_POLE_D = -NORTH_POLE_D;
+    private static final transient double SOUTH_POLE_D = -NORTH_POLE_D;
 
     /**
      * South pole latitude in degrees.
@@ -49,34 +49,34 @@ public abstract class ProjMath {
     /**
      * Dateline longitude in radians.
      */
-    public static final transient float DATELINE_F = (float) Math.PI;
+    private static final transient float DATELINE_F = (float) Math.PI;
 
     /**
      * Dateline longitude in radians.
      */
-    public static final transient double DATELINE_D = Math.PI;
+    private static final transient double DATELINE_D = Math.PI;
 
     /**
      * Dateline longitude in degrees.
      */
-    public static final transient double DATELINE_DEG_D = 180d;
+    private static final transient double DATELINE_DEG_D = 180d;
 
     /**
      * Longitude range in radians.
      */
-    public static final transient float LON_RANGE_F = MoreMath.TWO_PI;
+    private static final transient float LON_RANGE_F = MoreMath.TWO_PI;
 
     /**
      * Longitude range in radians.
      */
-    public static final transient double LON_RANGE_D = MoreMath.TWO_PI_D;
+    private static final transient double LON_RANGE_D = MoreMath.TWO_PI_D;
 
     /**
      * Longitude range in degrees.
      */
-    public static final transient double LON_RANGE_DEG_D = 360d;
+    private static final transient double LON_RANGE_DEG_D = 360d;
 
-    public static final double DEGREES_TO_MILS = 17.77777777777777777778;
+    private static final double DEGREES_TO_MILS = 17.77777777777777777778;
 
     /**
      * rounds the quantity away from 0.
@@ -177,7 +177,7 @@ public abstract class ProjMath {
      *            radians
      * @return float decimal degrees
      */
-    public static final float radToDeg(float rad) {
+    private static float radToDeg(float rad) {
         return (float) Math.toDegrees(rad);
     }
 
@@ -199,7 +199,7 @@ public abstract class ProjMath {
      *            degrees
      * @return float radians
      */
-    public static final float degToRad(float deg) {
+    private static float degToRad(float deg) {
         return (float) Math.toRadians(deg);
     }
 

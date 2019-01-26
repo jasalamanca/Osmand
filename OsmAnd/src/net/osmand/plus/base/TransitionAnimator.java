@@ -1,6 +1,6 @@
 package net.osmand.plus.base;
 
-public interface TransitionAnimator {
+interface TransitionAnimator {
 
 	void disableTransitionAnimation();
 

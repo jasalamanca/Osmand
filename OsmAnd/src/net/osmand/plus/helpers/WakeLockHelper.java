@@ -16,11 +16,11 @@ import android.os.PowerManager;
 public class WakeLockHelper implements VoiceRouter.VoiceMessageListener {
 	
 	private PowerManager.WakeLock wakeLock = null;
-	private ReleaseWakeLocksRunnable releaseWakeLocksRunnable = new ReleaseWakeLocksRunnable();
-	private DevicePolicyManager mDevicePolicyManager;
-	private ComponentName mDeviceAdmin;
-	private Handler uiHandler;
-	private OsmandApplication app;
+	private final ReleaseWakeLocksRunnable releaseWakeLocksRunnable = new ReleaseWakeLocksRunnable();
+	private final DevicePolicyManager mDevicePolicyManager;
+	private final ComponentName mDeviceAdmin;
+	private final Handler uiHandler;
+	private final OsmandApplication app;
 	private boolean active;
 	
 	public WakeLockHelper(OsmandApplication app){

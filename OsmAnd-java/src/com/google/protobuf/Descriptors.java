@@ -68,17 +68,17 @@ public final class Descriptors {
    */
   public static final class FileDescriptor {
     /** Convert the descriptor to its protocol message representation. */
-    public FileDescriptorProto toProto() { return proto; }
+    FileDescriptorProto toProto() { return proto; }
 
     /** Get the file name. */
-    public String getName() { return proto.getName(); }
+    String getName() { return proto.getName(); }
 
     /**
      * Get the proto package name.  This is the package name given by the
      * {@code package} statement in the {@code .proto} file, which differs
      * from the Java package.
      */
-    public String getPackage() { return proto.getPackage(); }
+    String getPackage() { return proto.getPackage(); }
 
     /** Get the {@code FileOptions}, defined in {@code descriptor.proto}. */
     public FileOptions getOptions() { return proto.getOptions(); }
@@ -109,7 +109,7 @@ public final class Descriptors {
     }
 
     /** Get a list of this file's public dependencies (public imports). */
-    public List<FileDescriptor> getPublicDependencies() {
+    List<FileDescriptor> getPublicDependencies() {
       return Collections.unmodifiableList(Arrays.asList(publicDependencies));
     }
 
@@ -129,8 +129,8 @@ public final class Descriptors {
         name = getPackage() + '.' + name;
       }
       final GenericDescriptor result = pool.findSymbol(name);
-      if (result != null && result instanceof Descriptor &&
-          result.getFile() == this) {
+      if (result instanceof Descriptor &&
+              result.getFile() == this) {
         return (Descriptor)result;
       } else {
         return null;
@@ -153,8 +153,8 @@ public final class Descriptors {
         name = getPackage() + '.' + name;
       }
       final GenericDescriptor result = pool.findSymbol(name);
-      if (result != null && result instanceof EnumDescriptor &&
-          result.getFile() == this) {
+      if (result instanceof EnumDescriptor &&
+              result.getFile() == this) {
         return (EnumDescriptor)result;
       } else {
         return null;
@@ -177,8 +177,8 @@ public final class Descriptors {
         name = getPackage() + '.' + name;
       }
       final GenericDescriptor result = pool.findSymbol(name);
-      if (result != null && result instanceof ServiceDescriptor &&
-          result.getFile() == this) {
+      if (result instanceof ServiceDescriptor &&
+              result.getFile() == this) {
         return (ServiceDescriptor)result;
       } else {
         return null;
@@ -200,8 +200,8 @@ public final class Descriptors {
         name = getPackage() + '.' + name;
       }
       final GenericDescriptor result = pool.findSymbol(name);
-      if (result != null && result instanceof FieldDescriptor &&
-          result.getFile() == this) {
+      if (result instanceof FieldDescriptor &&
+              result.getFile() == this) {
         return (FieldDescriptor)result;
       } else {
         return null;
@@ -220,8 +220,8 @@ public final class Descriptors {
      *           because a field has an undefined type or because two messages
      *           were defined with the same name.
      */
-    public static FileDescriptor buildFrom(final FileDescriptorProto proto,
-                                           final FileDescriptor[] dependencies)
+    static FileDescriptor buildFrom(final FileDescriptorProto proto,
+                                    final FileDescriptor[] dependencies)
                                     throws DescriptorValidationException {
       // Building descriptors involves two steps:  translating and linking.
       // In the translation step (implemented by FileDescriptor's
@@ -520,7 +520,7 @@ public final class Descriptors {
     public FieldDescriptor findFieldByName(final String name) {
       final GenericDescriptor result =
           file.pool.findSymbol(fullName + '.' + name);
-      if (result != null && result instanceof FieldDescriptor) {
+      if (result instanceof FieldDescriptor) {
         return (FieldDescriptor)result;
       } else {
         return null;
@@ -545,7 +545,7 @@ public final class Descriptors {
     public Descriptor findNestedTypeByName(final String name) {
       final GenericDescriptor result =
           file.pool.findSymbol(fullName + '.' + name);
-      if (result != null && result instanceof Descriptor) {
+      if (result instanceof Descriptor) {
         return (Descriptor)result;
       } else {
         return null;
@@ -560,7 +560,7 @@ public final class Descriptors {
     public EnumDescriptor findEnumTypeByName(final String name) {
       final GenericDescriptor result =
           file.pool.findSymbol(fullName + '.' + name);
-      if (result != null && result instanceof EnumDescriptor) {
+      if (result instanceof EnumDescriptor) {
         return (EnumDescriptor)result;
       } else {
         return null;
@@ -749,7 +749,7 @@ public final class Descriptors {
     }
 
     /** Get the {@code FieldOptions}, defined in {@code descriptor.proto}. */
-    public FieldOptions getOptions() { return proto.getOptions(); }
+    FieldOptions getOptions() { return proto.getOptions(); }
 
     /** Is this field an extension? */
     public boolean isExtension() { return proto.hasExtendee(); }
@@ -865,14 +865,14 @@ public final class Descriptors {
         this.javaType = javaType;
       }
 
-      private JavaType javaType;
+      private final JavaType javaType;
 
       public FieldDescriptorProto.Type toProto() {
         return FieldDescriptorProto.Type.valueOf(ordinal() + 1);
       }
-      public JavaType getJavaType() { return javaType; }
+      JavaType getJavaType() { return javaType; }
 
-      public static Type valueOf(final FieldDescriptorProto.Type type) {
+      static Type valueOf(final FieldDescriptorProto.Type type) {
         return values()[type.getNumber() - 1];
       }
     }
@@ -1208,7 +1208,7 @@ public final class Descriptors {
     public EnumValueDescriptor findValueByName(final String name) {
       final GenericDescriptor result =
           file.pool.findSymbol(fullName + '.' + name);
-      if (result != null && result instanceof EnumValueDescriptor) {
+      if (result instanceof EnumValueDescriptor) {
         return (EnumValueDescriptor)result;
       } else {
         return null;
@@ -1381,7 +1381,7 @@ public final class Descriptors {
     public MethodDescriptor findMethodByName(final String name) {
       final GenericDescriptor result =
           file.pool.findSymbol(fullName + '.' + name);
-      if (result != null && result instanceof MethodDescriptor) {
+      if (result instanceof MethodDescriptor) {
         return (MethodDescriptor)result;
       } else {
         return null;
@@ -1392,7 +1392,7 @@ public final class Descriptors {
     private ServiceDescriptorProto proto;
     private final String fullName;
     private final FileDescriptor file;
-    private MethodDescriptor[] methods;
+    private final MethodDescriptor[] methods;
 
     private ServiceDescriptor(final ServiceDescriptorProto proto,
                               final FileDescriptor file,
@@ -1551,7 +1551,7 @@ public final class Descriptors {
    * Thrown when building descriptors fails because the source DescriptorProtos
    * are not valid.
    */
-  public static class DescriptorValidationException extends Exception {
+  static class DescriptorValidationException extends Exception {
     private static final long serialVersionUID = 5750205775490483148L;
 
     /** Gets the full name of the descriptor where the error occurred. */

@@ -20,7 +20,7 @@ import net.osmand.plus.views.mapwidgets.TextInfoWidget;
 
 public class OsmandDevelopmentPlugin extends OsmandPlugin {
 	private static final String ID = "osmand.development";
-	private OsmandApplication app;
+	private final OsmandApplication app;
 
 	public OsmandDevelopmentPlugin(OsmandApplication app) {
 		this.app = app;
@@ -86,9 +86,9 @@ public class OsmandDevelopmentPlugin extends OsmandPlugin {
 
 	public static class FPSTextInfoWidget extends TextInfoWidget {
 
-		private OsmandMapTileView mv;
+		private final OsmandMapTileView mv;
 
-		public FPSTextInfoWidget(OsmandMapTileView mv, Activity activity) {
+		FPSTextInfoWidget(OsmandMapTileView mv, Activity activity) {
 			super(activity);
 			this.mv = mv;
 		}

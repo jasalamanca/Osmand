@@ -37,15 +37,15 @@ import gnu.trove.set.hash.TLongHashSet;
 
 public class RoutingContext {
 	private final static Log log = PlatformUtil.getLog(RoutingContext.class);
-	public static final int OPTION_NO_LOAD = 0;
-	public static final int OPTION_SMART_LOAD = 1;
-	public static final int OPTION_IN_MEMORY_LOAD = 2;
+	private static final int OPTION_NO_LOAD = 0;
+	private static final int OPTION_SMART_LOAD = 1;
+	private static final int OPTION_IN_MEMORY_LOAD = 2;
 
 	// Final context variables
 	public final RoutingConfiguration config;
 	public final RouteCalculationMode calculationMode;
 	public final NativeLibrary nativeLib;
-	public final Map<BinaryMapIndexReader, List<RouteSubregion>> map = new LinkedHashMap<BinaryMapIndexReader, List<RouteSubregion>>();
+	private final Map<BinaryMapIndexReader, List<RouteSubregion>> map = new LinkedHashMap<BinaryMapIndexReader, List<RouteSubregion>>();
 	public final Map<RouteRegion, BinaryMapIndexReader> reverseMap = new LinkedHashMap<RouteRegion, BinaryMapIndexReader>();
 	
 	// 1. Initial variables
@@ -60,25 +60,25 @@ public class RoutingContext {
 	public PrecalculatedRouteDirection precalculatedRouteDirection;
 
 	// 2. Routing memory cache (big objects)
-	TLongObjectHashMap<List<RoutingSubregionTile>> indexedSubregions = new TLongObjectHashMap<List<RoutingSubregionTile>>();
-	TLongObjectHashMap<List<RouteDataObject>> tileRoutes = new TLongObjectHashMap<List<RouteDataObject>>();
+    private final TLongObjectHashMap<List<RoutingSubregionTile>> indexedSubregions = new TLongObjectHashMap<List<RoutingSubregionTile>>();
+	private final TLongObjectHashMap<List<RouteDataObject>> tileRoutes = new TLongObjectHashMap<List<RouteDataObject>>();
 	
 	// Needs to be a sorted array list . Another option to use hashmap but it will be more memory expensive
-	List<RoutingSubregionTile> subregionTiles = new ArrayList<RoutingSubregionTile>();
+    private final List<RoutingSubregionTile> subregionTiles = new ArrayList<RoutingSubregionTile>();
 	
 	// 3. Warm object caches
-	ArrayList<RouteSegment> segmentsToVisitPrescripted = new ArrayList<BinaryRoutePlanner.RouteSegment>(5);
-	ArrayList<RouteSegment> segmentsToVisitNotForbidden = new ArrayList<BinaryRoutePlanner.RouteSegment>(5);
+    final ArrayList<RouteSegment> segmentsToVisitPrescripted = new ArrayList<BinaryRoutePlanner.RouteSegment>(5);
+	final ArrayList<RouteSegment> segmentsToVisitNotForbidden = new ArrayList<BinaryRoutePlanner.RouteSegment>(5);
 
 	// 5. debug information (package accessor)
-	public TileStatistics global = new TileStatistics();
+    private final TileStatistics global = new TileStatistics();
 	// updated by route planner in bytes
 	public int memoryOverhead = 0;
 	
-	long timeNanoToCalcDeviation = 0;
+	final long timeNanoToCalcDeviation = 0;
 	long timeToLoad = 0;
 	long timeToLoadHeaders = 0;
-	long timeToFindInitialSegments = 0;
+	private long timeToFindInitialSegments = 0;
 	long timeToCalculate = 0;
 	
 	int distinctLoadedTiles = 0;
@@ -153,7 +153,7 @@ public class RoutingContext {
 		return cnt;
 	}
 	
-	public int getCurrentEstimatedSize(){
+	private int getCurrentEstimatedSize(){
 		return global.size;
 	}
 
@@ -279,7 +279,7 @@ public class RoutingContext {
 		return original;
 	}
 	
-	public void loadSubregionTile(final RoutingSubregionTile ts, boolean loadObjectsInMemory) {
+	private void loadSubregionTile(final RoutingSubregionTile ts, boolean loadObjectsInMemory) {
 		boolean wasUnloaded = ts.isUnloaded();
 		int ucount = ts.getUnloadCont();
 		long now = System.nanoTime();
@@ -308,7 +308,7 @@ public class RoutingContext {
 		return loadTileHeaders(zoomToLoad, tileX, tileY);
 	}
 	
-	public void checkOldRoutingFiles(BinaryMapIndexReader key) {
+	private void checkOldRoutingFiles(BinaryMapIndexReader key) {
 		if(calculationMode == RouteCalculationMode.BASE && key.getDateCreated() < 1390172400000l) { // new SimpleDateFormat("dd-MM-yyyy").parse("20-01-2014").getTime()
 			System.err.println("Old routing file : " + key.getDateCreated() + " " + new Date(key.getDateCreated()));
 			String map = "";
@@ -331,7 +331,7 @@ public class RoutingContext {
 		}
 	}
 	
-	public List<RoutingSubregionTile> loadTileHeaders(final int zoomToLoadM31, int tileX, int tileY) {
+	private List<RoutingSubregionTile> loadTileHeaders(final int zoomToLoadM31, int tileX, int tileY) {
 		SearchRequest<RouteDataObject> request = BinaryMapIndexReader.buildSearchRouteRequest(tileX << zoomToLoadM31,
 				(tileX + 1) << zoomToLoadM31, tileY << zoomToLoadM31, (tileY + 1) << zoomToLoadM31, null);
 		List<RoutingSubregionTile> collection = null;
@@ -510,7 +510,7 @@ public class RoutingContext {
 		}
 	}
 
-	protected static long runGCUsedMemory()  {
+	static long runGCUsedMemory()  {
 		Runtime runtime = Runtime.getRuntime();
 		long usedMem1 = runtime.totalMemory() - runtime.freeMemory();
 		long usedMem2 = Long.MAX_VALUE;
@@ -533,18 +533,18 @@ public class RoutingContext {
 		return (o.getId() << 10) + ind;
 	}
 
-	public static class RoutingSubregionTile {
-		public final RouteSubregion subregion;
+	static class RoutingSubregionTile {
+		final RouteSubregion subregion;
 		// make it without get/set for fast access
-		public int access;
-		public TileStatistics tileStatistics = new TileStatistics();
+        int access;
+		TileStatistics tileStatistics = new TileStatistics();
 		
 		private NativeRouteSearchResult searchResult = null;
 		private int isLoaded = 0;
 		private TLongObjectMap<RouteSegment> routes = null;
 		private TLongHashSet excludedIds = null;
 
-		public RoutingSubregionTile(RouteSubregion subregion) {
+		RoutingSubregionTile(RouteSubregion subregion) {
 			this.subregion = subregion;
 		}
 		
@@ -552,7 +552,7 @@ public class RoutingContext {
 			return routes;
 		}
 		
-		public void loadAllObjects(final List<RouteDataObject> toFillIn, RoutingContext ctx, TLongObjectHashMap<RouteDataObject> excludeDuplications) {
+		void loadAllObjects(final List<RouteDataObject> toFillIn, RoutingContext ctx, TLongObjectHashMap<RouteDataObject> excludeDuplications) {
 			if(routes != null) {
 				Iterator<RouteSegment> it = routes.valueCollection().iterator();
 				while(it.hasNext()){
@@ -630,19 +630,19 @@ public class RoutingContext {
 			return original;
 		}
 		
-		public boolean isLoaded() {
+		boolean isLoaded() {
 			return isLoaded > 0;
 		}
 		
-		public int getUnloadCont(){
+		int getUnloadCont(){
 			return Math.abs(isLoaded);
 		}
 		
-		public boolean isUnloaded() {
+		boolean isUnloaded() {
 			return isLoaded < 0;
 		}
 		
-		public void unload() {
+		void unload() {
 			if(isLoaded == 0) {
 				this.isLoaded = -1;	
 			} else {
@@ -656,7 +656,7 @@ public class RoutingContext {
 			excludedIds = null;
 		}
 		
-		public void add(RouteDataObject ro) {
+		void add(RouteDataObject ro) {
 			tileStatistics.addObject(ro);
 			for (int i = 0; i < ro.pointsX.length; i++) {
 				int x31 = ro.getPoint31XTile(i);
@@ -675,7 +675,7 @@ public class RoutingContext {
 			}
 		}
 		
-		public void setLoadedNative(NativeRouteSearchResult r, RoutingContext ctx) {
+		void setLoadedNative(NativeRouteSearchResult r, RoutingContext ctx) {
 			isLoaded = Math.abs(isLoaded) + 1;
 			tileStatistics = new TileStatistics();
 			if (r.objects != null) {
@@ -693,7 +693,7 @@ public class RoutingContext {
 		}
 	}
 	
-	static int getEstimatedSize(RouteDataObject o) {
+	private static int getEstimatedSize(RouteDataObject o) {
 		// calculate size
 		int sz = 0;
 		sz += 8 + 4; // overhead
@@ -727,9 +727,9 @@ public class RoutingContext {
 	}
 	
 	protected static class TileStatistics {
-		public int size = 0;
-		public int allRoutes = 0;
-		public int coordinates = 0;
+		int size = 0;
+		int allRoutes = 0;
+		int coordinates = 0;
 		
 		@Override
 		public String toString() {
@@ -738,7 +738,7 @@ public class RoutingContext {
 					+ " ratio routes " + (((float)size) / allRoutes);
 		}
 
-		public void addObject(RouteDataObject o) {
+		void addObject(RouteDataObject o) {
 			allRoutes++;
 			coordinates += o.getPointsLength() * 2;
 			size += getEstimatedSize(o);
