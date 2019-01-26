@@ -147,12 +147,6 @@ public class AddPOIAction extends QuickAction {
 								if (activity instanceof MapActivity) {
 									activity.getMapView().refreshMap(true);
 								}
-							} else {
-//                                    OsmEditingPlugin plugin = OsmandPlugin.getPlugin(OsmEditingPlugin.class);
-//                                    mOpenstreetmapUtil = plugin.getPoiModificationLocalUtil();
-//                                    Button saveButton = (Button) view.findViewById(R.id.saveButton);
-//                                    saveButton.setText(mOpenstreetmapUtil instanceof OpenstreetmapRemoteUtil
-//                                            ? R.string.shared_string_upload : R.string.shared_string_save);
 							}
 
 							return false;
@@ -212,12 +206,6 @@ public class AddPOIAction extends QuickAction {
 		final TextInputLayout poiTypeTextInputLayout = view.findViewById(R.id.poiTypeTextInputLayout);
 		final AutoCompleteTextView poiTypeEditText = view.findViewById(R.id.poiTypeEditText);
 		final SwitchCompat showDialog = view.findViewById(R.id.saveButton);
-//            showDialog.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//                @Override
-//                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                    getParams().put(KEY_DIALOG, Boolean.toString(isChecked));
-//                }
-//            });
 		showDialog.setChecked(Boolean.valueOf(getParams().get(KEY_DIALOG)));
 
 		final String text = getTagsFromParams().get(POI_TYPE_TAG);
@@ -277,8 +265,6 @@ public class AddPOIAction extends QuickAction {
 								poiTypeEditText.setText(category);
 							}
 						});
-
-//						CreateEditActionDialog parentFragment = (CreateEditActionDialog) activity.getSupportFragmentManager().findFragmentByTag(CreateEditActionDialog.TAG);
 						f.show(activity.getSupportFragmentManager(), "PoiSubTypeDialogFragment");
 
 						return true;
@@ -304,41 +290,11 @@ public class AddPOIAction extends QuickAction {
 		final int colorId = isLightTheme ? R.color.inactive_item_orange : R.color.dash_search_icon_dark;
 		final int color = activity.getResources().getColor(colorId);
 		onlineDocumentationButton.setImageDrawable(activity.getMyApplication().getIconsCache().getPaintedIcon(R.drawable.ic_action_help, color));
-//            poiTypeEditText.setCompoundDrawables(null, null, activity.getMyApplication().getIconsCache().getPaintedIcon(R.drawable.ic_action_arrow_drop_down, color), null);
-
-//            Button addTypeButton = (Button) view.findViewById(R.id.addTypeButton);
-//            addTypeButton.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    PoiSubTypeDialogFragment f = PoiSubTypeDialogFragment.createInstance(poiTypes.getOtherPoiCategory());
-//                    f.setOnItemSelectListener(new PoiSubTypeDialogFragment.OnItemSelectListener() {
-//                        @Override
-//                        public void select(String category) {
-//                            putTagIntoParams(POI_TYPE_TAG, category);
-//                        }
-//                    });
-//
-//                    CreateEditActionDialog parentFragment = (CreateEditActionDialog) activity.getSupportFragmentManager().findFragmentByTag(CreateEditActionDialog.TAG);
-//                    f.show(parentFragment.getChildFragmentManager(), "PoiSubTypeDialogFragment");
-//                }
-//            });
-
 		parent.addView(view);
 	}
 
 	private void setUpAdapterForPoiTypeEditText(final MapActivity activity, final Map<String, PoiType> allTranslatedNames, final AutoCompleteTextView poiTypeEditText) {
 		final Map<String, PoiType> subCategories = new LinkedHashMap<>();
-//            PoiCategory ct = editPoiData.getPoiCategory();
-//            if (ct != null) {
-//                for (PoiType s : ct.getPoiTypes()) {
-//                    if (!s.isReference() && !s.isNotEditableOsm() && s.getBaseLangType() == null) {
-//                        addMapEntryAdapter(subCategories, s.getTranslation(), s);
-//                        if(!s.getKeyName().contains("osmand")) {
-//                            addMapEntryAdapter(subCategories, s.getKeyName().replace('_', ' '), s);
-//                        }
-//                    }
-//                }
-//            }
 		for (Map.Entry<String, PoiType> s : allTranslatedNames.entrySet()) {
 			addMapEntryAdapter(subCategories, s.getKey(), s.getValue());
 		}

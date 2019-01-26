@@ -52,7 +52,7 @@ import java.util.regex.Pattern;
  * @author wenboz@google.com Wenbo Zhu
  * @author kenton@google.com Kenton Varda
  */
-public final class TextFormat {
+final class TextFormat {
   private TextFormat() {}
 
   private static final Printer DEFAULT_PRINTER = new Printer();
@@ -943,7 +943,7 @@ public final class TextFormat {
   }
 
   /** Thrown when parsing an invalid text format message. */
-  public static class ParseException extends IOException {
+  static class ParseException extends IOException {
     private static final long serialVersionUID = 3196188060225107702L;
 
     private final int line;

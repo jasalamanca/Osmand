@@ -8,7 +8,7 @@ import net.osmand.util.MapUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AsynchronousResampler extends AsyncTask<String,Integer,String> {
+abstract class AsynchronousResampler extends AsyncTask<String,Integer,String> {
 
     Renderable.RenderableSegment rs;
     List<WptPt> culled = null;

@@ -11,7 +11,7 @@ public class RemoveGpxParams implements Parcelable {
 		this.fileName = fileName;
 	}
 
-	public RemoveGpxParams(Parcel in) {
+	private RemoveGpxParams(Parcel in) {
 		readFromParcel(in);
 	}
 

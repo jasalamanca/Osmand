@@ -3,19 +3,14 @@ package net.osmand.plus.render;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
-import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.Paint.Cap;
 import android.graphics.Paint.Style;
 import android.graphics.PathEffect;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.Shader.TileMode;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
@@ -53,12 +48,6 @@ public class OsmandRenderer {
 		public RenderingContext(Context ctx) {
 			this.ctx = ctx;
 		}
-
-		// use to calculate points
-		float cosRotateTileSize;
-		float sinRotateTileSize;
-
-		boolean ended = false;
 
 		@Override
 		protected byte[] getIconRawData(String data) {
@@ -112,19 +101,15 @@ public class OsmandRenderer {
 			Bitmap bmp, RenderingRuleSearchRequest render) {
 		long now = System.currentTimeMillis();
 		if (rc.width > 0 && rc.height > 0 && searchResultHandler != null) {
-			rc.cosRotateTileSize = (float) (Math.cos(Math.toRadians(rc.rotate)) * TILE_SIZE);
-			rc.sinRotateTileSize = (float) (Math.sin(Math.toRadians(rc.rotate)) * TILE_SIZE);
+//			rc.cosRotateTileSize = (float) (Math.cos(Math.toRadians(rc.rotate)) * TILE_SIZE);
+//			rc.sinRotateTileSize = (float) (Math.sin(Math.toRadians(rc.rotate)) * TILE_SIZE);
 			try {
-				if(Looper.getMainLooper() != null) {
-					final Handler h = new Handler(Looper.getMainLooper());
-				}
-				
 				// Native library will decide on it's own best way of rendering
 				// If res.bitmapBuffer is null, it indicates that rendering was done directly to
 				// memory of passed bitmap, but this is supported only on Android >= 2.2
 				final NativeLibrary.RenderingGenerationResult res = library.generateRendering(
 					rc, searchResultHandler, bmp, bmp.hasAlpha(), render);
-				rc.ended = true;
+//				rc.ended = true;
 				long time = System.currentTimeMillis() - now;
 				rc.renderingDebugInfo = String.format("Rendering: %s ms  (%s text)\n"
 						+ "(%s points, %s points inside, %s of %s objects visible)\n",//$NON-NLS-1$
@@ -138,24 +123,6 @@ public class OsmandRenderer {
 				e.printStackTrace();
 			}
 		}
-	}
-	
-	public float getDensity(){
-		return dm.density;
-	}
-
-	protected void drawBitmap(Canvas cv, Bitmap ico, RectF rf) {
-		if(ico == null) {
-			return;
-		}
-		cv.drawBitmap(ico, rf.left, rf.top, paintIcon);
-	}
-
-	protected void drawBitmap(Canvas cv, Bitmap ico, RectF rf, Rect src) {
-		if(ico == null) {
-			return;
-		}
-		cv.drawBitmap(ico, src, rf, paintIcon);
 	}
 
 	public boolean updatePaint(RenderingRuleSearchRequest req, Paint p, int ind, boolean area, RenderingContext rc){

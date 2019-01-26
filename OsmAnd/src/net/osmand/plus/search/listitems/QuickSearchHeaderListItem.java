@@ -17,10 +17,6 @@ public class QuickSearchHeaderListItem extends QuickSearchListItem {
 		return QuickSearchListItemType.HEADER;
 	}
 
-	public String getTitle() {
-		return title;
-	}
-
 	public boolean isShowTopDivider() {
 		return showTopDivider;
 	}

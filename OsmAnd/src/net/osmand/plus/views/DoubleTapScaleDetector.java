@@ -8,13 +8,9 @@ import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 
-import net.osmand.PlatformUtil;
 import net.osmand.data.RotatedTileBox;
 
-import org.apache.commons.logging.Log;
-
 class DoubleTapScaleDetector {
-	private static final Log LOG = PlatformUtil.getLog(DoubleTapScaleDetector.class);
 	private static final int DOUBLE_TAP_TIMEOUT = ViewConfiguration.getDoubleTapTimeout();
 	private static final int LONG_PRESS_TIMEOUT = ViewConfiguration.getLongPressTimeout();
 	public static final int SCALE_PER_SCREEN = 4;

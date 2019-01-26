@@ -22,13 +22,10 @@ import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import net.osmand.PlatformUtil;
 import net.osmand.plus.activities.HelpActivity;
 import net.osmand.plus.activities.actions.AppModeDialog;
 import net.osmand.plus.dialogs.ConfigureMapMenu;
 import net.osmand.plus.dialogs.HelpArticleDialogFragment;
-
-import org.apache.commons.logging.Log;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -36,8 +33,6 @@ import java.util.List;
 import java.util.Set;
 
 public class ContextMenuAdapter {
-	private static final Log LOG = PlatformUtil.getLog(ContextMenuAdapter.class);
-
 	@LayoutRes
 	private int DEFAULT_LAYOUT_ID = R.layout.list_menu_item_native;
 	private final List<ContextMenuItem> items = new ArrayList<>();
@@ -350,20 +345,11 @@ public class ContextMenuAdapter {
 								   int[] viewCoordinates);
 	}
 
-	public interface ProgressListener {
-		boolean onProgressChanged(Object progressObject,
-								  int progress,
-								  ArrayAdapter<ContextMenuItem> adapter,
-								  int itemId,
-								  int position);
-	}
-
 	public interface OnIntegerValueChangedListener {
 		boolean onIntegerValueChangedListener(int newValue);
 	}
 
 	public static abstract class OnRowItemClick implements ItemClickListener {
-
 		//boolean return type needed to describe if drawer needed to be close or not
 		public boolean onRowItemClick(ArrayAdapter<ContextMenuItem> adapter, View view, int itemId, int position) {
 			CompoundButton btn = view.findViewById(R.id.toggle_item);

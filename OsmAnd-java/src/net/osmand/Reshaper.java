@@ -1,18 +1,18 @@
 package net.osmand;
 
-import java.io.UnsupportedEncodingException;
-
-import org.apache.commons.logging.Log;
-
 import com.ibm.icu.text.ArabicShaping;
 import com.ibm.icu.text.ArabicShapingException;
 import com.ibm.icu.text.Bidi;
 import com.ibm.icu.text.BidiRun;
 
+import org.apache.commons.logging.Log;
+
+import java.io.UnsupportedEncodingException;
+
 class Reshaper {
 	private final static Log LOG = PlatformUtil.getLog(Reshaper.class);
 	
-	public static String reshape(byte[] bytes) {
+	public static String reshape(byte[] bytes) { //NOTE jsala usado desde C++
 		try {
 			return reshape(new String(bytes, "UTF-8"));
 		} catch (UnsupportedEncodingException e) {
@@ -20,9 +20,6 @@ class Reshaper {
 		}
 	}
 	private static String reshape(String s) {
-//		if(true) {
-//			return s;
-//		}
 		try {
 			ArabicShaping as = new ArabicShaping(ArabicShaping.LETTERS_SHAPE | ArabicShaping.LENGTH_GROW_SHRINK);
 			try {
@@ -47,15 +44,6 @@ class Reshaper {
 			} else {
 				// // mixed-directional
 				int count = line.countRuns();
-				// if (styleRunCount <= 1) {
-				// int style = styleRuns[0].style;
-				// // iterate over directional runs
-				// for (i = 0; i < count; ++i) {
-				// run = line.getVisualRun(i);
-				// renderRun(text, run.getStart(), run.getLimit(),
-				// run.getDirection(), style);
-				// }
-				// }
 				StringBuilder res = new StringBuilder();
 				// iterate over both directional and style runs
 				for (int i = 0; i < count; ++i) {
@@ -83,6 +71,8 @@ class Reshaper {
 		}
 
 	}
+
+	//NOTE jsala es un test
 	public static void main(String[] args) {
 //		char[] c = new char[] {'א', 'ד','ם', ' ', '1', '2'} ;
 //		String reshape = "אדם";
@@ -94,6 +84,7 @@ class Reshaper {
 		test2();
 	}
 
+	//NOTE jsala es un test
 	private static void test2() {
 		String s = "گچ پژ نمکی باللغة العربي";
 		String reshape = reshape(s);
@@ -102,5 +93,4 @@ class Reshaper {
 			throw new IllegalArgumentException("BUG!!!");
 		}
 	}
-
 }

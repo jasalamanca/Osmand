@@ -133,7 +133,7 @@ public class LocationParser {
 			double lon = 0;
 			boolean only2decimals = true;
 			for (int i = 0; i < d.size(); i++) {
-				if (d.get(i).doubleValue() != d.get(i).intValue()) {
+				if (d.get(i) != d.get(i).intValue()) {
 					if (lat == 0) {
 						lat = d.get(i);
 					} else if (lon == 0) {
@@ -189,16 +189,16 @@ public class LocationParser {
 					type = 2;
 				}
 				if (type == 0) {
-					double ld = prevDouble.doubleValue();
+					double ld = prevDouble;
 					if (ld < 0) {
 						ld = -ld;
 						neg = true;
 					}
 					d += ld;
 				} else if (type == 1) {
-					d += prevDouble.doubleValue() / 60.f;
+					d += prevDouble / 60.f;
 				} else /*if (type == 1) */ {
-					d += prevDouble.doubleValue() / 3600.f;
+					d += prevDouble / 3600.f;
 				}
 				type++;
 			}

@@ -1,7 +1,6 @@
 package net.osmand.router;
 
 public class RouteCalculationProgress {
-
 	public int segmentNotFound = -1;
 	public float distanceFromBegin;
 	public float directDistance;

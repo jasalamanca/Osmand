@@ -59,16 +59,10 @@ public class MapInfoLayer extends OsmandMapLayer {
 		this.routeLayer = layer;
 	}
 	
-	public MapWidgetRegistry getMapInfoControls() {
+	MapWidgetRegistry getMapInfoControls() {
 		return mapInfoControls;
 	}
 	
-// --Commented out by Inspection START (26/01/19 15:46):
-//	public MapActivity getMapActivity() {
-//		return map;
-//	}
-// --Commented out by Inspection STOP (26/01/19 15:46)
-
 	@Override
 	public void initLayer(final OsmandMapTileView view) {
 		this.view = view;
@@ -142,7 +136,7 @@ public class MapInfoLayer extends OsmandMapLayer {
 		alarmControl = ric.createAlarmInfoControl(app, map);
 		alarmControl.setVisibility(false);
 		
-		rulerControl = ric.createRulerControl(app, map);
+		rulerControl = ric.createRulerControl(map);
 		rulerControl.setVisibility(false);
 		
 		// register left stack
@@ -233,7 +227,6 @@ public class MapInfoLayer extends OsmandMapLayer {
 		int boxFree;
 		int textShadowRadius;
 	}
-
 
 	private int themeId = -1;
 	private void updateColorShadowsOfText() {
@@ -339,36 +332,4 @@ public class MapInfoLayer extends OsmandMapLayer {
 	public boolean drawInScreenPixels() {
 		return true;
 	}
-	
-
-// --Commented out by Inspection START (26/01/19 14:01):
-//	public static String getStringPropertyName(Context ctx, String propertyName, String defValue) {
-//		try {
-//			Field f = R.string.class.getField("rendering_attr_" + propertyName + "_name");
-//			if (f != null) {
-//				Integer in = (Integer) f.get(null);
-//				return ctx.getString(in);
-//			}
-//		} catch (Exception e) {
-//			System.err.println(e.getMessage());
-//		}
-//		return defValue;
-//	}
-// --Commented out by Inspection STOP (26/01/19 14:01)
-
-// --Commented out by Inspection START (26/01/19 15:45):
-//	public static String getStringPropertyDescription(Context ctx, String propertyName, String defValue) {
-//		try {
-//			Field f = R.string.class.getField("rendering_attr_" + propertyName + "_description");
-//			if (f != null) {
-//				Integer in = (Integer) f.get(null);
-//				return ctx.getString(in);
-//			}
-//		} catch (Exception e) {
-//			//e.printStackTrace();
-//			System.err.println(e.getMessage());
-//		}
-//		return defValue;
-//	}
-// --Commented out by Inspection STOP (26/01/19 15:45)
 }

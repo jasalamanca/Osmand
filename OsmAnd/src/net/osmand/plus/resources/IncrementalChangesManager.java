@@ -69,7 +69,6 @@ public class IncrementalChangesManager {
 			regions.put(nm, new RegionUpdateFiles(nm));
 		}
 		RegionUpdateFiles regionUpdateFiles = regions.get(nm);
-		regionUpdateFiles.mainFile = f;
 		regionUpdateFiles.mainFileInit = dateCreated;
 		if (!regionUpdateFiles.monthUpdates.isEmpty()) {
 			List<String> list = new ArrayList<>(regionUpdateFiles.monthUpdates.keySet());
@@ -118,11 +117,7 @@ public class IncrementalChangesManager {
 		RegionUpdateFiles regionUpdateFiles = regions.get(nm);
 		return regionUpdateFiles.addUpdate(date, f, dateCreated);
 	}
-	
-	protected static String formatSize(long vl) {
-		return (vl * 1000 / (1 << 20l)) / 1000.0f + "";
-	}
-	
+
 	private static long calculateSize(List<IncrementalUpdate> list) {
 		long l = 0;
 		for(IncrementalUpdate iu : list) {
@@ -133,13 +128,11 @@ public class IncrementalChangesManager {
 	
 	class RegionUpdate {
 		File file;
-		String date;
 		long obfCreated;
 	}
 	
-	protected class RegionUpdateFiles {
+	class RegionUpdateFiles {
 		final String nm;
-		File mainFile;
 		long mainFileInit;
 		final TreeMap<String, List<RegionUpdate>> dayUpdates = new TreeMap<>();
 		final TreeMap<String, RegionUpdate> monthUpdates = new TreeMap<>();
@@ -151,7 +144,6 @@ public class IncrementalChangesManager {
 		boolean addUpdate(String date, File file, long dateCreated) {
 			String monthYear = date.substring(0, 5);
 			RegionUpdate ru = new RegionUpdate();
-			ru.date = date;
 			ru.file = file;
 			ru.obfCreated = dateCreated;
 			if(date.endsWith("00")) {
@@ -224,15 +216,7 @@ public class IncrementalChangesManager {
 		final String monthYearPart ;
 		final List<IncrementalUpdate> dayUpdates = new ArrayList<>();
 		IncrementalUpdate monthUpdate;
-		
-		public long calculateSizeMonthUpdates() {
-			return calculateSize(getMonthUpdate());
-		}
-		
-		public long calculateSizeDayUpdates() {
-			return calculateSize(getDayUpdates());
-		}
-		
+
 		boolean isMonthUpdateApplicable() {
 			return monthUpdate != null;
 		}
@@ -380,14 +364,6 @@ public class IncrementalChangesManager {
 			return System.currentTimeMillis();
 		}
 		return getTimestamp(ruf);
-	}
-
-	public long getMapTimestamp(String fileName) {
-		RegionUpdateFiles ruf = regions.get(fileName.toLowerCase());
-		if(ruf == null) {
-			return System.currentTimeMillis();
-		}
-		return ruf.mainFileInit;
 	}
 
 	private long getTimestamp(RegionUpdateFiles ruf) {

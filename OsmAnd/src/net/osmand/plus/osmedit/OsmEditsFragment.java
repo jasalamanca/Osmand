@@ -600,7 +600,7 @@ public class OsmEditsFragment extends OsmAndListFragment implements SendPoiDialo
 	}
 
 
-	public OsmandApplication getMyApplication() {
+	protected OsmandApplication getMyApplication() {
 		return (OsmandApplication) getActivity().getApplication();
 	}
 

@@ -1,11 +1,10 @@
 package net.osmand.data;
 
 
-import java.util.Collections;
+import net.osmand.util.Algorithms;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
-
-import net.osmand.util.Algorithms;
 
 public class Building extends MapObject {
 	
@@ -38,18 +37,10 @@ public class Building extends MapObject {
 	}
 
 	public Building(){}
-	
 	public String getPostcode() {
 		return postcode;
 	}
-	
-	public Map<String, LatLon> getEntrances() {
-		if(entrances == null) {
-			return Collections.emptyMap();
-		}
-		return entrances;
-	}
-	
+
 	public void addEntrance(String ref, LatLon location) {
 		if(entrances == null) {
 			entrances = new LinkedHashMap<>();
@@ -81,11 +72,9 @@ public class Building extends MapObject {
 	public String getName2() {
 		return name2;
 	}
-	
 	public void setName2(String name2) {
 		this.name2 = name2;
 	}
-	
 	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
@@ -100,12 +89,9 @@ public class Building extends MapObject {
 		}
 		return name;
 	}	
-	
 
 	public float interpolation(String hno) {
-		if(getInterpolationType() != null || getInterpolationInterval() > 0 
-				//|| checkNameAsInterpolation() // disable due to situation in NL #4284 
-				) {
+		if(getInterpolationType() != null || getInterpolationInterval() > 0) {
 			int num = Algorithms.extractFirstIntegerNumber(hno);
 			String fname = super.getName();
 			int numB = Algorithms.extractFirstIntegerNumber(fname);
@@ -141,20 +127,6 @@ public class Building extends MapObject {
 		}
 		return -1;
 	}
-	
-	protected boolean checkNameAsInterpolation() {
-		String nm = super.getName();
-		boolean interpolation = nm.contains("-");
-		if(interpolation) {
-			for(int i = 0; i < nm.length(); i++) {
-				if(!(nm.charAt(i) >= '0' && nm.charAt(i) <= '9') && nm.charAt(i) != '-') {
-					interpolation = false;
-					break;
-				}
-			}
-		}
-		return interpolation;
-	}
 
 	public boolean belongsToInterpolation(String hno) {
 		return interpolation(hno) >= 0;
@@ -183,7 +155,6 @@ public class Building extends MapObject {
 		return loc;
 	}
 	
-	
 	@Override
 	public boolean equals(Object o) {
 		boolean res = super.equals(o);
@@ -192,5 +163,4 @@ public class Building extends MapObject {
 		}
 		return res;
 	}
-
 }

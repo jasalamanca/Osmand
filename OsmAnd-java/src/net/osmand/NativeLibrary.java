@@ -1,6 +1,20 @@
 package net.osmand;
 
-import gnu.trove.list.array.TIntArrayList;
+import net.osmand.binary.BinaryMapRouteReaderAdapter.RouteRegion;
+import net.osmand.binary.BinaryMapRouteReaderAdapter.RouteSubregion;
+import net.osmand.binary.RouteDataObject;
+import net.osmand.data.LatLon;
+import net.osmand.data.MapObject;
+import net.osmand.data.QuadRect;
+import net.osmand.render.RenderingRuleSearchRequest;
+import net.osmand.render.RenderingRulesStorage;
+import net.osmand.router.PrecalculatedRouteDirection;
+import net.osmand.router.RouteCalculationProgress;
+import net.osmand.router.RouteSegmentResult;
+import net.osmand.router.RoutingConfiguration;
+import net.osmand.util.Algorithms;
+
+import org.apache.commons.logging.Log;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -17,21 +31,7 @@ import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import net.osmand.binary.BinaryMapRouteReaderAdapter.RouteRegion;
-import net.osmand.binary.BinaryMapRouteReaderAdapter.RouteSubregion;
-import net.osmand.binary.RouteDataObject;
-import net.osmand.data.LatLon;
-import net.osmand.data.MapObject;
-import net.osmand.data.QuadRect;
-import net.osmand.render.RenderingRuleSearchRequest;
-import net.osmand.render.RenderingRulesStorage;
-import net.osmand.router.PrecalculatedRouteDirection;
-import net.osmand.router.RouteCalculationProgress;
-import net.osmand.router.RouteSegmentResult;
-import net.osmand.router.RoutingConfiguration;
-import net.osmand.util.Algorithms;
-
-import org.apache.commons.logging.Log;
+import gnu.trove.list.array.TIntArrayList;
 
 public class NativeLibrary {
     protected NativeLibrary() {

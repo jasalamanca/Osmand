@@ -2,6 +2,7 @@ package net.osmand.plus.osmedit;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
@@ -26,7 +27,7 @@ public class FileTypeBottomSheetDialogFragment extends MenuBottomSheetDialogFrag
 
 	@Nullable
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		final int themeRes = nightMode ? R.style.OsmandDarkTheme : R.style.OsmandLightTheme;
 		final View mainView = View.inflate(new ContextThemeWrapper(getContext(), themeRes),
 				R.layout.fragment_osm_file_type_bottom_sheet_dialog, container);

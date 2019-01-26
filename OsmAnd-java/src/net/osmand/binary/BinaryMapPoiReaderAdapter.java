@@ -1,18 +1,8 @@
 package net.osmand.binary;
 
 
-import gnu.trove.list.array.TIntArrayList;
-import gnu.trove.map.hash.TIntLongHashMap;
-import gnu.trove.set.hash.TLongHashSet;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
+import com.google.protobuf.CodedInputStream;
+import com.google.protobuf.WireFormat;
 
 import net.osmand.Collator;
 import net.osmand.CollatorStringMatcher;
@@ -30,10 +20,20 @@ import net.osmand.util.MapUtils;
 
 import org.apache.commons.logging.Log;
 
-import com.google.protobuf.CodedInputStream;
-import com.google.protobuf.WireFormat;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
-public class BinaryMapPoiReaderAdapter {
+import gnu.trove.list.array.TIntArrayList;
+import gnu.trove.map.hash.TIntLongHashMap;
+import gnu.trove.set.hash.TLongHashSet;
+
+class BinaryMapPoiReaderAdapter {
 	private static final Log LOG = PlatformUtil.getLog(BinaryMapPoiReaderAdapter.class);
 
 	private static final int SHIFT_BITS_CATEGORY = 7;
@@ -45,7 +45,6 @@ public class BinaryMapPoiReaderAdapter {
 	public static class PoiSubType {
 		boolean text;
 		String name;
-		//int estiatedSize;
 		List<String> possibleValues = null;
 	}
 
@@ -59,14 +58,6 @@ public class BinaryMapPoiReaderAdapter {
 		int right31;
 		int top31;
 		int bottom31;
-
-		public String getPartName() {
-			return "POI";
-		}
-
-		public int getFieldNumber() {
-			return OsmandOdb.OsmAndStructure.POIINDEX_FIELD_NUMBER;
-		}
 
 		PoiSubType getSubtypeFromId(int id, StringBuilder returnValue) {
 			int tl;
@@ -320,16 +311,16 @@ public class BinaryMapPoiReaderAdapter {
 
 				LOG.info("Searched poi structure in " + (System.currentTimeMillis() - time) +
 						"ms. Found " + offKeys.length + " subtrees");
-				for (int j = 0; j < offKeys.length; j++) {
-					codedIS.seek(offKeys[j] + indexOffset);
-					int len = readInt();
-					int oldLim = codedIS.pushLimit(len);
-					readPoiData(matcher, req, region);
-					codedIS.popLimit(oldLim);
-					if (req.isCancelled() || req.limitExceeded()) {
-						return;
-					}
-				}
+                for (Integer offKey : offKeys) {
+                    codedIS.seek(offKey + indexOffset);
+                    int len = readInt();
+                    int oldLim = codedIS.pushLimit(len);
+                    readPoiData(matcher, req, region);
+                    codedIS.popLimit(oldLim);
+                    if (req.isCancelled() || req.limitExceeded()) {
+                        return;
+                    }
+                }
 				LOG.info("Whole poi by name search is done in " + (System.currentTimeMillis() - time) +
 						"ms. Found " + req.getSearchResults().size());
 				codedIS.skipRawBytes(codedIS.getBytesUntilLimit());
@@ -383,7 +374,6 @@ public class BinaryMapPoiReaderAdapter {
 				break;
 			}
 		}
-
 	}
 
 	private void readPoiNameIndexData(TIntLongHashMap offsets, SearchRequest<Amenity> req) throws IOException {
@@ -476,30 +466,30 @@ public class BinaryMapPoiReaderAdapter {
 				}
 				LOG.info("Searched poi structure in " + (System.currentTimeMillis() - time) + " ms. Found "
 						+ offsets.length + " subtrees");
-				for (int j = 0; j < offsets.length; j++) {
-					long skipVal = offsetsMap.get(offsets[j]);
-					if (skipTiles != null && skipVal != -1) {
-						int dzoom = ZOOM_TO_SKIP_FILTER_READ - ZOOM_TO_SKIP_FILTER;
-						long dx = (skipVal >> ZOOM_TO_SKIP_FILTER_READ);
-						long dy = skipVal - (dx << ZOOM_TO_SKIP_FILTER_READ);
-						skipVal = ((dx >> dzoom) << ZOOM_TO_SKIP_FILTER) | (dy >> dzoom);
-						if (skipVal != -1 && skipTiles.contains(skipVal)) {
-							continue;
-						}
-					}
-					codedIS.seek(offsets[j] + indexOffset);
-					int len = readInt();
-					int oldLim = codedIS.pushLimit(len);
-					boolean read = readPoiData(left31, right31, top31, bottom31, req, region, skipTiles,
-							req.zoom == -1 ? 31 : req.zoom + ZOOM_TO_SKIP_FILTER);
-					if (read && skipVal != -1 && skipTiles != null) {
-						skipTiles.add(skipVal);
-					}
-					codedIS.popLimit(oldLim);
-					if (req.isCancelled()) {
-						return;
-					}
-				}
+                for (int offset : offsets) {
+                    long skipVal = offsetsMap.get(offset);
+                    if (skipTiles != null && skipVal != -1) {
+                        int dzoom = ZOOM_TO_SKIP_FILTER_READ - ZOOM_TO_SKIP_FILTER;
+                        long dx = (skipVal >> ZOOM_TO_SKIP_FILTER_READ);
+                        long dy = skipVal - (dx << ZOOM_TO_SKIP_FILTER_READ);
+                        skipVal = ((dx >> dzoom) << ZOOM_TO_SKIP_FILTER) | (dy >> dzoom);
+                        if (skipVal != -1 && skipTiles.contains(skipVal)) {
+                            continue;
+                        }
+                    }
+                    codedIS.seek(offset + indexOffset);
+                    int len = readInt();
+                    int oldLim = codedIS.pushLimit(len);
+                    boolean read = readPoiData(left31, right31, top31, bottom31, req, region, skipTiles,
+                            req.zoom == -1 ? 31 : req.zoom + ZOOM_TO_SKIP_FILTER);
+                    if (read && skipVal != -1 && skipTiles != null) {
+                        skipTiles.add(skipVal);
+                    }
+                    codedIS.popLimit(oldLim);
+                    if (req.isCancelled()) {
+                        return;
+                    }
+                }
 				codedIS.skipRawBytes(codedIS.getBytesUntilLimit());
 				return;
 			default:
@@ -778,24 +768,12 @@ public class BinaryMapPoiReaderAdapter {
 	}
 
 	private boolean checkCategories(SearchRequest<Amenity> req, PoiRegion region) throws IOException {
-		StringBuilder subType = new StringBuilder();
 		while (true) {
 			int t = codedIS.readTag();
 			int tag = WireFormat.getTagFieldNumber(t);
 			switch (tag) {
 			case 0:
 				return false;
-//			case OsmandOdb.OsmAndPoiCategories.SUBCATEGORIES_FIELD_NUMBER:
-//				int subcatvl = codedIS.readUInt32();
-//				if(req.poiTypeFilter.filterSubtypes()) {
-//					subType.setLength(0);
-//					PoiSubType pt = region.getSubtypeFromId(subcatvl, subType);
-//					if(pt != null && req.poiTypeFilter.accept(pt.name, subType.toString())) {
-//						codedIS.skipRawBytes(codedIS.getBytesUntilLimit());
-//						return true;
-//					}
-//				}
-//				break;
 			case OsmandOdb.OsmAndPoiCategories.CATEGORIES_FIELD_NUMBER:
 				PoiCategory type = poiTypes.getOtherPoiCategory();
 				String subtype = "";
@@ -924,5 +902,4 @@ public class BinaryMapPoiReaderAdapter {
 			}
 		}
 	}
-
 }

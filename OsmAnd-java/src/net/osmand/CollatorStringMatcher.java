@@ -3,7 +3,6 @@ package net.osmand;
 import java.util.Locale;
 
 
-
 /**
  * Abstract collator matcher that basically supports subclasses with some collator
  * matching.
@@ -11,7 +10,6 @@ import java.util.Locale;
  * @author pavol.zibrita
  */
 public class CollatorStringMatcher implements StringMatcher {
-
 	private final Collator collator;
 	private final StringMatcherMode mode;
 	private final String part;
@@ -39,7 +37,6 @@ public class CollatorStringMatcher implements StringMatcher {
 		return cmatches(collator, name, part, mode);
 	}
 	
-	
 	public static boolean cmatches(Collator collator, String base, String part, StringMatcherMode mode){
 		switch (mode) {
 		case CHECK_CONTAINS:
@@ -55,8 +52,7 @@ public class CollatorStringMatcher implements StringMatcher {
 		}
 		return false;
 	}
-	
-	
+
 	/**
 	 * Check if part contains in base
 	 *
@@ -66,20 +62,6 @@ public class CollatorStringMatcher implements StringMatcher {
 	 * @return true if part is contained in base
 	 */
 	private static boolean ccontains(Collator collator, String base, String part) {
-//		int pos = 0;
-//		if (part.length() > 3) {
-//			// improve searching by searching first 3 characters
-//			pos = cindexOf(collator, pos, part.substring(0, 3), base);
-//			if (pos == -1) {
-//				return false;
-//			}
-//		}
-//		pos = cindexOf(collator, pos, part, base);
-//		if (pos == -1) {
-//			return false;
-//		}
-//		return true;
-		
 		if (base.length() <= part.length())
 			return collator.equals(base, part);
 		
@@ -96,16 +78,7 @@ public class CollatorStringMatcher implements StringMatcher {
 		return false;
 	}
 
-	private static int cindexOf(Collator collator, int start, String part, String base) {
-		for (int pos = start; pos <= base.length() - part.length(); pos++) {
-			if (collator.equals(base.substring(pos, pos + part.length()), part)) {
-				return pos;
-			}
-		}
-		return -1;
-	}
-
-	/**
+    /**
 	 * Checks if string starts with another string.
 	 * Special check try to find as well in the middle of name
 	 * 

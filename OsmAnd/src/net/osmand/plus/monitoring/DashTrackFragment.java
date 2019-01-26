@@ -43,10 +43,8 @@ import java.util.List;
  * on 21.01.2015.
  */
 public class DashTrackFragment extends DashBaseFragment {
-
 	private static final String TAG = "DASH_TRACK_FRAGMENT";
 	private static final int TITLE_ID = R.string.shared_string_my_tracks;
-
 	private static final String ROW_NUMBER_TAG = TAG + "_row_number";
 
 	private static final DashFragmentData.ShouldShowFunction SHOULD_SHOW_FUNCTION =
@@ -87,8 +85,7 @@ public class DashTrackFragment extends DashBaseFragment {
 		updateEnable = true;
 		setupGpxFiles();
 	}
-	
-	
+
 	@Override
 	public void onCloseDash() {
 		updateEnable = false;
@@ -103,7 +100,7 @@ public class DashTrackFragment extends DashBaseFragment {
 		}
 		
 		final List<String> list  = new ArrayList<>();
-		for(SelectedGpxFile sg :  app.getSelectedGpxHelper().getSelectedGPXFiles() ) {
+		for(SelectedGpxFile sg: app.getSelectedGpxHelper().getSelectedGPXFiles() ) {
 			if(!sg.isShowCurrentTrack()) {
 				GPXFile gpxFile = sg.getGpxFile();
 				if(gpxFile != null) {
@@ -145,7 +142,7 @@ public class DashTrackFragment extends DashBaseFragment {
 		if (OsmandPlugin.getEnabledPlugin(OsmandMonitoringPlugin.class) != null) {
 			View view = inflater.inflate(R.layout.dash_gpx_track_item, null, false);
 
-			createCurrentTrackView(view, app);
+			createCurrentTrackView(view);
 			((TextView) view.findViewById(R.id.name)).setText(R.string.shared_string_currently_recording_track);
 			updateCurrentTrack(view, getActivity(), app);
 			view.setOnClickListener(new View.OnClickListener() {
@@ -181,7 +178,7 @@ public class DashTrackFragment extends DashBaseFragment {
 		}
 	}
 
-	private static void createCurrentTrackView(View v, final OsmandApplication app) {
+	private static void createCurrentTrackView(View v) {
 		((TextView) v.findViewById(R.id.name)).setText(R.string.shared_string_currently_recording_track);
 		v.findViewById(R.id.icon).setVisibility(View.GONE);
 		v.findViewById(R.id.time_icon).setVisibility(View.GONE);

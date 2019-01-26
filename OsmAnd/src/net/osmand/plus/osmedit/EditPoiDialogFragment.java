@@ -374,7 +374,6 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 				args.putInt("message", R.string.save_poi_without_poi_type_message);
 				f.setArguments(args);
 				f.show(getChildFragmentManager(), "dialog");
-				// poiTypeEditText.setError(getResources().getString(R.string.please_specify_poi_type));
 			} else {
 				save();
 			}
@@ -608,8 +607,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 		}
 	}
 
-	public static EditPoiDialogFragment createAddPoiInstance(double latitude, double longitude,
-															 OsmandApplication application) {
+	public static EditPoiDialogFragment createAddPoiInstance(double latitude, double longitude) {
 		Node node = new Node(latitude, longitude, -1);
 		return createInstance(node, true);
 	}

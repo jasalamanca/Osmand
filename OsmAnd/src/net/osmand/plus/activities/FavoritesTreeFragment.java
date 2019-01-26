@@ -607,57 +607,6 @@ public class FavoritesTreeFragment extends OsmandExpandableListFragment {
 		exportTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 	}
 
-// --Commented out by Inspection START (10/01/19 21:43):
-//	protected void export() {
-//		final File tosave = getMyApplication().getAppPath(FavouritesDbHelper.FILE_TO_SAVE);
-//		if (favouritesAdapter.isEmpty()) {
-//			Toast.makeText(getActivity(), R.string.no_fav_to_save, Toast.LENGTH_LONG).show();
-//		} else if (!tosave.getParentFile().exists()) {
-//			Toast.makeText(getActivity(), R.string.sd_dir_not_accessible, Toast.LENGTH_LONG).show();
-//		} else {
-//			final AsyncTask<Void, Void, String> exportTask = new AsyncTask<Void, Void, String>() {
-//				@Override
-//				protected String doInBackground(Void... params) {
-//					return helper.exportFavorites();
-//				}
-//
-//				@Override
-//				protected void onPreExecute() {
-//					showProgressBar();
-//				}
-//
-//				@Override
-//				protected void onPostExecute(String warning) {
-//					hideProgressBar();
-//					if (warning == null) {
-//						Toast.makeText(
-//								getActivity(),
-//								MessageFormat.format(getString(R.string.fav_saved_sucessfully),
-//										tosave.getAbsolutePath()), Toast.LENGTH_LONG).show();
-//					} else {
-//						Toast.makeText(getActivity(), warning, Toast.LENGTH_LONG).show();
-//					}
-//				}
-//			};
-//
-//			if (tosave.exists()) {
-//				AlertDialog.Builder bld = new AlertDialog.Builder(getActivity());
-//				bld.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-//					@Override
-//					public void onClick(DialogInterface dialog, int which) {
-//						exportTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-//					}
-//				});
-//				bld.setNegativeButton(R.string.shared_string_no, null);
-//				bld.setMessage(R.string.fav_export_confirmation);
-//				bld.show();
-//			} else {
-//				exportTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-//			}
-//		}
-//	}
-// --Commented out by Inspection STOP (10/01/19 21:43)
-
 	private void initListExpandedState() {
 		for (int i = 0; i < favouritesAdapter.getGroupCount(); i++) {
 			String groupName = favouritesAdapter.getGroup(i).name;

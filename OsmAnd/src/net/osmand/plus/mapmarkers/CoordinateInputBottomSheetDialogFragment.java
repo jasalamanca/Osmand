@@ -1,6 +1,7 @@
 package net.osmand.plus.mapmarkers;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.ListPopupWindow;
@@ -61,7 +62,7 @@ public class CoordinateInputBottomSheetDialogFragment extends MenuBottomSheetDia
 
 	@Nullable
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		final int themeRes = nightMode ? R.style.OsmandDarkTheme : R.style.OsmandLightTheme;
 		boolean portrait = AndroidUiHelper.isOrientationPortrait(getActivity());
 

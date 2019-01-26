@@ -108,10 +108,6 @@ public class AppInitializer implements IProgress {
 		this.app = app;
 	}
 
-	public List<String> getWarnings() {
-		return warnings;
-	}
-
 	public boolean isAppInitializing() {
 		return appInitializing;
 	}

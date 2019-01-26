@@ -1,10 +1,7 @@
 package net.osmand.binary;
 
-import gnu.trove.list.array.TIntArrayList;
-import gnu.trove.map.hash.TIntObjectHashMap;
-
-import java.io.IOException;
-import java.util.Arrays;
+import com.google.protobuf.CodedInputStream;
+import com.google.protobuf.WireFormat;
 
 import net.osmand.binary.BinaryMapIndexReader.SearchRequest;
 import net.osmand.data.TransportStop;
@@ -13,10 +10,12 @@ import net.osmand.osm.edit.Way;
 import net.osmand.util.MapUtils;
 import net.sf.junidecode.Junidecode;
 
-import com.google.protobuf.CodedInputStream;
-import com.google.protobuf.WireFormat;
+import java.io.IOException;
+import java.util.Arrays;
 
-public class BinaryMapTransportReaderAdapter {
+import gnu.trove.map.hash.TIntObjectHashMap;
+
+class BinaryMapTransportReaderAdapter {
 	private final CodedInputStream codedIS;
 	private final BinaryMapIndexReader map;
 	
@@ -41,27 +40,16 @@ public class BinaryMapTransportReaderAdapter {
 
 		int stopsFileOffset = 0;
 		int stopsFileLength = 0;
-		
-		public String getPartName() {
-			return "Transport";
-		}
-
-		public int getFieldNumber() {
-			return OsmandOdb.OsmAndStructure.TRANSPORTINDEX_FIELD_NUMBER;
-		}
 
 		public int getLeft() {
 			return left;
 		}
-
 		public int getRight() {
 			return right;
 		}
-
 		public int getTop() {
 			return top;
 		}
-
 		public int getBottom() {
 			return bottom;
 		}
@@ -72,14 +60,8 @@ public class BinaryMapTransportReaderAdapter {
 	static class IndexStringTable {
 		int fileOffset = 0;
 		int length = 0;
-
-		// offset from start for each SIZE_OFFSET_ARRAY elements
-		// (SIZE_OFFSET_ARRAY + 1) offset = offsets[0] + skipOneString()
-		TIntArrayList offsets = new TIntArrayList();
-
 	}
-	
-	
+
 	void readTransportIndex(TransportIndex ind) throws IOException {
 		while(true){
 			int t = codedIS.readTag();
@@ -301,9 +283,6 @@ public class BinaryMapTransportReaderAdapter {
 				}
 				codedIS.popLimit(pold);
 				break;
-			// deprecated
-//			case OsmandOdb.TransportRoute.REVERSESTOPS_FIELD_NUMBER:
-//				break;
 			case OsmandOdb.TransportRoute.DIRECTSTOPS_FIELD_NUMBER:
 				if(onlyDescription){
 					end = true;
@@ -312,7 +291,7 @@ public class BinaryMapTransportReaderAdapter {
 				}
 				int length = codedIS.readRawVarint32();
 				int olds = codedIS.pushLimit(length);
-				TransportStop stop = readTransportRouteStop(rx, ry, rid, stringTable, filePointer);
+				TransportStop stop = readTransportRouteStop(rx, ry, rid, stringTable);
 				dataObject.getForwardStops().add(stop);
 				rid = stop.getId();
 				rx = (int) MapUtils.getTileNumberX(BinaryMapIndexReader.TRANSPORT_STOP_ZOOM, stop.getLocation().getLongitude());
@@ -325,8 +304,7 @@ public class BinaryMapTransportReaderAdapter {
 			}
 		}
 		codedIS.popLimit(old);
-		
-		
+
 		return dataObject;
 	}
 	
@@ -395,13 +373,9 @@ public class BinaryMapTransportReaderAdapter {
 		}
 	}
 
-	
-	
-	private TransportStop readTransportRouteStop(int dx, int dy, long did, TIntObjectHashMap<String> stringTable, 
-			int filePointer) throws IOException {
+	private TransportStop readTransportRouteStop(int dx, int dy, long did, TIntObjectHashMap<String> stringTable) throws IOException {
 		TransportStop dataObject = new TransportStop();
 		dataObject.setFileOffset(codedIS.getTotalBytesRead());
-		// dataObject.setReferencesToRoutes(new int[] {filePointer});
 		boolean end = false;
 		while(!end){
 			int t = codedIS.readTag();
@@ -495,5 +469,4 @@ public class BinaryMapTransportReaderAdapter {
 			}
 		}
 	}
-	
 }

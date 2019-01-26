@@ -194,7 +194,7 @@ public class ApplicationMode {
 			String available = settings.AVAILABLE_APP_MODES.get();
 			cachedFilteredValues = new ArrayList<>();
 			for (ApplicationMode v : values) {
-				if (available.indexOf(v.getStringKey() + ",") != -1 || v == DEFAULT) {
+				if (available.contains(v.getStringKey() + ",") || v == DEFAULT) {
 					cachedFilteredValues.add(v);
 				}
 			}
@@ -260,16 +260,6 @@ public class ApplicationMode {
 			return true;
 		}
 		return set.contains(this);
-	}
-
-	public static List<ApplicationMode> getModesDerivedFrom(ApplicationMode am) {
-		List<ApplicationMode> list = new ArrayList<>();
-		for (ApplicationMode a : values) {
-			if (a == am || a.getParent() == am) {
-				list.add(a);
-			}
-		}
-		return list;
 	}
 
 	public ApplicationMode getParent() {

@@ -66,18 +66,6 @@ public class ShareMenu extends BaseMenuController {
 		return list;
 	}
 
-// --Commented out by Inspection START (13/01/19 20:04):
-//	public LatLon getLatLon() {
-//		return latLon;
-//	}
-// --Commented out by Inspection STOP (13/01/19 20:04)
-
-// --Commented out by Inspection START (13/01/19 20:04):
-//	public String getTitle() {
-//		return title;
-//	}
-// --Commented out by Inspection STOP (13/01/19 20:04)
-
 	public static void show(LatLon latLon, String title, String address, MapActivity mapActivity) {
 
 		ShareMenu menu = new ShareMenu(mapActivity);

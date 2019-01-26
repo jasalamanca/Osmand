@@ -546,13 +546,6 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 		return true;
 	}
 
-// --Commented out by Inspection START (6/01/19 22:28):
-//	public Set<LocalIndexInfo> getSelectedItems() {
-//		return selectedItems;
-//	}
-// --Commented out by Inspection STOP (6/01/19 22:28)
-
-
 	@Override
 	public void onPause() {
 		super.onPause();
@@ -567,8 +560,6 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 		asyncLoader.cancel(true);
 	}
 
-
-	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		if (!this.isAdded()) {
@@ -887,20 +878,6 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			filterCategory = filter;
 			notifyDataSetChanged();
 		}
-
-// --Commented out by Inspection START (6/01/19 22:28):
-//		public void filterCategories(boolean backup) {
-//			List<LocalIndexInfo> filter = new ArrayList<>();
-//			List<LocalIndexInfo> source = filterCategory == null ? category : filterCategory;
-//			for (LocalIndexInfo info : source) {
-//				if (info.isBackupedData() == backup) {
-//					filter.add(info);
-//				}
-//			}
-//			filterCategory = filter;
-//			notifyDataSetChanged();
-//		}
-// --Commented out by Inspection STOP (6/01/19 22:28)
 
 		void addLocalIndexInfo(LocalIndexInfo info) {
 			int found = -1;

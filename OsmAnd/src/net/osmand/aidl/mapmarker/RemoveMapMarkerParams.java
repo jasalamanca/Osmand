@@ -11,7 +11,7 @@ public class RemoveMapMarkerParams implements Parcelable {
 		this.marker = marker;
 	}
 
-	public RemoveMapMarkerParams(Parcel in) {
+	private RemoveMapMarkerParams(Parcel in) {
 		readFromParcel(in);
 	}
 

@@ -28,8 +28,6 @@ import net.osmand.data.Amenity;
 import net.osmand.data.LatLon;
 import net.osmand.data.PointDescription;
 import net.osmand.data.RotatedTileBox;
-import net.osmand.osm.PoiFilter;
-import net.osmand.osm.PoiType;
 import net.osmand.plus.ContextMenuAdapter;
 import net.osmand.plus.ContextMenuItem;
 import net.osmand.plus.R;
@@ -80,8 +78,6 @@ public class ContextMenuLayer extends OsmandMapLayer {
 	private boolean wasCollapseButtonVisible;
 	private boolean mInGpxDetailsMode;
 	private boolean mInAddGpxPointMode;
-
-	private List<String> publicTransportTypes;
 	private Object selectedObject;
 
 	public ContextMenuLayer(MapActivity activity) {
@@ -126,34 +122,8 @@ public class ContextMenuLayer extends OsmandMapLayer {
 		outlinePaint.setColor(activity.getResources().getColor(R.color.osmand_orange));
 	}
 
-	public boolean isVisible() {
-		return menu.isActive();
-	}
-
-	public Object getSelectedObject() {
-		return selectedObject;
-	}
-
 	public void setSelectedObject(Object selectedObject) {
 		this.selectedObject = selectedObject;
-	}
-
-	private List<String> getPublicTransportTypes() {
-		if (publicTransportTypes == null) {
-			publicTransportTypes = new ArrayList<>();
-			List<PoiFilter> filters = activity.getMyApplication().getPoiTypes().getPoiCategoryByName("transportation").getPoiFilters();
-			for (PoiFilter poiFilter : filters) {
-				if (poiFilter.getKeyName().equals("public_transport")) {
-					for (PoiType poiType : poiFilter.getPoiTypes()) {
-						publicTransportTypes.add(poiType.getKeyName());
-						for (PoiType poiAdditionalType : poiType.getPoiAdditionals()) {
-							publicTransportTypes.add(poiAdditionalType.getKeyName());
-						}
-					}
-				}
-			}
-		}
-		return publicTransportTypes;
 	}
 
 	@Override

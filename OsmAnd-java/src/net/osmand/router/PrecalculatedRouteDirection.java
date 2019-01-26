@@ -12,8 +12,9 @@ import java.util.List;
 
 import gnu.trove.list.array.TIntArrayList;
 
+
+@SuppressWarnings("unused") // NOTE jsala usado desde C++
 public class PrecalculatedRouteDirection {
-	
 	private int[] pointsX;
 	private int[] pointsY;
 	private float minSpeed;
@@ -33,7 +34,7 @@ public class PrecalculatedRouteDirection {
 	private float startFinishTime;
 	private float endFinishTime; 
 	
-	public PrecalculatedRouteDirection(TIntArrayList px, TIntArrayList py, List<Float> speedSegments, float maxSpeed) {
+    public PrecalculatedRouteDirection(TIntArrayList px, TIntArrayList py, List<Float> speedSegments, float maxSpeed) {
 		this.maxSpeed = maxSpeed;
 		init(px, py, speedSegments);
 	}
@@ -96,7 +97,6 @@ public class PrecalculatedRouteDirection {
 	public static PrecalculatedRouteDirection build(LatLon[] ls, float maxSpeed){
 		return new PrecalculatedRouteDirection(ls, maxSpeed);
 	}
-	
 
 	private void init(List<RouteSegmentResult> ls) {
 		TIntArrayList px = new TIntArrayList();
@@ -126,7 +126,7 @@ public class PrecalculatedRouteDirection {
 		TIntArrayList py = new TIntArrayList();
 		List<Float> speedSegments = new ArrayList<>();
 		for (LatLon s : ls) {
-			float routeSpd = maxSpeed; // (s.getDistance() / s.getRoutingTime())
+			float routeSpd = maxSpeed;
 			px.add(MapUtils.get31TileNumberX(s.getLongitude()));
 			py.add(MapUtils.get31TileNumberY(s.getLatitude()));
 			speedSegments.add(routeSpd);
@@ -156,7 +156,7 @@ public class PrecalculatedRouteDirection {
 		}
 	}
 
-	public float timeEstimate(int sx31, int sy31, int ex31, int ey31) {
+	float timeEstimate(int sx31, int sy31, int ex31, int ey31) {
 		long l1 = calc(sx31, sy31);
 		long l2 = calc(ex31, ey31);
 		int x31;
@@ -191,7 +191,7 @@ public class PrecalculatedRouteDirection {
 		}
 	}
 	
-	public float getDeviationDistance(int x31, int y31) {
+	float getDeviationDistance(int x31, int y31) {
 		int ind = getIndex(x31, y31);
 		if(ind == -1) {
 			return 0;
@@ -216,12 +216,12 @@ public class PrecalculatedRouteDirection {
 		cachedS.clear();
 		quadTree.queryInBox(new QuadRect(x31 - SHIFT, y31 - SHIFT, x31 + SHIFT, y31 + SHIFT), cachedS);
 		if (cachedS.size() == 0) {
-			for (int k = 0; k < SHIFTS.length; k++) {
-				quadTree.queryInBox(new QuadRect(x31 - SHIFTS[k], y31 - SHIFTS[k], x31 + SHIFTS[k], y31 + SHIFTS[k]), cachedS);
-				if (cachedS.size() != 0) {
-					break;
-				}
-			}
+            for (int SHIFT1 : SHIFTS) {
+                quadTree.queryInBox(new QuadRect(x31 - SHIFT1, y31 - SHIFT1, x31 + SHIFT1, y31 + SHIFT1), cachedS);
+                if (cachedS.size() != 0) {
+                    break;
+                }
+            }
 			if (cachedS.size() == 0) {
 				return -1;
 			}
@@ -241,16 +241,14 @@ public class PrecalculatedRouteDirection {
 	private long calc(int x31, int y31) {
 		return ((long) x31) << 32l + ((long)y31);
 	}
-	
 	public void setFollowNext(boolean followNext) {
 		this.followNext = followNext;
 	}
-	
-	public boolean isFollowNext() {
+	boolean isFollowNext() {
 		return followNext;
 	}
 
-	public PrecalculatedRouteDirection adopt(RoutingContext ctx) {
+	PrecalculatedRouteDirection adopt(RoutingContext ctx) {
 		int ind1 = getIndex(ctx.startX, ctx.startY);
 		int ind2 = getIndex(ctx.targetX, ctx.targetY);
 		minSpeed = ctx.getRouter().getMinDefaultSpeed();

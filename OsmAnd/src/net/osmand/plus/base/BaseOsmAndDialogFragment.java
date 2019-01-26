@@ -59,10 +59,6 @@ public class BaseOsmAndDialogFragment extends DialogFragment {
 		return getIconsCache().getThemedIcon(id);
 	}
 
-	protected void setThemedDrawable(View parent, @IdRes int viewId, @DrawableRes int iconId) {
-		((ImageView) parent.findViewById(viewId)).setImageDrawable(getContentIcon(iconId));
-	}
-
 	protected void setThemedDrawable(ImageView view, @DrawableRes int iconId) {
 		view.setImageDrawable(getContentIcon(iconId));
 	}

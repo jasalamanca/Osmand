@@ -108,7 +108,7 @@ public class AvoidSpecificRoads {
 	private String getText(RouteDataObject obj) {
 		String name = RoutingHelper.formatStreetName(obj.getName(app.getSettings().MAP_PREFERRED_LOCALE.get(),
 				app.getSettings().MAP_TRANSLITERATE_NAMES.get()),
-				obj.getRef(app.getSettings().MAP_PREFERRED_LOCALE.get(), app.getSettings().MAP_TRANSLITERATE_NAMES.get(), true),
+				obj.getRef(app.getSettings().MAP_PREFERRED_LOCALE.get(), app.getSettings().MAP_TRANSLITERATE_NAMES.get()),
 				obj.getDestinationName(app.getSettings().MAP_PREFERRED_LOCALE.get(), app.getSettings().MAP_TRANSLITERATE_NAMES.get(), true),
 				app.getString(R.string.towards));
 

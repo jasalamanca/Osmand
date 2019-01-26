@@ -429,7 +429,6 @@ public class DownloadIndexesThread {
 					}
 				} else if (o instanceof String) {
 					String message = (String) o;
-					// ctx.getString(R.string.shared_string_io_error) +": Interrupted";
 					if (!message.toLowerCase().contains("interrupted") && !message.equals(app.getString(R.string.shared_string_download_successful))) {
 						app.showToastMessage(message);
 					}
@@ -586,17 +585,6 @@ public class DownloadIndexesThread {
 			}
 			return null;
 		}
-
-//		private void trackEvent(DownloadEntry entry) {
-//			String v = Version.getAppName(app);
-//			if (Version.isProductionVersion(app)) {
-//				v = Version.getFullVersion(app);
-//			} else {
-//				v += " test";
-//			}
-//			new DownloadTracker().trackEvent(app, v, Version.getAppName(app),
-//					entry.baseName, 1, app.getString(R.string.ga_api_key));
-//		}
 
 		@Override
 		public void showWarning(String warning) {

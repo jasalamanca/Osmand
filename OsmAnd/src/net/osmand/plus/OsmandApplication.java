@@ -79,7 +79,7 @@ public class OsmandApplication extends MultiDexApplication {
 	private OsmandSettings osmandSettings = null;
 	private OsmAndAppCustomization appCustomization;
 	private final SQLiteAPI sqliteAPI = new SQLiteAPIImpl(this);
-	private final OsmAndTaskManager taskManager = new OsmAndTaskManager(this);
+	private final OsmAndTaskManager taskManager = new OsmAndTaskManager();
 	private final IconsCache iconsCache = new IconsCache(this);
 	Handler uiHandler;
 
@@ -127,7 +127,7 @@ public class OsmandApplication extends MultiDexApplication {
 		long timeToStart = System.currentTimeMillis();
 		if (Version.isDeveloperVersion(this)) {
 			try {
-				Class.forName("net.osmand.plus.base.EnableStrictMode").newInstance();
+				new net.osmand.plus.base.EnableStrictMode();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

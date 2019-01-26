@@ -11,7 +11,7 @@ public class AddMapLayerParams implements Parcelable {
 		this.layer = layer;
 	}
 
-	public AddMapLayerParams(Parcel in) {
+	private AddMapLayerParams(Parcel in) {
 		readFromParcel(in);
 	}
 

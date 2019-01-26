@@ -1,15 +1,7 @@
 package net.osmand.binary;
 
-import gnu.trove.list.array.TIntArrayList;
-import gnu.trove.map.hash.TIntLongHashMap;
-import gnu.trove.set.TIntSet;
-import gnu.trove.set.hash.TIntHashSet;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import com.google.protobuf.CodedInputStream;
+import com.google.protobuf.WireFormat;
 
 import net.osmand.CollatorStringMatcher;
 import net.osmand.PlatformUtil;
@@ -32,8 +24,16 @@ import net.sf.junidecode.Junidecode;
 
 import org.apache.commons.logging.Log;
 
-import com.google.protobuf.CodedInputStream;
-import com.google.protobuf.WireFormat;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+import gnu.trove.list.array.TIntArrayList;
+import gnu.trove.map.hash.TIntLongHashMap;
+import gnu.trove.set.TIntSet;
+import gnu.trove.set.hash.TIntHashSet;
 
 public class BinaryMapAddressReaderAdapter {
 
@@ -52,48 +52,24 @@ public class BinaryMapAddressReaderAdapter {
 		int indexNameOffset = -1;
 		List<String> attributeTagsTable = new ArrayList<>();
 		final List<CitiesBlock> cities = new ArrayList<>();
-
 		LatLon calculatedCenter = null;
-		int bottom31;
-		int top31;
-		int right31;
-		int left31;
 
 		public String getEnName() {
 			return enName;
 		}
-
 		public List<CitiesBlock> getCities() {
 			return cities;
 		}
-
 		public List<String> getAttributeTagsTable() {
 			return attributeTagsTable;
 		}
-
 		public int getIndexNameOffset() {
 			return indexNameOffset;
-		}
-
-		public String getPartName() {
-			return "Address";
-		}
-
-		public int getFieldNumber() {
-			return OsmandOdb.OsmAndStructure.ADDRESSINDEX_FIELD_NUMBER;
 		}
 	}
 
 	public static class CitiesBlock extends BinaryIndexPart {
 		int type;
-
-		public String getPartName() {
-			return "City";
-		}
-
-		public int getFieldNumber() {
-			return OsmandOdb.OsmAndAddressIndex.CITIES_FIELD_NUMBER;
-		}
 	}
 
 	private final CodedInputStream codedIS;
@@ -120,16 +96,10 @@ public class BinaryMapAddressReaderAdapter {
 			case 0:
 				return;
 			case OsmandOdb.OsmAndTileBox.LEFT_FIELD_NUMBER:
-				region.left31 = codedIS.readUInt32();
-				break;
 			case OsmandOdb.OsmAndTileBox.RIGHT_FIELD_NUMBER:
-				region.right31 = codedIS.readUInt32();
-				break;
 			case OsmandOdb.OsmAndTileBox.TOP_FIELD_NUMBER:
-				region.top31 = codedIS.readUInt32();
-				break;
 			case OsmandOdb.OsmAndTileBox.BOTTOM_FIELD_NUMBER:
-				region.bottom31 = codedIS.readUInt32();
+				codedIS.readUInt32();
 				break;
 			default:
 				skipUnknownField(t);
@@ -137,7 +107,6 @@ public class BinaryMapAddressReaderAdapter {
 			}
 		}
 	}
-
 
 	void readAddressIndex(AddressRegion region) throws IOException {
 		while (true) {
@@ -204,7 +173,6 @@ public class BinaryMapAddressReaderAdapter {
 		}
 	}
 
-
 	void readCities(List<City> cities, SearchRequest<City> resultMatcher, StringMatcher matcher,
                     List<String> additionalTagsTable) throws IOException {
 		while (true) {
@@ -234,7 +202,6 @@ public class BinaryMapAddressReaderAdapter {
 			}
 		}
 	}
-
 
 	void readCityStreets(SearchRequest<Street> resultMatcher, City city, List<String> attributeTagsTable) throws IOException {
 		int x = MapUtils.get31TileNumberX(city.getLocation().getLongitude());
@@ -740,7 +707,6 @@ public class BinaryMapAddressReaderAdapter {
 				break;
 			}
 		}
-
 	}
 
 	private void readAddressNameData(SearchRequest<MapObject> req, TIntArrayList[] refs,
@@ -800,5 +766,4 @@ public class BinaryMapAddressReaderAdapter {
 			}
 		}
 	}
-
 }

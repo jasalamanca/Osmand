@@ -139,7 +139,7 @@ public class SeekBarPreference extends DialogPreference implements
 			if (shouldPersist()) {
 				persistInt(valueToSave);
 			}
-			callChangeListener(Integer.valueOf(valueToSave));
+			callChangeListener(valueToSave);
 		} else {
 			this.valueToSave = value;
 		}

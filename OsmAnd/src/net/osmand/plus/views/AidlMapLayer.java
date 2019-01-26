@@ -15,7 +15,6 @@ import net.osmand.data.LatLon;
 import net.osmand.data.PointDescription;
 import net.osmand.data.RotatedTileBox;
 import net.osmand.plus.R;
-import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.views.ContextMenuLayer.IContextMenuProvider;
 
 import java.util.List;
@@ -31,8 +30,7 @@ public class AidlMapLayer extends OsmandMapLayer implements IContextMenuProvider
 	private final static float startZoom = 7;
 	private Paint paintTextIcon;
 
-	public AidlMapLayer(MapActivity map, AMapLayer aidlLayer) {
-        MapActivity map1 = map;
+	public AidlMapLayer(AMapLayer aidlLayer) {
 		this.aidlLayer = aidlLayer;
 	}
 
@@ -104,12 +102,6 @@ public class AidlMapLayer extends OsmandMapLayer implements IContextMenuProvider
 	@Override
 	public boolean drawInScreenPixels() {
 		return false;
-	}
-
-	public void refresh() {
-		if (view != null) {
-			view.refreshMap();
-		}
 	}
 
 	@Override

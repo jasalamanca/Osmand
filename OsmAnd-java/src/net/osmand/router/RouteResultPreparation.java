@@ -1,20 +1,5 @@
 package net.osmand.router;
 
-import gnu.trove.iterator.TIntIterator;
-import gnu.trove.list.array.TIntArrayList;
-import gnu.trove.set.hash.TIntHashSet;
-
-import java.io.FileWriter;
-import java.io.IOException;
-import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
-
 import net.osmand.PlatformUtil;
 import net.osmand.binary.BinaryInspector;
 import net.osmand.binary.BinaryMapIndexReader;
@@ -24,27 +9,30 @@ import net.osmand.data.LatLon;
 import net.osmand.osm.MapRenderingTypes;
 import net.osmand.router.BinaryRoutePlanner.FinalRouteSegment;
 import net.osmand.router.BinaryRoutePlanner.RouteSegment;
-import net.osmand.router.RoutePlannerFrontEnd.RouteCalculationMode;
 import net.osmand.router.GeneralRouter.GeneralRouterProfile;
+import net.osmand.router.RoutePlannerFrontEnd.RouteCalculationMode;
 import net.osmand.util.Algorithms;
 import net.osmand.util.MapUtils;
 
 import org.apache.commons.logging.Log;
 
-public class RouteResultPreparation {
+import java.io.IOException;
+import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
-	public static boolean PRINT_TO_CONSOLE_ROUTE_INFORMATION_TO_TEST = false;
-	private static final String PRINT_TO_GPX_FILE = null;
+import gnu.trove.iterator.TIntIterator;
+import gnu.trove.list.array.TIntArrayList;
+import gnu.trove.set.hash.TIntHashSet;
+
+
+public class RouteResultPreparation {
+	static boolean PRINT_TO_CONSOLE_ROUTE_INFORMATION_TO_TEST = false;
 	private static final float TURN_DEGREE_MIN = 45;
 	private final Log log = PlatformUtil.getLog(RouteResultPreparation.class);
-	/**
-	 * Helper method to prepare final result 
-	 */
-	List<RouteSegmentResult> prepareResult(RoutingContext ctx, FinalRouteSegment finalSegment) throws IOException {
-		List<RouteSegmentResult> result  = convertFinalSegmentToResults(ctx, finalSegment);
-		prepareResult(ctx, result);
-		return result;
-	}
 
 	List<RouteSegmentResult> prepareResult(RoutingContext ctx, List<RouteSegmentResult> result) throws IOException {
 		validateAllPointsConnected(result);
@@ -186,10 +174,10 @@ public class RouteResultPreparation {
 			for (int j = rr.getStartPointIndex(); j != rr.getEndPointIndex(); j = next) {
 				next = plus ? j + 1 : j - 1;
 				if (j == rr.getStartPointIndex()) {
-					attachRoadSegments(ctx, result, i, j, plus);
+					attachRoadSegments(ctx, result, i, j);
 				}
 				if (next != rr.getEndPointIndex()) {
-					attachRoadSegments(ctx, result, i, next, plus);
+					attachRoadSegments(ctx, result, i, next);
 				}
 				List<RouteSegmentResult> attachedRoutes = rr.getAttachedRoutes(next);
 				boolean tryToSplit = next != rr.getEndPointIndex() && !rr.getObject().roundabout() && attachedRoutes != null;
@@ -284,17 +272,8 @@ public class RouteResultPreparation {
 				addRouteSegmentToResult(ctx, result, res, true);
 			}
 			Collections.reverse(result);
-			// checkTotalRoutingTime(result);
 		}
 		return result;
-	}
-
-	protected void checkTotalRoutingTime(List<RouteSegmentResult> result) {
-		float totalRoutingTime = 0;
-		for(RouteSegmentResult r : result) {
-			totalRoutingTime += r.getRoutingTime();
-		}
-		println("Total routing time ! " + totalRoutingTime);
 	}
 
 	private float calcRoutingTime(float parentRoutingTime, RouteSegment finalSegment, RouteSegment segment,
@@ -363,33 +342,10 @@ public class RouteResultPreparation {
         println(msg);
 		if (PRINT_TO_CONSOLE_ROUTE_INFORMATION_TO_TEST) {
 			org.xmlpull.v1.XmlSerializer serializer = null;
-			if(PRINT_TO_GPX_FILE != null) {
-				serializer = PlatformUtil.newSerializer();
-				try {
-					serializer.setOutput(new FileWriter(PRINT_TO_GPX_FILE));
-					serializer.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output", true);
-					// indentation as 3 spaces
-//					serializer.setProperty("http://xmlpull.org/v1/doc/properties.html#serializer-indentation", "   ");
-//					// also set the line separator
-//					serializer.setProperty("http://xmlpull.org/v1/doc/properties.html#serializer-line-separator", "\n");
-					serializer.startDocument("UTF-8", true);
-					serializer.startTag("", "gpx");
-					serializer.attribute("", "version", "1.1");
-					serializer.attribute("", "xmlns", "http://www.topografix.com/GPX/1/1");
-					serializer.attribute("", "xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
-					serializer.attribute("", "xmlns:schemaLocation", "http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd");
-					serializer.startTag("", "trk");
-					serializer.startTag("", "trkseg");
-				} catch (IOException e) {
-					e.printStackTrace();
-					serializer = null;
-				}
-			}
-					
-			double lastHeight = -180;		
+			double lastHeight = -180;
 			for (RouteSegmentResult res : result) {
 				String name = res.getObject().getName();
-				String ref = res.getObject().getRef("", false, res.isForwardDirection());
+				String ref = res.getObject().getRef("", false);
 				if (name == null) {
 					name = "";
 				}
@@ -400,7 +356,6 @@ public class RouteResultPreparation {
 				additional.append("time = \"").append(res.getSegmentTime()).append("\" ");
 				additional.append("rtime = \"").append(res.getRoutingTime()).append("\" ");
 				additional.append("name = \"").append(name).append("\" ");
-//				float ms = res.getSegmentSpeed();
 				float ms = res.getObject().getMaximumSpeed(res.isForwardDirection());
 				if(ms > 0) {
 					additional.append("maxspeed = \"").append(ms * 3.6f).append("\" ").append(res.getObject().getHighway()).append(" ");
@@ -492,17 +447,17 @@ public class RouteResultPreparation {
 			int[] pointNameTypes = res.getObject().getPointNameTypes(k);
 			if (tp != null || pointNameTypes != null) {
 				StringBuilder bld = new StringBuilder();
-				bld.append("<point " + (k));
+				bld.append("<point ").append(k);
 				if (tp != null) {
-					for (int t = 0; t < tp.length; t++) {
-						RouteTypeRule rr = res.getObject().region.quickGetEncodingRule(tp[t]);
-						bld.append(" " + rr.getTag() + "=\"" + rr.getValue() + "\"");
-					}
+                    for (int aTp : tp) {
+                        RouteTypeRule rr = res.getObject().region.quickGetEncodingRule(aTp);
+                        bld.append(" ").append(rr.getTag()).append("=\"").append(rr.getValue()).append("\"");
+                    }
 				}
 				if (pointNameTypes != null) {
 					for (int t = 0; t < pointNameTypes.length; t++) {
 						RouteTypeRule rr = res.getObject().region.quickGetEncodingRule(pointNameTypes[t]);
-						bld.append(" " + rr.getTag() + "=\"" + pointNames[t] + "\"");
+						bld.append(" ").append(rr.getTag()).append("=\"").append(pointNames[t]).append("\"");
 					}
 				}
 				bld.append("/>");
@@ -515,7 +470,6 @@ public class RouteResultPreparation {
 			}
 		}
 	}
-
 
 	private void addTurnInfoDescriptions(List<RouteSegmentResult> result) {
 		int prevSegment = -1;
@@ -786,18 +740,18 @@ public class RouteResultPreparation {
 	private void inferCommonActiveLane(TurnType currentTurn, TurnType nextTurn) {
 		int[] lanes = currentTurn.getLanes();
 		TIntHashSet turnSet = new TIntHashSet();
-		for(int i = 0; i < lanes.length; i++) {
-			if(lanes[i] % 2 == 1 ) {
-				int singleTurn = TurnType.getPrimaryTurn(lanes[i]);
-				turnSet.add(singleTurn);
-				if(TurnType.getSecondaryTurn(lanes[i]) != 0) {
-					turnSet.add(TurnType.getSecondaryTurn(lanes[i]));
-				}
-				if(TurnType.getTertiaryTurn(lanes[i]) != 0) {
-					turnSet.add(TurnType.getTertiaryTurn(lanes[i]));
-				}
-			}
-		}
+        for (int lane : lanes) {
+            if (lane % 2 == 1) {
+                int singleTurn = TurnType.getPrimaryTurn(lane);
+                turnSet.add(singleTurn);
+                if (TurnType.getSecondaryTurn(lane) != 0) {
+                    turnSet.add(TurnType.getSecondaryTurn(lane));
+                }
+                if (TurnType.getTertiaryTurn(lane) != 0) {
+                    turnSet.add(TurnType.getTertiaryTurn(lane));
+                }
+            }
+        }
 		int singleTurn = 0;
 		if(turnSet.size() == 1) {
 			singleTurn = turnSet.iterator().next();
@@ -836,7 +790,6 @@ public class RouteResultPreparation {
 				}
 			}
 		}
-		
 	}
 
 	private static final int MAX_SPEAK_PRIORITY = 5;
@@ -852,7 +805,6 @@ public class RouteResultPreparation {
 		return 0;
 	}
 
-
 	private TurnType getTurnInfo(List<RouteSegmentResult> result, int i, boolean leftSide) {
 		if (i == 0) {
 			return TurnType.valueOf(TurnType.C, false);
@@ -867,50 +819,48 @@ public class RouteResultPreparation {
 			return processRoundaboutTurn(result, i, leftSide, prev, rr);
 		}
 		TurnType t = null;
-		if (prev != null) {
-			boolean noAttachedRoads = rr.getAttachedRoutes(rr.getStartPointIndex()).size() == 0;
-			// add description about turn
-			double mpi = MapUtils.degreesDiff(prev.getBearingEnd(), rr.getBearingBegin());
-			if(noAttachedRoads){
-				// TODO VICTOR : look at the comment inside direction route
-				// ? avoid small zigzags is covered at (search for "zigzags") 
-//				double begin = rr.getObject().directionRoute(rr.getStartPointIndex(), rr.getStartPointIndex() < 
+        boolean noAttachedRoads = rr.getAttachedRoutes(rr.getStartPointIndex()).size() == 0;
+        // add description about turn
+        double mpi = MapUtils.degreesDiff(prev.getBearingEnd(), rr.getBearingBegin());
+        if(noAttachedRoads){
+            // TODO VICTOR : look at the comment inside direction route
+            // ? avoid small zigzags is covered at (search for "zigzags")
+//				double begin = rr.getObject().directionRoute(rr.getStartPointIndex(), rr.getStartPointIndex() <
 //						rr.getEndPointIndex(), 25);
 //				mpi = MapUtils.degreesDiff(prev.getBearingEnd(), begin);
-			}
-			if (mpi >= TURN_DEGREE_MIN) {
-				if (mpi < 45) {
-					// Slight turn detection here causes many false positives where drivers would expect a "normal" TL. Best use limit-angle=TURN_DEGREE_MIN, this reduces TSL to the turn-lanes cases.
-					t = TurnType.valueOf(TurnType.TSLL, leftSide);
-				} else if (mpi < 120) {
-					t = TurnType.valueOf(TurnType.TL, leftSide);
-				} else if (mpi < 150 || leftSide) {
-					t = TurnType.valueOf(TurnType.TSHL, leftSide);
-				} else {
-					t = TurnType.valueOf(TurnType.TU, leftSide);
-				}
-				int[] lanes = getTurnLanesInfo(prev, t.getValue());
-				t.setLanes(lanes);
-			} else if (mpi < -TURN_DEGREE_MIN) {
-				if (mpi > -45) {
-					t = TurnType.valueOf(TurnType.TSLR, leftSide);
-				} else if (mpi > -120) {
-					t = TurnType.valueOf(TurnType.TR, leftSide);
-				} else if (mpi > -150 || !leftSide) {
-					t = TurnType.valueOf(TurnType.TSHR, leftSide);
-				} else {
-					t = TurnType.valueOf(TurnType.TRU, leftSide);
-				}
-				int[] lanes = getTurnLanesInfo(prev, t.getValue());
-				t.setLanes(lanes);
-			} else {
-				t = attachKeepLeftInfoAndLanes(leftSide, prev, rr);
-			}
-			if (t != null) {
-				t.setTurnAngle((float) -mpi);
-			}
-		}
-		return t;
+        }
+        if (mpi >= TURN_DEGREE_MIN) {
+            if (mpi < 45) {
+                // Slight turn detection here causes many false positives where drivers would expect a "normal" TL. Best use limit-angle=TURN_DEGREE_MIN, this reduces TSL to the turn-lanes cases.
+                t = TurnType.valueOf(TurnType.TSLL, leftSide);
+            } else if (mpi < 120) {
+                t = TurnType.valueOf(TurnType.TL, leftSide);
+            } else if (mpi < 150 || leftSide) {
+                t = TurnType.valueOf(TurnType.TSHL, leftSide);
+            } else {
+                t = TurnType.valueOf(TurnType.TU, leftSide);
+            }
+            int[] lanes = getTurnLanesInfo(prev, t.getValue());
+            t.setLanes(lanes);
+        } else if (mpi < -TURN_DEGREE_MIN) {
+            if (mpi > -45) {
+                t = TurnType.valueOf(TurnType.TSLR, leftSide);
+            } else if (mpi > -120) {
+                t = TurnType.valueOf(TurnType.TR, leftSide);
+            } else if (mpi > -150 || !leftSide) {
+                t = TurnType.valueOf(TurnType.TSHR, leftSide);
+            } else {
+                t = TurnType.valueOf(TurnType.TRU, leftSide);
+            }
+            int[] lanes = getTurnLanesInfo(prev, t.getValue());
+            t.setLanes(lanes);
+        } else {
+            t = attachKeepLeftInfoAndLanes(leftSide, prev, rr);
+        }
+        if (t != null) {
+            t.setTurnAngle((float) -mpi);
+        }
+        return t;
 	}
 
 	private int[] getTurnLanesInfo(RouteSegmentResult prevSegm, int mainTurnType) {		String turnLanes = getTurnLanesString(prevSegm);
@@ -920,11 +870,11 @@ public class RouteResultPreparation {
 					&& prevSegm.getDistance() < 100) {
 				int[] lns = prevSegm.getTurnType().getLanes();
 				TIntArrayList lst = new TIntArrayList();
-				for(int i = 0; i < lns.length; i++) {
-					if(lns[i] % 2 == 1) {
-						lst.add((lns[i] >> 1) << 1);
-					}
-				}
+                for (int ln : lns) {
+                    if (ln % 2 == 1) {
+                        lst.add((ln >> 1) << 1);
+                    }
+                }
 				if(lst.isEmpty()) {
 					return null;
 				}
@@ -1035,7 +985,6 @@ public class RouteResultPreparation {
 		int addRoadsOnRight = 0;
 	}
 
-
 	private TurnType attachKeepLeftInfoAndLanes(boolean leftSide, RouteSegmentResult prevSegm, RouteSegmentResult currentSegm) {
 		List<RouteSegmentResult> attachedRoutes = currentSegm.getAttachedRoutes(currentSegm.getStartPointIndex());
 		if(attachedRoutes == null || attachedRoutes.size() == 0) {
@@ -1068,17 +1017,17 @@ public class RouteResultPreparation {
 		int[] rawLanes = calculateRawTurnLanes(turnLanes, TurnType.C);
 		boolean possiblyLeftTurn = rs.roadsOnLeft == 0;
 		boolean possiblyRightTurn = rs.roadsOnRight == 0;
-		for (int k = 0; k < rawLanes.length; k++) {
-			int turn = TurnType.getPrimaryTurn(rawLanes[k]);
-			int sturn = TurnType.getSecondaryTurn(rawLanes[k]);
-			int tturn = TurnType.getTertiaryTurn(rawLanes[k]);
-			if (turn == TurnType.TU || sturn == TurnType.TU || tturn == TurnType.TU) {
-				possiblyLeftTurn = true;
-			}
-			if (turn == TurnType.TRU || sturn == TurnType.TRU || sturn == TurnType.TRU) {
-				possiblyRightTurn = true;
-			}
-		}
+        for (int rawLane : rawLanes) {
+            int turn = TurnType.getPrimaryTurn(rawLane);
+            int sturn = TurnType.getSecondaryTurn(rawLane);
+            int tturn = TurnType.getTertiaryTurn(rawLane);
+            if (turn == TurnType.TU || sturn == TurnType.TU || tturn == TurnType.TU) {
+                possiblyLeftTurn = true;
+            }
+            if (turn == TurnType.TRU || sturn == TurnType.TRU || tturn == TurnType.TRU) {
+                possiblyRightTurn = true;
+            }
+        }
 		
 		t.setPossibleLeftTurn(possiblyLeftTurn);
 		t.setPossibleRightTurn(possiblyRightTurn);
@@ -1159,9 +1108,9 @@ public class RouteResultPreparation {
 		for(int[] li : lanesInfo) {
 			TIntHashSet set = new TIntHashSet();
 			if(li != null) {
-				for(int k = 0; k < li.length; k++) {
-					TurnType.collectTurnTypes(li[k], set);
-				}
+                for (int aLi : li) {
+                    TurnType.collectTurnTypes(aLi, set);
+                }
 			}
 			increaseTurnRoads = Math.max(set.size() - 1, 0);
 		}
@@ -1284,7 +1233,6 @@ public class RouteResultPreparation {
 		return t;
 	}
 
-	
 	private int countLanesMinOne(RouteSegmentResult attached) {
 		final boolean oneway = attached.getObject().getOneway() != 0;
 		int lns = attached.getObject().getLanes();
@@ -1320,8 +1268,6 @@ public class RouteResultPreparation {
 			return segment.getObject().getValue("turn:lanes");
 		}
 	}
-
-	
 
 	private int countOccurrences(String haystack, char needle) {
 	    int count = 0;
@@ -1388,85 +1334,76 @@ public class RouteResultPreparation {
 		for (int i = 0; i < splitLaneOptions.length; i++) {
 			String[] laneOptions = splitLaneOptions[i].split(";");
 			boolean isTertiaryTurn = false;
-			for (int j = 0; j < laneOptions.length; j++) {
-				int turn = TurnType.convertType(laneOptions[j]);
+            for (String laneOption : laneOptions) {
+                int turn = TurnType.convertType(laneOption);
 
-				final int primary = TurnType.getPrimaryTurn(lanes[i]);
-				if (primary == 0) {
-					TurnType.setPrimaryTurnAndReset(lanes, i, turn);
-				} else {
-                    if (turn == calcTurnType || 
-                    	(TurnType.isRightTurn(calcTurnType) && TurnType.isRightTurn(turn)) || 
-                    	(TurnType.isLeftTurn(calcTurnType) && TurnType.isLeftTurn(turn)) 
-                    	) {
-                    	TurnType.setPrimaryTurnShiftOthers(lanes, i, turn);
+                final int primary = TurnType.getPrimaryTurn(lanes[i]);
+                if (primary == 0) {
+                    TurnType.setPrimaryTurnAndReset(lanes, i, turn);
+                } else {
+                    if (turn == calcTurnType ||
+                            (TurnType.isRightTurn(calcTurnType) && TurnType.isRightTurn(turn)) ||
+                            (TurnType.isLeftTurn(calcTurnType) && TurnType.isLeftTurn(turn))
+                            ) {
+                        TurnType.setPrimaryTurnShiftOthers(lanes, i, turn);
                     } else if (!isTertiaryTurn) {
-                    	TurnType.setSecondaryTurnShiftOthers(lanes, i, turn);
-						isTertiaryTurn = true;
+                        TurnType.setSecondaryTurnShiftOthers(lanes, i, turn);
+                        isTertiaryTurn = true;
                     } else {
-						TurnType.setTertiaryTurn(lanes, i, turn);
-						break;
+                        TurnType.setTertiaryTurn(lanes, i, turn);
+                        break;
                     }
-				}
-			}
+                }
+            }
 		}
 		return lanes;
 	}
 
 	private int inferSlightTurnFromLanes(int[] oLanes, RoadSplitStructure rs) {
 		TIntHashSet possibleTurns = new TIntHashSet();
-		for (int i = 0; i < oLanes.length; i++) {
-			if ((oLanes[i] & 1) == 0) {
-				continue;
-			}
-			if (possibleTurns.isEmpty()) {
-				// Nothing is in the list to compare to, so add the first elements
-				possibleTurns.add(TurnType.getPrimaryTurn(oLanes[i]));
-				if (TurnType.getSecondaryTurn(oLanes[i]) != 0) {
-					possibleTurns.add(TurnType.getSecondaryTurn(oLanes[i]));
-				}
-				if (TurnType.getTertiaryTurn(oLanes[i]) != 0) {
-					possibleTurns.add(TurnType.getTertiaryTurn(oLanes[i]));
-				}
-			} else {
-				TIntArrayList laneTurns = new TIntArrayList();
-				laneTurns.add(TurnType.getPrimaryTurn(oLanes[i]));
-				if (TurnType.getSecondaryTurn(oLanes[i]) != 0) {
-					laneTurns.add(TurnType.getSecondaryTurn(oLanes[i]));
-				}
-				if (TurnType.getTertiaryTurn(oLanes[i]) != 0) {
-					laneTurns.add(TurnType.getTertiaryTurn(oLanes[i]));
-				}
-				possibleTurns.retainAll(laneTurns);
-				if (possibleTurns.isEmpty()) {
-					// No common turns, so can't determine anything.
-					return 0;
-				}
-			}
-		}
+        for (int oLane1 : oLanes) {
+            if ((oLane1 & 1) == 0) {
+                continue;
+            }
+            if (possibleTurns.isEmpty()) {
+                // Nothing is in the list to compare to, so add the first elements
+                possibleTurns.add(TurnType.getPrimaryTurn(oLane1));
+                if (TurnType.getSecondaryTurn(oLane1) != 0) {
+                    possibleTurns.add(TurnType.getSecondaryTurn(oLane1));
+                }
+                if (TurnType.getTertiaryTurn(oLane1) != 0) {
+                    possibleTurns.add(TurnType.getTertiaryTurn(oLane1));
+                }
+            } else {
+                TIntArrayList laneTurns = new TIntArrayList();
+                laneTurns.add(TurnType.getPrimaryTurn(oLane1));
+                if (TurnType.getSecondaryTurn(oLane1) != 0) {
+                    laneTurns.add(TurnType.getSecondaryTurn(oLane1));
+                }
+                if (TurnType.getTertiaryTurn(oLane1) != 0) {
+                    laneTurns.add(TurnType.getTertiaryTurn(oLane1));
+                }
+                possibleTurns.retainAll(laneTurns);
+                if (possibleTurns.isEmpty()) {
+                    // No common turns, so can't determine anything.
+                    return 0;
+                }
+            }
+        }
 
 		// Remove all turns from lanes not selected...because those aren't it
-		for (int i = 0; i < oLanes.length; i++) {
-			if ((oLanes[i] & 1) == 0 && !possibleTurns.isEmpty()) {
-				possibleTurns.remove(TurnType.getPrimaryTurn(oLanes[i]));
-				if (TurnType.getSecondaryTurn(oLanes[i]) != 0) {
-					possibleTurns.remove(TurnType.getSecondaryTurn(oLanes[i]));
-				}
-				if (TurnType.getTertiaryTurn(oLanes[i]) != 0) {
-					possibleTurns.remove(TurnType.getTertiaryTurn(oLanes[i]));
-				}
-			}
-		}
-		// remove all non-slight turns // TEST don't pass 
-//		if(possibleTurns.size() > 1) {
-//			TIntIterator it = possibleTurns.iterator();
-//			while(it.hasNext()) {
-//				int nxt = it.next();
-//				if(!TurnType.isSlightTurn(nxt)) {
-//					it.remove();
-//				}
-//			}
-//		}
+        for (int oLane : oLanes) {
+            if ((oLane & 1) == 0 && !possibleTurns.isEmpty()) {
+                possibleTurns.remove(TurnType.getPrimaryTurn(oLane));
+                if (TurnType.getSecondaryTurn(oLane) != 0) {
+                    possibleTurns.remove(TurnType.getSecondaryTurn(oLane));
+                }
+                if (TurnType.getTertiaryTurn(oLane) != 0) {
+                    possibleTurns.remove(TurnType.getTertiaryTurn(oLane));
+                }
+            }
+        }
+
 		int infer = 0;
 		if (possibleTurns.size() == 1) {
 			infer = possibleTurns.iterator().next();
@@ -1509,11 +1446,9 @@ public class RouteResultPreparation {
 		String h = s.getObject().getHighway();
 		return "motorway".equals(h) || "motorway_link".equals(h)  ||
 				"trunk".equals(h) || "trunk_link".equals(h);
-		
 	}
 
-	
-	private void attachRoadSegments(RoutingContext ctx, List<RouteSegmentResult> result, int routeInd, int pointInd, boolean plus) throws IOException {
+	private void attachRoadSegments(RoutingContext ctx, List<RouteSegmentResult> result, int routeInd, int pointInd) throws IOException {
 		RouteSegmentResult rr = result.get(routeInd);
 		RouteDataObject road = rr.getObject();
 		long nextL = pointInd < road.getPointsLength() - 1 ? getPoint(road, pointInd + 1) : 0;

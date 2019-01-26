@@ -37,7 +37,7 @@ public class CalculateRouteParams implements Parcelable {
 		}
 	}
 
-	public CalculateRouteParams(Parcel in) {
+	private CalculateRouteParams(Parcel in) {
 		readFromParcel(in);
 	}
 
@@ -52,28 +52,8 @@ public class CalculateRouteParams implements Parcelable {
 				}
 			};
 
-	public ALatLon getStartPoint() {
-		return startPoint;
-	}
-
-	public String getStartPointName() {
-		return startPointName;
-	}
-
 	public ALatLon getEndPoint() {
 		return endPoint;
-	}
-
-	public String getEndPointName() {
-		return endPointName;
-	}
-
-	public List<ALatLon> getIntermediatePoints() {
-		return intermediatePoints;
-	}
-
-	public List<String> getIntermediateNames() {
-		return intermediateNames;
 	}
 
 	public void writeToParcel(Parcel out, int flags) {

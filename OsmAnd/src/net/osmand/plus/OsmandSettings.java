@@ -474,7 +474,7 @@ public class OsmandSettings {
 			super(id, defaultValue);
 			this.delimiter = delimiter;
 		}
-		
+
 		public void addValue(String res) {
 			String vl = get();
 			if (vl == null || vl.isEmpty()) {
@@ -2438,12 +2438,6 @@ public class OsmandSettings {
 		{
 //			this.key = key;
 		}
-
-// --Commented out by Inspection START (26/01/19 19:52):
-//		public String toHumanString(Context ctx) {
-//			return ctx.getString(key);
-//		}
-// --Commented out by Inspection STOP (26/01/19 19:52)
 	}
 
 	public enum MapMarkersOrderByMode {
@@ -2453,12 +2447,6 @@ public class OsmandSettings {
 		NAME,
 		DATE_ADDED_DESC,
 		DATE_ADDED_ASC;
-
-// --Commented out by Inspection START (26/01/19 19:51):
-//		public boolean isCustom() {
-//			return this == CUSTOM;
-//		}
-// --Commented out by Inspection STOP (26/01/19 19:51)
 
 		public boolean isDistanceDescending() {
 			return this == DISTANCE_DESC;
@@ -2484,24 +2472,17 @@ public class OsmandSettings {
 		MapMarkersMode(int key) {
 			this.key = key;
 		}
-
 		public String toHumanString(Context ctx) {
 			return ctx.getString(key);
 		}
-
 		public boolean isToolbar() {
 			return this == TOOLBAR;
 		}
-
 		public boolean isWidgets() {
 			return this == WIDGETS;
 		}
 
-		public boolean isNone() {
-			return this == NONE;
-		}
-
-		public static MapMarkersMode[] possibleValues(Context context) {
+		public static MapMarkersMode[] possibleValues() {
 			return new MapMarkersMode[]{TOOLBAR, WIDGETS, NONE};
 		}
 	}

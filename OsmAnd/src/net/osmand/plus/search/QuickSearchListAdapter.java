@@ -35,7 +35,6 @@ import java.util.Calendar;
 import java.util.List;
 
 public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
-
 	private final OsmandApplication app;
 	private final Activity activity;
 	private AccessibilityAssistant accessibilityAssistant;
@@ -62,7 +61,7 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 		void reloadData();
 	}
 
-	public QuickSearchListAdapter(OsmandApplication app, Activity activity) {
+	QuickSearchListAdapter(OsmandApplication app, Activity activity) {
 		super(app, R.layout.search_list_item);
 		this.app = app;
 		this.activity = activity;
@@ -70,55 +69,29 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 		dp1 = AndroidUtils.dpToPx(app, 1f);
 	}
 
-	public void setAccessibilityAssistant(AccessibilityAssistant accessibilityAssistant) {
+	void setAccessibilityAssistant(AccessibilityAssistant accessibilityAssistant) {
 		this.accessibilityAssistant = accessibilityAssistant;
 	}
 
-	public OnSelectionListener getSelectionListener() {
-		return selectionListener;
-	}
-
-	public void setSelectionListener(OnSelectionListener selectionListener) {
+	void setSelectionListener(OnSelectionListener selectionListener) {
 		this.selectionListener = selectionListener;
-	}
-
-	public int getScreenOrientation() {
-		return screenOrientation;
 	}
 
 	public void setScreenOrientation(int screenOrientation) {
 		this.screenOrientation = screenOrientation;
 	}
 
-	public LatLon getLocation() {
-		return location;
-	}
-
 	public void setLocation(LatLon location) {
 		this.location = location;
 	}
-
-	public Float getHeading() {
-		return heading;
-	}
-
 	public void setHeading(Float heading) {
 		this.heading = heading;
 	}
-
-	public boolean isUseMapCenter() {
-		return useMapCenter;
-	}
-
-	public void setUseMapCenter(boolean useMapCenter) {
+	void setUseMapCenter(boolean useMapCenter) {
 		this.useMapCenter = useMapCenter;
 	}
 
-	public boolean isSelectionMode() {
-		return selectionMode;
-	}
-
-	public void setSelectionMode(boolean selectionMode, int position) {
+	void setSelectionMode(boolean selectionMode, int position) {
 		this.selectionMode = selectionMode;
 		selectAll = false;
 		selectedItems.clear();
@@ -127,7 +100,7 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 			selectedItems.add(item);
 		}
 		if (selectionMode) {
-			QuickSearchSelectAllListItem selectAllListItem = new QuickSearchSelectAllListItem(app, null, null);
+			QuickSearchSelectAllListItem selectAllListItem = new QuickSearchSelectAllListItem(app, null);
 			insertListItem(selectAllListItem, 0);
 			if (selectionListener != null) {
 				selectionListener.onUpdateSelectionMode(selectedItems);
@@ -137,14 +110,13 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 				selectionListener.reloadData();
 			}
 		}
-		//notifyDataSetInvalidated();
 	}
 
-	public List<QuickSearchListItem> getSelectedItems() {
+	List<QuickSearchListItem> getSelectedItems() {
 		return selectedItems;
 	}
 
-	public void setListItems(List<QuickSearchListItem> items) {
+	void setListItems(List<QuickSearchListItem> items) {
 		setNotifyOnChange(false);
 		clear();
 		hasSearchMoreItem = false;
@@ -158,7 +130,7 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 		notifyDataSetChanged();
 	}
 
-	public void addListItem(@NonNull QuickSearchListItem item) {
+	void addListItem(@NonNull QuickSearchListItem item) {
 		if (hasSearchMoreItem && item.getType() == QuickSearchListItemType.SEARCH_MORE) {
 			return;
 		}
@@ -171,7 +143,7 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 		notifyDataSetChanged();
 	}
 
-	public void insertListItem(@NonNull QuickSearchListItem item, int index) {
+	void insertListItem(@NonNull QuickSearchListItem item, int index) {
 		if (hasSearchMoreItem && item.getType() == QuickSearchListItemType.SEARCH_MORE) {
 			return;
 		}
@@ -431,7 +403,7 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 		return view;
 	}
 
-	public void toggleCheckbox(int position, CheckBox ch) {
+	void toggleCheckbox(int position, CheckBox ch) {
 		QuickSearchListItemType type = getItem(position).getType();
 		if (type == QuickSearchListItemType.SELECT_ALL) {
 			selectAll = ch.isChecked();

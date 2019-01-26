@@ -12,7 +12,7 @@ public class UpdateMapPointParams implements Parcelable {
 		this.point = point;
 	}
 
-	public UpdateMapPointParams(Parcel in) {
+	private UpdateMapPointParams(Parcel in) {
 		readFromParcel(in);
 	}
 

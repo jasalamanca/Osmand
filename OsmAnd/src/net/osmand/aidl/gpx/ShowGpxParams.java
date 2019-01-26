@@ -11,7 +11,7 @@ public class ShowGpxParams implements Parcelable {
 		this.fileName = fileName;
 	}
 
-	public ShowGpxParams(Parcel in) {
+	private ShowGpxParams(Parcel in) {
 		readFromParcel(in);
 	}
 

@@ -1,11 +1,5 @@
 package net.osmand.plus.liveupdates;
 
-import net.osmand.plus.R;
-import net.osmand.plus.base.BaseOsmAndDialogFragment;
-import net.osmand.plus.liveupdates.Protocol.RankingUserByMonthResponse;
-import net.osmand.plus.liveupdates.Protocol.UserRankingByMonth;
-import net.osmand.plus.liveupdates.ReportsFragment.GetJsonAsyncTask;
-import net.osmand.plus.liveupdates.ReportsFragment.GetJsonAsyncTask.OnResponseListener;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
@@ -22,10 +16,15 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class UsersReportFragment extends BaseOsmAndDialogFragment {
+import net.osmand.plus.R;
+import net.osmand.plus.base.BaseOsmAndDialogFragment;
+import net.osmand.plus.liveupdates.Protocol.RankingUserByMonthResponse;
+import net.osmand.plus.liveupdates.Protocol.UserRankingByMonth;
+import net.osmand.plus.liveupdates.ReportsFragment.GetJsonAsyncTask;
+import net.osmand.plus.liveupdates.ReportsFragment.GetJsonAsyncTask.OnResponseListener;
 
+public class UsersReportFragment extends BaseOsmAndDialogFragment {
 	public static final String URL_REQUEST = "URL_REQUEST";
-	public static final String REGION_NAME = "REGION_NAME";
 
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -33,7 +32,6 @@ public class UsersReportFragment extends BaseOsmAndDialogFragment {
 		ListView listView = view.findViewById(android.R.id.list);
 		final ArrayAdapter<Object> adapter = new ListAdapter(getListItemIcon());
 		String url = getArguments().getString(URL_REQUEST);
-		//String reg = getArguments().getString(REGION_NAME);
 		view.findViewById(R.id.progress).setVisibility(View.VISIBLE);
 		if (getTag().equals(ReportsFragment.EDITS_FRAGMENT)) {
 			((TextView) view.findViewById(R.id.titleTextView)).setText(R.string.osm_editors_ranking);
@@ -74,7 +72,6 @@ public class UsersReportFragment extends BaseOsmAndDialogFragment {
 		}
 		listView.setAdapter(adapter);
 		ImageButton clearButton = view.findViewById(R.id.closeButton);
-		//setThemedDrawable(clearButton, R.drawable.ic_action_remove_dark);
 		clearButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

@@ -10,7 +10,6 @@ import net.osmand.data.City;
 import net.osmand.data.LatLon;
 import net.osmand.data.MapObject;
 import net.osmand.data.Street;
-import net.osmand.router.BinaryRoutePlanner;
 import net.osmand.router.BinaryRoutePlanner.RouteSegmentPoint;
 import net.osmand.router.RoutePlannerFrontEnd;
 import net.osmand.router.RoutingContext;
@@ -148,7 +147,7 @@ public class GeocodingUtilities {
 			if (!set.add(road.getId())) {
 				continue;
 			}
-			String name = Algorithms.isEmpty(road.getName()) ? road.getRef("", false, true) : road.getName();
+			String name = Algorithms.isEmpty(road.getName()) ? road.getRef("", false) : road.getName();
 			if (allowEmptyNames || !Algorithms.isEmpty(name)) {
 				if (distSquare == 0 || distSquare > p.distSquare) {
 					distSquare = p.distSquare;

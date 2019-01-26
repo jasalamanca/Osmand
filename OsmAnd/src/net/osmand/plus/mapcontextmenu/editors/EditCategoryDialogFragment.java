@@ -146,17 +146,6 @@ public class EditCategoryDialogFragment extends DialogFragment {
 		return fragment;
 	}
 
-	public static EditCategoryDialogFragment createInstance(String editorTag, FavoriteGroup group) {
-		EditCategoryDialogFragment fragment = new EditCategoryDialogFragment();
-		Bundle bundle = new Bundle();
-		bundle.putString(KEY_CTX_EDIT_CAT_EDITOR_TAG, editorTag);
-		bundle.putString(KEY_CTX_EDIT_CAT_NEW, Boolean.valueOf(false).toString());
-		bundle.putString(KEY_CTX_EDIT_CAT_NAME, group.name);
-		bundle.putString(KEY_CTX_EDIT_CAT_COLOR, "" + group.color);
-		fragment.setArguments(bundle);
-		return fragment;
-	}
-
 	private void saveState(Bundle bundle) {
 		bundle.putString(KEY_CTX_EDIT_CAT_EDITOR_TAG, editorTag);
 		bundle.putString(KEY_CTX_EDIT_CAT_NEW, Boolean.valueOf(isNew).toString());

@@ -18,8 +18,7 @@ import java.util.Date;
 
 public class IndexItem implements Comparable<IndexItem> {
 	private static final Log log = PlatformUtil.getLog(IndexItem.class);
-	
-	private final String description;
+
 	final String fileName;
 	private final String size;
 	private final long timestamp;
@@ -38,7 +37,6 @@ public class IndexItem implements Comparable<IndexItem> {
 	public IndexItem(String fileName, String description, long timestamp, String size, long contentSize,
 			long containerSize, @NonNull DownloadActivityType tp) {
 		this.fileName = fileName;
-		this.description = description;
 		this.timestamp = timestamp;
 		this.size = size;
 		this.contentSize = contentSize;
@@ -50,48 +48,29 @@ public class IndexItem implements Comparable<IndexItem> {
 		return type;
 	}
 	
-	public void setRelatedGroup(DownloadResourceGroup relatedGroup) {
+	void setRelatedGroup(DownloadResourceGroup relatedGroup) {
 		this.relatedGroup = relatedGroup;
 	}
 	
 	public DownloadResourceGroup getRelatedGroup() {
 		return relatedGroup;
 	}
-
 	public String getFileName() {
 		return fileName;
 	}
-
-
-	public String getDescription() {
-		return description;
-	}
-
-	private long getTimestamp() {
-		return timestamp;
-	}
-	
 	public long getSize(){
 		return containerSize;
 	}
-	
 	public long getContentSize() {
 		return contentSize;
 	}
-	
-	public double getContentSizeMB() {
-		return ((double)contentSize) / (1 << 20);
-	}
-	
 	public double getArchiveSizeMB() {
 		return ((double)containerSize) / (1 << 20);
 	}
-
-	public String getSizeDescription(Context ctx) {
+	public String getSizeDescription() {
 		return size + " MB";
 	}
 	
-
 	public DownloadEntry createDownloadEntry(OsmandApplication ctx) {
 		String fileName = this.fileName;
 		File parent = type.getDownloadFolder(ctx, this);
@@ -120,7 +99,6 @@ public class IndexItem implements Comparable<IndexItem> {
 			entry.zipStream = type.isZipStream(ctx, this);
 			entry.unzipFolder = type.isZipFolder(ctx, this);
 			entry.dateModified = timestamp; 
-			entry.sizeMB = contentSize / (1024f*1024f);
 			entry.targetFile = getTargetFile(ctx);
 		}
 		return entry;
@@ -149,23 +127,13 @@ public class IndexItem implements Comparable<IndexItem> {
 		return getFileName().compareTo(another.getFileName());
 	}
 
-	
-	public String getDaysBehind(OsmandApplication app) {
-		if (localTimestamp > 0) {
-			long days = Math.max(1, (getTimestamp() - localTimestamp) / (24 * 60 * 60 * 1000) + 1);
-			return days + " " + app.getString(R.string.days_behind);
-		}
-		return "";
-	}
-	
 	public String getRemoteDate(DateFormat dateFormat) {
 		if(timestamp <= 0) {
 			return "";
 		}
 		return dateFormat.format(new Date(timestamp));
 	}
-	
-	
+
 	public String getLocalDate(DateFormat dateFormat) {
 		if(localTimestamp <= 0) {
 			return "";
@@ -176,16 +144,13 @@ public class IndexItem implements Comparable<IndexItem> {
 	public boolean isOutdated() {
 		return outdated;
 	}
-	
-	public void setOutdated(boolean outdated) {
+	void setOutdated(boolean outdated) {
 		this.outdated = outdated;
 	}
-	
 	public void setDownloaded(boolean downloaded) {
 		this.downloaded = downloaded;
 	}
-	
-	public void setLocalTimestamp(long localTimestamp) {
+	void setLocalTimestamp(long localTimestamp) {
 		this.localTimestamp = localTimestamp;
 	}
 	
@@ -202,33 +167,25 @@ public class IndexItem implements Comparable<IndexItem> {
 		return type.getVisibleName(this, ctx, osmandRegions, includingParent);
 	}
 
-	public String getVisibleDescription(OsmandApplication clctx) {
-		return type.getVisibleDescription(this, clctx);
-	}
-
-	
-
-	public String getDate(java.text.DateFormat format) {
+	String getDate(java.text.DateFormat format) {
 		return format.format(new Date(timestamp));
 	}
 	
 	public static class DownloadEntry {
-		public long dateModified;
-		double sizeMB;
+		long dateModified;
+
+		File targetFile;
+		boolean zipStream;
+		boolean unzipFolder;
 		
-		public File targetFile;
-		public boolean zipStream;
-		public boolean unzipFolder;
+		File fileToDownload;
 		
-		public File fileToDownload;
-		
-		public String baseName;
-		public String urlToDownload;
-		public boolean isAsset;
-		public String assetName;
+		String baseName;
+		String urlToDownload;
+		boolean isAsset;
+		String assetName;
 		public DownloadActivityType type;
 		
-
 		DownloadEntry() {
 		}
 		
@@ -239,6 +196,4 @@ public class IndexItem implements Comparable<IndexItem> {
 			isAsset = true;
 		}
 	}
-
-
 }

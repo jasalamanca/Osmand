@@ -355,7 +355,7 @@ public abstract class MapRenderingTypes {
 	}
 	
 		
-	protected static class TagValuePattern {
+	static class TagValuePattern {
 		final String tag;
 		final String value;
 		protected String tagPrefix;

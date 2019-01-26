@@ -129,7 +129,6 @@ public class TargetPointsHelper {
 			return 0;
 		}
 
-		@Override
 		public boolean isVisible() {
 			return false;
 		}

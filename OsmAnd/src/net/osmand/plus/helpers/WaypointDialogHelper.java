@@ -316,7 +316,6 @@ public class WaypointDialogHelper {
 				if (obj instanceof RadiusItem) {
 					final int type = ((RadiusItem) obj).type;
 					v = createItemForRadiusProximity(ctx, type, running, position, thisAdapter, nightMode);
-					//Drawable d = new ColorDrawable(mapActivity.getResources().getColor(R.color.dashboard_divider_light));
 					AndroidUtils.setListItemBackground(mapActivity, v, nightMode);
 				} else if (labelView) {
 					v = createItemForCategory(ctx, (Integer) obj, running, position, thisAdapter, nightMode, helper);

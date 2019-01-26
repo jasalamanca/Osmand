@@ -361,7 +361,7 @@ public class OsmandAidlApi {
 						if (mapLayer != null) {
 							mapActivity.getMapView().removeLayer(mapLayer);
 						}
-						mapLayer = new AidlMapLayer(mapActivity, layer);
+						mapLayer = new AidlMapLayer(layer);
 						mapActivity.getMapView().addLayer(mapLayer, layer.getZOrder());
 						mapLayers.put(layerId, mapLayer);
 					}
@@ -538,7 +538,7 @@ public class OsmandAidlApi {
 			if (mapLayer != null) {
 				mapActivity.getMapView().removeLayer(mapLayer);
 			}
-			mapLayer = new AidlMapLayer(mapActivity, layer);
+			mapLayer = new AidlMapLayer(layer);
 			mapActivity.getMapView().addLayer(mapLayer, layer.getZOrder());
 			mapLayers.put(layer.getId(), mapLayer);
 		}

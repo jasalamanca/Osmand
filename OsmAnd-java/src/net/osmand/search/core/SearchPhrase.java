@@ -153,8 +153,8 @@ public class SearchPhrase {
 			sp.unknownSearchWordTrim = "";
 			String[] ws = restText.split(ALLDELIMITERS);
 			boolean first = true;
-			for (int i = 0; i < ws.length ; i++) {
-				String wd = ws[i].trim();
+			for (String w : ws) {
+				String wd = w.trim();
 				if (wd.length() > 0 && !conjunctions.contains(wd.toLowerCase())) {
 					if (first) {
 						sp.unknownSearchWordTrim = wd;
@@ -290,7 +290,7 @@ public class SearchPhrase {
 								return true;
 							}
 						} else if(dt == SearchPhraseDataType.ROUTING) {
-							if(next.containsRouteData((int)rect.left, (int)rect.top, (int)rect.right, (int)rect.bottom, 15)) {
+							if(next.containsRouteData((int)rect.left, (int)rect.top, (int)rect.right, (int)rect.bottom)) {
 								return true;
 							}
 						} else {

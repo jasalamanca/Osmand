@@ -24,7 +24,6 @@ import net.osmand.data.Amenity;
 import net.osmand.data.RotatedTileBox;
 import net.osmand.data.TransportStop;
 import net.osmand.map.OsmandRegions;
-import net.osmand.osm.PoiCategory;
 import net.osmand.plus.AppInitializer;
 import net.osmand.plus.AppInitializer.InitEvents;
 import net.osmand.plus.OsmandApplication;
@@ -55,7 +54,6 @@ import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -423,9 +421,7 @@ public class ResourceManager {
 	}
 
 	private void renameRoadsFiles(ArrayList<File> files, File roadsPath) {
-		Iterator<File> it = files.iterator();
-		while(it.hasNext()) {
-			File f = it.next();
+		for (File f : files) {
 			if (f.getName().endsWith("-roads" + IndexConstants.BINARY_MAP_INDEX_EXT)) {
 				f.renameTo(new File(roadsPath, f.getName().replace("-roads" + IndexConstants.BINARY_MAP_INDEX_EXT,
 						IndexConstants.BINARY_ROAD_MAP_INDEX_EXT)));
@@ -685,34 +681,19 @@ public class ResourceManager {
 
 		return amenities;
 	}
-	
-	public Map<PoiCategory, List<String>> searchAmenityCategoriesByName(String searchQuery, double lat, double lon) {
-		Map<PoiCategory, List<String>> map = new LinkedHashMap<>();
-		for (AmenityIndexRepository index : amenityRepositories.values()) {
-			if (index instanceof AmenityIndexRepositoryBinary) {
-				if (index.checkContains(lat, lon)) {
-					((AmenityIndexRepositoryBinary) index).searchAmenityCategoriesByName(searchQuery, map);
-				}
-			}
-		}
-		return map;
-	}
-	
+
 	////////////////////////////////////////////// Working with address ///////////////////////////////////////////
 	
 	public RegionAddressRepository getRegionRepository(String name){
 		return addressMap.get(name);
 	}
-	
 	public Collection<RegionAddressRepository> getAddressRepositories(){
 		return addressMap.values();
 	}
-	
 	public Collection<BinaryMapReaderResource> getFileReaders() {
 		return fileReaders.values();
 	}
-	
-	
+
 	////////////////////////////////////////////// Working with transport ////////////////////////////////////////////////
 	public List<TransportIndexRepository> searchTransportRepositories(double latitude, double longitude) {
 		List<TransportIndexRepository> repos = new ArrayList<>();

@@ -27,11 +27,11 @@ public class TurnType {
 		if(lanes == null || lanes.length == 0) {
 			return C;
 		}
-		for(int i = 0; i < lanes.length; i++) {
-			if(lanes[i] % 2 == 1) {
-				return TurnType.getPrimaryTurn(lanes[i]);
-			}
-		}
+        for (int lane : lanes) {
+            if (lane % 2 == 1) {
+                return TurnType.getPrimaryTurn(lane);
+            }
+        }
 		return C;
 	}
 	

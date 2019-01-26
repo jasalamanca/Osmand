@@ -22,7 +22,7 @@ import net.osmand.router.RoutingConfiguration.Builder;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-public class TestRouting {
+class TestRouting {
 	
 	private static final int MEMORY_TEST_LIMIT = 800;
 	private static final boolean TEST_WO_HEURISTIC = false;
@@ -31,7 +31,7 @@ public class TestRouting {
 	private static String vehicle = "car";
 	
 	
-	public static class Parameters {
+	static class Parameters {
 		File obfDir;
 		final List<File> tests = new ArrayList<>();
 		double startLat = 0;

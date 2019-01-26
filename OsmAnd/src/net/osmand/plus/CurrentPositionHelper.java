@@ -204,7 +204,7 @@ public class CurrentPositionHelper {
 		int y31 = MapUtils.get31TileNumberY(lat);
 		int x31 = MapUtils.get31TileNumberX(lon);
 		for(BinaryMapReaderResource r : app.getResourceManager().getFileReaders()) {
-			if(!r.isClosed() && r.getShallowReader().containsRouteData(x31, y31, x31, y31, 15)) {
+			if(!r.isClosed() && r.getShallowReader().containsRouteData(x31, y31, x31, y31)) {
 				if(!res.contains(r)) {
 					res = new ArrayList<>(res);
 					res.add(r);

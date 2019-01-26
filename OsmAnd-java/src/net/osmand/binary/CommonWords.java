@@ -8,24 +8,15 @@ public class CommonWords {
 	private static void addCommon(String string) {
 		commonWordsDictionary.put(string, commonWordsDictionary.size());
 	}
-	
-	public static int getCommon(String name) {
-//		if(true) {
-//			// not ready for old versions yet
-//			return -1;
-//		}
-		Integer i = commonWordsDictionary.get(name);
-		return i == null ? -1 : i.intValue();
-	}
-	
+
 	public static int getCommonSearch(String name) {
 		Integer i = commonWordsDictionary.get(name);
-		return i == null ? -1 : i.intValue();
+		return i == null ? -1 : i;
 	}
 	
 	public static int getCommonGeocoding(String name) {
 		Integer i = commonWordsDictionary.get(name);
-		return i == null ? -1 : i.intValue();
+		return i == null ? -1 : i;
 	}
 	
 	static {
@@ -509,9 +500,5 @@ public class CommonWords {
 		addCommon("ταξίδια");
 		addCommon("ø");
 		addCommon("bane");
-
 	}
-
-
-	
 }

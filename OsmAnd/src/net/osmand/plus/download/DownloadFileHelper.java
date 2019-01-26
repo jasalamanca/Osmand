@@ -27,28 +27,21 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 class DownloadFileHelper {
-	
 	private final static Log log = PlatformUtil.getLog(DownloadFileHelper.class);
 	private static final int BUFFER_SIZE = 32256;
 	private static final int TRIES_TO_DOWNLOAD = 15;
 	private static final long TIMEOUT_BETWEEN_DOWNLOADS = 8000;
 	private final OsmandApplication ctx;
 	private boolean interruptDownloading = false;
-	
-	
+
 	public DownloadFileHelper(OsmandApplication ctx){
 		this.ctx = ctx;
 	}
 	
 	public interface DownloadFileShowWarning {
-		
 		void showWarning(String warning);
 	}
-	
-	public static boolean isInterruptedException(IOException e) {
-		return e != null && e.getMessage().equals("Interrupted");
-	}
-	
+
 	private InputStream getInputStreamToDownload(final URL url, final boolean forceWifi) throws IOException {
 		InputStream cis = new InputStream() {
 			final byte[] buffer = new byte[BUFFER_SIZE];
@@ -337,11 +330,7 @@ class DownloadFileHelper {
 	public void setInterruptDownloading(boolean interruptDownloading) {
 		this.interruptDownloading = interruptDownloading;
 	}
-	
-	public boolean isInterruptDownloading() {
-		return interruptDownloading;
-	}
-	
+
 	private static class CountingMultiInputStream extends InputStream {
 
 		private final InputStream[] delegate;
@@ -401,8 +390,5 @@ class DownloadFileHelper {
 			count = 0;
 			return last;
 		}
-		
-		
-
 	}
 }

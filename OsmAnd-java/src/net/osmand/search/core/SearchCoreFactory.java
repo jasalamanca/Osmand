@@ -621,24 +621,22 @@ public class SearchCoreFactory {
 						results.add(c);
 					}
 				}
-				Iterator<Entry<String, PoiType>> it = translatedNames.entrySet().iterator();
-				while (it.hasNext()) {
-					Entry<String, PoiType> e = it.next();
-					PoiType pt = e.getValue();
-					if (pt.getCategory() != types.getOtherMapCategory()) {
-						if (!results.contains(pt) && (nm.matches(e.getKey()) || nm.matches(pt.getTranslation()))) {
-							results.add(pt);
-						}
-						List<PoiType> additionals = pt.getPoiAdditionals();
-						if (additionals != null) {
-							for (PoiType a : additionals) {
-								if (!a.isReference() && !results.contains(a) && (nm.matches(a.getKeyName().replace('_', ' ')) || nm.matches(a.getTranslation()))) {
-									results.add(a);
-								}
-							}
-						}
-					}
-				}
+                for (Entry<String, PoiType> e : translatedNames.entrySet()) {
+                    PoiType pt = e.getValue();
+                    if (pt.getCategory() != types.getOtherMapCategory()) {
+                        if (!results.contains(pt) && (nm.matches(e.getKey()) || nm.matches(pt.getTranslation()))) {
+                            results.add(pt);
+                        }
+                        List<PoiType> additionals = pt.getPoiAdditionals();
+                        if (additionals != null) {
+                            for (PoiType a : additionals) {
+                                if (!a.isReference() && !results.contains(a) && (nm.matches(a.getKeyName().replace('_', ' ')) || nm.matches(a.getTranslation()))) {
+                                    results.add(a);
+                                }
+                            }
+                        }
+                    }
+                }
 			}
 			for (AbstractPoiType pt : results) {
 				SearchResult res = new SearchResult(phrase);

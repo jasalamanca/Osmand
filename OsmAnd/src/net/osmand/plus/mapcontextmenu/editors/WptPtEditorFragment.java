@@ -90,7 +90,7 @@ public class WptPtEditorFragment extends PointEditorFragment {
 	}
 
 	@Override
-	public void dismiss(boolean includingMenu) {
+    void dismiss(boolean includingMenu) {
 		super.dismiss(includingMenu);
 		OnDismissListener listener = editor.getOnDismissListener();
 		if (listener != null) {
@@ -101,7 +101,7 @@ public class WptPtEditorFragment extends PointEditorFragment {
 	}
 
 	@Override
-	public PointEditor getEditor() {
+    protected PointEditor getEditor() {
 		return editor;
 	}
 
@@ -120,26 +120,18 @@ public class WptPtEditorFragment extends PointEditorFragment {
 
 	public static void showInstance(final MapActivity mapActivity) {
 		WptPtEditor editor = mapActivity.getContextMenu().getWptPtPointEditor();
-		//int slideInAnim = editor.getSlideInAnimation();
-		//int slideOutAnim = editor.getSlideOutAnimation();
-
 		WptPtEditorFragment fragment = new WptPtEditorFragment();
 		mapActivity.getSupportFragmentManager().beginTransaction()
-				//.setCustomAnimations(slideInAnim, slideOutAnim, slideInAnim, slideOutAnim)
 				.add(R.id.fragmentContainer, fragment, editor.getFragmentTag())
 				.addToBackStack(null).commit();
 	}
 
 	public static void showInstance(final MapActivity mapActivity, boolean skipDialog) {
 		WptPtEditor editor = mapActivity.getContextMenu().getWptPtPointEditor();
-		//int slideInAnim = editor.getSlideInAnimation();
-		//int slideOutAnim = editor.getSlideOutAnimation();
-
 		WptPtEditorFragment fragment = new WptPtEditorFragment();
 		fragment.skipDialog = skipDialog;
 
 		mapActivity.getSupportFragmentManager().beginTransaction()
-				//.setCustomAnimations(slideInAnim, slideOutAnim, slideInAnim, slideOutAnim)
 				.add(R.id.fragmentContainer, fragment, editor.getFragmentTag())
 				.addToBackStack(null).commit();
 	}
@@ -279,7 +271,6 @@ public class WptPtEditorFragment extends PointEditorFragment {
 		return getString(R.string.shared_string_favorites);
 	}
 
-	@Override
 	public String getHeaderCaption() {
 		return getMapActivity().getResources().getString(R.string.gpx_wpt);
 	}

@@ -7,23 +7,19 @@ import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.routing.RouteProvider.GPXRouteParams;
 import net.osmand.plus.routing.RoutingHelper.RouteCalculationProgressCallback;
 import net.osmand.router.RouteCalculationProgress;
-import net.osmand.router.RoutingContext;
 
 import java.util.List;
 
 public class RouteCalculationParams {
-
 	public Location start;
 	public LatLon end;
-	public List<LatLon> intermediates;
-
+	List<LatLon> intermediates;
 
 	public OsmandApplication ctx;
-	public RoutingContext cachedRoutingContext;
 	public ApplicationMode mode;
-	public GPXRouteParams gpxRoute;
-	public RouteCalculationResult previousToRecalculate;
-	public boolean onlyStartPointChanged;
+	GPXRouteParams gpxRoute;
+	RouteCalculationResult previousToRecalculate;
+	boolean onlyStartPointChanged;
 	public boolean fast;
 	public boolean leftSide;
 	public boolean inSnapToRoadMode;

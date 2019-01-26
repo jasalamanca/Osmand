@@ -36,7 +36,7 @@ public class ImportGpxParams implements Parcelable {
 		this.show = show;
 	}
 
-	public ImportGpxParams(Parcel in) {
+	private ImportGpxParams(Parcel in) {
 		readFromParcel(in);
 	}
 

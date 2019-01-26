@@ -1,17 +1,12 @@
 package net.osmand.plus.osmedit;
 
-
-
-import java.util.List;
-
-import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.osmedit.OsmPoint.Action;
 
-public class OsmBugsLocalUtil implements OsmBugsUtil {
 
+public class OsmBugsLocalUtil implements OsmBugsUtil {
 	private final OsmBugsDbHelper db;
 
-	public OsmBugsLocalUtil(OsmandApplication app, OsmBugsDbHelper db) {
+	public OsmBugsLocalUtil(OsmBugsDbHelper db) {
 		this.db = db;
 	}
 	
@@ -50,9 +45,4 @@ public class OsmBugsLocalUtil implements OsmBugsUtil {
 		s.warning = success ? null : "";
 		return s;
 	}
-
-	public List<OsmNotesPoint> getOsmbugsPoints() {
-		return db.getOsmbugsPoints();
-	}
-	
 }

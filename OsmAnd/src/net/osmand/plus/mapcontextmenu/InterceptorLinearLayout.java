@@ -40,11 +40,6 @@ public class InterceptorLinearLayout extends LinearLayout {
 	public int getTouchSlop() {
 		return mTouchSlop;
 	}
-
-	public boolean isScrolling() {
-		return mIsScrolling;
-	}
-
 	public void setListener(OnTouchListener listener) {
 		this.listener = listener;
 	}

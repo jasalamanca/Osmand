@@ -163,7 +163,7 @@ public class Renderable {
         @Override protected void startCuller(double newZoom) {}
 
         @Override
-        protected void drawSingleSegment(double zoom, Paint p, Canvas canvas, RotatedTileBox tileBox) {
+        void drawSingleSegment(double zoom, Paint p, Canvas canvas, RotatedTileBox tileBox) {
             draw(points, p, canvas, tileBox);
         }
     }

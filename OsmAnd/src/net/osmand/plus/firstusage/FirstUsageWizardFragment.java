@@ -200,7 +200,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 				final IndexItem indexItem = localMapIndexItem != null ? localMapIndexItem : baseMapIndexItem;
 				if (indexItem != null) {
 					mapTitle.setText(indexItem.getVisibleName(getContext(), getMyApplication().getRegions(), false));
-					mapDescription.setText(indexItem.getSizeDescription(getContext()));
+					mapDescription.setText(indexItem.getSizeDescription());
 				}
 				view.findViewById(R.id.map_download_action_button).setOnClickListener(new View.OnClickListener() {
 					@Override
@@ -241,7 +241,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 					final TextView mapDescriptionTextView = view.findViewById(R.id.map_downloading_desc);
 					final View progressPadding = view.findViewById(R.id.map_download_padding);
 					final View progressLayout = view.findViewById(R.id.map_download_progress_layout);
-					mapDescriptionTextView.setText(item.getSizeDescription(getContext()));
+					mapDescriptionTextView.setText(item.getSizeDescription());
 					final ImageButton redownloadButton = view.findViewById(R.id.map_redownload_button);
 					redownloadButton.setOnClickListener(new View.OnClickListener() {
 						@Override
@@ -257,7 +257,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 						public void onClick(View v) {
 							firstMapDownloadCancelled = true;
 							downloadThread.cancelDownload(item);
-							mapDescriptionTextView.setText(item.getSizeDescription(getContext()));
+							mapDescriptionTextView.setText(item.getSizeDescription());
 							progressPadding.setVisibility(View.VISIBLE);
 							progressLayout.setVisibility(View.GONE);
 							redownloadButton.setVisibility(View.VISIBLE);
@@ -279,7 +279,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 					final TextView mapDescriptionTextView = view.findViewById(R.id.map2_downloading_desc);
 					final View progressPadding = view.findViewById(R.id.map2_download_padding);
 					final View progressLayout = view.findViewById(R.id.map2_download_progress_layout);
-					mapDescriptionTextView.setText(item.getSizeDescription(getContext()));
+					mapDescriptionTextView.setText(item.getSizeDescription());
 					final ImageButton redownloadButton = view.findViewById(R.id.map2_redownload_button);
 					redownloadButton.setOnClickListener(new View.OnClickListener() {
 						@Override
@@ -295,7 +295,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 						public void onClick(View v) {
 							secondMapDownloadCancelled = true;
 							downloadThread.cancelDownload(item);
-							mapDescriptionTextView.setText(item.getSizeDescription(getContext()));
+							mapDescriptionTextView.setText(item.getSizeDescription());
 							progressPadding.setVisibility(View.VISIBLE);
 							progressLayout.setVisibility(View.GONE);
 							redownloadButton.setVisibility(View.VISIBLE);
@@ -566,7 +566,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 			if (indexItem.isDownloaded()) {
 				if (i == 0 && progressLayout.getVisibility() == View.VISIBLE) {
 					final TextView mapDescriptionTextView = view.findViewById(R.id.map_downloading_desc);
-					mapDescriptionTextView.setText(indexItem.getSizeDescription(getContext()));
+					mapDescriptionTextView.setText(indexItem.getSizeDescription());
 					view.findViewById(R.id.map_download_padding).setVisibility(View.VISIBLE);
 					progressLayout.setVisibility(View.GONE);
 					firstRowLayout.setClickable(true);
@@ -580,7 +580,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 					});
 				} else if (i == 1 && progressLayout2.getVisibility() == View.VISIBLE) {
 					final TextView mapDescriptionTextView = view.findViewById(R.id.map2_downloading_desc);
-					mapDescriptionTextView.setText(indexItem.getSizeDescription(getContext()));
+					mapDescriptionTextView.setText(indexItem.getSizeDescription());
 					view.findViewById(R.id.map2_download_padding).setVisibility(View.VISIBLE);
 					progressLayout2.setVisibility(View.GONE);
 					secondRowLayout.setClickable(true);

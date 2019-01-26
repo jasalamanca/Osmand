@@ -21,8 +21,7 @@ import java.util.TreeMap;
 
 public class FavoriteImageDrawable extends Drawable {
 
-	private final int color;
-	private final Paint paintIcon;
+    private final Paint paintIcon;
 	private final Paint paintBackground;
 	private final Bitmap favIcon;
 	private final Bitmap favBackground;
@@ -41,7 +40,6 @@ public class FavoriteImageDrawable extends Drawable {
 		this.withShadow = withShadow;
 		this.synced = synced;
 		this.resources = ctx.getResources();
-		this.color = color;
 		paintBackground = new Paint();
 		int col = color == 0 || color == Color.BLACK ? getResources().getColor(R.color.color_favorite) : color;
 		paintBackground.setColorFilter(new PorterDuffColorFilter(col, PorterDuff.Mode.MULTIPLY));
@@ -85,10 +83,6 @@ public class FavoriteImageDrawable extends Drawable {
 	@Override
 	public int getIntrinsicWidth() {
 		return synced ? syncedShadow.getWidth() : favBackground.getWidth();
-	}
-
-	public int getColor() {
-		return color;
 	}
 
 	private Resources getResources() {

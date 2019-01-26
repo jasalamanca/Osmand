@@ -81,7 +81,7 @@ public class EditPOIMenuController extends MenuController {
 				actionStr = getMapActivity().getString(R.string.osm_edit_deleted_poi);
 			} else if(osmPoint.getAction() == Action.MODIFY) {
 				actionStr = getMapActivity().getString(R.string.osm_edit_modified_poi);
-			} else/* if(osmPoint.getAction() == Action.CREATE) */{
+			} else {
 				actionStr = getMapActivity().getString(R.string.osm_edit_created_poi);
 			}
 		} else if (osmPoint.getGroup() == OsmPoint.Group.BUG) {
@@ -91,7 +91,7 @@ public class EditPOIMenuController extends MenuController {
 				actionStr = getMapActivity().getString(R.string.osm_edit_commented_note);
 			} else if(osmPoint.getAction() == Action.REOPEN) {
 				actionStr = getMapActivity().getString(R.string.osm_edit_reopened_note);
-			} else/* if(osmPoint.getAction() == Action.CREATE) */{
+			} else {
 				actionStr = getMapActivity().getString(R.string.osm_edit_created_note);
 			}
 		} else {

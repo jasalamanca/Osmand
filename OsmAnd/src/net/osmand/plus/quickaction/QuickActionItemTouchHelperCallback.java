@@ -27,7 +27,6 @@ class QuickActionItemTouchHelperCallback extends ItemTouchHelper.Callback {
         int dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
         int swipeFlags = 0;
         return !isaHeaderType(viewHolder) ? makeMovementFlags(dragFlags, swipeFlags) : 0;
-
     }
 
     @Override
@@ -53,7 +52,6 @@ class QuickActionItemTouchHelperCallback extends ItemTouchHelper.Callback {
 
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-
     }
 
     private boolean isaHeaderType(RecyclerView.ViewHolder viewHolder) {

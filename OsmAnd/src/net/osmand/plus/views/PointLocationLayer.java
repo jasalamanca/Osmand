@@ -7,10 +7,8 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.PointF;
-import android.graphics.RectF;
 
 import net.osmand.Location;
-import net.osmand.PlatformUtil;
 import net.osmand.data.LatLon;
 import net.osmand.data.PointDescription;
 import net.osmand.data.RotatedTileBox;
@@ -19,15 +17,10 @@ import net.osmand.plus.OsmAndLocationProvider;
 import net.osmand.plus.R;
 import net.osmand.plus.base.MapViewTrackingUtilities;
 
-import org.apache.commons.logging.Log;
-
 import java.util.List;
 
 public class PointLocationLayer extends OsmandMapLayer implements ContextMenuLayer.IContextMenuProvider {
-	private static final Log LOG = PlatformUtil.getLog(PointLocationLayer.class);
-
-
-	private final static int RADIUS = 7;
+    private final static int RADIUS = 7;
 
 	private Paint locationPaint;
 	private Paint area;
@@ -70,11 +63,6 @@ public class PointLocationLayer extends OsmandMapLayer implements ContextMenuLay
 	public void initLayer(OsmandMapTileView view) {
 		this.view = view;
 		initUI();
-	}
-
-	private RectF getHeadingRect(int locationX, int locationY){
-		int rad = (int) (view.getDensity() * 60);
-		return new RectF(locationX - rad, locationY - rad, locationX + rad, locationY + rad);
 	}
 
 	@Override
@@ -204,17 +192,14 @@ public class PointLocationLayer extends OsmandMapLayer implements ContextMenuLay
 	public boolean disableSingleTap() {
 		return false;
 	}
-
 	@Override
 	public boolean disableLongPressOnMap() {
 		return false;
 	}
-
 	@Override
 	public boolean isObjectClickable(Object o) {
 		return false;
 	}
-
 	@Override
 	public boolean runExclusiveAction(Object o, boolean unknownLocation) {
 		return false;
@@ -242,5 +227,4 @@ public class PointLocationLayer extends OsmandMapLayer implements ContextMenuLay
 			}
 		}
 	}
-
 }

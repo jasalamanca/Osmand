@@ -30,7 +30,6 @@ import java.util.Map;
 public class DiscountHelper {
 
 	private static final String TAG = "DiscountHelper";
-	//private static final String DISCOUNT_JSON = "discount.json";
 
 	private static long mLastCheckTime;
 	private static String mTitle;
@@ -40,7 +39,6 @@ public class DiscountHelper {
 	private static boolean mBannerVisible;
 	private static final String URL = "https://osmand.net/api/motd";
 	private static final String INAPP_PREFIX = "osmand-in-app:";
-
 
 	public static void checkAndDisplay(final MapActivity mapActivity) {
 		OsmandApplication app = mapActivity.getMyApplication();
@@ -232,7 +230,6 @@ public class DiscountHelper {
 	}
 
 	private static class DiscountBarController extends TopToolbarController {
-
 		DiscountBarController() {
 			super(TopToolbarControllerType.DISCOUNT);
 			setSingleLineTitle(false);
@@ -243,10 +240,6 @@ public class DiscountHelper {
 			setBgIds(R.color.discount_bar_bg, R.color.discount_bar_bg,
 					R.drawable.discount_bar_bg_land, R.drawable.discount_bar_bg_land);
 		}
-	}
-
-	private static void logError(String msg) {
-		Log.e(TAG, msg);
 	}
 
 	private static void logError(String msg, Throwable e) {

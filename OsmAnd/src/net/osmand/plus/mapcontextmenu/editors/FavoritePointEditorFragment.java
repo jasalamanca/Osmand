@@ -52,7 +52,7 @@ public class FavoritePointEditorFragment extends PointEditorFragment {
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = super.onCreateView(inflater, container, savedInstanceState);
 		if (view != null && editor.isNew()) {
 			Button replaceButton = view.findViewById(R.id.replace_button);
@@ -80,7 +80,7 @@ public class FavoritePointEditorFragment extends PointEditorFragment {
 	}
 
 	@Override
-	public PointEditor getEditor() {
+    protected PointEditor getEditor() {
 		return editor;
 	}
 
@@ -100,7 +100,7 @@ public class FavoritePointEditorFragment extends PointEditorFragment {
 	}
 
 	@Override
-	protected String getDefaultCategoryName() {
+    String getDefaultCategoryName() {
 		return getString(R.string.shared_string_favorites);
 	}
 
@@ -206,7 +206,6 @@ public class FavoritePointEditorFragment extends PointEditorFragment {
 		builder.create().show();
 	}
 
-	@Override
 	public String getHeaderCaption() {
 		return getMapActivity().getResources().getString(R.string.favourites_edit_dialog_title);
 	}

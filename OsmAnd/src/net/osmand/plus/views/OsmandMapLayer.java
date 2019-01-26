@@ -322,7 +322,7 @@ public abstract class OsmandMapLayer {
 
 		protected abstract T calculateResult(RotatedTileBox tileBox);
 
-		protected class Task extends AsyncTask<Object, Object, T> {
+		class Task extends AsyncTask<Object, Object, T> {
 			private final RotatedTileBox dataBox;
 			private final RotatedTileBox requestedBox;
 

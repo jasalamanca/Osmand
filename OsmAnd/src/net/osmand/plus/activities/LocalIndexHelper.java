@@ -100,35 +100,13 @@ public class LocalIndexHelper {
 		if (fileDir != null && fileName != null) {
 			File f = new File(fileDir, fileName);
 			if (f.exists()) {
-				LocalIndexInfo info = new LocalIndexInfo(type, f, backuped, app);
+				LocalIndexInfo info = new LocalIndexInfo(type, f, backuped);
 				updateDescription(info);
 				return info;
 			}
 		}
 
 		return null;
-	}
-
-	public LocalIndexInfo getLocalIndexInfo(String downloadName) {
-		LocalIndexInfo info = getLocalIndexInfo(LocalIndexType.MAP_DATA, downloadName, false, false);
-		if (info == null) {
-			info = getLocalIndexInfo(LocalIndexType.MAP_DATA, downloadName, true, false);
-		}
-		if (info == null) {
-			info = getLocalIndexInfo(LocalIndexType.WIKI_DATA, downloadName, false, false);
-		}
-
-		if (info == null) {
-			info = getLocalIndexInfo(LocalIndexType.MAP_DATA, downloadName, false, true);
-		}
-		if (info == null) {
-			info = getLocalIndexInfo(LocalIndexType.MAP_DATA, downloadName, true, true);
-		}
-		if (info == null) {
-			info = getLocalIndexInfo(LocalIndexType.WIKI_DATA, downloadName, false, true);
-		}
-
-		return info;
 	}
 
 	public List<LocalIndexInfo> getLocalIndexInfos(String downloadName) {
@@ -191,7 +169,7 @@ public class LocalIndexHelper {
 				if (voiceF.isDirectory() && !MediaCommandPlayerImpl.isMyData(voiceF)) {
 					LocalIndexInfo info = null;
 					if (TTSCommandPlayerImpl.isMyData(voiceF)) {
-						info = new LocalIndexInfo(LocalIndexType.TTS_VOICE_DATA, voiceF, backup, app);
+						info = new LocalIndexInfo(LocalIndexType.TTS_VOICE_DATA, voiceF, backup);
 					}
 					if (info != null) {
 						updateDescription(info);
@@ -205,7 +183,7 @@ public class LocalIndexHelper {
 			for (File voiceF : listFilesSorted(voiceDir)) {
 				if (voiceF.isDirectory() && MediaCommandPlayerImpl.isMyData(voiceF)) {
 					LocalIndexInfo info = null;
-					info = new LocalIndexInfo(LocalIndexType.VOICE_DATA, voiceF, backup, app);
+					info = new LocalIndexInfo(LocalIndexType.VOICE_DATA, voiceF, backup);
 					if (info != null) {
 						updateDescription(info);
 						result.add(info);
@@ -221,7 +199,7 @@ public class LocalIndexHelper {
 			for (File fontFile : listFilesSorted(fontDir)) {
 				if (fontFile.isFile() && fontFile.getName().endsWith(IndexConstants.FONT_INDEX_EXT)) {
 					LocalIndexType lt = LocalIndexType.FONT_DATA;
-					LocalIndexInfo info = new LocalIndexInfo(lt, fontFile, backup, app);
+					LocalIndexInfo info = new LocalIndexInfo(lt, fontFile, backup);
 					updateDescription(info);
 					result.add(info);
 					loadTask.loadFile(info);
@@ -243,7 +221,7 @@ public class LocalIndexHelper {
 		if (mapPath.canRead()) {
 			for (File mapFile : listFilesSorted(mapPath)) {
 				if (mapFile.isFile() && mapFile.getName().endsWith(IndexConstants.BINARY_MAP_INDEX_EXT)) {
-					LocalIndexInfo info = new LocalIndexInfo(LocalIndexType.WIKI_DATA, mapFile, false, app);
+					LocalIndexInfo info = new LocalIndexInfo(LocalIndexType.WIKI_DATA, mapFile, false);
 					updateDescription(info);
 					result.add(info);
 					loadTask.loadFile(info);
@@ -260,7 +238,7 @@ public class LocalIndexHelper {
 					if (mapFile.getName().endsWith(IndexConstants.BINARY_WIKI_MAP_INDEX_EXT)) {
 						lt = LocalIndexType.WIKI_DATA;
 					}
-					LocalIndexInfo info = new LocalIndexInfo(lt, mapFile, backup, app);
+					LocalIndexInfo info = new LocalIndexInfo(lt, mapFile, backup);
 					if (loadedMaps.containsKey(mapFile.getName()) && !backup) {
 						info.setLoaded(true);
 					}

@@ -161,7 +161,7 @@ public class RenderingRuleStorageProperties {
 	private RenderingRuleProperty R_ICON_VISIBLE_SIZE;
 	private RenderingRuleProperty R_INTERSECTION_MARGIN;
 	private RenderingRuleProperty R_INTERSECTION_SIZE_FACTOR;
-	public RenderingRuleProperty R_LAYER;
+	private RenderingRuleProperty R_LAYER;
 	private RenderingRuleProperty R_ORDER;
 	private RenderingRuleProperty R_POINT;
 	private RenderingRuleProperty R_AREA;

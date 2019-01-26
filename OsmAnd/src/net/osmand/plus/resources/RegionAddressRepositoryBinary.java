@@ -308,7 +308,7 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 								addCityToPreloadedList(object);
 								canceled = true;
 							}
-						} else if (object.getId() != null && object.getId().longValue() == id) {
+						} else if (object.getId() != null && object.getId() == id) {
 							addCityToPreloadedList(object);
 							canceled = true;
 						}

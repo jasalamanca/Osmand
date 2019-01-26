@@ -34,7 +34,6 @@ import java.util.Set;
 
 public class AdvancedEditPoiFragment extends BaseOsmAndFragment
 		implements EditPoiDialogFragment.OnFragmentActivatedListener {
-	private static final String TAG = "AdvancedEditPoiFragment";
 
 	private TagAdapterLinearLayoutHack mAdapter;
 	private EditPoiData.TagsChangedListener mTagsChangedListener;
@@ -42,12 +41,6 @@ public class AdvancedEditPoiFragment extends BaseOsmAndFragment
 	private TextView nameTextView;
 	private TextView amenityTagTextView;
 	private TextView amenityTextView;
-
-	@Override
-	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-		super.onActivityCreated(savedInstanceState);
-
-	}
 
 	@Nullable
 	@Override

@@ -148,9 +148,9 @@ public class Ellipsoid {
         if (name != null && name.length() > 0) {
             name = name.replace('_', ' ');
 
-            for (int i = 0; i < all.length; i++) {
-                if (name.equalsIgnoreCase(all[i].name)) {
-                    return all[i];
+            for (Ellipsoid anAll : all) {
+                if (name.equalsIgnoreCase(anAll.name)) {
+                    return anAll;
                 }
             }
         }

@@ -287,7 +287,7 @@ public class QuickSearchListItem {
 		return null;
 	}
 
-	public static String getAmenityIconName(OsmandApplication app, Amenity amenity) {
+	public static String getAmenityIconName(Amenity amenity) {
 		PoiType st = amenity.getType().getPoiTypeByKeyName(amenity.getSubType());
 		if (st != null) {
 			if (RenderingIcons.containsBigIcon(st.getIconKeyName())) {
@@ -338,7 +338,7 @@ public class QuickSearchListItem {
 				}
 			case POI:
 				Amenity amenity = (Amenity) searchResult.object;
-				String id = getAmenityIconName(app, amenity);
+				String id = getAmenityIconName(amenity);
 				Drawable icon = null;
 				if (id != null) {
 					iconId = RenderingIcons.getBigIconResourceId(id);

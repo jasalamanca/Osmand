@@ -9,7 +9,6 @@ import java.util.Set;
 
 
 public class PoiCategory extends PoiFilter {
-
 	private final List<PoiFilter> poiFilters = new ArrayList<>();
 	private Set<PoiType> basemapPoi = null;
 	private final int regId;
@@ -20,10 +19,9 @@ public class PoiCategory extends PoiFilter {
 		this.regId = regId;
 	}
 
-	public void addPoiType(PoiFilter poi) {
+	void addPoiType(PoiFilter poi) {
 		poiFilters.add(poi);
 	}
-
 	public List<PoiFilter> getPoiFilters() {
 		return poiFilters;
 	}
@@ -44,7 +42,7 @@ public class PoiCategory extends PoiFilter {
 		return defaultTag;
 	}
 	
-	public void setDefaultTag(String defaultTag) {
+	void setDefaultTag(String defaultTag) {
 		this.defaultTag = defaultTag;
 	}
 	
@@ -55,30 +53,17 @@ public class PoiCategory extends PoiFilter {
 		return acceptedTypes;
 	}
 
-	
 	public boolean isWiki() {
 		return keyName.equals(MapPoiTypes.OSM_WIKI_CATEGORY);
 	}
-
-
 	public int ordinal() {
 		return regId;
 	}
 
-	
-	public void addBasemapPoi(PoiType pt) {
+	void addBasemapPoi(PoiType pt) {
 		if(basemapPoi == null) {
 			basemapPoi = new HashSet<>();
 		}
 		basemapPoi.add(pt);
 	}
-
-	public boolean containsBasemapPoi(PoiType pt) {
-		if(basemapPoi == null) {
-			return false;
-		}
-		return basemapPoi.contains(pt);
-	}
-	
-	
 }

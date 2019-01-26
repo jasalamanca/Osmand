@@ -3,6 +3,8 @@
 
 package net.osmand.binary;
 
+
+@SuppressWarnings("unused") //NOTE jsala automático en su momento
 public final class OsmandIndex {
   private OsmandIndex() {}
   public static void registerAllExtensions(
@@ -370,7 +372,7 @@ public final class OsmandIndex {
         if (result.fileIndex_.isEmpty()) {
           result.fileIndex_ = new java.util.ArrayList<>();
         }
-        super.addAll(values, result.fileIndex_);
+        addAll(values, result.fileIndex_);
         return this;
       }
       public Builder clearFileIndex() {
@@ -987,7 +989,7 @@ public final class OsmandIndex {
         if (result.addressIndex_.isEmpty()) {
           result.addressIndex_ = new java.util.ArrayList<>();
         }
-        super.addAll(values, result.addressIndex_);
+        addAll(values, result.addressIndex_);
         return this;
       }
       public Builder clearAddressIndex() {
@@ -1038,7 +1040,7 @@ public final class OsmandIndex {
         if (result.transportIndex_.isEmpty()) {
           result.transportIndex_ = new java.util.ArrayList<>();
         }
-        super.addAll(values, result.transportIndex_);
+        addAll(values, result.transportIndex_);
         return this;
       }
       public Builder clearTransportIndex() {
@@ -1089,7 +1091,7 @@ public final class OsmandIndex {
         if (result.poiIndex_.isEmpty()) {
           result.poiIndex_ = new java.util.ArrayList<>();
         }
-        super.addAll(values, result.poiIndex_);
+        addAll(values, result.poiIndex_);
         return this;
       }
       public Builder clearPoiIndex() {
@@ -1140,7 +1142,7 @@ public final class OsmandIndex {
         if (result.mapIndex_.isEmpty()) {
           result.mapIndex_ = new java.util.ArrayList<>();
         }
-        super.addAll(values, result.mapIndex_);
+        addAll(values, result.mapIndex_);
         return this;
       }
       public Builder clearMapIndex() {
@@ -1191,7 +1193,7 @@ public final class OsmandIndex {
         if (result.routingIndex_.isEmpty()) {
           result.routingIndex_ = new java.util.ArrayList<>();
         }
-        super.addAll(values, result.routingIndex_);
+        addAll(values, result.routingIndex_);
         return this;
       }
       public Builder clearRoutingIndex() {
@@ -1734,7 +1736,7 @@ public final class OsmandIndex {
         if (result.cities_.isEmpty()) {
           result.cities_ = new java.util.ArrayList<>();
         }
-        super.addAll(values, result.cities_);
+        addAll(values, result.cities_);
         return this;
       }
       public Builder clearCities() {
@@ -1774,7 +1776,7 @@ public final class OsmandIndex {
         if (result.additionalTags_.isEmpty()) {
           result.additionalTags_ = new java.util.ArrayList<>();
         }
-        super.addAll(values, result.additionalTags_);
+        addAll(values, result.additionalTags_);
         return this;
       }
       public Builder clearAdditionalTags() {
@@ -3557,7 +3559,7 @@ public final class OsmandIndex {
         if (result.levels_.isEmpty()) {
           result.levels_ = new java.util.ArrayList<>();
         }
-        super.addAll(values, result.levels_);
+        addAll(values, result.levels_);
         return this;
       }
       public Builder clearLevels() {
@@ -4513,7 +4515,7 @@ public final class OsmandIndex {
         if (result.subregions_.isEmpty()) {
           result.subregions_ = new java.util.ArrayList<>();
         }
-        super.addAll(values, result.subregions_);
+        addAll(values, result.subregions_);
         return this;
       }
       public Builder clearSubregions() {

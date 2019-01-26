@@ -20,6 +20,7 @@ import android.text.TextPaint;
 import net.osmand.plus.OsmAndFormatter;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
+import net.osmand.plus.routing.RouteCalculationResult;
 import net.osmand.plus.routing.RoutingHelper;
 import net.osmand.plus.views.OsmandMapLayer.DrawSettings;
 import net.osmand.plus.views.TurnPathHelper;
@@ -98,7 +99,7 @@ public class NextTurnInfoWidget extends TextInfoWidget {
 			TurnType turnType = getTurnType();
 			RoutingHelper routingHelper = app.getRoutingHelper();
 			if ((turnType != null) && (routingHelper != null)) {
-				setContentDescription(ds + " " + routingHelper.getRoute().toString(turnType, app, false));
+				setContentDescription(ds + " " + RouteCalculationResult.toString(turnType, app, false));
 			} else {
 				setContentDescription(ds);
 			}

@@ -3,6 +3,8 @@
 
 package net.osmand.binary;
 
+
+@SuppressWarnings("unused") //NOTE jsala automático en su momento
 public final class OsmandOdb {
   private OsmandOdb() {}
   public static void registerAllExtensions(
@@ -1696,7 +1698,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndAddressIndex> values) {
         if (addressIndexBuilder_ == null) {
           ensureAddressIndexIsMutable();
-          super.addAll(values, addressIndex_);
+          addAll(values, addressIndex_);
           onChanged();
         } else {
           addressIndexBuilder_.addAllMessages(values);
@@ -2015,7 +2017,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndTransportIndex> values) {
         if (transportIndexBuilder_ == null) {
           ensureTransportIndexIsMutable();
-          super.addAll(values, transportIndex_);
+          addAll(values, transportIndex_);
           onChanged();
         } else {
           transportIndexBuilder_.addAllMessages(values);
@@ -2336,7 +2338,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndPoiIndex> values) {
         if (poiIndexBuilder_ == null) {
           ensurePoiIndexIsMutable();
-          super.addAll(values, poiIndex_);
+          addAll(values, poiIndex_);
           onChanged();
         } else {
           poiIndexBuilder_.addAllMessages(values);
@@ -2665,7 +2667,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndMapIndex> values) {
         if (mapIndexBuilder_ == null) {
           ensureMapIndexIsMutable();
-          super.addAll(values, mapIndex_);
+          addAll(values, mapIndex_);
           onChanged();
         } else {
           mapIndexBuilder_.addAllMessages(values);
@@ -2984,7 +2986,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndRoutingIndex> values) {
         if (routingIndexBuilder_ == null) {
           ensureRoutingIndexIsMutable();
-          super.addAll(values, routingIndex_);
+          addAll(values, routingIndex_);
           onChanged();
         } else {
           routingIndexBuilder_.addAllMessages(values);
@@ -4343,7 +4345,7 @@ public final class OsmandOdb {
       public Builder addAllS(
           java.lang.Iterable<java.lang.String> values) {
         ensureSIsMutable();
-        super.addAll(values, s_);
+        addAll(values, s_);
         onChanged();
         return this;
       }
@@ -5406,7 +5408,7 @@ public final class OsmandOdb {
       public Builder addAllKey(
           java.lang.Iterable<java.lang.String> values) {
         ensureKeyIsMutable();
-        super.addAll(values, key_);
+        addAll(values, key_);
         onChanged();
         return this;
       }
@@ -5519,7 +5521,7 @@ public final class OsmandOdb {
       public Builder addAllVal(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureValIsMutable();
-        super.addAll(values, val_);
+        addAll(values, val_);
         onChanged();
         return this;
       }
@@ -5729,7 +5731,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.IndexedStringTable> values) {
         if (subtablesBuilder_ == null) {
           ensureSubtablesIsMutable();
-          super.addAll(values, subtables_);
+          addAll(values, subtables_);
           onChanged();
         } else {
           subtablesBuilder_.addAllMessages(values);
@@ -8318,7 +8320,7 @@ public final class OsmandOdb {
             java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox> values) {
           if (boxesBuilder_ == null) {
             ensureBoxesIsMutable();
-            super.addAll(values, boxes_);
+            addAll(values, boxes_);
             onChanged();
           } else {
             boxesBuilder_.addAllMessages(values);
@@ -8557,7 +8559,7 @@ public final class OsmandOdb {
             java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.MapDataBlock> values) {
           if (blocksBuilder_ == null) {
             ensureBlocksIsMutable();
-            super.addAll(values, blocks_);
+            addAll(values, blocks_);
             onChanged();
           } else {
             blocksBuilder_.addAllMessages(values);
@@ -9955,7 +9957,7 @@ public final class OsmandOdb {
             java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox> values) {
           if (boxesBuilder_ == null) {
             ensureBoxesIsMutable();
-            super.addAll(values, boxes_);
+            addAll(values, boxes_);
             onChanged();
           } else {
             boxesBuilder_.addAllMessages(values);
@@ -10782,7 +10784,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRule> values) {
         if (rulesBuilder_ == null) {
           ensureRulesIsMutable();
-          super.addAll(values, rules_);
+          addAll(values, rules_);
           onChanged();
         } else {
           rulesBuilder_.addAllMessages(values);
@@ -11061,7 +11063,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevel> values) {
         if (levelsBuilder_ == null) {
           ensureLevelsIsMutable();
-          super.addAll(values, levels_);
+          addAll(values, levels_);
           onChanged();
         } else {
           levelsBuilder_.addAllMessages(values);
@@ -12033,7 +12035,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.MapData> values) {
         if (dataObjectsBuilder_ == null) {
           ensureDataObjectsIsMutable();
-          super.addAll(values, dataObjects_);
+          addAll(values, dataObjects_);
           onChanged();
         } else {
           dataObjectsBuilder_.addAllMessages(values);
@@ -13265,7 +13267,7 @@ public final class OsmandOdb {
       public Builder addAllPolygonInnerCoordinates(
           java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
         ensurePolygonInnerCoordinatesIsMutable();
-        super.addAll(values, polygonInnerCoordinates_);
+        addAll(values, polygonInnerCoordinates_);
         onChanged();
         return this;
       }
@@ -14833,7 +14835,7 @@ public final class OsmandOdb {
             java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.CityIndex> values) {
           if (citiesBuilder_ == null) {
             ensureCitiesIsMutable();
-            super.addAll(values, cities_);
+            addAll(values, cities_);
             onChanged();
           } else {
             citiesBuilder_.addAllMessages(values);
@@ -15112,7 +15114,7 @@ public final class OsmandOdb {
             java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.CityBlockIndex> values) {
           if (blocksBuilder_ == null) {
             ensureBlocksIsMutable();
-            super.addAll(values, blocks_);
+            addAll(values, blocks_);
             onChanged();
           } else {
             blocksBuilder_.addAllMessages(values);
@@ -16486,7 +16488,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex> values) {
         if (citiesBuilder_ == null) {
           ensureCitiesIsMutable();
-          super.addAll(values, cities_);
+          addAll(values, cities_);
           onChanged();
         } else {
           citiesBuilder_.addAllMessages(values);
@@ -17614,7 +17616,7 @@ public final class OsmandOdb {
             java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.AddressNameIndexDataAtom> values) {
           if (atomBuilder_ == null) {
             ensureAtomIsMutable();
-            super.addAll(values, atom_);
+            addAll(values, atom_);
             onChanged();
           } else {
             atomBuilder_.addAllMessages(values);
@@ -18437,7 +18439,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexData> values) {
         if (atomBuilder_ == null) {
           ensureAtomIsMutable();
-          super.addAll(values, atom_);
+          addAll(values, atom_);
           onChanged();
         } else {
           atomBuilder_.addAllMessages(values);
@@ -19715,7 +19717,7 @@ public final class OsmandOdb {
       public Builder addAllShiftToIndex(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureShiftToIndexIsMutable();
-        super.addAll(values, shiftToIndex_);
+        addAll(values, shiftToIndex_);
         onChanged();
         return this;
       }
@@ -19810,7 +19812,7 @@ public final class OsmandOdb {
       public Builder addAllShiftToCityIndex(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureShiftToCityIndexIsMutable();
-        super.addAll(values, shiftToCityIndex_);
+        addAll(values, shiftToCityIndex_);
         onChanged();
         return this;
       }
@@ -19904,7 +19906,7 @@ public final class OsmandOdb {
       public Builder addAllXy16(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureXy16IsMutable();
-        super.addAll(values, xy16_);
+        addAll(values, xy16_);
         onChanged();
         return this;
       }
@@ -21292,7 +21294,7 @@ public final class OsmandOdb {
       public Builder addAllAttributeTagIds(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureAttributeTagIdsIsMutable();
-        super.addAll(values, attributeTagIds_);
+        addAll(values, attributeTagIds_);
         onChanged();
         return this;
       }
@@ -21372,7 +21374,7 @@ public final class OsmandOdb {
       public Builder addAllAttributeValues(
           java.lang.Iterable<java.lang.String> values) {
         ensureAttributeValuesIsMutable();
-        super.addAll(values, attributeValues_);
+        addAll(values, attributeValues_);
         onChanged();
         return this;
       }
@@ -22366,7 +22368,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.BuildingIndex> values) {
         if (buildingsBuilder_ == null) {
           ensureBuildingsIsMutable();
-          super.addAll(values, buildings_);
+          addAll(values, buildings_);
           onChanged();
         } else {
           buildingsBuilder_.addAllMessages(values);
@@ -22637,7 +22639,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.StreetIndex> values) {
         if (streetsBuilder_ == null) {
           ensureStreetsIsMutable();
-          super.addAll(values, streets_);
+          addAll(values, streets_);
           onChanged();
         } else {
           streetsBuilder_.addAllMessages(values);
@@ -24252,7 +24254,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.StreetIntersection> values) {
         if (intersectionsBuilder_ == null) {
           ensureIntersectionsIsMutable();
-          super.addAll(values, intersections_);
+          addAll(values, intersections_);
           onChanged();
         } else {
           intersectionsBuilder_.addAllMessages(values);
@@ -24434,7 +24436,7 @@ public final class OsmandOdb {
       public Builder addAllAttributeTagIds(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureAttributeTagIdsIsMutable();
-        super.addAll(values, attributeTagIds_);
+        addAll(values, attributeTagIds_);
         onChanged();
         return this;
       }
@@ -24514,7 +24516,7 @@ public final class OsmandOdb {
       public Builder addAllAttributeValues(
           java.lang.Iterable<java.lang.String> values) {
         ensureAttributeValuesIsMutable();
-        super.addAll(values, attributeValues_);
+        addAll(values, attributeValues_);
         onChanged();
         return this;
       }
@@ -24683,7 +24685,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.BuildingIndex> values) {
         if (buildingsBuilder_ == null) {
           ensureBuildingsIsMutable();
-          super.addAll(values, buildings_);
+          addAll(values, buildings_);
           onChanged();
         } else {
           buildingsBuilder_.addAllMessages(values);
@@ -25892,7 +25894,7 @@ public final class OsmandOdb {
       public Builder addAllAttributeTagIds(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureAttributeTagIdsIsMutable();
-        super.addAll(values, attributeTagIds_);
+        addAll(values, attributeTagIds_);
         onChanged();
         return this;
       }
@@ -25972,7 +25974,7 @@ public final class OsmandOdb {
       public Builder addAllAttributeValues(
           java.lang.Iterable<java.lang.String> values) {
         ensureAttributeValuesIsMutable();
-        super.addAll(values, attributeValues_);
+        addAll(values, attributeValues_);
         onChanged();
         return this;
       }
@@ -28238,7 +28240,7 @@ public final class OsmandOdb {
       public Builder addAllAttributeTagIds(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureAttributeTagIdsIsMutable();
-        super.addAll(values, attributeTagIds_);
+        addAll(values, attributeTagIds_);
         onChanged();
         return this;
       }
@@ -28318,7 +28320,7 @@ public final class OsmandOdb {
       public Builder addAllAttributeValues(
           java.lang.Iterable<java.lang.String> values) {
         ensureAttributeValuesIsMutable();
-        super.addAll(values, attributeValues_);
+        addAll(values, attributeValues_);
         onChanged();
         return this;
       }
@@ -28397,7 +28399,7 @@ public final class OsmandOdb {
       public Builder addAllAttributeTagIds2(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureAttributeTagIds2IsMutable();
-        super.addAll(values, attributeTagIds2_);
+        addAll(values, attributeTagIds2_);
         onChanged();
         return this;
       }
@@ -28477,7 +28479,7 @@ public final class OsmandOdb {
       public Builder addAllAttributeValues2(
           java.lang.Iterable<java.lang.String> values) {
         ensureAttributeValues2IsMutable();
-        super.addAll(values, attributeValues2_);
+        addAll(values, attributeValues2_);
         onChanged();
         return this;
       }
@@ -29092,7 +29094,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.TransportRoute> values) {
         if (routesBuilder_ == null) {
           ensureRoutesIsMutable();
-          super.addAll(values, routes_);
+          addAll(values, routes_);
           onChanged();
         } else {
           routesBuilder_.addAllMessages(values);
@@ -30840,7 +30842,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.TransportRouteStop> values) {
         if (directStopsBuilder_ == null) {
           ensureDirectStopsIsMutable();
-          super.addAll(values, directStops_);
+          addAll(values, directStops_);
           onChanged();
         } else {
           directStopsBuilder_.addAllMessages(values);
@@ -31119,7 +31121,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.TransportRouteStop> values) {
         if (reverseStopsBuilder_ == null) {
           ensureReverseStopsIsMutable();
-          super.addAll(values, reverseStops_);
+          addAll(values, reverseStops_);
           onChanged();
         } else {
           reverseStopsBuilder_.addAllMessages(values);
@@ -33327,7 +33329,7 @@ public final class OsmandOdb {
       public Builder addAllRoutes(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureRoutesIsMutable();
-        super.addAll(values, routes_);
+        addAll(values, routes_);
         onChanged();
         return this;
       }
@@ -34698,7 +34700,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.TransportStopsTree> values) {
         if (subtreesBuilder_ == null) {
           ensureSubtreesIsMutable();
-          super.addAll(values, subtrees_);
+          addAll(values, subtrees_);
           onChanged();
         } else {
           subtreesBuilder_.addAllMessages(values);
@@ -34969,7 +34971,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.TransportStop> values) {
         if (leafsBuilder_ == null) {
           ensureLeafsIsMutable();
-          super.addAll(values, leafs_);
+          addAll(values, leafs_);
           onChanged();
         } else {
           leafsBuilder_.addAllMessages(values);
@@ -37819,7 +37821,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndCategoryTable> values) {
         if (categoriesTableBuilder_ == null) {
           ensureCategoriesTableIsMutable();
-          super.addAll(values, categoriesTable_);
+          addAll(values, categoriesTable_);
           onChanged();
         } else {
           categoriesTableBuilder_.addAllMessages(values);
@@ -38366,7 +38368,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndPoiBox> values) {
         if (boxesBuilder_ == null) {
           ensureBoxesIsMutable();
-          super.addAll(values, boxes_);
+          addAll(values, boxes_);
           onChanged();
         } else {
           boxesBuilder_.addAllMessages(values);
@@ -38677,7 +38679,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndPoiBoxData> values) {
         if (poiDataBuilder_ == null) {
           ensurePoiDataIsMutable();
-          super.addAll(values, poiData_);
+          addAll(values, poiData_);
           onChanged();
         } else {
           poiDataBuilder_.addAllMessages(values);
@@ -39633,7 +39635,7 @@ public final class OsmandOdb {
             java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtom> values) {
           if (atomsBuilder_ == null) {
             ensureAtomsIsMutable();
-            super.addAll(values, atoms_);
+            addAll(values, atoms_);
             onChanged();
           } else {
             atomsBuilder_.addAllMessages(values);
@@ -40444,7 +40446,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexData> values) {
         if (dataBuilder_ == null) {
           ensureDataIsMutable();
-          super.addAll(values, data_);
+          addAll(values, data_);
           onChanged();
         } else {
           dataBuilder_.addAllMessages(values);
@@ -41937,7 +41939,7 @@ public final class OsmandOdb {
       public Builder addAllSubcategories(
           java.lang.Iterable<java.lang.String> values) {
         ensureSubcategoriesIsMutable();
-        super.addAll(values, subcategories_);
+        addAll(values, subcategories_);
         onChanged();
         return this;
       }
@@ -42672,7 +42674,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndPoiSubtype> values) {
         if (subtypesBuilder_ == null) {
           ensureSubtypesIsMutable();
-          super.addAll(values, subtypes_);
+          addAll(values, subtypes_);
           onChanged();
         } else {
           subtypesBuilder_.addAllMessages(values);
@@ -43909,7 +43911,7 @@ public final class OsmandOdb {
       public Builder addAllSubtypeValue(
           java.lang.Iterable<java.lang.String> values) {
         ensureSubtypeValueIsMutable();
-        super.addAll(values, subtypeValue_);
+        addAll(values, subtypeValue_);
         onChanged();
         return this;
       }
@@ -45225,7 +45227,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndPoiBox> values) {
         if (subBoxesBuilder_ == null) {
           ensureSubBoxesIsMutable();
-          super.addAll(values, subBoxes_);
+          addAll(values, subBoxes_);
           onChanged();
         } else {
           subBoxesBuilder_.addAllMessages(values);
@@ -45997,7 +45999,7 @@ public final class OsmandOdb {
       public Builder addAllCategories(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureCategoriesIsMutable();
-        super.addAll(values, categories_);
+        addAll(values, categories_);
         onChanged();
         return this;
       }
@@ -46067,7 +46069,7 @@ public final class OsmandOdb {
       public Builder addAllSubcategories(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureSubcategoriesIsMutable();
-        super.addAll(values, subcategories_);
+        addAll(values, subcategories_);
         onChanged();
         return this;
       }
@@ -47011,7 +47013,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtom> values) {
         if (poiDataBuilder_ == null) {
           ensurePoiDataIsMutable();
-          super.addAll(values, poiData_);
+          addAll(values, poiData_);
           onChanged();
         } else {
           poiDataBuilder_.addAllMessages(values);
@@ -48694,7 +48696,7 @@ public final class OsmandOdb {
       public Builder addAllCategories(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureCategoriesIsMutable();
-        super.addAll(values, categories_);
+        addAll(values, categories_);
         onChanged();
         return this;
       }
@@ -48784,7 +48786,7 @@ public final class OsmandOdb {
       public Builder addAllSubcategories(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureSubcategoriesIsMutable();
-        super.addAll(values, subcategories_);
+        addAll(values, subcategories_);
         onChanged();
         return this;
       }
@@ -49379,7 +49381,7 @@ public final class OsmandOdb {
       public Builder addAllTextCategories(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureTextCategoriesIsMutable();
-        super.addAll(values, textCategories_);
+        addAll(values, textCategories_);
         onChanged();
         return this;
       }
@@ -49463,7 +49465,7 @@ public final class OsmandOdb {
       public Builder addAllTextValues(
           java.lang.Iterable<java.lang.String> values) {
         ensureTextValuesIsMutable();
-        super.addAll(values, textValues_);
+        addAll(values, textValues_);
         onChanged();
         return this;
       }
@@ -50007,7 +50009,7 @@ public final class OsmandOdb {
       public Builder addAllRouteId(
           java.lang.Iterable<? extends java.lang.Long> values) {
         ensureRouteIdIsMutable();
-        super.addAll(values, routeId_);
+        addAll(values, routeId_);
         onChanged();
         return this;
       }
@@ -54001,7 +54003,7 @@ public final class OsmandOdb {
             java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox> values) {
           if (boxesBuilder_ == null) {
             ensureBoxesIsMutable();
-            super.addAll(values, boxes_);
+            addAll(values, boxes_);
             onChanged();
           } else {
             boxesBuilder_.addAllMessages(values);
@@ -55209,7 +55211,7 @@ public final class OsmandOdb {
             java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.RouteData> values) {
           if (dataObjectsBuilder_ == null) {
             ensureDataObjectsIsMutable();
-            super.addAll(values, dataObjects_);
+            addAll(values, dataObjects_);
             onChanged();
           } else {
             dataObjectsBuilder_.addAllMessages(values);
@@ -55448,7 +55450,7 @@ public final class OsmandOdb {
             java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.RestrictionData> values) {
           if (restrictionsBuilder_ == null) {
             ensureRestrictionsIsMutable();
-            super.addAll(values, restrictions_);
+            addAll(values, restrictions_);
             onChanged();
           } else {
             restrictionsBuilder_.addAllMessages(values);
@@ -56601,7 +56603,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRule> values) {
         if (rulesBuilder_ == null) {
           ensureRulesIsMutable();
-          super.addAll(values, rules_);
+          addAll(values, rules_);
           onChanged();
         } else {
           rulesBuilder_.addAllMessages(values);
@@ -56880,7 +56882,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox> values) {
         if (rootBoxesBuilder_ == null) {
           ensureRootBoxesIsMutable();
-          super.addAll(values, rootBoxes_);
+          addAll(values, rootBoxes_);
           onChanged();
         } else {
           rootBoxesBuilder_.addAllMessages(values);
@@ -57191,7 +57193,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox> values) {
         if (basemapBoxesBuilder_ == null) {
           ensureBasemapBoxesIsMutable();
-          super.addAll(values, basemapBoxes_);
+          addAll(values, basemapBoxes_);
           onChanged();
         } else {
           basemapBoxesBuilder_.addAllMessages(values);
@@ -57462,7 +57464,7 @@ public final class OsmandOdb {
           java.lang.Iterable<? extends net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlock> values) {
         if (blocksBuilder_ == null) {
           ensureBlocksIsMutable();
-          super.addAll(values, blocks_);
+          addAll(values, blocks_);
           onChanged();
         } else {
           blocksBuilder_.addAllMessages(values);

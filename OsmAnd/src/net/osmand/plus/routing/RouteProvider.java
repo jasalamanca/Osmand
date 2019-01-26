@@ -1,8 +1,6 @@
 package net.osmand.plus.routing;
 
 
-import android.content.Context;
-
 import net.osmand.Location;
 import net.osmand.PlatformUtil;
 import net.osmand.binary.BinaryMapIndexReader;
@@ -22,7 +20,6 @@ import net.osmand.plus.TargetPointsHelper;
 import net.osmand.plus.TargetPointsHelper.TargetPoint;
 import net.osmand.plus.activities.SettingsNavigationActivity;
 import net.osmand.plus.render.NativeOsmandLibrary;
-import net.osmand.render.RenderingRulesStorage;
 import net.osmand.router.GeneralRouter;
 import net.osmand.router.GeneralRouter.GeneralRouterProfile;
 import net.osmand.router.GeneralRouter.RoutingParameter;
@@ -38,7 +35,6 @@ import net.osmand.router.TurnType;
 import net.osmand.util.Algorithms;
 import net.osmand.util.MapUtils;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -253,8 +249,8 @@ public class RouteProvider {
 			info.distance = 0;
 			info.afterLeftTime = 0;			
 		}
-		RouteCalculationResult res = new RouteCalculationResult(gpxRoute, gpxDirections, routeParams, 
-				gpxParams  == null? null: gpxParams.wpt, routeParams.gpxRoute.addMissingTurns);
+		RouteCalculationResult res = new RouteCalculationResult(gpxRoute, gpxDirections, routeParams,
+                gpxParams.wpt, routeParams.gpxRoute.addMissingTurns);
 		return res;
 	}
 
@@ -434,13 +430,6 @@ public class RouteProvider {
 			endI[0] = end;
 		}
 		return sublist;
-	}
-
-	protected String getString(Context ctx, int resId){
-		if(ctx == null){
-			return ""; //$NON-NLS-1$
-		}
-		return ctx.getString(resId);
 	}
 
 	private RouteCalculationResult findVectorMapsRoute(final RouteCalculationParams params, boolean calcGPXRoute) throws IOException {

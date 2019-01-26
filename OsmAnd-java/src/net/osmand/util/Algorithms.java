@@ -14,10 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
@@ -29,18 +26,12 @@ public class Algorithms {
 	private static final int BUFFER_SIZE = 1024;
 	private static final Log log = PlatformUtil.getLog(Algorithms.class);
 
-	public static boolean isEmpty(Collection c) {
-		return c == null || c.size() == 0;
-	}
-
 	public static boolean isEmpty(Map map) {
 		return map == null || map.size() == 0;
 	}
-
 	public static boolean isEmpty(String s) {
 		return s == null || s.length() == 0;
 	}
-
 	public static boolean isBlank(String s) {
 		return s == null || s.trim().length() == 0;
 	}
@@ -130,20 +121,7 @@ public class Algorithms {
 
 	private static final char CHAR_TOSPLIT = 0x01;
 
-	public static Map<String, String> decodeMap(String s) {
-		if (isEmpty(s)) {
-			return Collections.emptyMap();
-		}
-		Map<String, String> names = new HashMap<>();
-		String[] split = s.split(CHAR_TOSPLIT + "");
-		// last split is an empty string
-		for (int i = 1; i < split.length; i += 2) {
-			names.put(split[i - 1], split[i]);
-		}
-		return names;
-	}
-
-    public static int findFirstNumberEndIndex(String value) {
+	public static int findFirstNumberEndIndex(String value) {
 		int i = 0;
 		boolean valid = false;
 		if (value.length() > 0 && value.charAt(0) == '-') {
@@ -354,19 +332,7 @@ public class Algorithms {
 		}
 	}
 
-
-    public static void writeInt(OutputStream stream, int l) throws IOException {
-		stream.write(l & 0xff);
-		l >>= 8;
-		stream.write(l & 0xff);
-		l >>= 8;
-		stream.write(l & 0xff);
-		l >>= 8;
-		stream.write(l & 0xff);
-	}
-
-
-    public static String formatDuration(int seconds, boolean fullForm) {
+	public static String formatDuration(int seconds, boolean fullForm) {
 		String sec;
 		if (seconds % 60 < 10) {
 			sec = "0" + (seconds % 60);
@@ -425,9 +391,4 @@ public class Algorithms {
     public static int compare(int x, int y) {
 		return (x < y) ? -1 : ((x == y) ? 0 : 1);
 	}
-	
-	public static int compare(long x, long y) {
-		return (x < y) ? -1 : ((x == y) ? 0 : 1);
-	}
-
 }

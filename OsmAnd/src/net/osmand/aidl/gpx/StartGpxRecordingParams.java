@@ -9,7 +9,7 @@ public class StartGpxRecordingParams implements Parcelable {
 
 	}
 
-	public StartGpxRecordingParams(Parcel in) {
+	private StartGpxRecordingParams(Parcel in) {
 		readFromParcel(in);
 	}
 

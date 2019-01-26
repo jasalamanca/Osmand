@@ -52,17 +52,17 @@ public class MapMultiSelectionMenu extends BaseMenuController {
 		}
 
 		@Override
-		public LatLon getLatLon() {
+        protected LatLon getLatLon() {
 			return latLon;
 		}
 
 		@Override
-		public PointDescription getPointDescription() {
+        protected PointDescription getPointDescription() {
 			return pointDescription;
 		}
 
 		@Override
-		public Object getObject() {
+        protected Object getObject() {
 			return object;
 		}
 

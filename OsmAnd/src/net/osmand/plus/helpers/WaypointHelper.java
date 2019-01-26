@@ -269,17 +269,9 @@ public class WaypointHelper {
 			int[] pointTypes = ro.getPointTypes(i);
 			RouteRegion reg = ro.region;
 			if (pointTypes != null) {
-				for (int r = 0; r < pointTypes.length; r++) {
-					RouteTypeRule typeRule = reg.quickGetEncodingRule(pointTypes[r]);
+				for (int pointType : pointTypes) {
+					RouteTypeRule typeRule = reg.quickGetEncodingRule(pointType);
 					AlarmInfo info = AlarmInfo.createAlarmInfo(typeRule, 0, loc);
-
-					// For STOP first check if it has directional info
-					// Looks like has no effect here
-					//if (info != null && info.getType() != null && info.getType() == AlarmInfoType.STOP) {
-					//	if (!ro.isStopApplicable(ro.bearingVsRouteDirection(loc), i)) {
-					//		info = null;
-					//	}
-					//}
 
 					if (info != null) {
 						if (info.getType() != AlarmInfoType.SPEED_CAMERA || showCameras) {
@@ -338,7 +330,7 @@ public class WaypointHelper {
 							double d1 = Math.max(0.0, MapUtils.getDistance(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude(),
 									point.getLatitude(), point.getLongitude()) - lwp.getDeviationDistance());
 							Integer state = locationPointsStates.get(point);
-							if (state != null && state.intValue() == ANNOUNCED_ONCE
+							if (state != null && state == ANNOUNCED_ONCE
 									&& getVoiceRouter().isDistanceLess(lastKnownLocation.getSpeed(), d1, SHORT_ANNOUNCE_RADIUS, 0f)) {
 								locationPointsStates.put(point, ANNOUNCED_DONE);
 								announcePoints.add(lwp);
@@ -440,13 +432,11 @@ public class WaypointHelper {
 		this.locationPoints = new ArrayList<>();
 	}
 
-
 	public void setNewRoute(RouteCalculationResult route) {
 		List<List<LocationPointWrapper>> locationPoints = new ArrayList<>();
 		recalculatePoints(route, -1, locationPoints);
 		setLocationPoints(locationPoints, route);
 	}
-
 
 	private void recalculatePoints(RouteCalculationResult route, int type, List<List<LocationPointWrapper>> locationPoints) {
 		boolean all = type == -1;
@@ -532,7 +522,6 @@ public class WaypointHelper {
 		this.route = route;
 	}
 
-
 	private void sortList(List<LocationPointWrapper> list) {
 		Collections.sort(list, new Comparator<LocationPointWrapper>() {
 			@Override
@@ -546,7 +535,6 @@ public class WaypointHelper {
 			}
 		});
 	}
-
 
 	private void calculatePoi(RouteCalculationResult route, List<LocationPointWrapper> locationPoints, boolean announcePOI) {
 		if (app.getPoiFilters().isShowingAnyPoi()) {
@@ -568,7 +556,6 @@ public class WaypointHelper {
 			}
 		}
 	}
-
 
 	private void calculateAlarms(RouteCalculationResult route, List<LocationPointWrapper> array, ApplicationMode mode) {
 		AlarmInfo prevSpeedCam = null;
@@ -593,12 +580,8 @@ public class WaypointHelper {
 					array.add(lw);
 				}
 			}
-			
-
 		}
-
 	}
-
 
 	private List<LocationPointWrapper> clearAndGetArray(List<List<LocationPointWrapper>> array,
 														int ind) {
@@ -608,7 +591,6 @@ public class WaypointHelper {
 		array.get(ind).clear();
 		return array.get(ind);
 	}
-
 
 	private void findLocationPoints(RouteCalculationResult rt, int type, List<LocationPointWrapper> locationPoints,
 									List<? extends LocationPoint> points, boolean announce) {
@@ -627,8 +609,6 @@ public class WaypointHelper {
 		}
 	}
 
-
-	/// 
 	public Set<PoiUIFilter> getPoiFilters() {
 		return app.getPoiFilters().getSelectedPoiFilters();
 	}
@@ -642,9 +622,6 @@ public class WaypointHelper {
 		RouteCalculationResult route;
 		int type;
 
-		public LocationPointWrapper() {
-		}
-
 		public LocationPointWrapper(RouteCalculationResult rt, int type, LocationPoint point, float deviationDistance, int routeIndex) {
 			this.route = rt;
 			this.type = type;
@@ -656,19 +633,15 @@ public class WaypointHelper {
 		void setAnnounce(boolean announce) {
 			this.announce = announce;
 		}
-
 		public float getDeviationDistance() {
 			return deviationDistance;
 		}
-
 		public boolean isDeviationDirectionRight() {
 			return deviationDirectionRight;
 		}
-
 		public LocationPoint getPoint() {
 			return point;
 		}
-
 
 		public Drawable getDrawable(Context uiCtx, OsmandApplication app, boolean nightMode) {
 			if (type == POI) {
@@ -818,13 +791,8 @@ public class WaypointHelper {
 			return 0;
 		}
 
-		@Override
 		public boolean isVisible() {
 			return true;
 		}
-
 	}
-
 }
-
-

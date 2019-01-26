@@ -161,13 +161,12 @@ public class ItemViewHolder {
 			descrTextView.setVisibility(View.VISIBLE);
 			if (showTypeInDesc) {
 				descrTextView.setText(indexItem.getType().getString(context) + 
-						" • " + indexItem.getSizeDescription(context) +
+						" • " + indexItem.getSizeDescription() +
 						" • " + (showRemoteDate ? indexItem.getRemoteDate(dateFormat) : indexItem.getLocalDate(dateFormat)));
 			} else {
-				descrTextView.setText(indexItem.getSizeDescription(context) + " • " + 
+				descrTextView.setText(indexItem.getSizeDescription() + " • " +
 						(showRemoteDate ? indexItem.getRemoteDate(dateFormat) : indexItem.getLocalDate(dateFormat)));
 			}
-
 		} else {
 			progressBar.setVisibility(View.VISIBLE);
 			progressBar.setIndeterminate(progress == -1);
@@ -339,7 +338,7 @@ public class ItemViewHolder {
 						tp = indexItem.getBasename().contains("tts") ? LocalIndexType.TTS_VOICE_DATA
 								: LocalIndexType.VOICE_DATA;
 					}
-					final LocalIndexInfo info = new LocalIndexInfo(tp, fl, false, context.getMyApplication());
+					final LocalIndexInfo info = new LocalIndexInfo(tp, fl, false);
 					AlertDialog.Builder confirm = new AlertDialog.Builder(context);
 					confirm.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
 						@Override

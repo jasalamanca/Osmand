@@ -23,7 +23,6 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import net.osmand.PlatformUtil;
 import net.osmand.ResultMatcher;
 import net.osmand.ValueHolder;
 import net.osmand.data.Amenity;
@@ -55,7 +54,6 @@ import static android.util.TypedValue.COMPLEX_UNIT_DIP;
 public class POIMapLayer extends OsmandMapLayer implements ContextMenuLayer.IContextMenuProvider,
 		MapTextProvider<Amenity>, IRouteInformationListener {
 	private static final int startZoom = 9;
-	public static final org.apache.commons.logging.Log log = PlatformUtil.getLog(POIMapLayer.class);
 
 	private Paint paintIcon;
 	private Paint paintIconBackground;

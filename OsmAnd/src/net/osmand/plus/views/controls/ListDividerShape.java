@@ -21,14 +21,6 @@ public class ListDividerShape extends Shape {
 		this.drawPoint = false;
 	}
 
-	public ListDividerShape(int lineColor, int paddingLeft, int pointColor, float pointRadius, boolean drawPoint) {
-		this.lineColor = lineColor;
-		this.paddingLeft = paddingLeft;
-		this.pointColor = pointColor;
-		this.pointRadius = pointRadius;
-		this.drawPoint = drawPoint;
-	}
-
 	@Override
 	public void draw(Canvas canvas, Paint paint) {
 		paint.setColor(lineColor);

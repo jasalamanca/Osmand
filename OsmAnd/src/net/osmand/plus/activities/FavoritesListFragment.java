@@ -249,7 +249,7 @@ public class FavoritesListFragment extends OsmAndListFragment implements SearchA
 
 	}
 
-	public OsmandApplication getMyApplication() {
+	protected OsmandApplication getMyApplication() {
 		return (OsmandApplication) getActivity().getApplication();
 	}
 
@@ -279,7 +279,7 @@ public class FavoritesListFragment extends OsmAndListFragment implements SearchA
 					if ((position != AdapterView.INVALID_POSITION) && (position >= getListView().getHeaderViewsCount()))  {
 						FavouritePoint point = favouritesAdapter.getItem(position - getListView().getHeaderViewsCount());
 						LatLon location = new LatLon(point.getLatitude(), point.getLongitude());
-						((SearchActivity)activity).getNavigationInfo().updateTargetDirection(location, favouritesAdapter.heading.floatValue());
+						((SearchActivity)activity).getNavigationInfo().updateTargetDirection(location, favouritesAdapter.heading);
 					}
 				} catch (Exception e) {
 					return;

@@ -12,7 +12,7 @@ public class MapZooms {
 		private final int minZoom;
 		private final int maxZoom;
 
-		public MapZoomPair(int minZoom, int maxZoom) {
+		MapZoomPair(int minZoom, int maxZoom) {
 			this.maxZoom = maxZoom;
 			this.minZoom = minZoom;
 		}

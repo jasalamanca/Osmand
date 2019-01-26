@@ -343,10 +343,6 @@ public class GPXDatabase {
 		return false;
 	}
 
-	public boolean remove(GpxDataItem item) {
-		return remove(item.file);
-	}
-
 	public boolean add(GpxDataItem item) {
 		SQLiteConnection db = openConnection(false);
 		if (db != null){

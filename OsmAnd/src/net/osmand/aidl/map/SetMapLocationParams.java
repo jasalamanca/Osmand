@@ -17,7 +17,7 @@ public class SetMapLocationParams implements Parcelable {
 		this.animated = animated;
 	}
 
-	public SetMapLocationParams(Parcel in) {
+	private SetMapLocationParams(Parcel in) {
 		readFromParcel(in);
 	}
 

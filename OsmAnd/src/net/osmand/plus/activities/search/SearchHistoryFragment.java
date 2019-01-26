@@ -312,7 +312,7 @@ public class SearchHistoryFragment extends OsmAndListFragment implements SearchA
 		}
 	}
 
-	public OsmandApplication getMyApplication() {
+	protected OsmandApplication getMyApplication() {
 		return (OsmandApplication) getActivity().getApplication();
 	}
 	

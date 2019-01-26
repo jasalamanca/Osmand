@@ -3,11 +3,6 @@ package net.osmand.plus.helpers;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.api.SQLiteAPI;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/**
- */
 public class DatabaseHelper {
 
     public static final int DOWNLOAD_ENTRY = 0;
@@ -35,7 +30,6 @@ public class DatabaseHelper {
         String getName() {
             return name;
         }
-
         int getCount() {
             return count;
         }
@@ -68,35 +62,6 @@ public class DatabaseHelper {
     }
 
     private void onUpgrade(SQLiteAPI.SQLiteConnection db, int oldVersion, int newVersion) {
-    }
-
-    public boolean remove(HistoryDownloadEntry e, int type){
-        SQLiteAPI.SQLiteConnection db = openConnection(false);
-        if(db != null){
-            try {
-                switch (type){
-                    case DOWNLOAD_ENTRY:
-                        db.execSQL("DELETE FROM " + DOWNLOADS_TABLE_NAME + " WHERE " + HISTORY_COL_NAME + " = ?", new Object[] { e.getName() }); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-                }
-            } finally {
-                db.close();
-            }
-            return true;
-        }
-        return false;
-    }
-
-    public boolean removeAll(){
-        SQLiteAPI.SQLiteConnection db = openConnection(false);
-        if(db != null){
-            try {
-                db.execSQL("DELETE FROM " + DOWNLOADS_TABLE_NAME); //$NON-NLS-1$
-            } finally {
-                db.close();
-            }
-            return true;
-        }
-        return false;
     }
 
     public boolean update(HistoryDownloadEntry e, int type){
@@ -160,38 +125,4 @@ public class DatabaseHelper {
         }
         return count;
     }
-
-    public List<HistoryDownloadEntry> getEntries(int type){
-        List<HistoryDownloadEntry> entries = new ArrayList<>();
-        SQLiteAPI.SQLiteConnection db = openConnection(true);
-        if(db != null){
-            try {
-                SQLiteAPI.SQLiteCursor query;
-                switch (type) {
-                    case DOWNLOAD_ENTRY:
-                        query = db.rawQuery(
-                                "SELECT " + HISTORY_COL_NAME + " FROM " + //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-                                        DOWNLOADS_TABLE_NAME + " ORDER BY " + HISTORY_COL_COUNT + " DESC", null); //$NON-NLS-1$//$NON-NLS-2$
-                        break;
-                    default:
-                        query = null; //$NON-NLS-1$//$NON-NLS-2$
-                        break;
-                }
-				if (query != null) {
-					if (query.moveToFirst()) {
-						do {
-							HistoryDownloadEntry e = new HistoryDownloadEntry(
-									query.getString(0), query.getInt(1));
-							entries.add(e);
-						} while (query.moveToNext());
-					}
-					query.close();
-				}
-            } finally {
-                db.close();
-            }
-        }
-        return entries;
-    }
-
 }

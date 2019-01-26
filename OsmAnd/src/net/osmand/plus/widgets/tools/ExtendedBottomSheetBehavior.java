@@ -45,7 +45,7 @@ import java.lang.ref.WeakReference;
 
 import static android.support.annotation.RestrictTo.Scope.LIBRARY_GROUP;
 
-
+//NOTE jsala *BottomSheet* es casi todo android 23. Ver como quitarlo de osmand
 /**
  * An interaction behavior plugin for a child view of {@link CoordinatorLayout} to make it work as
  * a bottom sheet.

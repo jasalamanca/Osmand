@@ -13,7 +13,7 @@ public class UpdateMapMarkerParams implements Parcelable {
 		this.markerNew = markerNew;
 	}
 
-	public UpdateMapMarkerParams(Parcel in) {
+	private UpdateMapMarkerParams(Parcel in) {
 		readFromParcel(in);
 	}
 

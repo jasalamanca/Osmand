@@ -1623,10 +1623,10 @@ public final class Descriptors {
     DescriptorPool(final FileDescriptor[] dependencies) {
       this.dependencies = new HashSet<>();
 
-      for (int i = 0; i < dependencies.length; i++) {
-        this.dependencies.add(dependencies[i]);
-        importPublicDependencies(dependencies[i]);
-      }
+        for (FileDescriptor dependency1 : dependencies) {
+            this.dependencies.add(dependency1);
+            importPublicDependencies(dependency1);
+        }
 
       for (final FileDescriptor dependency : this.dependencies) {
         try {

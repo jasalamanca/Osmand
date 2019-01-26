@@ -62,16 +62,7 @@ public class RenderingRuleSearchRequest {
 		System.arraycopy(savedFvalues, 0, fvalues, 0, fvalues.length);
 		object = null;
 	}
-	
-	public void clearValue(RenderingRuleProperty p) {
-		if(p.isIntParse()){
-			values[p.getId()] = savedValues[p.getId()];
-		} else {
-			fvalues[p.getId()] = savedFvalues[p.getId()];
-			values[p.getId()] = savedValues[p.getId()];
-		}
-	}
-	
+
 	public BinaryMapDataObject getObject() {
 		return object;
 	}
@@ -84,16 +75,7 @@ public class RenderingRuleSearchRequest {
 		setStringFilter(ALL.R_TAG, tag);
 		setStringFilter(ALL.R_VALUE, val);
 	}
-	
-	public void setTagValueZoomLayer(String tag, String val, int zoom, int layer, BinaryMapDataObject obj){
-		object = obj;
-		setIntFilter(ALL.R_MINZOOM, zoom);
-		setIntFilter(ALL.R_MAXZOOM, zoom);
-		setIntFilter(ALL.R_LAYER, layer);
-		setStringFilter(ALL.R_TAG, tag);
-		setStringFilter(ALL.R_VALUE, val);
-	}
-	
+
 	public boolean isFound() {
 		return searchResult;
 	}
@@ -107,8 +89,7 @@ public class RenderingRuleSearchRequest {
 		searchResult = visitRule(rule, true);
 		return searchResult;
 	}
-	
-	
+
 	public boolean search(int state) {
 		return search(state, true);
 	}
@@ -135,7 +116,6 @@ public class RenderingRuleSearchRequest {
 		
 		return false;
 	}
-
 
 	private boolean searchInternal(int state, int tagKey, int valueKey, boolean loadOutput) {
 		values[storage.PROPS.R_TAG.getId()] = tagKey;
@@ -182,7 +162,6 @@ public class RenderingRuleSearchRequest {
 			}
 		}
 		return fit;
-		
 	}
 
 	private void loadOutputProperties(RenderingRule rule, boolean override) {
@@ -279,19 +258,13 @@ public class RenderingRuleSearchRequest {
 	public int getIntPropertyValue(RenderingRuleProperty property) {
 		return values[property.getId()];
 	}
-	
-	public boolean getBoolPropertyValue(RenderingRuleProperty property) {
-		int val = values[property.getId()];
-		return val != -1 && val != 0;
-	}
-	
+
 	public int getIntPropertyValue(RenderingRuleProperty property, int defValue) {
 		int val = values[property.getId()];
 		return val == -1 ? defValue : val;
 	}
 	
-	/**/ RenderingRulesStorage getStorage() {
+	RenderingRulesStorage getStorage() {
 		return storage;
 	}
-
 }

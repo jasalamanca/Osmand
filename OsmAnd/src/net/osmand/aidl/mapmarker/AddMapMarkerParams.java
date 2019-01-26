@@ -11,7 +11,7 @@ public class AddMapMarkerParams implements Parcelable {
 		this.marker = marker;
 	}
 
-	public AddMapMarkerParams(Parcel in) {
+	private AddMapMarkerParams(Parcel in) {
 		readFromParcel(in);
 	}
 

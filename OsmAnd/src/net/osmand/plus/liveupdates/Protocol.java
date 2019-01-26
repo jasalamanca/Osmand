@@ -6,11 +6,6 @@ package net.osmand.plus.liveupdates;
 public final class Protocol {
 	private Protocol(){}
 
-	private static class RankingByMonthResponse {
-		public String month;
-		public RankingByMonth[] rows;
-	}
-	
 	public static class RankingUserByMonthResponse {
 		public String month;
 		public UserRankingByMonth[] rows;
@@ -19,30 +14,17 @@ public final class Protocol {
 	public static class RecipientsByMonth {
 		public String month;
 		public String message;
-		public float regionBtc;
-		public int regionCount;
-		public float regionPercentage;
-		public float btc;
-		public float eur;
-		public float eurRate;
+		float regionBtc;
+		int regionCount;
+		float btc;
 		public Recipient[] rows;
 	}
 	
 	public static class UserRankingByMonth {
 		public String user ;
 		public int changes;
-		public int globalchanges;
-		public int rank;
-		public int grank;
-	}
-
-	// {"rank":"8","countUsers":"713","minChanges":"14","maxChanges":"18","avgChanges":"15.9845722300140252"}
-	public static class RankingByMonth {
-		public int rank;
-		public int countUsers;
-		public int minChanges;
-		public int maxChanges;
-		public float avgChanges;
+		int globalchanges;
+		int rank;
 	}
 
 	// {"month":"2015-11","users":"28363","changes":"673830"}
@@ -52,12 +34,9 @@ public final class Protocol {
 		public int changes;
 	}
 
-	public static class Recipient {
+	static class Recipient {
 		String osmid;
 		int changes;
-		String btcaddress;
-		int rank;
-		int weight;
 		float btc;
 	}
 }

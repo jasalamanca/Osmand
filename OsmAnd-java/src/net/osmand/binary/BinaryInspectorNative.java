@@ -1,11 +1,7 @@
 package net.osmand.binary;
 
-
+//NOTE jsala es un test
 class BinaryInspectorNative {
-
-
-	public static final int BUFFER_SIZE = 1 << 20;
-
 	public static void main(String[] args) {
 		if(args == null || args.length == 0) {
 			printUsage(null);

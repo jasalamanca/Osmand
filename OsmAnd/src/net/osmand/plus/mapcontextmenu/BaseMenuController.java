@@ -83,14 +83,4 @@ public abstract class BaseMenuController {
 		IconsCache iconsCache = getMapActivity().getMyApplication().getIconsCache();
 		return iconsCache.getIcon(iconId, colorId);
 	}
-
-	protected Drawable getPaintedIcon(int iconId, int color) {
-		IconsCache iconsCache = getMapActivity().getMyApplication().getIconsCache();
-		return iconsCache.getPaintedIcon(iconId, color);
-	}
-
-	protected Drawable getIcon(int iconId, int colorLightId, int colorDarkId) {
-		IconsCache iconsCache = getMapActivity().getMyApplication().getIconsCache();
-		return iconsCache.getIcon(iconId, isLight() ? colorLightId : colorDarkId);
-	}
 }

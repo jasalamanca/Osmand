@@ -697,7 +697,6 @@ public class InAppHelper {
 	public void addListener(InAppListener listener) {
 		this.listeners.add(listener);
 	}
-
 	public void removeListener(InAppListener listener) {
 		this.listeners.remove(listener);
 	}
@@ -710,17 +709,13 @@ public class InAppHelper {
 	private void showToast(final String message) {
 		ctx.showToastMessage(message);
 	}
-
 	private void logDebug(String msg) {
 		if (mDebugLog) Log.d(TAG, msg);
 	}
-
 	private void logError(String msg) {
 		Log.e(TAG, msg);
 	}
-
 	private void logError(String msg, Throwable e) {
 		Log.e(TAG, "Error: " + msg, e);
 	}
-
 }

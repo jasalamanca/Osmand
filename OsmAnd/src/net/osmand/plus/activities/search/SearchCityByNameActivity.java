@@ -36,7 +36,7 @@ public class SearchCityByNameActivity extends SearchByNameAbstractActivity<City>
 	private OsmandSettings osmandSettings;
 
 	@Override
-	protected void finishInitializing(List<City> list) {
+    void finishInitializing(List<City> list) {
 		// Show villages if cities are not present in this region
 		if (list != null && list.isEmpty()) {
 			searchVillagesMode = 0;
@@ -179,7 +179,7 @@ public class SearchCityByNameActivity extends SearchByNameAbstractActivity<City>
 
 
 	@Override
-	public String getText(City obj) {
+    protected String getText(City obj) {
 		LatLon l = obj.getLocation();
 		String name = getShortText(obj);
 		if (isVillagesSearchEnabled()) {
@@ -200,7 +200,7 @@ public class SearchCityByNameActivity extends SearchByNameAbstractActivity<City>
 	}
 
 	@Override
-	public String getShortText(City obj) {
+    String getShortText(City obj) {
 		String lName = obj.getName(region.getLang(), region.isTransliterateNames());
 		String name = obj.getName();
 		if (!lName.equals(name)) {

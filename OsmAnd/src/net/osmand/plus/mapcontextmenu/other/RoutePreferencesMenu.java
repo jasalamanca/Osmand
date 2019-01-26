@@ -135,7 +135,7 @@ public class RoutePreferencesMenu {
 		}
 
 		@Override
-		public String getText(MapActivity mapActivity) {
+        String getText(MapActivity mapActivity) {
 			return SettingsBaseActivity.getRoutingStringPropertyName(mapActivity, groupName,
 					Algorithms.capitalizeFirstLetterAndLowercase(groupName.replace('_', ' ')));
 		}
@@ -213,7 +213,7 @@ public class RoutePreferencesMenu {
 		}
 
 		@Override
-		public boolean isSelected(OsmandSettings settings) {
+        boolean isSelected(OsmandSettings settings) {
 			return selected;
 		}
 

@@ -158,7 +158,6 @@ public class AlarmInfo implements LocationPoint {
 		return 0;
 	}
 
-	@Override
 	public boolean isVisible() {
 		return false;
 	}

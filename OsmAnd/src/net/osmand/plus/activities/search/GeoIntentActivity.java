@@ -27,9 +27,7 @@ import net.osmand.util.GeoPointParserUtil;
 import net.osmand.util.GeoPointParserUtil.GeoParsedPoint;
 
 public class GeoIntentActivity extends OsmandListActivity {
-
 	private ProgressDialog progressDlg;
-    protected static final boolean DO_NOT_SEARCH_ADDRESS = true;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +44,6 @@ public class GeoIntentActivity extends OsmandListActivity {
 			public void onFinish(AppInitializer init) {
 			}
 		});
-        LatLon location = getMyApplication().getSettings().getLastKnownMapLocation();
 
 		final Intent intent = getIntent();
 		if (intent != null) {
@@ -65,19 +62,6 @@ public class GeoIntentActivity extends OsmandListActivity {
 			task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 			setIntent(null);
 		}
-	}
-
-	
-	private PointDescription getString(MapObject o) {
-		if (o instanceof Amenity) {
-			OsmandSettings settings = ((OsmandApplication) getApplication()).getSettings();
-			return new PointDescription(PointDescription.POINT_TYPE_POI,
-					OsmAndFormatter.getPoiStringWithoutType((Amenity) o, settings.MAP_PREFERRED_LOCALE.get(), settings.MAP_TRANSLITERATE_NAMES.get()));
-		}
-		if (o instanceof Street) {
-			return new PointDescription(PointDescription.POINT_TYPE_ADDRESS, ((Street) o).getCity().getName() + " " + o.getName());
-		}
-		return new PointDescription(PointDescription.POINT_TYPE_ADDRESS, o.toString());
 	}
 
 	private class GeoIntentTask extends AsyncTask<Void, Void, GeoParsedPoint> {
@@ -150,8 +134,6 @@ public class GeoIntentActivity extends OsmandListActivity {
 
 	}
 
-
-
 	@Override
 	protected void onStop() {
 		dismiss();
@@ -164,6 +146,4 @@ public class GeoIntentActivity extends OsmandListActivity {
 			progressDlg = null;
 		}
 	}
-	
-
 }

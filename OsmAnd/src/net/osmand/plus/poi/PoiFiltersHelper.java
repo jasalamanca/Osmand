@@ -309,10 +309,6 @@ public class PoiFiltersHelper {
 		saveSelectedPoiFilters();
 	}
 
-	public void hidePoiFilters() {
-		selectedPoiFilters.clear();
-	}
-
 	public String getFiltersName(Set<PoiUIFilter> filters) {
 		if (filters.isEmpty()) {
 			return application.getResources().getString(R.string.shared_string_none);
@@ -361,7 +357,6 @@ public class PoiFiltersHelper {
 	}
 
 	class PoiFilterDbHelper {
-
 		static final String DATABASE_NAME = "poi_filters"; //$NON-NLS-1$
 		private static final int DATABASE_VERSION = 5;
 		private static final String FILTER_NAME = "poi_filters"; //$NON-NLS-1$
@@ -424,7 +419,6 @@ public class PoiFiltersHelper {
 			conn.execSQL(FILTER_TABLE_CREATE);
 			conn.execSQL(CATEGORIES_TABLE_CREATE);
 		}
-
 
 		void onUpgrade(SQLiteConnection conn, int oldVersion, int newVersion) {
 			if (newVersion <= 5) {
@@ -542,9 +536,5 @@ public class PoiFiltersHelper {
 			}
 			return false;
 		}
-
-
 	}
-
-
 }

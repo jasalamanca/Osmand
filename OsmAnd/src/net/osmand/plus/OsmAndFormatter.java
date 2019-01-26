@@ -280,7 +280,7 @@ public class OsmAndFormatter {
 			nm = Algorithms.capitalizeFirstLetterAndLowercase(nm.replace('_', ' '));
 		}
 		String n = amenity.getName(locale, transliterate);
-		if (n.indexOf(nm) != -1) {
+		if (n.contains(nm)) {
 			// type is contained in name e.g.
 			// n = "Bakery the Corner"
 			// type = "Bakery"

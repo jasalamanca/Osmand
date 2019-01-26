@@ -1,6 +1,5 @@
 package net.osmand.plus.views.mapwidgets;
 
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -62,6 +61,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 public class RouteInfoWidgetsFactory {
 
@@ -309,7 +309,6 @@ public class RouteInfoWidgetsFactory {
 		return leftTimeControl;
 	}
 	
-	
 	public TextInfoWidget createPlainTimeControl(final MapActivity map){
 		final OsmandApplication ctx = map.getMyApplication();
 		final TextInfoWidget plainTimeControl = new TextInfoWidget(map) {
@@ -334,7 +333,6 @@ public class RouteInfoWidgetsFactory {
 		plainTimeControl.setIcons(R.drawable.widget_time_day, R.drawable.widget_time_night);
 		return plainTimeControl;
 	}
-
 
 	public TextInfoWidget createBatteryControl(final MapActivity map){
 		final int battery = R.drawable.widget_battery_day;
@@ -418,10 +416,7 @@ public class RouteInfoWidgetsFactory {
 		speedControl.setText(null, null);
 		return speedControl;
 	}
-	
-	
-	
-	
+
 	public TextInfoWidget createSpeedControl(final MapActivity map) {
 		final OsmandApplication app = map.getMyApplication();
 		final TextInfoWidget speedControl = new TextInfoWidget(map) {
@@ -564,7 +559,7 @@ public class RouteInfoWidgetsFactory {
 			}
 
 			@Override
-			public LatLon getPointToNavigate() {
+            protected LatLon getPointToNavigate() {
 				TargetPoint p = targets.getFirstIntermediatePoint();
 				return p == null ? null : p.point;
 			}
@@ -580,9 +575,7 @@ public class RouteInfoWidgetsFactory {
 		return distanceControl;
 	}
 
-
 	public static class BearingWidgetState extends WidgetState {
-
 		static final int BEARING_WIDGET_STATE_RELATIVE_BEARING = R.id.bearing_widget_state_relative_bearing;
 		static final int BEARING_WIDGET_STATE_MAGNETIC_BEARING = R.id.bearing_widget_state_magnetic_bearing;
 
@@ -725,7 +718,6 @@ public class RouteInfoWidgetsFactory {
 		return bearingControl;
 	}
 
-
 	public static class LanesControl {
 		private final MapViewTrackingUtilities trackingUtilities;
 		private final OsmAndLocationProvider locationProvider;
@@ -837,8 +829,7 @@ public class RouteInfoWidgetsFactory {
 			return true;
 		}
 	}
-	
-	
+
 	private static class LanesDrawable extends Drawable {
 		int[] lanes = null;
 		boolean imminent = false;
@@ -888,64 +879,63 @@ public class RouteInfoWidgetsFactory {
 			float coef = scaleCoefficient / miniCoeff;
 			if (lanes != null) {
 				List<RectF> boundsList = new ArrayList<>(lanes.length);
-				for (int i = 0; i < lanes.length; i++) {
-					int turnType = TurnType.getPrimaryTurn(lanes[i]);
-					int secondTurnType = TurnType.getSecondaryTurn(lanes[i]);
-					int thirdTurnType = TurnType.getTertiaryTurn(lanes[i]);
+                for (int lane : lanes) {
+                    int turnType = TurnType.getPrimaryTurn(lane);
+                    int secondTurnType = TurnType.getSecondaryTurn(lane);
+                    int thirdTurnType = TurnType.getTertiaryTurn(lane);
 
-					RectF imgBounds = new RectF();
-					if (thirdTurnType > 0) {
-						Path p = TurnPathHelper.getPathFromTurnType(ctx.getResources(), pathsCache, turnType,
-								secondTurnType, thirdTurnType, TurnPathHelper.THIRD_TURN, coef, leftSide, true);
-						if (p != null) {
-							RectF b = new RectF();
-							p.computeBounds(b, true);
-							if (!b.isEmpty()) {
-								if (imgBounds.isEmpty()) {
-									imgBounds.set(b);
-								} else {
-									imgBounds.union(b);
-								}
-							}
-						}
-					}
-					if (secondTurnType > 0) {
-						Path p = TurnPathHelper.getPathFromTurnType(ctx.getResources(), pathsCache, turnType,
-								secondTurnType, thirdTurnType, TurnPathHelper.SECOND_TURN, coef, leftSide, true);
-						if (p != null) {
-							RectF b = new RectF();
-							p.computeBounds(b, true);
-							if (!b.isEmpty()) {
-								if (imgBounds.isEmpty()) {
-									imgBounds.set(b);
-								} else {
-									imgBounds.union(b);
-								}
-							}
-						}
-					}
-					Path p = TurnPathHelper.getPathFromTurnType(ctx.getResources(), pathsCache, turnType,
-							secondTurnType, thirdTurnType, TurnPathHelper.FIRST_TURN, coef, leftSide, true);
-					if (p != null) {
-						RectF b = new RectF();
-						p.computeBounds(b, true);
-						if (!b.isEmpty()) {
-							if (imgBounds.isEmpty()) {
-								imgBounds.set(b);
-							} else {
-								imgBounds.union(b);
-							}
-						}
-					}
-					if (imgBounds.right > 0)
-					{
-						boundsList.add(imgBounds);
+                    RectF imgBounds = new RectF();
+                    if (thirdTurnType > 0) {
+                        Path p = TurnPathHelper.getPathFromTurnType(ctx.getResources(), pathsCache, turnType,
+                                secondTurnType, thirdTurnType, TurnPathHelper.THIRD_TURN, coef, leftSide, true);
+                        if (p != null) {
+                            RectF b = new RectF();
+                            p.computeBounds(b, true);
+                            if (!b.isEmpty()) {
+                                if (imgBounds.isEmpty()) {
+                                    imgBounds.set(b);
+                                } else {
+                                    imgBounds.union(b);
+                                }
+                            }
+                        }
+                    }
+                    if (secondTurnType > 0) {
+                        Path p = TurnPathHelper.getPathFromTurnType(ctx.getResources(), pathsCache, turnType,
+                                secondTurnType, thirdTurnType, TurnPathHelper.SECOND_TURN, coef, leftSide, true);
+                        if (p != null) {
+                            RectF b = new RectF();
+                            p.computeBounds(b, true);
+                            if (!b.isEmpty()) {
+                                if (imgBounds.isEmpty()) {
+                                    imgBounds.set(b);
+                                } else {
+                                    imgBounds.union(b);
+                                }
+                            }
+                        }
+                    }
+                    Path p = TurnPathHelper.getPathFromTurnType(ctx.getResources(), pathsCache, turnType,
+                            secondTurnType, thirdTurnType, TurnPathHelper.FIRST_TURN, coef, leftSide, true);
+                    if (p != null) {
+                        RectF b = new RectF();
+                        p.computeBounds(b, true);
+                        if (!b.isEmpty()) {
+                            if (imgBounds.isEmpty()) {
+                                imgBounds.set(b);
+                            } else {
+                                imgBounds.union(b);
+                            }
+                        }
+                    }
+                    if (imgBounds.right > 0) {
+                        boundsList.add(imgBounds);
 
-						float imageHeight = imgBounds.bottom;
-						if (imageHeight > h)
-							h = imageHeight;
-					}
-				}
+                        float imageHeight = imgBounds.bottom;
+                        if (imageHeight > h)
+                            h = imageHeight;
+                    }
+                }
 				if (boundsList.size() > 1) {
 					for (int i = 1; i < boundsList.size(); i++) {
 						RectF b1 = boundsList.get(i - 1);
@@ -1026,6 +1016,7 @@ public class RouteInfoWidgetsFactory {
 							}
 						}
 					}
+
 					if (secondTurnType > 0) {
 						Path p = TurnPathHelper.getPathFromTurnType(ctx.getResources(), pathsCache, turnType,
 								secondTurnType, thirdTurnType, TurnPathHelper.SECOND_TURN, coef, leftSide, true);
@@ -1067,15 +1058,12 @@ public class RouteInfoWidgetsFactory {
 
 						// 1st pass
 						if (thirdTurnPath != null) {
-							//canvas.drawPath(thirdTurnPath, paintSecondTurn);
 							canvas.drawPath(thirdTurnPath, paintBlack);
 						}
 						if (secondTurnPath != null) {
-							//canvas.drawPath(secondTurnPath, paintSecondTurn);
 							canvas.drawPath(secondTurnPath, paintBlack);
 						}
 						if (firstTurnPath != null) {
-							//canvas.drawPath(firstTurnPath, paintRouteDirection);
 							canvas.drawPath(firstTurnPath, paintBlack);
 						}
 
@@ -1100,25 +1088,20 @@ public class RouteInfoWidgetsFactory {
 		@Override
 		public void setAlpha(int alpha) {
 		}
-
 		@Override
 		public void setColorFilter(ColorFilter cf) {
 		}
-
 		@Override
 		public int getOpacity() {
 			return 0;
 		}
-		
 	}
-	
-	
+
 	public LanesControl createLanesControl(final MapActivity map, final OsmandMapTileView view) {
 		return new LanesControl(map, view);
 	}
 
 	public static class RulerWidget  {
-		
 		private final View layout;
 		private final ImageView icon;
 		private final TextView text;
@@ -1133,7 +1116,7 @@ public class RouteInfoWidgetsFactory {
 		private double cacheRulerTileY;
 		private final boolean orientationPortrait;
 
-		RulerWidget(final OsmandApplication app, MapActivity ma) {
+		RulerWidget(MapActivity ma) {
 			this.ma = ma;
 			layout = ma.findViewById(R.id.map_ruler_layout);
 			icon = ma.findViewById(R.id.map_ruler_image);
@@ -1328,13 +1311,8 @@ public class RouteInfoWidgetsFactory {
 		}
 	}
 
-	
-	
-	public static boolean distChanged(int oldDist, int dist){
-		if (oldDist != 0 && Math.abs(oldDist - dist) < 10) {
-			return false;
-		}
-		return true;
+	static boolean distChanged(int oldDist, int dist){
+		return oldDist == 0 || Math.abs(oldDist - dist) >= 10;
 	}
 
 	private static boolean degreesChanged(int oldDegrees, int degrees){
@@ -1345,8 +1323,8 @@ public class RouteInfoWidgetsFactory {
 		return new AlarmWidget(app, map);
 	}
 	
-	public RulerWidget createRulerControl(OsmandApplication app, MapActivity map) {
-		return new RulerWidget(app, map);
+	public RulerWidget createRulerControl(MapActivity map) {
+		return new RulerWidget(map);
 	}
 	
 	private static boolean updateVisibility(View view, boolean visible) {

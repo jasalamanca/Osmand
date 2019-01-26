@@ -15,10 +15,4 @@ public class QuadPoint {
 	public QuadPoint(QuadPoint a) {
 		this(a.x, a.y);
 	}
-
-	public void set(float x, float y) {
-		this.x = x;
-		this.y = y;
-	}
-
 }

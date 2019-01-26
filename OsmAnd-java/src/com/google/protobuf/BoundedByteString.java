@@ -108,7 +108,7 @@ class BoundedByteString extends LiteralByteString {
   }
 
   @Override
-  protected int getOffsetIntoBytes() {
+  int getOffsetIntoBytes() {
     return bytesOffset;
   }
 

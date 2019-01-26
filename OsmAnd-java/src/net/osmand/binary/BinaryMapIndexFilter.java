@@ -1,7 +1,12 @@
 package net.osmand.binary;
 
-import gnu.trove.list.array.TIntArrayList;
-import gnu.trove.set.hash.TIntHashSet;
+import net.osmand.ResultMatcher;
+import net.osmand.binary.BinaryMapIndexReader.MapIndex;
+import net.osmand.binary.BinaryMapIndexReader.SearchFilter;
+import net.osmand.binary.BinaryMapIndexReader.SearchRequest;
+import net.osmand.binary.BinaryMapIndexReader.TagValuePair;
+import net.osmand.render.RenderingRulesStorage;
+import net.osmand.util.MapUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,13 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.osmand.ResultMatcher;
-import net.osmand.binary.BinaryMapIndexReader.MapIndex;
-import net.osmand.binary.BinaryMapIndexReader.SearchFilter;
-import net.osmand.binary.BinaryMapIndexReader.SearchRequest;
-import net.osmand.binary.BinaryMapIndexReader.TagValuePair;
-import net.osmand.render.RenderingRulesStorage;
-import net.osmand.util.MapUtils;
+import gnu.trove.list.array.TIntArrayList;
 
 class BinaryMapIndexFilter {
 
@@ -68,25 +67,13 @@ class BinaryMapIndexFilter {
 		}
 		return Math.abs(sum);
 	}
-	
-	private int tilesCovers(BinaryMapDataObject o, int zoom, TIntHashSet set){
-		set.clear();
-		for(int i=0; i< o.getPointsLength(); i++){
-			int x = (int) MapUtils.getTileNumberX(zoom, MapUtils.get31LongitudeX(o.getPoint31XTile(i)));
-			int y = (int) MapUtils.getTileNumberY(zoom, MapUtils.get31LatitudeY(o.getPoint31YTile(i)));
-			int val = ((x << 16) | y);
-			set.add(val);
-		}
-		return set.size();
-	}
-	
-	private Stat process(final int zoom) throws IOException {
+
+    private Stat process(final int zoom) throws IOException {
 		final Stat stat = new Stat();
 		final Map<TagValuePair, Integer> map = new HashMap<>();
 		SearchFilter sf = new SearchFilter() {
 			@Override
 			public boolean accept(TIntArrayList types, MapIndex index) {
-				boolean polygon = false;
 				boolean polyline = false;
 				for (int j = 0; j < types.size(); j++) {
 					int wholeType = types.get(j);
@@ -99,7 +86,6 @@ class BinaryMapIndexFilter {
 							stat.wayCount++;
 							polyline = true;
 						} else {
-							polygon = true;
 							stat.polygonCount++;
 							if (!map.containsKey(pair)) {
 								map.put(pair, 0);
@@ -113,7 +99,6 @@ class BinaryMapIndexFilter {
 			}
 		};
 		ResultMatcher<BinaryMapDataObject> matcher = new ResultMatcher<BinaryMapDataObject>() {
-			TIntHashSet set = new TIntHashSet();
 			@Override
 			public boolean isCancelled() {
 				return false;
@@ -121,9 +106,8 @@ class BinaryMapIndexFilter {
 
 			@Override
 			public boolean publish(BinaryMapDataObject object) {
-//				double area = calculateArea(object, zoom);
 				double len = calculateLength(object, zoom);
-				if(/*tilesCovers(object, zoom, set) >= 2  && */ len > 100){
+				if(len > 100){
 					stat.polygonBigSize ++;
 					if(stat.polygonBigSize % 10000 == 0){
 						return true;
@@ -148,7 +132,6 @@ class BinaryMapIndexFilter {
 		for(TagValuePair tp : list){
 			Integer i = map.get(tp);
 			if(i > 10){
-//				System.out.println(tp.toString() + " " + i);
 			}
 		}
 		
@@ -157,7 +140,8 @@ class BinaryMapIndexFilter {
 		}
 		return stat;
 	}
-	
+
+	//NOTE jsala es un test
 	public static void main(String[] iargs) throws IOException {
 		BinaryMapIndexFilter filter = new BinaryMapIndexFilter(new File(""));
 		for (int i = 10; i <= 14; i++) {
@@ -166,6 +150,4 @@ class BinaryMapIndexFilter {
 		}
 		
 	}
-
-	
 }

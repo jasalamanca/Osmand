@@ -17,8 +17,8 @@ public class RenderingRuleProperty {
 	private final static int COLOR_TYPE = 4;
 	private final static int BOOLEAN_TYPE = 5;
 	
-	public static final int TRUE_VALUE = 1;
-	public static final int FALSE_VALUE = 0;
+	static final int TRUE_VALUE = 1;
+	static final int FALSE_VALUE = 0;
 	
 	// Fields C++
 	final int type;
@@ -40,11 +40,11 @@ public class RenderingRuleProperty {
 		this.input = input;
 	}
 	
-	public boolean isInputProperty() {
+	boolean isInputProperty() {
 		return input;
 	}
 	
-	public boolean isOutputProperty() {
+	boolean isOutputProperty() {
 		return !input;
 	}
 	
@@ -58,31 +58,21 @@ public class RenderingRuleProperty {
 	public int getId() {
 		return id;
 	}
-	
 	public String getAttrName() {
 		return attrName;
 	}
-	
 	public String getName() {
 		return name;
 	}
-	
 	public String getCategory() {
 		return category;
 	}
-	
-	public String getDescription() {
-		return description;
-	}
-	
 	public String getDefaultValueDescription() {
 		return defaultValueDescription;
 	}
-	
 	void setName(String name) {
 		this.name = name;
 	}
-	
 	void setDescription(String description) {
 		this.description = description;
 	}
@@ -94,7 +84,6 @@ public class RenderingRuleProperty {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	
 	void setPossibleValues(String[] possibleValues) {
 		this.possibleValues = possibleValues;
 	}
@@ -109,24 +98,17 @@ public class RenderingRuleProperty {
 	public boolean isBoolean() {
 		return type == BOOLEAN_TYPE;
 	}
-	
 	public boolean isFloat() {
 		return type == FLOAT_TYPE;
 	}
-	
-	public boolean isInt() {
-		return type == INT_TYPE;
-	}
-	
 	public boolean isColor() {
 		return type == COLOR_TYPE;
 	}
-	
 	public boolean isString() {
 		return type == STRING_TYPE;
 	}
-	
-	public boolean isIntParse(){
+
+	boolean isIntParse(){
 		return type == INT_TYPE  || type == STRING_TYPE || type == COLOR_TYPE || type == BOOLEAN_TYPE; 
 	}
 	
@@ -150,7 +132,7 @@ public class RenderingRuleProperty {
 	}
 	
 	
-	public int parseIntValue(String value){
+	int parseIntValue(String value){
 		if(type == INT_TYPE){
 			try {
 				int colon = value.indexOf(':');
@@ -196,7 +178,7 @@ public class RenderingRuleProperty {
 		}
 	}
 	
-	public float parseFloatValue(String value){
+	float parseFloatValue(String value){
 		if(type == FLOAT_TYPE){
 			try {
 				int colon = value.indexOf(':');
@@ -218,43 +200,39 @@ public class RenderingRuleProperty {
 	
 	
 	
-	public static RenderingRuleProperty createOutputIntProperty(String name){
+	static RenderingRuleProperty createOutputIntProperty(String name){
 		return new RenderingRuleProperty(name, INT_TYPE, false);
 	}
 	
-	public static RenderingRuleProperty createOutputBooleanProperty(String name){
+	static RenderingRuleProperty createOutputBooleanProperty(String name){
 		return new RenderingRuleProperty(name, BOOLEAN_TYPE, false);
 	}
 	
-	public static RenderingRuleProperty createInputBooleanProperty(String name){
+	static RenderingRuleProperty createInputBooleanProperty(String name){
 		return new RenderingRuleProperty(name, BOOLEAN_TYPE, true);
 	}
 	
-	public static RenderingRuleProperty createOutputFloatProperty(String name){
+	static RenderingRuleProperty createOutputFloatProperty(String name){
 		return new RenderingRuleProperty(name, FLOAT_TYPE, false);
 	}
 	
-	public static RenderingRuleProperty createOutputStringProperty(String name){
+	static RenderingRuleProperty createOutputStringProperty(String name){
 		return new RenderingRuleProperty(name, STRING_TYPE, false);
 	}
 	
-	public static RenderingRuleProperty createInputIntProperty(String name){
+	static RenderingRuleProperty createInputIntProperty(String name){
 		return new RenderingRuleProperty(name, INT_TYPE, true);
 	}
-	
-	public static RenderingRuleProperty createInputColorProperty(String name){
-		return new RenderingRuleProperty(name, COLOR_TYPE, true);
-	}
-	
-	public static RenderingRuleProperty createOutputColorProperty(String name){
+
+	static RenderingRuleProperty createOutputColorProperty(String name){
 		return new RenderingRuleProperty(name, COLOR_TYPE, false);
 	}
 	
-	public static RenderingRuleProperty createInputStringProperty(String name){
+	static RenderingRuleProperty createInputStringProperty(String name){
 		return new RenderingRuleProperty(name, STRING_TYPE, true);
 	}
 	
-	public static RenderingRuleProperty createInputLessIntProperty(String name){
+	static RenderingRuleProperty createInputLessIntProperty(String name){
 		return new RenderingRuleProperty(name, INT_TYPE, true) {
 			@Override
 			public boolean accept(int ruleValue, int renderingProperty, RenderingRuleSearchRequest req) {
@@ -266,7 +244,7 @@ public class RenderingRuleProperty {
 		};
 	}
 	
-	public static RenderingRuleProperty createInputGreaterIntProperty(String name){
+	static RenderingRuleProperty createInputGreaterIntProperty(String name){
 		return new RenderingRuleProperty(name, INT_TYPE, true) {
 			@Override
 			public boolean accept(int ruleValue, int renderingProperty, RenderingRuleSearchRequest req) {
@@ -278,7 +256,7 @@ public class RenderingRuleProperty {
 		};
 	}
 	
-	public static RenderingRuleProperty createAdditionalStringProperty(String name) {
+	static RenderingRuleProperty createAdditionalStringProperty(String name) {
 		return new RenderingRuleProperty(name, STRING_TYPE, true) {
 			@Override
 			public boolean accept(int ruleValue, int renderingProperty, RenderingRuleSearchRequest req) {
@@ -306,12 +284,12 @@ public class RenderingRuleProperty {
 				} else {
 					String ts = val;
 					int[] additionalTypes = obj.getAdditionalTypes();
-					for (int i = 0; i < additionalTypes.length; i++) {
-						TagValuePair vp = obj.getMapIndex().decodeType(additionalTypes[i]);
-						if (vp != null && ts.equals(vp.tag)) {
-							return true;
-						}
-					}
+                    for (int additionalType : additionalTypes) {
+                        TagValuePair vp = obj.getMapIndex().decodeType(additionalType);
+                        if (vp != null && ts.equals(vp.tag)) {
+                            return true;
+                        }
+                    }
 				}
 				return false;
 			}

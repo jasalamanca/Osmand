@@ -2,7 +2,6 @@ package net.osmand.plus.download;
 
 import android.content.Context;
 
-import net.osmand.AndroidUtils;
 import net.osmand.IndexConstants;
 import net.osmand.map.OsmandRegions;
 import net.osmand.plus.OsmandApplication;
@@ -16,17 +15,12 @@ import org.xmlpull.v1.XmlPullParser;
 import java.io.File;
 import java.io.IOException;
 import java.net.URLEncoder;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 import static net.osmand.IndexConstants.BINARY_MAP_INDEX_EXT;
 
 public class DownloadActivityType {
-	private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.US);
 	private static final Map<String, DownloadActivityType> byTag = new HashMap<>();
 	
 	public static final DownloadActivityType NORMAL_FILE =
@@ -63,18 +57,12 @@ public class DownloadActivityType {
 		iconResource = R.drawable.ic_map;
 	}
 
-	public int getStringResource(){
-		return stringResource;
-	}
-
 	public int getIconResource() {
 		return iconResource;
 	}
-
 	public String getTag() {
 		return tag;
 	}
-
 	public int getOrderIndex() {
 		return orderIndex;
 	}
@@ -219,15 +207,6 @@ public class DownloadActivityType {
 		IndexItem it = new IndexItem(name, description, timestamp, size, contentSize, containerSize, this);
 		it.extra = FileNameTranslationHelper.getStandardMapName(ctx, it.getBasename().toLowerCase()) != null;
 		return it;
-	}
-
-	protected static String reparseDate(Context ctx, String date) {
-		try {
-			Date d = simpleDateFormat.parse(date);
-			return AndroidUtils.formatDate(ctx, d.getTime());
-		} catch (ParseException e) {
-			return date;
-		}
 	}
 
 	public String getVisibleDescription(IndexItem indexItem, Context ctx) {

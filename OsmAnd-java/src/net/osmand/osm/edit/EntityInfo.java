@@ -10,38 +10,17 @@ public class EntityInfo {
 	private String visible;
 	private String version;
 	private String changeset;
-	private String action;
-	
-	
+
 	public EntityInfo() {
 	}
 
-	public EntityInfo(String version) {
-		this.version = version;
-	}
-	
-	
-	public String getAction() {
-		return action;
-	}
-	public void setAction(String action) {
-		this.action = action;
-	}
-	public String getTimestamp() {
-		return timestamp;
-	}
 	public void setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
-	}
-	public String getUid() {
-		return uid;
 	}
 	public void setUid(String uid) {
 		this.uid = uid;
 	}
-	public String getUser() {
-		return user;
-	}
+
 	public void setUser(String user) {
 		this.user = user;
 	}
@@ -57,11 +36,7 @@ public class EntityInfo {
 	public void setVersion(String version) {
 		this.version = version;
 	}
-	public String getChangeset() {
-		return changeset;
-	}
 	public void setChangeset(String changeset) {
 		this.changeset = changeset;
 	}
-
 }

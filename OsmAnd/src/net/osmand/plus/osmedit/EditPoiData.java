@@ -1,13 +1,10 @@
 package net.osmand.plus.osmedit;
 
-import net.osmand.PlatformUtil;
 import net.osmand.osm.PoiCategory;
 import net.osmand.osm.PoiType;
 import net.osmand.osm.edit.Node;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.util.Algorithms;
-
-import org.apache.commons.logging.Log;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -17,7 +14,6 @@ import java.util.Map;
 import java.util.Set;
 
 public class EditPoiData {
-	private static final Log LOG = PlatformUtil.getLog(EditPoiData.class);
 	private final Set<TagsChangedListener> mListeners = new HashSet<>();
 	private final LinkedHashMap<String, String > tagValues = new LinkedHashMap<>();
 	private boolean isInEdit = false;
@@ -133,17 +129,7 @@ public class EditPoiData {
 			throw new IllegalStateException("Can't modify in edit mode");
 		}
 	}
-	
-	public void notifyToUpdateUI() {
-		checkNotInEdit();
-		try { 
-			isInEdit = true;
-			notifyDatasetChanged(null);
-		} finally {
-			isInEdit = false;
-		}		
-	}
-	
+
 	public void removeTag(String tag) {
 		checkNotInEdit();
 		try { 

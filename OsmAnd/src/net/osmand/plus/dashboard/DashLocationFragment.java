@@ -32,7 +32,6 @@ public abstract class DashLocationFragment extends DashBaseFragment {
 	private static final int ORIENTATION_180 = 2;
 	List<DashLocationView> distances = new ArrayList<>();
 	private int screenOrientation;
-	private LatLon lastUpdatedLocation;
 
 	static class DashLocationView {
 		final ImageView arrow;
@@ -47,10 +46,7 @@ public abstract class DashLocationFragment extends DashBaseFragment {
 			this.txt = txt;
 			this.loc = loc;
 		}
-
-
 	}
-
 
 	@Override
 	public void onOpenDash() {
@@ -104,7 +100,6 @@ public abstract class DashLocationFragment extends DashBaseFragment {
 		boolean useCenter = !mapLinked;
 		LatLon loc = (useCenter ? mw : myLoc);
 		float h = useCenter ? -mapRotation : head;
-		lastUpdatedLocation = loc;
 		for (DashLocationView lv : distances) {
 			updateLocationView(useCenter, loc, h, lv.arrow, lv.arrowResId, lv.txt, lv.loc, screenOrientation,
 					getMyApplication(), getActivity(), lv.paint);

@@ -1,8 +1,8 @@
 package net.osmand.data;
 
-import java.io.Serializable;
-
 import android.content.Context;
+
+import java.io.Serializable;
 
 public class FavouritePoint implements Serializable, LocationPoint {
 	private static final long serialVersionUID = 729654300829771466L;
@@ -42,85 +42,62 @@ public class FavouritePoint implements Serializable, LocationPoint {
 	public int getColor() {
 		return color;
 	}
-	
 	public PointDescription getPointDescription() {
 		return new PointDescription(PointDescription.POINT_TYPE_FAVORITE, name);
 	}
-	
 	@Override
 	public PointDescription getPointDescription(Context ctx) {
 		return getPointDescription();
 	}
-	
 	public void setColor(int color) {
 		this.color = color;
 	}
-	
 	public boolean isVisible() {
 		return visible;
 	}
-	
 	public void setVisible(boolean visible) {
 		this.visible = visible;
 	}
-
 	public String getOriginObjectName() {
 		return originObjectName;
 	}
-
 	public void setOriginObjectName(String originObjectName) {
 		this.originObjectName = originObjectName;
 	}
-
 	public double getLatitude() {
 		return latitude;
 	}
-
 	public void setLatitude(double latitude) {
 		this.latitude = latitude;
 	}
-
 	public double getLongitude() {
 		return longitude;
 	}
-
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
-	
 	public String getCategory() {
 		return category;
 	}
-	
 	public void setCategory(String category) {
 		this.category = category;
 	}
-
-	public String getName(Context ctx) {
-		return name;
-	}
-	
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	public String getDescription () {
 		return description;
 	}
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
 	@Override
 	public String toString() {
 		return "Favourite " + getName(); //$NON-NLS-1$
 	}
-
 
 	@Override
 	public boolean equals(Object o) {
@@ -141,6 +118,4 @@ public class FavouritePoint implements Serializable, LocationPoint {
 		hash += (name != null) ? name.hashCode() : 0;
 		return hash;
 	}
-
 }
-

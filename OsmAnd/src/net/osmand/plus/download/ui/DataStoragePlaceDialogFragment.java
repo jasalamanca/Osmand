@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StatFs;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -39,7 +40,6 @@ public class DataStoragePlaceDialogFragment extends BottomSheetDialogFragment {
 	private int deviceStorageType;
     private File sharedStorage;
     private File cardStorage;
-    private static boolean isInterestedInFirstTime = true;
 	private boolean storageReadOnly;
 	private boolean hasExternalStoragePermission;
 
@@ -56,8 +56,8 @@ public class DataStoragePlaceDialogFragment extends BottomSheetDialogFragment {
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-							 Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
 		Activity activity = getActivity();
 
@@ -138,7 +138,6 @@ public class DataStoragePlaceDialogFragment extends BottomSheetDialogFragment {
 		closeImageButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				isInterestedInFirstTime = false;
 				dismiss();
 			}
 		});
@@ -213,7 +212,6 @@ public class DataStoragePlaceDialogFragment extends BottomSheetDialogFragment {
 					saveFilesLocation(deviceStorageType, deviceStorage, getActivity());
 					checkAssets();
 					updateDownloadIndexes();
-					isInterestedInFirstTime = false;
 					dismiss();
 				}
 			};
@@ -226,7 +224,6 @@ public class DataStoragePlaceDialogFragment extends BottomSheetDialogFragment {
                     saveFilesLocation(sharedStorageType, sharedStorage, getActivity());
 					checkAssets();
 					updateDownloadIndexes();
-					isInterestedInFirstTime = false;
 					dismiss();
 				}
 			};
@@ -239,7 +236,6 @@ public class DataStoragePlaceDialogFragment extends BottomSheetDialogFragment {
                     boolean res = saveFilesLocation(cardStorageType, cardStorage, getActivity());
 					checkAssets();
 					updateDownloadIndexes();
-					isInterestedInFirstTime = false;
 					if (res) {
 						dismiss();
 					}

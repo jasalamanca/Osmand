@@ -70,11 +70,6 @@ public class AddQuickActionDialog extends DialogFragment {
         return root;
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-    }
-
     class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         private static final int HEADER = 1;

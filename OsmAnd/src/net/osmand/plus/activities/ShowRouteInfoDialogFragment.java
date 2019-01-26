@@ -478,7 +478,7 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 	}
 
 	class RouteInfoAdapter extends ArrayAdapter<RouteDirectionInfo> {
-		public class CumulativeInfo {
+		class CumulativeInfo {
 			int distance;
 			int time;
 

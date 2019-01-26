@@ -11,7 +11,7 @@ public class HideGpxParams implements Parcelable {
 		this.fileName = fileName;
 	}
 
-	public HideGpxParams(Parcel in) {
+	private HideGpxParams(Parcel in) {
 		readFromParcel(in);
 	}
 

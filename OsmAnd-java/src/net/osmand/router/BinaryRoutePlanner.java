@@ -8,7 +8,6 @@ import net.osmand.util.MapUtils;
 import org.apache.commons.logging.Log;
 
 import java.io.IOException;
-import java.text.MessageFormat;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
@@ -21,8 +20,8 @@ public class BinaryRoutePlanner {
 	private static final boolean TEST_SPECIFIC = false;
 
 	private static final int REVERSE_WAY_RESTRICTION_ONLY = 1024;
-	/*private*/ private static final int STANDARD_ROAD_IN_QUEUE_OVERHEAD = 220;
-	/*private*/ private static final int STANDARD_ROAD_VISITED_OVERHEAD = 150;
+	private static final int STANDARD_ROAD_IN_QUEUE_OVERHEAD = 220;
+	private static final int STANDARD_ROAD_VISITED_OVERHEAD = 150;
 
 	private static final Log log = PlatformUtil.getLog(BinaryRoutePlanner.class);
 
@@ -75,13 +74,11 @@ public class BinaryRoutePlanner {
 		PriorityQueue<RouteSegment> graphReverseSegments = new PriorityQueue<>(50, new SegmentsComparator(ctx));
 
 		// Set to not visit one segment twice (stores road.id << X + segmentStart)
+		initQueuesWithStartEnd(ctx, start, end, recalculationEnd, graphDirectSegments, graphReverseSegments);
 		TLongObjectHashMap<RouteSegment> visitedDirectSegments = new TLongObjectHashMap<>();
 		TLongObjectHashMap<RouteSegment> visitedOppositeSegments = new TLongObjectHashMap<>();
 
-		initQueuesWithStartEnd(ctx, start, end, recalculationEnd, graphDirectSegments, graphReverseSegments, 
-				visitedDirectSegments, visitedOppositeSegments);
-
-		// Extract & analyze segment with min(f(x)) from queue while final segment is not found
+        // Extract & analyze segment with min(f(x)) from queue while final segment is not found
 		boolean forwardSearch = true;
 
 		PriorityQueue<RouteSegment> graphSegments = graphDirectSegments;
@@ -220,8 +217,9 @@ public class BinaryRoutePlanner {
 	}
 
 	private void initQueuesWithStartEnd(final RoutingContext ctx, RouteSegment start, RouteSegment end,
-			RouteSegment recalculationEnd, PriorityQueue<RouteSegment> graphDirectSegments, PriorityQueue<RouteSegment> graphReverseSegments, 
-			TLongObjectHashMap<RouteSegment> visitedDirectSegments, TLongObjectHashMap<RouteSegment> visitedOppositeSegments) {
+			RouteSegment recalculationEnd
+			, PriorityQueue<RouteSegment> graphDirectSegments, PriorityQueue<RouteSegment> graphReverseSegments)
+	{
 		RouteSegment startPos = initRouteSegment(ctx, start, true);
 		RouteSegment startNeg = initRouteSegment(ctx, start, false);
 		RouteSegment endPos = initRouteSegment(ctx, end, true);
@@ -274,13 +272,7 @@ public class BinaryRoutePlanner {
 		}
 	}
 
-	private void printMemoryConsumption(String string) {
-		long h1 = RoutingContext.runGCUsedMemory();
-		float mb = (1 << 20);
-		log.warn(string + h1 / mb);
-	}
-
-	private void updateCalculationProgress(final RoutingContext ctx, PriorityQueue<RouteSegment> graphDirectSegments,
+    private void updateCalculationProgress(final RoutingContext ctx, PriorityQueue<RouteSegment> graphDirectSegments,
 			PriorityQueue<RouteSegment> graphReverseSegments) {
 		if (ctx.calculationProgress != null) {
 			ctx.calculationProgress.reverseSegmentQueueSize = graphReverseSegments.size();
@@ -333,11 +325,9 @@ public class BinaryRoutePlanner {
 		return (float) result;
 	}
 
-
 	private static void println(String logMsg) {
 		System.out.println(logMsg);
 	}
-
 	private static void printInfo(String logMsg) {
 		log.warn(logMsg);
 	}
@@ -359,10 +349,8 @@ public class BinaryRoutePlanner {
 		if (visitedDirectSegments != null && visitedOppositeSegments != null) {
 			printInfo("Visited interval sizes: " + visitedDirectSegments.size() + "/" + visitedOppositeSegments.size());
 		}
-
 	}
 
-	@SuppressWarnings("unused")
 	private void processRouteSegment(final RoutingContext ctx, boolean reverseWaySearch,
 			PriorityQueue<RouteSegment> graphSegments, TLongObjectHashMap<RouteSegment> visitedSegments, 
             RouteSegment segment, TLongObjectHashMap<RouteSegment> oppositeSegments, boolean doNotAddIntersections) {
@@ -539,7 +527,6 @@ public class BinaryRoutePlanner {
 		}
 		return false;
 	}
-
 
 	private float calculateTimeWithObstacles(RoutingContext ctx, RouteDataObject road, float distOnRoadToPass, float obstaclesTime) {
 		float priority = ctx.getRouter().defineSpeedPriority(road);
@@ -780,7 +767,7 @@ public class BinaryRoutePlanner {
 		}
 	}
 	
-	/*public */static int roadPriorityComparator(double o1DistanceFromStart, double o1DistanceToEnd,
+	static int roadPriorityComparator(double o1DistanceFromStart, double o1DistanceToEnd,
 			double o2DistanceFromStart, double o2DistanceToEnd, double heuristicCoefficient ) {
 		// f(x) = g(x) + h(x)  --- g(x) - distanceFromStart, h(x) - distanceToEnd (not exact)
 		return Double.compare(o1DistanceFromStart + heuristicCoefficient * o1DistanceToEnd, 
@@ -788,7 +775,6 @@ public class BinaryRoutePlanner {
 	}
 
 	public interface RouteSegmentVisitor {
-		
 		void visitSegment(RouteSegment segment, int segmentEnd, boolean poll);
 	}
 	
@@ -875,29 +861,14 @@ public class BinaryRoutePlanner {
 		public int getParentSegmentEnd() {
 			return parentSegmentEnd;
 		}
-
 		RouteSegment getNext() {
 			return next;
 		}
-
 		public short getSegmentStart() {
 			return segStart;
 		}
-
-		public float getDistanceFromStart() {
-			return distanceFromStart;
-		}
-
-		public void setDistanceFromStart(float distanceFromStart) {
-			this.distanceFromStart = distanceFromStart;
-		}
-
 		public RouteDataObject getRoad() {
 			return road;
-		}
-
-		public String getTestName() {
-			return MessageFormat.format("s{0,number,#.##} e{1,number,#.##}", distanceFromStart, distanceToEnd);
 		}
 
 		public Iterator<RouteSegment> getIterator() {

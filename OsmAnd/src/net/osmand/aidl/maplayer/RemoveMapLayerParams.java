@@ -11,7 +11,7 @@ public class RemoveMapLayerParams implements Parcelable {
 		this.id = id;
 	}
 
-	public RemoveMapLayerParams(Parcel in) {
+	private RemoveMapLayerParams(Parcel in) {
 		readFromParcel(in);
 	}
 

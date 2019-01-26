@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+//NOTE jsala intentar quitar esto.
 /**
  * Copied from android.support.v7.widget.PopupMenu.
  * "mPopup.setForceShowIcon(true);" in the constructor does the trick :)

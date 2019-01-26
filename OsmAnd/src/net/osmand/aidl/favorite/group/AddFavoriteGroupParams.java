@@ -11,7 +11,7 @@ public class AddFavoriteGroupParams implements Parcelable {
         this.favoriteGroup = favoriteGroup;
     }
 
-    public AddFavoriteGroupParams(Parcel in) {
+    private AddFavoriteGroupParams(Parcel in) {
         readFromParcel(in);
     }
 

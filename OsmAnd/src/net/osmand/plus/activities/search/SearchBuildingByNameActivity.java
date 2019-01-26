@@ -92,7 +92,7 @@ public class SearchBuildingByNameActivity extends SearchByNameAbstractActivity<B
 	
 	
 	@Override
-	public String getText(Building obj) {
+    protected String getText(Building obj) {
 		if(obj.getInterpolationInterval() > 0 || obj.getInterpolationType() != null){
 			String hno = getCurrentFilter();
 			if(hno.length() > 0 && obj.belongsToInterpolation(hno)) {

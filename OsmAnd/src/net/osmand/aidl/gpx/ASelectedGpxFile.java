@@ -26,10 +26,6 @@ public class ASelectedGpxFile implements Parcelable {
 				}
 			};
 
-	public String getFileName() {
-		return fileName;
-	}
-
 	public void writeToParcel(Parcel out, int flags) {
 		out.writeString(fileName);
 	}
@@ -42,4 +38,3 @@ public class ASelectedGpxFile implements Parcelable {
 		return 0;
 	}
 }
-

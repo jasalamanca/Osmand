@@ -1,7 +1,6 @@
 package net.osmand.plus;
 
 import android.os.AsyncTask;
-import android.os.Build;
 
 import net.osmand.Location;
 import net.osmand.ResultMatcher;
@@ -155,7 +154,7 @@ public class GeocodingLookupService {
 								if (Algorithms.isEmpty(sname)) {
 									sname = "";
 								}
-								String ref = rd.getRef(lang, transliterate, true);
+								String ref = rd.getRef(lang, transliterate);
 								if (!Algorithms.isEmpty(ref)) {
 									if (!Algorithms.isEmpty(sname)) {
 										sname += ", ";

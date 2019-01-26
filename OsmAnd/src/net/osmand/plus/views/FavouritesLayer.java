@@ -43,15 +43,9 @@ public class FavouritesLayer extends OsmandMapLayer implements ContextMenuLayer.
 	private Paint paintIcon;
 	private Bitmap pointSmall;
 	private int defaultColor;
-
 	private OsmandSettings settings;
-
 	private ContextMenuLayer contextMenuLayer;
-	
-	protected String getObjName() {
-		return view.getContext().getString(R.string.favorite);
-	}
-	
+
 	private List<? extends FavouritePoint> getPoints() {
 		return favorites.getFavouritePoints();
 	}
@@ -75,22 +69,17 @@ public class FavouritesLayer extends OsmandMapLayer implements ContextMenuLayer.
 	
 	private boolean calculateBelongs(int ex, int ey, int objx, int objy, int radius) {
 		return (Math.abs(objx - ex) <= radius * 1.5 && Math.abs(objy - ey) <= radius * 1.5) ;
-//		return Math.abs(objx - ex) <= radius && (ey - objy) <= radius / 2 && (objy - ey) <= 3 * radius ;
-		//return Math.abs(objx - ex) <= radius && (ey - objy) <= radius / 2 && (objy - ey) <= 3 * radius ;
 	}
 
 	@Override
 	public void destroyLayer() {
-		
 	}
-	
 
 	@Override
 	public boolean drawInScreenPixels() {
 		return true;
 	}
-	
-	
+
 	@Override
 	public void onDraw(Canvas canvas, RotatedTileBox tileBox, DrawSettings settings) {
 		if (contextMenuLayer.getMoveableObject() instanceof FavouritePoint) {
@@ -152,7 +141,6 @@ public class FavouritesLayer extends OsmandMapLayer implements ContextMenuLayer.
 		if(textLayer.isVisible()) {
 			textLayer.putData(this, cache);
 		}
-
 	}
 
 	private void drawPoint(Canvas canvas, RotatedTileBox tileBox, final QuadRect latLonBounds, FavouritePoint o, boolean synced) {
@@ -170,7 +158,6 @@ public class FavouritesLayer extends OsmandMapLayer implements ContextMenuLayer.
 			fid.drawBitmapInCenter(canvas, x, y);
 		}
 	}
-	
 	
 	@Override
 	public boolean onLongPressEvent(PointF point, RotatedTileBox tileBox) {
@@ -197,7 +184,6 @@ public class FavouritesLayer extends OsmandMapLayer implements ContextMenuLayer.
 		}
 	}
 
-	
 	@Override
 	public PointDescription getObjectName(Object o) {
 		if(o instanceof FavouritePoint){
@@ -256,7 +242,6 @@ public class FavouritesLayer extends OsmandMapLayer implements ContextMenuLayer.
 		return PointDescription.getSimpleName(o, view.getContext());
 	}
 
-	
 	@Override
 	public boolean isObjectMovable(Object o) {
 		return o instanceof FavouritePoint;
@@ -276,5 +261,3 @@ public class FavouritesLayer extends OsmandMapLayer implements ContextMenuLayer.
 		}
 	}
 }
-
-

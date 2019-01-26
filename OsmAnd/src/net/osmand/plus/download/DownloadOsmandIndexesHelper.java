@@ -1,5 +1,22 @@
 package net.osmand.plus.download;
 
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.AssetManager;
+import android.provider.Settings.Secure;
+
+import net.osmand.IndexConstants;
+import net.osmand.PlatformUtil;
+import net.osmand.osm.io.NetworkUtils;
+import net.osmand.plus.OsmandApplication;
+import net.osmand.plus.OsmandSettings;
+
+import org.apache.commons.logging.Log;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,26 +30,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.zip.GZIPInputStream;
 
-import net.osmand.AndroidUtils;
-import net.osmand.IndexConstants;
-import net.osmand.PlatformUtil;
-import net.osmand.osm.io.NetworkUtils;
-import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.OsmandSettings;
-
-import org.apache.commons.logging.Log;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
-
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.AssetManager;
-import android.provider.Settings.Secure;
-
 public class DownloadOsmandIndexesHelper {
 	private final static Log log = PlatformUtil.getLog(DownloadOsmandIndexesHelper.class);
 	
@@ -40,8 +37,7 @@ public class DownloadOsmandIndexesHelper {
 		private static final long serialVersionUID = 1L;
 
 		private boolean downloadedFromInternet = false;
-		IndexItem basemap;
-		final ArrayList<IndexItem> indexFiles = new ArrayList<>();
+        final ArrayList<IndexItem> indexFiles = new ArrayList<>();
 		private String mapversion;
 		
 		private final Comparator<IndexItem> comparator = new Comparator<IndexItem>(){
@@ -65,21 +61,15 @@ public class DownloadOsmandIndexesHelper {
 		void setDownloadedFromInternet(boolean downloadedFromInternet) {
 			this.downloadedFromInternet = downloadedFromInternet;
 		}
-		
 		public boolean isDownloadedFromInternet() {
 			return downloadedFromInternet;
 		}
-
 		void setMapVersion(String mapversion) {
 			this.mapversion = mapversion;
 		}
 
-		@SuppressLint("DefaultLocale")
         void add(IndexItem indexItem) {
 			indexFiles.add(indexItem);
-			if(indexItem.getFileName().toLowerCase().startsWith("world_basemap")) {
-				basemap = indexItem;
-			}
 		}
 		
 		void sort(){
@@ -93,10 +83,6 @@ public class DownloadOsmandIndexesHelper {
 		public List<IndexItem> getIndexFiles() {
 			return indexFiles;
 		}
-		
-		public IndexItem getBasemap() {
-			return basemap;
-		}
 
 		public boolean isIncreasedMapVersion() {
 			try {
@@ -107,8 +93,7 @@ public class DownloadOsmandIndexesHelper {
 			}
 			return false;
 		}
-
-	}	
+	}
 
 	public static IndexFileList getIndexesList(OsmandApplication app) {
 		PackageManager pm = app.getPackageManager();
@@ -146,13 +131,10 @@ public class DownloadOsmandIndexesHelper {
 		try {
 			String ext = DownloadActivityType.addVersionToExt(IndexConstants.TTSVOICE_INDEX_EXT_ZIP, IndexConstants.TTSVOICE_VERSION);
 			File voicePath = settings.getContext().getAppPath(IndexConstants.VOICE_INDEX_DIR); 
-			// list = amanager.list("voice");
-			String date = "";
 			long dateModified = System.currentTimeMillis();
 			try {
 				ApplicationInfo appInfo = pm.getApplicationInfo(OsmandApplication.class.getPackage().getName(), 0);
 				dateModified =  new File(appInfo.sourceDir).lastModified();
-				date = AndroidUtils.formatDate(settings.getContext(), dateModified);
 			} catch (NameNotFoundException e) {
 				//do nothing...
 			}
@@ -163,7 +145,7 @@ public class DownloadOsmandIndexesHelper {
 					String voice = target.substring("voice/".length(), target.length() - "/_ttsconfig.p".length());
 					File destFile = new File(voicePath, voice + File.separatorChar + "_ttsconfig.p");
 					
-					result.add(new AssetIndexItem(voice + ext, "voice", date, dateModified, "0.1", destFile.length(), key,
+					result.add(new AssetIndexItem(voice + ext, "voice", dateModified, "0.1", destFile.length(), key,
 							destFile.getPath(), DownloadActivityType.VOICE_FILE));
 				}
 			}
@@ -241,16 +223,12 @@ public class DownloadOsmandIndexesHelper {
 		private final String destFile;
 		private final long dateModified;
 
-		AssetIndexItem(String fileName, String description, String date,
+		AssetIndexItem(String fileName, String description,
                        long dateModified, String size, long sizeL, String assetName, String destFile, DownloadActivityType type) {
 			super(fileName, description, dateModified, size, sizeL, sizeL, type);
 			this.dateModified = dateModified;
 			this.assetName = assetName;
 			this.destFile = destFile;
-		}
-		
-		public long getDateModified() {
-			return dateModified;
 		}
 
 		@Override
@@ -262,6 +240,4 @@ public class DownloadOsmandIndexesHelper {
 			return destFile;
 		}
 	}
-	
-	
 }

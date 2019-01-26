@@ -3,11 +3,8 @@ package net.osmand.plus.helpers;
 import android.content.Context;
 
 import net.osmand.IndexConstants;
-import net.osmand.PlatformUtil;
 import net.osmand.map.OsmandRegions;
 import net.osmand.plus.R;
-
-import org.apache.commons.logging.Log;
 
 import java.lang.reflect.Field;
 
@@ -16,7 +13,6 @@ import java.lang.reflect.Field;
  * on 07.07.2014.
  */
 public class FileNameTranslationHelper {
-	private static final Log LOG = PlatformUtil.getLog(FileNameTranslationHelper.class);
 	public static final String WIKI_NAME = "_wiki";
 
 	public static String getFileName(Context ctx, OsmandRegions regions, String fileName) {
@@ -174,8 +170,6 @@ public class FileNameTranslationHelper {
 			return ctx.getString(R.string.lang_pl);
 		} else if (filename.equalsIgnoreCase("Portuguese")) {
 			return ctx.getString(R.string.lang_pt);
-		//} else if (filename.equalsIgnoreCase("Portuguese")) {
-		//	return ctx.getString(R.string.lang_pt_br);
 		} else if (filename.equalsIgnoreCase("Romanian")) {
 			return ctx.getString(R.string.lang_ro);
 		} else if (filename.equalsIgnoreCase("Russian")) {

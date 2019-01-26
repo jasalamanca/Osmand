@@ -158,12 +158,6 @@ public class RotatedTileBox {
 		return dtiley / zoomFactor + oyTile;
 	}
 
-
-	public QuadRect getTileBounds() {
-		checkTileRectangleCalculated();
-		return tileBounds;
-	}
-
 	private void calculateTileRectangle() {
 		double x1 = getTileXFromPixel(0, 0);
 		double x2 = getTileXFromPixel(pixWidth, 0);
@@ -267,21 +261,10 @@ public class RotatedTileBox {
 		return (int) (dTilex * zoomFactor + cx);
 	}
 
-	public int getPixXFromTileXNoRot(double tileX) {
-		double dTilex = tileX - oxTile;
-		return (int) (dTilex * zoomFactor + cx);
-	}
-
 	public int getPixYFromLatNoRot(double latitude) {
 		double dTileY  = MapUtils.getTileNumberY(zoom, latitude) - oyTile;
 		return (int) ((dTileY * zoomFactor) + cy);
 	}
-
-	public int getPixYFromTileYNoRot(double tileY) {
-		double dTileY  = tileY - oyTile;
-		return (int) ((dTileY * zoomFactor) + cy);
-	}
-
 
 	private boolean isMapRotateEnabled() {
 		return rotate != 0;
@@ -290,14 +273,6 @@ public class RotatedTileBox {
 	public QuadRect getLatLonBounds() {
 		checkTileRectangleCalculated();
 		return latLonBounds;
-	}
-	
-	public double getRotateCos() {
-		return rotateCos;
-	}
-	
-	public double getRotateSin() {
-		return rotateSin;
 	}
 
 	public int getZoom() {
@@ -448,12 +423,6 @@ public class RotatedTileBox {
 		return true;
 	}
 
-	public boolean containsTilePoint(QuadPoint qp) {
-		double tx = getPixXFromTile(qp.x, qp.y);
-		double ty = getPixYFromTile(qp.x, qp.y);
-		return tx >= 0 && tx <= pixWidth && ty >= 0 && ty <= pixHeight;
-	}
-	
 	private boolean containsTilePoint(QuadPointDouble qp) {
 		double tx = getPixXFromTile(qp.x, qp.y);
 		double ty = getPixYFromTile(qp.x, qp.y);
@@ -499,11 +468,6 @@ public class RotatedTileBox {
 			return this;
 		}
 
-		public RotatedTileBoxBuilder setMapDensity(double mapDensity) {
-			tb.mapDensity = mapDensity;
-			return this;
-		}
-
 		public RotatedTileBoxBuilder setZoom(int zoom) {
 			tb.zoom = zoom;
 			zoomSet = true;
@@ -514,11 +478,6 @@ public class RotatedTileBox {
 			tb.lat = lat;
 			tb.lon = lon;
 			locationSet = true;
-			return this;
-		}
-
-		public RotatedTileBoxBuilder setRotate(float degrees) {
-			tb.rotate = degrees;
 			return this;
 		}
 

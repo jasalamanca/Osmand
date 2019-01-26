@@ -595,7 +595,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.FileDescriptorProto> values) {
         if (fileBuilder_ == null) {
           ensureFileIsMutable();
-          super.addAll(values, file_);
+          addAll(values, file_);
           onChanged();
         } else {
           fileBuilder_.addAllMessages(values);
@@ -2657,7 +2657,7 @@ public final class DescriptorProtos {
       public Builder addAllDependency(
           java.lang.Iterable<java.lang.String> values) {
         ensureDependencyIsMutable();
-        super.addAll(values, dependency_);
+        addAll(values, dependency_);
         onChanged();
         return this;
       }
@@ -2768,7 +2768,7 @@ public final class DescriptorProtos {
       public Builder addAllPublicDependency(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensurePublicDependencyIsMutable();
-        super.addAll(values, publicDependency_);
+        addAll(values, publicDependency_);
         onChanged();
         return this;
       }
@@ -2868,7 +2868,7 @@ public final class DescriptorProtos {
       public Builder addAllWeakDependency(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureWeakDependencyIsMutable();
-        super.addAll(values, weakDependency_);
+        addAll(values, weakDependency_);
         onChanged();
         return this;
       }
@@ -3069,7 +3069,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.DescriptorProto> values) {
         if (messageTypeBuilder_ == null) {
           ensureMessageTypeIsMutable();
-          super.addAll(values, messageType_);
+          addAll(values, messageType_);
           onChanged();
         } else {
           messageTypeBuilder_.addAllMessages(values);
@@ -3340,7 +3340,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.EnumDescriptorProto> values) {
         if (enumTypeBuilder_ == null) {
           ensureEnumTypeIsMutable();
-          super.addAll(values, enumType_);
+          addAll(values, enumType_);
           onChanged();
         } else {
           enumTypeBuilder_.addAllMessages(values);
@@ -3579,7 +3579,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.ServiceDescriptorProto> values) {
         if (serviceBuilder_ == null) {
           ensureServiceIsMutable();
-          super.addAll(values, service_);
+          addAll(values, service_);
           onChanged();
         } else {
           serviceBuilder_.addAllMessages(values);
@@ -3818,7 +3818,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.FieldDescriptorProto> values) {
         if (extensionBuilder_ == null) {
           ensureExtensionIsMutable();
-          super.addAll(values, extension_);
+          addAll(values, extension_);
           onChanged();
         } else {
           extensionBuilder_.addAllMessages(values);
@@ -6053,7 +6053,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.FieldDescriptorProto> values) {
         if (fieldBuilder_ == null) {
           ensureFieldIsMutable();
-          super.addAll(values, field_);
+          addAll(values, field_);
           onChanged();
         } else {
           fieldBuilder_.addAllMessages(values);
@@ -6292,7 +6292,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.FieldDescriptorProto> values) {
         if (extensionBuilder_ == null) {
           ensureExtensionIsMutable();
-          super.addAll(values, extension_);
+          addAll(values, extension_);
           onChanged();
         } else {
           extensionBuilder_.addAllMessages(values);
@@ -6531,7 +6531,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.DescriptorProto> values) {
         if (nestedTypeBuilder_ == null) {
           ensureNestedTypeIsMutable();
-          super.addAll(values, nestedType_);
+          addAll(values, nestedType_);
           onChanged();
         } else {
           nestedTypeBuilder_.addAllMessages(values);
@@ -6770,7 +6770,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.EnumDescriptorProto> values) {
         if (enumTypeBuilder_ == null) {
           ensureEnumTypeIsMutable();
-          super.addAll(values, enumType_);
+          addAll(values, enumType_);
           onChanged();
         } else {
           enumTypeBuilder_.addAllMessages(values);
@@ -7009,7 +7009,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.DescriptorProto.ExtensionRange> values) {
         if (extensionRangeBuilder_ == null) {
           ensureExtensionRangeIsMutable();
-          super.addAll(values, extensionRange_);
+          addAll(values, extensionRange_);
           onChanged();
         } else {
           extensionRangeBuilder_.addAllMessages(values);
@@ -10170,7 +10170,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.EnumValueDescriptorProto> values) {
         if (valueBuilder_ == null) {
           ensureValueIsMutable();
-          super.addAll(values, value_);
+          addAll(values, value_);
           onChanged();
         } else {
           valueBuilder_.addAllMessages(values);
@@ -11988,7 +11988,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.MethodDescriptorProto> values) {
         if (methodBuilder_ == null) {
           ensureMethodIsMutable();
-          super.addAll(values, method_);
+          addAll(values, method_);
           onChanged();
         } else {
           methodBuilder_.addAllMessages(values);
@@ -15495,7 +15495,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.UninterpretedOption> values) {
         if (uninterpretedOptionBuilder_ == null) {
           ensureUninterpretedOptionIsMutable();
-          super.addAll(values, uninterpretedOption_);
+          addAll(values, uninterpretedOption_);
           onChanged();
         } else {
           uninterpretedOptionBuilder_.addAllMessages(values);
@@ -16688,7 +16688,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.UninterpretedOption> values) {
         if (uninterpretedOptionBuilder_ == null) {
           ensureUninterpretedOptionIsMutable();
-          super.addAll(values, uninterpretedOption_);
+          addAll(values, uninterpretedOption_);
           onChanged();
         } else {
           uninterpretedOptionBuilder_.addAllMessages(values);
@@ -18800,7 +18800,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.UninterpretedOption> values) {
         if (uninterpretedOptionBuilder_ == null) {
           ensureUninterpretedOptionIsMutable();
-          super.addAll(values, uninterpretedOption_);
+          addAll(values, uninterpretedOption_);
           onChanged();
         } else {
           uninterpretedOptionBuilder_.addAllMessages(values);
@@ -19736,7 +19736,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.UninterpretedOption> values) {
         if (uninterpretedOptionBuilder_ == null) {
           ensureUninterpretedOptionIsMutable();
-          super.addAll(values, uninterpretedOption_);
+          addAll(values, uninterpretedOption_);
           onChanged();
         } else {
           uninterpretedOptionBuilder_.addAllMessages(values);
@@ -20548,7 +20548,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.UninterpretedOption> values) {
         if (uninterpretedOptionBuilder_ == null) {
           ensureUninterpretedOptionIsMutable();
-          super.addAll(values, uninterpretedOption_);
+          addAll(values, uninterpretedOption_);
           onChanged();
         } else {
           uninterpretedOptionBuilder_.addAllMessages(values);
@@ -21360,7 +21360,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.UninterpretedOption> values) {
         if (uninterpretedOptionBuilder_ == null) {
           ensureUninterpretedOptionIsMutable();
-          super.addAll(values, uninterpretedOption_);
+          addAll(values, uninterpretedOption_);
           onChanged();
         } else {
           uninterpretedOptionBuilder_.addAllMessages(values);
@@ -22172,7 +22172,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.UninterpretedOption> values) {
         if (uninterpretedOptionBuilder_ == null) {
           ensureUninterpretedOptionIsMutable();
-          super.addAll(values, uninterpretedOption_);
+          addAll(values, uninterpretedOption_);
           onChanged();
         } else {
           uninterpretedOptionBuilder_.addAllMessages(values);
@@ -23880,7 +23880,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.UninterpretedOption.NamePart> values) {
         if (nameBuilder_ == null) {
           ensureNameIsMutable();
-          super.addAll(values, name_);
+          addAll(values, name_);
           onChanged();
         } else {
           nameBuilder_.addAllMessages(values);
@@ -25969,7 +25969,7 @@ public final class DescriptorProtos {
         public Builder addAllPath(
             java.lang.Iterable<? extends java.lang.Integer> values) {
           ensurePathIsMutable();
-          super.addAll(values, path_);
+          addAll(values, path_);
           onChanged();
           return this;
         }
@@ -26109,7 +26109,7 @@ public final class DescriptorProtos {
         public Builder addAllSpan(
             java.lang.Iterable<? extends java.lang.Integer> values) {
           ensureSpanIsMutable();
-          super.addAll(values, span_);
+          addAll(values, span_);
           onChanged();
           return this;
         }
@@ -27643,7 +27643,7 @@ public final class DescriptorProtos {
           java.lang.Iterable<? extends com.google.protobuf.DescriptorProtos.SourceCodeInfo.Location> values) {
         if (locationBuilder_ == null) {
           ensureLocationIsMutable();
-          super.addAll(values, location_);
+          addAll(values, location_);
           onChanged();
         } else {
           locationBuilder_.addAllMessages(values);

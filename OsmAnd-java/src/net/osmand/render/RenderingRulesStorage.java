@@ -1,28 +1,28 @@
 package net.osmand.render;
 
-import gnu.trove.map.hash.TIntObjectHashMap;
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Stack;
-
 import net.osmand.PlatformUtil;
 
 import org.apache.commons.logging.Log;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Stack;
+
+import gnu.trove.map.hash.TIntObjectHashMap;
+
+
+@SuppressWarnings("unused") //NOTE jsala se usa desde C++
 public class RenderingRulesStorage {
 
 	private final static Log log = PlatformUtil.getLog(RenderingRulesStorage.class);
@@ -83,17 +83,10 @@ public class RenderingRulesStorage {
 	public String getStringValue(int i){
 		return dictionary.get(i);
 	}
-	
-	
 	public String getName() {
 		return renderingName;
 	}
-	
-	public String getInternalRenderingName() {
-		return internalRenderingName;
-	}
-	
-	
+
 	public void parseRulesFromXmlInputStream(InputStream is, RenderingRulesStorageResolver resolver) throws XmlPullParserException,
 			IOException {
 		XmlPullParser parser = PlatformUtil.newXMLPullParser();
@@ -103,20 +96,18 @@ public class RenderingRulesStorage {
 		if (depends != null) {
 			// merge results
 			// dictionary and props are already merged
-			Iterator<Entry<String, RenderingRule>> it = depends.renderingAttributes.entrySet().iterator();
-			while (it.hasNext()) {
-				Entry<String, RenderingRule> e = it.next();
-				if (renderingAttributes.containsKey(e.getKey())) {
-					RenderingRule root = renderingAttributes.get(e.getKey());
-					List<RenderingRule> list = e.getValue().getIfElseChildren();
-					for (RenderingRule every : list) {
-						root.addIfElseChildren(every);
-					}
-					e.getValue().addToBeginIfElseChildren(root);
-				} else {
-					renderingAttributes.put(e.getKey(), e.getValue());
-				}
-			}
+            for (Entry<String, RenderingRule> e : depends.renderingAttributes.entrySet()) {
+                if (renderingAttributes.containsKey(e.getKey())) {
+                    RenderingRule root = renderingAttributes.get(e.getKey());
+                    List<RenderingRule> list = e.getValue().getIfElseChildren();
+                    for (RenderingRule every : list) {
+                        root.addIfElseChildren(every);
+                    }
+                    e.getValue().addToBeginIfElseChildren(root);
+                } else {
+                    renderingAttributes.put(e.getKey(), e.getValue());
+                }
+            }
 
 			for (int i = 0; i < LENGTH_RULES; i++) {
 				if (depends.tagValueGlobalRules[i] == null || depends.tagValueGlobalRules[i].isEmpty()) {
@@ -124,16 +115,16 @@ public class RenderingRulesStorage {
 				}
 				if (tagValueGlobalRules[i] != null) {
 					int[] keys = depends.tagValueGlobalRules[i].keys();
-					for (int j = 0; j < keys.length; j++) {
-						RenderingRule rule = tagValueGlobalRules[i].get(keys[j]);
-						RenderingRule dependsRule = depends.tagValueGlobalRules[i].get(keys[j]);
+					for (int key : keys) {
+						RenderingRule rule = tagValueGlobalRules[i].get(key);
+						RenderingRule dependsRule = depends.tagValueGlobalRules[i].get(key);
 						if (dependsRule != null) {
 							if (rule != null) {
-								RenderingRule toInsert = createTagValueRootWrapperRule(keys[j], rule);
+								RenderingRule toInsert = createTagValueRootWrapperRule(key, rule);
 								toInsert.addIfElseChildren(dependsRule);
-								tagValueGlobalRules[i].put(keys[j], toInsert);
+								tagValueGlobalRules[i].put(key, toInsert);
 							} else {
-								tagValueGlobalRules[i].put(keys[j], dependsRule);
+								tagValueGlobalRules[i].put(key, dependsRule);
 							}
 						}
 					}
@@ -145,14 +136,6 @@ public class RenderingRulesStorage {
 		}
 	}
 
-	public static String colorToString(int color) {
-		if ((0xFF000000 & color) == 0xFF000000) {
-			return "#" + Integer.toHexString(color & 0x00FFFFFF); //$NON-NLS-1$
-		} else {
-			return "#" + Integer.toHexString(color); //$NON-NLS-1$
-		}
-	}
-	
 	private void registerGlobalRule(RenderingRule rr, int state, String tagS, String valueS) throws XmlPullParserException {
 		if(tagS == null || valueS == null){
 			throw new XmlPullParserException("Attribute tag should be specified for root filter " + rr.toString());
@@ -410,13 +393,7 @@ public class RenderingRulesStorage {
 		}
 		
 	}
-	
-	public int getTagValueKey(String tag, String value){
-		int itag = getDictionaryValue(tag);
-		int ivalue = getDictionaryValue(value);
-		return (itag << SHIFT_TAG_VAL) | ivalue; 
-	}
-	
+
 	private String getValueString(int tagValueKey){
 		return getStringValue(tagValueKey & ((1 << SHIFT_TAG_VAL) - 1)); 
 	}
@@ -436,25 +413,24 @@ public class RenderingRulesStorage {
 		return renderingAttributes.get(attribute);
 	}
 	
-	public String[] getRenderingAttributeNames() {
+	public String[] getRenderingAttributeNames() { // NOTE jsala usado desde C++
 		return renderingAttributes.keySet().toArray(new String[renderingAttributes.size()]);
 	}
-	public RenderingRule[] getRenderingAttributeValues() {
+	public RenderingRule[] getRenderingAttributeValues() { // NOTE jsala usado desde C++
 		return renderingAttributes.values().toArray(new RenderingRule[renderingAttributes.size()]);
 	}
 	
-	public RenderingRule[] getRules(int state){
+	public RenderingRule[] getRules(int state){ // NOTE jsala usado desde C++
 		if(state >= tagValueGlobalRules.length ||  tagValueGlobalRules[state] == null) {
 			return new RenderingRule[0];
 		}
 		return tagValueGlobalRules[state].values(new RenderingRule[tagValueGlobalRules[state].size()]);
 	}
 	
-	public int getRuleTagValueKey(int state, int ind){
+	public int getRuleTagValueKey(int state, int ind){ // NOTE jsala usado desde C++
 		return tagValueGlobalRules[state].keys()[ind];
 	}
-	
-	
+
 	private void printDebug(int state, PrintStream out){
 		for(int key : tagValueGlobalRules[state].keys()) {
 			RenderingRule rr = tagValueGlobalRules[state].get(key);
@@ -467,7 +443,7 @@ public class RenderingRulesStorage {
 		out.print(rr.toString(indent, new StringBuilder()).toString());
 	}
 	
-	
+	//NOTE jsala es un test
 	public static void main(String[] args) throws XmlPullParserException, IOException {
 		STORE_ATTTRIBUTES = true;
 //		InputStream is = RenderingRulesStorage.class.getResourceAsStream("default.render.xml");
@@ -519,8 +495,7 @@ public class RenderingRulesStorage {
 		
 	}
 	
-	
-	
+	// NOTE jsala es un test
 	protected static void testSearch(RenderingRulesStorage storage) {
 		//		long tm = System.nanoTime();
 		//		int count = 100000;
@@ -548,6 +523,7 @@ public class RenderingRulesStorage {
 		//		System.out.println((System.nanoTime()- tm)/ (1e6f * count) );
 	}
 
+	// NOTE jsala es para test
 	protected static void printAllRules(RenderingRulesStorage storage) {
 		System.out.println("\n\n--------- POINTS ----- ");
 		storage.printDebug(POINT_RULES, System.out);
@@ -581,6 +557,5 @@ public class RenderingRulesStorage {
 		} else {
 			out.println("Not found");
 		}
-		
 	}
 }

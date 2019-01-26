@@ -55,7 +55,7 @@ public class SearchRegionByNameActivity extends SearchByNameAbstractActivity<Reg
 	
 	
 	@Override
-	public String getText(RegionAddressRepository obj) {
+    protected String getText(RegionAddressRepository obj) {
 		return FileNameTranslationHelper.getFileName(this,
 				getMyApplication().getResourceManager().getOsmandRegions(), obj.getFileName());
 	}

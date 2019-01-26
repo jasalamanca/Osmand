@@ -3,9 +3,7 @@ package net.osmand.plus;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
@@ -43,23 +41,14 @@ public abstract class OsmandPlugin {
 	private String installURL = null;
 
 	public abstract String getId();
-
 	public abstract String getDescription();
-
 	public abstract String getName();
-
 	public abstract int getAssetResourceName();
-
 	@DrawableRes
 	public int getLogoResourceId() {
 		return R.drawable.ic_extension_dark;
 	}
-
 	public abstract Class<? extends Activity> getSettingsActivity();
-
-	public String getVersion() {
-		return "";
-	}
 
 	/**
 	 * Initialize plugin runs just after creation
@@ -67,34 +56,23 @@ public abstract class OsmandPlugin {
 	protected boolean init(OsmandApplication app, Activity activity) {
 		return true;
 	}
-
 	private void setActive(boolean active) {
 		this.active = active;
 	}
-
 	public boolean isActive() {
 		return active;
 	}
-
 	private boolean isVisible() {
 		return true;
 	}
-
 	public boolean needsInstallation() {
 		return installURL != null;
 	}
-
-	public void setInstallURL(String installURL) {
-		this.installURL = installURL;
-	}
-
 	public String getInstallURL() {
 		return installURL;
 	}
-
 	public void disable(OsmandApplication app) {
 	}
-
 	public String getHelpFileName() {
 		return null;
 	}
@@ -124,9 +102,7 @@ public abstract class OsmandPlugin {
 
 		// plugins with additional actions for context menu in right order:
 		allPlugins.add(new OsmEditingPlugin(app));
-
 		allPlugins.add(new OsmandMonitoringPlugin(app));
-
 		allPlugins.add(new AccessibilityPlugin(app));
 		allPlugins.add(new OsmandDevelopmentPlugin(app));
 
@@ -144,16 +120,6 @@ public abstract class OsmandPlugin {
 					LOG.error("Plugin initialization failed " + plugin.getId(), e);
 				}
 			}
-		}
-	}
-
-	private static void checkMarketPlugin(OsmandApplication app, boolean paid, String id, String id2) {
-		boolean marketEnabled = Version.isMarketEnabled(app);
-		boolean pckg = isPackageInstalled(id, app) ||
-				isPackageInstalled(id2, app);
-		if ((Version.isDeveloperVersion(app) || !Version.isProductionVersion(app)) && !paid) {
-			// for test reasons
-			marketEnabled = false;
 		}
 	}
 
@@ -304,16 +270,6 @@ public abstract class OsmandPlugin {
 		return lst;
 	}
 
-	public static List<OsmandPlugin> getNotEnabledPlugins() {
-		ArrayList<OsmandPlugin> lst = new ArrayList<>(allPlugins.size());
-		for (OsmandPlugin p : allPlugins) {
-			if (!p.isActive()) {
-				lst.add(p);
-			}
-		}
-		return lst;
-	}
-
 	public static List<OsmandPlugin> getNotEnabledVisiblePlugins() {
 		ArrayList<OsmandPlugin> lst = new ArrayList<>(allPlugins.size());
 		for (OsmandPlugin p : allPlugins) {
@@ -324,7 +280,6 @@ public abstract class OsmandPlugin {
 		return lst;
 	}
 
-	@SuppressWarnings("unchecked")
 	public static <T extends OsmandPlugin> T getEnabledPlugin(Class<T> clz) {
 		for (OsmandPlugin lr : getEnabledPlugins()) {
 			if (clz.isInstance(lr)) {
@@ -334,7 +289,6 @@ public abstract class OsmandPlugin {
 		return null;
 	}
 
-	@SuppressWarnings("unchecked")
 	public static <T extends OsmandPlugin> T getPlugin(Class<T> clz) {
 		for (OsmandPlugin lr : getAvailablePlugins()) {
 			if (clz.isInstance(lr)) {
@@ -354,7 +308,6 @@ public abstract class OsmandPlugin {
 		}
 		return l;
 	}
-
 
 	public static void onMapActivityCreate(MapActivity activity) {
 		for (OsmandPlugin plugin : getEnabledPlugins()) {
@@ -402,7 +355,6 @@ public abstract class OsmandPlugin {
 		return b;
 	}
 
-
 	public static void createLayers(OsmandMapTileView mapView, MapActivity activity) {
 		for (OsmandPlugin plugin : getEnabledPlugins()) {
 			plugin.registerLayers(activity);
@@ -433,7 +385,6 @@ public abstract class OsmandPlugin {
 		}
 	}
 
-
 	public static void onOptionsMenuActivity(Activity activity, Fragment fragment, ContextMenuAdapter optionsMenuAdapter) {
 		for (OsmandPlugin plugin : getEnabledPlugins()) {
 			plugin.optionsMenuFragment(activity, fragment, optionsMenuAdapter);
@@ -447,18 +398,6 @@ public abstract class OsmandPlugin {
 			if (fragmentData != null) collection.add(fragmentData);
 		}
 		return collection;
-	}
-
-	private static boolean isPackageInstalled(String packageInfo, Context ctx) {
-		if (packageInfo == null) {
-			return false;
-		}
-		boolean installed = false;
-		try {
-			installed = ctx.getPackageManager().getPackageInfo(packageInfo, 0) != null;
-		} catch (NameNotFoundException e) {
-		}
-		return installed;
 	}
 
 	public static boolean onMapActivityKeyUp(MapActivity mapActivity, int keyCode) {

@@ -193,7 +193,7 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 		}
 	}
 
-	public OsmandApplication getMyApplication() {
+	protected OsmandApplication getMyApplication() {
 		return getMyActivity().getMyApplication();
 	}
 

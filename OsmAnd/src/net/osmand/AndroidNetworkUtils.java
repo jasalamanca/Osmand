@@ -7,8 +7,6 @@ import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.Version;
 
-import org.apache.commons.logging.Log;
-
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,9 +20,6 @@ import java.text.MessageFormat;
 import java.util.Map;
 
 public class AndroidNetworkUtils {
-
-	private static final int CONNECTION_TIMEOUT = 15000;
-	private static final Log LOG = PlatformUtil.getLog(AndroidNetworkUtils.class);
 
 	public interface OnRequestResultListener {
 		void onResult(String result);

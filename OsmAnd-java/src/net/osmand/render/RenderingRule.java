@@ -44,33 +44,31 @@ public class RenderingRule {
 		floatProperties = null;
 		attributesRef = null;
 		int i = 0;
-		Iterator<Entry<String, String>> it = attributes.entrySet().iterator();
-		while (it.hasNext()) {
-			Entry<String, String> e = it.next();
-			RenderingRuleProperty property = storage.PROPS.get(e.getKey());
-			if (property != null) {
-				props.add(property);
-				String vl = e.getValue();
-				if(vl.startsWith("$")){
-					if (attributesRef == null) {
-						attributesRef = new RenderingRule[attributes.size()];
-					}
-					attributesRef[i] = storage.getRenderingAttributeRule(vl.substring(1));
-				} else if (property.isString()) {
-					intProperties[i] = storage.getDictionaryValue(vl);
-				} else if (property.isFloat()) {
-					if (floatProperties == null) {
-						// lazy creates
-						floatProperties = new float[attributes.size()];
-					}
-					floatProperties[i] = property.parseFloatValue(vl);
-					intProperties[i] = property.parseIntValue(vl);
-				} else {
-					intProperties[i] = property.parseIntValue(vl);
-				}
-				i++;
-			}
-		}
+        for (Entry<String, String> e : attributes.entrySet()) {
+            RenderingRuleProperty property = storage.PROPS.get(e.getKey());
+            if (property != null) {
+                props.add(property);
+                String vl = e.getValue();
+                if (vl.startsWith("$")) {
+                    if (attributesRef == null) {
+                        attributesRef = new RenderingRule[attributes.size()];
+                    }
+                    attributesRef[i] = storage.getRenderingAttributeRule(vl.substring(1));
+                } else if (property.isString()) {
+                    intProperties[i] = storage.getDictionaryValue(vl);
+                } else if (property.isFloat()) {
+                    if (floatProperties == null) {
+                        // lazy creates
+                        floatProperties = new float[attributes.size()];
+                    }
+                    floatProperties[i] = property.parseFloatValue(vl);
+                    intProperties[i] = property.parseIntValue(vl);
+                } else {
+                    intProperties[i] = property.parseIntValue(vl);
+                }
+                i++;
+            }
+        }
 		properties = props.toArray(new RenderingRuleProperty[props.size()]);
 	}
 	

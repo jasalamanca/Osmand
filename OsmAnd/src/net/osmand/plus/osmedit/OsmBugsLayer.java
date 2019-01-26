@@ -491,14 +491,6 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 		return ((EditText) view.findViewById(R.id.message_field)).getText().toString();
 	}
 
-	public void refreshMap() {
-		if (view != null && view.getLayers().contains(OsmBugsLayer.this)) {
-			view.refreshMap();
-		}
-	}
-
-
-
 	@Override
 	public PointDescription getObjectName(Object o) {
 		if (o instanceof OpenStreetNote) {
@@ -514,22 +506,18 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 	public boolean disableSingleTap() {
 		return false;
 	}
-
 	@Override
 	public boolean disableLongPressOnMap() {
 		return false;
 	}
-
 	@Override
 	public boolean isObjectClickable(Object o) {
 		return o instanceof OpenStreetNote;
 	}
-
 	@Override
 	public boolean runExclusiveAction(Object o, boolean unknownLocation) {
 		return false;
 	}
-
 	@Override
 	public void collectObjectsFromPoint(PointF point, RotatedTileBox tileBox, List<Object> res, boolean unknownLocation) {
 		if (tileBox.getZoom() >= startZoom) {
@@ -586,36 +574,14 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 		double getLatitude() {
 			return latitude;
 		}
-
 		void setLatitude(double latitude) {
 			this.latitude = latitude;
 		}
-
 		double getLongitude() {
 			return longitude;
 		}
-
 		void setLongitude(double longitude) {
 			this.longitude = longitude;
-		}
-
-		public String getDescription() {
-			return description;
-		}
-
-		public String getTypeName() {
-			return typeName;
-		}
-
-		public String getCommentDescription() {
-			StringBuilder sb = new StringBuilder();
-			for (String s : getCommentDescriptionList()) {
-				if (sb.length() > 0) {
-					sb.append("\n");
-				}
-				sb.append(s);
-			}
-			return sb.toString();
 		}
 
 		public List<String> getCommentDescriptionList() {
@@ -643,27 +609,14 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 		long getId() {
 			return id;
 		}
-
-		public void setId(long id) {
-			this.id = id;
-		}
-
 		public boolean isOpened() {
 			return opened;
 		}
-
 		void setOpened(boolean opened) {
 			this.opened = opened;
 		}
-
 		boolean isLocal() {
 			return local;
 		}
-
-		public void setLocal(boolean local) {
-			this.local = local;
-		}
 	}
-
-
 }

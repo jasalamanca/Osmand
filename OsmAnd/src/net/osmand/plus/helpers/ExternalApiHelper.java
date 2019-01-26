@@ -44,20 +44,14 @@ public class ExternalApiHelper {
 
 	private static final String API_CMD_SHOW_GPX = "show_gpx";
 	private static final String API_CMD_NAVIGATE_GPX = "navigate_gpx";
-
 	private static final String API_CMD_NAVIGATE = "navigate";
-
 	private static final String API_CMD_GET_INFO = "get_info";
-
 	private static final String API_CMD_ADD_FAVORITE = "add_favorite";
 	private static final String API_CMD_ADD_MAP_MARKER = "add_map_marker";
-
 	private static final String API_CMD_START_GPX_REC = "start_gpx_rec";
 	private static final String API_CMD_STOP_GPX_REC = "stop_gpx_rec";
-
 	private static final String API_CMD_SUBSCRIBE_VOICE_NOTIFICATIONS = "subscribe_voice_notifications";
 	private static final int VERSION_CODE = 1;
-
 
 	private static final String PARAM_NAME = "name";
 	private static final String PARAM_DESC = "desc";
@@ -118,11 +112,9 @@ public class ExternalApiHelper {
 	public int getResultCode() {
 		return resultCode;
 	}
-
 	public boolean needFinish() {
 		return finish;
 	}
-
 	public ExternalApiHelper(MapActivity mapActivity) {
 		this.mapActivity = mapActivity;
 	}
@@ -442,6 +434,7 @@ public class ExternalApiHelper {
 		}
 	}
 
+	//NOTE jsala es un test
 	public void testApi(OsmandApplication app, String command) {
 		Uri uri = null;
 		Intent intent = null;

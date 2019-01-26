@@ -20,7 +20,6 @@ public class OSMSettings {
 		TOLL("toll"), //$NON-NLS-1$
 		JUNCTION("junction"), //$NON-NLS-1$
 		
-		
 		// transport
 		ROUTE("route"), //$NON-NLS-1$
 		ROUTE_MASTER("route_master"), //$NON-NLS-1$
@@ -75,39 +74,14 @@ public class OSMSettings {
 		
 		ADMIN_LEVEL("admin_level"), //$NON-NLS-1$
 		PUBLIC_TRANSPORT("public_transport"), //$NON-NLS-1$
-		ENTRANCE("entrance"), //$NON-NLS-1$
-		;
-		
+		ENTRANCE("entrance"); //$NON-NLS-1$
+
 		private final String value;
 		OSMTagKey(String value) {
 			this.value = value;
 		}
-		
 		public String getValue() {
 			return value;
 		}
-	}
-	
-	public enum OSMHighwayTypes {
-		TRUNK, MOTORWAY, PRIMARY, SECONDARY, RESIDENTIAL, TERTIARY, SERVICE, TRACK,
-		
-		// TODO is link needed?
-		TRUNK_LINK, MOTORWAY_LINK, PRIMARY_LINK, SECONDARY_LINK, RESIDENTIAL_LINK, TERTIARY_LINK, SERVICE_LINK, TRACK_LINK, 
-		
-	}
-	
-	
-	public static boolean wayForCar(String tagHighway){
-		if(tagHighway != null){
-			String[] cars = new String[]{"trunk", "motorway", "primary", "secondary", "tertiary", "service", "residential", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$
-										"trunk_link", "motorway_link", "primary_link", "secondary_link", "residential_link",  //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-										"tertiary_link", "track", "unclassified" }; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-			for(String c : cars){
-				if(c.equals(tagHighway)){
-					return true;
-				}
-			}
-		}
-		return false;
 	}
 }

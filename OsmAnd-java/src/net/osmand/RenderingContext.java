@@ -18,7 +18,8 @@ public class RenderingContext {
 		}
 	}
 
-	public int renderedState = 0;
+	public int renderedState = 0; //NOTE jsala usado en C++
+
 	// FIELDS OF THAT CLASS ARE USED IN C++
 	public boolean interrupted = false;
 	public boolean nightMode = false;
@@ -64,15 +65,12 @@ public class RenderingContext {
 	public float getDensityValue(float val) {
 		return val * density;
 	}
-	
-	public float getComplexValue(RenderingRuleSearchRequest req, RenderingRuleProperty prop, int defVal) {
-		return req.getFloatPropertyValue(prop, 0) * density + req.getIntPropertyValue(prop, defVal);
-	}
-	
+
 	public float getComplexValue(RenderingRuleSearchRequest req, RenderingRuleProperty prop) {
 		return req.getFloatPropertyValue(prop, 0) * density + req.getIntPropertyValue(prop, 0);
 	}
-	
+
+	//NOTE jsala se llama desde C++ pero como devuelve null hay que quitarlo.
 	protected byte[] getIconRawData(String data) {
 		return null;
 	}

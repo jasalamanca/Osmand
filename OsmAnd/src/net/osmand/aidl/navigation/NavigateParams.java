@@ -25,7 +25,7 @@ public class NavigateParams implements Parcelable {
 		this.force = force;
 	}
 
-	public NavigateParams(Parcel in) {
+	private NavigateParams(Parcel in) {
 		readFromParcel(in);
 	}
 

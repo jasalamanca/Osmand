@@ -125,9 +125,7 @@ public class AppModeDialog {
 		ImageView iv = tb.findViewById(R.id.app_mode_icon);
 		iv.setImageDrawable(ctx.getIconsCache().getIcon(mode.getSmallIconDark(), isNightMode(ctx, useMapTheme) ? R.color.route_info_checked_mode_icon_color_dark : R.color.route_info_checked_mode_icon_color_light));
 		iv.setContentDescription(mode.toHumanString(ctx));
-//		tb.setCompoundDrawablesWithIntrinsicBounds(null, ctx.getIconsCache().getIcon(mode.getIconId(), R.color.app_mode_icon_color), null, null);
 		LayoutParams lp = new LinearLayout.LayoutParams(metricsX, metricsY);
-//		lp.setMargins(left, 0, 0, 0);
 		layout.addView(tb, lp);
 		return tb;
 	}

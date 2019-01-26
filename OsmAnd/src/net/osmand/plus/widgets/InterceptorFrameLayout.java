@@ -1,9 +1,6 @@
 package net.osmand.plus.widgets;
 
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.os.Build;
-import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
@@ -33,20 +30,13 @@ public class InterceptorFrameLayout extends FrameLayout {
 		mTouchSlop = vc.getScaledTouchSlop();
 	}
 
-	@TargetApi(Build.VERSION_CODES.LOLLIPOP)
-	public InterceptorFrameLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-		super(context, attrs, defStyleAttr, defStyleRes);
-		ViewConfiguration vc = ViewConfiguration.get(context);
-		mTouchSlop = vc.getScaledTouchSlop();
-	}
-
 	public void setListener(SwipeDismissTouchListener listener) {
 		this.listener = listener;
 	}
 
 	@Override
 	public boolean onInterceptTouchEvent(MotionEvent ev) {
-		final int action = MotionEventCompat.getActionMasked(ev);
+		final int action = ev.getActionMasked();
 
 		if (action == MotionEvent.ACTION_CANCEL || action == MotionEvent.ACTION_UP) {
 			mIsScrolling = false;

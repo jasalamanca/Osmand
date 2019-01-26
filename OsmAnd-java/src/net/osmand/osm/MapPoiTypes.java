@@ -807,26 +807,24 @@ public class MapPoiTypes {
 			a.setName(nameValue);
 		}
 		// additional info
-		Iterator<Entry<String, String>> it = otherTags.entrySet().iterator();
-		while (it.hasNext()) {
-			Entry<String, String> e = it.next();
-			String otag = e.getKey();
-			if (!otag.equals(tag) && !otag.equals("name")) {
-				PoiType pat = poiTypesByTag.get(otag + "/" + e.getValue());
-				if (pat == null) {
-					for(String splValue : e.getValue().split(";")) {
-						PoiType ps = poiTypesByTag.get(otag + "/" + splValue.trim());
-						if(ps != null) {
-							a.setAdditionalInfo(ps.getKeyName(), splValue.trim());
-						}
-					}
-					pat = poiTypesByTag.get(otag);
-				}
-				if (pat != null && pat.isAdditional()) {
-					a.setAdditionalInfo(pat.getKeyName(), e.getValue());
-				}
-			}
-		}
+        for (Entry<String, String> e : otherTags.entrySet()) {
+            String otag = e.getKey();
+            if (!otag.equals(tag) && !otag.equals("name")) {
+                PoiType pat = poiTypesByTag.get(otag + "/" + e.getValue());
+                if (pat == null) {
+                    for (String splValue : e.getValue().split(";")) {
+                        PoiType ps = poiTypesByTag.get(otag + "/" + splValue.trim());
+                        if (ps != null) {
+                            a.setAdditionalInfo(ps.getKeyName(), splValue.trim());
+                        }
+                    }
+                    pat = poiTypesByTag.get(otag);
+                }
+                if (pat != null && pat.isAdditional()) {
+                    a.setAdditionalInfo(pat.getKeyName(), e.getValue());
+                }
+            }
+        }
 
 		return a;
 	}

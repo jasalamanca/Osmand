@@ -6,7 +6,6 @@ import net.osmand.NativeLibrary.NativeRouteSearchResult;
 import net.osmand.PlatformUtil;
 import net.osmand.binary.BinaryMapIndexReader;
 import net.osmand.binary.BinaryMapIndexReader.SearchRequest;
-import net.osmand.binary.BinaryMapRouteReaderAdapter;
 import net.osmand.binary.BinaryMapRouteReaderAdapter.RouteRegion;
 import net.osmand.binary.BinaryMapRouteReaderAdapter.RouteSubregion;
 import net.osmand.binary.RouteDataObject;
@@ -22,7 +21,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -139,10 +137,6 @@ public class RoutingContext {
 		this.nativeLib = nativeLibrary;
 	}
 
-	public RouteSegmentVisitor getVisitor() {
-		return visitor;
-	}
-	
 	public int getCurrentlyLoadedTiles() {
 		int cnt = 0;
 		for(RoutingSubregionTile t : this.subregionTiles){
@@ -155,10 +149,6 @@ public class RoutingContext {
 	
 	private int getCurrentEstimatedSize(){
 		return global.size;
-	}
-
-	public void setVisitor(RouteSegmentVisitor visitor) {
-		this.visitor = visitor;
 	}
 
 	public void setRouter(GeneralRouter router) {
@@ -554,18 +544,16 @@ public class RoutingContext {
 		
 		void loadAllObjects(final List<RouteDataObject> toFillIn, RoutingContext ctx, TLongObjectHashMap<RouteDataObject> excludeDuplications) {
 			if(routes != null) {
-				Iterator<RouteSegment> it = routes.valueCollection().iterator();
-				while(it.hasNext()){
-					RouteSegment rs = it.next();
-					while(rs != null){
-						RouteDataObject ro = rs.road;
-						if (!excludeDuplications.contains(ro.id)) {
-							excludeDuplications.put(ro.id, ro);
-							toFillIn.add(ro);
-						}
-						rs = rs.next;
-					}
-				}
+                for (RouteSegment rs : routes.valueCollection()) {
+                    while (rs != null) {
+                        RouteDataObject ro = rs.road;
+                        if (!excludeDuplications.contains(ro.id)) {
+                            excludeDuplications.put(ro.id, ro);
+                            toFillIn.add(ro);
+                        }
+                        rs = rs.next;
+                    }
+                }
 			} else if(searchResult != null) {
 				RouteDataObject[] objects = searchResult.objects;
 				if(objects != null) {
@@ -726,7 +714,7 @@ public class RoutingContext {
 		return  (int) (sz * 3.5);
 	}
 	
-	protected static class TileStatistics {
+	static class TileStatistics {
 		int size = 0;
 		int allRoutes = 0;
 		int coordinates = 0;

@@ -149,16 +149,8 @@ public class Amenity extends MapObject {
 		return type.getKeyName() + ": " + subType + " " + getName();
 	}
 
-	public String getSite() {
-		return getAdditionalInfo(WEBSITE);
-	}
-
 	public void setSite(String site) {
 		setAdditionalInfo(WEBSITE, site);
-	}
-
-	public String getPhone() {
-		return getAdditionalInfo(PHONE);
 	}
 
 	public void setPhone(String phone) {

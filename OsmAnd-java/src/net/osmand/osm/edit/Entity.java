@@ -1,13 +1,10 @@
 package net.osmand.osm.edit;
 
 import net.osmand.data.LatLon;
-import net.osmand.osm.edit.OSMSettings.OSMTagKey;
-import net.osmand.util.Algorithms;
 
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -20,7 +17,7 @@ public abstract class Entity implements Serializable {
 		RELATION,
 		WAY_BOUNDARY;
 
-		public static EntityType valueOf(Entity e) {
+		static EntityType valueOf(Entity e) {
 			if (e instanceof Node) {
 				return NODE;
 			} else if (e instanceof Way) {
@@ -60,21 +57,8 @@ public abstract class Entity implements Serializable {
 			return type + " " + id; //$NON-NLS-1$
 		}
 
-		public EntityType getType() {
-			return type;
-		}
-
 		public Long getId() {
 			return id;
-		}
-
-		String getOsmUrl() {
-			final String browseUrl = "https://www.openstreetmap.org/browse/";
-			if (type == EntityType.NODE)
-				return browseUrl + "node/" + id;
-			if (type == EntityType.WAY)
-				return browseUrl + "way/" + id;
-			return null;
 		}
 
 		@Override
@@ -106,8 +90,6 @@ public abstract class Entity implements Serializable {
 	private Set<String> changedTags;
 	private final long id;
 	private boolean dataLoaded;
-	private int modify;
-	private int version;
 	public static final int MODIFY_UNKNOWN = 0;
 	public static final int MODIFY_DELETED = -1;
 	public static final int MODIFY_MODIFIED = 1;
@@ -116,7 +98,6 @@ public abstract class Entity implements Serializable {
 	Entity(long id) {
 		this.id = id;
 	}
-
 
 	Entity(Entity copy, long id) {
 		this.id = id;
@@ -134,14 +115,6 @@ public abstract class Entity implements Serializable {
 		this.changedTags = changedTags;
 	}
 
-	public int getModify() {
-		return modify;
-	}
-
-	public void setModify(int modify) {
-		this.modify = modify;
-	}
-
 	public long getId() {
 		return id;
 	}
@@ -151,14 +124,6 @@ public abstract class Entity implements Serializable {
 			return tags.remove(key);
 		}
 		return null;
-	}
-
-	public void removeTags(String... keys) {
-		if (tags != null) {
-			for (String key : keys) {
-				tags.remove(key);
-			}
-		}
 	}
 
 	public String putTag(String key, String value) {
@@ -176,33 +141,11 @@ public abstract class Entity implements Serializable {
 		tags = new LinkedHashMap<>(toPut);
 	}
 
-	public String getTag(OSMTagKey key) {
-		return getTag(key.getValue());
-	}
-
 	public String getTag(String key) {
 		if (tags == null) {
 			return null;
 		}
 		return tags.get(key);
-	}
-
-	public Map<String, String> getNameTags() {
-		Map<String, String> result = new LinkedHashMap<>();
-		for (Map.Entry<String, String> e : tags.entrySet()) {
-			if (e.getKey().startsWith("name:")) {
-				result.put(e.getKey(), e.getValue());
-			}
-		}
-		return result;
-	}
-
-	public int getVersion() {
-		return version;
-	}
-
-	public void setVersion(int version) {
-		this.version = version;
 	}
 
 	public Map<String, String> getTags() {
@@ -222,20 +165,10 @@ public abstract class Entity implements Serializable {
 
 	public abstract void initializeLinks(Map<EntityId, Entity> entities);
 
-
 	/**
 	 * @return middle point for entity
 	 */
 	public abstract LatLon getLatLon();
-
-
-	public boolean isVirtual() {
-		return id < 0;
-	}
-
-	public String getOsmUrl() {
-		return EntityId.valueOf(this).getOsmUrl();
-	}
 
 	@Override
 	public String toString() {
@@ -267,40 +200,4 @@ public abstract class Entity implements Serializable {
 		}
 		return true;
 	}
-
-	public Set<String> getIsInNames() {
-		String values = getTag(OSMTagKey.IS_IN);
-		if (values == null) {
-			String city = getTag(OSMTagKey.ADDR_CITY);
-			if(!Algorithms.isEmpty(city)) {
-				return Collections.singleton(city.trim());	
-			}
-			return Collections.emptySet();
-		}
-		if (values.indexOf(';') != -1) {
-			String[] splitted = values.split(";");
-			Set<String> set = new HashSet<>(splitted.length);
-			for (int i = 0; i < splitted.length; i++) {
-				set.add(splitted[i].trim());
-			}
-			return set;
-		}
-		return Collections.singleton(values.trim());
-	}
-
-	public void entityDataLoaded() {
-		this.dataLoaded = true;
-	}
-
-	public boolean isDataLoaded() {
-		return dataLoaded;
-	}
-
-	public Map<String, String> getModifiableTags() {
-		if (tags == null) {
-			return Collections.emptyMap();
-		}
-		return tags;
-	}
-
 }

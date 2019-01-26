@@ -1090,20 +1090,20 @@ public class GeoPointParserUtil {
 							".*q=([+-]?\\d+(?:\\.\\d+)?),([+-]?\\d+(?:\\.\\d+)?).*&radius=(\\d+).*",
 							".*q=([+-]?\\d+(?:\\.\\d+)?),([+-]?\\d+(?:\\.\\d+)?).*",
 							".*p=(?:[A-Z0-9]+),([+-]?\\d+(?:\\.\\d+)?),([+-]?\\d+(?:\\.\\d+)?).*",};
-					for (int i = 0; i < patterns.length; i++) {
-						p = Pattern.compile(patterns[i]);
-						matcher = p.matcher(subString);
-						if (matcher.matches()) {
-							if (matcher.groupCount() == 3) {
-								// amap uses radius in meters, so do rough conversion into zoom level
-								float radius = Float.valueOf(matcher.group(3));
-								long zoom = Math.round(23. - Math.log(radius) / Math.log(2.0));
-								return new GeoParsedPoint(matcher.group(1), matcher.group(2), String.valueOf(zoom));
-							} else if (matcher.groupCount() == 2) {
-								return new GeoParsedPoint(matcher.group(1), matcher.group(2));
-							}
-						}
-					}
+                    for (String pattern : patterns) {
+                        p = Pattern.compile(pattern);
+                        matcher = p.matcher(subString);
+                        if (matcher.matches()) {
+                            if (matcher.groupCount() == 3) {
+                                // amap uses radius in meters, so do rough conversion into zoom level
+                                float radius = Float.valueOf(matcher.group(3));
+                                long zoom = Math.round(23. - Math.log(radius) / Math.log(2.0));
+                                return new GeoParsedPoint(matcher.group(1), matcher.group(2), String.valueOf(zoom));
+                            } else if (matcher.groupCount() == 2) {
+                                return new GeoParsedPoint(matcher.group(1), matcher.group(2));
+                            }
+                        }
+                    }
 				} else if (host.equals("here.com") || host.endsWith(".here.com")) { // www.here.com, share.here.com, here.com 
 					String z = String.valueOf(GeoParsedPoint.NO_ZOOM);
 					String label = null;

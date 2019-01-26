@@ -23,6 +23,7 @@ import net.osmand.plus.views.OsmandMapTileView;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class OsmEditsLayer extends OsmandMapLayer implements ContextMenuLayer.IContextMenuProvider,
 		ContextMenuLayer.IMoveObjectProvider {
 	private static final int startZoom = 10;
@@ -45,12 +46,9 @@ public class OsmEditsLayer extends OsmandMapLayer implements ContextMenuLayer.IC
 
 	@Override
 	public void initLayer(OsmandMapTileView view) {
-        OsmandMapTileView view1 = view;
-
 		poi = BitmapFactory.decodeResource(view.getResources(), R.drawable.map_pin_poi);
 		bug = poi;
 		paintIcon = new Paint();
-
 		contextMenuLayer = view.getLayerByClass(ContextMenuLayer.class);
 	}
 
@@ -148,17 +146,14 @@ public class OsmEditsLayer extends OsmandMapLayer implements ContextMenuLayer.IC
 	public boolean disableSingleTap() {
 		return false;
 	}
-
 	@Override
 	public boolean disableLongPressOnMap() {
 		return false;
 	}
-
 	@Override
 	public boolean isObjectClickable(Object o) {
 		return o instanceof OsmPoint;
 	}
-
 	@Override
 	public boolean runExclusiveAction(Object o, boolean unknownLocation) {
 		return false;
@@ -178,7 +173,6 @@ public class OsmEditsLayer extends OsmandMapLayer implements ContextMenuLayer.IC
 		}
 		return null;
 	}
-
 
 	@Override
 	public PointDescription getObjectName(Object o) {

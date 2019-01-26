@@ -169,7 +169,7 @@ public abstract class QuickSearchListFragment extends OsmAndListFragment {
 					Amenity a = (Amenity) object;
 					String poiSimpleFormat = OsmAndFormatter.getPoiStringWithoutType(a, lang, transliterate);
 					pointDescription = new PointDescription(PointDescription.POINT_TYPE_POI, poiSimpleFormat);
-					pointDescription.setIconName(QuickSearchListItem.getAmenityIconName(app, a));
+					pointDescription.setIconName(QuickSearchListItem.getAmenityIconName(a));
 					break;
 				case RECENT_OBJ:
 					HistoryEntry entry = (HistoryEntry) object;
@@ -180,7 +180,7 @@ public abstract class QuickSearchListFragment extends OsmAndListFragment {
 							object = amenity;
 							pointDescription = new PointDescription(PointDescription.POINT_TYPE_POI,
 									OsmAndFormatter.getPoiStringWithoutType(amenity, lang, transliterate));
-							pointDescription.setIconName(QuickSearchListItem.getAmenityIconName(app, amenity));
+							pointDescription.setIconName(QuickSearchListItem.getAmenityIconName(amenity));
 						}
 					} else if (pointDescription.isFavorite()) {
 						LatLon entryLatLon = new LatLon(entry.getLat(), entry.getLon());
@@ -299,7 +299,7 @@ public abstract class QuickSearchListFragment extends OsmAndListFragment {
 				try {
 					int position = getListView().getPositionForView(selected);
 					if ((position != AdapterView.INVALID_POSITION) && (position >= getListView().getHeaderViewsCount())) {
-						dialogFragment.getNavigationInfo().updateTargetDirection(listAdapter.getItem(position - getListView().getHeaderViewsCount()).getSearchResult().location, heading.floatValue());
+						dialogFragment.getNavigationInfo().updateTargetDirection(listAdapter.getItem(position - getListView().getHeaderViewsCount()).getSearchResult().location, heading);
 					}
 				} catch (Exception e) {
 					return;

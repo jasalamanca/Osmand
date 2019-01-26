@@ -10,7 +10,7 @@ import net.osmand.util.Algorithms;
 
 public class Street extends MapObject {
 
-	final List<Building> buildings = new ArrayList<>();
+	private final List<Building> buildings = new ArrayList<>();
 	private List<Street> intersectedStreets = null;
 	private final City city;
 

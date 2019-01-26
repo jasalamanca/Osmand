@@ -168,46 +168,46 @@ public class BinaryInspector {
 		}
 
 		VerboseInfo(String[] params) throws FileNotFoundException {
-			for (int i = 0; i < params.length; i++) {
-				if (params[i].equals("-vaddress")) {
+			for (String param : params) {
+				if (param.equals("-vaddress")) {
 					vaddress = true;
-				} else if (params[i].equals("-vstreets")) {
+				} else if (param.equals("-vstreets")) {
 					vstreets = true;
-				} else if (params[i].equals("-vstreetgroups")) {
+				} else if (param.equals("-vstreetgroups")) {
 					vstreetgroups = true;
-				} else if (params[i].equals("-vcities")) {
+				} else if (param.equals("-vcities")) {
 					vcities = true;
-				} else if (params[i].equals("-vcitynames")) {
+				} else if (param.equals("-vcitynames")) {
 					vcitynames = true;
-				} else if (params[i].equals("-vbuildings")) {
+				} else if (param.equals("-vbuildings")) {
 					vbuildings = true;
-				} else if (params[i].equals("-vintersections")) {
+				} else if (param.equals("-vintersections")) {
 					vintersections = true;
-				} else if (params[i].equals("-vmap")) {
+				} else if (param.equals("-vmap")) {
 					vmap = true;
-				} else if (params[i].equals("-vstats")) {
+				} else if (param.equals("-vstats")) {
 					vstats = true;
-				} else if (params[i].equals("-vrouting")) {
+				} else if (param.equals("-vrouting")) {
 					vrouting = true;
-				} else if (params[i].equals("-vmapobjects")) {
+				} else if (param.equals("-vmapobjects")) {
 					vmapObjects = true;
-				} else if (params[i].equals("-vmapcoordinates")) {
+				} else if (param.equals("-vmapcoordinates")) {
 					vmapCoordinates = true;
-				} else if (params[i].equals("-vpoi")) {
+				} else if (param.equals("-vpoi")) {
 					vpoi = true;
-				} else if (params[i].startsWith("-osm")) {
+				} else if (param.startsWith("-osm")) {
 					osm = true;
-					if (params[i].startsWith("-osm=")) {
-						osmOut = new FileOutputStream(params[i].substring(5));
+					if (param.startsWith("-osm=")) {
+						osmOut = new FileOutputStream(param.substring(5));
 					}
-				} else if (params[i].equals("-vtransport")) {
+				} else if (param.equals("-vtransport")) {
 					vtransport = true;
-				} else if (params[i].startsWith("-lang=")) {
-					lang = params[i].substring("-lang=".length());
-				} else if (params[i].startsWith("-zoom=")) {
-					zoom = Integer.parseInt(params[i].substring("-zoom=".length()));
-				} else if (params[i].startsWith("-bbox=")) {
-					String[] values = params[i].substring("-bbox=".length()).split(",");
+				} else if (param.startsWith("-lang=")) {
+					lang = param.substring("-lang=".length());
+				} else if (param.startsWith("-zoom=")) {
+					zoom = Integer.parseInt(param.substring("-zoom=".length()));
+				} else if (param.startsWith("-bbox=")) {
+					String[] values = param.substring("-bbox=".length()).split(",");
 					lonleft = Double.parseDouble(values[0]);
 					lattop = Double.parseDouble(values[1]);
 					lonright = Double.parseDouble(values[2]);
@@ -367,7 +367,7 @@ public class BinaryInspector {
 			BinaryMapIndexReader index = indexes[k];
 			RandomAccessFile raf = rafs[k];
 			for (int i = 0; i < index.getIndexes().size(); i++) {
-				if (!partSet.contains(Float.valueOf(i + 1f))) {
+				if (!partSet.contains(i + 1f)) {
 					continue;
 				}
 				list.add(i + 1f);
@@ -591,8 +591,8 @@ public class BinaryInspector {
 								}
 							}
 							if (types != null) {
-								for (int k = 0; k < types.length; k++) {
-									RouteTypeRule rr = obj.region.quickGetEncodingRule(types[k]);
+								for (int type : types) {
+									RouteTypeRule rr = obj.region.quickGetEncodingRule(type);
 									b.append(rr.getTag()).append("='").append(rr.getValue()).append("' ");
 								}
 							}
@@ -997,10 +997,10 @@ public class BinaryInspector {
 	private void printOsmRouteDetails(RouteDataObject obj, StringBuilder b) {
 		StringBuilder tags = new StringBuilder();
 		int[] types = obj.getTypes();
-		for (int j = 0; j < types.length; j++) {
-			RouteTypeRule rt = obj.region.quickGetEncodingRule(types[j]);
+		for (int type : types) {
+			RouteTypeRule rt = obj.region.quickGetEncodingRule(type);
 			if (rt == null) {
-				throw new NullPointerException("Type " + types[j] + "was not found");
+				throw new NullPointerException("Type " + type + "was not found");
 			}
 			String value = quoteName(rt.getValue());
 			tags.append("\t<tag k='").append(rt.getTag()).append("' v='").append(value).append("' />\n");
@@ -1008,12 +1008,12 @@ public class BinaryInspector {
 		TIntObjectHashMap<String> names = obj.getNames();
 		if (names != null && !names.isEmpty()) {
 			int[] keys = names.keys();
-			for (int j = 0; j < keys.length; j++) {
-				RouteTypeRule rt = obj.region.quickGetEncodingRule(keys[j]);
+			for (int key : keys) {
+				RouteTypeRule rt = obj.region.quickGetEncodingRule(key);
 				if (rt == null) {
-					throw new NullPointerException("Type " + keys[j] + "was not found");
+					throw new NullPointerException("Type " + key + "was not found");
 				}
-				String name = quoteName(names.get(keys[j]));
+				String name = quoteName(names.get(key));
 				tags.append("\t<tag k='").append(rt.getTag()).append("' v='").append(name).append("' />\n");
 			}
 		}
@@ -1039,8 +1039,8 @@ public class BinaryInspector {
 			}
 			if (obj.getPointTypes(i) != null) {
 				int[] keys = obj.getPointTypes(i);
-				for (int j = 0; j < keys.length; j++) {
-					RouteTypeRule rt = obj.region.quickGetEncodingRule(keys[j]);
+				for (int key : keys) {
+					RouteTypeRule rt = obj.region.quickGetEncodingRule(key);
 					String value = quoteName(rt.getValue());
 					tags.append("\t\t<tag k='").append(rt.getTag()).append("' v='").append(value).append("' />\n");
 				}
@@ -1083,10 +1083,10 @@ public class BinaryInspector {
 		boolean point = obj.getPointsLength() == 1;
 		StringBuilder tags = new StringBuilder();
 		int[] types = obj.getTypes();
-		for (int j = 0; j < types.length; j++) {
-			TagValuePair pair = obj.getMapIndex().decodeType(types[j]);
+		for (int type : types) {
+			TagValuePair pair = obj.getMapIndex().decodeType(type);
 			if (pair == null) {
-				throw new NullPointerException("Type " + types[j] + "was not found");
+				throw new NullPointerException("Type " + type + "was not found");
 			}
 			tags.append("\t<tag k='").append(pair.tag).append("' v='").append(quoteName(pair.value)).append("' />\n");
 		}
@@ -1103,12 +1103,12 @@ public class BinaryInspector {
 		TIntObjectHashMap<String> names = obj.getObjectNames();
 		if (names != null && !names.isEmpty()) {
 			int[] keys = names.keys();
-			for (int j = 0; j < keys.length; j++) {
-				TagValuePair pair = obj.getMapIndex().decodeType(keys[j]);
+			for (int key : keys) {
+				TagValuePair pair = obj.getMapIndex().decodeType(key);
 				if (pair == null) {
-					throw new NullPointerException("Type " + keys[j] + "was not found");
+					throw new NullPointerException("Type " + key + "was not found");
 				}
-				String name = names.get(keys[j]);
+				String name = names.get(key);
 				name = quoteName(name);
 				tags.append("\t<tag k='").append(pair.tag).append("' v='").append(name).append("' />\n");
 			}
@@ -1136,11 +1136,11 @@ public class BinaryInspector {
 			long outerId = printWay(ids, b, multipolygon ? null : tags);
 			if (multipolygon) {
 				int[][] polygonInnerCoordinates = obj.getPolygonInnerCoordinates();
-				for (int j = 0; j < polygonInnerCoordinates.length; j++) {
+				for (int[] polygonInnerCoordinate : polygonInnerCoordinates) {
 					ids.clear();
-					for (int i = 0; i < polygonInnerCoordinates[j].length; i += 2) {
-						float lon = (float) MapUtils.get31LongitudeX(polygonInnerCoordinates[j][i]);
-						float lat = (float) MapUtils.get31LatitudeY(polygonInnerCoordinates[j][i + 1]);
+					for (int i = 0; i < polygonInnerCoordinate.length; i += 2) {
+						float lon = (float) MapUtils.get31LongitudeX(polygonInnerCoordinate[i]);
+						float lat = (float) MapUtils.get31LatitudeY(polygonInnerCoordinate[i + 1]);
 						int id = OSM_ID++;
 						b.append("<node id = '" + id + "' version='1' lat='" + lat + "' lon='" + lon + "' />\n");
 						ids.add(id);
@@ -1200,7 +1200,6 @@ public class BinaryInspector {
 					route = rs.get(pnt);
 				}
 				if (route != null) {
-					//lrs.add(route.getRef() + " " + route.getName(verbose.lang));
 					lrs.add(route.getRef() + " " + route.getType());
 				}
 			}

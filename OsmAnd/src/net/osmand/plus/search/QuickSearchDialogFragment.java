@@ -2074,12 +2074,6 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 			return SearchListFragmentType.HISTORY;
 		}
 
-// --Commented out by Inspection START (26/01/19 18:29):
-//		public boolean isSelectionMode() {
-//			return selectionMode;
-//		}
-// --Commented out by Inspection STOP (26/01/19 18:29)
-
 		void setSelectionMode(boolean selectionMode, int position) {
 			this.selectionMode = selectionMode;
 			getListAdapter().setSelectionMode(selectionMode, position);

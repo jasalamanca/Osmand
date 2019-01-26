@@ -254,7 +254,6 @@ public class GpxSelectionHelper {
 		String descClr = Algorithms.colorToString(ContextCompat.getColor(app, R.color.gpx_altitude_desc));
 		String distanceClr = Algorithms.colorToString(ContextCompat.getColor(app, R.color.gpx_distance_color));
 		final float eleThreshold = 3;
-//		int t = 1;
 		for (TrkSegment r : group.track.segments) {
 			if (r.points.size() == 0) {
 				continue;
@@ -284,9 +283,6 @@ public class GpxSelectionHelper {
 				item.description = GpxUiHelper.getDescription(app, analysis, true);
 				item.analysis = analysis;
 				String name = "";
-//				if(group.track.segments.size() > 1) {
-//					name += t++ + ". ";
-//				}
 				if (!group.isSplitDistance()) {
 					name += GpxUiHelper.getColorValue(distanceClr, OsmAndFormatter.getFormattedDistance(analysis.totalDistance, app));
 				}
@@ -701,56 +697,38 @@ public class GpxSelectionHelper {
 			return group;
 		}
 
-		public String getDescription() {
-			return description;
-		}
-
 		void setDescription(String description) {
 			this.description = description;
 		}
-
 		void setName(String name) {
 			this.name = name;
 		}
-
 		public String getGpxName() {
 			return gpxName;
 		}
-
 		public String getName() {
 			return name;
 		}
-
 		public List<GpxDisplayItem> getModifiableList() {
 			return list;
 		}
-
 		public GpxDisplayItemType getType() {
 			return type;
 		}
-
 		void setType(GpxDisplayItemType type) {
 			this.type = type;
 		}
-
 		public boolean isSplitDistance() {
 			return splitDistance > 0;
 		}
-
 		public double getSplitDistance() {
 			return splitDistance;
 		}
-
 		public boolean isSplitTime() {
 			return splitTime > 0;
 		}
-
 		public int getSplitTime() {
 			return splitTime;
-		}
-
-		public String getGroupName() {
-			return name;
 		}
 
 		public void noSplit(OsmandApplication app) {

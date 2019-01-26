@@ -119,12 +119,6 @@ public abstract class DashBaseFragment extends Fragment {
 		}
 	}
 
-
-// --Commented out by Inspection START (13/01/19 17:21):
-//	public void onLocationCompassChanged(Location l, double compassValue) {
-//	}
-// --Commented out by Inspection STOP (13/01/19 17:21)
-
 	@Override
 	public void onDetach() {
 		super.onDetach();

@@ -6,21 +6,16 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 
-import net.osmand.PlatformUtil;
 import net.osmand.core.android.MapRendererView;
 import net.osmand.data.RotatedTileBox;
 import net.osmand.util.MapUtils;
-
-import org.apache.commons.logging.Log;
 
 /**
  * Thread for animated dragging.
  * Defines accelerator to stop dragging screen. 
  */
 public class AnimateDraggingMapThread {
-	
-	protected static final Log log = PlatformUtil.getLog(AnimateDraggingMapThread.class);
-	
+
 	private final static float DRAGGING_ANIMATION_TIME = 1200f;
 	private final static float ZOOM_ANIMATION_TIME = 250f;
 	private final static float ZOOM_MOVE_ANIMATION_TIME = 350f;

@@ -1,13 +1,11 @@
 package net.osmand.plus;
 
 import android.content.Context;
-import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
-import android.support.v4.content.ContextCompat;
 
 public class ContextMenuItem {
 	public static final int INVALID_ID = -1;
@@ -33,7 +31,6 @@ public class ContextMenuItem {
 	private String description;
 	private final ContextMenuAdapter.ItemClickListener itemClickListener;
 	private final ContextMenuAdapter.OnIntegerValueChangedListener integerListener;
-	private final ContextMenuAdapter.ProgressListener progressListener;
 	private final boolean hideDivider;
 	private final int minHeight;
 	private final int tag;
@@ -53,7 +50,6 @@ public class ContextMenuItem {
 							String description,
 							ContextMenuAdapter.ItemClickListener itemClickListener,
 							ContextMenuAdapter.OnIntegerValueChangedListener integerListener,
-							ContextMenuAdapter.ProgressListener progressListener,
 							boolean hideDivider,
 							int minHeight,
 							int tag) {
@@ -73,7 +69,6 @@ public class ContextMenuItem {
 		this.description = description;
 		this.itemClickListener = itemClickListener;
 		this.integerListener = integerListener;
-		this.progressListener = progressListener;
 		this.hideDivider = hideDivider;
 		this.minHeight = minHeight;
 		this.tag = tag;
@@ -83,133 +78,82 @@ public class ContextMenuItem {
 	public int getTitleId() {
 		return titleId;
 	}
-
 	public String getTitle() {
 		return title;
 	}
-
 	@DrawableRes
 	public int getIcon() {
 		return mIcon;
 	}
-
 	@ColorRes
 	public int getColorRes() {
 		return colorRes;
-	}
-
-	@ColorRes
-    private int getThemedColorRes(Context context) {
-		if (skipPaintingWithoutColor || getColorRes() != INVALID_ID) {
-			return getColorRes();
-		} else {
-			return IconsCache.getDefaultColorRes(context);
-		}
-	}
-
-	@ColorInt
-	public int getThemedColor(Context context) {
-		return ContextCompat.getColor(context, getThemedColorRes(context));
 	}
 
 	@DrawableRes
 	public int getSecondaryIcon() {
 		return secondaryIcon;
 	}
-
 	public Boolean getSelected() {
 		return selected;
 	}
-
 	public int getProgress() {
 		return progress;
 	}
-
 	@LayoutRes
 	public int getLayout() {
 		return layout;
 	}
-
 	public boolean isLoading() {
 		return loading;
 	}
-
 	public boolean isCategory() {
 		return category;
 	}
-
 	public boolean isClickable() {
 		return clickable;
 	}
-
 	public int getPos() {
 		return pos;
 	}
-
 	public String getDescription() {
 		return description;
 	}
-
 	public ContextMenuAdapter.ItemClickListener getItemClickListener() {
 		return itemClickListener;
 	}
-
-	public ContextMenuAdapter.OnIntegerValueChangedListener getIntegerListener() {
-		return integerListener;
-	}
-
-	public ContextMenuAdapter.ProgressListener getProgressListener() {
-		return progressListener;
-	}
-
+	public ContextMenuAdapter.OnIntegerValueChangedListener getIntegerListener() {return integerListener;}
 	public boolean shouldSkipPainting() {
 		return skipPaintingWithoutColor;
 	}
-
 	public boolean shouldHideDivider() {
 		return hideDivider;
 	}
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 	public void setIcon(int iconId) {
 		this.mIcon = iconId;
 	}
-
-	public void setSecondaryIcon(int secondaryIcon) {
-		this.secondaryIcon = secondaryIcon;
-	}
-
 	public void setColorRes(int colorRes) {
 		this.colorRes = colorRes;
 	}
-
 	public void setSelected(boolean selected) {
 		this.selected = selected;
 	}
-
 	public void setProgress(int progress) {
 		this.progress = progress;
-	}
-
-	public void setLoading(boolean loading) {
-		this.loading = loading;
 	}
 
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
 	public int getMinHeight() {
 		return minHeight;
 	}
-
 	public int getTag() {
 		return tag;
 	}
-
 	public static ItemBuilder createBuilder(String title) {
 		return new ItemBuilder().setTitle(title);
 	}
@@ -235,7 +179,6 @@ public class ContextMenuItem {
 		private String mDescription = null;
 		private ContextMenuAdapter.ItemClickListener mItemClickListener = null;
 		private ContextMenuAdapter.OnIntegerValueChangedListener mIntegerListener = null;
-		private ContextMenuAdapter.ProgressListener mProgressListener = null;
 		private boolean mSkipPaintingWithoutColor;
 		private boolean mHideDivider;
 		private int mMinHeight;
@@ -275,18 +218,8 @@ public class ContextMenuItem {
 			return this;
 		}
 
-		public ItemBuilder setProgress(int progress) {
-			mProgress = progress;
-			return this;
-		}
-
 		public ItemBuilder setLayout(@LayoutRes int layout) {
 			mLayout = layout;
-			return this;
-		}
-
-		public ItemBuilder setLoading(boolean loading) {
-			mLoading = loading;
 			return this;
 		}
 
@@ -315,16 +248,6 @@ public class ContextMenuItem {
 			return this;
 		}
 
-		public ItemBuilder setIntegerListener(ContextMenuAdapter.OnIntegerValueChangedListener integerListener) {
-			mIntegerListener = integerListener;
-			return this;
-		}
-
-		public ItemBuilder setProgressListener(ContextMenuAdapter.ProgressListener progressListener) {
-			mProgressListener = progressListener;
-			return this;
-		}
-
 		public ItemBuilder setSkipPaintingWithoutColor(boolean skipPaintingWithoutColor) {
 			mSkipPaintingWithoutColor = skipPaintingWithoutColor;
 			return this;
@@ -335,15 +258,6 @@ public class ContextMenuItem {
 			return this;
 		}
 
-		public ItemBuilder setMinHeight(int minHeight) {
-			this.mMinHeight = minHeight;
-			return this;
-		}
-
-		public int getTag() {
-			return mTag;
-		}
-
 		public ItemBuilder setTag(int tag) {
 			this.mTag = tag;
 			return this;
@@ -352,7 +266,7 @@ public class ContextMenuItem {
 		public ContextMenuItem createItem() {
 			return new ContextMenuItem(mTitleId, mTitle, mIcon, mColorRes, mSecondaryIcon,
 					mSelected, mProgress, mLayout, mLoading, mIsCategory, mIsClickable, mSkipPaintingWithoutColor,
-					mPosition, mDescription, mItemClickListener, mIntegerListener, mProgressListener,
+					mPosition, mDescription, mItemClickListener, mIntegerListener,
 					mHideDivider, mMinHeight, mTag);
 		}
 	}

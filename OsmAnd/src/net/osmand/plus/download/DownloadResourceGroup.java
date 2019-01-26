@@ -112,26 +112,6 @@ public class DownloadResourceGroup {
 		}
 	}
 
-	private DownloadResourceGroup getRegionGroup(WorldRegion region) {
-		DownloadResourceGroup res = null;
-		if (this.region == region) {
-			res = this;
-		} else if (groups != null) {
-			for (DownloadResourceGroup group : groups) {
-				if (group.region == region) {
-					res = group;
-					break;
-				} else {
-					res = group.getRegionGroup(region);
-					if (res != null) {
-						break;
-					}
-				}
-			}
-		}
-		return res;
-	}
-
 	void trimEmptyGroups() {
 		if(groups != null) {
 			for(DownloadResourceGroup gr : groups) {
@@ -146,10 +126,6 @@ public class DownloadResourceGroup {
 			}
 		}
 		
-	}
-	
-	private boolean isEmpty(DownloadResourceGroup subGroupById) {
-		return subGroupById == null || subGroupById.isEmpty();
 	}
 
 	void addGroup(DownloadResourceGroup g) {
@@ -294,7 +270,4 @@ public class DownloadResourceGroup {
 		return parentGroup.getUniqueId() + "#" + id;
 	}
 
-	public String getId() {
-		return id;
-	}
 }

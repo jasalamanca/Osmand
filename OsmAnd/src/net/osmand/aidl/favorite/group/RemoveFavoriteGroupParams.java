@@ -11,7 +11,7 @@ public class RemoveFavoriteGroupParams implements Parcelable {
         this.favoriteGroup = favoriteGroup;
     }
 
-    public RemoveFavoriteGroupParams(Parcel in) {
+    private RemoveFavoriteGroupParams(Parcel in) {
         readFromParcel(in);
     }
 

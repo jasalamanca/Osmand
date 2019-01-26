@@ -54,12 +54,11 @@ public class MapTileDownloader {
 	}
 
 	public void fireLoadCallback() {
-		Iterator<WeakReference<IMapDownloaderCallback>> it = callbacks.iterator();
-		while (it.hasNext()) {
-			IMapDownloaderCallback c = it.next().get();
-			if (c != null) {
-				c.tileDownloaded();
-			}
-		}
+        for (WeakReference<IMapDownloaderCallback> callback : callbacks) {
+            IMapDownloaderCallback c = callback.get();
+            if (c != null) {
+                c.tileDownloaded();
+            }
+        }
 	}
 }

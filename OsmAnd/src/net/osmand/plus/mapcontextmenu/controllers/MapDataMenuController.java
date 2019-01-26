@@ -1,19 +1,15 @@
 package net.osmand.plus.mapcontextmenu.controllers;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
-import android.widget.Toast;
 
 import net.osmand.IProgress;
 import net.osmand.IndexConstants;
 import net.osmand.data.LatLon;
 import net.osmand.data.PointDescription;
 import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.LocalIndexHelper;
 import net.osmand.plus.activities.LocalIndexHelper.LocalIndexType;
@@ -253,7 +249,7 @@ public class MapDataMenuController extends MenuController {
 		if (indexItem != null) {
 			addPlainMenuItem(R.drawable.ic_action_info_dark, null, indexItem.getType().getString(getMapActivity()), false, false, null);
 			StringBuilder sizeStr = new StringBuilder();
-			sizeStr.append(indexItem.getSizeDescription(getMapActivity()));
+			sizeStr.append(indexItem.getSizeDescription());
 			if (backuped) {
 				sizeStr.append(" — ").append(LocalIndexType.DEACTIVATED.getHumanString(getMapActivity()));
 			}

@@ -72,7 +72,6 @@ public class FavoritesSearchFragment extends DialogFragment {
 	private FavoritesSearchListAdapter listAdapter;
 
 	private String searchQuery;
-	private boolean paused;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -88,7 +87,6 @@ public class FavoritesSearchFragment extends DialogFragment {
 	@SuppressLint("PrivateResource, ValidFragment")
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-		final Activity activity = getActivity();
 		final View view = inflater.inflate(R.layout.search_favs_fragment, container, false);
 
 		Bundle arguments = getArguments();
@@ -203,13 +201,11 @@ public class FavoritesSearchFragment extends DialogFragment {
 	@Override
 	public void onResume() {
 		super.onResume();
-		paused = false;
 	}
 
 	@Override
 	public void onPause() {
 		super.onPause();
-		paused = true;
 		hideProgressBar();
 	}
 
@@ -248,11 +244,6 @@ public class FavoritesSearchFragment extends DialogFragment {
 		if (searchEditText.hasFocus()) {
 			AndroidUtils.hideSoftKeyboard(getActivity(), searchEditText);
 		}
-	}
-
-	private void showProgressBar() {
-		updateClearButtonVisibility(false);
-		progressBar.setVisibility(View.VISIBLE);
 	}
 
 	private void hideProgressBar() {
@@ -352,14 +343,6 @@ public class FavoritesSearchFragment extends DialogFragment {
 				}
 			});
 			notifyDataSetChanged();
-		}
-
-		public LatLon getLocation() {
-			return location;
-		}
-
-		public void setLocation(LatLon location) {
-			this.location = location;
 		}
 
 		@Nullable

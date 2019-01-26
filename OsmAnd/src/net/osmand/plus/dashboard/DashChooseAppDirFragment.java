@@ -48,7 +48,6 @@ import gnu.trove.list.array.TIntArrayList;
 
 public class DashChooseAppDirFragment {
 	public static class ChooseAppDirFragment {
-		// --Commented out by Inspection (23/01/19 22:27):public static final int VERSION_DEFAULTLOCATION_CHANGED = 19;
 		private TextView locationPath;
 		private TextView locationDesc;
 		final MessageFormat formatGb = new MessageFormat("{0, number,#.##} GB", Locale.US);
@@ -62,18 +61,10 @@ public class DashChooseAppDirFragment {
 		private File currentAppFile;
 		private OsmandSettings settings;
 		private final Activity activity;
-		private Fragment fragment;
 		private Dialog dlg;
 
 		private static int typeTemp = -1;
 		private static String selectePathTemp;
-
-// --Commented out by Inspection START (23/01/19 22:28):
-//		public ChooseAppDirFragment(Activity activity, Fragment f) {
-//			this.activity = activity;
-//			this.fragment = f;
-//		}
-// --Commented out by Inspection STOP (23/01/19 22:28)
 
 		public ChooseAppDirFragment(Activity activity, Dialog dlg) {
 			this.activity = activity;
@@ -338,7 +329,6 @@ public class DashChooseAppDirFragment {
 				}
 			});
 			confirmBtn.setOnClickListener(getConfirmListener());
-
 		}
 
 		OnClickListener getConfirmListener() {
@@ -353,10 +343,6 @@ public class DashChooseAppDirFragment {
 						if (changed) {
 							successCallback();
 							reloadData();
-						}
-						if (fragment != null && activity instanceof FragmentActivity) {
-							((FragmentActivity) activity).getSupportFragmentManager().beginTransaction()
-									.remove(fragment).commit();
 						}
 					} else {
 						Toast.makeText(activity, R.string.specified_directiory_not_writeable,
@@ -383,46 +369,9 @@ public class DashChooseAppDirFragment {
 			return (OsmandApplication) activity.getApplication();
 		}
 
-// --Commented out by Inspection START (23/01/19 22:27):
-//		public static HashSet<String> getExternalMounts() {
-//			final HashSet<String> out = new HashSet<>();
-//			String reg = "(?i).*vold.*(vfat|ntfs|exfat|fat32|ext3|ext4).*rw.*";
-//			StringBuilder s = new StringBuilder();
-//			try {
-//				final Process process = new ProcessBuilder().command("mount").redirectErrorStream(true).start();
-//				process.waitFor();
-//				final InputStream is = process.getInputStream();
-//				final byte[] buffer = new byte[1024];
-//				while (is.read(buffer) != -1) {
-//					s.append(new String(buffer));
-//				}
-//				is.close();
-//			} catch (final Exception e) {
-//				e.printStackTrace();
-//			}
-//
-//			// parse output
-//			final String[] lines = s.toString().split("\n");
-//			for (String line : lines) {
-//				if (!line.toLowerCase(Locale.US).contains("asec")) {
-//					if (line.matches(reg)) {
-//						String[] parts = line.split(" ");
-//						for (String part : parts) {
-//							if (part.startsWith("/"))
-//								if (!part.toLowerCase(Locale.US).contains("vold"))
-//									out.add(part);
-//						}
-//					}
-//				}
-//			}
-//			return out;
-//		}
-// --Commented out by Inspection STOP (23/01/19 22:27)
-
 		public void setDialog(Dialog dlg) {
 			this.dlg = dlg;
 		}
-
 	}
 	
 	public static class MoveFilesToDifferentDirectory extends AsyncTask<Void, Void, Boolean> {

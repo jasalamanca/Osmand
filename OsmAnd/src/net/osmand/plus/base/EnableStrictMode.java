@@ -6,7 +6,7 @@ public class EnableStrictMode {
 
 	public EnableStrictMode(){
 		StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().
-				penaltyLog()./*penaltyDeath().*/build());
-		StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog()./*penaltyDeath().*/build());
+				penaltyLog().build());
+		StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
 	}
 }

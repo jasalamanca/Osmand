@@ -1,6 +1,5 @@
 package net.osmand.plus;
 
-import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.support.annotation.ColorInt;
@@ -76,12 +75,5 @@ public class IconsCache {
 
 	public Drawable getIcon(@DrawableRes int id, boolean light) {
 		return getDrawable(id, light ? R.color.icon_color : 0);
-	}
-
-	@ColorRes
-	public static int getDefaultColorRes(Context context) {
-		final OsmandApplication app = (OsmandApplication) context.getApplicationContext();
-		boolean light = app.getSettings().isLightContent();
-		return light ? R.color.icon_color : R.color.color_white;
 	}
 }

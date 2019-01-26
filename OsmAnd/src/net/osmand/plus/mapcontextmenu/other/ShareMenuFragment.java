@@ -41,7 +41,7 @@ public class ShareMenuFragment extends MenuBottomSheetDialogFragment implements 
 
 	@Nullable
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		final int themeRes = nightMode ? R.style.OsmandDarkTheme : R.style.OsmandLightTheme;
 		final View view = View.inflate(new ContextThemeWrapper(getContext(), themeRes),
 				R.layout.share_menu_fragment, container);

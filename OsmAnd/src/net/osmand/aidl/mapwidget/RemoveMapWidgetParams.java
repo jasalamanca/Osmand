@@ -10,7 +10,7 @@ public class RemoveMapWidgetParams implements Parcelable {
 		this.id = id;
 	}
 
-	public RemoveMapWidgetParams(Parcel in) {
+	private RemoveMapWidgetParams(Parcel in) {
 		readFromParcel(in);
 	}
 

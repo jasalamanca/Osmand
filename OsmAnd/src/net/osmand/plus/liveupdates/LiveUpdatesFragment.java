@@ -606,8 +606,6 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 	static class LoadLocalIndexTask
 			extends AsyncTask<Void, LocalIndexInfo, List<LocalIndexInfo>>
 			implements AbstractLoadLocalIndexTask {
-
-		//private List<LocalIndexInfo> result;
 		private final LocalIndexesAdapter adapter;
 		private final LiveUpdatesFragment fragment;
 		private final LocalIndexHelper helper;

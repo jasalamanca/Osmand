@@ -1,10 +1,9 @@
 package net.osmand.plus.render;
 
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.lang.reflect.Field;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 
 import net.osmand.PlatformUtil;
 import net.osmand.plus.R;
@@ -12,10 +11,11 @@ import net.osmand.plus.R.drawable;
 
 import org.apache.commons.logging.Log;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.lang.reflect.Field;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class RenderingIcons {
 	private static final Log log = PlatformUtil.getLog(RenderingIcons.class);
@@ -24,12 +24,10 @@ public class RenderingIcons {
 	private static final Map<String, Integer> smallIcons = new LinkedHashMap<>();
 	private static final Map<String, Integer> bigIcons = new LinkedHashMap<>();
 	private static final Map<String, Bitmap> iconsBmp = new LinkedHashMap<>();
-//	private static DisplayMetrics dm;
-	
+
 	public static boolean containsSmallIcon(String s){
 		return smallIcons.containsKey(s);
 	}
-	
 	public static boolean containsBigIcon(String s){
 		return bigIcons.containsKey(s);
 	}
@@ -43,7 +41,7 @@ public class RenderingIcons {
 			return null;
 			
 		try {
-			final InputStream inputStream = ctx.getResources().openRawResource(resId.intValue());
+			final InputStream inputStream = ctx.getResources().openRawResource(resId);
 			final ByteArrayOutputStream proxyOutputStream = new ByteArrayOutputStream(1024);
             final byte[] ioBuffer = new byte[1024];
             int bytesRead;
@@ -53,12 +51,6 @@ public class RenderingIcons {
 			inputStream.close();
 			final byte[] bitmapData = proxyOutputStream.toByteArray();
 			log.info("Icon data length is " + bitmapData.length); //$NON-NLS-1$
-//			Bitmap dm = android.graphics.BitmapFactory.decodeByteArray(bitmapData, 0, bitmapData.length) ;
-//			if(dm != null){
-//				System.out.println("IC " + s +" " + dm.getHeight() + "x" + dm.getWidth());
-//			}
-			//if(android.graphics.BitmapFactory.decodeByteArray(bitmapData, 0, bitmapData.length) == null)
-			//	throw new Exception();
             return bitmapData;
 		} catch(Throwable e) {
 			log.error("Failed to get byte stream from icon", e); //$NON-NLS-1$
@@ -100,10 +92,6 @@ public class RenderingIcons {
 		}
 		return iconsBmp.get(s);
 	}
-	
-	public static Integer getResId(String id) {
-		return id.startsWith("h_") ? shaderIcons.get(id.substring(2)) : smallIcons.get(id);
-	}
 
 	static {
 		initIcons();
@@ -127,5 +115,4 @@ public class RenderingIcons {
 			}
 		}
 	}
-	
 }

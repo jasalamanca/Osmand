@@ -6,7 +6,6 @@ import android.view.MotionEvent;
 import android.widget.ScrollView;
 
 public class LockableScrollView extends ScrollView {
-
 	// true if we can scroll (not locked)
 	// false if we cannot scroll (locked)
 	private boolean mScrollable = true;
@@ -14,17 +13,12 @@ public class LockableScrollView extends ScrollView {
 	public LockableScrollView(Context context) {
 		super(context);
 	}
-
 	public LockableScrollView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 	}
 
 	public void setScrollingEnabled(boolean enabled) {
 		mScrollable = enabled;
-	}
-
-	public boolean isScrollable() {
-		return mScrollable;
 	}
 
 	@Override

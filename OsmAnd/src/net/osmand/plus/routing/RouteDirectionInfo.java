@@ -15,18 +15,14 @@ public class RouteDirectionInfo {
 	private String descriptionRoute = ""; //$NON-NLS-1$
 	// Speed after the action till next turn
 	private float averageSpeed;
-	
 	private String ref;
-	
 	private String streetName;
-	
 	private String destinationName;
 
 	public String getDestinationName() {
 		return destinationName;
 	}
-
-	public void setDestinationName(String destinationName) {
+	void setDestinationName(String destinationName) {
 		this.destinationName = destinationName;
 	}
 
@@ -35,15 +31,8 @@ public class RouteDirectionInfo {
 		this.averageSpeed = averageSpeed == 0 ? 1 : averageSpeed;
 		this.turnType = turnType;
 	}
-	
-	public String getDescriptionRoute(OsmandApplication ctx) {
-		if (!descriptionRoute.endsWith(OsmAndFormatter.getFormattedDistance(distance, ctx))) {
-			descriptionRoute += " " + OsmAndFormatter.getFormattedDistance(distance, ctx);
-		}
-		return descriptionRoute.trim();
-	}
-	
-	public String getDescriptionRoute(OsmandApplication ctx, int collectedDistance) {
+
+	String getDescriptionRoute(OsmandApplication ctx, int collectedDistance) {
 		if (!descriptionRoute.endsWith(OsmAndFormatter.getFormattedDistance(collectedDistance, ctx))) {
 			descriptionRoute += " " + OsmAndFormatter.getFormattedDistance(collectedDistance, ctx);
 		}
@@ -66,19 +55,19 @@ public class RouteDirectionInfo {
 		return streetName;
 	}
 
-	public void setStreetName(String streetName) {
+	void setStreetName(String streetName) {
 		this.streetName = streetName;
 	}
 	
-	public void setDescriptionRoute(String descriptionRoute) {
+	void setDescriptionRoute(String descriptionRoute) {
 		this.descriptionRoute = descriptionRoute;
 	}
 
-	public float getAverageSpeed() {
+	float getAverageSpeed() {
 		return averageSpeed;
 	}
 
-	public void setAverageSpeed(float averageSpeed) {
+	void setAverageSpeed(float averageSpeed) {
 		this.averageSpeed = averageSpeed == 0 ? 1 : averageSpeed;
 	}
 
@@ -95,7 +84,7 @@ public class RouteDirectionInfo {
 
 	// calculated vars
 	// after action (excluding expectedTime)
-	public int afterLeftTime;
+	int afterLeftTime;
 	// distance after action (for i.e. after turn to next turn)
 	public int distance;
 

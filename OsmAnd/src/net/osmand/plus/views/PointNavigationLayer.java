@@ -25,21 +25,15 @@ import java.util.List;
 
 public class PointNavigationLayer extends OsmandMapLayer implements
 		IContextMenuProvider, ContextMenuLayer.IMoveObjectProvider {
-	protected final static int DIST_TO_SHOW = 80;
-
 	private Paint mBitmapPaint;
-
 	private OsmandMapTileView mView;
-	private float[] mCalculations = new float[2];
 
 	private Bitmap mStartPoint;
 	private Bitmap mTargetPoint;
 	private Bitmap mIntermediatePoint;
-
 	private Paint mTextPaint;
 
 	private final MapActivity map;
-
 	private ContextMenuLayer contextMenuLayer;
 
 	public PointNavigationLayer(MapActivity map) {
@@ -151,7 +145,6 @@ public class PointNavigationLayer extends OsmandMapLayer implements
 		return tb.containsLatLon(p.getLatitude(), p.getLongitude());
 	}
 
-
 	@Override
 	public void destroyLayer() {
 
@@ -161,22 +154,18 @@ public class PointNavigationLayer extends OsmandMapLayer implements
 	public boolean drawInScreenPixels() {
 		return false;
 	}
-
 	@Override
 	public boolean disableSingleTap() {
 		return false;
 	}
-
 	@Override
 	public boolean disableLongPressOnMap() {
 		return false;
 	}
-
 	@Override
 	public boolean isObjectClickable(Object o) {
 		return false;
 	}
-
 	@Override
 	public boolean runExclusiveAction(Object o, boolean unknownLocation) {
 		return false;

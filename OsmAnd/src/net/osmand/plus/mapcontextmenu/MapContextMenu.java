@@ -133,7 +133,7 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 	}
 
 	@Override
-	public MapActivity getMapActivity() {
+    protected MapActivity getMapActivity() {
 		return mapActivity;
 	}
 

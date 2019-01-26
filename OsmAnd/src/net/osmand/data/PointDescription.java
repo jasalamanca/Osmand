@@ -42,9 +42,6 @@ public class PointDescription {
 	public static final String POINT_TYPE_TRANSPORT_ROUTE = "transport_route";
 	public static final String POINT_TYPE_TRANSPORT_STOP = "transport_stop";
 
-
-	public static final PointDescription LOCATION_POINT = new PointDescription(POINT_TYPE_LOCATION, "");
-
 	public PointDescription(double lat, double lon) {
 		this(POINT_TYPE_LOCATION, "");
 		this.lat = lat;
@@ -82,16 +79,13 @@ public class PointDescription {
 	public String getTypeName() {
 		return typeName;
 	}
-
 	@Nullable
 	public String getIconName() {
 		return iconName;
 	}
-
 	public void setIconName(String iconName) {
 		this.iconName = iconName;
 	}
-
 	@NonNull
 	public String getName() {
 		return name;
@@ -114,29 +108,6 @@ public class PointDescription {
 			}
 		}
 		return name;
-	}
-	
-	public String getFullPlainName(Context ctx) {
-		if (isLocation()) {
-			return getLocationName(ctx, lat, lon, false);
-		} else {
-			String typeName = this.typeName;
-			if (isFavorite()) {
-				typeName = ctx.getString(R.string.favorite);
-			} else if (isPoi()) {
-				typeName = ctx.getString(R.string.poi);
-			} else if (isWpt()) {
-				return ctx.getString(R.string.gpx_wpt);
-			}
-			if (!Algorithms.isEmpty(typeName)) {
-				if (Algorithms.isEmpty(name)) {
-					return typeName;
-				} else {
-					return typeName.trim() + ": " + name;
-				}
-			}
-			return name;
-		}
 	}
 
 	public static String getLocationName(Context ctx, double lat, double lon, boolean sh) {
@@ -195,39 +166,30 @@ public class PointDescription {
 	public boolean contextMenuDisabled() {
 		return POINT_TYPE_WORLD_REGION_SHOW_ON_MAP.equals(type);
 	}
-
 	public boolean isLocation() {
 		return POINT_TYPE_LOCATION.equals(type);
 	}
-	
 	public boolean isAddress() {
 		return POINT_TYPE_ADDRESS.equals(type);
 	}
-	
 	public boolean isWpt() {
 		return POINT_TYPE_WPT.equals(type);
 	}
-
 	public boolean isRte() {
 		return POINT_TYPE_RTE.equals(type);
 	}
-	
 	public boolean isPoi() {
 		return POINT_TYPE_POI.equals(type);
 	}
-
 	public boolean isFavorite() {
 		return POINT_TYPE_FAVORITE.equals(type);
 	}
-
 	public boolean isDestination() {
 		return POINT_TYPE_TARGET.equals(type);
 	}
-
 	public boolean isMapMarker() {
 		return POINT_TYPE_MAP_MARKER.equals(type);
 	}
-
 	public boolean isMyLocation() {
 		return POINT_TYPE_MY_LOCATION.equals(type);
 	}
@@ -261,11 +223,9 @@ public class PointDescription {
 		return false;
 	}
 	
-	
 	public static String getSimpleName(LocationPoint o, Context ctx) {
 		PointDescription pd = o.getPointDescription(ctx);
 		return pd.getSimpleName(ctx, true);
-//		return o.getPointDescription(ctx).getFullPlainName(ctx, o.getLatitude(), o.getLongitude());
 	}
 
 	public boolean isSearchingAddress(Context ctx) {

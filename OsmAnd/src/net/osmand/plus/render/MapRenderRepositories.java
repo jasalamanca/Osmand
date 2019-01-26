@@ -276,11 +276,11 @@ public class MapRenderRepositories {
 		for (String mapName : files.keySet()) {
 			BinaryMapIndexReader fr = files.get(mapName);
 			if (fr != null && (fr.containsMapData(leftX, topY, rightX, bottomY, zoom) || 
-					fr.containsRouteData(leftX, topY, rightX, bottomY, zoom))) {
+					fr.containsRouteData(leftX, topY, rightX, bottomY))) {
 				if (!nativeFiles.contains(mapName)) {
 					long time = System.currentTimeMillis();
 					nativeFiles.add(mapName);
-					if (!library.initMapFile(fr.getFile().getAbsolutePath(), false)) {//useLive)) {
+					if (!library.initMapFile(fr.getFile().getAbsolutePath(), false)) {
 						continue;
 					}
 					log.debug("Native resource " + mapName + " initialized " + (System.currentTimeMillis() - time) + " ms"); //$NON-NLS-1$ //$NON-NLS-2$
@@ -315,10 +315,9 @@ public class MapRenderRepositories {
 						}
 						int[] coordinantes = new int[r.getPointsLength() * 2];
 						int[] roTypes = r.getTypes();
-						for(int k = 0; k < roTypes.length; k++) {
-							int type = roTypes[k];
-							registerMissingType(nmi, r, type);
-						}
+                        for (int type : roTypes) {
+                            registerMissingType(nmi, r, type);
+                        }
 						for(int k = 0; k < coordinantes.length/2; k++ ) {
 							coordinantes[2 * k] = r.getPoint31XTile(k);
 							coordinantes[2 * k + 1] = r.getPoint31YTile(k);
@@ -755,7 +754,7 @@ public class MapRenderRepositories {
 				log.info("Debug :" + renderingReq != null);				
 			}
 			String renderingDebugInfo = currentRenderingContext.renderingDebugInfo;
-			currentRenderingContext.ended = true;
+//			currentRenderingContext.ended = true;
 			if (checkWhetherInterrupted()) {
 				// revert if it was interrupted 
 				// (be smart a bit do not revert if road already drawn) 
@@ -814,18 +813,16 @@ public class MapRenderRepositories {
 					Toast.makeText(context, context.getString(R.string.rendering_out_of_memory) + s , Toast.LENGTH_SHORT).show();
 				}
 			});
-		} finally {
-			if(currentRenderingContext != null) {
-				currentRenderingContext.ended = true;
-			}
+//		} finally {
+//			if(currentRenderingContext != null) {
+//				currentRenderingContext.ended = true;
+//			}
 		}
-
 	}
 
 	public Bitmap getBitmap() {
 		return bmp;
 	}
-
 	public Bitmap getPrevBitmap() {
 		return prevBmpLocation == null ? null : prevBmp ;
 	}

@@ -9,7 +9,6 @@ import net.osmand.IndexConstants;
 import net.osmand.PlatformUtil;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
-import net.osmand.render.RenderingRuleProperty;
 import net.osmand.render.RenderingRulesStorage;
 import net.osmand.render.RenderingRulesStorage.RenderingRulesStorageResolver;
 import net.osmand.util.Algorithms;
@@ -130,7 +129,7 @@ public class RendererRegistry {
 
 				@Override
 				public RenderingRulesStorage resolve(String name, RenderingRulesStorageResolver ref) throws XmlPullParserException {
-					// reload every time to propogate rendering constants
+					// reload every time to propagate rendering constants
 					if (loadedRenderers.containsKey(name)) {
 						log.warn("Circular dependencies found " + name); //$NON-NLS-1$
 					}
@@ -258,20 +257,4 @@ public class RendererRegistry {
     public void setRendererLoadedEventListener(IRendererLoadedEventListener listener) {
         rendererLoadedEventListener = listener;
     }
-
-    public IRendererLoadedEventListener getRendererLoadedEventListener() {
-        return rendererLoadedEventListener;
-    }
-
-	public RenderingRuleProperty getCustomRenderingRuleProperty(String attrName) {
-		RenderingRulesStorage renderer = getCurrentSelectedRenderer();
-		if (renderer != null) {
-			for (RenderingRuleProperty p : renderer.PROPS.getCustomRules()) {
-				if (p.getAttrName().equals(attrName)) {
-					return p;
-				}
-			}
-		}
-		return null;
-	}
 }

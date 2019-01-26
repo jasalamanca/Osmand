@@ -16,7 +16,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import net.osmand.AndroidUtils;
-import net.osmand.PlatformUtil;
 import net.osmand.data.Amenity;
 import net.osmand.osm.PoiType;
 import net.osmand.osm.edit.Node;
@@ -40,13 +39,10 @@ import net.osmand.plus.osmedit.OsmPoint.Action;
 import net.osmand.plus.views.OsmandMapTileView;
 import net.osmand.util.Algorithms;
 
-import org.apache.commons.logging.Log;
-
 import java.util.List;
 
 
 public class OsmEditingPlugin extends OsmandPlugin {
-	private static final Log LOG = PlatformUtil.getLog(OsmEditingPlugin.class);
 	private static final String ID = "osm.editing";
 	private final OsmandSettings settings;
 	private final OsmandApplication app;
@@ -97,11 +93,10 @@ public class OsmEditingPlugin extends OsmandPlugin {
 
 	public OsmBugsLocalUtil getOsmNotesLocalUtil() {
 		if (localNotesUtil == null) {
-			localNotesUtil = new OsmBugsLocalUtil(app, getDBBug());
+			localNotesUtil = new OsmBugsLocalUtil(getDBBug());
 		}
 		return localNotesUtil;
 	}
-
 
 	public OsmBugsDbHelper getDBBug() {
 		if (dbbug == null) {
@@ -110,10 +105,8 @@ public class OsmEditingPlugin extends OsmandPlugin {
 		return dbbug;
 	}
 
-
 	private OsmBugsLayer osmBugsLayer;
 	private OsmEditsLayer osmEditsLayer;
-//	private EditingPOIDialogProvider poiActions;
 
 	@Override
 	public void updateLayers(OsmandMapTileView mapView, MapActivity activity) {
@@ -142,7 +135,7 @@ public class OsmEditingPlugin extends OsmandPlugin {
 	}
 
 	@Override
-	public void registerLayers(MapActivity activity) {
+    protected void registerLayers(MapActivity activity) {
 		osmBugsLayer = new OsmBugsLayer(activity, this);
 		osmEditsLayer = new OsmEditsLayer(activity, this);
 	}
@@ -178,8 +171,7 @@ public class OsmEditingPlugin extends OsmandPlugin {
 				if (resId == R.string.context_menu_item_create_poi) {
 					//getPoiActions(mapActivity).showCreateDialog(latitude, longitude);
 					EditPoiDialogFragment editPoiDialogFragment =
-							EditPoiDialogFragment.createAddPoiInstance(latitude, longitude,
-									mapActivity.getMyApplication());
+							EditPoiDialogFragment.createAddPoiInstance(latitude, longitude);
 					editPoiDialogFragment.show(mapActivity.getSupportFragmentManager(),
 							EditPoiDialogFragment.TAG);
 				} else if (resId == R.string.context_menu_item_open_note) {

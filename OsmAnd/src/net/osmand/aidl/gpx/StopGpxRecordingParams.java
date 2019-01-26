@@ -9,7 +9,7 @@ public class StopGpxRecordingParams implements Parcelable {
 
 	}
 
-	public StopGpxRecordingParams(Parcel in) {
+	private StopGpxRecordingParams(Parcel in) {
 		readFromParcel(in);
 	}
 

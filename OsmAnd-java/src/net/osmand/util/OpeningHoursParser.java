@@ -957,23 +957,23 @@ public class OpeningHoursParser {
 		private String toRuleString(String[] dayNames, String[] monthNames) {
 			StringBuilder b = new StringBuilder(25);
 			boolean allMonths = true;
-			for (int i = 0; i < months.length; i++) {
-				if (!months[i]) {
-					allMonths = false;
-					break;
-				}
-			}
+            for (boolean month : months) {
+                if (!month) {
+                    allMonths = false;
+                    break;
+                }
+            }
 			// Month
 			if (!allMonths) {
 				addArray(months, monthNames, b);
 			}
 			boolean allDays = true;
-			for (int i = 0; i < dayMonths.length; i++) {
-				if (!dayMonths[i]) {
-					allDays = false;
-					break;
-				}
-			}
+            for (boolean dayMonth : dayMonths) {
+                if (!dayMonth) {
+                    allDays = false;
+                    break;
+                }
+            }
 			if (!allDays) {
 				addArray(dayMonths, null, b);
 			}

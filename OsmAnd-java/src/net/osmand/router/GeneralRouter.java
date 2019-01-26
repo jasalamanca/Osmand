@@ -11,7 +11,6 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -21,6 +20,7 @@ import java.util.Set;
 
 import gnu.trove.set.hash.TLongHashSet;
 
+@SuppressWarnings("unused") //NOTE jsala se llaman desde C++
 public class GeneralRouter implements VehicleRouter {
 	
 	private static final float CAR_SHORTEST_DEFAULT_SPEED = 55/3.6f;
@@ -93,9 +93,7 @@ public class GeneralRouter implements VehicleRouter {
 	public GeneralRouter(GeneralRouterProfile profile, Map<String, String> attributes) {
 		this.profile = profile;
 		this.attributes = new LinkedHashMap<>();
-		Iterator<Entry<String, String>> e = attributes.entrySet().iterator();
-		while(e.hasNext()){
-			Entry<String, String> next = e.next();
+		for (Entry<String, String> next : attributes.entrySet()) {
 			addAttribute(next.getKey(), next.getValue());
 		}
 		objectAttributes = new RouteAttributeContext[RouteDataObjectAttribute.values().length];
@@ -112,9 +110,7 @@ public class GeneralRouter implements VehicleRouter {
 	private GeneralRouter(GeneralRouter parent, Map<String, String> params) {
 		this.profile = parent.profile;
 		this.attributes = new LinkedHashMap<>();
-		Iterator<Entry<String, String>> e = parent.attributes.entrySet().iterator();
-		while (e.hasNext()) {
-			Entry<String, String> next = e.next();
+		for (Entry<String, String> next : parent.attributes.entrySet()) {
 			addAttribute(next.getKey(), next.getValue());
 		}
 		// do not copy, keep linked
@@ -385,19 +381,7 @@ public class GeneralRouter implements VehicleRouter {
 		if(prevTs != ts) {
 			return Math.abs(ts - prevTs) / 2;
 		}
-//		int[] pt = prev.getRoad().getPointTypes(prevSegmentEnd);
-//		if(pt != null) {
-//			RouteRegion reg = prev.getRoad().region;
-//			for (int i = 0; i < pt.length; i++) {
-//				RouteTypeRule r = reg.quickGetEncodingRule(pt[i]);
-//				if ("highway".equals(r.getTag()) && "traffic_signals".equals(r.getValue())) {
-//					// traffic signals don't add turn info
-//					return 0;
-//				}
-//			}
-//		}
-		
-		
+
 		if(segment.getRoad().roundabout() && !prev.getRoad().roundabout()) {
 			double rt = getRoundaboutTurn();
 			if(rt > 0) {
@@ -419,7 +403,6 @@ public class GeneralRouter implements VehicleRouter {
 		return 0;
 	}
 	
-
 	@Override
 	public boolean containsAttribute(String attribute) {
 		return attributes.containsKey(attribute);
@@ -443,8 +426,6 @@ public class GeneralRouter implements VehicleRouter {
 		}
 		return Float.parseFloat(t);
 	}
-	
-	
 	
 	public static class RoutingParameter {
 		private String id;
@@ -482,7 +463,6 @@ public class GeneralRouter implements VehicleRouter {
 			return defaultBoolean;
 		}
 	}
-	
 	
 	private class ParameterContext {
 		private Map<String, String> vars;
@@ -583,15 +563,7 @@ public class GeneralRouter implements VehicleRouter {
 			}
 			return ((Number)o).intValue();
 		}
-		
-		public int evaluateInt(RouteRegion region, int[] types, int defValue) {
-			Object o = evaluate(convert(region, types));
-			if(!(o instanceof Number)){
-				return defValue;
-			}
-			return ((Number)o).intValue();
-		}
-		
+
 		float evaluateFloat(RouteDataObject ro, float defValue) {
 			Object o = evaluate(ro);
 			if(!(o instanceof Number)) {
@@ -615,12 +587,12 @@ public class GeneralRouter implements VehicleRouter {
 				map = new HashMap<>();
 				regionConvert.put(reg, map);
 			}
-			for(int k = 0; k < types.length; k++) {
-				Integer nid = map.get(types[k]);
-				if(nid == null){
-					RouteTypeRule r = reg.quickGetEncodingRule(types[k]);
+			for (int type : types) {
+				Integer nid = map.get(type);
+				if (nid == null) {
+					RouteTypeRule r = reg.quickGetEncodingRule(type);
 					nid = registerTagValueAttribute(r.getTag(), r.getValue());
-					map.put(types[k], nid);
+					map.put(type, nid);
 				}
 				b.set(nid);
 			}
@@ -705,14 +677,13 @@ public class GeneralRouter implements VehicleRouter {
 		}
 		
 	}
-	
 
 	public class RouteAttributeEvalRule {
 		final List<String> parameters = new ArrayList<>() ;
 		final List<String> tagValueCondDefTag = new ArrayList<>();
 		final List<String> tagValueCondDefValue = new ArrayList<>();
 		final List<Boolean> tagValueCondDefNot = new ArrayList<>();
-		
+
 		String selectValueDef = null;
 		Object selectValue = null;
 		String selectType = null;
@@ -744,7 +715,7 @@ public class GeneralRouter implements VehicleRouter {
 		public boolean[] getTagValueCondDefNot() {
 			boolean[] r = new boolean[tagValueCondDefNot.size()];
 			for (int i = 0; i < r.length; i++) {
-				r[i] = tagValueCondDefNot.get(i).booleanValue();
+				r[i] = tagValueCondDefNot.get(i);
 			}
 			return r;
 		}
@@ -930,16 +901,13 @@ public class GeneralRouter implements VehicleRouter {
 			}
 			return true;
 		}
-		
 	}
-
 
 	public void printRules(PrintStream out) {
 		for(int i = 0; i < RouteDataObjectAttribute.values().length ; i++) {
 			out.println(RouteDataObjectAttribute.values()[i]);
 			objectAttributes[i].printRules(out);
 		}
-		
 	}
 
 	public void addImpassableRoads(Set<Long> impassableRoads) {
@@ -951,4 +919,3 @@ public class GeneralRouter implements VehicleRouter {
 		}		
 	}
 }
-

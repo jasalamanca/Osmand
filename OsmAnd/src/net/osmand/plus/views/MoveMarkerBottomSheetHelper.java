@@ -48,7 +48,6 @@ class MoveMarkerBottomSheetHelper {
 		PointF point = mContextMenuLayer.getMovableCenterPoint(rt);
 		double lat = rt.getLatFromPixel(point.x, point.y);
 		double lon = rt.getLonFromPixel(point.x, point.y);
-		//mDescription.setText(mContext.getString(R.string.lat_lon_pattern, lat, lon));
 		mDescription.setText(PointDescription.getLocationName(mContext, lat, lon, true));
 	}
 	
@@ -67,7 +66,7 @@ class MoveMarkerBottomSheetHelper {
 		mView.setVisibility(View.GONE);
 	}
 
-	public void enterApplyPositionMode() {
+	void enterApplyPositionMode() {
 		if (!applyingPositionMode) {
 			applyingPositionMode = true;
 			mView.findViewById(R.id.apply_button).setEnabled(false);

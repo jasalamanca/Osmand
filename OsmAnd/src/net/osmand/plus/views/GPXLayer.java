@@ -248,9 +248,7 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 					rc.setDensityValue((float) tileBox.getMapDensity());
 					cachedColor = req.getIntPropertyValue(rrs.PROPS.R_COLOR);
 					osmandRenderer.updatePaint(req, paint, 0, false, rc);
-                    boolean isPaint2 = osmandRenderer.updatePaint(req, paint2, 1, false, rc);
-                    boolean isPaint_1 = osmandRenderer.updatePaint(req, paint_1, -1, false, rc);
-                    boolean isShadowPaint = req.isSpecified(rrs.PROPS.R_SHADOW_RADIUS);
+					boolean isShadowPaint = req.isSpecified(rrs.PROPS.R_SHADOW_RADIUS);
 					if (isShadowPaint) {
 						ColorFilter cf = new PorterDuffColorFilter(req.getIntPropertyValue(rrs.PROPS.R_SHADOW_COLOR),
 								Mode.SRC_IN);
@@ -336,8 +334,6 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
                             y - nmHeight / 2 - 2 * (float) Math.ceil(tileBox.getDensity()));
                     canvas.drawRoundRect(rect, 0, 0, paintInnerRect);
 					canvas.drawRoundRect(rect, 0, 0, paintOuterRect);
-//					canvas.drawRect(rect, paintInnerRect);
-//					canvas.drawRect(rect, paintOuterRect);
 					canvas.drawText(nm, x, y + nmHeight / 2, paintTextIcon);
 				}
 			}
@@ -538,7 +534,6 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 		int ey = (int) point.y;
 		for (SelectedGpxFile g : selectedGpxHelper.getSelectedGPXFiles()) {
 			List<WptPt> pts = getListStarPoints(g);
-			// int fcolor = g.getColor() == 0 ? clr : g.getColor();
 			for (WptPt n : pts) {
 				int x = (int) tb.getPixXFromLatLon(n.lat, n.lon);
 				int y = (int) tb.getPixYFromLatLon(n.lat, n.lon);
@@ -607,29 +602,18 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 	public boolean onLongPressEvent(PointF point, RotatedTileBox tileBox) {
 		return false;
 	}
-
 	@Override
 	public LatLon getTextLocation(WptPt o) {
 		return new LatLon(o.lat, o.lon);
 	}
-
 	@Override
 	public int getTextShift(WptPt o, RotatedTileBox rb) {
 		return (int) (16 * rb.getDensity());
 	}
-
 	@Override
 	public String getText(WptPt o) {
 		return o.name;
 	}
-
-
-	public void setGivenGpx(GPXFile gpx) {
-        GPXFile gpx1 = gpx;
-		this.points = (gpx == null ? null : gpx.proccessPoints());
-	}
-
-
 	@Override
 	public boolean isObjectMovable(Object o) {
 		return o instanceof WptPt;

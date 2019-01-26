@@ -269,15 +269,6 @@ public class TransportRouteController extends MenuController {
 						@Override
 						public void onClick(View arg0) {
 							showTransportStop(stop);
-							/*
-							PointDescription pd = new PointDescription(PointDescription.POINT_TYPE_TRANSPORT_STOP,
-									getMapActivity().getString(R.string.transport_Stop), name);
-							LatLon stopLocation = stop.getLocation();
-							getMapActivity().getMyApplication().getSettings()
-									.setMapLocationToShow(stopLocation.getLatitude(), stopLocation.getLongitude(),
-									15, pd, false, transportRoute);
-							MapActivity.launchMapActivityMoveToTop(getMapActivity());
-							*/
 						}
 					});
 		}

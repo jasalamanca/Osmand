@@ -11,7 +11,6 @@ import net.osmand.data.QuadRect;
 import net.osmand.osm.AbstractPoiType;
 import net.osmand.osm.MapPoiTypes;
 import net.osmand.osm.PoiCategory;
-import net.osmand.plus.FavouritesDbHelper;
 import net.osmand.plus.FavouritesDbHelper.FavoriteGroup;
 import net.osmand.plus.GPXUtilities;
 import net.osmand.plus.GpxSelectionHelper;
@@ -34,7 +33,6 @@ import net.osmand.search.core.SearchResult;
 import net.osmand.util.Algorithms;
 import net.osmand.util.MapUtils;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -208,14 +206,11 @@ public class QuickSearchHelper implements ResourceListener {
 	}
 
 	public static class SearchFavoriteCategoryAPI extends SearchBaseAPI {
-
 		private final OsmandApplication app;
-		private final FavouritesDbHelper helper;
 
 		SearchFavoriteCategoryAPI(OsmandApplication app) {
 			super(ObjectType.FAVORITE_GROUP);
 			this.app = app;
-			this.helper = app.getFavorites();
 		}
 
 		@Override

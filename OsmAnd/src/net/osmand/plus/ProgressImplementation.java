@@ -1,6 +1,5 @@
 package net.osmand.plus;
 
-import net.osmand.IProgress;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,6 +8,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import net.osmand.IProgress;
 
 public class ProgressImplementation implements IProgress {
 	
@@ -118,12 +119,6 @@ public class ProgressImplementation implements IProgress {
 		dlg.setProgressStyle(style);
 		return new ProgressImplementation(dlg, true);
 	}
-	
-	public void setProgressBar(TextView tv, ProgressBar progressBar, Runnable finish) {
-		this.tv = tv;
-		this.progressBar = progressBar;
-		this.finishRunnable = finish;
-	}
 
 	private void setDialog(ProgressDialog dlg){
 		if(dlg != null){
@@ -140,17 +135,6 @@ public class ProgressImplementation implements IProgress {
 			}
 			this.dialog = dlg;
 		}
-	}
-	
-	public void setRunnable(String threadName, Runnable run){
-		this.run = new Thread(run, threadName);
-	}
-	
-	public void run(){
-		if(run == null){
-			throw new IllegalStateException();
-		}
-		run.start();
 	}
 
 	@Override
@@ -208,15 +192,10 @@ public class ProgressImplementation implements IProgress {
 	public boolean isInterrupted() {
 		return false;
 	}
-	
 	public ProgressDialog getDialog() {
 		return dialog;
 	}
-	
-	public Runnable getFinishRunnable() {
-		return finishRunnable;
-	}
-	
+
 	@Override
 	public void startWork(int work) {
 		this.work = work;
@@ -226,5 +205,4 @@ public class ProgressImplementation implements IProgress {
 		progress = 0;
 		deltaProgress = 0;
 	}
-
 }

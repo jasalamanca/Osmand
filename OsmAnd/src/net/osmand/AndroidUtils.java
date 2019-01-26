@@ -120,28 +120,6 @@ public class AndroidUtils {
 				" " + DateFormat.getTimeFormat(ctx).format(d);
 	}
 	
-// --Commented out by Inspection START (6/01/19 19:49):
-//	public static String formatTime(Context ctx, long time) {
-//		return DateFormat.getTimeFormat(ctx).format(new Date(time));
-//	}
-// --Commented out by Inspection STOP (6/01/19 19:49)
-
-// --Commented out by Inspection START (6/01/19 19:49):
-//	public static View findParentViewById(View view, int id) {
-//		ViewParent viewParent = view.getParent();
-//
-//		while (viewParent instanceof View) {
-//			View parentView = (View)viewParent;
-//			if (parentView.getId() == id)
-//				return parentView;
-//
-//			viewParent = parentView.getParent();
-//		}
-//
-//		return null;
-//	}
-// --Commented out by Inspection STOP (6/01/19 19:49)
-
 	public static ColorStateList createColorStateList(Context ctx, boolean night,
 													  @ColorRes int lightNormal, @ColorRes int lightPressed,
 													  @ColorRes int darkNormal, @ColorRes int darkPressed) {
@@ -156,15 +134,6 @@ public class AndroidUtils {
 				}
 		);
 	}
-
-// --Commented out by Inspection START (6/01/19 19:49):
-//	public static StateListDrawable createStateListDrawable(Context ctx, boolean night,
-//															@DrawableRes int lightNormal, @DrawableRes int lightPressed,
-//															@DrawableRes int darkNormal, @DrawableRes int darkPressed) {
-//		return createStateListDrawable(ContextCompat.getDrawable(ctx, night ? darkNormal : lightNormal),
-//				ContextCompat.getDrawable(ctx, night ? darkPressed : lightPressed));
-//	}
-// --Commented out by Inspection STOP (6/01/19 19:49)
 
 	public static StateListDrawable createStateListDrawable(Drawable normal, Drawable pressed) {
 		StateListDrawable res = new StateListDrawable();
@@ -181,12 +150,6 @@ public class AndroidUtils {
 			view.setBackground(ctx.getResources().getDrawable(night ? darkResId : lightResId));
 		}
 	}
-
-// --Commented out by Inspection START (6/01/19 19:50):
-//	public static void setDashButtonBackground(Context ctx, View view, boolean night) {
-//		setBackground(ctx, view, night, R.drawable.dashboard_button_light, R.drawable.dashboard_button_dark);
-//	}
-// --Commented out by Inspection STOP (6/01/19 19:50)
 
 	private static void setBackgroundColor(Context ctx, View view, boolean night, int lightResId, int darkResId) {
 		view.setBackgroundColor(ctx.getResources().getColor(night ? darkResId : lightResId));
@@ -311,18 +274,6 @@ public class AndroidUtils {
 			return null;
 		}
 	}
-
-// --Commented out by Inspection START (6/01/19 19:49):
-//	public static PointF centroidForPoly(PointF[] points) {
-//		float centroidX = 0, centroidY = 0;
-//
-//		for (PointF point : points) {
-//			centroidX += point.x / points.length;
-//			centroidY += point.y / points.length;
-//		}
-//		return new PointF(centroidX, centroidY);
-//	}
-// --Commented out by Inspection STOP (6/01/19 19:49)
 
 	public static void showNavBar(Activity activity) {
 		if (Build.VERSION.SDK_INT >= 19 && !isNavBarVisible(activity)) {

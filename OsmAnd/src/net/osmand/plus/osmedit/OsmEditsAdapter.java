@@ -29,12 +29,11 @@ import java.util.Map;
 
 class OsmEditsAdapter extends ArrayAdapter<Object> {
 
-	public static final int TYPE_HEADER = 0;
+	static final int TYPE_HEADER = 0;
 	private static final int TYPE_ITEM = 1;
 	private static final int TYPE_COUNT = 2;
 
 	private final OsmandApplication app;
-
 	private final List<Object> items;
 	private boolean selectionMode;
 	private List<OsmPoint> selectedOsmEdits;
@@ -42,21 +41,17 @@ class OsmEditsAdapter extends ArrayAdapter<Object> {
 
 	private OsmEditsAdapterListener listener;
 
-	public OsmEditsAdapter(OsmandApplication app, @NonNull List<Object> items) {
+	OsmEditsAdapter(OsmandApplication app, @NonNull List<Object> items) {
 		super(app, 0, items);
 		this.app = app;
 		this.items = items;
 	}
 
-	public boolean isSelectionMode() {
-		return selectionMode;
-	}
-
-	public void setSelectionMode(boolean selectionMode) {
+	void setSelectionMode(boolean selectionMode) {
 		this.selectionMode = selectionMode;
 	}
 
-	public void setSelectedOsmEdits(List<OsmPoint> selectedOsmEdits) {
+	void setSelectedOsmEdits(List<OsmPoint> selectedOsmEdits) {
 		this.selectedOsmEdits = selectedOsmEdits;
 	}
 

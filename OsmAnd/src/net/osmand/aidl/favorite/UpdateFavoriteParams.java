@@ -13,7 +13,7 @@ public class UpdateFavoriteParams implements Parcelable {
         this.favoriteNew = favoriteNew;
     }
 
-    public UpdateFavoriteParams(Parcel in) {
+    private UpdateFavoriteParams(Parcel in) {
         readFromParcel(in);
     }
 

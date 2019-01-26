@@ -12,7 +12,7 @@ public class RemoveMapPointParams implements Parcelable {
 		this.pointId = pointId;
 	}
 
-	public RemoveMapPointParams(Parcel in) {
+	private RemoveMapPointParams(Parcel in) {
 		readFromParcel(in);
 	}
 

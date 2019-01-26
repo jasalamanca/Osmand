@@ -22,19 +22,9 @@ class BottomSheetDialog extends Dialog {
 	private boolean canceledOnTouchOutside = true;
 	private boolean canceledOnTouchOutsideSet;
 
-	public BottomSheetDialog(@NonNull Context context) {
-		this(context, 0);
-	}
-
 	public BottomSheetDialog(@NonNull Context context, int themeResId) {
 		super(context, themeResId);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-	}
-
-	protected BottomSheetDialog(@NonNull Context context, boolean cancelable, @Nullable OnCancelListener cancelListener) {
-		super(context, cancelable, cancelListener);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		this.cancelable = cancelable;
 	}
 
 	@Override

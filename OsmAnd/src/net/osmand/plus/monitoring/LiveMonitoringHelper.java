@@ -1,5 +1,18 @@
 package net.osmand.plus.monitoring;
 
+import android.content.Context;
+import android.os.AsyncTask;
+
+import net.osmand.PlatformUtil;
+import net.osmand.data.LatLon;
+import net.osmand.plus.OsmAndLocationProvider;
+import net.osmand.plus.OsmandApplication;
+import net.osmand.plus.OsmandPlugin;
+import net.osmand.plus.OsmandSettings;
+import net.osmand.util.MapUtils;
+
+import org.apache.commons.logging.Log;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -15,22 +28,8 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSession;
 
-import net.osmand.PlatformUtil;
-import net.osmand.data.LatLon;
-import net.osmand.plus.OsmAndLocationProvider;
-import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.OsmandPlugin;
-import net.osmand.plus.OsmandSettings;
-import net.osmand.util.MapUtils;
-
-import org.apache.commons.logging.Log;
-
-import android.content.Context;
-import android.os.AsyncTask;
-
 public class LiveMonitoringHelper  {
-	
-	private final Context ctx;
+
 	private final OsmandSettings settings;
 	private long lastTimeUpdated;
 	private LatLon lastPoint;
@@ -39,7 +38,6 @@ public class LiveMonitoringHelper  {
 	private boolean started = false;
 
 	public LiveMonitoringHelper(Context ctx){
-		this.ctx = ctx;
 		settings = ((OsmandApplication) ctx.getApplicationContext()).getSettings();
 		queue = new ConcurrentLinkedQueue<>();
 	}

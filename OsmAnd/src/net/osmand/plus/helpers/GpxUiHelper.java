@@ -3,6 +3,7 @@ package net.osmand.plus.helpers;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Application;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -16,7 +17,6 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.app.AlertDialog;
 import android.support.v7.widget.AppCompatCheckBox;
 import android.support.v7.widget.ListPopupWindow;
 import android.support.v7.widget.SwitchCompat;
@@ -64,7 +64,6 @@ import net.osmand.plus.GPXUtilities.Elevation;
 import net.osmand.plus.GPXUtilities.GPXFile;
 import net.osmand.plus.GPXUtilities.GPXTrackAnalysis;
 import net.osmand.plus.GPXUtilities.Speed;
-import net.osmand.plus.GPXUtilities.TrkSegment;
 import net.osmand.plus.GpxSelectionHelper.SelectedGpxFile;
 import net.osmand.plus.IconsCache;
 import net.osmand.plus.OsmAndFormatter;
@@ -109,18 +108,12 @@ import static net.osmand.plus.download.DownloadActivity.formatKb;
 import static net.osmand.plus.download.DownloadActivity.formatMb;
 
 public class GpxUiHelper {
-
 	private static final int OPEN_GPX_DOCUMENT_REQUEST = 1005;
 
 	private static String getDescription(OsmandApplication app, GPXFile result, File f, boolean html) {
 		GPXTrackAnalysis analysis = result.getAnalysis(f == null ? 0 : f.lastModified());
 		return getDescription(app, analysis, html);
 	}
-
-	public static String getDescription(OsmandApplication app, TrkSegment t, boolean html) {
-		return getDescription(app, GPXTrackAnalysis.segment(0, t), html);
-	}
-
 
 	private static String getColorValue(String clr, String value, boolean html) {
 		if (!html) {
@@ -166,11 +159,6 @@ public class GpxUiHelper {
 
 		// 3. Time moving, if any
 		if (analysis.isTimeMoving()) {
-				//Next few lines for Issue 3222 heuristic testing only
-				//final String formatDuration0 = Algorithms.formatDuration((int) (analysis.timeMoving0 / 1000), app.accessibilityEnabled());
-				//description.append(nl).append(app.getString(R.string.gpx_timemoving,
-				//		getColorValue(timeSpanClr, formatDuration0, html)));
-				//description.append(" (" + getColorValue(distanceClr, OsmAndFormatter.getFormattedDistance(analysis.totalDistanceMoving0, app), html) + ")");
 			final String formatDuration = Algorithms.formatDuration((int) (analysis.timeMoving / 1000), app.accessibilityEnabled());
 			description.append(nl).append(app.getString(R.string.gpx_timemoving,
 					getColorValue(timeSpanClr, formatDuration, html)));
@@ -309,7 +297,6 @@ public class GpxUiHelper {
 		final Application app = activity.getApplication();
 		final File f = new File(dir, filename);
 		loadGPXFileInDifferentThread(activity, new CallbackWithObject<GPXUtilities.GPXFile[]>() {
-
 			@Override
 			public boolean processResult(GPXFile[] result) {
 				ContextMenuItem item = cmAdapter.getItem(position);
@@ -421,7 +408,6 @@ public class GpxUiHelper {
 											final List<GPXInfo> list,
 											final ContextMenuAdapter adapter) {
 		final OsmandApplication app = (OsmandApplication) activity.getApplication();
-		final DateFormat dateFormat = android.text.format.DateFormat.getMediumDateFormat(activity);
 		final File dir = app.getAppPath(IndexConstants.GPX_INDEX_DIR);
 		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 		final int layout = R.layout.gpx_track_item;
@@ -1595,14 +1581,6 @@ public class GpxUiHelper {
 			return ctx.getString(stringId);
 		}
 
-		public int getStringId() {
-			return stringId;
-		}
-
-		public int getImageId() {
-			return imageId;
-		}
-
 		Drawable getImageDrawable(@NonNull OsmandApplication app) {
 			return app.getIconsCache().getThemedIcon(imageId);
 		}
@@ -1644,16 +1622,8 @@ public class GpxUiHelper {
 			this.imageId = imageId;
 		}
 
-		public String getName(Context ctx) {
-			return ctx.getString(stringId);
-		}
-
 		public int getStringId() {
 			return stringId;
-		}
-
-		public int getImageId() {
-			return imageId;
 		}
 
 		public Drawable getImageDrawable(OsmandApplication app) {
@@ -1681,29 +1651,11 @@ public class GpxUiHelper {
 		public GPXDataSetType getDataSetType() {
 			return dataSetType;
 		}
-
-		public GPXDataSetAxisType getDataSetAxisType() {
-			return dataSetAxisType;
-		}
-
 		public float getPriority() {
 			return priority;
 		}
-
 		public float getDivX() {
 			return divX;
-		}
-
-		public float getDivY() {
-			return divY;
-		}
-
-		public float getMulY() {
-			return mulY;
-		}
-
-		public String getUnits() {
-			return units;
 		}
 	}
 

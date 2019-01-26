@@ -20,7 +20,7 @@ public class NavigateGpxParams implements Parcelable {
 		this.force = force;
 	}
 
-	public NavigateGpxParams(Parcel in) {
+	private NavigateGpxParams(Parcel in) {
 		readFromParcel(in);
 	}
 

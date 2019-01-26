@@ -1,9 +1,8 @@
 package net.osmand.plus.routing;
 
 
-import java.io.IOException;
-import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
+import android.media.AudioManager;
+import android.media.SoundPool;
 
 import net.osmand.Location;
 import net.osmand.binary.RouteDataObject;
@@ -20,10 +19,13 @@ import net.osmand.router.RouteSegmentResult;
 import net.osmand.router.TurnType;
 import net.osmand.util.Algorithms;
 import net.osmand.util.MapUtils;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+
 import alice.tuprolog.Struct;
 import alice.tuprolog.Term;
-import android.media.AudioManager;
-import android.media.SoundPool;
 
 
 public class VoiceRouter {
@@ -78,13 +80,13 @@ public class VoiceRouter {
 	public VoiceRouter(RoutingHelper router, final OsmandSettings settings) {
 		this.router = router;
 		this.settings = settings;
-		this.mute = settings.VOICE_MUTE.get();
+		mute = settings.VOICE_MUTE.get();
 		empty = new Struct("");
 		voiceMessageListeners = new ConcurrentHashMap<>();
 	}
 	
 	public void setPlayer(CommandPlayer player) {
-		this.player = player;
+		VoiceRouter.player = player;
 		if (pendingCommand != null && player != null) {
 			CommandBuilder newCommand = getNewCommandPlayerToPlay();
 			if (newCommand != null) {
@@ -99,7 +101,7 @@ public class VoiceRouter {
 	}
 	
 	public void setMute(boolean mute) {
-		this.mute = mute;
+		VoiceRouter.mute = mute;
 	}
 	
 	public boolean isMute() {
@@ -204,9 +206,9 @@ public class VoiceRouter {
 	private void nextStatusAfter(int previousStatus) {
 		//STATUS_UNKNOWN=0 -> STATUS_LONG_PREPARE=1 -> STATUS_PREPARE=2 -> STATUS_TURN_IN=3 -> STATUS_TURN=4 -> STATUS_TOLD=5
 		if (previousStatus != STATUS_TOLD) {
-			this.currentStatus = previousStatus + 1;
+			currentStatus = previousStatus + 1;
 		} else {
-			this.currentStatus = previousStatus;
+			currentStatus = previousStatus;
 		}
 	}
 	
@@ -587,14 +589,14 @@ public class VoiceRouter {
 				if (includeDest) {
 					RouteDataObject obj = currentSegment.getObject();
 					current = new Struct(new Term[] { getTermString(getSpeakablePointName(obj.getRef(settings.MAP_PREFERRED_LOCALE.get(), 
-									settings.MAP_TRANSLITERATE_NAMES.get(), currentSegment.isForwardDirection()))),
+									settings.MAP_TRANSLITERATE_NAMES.get()))),
 							getTermString(getSpeakablePointName(obj.getName(settings.MAP_PREFERRED_LOCALE.get(), settings.MAP_TRANSLITERATE_NAMES.get()))),
 							getTermString(getSpeakablePointName(obj.getDestinationName(settings.MAP_PREFERRED_LOCALE.get(), 
 									settings.MAP_TRANSLITERATE_NAMES.get(), currentSegment.isForwardDirection()))) });
 				} else {
 					RouteDataObject obj = currentSegment.getObject();
 					current = new Struct(new Term[] { getTermString(getSpeakablePointName(obj.getRef(settings.MAP_PREFERRED_LOCALE.get(),
-									settings.MAP_TRANSLITERATE_NAMES.get(), currentSegment.isForwardDirection()))),
+									settings.MAP_TRANSLITERATE_NAMES.get()))),
 							getTermString(getSpeakablePointName(obj.getName(settings.MAP_PREFERRED_LOCALE.get(),
 									settings.MAP_TRANSLITERATE_NAMES.get()))),
 							empty });

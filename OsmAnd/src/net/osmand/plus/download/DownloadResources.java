@@ -1,14 +1,10 @@
 package net.osmand.plus.download;
 
 import net.osmand.IndexConstants;
-import net.osmand.binary.BinaryMapDataObject;
-import net.osmand.binary.BinaryMapIndexReader;
-import net.osmand.data.LatLon;
 import net.osmand.map.OsmandRegions;
 import net.osmand.map.WorldRegion;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.download.DownloadOsmandIndexesHelper.AssetIndexItem;
-import net.osmand.util.MapUtils;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -16,7 +12,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -169,8 +164,6 @@ public class DownloadResources extends DownloadResourceGroup {
 		return outdated;
 	}
 
-	
-
 	void updateFilesToUpdate() {
 		initAlreadyLoadedFiles();
 		recalculateFilesToUpdate();
@@ -203,7 +196,6 @@ public class DownloadResources extends DownloadResourceGroup {
 					}
 				}
 			});
-
 		}
 		return files;
 	}
@@ -332,69 +324,5 @@ public class DownloadResources extends DownloadResourceGroup {
 		trimEmptyGroups();
 		updateLoadedFiles();
 		return true;
-	}
-
-	public static List<IndexItem> findIndexItemsAt(OsmandApplication app, LatLon latLon, DownloadActivityType type) throws IOException {
-
-		List<IndexItem> res = new ArrayList<>();
-		OsmandRegions regions = app.getRegions();
-		DownloadIndexesThread downloadThread = app.getDownloadThread();
-
-		int point31x = MapUtils.get31TileNumberX(latLon.getLongitude());
-		int point31y = MapUtils.get31TileNumberY(latLon.getLatitude());
-
-		List<BinaryMapDataObject> mapDataObjects;
-		try {
-			mapDataObjects = regions.queryBbox(point31x, point31x, point31y, point31y);
-		} catch (IOException e) {
-			throw new IOException("Error while calling queryBbox");
-		}
-		if (mapDataObjects != null) {
-			Iterator<BinaryMapDataObject> it = mapDataObjects.iterator();
-			while (it.hasNext()) {
-				BinaryMapDataObject o = it.next();
-				if (o.getTypes() != null) {
-					boolean isRegion = true;
-					for (int i = 0; i < o.getTypes().length; i++) {
-						BinaryMapIndexReader.TagValuePair tp = o.getMapIndex().decodeType(o.getTypes()[i]);
-						if ("boundary".equals(tp.value)) {
-							isRegion = false;
-							break;
-						}
-					}
-					WorldRegion downloadRegion = regions.getRegionData(regions.getFullName(o));
-					if (downloadRegion != null && isRegion && regions.contain(o, point31x, point31y)) {
-						if (!isIndexItemDownloaded(downloadThread, type, downloadRegion, res)) {
-							addIndexItem(downloadThread, type, downloadRegion, res);
-						}
-					}
-				}
-			}
-		}
-		return res;
-	}
-
-	private static boolean isIndexItemDownloaded(DownloadIndexesThread downloadThread, DownloadActivityType type, WorldRegion downloadRegion, List<IndexItem> res) {
-		List<IndexItem> otherIndexItems = new ArrayList<>(downloadThread.getIndexes().getIndexItems(downloadRegion));
-		for (IndexItem indexItem : otherIndexItems) {
-			if (indexItem.getType() == type && indexItem.isDownloaded()) {
-				return true;
-			}
-		}
-		return downloadRegion.getSuperregion() != null
-				&& isIndexItemDownloaded(downloadThread, type, downloadRegion.getSuperregion(), res);
-	}
-
-	private static boolean addIndexItem(DownloadIndexesThread downloadThread, DownloadActivityType type, WorldRegion downloadRegion, List<IndexItem> res) {
-		List<IndexItem> otherIndexItems = new ArrayList<>(downloadThread.getIndexes().getIndexItems(downloadRegion));
-		for (IndexItem indexItem : otherIndexItems) {
-			if (indexItem.getType() == type
-					&& !res.contains(indexItem)) {
-				res.add(indexItem);
-				return true;
-			}
-		}
-		return downloadRegion.getSuperregion() != null
-				&& addIndexItem(downloadThread, type, downloadRegion.getSuperregion(), res);
 	}
 }

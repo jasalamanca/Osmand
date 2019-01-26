@@ -6,7 +6,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -14,9 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.view.ActionMode;
-import android.widget.SearchView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -38,6 +35,7 @@ import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -64,7 +62,6 @@ import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.activities.OsmandActionBarActivity;
 import net.osmand.plus.activities.OsmandBaseExpandableListAdapter;
 import net.osmand.plus.activities.SavingTrackHelper;
 import net.osmand.plus.activities.TrackActivity;
@@ -132,15 +129,9 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 		currentRecording.currentlyRecordingTrack = true;
 		asyncLoader = new LoadGpxTask();
 		selectedGpxHelper = ((OsmandApplication) activity.getApplicationContext()).getSelectedGpxHelper();
-		allGpxAdapter = new GpxIndexesAdapter(getActivity());
+		allGpxAdapter = new GpxIndexesAdapter();
 		setAdapter(allGpxAdapter);
 	}
-
-// --Commented out by Inspection START (7/01/19 20:19):
-//	public boolean isImporting() {
-//		return importing;
-//	}
-// --Commented out by Inspection STOP (7/01/19 20:19)
 
 	public void startImport() {
 		this.importing = true;
@@ -530,12 +521,6 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 		((FavoritesActivity) getActivity()).addTrack();
 	}
 
-// --Commented out by Inspection START (7/01/19 20:16):
-//	public void showProgressBar() {
-//		getActivity().setProgressBarIndeterminateVisibility(true);
-//	}
-// --Commented out by Inspection STOP (7/01/19 20:16)
-
 	private void hideProgressBar() {
 		if (getActivity() != null) {
 			getActivity().setProgressBarIndeterminateVisibility(false);
@@ -865,22 +850,6 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 			allGpxAdapter.notifyDataSetChanged();
 		}
 
-// --Commented out by Inspection START (7/01/19 20:19):
-//		public void setResult(List<GpxInfo> result) {
-//			this.result = result;
-//			allGpxAdapter.clear();
-//			if (result != null) {
-//				for (GpxInfo v : result) {
-//					allGpxAdapter.addLocalIndexInfo(v);
-//				}
-//				allGpxAdapter.sort();
-//				allGpxAdapter.refreshSelected();
-//				allGpxAdapter.notifyDataSetChanged();
-//				onPostExecute(result);
-//			}
-//		}
-// --Commented out by Inspection STOP (7/01/19 20:19)
-
 		@Override
 		protected void onPostExecute(List<GpxInfo> result) {
 			this.result = result;
@@ -942,20 +911,10 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 	}
 
 	class GpxIndexesAdapter extends OsmandBaseExpandableListAdapter implements Filterable {
-
 		final Map<String, List<GpxInfo>> data = new LinkedHashMap<>();
 		final List<String> category = new ArrayList<>();
 		final List<GpxInfo> selected = new ArrayList<>();
-		final int warningColor;
-		final int defaultColor;
 		private SearchFilter filter;
-
-		GpxIndexesAdapter(Context ctx) {
-			warningColor = ContextCompat.getColor(ctx, R.color.color_warning);
-			TypedArray ta = ctx.getTheme().obtainStyledAttributes(new int[]{android.R.attr.textColorPrimary});
-			defaultColor = ta.getColor(0, ContextCompat.getColor(ctx, R.color.color_unknown));
-			ta.recycle();
-		}
 
 		void refreshSelected() {
 			selected.clear();
@@ -1002,8 +961,6 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 			if (info.gpx != null && info.gpx.showCurrentTrack) {
 				catName = info.name;
 			} else {
-				// local_indexes_cat_gpx now obsolete in new UI screen which shows only GPX data
-				// catName = app.getString(R.string.local_indexes_cat_gpx) + " " + info.subfolder;
 				catName = "" + info.subfolder;
 			}
 			int found = -1;
@@ -1247,9 +1204,6 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 			// search from end
 			for (int i = category.size() - 1; i >= 0; i--) {
 				String cat = category.get(i);
-				// local_indexes_cat_gpx now obsolete in new UI screen which shows only GPX data
-				// if (Algorithms.objectEquals(getActivity().getString(R.string.local_indexes_cat_gpx) + " " +
-				// g.subfolder, cat)) {
 				if (Algorithms.objectEquals("" + g.subfolder, cat)) {
 					found = i;
 					break;
@@ -1692,11 +1646,9 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 		GPXFile gpx;
 		public File file;
 		public String subfolder;
-
 		private String name = null;
 		private int sz = -1;
 		private String fileName = null;
-		private boolean corrupted;
 
 		public GpxInfo() {
 		}
@@ -1719,10 +1671,6 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 				name = name.substring(0, ext);
 			}
 			return name.replace('_', ' ');
-		}
-
-		boolean isCorrupted() {
-			return corrupted;
 		}
 
 		int getSize() {
@@ -1772,11 +1720,7 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 		ImageView icon = v.findViewById(R.id.icon);
 		icon.setVisibility(View.VISIBLE);
 		icon.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_action_polygom_dark));
-		if (child.isCorrupted()) {
-			viewName.setTypeface(Typeface.DEFAULT, Typeface.ITALIC);
-		} else {
-			viewName.setTypeface(Typeface.DEFAULT, Typeface.NORMAL);
-		}
+        viewName.setTypeface(Typeface.DEFAULT, Typeface.NORMAL);
 		if (getSelectedGpxFile(child, app) != null) {
 			icon.setImageDrawable(app.getIconsCache().getIcon(R.drawable.ic_action_polygom_dark, R.color.color_distance));
 		}

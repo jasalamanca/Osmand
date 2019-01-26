@@ -6,7 +6,7 @@ import android.graphics.BitmapFactory.Options;
 import android.os.Build;
 import android.util.DisplayMetrics;
 
-public abstract class UnscaledBitmapLoader {
+abstract class UnscaledBitmapLoader {
 
     private static final UnscaledBitmapLoader instance;
 

@@ -52,16 +52,7 @@ public class DirectionDrawable extends Drawable {
 		onBoundsChange(getBounds());
 	}
 
-	public void setImage(int resourceId) {
-		IconsCache iconsCache = ((OsmandApplication) ctx.getApplicationContext()).getIconsCache();
-		arrowImage = iconsCache.getIcon(resourceId, 0);
-		this.resourceId = resourceId;
-		onBoundsChange(getBounds());
-	}
-	
-	
 	public void setColorId(int clrId) {
-		// R.color.color_ok, R.color.color_unknown, R.color.color_warning
 		if(arrowImage != null) {
 			IconsCache iconsCache = ((OsmandApplication) ctx.getApplicationContext()).getIconsCache();
 			arrowImage = iconsCache.getIcon(resourceId, clrId);
@@ -70,11 +61,9 @@ public class DirectionDrawable extends Drawable {
 		}
 	}
 
-
 	public void setAngle(float angle) {
 		this.angle = angle;
 	}
-	
 
 	@Override
 	public int getIntrinsicWidth() {
@@ -166,5 +155,4 @@ public class DirectionDrawable extends Drawable {
 		height *= dm.density;
 		return path;
 	}
-
 }

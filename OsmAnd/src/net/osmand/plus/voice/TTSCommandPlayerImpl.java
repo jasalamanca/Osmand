@@ -271,7 +271,6 @@ public class TTSCommandPlayerImpl extends AbstractPrologCommandPlayer {
 					if (ttsRequests < 0) {
 						ttsRequests = 0;
 					}
-
 				}
 
 				@Override

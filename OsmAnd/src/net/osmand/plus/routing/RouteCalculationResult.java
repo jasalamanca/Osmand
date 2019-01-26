@@ -41,8 +41,6 @@ public class RouteCalculationResult {
 	int currentDirectionInfo = 0;
 	int currentRoute = 0;
 	private int nextIntermediate = 0;
-	protected int currentWaypointGPX = 0;
-	protected int lastWaypointGPX = 0;
 	private ApplicationMode appMode;
 
 	public RouteCalculationResult(String errorMessage) {
@@ -182,19 +180,19 @@ public class RouteCalculationResult {
 		int[] pointTypes = res.getObject().getPointTypes(intId);
 		if (pointTypes != null) {
 			RouteRegion reg = res.getObject().region;
-			for (int r = 0; r < pointTypes.length; r++) {
-				RouteTypeRule typeRule = reg.quickGetEncodingRule(pointTypes[r]);
-				int x31 = res.getObject().getPoint31XTile(intId);
-				int y31 = res.getObject().getPoint31YTile(intId);
-				Location loc = new Location("");
-				loc.setLatitude(MapUtils.get31LatitudeY(y31));
-				loc.setLongitude(MapUtils.get31LongitudeX(x31));
-				AlarmInfo info = AlarmInfo.createAlarmInfo(typeRule, locInd, loc);
-				// For STOP first check if it has directional info
-				if ((info != null) && !((info.getType() == AlarmInfoType.STOP) && !res.getObject().isStopApplicable(res.isForwardDirection(), intId, res.getStartPointIndex(), res.getEndPointIndex()))) {
-					alarms.add(info);
-				}
-			}
+            for (int pointType : pointTypes) {
+                RouteTypeRule typeRule = reg.quickGetEncodingRule(pointType);
+                int x31 = res.getObject().getPoint31XTile(intId);
+                int y31 = res.getObject().getPoint31YTile(intId);
+                Location loc = new Location("");
+                loc.setLatitude(MapUtils.get31LatitudeY(y31));
+                loc.setLongitude(MapUtils.get31LongitudeX(x31));
+                AlarmInfo info = AlarmInfo.createAlarmInfo(typeRule, locInd, loc);
+                // For STOP first check if it has directional info
+                if ((info != null) && !((info.getType() == AlarmInfoType.STOP) && !res.getObject().isStopApplicable(res.isForwardDirection(), intId, res.getStartPointIndex(), res.getEndPointIndex()))) {
+                    alarms.add(info);
+                }
+            }
 		}
 	}
 
@@ -292,7 +290,7 @@ public class RouteCalculationResult {
 					}
 					RouteSegmentResult next = list.get(lind);
 					info.setRef(next.getObject().getRef(ctx.getSettings().MAP_PREFERRED_LOCALE.get(), 
-							ctx.getSettings().MAP_TRANSLITERATE_NAMES.get(), next.isForwardDirection()));
+							ctx.getSettings().MAP_TRANSLITERATE_NAMES.get()));
 					info.setStreetName(next.getObject().getName(ctx.getSettings().MAP_PREFERRED_LOCALE.get(), 
 							ctx.getSettings().MAP_TRANSLITERATE_NAMES.get()));
 					info.setDestinationName(next.getObject().getDestinationName(ctx.getSettings().MAP_PREFERRED_LOCALE.get(),
@@ -304,10 +302,10 @@ public class RouteCalculationResult {
 				description = description.trim();
 				String[] pointNames = s.getObject().getPointNames(s.getStartPointIndex());
 				if(pointNames != null) {
-					for (int t = 0; t < pointNames.length; t++) {
-						description = description.trim();
-						description += " " + pointNames[t];
-					}
+                    for (String pointName : pointNames) {
+                        description = description.trim();
+                        description += " " + pointName;
+                    }
 				}
 				info.setDescriptionRoute(description);
 				info.routePointOffset = prevLocationSize;
@@ -596,7 +594,6 @@ public class RouteCalculationResult {
 				RouteDirectionInfo info = new RouteDirectionInfo(directions.get(0).getAverageSpeed(),
 						TurnType.straight());
 				info.routePointOffset = 0;
-				// info.setDescriptionRoute(ctx.getString( R.string.route_head));//; //$NON-NLS-1$
 				directions.add(0, info);
 			}
 			checkForDuplicatePoints(locations, directions);
@@ -670,15 +667,8 @@ public class RouteCalculationResult {
 		}
 		return Collections.emptyList();
 	}
-	
-	public int getRouteDistanceToFinish(int posFromCurrentIndex) {
-		if(listDistance != null && currentRoute + posFromCurrentIndex < listDistance.length){
-			return listDistance[currentRoute + posFromCurrentIndex];
-		}
-		return 0;
-	}
-	
-	public RouteSegmentResult getCurrentSegmentResult() {
+
+    public RouteSegmentResult getCurrentSegmentResult() {
 		int cs = currentRoute > 0 ? currentRoute - 1 : 0;
 		if(cs < segments.size()) {
 			return segments.get(cs);
@@ -904,20 +894,8 @@ public class RouteCalculationResult {
 		}
 		return null;
 	}
-	
-	
-	public Location getNextRouteLocation(int after) {
-		if(currentRoute + after < locations.size()) {
-			return locations.get(currentRoute + after);
-		}
-		return null;
-	}
-	
-	public boolean directionsAvailable(){
-		return currentDirectionInfo < directions.size();
-	}
-	
-	public int getDistanceToPoint(int locationIndex) {
+
+    public int getDistanceToPoint(int locationIndex) {
 		if(listDistance != null && currentRoute < listDistance.length && locationIndex < listDistance.length && 
 				locationIndex > currentRoute){
 			return listDistance[currentRoute] - listDistance[locationIndex];

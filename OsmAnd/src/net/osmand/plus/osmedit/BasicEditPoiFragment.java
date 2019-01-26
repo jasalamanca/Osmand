@@ -19,7 +19,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import net.osmand.PlatformUtil;
 import net.osmand.osm.edit.OSMSettings;
 import net.osmand.plus.R;
 import net.osmand.plus.base.BaseOsmAndFragment;
@@ -29,13 +28,10 @@ import net.osmand.util.Algorithms;
 import net.osmand.util.OpeningHoursParser;
 import net.osmand.util.OpeningHoursParser.BasicOpeningHourRule;
 
-import org.apache.commons.logging.Log;
-
 import gnu.trove.list.array.TIntArrayList;
 
 public class BasicEditPoiFragment extends BaseOsmAndFragment
 		implements EditPoiDialogFragment.OnFragmentActivatedListener {
-	private static final Log LOG = PlatformUtil.getLog(BasicEditPoiFragment.class);
 	private static final String OPENING_HOURS = "opening_hours";
 	private EditText streetEditText;
 	private EditText houseNumberEditText;

@@ -10,7 +10,7 @@ public class AddMapWidgetParams  implements Parcelable {
 		this.widget = widget;
 	}
 
-	public AddMapWidgetParams(Parcel in) {
+	private AddMapWidgetParams(Parcel in) {
 		readFromParcel(in);
 	}
 

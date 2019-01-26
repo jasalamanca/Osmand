@@ -348,7 +348,7 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 	public void locationUpdate(LatLon l) {
 	}
 
-	public OsmandApplication getMyApplication() {
+	protected OsmandApplication getMyApplication() {
 		return (OsmandApplication) getActivity().getApplication();
 	}
 

@@ -66,7 +66,7 @@ public class OpenstreetmapRemoteUtil implements OpenstreetmapUtil {
 
 	@Override
 	public EntityInfo getEntityInfo(long id) {
-		if(entityInfoId != null && entityInfoId.getId().longValue() == id) {
+		if(entityInfoId != null && entityInfoId.getId() == id) {
 			return entityInfo;
 		}
 		return null;
@@ -214,9 +214,6 @@ public class OpenstreetmapRemoteUtil implements OpenstreetmapUtil {
 		ser.attribute(null, "lat", n.getLatitude() + ""); //$NON-NLS-1$ //$NON-NLS-2$
 		ser.attribute(null, "lon", n.getLongitude() + ""); //$NON-NLS-1$ //$NON-NLS-2$
 		if (i != null) {
-			// ser.attribute(null, "timestamp", i.getETimestamp());
-			// ser.attribute(null, "uid", i.getUid());
-			// ser.attribute(null, "user", i.getUser());
 			ser.attribute(null, "visible", i.getVisible()); //$NON-NLS-1$
 			ser.attribute(null, "version", i.getVersion()); //$NON-NLS-1$
 		}

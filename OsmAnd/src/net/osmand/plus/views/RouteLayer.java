@@ -1,13 +1,16 @@
 package net.osmand.plus.views;
 
-import gnu.trove.list.array.TByteArrayList;
-import gnu.trove.list.array.TIntArrayList;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.TreeMap;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Paint.Cap;
+import android.graphics.Path;
+import android.graphics.PointF;
+import android.graphics.PorterDuff.Mode;
+import android.graphics.PorterDuffColorFilter;
 
 import net.osmand.Location;
 import net.osmand.data.LatLon;
@@ -21,17 +24,15 @@ import net.osmand.plus.routing.RouteCalculationResult;
 import net.osmand.plus.routing.RouteDirectionInfo;
 import net.osmand.plus.routing.RoutingHelper;
 import net.osmand.util.MapUtils;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Paint.Cap;
-import android.graphics.Path;
-import android.graphics.PointF;
-import android.graphics.PorterDuff.Mode;
-import android.graphics.PorterDuffColorFilter;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.TreeMap;
+
+import gnu.trove.list.array.TByteArrayList;
+import gnu.trove.list.array.TIntArrayList;
 
 public class RouteLayer extends OsmandMapLayer {
 	
@@ -242,31 +243,6 @@ public class RouteLayer extends OsmandMapLayer {
 			}
 		}
 	}
-	
-	private void cullRamerDouglasPeucker(TByteArrayList survivor, List<Location> points,
-			int start, int end, double epsillon) {
-        double dmax = Double.NEGATIVE_INFINITY;
-        int index = -1;
-        Location startPt = points.get(start);
-        Location endPt = points.get(end);
-
-        for (int i = start + 1; i < end; i++) {
-            Location pt = points.get(i);
-            double d = MapUtils.getOrthogonalDistance(pt.getLatitude(), pt.getLongitude(), 
-            		startPt.getLatitude(), startPt.getLongitude(), endPt.getLatitude(), endPt.getLongitude());
-            if (d > dmax) {
-                dmax = d;
-                index = i;
-            }
-        }
-        if (dmax > epsillon) {
-        	cullRamerDouglasPeucker(survivor, points, start, index, epsillon);
-        	cullRamerDouglasPeucker(survivor, points, index, end, epsillon);
-        } else {
-            survivor.set(end, (byte) 1);
-        }
-    }
-	
 
 	private void drawArrowsOverPath(Canvas canvas, RotatedTileBox tb, TIntArrayList tx, TIntArrayList ty,
 			List<Double> angles, List<Double> distances, Bitmap arrow, double distPixToFinish) {

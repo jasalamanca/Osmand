@@ -128,7 +128,6 @@ public class MapMarkersHelper {
 			return 0;
 		}
 
-		@Override
 		public boolean isVisible() {
 			return false;
 		}

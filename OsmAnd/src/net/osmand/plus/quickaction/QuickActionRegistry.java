@@ -87,28 +87,6 @@ public class QuickActionRegistry {
         settings.QUICK_ACTION_LIST.set(factory.quickActionListToString(quickActions));
     }
 
-    public void deleteQuickAction(QuickAction action){
-        int index = quickActions.indexOf(action);
-        if (index >= 0) {
-        	quickActions.remove(index);
-        }
-        settings.QUICK_ACTION_LIST.set(factory.quickActionListToString(quickActions));
-    }
-
-    public void deleteQuickAction(int id){
-
-        int index = -1;
-        for (QuickAction action: quickActions){
-            if (action.id == id) {
-            	index = quickActions.indexOf(action);
-            }
-        }
-        if (index >= 0) {
-        	quickActions.remove(index);
-        }
-        settings.QUICK_ACTION_LIST.set(factory.quickActionListToString(quickActions));
-    }
-
     public void updateQuickAction(QuickAction action){
         int index = quickActions.indexOf(action);
         if (index >= 0) {
