@@ -1,9 +1,10 @@
 package net.osmand.plus.quickaction.actions;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
-import android.support.v7.app.AlertDialog;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -23,7 +24,6 @@ import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.poi.PoiFiltersHelper;
 import net.osmand.plus.poi.PoiUIFilter;
 import net.osmand.plus.quickaction.QuickAction;
-import net.osmand.plus.quickaction.QuickActionFactory;
 import net.osmand.plus.render.RenderingIcons;
 
 import java.util.ArrayList;
@@ -35,7 +35,7 @@ public class ShowHidePoiAction extends QuickAction {
 
 	public static final int TYPE = 5;
 
-	public static final String KEY_FILTERS = "filters";
+	private static final String KEY_FILTERS = "filters";
 
 	private transient EditText title;
 
@@ -137,8 +137,8 @@ public class ShowHidePoiAction extends QuickAction {
 		View view = LayoutInflater.from(parent.getContext())
 				.inflate(R.layout.quick_action_show_hide_poi, parent, false);
 
-		RecyclerView list = (RecyclerView) view.findViewById(R.id.list);
-		Button addFilter = (Button) view.findViewById(R.id.btnAddCategory);
+		RecyclerView list = view.findViewById(R.id.list);
+		Button addFilter = view.findViewById(R.id.btnAddCategory);
 
 		final Adapter adapter = new Adapter(!getParams().isEmpty()
 				? loadPoiFilters(activity.getMyApplication().getPoiFilters())
@@ -158,9 +158,9 @@ public class ShowHidePoiAction extends QuickAction {
 
 	public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
 
-		private List<PoiUIFilter> filters;
+		private final List<PoiUIFilter> filters;
 
-		public Adapter(List<PoiUIFilter> filters) {
+		Adapter(List<PoiUIFilter> filters) {
 			this.filters = filters;
 		}
 
@@ -175,15 +175,16 @@ public class ShowHidePoiAction extends QuickAction {
 			}
 		}
 
+		@NonNull
 		@Override
-		public Adapter.Holder onCreateViewHolder(ViewGroup parent, int viewType) {
+		public Adapter.Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
 			return new Adapter.Holder(LayoutInflater.from(parent.getContext())
 					.inflate(R.layout.quick_action_deletable_list_item, parent, false));
 		}
 
 		@Override
-		public void onBindViewHolder(final Adapter.Holder holder, final int position) {
+		public void onBindViewHolder(@NonNull final Adapter.Holder holder, final int position) {
 
 			final PoiUIFilter filter = filters.get(position);
 
@@ -223,21 +224,21 @@ public class ShowHidePoiAction extends QuickAction {
 
 		class Holder extends RecyclerView.ViewHolder {
 
-			private TextView title;
-			private ImageView icon;
-			private ImageView delete;
+			private final TextView title;
+			private final ImageView icon;
+			private final ImageView delete;
 
-			public Holder(View itemView) {
+			Holder(View itemView) {
 				super(itemView);
 
-				title = (TextView) itemView.findViewById(R.id.title);
-				icon = (ImageView) itemView.findViewById(R.id.icon);
-				delete = (ImageView) itemView.findViewById(R.id.delete);
+				title = itemView.findViewById(R.id.title);
+				icon = itemView.findViewById(R.id.icon);
+				delete = itemView.findViewById(R.id.delete);
 			}
 		}
 	}
 
-	public void savePoiFilters(List<PoiUIFilter> poiFilters) {
+	private void savePoiFilters(List<PoiUIFilter> poiFilters) {
 
 		List<String> filters = new ArrayList<>();
 

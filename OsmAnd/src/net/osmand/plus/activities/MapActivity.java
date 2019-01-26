@@ -73,7 +73,7 @@ import net.osmand.plus.TargetPointsHelper.TargetPoint;
 import net.osmand.plus.Version;
 import net.osmand.plus.activities.search.SearchActivity;
 import net.osmand.plus.base.BaseOsmAndFragment;
-import net.osmand.plus.base.FailSafeFuntions;
+import net.osmand.plus.base.FailSafeFunctions;
 import net.osmand.plus.base.MapViewTrackingUtilities;
 import net.osmand.plus.dashboard.DashboardOnMap;
 import net.osmand.plus.dialogs.ErrorBottomSheetDialog;
@@ -268,7 +268,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		// it tries to continue the last route
 		if (settings.FOLLOW_THE_ROUTE.get() && !app.getRoutingHelper().isRouteCalculated()
 				&& !app.getRoutingHelper().isRouteBeingCalculated()) {
-			FailSafeFuntions.restoreRoutingMode(this);
+			FailSafeFunctions.restoreRoutingMode(this);
 		} else if (app.getSettings().USE_MAP_MARKERS.get()
 				&& !app.getRoutingHelper().isRoutePlanningMode()
 				&& !settings.FOLLOW_THE_ROUTE.get()
@@ -1151,7 +1151,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		super.onDestroy();
 		unregisterReceiver(screenOffReceiver);
 		app.getAidlApi().onDestroyMapActivity(this);
-		FailSafeFuntions.quitRouteRestoreDialog();
+		FailSafeFunctions.quitRouteRestoreDialog();
 		OsmandPlugin.onMapActivityDestroy(this);
 		getMyApplication().unsubscribeInitListener(initListener);
 		mapViewTrackingUtilities.setMapView(null);

@@ -5,7 +5,7 @@ import android.content.DialogInterface.OnCancelListener;
 import android.content.DialogInterface.OnDismissListener;
 import android.os.AsyncTask;
 import android.os.Handler;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.widget.TextView;
 
 import net.osmand.PlatformUtil;
@@ -26,9 +26,9 @@ import org.apache.commons.logging.Log;
 import java.io.File;
 import java.util.ArrayList;
 
-public class FailSafeFuntions {
+public class FailSafeFunctions {
 	private static boolean quitRouteRestoreDialog = false;
-	private static Log log = PlatformUtil.getLog(FailSafeFuntions.class);
+	private static final Log log = PlatformUtil.getLog(FailSafeFunctions.class);
 	
 	public static void restoreRoutingMode(final MapActivity ma) {
 		final OsmandApplication app = ma.getMyApplication();
@@ -94,7 +94,7 @@ public class FailSafeFuntions {
 										quitRouteRestoreDialog = true;
 										restoreRoutingModeInner();
 									} catch(Exception e) {
-										// swalow view not attached exception
+										// swallow view not attached exception
 										log.error(e.getMessage()+"", e);
 									}
 								} else {
@@ -139,8 +139,7 @@ public class FailSafeFuntions {
 							} else {
 								gpxRoute = null;
 							}
-							TargetPoint endPoint = pointToNavigate;
-							if (endPoint == null) {
+							if (pointToNavigate == null) {
 								notRestoreRoutingMode(ma, app);
 							} else {
 								enterRoutingMode(ma, gpxRoute);
@@ -158,8 +157,8 @@ public class FailSafeFuntions {
 
 	}
 	
-	public static void enterRoutingMode(MapActivity ma, 
-			GPXRouteParamsBuilder gpxRoute) {
+	private static void enterRoutingMode(MapActivity ma,
+										 GPXRouteParamsBuilder gpxRoute) {
 		OsmandApplication app = ma.getMyApplication();
 		ma.getMapViewTrackingUtilities().backToLocationImpl();
 		RoutingHelper routingHelper = app.getRoutingHelper();

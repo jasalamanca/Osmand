@@ -1,14 +1,13 @@
 package net.osmand.plus.quickaction.actions;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.dialogs.ConfigureMapMenu;
@@ -20,7 +19,6 @@ import net.osmand.render.RenderingRulesStorage;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 public class MapStyleAction extends SwitchableAction<String> {
@@ -69,7 +67,7 @@ public class MapStyleAction extends SwitchableAction<String> {
 		}
 	}
 
-	public List<String> getFilteredStyles() {
+	private List<String> getFilteredStyles() {
 		return loadListFromParams();
 	}
 
@@ -106,9 +104,7 @@ public class MapStyleAction extends SwitchableAction<String> {
 				final List<String> visibleNamesList = new ArrayList<>();
 				final ArrayList<String> items = new ArrayList<>(app.getRendererRegistry().getRendererNames());
 
-				Iterator<String> iterator = items.iterator();
-				while (iterator.hasNext()) {
-					String item = iterator.next();
+				for (String item : items) {
 					String translation = RendererRegistry.getTranslatedRendererName(activity, item);
 					visibleNamesList.add(translation != null ? translation
 							: item.replace('_', ' ').replace('-', ' '));

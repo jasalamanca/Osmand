@@ -2,12 +2,11 @@ package net.osmand.plus;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -24,8 +23,8 @@ import java.util.List;
 public class OsmAndLocationSimulation {
 
 	private Thread routeAnimation;
-	private OsmAndLocationProvider provider;
-	private OsmandApplication app;
+	private final OsmAndLocationProvider provider;
+	private final OsmandApplication app;
 	
 	public OsmAndLocationSimulation(OsmandApplication app, OsmAndLocationProvider provider){
 		this.app = app;
@@ -36,28 +35,14 @@ public class OsmAndLocationSimulation {
 		return routeAnimation != null;
 	}
 	
-//	public void startStopRouteAnimationRoute(final MapActivity ma) {
-//		if (!isRouteAnimating()) {
-//			List<Location> currentRoute = app.getRoutingHelper().getCurrentRoute();
-//			if (currentRoute.isEmpty()) {
-//				Toast.makeText(app, R.string.animate_routing_route_not_calculated, Toast.LENGTH_LONG).show();
-//			} else {
-//				startAnimationThread(app.getRoutingHelper(), ma, new ArrayList<Location>(currentRoute), false, 1);
-//			}
-//		} else {
-//			stop();
-//		}
-//	}
-
-	
 	public void startStopRouteAnimation(final Activity ma, final Runnable runnable) {
 		if (!isRouteAnimating()) {
 			AlertDialog.Builder builder = new AlertDialog.Builder(ma);
 			builder.setTitle(R.string.animate_route);
 
 			final View view = ma.getLayoutInflater().inflate(R.layout.animate_route, null);
-			final View gpxView = ((LinearLayout) view.findViewById(R.id.layout_animate_gpx));
-			final RadioButton radioGPX = (RadioButton) view.findViewById(R.id.radio_gpx);
+			final View gpxView = view.findViewById(R.id.layout_animate_gpx);
+			final RadioButton radioGPX = view.findViewById(R.id.radio_gpx);
 			radioGPX.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
 				@Override
@@ -68,7 +53,7 @@ public class OsmAndLocationSimulation {
 
 			((TextView) view.findViewById(R.id.MinSpeedup)).setText("1"); //$NON-NLS-1$
 			((TextView) view.findViewById(R.id.MaxSpeedup)).setText("4"); //$NON-NLS-1$
-			final SeekBar speedup = (SeekBar) view.findViewById(R.id.Speedup);
+			final SeekBar speedup = view.findViewById(R.id.Speedup);
 			speedup.setMax(3);
 			builder.setView(view);
 			builder.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
@@ -94,7 +79,7 @@ public class OsmAndLocationSimulation {
 							Toast.makeText(app, R.string.animate_routing_route_not_calculated,
 									Toast.LENGTH_LONG).show();
 						} else {
-							startAnimationThread(app, new ArrayList<Location>(currentRoute), false, 1);
+							startAnimationThread(app, new ArrayList<>(currentRoute), false, 1);
 							if (runnable != null) {
 								runnable.run();
 							}
@@ -187,8 +172,8 @@ public class OsmAndLocationSimulation {
 		routeAnimation = null;
 	}
 
-	public static Location middleLocation(Location start, Location end,
-			float meters) {
+	private static Location middleLocation(Location start, Location end,
+										   float meters) {
 		double lat1 = toRad(start.getLatitude());
 		double lon1 = toRad(start.getLongitude());
 		double R = 6371; // radius of earth in km
@@ -209,10 +194,7 @@ public class OsmAndLocationSimulation {
 	private static double toDegree(double radians) {
 		return radians * 180 / Math.PI;
 	}
-
 	private static double toRad(double degree) {
 		return degree * Math.PI / 180;
 	}
-
-	
 }

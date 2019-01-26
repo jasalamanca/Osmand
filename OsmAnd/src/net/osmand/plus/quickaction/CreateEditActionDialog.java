@@ -5,10 +5,11 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.view.ContextThemeWrapper;
+import android.app.AlertDialog;
+import android.view.ContextThemeWrapper;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -28,14 +29,13 @@ import net.osmand.plus.activities.MapActivity;
 /**
  * Created by rosty on 12/27/16.
  */
-
 public class CreateEditActionDialog extends DialogFragment {
 
     public static final String TAG = CreateEditActionDialog.class.getSimpleName();
 
-    public static final String KEY_ACTION_ID = "action_id";
-    public static final String KEY_ACTION_TYPE = "action_type";
-    public static final String KEY_ACTION_IS_NEW = "action_is_new";
+    private static final String KEY_ACTION_ID = "action_id";
+    private static final String KEY_ACTION_TYPE = "action_type";
+    private static final String KEY_ACTION_IS_NEW = "action_is_new";
 
     public static CreateEditActionDialog newInstance(long id) {
 
@@ -64,6 +64,7 @@ public class CreateEditActionDialog extends DialogFragment {
 
     private boolean isNew;
 
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
@@ -99,12 +100,12 @@ public class CreateEditActionDialog extends DialogFragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.quick_action_create_edit_dialog, parent, false);
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         quickActionRegistry = ((MapActivity) getActivity()).getMapLayers().getQuickActionRegistry();
@@ -143,7 +144,7 @@ public class CreateEditActionDialog extends DialogFragment {
 
     private void setupToolbar(View root) {
 
-        Toolbar toolbar = (Toolbar) root.findViewById(R.id.toolbar);
+        Toolbar toolbar = root.findViewById(R.id.toolbar);
 
         toolbar.setTitle(isNew
                 ? R.string.quick_action_new_action
@@ -167,8 +168,8 @@ public class CreateEditActionDialog extends DialogFragment {
 
     private void setupHeader(View root, Bundle savedInstanceState){
 
-        ImageView image = (ImageView) root.findViewById(R.id.image);
-        EditText name = (EditText) root.findViewById(R.id.name);
+        ImageView image = root.findViewById(R.id.image);
+        EditText name = root.findViewById(R.id.name);
 
         name.addTextChangedListener(new TextWatcher() {
             @Override
