@@ -1,7 +1,5 @@
 package net.osmand.plus.views;
 
-
-import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
@@ -35,8 +33,6 @@ import net.osmand.plus.views.mapwidgets.RouteInfoWidgetsFactory.RulerWidget;
 import net.osmand.plus.views.mapwidgets.RouteInfoWidgetsFactory.TimeControlWidgetState;
 import net.osmand.plus.views.mapwidgets.TextInfoWidget;
 
-import java.lang.reflect.Field;
-
 public class MapInfoLayer extends OsmandMapLayer {
 	private final MapActivity map;
 	private final RouteLayer routeLayer;
@@ -52,12 +48,10 @@ public class MapInfoLayer extends OsmandMapLayer {
 	private RulerWidget rulerControl;
 	private MapWidgetRegistry mapInfoControls;
 
-	private OsmandSettings settings;
+	private final OsmandSettings settings;
 	private DrawSettings drawSettings;
 	private TopTextView streetNameView;
 	private TopToolbarView topToolbarView;
-
-	private TrackChartPoints trackChartPoints;
 
 	public MapInfoLayer(MapActivity map, RouteLayer layer){
 		this.map = map;
@@ -69,17 +63,19 @@ public class MapInfoLayer extends OsmandMapLayer {
 		return mapInfoControls;
 	}
 	
-	public MapActivity getMapActivity() {
-		return map;
-	}
+// --Commented out by Inspection START (26/01/19 15:46):
+//	public MapActivity getMapActivity() {
+//		return map;
+//	}
+// --Commented out by Inspection STOP (26/01/19 15:46)
 
 	@Override
 	public void initLayer(final OsmandMapTileView view) {
 		this.view = view;
 		mapInfoControls = map.getMapLayers().getMapWidgetRegistry() ;
-		leftStack = (LinearLayout) map.findViewById(R.id.map_left_widgets_panel);
-		rightStack = (LinearLayout) map.findViewById(R.id.map_right_widgets_panel);
-		expand = (ImageButton) map.findViewById(R.id.map_collapse_button);
+		leftStack = map.findViewById(R.id.map_left_widgets_panel);
+		rightStack = map.findViewById(R.id.map_right_widgets_panel);
+		expand = map.findViewById(R.id.map_collapse_button);
 		// update and create controls
 		registerAllControls();
 		map.getMyApplication().getAidlApi().registerWidgetControls(map);
@@ -101,7 +97,7 @@ public class MapInfoLayer extends OsmandMapLayer {
 		return reg;
 	}
 
-	public void registerSideWidget(TextInfoWidget widget, WidgetState widgetState, String key, boolean left, int priorityOrder) {
+	private void registerSideWidget(TextInfoWidget widget, WidgetState widgetState, String key, boolean left, int priorityOrder) {
 		MapWidgetRegInfo reg = mapInfoControls.registerSideWidgetInternal(widget, widgetState, key, left, priorityOrder);
 		updateReg(calculateTextState(), reg);
 	}
@@ -130,7 +126,7 @@ public class MapInfoLayer extends OsmandMapLayer {
 		return topToolbarView == null ? null : topToolbarView.getController(type);
 	}
 
-	public void registerAllControls(){
+	private void registerAllControls(){
 		RouteInfoWidgetsFactory ric = new RouteInfoWidgetsFactory();
 		MapInfoWidgetsFactory mic = new MapInfoWidgetsFactory();
 		MapMarkersWidgetsFactory mwf = map.getMapLayers().getMapMarkersLayer().getWidgetsFactory();
@@ -222,7 +218,6 @@ public class MapInfoLayer extends OsmandMapLayer {
 	}
 
 	public void setTrackChartPoints(TrackChartPoints trackChartPoints) {
-		this.trackChartPoints = trackChartPoints;
 		routeLayer.setTrackChartPoints(trackChartPoints);
 	}
 
@@ -241,7 +236,7 @@ public class MapInfoLayer extends OsmandMapLayer {
 
 
 	private int themeId = -1;
-	public void updateColorShadowsOfText() {
+	private void updateColorShadowsOfText() {
 		boolean transparent = view.getSettings().TRANSPARENT_MAP_THEME.get();
 		boolean nightMode = drawSettings != null && drawSettings.isNightMode();
 		boolean following = routeLayer.getHelper().isFollowingMode();
@@ -346,30 +341,34 @@ public class MapInfoLayer extends OsmandMapLayer {
 	}
 	
 
-	public static String getStringPropertyName(Context ctx, String propertyName, String defValue) {
-		try {
-			Field f = R.string.class.getField("rendering_attr_" + propertyName + "_name");
-			if (f != null) {
-				Integer in = (Integer) f.get(null);
-				return ctx.getString(in);
-			}
-		} catch (Exception e) {
-			System.err.println(e.getMessage());
-		}
-		return defValue;
-	}
-	
-	public static String getStringPropertyDescription(Context ctx, String propertyName, String defValue) {
-		try {
-			Field f = R.string.class.getField("rendering_attr_" + propertyName + "_description");
-			if (f != null) {
-				Integer in = (Integer) f.get(null);
-				return ctx.getString(in);
-			}
-		} catch (Exception e) {
-			//e.printStackTrace();
-			System.err.println(e.getMessage());
-		}
-		return defValue;
-	}
+// --Commented out by Inspection START (26/01/19 14:01):
+//	public static String getStringPropertyName(Context ctx, String propertyName, String defValue) {
+//		try {
+//			Field f = R.string.class.getField("rendering_attr_" + propertyName + "_name");
+//			if (f != null) {
+//				Integer in = (Integer) f.get(null);
+//				return ctx.getString(in);
+//			}
+//		} catch (Exception e) {
+//			System.err.println(e.getMessage());
+//		}
+//		return defValue;
+//	}
+// --Commented out by Inspection STOP (26/01/19 14:01)
+
+// --Commented out by Inspection START (26/01/19 15:45):
+//	public static String getStringPropertyDescription(Context ctx, String propertyName, String defValue) {
+//		try {
+//			Field f = R.string.class.getField("rendering_attr_" + propertyName + "_description");
+//			if (f != null) {
+//				Integer in = (Integer) f.get(null);
+//				return ctx.getString(in);
+//			}
+//		} catch (Exception e) {
+//			//e.printStackTrace();
+//			System.err.println(e.getMessage());
+//		}
+//		return defValue;
+//	}
+// --Commented out by Inspection STOP (26/01/19 15:45)
 }

@@ -1,16 +1,16 @@
 package net.osmand.plus.mapcontextmenu.editors;
 
-import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import net.osmand.data.FavouritePoint;
 import net.osmand.data.LatLon;
@@ -28,15 +28,15 @@ public class FavoritePointEditorFragment extends PointEditorFragment {
 	private FavoritePointEditor editor;
 	private FavouritePoint favorite;
 	private FavoriteGroup group;
-	FavouritesDbHelper helper;
+	private FavouritesDbHelper helper;
 
 	private boolean autoFill;
 	private boolean saved;
 	private int defaultColor;
 
 	@Override
-	public void onAttach(Activity activity) {
-		super.onAttach(activity);
+	public void onAttach(Context context) {
+		super.onAttach(context);
 		helper = getMyApplication().getFavorites();
 		editor = getMapActivity().getContextMenu().getFavoritePointEditor();
 	}
@@ -55,7 +55,7 @@ public class FavoritePointEditorFragment extends PointEditorFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = super.onCreateView(inflater, container, savedInstanceState);
 		if (view != null && editor.isNew()) {
-			Button replaceButton = (Button) view.findViewById(R.id.replace_button);
+			Button replaceButton = view.findViewById(R.id.replace_button);
 			replaceButton.setTextColor(getResources().getColor(!getEditor().isLight() ? R.color.osmand_orange : R.color.map_widget_blue));
 			replaceButton.setVisibility(View.VISIBLE);
 			replaceButton.setOnClickListener(new View.OnClickListener() {
@@ -71,18 +71,10 @@ public class FavoritePointEditorFragment extends PointEditorFragment {
 	}
 
 	@Override
-	public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 
 		if (autoFill){
-
-//			String name = favorite.getName() != null && !favorite.getName().isEmpty() ?
-//					favorite.getName() : getString(R.string.favorite_empty_place_name);
-//
-//			String tostText = name + getString(R.string.favorite_autofill_toast_text) + group.name;
-//
-//			Toast.makeText(getContext(), tostText, Toast.LENGTH_SHORT).show();
-
 			save(true);
 		}
 	}
@@ -116,30 +108,21 @@ public class FavoritePointEditorFragment extends PointEditorFragment {
 
 	public static void showInstance(final MapActivity mapActivity) {
 		FavoritePointEditor editor = mapActivity.getContextMenu().getFavoritePointEditor();
-		//int slideInAnim = editor.getSlideInAnimation();
-		//int slideOutAnim = editor.getSlideOutAnimation();
-
 		FavoritePointEditorFragment fragment = new FavoritePointEditorFragment();
 		mapActivity.getSupportFragmentManager().beginTransaction()
-				//.setCustomAnimations(slideInAnim, slideOutAnim, slideInAnim, slideOutAnim)
 				.add(R.id.fragmentContainer, fragment, editor.getFragmentTag())
 				.addToBackStack(null).commit();
 	}
 
 	public static void showAutoFillInstance(final MapActivity mapActivity, boolean autoFill) {
 		FavoritePointEditor editor = mapActivity.getContextMenu().getFavoritePointEditor();
-		//int slideInAnim = editor.getSlideInAnimation();
-		//int slideOutAnim = editor.getSlideOutAnimation();
-
 		FavoritePointEditorFragment fragment = new FavoritePointEditorFragment();
 		fragment.autoFill = autoFill;
 
 		mapActivity.getSupportFragmentManager().beginTransaction()
-				//.setCustomAnimations(slideInAnim, slideOutAnim, slideInAnim, slideOutAnim)
 				.add(R.id.fragmentContainer, fragment, editor.getFragmentTag())
 				.addToBackStack(null).commit();
 	}
-
 
 	@Override
 	protected boolean wasSaved() {
@@ -151,7 +134,7 @@ public class FavoritePointEditorFragment extends PointEditorFragment {
 		final FavouritePoint point = new FavouritePoint(favorite.getLatitude(), favorite.getLongitude(),
 				getNameTextValue(), getCategoryTextValue());
 		point.setDescription(getDescriptionTextValue());
-		AlertDialog.Builder builder = FavouritesDbHelper.checkDuplicates(point, helper, getMapActivity());
+		android.app.AlertDialog.Builder builder = FavouritesDbHelper.checkDuplicates(point, helper, getMapActivity());
 
 		if (favorite.getName().equals(point.getName()) &&
 				favorite.getCategory().equals(point.getCategory()) &&

@@ -1,13 +1,13 @@
 package net.osmand.plus.views.mapwidgets;
 
 import android.graphics.drawable.Drawable;
-import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import net.osmand.AndroidUtils;
@@ -119,7 +119,7 @@ public class MapInfoWidgetsFactory {
 	public TextInfoWidget createRulerControl(final MapActivity map) {
 		final String title = "—";
 		final TextInfoWidget rulerControl = new TextInfoWidget(map) {
-			RulerControlLayer rulerLayer = map.getMapLayers().getRulerControlLayer();
+			final RulerControlLayer rulerLayer = map.getMapLayers().getRulerControlLayer();
 			LatLon cacheFirstTouchPoint = new LatLon(0, 0);
 			LatLon cacheSecondTouchPoint = new LatLon(0, 0);
 			LatLon cacheSingleTouchPoint = new LatLon(0, 0);
@@ -210,7 +210,7 @@ public class MapInfoWidgetsFactory {
 	}
 
 	public static class TopToolbarController {
-		private TopToolbarControllerType type;
+		private final TopToolbarControllerType type;
 
 		int bgLightId = R.color.bg_color_light;
 		int bgDarkId = R.color.bg_color_dark;
@@ -222,52 +222,42 @@ public class MapInfoWidgetsFactory {
 		int backBtnIconClrLightId = R.color.icon_color;
 		int backBtnIconClrDarkId = 0;
 
-		int closeBtnIconLightId = R.drawable.ic_action_remove_dark;
-		int closeBtnIconDarkId = R.drawable.ic_action_remove_dark;
+		final int closeBtnIconLightId = R.drawable.ic_action_remove_dark;
+		final int closeBtnIconDarkId = R.drawable.ic_action_remove_dark;
 		int closeBtnIconClrLightId = R.color.icon_color;
 		int closeBtnIconClrDarkId = 0;
 		boolean closeBtnVisible = true;
 
-		int refreshBtnIconLightId = R.drawable.ic_action_refresh_dark;
-		int refreshBtnIconDarkId = R.drawable.ic_action_refresh_dark;
+		final int refreshBtnIconLightId = R.drawable.ic_action_refresh_dark;
+		final int refreshBtnIconDarkId = R.drawable.ic_action_refresh_dark;
 		int refreshBtnIconClrLightId = R.color.icon_color;
 		int refreshBtnIconClrDarkId = 0;
 
-		boolean refreshBtnVisible = false;
+		final boolean refreshBtnVisible = false;
 		boolean saveViewVisible = false;
-		protected boolean topBarSwitchVisible = false;
-		protected boolean topBarSwitchChecked = false;
+		boolean topBarSwitchVisible = false;
+		boolean topBarSwitchChecked = false;
 
 		int titleTextClrLightId = R.color.primary_text_light;
 		int titleTextClrDarkId = R.color.primary_text_dark;
 		int descrTextClrLightId = R.color.primary_text_light;
 		int descrTextClrDarkId = R.color.primary_text_dark;
-
 		boolean singleLineTitle = true;
-
-		boolean nightMode = false;
-
 		String title = "";
 		String description = null;
-
 		int saveViewTextId = -1;
 
 		OnClickListener onBackButtonClickListener;
 		OnClickListener onTitleClickListener;
 		OnClickListener onCloseButtonClickListener;
-		OnClickListener onRefreshButtonClickListener;
 		OnClickListener onSaveViewClickListener;
 		OnCheckedChangeListener onSwitchCheckedChangeListener;
-
-		Runnable onCloseToolbarListener;
-
-		View bottomView = null;
 
 		public TopToolbarController(TopToolbarControllerType type) {
 			this.type = type;
 		}
 
-		public TopToolbarControllerType getType() {
+		TopToolbarControllerType getType() {
 			return type;
 		}
 
@@ -277,10 +267,6 @@ public class MapInfoWidgetsFactory {
 
 		public String getTitle() {
 			return title;
-		}
-
-		public void setBottomView(View bottomView) {
-			this.bottomView = bottomView;
 		}
 
 		public void setSingleLineTitle(boolean singleLineTitle) {
@@ -308,19 +294,9 @@ public class MapInfoWidgetsFactory {
 			this.backBtnIconClrDarkId = backBtnIconClrDarkId;
 		}
 
-		public void setCloseBtnIconIds(int closeBtnIconLightId, int closeBtnIconDarkId) {
-			this.closeBtnIconLightId = closeBtnIconLightId;
-			this.closeBtnIconDarkId = closeBtnIconDarkId;
-		}
-
 		public void setCloseBtnIconClrIds(int closeBtnIconClrLightId, int closeBtnIconClrDarkId) {
 			this.closeBtnIconClrLightId = closeBtnIconClrLightId;
 			this.closeBtnIconClrDarkId = closeBtnIconClrDarkId;
-		}
-
-		public void setRefreshBtnIconIds(int refreshBtnIconLightId, int refreshBtnIconDarkId) {
-			this.refreshBtnIconLightId = refreshBtnIconLightId;
-			this.refreshBtnIconDarkId = refreshBtnIconDarkId;
 		}
 
 		public void setRefreshBtnIconClrIds(int refreshBtnIconClrLightId, int refreshBtnIconClrDarkId) {
@@ -330,10 +306,6 @@ public class MapInfoWidgetsFactory {
 
 		public void setCloseBtnVisible(boolean closeBtnVisible) {
 			this.closeBtnVisible = closeBtnVisible;
-		}
-
-		public void setRefreshBtnVisible(boolean visible) {
-			this.refreshBtnVisible = visible;
 		}
 
 		public void setSaveViewVisible(boolean visible) {
@@ -382,19 +354,11 @@ public class MapInfoWidgetsFactory {
 			this.onSwitchCheckedChangeListener = onSwitchCheckedChangeListener;
 		}
 
-		public void setOnRefreshButtonClickListener(OnClickListener onRefreshButtonClickListener) {
-			this.onRefreshButtonClickListener = onRefreshButtonClickListener;
-		}
-
-		public void setOnCloseToolbarListener(Runnable onCloseToolbarListener) {
-			this.onCloseToolbarListener = onCloseToolbarListener;
-		}
-
 		public void updateToolbar(TopToolbarView view) {
 			TextView titleView = view.getTitleView();
 			TextView descrView = view.getDescrView();
 			LinearLayout bottomViewLayout = view.getBottomViewLayout();
-			SwitchCompat switchCompat = view.getTopBarSwitch();
+			Switch barSwitch = view.getTopBarSwitch();
 			if (title != null) {
 				titleView.setText(title);
 				view.updateVisibility(titleView, true);
@@ -407,16 +371,10 @@ public class MapInfoWidgetsFactory {
 			} else {
 				view.updateVisibility(descrView, false);
 			}
-			if (bottomView != null) {
-				bottomViewLayout.removeAllViews();
-				bottomViewLayout.addView(bottomView);
-				view.updateVisibility(bottomViewLayout, true);
-			} else {
-				view.updateVisibility(bottomViewLayout, false);
-			}
-			view.updateVisibility(switchCompat, topBarSwitchVisible);
+			view.updateVisibility(bottomViewLayout, false);
+			view.updateVisibility(barSwitch, topBarSwitchVisible);
 			if (topBarSwitchVisible) {
-				switchCompat.setChecked(topBarSwitchChecked);
+				barSwitch.setChecked(topBarSwitchChecked);
 			}
 			if (view.getShadowView() != null) {
 				view.getShadowView().setVisibility(View.VISIBLE);
@@ -426,20 +384,20 @@ public class MapInfoWidgetsFactory {
 
 	public static class TopToolbarView {
 		private final MapActivity map;
-		private LinkedList<TopToolbarController> controllers = new LinkedList<>();
-		private TopToolbarController defaultController = new TopToolbarController(TopToolbarControllerType.CONTEXT_MENU);
-		private View topbar;
-		private View topBarLayout;
-		private View topBarBottomView;
-		private View topBarTitleLayout;
-		private ImageButton backButton;
-		private TextView titleView;
-		private TextView descrView;
-		private ImageButton refreshButton;
-		private ImageButton closeButton;
-		private TextView saveView;
-		private SwitchCompat topBarSwitch;
-		private View shadowView;
+		private final LinkedList<TopToolbarController> controllers = new LinkedList<>();
+		private final TopToolbarController defaultController = new TopToolbarController(TopToolbarControllerType.CONTEXT_MENU);
+		private final View topbar;
+		private final View topBarLayout;
+		private final View topBarBottomView;
+		private final View topBarTitleLayout;
+		private final ImageButton backButton;
+		private final TextView titleView;
+		private final TextView descrView;
+		private final ImageButton refreshButton;
+		private final ImageButton closeButton;
+		private final TextView saveView;
+		private final Switch topBarSwitch;
+		private final View shadowView;
 		private boolean nightMode;
 
 		public TopToolbarView(final MapActivity map) {
@@ -449,59 +407,31 @@ public class MapInfoWidgetsFactory {
 			topBarLayout = map.findViewById(R.id.widget_top_bar_layout);
 			topBarBottomView = map.findViewById(R.id.widget_top_bar_bottom_view);
 			topBarTitleLayout = map.findViewById(R.id.widget_top_bar_title_layout);
-			backButton = (ImageButton) map.findViewById(R.id.widget_top_bar_back_button);
-			refreshButton = (ImageButton) map.findViewById(R.id.widget_top_bar_refresh_button);
-			closeButton = (ImageButton) map.findViewById(R.id.widget_top_bar_close_button);
-			titleView = (TextView) map.findViewById(R.id.widget_top_bar_title);
-			saveView = (TextView) map.findViewById(R.id.widget_top_bar_save);
-			descrView = (TextView) map.findViewById(R.id.widget_top_bar_description);
-			topBarSwitch = (SwitchCompat) map.findViewById(R.id.widget_top_bar_switch);
+			backButton = map.findViewById(R.id.widget_top_bar_back_button);
+			refreshButton = map.findViewById(R.id.widget_top_bar_refresh_button);
+			closeButton = map.findViewById(R.id.widget_top_bar_close_button);
+			titleView = map.findViewById(R.id.widget_top_bar_title);
+			saveView = map.findViewById(R.id.widget_top_bar_save);
+			descrView = map.findViewById(R.id.widget_top_bar_description);
+			topBarSwitch = map.findViewById(R.id.widget_top_bar_switch);
 			shadowView = map.findViewById(R.id.widget_top_bar_shadow);
 			updateVisibility(false);
 		}
 
-		public MapActivity getMap() {
-			return map;
-		}
-
-		public View getTopbar() {
-			return topbar;
-		}
-
-		public View getTopBarLayout() {
-			return topBarLayout;
-		}
-
-		public ImageButton getBackButton() {
-			return backButton;
-		}
-
-		public TextView getTitleView() {
+		TextView getTitleView() {
 			return titleView;
 		}
 
-		public LinearLayout getBottomViewLayout() {
+		LinearLayout getBottomViewLayout() {
 			return (LinearLayout) topBarBottomView;
 		}
 
-		public TextView getDescrView() {
+		TextView getDescrView() {
 			return descrView;
 		}
 
-		public ImageButton getCloseButton() {
-			return closeButton;
-		}
-
-		public TextView getSaveView() {
-			return saveView;
-		}
-
-		public SwitchCompat getTopBarSwitch() {
+		Switch getTopBarSwitch() {
 			return topBarSwitch;
-		}
-
-		public ImageButton getRefreshButton() {
-			return refreshButton;
 		}
 
 		public View getShadowView() {
@@ -529,9 +459,6 @@ public class MapInfoWidgetsFactory {
 			for (Iterator ctrlIter = controllers.iterator(); ctrlIter.hasNext(); ) {
 				TopToolbarController ctrl = (TopToolbarController) ctrlIter.next();
 				if (ctrl.getType() == controller.getType()) {
-					if (controller.onCloseToolbarListener != null) {
-						controller.onCloseToolbarListener.run();
-					}
 					ctrlIter.remove();
 				}
 			}
@@ -541,19 +468,16 @@ public class MapInfoWidgetsFactory {
 		}
 
 		public void removeController(TopToolbarController controller) {
-			if (controller.onCloseToolbarListener != null) {
-				controller.onCloseToolbarListener.run();
-			}
 			controllers.remove(controller);
 			updateColors();
 			updateInfo();
 		}
 
-		public boolean updateVisibility(boolean visible) {
-			return updateVisibility(topbar, visible);
+		void updateVisibility(boolean visible) {
+			updateVisibility(topbar, visible);
 		}
 
-		public boolean updateVisibility(View v, boolean visible) {
+		void updateVisibility(View v, boolean visible) {
 			if (visible != (v.getVisibility() == View.VISIBLE)) {
 				if (visible) {
 					v.setVisibility(View.VISIBLE);
@@ -561,16 +485,13 @@ public class MapInfoWidgetsFactory {
 					v.setVisibility(View.GONE);
 				}
 				v.invalidate();
-				return true;
 			}
-			return false;
 		}
 
 		private void initToolbar(TopToolbarController controller) {
 			backButton.setOnClickListener(controller.onBackButtonClickListener);
 			topBarTitleLayout.setOnClickListener(controller.onTitleClickListener);
 			closeButton.setOnClickListener(controller.onCloseButtonClickListener);
-			refreshButton.setOnClickListener(controller.onRefreshButtonClickListener);
 			saveView.setOnClickListener(controller.onSaveViewClickListener);
 			topBarSwitch.setOnCheckedChangeListener(controller.onSwitchCheckedChangeListener);
 		}
@@ -587,9 +508,8 @@ public class MapInfoWidgetsFactory {
 			updateVisibility(controller != null && (!map.getContextMenu().isVisible() || controller.getType() == TopToolbarControllerType.CONTEXT_MENU));
 		}
 
-		public void updateColors(TopToolbarController controller) {
+		void updateColors(TopToolbarController controller) {
 			OsmandApplication app = map.getMyApplication();
-			controller.nightMode = nightMode;
 			if (nightMode) {
 				topBarLayout.setBackgroundResource(AndroidUiHelper.isOrientationPortrait(map) ? controller.bgDarkId : controller.bgDarkLandId);
 				if (controller.backBtnIconDarkId == 0) {
@@ -597,16 +517,8 @@ public class MapInfoWidgetsFactory {
 				} else {
 					backButton.setImageDrawable(app.getIconsCache().getIcon(controller.backBtnIconDarkId, controller.backBtnIconClrDarkId));
 				}
-				if (controller.closeBtnIconDarkId == 0) {
-					closeButton.setImageDrawable(null);
-				} else {
-					closeButton.setImageDrawable(app.getIconsCache().getIcon(controller.closeBtnIconDarkId, controller.closeBtnIconClrDarkId));
-				}
-				if (controller.refreshBtnIconDarkId == 0) {
-					refreshButton.setImageDrawable(null);
-				} else {
-					refreshButton.setImageDrawable(app.getIconsCache().getIcon(controller.refreshBtnIconDarkId, controller.refreshBtnIconClrDarkId));
-				}
+				closeButton.setImageDrawable(app.getIconsCache().getIcon(controller.closeBtnIconDarkId, controller.closeBtnIconClrDarkId));
+				refreshButton.setImageDrawable(app.getIconsCache().getIcon(controller.refreshBtnIconDarkId, controller.refreshBtnIconClrDarkId));
 				int titleColor = map.getResources().getColor(controller.titleTextClrDarkId);
 				int descrColor = map.getResources().getColor(controller.descrTextClrDarkId);
 				titleView.setTextColor(titleColor);
@@ -619,16 +531,8 @@ public class MapInfoWidgetsFactory {
 				} else {
 					backButton.setImageDrawable(app.getIconsCache().getIcon(controller.backBtnIconLightId, controller.backBtnIconClrLightId));
 				}
-				if (controller.closeBtnIconLightId == 0) {
-					closeButton.setImageDrawable(null);
-				} else {
-					closeButton.setImageDrawable(app.getIconsCache().getIcon(controller.closeBtnIconLightId, controller.closeBtnIconClrLightId));
-				}
-				if (controller.refreshBtnIconLightId == 0) {
-					refreshButton.setImageDrawable(null);
-				} else {
-					refreshButton.setImageDrawable(app.getIconsCache().getIcon(controller.refreshBtnIconLightId, controller.refreshBtnIconClrLightId));
-				}
+				closeButton.setImageDrawable(app.getIconsCache().getIcon(controller.closeBtnIconLightId, controller.closeBtnIconClrLightId));
+				refreshButton.setImageDrawable(app.getIconsCache().getIcon(controller.refreshBtnIconLightId, controller.refreshBtnIconClrLightId));
 				int titleColor = map.getResources().getColor(controller.titleTextClrLightId);
 				int descrColor = map.getResources().getColor(controller.descrTextClrLightId);
 				titleView.setTextColor(titleColor);
@@ -668,7 +572,7 @@ public class MapInfoWidgetsFactory {
 			}
 		}
 
-		public void updateColors() {
+		void updateColors() {
 			TopToolbarController controller = getTopController();
 			if (controller != null) {
 				updateColors(controller);
@@ -679,9 +583,6 @@ public class MapInfoWidgetsFactory {
 
 		public void updateColors(boolean nightMode) {
 			this.nightMode = nightMode;
-			for (TopToolbarController controller : controllers) {
-				controller.nightMode = nightMode;
-			}
 			updateColors();
 		}
 	}
@@ -689,22 +590,22 @@ public class MapInfoWidgetsFactory {
 	public static class TopTextView {
 		private final RoutingHelper routingHelper;
 		private final MapActivity map;
-		private View topBar;
-		private TextView addressText;
-		private TextView addressTextShadow;
-		private OsmAndLocationProvider locationProvider;
-		private WaypointHelper waypointHelper;
-		private OsmandSettings settings;
-		private View waypointInfoBar;
+		private final View topBar;
+		private final TextView addressText;
+		private final TextView addressTextShadow;
+		private final OsmAndLocationProvider locationProvider;
+		private final WaypointHelper waypointHelper;
+		private final OsmandSettings settings;
+		private final View waypointInfoBar;
 		private LocationPointWrapper lastPoint;
-		private TurnDrawable turnDrawable;
+		private final TurnDrawable turnDrawable;
 		private boolean showMarker;
 		private int shadowRad;
 
 		public TopTextView(OsmandApplication app, MapActivity map) {
 			topBar = map.findViewById(R.id.map_top_bar);
-			addressText = (TextView) map.findViewById(R.id.map_address_text);
-			addressTextShadow = (TextView) map.findViewById(R.id.map_address_text_shadow);
+			addressText = map.findViewById(R.id.map_address_text);
+			addressTextShadow = map.findViewById(R.id.map_address_text_shadow);
 			waypointInfoBar = map.findViewById(R.id.waypoint_info_bar);
 			this.routingHelper = app.getRoutingHelper();
 			locationProvider = app.getLocationProvider();
@@ -715,15 +616,13 @@ public class MapInfoWidgetsFactory {
 			turnDrawable = new NextTurnInfoWidget.TurnDrawable(map, true);
 		}
 
-		public boolean updateVisibility(boolean visible) {
-			boolean res = updateVisibility(topBar, visible);
-			if (res) {
+		void updateVisibility(boolean visible) {
+			if (updateVisibility(topBar, visible)) {
 				map.updateStatusBarColor();
 			}
-			return res;
 		}
 
-		public boolean updateVisibility(View v, boolean visible) {
+		boolean updateVisibility(View v, boolean visible) {
 			if (visible != (v.getVisibility() == View.VISIBLE)) {
 				if (visible) {
 					v.setVisibility(View.VISIBLE);
@@ -743,8 +642,8 @@ public class MapInfoWidgetsFactory {
 					(TextView) waypointInfoBar.findViewById(R.id.waypoint_text_shadow),
 					textColor, textShadowColor, bold, rad / 2);
 
-			ImageView all = (ImageView) waypointInfoBar.findViewById(R.id.waypoint_more);
-			ImageView remove = (ImageView) waypointInfoBar.findViewById(R.id.waypoint_close);
+			ImageView all = waypointInfoBar.findViewById(R.id.waypoint_more);
+			ImageView remove = waypointInfoBar.findViewById(R.id.waypoint_close);
 			all.setImageDrawable(map.getMyApplication().getIconsCache()
 					.getIcon(R.drawable.ic_overflow_menu_white, !nightMode));
 			remove.setImageDrawable(map.getMyApplication().getIconsCache()
@@ -780,12 +679,6 @@ public class MapInfoWidgetsFactory {
 						type[0] = next.getTurnType();
 						turnDrawable.setColor(R.color.nav_arrow_distant);
 						text = RoutingHelper.formatStreetName(next.getStreetName(), next.getRef(), next.getDestinationName(), "»");
-//						if (next.distance > 0) {
-//							text += " " + OsmAndFormatter.getFormattedDistance(next.distance, map.getMyApplication());
-//						}
-						if (text == null) {
-							text = "";
-						}
 					} else {
 						text = null;
 					}
@@ -861,7 +754,7 @@ public class MapInfoWidgetsFactory {
 			return false;
 		}
 
-		public boolean updateWaypoint() {
+		boolean updateWaypoint() {
 			final LocationPointWrapper pnt = waypointHelper.getMostImportantLocationPoint(null);
 			boolean changed = this.lastPoint != pnt;
 			this.lastPoint = pnt;
@@ -877,8 +770,8 @@ public class MapInfoWidgetsFactory {
 				WaypointDialogHelper.updatePointInfoView(map.getMyApplication(), map, topBar, pnt, true,
 						map.getMyApplication().getDaynightHelper().isNightModeForMapControls(), false, true);
 				if (updated || changed) {
-					ImageView all = (ImageView) waypointInfoBar.findViewById(R.id.waypoint_more);
-					ImageView remove = (ImageView) waypointInfoBar.findViewById(R.id.waypoint_close);
+					ImageView all = waypointInfoBar.findViewById(R.id.waypoint_more);
+					ImageView remove = waypointInfoBar.findViewById(R.id.waypoint_close);
 					all.setOnClickListener(new OnClickListener() {
 						@Override
 						public void onClick(View view) {
@@ -900,6 +793,5 @@ public class MapInfoWidgetsFactory {
 		public void setBackgroundResource(int boxTop) {
 			topBar.setBackgroundResource(boxTop);
 		}
-
 	}
 }

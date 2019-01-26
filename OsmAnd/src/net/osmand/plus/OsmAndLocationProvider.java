@@ -2,7 +2,6 @@ package net.osmand.plus;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,7 +11,6 @@ import net.osmand.ResultMatcher;
 import net.osmand.access.NavigationInfo;
 import net.osmand.binary.GeocodingUtilities.GeocodingResult;
 import net.osmand.binary.RouteDataObject;
-import net.osmand.data.LatLon;
 import net.osmand.data.QuadPoint;
 import net.osmand.plus.OsmandSettings.OsmandPreference;
 import net.osmand.plus.TargetPointsHelper.TargetPoint;
@@ -40,7 +38,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.util.Log;
 
 public class OsmAndLocationProvider implements SensorEventListener {
@@ -84,19 +82,19 @@ public class OsmAndLocationProvider implements SensorEventListener {
 	private SimulationProvider simulatePosition = null;
 
 	private boolean sensorRegistered = false;
-	private float[] mGravs = new float[3];
-	private float[] mGeoMags = new float[3];
+	private final float[] mGravs = new float[3];
+	private final float[] mGeoMags = new float[3];
 	private float previousCorrectionValue = 360;
 
 	private static final boolean USE_KALMAN_FILTER = true;
 	private static final float KALMAN_COEFFICIENT = 0.04f;
 
-	float avgValSin = 0;
-	float avgValCos = 0;
-	float lastValSin = 0;
-	float lastValCos = 0;
-	private float[] previousCompassValuesA = new float[50];
-	private float[] previousCompassValuesB = new float[50];
+	private float avgValSin = 0;
+	private float avgValCos = 0;
+	private float lastValSin = 0;
+	private float lastValCos = 0;
+	private final float[] previousCompassValuesA = new float[50];
+	private final float[] previousCompassValuesB = new float[50];
 	private int previousCompassIndA = 0;
 	private int previousCompassIndB = 0;
 	private boolean inUpdateValue = false;
@@ -106,27 +104,26 @@ public class OsmAndLocationProvider implements SensorEventListener {
 	// Current screen orientation
 	private int currentScreenOrientation;
 
-	private OsmandApplication app;
-	private OsmandSettings settings;
+	private final OsmandApplication app;
+	private final OsmandSettings settings;
 
-	private NavigationInfo navigationInfo;
-	private CurrentPositionHelper currentPositionHelper;
-	private OsmAndLocationSimulation locationSimulation;
+	private final NavigationInfo navigationInfo;
+	private final CurrentPositionHelper currentPositionHelper;
+	private final OsmAndLocationSimulation locationSimulation;
 
 	private net.osmand.Location location = null;
 
-	private GPSInfo gpsInfo = new GPSInfo();
+	private final GPSInfo gpsInfo = new GPSInfo();
 
-	private List<OsmAndLocationListener> locationListeners = new ArrayList<OsmAndLocationProvider.OsmAndLocationListener>();
-	private List<OsmAndCompassListener> compassListeners = new ArrayList<OsmAndLocationProvider.OsmAndCompassListener>();
+	private final List<OsmAndLocationListener> locationListeners = new ArrayList<>();
+	private final List<OsmAndCompassListener> compassListeners = new ArrayList<>();
 	private Listener gpsStatusListener;
-	private float[] mRotationM = new float[9];
-	private OsmandPreference<Boolean> USE_MAGNETIC_FIELD_SENSOR_COMPASS;
-	private OsmandPreference<Boolean> USE_FILTER_FOR_COMPASS;
+	private final float[] mRotationM = new float[9];
+	private final OsmandPreference<Boolean> USE_MAGNETIC_FIELD_SENSOR_COMPASS;
+	private final OsmandPreference<Boolean> USE_FILTER_FOR_COMPASS;
 	private static final long AGPS_TO_REDOWNLOAD = 16 * 60 * 60 * 1000; // 16 hours
 
-
-	public class SimulationProvider {
+	class SimulationProvider {
 		private int currentRoad;
 		private int currentSegment;
 		private QuadPoint currentPoint;
@@ -134,8 +131,8 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		private List<RouteSegmentResult> roads;
 
 
-		public void startSimulation(List<RouteSegmentResult> roads,
-									net.osmand.Location currentLocation) {
+		void startSimulation(List<RouteSegmentResult> roads,
+							 net.osmand.Location currentLocation) {
 			this.roads = roads;
 			startLocation = new net.osmand.Location(currentLocation);
 			long ms = System.currentTimeMillis();
@@ -202,7 +199,7 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		/**
 		 * @return null if it is not available of far from boundaries
 		 */
-		public net.osmand.Location getSimulatedLocation() {
+		net.osmand.Location getSimulatedLocation() {
 			if (!isSimulatedDataAvailable()) {
 				return null;
 			}
@@ -219,7 +216,7 @@ public class OsmAndLocationProvider implements SensorEventListener {
 			return loc;
 		}
 
-		public boolean isSimulatedDataAvailable() {
+		boolean isSimulatedDataAvailable() {
 			return startLocation != null && startLocation.getSpeed() > 0 && currentRoad >= 0;
 		}
 	}
@@ -253,7 +250,7 @@ public class OsmAndLocationProvider implements SensorEventListener {
 			} catch (IllegalArgumentException e) {
 				Log.d(PlatformUtil.TAG, "GPS location provider not available"); //$NON-NLS-1$
 			}
-			// try to always ask for network provide : it is faster way to find location
+			// try to always ask for network provider : it is faster way to find location
 
 			List<String> providers = service.getProviders(true);
 			if (providers == null) {
@@ -302,21 +299,16 @@ public class OsmAndLocationProvider implements SensorEventListener {
 	}
 	
 	private void updateGPSInfo(GpsStatus s) {
-		boolean fixed = false;
 		int n = 0;
 		int u = 0;
 		if (s != null) {
-			Iterator<GpsSatellite> iterator = s.getSatellites().iterator();
-			while (iterator.hasNext()) {
-				GpsSatellite g = iterator.next();
+			for (GpsSatellite g : s.getSatellites()) {
 				n++;
 				if (g.usedInFix()) {
 					u++;
-					fixed = true;
 				}
 			}
 		}
-		gpsInfo.fixed = fixed;
 		gpsInfo.foundSatellites = n;
 		gpsInfo.usedSatellites = u;
 	}
@@ -358,7 +350,7 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		if(ps == null) {
 			return null;
 		}
-		List<String> providers = new ArrayList<String>(ps);
+		List<String> providers = new ArrayList<>(ps);
 		// note, passive provider is from API_LEVEL 8 but it is a constant, we can check for it.
 		// constant should not be changed in future
 		int passiveFirst = providers.indexOf("passive"); // LocationManager.PASSIVE_PROVIDER
@@ -404,38 +396,35 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		}
 	}
 
-	// location not null!
-	private void updateSpeedEmulator(net.osmand.Location location) {
-		// For network/gps it's bad way (not accurate). It's widely used for testing purposes
-		// possibly keep using only for emulator case
-		if (location != null) {
-			if (location.distanceTo(location) > 3) {
-				float d = location.distanceTo(location);
-				long time = location.getTime() - location.getTime();
-				float speed;
-				if (time == 0) {
-					speed = 0;
-				} else {
-					speed = ((float) d * 1000) / time;
-				}
-				// Be aware only for emulator ! code is incorrect in case of airplane
-				if (speed > 100) {
-					speed = 100;
-				}
-				location.setSpeed(speed);
-			}
-		}
-	}
+//	// location not null!
+//	private void updateSpeedEmulator(net.osmand.Location location) {
+//		// For network/gps it's bad way (not accurate). It's widely used for testing purposes
+//		// possibly keep using only for emulator case
+//		if (location != null) {
+//			if (location.distanceTo(location) > 3) {
+//				float d = location.distanceTo(location);
+//				long time = location.getTime() - location.getTime();
+//				float speed;
+//				if (time == 0) {
+//					speed = 0;
+//				} else {
+//					speed = (d * 1000) / time;
+//				}
+//				// Be aware only for emulator ! code is incorrect in case of airplane
+//				if (speed > 100) {
+//					speed = 100;
+//				}
+//				location.setSpeed(speed);
+//			}
+//		}
+//	}
 
 	public static boolean isPointAccurateForRouting(net.osmand.Location loc) {
 		return loc != null && (!loc.hasAccuracy() || loc.getAccuracy() < ACCURACY_FOR_GPX_AND_ROUTING * 3 / 2);
 	}
 
 	private boolean isRunningOnEmulator() {
-		if (Build.DEVICE.equals("generic")) { //$NON-NLS-1$ 
-			return true;
-		}
-		return false;
+		return Build.DEVICE.equals("generic");
 	}
 
 	@Override
@@ -469,17 +458,13 @@ public class OsmAndLocationProvider implements SensorEventListener {
 					return;
 				}
 				if (USE_MAGNETIC_FIELD_SENSOR_COMPASS.get()) {
-					if (mGravs != null && mGeoMags != null) {
-						boolean success = SensorManager.getRotationMatrix(mRotationM, null, mGravs, mGeoMags);
-						if (!success) {
-							return;
-						}
-						float[] orientation = SensorManager.getOrientation(mRotationM, new float[3]);
-						val = (float) Math.toDegrees(orientation[0]);
-					} else {
-						return;
-					}
-				}
+                    boolean success = SensorManager.getRotationMatrix(mRotationM, null, mGravs, mGeoMags);
+                    if (!success) {
+                        return;
+                    }
+                    float[] orientation = SensorManager.getOrientation(mRotationM, new float[3]);
+                    val = (float) Math.toDegrees(orientation[0]);
+                }
 				val = calcScreenOrientationCorrection(val);
 				val = calcGeoMagneticCorrection(val);
 
@@ -550,20 +535,13 @@ public class OsmAndLocationProvider implements SensorEventListener {
 	}	
 
 	private void updateCompassVal() {
-		heading = (float) getAngle(avgValSin, avgValCos);
+		heading = getAngle(avgValSin, avgValCos);
 		for(OsmAndCompassListener c : compassListeners){
 			c.updateCompassValue(heading);
 		}
 	}
 	
-	public synchronized Float getHeading() {
-//		if (heading != null && lastValSin != avgValSin && System.currentTimeMillis() - lastHeadingCalcTime > 700) {
-//			avgValSin = lastValSin;
-//			avgValCos = lastValCos;
-//			Arrays.fill(previousCompassValuesA, avgValSin);
-//			Arrays.fill(previousCompassValuesB, avgValCos);
-//			updateCompassVal();
-//		}
+	public Float getHeading() {
 		return heading;
 	}
 	
@@ -571,7 +549,6 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		return MapUtils.unifyRotationTo360((float) (Math.atan2(sinA, cosA) * 180 / Math.PI));
 	}
 
-	
 	private void updateLocation(net.osmand.Location loc) {
 		for (OsmAndLocationListener l : locationListeners) {
 			l.updateLocation(loc);
@@ -580,7 +557,7 @@ public class OsmAndLocationProvider implements SensorEventListener {
 
 	
 	
-	private LocationListener gpsListener = new LocationListener() {
+	private final LocationListener gpsListener = new LocationListener() {
 		@Override
 		public void onLocationChanged(Location location) {
 			if (location != null) {
@@ -603,7 +580,7 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		public void onStatusChanged(String provider, int status, Bundle extras) {
 		}
 	};
-	private LinkedList<LocationListener> networkListeners = new LinkedList<LocationListener>();
+	private final LinkedList<LocationListener> networkListeners = new LinkedList<>();
 
 	private boolean useOnlyGPS() {
 		if(app.getRoutingHelper().isFollowingMode()) {
@@ -640,7 +617,7 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		public void onStatusChanged(String provider, int status, Bundle extras) {
 		}
 
-	};
+	}
 
 	private void stopLocationRequests() {
 		LocationManager service = (LocationManager) app.getSystemService(Context.LOCATION_SERVICE);
@@ -730,7 +707,7 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		}
 	}
 	
-	public void simulatePosition() {
+	private void simulatePosition() {
 		app.runMessageInUIThreadAndCancelPrevious(RUN_SIMULATE_LOCATION_MSG_ID, new Runnable() {
 
 			@Override
@@ -782,7 +759,7 @@ public class OsmAndLocationProvider implements SensorEventListener {
 				}
 			}
 		}
-		enhanceLocation(location);
+//		enhanceLocation(location);
 		scheduleCheckIfGpsLost(location);
 		final RoutingHelper routingHelper = app.getRoutingHelper();
 		// 1. Logging services
@@ -810,12 +787,12 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		updateLocation(this.location);
 	}
 
-	private void enhanceLocation(net.osmand.Location location) {
-		if (location != null && isRunningOnEmulator()) {
-			// only for emulator
-			updateSpeedEmulator(location);
-		}
-	}
+//	private void enhanceLocation(net.osmand.Location location) {
+//		if (location != null && isRunningOnEmulator()) {
+//			// only for emulator
+//			updateSpeedEmulator(location);
+//		}
+//	}
 
 	public void checkIfLastKnownLocationIsValid() {
 		net.osmand.Location loc = getLastKnownLocation();
@@ -828,20 +805,13 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		return navigationInfo;
 	}
 
-	public String getNavigationHint(TargetPoint point) {
+	private String getNavigationHint(TargetPoint point) {
 		String hint = navigationInfo.getDirectionString(point == null ? null : point.point, getHeading());
 		if (hint == null)
 			hint = app.getString(R.string.no_info);
 		return hint;
 	}
 	
-	public String getNavigationHint(LatLon point) {
-		String hint = navigationInfo.getDirectionString(point, getHeading());
-		if (hint == null)
-			hint = app.getString(R.string.no_info);
-		return hint;
-	}
-
 	public void emitNavigationHint() {
 		final TargetPoint point = app.getTargetPointsHelper().getPointToNavigate();
 		if (point != null) {
@@ -915,7 +885,6 @@ public class OsmAndLocationProvider implements SensorEventListener {
 	public static class GPSInfo {
 		public int foundSatellites = 0;
 		public int usedSatellites = 0;
-		public boolean fixed = false;
 	}
 
 	public static boolean isNotSimulatedLocation(net.osmand.Location l) {
@@ -925,8 +894,6 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		return true;
 	}
 
-
-	
 	public boolean checkGPSEnabled(final Context context) {
 		LocationManager lm = (LocationManager)app.getSystemService(Context.LOCATION_SERVICE);
 		boolean gpsenabled = false;
@@ -959,10 +926,7 @@ public class OsmAndLocationProvider implements SensorEventListener {
 	}
 
 	public static boolean isLocationPermissionAvailable(Context context) {
-		if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION)
-				!= PackageManager.PERMISSION_GRANTED) {
-			return false;
-		}
-		return true;
+		return ActivityCompat.checkSelfPermission(context,
+				Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
 	}
 }

@@ -1,3 +1,4 @@
+//TODO jsala separar de Android
 package net.osmand;
 /*
  * Copyright (C) 2007 The Android Open Source Project
@@ -51,7 +52,7 @@ public class Location {
     private float mDistance = 0.0f;
     private float mInitialBearing = 0.0f;
     // Scratchpad
-    private float[] mResults = new float[2];
+    private final float[] mResults = new float[2];
     
     /**
      * Constructs a new Location.  By default, time, latitude,
@@ -76,7 +77,7 @@ public class Location {
     /**
      * Sets the contents of the location to the values from the given location.
      */
-    public void set(Location l) {
+    private void set(Location l) {
         mProvider = l.mProvider;
         mTime = l.mTime;
         mLatitude = l.mLatitude;
@@ -89,24 +90,6 @@ public class Location {
         mBearing = l.mBearing;
         mHasAccuracy = l.mHasAccuracy;
         mAccuracy = l.mAccuracy;
-    }
-
-    /**
-     * Clears the contents of the location.
-     */
-    public void reset() {
-        mProvider = null;
-        mTime = 0;
-        mLatitude = 0;
-        mLongitude = 0;
-        mHasAltitude = false;
-        mAltitude = 0;
-        mHasSpeed = false;
-        mSpeed = 0;
-        mHasBearing = false;
-        mBearing = 0;
-        mHasAccuracy = false;
-        mAccuracy = 0;
     }
 
     private static void computeDistanceAndBearing(double lat1, double lon1,
@@ -140,10 +123,6 @@ public class Location {
 
         double sigma = 0.0;
         double deltaSigma = 0.0;
-        double cosSqAlpha = 0.0;
-        double cos2SM = 0.0;
-        double cosSigma = 0.0;
-        double sinSigma = 0.0;
         double cosLambda = 0.0;
         double sinLambda = 0.0;
 
@@ -155,15 +134,14 @@ public class Location {
             double t1 = cosU2 * sinLambda;
             double t2 = cosU1 * sinU2 - sinU1 * cosU2 * cosLambda;
             double sinSqSigma = t1 * t1 + t2 * t2; // (14)
-            sinSigma = Math.sqrt(sinSqSigma);
-            cosSigma = sinU1sinU2 + cosU1cosU2 * cosLambda; // (15)
+            double sinSigma = Math.sqrt(sinSqSigma);
+            double cosSigma = sinU1sinU2 + cosU1cosU2 * cosLambda; // (15)
             sigma = Math.atan2(sinSigma, cosSigma); // (16)
             double sinAlpha = (sinSigma == 0) ? 0.0 :
                 cosU1cosU2 * sinLambda / sinSigma; // (17)
-            cosSqAlpha = 1.0 - sinAlpha * sinAlpha;
-            cos2SM = (cosSqAlpha == 0) ? 0.0 :
+            double cosSqAlpha = 1.0 - sinAlpha * sinAlpha;
+            double cos2SM = (cosSqAlpha == 0) ? 0.0 :
                 cosSigma - 2.0 * sinU1sinU2 / cosSqAlpha; // (18)
-
             double uSquared = cosSqAlpha * aSqMinusBSqOverBSq; // defn
             A = 1 + (uSquared / 16384.0) * // (3)
                 (4096.0 + uSquared *
@@ -378,15 +356,6 @@ public class Location {
     }
 
     /**
-     * Clears the altitude of this fix.  Following this call,
-     * hasAltitude() will return false.
-     */
-    public void removeAltitude() {
-        mAltitude = 0.0f;
-        mHasAltitude = false;
-    }
-
-    /**
      * Returns true if this fix contains speed information, false
      * otherwise.  The default implementation returns false.
      */
@@ -409,15 +378,6 @@ public class Location {
     public void setSpeed(float speed) {
         mSpeed = speed;
         mHasSpeed = true;
-    }
-
-    /**
-     * Clears the speed of this fix.  Following this call, hasSpeed()
-     * will return false.
-     */
-    public void removeSpeed() {
-        mSpeed = 0.0f;
-        mHasSpeed = false;
     }
 
     /**
@@ -452,15 +412,6 @@ public class Location {
     }
 
     /**
-     * Clears the bearing of this fix.  Following this call, hasBearing()
-     * will return false.
-     */
-    public void removeBearing() {
-        mBearing = 0.0f;
-        mHasBearing = false;
-    }
-
-    /**
      * Returns true if the provider is able to report accuracy information,
      * false otherwise.  The default implementation returns false.
      */
@@ -485,15 +436,6 @@ public class Location {
         mHasAccuracy = true;
     }
 
-    /**
-     * Clears the accuracy of this fix.  Following this call, hasAccuracy()
-     * will return false.
-     */
-    public void removeAccuracy() {
-        mAccuracy = 0.0f;
-        mHasAccuracy = false;
-    }
-
     @Override public String toString() {
         return "Location[mProvider=" + mProvider +
             ",mTime=" + mTime +
@@ -508,8 +450,4 @@ public class Location {
             ",mHasAccuracy=" + mHasAccuracy +
             ",mAccuracy=" + mAccuracy;
     }
-
-    
-
-    
 }

@@ -1,14 +1,14 @@
 package net.osmand.plus.voice;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
-import android.speech.tts.TextToSpeech.OnUtteranceCompletedListener;
-import android.support.v7.app.AlertDialog;
+import android.speech.tts.UtteranceProgressListener;
 
 import net.osmand.PlatformUtil;
 import net.osmand.plus.ApplicationMode;
@@ -28,10 +28,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-
 public class TTSCommandPlayerImpl extends AbstractPrologCommandPlayer {
-	public final static String PEBBLE_ALERT = "PEBBLE_ALERT";
-	public final static String WEAR_ALERT = "WEAR_ALERT";
+	private final static String PEBBLE_ALERT = "PEBBLE_ALERT";
 	private static final class IntentStarter implements
 			DialogInterface.OnClickListener {
 		private final Context ctx;
@@ -68,7 +66,7 @@ public class TTSCommandPlayerImpl extends AbstractPrologCommandPlayer {
 	private static String ttsVoiceStatus = "";
 	private static String ttsVoiceUsed = "";
 	private Context mTtsContext;
-	private HashMap<String, String> params = new HashMap<String, String>();
+	private final HashMap<String, String> params = new HashMap<>();
 	private VoiceRouter vrt;
 
 	public TTSCommandPlayerImpl(Activity ctx, ApplicationMode applicationMode, VoiceRouter vrt, String voiceProvider)
@@ -87,8 +85,6 @@ public class TTSCommandPlayerImpl extends AbstractPrologCommandPlayer {
 		params.put(TextToSpeech.Engine.KEY_PARAM_STREAM, app.getSettings().AUDIO_STREAM_GUIDANCE
 				.getModeValue(getApplicationMode()).toString());
 	}
-	
-	
 
 	/**
 	 * Since TTS requests are asynchronous, playCommands() can be called before
@@ -128,8 +124,6 @@ public class TTSCommandPlayerImpl extends AbstractPrologCommandPlayer {
 			params.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID,""+System.currentTimeMillis());
 			mTts.speak(bld.toString(), TextToSpeech.QUEUE_ADD, params);
 			// Audio focus will be released when onUtteranceCompleted() completed is called by the TTS engine.
-		} else if (ctx != null && vrt.isMute()) {
-			// sendAlertToAndroidWear(ctx, bld.toString());
 		}
 	}
 
@@ -142,11 +136,11 @@ public class TTSCommandPlayerImpl extends AbstractPrologCommandPlayer {
 		abandonAudioFocus();
 	}
 
-	public void sendAlertToPebble(String bld) {
+	private void sendAlertToPebble(String bld) {
 		final Intent i = new Intent("com.getpebble.action.SEND_NOTIFICATION");
-		final Map<String, Object> data = new HashMap<String, Object>();
+		final Map<String, Object> data = new HashMap<>();
 		data.put("title", "Voice");
-		data.put("body", bld.toString());
+		data.put("body", bld);
 		final JSONObject jsonData = new JSONObject(data);
 		final String notificationData = new JSONArray().put(jsonData).toString();
 		i.putExtra("messageType", PEBBLE_ALERT);
@@ -154,7 +148,7 @@ public class TTSCommandPlayerImpl extends AbstractPrologCommandPlayer {
 		i.putExtra("notificationData", notificationData);
 		if (ctx != null) {
 			ctx.sendBroadcast(i);
-			log.info("Send message to pebble " + bld.toString());
+			log.info("Send message to pebble " + bld);
 		}
 	}
 
@@ -262,13 +256,29 @@ public class TTSCommandPlayerImpl extends AbstractPrologCommandPlayer {
 					return "-";
 				}
 			});
-			mTts.setOnUtteranceCompletedListener(new OnUtteranceCompletedListener() {
-				// The call back is on a binder thread.
+			mTts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
 				@Override
-				public synchronized void onUtteranceCompleted(String utteranceId) {
+				public void onStart(String utteranceId) {
+
+				}
+
+				// The callback is on a binder thread.
+				@Override
+				public void onDone(String utteranceId) {
 					if (--ttsRequests <= 0)
 						abandonAudioFocus();
 					log.debug("ttsRequests="+ttsRequests);
+					if (ttsRequests < 0) {
+						ttsRequests = 0;
+					}
+
+				}
+
+				@Override
+				public void onError(String utteranceId) {
+					if (--ttsRequests <= 0)
+						abandonAudioFocus();
+					log.debug("error ttsRequests="+ttsRequests);
 					if (ttsRequests < 0) {
 						ttsRequests = 0;
 					}
@@ -329,5 +339,4 @@ public class TTSCommandPlayerImpl extends AbstractPrologCommandPlayer {
 	public boolean supportsStructuredStreetNames() {
 		return getCurrentVersion() >= 103;
 	}
-
 }

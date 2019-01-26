@@ -23,7 +23,6 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp">
 
-
                 <TextView
                     android:id="@+id/map_address_text_shadow"
                     android:importantForAccessibility="no"
@@ -84,7 +83,8 @@
                         android:maxLines="2"
                         android:textColor="@color/osmand_orange"
                         android:textSize="@dimen/default_list_text_size"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:layout_marginStart="2dp" />
 
                     <TextView
                         android:id="@+id/waypoint_deviation"
@@ -97,7 +97,8 @@
                         android:textColor="@color/osmand_orange"
                         android:textSize="@dimen/default_list_text_size"
                         android:textStyle="bold"
-                        android:visibility="gone"/>
+                        android:visibility="gone"
+                        android:layout_marginStart="2dp" />
 
                 </LinearLayout>
 
@@ -106,7 +107,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="4dp"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp">
 
                     <TextView
                         android:id="@+id/waypoint_text_shadow"
@@ -155,7 +157,8 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:visibility="gone"
-        tools:visibility="visible">
+        tools:visibility="visible"
+        android:focusable="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -255,7 +258,7 @@
                     android:visibility="gone"
                     osmand:typeface="@string/font_roboto_medium"/>
 
-                <android.support.v7.widget.SwitchCompat
+                <Switch
                     android:id="@+id/widget_top_bar_switch"
                     android:layout_width="wrap_content"
                     android:layout_height="56dp"
@@ -291,7 +294,8 @@
             android:clickable="true"
             android:minHeight="@dimen/map_address_height"
             android:visibility="gone"
-            tools:visibility="visible">
+            tools:visibility="visible"
+        android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -378,12 +382,6 @@
                     android:background="@color/markers_top_bar_2nd_background"
                     android:visibility="visible">
 
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:foreground="@drawable/bg_contextmenu_shadow"
-                        android:foregroundGravity="top|fill_horizontal"/>
-
                     <LinearLayout
                         android:id="@+id/map_marker_row_2nd"
                         android:layout_width="match_parent"
@@ -423,6 +421,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignBaseline="@+id/map_marker_dist_2nd"
                                 android:layout_toRightOf="@+id/map_marker_dist_2nd"
+                                android:layout_toEndOf="@+id/map_marker_dist_2nd"
                                 android:ellipsize="end"
                                 android:maxLines="1"
                                 android:text="  •  Dmitr"
@@ -467,12 +466,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="top|left"
+                android:layout_gravity="top|start"
                 android:layout_weight="0.45"
                 android:orientation="vertical">
 
@@ -480,21 +480,17 @@
                     android:id="@+id/map_left_widgets_panel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="top|left"
+                    android:layout_gravity="top|start"
                     android:orientation="vertical">
 
-                    <!-- 
-                    <include layout="@layout/map_hud_widget" />
-                    <include layout="@layout/map_hud_widget" />
-                    <include layout="@layout/map_hud_widget" />
-                     -->
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="top|left"
+                    android:layout_gravity="top|start"
                     android:layout_marginLeft="@dimen/map_button_margin"
+                    android:layout_marginStart="@dimen/map_button_margin"
                     android:layout_marginTop="@dimen/map_button_margin"
                     android:orientation="horizontal">
 
@@ -529,6 +525,7 @@
                         android:layout_width="@dimen/map_small_button_size"
                         android:layout_height="@dimen/map_small_button_size"
                         android:layout_marginLeft="@dimen/map_small_button_margin"
+                        android:layout_marginStart="@dimen/map_small_button_margin"
                         android:background="@drawable/btn_inset_circle_trans"
                         tools:src="@drawable/ic_action_test_light"/>
                 </LinearLayout>
@@ -548,7 +545,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:baselineAligned="false">
 
             <!-- empty block to not let widgets grow more than 45% -->
 
@@ -561,36 +559,29 @@
             <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="top|right"
+                android:layout_gravity="top|end"
                 android:layout_weight="0.45">
 
                 <LinearLayout
+                    android:id="@+id/map_right_widgets_panel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="top|right"
+                    android:layout_gravity="top|end"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:id="@+id/map_right_widgets_panel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="top|right"
-                        android:orientation="vertical">
+                    <include layout="@layout/map_hud_widget"/>
 
-                        <include layout="@layout/map_hud_widget"/>
-
-                        <include layout="@layout/map_hud_widget"/>
-                    </LinearLayout>
-
-                    <ImageButton
-                        android:id="@+id/map_collapse_button"
-                        android:contentDescription="@string/shared_string_collapse"
-                        android:layout_width="@dimen/map_small_button_size"
-                        android:layout_height="@dimen/map_small_button_size"
-                        android:layout_gravity="top|center_horizontal"
-                        android:background="@drawable/btn_inset_circle_trans"
-                        tools:src="@drawable/ic_action_test_light"/>
+                    <include layout="@layout/map_hud_widget"/>
                 </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/map_collapse_button"
+                    android:contentDescription="@string/shared_string_collapse"
+                    android:layout_width="@dimen/map_small_button_size"
+                    android:layout_height="@dimen/map_small_button_size"
+                    android:layout_gravity="top|center_horizontal"
+                    android:background="@drawable/btn_inset_circle_trans"
+                    tools:src="@drawable/ic_action_test_light"/>
             </FrameLayout>
         </LinearLayout>
         <!-- CENTER -->

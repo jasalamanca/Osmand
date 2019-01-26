@@ -1,22 +1,23 @@
 package net.osmand.plus.firstusage;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StatFs;
 import android.provider.Settings.Secure;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.AppCompatButton;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -71,13 +72,13 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 	public static final String TAG = "FirstUsageWizardFrag";
 	public static final int FIRST_USAGE_LOCATION_PERMISSION = 300;
 	public static final int FIRST_USAGE_REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION = 400;
-	public static final String WIZARD_TYPE_KEY = "wizard_type_key";
-	public static final String SEARCH_LOCATION_BY_IP_KEY = "search_location_by_ip_key";
+	private static final String WIZARD_TYPE_KEY = "wizard_type_key";
+	private static final String SEARCH_LOCATION_BY_IP_KEY = "search_location_by_ip_key";
 
 	private View view;
 	private DownloadIndexesThread downloadThread;
 	private DownloadValidationManager validationManager;
-	private MessageFormat formatGb = new MessageFormat("{0, number,#.##} GB", Locale.US);
+	private final MessageFormat formatGb = new MessageFormat("{0, number,#.##} GB", Locale.US);
 
 	private static WizardType wizardType;
 	private static final WizardType DEFAULT_WIZARD_TYPE = WizardType.SEARCH_LOCATION;
@@ -85,7 +86,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 
 	private Timer locationSearchTimer;
 	private boolean waitForIndexes;
-	List<IndexItem> indexItems = new ArrayList<>();
+	private final List<IndexItem> indexItems = new ArrayList<>();
 
 	private static Location location;
 	private static WorldRegion localDownloadRegion;
@@ -118,17 +119,17 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 
 	@Nullable
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.first_usage_wizard_fragment, container, false);
 		AndroidUtils.addStatusBarPadding21v(getActivity(), view);
 
 		if (!AndroidUiHelper.isOrientationPortrait(getActivity()) && !AndroidUiHelper.isXLargeDevice(getActivity())) {
-			TextView wizardDescription = (TextView) view.findViewById(R.id.wizard_description);
+			TextView wizardDescription = view.findViewById(R.id.wizard_description);
 			wizardDescription.setMinimumHeight(0);
 			wizardDescription.setMinHeight(0);
 		}
 
-		AppCompatButton skipButton = (AppCompatButton) view.findViewById(R.id.skip_button);
+		Button skipButton = view.findViewById(R.id.skip_button);
 		skipButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -194,8 +195,8 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 				view.findViewById(R.id.search_map_action_button).setEnabled(false);
 				break;
 			case MAP_FOUND:
-				TextView mapTitle = (TextView) view.findViewById(R.id.map_download_title);
-				TextView mapDescription = (TextView) view.findViewById(R.id.map_download_desc);
+				TextView mapTitle = view.findViewById(R.id.map_download_title);
+				TextView mapDescription = view.findViewById(R.id.map_download_desc);
 				final IndexItem indexItem = localMapIndexItem != null ? localMapIndexItem : baseMapIndexItem;
 				if (indexItem != null) {
 					mapTitle.setText(indexItem.getVisibleName(getContext(), getMyApplication().getRegions(), false));
@@ -215,7 +216,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 					}
 				});
 				view.findViewById(R.id.map_download_card).setVisibility(View.VISIBLE);
-				final AppCompatButton searchCountryButton = (AppCompatButton) view.findViewById(R.id.search_country_button);
+				final Button searchCountryButton = view.findViewById(R.id.search_country_button);
 				searchCountryButton.setVisibility(View.VISIBLE);
 				searchCountryButton.setOnClickListener(new View.OnClickListener() {
 					@Override
@@ -235,13 +236,13 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 				if (indexItems.size() > 0) {
 					final IndexItem item = indexItems.get(0);
 					String mapName = item.getVisibleName(getContext(), getMyApplication().getRegions(), false);
-					TextView mapNameTextView = (TextView) view.findViewById(R.id.map_downloading_title);
+					TextView mapNameTextView = view.findViewById(R.id.map_downloading_title);
 					mapNameTextView.setText(mapName);
-					final TextView mapDescriptionTextView = (TextView) view.findViewById(R.id.map_downloading_desc);
+					final TextView mapDescriptionTextView = view.findViewById(R.id.map_downloading_desc);
 					final View progressPadding = view.findViewById(R.id.map_download_padding);
 					final View progressLayout = view.findViewById(R.id.map_download_progress_layout);
 					mapDescriptionTextView.setText(item.getSizeDescription(getContext()));
-					final ImageButton redownloadButton = (ImageButton) view.findViewById(R.id.map_redownload_button);
+					final ImageButton redownloadButton = view.findViewById(R.id.map_redownload_button);
 					redownloadButton.setOnClickListener(new View.OnClickListener() {
 						@Override
 						public void onClick(View v) {
@@ -273,13 +274,13 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 				if (indexItems.size() > 1) {
 					final IndexItem item = indexItems.get(1);
 					String mapName = item.getVisibleName(getContext(), getMyApplication().getRegions(), false);
-					TextView mapNameTextView = (TextView) view.findViewById(R.id.map2_downloading_title);
+					TextView mapNameTextView = view.findViewById(R.id.map2_downloading_title);
 					mapNameTextView.setText(mapName);
-					final TextView mapDescriptionTextView = (TextView) view.findViewById(R.id.map2_downloading_desc);
+					final TextView mapDescriptionTextView = view.findViewById(R.id.map2_downloading_desc);
 					final View progressPadding = view.findViewById(R.id.map2_download_padding);
 					final View progressLayout = view.findViewById(R.id.map2_download_progress_layout);
 					mapDescriptionTextView.setText(item.getSizeDescription(getContext()));
-					final ImageButton redownloadButton = (ImageButton) view.findViewById(R.id.map2_redownload_button);
+					final ImageButton redownloadButton = view.findViewById(R.id.map2_redownload_button);
 					redownloadButton.setOnClickListener(new View.OnClickListener() {
 						@Override
 						public void onClick(View v) {
@@ -508,15 +509,15 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 			int index = indexItems.indexOf(indexItem);
 			if (index == 0) {
 				if (!firstMapDownloadCancelled) {
-					final TextView mapDescriptionTextView = (TextView) view.findViewById(R.id.map_downloading_desc);
-					ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.map_download_progress_bar);
+					final TextView mapDescriptionTextView = view.findViewById(R.id.map_downloading_desc);
+					ProgressBar progressBar = view.findViewById(R.id.map_download_progress_bar);
 					mapDescriptionTextView.setText(v);
 					progressBar.setProgress(progress < 0 ? 0 : progress);
 				}
 			} else if (index == 1) {
 				if (!secondMapDownloadCancelled) {
-					final TextView mapDescriptionTextView = (TextView) view.findViewById(R.id.map2_downloading_desc);
-					ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.map2_download_progress_bar);
+					final TextView mapDescriptionTextView = view.findViewById(R.id.map2_downloading_desc);
+					ProgressBar progressBar = view.findViewById(R.id.map2_download_progress_bar);
 					mapDescriptionTextView.setText(v);
 					progressBar.setProgress(progress < 0 ? 0 : progress);
 				}
@@ -559,12 +560,12 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 		final View secondRowLayout = view.findViewById(R.id.map2_downloading_layout);
 		final View progressLayout = view.findViewById(R.id.map_download_progress_layout);
 		final View progressLayout2 = view.findViewById(R.id.map2_download_progress_layout);
-		final ImageButton redownloadButton = (ImageButton) view.findViewById(R.id.map_redownload_button);
-		final ImageButton redownloadButton2 = (ImageButton) view.findViewById(R.id.map2_redownload_button);
+		final ImageButton redownloadButton = view.findViewById(R.id.map_redownload_button);
+		final ImageButton redownloadButton2 = view.findViewById(R.id.map2_redownload_button);
 		for (IndexItem indexItem : indexItems) {
 			if (indexItem.isDownloaded()) {
 				if (i == 0 && progressLayout.getVisibility() == View.VISIBLE) {
-					final TextView mapDescriptionTextView = (TextView) view.findViewById(R.id.map_downloading_desc);
+					final TextView mapDescriptionTextView = view.findViewById(R.id.map_downloading_desc);
 					mapDescriptionTextView.setText(indexItem.getSizeDescription(getContext()));
 					view.findViewById(R.id.map_download_padding).setVisibility(View.VISIBLE);
 					progressLayout.setVisibility(View.GONE);
@@ -578,7 +579,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 						}
 					});
 				} else if (i == 1 && progressLayout2.getVisibility() == View.VISIBLE) {
-					final TextView mapDescriptionTextView = (TextView) view.findViewById(R.id.map2_downloading_desc);
+					final TextView mapDescriptionTextView = view.findViewById(R.id.map2_downloading_desc);
 					mapDescriptionTextView.setText(indexItem.getSizeDescription(getContext()));
 					view.findViewById(R.id.map2_download_padding).setVisibility(View.VISIBLE);
 					progressLayout2.setVisibility(View.GONE);
@@ -733,7 +734,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 		}
 	}
 
-	public void closeWizard() {
+	private void closeWizard() {
 		FragmentActivity activity = getActivity();
 		if (activity != null) {
 			activity.getSupportFragmentManager().beginTransaction()
@@ -785,7 +786,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 
 	private void updateStorageView(View storageView) {
 		if (storageView != null) {
-			TextView title = (TextView) storageView.findViewById(R.id.storage_title);
+			TextView title = storageView.findViewById(R.id.storage_title);
 			OsmandSettings settings = getMyApplication().getSettings();
 			int type;
 			if (settings.getExternalStorageDirectoryTypeV19() >= 0) {
@@ -801,13 +802,13 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 			}
 			title.setText(getString(R.string.storage_place_description, getStorageName(type)));
 
-			TextView freeSpace = (TextView) storageView.findViewById(R.id.storage_free_space);
-			TextView freeSpaceValue = (TextView) storageView.findViewById(R.id.storage_free_space_value);
+			TextView freeSpace = storageView.findViewById(R.id.storage_free_space);
+			TextView freeSpaceValue = storageView.findViewById(R.id.storage_free_space_value);
 			String freeSpaceStr = getString(R.string.storage_free_space) + ": ";
 			freeSpace.setText(freeSpaceStr);
 			freeSpaceValue.setText(getFreeSpace(settings.getExternalStorageDirectory()));
 
-			AppCompatButton changeStorageButton = (AppCompatButton) storageView.findViewById(R.id.storage_change_button);
+			Button changeStorageButton = storageView.findViewById(R.id.storage_change_button);
 			if (wizardType == WizardType.MAP_DOWNLOAD) {
 				changeStorageButton.setEnabled(false);
 				changeStorageButton.setTextColor(getMyApplication().getResources().getColor(R.color.disabled_btn_text_color));
@@ -853,7 +854,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 		return "";
 	}
 
-	public static void showSearchLocationFragment(FragmentActivity activity, boolean searchByIp) {
+	private static void showSearchLocationFragment(FragmentActivity activity, boolean searchByIp) {
 		Fragment fragment = new FirstUsageWizardFragment();
 		Bundle args = new Bundle();
 		args.putString(WIZARD_TYPE_KEY, WizardType.SEARCH_LOCATION.name());
@@ -862,7 +863,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 		showFragment(activity, fragment);
 	}
 
-	public static void showSearchMapFragment(FragmentActivity activity) {
+	private static void showSearchMapFragment(FragmentActivity activity) {
 		Fragment fragment = new FirstUsageWizardFragment();
 		Bundle args = new Bundle();
 		args.putString(WIZARD_TYPE_KEY, WizardType.SEARCH_MAP.name());
@@ -870,7 +871,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 		showFragment(activity, fragment);
 	}
 
-	public static void showMapFoundFragment(FragmentActivity activity) {
+	private static void showMapFoundFragment(FragmentActivity activity) {
 		Fragment fragment = new FirstUsageWizardFragment();
 		Bundle args = new Bundle();
 		args.putString(WIZARD_TYPE_KEY, WizardType.MAP_FOUND.name());
@@ -878,7 +879,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 		showFragment(activity, fragment);
 	}
 
-	public static void showMapDownloadFragment(FragmentActivity activity) {
+	private static void showMapDownloadFragment(FragmentActivity activity) {
 		Fragment fragment = new FirstUsageWizardFragment();
 		Bundle args = new Bundle();
 		args.putString(WIZARD_TYPE_KEY, WizardType.MAP_DOWNLOAD.name());
@@ -886,7 +887,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 		showFragment(activity, fragment);
 	}
 
-	public static void showNoInternetFragment(FragmentActivity activity) {
+	private static void showNoInternetFragment(FragmentActivity activity) {
 		Fragment fragment = new FirstUsageWizardFragment();
 		Bundle args = new Bundle();
 		args.putString(WIZARD_TYPE_KEY, WizardType.NO_INTERNET.name());
@@ -894,7 +895,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 		showFragment(activity, fragment);
 	}
 
-	public static void showNoLocationFragment(FragmentActivity activity) {
+	private static void showNoLocationFragment(FragmentActivity activity) {
 		Fragment fragment = new FirstUsageWizardFragment();
 		Bundle args = new Bundle();
 		args.putString(WIZARD_TYPE_KEY, WizardType.NO_LOCATION.name());

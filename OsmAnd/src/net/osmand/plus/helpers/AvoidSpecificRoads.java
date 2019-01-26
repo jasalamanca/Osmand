@@ -3,7 +3,7 @@ package net.osmand.plus.helpers;
 import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -35,7 +35,7 @@ import java.util.List;
 
 public class AvoidSpecificRoads {
 	private List<RouteDataObject> impassableRoads;
-	private OsmandApplication app;
+	private final OsmandApplication app;
 
 	public AvoidSpecificRoads(OsmandApplication app) {
 		this.app = app;
@@ -56,8 +56,7 @@ public class AvoidSpecificRoads {
 	}
 
 	private ArrayAdapter<RouteDataObject> createAdapter(final MapActivity ctx) {
-		final ArrayList<RouteDataObject> points = new ArrayList<>();
-		points.addAll(getImpassableRoads());
+		final ArrayList<RouteDataObject> points = new ArrayList<>(getImpassableRoads());
 		final LatLon mapLocation = ctx.getMapLocation();
 		return new ArrayAdapter<RouteDataObject>(ctx,
 				R.layout.waypoint_reached, R.id.title, points) {
@@ -78,7 +77,7 @@ public class AvoidSpecificRoads {
 				((TextView) v.findViewById(R.id.waypoint_dist)).setText(OsmAndFormatter.getFormattedDistance((float) dist, app));
 
 				((TextView) v.findViewById(R.id.waypoint_text)).setText(getText(obj));
-				ImageButton remove = (ImageButton) v.findViewById(R.id.info_close);
+				ImageButton remove = v.findViewById(R.id.info_close);
 				remove.setVisibility(View.VISIBLE);
 				remove.setImageDrawable(app.getIconsCache().getThemedIcon(
 						R.drawable.ic_action_remove_dark));
@@ -106,7 +105,7 @@ public class AvoidSpecificRoads {
 	}
 
 
-	protected String getText(RouteDataObject obj) {
+	private String getText(RouteDataObject obj) {
 		String name = RoutingHelper.formatStreetName(obj.getName(app.getSettings().MAP_PREFERRED_LOCALE.get(),
 				app.getSettings().MAP_TRANSLITERATE_NAMES.get()),
 				obj.getRef(app.getSettings().MAP_PREFERRED_LOCALE.get(), app.getSettings().MAP_TRANSLITERATE_NAMES.get(), true),

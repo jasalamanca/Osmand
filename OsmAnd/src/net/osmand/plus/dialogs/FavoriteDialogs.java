@@ -1,6 +1,5 @@
 package net.osmand.plus.dialogs;
 
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -9,7 +8,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.DialogInterface.OnDismissListener;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -43,7 +42,7 @@ public class FavoriteDialogs {
 	
 	public static Dialog createReplaceFavouriteDialog(final Activity activity, final Bundle args) {
 		final FavouritesDbHelper helper = ((OsmandApplication) activity.getApplication()).getFavorites();
-		final List<FavouritePoint> points = new ArrayList<FavouritePoint>(helper.getFavouritePoints());
+		final List<FavouritePoint> points = new ArrayList<>(helper.getFavouritePoints());
 		final FavouritesAdapter favouritesAdapter = new FavouritesAdapter(activity, 
 				((OsmandApplication) activity.getApplication()).getFavorites().getFavouritePoints(),
 				false);
@@ -104,11 +103,11 @@ public class FavoriteDialogs {
 		OsmandApplication app = (OsmandApplication) activity.getApplication();
 		final FavouritePoint point = new FavouritePoint(lat, lon, name, app.getSettings().LAST_FAV_CATEGORY_ENTERED.get());
 		args.putSerializable(KEY_FAVORITE, point);
-		final EditText editText =  (EditText) dialog.findViewById(R.id.Name);
+		final EditText editText = dialog.findViewById(R.id.Name);
 		editText.setText(point.getName());
 		editText.selectAll();
 		editText.requestFocus();
-		final AutoCompleteTextView cat =  (AutoCompleteTextView) dialog.findViewById(R.id.Category);
+		final AutoCompleteTextView cat = dialog.findViewById(R.id.Category);
 		cat.setText(point.getCategory());
 		AndroidUtils.softKeyboardDelayed(editText);
 	}
@@ -119,18 +118,18 @@ public class FavoriteDialogs {
 		final View v = activity.getLayoutInflater().inflate(R.layout.favorite_edit_dialog, null, false);
 		final FavouritesDbHelper helper = ((OsmandApplication) activity.getApplication()).getFavorites();
 		builder.setView(v);
-		final EditText editText =  (EditText) v.findViewById(R.id.Name);
-		final EditText description = (EditText) v.findViewById(R.id.description);
-		final AutoCompleteTextView cat =  (AutoCompleteTextView) v.findViewById(R.id.Category);
+		final EditText editText = v.findViewById(R.id.Name);
+		final EditText description = v.findViewById(R.id.description);
+		final AutoCompleteTextView cat = v.findViewById(R.id.Category);
 		List<FavoriteGroup> gs = helper.getFavoriteGroups();
 		final String[] list = new String[gs.size()];
 		for (int i = 0; i < list.length; i++) {
 			list[i] = gs.get(i).name;
 		}
-		cat.setAdapter(new ArrayAdapter<String>(activity, R.layout.list_textview, list));
+		cat.setAdapter(new ArrayAdapter<>(activity, R.layout.list_textview, list));
 		
 		if (((OsmandApplication)activity.getApplication()).accessibilityEnabled()) {
-			final TextView textButton = (TextView)v.findViewById(R.id.TextButton);
+			final TextView textButton = v.findViewById(R.id.TextButton);
 			textButton.setClickable(true);
 			textButton.setFocusable(true);
 			textButton.setOnClickListener(new View.OnClickListener() {
@@ -160,7 +159,6 @@ public class FavoriteDialogs {
 				if(dlg != null) {
 					dlg.show();
 				}
-				// mapActivity.showDialog(DIALOG_REPLACE_FAVORITE);
 			}
 			
 		});
@@ -175,7 +173,7 @@ public class FavoriteDialogs {
 				point.setName(editText.getText().toString().trim());
 				point.setDescription(description.getText().toString().trim());
 				point.setCategory(categoryStr);
-				AlertDialog.Builder bld = FavouritesDbHelper.checkDuplicates(point, helper, activity);
+				android.app.AlertDialog.Builder bld = FavouritesDbHelper.checkDuplicates(point, helper, activity);
 				if(bld != null) {
 					bld.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
 						@Override
@@ -189,7 +187,7 @@ public class FavoriteDialogs {
 				}
 			}
 
-			protected void addFavorite(final Activity activity, FavouritePoint point, final FavouritesDbHelper helper) {
+			void addFavorite(final Activity activity, FavouritePoint point, final FavouritesDbHelper helper) {
 				boolean added = helper.addFavourite(point);
 				if (added) {
 					Toast.makeText(activity, MessageFormat.format(
@@ -248,5 +246,4 @@ public class FavoriteDialogs {
 		dlg.setOnDismissListener(dismissListener);
 		return dlg;
 	}
-	
 }

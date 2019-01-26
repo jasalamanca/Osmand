@@ -38,7 +38,6 @@ import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCal
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
 
 import net.osmand.AndroidUtils;
-import net.osmand.PlatformUtil;
 import net.osmand.ValueHolder;
 import net.osmand.data.LatLon;
 import net.osmand.data.PointDescription;
@@ -92,9 +91,6 @@ import static android.util.TypedValue.COMPLEX_UNIT_DIP;
 
 public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicListViewCallbacks,
 		IRouteInformationListener, WaypointDialogHelperCallbacks {
-	private static final org.apache.commons.logging.Log LOG =
-			PlatformUtil.getLog(DashboardOnMap.class);
-	private static final String TAG = "DashboardOnMap";
 	public static boolean staticVisible = false;
 	public static DashboardType staticVisibleType = DashboardType.DASHBOARD;
 	public static final String SHOULD_SHOW = "should_show";
@@ -490,7 +486,7 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(btnSizePx, btnSizePx);
 		int marginRight = btnSizePx / 4;
 		params.setMargins(0, landscape ? 0 : topPadPx - 2 * btnSizePx, marginRight, landscape ? marginRight : 0);
-		params.gravity = landscape ? Gravity.BOTTOM | Gravity.RIGHT : Gravity.TOP | Gravity.RIGHT;
+		params.gravity = landscape ? Gravity.BOTTOM | Gravity.END : Gravity.TOP | Gravity.END;
 		return params;
 	}
 
@@ -610,18 +606,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 	protected OsmandApplication getMyApplication() {
 		return mapActivity.getMyApplication();
 	}
-
-// --Commented out by Inspection START (9/01/19 19:51):
-//	public ArrayAdapter<?> getListAdapter() {
-//		return listAdapter;
-//	}
-// --Commented out by Inspection STOP (9/01/19 19:51)
-
-// --Commented out by Inspection START (9/01/19 19:51):
-//	public OnItemClickListener getListAdapterOnClickListener() {
-//		return listAdapterOnClickListener;
-//	}
-// --Commented out by Inspection STOP (9/01/19 19:51)
 
 	public void hideDashboard() {
 		setDashboardVisibility(false, visibleType);
@@ -1120,23 +1104,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		fragList.add(new WeakReference<>(dashBaseFragment));
 	}
 
-// --Commented out by Inspection START (9/01/19 19:49):
-//	public void requestLayout() {
-//		dashboardView.requestLayout();
-//	}
-// --Commented out by Inspection STOP (9/01/19 19:49)
-
-// --Commented out by Inspection START (9/01/19 19:50):
-//	public void onMenuPressed() {
-//		if (!isVisible()) {
-//			setDashboardVisibility(true, DashboardType.DASHBOARD);
-//		} else {
-//			hideDashboard();
-//		}
-//	}
-// --Commented out by Inspection STOP (9/01/19 19:50)
-
-
 	public boolean onBackPressed() {
 		if (isVisible()) {
 			backPressed();
@@ -1153,17 +1120,6 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 			hideDashboard();
 		}
 	}
-
-// --Commented out by Inspection START (9/01/19 19:51):
-//	private void hideKeyboard() {
-//		View currentFocus = mapActivity.getCurrentFocus();
-//		if (currentFocus != null) {
-//			InputMethodManager imm = (InputMethodManager) mapActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
-//			imm.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
-//		}
-//	}
-// --Commented out by Inspection STOP (9/01/19 19:51)
-
 
 	@Override
 	public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
@@ -1448,20 +1404,20 @@ public class DashboardOnMap implements ObservableScrollViewCallbacks, DynamicLis
 		deleteSwipeItem(position);
 	}
 
-	@Override
-	public void exchangeWaypoints(int pos1, int pos2) {
-		if (swipeDismissListener != null) {
-			swipeDismissListener.discardUndo();
-		}
-		if (pos1 != -1 && pos2 != -1) {
-			StableArrayAdapter stableAdapter = (StableArrayAdapter) listAdapter;
-			Object item1 = stableAdapter.getActiveObjects().get(pos1);
-			Object item2 = stableAdapter.getActiveObjects().get(pos2);
-			stableAdapter.getActiveObjects().set(pos1, item2);
-			stableAdapter.getActiveObjects().set(pos2, item1);
-
-			stableAdapter.refreshData();
-			onItemsSwapped(stableAdapter.getActiveObjects());
-		}
-	}
+//	@Override
+//	public void exchangeWaypoints(int pos1, int pos2) {
+//		if (swipeDismissListener != null) {
+//			swipeDismissListener.discardUndo();
+//		}
+//		if (pos1 != -1 && pos2 != -1) {
+//			StableArrayAdapter stableAdapter = (StableArrayAdapter) listAdapter;
+//			Object item1 = stableAdapter.getActiveObjects().get(pos1);
+//			Object item2 = stableAdapter.getActiveObjects().get(pos2);
+//			stableAdapter.getActiveObjects().set(pos1, item2);
+//			stableAdapter.getActiveObjects().set(pos2, item1);
+//
+//			stableAdapter.refreshData();
+//			onItemsSwapped(stableAdapter.getActiveObjects());
+//		}
+//	}
 }

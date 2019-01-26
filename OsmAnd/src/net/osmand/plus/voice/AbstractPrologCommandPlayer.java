@@ -1,9 +1,6 @@
 package net.osmand.plus.voice;
 
 import android.content.Context;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
-
 import android.media.AudioManager;
 
 import net.osmand.IndexConstants;
@@ -44,9 +41,9 @@ public abstract class AbstractPrologCommandPlayer implements CommandPlayer, Stat
 
 	protected OsmandApplication ctx;
 	protected File voiceDir;
-	protected Prolog prologSystem;
-	protected static final String P_VERSION = "version";
-	protected static final String P_RESOLVE = "resolve";
+	private Prolog prologSystem;
+	private static final String P_VERSION = "version";
+	private static final String P_RESOLVE = "resolve";
 
 	public static final String A_LEFT = "left";
 	public static final String A_LEFT_SH = "left_sh";
@@ -58,14 +55,13 @@ public abstract class AbstractPrologCommandPlayer implements CommandPlayer, Stat
 	public static final String A_RIGHT_KEEP = "right_keep";
 
 	protected static final String DELAY_CONST = "delay_";
-	private static final String WEAR_ALERT = "WEAR_ALERT";
 	/** Must be sorted array! */
 	private final int[] sortedVoiceVersions;
 	private static AudioFocusHelper mAudioFocusHelper;
 	protected String language = "";
 	protected int streamType;
 	private static int currentVersion;
-	private ApplicationMode applicationMode;
+	private final ApplicationMode applicationMode;
 
 
 	protected AbstractPrologCommandPlayer(OsmandApplication ctx, ApplicationMode applicationMode,
@@ -101,28 +97,11 @@ public abstract class AbstractPrologCommandPlayer implements CommandPlayer, Stat
 		return language;
 	}
 
-	public String[] getLibraries(){
+	private String[] getLibraries(){
 		return new String[] { "alice.tuprolog.lib.BasicLibrary",
 					"alice.tuprolog.lib.ISOLibrary"/*, "alice.tuprolog.lib.IOLibrary"*/};
 	}
 	
-	public void sendAlertToAndroidWear(Context ctx, String message) {
-		int notificationId = 1;
-		NotificationCompat.Builder notificationBuilder =
-				new NotificationCompat.Builder(ctx)
-						.setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
-						.setSmallIcon(R.mipmap.icon)
-						.setContentTitle(ctx.getString(R.string.app_name))
-						.setContentText(message)
-						.setGroup(WEAR_ALERT);
-
-		// Get an instance of the NotificationManager service
-		NotificationManagerCompat notificationManager =
-				NotificationManagerCompat.from(ctx);
-		// Build the notification and issues it with notification manager.
-		notificationManager.notify(notificationId, notificationBuilder.build());
-	}
-
 	@Override
 	public void stateChanged(ApplicationMode change) {
 		if(prologSystem != null) {
@@ -149,23 +128,13 @@ public abstract class AbstractPrologCommandPlayer implements CommandPlayer, Stat
 
 		// see comments below why it is impossible to read from zip (don't know
 		// how to play file from zip)
-		// voiceZipFile = null;
 		if (voiceDir != null) {
 			long time = System.currentTimeMillis();
 			boolean wrong = false;
 			try {
 				InputStream config;
-				//			if (voiceDir.getName().endsWith(".zip")) { //$NON-NLS-1$
-				// voiceZipFile = new ZipFile(voiceDir);
-				//				config = voiceZipFile.getInputStream(voiceZipFile.getEntry("_config.p")); //$NON-NLS-1$
-				// } else {
 				config = new FileInputStream(new File(voiceDir, configFile)); //$NON-NLS-1$
-				// }
 				MetricsConstants mc = settings.METRIC_SYSTEM.get();
-				ApplicationMode m = settings.getApplicationMode();
-				if(m.getParent() != null) {
-					m = m.getParent();
-				}
 				settings.APPLICATION_MODE.addListener(this);
 				prologSystem.getTheoryManager()
 				.assertA(
@@ -193,11 +162,10 @@ public abstract class AbstractPrologCommandPlayer implements CommandPlayer, Stat
 			if (log.isInfoEnabled()) {
 				log.info("Initializing voice subsystem  " + voiceProvider + " : " + (System.currentTimeMillis() - time)); //$NON-NLS-1$ //$NON-NLS-2$
 			}
-
 		}
 	}
 
-	protected Term solveSimplePredicate(String predicate) {
+	private Term solveSimplePredicate(String predicate) {
 		Term val = null;
 		Var v = new Var("MyVariable"); //$NON-NLS-1$
 		SolveInfo s = prologSystem.solve(new Struct(predicate, v));
@@ -213,9 +181,9 @@ public abstract class AbstractPrologCommandPlayer implements CommandPlayer, Stat
 
 	@Override
 	public List<String> execute(List<Struct> listCmd){
-		Struct list = new Struct(listCmd.toArray(new Term[listCmd.size()]));
+		Struct list = new Struct(listCmd.toArray(new Term[0]));
 		Var result = new Var("RESULT"); //$NON-NLS-1$
-		List<String> files = new ArrayList<String>();
+		List<String> files = new ArrayList<>();
 		if(prologSystem == null) {
 			return files;
 		}
@@ -280,9 +248,7 @@ public abstract class AbstractPrologCommandPlayer implements CommandPlayer, Stat
 
 	protected synchronized void requestAudioFocus() {
 		log.debug("requestAudioFocus");
-		if (android.os.Build.VERSION.SDK_INT >= 8) {
-			mAudioFocusHelper = getAudioFocus();
-		}
+		mAudioFocusHelper = getAudioFocus();
 		if (mAudioFocusHelper != null && ctx != null) {
 			boolean audioFocusGranted = mAudioFocusHelper.requestFocus(ctx, applicationMode, streamType);
 			// If AudioManager.STREAM_VOICE_CALL try using BT SCO:
@@ -303,7 +269,7 @@ public abstract class AbstractPrologCommandPlayer implements CommandPlayer, Stat
 	
 	protected synchronized void abandonAudioFocus() {
 		log.debug("abandonAudioFocus");
-		if ((ctx != null && ctx.getSettings().AUDIO_STREAM_GUIDANCE.getModeValue(applicationMode) == 0) || (btScoStatus == true)) {
+		if ((ctx != null && ctx.getSettings().AUDIO_STREAM_GUIDANCE.getModeValue(applicationMode) == 0) || (btScoStatus)) {
 			toggleBtSco(false);
 		}
 		if (ctx != null && mAudioFocusHelper != null) {
@@ -314,11 +280,8 @@ public abstract class AbstractPrologCommandPlayer implements CommandPlayer, Stat
 
 	public static boolean btScoStatus = false;
 
-	// BT_SCO_DELAY now in Settings. 1500 ms works for most configurations.
-	//public static final int BT_SCO_DELAY = 1500;
-
 	// This only needed for init debugging in TestVoiceActivity:
-					  public static String btScoInit = "";
+	public static String btScoInit = "";
 
 	private synchronized boolean toggleBtSco(boolean on) {
 	// Hardy, 2016-07-03: Establish a low quality BT SCO (Synchronous Connection-Oriented) link to interrupt e.g. a car stereo FM radio
@@ -354,5 +317,4 @@ public abstract class AbstractPrologCommandPlayer implements CommandPlayer, Stat
 			return true;
 		}
 	}
-
 }
