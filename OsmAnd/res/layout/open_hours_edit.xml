@@ -18,13 +18,13 @@
         <TimePicker
             android:id="@+id/TimePickerStart"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></TimePicker>
+            android:layout_height="wrap_content" />
 
         <TimePicker
             android:layout_marginLeft="5dp"
             android:id="@+id/TimePickerEnd"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></TimePicker>
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </LinearLayout>

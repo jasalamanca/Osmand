@@ -11,5 +11,5 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:textSize="@dimen/default_list_text_size"
-        android:layout_marginLeft="8dp"></TextView>
+        android:layout_marginLeft="8dp" />
 </LinearLayout>
