@@ -1,11 +1,7 @@
 package net.osmand.plus;
 
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.res.Configuration;
-import android.hardware.Sensor;
-import android.hardware.SensorManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -72,14 +68,14 @@ public class OsmandSettings {
 		@Override
 		public synchronized void addListener(StateChangedListener<T> listener) {
 			if (l == null) {
-				l = new LinkedList<WeakReference<StateChangedListener<T>>>();
+				l = new LinkedList<>();
 			}
-			if (!l.contains(new WeakReference<StateChangedListener<T>>(listener))) {
-				l.add(new WeakReference<StateChangedListener<T>>(listener));
+			if (!l.contains(new WeakReference<>(listener))) {
+				l.add(new WeakReference<>(listener));
 			}
 		}
 
-		public synchronized void fireEvent(T value) {
+		synchronized void fireEvent(T value) {
 			if (l != null) {
 				Iterator<WeakReference<StateChangedListener<T>>> it = l.iterator();
 				while (it.hasNext()) {
@@ -117,17 +113,15 @@ public class OsmandSettings {
 	private Object defaultProfilePreferences;
 	private Object profilePreferences;
 	private ApplicationMode currentMode;
-	private Map<String, OsmandPreference<?>> registeredPreferences =
-			new LinkedHashMap<String, OsmandSettings.OsmandPreference<?>>();
+	private final Map<String, OsmandPreference<?>> registeredPreferences =
+            new LinkedHashMap<>();
 
-	// cache variables
-	private long lastTimeInternetConnectionChecked = 0;
-	private boolean internetConnectionAvailable = true;
+    private boolean internetConnectionAvailable = true;
 
 
-	protected OsmandSettings(OsmandApplication clientContext, SettingsAPI settinsAPI) {
+	protected OsmandSettings(OsmandApplication clientContext, SettingsAPI settingsAPI) {
 		ctx = clientContext;
-		this.settingsAPI = settinsAPI;
+		this.settingsAPI = settingsAPI;
 		initPrefs();
 	}
 
@@ -150,7 +144,7 @@ public class OsmandSettings {
 		}
 	}
 
-	public Object getProfilePreferences(ApplicationMode mode) {
+	private Object getProfilePreferences(ApplicationMode mode) {
 		return settingsAPI.getPreferenceObject(getSharedPreferencesName(mode));
 	}
 
@@ -205,7 +199,7 @@ public class OsmandSettings {
 		return APPLICATION_MODE.get();
 	}
 
-	protected ApplicationMode readApplicationMode() {
+	private ApplicationMode readApplicationMode() {
 		String s = settingsAPI.getString(globalPreferences, APPLICATION_MODE.getId(), ApplicationMode.DEFAULT.getStringKey());
 		return ApplicationMode.valueOfStringKey(s, ApplicationMode.DEFAULT);
 	}
@@ -216,7 +210,9 @@ public class OsmandSettings {
 	}
 
 	public boolean isInternetConnectionAvailable(boolean update) {
-		long delta = System.currentTimeMillis() - lastTimeInternetConnectionChecked;
+        // cache variables
+        long lastTimeInternetConnectionChecked = 0;
+        long delta = System.currentTimeMillis() - lastTimeInternetConnectionChecked;
 		if (delta < 0 || delta > 15000 || update) {
 			internetConnectionAvailable = isInternetConnected();
 		}
@@ -258,9 +254,9 @@ public class OsmandSettings {
 		private Object cachedPreference;
 		private boolean cache;
 		private Map<ApplicationMode, T> defaultValues;
-		private T defaultValue;
+		private final T defaultValue;
 
-		public CommonPreference(String id, T defaultValue) {
+		CommonPreference(String id, T defaultValue) {
 			this.id = id;
 			this.defaultValue = defaultValue;
 		}
@@ -270,23 +266,23 @@ public class OsmandSettings {
 			return this;
 		}
 
-		public CommonPreference<T> cache() {
+		CommonPreference<T> cache() {
 			cache = true;
 			return this;
 		}
 
-		public CommonPreference<T> makeProfile() {
+		CommonPreference<T> makeProfile() {
 			global = false;
 			return this;
 		}
 
-		protected Object getPreferences() {
+		Object getPreferences() {
 			return global ? globalPreferences : profilePreferences;
 		}
 
-		public void setModeDefaultValue(ApplicationMode mode, T defValue) {
+		void setModeDefaultValue(ApplicationMode mode, T defValue) {
 			if (defaultValues == null) {
-				defaultValues = new LinkedHashMap<ApplicationMode, T>();
+				defaultValues = new LinkedHashMap<>();
 			}
 			defaultValues.put(mode, defValue);
 		}
@@ -472,14 +468,14 @@ public class OsmandSettings {
 	}
 	
 	public class ListStringPreference extends StringPreference {
-		private String delimiter;
+		private final String delimiter;
 
 		private ListStringPreference(String id, String defaultValue, String delimiter) {
 			super(id, defaultValue);
 			this.delimiter = delimiter;
 		}
 		
-		public boolean addValue(String res) {
+		public void addValue(String res) {
 			String vl = get();
 			if (vl == null || vl.isEmpty()) {
 				vl = res + delimiter;
@@ -487,17 +483,12 @@ public class OsmandSettings {
 				vl = vl + res + delimiter;
 			}
 			set(vl);
-			return true;
-		}
-		
-		public void clearAll() {
-			set("");
 		}
 		
 		public boolean containsValue(String res) {
 			String vl = get();
 			String r = res + delimiter;
-			return vl.startsWith(r) || vl.indexOf(delimiter + r) >= 0;
+			return vl.startsWith(r) || vl.contains(delimiter + r);
 		}
 	}
 
@@ -535,10 +526,10 @@ public class OsmandSettings {
 
 	public Set<String> getEnabledPlugins() {
 		String plugs = PLUGINS.get();
-		StringTokenizer toks = new StringTokenizer(plugs, ",");
-		Set<String> res = new LinkedHashSet<String>();
-		while (toks.hasMoreTokens()) {
-			String tok = toks.nextToken();
+		StringTokenizer tokens = new StringTokenizer(plugs, ",");
+		Set<String> res = new LinkedHashSet<>();
+		while (tokens.hasMoreTokens()) {
+			String tok = tokens.nextToken();
 			if (!tok.startsWith("-")) {
 				res.add(tok);
 			}
@@ -546,12 +537,12 @@ public class OsmandSettings {
 		return res;
 	}
 
-	public Set<String> getPlugins() {
+	private Set<String> getPlugins() {
 		String plugs = PLUGINS.get();
-		StringTokenizer toks = new StringTokenizer(plugs, ",");
-		Set<String> res = new LinkedHashSet<String>();
-		while (toks.hasMoreTokens()) {
-			res.add(toks.nextToken());
+		StringTokenizer tokens = new StringTokenizer(plugs, ",");
+		Set<String> res = new LinkedHashSet<>();
+		while (tokens.hasMoreTokens()) {
+			res.add(tokens.nextToken());
 		}
 		return res;
 	}
@@ -578,7 +569,6 @@ public class OsmandSettings {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	public CommonPreference<Boolean> registerBooleanPreference(String id, boolean defValue) {
 		if (registeredPreferences.containsKey(id)) {
 			return (CommonPreference<Boolean>) registeredPreferences.get(id);
@@ -588,7 +578,6 @@ public class OsmandSettings {
 		return p;
 	}
 
-	@SuppressWarnings("unchecked")
 	public CommonPreference<Integer> registerIntPreference(String id, int defValue) {
 		if (registeredPreferences.containsKey(id)) {
 			return (CommonPreference<Integer>) registeredPreferences.get(id);
@@ -598,7 +587,6 @@ public class OsmandSettings {
 		return p;
 	}
 
-	@SuppressWarnings("unchecked")
 	public CommonPreference<Long> registerLongPreference(String id, long defValue) {
 		if (registeredPreferences.containsKey(id)) {
 			return (CommonPreference<Long>) registeredPreferences.get(id);
@@ -665,9 +653,6 @@ public class OsmandSettings {
 	// cache of metrics constants as they are used very often
 	public final OsmandPreference<MetricsConstants> METRIC_SYSTEM = new EnumIntPreference<MetricsConstants>(
 			"default_metric_system", MetricsConstants.KILOMETERS_AND_METERS, MetricsConstants.values()) {
-		protected MetricsConstants getDefaultValue() {
-			return DRIVING_REGION.get().defMetrics;
-		}
 	}.makeGlobal();
 
 	public final OsmandPreference<SpeedConstants> SPEED_SYSTEM = new EnumIntPreference<SpeedConstants>(
@@ -693,18 +678,18 @@ public class OsmandSettings {
 			} else {
 				return SpeedConstants.MILES_PER_HOUR;
 			}
-		};
-	}.makeProfile();
+		}
+    }.makeProfile();
 
 	// this value string is synchronized with settings_pref.xml preference name
 	// cache of metrics constants as they are used very often
-	public final OsmandPreference<RelativeDirectionStyle> DIRECTION_STYLE = new EnumIntPreference<RelativeDirectionStyle>(
-			"direction_style", RelativeDirectionStyle.SIDEWISE, RelativeDirectionStyle.values()).makeGlobal().cache();
+	public final OsmandPreference<RelativeDirectionStyle> DIRECTION_STYLE = new EnumIntPreference<>(
+            "direction_style", RelativeDirectionStyle.SIDEWISE, RelativeDirectionStyle.values()).makeGlobal().cache();
 
 	// this value string is synchronized with settings_pref.xml preference name
 	// cache of metrics constants as they are used very often
-	public final OsmandPreference<AccessibilityMode> ACCESSIBILITY_MODE = new EnumIntPreference<AccessibilityMode>(
-			"accessibility_mode", AccessibilityMode.DEFAULT, AccessibilityMode.values()).makeGlobal().cache();
+	public final OsmandPreference<AccessibilityMode> ACCESSIBILITY_MODE = new EnumIntPreference<>(
+            "accessibility_mode", AccessibilityMode.DEFAULT, AccessibilityMode.values()).makeGlobal().cache();
 
 	// this value string is synchronized with settings_pref.xml preference name
 	public final OsmandPreference<Float> SPEECH_RATE =
@@ -824,7 +809,7 @@ public class OsmandSettings {
 
 	// this value string is synchronized with settings_pref.xml preference name
 	public final CommonPreference<DayNightMode> DAYNIGHT_MODE =
-			new EnumIntPreference<DayNightMode>("daynight_mode", DayNightMode.DAY, DayNightMode.values());
+            new EnumIntPreference<>("daynight_mode", DayNightMode.DAY, DayNightMode.values());
 
 	{
 		DAYNIGHT_MODE.makeProfile().cache();
@@ -842,8 +827,8 @@ public class OsmandSettings {
 	}
 
 	public final CommonPreference<AutoZoomMap> AUTO_ZOOM_MAP_SCALE =
-			new EnumIntPreference<AutoZoomMap>("auto_zoom_map_scale", AutoZoomMap.FAR,
-					AutoZoomMap.values()).makeProfile().cache();
+            new EnumIntPreference<>("auto_zoom_map_scale", AutoZoomMap.FAR,
+                    AutoZoomMap.values()).makeProfile().cache();
 	{
 		AUTO_ZOOM_MAP_SCALE.setModeDefaultValue(ApplicationMode.CAR, AutoZoomMap.FAR);
 		AUTO_ZOOM_MAP_SCALE.setModeDefaultValue(ApplicationMode.BICYCLE, AutoZoomMap.CLOSE);
@@ -983,7 +968,7 @@ public class OsmandSettings {
 	// this value string is synchronized with settings_pref.xml preference name
 	public final OsmandPreference<Boolean> SHOW_FAVORITES = new BooleanPreference("show_favorites", true).makeGlobal().cache();
 
-	public final CommonPreference<Boolean> SHOW_ZOOM_BUTTONS_NAVIGATION = new BooleanPreference("show_zoom_buttons_navigation", false).makeProfile().cache();
+	private final CommonPreference<Boolean> SHOW_ZOOM_BUTTONS_NAVIGATION = new BooleanPreference("show_zoom_buttons_navigation", false).makeProfile().cache();
 
 	{
 		SHOW_ZOOM_BUTTONS_NAVIGATION.setModeDefaultValue(ApplicationMode.PEDESTRIAN, true);
@@ -1101,10 +1086,10 @@ public class OsmandSettings {
 	public final OsmandPreference<Boolean> ROUTE_MAP_MARKERS_START_MY_LOC = new BooleanPreference("route_map_markers_start_my_loc", false).makeGlobal().cache();
 	public final OsmandPreference<Boolean> ROUTE_MAP_MARKERS_ROUND_TRIP = new BooleanPreference("route_map_markers_round_trip", false).makeGlobal().cache();
 
-	public static final String EXTERNAL_STORAGE_DIR = "external_storage_dir"; //$NON-NLS-1$
+	private static final String EXTERNAL_STORAGE_DIR = "external_storage_dir"; //$NON-NLS-1$
 
-	public static final String EXTERNAL_STORAGE_DIR_V19 = "external_storage_dir_V19"; //$NON-NLS-1$
-	public static final String EXTERNAL_STORAGE_DIR_TYPE_V19 = "external_storage_dir_type_V19"; //$NON-NLS-1$
+	private static final String EXTERNAL_STORAGE_DIR_V19 = "external_storage_dir_V19"; //$NON-NLS-1$
+	private static final String EXTERNAL_STORAGE_DIR_TYPE_V19 = "external_storage_dir_type_V19"; //$NON-NLS-1$
 	public static final int EXTERNAL_STORAGE_TYPE_DEFAULT = 0; // Environment.getExternalStorageDirectory()
 	public static final int EXTERNAL_STORAGE_TYPE_EXTERNAL_FILE = 1; // ctx.getExternalFilesDirs(null)
 	public static final int EXTERNAL_STORAGE_TYPE_INTERNAL_FILE = 2; // ctx.getFilesDir()
@@ -1176,7 +1161,7 @@ public class OsmandSettings {
 	}
 
 	@TargetApi(Build.VERSION_CODES.KITKAT)
-	public File getExternalStorageDirectoryV19(ValueHolder<Integer> tp) {
+    private File getExternalStorageDirectoryV19(ValueHolder<Integer> tp) {
 		int type = settingsAPI.getInt(globalPreferences, EXTERNAL_STORAGE_DIR_TYPE_V19, -1);
 		File location = getDefaultLocationV19();
 		if (type == -1) {
@@ -1212,30 +1197,29 @@ public class OsmandSettings {
 		return location;
 	}
 
-	public File getDefaultLocationV19() {
+	private File getDefaultLocationV19() {
 		String location = settingsAPI.getString(globalPreferences, EXTERNAL_STORAGE_DIR_V19,
 				getExternalStorageDirectoryPre19().getAbsolutePath());
 		return new File(location);
 	}
 
 	public static boolean isWritable(File dirToTest) {
-		boolean isWriteable = false;
 		try {
 			dirToTest.mkdirs();
 			File writeTestFile = File.createTempFile("osmand_", ".tmp", dirToTest);
-			isWriteable = writeTestFile.exists();
+			boolean isWriteable = writeTestFile.exists();
 			writeTestFile.delete();
+			return isWriteable;
 		} catch (IOException e) {
-			isWriteable = false;
+			return false;
 		}
-		return isWriteable;
 	}
 
 	public int getExternalStorageDirectoryTypeV19() {
 		return settingsAPI.getInt(globalPreferences, EXTERNAL_STORAGE_DIR_TYPE_V19, -1);
 	}
 
-	public File getExternalStorageDirectoryPre19() {
+	private File getExternalStorageDirectoryPre19() {
 		String defaultLocation = Environment.getExternalStorageDirectory().getAbsolutePath();
 		File rootFolder = new File(settingsAPI.getString(globalPreferences, EXTERNAL_STORAGE_DIR,
 				defaultLocation));
@@ -1246,13 +1230,12 @@ public class OsmandSettings {
 		return new File(Environment.getExternalStorageDirectory(), IndexConstants.APP_DIR);
 	}
 
-	public boolean setExternalStorageDirectoryV19(int type, String externalStorageDir) {
-		return settingsAPI.edit(globalPreferences).
-				putInt(EXTERNAL_STORAGE_DIR_TYPE_V19, type).
-				putString(EXTERNAL_STORAGE_DIR_V19, externalStorageDir).commit();
-	}
+	private void setExternalStorageDirectoryV19(int type, String externalStorageDir) {
+        settingsAPI.edit(globalPreferences).
+                putInt(EXTERNAL_STORAGE_DIR_TYPE_V19, type).
+                putString(EXTERNAL_STORAGE_DIR_V19, externalStorageDir).commit();
+    }
 
-	@SuppressLint("NewApi")
 	@Nullable
 	public File getSecondaryStorage() {
 		if (Build.VERSION.SDK_INT < 19) {
@@ -1281,19 +1264,15 @@ public class OsmandSettings {
 		return settingsAPI.edit(globalPreferences).putString(EXTERNAL_STORAGE_DIR, externalStorageDir).commit();
 	}
 
-	public Object getGlobalPreferences() {
-		return globalPreferences;
-	}
-
 	// This value is a key for saving last known location shown on the map
-	public static final String LAST_KNOWN_MAP_LAT = "last_known_map_lat"; //$NON-NLS-1$
-	public static final String LAST_KNOWN_MAP_LON = "last_known_map_lon"; //$NON-NLS-1$
-	public static final String LAST_KNOWN_MAP_ZOOM = "last_known_map_zoom"; //$NON-NLS-1$
+	private static final String LAST_KNOWN_MAP_LAT = "last_known_map_lat"; //$NON-NLS-1$
+	private static final String LAST_KNOWN_MAP_LON = "last_known_map_lon"; //$NON-NLS-1$
+	private static final String LAST_KNOWN_MAP_ZOOM = "last_known_map_zoom"; //$NON-NLS-1$
 
-	public static final String MAP_LABEL_TO_SHOW = "map_label_to_show"; //$NON-NLS-1$
-	public static final String MAP_LAT_TO_SHOW = "map_lat_to_show"; //$NON-NLS-1$
-	public static final String MAP_LON_TO_SHOW = "map_lon_to_show"; //$NON-NLS-1$
-	public static final String MAP_ZOOM_TO_SHOW = "map_zoom_to_show"; //$NON-NLS-1$
+	private static final String MAP_LABEL_TO_SHOW = "map_label_to_show"; //$NON-NLS-1$
+	private static final String MAP_LAT_TO_SHOW = "map_lat_to_show"; //$NON-NLS-1$
+	private static final String MAP_LON_TO_SHOW = "map_lon_to_show"; //$NON-NLS-1$
+	private static final String MAP_ZOOM_TO_SHOW = "map_zoom_to_show"; //$NON-NLS-1$
 
 	public LatLon getLastKnownMapLocation() {
 		float lat = settingsAPI.getFloat(globalPreferences, LAST_KNOWN_MAP_LAT, 0);
@@ -1401,44 +1380,44 @@ public class OsmandSettings {
 		settingsAPI.edit(globalPreferences).putInt(LAST_KNOWN_MAP_ZOOM, zoom).commit();
 	}
 
-	public final static String POINT_NAVIGATE_LAT = "point_navigate_lat"; //$NON-NLS-1$
-	public final static String POINT_NAVIGATE_LON = "point_navigate_lon"; //$NON-NLS-1$
-	public final static String POINT_NAVIGATE_ROUTE = "point_navigate_route_integer"; //$NON-NLS-1$
-	public final static int NAVIGATE = 1;
-	public final static String POINT_NAVIGATE_DESCRIPTION = "point_navigate_description"; //$NON-NLS-1$
-	public final static String START_POINT_LAT = "start_point_lat"; //$NON-NLS-1$
-	public final static String START_POINT_LON = "start_point_lon"; //$NON-NLS-1$
-	public final static String START_POINT_DESCRIPTION = "start_point_description"; //$NON-NLS-1$
+	private final static String POINT_NAVIGATE_LAT = "point_navigate_lat"; //$NON-NLS-1$
+	private final static String POINT_NAVIGATE_LON = "point_navigate_lon"; //$NON-NLS-1$
+	private final static String POINT_NAVIGATE_ROUTE = "point_navigate_route_integer"; //$NON-NLS-1$
+	private final static int NAVIGATE = 1;
+	private final static String POINT_NAVIGATE_DESCRIPTION = "point_navigate_description"; //$NON-NLS-1$
+	private final static String START_POINT_LAT = "start_point_lat"; //$NON-NLS-1$
+	private final static String START_POINT_LON = "start_point_lon"; //$NON-NLS-1$
+	private final static String START_POINT_DESCRIPTION = "start_point_description"; //$NON-NLS-1$
 
-	public final static String INTERMEDIATE_POINTS = "intermediate_points"; //$NON-NLS-1$
-	public final static String INTERMEDIATE_POINTS_DESCRIPTION = "intermediate_points_description"; //$NON-NLS-1$
-	private IntermediatePointsStorage intermediatePointsStorage = new IntermediatePointsStorage();
+	private final static String INTERMEDIATE_POINTS = "intermediate_points"; //$NON-NLS-1$
+	private final static String INTERMEDIATE_POINTS_DESCRIPTION = "intermediate_points_description"; //$NON-NLS-1$
+	private final IntermediatePointsStorage intermediatePointsStorage = new IntermediatePointsStorage();
 
-	public final static String POINT_NAVIGATE_LAT_BACKUP = "point_navigate_lat_backup"; //$NON-NLS-1$
-	public final static String POINT_NAVIGATE_LON_BACKUP = "point_navigate_lon_backup"; //$NON-NLS-1$
-	public final static String POINT_NAVIGATE_DESCRIPTION_BACKUP = "point_navigate_description_backup"; //$NON-NLS-1$
-	public final static String START_POINT_LAT_BACKUP = "start_point_lat_backup"; //$NON-NLS-1$
-	public final static String START_POINT_LON_BACKUP = "start_point_lon_backup"; //$NON-NLS-1$
-	public final static String START_POINT_DESCRIPTION_BACKUP = "start_point_description_backup"; //$NON-NLS-1$
-	public final static String INTERMEDIATE_POINTS_BACKUP = "intermediate_points_backup"; //$NON-NLS-1$
-	public final static String INTERMEDIATE_POINTS_DESCRIPTION_BACKUP = "intermediate_points_description_backup"; //$NON-NLS-1$
+	private final static String POINT_NAVIGATE_LAT_BACKUP = "point_navigate_lat_backup"; //$NON-NLS-1$
+	private final static String POINT_NAVIGATE_LON_BACKUP = "point_navigate_lon_backup"; //$NON-NLS-1$
+	private final static String POINT_NAVIGATE_DESCRIPTION_BACKUP = "point_navigate_description_backup"; //$NON-NLS-1$
+	private final static String START_POINT_LAT_BACKUP = "start_point_lat_backup"; //$NON-NLS-1$
+	private final static String START_POINT_LON_BACKUP = "start_point_lon_backup"; //$NON-NLS-1$
+	private final static String START_POINT_DESCRIPTION_BACKUP = "start_point_description_backup"; //$NON-NLS-1$
+	private final static String INTERMEDIATE_POINTS_BACKUP = "intermediate_points_backup"; //$NON-NLS-1$
+	private final static String INTERMEDIATE_POINTS_DESCRIPTION_BACKUP = "intermediate_points_description_backup"; //$NON-NLS-1$
 
-	public final static String MAP_MARKERS_POINT = "map_markers_point"; //$NON-NLS-1$
-	public final static String MAP_MARKERS_COLOR = "map_markers_color"; //$NON-NLS-1$
-	public final static String MAP_MARKERS_DESCRIPTION = "map_markers_description"; //$NON-NLS-1$
-	public final static String MAP_MARKERS_SELECTION = "map_markers_selection"; //$NON-NLS-1$
-	public final static String MAP_MARKERS_CREATION_DATE = "map_markers_creation_date"; //$NON-NLS-1$
-	public final static String MAP_MARKERS_HISTORY_POINT = "map_markers_history_point"; //$NON-NLS-1$
-	public final static String MAP_MARKERS_HISTORY_COLOR = "map_markers_history_color"; //$NON-NLS-1$
-	public final static String MAP_MARKERS_HISTORY_DESCRIPTION = "map_markers_history_description"; //$NON-NLS-1$
-	public final static String MAP_MARKERS_HISTORY_CREATION_DATE = "map_markers_history_creation_date"; //$NON-NLS-1$
-	public final static int MAP_MARKERS_HISTORY_LIMIT = 30;
-	private MapMarkersStorage mapMarkersStorage = new MapMarkersStorage();
-	private MapMarkersHistoryStorage mapMarkersHistoryStorage = new MapMarkersHistoryStorage();
+	private final static String MAP_MARKERS_POINT = "map_markers_point"; //$NON-NLS-1$
+	private final static String MAP_MARKERS_COLOR = "map_markers_color"; //$NON-NLS-1$
+	private final static String MAP_MARKERS_DESCRIPTION = "map_markers_description"; //$NON-NLS-1$
+	private final static String MAP_MARKERS_SELECTION = "map_markers_selection"; //$NON-NLS-1$
+	private final static String MAP_MARKERS_CREATION_DATE = "map_markers_creation_date"; //$NON-NLS-1$
+	private final static String MAP_MARKERS_HISTORY_POINT = "map_markers_history_point"; //$NON-NLS-1$
+	private final static String MAP_MARKERS_HISTORY_COLOR = "map_markers_history_color"; //$NON-NLS-1$
+	private final static String MAP_MARKERS_HISTORY_DESCRIPTION = "map_markers_history_description"; //$NON-NLS-1$
+	private final static String MAP_MARKERS_HISTORY_CREATION_DATE = "map_markers_history_creation_date"; //$NON-NLS-1$
+	private final static int MAP_MARKERS_HISTORY_LIMIT = 30;
+	private final MapMarkersStorage mapMarkersStorage = new MapMarkersStorage();
+	private final MapMarkersHistoryStorage mapMarkersHistoryStorage = new MapMarkersHistoryStorage();
 
 	private static final String IMPASSABLE_ROAD_POINTS = "impassable_road_points";
 	private static final String IMPASSABLE_ROADS_DESCRIPTIONS = "impassable_roads_descriptions";
-	private ImpassableRoadsStorage mImpassableRoadsStorage = new ImpassableRoadsStorage();
+	private final ImpassableRoadsStorage mImpassableRoadsStorage = new ImpassableRoadsStorage();
 
 	public void backupPointToStart() {
 		settingsAPI.edit(globalPreferences)
@@ -1541,13 +1520,13 @@ public class OsmandSettings {
 
 	private class IntermediatePointsStorage extends MapPointsStorage {
 
-		public IntermediatePointsStorage() {
+		IntermediatePointsStorage() {
 			pointsKey = INTERMEDIATE_POINTS;
 			descriptionsKey = INTERMEDIATE_POINTS_DESCRIPTION;
 		}
 
 		@Override
-		public boolean savePoints(List<LatLon> ps, List<String> ds) {
+        boolean savePoints(List<LatLon> ps, List<String> ds) {
 			boolean res = super.savePoints(ps, ds);
 			backupTargetPoints();
 			return res;
@@ -1556,17 +1535,17 @@ public class OsmandSettings {
 
 	private class MapMarkersHistoryStorage extends MapPointsStorage {
 
-		protected String colorsKey;
-		protected String creationDatesKey;
+		final String colorsKey;
+		final String creationDatesKey;
 
-		public MapMarkersHistoryStorage() {
+		MapMarkersHistoryStorage() {
 			pointsKey = MAP_MARKERS_HISTORY_POINT;
 			descriptionsKey = MAP_MARKERS_HISTORY_DESCRIPTION;
 			colorsKey = MAP_MARKERS_HISTORY_COLOR;
 			creationDatesKey = MAP_MARKERS_HISTORY_CREATION_DATE;
 		}
 
-		public List<Integer> getColors(int sz) {
+		List<Integer> getColors(int sz) {
 			List<Integer> list = new ArrayList<>();
 			String ip = settingsAPI.getString(globalPreferences, colorsKey, "");
 			if (ip.trim().length() > 0) {
@@ -1587,7 +1566,7 @@ public class OsmandSettings {
 			return list;
 		}
 
-		public List<Long> getCreationDates(int sz) {
+		List<Long> getCreationDates(int sz) {
 			List<Long> list = new ArrayList<>();
 			String ip = settingsAPI.getString(globalPreferences, creationDatesKey, "");
 			if (ip.trim().length() > 0) {
@@ -1606,7 +1585,7 @@ public class OsmandSettings {
 			return list;
 		}
 
-		public boolean savePoints(List<LatLon> ps, List<String> ds, List<Integer> cs, List<Long> cds) {
+		boolean savePoints(List<LatLon> ps, List<String> ds, List<Integer> cs, List<Long> cds) {
 			while (ps.size() > MAP_MARKERS_HISTORY_LIMIT) {
 				ps.remove(ps.size() - 1);
 				ds.remove(ds.size() - 1);
@@ -1618,16 +1597,14 @@ public class OsmandSettings {
 				if (i > 0) {
 					sb.append(",");
 				}
-				sb.append(((float) ps.get(i).getLatitude() + "")).append(",").append(((float) ps.get(i).getLongitude() + ""));
+				sb.append((float) ps.get(i).getLatitude()).append(",").append((float) ps.get(i).getLongitude());
 			}
 			StringBuilder tb = new StringBuilder();
 			for (int i = 0; i < ds.size(); i++) {
 				if (i > 0) {
 					tb.append("--");
 				}
-				if (ds.get(i) == null) {
-					tb.append("");
-				} else {
+				if (null != ds.get(i)) {
 					tb.append(ds.get(i));
 				}
 			}
@@ -1687,11 +1664,11 @@ public class OsmandSettings {
 	}
 
 	private class MapMarkersStorage extends MapPointsStorage {
-		protected String colorsKey;
-		protected String selectionKey;
-		protected String creationDatesKey;
+		final String colorsKey;
+		final String selectionKey;
+		final String creationDatesKey;
 
-		public MapMarkersStorage() {
+		MapMarkersStorage() {
 			pointsKey = MAP_MARKERS_POINT;
 			descriptionsKey = MAP_MARKERS_DESCRIPTION;
 			colorsKey = MAP_MARKERS_COLOR;
@@ -1699,7 +1676,7 @@ public class OsmandSettings {
 			creationDatesKey = MAP_MARKERS_CREATION_DATE;
 		}
 
-		public List<Integer> getColors(int sz) {
+		List<Integer> getColors(int sz) {
 			List<Integer> list = new ArrayList<>();
 			String ip = settingsAPI.getString(globalPreferences, colorsKey, "");
 			if (ip.trim().length() > 0) {
@@ -1720,7 +1697,7 @@ public class OsmandSettings {
 			return list;
 		}
 
-		public List<Boolean> getSelections(int sz) {
+		List<Boolean> getSelections(int sz) {
 			List<Boolean> list = new ArrayList<>();
 			String ip = settingsAPI.getString(globalPreferences, selectionKey, "");
 			if (ip.trim().length() > 0) {
@@ -1739,7 +1716,7 @@ public class OsmandSettings {
 			return list;
 		}
 
-		public List<Long> getCreationDates(int sz) {
+		List<Long> getCreationDates(int sz) {
 			List<Long> list = new ArrayList<>();
 			String ip = settingsAPI.getString(globalPreferences, creationDatesKey, "");
 			if (ip.trim().length() > 0) {
@@ -1777,23 +1754,21 @@ public class OsmandSettings {
 			return savePoints(ps, ds, cs, bs, cds);
 		}
 
-		public boolean savePoints(List<LatLon> ps, List<String> ds, List<Integer> cs,
-								  List<Boolean> bs, List<Long> cds) {
+		boolean savePoints(List<LatLon> ps, List<String> ds, List<Integer> cs,
+                           List<Boolean> bs, List<Long> cds) {
 			StringBuilder sb = new StringBuilder();
 			for (int i = 0; i < ps.size(); i++) {
 				if (i > 0) {
 					sb.append(",");
 				}
-				sb.append(((float) ps.get(i).getLatitude() + "")).append(",").append(((float) ps.get(i).getLongitude() + ""));
+				sb.append((float) ps.get(i).getLatitude()).append(",").append((float) ps.get(i).getLongitude());
 			}
 			StringBuilder tb = new StringBuilder();
 			for (int i = 0; i < ds.size(); i++) {
 				if (i > 0) {
 					tb.append("--");
 				}
-				if (ds.get(i) == null) {
-					tb.append("");
-				} else {
+				if (null != ds.get(i)) {
 					tb.append(ds.get(i));
 				}
 			}
@@ -1848,20 +1823,20 @@ public class OsmandSettings {
 	}
 
 	private class ImpassableRoadsStorage extends MapPointsStorage {
-		public ImpassableRoadsStorage() {
+		ImpassableRoadsStorage() {
 			pointsKey = IMPASSABLE_ROAD_POINTS;
 			descriptionsKey = IMPASSABLE_ROADS_DESCRIPTIONS;
 		}
 	}
 
 	private abstract class MapPointsStorage {
-		protected String pointsKey;
-		protected String descriptionsKey;
+		String pointsKey;
+		String descriptionsKey;
 
-		public MapPointsStorage() {
+		MapPointsStorage() {
 		}
 
-		public List<String> getPointDescriptions(int sz) {
+		List<String> getPointDescriptions(int sz) {
 			List<String> list = new ArrayList<>();
 			String ip = settingsAPI.getString(globalPreferences, descriptionsKey, "");
 			if (ip.trim().length() > 0) {
@@ -1876,7 +1851,7 @@ public class OsmandSettings {
 			return list;
 		}
 
-		public List<LatLon> getPoints() {
+		List<LatLon> getPoints() {
 			List<LatLon> list = new ArrayList<>();
 			String ip = settingsAPI.getString(globalPreferences, pointsKey, "");
 			if (ip.trim().length() > 0) {
@@ -1893,7 +1868,7 @@ public class OsmandSettings {
 			return list;
 		}
 
-		public boolean insertPoint(double latitude, double longitude, PointDescription historyDescription, int index) {
+		boolean insertPoint(double latitude, double longitude, PointDescription historyDescription, int index) {
 			List<LatLon> ps = getPoints();
 			List<String> ds = getPointDescriptions(ps.size());
 			ps.add(index, new LatLon(latitude, longitude));
@@ -1904,7 +1879,7 @@ public class OsmandSettings {
 			return savePoints(ps, ds);
 		}
 
-		public boolean updatePoint(double latitude, double longitude, PointDescription historyDescription) {
+		boolean updatePoint(double latitude, double longitude, PointDescription historyDescription) {
 			List<LatLon> ps = getPoints();
 			List<String> ds = getPointDescriptions(ps.size());
 			int i = ps.indexOf(new LatLon(latitude, longitude));
@@ -1919,7 +1894,7 @@ public class OsmandSettings {
 			}
 		}
 
-		public boolean deletePoint(int index) {
+		boolean deletePoint(int index) {
 			List<LatLon> ps = getPoints();
 			List<String> ds = getPointDescriptions(ps.size());
 			if (index < ps.size()) {
@@ -1931,7 +1906,7 @@ public class OsmandSettings {
 			}
 		}
 
-		public boolean deletePoint(LatLon latLon) {
+		boolean deletePoint(LatLon latLon) {
 			List<LatLon> ps = getPoints();
 			List<String> ds = getPointDescriptions(ps.size());
 			int index = ps.indexOf(latLon);
@@ -1944,22 +1919,20 @@ public class OsmandSettings {
 			}
 		}
 
-		public boolean savePoints(List<LatLon> ps, List<String> ds) {
+		boolean savePoints(List<LatLon> ps, List<String> ds) {
 			StringBuilder sb = new StringBuilder();
 			for (int i = 0; i < ps.size(); i++) {
 				if (i > 0) {
 					sb.append(",");
 				}
-				sb.append(((float) ps.get(i).getLatitude() + "")).append(",").append(((float) ps.get(i).getLongitude() + ""));
+				sb.append((float) ps.get(i).getLatitude()).append(",").append((float) ps.get(i).getLongitude());
 			}
 			StringBuilder tb = new StringBuilder();
 			for (int i = 0; i < ds.size(); i++) {
 				if (i > 0) {
 					tb.append("--");
 				}
-				if (ds.get(i) == null) {
-					tb.append("");
-				} else {
+				if (null != ds.get(i)) {
 					tb.append(ds.get(i));
 				}
 			}
@@ -1969,7 +1942,7 @@ public class OsmandSettings {
 					.commit();
 		}
 
-		public boolean movePoint(LatLon latLonEx, LatLon latLonNew) {
+		boolean movePoint(LatLon latLonEx, LatLon latLonNew) {
 			List<LatLon> ps = getPoints();
 			List<String> ds = getPointDescriptions(ps.size());
 			int i = ps.indexOf(latLonEx);
@@ -2081,11 +2054,10 @@ public class OsmandSettings {
 	/**
 	 * quick actions prefs
 	 */
-
-	public static final String QUICK_FAB_MARGIN_X_PORTRAIT_MARGIN = "quick_fab_margin_x_portrait_margin";
-	public static final String QUICK_FAB_MARGIN_Y_PORTRAIT_MARGIN = "quick_fab_margin_y_portrait_margin";
-	public static final String QUICK_FAB_MARGIN_X_LANDSCAPE_MARGIN = "quick_fab_margin_x_landscape_margin";
-	public static final String QUICK_FAB_MARGIN_Y_LANDSCAPE_MARGIN = "quick_fab_margin_y_landscape_margin";
+	private static final String QUICK_FAB_MARGIN_X_PORTRAIT_MARGIN = "quick_fab_margin_x_portrait_margin";
+	private static final String QUICK_FAB_MARGIN_Y_PORTRAIT_MARGIN = "quick_fab_margin_y_portrait_margin";
+	private static final String QUICK_FAB_MARGIN_X_LANDSCAPE_MARGIN = "quick_fab_margin_x_landscape_margin";
+	private static final String QUICK_FAB_MARGIN_Y_LANDSCAPE_MARGIN = "quick_fab_margin_y_landscape_margin";
 
 	public final CommonPreference<String> QUICK_ACTION = new StringPreference("quick_action_new", "").makeGlobal();
 
@@ -2122,16 +2094,15 @@ public class OsmandSettings {
 	/**
 	 * the location of a parked car
 	 */
-
-	public static final String LAST_SEARCHED_REGION = "last_searched_region"; //$NON-NLS-1$
-	public static final String LAST_SEARCHED_CITY = "last_searched_city"; //$NON-NLS-1$
-	public static final String LAST_SEARCHED_CITY_NAME = "last_searched_city_name"; //$NON-NLS-1$
-	public static final String LAST_SEARCHED_POSTCODE = "last_searched_postcode"; //$NON-NLS-1$
-	public static final String LAST_SEARCHED_STREET = "last_searched_street"; //$NON-NLS-1$
-	public static final String LAST_SEARCHED_BUILDING = "last_searched_building"; //$NON-NLS-1$
-	public static final String LAST_SEARCHED_INTERSECTED_STREET = "last_searched_intersected_street"; //$NON-NLS-1$
-	public static final String LAST_SEARCHED_LAT = "last_searched_lat"; //$NON-NLS-1$
-	public static final String LAST_SEARCHED_LON = "last_searched_lon"; //$NON-NLS-1$
+	private static final String LAST_SEARCHED_REGION = "last_searched_region"; //$NON-NLS-1$
+	private static final String LAST_SEARCHED_CITY = "last_searched_city"; //$NON-NLS-1$
+	private static final String LAST_SEARCHED_CITY_NAME = "last_searched_city_name"; //$NON-NLS-1$
+	private static final String LAST_SEARCHED_POSTCODE = "last_searched_postcode"; //$NON-NLS-1$
+	private static final String LAST_SEARCHED_STREET = "last_searched_street"; //$NON-NLS-1$
+	private static final String LAST_SEARCHED_BUILDING = "last_searched_building"; //$NON-NLS-1$
+	private static final String LAST_SEARCHED_INTERSECTED_STREET = "last_searched_intersected_street"; //$NON-NLS-1$
+	private static final String LAST_SEARCHED_LAT = "last_searched_lat"; //$NON-NLS-1$
+	private static final String LAST_SEARCHED_LON = "last_searched_lon"; //$NON-NLS-1$
 
 	public LatLon getLastSearchedPoint() {
 		if (settingsAPI.contains(globalPreferences, LAST_SEARCHED_LAT) && settingsAPI.contains(globalPreferences, LAST_SEARCHED_LON)) {
@@ -2141,16 +2112,16 @@ public class OsmandSettings {
 		return null;
 	}
 
-	public boolean setLastSearchedPoint(LatLon l) {
+	private void setLastSearchedPoint(LatLon l) {
 		if (l == null) {
-			return settingsAPI.edit(globalPreferences).remove(LAST_SEARCHED_LAT).remove(LAST_SEARCHED_LON).commit();
-		} else {
-			return setLastSearchedPoint(l.getLatitude(), l.getLongitude());
-		}
+            settingsAPI.edit(globalPreferences).remove(LAST_SEARCHED_LAT).remove(LAST_SEARCHED_LON).commit();
+        } else {
+            setLastSearchedPoint(l.getLatitude(), l.getLongitude());
+        }
 	}
 
-	public boolean setLastSearchedPoint(double lat, double lon) {
-		return settingsAPI.edit(globalPreferences).putFloat(LAST_SEARCHED_LAT, (float) lat).
+	private void setLastSearchedPoint(double lat, double lon) {
+		settingsAPI.edit(globalPreferences).putFloat(LAST_SEARCHED_LAT, (float) lat).
 				putFloat(LAST_SEARCHED_LON, (float) lon).commit();
 	}
 
@@ -2255,16 +2226,6 @@ public class OsmandSettings {
 	// this value string is synchronized with settings_pref.xml preference name
 	// this value could localized
 	public final OsmandPreference<String> VOICE_PROVIDER = new StringPreference("voice_provider", null) {
-		protected String getDefaultValue() {
-			Configuration config = ctx.getResources().getConfiguration();
-			for (String lang : TTS_AVAILABLE_VOICES) {
-				if (lang.equals(config.locale.getLanguage())) {
-					return lang + "-tts";
-				}
-			}
-			return "en-tts";
-		}
-
 		;
 	}.makeGlobal();
 
@@ -2289,7 +2250,7 @@ public class OsmandSettings {
 		}
 	};
 
-	Map<String, CommonPreference<String>> customRendersProps = new LinkedHashMap<String, OsmandSettings.CommonPreference<String>>();
+	private final Map<String, CommonPreference<String>> customRendersProps = new LinkedHashMap<>();
 
 	public CommonPreference<String> getCustomRenderProperty(String attrName) {
 		if (!customRendersProps.containsKey(attrName)) {
@@ -2305,7 +2266,7 @@ public class OsmandSettings {
 		pref.setModeDefaultValue(ApplicationMode.BICYCLE, "bicycle");
 	}
 
-	Map<String, CommonPreference<Boolean>> customBooleanRendersProps = new LinkedHashMap<String, OsmandSettings.CommonPreference<Boolean>>();
+	private final Map<String, CommonPreference<Boolean>> customBooleanRendersProps = new LinkedHashMap<>();
 
 	public CommonPreference<Boolean> getCustomRenderBooleanProperty(String attrName) {
 		if (!customBooleanRendersProps.containsKey(attrName)) {
@@ -2314,7 +2275,7 @@ public class OsmandSettings {
 		return customBooleanRendersProps.get(attrName);
 	}
 
-	Map<String, CommonPreference<String>> customRoutingProps = new LinkedHashMap<String, OsmandSettings.CommonPreference<String>>();
+	private final Map<String, CommonPreference<String>> customRoutingProps = new LinkedHashMap<>();
 
 	public CommonPreference<String> getCustomRoutingProperty(String attrName, String defValue) {
 		if (!customRoutingProps.containsKey(attrName)) {
@@ -2323,7 +2284,7 @@ public class OsmandSettings {
 		return customRoutingProps.get(attrName);
 	}
 
-	Map<String, CommonPreference<Boolean>> customBooleanRoutingProps = new LinkedHashMap<String, OsmandSettings.CommonPreference<Boolean>>();
+	private final Map<String, CommonPreference<Boolean>> customBooleanRoutingProps = new LinkedHashMap<>();
 
 	public CommonPreference<Boolean> getCustomRoutingBooleanProperty(String attrName, boolean defaulfValue) {
 		if (!customBooleanRoutingProps.containsKey(attrName)) {
@@ -2463,17 +2424,6 @@ public class OsmandSettings {
 		public boolean isNight() {
 			return this == NIGHT;
 		}
-
-		public static DayNightMode[] possibleValues(Context context) {
-			SensorManager mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
-			Sensor mLight = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
-			boolean isLightSensorEnabled = mLight != null;
-			if (isLightSensorEnabled) {
-				return DayNightMode.values();
-			} else {
-				return new DayNightMode[]{AUTO, DAY, NIGHT};
-			}
-		}
 	}
 
 	public enum LayerTransparencySeekbarMode {
@@ -2482,15 +2432,18 @@ public class OsmandSettings {
 		OFF(R.string.shared_string_off),
 		UNDEFINED(R.string.shared_string_none);
 
-		private final int key;
+		// --Commented out by Inspection (26/01/19 19:53):private final int key;
 
-		LayerTransparencySeekbarMode(int key) {
-			this.key = key;
+		LayerTransparencySeekbarMode(int key)
+		{
+//			this.key = key;
 		}
 
-		public String toHumanString(Context ctx) {
-			return ctx.getString(key);
-		}
+// --Commented out by Inspection START (26/01/19 19:52):
+//		public String toHumanString(Context ctx) {
+//			return ctx.getString(key);
+//		}
+// --Commented out by Inspection STOP (26/01/19 19:52)
 	}
 
 	public enum MapMarkersOrderByMode {
@@ -2501,26 +2454,21 @@ public class OsmandSettings {
 		DATE_ADDED_DESC,
 		DATE_ADDED_ASC;
 
-		public boolean isCustom() {
-			return this == CUSTOM;
-		}
+// --Commented out by Inspection START (26/01/19 19:51):
+//		public boolean isCustom() {
+//			return this == CUSTOM;
+//		}
+// --Commented out by Inspection STOP (26/01/19 19:51)
 
 		public boolean isDistanceDescending() {
 			return this == DISTANCE_DESC;
 		}
-
 		public boolean isDistanceAscending() {
 			return this == DISTANCE_ASC;
 		}
-
-		public boolean isName() {
-			return this == NAME;
-		}
-
 		public boolean isDateAddedDescending() {
 			return this == DATE_ADDED_DESC;
 		}
-
 		public boolean isDateAddedAscending() {
 			return this == DATE_ADDED_ASC;
 		}
@@ -2567,7 +2515,7 @@ public class OsmandSettings {
 		NAUTICALMILES_PER_HOUR(R.string.nm_h, R.string.si_nm_h);
 
 		private final int key;
-		private int descr;
+		private final int descr;
 
 		SpeedConstants(int key, int descr) {
 			this.key = key;

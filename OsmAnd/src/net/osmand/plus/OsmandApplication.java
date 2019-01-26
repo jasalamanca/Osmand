@@ -2,6 +2,7 @@ package net.osmand.plus;
 
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -16,7 +17,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
-import android.support.v7.app.AlertDialog;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.view.accessibility.AccessibilityManager;
@@ -36,7 +36,6 @@ import net.osmand.osm.io.NetworkUtils;
 import net.osmand.plus.AppInitializer.AppInitializeListener;
 import net.osmand.plus.access.AccessibilityMode;
 import net.osmand.plus.activities.DayNightHelper;
-import net.osmand.plus.activities.ExitActivity;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.activities.SavingTrackHelper;
 import net.osmand.plus.api.SQLiteAPI;
@@ -70,22 +69,21 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-
 public class OsmandApplication extends MultiDexApplication {
 	public static final String EXCEPTION_PATH = "exception.log"; //$NON-NLS-1$
 	private static final org.apache.commons.logging.Log LOG = PlatformUtil.getLog(OsmandApplication.class);
 
 	public static final String SHOW_PLUS_VERSION_INAPP_PARAM = "show_plus_version_inapp";
 
-	final AppInitializer appInitializer = new AppInitializer(this);
-	OsmandSettings osmandSettings = null;
-	OsmAndAppCustomization appCustomization;
+	private final AppInitializer appInitializer = new AppInitializer(this);
+	private OsmandSettings osmandSettings = null;
+	private OsmAndAppCustomization appCustomization;
 	private final SQLiteAPI sqliteAPI = new SQLiteAPIImpl(this);
 	private final OsmAndTaskManager taskManager = new OsmAndTaskManager(this);
 	private final IconsCache iconsCache = new IconsCache(this);
 	Handler uiHandler;
 
-	NavigationService navigationService;
+	private NavigationService navigationService;
 
 	OsmandAidlApi aidlApi;
 
@@ -108,13 +106,13 @@ public class OsmandApplication extends MultiDexApplication {
 	MapMarkersHelper mapMarkersHelper;
 	MapMarkersDbHelper mapMarkersDbHelper;
 	WaypointHelper waypointHelper;
-	DownloadIndexesThread downloadIndexesThread;
+	private DownloadIndexesThread downloadIndexesThread;
 	AvoidSpecificRoads avoidSpecificRoads;
 	OsmandRegions regions;
 	GeocodingLookupService geocodingLookupService;
 	QuickSearchHelper searchUICore;
 
-	RoutingConfiguration.Builder defaultRoutingConfig;
+	private RoutingConfiguration.Builder defaultRoutingConfig;
 	private Locale preferredLocale = null;
 	private Locale defaultLocale;
 	private File externalStorageDirectory;
@@ -215,27 +213,17 @@ public class OsmandApplication extends MultiDexApplication {
 	public RendererRegistry getRendererRegistry() {
 		return rendererRegistry;
 	}
-	
 	public OsmAndTaskManager getTaskManager() {
 		return taskManager;
 	}
-	
 	public AvoidSpecificRoads getAvoidSpecificRoads() {
 		return avoidSpecificRoads;
 	}
-
 	public OsmAndLocationProvider getLocationProvider() {
 		return locationProvider;
 	}
-	
 	public OsmAndAppCustomization getAppCustomization() {
 		return appCustomization;
-	}
-	
-	
-	public void setAppCustomization(OsmAndAppCustomization appCustomization) {
-		this.appCustomization = appCustomization;
-		this.appCustomization.setup(this);
 	}
 
 	/**
@@ -257,36 +245,24 @@ public class OsmandApplication extends MultiDexApplication {
 	public NotificationHelper getNotificationHelper() {
 		return notificationHelper;
 	}
-
-	public LiveMonitoringHelper getLiveMonitoringHelper() {
-		return liveMonitoringHelper;
-	}
-
 	public WaypointHelper getWaypointHelper() {
 		return waypointHelper;
 	}
-
 	public PoiFiltersHelper getPoiFilters() {
 		return poiFilters;
 	}
-
-
 	public GpxSelectionHelper getSelectedGpxHelper() {
 		return selectedGpxHelper;
 	}
-
 	public GPXDatabase getGpxDatabase() {
 		return gpxDatabase;
 	}
-
 	public FavouritesDbHelper getFavorites() {
 		return favorites;
 	}
-
 	public ResourceManager getResourceManager() {
 		return resourceManager;
 	}
-
 	public DayNightHelper getDaynightHelper() {
 		return daynightHelper;
 	}
@@ -309,9 +285,6 @@ public class OsmandApplication extends MultiDexApplication {
 		if (preferredLocale != null && !newConfig.locale.getLanguage().equals(preferredLocale.getLanguage())) {
 			super.onConfigurationChanged(newConfig);
 			// ugly fix ! On devices after 4.0 screen is blinking when you rotate device!
-			if (Build.VERSION.SDK_INT < 14) {
-				newConfig.locale = preferredLocale;
-			}
 			getBaseContext().getResources().updateConfiguration(newConfig, getBaseContext().getResources().getDisplayMetrics());
 			Locale.setDefault(preferredLocale);
 		} else {
@@ -345,10 +318,7 @@ public class OsmandApplication extends MultiDexApplication {
 			preferredLocale = null;
 			getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
 		}
-		
 	}
-
-	public static final int PROGRESS_DIALOG = 5;
 
 	public void checkApplicationIsBeingInitialized(Activity activity, AppInitializeListener listener) {
 		// start application if it was previously closed
@@ -367,19 +337,15 @@ public class OsmandApplication extends MultiDexApplication {
 	public boolean isApplicationInitializing() {
 		return appInitializer.isAppInitializing();
 	}
-
 	public RoutingHelper getRoutingHelper() {
 		return routingHelper;
 	}
-
 	public GeocodingLookupService getGeocodingLookupService() {
 		return geocodingLookupService;
 	}
-
 	public QuickSearchHelper getSearchUICore() {
 		return searchUICore;
 	}
-
 	public CommandPlayer getPlayer() {
 		return player;
 	}
@@ -443,7 +409,6 @@ public class OsmandApplication extends MultiDexApplication {
 				appInitializer.initVoiceDataInDifferentThread(uiContext, applicationMode, voiceProvider, run, showDialog);
 			}
 		}
-
 	}
 
 	public NavigationService getNavigationService() {
@@ -473,39 +438,7 @@ public class OsmandApplication extends MultiDexApplication {
 	}
 
 	private void fullExit() {
-		// http://stackoverflow.com/questions/2092951/how-to-close-android-application
-		System.runFinalizersOnExit(true);
 		System.exit(0);
-	}
-
-	public synchronized void closeApplication(final Activity activity) {
-		if (getNavigationService() != null) {
-			AlertDialog.Builder bld = new AlertDialog.Builder(activity);
-			bld.setMessage(R.string.background_service_is_enabled_question);
-			bld.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					closeApplicationAnywayImpl(activity, true);
-				}
-			});
-			bld.setNegativeButton(R.string.shared_string_no, new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					closeApplicationAnywayImpl(activity, false);
-				}
-			});
-			bld.show();
-		} else {
-			closeApplicationAnywayImpl(activity, true);
-		}
-	}
-	
-	private void closeApplicationAnyway(final Activity activity, boolean disableService) {
-		activity.finish();
-		Intent newIntent = new Intent(activity, ExitActivity.class);
-		newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-		newIntent.putExtra(ExitActivity.DISABLE_SERVICE, disableService);
-		startActivity(newIntent);
 	}
 
 	public void closeApplicationAnywayImpl(final Activity activity, boolean disableService) {
@@ -536,7 +469,7 @@ public class OsmandApplication extends MultiDexApplication {
 		}
 	}
 
-	public void startApplication() {
+	private void startApplication() {
 		UncaughtExceptionHandler uncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
 		if (!(uncaughtExceptionHandler instanceof DefaultExceptionHandler)) {
 			Thread.setDefaultUncaughtExceptionHandler(new DefaultExceptionHandler());
@@ -549,10 +482,10 @@ public class OsmandApplication extends MultiDexApplication {
 
 	private class DefaultExceptionHandler implements UncaughtExceptionHandler {
 
-		private UncaughtExceptionHandler defaultHandler;
-		private PendingIntent intent;
+		private final UncaughtExceptionHandler defaultHandler;
+		private final PendingIntent intent;
 
-		public DefaultExceptionHandler() {
+		DefaultExceptionHandler() {
 			defaultHandler = Thread.getDefaultUncaughtExceptionHandler();
 			intent = PendingIntent.getActivity(OsmandApplication.this.getBaseContext(), 0,
 					new Intent(OsmandApplication.this.getBaseContext(),
@@ -603,11 +536,9 @@ public class OsmandApplication extends MultiDexApplication {
 				// swallow all exceptions
 				android.util.Log.e(PlatformUtil.TAG, "Exception while handle other exception", e); //$NON-NLS-1$
 			}
-
 		}
 	}
 
-	
 	public TargetPointsHelper getTargetPointsHelper() {
 		return targetPointsHelper;
 	}
@@ -717,7 +648,7 @@ public class OsmandApplication extends MultiDexApplication {
 		c.setTheme(t);
 	}
 	
-	public void setLanguage(Context context) {
+	private void setLanguage(Context context) {
 		if (preferredLocale != null) {
 			Configuration config = context.getResources().getConfiguration();
 			String lang = preferredLocale.getLanguage();
@@ -855,7 +786,7 @@ public class OsmandApplication extends MultiDexApplication {
 		}
 	}
 
-	public void initRemoteConfig() {
+	private void initRemoteConfig() {
 		try {
 			if (Version.isGooglePlayEnabled(this) && Version.isFreeVersion(this)) {
 				Class<?> cl = Class.forName("com.google.firebase.remoteconfig.FirebaseRemoteConfig");
