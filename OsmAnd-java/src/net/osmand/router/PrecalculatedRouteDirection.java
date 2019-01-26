@@ -24,12 +24,12 @@ public class PrecalculatedRouteDirection {
 	private static final int[] SHIFTS = new int[]{1 << (31 - 15), 1 << (31 - 13), 1 << (31 - 12), 
 		1 << (31 - 11), 1 << (31 - 7)};
 	
-	private final List<Integer> cachedS = new ArrayList<Integer>();
+	private final List<Integer> cachedS = new ArrayList<>();
 	
 	private long startPoint = 0;
 	private long endPoint = 0;
-	private final QuadTree<Integer> quadTree = new QuadTree<Integer>(new QuadRect(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE),
-			8, 0.55f);
+	private final QuadTree<Integer> quadTree = new QuadTree<>(new QuadRect(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE),
+            8, 0.55f);
 	private float startFinishTime;
 	private float endFinishTime; 
 	
@@ -101,7 +101,7 @@ public class PrecalculatedRouteDirection {
 	private void init(List<RouteSegmentResult> ls) {
 		TIntArrayList px = new TIntArrayList();
 		TIntArrayList py = new TIntArrayList();
-		List<Float> speedSegments = new ArrayList<Float>();
+		List<Float> speedSegments = new ArrayList<>();
 		for (RouteSegmentResult s : ls) {
 			boolean plus = s.getStartPointIndex() < s.getEndPointIndex();
 			int i = s.getStartPointIndex();
@@ -124,7 +124,7 @@ public class PrecalculatedRouteDirection {
 	private void init(LatLon[] ls) {
 		TIntArrayList px = new TIntArrayList();
 		TIntArrayList py = new TIntArrayList();
-		List<Float> speedSegments = new ArrayList<Float>();
+		List<Float> speedSegments = new ArrayList<>();
 		for (LatLon s : ls) {
 			float routeSpd = maxSpeed; // (s.getDistance() / s.getRoutingTime())
 			px.add(MapUtils.get31TileNumberX(s.getLongitude()));
@@ -136,7 +136,7 @@ public class PrecalculatedRouteDirection {
 
 	private void init(TIntArrayList px, TIntArrayList py, List<Float> speedSegments) {
 		float totaltm = 0;
-		List<Float> times = new ArrayList<Float>();
+		List<Float> times = new ArrayList<>();
 		for (int i = 0; i < px.size(); i++) {
 			// use measuredDist31 because we use precise s.getDistance() to calculate routeSpd
 			int ip = i == 0 ? 0 : i - 1;

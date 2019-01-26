@@ -41,7 +41,7 @@ public class RouteLayer extends OsmandMapLayer {
 	
 	private final RoutingHelper helper;
 	// keep array lists created
-	private final List<Location> actionPoints = new ArrayList<Location>();
+	private final List<Location> actionPoints = new ArrayList<>();
 	
 	private Path path;
 
@@ -330,8 +330,8 @@ public class RouteLayer extends OsmandMapLayer {
 			tb = new RotatedTileBox(tb);
 			tb.setZoomAndAnimation(tb.getZoom(), 0, tb.getZoomFloatPart());
 			simplifyPoints = new TByteArrayList(locations.size());
-			distances = new ArrayList<Double>(locations.size());
-			angles = new ArrayList<Double>(locations.size());
+			distances = new ArrayList<>(locations.size());
+			angles = new ArrayList<>(locations.size());
 			simplifyPoints.fill(0, locations.size(), (byte)0);
 			if(locations.size() > 0) {
 				simplifyPoints.set(0, (byte) 1);

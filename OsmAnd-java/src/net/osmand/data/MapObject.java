@@ -62,7 +62,7 @@ public abstract class MapObject implements Comparable<MapObject> {
 			setEnName(name);
 		} else {
 			if (names == null) {
-				names = new HashMap<String, String>();
+				names = new HashMap<>();
 			}
 			names.put(lang, name);
 		}
@@ -75,7 +75,7 @@ public abstract class MapObject implements Comparable<MapObject> {
 			}
 			return names;
 		}
-		Map<String, String> mp = new HashMap<String, String>();
+		Map<String, String> mp = new HashMap<>();
 		if (names != null) {
 			mp.putAll(names);
 		}
@@ -84,7 +84,7 @@ public abstract class MapObject implements Comparable<MapObject> {
 	}
 
 	public List<String> getAllNames() {
-		List<String> l = new ArrayList<String>();
+		List<String> l = new ArrayList<>();
 		if (!Algorithms.isEmpty(enName)) {
 			l.add(enName);
 		}
@@ -95,7 +95,7 @@ public abstract class MapObject implements Comparable<MapObject> {
 	}
 	
 	public List<String> getAllNames(boolean transliterate) {
-		List<String> l = new ArrayList<String>();
+		List<String> l = new ArrayList<>();
 		String enName = getEnName(transliterate); 
 		if (!Algorithms.isEmpty(enName)) {
 			l.add(enName);
@@ -126,7 +126,7 @@ public abstract class MapObject implements Comparable<MapObject> {
 					key = key.substring("name:".length());
 				}
 				if (names == null) {
-					names = new HashMap<String, String>();
+					names = new HashMap<>();
 				}
 				if (overwrite || Algorithms.isEmpty(names.get(key))) {
 					names.put(key, e.getValue());

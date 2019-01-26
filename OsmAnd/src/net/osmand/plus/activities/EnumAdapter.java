@@ -2,6 +2,7 @@ package net.osmand.plus.activities;
 
 import net.osmand.plus.activities.EnumAdapter.IEnumWithResource;
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -17,15 +18,16 @@ public class EnumAdapter<T extends IEnumWithResource>
 	}
 	
 	@Override
-	public View getDropDownView(int position, View convertView, ViewGroup parent) {
+	public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent) {
 		TextView textView = (TextView) super.getDropDownView(position, convertView, parent);
 		T item = getItem(position);
 		textView.setText(item.stringResource());
 		return textView;
 	}
 
-	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
+	@NonNull
+    @Override
+	public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 		TextView textView = (TextView) super.getView(position, convertView, parent);
 		T item = getItem(position);
 		textView.setText(item.stringResource());

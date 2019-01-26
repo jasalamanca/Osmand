@@ -263,7 +263,7 @@ public class NativeLibrary {
 			System.err.println("No fonts loaded from " + dr.getAbsolutePath());
 			return;
 		}
-		ArrayList<File> lst = new ArrayList<File>(Arrays.asList(lf));
+		ArrayList<File> lst = new ArrayList<>(Arrays.asList(lf));
 		Collections.sort(lst, new Comparator<File>() {
 			
 			@Override

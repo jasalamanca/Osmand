@@ -10,6 +10,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceGroup;
+import android.support.annotation.NonNull;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,16 +45,16 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 
 	protected OsmandSettings settings;
 	private final boolean profileSettings;
-	private final List<ApplicationMode> modes = new ArrayList<ApplicationMode>();
+	private final List<ApplicationMode> modes = new ArrayList<>();
 	private ApplicationMode previousAppMode; 
 
-	private final Map<String, Preference> screenPreferences = new LinkedHashMap<String, Preference>();
-	private final Map<String, OsmandPreference<Boolean>> booleanPreferences = new LinkedHashMap<String, OsmandPreference<Boolean>>();
-	private final Map<String, OsmandPreference<?>> listPreferences = new LinkedHashMap<String, OsmandPreference<?>>();
-	private final Map<String, OsmandPreference<String>> editTextPreferences = new LinkedHashMap<String, OsmandPreference<String>>();
-	private final Map<String, OsmandPreference<Integer>> seekBarPreferences = new LinkedHashMap<String, OsmandPreference<Integer>>();
+	private final Map<String, Preference> screenPreferences = new LinkedHashMap<>();
+	private final Map<String, OsmandPreference<Boolean>> booleanPreferences = new LinkedHashMap<>();
+	private final Map<String, OsmandPreference<?>> listPreferences = new LinkedHashMap<>();
+	private final Map<String, OsmandPreference<String>> editTextPreferences = new LinkedHashMap<>();
+	private final Map<String, OsmandPreference<Integer>> seekBarPreferences = new LinkedHashMap<>();
 
-	private final Map<String, Map<String, ?>> listPrefValues = new LinkedHashMap<String, Map<String, ?>>();
+	private final Map<String, Map<String, ?>> listPrefValues = new LinkedHashMap<>();
 	private AlertDialog profileDialog;
 	
 	public SettingsBaseActivity() {
@@ -188,7 +189,7 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 	
 	private <T> void prepareListPreference(OsmandPreference<T> b, String[] names, T[] values, ListPreference p) {
 		p.setOnPreferenceChangeListener(this);
-		LinkedHashMap<String, Object> vals = new LinkedHashMap<String, Object>();
+		LinkedHashMap<String, Object> vals = new LinkedHashMap<>();
 		screenPreferences.put(b.getId(), p);
 		listPreferences.put(b.getId(), b);
 		listPrefValues.put(b.getId(), vals);
@@ -268,7 +269,7 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 					modes.add(a);
 				}
 			}
-			List<String> s = new ArrayList<String>();
+			List<String> s = new ArrayList<>();
 			for (ApplicationMode a : modes) {
 				s.add(a.toHumanString(getMyApplication()));
 			}
@@ -299,7 +300,7 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		}
 
 		@Override
-		public View getDropDownView(int position, View convertView, ViewGroup parent) {
+		public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent) {
 			View view = super.getDropDownView(position, convertView, parent);
 			if (!settings.isLightActionBar()){
 				TextView textView = view.findViewById(android.R.id.text1);
@@ -332,7 +333,7 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 	
 	protected void profileDialog() {
 		AlertDialog.Builder b = new AlertDialog.Builder(this);
-		final Set<ApplicationMode> selected = new LinkedHashSet<ApplicationMode>();
+		final Set<ApplicationMode> selected = new LinkedHashSet<>();
 		View v = AppModeDialog.prepareAppModeView(this, selected, false, null, true, true, false,
 				new View.OnClickListener() {
 					@Override

@@ -80,7 +80,7 @@ public class WikipediaDialogFragment extends DialogFragment {
 
 	@Nullable
 	@Override
-	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		mainView = inflater.inflate(R.layout.wikipedia_dialog_fragment, container, false);
 
 		mainView.setBackgroundColor(ContextCompat.getColor(getContext(), darkMode ? R.color.ctx_menu_bottom_view_bg_dark : R.color.ctx_menu_bottom_view_bg_light));
@@ -148,7 +148,7 @@ public class WikipediaDialogFragment extends DialogFragment {
 	}
 
 	@Override
-	public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 		populateWiki();
 	}
 

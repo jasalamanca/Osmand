@@ -1,6 +1,7 @@
 package net.osmand.plus.mapmarkers;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -43,7 +44,7 @@ public class MapMarkersActiveFragment extends Fragment implements OsmAndCompassL
 
 	@Nullable
 	@Override
-	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		final MapActivity mapActivity = (MapActivity) getActivity();
 		final View mainView = inflater.inflate(R.layout.fragment_map_markers_active, container, false);
 		final EmptyStateRecyclerView recyclerView = mainView.findViewById(R.id.list);

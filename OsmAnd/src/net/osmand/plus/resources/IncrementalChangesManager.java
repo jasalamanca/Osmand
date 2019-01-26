@@ -28,7 +28,7 @@ public class IncrementalChangesManager {
 	private static final String URL = "http://download.osmand.net/check_live.php";
 	private static final org.apache.commons.logging.Log log = PlatformUtil.getLog(IncrementalChangesManager.class);
 	private final ResourceManager resourceManager;
-	private final Map<String, RegionUpdateFiles> regions = new ConcurrentHashMap<String, IncrementalChangesManager.RegionUpdateFiles>();
+	private final Map<String, RegionUpdateFiles> regions = new ConcurrentHashMap<>();
 	
 	
 	public IncrementalChangesManager(ResourceManager resourceManager) {
@@ -41,7 +41,7 @@ public class IncrementalChangesManager {
 			if (lf == null || lf.length == 0) {
 				return files;
 			}
-			Set<String> existingFiles = new HashSet<String>();
+			Set<String> existingFiles = new HashSet<>();
 			for (File f : files) {
 				if(!f.getName().endsWith(IndexConstants.BINARY_WIKI_MAP_INDEX_EXT)) {
 					existingFiles.add(Algorithms.getFileNameWithoutExtension(f));
@@ -72,7 +72,7 @@ public class IncrementalChangesManager {
 		regionUpdateFiles.mainFile = f;
 		regionUpdateFiles.mainFileInit = dateCreated;
 		if (!regionUpdateFiles.monthUpdates.isEmpty()) {
-			List<String> list = new ArrayList<String>(regionUpdateFiles.monthUpdates.keySet());
+			List<String> list = new ArrayList<>(regionUpdateFiles.monthUpdates.keySet());
 			for (String month : list) {
 				RegionUpdate ru = regionUpdateFiles.monthUpdates.get(month);
 				if (ru.obfCreated < dateCreated) {
@@ -85,7 +85,7 @@ public class IncrementalChangesManager {
 			}
 		}
 		if (!regionUpdateFiles.dayUpdates.isEmpty()) {
-			ArrayList<String> list = new ArrayList<String>(regionUpdateFiles.dayUpdates.keySet());
+			ArrayList<String> list = new ArrayList<>(regionUpdateFiles.dayUpdates.keySet());
 			for (String month : list) {
 				List<RegionUpdate> newList = new ArrayList<>(regionUpdateFiles.dayUpdates.get(month));
 				Iterator<RegionUpdate> it = newList.iterator();
@@ -141,8 +141,8 @@ public class IncrementalChangesManager {
 		final String nm;
 		File mainFile;
 		long mainFileInit;
-		final TreeMap<String, List<RegionUpdate>> dayUpdates = new TreeMap<String, List<RegionUpdate>>();
-		final TreeMap<String, RegionUpdate> monthUpdates = new TreeMap<String, RegionUpdate>();
+		final TreeMap<String, List<RegionUpdate>> dayUpdates = new TreeMap<>();
+		final TreeMap<String, RegionUpdate> monthUpdates = new TreeMap<>();
 		
 		RegionUpdateFiles(String nm) {
 			this.nm = nm;
@@ -169,7 +169,7 @@ public class IncrementalChangesManager {
 	
 	public class IncrementalUpdateList {
 		final TreeMap<String, IncrementalUpdateGroupByMonth> updateByMonth =
-				new TreeMap<String, IncrementalUpdateGroupByMonth>();
+                new TreeMap<>();
 		public String errorMessage;
 		RegionUpdateFiles updateFiles;
 		
@@ -184,7 +184,7 @@ public class IncrementalChangesManager {
 		
 		public List<IncrementalUpdate> getItemsForUpdate() {
 			Iterator<IncrementalUpdateGroupByMonth> it = updateByMonth.values().iterator();
-			List<IncrementalUpdate> ll = new ArrayList<IncrementalUpdate>();
+			List<IncrementalUpdate> ll = new ArrayList<>();
 			while(it.hasNext()) {
 				IncrementalUpdateGroupByMonth n = it.next();
 				if(it.hasNext()) {
@@ -222,7 +222,7 @@ public class IncrementalChangesManager {
 	
 	static class IncrementalUpdateGroupByMonth {
 		final String monthYearPart ;
-		final List<IncrementalUpdate> dayUpdates = new ArrayList<IncrementalUpdate>();
+		final List<IncrementalUpdate> dayUpdates = new ArrayList<>();
 		IncrementalUpdate monthUpdate;
 		
 		public long calculateSizeMonthUpdates() {
@@ -246,7 +246,7 @@ public class IncrementalChangesManager {
 		}
 		
 		List<IncrementalUpdate> getMonthUpdate() {
-			List<IncrementalUpdate> ll = new ArrayList<IncrementalUpdate>();
+			List<IncrementalUpdate> ll = new ArrayList<>();
 			if(monthUpdate == null) {
 				return ll;
 			}
@@ -292,7 +292,7 @@ public class IncrementalChangesManager {
 		HttpURLConnection conn = NetworkUtils.getHttpURLConnection(url);
 		XmlPullParser parser = PlatformUtil.newXMLPullParser();
 		parser.setInput(conn.getInputStream(), "UTF-8");
-		List<IncrementalUpdate> lst = new ArrayList<IncrementalUpdate>();
+		List<IncrementalUpdate> lst = new ArrayList<>();
 		while (parser.next() != XmlPullParser.END_DOCUMENT) {
 			if (parser.getEventType() == XmlPullParser.START_TAG) {
 				if (parser.getName().equals("update")) {

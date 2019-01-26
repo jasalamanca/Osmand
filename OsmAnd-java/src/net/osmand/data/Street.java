@@ -10,7 +10,7 @@ import net.osmand.util.Algorithms;
 
 public class Street extends MapObject {
 
-	final List<Building> buildings = new ArrayList<Building>();
+	final List<Building> buildings = new ArrayList<>();
 	private List<Street> intersectedStreets = null;
 	private final City city;
 
@@ -31,7 +31,7 @@ public class Street extends MapObject {
 
 	public void addIntersectedStreet(Street s) {
 		if (intersectedStreets == null) {
-			intersectedStreets = new ArrayList<Street>();
+			intersectedStreets = new ArrayList<>();
 		}
 		intersectedStreets.add(s);
 	}

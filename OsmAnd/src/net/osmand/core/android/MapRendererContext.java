@@ -51,7 +51,7 @@ public class MapRendererContext implements RendererRegistry.IRendererLoadedEvent
 	private final float density;
 	
 	// ached objects
-	private final Map<String, ResolvedMapStyle> mapStyles = new HashMap<String, ResolvedMapStyle>();
+	private final Map<String, ResolvedMapStyle> mapStyles = new HashMap<>();
 	private CachedMapPresentation presentationObjectParams;
 	private MapPresentationEnvironment mapPresentationEnvironment;
 	
@@ -174,7 +174,7 @@ public class MapRendererContext implements RendererRegistry.IRendererLoadedEvent
 		// Apply map style settings
 		OsmandSettings prefs = app.getSettings();
 		RenderingRulesStorage storage = app.getRendererRegistry().getCurrentSelectedRenderer();
-		Map<String, String> props = new HashMap<String, String>();
+		Map<String, String> props = new HashMap<>();
 		for (RenderingRuleProperty customProp : storage.PROPS.getCustomRules()) {
 			if(RenderingRuleStorageProperties.UI_CATEGORY_HIDDEN.equals(customProp.getCategory())){
 				continue;

@@ -1621,7 +1621,7 @@ public final class Descriptors {
     }
     
     DescriptorPool(final FileDescriptor[] dependencies) {
-      this.dependencies = new HashSet<FileDescriptor>();
+      this.dependencies = new HashSet<>();
 
       for (int i = 0; i < dependencies.length; i++) {
         this.dependencies.add(dependencies[i]);
@@ -1652,11 +1652,11 @@ public final class Descriptors {
     private final Set<FileDescriptor> dependencies;
 
     private final Map<String, GenericDescriptor> descriptorsByName =
-      new HashMap<String, GenericDescriptor>();
+            new HashMap<>();
     private final Map<DescriptorIntPair, FieldDescriptor> fieldsByNumber =
-      new HashMap<DescriptorIntPair, FieldDescriptor>();
+            new HashMap<>();
     private final Map<DescriptorIntPair, EnumValueDescriptor> enumValuesByNumber
-        = new HashMap<DescriptorIntPair, EnumValueDescriptor>();
+        = new HashMap<>();
 
     /** Find a generic descriptor by fully-qualified name. */
     GenericDescriptor findSymbol(final String fullName) {

@@ -149,7 +149,7 @@ public class PoiFiltersHelper {
 			AbstractPoiType tp = application.getPoiTypes().getAnyPoiTypeByKey(typeId);
 			if (tp != null) {
 				PoiUIFilter lf = new PoiUIFilter(tp, application, "");
-				ArrayList<PoiUIFilter> copy = new ArrayList<PoiUIFilter>(cacheTopStandardFilters);
+				ArrayList<PoiUIFilter> copy = new ArrayList<>(cacheTopStandardFilters);
 				copy.add(lf);
 				Collections.sort(copy);
 				cacheTopStandardFilters = copy;
@@ -158,7 +158,7 @@ public class PoiFiltersHelper {
 			AbstractPoiType lt = application.getPoiTypes().getAnyPoiAdditionalTypeByKey(typeId);
 			if (lt != null) {
 				PoiUIFilter lf = new PoiUIFilter(lt, application, "");
-				ArrayList<PoiUIFilter> copy = new ArrayList<PoiUIFilter>(cacheTopStandardFilters);
+				ArrayList<PoiUIFilter> copy = new ArrayList<>(cacheTopStandardFilters);
 				copy.add(lf);
 				Collections.sort(copy);
 				cacheTopStandardFilters = copy;
@@ -176,7 +176,7 @@ public class PoiFiltersHelper {
 	}
 
 	public List<PoiUIFilter> getUserDefinedPoiFilters() {
-		ArrayList<PoiUIFilter> userDefinedFilters = new ArrayList<PoiUIFilter>();
+		ArrayList<PoiUIFilter> userDefinedFilters = new ArrayList<>();
 		PoiFilterDbHelper helper = openDbHelper();
 		if (helper != null) {
 			List<PoiUIFilter> userDefined = helper.getFilters(helper.getReadableDatabase());
@@ -200,7 +200,7 @@ public class PoiFiltersHelper {
 
 	public List<PoiUIFilter> getTopDefinedPoiFilters() {
 		if (cacheTopStandardFilters == null) {
-			List<PoiUIFilter> top = new ArrayList<PoiUIFilter>();
+			List<PoiUIFilter> top = new ArrayList<>();
 			// user defined
 			top.addAll(getUserDefinedPoiFilters());
 			if (getLocalWikiPOIFilter() != null) {
@@ -215,7 +215,7 @@ public class PoiFiltersHelper {
 			Collections.sort(top);
 			cacheTopStandardFilters = top;
 		}
-		List<PoiUIFilter> result = new ArrayList<PoiUIFilter>();
+		List<PoiUIFilter> result = new ArrayList<>();
 		result.addAll(cacheTopStandardFilters);
 		result.add(getShowAllPOIFilter());
 		return result;
@@ -468,11 +468,11 @@ public class PoiFiltersHelper {
 		}
 
 		List<PoiUIFilter> getFilters(SQLiteConnection conn) {
-			ArrayList<PoiUIFilter> list = new ArrayList<PoiUIFilter>();
+			ArrayList<PoiUIFilter> list = new ArrayList<>();
 			if (conn != null) {
 				SQLiteCursor query = conn.rawQuery("SELECT " + CATEGORIES_FILTER_ID + ", " + CATEGORIES_COL_CATEGORY + "," + CATEGORIES_COL_SUBCATEGORY + " FROM " +  //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 						CATEGORIES_NAME, null);
-				Map<String, Map<PoiCategory, LinkedHashSet<String>>> map = new LinkedHashMap<String, Map<PoiCategory, LinkedHashSet<String>>>();
+				Map<String, Map<PoiCategory, LinkedHashSet<String>>> map = new LinkedHashMap<>();
 				if (query.moveToFirst()) {
 					do {
 						String filterId = query.getString(0);

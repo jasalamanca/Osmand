@@ -42,10 +42,10 @@ public class RendererRegistry {
 	private RenderingRulesStorage defaultRender = null;
 	private RenderingRulesStorage currentSelectedRender = null;
 	
-	private Map<String, File> externalRenderers = new LinkedHashMap<String, File>();
-	private final Map<String, String> internalRenderers = new LinkedHashMap<String, String>();
+	private Map<String, File> externalRenderers = new LinkedHashMap<>();
+	private final Map<String, String> internalRenderers = new LinkedHashMap<>();
 	
-	private final Map<String, RenderingRulesStorage> renderers = new LinkedHashMap<String, RenderingRulesStorage>();
+	private final Map<String, RenderingRulesStorage> renderers = new LinkedHashMap<>();
 
     public interface IRendererLoadedEventListener {
         void onRendererLoaded(String name, RenderingRulesStorage rules, InputStream source);
@@ -203,7 +203,7 @@ public class RendererRegistry {
 	public void initRenderers(IProgress progress) {
 		File file = app.getAppPath(IndexConstants.RENDERERS_DIR);
 		file.mkdirs();
-		Map<String, File> externalRenderers = new LinkedHashMap<String, File>(); 
+		Map<String, File> externalRenderers = new LinkedHashMap<>();
 		if (file.exists() && file.canRead()) {
 			File[] lf = file.listFiles();
 			if (lf != null) {
@@ -228,7 +228,7 @@ public class RendererRegistry {
 	}
 	
 	public Collection<String> getRendererNames(){
-		LinkedHashSet<String> names = new LinkedHashSet<String>();
+		LinkedHashSet<String> names = new LinkedHashSet<>();
 		names.add(DEFAULT_RENDER);
 		names.addAll(internalRenderers.keySet());
 		names.addAll(externalRenderers.keySet());

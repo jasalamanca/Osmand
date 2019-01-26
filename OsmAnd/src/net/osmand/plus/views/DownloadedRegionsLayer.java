@@ -348,7 +348,7 @@ public class DownloadedRegionsLayer extends OsmandMapLayer implements IContextMe
 				btnName.setLength(0);
 				btnName.append(view.getResources().getString(R.string.shared_string_download));
 				filter.setLength(0);
-				Set<String> set = new TreeSet<String>();
+				Set<String> set = new TreeSet<>();
 				int cx = view.getCurrentRotatedTileBox().getCenter31X();
 				int cy = view.getCurrentRotatedTileBox().getCenter31Y();
 				if ((currentObjects.size() > 0)) {

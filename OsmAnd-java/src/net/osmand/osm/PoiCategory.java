@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class PoiCategory extends PoiFilter {
 
-	private final List<PoiFilter> poiFilters = new ArrayList<PoiFilter>();
+	private final List<PoiFilter> poiFilters = new ArrayList<>();
 	private Set<PoiType> basemapPoi = null;
 	private final int regId;
 	private String defaultTag;
@@ -68,7 +68,7 @@ public class PoiCategory extends PoiFilter {
 	
 	public void addBasemapPoi(PoiType pt) {
 		if(basemapPoi == null) {
-			basemapPoi = new HashSet<PoiType>();
+			basemapPoi = new HashSet<>();
 		}
 		basemapPoi.add(pt);
 	}

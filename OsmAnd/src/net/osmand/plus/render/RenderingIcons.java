@@ -20,10 +20,10 @@ import android.graphics.drawable.Drawable;
 public class RenderingIcons {
 	private static final Log log = PlatformUtil.getLog(RenderingIcons.class);
 	
-	private static final Map<String, Integer> shaderIcons = new LinkedHashMap<String, Integer>();
-	private static final Map<String, Integer> smallIcons = new LinkedHashMap<String, Integer>();
-	private static final Map<String, Integer> bigIcons = new LinkedHashMap<String, Integer>();
-	private static final Map<String, Bitmap> iconsBmp = new LinkedHashMap<String, Bitmap>();
+	private static final Map<String, Integer> shaderIcons = new LinkedHashMap<>();
+	private static final Map<String, Integer> smallIcons = new LinkedHashMap<>();
+	private static final Map<String, Integer> bigIcons = new LinkedHashMap<>();
+	private static final Map<String, Bitmap> iconsBmp = new LinkedHashMap<>();
 //	private static DisplayMetrics dm;
 	
 	public static boolean containsSmallIcon(String s){

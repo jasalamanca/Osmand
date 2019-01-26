@@ -37,7 +37,7 @@ public abstract class BottomSheetDialogFragment extends DialogFragment {
 
 	@Nullable
 	@Override
-	public abstract View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState);
+	public abstract View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState);
 
 	protected OsmandApplication getMyApplication() {
 		return (OsmandApplication) getActivity().getApplication();

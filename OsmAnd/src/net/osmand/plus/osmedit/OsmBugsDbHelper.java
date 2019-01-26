@@ -88,7 +88,7 @@ public class OsmBugsDbHelper extends SQLiteOpenHelper {
 	}
 
 	private List<OsmNotesPoint> checkOsmbugsPoints(SQLiteDatabase db){
-		List<OsmNotesPoint> cachedOsmbugsPoints = new ArrayList<OsmNotesPoint>();
+		List<OsmNotesPoint> cachedOsmbugsPoints = new ArrayList<>();
 		if (db != null) {
 			Cursor query = db.rawQuery("SELECT " + OSMBUGS_COL_ID + ", " + OSMBUGS_COL_TEXT + ", " + OSMBUGS_COL_LAT + "," + OSMBUGS_COL_LON + "," + OSMBUGS_COL_ACTION + "," + OSMBUGS_COL_AUTHOR + " FROM " + //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ 
 					OSMBUGS_TABLE_NAME, null);

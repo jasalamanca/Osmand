@@ -198,7 +198,7 @@ class LazyField {
     public Entry<K, Object> next() {
       Entry<K, ?> entry = iterator.next();
       if (entry.getValue() instanceof LazyField) {
-        return new LazyEntry<K>((Entry<K, LazyField>) entry);
+        return new LazyEntry<>((Entry<K, LazyField>) entry);
       }
       return (Entry<K, Object>) entry;
     }

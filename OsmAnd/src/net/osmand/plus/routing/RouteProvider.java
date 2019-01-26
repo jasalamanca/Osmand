@@ -125,7 +125,7 @@ public class RouteProvider {
 	}
 
 	public static class GPXRouteParams {
-		final List<Location> points = new ArrayList<Location>();
+		final List<Location> points = new ArrayList<>();
 		List<RouteDirectionInfo> directions;
 		boolean calculateOsmAndRoute;
 		boolean passWholeRoute;
@@ -270,7 +270,7 @@ public class RouteProvider {
 		rp.fast = routeParams.fast;
 		rp.onlyStartPointChanged = routeParams.onlyStartPointChanged;
 		rp.previousToRecalculate =  routeParams.previousToRecalculate;
-		rp.intermediates = new ArrayList<LatLon>();
+		rp.intermediates = new ArrayList<>();
 		int closest = 0;
 		double maxDist = Double.POSITIVE_INFINITY;
 		for (int i = 0; i < intermediates.size(); i++) {
@@ -291,7 +291,7 @@ public class RouteProvider {
 
 	private List<RouteDirectionInfo> calcDirections(int[] startI, int[] endI,
 			final List<RouteDirectionInfo> inputDirections) {
-		List<RouteDirectionInfo> directions = new ArrayList<RouteDirectionInfo>();
+		List<RouteDirectionInfo> directions = new ArrayList<>();
 		if (inputDirections != null) {
 			for (RouteDirectionInfo info : inputDirections) {
 				if (info.routePointOffset >= startI[0] && info.routePointOffset < endI[0]) {
@@ -337,12 +337,12 @@ public class RouteProvider {
 					loct = newRes.getImmutableAllLocations();
 					dt = newRes.getImmutableAllDirections();
 				} else {
-					loct = new ArrayList<Location>();
+					loct = new ArrayList<>();
 					Location l = new Location("");
 					l.setLatitude(finalEnd.getLatitude());
 					l.setLongitude(finalEnd.getLongitude());
 					loct.add(l);
-					dt = new ArrayList<RouteDirectionInfo>();
+					dt = new ArrayList<>();
 				}
 				for (RouteDirectionInfo i : dt) {
 					i.routePointOffset += points.size();
@@ -369,9 +369,9 @@ public class RouteProvider {
 				loct = newRes.getImmutableAllLocations();
 				dt = newRes.getImmutableAllDirections();
 			} else {
-				loct = new ArrayList<Location>();
+				loct = new ArrayList<>();
 				loct.add(realStart);
-				dt = new ArrayList<RouteDirectionInfo>();
+				dt = new ArrayList<>();
 			}
 			points.addAll(0, loct);
 			directions.addAll(0, dt);
@@ -426,7 +426,7 @@ public class RouteProvider {
 				minDist = d - 40;
 			}
 		}
-		ArrayList<Location> sublist = new ArrayList<Location>(route.subList(start, end));
+		ArrayList<Location> sublist = new ArrayList<>(route.subList(start, end));
 		if(startI != null) {
 			startI[0] = start;
 		}
@@ -521,9 +521,9 @@ public class RouteProvider {
 
 		LatLon st = new LatLon(params.start.getLatitude(), params.start.getLongitude());
 		LatLon en = new LatLon(params.end.getLatitude(), params.end.getLongitude());
-		List<LatLon> inters  = new ArrayList<LatLon>();
+		List<LatLon> inters  = new ArrayList<>();
 		if (params.intermediates != null) {
-			inters  = new ArrayList<LatLon>(params.intermediates);
+			inters  = new ArrayList<>(params.intermediates);
 		}
 		return calcOfflineRouteImpl(params, router, ctx, complexCtx, st, en, inters, precalculated);
 	}
@@ -543,7 +543,7 @@ public class RouteProvider {
 			return null;
 		}
 		
-		Map<String, String> paramsR = new LinkedHashMap<String, String>();
+		Map<String, String> paramsR = new LinkedHashMap<>();
 		for(Map.Entry<String, RoutingParameter> e : generalRouter.getParameters().entrySet()){
 			String key = e.getKey();
 			RoutingParameter pr = e.getValue();
@@ -675,7 +675,7 @@ public class RouteProvider {
 		}
 		RouteDirectionInfo previous = null;
 		if (route != null && route.points.size() > 0) {
-			directions = new ArrayList<RouteDirectionInfo>();
+			directions = new ArrayList<>();
 			Iterator<WptPt> iterator = route.points.iterator();
 			while(iterator.hasNext()){
 				WptPt item = iterator.next();

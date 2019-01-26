@@ -1,5 +1,7 @@
 package net.osmand.plus.download;
 
+import android.support.annotation.NonNull;
+
 import net.osmand.IProgress;
 import net.osmand.IndexConstants;
 import net.osmand.PlatformUtil;
@@ -116,7 +118,7 @@ class DownloadFileHelper {
 			}
 			
 			@Override
-			public int read(byte[] buffer, int offset, int len) throws IOException {
+			public int read(@NonNull byte[] buffer, int offset, int len) throws IOException {
 				if (bufLen == -1) {
 					return -1;
 				}
@@ -203,7 +205,7 @@ class DownloadFileHelper {
 	public boolean downloadFile(IndexItem.DownloadEntry de, IProgress progress, 
 			List<File> toReIndex, DownloadFileShowWarning showWarningCallback, boolean forceWifi) {
 		try {
-			final List<InputStream> downloadInputStreams = new ArrayList<InputStream>();
+			final List<InputStream> downloadInputStreams = new ArrayList<>();
 			URL url = new URL(de.urlToDownload); //$NON-NLS-1$
 			log.debug("Url downloading " + de.urlToDownload);
 			downloadInputStreams.add(getInputStreamToDownload(url, forceWifi));
@@ -351,7 +353,7 @@ class DownloadFileHelper {
 		}
 		
 		@Override
-		public int read(byte[] buffer, int offset, int length)
+		public int read(@NonNull byte[] buffer, int offset, int length)
 				throws IOException {
 			int r = -1;
 			while (r == -1 && currentRead < delegate.length) {

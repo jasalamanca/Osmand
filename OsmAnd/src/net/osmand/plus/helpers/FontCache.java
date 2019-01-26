@@ -9,7 +9,7 @@ import android.util.Log;
 
 public class FontCache {
 	private static final String TAG = "FontCache";
-    private static final Map<String, Typeface> fontMap = new ConcurrentHashMap<String, Typeface>();
+    private static final Map<String, Typeface> fontMap = new ConcurrentHashMap<>();
     private static final String ROBOTO_MEDIUM = "fonts/Roboto-Medium.ttf";
     private static final String ROBOTO_REGULAR = "fonts/Roboto-Regular.ttf";
     

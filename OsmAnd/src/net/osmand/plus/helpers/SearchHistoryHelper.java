@@ -20,7 +20,7 @@ public class SearchHistoryHelper {
 	private static final int HISTORY_LIMIT = 1500;
 	private final OsmandApplication context;
 	private List<HistoryEntry> loadedEntries = null;
-	private final Map<PointDescription, HistoryEntry> mp = new HashMap<PointDescription, SearchHistoryHelper.HistoryEntry>();
+	private final Map<PointDescription, HistoryEntry> mp = new HashMap<>();
 	
 	private SearchHistoryHelper(OsmandApplication context) {
 		this.context = context;
@@ -193,7 +193,7 @@ public class SearchHistoryHelper {
 		if(loadedEntries == null){
 			checkLoadedEntries();
 		}
-		return new ArrayList<SearchHistoryHelper.HistoryEntry>(loadedEntries);
+		return new ArrayList<>(loadedEntries);
 	}
 	
 	private HistoryItemDBHelper checkLoadedEntries() {
@@ -369,7 +369,7 @@ public class SearchHistoryHelper {
 		} 
 		
 		List<HistoryEntry> getLegacyEntries(SQLiteConnection db){
-			List<HistoryEntry> entries = new ArrayList<HistoryEntry>();
+			List<HistoryEntry> entries = new ArrayList<>();
 			if (db != null) {
 				// LEGACY QUERY !!
 				SQLiteCursor query = db.rawQuery(
@@ -407,7 +407,7 @@ public class SearchHistoryHelper {
 		}
 		
 		List<HistoryEntry> getEntries(){
-			List<HistoryEntry> entries = new ArrayList<HistoryEntry>();
+			List<HistoryEntry> entries = new ArrayList<>();
 			SQLiteConnection db = openConnection(true);
 			if(db != null){
 				try {
@@ -415,7 +415,7 @@ public class SearchHistoryHelper {
 							"SELECT " + HISTORY_COL_NAME + ", " + HISTORY_COL_LAT + "," + HISTORY_COL_LON +", " + 
 									HISTORY_COL_TIME + ", " + HISTORY_COL_FREQ_INTERVALS + ", " + HISTORY_COL_FREQ_VALUES +
 									" FROM " +	HISTORY_TABLE_NAME , null); //$NON-NLS-1$//$NON-NLS-2$
-					Map<PointDescription, HistoryEntry> st = new HashMap<PointDescription, HistoryEntry>(); 
+					Map<PointDescription, HistoryEntry> st = new HashMap<>();
 					if (query.moveToFirst()) {
 						boolean reinsert = false;
 						do {

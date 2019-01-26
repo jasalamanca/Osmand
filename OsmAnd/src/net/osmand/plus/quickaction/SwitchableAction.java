@@ -1,6 +1,7 @@
 package net.osmand.plus.quickaction;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v7.widget.RecyclerView;
@@ -100,14 +101,15 @@ public abstract class SwitchableAction<T> extends QuickAction {
 			this.itemsList = new ArrayList<>();
 		}
 
-		@Override
-		public Adapter.ItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+		@NonNull
+        @Override
+		public Adapter.ItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 			LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 			return new Adapter.ItemHolder(inflater.inflate(R.layout.quick_action_switchable_item, parent, false));
 		}
 
 		@Override
-		public void onBindViewHolder(final Adapter.ItemHolder holder, final int position) {
+		public void onBindViewHolder(@NonNull final Adapter.ItemHolder holder, final int position) {
 			final T item = itemsList.get(position);
 
 			holder.title.setText(getItemName(item));

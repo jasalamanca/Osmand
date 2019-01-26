@@ -141,7 +141,7 @@ public class WorldRegion implements Serializable {
 		this.regionFullName = regionFullName;
 		this.regionDownloadName = downloadName;
 		superregion = null;
-		subregions = new LinkedList<WorldRegion>();
+		subregions = new LinkedList<>();
 		
 	}
 	public WorldRegion(String id) {

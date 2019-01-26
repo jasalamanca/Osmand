@@ -94,7 +94,7 @@ public final class DescriptorProtos {
             }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                file_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.FileDescriptorProto>();
+                file_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000001;
               }
               file_.add(input.readMessage(com.google.protobuf.DescriptorProtos.FileDescriptorProto.PARSER, extensionRegistry));
@@ -458,7 +458,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureFileIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          file_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.FileDescriptorProto>(file_);
+          file_ = new java.util.ArrayList<>(file_);
           bitField0_ |= 0x00000001;
          }
       }
@@ -682,8 +682,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.FileDescriptorProto, com.google.protobuf.DescriptorProtos.FileDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.FileDescriptorProtoOrBuilder> 
           getFileFieldBuilder() {
         if (fileBuilder_ == null) {
-          fileBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.FileDescriptorProto, com.google.protobuf.DescriptorProtos.FileDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.FileDescriptorProtoOrBuilder>(
+          fileBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   file_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -1096,7 +1095,7 @@ public final class DescriptorProtos {
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                messageType_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.DescriptorProto>();
+                messageType_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000020;
               }
               messageType_.add(input.readMessage(com.google.protobuf.DescriptorProtos.DescriptorProto.PARSER, extensionRegistry));
@@ -1104,7 +1103,7 @@ public final class DescriptorProtos {
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                enumType_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.EnumDescriptorProto>();
+                enumType_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000040;
               }
               enumType_.add(input.readMessage(com.google.protobuf.DescriptorProtos.EnumDescriptorProto.PARSER, extensionRegistry));
@@ -1112,7 +1111,7 @@ public final class DescriptorProtos {
             }
             case 50: {
               if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-                service_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.ServiceDescriptorProto>();
+                service_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000080;
               }
               service_.add(input.readMessage(com.google.protobuf.DescriptorProtos.ServiceDescriptorProto.PARSER, extensionRegistry));
@@ -1120,7 +1119,7 @@ public final class DescriptorProtos {
             }
             case 58: {
               if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-                extension_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.FieldDescriptorProto>();
+                extension_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000100;
               }
               extension_.add(input.readMessage(com.google.protobuf.DescriptorProtos.FieldDescriptorProto.PARSER, extensionRegistry));
@@ -1154,7 +1153,7 @@ public final class DescriptorProtos {
             }
             case 80: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                publicDependency_ = new java.util.ArrayList<java.lang.Integer>();
+                publicDependency_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000008;
               }
               publicDependency_.add(input.readInt32());
@@ -1164,7 +1163,7 @@ public final class DescriptorProtos {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
-                publicDependency_ = new java.util.ArrayList<java.lang.Integer>();
+                publicDependency_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000008;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -1175,7 +1174,7 @@ public final class DescriptorProtos {
             }
             case 88: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                weakDependency_ = new java.util.ArrayList<java.lang.Integer>();
+                weakDependency_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000010;
               }
               weakDependency_.add(input.readInt32());
@@ -1185,7 +1184,7 @@ public final class DescriptorProtos {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
-                weakDependency_ = new java.util.ArrayList<java.lang.Integer>();
+                weakDependency_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000010;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -2697,7 +2696,7 @@ public final class DescriptorProtos {
       private java.util.List<java.lang.Integer> publicDependency_ = java.util.Collections.emptyList();
       private void ensurePublicDependencyIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          publicDependency_ = new java.util.ArrayList<java.lang.Integer>(publicDependency_);
+          publicDependency_ = new java.util.ArrayList<>(publicDependency_);
           bitField0_ |= 0x00000008;
          }
       }
@@ -2791,7 +2790,7 @@ public final class DescriptorProtos {
       private java.util.List<java.lang.Integer> weakDependency_ = java.util.Collections.emptyList();
       private void ensureWeakDependencyIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          weakDependency_ = new java.util.ArrayList<java.lang.Integer>(weakDependency_);
+          weakDependency_ = new java.util.ArrayList<>(weakDependency_);
           bitField0_ |= 0x00000010;
          }
       }
@@ -2893,7 +2892,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureMessageTypeIsMutable() {
         if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-          messageType_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.DescriptorProto>(messageType_);
+          messageType_ = new java.util.ArrayList<>(messageType_);
           bitField0_ |= 0x00000020;
          }
       }
@@ -3189,8 +3188,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.DescriptorProto, com.google.protobuf.DescriptorProtos.DescriptorProto.Builder, com.google.protobuf.DescriptorProtos.DescriptorProtoOrBuilder> 
           getMessageTypeFieldBuilder() {
         if (messageTypeBuilder_ == null) {
-          messageTypeBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.DescriptorProto, com.google.protobuf.DescriptorProtos.DescriptorProto.Builder, com.google.protobuf.DescriptorProtos.DescriptorProtoOrBuilder>(
+          messageTypeBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   messageType_,
                   ((bitField0_ & 0x00000020) == 0x00000020),
                   getParentForChildren(),
@@ -3205,7 +3203,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureEnumTypeIsMutable() {
         if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-          enumType_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.EnumDescriptorProto>(enumType_);
+          enumType_ = new java.util.ArrayList<>(enumType_);
           bitField0_ |= 0x00000040;
          }
       }
@@ -3429,8 +3427,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.EnumDescriptorProto, com.google.protobuf.DescriptorProtos.EnumDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.EnumDescriptorProtoOrBuilder> 
           getEnumTypeFieldBuilder() {
         if (enumTypeBuilder_ == null) {
-          enumTypeBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.EnumDescriptorProto, com.google.protobuf.DescriptorProtos.EnumDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.EnumDescriptorProtoOrBuilder>(
+          enumTypeBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   enumType_,
                   ((bitField0_ & 0x00000040) == 0x00000040),
                   getParentForChildren(),
@@ -3445,7 +3442,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureServiceIsMutable() {
         if (!((bitField0_ & 0x00000080) == 0x00000080)) {
-          service_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.ServiceDescriptorProto>(service_);
+          service_ = new java.util.ArrayList<>(service_);
           bitField0_ |= 0x00000080;
          }
       }
@@ -3669,8 +3666,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.ServiceDescriptorProto, com.google.protobuf.DescriptorProtos.ServiceDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.ServiceDescriptorProtoOrBuilder> 
           getServiceFieldBuilder() {
         if (serviceBuilder_ == null) {
-          serviceBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.ServiceDescriptorProto, com.google.protobuf.DescriptorProtos.ServiceDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.ServiceDescriptorProtoOrBuilder>(
+          serviceBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   service_,
                   ((bitField0_ & 0x00000080) == 0x00000080),
                   getParentForChildren(),
@@ -3685,7 +3681,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureExtensionIsMutable() {
         if (!((bitField0_ & 0x00000100) == 0x00000100)) {
-          extension_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.FieldDescriptorProto>(extension_);
+          extension_ = new java.util.ArrayList<>(extension_);
           bitField0_ |= 0x00000100;
          }
       }
@@ -3909,8 +3905,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.FieldDescriptorProto, com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.FieldDescriptorProtoOrBuilder> 
           getExtensionFieldBuilder() {
         if (extensionBuilder_ == null) {
-          extensionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.FieldDescriptorProto, com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.FieldDescriptorProtoOrBuilder>(
+          extensionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   extension_,
                   ((bitField0_ & 0x00000100) == 0x00000100),
                   getParentForChildren(),
@@ -4027,8 +4022,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.FileOptions, com.google.protobuf.DescriptorProtos.FileOptions.Builder, com.google.protobuf.DescriptorProtos.FileOptionsOrBuilder> 
           getOptionsFieldBuilder() {
         if (optionsBuilder_ == null) {
-          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.DescriptorProtos.FileOptions, com.google.protobuf.DescriptorProtos.FileOptions.Builder, com.google.protobuf.DescriptorProtos.FileOptionsOrBuilder>(
+          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   options_,
                   getParentForChildren(),
                   isClean());
@@ -4207,8 +4201,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.SourceCodeInfo, com.google.protobuf.DescriptorProtos.SourceCodeInfo.Builder, com.google.protobuf.DescriptorProtos.SourceCodeInfoOrBuilder> 
           getSourceCodeInfoFieldBuilder() {
         if (sourceCodeInfoBuilder_ == null) {
-          sourceCodeInfoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.DescriptorProtos.SourceCodeInfo, com.google.protobuf.DescriptorProtos.SourceCodeInfo.Builder, com.google.protobuf.DescriptorProtos.SourceCodeInfoOrBuilder>(
+          sourceCodeInfoBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   sourceCodeInfo_,
                   getParentForChildren(),
                   isClean());
@@ -4447,7 +4440,7 @@ public final class DescriptorProtos {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                field_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.FieldDescriptorProto>();
+                field_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000002;
               }
               field_.add(input.readMessage(com.google.protobuf.DescriptorProtos.FieldDescriptorProto.PARSER, extensionRegistry));
@@ -4455,7 +4448,7 @@ public final class DescriptorProtos {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                nestedType_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.DescriptorProto>();
+                nestedType_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000008;
               }
               nestedType_.add(input.readMessage(com.google.protobuf.DescriptorProtos.DescriptorProto.PARSER, extensionRegistry));
@@ -4463,7 +4456,7 @@ public final class DescriptorProtos {
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                enumType_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.EnumDescriptorProto>();
+                enumType_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000010;
               }
               enumType_.add(input.readMessage(com.google.protobuf.DescriptorProtos.EnumDescriptorProto.PARSER, extensionRegistry));
@@ -4471,7 +4464,7 @@ public final class DescriptorProtos {
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                extensionRange_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.DescriptorProto.ExtensionRange>();
+                extensionRange_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000020;
               }
               extensionRange_.add(input.readMessage(com.google.protobuf.DescriptorProtos.DescriptorProto.ExtensionRange.PARSER, extensionRegistry));
@@ -4479,7 +4472,7 @@ public final class DescriptorProtos {
             }
             case 50: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                extension_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.FieldDescriptorProto>();
+                extension_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000004;
               }
               extension_.add(input.readMessage(com.google.protobuf.DescriptorProtos.FieldDescriptorProto.PARSER, extensionRegistry));
@@ -5923,7 +5916,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureFieldIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          field_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.FieldDescriptorProto>(field_);
+          field_ = new java.util.ArrayList<>(field_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -6147,8 +6140,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.FieldDescriptorProto, com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.FieldDescriptorProtoOrBuilder> 
           getFieldFieldBuilder() {
         if (fieldBuilder_ == null) {
-          fieldBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.FieldDescriptorProto, com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.FieldDescriptorProtoOrBuilder>(
+          fieldBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   field_,
                   ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
@@ -6163,7 +6155,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureExtensionIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          extension_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.FieldDescriptorProto>(extension_);
+          extension_ = new java.util.ArrayList<>(extension_);
           bitField0_ |= 0x00000004;
          }
       }
@@ -6387,8 +6379,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.FieldDescriptorProto, com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.FieldDescriptorProtoOrBuilder> 
           getExtensionFieldBuilder() {
         if (extensionBuilder_ == null) {
-          extensionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.FieldDescriptorProto, com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.FieldDescriptorProtoOrBuilder>(
+          extensionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   extension_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
@@ -6403,7 +6394,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureNestedTypeIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          nestedType_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.DescriptorProto>(nestedType_);
+          nestedType_ = new java.util.ArrayList<>(nestedType_);
           bitField0_ |= 0x00000008;
          }
       }
@@ -6627,8 +6618,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.DescriptorProto, com.google.protobuf.DescriptorProtos.DescriptorProto.Builder, com.google.protobuf.DescriptorProtos.DescriptorProtoOrBuilder> 
           getNestedTypeFieldBuilder() {
         if (nestedTypeBuilder_ == null) {
-          nestedTypeBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.DescriptorProto, com.google.protobuf.DescriptorProtos.DescriptorProto.Builder, com.google.protobuf.DescriptorProtos.DescriptorProtoOrBuilder>(
+          nestedTypeBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   nestedType_,
                   ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
@@ -6643,7 +6633,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureEnumTypeIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          enumType_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.EnumDescriptorProto>(enumType_);
+          enumType_ = new java.util.ArrayList<>(enumType_);
           bitField0_ |= 0x00000010;
          }
       }
@@ -6867,8 +6857,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.EnumDescriptorProto, com.google.protobuf.DescriptorProtos.EnumDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.EnumDescriptorProtoOrBuilder> 
           getEnumTypeFieldBuilder() {
         if (enumTypeBuilder_ == null) {
-          enumTypeBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.EnumDescriptorProto, com.google.protobuf.DescriptorProtos.EnumDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.EnumDescriptorProtoOrBuilder>(
+          enumTypeBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   enumType_,
                   ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
@@ -6883,7 +6872,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureExtensionRangeIsMutable() {
         if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-          extensionRange_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.DescriptorProto.ExtensionRange>(extensionRange_);
+          extensionRange_ = new java.util.ArrayList<>(extensionRange_);
           bitField0_ |= 0x00000020;
          }
       }
@@ -7107,8 +7096,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.DescriptorProto.ExtensionRange, com.google.protobuf.DescriptorProtos.DescriptorProto.ExtensionRange.Builder, com.google.protobuf.DescriptorProtos.DescriptorProto.ExtensionRangeOrBuilder> 
           getExtensionRangeFieldBuilder() {
         if (extensionRangeBuilder_ == null) {
-          extensionRangeBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.DescriptorProto.ExtensionRange, com.google.protobuf.DescriptorProtos.DescriptorProto.ExtensionRange.Builder, com.google.protobuf.DescriptorProtos.DescriptorProto.ExtensionRangeOrBuilder>(
+          extensionRangeBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   extensionRange_,
                   ((bitField0_ & 0x00000020) == 0x00000020),
                   getParentForChildren(),
@@ -7225,8 +7213,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.MessageOptions, com.google.protobuf.DescriptorProtos.MessageOptions.Builder, com.google.protobuf.DescriptorProtos.MessageOptionsOrBuilder> 
           getOptionsFieldBuilder() {
         if (optionsBuilder_ == null) {
-          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.DescriptorProtos.MessageOptions, com.google.protobuf.DescriptorProtos.MessageOptions.Builder, com.google.protobuf.DescriptorProtos.MessageOptionsOrBuilder>(
+          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   options_,
                   getParentForChildren(),
                   isClean());
@@ -9332,8 +9319,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.FieldOptions, com.google.protobuf.DescriptorProtos.FieldOptions.Builder, com.google.protobuf.DescriptorProtos.FieldOptionsOrBuilder> 
           getOptionsFieldBuilder() {
         if (optionsBuilder_ == null) {
-          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.DescriptorProtos.FieldOptions, com.google.protobuf.DescriptorProtos.FieldOptions.Builder, com.google.protobuf.DescriptorProtos.FieldOptionsOrBuilder>(
+          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   options_,
                   getParentForChildren(),
                   isClean());
@@ -9472,7 +9458,7 @@ public final class DescriptorProtos {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                value_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.EnumValueDescriptorProto>();
+                value_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000002;
               }
               value_.add(input.readMessage(com.google.protobuf.DescriptorProtos.EnumValueDescriptorProto.PARSER, extensionRegistry));
@@ -10047,7 +10033,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureValueIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          value_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.EnumValueDescriptorProto>(value_);
+          value_ = new java.util.ArrayList<>(value_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -10271,8 +10257,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.EnumValueDescriptorProto, com.google.protobuf.DescriptorProtos.EnumValueDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.EnumValueDescriptorProtoOrBuilder> 
           getValueFieldBuilder() {
         if (valueBuilder_ == null) {
-          valueBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.EnumValueDescriptorProto, com.google.protobuf.DescriptorProtos.EnumValueDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.EnumValueDescriptorProtoOrBuilder>(
+          valueBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   value_,
                   ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
@@ -10389,8 +10374,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.EnumOptions, com.google.protobuf.DescriptorProtos.EnumOptions.Builder, com.google.protobuf.DescriptorProtos.EnumOptionsOrBuilder> 
           getOptionsFieldBuilder() {
         if (optionsBuilder_ == null) {
-          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.DescriptorProtos.EnumOptions, com.google.protobuf.DescriptorProtos.EnumOptions.Builder, com.google.protobuf.DescriptorProtos.EnumOptionsOrBuilder>(
+          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   options_,
                   getParentForChildren(),
                   isClean());
@@ -11153,8 +11137,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.EnumValueOptions, com.google.protobuf.DescriptorProtos.EnumValueOptions.Builder, com.google.protobuf.DescriptorProtos.EnumValueOptionsOrBuilder> 
           getOptionsFieldBuilder() {
         if (optionsBuilder_ == null) {
-          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.DescriptorProtos.EnumValueOptions, com.google.protobuf.DescriptorProtos.EnumValueOptions.Builder, com.google.protobuf.DescriptorProtos.EnumValueOptionsOrBuilder>(
+          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   options_,
                   getParentForChildren(),
                   isClean());
@@ -11293,7 +11276,7 @@ public final class DescriptorProtos {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                method_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.MethodDescriptorProto>();
+                method_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000002;
               }
               method_.add(input.readMessage(com.google.protobuf.DescriptorProtos.MethodDescriptorProto.PARSER, extensionRegistry));
@@ -11868,7 +11851,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureMethodIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          method_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.MethodDescriptorProto>(method_);
+          method_ = new java.util.ArrayList<>(method_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -12092,8 +12075,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.MethodDescriptorProto, com.google.protobuf.DescriptorProtos.MethodDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.MethodDescriptorProtoOrBuilder> 
           getMethodFieldBuilder() {
         if (methodBuilder_ == null) {
-          methodBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.MethodDescriptorProto, com.google.protobuf.DescriptorProtos.MethodDescriptorProto.Builder, com.google.protobuf.DescriptorProtos.MethodDescriptorProtoOrBuilder>(
+          methodBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   method_,
                   ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
@@ -12210,8 +12192,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.ServiceOptions, com.google.protobuf.DescriptorProtos.ServiceOptions.Builder, com.google.protobuf.DescriptorProtos.ServiceOptionsOrBuilder> 
           getOptionsFieldBuilder() {
         if (optionsBuilder_ == null) {
-          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.DescriptorProtos.ServiceOptions, com.google.protobuf.DescriptorProtos.ServiceOptions.Builder, com.google.protobuf.DescriptorProtos.ServiceOptionsOrBuilder>(
+          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   options_,
                   getParentForChildren(),
                   isClean());
@@ -13265,8 +13246,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.MethodOptions, com.google.protobuf.DescriptorProtos.MethodOptions.Builder, com.google.protobuf.DescriptorProtos.MethodOptionsOrBuilder> 
           getOptionsFieldBuilder() {
         if (optionsBuilder_ == null) {
-          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.DescriptorProtos.MethodOptions, com.google.protobuf.DescriptorProtos.MethodOptions.Builder, com.google.protobuf.DescriptorProtos.MethodOptionsOrBuilder>(
+          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   options_,
                   getParentForChildren(),
                   isClean());
@@ -13662,7 +13642,7 @@ public final class DescriptorProtos {
             }
             case 7994: {
               if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
-                uninterpretedOption_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.UninterpretedOption>();
+                uninterpretedOption_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000200;
               }
               uninterpretedOption_.add(input.readMessage(com.google.protobuf.DescriptorProtos.UninterpretedOption.PARSER, extensionRegistry));
@@ -15338,7 +15318,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureUninterpretedOptionIsMutable() {
         if (!((bitField0_ & 0x00000200) == 0x00000200)) {
-          uninterpretedOption_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.UninterpretedOption>(uninterpretedOption_);
+          uninterpretedOption_ = new java.util.ArrayList<>(uninterpretedOption_);
           bitField0_ |= 0x00000200;
          }
       }
@@ -15634,8 +15614,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.UninterpretedOption, com.google.protobuf.DescriptorProtos.UninterpretedOption.Builder, com.google.protobuf.DescriptorProtos.UninterpretedOptionOrBuilder> 
           getUninterpretedOptionFieldBuilder() {
         if (uninterpretedOptionBuilder_ == null) {
-          uninterpretedOptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.UninterpretedOption, com.google.protobuf.DescriptorProtos.UninterpretedOption.Builder, com.google.protobuf.DescriptorProtos.UninterpretedOptionOrBuilder>(
+          uninterpretedOptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   uninterpretedOption_,
                   ((bitField0_ & 0x00000200) == 0x00000200),
                   getParentForChildren(),
@@ -15842,7 +15821,7 @@ public final class DescriptorProtos {
             }
             case 7994: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                uninterpretedOption_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.UninterpretedOption>();
+                uninterpretedOption_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000004;
               }
               uninterpretedOption_.add(input.readMessage(com.google.protobuf.DescriptorProtos.UninterpretedOption.PARSER, extensionRegistry));
@@ -16532,7 +16511,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureUninterpretedOptionIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          uninterpretedOption_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.UninterpretedOption>(uninterpretedOption_);
+          uninterpretedOption_ = new java.util.ArrayList<>(uninterpretedOption_);
           bitField0_ |= 0x00000004;
          }
       }
@@ -16828,8 +16807,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.UninterpretedOption, com.google.protobuf.DescriptorProtos.UninterpretedOption.Builder, com.google.protobuf.DescriptorProtos.UninterpretedOptionOrBuilder> 
           getUninterpretedOptionFieldBuilder() {
         if (uninterpretedOptionBuilder_ == null) {
-          uninterpretedOptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.UninterpretedOption, com.google.protobuf.DescriptorProtos.UninterpretedOption.Builder, com.google.protobuf.DescriptorProtos.UninterpretedOptionOrBuilder>(
+          uninterpretedOptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   uninterpretedOption_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
@@ -17210,7 +17188,7 @@ public final class DescriptorProtos {
             }
             case 7994: {
               if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                uninterpretedOption_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.UninterpretedOption>();
+                uninterpretedOption_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000040;
               }
               uninterpretedOption_.add(input.readMessage(com.google.protobuf.DescriptorProtos.UninterpretedOption.PARSER, extensionRegistry));
@@ -18645,7 +18623,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureUninterpretedOptionIsMutable() {
         if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-          uninterpretedOption_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.UninterpretedOption>(uninterpretedOption_);
+          uninterpretedOption_ = new java.util.ArrayList<>(uninterpretedOption_);
           bitField0_ |= 0x00000040;
          }
       }
@@ -18941,8 +18919,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.UninterpretedOption, com.google.protobuf.DescriptorProtos.UninterpretedOption.Builder, com.google.protobuf.DescriptorProtos.UninterpretedOptionOrBuilder> 
           getUninterpretedOptionFieldBuilder() {
         if (uninterpretedOptionBuilder_ == null) {
-          uninterpretedOptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.UninterpretedOption, com.google.protobuf.DescriptorProtos.UninterpretedOption.Builder, com.google.protobuf.DescriptorProtos.UninterpretedOptionOrBuilder>(
+          uninterpretedOptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   uninterpretedOption_,
                   ((bitField0_ & 0x00000040) == 0x00000040),
                   getParentForChildren(),
@@ -19090,7 +19067,7 @@ public final class DescriptorProtos {
             }
             case 7994: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                uninterpretedOption_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.UninterpretedOption>();
+                uninterpretedOption_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000002;
               }
               uninterpretedOption_.add(input.readMessage(com.google.protobuf.DescriptorProtos.UninterpretedOption.PARSER, extensionRegistry));
@@ -19582,7 +19559,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureUninterpretedOptionIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          uninterpretedOption_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.UninterpretedOption>(uninterpretedOption_);
+          uninterpretedOption_ = new java.util.ArrayList<>(uninterpretedOption_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -19878,8 +19855,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.UninterpretedOption, com.google.protobuf.DescriptorProtos.UninterpretedOption.Builder, com.google.protobuf.DescriptorProtos.UninterpretedOptionOrBuilder> 
           getUninterpretedOptionFieldBuilder() {
         if (uninterpretedOptionBuilder_ == null) {
-          uninterpretedOptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.UninterpretedOption, com.google.protobuf.DescriptorProtos.UninterpretedOption.Builder, com.google.protobuf.DescriptorProtos.UninterpretedOptionOrBuilder>(
+          uninterpretedOptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   uninterpretedOption_,
                   ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
@@ -20002,7 +19978,7 @@ public final class DescriptorProtos {
             }
             case 7994: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                uninterpretedOption_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.UninterpretedOption>();
+                uninterpretedOption_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000001;
               }
               uninterpretedOption_.add(input.readMessage(com.google.protobuf.DescriptorProtos.UninterpretedOption.PARSER, extensionRegistry));
@@ -20395,7 +20371,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureUninterpretedOptionIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          uninterpretedOption_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.UninterpretedOption>(uninterpretedOption_);
+          uninterpretedOption_ = new java.util.ArrayList<>(uninterpretedOption_);
           bitField0_ |= 0x00000001;
          }
       }
@@ -20691,8 +20667,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.UninterpretedOption, com.google.protobuf.DescriptorProtos.UninterpretedOption.Builder, com.google.protobuf.DescriptorProtos.UninterpretedOptionOrBuilder> 
           getUninterpretedOptionFieldBuilder() {
         if (uninterpretedOptionBuilder_ == null) {
-          uninterpretedOptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.UninterpretedOption, com.google.protobuf.DescriptorProtos.UninterpretedOption.Builder, com.google.protobuf.DescriptorProtos.UninterpretedOptionOrBuilder>(
+          uninterpretedOptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   uninterpretedOption_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -20815,7 +20790,7 @@ public final class DescriptorProtos {
             }
             case 7994: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                uninterpretedOption_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.UninterpretedOption>();
+                uninterpretedOption_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000001;
               }
               uninterpretedOption_.add(input.readMessage(com.google.protobuf.DescriptorProtos.UninterpretedOption.PARSER, extensionRegistry));
@@ -21208,7 +21183,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureUninterpretedOptionIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          uninterpretedOption_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.UninterpretedOption>(uninterpretedOption_);
+          uninterpretedOption_ = new java.util.ArrayList<>(uninterpretedOption_);
           bitField0_ |= 0x00000001;
          }
       }
@@ -21504,8 +21479,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.UninterpretedOption, com.google.protobuf.DescriptorProtos.UninterpretedOption.Builder, com.google.protobuf.DescriptorProtos.UninterpretedOptionOrBuilder> 
           getUninterpretedOptionFieldBuilder() {
         if (uninterpretedOptionBuilder_ == null) {
-          uninterpretedOptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.UninterpretedOption, com.google.protobuf.DescriptorProtos.UninterpretedOption.Builder, com.google.protobuf.DescriptorProtos.UninterpretedOptionOrBuilder>(
+          uninterpretedOptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   uninterpretedOption_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -21628,7 +21602,7 @@ public final class DescriptorProtos {
             }
             case 7994: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                uninterpretedOption_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.UninterpretedOption>();
+                uninterpretedOption_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000001;
               }
               uninterpretedOption_.add(input.readMessage(com.google.protobuf.DescriptorProtos.UninterpretedOption.PARSER, extensionRegistry));
@@ -22021,7 +21995,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureUninterpretedOptionIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          uninterpretedOption_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.UninterpretedOption>(uninterpretedOption_);
+          uninterpretedOption_ = new java.util.ArrayList<>(uninterpretedOption_);
           bitField0_ |= 0x00000001;
          }
       }
@@ -22317,8 +22291,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.UninterpretedOption, com.google.protobuf.DescriptorProtos.UninterpretedOption.Builder, com.google.protobuf.DescriptorProtos.UninterpretedOptionOrBuilder> 
           getUninterpretedOptionFieldBuilder() {
         if (uninterpretedOptionBuilder_ == null) {
-          uninterpretedOptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.UninterpretedOption, com.google.protobuf.DescriptorProtos.UninterpretedOption.Builder, com.google.protobuf.DescriptorProtos.UninterpretedOptionOrBuilder>(
+          uninterpretedOptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   uninterpretedOption_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -22514,7 +22487,7 @@ public final class DescriptorProtos {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                name_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.UninterpretedOption.NamePart>();
+                name_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000001;
               }
               name_.add(input.readMessage(com.google.protobuf.DescriptorProtos.UninterpretedOption.NamePart.PARSER, extensionRegistry));
@@ -23770,7 +23743,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureNameIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          name_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.UninterpretedOption.NamePart>(name_);
+          name_ = new java.util.ArrayList<>(name_);
           bitField0_ |= 0x00000001;
          }
       }
@@ -23994,8 +23967,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.UninterpretedOption.NamePart, com.google.protobuf.DescriptorProtos.UninterpretedOption.NamePart.Builder, com.google.protobuf.DescriptorProtos.UninterpretedOption.NamePartOrBuilder> 
           getNameFieldBuilder() {
         if (nameBuilder_ == null) {
-          nameBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.UninterpretedOption.NamePart, com.google.protobuf.DescriptorProtos.UninterpretedOption.NamePart.Builder, com.google.protobuf.DescriptorProtos.UninterpretedOption.NamePartOrBuilder>(
+          nameBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   name_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -24645,7 +24617,7 @@ public final class DescriptorProtos {
             }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                location_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.SourceCodeInfo.Location>();
+                location_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000001;
               }
               location_.add(input.readMessage(com.google.protobuf.DescriptorProtos.SourceCodeInfo.Location.PARSER, extensionRegistry));
@@ -25020,7 +24992,7 @@ public final class DescriptorProtos {
               }
               case 8: {
                 if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                  path_ = new java.util.ArrayList<java.lang.Integer>();
+                  path_ = new java.util.ArrayList<>();
                   mutable_bitField0_ |= 0x00000001;
                 }
                 path_.add(input.readInt32());
@@ -25030,7 +25002,7 @@ public final class DescriptorProtos {
                 int length = input.readRawVarint32();
                 int limit = input.pushLimit(length);
                 if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
-                  path_ = new java.util.ArrayList<java.lang.Integer>();
+                  path_ = new java.util.ArrayList<>();
                   mutable_bitField0_ |= 0x00000001;
                 }
                 while (input.getBytesUntilLimit() > 0) {
@@ -25041,7 +25013,7 @@ public final class DescriptorProtos {
               }
               case 16: {
                 if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                  span_ = new java.util.ArrayList<java.lang.Integer>();
+                  span_ = new java.util.ArrayList<>();
                   mutable_bitField0_ |= 0x00000002;
                 }
                 span_.add(input.readInt32());
@@ -25051,7 +25023,7 @@ public final class DescriptorProtos {
                 int length = input.readRawVarint32();
                 int limit = input.pushLimit(length);
                 if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
-                  span_ = new java.util.ArrayList<java.lang.Integer>();
+                  span_ = new java.util.ArrayList<>();
                   mutable_bitField0_ |= 0x00000002;
                 }
                 while (input.getBytesUntilLimit() > 0) {
@@ -25793,7 +25765,7 @@ public final class DescriptorProtos {
         private java.util.List<java.lang.Integer> path_ = java.util.Collections.emptyList();
         private void ensurePathIsMutable() {
           if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-            path_ = new java.util.ArrayList<java.lang.Integer>(path_);
+            path_ = new java.util.ArrayList<>(path_);
             bitField0_ |= 0x00000001;
            }
         }
@@ -26041,7 +26013,7 @@ public final class DescriptorProtos {
         private java.util.List<java.lang.Integer> span_ = java.util.Collections.emptyList();
         private void ensureSpanIsMutable() {
           if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-            span_ = new java.util.ArrayList<java.lang.Integer>(span_);
+            span_ = new java.util.ArrayList<>(span_);
             bitField0_ |= 0x00000002;
            }
         }
@@ -27074,7 +27046,7 @@ public final class DescriptorProtos {
         java.util.Collections.emptyList();
       private void ensureLocationIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          location_ = new java.util.ArrayList<com.google.protobuf.DescriptorProtos.SourceCodeInfo.Location>(location_);
+          location_ = new java.util.ArrayList<>(location_);
           bitField0_ |= 0x00000001;
          }
       }
@@ -28126,8 +28098,7 @@ public final class DescriptorProtos {
           com.google.protobuf.DescriptorProtos.SourceCodeInfo.Location, com.google.protobuf.DescriptorProtos.SourceCodeInfo.Location.Builder, com.google.protobuf.DescriptorProtos.SourceCodeInfo.LocationOrBuilder> 
           getLocationFieldBuilder() {
         if (locationBuilder_ == null) {
-          locationBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.google.protobuf.DescriptorProtos.SourceCodeInfo.Location, com.google.protobuf.DescriptorProtos.SourceCodeInfo.Location.Builder, com.google.protobuf.DescriptorProtos.SourceCodeInfo.LocationOrBuilder>(
+          locationBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   location_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),

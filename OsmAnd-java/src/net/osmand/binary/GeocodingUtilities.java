@@ -137,12 +137,12 @@ public class GeocodingUtilities {
 
 	public List<GeocodingResult> reverseGeocodingSearch(RoutingContext ctx, double lat, double lon, boolean allowEmptyNames) throws IOException {
 		RoutePlannerFrontEnd rp = new RoutePlannerFrontEnd();
-		List<GeocodingResult> lst = new ArrayList<GeocodingUtilities.GeocodingResult>();
-		List<RouteSegmentPoint> listR = new ArrayList<BinaryRoutePlanner.RouteSegmentPoint>();
+		List<GeocodingResult> lst = new ArrayList<>();
+		List<RouteSegmentPoint> listR = new ArrayList<>();
 		rp.findRouteSegment(lat, lon, ctx, listR);
 		double distSquare = 0;
 		TLongHashSet set = new TLongHashSet();
-		Set<String> streetNames = new HashSet<String>();
+		Set<String> streetNames = new HashSet<>();
 		for (RouteSegmentPoint p : listR) {
 			RouteDataObject road = p.getRoad();
 			if (!set.add(road.getId())) {
@@ -177,7 +177,7 @@ public class GeocodingUtilities {
 	}
 
 	private List<String> prepareStreetName(String s, boolean addCommonWords) {
-		List<String> ls = new ArrayList<String>();
+		List<String> ls = new ArrayList<>();
 		int beginning = 0;
 		for (int i = 1; i < s.length(); i++) {
 			if (s.charAt(i) == ' ') {
@@ -216,7 +216,7 @@ public class GeocodingUtilities {
 	public List<GeocodingResult> justifyReverseGeocodingSearch(final GeocodingResult road, BinaryMapIndexReader reader,
 			double knownMinBuildingDistance, final ResultMatcher<GeocodingResult> result) throws IOException {
 		// test address index search
-		final List<GeocodingResult> streetsList = new ArrayList<GeocodingResult>();
+		final List<GeocodingResult> streetsList = new ArrayList<>();
 		final List<String> streetNamesUsed = prepareStreetName(road.streetName, true);
 		final List<String> streetNamesPacked = streetNamesUsed.size() == 0 ? 
 				prepareStreetName(road.streetName, false) : streetNamesUsed;
@@ -261,7 +261,7 @@ public class GeocodingUtilities {
 			reader.searchAddressDataByName(req);
 		}
 
-		final List<GeocodingResult> res = new ArrayList<GeocodingResult>();
+		final List<GeocodingResult> res = new ArrayList<>();
 		if (streetsList.size() == 0) {
 			res.add(road);
 		} else {
@@ -301,7 +301,7 @@ public class GeocodingUtilities {
 
 	private List<GeocodingResult> loadStreetBuildings(final GeocodingResult road, BinaryMapIndexReader reader,
 			GeocodingResult street) throws IOException {
-		final List<GeocodingResult> streetBuildings = new ArrayList<GeocodingResult>();
+		final List<GeocodingResult> streetBuildings = new ArrayList<>();
 		reader.preloadBuildings(street.street, null);
 		log.info("Preload buildings " + street.street.getName() + " " + street.city.getName() + " " + street.street.getId());
 		for (Building b : street.street.getBuildings()) {

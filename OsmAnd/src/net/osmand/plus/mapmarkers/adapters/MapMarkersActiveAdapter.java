@@ -1,5 +1,6 @@
 package net.osmand.plus.mapmarkers.adapters;
 
+import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MotionEventCompat;
@@ -72,8 +73,9 @@ public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemV
 		this.screenOrientation = screenOrientation;
 	}
 
-	@Override
-	public MapMarkerItemViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+	@NonNull
+    @Override
+	public MapMarkerItemViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
 		View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.map_marker_item_new, viewGroup, false);
 		view.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -85,7 +87,7 @@ public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemV
 	}
 
 	@Override
-	public void onBindViewHolder(final MapMarkerItemViewHolder holder, final int pos) {
+	public void onBindViewHolder(@NonNull final MapMarkerItemViewHolder holder, final int pos) {
 		IconsCache iconsCache = mapActivity.getMyApplication().getIconsCache();
 		MapMarker marker = markers.get(pos);
 

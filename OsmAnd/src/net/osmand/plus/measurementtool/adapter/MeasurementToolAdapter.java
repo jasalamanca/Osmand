@@ -1,5 +1,6 @@
 package net.osmand.plus.measurementtool.adapter;
 
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v7.widget.RecyclerView;
@@ -42,8 +43,9 @@ public class MeasurementToolAdapter extends RecyclerView.Adapter<MeasurementTool
 		this.listener = listener;
 	}
 
-	@Override
-	public MeasureToolItemVH onCreateViewHolder(ViewGroup viewGroup, int i) {
+	@NonNull
+    @Override
+	public MeasureToolItemVH onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 		View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.measure_points_list_item, viewGroup, false);
 		nightMode = mapActivity.getMyApplication().getDaynightHelper().isNightModeForMapControls();
 		if (!nightMode) {
@@ -56,7 +58,7 @@ public class MeasurementToolAdapter extends RecyclerView.Adapter<MeasurementTool
 	}
 
 	@Override
-	public void onBindViewHolder(final MeasureToolItemVH holder, int pos) {
+	public void onBindViewHolder(@NonNull final MeasureToolItemVH holder, int pos) {
 		IconsCache iconsCache = mapActivity.getMyApplication().getIconsCache();
 		holder.iconReorder.setImageDrawable(iconsCache.getThemedIcon(R.drawable.ic_action_reorder));
 		holder.iconReorder.setOnTouchListener(new View.OnTouchListener() {

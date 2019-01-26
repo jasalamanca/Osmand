@@ -189,7 +189,7 @@ public class SavingTrackHelper extends SQLiteOpenHelper {
 	 * @return warnings
 	 */
 	public synchronized List<String> saveDataToGpx(File dir ) {
-		List<String> warnings = new ArrayList<String>();
+		List<String> warnings = new ArrayList<>();
 		dir.mkdirs();
 		if (dir.getParentFile().canWrite()) {
 			if (dir.exists()) {
@@ -258,7 +258,7 @@ public class SavingTrackHelper extends SQLiteOpenHelper {
 	}
 
 	private Map<String, GPXFile> collectRecordedData() {
-		Map<String, GPXFile> data = new LinkedHashMap<String, GPXFile>();
+		Map<String, GPXFile> data = new LinkedHashMap<>();
 		SQLiteDatabase db = getReadableDatabase();
 		if (db != null && db.isOpen()) {
 			try {

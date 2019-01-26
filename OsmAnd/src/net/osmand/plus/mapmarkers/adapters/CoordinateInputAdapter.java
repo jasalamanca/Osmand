@@ -1,5 +1,6 @@
 package net.osmand.plus.mapmarkers.adapters;
 
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -52,14 +53,15 @@ public class CoordinateInputAdapter extends RecyclerView.Adapter<MapMarkerItemVi
 		this.screenOrientation = screenOrientation;
 	}
 
-	@Override
-	public MapMarkerItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+	@NonNull
+    @Override
+	public MapMarkerItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.map_marker_item_new, parent, false);
 		return new MapMarkerItemViewHolder(view);
 	}
 
 	@Override
-	public void onBindViewHolder(final MapMarkerItemViewHolder holder, int position) {
+	public void onBindViewHolder(@NonNull final MapMarkerItemViewHolder holder, int position) {
 		final MapMarker mapMarker = getItem(position);
 		holder.iconDirection.setVisibility(View.VISIBLE);
 		holder.icon.setImageDrawable(iconsCache.getIcon(R.drawable.ic_action_flag_dark, MapMarker.getColorId(mapMarker.colorIndex)));

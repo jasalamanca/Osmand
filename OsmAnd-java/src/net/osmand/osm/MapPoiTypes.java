@@ -32,17 +32,17 @@ public class MapPoiTypes {
 	private static MapPoiTypes DEFAULT_INSTANCE = null;
 	private static final Log log = PlatformUtil.getLog(MapRenderingTypes.class);
 	private String resourceName;
-	private final List<PoiCategory> categories = new ArrayList<PoiCategory>();
+	private final List<PoiCategory> categories = new ArrayList<>();
 	private PoiCategory otherCategory;
 	private PoiCategory otherMapCategory;
 
 	static final String OSM_WIKI_CATEGORY = "osmwiki";
 	private PoiTranslator poiTranslator = null;
 	private boolean init;
-	private final Map<String, PoiType> poiTypesByTag = new LinkedHashMap<String, PoiType>();
-	private final Map<String, String> deprecatedTags = new LinkedHashMap<String, String>();
-	private final Map<String, String> poiAdditionalCategoryIconNames = new LinkedHashMap<String, String>();
-	private final List<PoiType> textPoiAdditionals = new ArrayList<PoiType>();
+	private final Map<String, PoiType> poiTypesByTag = new LinkedHashMap<>();
+	private final Map<String, String> deprecatedTags = new LinkedHashMap<>();
+	private final Map<String, String> poiAdditionalCategoryIconNames = new LinkedHashMap<>();
+	private final List<PoiType> textPoiAdditionals = new ArrayList<>();
 
 
 	public MapPoiTypes(String fileName) {
@@ -101,7 +101,7 @@ public class MapPoiTypes {
 	}
 
 	public List<PoiFilter> getTopVisibleFilters() {
-		List<PoiFilter> lf = new ArrayList<PoiFilter>();
+		List<PoiFilter> lf = new ArrayList<>();
 		for (PoiCategory pc : categories) {
 			if (pc.isTopVisible()) {
 				lf.add(pc);
@@ -167,7 +167,7 @@ public class MapPoiTypes {
 	}
 
 	public Map<String, PoiType> getAllTranslatedNames(boolean skipNonEditable) {
-		Map<String, PoiType> translation = new HashMap<String, PoiType>();
+		Map<String, PoiType> translation = new HashMap<>();
 		for (int i = 0; i < categories.size(); i++) {
 			PoiCategory pc = categories.get(i);
 			if (skipNonEditable && pc.isNotEditableOsm()) {
@@ -191,7 +191,7 @@ public class MapPoiTypes {
 	}
 
 	public List<AbstractPoiType> getAllTypesTranslatedNames(StringMatcher matcher) {
-		List<AbstractPoiType> tm = new ArrayList<AbstractPoiType>();
+		List<AbstractPoiType> tm = new ArrayList<>();
 		for (PoiCategory pc : categories) {
 			if (pc == otherMapCategory) {
 				continue;
@@ -225,7 +225,7 @@ public class MapPoiTypes {
 
 
 	public Map<String, PoiType> getAllTranslatedNames(PoiCategory pc, boolean onlyTranslation) {
-		Map<String, PoiType> translation = new TreeMap<String, PoiType>();
+		Map<String, PoiType> translation = new TreeMap<>();
 		for (PoiType pt : pc.getPoiTypes()) {
 			translation.put(pt.getTranslation(), pt);
 
@@ -301,21 +301,21 @@ public class MapPoiTypes {
 
 	private void initFromInputStream(InputStream is) {
 		long time = System.currentTimeMillis();
-		List<PoiType> referenceTypes = new ArrayList<PoiType>();
-		final Map<String, PoiType> allTypes = new LinkedHashMap<String, PoiType>();
-		final Map<String, List<PoiType>> categoryPoiAdditionalMap = new LinkedHashMap<String, List<PoiType>>();
-		final Map<AbstractPoiType, Set<String>> abstractTypeAdditionalCategories = new LinkedHashMap<AbstractPoiType, Set<String>>();
+		List<PoiType> referenceTypes = new ArrayList<>();
+		final Map<String, PoiType> allTypes = new LinkedHashMap<>();
+		final Map<String, List<PoiType>> categoryPoiAdditionalMap = new LinkedHashMap<>();
+		final Map<AbstractPoiType, Set<String>> abstractTypeAdditionalCategories = new LinkedHashMap<>();
 		this.categories.clear();
 		try {
 			XmlPullParser parser = PlatformUtil.newXMLPullParser();
 			int tok;
 			parser.setInput(is, "UTF-8");
 			PoiCategory lastCategory = null;
-			Set<String> lastCategoryPoiAdditionalsCategories = new TreeSet<String>();
+			Set<String> lastCategoryPoiAdditionalsCategories = new TreeSet<>();
 			PoiFilter lastFilter = null;
-			Set<String> lastFilterPoiAdditionalsCategories = new TreeSet<String>();
+			Set<String> lastFilterPoiAdditionalsCategories = new TreeSet<>();
 			PoiType lastType = null;
-			Set<String> lastTypePoiAdditionalsCategories = new TreeSet<String>();
+			Set<String> lastTypePoiAdditionalsCategories = new TreeSet<>();
 			String lastPoiAdditionalCategory = null;
 			while ((tok = parser.next()) != XmlPullParser.END_DOCUMENT) {
 				if (tok == XmlPullParser.START_TAG) {
@@ -414,19 +414,19 @@ public class MapPoiTypes {
 					if (name.equals("poi_filter")) {
 						if (lastFilterPoiAdditionalsCategories.size() > 0) {
 							abstractTypeAdditionalCategories.put(lastFilter, lastFilterPoiAdditionalsCategories);
-							lastFilterPoiAdditionalsCategories = new TreeSet<String>();
+							lastFilterPoiAdditionalsCategories = new TreeSet<>();
 						}
 						lastFilter = null;
 					} else if (name.equals("poi_type")) {
 						if (lastTypePoiAdditionalsCategories.size() > 0) {
 							abstractTypeAdditionalCategories.put(lastType, lastTypePoiAdditionalsCategories);
-							lastTypePoiAdditionalsCategories = new TreeSet<String>();
+							lastTypePoiAdditionalsCategories = new TreeSet<>();
 						}
 						lastType = null;
 					} else if (name.equals("poi_category")) {
 						if (lastCategoryPoiAdditionalsCategories.size() > 0) {
 							abstractTypeAdditionalCategories.put(lastCategory, lastCategoryPoiAdditionalsCategories);
-							lastCategoryPoiAdditionalsCategories = new TreeSet<String>();
+							lastCategoryPoiAdditionalsCategories = new TreeSet<>();
 						}
 						lastCategory = null;
 					} else if (name.equals("poi_additional_category")) {
@@ -609,7 +609,7 @@ public class MapPoiTypes {
 	}
 
 	public List<PoiCategory> getCategories(boolean includeMapCategory) {
-		ArrayList<PoiCategory> lst = new ArrayList<PoiCategory>(categories);
+		ArrayList<PoiCategory> lst = new ArrayList<>(categories);
 		if (!includeMapCategory) {
 			lst.remove(getOtherMapCategory());
 		}

@@ -71,12 +71,12 @@ public class BinaryRoutePlanner {
 
 		// Initializing priority queue to visit way segments 
 		Comparator<RouteSegment> nonHeuristicSegmentsComparator = new NonHeuristicSegmentsComparator();
-		PriorityQueue<RouteSegment> graphDirectSegments = new PriorityQueue<RouteSegment>(50, new SegmentsComparator(ctx));
-		PriorityQueue<RouteSegment> graphReverseSegments = new PriorityQueue<RouteSegment>(50, new SegmentsComparator(ctx));
+		PriorityQueue<RouteSegment> graphDirectSegments = new PriorityQueue<>(50, new SegmentsComparator(ctx));
+		PriorityQueue<RouteSegment> graphReverseSegments = new PriorityQueue<>(50, new SegmentsComparator(ctx));
 
 		// Set to not visit one segment twice (stores road.id << X + segmentStart)
-		TLongObjectHashMap<RouteSegment> visitedDirectSegments = new TLongObjectHashMap<RouteSegment>();
-		TLongObjectHashMap<RouteSegment> visitedOppositeSegments = new TLongObjectHashMap<RouteSegment>();
+		TLongObjectHashMap<RouteSegment> visitedDirectSegments = new TLongObjectHashMap<>();
+		TLongObjectHashMap<RouteSegment> visitedOppositeSegments = new TLongObjectHashMap<>();
 
 		initQueuesWithStartEnd(ctx, start, end, recalculationEnd, graphDirectSegments, graphReverseSegments, 
 				visitedDirectSegments, visitedOppositeSegments);

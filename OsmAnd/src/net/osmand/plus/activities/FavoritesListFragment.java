@@ -2,6 +2,7 @@ package net.osmand.plus.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -196,8 +197,9 @@ public class FavoritesListFragment extends OsmAndListFragment implements SearchA
 			return model.getName();
 		}
 
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
+		@NonNull
+        @Override
+		public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 			View row = convertView;
 			if (row == null) {
 				LayoutInflater inflater = activity.getLayoutInflater(); // favourite dank

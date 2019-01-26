@@ -73,7 +73,7 @@ public class RouteSegmentResult {
 	public void attachRoute(int roadIndex, RouteSegmentResult r){
 		int st = Math.abs(roadIndex - startPointIndex);
 		if(attachedRoutes[st] == null) {
-			attachedRoutes[st] = new ArrayList<RouteSegmentResult>();
+			attachedRoutes[st] = new ArrayList<>();
 		}
 		attachedRoutes[st].add(r);
 	}

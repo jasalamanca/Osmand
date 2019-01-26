@@ -252,7 +252,7 @@ public class RouteResultPreparation {
 	}
 
 	private List<RouteSegmentResult> convertFinalSegmentToResults(RoutingContext ctx, FinalRouteSegment finalSegment) {
-		List<RouteSegmentResult> result = new ArrayList<RouteSegmentResult>();
+		List<RouteSegmentResult> result = new ArrayList<>();
 		if (finalSegment != null) {
 			ctx.routingTime = finalSegment.distanceFromStart;
 			println("Routing calculated time distance " + finalSegment.distanceFromStart);
@@ -1025,9 +1025,9 @@ public class RouteResultPreparation {
 		boolean keepLeft = false;
 		boolean keepRight = false;
 		boolean speak = false;
-		final List<int[]> leftLanesInfo = new ArrayList<int[]>();
+		final List<int[]> leftLanesInfo = new ArrayList<>();
 		int leftLanes = 0;
-		final List<int[]> rightLanesInfo = new ArrayList<int[]>();
+		final List<int[]> rightLanesInfo = new ArrayList<>();
 		int rightLanes = 0;
 		int roadsOnLeft = 0;
 		int addRoadsOnLeft = 0;

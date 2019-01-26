@@ -162,7 +162,7 @@ public class DatabaseHelper {
     }
 
     public List<HistoryDownloadEntry> getEntries(int type){
-        List<HistoryDownloadEntry> entries = new ArrayList<HistoryDownloadEntry>();
+        List<HistoryDownloadEntry> entries = new ArrayList<>();
         SQLiteAPI.SQLiteConnection db = openConnection(true);
         if(db != null){
             try {

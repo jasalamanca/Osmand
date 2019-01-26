@@ -87,11 +87,11 @@ public class DownloadResourceGroup {
 	DownloadResourceGroup(DownloadResourceGroup parentGroup, DownloadResourceGroupType type, String id) {
 		boolean flat = type.containsIndexItem();
 		if (flat) {
-			this.individualResources = new ArrayList<IndexItem>();
+			this.individualResources = new ArrayList<>();
 			this.groups = null;
 		} else {
 			this.individualResources = null;
-			this.groups = new ArrayList<DownloadResourceGroup>();
+			this.groups = new ArrayList<>();
 		}
 		this.id = id;
 		this.type = type;

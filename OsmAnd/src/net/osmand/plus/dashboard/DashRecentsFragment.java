@@ -29,8 +29,8 @@ public class DashRecentsFragment extends DashLocationFragment {
 	private static final String TAG = "DASH_RECENTS_FRAGMENT";
 	private static final int TITLE_ID = R.string.shared_string_history;
 
-	private final List<ImageView> arrows = new ArrayList<ImageView>();
-	private List<HistoryEntry> points = new ArrayList<HistoryEntry>();
+	private final List<ImageView> arrows = new ArrayList<>();
+	private List<HistoryEntry> points = new ArrayList<>();
 	private static final String ROW_NUMBER_TAG = TAG + "_row_number";
 	private static final DashFragmentData.ShouldShowFunction SHOULD_SHOW_FUNCTION =
 			new DashboardOnMap.DefaultShouldShow() {
@@ -79,7 +79,7 @@ public class DashRecentsFragment extends DashLocationFragment {
 		recents.removeAllViews();
 		DashboardOnMap.handleNumberOfRows(points, getMyApplication().getSettings(), ROW_NUMBER_TAG);
 		LatLon loc = getDefaultLocation();
-		List<DashLocationView> distances = new ArrayList<DashLocationFragment.DashLocationView>();
+		List<DashLocationView> distances = new ArrayList<>();
 		for (final HistoryEntry historyEntry : points) {
 			LayoutInflater inflater = getActivity().getLayoutInflater();
 			View view = inflater.inflate(R.layout.search_history_list_item, null, false);

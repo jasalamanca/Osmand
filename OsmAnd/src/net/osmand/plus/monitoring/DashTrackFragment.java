@@ -102,7 +102,7 @@ public class DashTrackFragment extends DashBaseFragment {
 			return;
 		}
 		
-		final List<String> list  = new ArrayList<String>();
+		final List<String> list  = new ArrayList<>();
 		for(SelectedGpxFile sg :  app.getSelectedGpxHelper().getSelectedGPXFiles() ) {
 			if(!sg.isShowCurrentTrack()) {
 				GPXFile gpxFile = sg.getGpxFile();

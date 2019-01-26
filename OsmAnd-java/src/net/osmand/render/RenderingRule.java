@@ -31,7 +31,7 @@ public class RenderingRule {
 	}
 	
 	public void storeAttributes(Map<String, String> attributes){
-		this.attributes = new HashMap<String, String>(attributes);
+		this.attributes = new HashMap<>(attributes);
 	}
 	
 	public Map<String, String> getAttributes() {
@@ -39,7 +39,7 @@ public class RenderingRule {
 	}
 
 	public void init(Map<String, String> attributes) {
-		ArrayList<RenderingRuleProperty> props = new ArrayList<RenderingRuleProperty>(attributes.size());
+		ArrayList<RenderingRuleProperty> props = new ArrayList<>(attributes.size());
 		intProperties = new int[attributes.size()];
 		floatProperties = null;
 		attributesRef = null;
@@ -148,21 +148,21 @@ public class RenderingRule {
 	
 	public void addIfChildren(RenderingRule rr){
 		if(ifChildren == null){
-			ifChildren = new ArrayList<RenderingRule>();
+			ifChildren = new ArrayList<>();
 		}
 		ifChildren.add(rr);
 	}
 	
 	public void addIfElseChildren(RenderingRule rr){
 		if(ifElseChildren == null){
-			ifElseChildren = new ArrayList<RenderingRule>();
+			ifElseChildren = new ArrayList<>();
 		}
 		ifElseChildren.add(rr);
 	}
 	
 	public void addToBeginIfElseChildren(RenderingRule rr){
 		if(ifElseChildren == null){
-			ifElseChildren = new ArrayList<RenderingRule>();
+			ifElseChildren = new ArrayList<>();
 		}
 		ifElseChildren.add(0, rr);
 	}

@@ -101,7 +101,7 @@ public abstract class GeneratedMessage extends AbstractMessage
   /** Internal helper which returns a mutable map. */
   private Map<FieldDescriptor, Object> getAllFieldsMutable() {
     final TreeMap<FieldDescriptor, Object> result =
-      new TreeMap<FieldDescriptor, Object>();
+            new TreeMap<>();
     final Descriptor descriptor = internalGetFieldAccessorTable().descriptor;
     for (final FieldDescriptor field : descriptor.getFields()) {
       if (field.isRepeated()) {
@@ -317,7 +317,7 @@ public abstract class GeneratedMessage extends AbstractMessage
     /** Internal helper which returns a mutable map. */
     private Map<FieldDescriptor, Object> getAllFieldsMutable() {
       final TreeMap<FieldDescriptor, Object> result =
-        new TreeMap<FieldDescriptor, Object>();
+              new TreeMap<>();
       final Descriptor descriptor = internalGetFieldAccessorTable().descriptor;
       for (final FieldDescriptor field : descriptor.getFields()) {
         if (field.isRepeated()) {
@@ -1186,16 +1186,16 @@ public abstract class GeneratedMessage extends AbstractMessage
     // For extensions scoped within a Message, we use the Message to resolve
     // the outer class's descriptor, from which the extension descriptor is
     // obtained.
-    return new GeneratedExtension<ContainingType, Type>(
-        new ExtensionDescriptorRetriever() {
-          //@Override (Java 1.6 override semantics, but we must support 1.5)
-          public FieldDescriptor getDescriptor() {
-            return scope.getDescriptorForType().getExtensions()
-                .get(descriptorIndex);
-          }
-        },
-        singularType,
-        defaultInstance);
+    return new GeneratedExtension<>(
+            new ExtensionDescriptorRetriever() {
+                //@Override (Java 1.6 override semantics, but we must support 1.5)
+                public FieldDescriptor getDescriptor() {
+                    return scope.getDescriptorForType().getExtensions()
+                            .get(descriptorIndex);
+                }
+            },
+            singularType,
+            defaultInstance);
   }
 
   /** For use by generated code only. */
@@ -1206,10 +1206,10 @@ public abstract class GeneratedMessage extends AbstractMessage
     // For extensions scoped within a file, we rely on the outer class's
     // static initializer to call internalInit() on the extension when the
     // descriptor is available.
-    return new GeneratedExtension<ContainingType, Type>(
-        null,  // ExtensionDescriptorRetriever is initialized in internalInit();
-        singularType,
-        defaultInstance);
+    return new GeneratedExtension<>(
+            null,  // ExtensionDescriptorRetriever is initialized in internalInit();
+            singularType,
+            defaultInstance);
   }
 
   /**

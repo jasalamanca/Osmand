@@ -24,7 +24,7 @@ public class AppModeDialog {
 	public static View prepareAppModeView(Activity a, final Set<ApplicationMode> selected, boolean showDefault,
 			ViewGroup parent, final boolean singleSelection, boolean useListBg, boolean useMapTheme, final View.OnClickListener onClickListener) {
 		OsmandSettings settings = ((OsmandApplication) a.getApplication()).getSettings();
-		final List<ApplicationMode> values = new ArrayList<ApplicationMode>(ApplicationMode.values(settings));
+		final List<ApplicationMode> values = new ArrayList<>(ApplicationMode.values(settings));
 		if(!showDefault) {
 			values.remove(ApplicationMode.DEFAULT);
 		}
@@ -39,7 +39,7 @@ public class AppModeDialog {
 	public static View prepareAppModeDrawerView(Activity a, final Set<ApplicationMode> selected,
 												boolean useMapTheme, final View.OnClickListener onClickListener) {
 		OsmandSettings settings = ((OsmandApplication) a.getApplication()).getSettings();
-		final List<ApplicationMode> values = new ArrayList<ApplicationMode>(ApplicationMode.values(settings));
+		final List<ApplicationMode> values = new ArrayList<>(ApplicationMode.values(settings));
 		selected.add(settings.getApplicationMode());
 		return prepareAppModeView(a, values, selected, null, true, true, useMapTheme, onClickListener);
 	}

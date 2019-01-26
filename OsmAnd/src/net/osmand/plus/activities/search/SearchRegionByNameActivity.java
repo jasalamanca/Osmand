@@ -48,8 +48,8 @@ public class SearchRegionByNameActivity extends SearchByNameAbstractActivity<Reg
 		if(((OsmandApplication)getApplication()).getResourceManager().getAddressRepositories().isEmpty()){
 			Toast.makeText(this, R.string.none_region_found, Toast.LENGTH_LONG).show();
 		}
-		initialListToFilter = new ArrayList<RegionAddressRepository>(((OsmandApplication)getApplication()).getResourceManager().getAddressRepositories());
-		NamesAdapter namesAdapter = new NamesAdapter(new ArrayList<RegionAddressRepository>(initialListToFilter),createComparator()); //$NON-NLS-1$
+		initialListToFilter = new ArrayList<>(((OsmandApplication) getApplication()).getResourceManager().getAddressRepositories());
+		NamesAdapter namesAdapter = new NamesAdapter(new ArrayList<>(initialListToFilter),createComparator()); //$NON-NLS-1$
 		setListAdapter(namesAdapter);
 	}
 	

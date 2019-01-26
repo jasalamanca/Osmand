@@ -41,7 +41,7 @@ public class DownloadOsmandIndexesHelper {
 
 		private boolean downloadedFromInternet = false;
 		IndexItem basemap;
-		final ArrayList<IndexItem> indexFiles = new ArrayList<IndexItem>();
+		final ArrayList<IndexItem> indexFiles = new ArrayList<>();
 		private String mapversion;
 		
 		private final Comparator<IndexItem> comparator = new Comparator<IndexItem>(){
@@ -128,7 +128,7 @@ public class DownloadOsmandIndexesHelper {
 		XmlPullParser xmlParser = XmlPullParserFactory.newInstance().newPullParser(); 
 		InputStream isBundledAssetsXml = assetManager.open("bundled_assets.xml");
 		xmlParser.setInput(isBundledAssetsXml, "UTF-8");
-		Map<String, String> assets = new HashMap<String, String>();
+		Map<String, String> assets = new HashMap<>();
 		int next = 0;
 		while ((next = xmlParser.next()) != XmlPullParser.END_DOCUMENT) {
 			if (next == XmlPullParser.START_TAG && xmlParser.getName().equals("asset")) {

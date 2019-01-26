@@ -136,8 +136,7 @@ public class ExtensionRegistryLite {
 
   ExtensionRegistryLite() {
     this.extensionsByNumber =
-        new HashMap<ObjectIntPair,
-                    GeneratedMessageLite.GeneratedExtension<?, ?>>();
+            new HashMap<>();
   }
 
   ExtensionRegistryLite(ExtensionRegistryLite other) {

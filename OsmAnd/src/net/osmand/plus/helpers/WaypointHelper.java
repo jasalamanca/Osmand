@@ -70,8 +70,8 @@ public class WaypointHelper {
 	public static final int[] SEARCH_RADIUS_VALUES = {50, 100, 200, 500, 1000, 2000, 5000};
 	private static final double DISTANCE_IGNORE_DOUBLE_SPEEDCAMS = 150;
 
-	private List<List<LocationPointWrapper>> locationPoints = new ArrayList<List<LocationPointWrapper>>();
-	private final ConcurrentHashMap<LocationPoint, Integer> locationPointsStates = new ConcurrentHashMap<LocationPoint, Integer>();
+	private List<List<LocationPointWrapper>> locationPoints = new ArrayList<>();
+	private final ConcurrentHashMap<LocationPoint, Integer> locationPointsStates = new ConcurrentHashMap<>();
 	private TIntArrayList pointsProgress = new TIntArrayList();
 	private RouteCalculationResult route;
 
@@ -319,8 +319,8 @@ public class WaypointHelper {
 		if (lastKnownLocation != null && app.getRoutingHelper().isFollowingMode()) {
 			for (int type = 0; type < locationPoints.size(); type++) {
 				int currentRoute = route.getCurrentRoute();
-				List<LocationPointWrapper> approachPoints = new ArrayList<LocationPointWrapper>();
-				List<LocationPointWrapper> announcePoints = new ArrayList<LocationPointWrapper>();
+				List<LocationPointWrapper> approachPoints = new ArrayList<>();
+				List<LocationPointWrapper> announcePoints = new ArrayList<>();
 				List<LocationPointWrapper> lp = locationPoints.get(type);
 				if (lp != null) {
 					int kIterator = pointsProgress.get(type);
@@ -403,7 +403,7 @@ public class WaypointHelper {
 	}
 
 	public List<LocationPointWrapper> getAllPoints() {
-		List<LocationPointWrapper> points = new ArrayList<WaypointHelper.LocationPointWrapper>();
+		List<LocationPointWrapper> points = new ArrayList<>();
 		List<List<LocationPointWrapper>> local = locationPoints;
 		TIntArrayList ps = pointsProgress;
 		for (int i = 0; i < local.size(); i++) {
@@ -437,12 +437,12 @@ public class WaypointHelper {
 
 	public void clearAllVisiblePoints() {
 		this.locationPointsStates.clear();
-		this.locationPoints = new ArrayList<List<LocationPointWrapper>>();
+		this.locationPoints = new ArrayList<>();
 	}
 
 
 	public void setNewRoute(RouteCalculationResult route) {
-		List<List<LocationPointWrapper>> locationPoints = new ArrayList<List<LocationPointWrapper>>();
+		List<List<LocationPointWrapper>> locationPoints = new ArrayList<>();
 		recalculatePoints(route, -1, locationPoints);
 		setLocationPoints(locationPoints, route);
 	}

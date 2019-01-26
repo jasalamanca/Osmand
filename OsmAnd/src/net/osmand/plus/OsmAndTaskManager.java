@@ -12,7 +12,7 @@ public class OsmAndTaskManager {
 	
 	public <Params, Progress, Result> OsmAndTask<Params, Progress, Result> runInBackground(
 			OsmAndTaskRunnable<Params, Progress, Result> r, Params... params) {
-		InternalTaskExecutor<Params, Progress, Result> exec = new InternalTaskExecutor<Params, Progress, Result>(r);
+		InternalTaskExecutor<Params, Progress, Result> exec = new InternalTaskExecutor<>(r);
 		r.exec = exec;
 		exec.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, params);
 		return exec;

@@ -34,7 +34,7 @@ public class RouteCalculationResult {
 	
 	private int cacheCurrentTextDirectionInfo = -1;
 	private List<RouteDirectionInfo> cacheAgreggatedDirections;
-	private final List<LocationPoint> locationPoints = new ArrayList<LocationPoint>();
+	private final List<LocationPoint> locationPoints = new ArrayList<>();
 
 	// Note always currentRoute > get(currentDirectionInfo).routeOffset, 
 	//         but currentRoute <= get(currentDirectionInfo+1).routeOffset 
@@ -49,19 +49,19 @@ public class RouteCalculationResult {
 		this.errorMessage = errorMessage;
 		this.routingTime = 0;
 		this.intermediatePoints = new int[0];
-		this.locations = new ArrayList<Location>();
-		this.segments = new ArrayList<RouteSegmentResult>();
+		this.locations = new ArrayList<>();
+		this.segments = new ArrayList<>();
 		this.listDistance = new int[0];
-		this.directions = new ArrayList<RouteDirectionInfo>();
-		this.alarmInfo = new ArrayList<AlarmInfo>();
+		this.directions = new ArrayList<>();
+		this.alarmInfo = new ArrayList<>();
 	}
 	
 	public RouteCalculationResult(List<Location> list, List<RouteDirectionInfo> directions, RouteCalculationParams params, List<LocationPoint> waypoints, boolean addMissingTurns) {
 		this.routingTime = 0;
 		this.errorMessage = null;
 		this.intermediatePoints = new int[params.intermediates == null ? 0 : params.intermediates.size()];
-		List<Location> locations = list == null ? new ArrayList<Location>() : new ArrayList<Location>(list);
-		List<RouteDirectionInfo> localDirections = directions == null? new ArrayList<RouteDirectionInfo>() : new ArrayList<RouteDirectionInfo>(directions);
+		List<Location> locations = list == null ? new ArrayList<Location>() : new ArrayList<>(list);
+		List<RouteDirectionInfo> localDirections = directions == null? new ArrayList<RouteDirectionInfo>() : new ArrayList<>(directions);
 		if (!locations.isEmpty()) {
 			checkForDuplicatePoints(locations, localDirections);
 		}
@@ -77,10 +77,10 @@ public class RouteCalculationResult {
 		}
 		this.appMode = params.mode;
 		this.locations = Collections.unmodifiableList(locations);
-		this.segments = new ArrayList<RouteSegmentResult>();
+		this.segments = new ArrayList<>();
 		this.listDistance = new int[locations.size()];
 		updateListDistanceTime(this.listDistance, this.locations);
-		this.alarmInfo = new ArrayList<AlarmInfo>();
+		this.alarmInfo = new ArrayList<>();
 		calculateIntermediateIndexes(params.ctx, this.locations, params.intermediates, localDirections, this.intermediatePoints);
 		this.directions = Collections.unmodifiableList(localDirections);
 		updateDirectionsTime(this.directions, this.listDistance);
@@ -92,11 +92,11 @@ public class RouteCalculationResult {
 		if(waypoints != null) {
 			this.locationPoints.addAll(waypoints);
 		}
-		List<RouteDirectionInfo> computeDirections = new ArrayList<RouteDirectionInfo>();
+		List<RouteDirectionInfo> computeDirections = new ArrayList<>();
 		this.errorMessage = null;
 		this.intermediatePoints = new int[intermediates == null ? 0 : intermediates.size()];
-		List<Location> locations = new ArrayList<Location>();
-		ArrayList<AlarmInfo> alarms = new ArrayList<AlarmInfo>();
+		List<Location> locations = new ArrayList<>();
+		ArrayList<AlarmInfo> alarms = new ArrayList<>();
 		List<RouteSegmentResult> segments = convertVectorResult(computeDirections, locations, list, alarms, ctx);
 		introduceFirstPointAndLastPoint(locations, computeDirections, segments, start, end);
 		
@@ -202,7 +202,7 @@ public class RouteCalculationResult {
 		if (segments.size() == 0) {
 			return null;
 		}
-		List<RouteSegmentResult> list = new ArrayList<RouteSegmentResult>();
+		List<RouteSegmentResult> list = new ArrayList<>();
 		list.add(segments.get(0));
 		for (int i = 1; i < segments.size(); i++) {
 			if (segments.get(i - 1) != segments.get(i)) {
@@ -220,7 +220,7 @@ public class RouteCalculationResult {
 		float prevDirectionTime = 0;
 		float prevDirectionDistance = 0;
 		double lastHeight = HEIGHT_UNDEFINED;
-		List<RouteSegmentResult> segmentsToPopulate = new ArrayList<RouteSegmentResult>();
+		List<RouteSegmentResult> segmentsToPopulate = new ArrayList<>();
 		AlarmInfo tunnelAlarm = null;
 		for (int routeInd = 0; routeInd < list.size(); routeInd++) {
 			RouteSegmentResult s = list.get(routeInd);
@@ -338,7 +338,7 @@ public class RouteCalculationResult {
 		// speed m/s
 		float speed = mode.getDefaultSpeed(); 
 		int minDistanceForTurn = mode.getMinDistanceForTurn();
-		List<RouteDirectionInfo> computeDirections = new ArrayList<RouteDirectionInfo>();
+		List<RouteDirectionInfo> computeDirections = new ArrayList<>();
 		
 		int[] listDistance = new int[locations.size()];
 		listDistance[locations.size() - 1] = 0;
@@ -705,7 +705,7 @@ public class RouteCalculationResult {
 				cs++;
 			}
 			if(tunnel) {
-				List<RouteSegmentResult> list = new ArrayList<RouteSegmentResult>();
+				List<RouteSegmentResult> list = new ArrayList<>();
 				while(cs < segments.size()) {
 					RouteSegmentResult segment = segments.get(cs);
 					if(segment != prev ) {
@@ -870,7 +870,7 @@ public class RouteCalculationResult {
 				cacheCurrentTextDirectionInfo = currentDirectionInfo;
 				List<RouteDirectionInfo> list = currentDirectionInfo == 0 ? directions : 
 					directions.subList(currentDirectionInfo + 1, directions.size());
-				cacheAgreggatedDirections = new ArrayList<RouteDirectionInfo>();
+				cacheAgreggatedDirections = new ArrayList<>();
 				RouteDirectionInfo p = null;
 				for(RouteDirectionInfo i : list) {
 //					if(p == null || !i.getTurnType().isSkipToSpeak() ||

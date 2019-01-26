@@ -1,32 +1,8 @@
 package net.osmand.binary;
 
 
-import gnu.trove.iterator.TIntObjectIterator;
-import gnu.trove.iterator.TLongIterator;
-import gnu.trove.list.array.TIntArrayList;
-import gnu.trove.list.array.TLongArrayList;
-import gnu.trove.map.hash.TIntObjectHashMap;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.text.DecimalFormat;
-import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
+import com.google.protobuf.CodedOutputStream;
+import com.google.protobuf.WireFormat;
 
 import net.osmand.ResultMatcher;
 import net.osmand.binary.BinaryMapAddressReaderAdapter.AddressRegion;
@@ -53,8 +29,32 @@ import net.osmand.data.TransportStop;
 import net.osmand.osm.MapRenderingTypes;
 import net.osmand.util.MapUtils;
 
-import com.google.protobuf.CodedOutputStream;
-import com.google.protobuf.WireFormat;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.text.DecimalFormat;
+import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import gnu.trove.iterator.TIntObjectIterator;
+import gnu.trove.iterator.TLongIterator;
+import gnu.trove.list.array.TIntArrayList;
+import gnu.trove.list.array.TLongArrayList;
+import gnu.trove.map.hash.TIntObjectHashMap;
 
 public class BinaryInspector {
 
@@ -239,7 +239,7 @@ public class BinaryInspector {
 				if (args.length < 4) {
 					printUsage("Too few parameters to extract (require minimum 4)");
 				} else {
-					Map<File, String> parts = new HashMap<File, String>();
+					Map<File, String> parts = new HashMap<>();
 					for (int i = 2; i < args.length; i++) {
 						File file = new File(args[i]);
 						if (!file.exists()) {
@@ -291,7 +291,7 @@ public class BinaryInspector {
 
 		LinkedHashSet<Float>[] partsSet = new LinkedHashSet[partsToExtractFrom.size()];
 		int c = 0;
-		Set<String> addressNames = new LinkedHashSet<String>();
+		Set<String> addressNames = new LinkedHashSet<>();
 
 
 		int version = -1;
@@ -303,7 +303,7 @@ public class BinaryInspector {
 			}
 			rafs[c] = new RandomAccessFile(f.getAbsolutePath(), "r");
 			indexes[c] = new BinaryMapIndexReader(rafs[c], f);
-			partsSet[c] = new LinkedHashSet<Float>();
+			partsSet[c] = new LinkedHashSet<>();
 			if(version == -1){
 				version = indexes[c].getVersion();
 			} else {
@@ -313,7 +313,7 @@ public class BinaryInspector {
 				}
 			}
 
-			LinkedHashSet<Float> temp = new LinkedHashSet<Float>();
+			LinkedHashSet<Float> temp = new LinkedHashSet<>();
 			String pattern = partsToExtractFrom.get(f);
 			boolean minus = true;
 			for (int i = 0; i < indexes[c].getIndexes().size(); i++) {
@@ -355,7 +355,7 @@ public class BinaryInspector {
 		// write files
 		FileOutputStream fout = new FileOutputStream(fileToExtract);
 		CodedOutputStream ous = CodedOutputStream.newInstance(fout, BUFFER_SIZE);
-		List<Float> list = new ArrayList<Float>();
+		List<Float> list = new ArrayList<>();
 		byte[] BUFFER_TO_READ = new byte[BUFFER_SIZE];
 
 		ous.writeInt32(OsmandOdb.OsmAndStructure.VERSION_FIELD_NUMBER, version);
@@ -666,7 +666,7 @@ public class BinaryInspector {
 
 			for (City c : cities) {
 				int size = index.preloadStreets(c, null);
-				List<Street> streets = new ArrayList<Street>(c.getStreets());
+				List<Street> streets = new ArrayList<>(c.getStreets());
 				String name = c.getName(verbose.lang);
 				if (verbose.vcitynames) {
 					boolean includeEnName = verbose.lang == null || !verbose.lang.equals("en");
@@ -736,7 +736,7 @@ public class BinaryInspector {
 
 		int lastObjectSize;
 
-		private final Map<String, MapStatKey> types = new LinkedHashMap<String, BinaryInspector.MapStatKey>();
+		private final Map<String, MapStatKey> types = new LinkedHashMap<>();
 		private SearchRequest<BinaryMapDataObject> req;
 
 		void processKey(String simpleString, MapObjectStat st, TIntObjectHashMap<String> objectNames,
@@ -818,7 +818,7 @@ public class BinaryInspector {
 			out("TOTAL", b);
 
 			println("\n\nOBJECT BY TYPE STATS: ");
-			ArrayList<MapStatKey> stats = new ArrayList<MapStatKey>(types.values());
+			ArrayList<MapStatKey> stats = new ArrayList<>(types.values());
 			Collections.sort(stats, new Comparator<MapStatKey>() {
 
 				@Override

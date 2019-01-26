@@ -24,7 +24,7 @@ class DownloadTracker {
 	private static final Log log = PlatformUtil.getLog(DownloadTracker.class);
 
 	private Map<String, String> getCustomVars(OsmandApplication ctx) {
-		Map<String, String> map = new LinkedHashMap<String, String>();
+		Map<String, String> map = new LinkedHashMap<>();
 		map.put("App", Version.getFullVersion(ctx));
 		map.put("Device", Build.DEVICE);
 		map.put("Brand", Build.BRAND);
@@ -44,7 +44,7 @@ class DownloadTracker {
 
 	public void trackEvent(OsmandApplication a,
 			String category, String action, String label, int value, String trackingAcount) {
-		Map<String, String> parameters = new LinkedHashMap<String, String>();
+		Map<String, String> parameters = new LinkedHashMap<>();
 		try {
 			Map<String, String> customVariables = getCustomVars(a);
 			parameters.put("AnalyticsVersion", analyticsVersion);

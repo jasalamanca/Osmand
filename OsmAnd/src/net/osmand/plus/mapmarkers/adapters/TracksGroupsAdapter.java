@@ -1,6 +1,7 @@
 package net.osmand.plus.mapmarkers.adapters;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 
 import net.osmand.plus.GPXDatabase.GpxDataItem;
@@ -18,7 +19,7 @@ public class TracksGroupsAdapter extends GroupsAdapter {
 	}
 
 	@Override
-	public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+	public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 		if (holder instanceof MapMarkersGroupHeaderViewHolder) {
 			MapMarkersGroupHeaderViewHolder markersGroupHeaderViewHolder = (MapMarkersGroupHeaderViewHolder) holder;
 			markersGroupHeaderViewHolder.title.setText(app.getText(R.string.shared_string_tracks));

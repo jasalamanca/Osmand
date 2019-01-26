@@ -866,7 +866,7 @@ public final class TextFormat {
      * {@link ParseException}.
      */
     ByteString consumeByteString() throws ParseException {
-      List<ByteString> list = new ArrayList<ByteString>();
+      List<ByteString> list = new ArrayList<>();
       consumeByteString(list);
       while (currentToken.startsWith("'") || currentToken.startsWith("\"")) {
         consumeByteString(list);

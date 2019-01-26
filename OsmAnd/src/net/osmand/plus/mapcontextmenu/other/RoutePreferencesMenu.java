@@ -364,7 +364,7 @@ public class RoutePreferencesMenu {
 							adapter.getItemNames()) {
 						@NonNull
 						@Override
-						public View getView(final int position, View convertView, ViewGroup parent) {
+						public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
 							// User super class to create the View
 							View v = convertView;
 							if (v == null) {
@@ -437,8 +437,9 @@ public class RoutePreferencesMenu {
 
 		listAdapter = new ArrayAdapter<LocalRoutingParameter>(mapActivity, R.layout.layers_list_activity_item, R.id.title,
 				getRoutingParameters(routingHelper.getAppMode())) {
-			@Override
-			public View getView(final int position, View convertView, ViewGroup parent) {
+			@NonNull
+            @Override
+			public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
 				LocalRoutingParameter parameter = getItem(position);
 				if (parameter instanceof MuteSoundRoutingParameter) {
 					View v = mapActivity.getLayoutInflater().inflate(R.layout.switch_select_list_item, null);
@@ -690,7 +691,7 @@ public class RoutePreferencesMenu {
 	}
 
 	private List<LocalRoutingParameter> getRoutingParametersInner(ApplicationMode am) {
-		List<LocalRoutingParameter> list = new ArrayList<LocalRoutingParameter>();
+		List<LocalRoutingParameter> list = new ArrayList<>();
 		RouteProvider.GPXRouteParamsBuilder rparams = mapActivity.getRoutingHelper().getCurrentGPXRoute();
 		if (rparams != null) {
 			GPXUtilities.GPXFile fl = rparams.getFile();

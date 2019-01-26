@@ -360,7 +360,7 @@ public final class OsmandOdb {
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                transportIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndTransportIndex>();
+                transportIndex_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000008;
               }
               transportIndex_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndTransportIndex.PARSER, extensionRegistry));
@@ -368,7 +368,7 @@ public final class OsmandOdb {
             }
             case 50: {
               if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                mapIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndMapIndex>();
+                mapIndex_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000020;
               }
               mapIndex_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndMapIndex.PARSER, extensionRegistry));
@@ -376,7 +376,7 @@ public final class OsmandOdb {
             }
             case 58: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                addressIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndAddressIndex>();
+                addressIndex_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000004;
               }
               addressIndex_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndAddressIndex.PARSER, extensionRegistry));
@@ -384,7 +384,7 @@ public final class OsmandOdb {
             }
             case 66: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                poiIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndPoiIndex>();
+                poiIndex_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000010;
               }
               poiIndex_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndPoiIndex.PARSER, extensionRegistry));
@@ -392,7 +392,7 @@ public final class OsmandOdb {
             }
             case 74: {
               if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                routingIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndRoutingIndex>();
+                routingIndex_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000040;
               }
               routingIndex_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.PARSER, extensionRegistry));
@@ -1509,7 +1509,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureAddressIndexIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          addressIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndAddressIndex>(addressIndex_);
+          addressIndex_ = new java.util.ArrayList<>(addressIndex_);
           bitField0_ |= 0x00000004;
          }
       }
@@ -1823,8 +1823,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndAddressIndex, net.osmand.binary.OsmandOdb.OsmAndAddressIndex.Builder, net.osmand.binary.OsmandOdb.OsmAndAddressIndexOrBuilder> 
           getAddressIndexFieldBuilder() {
         if (addressIndexBuilder_ == null) {
-          addressIndexBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndAddressIndex, net.osmand.binary.OsmandOdb.OsmAndAddressIndex.Builder, net.osmand.binary.OsmandOdb.OsmAndAddressIndexOrBuilder>(
+          addressIndexBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   addressIndex_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
@@ -1839,7 +1838,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureTransportIndexIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          transportIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndTransportIndex>(transportIndex_);
+          transportIndex_ = new java.util.ArrayList<>(transportIndex_);
           bitField0_ |= 0x00000008;
          }
       }
@@ -2135,8 +2134,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndTransportIndex, net.osmand.binary.OsmandOdb.OsmAndTransportIndex.Builder, net.osmand.binary.OsmandOdb.OsmAndTransportIndexOrBuilder> 
           getTransportIndexFieldBuilder() {
         if (transportIndexBuilder_ == null) {
-          transportIndexBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndTransportIndex, net.osmand.binary.OsmandOdb.OsmAndTransportIndex.Builder, net.osmand.binary.OsmandOdb.OsmAndTransportIndexOrBuilder>(
+          transportIndexBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   transportIndex_,
                   ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
@@ -2151,7 +2149,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensurePoiIndexIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          poiIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndPoiIndex>(poiIndex_);
+          poiIndex_ = new java.util.ArrayList<>(poiIndex_);
           bitField0_ |= 0x00000010;
          }
       }
@@ -2465,8 +2463,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndPoiIndex, net.osmand.binary.OsmandOdb.OsmAndPoiIndex.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiIndexOrBuilder> 
           getPoiIndexFieldBuilder() {
         if (poiIndexBuilder_ == null) {
-          poiIndexBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndPoiIndex, net.osmand.binary.OsmandOdb.OsmAndPoiIndex.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiIndexOrBuilder>(
+          poiIndexBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   poiIndex_,
                   ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
@@ -2481,7 +2478,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureMapIndexIsMutable() {
         if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-          mapIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndMapIndex>(mapIndex_);
+          mapIndex_ = new java.util.ArrayList<>(mapIndex_);
           bitField0_ |= 0x00000020;
          }
       }
@@ -2795,8 +2792,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndMapIndex, net.osmand.binary.OsmandOdb.OsmAndMapIndex.Builder, net.osmand.binary.OsmandOdb.OsmAndMapIndexOrBuilder> 
           getMapIndexFieldBuilder() {
         if (mapIndexBuilder_ == null) {
-          mapIndexBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndMapIndex, net.osmand.binary.OsmandOdb.OsmAndMapIndex.Builder, net.osmand.binary.OsmandOdb.OsmAndMapIndexOrBuilder>(
+          mapIndexBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   mapIndex_,
                   ((bitField0_ & 0x00000020) == 0x00000020),
                   getParentForChildren(),
@@ -2811,7 +2807,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureRoutingIndexIsMutable() {
         if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-          routingIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndRoutingIndex>(routingIndex_);
+          routingIndex_ = new java.util.ArrayList<>(routingIndex_);
           bitField0_ |= 0x00000040;
          }
       }
@@ -3107,8 +3103,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndRoutingIndex, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.Builder, net.osmand.binary.OsmandOdb.OsmAndRoutingIndexOrBuilder> 
           getRoutingIndexFieldBuilder() {
         if (routingIndexBuilder_ == null) {
-          routingIndexBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndRoutingIndex, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.Builder, net.osmand.binary.OsmandOdb.OsmAndRoutingIndexOrBuilder>(
+          routingIndexBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   routingIndex_,
                   ((bitField0_ & 0x00000040) == 0x00000040),
                   getParentForChildren(),
@@ -4598,7 +4593,7 @@ public final class OsmandOdb {
             }
             case 37: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                val_ = new java.util.ArrayList<java.lang.Integer>();
+                val_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000004;
               }
               val_.add(input.readFixed32());
@@ -4608,7 +4603,7 @@ public final class OsmandOdb {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004) && input.getBytesUntilLimit() > 0) {
-                val_ = new java.util.ArrayList<java.lang.Integer>();
+                val_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000004;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -4619,7 +4614,7 @@ public final class OsmandOdb {
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                subtables_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.IndexedStringTable>();
+                subtables_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000008;
               }
               subtables_.add(input.readMessage(net.osmand.binary.OsmandOdb.IndexedStringTable.PARSER, extensionRegistry));
@@ -5452,7 +5447,7 @@ public final class OsmandOdb {
       private java.util.List<java.lang.Integer> val_ = java.util.Collections.emptyList();
       private void ensureValIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          val_ = new java.util.ArrayList<java.lang.Integer>(val_);
+          val_ = new java.util.ArrayList<>(val_);
           bitField0_ |= 0x00000004;
          }
       }
@@ -5547,7 +5542,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureSubtablesIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          subtables_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.IndexedStringTable>(subtables_);
+          subtables_ = new java.util.ArrayList<>(subtables_);
           bitField0_ |= 0x00000008;
          }
       }
@@ -5861,8 +5856,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.IndexedStringTable, net.osmand.binary.OsmandOdb.IndexedStringTable.Builder, net.osmand.binary.OsmandOdb.IndexedStringTableOrBuilder> 
           getSubtablesFieldBuilder() {
         if (subtablesBuilder_ == null) {
-          subtablesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.IndexedStringTable, net.osmand.binary.OsmandOdb.IndexedStringTable.Builder, net.osmand.binary.OsmandOdb.IndexedStringTableOrBuilder>(
+          subtablesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   subtables_,
                   ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
@@ -6035,7 +6029,7 @@ public final class OsmandOdb {
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                rules_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRule>();
+                rules_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000002;
               }
               rules_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRule.PARSER, extensionRegistry));
@@ -6043,7 +6037,7 @@ public final class OsmandOdb {
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                levels_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevel>();
+                levels_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000004;
               }
               levels_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevel.PARSER, extensionRegistry));
@@ -7272,7 +7266,7 @@ public final class OsmandOdb {
               }
               case 58: {
                 if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                  boxes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox>();
+                  boxes_ = new java.util.ArrayList<>();
                   mutable_bitField0_ |= 0x00000040;
                 }
                 boxes_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox.PARSER, extensionRegistry));
@@ -7280,7 +7274,7 @@ public final class OsmandOdb {
               }
               case 122: {
                 if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-                  blocks_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.MapDataBlock>();
+                  blocks_ = new java.util.ArrayList<>();
                   mutable_bitField0_ |= 0x00000080;
                 }
                 blocks_.add(input.readMessage(net.osmand.binary.OsmandOdb.MapDataBlock.PARSER, extensionRegistry));
@@ -8187,7 +8181,7 @@ public final class OsmandOdb {
           java.util.Collections.emptyList();
         private void ensureBoxesIsMutable() {
           if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-            boxes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox>(boxes_);
+            boxes_ = new java.util.ArrayList<>(boxes_);
             bitField0_ |= 0x00000040;
            }
         }
@@ -8411,8 +8405,7 @@ public final class OsmandOdb {
             net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox.Builder, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBoxOrBuilder> 
             getBoxesFieldBuilder() {
           if (boxesBuilder_ == null) {
-            boxesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox.Builder, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBoxOrBuilder>(
+            boxesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                     boxes_,
                     ((bitField0_ & 0x00000040) == 0x00000040),
                     getParentForChildren(),
@@ -8427,7 +8420,7 @@ public final class OsmandOdb {
           java.util.Collections.emptyList();
         private void ensureBlocksIsMutable() {
           if (!((bitField0_ & 0x00000080) == 0x00000080)) {
-            blocks_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.MapDataBlock>(blocks_);
+            blocks_ = new java.util.ArrayList<>(blocks_);
             bitField0_ |= 0x00000080;
            }
         }
@@ -8651,8 +8644,7 @@ public final class OsmandOdb {
             net.osmand.binary.OsmandOdb.MapDataBlock, net.osmand.binary.OsmandOdb.MapDataBlock.Builder, net.osmand.binary.OsmandOdb.MapDataBlockOrBuilder> 
             getBlocksFieldBuilder() {
           if (blocksBuilder_ == null) {
-            blocksBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                net.osmand.binary.OsmandOdb.MapDataBlock, net.osmand.binary.OsmandOdb.MapDataBlock.Builder, net.osmand.binary.OsmandOdb.MapDataBlockOrBuilder>(
+            blocksBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                     blocks_,
                     ((bitField0_ & 0x00000080) == 0x00000080),
                     getParentForChildren(),
@@ -8892,7 +8884,7 @@ public final class OsmandOdb {
               }
               case 58: {
                 if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                  boxes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox>();
+                  boxes_ = new java.util.ArrayList<>();
                   mutable_bitField0_ |= 0x00000040;
                 }
                 boxes_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox.PARSER, extensionRegistry));
@@ -9826,7 +9818,7 @@ public final class OsmandOdb {
           java.util.Collections.emptyList();
         private void ensureBoxesIsMutable() {
           if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-            boxes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox>(boxes_);
+            boxes_ = new java.util.ArrayList<>(boxes_);
             bitField0_ |= 0x00000040;
            }
         }
@@ -10050,8 +10042,7 @@ public final class OsmandOdb {
             net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox.Builder, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBoxOrBuilder> 
             getBoxesFieldBuilder() {
           if (boxesBuilder_ == null) {
-            boxesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBox.Builder, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapDataBoxOrBuilder>(
+            boxesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                     boxes_,
                     ((bitField0_ & 0x00000040) == 0x00000040),
                     getParentForChildren(),
@@ -10654,7 +10645,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureRulesIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          rules_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRule>(rules_);
+          rules_ = new java.util.ArrayList<>(rules_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -10878,8 +10869,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRule, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRule.Builder, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRuleOrBuilder> 
           getRulesFieldBuilder() {
         if (rulesBuilder_ == null) {
-          rulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRule, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRule.Builder, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapEncodingRuleOrBuilder>(
+          rulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   rules_,
                   ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
@@ -10894,7 +10884,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureLevelsIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          levels_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevel>(levels_);
+          levels_ = new java.util.ArrayList<>(levels_);
           bitField0_ |= 0x00000004;
          }
       }
@@ -11190,8 +11180,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevel, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevel.Builder, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevelOrBuilder> 
           getLevelsFieldBuilder() {
         if (levelsBuilder_ == null) {
-          levelsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevel, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevel.Builder, net.osmand.binary.OsmandOdb.OsmAndMapIndex.MapRootLevelOrBuilder>(
+          levelsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   levels_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
@@ -11350,7 +11339,7 @@ public final class OsmandOdb {
             }
             case 98: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                dataObjects_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.MapData>();
+                dataObjects_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000002;
               }
               dataObjects_.add(input.readMessage(net.osmand.binary.OsmandOdb.MapData.PARSER, extensionRegistry));
@@ -11867,7 +11856,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureDataObjectsIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          dataObjects_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.MapData>(dataObjects_);
+          dataObjects_ = new java.util.ArrayList<>(dataObjects_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -12163,8 +12152,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.MapData, net.osmand.binary.OsmandOdb.MapData.Builder, net.osmand.binary.OsmandOdb.MapDataOrBuilder> 
           getDataObjectsFieldBuilder() {
         if (dataObjectsBuilder_ == null) {
-          dataObjectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.MapData, net.osmand.binary.OsmandOdb.MapData.Builder, net.osmand.binary.OsmandOdb.MapDataOrBuilder>(
+          dataObjectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   dataObjects_,
                   ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
@@ -12281,8 +12269,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.StringTable, net.osmand.binary.OsmandOdb.StringTable.Builder, net.osmand.binary.OsmandOdb.StringTableOrBuilder> 
           getStringTableFieldBuilder() {
         if (stringTableBuilder_ == null) {
-          stringTableBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              net.osmand.binary.OsmandOdb.StringTable, net.osmand.binary.OsmandOdb.StringTable.Builder, net.osmand.binary.OsmandOdb.StringTableOrBuilder>(
+          stringTableBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   stringTable_,
                   getParentForChildren(),
                   isClean());
@@ -12496,7 +12483,7 @@ public final class OsmandOdb {
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                polygonInnerCoordinates_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                polygonInnerCoordinates_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000004;
               }
               polygonInnerCoordinates_.add(input.readBytes());
@@ -13224,7 +13211,7 @@ public final class OsmandOdb {
       private java.util.List<com.google.protobuf.ByteString> polygonInnerCoordinates_ = java.util.Collections.emptyList();
       private void ensurePolygonInnerCoordinatesIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          polygonInnerCoordinates_ = new java.util.ArrayList<com.google.protobuf.ByteString>(polygonInnerCoordinates_);
+          polygonInnerCoordinates_ = new java.util.ArrayList<>(polygonInnerCoordinates_);
           bitField0_ |= 0x00000004;
          }
       }
@@ -13782,7 +13769,7 @@ public final class OsmandOdb {
             }
             case 50: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                cities_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex>();
+                cities_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000010;
               }
               cities_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex.PARSER, extensionRegistry));
@@ -13995,7 +13982,7 @@ public final class OsmandOdb {
               }
               case 42: {
                 if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                  cities_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.CityIndex>();
+                  cities_ = new java.util.ArrayList<>();
                   mutable_bitField0_ |= 0x00000002;
                 }
                 cities_.add(input.readMessage(net.osmand.binary.OsmandOdb.CityIndex.PARSER, extensionRegistry));
@@ -14003,7 +13990,7 @@ public final class OsmandOdb {
               }
               case 58: {
                 if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                  blocks_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.CityBlockIndex>();
+                  blocks_ = new java.util.ArrayList<>();
                   mutable_bitField0_ |= 0x00000004;
                 }
                 blocks_.add(input.readMessage(net.osmand.binary.OsmandOdb.CityBlockIndex.PARSER, extensionRegistry));
@@ -14659,7 +14646,7 @@ public final class OsmandOdb {
           java.util.Collections.emptyList();
         private void ensureCitiesIsMutable() {
           if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-            cities_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.CityIndex>(cities_);
+            cities_ = new java.util.ArrayList<>(cities_);
             bitField0_ |= 0x00000002;
            }
         }
@@ -14973,8 +14960,7 @@ public final class OsmandOdb {
             net.osmand.binary.OsmandOdb.CityIndex, net.osmand.binary.OsmandOdb.CityIndex.Builder, net.osmand.binary.OsmandOdb.CityIndexOrBuilder> 
             getCitiesFieldBuilder() {
           if (citiesBuilder_ == null) {
-            citiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                net.osmand.binary.OsmandOdb.CityIndex, net.osmand.binary.OsmandOdb.CityIndex.Builder, net.osmand.binary.OsmandOdb.CityIndexOrBuilder>(
+            citiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                     cities_,
                     ((bitField0_ & 0x00000002) == 0x00000002),
                     getParentForChildren(),
@@ -14989,7 +14975,7 @@ public final class OsmandOdb {
           java.util.Collections.emptyList();
         private void ensureBlocksIsMutable() {
           if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-            blocks_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.CityBlockIndex>(blocks_);
+            blocks_ = new java.util.ArrayList<>(blocks_);
             bitField0_ |= 0x00000004;
            }
         }
@@ -15213,8 +15199,7 @@ public final class OsmandOdb {
             net.osmand.binary.OsmandOdb.CityBlockIndex, net.osmand.binary.OsmandOdb.CityBlockIndex.Builder, net.osmand.binary.OsmandOdb.CityBlockIndexOrBuilder> 
             getBlocksFieldBuilder() {
           if (blocksBuilder_ == null) {
-            blocksBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                net.osmand.binary.OsmandOdb.CityBlockIndex, net.osmand.binary.OsmandOdb.CityBlockIndex.Builder, net.osmand.binary.OsmandOdb.CityBlockIndexOrBuilder>(
+            blocksBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                     blocks_,
                     ((bitField0_ & 0x00000004) == 0x00000004),
                     getParentForChildren(),
@@ -16148,8 +16133,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndTileBox, net.osmand.binary.OsmandOdb.OsmAndTileBox.Builder, net.osmand.binary.OsmandOdb.OsmAndTileBoxOrBuilder> 
           getBoundariesFieldBuilder() {
         if (boundariesBuilder_ == null) {
-          boundariesBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndTileBox, net.osmand.binary.OsmandOdb.OsmAndTileBox.Builder, net.osmand.binary.OsmandOdb.OsmAndTileBoxOrBuilder>(
+          boundariesBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   boundaries_,
                   getParentForChildren(),
                   isClean());
@@ -16301,8 +16285,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.StringTable, net.osmand.binary.OsmandOdb.StringTable.Builder, net.osmand.binary.OsmandOdb.StringTableOrBuilder> 
           getAttributeTagsTableFieldBuilder() {
         if (attributeTagsTableBuilder_ == null) {
-          attributeTagsTableBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              net.osmand.binary.OsmandOdb.StringTable, net.osmand.binary.OsmandOdb.StringTable.Builder, net.osmand.binary.OsmandOdb.StringTableOrBuilder>(
+          attributeTagsTableBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   attributeTagsTable_,
                   getParentForChildren(),
                   isClean());
@@ -16316,7 +16299,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureCitiesIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          cities_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex>(cities_);
+          cities_ = new java.util.ArrayList<>(cities_);
           bitField0_ |= 0x00000010;
          }
       }
@@ -16630,8 +16613,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex, net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex.Builder, net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndexOrBuilder> 
           getCitiesFieldBuilder() {
         if (citiesBuilder_ == null) {
-          citiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex, net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndex.Builder, net.osmand.binary.OsmandOdb.OsmAndAddressIndex.CitiesIndexOrBuilder>(
+          citiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   cities_,
                   ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
@@ -16784,8 +16766,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData, net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.Builder, net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexDataOrBuilder> 
           getNameIndexFieldBuilder() {
         if (nameIndexBuilder_ == null) {
-          nameIndexBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData, net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.Builder, net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexDataOrBuilder>(
+          nameIndexBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   nameIndex_,
                   getParentForChildren(),
                   isClean());
@@ -16928,7 +16909,7 @@ public final class OsmandOdb {
             }
             case 58: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                atom_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexData>();
+                atom_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000002;
               }
               atom_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexData.PARSER, extensionRegistry));
@@ -17077,7 +17058,7 @@ public final class OsmandOdb {
               }
               case 34: {
                 if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                  atom_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.AddressNameIndexDataAtom>();
+                  atom_ = new java.util.ArrayList<>();
                   mutable_bitField0_ |= 0x00000001;
                 }
                 atom_.add(input.readMessage(net.osmand.binary.OsmandOdb.AddressNameIndexDataAtom.PARSER, extensionRegistry));
@@ -17456,7 +17437,7 @@ public final class OsmandOdb {
           java.util.Collections.emptyList();
         private void ensureAtomIsMutable() {
           if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-            atom_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.AddressNameIndexDataAtom>(atom_);
+            atom_ = new java.util.ArrayList<>(atom_);
             bitField0_ |= 0x00000001;
            }
         }
@@ -17752,8 +17733,7 @@ public final class OsmandOdb {
             net.osmand.binary.OsmandOdb.AddressNameIndexDataAtom, net.osmand.binary.OsmandOdb.AddressNameIndexDataAtom.Builder, net.osmand.binary.OsmandOdb.AddressNameIndexDataAtomOrBuilder> 
             getAtomFieldBuilder() {
           if (atomBuilder_ == null) {
-            atomBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                net.osmand.binary.OsmandOdb.AddressNameIndexDataAtom, net.osmand.binary.OsmandOdb.AddressNameIndexDataAtom.Builder, net.osmand.binary.OsmandOdb.AddressNameIndexDataAtomOrBuilder>(
+            atomBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                     atom_,
                     ((bitField0_ & 0x00000001) == 0x00000001),
                     getParentForChildren(),
@@ -18306,8 +18286,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.IndexedStringTable, net.osmand.binary.OsmandOdb.IndexedStringTable.Builder, net.osmand.binary.OsmandOdb.IndexedStringTableOrBuilder> 
           getTableFieldBuilder() {
         if (tableBuilder_ == null) {
-          tableBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              net.osmand.binary.OsmandOdb.IndexedStringTable, net.osmand.binary.OsmandOdb.IndexedStringTable.Builder, net.osmand.binary.OsmandOdb.IndexedStringTableOrBuilder>(
+          tableBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   table_,
                   getParentForChildren(),
                   isClean());
@@ -18321,7 +18300,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureAtomIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          atom_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexData>(atom_);
+          atom_ = new java.util.ArrayList<>(atom_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -18545,8 +18524,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexData, net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexData.Builder, net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexDataOrBuilder> 
           getAtomFieldBuilder() {
         if (atomBuilder_ == null) {
-          atomBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexData, net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexData.Builder, net.osmand.binary.OsmandOdb.OsmAndAddressNameIndexData.AddressNameIndexDataOrBuilder>(
+          atomBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   atom_,
                   ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
@@ -18767,7 +18745,7 @@ public final class OsmandOdb {
             }
             case 40: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                shiftToIndex_ = new java.util.ArrayList<java.lang.Integer>();
+                shiftToIndex_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000008;
               }
               shiftToIndex_.add(input.readInt32());
@@ -18777,7 +18755,7 @@ public final class OsmandOdb {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
-                shiftToIndex_ = new java.util.ArrayList<java.lang.Integer>();
+                shiftToIndex_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000008;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -18788,7 +18766,7 @@ public final class OsmandOdb {
             }
             case 48: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                shiftToCityIndex_ = new java.util.ArrayList<java.lang.Integer>();
+                shiftToCityIndex_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000010;
               }
               shiftToCityIndex_.add(input.readInt32());
@@ -18798,7 +18776,7 @@ public final class OsmandOdb {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
-                shiftToCityIndex_ = new java.util.ArrayList<java.lang.Integer>();
+                shiftToCityIndex_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000010;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -18809,7 +18787,7 @@ public final class OsmandOdb {
             }
             case 56: {
               if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                xy16_ = new java.util.ArrayList<java.lang.Integer>();
+                xy16_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000020;
               }
               xy16_.add(input.readUInt32());
@@ -18819,7 +18797,7 @@ public final class OsmandOdb {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000020) == 0x00000020) && input.getBytesUntilLimit() > 0) {
-                xy16_ = new java.util.ArrayList<java.lang.Integer>();
+                xy16_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000020;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -19659,7 +19637,7 @@ public final class OsmandOdb {
       private java.util.List<java.lang.Integer> shiftToIndex_ = java.util.Collections.emptyList();
       private void ensureShiftToIndexIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          shiftToIndex_ = new java.util.ArrayList<java.lang.Integer>(shiftToIndex_);
+          shiftToIndex_ = new java.util.ArrayList<>(shiftToIndex_);
           bitField0_ |= 0x00000008;
          }
       }
@@ -19760,7 +19738,7 @@ public final class OsmandOdb {
       private java.util.List<java.lang.Integer> shiftToCityIndex_ = java.util.Collections.emptyList();
       private void ensureShiftToCityIndexIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          shiftToCityIndex_ = new java.util.ArrayList<java.lang.Integer>(shiftToCityIndex_);
+          shiftToCityIndex_ = new java.util.ArrayList<>(shiftToCityIndex_);
           bitField0_ |= 0x00000010;
          }
       }
@@ -19854,7 +19832,7 @@ public final class OsmandOdb {
       private java.util.List<java.lang.Integer> xy16_ = java.util.Collections.emptyList();
       private void ensureXy16IsMutable() {
         if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-          xy16_ = new java.util.ArrayList<java.lang.Integer>(xy16_);
+          xy16_ = new java.util.ArrayList<>(xy16_);
           bitField0_ |= 0x00000020;
          }
       }
@@ -20187,7 +20165,7 @@ public final class OsmandOdb {
             }
             case 56: {
               if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                attributeTagIds_ = new java.util.ArrayList<java.lang.Integer>();
+                attributeTagIds_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000040;
               }
               attributeTagIds_.add(input.readUInt32());
@@ -20197,7 +20175,7 @@ public final class OsmandOdb {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000040) == 0x00000040) && input.getBytesUntilLimit() > 0) {
-                attributeTagIds_ = new java.util.ArrayList<java.lang.Integer>();
+                attributeTagIds_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000040;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -21266,7 +21244,7 @@ public final class OsmandOdb {
       private java.util.List<java.lang.Integer> attributeTagIds_ = java.util.Collections.emptyList();
       private void ensureAttributeTagIdsIsMutable() {
         if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-          attributeTagIds_ = new java.util.ArrayList<java.lang.Integer>(attributeTagIds_);
+          attributeTagIds_ = new java.util.ArrayList<>(attributeTagIds_);
           bitField0_ |= 0x00000040;
          }
       }
@@ -21630,7 +21608,7 @@ public final class OsmandOdb {
             }
             case 82: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                buildings_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.BuildingIndex>();
+                buildings_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000002;
               }
               buildings_.add(input.readMessage(net.osmand.binary.OsmandOdb.BuildingIndex.PARSER, extensionRegistry));
@@ -21638,7 +21616,7 @@ public final class OsmandOdb {
             }
             case 98: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                streets_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.StreetIndex>();
+                streets_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000004;
               }
               streets_.add(input.readMessage(net.osmand.binary.OsmandOdb.StreetIndex.PARSER, extensionRegistry));
@@ -22211,7 +22189,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureBuildingsIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          buildings_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.BuildingIndex>(buildings_);
+          buildings_ = new java.util.ArrayList<>(buildings_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -22507,8 +22485,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.BuildingIndex, net.osmand.binary.OsmandOdb.BuildingIndex.Builder, net.osmand.binary.OsmandOdb.BuildingIndexOrBuilder> 
           getBuildingsFieldBuilder() {
         if (buildingsBuilder_ == null) {
-          buildingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.BuildingIndex, net.osmand.binary.OsmandOdb.BuildingIndex.Builder, net.osmand.binary.OsmandOdb.BuildingIndexOrBuilder>(
+          buildingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   buildings_,
                   ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
@@ -22523,7 +22500,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureStreetsIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          streets_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.StreetIndex>(streets_);
+          streets_ = new java.util.ArrayList<>(streets_);
           bitField0_ |= 0x00000004;
          }
       }
@@ -22747,8 +22724,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.StreetIndex, net.osmand.binary.OsmandOdb.StreetIndex.Builder, net.osmand.binary.OsmandOdb.StreetIndexOrBuilder> 
           getStreetsFieldBuilder() {
         if (streetsBuilder_ == null) {
-          streetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.StreetIndex, net.osmand.binary.OsmandOdb.StreetIndex.Builder, net.osmand.binary.OsmandOdb.StreetIndexOrBuilder>(
+          streetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   streets_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
@@ -23005,7 +22981,7 @@ public final class OsmandOdb {
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                intersections_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.StreetIntersection>();
+                intersections_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000010;
               }
               intersections_.add(input.readMessage(net.osmand.binary.OsmandOdb.StreetIntersection.PARSER, extensionRegistry));
@@ -23018,7 +22994,7 @@ public final class OsmandOdb {
             }
             case 56: {
               if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                attributeTagIds_ = new java.util.ArrayList<java.lang.Integer>();
+                attributeTagIds_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000040;
               }
               attributeTagIds_.add(input.readUInt32());
@@ -23028,7 +23004,7 @@ public final class OsmandOdb {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000040) == 0x00000040) && input.getBytesUntilLimit() > 0) {
-                attributeTagIds_ = new java.util.ArrayList<java.lang.Integer>();
+                attributeTagIds_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000040;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -23047,7 +23023,7 @@ public final class OsmandOdb {
             }
             case 98: {
               if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-                buildings_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.BuildingIndex>();
+                buildings_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000100;
               }
               buildings_.add(input.readMessage(net.osmand.binary.OsmandOdb.BuildingIndex.PARSER, extensionRegistry));
@@ -24139,7 +24115,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureIntersectionsIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          intersections_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.StreetIntersection>(intersections_);
+          intersections_ = new java.util.ArrayList<>(intersections_);
           bitField0_ |= 0x00000010;
          }
       }
@@ -24363,8 +24339,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.StreetIntersection, net.osmand.binary.OsmandOdb.StreetIntersection.Builder, net.osmand.binary.OsmandOdb.StreetIntersectionOrBuilder> 
           getIntersectionsFieldBuilder() {
         if (intersectionsBuilder_ == null) {
-          intersectionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.StreetIntersection, net.osmand.binary.OsmandOdb.StreetIntersection.Builder, net.osmand.binary.OsmandOdb.StreetIntersectionOrBuilder>(
+          intersectionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   intersections_,
                   ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
@@ -24411,7 +24386,7 @@ public final class OsmandOdb {
       private java.util.List<java.lang.Integer> attributeTagIds_ = java.util.Collections.emptyList();
       private void ensureAttributeTagIdsIsMutable() {
         if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-          attributeTagIds_ = new java.util.ArrayList<java.lang.Integer>(attributeTagIds_);
+          attributeTagIds_ = new java.util.ArrayList<>(attributeTagIds_);
           bitField0_ |= 0x00000040;
          }
       }
@@ -24571,7 +24546,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureBuildingsIsMutable() {
         if (!((bitField0_ & 0x00000100) == 0x00000100)) {
-          buildings_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.BuildingIndex>(buildings_);
+          buildings_ = new java.util.ArrayList<>(buildings_);
           bitField0_ |= 0x00000100;
          }
       }
@@ -24795,8 +24770,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.BuildingIndex, net.osmand.binary.OsmandOdb.BuildingIndex.Builder, net.osmand.binary.OsmandOdb.BuildingIndexOrBuilder> 
           getBuildingsFieldBuilder() {
         if (buildingsBuilder_ == null) {
-          buildingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.BuildingIndex, net.osmand.binary.OsmandOdb.BuildingIndex.Builder, net.osmand.binary.OsmandOdb.BuildingIndexOrBuilder>(
+          buildingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   buildings_,
                   ((bitField0_ & 0x00000100) == 0x00000100),
                   getParentForChildren(),
@@ -24993,7 +24967,7 @@ public final class OsmandOdb {
             }
             case 56: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                attributeTagIds_ = new java.util.ArrayList<java.lang.Integer>();
+                attributeTagIds_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000010;
               }
               attributeTagIds_.add(input.readUInt32());
@@ -25003,7 +24977,7 @@ public final class OsmandOdb {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
-                attributeTagIds_ = new java.util.ArrayList<java.lang.Integer>();
+                attributeTagIds_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000010;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -25870,7 +25844,7 @@ public final class OsmandOdb {
       private java.util.List<java.lang.Integer> attributeTagIds_ = java.util.Collections.emptyList();
       private void ensureAttributeTagIdsIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          attributeTagIds_ = new java.util.ArrayList<java.lang.Integer>(attributeTagIds_);
+          attributeTagIds_ = new java.util.ArrayList<>(attributeTagIds_);
           bitField0_ |= 0x00000010;
          }
       }
@@ -26404,7 +26378,7 @@ public final class OsmandOdb {
             }
             case 120: {
               if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
-                attributeTagIds_ = new java.util.ArrayList<java.lang.Integer>();
+                attributeTagIds_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000800;
               }
               attributeTagIds_.add(input.readUInt32());
@@ -26414,7 +26388,7 @@ public final class OsmandOdb {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000800) == 0x00000800) && input.getBytesUntilLimit() > 0) {
-                attributeTagIds_ = new java.util.ArrayList<java.lang.Integer>();
+                attributeTagIds_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000800;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -26433,7 +26407,7 @@ public final class OsmandOdb {
             }
             case 136: {
               if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
-                attributeTagIds2_ = new java.util.ArrayList<java.lang.Integer>();
+                attributeTagIds2_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00002000;
               }
               attributeTagIds2_.add(input.readUInt32());
@@ -26443,7 +26417,7 @@ public final class OsmandOdb {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00002000) == 0x00002000) && input.getBytesUntilLimit() > 0) {
-                attributeTagIds2_ = new java.util.ArrayList<java.lang.Integer>();
+                attributeTagIds2_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00002000;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -28216,7 +28190,7 @@ public final class OsmandOdb {
       private java.util.List<java.lang.Integer> attributeTagIds_ = java.util.Collections.emptyList();
       private void ensureAttributeTagIdsIsMutable() {
         if (!((bitField0_ & 0x00000800) == 0x00000800)) {
-          attributeTagIds_ = new java.util.ArrayList<java.lang.Integer>(attributeTagIds_);
+          attributeTagIds_ = new java.util.ArrayList<>(attributeTagIds_);
           bitField0_ |= 0x00000800;
          }
       }
@@ -28375,7 +28349,7 @@ public final class OsmandOdb {
       private java.util.List<java.lang.Integer> attributeTagIds2_ = java.util.Collections.emptyList();
       private void ensureAttributeTagIds2IsMutable() {
         if (!((bitField0_ & 0x00002000) == 0x00002000)) {
-          attributeTagIds2_ = new java.util.ArrayList<java.lang.Integer>(attributeTagIds2_);
+          attributeTagIds2_ = new java.util.ArrayList<>(attributeTagIds2_);
           bitField0_ |= 0x00002000;
          }
       }
@@ -28622,7 +28596,7 @@ public final class OsmandOdb {
             }
             case 50: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                routes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.TransportRoute>();
+                routes_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000001;
               }
               routes_.add(input.readMessage(net.osmand.binary.OsmandOdb.TransportRoute.PARSER, extensionRegistry));
@@ -28981,7 +28955,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureRoutesIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          routes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.TransportRoute>(routes_);
+          routes_ = new java.util.ArrayList<>(routes_);
           bitField0_ |= 0x00000001;
          }
       }
@@ -29205,8 +29179,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.TransportRoute, net.osmand.binary.OsmandOdb.TransportRoute.Builder, net.osmand.binary.OsmandOdb.TransportRouteOrBuilder> 
           getRoutesFieldBuilder() {
         if (routesBuilder_ == null) {
-          routesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.TransportRoute, net.osmand.binary.OsmandOdb.TransportRoute.Builder, net.osmand.binary.OsmandOdb.TransportRouteOrBuilder>(
+          routesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   routes_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -29527,7 +29500,7 @@ public final class OsmandOdb {
             }
             case 122: {
               if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-                directStops_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.TransportRouteStop>();
+                directStops_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000080;
               }
               directStops_.add(input.readMessage(net.osmand.binary.OsmandOdb.TransportRouteStop.PARSER, extensionRegistry));
@@ -29535,7 +29508,7 @@ public final class OsmandOdb {
             }
             case 130: {
               if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-                reverseStops_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.TransportRouteStop>();
+                reverseStops_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000100;
               }
               reverseStops_.add(input.readMessage(net.osmand.binary.OsmandOdb.TransportRouteStop.PARSER, extensionRegistry));
@@ -30730,7 +30703,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureDirectStopsIsMutable() {
         if (!((bitField0_ & 0x00000080) == 0x00000080)) {
-          directStops_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.TransportRouteStop>(directStops_);
+          directStops_ = new java.util.ArrayList<>(directStops_);
           bitField0_ |= 0x00000080;
          }
       }
@@ -30954,8 +30927,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.TransportRouteStop, net.osmand.binary.OsmandOdb.TransportRouteStop.Builder, net.osmand.binary.OsmandOdb.TransportRouteStopOrBuilder> 
           getDirectStopsFieldBuilder() {
         if (directStopsBuilder_ == null) {
-          directStopsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.TransportRouteStop, net.osmand.binary.OsmandOdb.TransportRouteStop.Builder, net.osmand.binary.OsmandOdb.TransportRouteStopOrBuilder>(
+          directStopsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   directStops_,
                   ((bitField0_ & 0x00000080) == 0x00000080),
                   getParentForChildren(),
@@ -30970,7 +30942,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureReverseStopsIsMutable() {
         if (!((bitField0_ & 0x00000100) == 0x00000100)) {
-          reverseStops_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.TransportRouteStop>(reverseStops_);
+          reverseStops_ = new java.util.ArrayList<>(reverseStops_);
           bitField0_ |= 0x00000100;
          }
       }
@@ -31266,8 +31238,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.TransportRouteStop, net.osmand.binary.OsmandOdb.TransportRouteStop.Builder, net.osmand.binary.OsmandOdb.TransportRouteStopOrBuilder> 
           getReverseStopsFieldBuilder() {
         if (reverseStopsBuilder_ == null) {
-          reverseStopsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.TransportRouteStop, net.osmand.binary.OsmandOdb.TransportRouteStop.Builder, net.osmand.binary.OsmandOdb.TransportRouteStopOrBuilder>(
+          reverseStopsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   reverseStops_,
                   ((bitField0_ & 0x00000100) == 0x00000100),
                   getParentForChildren(),
@@ -32461,7 +32432,7 @@ public final class OsmandOdb {
             }
             case 128: {
               if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                routes_ = new java.util.ArrayList<java.lang.Integer>();
+                routes_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000020;
               }
               routes_.add(input.readUInt32());
@@ -32471,7 +32442,7 @@ public final class OsmandOdb {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000020) == 0x00000020) && input.getBytesUntilLimit() > 0) {
-                routes_ = new java.util.ArrayList<java.lang.Integer>();
+                routes_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000020;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -33284,7 +33255,7 @@ public final class OsmandOdb {
       private java.util.List<java.lang.Integer> routes_ = java.util.Collections.emptyList();
       private void ensureRoutesIsMutable() {
         if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-          routes_ = new java.util.ArrayList<java.lang.Integer>(routes_);
+          routes_ = new java.util.ArrayList<>(routes_);
           bitField0_ |= 0x00000020;
          }
       }
@@ -33621,7 +33592,7 @@ public final class OsmandOdb {
             }
             case 58: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                subtrees_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.TransportStopsTree>();
+                subtrees_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000010;
               }
               subtrees_.add(input.readMessage(net.osmand.binary.OsmandOdb.TransportStopsTree.PARSER, extensionRegistry));
@@ -33629,7 +33600,7 @@ public final class OsmandOdb {
             }
             case 66: {
               if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                leafs_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.TransportStop>();
+                leafs_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000020;
               }
               leafs_.add(input.readMessage(net.osmand.binary.OsmandOdb.TransportStop.PARSER, extensionRegistry));
@@ -34550,7 +34521,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureSubtreesIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          subtrees_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.TransportStopsTree>(subtrees_);
+          subtrees_ = new java.util.ArrayList<>(subtrees_);
           bitField0_ |= 0x00000010;
          }
       }
@@ -34846,8 +34817,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.TransportStopsTree, net.osmand.binary.OsmandOdb.TransportStopsTree.Builder, net.osmand.binary.OsmandOdb.TransportStopsTreeOrBuilder> 
           getSubtreesFieldBuilder() {
         if (subtreesBuilder_ == null) {
-          subtreesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.TransportStopsTree, net.osmand.binary.OsmandOdb.TransportStopsTree.Builder, net.osmand.binary.OsmandOdb.TransportStopsTreeOrBuilder>(
+          subtreesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   subtrees_,
                   ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
@@ -34862,7 +34832,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureLeafsIsMutable() {
         if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-          leafs_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.TransportStop>(leafs_);
+          leafs_ = new java.util.ArrayList<>(leafs_);
           bitField0_ |= 0x00000020;
          }
       }
@@ -35086,8 +35056,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.TransportStop, net.osmand.binary.OsmandOdb.TransportStop.Builder, net.osmand.binary.OsmandOdb.TransportStopOrBuilder> 
           getLeafsFieldBuilder() {
         if (leafsBuilder_ == null) {
-          leafsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.TransportStop, net.osmand.binary.OsmandOdb.TransportStop.Builder, net.osmand.binary.OsmandOdb.TransportStopOrBuilder>(
+          leafsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   leafs_,
                   ((bitField0_ & 0x00000020) == 0x00000020),
                   getParentForChildren(),
@@ -36065,8 +36034,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.TransportRoutes, net.osmand.binary.OsmandOdb.TransportRoutes.Builder, net.osmand.binary.OsmandOdb.TransportRoutesOrBuilder> 
           getRoutesFieldBuilder() {
         if (routesBuilder_ == null) {
-          routesBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              net.osmand.binary.OsmandOdb.TransportRoutes, net.osmand.binary.OsmandOdb.TransportRoutes.Builder, net.osmand.binary.OsmandOdb.TransportRoutesOrBuilder>(
+          routesBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   routes_,
                   getParentForChildren(),
                   isClean());
@@ -36218,8 +36186,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.TransportStopsTree, net.osmand.binary.OsmandOdb.TransportStopsTree.Builder, net.osmand.binary.OsmandOdb.TransportStopsTreeOrBuilder> 
           getStopsFieldBuilder() {
         if (stopsBuilder_ == null) {
-          stopsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              net.osmand.binary.OsmandOdb.TransportStopsTree, net.osmand.binary.OsmandOdb.TransportStopsTree.Builder, net.osmand.binary.OsmandOdb.TransportStopsTreeOrBuilder>(
+          stopsBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   stops_,
                   getParentForChildren(),
                   isClean());
@@ -36335,8 +36302,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.StringTable, net.osmand.binary.OsmandOdb.StringTable.Builder, net.osmand.binary.OsmandOdb.StringTableOrBuilder> 
           getStringTableFieldBuilder() {
         if (stringTableBuilder_ == null) {
-          stringTableBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              net.osmand.binary.OsmandOdb.StringTable, net.osmand.binary.OsmandOdb.StringTable.Builder, net.osmand.binary.OsmandOdb.StringTableOrBuilder>(
+          stringTableBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   stringTable_,
                   getParentForChildren(),
                   isClean());
@@ -36614,7 +36580,7 @@ public final class OsmandOdb {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                categoriesTable_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndCategoryTable>();
+                categoriesTable_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000004;
               }
               categoriesTable_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndCategoryTable.PARSER, extensionRegistry));
@@ -36648,7 +36614,7 @@ public final class OsmandOdb {
             }
             case 50: {
               if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                boxes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndPoiBox>();
+                boxes_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000020;
               }
               boxes_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndPoiBox.PARSER, extensionRegistry));
@@ -36656,7 +36622,7 @@ public final class OsmandOdb {
             }
             case 74: {
               if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                poiData_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndPoiBoxData>();
+                poiData_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000040;
               }
               poiData_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndPoiBoxData.PARSER, extensionRegistry));
@@ -37702,8 +37668,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndTileBox, net.osmand.binary.OsmandOdb.OsmAndTileBox.Builder, net.osmand.binary.OsmandOdb.OsmAndTileBoxOrBuilder> 
           getBoundariesFieldBuilder() {
         if (boundariesBuilder_ == null) {
-          boundariesBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndTileBox, net.osmand.binary.OsmandOdb.OsmAndTileBox.Builder, net.osmand.binary.OsmandOdb.OsmAndTileBoxOrBuilder>(
+          boundariesBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   boundaries_,
                   getParentForChildren(),
                   isClean());
@@ -37717,7 +37682,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureCategoriesTableIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          categoriesTable_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndCategoryTable>(categoriesTable_);
+          categoriesTable_ = new java.util.ArrayList<>(categoriesTable_);
           bitField0_ |= 0x00000004;
          }
       }
@@ -37941,8 +37906,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndCategoryTable, net.osmand.binary.OsmandOdb.OsmAndCategoryTable.Builder, net.osmand.binary.OsmandOdb.OsmAndCategoryTableOrBuilder> 
           getCategoriesTableFieldBuilder() {
         if (categoriesTableBuilder_ == null) {
-          categoriesTableBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndCategoryTable, net.osmand.binary.OsmandOdb.OsmAndCategoryTable.Builder, net.osmand.binary.OsmandOdb.OsmAndCategoryTableOrBuilder>(
+          categoriesTableBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   categoriesTable_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
@@ -38095,8 +38059,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex, net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexOrBuilder> 
           getNameIndexFieldBuilder() {
         if (nameIndexBuilder_ == null) {
-          nameIndexBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex, net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexOrBuilder>(
+          nameIndexBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   nameIndex_,
                   getParentForChildren(),
                   isClean());
@@ -38212,8 +38175,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndSubtypesTable, net.osmand.binary.OsmandOdb.OsmAndSubtypesTable.Builder, net.osmand.binary.OsmandOdb.OsmAndSubtypesTableOrBuilder> 
           getSubtypesTableFieldBuilder() {
         if (subtypesTableBuilder_ == null) {
-          subtypesTableBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndSubtypesTable, net.osmand.binary.OsmandOdb.OsmAndSubtypesTable.Builder, net.osmand.binary.OsmandOdb.OsmAndSubtypesTableOrBuilder>(
+          subtypesTableBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   subtypesTable_,
                   getParentForChildren(),
                   isClean());
@@ -38227,7 +38189,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureBoxesIsMutable() {
         if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-          boxes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndPoiBox>(boxes_);
+          boxes_ = new java.util.ArrayList<>(boxes_);
           bitField0_ |= 0x00000020;
          }
       }
@@ -38523,8 +38485,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndPoiBox, net.osmand.binary.OsmandOdb.OsmAndPoiBox.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiBoxOrBuilder> 
           getBoxesFieldBuilder() {
         if (boxesBuilder_ == null) {
-          boxesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndPoiBox, net.osmand.binary.OsmandOdb.OsmAndPoiBox.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiBoxOrBuilder>(
+          boxesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   boxes_,
                   ((bitField0_ & 0x00000020) == 0x00000020),
                   getParentForChildren(),
@@ -38539,7 +38500,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensurePoiDataIsMutable() {
         if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-          poiData_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndPoiBoxData>(poiData_);
+          poiData_ = new java.util.ArrayList<>(poiData_);
           bitField0_ |= 0x00000040;
          }
       }
@@ -38835,8 +38796,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndPoiBoxData, net.osmand.binary.OsmandOdb.OsmAndPoiBoxData.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataOrBuilder> 
           getPoiDataFieldBuilder() {
         if (poiDataBuilder_ == null) {
-          poiDataBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndPoiBoxData, net.osmand.binary.OsmandOdb.OsmAndPoiBoxData.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataOrBuilder>(
+          poiDataBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   poiData_,
                   ((bitField0_ & 0x00000040) == 0x00000040),
                   getParentForChildren(),
@@ -38980,7 +38940,7 @@ public final class OsmandOdb {
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                data_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexData>();
+                data_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000002;
               }
               data_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexData.PARSER, extensionRegistry));
@@ -39129,7 +39089,7 @@ public final class OsmandOdb {
               }
               case 26: {
                 if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                  atoms_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtom>();
+                  atoms_ = new java.util.ArrayList<>();
                   mutable_bitField0_ |= 0x00000001;
                 }
                 atoms_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtom.PARSER, extensionRegistry));
@@ -39496,7 +39456,7 @@ public final class OsmandOdb {
           java.util.Collections.emptyList();
         private void ensureAtomsIsMutable() {
           if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-            atoms_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtom>(atoms_);
+            atoms_ = new java.util.ArrayList<>(atoms_);
             bitField0_ |= 0x00000001;
            }
         }
@@ -39792,8 +39752,7 @@ public final class OsmandOdb {
             net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtom, net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtom.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtomOrBuilder> 
             getAtomsFieldBuilder() {
           if (atomsBuilder_ == null) {
-            atomsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtom, net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtom.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiNameIndexDataAtomOrBuilder>(
+            atomsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                     atoms_,
                     ((bitField0_ & 0x00000001) == 0x00000001),
                     getParentForChildren(),
@@ -40334,8 +40293,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.IndexedStringTable, net.osmand.binary.OsmandOdb.IndexedStringTable.Builder, net.osmand.binary.OsmandOdb.IndexedStringTableOrBuilder> 
           getTableFieldBuilder() {
         if (tableBuilder_ == null) {
-          tableBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              net.osmand.binary.OsmandOdb.IndexedStringTable, net.osmand.binary.OsmandOdb.IndexedStringTable.Builder, net.osmand.binary.OsmandOdb.IndexedStringTableOrBuilder>(
+          tableBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   table_,
                   getParentForChildren(),
                   isClean());
@@ -40349,7 +40307,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureDataIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          data_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexData>(data_);
+          data_ = new java.util.ArrayList<>(data_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -40573,8 +40531,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexData, net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexData.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexDataOrBuilder> 
           getDataFieldBuilder() {
         if (dataBuilder_ == null) {
-          dataBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexData, net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexData.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiNameIndex.OsmAndPoiNameIndexDataOrBuilder>(
+          dataBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   data_,
                   ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
@@ -42129,7 +42086,7 @@ public final class OsmandOdb {
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                subtypes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndPoiSubtype>();
+                subtypes_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000001;
               }
               subtypes_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndPoiSubtype.PARSER, extensionRegistry));
@@ -42518,7 +42475,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureSubtypesIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          subtypes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndPoiSubtype>(subtypes_);
+          subtypes_ = new java.util.ArrayList<>(subtypes_);
           bitField0_ |= 0x00000001;
          }
       }
@@ -42850,8 +42807,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndPoiSubtype, net.osmand.binary.OsmandOdb.OsmAndPoiSubtype.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiSubtypeOrBuilder> 
           getSubtypesFieldBuilder() {
         if (subtypesBuilder_ == null) {
-          subtypesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndPoiSubtype, net.osmand.binary.OsmandOdb.OsmAndPoiSubtype.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiSubtypeOrBuilder>(
+          subtypesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   subtypes_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -44206,7 +44162,7 @@ public final class OsmandOdb {
             }
             case 82: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                subBoxes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndPoiBox>();
+                subBoxes_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000010;
               }
               subBoxes_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndPoiBox.PARSER, extensionRegistry));
@@ -45078,8 +45034,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndPoiCategories, net.osmand.binary.OsmandOdb.OsmAndPoiCategories.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiCategoriesOrBuilder> 
           getCategoriesFieldBuilder() {
         if (categoriesBuilder_ == null) {
-          categoriesBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndPoiCategories, net.osmand.binary.OsmandOdb.OsmAndPoiCategories.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiCategoriesOrBuilder>(
+          categoriesBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                   categories_,
                   getParentForChildren(),
                   isClean());
@@ -45093,7 +45048,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureSubBoxesIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          subBoxes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndPoiBox>(subBoxes_);
+          subBoxes_ = new java.util.ArrayList<>(subBoxes_);
           bitField0_ |= 0x00000010;
          }
       }
@@ -45389,8 +45344,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndPoiBox, net.osmand.binary.OsmandOdb.OsmAndPoiBox.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiBoxOrBuilder> 
           getSubBoxesFieldBuilder() {
         if (subBoxesBuilder_ == null) {
-          subBoxesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndPoiBox, net.osmand.binary.OsmandOdb.OsmAndPoiBox.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiBoxOrBuilder>(
+          subBoxesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   subBoxes_,
                   ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
@@ -45556,7 +45510,7 @@ public final class OsmandOdb {
             }
             case 24: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                categories_ = new java.util.ArrayList<java.lang.Integer>();
+                categories_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000001;
               }
               categories_.add(input.readUInt32());
@@ -45566,7 +45520,7 @@ public final class OsmandOdb {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
-                categories_ = new java.util.ArrayList<java.lang.Integer>();
+                categories_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -45577,7 +45531,7 @@ public final class OsmandOdb {
             }
             case 40: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                subcategories_ = new java.util.ArrayList<java.lang.Integer>();
+                subcategories_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000002;
               }
               subcategories_.add(input.readUInt32());
@@ -45587,7 +45541,7 @@ public final class OsmandOdb {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
-                subcategories_ = new java.util.ArrayList<java.lang.Integer>();
+                subcategories_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -45971,7 +45925,7 @@ public final class OsmandOdb {
       private java.util.List<java.lang.Integer> categories_ = java.util.Collections.emptyList();
       private void ensureCategoriesIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          categories_ = new java.util.ArrayList<java.lang.Integer>(categories_);
+          categories_ = new java.util.ArrayList<>(categories_);
           bitField0_ |= 0x00000001;
          }
       }
@@ -46065,7 +46019,7 @@ public final class OsmandOdb {
       private java.util.List<java.lang.Integer> subcategories_ = java.util.Collections.emptyList();
       private void ensureSubcategoriesIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          subcategories_ = new java.util.ArrayList<java.lang.Integer>(subcategories_);
+          subcategories_ = new java.util.ArrayList<>(subcategories_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -46288,7 +46242,7 @@ public final class OsmandOdb {
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                poiData_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtom>();
+                poiData_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000008;
               }
               poiData_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtom.PARSER, extensionRegistry));
@@ -46920,7 +46874,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensurePoiDataIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          poiData_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtom>(poiData_);
+          poiData_ = new java.util.ArrayList<>(poiData_);
           bitField0_ |= 0x00000008;
          }
       }
@@ -47144,8 +47098,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtom, net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtom.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtomOrBuilder> 
           getPoiDataFieldBuilder() {
         if (poiDataBuilder_ == null) {
-          poiDataBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtom, net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtom.Builder, net.osmand.binary.OsmandOdb.OsmAndPoiBoxDataAtomOrBuilder>(
+          poiDataBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   poiData_,
                   ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
@@ -47466,7 +47419,7 @@ public final class OsmandOdb {
             }
             case 32: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                categories_ = new java.util.ArrayList<java.lang.Integer>();
+                categories_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000004;
               }
               categories_.add(input.readUInt32());
@@ -47476,7 +47429,7 @@ public final class OsmandOdb {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004) && input.getBytesUntilLimit() > 0) {
-                categories_ = new java.util.ArrayList<java.lang.Integer>();
+                categories_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000004;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -47487,7 +47440,7 @@ public final class OsmandOdb {
             }
             case 40: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                subcategories_ = new java.util.ArrayList<java.lang.Integer>();
+                subcategories_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000008;
               }
               subcategories_.add(input.readUInt32());
@@ -47497,7 +47450,7 @@ public final class OsmandOdb {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
-                subcategories_ = new java.util.ArrayList<java.lang.Integer>();
+                subcategories_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000008;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -47543,7 +47496,7 @@ public final class OsmandOdb {
             }
             case 112: {
               if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
-                textCategories_ = new java.util.ArrayList<java.lang.Integer>();
+                textCategories_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000800;
               }
               textCategories_.add(input.readUInt32());
@@ -47553,7 +47506,7 @@ public final class OsmandOdb {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000800) == 0x00000800) && input.getBytesUntilLimit() > 0) {
-                textCategories_ = new java.util.ArrayList<java.lang.Integer>();
+                textCategories_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000800;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -48693,7 +48646,7 @@ public final class OsmandOdb {
       private java.util.List<java.lang.Integer> categories_ = java.util.Collections.emptyList();
       private void ensureCategoriesIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          categories_ = new java.util.ArrayList<java.lang.Integer>(categories_);
+          categories_ = new java.util.ArrayList<>(categories_);
           bitField0_ |= 0x00000004;
          }
       }
@@ -48759,7 +48712,7 @@ public final class OsmandOdb {
       private java.util.List<java.lang.Integer> subcategories_ = java.util.Collections.emptyList();
       private void ensureSubcategoriesIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          subcategories_ = new java.util.ArrayList<java.lang.Integer>(subcategories_);
+          subcategories_ = new java.util.ArrayList<>(subcategories_);
           bitField0_ |= 0x00000008;
          }
       }
@@ -49354,7 +49307,7 @@ public final class OsmandOdb {
       private java.util.List<java.lang.Integer> textCategories_ = java.util.Collections.emptyList();
       private void ensureTextCategoriesIsMutable() {
         if (!((bitField0_ & 0x00000800) == 0x00000800)) {
-          textCategories_ = new java.util.ArrayList<java.lang.Integer>(textCategories_);
+          textCategories_ = new java.util.ArrayList<>(textCategories_);
           bitField0_ |= 0x00000800;
          }
       }
@@ -49637,7 +49590,7 @@ public final class OsmandOdb {
             }
             case 8: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                routeId_ = new java.util.ArrayList<java.lang.Long>();
+                routeId_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000001;
               }
               routeId_.add(input.readSInt64());
@@ -49647,7 +49600,7 @@ public final class OsmandOdb {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
-                routeId_ = new java.util.ArrayList<java.lang.Long>();
+                routeId_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -49982,7 +49935,7 @@ public final class OsmandOdb {
       private java.util.List<java.lang.Long> routeId_ = java.util.Collections.emptyList();
       private void ensureRouteIdIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          routeId_ = new java.util.ArrayList<java.lang.Long>(routeId_);
+          routeId_ = new java.util.ArrayList<>(routeId_);
           bitField0_ |= 0x00000001;
          }
       }
@@ -52026,7 +51979,7 @@ public final class OsmandOdb {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                rules_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRule>();
+                rules_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000002;
               }
               rules_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRule.PARSER, extensionRegistry));
@@ -52034,7 +51987,7 @@ public final class OsmandOdb {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                rootBoxes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox>();
+                rootBoxes_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000004;
               }
               rootBoxes_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox.PARSER, extensionRegistry));
@@ -52042,7 +51995,7 @@ public final class OsmandOdb {
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                basemapBoxes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox>();
+                basemapBoxes_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000008;
               }
               basemapBoxes_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox.PARSER, extensionRegistry));
@@ -52050,7 +52003,7 @@ public final class OsmandOdb {
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                blocks_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlock>();
+                blocks_ = new java.util.ArrayList<>();
                 mutable_bitField0_ |= 0x00000010;
               }
               blocks_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlock.PARSER, extensionRegistry));
@@ -53067,7 +53020,7 @@ public final class OsmandOdb {
               }
               case 58: {
                 if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                  boxes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox>();
+                  boxes_ = new java.util.ArrayList<>();
                   mutable_bitField0_ |= 0x00000020;
                 }
                 boxes_.add(input.readMessage(net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox.PARSER, extensionRegistry));
@@ -53911,7 +53864,7 @@ public final class OsmandOdb {
           java.util.Collections.emptyList();
         private void ensureBoxesIsMutable() {
           if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-            boxes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox>(boxes_);
+            boxes_ = new java.util.ArrayList<>(boxes_);
             bitField0_ |= 0x00000020;
            }
         }
@@ -54135,8 +54088,7 @@ public final class OsmandOdb {
             net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox.Builder, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBoxOrBuilder> 
             getBoxesFieldBuilder() {
           if (boxesBuilder_ == null) {
-            boxesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox.Builder, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBoxOrBuilder>(
+            boxesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                     boxes_,
                     ((bitField0_ & 0x00000020) == 0x00000020),
                     getParentForChildren(),
@@ -54328,7 +54280,7 @@ public final class OsmandOdb {
               }
               case 50: {
                 if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                  dataObjects_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.RouteData>();
+                  dataObjects_ = new java.util.ArrayList<>();
                   mutable_bitField0_ |= 0x00000002;
                 }
                 dataObjects_.add(input.readMessage(net.osmand.binary.OsmandOdb.RouteData.PARSER, extensionRegistry));
@@ -54336,7 +54288,7 @@ public final class OsmandOdb {
               }
               case 58: {
                 if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                  restrictions_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.RestrictionData>();
+                  restrictions_ = new java.util.ArrayList<>();
                   mutable_bitField0_ |= 0x00000004;
                 }
                 restrictions_.add(input.readMessage(net.osmand.binary.OsmandOdb.RestrictionData.PARSER, extensionRegistry));
@@ -55106,8 +55058,7 @@ public final class OsmandOdb {
             net.osmand.binary.OsmandOdb.IdTable, net.osmand.binary.OsmandOdb.IdTable.Builder, net.osmand.binary.OsmandOdb.IdTableOrBuilder> 
             getIdTableFieldBuilder() {
           if (idTableBuilder_ == null) {
-            idTableBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                net.osmand.binary.OsmandOdb.IdTable, net.osmand.binary.OsmandOdb.IdTable.Builder, net.osmand.binary.OsmandOdb.IdTableOrBuilder>(
+            idTableBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                     idTable_,
                     getParentForChildren(),
                     isClean());
@@ -55121,7 +55072,7 @@ public final class OsmandOdb {
           java.util.Collections.emptyList();
         private void ensureDataObjectsIsMutable() {
           if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-            dataObjects_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.RouteData>(dataObjects_);
+            dataObjects_ = new java.util.ArrayList<>(dataObjects_);
             bitField0_ |= 0x00000002;
            }
         }
@@ -55345,8 +55296,7 @@ public final class OsmandOdb {
             net.osmand.binary.OsmandOdb.RouteData, net.osmand.binary.OsmandOdb.RouteData.Builder, net.osmand.binary.OsmandOdb.RouteDataOrBuilder> 
             getDataObjectsFieldBuilder() {
           if (dataObjectsBuilder_ == null) {
-            dataObjectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                net.osmand.binary.OsmandOdb.RouteData, net.osmand.binary.OsmandOdb.RouteData.Builder, net.osmand.binary.OsmandOdb.RouteDataOrBuilder>(
+            dataObjectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                     dataObjects_,
                     ((bitField0_ & 0x00000002) == 0x00000002),
                     getParentForChildren(),
@@ -55361,7 +55311,7 @@ public final class OsmandOdb {
           java.util.Collections.emptyList();
         private void ensureRestrictionsIsMutable() {
           if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-            restrictions_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.RestrictionData>(restrictions_);
+            restrictions_ = new java.util.ArrayList<>(restrictions_);
             bitField0_ |= 0x00000004;
            }
         }
@@ -55585,8 +55535,7 @@ public final class OsmandOdb {
             net.osmand.binary.OsmandOdb.RestrictionData, net.osmand.binary.OsmandOdb.RestrictionData.Builder, net.osmand.binary.OsmandOdb.RestrictionDataOrBuilder> 
             getRestrictionsFieldBuilder() {
           if (restrictionsBuilder_ == null) {
-            restrictionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                net.osmand.binary.OsmandOdb.RestrictionData, net.osmand.binary.OsmandOdb.RestrictionData.Builder, net.osmand.binary.OsmandOdb.RestrictionDataOrBuilder>(
+            restrictionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                     restrictions_,
                     ((bitField0_ & 0x00000004) == 0x00000004),
                     getParentForChildren(),
@@ -55703,8 +55652,7 @@ public final class OsmandOdb {
             net.osmand.binary.OsmandOdb.StringTable, net.osmand.binary.OsmandOdb.StringTable.Builder, net.osmand.binary.OsmandOdb.StringTableOrBuilder> 
             getStringTableFieldBuilder() {
           if (stringTableBuilder_ == null) {
-            stringTableBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                net.osmand.binary.OsmandOdb.StringTable, net.osmand.binary.OsmandOdb.StringTable.Builder, net.osmand.binary.OsmandOdb.StringTableOrBuilder>(
+            stringTableBuilder_ = new com.google.protobuf.SingleFieldBuilder<>(
                     stringTable_,
                     getParentForChildren(),
                     isClean());
@@ -56516,7 +56464,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureRulesIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          rules_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRule>(rules_);
+          rules_ = new java.util.ArrayList<>(rules_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -56740,8 +56688,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRule, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRule.Builder, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRuleOrBuilder> 
           getRulesFieldBuilder() {
         if (rulesBuilder_ == null) {
-          rulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRule, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRule.Builder, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteEncodingRuleOrBuilder>(
+          rulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   rules_,
                   ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
@@ -56756,7 +56703,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureRootBoxesIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          rootBoxes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox>(rootBoxes_);
+          rootBoxes_ = new java.util.ArrayList<>(rootBoxes_);
           bitField0_ |= 0x00000004;
          }
       }
@@ -57052,8 +56999,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox.Builder, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBoxOrBuilder> 
           getRootBoxesFieldBuilder() {
         if (rootBoxesBuilder_ == null) {
-          rootBoxesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox.Builder, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBoxOrBuilder>(
+          rootBoxesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   rootBoxes_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
@@ -57068,7 +57014,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureBasemapBoxesIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          basemapBoxes_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox>(basemapBoxes_);
+          basemapBoxes_ = new java.util.ArrayList<>(basemapBoxes_);
           bitField0_ |= 0x00000008;
          }
       }
@@ -57364,8 +57310,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox.Builder, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBoxOrBuilder> 
           getBasemapBoxesFieldBuilder() {
         if (basemapBoxesBuilder_ == null) {
-          basemapBoxesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBox.Builder, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBoxOrBuilder>(
+          basemapBoxesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   basemapBoxes_,
                   ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
@@ -57380,7 +57325,7 @@ public final class OsmandOdb {
         java.util.Collections.emptyList();
       private void ensureBlocksIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          blocks_ = new java.util.ArrayList<net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlock>(blocks_);
+          blocks_ = new java.util.ArrayList<>(blocks_);
           bitField0_ |= 0x00000010;
          }
       }
@@ -57604,8 +57549,7 @@ public final class OsmandOdb {
           net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlock, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlock.Builder, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlockOrBuilder> 
           getBlocksFieldBuilder() {
         if (blocksBuilder_ == null) {
-          blocksBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlock, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlock.Builder, net.osmand.binary.OsmandOdb.OsmAndRoutingIndex.RouteDataBlockOrBuilder>(
+          blocksBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<>(
                   blocks_,
                   ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),

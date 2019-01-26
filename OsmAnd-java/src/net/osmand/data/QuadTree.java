@@ -26,7 +26,7 @@ public class QuadTree<T> {
 
 	public QuadTree(QuadRect r, int depth/* =8 */, float ratio /* = 0.55 */) {
 		this.ratio = ratio;
-		this.root = new Node<T>(r);
+		this.root = new Node<>(r);
 		this.maxDepth = depth;
 	}
 
@@ -78,7 +78,7 @@ public class QuadTree<T> {
 	private void doInsertData(T data, QuadRect box, Node<T> n, int depth) {
 		if (++depth >= maxDepth) {
 			if (n.data == null) {
-				n.data = new ArrayList<T>();
+				n.data = new ArrayList<>();
 			}
 			n.data.add(data);
 		} else {
@@ -87,14 +87,14 @@ public class QuadTree<T> {
 			for (int i = 0; i < 4; ++i) {
 				if (ext[i].contains(box)) {
 					if (n.children[i] == null) {
-						n.children[i] = new Node<T>(ext[i]);
+						n.children[i] = new Node<>(ext[i]);
 					}
 					doInsertData(data, box, n.children[i], depth);
 					return;
 				}
 			}
 			if (n.data == null) {
-				n.data = new ArrayList<T>();
+				n.data = new ArrayList<>();
 			}
 			n.data.add(data);
 		}

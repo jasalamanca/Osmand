@@ -41,16 +41,16 @@ public class RenderingRulesStorage {
 	private final static int SHIFT_TAG_VAL = 16;
 	
 	// C++
-	List<String> dictionary = new ArrayList<String>();
-	private Map<String, Integer> dictionaryMap = new LinkedHashMap<String, Integer>();
+	List<String> dictionary = new ArrayList<>();
+	private Map<String, Integer> dictionaryMap = new LinkedHashMap<>();
 	
 	public RenderingRuleStorageProperties PROPS = new RenderingRuleStorageProperties();
 
 	@SuppressWarnings("unchecked")
 	public final TIntObjectHashMap<RenderingRule>[] tagValueGlobalRules = new TIntObjectHashMap[LENGTH_RULES];
 	
-	final Map<String, RenderingRule> renderingAttributes = new LinkedHashMap<String, RenderingRule>();
-	final Map<String, String> renderingConstants = new LinkedHashMap<String, String>();
+	final Map<String, RenderingRule> renderingAttributes = new LinkedHashMap<>();
+	final Map<String, String> renderingConstants = new LinkedHashMap<>();
 	
 	final String renderingName;
 	String internalRenderingName;
@@ -174,7 +174,7 @@ public class RenderingRulesStorage {
 
 	private RenderingRule createTagValueRootWrapperRule(int tagValueKey, RenderingRule previous) {
 		if (previous.getProperties().length > 0) {
-			Map<String, String> m = new HashMap<String, String>();
+			Map<String, String> m = new HashMap<>();
 			RenderingRule toInsert = new RenderingRule(m, true, RenderingRulesStorage.this);
 			toInsert.addIfElseChildren(previous);
 			return toInsert;
@@ -187,9 +187,9 @@ public class RenderingRulesStorage {
 		private final XmlPullParser parser;
 		private int state;
 
-		final Stack<RenderingRule> stack = new Stack<RenderingRule>();
+		final Stack<RenderingRule> stack = new Stack<>();
 		
-		final Map<String, String> attrsMap = new LinkedHashMap<String, String>();
+		final Map<String, String> attrsMap = new LinkedHashMap<>();
 		private final RenderingRulesStorageResolver resolver;
 		private RenderingRulesStorage dependsStorage;
 		
@@ -306,8 +306,8 @@ public class RenderingRulesStorage {
 				}
 				if(dependsStorage != null){
 					// copy dictionary
-					dictionary = new ArrayList<String>(dependsStorage.dictionary);
-					dictionaryMap = new LinkedHashMap<String, Integer>(dependsStorage.dictionaryMap);
+					dictionary = new ArrayList<>(dependsStorage.dictionary);
+					dictionaryMap = new LinkedHashMap<>(dependsStorage.dictionaryMap);
 					PROPS = new RenderingRuleStorageProperties(dependsStorage.PROPS);
 					
 				}
@@ -320,7 +320,7 @@ public class RenderingRulesStorage {
 			}
 			
 			if(stateChanged){
-				tagValueGlobalRules[state] = new TIntObjectHashMap<RenderingRule>();
+				tagValueGlobalRules[state] = new TIntObjectHashMap<>();
 			}
 			
 		}
@@ -377,20 +377,20 @@ public class RenderingRulesStorage {
 				for(RenderingRule ch : caseChildren) {
 					List<RenderingRule> apply = applyRules;
 					if(!renderingRule.getIfChildren().isEmpty()) {
-						apply = new ArrayList<RenderingRule>();
+						apply = new ArrayList<>();
 						apply.addAll(renderingRule.getIfChildren());
 						if(applyRules != null) {
 							apply.addAll(applyRules);
 						}
 					}
-					Map<String, String> cattrs = new HashMap<String, String>(attrs);
+					Map<String, String> cattrs = new HashMap<>(attrs);
 					cattrs.putAll(renderingRule.getAttributes());
 					registerTopLevel(ch, apply, cattrs);
 				}
 			} else {
 				String tg = null;
 				String vl = null;
-				HashMap<String, String> ns = new HashMap<String, String>(attrs);
+				HashMap<String, String> ns = new HashMap<>(attrs);
 				ns.putAll(renderingRule.getAttributes());
 				tg = ns.remove("tag");
 				vl = ns.remove("value");
@@ -476,7 +476,7 @@ public class RenderingRulesStorage {
 		if(args.length > 0) {
 			defaultFile = args[0];
 		}
-		final Map<String, String> renderingConstants = new LinkedHashMap<String, String>();
+		final Map<String, String> renderingConstants = new LinkedHashMap<>();
 		InputStream is = new FileInputStream(loc + "default.render.xml");
 		try {
 			XmlPullParser parser = PlatformUtil.newXMLPullParser();

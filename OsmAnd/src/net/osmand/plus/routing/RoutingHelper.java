@@ -43,7 +43,7 @@ public class RoutingHelper {
 
 	private static final float POSITION_TOLERANCE = 60;
 
-	private final List<WeakReference<IRouteInformationListener>> listeners = new LinkedList<WeakReference<IRouteInformationListener>>();
+	private final List<WeakReference<IRouteInformationListener>> listeners = new LinkedList<>();
 
 	private final OsmandApplication app;
 
@@ -246,7 +246,7 @@ public class RoutingHelper {
 	}
 
 	public void addListener(IRouteInformationListener l){
-		listeners.add(new WeakReference<RoutingHelper.IRouteInformationListener>(l));
+		listeners.add(new WeakReference<>(l));
 	}
 
 	public boolean removeListener(IRouteInformationListener lt){
@@ -627,7 +627,7 @@ public class RoutingHelper {
 		app.runInUIThread(new Runnable() {
 			@Override
 			public void run() {
-				ValueHolder<Boolean> showToast = new ValueHolder<Boolean>();
+				ValueHolder<Boolean> showToast = new ValueHolder<>();
 				showToast.value = true;
 				Iterator<WeakReference<IRouteInformationListener>> it = listeners.iterator();
 				while (it.hasNext()) {

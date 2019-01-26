@@ -26,13 +26,13 @@ public class Way extends Entity {
 			nodeIds = new TLongArrayList(w.nodeIds);
 		}
 		if (w.nodes != null) {
-			nodes = new ArrayList<Node>(w.nodes);
+			nodes = new ArrayList<>(w.nodes);
 		}
 	}
 
 	public Way(long id, List<Node> nodes) {
 		super(id);
-		this.nodes = new ArrayList<Node>(nodes);
+		this.nodes = new ArrayList<>(nodes);
 		nodeIds = new TLongArrayList(nodes.size());
 		for (Node n : nodes) {
 			nodeIds.add(n.getId());
@@ -79,7 +79,7 @@ public class Way extends Entity {
 			nodeIds = new TLongArrayList();
 		}
 		if (nodes == null) {
-			nodes = new ArrayList<Node>();
+			nodes = new ArrayList<>();
 		}
 		nodeIds.add(n.getId());
 		nodes.add(n);
@@ -90,7 +90,7 @@ public class Way extends Entity {
 			nodeIds = new TLongArrayList();
 		}
 		if (nodes == null) {
-			nodes = new ArrayList<Node>();
+			nodes = new ArrayList<>();
 		}
 		nodeIds.insert(index, n.getId());
 		nodes.add(index, n);
@@ -118,7 +118,7 @@ public class Way extends Entity {
 		if (nodeIds == null) {
 			return Collections.emptyList();
 		}
-		List<EntityId> ls = new ArrayList<EntityId>();
+		List<EntityId> ls = new ArrayList<>();
 		for (int i = 0; i < nodeIds.size(); i++) {
 			ls.add(new EntityId(EntityType.NODE, nodeIds.get(i)));
 		}
@@ -136,7 +136,7 @@ public class Way extends Entity {
 	public void initializeLinks(Map<EntityId, Entity> entities) {
 		if (nodeIds != null) {
 			if (nodes == null) {
-				nodes = new ArrayList<Node>();
+				nodes = new ArrayList<>();
 			} else {
 				nodes.clear();
 			}

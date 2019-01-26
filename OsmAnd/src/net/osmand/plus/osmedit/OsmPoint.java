@@ -10,8 +10,8 @@ public abstract class OsmPoint  implements Serializable {
 
     public enum Action {CREATE, MODIFY, DELETE, REOPEN}
 
-    public static final Map<Action, String> stringAction = new HashMap<Action, String>();
-	private static final Map<String, Action> actionString = new HashMap<String, Action>();
+    public static final Map<Action, String> stringAction = new HashMap<>();
+	private static final Map<String, Action> actionString = new HashMap<>();
 	static {
 		stringAction.put(Action.CREATE, "create");
 		stringAction.put(Action.MODIFY, "modify");

@@ -12,6 +12,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.NonNull;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +28,7 @@ public class UsersReportFragment extends BaseOsmAndDialogFragment {
 	public static final String REGION_NAME = "REGION_NAME";
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		final View view = inflater.inflate(R.layout.fragment_simple_list, container, false);
 		ListView listView = view.findViewById(android.R.id.list);
 		final ArrayAdapter<Object> adapter = new ListAdapter(getListItemIcon());
@@ -111,8 +112,9 @@ public class UsersReportFragment extends BaseOsmAndDialogFragment {
 			
 		}
 
-		@Override
-		public View getView(int position, View v, ViewGroup parent) {
+		@NonNull
+        @Override
+		public View getView(int position, View v, @NonNull ViewGroup parent) {
 			if (v == null) {
 				v = getActivity().getLayoutInflater().inflate(android.R.layout.simple_list_item_2, parent, false);
 			}

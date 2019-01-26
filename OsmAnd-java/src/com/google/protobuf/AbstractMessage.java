@@ -776,7 +776,7 @@ public abstract class AbstractMessage extends AbstractMessageLite
      */
     private static List<String> findMissingFields(
         final MessageOrBuilder message) {
-      final List<String> results = new ArrayList<String>();
+      final List<String> results = new ArrayList<>();
       findMissingFields(message, "", results);
       return results;
     }

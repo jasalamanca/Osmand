@@ -173,7 +173,7 @@ class TextRenderer {
 		cv.restore();
 	}
 
-	private final List<TextDrawInfo> tempSearch = new ArrayList<TextDrawInfo>();
+	private final List<TextDrawInfo> tempSearch = new ArrayList<>();
 
 	private boolean findTextIntersection(Canvas cv, RenderingContext rc, QuadTree<TextDrawInfo> boundIntersections, TextDrawInfo text) {
 		// for test purposes
@@ -230,7 +230,7 @@ class TextRenderer {
 		});
 		QuadRect r = new QuadRect(0, 0, rc.width, rc.height);
 		r.inset(-100, -100);
-		QuadTree<TextDrawInfo> nonIntersectedBounds = new QuadTree<TextDrawInfo>(r, 4, 0.6f);
+		QuadTree<TextDrawInfo> nonIntersectedBounds = new QuadTree<>(r, 4, 0.6f);
 
 		for (int i = 0; i < size; i++) {
 			TextDrawInfo text = rc.textToDraw.get(i);

@@ -31,7 +31,7 @@ public class OsmMapUtils {
 		} else if (e instanceof Way) {
 			return getWeightCenterForWay(((Way) e));
 		} else if (e instanceof Relation) {
-			List<LatLon> list = new ArrayList<LatLon>();
+			List<LatLon> list = new ArrayList<>();
 			for (RelationMember fe : ((Relation) e).getMembers()) {
 				LatLon c = null;
 				// skip relations to avoid circular dependencies
@@ -415,8 +415,8 @@ public class OsmMapUtils {
 				refX = n.getLongitude();
 		}
 
-		List<Double> xVal = new ArrayList<Double>();
-		List<Double> yVal = new ArrayList<Double>();
+		List<Double> xVal = new ArrayList<>();
+		List<Double> yVal = new ArrayList<>();
 
 		for (Node n : nodes) {
 			// distance from bottom line to x coordinate of node

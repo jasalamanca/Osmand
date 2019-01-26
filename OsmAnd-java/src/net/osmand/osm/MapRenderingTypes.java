@@ -42,7 +42,7 @@ public abstract class MapRenderingTypes {
 	private String resourceName = null;
 	
 	private Map<String, MapRulType> types = null;
-	private final List<MapRulType> typeList = new ArrayList<MapRulType>();
+	private final List<MapRulType> typeList = new ArrayList<>();
 	private MapRulType nameRuleType;
 	private MapRulType nameEnRuleType;
 
@@ -58,7 +58,7 @@ public abstract class MapRenderingTypes {
 	
 	private void checkIfInitNeeded() {
 		if(types == null) {
-			types = new LinkedHashMap<String, MapRulType>();
+			types = new LinkedHashMap<>();
 			typeList.clear();
 			nameRuleType = MapRulType.createText("name");
 			nameRuleType.order = 40;
@@ -91,8 +91,8 @@ public abstract class MapRenderingTypes {
 	}
 
 	private static Collection<Map<String, String>> splitOpenSeaMapsTags(final Map<String, String> tags) {
-		Map<String, Map<String, String>> groupByOpenSeamaps = new HashMap<String, Map<String, String>>();
-		Map<String, String> common = new HashMap<String, String>();
+		Map<String, Map<String, String>> groupByOpenSeamaps = new HashMap<>();
+		Map<String, String> common = new HashMap<>();
 		String ATTACHED_KEY = "seamark:attached";
 		String type = "";
 		for (String s : tags.keySet()) {
@@ -117,7 +117,7 @@ public abstract class MapRenderingTypes {
 				common.put(s, value);
 			}
 		}
-		List<Map<String, String>> res = new ArrayList<Map<String,String>>();
+		List<Map<String, String>> res = new ArrayList<>();
 		for (Entry<String, Map<String, String>> g : groupByOpenSeamaps.entrySet()) {
 			g.getValue().putAll(common);
 			g.getValue().put("seamark", g.getKey());

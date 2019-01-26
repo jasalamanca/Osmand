@@ -174,19 +174,19 @@ public class MapTextLayer extends OsmandMapLayer {
 		paintTextIcon.setTextSize(13 * v.getDensity());
 		paintTextIcon.setTextAlign(Align.CENTER);
 		paintTextIcon.setAntiAlias(true);
-		Map<OsmandMapLayer, Collection<?>> textObjectsLoc = new TreeMap<OsmandMapLayer, Collection<?>>(new Comparator<OsmandMapLayer>() {
+		Map<OsmandMapLayer, Collection<?>> textObjectsLoc = new TreeMap<>(new Comparator<OsmandMapLayer>() {
 
-			@Override
-			public int compare(OsmandMapLayer lhs, OsmandMapLayer rhs) {
-				 if(view != null) {
-					 float z1 = view.getZorder(lhs);
-					 float z2 = view.getZorder(rhs);
-					 return Float.compare(z1, z2);
-					 
-				 }
-				return 0;
-			}
-		});
+            @Override
+            public int compare(OsmandMapLayer lhs, OsmandMapLayer rhs) {
+                if (view != null) {
+                    float z1 = view.getZorder(lhs);
+                    float z2 = view.getZorder(rhs);
+                    return Float.compare(z1, z2);
+
+                }
+                return 0;
+            }
+        });
 		textObjectsLoc.putAll(this.textObjects);
 		this.textObjects = textObjectsLoc;
 	}

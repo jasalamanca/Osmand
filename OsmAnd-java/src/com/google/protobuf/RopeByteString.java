@@ -86,7 +86,7 @@ class RopeByteString extends ByteString {
   static {
     // Dynamically generate the list of Fibonacci numbers the first time this
     // class is accessed.
-    List<Integer> numbers = new ArrayList<Integer>();
+    List<Integer> numbers = new ArrayList<>();
 
     // we skip the first Fibonacci number (1).  So instead of: 1 1 2 3 5 8 ...
     // we have: 1 2 3 5 8 ...
@@ -386,7 +386,7 @@ class RopeByteString extends ByteString {
   public List<ByteBuffer> asReadOnlyByteBufferList() {
     // Walk through the list of LiteralByteString's that make up this
     // rope, and add each one as a read-only ByteBuffer.
-    List<ByteBuffer> result = new ArrayList<ByteBuffer>();
+    List<ByteBuffer> result = new ArrayList<>();
     PieceIterator pieces = new PieceIterator(this);
     while (pieces.hasNext()) {
       LiteralByteString byteString = pieces.next();
@@ -589,7 +589,7 @@ class RopeByteString extends ByteString {
     // Stack containing the part of the string, starting from the left, that
     // we've already traversed.  The final string should be the equivalent of
     // concatenating the strings on the stack from bottom to top.
-    private final Stack<ByteString> prefixesStack = new Stack<ByteString>();
+    private final Stack<ByteString> prefixesStack = new Stack<>();
 
     private ByteString balance(ByteString left, ByteString right) {
       doBalance(left);
@@ -702,7 +702,7 @@ class RopeByteString extends ByteString {
   private static class PieceIterator implements Iterator<LiteralByteString> {
 
     private final Stack<RopeByteString> breadCrumbs =
-        new Stack<RopeByteString>();
+            new Stack<>();
     private LiteralByteString next;
 
     private PieceIterator(ByteString root) {

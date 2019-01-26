@@ -50,8 +50,8 @@ public class BinaryMapAddressReaderAdapter {
 	public static class AddressRegion extends BinaryIndexPart {
 		String enName;
 		int indexNameOffset = -1;
-		List<String> attributeTagsTable = new ArrayList<String>();
-		final List<CitiesBlock> cities = new ArrayList<BinaryMapAddressReaderAdapter.CitiesBlock>();
+		List<String> attributeTagsTable = new ArrayList<>();
+		final List<CitiesBlock> cities = new ArrayList<>();
 
 		LatLon calculatedCenter = null;
 		int bottom31;
@@ -320,7 +320,7 @@ public class BinaryMapAddressReaderAdapter {
 			case OsmandOdb.CityIndex.ATTRIBUTETAGIDS_FIELD_NUMBER:
 				int tgid = codedIS.readUInt32();
 				if (additionalTags == null) {
-					additionalTags = new LinkedList<String>();
+					additionalTags = new LinkedList<>();
 				}
 				if (additionalTagsTable != null && tgid < additionalTagsTable.size()) {
 					additionalTags.add(additionalTagsTable.get(tgid));
@@ -387,7 +387,7 @@ public class BinaryMapAddressReaderAdapter {
 			case OsmandOdb.StreetIndex.ATTRIBUTETAGIDS_FIELD_NUMBER:
 				int tgid = codedIS.readUInt32();
 				if (additionalTags == null) {
-					additionalTags = new LinkedList<String>();
+					additionalTags = new LinkedList<>();
 				}
 				if (additionalTagsTable != null && tgid < additionalTagsTable.size()) {
 					additionalTags.add(additionalTagsTable.get(tgid));
@@ -482,7 +482,7 @@ public class BinaryMapAddressReaderAdapter {
 			case OsmandOdb.StreetIntersection.ATTRIBUTETAGIDS_FIELD_NUMBER:
 				int tgid = codedIS.readUInt32();
 				if (additionalTags == null) {
-					additionalTags = new LinkedList<String>();
+					additionalTags = new LinkedList<>();
 				}
 				if (additionalTagsTable != null && tgid < additionalTagsTable.size()) {
 					additionalTags.add(additionalTagsTable.get(tgid));
@@ -540,7 +540,7 @@ public class BinaryMapAddressReaderAdapter {
 			case OsmandOdb.BuildingIndex.ATTRIBUTETAGIDS_FIELD_NUMBER:
 				int tgid = codedIS.readUInt32();
 				if (additionalTags == null) {
-					additionalTags = new LinkedList<String>();
+					additionalTags = new LinkedList<>();
 				}
 				if (additionalTagsTable != null && tgid < additionalTagsTable.size()) {
 					additionalTags.add(additionalTagsTable.get(tgid));

@@ -436,7 +436,7 @@ public final class UnknownFieldSet implements MessageLite {
         lastFieldNumber = 0;
       }
       if (fields.isEmpty()) {
-        fields = new TreeMap<Integer,Field>();
+        fields = new TreeMap<>();
       }
       fields.put(number, field);
       return this;
@@ -873,31 +873,31 @@ public final class UnknownFieldSet implements MessageLite {
       Builder mergeFrom(final Field other) {
         if (!other.varint.isEmpty()) {
           if (result.varint == null) {
-            result.varint = new ArrayList<Long>();
+            result.varint = new ArrayList<>();
           }
           result.varint.addAll(other.varint);
         }
         if (!other.fixed32.isEmpty()) {
           if (result.fixed32 == null) {
-            result.fixed32 = new ArrayList<Integer>();
+            result.fixed32 = new ArrayList<>();
           }
           result.fixed32.addAll(other.fixed32);
         }
         if (!other.fixed64.isEmpty()) {
           if (result.fixed64 == null) {
-            result.fixed64 = new ArrayList<Long>();
+            result.fixed64 = new ArrayList<>();
           }
           result.fixed64.addAll(other.fixed64);
         }
         if (!other.lengthDelimited.isEmpty()) {
           if (result.lengthDelimited == null) {
-            result.lengthDelimited = new ArrayList<ByteString>();
+            result.lengthDelimited = new ArrayList<>();
           }
           result.lengthDelimited.addAll(other.lengthDelimited);
         }
         if (!other.group.isEmpty()) {
           if (result.group == null) {
-            result.group = new ArrayList<UnknownFieldSet>();
+            result.group = new ArrayList<>();
           }
           result.group.addAll(other.group);
         }
@@ -907,7 +907,7 @@ public final class UnknownFieldSet implements MessageLite {
       /** Add a varint value. */
       Builder addVarint(final long value) {
         if (result.varint == null) {
-          result.varint = new ArrayList<Long>();
+          result.varint = new ArrayList<>();
         }
         result.varint.add(value);
         return this;
@@ -916,7 +916,7 @@ public final class UnknownFieldSet implements MessageLite {
       /** Add a fixed32 value. */
       Builder addFixed32(final int value) {
         if (result.fixed32 == null) {
-          result.fixed32 = new ArrayList<Integer>();
+          result.fixed32 = new ArrayList<>();
         }
         result.fixed32.add(value);
         return this;
@@ -925,7 +925,7 @@ public final class UnknownFieldSet implements MessageLite {
       /** Add a fixed64 value. */
       Builder addFixed64(final long value) {
         if (result.fixed64 == null) {
-          result.fixed64 = new ArrayList<Long>();
+          result.fixed64 = new ArrayList<>();
         }
         result.fixed64.add(value);
         return this;
@@ -934,7 +934,7 @@ public final class UnknownFieldSet implements MessageLite {
       /** Add a length-delimited value. */
       public Builder addLengthDelimited(final ByteString value) {
         if (result.lengthDelimited == null) {
-          result.lengthDelimited = new ArrayList<ByteString>();
+          result.lengthDelimited = new ArrayList<>();
         }
         result.lengthDelimited.add(value);
         return this;
@@ -943,7 +943,7 @@ public final class UnknownFieldSet implements MessageLite {
       /** Add an embedded group. */
       Builder addGroup(final UnknownFieldSet value) {
         if (result.group == null) {
-          result.group = new ArrayList<UnknownFieldSet>();
+          result.group = new ArrayList<>();
         }
         result.group.add(value);
         return this;

@@ -73,8 +73,8 @@ public class MapRenderRepositories {
 
 	private static final int zoomForBaseRouteRendering  = 14;
 	private final Handler handler;
-	private Map<String, BinaryMapIndexReader> files = new LinkedHashMap<String, BinaryMapIndexReader>();
-	private final Set<String> nativeFiles = new HashSet<String>();
+	private Map<String, BinaryMapIndexReader> files = new LinkedHashMap<>();
+	private final Set<String> nativeFiles = new HashSet<>();
 	private final OsmandRenderer renderer;
 	
 
@@ -83,7 +83,7 @@ public class MapRenderRepositories {
 	private QuadRect cObjectsBox = new QuadRect();
 	private int cObjectsZoom = 0;
 	// cached objects in order to render rotation without reloading data from db
-	private List<BinaryMapDataObject> cObjects = new LinkedList<BinaryMapDataObject>();
+	private List<BinaryMapDataObject> cObjects = new LinkedList<>();
 	private NativeSearchResult cNativeObjects = null;
 
 	// currently rendered box (not the same as already rendered)
@@ -133,7 +133,7 @@ public class MapRenderRepositories {
 			closeConnection(file.getName());
 		
 		}
-		LinkedHashMap<String, BinaryMapIndexReader> cpfiles = new LinkedHashMap<String, BinaryMapIndexReader>(files);
+		LinkedHashMap<String, BinaryMapIndexReader> cpfiles = new LinkedHashMap<>(files);
 		cpfiles.put(file.getName(), reader);
 		files = cpfiles;
 	}
@@ -147,7 +147,7 @@ public class MapRenderRepositories {
 	}
 
 	public synchronized void closeConnection(String file) {
-		LinkedHashMap<String, BinaryMapIndexReader> cpfiles = new LinkedHashMap<String, BinaryMapIndexReader>(files);
+		LinkedHashMap<String, BinaryMapIndexReader> cpfiles = new LinkedHashMap<>(files);
 		BinaryMapIndexReader bmir = cpfiles.remove(file);
 		files = cpfiles;
 		if (nativeFiles.contains(file)) {
@@ -173,7 +173,7 @@ public class MapRenderRepositories {
 		clearCache();
 		bmp = null;
 		bmpLocation = null;
-		for (String f : new ArrayList<String>(files.keySet())) {
+		for (String f : new ArrayList<>(files.keySet())) {
 			closeConnection(f);
 		}
 	}
@@ -369,14 +369,14 @@ public class MapRenderRepositories {
 		long now = System.currentTimeMillis();
 
 		System.gc(); // to clear previous objects
-		ArrayList<BinaryMapDataObject> tempResult = new ArrayList<BinaryMapDataObject>();
-		ArrayList<BinaryMapDataObject> basemapResult = new ArrayList<BinaryMapDataObject>();
+		ArrayList<BinaryMapDataObject> tempResult = new ArrayList<>();
+		ArrayList<BinaryMapDataObject> basemapResult = new ArrayList<>();
 		
 		int[] count = new int[]{0};
 		boolean[] ocean = new boolean[]{false};
 		boolean[] land = new boolean[]{false};
-		List<BinaryMapDataObject> coastLines = new ArrayList<BinaryMapDataObject>();
-		List<BinaryMapDataObject> basemapCoastLines = new ArrayList<BinaryMapDataObject>();
+		List<BinaryMapDataObject> coastLines = new ArrayList<>();
+		List<BinaryMapDataObject> basemapCoastLines = new ArrayList<>();
 		int leftX = MapUtils.get31TileNumberX(cLeftLongitude);
 		int rightX = MapUtils.get31TileNumberX(cRightLongitude);
 		int bottomY = MapUtils.get31TileNumberY(cBottomLatitude);
@@ -505,7 +505,7 @@ public class MapRenderRepositories {
 			try {
 				res = c.searchMapIndex(searchRequest);
 			} catch (IOException e) {
-				res = new ArrayList<BinaryMapDataObject>();
+				res = new ArrayList<>();
 				log.debug("Search failed " + c.getRegionNames(), e); //$NON-NLS-1$
 			}
 			if(res.size() > 0) {
@@ -654,7 +654,7 @@ public class MapRenderRepositories {
 				renderedState = 0;
 				boolean loaded;
 				if(nativeLib != null) {
-					cObjects = new LinkedList<BinaryMapDataObject>();
+					cObjects = new LinkedList<>();
 					loaded = loadVectorDataNative(dataBox, requestedBox.getZoom(), renderingReq, nativeLib);
 				} else {
 					cNativeObjects = null;
@@ -803,7 +803,7 @@ public class MapRenderRepositories {
 			});
 		} catch (OutOfMemoryError e) {
 			log.error("Out of memory error", e); //$NON-NLS-1$
-			cObjects = new ArrayList<BinaryMapDataObject>();
+			cObjects = new ArrayList<>();
 			cObjectsBox = new QuadRect();
 			handler.post(new Runnable() {
 				@Override
@@ -831,7 +831,7 @@ public class MapRenderRepositories {
 	}
 
 	public synchronized void clearCache() {
-		cObjects = new ArrayList<BinaryMapDataObject>();
+		cObjects = new ArrayList<>();
 		cObjectsBox = new QuadRect();
 
 		requestedBox = prevBmpLocation = null;
@@ -845,8 +845,8 @@ public class MapRenderRepositories {
 	// returns true if coastlines were added!
 	private boolean processCoastlines(List<BinaryMapDataObject> coastLines, int leftX, int rightX, 
 			int bottomY, int topY, int zoom, boolean doNotAddIfIncompleted, boolean addDebugIncompleted, List<BinaryMapDataObject> result) {
-		List<TLongList> completedRings = new ArrayList<TLongList>();
-		List<TLongList> uncompletedRings = new ArrayList<TLongList>();
+		List<TLongList> completedRings = new ArrayList<>();
+		List<TLongList> uncompletedRings = new ArrayList<>();
 		MapIndex mapIndex = null;
 		long dbId = 0;
 		for (BinaryMapDataObject o : coastLines) {
@@ -977,9 +977,9 @@ public class MapRenderRepositories {
 
 	private void unifyIncompletedRings(List<TLongList> toProcces, List<TLongList> completedRings, int leftX, int rightX, int bottomY, int topY, long dbId, int zoom) {
 		int mask = 0xffffffff;
-		List<TLongList> uncompletedRings = new ArrayList<TLongList>(toProcces);
+		List<TLongList> uncompletedRings = new ArrayList<>(toProcces);
 		toProcces.clear();
-		Set<Integer> nonvisitedRings = new LinkedHashSet<Integer>();
+		Set<Integer> nonvisitedRings = new LinkedHashSet<>();
 		for (int j = 0; j < uncompletedRings.size(); j++) {
 			TLongList i = uncompletedRings.get(j);
 			int x = (int) (i.get(i.size() - 1) >> 32);

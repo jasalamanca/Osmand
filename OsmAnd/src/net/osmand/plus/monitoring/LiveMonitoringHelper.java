@@ -133,7 +133,7 @@ public class LiveMonitoringHelper  {
 
 	private void sendData(LiveMonitoringData data) {
 		String st = settings.LIVE_MONITORING_URL.get();
-		List<String> prm = new ArrayList<String>();
+		List<String> prm = new ArrayList<>();
 		int maxLen = 0;
 		for(int i = 0; i < 7; i++) {
 			boolean b = st.contains("{"+i+"}");

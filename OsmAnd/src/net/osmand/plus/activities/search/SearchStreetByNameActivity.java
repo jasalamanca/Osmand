@@ -102,7 +102,7 @@ public class SearchStreetByNameActivity extends SearchByNameAbstractActivity<Str
 				if (region != null) {
 					city = region.getCityById(settings.getLastSearchedCity(), settings.getLastSearchedCityName());
 					if (city == null) {
-						return new ArrayList<Street>();
+						return new ArrayList<>();
 					}
 					region.preloadStreets(city, new ResultMatcher<Street>() {
 						@Override
@@ -116,7 +116,7 @@ public class SearchStreetByNameActivity extends SearchByNameAbstractActivity<Str
 							return false;
 						}
 					});
-					return new ArrayList<Street>(city.getStreets());
+					return new ArrayList<>(city.getStreets());
 				}
 				return null;
 			}

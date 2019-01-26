@@ -863,7 +863,7 @@ public class GeoPointParserUtil {
 	}
 
 	private static Map<String, String> getQueryParameters(String query) {
-		final LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
+		final LinkedHashMap<String, String> map = new LinkedHashMap<>();
 		if (query != null && !query.equals("")) {
 			String[] params = query.split("[&/]");
 			for (String p : params) {
@@ -926,7 +926,7 @@ public class GeoPointParserUtil {
 			String fragment = uri.getFragment();
 
 			// lat-double, lon - double, zoom or z - int
-			Set<String> simpleDomains = new HashSet<String>();
+			Set<String> simpleDomains = new HashSet<>();
 			simpleDomains.add("osmand.net");
 			simpleDomains.add("www.osmand.net");
 			simpleDomains.add("download.osmand.net");
@@ -1508,7 +1508,7 @@ public class GeoPointParserUtil {
 			if (isGeoPoint()) {
 				String latlon = formatDouble(lat) + "," + formatDouble(lon);
 				uriString = "geo:" + latlon;
-				LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
+				LinkedHashMap<String, String> map = new LinkedHashMap<>();
 				if (zoom != NO_ZOOM)
 					map.put("z", String.valueOf(zoom));
 				if (query != null)

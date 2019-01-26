@@ -57,7 +57,7 @@ public class MapZooms {
 		}
 	}
 
-	private List<MapZoomPair> levels = new ArrayList<MapZoomPair>();
+	private List<MapZoomPair> levels = new ArrayList<>();
 	private boolean simplify;
 
 
@@ -83,7 +83,7 @@ public class MapZooms {
 		
 
 		int zeroLevel = 15;
-		List<MapZoomPair> list = new ArrayList<MapZoomPair>();
+		List<MapZoomPair> list = new ArrayList<>();
 		for(String s : split){
 			s = s.trim();
 			if(s.length() == 0) {

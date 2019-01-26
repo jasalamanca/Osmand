@@ -44,8 +44,8 @@ public class HelpArticleDialogFragment extends DialogFragment {
 	@SuppressLint("SetJavaScriptEnabled")
 	@NonNull
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-							 Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 		final View view = inflater.inflate(R.layout.fragment_help_article, container, false);
 
 		Toolbar toolbar = view.findViewById(R.id.toolbar);

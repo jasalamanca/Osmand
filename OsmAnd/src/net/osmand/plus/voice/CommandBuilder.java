@@ -55,7 +55,7 @@ public class CommandBuilder {
 	 */
 	private final CommandPlayer commandPlayer;
 	private boolean alreadyExecuted = false;
-	private final List<Struct> listStruct = new ArrayList<Struct>();
+	private final List<Struct> listStruct = new ArrayList<>();
 	
 	public CommandBuilder(CommandPlayer commandPlayer){
 		this.commandPlayer = commandPlayer;

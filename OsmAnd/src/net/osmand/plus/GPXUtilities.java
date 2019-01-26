@@ -868,7 +868,7 @@ public class GPXUtilities {
 		public GPXTrackAnalysis getAnalysis(long fileTimestamp) {
 			GPXTrackAnalysis g = new GPXTrackAnalysis();
 			g.wptPoints = points.size();
-			List<SplitSegment> splitSegments = new ArrayList<GPXUtilities.SplitSegment>();
+			List<SplitSegment> splitSegments = new ArrayList<>();
 			for (int i = 0; i < tracks.size(); i++) {
 				Track subtrack = tracks.get(i);
 				for (TrkSegment segment : subtrack.segments) {
@@ -1078,7 +1078,7 @@ public class GPXUtilities {
 		}
 
 		public List<TrkSegment> processRoutePoints() {
-			List<TrkSegment> tpoints = new ArrayList<TrkSegment>();
+			List<TrkSegment> tpoints = new ArrayList<>();
 			if (routes.size() > 0) {
 				for (Route r : routes) {
 					int routeColor = r.getColor(getColor(0));
@@ -1094,7 +1094,7 @@ public class GPXUtilities {
 		}
 
 		public List<TrkSegment> proccessPoints() {
-			List<TrkSegment> tpoints = new ArrayList<TrkSegment>();
+			List<TrkSegment> tpoints = new ArrayList<>();
 			for (Track t : tracks) {
 				int trackColor = t.getColor(getColor(0));
 				for (TrkSegment ts : t.segments) {
@@ -1327,7 +1327,7 @@ public class GPXUtilities {
 	}
 
 	static class GPXFileResult {
-		final ArrayList<List<Location>> locations = new ArrayList<List<Location>>();
+		final ArrayList<List<Location>> locations = new ArrayList<>();
 		public ArrayList<WptPt> wayPoints = new ArrayList<>();
 		// special case for cloudmate gpx : they discourage common schema
 		// by using waypoint as track points and rtept are not very close to real way
@@ -1401,7 +1401,7 @@ public class GPXUtilities {
 		try {
 			XmlPullParser parser = PlatformUtil.newXMLPullParser();
 			parser.setInput(getUTF8Reader(f)); //$NON-NLS-1$
-			Stack<GPXExtensions> parserState = new Stack<GPXExtensions>();
+			Stack<GPXExtensions> parserState = new Stack<>();
 			boolean extensionReadMode = false;
 			parserState.push(res);
 			int tok;

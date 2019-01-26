@@ -46,7 +46,7 @@ public class City extends MapObject {
 	}
 
 	private CityType type = null;
-	private final List<Street> listOfStreets = new ArrayList<Street>();
+	private final List<Street> listOfStreets = new ArrayList<>();
 	private String postcode = null;
 	private City closestCity = null;
 	

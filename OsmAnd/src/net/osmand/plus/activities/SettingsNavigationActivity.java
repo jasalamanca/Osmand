@@ -65,9 +65,9 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 
 	private static final int DEVICE_ADMIN_REQUEST = 5;
 	
-	private final List<RoutingParameter> avoidParameters = new ArrayList<RoutingParameter>();
-	private final List<RoutingParameter> preferParameters = new ArrayList<RoutingParameter>();
-	private final List<RoutingParameter> reliefFactorParameters = new ArrayList<RoutingParameter>();
+	private final List<RoutingParameter> avoidParameters = new ArrayList<>();
+	private final List<RoutingParameter> preferParameters = new ArrayList<>();
+	private final List<RoutingParameter> reliefFactorParameters = new ArrayList<>();
 	public static final String INTENT_SKIP_DIALOG = "INTENT_SKIP_DIALOG";
 	
 	public SettingsNavigationActivity() {
@@ -233,7 +233,7 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 	private Set<String> getVoiceFiles() {
 		// read available voice data
 		File extStorage = getMyApplication().getAppPath(IndexConstants.VOICE_INDEX_DIR);
-		Set<String> setFiles = new LinkedHashSet<String>();
+		Set<String> setFiles = new LinkedHashSet<>();
 		if (extStorage.exists()) {
 			for (File f : extStorage.listFiles()) {
 				if (f.isDirectory()) {
@@ -285,7 +285,7 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 			if(parameters.containsKey("short_way")) {
 				cat.addPreference(fastRoute);
 			}
-			List<RoutingParameter> others = new ArrayList<GeneralRouter.RoutingParameter>();
+			List<RoutingParameter> others = new ArrayList<>();
 			for(Map.Entry<String, RoutingParameter> e : parameters.entrySet()) {
 				String param = e.getKey();
 				RoutingParameter routingParameter = e.getValue();
@@ -474,7 +474,7 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 					adapter.getItemNames()) {
 				@NonNull
 				@Override
-				public View getView(final int position, View convertView, ViewGroup parent) {
+				public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
 					// User super class to create the View
 					View v = convertView;
 					if (v == null) {
@@ -538,7 +538,7 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 					adapter.getItemNames()) {
 				@NonNull
 				@Override
-				public View getView(final int position, View convertView, ViewGroup parent) {
+				public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
 					// User super class to create the View
 					View v = convertView;
 					if (v == null) {

@@ -1,5 +1,6 @@
 package net.osmand.plus.mapmarkers.adapters;
 
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v7.widget.RecyclerView;
@@ -73,8 +74,9 @@ public class MapMarkersListAdapter extends RecyclerView.Adapter<MapMarkerItemVie
 		reloadData();
 	}
 
-	@Override
-	public MapMarkerItemViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+	@NonNull
+    @Override
+	public MapMarkerItemViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
 		View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.map_marker_item_new, viewGroup, false);
 		view.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -86,7 +88,7 @@ public class MapMarkersListAdapter extends RecyclerView.Adapter<MapMarkerItemVie
 	}
 
 	@Override
-	public void onBindViewHolder(final MapMarkerItemViewHolder holder, int pos) {
+	public void onBindViewHolder(@NonNull final MapMarkerItemViewHolder holder, int pos) {
 		OsmandApplication app = mapActivity.getMyApplication();
 		boolean night = app.getDaynightHelper().isNightModeForMapControls();
 		IconsCache iconsCache = app.getIconsCache();

@@ -177,7 +177,7 @@ public class DownloadResources extends DownloadResourceGroup {
 	}
 
 	private void recalculateFilesToUpdate() {
-		List<IndexItem> stillUpdate = new ArrayList<IndexItem>();
+		List<IndexItem> stillUpdate = new ArrayList<>();
 		for (IndexItem item : itemsToUpdate) {
 			java.text.DateFormat format = app.getResourceManager().getDateFormat();
 			checkIfItemOutdated(item, format);
@@ -250,7 +250,7 @@ public class DownloadResources extends DownloadResourceGroup {
 
 		DownloadResourceGroup worldMaps = new DownloadResourceGroup(this, DownloadResourceGroupType.WORLD_MAPS);
 
-		Map<WorldRegion, List<IndexItem> > groupByRegion = new LinkedHashMap<WorldRegion, List<IndexItem>>();
+		Map<WorldRegion, List<IndexItem> > groupByRegion = new LinkedHashMap<>();
 		OsmandRegions regs = app.getRegions();
 		for (IndexItem ii : resources) {
 			if (ii.getType() == DownloadActivityType.VOICE_FILE) {
@@ -280,8 +280,8 @@ public class DownloadResources extends DownloadResourceGroup {
 		}
 		this.groupByRegion = groupByRegion;
 
-		LinkedList<WorldRegion> queue = new LinkedList<WorldRegion>();
-		LinkedList<DownloadResourceGroup> parent = new LinkedList<DownloadResourceGroup>();
+		LinkedList<WorldRegion> queue = new LinkedList<>();
+		LinkedList<DownloadResourceGroup> parent = new LinkedList<>();
 		DownloadResourceGroup worldSubregions = new DownloadResourceGroup(this, DownloadResourceGroupType.SUBREGIONS);
 		addGroup(worldSubregions);
 		for(WorldRegion rg : region.getSubregions()) {

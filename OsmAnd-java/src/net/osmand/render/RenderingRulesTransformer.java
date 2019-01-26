@@ -43,7 +43,7 @@ class RenderingRulesTransformer {
 	}
 	
 
-	private static final Map<String, Element> patterns = new HashMap<String, Element>();
+	private static final Map<String, Element> patterns = new HashMap<>();
 
 	private static void transform(Document document) {
 //		collectPatterns(document);

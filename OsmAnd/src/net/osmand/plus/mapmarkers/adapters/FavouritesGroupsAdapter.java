@@ -2,6 +2,7 @@ package net.osmand.plus.mapmarkers.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +25,7 @@ public class FavouritesGroupsAdapter extends GroupsAdapter {
 	}
 
 	@Override
-	public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+	public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 		if (holder instanceof MapMarkersGroupHeaderViewHolder) {
 			MapMarkersGroupHeaderViewHolder markersGroupHeaderViewHolder = (MapMarkersGroupHeaderViewHolder) holder;
 			markersGroupHeaderViewHolder.title.setText(app.getText(R.string.favourites_group));

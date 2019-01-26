@@ -26,7 +26,7 @@ class BaseLocationIndexRepository<T extends MapObject> {
 	
 	private String name;
 	
-	private final List<T> cachedObjects = new ArrayList<T>();
+	private final List<T> cachedObjects = new ArrayList<>();
 	private double cTopLatitude;
 	private double cBottomLatitude;
 	private double cLeftLongitude;

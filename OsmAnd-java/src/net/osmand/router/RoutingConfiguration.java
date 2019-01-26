@@ -24,7 +24,7 @@ public class RoutingConfiguration {
 	
 	private static final int DEFAULT_MEMORY_LIMIT = 30;
 	public final float DEVIATION_RADIUS = 3000;
-	private final Map<String, String> attributes = new LinkedHashMap<String, String>();
+	private final Map<String, String> attributes = new LinkedHashMap<>();
 
 	// 1. parameters of routing and different tweaks
 	// Influence on A* : f(x) + heuristicCoefficient*g(X)
@@ -53,10 +53,10 @@ public class RoutingConfiguration {
 	public static class Builder {
 		// Design time storage
 		private String defaultRouter = "";
-		private final Map<String, GeneralRouter> routers = new LinkedHashMap<String, GeneralRouter>();
-		private final Map<String, String> attributes = new LinkedHashMap<String, String>();
-		private final HashMap<Long, Location> impassableRoadLocations = new HashMap<Long, Location>();
-		private final List<RouteDataObject> impassableRoads = new ArrayList<RouteDataObject>();
+		private final Map<String, GeneralRouter> routers = new LinkedHashMap<>();
+		private final Map<String, String> attributes = new LinkedHashMap<>();
+		private final HashMap<Long, Location> impassableRoadLocations = new HashMap<>();
+		private final List<RouteDataObject> impassableRoads = new ArrayList<>();
 		
 		// Example
 //		{
@@ -181,7 +181,7 @@ public class RoutingConfiguration {
 		GeneralRouter currentRouter = null;
 		RouteDataObjectAttribute currentAttribute = null;
 		String preType = null;
-		Stack<RoutingRule> rulesStck = new Stack<RoutingConfiguration.RoutingRule>();
+		Stack<RoutingRule> rulesStck = new Stack<>();
 		parser.setInput(is, "UTF-8");
 		int tok;
 		while ((tok = parser.next()) != XmlPullParser.END_DOCUMENT) {
@@ -309,7 +309,7 @@ public class RoutingConfiguration {
 
 	private static GeneralRouter parseRoutingProfile(XmlPullParser parser, final RoutingConfiguration.Builder config) {
 		String currentSelectedRouter = parser.getAttributeValue("", "name");
-		Map<String, String> attrs = new LinkedHashMap<String, String>();
+		Map<String, String> attrs = new LinkedHashMap<>();
 		for(int i=0; i< parser.getAttributeCount(); i++) {
 			attrs.put(parser.getAttributeName(i), parser.getAttributeValue(i));
 		}

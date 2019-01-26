@@ -319,7 +319,7 @@ public abstract class ByteString implements Iterable<Byte> {
   // Helper method that takes the chunk size range as a parameter.
   private static ByteString readFrom(InputStream streamToDrain, int minChunkSize,
                                      int maxChunkSize) throws IOException {
-    Collection<ByteString> results = new ArrayList<ByteString>();
+    Collection<ByteString> results = new ArrayList<>();
 
     // copy the inbound bytes into a list of chunks; the chunk size
     // grows exponentially to support both short and long streams.
@@ -404,7 +404,7 @@ public abstract class ByteString implements Iterable<Byte> {
   public static ByteString copyFrom(Iterable<ByteString> byteStrings) {
     Collection<ByteString> collection;
     if (!(byteStrings instanceof Collection)) {
-      collection = new ArrayList<ByteString>();
+      collection = new ArrayList<>();
       for (ByteString byteString : byteStrings) {
         collection.add(byteString);
       }
@@ -733,7 +733,7 @@ public abstract class ByteString implements Iterable<Byte> {
         throw new IllegalArgumentException("Buffer size < 0");
       }
       this.initialCapacity = initialCapacity;
-      this.flushedBuffers = new ArrayList<ByteString>();
+      this.flushedBuffers = new ArrayList<>();
       this.buffer = new byte[initialCapacity];
     }
 

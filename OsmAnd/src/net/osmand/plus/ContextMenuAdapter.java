@@ -8,6 +8,7 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.AppCompatImageView;
 import android.view.ContextThemeWrapper;
@@ -115,8 +116,9 @@ public class ContextMenuAdapter {
 			return true;
 		}
 
-		@Override
-		public View getView(final int position, View convertView, ViewGroup parent) {
+		@NonNull
+        @Override
+		public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
 			// User super class to create the View
 			final ContextMenuItem item = getItem(position);
 			int layoutId = item.getLayout();

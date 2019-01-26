@@ -189,16 +189,16 @@ public class RenderingRuleStorageProperties {
 	
 	
 	public RenderingRuleStorageProperties() {
-		properties = new LinkedHashMap<String, RenderingRuleProperty>();
-		rules = new ArrayList<RenderingRuleProperty>();
-		customRules = new ArrayList<RenderingRuleProperty>();
+		properties = new LinkedHashMap<>();
+		rules = new ArrayList<>();
+		customRules = new ArrayList<>();
 		createDefaultRenderingRuleProperties();
 	}
 	
 	public RenderingRuleStorageProperties(RenderingRuleStorageProperties toClone) {
-		properties = new LinkedHashMap<String, RenderingRuleProperty>(toClone.properties);
-		rules = new ArrayList<RenderingRuleProperty>(toClone.rules);
-		customRules = new ArrayList<RenderingRuleProperty>(toClone.customRules);
+		properties = new LinkedHashMap<>(toClone.properties);
+		rules = new ArrayList<>(toClone.rules);
+		customRules = new ArrayList<>(toClone.customRules);
 		createDefaultRenderingRuleProperties();
 	}
 

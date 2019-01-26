@@ -101,12 +101,12 @@ public class BinaryMapIndexReader {
 	/*private*/ long dateCreated;
 	// keep them immutable inside
 	/*private*/ boolean basemap = false;
-	/*private*/ List<MapIndex> mapIndexes = new ArrayList<MapIndex>();
-	/*private*/ List<PoiRegion> poiIndexes = new ArrayList<PoiRegion>();
-	/*private*/ List<AddressRegion> addressIndexes = new ArrayList<AddressRegion>();
-	/*private*/ List<TransportIndex> transportIndexes = new ArrayList<TransportIndex>();
-	/*private*/ List<RouteRegion> routingIndexes = new ArrayList<RouteRegion>();
-	/*private*/ List<BinaryIndexPart> indexes = new ArrayList<BinaryIndexPart>();
+	/*private*/ List<MapIndex> mapIndexes = new ArrayList<>();
+	/*private*/ List<PoiRegion> poiIndexes = new ArrayList<>();
+	/*private*/ List<AddressRegion> addressIndexes = new ArrayList<>();
+	/*private*/ List<TransportIndex> transportIndexes = new ArrayList<>();
+	/*private*/ List<RouteRegion> routingIndexes = new ArrayList<>();
+	/*private*/ List<BinaryIndexPart> indexes = new ArrayList<>();
 
 	CodedInputStream codedIS;
 
@@ -153,12 +153,12 @@ public class BinaryMapIndexReader {
 		addressAdapter = new BinaryMapAddressReaderAdapter(this);
 		poiAdapter = new BinaryMapPoiReaderAdapter(this);
 		routeAdapter = new BinaryMapRouteReaderAdapter(this);
-		mapIndexes = new ArrayList<BinaryMapIndexReader.MapIndex>(referenceToSameFile.mapIndexes);
-		poiIndexes = new ArrayList<PoiRegion>(referenceToSameFile.poiIndexes);
-		addressIndexes = new ArrayList<AddressRegion>(referenceToSameFile.addressIndexes);
-		transportIndexes = new ArrayList<TransportIndex>(referenceToSameFile.transportIndexes);
-		routingIndexes = new ArrayList<RouteRegion>(referenceToSameFile.routingIndexes);
-		indexes = new ArrayList<BinaryIndexPart>(referenceToSameFile.indexes);
+		mapIndexes = new ArrayList<>(referenceToSameFile.mapIndexes);
+		poiIndexes = new ArrayList<>(referenceToSameFile.poiIndexes);
+		addressIndexes = new ArrayList<>(referenceToSameFile.addressIndexes);
+		transportIndexes = new ArrayList<>(referenceToSameFile.transportIndexes);
+		routingIndexes = new ArrayList<>(referenceToSameFile.routingIndexes);
+		indexes = new ArrayList<>(referenceToSameFile.indexes);
 		basemap = referenceToSameFile.basemap;
 		calculateCenterPointForRegions();
 	}
@@ -470,8 +470,8 @@ public class BinaryMapIndexReader {
 	 * Transport public methods
 	 */
 	public TIntObjectHashMap<TransportRoute> getTransportRoutes(int[] filePointers) throws IOException {
-		TIntObjectHashMap<TransportRoute> result = new TIntObjectHashMap<TransportRoute>();
-		Map<TransportIndex, TIntArrayList> groupPoints = new HashMap<TransportIndex, TIntArrayList>();
+		TIntObjectHashMap<TransportRoute> result = new TIntObjectHashMap<>();
+		Map<TransportIndex, TIntArrayList> groupPoints = new HashMap<>();
 		for (int filePointer : filePointers) {
 			TransportIndex ind = getTransportIndex(filePointer);
 			if (ind != null) {
@@ -487,7 +487,7 @@ public class BinaryMapIndexReader {
 			TransportIndex ind = e.getKey();
 			TIntArrayList pointers = e.getValue();
 			pointers.sort();
-			TIntObjectHashMap<String> stringTable = new TIntObjectHashMap<String>();
+			TIntObjectHashMap<String> stringTable = new TIntObjectHashMap<>();
 			for (int i = 0; i < pointers.size(); i++) {
 				int filePointer = pointers.get(i);
 				TransportRoute transportRoute = transportAdapter.getTransportRoute(filePointer, stringTable, false);
@@ -576,7 +576,7 @@ public class BinaryMapIndexReader {
 	 * Address public methods
 	 */
 	public List<String> getRegionNames() {
-		List<String> names = new ArrayList<String>();
+		List<String> names = new ArrayList<>();
 		for (AddressRegion r : addressIndexes) {
 			names.add(r.name);
 		}
@@ -599,7 +599,7 @@ public class BinaryMapIndexReader {
 
 	private List<City> getCities(SearchRequest<City> resultMatcher, StringMatcher matcher, String lang, int cityType)
 			throws IOException {
-		List<City> cities = new ArrayList<City>();
+		List<City> cities = new ArrayList<>();
 		for (AddressRegion r : addressIndexes) {
 			for (CitiesBlock block : r.cities) {
 				if (block.type == cityType) {
@@ -619,7 +619,7 @@ public class BinaryMapIndexReader {
 	}
 	private List<City> getCities(AddressRegion region, SearchRequest<City> resultMatcher, StringMatcher matcher,
 								 int cityType) throws IOException {
-		List<City> cities = new ArrayList<City>();
+		List<City> cities = new ArrayList<>();
 		for (CitiesBlock block : region.cities) {
 			if (block.type == cityType) {
 				codedIS.seek(block.filePointer);
@@ -848,7 +848,7 @@ public class BinaryMapIndexReader {
 		req.numberOfAcceptedObjects = 0;
 		req.numberOfAcceptedSubtrees = 0;
 		req.numberOfReadSubtrees = 0;
-		List<MapTree> foundSubtrees = new ArrayList<MapTree>();
+		List<MapTree> foundSubtrees = new ArrayList<>();
 		for (MapIndex mapIndex : mapIndexes) {
 			if(filterMapIndex != null && mapIndex != filterMapIndex) {
 				continue;
@@ -868,7 +868,7 @@ public class BinaryMapIndexReader {
 
 					// lazy initializing trees
 					if (index.trees == null) {
-						index.trees = new ArrayList<MapTree>();
+						index.trees = new ArrayList<>();
 						codedIS.seek(index.filePointer);
 						int oldLimit = codedIS.pushLimit(index.length);
 						readMapLevel(index);
@@ -951,7 +951,7 @@ public class BinaryMapIndexReader {
 						req.publish(mapObject);
 					}
 					if (tempResults == null) {
-						tempResults = new ArrayList<BinaryMapDataObject>();
+						tempResults = new ArrayList<>();
 					}
 					tempResults.add(mapObject);
 				}
@@ -1130,7 +1130,7 @@ public class BinaryMapIndexReader {
 				break;
 			case OsmandOdb.MapData.POLYGONINNERCOORDINATES_FIELD_NUMBER:
 				if (innercoordinates == null) {
-					innercoordinates = new ArrayList<TIntArrayList>();
+					innercoordinates = new ArrayList<>();
 				}
 				TIntArrayList polygon = new TIntArrayList();
 				innercoordinates.add(polygon);
@@ -1199,7 +1199,7 @@ public class BinaryMapIndexReader {
 				}
 				break;
 			case OsmandOdb.MapData.STRINGNAMES_FIELD_NUMBER:
-				stringNames = new TIntObjectHashMap<String>();
+				stringNames = new TIntObjectHashMap<>();
 				stringOrder = new TIntArrayList();
 				sizeL = codedIS.readRawVarint32();
 				old = codedIS.pushLimit(sizeL);
@@ -1349,7 +1349,7 @@ public class BinaryMapIndexReader {
 	}
 
 	List<String> readStringTable() throws IOException {
-		List<String> list = new ArrayList<String>();
+		List<String> list = new ArrayList<>();
 		while (true) {
 			int t = codedIS.readTag();
 			int tag = WireFormat.getTagFieldNumber(t);
@@ -1384,7 +1384,7 @@ public class BinaryMapIndexReader {
 	
 	public static SearchRequest<BinaryMapDataObject> buildSearchRequest(int sleft, int sright, int stop, int sbottom, int zoom, SearchFilter searchFilter, 
 			ResultMatcher<BinaryMapDataObject> resultMatcher){
-		SearchRequest<BinaryMapDataObject> request = new SearchRequest<BinaryMapDataObject>();
+		SearchRequest<BinaryMapDataObject> request = new SearchRequest<>();
 		request.left = sleft;
 		request.right = sright;
 		request.top = stop;
@@ -1396,7 +1396,7 @@ public class BinaryMapIndexReader {
 	}
 
 	public static <T> SearchRequest<T> buildAddressRequest(ResultMatcher<T> resultMatcher) {
-		SearchRequest<T> request = new SearchRequest<T>();
+		SearchRequest<T> request = new SearchRequest<>();
 		request.resultMatcher = resultMatcher;
 		return request;
 	}
@@ -1404,7 +1404,7 @@ public class BinaryMapIndexReader {
 
 	public static <T> SearchRequest<T> buildAddressByNameRequest(ResultMatcher<T> resultMatcher, String nameRequest, 
 			StringMatcherMode matcherMode) {
-		SearchRequest<T> request = new SearchRequest<T>();
+		SearchRequest<T> request = new SearchRequest<>();
 		request.resultMatcher = resultMatcher;
 		request.nameQuery = nameRequest.trim();
 		request.matcherMode = matcherMode;
@@ -1413,9 +1413,9 @@ public class BinaryMapIndexReader {
 
 	public static SearchRequest<Amenity> buildSearchPoiRequest(List<Location> route, double radius,
 			SearchPoiTypeFilter poiTypeFilter, ResultMatcher<Amenity> resultMatcher) {
-		SearchRequest<Amenity> request = new SearchRequest<Amenity>();
+		SearchRequest<Amenity> request = new SearchRequest<>();
 		float coeff = (float) (radius / MapUtils.getTileDistanceWidth(SearchRequest.ZOOM_TO_SEARCH_POI));
-		TLongObjectHashMap<List<Location>> zooms = new TLongObjectHashMap<List<Location>>();
+		TLongObjectHashMap<List<Location>> zooms = new TLongObjectHashMap<>();
 		for (int i = 1; i < route.size(); i++) {
 			Location cr = route.get(i);
 			Location pr = route.get(i - 1);
@@ -1463,7 +1463,7 @@ public class BinaryMapIndexReader {
 	
 	public static SearchRequest<Amenity> buildSearchPoiRequest(int sleft, int sright, int stop, int sbottom, int zoom, 
 			SearchPoiTypeFilter poiTypeFilter, ResultMatcher<Amenity> matcher){
-		SearchRequest<Amenity> request = new SearchRequest<Amenity>();
+		SearchRequest<Amenity> request = new SearchRequest<>();
 		request.left = sleft;
 		request.right = sright;
 		request.top = stop;
@@ -1477,7 +1477,7 @@ public class BinaryMapIndexReader {
 	
 	public static SearchRequest<RouteDataObject> buildSearchRouteRequest(int sleft, int sright, int stop, int sbottom,  
 			ResultMatcher<RouteDataObject> matcher){
-		SearchRequest<RouteDataObject> request = new SearchRequest<RouteDataObject>();
+		SearchRequest<RouteDataObject> request = new SearchRequest<>();
 		request.left = sleft;
 		request.right = sright;
 		request.top = stop;
@@ -1489,7 +1489,7 @@ public class BinaryMapIndexReader {
 
 
 	public static SearchRequest<Amenity> buildSearchPoiRequest(int x, int y, String nameFilter, int sleft, int sright, int stop, int sbottom, ResultMatcher<Amenity> resultMatcher) {
-		SearchRequest<Amenity> request = new SearchRequest<Amenity>();
+		SearchRequest<Amenity> request = new SearchRequest<>();
 		request.x = x;
 		request.y = y;
 		request.left = sleft;
@@ -1503,11 +1503,11 @@ public class BinaryMapIndexReader {
 
 
 	public static SearchRequest<TransportStop> buildSearchTransportRequest(int sleft, int sright, int stop, int sbottom, int limit, List<TransportStop> stops) {
-		SearchRequest<TransportStop> request = new SearchRequest<TransportStop>();
+		SearchRequest<TransportStop> request = new SearchRequest<>();
 		if (stops != null) {
 			request.searchResults = stops;
 		}
-		request.stringTable = new TIntObjectHashMap<String>();
+		request.stringTable = new TIntObjectHashMap<>();
 		request.left = sleft >> (31 - TRANSPORT_STOP_ZOOM);
 		request.right = sright >> (31 - TRANSPORT_STOP_ZOOM);
 		request.top = stop >> (31 - TRANSPORT_STOP_ZOOM);
@@ -1575,7 +1575,7 @@ public class BinaryMapIndexReader {
 
 	public static class SearchRequest<T> {
 		public final static int ZOOM_TO_SEARCH_POI = 16;
-		private List<T> searchResults = new ArrayList<T>();
+		private List<T> searchResults = new ArrayList<>();
 		private boolean land = false;
 		private boolean ocean = false;
 
@@ -1723,7 +1723,7 @@ public class BinaryMapIndexReader {
 
 		public void clearSearchResults() {
 			// recreate whole list to allow GC collect old data 
-			searchResults = new ArrayList<T>();
+			searchResults = new ArrayList<>();
 			cacheCoordinates.clear();
 			cacheTypes.clear();
 			land = false;
@@ -1741,10 +1741,10 @@ public class BinaryMapIndexReader {
 
 
 	public static class MapIndex extends BinaryIndexPart {
-		final List<MapRoot> roots = new ArrayList<MapRoot>();
+		final List<MapRoot> roots = new ArrayList<>();
 
-		final Map<String, Map<String, Integer>> encodingRules = new HashMap<String, Map<String, Integer>>();
-		final TIntObjectMap<TagValuePair> decodingRules = new TIntObjectHashMap<TagValuePair>();
+		final Map<String, Map<String, Integer>> encodingRules = new HashMap<>();
+		final TIntObjectMap<TagValuePair> decodingRules = new TIntObjectHashMap<>();
 		public int nameEncodingType = 0;
 		public int nameEnEncodingType = -1;
 		int refEncodingType = -1;
@@ -2180,7 +2180,7 @@ public class BinaryMapIndexReader {
 	}
 
 	private static List<Location> readGPX(File f) {
-		List<Location> res = new ArrayList<Location>();
+		List<Location> res = new ArrayList<>();
 		try {
 			StringBuilder content = new StringBuilder();
 			BufferedReader reader = new BufferedReader(getUTF8Reader(new FileInputStream(f)));
@@ -2212,11 +2212,9 @@ public class BinaryMapIndexReader {
 				} catch (NumberFormatException e) {
 				}
 			}
-		} catch (IOException e) {
+		} catch (IOException | SAXException e) {
 			throw new RuntimeException(e);
 		} catch (ParserConfigurationException e) {
-			throw new RuntimeException(e);
-		} catch (SAXException e) {
 			throw new RuntimeException(e);
 		}
 		return res;
@@ -2371,7 +2369,7 @@ public class BinaryMapIndexReader {
 		final double lat = 52.28212d;
 		final double lon = 4.86269d;
 		// test address index search
-		final List<Street> streetsList = new ArrayList<Street>();
+		final List<Street> streetsList = new ArrayList<>();
 		SearchRequest<MapObject> req = buildAddressByNameRequest(new ResultMatcher<MapObject>() {
 			@Override
 			public boolean publish(MapObject object) {
@@ -2391,18 +2389,18 @@ public class BinaryMapIndexReader {
 			}
 		}, streetName, StringMatcherMode.CHECK_EQUALS_FROM_SPACE);
 		reader.searchAddressDataByName(req);
-		TreeMap<MapObject, Street> resMap = new TreeMap<MapObject, Street>(new Comparator<MapObject>() {
+		TreeMap<MapObject, Street> resMap = new TreeMap<>(new Comparator<MapObject>() {
 
-			@Override
-			public int compare(MapObject o1, MapObject o2) {
-				LatLon l1 = o1.getLocation();
-				LatLon l2 = o2.getLocation();
-				if (l1 == null || l2 == null) {
-					return l2 == l1 ? 0 : (l1 == null ? -1 : 1);
-				}
-				return Double.compare(MapUtils.getDistance(l1, lat, lon), MapUtils.getDistance(l2, lat, lon));
-			}
-		});
+            @Override
+            public int compare(MapObject o1, MapObject o2) {
+                LatLon l1 = o1.getLocation();
+                LatLon l2 = o2.getLocation();
+                if (l1 == null || l2 == null) {
+                    return l2 == l1 ? 0 : (l1 == null ? -1 : 1);
+                }
+                return Double.compare(MapUtils.getDistance(l1, lat, lon), MapUtils.getDistance(l2, lat, lon));
+            }
+        });
 		for (Street s : streetsList) {
 			resMap.put(s, s);
 			reader.preloadBuildings(s, null);
@@ -2426,7 +2424,7 @@ public class BinaryMapIndexReader {
 
 	private static void testAddressSearch(BinaryMapIndexReader reader) throws IOException {
 		// test address index search
-		final Map<String, Integer> streetFreq = new HashMap<String, Integer>();
+		final Map<String, Integer> streetFreq = new HashMap<>();
 		List<City> cs = reader.getCities(null, BinaryMapAddressReaderAdapter.CITY_TOWN_TYPE);
 		for (City c : cs) {
 			int buildings = 0;
@@ -2449,7 +2447,7 @@ public class BinaryMapIndexReader {
 		}
 		System.out.println("Villages " + villages.size());
 
-		List<String> sorted = new ArrayList<String>(streetFreq.keySet());
+		List<String> sorted = new ArrayList<>(streetFreq.keySet());
 		Collections.sort(sorted, new Comparator<String>() {
 			@Override
 			public int compare(String o1, String o2) {

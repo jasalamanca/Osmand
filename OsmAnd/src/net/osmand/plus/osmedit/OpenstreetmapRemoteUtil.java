@@ -92,7 +92,7 @@ public class OpenstreetmapRemoteUtil implements OpenstreetmapUtil {
 
 	public String uploadGPXFile(String tagstring, String description, String visibility, File f) {
 		String url = URL_TO_UPLOAD_GPX;
-		Map<String, String> additionalData = new LinkedHashMap<String, String>();
+		Map<String, String> additionalData = new LinkedHashMap<>();
 		additionalData.put("description", description);
 		additionalData.put("tags", tagstring);
 		additionalData.put("visibility", visibility);

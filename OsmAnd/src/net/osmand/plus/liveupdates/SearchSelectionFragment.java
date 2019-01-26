@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -25,8 +26,8 @@ public abstract class SearchSelectionFragment extends BaseOsmAndDialogFragment {
 	private OnFragmentInteractionListener mListener;
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-							 Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_search_list, container, false);
 		ListView listView = view.findViewById(android.R.id.list);
 		final ArrayAdapter<String> adapter = new ListAdapter(getActivity(), getListItemIcon());
@@ -119,8 +120,9 @@ public abstract class SearchSelectionFragment extends BaseOsmAndDialogFragment {
 			this.drawableLeft = drawableLeftId == -1 ? null : getContentIcon(drawableLeftId);
 		}
 
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
+		@NonNull
+        @Override
+		public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 			TextView view = (TextView) super.getView(position, convertView, parent);
 			view.setCompoundDrawablesWithIntrinsicBounds(drawableLeft, null, null, null);
 			view.setCompoundDrawablePadding(getResources().getDimensionPixelSize(R.dimen.list_content_padding));

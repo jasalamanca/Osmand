@@ -248,7 +248,8 @@ public class OsmEditsUploadListenerHelper implements OsmEditsUploadListener {
 			this.layoutResourceId = layoutResourceId;
 		}
 
-		@Override
+		@NonNull
+        @Override
 		public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 			View row = convertView;
 			PointHolder holder;

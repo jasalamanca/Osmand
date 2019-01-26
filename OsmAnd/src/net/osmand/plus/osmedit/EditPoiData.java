@@ -19,7 +19,7 @@ import java.util.Set;
 public class EditPoiData {
 	private static final Log LOG = PlatformUtil.getLog(EditPoiData.class);
 	private final Set<TagsChangedListener> mListeners = new HashSet<>();
-	private final LinkedHashMap<String, String > tagValues = new LinkedHashMap<String, String>();
+	private final LinkedHashMap<String, String > tagValues = new LinkedHashMap<>();
 	private boolean isInEdit = false;
 	private final Node entity;
 	

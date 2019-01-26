@@ -10,7 +10,7 @@ public class MapTileDownloader {
 	// Download manager tile settings
 	private static MapTileDownloader downloader = null;
 
-	private List<WeakReference<IMapDownloaderCallback>> callbacks = new LinkedList<WeakReference<IMapDownloaderCallback>>();
+	private List<WeakReference<IMapDownloaderCallback>> callbacks = new LinkedList<>();
 
 	public static MapTileDownloader getInstance() {
 		if (downloader == null) {
@@ -36,13 +36,13 @@ public class MapTileDownloader {
 	}
 
 	public void addDownloaderCallback(IMapDownloaderCallback callback) {
-		LinkedList<WeakReference<IMapDownloaderCallback>> ncall = new LinkedList<WeakReference<IMapDownloaderCallback>>(callbacks);
-		ncall.add(new WeakReference<MapTileDownloader.IMapDownloaderCallback>(callback));
+		LinkedList<WeakReference<IMapDownloaderCallback>> ncall = new LinkedList<>(callbacks);
+		ncall.add(new WeakReference<>(callback));
 		callbacks = ncall;
 		}
 
 	public void removeDownloaderCallback(IMapDownloaderCallback callback) {
-		LinkedList<WeakReference<IMapDownloaderCallback>> ncall = new LinkedList<WeakReference<IMapDownloaderCallback>>(callbacks);
+		LinkedList<WeakReference<IMapDownloaderCallback>> ncall = new LinkedList<>(callbacks);
 		Iterator<WeakReference<IMapDownloaderCallback>> it = ncall.iterator();
 		while (it.hasNext()) {
 			IMapDownloaderCallback c = it.next().get();

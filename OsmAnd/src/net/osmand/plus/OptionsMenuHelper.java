@@ -19,7 +19,7 @@ class OptionsMenuHelper {
 	private final TIntArrayList items = new TIntArrayList();
 	private final TIntArrayList itemNames = new TIntArrayList();
 	private final TIntArrayList visible = new TIntArrayList();
-	private final ArrayList<OnOptionsMenuClick> listeners = new ArrayList<OnOptionsMenuClick>();
+	private final ArrayList<OnOptionsMenuClick> listeners = new ArrayList<>();
 	private final TIntArrayList iconList = new TIntArrayList();
 	
 	public OptionsMenuHelper() {

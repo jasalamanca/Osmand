@@ -86,8 +86,8 @@ public class FavoritesSearchFragment extends DialogFragment {
 
 	@Override
 	@SuppressLint("PrivateResource, ValidFragment")
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-							 Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 		final Activity activity = getActivity();
 		final View view = inflater.inflate(R.layout.search_favs_fragment, container, false);
 
@@ -158,7 +158,7 @@ public class FavoritesSearchFragment extends DialogFragment {
 	}
 
 	@Override
-	public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 		if (listView != null) {
 			listView.setOnScrollListener(new AbsListView.OnScrollListener() {

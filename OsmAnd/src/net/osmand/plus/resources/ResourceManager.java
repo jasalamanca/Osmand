@@ -162,15 +162,15 @@ public class ResourceManager {
 		}
 	}
 	
-	private final Map<String, BinaryMapReaderResource> fileReaders = new ConcurrentHashMap<String, BinaryMapReaderResource>();
+	private final Map<String, BinaryMapReaderResource> fileReaders = new ConcurrentHashMap<>();
 	
 	
-	private final Map<String, RegionAddressRepository> addressMap = new ConcurrentHashMap<String, RegionAddressRepository>();
-	private final Map<String, AmenityIndexRepository> amenityRepositories =  new ConcurrentHashMap<String, AmenityIndexRepository>();
-	private final Map<String, TransportIndexRepository> transportRepositories = new ConcurrentHashMap<String, TransportIndexRepository>();
+	private final Map<String, RegionAddressRepository> addressMap = new ConcurrentHashMap<>();
+	private final Map<String, AmenityIndexRepository> amenityRepositories = new ConcurrentHashMap<>();
+	private final Map<String, TransportIndexRepository> transportRepositories = new ConcurrentHashMap<>();
 	
-	private final Map<String, String> indexFileNames = new ConcurrentHashMap<String, String>();
-	private final Map<String, String> basemapFileNames = new ConcurrentHashMap<String, String>();
+	private final Map<String, String> indexFileNames = new ConcurrentHashMap<>();
+	private final Map<String, String> basemapFileNames = new ConcurrentHashMap<>();
 	
 	
 	private final IncrementalChangesManager changesManager = new IncrementalChangesManager(this);
@@ -259,7 +259,7 @@ public class ResourceManager {
 	public List<String> indexVoiceFiles(IProgress progress){
 		File file = context.getAppPath(IndexConstants.VOICE_INDEX_DIR);
 		file.mkdirs();
-		List<String> warnings = new ArrayList<String>();
+		List<String> warnings = new ArrayList<>();
 		if (file.exists() && file.canRead()) {
 			File[] lf = file.listFiles();
 			if (lf != null) {
@@ -282,7 +282,7 @@ public class ResourceManager {
 	public List<String> indexFontFiles(IProgress progress){
 		File file = context.getAppPath(IndexConstants.FONT_INDEX_DIR);
 		file.mkdirs();
-		List<String> warnings = new ArrayList<String>();
+		List<String> warnings = new ArrayList<>();
 		if (file.exists() && file.canRead()) {
 			File[] lf = file.listFiles();
 			if (lf != null) {
@@ -437,7 +437,7 @@ public class ResourceManager {
 
 	public List<String> indexingMaps(final IProgress progress) {
 		long val = System.currentTimeMillis();
-		ArrayList<File> files = new ArrayList<File>();
+		ArrayList<File> files = new ArrayList<>();
 		File appPath = context.getAppPath(null);
 		File roadsPath = context.getAppPath(IndexConstants.ROADS_INDEX_DIR);
 		roadsPath.mkdirs();
@@ -452,7 +452,7 @@ public class ResourceManager {
 		changesManager.collectChangesFiles(context.getAppPath(IndexConstants.LIVE_INDEX_DIR), IndexConstants.BINARY_MAP_INDEX_EXT, files);
 
 		Collections.sort(files, Algorithms.getFileVersionComparator());
-		List<String> warnings = new ArrayList<String>();
+		List<String> warnings = new ArrayList<>();
 		renderer.clearAllResources();
 		CachedOsmandIndexes cachedOsmandIndexes = new CachedOsmandIndexes();
 		File indCache = context.getAppPath(INDEXES_CACHE);
@@ -564,7 +564,7 @@ public class ResourceManager {
 
 	public List<Amenity> searchAmenities(SearchPoiTypeFilter filter,
 			double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude, int zoom, final ResultMatcher<Amenity> matcher) {
-		final List<Amenity> amenities = new ArrayList<Amenity>();
+		final List<Amenity> amenities = new ArrayList<>();
 		try {
 			if (!filter.isEmpty()) {
 				int top31 = MapUtils.get31TileNumberY(topLatitude);
@@ -594,10 +594,10 @@ public class ResourceManager {
 
     public List<Amenity> searchAmenitiesOnThePath(List<Location> locations, double radius, SearchPoiTypeFilter filter,
 			ResultMatcher<Amenity> matcher) {
-		final List<Amenity> amenities = new ArrayList<Amenity>();
+		final List<Amenity> amenities = new ArrayList<>();
 		try {
 			if (locations != null && locations.size() > 0) {
-				List<AmenityIndexRepository> repos = new ArrayList<AmenityIndexRepository>();
+				List<AmenityIndexRepository> repos = new ArrayList<>();
 				double topLatitude = locations.get(0).getLatitude();
 				double bottomLatitude = locations.get(0).getLatitude();
 				double leftLongitude = locations.get(0).getLongitude();
@@ -650,8 +650,8 @@ public class ResourceManager {
 	public List<Amenity> searchAmenitiesByName(String searchQuery,
 			double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude, 
 			double lat, double lon, ResultMatcher<Amenity> matcher) {
-		List<Amenity> amenities = new ArrayList<Amenity>();
-		List<AmenityIndexRepositoryBinary> list = new ArrayList<AmenityIndexRepositoryBinary>();
+		List<Amenity> amenities = new ArrayList<>();
+		List<AmenityIndexRepositoryBinary> list = new ArrayList<>();
 		int left = MapUtils.get31TileNumberX(leftLongitude);
 		int top = MapUtils.get31TileNumberY(topLatitude);
 		int right = MapUtils.get31TileNumberX(rightLongitude);
@@ -687,7 +687,7 @@ public class ResourceManager {
 	}
 	
 	public Map<PoiCategory, List<String>> searchAmenityCategoriesByName(String searchQuery, double lat, double lon) {
-		Map<PoiCategory, List<String>> map = new LinkedHashMap<PoiCategory, List<String>>();
+		Map<PoiCategory, List<String>> map = new LinkedHashMap<>();
 		for (AmenityIndexRepository index : amenityRepositories.values()) {
 			if (index instanceof AmenityIndexRepositoryBinary) {
 				if (index.checkContains(lat, lon)) {
@@ -715,7 +715,7 @@ public class ResourceManager {
 	
 	////////////////////////////////////////////// Working with transport ////////////////////////////////////////////////
 	public List<TransportIndexRepository> searchTransportRepositories(double latitude, double longitude) {
-		List<TransportIndexRepository> repos = new ArrayList<TransportIndexRepository>();
+		List<TransportIndexRepository> repos = new ArrayList<>();
 		for (TransportIndexRepository index : transportRepositories.values()) {
 			if (index.checkContains(latitude,longitude)) {
 				repos.add(index);
@@ -725,7 +725,7 @@ public class ResourceManager {
 	}
 	
 	public List<TransportStop> searchTransportSync(double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude, ResultMatcher<TransportStop> matcher){
-		List<TransportIndexRepository> repos = new ArrayList<TransportIndexRepository>();
+		List<TransportIndexRepository> repos = new ArrayList<>();
 		List<TransportStop> stops = new ArrayList<>();
 		for (TransportIndexRepository index : transportRepositories.values()) {
 			if (index.checkContains(topLatitude, leftLongitude, bottomLatitude, rightLongitude)) {
@@ -809,7 +809,7 @@ public class ResourceManager {
 	
 
 	public Map<String, String> getIndexFileNames() {
-		return new LinkedHashMap<String, String>(indexFileNames);
+		return new LinkedHashMap<>(indexFileNames);
 	}
 
 	public boolean containsBasemap(){

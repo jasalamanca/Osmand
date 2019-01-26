@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -136,7 +137,7 @@ public class ColorDialogs {
 
 		};
 		colors.add(pallette);
-        List<String> colorNames= new ArrayList<String>();
+        List<String> colorNames= new ArrayList<>();
         int selection = -1;
         for(int i = 0; i < pallette.length; i++) {
         	colorNames.add(ctx.getString(paletteColors[i]));
@@ -151,8 +152,9 @@ public class ColorDialogs {
         	selection = 0;
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(ctx, android.R.layout.simple_spinner_item, colorNames) {
-        	@Override
-        	public View getView(int position, View convertView, ViewGroup parent) {
+        	@NonNull
+            @Override
+        	public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         		View v = super.getView(position, convertView, parent);
         		if(v instanceof TextView) {
  				   ((TextView) v).setTextColor(colors.get(position));
@@ -169,7 +171,7 @@ public class ColorDialogs {
 	public static void setupColorSpinnerEx(final Activity ctx, int selectedColor, final Spinner colorSpinner,
 										   final TIntArrayList colors, OnItemSelectedListener listener) {
 		colors.add(pallette);
-		List<String> colorNames = new ArrayList<String>();
+		List<String> colorNames = new ArrayList<>();
 		int selection = -1;
 		for (int i = 0; i < pallette.length; i++) {
 			colorNames.add(ctx.getString(paletteColors[i]));
@@ -184,8 +186,9 @@ public class ColorDialogs {
 			selection = 0;
 		}
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(ctx, R.layout.color_spinner_item, colorNames) {
-			@Override
-			public View getView(int position, View convertView, ViewGroup parent) {
+			@NonNull
+            @Override
+			public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 				View v = super.getView(position, convertView, parent);
 				if (v instanceof TextView) {
 					TextView textView = (TextView) v;
@@ -196,7 +199,7 @@ public class ColorDialogs {
 			}
 
 			@Override
-			public View getDropDownView(int position, View convertView, ViewGroup parent) {
+			public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent) {
 				View v = super.getView(position, convertView, parent);
 				if (v instanceof TextView) {
 					TextView textView = (TextView) v;

@@ -4,6 +4,7 @@ package net.osmand.plus.activities.search;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -69,7 +70,7 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 	private static boolean searchOnLine = false;
 	private ArrayAdapter<String> spinnerAdapter;
 	private OsmandSettings settings;
-	private final List<WeakReference<Fragment>> fragList = new ArrayList<WeakReference<Fragment>>();
+	private final List<WeakReference<Fragment>> fragList = new ArrayList<>();
 	private boolean showOnlyOneTab;
 	
 	private AccessibilityAssistant accessibilityAssistant;
@@ -98,7 +99,7 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 		if (!showOnlyOneTab) {
 			ViewPager mViewPager = findViewById(R.id.pager);
 			PagerSlidingTabStrip mSlidingTabLayout = findViewById(R.id.sliding_tabs);
-			List<TabItem> mTabs = new ArrayList<TabItem>();
+			List<TabItem> mTabs = new ArrayList<>();
 			mTabs.add(getTabIndicator(R.string.poi, getFragment(POI_TAB_INDEX)));
 			mTabs.add(getTabIndicator(R.string.address, getFragment(ADDRESS_TAB_INDEX)));
 			mTabs.add(getTabIndicator(R.string.shared_string_location, getFragment(LOCATION_TAB_INDEX)));
@@ -205,16 +206,16 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 
 	private void setTopSpinner() {
 		spinnerAdapter = new ArrayAdapter<String>(getSupportActionBar().getThemedContext(), R.layout.spinner_item,
-				new ArrayList<String>(Arrays.asList(new String[]{
-						getString(R.string.search_position_undefined),
-						getString(R.string.shared_string_my_location) + getString(R.string.shared_string_ellipsis),
-						getString(R.string.search_position_map_view),
-						getString(R.string.search_position_favorites),
-						getString(R.string.search_position_address)
-					}))
+                new ArrayList<>(Arrays.asList(new String[]{
+                        getString(R.string.search_position_undefined),
+                        getString(R.string.shared_string_my_location) + getString(R.string.shared_string_ellipsis),
+                        getString(R.string.search_position_map_view),
+                        getString(R.string.search_position_favorites),
+                        getString(R.string.search_position_address)
+                }))
 				) {
 					@Override
-					public View getDropDownView(int position, View convertView, ViewGroup parent) {
+					public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent) {
 						View itemView = super.getDropDownView(position, convertView, parent);
 						itemView.setAccessibilityDelegate(accessibilityAssistant);
 						return itemView;
@@ -348,7 +349,7 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 	
 	@Override
 	public void onAttachFragment (Fragment fragment) {
-	    fragList.add(new WeakReference<Fragment>(fragment));
+	    fragList.add(new WeakReference<>(fragment));
 	}
 	
 	private void updateSearchPoint(LatLon searchPoint, String message, boolean showLoc){

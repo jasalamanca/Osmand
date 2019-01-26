@@ -70,11 +70,11 @@ public class LazyStringArrayList extends AbstractList<String>
   private final List<Object> list;
 
   public LazyStringArrayList() {
-    list = new ArrayList<Object>();
+    list = new ArrayList<>();
   }
 
   public LazyStringArrayList(LazyStringList from) {
-    list = new ArrayList<Object>(from.size());
+    list = new ArrayList<>(from.size());
     addAll(from);
   }
 

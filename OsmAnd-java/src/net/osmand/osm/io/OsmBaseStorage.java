@@ -63,15 +63,15 @@ public class OsmBaseStorage {
 	
 	private boolean parseStarted;
 	
-	private final Map<EntityId, Entity> entities = new LinkedHashMap<EntityId, Entity>();
-	private final Map<EntityId, EntityInfo> entityInfo = new LinkedHashMap<EntityId, EntityInfo>();
+	private final Map<EntityId, Entity> entities = new LinkedHashMap<>();
+	private final Map<EntityId, EntityInfo> entityInfo = new LinkedHashMap<>();
 	
 	// this is used to show feedback to user
     private int progressEntity = 0;
 	private IProgress progress;
 	private InputStream inputStream;
 	private InputStream streamForProgress;
-	private final List<IOsmStorageFilter> filters = new ArrayList<IOsmStorageFilter>();
+	private final List<IOsmStorageFilter> filters = new ArrayList<>();
 	private boolean supressWarnings = true;
 	private boolean convertTagsToLC = true;
 	private boolean parseEntityInfo;
@@ -165,7 +165,7 @@ public class OsmBaseStorage {
 		return ret;
 	}
 	
-	private static final Set<String> supportedVersions = new HashSet<String>();
+	private static final Set<String> supportedVersions = new HashSet<>();
 	static {
 		supportedVersions.add("0.6"); //$NON-NLS-1$
 		supportedVersions.add("0.5"); //$NON-NLS-1$

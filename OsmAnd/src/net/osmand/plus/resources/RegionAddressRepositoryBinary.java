@@ -35,9 +35,9 @@ import java.util.TreeMap;
 public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 	private static final Log log = PlatformUtil.getLog(RegionAddressRepositoryBinary.class);
 
-	private LinkedHashMap<Long, City> cities = new LinkedHashMap<Long, City>();
+	private LinkedHashMap<Long, City> cities = new LinkedHashMap<>();
     private final int ZOOM_QTREE = 10;
-	private final QuadTree<City> citiesQtree = new QuadTree<City>(new QuadRect(0, 0, 1 << (ZOOM_QTREE + 1),
+	private final QuadTree<City> citiesQtree = new QuadTree<>(new QuadRect(0, 0, 1 << (ZOOM_QTREE + 1),
 			1 << (ZOOM_QTREE + 1)), 8, 0.55f);
 	private final Map<String, City> postCodes;
 	private final Collator collator;
@@ -51,7 +51,7 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 		langSetting = mgr.getContext().getSettings().MAP_PREFERRED_LOCALE;
 		transliterateSetting = mgr.getContext().getSettings().MAP_TRANSLITERATE_NAMES;
 		this.collator = OsmAndCollator.primaryCollator();
-		this.postCodes = new TreeMap<String, City>(OsmAndCollator.primaryCollator());
+		this.postCodes = new TreeMap<>(OsmAndCollator.primaryCollator());
 	}
 
 	@Override
@@ -65,7 +65,7 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 			try {
 				List<City> cs = getOpenFile().getCities(BinaryMapIndexReader.buildAddressRequest(resultMatcher),
 						BinaryMapAddressReaderAdapter.CITY_TOWN_TYPE);
-				LinkedHashMap<Long, City> ncities = new LinkedHashMap<Long, City>();
+				LinkedHashMap<Long, City> ncities = new LinkedHashMap<>();
 				for (City c : cs) {
 					ncities.put(c.getId(), c);
 					LatLon loc = c.getLocation();
@@ -94,7 +94,7 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 			int x31 = MapUtils.get31TileNumberX(l.getLongitude());
 			int dz = (31 - ZOOM_QTREE);
 			if (cache == null) {
-				cache = new ArrayList<City>();
+				cache = new ArrayList<>();
 			}
 			cache.clear();
 			citiesQtree.queryInBox(new QuadRect((x31 >> dz) - 1, (y31 >> dz) - 1, (x31 >> dz) + 1, (y31 >> dz) + 1),
@@ -128,7 +128,7 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 	@Override
 	public void addCityToPreloadedList(City city) {
 		if (!cities.containsKey(city.getId())) {
-			LinkedHashMap<Long, City> ncities = new LinkedHashMap<Long, City>(cities);
+			LinkedHashMap<Long, City> ncities = new LinkedHashMap<>(cities);
 			ncities.put(city.getId(), city);
 			cities = ncities;
 		}
@@ -136,7 +136,7 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 
 	@Override
 	public List<City> getLoadedCities() {
-		return new ArrayList<City>(cities.values());
+		return new ArrayList<>(cities.values());
 	}
 
 	@Override
@@ -173,9 +173,9 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 	}
 
 	private List<City> fillWithCities(String name, final ResultMatcher<City> resultMatcher, final List<Integer> typeFilter) {
-		List<City> result = new ArrayList<City>();
+		List<City> result = new ArrayList<>();
 		ResultMatcher<MapObject> matcher = new ResultMatcher<MapObject>() {
-			final List<City> cache = new ArrayList<City>();
+			final List<City> cache = new ArrayList<>();
 
 			@Override
 			public boolean publish(MapObject o) {
@@ -341,7 +341,7 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 
 	@Override
 	public void clearCache() {
-		cities = new LinkedHashMap<Long, City>();
+		cities = new LinkedHashMap<>();
 		citiesQtree.clear();
 		postCodes.clear();
 

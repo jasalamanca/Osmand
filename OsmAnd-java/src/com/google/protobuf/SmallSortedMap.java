@@ -131,7 +131,7 @@ class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V> {
    */
   static <K extends Comparable<K>, V> SmallSortedMap<K, V> newInstanceForTest(
       int arraySize) {
-    return new SmallSortedMap<K, V>(arraySize);
+    return new SmallSortedMap<>(arraySize);
   }
 
   private final int maxArraySize;
@@ -376,7 +376,7 @@ class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V> {
   private SortedMap<K, V> getOverflowEntriesMutable() {
     checkMutable();
     if (overflowEntries.isEmpty() && !(overflowEntries instanceof TreeMap)) {
-      overflowEntries = new TreeMap<K, V>();
+      overflowEntries = new TreeMap<>();
     }
     return (SortedMap<K, V>) overflowEntries;
   }
@@ -388,7 +388,7 @@ class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V> {
   private void ensureEntryArrayMutable() {
     checkMutable();
     if (entryList.isEmpty() && !(entryList instanceof ArrayList)) {
-      entryList = new ArrayList<Entry>(maxArraySize);
+      entryList = new ArrayList<>(maxArraySize);
     }
   }
 

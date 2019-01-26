@@ -125,7 +125,7 @@ public class OpenstreetmapsDbHelper extends SQLiteOpenHelper {
 
 	private List<OpenstreetmapPoint> checkOpenstreetmapPoints(){
 		SQLiteDatabase db = getReadableDatabase();
-		List<OpenstreetmapPoint> points = new ArrayList<OpenstreetmapPoint>();
+		List<OpenstreetmapPoint> points = new ArrayList<>();
 		if (db != null) {
 			Cursor query = db.rawQuery("SELECT " +
 					OPENSTREETMAP_COL_ID + ", " +

@@ -9,8 +9,8 @@ import java.util.Map;
 public class PoiFilter extends AbstractPoiType {
 	
 	private final PoiCategory pc;
-	private final List<PoiType> poiTypes = new ArrayList<PoiType>();
-	private final Map<String, PoiType> map = new LinkedHashMap<String, PoiType>();
+	private final List<PoiType> poiTypes = new ArrayList<>();
+	private final Map<String, PoiType> map = new LinkedHashMap<>();
 
 	public PoiFilter(MapPoiTypes registry, PoiCategory pc, String keyName){
 		super(keyName, registry);

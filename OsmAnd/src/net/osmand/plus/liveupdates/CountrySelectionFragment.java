@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.TypedValue;
@@ -52,8 +53,8 @@ public class CountrySelectionFragment extends BaseOsmAndDialogFragment {
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-							 Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 		if (countryItems.size() == 0) {
 			initCountries(getMyApplication());
 		}
@@ -232,8 +233,9 @@ public class CountrySelectionFragment extends BaseOsmAndDialogFragment {
 			textColor = typedValue.data;
 		}
 
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
+		@NonNull
+        @Override
+		public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 			CountryItem item = getItem(position);
 			TextView view = (TextView) super.getView(position, convertView, parent);
 			view.setText(item.localName);

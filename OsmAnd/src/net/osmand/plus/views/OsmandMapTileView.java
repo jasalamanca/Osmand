@@ -141,7 +141,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 
 	private BaseMapLayer mainLayer;
 
-	private final Map<OsmandMapLayer, Float> zOrders = new HashMap<OsmandMapLayer, Float>();
+	private final Map<OsmandMapLayer, Float> zOrders = new HashMap<>();
 
 	private OnDrawMapListener onDrawMapListener;
 

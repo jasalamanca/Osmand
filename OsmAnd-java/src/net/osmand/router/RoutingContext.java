@@ -45,8 +45,8 @@ public class RoutingContext {
 	public final RoutingConfiguration config;
 	public final RouteCalculationMode calculationMode;
 	public final NativeLibrary nativeLib;
-	private final Map<BinaryMapIndexReader, List<RouteSubregion>> map = new LinkedHashMap<BinaryMapIndexReader, List<RouteSubregion>>();
-	public final Map<RouteRegion, BinaryMapIndexReader> reverseMap = new LinkedHashMap<RouteRegion, BinaryMapIndexReader>();
+	private final Map<BinaryMapIndexReader, List<RouteSubregion>> map = new LinkedHashMap<>();
+	public final Map<RouteRegion, BinaryMapIndexReader> reverseMap = new LinkedHashMap<>();
 	
 	// 1. Initial variables
 	public int startX;
@@ -60,15 +60,15 @@ public class RoutingContext {
 	public PrecalculatedRouteDirection precalculatedRouteDirection;
 
 	// 2. Routing memory cache (big objects)
-    private final TLongObjectHashMap<List<RoutingSubregionTile>> indexedSubregions = new TLongObjectHashMap<List<RoutingSubregionTile>>();
-	private final TLongObjectHashMap<List<RouteDataObject>> tileRoutes = new TLongObjectHashMap<List<RouteDataObject>>();
+    private final TLongObjectHashMap<List<RoutingSubregionTile>> indexedSubregions = new TLongObjectHashMap<>();
+	private final TLongObjectHashMap<List<RouteDataObject>> tileRoutes = new TLongObjectHashMap<>();
 	
 	// Needs to be a sorted array list . Another option to use hashmap but it will be more memory expensive
-    private final List<RoutingSubregionTile> subregionTiles = new ArrayList<RoutingSubregionTile>();
+    private final List<RoutingSubregionTile> subregionTiles = new ArrayList<>();
 	
 	// 3. Warm object caches
-    final ArrayList<RouteSegment> segmentsToVisitPrescripted = new ArrayList<BinaryRoutePlanner.RouteSegment>(5);
-	final ArrayList<RouteSegment> segmentsToVisitNotForbidden = new ArrayList<BinaryRoutePlanner.RouteSegment>(5);
+    final ArrayList<RouteSegment> segmentsToVisitPrescripted = new ArrayList<>(5);
+	final ArrayList<RouteSegment> segmentsToVisitNotForbidden = new ArrayList<>(5);
 
 	// 5. debug information (package accessor)
     private final TileStatistics global = new TileStatistics();
@@ -124,7 +124,7 @@ public class RoutingContext {
 		this.calculationMode = calcMode;
 		for (BinaryMapIndexReader mr : map) {
 			List<RouteRegion> rr = mr.getRoutingIndexes();
-			List<RouteSubregion> subregions = new ArrayList<BinaryMapRouteReaderAdapter.RouteSubregion>();
+			List<RouteSubregion> subregions = new ArrayList<>();
 			for (RouteRegion r : rr) {
 				List<RouteSubregion> subregs = calcMode == RouteCalculationMode.BASE ? r.getBaseSubregions() :
 					r.getSubregions();
@@ -249,7 +249,7 @@ public class RoutingContext {
 	
 	public RouteSegment loadRouteSegment(int x31, int y31, int memoryLimit) {
 		long tileId = getRoutingTile(x31, y31, memoryLimit, OPTION_SMART_LOAD);
-		TLongObjectHashMap<RouteDataObject> excludeDuplications = new TLongObjectHashMap<RouteDataObject>();
+		TLongObjectHashMap<RouteDataObject> excludeDuplications = new TLongObjectHashMap<>();
 		RouteSegment original = null;
 		if (tileRoutes.containsKey(tileId)) {
 			List<RouteDataObject> routes = tileRoutes.get(tileId);
@@ -355,7 +355,7 @@ public class RoutingContext {
 							found = subregionTiles.get(ind);
 						}
 						if (collection == null) {
-							collection = new ArrayList<RoutingContext.RoutingSubregionTile>(4);
+							collection = new ArrayList<>(4);
 						}
 						collection.add(found);
 					}
@@ -386,7 +386,7 @@ public class RoutingContext {
 			}
 		}
 		TLongIterator it = ts.iterator();
-		TLongObjectHashMap<RouteDataObject> excludeDuplications = new TLongObjectHashMap<RouteDataObject>();
+		TLongObjectHashMap<RouteDataObject> excludeDuplications = new TLongObjectHashMap<>();
 		while(it.hasNext()){
 			getAllObjects(it.next(), toFillIn, excludeDuplications);
 		}
@@ -453,7 +453,7 @@ public class RoutingContext {
 	
 	public void unloadUnusedTiles(int memoryLimit) {
 		float desirableSize = memoryLimit * 0.7f;
-		List<RoutingSubregionTile> list = new ArrayList<RoutingSubregionTile>(subregionTiles.size() / 2);
+		List<RoutingSubregionTile> list = new ArrayList<>(subregionTiles.size() / 2);
 		int loaded = 0;
 		for(RoutingSubregionTile t : subregionTiles) {
 			if(t.isLoaded()) {
@@ -680,7 +680,7 @@ public class RoutingContext {
 			tileStatistics = new TileStatistics();
 			if (r.objects != null) {
 				searchResult = null;
-				routes = new TLongObjectHashMap<BinaryRoutePlanner.RouteSegment>();
+				routes = new TLongObjectHashMap<>();
 				for (RouteDataObject ro : r.objects) {
 					if (ro != null && ctx.config.router.acceptLine(ro)) {
 						add(ro);

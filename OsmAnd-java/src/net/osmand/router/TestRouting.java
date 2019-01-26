@@ -33,7 +33,7 @@ public class TestRouting {
 	
 	public static class Parameters {
 		File obfDir;
-		final List<File> tests = new ArrayList<File>();
+		final List<File> tests = new ArrayList<>();
 		double startLat = 0;
 		double startLon = 0;
 		double endLat = 0;
@@ -285,7 +285,7 @@ public class TestRouting {
 	}
 	
 	private static BinaryMapIndexReader[] collectFiles(String folderWithObf) throws FileNotFoundException, IOException {
-		List<File> files = new ArrayList<File>();
+		List<File> files = new ArrayList<>();
 		for (File f : new File(folderWithObf).listFiles()) {
 			if (f.getName().endsWith(".obf")) {
 				files.add(f);

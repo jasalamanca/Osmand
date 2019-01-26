@@ -38,7 +38,7 @@ public class GeneralRouter implements VehicleRouter {
     private boolean heightObstacles;
 	private boolean allowPrivate;
 
-	private final Map<RouteRegion, Map<Integer, Integer>> regionConvert = new LinkedHashMap<RouteRegion, Map<Integer,Integer>>();
+	private final Map<RouteRegion, Map<Integer, Integer>> regionConvert = new LinkedHashMap<>();
 	
 	// cached values
 	private boolean restrictionsAware = true;
@@ -92,7 +92,7 @@ public class GeneralRouter implements VehicleRouter {
 	
 	public GeneralRouter(GeneralRouterProfile profile, Map<String, String> attributes) {
 		this.profile = profile;
-		this.attributes = new LinkedHashMap<String, String>();
+		this.attributes = new LinkedHashMap<>();
 		Iterator<Entry<String, String>> e = attributes.entrySet().iterator();
 		while(e.hasNext()){
 			Entry<String, String> next = e.next();
@@ -102,16 +102,16 @@ public class GeneralRouter implements VehicleRouter {
 		for (int i = 0; i < objectAttributes.length; i++) {
 			objectAttributes[i] = new RouteAttributeContext();
 		}
-		universalRules = new LinkedHashMap<String, Integer>();
-		universalRulesById = new ArrayList<String>();
-		tagRuleMask = new LinkedHashMap<String, BitSet>();
-		ruleToValue = new ArrayList<Object>();
-		parameters = new LinkedHashMap<String, GeneralRouter.RoutingParameter>();
+		universalRules = new LinkedHashMap<>();
+		universalRulesById = new ArrayList<>();
+		tagRuleMask = new LinkedHashMap<>();
+		ruleToValue = new ArrayList<>();
+		parameters = new LinkedHashMap<>();
 	}
 	
 	private GeneralRouter(GeneralRouter parent, Map<String, String> params) {
 		this.profile = parent.profile;
-		this.attributes = new LinkedHashMap<String, String>();
+		this.attributes = new LinkedHashMap<>();
 		Iterator<Entry<String, String>> e = parent.attributes.entrySet().iterator();
 		while (e.hasNext()) {
 			Entry<String, String> next = e.next();
@@ -490,7 +490,7 @@ public class GeneralRouter implements VehicleRouter {
 	}
 	
 	public class RouteAttributeContext {
-		final List<RouteAttributeEvalRule> rules = new ArrayList<RouteAttributeEvalRule>();
+		final List<RouteAttributeEvalRule> rules = new ArrayList<>();
 		ParameterContext paramContext = null;
 		
 		RouteAttributeContext(){
@@ -612,7 +612,7 @@ public class GeneralRouter implements VehicleRouter {
 			BitSet b = new BitSet(universalRules.size());
 			Map<Integer, Integer> map = regionConvert.get(reg);
 			if(map == null){
-				map = new HashMap<Integer, Integer>();
+				map = new HashMap<>();
 				regionConvert.put(reg, map);
 			}
 			for(int k = 0; k < types.length; k++) {
@@ -708,10 +708,10 @@ public class GeneralRouter implements VehicleRouter {
 	
 
 	public class RouteAttributeEvalRule {
-		final List<String> parameters = new ArrayList<String>() ;
-		final List<String> tagValueCondDefTag = new ArrayList<String>();
-		final List<String> tagValueCondDefValue = new ArrayList<String>();
-		final List<Boolean> tagValueCondDefNot = new ArrayList<Boolean>();
+		final List<String> parameters = new ArrayList<>() ;
+		final List<String> tagValueCondDefTag = new ArrayList<>();
+		final List<String> tagValueCondDefValue = new ArrayList<>();
+		final List<Boolean> tagValueCondDefNot = new ArrayList<>();
 		
 		String selectValueDef = null;
 		Object selectValue = null;
@@ -720,9 +720,9 @@ public class GeneralRouter implements VehicleRouter {
 		final BitSet filterNotTypes = new BitSet();
 		final BitSet evalFilterTypes = new BitSet();
 		
-		final Set<String> onlyTags = new LinkedHashSet<String>();
-		final Set<String> onlyNotTags = new LinkedHashSet<String>();
-		final List<RouteAttributeExpression> expressions = new ArrayList<RouteAttributeExpression>();
+		final Set<String> onlyTags = new LinkedHashSet<>();
+		final Set<String> onlyNotTags = new LinkedHashSet<>();
+		final List<RouteAttributeExpression> expressions = new ArrayList<>();
 		
 		
 		public RouteAttributeExpression[] getExpressions() {

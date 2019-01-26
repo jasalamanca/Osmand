@@ -22,7 +22,7 @@ public class AccessibilityPlugin extends OsmandPlugin {
 	private static final String ID = "osmand.accessibility";
 	private final OsmandApplication app;
 	private SoundPool sounds;
-	private final Map<Integer, Integer> soundIcons = new HashMap<Integer, Integer>();
+	private final Map<Integer, Integer> soundIcons = new HashMap<>();
 
 	public AccessibilityPlugin(OsmandApplication app) {
 		this.app = app;

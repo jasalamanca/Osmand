@@ -2,6 +2,7 @@ package net.osmand.plus.mapcontextmenu.other;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
@@ -82,9 +83,10 @@ public class ShareMenuFragment extends MenuBottomSheetDialogFragment implements 
 		final List<ShareItem> items = menu.getItems();
 		return new ArrayAdapter<ShareItem>(menu.getMapActivity(), R.layout.share_list_item, items) {
 
-			@SuppressLint("InflateParams")
+			@NonNull
+            @SuppressLint("InflateParams")
 			@Override
-			public View getView(final int position, View convertView, ViewGroup parent) {
+			public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
 				View v = convertView;
 				if (v == null) {
 					v = menu.getMapActivity().getLayoutInflater().inflate(R.layout.share_list_item, null);

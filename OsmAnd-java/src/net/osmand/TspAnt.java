@@ -87,7 +87,7 @@ public class TspAnt {
     // Allocates all memory.
     // Adds 1 to edge lengths to ensure no zero length edges.
     public TspAnt readGraph(List<LatLon> intermediates, LatLon start, LatLon end) {
-    	List<LatLon> l = new ArrayList<LatLon>();
+    	List<LatLon> l = new ArrayList<>();
     	l.add(start);
     	l.addAll(intermediates);
     	l.add(end);

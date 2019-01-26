@@ -9,7 +9,7 @@ import java.util.Collections;
 
 class TspTest {
 	public static void main(String[] args) {
-		ArrayList<LatLon> l = new ArrayList<LatLon>();
+		ArrayList<LatLon> l = new ArrayList<>();
 		LatLon start = new LatLon(52.2956, 4.95);
 		LatLon farest = new LatLon(52.4556, 4.6739);
 		
@@ -20,7 +20,7 @@ class TspTest {
 		l.add(new LatLon(52.56, 4.9505)); // 6.
 		l.add(new LatLon(52.49, 4.9705)); // 7.
 		l.add(new LatLon(52.35, 4.9405)); // 8.
-		ArrayList<LatLon> sh = new ArrayList<LatLon>(l);
+		ArrayList<LatLon> sh = new ArrayList<>(l);
 		Collections.shuffle(sh);
 		
 		int[] mixedOrder = new int[l.size()];

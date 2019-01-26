@@ -178,7 +178,7 @@ public class OpeningHoursParser {
 		 * Empty constructor
 		 */
 		public OpeningHours() {
-			rules = new ArrayList<OpeningHoursRule>();
+			rules = new ArrayList<>();
 		}
 
 		List<Info> getInfo() {

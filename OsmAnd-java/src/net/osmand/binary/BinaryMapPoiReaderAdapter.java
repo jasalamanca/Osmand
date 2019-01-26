@@ -50,10 +50,10 @@ public class BinaryMapPoiReaderAdapter {
 	}
 
 	public static class PoiRegion extends BinaryIndexPart {
-		final List<String> categories = new ArrayList<String>();
-		final List<PoiCategory> categoriesType = new ArrayList<PoiCategory>();
-		final List<List<String>> subcategories = new ArrayList<List<String>>();
-		final List<PoiSubType> subTypes = new ArrayList<PoiSubType>();
+		final List<String> categories = new ArrayList<>();
+		final List<PoiCategory> categoriesType = new ArrayList<>();
+		final List<List<String>> subcategories = new ArrayList<>();
+		final List<PoiSubType> subTypes = new ArrayList<>();
 
 		int left31;
 		int right31;
@@ -230,7 +230,7 @@ public class BinaryMapPoiReaderAdapter {
 						break;
 					case OsmandOdb.OsmAndPoiSubtype.SUBTYPEVALUE_FIELD_NUMBER:
 						if (st.possibleValues == null) {
-							st.possibleValues = new ArrayList<String>();
+							st.possibleValues = new ArrayList<>();
 						}
 						st.possibleValues.add(codedIS.readString().intern());
 						break;
@@ -714,7 +714,7 @@ public class BinaryMapPoiReaderAdapter {
 				PoiSubType textt = region.getSubtypeFromId(texttypev, retValue);
 				if (textt != null && textt.text) {
 					if (textTags == null) {
-						textTags = new LinkedList<String>();
+						textTags = new LinkedList<>();
 					}
 					textTags.add(textt.name);
 				}

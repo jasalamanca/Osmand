@@ -59,7 +59,7 @@ public class SearchUICore {
 
 	public SearchUICore(MapPoiTypes poiTypes, String locale, boolean transliterate) {
 		this.poiTypes = poiTypes;
-        LinkedBlockingQueue<Runnable> taskQueue = new LinkedBlockingQueue<Runnable>();
+        LinkedBlockingQueue<Runnable> taskQueue = new LinkedBlockingQueue<>();
 		searchSettings = new SearchSettings(new ArrayList<BinaryMapIndexReader>());
 		searchSettings = searchSettings.setLang(locale, transliterate);
 		phrase = new SearchPhrase(searchSettings, OsmAndCollator.primaryCollator());
@@ -160,7 +160,7 @@ public class SearchUICore {
 
 		private void filterSearchDuplicateResults(List<SearchResult> lst) {
 			ListIterator<SearchResult> it = lst.listIterator();
-			LinkedList<SearchResult> lstUnique = new LinkedList<SearchResult>();
+			LinkedList<SearchResult> lstUnique = new LinkedList<>();
 			while (it.hasNext()) {
 				SearchResult r = it.next();
 				boolean same = false;

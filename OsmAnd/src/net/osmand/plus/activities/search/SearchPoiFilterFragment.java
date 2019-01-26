@@ -3,6 +3,7 @@ package net.osmand.plus.activities.search;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.PopupMenu;
 import android.text.Editable;
@@ -136,7 +137,7 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 	}
 
 	private List<Object> getFilters(String s) {
-		List<Object> filters = new ArrayList<Object>();
+		List<Object> filters = new ArrayList<>();
 		OsmandApplication app = getApp();
 		if (app == null) {
 			return filters;
@@ -271,8 +272,9 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 			notifyDataSetInvalidated();
 		}
 
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
+		@NonNull
+        @Override
+		public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 			View row = convertView;
 			if (row == null) {
 				LayoutInflater inflater = getActivity().getLayoutInflater();

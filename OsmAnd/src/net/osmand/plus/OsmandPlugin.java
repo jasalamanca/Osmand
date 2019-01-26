@@ -36,7 +36,7 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class OsmandPlugin {
-	private static final List<OsmandPlugin> allPlugins = new ArrayList<OsmandPlugin>();
+	private static final List<OsmandPlugin> allPlugins = new ArrayList<>();
 	private static final Log LOG = PlatformUtil.getLog(OsmandPlugin.class);
 
 	private boolean active;
@@ -285,7 +285,7 @@ public abstract class OsmandPlugin {
 	}
 
 	public static List<OsmandPlugin> getEnabledPlugins() {
-		ArrayList<OsmandPlugin> lst = new ArrayList<OsmandPlugin>(allPlugins.size());
+		ArrayList<OsmandPlugin> lst = new ArrayList<>(allPlugins.size());
 		for (OsmandPlugin p : allPlugins) {
 			if (p.isActive()) {
 				lst.add(p);
@@ -295,7 +295,7 @@ public abstract class OsmandPlugin {
 	}
 
 	public static List<OsmandPlugin> getEnabledVisiblePlugins() {
-		ArrayList<OsmandPlugin> lst = new ArrayList<OsmandPlugin>(allPlugins.size());
+		ArrayList<OsmandPlugin> lst = new ArrayList<>(allPlugins.size());
 		for (OsmandPlugin p : allPlugins) {
 			if (p.isActive() && p.isVisible()) {
 				lst.add(p);
@@ -305,7 +305,7 @@ public abstract class OsmandPlugin {
 	}
 
 	public static List<OsmandPlugin> getNotEnabledPlugins() {
-		ArrayList<OsmandPlugin> lst = new ArrayList<OsmandPlugin>(allPlugins.size());
+		ArrayList<OsmandPlugin> lst = new ArrayList<>(allPlugins.size());
 		for (OsmandPlugin p : allPlugins) {
 			if (!p.isActive()) {
 				lst.add(p);
@@ -315,7 +315,7 @@ public abstract class OsmandPlugin {
 	}
 
 	public static List<OsmandPlugin> getNotEnabledVisiblePlugins() {
-		ArrayList<OsmandPlugin> lst = new ArrayList<OsmandPlugin>(allPlugins.size());
+		ArrayList<OsmandPlugin> lst = new ArrayList<>(allPlugins.size());
 		for (OsmandPlugin p : allPlugins) {
 			if (!p.isActive() && p.isVisible()) {
 				lst.add(p);
@@ -345,7 +345,7 @@ public abstract class OsmandPlugin {
 	}
 
 	public static List<String> onIndexingFiles(IProgress progress) {
-		List<String> l = new ArrayList<String>();
+		List<String> l = new ArrayList<>();
 		for (OsmandPlugin plugin : getEnabledPlugins()) {
 			List<String> ls = plugin.indexingFiles(progress);
 			if (ls != null && ls.size() > 0) {

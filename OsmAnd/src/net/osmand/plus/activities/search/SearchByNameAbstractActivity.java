@@ -12,6 +12,7 @@ import android.os.AsyncTask.Status;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.Spannable;
 import android.text.TextWatcher;
@@ -490,8 +491,9 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 			Collections.sort(list, cmp);
 		}
 
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
+		@NonNull
+        @Override
+		public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 			View row;
 			if (convertView != null) {
 				row = convertView;

@@ -15,7 +15,7 @@ import java.util.Stack;
 public class AsyncLoadingThread extends Thread {
 	private static final Log log = PlatformUtil.getLog(AsyncLoadingThread.class);
 	
-	private final Stack<Object> requests = new Stack<Object>();
+	private final Stack<Object> requests = new Stack<>();
 	private final ResourceManager resourceManger;
 
 	public AsyncLoadingThread(ResourceManager resourceManger) {

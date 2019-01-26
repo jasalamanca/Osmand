@@ -89,7 +89,7 @@ final class FieldSet<FieldDescriptorType extends
   /** Construct a new FieldSet. */
   public static <T extends FieldSet.FieldDescriptorLite<T>>
       FieldSet<T> newFieldSet() {
-    return new FieldSet<T>();
+    return new FieldSet<>();
   }
 
   /** Get an immutable empty FieldSet. */
@@ -194,8 +194,8 @@ final class FieldSet<FieldDescriptorType extends
    */
   public Iterator<Map.Entry<FieldDescriptorType, Object>> iterator() {
     if (hasLazyField) {
-      return new LazyIterator<FieldDescriptorType>(
-          fields.entrySet().iterator());
+      return new LazyIterator<>(
+              fields.entrySet().iterator());
     }
     return fields.entrySet().iterator();
   }
@@ -346,7 +346,7 @@ final class FieldSet<FieldDescriptorType extends
     final Object existingValue = getField(descriptor);
     List<Object> list;
     if (existingValue == null) {
-      list = new ArrayList<Object>();
+      list = new ArrayList<>();
       fields.put(descriptor, list);
     } else {
       list = (List<Object>) existingValue;

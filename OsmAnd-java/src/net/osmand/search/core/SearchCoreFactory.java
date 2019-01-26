@@ -221,8 +221,8 @@ public class SearchCoreFactory {
 		private static final int LIMIT = 10000;
 
 		private final Map<BinaryMapIndexReader, List<City>> townCities = new LinkedHashMap<>();
-		private final QuadTree<City> townCitiesQR = new QuadTree<City>(new QuadRect(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE),
-				8, 0.55f);
+		private final QuadTree<City> townCitiesQR = new QuadTree<>(new QuadRect(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE),
+                8, 0.55f);
 		private List<City> resArray = new ArrayList<>();
 		private final SearchStreetByCityAPI cityApi;
 		private final SearchBuildingAndIntersectionsByStreetAPI streetsApi;
@@ -491,7 +491,7 @@ public class SearchCoreFactory {
 					SearchPhraseDataType.POI);
 			final NameStringMatcher nm = phrase.getNameStringMatcher();
 			QuadRect bbox = phrase.getRadiusBBoxToSearch(BBOX_RADIUS_INSIDE);
-			final Set<String> ids = new HashSet<String>();
+			final Set<String> ids = new HashSet<>();
 			SearchRequest<Amenity> req = BinaryMapIndexReader.buildSearchPoiRequest(
 					(int)bbox.centerX(), (int)bbox.centerY(),
 					phrase.getUnknownSearchWord(),
@@ -608,7 +608,7 @@ public class SearchCoreFactory {
 				categories = types.getCategories(false);
 			}
 //			results.clear();
-			List<AbstractPoiType> results = new ArrayList<AbstractPoiType>() ;
+			List<AbstractPoiType> results = new ArrayList<>() ;
 			NameStringMatcher nm = phrase.getNameStringMatcher();
 			for (PoiFilter pf : topVisibleFilters) {
 				if (!phrase.isUnknownSearchWordPresent() || nm.matches(pf.getTranslation())) {
@@ -698,9 +698,8 @@ public class SearchCoreFactory {
 			return getSearchPriority(phrase) != -1 && super.isSearchMoreAvailable(phrase);
 		}
 
-		private final Map<PoiCategory, LinkedHashSet<String>> acceptedTypes = new LinkedHashMap<PoiCategory,
-				LinkedHashSet<String>>();
-		private final Map<String, PoiType> poiAdditionals = new HashMap<String, PoiType>();
+		private final Map<PoiCategory, LinkedHashSet<String>> acceptedTypes = new LinkedHashMap<>();
+		private final Map<String, PoiType> poiAdditionals = new HashMap<>();
 		void updateTypesToAccept(AbstractPoiType pt) {
 			pt.putTypes(acceptedTypes);
 			if (pt instanceof PoiType && pt.isAdditional() && ((PoiType) pt).getParentType() != null) {

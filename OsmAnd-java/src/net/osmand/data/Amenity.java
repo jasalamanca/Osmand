@@ -130,7 +130,7 @@ public class Amenity extends MapObject {
 			setName(tag.substring("name:".length()), value);
 		} else {
 			if (this.additionalInfo == null) {
-				this.additionalInfo = new LinkedHashMap<String, String>();
+				this.additionalInfo = new LinkedHashMap<>();
 			}
 			this.additionalInfo.put(tag, value);
 			if (OPENING_HOURS.equals(tag)) {
@@ -196,7 +196,7 @@ public class Amenity extends MapObject {
 	}
 
 	public List<String> getNames(String tag, String defTag) {
-		List<String> l = new ArrayList<String>();
+		List<String> l = new ArrayList<>();
 		for (String nm : getAdditionalInfo().keySet()) {
 			if (nm.startsWith(tag + ":")) {
 				l.add(nm.substring(tag.length() + 1));

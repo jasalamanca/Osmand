@@ -11,6 +11,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.FileProvider;
@@ -99,8 +100,8 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-							 Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 		final OsmandApplication app = getMyApplication();
 		helper = app.getRoutingHelper();
 
@@ -498,8 +499,9 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 		}
 
 
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
+		@NonNull
+        @Override
+		public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 			View row = convertView;
 			if (row == null) {
 				LayoutInflater inflater =

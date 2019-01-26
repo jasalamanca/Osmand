@@ -161,7 +161,7 @@ public class BinaryMapRouteReaderAdapter {
 			} else if(t.startsWith("access") && v != null){
 				type = ACCESS;
 			} else if(t.equalsIgnoreCase("maxspeed:conditional") && v != null){
-				conditions = new ArrayList<RouteTypeCondition>();
+				conditions = new ArrayList<>();
 				String[] cts = v.split(";");
 				for(String c : cts) {
 					int ch = c.indexOf('@');
@@ -207,10 +207,10 @@ public class BinaryMapRouteReaderAdapter {
 
 	public static class RouteRegion extends BinaryIndexPart {
 		int regionsRead;
-		public final List<RouteTypeRule> routeEncodingRules = new ArrayList<BinaryMapRouteReaderAdapter.RouteTypeRule>();
+		public final List<RouteTypeRule> routeEncodingRules = new ArrayList<>();
 		Map<String, Integer> decodingRules = null;
-		final List<RouteSubregion> subregions = new ArrayList<RouteSubregion>();
-		final List<RouteSubregion> basesubregions = new ArrayList<RouteSubregion>();
+		final List<RouteSubregion> subregions = new ArrayList<>();
+		final List<RouteSubregion> basesubregions = new ArrayList<>();
 		
 		int nameTypeRule = -1;
 		int refTypeRule = -1;
@@ -229,7 +229,7 @@ public class BinaryMapRouteReaderAdapter {
 		
 		int searchRouteEncodingRule(String tag, String value) {
 			if(decodingRules == null) {
-				decodingRules = new LinkedHashMap<String, Integer>();
+				decodingRules = new LinkedHashMap<>();
 				for(int i = 1; i < routeEncodingRules.size(); i++) {
 					RouteTypeRule rt = routeEncodingRules.get(i);
 					String ks = rt.getTag() +"#" + (rt.getValue() == null ? "" : rt.getValue());
@@ -528,8 +528,8 @@ public class BinaryMapRouteReaderAdapter {
 		TIntArrayList pointsX = new TIntArrayList();
 		TIntArrayList pointsY = new TIntArrayList();
 		TIntArrayList types = new TIntArrayList();
-		List<TIntArrayList> globalpointTypes = new ArrayList<TIntArrayList>();
-		List<TIntArrayList> globalpointNames = new ArrayList<TIntArrayList>();
+		List<TIntArrayList> globalpointTypes = new ArrayList<>();
+		List<TIntArrayList> globalpointNames = new ArrayList<>();
 		while (true) {
 			int ts = codedIS.readTag();
 			int tags = WireFormat.getTagFieldNumber(ts);
@@ -572,7 +572,7 @@ public class BinaryMapRouteReaderAdapter {
 				codedIS.popLimit(oldLimit);
 				break;
 			case RouteData.STRINGNAMES_FIELD_NUMBER:
-				o.names = new TIntObjectHashMap<String>();
+				o.names = new TIntObjectHashMap<>();
 				int sizeL = codedIS.readRawVarint32();
 				int old = codedIS.pushLimit(sizeL);
 				TIntArrayList list = new TIntArrayList();
@@ -650,7 +650,7 @@ public class BinaryMapRouteReaderAdapter {
 	}
 	private void readRouteTreeData(RouteSubregion routeTree,  TLongArrayList idTables,
 			TLongObjectHashMap<TLongArrayList> restrictions) throws IOException {
-		routeTree.dataObjects = new ArrayList<RouteDataObject>();
+		routeTree.dataObjects = new ArrayList<>();
 		idTables.clear();
 		restrictions.clear();
 		List<String> stringTable = null;
@@ -803,7 +803,7 @@ public class BinaryMapRouteReaderAdapter {
 			boolean readCoordinates) throws IOException {
 		boolean readChildren = depth != 0; 
 		if(readChildren) {
-			thisTree.subregions = new ArrayList<BinaryMapRouteReaderAdapter.RouteSubregion>();
+			thisTree.subregions = new ArrayList<>();
 		}
 		thisTree.routeReg.regionsRead++;
 		while(true){
@@ -840,7 +840,7 @@ public class BinaryMapRouteReaderAdapter {
 				thisTree.shiftToData = readInt();
 				if(!readChildren) {
 					// usually 0
-					thisTree.subregions = new ArrayList<BinaryMapRouteReaderAdapter.RouteSubregion>();
+					thisTree.subregions = new ArrayList<>();
 					readChildren = true;
 				}
 				break;
@@ -886,7 +886,7 @@ public class BinaryMapRouteReaderAdapter {
 	
 	public List<RouteDataObject> loadRouteRegionData(RouteSubregion rs) throws IOException {
 		TLongArrayList idMap = new TLongArrayList();
-		TLongObjectHashMap<TLongArrayList> restrictionMap = new TLongObjectHashMap<TLongArrayList>();
+		TLongObjectHashMap<TLongArrayList> restrictionMap = new TLongObjectHashMap<>();
 		if (rs.dataObjects == null) {
 			codedIS.seek(rs.filePointer + rs.shiftToData);
 			int limit = codedIS.readRawVarint32();
@@ -909,7 +909,7 @@ public class BinaryMapRouteReaderAdapter {
 			}
 		});
 		TLongArrayList idMap = new TLongArrayList();
-		TLongObjectHashMap<TLongArrayList> restrictionMap = new TLongObjectHashMap<TLongArrayList>();
+		TLongObjectHashMap<TLongArrayList> restrictionMap = new TLongObjectHashMap<>();
 		for (RouteSubregion rs : toLoad) {
 			if (rs.dataObjects == null) {
 				codedIS.seek(rs.filePointer + rs.shiftToData);

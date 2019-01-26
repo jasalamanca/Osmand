@@ -871,7 +871,7 @@ public final class CodedInputStream {
 
       // Read all the rest of the bytes we need.
       int sizeLeft = size - (originalBufferSize - originalBufferPos);
-      final List<byte[]> chunks = new ArrayList<byte[]>();
+      final List<byte[]> chunks = new ArrayList<>();
 
       while (sizeLeft > 0) {
         final byte[] chunk = new byte[Math.min(sizeLeft, BUFFER_SIZE)];

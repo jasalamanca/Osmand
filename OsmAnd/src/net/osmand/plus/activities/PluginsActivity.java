@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.PopupMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -79,8 +80,9 @@ public class PluginsActivity extends OsmandListActivity {
 					OsmandPlugin.getVisiblePlugins());
 		}
 
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
+		@NonNull
+        @Override
+		public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 			View view = convertView;
 			if (view == null) {
 				view = getLayoutInflater().inflate(R.layout.plugins_list_item, parent, false);

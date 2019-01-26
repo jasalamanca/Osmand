@@ -83,7 +83,7 @@ public class NominatimPoiFilter extends PoiUIFilter {
 		} else {
 			NOMINATIM_API = "http://nominatim.openstreetmap.org/search/";
 		}
-		currentSearchResult = new ArrayList<Amenity>();
+		currentSearchResult = new ArrayList<>();
 		if (Algorithms.isEmpty(getFilterByName())) {
 			return currentSearchResult;
 		}

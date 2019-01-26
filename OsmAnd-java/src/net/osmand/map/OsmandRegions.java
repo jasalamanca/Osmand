@@ -55,9 +55,9 @@ public class OsmandRegions {
 	private static final org.apache.commons.logging.Log LOG = PlatformUtil.getLog(OsmandRegions.class);
 
 	private WorldRegion worldRegion = new WorldRegion(WorldRegion.WORLD);
-	private final Map<String, WorldRegion> fullNamesToRegionData = new HashMap<String, WorldRegion>();
-	private final Map<String, String> downloadNamesToFullNames = new HashMap<String, String>();
-	private final Map<String, LinkedList<BinaryMapDataObject>> countriesByDownloadName = new HashMap<String, LinkedList<BinaryMapDataObject>>();
+	private final Map<String, WorldRegion> fullNamesToRegionData = new HashMap<>();
+	private final Map<String, String> downloadNamesToFullNames = new HashMap<>();
+	private final Map<String, LinkedList<BinaryMapDataObject>> countriesByDownloadName = new HashMap<>();
 
 	private QuadTree<String> quadTree;
 	private MapIndexFields mapIndexFields;
@@ -91,7 +91,7 @@ public class OsmandRegions {
 
 	public BinaryMapIndexReader prepareFile(String fileName) throws IOException {
 		reader = new BinaryMapIndexReader(new RandomAccessFile(fileName, "r"), new File(fileName));
-		final Map<String, String> parentRelations = new LinkedHashMap<String, String>();
+		final Map<String, String> parentRelations = new LinkedHashMap<>();
 		final ResultMatcher<BinaryMapDataObject> resultMatcher = new ResultMatcher<BinaryMapDataObject>() {
 
 			@Override
@@ -131,7 +131,7 @@ public class OsmandRegions {
 				parent.addSubregion(rd);
 			}
 		}
-		structureWorldRegions(new ArrayList<WorldRegion>(fullNamesToRegionData.values()));
+		structureWorldRegions(new ArrayList<>(fullNamesToRegionData.values()));
 		return reader;
 	}
 
@@ -251,9 +251,9 @@ public class OsmandRegions {
 	}
 
 	private List<BinaryMapDataObject> getCountries(int tile31x, int tile31y) {
-		HashSet<String> set = new HashSet<String>(quadTree.queryInBox(new QuadRect(tile31x, tile31y, tile31x, tile31y),
-				new ArrayList<String>()));
-		List<BinaryMapDataObject> result = new ArrayList<BinaryMapDataObject>();
+		HashSet<String> set = new HashSet<>(quadTree.queryInBox(new QuadRect(tile31x, tile31y, tile31x, tile31y),
+                new ArrayList<String>()));
+		List<BinaryMapDataObject> result = new ArrayList<>();
 
         for (String cname : set) {
             BinaryMapDataObject container = null;
@@ -301,7 +301,7 @@ public class OsmandRegions {
 	}
 
 	private synchronized List<BinaryMapDataObject> queryNoInit(final int tile31x, final int tile31y) throws IOException {
-		final List<BinaryMapDataObject> result = new ArrayList<BinaryMapDataObject>();
+		final List<BinaryMapDataObject> result = new ArrayList<>();
 		BinaryMapIndexReader.SearchRequest<BinaryMapDataObject> sr = BinaryMapIndexReader.buildSearchRequest(tile31x, tile31x, tile31y, tile31y,
 				5, new BinaryMapIndexReader.SearchFilter() {
 					@Override
@@ -335,7 +335,7 @@ public class OsmandRegions {
 	}
 
 	public synchronized List<BinaryMapDataObject> queryBbox(int lx, int rx, int ty, int by) throws IOException {
-		final List<BinaryMapDataObject> result = new ArrayList<BinaryMapDataObject>();
+		final List<BinaryMapDataObject> result = new ArrayList<>();
 		BinaryMapIndexReader.SearchRequest<BinaryMapDataObject> sr = BinaryMapIndexReader.buildSearchRequest(lx, rx, ty, by,
 				5, new BinaryMapIndexReader.SearchFilter() {
 					@Override
@@ -465,8 +465,8 @@ public class OsmandRegions {
 	}
 
 	private Map<String, LinkedList<BinaryMapDataObject>> cacheAllCountries() throws IOException {
-		quadTree = new QuadTree<String>(new QuadRect(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE),
-				8, 0.55f);
+		quadTree = new QuadTree<>(new QuadRect(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE),
+                8, 0.55f);
 		final ResultMatcher<BinaryMapDataObject> resultMatcher = new ResultMatcher<BinaryMapDataObject>() {
 			@Override
 			public boolean publish(BinaryMapDataObject object) {
@@ -476,7 +476,7 @@ public class OsmandRegions {
 				initTypes(object);
 				String nm = mapIndexFields.get(mapIndexFields.downloadNameType, object);
 				if (!countriesByDownloadName.containsKey(nm)) {
-					LinkedList<BinaryMapDataObject> ls = new LinkedList<BinaryMapDataObject>();
+					LinkedList<BinaryMapDataObject> ls = new LinkedList<>();
 					countriesByDownloadName.put(nm, ls);
 					ls.add(object);
 				} else {
@@ -547,8 +547,8 @@ public class OsmandRegions {
 	private static void testCountry(OsmandRegions or, double lat, double lon, String... test) throws IOException {
 		long t = System.currentTimeMillis();
 		List<BinaryMapDataObject> cs = or.query(MapUtils.get31TileNumberX(lon), MapUtils.get31TileNumberY(lat));
-		Set<String> expected = new TreeSet<String>(Arrays.asList(test));
-		Set<String> found = new TreeSet<String>();
+		Set<String> expected = new TreeSet<>(Arrays.asList(test));
+		Set<String> found = new TreeSet<>();
 
 		for (BinaryMapDataObject b : cs) {
 			String nm = b.getNameByType(or.mapIndexFields.nameEnType);
@@ -700,7 +700,7 @@ public class OsmandRegions {
 	public static void main(String[] args) throws IOException {
 		OsmandRegions or = new OsmandRegions();
 		or.prepareFile("/Users/victorshcherb/osmand/repos/resources/countries-info/regions.ocbf");
-		LinkedList<WorldRegion> lst = new LinkedList<WorldRegion>();
+		LinkedList<WorldRegion> lst = new LinkedList<>();
 		lst.add(or.getWorldRegion());
 //		int i =0;
 		while (!lst.isEmpty()) {

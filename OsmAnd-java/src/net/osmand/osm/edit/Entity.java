@@ -167,13 +167,13 @@ public abstract class Entity implements Serializable {
 	
 	public String putTagNoLC(String key, String value) {
 		if (tags == null) {
-			tags = new LinkedHashMap<String, String>();
+			tags = new LinkedHashMap<>();
 		}
 		return tags.put(key, value);
 	}
 
 	public void replaceTags(Map<String, String> toPut) {
-		tags = new LinkedHashMap<String, String>(toPut);
+		tags = new LinkedHashMap<>(toPut);
 	}
 
 	public String getTag(OSMTagKey key) {
@@ -188,7 +188,7 @@ public abstract class Entity implements Serializable {
 	}
 
 	public Map<String, String> getNameTags() {
-		Map<String, String> result = new LinkedHashMap<String, String>();
+		Map<String, String> result = new LinkedHashMap<>();
 		for (Map.Entry<String, String> e : tags.entrySet()) {
 			if (e.getKey().startsWith("name:")) {
 				result.put(e.getKey(), e.getValue());
@@ -279,7 +279,7 @@ public abstract class Entity implements Serializable {
 		}
 		if (values.indexOf(';') != -1) {
 			String[] splitted = values.split(";");
-			Set<String> set = new HashSet<String>(splitted.length);
+			Set<String> set = new HashSet<>(splitted.length);
 			for (int i = 0; i < splitted.length; i++) {
 				set.add(splitted[i].trim());
 			}

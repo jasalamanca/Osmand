@@ -595,13 +595,13 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite
               final Internal.EnumLiteMap<?> enumTypeMap,
               final int number,
               final WireFormat.FieldType type) {
-    return new GeneratedExtension<ContainingType, Type>(
-        containingTypeDefaultInstance,
-        defaultValue,
-        messageDefaultInstance,
-        new ExtensionDescriptor(enumTypeMap, number, type,
-                                false /* isRepeated */,
-                                false /* isPacked */));
+    return new GeneratedExtension<>(
+            containingTypeDefaultInstance,
+            defaultValue,
+            messageDefaultInstance,
+            new ExtensionDescriptor(enumTypeMap, number, type,
+                    false /* isRepeated */,
+                    false /* isPacked */));
   }
 
   /** For use by generated code only. */
@@ -616,12 +616,12 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite
               final boolean isPacked) {
     @SuppressWarnings("unchecked")  // Subclasses ensure Type is a List
     Type emptyList = (Type) Collections.emptyList();
-    return new GeneratedExtension<ContainingType, Type>(
-        containingTypeDefaultInstance,
-        emptyList,
-        messageDefaultInstance,
-        new ExtensionDescriptor(
-            enumTypeMap, number, type, true /* isRepeated */, isPacked));
+    return new GeneratedExtension<>(
+            containingTypeDefaultInstance,
+            emptyList,
+            messageDefaultInstance,
+            new ExtensionDescriptor(
+                    enumTypeMap, number, type, true /* isRepeated */, isPacked));
   }
 
   private static final class ExtensionDescriptor

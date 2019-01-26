@@ -37,9 +37,9 @@ public class OsmandRenderer {
 
 	private static final int TILE_SIZE = 256;
 
-	private final Map<float[], PathEffect> dashEffect = new LinkedHashMap<float[], PathEffect>();
-	private final Map<String, float[]> parsedDashEffects = new LinkedHashMap<String, float[]>();
-	private final Map<String, Shader> shaders = new LinkedHashMap<String, Shader>();
+	private final Map<float[], PathEffect> dashEffect = new LinkedHashMap<>();
+	private final Map<String, float[]> parsedDashEffects = new LinkedHashMap<>();
+	private final Map<String, Shader> shaders = new LinkedHashMap<>();
 
 	private final Context context;
 
@@ -47,7 +47,7 @@ public class OsmandRenderer {
 
 	/* package */
 	public static class RenderingContext extends net.osmand.RenderingContext {
-		final List<TextDrawInfo> textToDraw = new ArrayList<TextDrawInfo>();
+		final List<TextDrawInfo> textToDraw = new ArrayList<>();
 		final Context ctx;
 
 		public RenderingContext(Context ctx) {

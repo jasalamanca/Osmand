@@ -30,7 +30,7 @@ public abstract class DashLocationFragment extends DashBaseFragment {
 	private static final int ORIENTATION_90 = 3;
 	private static final int ORIENTATION_270 = 1;
 	private static final int ORIENTATION_180 = 2;
-	List<DashLocationView> distances = new ArrayList<DashLocationFragment.DashLocationView>();
+	List<DashLocationView> distances = new ArrayList<>();
 	private int screenOrientation;
 	private LatLon lastUpdatedLocation;
 

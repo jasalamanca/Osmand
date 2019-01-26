@@ -151,7 +151,7 @@ public class RepeatedFieldBuilder
    */
   private void ensureMutableMessageList() {
     if (!isMessagesListMutable) {
-      messages = new ArrayList<MType>(messages);
+      messages = new ArrayList<>(messages);
       isMessagesListMutable = true;
     }
   }
@@ -164,8 +164,8 @@ public class RepeatedFieldBuilder
   private void ensureBuilders() {
     if (this.builders == null) {
       this.builders =
-          new ArrayList<SingleFieldBuilder<MType, BType, IType>>(
-              messages.size());
+              new ArrayList<>(
+                      messages.size());
       for (int i = 0; i < messages.size(); i++) {
         builders.add(null);
       }
@@ -245,8 +245,8 @@ public class RepeatedFieldBuilder
     SingleFieldBuilder<MType, BType, IType> builder = builders.get(index);
     if (builder == null) {
       MType message = messages.get(index);
-      builder = new SingleFieldBuilder<MType, BType, IType>(
-          message, this, isClean);
+      builder = new SingleFieldBuilder<>(
+              message, this, isClean);
       builders.set(index, builder);
     }
     return builder.getBuilder();
@@ -398,8 +398,8 @@ public class RepeatedFieldBuilder
     ensureMutableMessageList();
     ensureBuilders();
     SingleFieldBuilder<MType, BType, IType> builder =
-        new SingleFieldBuilder<MType, BType, IType>(
-            message, this, isClean);
+            new SingleFieldBuilder<>(
+                    message, this, isClean);
     messages.add(null);
     builders.add(builder);
     onChanged();
@@ -420,8 +420,8 @@ public class RepeatedFieldBuilder
     ensureMutableMessageList();
     ensureBuilders();
     SingleFieldBuilder<MType, BType, IType> builder =
-        new SingleFieldBuilder<MType, BType, IType>(
-            message, this, isClean);
+            new SingleFieldBuilder<>(
+                    message, this, isClean);
     messages.add(index, null);
     builders.add(index, builder);
     onChanged();
@@ -527,7 +527,7 @@ public class RepeatedFieldBuilder
   public List<MType> getMessageList() {
     if (externalMessageList == null) {
       externalMessageList =
-          new MessageExternalList<MType, BType, IType>(this);
+              new MessageExternalList<>(this);
     }
     return externalMessageList;
   }
@@ -541,7 +541,7 @@ public class RepeatedFieldBuilder
   public List<BType> getBuilderList() {
     if (externalBuilderList == null) {
       externalBuilderList =
-          new BuilderExternalList<MType, BType, IType>(this);
+              new BuilderExternalList<>(this);
     }
     return externalBuilderList;
   }
@@ -555,7 +555,7 @@ public class RepeatedFieldBuilder
   public List<IType> getMessageOrBuilderList() {
     if (externalMessageOrBuilderList == null) {
       externalMessageOrBuilderList =
-          new MessageOrBuilderExternalList<MType, BType, IType>(this);
+              new MessageOrBuilderExternalList<>(this);
     }
     return externalMessageOrBuilderList;
   }

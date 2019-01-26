@@ -68,7 +68,7 @@ public class BinaryMapDataObject {
 		if (namesOrder == null) {
 			return null;
 		}
-		LinkedHashMap<Integer, String> lm = new LinkedHashMap<Integer, String> ();
+		LinkedHashMap<Integer, String> lm = new LinkedHashMap<>();
 		for (int i = 0; i < namesOrder.size(); i++) {
 			int nm = namesOrder.get(i);
 			lm.put(nm, objectNames.get(nm));
@@ -78,7 +78,7 @@ public class BinaryMapDataObject {
 	
 	public void putObjectName(int type, String name){
 		if(objectNames == null){
-			objectNames = new TIntObjectHashMap<String>();
+			objectNames = new TIntObjectHashMap<>();
 			namesOrder = new TIntArrayList();
 		}
 		objectNames.put(type, name);

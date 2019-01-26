@@ -186,13 +186,13 @@ public class ApplicationMode {
 				listener = new StateChangedListener<String>() {
 					@Override
 					public void stateChanged(String change) {
-						cachedFilteredValues = new ArrayList<ApplicationMode>();
+						cachedFilteredValues = new ArrayList<>();
 					}
 				};
 				settings.AVAILABLE_APP_MODES.addListener(listener);
 			}
 			String available = settings.AVAILABLE_APP_MODES.get();
-			cachedFilteredValues = new ArrayList<ApplicationMode>();
+			cachedFilteredValues = new ArrayList<>();
 			for (ApplicationMode v : values) {
 				if (available.indexOf(v.getStringKey() + ",") != -1 || v == DEFAULT) {
 					cachedFilteredValues.add(v);
@@ -203,7 +203,7 @@ public class ApplicationMode {
 	}
 
 	public static List<ApplicationMode> allPossibleValues() {
-		return new ArrayList<ApplicationMode>(values);
+		return new ArrayList<>(values);
 	}
 
 
@@ -263,7 +263,7 @@ public class ApplicationMode {
 	}
 
 	public static List<ApplicationMode> getModesDerivedFrom(ApplicationMode am) {
-		List<ApplicationMode> list = new ArrayList<ApplicationMode>();
+		List<ApplicationMode> list = new ArrayList<>();
 		for (ApplicationMode a : values) {
 			if (a == am || a.getParent() == am) {
 				list.add(a);

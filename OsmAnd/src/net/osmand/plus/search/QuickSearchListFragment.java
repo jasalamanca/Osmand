@@ -1,6 +1,7 @@
 package net.osmand.plus.search;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -58,7 +59,7 @@ public abstract class QuickSearchListFragment extends OsmAndListFragment {
 	}
 
 	@Override
-	public void onViewCreated(View view, Bundle savedInstanceState) {
+	public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 		ListView listView = getListView();
 		if (listView != null) {

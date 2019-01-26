@@ -333,8 +333,9 @@ public class GpxUiHelper {
 
 		final ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(activity, layout, R.id.text1,
 				adapter.getItemNames()) {
-			@Override
-			public View getView(final int position, View convertView, ViewGroup parent) {
+			@NonNull
+            @Override
+			public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
 				// User super class to create the View
 				View v = convertView;
 				if (v == null) {
@@ -452,8 +453,9 @@ public class GpxUiHelper {
 				return null;
 			}
 
-			@Override
-			public View getView(final int position, View convertView, ViewGroup parent) {
+			@NonNull
+            @Override
+			public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
 				// User super class to create the View
 				View v = convertView;
 				boolean checkLayout = getItemViewType(position) == 0;

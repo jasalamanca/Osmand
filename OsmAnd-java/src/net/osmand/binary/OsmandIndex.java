@@ -250,7 +250,7 @@ public final class OsmandIndex {
         }
         if (!other.fileIndex_.isEmpty()) {
           if (result.fileIndex_.isEmpty()) {
-            result.fileIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.FileIndex>();
+            result.fileIndex_ = new java.util.ArrayList<>();
           }
           result.fileIndex_.addAll(other.fileIndex_);
         }
@@ -353,14 +353,14 @@ public final class OsmandIndex {
           throw new NullPointerException();
         }
         if (result.fileIndex_.isEmpty()) {
-          result.fileIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.FileIndex>();
+          result.fileIndex_ = new java.util.ArrayList<>();
         }
         result.fileIndex_.add(value);
         return this;
       }
       public Builder addFileIndex(net.osmand.binary.OsmandIndex.FileIndex.Builder builderForValue) {
         if (result.fileIndex_.isEmpty()) {
-          result.fileIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.FileIndex>();
+          result.fileIndex_ = new java.util.ArrayList<>();
         }
         result.fileIndex_.add(builderForValue.build());
         return this;
@@ -368,7 +368,7 @@ public final class OsmandIndex {
       public Builder addAllFileIndex(
           java.lang.Iterable<? extends net.osmand.binary.OsmandIndex.FileIndex> values) {
         if (result.fileIndex_.isEmpty()) {
-          result.fileIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.FileIndex>();
+          result.fileIndex_ = new java.util.ArrayList<>();
         }
         super.addAll(values, result.fileIndex_);
         return this;
@@ -772,31 +772,31 @@ public final class OsmandIndex {
         }
         if (!other.addressIndex_.isEmpty()) {
           if (result.addressIndex_.isEmpty()) {
-            result.addressIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.AddressPart>();
+            result.addressIndex_ = new java.util.ArrayList<>();
           }
           result.addressIndex_.addAll(other.addressIndex_);
         }
         if (!other.transportIndex_.isEmpty()) {
           if (result.transportIndex_.isEmpty()) {
-            result.transportIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.TransportPart>();
+            result.transportIndex_ = new java.util.ArrayList<>();
           }
           result.transportIndex_.addAll(other.transportIndex_);
         }
         if (!other.poiIndex_.isEmpty()) {
           if (result.poiIndex_.isEmpty()) {
-            result.poiIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.PoiPart>();
+            result.poiIndex_ = new java.util.ArrayList<>();
           }
           result.poiIndex_.addAll(other.poiIndex_);
         }
         if (!other.mapIndex_.isEmpty()) {
           if (result.mapIndex_.isEmpty()) {
-            result.mapIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.MapPart>();
+            result.mapIndex_ = new java.util.ArrayList<>();
           }
           result.mapIndex_.addAll(other.mapIndex_);
         }
         if (!other.routingIndex_.isEmpty()) {
           if (result.routingIndex_.isEmpty()) {
-            result.routingIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.RoutingPart>();
+            result.routingIndex_ = new java.util.ArrayList<>();
           }
           result.routingIndex_.addAll(other.routingIndex_);
         }
@@ -970,14 +970,14 @@ public final class OsmandIndex {
           throw new NullPointerException();
         }
         if (result.addressIndex_.isEmpty()) {
-          result.addressIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.AddressPart>();
+          result.addressIndex_ = new java.util.ArrayList<>();
         }
         result.addressIndex_.add(value);
         return this;
       }
       public Builder addAddressIndex(net.osmand.binary.OsmandIndex.AddressPart.Builder builderForValue) {
         if (result.addressIndex_.isEmpty()) {
-          result.addressIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.AddressPart>();
+          result.addressIndex_ = new java.util.ArrayList<>();
         }
         result.addressIndex_.add(builderForValue.build());
         return this;
@@ -985,7 +985,7 @@ public final class OsmandIndex {
       public Builder addAllAddressIndex(
           java.lang.Iterable<? extends net.osmand.binary.OsmandIndex.AddressPart> values) {
         if (result.addressIndex_.isEmpty()) {
-          result.addressIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.AddressPart>();
+          result.addressIndex_ = new java.util.ArrayList<>();
         }
         super.addAll(values, result.addressIndex_);
         return this;
@@ -1021,14 +1021,14 @@ public final class OsmandIndex {
           throw new NullPointerException();
         }
         if (result.transportIndex_.isEmpty()) {
-          result.transportIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.TransportPart>();
+          result.transportIndex_ = new java.util.ArrayList<>();
         }
         result.transportIndex_.add(value);
         return this;
       }
       public Builder addTransportIndex(net.osmand.binary.OsmandIndex.TransportPart.Builder builderForValue) {
         if (result.transportIndex_.isEmpty()) {
-          result.transportIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.TransportPart>();
+          result.transportIndex_ = new java.util.ArrayList<>();
         }
         result.transportIndex_.add(builderForValue.build());
         return this;
@@ -1036,7 +1036,7 @@ public final class OsmandIndex {
       public Builder addAllTransportIndex(
           java.lang.Iterable<? extends net.osmand.binary.OsmandIndex.TransportPart> values) {
         if (result.transportIndex_.isEmpty()) {
-          result.transportIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.TransportPart>();
+          result.transportIndex_ = new java.util.ArrayList<>();
         }
         super.addAll(values, result.transportIndex_);
         return this;
@@ -1072,14 +1072,14 @@ public final class OsmandIndex {
           throw new NullPointerException();
         }
         if (result.poiIndex_.isEmpty()) {
-          result.poiIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.PoiPart>();
+          result.poiIndex_ = new java.util.ArrayList<>();
         }
         result.poiIndex_.add(value);
         return this;
       }
       public Builder addPoiIndex(net.osmand.binary.OsmandIndex.PoiPart.Builder builderForValue) {
         if (result.poiIndex_.isEmpty()) {
-          result.poiIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.PoiPart>();
+          result.poiIndex_ = new java.util.ArrayList<>();
         }
         result.poiIndex_.add(builderForValue.build());
         return this;
@@ -1087,7 +1087,7 @@ public final class OsmandIndex {
       public Builder addAllPoiIndex(
           java.lang.Iterable<? extends net.osmand.binary.OsmandIndex.PoiPart> values) {
         if (result.poiIndex_.isEmpty()) {
-          result.poiIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.PoiPart>();
+          result.poiIndex_ = new java.util.ArrayList<>();
         }
         super.addAll(values, result.poiIndex_);
         return this;
@@ -1123,14 +1123,14 @@ public final class OsmandIndex {
           throw new NullPointerException();
         }
         if (result.mapIndex_.isEmpty()) {
-          result.mapIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.MapPart>();
+          result.mapIndex_ = new java.util.ArrayList<>();
         }
         result.mapIndex_.add(value);
         return this;
       }
       public Builder addMapIndex(net.osmand.binary.OsmandIndex.MapPart.Builder builderForValue) {
         if (result.mapIndex_.isEmpty()) {
-          result.mapIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.MapPart>();
+          result.mapIndex_ = new java.util.ArrayList<>();
         }
         result.mapIndex_.add(builderForValue.build());
         return this;
@@ -1138,7 +1138,7 @@ public final class OsmandIndex {
       public Builder addAllMapIndex(
           java.lang.Iterable<? extends net.osmand.binary.OsmandIndex.MapPart> values) {
         if (result.mapIndex_.isEmpty()) {
-          result.mapIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.MapPart>();
+          result.mapIndex_ = new java.util.ArrayList<>();
         }
         super.addAll(values, result.mapIndex_);
         return this;
@@ -1174,14 +1174,14 @@ public final class OsmandIndex {
           throw new NullPointerException();
         }
         if (result.routingIndex_.isEmpty()) {
-          result.routingIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.RoutingPart>();
+          result.routingIndex_ = new java.util.ArrayList<>();
         }
         result.routingIndex_.add(value);
         return this;
       }
       public Builder addRoutingIndex(net.osmand.binary.OsmandIndex.RoutingPart.Builder builderForValue) {
         if (result.routingIndex_.isEmpty()) {
-          result.routingIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.RoutingPart>();
+          result.routingIndex_ = new java.util.ArrayList<>();
         }
         result.routingIndex_.add(builderForValue.build());
         return this;
@@ -1189,7 +1189,7 @@ public final class OsmandIndex {
       public Builder addAllRoutingIndex(
           java.lang.Iterable<? extends net.osmand.binary.OsmandIndex.RoutingPart> values) {
         if (result.routingIndex_.isEmpty()) {
-          result.routingIndex_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.RoutingPart>();
+          result.routingIndex_ = new java.util.ArrayList<>();
         }
         super.addAll(values, result.routingIndex_);
         return this;
@@ -1532,13 +1532,13 @@ public final class OsmandIndex {
         }
         if (!other.cities_.isEmpty()) {
           if (result.cities_.isEmpty()) {
-            result.cities_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.CityBlock>();
+            result.cities_ = new java.util.ArrayList<>();
           }
           result.cities_.addAll(other.cities_);
         }
         if (!other.additionalTags_.isEmpty()) {
           if (result.additionalTags_.isEmpty()) {
-            result.additionalTags_ = new java.util.ArrayList<java.lang.String>();
+            result.additionalTags_ = new java.util.ArrayList<>();
           }
           result.additionalTags_.addAll(other.additionalTags_);
         }
@@ -1717,14 +1717,14 @@ public final class OsmandIndex {
           throw new NullPointerException();
         }
         if (result.cities_.isEmpty()) {
-          result.cities_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.CityBlock>();
+          result.cities_ = new java.util.ArrayList<>();
         }
         result.cities_.add(value);
         return this;
       }
       public Builder addCities(net.osmand.binary.OsmandIndex.CityBlock.Builder builderForValue) {
         if (result.cities_.isEmpty()) {
-          result.cities_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.CityBlock>();
+          result.cities_ = new java.util.ArrayList<>();
         }
         result.cities_.add(builderForValue.build());
         return this;
@@ -1732,7 +1732,7 @@ public final class OsmandIndex {
       public Builder addAllCities(
           java.lang.Iterable<? extends net.osmand.binary.OsmandIndex.CityBlock> values) {
         if (result.cities_.isEmpty()) {
-          result.cities_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.CityBlock>();
+          result.cities_ = new java.util.ArrayList<>();
         }
         super.addAll(values, result.cities_);
         return this;
@@ -1764,7 +1764,7 @@ public final class OsmandIndex {
     throw new NullPointerException();
   }
   if (result.additionalTags_.isEmpty()) {
-          result.additionalTags_ = new java.util.ArrayList<java.lang.String>();
+          result.additionalTags_ = new java.util.ArrayList<>();
         }
         result.additionalTags_.add(value);
         return this;
@@ -1772,7 +1772,7 @@ public final class OsmandIndex {
       public Builder addAllAdditionalTags(
           java.lang.Iterable<? extends java.lang.String> values) {
         if (result.additionalTags_.isEmpty()) {
-          result.additionalTags_ = new java.util.ArrayList<java.lang.String>();
+          result.additionalTags_ = new java.util.ArrayList<>();
         }
         super.addAll(values, result.additionalTags_);
         return this;
@@ -3412,7 +3412,7 @@ public final class OsmandIndex {
         }
         if (!other.levels_.isEmpty()) {
           if (result.levels_.isEmpty()) {
-            result.levels_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.MapLevel>();
+            result.levels_ = new java.util.ArrayList<>();
           }
           result.levels_.addAll(other.levels_);
         }
@@ -3540,14 +3540,14 @@ public final class OsmandIndex {
           throw new NullPointerException();
         }
         if (result.levels_.isEmpty()) {
-          result.levels_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.MapLevel>();
+          result.levels_ = new java.util.ArrayList<>();
         }
         result.levels_.add(value);
         return this;
       }
       public Builder addLevels(net.osmand.binary.OsmandIndex.MapLevel.Builder builderForValue) {
         if (result.levels_.isEmpty()) {
-          result.levels_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.MapLevel>();
+          result.levels_ = new java.util.ArrayList<>();
         }
         result.levels_.add(builderForValue.build());
         return this;
@@ -3555,7 +3555,7 @@ public final class OsmandIndex {
       public Builder addAllLevels(
           java.lang.Iterable<? extends net.osmand.binary.OsmandIndex.MapLevel> values) {
         if (result.levels_.isEmpty()) {
-          result.levels_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.MapLevel>();
+          result.levels_ = new java.util.ArrayList<>();
         }
         super.addAll(values, result.levels_);
         return this;
@@ -4368,7 +4368,7 @@ public final class OsmandIndex {
         }
         if (!other.subregions_.isEmpty()) {
           if (result.subregions_.isEmpty()) {
-            result.subregions_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.RoutingSubregion>();
+            result.subregions_ = new java.util.ArrayList<>();
           }
           result.subregions_.addAll(other.subregions_);
         }
@@ -4496,14 +4496,14 @@ public final class OsmandIndex {
           throw new NullPointerException();
         }
         if (result.subregions_.isEmpty()) {
-          result.subregions_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.RoutingSubregion>();
+          result.subregions_ = new java.util.ArrayList<>();
         }
         result.subregions_.add(value);
         return this;
       }
       public Builder addSubregions(net.osmand.binary.OsmandIndex.RoutingSubregion.Builder builderForValue) {
         if (result.subregions_.isEmpty()) {
-          result.subregions_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.RoutingSubregion>();
+          result.subregions_ = new java.util.ArrayList<>();
         }
         result.subregions_.add(builderForValue.build());
         return this;
@@ -4511,7 +4511,7 @@ public final class OsmandIndex {
       public Builder addAllSubregions(
           java.lang.Iterable<? extends net.osmand.binary.OsmandIndex.RoutingSubregion> values) {
         if (result.subregions_.isEmpty()) {
-          result.subregions_ = new java.util.ArrayList<net.osmand.binary.OsmandIndex.RoutingSubregion>();
+          result.subregions_ = new java.util.ArrayList<>();
         }
         super.addAll(values, result.subregions_);
         return this;

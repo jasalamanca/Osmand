@@ -81,7 +81,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 	private static final String TAGS_LIST = "tags_list";
 	private static final String IS_ADDING_POI = "is_adding_poi";
 
-	public static final HashSet<String> BASIC_TAGS = new HashSet<String>() ;
+	public static final HashSet<String> BASIC_TAGS = new HashSet<>() ;
 	static {
 		BASIC_TAGS.add(OSMSettings.OSMTagKey.NAME.getValue());
 		BASIC_TAGS.add(OSMSettings.OSMTagKey.ADDR_STREET.getValue());
@@ -115,8 +115,8 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-							 Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.fragment_edit_poi, container, false);
 		boolean isLightTheme = getSettings().OSMAND_THEME.get() == OsmandSettings.OSMAND_LIGHT_THEME;
 
@@ -570,8 +570,9 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 
 			adapter = new ArrayAdapter<Object>(getActivity(),
 					R.layout.list_textview, subCategories.keySet().toArray()) {
-				@Override
-				public View getView(int position, View convertView, ViewGroup parent) {
+				@NonNull
+                @Override
+				public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 					final View view = super.getView(position, convertView, parent);
 					((TextView) view.findViewById(R.id.textView)).setTextColor(textColor);
 					return view;

@@ -15,7 +15,7 @@ import org.apache.commons.logging.Log;
 public class Postcode {
 	private final static Log log = PlatformUtil.getLog(Postcode.class);
 
-	private final static Map<String, List<String>> rules = new TreeMap<String, List<String>>();
+	private final static Map<String, List<String>> rules = new TreeMap<>();
 
 	//	© CC BY 3.0 2016 GeoNames.org
 	//	with adaptations

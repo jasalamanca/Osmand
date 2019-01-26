@@ -82,7 +82,7 @@ class BinaryMapIndexFilter {
 	
 	private Stat process(final int zoom) throws IOException {
 		final Stat stat = new Stat();
-		final Map<TagValuePair, Integer> map = new HashMap<TagValuePair, Integer>();
+		final Map<TagValuePair, Integer> map = new HashMap<>();
 		SearchFilter sf = new SearchFilter() {
 			@Override
 			public boolean accept(TIntArrayList types, MapIndex index) {
@@ -137,7 +137,7 @@ class BinaryMapIndexFilter {
 				sf, matcher);
 		List<BinaryMapDataObject> result = reader.searchMapIndex(req);
 		
-		ArrayList<TagValuePair> list = new ArrayList<TagValuePair>(map.keySet());
+		ArrayList<TagValuePair> list = new ArrayList<>(map.keySet());
 		Collections.sort(list, new Comparator<TagValuePair>() {
 			@Override
 			public int compare(TagValuePair o1, TagValuePair o2) {

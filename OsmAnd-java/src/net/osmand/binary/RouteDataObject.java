@@ -44,7 +44,7 @@ public class RouteDataObject {
 		this.region = region;
 		this.nameIds = nameIds;
 		if (nameIds.length > 0) {
-			names = new TIntObjectHashMap<String>();
+			names = new TIntObjectHashMap<>();
 		}
 		for (int i = 0; i < nameIds.length; i++) {
 			names.put(nameIds[i], nameValues[i]);

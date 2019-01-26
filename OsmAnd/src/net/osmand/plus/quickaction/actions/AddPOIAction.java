@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.widget.SwitchCompat;
 import android.text.Editable;
@@ -353,8 +354,9 @@ public class AddPOIAction extends QuickAction {
 
 			adapter = new ArrayAdapter<Object>(activity,
 					R.layout.list_textview, subCategories.keySet().toArray()) {
-				@Override
-				public View getView(int position, View convertView, ViewGroup parent) {
+				@NonNull
+                @Override
+				public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 					final View view = super.getView(position, convertView, parent);
 					((TextView) view.findViewById(R.id.textView)).setTextColor(textColor);
 					return view;

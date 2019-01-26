@@ -52,13 +52,13 @@ public class RoutePlannerFrontEnd {
 	public RouteSegmentPoint findRouteSegment(double lat, double lon, RoutingContext ctx, List<RouteSegmentPoint> list) {
 		int px = MapUtils.get31TileNumberX(lon);
 		int py = MapUtils.get31TileNumberY(lat);
-		ArrayList<RouteDataObject> dataObjects = new ArrayList<RouteDataObject>();
+		ArrayList<RouteDataObject> dataObjects = new ArrayList<>();
 		ctx.loadTileData(px, py, 17, dataObjects);
 		if (dataObjects.isEmpty()) {
 			ctx.loadTileData(px, py, 15, dataObjects);
 		}
 		if (list == null) {
-			list = new ArrayList<BinaryRoutePlanner.RouteSegmentPoint>();
+			list = new ArrayList<>();
 		}
 		for (RouteDataObject r : dataObjects) {
 			if (r.getPointsLength() > 1) {
@@ -108,7 +108,7 @@ public class RoutePlannerFrontEnd {
 		if (router != null && !router.isAllowPrivate() && 
 				router.getParameters().containsKey(GeneralRouter.ALLOW_PRIVATE)) {
 			ctx.unloadAllData();
-			LinkedHashMap<String, String> mp = new LinkedHashMap<String, String>();
+			LinkedHashMap<String, String> mp = new LinkedHashMap<>();
 			mp.put(GeneralRouter.ALLOW_PRIVATE, "true");
 			ctx.setRouter(new GeneralRouter(router.getProfile(), mp));
 			for (LatLon latLon : points) {
@@ -175,7 +175,7 @@ public class RoutePlannerFrontEnd {
 			return res;
 		}
 		int indexNotFound = 0;
-		List<RouteSegmentPoint> points = new ArrayList<RouteSegmentPoint>();
+		List<RouteSegmentPoint> points = new ArrayList<>();
 		if (!addSegment(start, ctx, indexNotFound++, points)) {
 			return null;
 		}
@@ -335,7 +335,7 @@ public class RoutePlannerFrontEnd {
 		boolean runRecalculation = ctx.previouslyCalculatedRoute != null && ctx.previouslyCalculatedRoute.size() > 0
 				&& ctx.config.recalculateDistance != 0;
 		if (runRecalculation) {
-			List<RouteSegmentResult> rlist = new ArrayList<RouteSegmentResult>();
+			List<RouteSegmentResult> rlist = new ArrayList<>();
 			float distanceThreshold = ctx.config.recalculateDistance;
 			float threshold = 0;
 			for (RouteSegmentResult rr : ctx.previouslyCalculatedRoute) {
@@ -385,7 +385,7 @@ public class RoutePlannerFrontEnd {
 		RouteSegmentResult[] res = ctx.nativeLib.runNativeRouting(ctx.startX, ctx.startY, ctx.targetX, ctx.targetY,
 				ctx.config, regions, ctx.calculationProgress, ctx.precalculatedRouteDirection, ctx.calculationMode == RouteCalculationMode.BASE);
 		log.info("Native routing took " + (System.currentTimeMillis() - time) / 1000f + " seconds");
-		ArrayList<RouteSegmentResult> result = new ArrayList<RouteSegmentResult>(Arrays.asList(res));
+		ArrayList<RouteSegmentResult> result = new ArrayList<>(Arrays.asList(res));
 		if (recalculationEnd != null) {
 			log.info("Native routing use precalculated route");
 			RouteSegment current = recalculationEnd;
@@ -423,8 +423,8 @@ public class RoutePlannerFrontEnd {
 				if (id == rsr.getObject().getId()) {
 					if (MapUtils.getDistance(rsr.getPoint(rsr.getEndPointIndex()), MapUtils.get31LatitudeY(py),
 							MapUtils.get31LongitudeX(px)) < 50) {
-						firstPartRecalculatedRoute = new ArrayList<RouteSegmentResult>(i + 1);
-						restPartRecalculatedRoute = new ArrayList<RouteSegmentResult>(prev.size() - i);
+						firstPartRecalculatedRoute = new ArrayList<>(i + 1);
+						restPartRecalculatedRoute = new ArrayList<>(prev.size() - i);
 						for (int k = 0; k < prev.size(); k++) {
 							if (k <= i) {
 								firstPartRecalculatedRoute.add(prev.get(k));
@@ -438,7 +438,7 @@ public class RoutePlannerFrontEnd {
 				}
 			}
 		}
-		List<RouteSegmentResult> results = new ArrayList<RouteSegmentResult>();
+		List<RouteSegmentResult> results = new ArrayList<>();
 		for (int i = 0; i < points.size() - 1; i++) {
 			RoutingContext local = new RoutingContext(ctx);
 			if (i == 0) {

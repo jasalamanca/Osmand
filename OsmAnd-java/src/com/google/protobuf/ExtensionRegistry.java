@@ -193,8 +193,8 @@ public final class ExtensionRegistry extends ExtensionRegistryLite {
   // Private stuff.
 
   private ExtensionRegistry() {
-    this.extensionsByName = new HashMap<String, ExtensionInfo>();
-    this.extensionsByNumber = new HashMap<DescriptorIntPair, ExtensionInfo>();
+    this.extensionsByName = new HashMap<>();
+    this.extensionsByNumber = new HashMap<>();
   }
 
   private ExtensionRegistry(ExtensionRegistry other) {

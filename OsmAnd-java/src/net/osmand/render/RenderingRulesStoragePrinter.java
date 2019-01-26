@@ -32,7 +32,7 @@ class RenderingRulesStoragePrinter {
 			outputPath = args[1];
 		}
 		String name = "Style";
-		Map<String, String> renderingConstants = new LinkedHashMap<String, String>();
+		Map<String, String> renderingConstants = new LinkedHashMap<>();
 		InputStream is = new FileInputStream(defaultFile);
 		// buggy attributes
 		try {

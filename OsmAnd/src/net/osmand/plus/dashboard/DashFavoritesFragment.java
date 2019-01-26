@@ -34,7 +34,7 @@ import java.util.List;
 public class DashFavoritesFragment extends DashLocationFragment {
 	private static final String TAG = "DASH_FAVORITES_FRAGMENT";
 	private static final int TITLE_ID = R.string.shared_string_my_favorites;
-	private List<FavouritePoint> points = new ArrayList<FavouritePoint>();
+	private List<FavouritePoint> points = new ArrayList<>();
 
 	private static final String ROW_NUMBER_TAG = TAG + "_row_number";
 	private static final DashFragmentData.ShouldShowFunction SHOULD_SHOW_FUNCTION =
@@ -68,7 +68,7 @@ public class DashFavoritesFragment extends DashLocationFragment {
 	private void setupFavorites() {
 		View mainView = getView();
 		final FavouritesDbHelper helper = getMyApplication().getFavorites();
-		points = new ArrayList<FavouritePoint>(helper.getFavouritePoints());
+		points = new ArrayList<>(helper.getFavouritePoints());
 		if (points.size() == 0) {
 			(mainView.findViewById(R.id.main_fav)).setVisibility(View.GONE);
 			return;
@@ -92,7 +92,7 @@ public class DashFavoritesFragment extends DashLocationFragment {
 		LinearLayout favorites = mainView.findViewById(R.id.items);
 		favorites.removeAllViews();
 		DashboardOnMap.handleNumberOfRows(points, getMyApplication().getSettings(), ROW_NUMBER_TAG);
-		List<DashLocationView> distances = new ArrayList<DashLocationFragment.DashLocationView>();
+		List<DashLocationView> distances = new ArrayList<>();
 		for (final FavouritePoint point : points) {
 			LayoutInflater inflater = getActivity().getLayoutInflater();
 			View view = inflater.inflate(R.layout.favorites_list_item, null, false);

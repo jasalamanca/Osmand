@@ -80,7 +80,7 @@ public class VoiceRouter {
 		this.settings = settings;
 		this.mute = settings.VOICE_MUTE.get();
 		empty = new Struct("");
-		voiceMessageListeners = new ConcurrentHashMap<VoiceRouter.VoiceMessageListener, Integer>();
+		voiceMessageListeners = new ConcurrentHashMap<>();
 	}
 	
 	public void setPlayer(CommandPlayer player) {
