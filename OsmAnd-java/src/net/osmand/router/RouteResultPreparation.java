@@ -1,7 +1,6 @@
 package net.osmand.router;
 
 import net.osmand.PlatformUtil;
-import net.osmand.binary.BinaryInspector;
 import net.osmand.binary.BinaryMapIndexReader;
 import net.osmand.binary.BinaryMapRouteReaderAdapter.RouteTypeRule;
 import net.osmand.binary.RouteDataObject;
@@ -320,6 +319,7 @@ public class RouteResultPreparation {
 	}
 	
 	void printResults(RoutingContext ctx, LatLon start, LatLon end, List<RouteSegmentResult> result) {
+		final int SHIFT_ID = 6;
 		float completeTime = 0;
 		float completeDistance = 0;
 		for(RouteSegmentResult r : result) {
@@ -373,7 +373,7 @@ public class RouteResultPreparation {
 				additional.append("height = \"").append(Arrays.toString(res.getHeightValues())).append("\" ");
 				additional.append("description = \"").append(res.getDescription()).append("\" ");
 				println(MessageFormat.format("\t<segment id=\"{0}\" oid=\"{1}\" start=\"{2}\" end=\"{3}\" {4}/>",
-						(res.getObject().getId() >> (BinaryInspector.SHIFT_ID )) + "", res.getObject().getId() + "", 
+						(res.getObject().getId() >> SHIFT_ID) + "", res.getObject().getId() + "",
 						res.getStartPointIndex() + "", res.getEndPointIndex() + "", additional.toString()));
 				int inc = res.getStartPointIndex() < res.getEndPointIndex() ? 1 : -1;
 				int indexnext = res.getStartPointIndex();
@@ -406,13 +406,9 @@ public class RouteResultPreparation {
 									serializer.endTag("","slope");
 								}
 								serializer.startTag("","desc");
-								serializer.text((res.getObject().getId() >> (BinaryInspector.SHIFT_ID )) + " " + index);
+								serializer.text((res.getObject().getId() >> SHIFT_ID) + " " + index);
 								serializer.endTag("","desc");
 								lastHeight = h;
-							} else if(lastHeight != -180){
-//								serializer.startTag("","ele");
-//								serializer.text(lastHeight +"");
-//								serializer.endTag("","ele");
 							}
 							serializer.endTag("", "trkpt");
 							prev = l;
