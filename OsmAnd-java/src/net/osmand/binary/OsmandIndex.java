@@ -4,7 +4,7 @@
 package net.osmand.binary;
 
 
-@SuppressWarnings("unused") //NOTE jsala automático en su momento
+@SuppressWarnings("ALL") //NOTE jsala automático en su momento
 public final class OsmandIndex {
   private OsmandIndex() {}
   public static void registerAllExtensions(
@@ -1839,8 +1839,7 @@ public final class OsmandIndex {
     public final boolean isInitialized() {
       if (!hasSize) return false;
       if (!hasOffset) return false;
-      if (!hasType) return false;
-      return true;
+      return hasType;
     }
     
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -2203,8 +2202,7 @@ public final class OsmandIndex {
       if (!hasLeft) return false;
       if (!hasRight) return false;
       if (!hasTop) return false;
-      if (!hasBottom) return false;
-      return true;
+      return hasBottom;
     }
     
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -2705,8 +2703,7 @@ public final class OsmandIndex {
       if (!hasLeft) return false;
       if (!hasRight) return false;
       if (!hasTop) return false;
-      if (!hasBottom) return false;
-      return true;
+      return hasBottom;
     }
     
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -3661,8 +3658,7 @@ public final class OsmandIndex {
       if (!hasRight) return false;
       if (!hasTop) return false;
       if (!hasBottom) return false;
-      if (!hasShifToData) return false;
-      return true;
+      return hasShifToData;
     }
     
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -4633,8 +4629,7 @@ public final class OsmandIndex {
     }
     public final boolean isInitialized() {
       if (!hasSize) return false;
-      if (!hasOffset) return false;
-      return true;
+      return hasOffset;
     }
     
     public void writeTo(com.google.protobuf.CodedOutputStream output)

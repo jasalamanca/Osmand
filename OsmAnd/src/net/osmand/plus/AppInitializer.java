@@ -643,7 +643,6 @@ public class AppInitializer implements IProgress {
 		return true;
 	}
 
-	@Override
 	public boolean isInterrupted() {
 		return false;
 	}

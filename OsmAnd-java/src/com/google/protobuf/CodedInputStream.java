@@ -48,6 +48,7 @@ import java.util.List;
  *
  * @author kenton@google.com Kenton Varda
  */
+@SuppressWarnings({"ALL", "unused"})
 public final class CodedInputStream {
   /**
    * Create a new CodedInputStream wrapping the given InputStream.

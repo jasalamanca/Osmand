@@ -32,8 +32,6 @@ public class AlarmInfo implements LocationPoint {
 		int getPriority(){
 			return priority;
 		}
-		
-		
 		String getVisualName(Context ctx) {
 			return ctx.getString(string);
 		}
@@ -55,33 +53,26 @@ public class AlarmInfo implements LocationPoint {
 	public AlarmInfoType getType() {
 		return type;
 	}
-
 	public float getFloatValue() {
 		return floatValue;
 	}
-
-	public void setFloatValue(float floatValue) {
+	void setFloatValue(float floatValue) {
 		this.floatValue = floatValue;
 	}
-	
 	@Override
 	public double getLatitude() {
 		return latitude;
 	}
-	
 	@Override
 	public double getLongitude() {
 		return longitude;
 	}
-	
 	public int getIntValue() {
 		return intValue;
 	}
-	
 	public int getLocationIndex() {
 		return locationIndex;
 	}
-	
 	private void setIntValue(int intValue) {
 		this.intValue = intValue;
 	}
@@ -157,10 +148,4 @@ public class AlarmInfo implements LocationPoint {
 	public int getColor() {
 		return 0;
 	}
-
-	public boolean isVisible() {
-		return false;
-	}
-
-
 }

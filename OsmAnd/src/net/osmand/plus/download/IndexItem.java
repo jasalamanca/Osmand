@@ -33,9 +33,8 @@ public class IndexItem implements Comparable<IndexItem> {
 	private long localTimestamp;
 	private DownloadResourceGroup relatedGroup;
 
-
-	public IndexItem(String fileName, String description, long timestamp, String size, long contentSize,
-			long containerSize, @NonNull DownloadActivityType tp) {
+	public IndexItem(String fileName, long timestamp, String size, long contentSize,
+					 long containerSize, @NonNull DownloadActivityType tp) {
 		this.fileName = fileName;
 		this.timestamp = timestamp;
 		this.size = size;
@@ -73,8 +72,8 @@ public class IndexItem implements Comparable<IndexItem> {
 	
 	public DownloadEntry createDownloadEntry(OsmandApplication ctx) {
 		String fileName = this.fileName;
-		File parent = type.getDownloadFolder(ctx, this);
-		boolean preventMediaIndexing = type.preventMediaIndexing(ctx, this);
+		File parent = type.getDownloadFolder(ctx);
+		boolean preventMediaIndexing = type.preventMediaIndexing(this);
 		if (parent != null) {
 			parent.mkdirs();
 			// ".nomedia" indicates there are no pictures and no music to list in this dir for the Gallery and Music apps
@@ -95,9 +94,9 @@ public class IndexItem implements Comparable<IndexItem> {
 			entry = new DownloadEntry();
 			entry.type = type;
 			entry.baseName = getBasename();
-			entry.urlToDownload = entry.type.getBaseUrl(ctx, fileName) + entry.type.getUrlSuffix(ctx);
-			entry.zipStream = type.isZipStream(ctx, this);
-			entry.unzipFolder = type.isZipFolder(ctx, this);
+			entry.urlToDownload = entry.type.getBaseUrl(ctx, fileName) + entry.type.getUrlSuffix();
+			entry.zipStream = type.isZipStream();
+			entry.unzipFolder = type.isZipFolder();
 			entry.dateModified = timestamp; 
 			entry.targetFile = getTargetFile(ctx);
 		}
@@ -114,12 +113,11 @@ public class IndexItem implements Comparable<IndexItem> {
 	
 	public File getTargetFile(OsmandApplication ctx) {
 		String basename = getBasename();
-		return new File(type.getDownloadFolder(ctx, this), basename + type.getUnzipExtension(ctx, this));
+		return new File(type.getDownloadFolder(ctx), basename + type.getUnzipExtension(this));
 	}
 
 	public File getBackupFile(OsmandApplication ctx) {
-		File backup = new File(ctx.getAppPath(IndexConstants.BACKUP_INDEX_DIR), getTargetFile(ctx).getName());
-		return backup;
+		return new File(ctx.getAppPath(IndexConstants.BACKUP_INDEX_DIR), getTargetFile(ctx).getName());
 	}
 	
 	@Override

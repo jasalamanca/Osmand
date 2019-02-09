@@ -2,7 +2,6 @@ package net.osmand.plus.resources;
 
 import net.osmand.IndexConstants;
 import net.osmand.PlatformUtil;
-import net.osmand.binary.BinaryMapIndexReader;
 import net.osmand.osm.io.NetworkUtils;
 import net.osmand.plus.R;
 import net.osmand.util.Algorithms;
@@ -24,18 +23,17 @@ import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class IncrementalChangesManager {
-
 	private static final String URL = "http://download.osmand.net/check_live.php";
 	private static final org.apache.commons.logging.Log log = PlatformUtil.getLog(IncrementalChangesManager.class);
 	private final ResourceManager resourceManager;
 	private final Map<String, RegionUpdateFiles> regions = new ConcurrentHashMap<>();
 	
 	
-	public IncrementalChangesManager(ResourceManager resourceManager) {
+	IncrementalChangesManager(ResourceManager resourceManager) {
 		this.resourceManager = resourceManager;
 	}
 	
-	public List<File> collectChangesFiles(File dir, String ext, List<File> files) {
+	List<File> collectChangesFiles(File dir, String ext, List<File> files) {
 		if (dir.exists() && dir.canRead()) {
 			File[] lf = dir.listFiles();
 			if (lf == null || lf.length == 0) {
@@ -50,23 +48,24 @@ public class IncrementalChangesManager {
 			for (File f : lf) {
 				if (f.getName().endsWith(ext)) {
 					String index = Algorithms.getFileNameWithoutExtension(f);
-					if (index.length() >= 9 || index.charAt(index.length() - 9) != '_') {
-						String nm = index.substring(0, index.length() - 9);
-						if (existingFiles.contains(nm)) {
-							files.add(f);
-						}
+					if (index.length() < 9) {
+						index.length();
 					}
-
+					String nm = index.substring(0, index.length() - 9);
+					if (existingFiles.contains(nm)) {
+						files.add(f);
+					}
 				}
 			}
 		}
+
 		return files;
 	}
 
-	public void indexMainMap(File f, long dateCreated) {
+	void indexMainMap(File f, long dateCreated) {
 		String nm = Algorithms.getFileNameWithoutExtension(f).toLowerCase();
 		if(!regions.containsKey(nm)) {
-			regions.put(nm, new RegionUpdateFiles(nm));
+			regions.put(nm, new RegionUpdateFiles());
 		}
 		RegionUpdateFiles regionUpdateFiles = regions.get(nm);
 		regionUpdateFiles.mainFileInit = dateCreated;
@@ -104,7 +103,7 @@ public class IncrementalChangesManager {
 		}
 	}
 	
-	public boolean index(File f, long dateCreated, BinaryMapIndexReader mapReader) {
+	public boolean index(File f, long dateCreated) {
 		String index = Algorithms.getFileNameWithoutExtension(f).toLowerCase();
 		if(index.length() <= 9 || index.charAt(index.length() - 9) != '_'){
 			return false;
@@ -112,33 +111,23 @@ public class IncrementalChangesManager {
 		String nm = index.substring(0, index.length() - 9);
 		String date = index.substring(index.length() - 9 + 1);
 		if(!regions.containsKey(nm)) {
-			regions.put(nm, new RegionUpdateFiles(nm));
+			regions.put(nm, new RegionUpdateFiles());
 		}
 		RegionUpdateFiles regionUpdateFiles = regions.get(nm);
 		return regionUpdateFiles.addUpdate(date, f, dateCreated);
 	}
 
-	private static long calculateSize(List<IncrementalUpdate> list) {
-		long l = 0;
-		for(IncrementalUpdate iu : list) {
-			l += iu.containerSize;
-		}
-		return l;
-	}	
-	
 	class RegionUpdate {
 		File file;
 		long obfCreated;
 	}
 	
 	class RegionUpdateFiles {
-		final String nm;
 		long mainFileInit;
 		final TreeMap<String, List<RegionUpdate>> dayUpdates = new TreeMap<>();
 		final TreeMap<String, RegionUpdate> monthUpdates = new TreeMap<>();
 		
-		RegionUpdateFiles(String nm) {
-			this.nm = nm;
+		RegionUpdateFiles() {
 		}
 		
 		boolean addUpdate(String date, File file, long dateCreated) {
@@ -166,12 +155,9 @@ public class IncrementalChangesManager {
 		RegionUpdateFiles updateFiles;
 		
 		
-		boolean isPreferrableLimitForDayUpdates(String monthYearPart, List<IncrementalUpdate> dayUpdates) {
+		boolean isPreferrableLimitForDayUpdates(String monthYearPart) {
 			List<RegionUpdate> lst = updateFiles.dayUpdates.get(monthYearPart);
-			if(lst == null || lst.size() < 10) {
-				return true;
-			}
-			return false;
+			return lst == null || lst.size() < 10;
 		}
 		
 		public List<IncrementalUpdate> getItemsForUpdate() {
@@ -185,7 +171,7 @@ public class IncrementalChangesManager {
 					}
 					ll.addAll(n.getMonthUpdate());
 				} else {
-					if(n.isDayUpdateApplicable() && isPreferrableLimitForDayUpdates(n.monthYearPart, n.getDayUpdates())) {
+					if(n.isDayUpdateApplicable() && isPreferrableLimitForDayUpdates(n.monthYearPart)) {
 						ll.addAll(n.getDayUpdates());
 					} else if(n.isMonthUpdateApplicable()) {
 						ll.addAll(n.getMonthUpdate());
@@ -220,13 +206,8 @@ public class IncrementalChangesManager {
 		boolean isMonthUpdateApplicable() {
 			return monthUpdate != null;
 		}
-		
 		boolean isDayUpdateApplicable() {
-			boolean inLimits = dayUpdates.size() > 0 && dayUpdates.size() < 4;
-			if(!inLimits) {
-				return false;
-			}
-			return true;
+			return dayUpdates.size() > 0 && dayUpdates.size() < 4;
 		}
 		
 		List<IncrementalUpdate> getMonthUpdate() {
@@ -246,7 +227,6 @@ public class IncrementalChangesManager {
 		List<IncrementalUpdate> getDayUpdates() {
 			return dayUpdates;
 		}
-		
 		IncrementalUpdateGroupByMonth(String monthYearPart) {
 			this.monthYearPart = monthYearPart;
 		}
@@ -293,8 +273,6 @@ public class IncrementalChangesManager {
 		}
 		return lst;
 	}
-	
-	
 
 	public IncrementalUpdateList getUpdatesByMonth(String fileName) {
 		IncrementalUpdateList iul = new IncrementalUpdateList();

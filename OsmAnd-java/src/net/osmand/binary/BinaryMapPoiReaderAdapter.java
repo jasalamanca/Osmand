@@ -42,7 +42,7 @@ class BinaryMapPoiReaderAdapter {
 	private static final int ZOOM_TO_SKIP_FILTER = 3;
 	private static final int BUCKET_SEARCH_BY_NAME = 5;
 
-	public static class PoiSubType {
+	static class PoiSubType {
 		boolean text;
 		String name;
 		List<String> possibleValues = null;

@@ -1,6 +1,5 @@
 package net.osmand.plus.activities;
 
-
 import android.content.Context;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
@@ -22,15 +21,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
 
-
 public class LocalIndexHelper {
-
 	private final OsmandApplication app;
 
 	public LocalIndexHelper(OsmandApplication app) {
 		this.app = app;
 	}
-
 
 	private String getInstalledDate(File f) {
 		return android.text.format.DateFormat.getMediumDateFormat(app).format(getInstalationDate(f));
@@ -146,7 +142,6 @@ public class LocalIndexHelper {
 		loadObfData(app.getAppPath(IndexConstants.MAPS_PATH), result, false, loadTask, loadedMaps);
 		loadObfData(app.getAppPath(IndexConstants.ROADS_INDEX_DIR), result, false, loadTask, loadedMaps);
 		loadWikiData(app.getAppPath(IndexConstants.WIKI_INDEX_DIR), result, loadTask);
-		//loadVoiceData(app.getAppPath(IndexConstants.TTSVOICE_INDEX_EXT_ZIP), result, true, loadTask);
 		loadVoiceData(app.getAppPath(IndexConstants.VOICE_INDEX_DIR), result, false, loadTask);
 		loadFontData(app.getAppPath(IndexConstants.FONT_INDEX_DIR), result, false, loadTask);
 		loadObfData(app.getAppPath(IndexConstants.BACKUP_INDEX_DIR), result, true, loadTask, loadedMaps);
@@ -184,12 +179,10 @@ public class LocalIndexHelper {
 				if (voiceF.isDirectory() && MediaCommandPlayerImpl.isMyData(voiceF)) {
 					LocalIndexInfo info = null;
 					info = new LocalIndexInfo(LocalIndexType.VOICE_DATA, voiceF, backup);
-					if (info != null) {
-						updateDescription(info);
-						result.add(info);
-						loadTask.loadFile(info);
-					}
-				}
+                    updateDescription(info);
+                    result.add(info);
+                    loadTask.loadFile(info);
+                }
 			}
 		}
 	}
@@ -239,9 +232,6 @@ public class LocalIndexHelper {
 						lt = LocalIndexType.WIKI_DATA;
 					}
 					LocalIndexInfo info = new LocalIndexInfo(lt, mapFile, backup);
-					if (loadedMaps.containsKey(mapFile.getName()) && !backup) {
-						info.setLoaded(true);
-					}
 					updateDescription(info);
 					result.add(info);
 					loadTask.loadFile(info);
@@ -273,7 +263,6 @@ public class LocalIndexHelper {
 		public String getHumanString(Context ctx) {
 			return ctx.getString(resId);
 		}
-
 		public int getIconResource() {
 			return iconResource;
 		}
@@ -288,37 +277,6 @@ public class LocalIndexHelper {
 				index++;
 			}
 			return index;
-		}
-
-		public String getBasename(LocalIndexInfo localIndexInfo) {
-			String fileName = localIndexInfo.getFileName();
-			if (fileName.endsWith(IndexConstants.EXTRA_ZIP_EXT)) {
-				return fileName.substring(0, fileName.length() - IndexConstants.EXTRA_ZIP_EXT.length());
-			}
-			if (fileName.endsWith(IndexConstants.SQLITE_EXT)) {
-				return fileName.substring(0, fileName.length() - IndexConstants.SQLITE_EXT.length());
-			}
-			if (this == VOICE_DATA) {
-				int l = fileName.lastIndexOf('_');
-				if (l == -1) {
-					l = fileName.length();
-				}
-				return fileName.substring(0, l);
-			}
-			if (this == FONT_DATA) {
-				int l = fileName.indexOf('.');
-				if (l == -1) {
-					l = fileName.length();
-				}
-				return fileName.substring(0, l).replace('_', ' ').replace('-', ' ');
-			}
-			int ls = fileName.lastIndexOf('_');
-			if (ls >= 0) {
-				return fileName.substring(0, ls);
-			} else if (fileName.indexOf('.') > 0) {
-				return fileName.substring(0, fileName.indexOf('.'));
-			}
-			return fileName;
 		}
 	}
 }

@@ -4,7 +4,7 @@
 package net.osmand.binary;
 
 
-@SuppressWarnings("unused") //NOTE jsala automático en su momento
+@SuppressWarnings("ALL") //NOTE jsala automático en su momento
 public final class OsmandOdb {
   private OsmandOdb() {}
   public static void registerAllExtensions(

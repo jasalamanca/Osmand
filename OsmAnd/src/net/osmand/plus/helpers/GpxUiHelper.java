@@ -162,7 +162,7 @@ public class GpxUiHelper {
 			final String formatDuration = Algorithms.formatDuration((int) (analysis.timeMoving / 1000), app.accessibilityEnabled());
 			description.append(nl).append(app.getString(R.string.gpx_timemoving,
 					getColorValue(timeSpanClr, formatDuration, html)));
-			description.append(" (" + getColorValue(distanceClr, OsmAndFormatter.getFormattedDistance(analysis.totalDistanceMoving, app), html) + ")");
+			description.append(" (").append(getColorValue(distanceClr, OsmAndFormatter.getFormattedDistance(analysis.totalDistanceMoving, app), html)).append(")");
 		}
 
 		// 4. Elevation, eleUp, eleDown, if recorded
@@ -697,7 +697,6 @@ public class GpxUiHelper {
 		viewName.setText(item.getTitle().replace("/", " • ").trim());
 		ImageView icon = v.findViewById(R.id.icon);
 		icon.setVisibility(View.GONE);
-		//icon.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_action_polygom_dark));
 		viewName.setTypeface(Typeface.DEFAULT, Typeface.NORMAL);
 
 		GPXTrackAnalysis analysis = null;
@@ -1207,7 +1206,7 @@ public class GpxUiHelper {
 
 		List<Entry> values = calculateElevationArray(analysis, axisType, divX, convEle);
 
-		OrderedLineDataSet dataSet = new OrderedLineDataSet(values, "", GPXDataSetType.ALTITUDE, axisType);
+		OrderedLineDataSet dataSet = new OrderedLineDataSet(values, "", GPXDataSetType.ALTITUDE);
 		dataSet.priority = (float) (analysis.avgElevation - analysis.minElevation) * convEle;
 		dataSet.divX = divX;
 		dataSet.mulY = convEle;
@@ -1326,7 +1325,7 @@ public class GpxUiHelper {
 			}
 		}
 
-		OrderedLineDataSet dataSet = new OrderedLineDataSet(values, "", GPXDataSetType.SPEED, axisType);
+		OrderedLineDataSet dataSet = new OrderedLineDataSet(values, "", GPXDataSetType.SPEED);
 
 		String format = null;
 		if (dataSet.getYMax() < 3) {
@@ -1521,7 +1520,7 @@ public class GpxUiHelper {
 			slopeValues.add(lastEntry);
 		}
 
-		OrderedLineDataSet dataSet = new OrderedLineDataSet(slopeValues, "", GPXDataSetType.SLOPE, axisType);
+		OrderedLineDataSet dataSet = new OrderedLineDataSet(slopeValues, "", GPXDataSetType.SLOPE);
 		dataSet.divX = divX;
 		dataSet.units = mainUnitY;
 
@@ -1634,7 +1633,6 @@ public class GpxUiHelper {
 	public static class OrderedLineDataSet extends LineDataSet {
 
 		private final GPXDataSetType dataSetType;
-		private final GPXDataSetAxisType dataSetAxisType;
 
 		float priority;
 		String units;
@@ -1642,10 +1640,9 @@ public class GpxUiHelper {
 		float divY = 1f;
 		float mulY = 1f;
 
-		OrderedLineDataSet(List<Entry> yVals, String label, GPXDataSetType dataSetType, GPXDataSetAxisType dataSetAxisType) {
+		OrderedLineDataSet(List<Entry> yVals, String label, GPXDataSetType dataSetType) {
 			super(yVals, label);
 			this.dataSetType = dataSetType;
-			this.dataSetAxisType = dataSetAxisType;
 		}
 
 		public GPXDataSetType getDataSetType() {
@@ -1822,19 +1819,15 @@ public class GpxUiHelper {
 		public String getFileName() {
 			return fileName;
 		}
-
 		long getLastModified() {
 			return lastModified;
 		}
-
 		long getFileSize() {
 			return fileSize;
 		}
-
 		boolean isSelected() {
 			return selected;
 		}
-
 		void setSelected(boolean selected) {
 			this.selected = selected;
 		}

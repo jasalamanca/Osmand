@@ -20,7 +20,6 @@ public class EntityInfo {
 	public void setUid(String uid) {
 		this.uid = uid;
 	}
-
 	public void setUser(String user) {
 		this.user = user;
 	}

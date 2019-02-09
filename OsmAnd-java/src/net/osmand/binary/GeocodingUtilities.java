@@ -134,7 +134,7 @@ public class GeocodingUtilities {
 	}
 
 
-	public List<GeocodingResult> reverseGeocodingSearch(RoutingContext ctx, double lat, double lon, boolean allowEmptyNames) throws IOException {
+	public List<GeocodingResult> reverseGeocodingSearch(RoutingContext ctx, double lat, double lon, boolean allowEmptyNames) {
 		RoutePlannerFrontEnd rp = new RoutePlannerFrontEnd();
 		List<GeocodingResult> lst = new ArrayList<>();
 		List<RouteSegmentPoint> listR = new ArrayList<>();

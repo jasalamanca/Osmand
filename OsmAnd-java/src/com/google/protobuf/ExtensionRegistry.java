@@ -90,6 +90,7 @@ import java.util.Map;
  *
  * @author kenton@google.com Kenton Varda
  */
+@SuppressWarnings("ALL")
 public final class ExtensionRegistry extends ExtensionRegistryLite {
   /** Construct a new, empty instance. */
   public static ExtensionRegistry newInstance() {

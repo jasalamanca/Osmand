@@ -71,7 +71,7 @@ public class MapZooms {
 
 			@Override
 			public int compare(MapZoomPair o1, MapZoomPair o2) {
-				return -new Integer(o1.getMaxZoom()).compareTo(o2.getMaxZoom());
+				return -Integer.valueOf(o1.getMaxZoom()).compareTo(o2.getMaxZoom());
 			}
 		});
 	}

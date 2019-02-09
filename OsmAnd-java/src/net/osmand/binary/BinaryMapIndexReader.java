@@ -545,10 +545,10 @@ public class BinaryMapIndexReader {
 
 	public List<City> getCities(SearchRequest<City> resultMatcher,
 	                            int cityType) throws IOException {
-		return getCities(resultMatcher, null, null, cityType);
+		return getCities(resultMatcher, null, cityType);
 	}
 
-	private List<City> getCities(SearchRequest<City> resultMatcher, StringMatcher matcher, String lang, int cityType)
+	private List<City> getCities(SearchRequest<City> resultMatcher, StringMatcher matcher, int cityType)
 			throws IOException {
 		List<City> cities = new ArrayList<>();
 		for (AddressRegion r : addressIndexes) {
@@ -1810,12 +1810,9 @@ public class BinaryMapIndexReader {
 			} else if (!tag.equals(other.tag))
 				return false;
 			if (value == null) {
-				if (other.value != null)
-					return false;
-			} else if (!value.equals(other.value))
-				return false;
-			return true;
-		}
+                return other.value == null;
+			} else return value.equals(other.value);
+        }
 
 	}
 
@@ -1879,8 +1876,8 @@ public class BinaryMapIndexReader {
 
     //NOTE jsala es un test
     public static void main(String[] args) throws IOException {
-		File fl = new File(System.getProperty("maps") + "/Synthetic_test_rendering.obf");
-		fl = new File(System.getProperty("maps") + "/Map.obf");
+//		File fl = new File(System.getProperty("maps") + "/Synthetic_test_rendering.obf");
+		File fl = new File(System.getProperty("maps") + "/Map.obf");
 		
 		RandomAccessFile raf = new RandomAccessFile(fl, "r");
 
@@ -1937,11 +1934,8 @@ public class BinaryMapIndexReader {
 		SearchRequest<Amenity> req = buildSearchPoiRequest(locations, radius, new SearchPoiTypeFilter() {
 			@Override
 			public boolean accept(PoiCategory type, String subcategory) {
-				if (type == poiTypes.getPoiCategoryByName("shop") && subcategory.contains("super")) {
-					return true;
-				}
-				return false;
-			}
+                return type == poiTypes.getPoiCategoryByName("shop") && subcategory.contains("super");
+            }
 
 			@Override
 			public boolean isEmpty() {

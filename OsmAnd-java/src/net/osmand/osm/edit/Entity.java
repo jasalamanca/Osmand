@@ -9,7 +9,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-
 public abstract class Entity implements Serializable {
 	public enum EntityType {
 		NODE,
@@ -32,7 +31,6 @@ public abstract class Entity implements Serializable {
 	public static class EntityId {
 		private final EntityType type;
 		private final Long id;
-
 
 		public EntityId(EntityType type, Long id) {
 			this.type = type;
@@ -75,14 +73,11 @@ public abstract class Entity implements Serializable {
 					return false;
 			} else if (!id.equals(other.id))
 				return false;
-			if (type == null) {
-				if (other.type != null)
-					return false;
-			} else if (!type.equals(other.type))
-				return false;
-			return true;
+			if (type == null)
+				return other.type == null;
+			else
+				return type.equals(other.type);
 		}
-
 	}
 
 	// lazy initializing
@@ -90,10 +85,6 @@ public abstract class Entity implements Serializable {
 	private Set<String> changedTags;
 	private final long id;
 	private boolean dataLoaded;
-	public static final int MODIFY_UNKNOWN = 0;
-	public static final int MODIFY_DELETED = -1;
-	public static final int MODIFY_MODIFIED = 1;
-	public static final int MODIFY_CREATED = 2;
 
 	Entity(long id) {
 		this.id = id;
@@ -110,11 +101,9 @@ public abstract class Entity implements Serializable {
 	public Set<String> getChangedTags() {
 		return changedTags;
 	}
-
 	public void setChangedTags(Set<String> changedTags) {
 		this.changedTags = changedTags;
 	}
-
 	public long getId() {
 		return id;
 	}
@@ -129,7 +118,7 @@ public abstract class Entity implements Serializable {
 	public String putTag(String key, String value) {
 		return putTagNoLC(key.toLowerCase(), value);
 	}
-	
+
 	public String putTagNoLC(String key, String value) {
 		if (tags == null) {
 			tags = new LinkedHashMap<>();
@@ -154,7 +143,6 @@ public abstract class Entity implements Serializable {
 		}
 		return Collections.unmodifiableMap(tags);
 	}
-
 
 	public Collection<String> getTagKeySet() {
 		if (tags == null) {
@@ -195,9 +183,6 @@ public abstract class Entity implements Serializable {
 		if (id != other.id)
 			return false;
 		// virtual are not equal
-		if (id < 0) {
-			return false;
-		}
-		return true;
-	}
+        return id >= 0;
+    }
 }

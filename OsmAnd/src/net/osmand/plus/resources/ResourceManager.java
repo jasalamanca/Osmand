@@ -162,27 +162,20 @@ public class ResourceManager {
 	
 	private final Map<String, BinaryMapReaderResource> fileReaders = new ConcurrentHashMap<>();
 	
-	
 	private final Map<String, RegionAddressRepository> addressMap = new ConcurrentHashMap<>();
 	private final Map<String, AmenityIndexRepository> amenityRepositories = new ConcurrentHashMap<>();
 	private final Map<String, TransportIndexRepository> transportRepositories = new ConcurrentHashMap<>();
 	
 	private final Map<String, String> indexFileNames = new ConcurrentHashMap<>();
 	private final Map<String, String> basemapFileNames = new ConcurrentHashMap<>();
-	
-	
-	private final IncrementalChangesManager changesManager = new IncrementalChangesManager(this);
-	
-	private final MapRenderRepositories renderer;
 
+	private final IncrementalChangesManager changesManager = new IncrementalChangesManager(this);
+	private final MapRenderRepositories renderer;
 	private final AsyncLoadingThread asyncLoadingThread = new AsyncLoadingThread(this);
-	
 	private final HandlerThread renderingBufferImageThread;
-	
 	private final java.text.DateFormat dateFormat;
 
 	public ResourceManager(OsmandApplication context) {
-		
 		this.context = context;
 		this.renderer = new MapRenderRepositories(context);
 
@@ -376,7 +369,7 @@ public class ResourceManager {
 				
 				boolean unconditional = false;
 				if(installMode != null)
-					unconditional = unconditional || (ASSET_INSTALL_MODE__alwaysCopyOnFirstInstall.equals(installMode) && isFirstInstall);
+					unconditional = ASSET_INSTALL_MODE__alwaysCopyOnFirstInstall.equals(installMode) && isFirstInstall;
 				if(copyMode == null)
 					log.error("No copy mode was defined for " + source);
 				unconditional = unconditional || ASSET_COPY_MODE__alwaysOverwriteOrCopy.equals(copyMode);
@@ -484,7 +477,7 @@ public class ResourceManager {
 						dateCreated = f.lastModified();
 					}
 					if(f.getParentFile().getName().equals(liveDir.getName())) {
-						boolean toUse = changesManager.index(f, dateCreated, mapReader);
+						boolean toUse = changesManager.index(f, dateCreated);
 						if(!toUse) {
 							try {
 								mapReader.close();
@@ -628,8 +621,7 @@ public class ResourceManager {
 		}
 		return amenities;
 	}
-	
-	
+
 	public boolean containsAmenityRepositoryToSearch(boolean searchByName){
 		for (AmenityIndexRepository index : amenityRepositories.values()) {
 			if(searchByName){
@@ -841,11 +833,9 @@ public class ResourceManager {
 	public GeoidAltitudeCorrection getGeoidAltitudeCorrection() {
 		return geoidAltitudeCorrection;
 	}
-
 	public OsmandRegions getOsmandRegions() {
 		return context.getRegions();
 	}
-
 	public IncrementalChangesManager getChangesManager() {
 		return changesManager;
 	}

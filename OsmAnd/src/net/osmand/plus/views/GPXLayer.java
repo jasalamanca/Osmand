@@ -58,24 +58,18 @@ import java.util.Map;
 
 public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContextMenuProvider,
 		ContextMenuLayer.IMoveObjectProvider, MapTextProvider<WptPt> {
-
 	private OsmandMapTileView view;
-
 	private Paint paint;
-	private Paint paint2;
-    private Paint shadowPaint;
-    private Paint paint_1;
-    private int cachedHash;
+	private Paint shadowPaint;
+	private int cachedHash;
 	private int cachedColor;
 	private Paint paintIcon;
 	private Bitmap pointSmall;
 	private int currentTrackColor;
-
 	private Bitmap selectedPoint;
 	private TrackChartPoints trackChartPoints;
 
 	private static final int startZoom = 7;
-
 
 	private GpxSelectionHelper selectedGpxHelper;
 	private MapMarkersHelper mapMarkersHelper;
@@ -85,17 +79,12 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 
 	private Paint paintOuterRect;
 	private Paint paintInnerRect;
-
     private Paint paintGridOuterCircle;
 	private Paint paintGridCircle;
-
 	private Paint paintTextIcon;
 
 	private OsmandRenderer osmandRenderer;
-
-	private List<TrkSegment> points;
-
-    private ContextMenuLayer contextMenuLayer;
+	private ContextMenuLayer contextMenuLayer;
 	@ColorInt
 	private int visitedColor;
 	@ColorInt
@@ -118,13 +107,13 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 		paint = new Paint();
 		paint.setStyle(Style.STROKE);
 		paint.setAntiAlias(true);
-		paint2 = new Paint();
+		Paint paint2 = new Paint();
 		paint2.setStyle(Style.STROKE);
 		paint2.setAntiAlias(true);
 		shadowPaint = new Paint();
 		shadowPaint.setStyle(Style.STROKE);
 		shadowPaint.setAntiAlias(true);
-		paint_1 = new Paint();
+		Paint paint_1 = new Paint();
 		paint_1.setStyle(Style.STROKE);
 		paint_1.setAntiAlias(true);
 
@@ -184,11 +173,11 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 
 	@Override
 	public void onPrepareBufferImage(Canvas canvas, RotatedTileBox tileBox, DrawSettings settings) {
-		if (points != null) {
-			updatePaints(0, false, false, settings, tileBox);
-			for (TrkSegment ts : points)
-				ts.drawRenderers(view.getZoom(), paint, canvas, tileBox);
-		} else {
+//		if (points != null) {
+//			updatePaints(0, false, false, settings, tileBox);
+//			for (TrkSegment ts : points)
+//				ts.drawRenderers(view.getZoom(), paint, canvas, tileBox);
+//		} else {
 			List<SelectedGpxFile> selectedGPXFiles = selectedGpxHelper.getSelectedGPXFiles();
 			cache.clear();
 			currentTrackColor = view.getSettings().CURRENT_TRACK_COLOR.get();
@@ -204,7 +193,7 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 			if (textLayer != null && textLayer.isVisible()) {
 				textLayer.putData(this, cache);
 			}
-		}
+//		}
 	}
 
 	private int updatePaints(int color, boolean routePoints, boolean currentTrack, DrawSettings nightMode, RotatedTileBox tileBox) {
@@ -288,9 +277,7 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 
 					paintInnerRect.setColor(color);
 					paintInnerRect.setAlpha(179);
-
 					List<GpxDisplayItem> items = groups.get(0).getModifiableList();
-
 					drawSplitItems(canvas, tileBox, items, settings);
 				}
 			}
@@ -525,7 +512,6 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 
 	private boolean calculateBelongs(int ex, int ey, int objx, int objy, int radius) {
 		return (Math.abs(objx - ex) <= radius * 1.5 && Math.abs(objy - ey) <= radius * 1.5);
-//		return Math.abs(objx - ex) <= radius && (ey - objy) <= radius / 2 && (objy - ey) <= 3 * radius ;
 	}
 
 	private void getWptFromPoint(RotatedTileBox tb, PointF point, List<? super WptPt> res) {
@@ -586,7 +572,6 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 		}
 		return null;
 	}
-
 
 	@Override
 	public void destroyLayer() {

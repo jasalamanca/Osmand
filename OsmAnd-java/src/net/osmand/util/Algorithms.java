@@ -119,8 +119,6 @@ public class Algorithms {
         };
     }
 
-	private static final char CHAR_TOSPLIT = 0x01;
-
 	public static int findFirstNumberEndIndex(String value) {
 		int i = 0;
 		boolean valid = false;
@@ -167,7 +165,6 @@ public class Algorithms {
 		}
 	}
 
-
 	/**
 	 * Parse the color string, and return the corresponding color-int.
 	 * If the string cannot be parsed, throws an IllegalArgumentException
@@ -197,7 +194,6 @@ public class Algorithms {
 		}
 		throw new IllegalArgumentException("Unknown color " + colorString); //$NON-NLS-1$
 	}
-
 
 	public static int extractFirstIntegerNumber(String s) {
 		int i = 0;
@@ -270,7 +266,6 @@ public class Algorithms {
 			out.write(b, 0, read);
 		}
 	}
-
 
 	public static void streamCopy(InputStream in, OutputStream out, IProgress pg, int bytesDivisor) throws IOException {
 		byte[] b = new byte[BUFFER_SIZE];
@@ -382,9 +377,11 @@ public class Algorithms {
 	}
 
 	private static String format(int i, String hexString) {
-		while (hexString.length() < i) {
-			hexString = "0" + hexString;
+		StringBuilder hexStringBuilder = new StringBuilder(hexString);
+		while (hexStringBuilder.length() < i) {
+			hexStringBuilder.insert(0, "0");
 		}
+		hexString = hexStringBuilder.toString();
 		return hexString;
 	}
 

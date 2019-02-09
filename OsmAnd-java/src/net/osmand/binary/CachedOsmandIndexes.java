@@ -1,11 +1,5 @@
 package net.osmand.binary;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-
 import net.osmand.PlatformUtil;
 import net.osmand.binary.BinaryMapAddressReaderAdapter.AddressRegion;
 import net.osmand.binary.BinaryMapAddressReaderAdapter.CitiesBlock;
@@ -26,9 +20,14 @@ import net.osmand.binary.OsmandIndex.PoiPart;
 import net.osmand.binary.OsmandIndex.RoutingPart;
 import net.osmand.binary.OsmandIndex.RoutingSubregion;
 import net.osmand.binary.OsmandIndex.TransportPart;
-import net.osmand.util.MapUtils;
 
 import org.apache.commons.logging.Log;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 
 public class CachedOsmandIndexes {
 	
@@ -238,9 +237,7 @@ public class CachedOsmandIndexes {
 				cblock.type = mr.getType();
 				mi.cities.add(cblock);
 			}
-			for(String s : index.getAdditionalTagsList()) {
-				mi.attributeTagsTable.add(s);
-			}
+			mi.attributeTagsTable.addAll(index.getAdditionalTagsList());
 			reader.addressIndexes.add(mi);
 			reader.indexes.add(mi);
 		}

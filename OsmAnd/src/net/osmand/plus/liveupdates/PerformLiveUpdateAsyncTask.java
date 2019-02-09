@@ -32,9 +32,9 @@ class PerformLiveUpdateAsyncTask
 	private final String localIndexFileName;
 	private final boolean forceUpdate;
 
-	public PerformLiveUpdateAsyncTask(@NonNull Context context,
-									  @NonNull String localIndexFileName,
-									  boolean forceUpdate) {
+	PerformLiveUpdateAsyncTask(@NonNull Context context,
+							   @NonNull String localIndexFileName,
+							   boolean forceUpdate) {
 		this.context = context;
 		this.localIndexFileName = localIndexFileName;
 		this.forceUpdate = forceUpdate;
@@ -45,7 +45,7 @@ class PerformLiveUpdateAsyncTask
 		LOG.debug("onPreExecute");
 		if (context instanceof AbstractDownloadActivity) {
 			AbstractDownloadActivity activity = (AbstractDownloadActivity) context;
-			activity.setSupportProgressBarIndeterminateVisibility(true);
+			activity.setProgressBarIndeterminateVisibility(true);
 		}
 		final OsmandApplication myApplication = getMyApplication();
 		OsmandSettings.CommonPreference<Long> lastCheckPreference =
@@ -70,7 +70,7 @@ class PerformLiveUpdateAsyncTask
 		LOG.debug("onPostExecute");
 		if (context instanceof AbstractDownloadActivity) {
 			AbstractDownloadActivity activity = (AbstractDownloadActivity) context;
-			activity.setSupportProgressBarIndeterminateVisibility(false);
+			activity.setProgressBarIndeterminateVisibility(false);
 		}
 		final OsmandApplication application = getMyApplication();
 		final OsmandSettings settings = application.getSettings();
@@ -83,8 +83,7 @@ class PerformLiveUpdateAsyncTask
 			if (ll != null && !ll.isEmpty()) {
 				ArrayList<IndexItem> itemsToDownload = new ArrayList<>(ll.size());
 				for (IncrementalChangesManager.IncrementalUpdate iu : ll) {
-					IndexItem indexItem = new IndexItem(iu.fileName, "Incremental update",
-							iu.timestamp, iu.sizeText, iu.contentSize,
+					IndexItem indexItem = new IndexItem(iu.fileName, iu.timestamp, iu.sizeText, iu.contentSize,
 							iu.containerSize, DownloadActivityType.LIVE_UPDATES_FILE);
 					itemsToDownload.add(indexItem);
 				}
@@ -97,14 +96,11 @@ class PerformLiveUpdateAsyncTask
 				if (getMyApplication().getSettings().isInternetConnectionAvailable()) {
 					if (forceUpdate || settings.isWifiConnected() || !downloadViaWiFi) {
 						long szLong = 0;
-						int i = 0;
 						for (IndexItem es : downloadThread.getCurrentDownloadingItems()) {
 							szLong += es.getContentSize();
-							i++;
 						}
 						for (IndexItem es : itemsToDownload) {
 							szLong += es.getContentSize();
-							i++;
 						}
 						double sz = ((double) szLong) / (1 << 20);
 						// get availabile space
@@ -127,9 +123,9 @@ class PerformLiveUpdateAsyncTask
 		}
 	}
 
-	public static void tryRescheduleDownload(@NonNull Context context,
-											 @NonNull OsmandSettings settings,
-											 @NonNull String localIndexFileName) {
+	static void tryRescheduleDownload(@NonNull Context context,
+									  @NonNull OsmandSettings settings,
+									  @NonNull String localIndexFileName) {
 		final OsmandSettings.CommonPreference<Integer> updateFrequencyPreference =
 				preferenceUpdateFrequency(localIndexFileName, settings);
 		final Integer frequencyOrdinal = updateFrequencyPreference.get();

@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class GeoPointParserUtil {
-
+	//NOTE jsala es un test
 	public static void main(String[] args) {
 		final int ilat = 34, ilon = -106;
 		final double dlat = 34.99393, dlon = -106.61568;
@@ -76,8 +76,6 @@ public class GeoPointParserUtil {
 			System.out.println(" Passed!");
 		}
 
-		
-		
 		// geo:34,-106
 		url = "geo:" + ilat + "," + ilon;
 		System.out.println("url: " + url);
@@ -97,7 +95,6 @@ public class GeoPointParserUtil {
 		actual = GeoPointParserUtil.parse(url);
 		assertUrlEquals(url, actual.getGeoUriString());
 		assertGeoPoint(actual, new GeoParsedPoint(dlat, dlon));
-
 
 		// geo:34.99393,-106.61568?z=11
 		z = 11;
@@ -751,8 +748,6 @@ public class GeoPointParserUtil {
 				throw new RuntimeException(u + " not parsable, but parse did not return null!");
 			System.out.println("Handled URL");
 		}
-
-
 	}
 
 	private static boolean areCloseEnough(double a, double b, long howClose) {
@@ -932,7 +927,6 @@ public class GeoPointParserUtil {
 			simpleDomains.add("download.osmand.net");
 			simpleDomains.add("openstreetmap.de");
 			simpleDomains.add("www.openstreetmap.de");
-
 
 			final Pattern commaSeparatedPairPattern = Pattern.compile("(?:loc:)?([N|S]?[+-]?\\d+(?:\\.\\d+)?),([E|W]?[+-]?\\d+(?:\\.\\d+)?)");
 
@@ -1159,8 +1153,6 @@ public class GeoPointParserUtil {
 							y = matcher.group(1);
 						} else {
 							x = c.replaceAll(".*\"lng\":\\s*([+\\-]?[0-9.]+).*", "$1");
-							if (x == null) // try 'lon' for the second time
-								x = c.replaceAll(".*\"lon\":\\s*([+\\-]?[0-9.]+).*", "$1");
 							y = c.replaceAll(".*\"lat\":\\s*([+\\-]?[0-9.]+).*", "$1");
 							z = c.replaceAll(".*\"l\":\\s*([+-]?[0-9.]+).*", "$1");
 							return new GeoParsedPoint(y, x, z, label);
@@ -1220,7 +1212,6 @@ public class GeoPointParserUtil {
 						return new GeoParsedPoint(params.get("saddr"));
 					}
 				}
-
 			} catch (RuntimeException e) {
 				e.printStackTrace();
 			}
@@ -1320,11 +1311,10 @@ public class GeoPointParserUtil {
 		}
 		if (path.contains("+")) {
 			path = path.substring(0, path.indexOf("+"));
-			descr = path.substring(path.indexOf("+") + 1);
-			if (descr.contains(")")) {
-				descr = descr.substring(0, descr.indexOf(")"));
-			}
-
+//			descr = path.substring(path.indexOf("+") + 1);
+//			if (descr.contains(")")) {
+//				descr = descr.substring(0, descr.indexOf(")"));
+//			}
 		}
 		if (params.containsKey("z")) {
 			zmPart = params.get("z");

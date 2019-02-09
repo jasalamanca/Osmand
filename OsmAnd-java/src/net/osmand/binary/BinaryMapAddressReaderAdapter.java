@@ -242,7 +242,7 @@ public class BinaryMapAddressReaderAdapter {
 	}
 
 	private class DefaultCityMatcher implements CityMatcher {
-		private StringMatcher stringMatcher = null;
+		private final StringMatcher stringMatcher;
 
 		DefaultCityMatcher(StringMatcher stringMatcher) {
 			this.stringMatcher = stringMatcher;

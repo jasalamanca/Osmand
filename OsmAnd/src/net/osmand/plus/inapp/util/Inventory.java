@@ -80,11 +80,9 @@ public class Inventory {
     List<Purchase> getAllPurchases() {
         return new ArrayList<>(mPurchaseMap.values());
     }
-
     void addSkuDetails(SkuDetails d) {
         mSkuMap.put(d.getSku(), d);
     }
-
     void addPurchase(Purchase p) {
         mPurchaseMap.put(p.getSku(), p);
     }

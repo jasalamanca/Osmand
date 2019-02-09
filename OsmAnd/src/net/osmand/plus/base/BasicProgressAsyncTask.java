@@ -119,7 +119,6 @@ public abstract class BasicProgressAsyncTask<Tag, Params, Progress, Result> exte
 		this.interrupted = interrupted;
 	}
 
-	@Override
 	public boolean isInterrupted() {
 		return interrupted;
 	}

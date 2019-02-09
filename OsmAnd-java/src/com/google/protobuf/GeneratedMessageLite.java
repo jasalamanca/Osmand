@@ -31,7 +31,6 @@
 package com.google.protobuf;
 
 import java.io.IOException;
-import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -45,6 +44,7 @@ import java.util.Map;
  *
  * @author kenton@google.com Kenton Varda
  */
+@SuppressWarnings("ALL")
 public abstract class GeneratedMessageLite extends AbstractMessageLite
     implements Serializable {
   private static final long serialVersionUID = 1L;

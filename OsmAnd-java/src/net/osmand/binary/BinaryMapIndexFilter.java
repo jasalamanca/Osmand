@@ -109,9 +109,7 @@ class BinaryMapIndexFilter {
 				double len = calculateLength(object, zoom);
 				if(len > 100){
 					stat.polygonBigSize ++;
-					if(stat.polygonBigSize % 10000 == 0){
-						return true;
-					}
+					return stat.polygonBigSize % 10000 == 0;
 				}
 				
 				return false;

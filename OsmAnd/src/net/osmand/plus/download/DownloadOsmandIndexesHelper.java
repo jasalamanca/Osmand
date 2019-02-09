@@ -30,10 +30,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.zip.GZIPInputStream;
 
-public class DownloadOsmandIndexesHelper {
+class DownloadOsmandIndexesHelper {
 	private final static Log log = PlatformUtil.getLog(DownloadOsmandIndexesHelper.class);
 	
-	public static class IndexFileList implements Serializable {
+	static class IndexFileList implements Serializable {
 		private static final long serialVersionUID = 1L;
 
 		private boolean downloadedFromInternet = false;
@@ -61,7 +61,7 @@ public class DownloadOsmandIndexesHelper {
 		void setDownloadedFromInternet(boolean downloadedFromInternet) {
 			this.downloadedFromInternet = downloadedFromInternet;
 		}
-		public boolean isDownloadedFromInternet() {
+		boolean isDownloadedFromInternet() {
 			return downloadedFromInternet;
 		}
 		void setMapVersion(String mapversion) {
@@ -77,14 +77,14 @@ public class DownloadOsmandIndexesHelper {
 		}
 
 		boolean isAcceptable() {
-			return (indexFiles != null && !indexFiles.isEmpty()) || (mapversion != null);
+			return !indexFiles.isEmpty() || mapversion != null;
 		}
 
-		public List<IndexItem> getIndexFiles() {
+		List<IndexItem> getIndexFiles() {
 			return indexFiles;
 		}
 
-		public boolean isIncreasedMapVersion() {
+		boolean isIncreasedMapVersion() {
 			try {
 				int mapVersionInList = Integer.parseInt(mapversion);
 				return IndexConstants.BINARY_MAP_VERSION < mapVersionInList;
@@ -95,7 +95,7 @@ public class DownloadOsmandIndexesHelper {
 		}
 	}
 
-	public static IndexFileList getIndexesList(OsmandApplication app) {
+	static IndexFileList getIndexesList(OsmandApplication app) {
 		PackageManager pm = app.getPackageManager();
 		AssetManager amanager = app.getAssets();
 		IndexFileList result = downloadIndexesListFromInternet(app);
@@ -145,7 +145,7 @@ public class DownloadOsmandIndexesHelper {
 					String voice = target.substring("voice/".length(), target.length() - "/_ttsconfig.p".length());
 					File destFile = new File(voicePath, voice + File.separatorChar + "_ttsconfig.p");
 					
-					result.add(new AssetIndexItem(voice + ext, "voice", dateModified, "0.1", destFile.length(), key,
+					result.add(new AssetIndexItem(voice + ext, dateModified, "0.1", destFile.length(), key,
 							destFile.getPath(), DownloadActivityType.VOICE_FILE));
 				}
 			}
@@ -223,9 +223,9 @@ public class DownloadOsmandIndexesHelper {
 		private final String destFile;
 		private final long dateModified;
 
-		AssetIndexItem(String fileName, String description,
-                       long dateModified, String size, long sizeL, String assetName, String destFile, DownloadActivityType type) {
-			super(fileName, description, dateModified, size, sizeL, sizeL, type);
+		AssetIndexItem(String fileName,
+					   long dateModified, String size, long sizeL, String assetName, String destFile, DownloadActivityType type) {
+			super(fileName, dateModified, size, sizeL, sizeL, type);
 			this.dateModified = dateModified;
 			this.assetName = assetName;
 			this.destFile = destFile;
@@ -236,7 +236,7 @@ public class DownloadOsmandIndexesHelper {
 			return new DownloadEntry(assetName, destFile, dateModified);
 		}
 
-		public String getDestFile(){
+		String getDestFile(){
 			return destFile;
 		}
 	}

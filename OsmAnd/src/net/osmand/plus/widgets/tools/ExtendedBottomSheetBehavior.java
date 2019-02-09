@@ -125,27 +125,17 @@ public class ExtendedBottomSheetBehavior<V extends View> extends CoordinatorLayo
 	 * {@link #getPeekHeight()} will return this when the value is set.</p>
 	 */
 	private static final int PEEK_HEIGHT_AUTO = -1;
-
 	private static final float HIDE_THRESHOLD = 0.5f;
-
 	private static final float HIDE_FRICTION = 0.1f;
-
 	private static final float MIN_VELOCITY_FOR_SLIDE = 2000;
 
 	private float mMaximumVelocity;
-
 	private int mPeekHeight;
-
 	private boolean mPeekHeightAuto;
-
 	private int mPeekHeightMin;
-
 	private int mMinOffset;
-
 	private int mMaxOffset;
-
 	private boolean mHideable;
-
 	private boolean mSkipCollapsed;
 
 	@State
@@ -153,58 +143,24 @@ public class ExtendedBottomSheetBehavior<V extends View> extends CoordinatorLayo
 	int mState = STATE_COLLAPSED;
 
 	private ViewDragHelper mViewDragHelper;
-
 	private boolean mIgnoreEvents;
-
 	private int mLastNestedScrollDy;
-
 	private boolean mNestedScrolled;
-
 	private int mParentHeight;
 
 	private WeakReference<V> mViewRef;
-
 	private WeakReference<View> mNestedScrollingChildRef;
-
 	private BottomSheetCallback mCallback;
 
 	private VelocityTracker mVelocityTracker;
-
 	private int mActivePointerId;
-
 	private int mInitialY;
-
 	private boolean mTouchingScrollingChild;
 
 	/**
 	 * Default constructor for instantiating BottomSheetBehaviors.
 	 */
 	public ExtendedBottomSheetBehavior() {
-	}
-
-	/**
-	 * Default constructor for inflating BottomSheetBehaviors from layout.
-	 *
-	 * @param context The {@link Context}.
-	 * @param attrs   The {@link AttributeSet}.
-	 */
-	public ExtendedBottomSheetBehavior(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		TypedArray a = context.obtainStyledAttributes(attrs,
-				R.styleable.BottomSheetBehavior_Layout);
-		TypedValue value = a.peekValue(R.styleable.BottomSheetBehavior_Layout_behavior_peekHeight);
-		if (value != null && value.data == PEEK_HEIGHT_AUTO) {
-			setPeekHeight(value.data);
-		} else {
-			setPeekHeight(a.getDimensionPixelSize(
-					R.styleable.BottomSheetBehavior_Layout_behavior_peekHeight, PEEK_HEIGHT_AUTO));
-		}
-		setHideable(a.getBoolean(R.styleable.BottomSheetBehavior_Layout_behavior_hideable, false));
-		setSkipCollapsed(a.getBoolean(R.styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed,
-				false));
-		a.recycle();
-		ViewConfiguration configuration = ViewConfiguration.get(context);
-		mMaximumVelocity = configuration.getScaledMaximumFlingVelocity();
 	}
 
 	@Override
@@ -471,65 +427,6 @@ public class ExtendedBottomSheetBehavior<V extends View> extends CoordinatorLayo
 		}
 	}
 
-// --Commented out by Inspection START (13/01/19 19:53):
-//	/**
-//	 * Gets the height of the bottom sheet when it is collapsed.
-//	 *
-//	 * @return The height of the collapsed bottom sheet in pixels, or {@link #PEEK_HEIGHT_AUTO}
-//	 * if the sheet is configured to peek automatically at 16:9 ratio keyline
-//	 * @attr ref android.support.design.R.styleable#BottomSheetBehavior_Layout_behavior_peekHeight
-//	 */
-//	public final int getPeekHeight() {
-//		return mPeekHeightAuto ? PEEK_HEIGHT_AUTO : mPeekHeight;
-//	}
-// --Commented out by Inspection STOP (13/01/19 19:53)
-
-	/**
-	 * Sets whether this bottom sheet can hide when it is swiped down.
-	 *
-	 * @param hideable {@code true} to make this bottom sheet hideable.
-	 * @attr ref android.support.design.R.styleable#BottomSheetBehavior_Layout_behavior_hideable
-	 */
-	private void setHideable(boolean hideable) {
-		mHideable = hideable;
-	}
-
-// --Commented out by Inspection START (13/01/19 19:52):
-//	/**
-//	 * Gets whether this bottom sheet can hide when it is swiped down.
-//	 *
-//	 * @return {@code true} if this bottom sheet can hide.
-//	 * @attr ref android.support.design.R.styleable#BottomSheetBehavior_Layout_behavior_hideable
-//	 */
-//	public boolean isHideable() {
-//		return mHideable;
-//	}
-// --Commented out by Inspection STOP (13/01/19 19:52)
-
-	/**
-	 * Sets whether this bottom sheet should skip the collapsed state when it is being hidden
-	 * after it is expanded once. Setting this to true has no effect unless the sheet is hideable.
-	 *
-	 * @param skipCollapsed True if the bottom sheet should skip the collapsed state.
-	 * @attr ref android.support.design.R.styleable#BottomSheetBehavior_Layout_behavior_skipCollapsed
-	 */
-	private void setSkipCollapsed(boolean skipCollapsed) {
-		mSkipCollapsed = skipCollapsed;
-	}
-
-// --Commented out by Inspection START (13/01/19 19:53):
-//	/**
-//	 * Sets whether this bottom sheet should skip the collapsed state when it is being hidden
-//	 * after it is expanded once.
-//	 *
-//	 * @return Whether the bottom sheet should skip the collapsed state.
-//	 * @attr ref android.support.design.R.styleable#BottomSheetBehavior_Layout_behavior_skipCollapsed
-//	 */
-//	public boolean getSkipCollapsed() {
-//		return mSkipCollapsed;
-//	}
-// --Commented out by Inspection STOP (13/01/19 19:53)
-
 	/**
 	 * Sets a callback to be notified of bottom sheet events.
 	 *
@@ -575,19 +472,6 @@ public class ExtendedBottomSheetBehavior<V extends View> extends CoordinatorLayo
 			startSettlingAnimation(child, state);
 		}
 	}
-
-// --Commented out by Inspection START (13/01/19 19:53):
-//	/**
-//	 * Gets the current state of the bottom sheet.
-//	 *
-//	 * @return One of {@link #STATE_EXPANDED}, {@link #STATE_COLLAPSED}, {@link #STATE_DRAGGING},
-//	 * and {@link #STATE_SETTLING}.
-//	 */
-//	@State
-//	public final int getState() {
-//		return mState;
-//	}
-// --Commented out by Inspection STOP (13/01/19 19:53)
 
 	private void setStateInternal(@State int state) {
 		if (mState == state) {
@@ -662,7 +546,6 @@ public class ExtendedBottomSheetBehavior<V extends View> extends CoordinatorLayo
 	}
 
 	private final ViewDragHelper.Callback mDragCallback = new ViewDragHelper.Callback() {
-
 		@Override
 		public boolean tryCaptureView(@NonNull View child, int pointerId) {
 			if (mState == STATE_DRAGGING) {
@@ -757,13 +640,6 @@ public class ExtendedBottomSheetBehavior<V extends View> extends CoordinatorLayo
 		}
 	}
 
-// --Commented out by Inspection START (13/01/19 19:53):
-//	@VisibleForTesting
-//	int getPeekHeightMin() {
-//		return mPeekHeightMin;
-//	}
-// --Commented out by Inspection STOP (13/01/19 19:53)
-
 	private class SettleRunnable implements Runnable {
 
 		private final View mView;
@@ -789,12 +665,6 @@ public class ExtendedBottomSheetBehavior<V extends View> extends CoordinatorLayo
 	protected static class SavedState extends AbsSavedState {
 		@State
 		final int state;
-
-// --Commented out by Inspection START (13/01/19 19:52):
-//		public SavedState(Parcel source) {
-//			this(source, null);
-//		}
-// --Commented out by Inspection STOP (13/01/19 19:52)
 
 		SavedState(Parcel source, ClassLoader loader) {
 			super(source, loader);
@@ -851,5 +721,4 @@ public class ExtendedBottomSheetBehavior<V extends View> extends CoordinatorLayo
 		}
 		return (ExtendedBottomSheetBehavior<V>) behavior;
 	}
-
 }

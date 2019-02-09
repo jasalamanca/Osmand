@@ -1,6 +1,5 @@
 package net.osmand.plus.render;
 
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -63,7 +62,6 @@ import gnu.trove.set.TLongSet;
 import gnu.trove.set.hash.TLongHashSet;
 
 public class MapRenderRepositories {
-
 	// It is needed to not draw object twice if user have map index that intersects by boundaries
 	private static final boolean checkForDuplicateObjectIds = true;
 	
@@ -77,8 +75,6 @@ public class MapRenderRepositories {
 	private final Set<String> nativeFiles = new HashSet<>();
 	private final OsmandRenderer renderer;
 	
-
-
 	// lat/lon box of requested vector data
 	private QuadRect cObjectsBox = new QuadRect();
 	private int cObjectsZoom = 0;
@@ -119,11 +115,9 @@ public class MapRenderRepositories {
 	public Context getContext() {
 		return context;
 	}
-	
 	public OsmandRenderer getRenderer() {
 		return renderer;
 	}
-
 	public RenderingContext getVisibleRenderingContext() {
 		return visibleRenderingContext;
 	}
@@ -138,11 +132,10 @@ public class MapRenderRepositories {
 		files = cpfiles;
 	}
 
-	public RotatedTileBox getBitmapLocation() {
+	RotatedTileBox getBitmapLocation() {
 		return bmpLocation;
 	}
-
-	public RotatedTileBox getPrevBmpLocation() {
+	RotatedTileBox getPrevBmpLocation() {
 		return prevBmpLocation;
 	}
 
@@ -323,7 +316,7 @@ public class MapRenderRepositories {
 							coordinantes[2 * k + 1] = r.getPoint31YTile(k);
 						}
 						BinaryMapDataObject mo = new BinaryMapDataObject( r.getId(), coordinantes, new int[0][],
-								RenderingRulesStorage.LINE_RULES, true, roTypes, null);
+								true, roTypes, null);
 						TIntObjectHashMap<String> names = r.getNames();
 						if(names != null) {
 							TIntObjectIterator<String> it = names.iterator();
@@ -426,8 +419,7 @@ public class MapRenderRepositories {
 		if (addBasemapCoastlines && mi != null) {
 			int[] coordinates = new int[]{leftX, topY, rightX, topY, rightX, bottomY, leftX, bottomY, leftX,
 					topY};
-			BinaryMapDataObject o = new BinaryMapDataObject(-1, coordinates, new int[0][],  
-					RenderingRulesStorage.POLYGON_RULES, true,
+			BinaryMapDataObject o = new BinaryMapDataObject(-1, coordinates, new int[0][], true,
 					new int[]{ocean[0] && !land[0] ? mi.coastlineEncodingType : (mi.landEncodingType)}, null);
 			o.setMapIndex(mi);
 			tempResult.add(o);
@@ -452,7 +444,6 @@ public class MapRenderRepositories {
 					cBottomLatitude, cTopLatitude, cLeftLongitude, cRightLongitude, zoom));
 			log.info(String.format("Searching: %s ms  %s (%s results found)", System.currentTimeMillis() - now, coastlineTime, count[0])); //$NON-NLS-1$
 		}
-
 
 		cObjects = tempResult;
 		cObjectsBox = dataBox;
@@ -754,7 +745,6 @@ public class MapRenderRepositories {
 				log.info("Debug :" + renderingReq != null);				
 			}
 			String renderingDebugInfo = currentRenderingContext.renderingDebugInfo;
-//			currentRenderingContext.ended = true;
 			if (checkWhetherInterrupted()) {
 				// revert if it was interrupted 
 				// (be smart a bit do not revert if road already drawn) 
@@ -813,17 +803,13 @@ public class MapRenderRepositories {
 					Toast.makeText(context, context.getString(R.string.rendering_out_of_memory) + s , Toast.LENGTH_SHORT).show();
 				}
 			});
-//		} finally {
-//			if(currentRenderingContext != null) {
-//				currentRenderingContext.ended = true;
-//			}
 		}
 	}
 
 	public Bitmap getBitmap() {
 		return bmp;
 	}
-	public Bitmap getPrevBitmap() {
+	Bitmap getPrevBitmap() {
 		return prevBmpLocation == null ? null : prevBmp ;
 	}
 
@@ -894,7 +880,7 @@ public class MapRenderRepositories {
 				coordinates[j * 2 + 1] = (int) (ring.get(j) & mask);
 			}
 			BinaryMapDataObject o = new BinaryMapDataObject(dbId, coordinates,  
-					new int[0][], RenderingRulesStorage.POLYGON_RULES, true, new int[] { mapIndex.coastlineBrokenEncodingType }, null);
+					new int[0][], true, new int[] { mapIndex.coastlineBrokenEncodingType }, null);
 			o.setMapIndex(mapIndex);
 			result.add(o);
 		}
@@ -913,7 +899,7 @@ public class MapRenderRepositories {
 			boolean clockwise = MapAlgorithms.isClockwiseWay(ring);
 			clockwiseFound = clockwiseFound || clockwise;
 			BinaryMapDataObject o = new BinaryMapDataObject(dbId, coordinates, 
-					new int[0][], RenderingRulesStorage.POLYGON_RULES, true,  new int[] { clockwise ? mapIndex.coastlineEncodingType
+					new int[0][], true,  new int[] { clockwise ? mapIndex.coastlineEncodingType
 					: mapIndex.landEncodingType }, null);
 			o.setMapIndex(mapIndex);
 			o.setArea(true);
@@ -924,7 +910,7 @@ public class MapRenderRepositories {
 			// add complete water tile
 			BinaryMapDataObject o = new BinaryMapDataObject(dbId,
 					new int[] { leftX, topY, rightX, topY, rightX, bottomY, leftX, bottomY, leftX, topY }, 
-					new int[0][], RenderingRulesStorage.POLYGON_RULES, true, new int[] { mapIndex.coastlineEncodingType }, null);
+					new int[0][], true, new int[] { mapIndex.coastlineEncodingType }, null);
 			o.setMapIndex(mapIndex);
 			log.info("!!! Isolated islands !!!"); //$NON-NLS-1$
 			result.add(o);

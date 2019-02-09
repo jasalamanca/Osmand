@@ -3,7 +3,6 @@ package net.osmand.data;
 
 import net.osmand.util.Algorithms;
 
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Building extends MapObject {
@@ -40,29 +39,18 @@ public class Building extends MapObject {
 	public String getPostcode() {
 		return postcode;
 	}
-
-	public void addEntrance(String ref, LatLon location) {
-		if(entrances == null) {
-			entrances = new LinkedHashMap<>();
-		}
-		entrances.put(ref, location);
-	}
-	
 	public int getInterpolationInterval() {
 		return interpolationInterval;
 	}
 	public void setInterpolationInterval(int interpolationNumber) {
 		this.interpolationInterval = interpolationNumber;
 	}
-	
 	public BuildingInterpolation getInterpolationType() {
 		return interpolationType;
 	}
-	
 	public void setInterpolationType(BuildingInterpolation interpolationType) {
 		this.interpolationType = interpolationType;
 	}
-	
 	public LatLon getLatLon2() {
 		return latLon2;
 	}

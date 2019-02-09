@@ -1,11 +1,5 @@
 package net.osmand.plus.resources;
 
-
-import java.io.IOException;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-
 import net.osmand.Location;
 import net.osmand.PlatformUtil;
 import net.osmand.ResultMatcher;
@@ -14,17 +8,19 @@ import net.osmand.binary.BinaryMapIndexReader.MapIndex;
 import net.osmand.binary.BinaryMapIndexReader.SearchPoiTypeFilter;
 import net.osmand.binary.BinaryMapIndexReader.SearchRequest;
 import net.osmand.data.Amenity;
-import net.osmand.osm.PoiCategory;
 import net.osmand.util.MapUtils;
 
 import org.apache.commons.logging.Log;
 
-public class AmenityIndexRepositoryBinary implements AmenityIndexRepository {
+import java.io.IOException;
+import java.util.Collections;
+import java.util.List;
 
+public class AmenityIndexRepositoryBinary implements AmenityIndexRepository {
 	private final static Log log = PlatformUtil.getLog(AmenityIndexRepositoryBinary.class);
 	private final BinaryMapIndexReader index;
 
-	public AmenityIndexRepositoryBinary(BinaryMapIndexReader index) {
+	AmenityIndexRepositoryBinary(BinaryMapIndexReader index) {
 		this.index = index;
 	}
 
@@ -48,19 +44,8 @@ public class AmenityIndexRepositoryBinary implements AmenityIndexRepository {
 	public boolean checkContainsInt(int top31, int left31, int bottom31, int right31) {
 		return index.containsPoiData(left31, top31, right31, bottom31);
 	}
-	
-	
-	public synchronized Map<PoiCategory, List<String>> searchAmenityCategoriesByName(String query, Map<PoiCategory, List<String>> map) {
-		try {
-			return index.searchPoiCategoriesByName(query, map);
-		} catch (IOException e) {
-			log.error("Error searching amenities", e); //$NON-NLS-1$
-		}
-		return map;
-	}
-	
-	
-	public synchronized List<Amenity> searchAmenitiesByName(int x, int y, int l, int t, int r, int b, String query, ResultMatcher<Amenity> resulMatcher) {
+
+	synchronized List<Amenity> searchAmenitiesByName(int x, int y, int l, int t, int r, int b, String query, ResultMatcher<Amenity> resulMatcher) {
 		long now = System.currentTimeMillis();
 		List<Amenity> amenities = Collections.emptyList();
 		SearchRequest<Amenity> req = BinaryMapIndexReader.buildSearchPoiRequest(x, y, query, l, r, t, b,resulMatcher);
@@ -111,13 +96,11 @@ public class AmenityIndexRepositoryBinary implements AmenityIndexRepository {
 			result = index.searchPoi(req);
 		} catch (IOException e) {
 			log.error("Error searching amenities", e); //$NON-NLS-1$
-			return result;
+			return null;
 		}
 		if (log.isDebugEnabled() && result != null) {
 			log.debug(String.format("Search done in %s ms found %s.",  (System.currentTimeMillis() - now), result.size())); //$NON-NLS-1$
 		}
 		return result;
-		
 	}
-	
 }

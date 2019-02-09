@@ -22,9 +22,7 @@ public interface IProgress {
 	void finishTask();
 	
 	boolean isIndeterminate();
-	
-	boolean isInterrupted();
-	
+
 	IProgress EMPTY_PROGRESS = new IProgress() {
 		
 		@Override
@@ -39,7 +37,6 @@ public interface IProgress {
 		@Override
 		public void progress(int deltaWork) {}
 		
-		@Override
 		public boolean isInterrupted() {return false;}
 		
 		@Override

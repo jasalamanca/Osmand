@@ -59,6 +59,7 @@ import java.io.UnsupportedEncodingException;
  *
  * @author kenton@google.com Kenton Varda
  */
+@SuppressWarnings("ALL")
 public final class Descriptors {
   /**
    * Describes a {@code .proto} file, including everything defined within.

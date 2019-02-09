@@ -24,7 +24,6 @@ import net.osmand.plus.mapcontextmenu.MapContextMenu;
 import net.osmand.util.Algorithms;
 
 public class FavoritePointEditorFragment extends PointEditorFragment {
-
 	private FavoritePointEditor editor;
 	private FavouritePoint favorite;
 	private FavoriteGroup group;
@@ -44,9 +43,7 @@ public class FavoritePointEditorFragment extends PointEditorFragment {
 	@Override
 	public void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 		defaultColor = getResources().getColor(R.color.color_favorite);
-
 		favorite = editor.getFavorite();
 		group = helper.getGroup(favorite);
 	}
@@ -103,8 +100,6 @@ public class FavoritePointEditorFragment extends PointEditorFragment {
     String getDefaultCategoryName() {
 		return getString(R.string.shared_string_favorites);
 	}
-
-
 
 	public static void showInstance(final MapActivity mapActivity) {
 		FavoritePointEditor editor = mapActivity.getContextMenu().getFavoritePointEditor();
@@ -204,10 +199,6 @@ public class FavoritePointEditorFragment extends PointEditorFragment {
 			}
 		});
 		builder.create().show();
-	}
-
-	public String getHeaderCaption() {
-		return getMapActivity().getResources().getString(R.string.favourites_edit_dialog_title);
 	}
 
 	@Override

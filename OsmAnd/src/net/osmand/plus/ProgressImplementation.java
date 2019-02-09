@@ -188,7 +188,6 @@ public class ProgressImplementation implements IProgress {
 			mViewUpdateHandler.sendEmptyMessage(HANDLER_START_TASK);
 		}
 	}
-	@Override
 	public boolean isInterrupted() {
 		return false;
 	}

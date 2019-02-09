@@ -137,7 +137,7 @@ public class DownloadResources extends DownloadResourceGroup {
 						File file = new File(((AssetIndexItem) item).getDestFile());
 						oldItemSize = file.length();
 					} else {
-						File fl = new File(item.getType().getDownloadFolder(app, item), sfName + "/_config.p");
+						File fl = new File(item.getType().getDownloadFolder(app), sfName + "/_config.p");
 						if (fl.exists()) {
 							oldItemSize = fl.length();
 							try {

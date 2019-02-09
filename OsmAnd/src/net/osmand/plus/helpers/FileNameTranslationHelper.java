@@ -22,7 +22,7 @@ public class FileNameTranslationHelper {
 		} else if (fileName.endsWith("tts")) { //tts files
 			return getVoiceName(ctx, fileName);
 		} else if (fileName.endsWith(IndexConstants.FONT_INDEX_EXT)) { //otf files
-			return getFontName(ctx, basename);
+			return getFontName(basename);
 		} else if (fileName.length() == 2) { //voice recorded files
 			try {
 				Field f = R.string.class.getField("lang_"+fileName);
@@ -81,7 +81,7 @@ public class FileNameTranslationHelper {
 		return fileName;
 	}
 
-	public static String getFontName(Context ctx, String basename) {
+	public static String getFontName(String basename) {
 		return basename.replace('-', ' ').replace('_', ' ');
 	}
 

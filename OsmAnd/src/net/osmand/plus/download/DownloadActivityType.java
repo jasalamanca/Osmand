@@ -67,12 +67,10 @@ public class DownloadActivityType {
 		return orderIndex;
 	}
 
-	public static boolean isCountedInDownloads(IndexItem es) {
+	static boolean isCountedInDownloads(IndexItem es) {
 		DownloadActivityType tp = es.getType();
 		if(tp == NORMAL_FILE || tp == ROADS_FILE){
-			if (!es.extra) {
-				return true;
-			}
+			return !es.extra;
 		}
 		return false;
 	}
@@ -81,7 +79,7 @@ public class DownloadActivityType {
 		return c.getString(stringResource);
 	}
 
-	public static DownloadActivityType getIndexType(String tagName) {
+	static DownloadActivityType getIndexType(String tagName) {
 		return byTag.get(tagName);
 	}
 	
@@ -107,7 +105,7 @@ public class DownloadActivityType {
 		return false;
 	}
 	
-	public File getDownloadFolder(OsmandApplication ctx, IndexItem indexItem) {
+	File getDownloadFolder(OsmandApplication ctx) {
 		if (NORMAL_FILE == this) {
 			return ctx.getAppPath(IndexConstants.MAPS_PATH);
 		} else if (VOICE_FILE == this) {
@@ -124,19 +122,19 @@ public class DownloadActivityType {
 		throw new UnsupportedOperationException();
 	}
 	
-	public boolean isZipStream(OsmandApplication ctx, IndexItem indexItem) {
+	boolean isZipStream() {
 		return true;//HILLSHADE_FILE != this;
 	}
 	
-	public boolean isZipFolder(OsmandApplication ctx, IndexItem indexItem) {
+	boolean isZipFolder() {
 		return this == VOICE_FILE;
 	}
 	
-	public boolean preventMediaIndexing(OsmandApplication ctx, IndexItem indexItem) {
+	boolean preventMediaIndexing(IndexItem indexItem) {
 		return this == VOICE_FILE && indexItem.fileName.endsWith(IndexConstants.VOICE_INDEX_EXT_ZIP);
 	}
 	
-	public String getUnzipExtension(OsmandApplication ctx, IndexItem indexItem) {
+	String getUnzipExtension(IndexItem indexItem) {
 		if (NORMAL_FILE == this) {
 			if (indexItem.fileName.endsWith(IndexConstants.BINARY_MAP_INDEX_EXT_ZIP)) {
 				return BINARY_MAP_INDEX_EXT;
@@ -163,7 +161,7 @@ public class DownloadActivityType {
 		throw new UnsupportedOperationException();
 	}
 	
-	public String getUrlSuffix(OsmandApplication ctx) {
+	String getUrlSuffix() {
 		if (this== ROADS_FILE) {
 			return "&road=yes";
 		} else if (this == LIVE_UPDATES_FILE) {
@@ -176,11 +174,10 @@ public class DownloadActivityType {
 		return "";
 	}
 
-	public String getBaseUrl(OsmandApplication ctx, String fileName) {
+	String getBaseUrl(OsmandApplication ctx, String fileName) {
 		return "http://" + IndexConstants.INDEX_DOWNLOAD_DOMAIN + "/download?event=2&"
 				+ Version.getVersionAsURLParam(ctx) + "&file=" + encode(fileName);
 	}
-
 
 	private String encode(String fileName) {
 		try {
@@ -190,37 +187,24 @@ public class DownloadActivityType {
 		}
 	}
 
-
-	public IndexItem parseIndexItem(Context ctx, XmlPullParser parser) {
+	IndexItem parseIndexItem(Context ctx, XmlPullParser parser) {
 		String name = parser.getAttributeValue(null, "name"); //$NON-NLS-1$
 		if(!isAccepted(name)) {
 			return null;
 		}
 		String size = parser.getAttributeValue(null, "size"); //$NON-NLS-1$
-		String description = parser.getAttributeValue(null, "description"); //$NON-NLS-1$
 		long containerSize = Algorithms.parseLongSilently(
 				parser.getAttributeValue(null, "containerSize"), 0);
 		long contentSize = Algorithms.parseLongSilently(
 				parser.getAttributeValue(null, "contentSize"), 0);
 		long timestamp = Algorithms.parseLongSilently(
 				parser.getAttributeValue(null, "timestamp"), 0);
-		IndexItem it = new IndexItem(name, description, timestamp, size, contentSize, containerSize, this);
+		IndexItem it = new IndexItem(name, timestamp, size, contentSize, containerSize, this);
 		it.extra = FileNameTranslationHelper.getStandardMapName(ctx, it.getBasename().toLowerCase()) != null;
 		return it;
 	}
 
-	public String getVisibleDescription(IndexItem indexItem, Context ctx) {
-		if (this == WIKIPEDIA_FILE) {
-			return ctx.getString(R.string.shared_string_wikipedia);
-		} else if (this == ROADS_FILE) {
-			return ctx.getString(R.string.download_roads_only_item);
-		} else if (this == FONT_FILE) {
-			return ctx.getString(R.string.fonts_header);
-		}
-		return "";
-	}
-	
-	public String getVisibleName(IndexItem indexItem, Context ctx, OsmandRegions osmandRegions, boolean includingParent) {
+	String getVisibleName(IndexItem indexItem, Context ctx, OsmandRegions osmandRegions, boolean includingParent) {
 		if (this == VOICE_FILE) {
 			String fileName = indexItem.fileName;
 			if (fileName.endsWith(IndexConstants.VOICE_INDEX_EXT_ZIP)) {
@@ -231,7 +215,7 @@ public class DownloadActivityType {
 			return getBasename(indexItem);
 		}
 		if (this == FONT_FILE) {
-			return FileNameTranslationHelper.getFontName(ctx, getBasename(indexItem));
+			return FileNameTranslationHelper.getFontName(getBasename(indexItem));
 		}
 		final String basename = getBasename(indexItem);
 		if (basename.endsWith(FileNameTranslationHelper.WIKI_NAME)){
@@ -252,7 +236,7 @@ public class DownloadActivityType {
 		return osmandRegions.getLocaleName(basename, includingParent);
 	}
 	
-	public String getTargetFileName(IndexItem item) {
+	String getTargetFileName(IndexItem item) {
 		String fileName = item.fileName;
 		// if(fileName.endsWith(IndexConstants.VOICE_INDEX_EXT_ZIP) ||
 		// fileName.endsWith(IndexConstants.TTSVOICE_INDEX_EXT_ZIP)) {
@@ -299,7 +283,7 @@ public class DownloadActivityType {
 	}
 
 
-	public String getBasename(IndexItem indexItem) {
+	String getBasename(IndexItem indexItem) {
 		String fileName = indexItem.fileName;
 		if (fileName.endsWith(IndexConstants.EXTRA_ZIP_EXT)) {
 			return fileName.substring(0, fileName.length() - IndexConstants.EXTRA_ZIP_EXT.length());
@@ -335,5 +319,4 @@ public class DownloadActivityType {
 		}
 		return fileName;
 	}
-
 }

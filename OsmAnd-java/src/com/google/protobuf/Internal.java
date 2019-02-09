@@ -40,6 +40,7 @@ import java.io.UnsupportedEncodingException;
  *
  * @author kenton@google.com (Kenton Varda)
  */
+@SuppressWarnings("ALL")
 public class Internal {
   /**
    * Helper called by generated code to construct default values for string

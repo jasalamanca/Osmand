@@ -44,6 +44,7 @@ import java.util.NoSuchElementException;
  *
  * @author carlanton@google.com (Carl Haverl)
  */
+@SuppressWarnings("all")
 class BoundedByteString extends LiteralByteString {
 
   private final int bytesOffset;

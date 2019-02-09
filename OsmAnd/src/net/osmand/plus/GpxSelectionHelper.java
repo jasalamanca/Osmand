@@ -274,8 +274,8 @@ public class GpxSelectionHelper {
 				GpxDisplayItem item = new GpxDisplayItem();
 				item.group = group;
 				if (split) {
-					item.splitMetric = analysis.metricEnd;
-					item.secondarySplitMetric = analysis.secondaryMetricEnd;
+//					item.splitMetric = analysis.metricEnd;
+//					item.secondarySplitMetric = analysis.secondaryMetricEnd;
 					item.splitName = formatSplitName(analysis.metricEnd, group, app);
 					item.splitName += " (" + formatSecondarySplitName(analysis.secondaryMetricEnd, group, app) + ") ";
 				}
@@ -758,18 +758,13 @@ public class GpxSelectionHelper {
 	}
 
 	public static class GpxDisplayItem {
-
 		public GPXTrackAnalysis analysis;
 		public GpxDisplayGroup group;
 		public WptPt locationStart;
 		public WptPt locationEnd;
-		double splitMetric = -1;
-		double secondarySplitMetric = -1;
 		public String splitName;
 		public String name;
 		public String description;
-		public String url;
-		public Bitmap image;
 		boolean expanded;
 		public boolean route;
 		public boolean wasHidden = true;

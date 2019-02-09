@@ -57,6 +57,7 @@ import java.util.NoSuchElementException;
  * @author carlanton@google.com Carl Haverl
  * @author martinrb@google.com Martin Buchholz
  */
+@SuppressWarnings("all")
 public abstract class ByteString implements Iterable<Byte> {
 
   /**

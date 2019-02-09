@@ -61,6 +61,7 @@ import java.util.RandomAccess;
  *
  * @author jonp@google.com (Jon Perlow)
  */
+@SuppressWarnings("ALL")
 public class LazyStringArrayList extends AbstractList<String>
     implements LazyStringList, RandomAccess {
 

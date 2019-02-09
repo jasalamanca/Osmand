@@ -85,17 +85,13 @@ public abstract class DashBaseFragment extends Fragment {
 
 	protected abstract View initView(LayoutInflater inflater, @Nullable ViewGroup container,
                                      @Nullable Bundle savedInstanceState);
-
 	DismissListener getDismissCallback() {
 		return defaultDismissListener;
 	}
-
 	private boolean isDismissAllowed() {
 		return true;
 	}
-
 	public abstract void onOpenDash();
-
 	public void onCloseDash() {
 	}
 
