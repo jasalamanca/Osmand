@@ -21,9 +21,8 @@ import java.util.Map;
 import java.util.Stack;
 
 public class RoutingConfiguration {
-	
-	private static final int DEFAULT_MEMORY_LIMIT = 30;
-	public final float DEVIATION_RADIUS = 3000;
+	static final int DEFAULT_MEMORY_LIMIT = 30;
+	final float DEVIATION_RADIUS = 3000;
 	private final Map<String, String> attributes = new LinkedHashMap<>();
 
 	// 1. parameters of routing and different tweaks
@@ -31,8 +30,8 @@ public class RoutingConfiguration {
 	public float heuristicCoefficient = 1;
 	
 	// 1.1 tile load parameters (should not affect routing)
-	public int ZOOM_TO_LOAD_TILES = 16;
-	public int memoryLimitation;
+	int ZOOM_TO_LOAD_TILES = 16;
+	int memoryLimitation;
 
 	// 1.2 Build A* graph in backward/forward direction (can affect results)
 	// 0 - 2 ways, 1 - direct way, -1 - reverse way
@@ -41,13 +40,13 @@ public class RoutingConfiguration {
 	// 1.3 Router specific coefficients and restrictions
 	// use GeneralRouter and not interface to simplify native access !
 	public GeneralRouter router = new GeneralRouter(GeneralRouterProfile.CAR, new LinkedHashMap<String, String>());
-	public String routerName = "";
+	String routerName = "";
 	
 	// 1.4 Used to calculate route in movement
 	public Double initialDirection;
 	
 	// 1.5 Recalculate distance help
-	public float recalculateDistance = 20000f;
+	float recalculateDistance = 20000f;
 	
 
 	public static class Builder {
@@ -99,16 +98,13 @@ public class RoutingConfiguration {
 				i.memoryLimitation = memoryLimitMB * (1 << 20);
 			}
 			i.planRoadDirection = parseSilentInt(getAttribute(i.router, "planRoadDirection"), i.planRoadDirection);
-//			i.planRoadDirection = 1;
-			
+
 			return i;
 		}
-		
 
 		public List<RouteDataObject> getImpassableRoads() {
 			return impassableRoads;
 		}
-		
 		public Map<Long, Location> getImpassableRoadLocations() {
 			return impassableRoadLocations;
 		}
@@ -121,20 +117,14 @@ public class RoutingConfiguration {
 			}
 			return false;
 		}
-		
-		
+
 		private String getAttribute(VehicleRouter router, String propertyName) {
 			if (router.containsAttribute(propertyName)) {
 				return router.getAttribute(propertyName);
 			}
 			return attributes.get(propertyName);
 		}
-		
-		
-		public String getDefaultRouter() {
-			return defaultRouter;
-		}
-		
+
 		public GeneralRouter getRouter(String applicationMode) {
 			return routers.get(applicationMode);
 			
@@ -153,7 +143,6 @@ public class RoutingConfiguration {
 		return Integer.parseInt(t);
 	}
 
-
 	private static float parseSilentFloat(String t, float v) {
 		if (t == null || t.length() == 0) {
 			return v;
@@ -161,7 +150,6 @@ public class RoutingConfiguration {
 		return Float.parseFloat(t);
 	}
 
-	
 	private static RoutingConfiguration.Builder DEFAULT;
 
 	public static RoutingConfiguration.Builder getDefault() {
@@ -305,8 +293,6 @@ public class RoutingConfiguration {
 		}
 	}
 
-	
-
 	private static GeneralRouter parseRoutingProfile(XmlPullParser parser, final RoutingConfiguration.Builder config) {
 		String currentSelectedRouter = parser.getAttributeValue("", "name");
 		Map<String, String> attrs = new LinkedHashMap<>();
@@ -329,5 +315,4 @@ public class RoutingConfiguration {
 					parser.getAttributeValue("", "value"));
 		}
 	}
-	
 }

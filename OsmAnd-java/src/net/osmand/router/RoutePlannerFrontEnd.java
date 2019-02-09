@@ -102,7 +102,7 @@ public class RoutePlannerFrontEnd {
 		useSmartRouteRecalculation = use;
 	}
 
-	private boolean needRequestPrivateAccessRouting(RoutingContext ctx, List<LatLon> points) throws IOException {
+	private boolean needRequestPrivateAccessRouting(RoutingContext ctx, List<LatLon> points) {
 		boolean res = false;
 		GeneralRouter router = (GeneralRouter) ctx.getRouter();
 		if (router != null && !router.isAllowPrivate() && 
@@ -192,9 +192,8 @@ public class RoutePlannerFrontEnd {
 		List<RouteSegmentResult> res = searchRoute(ctx, points, routeDirection);
 		// make start and end more precise
 		makeStartEndPointsPrecise(res, start, end, intermediates);
-		if (res != null) {
-			new RouteResultPreparation().printResults(ctx, start, end, res);
-		}
+		new RouteResultPreparation().printResults(ctx, start, end, res);
+
 		return res;
 	}
 
@@ -238,8 +237,8 @@ public class RoutePlannerFrontEnd {
 		QuadPoint pp = MapUtils.getProjectionPoint31(px, py,
 				r.getPoint31XTile(sr.getStartPointIndex()), r.getPoint31YTile(sr.getStartPointIndex()),
 				r.getPoint31XTile(sr.getEndPointIndex()), r.getPoint31YTile(sr.getEndPointIndex()));
-		double currentsDist = squareDist((int) pp.x, (int) pp.y, px, py);
-		return currentsDist;
+
+		return squareDist((int) pp.x, (int) pp.y, px, py);
 	}
 
 	private void updateResult(RouteSegmentResult routeSegmentResult, LatLon point, boolean st) {
@@ -262,7 +261,6 @@ public class RoutePlannerFrontEnd {
 		double dd = MapUtils.getDistance(point, MapUtils.get31LatitudeY(r.getPoint31YTile(pind)),
 				MapUtils.get31LongitudeX(r.getPoint31XTile(pind)));
 		double ddBefore = Double.POSITIVE_INFINITY;
-		double ddAfter = Double.POSITIVE_INFINITY;
 		QuadPoint i = null;
 		if (before != null) {
 			ddBefore = MapUtils.getDistance(point, MapUtils.get31LatitudeY((int) before.y),
@@ -274,7 +272,7 @@ public class RoutePlannerFrontEnd {
 		}
 
 		if (after != null) {
-			ddAfter = MapUtils.getDistance(point, MapUtils.get31LatitudeY((int) after.y),
+			double ddAfter = MapUtils.getDistance(point, MapUtils.get31LatitudeY((int) after.y),
 					MapUtils.get31LongitudeX((int) after.x));
 			if (ddAfter < dd && ddAfter < ddBefore) {
 				insert = 1;
@@ -303,7 +301,7 @@ public class RoutePlannerFrontEnd {
 		}
 	}
 
-	private boolean addSegment(LatLon s, RoutingContext ctx, int indexNotFound, List<RouteSegmentPoint> res) throws IOException {
+	private boolean addSegment(LatLon s, RoutingContext ctx, int indexNotFound, List<RouteSegmentPoint> res) {
 		RouteSegmentPoint f = findRouteSegment(s.getLatitude(), s.getLongitude(), ctx, null);
 		if (f == null) {
 			ctx.calculationProgress.segmentNotFound = indexNotFound;
@@ -344,7 +342,7 @@ public class RoutePlannerFrontEnd {
 					rlist.add(rr);
 				}
 			}
-			runRecalculation = rlist.size() > 0;
+//			runRecalculation = rlist.size() > 0;
 			if (rlist.size() > 0) {
 				RouteSegment previous = null;
 				for (int i = 0; i <= rlist.size() - 1; i++) {
@@ -402,7 +400,7 @@ public class RoutePlannerFrontEnd {
 	}
 
 	private List<RouteSegmentResult> searchRoute(final RoutingContext ctx, List<RouteSegmentPoint> points, PrecalculatedRouteDirection routeDirection)
-			throws IOException, InterruptedException {
+			throws IOException {
 		if (points.size() <= 2) {
 			if (!useSmartRouteRecalculation) {
 				ctx.previouslyCalculatedRoute = null;
@@ -471,9 +469,8 @@ public class RoutePlannerFrontEnd {
 		return results;
 	}
 
-	@SuppressWarnings("static-access")
 	private List<RouteSegmentResult> searchRoute(final RoutingContext ctx, RouteSegmentPoint start, RouteSegmentPoint end,
-	                                             PrecalculatedRouteDirection routeDirection) throws IOException, InterruptedException {
+	                                             PrecalculatedRouteDirection routeDirection) throws IOException {
 		return searchRouteInternalPrepare(ctx, start, end, routeDirection);
 	}
 }

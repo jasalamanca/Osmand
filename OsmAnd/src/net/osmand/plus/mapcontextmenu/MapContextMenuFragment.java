@@ -65,7 +65,6 @@ import java.util.List;
 import static android.util.TypedValue.COMPLEX_UNIT_DIP;
 import static net.osmand.plus.mapcontextmenu.MenuBuilder.SHADOW_HEIGHT_TOP_DP;
 
-
 public class MapContextMenuFragment extends BaseOsmAndFragment implements DownloadEvents {
 	public static final String TAG = "MapContextMenuFragment";
 
@@ -78,12 +77,9 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 
 	private View view;
 	private InterceptorLinearLayout mainView;
-
 	private View toolbarContainer;
     private TextView toolbarTextView;
 	private View topButtonContainer;
-	private LockableScrollView menuScrollView;
-
 	private View zoomButtonsView;
 
     private MapContextMenu menu;
@@ -130,11 +126,8 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
 		processScreenHeight(container);
-
 		menu = getMapActivity().getContextMenu();
-
 		markerPaddingPx = dpToPx(MARKER_PADDING_DP);
 		markerPaddingXPx = dpToPx(MARKER_PADDING_X_DP);
 		shadowHeight = dpToPx(SHADOW_HEIGHT_TOP_DP);
@@ -153,8 +146,7 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 		mainView = view.findViewById(R.id.context_menu_main);
 
 		toolbarContainer = view.findViewById(R.id.context_menu_toolbar_container);
-        View toolbarView = view.findViewById(R.id.context_menu_toolbar);
-        View toolbarBackButton = view.findViewById(R.id.context_menu_toolbar_back);
+		View toolbarBackButton = view.findViewById(R.id.context_menu_toolbar_back);
 		toolbarTextView = view.findViewById(R.id.context_menu_toolbar_text);
 		updateVisibility(toolbarContainer, 0);
 		toolbarBackButton.setOnClickListener(new View.OnClickListener() {
@@ -812,7 +804,7 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 		if (newMenuState != currentMenuState) {
 			restoreCustomMapRatio();
 			menu.updateControlsVisibility(true);
-			doBeforeMenuStateChange(currentMenuState, newMenuState);
+			doBeforeMenuStateChange(currentMenuState);
 			toggleDetailsHideButton();
 		}
 
@@ -912,7 +904,7 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 								} else {
 									updateMainViewLayout(posY);
 									if (previousMenuState != 0 && newMenuState != 0 && previousMenuState != newMenuState) {
-										doAfterMenuStateChange(previousMenuState, newMenuState);
+										doAfterMenuStateChange();
 									}
 								}
 							}
@@ -1224,11 +1216,7 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 
 					if (view != null) {
 						ViewTreeObserver obs = view.getViewTreeObserver();
-						if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-							obs.removeOnGlobalLayoutListener(this);
-						} else {
-							obs.removeGlobalOnLayoutListener(this);
-						}
+						obs.removeOnGlobalLayoutListener(this);
 
 						if (getActivity() == null) {
 							return;
@@ -1485,7 +1473,6 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 	private int getHeaderOnlyTopY() {
 		return viewHeight - menuTitleHeight;
 	}
-
 	private int getFullScreenTopPosY() {
 		return -menuTitleHeight + menuButtonsHeight + bottomToolbarPosY;
 	}
@@ -1509,7 +1496,6 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 	private int getPosY() {
 		return getPosY(CURRENT_Y_UNDEFINED, false);
 	}
-
 	private int getPosY(final int currentY, boolean needCloseMenu) {
 		return getPosY(currentY, needCloseMenu, 0);
 	}
@@ -1816,11 +1802,11 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 		);
 	}
 
-	public void updateLocation(boolean centerChanged, boolean locationChanged, boolean compassChanged) {
+	public void updateLocation() {
 		updateDistanceDirection();
 	}
 
-	private void doBeforeMenuStateChange(int previousState, int newState) {
+	private void doBeforeMenuStateChange(int newState) {
 		if (newState == MenuState.HALF_SCREEN) {
 			centered = true;
 			if (!zoomIn && menu.supportZoomIn()) {
@@ -1832,8 +1818,7 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 		}
 	}
 
-	private void doAfterMenuStateChange(int previousState, int newState) {
+	private void doAfterMenuStateChange() {
 		updateCompassVisibility();
 	}
 }
-

@@ -22,7 +22,6 @@ import android.support.v7.widget.ListPopupWindow;
 import android.support.v7.widget.SwitchCompat;
 import android.text.SpannableString;
 import android.text.style.StyleSpan;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +64,6 @@ import net.osmand.plus.GPXUtilities.GPXFile;
 import net.osmand.plus.GPXUtilities.GPXTrackAnalysis;
 import net.osmand.plus.GPXUtilities.Speed;
 import net.osmand.plus.GpxSelectionHelper.SelectedGpxFile;
-import net.osmand.plus.IconsCache;
 import net.osmand.plus.OsmAndFormatter;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandPlugin;
@@ -223,31 +221,30 @@ public class GpxUiHelper {
 		return null;
 	}
 
-	public static AlertDialog selectSingleGPXFile(final Activity activity, boolean showCurrentGpx,
-												  final CallbackWithObject<GPXFile[]> callbackWithObject) {
-		OsmandApplication app = (OsmandApplication) activity.getApplication();
-		int gpxDirLength = app.getAppPath(IndexConstants.GPX_INDEX_DIR).getAbsolutePath().length();
-		List<SelectedGpxFile> selectedGpxFiles = app.getSelectedGpxHelper().getSelectedGPXFiles();
-		final List<GPXInfo> list = new ArrayList<>(selectedGpxFiles.size() + 1);
-		if (OsmandPlugin.getEnabledPlugin(OsmandMonitoringPlugin.class) == null) {
-			showCurrentGpx = false;
-		}
-		if (!selectedGpxFiles.isEmpty() || showCurrentGpx) {
-			if (showCurrentGpx) {
-				list.add(new GPXInfo(activity.getString(R.string.shared_string_currently_recording_track), 0, 0));
-			}
-
-			for (SelectedGpxFile selectedGpx : selectedGpxFiles) {
-				if (!selectedGpx.getGpxFile().showCurrentTrack) {
-					list.add(new GPXInfo(selectedGpx.getGpxFile().path.substring(gpxDirLength + 1), selectedGpx.getGpxFile().modifiedTime, 0));
-				}
-			}
-
-			final ContextMenuAdapter adapter = createGpxContextMenuAdapter(list, null, showCurrentGpx);
-			return createSingleChoiceDialog(activity, showCurrentGpx, callbackWithObject, list, adapter);
-		}
-		return null;
-	}
+//	public static void selectSingleGPXFile(final Activity activity, boolean showCurrentGpx,
+//												  final CallbackWithObject<GPXFile[]> callbackWithObject) {
+//		OsmandApplication app = (OsmandApplication) activity.getApplication();
+//		int gpxDirLength = app.getAppPath(IndexConstants.GPX_INDEX_DIR).getAbsolutePath().length();
+//		List<SelectedGpxFile> selectedGpxFiles = app.getSelectedGpxHelper().getSelectedGPXFiles();
+//		final List<GPXInfo> list = new ArrayList<>(selectedGpxFiles.size() + 1);
+//		if (OsmandPlugin.getEnabledPlugin(OsmandMonitoringPlugin.class) == null) {
+//			showCurrentGpx = false;
+//		}
+//		if (!selectedGpxFiles.isEmpty() || showCurrentGpx) {
+//			if (showCurrentGpx) {
+//				list.add(new GPXInfo(activity.getString(R.string.shared_string_currently_recording_track), 0, 0));
+//			}
+//
+//			for (SelectedGpxFile selectedGpx : selectedGpxFiles) {
+//				if (!selectedGpx.getGpxFile().showCurrentTrack) {
+//					list.add(new GPXInfo(selectedGpx.getGpxFile().path.substring(gpxDirLength + 1), selectedGpx.getGpxFile().modifiedTime, 0));
+//				}
+//			}
+//
+//			final ContextMenuAdapter adapter = createGpxContextMenuAdapter(list, null, showCurrentGpx);
+//			createSingleChoiceDialog(activity, showCurrentGpx, callbackWithObject, list, adapter);
+//		}
+//	}
 
 	private static ContextMenuAdapter createGpxContextMenuAdapter(List<GPXInfo> allGpxList,
 																  List<String> selectedGpxList,
@@ -307,98 +304,98 @@ public class GpxUiHelper {
 		}, dir, null, filename);
 	}
 
-	private static AlertDialog createSingleChoiceDialog(final Activity activity,
-											final boolean showCurrentGpx,
-											final CallbackWithObject<GPXFile[]> callbackWithObject,
-											final List<GPXInfo> list,
-											final ContextMenuAdapter adapter) {
-		final OsmandApplication app = (OsmandApplication) activity.getApplication();
-		final IconsCache iconsCache = app.getIconsCache();
-		final File dir = app.getAppPath(IndexConstants.GPX_INDEX_DIR);
-		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-		final int layout = R.layout.list_menu_item_native_singlechoice;
+//	private static void createSingleChoiceDialog(final Activity activity,
+//											final boolean showCurrentGpx,
+//											final CallbackWithObject<GPXFile[]> callbackWithObject,
+//											final List<GPXInfo> list,
+//											final ContextMenuAdapter adapter) {
+//		final OsmandApplication app = (OsmandApplication) activity.getApplication();
+//		final IconsCache iconsCache = app.getIconsCache();
+//		final File dir = app.getAppPath(IndexConstants.GPX_INDEX_DIR);
+//		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+//		final int layout = R.layout.list_menu_item_native_singlechoice;
 
-		final ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(activity, layout, R.id.text1,
-				adapter.getItemNames()) {
-			@NonNull
-            @Override
-			public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
-				// User super class to create the View
-				View v = convertView;
-				if (v == null) {
-					v = activity.getLayoutInflater().inflate(layout, null);
-				}
-				final ContextMenuItem item = adapter.getItem(position);
-				TextView tv = v.findViewById(R.id.text1);
-				Drawable icon;
-				if (showCurrentGpx && position == 0) {
-					icon = null;
-				} else {
-					icon = iconsCache.getThemedIcon(item.getIcon());
-				}
-				tv.setCompoundDrawablePadding(AndroidUtils.dpToPx(activity, 10f));
-				tv.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null);
-				tv.setText(item.getTitle());
-				tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
-
-				return v;
-			}
-		};
-
-		int selectedIndex = 0;
-		String prevSelectedGpx = app.getSettings().LAST_SELECTED_GPX_TRACK_FOR_NEW_POINT.get();
-		if (prevSelectedGpx != null) {
-			selectedIndex = list.indexOf(prevSelectedGpx);
-		}
-		if (selectedIndex == -1) {
-			selectedIndex = 0;
-		}
-
-		final int[] selectedPosition = {selectedIndex};
-		builder.setSingleChoiceItems(listAdapter, selectedIndex, new OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int position) {
-				selectedPosition[0] = position;
-			}
-		});
-		builder.setTitle(R.string.select_gpx)
-				.setPositiveButton(R.string.shared_string_ok, new OnClickListener() {
-
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-
-						int position = selectedPosition[0];
-						if (position != -1) {
-							if (showCurrentGpx && position == 0) {
-								callbackWithObject.processResult(null);
-								app.getSettings().LAST_SELECTED_GPX_TRACK_FOR_NEW_POINT.set(null);
-							} else {
-								String fileName = list.get(position).getFileName();
-								app.getSettings().LAST_SELECTED_GPX_TRACK_FOR_NEW_POINT.set(fileName);
-								SelectedGpxFile selectedGpxFile =
-										app.getSelectedGpxHelper().getSelectedFileByName(fileName);
-								if (selectedGpxFile != null) {
-									callbackWithObject.processResult(new GPXFile[]{selectedGpxFile.getGpxFile()});
-								} else {
-									loadGPXFileInDifferentThread(activity, callbackWithObject, dir, null, fileName);
-								}
-							}
-						}
-					}
-				})
-				.setNegativeButton(R.string.shared_string_cancel, null);
-
-		final AlertDialog dlg = builder.create();
-		dlg.setCanceledOnTouchOutside(false);
-		dlg.show();
-		try {
-			dlg.getListView().setFastScrollEnabled(true);
-		} catch (Exception e) {
-			// java.lang.ClassCastException: com.android.internal.widget.RoundCornerListAdapter
-			// Unknown reason but on some devices fail
-		}
-		return dlg;
-	}
+//		final ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(activity, layout, R.id.text1,
+//				adapter.getItemNames()) {
+//			@NonNull
+//            @Override
+//			public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
+//				// User super class to create the View
+//				View v = convertView;
+//				if (v == null) {
+//					v = activity.getLayoutInflater().inflate(layout, null);
+//				}
+//				final ContextMenuItem item = adapter.getItem(position);
+//				TextView tv = v.findViewById(R.id.text1);
+//				Drawable icon;
+//				if (showCurrentGpx && position == 0) {
+//					icon = null;
+//				} else {
+//					icon = iconsCache.getThemedIcon(item.getIcon());
+//				}
+//				tv.setCompoundDrawablePadding(AndroidUtils.dpToPx(activity, 10f));
+//				tv.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null);
+//				tv.setText(item.getTitle());
+//				tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+//
+//				return v;
+//			}
+//		};
+//
+//		int selectedIndex = 0;
+//		String prevSelectedGpx = app.getSettings().LAST_SELECTED_GPX_TRACK_FOR_NEW_POINT.get();
+//		if (prevSelectedGpx != null) {
+//			selectedIndex = list.indexOf(prevSelectedGpx);
+//		}
+//		if (selectedIndex == -1) {
+//			selectedIndex = 0;
+//		}
+//
+//		final int[] selectedPosition = {selectedIndex};
+//		builder.setSingleChoiceItems(listAdapter, selectedIndex, new OnClickListener() {
+//			@Override
+//			public void onClick(DialogInterface dialog, int position) {
+//				selectedPosition[0] = position;
+//			}
+//		});
+//		builder.setTitle(R.string.select_gpx)
+//				.setPositiveButton(R.string.shared_string_ok, new OnClickListener() {
+//
+//					@Override
+//					public void onClick(DialogInterface dialog, int which) {
+//
+//						int position = selectedPosition[0];
+//						if (position != -1) {
+//							if (showCurrentGpx && position == 0) {
+//								callbackWithObject.processResult(null);
+//								app.getSettings().LAST_SELECTED_GPX_TRACK_FOR_NEW_POINT.set(null);
+//							} else {
+//								String fileName = list.get(position).getFileName();
+//								app.getSettings().LAST_SELECTED_GPX_TRACK_FOR_NEW_POINT.set(fileName);
+//								SelectedGpxFile selectedGpxFile =
+//										app.getSelectedGpxHelper().getSelectedFileByName(fileName);
+//								if (selectedGpxFile != null) {
+//									callbackWithObject.processResult(new GPXFile[]{selectedGpxFile.getGpxFile()});
+//								} else {
+//									loadGPXFileInDifferentThread(activity, callbackWithObject, dir, null, fileName);
+//								}
+//							}
+//						}
+//					}
+//				})
+//				.setNegativeButton(R.string.shared_string_cancel, null);
+//
+//		final AlertDialog dlg = builder.create();
+//		dlg.setCanceledOnTouchOutside(false);
+//		dlg.show();
+//		try {
+//			dlg.getListView().setFastScrollEnabled(true);
+//		} catch (Exception e) {
+//			// java.lang.ClassCastException: com.android.internal.widget.RoundCornerListAdapter
+//			// Unknown reason but on some devices fail
+//		}
+//		return dlg;
+//	}
 
 	private static AlertDialog createDialog(final Activity activity,
 											final boolean showCurrentGpx,

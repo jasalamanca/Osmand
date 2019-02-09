@@ -9,7 +9,6 @@ import java.util.List;
 
 // immutable object
 public class SearchSettings {
-
 	private LatLon originalLocation;
 	private List<BinaryMapIndexReader> offlineIndexes = new ArrayList<>();
 	private int radiusLevel = 1;
@@ -20,7 +19,7 @@ public class SearchSettings {
 	private boolean emptyQueryAllowed;
 	private boolean sortByName;
 
-	private SearchSettings(SearchSettings s) {
+	public SearchSettings(SearchSettings s) {
 		if(s != null) {
 			this.radiusLevel = s.radiusLevel;
 			this.lang = s.lang;
@@ -36,20 +35,16 @@ public class SearchSettings {
 	public SearchSettings(List<BinaryMapIndexReader> offlineIndexes) {
 		this.offlineIndexes = Collections.unmodifiableList(offlineIndexes);
 	}
-	
-	
-	public List<BinaryMapIndexReader> getOfflineIndexes() {
+
+	List<BinaryMapIndexReader> getOfflineIndexes() {
 		return offlineIndexes;
 	}
-
 	public void setOfflineIndexes(List<BinaryMapIndexReader> offlineIndexes) {
 		this.offlineIndexes = Collections.unmodifiableList(offlineIndexes);
 	}
-
 	public int getRadiusLevel() {
 		return radiusLevel;
 	}
-	
 	public String getLang() {
 		return lang;
 	}
@@ -66,17 +61,7 @@ public class SearchSettings {
 		s.radiusLevel = radiusLevel;
 		return s;
 	}
-	
-	public int getTotalLimit() {
-		return totalLimit;
-	}
-	
-	public SearchSettings setTotalLimit(int totalLimit) {
-		SearchSettings s = new SearchSettings(this);
-		s.totalLimit = totalLimit;
-		return s;
-	}
-	
+
 	public LatLon getOriginalLocation() {
 		return originalLocation;
 	}
@@ -90,11 +75,9 @@ public class SearchSettings {
 	public boolean isTransliterate() {
 		return transliterateIfMissing;
 	}
-
-	public ObjectType[] getSearchTypes() {
+	ObjectType[] getSearchTypes() {
 		return searchTypes;
 	}
-
 	public boolean isCustomSearch() {
 		return searchTypes != null;
 	}
@@ -111,7 +94,7 @@ public class SearchSettings {
 		return s;
 	}
 
-	public boolean isEmptyQueryAllowed() {
+	boolean isEmptyQueryAllowed() {
 		return emptyQueryAllowed;
 	}
 
@@ -121,7 +104,7 @@ public class SearchSettings {
 		return s;
 	}
 
-	public boolean isSortByName() {
+	boolean isSortByName() {
 		return sortByName;
 	}
 

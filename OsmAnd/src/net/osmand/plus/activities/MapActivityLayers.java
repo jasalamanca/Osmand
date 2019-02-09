@@ -1,6 +1,5 @@
 package net.osmand.plus.activities;
 
-
 import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import android.app.AlertDialog;
@@ -58,7 +57,6 @@ import java.util.Map.Entry;
  * Object is responsible to maintain layers using by map activity
  */
 public class MapActivityLayers {
-
 	private final MapActivity activity;
 
 	// the order of layer should be preserved ! when you are inserting new layer
@@ -67,13 +65,9 @@ public class MapActivityLayers {
     private POIMapLayer poiMapLayer;
 	private FavouritesLayer mFavouritesLayer;
 	private TransportStopsLayer transportStopsLayer;
-	private PointLocationLayer locationLayer;
 	private RulerControlLayer rulerControlLayer;
-	private PointNavigationLayer navigationLayer;
 	private MapMarkersLayer mapMarkersLayer;
-	private ImpassableRoadsLayer impassableRoadsLayer;
 	private MapInfoLayer mapInfoLayer;
-	private MapTextLayer mapTextLayer;
 	private ContextMenuLayer contextMenuLayer;
 	private MapControlsLayer mapControlsLayer;
 	private MapQuickActionLayer mapQuickActionLayer;
@@ -82,7 +76,7 @@ public class MapActivityLayers {
 	private final QuickActionRegistry quickActionRegistry;
 	private MeasurementToolLayer measurementToolLayer;
 
-    public MapActivityLayers(MapActivity activity) {
+    MapActivityLayers(MapActivity activity) {
 		this.activity = activity;
 		this.mapWidgetRegistry = new MapWidgetRegistry(activity.getMyApplication().getSettings());
 		this.quickActionRegistry = new QuickActionRegistry(activity.getMyApplication().getSettings());
@@ -100,13 +94,11 @@ public class MapActivityLayers {
 		return (OsmandApplication) activity.getApplication();
 	}
 
-
-	public void createLayers(final OsmandMapTileView mapView) {
-
+	void createLayers(final OsmandMapTileView mapView) {
 		OsmandApplication app = getApplication();
 		RoutingHelper routingHelper = app.getRoutingHelper();
 		// first create to make accessible
-		mapTextLayer = new MapTextLayer();
+		MapTextLayer mapTextLayer = new MapTextLayer();
 		// 5.95 all labels
 		mapView.addLayer(mapTextLayer, 5.95f);
 		// 8. context menu layer 
@@ -143,16 +135,16 @@ public class MapActivityLayers {
 		mapView.addLayer(transportStopsLayer, 5);
 		// 5.95 all text labels
 		// 6. point location layer 
-		locationLayer = new PointLocationLayer(activity.getMapViewTrackingUtilities());
+		PointLocationLayer locationLayer = new PointLocationLayer(activity.getMapViewTrackingUtilities());
 		mapView.addLayer(locationLayer, 6);
 		// 7. point navigation layer
-		navigationLayer = new PointNavigationLayer(activity);
+		PointNavigationLayer navigationLayer = new PointNavigationLayer(activity);
 		mapView.addLayer(navigationLayer, 7);
 		// 7.3 map markers layer
 		mapMarkersLayer = new MapMarkersLayer(activity);
 		mapView.addLayer(mapMarkersLayer, 7.3f);
 		// 7.5 Impassible roads
-		impassableRoadsLayer = new ImpassableRoadsLayer(activity);
+		ImpassableRoadsLayer impassableRoadsLayer = new ImpassableRoadsLayer(activity);
 		mapView.addLayer(impassableRoadsLayer, 7.5f);
 		// 7.8 ruler control layer
 		rulerControlLayer = new RulerControlLayer(activity);
@@ -182,7 +174,6 @@ public class MapActivityLayers {
 		OsmandPlugin.createLayers(mapView, activity);
 		app.getAidlApi().registerMapLayers(activity);
 	}
-
 
 	public void updateLayers(OsmandMapTileView mapView) {
 		OsmandSettings settings = getApplication().getSettings();
@@ -233,7 +224,6 @@ public class MapActivityLayers {
 		};
 		return GpxUiHelper.selectGPXFiles(files, activity, callbackWithObject);
 	}
-
 
 	public void showMultichoicePoiFilterDialog(final OsmandMapTileView mapView, final DismissListener listener) {
 		final OsmandApplication app = getApplication();
@@ -401,8 +391,6 @@ public class MapActivityLayers {
 	}
 
 	public void selectMapLayer(final OsmandMapTileView mapView, final ContextMenuItem it, final ArrayAdapter<ContextMenuItem> adapter) {
-		final OsmandSettings settings = getApplication().getSettings();
-
 		final LinkedHashMap<String, String> entriesMap = new LinkedHashMap<>();
 		final String layerOsmVector = "LAYER_OSM_VECTOR";
 		final String layerInstallMore = "LAYER_INSTALL_MORE";
@@ -445,75 +433,45 @@ public class MapActivityLayers {
 		builder.show();
 	}
 
-
 	private String getString(int resId) {
 		return activity.getString(resId);
 	}
-
-	public PointNavigationLayer getNavigationLayer() {
-		return navigationLayer;
-	}
-
-	public ImpassableRoadsLayer getImpassableRoadsLayer() {
-		return impassableRoadsLayer;
-	}
-
 	public GPXLayer getGpxLayer() {
 		return gpxLayer;
 	}
-
 	public ContextMenuLayer getContextMenuLayer() {
 		return contextMenuLayer;
 	}
-
 	public FavouritesLayer getFavouritesLayer() {
 		return mFavouritesLayer;
 	}
-
 	public MeasurementToolLayer getMeasurementToolLayer() {
 		return measurementToolLayer;
 	}
-
-	public MapTextLayer getMapTextLayer() {
-		return mapTextLayer;
-	}
-
-	public PointLocationLayer getLocationLayer() {
-		return locationLayer;
-	}
-
 	public RulerControlLayer getRulerControlLayer() {
 		return rulerControlLayer;
 	}
-
 	public MapInfoLayer getMapInfoLayer() {
 		return mapInfoLayer;
 	}
-
 	public MapControlsLayer getMapControlsLayer() {
 		return mapControlsLayer;
 	}
-
 	public MapQuickActionLayer getMapQuickActionLayer() {
 		return mapQuickActionLayer;
 	}
-
 	public MapMarkersLayer getMapMarkersLayer() {
 		return mapMarkersLayer;
 	}
-
 	public POIMapLayer getPoiMapLayer() {
 		return poiMapLayer;
 	}
-	
 	public TransportStopsLayer getTransportStopsLayer() {
 		return transportStopsLayer;
 	}
-
 	public DownloadedRegionsLayer getDownloadedRegionsLayer() {
 		return downloadedRegionsLayer;
 	}
-
 	public interface DismissListener {
 		void dismiss();
 	}

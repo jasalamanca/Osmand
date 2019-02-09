@@ -1,6 +1,5 @@
 package net.osmand.router;
 
-import gnu.trove.list.array.TIntArrayList;
 import gnu.trove.set.hash.TIntHashSet;
 
 public class TurnType {
@@ -23,7 +22,7 @@ public class TurnType {
 		return valueOf(C, false);
 	}
 	
-	public int getActiveCommonLaneTurn() {
+	int getActiveCommonLaneTurn() {
 		if(lanes == null || lanes.length == 0) {
 			return C;
 		}
@@ -108,7 +107,6 @@ public class TurnType {
 		}
 		return t;
 	}
-	
 
 	public static TurnType valueOf(int vs, boolean leftSide) {
 		if(vs == TU && leftSide) {
@@ -118,10 +116,6 @@ public class TurnType {
 		}
 	
 		return new TurnType(vs);
-//		if (s != null && s.startsWith("EXIT")) { //$NON-NLS-1$
-//			return getExitTurn(Integer.parseInt(s.substring(4)), 0, leftSide);
-//		}
-//		return null;
 	}
 
 	private final int value;
@@ -133,40 +127,32 @@ public class TurnType {
 	private boolean possiblyLeftTurn;
 	private boolean possiblyRightTurn;
 
-	public static TurnType getExitTurn(int out, float angle, boolean leftSide) {
+	static TurnType getExitTurn(int out, float angle, boolean leftSide) {
 		TurnType r = valueOf(RNDB, leftSide); //$NON-NLS-1$
 		r.exitOut = out;
 		r.setTurnAngle(angle);
 		return r;
 	}
 	
-	
 	private TurnType(int vl) {
 		this.value = vl;
 	}
-
-
 	// calculated Clockwise head rotation if previous direction to NORTH
 	public float getTurnAngle() {
 		return turnAngle;
 	}
-
 	public boolean isLeftSide() {
 		return value == RNLB || value == TRU;
 	}
-
 	public void setTurnAngle(float turnAngle) {
 		this.turnAngle = turnAngle;
 	}
-
 	public int getValue() {
 		return value;
 	}
-
 	public int getExitOut() {
 		return exitOut;
 	}
-
 	public boolean isRoundAbout() {
 		return value == RNDB || value == RNLB; //$NON-NLS-1$
 	}
@@ -181,22 +167,21 @@ public class TurnType {
 	}
 	
 	// Note that the primary turn will be the one displayed on the map.
-	public static void setPrimaryTurnAndReset(int[] lanes, int lane, int turnType) {
+	static void setPrimaryTurnAndReset(int[] lanes, int lane, int turnType) {
 		lanes[lane] = (turnType << 1);
 	}
-	
-	
+
 	public static int getPrimaryTurn(int laneValue) {
 		// Get the primary turn modifier for the lane
 		return (laneValue >> 1) & ((1 << 4) - 1);
 	}
 
-	public static void setSecondaryTurn(int[] lanes, int lane, int turnType) {
+	static void setSecondaryTurn(int[] lanes, int lane, int turnType) {
 		lanes[lane] &= ~(15 << 5);
 		lanes[lane] |= (turnType << 5);
 	}
 	
-	public static void setPrimaryTurn(int[] lanes, int lane, int turnType) {
+	static void setPrimaryTurn(int[] lanes, int lane, int turnType) {
 		lanes[lane] &= ~(15 << 1);
 		lanes[lane] |= (turnType << 1);
 	}
@@ -206,23 +191,21 @@ public class TurnType {
 		return (laneValue >> 5) & ((1 << 5) - 1);
 	}
 	
-	public static void setPrimaryTurnShiftOthers(int[] lanes, int lane, int turnType) {
+	static void setPrimaryTurnShiftOthers(int[] lanes, int lane, int turnType) {
 		int pt = getPrimaryTurn(lanes[lane]);
 		int st = getSecondaryTurn(lanes[lane]);
-		//int tt = getTertiaryTurn(lanes[lane]);
 		setPrimaryTurnAndReset(lanes, lane, turnType);
 		setSecondaryTurn(lanes, lane, pt);
 		setTertiaryTurn(lanes, lane, st);
 	}
 	
-	public static void setSecondaryTurnShiftOthers(int[] lanes, int lane, int turnType) {
+	static void setSecondaryTurnShiftOthers(int[] lanes, int lane, int turnType) {
 		int st = getSecondaryTurn(lanes[lane]);
-		//int tt = getTertiaryTurn(lanes[lane]);
 		setSecondaryTurn(lanes, lane, turnType);
 		setTertiaryTurn(lanes, lane, st);
 	}
 
-	public static void setTertiaryTurn(int[] lanes, int lane, int turnType) {
+	static void setTertiaryTurn(int[] lanes, int lane, int turnType) {
 		lanes[lane] &= ~(15 << 10);
 		lanes[lane] |= (turnType << 10);
 	}
@@ -232,70 +215,65 @@ public class TurnType {
 		return (laneValue >> 10);
 	}
 
-	private static String toString(int[] lns) {
-        String s = "";
+	public static String toString(int[] lns) {
+        StringBuilder s = new StringBuilder();
         for (int h = 0; h < lns.length; h++) {
             if (h > 0) {
-                s += "|";
+                s.append("|");
             }
             if (lns[h] % 2 == 1) {
-                s += "+";
+                s.append("+");
             }
             int pt = TurnType.getPrimaryTurn(lns[h]);
             if (pt == 0) {
                 pt = 1;
             }
-            s += TurnType.valueOf(pt, false).toXmlString();
+            s.append(TurnType.valueOf(pt, false).toXmlString());
             int st = TurnType.getSecondaryTurn(lns[h]);
             if (st != 0) {
-                s += "," + TurnType.valueOf(st, false).toXmlString();
+                s.append(",").append(TurnType.valueOf(st, false).toXmlString());
             }
             int tt = TurnType.getTertiaryTurn(lns[h]);
             if (tt != 0) {
-                s += "," + TurnType.valueOf(tt, false).toXmlString();
+                s.append(",").append(TurnType.valueOf(tt, false).toXmlString());
             }
 
         }
-        s += "";
-        return s;
+
+        return s.toString();
 	}
+
 	public int[] getLanes() {
 		return lanes;
 	}
 	
-	public void setPossibleLeftTurn(boolean possiblyLeftTurn) {
+	void setPossibleLeftTurn(boolean possiblyLeftTurn) {
 		this.possiblyLeftTurn = possiblyLeftTurn;
 	}
 	
-	public void setPossibleRightTurn(boolean possiblyRightTurn) {
+	void setPossibleRightTurn(boolean possiblyRightTurn) {
 		this.possiblyRightTurn = possiblyRightTurn;
 	}
 	
-	public boolean isPossibleLeftTurn() {
+	boolean isPossibleLeftTurn() {
 		return possiblyLeftTurn;
 	}
-	
-	public boolean isPossibleRightTurn() {
+	boolean isPossibleRightTurn() {
 		return possiblyRightTurn;
 	}
-	
 	public boolean keepLeft() {
 		return value == KL;
 	}
-	
 	public boolean keepRight() {
 		return value == KR;
 	}
-	
 	public boolean goAhead() {
 		return value == C;
 	}
-	
 	public boolean isSkipToSpeak() {
 		return skipToSpeak;
 	}
-	
-	public void setSkipToSpeak(boolean skipToSpeak) {
+	void setSkipToSpeak(boolean skipToSpeak) {
 		this.skipToSpeak = skipToSpeak;
 	}
 	
@@ -342,7 +320,7 @@ public class TurnType {
 		return type == TL || type == TSHL || type == TSLL || type == TU || type == KL;
 	}
 	
-	public static boolean isLeftTurnNoUTurn(int type) {
+	static boolean isLeftTurnNoUTurn(int type) {
 		return type == TL || type == TSHL || type == TSLL || type == KL;
 	}
 	
@@ -350,7 +328,7 @@ public class TurnType {
 		return type == TR || type == TSHR || type == TSLR || type == TRU || type == KR;
 	}
 	
-	public static boolean isRightTurnNoUTurn(int type) {
+	static boolean isRightTurnNoUTurn(int type) {
 		return type == TR || type == TSHR || type == TSLR || type == KR;
 	}
 
@@ -358,19 +336,19 @@ public class TurnType {
 		return type == TSLL || type == TSLR || type == C || type == KL || type == KR;
 	}
 	
-	public static boolean hasAnySlightTurnLane(int type) {
+	static boolean hasAnySlightTurnLane(int type) {
 		return TurnType.isSlightTurn(TurnType.getPrimaryTurn(type))
 				|| TurnType.isSlightTurn(TurnType.getSecondaryTurn(type))
 				|| TurnType.isSlightTurn(TurnType.getTertiaryTurn(type));
 	}
 	
-	public static boolean hasAnyTurnLane(int type, int turn) {
+	static boolean hasAnyTurnLane(int type, int turn) {
 		return TurnType.getPrimaryTurn(type) == turn
 				|| TurnType.getSecondaryTurn(type) == turn
 				|| TurnType.getTertiaryTurn(type) == turn;
 	}
 
-	public static void collectTurnTypes(int lane, TIntHashSet set) {
+	static void collectTurnTypes(int lane, TIntHashSet set) {
 		int pt = TurnType.getPrimaryTurn(lane);
 		if(pt != 0) {
 			set.add(pt);
@@ -385,7 +363,7 @@ public class TurnType {
 		}		
 	}
 	
-	public static int orderFromLeftToRight(int type) {
+	static int orderFromLeftToRight(int type) {
 		switch(type) {
 		case TU:
 			return -5;
@@ -413,7 +391,7 @@ public class TurnType {
 		}
 	}
 
-	public static int convertType(String lane) {
+	static int convertType(String lane) {
 		int turn;
 		if (lane.equals("none") || lane.equals("through")) {
 			turn = TurnType.C;
