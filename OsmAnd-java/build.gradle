@@ -56,3 +56,10 @@ dependencies {
 	implementation group: 'junidecode', name: 'junidecode', version: '0.1.1'
 	implementation group: 'net.sf.kxml', name: 'kxml2', version: '2.3.0'
 }
+
+// Tests
+dependencies {
+	testImplementation 'junit:junit:4.12'
+	testImplementation 'com.google.code.gson:gson:2.8.2'
+	testImplementation 'org.hamcrest:hamcrest-core:2.1'
+}
