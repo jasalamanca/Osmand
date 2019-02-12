@@ -57,8 +57,6 @@ import gnu.trove.list.array.TLongArrayList;
 import gnu.trove.map.hash.TIntObjectHashMap;
 
 public class BinaryInspector {
-
-
 	private static final int BUFFER_SIZE = 1 << 20;
 	public static final int SHIFT_ID = 6;
 	private VerboseInfo vInfo;
@@ -104,7 +102,6 @@ public class BinaryInspector {
 		} else {
 			System.out.println(s);
 		}
-
 	}
 
 	private void print(String s) {
@@ -142,27 +139,21 @@ public class BinaryInspector {
 		boolean isVaddress() {
 			return vaddress;
 		}
-
 		int getZoom() {
 			return zoom;
 		}
-
 		boolean isVmap() {
 			return vmap;
 		}
-
 		boolean isVrouting() {
 			return vrouting;
 		}
-
 		boolean isVpoi() {
 			return vpoi;
 		}
-
 		boolean isVtransport() {
 			return vtransport;
 		}
-
 		boolean isVStats() {
 			return vstats;
 		}
@@ -284,7 +275,6 @@ public class BinaryInspector {
 		//written += 4;
 	}
 
-	@SuppressWarnings("unchecked")
     private static List<Float> combineParts(File fileToExtract, Map<File, String> partsToExtractFrom) throws IOException {
 		BinaryMapIndexReader[] indexes = new BinaryMapIndexReader[partsToExtractFrom.size()];
 		RandomAccessFile[] rafs = new RandomAccessFile[partsToExtractFrom.size()];
@@ -357,10 +347,8 @@ public class BinaryInspector {
 		CodedOutputStream ous = CodedOutputStream.newInstance(fout, BUFFER_SIZE);
 		List<Float> list = new ArrayList<>();
 		byte[] BUFFER_TO_READ = new byte[BUFFER_SIZE];
-
 		ous.writeInt32(OsmandOdb.OsmAndStructure.VERSION_FIELD_NUMBER, version);
 		ous.writeInt64(OsmandOdb.OsmAndStructure.DATECREATED_FIELD_NUMBER, System.currentTimeMillis());
-
 
 		for (int k = 0; k < indexes.length; k++) {
 			LinkedHashSet<Float> partSet = partsSet[k];
@@ -401,7 +389,7 @@ public class BinaryInspector {
 				writeInt(ous, part.getLength());
 				copyBinaryPart(ous, BUFFER_TO_READ, raf, part.getFilePointer(), part.getLength());
 				System.out.println(MessageFormat.format("{2} part {0} is extracted {1} bytes",
-						new Object[]{part.getName(), part.getLength(), map}));
+						part.getName(), part.getLength(), map));
 
 			}
 		}
@@ -410,10 +398,8 @@ public class BinaryInspector {
 		ous.flush();
 		fout.close();
 
-
 		return list;
 	}
-
 
 	private static void copyBinaryPart(CodedOutputStream ous, byte[] BUFFER, RandomAccessFile raf, long fp, int length)
 			throws IOException {
@@ -431,7 +417,6 @@ public class BinaryInspector {
 			toRead -= read;
 		}
 	}
-
 
 	private String formatBounds(int left, int right, int top, int bottom) {
 		double l = MapUtils.get31LongitudeX(left);
@@ -481,7 +466,7 @@ public class BinaryInspector {
 				}
 				String name = p.getName() == null ? "" : p.getName();
 				println(MessageFormat.format("{0} {1} data {3} - {2,number,#} bytes",
-						new Object[]{i, partname, p.getLength(), name}));
+						i, partname, p.getLength(), name));
 				if(p instanceof TransportIndex){
 					TransportIndex ti = ((TransportIndex) p);
 					int sh = (31 - BinaryMapIndexReader.TRANSPORT_STOP_ZOOM);
@@ -502,10 +487,9 @@ public class BinaryInspector {
 					int j = 1;
 					for (MapRoot mi : m.getRoots()) {
 						println(MessageFormat.format("\t{4}.{5} Map level minZoom = {0}, maxZoom = {1}, size = {2,number,#} bytes \n\t\tBounds {3}",
-								new Object[] {
-								mi.getMinZoom(), mi.getMaxZoom(), mi.getLength(), 
-								formatBounds(mi.getLeft(), mi.getRight(), mi.getTop(), mi.getBottom()), 
-								i, j++}));
+								mi.getMinZoom(), mi.getMaxZoom(), mi.getLength(),
+								formatBounds(mi.getLeft(), mi.getRight(), mi.getTop(), mi.getBottom()),
+								i, j++));
 					}
 					if ((vInfo != null && vInfo.isVmap())) {
 						printMapDetailInfo(index, m);
@@ -583,7 +567,7 @@ public class BinaryInspector {
 						int[] nametypes = obj.getPointNameTypes(i);
 						int[] types = obj.getPointTypes(i);
 						if (types != null || names != null) {
-							b.append("[" + (i + 1) + ". ");
+							b.append("[").append(i + 1).append(". ");
 							if (names != null) {
 								for (int k = 0; k < names.length; k++) {
 									RouteTypeRule rr = obj.region.quickGetEncodingRule(nametypes[k]);
@@ -692,16 +676,16 @@ public class BinaryInspector {
 					final List<Street> intersections = t.getIntersectedStreets();
 
 					println(MessageFormat.format("\t\t\t''{0}'' [{1,number,#}], {2,number,#} building(s), {3,number,#} intersections(s)",
-							new Object[]{t.getName(verbose.lang), t.getId(), buildings.size(), intersections.size()}));
-					if (buildings != null && !buildings.isEmpty() && verbose.vbuildings) {
+							t.getName(verbose.lang), t.getId(), buildings.size(), intersections.size()));
+					if (!buildings.isEmpty() && verbose.vbuildings) {
 						println("\t\t\t\tBuildings:");
 						for (Building b : buildings) {
 							println(MessageFormat.format("\t\t\t\t{0} [{1,number,#} {2} ]",
-									new Object[]{b.getName(verbose.lang), b.getId(), b.getPostcode() == null ? "" : b.getPostcode()}));
+									b.getName(verbose.lang), b.getId(), b.getPostcode() == null ? "" : b.getPostcode()));
 						}
 					}
 
-					if (intersections != null && !intersections.isEmpty() && verbose.vintersections) {
+					if (!intersections.isEmpty() && verbose.vintersections) {
 						print("\t\t\t\tIntersects with:");
 						for (Street s : intersections) {
 							println("\t\t\t\t\t" + s.getName(verbose.lang));
@@ -733,7 +717,6 @@ public class BinaryInspector {
 		int lastObjectTypes;
 		int lastObjectCoordinates;
 		int lastObjectCoordinatesCount;
-
 		int lastObjectSize;
 
 		private final Map<String, MapStatKey> types = new LinkedHashMap<>();
@@ -763,7 +746,6 @@ public class BinaryInspector {
 				key.count++;
 			}
 		}
-
 
 		void process(BinaryMapDataObject obj) {
 			MapObjectStat st = req.stat;
@@ -841,19 +823,19 @@ public class BinaryInspector {
 		}
 
 		private long out(String s, long i) {
-			while (s.length() < 25) {
-				s += " ";
+			StringBuilder sBuilder = new StringBuilder(s);
+			while (sBuilder.length() < 25) {
+				sBuilder.append(" ");
 			}
+			s = sBuilder.toString();
 			DecimalFormat df = new DecimalFormat("0,000,000,000");
 			println(s + ": " + df.format(i));
 			return i;
 		}
 
-
 		void setReq(SearchRequest<BinaryMapDataObject> req) {
 			this.req = req;
 		}
-
 	}
 
 	private void printMapDetailInfo(BinaryMapIndexReader index, MapIndex mapIndex) throws IOException {
@@ -940,7 +922,7 @@ public class BinaryInspector {
 				continue;
 //								throw new NullPointerException("Type " + obj.getAdditionalTypes()[j] + "was not found");
 			}
-			b.append(pair.toSimpleString() + " (" + types[j] + ")");
+			b.append(pair.toSimpleString()).append(" (").append(types[j]).append(")");
 		}
 		b.append("]");
 		if (obj.getAdditionalTypes() != null && obj.getAdditionalTypes().length > 0) {
@@ -955,7 +937,7 @@ public class BinaryInspector {
 					continue;
 //									throw new NullPointerException("Type " + obj.getAdditionalTypes()[j] + "was not found");
 				}
-				b.append(pair.toSimpleString() + "(" + obj.getAdditionalTypes()[j] + ")");
+				b.append(pair.toSimpleString()).append("(").append(obj.getAdditionalTypes()[j]).append(")");
 
 			}
 			b.append("]");
@@ -973,7 +955,7 @@ public class BinaryInspector {
 				if (pair == null) {
 					throw new NullPointerException("Type " + order.get(j) + "was not found");
 				}
-				b.append(pair.toSimpleString() + "(" + order.get(j) + ")");
+				b.append(pair.toSimpleString()).append("(").append(order.get(j)).append(")");
 				b.append(" - ").append(names.get(order.get(j)));
 			}
 			b.append("]");
@@ -990,7 +972,6 @@ public class BinaryInspector {
 			}
 		}
 	}
-
 
 	private static int OSM_ID = 1;
 
@@ -1027,7 +1008,7 @@ public class BinaryInspector {
 			float lon = (float) MapUtils.get31LongitudeX(obj.getPoint31XTile(i));
 			float lat = (float) MapUtils.get31LatitudeY(obj.getPoint31YTile(i));
 			int id = OSM_ID++;
-			b.append("\t<node id = '" + id + "' version='1' lat='" + lat + "' lon='" + lon + "' >\n");
+			b.append("\t<node id = '").append(id).append("' version='1' lat='").append(lat).append("' lon='").append(lon).append("' >\n");
 			if (obj.getPointNames(i) != null) {
 				String[] vs = obj.getPointNames(i);
 				int[] keys = obj.getPointNameTypes(i);
@@ -1054,7 +1035,7 @@ public class BinaryInspector {
 				long ld = obj.getRestrictionId(i);
 				String tp = MapRenderingTypes.getRestrictionValue(obj.getRestrictionType(i));
 				int id = OSM_ID++;
-				b.append("<relation id = '" + id + "' version='1'>\n");
+				b.append("<relation id = '").append(id).append("' version='1'>\n");
 				b.append("\t<member ref='").append(idway).append("' role='from' type='way' />\n");
 				b.append("\t<tag k='").append("from_osmand_id").append("' v='").append(obj.getId()).append("' />\n");
 				b.append("\t<tag k='").append("from_id").append("' v='").append(obj.getId() >> SHIFT_ID).append("' />\n");
@@ -1120,7 +1101,7 @@ public class BinaryInspector {
 		if(point) {
 			float lon= (float) MapUtils.get31LongitudeX(obj.getPoint31XTile(0));
 			float lat = (float) MapUtils.get31LatitudeY(obj.getPoint31YTile(0));
-			b.append("<node id = '" + OSM_ID++ + "' version='1' lat='" + lat + "' lon='" + lon + "' >\n");
+			b.append("<node id = '").append(OSM_ID++).append("' version='1' lat='").append(lat).append("' lon='").append(lon).append("' >\n");
 			b.append(tags);
 			b.append("</node>\n");
 		} else {
@@ -1130,7 +1111,7 @@ public class BinaryInspector {
 				float lon = (float) MapUtils.get31LongitudeX(obj.getPoint31XTile(i));
 				float lat = (float) MapUtils.get31LatitudeY(obj.getPoint31YTile(i));
 				int id = OSM_ID++;
-				b.append("\t<node id = '" + id + "' version='1' lat='" + lat + "' lon='" + lon + "' />\n");
+				b.append("\t<node id = '").append(id).append("' version='1' lat='").append(lat).append("' lon='").append(lon).append("' />\n");
 				ids.add(id);
 			}
 			long outerId = printWay(ids, b, multipolygon ? null : tags);
@@ -1142,36 +1123,35 @@ public class BinaryInspector {
 						float lon = (float) MapUtils.get31LongitudeX(polygonInnerCoordinate[i]);
 						float lat = (float) MapUtils.get31LatitudeY(polygonInnerCoordinate[i + 1]);
 						int id = OSM_ID++;
-						b.append("<node id = '" + id + "' version='1' lat='" + lat + "' lon='" + lon + "' />\n");
+						b.append("<node id = '").append(id).append("' version='1' lat='").append(lat).append("' lon='").append(lon).append("' />\n");
 						ids.add(id);
 					}
 					innerIds.add(printWay(ids, b, null));
 				}
 				int id = OSM_ID++;
-				b.append("<relation id = '" + id + "' version='1'>\n");
+				b.append("<relation id = '").append(id).append("' version='1'>\n");
 				b.append(tags);
-				b.append("\t<member type='way' role='outer' ref= '" + outerId + "'/>\n");
+				b.append("\t<member type='way' role='outer' ref= '").append(outerId).append("'/>\n");
 				TLongIterator it = innerIds.iterator();
 				while (it.hasNext()) {
 					long ref = it.next();
-					b.append("<member type='way' role='inner' ref= '" + ref + "'/>\n");
+					b.append("<member type='way' role='inner' ref= '").append(ref).append("'/>\n");
 				}
 				b.append("</relation>\n");
 			}
 		}
 	}
 
-
 	private long printWay(TLongArrayList ids, StringBuilder b, StringBuilder tags) {
 		int id = OSM_ID++;
-		b.append("<way id = '" + id + "' version='1'>\n");
+		b.append("<way id = '").append(id).append("' version='1'>\n");
 		if (tags != null) {
 			b.append(tags);
 		}
 		TLongIterator it = ids.iterator();
 		while (it.hasNext()) {
 			long ref = it.next();
-			b.append("\t<nd ref = '" + ref + "'/>\n");
+			b.append("\t<nd ref = '").append(ref).append("'/>\n");
 		}
 		b.append("</way>\n");
 		return id;
@@ -1229,13 +1209,13 @@ public class BinaryInspector {
 					@Override
 					public boolean publish(Amenity object) {
 						Iterator<Entry<String, String>> it = object.getAdditionalInfo().entrySet().iterator();
-						String s = "";
+						StringBuilder s = new StringBuilder();
 						while (it.hasNext()) {
 							Entry<String, String> e = it.next();
 							if (e.getValue().startsWith(" gz ")) {
-								s += " " + e.getKey() + "=...";
+								s.append(" ").append(e.getKey()).append("=...");
 							} else {
-								s += " " + e.getKey() + "=" + e.getValue();
+								s.append(" ").append(e.getKey()).append("=").append(e.getValue());
 							}
 						}
 
@@ -1288,5 +1268,4 @@ public class BinaryInspector {
 		System.out.println("  Example : inspector -c output_file input_file1 input_file2 input_file3\n\tSimply combine 3 files");
 		System.out.println("  Example : inspector -c output_file input_file1 input_file2 -4\n\tCombine all parts of 1st file and all parts excluding 4th part of 2nd file");
 	}
-
 }

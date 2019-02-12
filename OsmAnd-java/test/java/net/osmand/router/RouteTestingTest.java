@@ -1,45 +1,39 @@
 package net.osmand.router;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import net.osmand.binary.BinaryInspector;
+import net.osmand.binary.BinaryMapIndexReader;
+
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
 import java.io.Reader;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeSet;
 
-import net.osmand.binary.BinaryInspector;
-import net.osmand.binary.BinaryMapIndexReader;
-import net.osmand.data.LatLon;
-
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 @RunWith(Parameterized.class)
 public class RouteTestingTest {
 	private TestEntry te;
-
 
     public RouteTestingTest(String name, TestEntry te) {
         this.te = te;
     }
 
     @BeforeClass
-    public static void setUp() throws Exception {
+    public static void setUp() {
         RouteResultPreparation.PRINT_TO_CONSOLE_ROUTE_INFORMATION_TO_TEST = true;
     }
 
@@ -65,7 +59,7 @@ public class RouteTestingTest {
 	public void testRouting() throws Exception {
 		String fl = "../../resources/test-resources/Routing_test.obf";
 		RandomAccessFile raf = new RandomAccessFile(fl, "r");
-		RoutePlannerFrontEnd fe = new RoutePlannerFrontEnd(false);
+		RoutePlannerFrontEnd fe = new RoutePlannerFrontEnd();
 
 		BinaryMapIndexReader[] binaryMapIndexReaders = { new BinaryMapIndexReader(raf, new File(fl)) };
 		RoutingConfiguration.Builder builder = RoutingConfiguration.getDefault();
@@ -76,7 +70,7 @@ public class RouteTestingTest {
 				RoutePlannerFrontEnd.RouteCalculationMode.NORMAL);
 		ctx.leftSideNavigation = false;
 		List<RouteSegmentResult> routeSegments = fe.searchRoute(ctx, te.getStartPoint(), te.getEndPoint(), te.getTransitPoint());
-		Set<Long> reachedSegments = new TreeSet<Long>();
+		Set<Long> reachedSegments = new TreeSet<>();
 		Assert.assertNotNull(routeSegments);
 		int prevSegment = -1;
 		for (int i = 0; i <= routeSegments.size(); i++) {
@@ -93,9 +87,7 @@ public class RouteTestingTest {
 			}
 		}
 		Map<Long, String> expectedResults = te.getExpectedResults();
-		Iterator<Entry<Long, String>> it = expectedResults.entrySet().iterator();
-		while (it.hasNext()) {
-			Entry<Long, String> es = it.next();
+		for (Entry<Long, String> es : expectedResults.entrySet()) {
 			if (es.getValue().equals("false")) {
 				Assert.assertTrue("Expected segment " + (es.getKey()) + " was wrongly reached in route segments "
 						+ reachedSegments.toString(), !reachedSegments.contains(es.getKey()));
@@ -106,7 +98,4 @@ public class RouteTestingTest {
 		}
 
 	}
-
-
-
 }

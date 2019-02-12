@@ -1,9 +1,5 @@
 package net.osmand.search;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import net.osmand.OsmAndCollator;
 import net.osmand.data.LatLon;
 import net.osmand.search.SearchUICore.SearchResultCollection;
@@ -15,10 +11,13 @@ import net.osmand.util.MapUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SearchCoreUITest {
 
 	@Test
-	public void testDuplicates() throws IOException {
+	public void testDuplicates() {
 		SearchSettings ss = new SearchSettings((SearchSettings)null);
 		ss = ss.setOriginalLocation(new LatLon(0, 0));
 		SearchPhrase phrase = new SearchPhrase(ss, OsmAndCollator.primaryCollator());
@@ -27,7 +26,7 @@ public class SearchCoreUITest {
 		SearchResult a1 = searchResult(rs, phrase, "a", 100);
 		SearchResult b2 = searchResult(rs, phrase, "b", 200);
 		SearchResult b1 = searchResult(rs, phrase, "b", 100);
-		/*SearchResult a3 = */ searchResult(rs, phrase, "a", 100);
+		SearchResult a3 = searchResult(rs, phrase, "a", 100);
 		cll.addSearchResults(rs, true, true);
 		Assert.assertEquals(3, cll.getCurrentSearchResults().size());
 		Assert.assertSame(a1, cll.getCurrentSearchResults().get(0));
@@ -36,7 +35,7 @@ public class SearchCoreUITest {
 	}
 	
 	@Test
-	public void testNoResort() throws IOException {
+	public void testNoResort() {
 		SearchSettings ss = new SearchSettings((SearchSettings)null);
 		ss = ss.setOriginalLocation(new LatLon(0, 0));
 		SearchPhrase phrase = new SearchPhrase(ss, OsmAndCollator.primaryCollator());
@@ -62,14 +61,10 @@ public class SearchCoreUITest {
 		Assert.assertSame(a1, cll.getCurrentSearchResults().get(0));
 		Assert.assertSame(b2, cll.getCurrentSearchResults().get(1));
 		Assert.assertSame(b1, cll.getCurrentSearchResults().get(2));
-		
-		
-		
 	}
-	
-	
+
 	@Test
-	public void testNoResortDuplicate() throws IOException {
+	public void testNoResortDuplicate() {
 		SearchSettings ss = new SearchSettings((SearchSettings)null);
 		ss = ss.setOriginalLocation(new LatLon(0, 0));
 		SearchPhrase phrase = new SearchPhrase(ss, OsmAndCollator.primaryCollator());
@@ -88,8 +83,6 @@ public class SearchCoreUITest {
 		Assert.assertSame(a1, cll.getCurrentSearchResults().get(0));
 		Assert.assertSame(b1, cll.getCurrentSearchResults().get(1));
 		Assert.assertSame(b2, cll.getCurrentSearchResults().get(2));
-		
-		
 	}
 
 	private SearchResult searchResult(List<SearchResult> rs, SearchPhrase phrase, String text, int dist) {

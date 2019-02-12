@@ -25,7 +25,6 @@ import java.util.*;
 
 @RunWith(Parameterized.class)
 public class RouteResultPreparationTest {
-
     private static RoutePlannerFrontEnd fe;
     private static RoutingContext ctx;
 
@@ -48,12 +47,11 @@ public class RouteResultPreparationTest {
         String fileName = "../../resources/test-resources/Turn_lanes_test.obf";
 
         File fl = new File(fileName);
-
         RandomAccessFile raf = new RandomAccessFile(fl, "r");
 
-        fe = new RoutePlannerFrontEnd(false);
+        fe = new RoutePlannerFrontEnd();
         RoutingConfiguration.Builder builder = RoutingConfiguration.getDefault();
-        Map<String, String> params = new LinkedHashMap<String, String>();
+        Map<String, String> params = new LinkedHashMap<>();
         params.put("car", "true");
         RoutingConfiguration config = builder.build("car", RoutingConfiguration.DEFAULT_MEMORY_LIMIT * 3, params);
         BinaryMapIndexReader[] binaryMapIndexReaders = {new BinaryMapIndexReader(raf, fl)};
@@ -70,13 +68,13 @@ public class RouteResultPreparationTest {
         Reader reader = new InputStreamReader(RouteResultPreparationTest.class.getResourceAsStream(fileName));
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         TestEntry[] testEntries = gson.fromJson(reader, TestEntry[].class);
-        ArrayList<Object[]> twoDArray = new ArrayList<Object[]>();
-        for (int i = 0; i < testEntries.length; ++i) {
-			if (!testEntries[i].isIgnore()) {
-				Object[] arr = new Object[] { testEntries[i].getTestName(), testEntries[i].getStartPoint(),
-						testEntries[i].getEndPoint(), testEntries[i].getExpectedResults() };
-				twoDArray.add(arr);
-			}
+        ArrayList<Object[]> twoDArray = new ArrayList<>();
+        for (TestEntry testEntry : testEntries) {
+            if (!testEntry.isIgnore()) {
+                Object[] arr = new Object[]{testEntry.getTestName(), testEntry.getStartPoint(),
+                        testEntry.getEndPoint(), testEntry.getExpectedResults()};
+                twoDArray.add(arr);
+            }
         }
         reader.close();
         return twoDArray;
@@ -86,7 +84,7 @@ public class RouteResultPreparationTest {
     @Test
     public void testLanes() throws Exception {
         List<RouteSegmentResult> routeSegments = fe.searchRoute(ctx, startPoint, endPoint, null);
-        Set<Long> reachedSegments = new TreeSet<Long>();
+        Set<Long> reachedSegments = new TreeSet<>();
         Assert.assertNotNull(routeSegments);
         int prevSegment = -1;
         for (int i = 0; i <= routeSegments.size(); i++) {
@@ -126,7 +124,6 @@ public class RouteResultPreparationTest {
 
     }
 
-
     private String getLanesString(RouteSegmentResult segment) {
         final int[] lns = segment.getTurnType().getLanes();
         if (lns != null) {
@@ -134,5 +131,4 @@ public class RouteResultPreparationTest {
         }
         return null;
     }
-
 }

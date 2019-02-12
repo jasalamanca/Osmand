@@ -1,7 +1,5 @@
 package net.osmand.search;
 
-import java.io.IOException;
-
 import net.osmand.OsmAndCollator;
 import net.osmand.data.LatLon;
 import net.osmand.search.SearchUICore.SearchResultMatcher;
@@ -11,6 +9,7 @@ import net.osmand.search.core.SearchPhrase;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.IOException;
 
 public class LocationSearchTest {
 
@@ -82,7 +81,4 @@ public class LocationSearchTest {
 		search("43°38′ 79°23′13.7″E", new LatLon(43 + 38/60f,79 + 23/60f + 13.7/3600f));
 		search("43°38′23\" 79°23′13.7″E", new LatLon(43 + 38/60f + 23/3600f,79 + 23/60f + 13.7/3600f));
 	}
-	
-
-	
 }

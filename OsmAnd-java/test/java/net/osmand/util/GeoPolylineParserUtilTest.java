@@ -2,10 +2,10 @@ package net.osmand.util;
 
 import net.osmand.data.LatLon;
 
-import java.util.Arrays;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.Arrays;
 
 /**
  * Created by rominf on 4/16/16.
@@ -14,8 +14,6 @@ import org.junit.Test;
 public class GeoPolylineParserUtilTest {
 	@Test
 	public void testDecode() {
-
-
 		Assert.assertEquals(Arrays.asList(
 				new LatLon(52.503032, 13.420526),
 				new LatLon(52.503240, 13.420671),

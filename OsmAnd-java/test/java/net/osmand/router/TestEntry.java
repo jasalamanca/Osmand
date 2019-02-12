@@ -10,7 +10,6 @@ import java.util.Map;
  * Created by User on 07.03.2016.
  */
 public class TestEntry {
-
     private String testName;
     private LatLon startPoint;
     private LatLon endPoint;
@@ -23,11 +22,9 @@ public class TestEntry {
     private int planRoadDirection;
     private boolean shortWay;
 
-    
     public void setShortWay(boolean shortWay) {
 		this.shortWay = shortWay;
 	}
-    
     public boolean isShortWay() {
     	return shortWay;
     }
@@ -45,14 +42,11 @@ public class TestEntry {
     	}
     	return arrayList;
     }
-    
-    
-    
+
     public int getPlanRoadDirection() {
 		return planRoadDirection;
 	}
-    
-    
+
     public void setPlanRoadDirection(int planRoadDirection) {
 		this.planRoadDirection = planRoadDirection;
 	}
@@ -60,27 +54,21 @@ public class TestEntry {
     public LatLon getStartPoint() {
         return startPoint;
     }
-
     public void setStartPoint(LatLon startPoint) {
         this.startPoint = startPoint;
     }
-    
     public void setIgnore(boolean ignore) {
 		this.ignore = ignore;
 	}
-    
     public boolean isIgnore() {
     	return ignore;
     }
-
     public LatLon getEndPoint() {
         return endPoint;
     }
-
     public void setEndPoint(LatLon endPoint) {
         this.endPoint = endPoint;
     }
-
     public Map<Long, String> getExpectedResults() {
         return expectedResults;
     }
@@ -92,11 +80,9 @@ public class TestEntry {
     public void setParams(Map<String, String> params) {
 		this.params = params;
 	}
-    
     public Map<String, String> getParams() {
 		return params;
 	}
-
     public String getTestName() {
         return testName;
     }
