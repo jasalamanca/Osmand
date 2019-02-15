@@ -61,7 +61,6 @@ import java.util.List;
 import gnu.trove.list.array.TIntArrayList;
 
 public class MapControlsLayer extends OsmandMapLayer {
-
 	private static final int TIMEOUT_TO_SHOW_BUTTONS = 7000;
 	private static final int REQUEST_LOCATION_FOR_NAVIGATION_PERMISSION = 200;
 	private static final int REQUEST_LOCATION_FOR_NAVIGATION_FAB_PERMISSION = 201;
@@ -77,9 +76,6 @@ public class MapControlsLayer extends OsmandMapLayer {
 	private final List<MapHudButton> controls = new ArrayList<>();
 	private final MapActivity mapActivity;
 	private int shadowColor = -1;
-	// private RulerControl rulerControl;
-	// private List<MapControls> allControls = new ArrayList<MapControls>();
-
 	private SeekBar transparencyBar;
 	private LinearLayout transparencyBarLayout;
 	private static CommonPreference<Integer> transparencySetting;
@@ -119,11 +115,9 @@ public class MapControlsLayer extends OsmandMapLayer {
 	public MapRouteInfoMenu getMapRouteInfoMenu() {
 		return mapRouteInfoMenu;
 	}
-
 	public TrackDetailsMenu getTrackDetailsMenu() {
 		return trackDetailsMenu;
 	}
-
 	@Override
 	public boolean drawInScreenPixels() {
 		return true;
@@ -199,17 +193,14 @@ public class MapControlsLayer extends OsmandMapLayer {
 		public int getMinimumHeight() {
 			return original.getMinimumHeight();
 		}
-
 		@Override
 		public int getMinimumWidth() {
 			return original.getMinimumWidth();
 		}
-
 		@Override
 		public int getIntrinsicHeight() {
 			return original.getIntrinsicHeight();
 		}
-
 		@Override
 		public int getIntrinsicWidth() {
 			return original.getIntrinsicWidth();
@@ -231,12 +222,10 @@ public class MapControlsLayer extends OsmandMapLayer {
 		public void setAlpha(int alpha) {
 			original.setAlpha(alpha);
 		}
-
 		@Override
 		public void setColorFilter(ColorFilter cf) {
 			original.setColorFilter(cf);
 		}
-
 		@Override
 		public int getOpacity() {
 			return original.getOpacity();
@@ -341,7 +330,6 @@ public class MapControlsLayer extends OsmandMapLayer {
 	private TargetPointsHelper getTargets() {
 		return mapActivity.getMyApplication().getTargetPointsHelper();
 	}
-
 	private void clickRouteParams() {
 		mapActivity.getMapActions().openRoutePreferencesDialog();
 	}
@@ -375,7 +363,6 @@ public class MapControlsLayer extends OsmandMapLayer {
 	private void showRouteInfoControlDialog() {
 		mapRouteInfoMenu.showHideMenu();
 	}
-
 	public void showDialog() {
 		mapRouteInfoMenu.setShowMenu();
 	}
@@ -719,18 +706,11 @@ public class MapControlsLayer extends OsmandMapLayer {
 		set.start();
 	}
 
-// --Commented out by Inspection START (13/01/19 18:40):
-//	public void setMapControlsVisibility(boolean visible) {
-//		View mapHudButtonsOverlay = mapActivity.findViewById(R.id.MapHudButtonsOverlay);
-//		mapHudButtonsOverlay.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
-//	}
-// --Commented out by Inspection STOP (13/01/19 18:40)
-
 	private boolean isMapControlsVisible() {
 		return mapActivity.findViewById(R.id.MapHudButtonsOverlay).getVisibility() == View.VISIBLE;
 	}
 
-	public void switchMapControlsVisibility(boolean switchNavBarVisibility) {
+	void switchMapControlsVisibility(boolean switchNavBarVisibility) {
 		if (app.getRoutingHelper().isFollowingMode() || app.getRoutingHelper().isPauseNavigation()
 				|| mapActivity.getMeasurementToolFragment() != null
 				|| mapActivity.getPlanRouteFragment() != null
@@ -784,7 +764,6 @@ public class MapControlsLayer extends OsmandMapLayer {
 		updateControls(tileBox, nightMode);
 	}
 
-	@SuppressWarnings("deprecation")
 	private void updateControls(@NonNull RotatedTileBox tileBox, DrawSettings drawSettings) {
 		boolean isNight = drawSettings != null && drawSettings.isNightMode();
 		int shadw = isNight ? Color.TRANSPARENT : Color.WHITE;
@@ -811,7 +790,6 @@ public class MapControlsLayer extends OsmandMapLayer {
 		updateMyLocation(rh, routeDialogOpened || trackDialogOpened || contextMenuOpened);
 		boolean showButtons = (showRouteCalculationControls || !routeFollowingMode)
 				&& !isInMovingMarkerMode() && !isInGpxDetailsMode() && !isInMeasurementToolMode() && !isInPlanRouteMode() && !contextMenuOpened;
-		//routePlanningBtn.setIconResId(routeFollowingMode ? R.drawable.ic_action_gabout_dark : R.drawable.map_directions);
 		if (rh.isFollowingMode()) {
 			routePlanningBtn.setIconResId(R.drawable.map_start_navigation);
 			routePlanningBtn.setIconColorId(R.color.color_myloc_distance);
@@ -844,7 +822,6 @@ public class MapControlsLayer extends OsmandMapLayer {
 			if (mapView.isZooming()) {
 				lastZoom = System.currentTimeMillis();
 			}
-			//if (!mapView.isZooming() || !OsmandPlugin.isDevelopment()) {
 			if ((System.currentTimeMillis() - lastZoom > 1000) || !OsmandPlugin.isDevelopment()) {
 				zoomText.setVisibility(View.GONE);
 			} else {
@@ -895,12 +872,6 @@ public class MapControlsLayer extends OsmandMapLayer {
 				|| mapActivity.getMapLayers().getMapInfoLayer().getMapInfoControls().isVisible("compass");
 	}
 
-// --Commented out by Inspection START (13/01/19 18:42):
-//	public CompassDrawable getCompassDrawable(Drawable originalDrawable) {
-//		return new CompassDrawable(originalDrawable);
-//	}
-// --Commented out by Inspection STOP (13/01/19 18:42)
-
 	private void updateMyLocation(RoutingHelper rh, boolean dialogOpened) {
 		Location lastKnownLocation = mapActivity.getMyApplication().getLocationProvider().getLastKnownLocation();
 		boolean enabled = lastKnownLocation != null;
@@ -925,7 +896,6 @@ public class MapControlsLayer extends OsmandMapLayer {
 			backToLocationControl.iv.setClickable(enabled && visible);
 		}
 	}
-
 
 	public boolean onSingleTap(PointF point, RotatedTileBox tileBox) {
 		return mapRouteInfoMenu.onSingleTap(point, tileBox);
@@ -1200,7 +1170,6 @@ public class MapControlsLayer extends OsmandMapLayer {
 						d, null, null, null);
 			}
 		}
-
 	}
 
 	private String getZoomLevel(@NonNull RotatedTileBox tb) {
@@ -1229,11 +1198,9 @@ public class MapControlsLayer extends OsmandMapLayer {
 	private boolean isInGpxDetailsMode() {
 		return contextMenuLayer.isInGpxDetailsMode();
 	}
-
 	private boolean isInMeasurementToolMode() {
 		return mapActivity.getMapLayers().getMeasurementToolLayer().isInMeasurementMode();
 	}
-
 	private boolean isInPlanRouteMode() {
 		return mapActivity.getMapLayers().getMapMarkersLayer().isInPlanRouteMode();
 	}

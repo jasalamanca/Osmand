@@ -27,17 +27,10 @@ import java.util.List;
 import java.util.Map;
 
 public class OsmandRenderer {
-    private final Paint paintIcon;
-	public static final int DEFAULT_LINE_MAX = 100;
-
-	private static final int TILE_SIZE = 256;
-
 	private final Map<float[], PathEffect> dashEffect = new LinkedHashMap<>();
 	private final Map<String, float[]> parsedDashEffects = new LinkedHashMap<>();
 	private final Map<String, Shader> shaders = new LinkedHashMap<>();
-
 	private final Context context;
-
 	private final DisplayMetrics dm;
 
 	/* package */
@@ -58,7 +51,7 @@ public class OsmandRenderer {
 	public OsmandRenderer(Context context) {
 		this.context = context;
 
-		paintIcon = new Paint();
+		Paint paintIcon = new Paint();
 		paintIcon.setStyle(Style.STROKE);
 
         Paint paint = new Paint();
@@ -93,23 +86,14 @@ public class OsmandRenderer {
 		return shaders.get(resId);
 	}
 	
-	/**
-	 * @return if map could be replaced
-	 */
-	public void generateNewBitmapNative(RenderingContext rc, NativeOsmandLibrary library, 
+	public void generateNewBitmapNative(RenderingContext rc, NativeOsmandLibrary library,
 			NativeSearchResult searchResultHandler, 
 			Bitmap bmp, RenderingRuleSearchRequest render) {
 		long now = System.currentTimeMillis();
 		if (rc.width > 0 && rc.height > 0 && searchResultHandler != null) {
-//			rc.cosRotateTileSize = (float) (Math.cos(Math.toRadians(rc.rotate)) * TILE_SIZE);
-//			rc.sinRotateTileSize = (float) (Math.sin(Math.toRadians(rc.rotate)) * TILE_SIZE);
 			try {
-				// Native library will decide on it's own best way of rendering
-				// If res.bitmapBuffer is null, it indicates that rendering was done directly to
-				// memory of passed bitmap, but this is supported only on Android >= 2.2
 				final NativeLibrary.RenderingGenerationResult res = library.generateRendering(
 					rc, searchResultHandler, bmp, bmp.hasAlpha(), render);
-//				rc.ended = true;
 				long time = System.currentTimeMillis() - now;
 				rc.renderingDebugInfo = String.format("Rendering: %s ms  (%s text)\n"
 						+ "(%s points, %s points inside, %s of %s objects visible)\n",//$NON-NLS-1$

@@ -22,7 +22,7 @@ public abstract class OsmandBaseExpandableListAdapter extends BaseExpandableList
 		indicator.setVisibility(getChildrenCount(groupPosition) > 0 ? View.VISIBLE : View.GONE);
 	}
 
-	protected void setCategoryIcon(OsmandApplication app, int resId, int groupPosition, boolean isExpanded, View row, boolean light) {
+	protected void setCategoryIcon(OsmandApplication app, int resId, View row, boolean light) {
 		ImageView icon = row.findViewById(R.id.category_icon);
 		if (resId == 0) {
 			icon.setImageDrawable(app.getIconsCache().getIcon(R.drawable.ic_action_folder_stroke, light));
@@ -31,7 +31,7 @@ public abstract class OsmandBaseExpandableListAdapter extends BaseExpandableList
 		}
 	}
 
-	protected void setCategoryIcon(OsmandApplication app, Drawable res, int groupPosition, boolean isExpanded, View row, boolean light) {
+	protected void setCategoryIcon(Drawable res, View row) {
 		ImageView icon = row.findViewById(R.id.category_icon);
 		icon.setImageDrawable(res);
 	}

@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -320,7 +319,7 @@ public class OsmandApplication extends MultiDexApplication {
 		}
 	}
 
-	public void checkApplicationIsBeingInitialized(Activity activity, AppInitializeListener listener) {
+	public void checkApplicationIsBeingInitialized(AppInitializeListener listener) {
 		// start application if it was previously closed
 		startApplication();
 		if(listener != null) {
@@ -702,26 +701,7 @@ public class OsmandApplication extends MultiDexApplication {
 		return ((AccessibilityManager) getSystemService(Context.ACCESSIBILITY_SERVICE)).isEnabled();
 	}
 
-	public String getVersionName() {
-		try {
-			PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), 0);
-			return info.versionName;
-		} catch (NameNotFoundException e) {
-			return "";
-		}
-	}
-
-	public int getVersionCode() {
-		try {
-			PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), 0);
-			return info.versionCode;
-		} catch (NameNotFoundException e) {
-			return 0;
-		}
-	}
-	
-
-	public void startNavigationService(int intent, int interval) {
+    public void startNavigationService(int intent, int interval) {
 		final Intent serviceIntent = new Intent(this, NavigationService.class);
 		
 		if (getNavigationService() != null) {

@@ -69,22 +69,18 @@ public class MapActivityActions implements DialogProvider {
 	private static final String KEY_LATITUDE = "latitude";
 	private static final String KEY_NAME = "name";
 
-	// --Commented out by Inspection (13/01/19 20:50):private static final String KEY_ZOOM = "zoom";
-
 	private static final int DIALOG_ADD_FAVORITE = 100;
 	private static final int DIALOG_REPLACE_FAVORITE = 101;
 	private static final int DIALOG_ADD_WAYPOINT = 102;
-
 	private static final int DIALOG_SAVE_DIRECTIONS = 106;
 	private static final Bundle dialogBundle = new Bundle();
 
 	private final MapActivity mapActivity;
 	private final OsmandSettings settings;
 
-	public MapActivityActions(MapActivity mapActivity) {
+	MapActivityActions(MapActivity mapActivity) {
 		this.mapActivity = mapActivity;
 		settings = mapActivity.getMyApplication().getSettings();
-//		RoutingHelper routingHelper = mapActivity.getMyApplication().getRoutingHelper();
 	}
 
 	public void addAsTarget(double latitude, double longitude, PointDescription pd) {
@@ -102,24 +98,6 @@ public class MapActivityActions implements DialogProvider {
 	public void editWaypoints() {
 		openIntermediatePointsDialog();
 	}
-
-// --Commented out by Inspection START (13/01/19 20:49):
-//	private Bundle enhance(Bundle aBundle, double latitude, double longitude, String name) {
-//		aBundle.putDouble(KEY_LATITUDE, latitude);
-//		aBundle.putDouble(KEY_LONGITUDE, longitude);
-//		aBundle.putString(KEY_NAME, name);
-//		return aBundle;
-//	}
-// --Commented out by Inspection STOP (13/01/19 20:49)
-
-// --Commented out by Inspection START (13/01/19 20:49):
-//	private Bundle enhance(Bundle bundle, double latitude, double longitude, final int zoom) {
-//		bundle.putDouble(KEY_LATITUDE, latitude);
-//		bundle.putDouble(KEY_LONGITUDE, longitude);
-//		bundle.putInt(KEY_ZOOM, zoom);
-//		return bundle;
-//	}
-// --Commented out by Inspection STOP (13/01/19 20:49)
 
 	private Dialog createAddWaypointDialog(final Bundle args) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(mapActivity);
@@ -156,35 +134,11 @@ public class MapActivityActions implements DialogProvider {
 	private String getString(int res) {
 		return mapActivity.getString(res);
 	}
-
-// --Commented out by Inspection START (13/01/19 20:45):
-//	protected void showToast(final String msg) {
-//		mapActivity.runOnUiThread(new Runnable() {
-//			@Override
-//			public void run() {
-//				Toast.makeText(mapActivity, msg, Toast.LENGTH_LONG).show();
-//			}
-//		});
-//	}
-// --Commented out by Inspection STOP (13/01/19 20:45)
-
-// --Commented out by Inspection START (13/01/19 20:48):
-//	protected Location getLastKnownLocation() {
-//		return getMyApplication().getLocationProvider().getLastKnownLocation();
-//	}
-// --Commented out by Inspection STOP (13/01/19 20:48)
-
 	private OsmandApplication getMyApplication() {
 		return mapActivity.getMyApplication();
 	}
 
-// --Commented out by Inspection START (13/01/19 20:46):
-//	public void saveDirections() {
-//		mapActivity.showDialog(DIALOG_SAVE_DIRECTIONS);
-//	}
-// --Commented out by Inspection STOP (13/01/19 20:46)
-
-	public static Dialog createSaveDirections(Activity activity, RoutingHelper routingHelper) {
+	static Dialog createSaveDirections(Activity activity, RoutingHelper routingHelper) {
 		final OsmandApplication app = ((OsmandApplication) activity.getApplication());
 		final File fileDir = app.getAppPath(IndexConstants.GPX_INDEX_DIR);
 		final Dialog dlg = new Dialog(activity);
@@ -230,12 +184,11 @@ public class MapActivityActions implements DialogProvider {
 			}
 		});
 
-
 		return dlg;
 	}
 
-	private static class SaveDirectionsAsyncTask extends AsyncTask<File, Void, String> {
-
+	private static class SaveDirectionsAsyncTask
+			extends AsyncTask<File, Void, String> {
 		private final OsmandApplication app;
 
 		SaveDirectionsAsyncTask(OsmandApplication app) {
@@ -450,7 +403,6 @@ public class MapActivityActions implements DialogProvider {
 		TargetPointsHelper targets = app.getTargetPointsHelper();
 
 		ApplicationMode mode = getRouteMode();
-		//app.getSettings().APPLICATION_MODE.set(mode);
 		app.getRoutingHelper().setAppMode(mode);
 		app.initVoiceCommandPlayer(mapActivity, mode, true, null, false, false);
 		// save application mode controls
@@ -480,7 +432,6 @@ public class MapActivityActions implements DialogProvider {
 		TargetPointsHelper targets = app.getTargetPointsHelper();
 
 		ApplicationMode mode = getRouteMode();
-		//app.getSettings().APPLICATION_MODE.set(mode);
 		app.getRoutingHelper().setAppMode(mode);
 		//Test for #2810: No need to init player here?
 		//app.initVoiceCommandPlayer(mapActivity, true, null, false, false);
@@ -523,7 +474,7 @@ public class MapActivityActions implements DialogProvider {
 		return mode;
 	}
 
-	public void contextMenuPoint(final double latitude, final double longitude) {
+	void contextMenuPoint(final double latitude, final double longitude) {
 		contextMenuPoint(latitude, longitude, null, null);
 	}
 
@@ -540,7 +491,7 @@ public class MapActivityActions implements DialogProvider {
 			case DIALOG_SAVE_DIRECTIONS:
 				return createSaveDirections(mapActivity, mapActivity.getRoutingHelper());
 		}
-		return OsmAndDialogs.createDialog(id, mapActivity, args);
+		return OsmAndDialogs.createDialog(id, mapActivity);
 	}
 
 	@Override
@@ -567,7 +518,6 @@ public class MapActivityActions implements DialogProvider {
 
 
 	public ContextMenuAdapter createMainOptionsMenu() {
-//		final OsmandMapTileView mapView = mapActivity.getMapView();
 		final OsmandApplication app = mapActivity.getMyApplication();
 		ContextMenuAdapter optionsMenuHelper = new ContextMenuAdapter();
 
@@ -670,19 +620,6 @@ public class MapActivityActions implements DialogProvider {
 					}
 				}).createItem());
 
-		/*
-		optionsMenuHelper.addItem(new ContextMenuItem.ItemBuilder().setTitleId(R.string.show_point_options, mapActivity)
-				.setIcon(R.drawable.ic_action_marker_dark)
-				.setListener(new ContextMenuAdapter.ItemClickListener() {
-					@Override
-					public boolean onContextMenuClick(ArrayAdapter<ContextMenuItem> adapter, int itemId, int pos, boolean isChecked) {
-						MapActivity.clearPrevActivityIntent();
-						mapActivity.getMapLayers().getContextMenuLayer().showContextMenu(mapView.getLatitude(), mapView.getLongitude(), true);
-						return true;
-					}
-				}).createItem());
-		*/
-
 		optionsMenuHelper.addItem(new ContextMenuItem.ItemBuilder().setTitleId(R.string.configure_map, mapActivity)
 				.setIcon(R.drawable.ic_action_layers_dark)
 				.setListener(new ContextMenuAdapter.ItemClickListener() {
@@ -781,19 +718,6 @@ public class MapActivityActions implements DialogProvider {
 					}
 				}).createItem());
 
-		/*
-		optionsMenuHelper.addItem(new ContextMenuItem.ItemBuilder().setTitleId(R.string.configure_map, mapActivity)
-				.setIcon(R.drawable.ic_action_layers_dark)
-				.setListener(new ContextMenuAdapter.ItemClickListener() {
-					@Override
-					public boolean onContextMenuClick(ArrayAdapter<ContextMenuItem> adapter, int itemId, int pos, boolean isChecked) {
-						MapActivity.clearPrevActivityIntent();
-						mapActivity.getDashboard().setDashboardVisibility(true, DashboardType.CONFIGURE_MAP);
-						return false;
-					}
-				}).createItem());
-		*/
-
 		optionsMenuHelper.addItem(new ItemBuilder().setTitleId(R.string.shared_string_help, mapActivity)
 				.setIcon(R.drawable.ic_action_help)
 				.setListener(new ContextMenuAdapter.ItemClickListener() {
@@ -829,7 +753,6 @@ public class MapActivityActions implements DialogProvider {
 	public void openIntermediatePointsDialog() {
 		mapActivity.getDashboard().setDashboardVisibility(true, DashboardType.WAYPOINTS);
 	}
-
 	public void openRoutePreferencesDialog() {
 		mapActivity.getDashboard().setDashboardVisibility(true, DashboardType.ROUTE_PREFERENCES);
 	}

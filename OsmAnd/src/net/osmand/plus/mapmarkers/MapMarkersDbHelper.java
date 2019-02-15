@@ -623,16 +623,4 @@ public class MapMarkersDbHelper {
 			}
 		}
 	}
-
-	public void clearAllMarkersHistory() {
-		SQLiteConnection db = openConnection(true);
-		if (db != null) {
-			try {
-				db.execSQL("DELETE FROM " + MARKERS_TABLE_NAME + " WHERE " + MARKERS_COL_ACTIVE + " = ?",
-						new Object[]{0});
-			} finally {
-				db.close();
-			}
-		}
-	}
 }

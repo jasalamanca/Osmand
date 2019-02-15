@@ -14,6 +14,7 @@
 
 package com.jwetherell.openmap.common;
 
+@SuppressWarnings("ALL")
 abstract class MoreMath {
 
     /**

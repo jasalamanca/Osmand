@@ -176,7 +176,6 @@ public class OsmEditsFragment extends OsmAndListFragment implements SendPoiDialo
 		super.onDestroyView();
 	}
 
-	@Override
 	public ArrayAdapter<?> getAdapter() {
 		return listAdapter;
 	}

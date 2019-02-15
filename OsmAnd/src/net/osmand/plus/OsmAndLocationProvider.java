@@ -41,11 +41,10 @@ import android.support.v4.app.ActivityCompat;
 import android.app.AlertDialog;
 import android.util.Log;
 
-public class OsmAndLocationProvider implements SensorEventListener {
-
+public class OsmAndLocationProvider
+		implements SensorEventListener {
 	public static final int REQUEST_LOCATION_PERMISSION = 100;
-
-	public static final String SIMULATED_PROVIDER = "OsmAnd";
+	static final String SIMULATED_PROVIDER = "OsmAnd";
 
 	public interface OsmAndLocationListener {
 		void updateLocation(net.osmand.Location location);
@@ -129,7 +128,6 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		private QuadPoint currentPoint;
 		private net.osmand.Location startLocation;
 		private List<RouteSegmentResult> roads;
-
 
 		void startSimulation(List<RouteSegmentResult> roads,
 							 net.osmand.Location currentLocation) {
@@ -396,37 +394,12 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		}
 	}
 
-//	// location not null!
-//	private void updateSpeedEmulator(net.osmand.Location location) {
-//		// For network/gps it's bad way (not accurate). It's widely used for testing purposes
-//		// possibly keep using only for emulator case
-//		if (location != null) {
-//			if (location.distanceTo(location) > 3) {
-//				float d = location.distanceTo(location);
-//				long time = location.getTime() - location.getTime();
-//				float speed;
-//				if (time == 0) {
-//					speed = 0;
-//				} else {
-//					speed = (d * 1000) / time;
-//				}
-//				// Be aware only for emulator ! code is incorrect in case of airplane
-//				if (speed > 100) {
-//					speed = 100;
-//				}
-//				location.setSpeed(speed);
-//			}
-//		}
-//	}
-
 	public static boolean isPointAccurateForRouting(net.osmand.Location loc) {
 		return loc != null && (!loc.hasAccuracy() || loc.getAccuracy() < ACCURACY_FOR_GPX_AND_ROUTING * 3 / 2);
 	}
-
 	private boolean isRunningOnEmulator() {
 		return Build.DEVICE.equals("generic");
 	}
-
 	@Override
 	public void onAccuracyChanged(Sensor sensor, int accuracy) {
 	}
@@ -471,8 +444,7 @@ public class OsmAndLocationProvider implements SensorEventListener {
 				float valRad = (float) (val / 180f * Math.PI);
 				lastValSin = (float) Math.sin(valRad);
 				lastValCos = (float) Math.cos(valRad);
-				// lastHeadingCalcTime = System.currentTimeMillis();
-				boolean filter = USE_FILTER_FOR_COMPASS.get(); //USE_MAGNETIC_FIELD_SENSOR_COMPASS.get();
+				boolean filter = USE_FILTER_FOR_COMPASS.get();
 				if (filter) {
 					filterCompassValue();
 				} else {
@@ -555,8 +527,6 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		}
 	}
 
-	
-	
 	private final LocationListener gpsListener = new LocationListener() {
 		@Override
 		public void onLocationChanged(Location location) {
@@ -589,11 +559,8 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		if((System.currentTimeMillis() - lastTimeGPSLocationFixed) < NOT_SWITCH_TO_NETWORK_WHEN_GPS_LOST_MS) {
 			return true;
 		}
-		if(isRunningOnEmulator()) {
-			return true;
-		}
-		return false;
-	}
+        return isRunningOnEmulator();
+    }
 
 	// Working with location checkListeners
 	private class NetworkListener implements LocationListener {
@@ -608,15 +575,12 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		@Override
 		public void onProviderDisabled(String provider) {
 		}
-
 		@Override
 		public void onProviderEnabled(String provider) {
 		}
-
 		@Override
 		public void onStatusChanged(String provider, int status, Bundle extras) {
 		}
-
 	}
 
 	private void stopLocationRequests() {
@@ -633,7 +597,7 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		registerOrUnregisterCompassListener(false);
 	}
 
-	public static net.osmand.Location convertLocation(Location l, OsmandApplication app) {
+	static net.osmand.Location convertLocation(Location l, OsmandApplication app) {
 		if (l == null) {
 			return null;
 		}
@@ -663,7 +627,6 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		}
 		return r;
 	}
-	
 	
 	private void scheduleCheckIfGpsLost(final net.osmand.Location location) {
 		final RoutingHelper routingHelper = app.getRoutingHelper();
@@ -728,9 +691,8 @@ public class OsmAndLocationProvider implements SensorEventListener {
 			}
 		}
 	}
-	
-	
-	public void setLocationFromService(net.osmand.Location location, boolean continuous) {
+
+	void setLocationFromService(net.osmand.Location location, boolean continuous) {
 		// if continuous notify about lost location
 		if (continuous) {
 			scheduleCheckIfGpsLost(location);
@@ -741,7 +703,7 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		app.getWaypointHelper().locationChanged(location);
 	}
 	
-	public void setLocationFromSimulation(net.osmand.Location location) {
+	void setLocationFromSimulation(net.osmand.Location location) {
 		setLocation(location);
 	}
 
@@ -759,7 +721,6 @@ public class OsmAndLocationProvider implements SensorEventListener {
 				}
 			}
 		}
-//		enhanceLocation(location);
 		scheduleCheckIfGpsLost(location);
 		final RoutingHelper routingHelper = app.getRoutingHelper();
 		// 1. Logging services
@@ -786,13 +747,6 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		// Update information
 		updateLocation(this.location);
 	}
-
-//	private void enhanceLocation(net.osmand.Location location) {
-//		if (location != null && isRunningOnEmulator()) {
-//			// only for emulator
-//			updateSpeedEmulator(location);
-//		}
-//	}
 
 	public void checkIfLastKnownLocationIsValid() {
 		net.osmand.Location loc = getLastKnownLocation();
@@ -834,7 +788,7 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		return currentPositionHelper.getRouteSegment(loc, appMode, result);
 	}
 	
-	public boolean getGeocodingResult(net.osmand.Location loc, ResultMatcher<GeocodingResult> result) {
+	boolean getGeocodingResult(net.osmand.Location loc, ResultMatcher<GeocodingResult> result) {
 		return currentPositionHelper.getGeocodingResult(loc, result);
 	}
 
@@ -871,7 +825,6 @@ public class OsmAndLocationProvider implements SensorEventListener {
 		return cachedLocation;
 	}
 
-
 	public void showNavigationInfo(TargetPoint pointToNavigate, Context uiActivity) {
 		getNavigationInfo().show(pointToNavigate, getHeading(), uiActivity);
 		
@@ -880,8 +833,7 @@ public class OsmAndLocationProvider implements SensorEventListener {
 	public OsmAndLocationSimulation getLocationSimulation() {
 		return locationSimulation;
 	}
-	
-	
+
 	public static class GPSInfo {
 		public int foundSatellites = 0;
 		public int usedSatellites = 0;

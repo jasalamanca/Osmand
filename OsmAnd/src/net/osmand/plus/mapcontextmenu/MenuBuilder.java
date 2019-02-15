@@ -1,6 +1,8 @@
 package net.osmand.plus.mapcontextmenu;
 
 import android.app.Activity;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -10,11 +12,9 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.view.ContextThemeWrapper;
-import android.text.ClipboardManager;
 import android.text.TextUtils;
 import android.text.util.Linkify;
 import android.util.TypedValue;
@@ -22,7 +22,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -38,7 +37,6 @@ import net.osmand.osm.PoiCategory;
 import net.osmand.plus.IconsCache;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandPlugin;
-import net.osmand.plus.OsmandSettings.OsmandPreference;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.helpers.FontCache;
@@ -58,8 +56,7 @@ import java.util.List;
 import static android.util.TypedValue.COMPLEX_UNIT_DIP;
 
 public class MenuBuilder {
-
-	public static final float SHADOW_HEIGHT_TOP_DP = 17f;
+	static final float SHADOW_HEIGHT_TOP_DP = 17f;
 	private static final int TITLE_LIMIT = 60;
 
 	protected final MapActivity mapActivity;
@@ -71,7 +68,7 @@ public class MenuBuilder {
 	protected boolean light;
 	private long objectId;
 	private LatLon latLon;
-	private boolean hidden;
+//	private boolean hidden;
 	private boolean showTitleIfTruncated = true;
 	private boolean showNearestWiki = false;
 	protected List<Amenity> nearestWiki = new ArrayList<>();
@@ -113,50 +110,29 @@ public class MenuBuilder {
 		int getIconId() {
 			return iconId;
 		}
-
 		String getButtonText() {
 			return buttonText;
 		}
-
 		String getText() {
 			return text;
 		}
-
 		boolean isNeedLinks() {
 			return needLinks;
 		}
-
 		boolean isUrl() {
 			return url;
 		}
-
-		public boolean isCollapsable() {
-			return collapsable;
-		}
-
-		public CollapsableView getCollapsableView() {
-			return collapsableView;
-		}
-
 		OnClickListener getOnClickListener() {
 			return onClickListener;
 		}
 	}
 
 	public static class CollapsableView {
-
 		private final View contenView;
 		private final MenuBuilder menuBuilder;
-		private OsmandPreference<Boolean> collapsedPref;
+//		private OsmandPreference<Boolean> collapsedPref;
 		private boolean collapsed;
-		private CollapseExpandListener collapseExpandListener;
-
-		public CollapsableView(@NonNull View contenView, @NonNull MenuBuilder menuBuilder,
-							   @NonNull OsmandPreference<Boolean> collapsedPref) {
-			this.contenView = contenView;
-			this.menuBuilder = menuBuilder;
-			this.collapsedPref = collapsedPref;
-		}
+//		private CollapseExpandListener collapseExpandListener;
 
 		public CollapsableView(@NonNull View contenView, @NonNull MenuBuilder menuBuilder, boolean collapsed) {
 			this.contenView = contenView;
@@ -169,33 +145,25 @@ public class MenuBuilder {
 		}
 
 		public boolean isCollapsed() {
-			if (collapsedPref != null) {
-				return collapsedPref.get();
-			} else {
+//			if (collapsedPref != null) {
+//				return collapsedPref.get();
+//			} else {
 				return collapsed;
-			}
+//			}
 		}
 
 		public void setCollapsed(boolean collapsed) {
-			if (collapsedPref != null) {
-				collapsedPref.set(collapsed);
-			} else {
+//			if (collapsedPref != null) {
+//				collapsedPref.set(collapsed);
+//			} else {
 				this.collapsed = collapsed;
-			}
-			if (collapseExpandListener != null) {
-				collapseExpandListener.onCollapseExpand(collapsed);
-			}
+//			}
+//			if (collapseExpandListener != null) {
+//				collapseExpandListener.onCollapseExpand(collapsed);
+//			}
 			if (menuBuilder.collapseExpandListener != null) {
 				menuBuilder.collapseExpandListener.onCollapseExpand(collapsed);
 			}
-		}
-
-		public CollapseExpandListener getCollapseExpandListener() {
-			return collapseExpandListener;
-		}
-
-		public void setCollapseExpandListener(CollapseExpandListener collapseExpandListener) {
-			this.collapseExpandListener = collapseExpandListener;
 		}
 	}
 
@@ -212,54 +180,42 @@ public class MenuBuilder {
 		transliterateNames = app.getSettings().MAP_TRANSLITERATE_NAMES.get();
 	}
 
-	public void setCollapseExpandListener(CollapseExpandListener collapseExpandListener) {
+	void setCollapseExpandListener(CollapseExpandListener collapseExpandListener) {
 		this.collapseExpandListener = collapseExpandListener;
 	}
 
 	public void setRoutes(List<TransportStopRoute> routes) {
 		this.routes = routes;
 	}
-
-	public String getPreferredMapLang() {
+	String getPreferredMapLang() {
 		return preferredMapLang;
 	}
-
-	public String getPreferredMapAppLang() {
+	protected String getPreferredMapAppLang() {
 		return preferredMapAppLang;
 	}
-
-	public boolean isTransliterateNames() {
+	boolean isTransliterateNames() {
 		return transliterateNames;
 	}
-
 	protected MapActivity getMapActivity() {
 		return mapActivity;
 	}
-
 	private OsmandApplication getApplication() {
 		return app;
 	}
-
 	protected LatLon getLatLon() {
 		return latLon;
 	}
-
 	public void setLatLon(LatLon objectLocation) {
 		this.latLon = objectLocation;
 	}
 
-	public void setMapContextMenu(MapContextMenu mapContextMenu) {
+	void setMapContextMenu(MapContextMenu mapContextMenu) {
 		this.mapContextMenu = mapContextMenu;
-	}
-
-	public boolean isShowNearestWiki() {
-		return showNearestWiki;
 	}
 
 	public void setShowNearestWiki(boolean showNearestWiki) {
 		this.showNearestWiki = showNearestWiki;
 	}
-
 	public void setShowTitleIfTruncated(boolean showTitleIfTruncated) {
 		this.showTitleIfTruncated = showTitleIfTruncated;
 	}
@@ -269,17 +225,16 @@ public class MenuBuilder {
 		this.showNearestWiki = showNearestWiki;
 	}
 
-	public void addMenuPlugin(OsmandPlugin plugin) {
+	void addMenuPlugin(OsmandPlugin plugin) {
 		menuPlugins.add(plugin);
 	}
-
 	public void setLight(boolean light) {
 		this.light = light;
 	}
 
 	public void build(View view) {
 		firstRow = true;
-		hidden = false;
+//		hidden = false;
 		if (showTitleIfTruncated) {
 			buildTitleRow(view);
 		}
@@ -298,17 +253,11 @@ public class MenuBuilder {
 	private boolean showTransportRoutes() {
 		return routes.size() > 0;
 	}
-
 	void onHide() {
-		hidden = true;
+//		hidden = true;
 	}
-
 	void onClose() {
 		clearPluginRows();
-	}
-
-	public boolean isHidden() {
-		return hidden;
 	}
 
 	protected void buildPlainMenuItems(View view) {
@@ -353,15 +302,9 @@ public class MenuBuilder {
 
 	protected void buildInternal(View view) {
 	}
-
-	protected void buildAfter(View view) {
-		buildRowDivider(view);
-	}
-
 	protected boolean isFirstRow() {
 		return firstRow;
 	}
-
 	protected void rowBuilt() {
 		firstRow = false;
 	}
@@ -549,52 +492,10 @@ public class MenuBuilder {
 	}
 
 	protected void copyToClipboard(String text, Context ctx) {
-		((ClipboardManager) app.getSystemService(Activity.CLIPBOARD_SERVICE)).setText(text);
+		((ClipboardManager) app.getSystemService(Activity.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("", text));
 		Toast.makeText(ctx,
 				ctx.getResources().getString(R.string.copied_to_clipboard) + ":\n" + text,
 				Toast.LENGTH_SHORT).show();
-	}
-
-	protected void buildButtonRow(final View view, Drawable buttonIcon, String text, OnClickListener onClickListener) {
-		LinearLayout ll = new LinearLayout(view.getContext());
-		ll.setOrientation(LinearLayout.HORIZONTAL);
-		LinearLayout.LayoutParams llParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-		ll.setLayoutParams(llParams);
-		ll.setBackgroundResource(AndroidUtils.resolveAttribute(view.getContext(), android.R.attr.selectableItemBackground));
-
-		// Empty
-		LinearLayout llIcon = new LinearLayout(view.getContext());
-		llIcon.setOrientation(LinearLayout.HORIZONTAL);
-		llIcon.setLayoutParams(new LinearLayout.LayoutParams(dpToPx(62f), dpToPx(58f)));
-		llIcon.setGravity(Gravity.CENTER_VERTICAL);
-		ll.addView(llIcon);
-
-
-		// Button
-		LinearLayout llButton = new LinearLayout(view.getContext());
-		llButton.setOrientation(LinearLayout.VERTICAL);
-		ll.addView(llButton);
-
-		Button buttonView = new Button(view.getContext());
-		LinearLayout.LayoutParams llBtnParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-		buttonView.setLayoutParams(llBtnParams);
-		buttonView.setPadding(dpToPx(10f), 0, dpToPx(10f), 0);
-		buttonView.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
-		//buttonView.setTextSize(view.getResources().getDimension(resolveAttribute(view.getContext(), R.dimen.default_desc_text_size)));
-		buttonView.setTextColor(view.getResources().getColor(AndroidUtils.resolveAttribute(view.getContext(), R.attr.contextMenuButtonColor)));
-		buttonView.setText(text);
-
-		if (buttonIcon != null) {
-			buttonView.setCompoundDrawablesWithIntrinsicBounds(buttonIcon, null, null, null);
-			buttonView.setCompoundDrawablePadding(dpToPx(8f));
-		}
-		llButton.addView(buttonView);
-
-		((LinearLayout) view).addView(ll);
-
-		ll.setOnClickListener(onClickListener);
-
-		rowBuilt();
 	}
 
 	protected void buildRowDivider(View view) {
@@ -612,7 +513,6 @@ public class MenuBuilder {
 	public boolean hasCustomAddressLine() {
 		return false;
 	}
-
 	public void buildCustomAddressLine(LinearLayout ll) {
 	}
 
@@ -620,17 +520,11 @@ public class MenuBuilder {
 		plainMenuItems.add(new PlainMenuItem(iconId, null, text, needLinks, isUrl, false, null, onClickListener));
 	}
 
-	public void addPlainMenuItem(int iconId, String buttonText, String text, boolean needLinks, boolean isUrl, OnClickListener onClickListener) {
+	void addPlainMenuItem(int iconId, String buttonText, String text, boolean needLinks, boolean isUrl, OnClickListener onClickListener) {
 		plainMenuItems.add(new PlainMenuItem(iconId, buttonText, text, needLinks, isUrl, false, null, onClickListener));
 	}
 
-	public void addPlainMenuItem(int iconId, String text, boolean needLinks, boolean isUrl,
-								 boolean collapsable, CollapsableView collapsableView,
-								 OnClickListener onClickListener) {
-		plainMenuItems.add(new PlainMenuItem(iconId, null, text, needLinks, isUrl, collapsable, collapsableView, onClickListener));
-	}
-
-	public void clearPlainMenuItems() {
+	void clearPlainMenuItems() {
 		plainMenuItems.clear();
 	}
 
@@ -686,7 +580,7 @@ public class MenuBuilder {
 		shape.setCornerRadius(dpToPx(3));
 		shape.setColor(route.getColor(mapActivity.getMyApplication(), !light));
 
-		transportRect.setBackgroundDrawable(shape);
+		transportRect.setBackground(shape);
 		transportRect.setText(route.route.getRef());
 		baseView.addView(transportRect);
 
@@ -846,7 +740,7 @@ public class MenuBuilder {
 		} else {
 			button.setTextColor(ContextCompat.getColor(context, light ? R.color.ctx_menu_bottom_view_text_color_light : R.color.ctx_menu_bottom_view_text_color_dark));
 		}
-		button.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
+		button.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
 		button.setSingleLine(singleLine);
 		button.setEllipsize(TextUtils.TruncateAt.END);
 
@@ -890,10 +784,5 @@ public class MenuBuilder {
 			return true;
 		}
 		return false;
-	}
-
-	@SuppressWarnings("unchecked")
-	public static <P> void execute(AsyncTask<P, ?, ?> task, P... requests) {
-		task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, requests);
 	}
 }

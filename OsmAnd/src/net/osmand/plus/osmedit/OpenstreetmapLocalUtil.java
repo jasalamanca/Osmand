@@ -1,6 +1,5 @@
 package net.osmand.plus.osmedit;
 
-import net.osmand.PlatformUtil;
 import net.osmand.data.Amenity;
 import net.osmand.osm.AbstractPoiType;
 import net.osmand.osm.MapPoiTypes;
@@ -11,32 +10,26 @@ import net.osmand.osm.edit.OSMSettings.OSMTagKey;
 import net.osmand.util.Algorithms;
 import net.osmand.util.MapUtils;
 
-import org.apache.commons.logging.Log;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class OpenstreetmapLocalUtil implements OpenstreetmapUtil {
-
-	public final static Log LOG = PlatformUtil.getLog(OpenstreetmapLocalUtil.class);
-
 	private final OsmEditingPlugin plugin;
 
-	public OpenstreetmapLocalUtil(OsmEditingPlugin plugin) {
+	OpenstreetmapLocalUtil(OsmEditingPlugin plugin) {
 		this.plugin = plugin;
 	}
-
 	private final List<OnNodeCommittedListener> listeners = new ArrayList<>();
 
-	public void addNodeCommittedListener(OnNodeCommittedListener listener) {
+	void addNodeCommittedListener(OnNodeCommittedListener listener) {
 		if (!listeners.contains(listener)) {
 			listeners.add(listener);
 		}
 	}
 
-	public void removeNodeCommittedListener(OnNodeCommittedListener listener) {
+	void removeNodeCommittedListener(OnNodeCommittedListener listener) {
 		listeners.remove(listener);
 	}
 
@@ -77,7 +70,6 @@ public class OpenstreetmapLocalUtil implements OpenstreetmapUtil {
 		}
 		long nodeId = n.getId() >> 1;
 
-//		EntityId id = new Entity.EntityId(EntityType.NODE, nodeId);
 		Node entity = new Node(n.getLocation().getLatitude(),
 							   n.getLocation().getLongitude(),
 							   nodeId);
@@ -103,18 +95,13 @@ public class OpenstreetmapLocalUtil implements OpenstreetmapUtil {
 		}
 
 		// check whether this is node (because id of node could be the same as relation)
-		if(entity != null && MapUtils.getDistance(entity.getLatLon(), n.getLocation()) < 50){
+		if(MapUtils.getDistance(entity.getLatLon(), n.getLocation()) < 50){
 			return entity;
 		}
 		return null;
 	}
 
-	@Override
-	public void closeChangeSet() {
-	}
-
 	public interface OnNodeCommittedListener {
 		void onNoteCommitted();
 	}
-	
 }

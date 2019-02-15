@@ -24,7 +24,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class MarkersPlanRouteContext {
-
 	private static final int MAX_DIST_FOR_SNAP_TO_ROAD = 500 * 1000; // 500 km
 
 	private final OsmandApplication app;
@@ -47,67 +46,48 @@ public class MarkersPlanRouteContext {
 	Map<Pair<WptPt, WptPt>, List<WptPt>> getSnappedToRoadPoints() {
 		return snappedToRoadPoints;
 	}
-
 	TrkSegment getSnapTrkSegment() {
 		return snapTrkSegment;
 	}
-
 	public ApplicationMode getSnappedMode() {
 		return snappedMode;
 	}
-
 	void setSnappedMode(ApplicationMode snappedMode) {
 		this.snappedMode = snappedMode;
 	}
-
-	public PlanRouteProgressListener getListener() {
-		return listener;
-	}
-
 	public void setListener(PlanRouteProgressListener listener) {
 		this.listener = listener;
 	}
-
 	boolean isProgressBarVisible() {
 		return progressBarVisible;
 	}
-
 	void setProgressBarVisible(boolean progressBarVisible) {
 		this.progressBarVisible = progressBarVisible;
 	}
-
 	public boolean isFragmentVisible() {
 		return fragmentVisible;
 	}
-
 	public void setFragmentVisible(boolean fragmentVisible) {
 		this.fragmentVisible = fragmentVisible;
 	}
-
-	public boolean isMarkersListOpened() {
+	boolean isMarkersListOpened() {
 		return markersListOpened;
 	}
-
-	public void setMarkersListOpened(boolean markersListOpened) {
+	void setMarkersListOpened(boolean markersListOpened) {
 		this.markersListOpened = markersListOpened;
 	}
-
-	public boolean isAdjustMapOnStart() {
+	boolean isAdjustMapOnStart() {
 		return adjustMapOnStart;
 	}
-
-	public void setAdjustMapOnStart(boolean adjustMapOnStart) {
+	void setAdjustMapOnStart(boolean adjustMapOnStart) {
 		this.adjustMapOnStart = adjustMapOnStart;
 	}
-
 	public boolean isNavigationFromMarkers() {
 		return navigationFromMarkers;
 	}
-
 	public void setNavigationFromMarkers(boolean navigationFromMarkers) {
 		this.navigationFromMarkers = navigationFromMarkers;
 	}
-
 	public MarkersPlanRouteContext(OsmandApplication app) {
 		this.app = app;
 	}
@@ -202,11 +182,9 @@ public class MarkersPlanRouteContext {
 
 	private RouteCalculationParams getParams() {
 		final Pair<WptPt, WptPt> currentPair = snapToRoadPairsToCalculate.poll();
-
 		Location start = new Location("");
 		start.setLatitude(currentPair.first.getLatitude());
 		start.setLongitude(currentPair.first.getLongitude());
-
 		LatLon end = new LatLon(currentPair.second.getLatitude(), currentPair.second.getLongitude());
 
 		final RouteCalculationParams params = new RouteCalculationParams();
@@ -230,7 +208,6 @@ public class MarkersPlanRouteContext {
 
 			@Override
 			public void requestPrivateAccessRouting() {
-
 			}
 
 			@Override
@@ -274,17 +251,11 @@ public class MarkersPlanRouteContext {
 	}
 
 	interface PlanRouteProgressListener {
-
 		void showProgressBar();
-
 		void updateProgress(int progress);
-
 		void hideProgressBar(boolean canceled);
-
 		void refresh();
-
 		void updateText();
-
 		void showMarkersRouteOnMap(boolean adjustMap);
 	}
 }

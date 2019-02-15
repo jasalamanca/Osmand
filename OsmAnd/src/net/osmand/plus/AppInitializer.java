@@ -66,7 +66,7 @@ public class AppInitializer implements IProgress {
 	// 22 - 2.2
 	private static final int VERSION_2_2 = 22;
 	// 23 - 2.3
-	public static final int VERSION_2_3 = 23;
+	static final int VERSION_2_3 = 23;
 
 	private static final String FIRST_TIME_APP_RUN = "FIRST_TIME_APP_RUN"; //$NON-NLS-1$
 	private static final String VERSION_INSTALLED_NUMBER = "VERSION_INSTALLED_NUMBER"; //$NON-NLS-1$
@@ -104,16 +104,16 @@ public class AppInitializer implements IProgress {
 		void onFinish(AppInitializer init);
 	}
 
-	public AppInitializer(OsmandApplication app) {
+	AppInitializer(OsmandApplication app) {
 		this.app = app;
 	}
 
-	public boolean isAppInitializing() {
+	boolean isAppInitializing() {
 		return appInitializing;
 	}
 
 	@SuppressLint("CommitPrefEdits")
-	public void initVariables() {
+	void initVariables() {
 		if(initSettings) {
 			return;
 		}
@@ -163,7 +163,7 @@ public class AppInitializer implements IProgress {
 		}
 		long nd = startPrefs.getLong(FIRST_INSTALLED, 0);
 		
-		return (System.currentTimeMillis() - nd) / (1000l * 24l * 60l * 60l);
+		return (System.currentTimeMillis() - nd) / (1000L * 24L * 60L * 60L);
 	}
 
 	public void resetFirstTimeRun() {
@@ -177,11 +177,11 @@ public class AppInitializer implements IProgress {
 		return firstTime;
 	}
 
-	public boolean isAppVersionChanged() {
+	boolean isAppVersionChanged() {
 		return appVersionChanged;
 	}
 
-	public int getPrevAppVersion() {
+	int getPrevAppVersion() {
 		return prevAppVersion;
 	}
 
@@ -199,7 +199,7 @@ public class AppInitializer implements IProgress {
 
 	private void checkMapUpdates() {
 		long diff = System.currentTimeMillis() - app.getSettings().LAST_CHECKED_UPDATES.get();
-		if (diff >= 2 * 24 * 60 * 60l  && new Random().nextInt(5) == 0 &&
+		if (diff >= 2 * 24 * 60 * 60L  && new Random().nextInt(5) == 0 &&
 				app.getSettings().isInternetConnectionAvailable()) {
 			app.getDownloadThread().runReloadIndexFiles();
 		}
@@ -273,7 +273,7 @@ public class AppInitializer implements IProgress {
 		});
 	}
 
-	public void onCreateApplication() {
+	void onCreateApplication() {
 		// always update application mode to default
 		OsmandSettings osmandSettings = app.getSettings();
 		if (!osmandSettings.FOLLOW_THE_ROUTE.get()) {
@@ -359,7 +359,7 @@ public class AppInitializer implements IProgress {
 		return object;
 	}
 
-	public net.osmand.router.RoutingConfiguration.Builder getLazyDefaultRoutingConfig() {
+	net.osmand.router.RoutingConfiguration.Builder getLazyDefaultRoutingConfig() {
 		long tm = System.currentTimeMillis();
 		try {
 			File routingXml = app.getAppPath(IndexConstants.ROUTING_XML_FILE);
@@ -380,11 +380,11 @@ public class AppInitializer implements IProgress {
 		}
 	}
 
-	public synchronized void initVoiceDataInDifferentThread(final Activity uiContext,
-															final ApplicationMode applicationMode,
-															final String voiceProvider,
-															final Runnable run,
-															boolean showDialog) {
+	synchronized void initVoiceDataInDifferentThread(final Activity uiContext,
+													 final ApplicationMode applicationMode,
+													 final String voiceProvider,
+													 final Runnable run,
+													 boolean showDialog) {
 		final ProgressDialog dlg = showDialog ? ProgressDialog.show(uiContext, app.getString(R.string.loading_data),
 				app.getString(R.string.voice_data_initializing)) : null;
 		new Thread(new Runnable() {
@@ -469,7 +469,7 @@ public class AppInitializer implements IProgress {
 		} finally {
 			appInitializing = false;
 			notifyFinish();
-			if (warnings != null && !warnings.isEmpty()) {
+			if (!warnings.isEmpty()) {
 				app.showToastMessage(formatWarnings(warnings).toString());
 			}
 		}
@@ -649,7 +649,7 @@ public class AppInitializer implements IProgress {
 
 	private boolean applicationBgInitializing = false;
 
-	public synchronized void startApplication() {
+	synchronized void startApplication() {
 		if (applicationBgInitializing) {
 			return;
 		}

@@ -10,6 +10,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Path;
+import android.graphics.PixelFormat;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.hardware.GeomagneticField;
@@ -55,16 +56,13 @@ import net.osmand.router.RouteResultPreparation;
 import net.osmand.router.TurnType;
 import net.osmand.util.Algorithms;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class RouteInfoWidgetsFactory {
-
 	public NextTurnInfoWidget createNextInfoControl(final Activity activity,
 			final OsmandApplication app, boolean horisontalMini) {
 		final OsmandSettings settings = app.getSettings();
@@ -79,7 +77,7 @@ public class RouteInfoWidgetsFactory {
 				boolean deviatedFromRoute = false;
 				int turnImminent = 0;
 				int nextTurnDistance = 0;
-				if (routingHelper != null && routingHelper.isRouteCalculated() && followingMode) {
+				if (routingHelper.isRouteCalculated() && followingMode) {
 					deviatedFromRoute = routingHelper.isDeviatedFromRoute();
 					
 					if (deviatedFromRoute) {
@@ -143,7 +141,7 @@ public class RouteInfoWidgetsFactory {
 				boolean deviatedFromRoute = false;
 				int turnImminent = 0;
 				int nextTurnDistance = 0;
-				if (routingHelper != null && routingHelper.isRouteCalculated() && followingMode) {
+				if (routingHelper.isRouteCalculated() && followingMode) {
 					deviatedFromRoute = routingHelper.isDeviatedFromRoute() ;
 					NextDirectionInfo r = routingHelper.getNextRouteDirectionInfo(calc1, true);
 					if (!deviatedFromRoute) {
@@ -200,7 +198,7 @@ public class RouteInfoWidgetsFactory {
 		private final OsmandPreference<Boolean> showArrival;
 
 		public TimeControlWidgetState(OsmandApplication ctx) {
-			super(ctx);
+//			super(ctx);
 			showArrival = ctx.getSettings().SHOW_ARRIVAL_TIME_OTHERWISE_EXPECTED_TIME;
 		}
 
@@ -459,7 +457,6 @@ public class RouteInfoWidgetsFactory {
 	}
 	
 	public abstract static class DistanceToPointInfoControl extends TextInfoWidget {
-
 		private final OsmandMapTileView view;
 		private final float[] calculations = new float[1];
 		private int cachedMeters;
@@ -525,7 +522,7 @@ public class RouteInfoWidgetsFactory {
 	}
 	
 	public TextInfoWidget createDistanceControl(final MapActivity map) {
-		DistanceToPointInfoControl distanceControl = new DistanceToPointInfoControl(map,R.drawable.widget_target_day,
+		return new DistanceToPointInfoControl(map,R.drawable.widget_target_day,
 				R.drawable.widget_target_night) {
 			@Override
 			public LatLon getPointToNavigate() {
@@ -541,14 +538,12 @@ public class RouteInfoWidgetsFactory {
 				return super.getDistance();
 			}
 		};
-		return distanceControl;
 	}
 	
 	public TextInfoWidget createIntermediateDistanceControl(final MapActivity map) {
 		final TargetPointsHelper targets = map.getMyApplication().getTargetPointsHelper();
-		DistanceToPointInfoControl distanceControl = new DistanceToPointInfoControl(map, R.drawable.widget_intermediate_day,
+		return new DistanceToPointInfoControl(map, R.drawable.widget_intermediate_day,
 				R.drawable.widget_intermediate_night) {
-
 			@Override
 			protected void click(OsmandMapTileView view) {
 				if(targets.getIntermediatePoints().size() > 1) {
@@ -572,7 +567,6 @@ public class RouteInfoWidgetsFactory {
 				return super.getDistance();
 			}
 		};
-		return distanceControl;
 	}
 
 	public static class BearingWidgetState extends WidgetState {
@@ -582,7 +576,7 @@ public class RouteInfoWidgetsFactory {
 		private final OsmandPreference<Boolean> showRelativeBearing;
 
 		public BearingWidgetState(OsmandApplication ctx) {
-			super(ctx);
+//			super(ctx);
 			showRelativeBearing = ctx.getSettings().SHOW_RELATIVE_BEARING_OTHERWISE_REGULAR_BEARING;
 		}
 
@@ -733,7 +727,7 @@ public class RouteInfoWidgetsFactory {
 		private final View progress;
 		private int shadowRadius;
 
-		LanesControl(final MapActivity map, final OsmandMapTileView view) {
+		LanesControl(final MapActivity map) {
 			lanesView = map.findViewById(R.id.map_lanes);
 			lanesText = map.findViewById(R.id.map_lanes_dist_text);
 			lanesShadowText = map.findViewById(R.id.map_lanes_dist_text_shadow);
@@ -748,12 +742,12 @@ public class RouteInfoWidgetsFactory {
 			app = map.getMyApplication();
 		}
 		
-		public void updateTextSize(boolean isNight, int textColor, int textShadowColor, boolean textBold, int shadowRadius) {
+		public void updateTextSize(int textColor, int textShadowColor, boolean textBold, int shadowRadius) {
 			this.shadowRadius = shadowRadius;
 			TextInfoWidget.updateTextColor(lanesText, lanesShadowText, textColor, textShadowColor, textBold, shadowRadius);
 		}
 		
-		public boolean updateInfo(DrawSettings drawSettings) {
+		public boolean updateInfo() {
 			boolean visible = false;
 			int locimminent = -1;
 			int[] loclanes = null;
@@ -775,7 +769,6 @@ public class RouteInfoWidgetsFactory {
 					NextDirectionInfo r = rh.getNextRouteDirectionInfo(new NextDirectionInfo(), false);
 					if(r != null && r.directionInfo != null && r.directionInfo.getTurnType() != null) {
 						loclanes  = r.directionInfo.getTurnType().getLanes();
-						// primary = r.directionInfo.getTurnType();
 						locimminent = r.imminent;
 						// Do not show too far 
 						if ((r.distanceTo > 800 && r.directionInfo.getTurnType().isSkipToSpeak()) || r.distanceTo > 1200) {
@@ -790,7 +783,6 @@ public class RouteInfoWidgetsFactory {
 						RouteDirectionInfo next = rh.getRouteDirections().get(di);
 						if (next != null) {
 							loclanes = next.getTurnType().getLanes();
-							// primary = next.getTurnType();
 						}
 					} else {
 						loclanes = null;
@@ -967,23 +959,17 @@ public class RouteInfoWidgetsFactory {
 		public int getIntrinsicHeight() {
 			return height;
 		}
-		
 		@Override
 		public int getIntrinsicWidth() {
 			return width;
 		}
 
-
 		@Override
 		public void draw(@NonNull Canvas canvas) {
-			// setup default color
-			//canvas.drawColor(0, PorterDuff.Mode.CLEAR);
-
 			//to change color immediately when needed
 			if (lanes != null && lanes.length > 0) {
 				float coef = scaleCoefficient / miniCoeff;
 				canvas.save();
-				// canvas.translate((int) (16 * scaleCoefficient), 0);
 				for (int i = 0; i < lanes.length; i++) {
 					if ((lanes[i] & 1) == 1) {
 						paintRouteDirection.setColor(imminent ? ctx.getResources().getColor(R.color.nav_arrow_imminent) :
@@ -1093,12 +1079,12 @@ public class RouteInfoWidgetsFactory {
 		}
 		@Override
 		public int getOpacity() {
-			return 0;
+			return PixelFormat.UNKNOWN;
 		}
 	}
 
-	public LanesControl createLanesControl(final MapActivity map, final OsmandMapTileView view) {
-		return new LanesControl(map, view);
+	public LanesControl createLanesControl(final MapActivity map) {
+		return new LanesControl(map);
 	}
 
 	public static class RulerWidget  {
@@ -1133,7 +1119,7 @@ public class RouteInfoWidgetsFactory {
 			icon.setBackgroundResource(isNight ? R.drawable.ruler_night : R.drawable.ruler);
 		}
 		
-		public boolean updateInfo(RotatedTileBox tb, DrawSettings nightMode) {
+		public boolean updateInfo(RotatedTileBox tb) {
 			boolean visible = true;
 			OsmandMapTileView view = ma.getMapView();
 			// update cache
@@ -1172,7 +1158,6 @@ public class RouteInfoWidgetsFactory {
 	}
 	
 	public static class AlarmWidget  {
-		
 		private final View layout;
 		private final ImageView icon;
 		private final TextView text;
@@ -1198,7 +1183,7 @@ public class RouteInfoWidgetsFactory {
 			wh = app.getWaypointHelper();
 		}
 		
-		public boolean updateInfo(DrawSettings drawSettings) {
+		public boolean updateInfo() {
 			boolean trafficWarnings = settings.SHOW_TRAFFIC_WARNINGS.get();
 			boolean cams = settings.SHOW_CAMERAS.get();
 			boolean peds = settings.SHOW_PEDESTRIAN.get();
@@ -1272,7 +1257,8 @@ public class RouteInfoWidgetsFactory {
 						text = null;
 						bottomText = null;
 					}
-					visible = (text != null &&  text.length() > 0) || (locimgId != 0);
+//					visible = (text != null &&  text.length() > 0) || (locimgId != 0);
+					visible = true;
 					if (visible) {
 						if (alarm.getType() == AlarmInfoType.SPEED_CAMERA) {
 							visible = cams;
@@ -1314,15 +1300,12 @@ public class RouteInfoWidgetsFactory {
 	static boolean distChanged(int oldDist, int dist){
 		return oldDist == 0 || Math.abs(oldDist - dist) >= 10;
 	}
-
 	private static boolean degreesChanged(int oldDegrees, int degrees){
 		return Math.abs(oldDegrees - degrees) >= 1;
 	}
-
 	public AlarmWidget createAlarmInfoControl(OsmandApplication app, MapActivity map) {
 		return new AlarmWidget(app, map);
 	}
-	
 	public RulerWidget createRulerControl(MapActivity map) {
 		return new RulerWidget(map);
 	}

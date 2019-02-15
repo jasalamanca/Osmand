@@ -376,7 +376,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 					findViewById(R.id.drawer_layout).invalidate();
 				}
 			};
-			getMyApplication().checkApplicationIsBeingInitialized(this, initListener);
+			getMyApplication().checkApplicationIsBeingInitialized(initListener);
 		} else {
 			setupOpenGLView();
 		}
@@ -487,16 +487,6 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		return gpxImportHelper;
 	}
 
-//	@SuppressWarnings("rawtypes")
-//	public Object getLastNonConfigurationInstanceByKey(String key) {
-//		Object k = super.getLastNonConfigurationInstance();
-//		if (k instanceof Map) {
-//
-//			return ((Map) k).get(key);
-//		}
-//		return null;
-//	}
-
 	@Override
 	public Object onRetainCustomNonConfigurationInstance() {
 		LinkedHashMap<String, Object> l = new LinkedHashMap<>();
@@ -522,7 +512,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		if (dashboardOnMap.onBackPressed()) {
 			return;
 		}
-		if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+		if (drawerLayout.isDrawerOpen(Gravity.START)) {
 			closeDrawer();
 			return;
 		}
@@ -1489,7 +1479,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 	public void openDrawer() {
 		mapActions.updateDrawerMenu();
 		boolean animate = !settings.DO_NOT_USE_ANIMATIONS.get();
-		drawerLayout.openDrawer(Gravity.LEFT, animate);
+		drawerLayout.openDrawer(Gravity.START, animate);
 	}
 
 	public void disableDrawer() {
@@ -1513,7 +1503,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 	public boolean dispatchTouchEvent(MotionEvent event) {
 		if (settings.DO_NOT_USE_ANIMATIONS.get()) {
 			if (event.getAction() == MotionEvent.ACTION_DOWN) {
-				if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+				if (drawerLayout.isDrawerOpen(Gravity.START)) {
 					int width = AndroidUtils.dpToPx(this, 280);
 					if (event.getRawX() > width) {
 						closeDrawer();
@@ -1527,11 +1517,11 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 
 	public void closeDrawer() {
 		boolean animate = !settings.DO_NOT_USE_ANIMATIONS.get();
-		drawerLayout.closeDrawer(Gravity.LEFT, animate);
+		drawerLayout.closeDrawer(Gravity.START, animate);
 	}
 
 	private void toggleDrawer() {
-		if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+		if (drawerLayout.isDrawerOpen(Gravity.START)) {
 			closeDrawer();
 		} else {
 			openDrawer();
@@ -1650,14 +1640,11 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 	public void onMapMarkerChanged(MapMarker mapMarker) {
 		refreshMap();
 	}
-
 	@Override
 	public void onMapMarkersChanged() {
 		refreshMap();
 	}
-
 	private class ScreenOffReceiver extends BroadcastReceiver {
-
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			OsmandPlugin.onMapActivityScreenOff(MapActivity.this);
@@ -1867,25 +1854,19 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 				public void onError(String error) {
 					inAppHelper = null;
 				}
-
 				@Override
 				public void onGetItems() {
 					inAppHelper = null;
 				}
-
 				@Override
 				public void onItemPurchased(String sku) {
 					inAppHelper = null;
 				}
-
 				@Override
 				public void showProgress() {
-
 				}
-
 				@Override
 				public void dismissProgress() {
-
 				}
 			});
 			inAppHelper.exec(runnable);

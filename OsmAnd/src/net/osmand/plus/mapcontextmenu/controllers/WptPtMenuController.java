@@ -20,7 +20,6 @@ import net.osmand.util.Algorithms;
 import java.io.File;
 
 public class WptPtMenuController extends MenuController {
-
 	private WptPt wpt;
 	private MapMarker mapMarker;
 
@@ -52,24 +51,10 @@ public class WptPtMenuController extends MenuController {
 	protected Object getObject() {
 		return wpt;
 	}
-
-/*
-	@Override
-	public boolean handleSingleTapOnMap() {
-		Fragment fragment = getMapActivity().getSupportFragmentManager().findFragmentByTag(FavoritePointEditor.TAG);
-		if (fragment != null) {
-			((FavoritePointEditorFragment)fragment).dismiss();
-			return true;
-		}
-		return false;
-	}
-*/
-
 	@Override
 	public boolean needStreetName() {
 		return false;
 	}
-
 	@Override
 	public boolean displayDistanceDirection() {
 		return true;
@@ -114,7 +99,6 @@ public class WptPtMenuController extends MenuController {
 	public String getSubtypeStr() {
 		return wpt.category != null ? wpt.category : "";
 	}
-
 	@Override
 	public String getCommonTypeStr() {
 		return getMapActivity().getString(R.string.gpx_wpt);

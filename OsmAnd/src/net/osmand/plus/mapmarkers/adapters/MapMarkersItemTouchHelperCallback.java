@@ -16,7 +16,6 @@ import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 
 public class MapMarkersItemTouchHelperCallback extends ItemTouchHelper.Callback {
-
 	private final ItemTouchHelperAdapter adapter;
 	private MapActivity mapActivity;
 	private boolean swipeEnabled = true;
@@ -43,7 +42,6 @@ public class MapMarkersItemTouchHelperCallback extends ItemTouchHelper.Callback 
 		this.mapActivity = mapActivity;
 		this.adapter = adapter;
 		marginSides = mapActivity.getResources().getDimension(R.dimen.list_content_padding);
-        Bitmap deleteBitmap = BitmapFactory.decodeResource(mapActivity.getResources(), R.drawable.ic_action_delete_dark);
 		historyBitmap = BitmapFactory.decodeResource(mapActivity.getResources(), R.drawable.ic_action_history);
 		night = !mapActivity.getMyApplication().getSettings().isLightContent();
 
@@ -62,7 +60,6 @@ public class MapMarkersItemTouchHelperCallback extends ItemTouchHelper.Callback 
 		Rect bounds = new Rect();
 
 		textPaint.getTextBounds(delStr, 0, delStr.length(), bounds);
-        int delStrWidth = bounds.width();
 		textHeight = bounds.height();
 	}
 
@@ -142,13 +139,9 @@ public class MapMarkersItemTouchHelperCallback extends ItemTouchHelper.Callback 
 	}
 
 	interface ItemTouchHelperAdapter {
-
 		void onSwipeStarted();
-
 		boolean onItemMove(int from, int to);
-
 		void onItemSwiped(RecyclerView.ViewHolder holder);
-
 		void onItemDismiss(RecyclerView.ViewHolder holder);
 	}
 }

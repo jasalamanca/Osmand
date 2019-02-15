@@ -2,7 +2,6 @@ package net.osmand.osm;
 
 import net.osmand.PlatformUtil;
 import net.osmand.StringMatcher;
-import net.osmand.data.Amenity;
 import net.osmand.util.Algorithms;
 
 import org.apache.commons.logging.Log;
@@ -17,16 +16,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.TreeMap;
 import java.util.TreeSet;
-
 
 public class MapPoiTypes {
 	private static MapPoiTypes DEFAULT_INSTANCE = null;
@@ -39,8 +35,7 @@ public class MapPoiTypes {
 	static final String OSM_WIKI_CATEGORY = "osmwiki";
 	private PoiTranslator poiTranslator = null;
 	private boolean init;
-	private final Map<String, PoiType> poiTypesByTag = new LinkedHashMap<>();
-	private final Map<String, String> deprecatedTags = new LinkedHashMap<>();
+    private final Map<String, String> deprecatedTags = new LinkedHashMap<>();
 	private final Map<String, String> poiAdditionalCategoryIconNames = new LinkedHashMap<>();
 	private final List<PoiType> textPoiAdditionals = new ArrayList<>();
 
@@ -50,10 +45,8 @@ public class MapPoiTypes {
 	}
 
 	public interface PoiTranslator {
-
 		String getTranslation(AbstractPoiType type);
 		String getTranslation(String keyName);
-
 	}
 
 	public static MapPoiTypes getDefaultNoInit() {
@@ -63,13 +56,7 @@ public class MapPoiTypes {
 		return DEFAULT_INSTANCE;
 	}
 
-
-	public static void setDefault(MapPoiTypes types) {
-		DEFAULT_INSTANCE = types;
-		DEFAULT_INSTANCE.init();
-	}
-
-	public static MapPoiTypes getDefault() {
+    public static MapPoiTypes getDefault() {
 		if (DEFAULT_INSTANCE == null) {
 			DEFAULT_INSTANCE = new MapPoiTypes(null);
 			DEFAULT_INSTANCE.init();
@@ -80,7 +67,6 @@ public class MapPoiTypes {
 	public boolean isInit() {
 		return init;
 	}
-
 	public PoiCategory getOtherPoiCategory() {
 		return otherCategory;
 	}
@@ -94,10 +80,6 @@ public class MapPoiTypes {
 
 	public String getPoiAdditionalCategoryIconName(String category) {
 		return poiAdditionalCategoryIconNames.get(category);
-	}
-
-	public List<PoiType> getTextPoiAdditionals() {
-		return textPoiAdditionals;
 	}
 
 	public List<PoiFilter> getTopVisibleFilters() {
@@ -116,7 +98,6 @@ public class MapPoiTypes {
 		return lf;
 	}
 
-
 	private void sortList(List<? extends PoiFilter> lf) {
 		final Collator instance = Collator.getInstance();
 		Collections.sort(lf, new Comparator<PoiFilter>() {
@@ -125,10 +106,6 @@ public class MapPoiTypes {
 				return instance.compare(object1.getTranslation(), object2.getTranslation());
 			}
 		});
-	}
-
-	public PoiCategory getUserDefinedCategory() {
-		return otherCategory;
 	}
 
 	public PoiType getPoiTypeByKey(String name) {
@@ -223,20 +200,6 @@ public class MapPoiTypes {
 		}
 	}
 
-
-	public Map<String, PoiType> getAllTranslatedNames(PoiCategory pc, boolean onlyTranslation) {
-		Map<String, PoiType> translation = new TreeMap<>();
-		for (PoiType pt : pc.getPoiTypes()) {
-			translation.put(pt.getTranslation(), pt);
-
-			if (!onlyTranslation) {
-//				translation.put(pt.getKeyName(), pt);
-				translation.put(Algorithms.capitalizeFirstLetterAndLowercase(pt.getKeyName().replace('_', ' ')), pt);
-			}
-		}
-		return translation;
-	}
-
 	public PoiCategory getPoiCategoryByName(String name) {
 		return getPoiCategoryByName(name, false);
 	}
@@ -261,14 +224,9 @@ public class MapPoiTypes {
 		return otherCategory;
 	}
 
-	public PoiTranslator getPoiTranslator() {
-		return poiTranslator;
-	}
-
 	public void setPoiTranslator(PoiTranslator poiTranslator) {
 		this.poiTranslator = poiTranslator;
 		sortList(categories);
-
 	}
 
 	public void init() {
@@ -382,7 +340,6 @@ public class MapPoiTypes {
 								poiAdditionalCategoryIconNames.put(lastPoiAdditionalCategory, icon);
 							}
 						}
-
 					} else if (name.equals("poi_type")) {
 						if (lastCategory == null) {
 							lastCategory = getOtherMapCategory();
@@ -512,7 +469,7 @@ public class MapPoiTypes {
 			lastType.addPoiAdditional(ref);
 		} else if (lastFilter != null) {
 			lastFilter.addPoiAdditional(ref);
-		} else if (lastCategory != null) {
+		} else {
 			lastCategory.addPoiAdditional(ref);
 		}
 		if (ref.isText()) {
@@ -561,7 +518,6 @@ public class MapPoiTypes {
 		}
 		return tp;
 	}
-
 
 	private PoiType parsePoiType(final Map<String, PoiType> allTypes, XmlPullParser parser, PoiCategory lastCategory,
 			PoiFilter lastFilter, String lang, PoiType langBaseType) {
@@ -616,7 +572,7 @@ public class MapPoiTypes {
 		return lst;
 	}
 
-
+    //NOTE jsala test
 	private static void print(MapPoiTypes df) {
 		List<PoiCategory> pc = df.getCategories(true);
 		for (PoiCategory p : pc) {
@@ -680,6 +636,7 @@ public class MapPoiTypes {
 		}
 	}
 
+	//NOTE jsala es un test
 	public static void main(String[] args) {
 		DEFAULT_INSTANCE = new MapPoiTypes("/Users/victorshcherb/osmand/repos/resources/poi/poi_types.xml");
 		DEFAULT_INSTANCE.init();
@@ -730,126 +687,10 @@ public class MapPoiTypes {
 		return getPoiCategoryByName(t.getKeyName()) != otherCategory;
 	}
 
-	private void initPoiTypesByTag() {
-		if (!poiTypesByTag.isEmpty()) {
-			return;
-		}
-		for (PoiCategory poic : categories) {
-			for (PoiType p : poic.getPoiTypes()) {
-				initPoiType(p);
-				for (PoiType pts : p.getPoiAdditionals()) {
-					initPoiType(pts);
-				}
-			}
-			for (PoiType p : poic.getPoiAdditionals()) {
-				initPoiType(p);
-			}
-		}
-	}
-
-
-	private void initPoiType(PoiType p) {
-		if (!p.isReference()) {
-			String key = null;
-			if (p.isAdditional()) {
-				key = p.isText() ? p.getRawOsmTag() :
-						(p.getRawOsmTag() + "/" + p.getOsmValue());
-			} else {
-				key = p.getRawOsmTag() + "/" + p.getOsmValue();
-			}
-			if (poiTypesByTag.containsKey(key)) {
-				throw new UnsupportedOperationException("!! Duplicate poi type " + key);
-			}
-			poiTypesByTag.put(key, p);
-		}
-	}
-	
-	public String replaceDeprecatedSubtype(PoiCategory type, String subtype) {
+    public String replaceDeprecatedSubtype(String subtype) {
 		if(deprecatedTags.containsKey(subtype)) {
 			return deprecatedTags.get(subtype);
 		}
 		return subtype;
 	}
-
-	public Amenity parseAmenity(String tag, String val, boolean relation, Map<String, String> otherTags) {
-		initPoiTypesByTag();
-		PoiType pt = poiTypesByTag.get(tag + "/" + val);
-		if (pt == null) {
-			pt = poiTypesByTag.get(tag);
-		}
-		if (pt == null || pt.isAdditional()) {
-			return null;
-		}
-		if (!Algorithms.isEmpty(pt.getOsmTag2())) {
-			if (!Algorithms.objectEquals(otherTags.get(pt.getOsmTag2()), pt.getOsmValue2())) {
-				return null;
-			}
-		}
-		if (pt.getCategory() == getOtherMapCategory()) {
-			return null;
-		}
-		String nameValue = otherTags.get("name");
-		if (pt.getNameTag() != null) {
-			nameValue = otherTags.get(pt.getNameTag());
-		}
-		boolean hasName = !Algorithms.isEmpty(nameValue);
-		if (!hasName && pt.isNameOnly()) {
-			return null;
-		}
-		if (relation && !pt.isRelation()) {
-			return null;
-		}
-
-		Amenity a = new Amenity();
-		a.setType(pt.getCategory());
-		a.setSubType(pt.getKeyName());
-		if (pt.getNameTag() != null) {
-			a.setName(nameValue);
-		}
-		// additional info
-        for (Entry<String, String> e : otherTags.entrySet()) {
-            String otag = e.getKey();
-            if (!otag.equals(tag) && !otag.equals("name")) {
-                PoiType pat = poiTypesByTag.get(otag + "/" + e.getValue());
-                if (pat == null) {
-                    for (String splValue : e.getValue().split(";")) {
-                        PoiType ps = poiTypesByTag.get(otag + "/" + splValue.trim());
-                        if (ps != null) {
-                            a.setAdditionalInfo(ps.getKeyName(), splValue.trim());
-                        }
-                    }
-                    pat = poiTypesByTag.get(otag);
-                }
-                if (pat != null && pat.isAdditional()) {
-                    a.setAdditionalInfo(pat.getKeyName(), e.getValue());
-                }
-            }
-        }
-
-		return a;
-	}
-
-	public boolean isTextAdditionalInfo(String key, String value) {
-		if (key.startsWith("name:") || key.equals("name")) {
-			return true;
-		}
-		PoiType pat = (PoiType) getAnyPoiAdditionalTypeByKey(key);
-//		initPoiTypesByTag();
-//		PoiType pat = poiTypesByTag.get(key + "/" + value);
-//		if (pat == null) {
-//			pat = poiTypesByTag.get(key);
-//		}
-		if (pat == null) {
-			return true;
-		} else {
-			return pat.isText();
-		}
-	}
-
-
-	
-
-
-	
-
 }

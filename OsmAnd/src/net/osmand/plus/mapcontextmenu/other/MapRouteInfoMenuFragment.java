@@ -106,21 +106,23 @@ public class MapRouteInfoMenuFragment extends BaseOsmAndFragment {
 		}
 	}
 
-	public void show(MapActivity mapActivity) {
-		int slideInAnim = 0;
-		int slideOutAnim = 0;
-		if (!mapActivity.getMyApplication().getSettings().DO_NOT_USE_ANIMATIONS.get()) {
-			slideInAnim = R.anim.slide_in_bottom;
-			slideOutAnim = R.anim.slide_out_bottom;
-		}
-
-		mapActivity.getSupportFragmentManager()
-				.beginTransaction()
-				.setCustomAnimations(slideInAnim, slideOutAnim, slideInAnim, slideOutAnim)
-				.add(R.id.routeMenuContainer, this, TAG)
-				.addToBackStack(TAG)
-				.commitAllowingStateLoss();
-	}
+// --Commented out by Inspection START (15/02/19 20:42):
+//	public void show(MapActivity mapActivity) {
+//		int slideInAnim = 0;
+//		int slideOutAnim = 0;
+//		if (!mapActivity.getMyApplication().getSettings().DO_NOT_USE_ANIMATIONS.get()) {
+//			slideInAnim = R.anim.slide_in_bottom;
+//			slideOutAnim = R.anim.slide_out_bottom;
+//		}
+//
+//		mapActivity.getSupportFragmentManager()
+//				.beginTransaction()
+//				.setCustomAnimations(slideInAnim, slideOutAnim, slideInAnim, slideOutAnim)
+//				.add(R.id.routeMenuContainer, this, TAG)
+//				.addToBackStack(TAG)
+//				.commitAllowingStateLoss();
+//	}
+// --Commented out by Inspection STOP (15/02/19 20:42)
 
 	public void dismiss() {
 		FragmentActivity activity = getActivity();

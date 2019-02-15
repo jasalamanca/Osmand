@@ -22,7 +22,6 @@ import net.osmand.plus.routing.RouteCalculationResult;
 import net.osmand.plus.routing.RouteCalculationResult.NextDirectionInfo;
 import net.osmand.plus.routing.RouteDirectionInfo;
 import net.osmand.plus.routing.RoutingHelper;
-import net.osmand.plus.views.TurnPathHelper;
 import net.osmand.plus.views.mapwidgets.NextTurnInfoWidget.TurnDrawable;
 import net.osmand.router.TurnType;
 import net.osmand.util.Algorithms;
@@ -30,24 +29,19 @@ import net.osmand.util.Algorithms;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static net.osmand.plus.NavigationService.USED_BY_NAVIGATION;
 
 public class NavigationNotification extends OsmandNotification {
-
 	private final static String OSMAND_PAUSE_NAVIGATION_SERVICE_ACTION = "OSMAND_PAUSE_NAVIGATION_SERVICE_ACTION";
 	private final static String OSMAND_RESUME_NAVIGATION_SERVICE_ACTION = "OSMAND_RESUME_NAVIGATION_SERVICE_ACTION";
 	private final static String OSMAND_STOP_NAVIGATION_SERVICE_ACTION = "OSMAND_STOP_NAVIGATION_SERVICE_ACTION";
-	private final static String GROUP_NAME = "NAVIGATION";
 
-	private Map<TurnPathHelper.TurnResource, Bitmap> bitmapCache = new HashMap<>();
-    private boolean leftSide;
+	private boolean leftSide;
 
 	public NavigationNotification(OsmandApplication app) {
-		super(app, GROUP_NAME);
+		super(app);
 	}
 
 	@Override
@@ -93,7 +87,6 @@ public class NavigationNotification extends OsmandNotification {
 		return Notification.PRIORITY_HIGH;
 	}
 
-	@Override
 	public boolean isActive() {
 		NavigationService service = app.getNavigationService();
 		return isEnabled()

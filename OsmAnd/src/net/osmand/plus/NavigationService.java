@@ -24,19 +24,16 @@ import net.osmand.plus.notifications.OsmandNotification;
 
 public class NavigationService extends Service implements LocationListener {
 
-	static class NavigationServiceBinder extends Binder {
-
+	private static class NavigationServiceBinder extends Binder {
 	}
 
 	// global id don't conflict with others
 	public static final int USED_BY_NAVIGATION = 1;
 	public static final int USED_BY_GPX = 2;
-	public static int USED_BY_LIVE = 4;
 	public final static String USAGE_INTENT = "SERVICE_USED_BY";
 	public final static String USAGE_OFF_INTERVAL = "SERVICE_OFF_INTERVAL";
 
 	private final NavigationServiceBinder binder = new NavigationServiceBinder();
-
 
 	private int serviceOffInterval;
 	private String serviceOffProvider;
@@ -66,29 +63,17 @@ public class NavigationService extends Service implements LocationListener {
 	Handler getHandler() {
 		return handler;
 	}
-
 	public int getServiceError() {
 		return serviceError;
 	}
-
 	public int getServiceOffInterval() {
 		return serviceOffInterval;
 	}
-	
 	public int getUsedBy() {
 		return usedBy;
 	}
-
 	public String getServiceOffProvider() {
 		return serviceOffProvider;
-	}
-
-	public boolean isUsed() {
-		return usedBy != 0;
-	}
-
-	public void addUsageIntent(int usageIntent) {
-		usedBy |= usageIntent;
 	}
 
 	public void stopIfNeeded(Context ctx, int usageIntent) {
@@ -139,7 +124,6 @@ public class NavigationService extends Service implements LocationListener {
 		// 3. not more than serviceOffInterval
 		serviceError = Math.min(serviceError, serviceOffInterval);
 
-
 		locationProvider = app.getLocationProvider();
 		app.setNavigationService(this);
 
@@ -172,8 +156,6 @@ public class NavigationService extends Service implements LocationListener {
 		return START_REDELIVER_INTENT;
 	}
 	
-	
-
 	@Override
 	public void onCreate() {
 		super.onCreate();
@@ -183,7 +165,6 @@ public class NavigationService extends Service implements LocationListener {
 	private boolean isContinuous() {
 		return serviceOffInterval == 0;
 	}
-
 
 	@Override
 	public void onDestroy() {
@@ -250,11 +231,9 @@ public class NavigationService extends Service implements LocationListener {
 		Toast.makeText(this, getString(R.string.off_router_service_no_gps_available), Toast.LENGTH_LONG).show();
 	}
 
-
 	@Override
 	public void onProviderEnabled(String provider) {
 	}
-
 
 	@Override
 	public void onStatusChanged(String provider, int status, Bundle extras) {

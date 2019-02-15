@@ -2,13 +2,11 @@ package net.osmand.plus.base;
 
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.widget.ArrayAdapter;
 
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 
 public abstract class OsmAndListFragment extends ListFragment {
-	
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
@@ -17,11 +15,8 @@ public abstract class OsmAndListFragment extends ListFragment {
 						getMyApplication().getSettings().isLightContent() ? R.color.bg_color_light
 								: R.color.bg_color_dark));
 	}
-	
-	public abstract ArrayAdapter<?> getAdapter();
 
 	protected OsmandApplication getMyApplication() {
 		return (OsmandApplication)getActivity().getApplication();
 	}
-	
 }

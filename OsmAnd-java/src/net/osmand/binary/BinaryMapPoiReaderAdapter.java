@@ -1,6 +1,5 @@
 package net.osmand.binary;
 
-
 import com.google.protobuf.CodedInputStream;
 import com.google.protobuf.WireFormat;
 
@@ -48,7 +47,7 @@ class BinaryMapPoiReaderAdapter {
 		List<String> possibleValues = null;
 	}
 
-	public static class PoiRegion extends BinaryIndexPart {
+	static class PoiRegion extends BinaryIndexPart {
 		final List<String> categories = new ArrayList<>();
 		final List<PoiCategory> categoriesType = new ArrayList<>();
 		final List<List<String>> subcategories = new ArrayList<>();
@@ -243,7 +242,7 @@ class BinaryMapPoiReaderAdapter {
 		}
 	}
 
-	public void initCategories(PoiRegion region) throws IOException {
+	void initCategories(PoiRegion region) throws IOException {
 		if (region.categories.isEmpty()) {
 			codedIS.seek(region.filePointer);
 			int oldLimit = codedIS.pushLimit(region.length);
@@ -307,7 +306,6 @@ class BinaryMapPoiReaderAdapter {
 						}
 					}
 				}
-
 
 				LOG.info("Searched poi structure in " + (System.currentTimeMillis() - time) +
 						"ms. Found " + offKeys.length + " subtrees");
@@ -728,7 +726,7 @@ class BinaryMapPoiReaderAdapter {
 						subtype = subcats.get(subcatId);
 					}
 				}
-				subtype = poiTypes.replaceDeprecatedSubtype(type, subtype);
+				subtype = poiTypes.replaceDeprecatedSubtype(subtype);
 				if (req.poiTypeFilter == null || req.poiTypeFilter.accept(type, subtype)) {
 					if (amenityType == null) {
 						amenityType = type;
@@ -787,7 +785,7 @@ class BinaryMapPoiReaderAdapter {
 						subtype = subcats.get(subcatId);
 					}
 				}
-				subtype = poiTypes.replaceDeprecatedSubtype(type, subtype);
+				subtype = poiTypes.replaceDeprecatedSubtype(subtype);
 				if (req.poiTypeFilter.accept(type, subtype)) {
 					codedIS.skipRawBytes(codedIS.getBytesUntilLimit());
 					return true;

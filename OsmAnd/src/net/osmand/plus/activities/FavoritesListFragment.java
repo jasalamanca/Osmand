@@ -70,7 +70,6 @@ public class FavoritesListFragment extends OsmAndListFragment implements SearchA
 		}
 	}
 
-	@Override
 	public ArrayAdapter<?> getAdapter() {
 		return favouritesAdapter;
 	}

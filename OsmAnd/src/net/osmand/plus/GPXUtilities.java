@@ -203,9 +203,7 @@ public class GPXUtilities {
 
 	public static class TrkSegment extends GPXExtensions {
 		boolean generalSegment = false;
-
 		public final List<WptPt> points = new ArrayList<>();
-
 		public final List<Renderable.RenderableSegment> renders = new ArrayList<>();
 
 		List<GPXTrackAnalysis> splitByDistance(double meters) {
@@ -234,14 +232,12 @@ public class GPXUtilities {
 		String desc = null;
 		public List<TrkSegment> segments = new ArrayList<>();
 		public boolean generalTrack = false;
-
 	}
 
 	public static class Route extends GPXExtensions {
 		public String name = null;
 		String desc = null;
 		public final List<WptPt> points = new ArrayList<>();
-
 	}
 
 	public static class GPXTrackAnalysis {
@@ -621,10 +617,9 @@ public class GPXUtilities {
 			return vl + ((long) (cf * (vl2 - vl)));
 		}
 
-		double setLastPoint(int pointInd, double endCf) {
+		void setLastPoint(int pointInd, double endCf) {
 			endCoeff = endCf;
 			endPointInd = pointInd;
-			return endCoeff;
 		}
 	}
 
@@ -681,7 +676,7 @@ public class GPXUtilities {
 
 					sp = new SplitSegment(segment, k - 1, cf);
 					currentMetricEnd += metricLimit;
-					prev = sp.get(0);
+//					prev = sp.get(0);
 				}
 				total += currentSegment;
 			}

@@ -20,7 +20,7 @@ class MoveMarkerBottomSheetHelper {
 	private final ContextMenuLayer mContextMenuLayer;
 	private boolean applyingPositionMode;
 
-	public MoveMarkerBottomSheetHelper(MapActivity activity, ContextMenuLayer contextMenuLayer) {
+	MoveMarkerBottomSheetHelper(MapActivity activity, ContextMenuLayer contextMenuLayer) {
 		mContextMenuLayer = contextMenuLayer;
 		this.mView = activity.findViewById(R.id.move_marker_bottom_sheet);
 		ImageView icon = mView.findViewById(R.id.icon);
@@ -50,10 +50,6 @@ class MoveMarkerBottomSheetHelper {
 		double lon = rt.getLonFromPixel(point.x, point.y);
 		mDescription.setText(PointDescription.getLocationName(mContext, lat, lon, true));
 	}
-	
-	public boolean isVisible() {
-		return mView.getVisibility() == View.VISIBLE;
-	}
 
 	public void show(Drawable drawable) {
 		exitApplyPositionMode();
@@ -73,7 +69,7 @@ class MoveMarkerBottomSheetHelper {
 		}
 	}
 
-	public void exitApplyPositionMode() {
+	void exitApplyPositionMode() {
 		if (applyingPositionMode) {
 			applyingPositionMode = false;
 			mView.findViewById(R.id.apply_button).setEnabled(true);

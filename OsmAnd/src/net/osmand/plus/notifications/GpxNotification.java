@@ -18,17 +18,15 @@ import net.osmand.util.Algorithms;
 import static net.osmand.plus.NavigationService.USED_BY_GPX;
 
 public class GpxNotification extends OsmandNotification {
-
 	private final static String OSMAND_SAVE_GPX_SERVICE_ACTION = "OSMAND_SAVE_GPX_SERVICE_ACTION";
 	private final static String OSMAND_START_GPX_SERVICE_ACTION = "OSMAND_START_GPX_SERVICE_ACTION";
 	private final static String OSMAND_STOP_GPX_SERVICE_ACTION = "OSMAND_STOP_GPX_SERVICE_ACTION";
-	private final static String GROUP_NAME = "GPX";
 
-	private boolean wasNoDataDismissed;
+    private boolean wasNoDataDismissed;
 	private boolean lastBuiltNoData;
 
 	public GpxNotification(OsmandApplication app) {
-		super(app, GROUP_NAME);
+		super(app);
 	}
 
 	@Override
@@ -82,7 +80,6 @@ public class GpxNotification extends OsmandNotification {
 		return Notification.PRIORITY_DEFAULT;
 	}
 
-	@Override
 	public boolean isActive() {
 		NavigationService service = app.getNavigationService();
 		return isEnabled()

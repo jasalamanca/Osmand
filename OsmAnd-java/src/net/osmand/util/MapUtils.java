@@ -1,15 +1,14 @@
 package net.osmand.util;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
 import net.osmand.data.LatLon;
 import net.osmand.data.MapObject;
 import net.osmand.data.QuadPoint;
 import net.osmand.data.QuadRect;
 import net.osmand.util.GeoPointParserUtil.GeoParsedPoint;
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * This utility class includes :
@@ -18,17 +17,12 @@ import net.osmand.util.GeoPointParserUtil.GeoParsedPoint;
  * 3. tile evaluation algorithms
  */
 public class MapUtils {
-
 	private static final double MIN_LATITUDE = -85.0511;
 	private static final double MAX_LATITUDE = 85.0511;
 	private static final double LATITUDE_TURN = 180.0;
 	private static final double MIN_LONGITUDE = -180.0;
 	private static final double MAX_LONGITUDE = 180.0;
 	private static final double LONGITUDE_TURN = 360.0;
-
-	// TODO change the hostname back to osm.org once HTTPS works for it
-	// https://github.com/openstreetmap/operations/issues/2
-	private static final String BASE_SHORT_OSM_URL = "https://openstreetmap.org/go/";
 
 	/**
      * This array is a lookup table that translates 6-bit positive integer
@@ -79,8 +73,6 @@ public class MapUtils {
 		// not very accurate computation on sphere but for distances < 1000m it is ok
 		double mDist = (fromLat - toLat) * (fromLat - toLat) + (fromLon - toLon) * (fromLon - toLon);
 		double projection = scalarMultiplication(fromLat, fromLon, toLat, toLon, lat, lon);
-		double prlat;
-		double prlon;
 		if (projection < 0) {
 			return 0;
 		} else if (projection >= mDist) {
@@ -91,7 +83,6 @@ public class MapUtils {
 	}
 
 	private static double toRadians(double angdeg) {
-//		return Math.toRadians(angdeg);
 		return angdeg / 180.0 * Math.PI;
 	}
 
@@ -105,12 +96,9 @@ public class MapUtils {
 		double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
 		        Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
 		        Math.sin(dLon / 2) * Math.sin(dLon / 2);
-		//double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-		//return R * c * 1000;
 		// simplyfy haversine:
 		return (2 * R * 1000 * Math.asin(Math.sqrt(a)));
 	}
-
 
 	/**
 	 * Gets distance in meters
@@ -182,7 +170,6 @@ public class MapUtils {
 	 * degree longitude measurements (-180, 180) [27.56 Minsk]
 	 * // degree latitude measurements (90, -90) [53.9]
 	 */
-
 	public static double getTileNumberX(float zoom, double longitude) {
 		longitude = checkLongitude(longitude);
 		final double powZoom = getPowZoom(zoom);
@@ -203,45 +190,6 @@ public class MapUtils {
 		return (1 - eval / Math.PI) / 2 * getPowZoom(zoom);
 	}
 
-	public static double getTileEllipsoidNumberY(float zoom, double latitude) {
-		final double E2 = latitude * Math.PI / 180;
-		final long sradiusa = 6378137;
-		final long sradiusb = 6356752;
-		final double J2 = Math.sqrt(sradiusa * sradiusa - sradiusb * sradiusb) / sradiusa;
-		final double M2 = Math.log((1 + Math.sin(E2))
-				/ (1 - Math.sin(E2))) / 2 - J2 * Math.log((1 + J2 * Math.sin(E2)) / (1 - J2 * Math.sin(E2))) / 2;
-		final double B2 = getPowZoom(zoom);
-		return B2 / 2 - M2 * B2 / 2 / Math.PI;
-	}
-
-	public static double getLatitudeFromEllipsoidTileY(float zoom, float tileNumberY) {
-		final double MerkElipsK = 0.0000001;
-		final long sradiusa = 6378137;
-		final long sradiusb = 6356752;
-		final double FExct = Math.sqrt(sradiusa * sradiusa
-				- sradiusb * sradiusb)
-				/ sradiusa;
-		final double TilesAtZoom = getPowZoom(zoom);
-		double result = (tileNumberY - TilesAtZoom / 2)
-				/ -(TilesAtZoom / (2 * Math.PI));
-		result = (2 * Math.atan(Math.exp(result)) - Math.PI / 2) * 180
-				/ Math.PI;
-		double Zu = result / (180 / Math.PI);
-		double yy = (tileNumberY - TilesAtZoom / 2);
-
-		double Zum1 = Zu;
-		Zu = Math.asin(1 - ((1 + Math.sin(Zum1)) * Math.pow(1 - FExct * Math.sin(Zum1), FExct))
-				/ (Math.exp((2 * yy) / -(TilesAtZoom / (2 * Math.PI))) * Math.pow(1 + FExct * Math.sin(Zum1), FExct)));
-		while (Math.abs(Zum1 - Zu) >= MerkElipsK) {
-			Zum1 = Zu;
-			Zu = Math.asin(1 - ((1 + Math.sin(Zum1)) * Math.pow(1 - FExct * Math.sin(Zum1), FExct))
-					/ (Math.exp((2 * yy) / -(TilesAtZoom / (2 * Math.PI))) * Math.pow(1 + FExct * Math.sin(Zum1), FExct)));
-		}
-
-		return Zu * 180 / Math.PI;
-	}
-
-
 	public static double getTileDistanceWidth(float zoom) {
 		LatLon ll = new LatLon(30, MapUtils.getLongitudeFromTile(zoom, 0));
 		LatLon ll2 = new LatLon(30, MapUtils.getLongitudeFromTile(zoom, 1));
@@ -260,30 +208,10 @@ public class MapUtils {
 		}
 	}
 
-
-	public static float calcDiffPixelX(float rotateSin, float rotateCos, float dTileX, float dTileY, float tileSize) {
-		return (rotateCos * dTileX - rotateSin * dTileY) * tileSize;
-	}
-
-	public static float calcDiffPixelY(float rotateSin, float rotateCos, float dTileX, float dTileY, float tileSize) {
-		return (rotateSin * dTileX + rotateCos * dTileY) * tileSize;
-	}
-
 	public static double getLatitudeFromTile(float zoom, double y) {
 		int sign = y < 0 ? -1 : 1;
 		return Math.atan(sign * Math.sinh(Math.PI * (1 - 2 * y / getPowZoom(zoom)))) * 180d / Math.PI;
 	}
-
-
-	public static int getPixelShiftX(float zoom, double long1, double long2, double tileSize) {
-		return (int) ((getTileNumberX(zoom, long1) - getTileNumberX(zoom, long2)) * tileSize);
-	}
-
-
-	public static int getPixelShiftY(float zoom, double lat1, double lat2, double tileSize) {
-		return (int) ((getTileNumberY(zoom, lat1) - getTileNumberY(zoom, lat2)) * tileSize);
-	}
-
 
 	public static void sortListOfMapObject(List<? extends MapObject> list, final double lat, final double lon) {
 		Collections.sort(list, new Comparator<MapObject>() {
@@ -299,32 +227,7 @@ public class MapUtils {
 		return "geo:" + ((float) latitude) + "," + ((float) longitude) + "?z=" + zoom;
 	}
 
-	// Examples
-//	System.out.println(buildShortOsmUrl(51.51829d, 0.07347d, 16)); // https://osm.org/go/0EEQsyfu
-//	System.out.println(buildShortOsmUrl(52.30103d, 4.862927d, 18)); // https://osm.org/go/0E4_JiVhs
-//	System.out.println(buildShortOsmUrl(40.59d, -115.213d, 9)); // https://osm.org/go/TelHTB--
-	public static String buildShortOsmUrl(double latitude, double longitude, int zoom) {
-		return BASE_SHORT_OSM_URL + createShortLinkString(latitude, longitude, zoom) + "?m";
-	}
-
-	private static String createShortLinkString(double latitude, double longitude, int zoom) {
-		long lat = (long) (((latitude + 90d)/180d)*(1L << 32));
-		long lon = (long) (((longitude + 180d)/360d)*(1L << 32));
-		long code = interleaveBits(lon, lat);
-		String str = "";
-		// add eight to the zoom level, which approximates an accuracy of one pixel in a tile.
-		for (int i = 0; i < Math.ceil((zoom + 8) / 3d); i++) {
-			str += intToBase64[(int) ((code >> (58 - 6 * i)) & 0x3f)];
-		}
-		// append characters onto the end of the string to represent
-		// partial zoom levels (characters themselves have a granularity of 3 zoom levels).
-		for (int j = 0; j < (zoom + 8) % 3; j++) {
-			str += '-';
-		}
-		return str;
-	}
-
-	public static GeoParsedPoint decodeShortLinkString(String s) {
+	static GeoParsedPoint decodeShortLinkString(String s) {
 		// convert old shortlink format to current one
 		s = s.replaceAll("@", "~");
 		int i = 0;
@@ -340,8 +243,6 @@ public class MapUtils {
 					digit = j;
 					break;
 				}
-			if (digit < 0)
-				break;
 			if (digit < 0)
 				break;
 			// distribute 6 bits into x and y
@@ -365,24 +266,8 @@ public class MapUtils {
 	}
 
 	/**
-	 * interleaves the bits of two 32-bit numbers. the result is known as a Morton code.
-	 */
-	private static long interleaveBits(long x, long y) {
-		long c = 0;
-		for (byte b = 31; b >= 0; b--) {
-			c = (c << 1) | ((x >> b) & 1);
-			c = (c << 1) | ((y >> b) & 1);
-		}
-		return c;
-	}
-
-	/**
 	 * Calculate rotation diff D, that R (rotate) + D = T (targetRotate)
 	 * D is between -180, 180
-	 *
-	 * @param rotate
-	 * @param targetRotate
-	 * @return
 	 */
 	public static float unifyRotationDiff(float rotate, float targetRotate) {
 		float d = targetRotate - rotate;
@@ -398,9 +283,6 @@ public class MapUtils {
 	/**
 	 * Calculate rotation diff D, that R (rotate) + D = T (targetRotate)
 	 * D is between -180, 180
-	 *
-	 * @param rotate
-	 * @return
 	 */
 	public static float unifyRotationTo360(float rotate) {
 		while (rotate < -180) {
@@ -414,7 +296,6 @@ public class MapUtils {
 
 	/**
 	 * @param diff align difference between 2 angles ]-PI, PI]
-	 * @return
 	 */
 	public static double alignAngleDifference(double diff) {
 		while (diff > Math.PI) {
@@ -424,13 +305,10 @@ public class MapUtils {
 			diff += 2 * Math.PI;
 		}
 		return diff;
-
 	}
 
 	/**
 	 * diff align difference between 2 angles [-180, 180]
-	 *
-	 * @return
 	 */
 	public static double degreesDiff(double a1, double a2) {
 		double diff = a1 - a2;
@@ -443,11 +321,10 @@ public class MapUtils {
 		return diff;
 	}
 
-
 	private static final double[] coefficientsY = new double[1024];
 	private static boolean initializeYArray = false;
 
-	public static double convert31YToMeters(int y1, int y2, int x) {
+	public static double convert31YToMeters(int y1, int y2) {
 		int power = 10;
 		int pw = 1 << power;
 		if (!initializeYArray) {
@@ -475,8 +352,7 @@ public class MapUtils {
 		} else {
 			h2 = coefficientsY[div2] + mod2 / (double) div * (coefficientsY[div2 + 1] - coefficientsY[div2]);
 		}
-		double res = h1 - h2;
-		return res;
+		return h1 - h2;
 	}
 
 	private static final double[] coefficientsX = new double[1024];
@@ -492,7 +368,6 @@ public class MapUtils {
 		// translate into meters 
 		return (x1 - x2) * coefficientsX[ind];
 	}
-
 
 	public static QuadPoint getProjectionPoint31(int px, int py, int st31x, int st31y, int end31x, int end31y) {
 		double projection = calculateProjection31TileMetric(st31x, st31y, end31x,
@@ -516,10 +391,9 @@ public class MapUtils {
 		return new QuadPoint(prx, pry);
 	}
 
-
 	public static double squareRootDist31(int x1, int y1, int x2, int y2) {
 		// translate into meters 
-		double dy = MapUtils.convert31YToMeters(y1, y2, x1);
+		double dy = MapUtils.convert31YToMeters(y1, y2);
 		double dx = MapUtils.convert31XToMeters(x1, x2, y1);
 		return Math.sqrt(dx * dx + dy * dy);
 	}
@@ -528,49 +402,21 @@ public class MapUtils {
 		return getDistance(MapUtils.get31LatitudeY(y1), MapUtils.get31LongitudeX(x1), MapUtils.get31LatitudeY(y2), MapUtils.get31LongitudeX(x2));
 	}
 
-	public static double squareDist31TileMetric(int x1, int y1, int x2, int y2) {
-		// translate into meters 
-		double dy = convert31YToMeters(y1, y2, x1);
-		double dx = convert31XToMeters(x1, x2, y1);
-		return dx * dx + dy * dy;
-	}
-
 	private static double calculateProjection31TileMetric(int xA, int yA, int xB, int yB, int xC, int yC) {
 		// Scalar multiplication between (AB, AC)
-		double multiple = MapUtils.convert31XToMeters(xB, xA, yA) * MapUtils.convert31XToMeters(xC, xA, yA) +
-				MapUtils.convert31YToMeters(yB, yA, xA) * MapUtils.convert31YToMeters(yC, yA, xA);
-		return multiple;
+		return MapUtils.convert31XToMeters(xB, xA, yA) * MapUtils.convert31XToMeters(xC, xA, yA) +
+				MapUtils.convert31YToMeters(yB, yA) * MapUtils.convert31YToMeters(yC, yA);
 	}
 
 	public static boolean rightSide(double lat, double lon,
-			double aLat, double aLon,
-			double bLat, double bLon) {
+		double aLat, double aLon,
+		double bLat, double bLon) {
 		double ax = aLon - lon;
 		double ay = aLat - lat;
 		double bx = bLon - lon;
 		double by = bLat - lat;
 		double sa = ax * by - bx * ay;
 		return sa < 0;
-	}
-
-
-	
-
-
-	public static long deinterleaveY(long coord) {
-		long x = 0;
-		for (byte b = 31; b >= 0; b--) {
-			x = (x << 1) | (1 & coord >> (b * 2));
-		}
-		return x;
-	}
-	
-	public static long deinterleaveX(long coord) {
-		long x = 0;
-		for (byte b = 31; b >= 0; b--) {
-			x = (x << 1) | (1 & coord >> (b * 2 + 1));
-		}
-		return x;
 	}
 
 	public static QuadRect calculateLatLonBbox(double latitude, double longitude, int radiusMeters) {
@@ -593,7 +439,6 @@ public class MapUtils {
 	}
 
 	public static float getInterpolatedY(float x1, float y1, float x2, float y2, float x) {
-
 		float a = y1 - y2;
 		float b = x2 - x1;
 
@@ -608,5 +453,3 @@ public class MapUtils {
 		}
 	}
 }
-
-

@@ -25,20 +25,15 @@ public class MapTextLayer extends OsmandMapLayer {
 	private static final int TEXT_LINES = 3;
 	private Paint paintTextIcon;
 	private OsmandMapTileView view;
-	private boolean alwaysVisible;
-	
-	
+//	private boolean alwaysVisible;
 	
 	public interface MapTextProvider<T> {
-		
 		LatLon getTextLocation(T o);
-		
 		int getTextShift(T o, RotatedTileBox rb);
-		
 		String getText(T o);
 	}
 	
-	public void putData(OsmandMapLayer ml, Collection<?> objects) {
+	void putData(OsmandMapLayer ml, Collection<?> objects) {
 		if(objects == null || objects.isEmpty()) {
 			textObjects.remove(ml); 
 		} else {
@@ -50,16 +45,11 @@ public class MapTextLayer extends OsmandMapLayer {
 		}
 	}
 	
-	private boolean isAlwaysVisible() {
-		return alwaysVisible;
-	}
-	
-	public void setAlwaysVisible(boolean alwaysVisible) {
-		this.alwaysVisible = alwaysVisible;
-	}
-	
+//	private boolean isAlwaysVisible() {
+//		return alwaysVisible;
+//	}
 	public boolean isVisible() {
-		return view.getSettings().SHOW_POI_LABEL.get() || isAlwaysVisible();
+		return view.getSettings().SHOW_POI_LABEL.get();// || isAlwaysVisible();
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -194,14 +184,11 @@ public class MapTextLayer extends OsmandMapLayer {
 	@Override
 	public void onDraw(Canvas canvas, RotatedTileBox tileBox, DrawSettings settings) {
 	}
-
 	@Override
 	public void destroyLayer() {
 	}
-
 	@Override
 	public boolean drawInScreenPixels() {
 		return true;
 	}
-
 }

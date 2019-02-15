@@ -19,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/list_content_padding"
+        android:paddingStart="@dimen/list_content_padding"
         android:minHeight="@dimen/list_item_height"
         android:background="?attr/expandable_list_item_background">
 
@@ -44,6 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/list_content_padding"
+            android:layout_marginStart="@dimen/list_content_padding"
             android:layout_weight="1"
             android:textColor="?android:textColorPrimary"
             android:textSize="@dimen/default_list_text_size"
@@ -56,6 +58,7 @@
             android:layout_width="46dp"
             android:layout_height="match_parent"
             android:layout_marginRight="4dp"
+            android:layout_marginEnd="4dp"
             android:layout_gravity="center_vertical"
             android:background="?attr/dashboard_button"
             android:focusable="false"
@@ -70,7 +73,8 @@
             android:layout_height="match_parent"
             android:scaleType="center"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="@dimen/list_content_padding"/>
+            android:layout_marginRight="@dimen/list_content_padding"
+            android:layout_marginEnd="@dimen/list_content_padding"/>
 
     </LinearLayout>
 

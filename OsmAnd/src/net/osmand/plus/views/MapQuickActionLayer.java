@@ -46,9 +46,7 @@ import static net.osmand.plus.views.ContextMenuLayer.VIBRATE_SHORT;
 /**
  * Created by okorsun on 23.12.16.
  */
-
 public class MapQuickActionLayer extends OsmandMapLayer implements QuickActionRegistry.QuickActionUpdatesListener, QuickAction.QuickActionSelectionListener {
-
     private final ContextMenuLayer contextMenuLayer;
     private final MeasurementToolLayer measurementToolLayer;
     private final MapMarkersLayer mapMarkersLayer;
@@ -79,7 +77,6 @@ public class MapQuickActionLayer extends OsmandMapLayer implements QuickActionRe
 		measurementToolLayer = mapActivity.getMapLayers().getMeasurementToolLayer();
         mapMarkersLayer = mapActivity.getMapLayers().getMapMarkersLayer();
     }
-
 
     @Override
     public void initLayer(OsmandMapTileView view) {
@@ -133,7 +130,7 @@ public class MapQuickActionLayer extends OsmandMapLayer implements QuickActionRe
     }
 
     private boolean showTutorialIfNeeded() {
-        if (isLayerOn && !app.accessibilityEnabled() && !settings.IS_QUICK_ACTION_TUTORIAL_SHOWN.get() && android.os.Build.VERSION.SDK_INT >= 14) {
+        if (isLayerOn && !app.accessibilityEnabled() && !settings.IS_QUICK_ACTION_TUTORIAL_SHOWN.get()) {
             TapTargetView.showFor(mapActivity,                 // `this` is an Activity
                     TapTarget.forView(quickActionButton, mapActivity.getString(R.string.quick_action_btn_tutorial_title), mapActivity.getString(R.string.quick_action_btn_tutorial_descr))
                             // All options below are optional
@@ -195,7 +192,6 @@ public class MapQuickActionLayer extends OsmandMapLayer implements QuickActionRe
 	}
 
     /**
-     * @param showWidget
      * @return true, if state was changed
      */
     private boolean setLayerState(boolean showWidget) {
@@ -394,15 +390,11 @@ public class MapQuickActionLayer extends OsmandMapLayer implements QuickActionRe
 
     @Override
     public void destroyLayer() {
-
     }
-
     @Override
     public boolean drawInScreenPixels() {
         return true;
     }
-
-
     @Override
     public void onActionsUpdated() {
         quickActionsWidget.setActions(quickActionRegistry.getFilteredQuickActions());
@@ -414,18 +406,12 @@ public class MapQuickActionLayer extends OsmandMapLayer implements QuickActionRe
         setLayerState(false);
     }
 
-    public PointF getMovableCenterPoint(RotatedTileBox tb) {
-        return new PointF(tb.getPixWidth() / 2, tb.getPixHeight() / 2);
-    }
-
-    public boolean isInMovingMarkerMode() {
+    boolean isInMovingMarkerMode() {
         return isLayerOn && inMovingMarkerMode;
     }
-
     public boolean isLayerOn() {
         return isLayerOn;
     }
-
     public boolean onBackPressed() {
         return setLayerState(false);
     }
@@ -483,12 +469,11 @@ public class MapQuickActionLayer extends OsmandMapLayer implements QuickActionRe
         }
 
         private int interpolate(int value, int divider, int boundsSize) {
-            int viewSize = divider;
             if (value <= divider && value > 0)
                 return value * value / divider;
             else {
-                int leftMargin = boundsSize - value - viewSize;
-                if (leftMargin <= divider && value < boundsSize - viewSize)
+                int leftMargin = boundsSize - value - divider;
+                if (leftMargin <= divider && value < boundsSize - divider)
                     return leftMargin - (leftMargin * leftMargin / divider) + value;
                 else
                     return value;

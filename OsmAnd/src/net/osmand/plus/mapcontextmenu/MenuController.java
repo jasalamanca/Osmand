@@ -76,12 +76,14 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class MenuController extends BaseMenuController implements CollapseExpandListener {
-
-	public static class MenuState {
-		public static final int HEADER_ONLY = 1;
-		public static final int HALF_SCREEN = 2;
-		public static final int FULL_SCREEN = 4;
+public abstract class MenuController
+		extends BaseMenuController
+		implements CollapseExpandListener
+{
+	static class MenuState {
+		static final int HEADER_ONLY = 1;
+		static final int HALF_SCREEN = 2;
+		static final int FULL_SCREEN = 4;
 	}
 
 	public enum MenuType {
@@ -146,7 +148,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		return builder.isTransliterateNames();
 	}
 
-	public void setMapContextMenu(MapContextMenu mapContextMenu) {
+	void setMapContextMenu(MapContextMenu mapContextMenu) {
 		this.mapContextMenu = mapContextMenu;
 		builder.setMapContextMenu(mapContextMenu);
 	}
@@ -236,7 +238,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		builder.addPlainMenuItem(iconId, buttonText, text, needLinks, isUrl, onClickListener);
 	}
 
-	public void clearPlainMenuItems() {
+	void clearPlainMenuItems() {
 		builder.clearPlainMenuItems();
 	}
 
@@ -277,7 +279,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		return MenuState.HEADER_ONLY | MenuState.HALF_SCREEN | MenuState.FULL_SCREEN;
 	}
 
-	public int getCurrentMenuState() {
+	int getCurrentMenuState() {
 		return currentMenuState;
 	}
 
@@ -285,7 +287,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		return menuType;
 	}
 
-	public boolean slideUp() {
+	boolean slideUp() {
 		int v = currentMenuState;
 		for (int i = 0; i < 2; i++) {
 			v = v << 1;
@@ -297,7 +299,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		return false;
 	}
 
-	public boolean slideDown() {
+	boolean slideDown() {
 		int v = currentMenuState;
 		for (int i = 0; i < 2; i++) {
 			v = v >> 1;
@@ -309,110 +311,78 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		return false;
 	}
 
-	public void setCurrentMenuState(int currentMenuState) {
-		this.currentMenuState = currentMenuState;
-	}
-
-	public TitleButtonController getLeftTitleButtonController() {
+    public TitleButtonController getLeftTitleButtonController() {
 		return leftTitleButtonController;
 	}
-
 	public TitleButtonController getRightTitleButtonController() {
 		return rightTitleButtonController;
 	}
-
-	public TitleButtonController getBottomTitleButtonController() {
+	TitleButtonController getBottomTitleButtonController() {
 		return bottomTitleButtonController;
 	}
-
-	public TitleButtonController getLeftDownloadButtonController() {
+	TitleButtonController getLeftDownloadButtonController() {
 		return leftDownloadButtonController;
 	}
-
-	public TitleButtonController getRightDownloadButtonController() {
+	TitleButtonController getRightDownloadButtonController() {
 		return rightDownloadButtonController;
 	}
-
-	public TitleProgressController getTitleProgressController() {
+	TitleProgressController getTitleProgressController() {
 		return titleProgressController;
 	}
-
-	public TopToolbarController getToolbarController() {
-		return toolbarController;
-	}
-
-	public boolean hasBackAction() {
+    boolean hasBackAction() {
 		return toolbarController != null;
 	}
-
 	public LatLon getLatLon() {
 		return latLon;
 	}
-
 	public boolean supportZoomIn() {
 		return true;
 	}
-
 	public boolean navigateButtonVisible() {
 		return true;
 	}
-
-	public boolean zoomButtonsVisible() {
+	boolean zoomButtonsVisible() {
 		return !isLandscapeLayout();
 	}
-
 	public boolean buttonsVisible() {
 		return true;
 	}
-
 	public boolean handleSingleTapOnMap() {
 		return false;
 	}
-
 	public boolean isClosable() {
 		return true;
 	}
-
 	public boolean needStreetName() {
 		return !displayDistanceDirection();
 	}
-
 	public boolean needTypeStr() {
 		return true;
 	}
-
 	public boolean displayStreetNameInTitle() {
 		return false;
 	}
-
 	public boolean displayDistanceDirection() {
 		return false;
 	}
-
 	public int getRightIconId() {
 		return 0;
 	}
-
 	public Drawable getRightIcon() {
 		return null;
 	}
-
 	public Drawable getSecondLineTypeIcon() {
 		return null;
 	}
-
 	public Drawable getSubtypeIcon() {
 		return null;
 	}
-
 	public boolean navigateInPedestrianMode() {
 		return false;
 	}
-
 	public int getFavActionIconId() {
 		return R.drawable.map_action_fav_dark;
 	}
-
 	public int getFavActionStringId() {
 		return R.string.shared_string_add;
 	}
@@ -430,11 +400,9 @@ public abstract class MenuController extends BaseMenuController implements Colla
 	public boolean isWaypointButtonEnabled() {
 		return true;
 	}
-
 	public String getTypeStr() {
 		return "";
 	}
-
 	public String getSubtypeStr() {
 		return "";
 	}
@@ -498,11 +466,9 @@ public abstract class MenuController extends BaseMenuController implements Colla
 	public String getCommonTypeStr() {
 		return "";
 	}
-
 	public String getNameStr() {
 		return pointDescription.getName();
 	}
-
 	public List<TransportStopRoute> getTransportStopRoutes() {
 		return null;
 	}
@@ -571,11 +537,10 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		}
 	}
 
-	public boolean hasCustomAddressLine() {
+	boolean hasCustomAddressLine() {
 		return builder.hasCustomAddressLine();
 	}
-
-	public void buildCustomAddressLine(LinearLayout ll) {
+	void buildCustomAddressLine(LinearLayout ll) {
 		builder.buildCustomAddressLine(ll);
 	}
 
@@ -583,8 +548,8 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		public String caption = "";
 		public int leftIconId = 0;
 		int rightIconId = 0;
-		public final boolean needRightText = false;
-		public final String rightTextCaption = "";
+		final boolean needRightText = false;
+		final String rightTextCaption = "";
 		public boolean visible = true;
 		final boolean needColorizeIcon = true;
 		public Drawable leftIcon;
@@ -592,7 +557,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		public boolean enabled = true;
 
 		@Nullable
-		public Drawable getLeftIcon() {
+		Drawable getLeftIcon() {
 			return getIconDrawable(true);
 		}
 
@@ -617,17 +582,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 			return null;
 		}
 
-		public void clearIcon(boolean left) {
-			if (left) {
-				leftIcon = null;
-				leftIconId = 0;
-			} else {
-				rightIcon = null;
-				rightIconId = 0;
-			}
-		}
-
-		public void updateStateListDrawableIcon(@DrawableRes int resId, boolean left) {
+        public void updateStateListDrawableIcon(@DrawableRes int resId, boolean left) {
 			boolean useStateList = enabled && Build.VERSION.SDK_INT >= 21;
 			if (left) {
 				leftIcon = useStateList ? getStateListDrawable(resId) : null;
@@ -664,8 +619,8 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		public int progress = 0;
 		public boolean indeterminate;
 		public boolean visible;
-		public boolean progressVisible;
-		public boolean buttonVisible;
+		boolean progressVisible;
+		boolean buttonVisible;
 
 		public void setIndexesDownloadMode() {
 			caption = getMapActivity().getString(R.string.downloading_list_indexes);
@@ -695,7 +650,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		}
 	}
 
-	public void onHide() {
+	void onHide() {
 		if (builder != null) {
 			builder.onHide();
 		}
@@ -712,8 +667,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 
 	public void onAcquireNewController(PointDescription pointDescription, Object object) {
 	}
-
-	public boolean isMapDownloaded() {
+	boolean isMapDownloaded() {
 		return downloaded;
 	}
 
@@ -724,7 +678,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 		}
 	}
 
-	public void buildMapDownloadButtonAndSizeInfo(final LatLon latLon) {
+	void buildMapDownloadButtonAndSizeInfo(final LatLon latLon) {
 		new AsyncTask<Void, Void, BinaryMapDataObject>() {
 
 			ResourceManager rm;
@@ -886,7 +840,7 @@ public abstract class MenuController extends BaseMenuController implements Colla
 			setTitleTextClrIds(R.color.color_white, R.color.color_white);
 		}
 
-		public MenuController getMenuController() {
+		MenuController getMenuController() {
 			return menuController;
 		}
 	}

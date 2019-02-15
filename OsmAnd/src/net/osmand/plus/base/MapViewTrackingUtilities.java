@@ -47,7 +47,6 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 	private boolean routePlanningMode;
 	private boolean showViewAngle = false;
 	private boolean isUserZoomed = false;
-	private String locationProvider;
 	private boolean showRouteFinishDialog = false;
 	private Location myLocation;
 	private Float heading;
@@ -100,7 +99,7 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 		this.mapView = mapView;
 		if(mapView != null) {
 			WindowManager wm = (WindowManager) app.getSystemService(Context.WINDOW_SERVICE);
-			int orientation = wm.getDefaultDisplay().getOrientation();
+			int orientation = wm.getDefaultDisplay().getRotation();
 			app.getLocationProvider().updateScreenOrientation(orientation);
 			mapView.setMapLocationListener(this);
 		}
@@ -109,13 +108,8 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 	public Location getMyLocation() {
 		return myLocation;
 	}
-
 	public Float getHeading() {
 		return heading;
-	}
-
-	public String getLocationProvider() {
-		return locationProvider;
 	}
 
 	@Override
@@ -143,17 +137,14 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 	public void setDashboard(DashboardOnMap dashboard) {
 		this.dashboard = dashboard;
 	}
-
 	public void setContextMenu(MapContextMenu contextMenu) {
 		this.contextMenu = contextMenu;
 	}
-
 	public boolean isMovingToMyLocation() {
 		return movingToMyLocation;
 	}
 
 	private void detectDrivingRegion(final LatLon latLon) {
-
 		new AsyncTask<LatLon, Void, BinaryMapDataObject>() {
 
 			@Override
@@ -187,7 +178,6 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 		myLocation = location;
 		showViewAngle = false;
 		if (location != null) {
-			locationProvider = location.getProvider();
 			if (settings.DRIVING_REGION_AUTOMATIC.get() && !drivingRegionUpdated && !app.isApplicationInitializing()) {
 				drivingRegionUpdated = true;
 				detectDrivingRegion(new LatLon(location.getLatitude(), location.getLongitude()));
@@ -259,15 +249,12 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 	private static boolean isSmallSpeedForDirectionOfMovement(Location location, float speedToDirectionOfMovement) {
 		return !location.hasSpeed() || location.getSpeed() < speedToDirectionOfMovement;
 	}
-
 	public static boolean isSmallSpeedForCompass(Location location) {
 		return !location.hasSpeed() || location.getSpeed() < 0.5;
 	}
-
 	public static boolean isSmallSpeedForAnimation(Location location) {
 		return !location.hasSpeed() || location.getSpeed() < 1.5;
 	}
-
 	public boolean isShowViewAngle() {
 		return showViewAngle;
 	}
@@ -295,15 +282,13 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 	}
 
 	private void registerUnregisterSensor(net.osmand.Location location, boolean smallSpeedForDirectionOfMovement) {
-
 		int currentMapRotation = settings.ROTATE_MAP.get();
 		boolean registerCompassListener = ((showViewAngle || contextMenu != null) && location != null)
 				|| (currentMapRotation == OsmandSettings.ROTATE_MAP_COMPASS && !routePlanningMode)
 				|| (currentMapRotation == OsmandSettings.ROTATE_MAP_BEARING && smallSpeedForDirectionOfMovement);
 		// show point view only if gps enabled
-        boolean sensorRegistered = false;
-        if(sensorRegistered != registerCompassListener) {
-			app.getLocationProvider().registerOrUnregisterCompassListener(registerCompassListener);
+		if(registerCompassListener) {
+			app.getLocationProvider().registerOrUnregisterCompassListener(true);
 		}
 	}
 
@@ -318,9 +303,8 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 		}
 		time /= settings.AUTO_ZOOM_MAP_SCALE.get().coefficient;
 		double distToSee = speed * time;
-		float zoomDelta = (float) (Math.log(visibleDist / distToSee) / Math.log(2.0f));
 		// check if 17, 18 is correct?
-		return zoomDelta;
+		return (float) (Math.log(visibleDist / distToSee) / Math.log(2.0f));
 	}
 
 	private Pair<Integer, Double> autozoom(Location location) {
@@ -440,20 +424,16 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 	@Override
 	public void newRouteIsCalculated(boolean newRoute, ValueHolder<Boolean> showToast) {
 	}
-
 	@Override
 	public void routeWasCancelled() {
 	}
-
 	@Override
 	public void routeWasFinished() {
 		showRouteFinishDialog = (mapView == null);
 	}
-
 	public boolean getShowRouteFinishDialog() {
 		return showRouteFinishDialog;
 	}
-
 	public void setShowRouteFinishDialog(boolean showRouteFinishDialog) {
 		this.showRouteFinishDialog = showRouteFinishDialog;
 	}

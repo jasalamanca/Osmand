@@ -1,5 +1,6 @@
 package net.osmand.aidl;
 
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,15 +10,12 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.ParcelFileDescriptor;
-import android.app.AlertDialog;
 import android.view.View;
 
 import net.osmand.IndexConstants;
 import net.osmand.aidl.favorite.AFavorite;
 import net.osmand.aidl.favorite.group.AFavoriteGroup;
 import net.osmand.aidl.gpx.ASelectedGpxFile;
-import net.osmand.aidl.gpx.StartGpxRecordingParams;
-import net.osmand.aidl.gpx.StopGpxRecordingParams;
 import net.osmand.aidl.maplayer.AMapLayer;
 import net.osmand.aidl.maplayer.point.AMapPoint;
 import net.osmand.aidl.mapmarker.AMapMarker;
@@ -1095,7 +1093,7 @@ public class OsmandAidlApi {
 		return true;
 	}
 
-	boolean startGpxRecording(StartGpxRecordingParams params) {
+	boolean startGpxRecording() {
 		final OsmandMonitoringPlugin plugin = OsmandPlugin.getEnabledPlugin(OsmandMonitoringPlugin.class);
 		if (plugin != null) {
 			plugin.startGPXMonitoring(null);
@@ -1105,7 +1103,7 @@ public class OsmandAidlApi {
 		return false;
 	}
 
-	boolean stopGpxRecording(StopGpxRecordingParams params) {
+	boolean stopGpxRecording() {
 		final OsmandMonitoringPlugin plugin = OsmandPlugin.getEnabledPlugin(OsmandMonitoringPlugin.class);
 		if (plugin != null) {
 			plugin.stopRecording();

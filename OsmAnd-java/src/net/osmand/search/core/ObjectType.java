@@ -21,14 +21,11 @@ public enum ObjectType {
 	SEARCH_API_REGION_FINISHED(false),
 	UNKNOWN_NAME_FILTER(false);
 
-	private final boolean hasLocation;
+//	private final boolean hasLocation;
 	ObjectType(boolean location) {
-		this.hasLocation = location;
+//		this.hasLocation = location;
 	}
-	public boolean hasLocation() {
-		return hasLocation;
-	}
-	
+
 	public static boolean isAddress(ObjectType t) {
 		return t == CITY || t == VILLAGE || t == POSTCODE || t == STREET || t == HOUSE || t == STREET_INTERSECTION;
 	}

@@ -145,10 +145,6 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
 			}
 		});
-		// Not perfect
-//		filter.setOnClickListener(new OnClickListener() {
-//			}
-//		});
 
         // ppenguin 2016-03-07: try to avoid full screen input in landscape mode (when softKB too large) => IME-flags necessary here too!
 		searchText.setImeOptions(EditorInfo.IME_ACTION_DONE | EditorInfo.IME_FLAG_NO_EXTRACT_UI | EditorInfo.IME_FLAG_NO_FULLSCREEN);

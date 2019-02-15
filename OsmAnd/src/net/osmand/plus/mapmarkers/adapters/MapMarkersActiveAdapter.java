@@ -3,7 +3,6 @@ package net.osmand.plus.mapmarkers.adapters;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MotionEventCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -28,7 +27,6 @@ import java.util.Locale;
 
 public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemViewHolder>
 		implements MapMarkersItemTouchHelperCallback.ItemTouchHelperAdapter {
-
 	private final MapActivity mapActivity;
 	private List<MapMarker> markers;
 	private MapMarkersActiveAdapterListener listener;
@@ -52,23 +50,18 @@ public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemV
 	public void setShowDirectionEnabled(boolean showDirectionEnabled) {
 		this.showDirectionEnabled = showDirectionEnabled;
 	}
-
 	public void setAdapterListener(MapMarkersActiveAdapterListener listener) {
 		this.listener = listener;
 	}
-
 	public void setLocation(LatLon location) {
 		this.location = location;
 	}
-
 	public void setHeading(Float heading) {
 		this.heading = heading;
 	}
-
 	public void setUseCenter(boolean useCenter) {
 		this.useCenter = useCenter;
 	}
-
 	public void setScreenOrientation(int screenOrientation) {
 		this.screenOrientation = screenOrientation;
 	}
@@ -103,7 +96,7 @@ public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemV
 			holder.mainLayout.setBackgroundColor(ContextCompat.getColor(mapActivity, night ? R.color.list_divider_dark : R.color.markers_top_bar_background));
 			holder.title.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_white));
 			holder.divider.setBackgroundColor(ContextCompat.getColor(mapActivity, R.color.map_markers_on_map_divider_color));
-			holder.optionsBtn.setBackgroundDrawable(mapActivity.getResources().getDrawable(R.drawable.marker_circle_background_on_map_with_inset));
+			holder.optionsBtn.setBackground(mapActivity.getResources().getDrawable(R.drawable.marker_circle_background_on_map_with_inset));
 			holder.optionsBtn.setImageDrawable(iconsCache.getIcon(R.drawable.ic_action_marker_passed, R.color.color_white));
 			holder.iconReorder.setImageDrawable(iconsCache.getIcon(R.drawable.ic_action_reorder, R.color.dashboard_subheader_text_dark));
 			holder.description.setTextColor(ContextCompat.getColor(mapActivity, R.color.map_markers_on_map_color));
@@ -117,7 +110,7 @@ public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemV
 			holder.mainLayout.setBackgroundColor(ContextCompat.getColor(mapActivity, night ? R.color.bg_color_dark : R.color.bg_color_light));
 			holder.title.setTextColor(ContextCompat.getColor(mapActivity, night ? R.color.color_white : R.color.color_black));
 			holder.divider.setBackgroundColor(ContextCompat.getColor(mapActivity, night ? R.color.actionbar_dark_color : R.color.dashboard_divider_light));
-			holder.optionsBtn.setBackgroundDrawable(mapActivity.getResources().getDrawable(night ? R.drawable.marker_circle_background_dark_with_inset : R.drawable.marker_circle_background_light_with_inset));
+			holder.optionsBtn.setBackground(mapActivity.getResources().getDrawable(night ? R.drawable.marker_circle_background_dark_with_inset : R.drawable.marker_circle_background_light_with_inset));
 			holder.optionsBtn.setImageDrawable(iconsCache.getThemedIcon(R.drawable.ic_action_marker_passed));
 			holder.iconReorder.setImageDrawable(iconsCache.getThemedIcon(R.drawable.ic_action_reorder));
 			holder.description.setTextColor(ContextCompat.getColor(mapActivity, night ? R.color.dash_search_icon_dark : R.color.icon_color));
@@ -138,7 +131,7 @@ public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemV
 		holder.iconReorder.setOnTouchListener(new View.OnTouchListener() {
 			@Override
 			public boolean onTouch(View view, MotionEvent event) {
-				if (MotionEventCompat.getActionMasked(event) == MotionEvent.ACTION_DOWN) {
+				if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
 					listener.onDragStarted(holder);
 				}
 				return false;
@@ -203,15 +196,9 @@ public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemV
 	public int getItemCount() {
 		return markers.size();
 	}
-
 	public MapMarker getItem(int position) {
 		return markers.get(position);
 	}
-
-	public List<MapMarker> getItems() {
-		return markers;
-	}
-
 	public void changeMarkers() {
 		markers = mapActivity.getMyApplication().getMapMarkersHelper().getMapMarkers();
 	}
@@ -264,20 +251,15 @@ public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemV
 	public long getItemId(int position) {
 		return getItem(position).hashCode();
 	}
-
 	@Override
 	public void onItemDismiss(RecyclerView.ViewHolder holder) {
 		listener.onDragOrSwipeEnded(holder);
 	}
 
 	public interface MapMarkersActiveAdapterListener {
-
 		void onItemClick(View view);
-
 		void onDragStarted(RecyclerView.ViewHolder holder);
-
 		void onDragOrSwipeEnded(RecyclerView.ViewHolder holder);
-
 		void onSwipeStarted();
 	}
 }

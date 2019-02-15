@@ -1,6 +1,5 @@
 package net.osmand.plus.resources;
 
-
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.database.sqlite.SQLiteException;
@@ -67,10 +66,10 @@ import java.util.concurrent.ConcurrentHashMap;
  *  can't be loaded fully into memory & clear them on request. 
  */
 public class ResourceManager {
+	private static final Log log = PlatformUtil.getLog(ResourceManager.class);
+
 	private static final String INDEXES_CACHE = "ind.cache";
 
-	private static final Log log = PlatformUtil.getLog(ResourceManager.class);
-	
 	protected static ResourceManager manager = null;
 
 	private final OsmandApplication context;
@@ -154,14 +153,12 @@ public class ResourceManager {
 		void setUseForRouting(boolean useForRouting) {
 			this.useForRouting = useForRouting;
 		}
-		
 		boolean isUseForRouting() {
 			return useForRouting;
 		}
 	}
 	
 	private final Map<String, BinaryMapReaderResource> fileReaders = new ConcurrentHashMap<>();
-	
 	private final Map<String, RegionAddressRepository> addressMap = new ConcurrentHashMap<>();
 	private final Map<String, AmenityIndexRepository> amenityRepositories = new ConcurrentHashMap<>();
 	private final Map<String, TransportIndexRepository> transportRepositories = new ConcurrentHashMap<>();
@@ -213,7 +210,6 @@ public class ResourceManager {
 	public java.text.DateFormat getDateFormat() {
 		return dateFormat;
 	}
-	
 	public OsmandApplication getContext() {
 		return context;
 	}
@@ -222,22 +218,21 @@ public class ResourceManager {
 
    	private GeoidAltitudeCorrection geoidAltitudeCorrection;
 
-	public List<String> reloadIndexesOnStart(AppInitializer progress, List<String> warnings){
+	public void reloadIndexesOnStart(AppInitializer progress, List<String> warnings){
 		close();
 		// check we have some assets to copy to sdcard
 		warnings.addAll(checkAssets(progress, false));
 		progress.notifyEvent(InitEvents.ASSETS_COPIED);
 		reloadIndexes(progress, warnings);
 		progress.notifyEvent(InitEvents.MAPS_INITIALIZED);
-		return warnings;
 	}
 
 	public List<String> reloadIndexes(IProgress progress, List<String> warnings) {
 		geoidAltitudeCorrection = new GeoidAltitudeCorrection(context.getAppPath(null));
 		// do it lazy
 		warnings.addAll(indexingMaps(progress));
-		warnings.addAll(indexVoiceFiles(progress));
-		warnings.addAll(indexFontFiles(progress));
+		warnings.addAll(indexVoiceFiles());
+		warnings.addAll(indexFontFiles());
 		warnings.addAll(OsmandPlugin.onIndexingFiles(progress));
 		warnings.addAll(indexAdditionalMaps(progress));
 		return warnings;
@@ -247,7 +242,7 @@ public class ResourceManager {
 		return context.getAppCustomization().onIndexingFiles(progress, indexFileNames);
 	}
 
-	public List<String> indexVoiceFiles(IProgress progress){
+	public List<String> indexVoiceFiles(){
 		File file = context.getAppPath(IndexConstants.VOICE_INDEX_DIR);
 		file.mkdirs();
 		List<String> warnings = new ArrayList<>();
@@ -270,7 +265,7 @@ public class ResourceManager {
 		return warnings;
 	}
 
-	public List<String> indexFontFiles(IProgress progress){
+	public List<String> indexFontFiles(){
 		File file = context.getAppPath(IndexConstants.FONT_INDEX_DIR);
 		file.mkdirs();
 		List<String> warnings = new ArrayList<>();
@@ -297,7 +292,7 @@ public class ResourceManager {
 					progress.startTask(context.getString(R.string.installing_new_resources), -1);
 					AssetManager assetManager = context.getAssets();
 					boolean isFirstInstall = context.getSettings().PREVIOUS_INSTALLED_VERSION.get().equals("");
-					unpackBundledAssets(assetManager, applicationDataDir, progress, isFirstInstall || forceUpdate);
+					unpackBundledAssets(assetManager, applicationDataDir, isFirstInstall || forceUpdate);
 					context.getSettings().PREVIOUS_INSTALLED_VERSION.set(fv);
 					copyRegionsBoundaries();
 					for (String internalStyle : context.getRendererRegistry().getInternalRenderers().keySet()) {
@@ -335,7 +330,7 @@ public class ResourceManager {
 	private final static String ASSET_COPY_MODE__overwriteOnlyIfExists = "overwriteOnlyIfExists";
 	private final static String ASSET_COPY_MODE__alwaysOverwriteOrCopy = "alwaysOverwriteOrCopy";
 	private final static String ASSET_COPY_MODE__copyOnlyIfDoesNotExist = "copyOnlyIfDoesNotExist";
-	private void unpackBundledAssets(AssetManager assetManager, File appDataDir, IProgress progress, boolean isFirstInstall) throws IOException, XmlPullParserException {
+	private void unpackBundledAssets(AssetManager assetManager, File appDataDir, boolean isFirstInstall) throws IOException, XmlPullParserException {
 		XmlPullParser xmlParser = XmlPullParserFactory.newInstance().newPullParser(); 
 		InputStream isBundledAssetsXml = assetManager.open("bundled_assets.xml");
 		xmlParser.setInput(isBundledAssetsXml, "UTF-8");
@@ -398,11 +393,11 @@ public class ResourceManager {
 		Algorithms.closeStream(is);
 	}
 
-	private List<File> collectFiles(File dir, String ext, List<File> files) {
+	private void collectFiles(File dir, String ext, List<File> files) {
 		if(dir.exists() && dir.canRead()) {
 			File[] lf = dir.listFiles();
 			if(lf == null || lf.length == 0) {
-				return files;
+				return ;
 			}
 			for (File f : lf) {
 				if (f.getName().endsWith(ext)) {
@@ -410,7 +405,6 @@ public class ResourceManager {
 				}
 			}
 		}
-		return files;
 	}
 
 	private void renameRoadsFiles(ArrayList<File> files, File roadsPath) {
@@ -490,7 +484,7 @@ public class ResourceManager {
 						changesManager.indexMainMap(f, dateCreated);
 					}
 					indexFileNames.put(f.getName(), dateFormat.format(dateCreated)); //$NON-NLS-1$
-					renderer.initializeNewResource(progress, f, mapReader);
+					renderer.initializeNewResource(f, mapReader);
 					BinaryMapReaderResource resource = new BinaryMapReaderResource(f, mapReader);
 					
 					fileReaders.put(f.getName(), resource);
@@ -727,7 +721,6 @@ public class ResourceManager {
 	public void interruptRendering(){
 		renderer.interruptLoadingMap();
 	}
-	
 	public MapRenderRepositories getRenderer() {
 		return renderer;
 	}
@@ -780,15 +773,12 @@ public class ResourceManager {
 		return readers.toArray(new BinaryMapIndexReader[readers.size()]);
 	}
 	
-
 	public Map<String, String> getIndexFileNames() {
 		return new LinkedHashMap<>(indexFileNames);
 	}
-
 	public boolean containsBasemap(){
 		return !basemapFileNames.isEmpty();
 	}
-
 	public boolean isAnyMapInstalled() {
 		return isMapsPresentInDirectory(null) || isMapsPresentInDirectory(IndexConstants.ROADS_INDEX_DIR);
 	}
@@ -804,7 +794,7 @@ public class ResourceManager {
 		return maps != null && maps.length > 0;
 	}
 
-	public Map<String, String> getBackupIndexes(Map<String, String> map) {
+	public void getBackupIndexes(Map<String, String> map) {
 		File file = context.getAppPath(IndexConstants.BACKUP_INDEX_DIR);
 		if (file != null && file.isDirectory()) {
 			File[] lf = file.listFiles();
@@ -816,7 +806,6 @@ public class ResourceManager {
 				}
 			}
 		}
-		return map;
 	}
 	
 	/// On low memory method ///

@@ -28,7 +28,6 @@ import net.osmand.util.MapUtils;
 import java.util.List;
 
 public class MapMarkersWidgetsFactory {
-
 	private static final int MIN_DIST_OK_VISIBLE = 40; // meters
 	private static final int MIN_DIST_2ND_ROW_SHOW = 150; // meters
 
@@ -145,7 +144,6 @@ public class MapMarkersWidgetsFactory {
 				int fZoom = map.getMapView().getZoom() < 15 ? 15 : map.getMapView().getZoom();
 				thread.startMoving(pointToNavigate.getLatitude(), pointToNavigate.getLongitude(), fZoom, true);
 			}
-			//MapMarkerDialogHelper.showMarkerOnMap(map, marker);
 		}
 	}
 
@@ -273,9 +271,7 @@ public class MapMarkersWidgetsFactory {
 		} else {
 			txt = "—";
 		}
-		if (txt != null) {
-			distText.setText(txt);
-		}
+		distText.setText(txt);
 		updateVisibility(okButton, !customLocation && loc != null && dist < MIN_DIST_OK_VISIBLE);
 
 		String descr;
@@ -311,7 +307,6 @@ public class MapMarkersWidgetsFactory {
 	}
 
 	public abstract static class DistanceToMapMarkerControl extends TextInfoWidget {
-
 		private final boolean firstMarker;
 		private final OsmandMapTileView view;
 		private final MapActivity map;
@@ -338,7 +333,6 @@ public class MapMarkersWidgetsFactory {
 		}
 
 		protected abstract void click(OsmandMapTileView view);
-
 		protected abstract LatLon getLatLon();
 
 		@Override

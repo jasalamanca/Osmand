@@ -16,8 +16,6 @@ import net.osmand.aidl.gpx.HideGpxParams;
 import net.osmand.aidl.gpx.ImportGpxParams;
 import net.osmand.aidl.gpx.RemoveGpxParams;
 import net.osmand.aidl.gpx.ShowGpxParams;
-import net.osmand.aidl.gpx.StartGpxRecordingParams;
-import net.osmand.aidl.gpx.StopGpxRecordingParams;
 import net.osmand.aidl.map.SetMapLocationParams;
 import net.osmand.aidl.maplayer.AddMapLayerParams;
 import net.osmand.aidl.maplayer.RemoveMapLayerParams;
@@ -292,18 +290,18 @@ public class OsmandAidlService extends Service {
 		}
 
 		@Override
-		public boolean startGpxRecording(StartGpxRecordingParams params) {
+		public boolean startGpxRecording() {
 			try {
-				return getApi().startGpxRecording(params);
+				return getApi().startGpxRecording();
 			} catch (Exception e) {
 				return false;
 			}
 		}
 
 		@Override
-		public boolean stopGpxRecording(StopGpxRecordingParams params) {
+		public boolean stopGpxRecording() {
 			try {
-				return getApi().stopGpxRecording(params);
+				return getApi().stopGpxRecording();
 			} catch (Exception e) {
 				return false;
 			}

@@ -84,8 +84,8 @@ interface IOsmAndAidlInterface {
     boolean removeFavorite(in RemoveFavoriteParams params);
     boolean updateFavorite(in UpdateFavoriteParams params);
 
-    boolean startGpxRecording(in StartGpxRecordingParams params);
-    boolean stopGpxRecording(in StopGpxRecordingParams params);
+    boolean startGpxRecording();
+    boolean stopGpxRecording();
 
     boolean navigate(in NavigateParams params);
     boolean navigateGpx(in NavigateGpxParams params);

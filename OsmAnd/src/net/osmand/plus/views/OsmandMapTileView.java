@@ -1,7 +1,6 @@
 package net.osmand.plus.views;
 
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
@@ -101,13 +100,9 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		boolean onTrackBallEvent(MotionEvent e);
 	}
 
-	interface OnLongClickListener {
-		boolean onLongPressEvent(PointF point);
-	}
-
-	interface OnClickListener {
-		boolean onPressEvent(PointF point);
-	}
+//	interface OnClickListener {
+//		boolean onPressEvent(PointF point);
+//	}
 
 	public interface OnDrawMapListener {
 		void onDrawOverMap();
@@ -116,31 +111,21 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	private static final Log LOG = PlatformUtil.getLog(OsmandMapTileView.class);
 
 	private RotatedTileBox currentViewport;
-
 	private float rotate; // accumulate
 
 	private int mapPosition;
 	private int mapPositionX;
-
 	private float mapRatioX;
 	private float mapRatioY;
-
 	private boolean showMapPosition = true;
 
 	private IMapLocationListener locationListener;
-
-	private OnLongClickListener onLongClickListener;
-
-	private OnClickListener onClickListener;
-
+//	private OnClickListener onClickListener;
 	private OnTrackBallListener trackBallDelegate;
-
 	private AccessibilityActionsProvider accessibilityActions;
 
 	private final List<OsmandMapLayer> layers = new ArrayList<>();
-
 	private BaseMapLayer mainLayer;
-
 	private final Map<OsmandMapLayer, Float> zOrders = new HashMap<>();
 
 	private OnDrawMapListener onDrawMapListener;
@@ -151,19 +136,13 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	private Handler baseHandler;
 
 	private AnimateDraggingMapThread animatedDraggingThread;
-
-	private Paint paintGrayFill;
-	private Paint paintBlackFill;
-	private Paint paintWhiteFill;
 	private Paint paintCenter;
-
 	private DisplayMetrics dm;
 	private MapRendererView mapRenderer;
 
 	private Bitmap bufferBitmap;
 	private RotatedTileBox bufferImgLoc;
 	private Bitmap bufferBitmapTmp;
-
 	private Paint paintImg;
 
 	private GestureDetector gestureDetector;
@@ -190,19 +169,19 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		application = (OsmandApplication) ctx.getApplicationContext();
 		settings = application.getSettings();
 
-		paintGrayFill = new Paint();
+		Paint paintGrayFill = new Paint();
 		paintGrayFill.setColor(Color.GRAY);
 		paintGrayFill.setStyle(Style.FILL);
 		// when map rotate
 		paintGrayFill.setAntiAlias(true);
 
-		paintBlackFill = new Paint();
+		Paint paintBlackFill = new Paint();
 		paintBlackFill.setColor(Color.BLACK);
 		paintBlackFill.setStyle(Style.FILL);
 		// when map rotate
 		paintBlackFill.setAntiAlias(true);
 
-		paintWhiteFill = new Paint();
+		Paint paintWhiteFill = new Paint();
 		paintWhiteFill.setColor(Color.WHITE);
 		paintWhiteFill.setStyle(Style.FILL);
 		// when map rotate
@@ -232,7 +211,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		currentViewport.setMapDensity(getSettingsMapDensity());
 
 		gestureDetector = new GestureDetector(ctx, new MapTileViewOnGestureListener());
-		multiTouchSupport = new MultiTouchSupport(ctx, new MapTileViewMultiTouchZoomListener());
+		multiTouchSupport = new MultiTouchSupport(new MapTileViewMultiTouchZoomListener());
 		doubleTapScaleDetector = new DoubleTapScaleDetector(this, new MapTileViewMultiTouchZoomListener());
 		twoFingersTapDetector = new TwoFingerTapDetector() {
 			@Override
@@ -258,15 +237,15 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		refreshMap(true);
 	}
 
-	public Boolean onKeyDown(int keyCode, KeyEvent event) {
+	Boolean onKeyDown(int keyCode, KeyEvent event) {
 		return application.accessibilityEnabled() ? false : null;
 	}
 
-	public boolean isLayerVisible(OsmandMapLayer layer) {
+	boolean isLayerVisible(OsmandMapLayer layer) {
 		return layers.contains(layer);
 	}
 
-	public float getZorder(OsmandMapLayer layer) {
+	float getZorder(OsmandMapLayer layer) {
 		Float z = zOrders.get(layer);
 		if (z == null) {
 			return 10;
@@ -296,7 +275,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		return layers;
 	}
 
-	@SuppressWarnings("unchecked")
 	public <T extends OsmandMapLayer> T getLayerByClass(Class<T> cl) {
 		for (OsmandMapLayer lr : layers) {
 			if (cl.isInstance(lr)) {
@@ -314,28 +292,23 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	public LatLon getFirstTouchPointLatLon() {
 		return firstTouchPointLatLon;
 	}
-
 	public LatLon getSecondTouchPointLatLon() {
 		return secondTouchPointLatLon;
 	}
-
-	public boolean isMultiTouch() {
+	boolean isMultiTouch() {
 		return multiTouch;
 	}
-
-	public long getMultiTouchStartTime() {
+	long getMultiTouchStartTime() {
 		return multiTouchStartTime;
 	}
-
-	public long getMultiTouchEndTime() {
+	long getMultiTouchEndTime() {
 		return multiTouchEndTime;
 	}
-
-	public boolean isWasZoomInMultiTouch() {
+	boolean isWasZoomInMultiTouch() {
 		return wasZoomInMultiTouch;
 	}
 
-	public boolean mapGestureAllowed(OsmandMapLayer.MapGestureType type) {
+	boolean mapGestureAllowed(OsmandMapLayer.MapGestureType type) {
 		for (OsmandMapLayer layer : layers) {
 			if (!layer.isMapGestureAllowed(type)) {
 				return false;
@@ -365,7 +338,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		}
 	}
 
-	public boolean isMapRotateEnabled() {
+	boolean isMapRotateEnabled() {
 		return getZoom() > LOWEST_ZOOM_TO_ROTATE;
 	}
 
@@ -381,11 +354,9 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	public boolean isShowMapPosition() {
 		return showMapPosition;
 	}
-
 	public void setShowMapPosition(boolean showMapPosition) {
 		this.showMapPosition = showMapPosition;
 	}
-
 	public float getRotate() {
 		return currentViewport.getRotate();
 	}
@@ -399,31 +370,24 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	public double getLatitude() {
 		return currentViewport.getLatitude();
 	}
-
 	public double getLongitude() {
 		return currentViewport.getLongitude();
 	}
-
 	public int getZoom() {
 		return currentViewport.getZoom();
 	}
-
 	public double getZoomFractionalPart() {
 		return currentViewport.getZoomFloatPart();
 	}
-
 	public double getSettingsMapDensity() {
 		return (getSettings().MAP_DENSITY.get()) * Math.max(1, getDensity());
 	}
-
 	public boolean isZooming() {
 		return currentViewport.isZoomAnimated();
 	}
-
 	public void setMapLocationListener(IMapLocationListener l) {
 		locationListener = l;
 	}
-
 	public void setOnDrawMapListener(OnDrawMapListener onDrawMapListener) {
 		this.onDrawMapListener = onDrawMapListener;
 	}
@@ -447,11 +411,9 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	public int getMapPosition() {
 		return mapPosition;
 	}
-
 	public void setMapPosition(int type) {
 		this.mapPosition = type;
 	}
-
 	public void setMapPositionX(int type) {
 		this.mapPositionX = type;
 	}
@@ -478,7 +440,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	public boolean hasCustomMapRatio() {
 		return mapRatioX != 0 && mapRatioY != 0;
 	}
-
 	public OsmandSettings getSettings() {
 		return settings;
 	}
@@ -650,21 +611,17 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	public boolean isMeasureFPS() {
 		return MEASURE_FPS;
 	}
-
 	public void setMeasureFPS(boolean measureFPS) {
 		MEASURE_FPS = measureFPS;
 	}
-
 	public float getFPS() {
 		return main.fps;
 	}
-
 	public float getSecondaryFPS() {
 		return additional.fps;
 	}
 
-	@SuppressLint("WrongCall")
-	public void drawOverMap(Canvas canvas, RotatedTileBox tileBox, DrawSettings drawSettings) {
+	void drawOverMap(Canvas canvas, RotatedTileBox tileBox, DrawSettings drawSettings) {
 		if (mapRenderer == null) {
 			fillCanvas(canvas, drawSettings);
 		}
@@ -773,10 +730,8 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 			Message msg = Message.obtain(handler, new Runnable() {
 				@Override
 				public void run() {
-					DrawSettings param = drawSettings;
 					handler.removeMessages(MAP_REFRESH_MESSAGE);
-
-					refreshMapInternal(param);
+					refreshMapInternal(drawSettings);
 				}
 			});
 			msg.what = MAP_REFRESH_MESSAGE;
@@ -798,7 +753,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	public net.osmand.data.RotatedTileBox getCurrentRotatedTileBox() {
 		return currentViewport;
 	}
-
 	public float getDensity() {
 		return currentViewport.getDensity();
 	}
@@ -949,7 +903,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		}
 	}
 
-	public boolean onGenericMotionEvent(MotionEvent event) {
+	boolean onGenericMotionEvent(MotionEvent event) {
 		if ((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0 &&
 				event.getAction() == MotionEvent.ACTION_SCROLL &&
 				event.getAxisValue(MotionEvent.AXIS_VSCROLL) != 0) {
@@ -999,12 +953,11 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	public void setMapRender(MapRendererView mapRenderer) {
 		this.mapRenderer = mapRenderer;
 	}
-
 	public MapRendererView getMapRenderer() {
 		return mapRenderer;
 	}
 
-	public Boolean onTrackballEvent(MotionEvent event) {
+	Boolean onTrackballEvent(MotionEvent event) {
 		if (trackBallDelegate != null) {
 			return trackBallDelegate.onTrackBallEvent(event);
 		}
@@ -1015,18 +968,9 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		this.trackBallDelegate = trackBallDelegate;
 	}
 
-	public void setOnLongClickListener(OnLongClickListener l) {
-		this.onLongClickListener = l;
-	}
-
-	public void setOnClickListener(OnClickListener l) {
-		this.onClickListener = l;
-	}
-
 	public void setAccessibilityActions(AccessibilityActionsProvider actions) {
 		accessibilityActions = actions;
 	}
-
 	public AnimateDraggingMapThread getAnimatedDraggingThread() {
 		return animatedDraggingThread;
 	}
@@ -1259,9 +1203,9 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 					return;
 				}
 			}
-			if (onLongClickListener != null && onLongClickListener.onLongPressEvent(point)) {
-				return;
-			}
+//			if (onLongClickListener != null && onLongClickListener.onLongPressEvent(point)) {
+//				return;
+//			}
 		}
 
 		@Override
@@ -1293,9 +1237,9 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 					return true;
 				}
 			}
-			if (onClickListener != null && onClickListener.onPressEvent(point)) {
-				return true;
-			}
+//			if (onClickListener != null && onClickListener.onPressEvent(point)) {
+//				return true;
+//			}
 			return false;
 		}
 	}
@@ -1303,7 +1247,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	public Resources getResources() {
 		return application.getResources();
 	}
-
 	public Context getContext() {
 		return activity;
 	}

@@ -8,16 +8,10 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
-import net.osmand.data.Amenity;
-import net.osmand.data.LatLon;
-import net.osmand.data.MapObject;
 import net.osmand.data.PointDescription;
-import net.osmand.data.Street;
 import net.osmand.plus.AppInitializer;
 import net.osmand.plus.AppInitializer.AppInitializeListener;
 import net.osmand.plus.AppInitializer.InitEvents;
-import net.osmand.plus.OsmAndFormatter;
-import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
@@ -35,7 +29,7 @@ public class GeoIntentActivity extends OsmandListActivity {
 		setContentView(R.layout.search_address_offline);
 		getSupportActionBar().setTitle(R.string.search_osm_offline);
 		
-		getMyApplication().checkApplicationIsBeingInitialized(this, new AppInitializeListener() {
+		getMyApplication().checkApplicationIsBeingInitialized(new AppInitializeListener() {
 			@Override
 			public void onProgress(AppInitializer init, InitEvents event) {
 			}
@@ -84,10 +78,6 @@ public class GeoIntentActivity extends OsmandListActivity {
 		 * geo:47.6,-122.3?z=11<br/>
 		 * geo:0,0?q=34.99,-106.61(Treasure)<br/>
 		 * geo:0,0?q=1600+Amphitheatre+Parkway%2C+CA<br/>
-		 * 
-		 * @param uri
-		 *            The intent uri
-		 * @return
 		 */
 		@Override
 		protected GeoParsedPoint doInBackground(Void... nothing) {

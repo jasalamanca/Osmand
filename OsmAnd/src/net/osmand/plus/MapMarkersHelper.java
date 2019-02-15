@@ -50,7 +50,6 @@ public class MapMarkersHelper {
 
 	public interface MapMarkerChangedListener {
 		void onMapMarkerChanged(MapMarker mapMarker);
-
 		void onMapMarkersChanged();
 	}
 
@@ -106,19 +105,15 @@ public class MapMarkersHelper {
 		public PointDescription getOriginalPointDescription() {
 			return pointDescription;
 		}
-
 		public String getOnlyName() {
 			return pointDescription == null ? "" : pointDescription.getName();
 		}
-
 		public void setName(String name) {
 			pointDescription.setName(name);
 		}
-
 		public double getLatitude() {
 			return point.getLatitude();
 		}
-
 		public double getLongitude() {
 			return point.getLongitude();
 		}
@@ -126,10 +121,6 @@ public class MapMarkersHelper {
 		@Override
 		public int getColor() {
 			return 0;
-		}
-
-		public boolean isVisible() {
-			return false;
 		}
 
 		@Override
@@ -175,16 +166,6 @@ public class MapMarkersHelper {
 		public static int getColorId(int colorIndex) {
 			return (colorIndex >= 0 && colorIndex < colorsIds.length) ? colorsIds[colorIndex] : colorsIds[0];
 		}
-
-		public static int getColorIndex(Context context, int color) {
-			int[] colors = getColors(context);
-			for (int i = 0; i < colors.length; i++) {
-				if (colors[i] == color) {
-					return i;
-				}
-			}
-			return -1;
-		}
 	}
 
 	@Nullable
@@ -193,7 +174,6 @@ public class MapMarkersHelper {
 	}
 
 	public static class MarkersSyncGroup {
-
 		public static final int FAVORITES_TYPE = 0;
 		public static final int GPX_TYPE = 1;
 
@@ -221,19 +201,15 @@ public class MapMarkersHelper {
 		public String getId() {
 			return id;
 		}
-
 		String getName() {
 			return name;
 		}
-
 		int getType() {
 			return type;
 		}
-
 		int getColor() {
 			return color;
 		}
-
 		void setColor(int color) {
 			this.color = color;
 		}
@@ -253,7 +229,6 @@ public class MapMarkersHelper {
 	public MarkersPlanRouteContext getPlanRouteContext() {
 		return planRouteContext;
 	}
-
 	public boolean isStartFromMyLocation() {
 		return startFromMyLocation;
 	}
@@ -445,12 +420,11 @@ public class MapMarkersHelper {
 	public boolean isGroupSynced(String id) {
 		return markersDbHelper.getGroup(id) != null;
 	}
-
-	public boolean isGroupDisabled(String id) {
+	boolean isGroupDisabled(String id) {
 		return markersDbHelper.isGroupDisabled(id);
 	}
 
-	public void syncAllGroupsAsync() {
+	void syncAllGroupsAsync() {
 		List<MarkersSyncGroup> groups = markersDbHelper.getAllGroups();
 		for (MarkersSyncGroup gr : groups) {
 			syncGroupAsync(gr);
@@ -461,7 +435,7 @@ public class MapMarkersHelper {
 		syncGroupAsync(group, true, null);
 	}
 
-	public void syncGroupAsync(@NonNull MarkersSyncGroup group, boolean enabled) {
+	void syncGroupAsync(@NonNull MarkersSyncGroup group, boolean enabled) {
 		syncGroupAsync(group, enabled, null);
 	}
 
@@ -875,14 +849,6 @@ public class MapMarkersHelper {
 		refresh();
 	}
 
-	public void removeMarkersHistory() {
-		cancelAddressRequests();
-		markersDbHelper.clearAllMarkersHistory();
-		mapMarkersHistory = new LinkedList<>();
-		refresh();
-		removeHistoryMarkersFromGroups();
-	}
-
 	public void addMarkersSyncGroup(MarkersSyncGroup group) {
 		if (group != null) {
 			if (markersDbHelper.getGroup(group.getId()) == null) {
@@ -1137,19 +1103,6 @@ public class MapMarkersHelper {
 		return fout.getAbsolutePath();
 	}
 
-	private void removeHistoryMarkersFromGroups() {
-		for (MapMarkersGroup markersGroup : mapMarkersGroups) {
-			List<MapMarker> activeMarkers = new ArrayList<>();
-			for (MapMarker marker : markersGroup.getMarkers()) {
-				if (!marker.history) {
-					activeMarkers.add(marker);
-				}
-			}
-			markersGroup.setMarkers(activeMarkers);
-			updateGroup(markersGroup);
-		}
-	}
-
 	private void removeActiveMarkersFromGroup(String groupId) {
 		MapMarkersGroup group = getMapMarkerGroupByKey(groupId);
 		if (group != null) {
@@ -1185,7 +1138,7 @@ public class MapMarkersHelper {
 		} else if (historyMarkersCount > 0) {
 			showHideHistoryButton = new ShowHideHistoryButton();
 			showHideHistoryButton.setShowHistory(false);
-			showHideHistoryButton.setMarkerGroup(mapMarkersGroup);
+//			showHideHistoryButton.setMarkerGroup(mapMarkersGroup);
 			mapMarkersGroup.setShowHideHistoryButton(showHideHistoryButton);
 		}
 	}
@@ -1236,7 +1189,7 @@ public class MapMarkersHelper {
 			} else {
 				group.setType(MarkersSyncGroup.FAVORITES_TYPE);
 			}
-			group.setColor(MapMarker.getColorId(marker.colorIndex));
+//			group.setColor(MapMarker.getColorId(marker.colorIndex));
 		}
 		group.setCreationDate(marker.creationDate);
 		addToGroupsList(group);
@@ -1298,7 +1251,7 @@ public class MapMarkersHelper {
 					} else {
 						group.setType(MarkersSyncGroup.FAVORITES_TYPE);
 					}
-					group.setColor(MapMarker.getColorId(marker.colorIndex));
+//					group.setColor(MapMarker.getColorId(marker.colorIndex));
 					group.setCreationDate(marker.creationDate);
 					groupsMap.put(groupName, group);
 				} else {
@@ -1380,37 +1333,30 @@ public class MapMarkersHelper {
 		private List<MapMarker> markers = new ArrayList<>();
 		private long creationDate;
 		private ShowHideHistoryButton showHideHistoryButton;
-		private int color;
+//		private int color;
 		private boolean disabled;
 
 		public String getName() {
 			return name;
 		}
-
 		void setName(String name) {
 			this.name = name;
 		}
-
 		String getGroupKey() {
 			return groupKey;
 		}
-
 		void setGroupKey(String groupKey) {
 			this.groupKey = groupKey;
 		}
-
 		public GroupHeader getGroupHeader() {
 			return header;
 		}
-
 		void setGroupHeader(GroupHeader header) {
 			this.header = header;
 		}
-
 		int getType() {
 			return type;
 		}
-
 		void setType(int type) {
 			this.type = type;
 		}
@@ -1438,39 +1384,27 @@ public class MapMarkersHelper {
 		public List<MapMarker> getMarkers() {
 			return markers;
 		}
-
 		void setMarkers(List<MapMarker> markers) {
 			this.markers = markers;
 		}
-
 		long getCreationDate() {
 			return creationDate;
 		}
-
 		void setCreationDate(long creationDate) {
 			this.creationDate = creationDate;
 		}
-
 		public ShowHideHistoryButton getShowHideHistoryButton() {
 			return showHideHistoryButton;
 		}
-
 		void setShowHideHistoryButton(ShowHideHistoryButton showHideHistoryButton) {
 			this.showHideHistoryButton = showHideHistoryButton;
 		}
-
-		public int getColor() {
-			return color;
-		}
-
-		void setColor(int color) {
-			this.color = color;
-		}
-
+//		void setColor(int color) {
+//			this.color = color;
+//		}
 		public boolean isDisabled() {
 			return disabled;
 		}
-
 		public void setDisabled(boolean disabled) {
 			this.disabled = disabled;
 		}
@@ -1478,23 +1412,17 @@ public class MapMarkersHelper {
 
 	public static class ShowHideHistoryButton {
 		private boolean showHistory;
-		private MapMarkersGroup group;
+//		private MapMarkersGroup group;
 
 		public boolean isShowHistory() {
 			return showHistory;
 		}
-
 		public void setShowHistory(boolean showHistory) {
 			this.showHistory = showHistory;
 		}
-
-		public MapMarkersGroup getMapMarkerGroup() {
-			return group;
-		}
-
-		void setMarkerGroup(MapMarkersGroup group) {
-			this.group = group;
-		}
+//		void setMarkerGroup(MapMarkersGroup group) {
+//			this.group = group;
+//		}
 	}
 
 	public static class GroupHeader {
@@ -1504,15 +1432,12 @@ public class MapMarkersHelper {
 		public int getIconRes() {
 			return iconRes;
 		}
-
 		void setIconRes(int iconRes) {
 			this.iconRes = iconRes;
 		}
-
 		public MapMarkersGroup getGroup() {
 			return group;
 		}
-
 		void setGroup(MapMarkersGroup group) {
 			this.group = group;
 		}

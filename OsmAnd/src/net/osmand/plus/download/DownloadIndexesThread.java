@@ -60,14 +60,10 @@ public class DownloadIndexesThread {
 	private Notification notification;
 	
 	public interface DownloadEvents {
-		
 		void newDownloadIndexes();
-		
 		void downloadInProgress();
-		
 		void downloadHasFinished();
 	}
-
 
 	public DownloadIndexesThread(OsmandApplication app) {
 		this.app = app;
@@ -138,7 +134,6 @@ public class DownloadIndexesThread {
 		}
 		
 	}
-	
 
 	@UiThread
 	private void downloadHasFinished() {
@@ -212,7 +207,7 @@ public class DownloadIndexesThread {
 		return false;
 	}
 
-	public int getCountedDownloads() {
+	int getCountedDownloads() {
 		int i = 0;
 		if(currentDownloadingItem != null && DownloadActivityType.isCountedInDownloads(currentDownloadingItem)) {
 			i++;
@@ -269,16 +264,14 @@ public class DownloadIndexesThread {
 		}
 	}
 
-
 	public IndexItem getCurrentDownloadingItem() {
 		return currentDownloadingItem;
 	}
-
 	public int getCurrentDownloadingItemProgress() {
 		return currentDownloadingItemProgress;
 	}
 
-	public BasicProgressAsyncTask<?, ?, ?, ?> getCurrentRunningTask() {
+	BasicProgressAsyncTask<?, ?, ?, ?> getCurrentRunningTask() {
 		for (int i = 0; i < currentRunningTask.size(); ) {
 			if (currentRunningTask.get(i).getStatus() == Status.FINISHED) {
 				currentRunningTask.remove(i);
@@ -292,7 +285,6 @@ public class DownloadIndexesThread {
 		return null;
 	}
 
-	@SuppressWarnings("deprecation")
 	public double getAvailableSpace() {
 		File dir = app.getAppPath("").getParentFile();
 		double asz = -1;
@@ -315,15 +307,12 @@ public class DownloadIndexesThread {
 		return false;
 	}
 
-	@SuppressWarnings("unchecked")
 	private <P> void execute(BasicProgressAsyncTask<?, P, ?, ?> task, P... indexItems) {
 		task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, indexItems);
 	}
 
-
-
-	private class ReloadIndexesTask extends BasicProgressAsyncTask<Void, Void, Void, DownloadResources> {
-
+	private class ReloadIndexesTask
+            extends BasicProgressAsyncTask<Void, Void, Void, DownloadResources> {
 		ReloadIndexesTask() {
 			super(app);
 		}
@@ -395,10 +384,10 @@ public class DownloadIndexesThread {
 		}
 	}
 
-	private class DownloadIndexesAsyncTask extends BasicProgressAsyncTask<IndexItem, IndexItem, Object, String> implements DownloadFileShowWarning {
-
+	private class DownloadIndexesAsyncTask
+			extends BasicProgressAsyncTask<IndexItem, IndexItem, Object, String>
+            implements DownloadFileShowWarning {
 		private final OsmandPreference<Integer> downloads;
-
 
 		DownloadIndexesAsyncTask() {
 			super(app);
@@ -468,68 +457,56 @@ public class DownloadIndexesThread {
 			downloadHasFinished();
 		}
 
-		
-
-
 		@Override
 		protected String doInBackground(IndexItem... filesToDownload) {
+			List<File> filesToReindex = new ArrayList<>();
+			boolean forceWifi = downloadFileHelper.isWifiConnected();
+			Set<IndexItem> currentDownloads = new HashSet<>();
+			StringBuilder warn = new StringBuilder();
 			try {
-				List<File> filesToReindex = new ArrayList<>();
-				boolean forceWifi = downloadFileHelper.isWifiConnected();
-				Set<IndexItem> currentDownloads = new HashSet<>();
-				StringBuilder warn = new StringBuilder();
-				try {
-					while (!indexItemDownloading.isEmpty()) {
-						IndexItem item = indexItemDownloading.poll();
-						currentDownloadingItem = item;
-						currentDownloadingItemProgress = 0;
-						if (currentDownloads.contains(item)) {
-							continue;
-						}
-						currentDownloads.add(item);
-//						boolean success = false;
-						if(!validateEnoughSpace(item)) {
-							break;
-						}
-						if(!validateNotExceedsFreeLimit(item)) {
-							break;
-						}
-						setTag(item);
-						boolean result = downloadFile(item, filesToReindex, forceWifi);
-//						success = result || success;
-						if (result) {
-							if (DownloadActivityType.isCountedInDownloads(item)) {
-								downloads.set(downloads.get() + 1);
-							}
-							File bf = item.getBackupFile(app);
-							if (bf.exists()) {
-								Algorithms.removeAllFiles(bf);
-							}
-							// trackEvent(entry);
-							publishProgress(item);
-							String wn = reindexFiles(filesToReindex);
-							if(!Algorithms.isEmpty(wn)) {
-								warn.append(" ").append(wn);
-							}
-							filesToReindex.clear();
-							// slow down but let update all button work properly
-							indexes.updateFilesToUpdate();
-						}
-					}
-				} finally {
-					currentDownloadingItem = null;
+				while (!indexItemDownloading.isEmpty()) {
+					IndexItem item = indexItemDownloading.poll();
+					currentDownloadingItem = item;
 					currentDownloadingItemProgress = 0;
+					if (currentDownloads.contains(item)) {
+						continue;
+					}
+					currentDownloads.add(item);
+					if(!validateEnoughSpace(item)) {
+						break;
+					}
+					if(!validateNotExceedsFreeLimit(item)) {
+						break;
+					}
+					setTag(item);
+					boolean result = downloadFile(item, filesToReindex, forceWifi);
+					if (result) {
+						if (DownloadActivityType.isCountedInDownloads(item)) {
+							downloads.set(downloads.get() + 1);
+						}
+						File bf = item.getBackupFile(app);
+						if (bf.exists()) {
+							Algorithms.removeAllFiles(bf);
+						}
+						publishProgress(item);
+						String wn = reindexFiles(filesToReindex);
+						if(!Algorithms.isEmpty(wn)) {
+							warn.append(" ").append(wn);
+						}
+						filesToReindex.clear();
+						// slow down but let update all button work properly
+						indexes.updateFilesToUpdate();
+					}
 				}
-				//String warn = reindexFiles(filesToReindex);
-				if(warn.toString().trim().length() == 0) {
-					return null;
-				}
-				return warn.toString().trim();
-			} catch (InterruptedException e) {
-				LOG.info("Download Interrupted");
-				// do not dismiss dialog
+			} finally {
+				currentDownloadingItem = null;
+				currentDownloadingItemProgress = 0;
 			}
-			return null;
+			//String warn = reindexFiles(filesToReindex);
+			if(warn.toString().trim().length() == 0) {
+				return null;
+			}
+			return warn.toString().trim();
 		}
 
 		private boolean validateEnoughSpace(IndexItem item) {
@@ -537,8 +514,7 @@ public class DownloadIndexesThread {
 			double cs =(item.contentSize / (1 << 20));
 			// validate enough space
 			if (asz != -1 && cs > asz) {
-				String breakDownloadMessage = app.getString(R.string.download_files_not_enough_space,
-						cs, asz);
+				String breakDownloadMessage = app.getString(R.string.download_files_not_enough_space, cs, asz);
 				publishProgress(breakDownloadMessage);
 				return false;
 			}
@@ -559,7 +535,6 @@ public class DownloadIndexesThread {
 			return !exceed;
 		}
 
-
 		private String reindexFiles(List<File> filesToReindex) {
 			boolean vectorMapsToReindex = false;
 			// reindex vector maps all at one time
@@ -570,8 +545,8 @@ public class DownloadIndexesThread {
 				}
 			}
 			List<String> warnings = new ArrayList<>();
-			manager.indexVoiceFiles(this);
-			manager.indexFontFiles(this);
+			manager.indexVoiceFiles();
+			manager.indexFontFiles();
 			if (vectorMapsToReindex) {
 				warnings = manager.indexingMaps(this);
 			}
@@ -591,14 +566,14 @@ public class DownloadIndexesThread {
 			publishProgress(warning);
 		}
 
-		boolean downloadFile(IndexItem item, List<File> filesToReindex, boolean forceWifi)
-				throws InterruptedException {
+		boolean downloadFile(IndexItem item, List<File> filesToReindex, boolean forceWifi) {
 			downloadFileHelper.setInterruptDownloading(false);
 			IndexItem.DownloadEntry de = item.createDownloadEntry(app);
-			boolean res = false;
 			if(de == null) {
-				return res;
+				return false;
 			}
+
+			boolean res = false;
 			if (de.isAsset) {
 				try {
 					if (ctx != null) {

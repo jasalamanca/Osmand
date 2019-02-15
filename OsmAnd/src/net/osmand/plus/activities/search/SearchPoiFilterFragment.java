@@ -81,7 +81,6 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 		});
 	}
 
-	@Override
 	public ArrayAdapter<?> getAdapter() {
 		return poiFitlersAdapter;
 	}

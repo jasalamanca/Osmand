@@ -1,6 +1,7 @@
 package net.osmand.plus.activities.actions;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
@@ -8,8 +9,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
-import android.os.Bundle;
-import android.app.AlertDialog;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,7 +72,6 @@ public class StartGPSStatus extends OsmAndAction {
 		super(mapActivity);
 	}
 	
-	@Override
 	public void run() {
 		String appName = getSettings().GPS_STATUS_APP.get();
 		GpsStatusApps[] values = GpsStatusApps.values();
@@ -96,13 +94,7 @@ public class StartGPSStatus extends OsmAndAction {
 	}
 	
 	@Override
-	public Dialog createDialog(Activity activity, Bundle args) {
-//		GpsStatusApps[] values = GpsStatusApps.values();
-//		String[] res = new String[values.length];
-//		int i = 0;
-//		for(GpsStatusApps g : values) {
-//			res[i++] = g.stringRes;
-//		}
+	public Dialog createDialog(Activity activity) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(mapActivity);
 		builder.setTitle(R.string.gps_status);
 		LinearLayout ll = new LinearLayout(activity);

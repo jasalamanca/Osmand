@@ -2,7 +2,6 @@ package net.osmand.plus.mapcontextmenu;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -606,8 +605,6 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 		view.findViewById(R.id.context_menu_bottom_view).setBackgroundColor(getResources()
 				.getColor(nightMode ? R.color.ctx_menu_bottom_view_bg_dark : R.color.ctx_menu_bottom_view_bg_light));
 
-		//getMapActivity().getMapLayers().getMapControlsLayer().setControlsClickable(false);
-
 		containerLayoutListener = new OnLayoutChangeListener() {
 			@Override
 			public void onLayoutChange(View view, int left, int top, int right, int bottom,
@@ -718,7 +715,7 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 			button.setBackground(getMapActivity().getResources().getDrawable(night ? bgDarkId : bgLightId,
 					getMapActivity().getTheme()));
 		} else {
-			button.setBackgroundDrawable(getMapActivity().getResources().getDrawable(night ? bgDarkId : bgLightId));
+			button.setBackground(getMapActivity().getResources().getDrawable(night ? bgDarkId : bgLightId));
 		}
 	}
 
@@ -726,10 +723,6 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 		View container = (View) parent;
 		screenHeight = container.getHeight() + AndroidUtils.getStatusBarHeight(getActivity());
 		viewHeight = screenHeight - AndroidUtils.getStatusBarHeight(getMapActivity());
-	}
-
-	public void openMenuFullScreen() {
-		changeMenuState(getMenuStatePosY(MenuState.FULL_SCREEN), false, false);
 	}
 
 	private void openMenuHeaderOnly() {
@@ -1205,7 +1198,6 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 		}
 	}
 
-	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 	private void runLayoutListener() {
 		if (view != null) {
 			ViewTreeObserver vto = view.getViewTreeObserver();
@@ -1755,7 +1747,6 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 	public void newDownloadIndexes() {
 		updateOnDownload();
 	}
-
 	@Override
 	public void downloadInProgress() {
 		updateOnDownload();

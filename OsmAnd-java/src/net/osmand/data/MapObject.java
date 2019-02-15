@@ -1,6 +1,5 @@
 package net.osmand.data;
 
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -14,12 +13,7 @@ import net.osmand.OsmAndCollator;
 import net.osmand.util.Algorithms;
 import net.sf.junidecode.Junidecode;
 
-
 public abstract class MapObject implements Comparable<MapObject> {
-
-	public static final MapObjectComparator BY_NAME_COMPARATOR = new MapObjectComparator();
-
-
 	String name = null;
 	String enName = null;
 	/**
@@ -135,10 +129,6 @@ public abstract class MapObject implements Comparable<MapObject> {
 		}
 	}
 
-	public void copyNames(String otherName, String otherEnName, Map<String, String> otherNames) {
-		copyNames(otherName, otherEnName, otherNames, false);
-	}
-
 	private void copyNames(MapObject s, boolean copyName, boolean copyEnName, boolean overwrite) {
 		copyNames((copyName ? s.name : null), (copyEnName ? s.enName : null), s.names, overwrite);
 	}
@@ -146,7 +136,6 @@ public abstract class MapObject implements Comparable<MapObject> {
 	void copyNames(MapObject s) {
 		copyNames(s, true, true, false);
 	}
-
 	public String getName(String lang) {
 		return getName(lang, false);
 	}
@@ -201,11 +190,9 @@ public abstract class MapObject implements Comparable<MapObject> {
 	public int getFileOffset() {
 		return fileOffset;
 	}
-
 	public void setFileOffset(int fileOffset) {
 		this.fileOffset = fileOffset;
 	}
-
 	public String toStringEn() {
 		return getClass().getSimpleName() + ":" + getEnName(true);
 	}
@@ -233,23 +220,17 @@ public abstract class MapObject implements Comparable<MapObject> {
 			return false;
 		MapObject other = (MapObject) obj;
 		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}
+            return other.id == null;
+		} else
+		    return id.equals(other.id);
+    }
 
 	public static class MapObjectComparator implements Comparator<MapObject> {
 		private final String l;
 		final Collator collator = OsmAndCollator.primaryCollator();
 		private boolean transliterate;
 
-		MapObjectComparator() {
-			this.l = null;
-		}
-
-		public MapObjectComparator(String lang, boolean transliterate) {
+        public MapObjectComparator(String lang, boolean transliterate) {
 			this.l = lang;
 			this.transliterate = transliterate;
 		}
@@ -264,24 +245,12 @@ public abstract class MapObject implements Comparable<MapObject> {
 				return collator.compare(o1.getName(l, transliterate), o2.getName(l, transliterate));
 			}
 		}
-
-		public boolean areEqual(MapObject o1, MapObject o2) {
-			if (o1 == null ^ o2 == null) {
-				return false;
-			} else if (o1 == o2) {
-				return true;
-			} else {
-				return collator.equals(o1.getName(l, transliterate), o2.getName(l, transliterate));
-			}
-		}
-	}
+    }
 	
 	public void setReferenceFile(Object referenceFile) {
 		this.referenceFile = referenceFile;
 	}
-	
 	public Object getReferenceFile() {
 		return referenceFile;
 	}
-
 }

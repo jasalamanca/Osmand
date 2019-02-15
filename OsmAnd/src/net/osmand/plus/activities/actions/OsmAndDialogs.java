@@ -1,47 +1,28 @@
 package net.osmand.plus.activities.actions;
 
+import android.app.Activity;
+import android.app.Dialog;
+
 import java.util.HashMap;
 import java.util.Map;
 
-import android.app.Activity;
-import android.app.Dialog;
-import android.os.Bundle;
-
 public class OsmAndDialogs {
-
 	private static final Map<Integer, OsmAndAction> dialogActions = new HashMap<>();
-	public static Dialog createDialog(int dialogID, Activity activity, Bundle args) {
+
+	public static Dialog createDialog(int dialogID, Activity activity) {
 		OsmAndAction action = dialogActions.get(dialogID);
 		if(action != null) {
-			return action.createDialog(activity, args);
+			return action.createDialog(activity);
 		}
 		return null;
 	}
-	
-	public static void prepareDialog(int dialogID, Activity activity, Bundle args, Dialog dlg) {
-		OsmAndAction action = dialogActions.get(dialogID);
-		if(action != null) {
-			action.prepareDialog(activity, args, dlg);
-		}
-	}
-	
-	
-	public static void registerDialogAction(OsmAndAction action) {
+
+
+	static void registerDialogAction(OsmAndAction action) {
 		if(action.getDialogID() != 0) {
 			dialogActions.put(action.getDialogID(), action);
 		}
 	}
-			
-	public static final int DIALOG_ADD_FAVORITE = 200;
-	public static final int DIALOG_REPLACE_FAVORITE = 201;
-	public static final int DIALOG_ADD_WAYPOINT = 202;
-	public static final int DIALOG_RELOAD_TITLE = 203;
-	public static final int DIALOG_SHARE_LOCATION = 204;
-	public static final int DIALOG_SAVE_DIRECTIONS = 206;
-	public static final int DIALOG_START_GPS = 207;
-	
-	
-	public static int getPluginDialogId(int pluginId, int dialogId) {
-		return (pluginId + 3) * 100 + dialogId;
-	}
+
+	static final int DIALOG_START_GPS = 207;
 }

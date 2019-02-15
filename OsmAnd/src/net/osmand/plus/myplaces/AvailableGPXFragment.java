@@ -306,14 +306,6 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 				}
 			});
 			listView.addHeaderView(currentGpxView);
-			/*
-			currentTrackView.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					openTrack(getActivity(), null);
-				}
-			});
-			*/
 		} else {
 			View headerView = inflater.inflate(R.layout.list_shadow_header, null, false);
 			listView.addHeaderView(headerView);
@@ -1126,9 +1118,9 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 				final CheckBox ch = v.findViewById(R.id.toggle_item);
 				ch.setVisibility(View.GONE);
 				if (isSelectedGroup(groupPosition)) {
-					setCategoryIcon(app, app.getIconsCache().getIcon(R.drawable.ic_map, R.color.osmand_orange), groupPosition, isExpanded, v, light);
+					setCategoryIcon(app.getIconsCache().getIcon(R.drawable.ic_map, R.color.osmand_orange), v);
 				} else {
-					setCategoryIcon(app, 0, groupPosition, isExpanded, v, light);
+					setCategoryIcon(app, 0, v, light);
 				}
 				v.findViewById(R.id.category_icon).setVisibility(View.VISIBLE);
 			}

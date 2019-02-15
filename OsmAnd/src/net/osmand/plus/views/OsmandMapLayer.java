@@ -40,7 +40,6 @@ import java.util.Map;
 import gnu.trove.list.array.TIntArrayList;
 
 public abstract class OsmandMapLayer {
-
 	protected List<LatLon> fullObjectsLatLon;
 	protected List<LatLon> smallObjectsLatLon;
 
@@ -53,34 +52,24 @@ public abstract class OsmandMapLayer {
 	public boolean isMapGestureAllowed(MapGestureType type) {
 		return true;
 	}
-
 	public abstract void initLayer(OsmandMapTileView view);
-
 	public abstract void onDraw(Canvas canvas, RotatedTileBox tileBox, DrawSettings settings);
-
 	public void onPrepareBufferImage(Canvas canvas, RotatedTileBox tileBox, DrawSettings settings) {
 	}
-
 	public abstract void destroyLayer();
-
 	public void onRetainNonConfigurationInstance(Map<String, Object> map) {
 	}
-
 	public void populateObjectContextMenu(LatLon latLon, Object o, ContextMenuAdapter adapter, MapActivity mapActivity) {
 	}
-
 	public boolean onSingleTap(PointF point, RotatedTileBox tileBox) {
 		return false;
 	}
-
 	public boolean onLongPressEvent(PointF point, RotatedTileBox tileBox) {
 		return false;
 	}
-
 	public boolean onTouchEvent(MotionEvent event, RotatedTileBox tileBox) {
 		return false;
 	}
-
 
 	protected <Params> void executeTaskInBackground(AsyncTask<Params, ?, ?> task, Params... params) {
 		task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, params);
@@ -114,10 +103,6 @@ public abstract class OsmandMapLayer {
 		private final boolean nightMode;
 		private final boolean updateVectorRendering;
 
-		public DrawSettings(boolean nightMode) {
-			this(nightMode, false);
-		}
-
 		public DrawSettings(boolean nightMode, boolean updateVectorRendering) {
 			this.nightMode = nightMode;
 			this.updateVectorRendering = updateVectorRendering;
@@ -126,17 +111,14 @@ public abstract class OsmandMapLayer {
 		public boolean isUpdateVectorRendering() {
 			return updateVectorRendering;
 		}
-
 		public boolean isNightMode() {
 			return nightMode;
 		}
 	}
 
-
 	boolean isIn(int x, int y, int lx, int ty, int rx, int by) {
 		return x >= lx && x <= rx && y >= ty && y <= by;
 	}
-
 
 	protected int calculatePath(RotatedTileBox tb, TIntArrayList xs, TIntArrayList ys, Path path) {
 		boolean segmentStarted = false;
@@ -319,7 +301,6 @@ public abstract class OsmandMapLayer {
 		public boolean isInterrupted() {
 			return pendingTask != null;
 		}
-
 		protected abstract T calculateResult(RotatedTileBox tileBox);
 
 		class Task extends AsyncTask<Object, Object, T> {
@@ -329,10 +310,6 @@ public abstract class OsmandMapLayer {
 			Task(RotatedTileBox requestedBox, RotatedTileBox dataBox) {
 				this.requestedBox = requestedBox;
 				this.dataBox = dataBox;
-			}
-
-			public RotatedTileBox getOriginalBox() {
-				return requestedBox;
 			}
 
 			RotatedTileBox getDataBox() {
@@ -371,9 +348,7 @@ public abstract class OsmandMapLayer {
 		public void clearCache() {
 			results = null;
 			queriedBox = null;
-
 		}
-
 	}
 
 	protected static class RenderingLineAttributes {
@@ -404,7 +379,6 @@ public abstract class OsmandMapLayer {
 			shadowPaint = initPaint();
 		}
 
-
 		private Paint initPaint() {
 			Paint paint = new Paint();
 			paint.setStyle(Style.STROKE);
@@ -413,7 +387,6 @@ public abstract class OsmandMapLayer {
 			paint.setStrokeJoin(Join.ROUND);
 			return paint;
 		}
-
 
 		public boolean updatePaints(OsmandMapTileView view, DrawSettings settings, RotatedTileBox tileBox) {
 			OsmandApplication app = view.getApplication();
@@ -429,20 +402,19 @@ public abstract class OsmandMapLayer {
 					if (req.searchRenderingAttribute(renderingAttribute)) {
 						RenderingContext rc = new OsmandRenderer.RenderingContext(app);
 						rc.setDensityValue(tileBox.getDensity());
-						// cachedColor = req.getIntPropertyValue(rrs.PROPS.R_COLOR);
 						renderer.updatePaint(req, paint, 0, false, rc);
 						isPaint2 = renderer.updatePaint(req, paint2, 1, false, rc);
-						if (paint2.getStrokeWidth() == 0 && defaultWidth2 != 0) {
-							paint2.setStrokeWidth(defaultWidth2);
-						}
+//						if (paint2.getStrokeWidth() == 0 && defaultWidth2 != 0) {
+//							paint2.setStrokeWidth(defaultWidth2);
+//						}
 						isPaint3 = renderer.updatePaint(req, paint3, 2, false, rc);
 						if (paint3.getStrokeWidth() == 0 && defaultWidth3 != 0) {
 							paint3.setStrokeWidth(defaultWidth3);
 						}
 						isPaint_1 = renderer.updatePaint(req, paint_1, -1, false, rc);
-						if (paint_1.getStrokeWidth() == 0 && defaultWidth_1 != 0) {
-							paint_1.setStrokeWidth(defaultWidth_1);
-						}
+//						if (paint_1.getStrokeWidth() == 0 && defaultWidth_1 != 0) {
+//							paint_1.setStrokeWidth(defaultWidth_1);
+//						}
 						isShadowPaint = req.isSpecified(rrs.PROPS.R_SHADOW_RADIUS);
 						if (isShadowPaint) {
 							ColorFilter cf = new PorterDuffColorFilter(
@@ -463,7 +435,6 @@ public abstract class OsmandMapLayer {
 			}
 			return false;
 		}
-
 
 		private void updateDefaultColor(Paint paint, int defaultColor) {
 			if ((paint.getColor() == 0 || paint.getColor() == Color.BLACK) && defaultColor != 0) {

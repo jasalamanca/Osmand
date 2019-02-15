@@ -9,12 +9,7 @@ import net.osmand.osm.edit.Node;
 import java.util.Set;
 
 public interface OpenstreetmapUtil {
-	
 	EntityInfo getEntityInfo(long id);
-	
 	Node commitNodeImpl(OsmPoint.Action action, Node n, EntityInfo info, String comment, boolean closeChangeSet, @Nullable Set<String> changedTags);
-	
-	void closeChangeSet();
-	
 	Node loadNode(Amenity n);
 }

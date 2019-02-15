@@ -44,9 +44,6 @@ import net.osmand.plus.widgets.EmptyStateRecyclerView;
 import net.osmand.util.MapUtils;
 
 public class MapMarkersGroupsFragment extends Fragment implements OsmAndCompassListener, OsmAndLocationListener {
-
-	public static final String TAG = "MapMarkersGroupsFragment";
-
 	private MapMarkersGroupsAdapter adapter;
 	private Float heading;
 	private Location location;

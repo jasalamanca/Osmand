@@ -39,7 +39,6 @@ import static android.util.TypedValue.COMPLEX_UNIT_DIP;
  * Created by okorsun on 20.12.16.
  */
 public class QuickActionListFragment extends BaseOsmAndFragment implements QuickActionRegistry.QuickActionUpdatesListener{
-
     public static final String TAG = QuickActionListFragment.class.getSimpleName();
 
     private RecyclerView         quickActionRV;
@@ -392,7 +391,6 @@ public class QuickActionListFragment extends BaseOsmAndFragment implements Quick
 
             QuickActionItemVH(View itemView) {
                 super(itemView);
-//                AndroidUtils.setListItemBackground(itemView.getContext(), itemView, getMyApplication().getDaynightHelper().isNightMode());
                 title = itemView.findViewById(R.id.title);
                 subTitle = itemView.findViewById(R.id.subtitle);
                 icon = itemView.findViewById(R.id.imageView);

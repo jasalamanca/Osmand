@@ -1,6 +1,5 @@
 package net.osmand.plus.views;
 
-import net.osmand.plus.views.OsmandMapLayer.DrawSettings;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
@@ -8,13 +7,13 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 
+import net.osmand.plus.views.OsmandMapLayer.DrawSettings;
+
 public class OsmAndMapLayersView extends View {
-	
 	private OsmandMapTileView mapView;
 
 	public OsmAndMapLayersView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-
 	}
 
 	public OsmAndMapLayersView(Context context) {
@@ -75,10 +74,4 @@ public class OsmAndMapLayersView extends View {
 		DrawSettings drawSettings = new DrawSettings(nightMode, false);
 		mapView.drawOverMap(canvas, mapView.getCurrentRotatedTileBox().copy(), drawSettings);
 	}
-	
-
-	public OsmandMapTileView getMapView() {
-		return mapView;
-	}
-
 }

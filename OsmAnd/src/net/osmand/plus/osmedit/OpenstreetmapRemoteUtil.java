@@ -43,6 +43,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class OpenstreetmapRemoteUtil implements OpenstreetmapUtil {
+	private final static Log log = PlatformUtil.getLog(OpenstreetmapRemoteUtil.class);
 
 	private static final long NO_CHANGESET_ID = -1;
 
@@ -54,12 +55,9 @@ public class OpenstreetmapRemoteUtil implements OpenstreetmapUtil {
 	private long changeSetId = NO_CHANGESET_ID;
 	private long changeSetTimeStamp = NO_CHANGESET_ID;
 
-	private final static Log log = PlatformUtil.getLog(OpenstreetmapRemoteUtil.class);
-
 	private final OsmandSettings settings;
 
-
-	public OpenstreetmapRemoteUtil(OsmandApplication app) {
+	OpenstreetmapRemoteUtil(OsmandApplication app) {
 		this.ctx = app;
 		settings = ctx.getSettings();
 	}
@@ -90,13 +88,12 @@ public class OpenstreetmapRemoteUtil implements OpenstreetmapUtil {
 
 	private final static String URL_TO_UPLOAD_GPX = getSiteApi() + "api/0.6/gpx/create";
 
-	public String uploadGPXFile(String tagstring, String description, String visibility, File f) {
-		String url = URL_TO_UPLOAD_GPX;
+	String uploadGPXFile(String tagstring, String description, String visibility, File f) {
 		Map<String, String> additionalData = new LinkedHashMap<>();
 		additionalData.put("description", description);
 		additionalData.put("tags", tagstring);
 		additionalData.put("visibility", visibility);
-		return NetworkUtils.uploadFile(url, f, settings.USER_NAME.get() + ":" + settings.USER_PASSWORD.get(), "file",
+		return NetworkUtils.uploadFile(URL_TO_UPLOAD_GPX, f, settings.USER_NAME.get() + ":" + settings.USER_PASSWORD.get(), "file",
 				true, additionalData);
 	}
 
@@ -240,11 +237,7 @@ public class OpenstreetmapRemoteUtil implements OpenstreetmapUtil {
 
 		long now = System.currentTimeMillis();
 		// changeset is idle for more than 30 minutes (1 hour according specification)
-		if (now - changeSetTimeStamp > 30 * 60 * 1000) {
-			return true;
-		}
-
-		return false;
+		return now - changeSetTimeStamp > 30 * 60 * 1000;
 	}
 
 	@Override
@@ -305,7 +298,6 @@ public class OpenstreetmapRemoteUtil implements OpenstreetmapUtil {
 		}
 	}
 
-	@Override
 	public void closeChangeSet() {
 		if (changeSetId != NO_CHANGESET_ID) {
 			String response = sendRequest(
@@ -313,10 +305,9 @@ public class OpenstreetmapRemoteUtil implements OpenstreetmapUtil {
 			log.info("Response : " + response); //$NON-NLS-1$
 			changeSetId = NO_CHANGESET_ID;
 		}
-
 	}
 
-	public EntityInfo loadNode(Node n) {
+	EntityInfo loadNode(Node n) {
 		long nodeId = n.getId(); // >> 1;
 		try {
 			String res = sendRequest(
@@ -424,5 +415,4 @@ public class OpenstreetmapRemoteUtil implements OpenstreetmapUtil {
 			}
 		});
 	}
-
 }

@@ -96,7 +96,7 @@ public abstract class OsmandPlugin {
 	public void clearContextMenuRows() {
 	}
 
-	public static void initPlugins(OsmandApplication app) {
+	static void initPlugins(OsmandApplication app) {
 		OsmandSettings settings = app.getSettings();
 		Set<String> enabledPlugins = settings.getEnabledPlugins();
 
@@ -182,8 +182,8 @@ public abstract class OsmandPlugin {
 												int[] grantResults) {
 	}
 
-	public static final void onRequestPermissionsResult(int requestCode, String[] permissions,
-														int[] grantResults) {
+	public static void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                                  int[] grantResults) {
 		for (OsmandPlugin plugin : getAvailablePlugins()) {
 			plugin.handleRequestPermissionsResult(requestCode, permissions, grantResults);
 		}
@@ -192,41 +192,29 @@ public abstract class OsmandPlugin {
 	private boolean destinationReached() {
 		return true;
 	}
-
-
 	protected void registerLayerContextMenuActions(OsmandMapTileView mapView, ContextMenuAdapter adapter, MapActivity mapActivity) {
 	}
-
 	protected void registerMapContextMenuActions(MapActivity mapActivity, double latitude, double longitude, ContextMenuAdapter adapter, Object selectedObj) {
 	}
-
 	protected void registerOptionsMenuItems(MapActivity mapActivity, ContextMenuAdapter helper) {
 	}
-
 	protected DashFragmentData getCardFragment() {
 		return null;
 	}
-
 	protected void updateLocation(Location location) {
 	}
-
 	protected void addMyPlacesTab(FavoritesActivity favoritesActivity, List<TabItem> mTabs, Intent intent) {
 	}
-
 	protected void contextMenuFragment(Activity activity, Fragment fragment, Object info, ContextMenuAdapter adapter) {
 	}
-
 	protected void optionsMenuFragment(Activity activity, Fragment fragment, ContextMenuAdapter optionsMenuAdapter) {
 	}
-
 	private List<String> indexingFiles(IProgress progress) {
 		return null;
 	}
-
 	private boolean mapActivityKeyUp(MapActivity mapActivity, int keyCode) {
 		return false;
 	}
-
 	private void onMapActivityExternalResult(int requestCode, int resultCode, Intent data) {
 	}
 
@@ -355,7 +343,7 @@ public abstract class OsmandPlugin {
 		return b;
 	}
 
-	public static void createLayers(OsmandMapTileView mapView, MapActivity activity) {
+	public static void createLayers(MapActivity activity) {
 		for (OsmandPlugin plugin : getEnabledPlugins()) {
 			plugin.registerLayers(activity);
 		}
@@ -408,7 +396,7 @@ public abstract class OsmandPlugin {
 		return false;
 	}
 
-	public static void updateLocationPlugins(net.osmand.Location location) {
+	static void updateLocationPlugins(net.osmand.Location location) {
 		for (OsmandPlugin p : getEnabledPlugins()) {
 			p.updateLocation(location);
 		}

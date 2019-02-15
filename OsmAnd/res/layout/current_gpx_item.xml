@@ -26,6 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/list_content_padding"
+                android:layout_marginStart="@dimen/list_content_padding"
                 android:layout_marginTop="12dp"
                 android:focusable="false"
                 android:visibility="gone"/>
@@ -35,6 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/list_content_padding"
+                android:layout_marginStart="@dimen/list_content_padding"
                 android:layout_marginTop="12dp"
                 android:src="@drawable/monitoring_rec_big"
                 android:visibility="visible"/>
@@ -45,7 +47,9 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="12dp"
                 android:layout_marginLeft="@dimen/subHeaderMarginLeft"
+                android:layout_marginStart="@dimen/subHeaderMarginLeft"
                 android:layout_marginRight="@dimen/showAllButtonMarginRight"
+                android:layout_marginEnd="@dimen/showAllButtonMarginRight"
                 android:gravity="center_vertical"
                 android:orientation="vertical">
 
@@ -94,6 +98,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/gpx_small_icon_margin"
+                        android:layout_marginEnd="@dimen/gpx_small_icon_margin"
                         android:src="@drawable/ic_small_distance"/>
 
                     <TextView
@@ -101,6 +106,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/gpx_small_text_margin"
+                        android:layout_marginEnd="@dimen/gpx_small_text_margin"
                         android:textColor="?android:textColorSecondary"
                         android:textSize="@dimen/default_sub_text_size"/>
 
@@ -109,6 +115,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/gpx_small_icon_margin"
+                        android:layout_marginEnd="@dimen/gpx_small_icon_margin"
                         android:src="@drawable/ic_small_point"/>
 
                     <TextView
@@ -116,6 +123,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/gpx_small_text_margin"
+                        android:layout_marginEnd="@dimen/gpx_small_text_margin"
                         android:textColor="?android:textColorSecondary"
                         android:textSize="@dimen/default_sub_text_size"/>
 
@@ -154,6 +162,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginLeft="54dp"
+            android:layout_marginStart="54dp"
             android:background="?attr/dashboard_divider"/>
 
         <LinearLayout
@@ -165,11 +174,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:textColor="?attr/color_dialog_buttons"
                 android:background="?attr/selectableItemBackground"
                 android:drawableLeft="@drawable/ic_action_rec_stop"
+                android:drawableStart="@drawable/ic_action_rec_stop"
                 android:text="@string/shared_string_control_stop"/>
 
             <Button
@@ -180,6 +191,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:drawableLeft="@drawable/ic_action_gsave_dark"
+                android:drawableStart="@drawable/ic_action_gsave_dark"
                 android:textColor="?attr/color_dialog_buttons"
                 android:text="@string/shared_string_save"
                 android:visibility="gone"

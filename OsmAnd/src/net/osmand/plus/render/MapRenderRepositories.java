@@ -1,13 +1,11 @@
 package net.osmand.plus.render;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
 
-import net.osmand.IProgress;
 import net.osmand.NativeLibrary.NativeSearchResult;
 import net.osmand.PlatformUtil;
 import net.osmand.ResultMatcher;
@@ -48,7 +46,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -79,7 +76,7 @@ public class MapRenderRepositories {
 	private QuadRect cObjectsBox = new QuadRect();
 	private int cObjectsZoom = 0;
 	// cached objects in order to render rotation without reloading data from db
-	private List<BinaryMapDataObject> cObjects = new LinkedList<>();
+//	private List<BinaryMapDataObject> cObjects = new LinkedList<>();
 	private NativeSearchResult cNativeObjects = null;
 
 	// currently rendered box (not the same as already rendered)
@@ -112,9 +109,6 @@ public class MapRenderRepositories {
 		prefs = context.getSettings();
 	}
 
-	public Context getContext() {
-		return context;
-	}
 	public OsmandRenderer getRenderer() {
 		return renderer;
 	}
@@ -122,7 +116,7 @@ public class MapRenderRepositories {
 		return visibleRenderingContext;
 	}
 
-	public void initializeNewResource(final IProgress progress, File file, BinaryMapIndexReader reader) {
+	public void initializeNewResource(File file, BinaryMapIndexReader reader) {
 		if (files.containsKey(file.getName())) {
 			closeConnection(file.getName());
 		
@@ -204,10 +198,6 @@ public class MapRenderRepositories {
 			log.info("RENDER MAP: update due to tile box");
 		}
 		return upd;
-	}
-
-	public boolean isEmpty() {
-		return files.isEmpty();
 	}
 
 	public void interruptLoadingMap() {
@@ -306,16 +296,16 @@ public class MapRenderRepositories {
 							}
 							ids.add(r.getId());
 						}
-						int[] coordinantes = new int[r.getPointsLength() * 2];
+						int[] coordinates = new int[r.getPointsLength() * 2];
 						int[] roTypes = r.getTypes();
                         for (int type : roTypes) {
                             registerMissingType(nmi, r, type);
                         }
-						for(int k = 0; k < coordinantes.length/2; k++ ) {
-							coordinantes[2 * k] = r.getPoint31XTile(k);
-							coordinantes[2 * k + 1] = r.getPoint31YTile(k);
+						for(int k = 0; k < coordinates.length/2; k++ ) {
+							coordinates[2 * k] = r.getPoint31XTile(k);
+							coordinates[2 * k + 1] = r.getPoint31YTile(k);
 						}
-						BinaryMapDataObject mo = new BinaryMapDataObject( r.getId(), coordinantes, new int[0][],
+						BinaryMapDataObject mo = new BinaryMapDataObject( r.getId(), coordinates, new int[0][],
 								true, roTypes, null);
 						TIntObjectHashMap<String> names = r.getNames();
 						if(names != null) {
@@ -403,7 +393,7 @@ public class MapRenderRepositories {
 		if (!coastLines.isEmpty()) {
 			long ms = System.currentTimeMillis();
 			boolean coastlinesWereAdded = processCoastlines(coastLines, leftX, rightX, bottomY, topY, zoom,
-					basemapCoastLines.isEmpty(), true, tempResult);
+					basemapCoastLines.isEmpty(), tempResult);
 			addBasemapCoastlines = (!coastlinesWereAdded && !detailedLandData) || zoom <= zoomOnlyForBasemaps;
 			coastlineTime = "(coastline " + (System.currentTimeMillis() - ms) + " ms )";
 		} else {
@@ -412,7 +402,7 @@ public class MapRenderRepositories {
 		if (addBasemapCoastlines) {
 			long ms = System.currentTimeMillis();
 			boolean coastlinesWereAdded = processCoastlines(basemapCoastLines, leftX, rightX, bottomY, topY, zoom,
-					true, true, tempResult);
+					true, tempResult);
 			addBasemapCoastlines = !coastlinesWereAdded;
 			coastlineTime = "(coastline " + (System.currentTimeMillis() - ms) + " ms )";
 		}
@@ -428,7 +418,7 @@ public class MapRenderRepositories {
 			// message
 			MapIndex mapIndex;
 			if (!tempResult.isEmpty()) {
-				mapIndex = tempResult.get(0).getMapIndex();
+//				mapIndex = tempResult.get(0).getMapIndex();
 			} else {
 				mapIndex = new MapIndex();
 				mapIndex.initMapEncodingRule(0, 1, "natural", "coastline");
@@ -445,7 +435,7 @@ public class MapRenderRepositories {
 			log.info(String.format("Searching: %s ms  %s (%s results found)", System.currentTimeMillis() - now, coastlineTime, count[0])); //$NON-NLS-1$
 		}
 
-		cObjects = tempResult;
+//		cObjects = tempResult;
 		cObjectsBox = dataBox;
 		cObjectsZoom = zoom;
 
@@ -644,7 +634,7 @@ public class MapRenderRepositories {
 				renderedState = 0;
 				boolean loaded;
 				if(nativeLib != null) {
-					cObjects = new LinkedList<>();
+//					cObjects = new LinkedList<>();
 					loaded = loadVectorDataNative(dataBox, requestedBox.getZoom(), renderingReq, nativeLib);
 				} else {
 					cNativeObjects = null;
@@ -742,25 +732,21 @@ public class MapRenderRepositories {
 			renderer.generateNewBitmapNative(currentRenderingContext, nativeLib, cNativeObjects, bmp, renderingReq);
 			// Force to use rendering request in order to prevent Garbage Collector when it is used in C++
 			if(renderingReq != null){
-				log.info("Debug :" + renderingReq != null);				
+				log.info("Debug :" + renderingReq != null);
 			}
 			String renderingDebugInfo = currentRenderingContext.renderingDebugInfo;
 			if (checkWhetherInterrupted()) {
 				// revert if it was interrupted 
 				// (be smart a bit do not revert if road already drawn) 
-				if(currentRenderingContext.lastRenderedKey < OsmandRenderer.DEFAULT_LINE_MAX) {
-					reuse = this.bmp;
-					this.bmp = this.prevBmp;
-					this.bmpLocation = this.prevBmpLocation;
-					this.prevBmp = reuse;
-					this.prevBmpLocation = null;
-				}
-				currentRenderingContext = null;
-				return;
+                reuse = this.bmp;
+                this.bmp = this.prevBmp;
+                this.bmpLocation = this.prevBmpLocation;
+                this.prevBmp = reuse;
+                this.prevBmpLocation = null;
+                currentRenderingContext = null;
 			} else {
 				visibleRenderingContext = currentRenderingContext;
 				this.checkedRenderedState = renderedState;
-                RotatedTileBox checkedBox = this.bmpLocation;
 			}
 			currentRenderingContext = null;
 
@@ -792,7 +778,7 @@ public class MapRenderRepositories {
 			});
 		} catch (OutOfMemoryError e) {
 			log.error("Out of memory error", e); //$NON-NLS-1$
-			cObjects = new ArrayList<>();
+//			cObjects = new ArrayList<>();
 			cObjectsBox = new QuadRect();
 			handler.post(new Runnable() {
 				@Override
@@ -814,20 +800,16 @@ public class MapRenderRepositories {
 	}
 
 	public synchronized void clearCache() {
-		cObjects = new ArrayList<>();
+//		cObjects = new ArrayList<>();
 		cObjectsBox = new QuadRect();
-
 		requestedBox = prevBmpLocation = null;
-	}
-	
-	public Map<String, BinaryMapIndexReader> getMetaInfoFiles() {
-		return files;
 	}
 
 	/// MULTI POLYGONS (coastline)
 	// returns true if coastlines were added!
-	private boolean processCoastlines(List<BinaryMapDataObject> coastLines, int leftX, int rightX, 
-			int bottomY, int topY, int zoom, boolean doNotAddIfIncompleted, boolean addDebugIncompleted, List<BinaryMapDataObject> result) {
+	private boolean processCoastlines(List<BinaryMapDataObject> coastLines, int leftX, int rightX,
+									  int bottomY, int topY, int zoom, boolean doNotAddIfIncompleted,
+									  List<BinaryMapDataObject> result) {
 		List<TLongList> completedRings = new ArrayList<>();
 		List<TLongList> uncompletedRings = new ArrayList<>();
 		MapIndex mapIndex = null;
@@ -1021,7 +1003,6 @@ public class MapRenderRepositories {
 				int nextRingIndex = -1;
 				// BEGIN go clockwise around rectangle
 				for (int h = st; h < st + 4; h++) {
-
 					// BEGIN find closest nonvisited start (including current)
 					int mindiff = UNDEFINED_MIN_DIFF;
 					for (Integer ni : nonvisitedRings) {

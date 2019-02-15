@@ -1,6 +1,5 @@
 package net.osmand.plus.views;
 
-import android.content.Context;
 import android.graphics.PointF;
 import android.view.MotionEvent;
 
@@ -13,43 +12,32 @@ import java.lang.reflect.Method;
 
 
 class MultiTouchSupport {
-
 	private static final Log log = PlatformUtil.getLog(MultiTouchSupport.class);
 	
 	private static final int ACTION_MASK = 255;
-	public static final int ACTION_POINTER_ID_SHIFT = 8;
 	private static final int ACTION_POINTER_DOWN     = 5;
 	private static final int ACTION_POINTER_UP     = 6;
 	private float angleStarted;
 	private float angleRelative;
 
 	public interface MultiTouchZoomListener {
-
     		void onZoomStarted(PointF centerPoint);
-
     		void onZoomingOrRotating(double relativeToStart, float angle);
-
     		void onZoomOrRotationEnded(double relativeToStart, float angleRelative);
-
     		void onGestureInit(float x1, float y1, float x2, float y2);
-
 			void onActionPointerUp();
-
 			void onActionCancel();
 	}
 
 	private boolean multiTouchAPISupported = false;
 	private final MultiTouchZoomListener listener;
-	private final Context ctx;
 
 	private Method getPointerCount;
 	private Method getX;
 	private Method getY;
-	private Method getPointerId;
+//	private Method getPointerId;
 
-
-	public MultiTouchSupport(Context ctx, MultiTouchZoomListener listener){
-		this.ctx = ctx;
+	MultiTouchSupport(MultiTouchZoomListener listener){
 		this.listener = listener;
 		initMethods();
 	}
@@ -57,15 +45,14 @@ class MultiTouchSupport {
 	private boolean isMultiTouchSupported(){
 		return multiTouchAPISupported;
 	}
-
-	public boolean isInZoomMode(){
+	boolean isInZoomMode(){
 		return inZoomMode;
 	}
 
 	private void initMethods(){
 		try {
 			getPointerCount = MotionEvent.class.getMethod("getPointerCount"); //$NON-NLS-1$
-			getPointerId = MotionEvent.class.getMethod("getPointerId", Integer.TYPE); //$NON-NLS-1$
+//			getPointerId = MotionEvent.class.getMethod("getPointerId", Integer.TYPE); //$NON-NLS-1$
 			getX = MotionEvent.class.getMethod("getX", Integer.TYPE); //$NON-NLS-1$
 			getY = MotionEvent.class.getMethod("getY", Integer.TYPE); //$NON-NLS-1$	
 			multiTouchAPISupported = true;
@@ -98,10 +85,10 @@ class MultiTouchSupport {
 				}
 				return false;
 			}
-			Float x1 = (Float) getX.invoke(event, 0);
-			Float x2 = (Float) getX.invoke(event, 1);
-			Float y1 = (Float) getY.invoke(event, 0);
-			Float y2 = (Float) getY.invoke(event, 1);
+			float x1 = (Float) getX.invoke(event, 0);
+			float x2 = (Float) getX.invoke(event, 1);
+			float y1 = (Float) getY.invoke(event, 0);
+			float y2 = (Float) getY.invoke(event, 1);
 			float distance = (float) Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
 			float angle = 0;
 			boolean angleDefined = false;
@@ -143,7 +130,7 @@ class MultiTouchSupport {
 		return false;
 	}
 
-	public PointF getCenterPoint() {
+	PointF getCenterPoint() {
 		return centerPoint;
 	}
 }

@@ -21,7 +21,6 @@ import net.osmand.util.Algorithms;
 import net.osmand.util.MapUtils;
 
 public class MapVectorLayer extends BaseMapLayer {
-
 	private OsmandMapTileView view;
 	private ResourceManager resourceManager;
 	private Paint paintImg;
@@ -41,7 +40,6 @@ public class MapVectorLayer extends BaseMapLayer {
 	@Override
 	public void destroyLayer() {
 	}
-
 	@Override
 	public boolean drawInScreenPixels() {
 		return false;
@@ -56,14 +54,6 @@ public class MapVectorLayer extends BaseMapLayer {
 		paintImg.setAlpha(getAlpha());
 	}
 
-	public boolean isVectorDataVisible() {
-		return true;
-	}
-
-	public boolean isVisible() {
-		return visible;
-	}
-
 	public void setVisible(boolean visible) {
 		this.visible = visible;
 		if (!visible) {
@@ -75,15 +65,12 @@ public class MapVectorLayer extends BaseMapLayer {
 	public int getMaximumShownMapZoom() {
 		return 22;
 	}
-
 	@Override
 	public int getMinimumShownMapZoom() {
 		return 1;
 	}
-
 	@Override
 	public void onDraw(Canvas canvas, RotatedTileBox tilesRect, DrawSettings drawSettings) {
-
 	}
 
 	@Override
@@ -175,7 +162,6 @@ public class MapVectorLayer extends BaseMapLayer {
 	public boolean onLongPressEvent(PointF point, RotatedTileBox tileBox) {
 		return false;
 	}
-
 	@Override
 	public boolean onSingleTap(PointF point, RotatedTileBox tileBox) {
 		return false;

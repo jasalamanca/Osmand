@@ -1,6 +1,5 @@
 package net.osmand.plus.views;
 
-import net.osmand.plus.views.OsmandMapLayer.DrawSettings;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
@@ -10,14 +9,14 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
 
+import net.osmand.plus.views.OsmandMapLayer.DrawSettings;
+
 public class OsmAndMapSurfaceView extends SurfaceView implements Callback {
-	
 	private OsmandMapTileView mapView;
 
     public OsmAndMapSurfaceView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		init();
-
 	}
 
 	public OsmAndMapSurfaceView(Context context) {
@@ -28,14 +27,11 @@ public class OsmAndMapSurfaceView extends SurfaceView implements Callback {
 	@Override
 	public void setOnClickListener(OnClickListener l) {
 		super.setOnClickListener(l);
-        OnClickListener onClickListener = l;
 	}
 	
-
 	private void init() {
 		getHolder().addCallback(this);	
 	}
-	
 
 	@Override
 	public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
@@ -55,8 +51,6 @@ public class OsmAndMapSurfaceView extends SurfaceView implements Callback {
 	public void surfaceDestroyed(SurfaceHolder holder) {
 	}
 	
-	
-
 	public void setMapView(OsmandMapTileView mapView) {
 		this.mapView = mapView;
 		mapView.setView(this);
@@ -111,10 +105,4 @@ public class OsmAndMapSurfaceView extends SurfaceView implements Callback {
 		DrawSettings drawSettings = new DrawSettings(nightMode, false);
 		mapView.drawOverMap(canvas, mapView.getCurrentRotatedTileBox().copy(), drawSettings);
 	}
-	
-
-	public OsmandMapTileView getMapView() {
-		return mapView;
-	}
-
 }

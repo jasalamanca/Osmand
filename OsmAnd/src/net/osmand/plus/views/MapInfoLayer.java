@@ -33,7 +33,8 @@ import net.osmand.plus.views.mapwidgets.RouteInfoWidgetsFactory.RulerWidget;
 import net.osmand.plus.views.mapwidgets.RouteInfoWidgetsFactory.TimeControlWidgetState;
 import net.osmand.plus.views.mapwidgets.TextInfoWidget;
 
-public class MapInfoLayer extends OsmandMapLayer {
+public class MapInfoLayer
+		extends OsmandMapLayer {
 	private final MapActivity map;
 	private final RouteLayer routeLayer;
 	private OsmandMapTileView view;
@@ -99,23 +100,18 @@ public class MapInfoLayer extends OsmandMapLayer {
 	public <T extends TextInfoWidget> T getSideWidget(Class<T> cl) {
 		return mapInfoControls.getSideWidget(cl);
 	}
-	
 	public void removeSideWidget(TextInfoWidget widget) {
 		mapInfoControls.removeSideWidgetInternal(widget);
 	}
-
 	public void addTopToolbarController(TopToolbarController controller) {
 		topToolbarView.addController(controller);
 	}
-
 	public void removeTopToolbarController(TopToolbarController controller) {
 		topToolbarView.removeController(controller);
 	}
-
 	public boolean hasTopToolbar() {
 		return topToolbarView.getTopController() != null;
 	}
-
 	public TopToolbarController getTopToolbarController(TopToolbarControllerType type) {
 		return topToolbarView == null ? null : topToolbarView.getController(type);
 	}
@@ -125,7 +121,7 @@ public class MapInfoLayer extends OsmandMapLayer {
 		MapInfoWidgetsFactory mic = new MapInfoWidgetsFactory();
 		MapMarkersWidgetsFactory mwf = map.getMapLayers().getMapMarkersLayer().getWidgetsFactory();
 		OsmandApplication app = view.getApplication();
-		lanesControl = ric.createLanesControl(map, view);
+		lanesControl = ric.createLanesControl(map);
 
 		streetNameView = new TopTextView(map.getMyApplication(), map);
 		updateStreetName(false, calculateTextState());
@@ -246,7 +242,7 @@ public class MapInfoLayer extends OsmandMapLayer {
 			}
 			updateStreetName(nightMode, ts);
 			updateTopToolbar(nightMode);
-			lanesControl.updateTextSize(nightMode, ts.textColor, ts.textShadowColor, ts.textBold, ts.textShadowRadius / 2);
+			lanesControl.updateTextSize(ts.textColor, ts.textShadowColor, ts.textBold, ts.textShadowRadius / 2);
 			rulerControl.updateTextSize(nightMode, ts.textColor, ts.textShadowColor,  (int) (2 * view.getDensity()));
 			this.expand.setBackgroundResource(ts.expand);
 			rightStack.invalidate();
@@ -318,16 +314,14 @@ public class MapInfoLayer extends OsmandMapLayer {
 		mapInfoControls.updateInfo(settings.getApplicationMode(), drawSettings, expanded);
 		streetNameView.updateInfo(drawSettings);
 		topToolbarView.updateInfo();
-		alarmControl.updateInfo(drawSettings);
-		rulerControl.updateInfo(tileBox, drawSettings);
-		lanesControl.updateInfo(drawSettings);
-		
+		alarmControl.updateInfo();
+		rulerControl.updateInfo(tileBox);
+		lanesControl.updateInfo();
 	}
 	
 	@Override
 	public void destroyLayer() {
 	}
-
 	@Override
 	public boolean drawInScreenPixels() {
 		return true;

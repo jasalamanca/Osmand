@@ -90,7 +90,6 @@ public class SearchHistoryFragment extends OsmAndListFragment implements SearchA
 		bld.show();
 	}
 	
-	@Override
 	public ArrayAdapter<?> getAdapter() {
 		return historyAdapter;
 	}

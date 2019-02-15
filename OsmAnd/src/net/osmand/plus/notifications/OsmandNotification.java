@@ -24,7 +24,7 @@ public abstract class OsmandNotification {
 	int icon;
 	private boolean top;
 
-	private final String groupName;
+//	private final String groupName;
 
 	public enum NotificationType {
 		NAVIGATION,
@@ -32,25 +32,19 @@ public abstract class OsmandNotification {
 		GPS
 	}
 
-	OsmandNotification(OsmandApplication app, String groupName) {
+	OsmandNotification(OsmandApplication app) {
 		this.app = app;
-		this.groupName = groupName;
+//		this.groupName = groupName;
 		init();
 	}
 
 	void init() {
 	}
 
-	public String getGroupName() {
-		return groupName;
-	}
-
-	public abstract NotificationType getType();
-
+    public abstract NotificationType getType();
 	public boolean isTop() {
 		return top;
 	}
-
 	public void setTop(boolean top) {
 		this.top = top;
 	}
@@ -65,11 +59,6 @@ public abstract class OsmandNotification {
 				.setOngoing(ongoing && !wearable)
 				.setContentIntent(contentPendingIntent)
 				.setDeleteIntent(NotificationDismissReceiver.createIntent(app, getType()));
-//        builder.setGroup(groupName).setGroupSummary(!wearable);
-
-//		if (color != 0) {
-//			builder.setColor(color);
-//		}
 		if (icon != 0) {
 			builder.setSmallIcon(icon);
 		}
@@ -78,20 +67,12 @@ public abstract class OsmandNotification {
 	}
 
 	public abstract Notification.Builder buildNotification(boolean wearable);
-
 	protected abstract int getOsmandNotificationId();
-
 	protected abstract int getOsmandWearableNotificationId();
-
 	protected abstract int getPriority();
-
-	public abstract boolean isActive();
-
 	protected abstract boolean isEnabled();
-
 	void setupNotification(Notification notification) {
 	}
-
 	public void onNotificationDismissed() {
 	}
 
@@ -149,10 +130,5 @@ public abstract class OsmandNotification {
 
 		notificationManager.cancel(getOsmandNotificationId());
 		notificationManager.cancel(getOsmandWearableNotificationId());
-	}
-
-	public void closeSystemDialogs(Context context) {
-		Intent it = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
-		context.sendBroadcast(it);
 	}
 }

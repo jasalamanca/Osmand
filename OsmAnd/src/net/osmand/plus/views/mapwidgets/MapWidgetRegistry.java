@@ -1,6 +1,5 @@
 package net.osmand.plus.views.mapwidgets;
 
-import android.content.Context;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
@@ -15,7 +14,6 @@ import net.osmand.plus.ApplicationMode;
 import net.osmand.plus.ContextMenuAdapter;
 import net.osmand.plus.ContextMenuItem;
 import net.osmand.plus.IconsCache;
-import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.OsmandSettings.OsmandPreference;
 import net.osmand.plus.R;
@@ -37,7 +35,6 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class MapWidgetRegistry {
-
 	private static final String COLLAPSED_PREFIX = "+";
 	private static final String HIDE_PREFIX = "-";
 	private static final String SHOW_PREFIX = "";
@@ -46,7 +43,6 @@ public class MapWidgetRegistry {
 	private final Set<MapWidgetRegInfo> rightWidgetSet = new TreeSet<>();
 	private final Map<ApplicationMode, Set<String>> visibleElementsFromSettings = new LinkedHashMap<>();
 	private final OsmandSettings settings;
-
 
 	public MapWidgetRegistry(OsmandSettings settings) {
 		this.settings = settings;
@@ -93,7 +89,6 @@ public class MapWidgetRegistry {
 		}
 		return false;
 	}
-
 
 	public void updateInfo(ApplicationMode mode, DrawSettings drawSettings, boolean expanded) {
 		update(mode, drawSettings, expanded, leftWidgetSet);
@@ -221,7 +216,7 @@ public class MapWidgetRegistry {
 		for (MapWidgetRegInfo m : mi) {
 			if (m.visibleModes.contains(mode)) {
 				set.add(m.key);
-			} else if (m.visibleCollapsible != null && m.visibleCollapsible.contains(mode)) {
+			} else if (m.visibleCollapsible.contains(mode)) {
 				set.add(COLLAPSED_PREFIX + m.key);
 			} else {
 				set.add(HIDE_PREFIX + m.key);
@@ -302,13 +297,12 @@ public class MapWidgetRegistry {
 		ApplicationMode appMode = settings.getApplicationMode();
 		resetDefault(appMode, leftWidgetSet);
 		resetDefault(appMode, rightWidgetSet);
-		resetDefaultAppearance(appMode);
+		resetDefaultAppearance();
 		this.visibleElementsFromSettings.put(appMode, null);
 		settings.MAP_INFO_CONTROLS.set(SHOW_PREFIX);
 	}
 
-	private void resetDefaultAppearance(ApplicationMode appMode) {
-//		settings.SHOW_RULER.resetToDefault();
+	private void resetDefaultAppearance() {
 		settings.TRANSPARENT_MAP_THEME.resetToDefault();
 		settings.SHOW_STREET_NAME.resetToDefault();
 		settings.CENTER_POSITION_ON_MAP.resetToDefault();
@@ -368,13 +362,8 @@ public class MapWidgetRegistry {
 				.setListener(new ApearanceItemClickListener(pref, map)).createItem());
 	}
 
-	public static boolean distChanged(int oldDist, int dist) {
-		return !(oldDist != 0 && oldDist - dist < 100 && Math.abs(((float) dist - oldDist) / oldDist) < 0.01);
-	}
-
-
 	private void addControls(MapActivity map, ContextMenuAdapter cm, ApplicationMode mode) {
-		addQuickActionControl(map, cm, mode);
+		addQuickActionControl(map, cm);
 		// Right panel
 		cm.addItem(new ContextMenuItem.ItemBuilder().setTitleId(R.string.map_widget_right, map)
 				.setCategory(true).setLayout(R.layout.list_group_title_with_switch).createItem());
@@ -389,23 +378,14 @@ public class MapWidgetRegistry {
 		addControlsAppearance(map, cm, mode);
 	}
 
-	public String getText(Context ctx, final ApplicationMode mode, final MapWidgetRegInfo r) {
-		if (r.getMessage() != null) {
-			return (r.visibleCollapsed(mode) ? " + " : "  ") + r.getMessage();
-		}
-		return (r.visibleCollapsed(mode) ? " + " : "  ") + ctx.getString(r.getMessageId());
-	}
-
 	public Set<MapWidgetRegInfo> getRightWidgetSet() {
 		return rightWidgetSet;
 	}
-
 	public Set<MapWidgetRegInfo> getLeftWidgetSet() {
 		return leftWidgetSet;
 	}
 
-	private void addQuickActionControl(final MapActivity mapActivity, final ContextMenuAdapter contextMenuAdapter, ApplicationMode mode) {
-
+	private void addQuickActionControl(final MapActivity mapActivity, final ContextMenuAdapter contextMenuAdapter) {
 		contextMenuAdapter.addItem(new ContextMenuItem.ItemBuilder().setTitleId(R.string.map_widget_right, mapActivity)
 				.setCategory(true).setLayout(R.layout.list_group_empty_title_with_switch).createItem());
 
@@ -587,7 +567,6 @@ public class MapWidgetRegistry {
 		}
 	}
 
-
 	public static class MapWidgetRegInfo implements Comparable<MapWidgetRegInfo> {
 		public final TextInfoWidget widget;
 		@DrawableRes
@@ -693,22 +672,11 @@ public class MapWidgetRegistry {
 		boolean visibleCollapsed(ApplicationMode mode) {
 			return visibleCollapsible.contains(mode);
 		}
-
 		boolean visible(ApplicationMode mode) {
 			return visibleModes.contains(mode);
 		}
 
-		public MapWidgetRegInfo required(ApplicationMode... modes) {
-			Collections.addAll(visibleModes, modes);
-			return this;
-		}
-
-
-		public void setStateChangeListener(Runnable stateChangeListener) {
-			this.stateChangeListener = stateChangeListener;
-		}
-
-		@Override
+        @Override
 		public int hashCode() {
 			if (getMessage() != null) {
 				return getMessage().hashCode();
@@ -789,29 +757,13 @@ public class MapWidgetRegistry {
 	}
 
 	public static abstract class WidgetState {
-
-		private final OsmandApplication ctx;
-
-		public OsmandApplication getCtx() {
-			return ctx;
-		}
-
-		public WidgetState(OsmandApplication ctx) {
-			this.ctx = ctx;
-		}
-
+        WidgetState() {}
 		public abstract int getMenuTitleId();
-
 		public abstract int getMenuIconId();
-
 		public abstract int getMenuItemId();
-
 		public abstract int[] getMenuTitleIds();
-
 		public abstract int[] getMenuIconIds();
-
 		public abstract int[] getMenuItemIds();
-
 		public abstract void changeState(int stateId);
 	}
 }

@@ -62,7 +62,6 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 		invalidateListView(context);
 	}
 
-	@Override
 	public ArrayAdapter<?> getAdapter() {
 		return listAdapter;
 	}

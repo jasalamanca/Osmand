@@ -30,37 +30,30 @@ public class OsmAndAppCustomization {
 		this.osmandSettings = new OsmandSettings(app, new net.osmand.plus.api.SettingsAPIImpl(app));
 	}
 
-	public OsmandSettings getOsmandSettings(){ return osmandSettings;}
+	OsmandSettings getOsmandSettings(){ return osmandSettings;}
 
 	// Activities
 	public Class<? extends Activity> getSettingsActivity(){
 		return SettingsActivity.class;
 	}
-	
 	public Class<MapActivity> getMapActivity(){
 		return MapActivity.class;
 	}
-	
 	public Class<SearchActivity> getSearchActivity(){
 		return SearchActivity.class;
 	}
-	
 	public Class<TrackActivity> getTrackActivity(){
 		return TrackActivity.class;
 	}
-	
 	public Class<FavoritesActivity> getFavoritesActivity(){
 		return FavoritesActivity.class;
 	}
-
 	public Class<? extends Activity> getDownloadIndexActivity() {
 		return DownloadActivity.class;
 	}
-
 	public Class<? extends Activity> getPluginsActivity() {
 		return PluginsActivity.class;
 	}
-	
 	public Class<? extends Activity> getDownloadActivity() {
 		return DownloadActivity.class;
 	}
@@ -76,11 +69,9 @@ public class OsmAndAppCustomization {
 	public boolean showDownloadExtraActions() {
 		return true;
 	}
-
 	public File getTracksDir() {
 		return app.getAppPath(IndexConstants.GPX_RECORDED_INDEX_DIR);
 	}
-
 	public List<? extends LocationPoint> getWaypoints() {
 		return Collections.emptyList();
 	}

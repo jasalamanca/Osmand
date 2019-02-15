@@ -63,7 +63,6 @@ import java.util.Map;
 import java.util.Set;
 
 public class FavoritesTreeFragment extends OsmandExpandableListFragment {
-
 	private static final int SEARCH_ID = -1;
 	private static final int DELETE_ID = 2;
 	private static final int DELETE_ACTION_ID = 3;
@@ -740,9 +739,9 @@ public class FavoritesTreeFragment extends OsmandExpandableListFragment {
 			int disabledColor = light ? R.color.secondary_text_light : R.color.secondary_text_dark;
 			row.findViewById(R.id.group_divider).setVisibility(groupPosition == 0 ? View.GONE : View.VISIBLE);
 			int color = model.color == 0 || model.color == Color.BLACK ? getResources().getColor(R.color.color_favorite) : model.color;
-			setCategoryIcon(app, app.getIconsCache().getPaintedIcon(
+			setCategoryIcon(app.getIconsCache().getPaintedIcon(
 					R.drawable.ic_action_fav_dark, visible ? (color | 0xff000000) : getResources().getColor(disabledColor)),
-					groupPosition, isExpanded, row, light);
+					row);
 			adjustIndicator(app, groupPosition, isExpanded, row, light);
 			TextView label = row.findViewById(R.id.category_name);
 			label.setTextColor(getResources().getColor(visible ? enabledColor : disabledColor));
@@ -765,14 +764,12 @@ public class FavoritesTreeFragment extends OsmandExpandableListFragment {
 						List<FavouritePoint> fvs = model.points;
 						if (ch.isChecked()) {
 							groupsToDelete.add(model);
-							if (fvs != null) {
-								Set<FavouritePoint> set = favoritesSelected.get(model.name);
-								if (set != null) {
-									set.addAll(model.points);
-								} else {
-									set = new LinkedHashSet<>(model.points);
-									favoritesSelected.put(model.name, set);
-								}
+							Set<FavouritePoint> set = favoritesSelected.get(model.name);
+							if (set != null) {
+								set.addAll(model.points);
+							} else {
+								set = new LinkedHashSet<>(model.points);
+								favoritesSelected.put(model.name, set);
 							}
 						} else {
 							groupsToDelete.remove(model);
