@@ -3,10 +3,10 @@ package net.osmand.plus;
 import android.os.AsyncTask;
 
 public class OsmAndTaskManager {
-	public OsmAndTaskManager() {
+	OsmAndTaskManager() {
 	}
 
-	public <Params, Progress, Result> OsmAndTask<Params, Progress, Result> runInBackground(
+	public <Params, Progress, Result> OsmAndTask runInBackground(
 			OsmAndTaskRunnable<Params, Progress, Result> r, Params... params) {
 		InternalTaskExecutor<Params, Progress, Result> exec = new InternalTaskExecutor<>(r);
 		r.exec = exec;
@@ -14,9 +14,9 @@ public class OsmAndTaskManager {
 		return exec;
 	}
 
-	private class InternalTaskExecutor<Params, Progress, Result>
+	private static class InternalTaskExecutor<Params, Progress, Result>
 			extends AsyncTask<Params, Progress, Result>
-			implements OsmAndTask<Params, Progress, Result> {
+			implements OsmAndTask {
 		private final OsmAndTaskRunnable<Params, Progress, Result> run;
 		
 		private InternalTaskExecutor(OsmAndTaskRunnable<Params, Progress, Result> r){
@@ -42,24 +42,16 @@ public class OsmAndTaskManager {
 		protected void onProgressUpdate(Progress... values) {
 			run.onProgressUpdate(values);
 		}
-
-		@Override
-		public void executeWithParams(Params... params) {
-			execute(params);
-		}
 	}
-	
-	public interface OsmAndTask<Params, Progress, Result> {
+
+	public interface OsmAndTask {
 		boolean isCancelled();
-		boolean cancel(boolean mayInterruptDuringRun);
-		void executeWithParams(Params... params);
 	}
 	
 	public static abstract class OsmAndTaskRunnable<Params, Progress, Result> {
-		OsmAndTask<Params, Progress, Result> exec;
-		
+		OsmAndTask exec;
+
 		protected void onPreExecute() {}
-		protected String getName() { return "Runnable";}
 		protected abstract Result doInBackground(Params... params);
 		protected void onPostExecute(Result result) {}
 		void onProgressUpdate(Progress... values) {}
