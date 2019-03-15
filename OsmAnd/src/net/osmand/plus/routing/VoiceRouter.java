@@ -456,7 +456,7 @@ public class VoiceRouter {
 
 		// STATUS_TURN = "Turn (now)"
 		if ((repeat || statusNotPassed(STATUS_TURN)) && isDistanceLess(speed, dist, TURN_DISTANCE, TURN_DEFAULT_SPEED)) {
-			if (nextNextInfo.distanceTo < TURN_IN_DISTANCE_END && nextNextInfo != null) {
+			if (nextNextInfo.distanceTo < TURN_IN_DISTANCE_END) {
 				playMakeTurn(currentSegment, next, nextNextInfo);
 			} else {
 				playMakeTurn(currentSegment, next, null);

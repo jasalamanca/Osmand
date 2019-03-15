@@ -54,11 +54,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DownloadResourceGroupFragment extends DialogFragment implements DownloadEvents,
-		InAppListener, OnChildClickListener {
+public class DownloadResourceGroupFragment
+		extends DialogFragment
+        implements DownloadEvents, InAppListener, OnChildClickListener
+{
 	private static final int RELOAD_ID = 0;
 	private static final int SEARCH_ID = 1;
-	// --Commented out by Inspection (7/01/19 12:33):public static final String TAG = "RegionDialogFragment";
 	private static final String REGION_ID_DLG_KEY = "world_region_dialog_key";
 	private String groupId;
 	private BannerAndDownloadFreeVersion banner;

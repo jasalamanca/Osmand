@@ -108,7 +108,7 @@ public class IabHelper {
     private String mSignatureBase64 = null;
 
     // Billing response codes
-    public static final int BILLING_RESPONSE_RESULT_OK = 0;
+    static final int BILLING_RESPONSE_RESULT_OK = 0;
     public static final int BILLING_RESPONSE_RESULT_USER_CANCELED = 1;
     private static final int BILLING_RESPONSE_RESULT_BILLING_UNAVAILABLE = 3;
     public static final int BILLING_RESPONSE_RESULT_ITEM_UNAVAILABLE = 4;
@@ -142,7 +142,7 @@ public class IabHelper {
     private static final String INAPP_CONTINUATION_TOKEN = "INAPP_CONTINUATION_TOKEN";
 
     // Item types
-    public static final String ITEM_TYPE_INAPP = "inapp";
+    private static final String ITEM_TYPE_INAPP = "inapp";
     public static final String ITEM_TYPE_SUBS = "subs";
 
     // some fields on the getSkuDetails response bundle
@@ -734,7 +734,7 @@ public class IabHelper {
      * @param purchase The purchase to be consumed.
      * @param listener The listener to notify when the consumption operation finishes.
      */
-    public void consumeAsync(Purchase purchase, OnConsumeFinishedListener listener) {
+    private void consumeAsync(Purchase purchase, OnConsumeFinishedListener listener) {
         checkNotDisposed();
         checkSetupDone("consume");
         List<Purchase> purchases = new ArrayList<>();
@@ -760,7 +760,7 @@ public class IabHelper {
      * @return A human-readable string explaining the result code.
      *     It also includes the result code numerically.
      */
-    public static String getResponseDesc(int code) {
+    static String getResponseDesc(int code) {
         String[] iab_msgs = ("0:OK/1:User Canceled/2:Unknown/" +
                 "3:Billing Unavailable/4:Item unavailable/" +
                 "5:Developer Error/6:Error/7:Item Already Owned/" +
@@ -909,8 +909,7 @@ public class IabHelper {
     private int querySkuDetails(String itemType, Inventory inv, List<String> moreSkus)
                                 throws RemoteException, JSONException {
         logDebug("Querying SKU details.");
-        ArrayList<String> skuList = new ArrayList<>();
-        skuList.addAll(inv.getAllOwnedSkus(itemType));
+        ArrayList<String> skuList = new ArrayList<>(inv.getAllOwnedSkus(itemType));
         if (moreSkus != null) {
             for (String sku : moreSkus) {
                 if (!skuList.contains(sku)) {
@@ -945,7 +944,7 @@ public class IabHelper {
                 RESPONSE_GET_SKU_DETAILS_LIST);
 
         for (String thisResponse : responseList) {
-            SkuDetails d = new SkuDetails(itemType, thisResponse);
+            SkuDetails d = new SkuDetails(thisResponse);
             logDebug("Got sku details: " + d);
             inv.addSkuDetails(d);
         }

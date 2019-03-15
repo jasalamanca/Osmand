@@ -689,7 +689,7 @@ public class ResourceManager {
 		return repos;
 	}
 	
-	public List<TransportStop> searchTransportSync(double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude, ResultMatcher<TransportStop> matcher){
+	public List<TransportStop> searchTransportSync(double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude){
 		List<TransportIndexRepository> repos = new ArrayList<>();
 		List<TransportStop> stops = new ArrayList<>();
 		for (TransportIndexRepository index : transportRepositories.values()) {
@@ -700,7 +700,7 @@ public class ResourceManager {
 		if(!repos.isEmpty()){
 			for (TransportIndexRepository repository : repos) {
 				repository.searchTransportStops(topLatitude, leftLongitude, bottomLatitude, rightLongitude, 
-						-1, stops, matcher);
+						-1, stops);
 			}
 		}
 		return stops;

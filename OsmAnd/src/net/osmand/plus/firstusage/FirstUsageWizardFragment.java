@@ -476,7 +476,7 @@ public class FirstUsageWizardFragment extends BaseOsmAndFragment implements OsmA
 	}
 
 	@Override
-	public void onFinish(AppInitializer init) {
+	public void onFinish() {
 		if (!downloadThread.getIndexes().isDownloadedFromInternet) {
 			waitForIndexes = true;
 			downloadThread.runReloadIndexFilesSilent();

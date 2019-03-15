@@ -638,7 +638,7 @@ public class MapInfoWidgetsFactory {
 					.getIcon(R.drawable.ic_action_remove_dark, !nightMode));
 		}
 
-		public boolean updateInfo(DrawSettings d) {
+		public boolean updateInfo() {
 			String text = null;
 			TurnType[] type = new TurnType[1];
 			boolean showNextTurn = false;
@@ -754,7 +754,7 @@ public class MapInfoWidgetsFactory {
 				updateVisibility(addressTextShadow, false);
 				boolean updated = updateVisibility(waypointInfoBar, true);
 				// pass top bar to make it clickable
-				WaypointDialogHelper.updatePointInfoView(map.getMyApplication(), map, topBar, pnt, true,
+				WaypointDialogHelper.updatePointInfoView(map.getMyApplication(), map, topBar, pnt,
 						map.getMyApplication().getDaynightHelper().isNightModeForMapControls(), false, true);
 				if (updated || changed) {
 					ImageView all = waypointInfoBar.findViewById(R.id.waypoint_more);

@@ -332,7 +332,6 @@ public class GeneralRouter implements VehicleRouter {
 		return getObjContext(RouteDataObjectAttribute.ONEWAY).evaluateInt(road, 0);
 	}
 	
-	@Override
 	public float getPenaltyTransition(RouteDataObject road) {
 		return getObjContext(RouteDataObjectAttribute.PENALTY_TRANSITION).evaluateInt(road, 0);
 	}

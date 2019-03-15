@@ -1,8 +1,5 @@
 package net.osmand.plus.views.mapwidgets;
 
-import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.R;
-import net.osmand.plus.views.OsmandMapLayer.DrawSettings;
 import android.app.Activity;
 import android.graphics.Paint.Style;
 import android.graphics.Typeface;
@@ -16,6 +13,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import net.osmand.plus.OsmandApplication;
+import net.osmand.plus.R;
+import net.osmand.plus.views.OsmandMapLayer.DrawSettings;
+
 public class TextInfoWidget  {
 
 	private String contentTitle;
@@ -27,14 +28,12 @@ public class TextInfoWidget  {
 	private final TextView smallTextViewShadow;
 	private final ImageView topImageView;
 	final TextView topTextView;
-	private boolean explicitlyVisible;
 	private final OsmandApplication app;
 
 	private int dayIcon;
 	private int nightIcon;
 	private boolean isNight;
 	private final ViewGroup bottomLayout;
-
 
 	public TextInfoWidget(Activity activity) {
 		app = (OsmandApplication) activity.getApplication();
@@ -49,7 +48,7 @@ public class TextInfoWidget  {
 		smallTextView = view.findViewById(R.id.widget_text_small);
 	}
 
-	public OsmandApplication getOsmandApplication() {
+	OsmandApplication getOsmandApplication() {
 		return app;
 	}
 
@@ -64,7 +63,6 @@ public class TextInfoWidget  {
 	public void setImageDrawable(int res) {
 		setImageDrawable(app.getIconsCache().getIcon(res, 0), false);
 	}
-	
 	
 	void setImageDrawable(Drawable imageDrawable, boolean gone) {
 		if(imageDrawable != null) {
@@ -126,11 +124,11 @@ public class TextInfoWidget  {
 		view.setContentDescription(combine(contentTitle, text));
 	}
 	
-	public void setContentTitle(int messageId) {
+	void setContentTitle(int messageId) {
 		setContentTitle(view.getContext().getString(messageId));
 	}
 
-	public void setContentTitle(String text) {
+	void setContentTitle(String text) {
 		contentTitle = text;
 		setContentDescription(combine(textView.getText(), smallTextView.getText()));
 	}
@@ -142,9 +140,6 @@ public class TextInfoWidget  {
 
 	void setTextNoUpdateVisibility(String text, String subtext) {
 		setContentDescription(combine(text, subtext));
-//		if(this.text != null && this.text.length() > 7) {
-//			this.text = this.text.substring(0, 6) +"..";
-//		}
 		if(text == null) {
 			textView.setText("");
 			textViewShadow.setText("");
@@ -175,25 +170,15 @@ public class TextInfoWidget  {
 		}
 		return false;
 	}
-	
-	public boolean isVisible() {
-		return view.getVisibility() == View.VISIBLE && view.getParent() != null;
-	}
 
 	public boolean updateInfo(DrawSettings drawSettings) {
 		return false;
 	}
-
 	public void setOnClickListener(OnClickListener onClickListener) {
 		view.setOnClickListener(onClickListener);
 	}
-
-	public void setExplicitlyVisible(boolean explicitlyVisible) {
-		this.explicitlyVisible = explicitlyVisible;
-	}
-	
-	public boolean isExplicitlyVisible() {
-		return explicitlyVisible;
+	boolean isExplicitlyVisible() {
+		return false;
 	}
 	
 	public void updateIconMode(boolean night) {
@@ -209,7 +194,7 @@ public class TextInfoWidget  {
 		updateTextColor(topTextView, null, textColor, textShadowColor, bold, rad);
 	}
 	
-	public static void updateTextColor(TextView tv, TextView shadow, int textColor, int textShadowColor, boolean textBold, int rad) {
+	static void updateTextColor(TextView tv, TextView shadow, int textColor, int textShadowColor, boolean textBold, int rad) {
 		if(shadow != null) {
 			if(rad > 0) {
 				shadow.setVisibility(View.VISIBLE);
@@ -217,9 +202,7 @@ public class TextInfoWidget  {
 				shadow.getPaint().setStrokeWidth(rad);
 				shadow.getPaint().setStyle(Style.STROKE);
 				shadow.setTextColor(textShadowColor);
-//				tv.getPaint().setStyle(Style.FILL);
 			} else {
-//				tv.getPaint().setStyle(Style.FILL_AND_STROKE);
 				shadow.setVisibility(View.GONE);
 			}
 		}

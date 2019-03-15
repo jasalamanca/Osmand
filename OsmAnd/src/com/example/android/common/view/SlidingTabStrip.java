@@ -118,8 +118,7 @@ class SlidingTabStrip extends LinearLayout {
         final SlidingTabLayout.TabColorizer tabColorizer = mCustomTabColorizer != null
                 ? mCustomTabColorizer
                 : mDefaultTabColorizer;
-          
- 
+
         // Thick colored underline below the current selection
         if (childCount > 0) {
             View selectedTitle = getChildAt(mSelectedPosition);
@@ -200,7 +199,6 @@ class SlidingTabStrip extends LinearLayout {
         void setIndicatorColors(int... colors) {
             mIndicatorColors = colors;
         }
- 
         void setDividerColors(int... colors) {
             mDividerColors = colors;
         }

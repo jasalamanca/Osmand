@@ -1,10 +1,5 @@
 package net.osmand.plus.helpers;
 
-import net.osmand.plus.DeviceAdminRecv;
-import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.OsmandSettings;
-import net.osmand.plus.routing.VoiceRouter;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
@@ -12,9 +7,14 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.PowerManager;
 
-@SuppressLint("NewApi")
-public class WakeLockHelper implements VoiceRouter.VoiceMessageListener {
-	
+import net.osmand.plus.DeviceAdminRecv;
+import net.osmand.plus.OsmandApplication;
+import net.osmand.plus.OsmandSettings;
+import net.osmand.plus.routing.VoiceRouter;
+
+public class WakeLockHelper
+		implements VoiceRouter.VoiceMessageListener
+{
 	private PowerManager.WakeLock wakeLock = null;
 	private final ReleaseWakeLocksRunnable releaseWakeLocksRunnable = new ReleaseWakeLocksRunnable();
 	private final DevicePolicyManager mDevicePolicyManager;
@@ -63,7 +63,7 @@ public class WakeLockHelper implements VoiceRouter.VoiceMessageListener {
 		}
 	}
 
-	public void onStart(Activity a) {
+	public void onStart() {
 		this.active = true;
 		if (wakeLock == null) {
 			VoiceRouter voiceRouter = app.getRoutingHelper().getVoiceRouter();
@@ -99,5 +99,4 @@ public class WakeLockHelper implements VoiceRouter.VoiceMessageListener {
 					screenPowerSave * 1000L);
 		}
 	}
-	
 }

@@ -39,7 +39,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SearchUICore {
-
 	private static final int TIMEOUT_BETWEEN_CHARS = 700;
 	private static final int TIMEOUT_BEFORE_SEARCH = 50;
 	private static final Log LOG = PlatformUtil.getLog(SearchUICore.class);
@@ -55,7 +54,6 @@ public class SearchUICore {
 	private final List<SearchCoreAPI> apis = new ArrayList<>();
 	private SearchSettings searchSettings;
 	private MapPoiTypes poiTypes;
-
 
 	public SearchUICore(MapPoiTypes poiTypes, String locale, boolean transliterate) {
 		this.poiTypes = poiTypes;
@@ -145,15 +143,9 @@ public class SearchUICore {
 		public List<SearchResult> getCurrentSearchResults() {
 			return Collections.unmodifiableList(searchResults);
 		}
-
-		public SearchPhrase getPhrase() {
-			return phrase;
-		}
-
 		void sortSearchResults() {
 			Collections.sort(searchResults, new SearchResultComparator(phrase));
 		}
-
 		void filterSearchDuplicateResults() {
 			filterSearchDuplicateResults(searchResults);
 		}
@@ -232,20 +224,7 @@ public class SearchUICore {
 		}
 	}
 
-	public void setPoiTypes(MapPoiTypes poiTypes) {
-		this.poiTypes = poiTypes;
-	}
-
-	public int getTotalLimit() {
-		return totalLimit;
-	}
-
-	public void setTotalLimit(int totalLimit) {
-		this.totalLimit = totalLimit;
-	}
-
-	@SuppressWarnings("unchecked")
-    private <T> T getApiByClass(Class<T> cl) {
+	private <T> T getApiByClass(Class<T> cl) {
 		for (SearchCoreAPI a : apis) {
 			if (cl.isInstance(a)) {
 				return (T) a;
@@ -305,28 +284,12 @@ public class SearchUICore {
 	public void registerAPI(SearchCoreAPI api) {
 		apis.add(api);
 	}
-
-
-	public SearchResultCollection getCurrentSearchResult() {
-		return currentSearchResult;
-	}
-
 	public SearchPhrase getPhrase() {
 		return phrase;
 	}
-
-	public void setOnSearchStart(Runnable onSearchStart) {
-		this.onSearchStart = onSearchStart;
-	}
-
-	public void setOnResultsComplete(Runnable onResultsComplete) {
-		this.onResultsComplete = onResultsComplete;
-	}
-
 	public SearchSettings getSearchSettings() {
 		return searchSettings;
 	}
-
 	public void updateSettings(SearchSettings settings) {
 		searchSettings = settings;
 	}
@@ -415,7 +378,6 @@ public class SearchUICore {
 		return quickRes;
 	}
 
-
 	public boolean isSearchMoreAvailable(SearchPhrase phrase) {
 		for (SearchCoreAPI api : apis) {
 			if (api.getSearchPriority(phrase) >= 0 && api.isSearchMoreAvailable(phrase)) {
@@ -463,9 +425,6 @@ public class SearchUICore {
 		phrase.sortFiles();
 	}
 
-
-
-
 	public static class SearchResultMatcher implements  ResultMatcher<SearchResult>{
 		private final List<SearchResult> requestResults = new ArrayList<>();
 		private final ResultMatcher<SearchResult> matcher;
@@ -475,7 +434,6 @@ public class SearchUICore {
 		private final AtomicInteger requestNumber;
 		int count = 0;
 		private final SearchPhrase phrase;
-
 
 		SearchResultMatcher(ResultMatcher<SearchResult> matcher, SearchPhrase phrase, int request,
                             AtomicInteger requestNumber, int totalLimit) {
@@ -569,13 +527,13 @@ public class SearchUICore {
 	}
 
 	static class SearchResultComparator implements Comparator<SearchResult> {
-		private final SearchPhrase sp;
+//		private final SearchPhrase sp;
 		private final Collator collator;
 		private final LatLon loc;
 		private final boolean sortByName;
 
 		SearchResultComparator(SearchPhrase sp) {
-			this.sp = sp;
+//			this.sp = sp;
 			this.collator = sp.getCollator();
 			loc = sp.getLastTokenLocation();
 			sortByName = sp.isSortByName();
@@ -625,6 +583,5 @@ public class SearchUICore {
 			double s2 = o2.getSearchDistance(loc, 1);
 			return Double.compare(s1, s2);
 		}
-
 	}
 }

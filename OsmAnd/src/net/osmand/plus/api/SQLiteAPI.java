@@ -1,39 +1,18 @@
 package net.osmand.plus.api;
 
-
-
 public interface SQLiteAPI {
-
 	interface SQLiteConnection {
-		
 		void close();
-		
 		SQLiteCursor rawQuery(String sql, String[] selectionArgs);
-
 		void execSQL(String query);
-		
 		void execSQL(String query, Object[] objects);
-
 		SQLiteStatement compileStatement(String string);
-
 		void setVersion(int newVersion);
-		
 		int getVersion();
-
-		boolean isReadOnly();
-
-		boolean isDbLockedByOtherThreads();
-
-		boolean isClosed();
-
 	}
 	
 	interface SQLiteCursor {
-		
-		String[] getColumnNames();
-
 		boolean moveToFirst();
-		
 		boolean moveToNext();
 
 		/**
@@ -42,21 +21,12 @@ public interface SQLiteAPI {
 		String getString(int ind);
 
 		double getDouble(int ind);
-		
 		long getLong(int ind);
-		
 		int getInt(int ind);
-		
-		byte[] getBlob(int ind);
-		
 		void close();
-
-		
-		
 	}
 	
 	interface SQLiteStatement {
-
 		// 1 based argument
 		void bindString(int i, String filterId);
 
@@ -64,20 +34,8 @@ public interface SQLiteAPI {
 		void bindNull(int i);
 
 		void execute();
-
 		void close();
-
-		long simpleQueryForLong();
-
-		String simpleQueryForString();
-
-		void bindLong(int i, long val);
-		
-		void bindBlob(int i, byte[] val);
-
 	}
 	
 	SQLiteConnection getOrCreateDatabase(String name, boolean readOnly);
-	
-	SQLiteConnection openByAbsolutePath(String path, boolean readOnly);
 }

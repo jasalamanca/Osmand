@@ -26,8 +26,8 @@ import java.util.TreeSet;
 import java.util.regex.Pattern;
 
 //immutable object
-public class SearchPhrase {
-	
+public class SearchPhrase
+{
 	private List<SearchWord> words = new ArrayList<>();
 	private final List<String> unknownWords = new ArrayList<>();
 	private final List<NameStringMatcher> unknownWordsMatcher = new ArrayList<>();
@@ -109,12 +109,10 @@ public class SearchPhrase {
 		conjunctions.add("y");
 	}
 	
-	
 	public enum SearchPhraseDataType {
 		MAP, ADDRESS, ROUTING, POI
 	}
-	
-	
+
 	public SearchPhrase(SearchSettings settings, Collator clt) {
 		this.settings = settings;
 		this.clt = clt;
@@ -181,26 +179,26 @@ public class SearchPhrase {
 	}
 	
 
-	public boolean isUnknownSearchWordComplete() {
+	boolean isUnknownSearchWordComplete() {
 		return lastUnknownSearchWordComplete || unknownWords.size() > 0;
 	}
 	
-	public boolean isLastUnknownSearchWordComplete() {
+	boolean isLastUnknownSearchWordComplete() {
 		return lastUnknownSearchWordComplete;
 	}
 
 
-	public List<String> getUnknownSearchWords() {
+	List<String> getUnknownSearchWords() {
 		return unknownWords;
 	}
 	
-	public List<String> getUnknownSearchWords(Collection<String> exclude) {
+	List<String> getUnknownSearchWords(Collection<String> exclude) {
 		if(exclude == null || unknownWords.size() == 0 || exclude.size() == 0) {
 			return unknownWords;
 		}
 		List<String> l = new ArrayList<>();
 		for(String uw : unknownWords) {
-			if(exclude == null || !exclude.contains(uw)) {
+			if(!exclude.contains(uw)) {
 				l.add(uw);
 			}
 		}
@@ -225,7 +223,7 @@ public class SearchPhrase {
 	}
 	
 	
-	public QuadRect getRadiusBBoxToSearch(int radius) {
+	QuadRect getRadiusBBoxToSearch(int radius) {
 		int radiusInMeters = getRadiusSearch(radius);
 		QuadRect cache1kmRect = get1km31Rect();
 		if(cache1kmRect == null) {
@@ -263,13 +261,13 @@ public class SearchPhrase {
 	}
 	
 	
-	public Iterator<BinaryMapIndexReader> getRadiusOfflineIndexes(int meters, final SearchPhraseDataType dt) {
+	Iterator<BinaryMapIndexReader> getRadiusOfflineIndexes(int meters, final SearchPhraseDataType dt) {
 		final QuadRect rect = meters > 0 ? getRadiusBBoxToSearch(meters) : null;
 		return getOfflineIndexes(rect, dt);
 		
 	}
 
-	public Iterator<BinaryMapIndexReader> getOfflineIndexes(final QuadRect rect, final SearchPhraseDataType dt) {
+	Iterator<BinaryMapIndexReader> getOfflineIndexes(final QuadRect rect, final SearchPhraseDataType dt) {
 		List<BinaryMapIndexReader> list = indexes != null ? indexes : settings.getOfflineIndexes();
 		final Iterator<BinaryMapIndexReader> lit = list.iterator();
 		return new Iterator<BinaryMapIndexReader>() {
@@ -316,7 +314,7 @@ public class SearchPhrase {
 		};
 	}
 	
-	public List<BinaryMapIndexReader> getOfflineIndexes() {
+	List<BinaryMapIndexReader> getOfflineIndexes() {
 		if(indexes != null) {
 			return indexes; 
 		}
@@ -332,19 +330,15 @@ public class SearchPhrase {
 		return settings.getRadiusLevel();
 	}
 
-	public ObjectType[] getSearchTypes() {
+	ObjectType[] getSearchTypes() {
 		return settings == null ? null : settings.getSearchTypes();
-	}
-
-	public boolean isCustomSearch() {
-		return getSearchTypes() != null;
 	}
 
 	public boolean hasCustomSearchType(ObjectType type) {
 		return settings.hasCustomSearchType(type);
 	}
 
-	public boolean isSearchTypeAllowed(ObjectType searchType) {
+	boolean isSearchTypeAllowed(ObjectType searchType) {
 		if (getSearchTypes() == null) {
 			return true;
 		} else {
@@ -357,7 +351,7 @@ public class SearchPhrase {
 		}
 	}
 
-	public boolean isEmptyQueryAllowed() {
+	boolean isEmptyQueryAllowed() {
 		return settings.isEmptyQueryAllowed();
 	}
 
@@ -369,7 +363,7 @@ public class SearchPhrase {
 		return selectWord(res, null, false);
 	}
 	
-	public SearchPhrase selectWord(SearchResult res, List<String> unknownWords, boolean lastComplete) {
+	SearchPhrase selectWord(SearchResult res, List<String> unknownWords, boolean lastComplete) {
 		SearchPhrase sp = new SearchPhrase(this.settings, this.clt);
 		addResult(res, sp);
 		SearchResult prnt = res.parentSearchResult;
@@ -411,7 +405,7 @@ public class SearchPhrase {
 		return false;
 	}
 
-	public ObjectType getExclusiveSearchType() {
+	ObjectType getExclusiveSearchType() {
 		SearchWord lastWord = getLastSelectedWord();
 		if (lastWord != null) {
 			return ObjectType.getExclusiveSearchType(lastWord.getType());
@@ -428,14 +422,14 @@ public class SearchPhrase {
 	}
 	
 	
-	public NameStringMatcher getNameStringMatcher(String word, boolean complete) {
+	NameStringMatcher getNameStringMatcher(String word, boolean complete) {
 		return new NameStringMatcher(word, 
 				(complete ?  
 					StringMatcherMode.CHECK_EQUALS_FROM_SPACE : 
 					StringMatcherMode.CHECK_STARTS_FROM_SPACE));
 	}
 	
-	public boolean hasObjectType(ObjectType p) {
+	boolean hasObjectType(ObjectType p) {
 		for(SearchWord s : words) {
 			if(s.getType() == p) {
 				return true;
@@ -453,7 +447,7 @@ public class SearchPhrase {
 	public String getText(boolean includeLastWord) {
 		StringBuilder sb = new StringBuilder();
 		for(SearchWord s : words) {
-			sb.append(s.getWord()).append(DELIMITER.trim() + " ");
+			sb.append(s.getWord()).append(DELIMITER.trim()).append(" ");
 		}
 		if(includeLastWord) {
 			sb.append(unknownSearchPhrase);
@@ -468,15 +462,15 @@ public class SearchPhrase {
 			words.remove(words.size() - 1);
 		}
 		for(SearchWord s : words) {
-			sb.append(s.getWord()).append(DELIMITER.trim() + " ");
+			sb.append(s.getWord()).append(DELIMITER.trim()).append(" ");
 		}
 		return sb.toString();
 	}
 
-	private String getStringRerpresentation() {
+	private String getStringRepresentation() {
 		StringBuilder sb = new StringBuilder();
 		for(SearchWord s : words) {
-			sb.append(s.getWord()).append(" [" + s.getType() + "], ");
+			sb.append(s.getWord()).append(" [").append(s.getType()).append("], ");
 		}
 		sb.append(unknownSearchPhrase);
 		return sb.toString();
@@ -484,13 +478,11 @@ public class SearchPhrase {
 	
 	@Override
 	public String toString() {
-		return getStringRerpresentation();
+		return getStringRepresentation();
 	}
-
 	public boolean isNoSelectedType() {
 		return words.isEmpty();
 	}
-
 	public boolean isEmpty() {
 		return words.isEmpty() && unknownSearchPhrase.isEmpty();
 	}
@@ -501,17 +493,7 @@ public class SearchPhrase {
 		}
 		return words.get(words.size() - 1);
 	}
-	
-	public LatLon getWordLocation() {
-		for(int i = words.size() - 1; i >= 0; i--) {
-			SearchWord sw = words.get(i);
-			if(sw.getLocation() != null) {
-				return sw.getLocation();
-			}
-		}
-		return null;
-	}
-	
+
 	public LatLon getLastTokenLocation() {
 		for(int i = words.size() - 1; i >= 0; i--) {
 			SearchWord sw = words.get(i);
@@ -631,11 +613,11 @@ public class SearchPhrase {
 		
 	}
 	
-	public void countUnknownWordsMatch(SearchResult sr) {
+	void countUnknownWordsMatch(SearchResult sr) {
 		countUnknownWordsMatch(sr, sr.localeName, sr.otherNames);
 	}
 	
-	public void countUnknownWordsMatch(SearchResult sr, String localeName, Collection<String> otherNames) {
+	void countUnknownWordsMatch(SearchResult sr, String localeName, Collection<String> otherNames) {
 		if(unknownWords.size() > 0) {
 			for(int i = 0; i < unknownWords.size(); i++) {
 				if(unknownWordsMatcher.size() == i) {
@@ -659,15 +641,15 @@ public class SearchPhrase {
 		}
 		
 	}
-	public int getRadiusSearch(int meters) {
+
+	int getRadiusSearch(int meters) {
 		return (1 << (getRadiusLevel() - 1)) * meters;
 	}
-
 	private static int icompare(int x, int y) {
         return (x < y) ? -1 : ((x == y) ? 0 : 1);
     }
 	
-	public String getUnknownWordToSearchBuilding() {
+	String getUnknownWordToSearchBuilding() {
 		List<String> unknownSearchWords = getUnknownSearchWords();
 		if(unknownSearchWords.size() > 0 && Algorithms.extractFirstIntegerNumber(getUnknownSearchWord()) == 0) {
 			for(String wrd : unknownSearchWords) {
@@ -679,7 +661,7 @@ public class SearchPhrase {
 		return getUnknownSearchWord();
 	}
 	
-	public String getUnknownWordToSearch() {
+	String getUnknownWordToSearch() {
 		List<String> unknownSearchWords = getUnknownSearchWords();
 		
 		String wordToSearch = getUnknownSearchWord();
@@ -716,6 +698,4 @@ public class SearchPhrase {
 
 		return wordToSearch;
 	}
-
-	
 }

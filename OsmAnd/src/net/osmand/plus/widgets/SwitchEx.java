@@ -29,8 +29,4 @@ public class SwitchEx extends ToggleButton {
 
 		TextViewEx.parseAttributes(this, attrs, defStyleAttr, defStyleRes);
 	}
-
-	public void setAllCapsCompat(boolean allCaps) {
-		TextViewEx.setAllCapsCompat(this, allCaps);
-	}
 }

@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import net.osmand.plus.ApplicationMode;
 import net.osmand.plus.OsmandApplication;
@@ -26,7 +25,6 @@ import net.osmand.plus.OsmandSettings.CommonPreference;
 import net.osmand.plus.OsmandSettings.OsmandPreference;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.actions.AppModeDialog;
-import net.osmand.plus.views.SeekBarPreference;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -52,7 +50,7 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 	private final Map<String, OsmandPreference<Boolean>> booleanPreferences = new LinkedHashMap<>();
 	private final Map<String, OsmandPreference<?>> listPreferences = new LinkedHashMap<>();
 	private final Map<String, OsmandPreference<String>> editTextPreferences = new LinkedHashMap<>();
-	private final Map<String, OsmandPreference<Integer>> seekBarPreferences = new LinkedHashMap<>();
+//	private final Map<String, OsmandPreference<Integer>> seekBarPreferences = new LinkedHashMap<>();
 
 	private final Map<String, Map<String, ?>> listPrefValues = new LinkedHashMap<>();
 	private AlertDialog profileDialog;
@@ -60,7 +58,6 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 	public SettingsBaseActivity() {
 		this(false);
 	}
-	
 	public SettingsBaseActivity(boolean profile) {
 		profileSettings = profile;
 	}
@@ -254,7 +251,6 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		return false;
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
     public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -381,11 +377,6 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 			pref.setChecked(b.get());
 		}
 
-		for (OsmandPreference<Integer> b : seekBarPreferences.values()) {
-			SeekBarPreference pref = (SeekBarPreference) screenPreferences.get(b.getId());
-			pref.setValue(b.get());
-		}
-
 		for (OsmandPreference<?> p : listPreferences.values()) {
 			ListPreference listPref = (ListPreference) screenPreferences.get(p.getId());
 			Map<String, ?> prefValues = listPrefValues.get(p.getId());
@@ -408,18 +399,17 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
 		// handle boolean preferences
 		OsmandPreference<Boolean> boolPref = booleanPreferences.get(preference.getKey());
-		OsmandPreference<Integer> seekPref = seekBarPreferences.get(preference.getKey());
+//		OsmandPreference<Integer> seekPref = seekBarPreferences.get(preference.getKey());
 		OsmandPreference<Object> listPref = (OsmandPreference<Object>) listPreferences.get(preference.getKey());
 		OsmandPreference<String> editPref = editTextPreferences.get(preference.getKey());
 		if (boolPref != null) {
 			boolPref.set((Boolean) newValue);
-		} else if (seekPref != null) {
-			seekPref.set((Integer) newValue);
+//		} else if (seekPref != null) {
+//			seekPref.set((Integer) newValue);
 		} else if (editPref != null) {
 			editPref.set((String) newValue);
 		} else if (listPref != null) {
@@ -443,29 +433,6 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 	protected OsmandApplication getMyApplication() {
 		return (OsmandApplication) getApplication();
 	}
-
-	protected void showWarnings(List<String> warnings) {
-		if (!warnings.isEmpty()) {
-			final StringBuilder b = new StringBuilder();
-			boolean f = true;
-			for (String w : warnings) {
-				if (f) {
-					f = false;
-				} else {
-					b.append('\n');
-				}
-				b.append(w);
-			}
-			runOnUiThread(new Runnable() {
-				@Override
-				public void run() {
-					Toast.makeText(SettingsBaseActivity.this, b.toString(), Toast.LENGTH_LONG).show();
-
-				}
-			});
-		}
-	}
-	
 	@Override
 	public boolean onPreferenceClick(Preference preference) {
 		return false;

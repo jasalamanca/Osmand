@@ -88,7 +88,7 @@ public class WaypointDialogHelper {
 
 	public static void updatePointInfoView(final OsmandApplication app, final Activity activity,
 										   View localView, final LocationPointWrapper ps,
-										   final boolean mapCenter, final boolean nightMode,
+										   final boolean nightMode,
 										   final boolean edit, final boolean topBar) {
 		WaypointHelper wh = app.getWaypointHelper();
 		final LocationPoint point = ps.getPoint();
@@ -101,12 +101,12 @@ public class WaypointDialogHelper {
 			localView.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View view) {
-					showOnMap(app, activity, point, mapCenter);
+					showOnMap(app, activity, point);
 				}
 			});
 		}
 		TextView textDist = localView.findViewById(R.id.waypoint_dist);
-		((ImageView) localView.findViewById(R.id.waypoint_icon)).setImageDrawable(ps.getDrawable(activity, app, nightMode));
+		((ImageView) localView.findViewById(R.id.waypoint_icon)).setImageDrawable(ps.getDrawable(activity, app));
 		int dist = -1;
 		boolean startPoint = ps.type == WaypointHelper.TARGETS && ((TargetPoint) ps.point).start;
 		if (!startPoint) {
@@ -373,7 +373,7 @@ public class WaypointDialogHelper {
 		if (v == null || v.findViewById(R.id.info_close) == null) {
 			v = ctx.getLayoutInflater().inflate(R.layout.waypoint_reached, null);
 		}
-		updatePointInfoView(app, ctx, v, point, true, nightMode, edit, false);
+		updatePointInfoView(app, ctx, v, point, nightMode, edit, false);
 
 		v.findViewById(R.id.all_points).setVisibility(View.GONE);
 		final ImageView move = v.findViewById(R.id.info_move);
@@ -658,7 +658,7 @@ public class WaypointDialogHelper {
 
 		TextView tv = v.findViewById(R.id.header_text);
 		AndroidUtils.setTextPrimaryColor(mapActivity, tv, nightMode);
-		tv.setText(getHeader(type, checked, ctx));
+		tv.setText(getHeader(type, ctx));
 		return v;
 	}
 
@@ -716,7 +716,7 @@ public class WaypointDialogHelper {
 			public void onItemClick(AdapterView<?> adapterView, View view, int item, long l) {
 				if (listAdapter.getItem(item) instanceof LocationPointWrapper) {
 					LocationPointWrapper ps = (LocationPointWrapper) listAdapter.getItem(item);
-					showOnMap(app, ctx, ps.getPoint(), false);
+					showOnMap(app, ctx, ps.getPoint());
 				} else if (listAdapter.getItem(item) instanceof RadiusItem) {
 					selectDifferentRadius(((RadiusItem) listAdapter.getItem(item)).type, running, item, listAdapter,
 							ctx);
@@ -789,7 +789,7 @@ public class WaypointDialogHelper {
 		listAdapter.notifyDataSetChanged();
 	}
 
-	private String getHeader(int type, boolean checked, Activity ctx) {
+	private String getHeader(int type, Activity ctx) {
 		String str = ctx.getString(R.string.waypoints);
 		switch (type) {
 			case WaypointHelper.TARGETS:
@@ -863,7 +863,7 @@ public class WaypointDialogHelper {
 		return points;
 	}
 
-	private static void showOnMap(OsmandApplication app, Activity a, LocationPoint locationPoint, boolean center) {
+	private static void showOnMap(OsmandApplication app, Activity a, LocationPoint locationPoint) {
 		if (!(a instanceof MapActivity)) {
 			return;
 		}

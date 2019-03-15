@@ -100,10 +100,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		boolean onTrackBallEvent(MotionEvent e);
 	}
 
-//	interface OnClickListener {
-//		boolean onPressEvent(PointF point);
-//	}
-
 	public interface OnDrawMapListener {
 		void onDrawOverMap();
 	}
@@ -120,7 +116,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	private boolean showMapPosition = true;
 
 	private IMapLocationListener locationListener;
-//	private OnClickListener onClickListener;
 	private OnTrackBallListener trackBallDelegate;
 	private AccessibilityActionsProvider accessibilityActions;
 
@@ -757,7 +752,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		return currentViewport.getDensity();
 	}
 
-	public float getScaleCoefficient() {
+	float getScaleCoefficient() {
 		float scaleCoefficient = getDensity();
 		if (Math.min(dm.widthPixels / (dm.density * 160), dm.heightPixels / (dm.density * 160)) > 2.5f) {
 			// large screen
@@ -1163,10 +1158,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		if (baseZoom < getMinZoom()) {
 			return false;
 		}
-		if (baseZoom < getMinZoom() + 1 && dz < -1) {
-			return false;
-		}
-		return true;
+		return baseZoom >= getMinZoom() + 1 || !(dz < -1);
 	}
 
 	private class MapTileViewOnGestureListener extends SimpleOnGestureListener {
@@ -1195,7 +1187,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 				LOG.debug("On long click event " + e.getX() + " " + e.getY()); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 			PointF point = new PointF(e.getX(), e.getY());
-			if ((accessibilityActions != null) && accessibilityActions.onLongClick(point, getCurrentRotatedTileBox())) {
+			if ((accessibilityActions != null) && accessibilityActions.onLongClick(getCurrentRotatedTileBox())) {
 				return;
 			}
 			for (int i = layers.size() - 1; i >= 0; i--) {
@@ -1203,9 +1195,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 					return;
 				}
 			}
-//			if (onLongClickListener != null && onLongClickListener.onLongPressEvent(point)) {
-//				return;
-//			}
 		}
 
 		@Override
@@ -1229,7 +1218,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 			if (LOG.isDebugEnabled()) {
 				LOG.debug("On click event " + point.x + " " + point.y); //$NON-NLS-1$ //$NON-NLS-2$
 			}
-			if ((accessibilityActions != null) && accessibilityActions.onClick(point, getCurrentRotatedTileBox())) {
+			if ((accessibilityActions != null) && accessibilityActions.onClick()) {
 				return true;
 			}
 			for (int i = layers.size() - 1; i >= 0; i--) {
@@ -1237,9 +1226,6 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 					return true;
 				}
 			}
-//			if (onClickListener != null && onClickListener.onPressEvent(point)) {
-//				return true;
-//			}
 			return false;
 		}
 	}

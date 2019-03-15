@@ -89,10 +89,6 @@ public class SearchHistoryFragment extends OsmAndListFragment implements SearchA
 		bld.setNegativeButton(R.string.shared_string_no, null);
 		bld.show();
 	}
-	
-	public ArrayAdapter<?> getAdapter() {
-		return historyAdapter;
-	}
 
 	private void clearWithoutConfirmation() {
 		helper.removeAll();

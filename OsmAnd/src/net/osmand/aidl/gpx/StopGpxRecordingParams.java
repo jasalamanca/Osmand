@@ -3,10 +3,10 @@ package net.osmand.aidl.gpx;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class StopGpxRecordingParams implements Parcelable {
-
+public class StopGpxRecordingParams
+		implements Parcelable
+{
 	public StopGpxRecordingParams() {
-
 	}
 
 	private StopGpxRecordingParams(Parcel in) {
@@ -30,7 +30,6 @@ public class StopGpxRecordingParams implements Parcelable {
 	}
 
 	private void readFromParcel(Parcel in) {
-
 	}
 
 	@Override

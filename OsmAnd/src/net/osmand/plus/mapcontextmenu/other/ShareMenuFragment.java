@@ -24,7 +24,6 @@ import net.osmand.plus.widgets.TextViewEx;
 
 import java.util.List;
 
-
 public class ShareMenuFragment extends MenuBottomSheetDialogFragment implements OnItemClickListener {
 	private static final String TAG = "ShareMenuFragment";
 
@@ -108,10 +107,5 @@ public class ShareMenuFragment extends MenuBottomSheetDialogFragment implements 
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		dismiss();
 		menu.share(listAdapter.getItem(position));
-	}
-
-	public void dismissMenu() {
-		dismiss();
-		menu.getMapActivity().getContextMenu().close();
 	}
 }

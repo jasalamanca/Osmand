@@ -54,7 +54,6 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
 	private float mDownY;
 	private boolean mSwiping;
 	private int mSwipingSlop;
-	private final Object mToken;
 	private VelocityTracker mVelocityTracker;
 	private float mTranslationX;
 
@@ -66,16 +65,12 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
 		/**
 		 * Called to determine whether the view can be dismissed.
 		 */
-		boolean canDismiss(Object token);
+		boolean canDismiss();
 
 		/**
 		 * Called when the user has indicated they she would like to dismiss the view.
-		 *
-		 * @param view  The originating {@link View} to be dismissed.
-		 * @param token The optional token passed to this object's constructor.
-		 * @param isSwipeRight Is swiping performed from right to left?
 		 */
-		void onDismiss(View view, Object token, boolean isSwipeRight);
+		void onDismiss();
 	}
 
 	/**
@@ -94,7 +89,6 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
 		mAnimationTime = view.getContext().getResources().getInteger(
 				android.R.integer.config_shortAnimTime);
 		mView = view;
-		mToken = token;
 		mCallbacks = callbacks;
 	}
 
@@ -112,7 +106,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
 				// TODO: ensure this is a finger, and set a flag
 				mDownX = motionEvent.getRawX();
 				mDownY = motionEvent.getRawY();
-				if (mCallbacks.canDismiss(mToken)) {
+				if (mCallbacks.canDismiss()) {
 					mVelocityTracker = VelocityTracker.obtain();
 					mVelocityTracker.addMovement(motionEvent);
 				}
@@ -144,7 +138,6 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
 				}
 				if (dismiss) {
 					// dismiss
-					final boolean finalDismissRight = dismissRight;
 					ViewCompat.animate(mView)
 							.translationX(dismissRight ? mViewWidth : -mViewWidth)
 							.alpha(0)
@@ -157,7 +150,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
 
 								@Override
 								public void onAnimationEnd(View view) {
-									performDismiss(finalDismissRight);
+									performDismiss();
 								}
 
 								@Override
@@ -236,7 +229,7 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
 		return false;
 	}
 
-	private void performDismiss(boolean isSwipingRight) {
-		mCallbacks.onDismiss(mView, mToken, isSwipingRight);
+	private void performDismiss() {
+		mCallbacks.onDismiss();
 	}
 }

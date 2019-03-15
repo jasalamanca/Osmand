@@ -13,13 +13,8 @@ public class Version {
 	private final String appName;
 	private final static String FREE_VERSION_NAME = "net.osmand";
 	private final static String FREE_DEV_VERSION_NAME = "net.osmand.dev";
-	private final static String SHERPAFY_VERSION_NAME = "net.osmand.sherpafy";
 	private final static String UTM_REF = "&referrer=utm_source%3Dosmand";
-	
-	public static boolean isGpsStatusEnabled(OsmandApplication ctx) {
-		return isGooglePlayEnabled(ctx) && !isBlackberry(ctx);
-	}
-	
+
 	public static boolean isBlackberry(OsmandApplication ctx) {
 		return ctx.getString(R.string.versionFeatures).contains("+blackberry");
 	}
@@ -57,11 +52,7 @@ public class Version {
 	public static boolean isGooglePlayEnabled(OsmandApplication ctx) {
 		return ctx.getString(R.string.versionFeatures).contains("+play_market");
 	}
-	
-	public static boolean isSherpafy(OsmandApplication ctx) {
-		return ctx.getPackageName().equals(SHERPAFY_VERSION_NAME);
-	}
-	
+
 	private Version(OsmandApplication ctx) {
 		String appVersion = "";
 		try {
@@ -92,10 +83,6 @@ public class Version {
 		return v.appVersion;
 	}
 
-	public static String getBuildAppEdition(OsmandApplication ctx){
-		return ctx.getString(R.string.app_edition);
-	}
-	
 	public static String getAppName(OsmandApplication ctx){
 		Version v = getVersion(ctx);
 		return v.appName;
@@ -137,5 +124,4 @@ public class Version {
 		}
 		return v;
 	}
-
 }

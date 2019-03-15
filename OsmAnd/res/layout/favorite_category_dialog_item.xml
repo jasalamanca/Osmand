@@ -9,11 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:drawableLeft="@drawable/ic_action_folder"
+        android:drawableStart="@drawable/ic_action_folder"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:background="?attr/selectableItemBackground"
         android:text="Restaurant"
-        android:gravity="left|center_vertical"
+        android:gravity="start|center_vertical"
         android:textSize="@dimen/default_list_text_size"
         android:textAllCaps="false"/>
 

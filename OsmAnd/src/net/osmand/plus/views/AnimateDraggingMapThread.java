@@ -15,7 +15,6 @@ import net.osmand.util.MapUtils;
  * Defines accelerator to stop dragging screen. 
  */
 public class AnimateDraggingMapThread {
-
 	private final static float DRAGGING_ANIMATION_TIME = 1200f;
 	private final static float ZOOM_ANIMATION_TIME = 250f;
 	private final static float ZOOM_MOVE_ANIMATION_TIME = 350f;
@@ -31,12 +30,9 @@ public class AnimateDraggingMapThread {
 	private double targetLatitude = 0;
 	private double targetLongitude = 0;
 	private int targetIntZoom = 0;
-//	private int targetFloatZoom = 0;
-
 	private boolean isAnimatingZoom;
-	
-	
-	public AnimateDraggingMapThread(OsmandMapTileView tileView){
+
+	AnimateDraggingMapThread(OsmandMapTileView tileView){
 		this.tileView = tileView;
 	}
 	
@@ -65,11 +61,10 @@ public class AnimateDraggingMapThread {
 		}
 	}
 	
-
 	/**
 	 * Stop dragging async
 	 */
-	public void stopAnimating(){
+	void stopAnimating(){
 		stopped = true;
 	}
 	
@@ -160,7 +155,7 @@ public class AnimateDraggingMapThread {
 				}
 
 				if (animateRotation) {
-					animatingRotateInThread(rotation, 500f, notifyListener);
+					animatingRotateInThread(rotation, 500f);
 				}
 
 				if (!stopped){
@@ -180,7 +175,6 @@ public class AnimateDraggingMapThread {
 		final RotatedTileBox rb = tileView.getCurrentRotatedTileBox().copy();
 		double startLat = rb.getLatitude();
 		double startLon = rb.getLongitude();
-//		float rotate = rb.getRotate();
 		final int startZoom = rb.getZoom();
 		final double startZoomFP = rb.getZoomFloatPart();
 		
@@ -235,7 +229,7 @@ public class AnimateDraggingMapThread {
 		});
 	}
 
-	private void animatingRotateInThread(float rotate, float animationTime, boolean notify){
+	private void animatingRotateInThread(float rotate, float animationTime){
 		AccelerateDecelerateInterpolator interpolator = new AccelerateDecelerateInterpolator();
 		float startRotate = tileView.getRotate();
 		float rotationDiff = MapUtils.unifyRotationDiff(startRotate, rotate);
@@ -334,7 +328,7 @@ public class AnimateDraggingMapThread {
 		}
 	}
 	
-	public boolean isAnimatingZoom() {
+	boolean isAnimatingZoom() {
 		return isAnimatingZoom;
 	}
 
@@ -351,10 +345,9 @@ public class AnimateDraggingMapThread {
 			}
 		}); //$NON-NLS-1$
 	}
-	
-	
-	public void startDragging(final float velocityX, final float velocityY, float startX, float startY, 
-			final float endX, final float endY, final boolean notifyListener){
+
+	void startDragging(final float velocityX, final float velocityY, float startX, float startY,
+					   final float endX, final float endY, final boolean notifyListener){
 		final float animationTime = DRAGGING_ANIMATION_TIME;
 		clearTargetValues();
 		startThreadAnimating(new Runnable(){
@@ -416,12 +409,9 @@ public class AnimateDraggingMapThread {
 		targetLongitude = lon;
 	}
 	
-	public void startRotate(final float rotate) {
+	void startRotate(final float rotate) {
 		if (!isAnimating()) {
 			clearTargetValues();
-			// stopped = false;
-			// do we need to kill and recreate the thread? wait would be enough as now it
-			// also handles the rotation?
 			startThreadAnimating(new Runnable() {
 				@Override
 				public void run() {
@@ -434,19 +424,13 @@ public class AnimateDraggingMapThread {
 		}
 	}
 	
-
 	public int getTargetIntZoom() {
 		return targetIntZoom;
 	}
-
 	public double getTargetLatitude() {
 		return targetLatitude;
 	}
-	
 	public double getTargetLongitude() {
 		return targetLongitude;
 	}
-	
 }
-
-

@@ -138,13 +138,6 @@ public class TrackDetailsMenuFragment extends BaseOsmAndFragment {
 		applyDayNightMode();
 	}
 
-	public void show(MapActivity mapActivity) {
-		mapActivity.getSupportFragmentManager().beginTransaction()
-				.add(R.id.routeMenuContainer, this, TAG)
-				.addToBackStack(TAG)
-				.commitAllowingStateLoss();
-	}
-
 	public void dismiss() {
 		FragmentActivity activity = getActivity();
 		if (activity != null) {

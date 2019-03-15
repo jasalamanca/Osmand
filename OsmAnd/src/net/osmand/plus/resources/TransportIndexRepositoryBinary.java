@@ -1,12 +1,6 @@
 package net.osmand.plus.resources;
 
-import java.io.IOException;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-
 import net.osmand.PlatformUtil;
-import net.osmand.ResultMatcher;
 import net.osmand.binary.BinaryMapIndexReader;
 import net.osmand.data.TransportRoute;
 import net.osmand.data.TransportStop;
@@ -16,11 +10,16 @@ import net.osmand.util.MapUtils;
 
 import org.apache.commons.logging.Log;
 
+import java.io.IOException;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 public class TransportIndexRepositoryBinary implements TransportIndexRepository {
 	private static final Log log = PlatformUtil.getLog(TransportIndexRepositoryBinary.class);
 	private final BinaryMapReaderResource resource;
 
-	public TransportIndexRepositoryBinary(BinaryMapReaderResource resource) {
+	TransportIndexRepositoryBinary(BinaryMapReaderResource resource) {
 		this.resource = resource;
 	}
 	
@@ -39,7 +38,7 @@ public class TransportIndexRepositoryBinary implements TransportIndexRepository 
 	
 	@Override
 	public synchronized void searchTransportStops(double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude,
-			int limit, List<TransportStop> stops, ResultMatcher<TransportStop> matcher) {
+												  int limit, List<TransportStop> stops) {
 		long now = System.currentTimeMillis();
 		try {
 			getOpenFile().searchTransportIndex(BinaryMapIndexReader.buildSearchTransportRequest(MapUtils.get31TileNumberX(leftLongitude),
@@ -71,6 +70,4 @@ public class TransportIndexRepositoryBinary implements TransportIndexRepository 
 	public boolean acceptTransportStop(TransportStop stop) {
 		return resource.getShallowReader().transportStopBelongsTo(stop);
 	}
-
-
 }

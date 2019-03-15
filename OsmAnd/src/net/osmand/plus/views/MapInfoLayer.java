@@ -312,7 +312,7 @@ public class MapInfoLayer
 		// update data on draw
 		updateColorShadowsOfText();
 		mapInfoControls.updateInfo(settings.getApplicationMode(), drawSettings, expanded);
-		streetNameView.updateInfo(drawSettings);
+		streetNameView.updateInfo();
 		topToolbarView.updateInfo();
 		alarmControl.updateInfo();
 		rulerControl.updateInfo(tileBox);

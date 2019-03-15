@@ -46,16 +46,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-
-public class SearchPoiFilterFragment extends OsmAndListFragment implements SearchActivityChild {
-
-	public static final String SEARCH_LAT = SearchActivity.SEARCH_LAT;
-	public static final String SEARCH_LON = SearchActivity.SEARCH_LON;
-	public static final int REQUEST_POI_EDIT = 55;
-
+public class SearchPoiFilterFragment
+		extends OsmAndListFragment
+		implements SearchActivityChild
+{
 	private EditText searchEditText;
 	private SearchPoiByNameTask currentTask = null;
-	private PoiFiltersAdapter poiFitlersAdapter;
+	private PoiFiltersAdapter poiFiltersAdapter;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 	                         Bundle savedInstanceState) {
@@ -79,10 +76,6 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 				showOptionsMenu(v);
 			}
 		});
-	}
-
-	public ArrayAdapter<?> getAdapter() {
-		return poiFitlersAdapter;
 	}
 
 	private void setupSearchEditText(EditText e) {
@@ -120,19 +113,18 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 		});
 	}
 
-
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		poiFitlersAdapter = new PoiFiltersAdapter(getFilters(""));
-		setListAdapter(poiFitlersAdapter);
+		poiFiltersAdapter = new PoiFiltersAdapter(getFilters(""));
+		setListAdapter(poiFiltersAdapter);
 		setHasOptionsMenu(true);
 	}
 
 	@Override
 	public void onResume() {
 		super.onResume();
-		poiFitlersAdapter.setResult(getFilters(searchEditText == null ? "" : searchEditText.getText().toString()));
+		poiFiltersAdapter.setResult(getFilters(searchEditText == null ? "" : searchEditText.getText().toString()));
 	}
 
 	private List<Object> getFilters(String s) {
@@ -160,9 +152,7 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 				}
 
 			});
-			for (AbstractPoiType p : res) {
-				filters.add(p);
-			}
+            filters.addAll(res);
 			filters.add(poiFilters.getSearchByNamePOIFilter());
 		}
 		return filters;
@@ -181,7 +171,7 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 		LatLon loc = null;
 		boolean searchAround = false;
 		FragmentActivity parent = getActivity();
-		if (loc == null && parent instanceof SearchActivity) {
+		if (parent instanceof SearchActivity) {
 			loc = ((SearchActivity) parent).getSearchPoint();
 			searchAround = ((SearchActivity) parent).isSearchAroundCurrentLocation();
 		}
@@ -202,7 +192,7 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 		final Object item = getListAdapter().getItem(position);
 		ResourceManager rm = getApp().getResourceManager();
 		if (!rm.containsAmenityRepositoryToSearch(false)) {
-			Toast.makeText(getActivity(), R.string.data_to_search_poi_not_available, Toast.LENGTH_LONG);
+			Toast.makeText(getActivity(), R.string.data_to_search_poi_not_available, Toast.LENGTH_LONG).show();
 			return;
 		}
 		if (item instanceof PoiUIFilter) {
@@ -238,7 +228,6 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 	}
 
 	class SearchPoiByNameTask extends AsyncTask<String, Object, List<Object>> {
-
 		@Override
 		protected List<Object> doInBackground(String... params) {
 			String filter = params[0];
@@ -248,15 +237,12 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 		@Override
 		protected void onPostExecute(List<Object> result) {
 			if (!isCancelled() && isVisible()) {
-				poiFitlersAdapter.setResult(result);
+				poiFiltersAdapter.setResult(result);
 			}
 		}
-
 	}
 
-
 	class PoiFiltersAdapter extends ArrayAdapter<Object> {
-
 		PoiFiltersAdapter(List<Object> list) {
 			super(getActivity(), R.layout.searchpoifolder_list, list);
 		}
@@ -346,9 +332,7 @@ public class SearchPoiFilterFragment extends OsmAndListFragment implements Searc
 	@Override
 	public void locationUpdate(LatLon l) {
 	}
-
 	protected OsmandApplication getMyApplication() {
 		return (OsmandApplication) getActivity().getApplication();
 	}
-
 }

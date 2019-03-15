@@ -733,7 +733,7 @@ public class RouteInfoWidgetsFactory {
 			lanesShadowText = map.findViewById(R.id.map_lanes_dist_text_shadow);
 			centerInfo = map.findViewById(R.id.map_center_info);
 			progress = map.findViewById(R.id.map_horizontal_progress);
-			lanesDrawable = new LanesDrawable(map, map.getMapView().getScaleCoefficient());
+			lanesDrawable = new LanesDrawable(map);
 			lanesView.setImageDrawable(lanesDrawable);
 			trackingUtilities = map.getMapViewTrackingUtilities();
 			locationProvider = map.getMyApplication().getLocationProvider();
@@ -830,25 +830,21 @@ public class RouteInfoWidgetsFactory {
 		private final Paint paintBlack;
 		private final Paint paintRouteDirection;
 		private final Paint paintSecondTurn;
-		private final float scaleCoefficient;
 		private int height;
 		private int width;
 		private float delta;
 		private final float laneHalfSize;
-		private static final float miniCoeff = 2f;
 		private final boolean leftSide;
 		private final int imgMinDelta;
 		private final int imgMargin;
 
-		LanesDrawable(MapActivity ctx, float scaleCoefficent) {
+		LanesDrawable(MapActivity ctx) {
 			this.ctx = ctx;
 			OsmandSettings settings = ctx.getMyApplication().getSettings();
 			leftSide = settings.DRIVING_REGION.get().leftHandDriving;
 			imgMinDelta = ctx.getResources().getDimensionPixelSize(R.dimen.widget_turn_lane_min_delta);
 			imgMargin = ctx.getResources().getDimensionPixelSize(R.dimen.widget_turn_lane_margin);
 			laneHalfSize = ctx.getResources().getDimensionPixelSize(R.dimen.widget_turn_lane_size) / 2;
-
-			this.scaleCoefficient = scaleCoefficent;
 
 			paintBlack = new Paint(Paint.ANTI_ALIAS_FLAG);
 			paintBlack.setStyle(Style.STROKE);
@@ -868,7 +864,6 @@ public class RouteInfoWidgetsFactory {
 			float w = 0;
 			float h = 0;
 			float delta = imgMinDelta;
-			float coef = scaleCoefficient / miniCoeff;
 			if (lanes != null) {
 				List<RectF> boundsList = new ArrayList<>(lanes.length);
                 for (int lane : lanes) {
@@ -879,7 +874,7 @@ public class RouteInfoWidgetsFactory {
                     RectF imgBounds = new RectF();
                     if (thirdTurnType > 0) {
                         Path p = TurnPathHelper.getPathFromTurnType(ctx.getResources(), pathsCache, turnType,
-                                secondTurnType, thirdTurnType, TurnPathHelper.THIRD_TURN, coef, leftSide, true);
+                                secondTurnType, thirdTurnType, TurnPathHelper.THIRD_TURN, leftSide, true);
                         if (p != null) {
                             RectF b = new RectF();
                             p.computeBounds(b, true);
@@ -894,7 +889,7 @@ public class RouteInfoWidgetsFactory {
                     }
                     if (secondTurnType > 0) {
                         Path p = TurnPathHelper.getPathFromTurnType(ctx.getResources(), pathsCache, turnType,
-                                secondTurnType, thirdTurnType, TurnPathHelper.SECOND_TURN, coef, leftSide, true);
+                                secondTurnType, thirdTurnType, TurnPathHelper.SECOND_TURN, leftSide, true);
                         if (p != null) {
                             RectF b = new RectF();
                             p.computeBounds(b, true);
@@ -908,7 +903,7 @@ public class RouteInfoWidgetsFactory {
                         }
                     }
                     Path p = TurnPathHelper.getPathFromTurnType(ctx.getResources(), pathsCache, turnType,
-                            secondTurnType, thirdTurnType, TurnPathHelper.FIRST_TURN, coef, leftSide, true);
+                            secondTurnType, thirdTurnType, TurnPathHelper.FIRST_TURN, leftSide, true);
                     if (p != null) {
                         RectF b = new RectF();
                         p.computeBounds(b, true);
@@ -968,7 +963,6 @@ public class RouteInfoWidgetsFactory {
 		public void draw(@NonNull Canvas canvas) {
 			//to change color immediately when needed
 			if (lanes != null && lanes.length > 0) {
-				float coef = scaleCoefficient / miniCoeff;
 				canvas.save();
 				for (int i = 0; i < lanes.length; i++) {
 					if ((lanes[i] & 1) == 1) {
@@ -988,7 +982,7 @@ public class RouteInfoWidgetsFactory {
 
 					if (thirdTurnType > 0) {
 						Path p = TurnPathHelper.getPathFromTurnType(ctx.getResources(), pathsCache, turnType,
-								secondTurnType, thirdTurnType, TurnPathHelper.THIRD_TURN, coef, leftSide, true);
+								secondTurnType, thirdTurnType, TurnPathHelper.THIRD_TURN, leftSide, true);
 						if (p != null) {
 							RectF b = new RectF();
 							p.computeBounds(b, true);
@@ -1005,7 +999,7 @@ public class RouteInfoWidgetsFactory {
 
 					if (secondTurnType > 0) {
 						Path p = TurnPathHelper.getPathFromTurnType(ctx.getResources(), pathsCache, turnType,
-								secondTurnType, thirdTurnType, TurnPathHelper.SECOND_TURN, coef, leftSide, true);
+								secondTurnType, thirdTurnType, TurnPathHelper.SECOND_TURN, leftSide, true);
 						if (p != null) {
 							RectF b = new RectF();
 							p.computeBounds(b, true);
@@ -1020,7 +1014,7 @@ public class RouteInfoWidgetsFactory {
 						}
 					}
 					Path p = TurnPathHelper.getPathFromTurnType(ctx.getResources(), pathsCache, turnType,
-							secondTurnType, thirdTurnType, TurnPathHelper.FIRST_TURN, coef, leftSide, true);
+							secondTurnType, thirdTurnType, TurnPathHelper.FIRST_TURN, leftSide, true);
 					if (p != null) {
 						RectF b = new RectF();
 						p.computeBounds(b, true);
@@ -1257,18 +1251,14 @@ public class RouteInfoWidgetsFactory {
 						text = null;
 						bottomText = null;
 					}
-//					visible = (text != null &&  text.length() > 0) || (locimgId != 0);
-					visible = true;
-					if (visible) {
-						if (alarm.getType() == AlarmInfoType.SPEED_CAMERA) {
-							visible = cams;
-						} else if (alarm.getType() == AlarmInfoType.PEDESTRIAN) {
-							visible = peds;
-						} else if (alarm.getType() == AlarmInfoType.TUNNEL) {
-							visible = tunnels;
-						} else {
-							visible = trafficWarnings;
-						}
+					if (alarm.getType() == AlarmInfoType.SPEED_CAMERA) {
+						visible = cams;
+					} else if (alarm.getType() == AlarmInfoType.PEDESTRIAN) {
+						visible = peds;
+					} else if (alarm.getType() == AlarmInfoType.TUNNEL) {
+						visible = tunnels;
+					} else {
+						visible = trafficWarnings;
 					}
 					if(visible) {
 						if(locimgId != imgId) {

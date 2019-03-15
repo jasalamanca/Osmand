@@ -1,12 +1,5 @@
 package net.osmand.plus.monitoring;
 
-
-import net.osmand.plus.OsmAndTaskManager.OsmAndTaskRunnable;
-import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.R;
-import net.osmand.plus.activities.SavingTrackHelper;
-import net.osmand.plus.activities.SettingsBaseActivity;
-import net.osmand.plus.OsmAndFormatter;
 import android.content.BroadcastReceiver;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
@@ -16,13 +9,16 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.view.Window;
 
+import net.osmand.plus.OsmAndFormatter;
+import net.osmand.plus.OsmAndTaskManager.OsmAndTaskRunnable;
+import net.osmand.plus.OsmandApplication;
+import net.osmand.plus.R;
+import net.osmand.plus.activities.SavingTrackHelper;
+import net.osmand.plus.activities.SettingsBaseActivity;
 
 public class SettingsMonitoringActivity extends SettingsBaseActivity {
-	private CheckBoxPreference routeServiceEnabled;
 	private BroadcastReceiver broadcastReceiver;
-	
-	public static final int[] BG_SECONDS = new int[]{0, 30, 60, 90};
-	public static final int[] BG_MINUTES = new int[]{2, 3, 5, 10, 15, 30, 60, 90};
+
 	private static final int[] SECONDS = OsmandMonitoringPlugin.SECONDS;
 	private static final int[] MINUTES = OsmandMonitoringPlugin.MINUTES;
 	private static final int[] MAX_INTERVAL_TO_SEND_MINUTES = OsmandMonitoringPlugin.MAX_INTERVAL_TO_SEND_MINUTES;
@@ -74,7 +70,7 @@ public class SettingsMonitoringActivity extends SettingsBaseActivity {
 			public boolean onPreferenceClick(Preference preference) {
 				SavingTrackHelper helper = getMyApplication().getSavingTrackHelper();
 				if (helper.hasDataToSave()) {
-					saveCurrentTracks(helper);
+					saveCurrentTracks();
 				} else {
 					helper.close();
 				}
@@ -154,13 +150,9 @@ public class SettingsMonitoringActivity extends SettingsBaseActivity {
 
 	public void updateAllSettings() {
 		super.updateAllSettings();
-		
-		if(routeServiceEnabled != null) {
-			routeServiceEnabled.setChecked(getMyApplication().getNavigationService() != null);
-		}
 	}
 	
-	private void saveCurrentTracks(final SavingTrackHelper helper) {
+	private void saveCurrentTracks() {
 		setProgressVisibility(true);
 		getMyApplication().getTaskManager().runInBackground(new OsmAndTaskRunnable<Void, Void, Void>() {
 

@@ -1,24 +1,23 @@
 package net.osmand.plus.activities.search;
 
-import java.util.Comparator;
-import java.util.List;
+import android.os.AsyncTask;
+import android.view.View;
 
 import net.osmand.data.City;
 import net.osmand.data.MapObject.MapObjectComparator;
 import net.osmand.data.Street;
 import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.search.SearchAddressFragment.AddressInformation;
 import net.osmand.plus.resources.RegionAddressRepository;
-import android.os.AsyncTask;
-import android.view.View;
+
+import java.util.Comparator;
+import java.util.List;
 
 public class SearchStreet2ByNameActivity extends SearchByNameAbstractActivity<Street> {
 	private RegionAddressRepository region;
 	private City cityOrPostcode;
 	private Street street1;
-	private OsmandSettings osmandSettings;
 
 	@Override
 	protected Comparator<? super Street> createComparator() {
@@ -28,8 +27,6 @@ public class SearchStreet2ByNameActivity extends SearchByNameAbstractActivity<St
 
 	@Override
 	protected void reset() {
-		//This is really only a "clear input text field", hence do not reset settings here
-		//osmandSettings.setLastSearchedIntersectedStreet("", null);
 		super.reset();
 	}
 

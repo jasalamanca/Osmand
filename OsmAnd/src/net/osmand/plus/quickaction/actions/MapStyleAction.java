@@ -86,7 +86,6 @@ public class MapStyleAction extends SwitchableAction<String> {
 		return R.string.quick_action_map_styles;
 	}
 
-	@Override
 	protected String getListKey() {
 		return KEY_STYLES;
 	}

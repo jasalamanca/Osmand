@@ -94,14 +94,13 @@ public class AppInitializer implements IProgress {
 
 	public enum InitEvents {
 		FAVORITES_INITIALIZED, NATIVE_INITIALIZED,
-		NATIVE_OPEN_GLINITIALIZED,
 		TASK_CHANGED, MAPS_INITIALIZED, POI_TYPES_INITIALIZED, ASSETS_COPIED, INIT_RENDERERS,
 		RESTORE_BACKUPS, INDEX_REGION_BOUNDARIES, SAVE_GPX_TRACKS, LOAD_GPX_TRACKS
 	}
 
 	public interface AppInitializeListener {
 		void onProgress(AppInitializer init, InitEvents event);
-		void onFinish(AppInitializer init);
+		void onFinish();
 	}
 
 	AppInitializer(OsmandApplication app) {
@@ -587,7 +586,7 @@ public class AppInitializer implements IProgress {
 			@Override
 			public void run() {
 				for(AppInitializeListener l : listeners) {
-					l.onFinish(AppInitializer.this);
+					l.onFinish();
 				}
 			}
 		});
@@ -637,16 +636,10 @@ public class AppInitializer implements IProgress {
 	public String getCurrentInitTaskName() {
 		return taskName;
 	}
-
 	@Override
 	public boolean isIndeterminate() {
 		return true;
 	}
-
-	public boolean isInterrupted() {
-		return false;
-	}
-
 	private boolean applicationBgInitializing = false;
 
 	synchronized void startApplication() {
@@ -669,7 +662,7 @@ public class AppInitializer implements IProgress {
 	public void addListener(AppInitializeListener listener) {
 		this.listeners.add(listener);
 		if(!appInitializing) {
-			listener.onFinish(this);
+			listener.onFinish();
 		}
 	}
 

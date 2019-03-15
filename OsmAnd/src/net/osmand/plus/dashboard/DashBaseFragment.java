@@ -63,12 +63,12 @@ public abstract class DashBaseFragment extends Fragment {
 			SwipeDismissTouchListener listener = new SwipeDismissTouchListener(childView, null,
 					new SwipeDismissTouchListener.DismissCallbacks() {
 						@Override
-						public boolean canDismiss(Object token) {
+						public boolean canDismiss() {
 							return true;
 						}
 
 						@Override
-						public void onDismiss(View view, Object token, boolean isSwipeRight) {
+						public void onDismiss() {
 							getDismissCallback().onDismiss();
 						}
 					});

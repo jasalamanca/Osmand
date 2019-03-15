@@ -26,7 +26,6 @@ public class SearchCoreUITest {
 		SearchResult a1 = searchResult(rs, phrase, "a", 100);
 		SearchResult b2 = searchResult(rs, phrase, "b", 200);
 		SearchResult b1 = searchResult(rs, phrase, "b", 100);
-		SearchResult a3 = searchResult(rs, phrase, "a", 100);
 		cll.addSearchResults(rs, true, true);
 		Assert.assertEquals(3, cll.getCurrentSearchResults().size());
 		Assert.assertSame(a1, cll.getCurrentSearchResults().get(0));

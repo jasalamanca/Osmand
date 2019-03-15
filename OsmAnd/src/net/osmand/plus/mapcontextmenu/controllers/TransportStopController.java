@@ -1,22 +1,16 @@
 package net.osmand.plus.mapcontextmenu.controllers;
 
-import android.view.View;
-import android.view.View.OnClickListener;
-
-import net.osmand.data.LatLon;
 import net.osmand.data.PointDescription;
 import net.osmand.data.QuadRect;
 import net.osmand.data.TransportRoute;
 import net.osmand.data.TransportStop;
 import net.osmand.plus.R;
-import net.osmand.plus.transport.TransportStopRoute;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.mapcontextmenu.MapContextMenu;
 import net.osmand.plus.mapcontextmenu.MenuBuilder;
 import net.osmand.plus.mapcontextmenu.MenuController;
 import net.osmand.plus.resources.TransportIndexRepository;
+import net.osmand.plus.transport.TransportStopRoute;
 import net.osmand.plus.transport.TransportStopType;
-import net.osmand.plus.views.TransportStopsLayer;
 import net.osmand.util.Algorithms;
 import net.osmand.util.MapUtils;
 
@@ -86,7 +80,7 @@ public class TransportStopController extends MenuController {
 		return getPointDescription().getTypeName();
 	}
 
-	public List<TransportStopRoute> processTransportStop() {
+	List<TransportStopRoute> processTransportStop() {
 		ArrayList<TransportStopRoute> routes = new ArrayList<>();
 		List<TransportIndexRepository> reps = getMapActivity().getMyApplication()
 				.getResourceManager().searchTransportRepositories(transportStop.getLocation().getLatitude(),
@@ -102,7 +96,7 @@ public class TransportStopController extends MenuController {
 				}
 				ArrayList<TransportStop> ls = new ArrayList<>();
 				QuadRect ll = MapUtils.calculateLatLonBbox(transportStop.getLocation().getLatitude(), transportStop.getLocation().getLongitude(), 150);
-				t.searchTransportStops(ll.top, ll.left, ll.bottom, ll.right, -1, ls, null);
+				t.searchTransportStops(ll.top, ll.left, ll.bottom, ll.right, -1, ls);
 				for(TransportStop tstop : ls) {
 					if(tstop.getId().longValue() != transportStop.getId().longValue() || empty) {
 						addRoutes(routes, useEnglishNames, t, tstop, transportStop,
@@ -160,5 +154,4 @@ public class TransportStopController extends MenuController {
 		}
 		return false;
 	}
-
 }

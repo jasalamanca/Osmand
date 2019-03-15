@@ -35,15 +35,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.EnumSet;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import gnu.trove.list.array.TIntArrayList;
 
-//	import android.widget.Toast;
-
-/**
- */
 public class WaypointHelper {
 	private static final int NOT_ANNOUNCED = 0;
 	private static final int ANNOUNCED_ONCE = 1;
@@ -61,13 +56,13 @@ public class WaypointHelper {
 
 	private final OsmandApplication app;
 	// every time we modify this collection, we change the reference (copy on write list)
-	public static final int TARGETS = 0;
+	static final int TARGETS = 0;
 	public static final int WAYPOINTS = 1;
 	public static final int POI = 2;
-	public static final int FAVORITES = 3;
+	static final int FAVORITES = 3;
 	public static final int ALARMS = 4;
 	public static final int MAX = 5;
-	public static final int[] SEARCH_RADIUS_VALUES = {50, 100, 200, 500, 1000, 2000, 5000};
+	static final int[] SEARCH_RADIUS_VALUES = {50, 100, 200, 500, 1000, 2000, 5000};
 	private static final double DISTANCE_IGNORE_DOUBLE_SPEEDCAMS = 150;
 
 	private List<List<LocationPointWrapper>> locationPoints = new ArrayList<>();
@@ -78,14 +73,12 @@ public class WaypointHelper {
 	private long announcedAlarmTime;
 	private ApplicationMode appMode;
 
-
 	public WaypointHelper(OsmandApplication application) {
 		app = application;
 		appMode = app.getSettings().getApplicationMode();
 	}
 
-
-	public List<LocationPointWrapper> getWaypoints(int type) {
+	List<LocationPointWrapper> getWaypoints(int type) {
 		if (type == TARGETS) {
 			return getTargets(new ArrayList<WaypointHelper.LocationPointWrapper>());
 		}
@@ -95,13 +88,12 @@ public class WaypointHelper {
 		return locationPoints.get(type);
 	}
 
-
 	public void locationChanged(Location location) {
 		app.getAppCustomization();
 		announceVisibleLocations();
 	}
 
-	public int getRouteDistance(LocationPointWrapper point) {
+	int getRouteDistance(LocationPointWrapper point) {
 		return route.getDistanceToPoint(point.routeIndex);
 	}
 
@@ -111,7 +103,7 @@ public class WaypointHelper {
 		}
 	}
 
-	public void removeVisibleLocationPoint(List<LocationPointWrapper> points) {
+	void removeVisibleLocationPoint(List<LocationPointWrapper> points) {
 		List<TargetPoint> ps = app.getTargetPointsHelper().getIntermediatePointsWithTarget();
 		boolean[] checkedIntermediates = null;
 		for (LocationPointWrapper lp : points) {
@@ -205,7 +197,7 @@ public class WaypointHelper {
 		return mostImportant;
 	}
 
-	public void enableWaypointType(int type, boolean enable) {
+	void enableWaypointType(int type, boolean enable) {
 		//An item will be displayed in the Waypoint list if either "Show..." or "Announce..." is selected for it in the Navigation settings
 		//Keep both "Show..." and "Announce..." Nav settings in sync when user changes what to display in the Waypoint list, as follows:
 		if (type == ALARMS) {
@@ -227,24 +219,17 @@ public class WaypointHelper {
 		recalculatePoints(route, type, locationPoints);
 	}
 
-	public void recalculatePoints(int type) {
+	void recalculatePoints(int type) {
 		recalculatePoints(route, type, locationPoints);
 	}
-
-
-	public boolean isTypeConfigurable(int waypointType) {
+	boolean isTypeConfigurable(int waypointType) {
 		return waypointType != TARGETS;
 	}
-
-	public boolean isTypeVisible(int waypointType) {
-		boolean vis = app.getAppCustomization().isWaypointGroupVisible(waypointType, route);
-		if (!vis) {
-			return false;
-		}
-		return vis;
+	boolean isTypeVisible(int waypointType) {
+		return app.getAppCustomization().isWaypointGroupVisible(waypointType, route);
 	}
 
-	public boolean isTypeEnabled(int type) {
+	boolean isTypeEnabled(int type) {
 		if (type == ALARMS) {
 			return app.getSettings().SHOW_TRAFFIC_WARNINGS.getModeValue(appMode);
 		} else if (type == POI) {
@@ -304,7 +289,6 @@ public class WaypointHelper {
 		}
 		return speedAlarm;
 	}
-
 
 	private void announceVisibleLocations() {
 		Location lastKnownLocation = app.getRoutingHelper().getLastProjection();
@@ -385,11 +369,9 @@ public class WaypointHelper {
 		}
 	}
 
-
 	private VoiceRouter getVoiceRouter() {
 		return app.getRoutingHelper().getVoiceRouter();
 	}
-
 	public boolean isRouteCalculated() {
 		return route != null && !route.isEmpty();
 	}
@@ -409,7 +391,6 @@ public class WaypointHelper {
 		return points;
 	}
 
-
 	private List<LocationPointWrapper> getTargets(List<LocationPointWrapper> points) {
 		List<TargetPoint> wts = app.getTargetPointsHelper().getIntermediatePointsWithTarget();
 		for (int k = 0; k < wts.size(); k++) {
@@ -425,11 +406,6 @@ public class WaypointHelper {
 		}
 		Collections.reverse(points);
 		return points;
-	}
-
-	public void clearAllVisiblePoints() {
-		this.locationPointsStates.clear();
-		this.locationPoints = new ArrayList<>();
 	}
 
 	public void setNewRoute(RouteCalculationResult route) {
@@ -609,21 +585,15 @@ public class WaypointHelper {
 		}
 	}
 
-	public Set<PoiUIFilter> getPoiFilters() {
-		return app.getPoiFilters().getSelectedPoiFilters();
-	}
-
 	public static class LocationPointWrapper {
 		LocationPoint point;
 		float deviationDistance;
 		boolean deviationDirectionRight;
 		int routeIndex;
 		boolean announce = true;
-		RouteCalculationResult route;
 		int type;
 
-		public LocationPointWrapper(RouteCalculationResult rt, int type, LocationPoint point, float deviationDistance, int routeIndex) {
-			this.route = rt;
+		LocationPointWrapper(RouteCalculationResult rt, int type, LocationPoint point, float deviationDistance, int routeIndex) {
 			this.type = type;
 			this.point = point;
 			this.deviationDistance = deviationDistance;
@@ -636,14 +606,11 @@ public class WaypointHelper {
 		public float getDeviationDistance() {
 			return deviationDistance;
 		}
-		public boolean isDeviationDirectionRight() {
-			return deviationDirectionRight;
-		}
 		public LocationPoint getPoint() {
 			return point;
 		}
 
-		public Drawable getDrawable(Context uiCtx, OsmandApplication app, boolean nightMode) {
+		public Drawable getDrawable(Context uiCtx, OsmandApplication app) {
 			if (type == POI) {
 				Amenity amenity = ((AmenityLocationPoint) point).a;
 				PoiType st = amenity.getType().getPoiTypeByKeyName(amenity.getSubType());
@@ -713,7 +680,6 @@ public class WaypointHelper {
 				} else {
 					return null;
 				}
-
 			} else {
 				return null;
 			}
@@ -737,22 +703,16 @@ public class WaypointHelper {
 			}
 			LocationPointWrapper other = (LocationPointWrapper) obj;
 			if (point == null) {
-				if (other.point != null) {
-					return false;
-				}
-			} else if (!point.equals(other.point)) {
-				return false;
-			}
-			return true;
+				return other.point == null;
+			} else return point.equals(other.point);
 		}
-
 	}
 
-	public int getSearchDeviationRadius(int type) {
+	int getSearchDeviationRadius(int type) {
 		return type == POI ? poiSearchDeviationRadius : searchDeviationRadius;
 	}
 
-	public void setSearchDeviationRadius(int type, int radius) {
+	void setSearchDeviationRadius(int type, int radius) {
 		if (type == POI) {
 			this.poiSearchDeviationRadius = radius;
 		} else {
@@ -772,12 +732,10 @@ public class WaypointHelper {
 		public double getLatitude() {
 			return a.getLocation().getLatitude();
 		}
-
 		@Override
 		public double getLongitude() {
 			return a.getLocation().getLongitude();
 		}
-
 
 		@Override
 		public PointDescription getPointDescription(Context ctx) {
@@ -789,10 +747,6 @@ public class WaypointHelper {
 		@Override
 		public int getColor() {
 			return 0;
-		}
-
-		public boolean isVisible() {
-			return true;
 		}
 	}
 }

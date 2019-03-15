@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -62,10 +63,6 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 		invalidateListView(context);
 	}
 
-	public ArrayAdapter<?> getAdapter() {
-		return listAdapter;
-	}
-	
 	@Override
 	public void downloadHasFinished() {
 		invalidateListView(getMyActivity());
@@ -127,7 +124,7 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 		}
 		DownloadResources indexes = getMyActivity().getDownloadThread().getIndexes();
 		final List<IndexItem> indexItems = indexes.getItemsToUpdate();
-		final TextView updateAllButton = view.findViewById(R.id.updateAllButton);
+		final Button updateAllButton = view.findViewById(R.id.updateAllButton);
 		if (indexItems.size() == 0 || indexItems.get(0).getType() == null) {
 			if (!Algorithms.isEmpty(errorMessage)) {
 				updateAllButton.setText(errorMessage);

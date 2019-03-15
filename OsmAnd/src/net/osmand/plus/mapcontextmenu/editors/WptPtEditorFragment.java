@@ -31,7 +31,6 @@ import net.osmand.util.Algorithms;
 import java.io.File;
 
 public class WptPtEditorFragment extends PointEditorFragment {
-
 	WptPtEditor editor;
 	WptPt wpt;
 	private SavingTrackHelper savingTrackHelper;
@@ -270,31 +269,22 @@ public class WptPtEditorFragment extends PointEditorFragment {
 	protected String getDefaultCategoryName() {
 		return getString(R.string.shared_string_favorites);
 	}
-
-	public String getHeaderCaption() {
-		return getMapActivity().getResources().getString(R.string.gpx_wpt);
-	}
-
 	@Override
 	public String getNameInitValue() {
 		return wpt.name;
 	}
-
 	@Override
 	public String getCategoryInitValue() {
 		return Algorithms.isEmpty(wpt.category) ? "" : wpt.category;
 	}
-
 	@Override
 	public String getDescriptionInitValue() {
 		return wpt.desc;
 	}
-
 	@Override
 	public Drawable getNameIcon() {
 		return FavoriteImageDrawable.getOrCreate(getMapActivity(), color == 0 ? defaultColor : color, false);
 	}
-
 	@Override
 	public Drawable getCategoryIcon() {
 		return getPaintedIcon(R.drawable.ic_action_folder_stroke, color == 0 ? defaultColor : color);

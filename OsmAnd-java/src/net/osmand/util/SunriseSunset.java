@@ -188,6 +188,7 @@ import java.util.TimeZone;
 *	a valid date, and time zone between -14 and +14.
 *  
 *----------------------------------------------------------------------------*/
+@SuppressWarnings("ALL")
 public class SunriseSunset
 {
 	

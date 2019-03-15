@@ -10,7 +10,6 @@ import android.graphics.PointF;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
-import net.osmand.ResultMatcher;
 import net.osmand.data.LatLon;
 import net.osmand.data.PointDescription;
 import net.osmand.data.QuadRect;
@@ -20,8 +19,8 @@ import net.osmand.data.TransportStop;
 import net.osmand.osm.edit.Node;
 import net.osmand.osm.edit.Way;
 import net.osmand.plus.R;
-import net.osmand.plus.transport.TransportStopRoute;
 import net.osmand.plus.activities.MapActivity;
+import net.osmand.plus.transport.TransportStopRoute;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -89,18 +88,7 @@ public class TransportStopsLayer extends OsmandMapLayer implements ContextMenuLa
 					return new ArrayList<>();
 				}
 				List<TransportStop> res = view.getApplication().getResourceManager().searchTransportSync(latLonBounds.top, latLonBounds.left,
-						latLonBounds.bottom, latLonBounds.right, new ResultMatcher<TransportStop>() {
-
-							@Override
-							public boolean publish(TransportStop object) {
-								return true;
-							}
-
-							@Override
-							public boolean isCancelled() {
-								return isInterrupted();
-							}
-						});
+						latLonBounds.bottom, latLonBounds.right);
 				Collections.sort(res, new Comparator<TransportStop>() {
 					@Override
 					public int compare(TransportStop lhs, TransportStop rhs) {
@@ -141,19 +129,10 @@ public class TransportStopsLayer extends OsmandMapLayer implements ContextMenuLa
 			// that's really rare case, but is much efficient than introduce synchronized block
 		}
 	}
-	
-	public TransportStopRoute getRoute() {
-		return stopRoute;
-	}
-	
-	public void setRoute(TransportStopRoute route) {
+
+    public void setRoute(TransportStopRoute route) {
 		this.stopRoute = route;
 	}
-
-	public boolean isShowTransportStops() {
-		return showTransportStops;
-	}
-
 	public void setShowTransportStops(boolean showTransportStops) {
 		this.showTransportStops = showTransportStops;
 	}
@@ -240,16 +219,13 @@ public class TransportStopsLayer extends OsmandMapLayer implements ContextMenuLa
 	@Override
 	public void onDraw(Canvas canvas, RotatedTileBox tb, DrawSettings settings) {
 	}
-
 	@Override
 	public void destroyLayer() {
 	}
-
 	@Override
 	public boolean drawInScreenPixels() {
 		return true;
 	}
-
 	@Override
 	public boolean onLongPressEvent(PointF point, RotatedTileBox tileBox) {
 		return false;
@@ -268,17 +244,14 @@ public class TransportStopsLayer extends OsmandMapLayer implements ContextMenuLa
 	public boolean disableSingleTap() {
 		return false;
 	}
-
 	@Override
 	public boolean disableLongPressOnMap() {
 		return false;
 	}
-
 	@Override
 	public boolean isObjectClickable(Object o) {
 		return false;
 	}
-
 	@Override
 	public boolean runExclusiveAction(Object o, boolean unknownLocation) {
 		return false;
@@ -300,5 +273,4 @@ public class TransportStopsLayer extends OsmandMapLayer implements ContextMenuLa
 		}
 		return null;
 	}
-
 }

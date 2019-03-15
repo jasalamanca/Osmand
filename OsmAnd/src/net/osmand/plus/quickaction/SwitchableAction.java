@@ -235,6 +235,5 @@ public abstract class SwitchableAction<T> extends QuickAction {
 	@StringRes
 	int getDiscrTitle();
 
-	protected abstract String getListKey();
 	protected abstract View.OnClickListener getOnAddBtnClickListener(MapActivity activity, final Adapter adapter);
 }

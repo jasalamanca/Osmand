@@ -613,12 +613,6 @@ public class SearchPOIActivity extends OsmandListActivity implements OsmAndCompa
 			this.requestType = requestType;
 		}
 
-// --Commented out by Inspection START (10/01/19 21:24):
-//		net.osmand.Location getSearchedLocation() {
-//			return searchLocation;
-//		}
-// --Commented out by Inspection STOP (10/01/19 21:24)
-
 		@Override
 		protected void onPreExecute() {
 			setProgressBarIndeterminateVisibility(true);
@@ -869,7 +863,6 @@ public class SearchPOIActivity extends OsmandListActivity implements OsmAndCompa
 		}
 	}
 
-
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int itemId = item.getItemId();
@@ -896,11 +889,9 @@ public class SearchPOIActivity extends OsmandListActivity implements OsmAndCompa
 			case SAVE_FILTER:
 				savePoiFilter();
 				return true;
-
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
 
 	private void removePoiFilter() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -956,7 +947,5 @@ public class SearchPOIActivity extends OsmandListActivity implements OsmAndCompa
 			}
 		});
 		builder.create().show();
-
 	}
-
 }

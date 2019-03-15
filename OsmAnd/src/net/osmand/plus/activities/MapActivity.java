@@ -366,7 +366,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 				}
 
 				@Override
-				public void onFinish(AppInitializer init) {
+				public void onFinish() {
 					if (!openGlSetup) {
 						setupOpenGLView();
 					}
@@ -1117,17 +1117,9 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 	@Override
 	protected void onStart() {
 		super.onStart();
-		wakeLockHelper.onStart(this);
+		wakeLockHelper.onStart();
 		getMyApplication().getNotificationHelper().showNotifications();
 	}
-
-//	protected void setProgressDlg(Dialog progressDlg) {
-//		this.progressDlg = progressDlg;
-//	}
-
-//	protected Dialog getProgressDlg() {
-//		return progressDlg;
-//	}
 
 	@Override
 	protected void onStop() {
@@ -1261,7 +1253,6 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 			protected void onPostExecute(Void result) {
 			}
 		}.executeOnExecutor(singleThreadExecutor, (Void) null);
-
 	}
 
 	@Override
@@ -1363,11 +1354,9 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 	public OsmandMapTileView getMapView() {
 		return mapView;
 	}
-
 	public MapViewTrackingUtilities getMapViewTrackingUtilities() {
 		return mapViewTrackingUtilities;
 	}
-
 	public static MapViewTrackingUtilities getSingleMapViewTrackingUtilities() {
 		return mapViewTrackingUtilities;
 	}
@@ -1461,17 +1450,9 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 	public void refreshMap() {
 		getMapView().refreshMap();
 	}
-
-// --Commented out by Inspection START (7/01/19 20:40):
-//	public View getLayout() {
-//		return getWindow().getDecorView().findViewById(android.R.id.content);
-//	}
-// --Commented out by Inspection STOP (7/01/19 20:40)
-
 	public DashboardOnMap getDashboard() {
 		return dashboardOnMap;
 	}
-
 	public MapContextMenu getContextMenu() {
 		return mapContextMenu;
 	}

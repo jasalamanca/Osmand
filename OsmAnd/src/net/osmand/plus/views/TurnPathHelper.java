@@ -8,6 +8,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Path;
+import android.graphics.PixelFormat;
 import android.graphics.PointF;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -20,7 +21,6 @@ import net.osmand.router.TurnType;
 import java.util.Map;
 
 public class TurnPathHelper {
-
 	//Index of processed turn
 	public static final int FIRST_TURN = 1;
 	public static final int SECOND_TURN = 2;
@@ -91,23 +91,18 @@ public class TurnPathHelper {
 		private float getProjX(double angle, double radius) {
 			return getX(angle, radius) + cx;
 		}
-		
 		private float getProjY(double angle, double radius) {
 			return getY(angle, radius) + cy;
 		}
-		
 		float getTriangle2X() {
 			return getProjX(rot + dfAr, radArrowTriangle1);
 		}
-		
 		float getTriangle1X() {
 			return getProjX(rot - dfAr, radArrowTriangle1);
 		}
-		
 		float getTriangle2Y() {
 			return getProjY(rot + dfAr, radArrowTriangle1);
 		}
-		
 		float getTriangle1Y() {
 			return getProjY(rot - dfAr, radArrowTriangle1);
 		}
@@ -120,17 +115,13 @@ public class TurnPathHelper {
 			// arcQuadTo(pathForTurn, rot - dfAr2, radAr2, rot, radArrow, 0.9f, cx, cy); // 2.
 			arcQuadTo(pathForTurn, rot - dfAr, radArrowTriangle1, rot - dfAr2, radArrowTriangle2, rot, radEndOfArrow,
 					4.5f * scaleTriangle, cx, cy); // 3.
-			// arcLineTo(pathForTurn, rot, cx, cy, radArrow); // 1.
 			arcQuadTo(pathForTurn, rot - dfAr2, radArrowTriangle2, rot, radEndOfArrow, rot + dfAr2, radArrowTriangle2,
 					4.5f, cx, cy);
 			// right triangle
-			// arcLineTo(pathForTurn, rot + dfAr2, cx, cy, radAr2); // 1.
 			arcQuadTo(pathForTurn, rot, radEndOfArrow, rot + dfAr2, radArrowTriangle2, rot + dfAr, radArrowTriangle1,
 					4.5f * scaleTriangle, cx, cy);
 			arcLineTo(pathForTurn, rot + dfAr, cx, cy, radArrowTriangle1);
-
 		}
-		
 	}
 
 	// 72x72
@@ -247,9 +238,7 @@ public class TurnPathHelper {
 			pathForTurn.moveTo(centerCircleX + b * tv.widthStepIn / 2, ha - lowMargin);
 			pathForTurn.lineTo(centerCircleX + b * tv.widthStepIn / 2, centerCircleY +
 					2 * r);
-//			pathForTurn.arcTo(innerOval, -90 - b * 90, b * 45);
 			tv.drawTriangle(pathForTurn);
-//			pathForTurn.lineTo(centerCircleX - b * tv.widthStepIn / 2, (float) (centerCircleY - 2 *r));
 			pathForTurn.arcTo(innerOval, -90  + b * angle,  - b * (90 + angle));
 			pathForTurn.lineTo(centerCircleX - b * tv.widthStepIn / 2, ha - lowMargin);
 		} else if(TurnType.TU == turnTypeId || TurnType.TRU == turnTypeId) {
@@ -288,7 +277,6 @@ public class TurnPathHelper {
 			float mdx = -b * shiftX * (noOverlap ? 1 : 0);
 			pathForTurn.moveTo(wa / 2 + tv.widthStepIn / 2 + mdx, ha - lowMargin);
 			pathForTurn.lineTo(wa / 2 + tv.widthStepIn / 2 + mdx, ha - lowMargin - firstH);
-			// pathForTurn.lineTo(wa / 2 + tv.widthStepIn / 2 + dx, ha - lowMargin - firstH - secondH);
 			pathForTurn.cubicTo(
 					wa / 2 + tv.widthStepIn / 2 + mdx, ha - lowMargin - firstH - secondH / 2 + b * 3,
 					wa / 2 + tv.widthStepIn / 2 + dx, ha - lowMargin - firstH - secondH / 2 + b * 3,
@@ -299,9 +287,8 @@ public class TurnPathHelper {
 					wa / 2 - tv.widthStepIn / 2 + dx, ha - lowMargin - firstH - secondH / 2 - b * 2,
 					wa / 2 - tv.widthStepIn / 2 + mdx, ha - lowMargin - firstH - secondH / 2 - b * 2,
 					wa / 2 - tv.widthStepIn / 2 + mdx, ha - lowMargin - firstH );
-//			pathForTurn.lineTo(wa / 2 - tv.widthStepIn / 2 + mdx, ha - lowMargin - firstH);
 			pathForTurn.lineTo(wa / 2 - tv.widthStepIn / 2 + mdx, ha - lowMargin);
-		} else if(turnType != null && turnType.isRoundAbout() ) {
+		} else if(turnType.isRoundAbout()) {
 			int out = turnType.getExitOut();
 			boolean leftSide = turnType.isLeftSide();
 			boolean showSteps = SHOW_STEPS && !mini;
@@ -315,8 +302,6 @@ public class TurnPathHelper {
 			if(outlay != null && !mini) {
 				outlay.addArc(qrOut, 0, 360);
 				outlay.addArc(qrIn, 0, -360);
-//				outlay.addOval(qrOut, Direction.CCW);
-//				outlay.addOval(qrIn, Direction.CW);
 			}
 			
 			// move to bottom ring
@@ -333,8 +318,6 @@ public class TurnPathHelper {
 				if (Math.abs(st) < Math.PI / 60) {
 					showSteps = false;
 				}
-				// double st = (rot - 2 * dfOut ) / (2 * out - 1);
-				// dfStepOut = st;
 				if (showSteps) {
 					outlay.moveTo(tv.getProjX(tv.dfOut, tv.radOuterCircle), tv.getProjY(tv.dfOut, tv.radOuterCircle));
 					for (int i = 0; i < out - 1; i++) {
@@ -345,7 +328,6 @@ public class TurnPathHelper {
 						arcLineTo(outlay, tv.dfOut + (i + 1) * (st + tv.dfStepOut) - tv.dfStepOut / 2 + tv.dfStepInter / 2, 
 								tv.cx, tv.cy, tv.radStepInter);
 						arcLineTo(outlay, tv.dfOut + (i + 1) * (st + tv.dfStepOut), tv.cx, tv.cy, tv.radOuterCircle);
-						// pathForTurn.arcTo(qr1, startArcAngle(dfOut), sweepArcAngle(rot - dfOut - dfOut));
 					}
 					outlay.arcTo(qrOut, startArcAngle(tv.rot - tv.dfOut - st), sweepArcAngle(st));
 					// swipe back
@@ -353,10 +335,6 @@ public class TurnPathHelper {
 					outlay.arcTo(qrIn, startArcAngle(tv.rot - tv.dfIn), -sweepArcAngle(tv.rot - tv.dfIn - tv.dfIn));
 				}
 			} 
-//			if(!showSteps) {
-//				// arc
-//				pathForTurn.arcTo(qrOut, startArcAngle(dfOut), sweepArcAngle(rot - dfOut - dfOut));
-//			}
 			pathForTurn.arcTo(qrOut, startArcAngle(tv.dfOut), sweepArcAngle(tv.rot - tv.dfOut - tv.dfOut));
 			
 			tv.drawTriangle(pathForTurn);
@@ -368,9 +346,7 @@ public class TurnPathHelper {
 			arcLineTo(pathForTurn, -tv.dfL, tv.cx, tv.cy, tv.radBottom);
 			// left
 			arcLineTo(pathForTurn, tv.dfL, tv.cx, tv.cy, tv.radBottom);
-			
-		
-		} 
+		}
 		pathForTurn.close();
 		if(transform != null){
 			pathForTurn.transform(transform);
@@ -416,26 +392,17 @@ public class TurnPathHelper {
 	}
 	
 	private static void arcLineTo(Path pathForTurn, double angle, float cx, float cy, float radius) {
-		pathForTurn.lineTo(getProjX(angle, cx, cy, radius), getProjY(angle, cx, cy, radius));		
+		pathForTurn.lineTo(getProjX(angle, cx, radius), getProjY(angle, cy, radius));
 	}
-	
-	private static void arcQuadTo(Path pathForTurn, double angle, float radius, double angle2, float radius2,
-			float proc, float cx, float cy) {
-		float X = getProjX(angle, cx, cy, radius);
-		float Y = getProjY(angle, cx, cy, radius);
-		float X2 = getProjX(angle2, cx, cy, radius2);
-		float Y2 = getProjY(angle2, cx, cy, radius2);
-		pathForTurn.quadTo(X, Y, X2 * proc + X * (1 - proc), Y2 * proc + Y * (1 - proc));
-	}
-	
+
 	private static void arcQuadTo(Path pathForTurn, double angle0, float radius0, double angle, float radius, double angle2, float radius2,
 			float dl, float cx, float cy) {
-		float X0 = getProjX(angle0, cx, cy, radius0);
-		float Y0 = getProjY(angle0, cx, cy, radius0);
-		float X = getProjX(angle, cx, cy, radius);
-		float Y = getProjY(angle, cx, cy, radius);
-		float X2 = getProjX(angle2, cx, cy, radius2);
-		float Y2 = getProjY(angle2, cx, cy, radius2);
+		float X0 = getProjX(angle0, cx, radius0);
+		float Y0 = getProjY(angle0, cy, radius0);
+		float X = getProjX(angle, cx, radius);
+		float Y = getProjY(angle, cy, radius);
+		float X2 = getProjX(angle2, cx, radius2);
+		float Y2 = getProjY(angle2, cy, radius2);
 		float l2 = (float) Math.sqrt((X-X2)*(X-X2) + (Y-Y2)*(Y-Y2));
 		float l0 = (float) Math.sqrt((X-X0)*(X-X0) + (Y-Y0)*(Y-Y0));
 		float proc2 = dl / l2;
@@ -454,19 +421,17 @@ public class TurnPathHelper {
 		return (float) (Math.sin(angle + Math.PI / 2) * radius);
 	}
 	
-	private static float getProjX(double angle, float cx, float cy, double radius) {
+	private static float getProjX(double angle, float cx, double radius) {
 		return getX(angle, radius) + cx;
 	}
 	
-	private static float getProjY(double angle, float cx, float cy, double radius) {
+	private static float getProjY(double angle, float cy, double radius) {
 		return getY(angle, radius) + cy;
 	}
-
 
 	private static float startArcAngle(double i) {
 		return (float) (i * 180 / Math.PI + 90);
 	}
-	
 	private static float sweepArcAngle(double d) {
 		return (float) (d * 180 / Math.PI);
 	}
@@ -516,31 +481,23 @@ public class TurnPathHelper {
 
 		@Override
 		public int getOpacity() {
-			return 0;
+			return PixelFormat.UNKNOWN;
 		}
-
 		@Override
 		public void setAlpha(int alpha) {
 			paintRouteDirection.setAlpha(alpha);
-			
 		}
-
 		@Override
 		public void setColorFilter(ColorFilter cf) {
 			paintRouteDirection.setColorFilter(cf);
 		}
-		
 	}
 
-
 	public static class TurnResource {
-
 		int turnType;
 		boolean shortArrow;
 		boolean noOverlap;
 		boolean leftSide;
-
-		TurnResource() {}
 
 		TurnResource(int turnType, boolean shortArrow, boolean noOverlap, boolean leftSide) {
 			this.turnType = turnType == 0 ? 1 : turnType;
@@ -569,8 +526,7 @@ public class TurnPathHelper {
 	}
 
 	public static Path getPathFromTurnType(Resources res, Map<TurnResource, Path> cache, int firstTurn,
-			int secondTurn, int thirdTurn, int turnIndex, float coef, boolean leftSide, boolean smallArrow) {
-
+										   int secondTurn, int thirdTurn, int turnIndex, boolean leftSide, boolean smallArrow) {
 		int firstTurnType = TurnType.valueOf(firstTurn, leftSide).getValue();
 		int secondTurnType = TurnType.valueOf(secondTurn, leftSide).getValue();
 		int thirdTurnType = TurnType.valueOf(thirdTurn, leftSide).getValue();
@@ -620,12 +576,6 @@ public class TurnPathHelper {
 			cache.put(turnResource, p);
 		}
 
-		// Maybe redundant scaling
-		/*
-		 * float bRatio = (float)b.getWidth() / (float)b.getHeight(); float s = 72f * coef; int wq = Math.round(s /
-		 * bRatio); int hq = Math.round(s); b = Bitmap.createScaledBitmap(b, wq, hq, false);
-		 */
-
 		return p;
 	}
 
@@ -638,6 +588,4 @@ public class TurnPathHelper {
 				matrix, null, false, turnResource.shortArrow, turnResource.noOverlap, smallArrow);
 		return p;
 	}
-
-
 }

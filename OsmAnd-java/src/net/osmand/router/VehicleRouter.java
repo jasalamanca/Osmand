@@ -1,13 +1,11 @@
 package net.osmand.router;
 
-import java.util.Map;
-
 import net.osmand.binary.RouteDataObject;
 import net.osmand.router.BinaryRoutePlanner.RouteSegment;
 
-public interface VehicleRouter {
+import java.util.Map;
 
-	
+public interface VehicleRouter {
 	boolean containsAttribute(String attribute);
 	
 	String getAttribute(String attribute);
@@ -21,12 +19,7 @@ public interface VehicleRouter {
 	 * return oneway +/- 1 if it is oneway and 0 if both ways
 	 */
     int isOneWay(RouteDataObject road);
-	
-	/**
-	 * return penalty transition in seconds
-	 */
-    float getPenaltyTransition(RouteDataObject road);
-	
+
 	/**
 	 * return delay in seconds (0 no obstacles)
 	 */
@@ -81,9 +74,5 @@ public interface VehicleRouter {
 	 */
     double calculateTurnTime(RouteSegment segment, int segmentEnd, RouteSegment prev, int prevSegmentEnd);
 	
-		
 	VehicleRouter build(Map<String, String> params);
-
-	
-	
 }

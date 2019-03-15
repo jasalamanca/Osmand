@@ -1,19 +1,18 @@
 package net.osmand.plus.activities.search;
 
-import java.text.Collator;
-import java.util.ArrayList;
-import java.util.Comparator;
-
-import net.osmand.data.LatLon;
-import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.R;
-import net.osmand.plus.helpers.FileNameTranslationHelper;
-import net.osmand.plus.resources.RegionAddressRepository;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
+import net.osmand.plus.OsmandApplication;
+import net.osmand.plus.R;
+import net.osmand.plus.helpers.FileNameTranslationHelper;
+import net.osmand.plus.resources.RegionAddressRepository;
+
+import java.text.Collator;
+import java.util.ArrayList;
+import java.util.Comparator;
 
 public class SearchRegionByNameActivity extends SearchByNameAbstractActivity<RegionAddressRepository> {
 
@@ -31,15 +30,9 @@ public class SearchRegionByNameActivity extends SearchByNameAbstractActivity<Reg
 
 	@Override
 	protected void reset() {
-		//This is really only a "clear input text field", hence do not reset settings here
-		//osmandSettings.setLastSearchedRegion("", null);
 		super.reset();
 	}
 
-	protected LatLon getLocation(RegionAddressRepository item) {
-		return item.getEstimatedRegionCenter();
-	}
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -70,9 +63,7 @@ public class SearchRegionByNameActivity extends SearchByNameAbstractActivity<Reg
 		quitActivity(SearchCityByNameActivity.class);
 	}
 
-
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
 	}
 }

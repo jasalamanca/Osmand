@@ -16,14 +16,11 @@ import android.view.WindowManager;
 
 import net.osmand.NativeLibrary;
 import net.osmand.NativeLibrary.NativeSearchResult;
-import net.osmand.plus.render.TextRenderer.TextDrawInfo;
 import net.osmand.render.RenderingRuleProperty;
 import net.osmand.render.RenderingRuleSearchRequest;
 import net.osmand.util.Algorithms;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 public class OsmandRenderer {
@@ -34,9 +31,7 @@ public class OsmandRenderer {
 
 	/* package */
 	public static class RenderingContext extends net.osmand.RenderingContext {
-		final List<TextDrawInfo> textToDraw = new ArrayList<>();
 		final Context ctx;
-
 		public RenderingContext(Context ctx) {
 			this.ctx = ctx;
 		}

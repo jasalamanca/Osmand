@@ -98,9 +98,7 @@ public class AmenityMenuController extends MenuController {
 	public boolean needStreetName() {
 		if (amenity.getSubType() != null && amenity.getType() != null) {
 			PoiType pt = amenity.getType().getPoiTypeByKeyName(amenity.getSubType());
-			if (pt != null && pt.getOsmTag() != null && pt.getOsmTag().equals("place")) {
-				return false;
-			}
+			return pt == null || pt.getOsmTag() == null || !pt.getOsmTag().equals("place");
 		}
 		return true;
 	}
@@ -170,7 +168,7 @@ public class AmenityMenuController extends MenuController {
 	public void addPlainMenuItems(String typeStr, PointDescription pointDescription, LatLon latLon) {
 	}
 
-	public static void addTypeMenuItem(Amenity amenity, MenuBuilder builder) {
+	static void addTypeMenuItem(Amenity amenity, MenuBuilder builder) {
 		String typeStr = getTypeStr(amenity);
 		if (!Algorithms.isEmpty(typeStr)) {
 			int resId = getRightIconId(amenity);
@@ -196,7 +194,7 @@ public class AmenityMenuController extends MenuController {
 		for (TransportIndexRepository t : reps) {
 			ArrayList<TransportStop> ls = new ArrayList<>();
 			QuadRect ll = MapUtils.calculateLatLonBbox(amenity.getLocation().getLatitude(), amenity.getLocation().getLongitude(), 150);
-			t.searchTransportStops(ll.top, ll.left, ll.bottom, ll.right, -1, ls, null);
+			t.searchTransportStops(ll.top, ll.left, ll.bottom, ll.right, -1, ls);
 			for (TransportStop tstop : ls) {
 				addRoutes(useEnglishNames, t, tstop,
 						(int) MapUtils.getDistance(tstop.getLocation(), amenity.getLocation()));

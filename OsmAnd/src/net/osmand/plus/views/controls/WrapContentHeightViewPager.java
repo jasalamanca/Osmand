@@ -9,7 +9,6 @@ import android.view.MotionEvent;
 import android.view.View;
 
 public class WrapContentHeightViewPager extends ViewPager {
-
 	private boolean swipeable = true;
 	private int height = 0;
 	private int decorHeight = 0;
@@ -155,10 +154,6 @@ public class WrapContentHeightViewPager extends ViewPager {
 			}
 		}
 		return null;
-	}
-
-	public boolean isSwipeable() {
-		return swipeable;
 	}
 
 	public void setSwipeable(boolean swipeable) {

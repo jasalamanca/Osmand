@@ -62,9 +62,10 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SearchDialogFragment extends DialogFragment implements DownloadEvents, OnItemClickListener {
-
-	public static final String TAG = "SearchDialogFragment";
+public class SearchDialogFragment
+		extends DialogFragment
+		implements DownloadEvents, OnItemClickListener
+{
 	private static final String SEARCH_TEXT_DLG_KEY = "search_text_dlg_key";
 	private ListView listView;
 	private SearchListAdapter listAdapter;
@@ -291,12 +292,7 @@ public class SearchDialogFragment extends DialogFragment implements DownloadEven
 			ta.recycle();
 		}
 
-		public void clear() {
-			items.clear();
-			notifyDataSetChanged();
-		}
-
-		@Override
+        @Override
 		public Object getItem(int position) {
 			return items.get(position);
 		}

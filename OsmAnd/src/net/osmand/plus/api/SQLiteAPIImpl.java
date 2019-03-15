@@ -56,7 +56,6 @@ public class SQLiteAPIImpl implements SQLiteAPI {
 					return c.moveToNext();
 				}
 				
-				@Override
 				public String[] getColumnNames() {
 					return c.getColumnNames();
 				}
@@ -91,7 +90,6 @@ public class SQLiteAPIImpl implements SQLiteAPI {
 					return c.getInt(ind);
 				}
 
-				@Override
 				public byte[] getBlob(int ind) {
 					return c.getBlob(ind);
 				}
@@ -138,22 +136,18 @@ public class SQLiteAPIImpl implements SQLiteAPI {
 					st.bindNull(i);
 				}
 
-				@Override
 				public long simpleQueryForLong() {
 					return st.simpleQueryForLong();
 				}
 
-				@Override
 				public String simpleQueryForString() {
 					return st.simpleQueryForString();
 				}
 
-				@Override
 				public void bindLong(int i, long val) {
 					st.bindLong(i, val);
 				}
 
-				@Override
 				public void bindBlob(int i, byte[] val) {
 					st.bindBlob(i, val);
 				}
@@ -165,17 +159,14 @@ public class SQLiteAPIImpl implements SQLiteAPI {
 			ds.setVersion(newVersion);
 		}
 
-		@Override
 		public boolean isReadOnly() {
 			return ds.isReadOnly();
 		}
 
-		@Override
 		public boolean isDbLockedByOtherThreads() {
 			return ds.isDbLockedByOtherThreads();
 		}
 
-		@Override
 		public boolean isClosed() {
 			return !ds.isOpen();
 		}
@@ -183,7 +174,6 @@ public class SQLiteAPIImpl implements SQLiteAPI {
 	}
 
 
-	@Override
 	public SQLiteConnection openByAbsolutePath(String path, boolean readOnly) {
 		// fix http://stackoverflow.com/questions/26937152/workaround-for-nexus-9-sqlite-file-write-operations-on-external-dirs
 		android.database.sqlite.SQLiteDatabase db = SQLiteDatabase.openDatabase(path, null,

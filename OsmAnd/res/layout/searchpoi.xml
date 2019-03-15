@@ -10,6 +10,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
         tools:visibility="visible"
         android:visibility="gone"
         android:orientation="horizontal" >
@@ -20,6 +21,7 @@
             android:layout_height="@dimen/standard_icon_size"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
             android:src="@android:drawable/ic_search_category_default" />
 
         <!-- to not gain focus everytime  -->
@@ -35,6 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginRight="@dimen/list_content_padding"
+            android:layout_marginEnd="@dimen/list_content_padding"
             android:layout_weight="1"
             android:maxLines="1"
             android:singleLine="true"

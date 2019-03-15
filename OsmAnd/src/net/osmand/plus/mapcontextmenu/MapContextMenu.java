@@ -445,7 +445,7 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 		return result;
 	}
 
-	private boolean hide(boolean animated) {
+	public boolean hide() {
 		boolean result = false;
 		if (mapPosition != 0) {
 			mapActivity.getMapView().setMapPosition(mapPosition);
@@ -456,17 +456,10 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 		}
 		WeakReference<MapContextMenuFragment> fragmentRef = findMenuFragment();
 		if (fragmentRef != null) {
-			if (!animated) {
-				fragmentRef.get().disableTransitionAnimation();
-			}
 			fragmentRef.get().dismissMenu();
 			result = true;
 		}
 		return result;
-	}
-
-	public boolean hide() {
-		return hide(true);
 	}
 
 	void updateControlsVisibility(boolean menuVisible) {

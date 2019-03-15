@@ -1,12 +1,11 @@
 package net.osmand.data;
 
+import net.osmand.util.Algorithms;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
-import net.osmand.util.Algorithms;
-
 
 public class Street extends MapObject {
 
@@ -36,19 +35,9 @@ public class Street extends MapObject {
 		intersectedStreets.add(s);
 	}
 
-	public void addBuildingCheckById(Building building) {
-		for (Building b : buildings) {
-			if (b.equals(building)) {
-				return;
-			}
-		}
-		buildings.add(building);
-	}
-
 	public List<Building> getBuildings() {
 		return buildings;
 	}
-
 	public City getCity() {
 		return city;
 	}
@@ -72,11 +61,6 @@ public class Street extends MapObject {
 	}
 
 	/// GENERATION
-
-	public void mergeWith(Street street) {
-		buildings.addAll(street.getBuildings());
-		copyNames(street);
-	}
 
 	public String getNameWithoutCityPart(String lang, boolean transliterate) {
 		String nm = getName(lang, transliterate);

@@ -18,7 +18,6 @@ import net.osmand.data.MapObject.MapObjectComparator;
 import net.osmand.data.Street;
 import net.osmand.plus.OsmAndFormatter;
 import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.search.SearchAddressFragment.AddressInformation;
 import net.osmand.plus.resources.RegionAddressRepository;
@@ -34,7 +33,6 @@ public class SearchStreetByNameActivity extends SearchByNameAbstractActivity<Str
 	private RegionAddressRepository region;
 	private City city;
     private int searchWithCity = -1; // -1 - default, 0 - filter city, 1 - deep search
-	private OsmandSettings osmandSettings;
 
 	@Override
 	protected Comparator<? super Street> createComparator() {
@@ -54,9 +52,6 @@ public class SearchStreetByNameActivity extends SearchByNameAbstractActivity<Str
 
 	@Override
 	protected void reset() {
-		//This is really only a "clear input text field", hence do not reset settings here
-		//searchWithCity = -1;
-		//osmandSettings.setLastSearchedStreet("", null);
 		super.reset();
 	}
 

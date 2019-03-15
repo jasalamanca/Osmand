@@ -35,7 +35,7 @@ public class GeoIntentActivity extends OsmandListActivity {
 			}
 			
 			@Override
-			public void onFinish(AppInitializer init) {
+			public void onFinish() {
 			}
 		});
 

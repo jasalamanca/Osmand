@@ -1,5 +1,6 @@
 package net.osmand.plus.myplaces;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,14 +15,12 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
-import android.app.AlertDialog;
 import android.support.v7.widget.ListPopupWindow;
 import android.util.DisplayMetrics;
 import android.util.SparseArray;
@@ -321,10 +320,6 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 		return (TrackActivity) getActivity();
 	}
 
-	public ArrayAdapter<?> getAdapter() {
-		return adapter;
-	}
-
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		menu.clear();
@@ -370,20 +365,6 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 
 	private GpxDataItem getGpxDataItem() {
 		return getTrackActivity().getGpxDataItem();
-	}
-
-	private void startHandler() {
-		Handler updateCurrentRecordingTrack = new Handler();
-		updateCurrentRecordingTrack.postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				if (updateEnable) {
-					updateContent();
-					adapter.notifyDataSetChanged();
-					startHandler();
-				}
-			}
-		}, 2000);
 	}
 
 	@Override
@@ -466,7 +447,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 				popup.setAnchorView(colorView);
 				popup.setContentWidth(AndroidUtils.dpToPx(app, 200f));
 				popup.setModal(true);
-				popup.setDropDownGravity(Gravity.RIGHT | Gravity.TOP);
+				popup.setDropDownGravity(Gravity.END | Gravity.TOP);
 				popup.setVerticalOffset(AndroidUtils.dpToPx(app, -48f));
 				popup.setHorizontalOffset(AndroidUtils.dpToPx(app, -6f));
 				final GpxAppearanceAdapter gpxApprAdapter = new GpxAppearanceAdapter(getActivity(),
@@ -573,7 +554,7 @@ public class TrackSegmentFragment extends OsmAndListFragment {
 						popup.setAnchorView(splitIntervalView);
 						popup.setContentWidth(AndroidUtils.dpToPx(app, 200f));
 						popup.setModal(true);
-						popup.setDropDownGravity(Gravity.RIGHT | Gravity.TOP);
+						popup.setDropDownGravity(Gravity.END | Gravity.TOP);
 						popup.setVerticalOffset(AndroidUtils.dpToPx(app, -48f));
 						popup.setHorizontalOffset(AndroidUtils.dpToPx(app, -6f));
 						popup.setAdapter(new ArrayAdapter<>(getTrackActivity(),

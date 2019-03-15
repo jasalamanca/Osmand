@@ -1,6 +1,5 @@
 package net.osmand.plus.activities;
 
-
 import android.app.AlertDialog;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
@@ -52,7 +51,6 @@ import java.util.Map;
 import java.util.Set;
 
 public class SettingsNavigationActivity extends SettingsBaseActivity {
-
 	private static final String MORE_VALUE = "MORE_VALUE";
 
 	private Preference avoidRouting;
@@ -91,7 +89,6 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 			} else {
 				settings.WAKE_ON_VOICE_INT.set(0);
 			}
-			return;
 		}
 	}
 
@@ -403,7 +400,6 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		String id = preference.getKey();
 		if (id.equals(settings.VOICE_PROVIDER.getId())) {
 			if (MORE_VALUE.equals(newValue)) {
-				// listPref.set(oldValue); // revert the change..
 				final Intent intent = new Intent(this, DownloadActivity.class);
 				intent.putExtra(DownloadActivity.TAB_TO_OPEN, DownloadActivity.DOWNLOAD_TAB);
 				intent.putExtra(DownloadActivity.FILTER_CAT, DownloadActivityType.VOICE_FILE.getTag());
@@ -430,7 +426,6 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		return true;
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public boolean onPreferenceClick(Preference preference) {
 		if (preference == avoidRouting || preference == preferRouting) {
@@ -445,7 +440,6 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 			showBooleanSettings(vals, bls, preference.getTitle());
 			return true;
 		} else if (preference == autoZoom) {
-			final ApplicationMode am = settings.getApplicationMode();
 			final ContextMenuAdapter adapter = new ContextMenuAdapter();
 			int i = 0;
 			int selectedIndex = -1;
@@ -658,9 +652,7 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		});
 		
 		bld.setTitle(title);
-		
 		bld.setNegativeButton(R.string.shared_string_cancel, null);
-		
 		bld.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
 		    public void onClick(DialogInterface dialog, int whichButton) {
 				for (int i = 0; i < prefs.length; i++) {

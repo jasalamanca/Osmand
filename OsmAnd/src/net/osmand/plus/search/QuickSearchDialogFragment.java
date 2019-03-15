@@ -712,19 +712,15 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 	public QuickSearchType getSearchType() {
 		return searchType;
 	}
-
 	private String getText() {
 		return searchEditText.getText().toString();
 	}
-
 	private boolean isTextEmpty() {
 		return Algorithms.isEmpty(getText());
 	}
-
 	public AccessibilityAssistant getAccessibilityAssistant() {
 		return accessibilityAssistant;
 	}
-
 	public NavigationInfo getNavigationInfo() {
 		return navigationInfo;
 	}
@@ -944,12 +940,6 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		return false;
 	}
 
-// --Commented out by Inspection START (26/01/19 18:29):
-//	public Toolbar getToolbar() {
-//		return toolbar;
-//	}
-// --Commented out by Inspection STOP (26/01/19 18:29)
-
 	public boolean isUseMapCenter() {
 		return useMapCenter;
 	}
@@ -1086,7 +1076,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 				}
 
 				@Override
-				public void onFinish(AppInitializer init) {
+				public void onFinish() {
 					if (!paused) {
 						reloadCategoriesInternal();
 						if (!searching) {
@@ -1139,7 +1129,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 				}
 
 				@Override
-				public void onFinish(AppInitializer init) {
+				public void onFinish() {
 					if (!paused) {
 						reloadCitiesInternal();
 						if (!searching) {
@@ -1307,7 +1297,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 				}
 
 				@Override
-				public void onFinish(AppInitializer init) {
+				public void onFinish() {
 					if (!paused) {
 						reloadHistoryInternal();
 						if (!searching) {
@@ -1467,7 +1457,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 				}
 
 				@Override
-				public void onFinish(AppInitializer init) {
+				public void onFinish() {
 					if (!paused) {
 						runCoreSearchInternal(text, showQuickResult, searchMore, resultListener);
 					}

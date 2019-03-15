@@ -19,11 +19,9 @@ import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.activities.OsmandActionBarActivity;
 
-public class BaseOsmAndFragment extends Fragment implements TransitionAnimator {
+public class BaseOsmAndFragment extends Fragment {
 	private IconsCache iconsCache;
-
 	private int statusBarColor = -1;
-	private boolean transitionAnimationAllowed = true;
 
 	@Override
 	public void onResume() {
@@ -72,38 +70,19 @@ public class BaseOsmAndFragment extends Fragment implements TransitionAnimator {
 
 	@Override
 	public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
-		if (transitionAnimationAllowed) {
-			return super.onCreateAnimation(transit, enter, nextAnim);
-		}
-		Animation anim = new Animation() {
-		};
-		anim.setDuration(0);
-		return anim;
-	}
-
-	@Override
-	public void disableTransitionAnimation() {
-		transitionAnimationAllowed = false;
-	}
-
-	@Override
-	public void enableTransitionAnimation() {
-		transitionAnimationAllowed = true;
+		return super.onCreateAnimation(transit, enter, nextAnim);
 	}
 
 	@ColorRes
 	public int getStatusBarColorId() {
 		return -1;
 	}
-
 	protected boolean isFullScreenAllowed() {
 		return true;
 	}
-
 	protected OsmandApplication getMyApplication() {
 		return (OsmandApplication) getActivity().getApplication();
 	}
-
 	protected OsmandActionBarActivity getMyActivity() {
 		return (OsmandActionBarActivity) getActivity();
 	}

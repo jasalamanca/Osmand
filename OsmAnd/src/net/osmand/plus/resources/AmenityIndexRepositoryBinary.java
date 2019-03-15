@@ -24,7 +24,6 @@ public class AmenityIndexRepositoryBinary implements AmenityIndexRepository {
 		this.index = index;
 	}
 
-	@Override
 	public void close() {
 		try {
 			index.close();

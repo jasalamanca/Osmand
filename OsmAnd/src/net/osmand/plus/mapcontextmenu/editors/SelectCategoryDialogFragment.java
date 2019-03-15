@@ -20,9 +20,6 @@ import net.osmand.plus.IconsCache;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.quickaction.QuickAction;
-import net.osmand.plus.quickaction.QuickActionFactory;
-import net.osmand.plus.quickaction.QuickActionRegistry;
 
 import java.util.List;
 
@@ -33,7 +30,6 @@ public class SelectCategoryDialogFragment extends DialogFragment {
 	public static final String TAG = "SelectCategoryDialogFragment";
 
 	public interface CategorySelectionListener{
-
 		void onCategorySelected(String category, int color);
 	}
 
@@ -45,10 +41,6 @@ public class SelectCategoryDialogFragment extends DialogFragment {
 
 	public void setGpxFile(GPXFile gpxFile) {
 		this.gpxFile = gpxFile;
-	}
-
-	public GPXFile getGpxFile() {
-		return gpxFile;
 	}
 
 	@NonNull
@@ -145,10 +137,6 @@ public class SelectCategoryDialogFragment extends DialogFragment {
 
 	public void setSelectionListener(CategorySelectionListener selectionListener) {
 		this.selectionListener = selectionListener;
-	}
-
-	public void saveState(Bundle bundle) {
-		bundle.putString(KEY_CTX_SEL_CAT_EDITOR_TAG, editorTag);
 	}
 
 	private void restoreState(Bundle bundle) {

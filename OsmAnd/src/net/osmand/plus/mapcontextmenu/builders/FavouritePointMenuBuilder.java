@@ -7,7 +7,6 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import net.osmand.ResultMatcher;
 import net.osmand.binary.BinaryMapIndexReader;
 import net.osmand.data.Amenity;
 import net.osmand.data.FavouritePoint;
@@ -115,18 +114,7 @@ public class FavouritePointMenuBuilder extends MenuBuilder {
 
 		QuadRect rect = MapUtils.calculateLatLonBbox(lat, lon, 15);
 		List<TransportStop> res = app.getResourceManager().searchTransportSync(rect.top, rect.left,
-				rect.bottom, rect.right, new ResultMatcher<TransportStop>() {
-
-					@Override
-					public boolean publish(TransportStop object) {
-						return true;
-					}
-
-					@Override
-					public boolean isCancelled() {
-						return false;
-					}
-				});
+				rect.bottom, rect.right);
 
 		for (TransportStop stop : res) {
 			String stringEn = stop.toStringEn();
