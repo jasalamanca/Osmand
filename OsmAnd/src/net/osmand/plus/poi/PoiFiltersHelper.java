@@ -200,9 +200,8 @@ public class PoiFiltersHelper {
 
 	public List<PoiUIFilter> getTopDefinedPoiFilters() {
 		if (cacheTopStandardFilters == null) {
-			List<PoiUIFilter> top = new ArrayList<>();
 			// user defined
-			top.addAll(getUserDefinedPoiFilters());
+			List<PoiUIFilter> top = new ArrayList<>(getUserDefinedPoiFilters());
 			if (getLocalWikiPOIFilter() != null) {
 				top.add(getLocalWikiPOIFilter());
 			}
@@ -215,8 +214,7 @@ public class PoiFiltersHelper {
 			Collections.sort(top);
 			cacheTopStandardFilters = top;
 		}
-		List<PoiUIFilter> result = new ArrayList<>();
-		result.addAll(cacheTopStandardFilters);
+		List<PoiUIFilter> result = new ArrayList<>(cacheTopStandardFilters);
 		result.add(getShowAllPOIFilter());
 		return result;
 	}
@@ -253,14 +251,14 @@ public class PoiFiltersHelper {
 		if (helper == null) {
 			return false;
 		}
-		boolean res = helper.deleteFilter(helper.getWritableDatabase(), filter);
+		helper.deleteFilter(helper.getWritableDatabase(), filter);
 		Iterator<PoiUIFilter> it = cacheTopStandardFilters.iterator();
 		while (it.hasNext()) {
 			if (it.next().getFilterId().equals(filter.getFilterId())) {
 				it.remove();
 			}
 		}
-		res = helper.addFilter(filter, helper.getWritableDatabase(), false);
+		boolean res = helper.addFilter(filter, helper.getWritableDatabase(), false);
 		if (res) {
 			ArrayList<PoiUIFilter> copy = new ArrayList<>(cacheTopStandardFilters);
 			copy.add(filter);
@@ -309,7 +307,7 @@ public class PoiFiltersHelper {
 		saveSelectedPoiFilters();
 	}
 
-	public String getFiltersName(Set<PoiUIFilter> filters) {
+	String getFiltersName(Set<PoiUIFilter> filters) {
 		if (filters.isEmpty()) {
 			return application.getResources().getString(R.string.shared_string_none);
 		} else {

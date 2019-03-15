@@ -119,7 +119,7 @@ public class RenderingRuleProperty {
 		return ruleValue == renderingProperty;
 	}
 	
-	public boolean accept(float ruleValue, float renderingProperty, RenderingRuleSearchRequest req){
+	public boolean accept(float ruleValue, float renderingProperty){
 		if(type != FLOAT_TYPE || !input){
 			return false;
 		}
@@ -277,16 +277,13 @@ public class RenderingRuleProperty {
 					String vs = val.substring(k + 1);
 					Integer ruleInd = req.getObject().getMapIndex().getRule(ts, vs);
 					if (ruleInd != null) {
-						if (req.getObject().containsAdditionalType(ruleInd)) {
-							return true;
-						}
+						return req.getObject().containsAdditionalType(ruleInd);
 					}
 				} else {
-					String ts = val;
 					int[] additionalTypes = obj.getAdditionalTypes();
                     for (int additionalType : additionalTypes) {
                         TagValuePair vp = obj.getMapIndex().decodeType(additionalType);
-                        if (vp != null && ts.equals(vp.tag)) {
+                        if (vp != null && val.equals(vp.tag)) {
                             return true;
                         }
                     }

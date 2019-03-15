@@ -542,7 +542,7 @@ public class MapPoiTypes {
 			tp.setOrder(Integer.parseInt(orderStr));
 		}
 		tp.setNameOnly("true".equals(parser.getAttributeValue("", "name_only")));
-		tp.setNameTag(parser.getAttributeValue("", "name_tag"));
+//		tp.setNameTag(parser.getAttributeValue("", "name_tag"));
 		tp.setRelation("true".equals(parser.getAttributeValue("", "relation")));
 		tp.setNotEditableOsm("true".equals(parser.getAttributeValue("", "no_edit")));
 		if (lastFilter != null) {

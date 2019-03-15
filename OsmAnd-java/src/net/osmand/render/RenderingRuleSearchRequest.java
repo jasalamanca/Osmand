@@ -199,7 +199,7 @@ public class RenderingRuleSearchRequest {
 			if (rp.isInputProperty()) {
 				boolean match;
 				if (rp.isFloat()) {
-					match = rp.accept(rule.getFloatProp(i), fvalues[rp.getId()], this);
+					match = rp.accept(rule.getFloatProp(i), fvalues[rp.getId()]);
 				} else {
 					match = rp.accept(rule.getIntProp(i), values[rp.getId()], this);
 				}
@@ -251,7 +251,7 @@ public class RenderingRuleSearchRequest {
 		return f;
 	}
 	
-	public String getColorStringPropertyValue(RenderingRuleProperty property) {
+	String getColorStringPropertyValue(RenderingRuleProperty property) {
 		return Algorithms.colorToString(values[property.getId()]);
 	}
 	

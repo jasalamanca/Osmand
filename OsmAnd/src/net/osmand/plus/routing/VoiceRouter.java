@@ -1,6 +1,5 @@
 package net.osmand.plus.routing;
 
-
 import android.media.AudioManager;
 import android.media.SoundPool;
 
@@ -27,7 +26,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import alice.tuprolog.Struct;
 import alice.tuprolog.Term;
 
-
 public class VoiceRouter {
 	private static final int STATUS_UTWP_TOLD = -1;
 	private static final int STATUS_UNKNOWN = 0;
@@ -51,7 +49,6 @@ public class VoiceRouter {
 	private static long waitAnnouncedOffRoute = 0;
 	private static boolean suppressDest = false;
 	private static boolean announceBackOnRoute = false;
-	// private static long lastTimeRouteRecalcAnnounced = 0;
 	// Remember when last announcement was made
 	private static long lastAnnouncement = 0;
 
@@ -77,7 +74,7 @@ public class VoiceRouter {
 
 	private final ConcurrentHashMap<VoiceMessageListener, Integer> voiceMessageListeners;
     
-	public VoiceRouter(RoutingHelper router, final OsmandSettings settings) {
+	VoiceRouter(RoutingHelper router, final OsmandSettings settings) {
 		this.router = router;
 		this.settings = settings;
 		mute = settings.VOICE_MUTE.get();
@@ -99,11 +96,9 @@ public class VoiceRouter {
 	public CommandPlayer getPlayer() {
 		return player;
 	}
-	
 	public void setMute(boolean mute) {
 		VoiceRouter.mute = mute;
 	}
-	
 	public boolean isMute() {
 		return mute;
 	}
@@ -116,7 +111,7 @@ public class VoiceRouter {
 		return player.newCommandBuilder();
 	}
 
-	public void updateAppMode() {
+	void updateAppMode() {
 		// Turn prompt starts either at distance, or additionally (TURN_IN and TURN only) if actual-lead-time(currentSpeed) < maximum-lead-time(defined by default speed)
 		if (router.getAppMode().isDerivedRoutingFrom(ApplicationMode.CAR)) {
 			PREPARE_LONG_DISTANCE = 3500;             // [105 sec @ 120 km/h]
@@ -181,13 +176,10 @@ public class VoiceRouter {
 			btScoDelayDistance = currentSpeed * (double) settings.BT_SCO_DELAY.get() / 1000;
 		}
 
-		if ((dist < etalon + btScoDelayDistance) || ((dist - btScoDelayDistance) / currentSpeed) < (etalon / defSpeed)) {
-			return true;
-		}
-		return false;
+		return (dist < etalon + btScoDelayDistance) || ((dist - btScoDelayDistance) / currentSpeed) < (etalon / defSpeed);
 	}
 
-	public int calculateImminent(float dist, Location loc) {
+	int calculateImminent(float dist, Location loc) {
 		float speed = DEFAULT_SPEED;
 		if (loc != null && loc.hasSpeed()) {
 			speed = loc.getSpeed();
@@ -216,7 +208,7 @@ public class VoiceRouter {
 		return currentStatus <= statusToCheck;
 	}
 	
-	public void announceOffRoute(double dist) {
+	void announceOffRoute(double dist) {
 		long ms = System.currentTimeMillis();
 		if (waitAnnouncedOffRoute == 0 || ms - lastAnnouncedOffRoute > waitAnnouncedOffRoute) {
 			CommandBuilder p = getNewCommandPlayerToPlay();
@@ -234,7 +226,7 @@ public class VoiceRouter {
 		}
 	}
 
-	public void announceBackOnRoute() {
+	void announceBackOnRoute() {
 		CommandBuilder p = getNewCommandPlayerToPlay();
 		if (announceBackOnRoute) {
 			if (p != null) {
@@ -314,7 +306,7 @@ public class VoiceRouter {
 	}
 
 	private String getText(Location location, List<LocationPointWrapper> points, double[] dist) {
-		String text = "";
+		StringBuilder text = new StringBuilder();
 		for (LocationPointWrapper point : points) {
 			// Need to calculate distance to nearest point
 			if (text.length() == 0) {
@@ -324,11 +316,11 @@ public class VoiceRouter {
 									point.getPoint().getLatitude(), point.getPoint().getLongitude());
 				}
 			} else {
-				text += ", ";
+				text.append(", ");
 			}
-			text += PointDescription.getSimpleName(point.getPoint(), router.getApplication());
+			text.append(PointDescription.getSimpleName(point.getPoint(), router.getApplication()));
 		}
-		return text;
+		return text.toString();
 	}
 
 	public void announceAlarm(AlarmInfo info, float speed) {
@@ -407,7 +399,6 @@ public class VoiceRouter {
 
 	/**
 	* Updates status of voice guidance
-	* @param currentLocation
 	*/
 	void updateStatus(Location currentLocation, boolean repeat) {
 		// Directly after turn: goAhead (dist), unless:
@@ -474,7 +465,7 @@ public class VoiceRouter {
 				if (nextNextInfo.distanceTo < TURN_IN_DISTANCE_END) {
 					// Issue #2865: Ensure a distance associated with the destination arrival is always announced, either here, or in subsequent "Turn in" prompt
 					// Distance fon non-straights already announced in "Turn (now)"'s nextnext  code above
-					if ((nextNextInfo != null) && (nextNextInfo.directionInfo != null) && nextNextInfo.directionInfo.getTurnType().goAhead()) {
+					if (nextNextInfo.directionInfo != null && nextNextInfo.directionInfo.getTurnType().goAhead()) {
 						playThen();
 						playGoAhead(nextNextInfo.distanceTo, empty);
 					}
@@ -491,8 +482,7 @@ public class VoiceRouter {
 		// STATUS_TURN_IN = "Turn in ..."
 		} else if ((repeat || statusNotPassed(STATUS_TURN_IN)) && isDistanceLess(speed, dist, TURN_IN_DISTANCE, 0f)) {
 			if (repeat || dist >= TURN_IN_DISTANCE_END) {
-				if ((isDistanceLess(speed, nextNextInfo.distanceTo, TURN_DISTANCE, 0f) || nextNextInfo.distanceTo < TURN_IN_DISTANCE_END) &&
-						nextNextInfo != null) {
+				if (isDistanceLess(speed, nextNextInfo.distanceTo, TURN_DISTANCE, 0f) || nextNextInfo.distanceTo < TURN_IN_DISTANCE_END) {
 					playMakeTurnIn(currentSegment, next, dist - (int) btScoDelayDistance, nextNextInfo.directionInfo);
 				} else {
 					playMakeTurnIn(currentSegment, next, dist - (int) btScoDelayDistance, null);
@@ -602,8 +592,7 @@ public class VoiceRouter {
 							empty });
 				}
 			}
-			Struct voice = new Struct("voice", next, current );
-			return voice;
+			return new Struct("voice", next, current );
 		} else {
 			Term rf = getTermString(getSpeakablePointName(i.getRef()));
 			if (rf == empty) {
@@ -812,7 +801,7 @@ public class VoiceRouter {
 		}
 	}
 
-	public void newRouteIsCalculated(boolean newRoute) {
+	void newRouteIsCalculated(boolean newRoute) {
 		CommandBuilder play = getNewCommandPlayerToPlay();
 		if (play != null) {
 			notifyOnVoiceMessage();
@@ -832,7 +821,7 @@ public class VoiceRouter {
 		nextRouteDirection = null;
 	}
 
-	public void arrivedDestinationPoint(String name) {
+	void arrivedDestinationPoint(String name) {
 		CommandBuilder play = getNewCommandPlayerToPlay();
 		if (play != null) {
 			notifyOnVoiceMessage();
@@ -840,22 +829,13 @@ public class VoiceRouter {
 		}
 	}
 	
-	public void arrivedIntermediatePoint(String name) {
+	void arrivedIntermediatePoint(String name) {
 		CommandBuilder play = getNewCommandPlayerToPlay();
 		if (play != null) {
 			notifyOnVoiceMessage();
 			play.arrivedAtIntermediatePoint(getSpeakablePointName(name)).play();
 		}
 	}
-
-	// This is not needed, used are only arrivedIntermediatePoint (for points on the route) or announceWaypoint (for points near the route=)
-	//public void arrivedWayPoint(String name) {
-	//	CommandBuilder play = getNewCommandPlayerToPlay();
-	//	if (play != null) {
-	//		notifyOnVoiceMessage();
-	//		play.arrivedAtWayPoint(getSpeakablePointName(name)).play();
-	//	}
-	//}
 
 	public void onApplicationTerminate() {
 		if (player != null) {

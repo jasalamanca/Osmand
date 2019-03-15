@@ -234,7 +234,6 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 	}
 
 	private class PendingDismissData implements Comparable<PendingDismissData> {
-
 		final int position;
 		/**
 		 * The view that should get swiped out.
@@ -256,7 +255,6 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 			// Sort by descending position
 			return other.position - position;
 		}
-
 	}
 
 	private class UndoClickListener implements View.OnClickListener {
@@ -393,69 +391,6 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 		mSwipePaused = !enabled;
 	}
 
-// --Commented out by Inspection START (13/01/19 18:19):
-//	/**
-//	 * Sets the undo style of this list.
-//	 *
-//	 * @param undoStyle The style of this listview.
-//	 */
-//	public void setUndoStyle(UndoStyle undoStyle) {
-//		mUndoStyle = undoStyle;
-//	}
-// --Commented out by Inspection STOP (13/01/19 18:19)
-
-// --Commented out by Inspection START (13/01/19 18:20):
-//	/**
-//	 * Sets the time in milliseconds after which the undo popup automatically disappears.
-//	 * The countdown will start when the user touches the screen. If you want to start the countdown
-//	 * immediately when the popups appears, call {@link #setRequireTouchBeforeDismiss(boolean)} with
-//	 * {@code false}.
-//	 *
-//	 * @param hideDelay The delay in milliseconds.
-//	 */
-//	public void setUndoHideDelay(int hideDelay) {
-//		mUndoHideDelay = hideDelay;
-//	}
-// --Commented out by Inspection STOP (13/01/19 18:20)
-
-// --Commented out by Inspection START (13/01/19 18:22):
-//	/**
-//	 * Sets whether another touch on the view is required before the popup counts down to dismiss
-//	 * the undo popup. By default this is set to {@code true}.
-//	 *
-//	 * @param touchBeforeDismiss Whether the screen needs to be touched before the countdown starts.
-//	 * @see #setUndoHideDelay(int)
-//	 */
-//	public void setRequireTouchBeforeDismiss(boolean touchBeforeDismiss) {
-//		mTouchBeforeAutoHide = touchBeforeDismiss;
-//	}
-// --Commented out by Inspection STOP (13/01/19 18:22)
-
-// --Commented out by Inspection START (13/01/19 18:20):
-//	/**
-//	 * Sets the directions in which a list item can be swiped to delete.
-//	 * By default this is set to {@link SwipeDirection#BOTH} so that an item
-//	 * can be swiped into both directions.
-//	 */
-//	public void setSwipeDirection(SwipeDirection direction) {
-//		mSwipeDirection = direction;
-//	}
-// --Commented out by Inspection STOP (13/01/19 18:20)
-
-// --Commented out by Inspection START (13/01/19 18:20):
-//	/**
-//	 * Sets the id of the view, that should be moved, when the user swipes an item.
-//	 * Only the view with the specified id will move, while all other views in the list item, will
-//	 * stay where they are. This might be usefull to have a background behind the view that is swiped
-//	 * out, to stay where it is (and maybe explain that the item is going to be deleted).
-//	 * If you never call this method (or call it with 0), the whole view will be swiped. Also if there
-//	 * is no view in a list item, with the given id, the whole view will be swiped.
-//	 */
-//	public void setSwipingLayout(int swipingLayoutId) {
-//		mSwipingLayout = swipingLayoutId;
-//	}
-// --Commented out by Inspection STOP (13/01/19 18:20)
-
 	/**
 	 * Discard all stored undos and hide the undo popup dialog.
 	 * This method must be called in {@link android.app.Activity#onStop()}. Otherwise
@@ -491,14 +426,6 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 			throw new IndexOutOfBoundsException(String.format("Tried to delete item %d. #items in list: %d", pos, mListView.getCount()));
 		}
 		View childView = mListView.getChildAt(pos - mListView.getFirstVisiblePosition());
-//		View view = null;
-//		if (mSwipingLayout > 0) {
-//			view = childView.findViewById(mSwipingLayout);
-//		}
-//		if (view == null) {
-//			view = childView;
-//		}
-//		slideOutView(view, childView, position, true);
 		slideOutView(childView, childView, position, true);
 	}
 
@@ -590,15 +517,6 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 					if (child != null) {
 						child.getHitRect(rect);
 						if (rect.contains(x, y)) {
-							// if a specific swiping layout has been giving, use this to swipe.
-//							if (mSwipingLayout > 0) {
-//								View swipingView = child.findViewById(mSwipingLayout);
-//								if (swipingView != null) {
-//									mSwipeDownView = swipingView;
-//									mSwipeDownChild = child;
-//									break;
-//								}
-//							}
 							// If no swiping layout has been found, swipe the whole child
 							mSwipeDownView = mSwipeDownChild = child;
 							break;
@@ -790,7 +708,6 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 
 		if (noAnimationLeft) {
 			// No active animations, process all pending dismisses.
-
 			for (PendingDismissData dismiss : mPendingDismisses) {
 				if (mUndoStyle == UndoStyle.SINGLE_POPUP) {
 					for (Undoable undoable : mUndoActions) {
@@ -891,4 +808,3 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 		}
 	}
 }
-

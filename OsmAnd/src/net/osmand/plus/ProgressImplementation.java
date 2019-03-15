@@ -7,7 +7,6 @@ import android.content.DialogInterface.OnCancelListener;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import net.osmand.IProgress;
 
@@ -22,15 +21,13 @@ public class ProgressImplementation implements IProgress {
 	private String message = ""; //$NON-NLS-1$
 	
 	private final Handler mViewUpdateHandler;
-	private Thread run;
+//	private Thread run;
 	private final Context context;
 	private ProgressDialog dialog = null;
 	private ProgressBar progressBar = null;
-	private Runnable finishRunnable = null;
-	private final boolean cancelable;
-	private TextView tv;
+    private final boolean cancelable;
+//	private TextView tv;
 	
-
 	private ProgressImplementation(Context ctx, ProgressDialog dlg, boolean cancelable) {
 		this.cancelable = cancelable;
 		context = ctx;
@@ -54,9 +51,9 @@ public class ProgressImplementation implements IProgress {
 						}
 						dialog.show();
 					}
-					if (tv != null) {
-						tv.setText(message);
-					}
+//					if (tv != null) {
+//						tv.setText(message);
+//					}
 					if (progressBar != null) {
 						if (isIndeterminate()) {
 							progressBar.setMax(1);
@@ -103,19 +100,20 @@ public class ProgressImplementation implements IProgress {
 		dlg.setMessage(message);
 		dlg.setIndeterminate(style == ProgressDialog.STYLE_HORIZONTAL); // re-set in mViewUpdateHandler.handleMessage above
 		dlg.setCancelable(true);
-		// we'd prefer a plain progress bar without numbers,
-		// but that is only available starting from API level 11
-		try {
-			ProgressDialog.class
-				.getMethod("setProgressNumberFormat", new Class[] { String.class })
-				.invoke(dlg, (String)null);
-		} catch (NoSuchMethodException nsme) {
-			// failure, must be older device
-		} catch (IllegalAccessException nsme) {
-			// failure, must be older device
-		} catch (java.lang.reflect.InvocationTargetException nsme) {
-			// failure, must be older device
-		}
+		dlg.setProgressNumberFormat(null);
+//		// we'd prefer a plain progress bar without numbers,
+//		// but that is only available starting from API level 11
+//		try {
+//			ProgressDialog.class
+//				.getMethod("setProgressNumberFormat", String.class)
+//				.invoke(dlg, (String)null);
+//		} catch (NoSuchMethodException nsme) {
+//			// failure, must be older device
+//		} catch (IllegalAccessException nsme) {
+//			// failure, must be older device
+//		} catch (java.lang.reflect.InvocationTargetException nsme) {
+//			// failure, must be older device
+//		}
 		dlg.setProgressStyle(style);
 		return new ProgressImplementation(dlg, true);
 	}
@@ -126,10 +124,9 @@ public class ProgressImplementation implements IProgress {
 				dlg.setOnCancelListener(new OnCancelListener(){
 					@Override
 					public void onCancel(DialogInterface dialog) {
-						if(run != null){
-							run.stop();
-						}
-						
+//						if(run != null){
+//							run.stop();
+//						}
 					}
 				});
 			}
@@ -188,9 +185,7 @@ public class ProgressImplementation implements IProgress {
 			mViewUpdateHandler.sendEmptyMessage(HANDLER_START_TASK);
 		}
 	}
-	public boolean isInterrupted() {
-		return false;
-	}
+
 	public ProgressDialog getDialog() {
 		return dialog;
 	}

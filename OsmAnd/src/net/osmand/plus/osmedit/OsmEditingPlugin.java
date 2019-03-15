@@ -41,7 +41,6 @@ import net.osmand.util.Algorithms;
 
 import java.util.List;
 
-
 public class OsmEditingPlugin extends OsmandPlugin {
 	private static final String ID = "osm.editing";
 	private final OsmandSettings settings;
@@ -84,21 +83,21 @@ public class OsmEditingPlugin extends OsmandPlugin {
 		return remoteUtil;
 	}
 
-	public OsmBugsRemoteUtil getOsmNotesRemoteUtil() {
+	OsmBugsRemoteUtil getOsmNotesRemoteUtil() {
 		if (remoteNotesUtil == null) {
 			remoteNotesUtil = new OsmBugsRemoteUtil(app);
 		}
 		return remoteNotesUtil;
 	}
 
-	public OsmBugsLocalUtil getOsmNotesLocalUtil() {
+	OsmBugsLocalUtil getOsmNotesLocalUtil() {
 		if (localNotesUtil == null) {
 			localNotesUtil = new OsmBugsLocalUtil(getDBBug());
 		}
 		return localNotesUtil;
 	}
 
-	public OsmBugsDbHelper getDBBug() {
+	OsmBugsDbHelper getDBBug() {
 		if (dbbug == null) {
 			dbbug = new OsmBugsDbHelper(app);
 		}
@@ -147,7 +146,7 @@ public class OsmEditingPlugin extends OsmandPlugin {
 		return osmEditsLayer;
 	}
 
-	public OsmBugsLayer getBugsLayer(MapActivity activity) {
+	OsmBugsLayer getBugsLayer(MapActivity activity) {
 		if (osmBugsLayer == null) {
 			registerLayers(activity);
 		}
@@ -301,7 +300,7 @@ public class OsmEditingPlugin extends OsmandPlugin {
 
 						@Override
 						public boolean onContextMenuClick(ArrayAdapter<ContextMenuItem> adapter, int itemId, int pos, boolean isChecked, int[] viewCoordinates) {
-							sendGPXFiles(la, (AvailableGPXFragment) fragment, (GpxInfo) info);
+							sendGPXFiles(la, (GpxInfo) info);
 							return true;
 						}
 					}).createItem());
@@ -324,8 +323,7 @@ public class OsmEditingPlugin extends OsmandPlugin {
 										@Override
 										public void onClick(DialogInterface dialog, int which) {
 											List<GpxInfo> selectedItems = f.getSelectedItems();
-											sendGPXFiles(activity, f,
-													selectedItems.toArray(new GpxInfo[selectedItems.size()]));
+											sendGPXFiles(activity, selectedItems.toArray(new GpxInfo[selectedItems.size()]));
 										}
 									});
 							return true;
@@ -335,7 +333,6 @@ public class OsmEditingPlugin extends OsmandPlugin {
 					.createItem());
 		}
 	}
-
 
 	public enum UploadVisibility implements IEnumWithResource {
 		Public(R.string.gpxup_public),
@@ -358,7 +355,7 @@ public class OsmEditingPlugin extends OsmandPlugin {
 		}
 	}
 
-	public boolean sendGPXFiles(final Activity la, AvailableGPXFragment f, final GpxInfo... info) {
+	public boolean sendGPXFiles(final Activity la, final GpxInfo... info) {
 		String name = settings.USER_NAME.get();
 		String pwd = settings.USER_PASSWORD.get();
 		if (Algorithms.isEmpty(name) || Algorithms.isEmpty(pwd)) {
@@ -399,24 +396,20 @@ public class OsmEditingPlugin extends OsmandPlugin {
 	public String getName() {
 		return app.getString(R.string.osm_settings);
 	}
-
 	@Override
 	public int getLogoResourceId() {
 		return R.drawable.ic_action_bug_dark;
 	}
-
 	@Override
 	public int getAssetResourceName() {
 		return R.drawable.osm_editing;
 	}
-
-
 	@Override
 	public String getHelpFileName() {
 		return "feature_articles/osm-editing-plugin.html";
 	}
 
-	public static String getEditName(OsmPoint point) {
+	static String getEditName(OsmPoint point) {
 		String prefix = getPrefix(point);
 		String name = getName(point);
 		if (point.getGroup() == OsmPoint.Group.POI) {
@@ -455,7 +448,7 @@ public class OsmEditingPlugin extends OsmandPlugin {
 		return category;
 	}
 
-	public static String getPrefix(OsmPoint osmPoint) {
+	static String getPrefix(OsmPoint osmPoint) {
 		return (osmPoint.getGroup() == OsmPoint.Group.POI ? "POI" : "Bug") + " id: " + osmPoint.getId() + " ";
 	}
 

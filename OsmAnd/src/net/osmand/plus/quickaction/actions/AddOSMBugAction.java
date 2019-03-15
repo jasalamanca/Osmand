@@ -14,7 +14,6 @@ import net.osmand.plus.osmedit.OsmEditingPlugin;
 import net.osmand.plus.quickaction.QuickAction;
 
 public class AddOSMBugAction extends QuickAction {
-
 	public static final int TYPE = 12;
 
 	private static final String KEY_MESSAGE = "message";
@@ -23,28 +22,22 @@ public class AddOSMBugAction extends QuickAction {
 	public AddOSMBugAction() {
 		super(TYPE);
 	}
-
 	public AddOSMBugAction(QuickAction quickAction) {
 		super(quickAction);
 	}
 
 	@Override
 	public void execute(MapActivity activity) {
-
 		OsmEditingPlugin plugin = OsmandPlugin.getPlugin(OsmEditingPlugin.class);
 
 		if (plugin != null) {
-
 			LatLon latLon = activity.getMapView()
 					.getCurrentRotatedTileBox()
 					.getCenterLatLon();
 
 			if (getParams().isEmpty()) {
-
 				plugin.openOsmNote(activity, latLon.getLatitude(), latLon.getLongitude(), "", true);
-
 			} else {
-
 				plugin.openOsmNote(activity, latLon.getLatitude(), latLon.getLongitude(),
 						getParams().get(KEY_MESSAGE),
 						!Boolean.valueOf(getParams().get(KEY_SHO_DIALOG)));
@@ -54,7 +47,6 @@ public class AddOSMBugAction extends QuickAction {
 
 	@Override
 	public void drawUI(ViewGroup parent, MapActivity activity) {
-
 		View view = LayoutInflater.from(parent.getContext())
 				.inflate(R.layout.quick_action_add_bug, parent, false);
 
@@ -71,8 +63,7 @@ public class AddOSMBugAction extends QuickAction {
 	}
 
 	@Override
-	public boolean fillParams(View root, MapActivity activity) {
-
+	public boolean fillParams(View root) {
 		SwitchCompat showDialog = root.findViewById(R.id.dialogSwitch);
 		EditText message = root.findViewById(R.id.message_edit);
 

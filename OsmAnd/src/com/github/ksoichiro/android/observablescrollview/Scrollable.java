@@ -21,6 +21,7 @@ import android.view.ViewGroup;
 /**
  * Provides common API for observable and scrollable widgets.
  */
+@SuppressWarnings("ALL")
 interface Scrollable {
     /**
      * Sets a callback listener.

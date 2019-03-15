@@ -1,6 +1,5 @@
 package net.osmand.plus.activities.search;
 
-
 import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,12 +10,10 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v7.app.ActionBar.OnNavigationListener;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 
 import net.osmand.access.AccessibilityAssistant;
 import net.osmand.access.NavigationInfo;
@@ -62,12 +59,10 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 	public static final String SEARCH_LON = "net.osmand.search_lon"; //$NON-NLS-1$
 	private static final String SHOW_ONLY_ONE_TAB = "SHOW_ONLY_ONE_TAB"; //$NON-NLS-1$
 
-	Button searchPOIButton;
 	private LatLon searchPoint = null;
 	private LatLon reqSearchPoint = null;
 	private boolean searchAroundCurrentLocation = false;
 
-	private static boolean searchOnLine = false;
 	private ArrayAdapter<String> spinnerAdapter;
 	private OsmandSettings settings;
 	private final List<WeakReference<Fragment>> fragList = new ArrayList<>();
@@ -77,7 +72,6 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 	private NavigationInfo navigationInfo;
 
 	public interface SearchActivityChild {
-		
 		void locationUpdate(LatLon l);
 	}
 
@@ -172,7 +166,6 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 		if(tab == POI_TAB_INDEX) {
 			return SearchPoiFilterFragment.class;
 		} else if(tab == ADDRESS_TAB_INDEX) {
-//			return searchOnLine ? SearchAddressOnlineFragment.class : SearchAddressFragment.class;
 			return SearchAddressFragment.class;
 		} else if(tab == LOCATION_TAB_INDEX) {
 			return NavigatePointFragment.class;
@@ -187,7 +180,6 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 	public AccessibilityAssistant getAccessibilityAssistant() {
 		return accessibilityAssistant;
 	}
-
 	public NavigationInfo getNavigationInfo() {
 		return navigationInfo;
 	}
@@ -222,8 +214,7 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 					}
 				};
 		spinnerAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-		View spinnerView = LayoutInflater.from(spinnerAdapter.getContext()).inflate(R.layout.spinner_item, null);
-        getSupportActionBar().setListNavigationCallbacks(spinnerAdapter, new OnNavigationListener() {
+		getSupportActionBar().setListNavigationCallbacks(spinnerAdapter, new OnNavigationListener() {
 			
 			@Override
 			public boolean onNavigationItemSelected(int position, long itemId) {
@@ -265,9 +256,6 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
         super.onSaveInstanceState(outState);
     }
 
-		
-		
-	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
@@ -299,16 +287,12 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 		return tb;
 	}
 
-
 	public void updateLocation(net.osmand.Location location){
 		if (location != null) {
 			navigationInfo.updateLocation(location);
 			updateSearchPoint(new LatLon(location.getLatitude(), location.getLongitude()),
 					getString(R.string.select_search_position) + " " + getString(R.string.search_position_current_location_found), false);
 			// don't stop in case we want to see updates 
-//			if (location.getAccuracy() < 20) {
-//				endSearchCurrentLocation();
-//			}
 		}
 	}
 	private void startSearchCurrentLocation(){
@@ -379,19 +363,10 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 	public LatLon getSearchPoint() {
 		return searchPoint;
 	}
-	
-
 	public boolean isSearchAroundCurrentLocation() {
 		return searchAroundCurrentLocation;
 	}
-	
-	public void startSearchAddressOffline(){
-		searchOnLine = false;
-		setAddressSpecContent();
-	}
-	
 	public void startSearchAddressOnline(){
-		searchOnLine = true;
 		setAddressSpecContent();
 	}
 	
@@ -400,8 +375,4 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 		finish();
 		startActivity(intent);
 	}
-	
-
-
-
 }

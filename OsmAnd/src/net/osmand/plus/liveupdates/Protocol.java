@@ -7,7 +7,6 @@ public final class Protocol {
 	private Protocol(){}
 
 	public static class RankingUserByMonthResponse {
-		public String month;
 		public UserRankingByMonth[] rows;
 	}
 	

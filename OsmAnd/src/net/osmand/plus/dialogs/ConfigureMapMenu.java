@@ -1428,27 +1428,12 @@ public class ConfigureMapMenu {
 		public String getAttrName() {
 			return attrName;
 		}
-
 		public String getValue() {
 			return value;
 		}
-
-// --Commented out by Inspection START (10/01/19 20:57):
-//		public String getLocalizedValue() {
-//			return localizedValue;
-//		}
-// --Commented out by Inspection STOP (10/01/19 20:57)
-
 		public int getColor() {
 			return color;
 		}
-
-// --Commented out by Inspection START (10/01/19 20:56):
-//		public boolean isLastItem() {
-//			return lastItem;
-//		}
-// --Commented out by Inspection STOP (10/01/19 20:56)
-
 		void setLastItem(boolean lastItem) {
 			this.lastItem = lastItem;
 		}

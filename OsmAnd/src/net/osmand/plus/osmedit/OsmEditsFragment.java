@@ -22,7 +22,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -176,10 +175,6 @@ public class OsmEditsFragment extends OsmAndListFragment implements SendPoiDialo
 		super.onDestroyView();
 	}
 
-	public ArrayAdapter<?> getAdapter() {
-		return listAdapter;
-	}
-
 	private void recreateAdapterData() {
 		listAdapter.clear();
 		listAdapter.addAll(createItemsList());
@@ -296,7 +291,6 @@ public class OsmEditsFragment extends OsmAndListFragment implements SendPoiDialo
 				enableSelectionMode(false);
 				listAdapter.notifyDataSetChanged();
 			}
-
 		});
 	}
 
@@ -348,7 +342,6 @@ public class OsmEditsFragment extends OsmAndListFragment implements SendPoiDialo
 				enableSelectionMode(false);
 				listAdapter.notifyDataSetChanged();
 			}
-
 		});
 	}
 
@@ -700,7 +693,6 @@ public class OsmEditsFragment extends OsmAndListFragment implements SendPoiDialo
 	}
 
 	class BackupOpenstreetmapPointAsyncTask extends AsyncTask<OsmPoint, OsmPoint, String> {
-
 		private final File osmchange;
 		private final boolean oscFile;
 
@@ -844,7 +836,6 @@ public class OsmEditsFragment extends OsmAndListFragment implements SendPoiDialo
 			}
 		}
 
-
 		@Override
 		protected void onPreExecute() {
 			getActivity().setProgressBarIndeterminateVisibility(true);
@@ -865,5 +856,4 @@ public class OsmEditsFragment extends OsmAndListFragment implements SendPoiDialo
 			}
 		}
 	}
-
 }

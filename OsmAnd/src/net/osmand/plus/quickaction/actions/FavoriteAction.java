@@ -24,7 +24,6 @@ import net.osmand.plus.quickaction.QuickAction;
 import net.osmand.plus.widgets.AutoCompleteTextViewEx;
 
 public class FavoriteAction extends QuickAction {
-
 	public static final int TYPE = 3;
 
 	private static final String KEY_NAME = "name";
@@ -38,7 +37,6 @@ public class FavoriteAction extends QuickAction {
 	public FavoriteAction() {
 		super(TYPE);
 	}
-
 	public FavoriteAction(QuickAction quickAction) {
 		super(quickAction);
 	}
@@ -116,12 +114,9 @@ public class FavoriteAction extends QuickAction {
 
 	@Override
 	public void drawUI(final ViewGroup parent, final MapActivity activity) {
-
 		FavouritesDbHelper helper = activity.getMyApplication().getFavorites();
-
 		final View root = LayoutInflater.from(parent.getContext())
 				.inflate(R.layout.quick_action_add_favorite, parent, false);
-
 		parent.addView(root);
 
 		AutoCompleteTextViewEx categoryEdit = root.findViewById(R.id.category_edit);
@@ -130,40 +125,30 @@ public class FavoriteAction extends QuickAction {
 		EditText name = root.findViewById(R.id.name_edit);
 
 		if (!getParams().isEmpty()) {
-
 			showDialog.setChecked(Boolean.valueOf(getParams().get(KEY_DIALOG)));
 			categoryImage.setColorFilter(Integer.valueOf(getParams().get(KEY_CATEGORY_COLOR)));
 			name.setText(getParams().get(KEY_NAME));
 			categoryEdit.setText(getParams().get(KEY_CATEGORY_NAME));
 
 			if (getParams().get(KEY_NAME).isEmpty() && Integer.valueOf(getParams().get(KEY_CATEGORY_COLOR)) == 0) {
-
 				categoryEdit.setText(activity.getString(R.string.shared_string_favorites));
 				categoryImage.setColorFilter(activity.getResources().getColor(R.color.color_favorite));
 			}
-
 		} else if (helper.getFavoriteGroups().size() > 0) {
-
 			FavouritesDbHelper.FavoriteGroup group = helper.getFavoriteGroups().get(0);
 
 			if (group.name.isEmpty() && group.color == 0) {
-
 				group.name = activity.getString(R.string.shared_string_favorites);
-
 				categoryEdit.setText(activity.getString(R.string.shared_string_favorites));
 				categoryImage.setColorFilter(activity.getResources().getColor(R.color.color_favorite));
-
 			} else {
-
 				categoryEdit.setText(group.name);
 				categoryImage.setColorFilter(group.color);
 			}
 
 			getParams().put(KEY_CATEGORY_NAME, group.name);
 			getParams().put(KEY_CATEGORY_COLOR, String.valueOf(group.color));
-
 		} else {
-
 			categoryEdit.setText(activity.getString(R.string.shared_string_favorites));
 			categoryImage.setColorFilter(activity.getResources().getColor(R.color.color_favorite));
 
@@ -174,17 +159,13 @@ public class FavoriteAction extends QuickAction {
 		categoryEdit.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(final View view) {
-
 				SelectCategoryDialogFragment dialogFragment = SelectCategoryDialogFragment.createInstance("");
-
 				dialogFragment.show(
 						activity.getSupportFragmentManager(),
 						SelectCategoryDialogFragment.TAG);
-
 				dialogFragment.setSelectionListener(new SelectCategoryDialogFragment.CategorySelectionListener() {
 					@Override
 					public void onCategorySelected(String category, int color) {
-
 						fillGroupParams(root, category, color);
 					}
 				});
@@ -195,7 +176,6 @@ public class FavoriteAction extends QuickAction {
 				activity.getSupportFragmentManager().findFragmentByTag(SelectCategoryDialogFragment.TAG);
 
 		if (dialogFragment != null) {
-
 			dialogFragment.setSelectionListener(new SelectCategoryDialogFragment.CategorySelectionListener() {
 				@Override
 				public void onCategorySelected(String category, int color) {
@@ -203,18 +183,14 @@ public class FavoriteAction extends QuickAction {
 					fillGroupParams(root, category, color);
 				}
 			});
-
 		} else {
-
 			EditCategoryDialogFragment dialog = (EditCategoryDialogFragment)
 					activity.getSupportFragmentManager().findFragmentByTag(EditCategoryDialogFragment.TAG);
 
 			if (dialog != null) {
-
 				dialogFragment.setSelectionListener(new SelectCategoryDialogFragment.CategorySelectionListener() {
 					@Override
 					public void onCategorySelected(String category, int color) {
-
 						fillGroupParams(root, category, color);
 					}
 				});
@@ -223,8 +199,7 @@ public class FavoriteAction extends QuickAction {
 	}
 
 	@Override
-	public boolean fillParams(View root, MapActivity activity) {
-
+	public boolean fillParams(View root) {
 		getParams().put(KEY_NAME, ((EditText) root.findViewById(R.id.name_edit)).getText().toString());
 		getParams().put(KEY_DIALOG, Boolean.toString(((SwitchCompat) root.findViewById(R.id.saveButton)).isChecked()));
 
@@ -232,7 +207,6 @@ public class FavoriteAction extends QuickAction {
 	}
 
 	private void fillGroupParams(View root, String name, int color) {
-
 		if (color == 0)
 			color = root.getContext().getResources().getColor(R.color.color_favorite);
 
@@ -244,9 +218,7 @@ public class FavoriteAction extends QuickAction {
 	}
 
 	private interface DialogOnClickListener {
-
 		void skipOnClick();
-
 		void enterNameOnClick();
 	}
 }

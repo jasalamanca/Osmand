@@ -32,7 +32,6 @@ import java.util.List;
 import java.util.Set;
 
 public class ShowHidePoiAction extends QuickAction {
-
 	public static final int TYPE = 5;
 
 	private static final String KEY_FILTERS = "filters";
@@ -42,14 +41,12 @@ public class ShowHidePoiAction extends QuickAction {
 	public ShowHidePoiAction() {
 		super(TYPE);
 	}
-
 	public ShowHidePoiAction(QuickAction quickAction) {
 		super(quickAction);
 	}
 
 	@Override
 	public String getActionText(OsmandApplication application) {
-
 		return !isCurrentFilters(application)
 				? application.getString(R.string.quick_action_poi_show, getName(application))
 				: application.getString(R.string.quick_action_poi_hide, getName(application));
@@ -57,7 +54,6 @@ public class ShowHidePoiAction extends QuickAction {
 
 	@Override
 	public boolean isActionWithSlash(OsmandApplication application) {
-
 		return isCurrentFilters(application);
 	}
 
@@ -68,16 +64,11 @@ public class ShowHidePoiAction extends QuickAction {
 
 	@Override
 	public int getIconRes(Context context) {
-
 		if (getParams().get(KEY_FILTERS) == null || getParams().get(KEY_FILTERS).isEmpty()) {
-
 			return super.getIconRes();
-
 		} else {
-
 			OsmandApplication app = (OsmandApplication) context.getApplicationContext();
 			List<String> filters = new ArrayList<>();
-
 			String filtersId = getParams().get(KEY_FILTERS);
 			Collections.addAll(filters, filtersId.split(","));
 
@@ -90,34 +81,28 @@ public class ShowHidePoiAction extends QuickAction {
 			Object res = filter.getIconResource();
 
 			if (res instanceof String && RenderingIcons.containsBigIcon(res.toString())) {
-
 				return RenderingIcons.getBigIconResourceId(res.toString());
-
 			} else return super.getIconRes();
 		}
 	}
 
 	@Override
 	public void execute(MapActivity activity) {
-
 		PoiFiltersHelper pf = activity.getMyApplication().getPoiFilters();
 		List<PoiUIFilter> poiFilters = loadPoiFilters(activity.getMyApplication().getPoiFilters());
 
 		if (!isCurrentFilters(pf.getSelectedPoiFilters(), poiFilters)) {
-
 			pf.clearSelectedPoiFilters();
 
 			for (PoiUIFilter filter : poiFilters) {
 				pf.addSelectedPoiFilter(filter);
 			}
-
 		} else pf.clearSelectedPoiFilters();
 
 		activity.getMapLayers().updateLayers(activity.getMapView());
 	}
 
 	private boolean isCurrentFilters(OsmandApplication application) {
-
 		PoiFiltersHelper pf = application.getPoiFilters();
 		List<PoiUIFilter> poiFilters = loadPoiFilters(application.getPoiFilters());
 
@@ -125,7 +110,6 @@ public class ShowHidePoiAction extends QuickAction {
 	}
 
 	private boolean isCurrentFilters(Set<PoiUIFilter> currentPoiFilters, List<PoiUIFilter> poiFilters) {
-
 		if (currentPoiFilters.size() != poiFilters.size()) return false;
 
 		return currentPoiFilters.containsAll(poiFilters);
@@ -133,7 +117,6 @@ public class ShowHidePoiAction extends QuickAction {
 
 	@Override
 	public void drawUI(ViewGroup parent, final MapActivity activity) {
-
 		View view = LayoutInflater.from(parent.getContext())
 				.inflate(R.layout.quick_action_show_hide_poi, parent, false);
 
@@ -157,17 +140,13 @@ public class ShowHidePoiAction extends QuickAction {
 	}
 
 	public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
-
 		private final List<PoiUIFilter> filters;
-
 		Adapter(List<PoiUIFilter> filters) {
 			this.filters = filters;
 		}
 
 		private void addItem(PoiUIFilter filter) {
-
 			if (!filters.contains(filter)) {
-
 				filters.add(filter);
 				savePoiFilters(filters);
 
@@ -178,16 +157,13 @@ public class ShowHidePoiAction extends QuickAction {
 		@NonNull
 		@Override
 		public Adapter.Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
 			return new Adapter.Holder(LayoutInflater.from(parent.getContext())
 					.inflate(R.layout.quick_action_deletable_list_item, parent, false));
 		}
 
 		@Override
 		public void onBindViewHolder(@NonNull final Adapter.Holder holder, final int position) {
-
 			final PoiUIFilter filter = filters.get(position);
-
 			Object res = filter.getIconResource();
 
 			if (res instanceof String && RenderingIcons.containsBigIcon(res.toString())) {
@@ -200,9 +176,7 @@ public class ShowHidePoiAction extends QuickAction {
 			holder.delete.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View view) {
-
 					String oldTitle = getTitle(filters);
-
 					filters.remove(position);
 					savePoiFilters(filters);
 
@@ -223,7 +197,6 @@ public class ShowHidePoiAction extends QuickAction {
 		}
 
 		class Holder extends RecyclerView.ViewHolder {
-
 			private final TextView title;
 			private final ImageView icon;
 			private final ImageView delete;
@@ -239,7 +212,6 @@ public class ShowHidePoiAction extends QuickAction {
 	}
 
 	private void savePoiFilters(List<PoiUIFilter> poiFilters) {
-
 		List<String> filters = new ArrayList<>();
 
 		for (PoiUIFilter f : poiFilters) {
@@ -250,9 +222,7 @@ public class ShowHidePoiAction extends QuickAction {
 	}
 
 	private List<PoiUIFilter> loadPoiFilters(PoiFiltersHelper helper) {
-
 		List<String> filters = new ArrayList<>();
-
 		String filtersId = getParams().get(KEY_FILTERS);
 
 		if (filtersId != null && !filtersId.trim().isEmpty()) {
@@ -274,7 +244,6 @@ public class ShowHidePoiAction extends QuickAction {
 	}
 
 	private void showSingleChoicePoiFilterDialog(final OsmandApplication app, final MapActivity activity, final Adapter filtersAdapter) {
-
 		final PoiFiltersHelper poiFilters = app.getPoiFilters();
 		final ContextMenuAdapter adapter = new ContextMenuAdapter();
 
@@ -324,7 +293,6 @@ public class ShowHidePoiAction extends QuickAction {
 	}
 
 	private String getTitle(List<PoiUIFilter> filters) {
-
 		if (filters.isEmpty()) return "";
 
 		return filters.size() > 1
@@ -352,7 +320,7 @@ public class ShowHidePoiAction extends QuickAction {
 	}
 
 	@Override
-	public boolean fillParams(View root, MapActivity activity) {
+	public boolean fillParams(View root) {
 		return !getParams().isEmpty() && (getParams().get(KEY_FILTERS) != null || !getParams().get(KEY_FILTERS).isEmpty());
 	}
 }

@@ -3,21 +3,29 @@ package net.osmand.router;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import net.osmand.PlatformUtil;
 import net.osmand.binary.BinaryInspector;
 import net.osmand.binary.BinaryMapIndexReader;
 import net.osmand.data.LatLon;
 import net.osmand.util.Algorithms;
 
-import org.apache.commons.logging.Log;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.RandomAccessFile;
+import java.io.Reader;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * Created by yurkiss on 04.03.16.
@@ -32,8 +40,6 @@ public class RouteResultPreparationTest {
     private LatLon startPoint;
     private LatLon endPoint;
     private Map<Long, String> expectedResults;
-
-    private Log log = PlatformUtil.getLog(RouteResultPreparationTest.class);
 
     public RouteResultPreparationTest(String testName, LatLon startPoint, LatLon endPoint, Map<Long, String> expectedResults) {
         this.testName = testName;

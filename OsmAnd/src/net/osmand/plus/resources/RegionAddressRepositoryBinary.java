@@ -1,6 +1,5 @@
 package net.osmand.plus.resources;
 
-
 import net.osmand.Collator;
 import net.osmand.CollatorStringMatcher.StringMatcherMode;
 import net.osmand.OsmAndCollator;
@@ -28,9 +27,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
-
 
 public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 	private static final Log log = PlatformUtil.getLog(RegionAddressRepositoryBinary.class);
@@ -39,25 +35,18 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
     private final int ZOOM_QTREE = 10;
 	private final QuadTree<City> citiesQtree = new QuadTree<>(new QuadRect(0, 0, 1 << (ZOOM_QTREE + 1),
 			1 << (ZOOM_QTREE + 1)), 8, 0.55f);
-	private final Map<String, City> postCodes;
 	private final Collator collator;
 	private final OsmandPreference<String> langSetting;
 	private final OsmandPreference<Boolean> transliterateSetting;
 	private final BinaryMapReaderResource resource;
 
 
-	public RegionAddressRepositoryBinary(ResourceManager mgr, BinaryMapReaderResource resource ) {
+	RegionAddressRepositoryBinary(ResourceManager mgr, BinaryMapReaderResource resource) {
 		this.resource = resource;
 		langSetting = mgr.getContext().getSettings().MAP_PREFERRED_LOCALE;
 		transliterateSetting = mgr.getContext().getSettings().MAP_TRANSLITERATE_NAMES;
 		this.collator = OsmAndCollator.primaryCollator();
-		this.postCodes = new TreeMap<>(OsmAndCollator.primaryCollator());
 	}
-
-	@Override
-	public void close() {
-	}
-
 
 	@Override
 	public synchronized void preloadCities(ResultMatcher<City> resultMatcher) {
@@ -110,7 +99,6 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 			}
 		}
 		return closest;
-
 	}
 
 	@Override
@@ -151,10 +139,6 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 			log.error("Disk operation failed", e);  //$NON-NLS-1$
 		}
 	}
-
-//	// not use contains It is really slow, takes about 10 times more than other steps
-//	private StringMatcherMode[] streetsCheckMode = new StringMatcherMode[] {StringMatcherMode.CHECK_ONLY_STARTS_WITH,
-//			StringMatcherMode.CHECK_STARTS_FROM_SPACE_NOT_BEGINNING};
 
 	private synchronized List<MapObject> searchMapObjectsByName(String name, ResultMatcher<MapObject> resultMatcher, List<Integer> typeFilter) {
 		SearchRequest<MapObject> req = BinaryMapIndexReader.buildAddressByNameRequest(resultMatcher, name,
@@ -220,7 +204,7 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 	}
 
 	@Override
-	public synchronized List<City> fillWithSuggestedCities(String name, final ResultMatcher<City> resultMatcher, boolean searchVillages, LatLon currentLocation) {
+	public synchronized List<City> fillWithSuggestedCities(String name, final ResultMatcher<City> resultMatcher, boolean searchVillages) {
 		List<City> citiesToFill = new ArrayList<>(cities.values());
         citiesToFill.addAll(fillWithCities(name, resultMatcher, getCityTypeFilter(name, searchVillages)));
 		return citiesToFill;
@@ -243,20 +227,6 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 	}
 
 	@Override
-	public Building getBuildingByName(Street street, String name) {
-		preloadBuildings(street, null);
-		String lang = getLang();
-		boolean transliterateNames = isTransliterateNames();
-		for (Building b : street.getBuildings()) {
-			String bName = b.getName(lang, transliterateNames);
-			if (bName.equals(name)) {
-				return b;
-			}
-		}
-		return null;
-	}
-
-	@Override
 	public String getName() {
 		String fileName = getFileName();
 		if (fileName.indexOf('.') != -1) {
@@ -269,12 +239,10 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 	public String getCountryName() {
 		return resource.getShallowReader().getCountryName();
 	}
-
 	@Override
 	public String getFileName() {
 		return resource.getFileName();
 	}
-
 	@Override
 	public String toString() {
 		return getName() + " repository";
@@ -322,7 +290,6 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 		return cities.get(id);
 	}
 
-
 	@Override
 	public Street getStreetByName(City o, String name) {
 		name = name.toLowerCase();
@@ -343,13 +310,10 @@ public class RegionAddressRepositoryBinary implements RegionAddressRepository {
 	public void clearCache() {
 		cities = new LinkedHashMap<>();
 		citiesQtree.clear();
-		postCodes.clear();
-
 	}
 
 	@Override
 	public LatLon getEstimatedRegionCenter() {
 		return resource.getShallowReader().getRegionCenter();
 	}
-
 }

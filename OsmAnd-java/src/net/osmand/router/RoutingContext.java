@@ -1,6 +1,5 @@
 package net.osmand.router;
 
-
 import net.osmand.NativeLibrary;
 import net.osmand.NativeLibrary.NativeRouteSearchResult;
 import net.osmand.PlatformUtil;
@@ -9,7 +8,6 @@ import net.osmand.binary.BinaryMapIndexReader.SearchRequest;
 import net.osmand.binary.BinaryMapRouteReaderAdapter.RouteRegion;
 import net.osmand.binary.BinaryMapRouteReaderAdapter.RouteSubregion;
 import net.osmand.binary.RouteDataObject;
-import net.osmand.router.BinaryRoutePlanner.FinalRouteSegment;
 import net.osmand.router.BinaryRoutePlanner.RouteSegment;
 import net.osmand.router.BinaryRoutePlanner.RouteSegmentVisitor;
 import net.osmand.router.RoutePlannerFrontEnd.RouteCalculationMode;
@@ -32,7 +30,6 @@ import gnu.trove.map.TLongObjectMap;
 import gnu.trove.map.hash.TLongObjectHashMap;
 import gnu.trove.set.hash.TLongHashSet;
 
-
 public class RoutingContext {
 	private final static Log log = PlatformUtil.getLog(RoutingContext.class);
 	private static final int OPTION_NO_LOAD = 0;
@@ -41,21 +38,21 @@ public class RoutingContext {
 
 	// Final context variables
 	public final RoutingConfiguration config;
-	public final RouteCalculationMode calculationMode;
-	public final NativeLibrary nativeLib;
+	final RouteCalculationMode calculationMode;
+	final NativeLibrary nativeLib;
 	private final Map<BinaryMapIndexReader, List<RouteSubregion>> map = new LinkedHashMap<>();
-	public final Map<RouteRegion, BinaryMapIndexReader> reverseMap = new LinkedHashMap<>();
+	final Map<RouteRegion, BinaryMapIndexReader> reverseMap = new LinkedHashMap<>();
 	
 	// 1. Initial variables
 	public int startX;
 	public int startY;
 	public int targetX;
-	public int targetY;
+	int targetY;
 
 	public RouteCalculationProgress calculationProgress;
 	public boolean leftSideNavigation;
 	public List<RouteSegmentResult> previouslyCalculatedRoute;
-	public PrecalculatedRouteDirection precalculatedRouteDirection;
+	PrecalculatedRouteDirection precalculatedRouteDirection;
 
 	// 2. Routing memory cache (big objects)
     private final TLongObjectHashMap<List<RoutingSubregionTile>> indexedSubregions = new TLongObjectHashMap<>();
@@ -71,12 +68,12 @@ public class RoutingContext {
 	// 5. debug information (package accessor)
     private final TileStatistics global = new TileStatistics();
 	// updated by route planner in bytes
-	public int memoryOverhead = 0;
+	int memoryOverhead = 0;
 	
 	final long timeNanoToCalcDeviation = 0;
 	long timeToLoad = 0;
 	long timeToLoadHeaders = 0;
-	private long timeToFindInitialSegments = 0;
+//	private long timeToFindInitialSegments = 0;
 	long timeToCalculate = 0;
 	
 	int distinctLoadedTiles = 0;
@@ -86,12 +83,12 @@ public class RoutingContext {
 	public float routingTime = 0;
 	public int loadedTiles = 0;
 	public int visitedSegments = 0;
-	public int relaxedSegments = 0;
+	int relaxedSegments = 0;
 	// callback of processing segments
 	RouteSegmentVisitor visitor = null;
 
 	// old planner
-	public FinalRouteSegment finalRouteSegment;
+//	FinalRouteSegment finalRouteSegment;
 
 	RoutingContext(RoutingContext cp) {
 		this.config = cp.config;
@@ -137,7 +134,7 @@ public class RoutingContext {
 		this.nativeLib = nativeLibrary;
 	}
 
-	public int getCurrentlyLoadedTiles() {
+	int getCurrentlyLoadedTiles() {
 		int cnt = 0;
 		for(RoutingSubregionTile t : this.subregionTiles){
 			if(t.isLoaded()) {
@@ -150,52 +147,40 @@ public class RoutingContext {
 	private int getCurrentEstimatedSize(){
 		return global.size;
 	}
-
 	public void setRouter(GeneralRouter router) {
 		config.router = router;
 	}
-	
-	public void setHeuristicCoefficient(float heuristicCoefficient) {
-		config.heuristicCoefficient = heuristicCoefficient;
-	}
-
 	public VehicleRouter getRouter() {
 		return config.router;
 	}
-
-	public boolean planRouteIn2Directions() {
+	boolean planRouteIn2Directions() {
 		return config.planRoadDirection == 0;
 	}
-
 	public int getPlanRoadDirection() {
 		return config.planRoadDirection;
 	}
 
-	public void setPlanRoadDirection(int planRoadDirection) {
-		config.planRoadDirection = planRoadDirection;
-	}
-
-	public int roadPriorityComparator(double o1DistanceFromStart, double o1DistanceToEnd, double o2DistanceFromStart, double o2DistanceToEnd) {
+	int roadPriorityComparator(double o1DistanceFromStart, double o1DistanceToEnd, double o2DistanceFromStart, double o2DistanceToEnd) {
 		return BinaryRoutePlanner.roadPriorityComparator(o1DistanceFromStart, o1DistanceToEnd, o2DistanceFromStart, o2DistanceToEnd,
 				config.heuristicCoefficient);
 	}
 	
-	public void initStartAndTargetPoints(RouteSegment start, RouteSegment end) {
+	void initStartAndTargetPoints(RouteSegment start, RouteSegment end) {
 		initTargetPoint(end);
 		startX = start.road.getPoint31XTile(start.getSegmentStart());
 		startY = start.road.getPoint31YTile(start.getSegmentStart());		
 	}
 
-	public void initTargetPoint(RouteSegment end) {
+	void initTargetPoint(RouteSegment end) {
 		targetX = end.road.getPoint31XTile(end.getSegmentStart());
 		targetY = end.road.getPoint31YTile(end.getSegmentStart());
 	}
 	
-	public void unloadAllData() {
+	void unloadAllData() {
 		unloadAllData(null);
 	}
 	
-	public void unloadAllData(RoutingContext except) {
+	void unloadAllData(RoutingContext except) {
 		for (RoutingSubregionTile tl : subregionTiles) {
 			if (tl.isLoaded()) {
 				if(except == null || except.searchSubregionTile(tl.subregion) < 0){
@@ -237,7 +222,7 @@ public class RoutingContext {
 		return ind;
 	}
 	
-	public RouteSegment loadRouteSegment(int x31, int y31, int memoryLimit) {
+	RouteSegment loadRouteSegment(int x31, int y31, int memoryLimit) {
 		long tileId = getRoutingTile(x31, y31, memoryLimit, OPTION_SMART_LOAD);
 		TLongObjectHashMap<RouteDataObject> excludeDuplications = new TLongObjectHashMap<>();
 		RouteSegment original = null;
@@ -282,10 +267,8 @@ public class RoutingContext {
 				loadedPrevUnloadedTiles++;
 		}
 		} else {
-			if(global != null) {
-				global.allRoutes += ts.tileStatistics.allRoutes;
-				global.coordinates += ts.tileStatistics.coordinates;
-			}
+			global.allRoutes += ts.tileStatistics.allRoutes;
+			global.coordinates += ts.tileStatistics.coordinates;
 			distinctLoadedTiles++;
 		}
 		global.size += ts.tileStatistics.size;
@@ -299,7 +282,7 @@ public class RoutingContext {
 	}
 	
 	private void checkOldRoutingFiles(BinaryMapIndexReader key) {
-		if(calculationMode == RouteCalculationMode.BASE && key.getDateCreated() < 1390172400000l) { // new SimpleDateFormat("dd-MM-yyyy").parse("20-01-2014").getTime()
+		if(calculationMode == RouteCalculationMode.BASE && key.getDateCreated() < 1390172400000L) { // new SimpleDateFormat("dd-MM-yyyy").parse("20-01-2014").getTime()
 			System.err.println("Old routing file : " + key.getDateCreated() + " " + new Date(key.getDateCreated()));
 			String map = "";
 			for (RouteRegion r : key.getRoutingIndexes()) {
@@ -309,7 +292,7 @@ public class RoutingContext {
 		}		
 	}
 	
-	public void checkOldRoutingFiles(int x31, int y31) {
+	void checkOldRoutingFiles(int x31, int y31) {
 		for (Entry<BinaryMapIndexReader, List<RouteSubregion>> r : map.entrySet()) {
 			BinaryMapIndexReader reader = r.getKey();
 			for(RouteRegion reg : reader.getRoutingIndexes()) {
@@ -358,7 +341,7 @@ public class RoutingContext {
 		return collection;
 	}
 
-	public void loadTileData(int x31, int y31, int zoomAround, final List<RouteDataObject> toFillIn) {
+	void loadTileData(int x31, int y31, int zoomAround, final List<RouteDataObject> toFillIn) {
 		int t =  config.ZOOM_TO_LOAD_TILES - zoomAround;
 		int coordinatesShift = (1 << (31 - config.ZOOM_TO_LOAD_TILES));
 		if(t <= 0) {
@@ -369,7 +352,7 @@ public class RoutingContext {
 		}
 		
 		TLongHashSet ts = new TLongHashSet(); 
-		long now = System.nanoTime();
+//		long now = System.nanoTime();
 		for(int i = -t; i <= t; i++) {
 			for(int j = -t; j <= t; j++) {
 				ts.add(getRoutingTile(x31 +i*coordinatesShift, y31 + j*coordinatesShift, 0, OPTION_IN_MEMORY_LOAD));		
@@ -380,10 +363,9 @@ public class RoutingContext {
 		while(it.hasNext()){
 			getAllObjects(it.next(), toFillIn, excludeDuplications);
 		}
-		timeToFindInitialSegments += (System.nanoTime() - now);
+//		timeToFindInitialSegments += (System.nanoTime() - now);
 	}
 	
-	@SuppressWarnings("unused")
 	private long getRoutingTile(int x31, int y31, int memoryLimit, int loadOptions){
 		long xloc = x31 >> (31 - config.ZOOM_TO_LOAD_TILES);
 		long yloc = y31 >> (31 - config.ZOOM_TO_LOAD_TILES);
@@ -437,11 +419,11 @@ public class RoutingContext {
 		return 0;
 	}
 
-	public boolean checkIfMemoryLimitCritical(int memoryLimit) {
+	boolean checkIfMemoryLimitCritical(int memoryLimit) {
 		return getCurrentEstimatedSize() > 0.9 * memoryLimit;
 	}
 	
-	public void unloadUnusedTiles(int memoryLimit) {
+	void unloadUnusedTiles(int memoryLimit) {
 		float desirableSize = memoryLimit * 0.7f;
 		List<RoutingSubregionTile> list = new ArrayList<>(subregionTiles.size() / 2);
 		int loaded = 0;
@@ -495,29 +477,29 @@ public class RoutingContext {
 		List<RoutingSubregionTile> subregions = indexedSubregions.get(tileId);
 		if (subregions != null) {
 			for (RoutingSubregionTile rs : subregions) {
-				rs.loadAllObjects(toFillIn, this, excludeDuplications);
+				rs.loadAllObjects(toFillIn, excludeDuplications);
 			}
 		}
 	}
 
-	static long runGCUsedMemory()  {
-		Runtime runtime = Runtime.getRuntime();
-		long usedMem1 = runtime.totalMemory() - runtime.freeMemory();
-		long usedMem2 = Long.MAX_VALUE;
-		int cnt = 4;
-		while (cnt-- >= 0) {
-			for (int i = 0; (usedMem1 < usedMem2) && (i < 1000); ++i) {
-				// AVIAN FIXME
-				runtime.runFinalization();
-				runtime.gc();
-				Thread.yield();
-
-				usedMem2 = usedMem1;
-				usedMem1 = runtime.totalMemory() - runtime.freeMemory();
-			}
-		}
-		return usedMem1;
-	}
+//	static long runGCUsedMemory()  {
+//		Runtime runtime = Runtime.getRuntime();
+//		long usedMem1 = runtime.totalMemory() - runtime.freeMemory();
+//		long usedMem2 = Long.MAX_VALUE;
+//		int cnt = 4;
+//		while (cnt-- >= 0) {
+//			for (int i = 0; (usedMem1 < usedMem2) && (i < 1000); ++i) {
+//				// AVIAN FIXME
+//				runtime.runFinalization();
+//				runtime.gc();
+//				Thread.yield();
+//
+//				usedMem2 = usedMem1;
+//				usedMem1 = runtime.totalMemory() - runtime.freeMemory();
+//			}
+//		}
+//		return usedMem1;
+//	}
 	
 	private static long calcRouteId(RouteDataObject o, int ind) {
 		return (o.getId() << 10) + ind;
@@ -537,12 +519,8 @@ public class RoutingContext {
 		RoutingSubregionTile(RouteSubregion subregion) {
 			this.subregion = subregion;
 		}
-		
-		public TLongObjectMap<RouteSegment> getRoutes() {
-			return routes;
-		}
-		
-		void loadAllObjects(final List<RouteDataObject> toFillIn, RoutingContext ctx, TLongObjectHashMap<RouteDataObject> excludeDuplications) {
+
+		void loadAllObjects(final List<RouteDataObject> toFillIn, TLongObjectHashMap<RouteDataObject> excludeDuplications) {
 			if(routes != null) {
                 for (RouteSegment rs : routes.valueCollection()) {
                     while (rs != null) {
@@ -597,9 +575,7 @@ public class RoutingContext {
 				for (RouteDataObject ro : res) {
 					
 					boolean accept = ro != null;
-					if (ctx != null) {
-						accept = ctx.getRouter().acceptLine(ro);
-					}
+					accept = ctx.getRouter().acceptLine(ro);
 					if (accept) {
 						for (int i = 0; i < ro.pointsX.length; i++) {
 							if (ro.getPoint31XTile(i) == x31 && ro.getPoint31YTile(i) == y31) {

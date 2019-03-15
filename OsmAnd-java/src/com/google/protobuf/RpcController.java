@@ -48,6 +48,7 @@ package com.google.protobuf;
  *
  * @author kenton@google.com Kenton Varda
  */
+@SuppressWarnings("ALL")
 interface RpcController {
   // -----------------------------------------------------------------
   // These calls may be made from the client side only.  Their results

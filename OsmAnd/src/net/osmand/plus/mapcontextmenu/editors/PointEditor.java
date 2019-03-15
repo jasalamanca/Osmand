@@ -4,16 +4,13 @@ import android.support.v4.app.Fragment;
 
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.helpers.AndroidUiHelper;
 
 public abstract class PointEditor {
-
 	final OsmandApplication app;
 	MapActivity mapActivity;
-
 	boolean isNew;
 
-	private boolean portraitMode;
+//	private boolean portraitMode;
 	private boolean nightMode;
 
 	PointEditor(MapActivity mapActivity) {
@@ -33,11 +30,11 @@ public abstract class PointEditor {
 		return !nightMode;
 	}
 
-	public void updateLandscapePortrait() {
-		portraitMode = AndroidUiHelper.isOrientationPortrait(mapActivity);
+	void updateLandscapePortrait() {
+//		portraitMode = AndroidUiHelper.isOrientationPortrait(mapActivity);
 	}
 
-	public void updateNightMode() {
+	void updateNightMode() {
 		nightMode = mapActivity.getMyApplication().getDaynightHelper().isNightModeForMapControls();
 	}
 

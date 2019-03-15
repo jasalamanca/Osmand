@@ -19,7 +19,6 @@ import net.osmand.plus.quickaction.QuickAction;
 import net.osmand.plus.widgets.AutoCompleteTextViewEx;
 
 public class GPXAction extends QuickAction {
-
 	public static final int TYPE = 6;
 
 	private static final String KEY_NAME = "name";
@@ -30,34 +29,28 @@ public class GPXAction extends QuickAction {
 	public GPXAction() {
 		super(TYPE);
 	}
-
 	public GPXAction(QuickAction quickAction) {
 		super(quickAction);
 	}
 
 	@Override
 	public void execute(final MapActivity activity) {
-
 		final LatLon latLon = activity.getMapView()
 				.getCurrentRotatedTileBox()
 				.getCenterLatLon();
-
 		final String title = getParams().get(KEY_NAME);
 
 		if (title == null || title.isEmpty()) {
-
 			final Dialog progressDialog = new ProgressDialog(activity);
 			progressDialog.setCancelable(false);
 			progressDialog.setTitle(R.string.search_address);
 			progressDialog.show();
 
 			GeocodingLookupService.AddressLookupRequest lookupRequest = new GeocodingLookupService.AddressLookupRequest(latLon,
-
 					new GeocodingLookupService.OnAddressLookupResult() {
 
 						@Override
 						public void geocodingDone(String address) {
-
 							progressDialog.dismiss();
 							activity.getContextMenu().addWptPt(latLon, address,
 									getParams().get(KEY_CATEGORY_NAME),
@@ -68,7 +61,6 @@ public class GPXAction extends QuickAction {
 					}, null);
 
 			activity.getMyApplication().getGeocodingLookupService().lookupAddress(lookupRequest);
-
 		} else activity.getContextMenu().addWptPt(latLon, title,
 				getParams().get(KEY_CATEGORY_NAME),
 				Integer.valueOf(getParams().get(KEY_CATEGORY_COLOR)),
@@ -77,32 +69,25 @@ public class GPXAction extends QuickAction {
 
 	@Override
 	public void drawUI(final ViewGroup parent, final MapActivity activity) {
-
 		final View root = LayoutInflater.from(parent.getContext())
 				.inflate(R.layout.quick_action_add_gpx, parent, false);
-
 		parent.addView(root);
-
 		AutoCompleteTextViewEx categoryEdit = root.findViewById(R.id.category_edit);
 		SwitchCompat showDialog = root.findViewById(R.id.saveButton);
 		ImageView categoryImage = root.findViewById(R.id.category_image);
 		EditText name = root.findViewById(R.id.name_edit);
 
 		if (!getParams().isEmpty()) {
-
 			showDialog.setChecked(Boolean.valueOf(getParams().get(KEY_DIALOG)));
 			categoryImage.setColorFilter(Integer.valueOf(getParams().get(KEY_CATEGORY_COLOR)));
 			name.setText(getParams().get(KEY_NAME));
 			categoryEdit.setText(getParams().get(KEY_CATEGORY_NAME));
 
 			if (getParams().get(KEY_NAME).isEmpty() && Integer.valueOf(getParams().get(KEY_CATEGORY_COLOR)) == 0) {
-
 				categoryEdit.setText("");
 				categoryImage.setColorFilter(activity.getResources().getColor(R.color.icon_color));
 			}
-
 		} else {
-
 			categoryEdit.setText("");
 			categoryImage.setColorFilter(activity.getResources().getColor(R.color.icon_color));
 
@@ -113,17 +98,13 @@ public class GPXAction extends QuickAction {
 		categoryEdit.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(final View view) {
-
 				SelectCategoryDialogFragment dialogFragment = SelectCategoryDialogFragment.createInstance("");
-
-				dialogFragment.show(
-						activity.getSupportFragmentManager(),
-						SelectCategoryDialogFragment.TAG);
+				dialogFragment.show(activity.getSupportFragmentManager(),
+									SelectCategoryDialogFragment.TAG);
 
 				dialogFragment.setSelectionListener(new SelectCategoryDialogFragment.CategorySelectionListener() {
 					@Override
 					public void onCategorySelected(String category, int color) {
-
 						fillGroupParams(root, category, color);
 					}
 				});
@@ -134,26 +115,20 @@ public class GPXAction extends QuickAction {
 				activity.getSupportFragmentManager().findFragmentByTag(SelectCategoryDialogFragment.TAG);
 
 		if (dialogFragment != null) {
-
 			dialogFragment.setSelectionListener(new SelectCategoryDialogFragment.CategorySelectionListener() {
 				@Override
 				public void onCategorySelected(String category, int color) {
-
 					fillGroupParams(root, category, color);
 				}
 			});
-
 		} else {
-
 			EditCategoryDialogFragment dialog = (EditCategoryDialogFragment)
 					activity.getSupportFragmentManager().findFragmentByTag(EditCategoryDialogFragment.TAG);
 
 			if (dialog != null) {
-
 				dialogFragment.setSelectionListener(new SelectCategoryDialogFragment.CategorySelectionListener() {
 					@Override
 					public void onCategorySelected(String category, int color) {
-
 						fillGroupParams(root, category, color);
 					}
 				});
@@ -162,8 +137,7 @@ public class GPXAction extends QuickAction {
 	}
 
 	@Override
-	public boolean fillParams(View root, MapActivity activity) {
-
+	public boolean fillParams(View root) {
 		getParams().put(KEY_NAME, ((EditText) root.findViewById(R.id.name_edit)).getText().toString());
 		getParams().put(KEY_DIALOG, Boolean.toString(((SwitchCompat) root.findViewById(R.id.saveButton)).isChecked()));
 
@@ -171,7 +145,6 @@ public class GPXAction extends QuickAction {
 	}
 
 	private void fillGroupParams(View root, String name, int color) {
-
 		if (color == 0) color = root.getContext().getResources().getColor(R.color.icon_color);
 
 		((AutoCompleteTextViewEx) root.findViewById(R.id.category_edit)).setText(name);

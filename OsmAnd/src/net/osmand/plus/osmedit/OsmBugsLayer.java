@@ -48,7 +48,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider {
-
 	private static final Log log = PlatformUtil.getLog(OsmBugsLayer.class);
 	private final OsmEditingPlugin plugin;
 
@@ -66,7 +65,7 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 
 	private int startZoom;
 
-	public OsmBugsLayer(MapActivity activity, OsmEditingPlugin plugin) {
+	OsmBugsLayer(MapActivity activity, OsmEditingPlugin plugin) {
 		this.activity = activity;
 		this.plugin = plugin;
 		local = plugin.getOsmNotesLocalUtil();
@@ -195,7 +194,6 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 		return (int) (z * tb.getDensity());
 	}
 
-
 	@Override
 	public boolean onLongPressEvent(PointF point, RotatedTileBox tileBox) {
 		return false;
@@ -237,18 +235,17 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 
 	private static String readText(XmlPullParser parser, String key) throws XmlPullParserException, IOException {
 		int tok;
-		String text = "";
+		StringBuilder text = new StringBuilder();
 		while ((tok = parser.next()) != XmlPullParser.END_DOCUMENT) {
 			if (tok == XmlPullParser.END_TAG && parser.getName().equals(key)) {
 				break;
 			} else if (tok == XmlPullParser.TEXT) {
-				text += parser.getText();
+				text.append(parser.getText());
 			}
 
 		}
-		return text;
+		return text.toString();
 	}
-
 
 	private List<OpenStreetNote> loadingBugs(double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude) {
 		final int deviceApiVersion = android.os.Build.VERSION.SDK_INT;
@@ -382,15 +379,14 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 		executeTaskInBackground(task);
 	}
 
-
-	public void openBug(final double latitude, final double longitude, String message) {
+	void openBug(final double latitude, final double longitude, String message) {
 		OpenStreetNote bug = new OpenStreetNote();
 		bug.setLatitude(latitude);
 		bug.setLongitude(longitude);
 		showBugDialog(bug, Action.CREATE, message);
 	}
 
-	public void openBug(final double latitude, final double longitude, String message, boolean autofill) {
+	void openBug(final double latitude, final double longitude, String message, boolean autofill) {
 		OpenStreetNote bug = new OpenStreetNote();
 		bug.setLatitude(latitude);
 		bug.setLongitude(longitude);
@@ -399,19 +395,19 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 		else showBugDialog(bug, Action.CREATE, message);
 	}
 
-	public void closeBug(final OpenStreetNote bug, String txt) {
+	void closeBug(final OpenStreetNote bug, String txt) {
 		showBugDialog(bug, Action.DELETE, txt);
 	}
 
-	public void reopenBug(final OpenStreetNote bug, String txt) {
+	void reopenBug(final OpenStreetNote bug, String txt) {
 		showBugDialog(bug, Action.REOPEN, txt);
 	}
 
-	public void commentBug(final OpenStreetNote bug, String txt) {
+	void commentBug(final OpenStreetNote bug, String txt) {
 		showBugDialog(bug, Action.MODIFY, txt);
 	}
 
-	public void modifyBug(final OsmNotesPoint point) {
+	void modifyBug(final OsmNotesPoint point) {
 		showBugDialog(point);
 	}
 
@@ -584,7 +580,7 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 			this.longitude = longitude;
 		}
 
-		public List<String> getCommentDescriptionList() {
+		List<String> getCommentDescriptionList() {
 			List<String> res = new ArrayList<>(comments.size());
 			for (int i = 0; i < comments.size(); i++) {
 				StringBuilder sb = new StringBuilder();

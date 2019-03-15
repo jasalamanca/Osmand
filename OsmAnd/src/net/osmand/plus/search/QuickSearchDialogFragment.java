@@ -837,11 +837,11 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 			}
 
 			@Override
-			public void searchStarted(SearchPhrase phrase) {
+			public void searchStarted() {
 			}
 
 			@Override
-			public boolean searchFinished(SearchPhrase phrase) {
+			public boolean searchFinished() {
 				return true;
 			}
 		};
@@ -1158,7 +1158,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 		startNearestCitySearch();
 		runCoreSearch("", false, false, new SearchResultListener() {
 			@Override
-			public void searchStarted(SearchPhrase phrase) {
+			public void searchStarted() {
 			}
 
 			@Override
@@ -1166,7 +1166,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 			}
 
 			@Override
-			public boolean searchFinished(SearchPhrase phrase) {
+			public boolean searchFinished() {
 				SearchResultCollection res = getResultCollection();
 				LOG.info("--- nearest cities found: " + (res != null ? res.getCurrentSearchResults().size() : 0));
 
@@ -1226,11 +1226,11 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 										}
 
 										@Override
-										public void searchStarted(SearchPhrase phrase) {
+										public void searchStarted() {
 										}
 
 										@Override
-										public boolean searchFinished(SearchPhrase phrase) {
+										public boolean searchFinished() {
 											if (!cityFound) {
 												replaceQueryWithText(lastCityName + " ");
 											}
@@ -1510,7 +1510,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 							app.runInUIThread(new Runnable() {
 								@Override
 								public void run() {
-									resultListener.searchStarted(object.requiredSearchPhrase);
+									resultListener.searchStarted();
 								}
 							});
 						}
@@ -1523,7 +1523,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 									return;
 								}
 								searching = false;
-								if (resultListener == null || resultListener.searchFinished(object.requiredSearchPhrase)) {
+								if (resultListener == null || resultListener.searchFinished()) {
 									hideProgressBar();
 									addMoreButton(searchUICore.isSearchMoreAvailable(object.requiredSearchPhrase));
 								}
@@ -2022,10 +2022,10 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 	}
 
 	interface SearchResultListener {
-		void searchStarted(SearchPhrase phrase);
+		void searchStarted();
 		void publish(SearchResultCollection res, boolean append);
 		// return true if search done, false if next search will be ran immediately
-		boolean searchFinished(SearchPhrase phrase);
+		boolean searchFinished();
 	}
 
 	class SearchFragmentPagerAdapter extends FragmentPagerAdapter {

@@ -1,6 +1,5 @@
 package net.osmand.plus.quickaction;
 
-
 import android.content.Context;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
@@ -15,9 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class QuickAction {
-
     public interface QuickActionSelectionListener {
-
         void onActionSelected(QuickAction action);
     }
 
@@ -63,23 +60,18 @@ public class QuickAction {
     public int getNameRes() {
         return nameRes;
     }
-
     public int getIconRes() {
         return iconRes;
     }
-
     public int getIconRes(Context context) {
         return iconRes;
     }
-
     public long getId() {
         return id;
     }
-
-    public boolean isActionEditable() {
+    boolean isActionEditable() {
         return isActionEditable;
     }
-
     public boolean isActionEnable(OsmandApplication app) {
         return true;
     }
@@ -108,10 +100,9 @@ public class QuickAction {
     }
     public void execute(MapActivity activity){}
     public void drawUI(ViewGroup parent, MapActivity activity){}
-    public boolean fillParams(View root, MapActivity activity){ return true; }
+    public boolean fillParams(View root){ return true; }
 
-    public boolean hasInstanceInList(List<QuickAction> active){
-
+    boolean hasInstanceInList(List<QuickAction> active){
         for (QuickAction action: active){
             if (action.type == type) return true;
         }

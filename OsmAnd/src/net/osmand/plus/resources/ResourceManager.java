@@ -70,8 +70,6 @@ public class ResourceManager {
 
 	private static final String INDEXES_CACHE = "ind.cache";
 
-	protected static ResourceManager manager = null;
-
 	private final OsmandApplication context;
 	private final List<ResourceListener> resourceListeners = new ArrayList<>();
 

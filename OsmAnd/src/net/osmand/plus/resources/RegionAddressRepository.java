@@ -9,7 +9,6 @@ import net.osmand.data.Street;
 
 import java.util.List;
 
-
 public interface RegionAddressRepository {
 	String getName();
 	String getCountryName();
@@ -17,13 +16,8 @@ public interface RegionAddressRepository {
 	String getLang();
 	boolean isTransliterateNames();
 	LatLon getEstimatedRegionCenter();
-	
 	// is called on low memory
     void clearCache();
-	
-	// called to close resources
-    void close();
-	
 	void preloadCities(ResultMatcher<City> resultMatcher);
 	void preloadBuildings(Street street, ResultMatcher<Building> resultMatcher);
 	void preloadStreets(City o, ResultMatcher<Street> resultMatcher);
@@ -31,9 +25,8 @@ public interface RegionAddressRepository {
 	// Returns city or postcode (if id < 0)
     City getCityById(long id, String name);
 	Street getStreetByName(City cityOrPostcode, String name);
-	Building getBuildingByName(Street street, String name);
 	List<Street> getStreetsIntersectStreets(Street st);
 	void addCityToPreloadedList(City city);
-	List<City> fillWithSuggestedCities(String name, ResultMatcher<City> resultMatcher, boolean searchVillagesMode, LatLon currentLocation);
+	List<City> fillWithSuggestedCities(String name, ResultMatcher<City> resultMatcher, boolean searchVillagesMode);
 	List<MapObject> searchMapObjectsByName(String name, ResultMatcher<MapObject> resultMatcher);
 }

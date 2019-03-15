@@ -1364,11 +1364,10 @@ public class AvailableGPXFragment extends OsmandExpandableListFragment {
 			item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
 				@Override
 				public boolean onMenuItemClick(MenuItem item) {
-					osmEditingPlugin.sendGPXFiles(getActivity(), AvailableGPXFragment.this, gpxInfo);
+					osmEditingPlugin.sendGPXFiles(getActivity(), gpxInfo);
 					return true;
 				}
 			});
-
 		}
 
 		item = optionsMenu.getMenu().add(R.string.shared_string_delete)

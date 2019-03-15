@@ -10,24 +10,19 @@ import net.osmand.osm.edit.Node;
 import net.osmand.osm.edit.Relation;
 import net.osmand.osm.edit.Way;
 
-import org.xml.sax.SAXException;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.zip.GZIPInputStream;
 
-
 public class OsmBaseStorage {
-
 	private static final String ELEM_OSM = "osm"; //$NON-NLS-1$
 	private static final String ELEM_OSMCHANGE = "osmChange"; //$NON-NLS-1$
 	private static final String ELEM_NODE = "node"; //$NON-NLS-1$
@@ -68,15 +63,11 @@ public class OsmBaseStorage {
 	// this is used to show feedback to user
     private int progressEntity = 0;
 	private IProgress progress;
-	private InputStream inputStream;
 	private InputStream streamForProgress;
-	private final List<IOsmStorageFilter> filters = new ArrayList<>();
-	private boolean supressWarnings = true;
+//	private final List<IOsmStorageFilter> filters = new ArrayList<>();
 	private boolean convertTagsToLC = true;
 	private boolean parseEntityInfo;
-	
-	
-	
+
 	public static void main(String[] args) throws IOException, XmlPullParserException {
 		GZIPInputStream is = new GZIPInputStream(
 				new FileInputStream("/Users/victorshcherb/osmand/temp/m.m001508233.osc.gz"));
@@ -85,11 +76,10 @@ public class OsmBaseStorage {
 	
 	public synchronized void parseOSM(InputStream stream, IProgress progress, InputStream streamForProgress, 
 			boolean entityInfo) throws IOException, XmlPullParserException {
-		this.inputStream = stream;
 		this.progress = progress;
 		parseEntityInfo = entityInfo;
 		if(streamForProgress == null){
-			streamForProgress = inputStream;
+			streamForProgress = stream;
 		}
 		this.streamForProgress = streamForProgress;
 		parseStarted = false;
@@ -111,24 +101,16 @@ public class OsmBaseStorage {
 		if(progress != null){
 			progress.finishTask();
 		}
-		completeReading();
+//		completeReading();
 	}
 	
-	/**
-	 * @param stream
-	 * @throws IOException
-	 * @throws SAXException - could be
-	 */
 	private synchronized void parseOSM(InputStream stream, IProgress progress) throws IOException, XmlPullParserException {
 		parseOSM(stream, progress, null, true);
-		
 	}
 	
 	public void setConvertTagsToLC(boolean convertTagsToLC) {
 		this.convertTagsToLC = convertTagsToLC;
 	}
-
-	private boolean osmChange;
 
 	private Long parseId(XmlPullParser parser, String name, long defId){
 		long id = defId; 
@@ -164,7 +146,7 @@ public class OsmBaseStorage {
 				|| !supportedVersions.contains(parser.getAttributeValue("", ATTR_VERSION))) {
 			throw new OsmVersionNotSupported();
 		}
-		osmChange = ELEM_OSMCHANGE.equals(name);
+//		osmChange = ELEM_OSMCHANGE.equals(name);
 		parseStarted = true;
 	}
 	
@@ -249,34 +231,20 @@ public class OsmBaseStorage {
 		if (type != null) {
 			if(currentParsedEntity != null){
 				EntityId entityId = new EntityId(type, currentParsedEntity.getId());
-				if(acceptEntityToLoad(entityId, currentParsedEntity)){
-					Entity oldEntity = entities.put(entityId, currentParsedEntity);
-					if(parseEntityInfo && currentParsedEntityInfo != null){
-						entityInfo.put(entityId, currentParsedEntityInfo);
-					}
-					if(!supressWarnings && oldEntity!= null){
-						throw new UnsupportedOperationException("Entity with id=" + oldEntity.getId() +" is duplicated in osm map"); //$NON-NLS-1$ //$NON-NLS-2$
-					}
+				Entity oldEntity = entities.put(entityId, currentParsedEntity);
+				if(parseEntityInfo && currentParsedEntityInfo != null){
+					entityInfo.put(entityId, currentParsedEntityInfo);
 				}
 				currentParsedEntity = null;
 			}
 		}
     }
 
-	private boolean acceptEntityToLoad(EntityId entityId, Entity entity) {
-		for(IOsmStorageFilter f : filters){
-			if(!f.acceptEntityToLoad(this, entityId, entity)){
-				return false;
-			}
-		}
-		return true;
-	}
-
-	private void completeReading(){
-		for(Entity e : entities.values()){
-			e.initializeLinks(entities);
-		}
-	}
+//	private void completeReading(){
+//		for(Entity e : entities.values()){
+//			e.initializeLinks(entities);
+//		}
+//	}
 	
 	public Map<EntityId, EntityInfo> getRegisteredEntityInfo() {
 		return entityInfo;
@@ -288,7 +256,7 @@ public class OsmBaseStorage {
 	/**
 	 * Thrown when version is not supported
 	 */
-	static class OsmVersionNotSupported extends RuntimeException {
+	private static class OsmVersionNotSupported extends RuntimeException {
 		private static final long serialVersionUID = -127558215143984838L;
 	}
 }

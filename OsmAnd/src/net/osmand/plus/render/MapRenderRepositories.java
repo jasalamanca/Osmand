@@ -634,7 +634,6 @@ public class MapRenderRepositories {
 				renderedState = 0;
 				boolean loaded;
 				if(nativeLib != null) {
-//					cObjects = new LinkedList<>();
 					loaded = loadVectorDataNative(dataBox, requestedBox.getZoom(), renderingReq, nativeLib);
 				} else {
 					cNativeObjects = null;
@@ -659,9 +658,9 @@ public class MapRenderRepositories {
 				currentRenderingContext.shadowRenderingMode = renderingReq.getIntPropertyValue(renderingReq.ALL.R_ATTR_INT_VALUE);
 				currentRenderingContext.shadowRenderingColor = renderingReq.getIntPropertyValue(renderingReq.ALL.R_SHADOW_COLOR);
 			}
-			if(renderingReq.searchRenderingAttribute("polygonMinSizeToDisplay")) {
-				currentRenderingContext.polygonMinSizeToDisplay = renderingReq.getIntPropertyValue(renderingReq.ALL.R_ATTR_INT_VALUE);
-			}
+//			if(renderingReq.searchRenderingAttribute("polygonMinSizeToDisplay")) {
+//				currentRenderingContext.polygonMinSizeToDisplay = renderingReq.getIntPropertyValue(renderingReq.ALL.R_ATTR_INT_VALUE);
+//			}
 			final QuadPointDouble lt = requestedBox.getLeftTopTile(requestedBox.getZoom());
 			double cfd = MapUtils.getPowZoom(requestedBox.getZoomFloatPart())* requestedBox.getMapDensity();
 			lt.x *= cfd;
@@ -674,7 +673,7 @@ public class MapRenderRepositories {
 			currentRenderingContext.rotate = requestedBox.getRotate();
 			currentRenderingContext.width = requestedBox.getPixWidth();
 			currentRenderingContext.height = requestedBox.getPixHeight();
-			currentRenderingContext.nightMode = nightMode;
+//			currentRenderingContext.nightMode = nightMode;
 			if(requestedBox.getZoom() <= zoomOnlyForBasemaps && 
 					"".equals(prefs.MAP_PREFERRED_LOCALE.get())) {
 				currentRenderingContext.preferredLocale = app.getLanguage();

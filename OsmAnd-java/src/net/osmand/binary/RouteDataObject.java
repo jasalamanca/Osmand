@@ -27,11 +27,11 @@ public class RouteDataObject {
 	public long[] restrictions;
 	public int[][] pointTypes;
 	public String[][] pointNames;
-	public int[][] pointNameTypes;
+	int[][] pointNameTypes;
 	public long id;
 	public TIntObjectHashMap<String> names;
 	public final static float NONE_MAX_SPEED = 40f;
-	public int[] nameIds;
+	int[] nameIds;
 	// mixed array [0, height, cumulative_distance height, cumulative_distance, height, ...] - length is length(points)*2
 	public float[] heightDistanceArray = null;
 	
@@ -163,10 +163,9 @@ public class RouteDataObject {
 		return null;
 	}
 	
-	public int[] getNameIds() {
+	int[] getNameIds() {
 		return nameIds;
 	}
-	
 	public TIntObjectHashMap<String> getNames() {
 		return names;
 	}
@@ -477,16 +476,6 @@ public class RouteDataObject {
             }
         }
 		return 0;
-	}
-	
-	public String getRoute() {
-		for (int type : types) {
-            RouteTypeRule r = region.quickGetEncodingRule(type);
-            if ("route".equals(r.getTag())) {
-                return r.getValue();
-            }
-        }
-		return null;
 	}
 
 	public String getHighway() {

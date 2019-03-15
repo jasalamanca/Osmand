@@ -28,9 +28,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 
-
 public class RendererRegistry {
-
 	private final static Log log = PlatformUtil.getLog(RendererRegistry.class);
 	
 	public final static String DEFAULT_RENDER = "OsmAnd";  //$NON-NLS-1$
@@ -43,15 +41,13 @@ public class RendererRegistry {
 	
 	private Map<String, File> externalRenderers = new LinkedHashMap<>();
 	private final Map<String, String> internalRenderers = new LinkedHashMap<>();
-	
 	private final Map<String, RenderingRulesStorage> renderers = new LinkedHashMap<>();
 
     public interface IRendererLoadedEventListener {
-        void onRendererLoaded(String name, RenderingRulesStorage rules, InputStream source);
+        void onRendererLoaded(String name, InputStream source);
     }
 
     private IRendererLoadedEventListener rendererLoadedEventListener;
-
 	private final OsmandApplication app;
 	
 	public RendererRegistry(OsmandApplication app){
@@ -93,8 +89,7 @@ public class RendererRegistry {
 		return externalRenderers.containsKey(name) || internalRenderers.containsKey(name);
 	}
 	
-//	private static boolean USE_PRECOMPILED_STYLE = false;
-	private RenderingRulesStorage loadRenderer(String name, final Map<String, RenderingRulesStorage> loadedRenderers, 
+	private RenderingRulesStorage loadRenderer(String name, final Map<String, RenderingRulesStorage> loadedRenderers,
 			final Map<String, String> renderingConstants) throws IOException,  XmlPullParserException {
 		InputStream is = getInputStream(name);
 		if(is == null) {
@@ -150,7 +145,7 @@ public class RendererRegistry {
 		}
 
         if (rendererLoadedEventListener != null)
-            rendererLoadedEventListener.onRendererLoaded(name, main, getInputStream(name));
+            rendererLoadedEventListener.onRendererLoaded(name, getInputStream(name));
 
 		return main;
 	}
@@ -195,8 +190,7 @@ public class RendererRegistry {
 		if(!internalRenderers.containsKey(name)) {
 			return new File(app.getAppPath(IndexConstants.RENDERERS_DIR), "style.render.xml");
 		}
-		File fl = new File(app.getAppPath(IndexConstants.RENDERERS_DIR), internalRenderers.get(name));
-		return fl;
+		return new File(app.getAppPath(IndexConstants.RENDERERS_DIR), internalRenderers.get(name));
 	}
 	
 	public void initRenderers(IProgress progress) {

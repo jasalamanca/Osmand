@@ -4,7 +4,6 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 
 public class PoiType extends AbstractPoiType {
-	
 	private final PoiCategory category;
 	private final PoiFilter filter;
 	private AbstractPoiType parentType;
@@ -15,13 +14,11 @@ public class PoiType extends AbstractPoiType {
 	private String osmValue2;
 	private boolean filterOnly;
 
-	
-	private String nameTag;
+//	private String nameTag;
 	private boolean text;
 	private boolean nameOnly;
 	private boolean relation;
 	private int order = 90;
-
 
 	public PoiType(MapPoiTypes poiTypes, PoiCategory category, PoiFilter filter, String name) {
 		super(name, poiTypes);
@@ -29,11 +26,11 @@ public class PoiType extends AbstractPoiType {
 		this.filter = filter;
 	}
 
-	public PoiType getReferenceType() {
+	PoiType getReferenceType() {
 		return referenceType;
 	}
 	
-	public void setReferenceType(PoiType referenceType) {
+	void setReferenceType(PoiType referenceType) {
 		this.referenceType = referenceType;
 	}
 	
@@ -50,15 +47,8 @@ public class PoiType extends AbstractPoiType {
 		}
 		return osmTag;
 	}
-	
-	public String getRawOsmTag() {
-		if(isReference()) {
-			return referenceType.getOsmTag();
-		}
-		return osmTag;
-	}
 
-	public void setOsmTag(String osmTag) {
+	void setOsmTag(String osmTag) {
 		this.osmTag = osmTag;
 	}
 
@@ -69,7 +59,7 @@ public class PoiType extends AbstractPoiType {
 		return osmTag2;
 	}
 
-	public void setOsmTag2(String osmTag2) {
+	void setOsmTag2(String osmTag2) {
 		this.osmTag2 = osmTag2;
 	}
 
@@ -80,7 +70,7 @@ public class PoiType extends AbstractPoiType {
 		return osmValue;
 	}
 
-	public void setOsmValue(String osmValue) {
+	void setOsmValue(String osmValue) {
 		this.osmValue = osmValue;
 	}
 
@@ -91,22 +81,18 @@ public class PoiType extends AbstractPoiType {
 		return osmValue2;
 	}
 
-	public void setOsmValue2(String osmValue2) {
+	void setOsmValue2(String osmValue2) {
 		this.osmValue2 = osmValue2;
 	}
-
 	public boolean isFilterOnly() {
 		return filterOnly;
 	}
-
-	public void setFilterOnly(boolean filterOnly) {
+	void setFilterOnly(boolean filterOnly) {
 		this.filterOnly = filterOnly;
 	}
-
 	public PoiCategory getCategory() {
 		return category;
 	}
-
 	public PoiFilter getFilter() {
 		return filter;
 	}
@@ -130,51 +116,30 @@ public class PoiType extends AbstractPoiType {
     public void setAdditional(AbstractPoiType parentType) {
         this.parentType = parentType;
     }
-
     public boolean isAdditional(){
         return parentType != null;
     }
-
     public AbstractPoiType getParentType() {
         return parentType;
     }
-    
     public boolean isText() {
     	return text;
     }
-    
     public void setText(boolean text) {
     	this.text = text;
     }
-    
-    public String getNameTag() {
-		return nameTag;
-	}
-    
-    public void setNameTag(String nameTag) {
-		this.nameTag = nameTag;
-	}
-
-	public boolean isNameOnly() {
-		return nameOnly;
-	}
-
-	public void setNameOnly(boolean nameOnly) {
+//	public void setNameTag(String nameTag) {
+//		this.nameTag = nameTag;
+//	}
+	void setNameOnly(boolean nameOnly) {
 		this.nameOnly = nameOnly;
 	}
-
-	public boolean isRelation() {
-		return relation;
-	}
-
 	public void setRelation(boolean relation) {
 		this.relation = relation;
 	}
-
 	public int getOrder() {
 		return order;
 	}
-
 	public void setOrder(int order) {
 		this.order = order;
 	}

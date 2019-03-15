@@ -11,11 +11,8 @@ import net.osmand.plus.GPXUtilities.WptPt;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Renderable {
-
     public static abstract class RenderableSegment {
-
         public List<WptPt> points = null;                           // Original list of points
         List<WptPt> culled = new ArrayList<>();           // Reduced/resampled list of points
         int pointSize;
@@ -44,13 +41,12 @@ public class Renderable {
         }
 
         protected abstract void startCuller(double newZoom);
-
-        void drawSingleSegment(double zoom, Paint p, Canvas canvas, RotatedTileBox tileBox) {}
+        void drawSingleSegment(Paint p, Canvas canvas, RotatedTileBox tileBox) {}
 
         public void drawSegment(double zoom, Paint p, Canvas canvas, RotatedTileBox tileBox) {
             if (QuadRect.trivialOverlap(tileBox.getLatLonBounds(), trackBounds)) { // is visible?
                 startCuller(zoom);
-                drawSingleSegment(zoom, p, canvas, tileBox);
+                drawSingleSegment(p, canvas, tileBox);
             }
         }
 
@@ -71,14 +67,12 @@ public class Renderable {
             }
         }
 
-        public void setRDP(List<WptPt> cull) {
+        void setRDP(List<WptPt> cull) {
             culled = cull;
         }
 
         void draw(List<WptPt> pts, Paint p, Canvas canvas, RotatedTileBox tileBox) {
-
             if (pts.size() > 1) {
-
                 updateLocalPaint(p);
                 canvas.rotate(-tileBox.getRotate(), tileBox.getCenterPixelX(), tileBox.getCenterPixelY());
                 QuadRect tileBounds = tileBox.getLatLonBounds();
@@ -103,12 +97,9 @@ public class Renderable {
 
                         float x = tileBox.getPixXFromLatLon(pt.lat, pt.lon);
                         float y = tileBox.getPixYFromLatLon(pt.lat, pt.lon);
-
                         canvas.drawLine(lastx, lasty, x, y, paint);
-
                         lastx = x;
                         lasty = y;
-
                     } else {
                         reCalculateLastXY = true;
                     }
@@ -120,13 +111,11 @@ public class Renderable {
     }
 
     public static class StandardTrack extends RenderableSegment {
-
         public StandardTrack(List<WptPt> pt, double base) {
             super(pt, base);
         }
 
         @Override public void startCuller(double newZoom) {
-
             if (zoom != newZoom) {
                 if (culler != null) {
                     culler.cancel(true);
@@ -142,13 +131,12 @@ public class Renderable {
             }
         }
 
-        @Override public void drawSingleSegment(double zoom, Paint p, Canvas canvas, RotatedTileBox tileBox) {
+        @Override public void drawSingleSegment(Paint p, Canvas canvas, RotatedTileBox tileBox) {
             draw(culled.isEmpty() ? points : culled, p, canvas, tileBox);
         }
     }
 
     public static class CurrentTrack extends RenderableSegment {
-
         public CurrentTrack(List<WptPt> pt) {
             super(pt, 0);
         }
@@ -157,13 +145,12 @@ public class Renderable {
             if (points.size() != pointSize) {
                 updateBounds(points, pointSize);
             }
-            drawSingleSegment(zoom, p, canvas, tileBox);
+            drawSingleSegment(p, canvas, tileBox);
         }
 
         @Override protected void startCuller(double newZoom) {}
-
         @Override
-        void drawSingleSegment(double zoom, Paint p, Canvas canvas, RotatedTileBox tileBox) {
+        void drawSingleSegment(Paint p, Canvas canvas, RotatedTileBox tileBox) {
             draw(points, p, canvas, tileBox);
         }
     }

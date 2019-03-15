@@ -9,7 +9,7 @@ public class OsmAndTaskManager {
 	public <Params, Progress, Result> OsmAndTask runInBackground(
 			OsmAndTaskRunnable<Params, Progress, Result> r, Params... params) {
 		InternalTaskExecutor<Params, Progress, Result> exec = new InternalTaskExecutor<>(r);
-		r.exec = exec;
+//		r.exec = exec;
 		exec.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, params);
 		return exec;
 	}
@@ -49,7 +49,7 @@ public class OsmAndTaskManager {
 	}
 	
 	public static abstract class OsmAndTaskRunnable<Params, Progress, Result> {
-		OsmAndTask exec;
+//		OsmAndTask exec;
 
 		protected void onPreExecute() {}
 		protected abstract Result doInBackground(Params... params);

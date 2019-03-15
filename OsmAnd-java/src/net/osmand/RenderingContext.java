@@ -22,7 +22,6 @@ public class RenderingContext {
 
 	// FIELDS OF THAT CLASS ARE USED IN C++
 	public boolean interrupted = false;
-	public boolean nightMode = false;
 	public String preferredLocale = "";
 	public boolean transliterate = false;
 	public int defaultColor = 0xf1eee8;
@@ -53,19 +52,16 @@ public class RenderingContext {
 	public int shadowRenderingMode = ShadowRenderingMode.SOLID_SHADOW.value;
 	public int shadowRenderingColor = 0xff969696;
 	public String renderingDebugInfo;
-	public double polygonMinSizeToDisplay;
+//	public double polygonMinSizeToDisplay;
 	private long renderingContextHandle;
-	
 	private float density = 1;
 	
 	public void setDensityValue(float density) {
 		this.density =  density ;
 	}
-
 	public float getDensityValue(float val) {
 		return val * density;
 	}
-
 	public float getComplexValue(RenderingRuleSearchRequest req, RenderingRuleProperty prop) {
 		return req.getFloatPropertyValue(prop, 0) * density + req.getIntPropertyValue(prop, 0);
 	}

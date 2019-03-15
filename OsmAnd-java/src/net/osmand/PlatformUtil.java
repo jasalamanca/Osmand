@@ -1,11 +1,8 @@
 package net.osmand;
 
-
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
 
 /**
@@ -17,17 +14,13 @@ import org.xmlpull.v1.XmlSerializer;
  * there is an intention to delegate all static methods to LogFactory.
  */
 public class PlatformUtil {
-	
 	public static Log getLog(Class<?> cl){
 		return LogFactory.getLog(cl);
 	}
-	
 	public static XmlPullParser newXMLPullParser() {
 		return new org.kxml2.io.KXmlParser();
 	}
-
 	public static XmlSerializer newSerializer() {
 		return new org.kxml2.io.KXmlSerializer();
 	}
-	
 }

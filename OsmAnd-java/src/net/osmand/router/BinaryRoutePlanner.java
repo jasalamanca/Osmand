@@ -28,7 +28,7 @@ public class BinaryRoutePlanner {
 	private static final int ROUTE_POINTS = 11;
 	private static final boolean TRACE_ROUTING = false;
 
-	public static double squareRootDist(int x1, int y1, int x2, int y2) {
+	static double squareRootDist(int x1, int y1, int x2, int y2) {
 		return MapUtils.squareRootDist31(x1, y1, x2, y2);
 	}
 
@@ -108,13 +108,11 @@ public class BinaryRoutePlanner {
 			}
 			ctx.visitedSegments++;
 			if (forwardSearch) {
-				boolean doNotAddIntersections = onlyBackward;
 				processRouteSegment(ctx, false, graphDirectSegments, visitedDirectSegments,
-						segment, visitedOppositeSegments, doNotAddIntersections);
+						segment, visitedOppositeSegments, onlyBackward);
 			} else {
-				boolean doNotAddIntersections = onlyForward;
 				processRouteSegment(ctx, true, graphReverseSegments, visitedOppositeSegments, segment,
-						visitedDirectSegments, doNotAddIntersections);
+						visitedDirectSegments, onlyForward);
 			}
 			updateCalculationProgress(ctx, graphDirectSegments, graphReverseSegments);
 
@@ -281,13 +279,13 @@ public class BinaryRoutePlanner {
 				RouteSegment peek = graphDirectSegments.peek();
 				ctx.calculationProgress.distanceFromBegin = Math.max(peek.distanceFromStart,
 						ctx.calculationProgress.distanceFromBegin);
-				ctx.calculationProgress.directDistance = peek.distanceFromStart + peek.distanceToEnd;
+//				ctx.calculationProgress.directDistance = peek.distanceFromStart + peek.distanceToEnd;
 			}
 			if (graphReverseSegments.size() > 0 && ctx.getPlanRoadDirection() <= 0) {
 				RouteSegment peek = graphReverseSegments.peek();
 				ctx.calculationProgress.distanceFromEnd = Math.max(peek.distanceFromStart + peek.distanceToEnd,
 							ctx.calculationProgress.distanceFromEnd);
-				ctx.calculationProgress.reverseDistance = peek.distanceFromStart + peek.distanceToEnd;
+//				ctx.calculationProgress.reverseDistance = peek.distanceFromStart + peek.distanceToEnd;
 			}
 		}
 	}
@@ -442,7 +440,7 @@ public class BinaryRoutePlanner {
 				continue;
 			}
 		}
-		if (initDirectionAllowed && ctx.visitor != null) {
+		if (ctx.visitor != null) {
 			ctx.visitor.visitSegment(segment, segmentPoint, true);
 		}
 	}
@@ -722,7 +720,6 @@ public class BinaryRoutePlanner {
 		return itself;
 	}
 
-	@SuppressWarnings("unused")
 	private void processOneRoadIntersection(RoutingContext ctx, PriorityQueue<RouteSegment> graphSegments,
 			TLongObjectHashMap<RouteSegment> visitedSegments, float distFromStart, float distanceToEnd,  RouteSegment segment,
 			int segmentPoint, RouteSegment next) {
@@ -779,7 +776,7 @@ public class BinaryRoutePlanner {
 	}
 	
 	public static class RouteSegmentPoint extends RouteSegment {
-		public RouteSegmentPoint(RouteDataObject road, int segmentStart, double distSquare) {
+		RouteSegmentPoint(RouteDataObject road, int segmentStart, double distSquare) {
 			super(road, segmentStart);
 			this.distSquare = distSquare;
 		}
@@ -841,24 +838,19 @@ public class BinaryRoutePlanner {
 		byte getDirectionAssigned() {
 			return directionAssgn;
 		}
-
-		public RouteSegment getParentRoute() {
+		RouteSegment getParentRoute() {
 			return parentRoute;
 		}
-
 		boolean isPositive() {
 			return directionAssgn == 1;
 		}
-
-		public void setParentRoute(RouteSegment parentRoute) {
+		void setParentRoute(RouteSegment parentRoute) {
 			this.parentRoute = parentRoute;
 		}
-
-		public void setParentSegmentEnd(int parentSegmentEnd) {
+		void setParentSegmentEnd(int parentSegmentEnd) {
 			this.parentSegmentEnd = (short) parentSegmentEnd;
 		}
-
-		public int getParentSegmentEnd() {
+		int getParentSegmentEnd() {
 			return parentSegmentEnd;
 		}
 		RouteSegment getNext() {

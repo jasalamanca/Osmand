@@ -6,19 +6,17 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 /**
  * Created by okorsun on 21.12.16.
  */
-
 class QuickActionItemTouchHelperCallback extends ItemTouchHelper.Callback {
-
     private OnItemMoveCallback itemMoveCallback;
 
-    public QuickActionItemTouchHelperCallback() {
+    QuickActionItemTouchHelperCallback() {
     }
 
-    public QuickActionItemTouchHelperCallback(OnItemMoveCallback itemMoveCallback) {
+    QuickActionItemTouchHelperCallback(OnItemMoveCallback itemMoveCallback) {
         this.itemMoveCallback = itemMoveCallback;
     }
 
-    public void setItemMoveCallback(OnItemMoveCallback itemMoveCallback) {
+    void setItemMoveCallback(OnItemMoveCallback itemMoveCallback) {
         this.itemMoveCallback = itemMoveCallback;
     }
 
@@ -33,7 +31,6 @@ class QuickActionItemTouchHelperCallback extends ItemTouchHelper.Callback {
     public boolean isItemViewSwipeEnabled() {
         return false;
     }
-
     @Override
     public boolean isLongPressDragEnabled() {
         return false;
@@ -42,7 +39,7 @@ class QuickActionItemTouchHelperCallback extends ItemTouchHelper.Callback {
     @Override
     public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
         super.clearView(recyclerView, viewHolder);
-        itemMoveCallback.onViewDropped(recyclerView, viewHolder);
+        itemMoveCallback.onViewDropped();
     }
 
     @Override
@@ -60,6 +57,6 @@ class QuickActionItemTouchHelperCallback extends ItemTouchHelper.Callback {
 
     interface OnItemMoveCallback {
         boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target);
-        void onViewDropped(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder);
+        void onViewDropped();
     }
 }

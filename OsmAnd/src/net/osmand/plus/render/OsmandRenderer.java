@@ -31,7 +31,6 @@ public class OsmandRenderer {
 	private final Map<String, float[]> parsedDashEffects = new LinkedHashMap<>();
 	private final Map<String, Shader> shaders = new LinkedHashMap<>();
 	private final Context context;
-	private final DisplayMetrics dm;
 
 	/* package */
 	public static class RenderingContext extends net.osmand.RenderingContext {
@@ -48,7 +47,7 @@ public class OsmandRenderer {
 		}
 	}
 
-	public OsmandRenderer(Context context) {
+	OsmandRenderer(Context context) {
 		this.context = context;
 
 		Paint paintIcon = new Paint();
@@ -57,7 +56,7 @@ public class OsmandRenderer {
         Paint paint = new Paint();
 		paint.setAntiAlias(true);
 
-		dm = new DisplayMetrics();
+		DisplayMetrics dm = new DisplayMetrics();
 		WindowManager wmgr = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 		wmgr.getDefaultDisplay().getMetrics(dm);
 	}
@@ -86,9 +85,9 @@ public class OsmandRenderer {
 		return shaders.get(resId);
 	}
 	
-	public void generateNewBitmapNative(RenderingContext rc, NativeOsmandLibrary library,
-			NativeSearchResult searchResultHandler, 
-			Bitmap bmp, RenderingRuleSearchRequest render) {
+	void generateNewBitmapNative(RenderingContext rc, NativeOsmandLibrary library,
+								 NativeSearchResult searchResultHandler,
+								 Bitmap bmp, RenderingRuleSearchRequest render) {
 		long now = System.currentTimeMillis();
 		if (rc.width > 0 && rc.height > 0 && searchResultHandler != null) {
 			try {

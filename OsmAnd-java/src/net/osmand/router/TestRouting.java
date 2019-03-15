@@ -1,6 +1,16 @@
 package net.osmand.router;
 
 
+import net.osmand.NativeLibrary;
+import net.osmand.PlatformUtil;
+import net.osmand.binary.BinaryMapIndexReader;
+import net.osmand.data.LatLon;
+import net.osmand.router.BinaryRoutePlanner.RouteSegment;
+import net.osmand.router.RoutingConfiguration.Builder;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -10,17 +20,6 @@ import java.io.RandomAccessFile;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
-
-import net.osmand.NativeLibrary;
-import net.osmand.PlatformUtil;
-import net.osmand.binary.BinaryMapIndexReader;
-import net.osmand.data.LatLon;
-import net.osmand.router.BinaryRoutePlanner.FinalRouteSegment;
-import net.osmand.router.BinaryRoutePlanner.RouteSegment;
-import net.osmand.router.RoutingConfiguration.Builder;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
 
 class TestRouting {
 	
@@ -182,11 +181,8 @@ class TestRouting {
 	}
 	
 	private static boolean equalPercent(float expected, float value, float percent){
-		if(Math.abs(value/expected - 1) < percent / 100){
-			return true;
-		}
-		return false;
-	}
+        return Math.abs(value / expected - 1) < percent / 100;
+    }
 
 	private static void testRoute(XmlPullParser parser, Builder config, NativeLibrary lib, BinaryMapIndexReader[] rs) throws IOException, InterruptedException {
 		String vehicle = parser.getAttributeValue("", "vehicle");
@@ -263,19 +259,19 @@ class TestRouting {
 		
 	}
 
-
+	//NOTE jsala es un test
 	private static void runTestSpecialTest(NativeLibrary lib, BinaryMapIndexReader[] rs, RoutingConfiguration rconfig, RoutePlannerFrontEnd router,
 			LatLon start, LatLon end, final float calcRoutingTime, String msg) throws IOException, InterruptedException {
 		RoutingContext ctx = router.buildRoutingContext(rconfig, lib, rs);
 		router.searchRoute(ctx, start, end, null);
-		FinalRouteSegment frs = ctx.finalRouteSegment;
-		if(frs == null || !equalPercent(calcRoutingTime, frs.distanceFromStart, 0.5f)){
-			throw new IllegalArgumentException(MessageFormat.format(msg, calcRoutingTime+"",frs == null?"0":frs.distanceFromStart+""));
-		}
+//		FinalRouteSegment frs = ctx.finalRouteSegment;
+//		if(frs == null || !equalPercent(calcRoutingTime, frs.distanceFromStart, 0.5f)){
+//			throw new IllegalArgumentException(MessageFormat.format(msg, calcRoutingTime+"",frs == null?"0":frs.distanceFromStart+""));
+//		}
+		throw new IllegalArgumentException(MessageFormat.format(msg, calcRoutingTime+"","0"));
 	}
 
-	
-	
+	// NOTE jsala es un test
 	public static void calculateRoute(String folderWithObf,
 			double startLat, double startLon, double endLat, double endLon) throws IOException, InterruptedException {
 		BinaryMapIndexReader[] rs = collectFiles(folderWithObf);
@@ -284,7 +280,7 @@ class TestRouting {
 		calculateRoute(startLat, startLon, endLat, endLon, rs);
 	}
 	
-	private static BinaryMapIndexReader[] collectFiles(String folderWithObf) throws FileNotFoundException, IOException {
+	private static BinaryMapIndexReader[] collectFiles(String folderWithObf) throws IOException {
 		List<File> files = new ArrayList<>();
 		for (File f : new File(folderWithObf).listFiles()) {
 			if (f.getName().endsWith(".obf")) {
@@ -300,7 +296,6 @@ class TestRouting {
 		}
 		return rs;
 	}
-
 
 	private static void calculateRoute(double startLat, double startLon, double endLat, double endLon, BinaryMapIndexReader[] rs)
 			throws IOException, InterruptedException {
@@ -323,5 +318,4 @@ class TestRouting {
 				new LatLon(startLat, startLon), new LatLon(endLat, endLon), null);
 		System.out.println("Route is " + route.size() + " segments " + (System.currentTimeMillis() - ts) + " ms ");
 	}
-
 }

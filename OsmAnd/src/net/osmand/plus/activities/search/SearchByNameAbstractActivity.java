@@ -5,7 +5,6 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.AsyncTask.Status;
@@ -93,19 +92,13 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 	private static final int NAVIGATE_TO = 3;
 	private static final int SHOW_ON_MAP = 5;
 	private static final int ADD_TO_FAVORITE = 6;
-	
-	
-	private void separateMethod() {
-		getWindow().setUiOptions(ActivityInfo.UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW);
-	}
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		settings = ((OsmandApplication) getApplication()).getSettings();
 		setContentView(R.layout.search_by_name);
 		
-
 		initializeTask = getInitializeTask();
 		uiHandler = new UIUpdateHandler();
 		namesFilter = new NamesFilter();
@@ -154,7 +147,7 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
 	            if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
 	            	if(endingObject != null) {
-	            		itemSelectedBase(endingObject, v);
+	            		itemSelectedBase(endingObject);
 	            	}
 	            	return true;
 	            }    
@@ -187,35 +180,18 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 	
 	void addFooterViews() {
 	}
-	
 	void setLabelText(int res) {
 		getSupportActionBar().setSubtitle(getString(res));
 	}
-	
-	protected int getZoomToDisplay(T item){
-		return 15;
-	}
-	
-	protected LatLon getLocation(T item) {
-		if (item instanceof MapObject) {
-			return ((MapObject) item).getLocation();
-		}
-		return null;
-	}
-	
-
 	AsyncTask<Object, ?, ?> getInitializeTask(){
 		return null;
 	}
-	
 	Editable getFilter(){
 		return searchText.getText();
 	}
-	
 	boolean initializeTaskIsFinished(){
 		return initializeTask == null || initializeTask.getStatus() == Status.FINISHED;
 	}
-
 
     private boolean selectAddress;
 	
@@ -227,11 +203,7 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 		initFilter = false;
 		querySearch(currentFilter);
 	}
-	
-	protected View getFooterView() {
-		return null;
-	}
-	
+
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
@@ -314,7 +286,7 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 	String getShortText(T obj) {
 		return getText(obj);
 	}
-	private void itemSelectedBase(final T obj, View v) {
+	private void itemSelectedBase(final T obj) {
 		itemSelected(obj);
 	}
 	protected abstract void itemSelected(T obj);
@@ -338,7 +310,7 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				T repo = getListAdapter().getItem(position);
-				itemSelectedBase(repo, view);
+				itemSelectedBase(repo);
 			}
 		});
 		Intent intent = getIntent();

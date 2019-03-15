@@ -38,7 +38,6 @@ import android.widget.ListView;
  * android.view.ViewPropertyAnimator}.</p>
  */
 public class SwipeDismissTouchListener implements View.OnTouchListener {
-	private static final String TAG = "SwipeDismissTouchListener";
 	// Cached ViewConfiguration and system-wide constant values
 	private final int mSlop;
 	private final int mMinFlingVelocity;

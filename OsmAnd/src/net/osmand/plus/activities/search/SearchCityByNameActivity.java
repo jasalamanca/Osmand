@@ -19,7 +19,6 @@ import net.osmand.data.LatLon;
 import net.osmand.data.Postcode;
 import net.osmand.plus.OsmAndFormatter;
 import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.R;
 import net.osmand.plus.resources.RegionAddressRepository;
 import net.osmand.util.MapUtils;
@@ -29,11 +28,9 @@ import java.util.Comparator;
 import java.util.List;
 
 public class SearchCityByNameActivity extends SearchByNameAbstractActivity<City> {
-
 	private RegionAddressRepository region;
 	private int searchVillagesMode = -1;
 	private Button searchVillages;
-	private OsmandSettings osmandSettings;
 
 	@Override
     void finishInitializing(List<City> list) {
@@ -47,9 +44,6 @@ public class SearchCityByNameActivity extends SearchByNameAbstractActivity<City>
 
 	@Override
 	protected void reset() {
-		//This is really only a "clear input text field", hence do not reset settings here
-		//searchVillagesMode = -1;
-		//osmandSettings.setLastSearchedCity(-1L, "", null);
 		super.reset();
 	}
 
@@ -148,7 +142,7 @@ public class SearchCityByNameActivity extends SearchByNameAbstractActivity<City>
 					return true;
 				}
 			};
-			region.fillWithSuggestedCities(query, resultMatcher, isVillagesSearchEnabled(), locationToSearch);
+			region.fillWithSuggestedCities(query, resultMatcher, isVillagesSearchEnabled());
 		}
 		return result[0];
 	}
@@ -176,7 +170,6 @@ public class SearchCityByNameActivity extends SearchByNameAbstractActivity<City>
 			setVillagesSearchEnabled(true);
 		}
 	}
-
 
 	@Override
     protected String getText(City obj) {
@@ -220,7 +213,6 @@ public class SearchCityByNameActivity extends SearchByNameAbstractActivity<City>
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
 	}
 
 	private final class CityComparator implements Comparator<City> {
@@ -270,6 +262,4 @@ public class SearchCityByNameActivity extends SearchByNameAbstractActivity<City>
 			return c1 ? 1 : -1;
 		}
 	}
-
-
 }

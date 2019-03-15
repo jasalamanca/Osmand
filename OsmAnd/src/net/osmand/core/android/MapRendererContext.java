@@ -2,12 +2,6 @@ package net.osmand.core.android;
 
 import android.util.Log;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
-
 import net.osmand.core.jni.IMapTiledSymbolsProvider;
 import net.osmand.core.jni.IObfsCollection;
 import net.osmand.core.jni.IRasterMapLayerProvider;
@@ -31,6 +25,12 @@ import net.osmand.render.RenderingRuleProperty;
 import net.osmand.render.RenderingRuleStorageProperties;
 import net.osmand.render.RenderingRulesStorage;
 import net.osmand.util.Algorithms;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Context container and utility class for MapRendererView and derivatives. 
@@ -295,15 +295,13 @@ public class MapRendererContext implements RendererRegistry.IRendererLoadedEvent
 			if (langPref != other.langPref)
 				return false;
 			if (mapStyle == null) {
-				if (other.mapStyle != null)
-					return false;
-			} else if (!mapStyle.equals(other.mapStyle))
-				return false;
-			return true;
+				return other.mapStyle == null;
+			} else
+				return mapStyle.equals(other.mapStyle);
 		}
 	}
 
-    public void onRendererLoaded(String name, RenderingRulesStorage rules, InputStream source) {
+    public void onRendererLoaded(String name, InputStream source) {
         loadStyleFromStream(name, source);
     }
 
@@ -312,11 +310,9 @@ public class MapRendererContext implements RendererRegistry.IRendererLoadedEvent
     		return;
     	}
         if (RendererRegistry.DEFAULT_RENDER.equals(name)) {
-            if (source != null) {
-                try {
-                    source.close();
-                } catch(IOException e) {}
-            }
+            try {
+                source.close();
+            } catch(IOException e) {}
             return;
         }
 

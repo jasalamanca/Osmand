@@ -36,7 +36,6 @@ public class SearchRegionByNameActivity extends SearchByNameAbstractActivity<Reg
 		super.reset();
 	}
 
-	@Override
 	protected LatLon getLocation(RegionAddressRepository item) {
 		return item.getEstimatedRegionCenter();
 	}

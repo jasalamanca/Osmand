@@ -30,7 +30,6 @@ import net.osmand.plus.activities.MapActivity;
  * Created by rosty on 12/27/16.
  */
 public class CreateEditActionDialog extends DialogFragment {
-
     public static final String TAG = CreateEditActionDialog.class.getSimpleName();
 
     private static final String KEY_ACTION_ID = "action_id";
@@ -38,10 +37,8 @@ public class CreateEditActionDialog extends DialogFragment {
     private static final String KEY_ACTION_IS_NEW = "action_is_new";
 
     public static CreateEditActionDialog newInstance(long id) {
-
         Bundle args = new Bundle();
         args.putLong(KEY_ACTION_ID, id);
-
         CreateEditActionDialog dialog = new CreateEditActionDialog();
         dialog.setArguments(args);
 
@@ -49,10 +46,8 @@ public class CreateEditActionDialog extends DialogFragment {
     }
 
     public static CreateEditActionDialog newInstance(int type) {
-
         Bundle args = new Bundle();
         args.putInt(KEY_ACTION_TYPE, type);
-
         CreateEditActionDialog dialog = new CreateEditActionDialog();
         dialog.setArguments(args);
 
@@ -61,26 +56,20 @@ public class CreateEditActionDialog extends DialogFragment {
 
     private QuickActionRegistry quickActionRegistry;
     private QuickAction action;
-
     private boolean isNew;
 
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-
         OsmandApplication application = (OsmandApplication) getActivity().getApplication();
         boolean light = application.getSettings().isLightContent() && !application.getDaynightHelper().isNightMode();
-
         Dialog dialog = new Dialog(new ContextThemeWrapper(getActivity(), light
                 ? R.style.Dialog90Light
                 : R.style.Dialog90Dark), getTheme());
-
         dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-
         dialog.getWindow().setLayout(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT);
-
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         return dialog;
@@ -143,21 +132,15 @@ public class CreateEditActionDialog extends DialogFragment {
     }
 
     private void setupToolbar(View root) {
-
         Toolbar toolbar = root.findViewById(R.id.toolbar);
-
         toolbar.setTitle(isNew
                 ? R.string.quick_action_new_action
                 : R.string.quick_action_edit_action);
-
         toolbar.setTitleTextColor(Color.WHITE);
-
         toolbar.setNavigationIcon(getIconsCache().getIcon(
                 R.drawable.ic_arrow_back,
                 R.color.color_white));
-
         toolbar.setNavigationContentDescription(R.string.access_shared_string_navigate_up);
-
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -167,7 +150,6 @@ public class CreateEditActionDialog extends DialogFragment {
     }
 
     private void setupHeader(View root, Bundle savedInstanceState){
-
         ImageView image = root.findViewById(R.id.image);
         EditText name = root.findViewById(R.id.name);
 
@@ -196,26 +178,18 @@ public class CreateEditActionDialog extends DialogFragment {
     }
 
     private void setupFooter(final View root){
-
         root.findViewById(R.id.btnApply).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                if (action.fillParams(((ViewGroup) root.findViewById(R.id.container)).getChildAt(0), (MapActivity) getActivity())) {
-
+                if (action.fillParams(((ViewGroup) root.findViewById(R.id.container)).getChildAt(0))) {
                     if (quickActionRegistry.isNameUnique(action, getContext())) {
-
                         if (isNew) quickActionRegistry.addQuickAction(action);
                         else quickActionRegistry.updateQuickAction(action);
 
                         quickActionRegistry.notifyUpdates();
-
                         dismiss();
-
                     } else {
-
                         action = quickActionRegistry.generateUniqueName(action, getContext());
-
                         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                         builder.setTitle(R.string.quick_action_duplicate);
                         builder.setMessage(getString(R.string.quick_action_duplicates, action.getName(getContext())));
@@ -237,7 +211,6 @@ public class CreateEditActionDialog extends DialogFragment {
                         ((EditText) root.findViewById(R.id.name)).setText(action.getName(getContext()));
                     }
                 } else {
-
                     Toast.makeText(getContext(), R.string.quick_action_empty_param_error, Toast.LENGTH_SHORT).show();
                 }
             }

@@ -182,7 +182,7 @@ public class QuickActionListFragment extends BaseOsmAndFragment implements Quick
 
     public class QuickActionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements QuickActionItemTouchHelperCallback.OnItemMoveCallback {
         static final int SCREEN_ITEM_TYPE   = 1;
-        public static final int SCREEN_HEADER_TYPE = 2;
+        static final int SCREEN_HEADER_TYPE = 2;
 
         private static final int ITEMS_IN_GROUP = 6;
 
@@ -376,7 +376,7 @@ public class QuickActionListFragment extends BaseOsmAndFragment implements Quick
         }
 
         @Override
-        public void onViewDropped(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+        public void onViewDropped() {
             saveQuickActions();
         }
 

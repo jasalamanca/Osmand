@@ -51,8 +51,6 @@ public class ReportsFragment extends BaseOsmAndFragment implements CountrySelect
 	private static final String RECIPIENTS_BY_MONTH =  DOMAIN +
 			"reports/query_report.php?report=recipients_by_month&month=%s&region=%s";
 
-
-	private static final Log LOG = PlatformUtil.getLog(ReportsFragment.class);
 	private static final String OSM_LIVE_URL = "https://osmand.net/osm_live";
 	public static final String EDITS_FRAGMENT = "NumberOfEditsFragment";
 	public static final String RECIPIENTS_FRAGMENT = "RecipientsFragment";

@@ -73,14 +73,12 @@ public class AddPOIAction extends QuickAction {
 	public AddPOIAction() {
 		super(TYPE);
 	}
-
 	public AddPOIAction(QuickAction quickAction) {
 		super(quickAction);
 	}
 
 	@Override
 	public void execute(final MapActivity activity) {
-
 		LatLon latLon = activity.getMapView()
 				.getCurrentRotatedTileBox()
 				.getCenterLatLon();
@@ -136,7 +134,7 @@ public class AddPOIAction extends QuickAction {
 								OsmEditingPlugin plugin = OsmandPlugin.getPlugin(OsmEditingPlugin.class);
 								if (plugin != null && offlineEdit) {
 									List<OpenstreetmapPoint> points = plugin.getDBPOI().getOpenstreetmapPoints();
-									if (activity instanceof MapActivity && points.size() > 0) {
+									if (points.size() > 0) {
 										OsmPoint point = points.get(points.size() - 1);
 										activity.getContextMenu().showOrUpdate(
 												new LatLon(point.getLatitude(), point.getLongitude()),
@@ -144,9 +142,7 @@ public class AddPOIAction extends QuickAction {
 									}
 								}
 
-								if (activity instanceof MapActivity) {
-									activity.getMapView().refreshMap(true);
-								}
+								activity.getMapView().refreshMap(true);
 							}
 
 							return false;
@@ -467,7 +463,6 @@ public class AddPOIAction extends QuickAction {
 
 	private static void initAutocompleteTextView(final AutoCompleteTextView textView,
 												 final ArrayAdapter<String> adapter) {
-
 		textView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
@@ -479,7 +474,7 @@ public class AddPOIAction extends QuickAction {
 	}
 
 	@Override
-	public boolean fillParams(View root, MapActivity activity) {
+	public boolean fillParams(View root) {
 		getParams().put(KEY_DIALOG, Boolean.toString(((SwitchCompat) root.findViewById(R.id.saveButton)).isChecked()));
 		return !getParams().isEmpty() && (getParams().get(KEY_TAG) != null || !getTagsFromParams().isEmpty());
 	}

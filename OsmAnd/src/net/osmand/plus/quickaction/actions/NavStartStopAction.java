@@ -14,14 +14,12 @@ import net.osmand.plus.quickaction.QuickAction;
 import net.osmand.plus.routing.RoutingHelper;
 
 public class NavStartStopAction extends QuickAction {
-
 	public static final int TYPE = 25;
 	private static final String KEY_DIALOG = "dialog";
 
 	public NavStartStopAction() {
 		super(TYPE);
 	}
-
 	public NavStartStopAction(QuickAction quickAction) {
 		super(quickAction);
 	}
@@ -62,7 +60,7 @@ public class NavStartStopAction extends QuickAction {
 	}
 
 	@Override
-	public boolean fillParams(View root, MapActivity activity) {
+	public boolean fillParams(View root) {
 		getParams().put(KEY_DIALOG, Boolean
 				.toString(((SwitchCompat) root.findViewById(R.id.show_dialog_switch)).isChecked()));
 		return true;
