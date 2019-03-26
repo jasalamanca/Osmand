@@ -13,7 +13,6 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
@@ -22,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 class TestRouting {
-	
 	private static final int MEMORY_TEST_LIMIT = 800;
 	private static final boolean TEST_WO_HEURISTIC = false;
 	private static final boolean TEST_BOTH_DIRECTION = false;
@@ -109,8 +107,8 @@ class TestRouting {
 			}
 		}
 		if(params.startLat != 0) {
-//			calculateRoute(params.obfDir.getAbsolutePath(), params.startLat, params.startLon,
-//					params.endLat, params.endLon);
+			calculateRoute(params.obfDir.getAbsolutePath(), params.startLat, params.startLon,
+					params.endLat, params.endLon);
 			BinaryMapIndexReader[] rs = collectFiles(params.obfDir.getAbsolutePath());
 			vehicle = params.vehicle;
 			calculateRoute(params.startLat, params.startLon,
@@ -122,7 +120,8 @@ class TestRouting {
 	}
 
 
-	private static boolean runAllTests(Parameters params, NativeLibrary lib) throws FileNotFoundException, IOException, Exception {
+	private static boolean runAllTests(Parameters params, NativeLibrary lib) throws Exception
+	{
 		BinaryMapIndexReader[] rs = collectFiles(params.obfDir.getAbsolutePath());
 		
 		boolean allSuccess = true;
@@ -134,17 +133,14 @@ class TestRouting {
 		return allSuccess;
 	}
 
-
 	private static void info() {
 		println("Run router tests is console utility to test route calculation for osmand. It is also possible to calculate one route from -start to -end.");
 		println("\nUsage for run tests : runTestsSuite [-routingXmlPath=PATH] [-verbose] [-obfDir=PATH] [-vehicle=VEHICLE_STRING] [-start=lat;lon] [-end=lat;lon]  [-testDir=PATH] {individualTestPath}");
     }
-	
 
 	private static void println(String string) {
 		System.out.println(string);
 	}
-
 
 	private static boolean test(NativeLibrary lib, InputStream resource, BinaryMapIndexReader[] rs, RoutingConfiguration.Builder config) throws Exception {
 		XmlPullParser parser = PlatformUtil.newXMLPullParser();
@@ -256,24 +252,21 @@ class TestRouting {
 			runTestSpecialTest(lib, rs, rconfig, router, start, end, calcRoutingTime, 
 				"Calculated routing time with heuristic 1 {0} != {1} with heuristic 0.5");
 		}
-		
 	}
 
-	//NOTE jsala es un test
 	private static void runTestSpecialTest(NativeLibrary lib, BinaryMapIndexReader[] rs, RoutingConfiguration rconfig, RoutePlannerFrontEnd router,
 			LatLon start, LatLon end, final float calcRoutingTime, String msg) throws IOException, InterruptedException {
 		RoutingContext ctx = router.buildRoutingContext(rconfig, lib, rs);
 		router.searchRoute(ctx, start, end, null);
-//		FinalRouteSegment frs = ctx.finalRouteSegment;
+//		BinaryRoutePlanner.FinalRouteSegment frs = ctx.finalRouteSegment;
 //		if(frs == null || !equalPercent(calcRoutingTime, frs.distanceFromStart, 0.5f)){
 //			throw new IllegalArgumentException(MessageFormat.format(msg, calcRoutingTime+"",frs == null?"0":frs.distanceFromStart+""));
 //		}
 		throw new IllegalArgumentException(MessageFormat.format(msg, calcRoutingTime+"","0"));
 	}
 
-	// NOTE jsala es un test
-	public static void calculateRoute(String folderWithObf,
-			double startLat, double startLon, double endLat, double endLon) throws IOException, InterruptedException {
+	private static void calculateRoute(String folderWithObf,
+                                       double startLat, double startLon, double endLat, double endLon) throws IOException, InterruptedException {
 		BinaryMapIndexReader[] rs = collectFiles(folderWithObf);
 		RouteResultPreparation.PRINT_TO_CONSOLE_ROUTE_INFORMATION_TO_TEST = false;
 		calculateRoute(startLat, startLon, endLat, endLon, rs);

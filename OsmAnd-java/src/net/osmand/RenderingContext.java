@@ -52,7 +52,6 @@ public class RenderingContext {
 	public int shadowRenderingMode = ShadowRenderingMode.SOLID_SHADOW.value;
 	public int shadowRenderingColor = 0xff969696;
 	public String renderingDebugInfo;
-//	public double polygonMinSizeToDisplay;
 	private long renderingContextHandle;
 	private float density = 1;
 	

@@ -1,10 +1,7 @@
 package net.osmand.osm.edit;
 
-import net.osmand.data.LatLon;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class Relation extends Entity {
 	static class RelationMember {
@@ -36,19 +33,4 @@ public class Relation extends Entity {
 		members.add(new RelationMember(new EntityId(type, id), role));
 	}
 
-	@Override
-	public void initializeLinks(Map<EntityId, Entity> entities){
-//		if (members != null) {
-//			for(RelationMember rm : members) {
-//				if(rm.entityId != null && entities.containsKey(rm.entityId)) {
-//					rm.entity = entities.get(rm.entityId);
-//				}
-//			}
-//		}
-	}
-	
-	@Override
-	public LatLon getLatLon() {
-		return null;
-	}
 }

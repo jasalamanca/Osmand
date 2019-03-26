@@ -79,13 +79,7 @@ public class RoutePlannerFrontEnd {
 				}
 			}
 		}
-		Collections.sort(list, new Comparator<RouteSegmentPoint>() {
-
-			@Override
-			public int compare(RouteSegmentPoint o1, RouteSegmentPoint o2) {
-				return Double.compare(o1.distSquare, o2.distSquare);
-			}
-		});
+		Collections.sort(list, (o1, o2) -> Double.compare(o1.distSquare, o2.distSquare));
 		if (list.size() > 0) {
 			RouteSegmentPoint ps = list.get(0);
 			ps.others = list;

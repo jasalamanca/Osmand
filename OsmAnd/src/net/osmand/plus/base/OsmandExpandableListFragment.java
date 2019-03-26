@@ -79,12 +79,7 @@ public abstract class OsmandExpandableListFragment extends BaseOsmAndFragment
 		if (r != 0) {
 			menuItem.setIcon(r);
 		}
-		menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-			@Override
-			public boolean onMenuItemClick(MenuItem item) {
-				return onOptionsItemSelected(item);
-			}
-		});
+		menuItem.setOnMenuItemClickListener(item -> onOptionsItemSelected(item));
 		menuItem.setShowAsAction(menuItemType);
 		return menuItem;
 	}
@@ -94,18 +89,15 @@ public abstract class OsmandExpandableListFragment extends BaseOsmAndFragment
 	}
 
 	protected void collapseTrees(final int count) {
-		getActivity().runOnUiThread(new Runnable() {
-			@Override
-			public void run() {
-				synchronized (adapter) {
-					final ExpandableListView expandableListView = getExpandableListView();
-					for (int i = 0; i < adapter.getGroupCount(); i++) {
-						int cp = adapter.getChildrenCount(i);
-						if (cp < count) {
-							expandableListView.expandGroup(i);
-						} else {
-							expandableListView.collapseGroup(i);
-						}
+		getActivity().runOnUiThread(() -> {
+			synchronized (adapter) {
+				final ExpandableListView expandableListView = getExpandableListView();
+				for (int i = 0; i < adapter.getGroupCount(); i++) {
+					int cp = adapter.getChildrenCount(i);
+					if (cp < count) {
+						expandableListView.expandGroup(i);
+					} else {
+						expandableListView.collapseGroup(i);
 					}
 				}
 			}

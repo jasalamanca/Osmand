@@ -24,6 +24,7 @@ import java.util.Map;
  * Represents a block of information about in-app items.
  * An Inventory is returned by such methods as {@link IabHelper#queryInventory}.
  */
+@SuppressWarnings("ALL")
 public class Inventory {
     private final Map<String,SkuDetails> mSkuMap = new HashMap<>();
     private final Map<String,Purchase> mPurchaseMap = new HashMap<>();
@@ -59,7 +60,7 @@ public class Inventory {
      * a new Inventory.
      */
     public void erasePurchase(String sku) {
-        if (mPurchaseMap.containsKey(sku)) mPurchaseMap.remove(sku);
+        mPurchaseMap.remove(sku);
     }
 
     /** Returns a list of all owned product IDs. */

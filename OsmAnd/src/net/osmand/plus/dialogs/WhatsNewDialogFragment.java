@@ -26,15 +26,12 @@ public class WhatsNewDialogFragment extends DialogFragment {
 		builder.setTitle(getString(R.string.whats_new) + " " + appVersion)
 				.setMessage(getString(R.string.release_2_9))
 				.setNegativeButton(R.string.shared_string_close, null);
-		builder.setPositiveButton(R.string.read_more, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				Intent i = new Intent(Intent.ACTION_VIEW);
-				i.setData(Uri.parse(AppInitializer.LATEST_CHANGES_URL));
-				startActivity(i);
-				dismiss();
-			}
-		});
+		builder.setPositiveButton(R.string.read_more, (dialog, which) -> {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(AppInitializer.LATEST_CHANGES_URL));
+            startActivity(i);
+            dismiss();
+        });
 		return builder.create();
 	}
 }

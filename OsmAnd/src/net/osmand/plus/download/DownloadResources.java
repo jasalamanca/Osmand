@@ -184,18 +184,15 @@ public class DownloadResources extends DownloadResourceGroup {
 	private Map<String, String> listWithAlternatives(final java.text.DateFormat dateFormat, File file,
 			final String ext, final Map<String, String> files) {
 		if (file.isDirectory()) {
-			file.list(new FilenameFilter() {
-				@Override
-				public boolean accept(File dir, String filename) {
-					if (filename.endsWith(ext)) {
-						String date = dateFormat.format(findFileInDir(new File(dir, filename)).lastModified());
-						files.put(filename, date);
-						return true;
-					} else {
-						return false;
-					}
-				}
-			});
+			file.list((dir, filename) -> {
+                if (filename.endsWith(ext)) {
+                    String date = dateFormat.format(findFileInDir(new File(dir, filename)).lastModified());
+                    files.put(filename, date);
+                    return true;
+                } else {
+                    return false;
+                }
+            });
 		}
 		return files;
 	}

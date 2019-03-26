@@ -430,13 +430,9 @@ public class OsmandAidlApi {
 					boolean force = intent.getBooleanExtra(AIDL_FORCE, true);
 					if (routingHelper.isFollowingMode() && !force) {
 						AlertDialog dlg = mapActivity.getMapActions().stopNavigationActionConfirm();
-						dlg.setOnDismissListener(new DialogInterface.OnDismissListener() {
-
-							@Override
-							public void onDismiss(DialogInterface dialog) {
-								if (!routingHelper.isFollowingMode()) {
-									startNavigation(mapActivity, null, start, startDesc, dest, destDesc, profile);
-								}
+						dlg.setOnDismissListener(dialog -> {
+							if (!routingHelper.isFollowingMode()) {
+								startNavigation(mapActivity, null, start, startDesc, dest, destDesc, profile);
 							}
 						});
 					} else {
@@ -482,13 +478,9 @@ public class OsmandAidlApi {
 					if (routingHelper.isFollowingMode() && !force) {
 						final GPXFile gpxFile = gpx;
 						AlertDialog dlg = mapActivity.getMapActions().stopNavigationActionConfirm();
-						dlg.setOnDismissListener(new DialogInterface.OnDismissListener() {
-
-							@Override
-							public void onDismiss(DialogInterface dialog) {
-								if (!routingHelper.isFollowingMode()) {
-									startNavigation(mapActivity, gpxFile, null, null, null, null, null);
-								}
+						dlg.setOnDismissListener(dialog -> {
+							if (!routingHelper.isFollowingMode()) {
+								startNavigation(mapActivity, gpxFile, null, null, null, null, null);
 							}
 						});
 					} else {
@@ -573,13 +565,10 @@ public class OsmandAidlApi {
 		};
 		control.updateInfo(null);
 
-		control.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				AMapWidget widget = widgets.get(widgetId);
-				if (widget != null && widget.getIntentOnClick() != null) {
-					app.startActivity(widget.getIntentOnClick());
-				}
+		control.setOnClickListener(v -> {
+			AMapWidget widget = widgets.get(widgetId);
+			if (widget != null && widget.getIntentOnClick() != null) {
+				app.startActivity(widget.getIntentOnClick());
 			}
 		});
 		return control;

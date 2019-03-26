@@ -24,14 +24,6 @@ public class AmenityIndexRepositoryBinary implements AmenityIndexRepository {
 		this.index = index;
 	}
 
-	public void close() {
-		try {
-			index.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
 	@Override
 	public boolean checkContains(double latitude, double longitude) {
 		int x31 = MapUtils.get31TileNumberX(longitude);

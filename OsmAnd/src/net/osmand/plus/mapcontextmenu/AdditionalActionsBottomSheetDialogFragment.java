@@ -1,7 +1,6 @@
 package net.osmand.plus.mapcontextmenu;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
@@ -66,24 +65,16 @@ public class AdditionalActionsBottomSheetDialogFragment extends net.osmand.plus.
 		mainView.findViewById(R.id.divider).setBackgroundResource(nightMode
 				? R.color.route_info_bottom_view_bg_dark : R.color.route_info_divider_light);
 
-		View.OnClickListener dismissOnClickListener = new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		};
+		View.OnClickListener dismissOnClickListener = view -> dismiss();
 
 		mainView.findViewById(R.id.cancel_row).setOnClickListener(dismissOnClickListener);
 		mainView.findViewById(R.id.scroll_view_container).setOnClickListener(dismissOnClickListener);
 
-		View.OnClickListener onClickListener = new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (listener != null) {
-					listener.onItemClick((int) view.getTag());
-				}
-				dismiss();
+		View.OnClickListener onClickListener = view -> {
+			if (listener != null) {
+				listener.onItemClick((int) view.getTag());
 			}
+			dismiss();
 		};
 
 		LinearLayout itemsLinearLayout = mainView.findViewById(R.id.context_menu_items_container);
@@ -133,12 +124,7 @@ public class AdditionalActionsBottomSheetDialogFragment extends net.osmand.plus.
 		if (portrait) {
 			behavior.setPeekHeight(getResources().getDimensionPixelSize(R.dimen.bottom_sheet_menu_peek_height));
 		} else {
-			getDialog().setOnShowListener(new DialogInterface.OnShowListener() {
-				@Override
-				public void onShow(DialogInterface dialog) {
-					behavior.setState(ExtendedBottomSheetBehavior.STATE_EXPANDED);
-				}
-			});
+			getDialog().setOnShowListener(dialog -> behavior.setState(ExtendedBottomSheetBehavior.STATE_EXPANDED));
 		}
 
 		return mainView;

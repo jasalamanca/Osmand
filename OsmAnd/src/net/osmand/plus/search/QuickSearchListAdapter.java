@@ -206,22 +206,12 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 
 			View increaseRadiusRow = view.findViewById(R.id.increase_radius_row);
 			increaseRadiusRow.setVisibility(searchMoreItem.isSearchMoreAvailable() ? View.VISIBLE : View.GONE);
-			increaseRadiusRow.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					((QuickSearchMoreListItem) listItem).increaseRadiusOnClick();
-				}
-			});
+			increaseRadiusRow.setOnClickListener(view12 -> ((QuickSearchMoreListItem) listItem).increaseRadiusOnClick());
 
 			if (!searchMoreItem.isOnlineSearch()) {
 				View onlineSearchRow = view.findViewById(R.id.online_search_row);
 				onlineSearchRow.setVisibility(View.VISIBLE);
-				onlineSearchRow.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View view) {
-						searchMoreItem.onlineSearchOnClick();
-					}
-				});
+				onlineSearchRow.setOnClickListener(view1 -> searchMoreItem.onlineSearchOnClick());
 			}
 		} else if (type == QuickSearchListItemType.BUTTON) {
 			if (convertView == null) {
@@ -250,13 +240,7 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 			final CheckBox ch = view.findViewById(R.id.toggle_item);
 			ch.setVisibility(View.VISIBLE);
 			ch.setChecked(selectAll);
-			ch.setOnClickListener(new View.OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					toggleCheckbox(position, ch);
-				}
-			});
+			ch.setOnClickListener(v -> toggleCheckbox(position, ch));
 		} else if (type == QuickSearchListItemType.HEADER) {
 			if (convertView == null) {
 				LayoutInflater inflater = (LayoutInflater) app
@@ -307,13 +291,7 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 			if (selectionMode) {
 				ch.setVisibility(View.VISIBLE);
 				ch.setChecked(selectedItems.contains(listItem));
-				ch.setOnClickListener(new View.OnClickListener() {
-
-					@Override
-					public void onClick(View v) {
-						toggleCheckbox(position, ch);
-					}
-				});
+				ch.setOnClickListener(v -> toggleCheckbox(position, ch));
 			} else {
 				ch.setVisibility(View.GONE);
 			}

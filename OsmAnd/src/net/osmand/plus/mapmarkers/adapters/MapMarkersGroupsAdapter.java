@@ -192,12 +192,7 @@ public class MapMarkersGroupsAdapter extends RecyclerView.Adapter<RecyclerView.V
 	public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
 		if (viewType == MARKER_TYPE) {
 			View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.map_marker_item_new, viewGroup, false);
-			view.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					listener.onItemClick(view);
-				}
-			});
+			view.setOnClickListener(view1 -> listener.onItemClick(view1));
 			return new MapMarkerItemViewHolder(view);
 		} else if (viewType == HEADER_TYPE) {
 			View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.map_marker_item_header, viewGroup, false);
@@ -292,39 +287,33 @@ public class MapMarkersGroupsAdapter extends RecyclerView.Adapter<RecyclerView.V
 				itemViewHolder.description.setVisibility(View.GONE);
 			}
 
-			itemViewHolder.optionsBtn.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					int position = itemViewHolder.getAdapterPosition();
-					if (position < 0) {
-						return;
-					}
-					if (markerInHistory) {
-						app.getMapMarkersHelper().restoreMarkerFromHistory(marker, 0);
-					} else {
-						app.getMapMarkersHelper().moveMapMarkerToHistory(marker);
-					}
-					createDisplayGroups();
-					updateShowDirectionMarkers();
-					notifyDataSetChanged();
-					if (!markerInHistory) {
-						snackbar = Snackbar.make(itemViewHolder.itemView, R.string.marker_moved_to_history, Snackbar.LENGTH_LONG)
-								.setAction(R.string.shared_string_undo, new View.OnClickListener() {
-									@Override
-									public void onClick(View view) {
-										mapActivity.getMyApplication().getMapMarkersHelper().restoreMarkerFromHistory(marker, 0);
-										createDisplayGroups();
-										updateShowDirectionMarkers();
-										notifyDataSetChanged();
-									}
-								});
-						View snackBarView = snackbar.getView();
-						TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
-						tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
-						snackbar.show();
-					}
-				}
-			});
+			itemViewHolder.optionsBtn.setOnClickListener(view -> {
+                int position1 = itemViewHolder.getAdapterPosition();
+                if (position1 < 0) {
+                    return;
+                }
+                if (markerInHistory) {
+                    app.getMapMarkersHelper().restoreMarkerFromHistory(marker, 0);
+                } else {
+                    app.getMapMarkersHelper().moveMapMarkerToHistory(marker);
+                }
+                createDisplayGroups();
+                updateShowDirectionMarkers();
+                notifyDataSetChanged();
+                if (!markerInHistory) {
+                    snackbar = Snackbar.make(itemViewHolder.itemView, R.string.marker_moved_to_history, Snackbar.LENGTH_LONG)
+                            .setAction(R.string.shared_string_undo, view1 -> {
+                                mapActivity.getMyApplication().getMapMarkersHelper().restoreMarkerFromHistory(marker, 0);
+                                createDisplayGroups();
+                                updateShowDirectionMarkers();
+                                notifyDataSetChanged();
+                            });
+                    View snackBarView = snackbar.getView();
+                    TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
+                    tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
+                    snackbar.show();
+                }
+            });
 			itemViewHolder.iconReorder.setVisibility(View.GONE);
 			itemViewHolder.flagIconLeftSpace.setVisibility(View.VISIBLE);
 			boolean lastItem = position == getItemCount() - 1;
@@ -377,29 +366,21 @@ public class MapMarkersGroupsAdapter extends RecyclerView.Adapter<RecyclerView.V
 				headerViewHolder.icon.setImageDrawable(iconsCache.getIcon(groupHeader.getIconRes(), R.color.divider_color));
 				boolean groupIsDisabled = group.isDisabled();
 				headerViewHolder.disableGroupSwitch.setVisibility(View.VISIBLE);
-				CompoundButton.OnCheckedChangeListener checkedChangeListener = new CompoundButton.OnCheckedChangeListener() {
-					@Override
-					public void onCheckedChanged(CompoundButton compoundButton, boolean enabled) {
-						group.setDisabled(!enabled);
-						app.getMapMarkersHelper().updateGroupDisabled(group, !enabled);
-						createDisplayGroups();
-						updateShowDirectionMarkers();
-						notifyDataSetChanged();
-						if (!enabled) {
-							snackbar = Snackbar.make(holder.itemView, app.getString(R.string.group_will_be_removed_after_restart), Snackbar.LENGTH_LONG)
-									.setAction(R.string.shared_string_undo, new View.OnClickListener() {
-										@Override
-										public void onClick(View view) {
-											headerViewHolder.disableGroupSwitch.setChecked(true);
-										}
-									});
-							View snackBarView = snackbar.getView();
-							TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
-							tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
-							snackbar.show();
-						}
-					}
-				};
+				CompoundButton.OnCheckedChangeListener checkedChangeListener = (compoundButton, enabled) -> {
+                    group.setDisabled(!enabled);
+                    app.getMapMarkersHelper().updateGroupDisabled(group, !enabled);
+                    createDisplayGroups();
+                    updateShowDirectionMarkers();
+                    notifyDataSetChanged();
+                    if (!enabled) {
+                        snackbar = Snackbar.make(holder.itemView, app.getString(R.string.group_will_be_removed_after_restart), Snackbar.LENGTH_LONG)
+                                .setAction(R.string.shared_string_undo, view -> headerViewHolder.disableGroupSwitch.setChecked(true));
+                        View snackBarView = snackbar.getView();
+                        TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
+                        tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
+                        snackbar.show();
+                    }
+                };
 				headerViewHolder.disableGroupSwitch.setOnCheckedChangeListener(null);
 				headerViewHolder.disableGroupSwitch.setChecked(!groupIsDisabled);
 				headerViewHolder.disableGroupSwitch.setOnCheckedChangeListener(checkedChangeListener);
@@ -418,14 +399,11 @@ public class MapMarkersGroupsAdapter extends RecyclerView.Adapter<RecyclerView.V
 				showHideHistoryViewHolder.bottomShadow.setVisibility(View.GONE);
 			}
 			showHideHistoryViewHolder.title.setText(app.getString(showHistory ? R.string.hide_passed : R.string.show_passed));
-			showHideHistoryViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					showHideHistoryButton.setShowHistory(!showHistory);
-					createDisplayGroups();
-					notifyDataSetChanged();
-				}
-			});
+			showHideHistoryViewHolder.itemView.setOnClickListener(view -> {
+                showHideHistoryButton.setShowHistory(!showHistory);
+                createDisplayGroups();
+                notifyDataSetChanged();
+            });
 		}
 	}
 

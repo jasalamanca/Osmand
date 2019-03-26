@@ -116,12 +116,7 @@ public class PlanRouteFragment extends BaseOsmAndFragment implements OsmAndLocat
 				planRouteContext.setProgressBarVisible(false);
 				if (!canceled && portrait && planRouteContext.isMarkersListOpened()) {
 					Snackbar.make(mainView, getString(R.string.route_is_calculated) + ":", Snackbar.LENGTH_LONG)
-							.setAction(R.string.show_map, new View.OnClickListener() {
-								@Override
-								public void onClick(View view) {
-									showHideMarkersList();
-								}
-							})
+							.setAction(R.string.show_map, view -> showHideMarkersList())
 							.show();
 				}
 			}
@@ -184,39 +179,23 @@ public class PlanRouteFragment extends BaseOsmAndFragment implements OsmAndLocat
 			Drawable arrow = getContentIcon(fullScreen ? R.drawable.ic_action_arrow_down : R.drawable.ic_action_arrow_up);
 			((ImageView) mainView.findViewById(R.id.up_down_icon)).setImageDrawable(arrow);
 
-			mainView.findViewById(R.id.up_down_row).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					showHideMarkersList();
-				}
-			});
+			mainView.findViewById(R.id.up_down_row).setOnClickListener(view16 -> showHideMarkersList());
 
-			mainView.findViewById(R.id.select_all_button).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					selectAllOnClick();
-					updateSelectButton();
-				}
-			});
+			mainView.findViewById(R.id.select_all_button).setOnClickListener(view15 -> {
+                selectAllOnClick();
+                updateSelectButton();
+            });
 
 			toolbarController = new PlanRouteToolbarController();
 			toolbarController.setBackBtnIconIds(R.drawable.ic_action_mode_back, R.drawable.ic_action_mode_back);
 			toolbarController.setTitle(getString(R.string.plan_route));
-			toolbarController.setOnBackButtonClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					if (quit(false)) {
-						MapMarkersDialogFragment.showInstance(mapActivity);
-					}
-				}
-			});
+			toolbarController.setOnBackButtonClickListener(view14 -> {
+                if (quit(false)) {
+                    MapMarkersDialogFragment.showInstance(mapActivity);
+                }
+            });
 			toolbarController.setSaveViewTextId(R.string.shared_string_options);
-			toolbarController.setOnSaveViewClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					optionsOnClick();
-				}
-			});
+			toolbarController.setOnSaveViewClickListener(view13 -> optionsOnClick());
 			mapActivity.showTopToolbar(toolbarController);
 
 			if (fullScreen) {
@@ -251,21 +230,13 @@ public class PlanRouteFragment extends BaseOsmAndFragment implements OsmAndLocat
 
 		Toolbar toolbar = mainView.findViewById(R.id.plan_route_toolbar);
 		toolbar.setNavigationIcon(getContentIcon(R.drawable.ic_arrow_back));
-		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (quit(false)) {
-					MapMarkersDialogFragment.showInstance(mapActivity);
-				}
-			}
-		});
+		toolbar.setNavigationOnClickListener(view12 -> {
+            if (quit(false)) {
+                MapMarkersDialogFragment.showInstance(mapActivity);
+            }
+        });
 
-		mainView.findViewById(R.id.options_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				optionsOnClick();
-			}
-		});
+		mainView.findViewById(R.id.options_button).setOnClickListener(view1 -> optionsOnClick());
 
 		markersRv = mainView.findViewById(R.id.markers_recycler_view);
 
@@ -406,19 +377,16 @@ public class PlanRouteFragment extends BaseOsmAndFragment implements OsmAndLocat
 			boolean farEnough = locationChanged && MapUtils.getDistance(this.location.getLatitude(), this.location.getLongitude(),
 					location.getLatitude(), location.getLongitude()) >= MIN_DISTANCE_FOR_RECALCULATE;
 			if (newLocation || farEnough) {
-				mapActivity.getMyApplication().runInUIThread(new Runnable() {
-					@Override
-					public void run() {
-						PlanRouteFragment.this.location = location;
-						adapter.reloadData();
-						try {
-							adapter.notifyDataSetChanged();
-						} catch (Exception e) {
-							// to avoid crash because of:
-							// java.lang.IllegalStateException: Cannot call this method while RecyclerView is computing a layout or scrolling
-						}
-					}
-				});
+				mapActivity.getMyApplication().runInUIThread(() -> {
+                    PlanRouteFragment.this.location = location;
+                    adapter.reloadData();
+                    try {
+                        adapter.notifyDataSetChanged();
+                    } catch (Exception e) {
+                        // to avoid crash because of:
+                        // java.lang.IllegalStateException: Cannot call this method while RecyclerView is computing a layout or scrolling
+                    }
+                });
 			}
 		}
 	}
@@ -663,15 +631,12 @@ public class PlanRouteFragment extends BaseOsmAndFragment implements OsmAndLocat
 			final ImageButton appModesBtn = mapActivity.findViewById(R.id.snap_to_road_image_button);
 			appModesBtn.setBackgroundResource(nightMode ? R.drawable.btn_circle_night : R.drawable.btn_circle);
 			appModesBtn.setImageDrawable(getActiveIcon(planRouteContext.getSnappedMode().getMapIconId()));
-			appModesBtn.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					SnapToRoadBottomSheetDialogFragment fragment = new SnapToRoadBottomSheetDialogFragment();
-					fragment.setListener(createSnapToRoadFragmentListener());
-					fragment.setRemoveDefaultMode(false);
-					fragment.show(mapActivity.getSupportFragmentManager(), SnapToRoadBottomSheetDialogFragment.TAG);
-				}
-			});
+			appModesBtn.setOnClickListener(view -> {
+                SnapToRoadBottomSheetDialogFragment fragment = new SnapToRoadBottomSheetDialogFragment();
+                fragment.setListener(createSnapToRoadFragmentListener());
+                fragment.setRemoveDefaultMode(false);
+                fragment.show(mapActivity.getSupportFragmentManager(), SnapToRoadBottomSheetDialogFragment.TAG);
+            });
 			if (!portrait) {
 				LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) appModesBtn.getLayoutParams();
 				params.leftMargin = mapActivity.getResources().getDimensionPixelSize(R.dimen.dashboard_land_width);
@@ -925,12 +890,7 @@ public class PlanRouteFragment extends BaseOsmAndFragment implements OsmAndLocat
 				if (dialog != null) {
 					long t = System.currentTimeMillis();
 					if (t - startDialogTime < 500) {
-						mapActivity.getMyApplication().runInUIThread(new Runnable() {
-							@Override
-							public void run() {
-								dialog.dismiss();
-							}
-						}, 500 - (t - startDialogTime));
+						mapActivity.getMyApplication().runInUIThread(() -> dialog.dismiss(), 500 - (t - startDialogTime));
 					} else {
 						dialog.dismiss();
 					}

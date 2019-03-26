@@ -51,16 +51,13 @@ public class EditPOIFilterActivity extends OsmandListActivity {
 		setContentView(R.layout.update_index);
 		((TextView)findViewById(R.id.header)).setText(R.string.shared_string_select_all);
 		final CheckBox selectAll = findViewById(R.id.select_all);
-		selectAll.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (selectAll.isChecked()) {
-					selectAll();
-				} else {
-					deselectAll();
-				}
-			}
-		});
+		selectAll.setOnClickListener(v -> {
+            if (selectAll.isChecked()) {
+                selectAll();
+            } else {
+                deselectAll();
+            }
+        });
 		getSupportActionBar().setTitle(R.string.filterpoi_activity);
 
 		if (filter != null) {
@@ -112,15 +109,11 @@ public class EditPOIFilterActivity extends OsmandListActivity {
 		final String[] array = subCategories.keySet().toArray(new String[0]);
 		final Collator cl = Collator.getInstance();
 		cl.setStrength(Collator.SECONDARY);
-		Arrays.sort(array, 0, array.length, new Comparator<String>() {
-
-			@Override
-			public int compare(String object1, String object2) {
-				String v1 = subCategories.get(object1);
-				String v2 = subCategories.get(object2);
-				return cl.compare(v1, v2);
-			}
-		});
+		Arrays.sort(array, 0, array.length, (object1, object2) -> {
+            String v1 = subCategories.get(object1);
+            String v2 = subCategories.get(object2);
+            return cl.compare(v1, v2);
+        });
 		final String[] visibleNames = new String[array.length];
 		final boolean[] selected = new boolean[array.length];
 		
@@ -133,46 +126,33 @@ public class EditPOIFilterActivity extends OsmandListActivity {
 				selected[i] = acceptedCategories.contains(subcategory);
 			}
 		}
-		builder.setNeutralButton(EditPOIFilterActivity.this.getText(R.string.shared_string_close), new DialogInterface.OnClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				LinkedHashSet<String> accepted = new LinkedHashSet<>();
-				for (int i = 0; i < selected.length; i++) {
-					if(selected[i]){
-						accepted.add(array[i]);
-					}
-				}
-				if (subCategories.size() == accepted.size()) {
-					filter.selectSubTypesToAccept(poiCategory, null);
-				} else if(accepted.size() == 0){
-					filter.setTypeToAccept(poiCategory, false);
-				} else {
-					filter.selectSubTypesToAccept(poiCategory, accepted);
-				}
-				helper.editPoiFilter(filter);
-				ListView lv = EditPOIFilterActivity.this.getListView();
-				AmenityAdapter la = EditPOIFilterActivity.this.getListAdapter();
-				la.notifyDataSetChanged();
-				lv.setSelectionFromTop(index, top);
-			}
-		});
+		builder.setNeutralButton(EditPOIFilterActivity.this.getText(R.string.shared_string_close), (dialog, which) -> {
+            LinkedHashSet<String> accepted = new LinkedHashSet<>();
+            for (int i = 0; i < selected.length; i++) {
+                if(selected[i]){
+                    accepted.add(array[i]);
+                }
+            }
+            if (subCategories.size() == accepted.size()) {
+                filter.selectSubTypesToAccept(poiCategory, null);
+            } else if(accepted.size() == 0){
+                filter.setTypeToAccept(poiCategory, false);
+            } else {
+                filter.selectSubTypesToAccept(poiCategory, accepted);
+            }
+            helper.editPoiFilter(filter);
+            ListView lv12 = EditPOIFilterActivity.this.getListView();
+            AmenityAdapter la = EditPOIFilterActivity.this.getListAdapter();
+            la.notifyDataSetChanged();
+            lv12.setSelectionFromTop(index, top);
+        });
 	
-		builder.setPositiveButton(EditPOIFilterActivity.this.getText(R.string.shared_string_select_all), new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				ListView lv = selectAllFromCategory(poiCategory);
-				lv.setSelectionFromTop(index, top);
-			}
-		});
+		builder.setPositiveButton(EditPOIFilterActivity.this.getText(R.string.shared_string_select_all), (dialog, which) -> {
+            ListView lv1 = selectAllFromCategory(poiCategory);
+            lv1.setSelectionFromTop(index, top);
+        });
 
-		builder.setMultiChoiceItems(visibleNames, selected, new DialogInterface.OnMultiChoiceClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int item, boolean isChecked) {
-				selected[item] = isChecked;
-			}
-		});
+		builder.setMultiChoiceItems(visibleNames, selected, (dialog, item, isChecked) -> selected[item] = isChecked);
 		builder.show();
 
 	}
@@ -248,26 +228,18 @@ public class EditPOIFilterActivity extends OsmandListActivity {
 		}
 
 		private void addRowListener(final PoiCategory model, final TextView text, final CheckBox check) {
-			text.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					showDialog(model);
-				}
-			});
+			text.setOnClickListener(v -> showDialog(model));
 
-			check.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					if (check.isChecked()) {
-						filter.setTypeToAccept(model, true);
-						showDialog(model);
-					} else {
-						filter.setTypeToAccept(model, false);
-						helper.editPoiFilter(filter);
-					}
-					notifyDataSetChanged();
-				}
-			});
+			check.setOnClickListener(v -> {
+                if (check.isChecked()) {
+                    filter.setTypeToAccept(model, true);
+                    showDialog(model);
+                } else {
+                    filter.setTypeToAccept(model, false);
+                    helper.editPoiFilter(filter);
+                }
+                notifyDataSetChanged();
+            });
 		}
 
 	}

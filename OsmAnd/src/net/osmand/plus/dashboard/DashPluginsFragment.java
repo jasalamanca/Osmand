@@ -42,39 +42,30 @@ public class DashPluginsFragment extends DashBaseFragment {
 	private List<OsmandPlugin> plugins;
 
 	private View.OnClickListener getListener(final OsmandPlugin plugin) {
-		return new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(plugin.getInstallURL())));
-				closeDashboard();
-			}
-		};
+		return view -> {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(plugin.getInstallURL())));
+            closeDashboard();
+        };
 	}
 
 	private final View.OnClickListener pluginDetailsListener(final OsmandPlugin plugin) {
-		return new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				Intent intent = new Intent(getActivity(), PluginActivity.class);
-				intent.putExtra(PluginActivity.EXTRA_PLUGIN_ID, plugin.getId());
-				startActivity(intent);
-				closeDashboard();
-			}
-		};
+		return view -> {
+            Intent intent = new Intent(getActivity(), PluginActivity.class);
+            intent.putExtra(PluginActivity.EXTRA_PLUGIN_ID, plugin.getId());
+            startActivity(intent);
+            closeDashboard();
+        };
 	}
 
 	@Override
-	public View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	public View initView(LayoutInflater inflater, @Nullable ViewGroup container) {
 		View view = inflater.inflate(R.layout.dash_common_fragment, container, false);
 		TextView header = view.findViewById(R.id.fav_text);
 		header.setText(TITLE_ID);
-		view.findViewById(R.id.show_all).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				startActivity(new Intent(getActivity(), getMyApplication().getAppCustomization().getPluginsActivity()));
-				closeDashboard();
-			}
-		});
+		view.findViewById(R.id.show_all).setOnClickListener(view1 -> {
+            startActivity(new Intent(getActivity(), getMyApplication().getAppCustomization().getPluginsActivity()));
+            closeDashboard();
+        });
 		initPlugins();
 		return view;
 	}
@@ -161,16 +152,13 @@ public class DashPluginsFragment extends DashBaseFragment {
 	}
 
 	private void setListener(final OsmandPlugin plugin, CompoundButton enableDisableButton, final View pluginView) {
-		enableDisableButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				if (plugin.isActive() == isChecked || plugin.needsInstallation()) {
-					return;
-				}
-				if (OsmandPlugin.enablePlugin(getActivity(), getMyApplication(), plugin, isChecked)) {
-					updatePluginState(pluginView, plugin);
-				}
-			}
-		});
+		enableDisableButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (plugin.isActive() == isChecked || plugin.needsInstallation()) {
+                return;
+            }
+            if (OsmandPlugin.enablePlugin(getActivity(), getMyApplication(), plugin, isChecked)) {
+                updatePluginState(pluginView, plugin);
+            }
+        });
 	}
 }

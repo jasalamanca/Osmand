@@ -52,12 +52,7 @@ public class OrderByBottomSheetDialogFragment extends MenuBottomSheetDialogFragm
 		mainView.findViewById(R.id.date_added_asc_row).setOnClickListener(orderByModeOnClickListener);
 		mainView.findViewById(R.id.date_added_desc_row).setOnClickListener(orderByModeOnClickListener);
 
-		mainView.findViewById(R.id.close_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.close_row).setOnClickListener(view -> dismiss());
 
 		setupHeightAndBackground(mainView, R.id.marker_order_by_scroll_view);
 

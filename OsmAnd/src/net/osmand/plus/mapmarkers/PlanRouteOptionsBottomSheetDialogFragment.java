@@ -59,57 +59,37 @@ public class PlanRouteOptionsBottomSheetDialogFragment extends MenuBottomSheetDi
 
 			View selectRow = mainView.findViewById(R.id.select_row);
 			selectRow.setVisibility(View.VISIBLE);
-			selectRow.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					listener.selectOnClick();
-					dismiss();
-				}
-			});
+			selectRow.setOnClickListener(view -> {
+                listener.selectOnClick();
+                dismiss();
+            });
 		}
-		mainView.findViewById(R.id.navigate_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (listener != null) {
-					listener.navigateOnClick();
-					dismiss();
-				}
-			}
-		});
-		mainView.findViewById(R.id.make_round_trip_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (listener != null) {
-					listener.makeRoundTripOnClick();
-					dismiss();
-				}
-			}
-		});
-		mainView.findViewById(R.id.door_to_door_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (listener != null) {
-					listener.doorToDoorOnClick();
-					dismiss();
-				}
-			}
-		});
-		mainView.findViewById(R.id.reverse_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (listener != null) {
-					listener.reverseOrderOnClick();
-					dismiss();
-				}
-			}
-		});
+		mainView.findViewById(R.id.navigate_row).setOnClickListener(view -> {
+            if (listener != null) {
+                listener.navigateOnClick();
+                dismiss();
+            }
+        });
+		mainView.findViewById(R.id.make_round_trip_row).setOnClickListener(view -> {
+            if (listener != null) {
+                listener.makeRoundTripOnClick();
+                dismiss();
+            }
+        });
+		mainView.findViewById(R.id.door_to_door_row).setOnClickListener(view -> {
+            if (listener != null) {
+                listener.doorToDoorOnClick();
+                dismiss();
+            }
+        });
+		mainView.findViewById(R.id.reverse_row).setOnClickListener(view -> {
+            if (listener != null) {
+                listener.reverseOrderOnClick();
+                dismiss();
+            }
+        });
 
-		mainView.findViewById(R.id.cancel_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.cancel_row).setOnClickListener(view -> dismiss());
 
 		setupHeightAndBackground(mainView, R.id.sort_by_scroll_view);
 

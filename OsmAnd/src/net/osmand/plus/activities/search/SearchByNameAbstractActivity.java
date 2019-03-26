@@ -142,27 +142,18 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
         // ppenguin 2016-03-07: try to avoid full screen input in landscape mode (when softKB too large) => IME-flags necessary here too!
 		searchText.setImeOptions(EditorInfo.IME_ACTION_DONE | EditorInfo.IME_FLAG_NO_EXTRACT_UI | EditorInfo.IME_FLAG_NO_FULLSCREEN);
 		searchText.requestFocus();
-		searchText.setOnEditorActionListener(new OnEditorActionListener() {
-	        @Override
-			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-	            if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
-	            	if(endingObject != null) {
-	            		itemSelectedBase(endingObject);
-	            	}
-	            	return true;
-	            }    
-	            return false;
-	        }
-	    });
+		searchText.setOnEditorActionListener((v, actionId, event) -> {
+            if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
+                if(endingObject != null) {
+                    itemSelectedBase(endingObject);
+                }
+                return true;
+            }
+            return false;
+        });
 		
 		progress.setVisibility(View.INVISIBLE);
-		findViewById(R.id.ResetButton).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				reset();
-			}
-			
-		});
+		findViewById(R.id.ResetButton).setOnClickListener(v -> reset());
 		selectAddress = getIntent() != null && getIntent().hasExtra(SELECT_ADDRESS);
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
 		if (initializeTask != null){
@@ -306,13 +297,10 @@ public abstract class SearchByNameAbstractActivity<T> extends OsmandListActivity
 	protected void onResume() {
 		super.onResume();
 		selectAddress = getIntent() != null && getIntent().getBooleanExtra(SELECT_ADDRESS, false);
-		setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				T repo = getListAdapter().getItem(position);
-				itemSelectedBase(repo);
-			}
-		});
+		setOnItemClickListener((parent, view, position, id) -> {
+            T repo = getListAdapter().getItem(position);
+            itemSelectedBase(repo);
+        });
 		Intent intent = getIntent();
 		if(intent != null){
 			if(intent.hasExtra(SearchActivity.SEARCH_LAT) && intent.hasExtra(SearchActivity.SEARCH_LON)){

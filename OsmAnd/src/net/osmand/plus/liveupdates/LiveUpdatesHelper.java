@@ -22,16 +22,16 @@ public class LiveUpdatesHelper {
 	private static final String DOWNLOAD_VIA_WIFI_POSTFIX = "_download_via_wifi";
 	private static final String LIVE_UPDATES_ON_POSTFIX = "_live_updates_on";
 	private static final String LAST_UPDATE_ATTEMPT_ON_POSTFIX = "_last_update_attempt";
-	public static final String LOCAL_INDEX_INFO = "local_index_info";
+	static final String LOCAL_INDEX_INFO = "local_index_info";
 
 
 	private static final int MORNING_UPDATE_TIME = 8;
 	private static final int NIGHT_UPDATE_TIME = 21;
 	private static final int SHIFT = 1000;
 
-	public static final int DEFAULT_LAST_CHECK = -1;
+	static final int DEFAULT_LAST_CHECK = -1;
 
-	public static OsmandSettings.CommonPreference<Boolean> preferenceForLocalIndex(
+	static OsmandSettings.CommonPreference<Boolean> preferenceForLocalIndex(
 			String fileName, OsmandSettings settings) {
 		final String settingId = fileName + LIVE_UPDATES_ON_POSTFIX;
 		return settings.registerBooleanPreference(settingId, false);
@@ -43,7 +43,7 @@ public class LiveUpdatesHelper {
 		return settings.registerBooleanPreference(settingId, false);
 	}
 
-	public static OsmandSettings.CommonPreference<Boolean> preferenceDownloadViaWiFi(
+	static OsmandSettings.CommonPreference<Boolean> preferenceDownloadViaWiFi(
 			String fileName, OsmandSettings settings) {
 		final String settingId = fileName + DOWNLOAD_VIA_WIFI_POSTFIX;
 		return settings.registerBooleanPreference(settingId, false);
@@ -67,13 +67,13 @@ public class LiveUpdatesHelper {
 		return settings.registerLongPreference(settingId, DEFAULT_LAST_CHECK);
 	}
 
-	public static String getNameToDisplay(String fileName, OsmandActionBarActivity activity) {
+	static String getNameToDisplay(String fileName, OsmandActionBarActivity activity) {
 		return FileNameTranslationHelper.getFileName(activity,
 				activity.getMyApplication().getResourceManager().getOsmandRegions(),
 				fileName);
 	}
 
-	public static String formatDateTime(Context ctx, long dateTime) {
+	static String formatDateTime(Context ctx, long dateTime) {
 		java.text.DateFormat dateFormat = android.text.format.DateFormat.getMediumDateFormat(ctx);
 		java.text.DateFormat timeFormat = android.text.format.DateFormat.getTimeFormat(ctx);
 		return dateFormat.format(dateTime) + " " + timeFormat.format(dateTime);

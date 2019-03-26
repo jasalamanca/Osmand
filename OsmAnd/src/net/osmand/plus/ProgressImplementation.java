@@ -24,7 +24,7 @@ public class ProgressImplementation implements IProgress {
 //	private Thread run;
 	private final Context context;
 	private ProgressDialog dialog = null;
-	private ProgressBar progressBar = null;
+	private final ProgressBar progressBar = null;
     private final boolean cancelable;
 //	private TextView tv;
 	
@@ -121,13 +121,10 @@ public class ProgressImplementation implements IProgress {
 	private void setDialog(ProgressDialog dlg){
 		if(dlg != null){
 			if(cancelable){
-				dlg.setOnCancelListener(new OnCancelListener(){
-					@Override
-					public void onCancel(DialogInterface dialog) {
+				dlg.setOnCancelListener(dialog -> {
 //						if(run != null){
 //							run.stop();
 //						}
-					}
 				});
 			}
 			this.dialog = dlg;

@@ -233,7 +233,7 @@ public class FavouritesLayer extends OsmandMapLayer implements ContextMenuLayer.
 	}
 
 	@Override
-	public int getTextShift(FavouritePoint o, RotatedTileBox rb) {
+	public int getTextShift(RotatedTileBox rb) {
 		return (int) (16 * rb.getDensity());
 	}
 

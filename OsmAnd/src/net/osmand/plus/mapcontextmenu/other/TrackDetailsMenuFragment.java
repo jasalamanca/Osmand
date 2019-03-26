@@ -57,20 +57,10 @@ public class TrackDetailsMenuFragment extends BaseOsmAndFragment {
 		ImageButton backButton = mainView.findViewById(R.id.top_bar_back_button);
 		ImageButton closeButton = mainView.findViewById(R.id.top_bar_close_button);
 		if (backButton != null) {
-			backButton.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					getActivity().onBackPressed();
-				}
-			});
+			backButton.setOnClickListener(v -> getActivity().onBackPressed());
 		}
 		if (closeButton != null) {
-			closeButton.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					dismiss();
-				}
-			});
+			closeButton.setOnClickListener(v -> dismiss());
 		}
 
 		updateInfo();

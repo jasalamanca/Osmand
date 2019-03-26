@@ -50,7 +50,7 @@ public class DatabaseHelper {
                 conn.setVersion(DB_VERSION);
                 onCreate(conn);
             } else {
-                onUpgrade(conn, conn.getVersion(), DB_VERSION);
+                onUpgrade();
             }
 
         }
@@ -60,8 +60,7 @@ public class DatabaseHelper {
     private void onCreate(SQLiteAPI.SQLiteConnection db) {
         db.execSQL(DOWNLOAD_TABLE_CREATE);
     }
-
-    private void onUpgrade(SQLiteAPI.SQLiteConnection db, int oldVersion, int newVersion) {
+    private void onUpgrade() {
     }
 
     public boolean update(HistoryDownloadEntry e, int type){

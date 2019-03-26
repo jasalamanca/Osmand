@@ -88,85 +88,69 @@ public class EditFavoriteGroupDialogFragment extends BottomSheetDialogFragment {
 		View editNameView = view.findViewById(R.id.edit_name_view);
 		((ImageView) view.findViewById(R.id.edit_name_icon))
 				.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_edit_dark));
-		editNameView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				AlertDialog.Builder b = new AlertDialog.Builder(activity);
-				b.setTitle(R.string.favorite_group_name);
-				final EditText nameEditText = new EditText(activity);
-				nameEditText.setText(group.name);
+		editNameView.setOnClickListener(v -> {
+            AlertDialog.Builder b = new AlertDialog.Builder(activity);
+            b.setTitle(R.string.favorite_group_name);
+            final EditText nameEditText = new EditText(activity);
+            nameEditText.setText(group.name);
 //				int leftPadding = AndroidUtils.dpToPx(activity, 24f);
 //				int topPadding = AndroidUtils.dpToPx(activity, 4f);
-				b.setView(nameEditText);
-				b.setNegativeButton(R.string.shared_string_cancel, null);
-				b.setPositiveButton(R.string.shared_string_save, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						String name = nameEditText.getText().toString();
-						boolean nameChanged = !Algorithms.objectEquals(group.name, name);
-						if (nameChanged) {
-							getMyApplication().getFavorites()
-									.editFavouriteGroup(group, name, group.color, group.visible);
-							updateParentFragment();
-						}
-						dismiss();
-					}
-				});
-				b.show();
-			}
-		});
+            b.setView(nameEditText);
+            b.setNegativeButton(R.string.shared_string_cancel, null);
+            b.setPositiveButton(R.string.shared_string_save, (dialog, which) -> {
+                String name = nameEditText.getText().toString();
+                boolean nameChanged = !Algorithms.objectEquals(group.name, name);
+                if (nameChanged) {
+                    getMyApplication().getFavorites()
+                            .editFavouriteGroup(group, name, group.color, group.visible);
+                    updateParentFragment();
+                }
+                dismiss();
+            });
+            b.show();
+        });
 
 		final View changeColorView = view.findViewById(R.id.change_color_view);
 		((ImageView) view.findViewById(R.id.change_color_icon))
 				.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_appearance));
 		updateColorView(changeColorView);
-		changeColorView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				final ListPopupWindow popup = new ListPopupWindow(getActivity());
-				popup.setAnchorView(changeColorView);
-				popup.setContentWidth(AndroidUtils.dpToPx(app, 200f));
-				popup.setModal(true);
+		changeColorView.setOnClickListener(v -> {
+            final ListPopupWindow popup = new ListPopupWindow(getActivity());
+            popup.setAnchorView(changeColorView);
+            popup.setContentWidth(AndroidUtils.dpToPx(app, 200f));
+            popup.setModal(true);
 //				popup.setDropDownGravity(Gravity.RIGHT | Gravity.TOP);
-				popup.setVerticalOffset(AndroidUtils.dpToPx(app, -48f));
-				popup.setHorizontalOffset(AndroidUtils.dpToPx(app, -6f));
-				final FavoriteColorAdapter colorAdapter = new FavoriteColorAdapter(getActivity());
-				popup.setAdapter(colorAdapter);
-				popup.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-					@Override
-					public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-						Integer color = colorAdapter.getItem(position);
-						if (color != null) {
-							if (color != group.color) {
-								getMyApplication().getFavorites()
-										.editFavouriteGroup(group, group.name, color, group.visible);
-								updateParentFragment();
-							}
-						}
-						popup.dismiss();
-						dismiss();
-					}
-				});
-				popup.show();
-			}
-		});
+            popup.setVerticalOffset(AndroidUtils.dpToPx(app, -48f));
+            popup.setHorizontalOffset(AndroidUtils.dpToPx(app, -6f));
+            final FavoriteColorAdapter colorAdapter = new FavoriteColorAdapter(getActivity());
+            popup.setAdapter(colorAdapter);
+            popup.setOnItemClickListener((parent, view12, position, id) -> {
+                Integer color = colorAdapter.getItem(position);
+                if (color != null) {
+                    if (color != group.color) {
+                        getMyApplication().getFavorites()
+                                .editFavouriteGroup(group, group.name, color, group.visible);
+                        updateParentFragment();
+                    }
+                }
+                popup.dismiss();
+                dismiss();
+            });
+            popup.show();
+        });
 
 		View showOnMapView = view.findViewById(R.id.show_on_map_view);
 		((ImageView) view.findViewById(R.id.show_on_map_icon))
 				.setImageDrawable(ic.getThemedIcon(R.drawable.ic_map));
 		final Switch checkbox = view.findViewById(R.id.show_on_map_switch);
 		checkbox.setChecked(group.visible);
-		showOnMapView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				boolean visible = !group.visible;
-				checkbox.setChecked(visible);
-				getMyApplication().getFavorites()
-						.editFavouriteGroup(group, group.name, group.color, visible);
-				updateParentFragment();
-			}
-		});
+		showOnMapView.setOnClickListener(v -> {
+            boolean visible = !group.visible;
+            checkbox.setChecked(visible);
+            getMyApplication().getFavorites()
+                    .editFavouriteGroup(group, group.name, group.color, visible);
+            updateParentFragment();
+        });
 
 		final MapMarkersHelper markersHelper = getMyApplication().getMapMarkersHelper();
 		final MarkersSyncGroup syncGroup =
@@ -177,15 +161,12 @@ public class EditFavoriteGroupDialogFragment extends BottomSheetDialogFragment {
 		if (app.getSettings().USE_MAP_MARKERS.get() && group.points.size() > 0 && !groupSyncedWithMarkers) {
 			((ImageView) view.findViewById(R.id.add_to_markers_icon))
 					.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_flag_dark));
-			addToMarkersView.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					markersHelper.addMarkersSyncGroup(syncGroup);
-					markersHelper.syncGroupAsync(syncGroup);
-					dismiss();
-					MapActivity.launchMapActivityMoveToTop(getActivity());
-				}
-			});
+			addToMarkersView.setOnClickListener(v -> {
+                markersHelper.addMarkersSyncGroup(syncGroup);
+                markersHelper.syncGroupAsync(syncGroup);
+                dismiss();
+                MapActivity.launchMapActivityMoveToTop(getActivity());
+            });
 		} else {
 			addToMarkersView.setVisibility(View.GONE);
 		}
@@ -195,30 +176,24 @@ public class EditFavoriteGroupDialogFragment extends BottomSheetDialogFragment {
 			removeFromMarkersView.setVisibility(View.VISIBLE);
 			((ImageView) view.findViewById(R.id.remove_from_markers_icon))
 					.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_delete_dark));
-			removeFromMarkersView.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					markersHelper.removeMarkersSyncGroup(syncGroup.getId(), true);
-					dismiss();
-					MapActivity.launchMapActivityMoveToTop(getActivity());
-				}
-			});
+			removeFromMarkersView.setOnClickListener(view1 -> {
+                markersHelper.removeMarkersSyncGroup(syncGroup.getId(), true);
+                dismiss();
+                MapActivity.launchMapActivityMoveToTop(getActivity());
+            });
 		}
 
 		View shareView = view.findViewById(R.id.share_view);
 		if (group.points.size() > 0) {
 			((ImageView) view.findViewById(R.id.share_icon))
 					.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_gshare_dark));
-			shareView.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					FavoritesTreeFragment fragment = getFavoritesTreeFragment();
-					if (fragment != null) {
-						fragment.shareFavorites(group);
-					}
-					dismiss();
-				}
-			});
+			shareView.setOnClickListener(v -> {
+                FavoritesTreeFragment fragment = getFavoritesTreeFragment();
+                if (fragment != null) {
+                    fragment.shareFavorites(group);
+                }
+                dismiss();
+            });
 		} else {
 			shareView.setVisibility(View.GONE);
 		}

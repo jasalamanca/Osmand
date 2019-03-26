@@ -25,14 +25,11 @@ public class SearchBuildingByNameActivity extends SearchByNameAbstractActivity<B
 	
 	@Override
 	protected Comparator<? super Building> createComparator() {
-		return new Comparator<Building>() {
-			@Override
-			public int compare(Building o1, Building o2) {
-				int i1 = Algorithms.extractFirstIntegerNumber(o1.getName());
-				int i2 = Algorithms.extractFirstIntegerNumber(o2.getName());
-				return i1 - i2;
-			}
-		};
+		return (Comparator<Building>) (o1, o2) -> {
+            int i1 = Algorithms.extractFirstIntegerNumber(o1.getName());
+            int i2 = Algorithms.extractFirstIntegerNumber(o2.getName());
+            return i1 - i2;
+        };
 	}
 
 	@Override

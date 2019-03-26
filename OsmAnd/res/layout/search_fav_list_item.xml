@@ -19,6 +19,7 @@
             android:drawablePadding="16dp"
             android:gravity="center_vertical"
             android:paddingLeft="16dp"
+            android:paddingStart="16dp"
             android:textAppearance="@style/TextAppearance.ListItemTitle"
             android:textStyle="normal"
             tools:drawableLeft="@drawable/ic_action_search_dark"

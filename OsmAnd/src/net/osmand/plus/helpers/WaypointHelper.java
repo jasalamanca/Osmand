@@ -32,7 +32,6 @@ import net.osmand.util.MapUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
@@ -80,7 +79,7 @@ public class WaypointHelper {
 
 	List<LocationPointWrapper> getWaypoints(int type) {
 		if (type == TARGETS) {
-			return getTargets(new ArrayList<WaypointHelper.LocationPointWrapper>());
+			return getTargets(new ArrayList<>());
 		}
 		if (type >= locationPoints.size()) {
 			return Collections.emptyList();
@@ -88,7 +87,7 @@ public class WaypointHelper {
 		return locationPoints.get(type);
 	}
 
-	public void locationChanged(Location location) {
+	public void locationChanged() {
 		app.getAppCustomization();
 		announceVisibleLocations();
 	}
@@ -402,7 +401,7 @@ public class WaypointHelper {
 			} else {
 				routeIndex = k == 0 ? route.getImmutableAllLocations().size() - 1 : route.getIndexOfIntermediate(k - 1);
 			}
-			points.add(new LocationPointWrapper(route, TARGETS, tp, 0, routeIndex));
+			points.add(new LocationPointWrapper(TARGETS, tp, 0, routeIndex));
 		}
 		Collections.reverse(points);
 		return points;
@@ -499,16 +498,13 @@ public class WaypointHelper {
 	}
 
 	private void sortList(List<LocationPointWrapper> list) {
-		Collections.sort(list, new Comparator<LocationPointWrapper>() {
-			@Override
-			public int compare(LocationPointWrapper olhs, LocationPointWrapper orhs) {
-				int lhs = olhs.routeIndex;
-				int rhs = orhs.routeIndex;
-				if (lhs == rhs) {
-					return Float.compare(olhs.deviationDistance, orhs.deviationDistance);
-				}
-				return lhs < rhs ? -1 : 1;
+		Collections.sort(list, (olhs, orhs) -> {
+			int lhs = olhs.routeIndex;
+			int rhs = orhs.routeIndex;
+			if (lhs == rhs) {
+				return Float.compare(olhs.deviationDistance, orhs.deviationDistance);
 			}
+			return lhs < rhs ? -1 : 1;
 		});
 	}
 
@@ -523,7 +519,7 @@ public class WaypointHelper {
 				AmenityRoutePoint rp = a.getRoutePoint();
 				int i = locs.indexOf(rp.pointA);
 				if (i >= 0) {
-					LocationPointWrapper lwp = new LocationPointWrapper(route, POI, new AmenityLocationPoint(a),
+					LocationPointWrapper lwp = new LocationPointWrapper(POI, new AmenityLocationPoint(a),
 							(float) rp.deviateDistance, i);
 					lwp.deviationDirectionRight = rp.deviationDirectionRight;
 					lwp.setAnnounce(announcePOI);
@@ -538,7 +534,7 @@ public class WaypointHelper {
 		for (AlarmInfo i : route.getAlarmInfo()) {
 			if (i.getType() == AlarmInfoType.SPEED_CAMERA) {
 				if (app.getSettings().SHOW_CAMERAS.getModeValue(mode) || app.getSettings().SPEAK_SPEED_CAMERA.getModeValue(mode)) {
-					LocationPointWrapper lw = new LocationPointWrapper(route, ALARMS, i, 0, i.getLocationIndex());
+					LocationPointWrapper lw = new LocationPointWrapper(ALARMS, i, 0, i.getLocationIndex());
 					if(prevSpeedCam != null &&  
 							MapUtils.getDistance(prevSpeedCam.getLatitude(), prevSpeedCam.getLongitude(), 
 									i.getLatitude(), i.getLongitude()) < DISTANCE_IGNORE_DOUBLE_SPEEDCAMS) {
@@ -551,7 +547,7 @@ public class WaypointHelper {
 				}
 			} else {
 				if (app.getSettings().SHOW_TRAFFIC_WARNINGS.getModeValue(mode) || app.getSettings().SPEAK_TRAFFIC_WARNINGS.getModeValue(mode)) {
-					LocationPointWrapper lw = new LocationPointWrapper(route, ALARMS, i, 0, i.getLocationIndex());
+					LocationPointWrapper lw = new LocationPointWrapper(ALARMS, i, 0, i.getLocationIndex());
 					lw.setAnnounce(app.getSettings().SPEAK_TRAFFIC_WARNINGS.get());
 					array.add(lw);
 				}
@@ -562,7 +558,7 @@ public class WaypointHelper {
 	private List<LocationPointWrapper> clearAndGetArray(List<List<LocationPointWrapper>> array,
 														int ind) {
 		while (array.size() <= ind) {
-			array.add(new ArrayList<WaypointHelper.LocationPointWrapper>());
+			array.add(new ArrayList<>());
 		}
 		array.get(ind).clear();
 		return array.get(ind);
@@ -577,7 +573,7 @@ public class WaypointHelper {
 			float dist = dist(p, immutableAllLocations, ind, devDirRight);
 			int rad = getSearchDeviationRadius(type);
 			if (dist <= rad) {
-				LocationPointWrapper lpw = new LocationPointWrapper(rt, type, p, dist, ind[0]);
+				LocationPointWrapper lpw = new LocationPointWrapper(type, p, dist, ind[0]);
 				lpw.deviationDirectionRight = devDirRight[0];
 				lpw.setAnnounce(announce);
 				locationPoints.add(lpw);
@@ -586,14 +582,14 @@ public class WaypointHelper {
 	}
 
 	public static class LocationPointWrapper {
-		LocationPoint point;
-		float deviationDistance;
+		final LocationPoint point;
+		final float deviationDistance;
 		boolean deviationDirectionRight;
-		int routeIndex;
+		final int routeIndex;
 		boolean announce = true;
-		int type;
+		final int type;
 
-		LocationPointWrapper(RouteCalculationResult rt, int type, LocationPoint point, float deviationDistance, int routeIndex) {
+		LocationPointWrapper(int type, LocationPoint point, float deviationDistance, int routeIndex) {
 			this.type = type;
 			this.point = point;
 			this.deviationDistance = deviationDistance;

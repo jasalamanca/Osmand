@@ -26,20 +26,17 @@ public class DashSearchFragment extends DashBaseFragment {
 			};
 
 	@Override
-	public View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	public View initView(LayoutInflater inflater, @Nullable ViewGroup container) {
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_search_fragment, container, false);
 
 		TextView searchFor = view.findViewById(R.id.search_for);
 		searchFor.setCompoundDrawablesWithIntrinsicBounds(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_search_dark), null, null, null);
 		searchFor.setCompoundDrawablePadding(AndroidUtils.dpToPx(getActivity(), 16f));
 
-		view.findViewById(R.id.search_card).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				((MapActivity) getActivity()).showQuickSearch(ShowQuickSearchMode.NEW, false);
-				closeDashboard();
-			}
-		});
+		view.findViewById(R.id.search_card).setOnClickListener(v -> {
+            ((MapActivity) getActivity()).showQuickSearch(ShowQuickSearchMode.NEW, false);
+            closeDashboard();
+        });
 
 		return view;
 	}

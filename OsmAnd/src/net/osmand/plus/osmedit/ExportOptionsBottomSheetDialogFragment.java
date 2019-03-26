@@ -57,14 +57,11 @@ public class ExportOptionsBottomSheetDialogFragment extends MenuBottomSheetDialo
 
 		View poiRow = mainView.findViewById(R.id.poi_row);
 		if (poiCount > 0) {
-			poiRow.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					if (listener != null) {
-						listener.onClick(OsmEditsFragment.EXPORT_TYPE_POI);
-					}
-					dismiss();
+			poiRow.setOnClickListener(v -> {
+				if (listener != null) {
+					listener.onClick(OsmEditsFragment.EXPORT_TYPE_POI);
 				}
+				dismiss();
 			});
 		} else {
 			disable(poiRow);
@@ -72,14 +69,11 @@ public class ExportOptionsBottomSheetDialogFragment extends MenuBottomSheetDialo
 
 		View osmNotesRow = mainView.findViewById(R.id.osm_notes_row);
 		if (osmNotesCount > 0) {
-			osmNotesRow.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					if (listener != null) {
-						listener.onClick(OsmEditsFragment.EXPORT_TYPE_NOTES);
-					}
-					dismiss();
+			osmNotesRow.setOnClickListener(v -> {
+				if (listener != null) {
+					listener.onClick(OsmEditsFragment.EXPORT_TYPE_NOTES);
 				}
+				dismiss();
 			});
 		} else {
 			disable(osmNotesRow);
@@ -87,25 +81,17 @@ public class ExportOptionsBottomSheetDialogFragment extends MenuBottomSheetDialo
 
 		View allDataRow = mainView.findViewById(R.id.all_data_row);
 		if ((poiCount + osmNotesCount) > 0) {
-			allDataRow.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					if (listener != null) {
-						listener.onClick(OsmEditsFragment.EXPORT_TYPE_ALL);
-					}
-					dismiss();
+			allDataRow.setOnClickListener(v -> {
+				if (listener != null) {
+					listener.onClick(OsmEditsFragment.EXPORT_TYPE_ALL);
 				}
+				dismiss();
 			});
 		} else {
 			disable(allDataRow);
 		}
 
-		mainView.findViewById(R.id.cancel_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.cancel_row).setOnClickListener(view -> dismiss());
 
 		setupHeightAndBackground(mainView, R.id.scroll_view);
 

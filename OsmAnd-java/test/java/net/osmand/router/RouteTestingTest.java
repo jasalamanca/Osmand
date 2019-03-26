@@ -26,7 +26,7 @@ import java.util.TreeSet;
 
 @RunWith(Parameterized.class)
 public class RouteTestingTest {
-	private TestEntry te;
+	private final TestEntry te;
 
     public RouteTestingTest(String name, TestEntry te) {
         this.te = te;

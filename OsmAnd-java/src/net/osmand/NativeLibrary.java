@@ -119,7 +119,6 @@ public class NativeLibrary {
 	public boolean initCacheMapFile(String filePath) {
 		return initCacheMapFiles(filePath);
 	}
-
 	public boolean closeMapFile(String filePath) {
 		return closeBinaryMapFile(filePath);
 	}
@@ -144,22 +143,15 @@ public class NativeLibrary {
 			boolean loadObjects);
 	
 	protected static native void deleteRenderingContextHandle(long handle);
-
 	protected static native void deleteRouteSearchResult(long searchResultHandle);
-
 	protected static native RouteDataObject[] getRouteDataObjects(RouteRegion reg, long rs, int x31, int y31);
-
 	protected static native RouteSegmentResult[] nativeRouting(int[] coordinates, RoutingConfiguration r,
 			float initDirection, RouteRegion[] regions, RouteCalculationProgress progress, PrecalculatedRouteDirection precalculatedRouteDirection, boolean basemap);
 
 	protected static native void deleteSearchResult(long searchResultHandle);
-
 	protected static native boolean initBinaryMapFile(String filePath, boolean useLive);
-
 	protected static native boolean initCacheMapFiles(String filePath);
-
 	protected static native boolean closeBinaryMapFile(String filePath);
-
 	protected static native void initRenderingRulesStorage(RenderingRulesStorage storage);
 
 	protected static native RenderingGenerationResult generateRenderingIndirect(RenderingContext rc, long searchResultHandler,
@@ -176,21 +168,19 @@ public class NativeLibrary {
 	public RenderedObject[] searchRenderedObjectsFromContext(RenderingContext context, int x, int y) {
 		return searchRenderedObjects(context, x, y, false);
 	}
-	
+
 	public RenderedObject[] searchRenderedObjectsFromContext(RenderingContext context, int x, int y, boolean notvisible) {
 		return searchRenderedObjects(context, x, y, notvisible);
 	}
 
 	private static final Log log = PlatformUtil.getLog(NativeLibrary.class);
 
-	public static boolean loadNewLib(String path) {
-		return load("OsmAndJNI", path);
-	}
-	
+//	public static boolean loadNewLib(String path) {
+//		return load("OsmAndJNI", path);
+//	}
+
 	public static boolean loadOldLib(String path) {
-		boolean b = true;
-		b &= load("osmand", path);
-		return b;
+		return load("osmand", path);
 	}
 
 	private static boolean load(String libBaseName, String path) {
@@ -247,7 +237,6 @@ public class NativeLibrary {
 		return false;
 	}
 
-	
 	/**
      * Compares two {@code int} values.
      * @return 0 if lhs = rhs, less than 0 if lhs &lt; rhs, and greater than 0 if lhs &gt; rhs.
@@ -319,23 +308,18 @@ public class NativeLibrary {
 		public Map<String, String> getTags() {
 			return tags;
 		}
-		
 		public boolean isText() {
 			return !getName().isEmpty();
 		}
-		
 		public int getOrder() {
 			return order;
 		}
-		
 		public void setLabelLatLon(LatLon labelLatLon) {
 			this.labelLatLon = labelLatLon;
 		}
-		
 		public LatLon getLabelLatLon() {
 			return labelLatLon;
 		}
-		
 		public void setOrder(int order) {
 			this.order = order;
 		}
@@ -360,15 +344,12 @@ public class NativeLibrary {
 		public void setVisible(boolean visible) {
 			this.visible = visible;
 		}
-		
 		public boolean isVisible() {
 			return visible;
 		}
-		
 		public TIntArrayList getY() {
 			return y;
 		}
-		
 		public void setBbox(int left, int top, int right, int bottom) {
 			bbox = new QuadRect(left, top, right, bottom);
 		}
@@ -376,11 +357,9 @@ public class NativeLibrary {
 		public QuadRect getBbox() {
 			return bbox;
 		}
-		
 		public void setNativeId(long id) {
 			setId(id);
 		}
-
 		public void putTag(String t, String v) {
 			tags.put(t, v);
 		}

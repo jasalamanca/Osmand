@@ -81,36 +81,27 @@ public class SearchAddressFragment extends Fragment {
 			if (getApplication().accessibilityEnabled())
 				menuItem.setTitle(R.string.shared_string_ok);
 			menuItem = menuItem.setIcon(R.drawable.ic_action_done);
-			menuItem.setOnMenuItemClickListener(new OnMenuItemClickListener() {
-				@Override
-				public boolean onMenuItemClick(MenuItem item) {
-					select(SELECT_POINT);
-					return true;
-				}
-			});
+			menuItem.setOnMenuItemClickListener(item -> {
+                select(SELECT_POINT);
+                return true;
+            });
 		} else {
 			MenuItem menuItem = menu.add(0, SHOW_ON_MAP, 0, R.string.shared_string_show_on_map);
 			menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 			menuItem = menuItem.setIcon(R.drawable.ic_action_marker_dark);
 
-			menuItem.setOnMenuItemClickListener(new OnMenuItemClickListener() {
-				@Override
-				public boolean onMenuItemClick(MenuItem item) {
-					select(SHOW_ON_MAP);
-					return true;
-				}
-			});
+			menuItem.setOnMenuItemClickListener(item -> {
+                select(SHOW_ON_MAP);
+                return true;
+            });
 			if (ENABLE_ONLINE_ADDRESS) {
 				menuItem = menu.add(0, ONLINE_SEARCH, 0, R.string.search_online_address);
 				menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 				menuItem = menuItem.setIcon(R.drawable.ic_world_globe_dark);
-				menuItem.setOnMenuItemClickListener(new OnMenuItemClickListener() {
-					@Override
-					public boolean onMenuItemClick(MenuItem item) {
-						((SearchActivity) getActivity()).startSearchAddressOnline();
-						return true;
-					}
-				});
+				menuItem.setOnMenuItemClickListener(item -> {
+                    ((SearchActivity) getActivity()).startSearchAddressOnline();
+                    return true;
+                });
 			}
 		}
 	}
@@ -145,102 +136,69 @@ public class SearchAddressFragment extends Fragment {
 	}
 	
 	private void attachListeners() {
-		countryButton.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				startActivity(createIntent(SearchRegionByNameActivity.class));
-			}
-		});
-		cityButton.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				startActivity(createIntent(SearchCityByNameActivity.class));
-			}
-		});
-		streetButton.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				startActivity(createIntent(SearchStreetByNameActivity.class));
-			}
-		});
-		buildingButton.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				if(radioBuilding){
-					startActivity(createIntent(SearchBuildingByNameActivity.class));
-				} else {
-					startActivity(createIntent(SearchStreet2ByNameActivity.class));
-				}
-			}
-		});
+		countryButton.setOnClickListener(v -> startActivity(createIntent(SearchRegionByNameActivity.class)));
+		cityButton.setOnClickListener(v -> startActivity(createIntent(SearchCityByNameActivity.class)));
+		streetButton.setOnClickListener(v -> startActivity(createIntent(SearchStreetByNameActivity.class)));
+		buildingButton.setOnClickListener(v -> {
+            if(radioBuilding){
+                startActivity(createIntent(SearchBuildingByNameActivity.class));
+            } else {
+                startActivity(createIntent(SearchStreet2ByNameActivity.class));
+            }
+        });
 		Drawable icon = getApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_remove_dark);
 		findViewById(R.id.ResetBuilding).setBackground(icon);
-		findViewById(R.id.ResetBuilding).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				building = null;
-				searchPoint = null;
-				osmandSettings.setLastSearchedBuilding("", null);
-				//also empties Point, REMOVES intersecting street
-				updateUI();
-			}
-		 });
+		findViewById(R.id.ResetBuilding).setOnClickListener(v -> {
+            building = null;
+            searchPoint = null;
+            osmandSettings.setLastSearchedBuilding("", null);
+            //also empties Point, REMOVES intersecting street
+            updateUI();
+        });
 		findViewById(R.id.ResetStreet).setBackground(icon);
-		 findViewById(R.id.ResetStreet).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				street = null;
-				street2 = null;
-				building = null;
-				searchPoint = null;
-				osmandSettings.setLastSearchedStreet("", null);
-				//also empties Building, (Intersecting Street), Point
-				updateUI();
-			}
-		 });
+		 findViewById(R.id.ResetStreet).setOnClickListener(v -> {
+             street = null;
+             street2 = null;
+             building = null;
+             searchPoint = null;
+             osmandSettings.setLastSearchedStreet("", null);
+             //also empties Building, (Intersecting Street), Point
+             updateUI();
+         });
 		 findViewById(R.id.ResetCity).setBackground(icon);
-		 findViewById(R.id.ResetCity).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				postcode = null;
-				city = null;
-				street = null;
-				street2 = null;
-				building = null;
-				searchPoint = null;
-				osmandSettings.setLastSearchedCity(-1L, "", null);
-				//also empties Street, (Intersecting Street), Building, Point, REMOVES Postcode
-				updateUI();
-			}
-		 });
+		 findViewById(R.id.ResetCity).setOnClickListener(v -> {
+             postcode = null;
+             city = null;
+             street = null;
+             street2 = null;
+             building = null;
+             searchPoint = null;
+             osmandSettings.setLastSearchedCity(-1L, "", null);
+             //also empties Street, (Intersecting Street), Building, Point, REMOVES Postcode
+             updateUI();
+         });
 		 findViewById(R.id.ResetCountry).setBackground(icon);
-		 findViewById(R.id.ResetCountry).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				region = null;
-				postcode = null;
-				city = null;
-				street = null;
-				street2 = null;
-				building = null;
-				searchPoint = null;
-				osmandSettings.setLastSearchedRegion("", null);
-				// also empties City, Postcode, Street, (Intersecting street), Building, Point
-				updateUI();
-			}
-		});
-		((RadioGroup)findViewById(R.id.RadioGroup)).setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
-			@Override
-			public void onCheckedChanged(RadioGroup group, int checkedId) {
-				SearchAddressFragment.this.radioBuilding = checkedId == R.id.RadioBuilding;
-				if(radioBuilding){
-					SearchAddressFragment.this.street2 = null;
-				} else {
-					SearchAddressFragment.this.building = null;
-				}
-				updateBuildingSection();
-			}
-		});
+		 findViewById(R.id.ResetCountry).setOnClickListener(v -> {
+             region = null;
+             postcode = null;
+             city = null;
+             street = null;
+             street2 = null;
+             building = null;
+             searchPoint = null;
+             osmandSettings.setLastSearchedRegion("", null);
+             // also empties City, Postcode, Street, (Intersecting street), Building, Point
+             updateUI();
+         });
+		((RadioGroup)findViewById(R.id.RadioGroup)).setOnCheckedChangeListener((group, checkedId) -> {
+            SearchAddressFragment.this.radioBuilding = checkedId == R.id.RadioBuilding;
+            if(radioBuilding){
+                SearchAddressFragment.this.street2 = null;
+            } else {
+                SearchAddressFragment.this.building = null;
+            }
+            updateBuildingSection();
+        });
 	}
 	
 	public static class AddressInformation {

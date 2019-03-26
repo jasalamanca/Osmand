@@ -86,18 +86,8 @@ public class TrackDetailsMenu {
 				} else {
 					toolbarController.setTitle(mapActivity.getString(R.string.rendering_category_details));
 				}
-				toolbarController.setOnBackButtonClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						mapActivity.onBackPressed();
-					}
-				});
-				toolbarController.setOnCloseButtonClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						hide();
-					}
-				});
+				toolbarController.setOnBackButtonClickListener(v -> mapActivity.onBackPressed());
+				toolbarController.setOnCloseButtonClickListener(v -> hide());
 				mapActivity.showTopToolbar(toolbarController);
 			}
 
@@ -475,14 +465,11 @@ public class TrackDetailsMenu {
 			}
 		}
 
-		Collections.sort(dataSets, new Comparator<ILineDataSet>() {
-			@Override
-			public int compare(ILineDataSet ds1, ILineDataSet ds2) {
-				OrderedLineDataSet dataSet1 = (OrderedLineDataSet) ds1;
-				OrderedLineDataSet dataSet2 = (OrderedLineDataSet) ds2;
-				return dataSet1.getPriority() > dataSet2.getPriority() ? -1 : (dataSet1.getPriority() == dataSet2.getPriority() ? 0 : 1);
-			}
-		});
+		Collections.sort(dataSets, (ds1, ds2) -> {
+            OrderedLineDataSet dataSet1 = (OrderedLineDataSet) ds1;
+            OrderedLineDataSet dataSet2 = (OrderedLineDataSet) ds2;
+            return dataSet1.getPriority() > dataSet2.getPriority() ? -1 : (dataSet1.getPriority() == dataSet2.getPriority() ? 0 : 1);
+        });
 		chart.setData(new LineData(dataSets));
 		updateChart(chart);
 
@@ -517,28 +504,22 @@ public class TrackDetailsMenu {
 		yAxisIcon.setImageDrawable(GPXDataSetType.getImageDrawable(app, gpxItem.chartTypes));
 		yAxisTitle.setText(GPXDataSetType.getName(app, gpxItem.chartTypes));
 		if (availableTypes.size() > 0) {
-			yAxis.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					final PopupMenu optionsMenu = new PopupMenu(mapActivity, v);
-					DirectionsDialogs.setupPopUpMenuIcon(optionsMenu);
-					for (final GPXDataSetType[] types : availableTypes) {
-						MenuItem menuItem = optionsMenu.getMenu()
-								.add(GPXDataSetType.getName(app, types))
-								.setIcon(GPXDataSetType.getImageDrawable(app, types));
-						menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-							@Override
-							public boolean onMenuItemClick(MenuItem mItem) {
-								gpxItem.chartTypes = types;
-								update();
-								return true;
-							}
-						});
+			yAxis.setOnClickListener(v -> {
+                final PopupMenu optionsMenu = new PopupMenu(mapActivity, v);
+                DirectionsDialogs.setupPopUpMenuIcon(optionsMenu);
+                for (final GPXDataSetType[] types : availableTypes) {
+                    MenuItem menuItem = optionsMenu.getMenu()
+                            .add(GPXDataSetType.getName(app, types))
+                            .setIcon(GPXDataSetType.getImageDrawable(app, types));
+                    menuItem.setOnMenuItemClickListener(mItem -> {
+                        gpxItem.chartTypes = types;
+                        update();
+                        return true;
+                    });
 
-					}
-					optionsMenu.show();
-				}
-			});
+                }
+                optionsMenu.show();
+            });
 			yAxisArrow.setVisibility(View.VISIBLE);
 		} else {
 			yAxis.setOnClickListener(null);
@@ -558,31 +539,25 @@ public class TrackDetailsMenu {
 			xAxisTitle.setText(app.getString(R.string.distance));
 		}
 		if (analysis.isTimeSpecified() && !hasSlopeChart) {
-			xAxis.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					final PopupMenu optionsMenu = new PopupMenu(mapActivity, v);
-					DirectionsDialogs.setupPopUpMenuIcon(optionsMenu);
-					final GPXDataSetAxisType type;
-					if (gpxItem.chartAxisType == GPXDataSetAxisType.TIME) {
-						type = GPXDataSetAxisType.DISTANCE;
-					} else {
-						type = GPXDataSetAxisType.TIME;
-					}
-					MenuItem menuItem = optionsMenu.getMenu().add(type.getStringId()).setIcon(type.getImageDrawable(app));
-					menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-						@Override
-						public boolean onMenuItemClick(MenuItem mItem) {
-							gpxItem.chartAxisType = type;
-							gpxItem.chartHighlightPos = -1;
-							gpxItem.chartMatrix = null;
-							update();
-							return true;
-						}
-					});
-					optionsMenu.show();
-				}
-			});
+			xAxis.setOnClickListener(v -> {
+                final PopupMenu optionsMenu = new PopupMenu(mapActivity, v);
+                DirectionsDialogs.setupPopUpMenuIcon(optionsMenu);
+                final GPXDataSetAxisType type;
+                if (gpxItem.chartAxisType == GPXDataSetAxisType.TIME) {
+                    type = GPXDataSetAxisType.DISTANCE;
+                } else {
+                    type = GPXDataSetAxisType.TIME;
+                }
+                MenuItem menuItem = optionsMenu.getMenu().add(type.getStringId()).setIcon(type.getImageDrawable(app));
+                menuItem.setOnMenuItemClickListener(mItem -> {
+                    gpxItem.chartAxisType = type;
+                    gpxItem.chartHighlightPos = -1;
+                    gpxItem.chartMatrix = null;
+                    update();
+                    return true;
+                });
+                optionsMenu.show();
+            });
 			xAxisArrow.setVisibility(View.VISIBLE);
 		} else {
 			xAxis.setOnClickListener(null);

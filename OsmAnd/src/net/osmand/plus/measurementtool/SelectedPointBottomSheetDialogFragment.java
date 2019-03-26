@@ -47,51 +47,36 @@ public class SelectedPointBottomSheetDialogFragment extends MenuBottomSheetDialo
 		((ImageView) mainView.findViewById(R.id.add_point_after_icon)).setImageDrawable(getContentIcon(R.drawable.ic_action_addpoint_above));
 		((ImageView) mainView.findViewById(R.id.add_point_before_icon)).setImageDrawable(getContentIcon(R.drawable.ic_action_addpoint_below));
 
-		mainView.findViewById(R.id.move_point_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (listener != null) {
-					listener.moveOnClick();
-				}
-				dismiss();
-			}
-		});
-		mainView.findViewById(R.id.delete_point_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (listener != null) {
-					listener.deleteOnClick();
-				}
-				dismiss();
-			}
-		});
-		mainView.findViewById(R.id.add_point_after_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (listener != null) {
-					listener.addPointAfterOnClick();
-				}
-				dismiss();
-			}
-		});
-		mainView.findViewById(R.id.add_point_before_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (listener != null) {
-					listener.addPointBeforeOnClick();
-				}
-				dismiss();
-			}
-		});
-		mainView.findViewById(R.id.cancel_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (listener != null) {
-					listener.onClearSelection();
-				}
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.move_point_row).setOnClickListener(view -> {
+            if (listener != null) {
+                listener.moveOnClick();
+            }
+            dismiss();
+        });
+		mainView.findViewById(R.id.delete_point_row).setOnClickListener(view -> {
+            if (listener != null) {
+                listener.deleteOnClick();
+            }
+            dismiss();
+        });
+		mainView.findViewById(R.id.add_point_after_row).setOnClickListener(view -> {
+            if (listener != null) {
+                listener.addPointAfterOnClick();
+            }
+            dismiss();
+        });
+		mainView.findViewById(R.id.add_point_before_row).setOnClickListener(view -> {
+            if (listener != null) {
+                listener.addPointBeforeOnClick();
+            }
+            dismiss();
+        });
+		mainView.findViewById(R.id.cancel_row).setOnClickListener(view -> {
+            if (listener != null) {
+                listener.onClearSelection();
+            }
+            dismiss();
+        });
 
 		List<WptPt> points = measurementLayer.getEditingCtx().getPoints();
 		int pos = measurementLayer.getEditingCtx().getSelectedPointPosition();

@@ -400,25 +400,19 @@ public class GpxImportHelper {
 			new AlertDialog.Builder(activity)
 					.setTitle(R.string.shared_string_import2osmand)
 					.setMessage(R.string.import_gpx_failed_descr)
-					.setNeutralButton(R.string.shared_string_permissions, new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-							intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-							Uri uri = Uri.fromParts("package", app.getPackageName(), null);
-							intent.setData(uri);
-							app.startActivity(intent);
-							if (gpxImportCompleteListener != null) {
-								gpxImportCompleteListener.onComplete(false);
-							}
+					.setNeutralButton(R.string.shared_string_permissions, (dialog, which) -> {
+						Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+						intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+						Uri uri = Uri.fromParts("package", app.getPackageName(), null);
+						intent.setData(uri);
+						app.startActivity(intent);
+						if (gpxImportCompleteListener != null) {
+							gpxImportCompleteListener.onComplete(false);
 						}
 					})
-					.setNegativeButton(R.string.shared_string_cancel, new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							if (gpxImportCompleteListener != null) {
-								gpxImportCompleteListener.onComplete(false);
-							}
+					.setNegativeButton(R.string.shared_string_cancel, (dialog, which) -> {
+						if (gpxImportCompleteListener != null) {
+							gpxImportCompleteListener.onComplete(false);
 						}
 					})
 					.show();
@@ -527,17 +521,14 @@ public class GpxImportHelper {
 								  final boolean useImportDir, final boolean forceImportFavourites) {
 		if (gpxFile == null || gpxFile.isPointsEmpty()) {
 			if (forceImportFavourites) {
-				final DialogInterface.OnClickListener importAsTrackListener = new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						switch (which) {
-							case DialogInterface.BUTTON_POSITIVE:
-								handleResult(gpxFile, fileName, save, useImportDir, true);
-								break;
-							case DialogInterface.BUTTON_NEGATIVE:
-								dialog.dismiss();
-								break;
-						}
+				final DialogInterface.OnClickListener importAsTrackListener = (dialog, which) -> {
+					switch (which) {
+						case DialogInterface.BUTTON_POSITIVE:
+							handleResult(gpxFile, fileName, save, useImportDir, true);
+							break;
+						case DialogInterface.BUTTON_NEGATIVE:
+							dialog.dismiss();
+							break;
 					}
 				};
 
@@ -672,27 +663,16 @@ public class GpxImportHelper {
 			text.setSpan(new ForegroundColorSpan(descrColor), fileName.length() + 1, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 			((TextView) mainView.findViewById(R.id.import_gpx_description)).setText(text);
 
-			mainView.findViewById(R.id.import_as_favorites_row).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					gpxImportHelper.importFavoritesImpl(gpxFile, fileName, false);
-					dismiss();
-				}
+			mainView.findViewById(R.id.import_as_favorites_row).setOnClickListener(view -> {
+				gpxImportHelper.importFavoritesImpl(gpxFile, fileName, false);
+				dismiss();
 			});
-			mainView.findViewById(R.id.import_as_gpx_row).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					gpxImportHelper.handleResult(gpxFile, fileName, save, useImportDir, false);
-					dismiss();
-				}
+			mainView.findViewById(R.id.import_as_gpx_row).setOnClickListener(view -> {
+				gpxImportHelper.handleResult(gpxFile, fileName, save, useImportDir, false);
+				dismiss();
 			});
 
-			mainView.findViewById(R.id.cancel_row).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					dismiss();
-				}
-			});
+			mainView.findViewById(R.id.cancel_row).setOnClickListener(view -> dismiss());
 
 			setupHeightAndBackground(mainView, R.id.import_gpx_scroll_view);
 

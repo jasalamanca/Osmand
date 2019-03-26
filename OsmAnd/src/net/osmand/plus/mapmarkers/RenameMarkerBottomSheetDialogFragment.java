@@ -71,26 +71,18 @@ public class RenameMarkerBottomSheetDialogFragment extends BottomSheetDialogFrag
 			((OsmandTextFieldBoxes) textBox).activate(true);
 		}
 
-		mainView.findViewById(R.id.save_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				String name = nameEditText.getText().toString();
-				if (name.replaceAll("\\s", "").length() > 0) {
-					marker.setName(name);
-					mapActivity.getMyApplication().getMapMarkersHelper().updateMapMarker(marker, true);
-					dismiss();
-				} else {
-					nameEditText.setError(getString(R.string.wrong_input));
-				}
-			}
-		});
+		mainView.findViewById(R.id.save_button).setOnClickListener(view -> {
+            String name = nameEditText.getText().toString();
+            if (name.replaceAll("\\s", "").length() > 0) {
+                marker.setName(name);
+                mapActivity.getMyApplication().getMapMarkersHelper().updateMapMarker(marker, true);
+                dismiss();
+            } else {
+                nameEditText.setError(getString(R.string.wrong_input));
+            }
+        });
 
-		mainView.findViewById(R.id.close_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.close_button).setOnClickListener(view -> dismiss());
 
 		final int screenHeight = AndroidUtils.getScreenHeight(getActivity());
 		final int statusBarHeight = AndroidUtils.getStatusBarHeight(getActivity());

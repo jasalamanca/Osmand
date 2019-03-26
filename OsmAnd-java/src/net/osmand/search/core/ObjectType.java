@@ -2,29 +2,24 @@ package net.osmand.search.core;
 
 public enum ObjectType {
 	// ADDRESS
-	CITY(true), VILLAGE(true), POSTCODE(true), STREET(true), HOUSE(true), STREET_INTERSECTION(true),
+	CITY, VILLAGE, POSTCODE, STREET, HOUSE, STREET_INTERSECTION,
 	// POI
-	POI_TYPE(false), POI(true),
+	POI_TYPE, POI,
 	// LOCATION
-	LOCATION(true), PARTIAL_LOCATION(false),
+	LOCATION, PARTIAL_LOCATION,
 	// UI OBJECTS
-	FAVORITE(true), FAVORITE_GROUP(false), WPT(true), RECENT_OBJ(true),
+	FAVORITE, FAVORITE_GROUP, WPT, RECENT_OBJ,
 
 	// ONLINE SEARCH
-	ONLINE_SEARCH(true),
+	ONLINE_SEARCH,
 	
-	REGION(true),
+	REGION,
 
-	SEARCH_STARTED(false),
-	SEARCH_FINISHED(false),
-	SEARCH_API_FINISHED(false),
-	SEARCH_API_REGION_FINISHED(false),
-	UNKNOWN_NAME_FILTER(false);
-
-//	private final boolean hasLocation;
-	ObjectType(boolean location) {
-//		this.hasLocation = location;
-	}
+	SEARCH_STARTED,
+	SEARCH_FINISHED,
+	SEARCH_API_FINISHED,
+	SEARCH_API_REGION_FINISHED,
+	UNKNOWN_NAME_FILTER;
 
 	public static boolean isAddress(ObjectType t) {
 		return t == CITY || t == VILLAGE || t == POSTCODE || t == STREET || t == HOUSE || t == STREET_INTERSECTION;

@@ -70,12 +70,7 @@ public class SearchPoiFilterFragment
 
 	private void setupOptions(ImageView options) {
 		options.setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_overflow_menu_white));
-		options.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				showOptionsMenu(v);
-			}
-		});
+		options.setOnClickListener(v -> showOptionsMenu(v));
 	}
 
 	private void setupSearchEditText(EditText e) {
@@ -98,19 +93,16 @@ public class SearchPoiFilterFragment
 				currentTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, s.toString().trim());
 			}
 		});
-		searchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-			@Override
-			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-				boolean handled = false;
-				if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-					final PoiUIFilter poiFilter = getApp().getPoiFilters().getSearchByNamePOIFilter();
-					poiFilter.setFilterByName(searchEditText.getText().toString());
-					showFilterActivity(poiFilter.getFilterId());
-					handled = true;
-				}
-				return handled;
-			}
-		});
+		searchEditText.setOnEditorActionListener((v, actionId, event) -> {
+            boolean handled = false;
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                final PoiUIFilter poiFilter = getApp().getPoiFilters().getSearchByNamePOIFilter();
+                poiFilter.setFilterByName(searchEditText.getText().toString());
+                showFilterActivity(poiFilter.getFilterId());
+                handled = true;
+            }
+            return handled;
+        });
 	}
 
 	@Override
@@ -145,13 +137,7 @@ public class SearchPoiFilterFragment
 			List<AbstractPoiType> res = app.getPoiTypes().getAllTypesTranslatedNames(
 					new CollatorStringMatcher(s, StringMatcherMode.CHECK_STARTS_FROM_SPACE));
 			final Collator inst = Collator.getInstance();
-			Collections.sort(res, new Comparator<AbstractPoiType>() {
-				@Override
-				public int compare(AbstractPoiType lhs, AbstractPoiType rhs) {
-					return inst.compare(lhs.getTranslation(), rhs.getTranslation());
-				}
-
-			});
+			Collections.sort(res, (lhs, rhs) -> inst.compare(lhs.getTranslation(), rhs.getTranslation()));
             filters.addAll(res);
 			filters.add(poiFilters.getSearchByNamePOIFilter());
 		}
@@ -309,15 +295,12 @@ public class SearchPoiFilterFragment
 
 		MenuItem item = optionsMenu.getMenu().add(R.string.poi_filter_custom_filter)
 				.setIcon(iconsCache.getThemedIcon(R.drawable.ic_action_filter_dark));
-		item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-			@Override
-			public boolean onMenuItemClick(MenuItem item) {
-				PoiUIFilter filter = getApp().getPoiFilters().getCustomPOIFilter();
-				filter.clearFilter();
-				showFilterActivity(filter.getFilterId());
-				return true;
-			}
-		});
+		item.setOnMenuItemClickListener(item1 -> {
+            PoiUIFilter filter = getApp().getPoiFilters().getCustomPOIFilter();
+            filter.clearFilter();
+            showFilterActivity(filter.getFilterId());
+            return true;
+        });
 		optionsMenu.show();
 
 	}

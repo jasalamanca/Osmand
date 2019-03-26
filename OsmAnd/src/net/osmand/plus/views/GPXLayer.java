@@ -173,27 +173,21 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 
 	@Override
 	public void onPrepareBufferImage(Canvas canvas, RotatedTileBox tileBox, DrawSettings settings) {
-//		if (points != null) {
-//			updatePaints(0, false, false, settings, tileBox);
-//			for (TrkSegment ts : points)
-//				ts.drawRenderers(view.getZoom(), paint, canvas, tileBox);
-//		} else {
-			List<SelectedGpxFile> selectedGPXFiles = selectedGpxHelper.getSelectedGPXFiles();
-			cache.clear();
-			currentTrackColor = view.getSettings().CURRENT_TRACK_COLOR.get();
-			if (!selectedGPXFiles.isEmpty()) {
-				drawSelectedFilesSegments(canvas, tileBox, selectedGPXFiles, settings);
-				canvas.rotate(-tileBox.getRotate(), tileBox.getCenterPixelX(), tileBox.getCenterPixelY());
-				if (trackChartPoints != null) {
-					drawXAxisPoints(canvas, tileBox);
-				}
-				drawSelectedFilesSplits(canvas, tileBox, selectedGPXFiles, settings);
-				drawSelectedFilesPoints(canvas, tileBox, selectedGPXFiles);
+		List<SelectedGpxFile> selectedGPXFiles = selectedGpxHelper.getSelectedGPXFiles();
+		cache.clear();
+		currentTrackColor = view.getSettings().CURRENT_TRACK_COLOR.get();
+		if (!selectedGPXFiles.isEmpty()) {
+			drawSelectedFilesSegments(canvas, tileBox, selectedGPXFiles, settings);
+			canvas.rotate(-tileBox.getRotate(), tileBox.getCenterPixelX(), tileBox.getCenterPixelY());
+			if (trackChartPoints != null) {
+				drawXAxisPoints(canvas, tileBox);
 			}
-			if (textLayer != null && textLayer.isVisible()) {
-				textLayer.putData(this, cache);
-			}
-//		}
+			drawSelectedFilesSplits(canvas, tileBox, selectedGPXFiles);
+			drawSelectedFilesPoints(canvas, tileBox, selectedGPXFiles);
+		}
+		if (textLayer != null && textLayer.isVisible()) {
+			textLayer.putData(this, cache);
+		}
 	}
 
 	private int updatePaints(int color, boolean routePoints, boolean currentTrack, DrawSettings nightMode, RotatedTileBox tileBox) {
@@ -259,8 +253,7 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 		return Arrays.hashCode(o);
 	}
 
-	private void drawSelectedFilesSplits(Canvas canvas, RotatedTileBox tileBox, List<SelectedGpxFile> selectedGPXFiles,
-										 DrawSettings settings) {
+	private void drawSelectedFilesSplits(Canvas canvas, RotatedTileBox tileBox, List<SelectedGpxFile> selectedGPXFiles) {
 		if (tileBox.getZoom() >= startZoom) {
 			// request to load
 			for (SelectedGpxFile g : selectedGPXFiles) {
@@ -278,13 +271,13 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 					paintInnerRect.setColor(color);
 					paintInnerRect.setAlpha(179);
 					List<GpxDisplayItem> items = groups.get(0).getModifiableList();
-					drawSplitItems(canvas, tileBox, items, settings);
+					drawSplitItems(canvas, tileBox, items);
 				}
 			}
 		}
 	}
 
-	private void drawSplitItems(Canvas canvas, RotatedTileBox tileBox, List<GpxDisplayItem> items, DrawSettings settings) {
+	private void drawSplitItems(Canvas canvas, RotatedTileBox tileBox, List<GpxDisplayItem> items) {
 		final QuadRect latLonBounds = tileBox.getLatLonBounds();
 		int r = (int) (12 * tileBox.getDensity());
 		paintTextIcon.setTextSize(r);
@@ -592,7 +585,7 @@ public class GPXLayer extends OsmandMapLayer implements ContextMenuLayer.IContex
 		return new LatLon(o.lat, o.lon);
 	}
 	@Override
-	public int getTextShift(WptPt o, RotatedTileBox rb) {
+	public int getTextShift(RotatedTileBox rb) {
 		return (int) (16 * rb.getDensity());
 	}
 	@Override

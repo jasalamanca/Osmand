@@ -162,13 +162,10 @@ public class MapActivityLayers {
 		contextMenuLayer.setMapQuickActionLayer(mapQuickActionLayer);
 		mapControlsLayer.setMapQuickActionLayer(mapQuickActionLayer);
 
-        StateChangedListener<Integer> transparencyListener = new StateChangedListener<Integer>() {
-            @Override
-            public void stateChanged(Integer change) {
-                mapVectorLayer.setAlpha(change);
-                mapView.refreshMap();
-            }
-        };
+        StateChangedListener<Integer> transparencyListener = change -> {
+			mapVectorLayer.setAlpha(change);
+			mapView.refreshMap();
+		};
 		app.getSettings().MAP_TRANSPARENCY.addListener(transparencyListener);
 
 		OsmandPlugin.createLayers(activity);
@@ -196,31 +193,28 @@ public class MapActivityLayers {
 
 	public AlertDialog showGPXFileLayer(List<String> files, final OsmandMapTileView mapView) {
 		final OsmandSettings settings = getApplication().getSettings();
-		CallbackWithObject<GPXFile[]> callbackWithObject = new CallbackWithObject<GPXFile[]>() {
-			@Override
-			public boolean processResult(GPXFile[] result) {
-				WptPt locToShow = null;
-				for (GPXFile g : result) {
-					if (g.showCurrentTrack) {
-						if (!settings.SAVE_TRACK_TO_GPX.get() && !
-								settings.SAVE_GLOBAL_TRACK_TO_GPX.get()) {
-							Toast.makeText(activity,
-									R.string.gpx_monitoring_disabled_warn, Toast.LENGTH_LONG).show();
-						}
-						break;
-					} else {
-						locToShow = g.findPointToShow();
+		CallbackWithObject<GPXFile[]> callbackWithObject = result -> {
+			WptPt locToShow = null;
+			for (GPXFile g : result) {
+				if (g.showCurrentTrack) {
+					if (!settings.SAVE_TRACK_TO_GPX.get() && !
+							settings.SAVE_GLOBAL_TRACK_TO_GPX.get()) {
+						Toast.makeText(activity,
+								R.string.gpx_monitoring_disabled_warn, Toast.LENGTH_LONG).show();
 					}
+					break;
+				} else {
+					locToShow = g.findPointToShow();
 				}
-				getApplication().getSelectedGpxHelper().setGpxFileToDisplay(result);
-				if (locToShow != null) {
-					mapView.getAnimatedDraggingThread().startMoving(locToShow.lat, locToShow.lon,
-							mapView.getZoom(), true);
-				}
-				mapView.refreshMap();
-				activity.getDashboard().refreshContent(true);
-				return true;
 			}
+			getApplication().getSelectedGpxHelper().setGpxFileToDisplay(result);
+			if (locToShow != null) {
+				mapView.getAnimatedDraggingThread().startMoving(locToShow.lat, locToShow.lon,
+						mapView.getZoom(), true);
+			}
+			mapView.refreshMap();
+			activity.getDashboard().refreshContent(true);
+			return true;
 		};
 		return GpxUiHelper.selectGPXFiles(files, activity, callbackWithObject);
 	}
@@ -244,56 +238,37 @@ public class MapActivityLayers {
 		listView.setDivider(null);
 		listView.setClickable(true);
 		listView.setAdapter(listAdapter);
-		listView.setOnItemClickListener(new ListView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				ContextMenuItem item = listAdapter.getItem(position);
-				item.setSelected(!item.getSelected());
-				item.getItemClickListener().onContextMenuClick(listAdapter, position, position, item.getSelected(), null);
-				listAdapter.notifyDataSetChanged();
-			}
+		listView.setOnItemClickListener((parent, view, position, id) -> {
+			ContextMenuItem item = listAdapter.getItem(position);
+			item.setSelected(!item.getSelected());
+			item.getItemClickListener().onContextMenuClick(listAdapter, position, position, item.getSelected(), null);
+			listAdapter.notifyDataSetChanged();
 		});
 		builder.setView(listView)
 				.setTitle(R.string.show_poi_over_map)
-				.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						for (int i = 0; i < listAdapter.getCount(); i++) {
-							ContextMenuItem item = listAdapter.getItem(i);
-								PoiUIFilter filter = list.get(i);
-							if (item.getSelected()) {
-								getApplication().getPoiFilters().addSelectedPoiFilter(filter);
-							} else {
-								getApplication().getPoiFilters().removeSelectedPoiFilter(filter);
-							}
+				.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> {
+					for (int i = 0; i < listAdapter.getCount(); i++) {
+						ContextMenuItem item = listAdapter.getItem(i);
+							PoiUIFilter filter = list.get(i);
+						if (item.getSelected()) {
+							getApplication().getPoiFilters().addSelectedPoiFilter(filter);
+						} else {
+							getApplication().getPoiFilters().removeSelectedPoiFilter(filter);
 						}
-						mapView.refreshMap();
 					}
+					mapView.refreshMap();
 				})
 				.setNegativeButton(R.string.shared_string_cancel, null)
 				// TODO go to single choice dialog
-				.setNeutralButton(" ", new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						showSingleChoicePoiFilterDialog(mapView, listener);
-					}
-				});
+				.setNeutralButton(" ", (dialog, which) -> showSingleChoicePoiFilterDialog(mapView, listener));
 		final AlertDialog alertDialog = builder.create();
-		alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
-			@Override
-			public void onShow(DialogInterface dialog) {
-				Button neutralButton = alertDialog.getButton(DialogInterface.BUTTON_NEUTRAL);
-				Drawable drawable = app.getIconsCache().getThemedIcon(R.drawable.ic_action_singleselect);
-				neutralButton.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
-				neutralButton.setContentDescription(app.getString(R.string.shared_string_filters));
-			}
+		alertDialog.setOnShowListener(dialog -> {
+			Button neutralButton = alertDialog.getButton(DialogInterface.BUTTON_NEUTRAL);
+			Drawable drawable = app.getIconsCache().getThemedIcon(R.drawable.ic_action_singleselect);
+			neutralButton.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
+			neutralButton.setContentDescription(app.getString(R.string.shared_string_filters));
 		});
-		alertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-			@Override
-			public void onDismiss(DialogInterface dialog) {
-				listener.dismiss();
-			}
-		});
+		alertDialog.setOnDismissListener(dialog -> listener.dismiss());
 		alertDialog.show();
 	}
 
@@ -316,48 +291,31 @@ public class MapActivityLayers {
 		final ArrayAdapter<ContextMenuItem> listAdapter =
 				adapter.createListAdapter(activity, app.getSettings().isLightContent());
 		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-		builder.setAdapter(listAdapter, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				PoiUIFilter pf = list.get(which);
-				String filterId = pf.getFilterId();
-				if (filterId.equals(PoiUIFilter.CUSTOM_FILTER_ID)) {
-					if (activity.getDashboard().isVisible()) {
-						activity.getDashboard().hideDashboard();
-					}
-					activity.showQuickSearch(ShowQuickSearchMode.NEW, true);
-				} else {
-					getApplication().getPoiFilters().clearSelectedPoiFilters();
-					getApplication().getPoiFilters().addSelectedPoiFilter(pf);
-					mapView.refreshMap();
+		builder.setAdapter(listAdapter, (dialog, which) -> {
+			PoiUIFilter pf = list.get(which);
+			String filterId = pf.getFilterId();
+			if (filterId.equals(PoiUIFilter.CUSTOM_FILTER_ID)) {
+				if (activity.getDashboard().isVisible()) {
+					activity.getDashboard().hideDashboard();
 				}
+				activity.showQuickSearch(ShowQuickSearchMode.NEW, true);
+			} else {
+				getApplication().getPoiFilters().clearSelectedPoiFilters();
+				getApplication().getPoiFilters().addSelectedPoiFilter(pf);
+				mapView.refreshMap();
 			}
-
 		});
 		builder.setTitle(R.string.show_poi_over_map);
 		builder.setNegativeButton(R.string.shared_string_dismiss, null);
-		builder.setNeutralButton(" ", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				showMultichoicePoiFilterDialog(mapView, listener);
-			}
-		});
+		builder.setNeutralButton(" ", (dialog, which) -> showMultichoicePoiFilterDialog(mapView, listener));
 		final AlertDialog alertDialog = builder.create();
-		alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
-			@Override
-			public void onShow(DialogInterface dialog) {
-				Button neutralButton = alertDialog.getButton(DialogInterface.BUTTON_NEUTRAL);
-				Drawable drawable = app.getIconsCache().getThemedIcon(R.drawable.ic_action_multiselect);
-				neutralButton.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
-				neutralButton.setContentDescription(app.getString(R.string.apply_filters));
-			}
+		alertDialog.setOnShowListener(dialog -> {
+			Button neutralButton = alertDialog.getButton(DialogInterface.BUTTON_NEUTRAL);
+			Drawable drawable = app.getIconsCache().getThemedIcon(R.drawable.ic_action_multiselect);
+			neutralButton.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
+			neutralButton.setContentDescription(app.getString(R.string.apply_filters));
 		});
-		alertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-			@Override
-			public void onDismiss(DialogInterface dialog) {
-				listener.dismiss();
-			}
-		});
+		alertDialog.setOnDismissListener(dialog -> listener.dismiss());
 		alertDialog.show();
 	}
 
@@ -369,14 +327,10 @@ public class MapActivityLayers {
 		ContextMenuItem.ItemBuilder builder = new ContextMenuItem.ItemBuilder();
 		if (multichoice) {
 			builder.setSelected(getApplication().getPoiFilters().isPoiFilterSelected(f));
-			builder.setListener(new ContextMenuAdapter.ItemClickListener() {
-				@Override
-				public boolean onContextMenuClick(ArrayAdapter<ContextMenuItem> adapter,
-												  int itemId, int position, boolean isChecked, int[] viewCoordinates) {
-					ContextMenuItem item = adapter.getItem(position);
-					item.setSelected(isChecked);
-					return false;
-				}
+			builder.setListener((adapter1, itemId, position, isChecked, viewCoordinates) -> {
+				ContextMenuItem item = adapter1.getItem(position);
+				item.setSelected(isChecked);
+				return false;
 			});
 		}
 		builder.setTitle(f.getName());
@@ -408,26 +362,22 @@ public class MapActivityLayers {
 			items[i++] = entry.getValue();
 		}
 
-		builder.setSingleChoiceItems(items, selectedItem, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				String layerKey = entriesMapList.get(which).getKey();
-				switch (layerKey) {
-					case layerOsmVector:
-						updateMapSource(mapView);
-						it.setDescription(null);
-						adapter.notifyDataSetChanged();
-						break;
-					default:
-						it.setDescription(layerKey);
-						adapter.notifyDataSetChanged();
-						updateMapSource(mapView);
-						break;
-				}
-
-				dialog.dismiss();
+		builder.setSingleChoiceItems(items, selectedItem, (dialog, which) -> {
+			String layerKey = entriesMapList.get(which).getKey();
+			switch (layerKey) {
+				case layerOsmVector:
+					updateMapSource(mapView);
+					it.setDescription(null);
+					adapter.notifyDataSetChanged();
+					break;
+				default:
+					it.setDescription(layerKey);
+					adapter.notifyDataSetChanged();
+					updateMapSource(mapView);
+					break;
 			}
 
+			dialog.dismiss();
 		});
 		builder.setNegativeButton(R.string.shared_string_dismiss, null);
 		builder.show();

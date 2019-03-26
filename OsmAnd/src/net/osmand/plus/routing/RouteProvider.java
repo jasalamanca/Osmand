@@ -575,12 +575,7 @@ public class RouteProvider {
 					// discard ctx and replace with calculated
 					ctx = complexCtx;
 				} catch(final RuntimeException e) {
-					params.ctx.runInUIThread(new Runnable() {
-						@Override
-						public void run() {
-							params.ctx.showToastMessage(R.string.complex_route_calculation_failed, e.getMessage());							
-						}
-					});
+					params.ctx.runInUIThread(() -> params.ctx.showToastMessage(R.string.complex_route_calculation_failed, e.getMessage()));
 					result = router.searchRoute(ctx, st, en, inters);
 				}
 			} else {

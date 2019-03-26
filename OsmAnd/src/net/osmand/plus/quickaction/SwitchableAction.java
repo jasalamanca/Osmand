@@ -42,12 +42,7 @@ public abstract class SwitchableAction<T> extends QuickAction {
 		final RecyclerView list = view.findViewById(R.id.list);
 		final QuickActionItemTouchHelperCallback touchHelperCallback = new QuickActionItemTouchHelperCallback();
 		final ItemTouchHelper touchHelper = new ItemTouchHelper(touchHelperCallback);
-		final Adapter adapter = new Adapter(new QuickActionListFragment.OnStartDragListener() {
-			@Override
-			public void onStartDrag(RecyclerView.ViewHolder viewHolder) {
-				touchHelper.startDrag(viewHolder);
-			}
-		});
+		final Adapter adapter = new Adapter(viewHolder -> touchHelper.startDrag(viewHolder));
 
 		touchHelperCallback.setItemMoveCallback(adapter);
 		touchHelper.attachToRecyclerView(list);
@@ -83,7 +78,7 @@ public abstract class SwitchableAction<T> extends QuickAction {
 	protected class Adapter
 			extends RecyclerView.Adapter<Adapter.ItemHolder>
 			implements QuickActionItemTouchHelperCallback.OnItemMoveCallback {
-		private List<T> itemsList = new ArrayList<>();
+		private final List<T> itemsList = new ArrayList<>();
 		private final QuickActionListFragment.OnStartDragListener onStartDragListener;
 
 		Adapter(QuickActionListFragment.OnStartDragListener onStartDragListener) {
@@ -102,27 +97,21 @@ public abstract class SwitchableAction<T> extends QuickAction {
 			final T item = itemsList.get(position);
 			holder.title.setText(getItemName(item));
 
-			holder.handleView.setOnTouchListener(new View.OnTouchListener() {
-				@Override
-				public boolean onTouch(View v, MotionEvent event) {
-					if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
-						onStartDragListener.onStartDrag(holder);
-					}
-					return false;
+			holder.handleView.setOnTouchListener((v, event) -> {
+				if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
+					onStartDragListener.onStartDrag(holder);
 				}
+				return false;
 			});
 
-			holder.closeBtn.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					String oldTitle = getTitle(itemsList);
-					String defaultName = holder.handleView.getContext().getString(getNameRes());
-					deleteItem(holder.getAdapterPosition());
+			holder.closeBtn.setOnClickListener(v -> {
+				String oldTitle = getTitle(itemsList);
+				String defaultName = holder.handleView.getContext().getString(getNameRes());
+				deleteItem(holder.getAdapterPosition());
 
-					if (oldTitle.equals(title.getText().toString()) || title.getText().toString().equals(defaultName)) {
-						String newTitle = getTitle(itemsList);
-						title.setText(newTitle);
-					}
+				if (oldTitle.equals(title.getText().toString()) || title.getText().toString().equals(defaultName)) {
+					String newTitle = getTitle(itemsList);
+					title.setText(newTitle);
 				}
 			});
 		}

@@ -573,7 +573,7 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 						menuController.getLatLon(), menuController.getPointDescription(),
 						menuController.getObject(), menuController.hasBackAction());
 			}
-			menuController.onAcquireNewController(pointDescription, object);
+			menuController.onAcquireNewController(object);
 		}
 		menuController = MenuController.getMenuController(mapActivity, latLon, pointDescription, object, MenuType.STANDARD);
 		if (menuController.setActive(true)) {
@@ -839,7 +839,7 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 	void buttonMorePressed() {
 		final ContextMenuAdapter menuAdapter = new ContextMenuAdapter();
 		for (OsmandMapLayer layer : mapActivity.getMapView().getLayers()) {
-			layer.populateObjectContextMenu(latLon, object, menuAdapter, mapActivity);
+			layer.populateObjectContextMenu(object, menuAdapter);
 		}
 
 		mapActivity.getMapActions().contextMenuPoint(latLon.getLatitude(), latLon.getLongitude(), menuAdapter, object);
@@ -859,11 +859,7 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 		ProgressDialog dlg = new ProgressDialog(mapActivity);
 		dlg.setTitle("");
 		dlg.setMessage(searchAddressStr);
-		dlg.setButton(Dialog.BUTTON_NEGATIVE, mapActivity.getResources().getString(R.string.shared_string_skip), new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int which) {
-				cancelSearchAddress();
-			}
-		});
+		dlg.setButton(Dialog.BUTTON_NEGATIVE, mapActivity.getResources().getString(R.string.shared_string_skip), (dialog, which) -> cancelSearchAddress());
 		return dlg;
 	}
 
@@ -1216,14 +1212,11 @@ public class MapContextMenu extends MenuTitleController implements StateChangedL
 			return;
 		}
 		inLocationUpdate = true;
-		mapActivity.runOnUiThread(new Runnable() {
-			@Override
-			public void run() {
-				inLocationUpdate = false;
-				WeakReference<MapContextMenuFragment> fragmentRef = findMenuFragment();
-				if (fragmentRef != null) {
-					fragmentRef.get().updateLocation();
-				}
+		mapActivity.runOnUiThread(() -> {
+			inLocationUpdate = false;
+			WeakReference<MapContextMenuFragment> fragmentRef = findMenuFragment();
+			if (fragmentRef != null) {
+				fragmentRef.get().updateLocation();
 			}
 		});
 	}

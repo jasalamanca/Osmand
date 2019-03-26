@@ -78,28 +78,25 @@ public class DashboardSettingsDialogFragment extends DialogFragment
 		}
 		builder.setTitle(R.string.dahboard_options_dialog_title)
 				.setAdapter(mAdapter, null)
-				.setPositiveButton(R.string.shared_string_apply, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialogInterface, int type) {
-						boolean[] shouldShow = mAdapter.getCheckedItems();
-						int[] numberOfRows = mAdapter.getNumbersOfRows();
-						for (int i = 0; i < shouldShow.length; i++) {
-							final DashFragmentData fragmentData = mFragmentsData.get(i);
-							settings.registerBooleanPreference(
-									DashboardOnMap.SHOULD_SHOW + fragmentData.tag, true)
-									.makeGlobal().set(shouldShow[i]);
-							if (fragmentData.rowNumberTag != null) {
-								settings.registerIntPreference(fragmentData.rowNumberTag, DEFAULT_NUMBER_OF_ROWS)
-										.makeGlobal().set(numberOfRows[i]);
-							}
+				.setPositiveButton(R.string.shared_string_apply, (dialogInterface, type) -> {
+					boolean[] shouldShow = mAdapter.getCheckedItems();
+					int[] numberOfRows = mAdapter.getNumbersOfRows();
+					for (int i = 0; i < shouldShow.length; i++) {
+						final DashFragmentData fragmentData = mFragmentsData.get(i);
+						settings.registerBooleanPreference(
+								DashboardOnMap.SHOULD_SHOW + fragmentData.tag, true)
+								.makeGlobal().set(shouldShow[i]);
+						if (fragmentData.rowNumberTag != null) {
+							settings.registerIntPreference(fragmentData.rowNumberTag, DEFAULT_NUMBER_OF_ROWS)
+									.makeGlobal().set(numberOfRows[i]);
 						}
-						mapActivity.getDashboard().refreshDashboardFragments();
-						settings.SHOW_DASHBOARD_ON_START.set(
-								((CompoundButton) showDashboardOnStart.findViewById(R.id.toggle_item)).isChecked());
-						settings.SHOW_DASHBOARD_ON_MAP_SCREEN.set(
-								((CompoundButton) accessFromMap.findViewById(R.id.toggle_item)).isChecked());
-						mapActivity.getMapLayers().getMapControlsLayer().initDasboardRelatedControls();
 					}
+					mapActivity.getDashboard().refreshDashboardFragments();
+					settings.SHOW_DASHBOARD_ON_START.set(
+							((CompoundButton) showDashboardOnStart.findViewById(R.id.toggle_item)).isChecked());
+					settings.SHOW_DASHBOARD_ON_MAP_SCREEN.set(
+							((CompoundButton) accessFromMap.findViewById(R.id.toggle_item)).isChecked());
+					mapActivity.getMapLayers().getMapControlsLayer().initDasboardRelatedControls();
 				})
 				.setNegativeButton(R.string.shared_string_cancel, null);
 		final AlertDialog dialog = builder.create();
@@ -122,12 +119,7 @@ public class DashboardSettingsDialogFragment extends DialogFragment
 		textView.setTextColor(pref.get() ? textColorPrimary
 				: textColorSecondary);
 		compoundButton.setOnCheckedChangeListener(
-				new CompoundButton.OnCheckedChangeListener() {
-					@Override
-					public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-						textView.setTextColor(b ? textColorPrimary : textColorSecondary);
-					}
-				});
+				(compoundButton1, b) -> textView.setTextColor(b ? textColorPrimary : textColorSecondary));
 		return view;
 	}
 
@@ -217,17 +209,14 @@ public class DashboardSettingsDialogFragment extends DialogFragment
 			}
 		};
 
-		final View.OnClickListener onNumberClickListener = new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				DashViewHolder localViewHolder = (DashViewHolder) v.getTag();
-				String header = getContext().getString(getItem(localViewHolder.position)
-						.shouldShowFunction.getTitleId());
-				String subheader = getContext().getResources().getString(R.string.count_of_lines);
-				final String stringPosition = String.valueOf(localViewHolder.position);
-				NumberPickerDialogFragment.createInstance(header, subheader, stringPosition, getNumberOfRows(localViewHolder.position), MAXIMUM_NUMBER_OF_ROWS)
-						.show(getChildFragmentManager(), NumberPickerDialogFragment.TAG);
-			}
+		final View.OnClickListener onNumberClickListener = v -> {
+			DashViewHolder localViewHolder = (DashViewHolder) v.getTag();
+			String header = getContext().getString(getItem(localViewHolder.position)
+					.shouldShowFunction.getTitleId());
+			String subheader = getContext().getResources().getString(R.string.count_of_lines);
+			final String stringPosition = String.valueOf(localViewHolder.position);
+			NumberPickerDialogFragment.createInstance(header, subheader, stringPosition, getNumberOfRows(localViewHolder.position), MAXIMUM_NUMBER_OF_ROWS)
+					.show(getChildFragmentManager(), NumberPickerDialogFragment.TAG);
 		};
 
 	}

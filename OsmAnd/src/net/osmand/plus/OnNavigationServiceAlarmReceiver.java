@@ -22,14 +22,11 @@ public class OnNavigationServiceAlarmReceiver extends BroadcastReceiver {
 		try {
 			locationManager.requestLocationUpdates(service.getServiceOffProvider(), 0, 0, service);
 			if (service.getServiceOffInterval() > service.getServiceError()) {
-				service.getHandler().postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						// if lock is not anymore held
-						if (lock.isHeld()) {
-							lock.release();
-							locationManager.removeUpdates(service);
-						}
+				service.getHandler().postDelayed(() -> {
+					// if lock is not anymore held
+					if (lock.isHeld()) {
+						lock.release();
+						locationManager.removeUpdates(service);
 					}
 				}, service.getServiceError());
 			}

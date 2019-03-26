@@ -61,15 +61,12 @@ public class MeasurementToolAdapter extends RecyclerView.Adapter<MeasurementTool
 	public void onBindViewHolder(@NonNull final MeasureToolItemVH holder, int pos) {
 		IconsCache iconsCache = mapActivity.getMyApplication().getIconsCache();
 		holder.iconReorder.setImageDrawable(iconsCache.getThemedIcon(R.drawable.ic_action_reorder));
-		holder.iconReorder.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(View view, MotionEvent event) {
-				if (MotionEventCompat.getActionMasked(event) == MotionEvent.ACTION_DOWN) {
-					listener.onDragStarted(holder);
-				}
-				return false;
-			}
-		});
+		holder.iconReorder.setOnTouchListener((view, event) -> {
+            if (MotionEventCompat.getActionMasked(event) == MotionEvent.ACTION_DOWN) {
+                listener.onDragStarted(holder);
+            }
+            return false;
+        });
 		holder.icon.setImageDrawable(iconsCache.getIcon(R.drawable.ic_action_measure_point,
 				nightMode ? R.color.ctx_menu_info_text_dark : R.color.icon_color));
 		if (nightMode) {
@@ -119,18 +116,8 @@ public class MeasurementToolAdapter extends RecyclerView.Adapter<MeasurementTool
 		}
 		holder.deleteBtn.setImageDrawable(iconsCache.getIcon(R.drawable.ic_action_remove_dark,
 				nightMode ? R.color.ctx_menu_info_text_dark : R.color.icon_color));
-		holder.deleteBtn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				listener.onRemoveClick(holder.getAdapterPosition());
-			}
-		});
-		holder.itemView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				listener.onItemClick(holder.getAdapterPosition());
-			}
-		});
+		holder.deleteBtn.setOnClickListener(view -> listener.onRemoveClick(holder.getAdapterPosition()));
+		holder.itemView.setOnClickListener(view -> listener.onItemClick(holder.getAdapterPosition()));
 	}
 
 	@Override

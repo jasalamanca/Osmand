@@ -1,6 +1,10 @@
 package net.osmand.render;
 
-import gnu.trove.iterator.TIntObjectIterator;
+import net.osmand.PlatformUtil;
+import net.osmand.render.RenderingRulesStorage.RenderingRulesStorageResolver;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,11 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import net.osmand.PlatformUtil;
-import net.osmand.render.RenderingRulesStorage.RenderingRulesStorageResolver;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
+import gnu.trove.iterator.TIntObjectIterator;
 
 class RenderingRulesStoragePrinter {
 	
@@ -55,19 +55,17 @@ class RenderingRulesStoragePrinter {
 		}
 		is = new FileInputStream(defaultFile);
 		RenderingRulesStorage storage = new RenderingRulesStorage("default", renderingConstants);
-		final RenderingRulesStorageResolver resolver = new RenderingRulesStorageResolver() {
-			@Override
-			public RenderingRulesStorage resolve(String name, RenderingRulesStorageResolver ref) throws XmlPullParserException, IOException {
-				RenderingRulesStorage depends = new RenderingRulesStorage(name, null);
-				depends.parseRulesFromXmlInputStream(RenderingRulesStorage.class.getResourceAsStream(name + ".render.xml"), ref);
-				return depends;
-			}
-		};
+		final RenderingRulesStorageResolver resolver = (name1, ref) -> {
+            RenderingRulesStorage depends = new RenderingRulesStorage(name1, null);
+            depends.parseRulesFromXmlInputStream(RenderingRulesStorage.class.getResourceAsStream(name1 + ".render.xml"), ref);
+            return depends;
+        };
 		storage.parseRulesFromXmlInputStream(is, resolver);
 		new RenderingRulesStoragePrinter().printJavaFile(outputPath, name, storage);
 	
 	}
-	
+
+	//NOTE jsala es un test
 	private void printJavaFile(String path, String name, RenderingRulesStorage storage) throws IOException {
 		PrintStream out = System.out;
 		out = new PrintStream(new File(path, name + "RenderingRulesStorage.java"));
@@ -133,12 +131,12 @@ class RenderingRulesStoragePrinter {
 			out.println("" + indent + ti + "prop.setCategory("+javaString(p.category)+");");
 			out.println("" + indent + ti + "prop.setName("+javaString(p.name)+");");
 			if(p.possibleValues != null && !p.isBoolean()) {
-				String mp = "";
+				StringBuilder mp = new StringBuilder();
 				for (String s : p.possibleValues) {
 					if (mp.length() > 0) {
-						mp += ", ";
+						mp.append(", ");
 					}
-					mp += javaString(s);
+					mp.append(javaString(s));
 				}
 				out.println("" + indent + ti + "prop.setPossibleValues(new String[]{"+mp+"});");
 			}
@@ -209,22 +207,21 @@ class RenderingRulesStoragePrinter {
 	
 	private int generateRenderingRule(RenderingRulesStorage storage, PrintStream out, String indent, String name, int ind, RenderingRule key) {
 		int cnt = 1;
-		String mp = "";
+		StringBuilder mp = new StringBuilder();
 		Iterator<Entry<String, String>> it = key.getAttributes().entrySet().iterator();
 		while(it.hasNext()) {
 			Entry<String, String> e = it.next();
-//			mp += javaString(e.getKey()) + ", " + javaString(e.getValue());
 			int kk = storage.getDictionaryValue(e.getKey());
 			int vv = storage.getDictionaryValue(e.getValue());
-			mp += kk +", " +vv;
+			mp.append(kk).append(", ").append(vv);
 			if(it.hasNext()) {
-				mp+=", ";
+				mp.append(", ");
 			}
 		}
-		if(mp.equals("")) {
-			mp = "java.util.Collections.EMPTY_MAP";
+		if(mp.toString().equals("")) {
+			mp = new StringBuilder("java.util.Collections.EMPTY_MAP");
 		} else {
-			mp = "createMap(" +mp +")";
+			mp = new StringBuilder("createMap(" + mp + ")");
 		}
 		out.println("" + indent + name + ind +" = new RenderingRule("+mp +", "+ key.isGroup() + ",  storage);");
 		for (RenderingRule k : key.getIfChildren()) {

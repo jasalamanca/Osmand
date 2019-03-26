@@ -53,14 +53,10 @@ public class SettingsActivity extends SettingsBaseActivity {
 				Preference preference = new Preference(this);
 				preference.setTitle(op.getName());
 				preference.setKey(op.getId());
-				preference.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-
-					@Override
-					public boolean onPreferenceClick(Preference preference) {
-						startActivity(new Intent(SettingsActivity.this, sa));
-						return false;
-					}
-				});
+				preference.setOnPreferenceClickListener(preference1 -> {
+                    startActivity(new Intent(SettingsActivity.this, sa));
+                    return false;
+                });
 				plugins.addPreference(preference);
 			}
 		}

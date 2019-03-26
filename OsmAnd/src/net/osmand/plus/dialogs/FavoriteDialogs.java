@@ -47,14 +47,7 @@ public class FavoriteDialogs {
 				((OsmandApplication) activity.getApplication()).getFavorites().getFavouritePoints(),
 				false);
 		final Dialog[] dlgHolder = new Dialog[1];
-		OnItemClickListener click = new AdapterView.OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				confirmReplace(activity, args, helper, favouritesAdapter, dlgHolder, position);
-			}
-			
-		};
+		OnItemClickListener click = (parent, view, position, id) -> confirmReplace(activity, args, helper, favouritesAdapter, dlgHolder, position);
 		if (activity instanceof MapActivity) {
 			favouritesAdapter.updateLocation(((MapActivity) activity).getMapLocation());
 		}
@@ -72,25 +65,21 @@ public class FavoriteDialogs {
 		final FavouritePoint fp = favouritesAdapter.getItem(position);
 		builder.setMessage(activity.getString(R.string.replace_favorite_confirmation, fp.getName()));
 		builder.setNegativeButton(R.string.shared_string_no, null);
-		builder.setPositiveButton(R.string.shared_string_yes, new OnClickListener() {
-			
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				if(dlgHolder != null && dlgHolder.length > 0 && dlgHolder[0] != null) {
-					dlgHolder[0].dismiss();
-				}
-				FavouritePoint point = (FavouritePoint) args.getSerializable(KEY_FAVORITE);
-				if (helper.editFavourite(fp, point.getLatitude(), point.getLongitude())) {
-					if (activity instanceof MapActivity) {
-						((MapActivity) activity).getContextMenu()
-								.show(new LatLon(point.getLatitude(), point.getLongitude()), fp.getPointDescription(), fp);
-					}
-				}
-				if (activity instanceof MapActivity) {
-					((MapActivity) activity).getMapView().refreshMap();
-				}				
-			}
-		});
+		builder.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> {
+            if(dlgHolder != null && dlgHolder.length > 0 && dlgHolder[0] != null) {
+                dlgHolder[0].dismiss();
+            }
+            FavouritePoint point = (FavouritePoint) args.getSerializable(KEY_FAVORITE);
+            if (helper.editFavourite(fp, point.getLatitude(), point.getLongitude())) {
+                if (activity instanceof MapActivity) {
+                    ((MapActivity) activity).getContextMenu()
+                            .show(new LatLon(point.getLatitude(), point.getLongitude()), fp.getPointDescription(), fp);
+                }
+            }
+            if (activity instanceof MapActivity) {
+                ((MapActivity) activity).getMapView().refreshMap();
+            }
+        });
 		builder.show();
 	}
 	
@@ -132,36 +121,23 @@ public class FavoriteDialogs {
 			final TextView textButton = v.findViewById(R.id.TextButton);
 			textButton.setClickable(true);
 			textButton.setFocusable(true);
-			textButton.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					AlertDialog.Builder b = new AlertDialog.Builder(activity);
-					b.setTitle(R.string.access_category_choice);
-					b.setItems(list, new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							cat.setText(list[which]);
-						}
-					});
-					b.setNegativeButton(R.string.shared_string_cancel, null);
-					b.show();
-				}
-			});
+			textButton.setOnClickListener(view -> {
+                AlertDialog.Builder b = new AlertDialog.Builder(activity);
+                b.setTitle(R.string.access_category_choice);
+                b.setItems(list, (dialog, which) -> cat.setText(list[which]));
+                b.setNegativeButton(R.string.shared_string_cancel, null);
+                b.show();
+            });
 		}
 
 		builder.setNegativeButton(R.string.shared_string_cancel, null);
-		builder.setNeutralButton(R.string.update_existing, new DialogInterface.OnClickListener(){
-
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				// Don't use showDialog because it is impossible to refresh favorite items list
-				Dialog dlg = createReplaceFavouriteDialog(activity, args);
-				if(dlg != null) {
-					dlg.show();
-				}
-			}
-			
-		});
+		builder.setNeutralButton(R.string.update_existing, (dialog, which) -> {
+            // Don't use showDialog because it is impossible to refresh favorite items list
+            Dialog dlg = createReplaceFavouriteDialog(activity, args);
+            if(dlg != null) {
+                dlg.show();
+            }
+        });
 		builder.setPositiveButton(R.string.shared_string_add, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -175,12 +151,7 @@ public class FavoriteDialogs {
 				point.setCategory(categoryStr);
 				android.app.AlertDialog.Builder bld = FavouritesDbHelper.checkDuplicates(point, helper, activity);
 				if(bld != null) {
-					bld.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							addFavorite(activity, point, helper);							
-						}
-					});
+					bld.setPositiveButton(R.string.shared_string_ok, (dialog1, which1) -> addFavorite(activity, point, helper));
 					bld.show();
 				} else {
 					addFavorite(activity, point, helper);
@@ -209,34 +180,24 @@ public class FavoriteDialogs {
 		ListView listView = new ListView(uiContext);
 		AlertDialog.Builder bld = new AlertDialog.Builder(uiContext);
 		final Collator inst = Collator.getInstance();
-		favouritesAdapter.sort(new Comparator<FavouritePoint>() {
-
-			@Override
-			public int compare(FavouritePoint lhs, FavouritePoint rhs) {
-				if (sortByDist) {
-					if (favouritesAdapter.getLocation() == null) {
-						return 0;
-					}
-					double ld = MapUtils.getDistance(favouritesAdapter.getLocation(), lhs.getLatitude(),
-							lhs.getLongitude());
-					double rd = MapUtils.getDistance(favouritesAdapter.getLocation(), rhs.getLatitude(),
-							rhs.getLongitude());
-					return Double.compare(ld, rd);
-				}
-				return inst.compare(lhs.getName(), rhs.getName());
-			}
-		});
+		favouritesAdapter.sort((lhs, rhs) -> {
+            if (sortByDist) {
+                if (favouritesAdapter.getLocation() == null) {
+                    return 0;
+                }
+                double ld = MapUtils.getDistance(favouritesAdapter.getLocation(), lhs.getLatitude(),
+                        lhs.getLongitude());
+                double rd = MapUtils.getDistance(favouritesAdapter.getLocation(), rhs.getLatitude(),
+                        rhs.getLongitude());
+                return Double.compare(ld, rd);
+            }
+            return inst.compare(lhs.getName(), rhs.getName());
+        });
 		
 		listView.setAdapter(favouritesAdapter);
 		listView.setOnItemClickListener(click);
 		bld.setPositiveButton(sortByDist ? R.string.sort_by_name :
-			R.string.sort_by_distance, new OnClickListener() {
-			
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				showFavoritesDialog(uiContext, favouritesAdapter, click, dismissListener, dialogHolder, !sortByDist);
-			}
-		});
+			R.string.sort_by_distance, (dialog, which) -> showFavoritesDialog(uiContext, favouritesAdapter, click, dismissListener, dialogHolder, !sortByDist));
 		bld.setNegativeButton(R.string.shared_string_cancel, null);
 		bld.setView(listView);
 		AlertDialog dlg = bld.show();

@@ -18,7 +18,7 @@ public class AsyncLoadingThread extends Thread {
 	private final Stack<Object> requests = new Stack<>();
 	private final ResourceManager resourceManger;
 
-	public AsyncLoadingThread(ResourceManager resourceManger) {
+	AsyncLoadingThread(ResourceManager resourceManger) {
 		super("Loader map objects (synchronizer)"); //$NON-NLS-1$
 		this.resourceManger = resourceManger;
 	}
@@ -36,7 +36,7 @@ public class AsyncLoadingThread extends Thread {
 							resourceManger.getRenderer().loadMap(r.tileBox);
 							mapLoaded = !resourceManger.getRenderer().wasInterrupted();
 							if (r.mapLoadedListener != null) {
-								r.mapLoadedListener.onMapLoaded(!mapLoaded);
+								r.mapLoadedListener.onMapLoaded();
 							}
 						}
 					}
@@ -54,19 +54,19 @@ public class AsyncLoadingThread extends Thread {
 		}
 	}
 
-	public void requestToLoadMap(MapLoadRequest req) {
+	void requestToLoadMap(MapLoadRequest req) {
 		requests.push(req);
 	}
 
 	public interface OnMapLoadedListener {
-		void onMapLoaded(boolean interrupted);
+		void onMapLoaded();
 	}
 
 	static class MapLoadRequest {
 		final RotatedTileBox tileBox;
 		final OnMapLoadedListener mapLoadedListener;
 
-		public MapLoadRequest(RotatedTileBox tileBox, OnMapLoadedListener mapLoadedListener) {
+		MapLoadRequest(RotatedTileBox tileBox, OnMapLoadedListener mapLoadedListener) {
 			super();
 			this.tileBox = tileBox;
 			this.mapLoadedListener = mapLoadedListener;

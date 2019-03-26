@@ -195,17 +195,10 @@ public class HelpActivity extends OsmandActionBarActivity implements AdapterView
 				.setTitle(getString(title))
 				.setDescription(url)
 				.setIcon(icon)
-				.setListener(new ContextMenuAdapter.ItemClickListener() {
-					@Override
-					public boolean onContextMenuClick(ArrayAdapter<ContextMenuItem> adapter,
-													  int itemId,
-													  int position,
-													  boolean isChecked,
-													  int[] viewCoordinates) {
-						Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-						startActivity(intent);
-						return false;
-					}
+				.setListener((adapter, itemId, position, isChecked, viewCoordinates) -> {
+					Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+					startActivity(intent);
+					return false;
 				})
 				.createItem();
 	}

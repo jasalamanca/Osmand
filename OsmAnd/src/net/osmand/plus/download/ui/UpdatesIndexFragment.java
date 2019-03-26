@@ -89,13 +89,8 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 		OsmandSettings settings = getMyApplication().getSettings();
 		listAdapter = new UpdateIndexAdapter(c, R.layout.download_index_list_item, indexItems,
 				!settings.LIVE_UPDATES_PURCHASED.get() || settings.SHOULD_SHOW_FREE_VERSION_BANNER.get());
-		listAdapter.sort(new Comparator<IndexItem>() {
-			@Override
-			public int compare(IndexItem indexItem, IndexItem indexItem2) {
-				return indexItem.getVisibleName(getMyApplication(), osmandRegions)
-						.compareTo(indexItem2.getVisibleName(getMyApplication(), osmandRegions));
-			}
-		});
+		listAdapter.sort((indexItem, indexItem2) -> indexItem.getVisibleName(getMyApplication(), osmandRegions)
+                .compareTo(indexItem2.getVisibleName(getMyApplication(), osmandRegions)));
 		setListAdapter(listAdapter);
 		updateErrorMessage();
 	}
@@ -142,12 +137,7 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 			}
 			String updateAllText = getActivity().getString(R.string.update_all, downloadsSize >> 20);
 			updateAllButton.setText(updateAllText);
-			updateAllButton.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					getMyActivity().startDownload(indexItems.toArray(new IndexItem[indexItems.size()]));
-				}
-			});
+			updateAllButton.setOnClickListener(v -> getMyActivity().startDownload(indexItems.toArray(new IndexItem[indexItems.size()])));
 		}
 	}
 

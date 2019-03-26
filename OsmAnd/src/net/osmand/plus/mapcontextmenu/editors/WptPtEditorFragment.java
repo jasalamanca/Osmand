@@ -230,29 +230,26 @@ public class WptPtEditorFragment extends PointEditorFragment {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		builder.setMessage(getString(R.string.context_menu_item_delete_waypoint));
 		builder.setNegativeButton(R.string.shared_string_no, null);
-		builder.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
+		builder.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> {
 
-				GPXFile gpx = editor.getGpxFile();
-				if (gpx != null) {
-					if (gpx.showCurrentTrack) {
-						savingTrackHelper.deletePointData(wpt);
-					} else {
-						gpx.deleteWptPt(wpt);
-						new SaveGpxAsyncTask(getMyApplication(), gpx, editor.isGpxSelected()).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-					}
-					syncGpx(gpx);
-				}
-				saved = true;
+            GPXFile gpx = editor.getGpxFile();
+            if (gpx != null) {
+                if (gpx.showCurrentTrack) {
+                    savingTrackHelper.deletePointData(wpt);
+                } else {
+                    gpx.deleteWptPt(wpt);
+                    new SaveGpxAsyncTask(getMyApplication(), gpx, editor.isGpxSelected()).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                }
+                syncGpx(gpx);
+            }
+            saved = true;
 
-				if (needDismiss) {
-					dismiss(true);
-				} else {
-					getMapActivity().refreshMap();
-				}
-			}
-		});
+            if (needDismiss) {
+                dismiss(true);
+            } else {
+                getMapActivity().refreshMap();
+            }
+        });
 		builder.create().show();
 	}
 

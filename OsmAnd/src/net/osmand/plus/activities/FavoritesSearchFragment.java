@@ -104,13 +104,8 @@ public class FavoritesSearchFragment extends DialogFragment {
 		toolbar.setNavigationIcon(app.getIconsCache().getThemedIcon(R.drawable.ic_arrow_back));
 		toolbar.setNavigationContentDescription(R.string.access_shared_string_navigate_up);
 		toolbar.setNavigationOnClickListener(
-				new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						dismiss();
-					}
-				}
-		);
+                v -> dismiss()
+        );
 
 		searchEditText = view.findViewById(R.id.searchEditText);
 		searchEditText.setHint(R.string.search_favorites);
@@ -139,16 +134,13 @@ public class FavoritesSearchFragment extends DialogFragment {
 		clearButton = view.findViewById(R.id.clearButton);
 		clearButton.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_action_remove_dark));
 		clearButton.setOnClickListener(
-				new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						if (searchEditText.getText().length() > 0) {
-							searchEditText.setText("");
-							searchEditText.setSelection(0);
-						}
-					}
-				}
-		);
+                v -> {
+                    if (searchEditText.getText().length() > 0) {
+                        searchEditText.setText("");
+                        searchEditText.setSelection(0);
+                    }
+                }
+        );
 
 		listView = view.findViewById(android.R.id.list);
 
@@ -169,16 +161,13 @@ public class FavoritesSearchFragment extends DialogFragment {
 					}
 				}
 			});
-			listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-				@Override
-				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-					FavouritePoint point = listAdapter.getItem(position);
-					if (point != null) {
-						showOnMap(point);
-						dismiss();
-					}
-				}
-			});
+			listView.setOnItemClickListener((parent, view1, position, id) -> {
+                FavouritePoint point = listAdapter.getItem(position);
+                if (point != null) {
+                    showOnMap(point);
+                    dismiss();
+                }
+            });
 			listAdapter = new FavoritesSearchListAdapter(getMyApplication(), getActivity());
 			listAdapter.setAccessibilityAssistant(accessibilityAssistant);
 			listAdapter.synchronizePoints();
@@ -289,7 +278,7 @@ public class FavoritesSearchFragment extends DialogFragment {
 		private AccessibilityAssistant accessibilityAssistant;
 		private final FavouritesDbHelper helper;
 
-		private LatLon location;
+		private final LatLon location;
 		private final Drawable arrowImage;
 
 		final List<FavouritePoint> points = new ArrayList<>();
@@ -332,16 +321,13 @@ public class FavoritesSearchFragment extends DialogFragment {
 					points.addAll(list);
 				}
 			}
-			Collections.sort(points, new Comparator<FavouritePoint>() {
-				@Override
-				public int compare(FavouritePoint p1, FavouritePoint p2) {
-					int d1 = (int) (MapUtils.getDistance(p1.getLatitude(), p1.getLongitude(),
-							location.getLatitude(), location.getLongitude()));
-					int d2 = (int) (MapUtils.getDistance(p2.getLatitude(), p2.getLongitude(),
-							location.getLatitude(), location.getLongitude()));
-					return d1 < d2 ? -1 : (d1 == d2 ? 0 : 1);
-				}
-			});
+			Collections.sort(points, (p1, p2) -> {
+                int d1 = (int) (MapUtils.getDistance(p1.getLatitude(), p1.getLongitude(),
+                        location.getLatitude(), location.getLongitude()));
+                int d2 = (int) (MapUtils.getDistance(p2.getLatitude(), p2.getLongitude(),
+                        location.getLatitude(), location.getLongitude()));
+                return d1 < d2 ? -1 : (d1 == d2 ? 0 : 1);
+            });
 			notifyDataSetChanged();
 		}
 

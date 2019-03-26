@@ -164,28 +164,25 @@ public class OsmEditingPlugin extends OsmandPlugin {
 											  final double longitude,
 											  ContextMenuAdapter adapter,
 											  final Object selectedObj) {
-		ContextMenuAdapter.ItemClickListener listener = new ContextMenuAdapter.ItemClickListener() {
-			@Override
-			public boolean onContextMenuClick(ArrayAdapter<ContextMenuItem> adapter, int resId, int pos, boolean isChecked, int[] viewCoordinates) {
-				if (resId == R.string.context_menu_item_create_poi) {
-					//getPoiActions(mapActivity).showCreateDialog(latitude, longitude);
-					EditPoiDialogFragment editPoiDialogFragment =
-							EditPoiDialogFragment.createAddPoiInstance(latitude, longitude);
-					editPoiDialogFragment.show(mapActivity.getSupportFragmentManager(),
-							EditPoiDialogFragment.TAG);
-				} else if (resId == R.string.context_menu_item_open_note) {
-					openOsmNote(mapActivity, latitude, longitude);
-				} else if (resId == R.string.context_menu_item_modify_note) {
-					modifyOsmNote(mapActivity, (OsmNotesPoint) selectedObj);
-				} else if (resId == R.string.poi_context_menu_modify) {
-					EditPoiDialogFragment.showEditInstance((Amenity) selectedObj, mapActivity);
-				} else if (resId == R.string.poi_context_menu_modify_osm_change) {
-					final Node entity = ((OpenstreetmapPoint) selectedObj).getEntity();
-					EditPoiDialogFragment.createInstance(entity, false)
-							.show(mapActivity.getSupportFragmentManager(), EditPoiDialogFragment.TAG);
-				}
-				return true;
+		ContextMenuAdapter.ItemClickListener listener = (adapter1, resId, pos, isChecked, viewCoordinates) -> {
+			if (resId == R.string.context_menu_item_create_poi) {
+				//getPoiActions(mapActivity).showCreateDialog(latitude, longitude);
+				EditPoiDialogFragment editPoiDialogFragment =
+						EditPoiDialogFragment.createAddPoiInstance(latitude, longitude);
+				editPoiDialogFragment.show(mapActivity.getSupportFragmentManager(),
+						EditPoiDialogFragment.TAG);
+			} else if (resId == R.string.context_menu_item_open_note) {
+				openOsmNote(mapActivity, latitude, longitude);
+			} else if (resId == R.string.context_menu_item_modify_note) {
+				modifyOsmNote(mapActivity, (OsmNotesPoint) selectedObj);
+			} else if (resId == R.string.poi_context_menu_modify) {
+				EditPoiDialogFragment.showEditInstance((Amenity) selectedObj, mapActivity);
+			} else if (resId == R.string.poi_context_menu_modify_osm_change) {
+				final Node entity = ((OpenstreetmapPoint) selectedObj).getEntity();
+				EditPoiDialogFragment.createInstance(entity, false)
+						.show(mapActivity.getSupportFragmentManager(), EditPoiDialogFragment.TAG);
 			}
+			return true;
 		};
 		boolean isEditable = false;
 		if (selectedObj instanceof Amenity) {
@@ -296,13 +293,9 @@ public class OsmEditingPlugin extends OsmandPlugin {
 		if (fragment instanceof AvailableGPXFragment) {
 			adapter.addItem(new ContextMenuItem.ItemBuilder().setTitleId(R.string.local_index_mi_upload_gpx, la)
 					.setIcon(R.drawable.ic_action_export)
-					.setListener(new ContextMenuAdapter.ItemClickListener() {
-
-						@Override
-						public boolean onContextMenuClick(ArrayAdapter<ContextMenuItem> adapter, int itemId, int pos, boolean isChecked, int[] viewCoordinates) {
-							sendGPXFiles(la, (GpxInfo) info);
-							return true;
-						}
+					.setListener((adapter1, itemId, pos, isChecked, viewCoordinates) -> {
+						sendGPXFiles(la, (GpxInfo) info);
+						return true;
 					}).createItem());
 		}
 	}
@@ -314,20 +307,13 @@ public class OsmEditingPlugin extends OsmandPlugin {
 			optionsMenuAdapter.addItem(new ContextMenuItem.ItemBuilder().setTitleId(R.string.local_index_mi_upload_gpx, activity)
 					.setIcon(R.drawable.ic_action_export)
 					.setColor(R.color.color_white)
-					.setListener(new ItemClickListener() {
-
-						@Override
-						public boolean onContextMenuClick(ArrayAdapter<ContextMenuItem> adapter, int itemId, int pos, boolean isChecked, int[] viewCoordinates) {
-							f.openSelectionMode(R.string.local_index_mi_upload_gpx, R.drawable.ic_action_export,
-									R.drawable.ic_action_export, new OnClickListener() {
-										@Override
-										public void onClick(DialogInterface dialog, int which) {
-											List<GpxInfo> selectedItems = f.getSelectedItems();
-											sendGPXFiles(activity, selectedItems.toArray(new GpxInfo[selectedItems.size()]));
-										}
-									});
-							return true;
-						}
+					.setListener((adapter, itemId, pos, isChecked, viewCoordinates) -> {
+						f.openSelectionMode(R.string.local_index_mi_upload_gpx, R.drawable.ic_action_export,
+								R.drawable.ic_action_export, (dialog, which) -> {
+									List<GpxInfo> selectedItems = f.getSelectedItems();
+									sendGPXFiles(activity, selectedItems.toArray(new GpxInfo[selectedItems.size()]));
+								});
+						return true;
 					})
 					.setPosition(5)
 					.createItem());
@@ -379,15 +365,9 @@ public class OsmEditingPlugin extends OsmandPlugin {
 
 		bldr.setView(view);
 		bldr.setNegativeButton(R.string.shared_string_no, null);
-		bldr.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				new UploadGPXFilesTask(la, descr.getText().toString(), tags.getText().toString(),
-						(UploadVisibility) visibility.getItemAtPosition(visibility.getSelectedItemPosition())
-				).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, info);
-			}
-		});
+		bldr.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> new UploadGPXFilesTask(la, descr.getText().toString(), tags.getText().toString(),
+				(UploadVisibility) visibility.getItemAtPosition(visibility.getSelectedItemPosition())
+		).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, info));
 		bldr.show();
 		return true;
 	}

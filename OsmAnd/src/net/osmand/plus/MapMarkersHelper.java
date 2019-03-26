@@ -360,34 +360,31 @@ public class MapMarkersHelper {
 
 	private void sortMarkers(List<MapMarker> markers, final boolean visited, final OsmandSettings.MapMarkersOrderByMode orderByMode) {
 		final LatLon location = ctx.getSettings().getLastKnownMapLocation();
-		Collections.sort(markers, new Comparator<MapMarker>() {
-			@Override
-			public int compare(MapMarker mapMarker1, MapMarker mapMarker2) {
-				if (orderByMode.isDateAddedDescending() || orderByMode.isDateAddedAscending()) {
-					long t1 = visited ? mapMarker1.visitedDate : mapMarker1.creationDate;
-					long t2 = visited ? mapMarker2.visitedDate : mapMarker2.creationDate;
-					if (t1 > t2) {
-						return orderByMode.isDateAddedDescending() ? -1 : 1;
-					} else if (t1 == t2) {
-						return 0;
-					} else {
-						return orderByMode.isDateAddedDescending() ? 1 : -1;
-					}
-				} else if (orderByMode.isDistanceDescending() || orderByMode.isDistanceAscending()) {
-					int d1 = (int) MapUtils.getDistance(location, mapMarker1.getLatitude(), mapMarker1.getLongitude());
-					int d2 = (int) MapUtils.getDistance(location, mapMarker2.getLatitude(), mapMarker2.getLongitude());
-					if (d1 > d2) {
-						return orderByMode.isDistanceDescending() ? -1 : 1;
-					} else if (d1 == d2) {
-						return 0;
-					} else {
-						return orderByMode.isDistanceDescending() ? 1 : -1;
-					}
+		Collections.sort(markers, (mapMarker1, mapMarker2) -> {
+			if (orderByMode.isDateAddedDescending() || orderByMode.isDateAddedAscending()) {
+				long t1 = visited ? mapMarker1.visitedDate : mapMarker1.creationDate;
+				long t2 = visited ? mapMarker2.visitedDate : mapMarker2.creationDate;
+				if (t1 > t2) {
+					return orderByMode.isDateAddedDescending() ? -1 : 1;
+				} else if (t1 == t2) {
+					return 0;
 				} else {
-					String n1 = mapMarker1.getName(ctx);
-					String n2 = mapMarker2.getName(ctx);
-					return n1.compareToIgnoreCase(n2);
+					return orderByMode.isDateAddedDescending() ? 1 : -1;
 				}
+			} else if (orderByMode.isDistanceDescending() || orderByMode.isDistanceAscending()) {
+				int d1 = (int) MapUtils.getDistance(location, mapMarker1.getLatitude(), mapMarker1.getLongitude());
+				int d2 = (int) MapUtils.getDistance(location, mapMarker2.getLatitude(), mapMarker2.getLongitude());
+				if (d1 > d2) {
+					return orderByMode.isDistanceDescending() ? -1 : 1;
+				} else if (d1 == d2) {
+					return 0;
+				} else {
+					return orderByMode.isDistanceDescending() ? 1 : -1;
+				}
+			} else {
+				String n1 = mapMarker1.getName(ctx);
+				String n2 = mapMarker2.getName(ctx);
+				return n1.compareToIgnoreCase(n2);
 			}
 		});
 	}
@@ -401,17 +398,14 @@ public class MapMarkersHelper {
 		if (mapMarker != null && mapMarker.pointDescription.isSearchingAddress(ctx)) {
 			cancelPointAddressRequests(mapMarker.point);
 			GeocodingLookupService.AddressLookupRequest lookupRequest =
-					new GeocodingLookupService.AddressLookupRequest(mapMarker.point, new GeocodingLookupService.OnAddressLookupResult() {
-						@Override
-						public void geocodingDone(String address) {
-							if (Algorithms.isEmpty(address)) {
-								mapMarker.pointDescription.setName(PointDescription.getAddressNotFoundStr(ctx));
-							} else {
-								mapMarker.pointDescription.setName(address);
-							}
-							markersDbHelper.updateMarker(mapMarker);
-							refreshMarker(mapMarker);
+					new GeocodingLookupService.AddressLookupRequest(mapMarker.point, address -> {
+						if (Algorithms.isEmpty(address)) {
+							mapMarker.pointDescription.setName(PointDescription.getAddressNotFoundStr(ctx));
+						} else {
+							mapMarker.pointDescription.setName(address);
 						}
+						markersDbHelper.updateMarker(mapMarker);
+						refreshMarker(mapMarker);
 					}, null);
 			ctx.getGeocodingLookupService().lookupAddress(lookupRequest);
 		}
@@ -444,12 +438,9 @@ public class MapMarkersHelper {
 	}
 
 	private void syncGroupAsync(@NonNull final MarkersSyncGroup group, final boolean enabled, @Nullable final OnGroupSyncedListener groupSyncedListener) {
-		ctx.runInUIThread(new Runnable() {
-			@Override
-			public void run() {
-				SyncGroupTask syncGroupTask = new SyncGroupTask(group, enabled, groupSyncedListener);
-				syncGroupTask.executeOnExecutor(executorService);
-			}
+		ctx.runInUIThread(() -> {
+			SyncGroupTask syncGroupTask = new SyncGroupTask(group, enabled, groupSyncedListener);
+			syncGroupTask.executeOnExecutor(executorService);
 		});
 	}
 
@@ -526,12 +517,7 @@ public class MapMarkersHelper {
 		@Override
 		protected void onPostExecute(Void aVoid) {
 			if (listener != null) {
-				ctx.runInUIThread(new Runnable() {
-					@Override
-					public void run() {
-						listener.onSyncDone();
-					}
-				});
+				ctx.runInUIThread(() -> listener.onSyncDone());
 			}
 		}
 	}
@@ -1038,23 +1024,17 @@ public class MapMarkersHelper {
 	}
 
 	private void refreshMarker(final MapMarker marker) {
-		ctx.runInUIThread(new Runnable() {
-			@Override
-			public void run() {
-				for (MapMarkerChangedListener l : listeners) {
-					l.onMapMarkerChanged(marker);
-				}
+		ctx.runInUIThread(() -> {
+			for (MapMarkerChangedListener l : listeners) {
+				l.onMapMarkerChanged(marker);
 			}
 		});
 	}
 
 	private void refreshMarkers() {
-		ctx.runInUIThread(new Runnable() {
-			@Override
-			public void run() {
-				for (MapMarkerChangedListener l : listeners) {
-					l.onMapMarkersChanged();
-				}
+		ctx.runInUIThread(() -> {
+			for (MapMarkerChangedListener l : listeners) {
+				l.onMapMarkersChanged();
 			}
 		});
 	}
@@ -1285,18 +1265,15 @@ public class MapMarkersHelper {
 					noGroup = group;
 				}
 			}
-			Collections.sort(mapMarkersGroups, new Comparator<MapMarkersGroup>() {
-				@Override
-				public int compare(MapMarkersGroup group1, MapMarkersGroup group2) {
-					long t1 = group1.getCreationDate();
-					long t2 = group2.getCreationDate();
-					if (t1 > t2) {
-						return -1;
-					} else if (t1 == t2) {
-						return 0;
-					} else {
-						return 1;
-					}
+			Collections.sort(mapMarkersGroups, (group1, group2) -> {
+				long t1 = group1.getCreationDate();
+				long t2 = group2.getCreationDate();
+				if (t1 > t2) {
+					return -1;
+				} else if (t1 == t2) {
+					return 0;
+				} else {
+					return 1;
 				}
 			});
 			if (noGroup != null) {

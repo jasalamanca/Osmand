@@ -38,7 +38,7 @@ public abstract class OsmandPlugin {
 	private static final Log LOG = PlatformUtil.getLog(OsmandPlugin.class);
 
 	private boolean active;
-	private String installURL = null;
+	private final String installURL = null;
 
 	public abstract String getId();
 	public abstract String getDescription();

@@ -53,30 +53,27 @@ public class AddWaypointBottomSheetDialogFragment extends MenuBottomSheetDialogF
 		((ImageView) mainView.findViewById(R.id.first_interm_dest_icon)).setImageDrawable(getFirstIntermDestIcon());
 		((ImageView) mainView.findViewById(R.id.last_interm_dest_icon)).setImageDrawable(getLastIntermDistIcon());
 
-		View.OnClickListener onClickListener = new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				int id = v.getId();
-				if (id == R.id.replace_dest_row) {
-					targetPointsHelper.navigateToPoint(latLon, true, -1, name);
-				} else if (id == R.id.replace_start_row) {
-					TargetPoint start = targetPointsHelper.getPointToStart();
-					if (start != null) {
-						targetPointsHelper.navigateToPoint(new LatLon(start.getLatitude(), start.getLongitude()),
-								false, 0, start.getOriginalPointDescription());
-					}
-					targetPointsHelper.setStartPoint(latLon, true, name);
-				} else if (id == R.id.subsequent_dest_row) {
-					targetPointsHelper.navigateToPoint(latLon, true,
-							targetPointsHelper.getIntermediatePoints().size() + 1, name);
-				} else if (id == R.id.first_intermediate_dest_row) {
-					targetPointsHelper.navigateToPoint(latLon, true, 0, name);
-				} else if (id == R.id.last_intermediate_dest_row) {
-					targetPointsHelper.navigateToPoint(latLon, true, targetPointsHelper.getIntermediatePoints().size(), name);
-				}
-				dismiss();
-			}
-		};
+		View.OnClickListener onClickListener = v -> {
+            int id = v.getId();
+            if (id == R.id.replace_dest_row) {
+                targetPointsHelper.navigateToPoint(latLon, true, -1, name);
+            } else if (id == R.id.replace_start_row) {
+                TargetPoint start = targetPointsHelper.getPointToStart();
+                if (start != null) {
+                    targetPointsHelper.navigateToPoint(new LatLon(start.getLatitude(), start.getLongitude()),
+                            false, 0, start.getOriginalPointDescription());
+                }
+                targetPointsHelper.setStartPoint(latLon, true, name);
+            } else if (id == R.id.subsequent_dest_row) {
+                targetPointsHelper.navigateToPoint(latLon, true,
+                        targetPointsHelper.getIntermediatePoints().size() + 1, name);
+            } else if (id == R.id.first_intermediate_dest_row) {
+                targetPointsHelper.navigateToPoint(latLon, true, 0, name);
+            } else if (id == R.id.last_intermediate_dest_row) {
+                targetPointsHelper.navigateToPoint(latLon, true, targetPointsHelper.getIntermediatePoints().size(), name);
+            }
+            dismiss();
+        };
 
 		mainView.findViewById(R.id.replace_dest_row).setOnClickListener(onClickListener);
 		mainView.findViewById(R.id.replace_start_row).setOnClickListener(onClickListener);

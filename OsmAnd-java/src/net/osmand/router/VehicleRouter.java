@@ -3,8 +3,6 @@ package net.osmand.router;
 import net.osmand.binary.RouteDataObject;
 import net.osmand.router.BinaryRoutePlanner.RouteSegment;
 
-import java.util.Map;
-
 public interface VehicleRouter {
 	boolean containsAttribute(String attribute);
 	
@@ -73,6 +71,4 @@ public interface VehicleRouter {
 	 * Calculate turn time 
 	 */
     double calculateTurnTime(RouteSegment segment, int segmentEnd, RouteSegment prev, int prevSegmentEnd);
-	
-	VehicleRouter build(Map<String, String> params);
 }

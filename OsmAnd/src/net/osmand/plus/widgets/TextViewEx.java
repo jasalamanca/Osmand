@@ -68,7 +68,7 @@ public class TextViewEx extends TextView {
 			target.setTypeface(typeface, style);
 	}
 
-	public static void setAllCapsCompat(TextView target, boolean allCaps) {
+	private static void setAllCapsCompat(TextView target, boolean allCaps) {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
 			updateAllCapsNewAPI(target, allCaps);
 			return;

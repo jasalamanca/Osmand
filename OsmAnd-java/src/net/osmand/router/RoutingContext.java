@@ -73,7 +73,6 @@ public class RoutingContext {
 	final long timeNanoToCalcDeviation = 0;
 	long timeToLoad = 0;
 	long timeToLoadHeaders = 0;
-//	private long timeToFindInitialSegments = 0;
 	long timeToCalculate = 0;
 	
 	int distinctLoadedTiles = 0;
@@ -86,9 +85,6 @@ public class RoutingContext {
 	int relaxedSegments = 0;
 	// callback of processing segments
 	RouteSegmentVisitor visitor = null;
-
-	// old planner
-//	FinalRouteSegment finalRouteSegment;
 
 	RoutingContext(RoutingContext cp) {
 		this.config = cp.config;
@@ -198,14 +194,11 @@ public class RoutingContext {
 	private int searchSubregionTile(RouteSubregion subregion){
 		RoutingSubregionTile key = new RoutingSubregionTile(subregion);
 		long now = System.nanoTime();
-		int ind = Collections.binarySearch(subregionTiles, key, new Comparator<RoutingSubregionTile>() {
-			@Override
-			public int compare(RoutingSubregionTile o1, RoutingSubregionTile o2) {
-				if(o1.subregion.left == o2.subregion.left) {
-					return 0;
-				}
-				return o1.subregion.left < o2.subregion.left ? 1 : -1;
+		int ind = Collections.binarySearch(subregionTiles, key, (o1, o2) -> {
+			if(o1.subregion.left == o2.subregion.left) {
+				return 0;
 			}
+			return o1.subregion.left < o2.subregion.left ? 1 : -1;
 		});
 		if (ind >= 0) {
 			for (int i = ind; i <= subregionTiles.size(); i++) {
@@ -313,7 +306,6 @@ public class RoutingContext {
 			try {
 				if (r.getValue().size() > 0) {
 					long now = System.nanoTime();
-					// int rg = r.getValue().get(0).routeReg.regionsRead;
 					List<RouteSubregion> subregs = r.getKey().searchRouteIndexTree(request, r.getValue());
 					if(subregs.size() > 0) {
 						checkOldRoutingFiles(r.getKey());
@@ -482,25 +474,6 @@ public class RoutingContext {
 		}
 	}
 
-//	static long runGCUsedMemory()  {
-//		Runtime runtime = Runtime.getRuntime();
-//		long usedMem1 = runtime.totalMemory() - runtime.freeMemory();
-//		long usedMem2 = Long.MAX_VALUE;
-//		int cnt = 4;
-//		while (cnt-- >= 0) {
-//			for (int i = 0; (usedMem1 < usedMem2) && (i < 1000); ++i) {
-//				// AVIAN FIXME
-//				runtime.runFinalization();
-//				runtime.gc();
-//				Thread.yield();
-//
-//				usedMem2 = usedMem1;
-//				usedMem1 = runtime.totalMemory() - runtime.freeMemory();
-//			}
-//		}
-//		return usedMem1;
-//	}
-	
 	private static long calcRouteId(RouteDataObject o, int ind) {
 		return (o.getId() << 10) + ind;
 	}
@@ -573,10 +546,7 @@ public class RoutingContext {
 			ctx.timeToLoad += (System.nanoTime() - nanoTime);
 			if (res != null) {
 				for (RouteDataObject ro : res) {
-					
-					boolean accept = ro != null;
-					accept = ctx.getRouter().acceptLine(ro);
-					if (accept) {
+					if (ctx.getRouter().acceptLine(ro)) {
 						for (int i = 0; i < ro.pointsX.length; i++) {
 							if (ro.getPoint31XTile(i) == x31 && ro.getPoint31YTile(i) == y31) {
 								RouteDataObject toCmp = excludeDuplications.get(calcRouteId(ro, i));
@@ -710,6 +680,6 @@ public class RoutingContext {
 	}
 	
 	public BinaryMapIndexReader[] getMaps() {
-		return map.keySet().toArray(new BinaryMapIndexReader[map.size()]);
+		return map.keySet().toArray(new BinaryMapIndexReader[0]);
 	}
 }

@@ -36,48 +36,35 @@ public class UsersReportFragment extends BaseOsmAndDialogFragment {
 		if (getTag().equals(ReportsFragment.EDITS_FRAGMENT)) {
 			((TextView) view.findViewById(R.id.titleTextView)).setText(R.string.osm_editors_ranking);
 			GetJsonAsyncTask<RankingUserByMonthResponse> task = new GetJsonAsyncTask<>(RankingUserByMonthResponse.class);
-			task.setOnResponseListener(new OnResponseListener<Protocol.RankingUserByMonthResponse>() {
-
-				@Override
-				public void onResponse(RankingUserByMonthResponse response) {
-					if (response != null && response.rows != null) {
-						for (UserRankingByMonth rankingByMonth : response.rows) {
-							if (rankingByMonth != null) {
-								adapter.add(rankingByMonth);
-							}
+			task.setOnResponseListener(response -> {
+				if (response != null && response.rows != null) {
+					for (UserRankingByMonth rankingByMonth : response.rows) {
+						if (rankingByMonth != null) {
+							adapter.add(rankingByMonth);
 						}
 					}
-					view.findViewById(R.id.progress).setVisibility(View.GONE);
 				}
+				view.findViewById(R.id.progress).setVisibility(View.GONE);
 			});
 			task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
 		} else if (getTag().equals(ReportsFragment.RECIPIENTS_FRAGMENT)) {
 			((TextView)view.findViewById(R.id.titleTextView)).setText(R.string.osm_recipients_label);
 			GetJsonAsyncTask<Protocol.RecipientsByMonth> task = new GetJsonAsyncTask<>(Protocol.RecipientsByMonth.class);
-			task.setOnResponseListener(new OnResponseListener<Protocol.RecipientsByMonth>() {
-
-				@Override
-				public void onResponse(Protocol.RecipientsByMonth response) {
-					if (response != null && response.rows != null) {
-						for (Protocol.Recipient recipient : response.rows) {
-							if (recipient != null) {
-								adapter.add(recipient);
-							}
+			task.setOnResponseListener(response -> {
+				if (response != null && response.rows != null) {
+					for (Protocol.Recipient recipient : response.rows) {
+						if (recipient != null) {
+							adapter.add(recipient);
 						}
 					}
-					view.findViewById(R.id.progress).setVisibility(View.GONE);
 				}
+				view.findViewById(R.id.progress).setVisibility(View.GONE);
 			});
 			task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
 		}
 		listView.setAdapter(adapter);
 		ImageButton clearButton = view.findViewById(R.id.closeButton);
-		clearButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-			}
-		});
+		clearButton.setOnClickListener(v -> dismiss());
 		return view;
 	}
 

@@ -71,32 +71,29 @@ class BinaryMapIndexFilter {
     private Stat process(final int zoom) throws IOException {
 		final Stat stat = new Stat();
 		final Map<TagValuePair, Integer> map = new HashMap<>();
-		SearchFilter sf = new SearchFilter() {
-			@Override
-			public boolean accept(TIntArrayList types, MapIndex index) {
-				boolean polyline = false;
-				for (int j = 0; j < types.size(); j++) {
-					int wholeType = types.get(j);
-					TagValuePair pair = index.decodeType(wholeType);
-					if (pair != null) {
-						int t = wholeType & 3;
-						if (t == RenderingRulesStorage.POINT_RULES) {
-							stat.pointCount++;
-						} else if (t == RenderingRulesStorage.LINE_RULES) {
-							stat.wayCount++;
-							polyline = true;
-						} else {
-							stat.polygonCount++;
-							if (!map.containsKey(pair)) {
-								map.put(pair, 0);
-							}
-							map.put(pair, map.get(pair) + 1);
+		SearchFilter sf = (types, index) -> {
+			boolean polyline = false;
+			for (int j = 0; j < types.size(); j++) {
+				int wholeType = types.get(j);
+				TagValuePair pair = index.decodeType(wholeType);
+				if (pair != null) {
+					int t = wholeType & 3;
+					if (t == RenderingRulesStorage.POINT_RULES) {
+						stat.pointCount++;
+					} else if (t == RenderingRulesStorage.LINE_RULES) {
+						stat.wayCount++;
+						polyline = true;
+					} else {
+						stat.polygonCount++;
+						if (!map.containsKey(pair)) {
+							map.put(pair, 0);
 						}
+						map.put(pair, map.get(pair) + 1);
 					}
 				}
-				stat.totalCount++;
-				return polyline;
 			}
+			stat.totalCount++;
+			return polyline;
 		};
 		ResultMatcher<BinaryMapDataObject> matcher = new ResultMatcher<BinaryMapDataObject>() {
 			@Override
@@ -120,13 +117,7 @@ class BinaryMapIndexFilter {
 		List<BinaryMapDataObject> result = reader.searchMapIndex(req);
 		
 		ArrayList<TagValuePair> list = new ArrayList<>(map.keySet());
-		Collections.sort(list, new Comparator<TagValuePair>() {
-			@Override
-			public int compare(TagValuePair o1, TagValuePair o2) {
-				return -map.get(o1) + map.get(o2);
-			}
-
-		});
+		Collections.sort(list, (o1, o2) -> -map.get(o1) + map.get(o2));
 		for(TagValuePair tp : list){
 			Integer i = map.get(tp);
 			if(i > 10){

@@ -59,18 +59,15 @@ public class OsmNotesMenu {
 
 					new AlertDialog.Builder(mapActivity)
 							.setTitle(R.string.show_from_zoom_level)
-							.setSingleChoiceItems(zoomStrings, checked, new DialogInterface.OnClickListener() {
-								@Override
-								public void onClick(DialogInterface dialog, int which) {
-									showOsmBugsZoomPref.set(zoomIntValues[which]);
-									ContextMenuItem item = adapter.getItem(position);
-									if (item != null) {
-										item.setDescription(zoomStrings[which]);
-										adapter.notifyDataSetChanged();
-									}
-									mapActivity.refreshMap();
-									dialog.dismiss();
+							.setSingleChoiceItems(zoomStrings, checked, (dialog, which) -> {
+								showOsmBugsZoomPref.set(zoomIntValues[which]);
+								ContextMenuItem item = adapter.getItem(position);
+								if (item != null) {
+									item.setDescription(zoomStrings[which]);
+									adapter.notifyDataSetChanged();
 								}
+								mapActivity.refreshMap();
+								dialog.dismiss();
 							})
 							.setNegativeButton(R.string.shared_string_dismiss, null)
 							.show();

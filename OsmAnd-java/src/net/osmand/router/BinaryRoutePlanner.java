@@ -7,7 +7,6 @@ import net.osmand.util.MapUtils;
 
 import org.apache.commons.logging.Log;
 
-import java.io.IOException;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
@@ -61,7 +60,7 @@ public class BinaryRoutePlanner {
 	 */
 	@SuppressWarnings("unused")
 	FinalRouteSegment searchRouteInternal(final RoutingContext ctx, RouteSegmentPoint start, RouteSegmentPoint end,
-			RouteSegment recalculationEnd ) throws InterruptedException, IOException {
+			RouteSegment recalculationEnd ) throws InterruptedException {
 		// measure time
 		ctx.timeToLoad = 0;
 		ctx.visitedSegments = 0;
@@ -279,13 +278,11 @@ public class BinaryRoutePlanner {
 				RouteSegment peek = graphDirectSegments.peek();
 				ctx.calculationProgress.distanceFromBegin = Math.max(peek.distanceFromStart,
 						ctx.calculationProgress.distanceFromBegin);
-//				ctx.calculationProgress.directDistance = peek.distanceFromStart + peek.distanceToEnd;
 			}
 			if (graphReverseSegments.size() > 0 && ctx.getPlanRoadDirection() <= 0) {
 				RouteSegment peek = graphReverseSegments.peek();
 				ctx.calculationProgress.distanceFromEnd = Math.max(peek.distanceFromStart + peek.distanceToEnd,
 							ctx.calculationProgress.distanceFromEnd);
-//				ctx.calculationProgress.reverseDistance = peek.distanceFromStart + peek.distanceToEnd;
 			}
 		}
 	}
@@ -512,10 +509,8 @@ public class BinaryRoutePlanner {
 						+ calculateTimeWithObstacles(ctx, road, segmentDist, obstaclesTime);
 				frs.setParentRoute(segment);
 				frs.setParentSegmentEnd(segmentPoint);
-				frs.reverseWaySearch = reverseWaySearch;
 				frs.distanceFromStart = opposite.distanceFromStart + distStartObstacles;
 				frs.distanceToEnd = 0;
-				frs.opposite = opposite;
 				graphSegments.add(frs);
 				if (TRACE_ROUTING) {
 					printRoad("  >> Final segment : ", frs, reverseWaySearch);
@@ -890,9 +885,6 @@ public class BinaryRoutePlanner {
 	}
 
 	static class FinalRouteSegment extends RouteSegment {
-		boolean reverseWaySearch;
-		RouteSegment opposite;
-
 		FinalRouteSegment(RouteDataObject road, int segmentStart) {
 			super(road, segmentStart);
 		}

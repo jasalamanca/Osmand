@@ -47,7 +47,7 @@ public abstract class DashBaseFragment extends Fragment {
 	@Override
 	final public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
 								   @Nullable Bundle savedInstanceState) {
-		View childView = initView(inflater, container, savedInstanceState);
+		View childView = initView(inflater, container);
 		FrameLayout.LayoutParams layoutParams =
 				new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
 						ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -60,8 +60,8 @@ public abstract class DashBaseFragment extends Fragment {
 		frameLayout.addView(childView, childLayoutParams);
 
 		if (isDismissAllowed()) {
-			SwipeDismissTouchListener listener = new SwipeDismissTouchListener(childView, null,
-					new SwipeDismissTouchListener.DismissCallbacks() {
+			SwipeDismissTouchListener listener = new SwipeDismissTouchListener(childView,
+                    new SwipeDismissTouchListener.DismissCallbacks() {
 						@Override
 						public boolean canDismiss() {
 							return true;
@@ -83,8 +83,7 @@ public abstract class DashBaseFragment extends Fragment {
 		return frameLayout;
 	}
 
-	protected abstract View initView(LayoutInflater inflater, @Nullable ViewGroup container,
-                                     @Nullable Bundle savedInstanceState);
+	protected abstract View initView(LayoutInflater inflater, @Nullable ViewGroup container);
 	DismissListener getDismissCallback() {
 		return defaultDismissListener;
 	}
@@ -160,12 +159,7 @@ public abstract class DashBaseFragment extends Fragment {
 			fragmentView.setAlpha(1);
 			Snackbar.make(parentView, dashboardOnMap.getMyApplication().getResources()
 					.getString(R.string.shared_string_card_was_hidden), Snackbar.LENGTH_LONG)
-					.setAction(R.string.shared_string_undo, new View.OnClickListener() {
-						@Override
-						public void onClick(View view) {
-							DefaultDismissListener.this.onUndo();
-						}
-					})
+					.setAction(R.string.shared_string_undo, view -> DefaultDismissListener.this.onUndo())
 					.show();
 		}
 

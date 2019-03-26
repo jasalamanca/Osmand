@@ -107,12 +107,7 @@ public class MapInfoWidgetsFactory {
 		};
 		gpsInfoControl.setIcons(R.drawable.widget_gps_info_day, R.drawable.widget_gps_info_night);
 		gpsInfoControl.setText(null, null);
-		gpsInfoControl.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				new StartGPSStatus(map).run();
-			}
-		});
+		gpsInfoControl.setOnClickListener(view -> new StartGPSStatus(map).run());
 		return gpsInfoControl;
 	}
 
@@ -182,20 +177,17 @@ public class MapInfoWidgetsFactory {
 
 		rulerControl.setText(title, null);
 		setRulerControlIcon(rulerControl, map.getMyApplication().getSettings().RULER_MODE.get());
-		rulerControl.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				final RulerMode mode = map.getMyApplication().getSettings().RULER_MODE.get();
-				RulerMode newMode = RulerMode.FIRST;
-				if (mode == RulerMode.FIRST) {
-					newMode = RulerMode.SECOND;
-				} else if (mode == RulerMode.SECOND) {
-					newMode = RulerMode.EMPTY;
-				}
-				setRulerControlIcon(rulerControl, newMode);
-				map.getMyApplication().getSettings().RULER_MODE.set(newMode);
-				map.refreshMap();
+		rulerControl.setOnClickListener(view -> {
+			final RulerMode mode = map.getMyApplication().getSettings().RULER_MODE.get();
+			RulerMode newMode = RulerMode.FIRST;
+			if (mode == RulerMode.FIRST) {
+				newMode = RulerMode.SECOND;
+			} else if (mode == RulerMode.SECOND) {
+				newMode = RulerMode.EMPTY;
 			}
+			setRulerControlIcon(rulerControl, newMode);
+			map.getMyApplication().getSettings().RULER_MODE.set(newMode);
+			map.refreshMap();
 		});
 
 		return rulerControl;
@@ -759,18 +751,10 @@ public class MapInfoWidgetsFactory {
 				if (updated || changed) {
 					ImageView all = waypointInfoBar.findViewById(R.id.waypoint_more);
 					ImageView remove = waypointInfoBar.findViewById(R.id.waypoint_close);
-					all.setOnClickListener(new OnClickListener() {
-						@Override
-						public void onClick(View view) {
-							map.getDashboard().setDashboardVisibility(true, DashboardType.WAYPOINTS, AndroidUtils.getCenterViewCoordinates(view));
-						}
-					});
-					remove.setOnClickListener(new OnClickListener() {
-						@Override
-						public void onClick(View view) {
-							waypointHelper.removeVisibleLocationPoint(pnt);
-							map.refreshMap();
-						}
+					all.setOnClickListener(view -> map.getDashboard().setDashboardVisibility(true, DashboardType.WAYPOINTS, AndroidUtils.getCenterViewCoordinates(view)));
+					remove.setOnClickListener(view -> {
+						waypointHelper.removeVisibleLocationPoint(pnt);
+						map.refreshMap();
 					});
 				}
 				return true;

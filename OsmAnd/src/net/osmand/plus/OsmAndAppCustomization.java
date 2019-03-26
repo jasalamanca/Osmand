@@ -2,7 +2,6 @@ package net.osmand.plus;
 
 import android.app.Activity;
 
-import net.osmand.IProgress;
 import net.osmand.IndexConstants;
 import net.osmand.data.LocationPoint;
 import net.osmand.plus.activities.MapActivity;
@@ -18,7 +17,6 @@ import net.osmand.plus.routing.RouteCalculationResult;
 import java.io.File;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 public class OsmAndAppCustomization {
 	
@@ -58,9 +56,9 @@ public class OsmAndAppCustomization {
 		return DownloadActivity.class;
 	}
 
-	public List<String> onIndexingFiles(IProgress progress, Map<String, String> indexFileNames) {
-		return Collections.emptyList();
-	}
+//	public List<String> onIndexingFiles(IProgress progress, Map<String, String> indexFileNames) {
+//		return Collections.emptyList();
+//	}
 
 	public String getIndexesUrl() {
 		return "http://"+IndexConstants.INDEX_DOWNLOAD_DOMAIN+"/get_indexes?gzip&" + Version.getVersionAsURLParam(app); //$NON-NLS-1$;

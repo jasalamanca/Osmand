@@ -670,28 +670,25 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 			return;
 		}
 		if (!baseHandler.hasMessages(BASE_REFRESH_MESSAGE) || drawSettings.isUpdateVectorRendering()) {
-			Message msg = Message.obtain(baseHandler, new Runnable() {
-				@Override
-				public void run() {
-					baseHandler.removeMessages(BASE_REFRESH_MESSAGE);
-					try {
-						DrawSettings param = drawSettings;
-						Boolean currentNightMode = nightMode;
-						if (currentNightMode != null && currentNightMode != param.isNightMode()) {
-							param = new DrawSettings(currentNightMode, true);
-							resetDefaultColor();
-						}
-						if (handler.hasMessages(MAP_FORCE_REFRESH_MESSAGE)) {
-							if (!param.isUpdateVectorRendering()) {
-								param = new DrawSettings(drawSettings.isNightMode(), true);
-							}
-							handler.removeMessages(MAP_FORCE_REFRESH_MESSAGE);
-						}
-						refreshBaseMapInternal(currentViewport.copy(), param);
-						sendRefreshMapMsg(param, 0);
-					} catch (Exception e) {
-						LOG.error(e.getMessage(), e);
+			Message msg = Message.obtain(baseHandler, () -> {
+				baseHandler.removeMessages(BASE_REFRESH_MESSAGE);
+				try {
+					DrawSettings param = drawSettings;
+					Boolean currentNightMode = nightMode;
+					if (currentNightMode != null && currentNightMode != param.isNightMode()) {
+						param = new DrawSettings(currentNightMode, true);
+						resetDefaultColor();
 					}
+					if (handler.hasMessages(MAP_FORCE_REFRESH_MESSAGE)) {
+						if (!param.isUpdateVectorRendering()) {
+							param = new DrawSettings(drawSettings.isNightMode(), true);
+						}
+						handler.removeMessages(MAP_FORCE_REFRESH_MESSAGE);
+					}
+					refreshBaseMapInternal(currentViewport.copy(), param);
+					sendRefreshMapMsg(param, 0);
+				} catch (Exception e) {
+					LOG.error(e.getMessage(), e);
 				}
 			});
 			msg.what = drawSettings.isUpdateVectorRendering() ? MAP_FORCE_REFRESH_MESSAGE : BASE_REFRESH_MESSAGE;
@@ -722,12 +719,9 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 
 	private void sendRefreshMapMsg(final DrawSettings drawSettings, int delay) {
 		if (!handler.hasMessages(MAP_REFRESH_MESSAGE) || drawSettings.isUpdateVectorRendering()) {
-			Message msg = Message.obtain(handler, new Runnable() {
-				@Override
-				public void run() {
-					handler.removeMessages(MAP_REFRESH_MESSAGE);
-					refreshMapInternal(drawSettings);
-				}
+			Message msg = Message.obtain(handler, () -> {
+				handler.removeMessages(MAP_REFRESH_MESSAGE);
+				refreshMapInternal(drawSettings);
 			});
 			msg.what = MAP_REFRESH_MESSAGE;
 			if (delay > 0) {
@@ -769,7 +763,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		float dy = (fromY - toY);
 		moveTo(dx, dy);
 		if (locationListener != null && notify) {
-			locationListener.locationChanged(getLatitude(), getLongitude(), this);
+			locationListener.locationChanged();
 		}
 	}
 
@@ -785,7 +779,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		currentViewport.setLatLonCenter(latitude, longitude);
 		refreshMap();
 		if (locationListener != null && notify) {
-			locationListener.locationChanged(latitude, longitude, this);
+			locationListener.locationChanged();
 		}
 	}
 
@@ -793,7 +787,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		currentViewport.setZoomAndAnimation(zoom, 0, zoomPart);
 		refreshMap();
 		if (locationListener != null && notify) {
-			locationListener.locationChanged(getLatitude(), getLongitude(), this);
+			locationListener.locationChanged();
 		}
 	}
 
@@ -804,7 +798,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 			currentViewport.setRotate(zoom > LOWEST_ZOOM_TO_ROTATE ? rotate : 0);
 			refreshMap();
 			if (notify && locationListener != null) {
-				locationListener.locationChanged(getLatitude(), getLongitude(), this);
+				locationListener.locationChanged();
 			}
 		}
 	}
@@ -971,11 +965,8 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	}
 
 	private void showMessage(final String msg) {
-		handler.post(new Runnable() {
-			@Override
-			public void run() {
-				Toast.makeText(application, msg, Toast.LENGTH_SHORT).show(); //$NON-NLS-1$
-			}
+		handler.post(() -> {
+			Toast.makeText(application, msg, Toast.LENGTH_SHORT).show(); //$NON-NLS-1$
 		});
 	}
 

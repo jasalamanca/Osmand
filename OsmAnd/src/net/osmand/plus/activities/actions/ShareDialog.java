@@ -48,16 +48,13 @@ public class ShareDialog {
 			if (Version.isMarketEnabled((OsmandApplication) activity.getApplication())) {
 				AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 				builder.setMessage(activity.getString(R.string.zxing_barcode_scanner_not_found));
-				builder.setPositiveButton(activity.getString(R.string.shared_string_yes), new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Version.getUrlWithUtmRef((OsmandApplication) activity.getApplication(), ZXING_BARCODE_SCANNER_COMPONENT)));
-						try {
-							activity.startActivity(intent);
-						} catch (ActivityNotFoundException e) {
-						}
-					}
-				});
+				builder.setPositiveButton(activity.getString(R.string.shared_string_yes), (dialog, which) -> {
+                    Intent intent1 = new Intent(Intent.ACTION_VIEW, Uri.parse(Version.getUrlWithUtmRef((OsmandApplication) activity.getApplication(), ZXING_BARCODE_SCANNER_COMPONENT)));
+                    try {
+                        activity.startActivity(intent1);
+                    } catch (ActivityNotFoundException e) {
+                    }
+                });
 				builder.setNegativeButton(activity.getString(R.string.shared_string_no), null);
 				builder.show();
 			} else {

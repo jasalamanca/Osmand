@@ -81,22 +81,14 @@ public class SaveAsTrackBottomSheetDialogFragment extends BottomSheetDialogFragm
 			((OsmandTextFieldBoxes) textBox).activate(true);
 		}
 
-		mainView.findViewById(R.id.save_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (listener != null) {
-					listener.saveGpx(nameEditText.getText().toString());
-				}
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.save_button).setOnClickListener(view -> {
+            if (listener != null) {
+                listener.saveGpx(nameEditText.getText().toString());
+            }
+            dismiss();
+        });
 
-		mainView.findViewById(R.id.close_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.close_button).setOnClickListener(view -> dismiss());
 
 		final int screenHeight = AndroidUtils.getScreenHeight(getActivity());
 		final int statusBarHeight = AndroidUtils.getStatusBarHeight(getActivity());

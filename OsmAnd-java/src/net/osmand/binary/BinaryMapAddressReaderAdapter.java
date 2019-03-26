@@ -45,7 +45,7 @@ public class BinaryMapAddressReaderAdapter {
 
 	private static final Log LOG = PlatformUtil.getLog(BinaryMapAddressReaderAdapter.class);
 	private final static List<Integer> TYPES = Arrays.asList(CITY_TOWN_TYPE, POSTCODES_TYPE, VILLAGES_TYPE, STREET_TYPE);
-	public final static int[] CITY_TYPES = {CITY_TOWN_TYPE, POSTCODES_TYPE, VILLAGES_TYPE};
+	final static int[] CITY_TYPES = {CITY_TOWN_TYPE, POSTCODES_TYPE, VILLAGES_TYPE};
 
 	public static class AddressRegion extends BinaryIndexPart {
 		String enName;
@@ -54,7 +54,7 @@ public class BinaryMapAddressReaderAdapter {
 		final List<CitiesBlock> cities = new ArrayList<>();
 		LatLon calculatedCenter = null;
 
-		public String getEnName() {
+		String getEnName() {
 			return enName;
 		}
 		public List<CitiesBlock> getCities() {
@@ -63,12 +63,12 @@ public class BinaryMapAddressReaderAdapter {
 		public List<String> getAttributeTagsTable() {
 			return attributeTagsTable;
 		}
-		public int getIndexNameOffset() {
+		int getIndexNameOffset() {
 			return indexNameOffset;
 		}
 	}
 
-	public static class CitiesBlock extends BinaryIndexPart {
+	static class CitiesBlock extends BinaryIndexPart {
 		int type;
 	}
 
@@ -88,7 +88,7 @@ public class BinaryMapAddressReaderAdapter {
 		return map.readInt();
 	}
 	
-	private void readBoundariesIndex(AddressRegion region) throws IOException {
+	private void readBoundariesIndex() throws IOException {
 		while (true) {
 			int t = codedIS.readTag();
 			int tag = WireFormat.getTagFieldNumber(t);
@@ -129,7 +129,7 @@ public class BinaryMapAddressReaderAdapter {
 			case OsmandOdb.OsmAndAddressIndex.BOUNDARIES_FIELD_NUMBER:
 				length = codedIS.readRawVarint32();
 				oldLimit = codedIS.pushLimit(length);
-				readBoundariesIndex(region);
+				readBoundariesIndex();
 				codedIS.popLimit(oldLimit);
 				region.enName = codedIS.readString();
 				break;
@@ -559,18 +559,13 @@ public class BinaryMapAddressReaderAdapter {
 		}
 	}
 
-	public void searchAddressDataByName(AddressRegion reg, SearchRequest<MapObject> req, List<Integer> typeFilter) throws IOException {
+	void searchAddressDataByName(AddressRegion reg, SearchRequest<MapObject> req, List<Integer> typeFilter) throws IOException {
 		TIntArrayList loffsets = new TIntArrayList();
 		CollatorStringMatcher stringMatcher = new CollatorStringMatcher(req.nameQuery, req.matcherMode);
 		String postcode = Postcode.normalize(req.nameQuery, map.getCountryName());
 		final CityMatcher postcodeMatcher = new DefaultCityMatcher(new CollatorStringMatcher(postcode, req.matcherMode));
 		final CityMatcher cityMatcher = new DefaultCityMatcher(stringMatcher);
-		final CityMatcher cityPostcodeMatcher = new CityMatcher() {
-			@Override
-			public boolean matches(City city) {
-				return city.isPostcode() ? postcodeMatcher.matches(city) : cityMatcher.matches(city);
-			}
-		};
+		final CityMatcher cityPostcodeMatcher = city -> city.isPostcode() ? postcodeMatcher.matches(city) : cityMatcher.matches(city);
 		long time = System.currentTimeMillis();
 		int indexOffset = 0;
 		while (true) {

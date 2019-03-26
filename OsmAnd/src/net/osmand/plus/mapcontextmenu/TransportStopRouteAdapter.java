@@ -46,12 +46,9 @@ class TransportStopRouteAdapter extends ArrayAdapter<TransportStopRoute> {
 			gradientDrawableBg.setColor(transportStopRoute.getColor(app, nightMode));
 		}
 
-		convertView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (listener != null) {
-					listener.onClick(position);
-				}
+		convertView.setOnClickListener(view -> {
+			if (listener != null) {
+				listener.onClick(position);
 			}
 		});
 

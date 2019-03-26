@@ -359,15 +359,12 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 		View undoView = inflater.inflate(R.layout.undo_popup, null);
 		mUndoButton = undoView.findViewById(R.id.undo);
 		mUndoButton.setOnClickListener(new UndoClickListener());
-		mUndoButton.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				// If the user touches the screen invalidate the current running delay by incrementing
-				// the valid message id. So this delay won't hide the undo popup anymore
-				mValidDelayedMsgId++;
-				return false;
-			}
-		});
+		mUndoButton.setOnTouchListener((v, event) -> {
+            // If the user touches the screen invalidate the current running delay by incrementing
+            // the valid message id. So this delay won't hide the undo popup anymore
+            mValidDelayedMsgId++;
+            return false;
+        });
 		mUndoPopupTextView = undoView.findViewById(R.id.text);
 
 		mUndoPopup = new PopupWindow(undoView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, false);
@@ -685,13 +682,10 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 			}
 		});
 
-		animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-			@Override
-			public void onAnimationUpdate(ValueAnimator valueAnimator) {
-				lp.height = (Integer) valueAnimator.getAnimatedValue();
-				listItemView.setLayoutParams(lp);
-			}
-		});
+		animator.addUpdateListener(valueAnimator -> {
+            lp.height = (Integer) valueAnimator.getAnimatedValue();
+            listItemView.setLayoutParams(lp);
+        });
 
 		mPendingDismisses.add(new PendingDismissData(dismissPosition, dismissView, listItemView));
 		animator.start();

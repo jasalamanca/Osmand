@@ -116,23 +116,17 @@ public class QuickActionsWidget extends LinearLayout {
         next = findViewById(R.id.btnNext);
         prev = findViewById(R.id.btnPrev);
 
-        next.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        next.setOnClickListener(view -> {
 
-                if (viewPager.getAdapter().getCount() > viewPager.getCurrentItem() + 1) {
-                    viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
-                }
+            if (viewPager.getAdapter().getCount() > viewPager.getCurrentItem() + 1) {
+                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
             }
         });
 
-        prev.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        prev.setOnClickListener(view -> {
 
-                if (viewPager.getCurrentItem() - 1 >= 0) {
-                    viewPager.setCurrentItem(viewPager.getCurrentItem() - 1);
-                }
+            if (viewPager.getCurrentItem() - 1 >= 0) {
+                viewPager.setCurrentItem(viewPager.getCurrentItem() - 1);
             }
         });
 
@@ -236,22 +230,16 @@ public class QuickActionsWidget extends LinearLayout {
                                     : R.drawable.ic_action_icon_hide_dark);
                 }
 
-                view.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
+                view.setOnClickListener(view1 -> {
 
-                        if (selectionListener != null) selectionListener.onActionSelected(action);
-                    }
+                    if (selectionListener != null) selectionListener.onActionSelected(action);
                 });
 				if (action.isActionEditable()) {
-					view.setOnLongClickListener(new OnLongClickListener() {
-						@Override
-						public boolean onLongClick(View v) {
-							CreateEditActionDialog dialog = CreateEditActionDialog.newInstance(action.id);
-							dialog.show(((AppCompatActivity) getContext()).getSupportFragmentManager(), AddQuickActionDialog.TAG);
-							return true;
-						}
-					});
+					view.setOnLongClickListener(v -> {
+                        CreateEditActionDialog dialog = CreateEditActionDialog.newInstance(action.id);
+                        dialog.show(((AppCompatActivity) getContext()).getSupportFragmentManager(), AddQuickActionDialog.TAG);
+                        return true;
+                    });
 				}
                 if (!action.isActionEnable(application)) {
                     view.setEnabled(false);

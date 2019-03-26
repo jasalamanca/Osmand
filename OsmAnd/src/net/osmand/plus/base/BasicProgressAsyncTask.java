@@ -1,12 +1,13 @@
 package net.osmand.plus.base;
 
+import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.Message;
+
 import net.osmand.IProgress;
 import net.osmand.plus.OsmAndConstants;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
-import android.os.AsyncTask;
-import android.os.Handler;
-import android.os.Message;
 
 public abstract class BasicProgressAsyncTask<Tag, Params, Progress, Result> extends AsyncTask<Params, Progress, Result> implements IProgress {
 	private String taskName;
@@ -15,8 +16,6 @@ public abstract class BasicProgressAsyncTask<Tag, Params, Progress, Result> exte
 	private int work;
 	protected String message = ""; //$NON-NLS-1$
 	protected final OsmandApplication ctx;
-	private boolean interrupted = false;
-	private Tag tag;
 	private Handler uiHandler;
 
 	protected BasicProgressAsyncTask(OsmandApplication app) {
@@ -32,7 +31,6 @@ public abstract class BasicProgressAsyncTask<Tag, Params, Progress, Result> exte
 	protected void onPreExecute() {
 		super.onPreExecute();
 		uiHandler = new Handler();
-		this.interrupted = false;
 	}
 
 	@Override
@@ -46,8 +44,7 @@ public abstract class BasicProgressAsyncTask<Tag, Params, Progress, Result> exte
 		updProgress(false);
 	}
 
-	protected abstract void updateProgress(boolean updateOnlyProgress, 
-			Tag tag);
+	protected abstract void updateProgress();
 
 	@Override
 	public void startWork(int work) {
@@ -74,12 +71,7 @@ public abstract class BasicProgressAsyncTask<Tag, Params, Progress, Result> exte
 	
 	private void updProgress(final boolean updateOnlyProgress) {
 		if(uiHandler != null && (!uiHandler.hasMessages(1) || !updateOnlyProgress)) {
-			Message msg = Message.obtain(uiHandler, new Runnable() {
-				@Override
-				public void run() {
-					updateProgress(updateOnlyProgress, tag);
-				}
-			});
+			Message msg = Message.obtain(uiHandler, () -> updateProgress());
 			msg.what = OsmAndConstants.UI_HANDLER_PROGRESS + 2;
 			uiHandler.sendMessage(msg);
 		}
@@ -115,15 +107,4 @@ public abstract class BasicProgressAsyncTask<Tag, Params, Progress, Result> exte
 		return progress;
 	}
 
-	public void setInterrupted(boolean interrupted) {
-		this.interrupted = interrupted;
-	}
-
-	public boolean isInterrupted() {
-		return interrupted;
-	}
-
-	protected void setTag(Tag tag) {
-		this.tag = tag;
-	}
 }

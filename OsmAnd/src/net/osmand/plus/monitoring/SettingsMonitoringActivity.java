@@ -65,18 +65,15 @@ public class SettingsMonitoringActivity extends SettingsBaseActivity {
 		pref.setTitle(R.string.save_current_track);
 		pref.setSummary(getMyApplication().getString(R.string.save_current_track_descr)
 				+ " (" + OsmAndFormatter.getFormattedDistance(getMyApplication().getSavingTrackHelper().getDistance(), getMyApplication()) + ")");
-		pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				SavingTrackHelper helper = getMyApplication().getSavingTrackHelper();
-				if (helper.hasDataToSave()) {
-					saveCurrentTracks();
-				} else {
-					helper.close();
-				}
-				return true;
-			}
-		});
+		pref.setOnPreferenceClickListener(preference -> {
+            SavingTrackHelper helper = getMyApplication().getSavingTrackHelper();
+            if (helper.hasDataToSave()) {
+                saveCurrentTracks();
+            } else {
+                helper.close();
+            }
+            return true;
+        });
 		cat.addPreference(pref);
 
 		cat.addPreference(createCheckBoxPreference(settings.SAVE_TRACK_TO_GPX, R.string.save_track_to_gpx,

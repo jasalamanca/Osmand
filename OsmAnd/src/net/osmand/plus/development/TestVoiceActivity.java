@@ -107,31 +107,23 @@ public class TestVoiceActivity extends OsmandActionBarActivity {
 			k++;
 		}
 		AlertDialog.Builder bld = new AlertDialog.Builder(this);
-		bld.setSingleChoiceItems(entrieValues, selected, new DialogInterface.OnClickListener() {
-			
-			@Override
-			public void onClick(DialogInterface dialog, final int which) {
-				final OsmandApplication app = (OsmandApplication) getApplication();
-				getSupportActionBar().setTitle(app.getString(R.string.test_voice_prompts) + " (" + entrieValues[which] + ")");
-				app.getSettings().VOICE_PROVIDER.set(entrieValues[which]);
-				app.initVoiceCommandPlayer(TestVoiceActivity.this,
-						app.getSettings().APPLICATION_MODE.get(), true, new Runnable() {
-					
-					@Override
-					public void run() {
-						CommandPlayer p = app.getRoutingHelper().getVoiceRouter().getPlayer();
-						if (p == null) {
-							Toast.makeText(TestVoiceActivity.this, "Voice player not initialized", Toast.LENGTH_SHORT).show();
-						} else {
-							osmandVoice = entrieValues[which];
-							osmandVoiceLang = p.getLanguage();
-							addButtons(ll, p);
-						}
-					}
-				}, true, true);
-				dialog.dismiss();
-			}
-		});
+		bld.setSingleChoiceItems(entrieValues, selected, (dialog, which) -> {
+            final OsmandApplication app = (OsmandApplication) getApplication();
+            getSupportActionBar().setTitle(app.getString(R.string.test_voice_prompts) + " (" + entrieValues[which] + ")");
+            app.getSettings().VOICE_PROVIDER.set(entrieValues[which]);
+            app.initVoiceCommandPlayer(TestVoiceActivity.this,
+                    app.getSettings().APPLICATION_MODE.get(), true, () -> {
+                        CommandPlayer p = app.getRoutingHelper().getVoiceRouter().getPlayer();
+                        if (p == null) {
+                            Toast.makeText(TestVoiceActivity.this, "Voice player not initialized", Toast.LENGTH_SHORT).show();
+                        } else {
+                            osmandVoice = entrieValues[which];
+                            osmandVoiceLang = p.getLanguage();
+                            addButtons(ll, p);
+                        }
+                    }, true, true);
+            dialog.dismiss();
+        });
 		bld.show();
 	}
 
@@ -309,36 +301,32 @@ public class TestVoiceActivity extends OsmandActionBarActivity {
 		}
 		
 		layout.addView(button);
-		button.setOnClickListener(new View.OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				builder.play();
-				if (description.startsWith("\u25BA (11.1)")) {
-					infoButton.setText("\u25BA (11.1) (Tap to refresh)\n" + getVoiceSystemInfo());
-					Toast.makeText(TestVoiceActivity.this, "Info refreshed.", Toast.LENGTH_LONG).show();
-				}
-				if (description.startsWith("\u25BA (11.2)")) {
-					if (((OsmandApplication) getApplication()).getSettings().AUDIO_STREAM_GUIDANCE.get() == 0) {
-						if (((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.get() == 1000) {
-							((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.set(1500);
-						} else if (((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.get() == 1500) {
-							((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.set(2000);
-						} else if (((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.get() == 2000) {
-							((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.set(2500);
-						} else if (((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.get() == 2500) {
-							((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.set(3000);
-						} else {
-							((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.set(1000);
-						}
-						infoButton.setText("\u25BA (11.1) (Tap to refresh)\n" + getVoiceSystemInfo());
-						Toast.makeText(TestVoiceActivity.this, "BT SCO init delay changed to " + ((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.get() + "\u00A0ms.", Toast.LENGTH_LONG).show();
-					} else {
-						Toast.makeText(TestVoiceActivity.this, "Setting only available when using 'Phone call audio'.", Toast.LENGTH_LONG).show();
-					}
-				}
-			}
-		});
+		button.setOnClickListener(v -> {
+            builder.play();
+            if (description.startsWith("\u25BA (11.1)")) {
+                infoButton.setText("\u25BA (11.1) (Tap to refresh)\n" + getVoiceSystemInfo());
+                Toast.makeText(TestVoiceActivity.this, "Info refreshed.", Toast.LENGTH_LONG).show();
+            }
+            if (description.startsWith("\u25BA (11.2)")) {
+                if (((OsmandApplication) getApplication()).getSettings().AUDIO_STREAM_GUIDANCE.get() == 0) {
+                    if (((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.get() == 1000) {
+                        ((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.set(1500);
+                    } else if (((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.get() == 1500) {
+                        ((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.set(2000);
+                    } else if (((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.get() == 2000) {
+                        ((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.set(2500);
+                    } else if (((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.get() == 2500) {
+                        ((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.set(3000);
+                    } else {
+                        ((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.set(1000);
+                    }
+                    infoButton.setText("\u25BA (11.1) (Tap to refresh)\n" + getVoiceSystemInfo());
+                    Toast.makeText(TestVoiceActivity.this, "BT SCO init delay changed to " + ((OsmandApplication) getApplication()).getSettings().BT_SCO_DELAY.get() + "\u00A0ms.", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(TestVoiceActivity.this, "Setting only available when using 'Phone call audio'.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 	}
 
 	@Override

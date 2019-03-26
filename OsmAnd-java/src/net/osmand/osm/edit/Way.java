@@ -1,11 +1,8 @@
 package net.osmand.osm.edit;
 
-import net.osmand.data.LatLon;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 import gnu.trove.list.array.TLongArrayList;
 
@@ -57,26 +54,4 @@ public class Way extends Entity {
 		return nodes;
 	}
 
-	@Override
-	public void initializeLinks(Map<EntityId, Entity> entities) {
-		if (nodeIds != null) {
-			if (nodes == null) {
-				nodes = new ArrayList<>();
-			} else {
-				nodes.clear();
-			}
-			int nIsize = nodeIds.size();
-			for (int i = 0; i < nIsize; i++) {
-				nodes.add((Node) entities.get(new EntityId(EntityType.NODE, nodeIds.get(i))));
-			}
-		}
-	}
-
-	@Override
-	public LatLon getLatLon() {
-		if (nodes == null) {
-			return null;
-		}
-		return OsmMapUtils.getWeightCenterForWay(this);
-	}
 }

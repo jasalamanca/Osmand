@@ -31,21 +31,16 @@ import net.osmand.plus.base.OsmAndListFragment;
 import net.osmand.plus.dashboard.DashLocationFragment;
 import net.osmand.util.MapUtils;
 
-import java.util.Comparator;
 import java.util.List;
 
 public class FavoritesListFragment extends OsmAndListFragment implements SearchActivityChild, OsmAndCompassListener {
-
 	public static final String SELECT_FAVORITE_POINT_INTENT_KEY = "SELECT_FAVORITE_POINT_INTENT_KEY";
 	public static final int SELECT_FAVORITE_POINT_RESULT_OK = 1;
 
 	private FavouritesAdapter favouritesAdapter;
-
 	private boolean selectFavoriteMode;
 	private OsmandSettings settings;
 	private boolean compassRegistered;
-
-
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -70,10 +65,6 @@ public class FavoritesListFragment extends OsmAndListFragment implements SearchA
 		}
 	}
 
-	public ArrayAdapter<?> getAdapter() {
-		return favouritesAdapter;
-	}
-	
 	private OsmandApplication getApplication() {
 		return (OsmandApplication) getActivity().getApplication();
 	}
@@ -128,7 +119,6 @@ public class FavoritesListFragment extends OsmAndListFragment implements SearchA
 		return selectFavoriteMode;
 	}
 
-
 	@Override
 	public void onCreateOptionsMenu(Menu onCreate, MenuInflater inflater) {
 		if (getActivity() instanceof SearchActivity) {
@@ -173,21 +163,18 @@ public class FavoritesListFragment extends OsmAndListFragment implements SearchA
 
 		public void updateLocation(LatLon l) {
 			location = l;
-			sort(new Comparator<FavouritePoint>() {
-				@Override
-				public int compare(FavouritePoint object1, FavouritePoint object2) {
-					if (location != null) {
-						double d1 = MapUtils.getDistance(location, object1.getLatitude(), object1.getLongitude());
-						double d2 = MapUtils.getDistance(location, object2.getLatitude(), object2.getLongitude());
-						if (d1 == d2) {
-							return 0;
-						} else if (d1 > d2) {
-							return 1;
-						}
-						return -1;
-					} else {
-						return getName(object1).compareTo(getName(object2));
+			sort((object1, object2) -> {
+				if (location != null) {
+					double d1 = MapUtils.getDistance(location, object1.getLatitude(), object1.getLongitude());
+					double d2 = MapUtils.getDistance(location, object2.getLatitude(), object2.getLongitude());
+					if (d1 == d2) {
+						return 0;
+					} else if (d1 > d2) {
+						return 1;
 					}
+					return -1;
+				} else {
+					return getName(object1).compareTo(getName(object2));
 				}
 			});
 		}
@@ -218,12 +205,7 @@ public class FavoritesListFragment extends OsmAndListFragment implements SearchA
 				options.setImageDrawable(((OsmandApplication) activity.getApplication())
 						.getIconsCache().getThemedIcon(R.drawable.ic_overflow_menu_white));
 				options.setVisibility(View.VISIBLE);
-				options.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						showOnMap(favorite, activity);
-					}
-				});
+				options.setOnClickListener(v -> showOnMap(favorite, activity));
 			}
 			if (!favorite.getCategory().isEmpty()) {
 				giImage.setVisibility(View.VISIBLE);
@@ -281,7 +263,6 @@ public class FavoritesListFragment extends OsmAndListFragment implements SearchA
 						((SearchActivity)activity).getNavigationInfo().updateTargetDirection(location, favouritesAdapter.heading);
 					}
 				} catch (Exception e) {
-					return;
 				}
 			}
 		}

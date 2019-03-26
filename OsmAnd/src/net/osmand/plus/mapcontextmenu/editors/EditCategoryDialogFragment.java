@@ -80,10 +80,7 @@ public class EditCategoryDialogFragment extends DialogFragment {
 		});
 
 		builder.setView(v);
-		builder.setPositiveButton(R.string.shared_string_save, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) { }
-		});
+		builder.setPositiveButton(R.string.shared_string_save, (dialog, which) -> { });
 		builder.setNegativeButton(R.string.shared_string_cancel, null);
 
 		return builder.create();
@@ -101,34 +98,29 @@ public class EditCategoryDialogFragment extends DialogFragment {
 		if(d != null)
 		{
 			Button positiveButton = d.getButton(Dialog.BUTTON_POSITIVE);
-			positiveButton.setOnClickListener(new View.OnClickListener()
-			{
-				@Override
-				public void onClick(View v)
-				{
-					name = nameEdit.getText().toString().trim();
-					if (!helper.groupExists(name)) {
-						helper.addEmptyCategory(name, color);
+			positiveButton.setOnClickListener(v -> {
+                name = nameEdit.getText().toString().trim();
+                if (!helper.groupExists(name)) {
+                    helper.addEmptyCategory(name, color);
 
-						PointEditor editor = ((MapActivity) getActivity()).getContextMenu().getPointEditor(editorTag);
+                    PointEditor editor = ((MapActivity) getActivity()).getContextMenu().getPointEditor(editorTag);
 
-						if (editor != null) {
-							editor.setCategory(name);
-						}
+                    if (editor != null) {
+                        editor.setCategory(name);
+                    }
 
-						if (selectionListener != null){
-							selectionListener.onCategorySelected(name, color);
-						}
+                    if (selectionListener != null){
+                        selectionListener.onCategorySelected(name, color);
+                    }
 
-						d.dismiss();
-					} else {
-						AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
-						b.setMessage(getString(R.string.favorite_category_dublicate_message));
-						b.setNegativeButton(R.string.shared_string_ok, null);
-						b.show();
-					}
-				}
-			});
+                    d.dismiss();
+                } else {
+                    AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
+                    b.setMessage(getString(R.string.favorite_category_dublicate_message));
+                    b.setNegativeButton(R.string.shared_string_ok, null);
+                    b.show();
+                }
+            });
 		}
 	}
 

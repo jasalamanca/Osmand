@@ -45,12 +45,7 @@ public abstract class ActionBarPreferenceActivity extends AppCompatPreferenceAct
 		tb.setNavigationContentDescription(R.string.access_shared_string_navigate_up);
 		tb.setBackgroundColor(getResources().getColor(getResIdFromAttribute(this, R.attr.pstsTabBackground)));
 		tb.setTitleTextColor(getResources().getColor(getResIdFromAttribute(this, R.attr.pstsTextColor)));
-		tb.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(final View v) {
-				finish();
-			}
-		});
+		tb.setNavigationOnClickListener(v -> finish());
 
 		getSpinner().setVisibility(View.GONE);
 		setProgressVisibility(false);

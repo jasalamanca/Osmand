@@ -56,12 +56,7 @@ public abstract class OsmandListActivity extends
 		if (iconDark != 0) {
 			menuItem.setIcon(getMyApplication().getIconsCache().getIcon(iconDark));
 		}
-		menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-			@Override
-			public boolean onMenuItemClick(MenuItem item) {
-				return onOptionsItemSelected(item);
-			}
-		});
+		menuItem.setOnMenuItemClickListener(item -> onOptionsItemSelected(item));
 		menuItem.setShowAsAction(menuItemType);
 		return menuItem;
 	}

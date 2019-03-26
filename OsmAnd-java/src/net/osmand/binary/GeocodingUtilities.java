@@ -47,19 +47,15 @@ public class GeocodingUtilities {
 	private static final float DISTANCE_BUILDING_PROXIMITY = 100;
 
 
-	public static final Comparator<GeocodingResult> DISTANCE_COMPARATOR = new Comparator<GeocodingResult>() {
-
-		@Override
-		public int compare(GeocodingResult o1, GeocodingResult o2) {
-			LatLon l1 = o1.getLocation();
-			LatLon l2 = o2.getLocation();
-			if (l1 == null || l2 == null) {
-				return l2 == l1 ? 0 : (l1 == null ? -1 : 1);
-			}
-			return Double.compare(MapUtils.getDistance(l1, o1.searchPoint),
-					MapUtils.getDistance(l2, o2.searchPoint));
-		}
-	};
+	public static final Comparator<GeocodingResult> DISTANCE_COMPARATOR = (o1, o2) -> {
+        LatLon l1 = o1.getLocation();
+        LatLon l2 = o2.getLocation();
+        if (l1 == null || l2 == null) {
+            return l2 == l1 ? 0 : (l1 == null ? -1 : 1);
+        }
+        return Double.compare(MapUtils.getDistance(l1, o1.searchPoint),
+                MapUtils.getDistance(l2, o2.searchPoint));
+    };
 
 	public static class GeocodingResult {
 		public GeocodingResult() {

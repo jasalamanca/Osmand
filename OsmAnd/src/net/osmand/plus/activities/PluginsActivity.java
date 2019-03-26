@@ -104,16 +104,13 @@ public class PluginsActivity extends OsmandListActivity {
 				pluginLogo.setContentDescription(getString(plugin.needsInstallation() ? R.string.access_shared_string_not_installed : R.string.shared_string_enable));
 				attributes.recycle();
 			}
-			pluginLogo.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					if(!plugin.isActive() && plugin.needsInstallation()) {
-						// nothing
-					} else {
-						enableDisablePlugin(plugin, !plugin.isActive());
-					}
-				}
-			});
+			pluginLogo.setOnClickListener(v -> {
+                if(!plugin.isActive() && plugin.needsInstallation()) {
+                    // nothing
+                } else {
+                    enableDisablePlugin(plugin, !plugin.isActive());
+                }
+            });
 
 			TextView pluginName = view.findViewById(R.id.plugin_name);
 			pluginName.setText(plugin.getName());
@@ -127,12 +124,7 @@ public class PluginsActivity extends OsmandListActivity {
 
 			ImageView pluginOptions = view.findViewById(R.id.plugin_options);
 			pluginOptions.setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_overflow_menu_white));
-			pluginOptions.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					showOptionsMenu(v, plugin);
-				}
-			});
+			pluginOptions.setOnClickListener(v -> showOptionsMenu(v, plugin));
 
 			return view;
 		}
@@ -147,26 +139,20 @@ public class PluginsActivity extends OsmandListActivity {
 					plugin.isActive() ? R.string.shared_string_disable
 							: R.string.shared_string_enable);
 			enableDisableItem
-					.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-						@Override
-						public boolean onMenuItemClick(MenuItem item) {
-							enableDisablePlugin(plugin, !plugin.isActive());
-							optionsMenu.dismiss();
-							return true;
-						}
-					});
+					.setOnMenuItemClickListener(item -> {
+                        enableDisablePlugin(plugin, !plugin.isActive());
+                        optionsMenu.dismiss();
+                        return true;
+                    });
 		}
 
 		if (settingsActivity != null && plugin.isActive()) {
 			MenuItem settingsItem = optionsMenu.getMenu().add(R.string.shared_string_settings);
-			settingsItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-				@Override
-				public boolean onMenuItemClick(MenuItem item) {
-					startActivity(new Intent(PluginsActivity.this, settingsActivity));
-					optionsMenu.dismiss();
-					return true;
-				}
-			});
+			settingsItem.setOnMenuItemClickListener(item -> {
+                startActivity(new Intent(PluginsActivity.this, settingsActivity));
+                optionsMenu.dismiss();
+                return true;
+            });
 		}
 
 		optionsMenu.show();

@@ -5,7 +5,6 @@ import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.res.Configuration;
@@ -23,11 +22,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import net.osmand.CallbackWithObject;
 import net.osmand.PlatformUtil;
 import net.osmand.access.AccessibilityPlugin;
 import net.osmand.aidl.OsmandAidlApi;
-import net.osmand.data.LatLon;
 import net.osmand.map.OsmandRegions;
 import net.osmand.map.WorldRegion;
 import net.osmand.osm.MapPoiTypes;
@@ -46,7 +43,6 @@ import net.osmand.plus.helpers.WaypointHelper;
 import net.osmand.plus.inapp.InAppHelper;
 import net.osmand.plus.mapcontextmenu.other.RoutePreferencesMenu;
 import net.osmand.plus.mapmarkers.MapMarkersDbHelper;
-import net.osmand.plus.monitoring.LiveMonitoringHelper;
 import net.osmand.plus.poi.PoiFiltersHelper;
 import net.osmand.plus.render.RendererRegistry;
 import net.osmand.plus.resources.ResourceManager;
@@ -100,7 +96,7 @@ public class OsmandApplication extends MultiDexApplication {
 	GPXDatabase gpxDatabase;
 	SavingTrackHelper savingTrackHelper;
 	NotificationHelper notificationHelper;
-	LiveMonitoringHelper liveMonitoringHelper;
+//	LiveMonitoringHelper liveMonitoringHelper;
 	TargetPointsHelper targetPointsHelper;
 	MapMarkersHelper mapMarkersHelper;
 	MapMarkersDbHelper mapMarkersDbHelper;
@@ -361,43 +357,27 @@ public class OsmandApplication extends MultiDexApplication {
 				((ImageView) view.findViewById(R.id.icon))
 						.setImageDrawable(getIconsCache().getIcon(R.drawable.ic_action_volume_up, getSettings().isLightContent()));
 
-				view.findViewById(R.id.spinner).setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(final View v) {
-						RoutePreferencesMenu.selectVoiceGuidance((MapActivity) uiContext, new CallbackWithObject<String>() {
-							@Override
-							public boolean processResult(String result) {
-								boolean acceptableValue = !RoutePreferencesMenu.MORE_VALUE.equals(firstSelectedVoiceProvider);
-								if (acceptableValue) {
-									((TextView) v.findViewById(R.id.selectText))
-											.setText(RoutePreferencesMenu.getVoiceProviderName(uiContext, result));
-									firstSelectedVoiceProvider = result;
-								}
-								return acceptableValue;
-							}
-						});
+				view.findViewById(R.id.spinner).setOnClickListener(v -> RoutePreferencesMenu.selectVoiceGuidance((MapActivity) uiContext, result -> {
+					boolean acceptableValue = !RoutePreferencesMenu.MORE_VALUE.equals(firstSelectedVoiceProvider);
+					if (acceptableValue) {
+						((TextView) v.findViewById(R.id.selectText))
+								.setText(RoutePreferencesMenu.getVoiceProviderName(uiContext, result));
+						firstSelectedVoiceProvider = result;
 					}
-				});
+					return acceptableValue;
+				}));
 
 				((ImageView) view.findViewById(R.id.dropDownIcon))
 						.setImageDrawable(getIconsCache().getIcon(R.drawable.ic_action_arrow_drop_down, getSettings().isLightContent()));
 
 				builder.setCancelable(true);
 				builder.setNegativeButton(R.string.shared_string_cancel, null);
-				builder.setPositiveButton(R.string.shared_string_apply, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						if (!Algorithms.isEmpty(firstSelectedVoiceProvider)) {
-							RoutePreferencesMenu.applyVoiceProvider((MapActivity) uiContext, firstSelectedVoiceProvider);
-						}
+				builder.setPositiveButton(R.string.shared_string_apply, (dialog, which) -> {
+					if (!Algorithms.isEmpty(firstSelectedVoiceProvider)) {
+						RoutePreferencesMenu.applyVoiceProvider((MapActivity) uiContext, firstSelectedVoiceProvider);
 					}
 				});
-				builder.setNeutralButton(R.string.shared_string_do_not_use, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialogInterface, int i) {
-						osmandSettings.VOICE_PROVIDER.set(OsmandSettings.VOICE_PROVIDER_NOT_USE);
-					}
-				});
+				builder.setNeutralButton(R.string.shared_string_do_not_use, (dialogInterface, i) -> osmandSettings.VOICE_PROVIDER.set(OsmandSettings.VOICE_PROVIDER_NOT_USE));
 
 				builder.setView(view);
 				builder.show();
@@ -427,7 +407,7 @@ public class OsmandApplication extends MultiDexApplication {
 			locationProvider.getLocationSimulation().stop();
 		}
 		routingHelper.getVoiceRouter().interruptRouteCommands();
-		routingHelper.clearCurrentRoute(null, new ArrayList<LatLon>());
+		routingHelper.clearCurrentRoute(null, new ArrayList<>());
 		routingHelper.setRoutePlanningMode(false);
 		osmandSettings.LAST_ROUTING_APPLICATION_MODE = osmandSettings.APPLICATION_MODE.get();
 		osmandSettings.APPLICATION_MODE.set(osmandSettings.DEFAULT_APPLICATION_MODE.get());
@@ -451,19 +431,17 @@ public class OsmandApplication extends MultiDexApplication {
 			final Intent serviceIntent = new Intent(this, NavigationService.class);
 			stopService(serviceIntent);
 
-			new Thread(new Runnable() {
-				public void run() {
-					//wait until the service has fully stopped
-					while (getNavigationService() != null) {
-						try {
-							Thread.sleep(100);
-						}
-							catch (InterruptedException e) {
-						}
+			new Thread(() -> {
+				//wait until the service has fully stopped
+				while (getNavigationService() != null) {
+					try {
+						Thread.sleep(100);
 					}
-
-					fullExit();
+						catch (InterruptedException e) {
+					}
 				}
+
+				fullExit();
 			}).start();
 		}
 	}
@@ -551,39 +529,19 @@ public class OsmandApplication extends MultiDexApplication {
 	}
 
 	public void showShortToastMessage(final int msgId, final Object... args) {
-		uiHandler.post(new Runnable() {
-			@Override
-			public void run() {
-				Toast.makeText(OsmandApplication.this, getString(msgId, args), Toast.LENGTH_SHORT).show();
-			}
-		});
+		uiHandler.post(() -> Toast.makeText(OsmandApplication.this, getString(msgId, args), Toast.LENGTH_SHORT).show());
 	}
 
 	public void showShortToastMessage(final String msg) {
-		uiHandler.post(new Runnable() {
-			@Override
-			public void run() {
-				Toast.makeText(OsmandApplication.this, msg, Toast.LENGTH_SHORT).show();
-			}
-		});
+		uiHandler.post(() -> Toast.makeText(OsmandApplication.this, msg, Toast.LENGTH_SHORT).show());
 	}
 
 	public void showToastMessage(final int msgId, final Object... args) {
-		uiHandler.post(new Runnable() {
-			@Override
-			public void run() {
-				Toast.makeText(OsmandApplication.this, getString(msgId, args), Toast.LENGTH_LONG).show();
-			}
-		});
+		uiHandler.post(() -> Toast.makeText(OsmandApplication.this, getString(msgId, args), Toast.LENGTH_LONG).show());
 	}
 
 	public void showToastMessage(final String msg) {
-		uiHandler.post(new Runnable() {
-			@Override
-			public void run() {
-				Toast.makeText(OsmandApplication.this, msg, Toast.LENGTH_LONG).show();				
-			}
-		});
+		uiHandler.post(() -> Toast.makeText(OsmandApplication.this, msg, Toast.LENGTH_LONG).show());
 	}
 
 	public SQLiteAPI getSQLiteAPI() {
@@ -599,13 +557,9 @@ public class OsmandApplication extends MultiDexApplication {
 	}
 	
 	public void runMessageInUIThreadAndCancelPrevious(final int messageId, final Runnable run, long delay) {
-		Message msg = Message.obtain(uiHandler, new Runnable() {
-			
-			@Override
-			public void run() {
-				if(!uiHandler.hasMessages(messageId)) {
-					run.run();
-				}
+		Message msg = Message.obtain(uiHandler, () -> {
+			if(!uiHandler.hasMessages(messageId)) {
+				run.run();
 			}
 		});
 		msg.what = messageId;

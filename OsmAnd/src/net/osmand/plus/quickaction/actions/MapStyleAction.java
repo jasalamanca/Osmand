@@ -86,51 +86,45 @@ public class MapStyleAction extends SwitchableAction<String> {
 		return R.string.quick_action_map_styles;
 	}
 
-	protected String getListKey() {
+	private String getListKey() {
 		return KEY_STYLES;
 	}
 
 	@Override
 	protected View.OnClickListener getOnAddBtnClickListener(final MapActivity activity, final Adapter adapter) {
-		return new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
+		return view -> {
 
-				AlertDialog.Builder bld = new AlertDialog.Builder(activity);
-				bld.setTitle(R.string.renderers);
+			AlertDialog.Builder bld = new AlertDialog.Builder(activity);
+			bld.setTitle(R.string.renderers);
 
-				final OsmandApplication app = activity.getMyApplication();
-				final List<String> visibleNamesList = new ArrayList<>();
-				final ArrayList<String> items = new ArrayList<>(app.getRendererRegistry().getRendererNames());
+			final OsmandApplication app = activity.getMyApplication();
+			final List<String> visibleNamesList = new ArrayList<>();
+			final ArrayList<String> items = new ArrayList<>(app.getRendererRegistry().getRendererNames());
 
-				for (String item : items) {
-					String translation = RendererRegistry.getTranslatedRendererName(activity, item);
-					visibleNamesList.add(translation != null ? translation
-							: item.replace('_', ' ').replace('-', ' '));
+			for (String item : items) {
+				String translation = RendererRegistry.getTranslatedRendererName(activity, item);
+				visibleNamesList.add(translation != null ? translation
+						: item.replace('_', ' ').replace('-', ' '));
+			}
+
+			final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(activity, R.layout.dialog_text_item);
+
+			arrayAdapter.addAll(visibleNamesList);
+			bld.setAdapter(arrayAdapter, (dialogInterface, i) -> {
+
+				String renderer = items.get(i);
+				RenderingRulesStorage loaded = app.getRendererRegistry().getRenderer(renderer);
+
+				if (loaded != null) {
+
+					adapter.addItem(renderer, activity);
 				}
 
-				final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(activity, R.layout.dialog_text_item);
+				dialogInterface.dismiss();
+			});
 
-				arrayAdapter.addAll(visibleNamesList);
-				bld.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialogInterface, int i) {
-
-						String renderer = items.get(i);
-						RenderingRulesStorage loaded = app.getRendererRegistry().getRenderer(renderer);
-
-						if (loaded != null) {
-
-							adapter.addItem(renderer, activity);
-						}
-
-						dialogInterface.dismiss();
-					}
-				});
-
-				bld.setNegativeButton(R.string.shared_string_dismiss, null);
-				bld.show();
-			}
+			bld.setNegativeButton(R.string.shared_string_dismiss, null);
+			bld.show();
 		};
 	}
 

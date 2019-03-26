@@ -66,42 +66,31 @@ public class PluginActivity extends OsmandActionBarActivity {
 		descriptionView.setText(plugin.getDescription());
 
 		Button settingsButton = findViewById(R.id.plugin_settings);
-		settingsButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				startActivity(new Intent(PluginActivity.this, plugin.getSettingsActivity()));
-			}
-		});
+		settingsButton.setOnClickListener(view -> startActivity(new Intent(PluginActivity.this, plugin.getSettingsActivity())));
 
 		CompoundButton enableDisableButton = findViewById(
 				R.id.plugin_enable_disable);
 		enableDisableButton.setOnCheckedChangeListener(
-				new CompoundButton.OnCheckedChangeListener() {
-					@Override
-					public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-						if (plugin.isActive() == isChecked) {
-							return;
-						}
+                (buttonView, isChecked) -> {
+                    if (plugin.isActive() == isChecked) {
+                        return;
+                    }
 
-						boolean ok = OsmandPlugin.enablePlugin(PluginActivity.this, (OsmandApplication)getApplication(),
-								plugin, isChecked);
-						if (!ok) {
-							return;
-						}
-						updateState();
-					}
-				});
+                    boolean ok = OsmandPlugin.enablePlugin(PluginActivity.this, (OsmandApplication)getApplication(),
+                            plugin, isChecked);
+                    if (!ok) {
+                        return;
+                    }
+                    updateState();
+                });
 		Button getButton = findViewById(R.id.plugin_get);
-		getButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				try {
-					startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(plugin.getInstallURL())));
-				} catch (Exception e) {
-					//ignored
-				}
-			}
-		});
+		getButton.setOnClickListener(v -> {
+            try {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(plugin.getInstallURL())));
+            } catch (Exception e) {
+                //ignored
+            }
+        });
 
 		updateState();
 	}

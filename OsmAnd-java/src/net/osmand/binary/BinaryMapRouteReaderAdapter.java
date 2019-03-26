@@ -18,7 +18,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import gnu.trove.iterator.TLongObjectIterator;
@@ -70,7 +69,7 @@ public class BinaryMapRouteReaderAdapter {
 			}
 		}
 
-		public int isForward() {
+		int isForward() {
 			return forward;
 		}
 		public String getTag() {
@@ -86,7 +85,7 @@ public class BinaryMapRouteReaderAdapter {
 			return conditions != null;
 		}
 
-		public int onewayDirection(){
+		int onewayDirection(){
 			if(type == ONEWAY){
 				return intValue;
 			}
@@ -116,7 +115,7 @@ public class BinaryMapRouteReaderAdapter {
 			return -1;
 		}
 
-		public String highwayRoad(){
+		String highwayRoad(){
 			if(type == HIGHWAY_TYPE){
 				return v;
 			}
@@ -155,7 +154,7 @@ public class BinaryMapRouteReaderAdapter {
 						cond.floatValue = RouteDataObject.parseSpeed(c.substring(0, ch), 0);
 						cond.condition = c.substring(ch + 1).trim();
 						if (cond.condition.startsWith("(")) {
-							cond.condition = cond.condition.substring(1, cond.condition.length()).trim();
+							cond.condition = cond.condition.substring(1).trim();
 						}
 						if(cond.condition.endsWith(")")) {
 							cond.condition = cond.condition.substring(0, cond.condition.length() - 1).trim();
@@ -192,14 +191,12 @@ public class BinaryMapRouteReaderAdapter {
 
 	public static class RouteRegion extends BinaryIndexPart {
 		int regionsRead;
-		public final List<RouteTypeRule> routeEncodingRules = new ArrayList<>();
+		final List<RouteTypeRule> routeEncodingRules = new ArrayList<>();
         final List<RouteSubregion> subregions = new ArrayList<>();
 		final List<RouteSubregion> basesubregions = new ArrayList<>();
 		
 		int nameTypeRule = -1;
 		int refTypeRule = -1;
-		int destinationTypeRule = -1;
-		int destinationRefTypeRule = -1;
 
 		public RouteTypeRule quickGetEncodingRule(int id) {
 			return routeEncodingRules.get(id);
@@ -214,10 +211,6 @@ public class BinaryMapRouteReaderAdapter {
 				nameTypeRule = id;
 			} else if (tags.equals("ref")) {
 				refTypeRule = id;
-			} else if (tags.equals("destination") || tags.equals("destination:forward") || tags.equals("destination:backward") || tags.startsWith("destination:lang:")) {
-				destinationTypeRule = id;
-			} else if (tags.equals("destination:ref") || tags.equals("destination:ref:forward") || tags.equals("destination:ref:backward")) {
-				destinationRefTypeRule = id;
 			}
 		}
 		
@@ -228,7 +221,7 @@ public class BinaryMapRouteReaderAdapter {
 			return basesubregions;
 		}
 
-		public double getLeftLongitude() {
+		double getLeftLongitude() {
 			double l = 180;
 			for(RouteSubregion s : subregions) {
 				l = Math.min(l, MapUtils.get31LongitudeX(s.left));
@@ -236,7 +229,7 @@ public class BinaryMapRouteReaderAdapter {
 			return l;
 		}
 
-		public double getRightLongitude() {
+		double getRightLongitude() {
 			double l = -180;
 			for(RouteSubregion s : subregions) {
 				l = Math.max(l, MapUtils.get31LongitudeX(s.right));
@@ -244,7 +237,7 @@ public class BinaryMapRouteReaderAdapter {
 			return l;
 		}
 
-		public double getBottomLatitude() {
+		double getBottomLatitude() {
 			double l = 90;
 			for(RouteSubregion s : subregions) {
 				l = Math.min(l, MapUtils.get31LatitudeY(s.bottom));
@@ -252,7 +245,7 @@ public class BinaryMapRouteReaderAdapter {
 			return l;
 		}
 
-		public double getTopLatitude() {
+		double getTopLatitude() {
 			double l = -90;
 			for(RouteSubregion s : subregions) {
 				l = Math.max(l, MapUtils.get31LatitudeY(s.top));
@@ -485,6 +478,7 @@ public class BinaryMapRouteReaderAdapter {
 			}
 		}
 	}
+
 	private void readRouteTreeData(RouteSubregion routeTree,  TLongArrayList idTables,
 			TLongObjectHashMap<TLongArrayList> restrictions) throws IOException {
 		routeTree.dataObjects = new ArrayList<>();
@@ -699,7 +693,7 @@ public class BinaryMapRouteReaderAdapter {
 		}
 	}
 	
-	public void initRouteTypesIfNeeded(SearchRequest<?> req, List<RouteSubregion> list) throws IOException {
+	void initRouteTypesIfNeeded(SearchRequest<?> req, List<RouteSubregion> list) throws IOException {
 		for (RouteSubregion rs : list) {
 			if (req.intersects(rs.left, rs.top, rs.right, rs.bottom)) {
 				initRouteRegion(rs.routeReg);
@@ -707,7 +701,7 @@ public class BinaryMapRouteReaderAdapter {
 		}
 	}
 
-	public void initRouteRegion(RouteRegion routeReg) throws IOException {
+	void initRouteRegion(RouteRegion routeReg) throws IOException {
 		if (routeReg.routeEncodingRules.isEmpty()) {
 			codedIS.seek(routeReg.filePointer);
 			int oldLimit = codedIS.pushLimit(routeReg.length);
@@ -716,14 +710,11 @@ public class BinaryMapRouteReaderAdapter {
 		}
 	}
 
-    public void loadRouteRegionData(List<RouteSubregion> toLoad, ResultMatcher<RouteDataObject> matcher) throws IOException {
-		Collections.sort(toLoad, new Comparator<RouteSubregion>() {
-			@Override
-			public int compare(RouteSubregion o1, RouteSubregion o2) {
-				int p1 = o1.filePointer + o1.shiftToData;
-				int p2 = o2.filePointer + o2.shiftToData;
-				return p1 == p2 ? 0 : (p1 < p2 ? -1 : 1);
-			}
+    void loadRouteRegionData(List<RouteSubregion> toLoad, ResultMatcher<RouteDataObject> matcher) throws IOException {
+		Collections.sort(toLoad, (o1, o2) -> {
+			int p1 = o1.filePointer + o1.shiftToData;
+			int p2 = o2.filePointer + o2.shiftToData;
+			return p1 == p2 ? 0 : (p1 < p2 ? -1 : 1);
 		});
 		TLongArrayList idMap = new TLongArrayList();
 		TLongObjectHashMap<TLongArrayList> restrictionMap = new TLongObjectHashMap<>();
@@ -745,8 +736,8 @@ public class BinaryMapRouteReaderAdapter {
 		}
 	}
 
-	public List<RouteSubregion> searchRouteRegionTree(SearchRequest<?> req, List<RouteSubregion> list, 
-			List<RouteSubregion> toLoad) throws IOException {
+	List<RouteSubregion> searchRouteRegionTree(SearchRequest<?> req, List<RouteSubregion> list,
+											   List<RouteSubregion> toLoad) throws IOException {
 		for (RouteSubregion rs : list) {
 			if (req.intersects(rs.left, rs.top, rs.right, rs.bottom)) {
 				if (rs.subregions == null) {

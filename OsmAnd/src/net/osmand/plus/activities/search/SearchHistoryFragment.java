@@ -59,19 +59,8 @@ public class SearchHistoryFragment extends OsmAndListFragment implements SearchA
 		View view = inflater.inflate(R.layout.search_history, container, false);
 		clearButton = view.findViewById(R.id.clearAll);
 		clearButton.setText(R.string.shared_string_clear_all);
-		clearButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				clearWithConfirmation();
-			}
-		});
-		((ListView)view.findViewById(android.R.id.list)).setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				onListItemClick((ListView) parent, view, position, id);
-			}
-		});
+		clearButton.setOnClickListener(v -> clearWithConfirmation());
+		((ListView)view.findViewById(android.R.id.list)).setOnItemClickListener((parent, view1, position, id) -> onListItemClick((ListView) parent, view1, position, id));
 		
 		return view;
 	}
@@ -79,13 +68,7 @@ public class SearchHistoryFragment extends OsmAndListFragment implements SearchA
 	private void clearWithConfirmation() {
 		AlertDialog.Builder bld = new AlertDialog.Builder(getActivity());
 		bld.setMessage(R.string.confirmation_to_clear_history);
-		bld.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				clearWithoutConfirmation();
-			}
-		});
+		bld.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> clearWithoutConfirmation());
 		bld.setNegativeButton(R.string.shared_string_no, null);
 		bld.show();
 	}
@@ -199,14 +182,11 @@ public class SearchHistoryFragment extends OsmAndListFragment implements SearchA
 		MenuItem item = optionsMenu.getMenu().add(
 				R.string.shared_string_remove).setIcon(
 				getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_delete_dark));
-		item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-			@Override
-			public boolean onMenuItemClick(MenuItem item) {
-				helper.remove(model);
-				historyAdapter.remove(model);
-				return true;
-			}
-		});
+		item.setOnMenuItemClickListener(item1 -> {
+            helper.remove(model);
+            historyAdapter.remove(model);
+            return true;
+        });
 		optionsMenu.show();
 	}
 
@@ -240,12 +220,7 @@ public class SearchHistoryFragment extends OsmAndListFragment implements SearchA
 			ImageButton options = row.findViewById(R.id.options);
 			options.setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_overflow_menu_white));
 			options.setVisibility(View.VISIBLE);
-			options.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					selectModelOptions(historyEntry, v);
-				}
-			});
+			options.setOnClickListener(v -> selectModelOptions(historyEntry, v));
 			if (getActivity() instanceof SearchActivity)
 				row.setAccessibilityDelegate(((SearchActivity)getActivity()).getAccessibilityAssistant());
 			return row;

@@ -65,12 +65,7 @@ public class DirectionIndicationDialogFragment extends BaseOsmAndDialogFragment 
 
 		Toolbar toolbar = mainView.findViewById(R.id.toolbar);
 		toolbar.setNavigationIcon(getIconsCache().getIcon(R.drawable.ic_arrow_back));
-		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		toolbar.setNavigationOnClickListener(view -> dismiss());
 
 		TextView appModeTv = mainView.findViewById(R.id.app_mode_text_view);
 		ApplicationMode appMode = settings.APPLICATION_MODE.get();
@@ -109,88 +104,58 @@ public class DirectionIndicationDialogFragment extends BaseOsmAndDialogFragment 
 		final TextView menuTv = mainView.findViewById(R.id.active_markers_text_view);
 		menuTv.setText(settings.DISPLAYED_MARKERS_WIDGETS_COUNT.get() == 1 ? R.string.shared_string_one : R.string.shared_string_two);
 		menuTv.setCompoundDrawablesWithIntrinsicBounds(null, null, getContentIcon(R.drawable.ic_action_arrow_drop_down), null);
-		menuTv.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				CharSequence[] titles = getMenuTitles();
-				Paint paint = new Paint();
-				paint.setTextSize(getResources().getDimensionPixelSize(R.dimen.default_list_text_size));
-				float titleTextWidth = Math.max(paint.measureText(titles[0].toString()), paint.measureText(titles[1].toString()));
-				float itemWidth = titleTextWidth + AndroidUtils.dpToPx(getActivity(), 32);
-				float minWidth = AndroidUtils.dpToPx(getActivity(), 100);
-				final ListPopupWindow listPopupWindow = new ListPopupWindow(getActivity());
-				listPopupWindow.setAnchorView(menuTv);
-				listPopupWindow.setContentWidth((int) (Math.max(itemWidth, minWidth)));
-				listPopupWindow.setDropDownGravity(Gravity.END | Gravity.TOP);
-				listPopupWindow.setHorizontalOffset(AndroidUtils.dpToPx(getActivity(), 8));
-				listPopupWindow.setVerticalOffset(-menuTv.getHeight());
-				listPopupWindow.setModal(true);
-				listPopupWindow.setAdapter(new ArrayAdapter<>(getActivity(), R.layout.popup_list_text_item, titles));
-				listPopupWindow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-					@Override
-					public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-						updateDisplayedMarkersCount(position == 0 ? 1 : 2);
-						listPopupWindow.dismiss();
-					}
-				});
-				listPopupWindow.show();
-			}
-		});
+		menuTv.setOnClickListener(view -> {
+            CharSequence[] titles = getMenuTitles();
+            Paint paint = new Paint();
+            paint.setTextSize(getResources().getDimensionPixelSize(R.dimen.default_list_text_size));
+            float titleTextWidth = Math.max(paint.measureText(titles[0].toString()), paint.measureText(titles[1].toString()));
+            float itemWidth = titleTextWidth + AndroidUtils.dpToPx(getActivity(), 32);
+            float minWidth = AndroidUtils.dpToPx(getActivity(), 100);
+            final ListPopupWindow listPopupWindow = new ListPopupWindow(getActivity());
+            listPopupWindow.setAnchorView(menuTv);
+            listPopupWindow.setContentWidth((int) (Math.max(itemWidth, minWidth)));
+            listPopupWindow.setDropDownGravity(Gravity.END | Gravity.TOP);
+            listPopupWindow.setHorizontalOffset(AndroidUtils.dpToPx(getActivity(), 8));
+            listPopupWindow.setVerticalOffset(-menuTv.getHeight());
+            listPopupWindow.setModal(true);
+            listPopupWindow.setAdapter(new ArrayAdapter<>(getActivity(), R.layout.popup_list_text_item, titles));
+            listPopupWindow.setOnItemClickListener((parent, view1, position, id) -> {
+                updateDisplayedMarkersCount(position == 0 ? 1 : 2);
+                listPopupWindow.dismiss();
+            });
+            listPopupWindow.show();
+        });
 
 		final CompoundButton distanceIndicationToggle = mainView.findViewById(R.id.distance_indication_switch);
 		distanceIndicationToggle.setChecked(settings.MARKERS_DISTANCE_INDICATION_ENABLED.get());
-		mainView.findViewById(R.id.distance_indication_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				updateChecked(settings.MARKERS_DISTANCE_INDICATION_ENABLED, distanceIndicationToggle);
-				updateSelection(true);
-			}
-		});
+		mainView.findViewById(R.id.distance_indication_row).setOnClickListener(view -> {
+            updateChecked(settings.MARKERS_DISTANCE_INDICATION_ENABLED, distanceIndicationToggle);
+            updateSelection(true);
+        });
 
-		mainView.findViewById(R.id.top_bar_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				settings.MAP_MARKERS_MODE.set(MapMarkersMode.TOOLBAR);
-				updateSelection(true);
-			}
-		});
+		mainView.findViewById(R.id.top_bar_row).setOnClickListener(view -> {
+            settings.MAP_MARKERS_MODE.set(MapMarkersMode.TOOLBAR);
+            updateSelection(true);
+        });
 
-		mainView.findViewById(R.id.widget_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				settings.MAP_MARKERS_MODE.set(MapMarkersMode.WIDGETS);
-				updateSelection(true);
-			}
-		});
+		mainView.findViewById(R.id.widget_row).setOnClickListener(view -> {
+            settings.MAP_MARKERS_MODE.set(MapMarkersMode.WIDGETS);
+            updateSelection(true);
+        });
 
 		updateSelection(false);
 
 		final CompoundButton showArrowsToggle = mainView.findViewById(R.id.show_arrows_switch);
 		showArrowsToggle.setChecked(settings.SHOW_ARROWS_TO_FIRST_MARKERS.get());
-		mainView.findViewById(R.id.show_arrows_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				updateChecked(settings.SHOW_ARROWS_TO_FIRST_MARKERS, showArrowsToggle);
-			}
-		});
+		mainView.findViewById(R.id.show_arrows_row).setOnClickListener(view -> updateChecked(settings.SHOW_ARROWS_TO_FIRST_MARKERS, showArrowsToggle));
 
 		final CompoundButton showLinesToggle = mainView.findViewById(R.id.show_guide_line_switch);
 		showLinesToggle.setChecked(settings.SHOW_LINES_TO_FIRST_MARKERS.get());
-		mainView.findViewById(R.id.show_guide_line_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				updateChecked(settings.SHOW_LINES_TO_FIRST_MARKERS, showLinesToggle);
-			}
-		});
+		mainView.findViewById(R.id.show_guide_line_row).setOnClickListener(view -> updateChecked(settings.SHOW_LINES_TO_FIRST_MARKERS, showLinesToggle));
 
 		final CompoundButton oneTapActiveToggle = mainView.findViewById(R.id.one_tap_active_switch);
 		oneTapActiveToggle.setChecked(settings.SELECT_MARKER_ON_SINGLE_TAP.get());
-		mainView.findViewById(R.id.one_tap_active_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				updateChecked(settings.SELECT_MARKER_ON_SINGLE_TAP, oneTapActiveToggle);
-			}
-		});
+		mainView.findViewById(R.id.one_tap_active_row).setOnClickListener(view -> updateChecked(settings.SELECT_MARKER_ON_SINGLE_TAP, oneTapActiveToggle));
 
 		return mainView;
 	}

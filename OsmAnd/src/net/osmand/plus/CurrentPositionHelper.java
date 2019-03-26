@@ -159,12 +159,7 @@ public class CurrentPositionHelper {
 		} else if(geoCoding != null) {
 			justifyResult(gr, geoCoding);
 		} else if(result != null) {
-			app.runInUIThread(new Runnable() {
-				@Override
-				public void run() {
-					result.publish(gr == null || gr.isEmpty() ? null : gr.get(0).point.getRoad());
-				}
-			});
+			app.runInUIThread(() -> result.publish(gr == null || gr.isEmpty() ? null : gr.get(0).point.getRoad()));
 		}
 	}
 
@@ -260,20 +255,12 @@ public class CurrentPositionHelper {
 		}
 
 		if (result.isCancelled()) {
-			app.runInUIThread(new Runnable() {
-				public void run() {
-					result.publish(null);
-				}
-			});
+			app.runInUIThread(() -> result.publish(null));
 			return;
 		}
 		Collections.sort(complete, GeocodingUtilities.DISTANCE_COMPARATOR);
 		final GeocodingResult rts = complete.size() > 0 ? complete.get(0) : new GeocodingResult();
-		app.runInUIThread(new Runnable() {
-			public void run() {
-				result.publish(rts);
-			}
-		});
+		app.runInUIThread(() -> result.publish(rts));
 	}
 
 	public static double getOrthogonalDistance(RouteDataObject r, Location loc){

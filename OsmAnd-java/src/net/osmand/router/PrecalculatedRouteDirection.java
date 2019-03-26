@@ -106,8 +106,8 @@ public class PrecalculatedRouteDirection {
 			boolean plus = s.getStartPointIndex() < s.getEndPointIndex();
 			int i = s.getStartPointIndex();
 			RouteDataObject obj = s.getObject();
-			float routeSpd = (s.getRoutingTime() == 0 || s.getDistance() == 0) ? maxSpeed : 
-				(s.getDistance() / s.getRoutingTime());
+			float routeSpd = (s.getRoutingTime() == 0 || s.getDistance() == 0) ? maxSpeed :
+					(s.getDistance() / s.getRoutingTime());
 			while (true) {
 				i = plus? i + 1 : i -1;
 				px.add(obj.getPoint31XTile(i));
@@ -239,7 +239,7 @@ public class PrecalculatedRouteDirection {
 	}
 
 	private long calc(int x31, int y31) {
-		return ((long) x31) << 32l + ((long)y31);
+		return ((long) x31) << 32L + ((long)y31);
 	}
 	public void setFollowNext(boolean followNext) {
 		this.followNext = followNext;

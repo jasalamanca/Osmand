@@ -19,7 +19,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.animation.TypeEvaluator;
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -527,12 +526,7 @@ public class DynamicListView extends ObservableListView {
 
 			ObjectAnimator hoverViewAnimator = ObjectAnimator.ofObject(mHoverCell, "bounds",
 					sBoundEvaluator, mHoverCellCurrentBounds);
-			hoverViewAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-				@Override
-				public void onAnimationUpdate(ValueAnimator valueAnimator) {
-					invalidate();
-				}
-			});
+			hoverViewAnimator.addUpdateListener(valueAnimator -> invalidate());
 			hoverViewAnimator.addListener(new AnimatorListenerAdapter() {
 				@Override
 				public void onAnimationStart(Animator animation) {

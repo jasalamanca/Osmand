@@ -31,6 +31,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@SuppressWarnings("ALL")
 public class InAppHelper {
 	// Debug tag, for logging
 	private static final String TAG = "InAppHelper";
@@ -83,40 +84,30 @@ public class InAppHelper {
 
 	public interface InAppListener {
 		void onError(String error);
-
 		void onGetItems();
-
 		void onItemPurchased(String sku);
-
 		void showProgress();
-
 		void dismissProgress();
 	}
 
 	public interface InAppRunnable {
 		void run(InAppHelper helper);
 	}
-
 	public String getToken() {
 		return token;
 	}
-
 	public static boolean isSubscribedToLiveUpdates() {
 		return mSubscribedToLiveUpdates;
 	}
-
 	public static boolean isFullVersionPurchased() {
 		return mFullVersionPurchased;
 	}
-
 	public static String getLiveUpdatesPrice() {
 		return mLiveUpdatesPrice;
 	}
-
 	public static String getFullVersionPrice() {
 		return mFullVersionPrice;
 	}
-
 	public static String getSkuLiveUpdates() {
 		return SKU_LIVE_UPDATES;
 	}
@@ -177,25 +168,23 @@ public class InAppHelper {
 		// will be called once setup completes.
 		logDebug("Starting setup.");
 		try {
-			mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
-				public void onIabSetupFinished(IabResult result) {
-					logDebug("Setup finished.");
+			mHelper.startSetup(result -> {
+				logDebug("Setup finished.");
 
-					if (!result.isSuccess()) {
-						// Oh noes, there was a problem.
-						//complain("Problem setting up in-app billing: " + result);
-						notifyError(result.getMessage());
-						if (stopAfterResult) {
-							stop();
-						}
-						return;
+				if (!result.isSuccess()) {
+					// Oh noes, there was a problem.
+					//complain("Problem setting up in-app billing: " + result);
+					notifyError(result.getMessage());
+					if (stopAfterResult) {
+						stop();
 					}
-
-					// Have we been disposed of in the meantime? If so, quit.
-					if (mHelper == null) return;
-
-					runnable.run(InAppHelper.this);
+					return;
 				}
+
+				// Have we been disposed of in the meantime? If so, quit.
+				if (mHelper == null) return;
+
+				runnable.run(InAppHelper.this);
 			});
 		} catch (Exception e) {
 			logError("exec Error", e);
@@ -219,49 +208,47 @@ public class InAppHelper {
 		// will be called once setup completes.
 		logDebug("Starting setup.");
 		try {
-			mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
-				public void onIabSetupFinished(IabResult result) {
-					logDebug("Setup finished.");
+			mHelper.startSetup(result -> {
+				logDebug("Setup finished.");
 
-					if (!result.isSuccess()) {
-						// Oh noes, there was a problem.
-						//complain("Problem setting up in-app billing: " + result);
-						notifyError(result.getMessage());
-						if (stopAfterResult) {
-							stop();
-						}
-						return;
+				if (!result.isSuccess()) {
+					// Oh noes, there was a problem.
+					//complain("Problem setting up in-app billing: " + result);
+					notifyError(result.getMessage());
+					if (stopAfterResult) {
+						stop();
 					}
+					return;
+				}
 
-					// Have we been disposed of in the meantime? If so, quit.
-					if (mHelper == null) return;
+				// Have we been disposed of in the meantime? If so, quit.
+				if (mHelper == null) return;
 
-					// IAB is fully set up. Now, let's get an inventory of stuff we own if needed.
-					if (forceRequestInventory || (!isDeveloperVersion &&
-							(!mSubscribedToLiveUpdates
-									|| !ctx.getSettings().BILLING_PURCHASE_TOKEN_SENT.get()
-									|| System.currentTimeMillis() - lastValidationCheckTime > PURCHASE_VALIDATION_PERIOD_MSEC))) {
+				// IAB is fully set up. Now, let's get an inventory of stuff we own if needed.
+				if (forceRequestInventory || (!isDeveloperVersion &&
+						(!mSubscribedToLiveUpdates
+								|| !ctx.getSettings().BILLING_PURCHASE_TOKEN_SENT.get()
+								|| System.currentTimeMillis() - lastValidationCheckTime > PURCHASE_VALIDATION_PERIOD_MSEC))) {
 
-						logDebug("Setup successful. Querying inventory.");
-						List<String> skus = new ArrayList<>();
-						skus.add(SKU_LIVE_UPDATES);
-						skus.add(SKU_FULL_VERSION_PRICE);
-						try {
-							inventoryRequesting = true;
-							mHelper.queryInventoryAsync(true, skus, mGotInventoryListener);
-						} catch (Exception e) {
-							inventoryRequesting = false;
-							logError("queryInventoryAsync Error", e);
-							notifyDismissProgress();
-							if (stopAfterResult) {
-								stop();
-							}
-						}
-					} else {
+					logDebug("Setup successful. Querying inventory.");
+					List<String> skus = new ArrayList<>();
+					skus.add(SKU_LIVE_UPDATES);
+					skus.add(SKU_FULL_VERSION_PRICE);
+					try {
+						inventoryRequesting = true;
+						mHelper.queryInventoryAsync(true, skus, mGotInventoryListener);
+					} catch (Exception e) {
+						inventoryRequesting = false;
+						logError("queryInventoryAsync Error", e);
 						notifyDismissProgress();
 						if (stopAfterResult) {
 							stop();
 						}
+					}
+				} else {
+					notifyDismissProgress();
+					if (stopAfterResult) {
+						stop();
 					}
 				}
 			});
@@ -351,16 +338,13 @@ public class InAppHelper {
 				}
 			}
 
-			final OnRequestResultListener listener = new OnRequestResultListener() {
-				@Override
-				public void onResult(String result) {
-					notifyDismissProgress();
-					notifyGetItems();
-					if (stopAfterResult || stopRequested) {
-						stop();
-					}
-					logDebug("Initial inapp query finished");
+			final OnRequestResultListener listener = result1 -> {
+				notifyDismissProgress();
+				notifyGetItems();
+				if (stopAfterResult || stopRequested) {
+					stop();
 				}
+				logDebug("Initial inapp query finished");
 			};
 
 			if (needSendToken) {
@@ -546,18 +530,15 @@ public class InAppHelper {
 			if (purchase.getSku().equals(SKU_LIVE_UPDATES)) {
 				// bought live updates
 				logDebug("Live updates subscription purchased.");
-				sendToken(purchase.getToken(), new OnRequestResultListener() {
-					@Override
-					public void onResult(String result) {
-						showToast(ctx.getString(R.string.osm_live_thanks));
-						mSubscribedToLiveUpdates = true;
-						ctx.getSettings().LIVE_UPDATES_PURCHASED.set(true);
+				sendToken(purchase.getToken(), result1 -> {
+					showToast(ctx.getString(R.string.osm_live_thanks));
+					mSubscribedToLiveUpdates = true;
+					ctx.getSettings().LIVE_UPDATES_PURCHASED.set(true);
 
-						notifyDismissProgress();
-						notifyItemPurchased(SKU_LIVE_UPDATES);
-						if (stopAfterResult) {
-							stop();
-						}
+					notifyDismissProgress();
+					notifyItemPurchased(SKU_LIVE_UPDATES);
+					if (stopAfterResult) {
+						stop();
 					}
 				});
 			}
@@ -605,55 +586,52 @@ public class InAppHelper {
 
 			AndroidNetworkUtils.sendRequestAsync(ctx,
 					"http://download.osmand.net/subscription/purchased.php",
-					parameters, "Sending purchase info...", true, true, new OnRequestResultListener() {
-						@Override
-						public void onResult(String result) {
-							if (result != null) {
-								try {
-									JSONObject obj = new JSONObject(result);
-									if (!obj.has("error")) {
-										ctx.getSettings().BILLING_PURCHASE_TOKEN_SENT.set(true);
-										if (obj.has("visibleName") && !Algorithms.isEmpty(obj.getString("visibleName"))) {
-											ctx.getSettings().BILLING_USER_NAME.set(obj.getString("visibleName"));
-											ctx.getSettings().BILLING_HIDE_USER_NAME.set(false);
-										} else {
-											ctx.getSettings().BILLING_HIDE_USER_NAME.set(true);
-										}
-										if (obj.has("preferredCountry")) {
-											String prefferedCountry = obj.getString("preferredCountry");
-											if (!ctx.getSettings().BILLING_USER_COUNTRY_DOWNLOAD_NAME.get().equals(prefferedCountry)) {
-												ctx.getSettings().BILLING_USER_COUNTRY_DOWNLOAD_NAME.set(prefferedCountry);
-												CountrySelectionFragment countrySelectionFragment = new CountrySelectionFragment();
-												countrySelectionFragment.initCountries(ctx);
-												CountryItem countryItem = null;
-												if (Algorithms.isEmpty(prefferedCountry)) {
-													countryItem = countrySelectionFragment.getCountryItems().get(0);
-												} else if (!prefferedCountry.equals(OsmandSettings.BILLING_USER_DONATION_NONE_PARAMETER)) {
-													countryItem = countrySelectionFragment.getCountryItem(prefferedCountry);
-												}
-												if (countryItem != null) {
-													ctx.getSettings().BILLING_USER_COUNTRY.set(countryItem.getLocalName());
-												}
+					parameters, "Sending purchase info...", true, true, result -> {
+						if (result != null) {
+							try {
+								JSONObject obj = new JSONObject(result);
+								if (!obj.has("error")) {
+									ctx.getSettings().BILLING_PURCHASE_TOKEN_SENT.set(true);
+									if (obj.has("visibleName") && !Algorithms.isEmpty(obj.getString("visibleName"))) {
+										ctx.getSettings().BILLING_USER_NAME.set(obj.getString("visibleName"));
+										ctx.getSettings().BILLING_HIDE_USER_NAME.set(false);
+									} else {
+										ctx.getSettings().BILLING_HIDE_USER_NAME.set(true);
+									}
+									if (obj.has("preferredCountry")) {
+										String prefferedCountry = obj.getString("preferredCountry");
+										if (!ctx.getSettings().BILLING_USER_COUNTRY_DOWNLOAD_NAME.get().equals(prefferedCountry)) {
+											ctx.getSettings().BILLING_USER_COUNTRY_DOWNLOAD_NAME.set(prefferedCountry);
+											CountrySelectionFragment countrySelectionFragment = new CountrySelectionFragment();
+											countrySelectionFragment.initCountries(ctx);
+											CountryItem countryItem = null;
+											if (Algorithms.isEmpty(prefferedCountry)) {
+												countryItem = countrySelectionFragment.getCountryItems().get(0);
+											} else if (!prefferedCountry.equals(OsmandSettings.BILLING_USER_DONATION_NONE_PARAMETER)) {
+												countryItem = countrySelectionFragment.getCountryItem(prefferedCountry);
+											}
+											if (countryItem != null) {
+												ctx.getSettings().BILLING_USER_COUNTRY.set(countryItem.getLocalName());
 											}
 										}
-										if (obj.has("email")) {
-											ctx.getSettings().BILLING_USER_EMAIL.set(obj.getString("email"));
-										}
-									} else {
-										complain("SendToken Error: "
-												+ obj.getString("error")
-												+ " (userId=" + userId + " token=" + token + " response=" + result + ")");
 									}
-								} catch (JSONException e) {
-									logError("SendToken", e);
+									if (obj.has("email")) {
+										ctx.getSettings().BILLING_USER_EMAIL.set(obj.getString("email"));
+									}
+								} else {
 									complain("SendToken Error: "
-											+ (e.getMessage() != null ? e.getMessage() : "JSONException")
+											+ obj.getString("error")
 											+ " (userId=" + userId + " token=" + token + " response=" + result + ")");
 								}
+							} catch (JSONException e) {
+								logError("SendToken", e);
+								complain("SendToken Error: "
+										+ (e.getMessage() != null ? e.getMessage() : "JSONException")
+										+ " (userId=" + userId + " token=" + token + " response=" + result + ")");
 							}
-							if (listener != null) {
-								listener.onResult("OK");
-							}
+						}
+						if (listener != null) {
+							listener.onResult("OK");
 						}
 					});
 		} catch (Exception e) {

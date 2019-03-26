@@ -129,12 +129,7 @@ public class ShowHidePoiAction extends QuickAction {
 
 		list.setAdapter(adapter);
 
-		addFilter.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				showSingleChoicePoiFilterDialog(activity.getMyApplication(), activity, adapter);
-			}
-		});
+		addFilter.setOnClickListener(view1 -> showSingleChoicePoiFilterDialog(activity.getMyApplication(), activity, adapter));
 
 		parent.addView(view);
 	}
@@ -173,22 +168,19 @@ public class ShowHidePoiAction extends QuickAction {
 			}
 
 			holder.title.setText(filter.getName());
-			holder.delete.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					String oldTitle = getTitle(filters);
-					filters.remove(position);
-					savePoiFilters(filters);
+			holder.delete.setOnClickListener(view -> {
+                String oldTitle = getTitle(filters);
+                filters.remove(position);
+                savePoiFilters(filters);
 
-					notifyDataSetChanged();
+                notifyDataSetChanged();
 
-					if (oldTitle.equals(title.getText().toString()) || title.getText().toString().equals(getName(holder.title.getContext()))) {
+                if (oldTitle.equals(title.getText().toString()) || title.getText().toString().equals(getName(holder.title.getContext()))) {
 
-						String newTitle = getTitle(filters);
-						title.setText(newTitle);
-					}
-				}
-			});
+                    String newTitle = getTitle(filters);
+                    title.setText(newTitle);
+                }
+            });
 		}
 
 		@Override
@@ -259,35 +251,28 @@ public class ShowHidePoiAction extends QuickAction {
 		final ArrayAdapter<ContextMenuItem> listAdapter =
 				adapter.createListAdapter(activity, app.getSettings().isLightContent());
 		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-		builder.setAdapter(listAdapter, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
+		builder.setAdapter(listAdapter, (dialog, which) -> {
 
-				String oldTitle = getTitle(filtersAdapter.filters);
+            String oldTitle = getTitle(filtersAdapter.filters);
 
-				filtersAdapter.addItem(list.get(which));
+            filtersAdapter.addItem(list.get(which));
 
-				if (oldTitle.equals(title.getText().toString()) || title.getText().toString().equals(getName(activity))) {
+            if (oldTitle.equals(title.getText().toString()) || title.getText().toString().equals(getName(activity))) {
 
-					String newTitle = getTitle(filtersAdapter.filters);
-					title.setText(newTitle);
-				}
-			}
-
-		});
+                String newTitle = getTitle(filtersAdapter.filters);
+                title.setText(newTitle);
+            }
+        });
 		builder.setTitle(R.string.show_poi_over_map);
 		builder.setNegativeButton(R.string.shared_string_dismiss, null);
 
 		final AlertDialog alertDialog = builder.create();
 
-		alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
-			@Override
-			public void onShow(DialogInterface dialog) {
-				Button neutralButton = alertDialog.getButton(DialogInterface.BUTTON_NEUTRAL);
-				Drawable drawable = app.getIconsCache().getThemedIcon(R.drawable.ic_action_multiselect);
-				neutralButton.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
-			}
-		});
+		alertDialog.setOnShowListener(dialog -> {
+            Button neutralButton = alertDialog.getButton(DialogInterface.BUTTON_NEUTRAL);
+            Drawable drawable = app.getIconsCache().getThemedIcon(R.drawable.ic_action_multiselect);
+            neutralButton.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
+        });
 
 		alertDialog.show();
 	}

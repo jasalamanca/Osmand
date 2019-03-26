@@ -117,23 +117,20 @@ public abstract class QuickSearchListFragment extends OsmAndListFragment {
 		listView.setBackgroundColor(getResources().getColor(
 				getMyApplication().getSettings().isLightContent() ? R.color.ctx_menu_info_view_bg_light
 						: R.color.ctx_menu_info_view_bg_dark));
-		listView.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				switch (event.getAction()) {
-					case MotionEvent.ACTION_DOWN:
-					case MotionEvent.ACTION_POINTER_DOWN:
-						touching = true;
-						break;
-					case MotionEvent.ACTION_UP:
-					case MotionEvent.ACTION_POINTER_UP:
-					case MotionEvent.ACTION_CANCEL:
-						touching = false;
-						break;
-				}
-				return false;
-			}
-		});
+		listView.setOnTouchListener((v, event) -> {
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                case MotionEvent.ACTION_POINTER_DOWN:
+                    touching = true;
+                    break;
+                case MotionEvent.ACTION_UP:
+                case MotionEvent.ACTION_POINTER_UP:
+                case MotionEvent.ACTION_CANCEL:
+                    touching = false;
+                    break;
+            }
+            return false;
+        });
 	}
 
 	@Override

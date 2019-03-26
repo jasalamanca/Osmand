@@ -44,33 +44,27 @@ public class AddGpxPointBottomSheetHelper implements OnDismissListener {
 		description = view.findViewById(R.id.description);
 		icon = view.findViewById(R.id.icon);
 
-		view.findViewById(R.id.create_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				contextMenuLayer.createGpxPoint();
-				GPXFile gpx = newGpxPoint.getGpx();
-				LatLon latLon = contextMenu.getLatLon();
-				if (pointDescription.isWpt()) {
-					WptPtEditor editor = activity.getContextMenu().getWptPtPointEditor();
-					editor.setOnDismissListener(AddGpxPointBottomSheetHelper.this);
-					editor.setNewGpxPointProcessing(true);
-					editor.add(gpx, latLon, titleText);
-				} else if (pointDescription.isRte()) {
-					RtePtEditor editor = activity.getContextMenu().getRtePtPointEditor();
-					editor.setOnDismissListener(AddGpxPointBottomSheetHelper.this);
-					editor.setNewGpxPointProcessing(true);
-					editor.add(gpx, latLon, titleText);
-				}
-			}
-		});
-		view.findViewById(R.id.cancel_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				hide();
-				contextMenuLayer.cancelAddGpxPoint();
-				openTrackActivity();
-			}
-		});
+		view.findViewById(R.id.create_button).setOnClickListener(v -> {
+            contextMenuLayer.createGpxPoint();
+            GPXFile gpx = newGpxPoint.getGpx();
+            LatLon latLon = contextMenu.getLatLon();
+            if (pointDescription.isWpt()) {
+                WptPtEditor editor = activity.getContextMenu().getWptPtPointEditor();
+                editor.setOnDismissListener(AddGpxPointBottomSheetHelper.this);
+                editor.setNewGpxPointProcessing(true);
+                editor.add(gpx, latLon, titleText);
+            } else if (pointDescription.isRte()) {
+                RtePtEditor editor = activity.getContextMenu().getRtePtPointEditor();
+                editor.setOnDismissListener(AddGpxPointBottomSheetHelper.this);
+                editor.setNewGpxPointProcessing(true);
+                editor.add(gpx, latLon, titleText);
+            }
+        });
+		view.findViewById(R.id.cancel_button).setOnClickListener(v -> {
+            hide();
+            contextMenuLayer.cancelAddGpxPoint();
+            openTrackActivity();
+        });
 	}
 
 	public void onDraw(RotatedTileBox rt) {

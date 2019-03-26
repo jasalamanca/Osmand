@@ -408,33 +408,28 @@ public class MapDataMenuController extends MenuController {
 		final OsmandApplication app = getMapActivity().getMyApplication();
 		if (fl.exists()) {
 			AlertDialog.Builder confirm = new AlertDialog.Builder(getMapActivity());
-			confirm.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
+			confirm.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> new AsyncTask<Void, Void, Void>() {
+
 				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					new AsyncTask<Void, Void, Void>() {
-
-						@Override
-						protected void onPreExecute() {
-							getMapActivity().getContextMenu().close();
-						}
-
-						@Override
-						protected Void doInBackground(Void... params) {
-							boolean successfull = Algorithms.removeAllFiles(fl.getAbsoluteFile());
-							if (successfull) {
-								app.getResourceManager().closeFile(fl.getName());
-							}
-							app.getDownloadThread().updateLoadedFiles();
-							return null;
-						}
-
-						protected void onPostExecute(Void result) {
-							getMapActivity().refreshMap();
-						}
-
-					}.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, (Void) null);
+				protected void onPreExecute() {
+					getMapActivity().getContextMenu().close();
 				}
-			});
+
+				@Override
+				protected Void doInBackground(Void... params) {
+					boolean successfull = Algorithms.removeAllFiles(fl.getAbsoluteFile());
+					if (successfull) {
+						app.getResourceManager().closeFile(fl.getName());
+					}
+					app.getDownloadThread().updateLoadedFiles();
+					return null;
+				}
+
+				protected void onPostExecute(Void result) {
+					getMapActivity().refreshMap();
+				}
+
+			}.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, (Void) null));
 			confirm.setNegativeButton(R.string.shared_string_no, null);
 			String fn;
 			if (indexItem != null) {

@@ -23,28 +23,22 @@ public class DashDashboardOrDrawerFragment extends DashBaseFragment {
 			};
 
 	@Override
-	public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View initView(LayoutInflater inflater, ViewGroup container) {
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_dashboard_or_drawer_fragment, container, false);
-		view.findViewById(R.id.useDashboardButton).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				final OsmandSettings settings = getMyApplication().getSettings();
-				settings.SHOW_DASHBOARD_ON_START.set(true);
-				settings.SHOW_DASHBOARD_ON_MAP_SCREEN.set(true);
-				settings.SHOW_CARD_TO_CHOOSE_DRAWER.set(false);
-				dashboard.hideFragmentByTag(TAG);
-			}
-		});
-		view.findViewById(R.id.useDrawerButton).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				final OsmandSettings settings = getMyApplication().getSettings();
-				settings.SHOW_DASHBOARD_ON_START.set(false);
-				settings.SHOW_DASHBOARD_ON_MAP_SCREEN.set(false);
-				settings.SHOW_CARD_TO_CHOOSE_DRAWER.set(false);
-				dashboard.hideDashboard();
-			}
-		});
+		view.findViewById(R.id.useDashboardButton).setOnClickListener(v -> {
+            final OsmandSettings settings = getMyApplication().getSettings();
+            settings.SHOW_DASHBOARD_ON_START.set(true);
+            settings.SHOW_DASHBOARD_ON_MAP_SCREEN.set(true);
+            settings.SHOW_CARD_TO_CHOOSE_DRAWER.set(false);
+            dashboard.hideFragmentByTag(TAG);
+        });
+		view.findViewById(R.id.useDrawerButton).setOnClickListener(v -> {
+            final OsmandSettings settings = getMyApplication().getSettings();
+            settings.SHOW_DASHBOARD_ON_START.set(false);
+            settings.SHOW_DASHBOARD_ON_MAP_SCREEN.set(false);
+            settings.SHOW_CARD_TO_CHOOSE_DRAWER.set(false);
+            dashboard.hideDashboard();
+        });
 		return view;
 	}
 

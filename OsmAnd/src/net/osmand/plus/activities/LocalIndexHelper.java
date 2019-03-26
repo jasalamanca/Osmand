@@ -19,7 +19,6 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.TimeZone;
 
 public class LocalIndexHelper {
 	private final OsmandApplication app;
@@ -37,7 +36,7 @@ public class LocalIndexHelper {
 		return new Date(t);
 	}
 
-	private String getInstalledDate(long t, TimeZone timeZone) {
+	private String getInstalledDate(long t) {
 		return android.text.format.DateFormat.getMediumDateFormat(app).format(new Date(t));
 	}
 
@@ -48,7 +47,7 @@ public class LocalIndexHelper {
 			if (ifns.containsKey(info.getFileName())) {
 				try {
 					Date dt = app.getResourceManager().getDateFormat().parse(ifns.get(info.getFileName()));
-					info.setDescription(getInstalledDate(dt.getTime(), null));
+					info.setDescription(getInstalledDate(dt.getTime()));
 				} catch (ParseException e) {
 					e.printStackTrace();
 				}
@@ -136,35 +135,33 @@ public class LocalIndexHelper {
 	}
 
 	public List<LocalIndexInfo> getLocalIndexData(AbstractLoadLocalIndexTask loadTask) {
-		Map<String, String> loadedMaps = app.getResourceManager().getIndexFileNames();
 		List<LocalIndexInfo> result = new ArrayList<>();
 
-		loadObfData(app.getAppPath(IndexConstants.MAPS_PATH), result, false, loadTask, loadedMaps);
-		loadObfData(app.getAppPath(IndexConstants.ROADS_INDEX_DIR), result, false, loadTask, loadedMaps);
+		loadObfData(app.getAppPath(IndexConstants.MAPS_PATH), result, false, loadTask);
+		loadObfData(app.getAppPath(IndexConstants.ROADS_INDEX_DIR), result, false, loadTask);
 		loadWikiData(app.getAppPath(IndexConstants.WIKI_INDEX_DIR), result, loadTask);
-		loadVoiceData(app.getAppPath(IndexConstants.VOICE_INDEX_DIR), result, false, loadTask);
-		loadFontData(app.getAppPath(IndexConstants.FONT_INDEX_DIR), result, false, loadTask);
-		loadObfData(app.getAppPath(IndexConstants.BACKUP_INDEX_DIR), result, true, loadTask, loadedMaps);
+		loadVoiceData(app.getAppPath(IndexConstants.VOICE_INDEX_DIR), result, loadTask);
+		loadFontData(app.getAppPath(IndexConstants.FONT_INDEX_DIR), result, loadTask);
+		loadObfData(app.getAppPath(IndexConstants.BACKUP_INDEX_DIR), result, true, loadTask);
 
 		return result;
 	}
 
 	public List<LocalIndexInfo> getLocalFullMaps(AbstractLoadLocalIndexTask loadTask) {
-		Map<String, String> loadedMaps = app.getResourceManager().getIndexFileNames();
 		List<LocalIndexInfo> result = new ArrayList<>();
-		loadObfData(app.getAppPath(IndexConstants.MAPS_PATH), result, false, loadTask, loadedMaps);
+		loadObfData(app.getAppPath(IndexConstants.MAPS_PATH), result, false, loadTask);
 
 		return result;
 	}
 
-	private void loadVoiceData(File voiceDir, List<LocalIndexInfo> result, boolean backup, AbstractLoadLocalIndexTask loadTask) {
+	private void loadVoiceData(File voiceDir, List<LocalIndexInfo> result, AbstractLoadLocalIndexTask loadTask) {
 		if (voiceDir.canRead()) {
 			//First list TTS files, they are preferred
 			for (File voiceF : listFilesSorted(voiceDir)) {
 				if (voiceF.isDirectory() && !MediaCommandPlayerImpl.isMyData(voiceF)) {
 					LocalIndexInfo info = null;
 					if (TTSCommandPlayerImpl.isMyData(voiceF)) {
-						info = new LocalIndexInfo(LocalIndexType.TTS_VOICE_DATA, voiceF, backup);
+						info = new LocalIndexInfo(LocalIndexType.TTS_VOICE_DATA, voiceF, false);
 					}
 					if (info != null) {
 						updateDescription(info);
@@ -177,8 +174,7 @@ public class LocalIndexHelper {
 			//Now list recorded voices
 			for (File voiceF : listFilesSorted(voiceDir)) {
 				if (voiceF.isDirectory() && MediaCommandPlayerImpl.isMyData(voiceF)) {
-					LocalIndexInfo info = null;
-					info = new LocalIndexInfo(LocalIndexType.VOICE_DATA, voiceF, backup);
+					final LocalIndexInfo info = new LocalIndexInfo(LocalIndexType.VOICE_DATA, voiceF, false);
                     updateDescription(info);
                     result.add(info);
                     loadTask.loadFile(info);
@@ -187,12 +183,12 @@ public class LocalIndexHelper {
 		}
 	}
 
-	private void loadFontData(File fontDir, List<LocalIndexInfo> result, boolean backup, AbstractLoadLocalIndexTask loadTask) {
+	private void loadFontData(File fontDir, List<LocalIndexInfo> result, AbstractLoadLocalIndexTask loadTask) {
 		if (fontDir.canRead()) {
 			for (File fontFile : listFilesSorted(fontDir)) {
 				if (fontFile.isFile() && fontFile.getName().endsWith(IndexConstants.FONT_INDEX_EXT)) {
 					LocalIndexType lt = LocalIndexType.FONT_DATA;
-					LocalIndexInfo info = new LocalIndexInfo(lt, fontFile, backup);
+					LocalIndexInfo info = new LocalIndexInfo(lt, fontFile, false);
 					updateDescription(info);
 					result.add(info);
 					loadTask.loadFile(info);
@@ -223,7 +219,7 @@ public class LocalIndexHelper {
 		}
 	}
 
-	private void loadObfData(File mapPath, List<LocalIndexInfo> result, boolean backup, AbstractLoadLocalIndexTask loadTask, Map<String, String> loadedMaps) {
+	private void loadObfData(File mapPath, List<LocalIndexInfo> result, boolean backup, AbstractLoadLocalIndexTask loadTask) {
 		if (mapPath.canRead()) {
 			for (File mapFile : listFilesSorted(mapPath)) {
 				if (mapFile.isFile() && mapFile.getName().endsWith(IndexConstants.BINARY_MAP_INDEX_EXT)) {

@@ -896,17 +896,13 @@ public class SearchCoreFactory {
 							});
 
 					file.preloadBuildings(s, sr);
-					Collections.sort(s.getBuildings(), new Comparator<Building>() {
-
-						@Override
-						public int compare(Building o1, Building o2) {
-							int i1 = Algorithms.extractFirstIntegerNumber(o1.getName());
-							int i2 = Algorithms.extractFirstIntegerNumber(o2.getName());
-							if (i1 == i2) {
-								return 0;
-							}
-							return Algorithms.compare(i1, i2);
+					Collections.sort(s.getBuildings(), (o1, o2) -> {
+						int i1 = Algorithms.extractFirstIntegerNumber(o1.getName());
+						int i2 = Algorithms.extractFirstIntegerNumber(o2.getName());
+						if (i1 == i2) {
+							return 0;
 						}
+						return Algorithms.compare(i1, i2);
 					});
 				}
 				String lw = phrase.getUnknownWordToSearchBuilding();

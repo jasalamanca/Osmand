@@ -80,15 +80,12 @@ public class BasicEditPoiFragment extends BaseOsmAndFragment
 		addTextWatcher(OSMSettings.OSMTagKey.ADDR_HOUSE_NUMBER.getValue(), houseNumberEditText);
 		addTextWatcher(OSMSettings.OSMTagKey.DESCRIPTION.getValue(), descriptionEditText);
 		Button addOpeningHoursButton = view.findViewById(R.id.addOpeningHoursButton);
-		addOpeningHoursButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				BasicOpeningHourRule rule = new BasicOpeningHourRule();
-				rule.setStartTime(9 * 60);
-				rule.setEndTime(18 * 60);
-				OpeningHoursDaysDialogFragment fragment = OpeningHoursDaysDialogFragment.createInstance(rule, -1);
-				fragment.show(getChildFragmentManager(), "OpenTimeDialogFragment");
-			}
+		addOpeningHoursButton.setOnClickListener(v -> {
+			BasicOpeningHourRule rule = new BasicOpeningHourRule();
+			rule.setStartTime(9 * 60);
+			rule.setEndTime(18 * 60);
+			OpeningHoursDaysDialogFragment fragment = OpeningHoursDaysDialogFragment.createInstance(rule, -1);
+			fragment.show(getChildFragmentManager(), "OpenTimeDialogFragment");
 		});
 		LinearLayout openHoursContainer = view.findViewById(R.id.openHoursContainer);
 		Drawable clockDrawable = getPaintedContentIcon(R.drawable.ic_action_time, iconColor);
@@ -242,13 +239,10 @@ public class BasicEditPoiFragment extends BaseOsmAndFragment
 				rule.appendDaysString(stringBuilder);
 
 				daysTextView.setText(stringBuilder.toString());
-				daysTextView.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						OpeningHoursDaysDialogFragment fragment =
-								OpeningHoursDaysDialogFragment.createInstance(rule, position);
-						fragment.show(getChildFragmentManager(), "OpenTimeDialogFragment");
-					}
+				daysTextView.setOnClickListener(v -> {
+					OpeningHoursDaysDialogFragment fragment =
+							OpeningHoursDaysDialogFragment.createInstance(rule, position);
+					fragment.show(getChildFragmentManager(), "OpenTimeDialogFragment");
 				});
 
 				final TIntArrayList startTimes = rule.getStartTimes();
@@ -265,38 +259,29 @@ public class BasicEditPoiFragment extends BaseOsmAndFragment
 					closingTextView.setText(Algorithms.formatMinutesDuration(endTimes.get(i)));
 
 					openingTextView.setTag(i);
-					openingTextView.setOnClickListener(new View.OnClickListener() {
-						@Override
-						public void onClick(View v) {
-							int index = (int) v.getTag();
-							OpeningHoursHoursDialogFragment.createInstance(rule, position, true, index)
-									.show(getChildFragmentManager(), "OpeningHoursHoursDialogFragment");
-						}
+					openingTextView.setOnClickListener(v -> {
+						int index = (int) v.getTag();
+						OpeningHoursHoursDialogFragment.createInstance(rule, position, true, index)
+								.show(getChildFragmentManager(), "OpeningHoursHoursDialogFragment");
 					});
 					closingTextView.setTag(i);
-					closingTextView.setOnClickListener(new View.OnClickListener() {
-						@Override
-						public void onClick(View v) {
-							int index = (int) v.getTag();
-							OpeningHoursHoursDialogFragment.createInstance(rule, position, false, index)
-									.show(getChildFragmentManager(), "OpeningHoursHoursDialogFragment");
-						}
+					closingTextView.setOnClickListener(v -> {
+						int index = (int) v.getTag();
+						OpeningHoursHoursDialogFragment.createInstance(rule, position, false, index)
+								.show(getChildFragmentManager(), "OpeningHoursHoursDialogFragment");
 					});
 
 					ImageButton deleteTimespanImageButton = timeFromToLayout
 							.findViewById(R.id.deleteTimespanImageButton);
 					deleteTimespanImageButton.setImageDrawable(deleteDrawable);
 					final int timespanPosition = i;
-					deleteTimespanImageButton.setOnClickListener(new View.OnClickListener() {
-						@Override
-						public void onClick(View v) {
-							if (startTimes.size() == 1) {
-								openingHours.getRules().remove(position);
-								updateViews();
-							} else {
-								rule.deleteTimeRange(timespanPosition);
-								updateViews();
-							}
+					deleteTimespanImageButton.setOnClickListener(v -> {
+						if (startTimes.size() == 1) {
+							openingHours.getRules().remove(position);
+							updateViews();
+						} else {
+							rule.deleteTimeRange(timespanPosition);
+							updateViews();
 						}
 					});
 					timeListContainer.addView(timeFromToLayout);
@@ -304,26 +289,18 @@ public class BasicEditPoiFragment extends BaseOsmAndFragment
 
 				deleteItemImageButton.setVisibility(View.GONE);
 				addTimeSpanButton.setVisibility(View.VISIBLE);
-				addTimeSpanButton.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						OpeningHoursHoursDialogFragment.createInstance(rule, position, true,
-								startTimes.size()).show(getChildFragmentManager(),
-								"TimePickerDialogFragment");
-					}
-				});
+				addTimeSpanButton.setOnClickListener(v -> OpeningHoursHoursDialogFragment.createInstance(rule, position, true,
+						startTimes.size()).show(getChildFragmentManager(),
+						"TimePickerDialogFragment"));
 			} else if (openingHours.getRules().get(position) instanceof OpeningHoursParser.UnparseableRule) {
 				daysTextView.setText(openingHours.getRules().get(position).toRuleString());
 				timeListContainer.removeAllViews();
 
 				deleteItemImageButton.setVisibility(View.VISIBLE);
 				deleteItemImageButton.setImageDrawable(deleteDrawable);
-				deleteItemImageButton.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						openingHours.getRules().remove(position);
-						updateViews();
-					}
+				deleteItemImageButton.setOnClickListener(v -> {
+					openingHours.getRules().remove(position);
+					updateViews();
 				});
 				addTimeSpanButton.setVisibility(View.GONE);
 			}

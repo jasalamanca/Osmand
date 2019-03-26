@@ -20,9 +20,9 @@ import java.util.Set;
 
 import gnu.trove.set.hash.TLongHashSet;
 
-@SuppressWarnings("unused") //NOTE jsala se llaman desde C++
+//NOTE jsala se llaman desde C++
+@SuppressWarnings("unused")
 public class GeneralRouter implements VehicleRouter {
-	
 	private static final float CAR_SHORTEST_DEFAULT_SPEED = 55/3.6f;
 	public static final String USE_SHORTEST_WAY = "short_way";
 	private static final String USE_HEIGHT_OBSTACLES = "height_obstacles";
@@ -137,7 +137,7 @@ public class GeneralRouter implements VehicleRouter {
 		return profile;
 	}
 
-	public boolean getHeightObstacles() {
+	boolean getHeightObstacles() {
 		return heightObstacles;
 	}
 
@@ -145,7 +145,7 @@ public class GeneralRouter implements VehicleRouter {
 		return parameters;
 	}
 
-	public void addAttribute(String k, String v) {
+	void addAttribute(String k, String v) {
 		attributes.put(k, v);
 		if(k.equals("restrictionsAware")) {
 			restrictionsAware = parseSilentBoolean(v, restrictionsAware);
@@ -162,12 +162,12 @@ public class GeneralRouter implements VehicleRouter {
 		}
 	}
 	
-	public RouteAttributeContext getObjContext(RouteDataObjectAttribute a) {
+	RouteAttributeContext getObjContext(RouteDataObjectAttribute a) {
 		return objectAttributes[a.ordinal()];
 	}
 	
 
-	public void registerBooleanParameter(String id, String group, String name, String description, boolean defaultValue) {
+	void registerBooleanParameter(String id, String group, String name, String description, boolean defaultValue) {
 		RoutingParameter rp = new RoutingParameter();
 		rp.group = group;
 		rp.name = name;
@@ -179,7 +179,7 @@ public class GeneralRouter implements VehicleRouter {
 		
 	}
 
-	public void registerNumericParameter(String id, String name, String description, Double[] vls, String[] vlsDescriptions) {
+	void registerNumericParameter(String id, String name, String description, Double[] vls, String[] vlsDescriptions) {
 		RoutingParameter rp = new RoutingParameter();
 		rp.name = name;
 		rp.description = description;
@@ -199,7 +199,7 @@ public class GeneralRouter implements VehicleRouter {
 		return res >= 0;
 	}
 
-	public boolean isAllowPrivate() {
+	boolean isAllowPrivate() {
 		return allowPrivate;
 	}
 
@@ -268,7 +268,6 @@ public class GeneralRouter implements VehicleRouter {
 		return res;
 	}
 	
-	@Override
 	public GeneralRouter build(Map<String, String> params) {
 		return new GeneralRouter(this, params);
 	}
@@ -332,7 +331,7 @@ public class GeneralRouter implements VehicleRouter {
 		return getObjContext(RouteDataObjectAttribute.ONEWAY).evaluateInt(road, 0);
 	}
 	
-	public float getPenaltyTransition(RouteDataObject road) {
+	private float getPenaltyTransition(RouteDataObject road) {
 		return getObjContext(RouteDataObjectAttribute.PENALTY_TRANSITION).evaluateInt(road, 0);
 	}
 
@@ -487,21 +486,21 @@ public class GeneralRouter implements VehicleRouter {
 		}
 		
 		public RouteAttributeEvalRule[] getRules() {
-			return rules.toArray(new RouteAttributeEvalRule[rules.size()]);
+			return rules.toArray(new RouteAttributeEvalRule[0]);
 		}
 		
 		public String[] getParamKeys() {
 			if(paramContext == null) {
 				return new String[0];
 			}
-			return paramContext.vars.keySet().toArray(new String[paramContext.vars.size()]);
+			return paramContext.vars.keySet().toArray(new String[0]);
 		}
 		
 		public String[] getParamValues() {
 			if(paramContext == null) {
 				return new String[0];
 			}
-			return paramContext.vars.values().toArray(new String[paramContext.vars.size()]);
+			return paramContext.vars.values().toArray(new String[0]);
 		}
 		
 		private Object evaluate(RouteDataObject ro) {
@@ -514,14 +513,14 @@ public class GeneralRouter implements VehicleRouter {
 			}
 		}
 
-		public RouteAttributeEvalRule registerNewRule(String selectValue, String selectType) {
+		RouteAttributeEvalRule registerNewRule(String selectValue, String selectType) {
 			RouteAttributeEvalRule ev = new RouteAttributeEvalRule();
 			ev.registerSelectValue(selectValue, selectType);
 			rules.add(ev);	
 			return ev;
 		}
 		
-		public RouteAttributeEvalRule getLastRule() {
+		RouteAttributeEvalRule getLastRule() {
 			return rules.get(rules.size() - 1);
 		}
 
@@ -651,7 +650,7 @@ public class GeneralRouter implements VehicleRouter {
 				return cacheValue.doubleValue();
 			}
 			Object o = null;
-			if (value instanceof String && value.startsWith("$")) {
+			if (value != null && value.startsWith("$")) {
 				BitSet mask = tagRuleMask.get(value.substring(1));
 				if (mask != null && mask.intersects(types)) {
 					BitSet findBit = new BitSet(mask.length());
@@ -660,9 +659,9 @@ public class GeneralRouter implements VehicleRouter {
 					int v = findBit.nextSetBit(0);
 					o = parseValueFromTag(v, valueType);
 				}
-			} else if (value instanceof String && value.equals(":incline")) {
+			} else if (value != null && value.equals(":incline")) {
 				return paramContext.incline;
-			} else if (value instanceof String && value.startsWith(":")) {
+			} else if (value != null && value.startsWith(":")) {
 				String p = value.substring(1);
 				if (paramContext != null && paramContext.vars.containsKey(p)) {
 					o = parseValue(paramContext.vars.get(p), valueType);
@@ -696,19 +695,19 @@ public class GeneralRouter implements VehicleRouter {
 		
 		
 		public RouteAttributeExpression[] getExpressions() {
-			return expressions.toArray(new RouteAttributeExpression[expressions.size()]);
+			return expressions.toArray(new RouteAttributeExpression[0]);
 		}
 		
 		public String[] getParameters() {
-			return parameters.toArray(new String[parameters.size()]);
+			return parameters.toArray(new String[0]);
 		}
 		
 		public String[] getTagValueCondDefTag() {
-			return tagValueCondDefTag.toArray(new String[tagValueCondDefTag.size()]);
+			return tagValueCondDefTag.toArray(new String[0]);
 		}
 		
 		public String[] getTagValueCondDefValue() {
-			return tagValueCondDefValue.toArray(new String[tagValueCondDefValue.size()]);
+			return tagValueCondDefValue.toArray(new String[0]);
 		}
 		
 		public boolean[] getTagValueCondDefNot() {
@@ -764,7 +763,7 @@ public class GeneralRouter implements VehicleRouter {
 			out.println();
 		}
 
-		public void registerAndTagValueCondition(String tag, String value, boolean not) {
+		void registerAndTagValueCondition(String tag, String value, boolean not) {
 			tagValueCondDefTag.add(tag);
 			tagValueCondDefValue.add(value);
 			tagValueCondDefNot.add(not);
@@ -784,22 +783,22 @@ public class GeneralRouter implements VehicleRouter {
 			}
 		}
 		
-		public void registerLessCondition(String value1, String value2, String valueType) {
+		void registerLessCondition(String value1, String value2, String valueType) {
 			expressions.add(new RouteAttributeExpression(new String[] { value1, value2 }, valueType,
 					RouteAttributeExpression.LESS_EXPRESSION));
 		}
 		
-		public void registerGreatCondition(String value1, String value2, String valueType) {
+		void registerGreatCondition(String value1, String value2, String valueType) {
 			expressions.add(new RouteAttributeExpression(new String[] { value1, value2 }, valueType,
 					RouteAttributeExpression.GREAT_EXPRESSION));
 		}
 		
-		public void registerEqualCondition(String value1, String value2, String valueType) {
+		void registerEqualCondition(String value1, String value2, String valueType) {
 			expressions.add(new RouteAttributeExpression(new String[] { value1, value2 }, valueType,
 					RouteAttributeExpression.EQUAL_EXPRESSION));
 		}
 		
-		public void registerAndParamCondition(String param, boolean not) {
+		void registerAndParamCondition(String param, boolean not) {
 			param = not ? "-" + param : param;
 			parameters.add(param);
 		}
@@ -882,10 +881,7 @@ public class GeneralRouter implements VehicleRouter {
 		}
 
 		private boolean checkAllTypesShouldNotBePresent(BitSet types) {
-			if(filterNotTypes.intersects(types)) {
-				return false;
-			}
-			return true;
+			return !filterNotTypes.intersects(types);
 		}
 
 		private boolean checkAllTypesShouldBePresent(BitSet types) {
@@ -895,10 +891,7 @@ public class GeneralRouter implements VehicleRouter {
 			evalFilterTypes.or(filterTypes);
 			// evaluate bit intersection and check if filterTypes contained as set in types
 			evalFilterTypes.and(types);
-			if(!evalFilterTypes.equals(filterTypes)) {
-				return false;
-			}
-			return true;
+			return evalFilterTypes.equals(filterTypes);
 		}
 	}
 
@@ -909,7 +902,7 @@ public class GeneralRouter implements VehicleRouter {
 		}
 	}
 
-	public void addImpassableRoads(Set<Long> impassableRoads) {
+	void addImpassableRoads(Set<Long> impassableRoads) {
 		if (impassableRoads != null && !impassableRoads.isEmpty()) {
 			if (this.impassableRoads == null) {
 				this.impassableRoads = new TLongHashSet();

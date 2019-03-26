@@ -29,17 +29,14 @@ public class DirectionsDialogs {
 			builder.setItems(
 					new String[] { act.getString(R.string.keep_intermediate_points),
 							act.getString(R.string.clear_intermediate_points)},
-					new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							if (which == 1) {
-								targetPointsHelper.clearPointToNavigate(false);
-							}
-							ctx.getSettings().navigateDialog();
-							targetPointsHelper.navigateToPoint(new LatLon(lat, lon), true, -1, name);
-							MapActivity.launchMapActivityMoveToTop(act);
-						}
-					});
+                    (dialog, which) -> {
+                        if (which == 1) {
+                            targetPointsHelper.clearPointToNavigate(false);
+                        }
+                        ctx.getSettings().navigateDialog();
+                        targetPointsHelper.navigateToPoint(new LatLon(lat, lon), true, -1, name);
+                        MapActivity.launchMapActivityMoveToTop(act);
+                    });
 			builder.show();
 		} else {
 			ctx.getSettings().navigateDialog();

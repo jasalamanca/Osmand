@@ -109,15 +109,12 @@ public class FavoritesActivity extends TabActivity {
 				if (gpxFragment!= null) {
 					gpxFragment.startImport();
 				}
-				gpxImportHelper.setGpxImportCompleteListener(new GpxImportHelper.OnGpxImportCompleteListener() {
-					@Override
-					public void onComplete(boolean success) {
-						AvailableGPXFragment gpxFragment = getGpxFragment();
-						if (gpxFragment!= null) {
-							gpxFragment.finishImport(success);
-						}
-						gpxImportHelper.setGpxImportCompleteListener(null);
+				gpxImportHelper.setGpxImportCompleteListener(success -> {
+					AvailableGPXFragment gpxFragment1 = getGpxFragment();
+					if (gpxFragment1 != null) {
+						gpxFragment1.finishImport(success);
 					}
+					gpxImportHelper.setGpxImportCompleteListener(null);
 				});
 				if (!gpxImportHelper.handleGpxImport(uri, false)) {
 					if (gpxFragment!= null) {

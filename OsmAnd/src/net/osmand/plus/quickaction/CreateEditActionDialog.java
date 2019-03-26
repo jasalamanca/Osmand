@@ -141,12 +141,7 @@ public class CreateEditActionDialog extends DialogFragment {
                 R.drawable.ic_arrow_back,
                 R.color.color_white));
         toolbar.setNavigationContentDescription(R.string.access_shared_string_navigate_up);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismiss();
-            }
-        });
+        toolbar.setNavigationOnClickListener(v -> dismiss());
     }
 
     private void setupHeader(View root, Bundle savedInstanceState){
@@ -178,41 +173,35 @@ public class CreateEditActionDialog extends DialogFragment {
     }
 
     private void setupFooter(final View root){
-        root.findViewById(R.id.btnApply).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (action.fillParams(((ViewGroup) root.findViewById(R.id.container)).getChildAt(0))) {
-                    if (quickActionRegistry.isNameUnique(action, getContext())) {
+        root.findViewById(R.id.btnApply).setOnClickListener(view -> {
+            if (action.fillParams(((ViewGroup) root.findViewById(R.id.container)).getChildAt(0))) {
+                if (quickActionRegistry.isNameUnique(action, getContext())) {
+                    if (isNew) quickActionRegistry.addQuickAction(action);
+                    else quickActionRegistry.updateQuickAction(action);
+
+                    quickActionRegistry.notifyUpdates();
+                    dismiss();
+                } else {
+                    action = quickActionRegistry.generateUniqueName(action, getContext());
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setTitle(R.string.quick_action_duplicate);
+                    builder.setMessage(getString(R.string.quick_action_duplicates, action.getName(getContext())));
+                    builder.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> {
+
                         if (isNew) quickActionRegistry.addQuickAction(action);
                         else quickActionRegistry.updateQuickAction(action);
 
                         quickActionRegistry.notifyUpdates();
+
+                        CreateEditActionDialog.this.dismiss();
                         dismiss();
-                    } else {
-                        action = quickActionRegistry.generateUniqueName(action, getContext());
-                        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                        builder.setTitle(R.string.quick_action_duplicate);
-                        builder.setMessage(getString(R.string.quick_action_duplicates, action.getName(getContext())));
-                        builder.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
+                    });
+                    builder.create().show();
 
-                                if (isNew) quickActionRegistry.addQuickAction(action);
-                                else quickActionRegistry.updateQuickAction(action);
-
-                                quickActionRegistry.notifyUpdates();
-
-                                CreateEditActionDialog.this.dismiss();
-                                dismiss();
-                            }
-                        });
-                        builder.create().show();
-
-                        ((EditText) root.findViewById(R.id.name)).setText(action.getName(getContext()));
-                    }
-                } else {
-                    Toast.makeText(getContext(), R.string.quick_action_empty_param_error, Toast.LENGTH_SHORT).show();
+                    ((EditText) root.findViewById(R.id.name)).setText(action.getName(getContext()));
                 }
+            } else {
+                Toast.makeText(getContext(), R.string.quick_action_empty_param_error, Toast.LENGTH_SHORT).show();
             }
         });
     }

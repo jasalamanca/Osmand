@@ -135,12 +135,7 @@ public class DataStoragePlaceDialogFragment extends BottomSheetDialogFragment {
 
 		final ImageButton closeImageButton = view.findViewById(R.id.closeImageButton);
 		closeImageButton.setImageDrawable(getContentIcon(R.drawable.ic_action_remove_dark));
-		closeImageButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-			}
-		});
+		closeImageButton.setOnClickListener(v -> dismiss());
 		return view;
 	}
 

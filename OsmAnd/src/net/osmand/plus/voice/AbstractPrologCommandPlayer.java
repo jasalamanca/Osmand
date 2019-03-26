@@ -273,7 +273,7 @@ public abstract class AbstractPrologCommandPlayer implements CommandPlayer, Stat
 			toggleBtSco(false);
 		}
 		if (ctx != null && mAudioFocusHelper != null) {
-			mAudioFocusHelper.abandonFocus(ctx, applicationMode, streamType);
+			mAudioFocusHelper.abandonFocus(ctx);
 		}
 		mAudioFocusHelper = null;
 	}

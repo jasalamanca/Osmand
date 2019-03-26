@@ -45,35 +45,24 @@ public abstract class AddGroupBottomSheetDialogFragment extends MenuBottomSheetD
 		final RecyclerView recyclerView = mainView.findViewById(R.id.groups_recycler_view);
 		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 		createAdapter();
-		adapter.setAdapterListener(new GroupsAdapter.GroupsAdapterListener() {
-			@Override
-			public void onItemClick(View view) {
-				int position = recyclerView.getChildAdapterPosition(view);
-				if (position == RecyclerView.NO_POSITION) {
-					return;
-				}
-				showProgressBar();
-				MarkersSyncGroup group = createMapMarkersSyncGroup(position);
-				mapMarkersHelper.addMarkersSyncGroup(group);
-				mapMarkersHelper.syncGroupAsync(group, new MapMarkersHelper.OnGroupSyncedListener() {
-					@Override
-					public void onSyncDone() {
-						if (listener != null) {
-							listener.onGroupAdded();
-						}
-						dismiss();
-					}
-				});
-			}
-		});
+		adapter.setAdapterListener(view -> {
+            int position = recyclerView.getChildAdapterPosition(view);
+            if (position == RecyclerView.NO_POSITION) {
+                return;
+            }
+            showProgressBar();
+            MarkersSyncGroup group = createMapMarkersSyncGroup(position);
+            mapMarkersHelper.addMarkersSyncGroup(group);
+            mapMarkersHelper.syncGroupAsync(group, () -> {
+                if (listener != null) {
+                    listener.onGroupAdded();
+                }
+                dismiss();
+            });
+        });
 		recyclerView.setAdapter(adapter);
 
-		mainView.findViewById(R.id.close_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.close_row).setOnClickListener(view -> dismiss());
 
 		setupHeightAndBackground(mainView, R.id.groups_recycler_view);
 

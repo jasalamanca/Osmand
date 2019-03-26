@@ -494,10 +494,10 @@ public class TurnPathHelper {
 	}
 
 	public static class TurnResource {
-		int turnType;
-		boolean shortArrow;
-		boolean noOverlap;
-		boolean leftSide;
+		final int turnType;
+		final boolean shortArrow;
+		final boolean noOverlap;
+		final boolean leftSide;
 
 		TurnResource(int turnType, boolean shortArrow, boolean noOverlap, boolean leftSide) {
 			this.turnType = turnType == 0 ? 1 : turnType;

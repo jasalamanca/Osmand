@@ -212,21 +212,18 @@ public class MapMarkersActiveFragment extends Fragment implements OsmAndCompassL
 		}
 		final MapActivity mapActivity = (MapActivity) getActivity();
 		if (mapActivity != null && adapter != null) {
-			mapActivity.getMyApplication().runInUIThread(new Runnable() {
-				@Override
-				public void run() {
-					if (location == null) {
-						location = mapActivity.getMyApplication().getLocationProvider().getLastKnownLocation();
-					}
-					MapViewTrackingUtilities utilities = mapActivity.getMapViewTrackingUtilities();
-					boolean useCenter = !(utilities.isMapLinkedToLocation() && location != null);
+			mapActivity.getMyApplication().runInUIThread(() -> {
+                if (location == null) {
+                    location = mapActivity.getMyApplication().getLocationProvider().getLastKnownLocation();
+                }
+                MapViewTrackingUtilities utilities = mapActivity.getMapViewTrackingUtilities();
+                boolean useCenter = !(utilities.isMapLinkedToLocation() && location != null);
 
-					adapter.setUseCenter(useCenter);
-					adapter.setLocation(useCenter ? mapActivity.getMapLocation() : new LatLon(location.getLatitude(), location.getLongitude()));
-					adapter.setHeading(useCenter ? -mapActivity.getMapRotate() : heading != null ? heading : 99);
-					adapter.notifyDataSetChanged();
-				}
-			});
+                adapter.setUseCenter(useCenter);
+                adapter.setLocation(useCenter ? mapActivity.getMapLocation() : new LatLon(location.getLatitude(), location.getLongitude()));
+                adapter.setHeading(useCenter ? -mapActivity.getMapRotate() : heading != null ? heading : 99);
+                adapter.notifyDataSetChanged();
+            });
 		}
 	}
 

@@ -1,19 +1,18 @@
 package net.osmand.plus.download;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.AsyncTask.Status;
 import android.os.StatFs;
 import android.support.annotation.UiThread;
-import android.app.AlertDialog;
 import android.view.View;
 import android.widget.Toast;
 
@@ -51,7 +50,7 @@ public class DownloadIndexesThread {
 	private DownloadEvents uiActivity = null;
 	private final DatabaseHelper dbHelper;
 	private final DownloadFileHelper downloadFileHelper;
-	private final List<BasicProgressAsyncTask<?, ?, ?, ?>> currentRunningTask = Collections.synchronizedList(new ArrayList<BasicProgressAsyncTask<?, ?, ?, ?>>());
+	private final List<BasicProgressAsyncTask<?, ?, ?, ?>> currentRunningTask = Collections.synchronizedList(new ArrayList<>());
 	private final ConcurrentLinkedQueue<IndexItem> indexItemDownloading = new ConcurrentLinkedQueue<>();
 	private IndexItem currentDownloadingItem = null;
 	private int currentDownloadingItemProgress = 0;
@@ -132,7 +131,6 @@ public class DownloadIndexesThread {
 				notification = null;
 			}
 		}
-		
 	}
 
 	@UiThread
@@ -177,10 +175,8 @@ public class DownloadIndexesThread {
 		}
 	}
 
-
 	// PUBLIC API
 
-	
 	public DownloadResources getIndexes() {
 		return indexes;
 	}
@@ -358,28 +354,20 @@ public class DownloadIndexesThread {
 		private void showWarnDialog() {
 			AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
 			builder.setMessage(R.string.map_version_changed_info);
-			builder.setPositiveButton(R.string.button_upgrade_osmandplus, new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Version.getUrlWithUtmRef(app, "net.osmand.plus")));
-					try {
-						ctx.startActivity(intent);
-					} catch (ActivityNotFoundException e) {
-					}
+			builder.setPositiveButton(R.string.button_upgrade_osmandplus, (dialog, which) -> {
+				Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Version.getUrlWithUtmRef(app, "net.osmand.plus")));
+				try {
+					ctx.startActivity(intent);
+				} catch (ActivityNotFoundException e) {
 				}
 			});
-			builder.setNegativeButton(R.string.shared_string_cancel, new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					dialog.dismiss();
-				}
-			});
+			builder.setNegativeButton(R.string.shared_string_cancel, (dialog, which) -> dialog.dismiss());
 			builder.show();
 
 		}
 
 		@Override
-		protected void updateProgress(boolean updateOnlyProgress, Void tag) {
+		protected void updateProgress() {
 			downloadInProgress();
 		}
 	}
@@ -394,15 +382,7 @@ public class DownloadIndexesThread {
 			downloads = app.getSettings().NUMBER_OF_FREE_DOWNLOADS;
 		}
 
-		@Override
-		public void setInterrupted(boolean interrupted) {
-			super.setInterrupted(interrupted);
-			if (interrupted) {
-				downloadFileHelper.setInterruptDownloading(true);
-			}
-		}
-
-		@Override
+        @Override
 		protected void onProgressUpdate(Object... values) {
 			for (Object o : values) {
 				if (o instanceof IndexItem) {
@@ -478,7 +458,6 @@ public class DownloadIndexesThread {
 					if(!validateNotExceedsFreeLimit(item)) {
 						break;
 					}
-					setTag(item);
 					boolean result = downloadFile(item, filesToReindex, forceWifi);
 					if (result) {
 						if (DownloadActivityType.isCountedInDownloads(item)) {
@@ -502,7 +481,6 @@ public class DownloadIndexesThread {
 				currentDownloadingItem = null;
 				currentDownloadingItemProgress = 0;
 			}
-			//String warn = reindexFiles(filesToReindex);
 			if(warn.toString().trim().length() == 0) {
 				return null;
 			}
@@ -550,10 +528,10 @@ public class DownloadIndexesThread {
 			if (vectorMapsToReindex) {
 				warnings = manager.indexingMaps(this);
 			}
-			List<String> wns = manager.indexAdditionalMaps(this);
-			if (wns != null) {
-				warnings.addAll(wns);
-			}
+//			List<String> wns = manager.indexAdditionalMaps(this);
+//			if (wns != null) {
+//				warnings.addAll(wns);
+//			}
 
 			if (!warnings.isEmpty()) {
 				return warnings.get(0);
@@ -594,7 +572,7 @@ public class DownloadIndexesThread {
 		}
 
 		@Override
-		protected void updateProgress(boolean updateOnlyProgress, IndexItem tag) {
+		protected void updateProgress() {
 			currentDownloadingItemProgress = getProgressPercentage();
 			downloadInProgress();
 		}

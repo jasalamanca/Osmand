@@ -77,11 +77,10 @@ public class SwipeDismissTouchListener implements View.OnTouchListener {
 	 * Constructs a new swipe-to-dismiss touch listener for the given view.
 	 *
 	 * @param view      The view to make dismissable.
-	 * @param token     An optional token/cookie object to be passed through to the callback.
 	 * @param callbacks The callback to trigger when the user has indicated that she would like to
 	 *                  dismiss this view.
 	 */
-	public SwipeDismissTouchListener(View view, Object token, DismissCallbacks callbacks) {
+	public SwipeDismissTouchListener(View view, DismissCallbacks callbacks) {
 		ViewConfiguration vc = ViewConfiguration.get(view.getContext());
 		mSlop = vc.getScaledTouchSlop();
 		mMinFlingVelocity = vc.getScaledMinimumFlingVelocity() * 16;

@@ -40,13 +40,10 @@ public class NumberPickerDialogFragment extends DialogFragment {
 		}
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		builder.setSingleChoiceItems(items, Math.max(0, currentNumber - 1), null)
-				.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						final int userChoice =
-								((AlertDialog) dialog).getListView().getCheckedItemPosition() + 1;
-						((CanAcceptNumber) getParentFragment()).acceptNumber(numberTag, userChoice);
-					}
+				.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> {
+					final int userChoice =
+							((AlertDialog) dialog).getListView().getCheckedItemPosition() + 1;
+					((CanAcceptNumber) getParentFragment()).acceptNumber(numberTag, userChoice);
 				})
 				.setNegativeButton(R.string.shared_string_cancel, null);
 		if (subHeaderText != null) {

@@ -58,12 +58,7 @@ public class AddQuickActionDialog extends DialogFragment {
         RecyclerView recyclerView = root.findViewById(R.id.recycler_view);
         Button btnDismiss = root.findViewById(R.id.btnDismiss);
 
-        btnDismiss.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dismiss();
-            }
-        });
+        btnDismiss.setOnClickListener(view -> dismiss());
 
         recyclerView.setAdapter(adapter);
 
@@ -145,15 +140,12 @@ public class AddQuickActionDialog extends DialogFragment {
                 itemHolder.title.setText(action.getNameRes());
                 itemHolder.icon.setImageResource(action.getIconRes());
 
-                itemHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
+                itemHolder.itemView.setOnClickListener(view -> {
 
-                        CreateEditActionDialog dialog = CreateEditActionDialog.newInstance(action.type);
-                        dialog.show(getFragmentManager(), CreateEditActionDialog.TAG);
+                    CreateEditActionDialog dialog = CreateEditActionDialog.newInstance(action.type);
+                    dialog.show(getFragmentManager(), CreateEditActionDialog.TAG);
 
-                        dismiss();
-                    }
+                    dismiss();
                 });
             }
         }

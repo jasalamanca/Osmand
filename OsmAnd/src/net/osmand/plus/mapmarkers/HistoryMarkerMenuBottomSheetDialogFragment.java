@@ -57,35 +57,24 @@ public class HistoryMarkerMenuBottomSheetDialogFragment extends MenuBottomSheetD
 			String day = new SimpleDateFormat("d", Locale.getDefault()).format(date);
 			((TextView) mainView.findViewById(R.id.map_marker_passed_info)).setText(getString(R.string.passed, month + " " + day));
 
-			mainView.findViewById(R.id.make_active_row).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					if (listener != null) {
-						listener.onMakeMarkerActive(pos);
-					}
-					dismiss();
-				}
-			});
-			mainView.findViewById(R.id.delete_row).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					if (listener != null) {
-						listener.onDeleteMarker(pos);
-					}
-					dismiss();
-				}
-			});
+			mainView.findViewById(R.id.make_active_row).setOnClickListener(view -> {
+                if (listener != null) {
+                    listener.onMakeMarkerActive(pos);
+                }
+                dismiss();
+            });
+			mainView.findViewById(R.id.delete_row).setOnClickListener(view -> {
+                if (listener != null) {
+                    listener.onDeleteMarker(pos);
+                }
+                dismiss();
+            });
 		}
 
 		((ImageView) mainView.findViewById(R.id.make_active_icon)).setImageDrawable(getContentIcon(R.drawable.ic_action_reset_to_default_dark));
 		((ImageView) mainView.findViewById(R.id.delete_icon)).setImageDrawable(getContentIcon(R.drawable.ic_action_delete_dark));
 
-		mainView.findViewById(R.id.cancel_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.cancel_row).setOnClickListener(view -> dismiss());
 
 		setupHeightAndBackground(mainView, R.id.history_marker_scroll_view);
 

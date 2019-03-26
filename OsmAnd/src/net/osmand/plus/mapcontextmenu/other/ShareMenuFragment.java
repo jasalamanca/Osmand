@@ -54,12 +54,7 @@ public class ShareMenuFragment extends MenuBottomSheetDialogFragment implements 
 		listView.setAdapter(listAdapter);
 		listView.setOnItemClickListener(this);
 
-		view.findViewById(R.id.cancel_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		view.findViewById(R.id.cancel_row).setOnClickListener(view1 -> dismiss());
 
 		setupHeightAndBackground(view, R.id.scroll_view);
 

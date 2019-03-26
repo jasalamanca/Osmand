@@ -92,14 +92,11 @@ public class AmenityMenuBuilder extends MenuBuilder {
 		LinearLayout.LayoutParams llParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		ll.setLayoutParams(llParams);
 		ll.setBackgroundResource(AndroidUtils.resolveAttribute(view.getContext(), android.R.attr.selectableItemBackground));
-		ll.setOnLongClickListener(new View.OnLongClickListener() {
-			@Override
-			public boolean onLongClick(View v) {
-				String textToCopy = !Algorithms.isEmpty(textPrefix) ? textPrefix + ": " + txt : txt;
-				copyToClipboard(textToCopy, view.getContext());
-				return true;
-			}
-		});
+		ll.setOnLongClickListener(v -> {
+            String textToCopy = !Algorithms.isEmpty(textPrefix) ? textPrefix + ": " + txt : txt;
+            copyToClipboard(textToCopy, view.getContext());
+            return true;
+        });
 
 		baseView.addView(ll);
 
@@ -202,20 +199,17 @@ public class AmenityMenuBuilder extends MenuBuilder {
 			iconViewCollapse.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
 			iconViewCollapse.setImageDrawable(getCollapseIcon(collapsableView.getContenView().getVisibility() == View.GONE));
 			llIconCollapse.addView(iconViewCollapse);
-			ll.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					if (collapsableView.getContenView().getVisibility() == View.VISIBLE) {
-						collapsableView.getContenView().setVisibility(View.GONE);
-						iconViewCollapse.setImageDrawable(getCollapseIcon(true));
-						collapsableView.setCollapsed(true);
-					} else {
-						collapsableView.getContenView().setVisibility(View.VISIBLE);
-						iconViewCollapse.setImageDrawable(getCollapseIcon(false));
-						collapsableView.setCollapsed(false);
-					}
-				}
-			});
+			ll.setOnClickListener(v -> {
+                if (collapsableView.getContenView().getVisibility() == View.VISIBLE) {
+                    collapsableView.getContenView().setVisibility(View.GONE);
+                    iconViewCollapse.setImageDrawable(getCollapseIcon(true));
+                    collapsableView.setCollapsed(true);
+                } else {
+                    collapsableView.getContenView().setVisibility(View.VISIBLE);
+                    iconViewCollapse.setImageDrawable(getCollapseIcon(false));
+                    collapsableView.setCollapsed(false);
+                }
+            });
 			if (collapsableView.isCollapsed()) {
 				collapsableView.getContenView().setVisibility(View.GONE);
 				iconViewCollapse.setImageDrawable(getCollapseIcon(true));
@@ -240,12 +234,7 @@ public class AmenityMenuBuilder extends MenuBuilder {
 			button.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
 			button.setSingleLine(true);
 			button.setEllipsize(TextUtils.TruncateAt.END);
-			button.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					WikipediaDialogFragment.showInstance(mapActivity, amenity);
-				}
-			});
+			button.setOnClickListener(view1 -> WikipediaDialogFragment.showInstance(mapActivity, amenity));
 			button.setAllCaps(true);
 			button.setText(R.string.context_menu_read_full_article);
 			Drawable normal = app.getIconsCache().getIcon(R.drawable.ic_action_read_text,
@@ -261,52 +250,33 @@ public class AmenityMenuBuilder extends MenuBuilder {
 		((LinearLayout) view).addView(baseView);
 
 		if (isPhoneNumber) {
-			ll.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(final View v) {
-					final String[] phones = text.split(",|;");
-					if (phones.length > 1) {
-						AlertDialog.Builder dlg = new AlertDialog.Builder(v.getContext());
-						dlg.setNegativeButton(R.string.shared_string_cancel, null);
-						dlg.setItems(phones, new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								Intent intent = new Intent(Intent.ACTION_DIAL);
-								intent.setData(Uri.parse("tel:" + phones[which]));
-								v.getContext().startActivity(intent);
-							}
-						});
-						dlg.show();
-					} else {
-						Intent intent = new Intent(Intent.ACTION_DIAL);
-						intent.setData(Uri.parse("tel:" + text));
-						v.getContext().startActivity(intent);
-					}
-				}
-			});
+			ll.setOnClickListener(v -> {
+                final String[] phones = text.split(",|;");
+                if (phones.length > 1) {
+                    AlertDialog.Builder dlg = new AlertDialog.Builder(v.getContext());
+                    dlg.setNegativeButton(R.string.shared_string_cancel, null);
+                    dlg.setItems(phones, (dialog, which) -> {
+                        Intent intent = new Intent(Intent.ACTION_DIAL);
+                        intent.setData(Uri.parse("tel:" + phones[which]));
+                        v.getContext().startActivity(intent);
+                    });
+                    dlg.show();
+                } else {
+                    Intent intent = new Intent(Intent.ACTION_DIAL);
+                    intent.setData(Uri.parse("tel:" + text));
+                    v.getContext().startActivity(intent);
+                }
+            });
 		} else if (isUrl) {
-			ll.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					Intent intent = new Intent(Intent.ACTION_VIEW);
-					intent.setData(Uri.parse(text));
-					v.getContext().startActivity(intent);
-				}
-			});
+			ll.setOnClickListener(v -> {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(text));
+                v.getContext().startActivity(intent);
+            });
 		} else if (isWiki) {
-			ll.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					WikipediaDialogFragment.showInstance(mapActivity, amenity);
-				}
-			});
+			ll.setOnClickListener(v -> WikipediaDialogFragment.showInstance(mapActivity, amenity));
 		} else if (isText && text.length() > 200) {
-			ll.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					POIMapLayer.showDescriptionDialog(view.getContext(), app, text, textPrefix);
-				}
-			});
+			ll.setOnClickListener(v -> POIMapLayer.showDescriptionDialog(view.getContext(), app, text, textPrefix));
 		}
 
 		rowBuilt();
@@ -543,18 +513,15 @@ public class AmenityMenuBuilder extends MenuBuilder {
 			}
 		}
 
-		Collections.sort(infoRows, new Comparator<AmenityInfoRow>() {
-			@Override
-			public int compare(AmenityInfoRow row1, AmenityInfoRow row2) {
-				if (row1.order < row2.order) {
-					return -1;
-				} else if (row1.order == row2.order) {
-					return row1.name.compareTo(row2.name);
-				} else {
-					return 1;
-				}
-			}
-		});
+		Collections.sort(infoRows, (row1, row2) -> {
+            if (row1.order < row2.order) {
+                return -1;
+            } else if (row1.order == row2.order) {
+                return row1.name.compareTo(row2.name);
+            } else {
+                return 1;
+            }
+        });
 
 		for (AmenityInfoRow info : infoRows) {
 			buildAmenityRow(view, info);
@@ -631,21 +598,18 @@ public class AmenityMenuBuilder extends MenuBuilder {
 			String name = pt.getTranslation();
 			button.setText(name);
 
-			button.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					if (amenity.getType() != null) {
-						PoiUIFilter filter = app.getPoiFilters().getFilterById(PoiUIFilter.STD_PREFIX + amenity.getType().getKeyName());
-						if (filter != null) {
-							filter.clearFilter();
-							filter.setTypeToAccept(amenity.getType(), true);
-							filter.updateTypesToAccept(pt);
-							filter.setFilterByName(pt.getKeyName().replace('_', ':').toLowerCase());
-							getMapActivity().showQuickSearch(filter);
-						}
-					}
-				}
-			});
+			button.setOnClickListener(v -> {
+                if (amenity.getType() != null) {
+                    PoiUIFilter filter = app.getPoiFilters().getFilterById(PoiUIFilter.STD_PREFIX + amenity.getType().getKeyName());
+                    if (filter != null) {
+                        filter.clearFilter();
+                        filter.setTypeToAccept(amenity.getType(), true);
+                        filter.updateTypesToAccept(pt);
+                        filter.setFilterByName(pt.getKeyName().replace('_', ':').toLowerCase());
+                        getMapActivity().showQuickSearch(filter);
+                    }
+                }
+            });
 			buttons.add(button);
 			if (buttons.size() > 3 && categoryTypes.size() > 4) {
 				button.setVisibility(View.GONE);
@@ -663,17 +627,14 @@ public class AmenityMenuBuilder extends MenuBuilder {
 		if (categoryTypes.size() > 4) {
 			final TextViewEx button = buildButtonInCollapsableView(context, false, true);
 			button.setText(context.getString(R.string.shared_string_show_all));
-			button.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					for (TextViewEx b : buttons) {
-						if (b.getVisibility() != View.VISIBLE) {
-							b.setVisibility(View.VISIBLE);
-						}
-					}
-					button.setVisibility(View.GONE);
-				}
-			});
+			button.setOnClickListener(view1 -> {
+                for (TextViewEx b : buttons) {
+                    if (b.getVisibility() != View.VISIBLE) {
+                        b.setVisibility(View.VISIBLE);
+                    }
+                }
+                button.setVisibility(View.GONE);
+            });
 			view.addView(button);
 		}
 

@@ -50,12 +50,7 @@ public class HelpArticleDialogFragment extends DialogFragment {
 
 		Toolbar toolbar = view.findViewById(R.id.toolbar);
 		toolbar.setNavigationContentDescription(R.string.access_shared_string_navigate_up);
-		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-			}
-		});
+		toolbar.setNavigationOnClickListener(v -> dismiss());
 		String name = getArguments().getString(NAME);
 		if(name != null) {
 			toolbar.setTitle(name);

@@ -54,17 +54,14 @@ public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 		firstRunPreference.setTitle(R.string.simulate_initial_startup);
 		firstRunPreference.setSummary(R.string.simulate_initial_startup_descr);
 		firstRunPreference.setSelectable(true);
-		firstRunPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				getMyApplication().getAppInitializer().resetFirstTimeRun();
-				getMyApplication().getSettings().FIRST_MAP_IS_DOWNLOADED.set(false);
-				getMyApplication().getSettings().WEBGL_SUPPORTED.set(true);
-				getMyApplication().getSettings().METRIC_SYSTEM_CHANGED_MANUALLY.set(false);
-				getMyApplication().showToastMessage(R.string.shared_string_ok);
-				return true;
-			}
-		});
+		firstRunPreference.setOnPreferenceClickListener(preference -> {
+            getMyApplication().getAppInitializer().resetFirstTimeRun();
+            getMyApplication().getSettings().FIRST_MAP_IS_DOWNLOADED.set(false);
+            getMyApplication().getSettings().WEBGL_SUPPORTED.set(true);
+            getMyApplication().getSettings().METRIC_SYSTEM_CHANGED_MANUALLY.set(false);
+            getMyApplication().showToastMessage(R.string.shared_string_ok);
+            return true;
+        });
 		cat.addPreference(firstRunPreference);
 		
 		cat.addPreference(createCheckBoxPreference(settings.SHOULD_SHOW_FREE_VERSION_BANNER,
@@ -80,51 +77,36 @@ public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 		Preference pref = new Preference(this);
 		final Preference simulate = pref;
 		final OsmAndLocationSimulation sim = getMyApplication().getLocationProvider().getLocationSimulation();
-		final Runnable updateTitle = new Runnable(){
-
-			@Override
-			public void run() {
-				simulate.setSummary(sim.isRouteAnimating() ?
-						R.string.simulate_your_location_stop_descr : R.string.simulate_your_location_descr);
-			}
-		};
+		final Runnable updateTitle = () -> simulate.setSummary(sim.isRouteAnimating() ?
+                R.string.simulate_your_location_stop_descr : R.string.simulate_your_location_descr);
 		pref.setTitle(R.string.simulate_your_location);
 		updateTitle.run();
 		pref.setKey("simulate_your_location");
-		pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				updateTitle.run();
-				sim.startStopRouteAnimation(SettingsDevelopmentActivity.this, updateTitle);
-				return true;
-			}
-		});
+		pref.setOnPreferenceClickListener(preference -> {
+            updateTitle.run();
+            sim.startStopRouteAnimation(SettingsDevelopmentActivity.this, updateTitle);
+            return true;
+        });
 		cat.addPreference(pref);
 
 		pref = new Preference(this);
 		pref.setTitle(R.string.test_voice_prompts);
 		pref.setSummary(R.string.play_commands_of_currently_selected_voice);
 		pref.setKey("test_voice_commands");
-		pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				startActivity(new Intent(SettingsDevelopmentActivity.this, TestVoiceActivity.class));
-				return true;
-			}
-		});
+		pref.setOnPreferenceClickListener(preference -> {
+            startActivity(new Intent(SettingsDevelopmentActivity.this, TestVoiceActivity.class));
+            return true;
+        });
 		cat.addPreference(pref);
 
 		pref = new Preference(this);
 		pref.setTitle(R.string.app_modes_choose);
 		pref.setSummary(R.string.app_modes_choose_descr);
 		pref.setKey("available_application_modes");
-		pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				availableProfileDialog();
-				return true;
-			}
-		});
+		pref.setOnPreferenceClickListener(preference -> {
+            availableProfileDialog();
+            return true;
+        });
 		cat.addPreference(pref);
 
 		PreferenceCategory info = new PreferenceCategory(this);
@@ -160,17 +142,14 @@ public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 			agpspref.setSummary(getString(R.string.agps_data_last_downloaded, "--"));
 		}
 		agpspref.setSelectable(true);
-		agpspref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				if(getMyApplication().getSettings().isInternetConnectionAvailable(true)) {
-					getMyApplication().getLocationProvider().redownloadAGPS();
-					SimpleDateFormat prt = new SimpleDateFormat("yyyy-MM-dd  HH:mm");
-					agpspref.setSummary(getString(R.string.agps_data_last_downloaded, prt.format(settings.AGPS_DATA_LAST_TIME_DOWNLOADED.get())));
-				}
-			return true;
-			}
-		});
+		agpspref.setOnPreferenceClickListener(preference -> {
+            if(getMyApplication().getSettings().isInternetConnectionAvailable(true)) {
+                getMyApplication().getLocationProvider().redownloadAGPS();
+                SimpleDateFormat prt = new SimpleDateFormat("yyyy-MM-dd  HH:mm");
+                agpspref.setSummary(getString(R.string.agps_data_last_downloaded, prt.format(settings.AGPS_DATA_LAST_TIME_DOWNLOADED.get())));
+            }
+        return true;
+        });
 		info.addPreference(agpspref);
 
 		SunriseSunset sunriseSunset = getMyApplication().getDaynightHelper().getSunriseSunset();
@@ -194,19 +173,15 @@ public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 		final Set<ApplicationMode> selected = new LinkedHashSet<>(ApplicationMode.values(settings));
 		selected.remove(ApplicationMode.DEFAULT);
 		View v = AppModeDialog.prepareAppModeView(this, modes, selected, null, false, true, false,
-				new View.OnClickListener() {
-
-					@Override
-					public void onClick(View v) {
-						StringBuilder vls = new StringBuilder(ApplicationMode.DEFAULT.getStringKey()+",");
-						for(ApplicationMode mode :  modes) {
-							if(selected.contains(mode)) {
-								vls.append(mode.getStringKey()).append(",");
-							}
-						}
-						settings.AVAILABLE_APP_MODES.set(vls.toString());
-					}
-				});
+                v1 -> {
+                    StringBuilder vls = new StringBuilder(ApplicationMode.DEFAULT.getStringKey()+",");
+                    for(ApplicationMode mode :  modes) {
+                        if(selected.contains(mode)) {
+                            vls.append(mode.getStringKey()).append(",");
+                        }
+                    }
+                    settings.AVAILABLE_APP_MODES.set(vls.toString());
+                });
 		b.setTitle(R.string.profile_settings);
 		b.setPositiveButton(R.string.shared_string_ok, null);
 		b.setView(v);

@@ -7,12 +7,12 @@ import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+
 import net.osmand.IProgress;
 import net.osmand.IndexConstants;
 import net.osmand.PlatformUtil;
 import net.osmand.aidl.OsmandAidlApi;
 import net.osmand.map.OsmandRegions;
-import net.osmand.map.OsmandRegions.RegionTranslation;
 import net.osmand.map.WorldRegion;
 import net.osmand.osm.AbstractPoiType;
 import net.osmand.osm.MapPoiTypes;
@@ -20,12 +20,10 @@ import net.osmand.plus.activities.DayNightHelper;
 import net.osmand.plus.activities.LocalIndexHelper;
 import net.osmand.plus.activities.LocalIndexInfo;
 import net.osmand.plus.activities.SavingTrackHelper;
-import net.osmand.plus.download.ui.AbstractLoadLocalIndexTask;
 import net.osmand.plus.helpers.AvoidSpecificRoads;
 import net.osmand.plus.helpers.WaypointHelper;
 import net.osmand.plus.liveupdates.LiveUpdatesHelper;
 import net.osmand.plus.mapmarkers.MapMarkersDbHelper;
-import net.osmand.plus.monitoring.LiveMonitoringHelper;
 import net.osmand.plus.monitoring.OsmandMonitoringPlugin;
 import net.osmand.plus.poi.PoiFiltersHelper;
 import net.osmand.plus.render.NativeOsmandLibrary;
@@ -288,7 +286,7 @@ public class AppInitializer implements IProgress {
 		app.avoidSpecificRoads = startupInit(new AvoidSpecificRoads(app), AvoidSpecificRoads.class);
 		app.savingTrackHelper = startupInit(new SavingTrackHelper(app), SavingTrackHelper.class);
 		app.notificationHelper = startupInit(new NotificationHelper(app), NotificationHelper.class);
-		app.liveMonitoringHelper = startupInit(new LiveMonitoringHelper(app), LiveMonitoringHelper.class);
+//		app.liveMonitoringHelper = startupInit(new LiveMonitoringHelper(app), LiveMonitoringHelper.class);
 		app.selectedGpxHelper = startupInit(new GpxSelectionHelper(app, app.savingTrackHelper), GpxSelectionHelper.class);
 		app.gpxDatabase = startupInit(new GPXDatabase(app), GPXDatabase.class);
 		app.favorites = startupInit(new FavouritesDbHelper(app), FavouritesDbHelper.class);
@@ -322,29 +320,25 @@ public class AppInitializer implements IProgress {
 	}
 
 	private void updateRegionVars() {
-		app.regions.setTranslator(new RegionTranslation() {
-
-			@Override
-			public String getTranslation(String id) {
-				if(WorldRegion.AFRICA_REGION_ID.equals(id)){
-					return app.getString(R.string.index_name_africa);
-				} else if(WorldRegion.AUSTRALIA_AND_OCEANIA_REGION_ID.equals(id)){
-					return app.getString(R.string.index_name_oceania);
-				} else if(WorldRegion.ASIA_REGION_ID.equals(id)){
-					return app.getString(R.string.index_name_asia);
-				} else if(WorldRegion.CENTRAL_AMERICA_REGION_ID.equals(id)){
-					return app.getString(R.string.index_name_central_america);
-				} else if(WorldRegion.EUROPE_REGION_ID.equals(id)){
-					return app.getString(R.string.index_name_europe);
-				} else if(WorldRegion.RUSSIA_REGION_ID.equals(id)){
-					return app.getString(R.string.index_name_russia);
-				} else if(WorldRegion.NORTH_AMERICA_REGION_ID.equals(id)){
-					return app.getString(R.string.index_name_north_america);
-				} else if(WorldRegion.SOUTH_AMERICA_REGION_ID.equals(id)){
-					return app.getString(R.string.index_name_south_america);
-				}
-				return null;
+		app.regions.setTranslator(id -> {
+			if(WorldRegion.AFRICA_REGION_ID.equals(id)){
+				return app.getString(R.string.index_name_africa);
+			} else if(WorldRegion.AUSTRALIA_AND_OCEANIA_REGION_ID.equals(id)){
+				return app.getString(R.string.index_name_oceania);
+			} else if(WorldRegion.ASIA_REGION_ID.equals(id)){
+				return app.getString(R.string.index_name_asia);
+			} else if(WorldRegion.CENTRAL_AMERICA_REGION_ID.equals(id)){
+				return app.getString(R.string.index_name_central_america);
+			} else if(WorldRegion.EUROPE_REGION_ID.equals(id)){
+				return app.getString(R.string.index_name_europe);
+			} else if(WorldRegion.RUSSIA_REGION_ID.equals(id)){
+				return app.getString(R.string.index_name_russia);
+			} else if(WorldRegion.NORTH_AMERICA_REGION_ID.equals(id)){
+				return app.getString(R.string.index_name_north_america);
+			} else if(WorldRegion.SOUTH_AMERICA_REGION_ID.equals(id)){
+				return app.getString(R.string.index_name_south_america);
 			}
+			return null;
 		});
 		app.regions.setLocale(app.getLanguage());
 	}
@@ -480,10 +474,7 @@ public class AppInitializer implements IProgress {
 			return;
 		}
 		LocalIndexHelper helper = new LocalIndexHelper(app);
-		List<LocalIndexInfo> fullMaps = helper.getLocalFullMaps(new AbstractLoadLocalIndexTask() {
-			@Override
-			public void loadFile(LocalIndexInfo... loaded) {
-			}
+		List<LocalIndexInfo> fullMaps = helper.getLocalFullMaps(loaded -> {
 		});
 		AlarmManager alarmMgr = (AlarmManager) app.getSystemService(Context.ALARM_SERVICE);
 		for (LocalIndexInfo fm : fullMaps) {
@@ -581,13 +572,9 @@ public class AppInitializer implements IProgress {
 	}
 
 	private void notifyFinish() {
-		app.uiHandler.post(new Runnable() {
-
-			@Override
-			public void run() {
-				for(AppInitializeListener l : listeners) {
-					l.onFinish();
-				}
+		app.uiHandler.post(() -> {
+			for(AppInitializeListener l : listeners) {
+				l.onFinish();
 			}
 		});
 	}
@@ -598,13 +585,9 @@ public class AppInitializer implements IProgress {
 			System.out.println("Initialized " + event + " in " + (time - startBgTime) + " ms");
 			startBgTime = time;
 		}
-		app.uiHandler.post(new Runnable() {
-
-			@Override
-			public void run() {
-				for(AppInitializeListener l : listeners) {
-					l.onProgress(AppInitializer.this, event);
-				}
+		app.uiHandler.post(() -> {
+			for(AppInitializeListener l : listeners) {
+				l.onProgress(AppInitializer.this, event);
 			}
 		});
 	}
@@ -647,16 +630,14 @@ public class AppInitializer implements IProgress {
 			return;
 		}
 		applicationBgInitializing = true;
-		new Thread(new Runnable() { //$NON-NLS-1$
-					@Override
-					public void run() {
-						try {
-							startApplicationBackground();
-						} finally {
-							applicationBgInitializing = false;
-						}
-					}
-				}, "Initializing app").start();
+		//$NON-NLS-1$
+		new Thread(() -> {
+			try {
+				startApplicationBackground();
+			} finally {
+				applicationBgInitializing = false;
+			}
+		}, "Initializing app").start();
 	}
 
 	public void addListener(AppInitializeListener listener) {

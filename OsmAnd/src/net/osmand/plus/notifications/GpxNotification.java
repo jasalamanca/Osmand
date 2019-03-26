@@ -106,14 +106,12 @@ public class GpxNotification extends OsmandNotification {
 		}
 		String notificationTitle;
 		String notificationText;
-		color = 0;
-		icon = R.drawable.ic_action_polygom_dark;
+        icon = R.drawable.ic_action_polygom_dark;
 		boolean isGpxRecording = app.getSavingTrackHelper().getIsRecording();
 		float recordedDistance = app.getSavingTrackHelper().getDistance();
 		ongoing = true;
         lastBuiltNoData = false;
 		if (isGpxRecording) {
-			color = app.getResources().getColor(R.color.osmand_orange);
 			notificationTitle = app.getString(R.string.shared_string_trip) + " • "
 					+ Algorithms.formatDuration((int) (app.getSavingTrackHelper().getDuration() / 1000), true);
 			notificationText = app.getString(R.string.shared_string_recorded)

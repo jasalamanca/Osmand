@@ -52,29 +52,26 @@ public class OpeningHoursHoursDialogFragment extends DialogFragment {
 		builder.setView(timePicker)
 				.setPositiveButton(isStart && createNew ? R.string.next_proceed
 								: R.string.shared_string_save,
-						new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								timePicker.clearFocus();
-								int minute = timePicker.getCurrentMinute();
-								int hourOfDay = timePicker.getCurrentHour();
-								int time = minute + hourOfDay * 60;
-								if (isStart && createNew) {
-									item.setStartTime(time, timePosition);
-									OpeningHoursHoursDialogFragment
-											.createInstance(item, rulePosition, false, timePosition)
-											.show(getFragmentManager(), "TimePickerDialogFragment");
-								} else {
-									if (isStart) {
-										item.setStartTime(time, timePosition);
-									} else {
-										item.setEndTime(time, timePosition);
-									}
-									((BasicEditPoiFragment) getParentFragment())
-											.setBasicOpeningHoursRule(item, rulePosition);
-								}
-							}
-						})
+                        (dialog, which) -> {
+                            timePicker.clearFocus();
+                            int minute1 = timePicker.getCurrentMinute();
+                            int hourOfDay = timePicker.getCurrentHour();
+                            int time1 = minute1 + hourOfDay * 60;
+                            if (isStart && createNew) {
+                                item.setStartTime(time1, timePosition);
+                                OpeningHoursHoursDialogFragment
+                                        .createInstance(item, rulePosition, false, timePosition)
+                                        .show(getFragmentManager(), "TimePickerDialogFragment");
+                            } else {
+                                if (isStart) {
+                                    item.setStartTime(time1, timePosition);
+                                } else {
+                                    item.setEndTime(time1, timePosition);
+                                }
+                                ((BasicEditPoiFragment) getParentFragment())
+                                        .setBasicOpeningHoursRule(item, rulePosition);
+                            }
+                        })
 				.setNegativeButton(R.string.shared_string_cancel, null);
 
 		int paddingInDp = 18;

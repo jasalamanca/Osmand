@@ -63,12 +63,7 @@ public class SnapToRoadBottomSheetDialogFragment extends android.support.design.
 				portrait ? R.drawable.bg_bottom_menu_light : R.drawable.bg_bottom_sheet_topsides_landscape_light,
 				portrait ? R.drawable.bg_bottom_menu_dark : R.drawable.bg_bottom_sheet_topsides_landscape_dark);
 
-		mainView.findViewById(R.id.cancel_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.cancel_row).setOnClickListener(view -> dismiss());
 
 		if (nightMode) {
 			((TextView) mainView.findViewById(R.id.choose_navigation_title))
@@ -81,16 +76,13 @@ public class SnapToRoadBottomSheetDialogFragment extends android.support.design.
 			modes.remove(ApplicationMode.DEFAULT);
 		}
 
-		View.OnClickListener onClickListener = new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				snapToRoadEnabled = true;
-				if (listener != null) {
-					listener.onApplicationModeItemClick(modes.get((int) view.getTag()));
-				}
-				dismiss();
-			}
-		};
+		View.OnClickListener onClickListener = view -> {
+            snapToRoadEnabled = true;
+            if (listener != null) {
+                listener.onApplicationModeItemClick(modes.get((int) view.getTag()));
+            }
+            dismiss();
+        };
 
 		for (int i = 0; i < modes.size(); i++) {
 			ApplicationMode mode = modes.get(i);
@@ -103,14 +95,11 @@ public class SnapToRoadBottomSheetDialogFragment extends android.support.design.
 		}
 
 		if (!portrait) {
-			dialog.setOnShowListener(new DialogInterface.OnShowListener() {
-				@Override
-				public void onShow(DialogInterface dialogInterface) {
-					BottomSheetDialog dialog = (BottomSheetDialog) dialogInterface;
-					FrameLayout bottomSheet = dialog.findViewById(android.support.design.R.id.design_bottom_sheet);
-					BottomSheetBehavior.from(bottomSheet).setState(BottomSheetBehavior.STATE_EXPANDED);
-				}
-			});
+			dialog.setOnShowListener(dialogInterface -> {
+                BottomSheetDialog dialog1 = (BottomSheetDialog) dialogInterface;
+                FrameLayout bottomSheet = dialog1.findViewById(android.support.design.R.id.design_bottom_sheet);
+                BottomSheetBehavior.from(bottomSheet).setState(BottomSheetBehavior.STATE_EXPANDED);
+            });
 		}
 
 		dialog.setContentView(mainView);

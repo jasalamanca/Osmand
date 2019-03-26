@@ -46,7 +46,8 @@ import static net.osmand.plus.views.ContextMenuLayer.VIBRATE_SHORT;
 /**
  * Created by okorsun on 23.12.16.
  */
-public class MapQuickActionLayer extends OsmandMapLayer implements QuickActionRegistry.QuickActionUpdatesListener, QuickAction.QuickActionSelectionListener {
+public class MapQuickActionLayer extends OsmandMapLayer
+        implements QuickActionRegistry.QuickActionUpdatesListener, QuickAction.QuickActionSelectionListener {
     private final ContextMenuLayer contextMenuLayer;
     private final MeasurementToolLayer measurementToolLayer;
     private final MapMarkersLayer mapMarkersLayer;
@@ -89,12 +90,9 @@ public class MapQuickActionLayer extends OsmandMapLayer implements QuickActionRe
 		nightMode = app.getDaynightHelper().isNightModeForMapControls();
 		updateQuickActionButton(false);
         quickActionButton.setContentDescription(mapActivity.getString(R.string.configure_screen_quick_action));
-        quickActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!showTutorialIfNeeded()) {
-                    setLayerState(!isWidgetVisible());
-                }
+        quickActionButton.setOnClickListener(v -> {
+            if (!showTutorialIfNeeded()) {
+                setLayerState(!isWidgetVisible());
             }
         });
 
@@ -107,18 +105,14 @@ public class MapQuickActionLayer extends OsmandMapLayer implements QuickActionRe
         int minh = contextMarker.getDrawable().getMinimumHeight();
         contextMarker.layout(0, 0, minw, minh);
 
-
-        quickActionButton.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Vibrator vibrator = (Vibrator) mapActivity.getSystemService(Context.VIBRATOR_SERVICE);
-                vibrator.vibrate(VIBRATE_SHORT);
-                quickActionButton.setScaleX(1.5f);
-                quickActionButton.setScaleY(1.5f);
-                quickActionButton.setAlpha(0.95f);
-                quickActionButton.setOnTouchListener(onQuickActionTouchListener);
-                return true;
-            }
+        quickActionButton.setOnLongClickListener(v -> {
+            Vibrator vibrator = (Vibrator) mapActivity.getSystemService(Context.VIBRATOR_SERVICE);
+            vibrator.vibrate(VIBRATE_SHORT);
+            quickActionButton.setScaleX(1.5f);
+            quickActionButton.setScaleY(1.5f);
+            quickActionButton.setAlpha(0.95f);
+            quickActionButton.setOnTouchListener(onQuickActionTouchListener);
+            return true;
         });
 
     }
@@ -350,14 +344,14 @@ public class MapQuickActionLayer extends OsmandMapLayer implements QuickActionRe
 
     @Override
     public boolean onSingleTap(PointF point, RotatedTileBox tileBox) {
-        if (isInMovingMarkerMode() && !pressedQuickActionWidget(point.x, point.y)) {
+        if (isInMovingMarkerMode() && !pressedQuickActionWidget(point.y)) {
             setLayerState(false);
             return true;
         } else
             return false;
     }
 
-    private boolean pressedQuickActionWidget(float px, float py) {
+    private boolean pressedQuickActionWidget(float py) {
         return py <= quickActionsWidget.getHeight();
     }
 

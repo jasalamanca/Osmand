@@ -9,8 +9,8 @@ import java.util.Map;
 /**
  * Created by User on 07.03.2016.
  */
-public class TestEntry {
-    private String testName;
+class TestEntry {
+    private final String testName;
     private LatLon startPoint;
     private LatLon endPoint;
     private LatLon transitPoint1;

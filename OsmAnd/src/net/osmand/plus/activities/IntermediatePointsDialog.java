@@ -67,48 +67,34 @@ public class IntermediatePointsDialog {
 			contentView = ll;
 		}
 		lv.setAdapter(listadapter);
-		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				if (activity instanceof MapActivity) {
-					TargetPoint pointToNavigate = intermediates.get(position);
-					int fZoom = ((MapActivity) activity).getMapView().getZoom() < 15 ? 15 : ((MapActivity) activity).getMapView().getZoom();
-					((MapActivity) activity).getMapView().setIntZoom(fZoom);
-					((MapActivity) activity).getMapView().setLatLon(pointToNavigate.getLatitude(), pointToNavigate.getLongitude());
-					listadapter.notifyDataSetInvalidated();
-				}
-			}
-		});
+		lv.setOnItemClickListener((parent, view, position, id) -> {
+            if (activity instanceof MapActivity) {
+                TargetPoint pointToNavigate = intermediates.get(position);
+                int fZoom = ((MapActivity) activity).getMapView().getZoom() < 15 ? 15 : ((MapActivity) activity).getMapView().getZoom();
+                ((MapActivity) activity).getMapView().setIntZoom(fZoom);
+                ((MapActivity) activity).getMapView().setLatLon(pointToNavigate.getLatitude(), pointToNavigate.getLongitude());
+                listadapter.notifyDataSetInvalidated();
+            }
+        });
 		
 		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 		builder.setView(contentView);
 		builder.setInverseBackgroundForced(true);
 		lv.setBackgroundColor(Color.WHITE);
-		builder.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				if(changeOrder) {
-					commitChangePointsOrder(app, intermediates);
-				} else {
-					commitPointsRemoval(app, checkedIntermediates);
-				}
+		builder.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> {
+            if(changeOrder) {
+                commitChangePointsOrder(app, intermediates);
+            } else {
+                commitPointsRemoval(app, checkedIntermediates);
+            }
 
-			}
-		});
+        });
 		if (!changeOrder && intermediates.size() > 1) {
-			builder.setNeutralButton(R.string.intermediate_points_change_order, new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					openIntermediatePointsDialog(activity, app, true);
-				}
-			});
+			builder.setNeutralButton(R.string.intermediate_points_change_order, (dialog, which) -> openIntermediatePointsDialog(activity, app, true));
 		} else if (intermediates.size() > 1) {
-			builder.setNeutralButton(R.string.intermediate_items_sort_by_distance, new Dialog.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface d, int which) {
-					// Do nothing here. We override the onclick
-				}
-			});
+			builder.setNeutralButton(R.string.intermediate_items_sort_by_distance, (d, which) -> {
+                // Do nothing here. We override the onclick
+            });
 		}
 		AlertDialog dlg = builder.create();
 		if (changeOrder) {
@@ -119,68 +105,55 @@ public class IntermediatePointsDialog {
 
 	private static void applySortTargets(AlertDialog dlg, final Activity activity, final List<TargetPoint> intermediates,
 			final TIntArrayList originalPositions, final ArrayAdapter<TargetPoint> listadapter, final ProgressBar pb, final TextView textInfo) {
-		dlg.setOnShowListener(new OnShowListener() {
-			@Override
-			public void onShow(DialogInterface dialog) {
-				((AlertDialog) dialog).getButton(AlertDialog.BUTTON_NEUTRAL).setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
+		dlg.setOnShowListener(dialog -> ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_NEUTRAL).setOnClickListener(v -> new AsyncTask<Void, Void, int[]>() {
 
-						new AsyncTask<Void, Void, int[]>() {
+            protected void onPreExecute() {
+                pb.setVisibility(View.VISIBLE);
+                textInfo.setVisibility(View.VISIBLE);
+            }
 
-							protected void onPreExecute() {
-								pb.setVisibility(View.VISIBLE);
-								textInfo.setVisibility(View.VISIBLE);
-							}
+            protected int[] doInBackground(Void[] params) {
+                OsmandApplication app = (OsmandApplication) activity.getApplication();
+                Location cll = app.getLocationProvider().getLastKnownLocation();
+                ArrayList<TargetPoint> lt = new ArrayList<>(intermediates);
+                TargetPoint start;
 
-							protected int[] doInBackground(Void[] params) {
-								OsmandApplication app = (OsmandApplication) activity.getApplication();
-								Location cll = app.getLocationProvider().getLastKnownLocation();
-								ArrayList<TargetPoint> lt = new ArrayList<>(intermediates);
-								TargetPoint start ;
-								
-								if(cll != null) {
-									LatLon ll = new LatLon(cll.getLatitude(), cll.getLongitude());
-									start = TargetPoint.create(ll, null);
-								} else if(app.getTargetPointsHelper().getPointToStart() != null) {
-									TargetPoint ps = app.getTargetPointsHelper().getPointToStart();
-									LatLon ll = new LatLon(ps.getLatitude(), ps.getLongitude());
-									start = TargetPoint.create(ll, null);
-								} else {
-									start = lt.get(0);
-								}
-								TargetPoint end = lt.remove(lt.size() - 1);
-								ArrayList<LatLon> al = new ArrayList<>();
-								for(TargetPoint p : lt){
-									al.add(p.point);
-								}
-								return new TspAnt().readGraph(al, start.point, end.point).solve();
-							}
+                if (cll != null) {
+                    LatLon ll = new LatLon(cll.getLatitude(), cll.getLongitude());
+                    start = TargetPoint.create(ll, null);
+                } else if (app.getTargetPointsHelper().getPointToStart() != null) {
+                    TargetPoint ps = app.getTargetPointsHelper().getPointToStart();
+                    LatLon ll = new LatLon(ps.getLatitude(), ps.getLongitude());
+                    start = TargetPoint.create(ll, null);
+                } else {
+                    start = lt.get(0);
+                }
+                TargetPoint end = lt.remove(lt.size() - 1);
+                ArrayList<LatLon> al = new ArrayList<>();
+                for (TargetPoint p : lt) {
+                    al.add(p.point);
+                }
+                return new TspAnt().readGraph(al, start.point, end.point).solve();
+            }
 
-							protected void onPostExecute(int[] result) {
-								pb.setVisibility(View.GONE);
-								List<TargetPoint> alocs = new ArrayList<>();
-								TIntArrayList newOriginalPositions = new TIntArrayList();
-								for (int aResult : result) {
-									if (aResult > 0) {
-										TargetPoint loc = intermediates.get(aResult - 1);
-										alocs.add(loc);
-										newOriginalPositions.add(originalPositions.get(intermediates.indexOf(loc)));
-									}
-								}
-								intermediates.clear();
-								intermediates.addAll(alocs);
-								originalPositions.clear();
-								originalPositions.addAll(newOriginalPositions);
-								listadapter.notifyDataSetChanged();
-							}
-						}.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Void[0]);
-
-					}
-				});
-
-			}
-		});
+            protected void onPostExecute(int[] result) {
+                pb.setVisibility(View.GONE);
+                List<TargetPoint> alocs = new ArrayList<>();
+                TIntArrayList newOriginalPositions = new TIntArrayList();
+                for (int aResult : result) {
+                    if (aResult > 0) {
+                        TargetPoint loc = intermediates.get(aResult - 1);
+                        alocs.add(loc);
+                        newOriginalPositions.add(originalPositions.get(intermediates.indexOf(loc)));
+                    }
+                }
+                intermediates.clear();
+                intermediates.addAll(alocs);
+                originalPositions.clear();
+                originalPositions.addAll(newOriginalPositions);
+                listadapter.notifyDataSetChanged();
+            }
+        }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Void[0])));
 	}
 
 	private static ArrayAdapter<TargetPoint> getListAdapter(final OsmandApplication app, final Activity activity, final boolean changeOrder,
@@ -216,30 +189,24 @@ public class IntermediatePointsDialog {
 				}
 				tv.setText(nm);
 				if (changeOrder) {
-					v.findViewById(R.id.up).setOnClickListener(new View.OnClickListener(){
-						@Override
-						public void onClick(View v) {
-							if(position > 0) {
-								TargetPoint old = intermediates.remove(position - 1);
-								int oldI = originalPositions.removeAt(position -1 );
-								intermediates.add(position, old);
-								originalPositions.insert(position, oldI);
-								notifyDataSetInvalidated();
-							}
-						}
-					});
-					v.findViewById(R.id.down).setOnClickListener(new View.OnClickListener(){
-						@Override
-						public void onClick(View v) {
-							if(position < intermediates.size() - 1) {
-								TargetPoint old = intermediates.remove(position + 1);
-								int oldI = originalPositions.removeAt(position + 1 );
-								intermediates.add(position, old);
-								originalPositions.insert(position, oldI);
-								notifyDataSetInvalidated();
-							}
-						}
-					});
+					v.findViewById(R.id.up).setOnClickListener(v12 -> {
+                        if(position > 0) {
+                            TargetPoint old = intermediates.remove(position - 1);
+                            int oldI = originalPositions.removeAt(position -1 );
+                            intermediates.add(position, old);
+                            originalPositions.insert(position, oldI);
+                            notifyDataSetInvalidated();
+                        }
+                    });
+					v.findViewById(R.id.down).setOnClickListener(v1 -> {
+                        if(position < intermediates.size() - 1) {
+                            TargetPoint old = intermediates.remove(position + 1);
+                            int oldI = originalPositions.removeAt(position + 1 );
+                            intermediates.add(position, old);
+                            originalPositions.insert(position, oldI);
+                            notifyDataSetInvalidated();
+                        }
+                    });
 				} else {
 					int icon = position == intermediates.size() - 1? R.drawable.ic_action_target:
 						R.drawable.ic_action_intermediate;
@@ -249,12 +216,7 @@ public class IntermediatePointsDialog {
 					ch.setVisibility(View.VISIBLE);
 					ch.setOnCheckedChangeListener(null);
 					ch.setChecked(checkedIntermediates[position]);
-					ch.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-						@Override
-						public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-							checkedIntermediates[position] = isChecked;
-						}
-					});
+					ch.setOnCheckedChangeListener((buttonView, isChecked) -> checkedIntermediates[position] = isChecked);
 				}
 				return v;
 			}

@@ -132,16 +132,13 @@ public class MapMultiSelectionMenu extends BaseMenuController {
 			}
 		}
 
-		Collections.sort(objects, new Comparator<MenuObject>() {
-			@Override
-			public int compare(MenuObject obj1, MenuObject obj2) {
-				if (obj1.order == obj2.order) {
-					return obj1.getTitleStr().compareToIgnoreCase(obj2.getTitleStr());
-				} else {
-					return obj1.order - obj2.order;
-				}
-			}
-		});
+		Collections.sort(objects, (obj1, obj2) -> {
+            if (obj1.order == obj2.order) {
+                return obj1.getTitleStr().compareToIgnoreCase(obj2.getTitleStr());
+            } else {
+                return obj1.order - obj2.order;
+            }
+        });
 	}
 
 	private void clearMenu() {

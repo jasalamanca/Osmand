@@ -435,18 +435,15 @@ public class MapMarkersLayer extends OsmandMapLayer implements IContextMenuProvi
 				case MotionEvent.ACTION_MOVE:
 					if (!hasMoved) {
 						if (!handler.hasMessages(MAP_REFRESH_MESSAGE)) {
-							Message msg = Message.obtain(handler, new Runnable() {
-								@Override
-								public void run() {
-									handler.removeMessages(MAP_REFRESH_MESSAGE);
-									if (moving) {
-										if (!useFingerLocation) {
-											useFingerLocation = true;
-											map.refreshMap();
-										}
-									}
-								}
-							});
+							Message msg = Message.obtain(handler, () -> {
+                                handler.removeMessages(MAP_REFRESH_MESSAGE);
+                                if (moving) {
+                                    if (!useFingerLocation) {
+                                        useFingerLocation = true;
+                                        map.refreshMap();
+                                    }
+                                }
+                            });
 							msg.what = MAP_REFRESH_MESSAGE;
 							handler.sendMessageDelayed(msg, USE_FINGER_LOCATION_DELAY);
 						}
@@ -502,12 +499,7 @@ public class MapMarkersLayer extends OsmandMapLayer implements IContextMenuProvi
 		helper.moveMarkerToTop((MapMarker) o);
 		String title = map.getString(R.string.marker_activated, helper.getMapMarkers().get(0).getName(map));
 		Snackbar.make(map.findViewById(R.id.bottomFragmentContainer), title, Snackbar.LENGTH_LONG)
-				.setAction(R.string.shared_string_cancel, new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						helper.moveMarkerToTop(old);
-					}
-				})
+				.setAction(R.string.shared_string_cancel, v -> helper.moveMarkerToTop(old))
 				.show();
 		return true;
 	}

@@ -137,14 +137,11 @@ public class FavouritePointMenuBuilder extends MenuBuilder {
 			button.setText(name);
 
 			if (!selected) {
-				button.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						LatLon latLon = new LatLon(point.getLatitude(), point.getLongitude());
-						PointDescription pointDescription = new PointDescription(PointDescription.POINT_TYPE_FAVORITE, point.getName());
-						mapActivity.getContextMenu().show(latLon, pointDescription, point);
-					}
-				});
+				button.setOnClickListener(v -> {
+                    LatLon latLon = new LatLon(point.getLatitude(), point.getLongitude());
+                    PointDescription pointDescription = new PointDescription(PointDescription.POINT_TYPE_FAVORITE, point.getName());
+                    mapActivity.getContextMenu().show(latLon, pointDescription, point);
+                });
 			}
 			view.addView(button);
 		}
@@ -152,17 +149,14 @@ public class FavouritePointMenuBuilder extends MenuBuilder {
 		if (points.size() > 10) {
 			TextViewEx button = buildButtonInCollapsableView(context, false, true);
 			button.setText(context.getString(R.string.shared_string_show_all));
-			button.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					OsmAndAppCustomization appCustomization = app.getAppCustomization();
-					final Intent intent = new Intent(context, appCustomization.getFavoritesActivity());
-					intent.putExtra(FavoritesActivity.OPEN_FAVOURITES_TAB, true);
-					intent.putExtra(FavoritesActivity.GROUP_NAME_TO_SHOW, group.name);
-					intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-					context.startActivity(intent);
-				}
-			});
+			button.setOnClickListener(view1 -> {
+                OsmAndAppCustomization appCustomization = app.getAppCustomization();
+                final Intent intent = new Intent(context, appCustomization.getFavoritesActivity());
+                intent.putExtra(FavoritesActivity.OPEN_FAVOURITES_TAB, true);
+                intent.putExtra(FavoritesActivity.GROUP_NAME_TO_SHOW, group.name);
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                context.startActivity(intent);
+            });
 			view.addView(button);
 		}
 

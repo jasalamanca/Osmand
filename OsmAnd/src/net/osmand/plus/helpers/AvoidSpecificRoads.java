@@ -81,17 +81,13 @@ public class AvoidSpecificRoads {
 				remove.setVisibility(View.VISIBLE);
 				remove.setImageDrawable(app.getIconsCache().getThemedIcon(
 						R.drawable.ic_action_remove_dark));
-				remove.setOnClickListener(new View.OnClickListener() {
-
-					@Override
-					public void onClick(View v) {
-						remove(obj);
-						removeImpassableRoad(obj);
-						notifyDataSetChanged();
-						RoutingHelper rh = app.getRoutingHelper();
-						if (rh.isRouteCalculated() || rh.isRouteBeingCalculated()) {
-							rh.recalculateRouteDueToSettingsChange();
-						}
+				remove.setOnClickListener(v1 -> {
+					remove(obj);
+					removeImpassableRoad(obj);
+					notifyDataSetChanged();
+					RoutingHelper rh = app.getRoutingHelper();
+					if (rh.isRouteCalculated() || rh.isRouteBeingCalculated()) {
+						rh.recalculateRouteDueToSettingsChange();
 					}
 				});
 				return v;
@@ -122,24 +118,15 @@ public class AvoidSpecificRoads {
 			bld.setMessage(R.string.avoid_roads_msg);
 		} else {
 			final ArrayAdapter<?> listAdapter = createAdapter(mapActivity);
-			bld.setAdapter(listAdapter, new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					RouteDataObject obj = getImpassableRoads().get(which);
-					double lat = MapUtils.get31LatitudeY(obj.getPoint31YTile(0));
-					double lon = MapUtils.get31LongitudeX(obj.getPoint31XTile(0));
-					showOnMap(mapActivity, lat, lon, getText(obj), dialog);
-				}
-
+			bld.setAdapter(listAdapter, (dialog, which) -> {
+				RouteDataObject obj = getImpassableRoads().get(which);
+				double lat = MapUtils.get31LatitudeY(obj.getPoint31YTile(0));
+				double lon = MapUtils.get31LongitudeX(obj.getPoint31XTile(0));
+				showOnMap(mapActivity, lat, lon, getText(obj), dialog);
 			});
 		}
 
-		bld.setPositiveButton(R.string.shared_string_select_on_map, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialogInterface, int i) {
-				selectFromMap(mapActivity);
-			}
-		});
+		bld.setPositiveButton(R.string.shared_string_select_on_map, (dialogInterface, i) -> selectFromMap(mapActivity));
 		bld.setNegativeButton(R.string.shared_string_close, null);
 		bld.show();
 	}
@@ -147,14 +134,9 @@ public class AvoidSpecificRoads {
 
 	private void selectFromMap(final MapActivity mapActivity) {
 		ContextMenuLayer cm = mapActivity.getMapLayers().getContextMenuLayer();
-		cm.setSelectOnMap(new CallbackWithObject<LatLon>() {
-
-			@Override
-			public boolean processResult(LatLon result) {
-				addImpassableRoad(mapActivity, result, true, null, false);
-				return true;
-			}
-
+		cm.setSelectOnMap(result -> {
+			addImpassableRoad(mapActivity, result, true, null, false);
+			return true;
 		});
 	}
 

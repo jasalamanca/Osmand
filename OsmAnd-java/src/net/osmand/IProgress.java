@@ -7,20 +7,14 @@ package net.osmand;
 public interface IProgress {
 	
 	/**
-	 * @param taskName
-	 * @param work - -1 means that indeterminate task, 
+	 * @param work - -1 means that indeterminate task,
 	 * otherwise number of could be specified 
 	 */
     void startTask(String taskName, int work);
-	
 	void startWork(int work);
-	
 	void progress(int deltaWork);
-	
 	void remaining(int remainingWork);
-	
 	void finishTask();
-	
 	boolean isIndeterminate();
 
 	IProgress EMPTY_PROGRESS = new IProgress() {
@@ -36,14 +30,11 @@ public interface IProgress {
 		
 		@Override
 		public void progress(int deltaWork) {}
-		
-		public boolean isInterrupted() {return false;}
-		
+
 		@Override
 		public boolean isIndeterminate() {return false;}
 		
 		@Override
 		public void finishTask() {}
-	};  
-
+	};
 }

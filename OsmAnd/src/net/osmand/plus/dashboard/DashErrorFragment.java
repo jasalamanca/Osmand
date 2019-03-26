@@ -43,7 +43,7 @@ public class DashErrorFragment extends DashBaseFragment {
 	private DismissListener dismissCallback;
 
 	@Override
-	public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View initView(LayoutInflater inflater, ViewGroup container) {
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_error_fragment, container, false);
 		String msg = MessageFormat.format(getString(R.string.previous_run_crashed), OsmandApplication.EXCEPTION_PATH);
 		Typeface typeface = FontCache.getRobotoMedium(getActivity());
@@ -54,47 +54,41 @@ public class DashErrorFragment extends DashBaseFragment {
 		message.setText(msg);
 		Button errorBtn = view.findViewById(R.id.error_btn);
 		errorBtn.setTypeface(typeface);
-		errorBtn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				Intent intent = new Intent(Intent.ACTION_SEND);
-				intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"crash@osmand.net"}); //$NON-NLS-1$
-				File file = getMyApplication().getAppPath(OsmandApplication.EXCEPTION_PATH);
-				intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
-				intent.setType("vnd.android.cursor.dir/email"); //$NON-NLS-1$
-				intent.putExtra(Intent.EXTRA_SUBJECT, "OsmAnd bug"); //$NON-NLS-1$
-				StringBuilder text = new StringBuilder();
-				text.append("\nDevice : ").append(Build.DEVICE); //$NON-NLS-1$
-				text.append("\nBrand : ").append(Build.BRAND); //$NON-NLS-1$
-				text.append("\nModel : ").append(Build.MODEL); //$NON-NLS-1$
-				text.append("\nProduct : ").append(Build.PRODUCT); //$NON-NLS-1$
-				text.append("\nBuild : ").append(Build.DISPLAY); //$NON-NLS-1$
-				text.append("\nVersion : ").append(Build.VERSION.RELEASE); //$NON-NLS-1$
-				text.append("\nApp Version : ").append(Version.getAppName(getMyApplication())); //$NON-NLS-1$
-				try {
-					PackageInfo info = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(),
-							0);
-					if (info != null) {
-						text.append("\nApk Version : ").append(info.versionName).append(" ").append(info.versionCode); //$NON-NLS-1$ //$NON-NLS-2$
-					}
-				} catch (PackageManager.NameNotFoundException e) {
-					PlatformUtil.getLog(DashErrorFragment.class).error("", e);
+		errorBtn.setOnClickListener(view12 -> {
+			Intent intent = new Intent(Intent.ACTION_SEND);
+			intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"crash@osmand.net"}); //$NON-NLS-1$
+			File file = getMyApplication().getAppPath(OsmandApplication.EXCEPTION_PATH);
+			intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+			intent.setType("vnd.android.cursor.dir/email"); //$NON-NLS-1$
+			intent.putExtra(Intent.EXTRA_SUBJECT, "OsmAnd bug"); //$NON-NLS-1$
+			StringBuilder text = new StringBuilder();
+			text.append("\nDevice : ").append(Build.DEVICE); //$NON-NLS-1$
+			text.append("\nBrand : ").append(Build.BRAND); //$NON-NLS-1$
+			text.append("\nModel : ").append(Build.MODEL); //$NON-NLS-1$
+			text.append("\nProduct : ").append(Build.PRODUCT); //$NON-NLS-1$
+			text.append("\nBuild : ").append(Build.DISPLAY); //$NON-NLS-1$
+			text.append("\nVersion : ").append(Build.VERSION.RELEASE); //$NON-NLS-1$
+			text.append("\nApp Version : ").append(Version.getAppName(getMyApplication())); //$NON-NLS-1$
+			try {
+				PackageInfo info = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(),
+						0);
+				if (info != null) {
+					text.append("\nApk Version : ").append(info.versionName).append(" ").append(info.versionCode); //$NON-NLS-1$ //$NON-NLS-2$
 				}
-				intent.putExtra(Intent.EXTRA_TEXT, text.toString());
-				startActivity(Intent.createChooser(intent, getString(R.string.send_report)));
+			} catch (PackageManager.NameNotFoundException e) {
+				PlatformUtil.getLog(DashErrorFragment.class).error("", e);
 			}
+			intent.putExtra(Intent.EXTRA_TEXT, text.toString());
+			startActivity(Intent.createChooser(intent, getString(R.string.send_report)));
 		});
 
 		Button cancelBtn = view.findViewById(R.id.error_cancel);
 		cancelBtn.setTypeface(typeface);
-		cancelBtn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				OsmandActionBarActivity dashboardActivity = ((OsmandActionBarActivity) getActivity());
-				if (dashboardActivity != null) {
-					dashboardActivity.getSupportFragmentManager().beginTransaction().remove(DashErrorFragment.this)
-							.commit();
-				}
+		cancelBtn.setOnClickListener(view1 -> {
+			OsmandActionBarActivity dashboardActivity = ((OsmandActionBarActivity) getActivity());
+			if (dashboardActivity != null) {
+				dashboardActivity.getSupportFragmentManager().beginTransaction().remove(DashErrorFragment.this)
+						.commit();
 			}
 		});
 		dismissCallback = new ErrorDismissListener(getParentView(), dashboard, TAG, view);
@@ -131,12 +125,7 @@ public class DashErrorFragment extends DashBaseFragment {
 			fragmentView.setAlpha(1);
 			Snackbar.make(parentView, dashboardOnMap.getMyApplication().getResources()
 					.getString(R.string.shared_string_card_was_hidden), Snackbar.LENGTH_LONG)
-					.setAction(R.string.shared_string_undo, new View.OnClickListener() {
-						@Override
-						public void onClick(View view) {
-							ErrorDismissListener.this.onUndo();
-						}
-					})
+					.setAction(R.string.shared_string_undo, view -> ErrorDismissListener.this.onUndo())
 					.show();
 		}
 

@@ -329,13 +329,7 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 				if (fileName.endsWith(IndexConstants.FONT_INDEX_EXT)) {
 					AlertDialog.Builder bld = new AlertDialog.Builder(this);
 					bld.setMessage(R.string.restart_is_required);
-					bld.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							android.os.Process.killProcess(android.os.Process.myPid());
-						}
-					});
+					bld.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> android.os.Process.killProcess(android.os.Process.myPid()));
 					bld.setNegativeButton(R.string.shared_string_cancel, null);
 					bld.show();
 				}
@@ -533,33 +527,27 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 			downloadsLeftProgressBar.setMax(DownloadValidationManager.MAXIMUM_AVAILABLE_FREE_DOWNLOADS);
 			freeVersionDescriptionTextView.setText(ctx.getString(R.string.free_version_message,
 					DownloadValidationManager.MAXIMUM_AVAILABLE_FREE_DOWNLOADS));
-			fullVersionButton.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					OsmandApplication app = ctx.getMyApplication();
-					if (app.getRemoteBoolean(SHOW_PLUS_VERSION_INAPP_PARAM, true)) {
-						app.logEvent(ctx, "in_app_purchase_redirect_from_banner");
-					} else {
-						app.logEvent(ctx, "paid_version_redirect_from_banner");
-					}
-					ctx.purchaseFullVersion();
-					DialogFragment f = (DialogFragment) ctx.getSupportFragmentManager()
-							.findFragmentByTag(FreeVersionDialogFragment.TAG);
-					if (f != null) {
-						f.dismiss();
-					}
-				}
-			});
-			osmLiveButton.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					ctx.getMyApplication().logEvent(ctx, "click_subscribe_live_osm");
-					Intent intent = new Intent(ctx, OsmLiveActivity.class);
-					intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-					intent.putExtra(OsmLiveActivity.OPEN_SUBSCRIPTION_INTENT_PARAM, true);
-					ctx.startActivity(intent);
-				}
-			});
+			fullVersionButton.setOnClickListener(v -> {
+                OsmandApplication app = ctx.getMyApplication();
+                if (app.getRemoteBoolean(SHOW_PLUS_VERSION_INAPP_PARAM, true)) {
+                    app.logEvent(ctx, "in_app_purchase_redirect_from_banner");
+                } else {
+                    app.logEvent(ctx, "paid_version_redirect_from_banner");
+                }
+                ctx.purchaseFullVersion();
+                DialogFragment f = (DialogFragment) ctx.getSupportFragmentManager()
+                        .findFragmentByTag(FreeVersionDialogFragment.TAG);
+                if (f != null) {
+                    f.dismiss();
+                }
+            });
+			osmLiveButton.setOnClickListener(v -> {
+                ctx.getMyApplication().logEvent(ctx, "click_subscribe_live_osm");
+                Intent intent = new Intent(ctx, OsmLiveActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                intent.putExtra(OsmLiveActivity.OPEN_SUBSCRIPTION_INTENT_PARAM, true);
+                ctx.startActivity(intent);
+            });
 
 			LinearLayout marksLinearLayout = freeVersionBanner.findViewById(R.id.marksLinearLayout);
 			Space spaceView = new Space(ctx);
@@ -695,12 +683,7 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 				freeVersionDialog.setMinimizedFreeVersionBanner(true);
 				freeVersionDialog.updateAvailableDownloads();
 				downloadProgressLayout.setVisibility(View.VISIBLE);
-				downloadProgressLayout.setOnClickListener(new OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						new ActiveDownloadsDialogFragment().show(ctx.getSupportFragmentManager(), "dialog");
-					}
-				});
+				downloadProgressLayout.setOnClickListener(v -> new ActiveDownloadsDialogFragment().show(ctx.getSupportFragmentManager(), "dialog"));
 				progressBar.setIndeterminate(indeterminate);
 				if (indeterminate) {
 					leftTextView.setText(message);
@@ -891,30 +874,17 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 
 			final ImageButton closeImageButton = view.findViewById(R.id.closeImageButton);
 			closeImageButton.setImageDrawable(getContentIcon(R.drawable.ic_action_remove_dark));
-			closeImageButton.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					dismiss();
-				}
-			});
+			closeImageButton.setOnClickListener(v -> dismiss());
 
-			actionButtonOk.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					if (indexItem != null) {
-						((DownloadActivity) getActivity()).startDownload(indexItem);
-						dismiss();
-					}
-				}
-			});
+			actionButtonOk.setOnClickListener(v -> {
+                if (indexItem != null) {
+                    ((DownloadActivity) getActivity()).startDownload(indexItem);
+                    dismiss();
+                }
+            });
 
 			view.findViewById(R.id.actionButtonCancel)
-					.setOnClickListener(new OnClickListener() {
-						@Override
-						public void onClick(View v) {
-							dismiss();
-						}
-					});
+					.setOnClickListener(v -> dismiss());
 
 			return view;
 		}
@@ -956,31 +926,25 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 
 			final ImageButton closeImageButton = view.findViewById(R.id.closeImageButton);
 			closeImageButton.setImageDrawable(getContentIcon(R.drawable.ic_action_remove_dark));
-			closeImageButton.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					if (getActivity() instanceof DownloadActivity) {
-						((DownloadActivity) getActivity()).setDownloadItem(null, null);
-					}
-					dismiss();
-				}
-			});
+			closeImageButton.setOnClickListener(v -> {
+                if (getActivity() instanceof DownloadActivity) {
+                    ((DownloadActivity) getActivity()).setDownloadItem(null, null);
+                }
+                dismiss();
+            });
 
 			view.findViewById(R.id.actionButton)
-					.setOnClickListener(new OnClickListener() {
-						@Override
-						public void onClick(View v) {
-							OsmandApplication app = (OsmandApplication) getActivity().getApplication();
-							app.getSettings().setMapLocationToShow(
-									regionCenter.getLatitude(),
-									regionCenter.getLongitude(),
-									5,
-									new PointDescription(PointDescription.POINT_TYPE_WORLD_REGION_SHOW_ON_MAP, ""));
+					.setOnClickListener(v -> {
+                        OsmandApplication app = (OsmandApplication) getActivity().getApplication();
+                        app.getSettings().setMapLocationToShow(
+                                regionCenter.getLatitude(),
+                                regionCenter.getLongitude(),
+                                5,
+                                new PointDescription(PointDescription.POINT_TYPE_WORLD_REGION_SHOW_ON_MAP, ""));
 
-							dismiss();
-							MapActivity.launchMapActivityMoveToTop(getActivity());
-						}
-					});
+                        dismiss();
+                        MapActivity.launchMapActivityMoveToTop(getActivity());
+                    });
 
 			return view;
 		}

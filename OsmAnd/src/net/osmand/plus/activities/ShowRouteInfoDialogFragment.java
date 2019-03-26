@@ -110,12 +110,7 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 		Toolbar toolbar = view.findViewById(R.id.toolbar);
 		toolbar.setNavigationIcon(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_arrow_back));
 		toolbar.setNavigationContentDescription(R.string.shared_string_close);
-		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-			}
-		});
+		toolbar.setNavigationOnClickListener(v -> dismiss());
 
 		((ImageView) view.findViewById(R.id.distance_icon))
 				.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_action_route_distance));
@@ -136,26 +131,23 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 
 		adapter = new RouteInfoAdapter(helper.getRouteDirections());
 		listView.setAdapter(adapter);
-		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				if (position < 2) {
-					return;
-				}
-				RouteDirectionInfo item = adapter.getItem(position - 2);
-				Location loc = helper.getLocationFromRouteDirection(item);
-				if (loc != null) {
-					MapRouteInfoMenu.directionInfo = position - 2;
-					OsmandSettings settings = getMyApplication().getSettings();
-					settings.setMapLocationToShow(loc.getLatitude(), loc.getLongitude(),
-							Math.max(13, settings.getLastKnownMapZoom()),
-							new PointDescription(PointDescription.POINT_TYPE_MARKER, item.getDescriptionRoutePart() + " " + getTimeDescription(item)),
-							false, null);
-					MapActivity.launchMapActivityMoveToTop(getActivity());
-					dismiss();
-				}
-			}
-		});
+		listView.setOnItemClickListener((parent, view, position, id) -> {
+            if (position < 2) {
+                return;
+            }
+            RouteDirectionInfo item = adapter.getItem(position - 2);
+            Location loc = helper.getLocationFromRouteDirection(item);
+            if (loc != null) {
+                MapRouteInfoMenu.directionInfo = position - 2;
+                OsmandSettings settings = getMyApplication().getSettings();
+                settings.setMapLocationToShow(loc.getLatitude(), loc.getLongitude(),
+                        Math.max(13, settings.getLastKnownMapZoom()),
+                        new PointDescription(PointDescription.POINT_TYPE_MARKER, item.getDescriptionRoutePart() + " " + getTimeDescription(item)),
+                        false, null);
+                MapActivity.launchMapActivityMoveToTop(getActivity());
+                dismiss();
+            }
+        });
 
 		int dist = helper.getLeftDistance();
 		int time = helper.getLeftTime();
@@ -171,16 +163,13 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 		}
 		((TextView) view.findViewById(R.id.time)).setText(timeStr);
 
-		view.findViewById(R.id.go_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				MapActivity activity = (MapActivity) getActivity();
-				if (activity != null) {
-					activity.getMapLayers().getMapControlsLayer().startNavigation();
-					dismiss();
-				}
-			}
-		});
+		view.findViewById(R.id.go_button).setOnClickListener(v -> {
+            MapActivity activity = (MapActivity) getActivity();
+            if (activity != null) {
+                activity.getMapLayers().getMapControlsLayer().startNavigation();
+                dismiss();
+            }
+        });
 
 		makeGpx();
 		if (hasHeights) {
@@ -238,13 +227,10 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 		OsmandApplication app = getMyApplication();
 		final LineChart mChart = headerView.findViewById(R.id.chart);
 		GpxUiHelper.setupGPXChart(app, mChart, 4);
-		mChart.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				listView.requestDisallowInterceptTouchEvent(true);
-				return false;
-			}
-		});
+		mChart.setOnTouchListener((v, event) -> {
+            listView.requestDisallowInterceptTouchEvent(true);
+            return false;
+        });
 
 		GPXTrackAnalysis analysis = gpx.getAnalysis(0);
         OrderedLineDataSet slopeDataSet;
@@ -346,12 +332,7 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 		((ImageView) headerView.findViewById(R.id.ascent_icon))
 				.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_action_altitude_ascent));
 
-		headerView.findViewById(R.id.details_view).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				openDetails();
-			}
-		});
+		headerView.findViewById(R.id.details_view).setOnClickListener(v -> openDetails());
 	}
 
 	private void openDetails() {
@@ -379,10 +360,8 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 				location = new LatLon(gpxItem.locationStart.lat, gpxItem.locationStart.lon);
 			}
 			if (wpt != null) {
-				gpxItem.locationOnMap = wpt;
-			} else {
-				gpxItem.locationOnMap = gpxItem.locationStart;
-			}
+            } else {
+            }
 
 			final MapActivity activity = (MapActivity) getActivity();
 			if (activity != null) {
@@ -399,13 +378,10 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 				if (MapRouteInfoMenu.isVisible()) {
 					// We arrived here by the route info menu.
 					// First, we close it and then show the details.
-					mapRouteInfoMenu.setOnDismissListener(new OnDismissListener() {
-						@Override
-						public void onDismiss(DialogInterface dialog) {
-							mapRouteInfoMenu.setOnDismissListener(null);
-							MapActivity.launchMapActivityMoveToTop(activity);
-						}
-					});
+					mapRouteInfoMenu.setOnDismissListener(dialog -> {
+                        mapRouteInfoMenu.setOnDismissListener(null);
+                        MapActivity.launchMapActivityMoveToTop(activity);
+                    });
 					mapRouteInfoMenu.hide();
 				} else {
 					// We arrived here by the dashboard.
@@ -419,57 +395,44 @@ public class ShowRouteInfoDialogFragment extends DialogFragment {
 		IconsCache iconsCache = getMyApplication().getIconsCache();
 		ImageButton printRoute = view.findViewById(R.id.print_route);
 		printRoute.setImageDrawable(iconsCache.getThemedIcon(R.drawable.ic_action_gprint_dark));
-		printRoute.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				print();
-			}
-		});
+		printRoute.setOnClickListener(v -> print());
 
 		ImageButton saveRoute = view.findViewById(R.id.save_as_gpx);
 		saveRoute.setImageDrawable(iconsCache.getThemedIcon(R.drawable.ic_action_gsave_dark));
-		saveRoute.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				MapActivityActions.createSaveDirections(getActivity(), helper).show();
-			}
-		});
+		saveRoute.setOnClickListener(v -> MapActivityActions.createSaveDirections(getActivity(), helper).show());
 
 		ImageButton shareRoute = view.findViewById(R.id.share_as_gpx);
 		shareRoute.setImageDrawable(iconsCache.getThemedIcon(R.drawable.ic_action_gshare_dark));
-		shareRoute.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				final GPXFile gpx = helper.generateGPXFileWithRoute();
-				final Uri fileUri = Uri.fromFile(new File(gpx.path));
-				File dir = new File(getActivity().getCacheDir(), "share");
-				if (!dir.exists()) {
-					dir.mkdir();
-				}
-				File dst = new File(dir, "route.gpx");
-				try {
-					FileWriter fw = new FileWriter(dst);
-					GPXUtilities.writeGpx(fw, gpx, getMyApplication());
-					fw.close();
-					final Intent sendIntent = new Intent();
-					sendIntent.setAction(Intent.ACTION_SEND);
-					sendIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(generateHtml(adapter,
-							helper.getGeneralRouteInformation()).toString()));
-					sendIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_route_subject));
-					sendIntent.putExtra(Intent.EXTRA_STREAM, fileUri);
-					sendIntent.putExtra(
-							Intent.EXTRA_STREAM,
-							FileProvider.getUriForFile(getActivity(),
-									getActivity().getPackageName() + ".fileprovider", dst));
-					sendIntent.setType("text/plain");
-					startActivity(sendIntent);
-				} catch (IOException e) {
-					// Toast.makeText(getActivity(), "Error sharing favorites: " + e.getMessage(),
-					// Toast.LENGTH_LONG).show();
-					e.printStackTrace();
-				}
-			}
-		});
+		shareRoute.setOnClickListener(v -> {
+            final GPXFile gpx = helper.generateGPXFileWithRoute();
+            final Uri fileUri = Uri.fromFile(new File(gpx.path));
+            File dir = new File(getActivity().getCacheDir(), "share");
+            if (!dir.exists()) {
+                dir.mkdir();
+            }
+            File dst = new File(dir, "route.gpx");
+            try {
+                FileWriter fw = new FileWriter(dst);
+                GPXUtilities.writeGpx(fw, gpx, getMyApplication());
+                fw.close();
+                final Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(generateHtml(adapter,
+                        helper.getGeneralRouteInformation()).toString()));
+                sendIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_route_subject));
+                sendIntent.putExtra(Intent.EXTRA_STREAM, fileUri);
+                sendIntent.putExtra(
+                        Intent.EXTRA_STREAM,
+                        FileProvider.getUriForFile(getActivity(),
+                                getActivity().getPackageName() + ".fileprovider", dst));
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
+            } catch (IOException e) {
+                // Toast.makeText(getActivity(), "Error sharing favorites: " + e.getMessage(),
+                // Toast.LENGTH_LONG).show();
+                e.printStackTrace();
+            }
+        });
 	}
 
 	public static void showDialog(FragmentManager fragmentManager) {

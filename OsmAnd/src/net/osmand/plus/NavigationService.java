@@ -196,12 +196,7 @@ public class NavigationService extends Service implements LocationListener {
 		// remove notification
 		stopForeground(Boolean.TRUE);
 		app.getNotificationHelper().updateTopNotification();
-		app.runInUIThread(new Runnable() {
-			@Override
-			public void run() {
-				app.getNotificationHelper().refreshNotifications();
-			}
-		}, 500);
+		app.runInUIThread(() -> app.getNotificationHelper().refreshNotifications(), 500);
 	}
 
 	@Override

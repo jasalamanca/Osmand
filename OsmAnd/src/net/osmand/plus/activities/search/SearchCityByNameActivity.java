@@ -56,14 +56,11 @@ public class SearchCityByNameActivity extends SearchByNameAbstractActivity<City>
 		searchVillages.setLayoutParams(lp);
 		searchVillages.setText(R.string.search_villages_and_postcodes);
 		ll.addView(searchVillages);
-		searchVillages.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				searchVillagesMode = 1;
-				research();
-				searchVillages.setVisibility(View.GONE);
-			}
-		});
+		searchVillages.setOnClickListener(v -> {
+            searchVillagesMode = 1;
+            research();
+            searchVillages.setVisibility(View.GONE);
+        });
 		getListView().addFooterView(ll);
 	}
 
@@ -149,12 +146,7 @@ public class SearchCityByNameActivity extends SearchByNameAbstractActivity<City>
 
 	private void setVillagesSearchEnabled(final boolean enable) {
 		searchVillagesMode = enable ? 0 : -1;
-		uiHandler.post(new Runnable() {
-			@Override
-			public void run() {
-				searchVillages.setVisibility(enable ? View.GONE : View.VISIBLE);
-			}
-		});
+		uiHandler.post(() -> searchVillages.setVisibility(enable ? View.GONE : View.VISIBLE));
 	}
 
 	private boolean isVillagesSearchEnabled() {

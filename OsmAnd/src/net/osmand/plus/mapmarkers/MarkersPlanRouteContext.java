@@ -108,12 +108,7 @@ public class MarkersPlanRouteContext {
 		RoutingHelper routingHelper = app.getRoutingHelper();
 		if (!snapToRoadPairsToCalculate.isEmpty() && !routingHelper.isRouteBeingCalculated()) {
 			routingHelper.startRouteCalculationThread(getParams(), true, true);
-			app.runInUIThread(new Runnable() {
-				@Override
-				public void run() {
-					listener.showProgressBar();
-				}
-			});
+			app.runInUIThread(() -> listener.showProgressBar());
 		}
 	}
 
@@ -148,12 +143,7 @@ public class MarkersPlanRouteContext {
 			}
 		}
 		listener.showMarkersRouteOnMap(adjustMap);
-		app.runInUIThread(new Runnable() {
-			@Override
-			public void run() {
-				listener.updateText();
-			}
-		});
+		app.runInUIThread(() -> listener.updateText());
 	}
 
 	private List<WptPt> getPointsToCalculate() {
@@ -215,37 +205,24 @@ public class MarkersPlanRouteContext {
 				calculatedPairs = 0;
 			}
 		};
-		params.resultListener = new RouteCalculationParams.RouteCalculationResultListener() {
-			@Override
-			public void onRouteCalculated(List<Location> locations) {
-				ArrayList<WptPt> pts = new ArrayList<>(locations.size());
-				for (Location loc : locations) {
-					WptPt pt = new WptPt();
-					pt.lat = loc.getLatitude();
-					pt.lon = loc.getLongitude();
-					pts.add(pt);
-				}
-				calculatedPairs++;
-				snappedToRoadPoints.put(currentPair, pts);
-				recreateSnapTrkSegment(false);
-				app.runInUIThread(new Runnable() {
-					@Override
-					public void run() {
-						listener.refresh();
-					}
-				});
-				if (!snapToRoadPairsToCalculate.isEmpty()) {
-					app.getRoutingHelper().startRouteCalculationThread(getParams(), true, true);
-				} else {
-					app.runInUIThread(new Runnable() {
-						@Override
-						public void run() {
-							listener.hideProgressBar(false);
-						}
-					});
-				}
-			}
-		};
+		params.resultListener = locations -> {
+            ArrayList<WptPt> pts = new ArrayList<>(locations.size());
+            for (Location loc : locations) {
+                WptPt pt = new WptPt();
+                pt.lat = loc.getLatitude();
+                pt.lon = loc.getLongitude();
+                pts.add(pt);
+            }
+            calculatedPairs++;
+            snappedToRoadPoints.put(currentPair, pts);
+            recreateSnapTrkSegment(false);
+            app.runInUIThread(() -> listener.refresh());
+            if (!snapToRoadPairsToCalculate.isEmpty()) {
+                app.getRoutingHelper().startRouteCalculationThread(getParams(), true, true);
+            } else {
+                app.runInUIThread(() -> listener.hideProgressBar(false));
+            }
+        };
 
 		return params;
 	}

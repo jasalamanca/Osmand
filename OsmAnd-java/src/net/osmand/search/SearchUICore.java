@@ -46,14 +46,14 @@ public class SearchUICore {
 	private SearchResultCollection  currentSearchResult;
 
 	private final ThreadPoolExecutor singleThreadedExecutor;
-    private Runnable onSearchStart = null;
-	private Runnable onResultsComplete = null;
+    private final Runnable onSearchStart = null;
+	private final Runnable onResultsComplete = null;
 	private final AtomicInteger requestNumber = new AtomicInteger();
-	private int totalLimit = -1; // -1 unlimited - not used
+	private final int totalLimit = -1; // -1 unlimited - not used
 
 	private final List<SearchCoreAPI> apis = new ArrayList<>();
 	private SearchSettings searchSettings;
-	private MapPoiTypes poiTypes;
+	private final MapPoiTypes poiTypes;
 
 	public SearchUICore(MapPoiTypes poiTypes, String locale, boolean transliterate) {
 		this.poiTypes = poiTypes;
@@ -331,48 +331,42 @@ public class SearchUICore {
 		SearchResultCollection quickRes = new SearchResultCollection(phrase);
 		filterCurrentResults(quickRes.searchResults, phrase);
 		LOG.info("> Search phrase " + phrase + " " + quickRes.searchResults.size());
-		singleThreadedExecutor.submit(new Runnable() {
-
-			@Override
-			public void run() {
-				try {
-					if (onSearchStart != null) {
-						onSearchStart.run();
-					}
-					SearchResultMatcher rm = new SearchResultMatcher(matcher, phrase, request, requestNumber, totalLimit);
-					rm.searchStarted(phrase);
-					if (TIMEOUT_BETWEEN_CHARS > 0 && delayedExecution) {
-						long startTime = System.currentTimeMillis();
-						while (System.currentTimeMillis() - startTime <= TIMEOUT_BETWEEN_CHARS) {
-							if (rm.isCancelled()) {
-								return;
-							}
-							Thread.sleep(TIMEOUT_BEFORE_SEARCH);
+		singleThreadedExecutor.submit(() -> {
+			try {
+				if (onSearchStart != null) {
+					onSearchStart.run();
+				}
+				SearchResultMatcher rm = new SearchResultMatcher(matcher, phrase, request, requestNumber, totalLimit);
+				rm.searchStarted(phrase);
+				if (TIMEOUT_BETWEEN_CHARS > 0 && delayedExecution) {
+					long startTime = System.currentTimeMillis();
+					while (System.currentTimeMillis() - startTime <= TIMEOUT_BETWEEN_CHARS) {
+						if (rm.isCancelled()) {
+							return;
 						}
-					} else if (TIMEOUT_BEFORE_SEARCH > 0) {
 						Thread.sleep(TIMEOUT_BEFORE_SEARCH);
 					}
-					if (rm.isCancelled()) {
-						return;
-					}
-					searchInBackground(phrase, rm);
-					if (!rm.isCancelled()) {
-						SearchResultCollection collection = new SearchResultCollection(
-								phrase);
-						collection.addSearchResults(rm.getRequestResults(), true, true);
-						LOG.info(">> Search phrase " + phrase + " " + rm.getRequestResults().size());
-						currentSearchResult = collection;
-						rm.searchFinished(phrase);
-						if (onResultsComplete != null) {
-							onResultsComplete.run();
-						}
-					}
-				} catch (InterruptedException e) {
-					e.printStackTrace();
+				} else if (TIMEOUT_BEFORE_SEARCH > 0) {
+					Thread.sleep(TIMEOUT_BEFORE_SEARCH);
 				}
-
+				if (rm.isCancelled()) {
+					return;
+				}
+				searchInBackground(phrase, rm);
+				if (!rm.isCancelled()) {
+					SearchResultCollection collection = new SearchResultCollection(
+							phrase);
+					collection.addSearchResults(rm.getRequestResults(), true, true);
+					LOG.info(">> Search phrase " + phrase + " " + rm.getRequestResults().size());
+					currentSearchResult = collection;
+					rm.searchFinished(phrase);
+					if (onResultsComplete != null) {
+						onResultsComplete.run();
+					}
+				}
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
-
 
 		});
 		return quickRes;
@@ -390,14 +384,8 @@ public class SearchUICore {
 	private void searchInBackground(final SearchPhrase phrase, SearchResultMatcher matcher) {
 		preparePhrase(phrase);
 		ArrayList<SearchCoreAPI> lst = new ArrayList<>(apis);
-		Collections.sort(lst, new Comparator<SearchCoreAPI>() {
-
-			@Override
-			public int compare(SearchCoreAPI o1, SearchCoreAPI o2) {
-				return Algorithms.compare(o1.getSearchPriority(phrase),
-						o2.getSearchPriority(phrase));
-			}
-		});
+		Collections.sort(lst, (o1, o2) -> Algorithms.compare(o1.getSearchPriority(phrase),
+				o2.getSearchPriority(phrase)));
 		for (SearchCoreAPI api : lst) {
 			if (matcher.isCancelled()) {
 				break;
@@ -452,10 +440,6 @@ public class SearchUICore {
 
 		List<SearchResult> getRequestResults() {
 			return requestResults;
-		}
-
-		public int getCount() {
-			return requestResults.size();
 		}
 
 		void searchStarted(SearchPhrase phrase) {

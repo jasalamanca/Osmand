@@ -157,18 +157,15 @@ public class RoutingHelper {
 		isDeviatedFromRoute = false;
 		evalWaitInterval = 0;
 		app.getWaypointHelper().setNewRoute(route);
-		app.runInUIThread(new Runnable() {
-			@Override
-			public void run() {
-				Iterator<WeakReference<IRouteInformationListener>> it = listeners.iterator();
-				while(it.hasNext()) {
-					WeakReference<IRouteInformationListener> ref = it.next();
-					IRouteInformationListener l = ref.get();
-					if(l == null) {
-						it.remove();
-					} else {
-						l.routeWasCancelled();
-					}
+		app.runInUIThread(() -> {
+			Iterator<WeakReference<IRouteInformationListener>> it = listeners.iterator();
+			while(it.hasNext()) {
+				WeakReference<IRouteInformationListener> ref = it.next();
+				IRouteInformationListener l = ref.get();
+				if(l == null) {
+					it.remove();
+				} else {
+					l.routeWasCancelled();
 				}
 			}
 		});
@@ -187,18 +184,15 @@ public class RoutingHelper {
 	}
 
 	private synchronized void finishCurrentRoute() {
-		app.runInUIThread(new Runnable() {
-			@Override
-			public void run() {
-				Iterator<WeakReference<IRouteInformationListener>> it = listeners.iterator();
-				while(it.hasNext()) {
-					WeakReference<IRouteInformationListener> ref = it.next();
-					IRouteInformationListener l = ref.get();
-					if(l == null) {
-						it.remove();
-					} else {
-						l.routeWasFinished();
-					}
+		app.runInUIThread(() -> {
+			Iterator<WeakReference<IRouteInformationListener>> it = listeners.iterator();
+			while(it.hasNext()) {
+				WeakReference<IRouteInformationListener> ref = it.next();
+				IRouteInformationListener l = ref.get();
+				if(l == null) {
+					it.remove();
+				} else {
+					l.routeWasFinished();
 				}
 			}
 		});
@@ -525,12 +519,7 @@ public class RoutingHelper {
 			if (onDestinationReached) {
 				clearCurrentRoute(null, null);
 				setRoutePlanningMode(false);
-				app.runInUIThread(new Runnable() {
-					@Override
-					public void run() {
-						settings.LAST_ROUTING_APPLICATION_MODE = settings.APPLICATION_MODE.get();
-					}
-				});
+				app.runInUIThread(() -> settings.LAST_ROUTING_APPLICATION_MODE = settings.APPLICATION_MODE.get());
 				finishCurrentRoute();
 				// targets.clearPointToNavigate(false);
 				return true;
@@ -624,29 +613,26 @@ public class RoutingHelper {
 		}
 		app.getWaypointHelper().setNewRoute(res);
 
-		app.runInUIThread(new Runnable() {
-			@Override
-			public void run() {
-				ValueHolder<Boolean> showToast = new ValueHolder<>();
-				showToast.value = true;
-				Iterator<WeakReference<IRouteInformationListener>> it = listeners.iterator();
-				while (it.hasNext()) {
-					WeakReference<IRouteInformationListener> ref = it.next();
-					IRouteInformationListener l = ref.get();
-					if (l == null) {
-						it.remove();
-					} else {
-						l.newRouteIsCalculated(newRoute, showToast);
-					}
+		app.runInUIThread(() -> {
+			ValueHolder<Boolean> showToast = new ValueHolder<>();
+			showToast.value = true;
+			Iterator<WeakReference<IRouteInformationListener>> it = listeners.iterator();
+			while (it.hasNext()) {
+				WeakReference<IRouteInformationListener> ref = it.next();
+				IRouteInformationListener l = ref.get();
+				if (l == null) {
+					it.remove();
+				} else {
+					l.newRouteIsCalculated(newRoute, showToast);
 				}
-				if (showToast.value && OsmandPlugin.isDevelopment()) {
-					String msg = app.getString(R.string.new_route_calculated_dist) + ": "
-							+ OsmAndFormatter.getFormattedDistance(res.getWholeDistance(), app);
-					if (res.getRoutingTime() != 0f) {
-						msg += " (" + Algorithms.formatDuration((int) res.getRoutingTime(), app.accessibilityEnabled()) + ")";
-					}
-					app.showToastMessage(msg);
+			}
+			if (showToast.value && OsmandPlugin.isDevelopment()) {
+				String msg = app.getString(R.string.new_route_calculated_dist) + ": "
+						+ OsmAndFormatter.getFormattedDistance(res.getWholeDistance(), app);
+				if (res.getRoutingTime() != 0f) {
+					msg += " (" + Algorithms.formatDuration((int) res.getRoutingTime(), app.accessibilityEnabled()) + ")";
 				}
+				app.showToastMessage(msg);
 			}
 		});
 	}
@@ -914,36 +900,32 @@ public class RoutingHelper {
 			progressRoute = this.progressRoute;
 		}
 		if (progressRoute != null ) {
-			app.runInUIThread(new Runnable() {
-
-				@Override
-				public void run() {
-					RouteCalculationProgress calculationProgress = params.calculationProgress;
-					if (isRouteBeingCalculated()) {
-						float p = Math.max(calculationProgress.distanceFromBegin, calculationProgress.distanceFromEnd);
-						float all = calculationProgress.totalEstimatedDistance * 1.25f;
-						if (all > 0) {
-							int t = (int) Math.min(p * p / (all * all) * 100f, 99);
-							progressRoute.updateProgress(t);
-						} else {
-							progressRoute.updateProgress(0);
-						}
-						Thread t = currentRunningJob;
-						if(t instanceof RouteRecalculationThread && ((RouteRecalculationThread) t).params != params) {
-							// different calculation started
-							return;
-						} else {
-							if (calculationProgress.requestPrivateAccessRouting) {
-								progressRoute.requestPrivateAccessRouting();
-							}
-							updateProgress(params);
-						}
+			app.runInUIThread(() -> {
+				RouteCalculationProgress calculationProgress = params.calculationProgress;
+				if (isRouteBeingCalculated()) {
+					float p = Math.max(calculationProgress.distanceFromBegin, calculationProgress.distanceFromEnd);
+					float all = calculationProgress.totalEstimatedDistance * 1.25f;
+					if (all > 0) {
+						int t = (int) Math.min(p * p / (all * all) * 100f, 99);
+						progressRoute.updateProgress(t);
+					} else {
+						progressRoute.updateProgress(0);
+					}
+					Thread t = currentRunningJob;
+					if(t instanceof RouteRecalculationThread && ((RouteRecalculationThread) t).params != params) {
+						// different calculation started
+						return;
 					} else {
 						if (calculationProgress.requestPrivateAccessRouting) {
 							progressRoute.requestPrivateAccessRouting();
 						}
-						progressRoute.finish();
+						updateProgress(params);
 					}
+				} else {
+					if (calculationProgress.requestPrivateAccessRouting) {
+						progressRoute.requestPrivateAccessRouting();
+					}
+					progressRoute.finish();
 				}
 			}, 300);
 		}
@@ -970,12 +952,7 @@ public class RoutingHelper {
 	}
 
 	private void showMessage(final String msg){
-		app.runInUIThread(new Runnable() {
-			@Override
-			public void run() {
-				app.showToastMessage(msg);
-			}
-		});
+		app.runInUIThread(() -> app.showToastMessage(msg));
 	}
 
 	// NEVER returns null

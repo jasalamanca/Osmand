@@ -11,10 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Switch;
@@ -33,14 +30,12 @@ import net.osmand.util.Algorithms;
 
 import java.text.Collator;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
 public class QuickSearchCustomPoiFragment extends DialogFragment {
-
 	private static final String TAG = "QuickSearchCustomPoiFragment";
 	private static final String QUICK_SEARCH_CUSTOM_POI_FILTER_ID_KEY = "quick_search_custom_poi_filter_id_key";
 
@@ -53,7 +48,6 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 	private View bottomBar;
 	private TextView barTitle;
 	private boolean editMode;
-
 
 	public QuickSearchCustomPoiFragment() {
 	}
@@ -94,12 +88,7 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 		Toolbar toolbar = view.findViewById(R.id.toolbar);
 		toolbar.setNavigationIcon(app.getIconsCache().getIcon(R.drawable.ic_action_remove_dark));
 		toolbar.setNavigationContentDescription(R.string.shared_string_close);
-		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-			}
-		});
+		toolbar.setNavigationOnClickListener(v -> dismiss());
 
 		TextView title = view.findViewById(R.id.title);
 		if (editMode) {
@@ -111,32 +100,25 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 				app.getSettings().isLightContent() ? R.color.ctx_menu_info_view_bg_light
 						: R.color.ctx_menu_info_view_bg_dark));
 
-//		View header = getLayoutInflater(savedInstanceState).inflate(R.layout.list_shadow_header, null);
 		View header = inflater.inflate(R.layout.list_shadow_header, null);
 		listView.addHeaderView(header, null, false);
 		View footer = inflater.inflate(R.layout.list_shadow_footer, listView, false);
 		listView.addFooterView(footer, null, false);
 		listAdapter = new CategoryListAdapter(app, app.getPoiTypes().getCategories(false));
 		listView.setAdapter(listAdapter);
-		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				PoiCategory category = listAdapter.getItem(position - listView.getHeaderViewsCount());
-				showDialog(category, false);
-			}
+		listView.setOnItemClickListener((parent, view1, position, id) -> {
+			PoiCategory category = listAdapter.getItem(position - listView.getHeaderViewsCount());
+			showDialog(category, false);
 		});
 
 		bottomBarShadow = view.findViewById(R.id.bottomBarShadow);
 		bottomBar = view.findViewById(R.id.bottomBar);
 		barTitle = view.findViewById(R.id.barTitle);
-		bottomBar.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-				QuickSearchDialogFragment quickSearchDialogFragment = getQuickSearchDialogFragment();
-				if (quickSearchDialogFragment != null) {
-					quickSearchDialogFragment.showFilter(filterId);
-				}
+		bottomBar.setOnClickListener(v -> {
+			dismiss();
+			QuickSearchDialogFragment quickSearchDialogFragment = getQuickSearchDialogFragment();
+			if (quickSearchDialogFragment != null) {
+				quickSearchDialogFragment.showFilter(filterId);
 			}
 		});
 
@@ -265,16 +247,13 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 		}
 
 		private void addRowListener(final PoiCategory category, final Switch check) {
-			check.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-				@Override
-				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-					if (check.isChecked()) {
-						showDialog(category, true);
-					} else {
-						filter.setTypeToAccept(category, false);
-						saveFilter();
-						notifyDataSetChanged();
-					}
+			check.setOnCheckedChangeListener((buttonView, isChecked) -> {
+				if (check.isChecked()) {
+					showDialog(category, true);
+				} else {
+					filter.setTypeToAccept(category, false);
+					saveFilter();
+					notifyDataSetChanged();
 				}
 			});
 		}
@@ -313,14 +292,10 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 		final String[] array = subCategories.keySet().toArray(new String[0]);
 		final Collator cl = Collator.getInstance();
 		cl.setStrength(Collator.SECONDARY);
-		Arrays.sort(array, 0, array.length, new Comparator<String>() {
-
-			@Override
-			public int compare(String object1, String object2) {
-				String v1 = subCategories.get(object1);
-				String v2 = subCategories.get(object2);
-				return cl.compare(v1, v2);
-			}
+		Arrays.sort(array, 0, array.length, (object1, object2) -> {
+			String v1 = subCategories.get(object1);
+			String v2 = subCategories.get(object2);
+			return cl.compare(v1, v2);
 		});
 		final String[] visibleNames = new String[array.length];
 		final boolean[] selected = new boolean[array.length];
@@ -347,55 +322,39 @@ public class QuickSearchCustomPoiFragment extends DialogFragment {
 		builder.setCustomTitle(titleView);
 
 		builder.setCancelable(true);
-		builder.setNegativeButton(getContext().getText(R.string.shared_string_cancel), new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
-				listAdapter.notifyDataSetChanged();
-			}
+		builder.setNegativeButton(getContext().getText(R.string.shared_string_cancel), (dialog, which) -> {
+			dialog.dismiss();
+			listAdapter.notifyDataSetChanged();
 		});
-		builder.setPositiveButton(getContext().getText(R.string.shared_string_apply), new DialogInterface.OnClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				LinkedHashSet<String> accepted = new LinkedHashSet<>();
-				for (int i = 0; i < selected.length; i++) {
-					if(selected[i]){
-						accepted.add(array[i]);
-					}
+		builder.setPositiveButton(getContext().getText(R.string.shared_string_apply), (dialog, which) -> {
+			LinkedHashSet<String> accepted = new LinkedHashSet<>();
+			for (int i = 0; i < selected.length; i++) {
+				if(selected[i]){
+					accepted.add(array[i]);
 				}
-				if (subCategories.size() == accepted.size()) {
-					filter.selectSubTypesToAccept(poiCategory, null);
-				} else if(accepted.size() == 0){
-					filter.setTypeToAccept(poiCategory, false);
-				} else {
-					filter.selectSubTypesToAccept(poiCategory, accepted);
-				}
-				saveFilter();
-				listAdapter.notifyDataSetChanged();
-				listView.setSelectionFromTop(index, top);
 			}
+			if (subCategories.size() == accepted.size()) {
+				filter.selectSubTypesToAccept(poiCategory, null);
+			} else if(accepted.size() == 0){
+				filter.setTypeToAccept(poiCategory, false);
+			} else {
+				filter.selectSubTypesToAccept(poiCategory, accepted);
+			}
+			saveFilter();
+			listAdapter.notifyDataSetChanged();
+			listView.setSelectionFromTop(index, top);
 		});
 
-		builder.setMultiChoiceItems(visibleNames, selected, new DialogInterface.OnMultiChoiceClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int item, boolean isChecked) {
-				selected[item] = isChecked;
-			}
-		});
+		builder.setMultiChoiceItems(visibleNames, selected, (dialog, item, isChecked) -> selected[item] = isChecked);
 		final AlertDialog dialog = builder.show();
-		check.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				if (isChecked) {
-					Arrays.fill(selected, true);
-				} else {
-					Arrays.fill(selected, false);
-				}
-				for (int i = 0; i < selected.length; i++) {
-					dialog.getListView().setItemChecked(i, selected[i]);
-				}
+		check.setOnCheckedChangeListener((buttonView, isChecked) -> {
+			if (isChecked) {
+				Arrays.fill(selected, true);
+			} else {
+				Arrays.fill(selected, false);
+			}
+			for (int i = 0; i < selected.length; i++) {
+				dialog.getListView().setItemChecked(i, selected[i]);
 			}
 		});
 	}

@@ -471,13 +471,7 @@ public class FavouritesDbHelper {
 	public void sortAll() {
 		final Collator collator = Collator.getInstance();
 		collator.setStrength(Collator.SECONDARY);
-		Collections.sort(favoriteGroups, new Comparator<FavoriteGroup>() {
-
-			@Override
-			public int compare(FavoriteGroup lhs, FavoriteGroup rhs) {
-				return collator.compare(lhs.name, rhs.name);
-			}
-		});
+		Collections.sort(favoriteGroups, (lhs, rhs) -> collator.compare(lhs.name, rhs.name));
 		Comparator<FavouritePoint> favoritesComparator = getComparator();
 		for (FavoriteGroup g : favoriteGroups) {
 			Collections.sort(g.points, favoritesComparator);
@@ -490,31 +484,28 @@ public class FavouritesDbHelper {
 	private static Comparator<FavouritePoint> getComparator() {
 		final Collator collator = Collator.getInstance();
 		collator.setStrength(Collator.SECONDARY);
-		Comparator<FavouritePoint> favoritesComparator = new Comparator<FavouritePoint>() {
-			@Override
-			public int compare(FavouritePoint o1, FavouritePoint o2) {
-				String s1 = o1.getName();
-				String s2 = o2.getName();
-				int i1 = Algorithms.extractIntegerNumber(s1);
-				int i2 = Algorithms.extractIntegerNumber(s2);
-				String ot1 = Algorithms.extractIntegerPrefix(s1);
-				String ot2 = Algorithms.extractIntegerPrefix(s2);
-				// Next 6 lines needed for correct comparison of names with and without digits
-				if (ot1.length() == 0) {
-					ot1 = s1;
-				}
-				if (ot2.length() == 0) {
-					ot2 = s2;
-				}
-				int res = collator.compare(ot1, ot2);
-				if (res == 0) {
-					res = i1 - i2;
-				}
-				if (res == 0) {
-					res = collator.compare(s1, s2);
-				}
-				return res;
+		Comparator<FavouritePoint> favoritesComparator = (o1, o2) -> {
+			String s1 = o1.getName();
+			String s2 = o2.getName();
+			int i1 = Algorithms.extractIntegerNumber(s1);
+			int i2 = Algorithms.extractIntegerNumber(s2);
+			String ot1 = Algorithms.extractIntegerPrefix(s1);
+			String ot2 = Algorithms.extractIntegerPrefix(s2);
+			// Next 6 lines needed for correct comparison of names with and without digits
+			if (ot1.length() == 0) {
+				ot1 = s1;
 			}
+			if (ot2.length() == 0) {
+				ot2 = s2;
+			}
+			int res = collator.compare(ot1, ot2);
+			if (res == 0) {
+				res = i1 - i2;
+			}
+			if (res == 0) {
+				res = collator.compare(s1, s2);
+			}
+			return res;
 		};
 		return favoritesComparator;
 	}

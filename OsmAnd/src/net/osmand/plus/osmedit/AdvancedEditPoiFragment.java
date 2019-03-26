@@ -68,12 +68,7 @@ public class AdvancedEditPoiFragment extends BaseOsmAndFragment
 		mAdapter.setTagData(tagKeys.toArray(new String[tagKeys.size()]));
 		mAdapter.setValueData(valueKeys.toArray(new String[valueKeys.size()]));
 		Button addTagButton = view.findViewById(R.id.addTagButton);
-		addTagButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mAdapter.addTagView("", "");
-			}
-		});
+		addTagButton.setOnClickListener(v -> mAdapter.addTagView("", ""));
 		return view;
 	}
 
@@ -83,15 +78,12 @@ public class AdvancedEditPoiFragment extends BaseOsmAndFragment
 		mAdapter.updateViews();
 		updateName();
 		updatePoiType();
-		mTagsChangedListener = new EditPoiData.TagsChangedListener() {
-			@Override
-			public void onTagsChanged(String anyTag) {
-				if (Algorithms.objectEquals(anyTag, OSMSettings.OSMTagKey.NAME.getValue())) {
-					updateName();
-				}
-				if (Algorithms.objectEquals(anyTag, EditPoiData.POI_TYPE_TAG)) {
-					updatePoiType();
-				}
+		mTagsChangedListener = anyTag -> {
+			if (Algorithms.objectEquals(anyTag, OSMSettings.OSMTagKey.NAME.getValue())) {
+				updateName();
+			}
+			if (Algorithms.objectEquals(anyTag, EditPoiData.POI_TYPE_TAG)) {
+				updatePoiType();
 			}
 		};
 		getData().addListener(mTagsChangedListener);
@@ -174,35 +166,29 @@ public class AdvancedEditPoiFragment extends BaseOsmAndFragment
                     convertView.findViewById(R.id.deleteItemImageButton);
 			deleteItemImageButton.setImageDrawable(deleteDrawable);
 			final String[] previousTag = new String[]{tg};
-			deleteItemImageButton.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					linearLayout.removeView((View) v.getParent());
-					editPoiData.removeTag(tagEditText.getText().toString());
-				}
+			deleteItemImageButton.setOnClickListener(v -> {
+				linearLayout.removeView((View) v.getParent());
+				editPoiData.removeTag(tagEditText.getText().toString());
 			});
 			final AutoCompleteTextView valueEditText =
                     convertView.findViewById(R.id.valueEditText);
 			tagEditText.setText(tg);
 			tagEditText.setAdapter(tagAdapter);
 			tagEditText.setThreshold(1);
-			tagEditText.setOnFocusChangeListener(new OnFocusChangeListener() {
-			    @Override
-				public void onFocusChange(View v, boolean hasFocus) {
-					if (!hasFocus) {
-						if (!editPoiData.isInEdit()) {
-							String s = tagEditText.getText().toString();
-							if (!previousTag[0].equals(s)) {
-								editPoiData.removeTag(previousTag[0]);
-								editPoiData.putTag(s, valueEditText.getText().toString());
-								previousTag[0] = s;
-							}
+			tagEditText.setOnFocusChangeListener((v, hasFocus) -> {
+				if (!hasFocus) {
+					if (!editPoiData.isInEdit()) {
+						String s = tagEditText.getText().toString();
+						if (!previousTag[0].equals(s)) {
+							editPoiData.removeTag(previousTag[0]);
+							editPoiData.putTag(s, valueEditText.getText().toString());
+							previousTag[0] = s;
 						}
-					} else {
-						tagAdapter.getFilter().filter(tagEditText.getText());
 					}
+				} else {
+					tagAdapter.getFilter().filter(tagEditText.getText());
 				}
-			 });
+			});
 
 			valueEditText.setText(vl);
 			valueEditText.addTextChangedListener(new TextWatcher() {
@@ -250,12 +236,9 @@ public class AdvancedEditPoiFragment extends BaseOsmAndFragment
 	private static void initAutocompleteTextView(final AutoCompleteTextView textView,
 												 final ArrayAdapter<String> adapter) {
 		
-		textView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-			@Override
-			public void onFocusChange(View v, boolean hasFocus) {
-				if (hasFocus) {
-					adapter.getFilter().filter(textView.getText());
-				}
+		textView.setOnFocusChangeListener((v, hasFocus) -> {
+			if (hasFocus) {
+				adapter.getFilter().filter(textView.getText());
 			}
 		});
 	}

@@ -2,7 +2,6 @@ package net.osmand.plus.activities;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -146,12 +145,7 @@ public class FavoritesTreeFragment extends OsmandExpandableListFragment {
 			TextView title = searchView.findViewById(R.id.title);
 			title.setCompoundDrawablesWithIntrinsicBounds(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_search_dark), null, null, null);
 			title.setHint(R.string.shared_string_search);
-			searchView.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					FavoritesSearchFragment.showInstance(getActivity(), "");
-				}
-			});
+			searchView.setOnClickListener(v -> FavoritesSearchFragment.showInstance(getActivity(), ""));
 			listView.addHeaderView(searchView);
 			listView.addHeaderView(inflater.inflate(R.layout.list_item_divider, null, false));
 			footerView = inflater.inflate(R.layout.list_shadow_footer, null, false);
@@ -161,29 +155,18 @@ public class FavoritesTreeFragment extends OsmandExpandableListFragment {
 		ImageView emptyImageView = emptyView.findViewById(R.id.empty_state_image_view);
 		emptyImageView.setImageResource(app.getSettings().isLightContent() ? R.drawable.ic_empty_state_favorites_day : R.drawable.ic_empty_state_favorites_night);
 		Button importButton = emptyView.findViewById(R.id.import_button);
-		importButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				importFavourites();
-			}
-		});
+		importButton.setOnClickListener(view1 -> importFavourites());
 		listView.setEmptyView(emptyView);
 		listView.setAdapter(favouritesAdapter);
 		setListView(listView);
 		setHasOptionsMenu(true);
-		listView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
-			@Override
-			public void onGroupCollapse(int groupPosition) {
-				String groupName = favouritesAdapter.getGroup(groupPosition).name;
-				getGroupExpandedPreference(groupName).set(false);
-			}
+		listView.setOnGroupCollapseListener(groupPosition -> {
+			String groupName = favouritesAdapter.getGroup(groupPosition).name;
+			getGroupExpandedPreference(groupName).set(false);
 		});
-		listView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-			@Override
-			public void onGroupExpand(int groupPosition) {
-				String groupName = favouritesAdapter.getGroup(groupPosition).name;
-				getGroupExpandedPreference(groupName).set(true);
-			}
+		listView.setOnGroupExpandListener(groupPosition -> {
+			String groupName = favouritesAdapter.getGroup(groupPosition).name;
+			getGroupExpandedPreference(groupName).set(true);
 		});
 		String groupNameToShow = ((FavoritesActivity) getActivity()).getGroupNameToShow();
 		if (groupNameToShow != null) {
@@ -313,12 +296,9 @@ public class FavoritesTreeFragment extends OsmandExpandableListFragment {
 		menu.clear();
 		MenuItem mi = createMenuItem(menu, SEARCH_ID, R.string.search_poi_filter, R.drawable.ic_action_search_dark,
 				R.drawable.ic_action_search_dark, MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
-		mi.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-			@Override
-			public boolean onMenuItemClick(MenuItem item) {
-				FavoritesSearchFragment.showInstance(getActivity(), "");
-				return true;
-			}
+		mi.setOnMenuItemClickListener(item -> {
+			FavoritesSearchFragment.showInstance(getActivity(), "");
+			return true;
 		});
 
 		if (AndroidUiHelper.isOrientationPortrait(getActivity())) {
@@ -497,14 +477,11 @@ public class FavoritesTreeFragment extends OsmandExpandableListFragment {
 
 			AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
 			b.setMessage(getString(R.string.favorite_delete_multiple, size, groupsToDelete.size()));
-			b.setPositiveButton(R.string.shared_string_delete, new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					if (actionMode != null) {
-						actionMode.finish();
-					}
-					deleteFavorites();
+			b.setPositiveButton(R.string.shared_string_delete, (dialog, which) -> {
+				if (actionMode != null) {
+					actionMode.finish();
 				}
+				deleteFavorites();
 			});
 			b.setNegativeButton(R.string.shared_string_cancel, null);
 			b.show();
@@ -753,52 +730,41 @@ public class FavoritesTreeFragment extends OsmandExpandableListFragment {
 			}
 			label.setText(model.name.length() == 0 ? getString(R.string.shared_string_favorites) : model.name);
 
+			final CheckBox ch = row.findViewById(R.id.toggle_item);
 			if (selectionMode) {
-				final CheckBox ch = row.findViewById(R.id.toggle_item);
 				ch.setVisibility(View.VISIBLE);
 				ch.setChecked(groupsToDelete.contains(model));
 
-				ch.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						List<FavouritePoint> fvs = model.points;
-						if (ch.isChecked()) {
-							groupsToDelete.add(model);
-							Set<FavouritePoint> set = favoritesSelected.get(model.name);
-							if (set != null) {
-								set.addAll(model.points);
-							} else {
-								set = new LinkedHashSet<>(model.points);
-								favoritesSelected.put(model.name, set);
-							}
+				ch.setOnClickListener(v -> {
+					if (ch.isChecked()) {
+						groupsToDelete.add(model);
+						Set<FavouritePoint> set = favoritesSelected.get(model.name);
+						if (set != null) {
+							set.addAll(model.points);
 						} else {
-							groupsToDelete.remove(model);
-							favoritesSelected.remove(model.name);
+							set = new LinkedHashSet<>(model.points);
+							favoritesSelected.put(model.name, set);
 						}
-						favouritesAdapter.notifyDataSetInvalidated();
-						updateSelectionMode(actionMode);
+					} else {
+						groupsToDelete.remove(model);
+						favoritesSelected.remove(model.name);
 					}
+					favouritesAdapter.notifyDataSetInvalidated();
+					updateSelectionMode(actionMode);
 				});
 				row.findViewById(R.id.category_icon).setVisibility(View.GONE);
 			} else {
-				final CheckBox ch = row.findViewById(R.id.toggle_item);
 				ch.setVisibility(View.GONE);
 				row.findViewById(R.id.category_icon).setVisibility(View.VISIBLE);
 			}
-			final View ch = row.findViewById(R.id.options);
+			final View optionsView = row.findViewById(R.id.options);
 			if (!selectionMode) {
-				((ImageView) ch).setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_overflow_menu_white));
-				ch.setVisibility(View.VISIBLE);
-				ch.setContentDescription(getString(R.string.shared_string_settings));
-				ch.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						EditFavoriteGroupDialogFragment.showInstance(getChildFragmentManager(), model.name);
-					}
-
-				});
+				((ImageView) optionsView).setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_overflow_menu_white));
+				optionsView.setVisibility(View.VISIBLE);
+				optionsView.setContentDescription(getString(R.string.shared_string_settings));
+				optionsView.setOnClickListener(v -> EditFavoriteGroupDialogFragment.showInstance(getChildFragmentManager(), model.name));
 			} else {
-				ch.setVisibility(View.GONE);
+				optionsView.setVisibility(View.GONE);
 			}
 			return row;
 		}
@@ -834,12 +800,7 @@ public class FavoritesTreeFragment extends OsmandExpandableListFragment {
 				options.setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(
 						R.drawable.ic_overflow_menu_white));
 				options.setVisibility(View.VISIBLE);
-				options.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						showOnMap(model);
-					}
-				});
+				options.setOnClickListener(v -> showOnMap(model));
 			}
 			icon.setImageDrawable(FavoriteImageDrawable.getOrCreate(getActivity(),
 					visible ? model.getColor() : getResources().getColor(disabledIconColor), false));
@@ -871,27 +832,23 @@ public class FavoritesTreeFragment extends OsmandExpandableListFragment {
 				ch.setVisibility(View.VISIBLE);
 				ch.setChecked(favoritesSelected.get(group.name) != null && favoritesSelected.get(group.name).contains(model));
 				row.findViewById(R.id.favourite_icon).setVisibility(View.GONE);
-				ch.setOnClickListener(new View.OnClickListener() {
-
-					@Override
-					public void onClick(View v) {
-						if (ch.isChecked()) {
-							Set<FavouritePoint> set = favoritesSelected.get(group.name);
-							if (set != null) {
-								set.add(model);
-							} else {
-								set = new LinkedHashSet<>();
-								set.add(model);
-								favoritesSelected.put(group.name, set);
-							}
+				ch.setOnClickListener(v -> {
+					if (ch.isChecked()) {
+						Set<FavouritePoint> set = favoritesSelected.get(group.name);
+						if (set != null) {
+							set.add(model);
 						} else {
-							Set<FavouritePoint> set = favoritesSelected.get(group.name);
-							if (set != null) {
-								set.remove(model);
-							}
+							set = new LinkedHashSet<>();
+							set.add(model);
+							favoritesSelected.put(group.name, set);
 						}
-						updateSelectionMode(actionMode);
+					} else {
+						Set<FavouritePoint> set = favoritesSelected.get(group.name);
+						if (set != null) {
+							set.remove(model);
+						}
 					}
+					updateSelectionMode(actionMode);
 				});
 			} else {
 				row.findViewById(R.id.favourite_icon).setVisibility(View.VISIBLE);

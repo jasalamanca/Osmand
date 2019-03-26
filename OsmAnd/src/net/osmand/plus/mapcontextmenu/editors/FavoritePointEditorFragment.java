@@ -55,14 +55,11 @@ public class FavoritePointEditorFragment extends PointEditorFragment {
 			Button replaceButton = view.findViewById(R.id.replace_button);
 			replaceButton.setTextColor(getResources().getColor(!getEditor().isLight() ? R.color.osmand_orange : R.color.map_widget_blue));
 			replaceButton.setVisibility(View.VISIBLE);
-			replaceButton.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					Bundle args = new Bundle();
-					args.putSerializable(FavoriteDialogs.KEY_FAVORITE, favorite);
-					FavoriteDialogs.createReplaceFavouriteDialog(getActivity(), args);
-				}
-			});
+			replaceButton.setOnClickListener(v -> {
+                Bundle args = new Bundle();
+                args.putSerializable(FavoriteDialogs.KEY_FAVORITE, favorite);
+                FavoriteDialogs.createReplaceFavouriteDialog(getActivity(), args);
+            });
 		}
 		return view;
 	}
@@ -142,12 +139,7 @@ public class FavoritePointEditorFragment extends PointEditorFragment {
 		}
 
 		if (builder != null && !autoFill) {
-			builder.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					doSave(favorite, point.getName(), point.getCategory(), point.getDescription(), needDismiss);
-				}
-			});
+			builder.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> doSave(favorite, point.getName(), point.getCategory(), point.getDescription(), needDismiss));
 			builder.create().show();
 		} else {
 			doSave(favorite, point.getName(), point.getCategory(), point.getDescription(), needDismiss);
@@ -186,18 +178,15 @@ public class FavoritePointEditorFragment extends PointEditorFragment {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		builder.setMessage(getString(R.string.favourites_remove_dialog_msg, favorite.getName()));
 		builder.setNegativeButton(R.string.shared_string_no, null);
-		builder.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				helper.deleteFavourite(favorite);
-				saved = true;
-				if (needDismiss) {
-					dismiss(true);
-				} else {
-					getMapActivity().refreshMap();
-				}
-			}
-		});
+		builder.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> {
+            helper.deleteFavourite(favorite);
+            saved = true;
+            if (needDismiss) {
+                dismiss(true);
+            } else {
+                getMapActivity().refreshMap();
+            }
+        });
 		builder.create().show();
 	}
 

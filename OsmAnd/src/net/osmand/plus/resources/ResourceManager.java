@@ -44,7 +44,6 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.File;
-import java.io.FileFilter;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -232,13 +231,13 @@ public class ResourceManager {
 		warnings.addAll(indexVoiceFiles());
 		warnings.addAll(indexFontFiles());
 		warnings.addAll(OsmandPlugin.onIndexingFiles(progress));
-		warnings.addAll(indexAdditionalMaps(progress));
+//		warnings.addAll(indexAdditionalMaps(progress));
 		return warnings;
 	}
 
-	public List<String> indexAdditionalMaps(IProgress progress) {
-		return context.getAppCustomization().onIndexingFiles(progress, indexFileNames);
-	}
+//	public List<String> indexAdditionalMaps(IProgress progress) {
+//		return context.getAppCustomization().onIndexingFiles(progress, indexFileNames);
+//	}
 
 	public List<String> indexVoiceFiles(){
 		File file = context.getAppPath(IndexConstants.VOICE_INDEX_DIR);
@@ -546,29 +545,26 @@ public class ResourceManager {
 	public List<Amenity> searchAmenities(SearchPoiTypeFilter filter,
 			double topLatitude, double leftLongitude, double bottomLatitude, double rightLongitude, int zoom, final ResultMatcher<Amenity> matcher) {
 		final List<Amenity> amenities = new ArrayList<>();
-		try {
-			if (!filter.isEmpty()) {
-				int top31 = MapUtils.get31TileNumberY(topLatitude);
-				int left31 = MapUtils.get31TileNumberX(leftLongitude);
-				int bottom31 = MapUtils.get31TileNumberY(bottomLatitude);
-				int right31 = MapUtils.get31TileNumberX(rightLongitude);
-				List<String> fileNames = new ArrayList<>(amenityRepositories.keySet());
-				Collections.sort(fileNames, Algorithms.getStringVersionComparator());
-				for (String name : fileNames) {
-					if (matcher != null && matcher.isCancelled()) {
-						break;
-					}
-					AmenityIndexRepository index = amenityRepositories.get(name);
-					if (index != null && index.checkContainsInt(top31, left31, bottom31, right31)) {
-						List<Amenity> r = index.searchAmenities(top31,
-								left31, bottom31, right31, zoom, filter, matcher);
-						if (r != null) {
-							amenities.addAll(r);
-						}
+		if (!filter.isEmpty()) {
+			int top31 = MapUtils.get31TileNumberY(topLatitude);
+			int left31 = MapUtils.get31TileNumberX(leftLongitude);
+			int bottom31 = MapUtils.get31TileNumberY(bottomLatitude);
+			int right31 = MapUtils.get31TileNumberX(rightLongitude);
+			List<String> fileNames = new ArrayList<>(amenityRepositories.keySet());
+			Collections.sort(fileNames, Algorithms.getStringVersionComparator());
+			for (String name : fileNames) {
+				if (matcher != null && matcher.isCancelled()) {
+					break;
+				}
+				AmenityIndexRepository index = amenityRepositories.get(name);
+				if (index != null && index.checkContainsInt(top31, left31, bottom31, right31)) {
+					List<Amenity> r = index.searchAmenities(top31,
+							left31, bottom31, right31, zoom, filter, matcher);
+					if (r != null) {
+						amenities.addAll(r);
 					}
 				}
 			}
-		} finally {
 		}
 		return amenities;
 	}
@@ -576,40 +572,37 @@ public class ResourceManager {
     public List<Amenity> searchAmenitiesOnThePath(List<Location> locations, double radius, SearchPoiTypeFilter filter,
 			ResultMatcher<Amenity> matcher) {
 		final List<Amenity> amenities = new ArrayList<>();
-		try {
-			if (locations != null && locations.size() > 0) {
-				List<AmenityIndexRepository> repos = new ArrayList<>();
-				double topLatitude = locations.get(0).getLatitude();
-				double bottomLatitude = locations.get(0).getLatitude();
-				double leftLongitude = locations.get(0).getLongitude();
-				double rightLongitude = locations.get(0).getLongitude();
-				for (Location l : locations) {
-					topLatitude = Math.max(topLatitude, l.getLatitude());
-					bottomLatitude = Math.min(bottomLatitude, l.getLatitude());
-					leftLongitude = Math.min(leftLongitude, l.getLongitude());
-					rightLongitude = Math.max(rightLongitude, l.getLongitude());
-				}
-				if (!filter.isEmpty()) {
-					for (AmenityIndexRepository index : amenityRepositories.values()) {
-						if (index.checkContainsInt(
-								MapUtils.get31TileNumberY(topLatitude), 
-								MapUtils.get31TileNumberX(leftLongitude), 
-								MapUtils.get31TileNumberY(bottomLatitude), 
-								MapUtils.get31TileNumberX(rightLongitude))) {
-							repos.add(index);
-						}
+		if (locations != null && locations.size() > 0) {
+			List<AmenityIndexRepository> repos = new ArrayList<>();
+			double topLatitude = locations.get(0).getLatitude();
+			double bottomLatitude = locations.get(0).getLatitude();
+			double leftLongitude = locations.get(0).getLongitude();
+			double rightLongitude = locations.get(0).getLongitude();
+			for (Location l : locations) {
+				topLatitude = Math.max(topLatitude, l.getLatitude());
+				bottomLatitude = Math.min(bottomLatitude, l.getLatitude());
+				leftLongitude = Math.min(leftLongitude, l.getLongitude());
+				rightLongitude = Math.max(rightLongitude, l.getLongitude());
+			}
+			if (!filter.isEmpty()) {
+				for (AmenityIndexRepository index : amenityRepositories.values()) {
+					if (index.checkContainsInt(
+							MapUtils.get31TileNumberY(topLatitude),
+							MapUtils.get31TileNumberX(leftLongitude),
+							MapUtils.get31TileNumberY(bottomLatitude),
+							MapUtils.get31TileNumberX(rightLongitude))) {
+						repos.add(index);
 					}
-					if (!repos.isEmpty()) {
-						for (AmenityIndexRepository r : repos) {
-							List<Amenity> res = r.searchAmenitiesOnThePath(locations, radius, filter, matcher);
-							if(res != null) {
-								amenities.addAll(res);
-							}
+				}
+				if (!repos.isEmpty()) {
+					for (AmenityIndexRepository r : repos) {
+						List<Amenity> res = r.searchAmenitiesOnThePath(locations, radius, filter, matcher);
+						if(res != null) {
+							amenities.addAll(res);
 						}
 					}
 				}
 			}
-		} finally {
 		}
 		return amenities;
 	}
@@ -757,7 +750,7 @@ public class ResourceManager {
 				readers.add(r.getReader(BinaryMapReaderResourceType.ROUTING));
 			}
 		}
-		return readers.toArray(new BinaryMapIndexReader[readers.size()]);
+		return readers.toArray(new BinaryMapIndexReader[0]);
 	}
 	
 	public BinaryMapIndexReader[] getQuickSearchFiles() {
@@ -768,7 +761,7 @@ public class ResourceManager {
 				readers.add(r.getReader(BinaryMapReaderResourceType.QUICK_SEARCH));
 			}
 		}
-		return readers.toArray(new BinaryMapIndexReader[readers.size()]);
+		return readers.toArray(new BinaryMapIndexReader[0]);
 	}
 	
 	public Map<String, String> getIndexFileNames() {
@@ -783,12 +776,7 @@ public class ResourceManager {
 
 	private boolean isMapsPresentInDirectory(@Nullable String path) {
 		File dir = context.getAppPath(path);
-		File[] maps = dir.listFiles(new FileFilter() {
-			@Override
-			public boolean accept(File pathname) {
-				return pathname.getName().endsWith(IndexConstants.BINARY_MAP_INDEX_EXT);
-			}
-		});
+		File[] maps = dir.listFiles(pathname -> pathname.getName().endsWith(IndexConstants.BINARY_MAP_INDEX_EXT));
 		return maps != null && maps.length > 0;
 	}
 

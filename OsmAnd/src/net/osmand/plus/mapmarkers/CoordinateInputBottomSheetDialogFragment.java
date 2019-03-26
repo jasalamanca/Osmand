@@ -76,83 +76,63 @@ public class CoordinateInputBottomSheetDialogFragment extends MenuBottomSheetDia
 
 		((CompoundButton) mainView.findViewById(R.id.use_system_keyboard_switch)).setChecked(!useOsmandKeyboard);
 		((ImageView) mainView.findViewById(R.id.use_system_keyboard_icon)).setImageDrawable(getContentIcon(R.drawable.ic_action_keyboard));
-		mainView.findViewById(R.id.use_system_keyboard_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				useOsmandKeyboard = !useOsmandKeyboard;
-				((CompoundButton) mainView.findViewById(R.id.use_system_keyboard_switch)).setChecked(!useOsmandKeyboard);
-				if (listener != null) {
-					listener.onKeyboardChanged(useOsmandKeyboard);
-				}
-			}
-		});
+		mainView.findViewById(R.id.use_system_keyboard_row).setOnClickListener(view -> {
+            useOsmandKeyboard = !useOsmandKeyboard;
+            ((CompoundButton) mainView.findViewById(R.id.use_system_keyboard_switch)).setChecked(!useOsmandKeyboard);
+            if (listener != null) {
+                listener.onKeyboardChanged(useOsmandKeyboard);
+            }
+        });
 
 		View handRow = mainView.findViewById(R.id.hand_row);
 		if (portrait) {
 			handRow.setVisibility(View.GONE);
 		} else {
-			handRow.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					rightHand = !rightHand;
-					populateChangeHandRow();
-					if (listener != null) {
-						listener.onHandChanged(rightHand);
-					}
-				}
-			});
+			handRow.setOnClickListener(view -> {
+                rightHand = !rightHand;
+                populateChangeHandRow();
+                if (listener != null) {
+                    listener.onHandChanged(rightHand);
+                }
+            });
 			populateChangeHandRow();
 		}
 
 		((CompoundButton) mainView.findViewById(R.id.go_to_next_field_switch)).setChecked(goToNextField);
 		((ImageView) mainView.findViewById(R.id.go_to_next_field_icon)).setImageDrawable(getContentIcon(R.drawable.ic_action_next_field_stroke));
-		mainView.findViewById(R.id.go_to_next_field_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				goToNextField = !goToNextField;
-				((CompoundButton) mainView.findViewById(R.id.go_to_next_field_switch)).setChecked(goToNextField);
-				switchSelectedAccuracy();
-				if (listener != null) {
-					listener.onGoToNextFieldChanged(goToNextField);
-				}
-			}
-		});
+		mainView.findViewById(R.id.go_to_next_field_row).setOnClickListener(view -> {
+            goToNextField = !goToNextField;
+            ((CompoundButton) mainView.findViewById(R.id.go_to_next_field_switch)).setChecked(goToNextField);
+            switchSelectedAccuracy();
+            if (listener != null) {
+                listener.onGoToNextFieldChanged(goToNextField);
+            }
+        });
 
 		switchSelectedAccuracy();
 		populateSelectedAccuracy();
 
-		mainView.findViewById(R.id.accuracy_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (goToNextField) {
-					final ListPopupWindow listPopupWindow = new ListPopupWindow(getContext());
-					listPopupWindow.setAnchorView(view);
-					listPopupWindow.setContentWidth(AndroidUtils.dpToPx(getMyApplication(), 100));
-					listPopupWindow.setModal(true);
-					listPopupWindow.setDropDownGravity(Gravity.END | Gravity.TOP);
-					listPopupWindow.setAdapter(new ArrayAdapter<>(getContext(), R.layout.popup_list_text_item, new Integer[]{0, 1, 2, 3, 4, 5, 6}));
-					listPopupWindow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-						@Override
-						public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-							accuracy = i;
-							populateSelectedAccuracy();
-							if (listener != null) {
-								listener.onAccuracyChanged(accuracy);
-							}
-							listPopupWindow.dismiss();
-						}
-					});
-					listPopupWindow.show();
-				}
-			}
-		});
+		mainView.findViewById(R.id.accuracy_row).setOnClickListener(view -> {
+            if (goToNextField) {
+                final ListPopupWindow listPopupWindow = new ListPopupWindow(getContext());
+                listPopupWindow.setAnchorView(view);
+                listPopupWindow.setContentWidth(AndroidUtils.dpToPx(getMyApplication(), 100));
+                listPopupWindow.setModal(true);
+                listPopupWindow.setDropDownGravity(Gravity.END | Gravity.TOP);
+                listPopupWindow.setAdapter(new ArrayAdapter<>(getContext(), R.layout.popup_list_text_item, new Integer[]{0, 1, 2, 3, 4, 5, 6}));
+                listPopupWindow.setOnItemClickListener((adapterView, view1, i, l) -> {
+                    accuracy = i;
+                    populateSelectedAccuracy();
+                    if (listener != null) {
+                        listener.onAccuracyChanged(accuracy);
+                    }
+                    listPopupWindow.dismiss();
+                });
+                listPopupWindow.show();
+            }
+        });
 
-		mainView.findViewById(R.id.cancel_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.cancel_row).setOnClickListener(view -> dismiss());
 
 		setupHeightAndBackground(mainView, R.id.marker_coordinate_input_scroll_view);
 

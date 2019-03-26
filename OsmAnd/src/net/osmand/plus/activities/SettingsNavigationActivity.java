@@ -250,20 +250,16 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 							AudioManager.STREAM_NOTIFICATION, AudioManager.STREAM_VOICE_CALL}, R.string.choose_audio_stream,
 					R.string.choose_audio_stream_descr);
 			final Preference.OnPreferenceChangeListener prev = lp.getOnPreferenceChangeListener();
-			lp.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-
-				@Override
-				public boolean onPreferenceChange(Preference preference, Object newValue) {
-					prev.onPreferenceChange(preference, newValue);
-					CommandPlayer player = getMyApplication().getPlayer();
-					if (player != null) {
-						player.updateAudioStream(settings.AUDIO_STREAM_GUIDANCE.get());
-					}
-					// Sync DEFAULT value with CAR value, as we have other way to set it for now
-					settings.AUDIO_STREAM_GUIDANCE.setModeValue(ApplicationMode.DEFAULT, settings.AUDIO_STREAM_GUIDANCE.getModeValue(ApplicationMode.CAR));
-					return true;
-				}
-			});
+			lp.setOnPreferenceChangeListener((preference, newValue) -> {
+                prev.onPreferenceChange(preference, newValue);
+                CommandPlayer player = getMyApplication().getPlayer();
+                if (player != null) {
+                    player.updateAudioStream(settings.AUDIO_STREAM_GUIDANCE.get());
+                }
+                // Sync DEFAULT value with CAR value, as we have other way to set it for now
+                settings.AUDIO_STREAM_GUIDANCE.setModeValue(ApplicationMode.DEFAULT, settings.AUDIO_STREAM_GUIDANCE.getModeValue(ApplicationMode.CAR));
+                return true;
+            });
 			cat.addPreference(lp);
 			cat.addPreference(createCheckBoxPreference(settings.INTERRUPT_MUSIC, R.string.interrupt_music,
 					R.string.interrupt_music_descr));
@@ -484,26 +480,17 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 			};
 
 			final int[] selectedPosition = {selectedIndex};
-			builder.setSingleChoiceItems(listAdapter, selectedIndex, new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int position) {
-					selectedPosition[0] = position;
-				}
-			});
+			builder.setSingleChoiceItems(listAdapter, selectedIndex, (dialog, position) -> selectedPosition[0] = position);
 			builder.setTitle(R.string.auto_zoom_map)
-					.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							int position = selectedPosition[0];
-							if (position == 0) {
-								settings.AUTO_ZOOM_MAP.set(false);
-							} else {
-								settings.AUTO_ZOOM_MAP.set(true);
-								settings.AUTO_ZOOM_MAP_SCALE.set(AutoZoomMap.values()[position -1]);
-							}
-						}
-					})
+					.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> {
+                        int position = selectedPosition[0];
+                        if (position == 0) {
+                            settings.AUTO_ZOOM_MAP.set(false);
+                        } else {
+                            settings.AUTO_ZOOM_MAP.set(true);
+                            settings.AUTO_ZOOM_MAP_SCALE.set(AutoZoomMap.values()[position -1]);
+                        }
+                    })
 					.setNegativeButton(R.string.shared_string_cancel, null);
 
 			builder.create().show();
@@ -548,27 +535,18 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 			};
 
 			final int[] selectedPosition = {selectedIndex};
-			builder.setSingleChoiceItems(listAdapter, selectedIndex, new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int position) {
-					selectedPosition[0] = position;
-				}
-			});
+			builder.setSingleChoiceItems(listAdapter, selectedIndex, (dialog, position) -> selectedPosition[0] = position);
 			builder.setTitle(SettingsBaseActivity.getRoutingStringPropertyName(this, reliefFactorParameters.get(0).getGroup(),
 					Algorithms.capitalizeFirstLetterAndLowercase(reliefFactorParameters.get(0).getGroup().replace('_', ' '))))
-					.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
+					.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> {
 
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-
-							int position = selectedPosition[0];
-							if (position >= 0 && position < reliefFactorParameters.size()) {
-								for (int i = 0; i < reliefFactorParameters.size(); i++) {
-									setRoutingParameterSelected(settings, am, reliefFactorParameters.get(i), i == position);
-								}
-							}
-						}
-					})
+                        int position = selectedPosition[0];
+                        if (position >= 0 && position < reliefFactorParameters.size()) {
+                            for (int i1 = 0; i1 < reliefFactorParameters.size(); i1++) {
+                                setRoutingParameterSelected(settings, am, reliefFactorParameters.get(i1), i1 == position);
+                            }
+                        }
+                    })
 					.setNegativeButton(R.string.shared_string_cancel, null);
 
 			builder.create().show();
@@ -591,27 +569,23 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 			final boolean initialFavorites = settings.ANNOUNCE_NEARBY_FAVORITES.get();
 			final boolean initialPOI = settings.ANNOUNCE_NEARBY_POI.get();
 
-			dlg.setOnDismissListener(new DialogInterface.OnDismissListener() {
-
-				@Override
-				public void onDismiss(DialogInterface dialog) {
-					if (settings.ANNOUNCE_NEARBY_POI.get() != initialPOI) {
-						settings.SHOW_NEARBY_POI.set(settings.ANNOUNCE_NEARBY_POI.get());
-					}
-					if (settings.ANNOUNCE_NEARBY_FAVORITES.get() != initialFavorites) {
-						settings.SHOW_NEARBY_FAVORITES.set(settings.ANNOUNCE_NEARBY_FAVORITES.get());
-					}
-					if (settings.ANNOUNCE_WPT.get()) {
-						settings.SHOW_WPT.set(settings.ANNOUNCE_WPT.get());
-					}
-					if (!initialSpeedCam) {
-						if (settings.SPEAK_SPEED_CAMERA.get()) {
-							settings.SPEAK_SPEED_CAMERA.set(false);
-							confirmSpeedCamerasDlg();
-						}
-					}
-				}
-			});
+			dlg.setOnDismissListener(dialog -> {
+                if (settings.ANNOUNCE_NEARBY_POI.get() != initialPOI) {
+                    settings.SHOW_NEARBY_POI.set(settings.ANNOUNCE_NEARBY_POI.get());
+                }
+                if (settings.ANNOUNCE_NEARBY_FAVORITES.get() != initialFavorites) {
+                    settings.SHOW_NEARBY_FAVORITES.set(settings.ANNOUNCE_NEARBY_FAVORITES.get());
+                }
+                if (settings.ANNOUNCE_WPT.get()) {
+                    settings.SHOW_WPT.set(settings.ANNOUNCE_WPT.get());
+                }
+                if (!initialSpeedCam) {
+                    if (settings.SPEAK_SPEED_CAMERA.get()) {
+                        settings.SPEAK_SPEED_CAMERA.set(false);
+                        confirmSpeedCamerasDlg();
+                    }
+                }
+            });
 			return true;
 		}
 		return false;
@@ -620,13 +594,7 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 	private void confirmSpeedCamerasDlg() {
 		AlertDialog.Builder bld = new AlertDialog.Builder(this);
 		bld.setMessage(R.string.confirm_usage_speed_cameras);
-		bld.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-			
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				settings.SPEAK_SPEED_CAMERA.set(true);				
-			}
-		});
+		bld.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> settings.SPEAK_SPEED_CAMERA.set(true));
 		bld.setNegativeButton(R.string.shared_string_cancel, null);
 		bld.show();
 	}
@@ -643,23 +611,15 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 			tempPrefs[i] = prefs[i].get();
 		}
 		
-		bld.setMultiChoiceItems(vals, checkedItems, new OnMultiChoiceClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-				tempPrefs[which] = isChecked;
-			}
-		});
+		bld.setMultiChoiceItems(vals, checkedItems, (dialog, which, isChecked) -> tempPrefs[which] = isChecked);
 		
 		bld.setTitle(title);
 		bld.setNegativeButton(R.string.shared_string_cancel, null);
-		bld.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-		    public void onClick(DialogInterface dialog, int whichButton) {
-				for (int i = 0; i < prefs.length; i++) {
-					prefs[i].set(tempPrefs[i]);
-				}
-		    }
-		});
+		bld.setPositiveButton(R.string.shared_string_ok, (dialog, whichButton) -> {
+            for (int i = 0; i < prefs.length; i++) {
+                prefs[i].set(tempPrefs[i]);
+            }
+        });
 		
 		return bld.show();
 	}

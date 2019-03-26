@@ -52,7 +52,7 @@ public class GeoPointParserUtil {
 			Map<String, String> map = getQueryParameters(uri);
 			System.out.print(s + " map: " + map.size() + "...");
 			if (map.size() != 1) {
-				System.out.println("");
+				System.out.println();
 				throw new RuntimeException("Map should be 1 but is " + map.size());
 			}
 			System.out.println(" Passed!");
@@ -70,7 +70,7 @@ public class GeoPointParserUtil {
 			Map<String, String> map = getQueryParameters(uri);
 			System.out.print(s + " map: " + map.size() + "...");
 			if (map.size() != 2) {
-				System.out.println("");
+				System.out.println();
 				throw new RuntimeException("Map should be 2 but is " + map.size());
 			}
 			System.out.println(" Passed!");
@@ -823,7 +823,7 @@ public class GeoPointParserUtil {
 			String[] params = query.split("&");
 			for (String p : params) {
 				if (p.contains(param)) {
-					value = p.substring(p.indexOf("=") + 1, p.length());
+					value = p.substring(p.indexOf("=") + 1);
 					break;
 				}
 			}
@@ -1297,7 +1297,6 @@ public class GeoPointParserUtil {
 
 	private static GeoParsedPoint parseGoogleMapsPath(String opath, Map<String, String> params) {
 		String zmPart = "";
-		String descr = "";
 		String path = opath;
 		if (path.contains("&")) {
 			String[] vls = path.split("&");
@@ -1311,10 +1310,6 @@ public class GeoPointParserUtil {
 		}
 		if (path.contains("+")) {
 			path = path.substring(0, path.indexOf("+"));
-//			descr = path.substring(path.indexOf("+") + 1);
-//			if (descr.contains(")")) {
-//				descr = descr.substring(0, descr.indexOf(")"));
-//			}
 		}
 		if (params.containsKey("z")) {
 			zmPart = params.get("z");
@@ -1402,7 +1397,7 @@ public class GeoPointParserUtil {
 				this.label = label.replaceAll("\\+", " ");
 		}
 
-		public GeoParsedPoint(double lat, double lon, int zoom) {
+		GeoParsedPoint(double lat, double lon, int zoom) {
 			this(lat, lon);
 			this.zoom = zoom;
 		}
@@ -1494,10 +1489,10 @@ public class GeoPointParserUtil {
 		 * https://developer.android.com/guide/components/intents-common.html#Maps
 		 */
         String getGeoUriString() {
-			String uriString;
+			StringBuilder uriString;
 			if (isGeoPoint()) {
 				String latlon = formatDouble(lat) + "," + formatDouble(lon);
-				uriString = "geo:" + latlon;
+				uriString = new StringBuilder("geo:" + latlon);
 				LinkedHashMap<String, String> map = new LinkedHashMap<>();
 				if (zoom != NO_ZOOM)
 					map.put("z", String.valueOf(zoom));
@@ -1507,25 +1502,25 @@ public class GeoPointParserUtil {
 					if (query == null)
 						map.put("q", latlon + "(" + URLEncoder.encode(label) + ")");
 				if (map.size() > 0)
-					uriString += "?";
+					uriString.append("?");
 				int i = 0;
 				for (String key : map.keySet()) {
 					if (i > 0)
-						uriString += "&";
-					uriString += key + "=" + map.get(key);
+						uriString.append("&");
+					uriString.append(key).append("=").append(map.get(key));
 					i++;
 				}
-				return uriString;
+				return uriString.toString();
 			}
 			if (isGeoAddress()) {
-				uriString = "geo:0,0";
+				uriString = new StringBuilder("geo:0,0");
 				if (query != null) {
-					uriString += "?";
+					uriString.append("?");
 					if (zoom != NO_ZOOM)
-						uriString += "z=" + zoom + "&";
-					uriString += "q=" + URLEncoder.encode(query);
+						uriString.append("z=").append(zoom).append("&");
+					uriString.append("q=").append(URLEncoder.encode(query));
 				}
-				return uriString;
+				return uriString.toString();
 			}
 			return null;
 		}

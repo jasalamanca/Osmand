@@ -16,8 +16,6 @@
 
 package net.osmand.plus.widgets.tools;
 
-import android.content.Context;
-import android.content.res.TypedArray;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.IntDef;
@@ -30,12 +28,9 @@ import android.support.v4.math.MathUtils;
 import android.support.v4.view.AbsSavedState;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.ViewDragHelper;
-import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
-import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
@@ -135,8 +130,7 @@ public class ExtendedBottomSheetBehavior<V extends View> extends CoordinatorLayo
 	private int mPeekHeightMin;
 	private int mMinOffset;
 	private int mMaxOffset;
-	private boolean mHideable;
-	private boolean mSkipCollapsed;
+	private final boolean mHideable = false;
 
 	@State
 	private
@@ -462,12 +456,7 @@ public class ExtendedBottomSheetBehavior<V extends View> extends CoordinatorLayo
 		// Start the animation; wait until a pending layout if there is one.
 		ViewParent parent = child.getParent();
 		if (parent != null && parent.isLayoutRequested() && ViewCompat.isAttachedToWindow(child)) {
-			child.post(new Runnable() {
-				@Override
-				public void run() {
-					startSettlingAnimation(child, state);
-				}
-			});
+			child.post(() -> startSettlingAnimation(child, state));
 		} else {
 			startSettlingAnimation(child, state);
 		}
@@ -493,9 +482,6 @@ public class ExtendedBottomSheetBehavior<V extends View> extends CoordinatorLayo
 	}
 
 	private boolean shouldHide(View child, float yvel) {
-		if (mSkipCollapsed) {
-			return true;
-		}
 		if (child.getTop() < mMaxOffset) {
 			// It should not hide, but collapse.
 			return false;
@@ -707,7 +693,6 @@ public class ExtendedBottomSheetBehavior<V extends View> extends CoordinatorLayo
 	 * @param view The {@link View} with {@link ExtendedBottomSheetBehavior}.
 	 * @return The {@link ExtendedBottomSheetBehavior} associated with the {@code view}.
 	 */
-	@SuppressWarnings("unchecked")
 	public static <V extends View> ExtendedBottomSheetBehavior<V> from(V view) {
 		ViewGroup.LayoutParams params = view.getLayoutParams();
 		if (!(params instanceof CoordinatorLayout.LayoutParams)) {

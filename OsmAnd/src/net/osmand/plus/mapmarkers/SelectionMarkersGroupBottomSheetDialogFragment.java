@@ -36,31 +36,20 @@ public class SelectionMarkersGroupBottomSheetDialogFragment extends MenuBottomSh
 		((ImageView) mainView.findViewById(R.id.favourites_icon)).setImageDrawable(getContentIcon(R.drawable.ic_action_fav_dark));
 		((ImageView) mainView.findViewById(R.id.waypoints_icon)).setImageDrawable(getContentIcon(R.drawable.ic_action_polygom_dark));
 
-		mainView.findViewById(R.id.favourites_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (listener != null) {
-					listener.favouritesOnClick();
-				}
-				dismiss();
-			}
-		});
-		mainView.findViewById(R.id.waypoints_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (listener != null) {
-					listener.waypointsOnClick();
-				}
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.favourites_row).setOnClickListener(view -> {
+            if (listener != null) {
+                listener.favouritesOnClick();
+            }
+            dismiss();
+        });
+		mainView.findViewById(R.id.waypoints_row).setOnClickListener(view -> {
+            if (listener != null) {
+                listener.waypointsOnClick();
+            }
+            dismiss();
+        });
 
-		mainView.findViewById(R.id.close_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.close_row).setOnClickListener(view -> dismiss());
 
 		setupHeightAndBackground(mainView, R.id.add_markers_group_scroll_view);
 

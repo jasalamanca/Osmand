@@ -214,13 +214,8 @@ public class MapUtils {
 	}
 
 	public static void sortListOfMapObject(List<? extends MapObject> list, final double lat, final double lon) {
-		Collections.sort(list, new Comparator<MapObject>() {
-			@Override
-			public int compare(MapObject o1, MapObject o2) {
-				return Double.compare(MapUtils.getDistance(o1.getLocation(), lat, lon), MapUtils.getDistance(o2.getLocation(),
-						lat, lon));
-			}
-		});
+		Collections.sort(list, (Comparator<MapObject>) (o1, o2) -> Double.compare(MapUtils.getDistance(o1.getLocation(), lat, lon), MapUtils.getDistance(o2.getLocation(),
+				lat, lon)));
 	}
 
 	public static String buildGeoUrl(double latitude, double longitude, int zoom) {

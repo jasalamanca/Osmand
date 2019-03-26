@@ -189,7 +189,7 @@ public class MapWidgetRegistry {
 
 	private void processVisibleModes(String key, MapWidgetRegInfo ii) {
 		for (ApplicationMode ms : ApplicationMode.values(settings)) {
-			boolean collapse = ms.isWidgetCollapsible(key);
+			boolean collapse = ms.isWidgetCollapsible();
 			boolean def = ms.isWidgetVisible(key);
 			Set<String> set = visibleElementsFromSettings.get(ms);
 			if (set != null) {
@@ -284,7 +284,7 @@ public class MapWidgetRegistry {
 			ri.visibleCollapsible.remove(mode);
 			ri.visibleModes.remove(mode);
 			if (mode.isWidgetVisible(ri.key)) {
-				if (mode.isWidgetCollapsible(ri.key)) {
+				if (mode.isWidgetCollapsible()) {
 					ri.visibleCollapsible.add(mode);
 				} else {
 					ri.visibleModes.add(mode);
@@ -318,22 +318,16 @@ public class MapWidgetRegistry {
 		if (settings.USE_MAP_MARKERS.get()) {
 			cm.addItem(new ContextMenuItem.ItemBuilder().setTitleId(R.string.map_markers, map)
 					.setDescription(settings.MAP_MARKERS_MODE.get().toHumanString(map))
-					.setListener(new ContextMenuAdapter.ItemClickListener() {
-						@Override
-						public boolean onContextMenuClick(final ArrayAdapter<ContextMenuItem> adapter, int itemId, final int position, boolean isChecked, int[] viewCoordinates) {
-							DirectionIndicationDialogFragment fragment = new DirectionIndicationDialogFragment();
-							fragment.setListener(new DirectionIndicationDialogFragment.DirectionIndicationFragmentListener() {
-								@Override
-								public void onMapMarkersModeChanged(boolean showDirectionEnabled) {
-									updateMapMarkersMode(map);
-									cm.getItem(position).setDescription(settings.MAP_MARKERS_MODE.get().toHumanString(map));
-									adapter.notifyDataSetChanged();
-								}
-							});
-							fragment.show(map.getSupportFragmentManager(), DirectionIndicationDialogFragment.TAG);
-							return false;
-						}
-					}).setLayout(R.layout.list_item_text_button).createItem());
+					.setListener((adapter, itemId, position, isChecked, viewCoordinates) -> {
+                        DirectionIndicationDialogFragment fragment = new DirectionIndicationDialogFragment();
+                        fragment.setListener(showDirectionEnabled -> {
+                            updateMapMarkersMode(map);
+                            cm.getItem(position).setDescription(settings.MAP_MARKERS_MODE.get().toHumanString(map));
+                            adapter.notifyDataSetChanged();
+                        });
+                        fragment.show(map.getSupportFragmentManager(), DirectionIndicationDialogFragment.TAG);
+                        return false;
+                    }).setLayout(R.layout.list_item_text_button).createItem());
 		}
 	}
 
@@ -492,45 +486,42 @@ public class MapWidgetRegistry {
 							}
 
 							popup.setOnMenuItemClickListener(
-									new IconPopupMenu.OnMenuItemClickListener() {
-										@Override
-										public boolean onMenuItemClick(MenuItem menuItem) {
+                                    menuItem -> {
 
-											switch (menuItem.getItemId()) {
-												case R.id.action_show:
-													setVisibility(adapter, pos, true, false);
-													return true;
-												case R.id.action_hide:
-													setVisibility(adapter, pos, false, false);
-													return true;
-												case R.id.action_collapse:
-													setVisibility(adapter, pos, true, true);
-													return true;
-												default:
-													if (menuItemIds != null) {
-														for (int menuItemId : menuItemIds) {
-															if (menuItem.getItemId() == menuItemId) {
-																r.changeState(menuItemId);
-																MapInfoLayer mil = mapActivity.getMapLayers().getMapInfoLayer();
-																if (mil != null) {
-																	mil.recreateControls();
-																}
-																ContextMenuItem item = adapter.getItem(pos);
-																item.setIcon(r.getDrawableMenu());
-																if (r.getMessage() != null) {
-																	item.setTitle(r.getMessage());
-																} else {
-																	item.setTitle(mapActivity.getResources().getString(r.getMessageId()));
-																}
-																adapter.notifyDataSetChanged();
-																return true;
-															}
-														}
-													}
-											}
-											return false;
-										}
-									});
+                                        switch (menuItem.getItemId()) {
+                                            case R.id.action_show:
+                                                setVisibility(adapter, pos, true, false);
+                                                return true;
+                                            case R.id.action_hide:
+                                                setVisibility(adapter, pos, false, false);
+                                                return true;
+                                            case R.id.action_collapse:
+                                                setVisibility(adapter, pos, true, true);
+                                                return true;
+                                            default:
+                                                if (menuItemIds != null) {
+                                                    for (int menuItemId : menuItemIds) {
+                                                        if (menuItem.getItemId() == menuItemId) {
+                                                            r.changeState(menuItemId);
+                                                            MapInfoLayer mil = mapActivity.getMapLayers().getMapInfoLayer();
+                                                            if (mil != null) {
+                                                                mil.recreateControls();
+                                                            }
+                                                            ContextMenuItem item = adapter.getItem(pos);
+                                                            item.setIcon(r.getDrawableMenu());
+                                                            if (r.getMessage() != null) {
+                                                                item.setTitle(r.getMessage());
+                                                            } else {
+                                                                item.setTitle(mapActivity.getResources().getString(r.getMessageId()));
+                                                            }
+                                                            adapter.notifyDataSetChanged();
+                                                            return true;
+                                                        }
+                                                    }
+                                                }
+                                        }
+                                        return false;
+                                    });
 							popup.show();
 							return false;
 						}
@@ -580,7 +571,7 @@ public class MapWidgetRegistry {
 		final int priorityOrder;
 		private final Set<ApplicationMode> visibleCollapsible = new LinkedHashSet<>();
 		private final Set<ApplicationMode> visibleModes = new LinkedHashSet<>();
-		private Runnable stateChangeListener = null;
+		private final Runnable stateChangeListener = null;
 
 		MapWidgetRegInfo(String key, TextInfoWidget widget, @DrawableRes int drawableMenu,
                          @StringRes int messageId, int priorityOrder, boolean left) {
@@ -725,13 +716,7 @@ public class MapWidgetRegistry {
 		cm.setDefaultLayoutId(R.layout.list_item_icon_and_menu);
 		cm.addItem(new ContextMenuItem.ItemBuilder().setTitleId(R.string.app_modes_choose, map)
 				.setLayout(R.layout.mode_toggles).createItem());
-		cm.setChangeAppModeListener(new ConfigureMapMenu.OnClickListener() {
-
-			@Override
-			public void onClick() {
-				map.getDashboard().updateListAdapter(getViewConfigureMenuAdapter(map));
-			}
-		});
+		cm.setChangeAppModeListener(() -> map.getDashboard().updateListAdapter(getViewConfigureMenuAdapter(map)));
 		final ApplicationMode mode = settings.getApplicationMode();
 		addControls(map, cm, mode);
 		return cm;

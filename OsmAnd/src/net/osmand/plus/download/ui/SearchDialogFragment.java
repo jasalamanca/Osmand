@@ -100,12 +100,7 @@ public class SearchDialogFragment
 		Toolbar toolbar = view.findViewById(R.id.toolbar);
 		toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
 		toolbar.setNavigationContentDescription(R.string.access_shared_string_navigate_up);
-		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-			}
-		});
+		toolbar.setNavigationOnClickListener(v -> dismiss());
 
 		banner = new BannerAndDownloadFreeVersion(view, (DownloadActivity) getActivity(), false);
 
@@ -157,16 +152,13 @@ public class SearchDialogFragment
 			}
 		});
 
-		clearButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (searchEditText.getText().length() == 0) {
-					dismiss();
-				} else {
-					searchEditText.setText("");
-				}
-			}
-		});
+		clearButton.setOnClickListener(v -> {
+            if (searchEditText.getText().length() == 0) {
+                dismiss();
+            } else {
+                searchEditText.setText("");
+            }
+        });
 
 		searchEditText.requestFocus();
 
@@ -553,12 +545,7 @@ public class SearchDialogFragment
 			@Override
 			protected FilterResults performFiltering(CharSequence constraint) {
 
-				getMyApplication().runInUIThread(new Runnable() {
-					@Override
-					public void run() {
-						showProgressBar();
-					}
-				});
+				getMyApplication().runInUIThread(() -> showProgressBar());
 
 				DownloadResources root = ctx.getDownloadThread().getIndexes();
 
@@ -594,49 +581,41 @@ public class SearchDialogFragment
 					processGroup(root, filter, conds);
 
 					final Collator collator = OsmAndCollator.primaryCollator();
-					Collections.sort(filter, new Comparator<Object>() {
-						@Override
-						public int compare(Object obj1, Object obj2) {
-							String str1;
-							String str2;
-							if (obj1 instanceof DownloadResourceGroup) {
-								str1 = ((DownloadResourceGroup) obj1).getName(ctx);
-							} else if (obj1 instanceof IndexItem) {
-								str1 = ((IndexItem) obj1).getVisibleName(getMyApplication(), osmandRegions, false);
-							} else {
-								Amenity a = ((CityItem) obj1).getAmenity();
-								if ("city".equals(a.getSubType())) {
-									str1 = "!" + ((CityItem) obj1).getName();
-								} else {
-									str1 = ((CityItem) obj1).getName();
-								}
-							}
-							if (obj2 instanceof DownloadResourceGroup) {
-								str2 = ((DownloadResourceGroup) obj2).getName(ctx);
-							} else if (obj2 instanceof IndexItem) {
-								str2 = ((IndexItem) obj2).getVisibleName(getMyApplication(), osmandRegions, false);
-							} else {
-								Amenity a = ((CityItem) obj2).getAmenity();
-								if ("city".equals(a.getSubType())) {
-									str2 = "!" + ((CityItem) obj2).getName();
-								} else {
-									str2 = ((CityItem) obj2).getName();
-								}
-							}
-							return collator.compare(str1, str2);
-						}
-					});
+					Collections.sort(filter, (obj1, obj2) -> {
+                        String str1;
+                        String str2;
+                        if (obj1 instanceof DownloadResourceGroup) {
+                            str1 = ((DownloadResourceGroup) obj1).getName(ctx);
+                        } else if (obj1 instanceof IndexItem) {
+                            str1 = ((IndexItem) obj1).getVisibleName(getMyApplication(), osmandRegions, false);
+                        } else {
+                            Amenity a = ((CityItem) obj1).getAmenity();
+                            if ("city".equals(a.getSubType())) {
+                                str1 = "!" + ((CityItem) obj1).getName();
+                            } else {
+                                str1 = ((CityItem) obj1).getName();
+                            }
+                        }
+                        if (obj2 instanceof DownloadResourceGroup) {
+                            str2 = ((DownloadResourceGroup) obj2).getName(ctx);
+                        } else if (obj2 instanceof IndexItem) {
+                            str2 = ((IndexItem) obj2).getVisibleName(getMyApplication(), osmandRegions, false);
+                        } else {
+                            Amenity a = ((CityItem) obj2).getAmenity();
+                            if ("city".equals(a.getSubType())) {
+                                str2 = "!" + ((CityItem) obj2).getName();
+                            } else {
+                                str2 = ((CityItem) obj2).getName();
+                            }
+                        }
+                        return collator.compare(str1, str2);
+                    });
 
 					results.values = filter;
 					results.count = filter.size();
 				}
 
-				getMyApplication().runInUIThread(new Runnable() {
-					@Override
-					public void run() {
-						hideProgressBar();
-					}
-				});
+				getMyApplication().runInUIThread(() -> hideProgressBar());
 
 				return results;
 			}

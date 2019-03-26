@@ -43,17 +43,14 @@ public class SettingsOsmEditingActivity extends SettingsBaseActivity {
 		pref.setTitle(R.string.local_openstreetmap_settings);
 		pref.setSummary(R.string.local_openstreetmap_settings_descr);
 		pref.setKey("local_openstreetmap_points");
-		pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				OsmAndAppCustomization appCustomization = getMyApplication().getAppCustomization();
-				final Intent favorites = new Intent(SettingsOsmEditingActivity.this,
-						appCustomization.getFavoritesActivity());
-				favorites.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-				getMyApplication().getSettings().FAVORITES_TAB.set(R.string.osm_edits);
-				startActivity(favorites);
-				return true;
-			}
+		pref.setOnPreferenceClickListener(preference -> {
+			OsmAndAppCustomization appCustomization = getMyApplication().getAppCustomization();
+			final Intent favorites = new Intent(SettingsOsmEditingActivity.this,
+					appCustomization.getFavoritesActivity());
+			favorites.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+			getMyApplication().getSettings().FAVORITES_TAB.set(R.string.osm_edits);
+			startActivity(favorites);
+			return true;
 		});
 		grp.addPreference(pref);
     }

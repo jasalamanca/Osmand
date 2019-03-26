@@ -183,12 +183,7 @@ public class ApplicationMode {
 	public static List<ApplicationMode> values(OsmandSettings settings) {
 		if (cachedFilteredValues.isEmpty()) {
 			if (listener == null) {
-				listener = new StateChangedListener<String>() {
-					@Override
-					public void stateChanged(String change) {
-						cachedFilteredValues = new ArrayList<>();
-					}
-				};
+				listener = change -> cachedFilteredValues = new ArrayList<>();
 				settings.AVAILABLE_APP_MODES.addListener(listener);
 			}
 			String available = settings.AVAILABLE_APP_MODES.get();
@@ -225,7 +220,7 @@ public class ApplicationMode {
 		return set;
 	}
 
-	public boolean isWidgetCollapsible(String key) {
+	public boolean isWidgetCollapsible() {
 		return false;
 	}
 

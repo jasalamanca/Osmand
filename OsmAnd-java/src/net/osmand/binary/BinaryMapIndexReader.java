@@ -9,7 +9,6 @@ import net.osmand.Collator;
 import net.osmand.CollatorStringMatcher;
 import net.osmand.CollatorStringMatcher.StringMatcherMode;
 import net.osmand.Location;
-import net.osmand.OsmAndCollator;
 import net.osmand.PlatformUtil;
 import net.osmand.ResultMatcher;
 import net.osmand.StringMatcher;
@@ -55,7 +54,6 @@ import java.io.RandomAccessFile;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -78,11 +76,11 @@ import gnu.trove.set.hash.TIntHashSet;
 
 public class BinaryMapIndexReader {
 
-	public final static int TRANSPORT_STOP_ZOOM = 24;
-	public static final int SHIFT_COORDINATES = 5;
+	final static int TRANSPORT_STOP_ZOOM = 24;
+	static final int SHIFT_COORDINATES = 5;
 	private final static Log log = PlatformUtil.getLog(BinaryMapIndexReader.class);
-	public static boolean READ_STATS = false;
-	public static final SearchPoiTypeFilter ACCEPT_ALL_POI_TYPE_FILTER = new SearchPoiTypeFilter() {
+	static boolean READ_STATS = false;
+	static final SearchPoiTypeFilter ACCEPT_ALL_POI_TYPE_FILTER = new SearchPoiTypeFilter() {
 		@Override
 		public boolean isEmpty() {
 			return false;
@@ -125,7 +123,7 @@ public class BinaryMapIndexReader {
 		init();
 	}
 
-	/*private */BinaryMapIndexReader(final RandomAccessFile raf, File file, boolean init) throws IOException {
+	BinaryMapIndexReader(final RandomAccessFile raf, File file, boolean init) throws IOException {
 		this.raf = raf;
 		this.file = file;
 		codedIS = CodedInputStream.newInstance(raf);
@@ -459,7 +457,7 @@ public class BinaryMapIndexReader {
 		return getTransportIndex(s.getFileOffset()) != null;
 	}
 
-	public List<TransportIndex> getTransportIndexes() {
+	List<TransportIndex> getTransportIndexes() {
 		return transportIndexes;
 	}
 
@@ -617,7 +615,6 @@ public class BinaryMapIndexReader {
 				reg.attributeTagsTable);
 		codedIS.popLimit(old);
 	}
-
 
 	/**
 	 * Map public methods
@@ -790,7 +787,7 @@ public class BinaryMapIndexReader {
 		return searchMapIndex(req, null);
 	}
 	
-	public List<BinaryMapDataObject> searchMapIndex(SearchRequest<BinaryMapDataObject> req, MapIndex filterMapIndex) throws IOException {
+	List<BinaryMapDataObject> searchMapIndex(SearchRequest<BinaryMapDataObject> req, MapIndex filterMapIndex) throws IOException {
 		req.numberOfVisitedObjects = 0;
 		req.numberOfAcceptedObjects = 0;
 		req.numberOfAcceptedSubtrees = 0;
@@ -832,12 +829,7 @@ public class BinaryMapIndexReader {
 						codedIS.popLimit(oldLimit);
 					}
 
-					Collections.sort(foundSubtrees, new Comparator<MapTree>() {
-						@Override
-						public int compare(MapTree o1, MapTree o2) {
-							return o1.mapDataBlock < o2.mapDataBlock ? -1 : (o1.mapDataBlock == o2.mapDataBlock ? 0 : 1);
-						}
-					});
+					Collections.sort(foundSubtrees, (o1, o2) -> o1.mapDataBlock < o2.mapDataBlock ? -1 : (o1.mapDataBlock == o2.mapDataBlock ? 0 : 1));
 					for (MapTree tree : foundSubtrees) {
 						if (!req.isCancelled()) {
 							codedIS.seek(tree.mapDataBlock);
@@ -929,7 +921,6 @@ public class BinaryMapIndexReader {
 				break;
 			}
 		}
-
 	}
 
 	private void searchMapTreeBounds(MapTree current, MapTree parent,
@@ -1057,7 +1048,6 @@ public class BinaryMapIndexReader {
 		}
 
 		// read 
-
 		List<TIntArrayList> innercoordinates = null;
 		TIntArrayList additionalTypes = null;
 		TIntObjectHashMap<String> stringNames = null;
@@ -1164,6 +1154,7 @@ public class BinaryMapIndexReader {
 				break;
 			}
 		}
+
 		BinaryMapDataObject dataObject = new BinaryMapDataObject();
 		dataObject.area = area;
 		dataObject.coordinates = req.cacheCoordinates.toArray();
@@ -1177,6 +1168,7 @@ public class BinaryMapIndexReader {
 				dataObject.polygonInnerCoordinates[i] = innercoordinates.get(i).toArray();
 			}
 		}
+
 		dataObject.types = req.cacheTypes.toArray();
 		if (additionalTypes != null) {
 			dataObject.additionalTypes = additionalTypes.toArray();
@@ -1206,7 +1198,7 @@ public class BinaryMapIndexReader {
 		return searchAddressDataByName(req, null);
 	}
 
-	public void initCategories(PoiRegion poiIndex) throws IOException {
+	void initCategories(PoiRegion poiIndex) throws IOException {
 		poiAdapter.initCategories(poiIndex);
 	}
 
@@ -1222,37 +1214,6 @@ public class BinaryMapIndexReader {
 			codedIS.popLimit(old);
 		}
 		return req.getSearchResults();
-	}
-
-	public Map<PoiCategory, List<String>> searchPoiCategoriesByName(String query, Map<PoiCategory, List<String>> map) throws IOException {
-		if (query == null || query.length() == 0) {
-			throw new IllegalArgumentException();
-		}
-		Collator collator = OsmAndCollator.primaryCollator();
-		for (PoiRegion poiIndex : poiIndexes) {
-			poiAdapter.initCategories(poiIndex);
-			for (int i = 0; i < poiIndex.categories.size(); i++) {
-				String cat = poiIndex.categories.get(i);
-				PoiCategory catType = poiIndex.categoriesType.get(i);
-				if (CollatorStringMatcher.cmatches(collator, cat, query, StringMatcherMode.CHECK_STARTS_FROM_SPACE)) {
-					map.put(catType, null);
-				} else {
-					List<String> subcats = poiIndex.subcategories.get(i);
-					for (int j = 0; j < subcats.size(); j++) {
-						if (CollatorStringMatcher.cmatches(collator, subcats.get(j), query, StringMatcherMode.CHECK_STARTS_FROM_SPACE)) {
-							if (!map.containsKey(catType)) {
-								map.put(catType, new ArrayList<String>());
-							}
-							List<String> list = map.get(catType);
-							if (list != null) {
-								list.add(subcats.get(j));
-							}
-						}
-					}
-				}
-			}
-		}
-		return map;
 	}
 
 	public List<Amenity> searchPoi(SearchRequest<Amenity> req) throws IOException {
@@ -1273,7 +1234,7 @@ public class BinaryMapIndexReader {
 		return req.getSearchResults();
 	}
 
-	public List<Amenity> searchPoi(PoiRegion poiIndex, SearchRequest<Amenity> req) throws IOException {
+	List<Amenity> searchPoi(PoiRegion poiIndex, SearchRequest<Amenity> req) throws IOException {
 		req.numberOfVisitedObjects = 0;
 		req.numberOfAcceptedObjects = 0;
 		req.numberOfAcceptedSubtrees = 0;
@@ -1368,7 +1329,7 @@ public class BinaryMapIndexReader {
 				for (int y = (int) topLeftY; y <= bottomRightY; y++) {
 					long hash = (((long) x) << SearchRequest.ZOOM_TO_SEARCH_POI) + y;
 					if (!zooms.containsKey(hash)) {
-						zooms.put(hash, new LinkedList<Location>());
+						zooms.put(hash, new LinkedList<>());
 					}
 					List<Location> ll = zooms.get(hash);
 					ll.add(pr);
@@ -1438,7 +1399,6 @@ public class BinaryMapIndexReader {
 		return request;
 	}
 
-
 	public static SearchRequest<TransportStop> buildSearchTransportRequest(int sleft, int sright, int stop, int sbottom, int limit, List<TransportStop> stops) {
 		SearchRequest<TransportStop> request = new SearchRequest<>();
 		if (stops != null) {
@@ -1472,17 +1432,17 @@ public class BinaryMapIndexReader {
 		boolean isEmpty();
 	}
 
-	public static class MapObjectStat {
-		public int lastStringNamesSize;
-		public int lastObjectIdSize;
-		public int lastObjectHeaderInfo;
-		public int lastObjectAdditionalTypes;
-		public int lastObjectTypes;
-		public int lastObjectCoordinates;
+	static class MapObjectStat {
+		int lastStringNamesSize;
+		int lastObjectIdSize;
+		int lastObjectHeaderInfo;
+		int lastObjectAdditionalTypes;
+		int lastObjectTypes;
+		int lastObjectCoordinates;
 
-		public int lastObjectSize;
-		public int lastBlockStringTableSize;
-		public int lastBlockHeaderInfo;
+		int lastObjectSize;
+		int lastBlockStringTableSize;
+		int lastBlockHeaderInfo;
 
 		void addBlockHeader(int typesFieldNumber, int sizeL) {
 			lastBlockHeaderInfo +=
@@ -1496,7 +1456,7 @@ public class BinaryMapIndexReader {
 							CodedOutputStream.computeRawVarint32Size(sizeL);
 		}
 
-		public void clearObjectStats() {
+		void clearObjectStats() {
 			lastStringNamesSize = 0;
 			lastObjectIdSize = 0;
 			lastObjectHeaderInfo = 0;
@@ -1531,11 +1491,9 @@ public class BinaryMapIndexReader {
 		TLongObjectHashMap<List<Location>> tiles = null;
 		double radius = -1;
 
-
 		String nameQuery = null;
 		StringMatcherMode matcherMode = StringMatcherMode.CHECK_STARTS_FROM_SPACE;
 		SearchFilter searchFilter = null;
-
 		SearchPoiTypeFilter poiTypeFilter = null;
 
 		// internal read information
@@ -1547,7 +1505,6 @@ public class BinaryMapIndexReader {
 
 		final MapObjectStat stat = new MapObjectStat();
 
-
 		// TRACE INFO
 		public boolean log = true;
 		int numberOfVisitedObjects = 0;
@@ -1556,11 +1513,10 @@ public class BinaryMapIndexReader {
 		int numberOfAcceptedSubtrees = 0;
 		boolean interrupted = false;
 
-
 		SearchRequest() {
 		}
 
-		public long getTileHashOnPath(double lat, double lon) {
+		long getTileHashOnPath(double lat, double lon) {
 			long x = (int) MapUtils.getTileNumberX(SearchRequest.ZOOM_TO_SEARCH_POI, lon);
 			long y = (int) MapUtils.getTileNumberY(SearchRequest.ZOOM_TO_SEARCH_POI, lat);
 			return (x << SearchRequest.ZOOM_TO_SEARCH_POI) | y;
@@ -1577,7 +1533,6 @@ public class BinaryMapIndexReader {
 			right = (int) (x31 + cf31);
 			top = (int) (y31 - cf31);
 			bottom = (int) (y31 + cf31);
-			
 		}
 
 		public boolean publish(T obj) {
@@ -1599,18 +1554,16 @@ public class BinaryMapIndexReader {
 		public List<T> getSearchResults() {
 			return searchResults;
 		}
-
 		public void setInterrupted(boolean interrupted) {
 			this.interrupted = interrupted;
 		}
-
-		public boolean limitExceeded() {
+		boolean limitExceeded() {
 			return limit != -1 && searchResults.size() > limit;
 		}
 
 		public boolean isCancelled() {
-			if (this.interrupted) {
-				return interrupted;
+			if (interrupted) {
+				return true;
 			}
 			if (resultMatcher != null) {
 				return resultMatcher.isCancelled();
@@ -1621,19 +1574,15 @@ public class BinaryMapIndexReader {
 		public boolean isOcean() {
 			return ocean;
 		}
-
 		public boolean isLand() {
 			return land;
 		}
-
 		public boolean intersects(int l, int t, int r, int b) {
 			return r >= left && l <= right && t <= bottom && b >= top;
 		}
-
 		public boolean contains(int l, int t, int r, int b) {
 			return r <= right && l >= left && b <= bottom && t >= top;
 		}
-
         public int getZoom() {
 			return zoom;
 		}
@@ -1651,25 +1600,20 @@ public class BinaryMapIndexReader {
 			numberOfAcceptedSubtrees = 0;
 		}
 
-		public boolean isBboxSpecified() {
+		boolean isBboxSpecified() {
 			return left != 0 || right != 0;
 		}
 	}
-
 
 	public static class MapIndex extends BinaryIndexPart {
 		final List<MapRoot> roots = new ArrayList<>();
 
 		final Map<String, Map<String, Integer>> encodingRules = new HashMap<>();
 		final TIntObjectMap<TagValuePair> decodingRules = new TIntObjectHashMap<>();
-		public int nameEncodingType = 0;
-		public int nameEnEncodingType = -1;
-		int refEncodingType = -1;
+		int nameEncodingType = 0;
 		public int coastlineEncodingType = -1;
 		public int coastlineBrokenEncodingType = -1;
 		public int landEncodingType = -1;
-		int onewayAttribute = -1;
-		int onewayReverseAttribute = -1;
 		final TIntHashSet positiveLayers = new TIntHashSet(2);
 		final TIntHashSet negativeLayers = new TIntHashSet(2);
 
@@ -1716,7 +1660,7 @@ public class BinaryMapIndexReader {
 
 		public void initMapEncodingRule(int type, int id, String tag, String val) {
 			if (!encodingRules.containsKey(tag)) {
-				encodingRules.put(tag, new HashMap<String, Integer>());
+				encodingRules.put(tag, new HashMap<>());
 			}
 			encodingRules.get(tag).put(val, id);
 			if (!decodingRules.containsKey(id)) {
@@ -1729,14 +1673,6 @@ public class BinaryMapIndexReader {
 				coastlineEncodingType = id;
 			} else if ("natural".equals(tag) && "land".equals(val)) {
 				landEncodingType = id;
-			} else if ("oneway".equals(tag) && "yes".equals(val)) {
-				onewayAttribute = id;
-			} else if ("oneway".equals(tag) && "-1".equals(val)) {
-				onewayReverseAttribute = id;
-			} else if ("ref".equals(tag)) {
-				refEncodingType = id;
-			} else if ("name:en".equals(tag)) {
-				nameEnEncodingType = id;
 			} else if ("tunnel".equals(tag)) {
 				negativeLayers.add(id);
 			} else if ("bridge".equals(tag)) {
@@ -1752,7 +1688,7 @@ public class BinaryMapIndexReader {
 			}
 		}
 
-		public boolean isBaseMap() {
+		boolean isBaseMap() {
             String BASEMAP_NAME = "basemap";
             return name != null && name.toLowerCase().contains(BASEMAP_NAME);
 		}
@@ -1781,7 +1717,7 @@ public class BinaryMapIndexReader {
 			return result;
 		}
 
-		public String toSimpleString() {
+		String toSimpleString() {
 			if (value == null) {
 				return tag;
 			}
@@ -1878,45 +1814,24 @@ public class BinaryMapIndexReader {
     public static void main(String[] args) throws IOException {
 //		File fl = new File(System.getProperty("maps") + "/Synthetic_test_rendering.obf");
 		File fl = new File(System.getProperty("maps") + "/Map.obf");
-		
 		RandomAccessFile raf = new RandomAccessFile(fl, "r");
-
 		BinaryMapIndexReader reader = new BinaryMapIndexReader(raf, fl);
 		println("VERSION " + reader.getVersion()); //$NON-NLS-1$
 		long time = System.currentTimeMillis();
 
-        boolean testMapSearch = false;
-        if (testMapSearch) {
-			testMapSearch(reader);
-		}
-        boolean testAddressSearchName = false;
-        if (testAddressSearchName) {
-			testAddressSearchByName(reader);
-		}
-        boolean testAddressSearch = false;
-        if (testAddressSearch) {
-			testAddressSearch(reader);
-		}
-        boolean testAddressJustifySearch = false;
-        if (testAddressJustifySearch) {
-			testAddressJustifySearch(reader);
-		}
-        boolean testTransportSearch = true;
-        if (testTransportSearch) {
-			testTransportSearch(reader);
-		}
+		testMapSearch(reader);
+		testAddressSearchByName(reader);
+		testAddressSearch(reader);
+		testAddressJustifySearch(reader);
+		testTransportSearch(reader);
 
-        boolean testPoiSearchOnPath = false;
-        boolean testPoiSearch = false;
-        if (testPoiSearch || testPoiSearchOnPath) {
+		{
 			PoiRegion poiRegion = reader.getPoiIndexes().get(0);
-			if (testPoiSearch) {
+			{
 				testPoiSearch(reader, poiRegion);
 				testPoiSearchByName(reader);
 			}
-			if (testPoiSearchOnPath) {
-				testSearchOnthePath(reader);
-			}
+			testSearchOnthePath(reader);
 		}
 
 		println("MEMORY " + (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory())); //$NON-NLS-1$
@@ -2185,18 +2100,14 @@ public class BinaryMapIndexReader {
 			}
 		}, streetName, StringMatcherMode.CHECK_EQUALS_FROM_SPACE);
 		reader.searchAddressDataByName(req);
-		TreeMap<MapObject, Street> resMap = new TreeMap<>(new Comparator<MapObject>() {
-
-            @Override
-            public int compare(MapObject o1, MapObject o2) {
-                LatLon l1 = o1.getLocation();
-                LatLon l2 = o2.getLocation();
-                if (l1 == null || l2 == null) {
-                    return l2 == l1 ? 0 : (l1 == null ? -1 : 1);
-                }
-                return Double.compare(MapUtils.getDistance(l1, lat, lon), MapUtils.getDistance(l2, lat, lon));
-            }
-        });
+		TreeMap<MapObject, Street> resMap = new TreeMap<>((o1, o2) -> {
+			LatLon l1 = o1.getLocation();
+			LatLon l2 = o2.getLocation();
+			if (l1 == null || l2 == null) {
+				return l2 == l1 ? 0 : (l1 == null ? -1 : 1);
+			}
+			return Double.compare(MapUtils.getDistance(l1, lat, lon), MapUtils.getDistance(l2, lat, lon));
+		});
 		for (Street s : streetsList) {
 			resMap.put(s, s);
 			reader.preloadBuildings(s, null);
@@ -2228,13 +2139,13 @@ public class BinaryMapIndexReader {
 			reader.preloadStreets(c, null);
 			for (Street s : c.getStreets()) {
 				updateFrequence(streetFreq, s.getName());
-				reader.preloadBuildings(s, buildAddressRequest((ResultMatcher<Building>) null));
+				reader.preloadBuildings(s, buildAddressRequest(null));
 				buildings += s.getBuildings().size();
 				println(s.getName() + " " + s.getName("ru"));
 			}
 			println(c.getName() + " " + c.getLocation() + " " + c.getStreets().size() + " " + buildings + " " + c.getEnName(true) + " " + c.getName("ru"));
 		}
-		List<City> villages = reader.getCities(buildAddressRequest((ResultMatcher<City>) null), BinaryMapAddressReaderAdapter.VILLAGES_TYPE);
+		List<City> villages = reader.getCities(buildAddressRequest(null), BinaryMapAddressReaderAdapter.VILLAGES_TYPE);
 		for (City v : villages) {
 			reader.preloadStreets(v, null);
 			for (Street s : v.getStreets()) {
@@ -2244,12 +2155,7 @@ public class BinaryMapIndexReader {
 		System.out.println("Villages " + villages.size());
 
 		List<String> sorted = new ArrayList<>(streetFreq.keySet());
-		Collections.sort(sorted, new Comparator<String>() {
-			@Override
-			public int compare(String o1, String o2) {
-				return -streetFreq.get(o1) + streetFreq.get(o2);
-			}
-		});
+		Collections.sort(sorted, (o1, o2) -> -streetFreq.get(o1) + streetFreq.get(o2));
 		System.out.println(streetFreq.size());
 		for (String s : sorted) {
 			System.out.println(s + "   " + streetFreq.get(s));
@@ -2344,8 +2250,7 @@ public class BinaryMapIndexReader {
 		req.numberOfReadSubtrees = 0;
 		if (routeAdapter != null) {
 			routeAdapter.initRouteTypesIfNeeded(req, list);
-			return routeAdapter.searchRouteRegionTree(req, list,
-					new ArrayList<BinaryMapRouteReaderAdapter.RouteSubregion>());
+			return routeAdapter.searchRouteRegionTree(req, list, new ArrayList<>());
 		}
 		return Collections.emptyList();
 	}

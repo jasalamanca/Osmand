@@ -20,21 +20,16 @@ public abstract class OsmandNotification {
 
 	final OsmandApplication app;
 	boolean ongoing = true;
-	int color;
 	int icon;
 	private boolean top;
 
-//	private final String groupName;
-
 	public enum NotificationType {
 		NAVIGATION,
-		GPX,
-		GPS
+		GPX
 	}
 
 	OsmandNotification(OsmandApplication app) {
 		this.app = app;
-//		this.groupName = groupName;
 		init();
 	}
 

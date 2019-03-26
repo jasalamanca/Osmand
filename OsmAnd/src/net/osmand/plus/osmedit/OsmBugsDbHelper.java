@@ -8,7 +8,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class OsmBugsDbHelper extends SQLiteOpenHelper {
+class OsmBugsDbHelper extends SQLiteOpenHelper {
 
 	private static final int DATABASE_VERSION = 1;
 	private static final String OSMBUGS_DB_NAME = "osmbugs"; //$NON-NLS-1$

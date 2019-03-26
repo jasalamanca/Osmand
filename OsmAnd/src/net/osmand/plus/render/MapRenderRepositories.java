@@ -446,33 +446,29 @@ public class MapRenderRepositories {
 			ArrayList<BinaryMapDataObject> tempResult, ArrayList<BinaryMapDataObject> basemapResult, 
 			TLongSet ids, int[] count, boolean[] ocean, boolean[] land, List<BinaryMapDataObject> coastLines,
 			List<BinaryMapDataObject> basemapCoastLines, int leftX, int rightX, int bottomY, int topY) {
-		BinaryMapIndexReader.SearchFilter searchFilter = new BinaryMapIndexReader.SearchFilter() {
-			@Override
-			public boolean accept(TIntArrayList types, BinaryMapIndexReader.MapIndex root) {
-				for (int j = 0; j < types.size(); j++) {
-					int type = types.get(j);
-					TagValuePair pair = root.decodeType(type);
-					if (pair != null) {
-						// TODO is it fast enough ?
-						for (int i = 1; i <= 3; i++) {
-							renderingReq.setIntFilter(renderingReq.ALL.R_MINZOOM, zoom);
-							renderingReq.setStringFilter(renderingReq.ALL.R_TAG, pair.tag);
-							renderingReq.setStringFilter(renderingReq.ALL.R_VALUE, pair.value);
-							if (renderingReq.search(i, false)) {
-								return true;
-							}
-						}
-						renderingReq.setStringFilter(renderingReq.ALL.R_TAG, pair.tag);
-						renderingReq.setStringFilter(renderingReq.ALL.R_VALUE, pair.value);
-						if (renderingReq.search(RenderingRulesStorage.TEXT_RULES, false)) {
-							return true;
-						}
-					}
-				}
-				return false;
-			}
-
-		};
+		BinaryMapIndexReader.SearchFilter searchFilter = (types, root) -> {
+            for (int j = 0; j < types.size(); j++) {
+                int type = types.get(j);
+                TagValuePair pair = root.decodeType(type);
+                if (pair != null) {
+                    // TODO is it fast enough ?
+                    for (int i = 1; i <= 3; i++) {
+                        renderingReq.setIntFilter(renderingReq.ALL.R_MINZOOM, zoom);
+                        renderingReq.setStringFilter(renderingReq.ALL.R_TAG, pair.tag);
+                        renderingReq.setStringFilter(renderingReq.ALL.R_VALUE, pair.value);
+                        if (renderingReq.search(i, false)) {
+                            return true;
+                        }
+                    }
+                    renderingReq.setStringFilter(renderingReq.ALL.R_TAG, pair.tag);
+                    renderingReq.setStringFilter(renderingReq.ALL.R_VALUE, pair.value);
+                    if (renderingReq.search(RenderingRulesStorage.TEXT_RULES, false)) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        };
 		if (zoom > 16) {
 			searchFilter = null;
 		}
@@ -760,34 +756,21 @@ public class MapRenderRepositories {
 				}
 				final String msg = timeInfo;
 				log.info(msg);
-				handler.post(new Runnable() {
-					@Override
-					public void run() {
-						Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
-					}
-				});
+				handler.post(() -> Toast.makeText(context, msg, Toast.LENGTH_LONG).show());
 			}
 		} catch (RuntimeException e) {
 			log.error("Runtime memory exception", e); //$NON-NLS-1$
-			handler.post(new Runnable() {
-				@Override
-				public void run() {
-					Toast.makeText(context, R.string.rendering_exception, Toast.LENGTH_SHORT).show();
-				}
-			});
+			handler.post(() -> Toast.makeText(context, R.string.rendering_exception, Toast.LENGTH_SHORT).show());
 		} catch (OutOfMemoryError e) {
 			log.error("Out of memory error", e); //$NON-NLS-1$
 //			cObjects = new ArrayList<>();
 			cObjectsBox = new QuadRect();
-			handler.post(new Runnable() {
-				@Override
-				public void run() {
-					int max = (int) (Runtime.getRuntime().maxMemory() / (1 << 20));
-					int avl = (int) (Runtime.getRuntime().freeMemory() / (1 << 20));
-					String s = " (" + avl + " MB available of " + max  + ") ";
-					Toast.makeText(context, context.getString(R.string.rendering_out_of_memory) + s , Toast.LENGTH_SHORT).show();
-				}
-			});
+			handler.post(() -> {
+                int max = (int) (Runtime.getRuntime().maxMemory() / (1 << 20));
+                int avl = (int) (Runtime.getRuntime().freeMemory() / (1 << 20));
+                String s = " (" + avl + " MB available of " + max  + ") ";
+                Toast.makeText(context, context.getString(R.string.rendering_out_of_memory) + s , Toast.LENGTH_SHORT).show();
+            });
 		}
 	}
 

@@ -231,14 +231,11 @@ public class ItemViewHolder {
 		builder.setTitle(R.string.are_you_sure);
 		builder.setMessage(R.string.confirm_download_roadmaps);
 		builder.setNegativeButton(R.string.shared_string_cancel, null).setPositiveButton(
-				R.string.shared_string_download, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						if (indexItem != null) {
-							context.startDownload(indexItem);
-						}
-					}
-				});
+				R.string.shared_string_download, (dialog, which) -> {
+                    if (indexItem != null) {
+                        context.startDownload(indexItem);
+                    }
+                });
 		builder.show();
 	}
 
@@ -282,37 +279,31 @@ public class ItemViewHolder {
 
 	public OnClickListener getRightButtonAction(final IndexItem item, final RightButtonAction clickAction) {
 		if (clickAction != RightButtonAction.DOWNLOAD) {
-			return new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					switch (clickAction) {
-						case ASK_FOR_FULL_VERSION_PURCHASE:
-							context.getMyApplication().logEvent(context, "in_app_purchase_show_from_wiki_context_menu");
-							context.purchaseFullVersion();
-							break;
-						case DOWNLOAD:
-							break;
-					}
-				}
-			};
+			return v -> {
+                switch (clickAction) {
+                    case ASK_FOR_FULL_VERSION_PURCHASE:
+                        context.getMyApplication().logEvent(context, "in_app_purchase_show_from_wiki_context_menu");
+                        context.purchaseFullVersion();
+                        break;
+                    case DOWNLOAD:
+                        break;
+                }
+            };
 		} else {
 			final boolean isDownloading = context.getDownloadThread().isDownloading(item);
-			return new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					if(isDownloading) {
-						if(silentCancelDownload) {
-							context.getDownloadThread().cancelDownload(item);
-						} else {
-							context.makeSureUserCancelDownload(item);
-						}
-					} else if(item.isDownloaded() && !item.isOutdated()){
-						contextMenu(v, item, item.getRelatedGroup());
-					} else {
-						download(item, item.getRelatedGroup());
-					}
-				}
-			};
+			return v -> {
+                if(isDownloading) {
+                    if(silentCancelDownload) {
+                        context.getDownloadThread().cancelDownload(item);
+                    } else {
+                        context.makeSureUserCancelDownload(item);
+                    }
+                } else if(item.isDownloaded() && !item.isOutdated()){
+                    contextMenu(v, item, item.getRelatedGroup());
+                } else {
+                    download(item, item.getRelatedGroup());
+                }
+            };
 		}
 	}
 
@@ -324,47 +315,36 @@ public class ItemViewHolder {
 		if (fl.exists()) {
 			item = optionsMenu.getMenu().add(R.string.shared_string_remove).setIcon(
 							context.getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_remove_dark));
-			item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-				@Override
-				public boolean onMenuItemClick(MenuItem item) {
-					LocalIndexType tp = LocalIndexType.MAP_DATA;
-					if (indexItem.getType() == DownloadActivityType.ROADS_FILE) {
-						tp = LocalIndexType.MAP_DATA;
-					} else if (indexItem.getType() == DownloadActivityType.WIKIPEDIA_FILE) {
-						tp = LocalIndexType.MAP_DATA;
-					} else if (indexItem.getType() == DownloadActivityType.FONT_FILE) {
-						tp = LocalIndexType.FONT_DATA;
-					} else if (indexItem.getType() == DownloadActivityType.VOICE_FILE) {
-						tp = indexItem.getBasename().contains("tts") ? LocalIndexType.TTS_VOICE_DATA
-								: LocalIndexType.VOICE_DATA;
-					}
-					final LocalIndexInfo info = new LocalIndexInfo(tp, fl, false);
-					AlertDialog.Builder confirm = new AlertDialog.Builder(context);
-					confirm.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							new LocalIndexOperationTask(context, null, LocalIndexOperationTask.DELETE_OPERATION)
-									.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, info);
-						}
-					});
-					confirm.setNegativeButton(R.string.shared_string_no, null);
-					String fn = FileNameTranslationHelper.getFileName(context, context.getMyApplication().getRegions(),
-							indexItem.getVisibleName(context, context.getMyApplication().getRegions()));
-					confirm.setMessage(context.getString(R.string.delete_confirmation_msg, fn));
-					confirm.show();
-					return true;
-				}
-			});
+			item.setOnMenuItemClickListener(item12 -> {
+                LocalIndexType tp = LocalIndexType.MAP_DATA;
+                if (indexItem.getType() == DownloadActivityType.ROADS_FILE) {
+                    tp = LocalIndexType.MAP_DATA;
+                } else if (indexItem.getType() == DownloadActivityType.WIKIPEDIA_FILE) {
+                    tp = LocalIndexType.MAP_DATA;
+                } else if (indexItem.getType() == DownloadActivityType.FONT_FILE) {
+                    tp = LocalIndexType.FONT_DATA;
+                } else if (indexItem.getType() == DownloadActivityType.VOICE_FILE) {
+                    tp = indexItem.getBasename().contains("tts") ? LocalIndexType.TTS_VOICE_DATA
+                            : LocalIndexType.VOICE_DATA;
+                }
+                final LocalIndexInfo info = new LocalIndexInfo(tp, fl, false);
+                AlertDialog.Builder confirm = new AlertDialog.Builder(context);
+                confirm.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> new LocalIndexOperationTask(context, null, LocalIndexOperationTask.DELETE_OPERATION)
+                        .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, info));
+                confirm.setNegativeButton(R.string.shared_string_no, null);
+                String fn = FileNameTranslationHelper.getFileName(context, context.getMyApplication().getRegions(),
+                        indexItem.getVisibleName(context, context.getMyApplication().getRegions()));
+                confirm.setMessage(context.getString(R.string.delete_confirmation_msg, fn));
+                confirm.show();
+                return true;
+            });
 		}
 		item = optionsMenu.getMenu().add(R.string.shared_string_download)
 				.setIcon(context.getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_import));
-		item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-			@Override
-			public boolean onMenuItemClick(MenuItem item) {
-				download(indexItem, parentOptional);
-				return true;
-			}
-		});
+		item.setOnMenuItemClickListener(item1 -> {
+            download(indexItem, parentOptional);
+            return true;
+        });
 		
 		optionsMenu.show();
 	}

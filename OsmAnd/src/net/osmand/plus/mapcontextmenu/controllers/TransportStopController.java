@@ -105,20 +105,16 @@ public class TransportStopController extends MenuController {
 				}
 			}
 		}
-		Collections.sort(routes, new Comparator<TransportStopRoute>() {
-
-			@Override
-			public int compare(TransportStopRoute o1, TransportStopRoute o2) {
-				if(o1.distance != o2.distance) {
-					return Algorithms.compare(o1.distance, o2.distance);
-				}
-				int i1 = Algorithms.extractFirstIntegerNumber(o1.desc);
-				int i2 = Algorithms.extractFirstIntegerNumber(o2.desc);
-				if(i1 != i2) {
-					return Algorithms.compare(i1, i2);
-				}
-				return o1.desc.compareTo(o2.desc);
+		Collections.sort(routes, (o1, o2) -> {
+			if(o1.distance != o2.distance) {
+				return Algorithms.compare(o1.distance, o2.distance);
 			}
+			int i1 = Algorithms.extractFirstIntegerNumber(o1.desc);
+			int i2 = Algorithms.extractFirstIntegerNumber(o2.desc);
+			if(i1 != i2) {
+				return Algorithms.compare(i1, i2);
+			}
+			return o1.desc.compareTo(o2.desc);
 		});
 
 		return routes;

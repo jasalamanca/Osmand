@@ -160,16 +160,13 @@ public class MapMarkersHistoryFragment extends Fragment implements MapMarkersHel
 						snackbarStringRes = R.string.item_removed;
 					}
 					snackbar = Snackbar.make(viewHolder.itemView, snackbarStringRes, Snackbar.LENGTH_LONG)
-							.setAction(R.string.shared_string_undo, new View.OnClickListener() {
-								@Override
-								public void onClick(View view) {
-									if (direction == ItemTouchHelper.LEFT) {
-										app.getMapMarkersHelper().moveMapMarkerToHistory(marker);
-									} else {
-										app.getMapMarkersHelper().addMarker(marker);
-									}
-								}
-							});
+							.setAction(R.string.shared_string_undo, view -> {
+                                if (direction == ItemTouchHelper.LEFT) {
+                                    app.getMapMarkersHelper().moveMapMarkerToHistory(marker);
+                                } else {
+                                    app.getMapMarkersHelper().addMarker(marker);
+                                }
+                            });
 					View snackBarView = snackbar.getView();
 					TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
 					tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
@@ -181,29 +178,26 @@ public class MapMarkersHistoryFragment extends Fragment implements MapMarkersHel
 		itemTouchHelper.attachToRecyclerView(recyclerView);
 
 		adapter = new MapMarkersHistoryAdapter(mapActivity.getMyApplication());
-		adapter.setAdapterListener(new MapMarkersHistoryAdapter.MapMarkersHistoryAdapterListener() {
-			@Override
-			public void onItemClick(View view) {
-				int pos = recyclerView.getChildAdapterPosition(view);
-				if (pos == RecyclerView.NO_POSITION) {
-					return;
-				}
-				Object item = adapter.getItem(pos);
-				if (item instanceof MapMarker) {
-					MapMarker marker = (MapMarker) item;
-					HistoryMarkerMenuBottomSheetDialogFragment fragment = new HistoryMarkerMenuBottomSheetDialogFragment();
-					fragment.setUsedOnMap(false);
-					Bundle arguments = new Bundle();
-					arguments.putInt(HistoryMarkerMenuBottomSheetDialogFragment.MARKER_POSITION, pos);
-					arguments.putString(HistoryMarkerMenuBottomSheetDialogFragment.MARKER_NAME, marker.getName(mapActivity));
-					arguments.putInt(HistoryMarkerMenuBottomSheetDialogFragment.MARKER_COLOR_INDEX, marker.colorIndex);
-					arguments.putLong(HistoryMarkerMenuBottomSheetDialogFragment.MARKER_VISITED_DATE, marker.visitedDate);
-					fragment.setArguments(arguments);
-					fragment.setListener(createHistoryMarkerMenuListener());
-					fragment.show(mapActivity.getSupportFragmentManager(), HistoryMarkerMenuBottomSheetDialogFragment.TAG);
-				}
-			}
-		});
+		adapter.setAdapterListener(view -> {
+            int pos = recyclerView.getChildAdapterPosition(view);
+            if (pos == RecyclerView.NO_POSITION) {
+                return;
+            }
+            Object item = adapter.getItem(pos);
+            if (item instanceof MapMarker) {
+                MapMarker marker = (MapMarker) item;
+                HistoryMarkerMenuBottomSheetDialogFragment fragment = new HistoryMarkerMenuBottomSheetDialogFragment();
+                fragment.setUsedOnMap(false);
+                Bundle arguments = new Bundle();
+                arguments.putInt(HistoryMarkerMenuBottomSheetDialogFragment.MARKER_POSITION, pos);
+                arguments.putString(HistoryMarkerMenuBottomSheetDialogFragment.MARKER_NAME, marker.getName(mapActivity));
+                arguments.putInt(HistoryMarkerMenuBottomSheetDialogFragment.MARKER_COLOR_INDEX, marker.colorIndex);
+                arguments.putLong(HistoryMarkerMenuBottomSheetDialogFragment.MARKER_VISITED_DATE, marker.visitedDate);
+                fragment.setArguments(arguments);
+                fragment.setListener(createHistoryMarkerMenuListener());
+                fragment.show(mapActivity.getSupportFragmentManager(), HistoryMarkerMenuBottomSheetDialogFragment.TAG);
+            }
+        });
 		final View emptyView = mainView.findViewById(R.id.empty_view);
 		ImageView emptyImageView = emptyView.findViewById(R.id.empty_state_image_view);
 		emptyImageView.setImageResource(night ? R.drawable.ic_empty_state_marker_history_night : R.drawable.ic_empty_state_marker_history_day);

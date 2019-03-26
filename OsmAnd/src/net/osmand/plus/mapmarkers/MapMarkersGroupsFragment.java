@@ -197,17 +197,14 @@ public class MapMarkersGroupsFragment extends Fragment implements OsmAndCompassL
 					}
 					updateAdapter();
 					snackbar = Snackbar.make(viewHolder.itemView, snackbarStringRes, Snackbar.LENGTH_LONG)
-							.setAction(R.string.shared_string_undo, new View.OnClickListener() {
-								@Override
-								public void onClick(View view) {
-									if (direction == ItemTouchHelper.RIGHT) {
-										mapActivity.getMyApplication().getMapMarkersHelper().restoreMarkerFromHistory(marker, 0);
-									} else {
-										mapActivity.getMyApplication().getMapMarkersHelper().addMarker(marker);
-									}
-									updateAdapter();
-								}
-							});
+							.setAction(R.string.shared_string_undo, view -> {
+                                if (direction == ItemTouchHelper.RIGHT) {
+                                    mapActivity.getMyApplication().getMapMarkersHelper().restoreMarkerFromHistory(marker, 0);
+                                } else {
+                                    mapActivity.getMyApplication().getMapMarkersHelper().addMarker(marker);
+                                }
+                                updateAdapter();
+                            });
 					View snackBarView = snackbar.getView();
 					TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
 					tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
@@ -301,23 +298,13 @@ public class MapMarkersGroupsFragment extends Fragment implements OsmAndCompassL
 		});
 
 		final View emptyView = mainView.findViewById(R.id.empty_view);
-		mainView.findViewById(R.id.import_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				openAddGroupMenu();
-			}
-		});
+		mainView.findViewById(R.id.import_button).setOnClickListener(view -> openAddGroupMenu());
 		ImageView emptyImageView = emptyView.findViewById(R.id.empty_state_image_view);
 		emptyImageView.setImageResource(night ? R.drawable.ic_empty_state_marker_group_night : R.drawable.ic_empty_state_marker_group_day);
 		recyclerView.setEmptyView(emptyView);
 		recyclerView.setAdapter(adapter);
 
-		mainView.findViewById(R.id.add_group_fab).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				openAddGroupMenu();
-			}
-		});
+		mainView.findViewById(R.id.add_group_fab).setOnClickListener(view -> openAddGroupMenu());
 
 		if (groupIdToOpen != null) {
 			int groupHeaderPosition = adapter.getGroupHeaderPosition(groupIdToOpen);
@@ -378,12 +365,7 @@ public class MapMarkersGroupsFragment extends Fragment implements OsmAndCompassL
 	}
 
 	private AddGroupBottomSheetDialogFragment.AddGroupListener createAddGroupListener() {
-		return new AddGroupBottomSheetDialogFragment.AddGroupListener() {
-			@Override
-			public void onGroupAdded() {
-				updateAdapter();
-			}
-		};
+		return () -> updateAdapter();
 	}
 
 	private AddMarkersGroupFragmentListener createAddMarkersGroupFragmentListener() {
@@ -491,21 +473,18 @@ public class MapMarkersGroupsFragment extends Fragment implements OsmAndCompassL
 		}
 		final MapActivity mapActivity = (MapActivity) getActivity();
 		if (mapActivity != null && adapter != null) {
-			mapActivity.getMyApplication().runInUIThread(new Runnable() {
-				@Override
-				public void run() {
-					if (location == null) {
-						location = mapActivity.getMyApplication().getLocationProvider().getLastKnownLocation();
-					}
-					MapViewTrackingUtilities utilities = mapActivity.getMapViewTrackingUtilities();
-					boolean useCenter = !(utilities.isMapLinkedToLocation() && location != null);
+			mapActivity.getMyApplication().runInUIThread(() -> {
+                if (location == null) {
+                    location = mapActivity.getMyApplication().getLocationProvider().getLastKnownLocation();
+                }
+                MapViewTrackingUtilities utilities = mapActivity.getMapViewTrackingUtilities();
+                boolean useCenter = !(utilities.isMapLinkedToLocation() && location != null);
 
-					adapter.setUseCenter(useCenter);
-					adapter.setLocation(useCenter ? mapActivity.getMapLocation() : new LatLon(location.getLatitude(), location.getLongitude()));
-					adapter.setHeading(useCenter ? -mapActivity.getMapRotate() : heading != null ? heading : 99);
-					adapter.notifyDataSetChanged();
-				}
-			});
+                adapter.setUseCenter(useCenter);
+                adapter.setLocation(useCenter ? mapActivity.getMapLocation() : new LatLon(location.getLatitude(), location.getLongitude()));
+                adapter.setHeading(useCenter ? -mapActivity.getMapRotate() : heading != null ? heading : 99);
+                adapter.notifyDataSetChanged();
+            });
 		}
 	}
 }

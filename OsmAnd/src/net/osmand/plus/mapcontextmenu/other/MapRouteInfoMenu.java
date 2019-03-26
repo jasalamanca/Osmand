@@ -107,12 +107,7 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 		mapView = mapActivity.getMapView();
 		routingHelper.addListener(this);
 		geocodingLookupService = mapActivity.getMyApplication().getGeocodingLookupService();
-		onMarkerSelectListener = new OnMarkerSelectListener() {
-			@Override
-			public void onSelect(int index, boolean target) {
-				selectMapMarker(index, target);
-			}
-		};
+		onMarkerSelectListener = (index, target) -> selectMapMarker(index, target);
 	}
 
 // --Commented out by Inspection START (7/01/19 18:06):
@@ -241,23 +236,20 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 		ViewGroup vg = parentView.findViewById(R.id.app_modes);
 		vg.removeAllViews();
 		AppModeDialog.prepareAppModeView(mapActivity, selected, false,
-				vg, true, false,true, new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						if (selected.size() > 0) {
-							ApplicationMode next = selected.iterator().next();
-							OsmandPreference<ApplicationMode> appMode
-									= mapActivity.getMyApplication().getSettings().APPLICATION_MODE;
-							if (routingHelper.isFollowingMode() && appMode.get() == am) {
-								appMode.set(next);
-								//updateMenu();
-							}
-							routingHelper.setAppMode(next);
-							mapActivity.getMyApplication().initVoiceCommandPlayer(mapActivity, next, true, null, false, false);
-							routingHelper.recalculateRouteDueToSettingsChange();
-						}
-					}
-				});
+				vg, true, false,true, v -> {
+                    if (selected.size() > 0) {
+                        ApplicationMode next = selected.iterator().next();
+                        OsmandPreference<ApplicationMode> appMode
+                                = mapActivity.getMyApplication().getSettings().APPLICATION_MODE;
+                        if (routingHelper.isFollowingMode() && appMode.get() == am) {
+                            appMode.set(next);
+                            //updateMenu();
+                        }
+                        routingHelper.setAppMode(next);
+                        mapActivity.getMyApplication().initVoiceCommandPlayer(mapActivity, next, true, null, false, false);
+                        routingHelper.recalculateRouteDueToSettingsChange();
+                    }
+                });
 	}
 
 	private void updateViaView(final View parentView) {
@@ -276,85 +268,73 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 			((TextView) parentView.findViewById(R.id.ViaView)).setText(via);
 		}
 
-		viaLayout.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (getTargets().checkPointToNavigateShort()) {
-					mapActivity.getMapActions().openIntermediatePointsDialog();
-				}
-			}
-		});
+		viaLayout.setOnClickListener(v -> {
+            if (getTargets().checkPointToNavigateShort()) {
+                mapActivity.getMapActions().openIntermediatePointsDialog();
+            }
+        });
 
 		ImageView viaIcon = parentView.findViewById(R.id.viaIcon);
 		viaIcon.setImageDrawable(getIconOrig(R.drawable.list_intermediate));
 
 		swapDirectionView.setImageDrawable(mapActivity.getMyApplication().getIconsCache().getIcon(R.drawable.ic_action_change_navigation_points,
 				isLight() ? R.color.route_info_control_icon_color_light : R.color.route_info_control_icon_color_dark));
-		swapDirectionView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				TargetPointsHelper targetPointsHelper = getTargets();
-				TargetPoint startPoint = targetPointsHelper.getPointToStart();
-				TargetPoint endPoint = targetPointsHelper.getPointToNavigate();
+		swapDirectionView.setOnClickListener(view -> {
+            TargetPointsHelper targetPointsHelper = getTargets();
+            TargetPoint startPoint = targetPointsHelper.getPointToStart();
+            TargetPoint endPoint = targetPointsHelper.getPointToNavigate();
 
-				if (startPoint == null) {
-					Location loc = mapActivity.getMyApplication().getLocationProvider().getLastKnownLocation();
-					if (loc != null) {
-						startPoint = TargetPoint.createStartPoint(new LatLon(loc.getLatitude(), loc.getLongitude()),
-								new PointDescription(PointDescription.POINT_TYPE_MY_LOCATION,
-										mapActivity.getString(R.string.shared_string_my_location)));
-					}
-				}
+            if (startPoint == null) {
+                Location loc = mapActivity.getMyApplication().getLocationProvider().getLastKnownLocation();
+                if (loc != null) {
+                    startPoint = TargetPoint.createStartPoint(new LatLon(loc.getLatitude(), loc.getLongitude()),
+                            new PointDescription(PointDescription.POINT_TYPE_MY_LOCATION,
+                                    mapActivity.getString(R.string.shared_string_my_location)));
+                }
+            }
 
-				if (startPoint != null && endPoint != null) {
-					targetPointsHelper.navigateToPoint(startPoint.point, false, -1, startPoint.getPointDescription(mapActivity));
-					targetPointsHelper.setStartPoint(endPoint.point, false, endPoint.getPointDescription(mapActivity));
-					targetPointsHelper.updateRouteAndRefresh(true);
+            if (startPoint != null && endPoint != null) {
+                targetPointsHelper.navigateToPoint(startPoint.point, false, -1, startPoint.getPointDescription(mapActivity));
+                targetPointsHelper.setStartPoint(endPoint.point, false, endPoint.getPointDescription(mapActivity));
+                targetPointsHelper.updateRouteAndRefresh(true);
 
-					updateFromIcon();
-					updateToIcon(parentView);
-				}
-			}
-		});
+                updateFromIcon();
+                updateToIcon(parentView);
+            }
+        });
 	}
 
 	private void updateToSpinner(final View parentView) {
 		final Spinner toSpinner = setupToSpinner(parentView);
 		toSpinner.setClickable(false);
 		final View toLayout = parentView.findViewById(R.id.ToLayout);
-		toSpinner.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				event.offsetLocation(AndroidUtils.dpToPx(mapActivity, 48f), 0);
-				toLayout.onTouchEvent(event);
-				return true;
-			}
-		});
+		toSpinner.setOnTouchListener((v, event) -> {
+            event.offsetLocation(AndroidUtils.dpToPx(mapActivity, 48f), 0);
+            toLayout.onTouchEvent(event);
+            return true;
+        });
 		toSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view, int position, final long id) {
-				parentView.post(new Runnable() {
-					@Override
-					public void run() {
-						if (id == SPINNER_FAV_ID) {
-							selectFavorite(parentView, true);
-						} else if (id == SPINNER_MAP_ID) {
-							selectOnScreen(true);
-						} else if (id == SPINNER_ADDRESS_ID) {
-							mapActivity.showQuickSearch(MapActivity.ShowQuickSearchMode.DESTINATION_SELECTION, false);
-							setupToSpinner(parentView);
-						} else if (id == SPINNER_MAP_MARKER_MORE_ID) {
-							selectMapMarker(-1, true);
-							setupToSpinner(parentView);
-						} else if (id == SPINNER_MAP_MARKER_1_ID) {
-							selectMapMarker(0, true);
-						} else if (id == SPINNER_MAP_MARKER_2_ID) {
-							selectMapMarker(1, true);
-						} else if (id == SPINNER_MAP_MARKER_3_ID) {
-							selectMapMarker(2, true);
-						}
-					}
-				});
+				parentView.post(() -> {
+                    if (id == SPINNER_FAV_ID) {
+                        selectFavorite(parentView, true);
+                    } else if (id == SPINNER_MAP_ID) {
+                        selectOnScreen(true);
+                    } else if (id == SPINNER_ADDRESS_ID) {
+                        mapActivity.showQuickSearch(MapActivity.ShowQuickSearchMode.DESTINATION_SELECTION, false);
+                        setupToSpinner(parentView);
+                    } else if (id == SPINNER_MAP_MARKER_MORE_ID) {
+                        selectMapMarker(-1, true);
+                        setupToSpinner(parentView);
+                    } else if (id == SPINNER_MAP_MARKER_1_ID) {
+                        selectMapMarker(0, true);
+                    } else if (id == SPINNER_MAP_MARKER_2_ID) {
+                        selectMapMarker(1, true);
+                    } else if (id == SPINNER_MAP_MARKER_3_ID) {
+                        selectMapMarker(2, true);
+                    }
+                });
 			}
 
 			@Override
@@ -362,12 +342,7 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 			}
 		});
 
-		toLayout.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				toSpinner.performClick();
-			}
-		});
+		toLayout.setOnClickListener(v -> toSpinner.performClick());
 
 		updateToIcon(parentView);
 
@@ -385,46 +360,40 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 		final Spinner fromSpinner = setupFromSpinner(parentView);
 		fromSpinner.setClickable(false);
 		final View fromLayout = parentView.findViewById(R.id.FromLayout);
-		fromSpinner.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				event.offsetLocation(AndroidUtils.dpToPx(mapActivity, 48f), 0);
-				fromLayout.onTouchEvent(event);
-				return true;
-			}
-		});
+		fromSpinner.setOnTouchListener((v, event) -> {
+            event.offsetLocation(AndroidUtils.dpToPx(mapActivity, 48f), 0);
+            fromLayout.onTouchEvent(event);
+            return true;
+        });
 		fromSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view, int position, final long id) {
-				parentView.post(new Runnable() {
-					@Override
-					public void run() {
-						if (id == SPINNER_MY_LOCATION_ID) {
-							if (targets.getPointToStart() != null) {
-								targets.clearStartPoint(true);
-								mapActivity.getMyApplication().getSettings().backupPointToStart();
-							}
-							updateFromIcon(parentView);
-						} else if (id == SPINNER_FAV_ID) {
-							selectFavorite(parentView, false);
-						} else if (id == SPINNER_MAP_ID) {
-							selectOnScreen(false);
-						} else if (id == SPINNER_ADDRESS_ID) {
-							mapActivity.showQuickSearch(MapActivity.ShowQuickSearchMode.START_POINT_SELECTION, false);
-							setupFromSpinner(parentView);
-						} else if (id == SPINNER_MAP_MARKER_MORE_ID) {
-							selectMapMarker(-1, false);
-							setupFromSpinner(parentView);
-						} else if (id == SPINNER_MAP_MARKER_1_ID) {
-							selectMapMarker(0, false);
-						} else if (id == SPINNER_MAP_MARKER_2_ID) {
-							selectMapMarker(1, false);
-						} else if (id == SPINNER_MAP_MARKER_3_ID) {
-							selectMapMarker(2, false);
-						}
-					}
-				});
+				parentView.post(() -> {
+                    if (id == SPINNER_MY_LOCATION_ID) {
+                        if (targets.getPointToStart() != null) {
+                            targets.clearStartPoint(true);
+                            mapActivity.getMyApplication().getSettings().backupPointToStart();
+                        }
+                        updateFromIcon(parentView);
+                    } else if (id == SPINNER_FAV_ID) {
+                        selectFavorite(parentView, false);
+                    } else if (id == SPINNER_MAP_ID) {
+                        selectOnScreen(false);
+                    } else if (id == SPINNER_ADDRESS_ID) {
+                        mapActivity.showQuickSearch(MapActivity.ShowQuickSearchMode.START_POINT_SELECTION, false);
+                        setupFromSpinner(parentView);
+                    } else if (id == SPINNER_MAP_MARKER_MORE_ID) {
+                        selectMapMarker(-1, false);
+                        setupFromSpinner(parentView);
+                    } else if (id == SPINNER_MAP_MARKER_1_ID) {
+                        selectMapMarker(0, false);
+                    } else if (id == SPINNER_MAP_MARKER_2_ID) {
+                        selectMapMarker(1, false);
+                    } else if (id == SPINNER_MAP_MARKER_3_ID) {
+                        selectMapMarker(2, false);
+                    }
+                });
 			}
 
 			@Override
@@ -432,12 +401,7 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 			}
 		});
 
-		fromLayout.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				fromSpinner.performClick();
-			}
-		});
+		fromLayout.setOnClickListener(v -> fromSpinner.performClick());
 
 		updateFromIcon(parentView);
 
@@ -471,17 +435,13 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 				.getFavorites().getVisibleFavouritePoints(), false);
 		Dialog[] dlgHolder = new Dialog[1];
 		OnItemClickListener click = getOnFavoriteClickListener(target, favouritesAdapter, dlgHolder);
-		OnDismissListener dismissListener = new DialogInterface.OnDismissListener() {
-
-			@Override
-			public void onDismiss(DialogInterface dialog) {
-				if (target) {
-					setupToSpinner(parentView);
-				} else {
-					setupFromSpinner(parentView);
-				}
-			}
-		};
+		OnDismissListener dismissListener = dialog -> {
+            if (target) {
+                setupToSpinner(parentView);
+            } else {
+                setupFromSpinner(parentView);
+            }
+        };
 		favouritesAdapter.updateLocation(mapActivity.getMapLocation());
 		FavoriteDialogs.showFavoritesDialog(mapActivity, favouritesAdapter, click, dismissListener, dlgHolder, true);
 	}
@@ -515,23 +475,19 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 
 	private OnItemClickListener getOnFavoriteClickListener(final boolean target, final FavouritesAdapter favouritesAdapter,
 														   final Dialog[] dlg) {
-		return new AdapterView.OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				FavouritePoint fp = favouritesAdapter.getItem(position);
-				LatLon point = new LatLon(fp.getLatitude(), fp.getLongitude());
-				if (target) {
-					getTargets().navigateToPoint(point, true, -1, fp.getPointDescription());
-				} else {
-					getTargets().setStartPoint(point, true, fp.getPointDescription());
-				}
-				if (dlg != null && dlg.length > 0 && dlg[0] != null) {
-					dlg[0].dismiss();
-				}
-				updateFromIcon();
-			}
-		};
+		return (parent, view, position, id) -> {
+            FavouritePoint fp = favouritesAdapter.getItem(position);
+            LatLon point = new LatLon(fp.getLatitude(), fp.getLongitude());
+            if (target) {
+                getTargets().navigateToPoint(point, true, -1, fp.getPointDescription());
+            } else {
+                getTargets().setStartPoint(point, true, fp.getPointDescription());
+            }
+            if (dlg != null && dlg.length > 0 && dlg[0] != null) {
+                dlg[0].dismiss();
+            }
+            updateFromIcon();
+        };
 	}
 
 	public static int getDirectionInfo() {
@@ -565,54 +521,40 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 		prev.setImageDrawable(ctx.getIconsCache().getIcon(R.drawable.ic_prev, isLight()));
 		if (directionInfo >= 0) {
 			prev.setVisibility(View.VISIBLE);
-			prev.setOnClickListener(new View.OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					if (directionInfo >= 0) {
-						directionInfo--;
-					}
-					if (routingHelper.getRouteDirections() != null && directionInfo >= 0) {
-						if (routingHelper.getRouteDirections().size() > directionInfo) {
-							RouteDirectionInfo info = routingHelper.getRouteDirections().get(directionInfo);
-							net.osmand.Location l = routingHelper.getLocationFromRouteDirection(info);
-							contextMenu.showMinimized(new LatLon(l.getLatitude(), l.getLongitude()), null, info);
-							showLocationOnMap(mapActivity, l.getLatitude(), l.getLongitude());
-						}
-					}
-					mapView.refreshMap();
-					updateInfo(mainView);
-				}
-
-			});
+			prev.setOnClickListener(v -> {
+                if (directionInfo >= 0) {
+                    directionInfo--;
+                }
+                if (routingHelper.getRouteDirections() != null && directionInfo >= 0) {
+                    if (routingHelper.getRouteDirections().size() > directionInfo) {
+                        RouteDirectionInfo info = routingHelper.getRouteDirections().get(directionInfo);
+                        Location l = routingHelper.getLocationFromRouteDirection(info);
+                        contextMenu.showMinimized(new LatLon(l.getLatitude(), l.getLongitude()), null, info);
+                        showLocationOnMap(mapActivity, l.getLatitude(), l.getLongitude());
+                    }
+                }
+                mapView.refreshMap();
+                updateInfo(mainView);
+            });
 		} else {
 			prev.setVisibility(View.GONE);
 		}
 		ImageView next = mainView.findViewById(R.id.Next);
 		next.setVisibility(View.VISIBLE);
 		next.setImageDrawable(ctx.getIconsCache().getIcon(R.drawable.ic_next, isLight()));
-		next.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (routingHelper.getRouteDirections() != null && directionInfo < routingHelper.getRouteDirections().size() - 1) {
-					directionInfo++;
-					RouteDirectionInfo info = routingHelper.getRouteDirections().get(directionInfo);
-					net.osmand.Location l = routingHelper.getLocationFromRouteDirection(info);
-					contextMenu.showMinimized(new LatLon(l.getLatitude(), l.getLongitude()), null, info);
-					showLocationOnMap(mapActivity, l.getLatitude(), l.getLongitude());
-				}
-				mapView.refreshMap();
-				updateInfo(mainView);
-			}
-
-		});
+		next.setOnClickListener(v -> {
+            if (routingHelper.getRouteDirections() != null && directionInfo < routingHelper.getRouteDirections().size() - 1) {
+                directionInfo++;
+                RouteDirectionInfo info = routingHelper.getRouteDirections().get(directionInfo);
+                Location l = routingHelper.getLocationFromRouteDirection(info);
+                contextMenu.showMinimized(new LatLon(l.getLatitude(), l.getLongitude()), null, info);
+                showLocationOnMap(mapActivity, l.getLatitude(), l.getLongitude());
+            }
+            mapView.refreshMap();
+            updateInfo(mainView);
+        });
 		View info = mainView.findViewById(R.id.Info);
-		info.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				ShowRouteInfoDialogFragment.showDialog(mapActivity.getSupportFragmentManager());
-			}
-		});
+		info.setOnClickListener(v -> ShowRouteInfoDialogFragment.showDialog(mapActivity.getSupportFragmentManager()));
 
 		TextView textView = mainView.findViewById(R.id.InfoTextView);
 		ImageView infoIcon = mainView.findViewById(R.id.InfoIcon);
@@ -695,12 +637,7 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 			boolean needAddress = new PointDescription(PointDescription.POINT_TYPE_LOCATION, description).isSearchingAddress(mapActivity)
 					&& !intermediateRequestsLatLon.contains(p.point);
 			if (needAddress) {
-				AddressLookupRequest lookupRequest = new AddressLookupRequest(p.point, new GeocodingLookupService.OnAddressLookupResult() {
-					@Override
-					public void geocodingDone(String address) {
-						updateMenu();
-					}
-				}, null);
+				AddressLookupRequest lookupRequest = new AddressLookupRequest(p.point, address -> updateMenu(), null);
 				intermediateRequestsLatLon.add(p.point);
 				geocodingLookupService.lookupAddress(lookupRequest);
 			}
@@ -746,13 +683,10 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 			boolean needAddress = pointDescription != null && pointDescription.isSearchingAddress(mapActivity);
 			cancelStartPointAddressRequest();
 			if (needAddress) {
-				startPointRequest = new AddressLookupRequest(latLon, new GeocodingLookupService.OnAddressLookupResult() {
-					@Override
-					public void geocodingDone(String address) {
-						startPointRequest = null;
-						updateMenu();
-					}
-				}, null);
+				startPointRequest = new AddressLookupRequest(latLon, address -> {
+                    startPointRequest = null;
+                    updateMenu();
+                }, null);
 				geocodingLookupService.lookupAddress(startPointRequest);
 			}
 		}
@@ -791,13 +725,10 @@ public class MapRouteInfoMenu implements IRouteInformationListener {
 			boolean needAddress = pointDescription != null && pointDescription.isSearchingAddress(mapActivity);
 			cancelTargetPointAddressRequest();
 			if (needAddress) {
-				targetPointRequest = new AddressLookupRequest(latLon, new GeocodingLookupService.OnAddressLookupResult() {
-					@Override
-					public void geocodingDone(String address) {
-						targetPointRequest = null;
-						updateMenu();
-					}
-				}, null);
+				targetPointRequest = new AddressLookupRequest(latLon, address -> {
+                    targetPointRequest = null;
+                    updateMenu();
+                }, null);
 				geocodingLookupService.lookupAddress(targetPointRequest);
 			}
 

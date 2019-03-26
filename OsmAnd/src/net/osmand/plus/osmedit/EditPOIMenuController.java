@@ -49,21 +49,17 @@ public class EditPOIMenuController extends MenuController {
 			public void buttonPressed() {
 				AlertDialog.Builder bld = new AlertDialog.Builder(getMapActivity());
 				bld.setMessage(R.string.recording_delete_confirm);
-				bld.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						if (plugin != null) {
-							boolean deleted = false;
-							OsmPoint point = getOsmPoint();
-							if (point instanceof OsmNotesPoint) {
-								deleted = plugin.getDBBug().deleteAllBugModifications((OsmNotesPoint) point);
-							} else if (point instanceof OpenstreetmapPoint) {
-								deleted = plugin.getDBPOI().deletePOI((OpenstreetmapPoint) point);
-							}
-							if (deleted) {
-								getMapActivity().getContextMenu().close();
-							}
+				bld.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> {
+					if (plugin != null) {
+						boolean deleted = false;
+						OsmPoint point = getOsmPoint();
+						if (point instanceof OsmNotesPoint) {
+							deleted = plugin.getDBBug().deleteAllBugModifications((OsmNotesPoint) point);
+						} else if (point instanceof OpenstreetmapPoint) {
+							deleted = plugin.getDBPOI().deletePOI((OpenstreetmapPoint) point);
+						}
+						if (deleted) {
+							getMapActivity().getContextMenu().close();
 						}
 					}
 				});

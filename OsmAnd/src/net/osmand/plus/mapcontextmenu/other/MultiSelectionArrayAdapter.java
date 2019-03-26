@@ -38,14 +38,11 @@ class MultiSelectionArrayAdapter extends ArrayAdapter<MapMultiSelectionMenu.Menu
 		}
 		final MapMultiSelectionMenu.MenuObject item = getItem(position);
 		if (item != null) {
-			convertView.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					if (listener != null) {
-						listener.onClick(position);
-					}
-				}
-			});
+			convertView.setOnClickListener(view -> {
+                if (listener != null) {
+                    listener.onClick(position);
+                }
+            });
 			IconsCache iconsCache = menu.getMapActivity().getMyApplication().getIconsCache();
 			final View iconLayout = convertView.findViewById(R.id.context_menu_icon_layout);
 			final ImageView iconView = convertView.findViewById(R.id.context_menu_icon_view);

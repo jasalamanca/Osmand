@@ -235,13 +235,10 @@ public class RoutePreferencesMenu {
 	}
 
 	private void doSelectVoiceGuidance() {
-		selectVoiceGuidance(mapActivity, new CallbackWithObject<String>() {
-			@Override
-			public boolean processResult(String result) {
-				applyVoiceProvider(mapActivity, result);
-				updateParameters();
-				return true;
-			}
+		selectVoiceGuidance(mapActivity, result -> {
+			applyVoiceProvider(mapActivity, result);
+			updateParameters();
+			return true;
 		});
 	}
 
@@ -285,23 +282,19 @@ public class RoutePreferencesMenu {
 		adapter.addItem(itemBuilder.setTitle(entries[k]).createItem());
 
 		AlertDialog.Builder bld = new AlertDialog.Builder(mapActivity);
-		bld.setSingleChoiceItems(entries, selected, new DialogInterface.OnClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				String value = entrieValues[which];
-				if (MORE_VALUE.equals(value)) {
-					final Intent intent = new Intent(mapActivity, DownloadActivity.class);
-					intent.putExtra(DownloadActivity.TAB_TO_OPEN, DownloadActivity.DOWNLOAD_TAB);
-					intent.putExtra(DownloadActivity.FILTER_CAT, DownloadActivityType.VOICE_FILE.getTag());
-					mapActivity.startActivity(intent);
-				} else {
-					if (callback != null) {
-						callback.processResult(value);
-					}
+		bld.setSingleChoiceItems(entries, selected, (dialog, which) -> {
+			String value = entrieValues[which];
+			if (MORE_VALUE.equals(value)) {
+				final Intent intent = new Intent(mapActivity, DownloadActivity.class);
+				intent.putExtra(DownloadActivity.TAB_TO_OPEN, DownloadActivity.DOWNLOAD_TAB);
+				intent.putExtra(DownloadActivity.FILTER_CAT, DownloadActivityType.VOICE_FILE.getTag());
+				mapActivity.startActivity(intent);
+			} else {
+				if (callback != null) {
+					callback.processResult(value);
 				}
-				dialog.dismiss();
 			}
+			dialog.dismiss();
 		});
 		bld.show();
 	}
@@ -336,98 +329,86 @@ public class RoutePreferencesMenu {
 	}
 
 	public OnItemClickListener getItemClickListener(final ArrayAdapter<?> listAdapter) {
-		return new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> adapterView, View view, int item, long l) {
-				Object obj = listAdapter.getItem(item);
-				if (obj instanceof LocalRoutingParameterGroup) {
-					final LocalRoutingParameterGroup group = (LocalRoutingParameterGroup) obj;
-					final ContextMenuAdapter adapter = new ContextMenuAdapter();
-					int i = 0;
-					int selectedIndex = -1;
-					for (LocalRoutingParameter p : group.getRoutingParameters()) {
-						adapter.addItem(ContextMenuItem.createBuilder(p.getText(mapActivity))
-								.setSelected(false).createItem());
-						if (p.isSelected(settings)) {
-							selectedIndex = i;
-						}
-						i++;
+		return (adapterView, view, item, l) -> {
+			Object obj = listAdapter.getItem(item);
+			if (obj instanceof LocalRoutingParameterGroup) {
+				final LocalRoutingParameterGroup group = (LocalRoutingParameterGroup) obj;
+				final ContextMenuAdapter adapter = new ContextMenuAdapter();
+				int i = 0;
+				int selectedIndex = -1;
+				for (LocalRoutingParameter p : group.getRoutingParameters()) {
+					adapter.addItem(ContextMenuItem.createBuilder(p.getText(mapActivity))
+							.setSelected(false).createItem());
+					if (p.isSelected(settings)) {
+						selectedIndex = i;
 					}
-					if (selectedIndex == -1) {
-						selectedIndex = 0;
+					i++;
+				}
+				if (selectedIndex == -1) {
+					selectedIndex = 0;
+				}
+
+				AlertDialog.Builder builder = new AlertDialog.Builder(mapActivity);
+				final int layout = R.layout.list_menu_item_native_singlechoice;
+
+				final ArrayAdapter<String> listAdapter1 = new ArrayAdapter<String>(mapActivity, layout, R.id.text1,
+						adapter.getItemNames()) {
+					@NonNull
+					@Override
+					public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
+						// User super class to create the View
+						View v = convertView;
+						if (v == null) {
+							v = mapActivity.getLayoutInflater().inflate(layout, null);
+						}
+						final ContextMenuItem item = adapter.getItem(position);
+						TextView tv = v.findViewById(R.id.text1);
+						tv.setText(item.getTitle());
+						tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f);
+
+						return v;
 					}
+				};
 
-					AlertDialog.Builder builder = new AlertDialog.Builder(mapActivity);
-					final int layout = R.layout.list_menu_item_native_singlechoice;
+				final int[] selectedPosition = {selectedIndex};
+				builder.setSingleChoiceItems(listAdapter1, selectedIndex, (dialog, position) -> selectedPosition[0] = position);
+				builder.setTitle(group.getText(mapActivity))
+						.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> {
 
-					final ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(mapActivity, layout, R.id.text1,
-							adapter.getItemNames()) {
-						@NonNull
-						@Override
-						public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
-							// User super class to create the View
-							View v = convertView;
-							if (v == null) {
-								v = mapActivity.getLayoutInflater().inflate(layout, null);
-							}
-							final ContextMenuItem item = adapter.getItem(position);
-							TextView tv = v.findViewById(R.id.text1);
-							tv.setText(item.getTitle());
-							tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f);
-
-							return v;
-						}
-					};
-
-					final int[] selectedPosition = {selectedIndex};
-					builder.setSingleChoiceItems(listAdapter, selectedIndex, new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int position) {
-							selectedPosition[0] = position;
-						}
-					});
-					builder.setTitle(group.getText(mapActivity))
-							.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-
-								@Override
-								public void onClick(DialogInterface dialog, int which) {
-
-									int position = selectedPosition[0];
-									if (position >= 0 && position < group.getRoutingParameters().size()) {
-										for (int i = 0; i < group.getRoutingParameters().size(); i++) {
-											LocalRoutingParameter rp = group.getRoutingParameters().get(i);
-											rp.setSelected(settings, i == position);
-										}
-										mapActivity.getRoutingHelper().recalculateRouteDueToSettingsChange();
-										updateParameters();
-									}
+							int position = selectedPosition[0];
+							if (position >= 0 && position < group.getRoutingParameters().size()) {
+								for (int i1 = 0; i1 < group.getRoutingParameters().size(); i1++) {
+									LocalRoutingParameter rp = group.getRoutingParameters().get(i1);
+									rp.setSelected(settings, i1 == position);
 								}
-							})
-							.setNegativeButton(R.string.shared_string_cancel, null);
+								mapActivity.getRoutingHelper().recalculateRouteDueToSettingsChange();
+								updateParameters();
+							}
+						})
+						.setNegativeButton(R.string.shared_string_cancel, null);
 
-					builder.create().show();
-				} else if (obj instanceof OtherSettingsRoutingParameter) {
-					final Intent settings = new Intent(mapActivity, SettingsNavigationActivity.class);
-					settings.putExtra(SettingsNavigationActivity.INTENT_SKIP_DIALOG, true);
-					settings.putExtra(SettingsBaseActivity.INTENT_APP_MODE, routingHelper.getAppMode().getStringKey());
-					mapActivity.startActivity(settings);
-				} else if (obj instanceof MuteSoundRoutingParameter) {
-					final CompoundButton btn = view.findViewById(R.id.toggle_item);
-					btn.performClick();
-				} else if (obj instanceof VoiceGuidanceRoutingParameter) {
-					doSelectVoiceGuidance();
-				} else if (obj instanceof InterruptMusicRoutingParameter) {
-					final CompoundButton btn = view.findViewById(R.id.toggle_item);
-					btn.performClick();
-				} else if (obj instanceof AvoidRoadsRoutingParameter) {
-					selectRestrictedRoads();
-				} else if (view.findViewById(R.id.GPXRouteSpinner) != null) {
-					showOptionsMenu((TextView) view.findViewById(R.id.GPXRouteSpinner));
-				} else {
-					CheckBox ch = view.findViewById(R.id.toggle_item);
-					if (ch != null) {
-						ch.setChecked(!ch.isChecked());
-					}
+				builder.create().show();
+			} else if (obj instanceof OtherSettingsRoutingParameter) {
+				final Intent settings = new Intent(mapActivity, SettingsNavigationActivity.class);
+				settings.putExtra(SettingsNavigationActivity.INTENT_SKIP_DIALOG, true);
+				settings.putExtra(SettingsBaseActivity.INTENT_APP_MODE, routingHelper.getAppMode().getStringKey());
+				mapActivity.startActivity(settings);
+			} else if (obj instanceof MuteSoundRoutingParameter) {
+				final CompoundButton btn = view.findViewById(R.id.toggle_item);
+				btn.performClick();
+			} else if (obj instanceof VoiceGuidanceRoutingParameter) {
+				doSelectVoiceGuidance();
+			} else if (obj instanceof InterruptMusicRoutingParameter) {
+				final CompoundButton btn = view.findViewById(R.id.toggle_item);
+				btn.performClick();
+			} else if (obj instanceof AvoidRoadsRoutingParameter) {
+				selectRestrictedRoads();
+			} else if (view.findViewById(R.id.GPXRouteSpinner) != null) {
+				showOptionsMenu((TextView) view.findViewById(R.id.GPXRouteSpinner));
+			} else {
+				CheckBox ch = view.findViewById(R.id.toggle_item);
+				if (ch != null) {
+					ch.setChecked(!ch.isChecked());
 				}
 			}
 		};
@@ -451,12 +432,7 @@ public class RoutePreferencesMenu {
 					final CompoundButton btn = v.findViewById(R.id.toggle_item);
 					btn.setVisibility(View.VISIBLE);
 					btn.setChecked(!routingHelper.getVoiceRouter().isMute());
-					btn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-						@Override
-						public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-							switchSound();
-						}
-					});
+					btn.setOnCheckedChangeListener((buttonView, isChecked) -> switchSound());
 
 					TextView tv = v.findViewById(R.id.header_text);
 					AndroidUtils.setTextPrimaryColor(mapActivity, tv, nightMode);
@@ -471,12 +447,7 @@ public class RoutePreferencesMenu {
 					v.findViewById(R.id.toggle_item).setVisibility(View.GONE);
 					final TextView btn = v.findViewById(R.id.select_button);
 					btn.setTextColor(btn.getLinkTextColors());
-					btn.setOnClickListener(new View.OnClickListener() {
-						@Override
-						public void onClick(View v) {
-							selectRestrictedRoads();
-						}
-					});
+					btn.setOnClickListener(v12 -> selectRestrictedRoads());
 
 					TextView tv = v.findViewById(R.id.header_text);
 					AndroidUtils.setTextPrimaryColor(mapActivity, tv, nightMode);
@@ -509,12 +480,7 @@ public class RoutePreferencesMenu {
 						voiceProviderStr = getString(R.string.shared_string_not_selected);
 					}
 					btn.setText(voiceProviderStr);
-					btn.setOnClickListener(new View.OnClickListener() {
-						@Override
-						public void onClick(View v) {
-							doSelectVoiceGuidance();
-						}
-					});
+					btn.setOnClickListener(v1 -> doSelectVoiceGuidance());
 
 					TextView tv = v.findViewById(R.id.header_text);
 					AndroidUtils.setTextPrimaryColor(mapActivity, tv, nightMode);
@@ -530,12 +496,7 @@ public class RoutePreferencesMenu {
 					final CompoundButton btn = v.findViewById(R.id.toggle_item);
 					btn.setVisibility(View.VISIBLE);
 					btn.setChecked(settings.INTERRUPT_MUSIC.get());
-					btn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-						@Override
-						public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-							switchMusic();
-						}
-					});
+					btn.setOnCheckedChangeListener((buttonView, isChecked) -> switchMusic());
 
 					TextView tv = v.findViewById(R.id.header_text);
 					AndroidUtils.setTextPrimaryColor(mapActivity, tv, nightMode);
@@ -599,12 +560,7 @@ public class RoutePreferencesMenu {
 						ch.setChecked(rp.isSelected(settings));
 					}
 					ch.setVisibility(View.VISIBLE);
-					ch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-						@Override
-						public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-							applyRoutingParameter(rp, isChecked);
-						}
-					});
+					ch.setOnCheckedChangeListener((buttonView, isChecked) -> applyRoutingParameter(rp, isChecked));
 				}
 				return v;
 			}
@@ -756,17 +712,13 @@ public class RoutePreferencesMenu {
 	}
 
 	private void openGPXFileSelection(final TextView gpxSpinner) {
-		GpxUiHelper.selectGPXFile(mapActivity, false, false, new CallbackWithObject<GPXUtilities.GPXFile[]>() {
-
-			@Override
-			public boolean processResult(GPXUtilities.GPXFile[] result) {
-				mapActivity.getMapActions().setGPXRouteParams(result[0]);
-				app.getTargetPointsHelper().updateRouteAndRefresh(true);
-				updateSpinnerItems(gpxSpinner);
-				updateParameters();
-				mapActivity.getRoutingHelper().recalculateRouteDueToSettingsChange();
-				return true;
-			}
+		GpxUiHelper.selectGPXFile(mapActivity, false, false, result -> {
+			mapActivity.getMapActions().setGPXRouteParams(result[0]);
+			app.getTargetPointsHelper().updateRouteAndRefresh(true);
+			updateSpinnerItems(gpxSpinner);
+			updateParameters();
+			mapActivity.getRoutingHelper().recalculateRouteDueToSettingsChange();
+			return true;
 		});
 	}
 
@@ -781,34 +733,25 @@ public class RoutePreferencesMenu {
 		final PopupMenu optionsMenu = new PopupMenu(gpxSpinner.getContext(), gpxSpinner);
 		MenuItem item = optionsMenu.getMenu().add(
 				mapActivity.getString(R.string.shared_string_none));
-		item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-			@Override
-			public boolean onMenuItemClick(MenuItem item) {
-				if (mapActivity.getRoutingHelper().getCurrentGPXRoute() != null) {
-					mapActivity.getRoutingHelper().setGpxParams(null);
-					settings.FOLLOW_THE_GPX_ROUTE.set(null);
-					mapActivity.getRoutingHelper().recalculateRouteDueToSettingsChange();
-				}
-				updateParameters();
-				return true;
+		item.setOnMenuItemClickListener(item13 -> {
+			if (mapActivity.getRoutingHelper().getCurrentGPXRoute() != null) {
+				mapActivity.getRoutingHelper().setGpxParams(null);
+				settings.FOLLOW_THE_GPX_ROUTE.set(null);
+				mapActivity.getRoutingHelper().recalculateRouteDueToSettingsChange();
 			}
+			updateParameters();
+			return true;
 		});
 		item = optionsMenu.getMenu().add(mapActivity.getString(R.string.select_gpx));
-		item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-			@Override
-			public boolean onMenuItemClick(MenuItem item) {
-				openGPXFileSelection(gpxSpinner);
-				return true;
-			}
+		item.setOnMenuItemClickListener(item12 -> {
+			openGPXFileSelection(gpxSpinner);
+			return true;
 		});
 		if (rp != null) {
 			item = optionsMenu.getMenu().add(new File(rp.getFile().path).getName());
-			item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-				@Override
-				public boolean onMenuItemClick(MenuItem item) {
-					// nothing to change
-					return true;
-				}
+			item.setOnMenuItemClickListener(item1 -> {
+				// nothing to change
+				return true;
 			});
 		}
 		optionsMenu.show();

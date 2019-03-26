@@ -74,18 +74,8 @@ public class MapMarkersWidgetsFactory {
         ImageButton moreButton = map.findViewById(R.id.marker_btn_more);
         ImageButton moreButton2nd = map.findViewById(R.id.marker_btn_more_2nd);
 
-		rowView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				showMarkerOnMap(0);
-			}
-		});
-		rowView2nd.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				showMarkerOnMap(1);
-			}
-		});
+		rowView.setOnClickListener(v -> showMarkerOnMap(0));
+		rowView2nd.setOnClickListener(v -> showMarkerOnMap(1));
 
 		IconsCache iconsCache = map.getMyApplication().getIconsCache();
 		if (isLandscapeLayout() && helper.getMapMarkers().size() > 1
@@ -93,38 +83,22 @@ public class MapMarkersWidgetsFactory {
 			moreButton.setVisibility(View.GONE);
 		} else {
 			moreButton.setImageDrawable(iconsCache.getIcon(R.drawable.ic_action_markers_list, R.color.marker_top_2nd_line_color));
-			moreButton.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					MapActivity.clearPrevActivityIntent();
-					MapMarkersDialogFragment.showInstance(map);
-				}
+			moreButton.setOnClickListener(v -> {
+				MapActivity.clearPrevActivityIntent();
+				MapMarkersDialogFragment.showInstance(map);
 			});
 		}
 		if (moreButton2nd != null) {
 			moreButton2nd.setImageDrawable(iconsCache.getIcon(R.drawable.ic_action_markers_list, R.color.marker_top_2nd_line_color));
-			moreButton2nd.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					MapActivity.clearPrevActivityIntent();
-					MapMarkersDialogFragment.showInstance(map);
-				}
+			moreButton2nd.setOnClickListener(v -> {
+				MapActivity.clearPrevActivityIntent();
+				MapMarkersDialogFragment.showInstance(map);
 			});
 		}
 		okButton.setImageDrawable(iconsCache.getIcon(R.drawable.ic_action_marker_passed, R.color.color_white));
-		okButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				removeMarker(0);
-			}
-		});
+		okButton.setOnClickListener(v -> removeMarker(0));
 		okButton2nd.setImageDrawable(iconsCache.getIcon(R.drawable.ic_action_marker_passed, R.color.color_white));
-		okButton2nd.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				removeMarker(1);
-			}
-		});
+		okButton2nd.setOnClickListener(v -> removeMarker(1));
 
 		updateVisibility(false);
 	}
@@ -296,7 +270,7 @@ public class MapMarkersWidgetsFactory {
 			}
 
 			@Override
-			protected void click(OsmandMapTileView view) {
+			protected void click() {
 				showMarkerOnMap(firstMarker ? 0 : 1);
 			}
 		};
@@ -323,16 +297,10 @@ public class MapMarkersWidgetsFactory {
 			this.view = map.getMapView();
 			helper = map.getMyApplication().getMapMarkersHelper();
 			setText(null, null);
-			setOnClickListener(new View.OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					click(view);
-				}
-			});
+			setOnClickListener(v -> click());
 		}
 
-		protected abstract void click(OsmandMapTileView view);
+		protected abstract void click();
 		protected abstract LatLon getLatLon();
 
 		@Override

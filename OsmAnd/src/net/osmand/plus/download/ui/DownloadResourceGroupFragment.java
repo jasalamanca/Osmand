@@ -102,12 +102,7 @@ public class DownloadResourceGroupFragment
 		toolbar = view.findViewById(R.id.toolbar);
 		toolbar.setNavigationIcon(getMyApplication().getIconsCache().getIcon(R.drawable.ic_arrow_back));
 		toolbar.setNavigationContentDescription(R.string.access_shared_string_navigate_up);
-		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-			}
-		});
+		toolbar.setNavigationOnClickListener(v -> dismiss());
 		if (!openAsDialog()) {
 			toolbar.setVisibility(View.GONE);
 		}
@@ -135,12 +130,7 @@ public class DownloadResourceGroupFragment
 		if (DownloadActivity.shouldShowFreeVersionBanner(activity.getMyApplication())
 				&& !getMyApplication().getSettings().EMAIL_SUBSCRIBED.get()) {
 			subscribeEmailView = activity.getLayoutInflater().inflate(R.layout.subscribe_email_header, null, false);
-			subscribeEmailView.findViewById(R.id.subscribe_btn).setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					subscribe();
-				}
-			});
+			subscribeEmailView.findViewById(R.id.subscribe_btn).setOnClickListener(v -> subscribe());
 			listView.addHeaderView(subscribeEmailView);
 			IndexItem worldBaseMapItem = activity.getDownloadThread().getIndexes().getWorldBaseMapItem();
 			if (worldBaseMapItem == null || !worldBaseMapItem.isDownloaded()
@@ -155,13 +145,10 @@ public class DownloadResourceGroupFragment
 			restorePurchasesView = activity.getLayoutInflater().inflate(R.layout.restore_purchases_list_footer, null);
 			((ImageView) restorePurchasesView.findViewById(R.id.icon)).setImageDrawable(
 					getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_reset_to_default_dark));
-			restorePurchasesView.findViewById(R.id.button).setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					restorePurchasesView.findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
-					activity.startInAppHelper();
-				}
-			});
+			restorePurchasesView.findViewById(R.id.button).setOnClickListener(v -> {
+                restorePurchasesView.findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
+                activity.startInAppHelper();
+            });
 			listView.addFooterView(restorePurchasesView);
 			listView.setFooterDividersEnabled(false);
 			IndexItem worldBaseMapItem = activity.getDownloadThread().getIndexes().getWorldBaseMapItem();
@@ -178,12 +165,7 @@ public class DownloadResourceGroupFragment
 			TextView title = searchView.findViewById(R.id.title);
 			title.setCompoundDrawablesWithIntrinsicBounds(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_search_dark), null, null, null);
 			title.setHint(R.string.search_map_hint);
-			searchView.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					getDownloadActivity().showDialog(getActivity(), SearchDialogFragment.createInstance(""));
-				}
-			});
+			searchView.setOnClickListener(v -> getDownloadActivity().showDialog(getActivity(), SearchDialogFragment.createInstance("")));
 			listView.addHeaderView(searchView);
 			listView.setHeaderDividersEnabled(true);
 			IndexItem worldBaseMapItem = activity.getDownloadThread().getIndexes().getWorldBaseMapItem();
@@ -236,24 +218,16 @@ public class DownloadResourceGroupFragment
 		b.setPositiveButton(R.string.shared_string_ok, null);
 		b.setNegativeButton(R.string.shared_string_cancel, null);
 		final AlertDialog alertDialog = b.create();
-		alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
-			@Override
-			public void onShow(DialogInterface dialog) {
-				alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(
-						new View.OnClickListener() {
-							@Override
-							public void onClick(View v) {
-								String email = editText.getText().toString();
-								if (Algorithms.isEmpty(email) || !AndroidUtils.isValidEmail(email)) {
-									getMyApplication().showToastMessage(getString(R.string.osm_live_enter_email));
-									return;
-								}
-								doSubscribe(email);
-								alertDialog.dismiss();
-							}
-						});
-			}
-		});
+		alertDialog.setOnShowListener(dialog -> alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(
+                v -> {
+                    String email = editText.getText().toString();
+                    if (Algorithms.isEmpty(email) || !AndroidUtils.isValidEmail(email)) {
+                        getMyApplication().showToastMessage(getString(R.string.osm_live_enter_email));
+                        return;
+                    }
+                    doSubscribe(email);
+                    alertDialog.dismiss();
+                }));
 		alertDialog.show();
 	}
 

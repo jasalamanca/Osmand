@@ -92,12 +92,7 @@ public class WikipediaDialogFragment extends DialogFragment {
 
 		ImageButton backButton = mainView.findViewById(R.id.back_button);
 		backButton.setImageDrawable(getMyApplication().getIconsCache().getPaintedIcon(R.drawable.ic_arrow_back, toolbarTextColor));
-		backButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		backButton.setOnClickListener(view -> dismiss());
 
 		TextView titleTextView = mainView.findViewById(R.id.title_text_view);
 		titleTextView.setTextColor(toolbarTextColor);
@@ -178,22 +173,14 @@ public class WikipediaDialogFragment extends DialogFragment {
 
 			final String langSelected = lng;
 
-			mainView.findViewById(R.id.read_full_article).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					String article = "https://" + langSelected.toLowerCase() + ".wikipedia.org/wiki/" + title.replace(' ', '_');
-					showFullArticle(Uri.parse(article));
-				}
+			mainView.findViewById(R.id.read_full_article).setOnClickListener(view -> {
+				String article = "https://" + langSelected.toLowerCase() + ".wikipedia.org/wiki/" + title.replace(' ', '_');
+				showFullArticle(Uri.parse(article));
 			});
 
 			final TextView selectLanguageTextView = mainView.findViewById(R.id.select_language_text_view);
 			selectLanguageTextView.setText(langSelected);
-			selectLanguageTextView.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					showPopupLangMenu(selectLanguageTextView, langSelected);
-				}
-			});
+			selectLanguageTextView.setOnClickListener(view -> showPopupLangMenu(selectLanguageTextView, langSelected));
 
 			String content = amenity.getDescription(langSelected);
 
@@ -239,24 +226,18 @@ public class WikipediaDialogFragment extends DialogFragment {
 
 		if (selectedLangName != null) {
 			MenuItem item = optionsMenu.getMenu().add(selectedLangName);
-			item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-				@Override
-				public boolean onMenuItemClick(MenuItem item) {
-					setLanguage(langSelected);
-					populateWiki();
-					return true;
-				}
+			item.setOnMenuItemClickListener(item12 -> {
+				setLanguage(langSelected);
+				populateWiki();
+				return true;
 			});
 		}
 		for (final Map.Entry<String, String> e : sortedNames.entrySet()) {
 			MenuItem item = optionsMenu.getMenu().add(e.getValue());
-			item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-				@Override
-				public boolean onMenuItemClick(MenuItem item) {
-					setLanguage(e.getKey());
-					populateWiki();
-					return true;
-				}
+			item.setOnMenuItemClickListener(item1 -> {
+				setLanguage(e.getKey());
+				populateWiki();
+				return true;
 			});
 		}
 		optionsMenu.show();

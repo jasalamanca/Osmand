@@ -43,17 +43,14 @@ public class DashRecentsFragment extends DashLocationFragment {
 			TAG, DashRecentsFragment.class, SHOULD_SHOW_FUNCTION, 80, ROW_NUMBER_TAG);
 
 	@Override
-	public View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	public View initView(LayoutInflater inflater, @Nullable ViewGroup container) {
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_common_fragment, container, false);
 		((TextView)view.findViewById(R.id.fav_text)).setText(TITLE_ID);
-		(view.findViewById(R.id.show_all)).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				closeDashboard();
-				MapActivity activity = (MapActivity) getActivity();
-				activity.showQuickSearch(MapActivity.ShowQuickSearchMode.NEW, false);
-			}
-		});
+		(view.findViewById(R.id.show_all)).setOnClickListener(view1 -> {
+            closeDashboard();
+            MapActivity activity = (MapActivity) getActivity();
+            activity.showQuickSearch(MapActivity.ShowQuickSearchMode.NEW, false);
+        });
 		return view;
 	}
 
@@ -87,21 +84,13 @@ public class DashRecentsFragment extends DashLocationFragment {
 			view.findViewById(R.id.divider).setVisibility(View.VISIBLE);
 			view.findViewById(R.id.navigate_to).setVisibility(View.VISIBLE);
 			((ImageView) view.findViewById(R.id.navigate_to)).setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_gdirections_dark));
-			view.findViewById(R.id.navigate_to).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					DirectionsDialogs.directionsToDialogAndLaunchMap(getActivity(), historyEntry.getLat(),
-							historyEntry.getLon(), historyEntry.getName());
-				}
-			});
-			view.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					getMyApplication().getSettings().setMapLocationToShow(historyEntry.getLat(), historyEntry.getLon(),
-							15, historyEntry.getName(), true, historyEntry); //$NON-NLS-1$
-					MapActivity.launchMapActivityMoveToTop(getActivity());
-				}
-			});
+			view.findViewById(R.id.navigate_to).setOnClickListener(view12 -> DirectionsDialogs.directionsToDialogAndLaunchMap(getActivity(), historyEntry.getLat(),
+                    historyEntry.getLon(), historyEntry.getName()));
+			view.setOnClickListener(view1 -> {
+                getMyApplication().getSettings().setMapLocationToShow(historyEntry.getLat(), historyEntry.getLon(),
+                        15, historyEntry.getName(), true, historyEntry); //$NON-NLS-1$
+                MapActivity.launchMapActivityMoveToTop(getActivity());
+            });
 			DashLocationView dv = new DashLocationView((ImageView) view.findViewById(R.id.direction),
 					(TextView) view.findViewById(R.id.distance), new LatLon(historyEntry.getLat(),
 							historyEntry.getLon()));

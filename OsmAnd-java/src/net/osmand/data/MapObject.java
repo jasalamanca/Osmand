@@ -1,17 +1,16 @@
 package net.osmand.data;
 
+import net.osmand.Collator;
+import net.osmand.OsmAndCollator;
+import net.osmand.util.Algorithms;
+import net.sf.junidecode.Junidecode;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
-
-import net.osmand.Collator;
-import net.osmand.OsmAndCollator;
-import net.osmand.util.Algorithms;
-import net.sf.junidecode.Junidecode;
 
 public abstract class MapObject implements Comparable<MapObject> {
 	String name = null;
@@ -100,42 +99,6 @@ public abstract class MapObject implements Comparable<MapObject> {
 		return l;
 	}
 
-	private void copyNames(String otherName, String otherEnName, Map<String, String> otherNames, boolean overwrite) {
-		if (!Algorithms.isEmpty(otherName) && (overwrite || Algorithms.isEmpty(name))) {
-			name = otherName;
-		}
-		if (!Algorithms.isEmpty(otherEnName) && (overwrite || Algorithms.isEmpty(enName))) {
-			enName = otherEnName;
-		}
-		if (!Algorithms.isEmpty(otherNames)) {
-			if (otherNames.containsKey("name:en")) {
-				enName = otherNames.get("name:en");
-			} else if (otherNames.containsKey("en")) {
-				enName = otherNames.get("en");
-			}
-
-			for (Entry<String, String> e : otherNames.entrySet()) {
-				String key = e.getKey();
-				if (key.startsWith("name:")) {
-					key = key.substring("name:".length());
-				}
-				if (names == null) {
-					names = new HashMap<>();
-				}
-				if (overwrite || Algorithms.isEmpty(names.get(key))) {
-					names.put(key, e.getValue());
-				}
-			}
-		}
-	}
-
-	private void copyNames(MapObject s, boolean copyName, boolean copyEnName, boolean overwrite) {
-		copyNames((copyName ? s.name : null), (copyEnName ? s.enName : null), s.names, overwrite);
-	}
-
-	void copyNames(MapObject s) {
-		copyNames(s, true, true, false);
-	}
 	public String getName(String lang) {
 		return getName(lang, false);
 	}
@@ -228,7 +191,7 @@ public abstract class MapObject implements Comparable<MapObject> {
 	public static class MapObjectComparator implements Comparator<MapObject> {
 		private final String l;
 		final Collator collator = OsmAndCollator.primaryCollator();
-		private boolean transliterate;
+		private final boolean transliterate;
 
         public MapObjectComparator(String lang, boolean transliterate) {
 			this.l = lang;

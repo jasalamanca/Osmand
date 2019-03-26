@@ -1,12 +1,11 @@
 package net.osmand.plus.helpers;
 
 import android.app.Activity;
-import android.content.DialogInterface;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.ParcelFileDescriptor;
-import android.app.AlertDialog;
 
 import net.osmand.AndroidUtils;
 import net.osmand.IndexConstants;
@@ -172,13 +171,9 @@ public class ExternalApiHelper {
 						if (routingHelper.isFollowingMode() && !force) {
 							final GPXFile gpxFile = gpx;
 							AlertDialog dlg = mapActivity.getMapActions().stopNavigationActionConfirm();
-							dlg.setOnDismissListener(new DialogInterface.OnDismissListener() {
-
-								@Override
-								public void onDismiss(DialogInterface dialog) {
-									if (!routingHelper.isFollowingMode()) {
-										startNavigation(gpxFile, null, null, null, null, null);
-									}
+							dlg.setOnDismissListener(dialog -> {
+								if (!routingHelper.isFollowingMode()) {
+									startNavigation(gpxFile, null, null, null, null, null);
 								}
 							});
 						} else {
@@ -240,13 +235,9 @@ public class ExternalApiHelper {
 					final RoutingHelper routingHelper = app.getRoutingHelper();
 					if (routingHelper.isFollowingMode() && !force) {
 						AlertDialog dlg = mapActivity.getMapActions().stopNavigationActionConfirm();
-						dlg.setOnDismissListener(new DialogInterface.OnDismissListener() {
-
-							@Override
-							public void onDismiss(DialogInterface dialog) {
-								if (!routingHelper.isFollowingMode()) {
-									startNavigation(null, start, startDesc, dest, destDesc, profile);
-								}
+						dlg.setOnDismissListener(dialog -> {
+							if (!routingHelper.isFollowingMode()) {
+								startNavigation(null, start, startDesc, dest, destDesc, profile);
 							}
 						});
 					} else {

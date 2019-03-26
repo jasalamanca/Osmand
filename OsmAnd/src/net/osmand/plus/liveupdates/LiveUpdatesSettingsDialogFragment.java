@@ -130,49 +130,43 @@ public class LiveUpdatesSettingsDialogFragment extends DialogFragment {
 		});
 
 		builder.setView(view)
-				.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						if (liveUpdatePreference.get() != liveUpdatesSwitch.isChecked()) {
-							liveUpdatePreference.set(liveUpdatesSwitch.isChecked());
-							if (!liveUpdatesSwitch.isChecked()) {
-								long updatesSize = changesManager.getUpdatesSize(fileNameWithoutExtension);
-								if (updatesSize != 0) {
-									ClearUpdatesDialogFragment.createInstance(fileName)
-											.show(getParentFragment().getChildFragmentManager(), null);
-								}
+				.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> {
+					if (liveUpdatePreference.get() != liveUpdatesSwitch.isChecked()) {
+						liveUpdatePreference.set(liveUpdatesSwitch.isChecked());
+						if (!liveUpdatesSwitch.isChecked()) {
+							long updatesSize = changesManager.getUpdatesSize(fileNameWithoutExtension);
+							if (updatesSize != 0) {
+								ClearUpdatesDialogFragment.createInstance(fileName)
+										.show(getParentFragment().getChildFragmentManager(), null);
 							}
 						}
-						downloadViaWiFiPreference.set(downloadOverWiFiCheckBox.isChecked());
-
-						final int updateFrequencyInt = updateFrequencySpinner.getSelectedItemPosition();
-						updateFrequencyPreference.set(updateFrequencyInt);
-
-						AlarmManager alarmMgr = (AlarmManager) getActivity()
-								.getSystemService(Context.ALARM_SERVICE);
-						PendingIntent alarmIntent = getPendingIntent(getActivity(), fileName);
-
-						final int timeOfDayInt = updateTimesOfDaySpinner.getSelectedItemPosition();
-						timeOfDayPreference.set(timeOfDayInt);
-
-						if (liveUpdatesSwitch.isChecked() && getSettings().IS_LIVE_UPDATES_ON.get()) {
-							runLiveUpdate(getActivity(), fileName, false);
-							UpdateFrequency updateFrequency = UpdateFrequency.values()[updateFrequencyInt];
-							TimeOfDay timeOfDayToUpdate = TimeOfDay.values()[timeOfDayInt];
-							setAlarmForPendingIntent(alarmIntent, alarmMgr, updateFrequency, timeOfDayToUpdate);
-						} else {
-							alarmMgr.cancel(alarmIntent);
-						}
-						getLiveUpdatesFragment().notifyLiveUpdatesChanged();
 					}
+					downloadViaWiFiPreference.set(downloadOverWiFiCheckBox.isChecked());
+
+					final int updateFrequencyInt = updateFrequencySpinner.getSelectedItemPosition();
+					updateFrequencyPreference.set(updateFrequencyInt);
+
+					AlarmManager alarmMgr = (AlarmManager) getActivity()
+							.getSystemService(Context.ALARM_SERVICE);
+					PendingIntent alarmIntent = getPendingIntent(getActivity(), fileName);
+
+					final int timeOfDayInt = updateTimesOfDaySpinner.getSelectedItemPosition();
+					timeOfDayPreference.set(timeOfDayInt);
+
+					if (liveUpdatesSwitch.isChecked() && getSettings().IS_LIVE_UPDATES_ON.get()) {
+						runLiveUpdate(getActivity(), fileName, false);
+						UpdateFrequency updateFrequency = UpdateFrequency.values()[updateFrequencyInt];
+						TimeOfDay timeOfDayToUpdate = TimeOfDay.values()[timeOfDayInt];
+						setAlarmForPendingIntent(alarmIntent, alarmMgr, updateFrequency, timeOfDayToUpdate);
+					} else {
+						alarmMgr.cancel(alarmIntent);
+					}
+					getLiveUpdatesFragment().notifyLiveUpdatesChanged();
 				})
 				.setNegativeButton(R.string.shared_string_cancel, null)
-				.setNeutralButton(R.string.update_now, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						runLiveUpdate(getActivity(), fileName, true);
-						sizeTextView.setText(getUpdatesSize(fileNameWithoutExtension, changesManager));
-					}
+				.setNeutralButton(R.string.update_now, (dialog, which) -> {
+					runLiveUpdate(getActivity(), fileName, true);
+					sizeTextView.setText(getUpdatesSize(fileNameWithoutExtension, changesManager));
 				});
 		return builder.create();
 	}
@@ -240,12 +234,9 @@ public class LiveUpdatesSettingsDialogFragment extends DialogFragment {
 			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 			builder.setMessage(getString(R.string.clear_updates_proposition_message)
 					+ " " + getUpdatesSize(fileNameWithoutExtension, changesManager))
-					.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							changesManager.deleteUpdates(fileNameWithoutExtension);
-							preferenceLastCheck(localIndexInfo, getMyApplication().getSettings()).resetToDefault();
-						}
+					.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> {
+						changesManager.deleteUpdates(fileNameWithoutExtension);
+						preferenceLastCheck(localIndexInfo, getMyApplication().getSettings()).resetToDefault();
 					})
 					.setNegativeButton(R.string.shared_string_cancel, null);
 			return builder.create();

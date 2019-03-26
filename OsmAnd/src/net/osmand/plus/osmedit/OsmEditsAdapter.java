@@ -158,12 +158,9 @@ class OsmEditsAdapter extends ArrayAdapter<Object> {
 		holder.checkBox.setChecked(isAllSelected());
 		if (selectionMode) {
 			holder.checkBox.setVisibility(View.VISIBLE);
-			holder.checkBox.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					if (listener != null) {
-						listener.onHeaderCheckboxClick(holder.checkBox.isChecked());
-					}
+			holder.checkBox.setOnClickListener(v -> {
+				if (listener != null) {
+					listener.onHeaderCheckboxClick(holder.checkBox.isChecked());
 				}
 			});
 		} else {
@@ -184,12 +181,9 @@ class OsmEditsAdapter extends ArrayAdapter<Object> {
 			holder.selectCheckBox.setVisibility(View.VISIBLE);
 			holder.selectCheckBox.setChecked(selectedOsmEdits.contains(osmEdit));
 			holder.icon.setVisibility(View.GONE);
-			holder.selectCheckBox.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					if (listener != null) {
-						listener.onItemSelect(osmEdit, holder.selectCheckBox.isChecked());
-					}
+			holder.selectCheckBox.setOnClickListener(v -> {
+				if (listener != null) {
+					listener.onItemSelect(osmEdit, holder.selectCheckBox.isChecked());
 				}
 			});
 		} else {
@@ -199,26 +193,20 @@ class OsmEditsAdapter extends ArrayAdapter<Object> {
 		}
 
 		holder.optionsImageButton.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_overflow_menu_white));
-		holder.optionsImageButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (listener != null) {
-					listener.onOptionsClick(osmEdit);
-				}
+		holder.optionsImageButton.setOnClickListener(v -> {
+			if (listener != null) {
+				listener.onOptionsClick(osmEdit);
 			}
 		});
-		holder.mainView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (selectionMode) {
-					holder.selectCheckBox.performClick();
-				} else {
-					if (listener != null) {
-						listener.onItemShowMap(osmEdit);
-					}
+		holder.mainView.setOnClickListener(v -> {
+			if (selectionMode) {
+				holder.selectCheckBox.performClick();
+			} else {
+				if (listener != null) {
+					listener.onItemShowMap(osmEdit);
 				}
-
 			}
+
 		});
 		boolean showDivider = getItemsCount() > 1 && position != getItemsCount() - 1;
 		holder.bottomDivider.setVisibility(showDivider ? View.VISIBLE : View.GONE);

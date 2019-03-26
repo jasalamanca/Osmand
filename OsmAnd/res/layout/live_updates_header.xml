@@ -17,7 +17,9 @@
         android:orientation="vertical"
         android:paddingBottom="12dp"
         android:paddingLeft="24dp"
+        android:paddingStart="24dp"
         android:paddingRight="12dp"
+        android:paddingEnd="12dp"
         android:paddingTop="16dp">
 
         <LinearLayout
@@ -35,6 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:text="@string/osm_live_subscription"
                 android:textColor="@color/color_white"
                 android:textSize="@dimen/default_list_text_size"
@@ -54,9 +57,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
+            android:layout_gravity="bottom|end"
             android:layout_marginTop="16dp"
-            android:gravity="right">
+            android:gravity="end">
 
             <Button
                 android:id="@+id/read_more_button"
@@ -75,6 +78,7 @@
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
                 android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
                 android:background="@drawable/btn_round_shade"
                 android:text="@string/osm_live_subscribe_btn"
                 android:textColor="@color/color_white"/>
@@ -129,8 +133,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="right|center_vertical"
-                android:layout_marginRight="16dp">
+                android:gravity="end|center_vertical"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp">
 
                 <ImageView
                     android:id="@+id/statusIcon"
@@ -172,8 +177,9 @@
                 android:layout_weight="0.5"
                 android:layout_marginBottom="4dp"
                 android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginTop="4dp"
-                android:gravity="right"
+                android:gravity="end"
                 android:text="World"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="@dimen/default_list_text_size"

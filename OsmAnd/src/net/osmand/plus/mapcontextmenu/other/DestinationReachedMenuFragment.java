@@ -49,67 +49,51 @@ public class DestinationReachedMenuFragment extends Fragment {
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.dest_reached_menu_fragment, container, false);
-		view.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismissMenu();
-			}
-		});
+		view.setOnClickListener(v -> dismissMenu());
 
 		IconsCache iconsCache = getMapActivity().getMyApplication().getIconsCache();
 
 		ImageButton closeImageButton = view.findViewById(R.id.closeImageButton);
 		closeImageButton.setImageDrawable(iconsCache.getIcon(R.drawable.ic_action_remove_dark, menu.isLight()));
-		closeImageButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismissMenu();
-			}
-		});
+		closeImageButton.setOnClickListener(v -> dismissMenu());
 
 		Button removeDestButton = view.findViewById(R.id.removeDestButton);
 		removeDestButton.setCompoundDrawablesWithIntrinsicBounds(
 				iconsCache.getIcon(R.drawable.ic_action_done, menu.isLight()), null, null, null);
 		AndroidUtils.setTextPrimaryColor(view.getContext(), removeDestButton, !menu.isLight());
-		removeDestButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				getMapActivity().getMyApplication().getTargetPointsHelper().removeWayPoint(true, -1);
-				Object contextMenuObj = getMapActivity().getContextMenu().getObject();
-				if (getMapActivity().getContextMenu().isActive()
-                        && contextMenuObj instanceof TargetPoint) {
-					TargetPoint targetPoint = (TargetPoint) contextMenuObj;
-					if (!targetPoint.start && !targetPoint.intermediate) {
-						getMapActivity().getContextMenu().close();
-					}
-				}
-				OsmandSettings settings = getMapActivity().getMyApplication().getSettings();
-				settings.APPLICATION_MODE.set(settings.DEFAULT_APPLICATION_MODE.get());
-				getMapActivity().getMapActions().stopNavigationWithoutConfirm();
-				dismissMenu();
-			}
-		});
+		removeDestButton.setOnClickListener(v -> {
+            getMapActivity().getMyApplication().getTargetPointsHelper().removeWayPoint(true, -1);
+            Object contextMenuObj = getMapActivity().getContextMenu().getObject();
+            if (getMapActivity().getContextMenu().isActive()
+&& contextMenuObj instanceof TargetPoint) {
+                TargetPoint targetPoint = (TargetPoint) contextMenuObj;
+                if (!targetPoint.start && !targetPoint.intermediate) {
+                    getMapActivity().getContextMenu().close();
+                }
+            }
+            OsmandSettings settings = getMapActivity().getMyApplication().getSettings();
+            settings.APPLICATION_MODE.set(settings.DEFAULT_APPLICATION_MODE.get());
+            getMapActivity().getMapActions().stopNavigationWithoutConfirm();
+            dismissMenu();
+        });
 
 		Button recalcDestButton = view.findViewById(R.id.recalcDestButton);
 		recalcDestButton.setCompoundDrawablesWithIntrinsicBounds(
 				iconsCache.getIcon(R.drawable.ic_action_gdirections_dark, menu.isLight()), null, null, null);
 		AndroidUtils.setTextPrimaryColor(view.getContext(), recalcDestButton, !menu.isLight());
-		recalcDestButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				TargetPointsHelper helper = getMapActivity().getMyApplication().getTargetPointsHelper();
-				TargetPoint target = helper.getPointToNavigate();
+		recalcDestButton.setOnClickListener(v -> {
+            TargetPointsHelper helper = getMapActivity().getMyApplication().getTargetPointsHelper();
+            TargetPoint target = helper.getPointToNavigate();
 
-				dismissMenu();
+            dismissMenu();
 
-				if (target != null) {
-					helper.navigateToPoint(new LatLon(target.getLatitude(), target.getLongitude()),
-							true, -1, target.getOriginalPointDescription());
-					getMapActivity().getMapActions().recalculateRoute(false);
-					getMapActivity().getMapLayers().getMapControlsLayer().startNavigation();
-				}
-			}
-		});
+            if (target != null) {
+                helper.navigateToPoint(new LatLon(target.getLatitude(), target.getLongitude()),
+                        true, -1, target.getOriginalPointDescription());
+                getMapActivity().getMapActions().recalculateRoute(false);
+                getMapActivity().getMapLayers().getMapControlsLayer().startNavigation();
+            }
+        });
 
 		View mainView = view.findViewById(R.id.main_view);
 		if (menu.isLandscapeLayout()) {

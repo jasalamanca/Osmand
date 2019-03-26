@@ -40,32 +40,21 @@ public class FileTypeBottomSheetDialogFragment extends MenuBottomSheetDialogFrag
 		((ImageView) mainView.findViewById(R.id.osc_file_icon)).setImageDrawable(fileIcon);
 		((ImageView) mainView.findViewById(R.id.gpx_file_icon)).setImageDrawable(fileIcon);
 
-		mainView.findViewById(R.id.osc_file_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (listener != null) {
-					listener.onClick(OsmEditsFragment.FILE_TYPE_OSC);
-				}
-				dismiss();
+		mainView.findViewById(R.id.osc_file_row).setOnClickListener(v -> {
+			if (listener != null) {
+				listener.onClick(OsmEditsFragment.FILE_TYPE_OSC);
 			}
+			dismiss();
 		});
 
-		mainView.findViewById(R.id.gpx_file_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (listener != null) {
-					listener.onClick(OsmEditsFragment.FILE_TYPE_GPX);
-				}
-				dismiss();
+		mainView.findViewById(R.id.gpx_file_row).setOnClickListener(v -> {
+			if (listener != null) {
+				listener.onClick(OsmEditsFragment.FILE_TYPE_GPX);
 			}
+			dismiss();
 		});
 
-		mainView.findViewById(R.id.cancel_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.cancel_row).setOnClickListener(view -> dismiss());
 
 		setupHeightAndBackground(mainView, R.id.scroll_view);
 

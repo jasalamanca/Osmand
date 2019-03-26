@@ -45,12 +45,7 @@ public class GeoIntentActivity extends OsmandListActivity {
 					getString(R.string.searching_address));
 			final GeoIntentTask task = new GeoIntentTask(progress, intent);
 
-			progress.setOnCancelListener(new OnCancelListener() {
-				@Override
-				public void onCancel(DialogInterface dialog) {
-					task.cancel(true);
-				}
-			});
+			progress.setOnCancelListener(dialog -> task.cancel(true));
 			progress.setCancelable(true);
 
 			task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);

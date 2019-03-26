@@ -121,16 +121,13 @@ public class ContextMenuAdapter {
 			if (layoutId == R.layout.mode_toggles) {
 				final Set<ApplicationMode> selected = new LinkedHashSet<>();
 				return AppModeDialog.prepareAppModeDrawerView((Activity) getContext(),
-						selected, true, new View.OnClickListener() {
-							@Override
-							public void onClick(View view) {
-								if (selected.size() > 0) {
-									app.getSettings().APPLICATION_MODE.set(selected.iterator().next());
-									notifyDataSetChanged();
-								}
-								if (changeAppModeListener != null) {
-									changeAppModeListener.onClick();
-								}
+						selected, true, view -> {
+							if (selected.size() > 0) {
+								app.getSettings().APPLICATION_MODE.set(selected.iterator().next());
+								notifyDataSetChanged();
+							}
+							if (changeAppModeListener != null) {
+								changeAppModeListener.onClick();
 							}
 						});
 			}
@@ -147,29 +144,21 @@ public class ContextMenuAdapter {
 				TextView feedbackButton = convertView.findViewById(R.id.feedbackButton);
 				Drawable pollIcon = app.getIconsCache().getThemedIcon(R.drawable.ic_action_big_poll);
 				feedbackButton.setCompoundDrawablesWithIntrinsicBounds(null, pollIcon, null, null);
-				feedbackButton.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						HelpArticleDialogFragment
-								.instantiateWithUrl(HelpActivity.OSMAND_POLL_HTML, app.getString(R.string.feedback))
-								.show(((FragmentActivity) getContext()).getSupportFragmentManager(), null);
-					}
-				});
+				feedbackButton.setOnClickListener(v -> HelpArticleDialogFragment
+						.instantiateWithUrl(HelpActivity.OSMAND_POLL_HTML, app.getString(R.string.feedback))
+						.show(((FragmentActivity) getContext()).getSupportFragmentManager(), null));
 				TextView contactUsButton = convertView.findViewById(R.id.contactUsButton);
 				Drawable contactUsIcon =
 						app.getIconsCache().getThemedIcon(R.drawable.ic_action_big_feedback);
 				contactUsButton.setCompoundDrawablesWithIntrinsicBounds(null, contactUsIcon, null,
 						null);
 				final String email = app.getString(R.string.support_email);
-				contactUsButton.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						Intent intent = new Intent(Intent.ACTION_SENDTO);
-						intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-						intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
-						if (intent.resolveActivity(app.getPackageManager()) != null) {
-							getContext().startActivity(intent);
-						}
+				contactUsButton.setOnClickListener(v -> {
+					Intent intent = new Intent(Intent.ACTION_SENDTO);
+					intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+					intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
+					if (intent.resolveActivity(app.getPackageManager()) != null) {
+						getContext().startActivity(intent);
 					}
 				});
 				return convertView;
@@ -238,15 +227,11 @@ public class ContextMenuAdapter {
 					ch.setVisibility(View.VISIBLE);
 					ch.setChecked(item.getSelected());
 					final ArrayAdapter<ContextMenuItem> la = this;
-					final OnCheckedChangeListener listener = new OnCheckedChangeListener() {
-
-						@Override
-						public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-							ItemClickListener ca = item.getItemClickListener();
-							item.setSelected(isChecked);
-							if (ca != null) {
-								ca.onContextMenuClick(la, item.getTitleId(), position, isChecked, null);
-							}
+					final OnCheckedChangeListener listener = (buttonView, isChecked) -> {
+						ItemClickListener ca = item.getItemClickListener();
+						item.setSelected(isChecked);
+						if (ca != null) {
+							ca.onContextMenuClick(la, item.getTitleId(), position, isChecked, null);
 						}
 					};
 					ch.setOnCheckedChangeListener(listener);

@@ -389,9 +389,7 @@ public class OsmandSettings {
 
 		@Override
 		protected boolean setValue(Object prefs, Boolean val) {
-			return ctx.accessibilityEnabled() ?
-					super.setValue(prefs, val) :
-					false;
+			return ctx.accessibilityEnabled() && super.setValue(prefs, val);
 		}
 	}
 
@@ -2182,8 +2180,6 @@ public class OsmandSettings {
 		setLastSearchedPoint(l);
 		return settingsAPI.edit(globalPreferences).putString(LAST_SEARCHED_INTERSECTED_STREET, street).commit();
 	}
-
-	public final OsmandPreference<String> LAST_SELECTED_GPX_TRACK_FOR_NEW_POINT = new StringPreference("last_selected_gpx_track_for_new_point", null).makeGlobal().cache();
 
 	// Avoid using this property, probably you need to use PoiFiltersHelper.getSelectedPoiFilters()
 	private final OsmandPreference<String> SELECTED_POI_FILTER_FOR_MAP = new StringPreference("selected_poi_filter_for_map", null).makeGlobal().cache();

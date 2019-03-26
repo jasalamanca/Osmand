@@ -96,12 +96,7 @@ public class MapMarkersHistoryAdapter extends RecyclerView.Adapter<RecyclerView.
 	public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
 		if (viewType == MARKER_TYPE) {
 			View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.map_marker_item_new, viewGroup, false);
-			view.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					listener.onItemClick(view);
-				}
-			});
+			view.setOnClickListener(view1 -> listener.onItemClick(view1));
 			return new MapMarkerItemViewHolder(view);
 		} else if (viewType == HEADER_TYPE) {
 			View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.map_marker_item_header, viewGroup, false);
@@ -143,28 +138,20 @@ public class MapMarkersHistoryAdapter extends RecyclerView.Adapter<RecyclerView.
 
 			itemViewHolder.optionsBtn.setBackgroundDrawable(app.getResources().getDrawable(night ? R.drawable.marker_circle_background_dark_with_inset : R.drawable.marker_circle_background_light_with_inset));
 			itemViewHolder.optionsBtn.setImageDrawable(iconsCache.getThemedIcon(R.drawable.ic_action_reset_to_default_dark));
-			itemViewHolder.optionsBtn.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					int position = itemViewHolder.getAdapterPosition();
-					if (position < 0) {
-						return;
-					}
-					app.getMapMarkersHelper().restoreMarkerFromHistory(marker, 0);
+			itemViewHolder.optionsBtn.setOnClickListener(view -> {
+                int position1 = itemViewHolder.getAdapterPosition();
+                if (position1 < 0) {
+                    return;
+                }
+                app.getMapMarkersHelper().restoreMarkerFromHistory(marker, 0);
 
-					snackbar = Snackbar.make(itemViewHolder.itemView, app.getString(R.string.marker_moved_to_active), Snackbar.LENGTH_LONG)
-							.setAction(R.string.shared_string_undo, new View.OnClickListener() {
-								@Override
-								public void onClick(View view) {
-									app.getMapMarkersHelper().moveMapMarkerToHistory(marker);
-								}
-							});
-					View snackBarView = snackbar.getView();
-					TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
-					tv.setTextColor(ContextCompat.getColor(app, R.color.color_dialog_buttons_dark));
-					snackbar.show();
-				}
-			});
+                snackbar = Snackbar.make(itemViewHolder.itemView, app.getString(R.string.marker_moved_to_active), Snackbar.LENGTH_LONG)
+                        .setAction(R.string.shared_string_undo, view1 -> app.getMapMarkersHelper().moveMapMarkerToHistory(marker));
+                View snackBarView = snackbar.getView();
+                TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
+                tv.setTextColor(ContextCompat.getColor(app, R.color.color_dialog_buttons_dark));
+                snackbar.show();
+            });
 			itemViewHolder.flagIconLeftSpace.setVisibility(View.VISIBLE);
 			itemViewHolder.iconDirection.setVisibility(View.GONE);
 			itemViewHolder.leftPointSpace.setVisibility(View.GONE);

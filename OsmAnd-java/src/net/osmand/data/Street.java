@@ -43,20 +43,17 @@ public class Street extends MapObject {
 	}
 
 	public void sortBuildings() {
-		Collections.sort(buildings, new Comparator<Building>() {
-			@Override
-			public int compare(Building o1, Building o2) {
-				String s1 = o1.getName();
-				String s2 = o2.getName();
-				int i1 = Algorithms.extractFirstIntegerNumber(s1);
-				int i2 = Algorithms.extractFirstIntegerNumber(s2);
-				if (i1 == i2) {
-					String t1 = Algorithms.extractIntegerSuffix(s1);
-					String t2 = Algorithms.extractIntegerSuffix(s2);
-					return t1.compareTo(t2);
-				}
-				return i1 - i2;
+		Collections.sort(buildings, (o1, o2) -> {
+			String s1 = o1.getName();
+			String s2 = o2.getName();
+			int i1 = Algorithms.extractFirstIntegerNumber(s1);
+			int i2 = Algorithms.extractFirstIntegerNumber(s2);
+			if (i1 == i2) {
+				String t1 = Algorithms.extractIntegerSuffix(s1);
+				String t2 = Algorithms.extractIntegerSuffix(s2);
+				return t1.compareTo(t2);
 			}
+			return i1 - i2;
 		});
 	}
 

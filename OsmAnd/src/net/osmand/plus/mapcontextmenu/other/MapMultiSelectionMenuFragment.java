@@ -62,12 +62,7 @@ public class MapMultiSelectionMenuFragment extends Fragment implements MultiSele
 		view.findViewById(R.id.divider).setBackgroundColor(ContextCompat.getColor(getContext(), menu.isLight() ? R.color.multi_selection_menu_divider_light : R.color.multi_selection_menu_divider_dark));
 
 		((TextView) view.findViewById(R.id.cancel_row_text)).setTextColor(ContextCompat.getColor(getContext(), menu.isLight() ? R.color.multi_selection_menu_close_btn_light : R.color.multi_selection_menu_close_btn_dark));
-		view.findViewById(R.id.cancel_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismissMenu();
-			}
-		});
+		view.findViewById(R.id.cancel_row).setOnClickListener(view -> dismissMenu());
 		return view;
 	}
 

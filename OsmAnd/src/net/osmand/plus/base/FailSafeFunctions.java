@@ -52,57 +52,38 @@ public class FailSafeFunctions {
 					tv.setText(ma.getString(R.string.continue_follow_previous_route_auto, delay + ""));
 					tv.setPadding(7, 5, 7, 5);
 					builder.setView(tv);
-					builder.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							quitRouteRestoreDialog = true;
-							restoreRoutingModeInner();
+					builder.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> {
+                        quitRouteRestoreDialog = true;
+                        restoreRoutingModeInner();
 
-						}
-					});
-					builder.setNegativeButton(R.string.shared_string_no, new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							quitRouteRestoreDialog = true;
-							notRestoreRoutingMode(ma, app);
-						}
-					});
+                    });
+					builder.setNegativeButton(R.string.shared_string_no, (dialog, which) -> {
+                        quitRouteRestoreDialog = true;
+                        notRestoreRoutingMode(ma, app);
+                    });
 					final AlertDialog dlg = builder.show();
-					dlg.setOnDismissListener(new OnDismissListener() {
-						@Override
-						public void onDismiss(DialogInterface dialog) {
-							quitRouteRestoreDialog = true;
-						}
-					});
-					dlg.setOnCancelListener(new OnCancelListener() {
-						@Override
-						public void onCancel(DialogInterface dialog) {
-							quitRouteRestoreDialog = true;
-						}
-					});
-					delayDisplay = new Runnable() {
-						@Override
-						public void run() {
-							if(!quitRouteRestoreDialog) {
-								delay --;
-								tv.setText(ma.getString(R.string.continue_follow_previous_route_auto, delay + ""));
-								if(delay <= 0) {
-									try {
-										if (dlg.isShowing() && !quitRouteRestoreDialog) {
-											dlg.dismiss();
-										}
-										quitRouteRestoreDialog = true;
-										restoreRoutingModeInner();
-									} catch(Exception e) {
-										// swallow view not attached exception
-										log.error(e.getMessage()+"", e);
-									}
-								} else {
-									uiHandler.postDelayed(delayDisplay, 1000);
-								}
-							}
-						}
-					};
+					dlg.setOnDismissListener(dialog -> quitRouteRestoreDialog = true);
+					dlg.setOnCancelListener(dialog -> quitRouteRestoreDialog = true);
+					delayDisplay = () -> {
+                        if(!quitRouteRestoreDialog) {
+                            delay --;
+                            tv.setText(ma.getString(R.string.continue_follow_previous_route_auto, delay + ""));
+                            if(delay <= 0) {
+                                try {
+                                    if (dlg.isShowing() && !quitRouteRestoreDialog) {
+                                        dlg.dismiss();
+                                    }
+                                    quitRouteRestoreDialog = true;
+                                    restoreRoutingModeInner();
+                                } catch(Exception e) {
+                                    // swallow view not attached exception
+                                    log.error(e.getMessage()+"", e);
+                                }
+                            } else {
+                                uiHandler.postDelayed(delayDisplay, 1000);
+                            }
+                        }
+                    };
 					delayDisplay.run();
 				}
 

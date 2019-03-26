@@ -87,7 +87,7 @@ public class OsmandRenderer {
 		if (rc.width > 0 && rc.height > 0 && searchResultHandler != null) {
 			try {
 				final NativeLibrary.RenderingGenerationResult res = library.generateRendering(
-					rc, searchResultHandler, bmp, bmp.hasAlpha(), render);
+					rc, searchResultHandler, bmp, render);
 				long time = System.currentTimeMillis() - now;
 				rc.renderingDebugInfo = String.format("Rendering: %s ms  (%s text)\n"
 						+ "(%s points, %s points inside, %s of %s objects visible)\n",//$NON-NLS-1$

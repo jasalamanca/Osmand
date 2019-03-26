@@ -287,12 +287,7 @@ class BinaryMapPoiReaderAdapter {
 						offKeys[i] = keys[i];
 					}
 					final TIntLongHashMap foffsets = offsets;
-					Arrays.sort(offKeys, new Comparator<Integer>() {
-						@Override
-						public int compare(Integer object1, Integer object2) {
-							return Double.compare(foffsets.get(object1), foffsets.get(object2));
-						}
-					});
+					Arrays.sort(offKeys, (object1, object2) -> Double.compare(foffsets.get(object1), foffsets.get(object2)));
 					int p = BUCKET_SEARCH_BY_NAME * 3;
 					if (p < offKeys.length) {
 						for (int i = p + BUCKET_SEARCH_BY_NAME; ; i += BUCKET_SEARCH_BY_NAME) {

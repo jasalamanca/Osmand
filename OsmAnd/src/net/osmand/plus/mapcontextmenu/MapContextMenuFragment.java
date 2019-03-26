@@ -148,20 +148,10 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 		View toolbarBackButton = view.findViewById(R.id.context_menu_toolbar_back);
 		toolbarTextView = view.findViewById(R.id.context_menu_toolbar_text);
 		updateVisibility(toolbarContainer, 0);
-		toolbarBackButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				openMenuHeaderOnly();
-			}
-		});
+		toolbarBackButton.setOnClickListener(v -> openMenuHeaderOnly());
 
 		topButtonContainer = view.findViewById(R.id.context_menu_top_button_container);
-		view.findViewById(R.id.context_menu_top_back).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				openMenuHeaderOnly();
-			}
-		});
+		view.findViewById(R.id.context_menu_top_back).setOnClickListener(v -> openMenuHeaderOnly());
 		updateVisibility(topButtonContainer, 0);
 
 		map = getMapActivity().getMapView();
@@ -186,74 +176,56 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 
 		// Left title button
 		final View leftTitleButtonView = view.findViewById(R.id.title_button_view);
-		leftTitleButtonView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				TitleButtonController leftTitleButtonController = menu.getLeftTitleButtonController();
-				if (leftTitleButtonController != null) {
-					leftTitleButtonController.buttonPressed();
-				}
+		leftTitleButtonView.setOnClickListener(v -> {
+			TitleButtonController leftTitleButtonController = menu.getLeftTitleButtonController();
+			if (leftTitleButtonController != null) {
+				leftTitleButtonController.buttonPressed();
 			}
 		});
 
 		// Right title button
 		final View rightTitleButtonView = view.findViewById(R.id.title_button_right_view);
-		rightTitleButtonView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				TitleButtonController rightTitleButtonController = menu.getRightTitleButtonController();
-				if (rightTitleButtonController != null) {
-					rightTitleButtonController.buttonPressed();
-				}
+		rightTitleButtonView.setOnClickListener(v -> {
+			TitleButtonController rightTitleButtonController = menu.getRightTitleButtonController();
+			if (rightTitleButtonController != null) {
+				rightTitleButtonController.buttonPressed();
 			}
 		});
 
 		// Left download button
 		final View leftDownloadButtonView = view.findViewById(R.id.download_button_left_view);
-		leftDownloadButtonView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				TitleButtonController leftDownloadButtonController = menu.getLeftDownloadButtonController();
-				if (leftDownloadButtonController != null) {
-					leftDownloadButtonController.buttonPressed();
-				}
+		leftDownloadButtonView.setOnClickListener(v -> {
+			TitleButtonController leftDownloadButtonController = menu.getLeftDownloadButtonController();
+			if (leftDownloadButtonController != null) {
+				leftDownloadButtonController.buttonPressed();
 			}
 		});
 
 		// Right download button
 		final View rightDownloadButtonView = view.findViewById(R.id.download_button_right_view);
-		rightDownloadButtonView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				TitleButtonController rightDownloadButtonController = menu.getRightDownloadButtonController();
-				if (rightDownloadButtonController != null) {
-					rightDownloadButtonController.buttonPressed();
-				}
+		rightDownloadButtonView.setOnClickListener(v -> {
+			TitleButtonController rightDownloadButtonController = menu.getRightDownloadButtonController();
+			if (rightDownloadButtonController != null) {
+				rightDownloadButtonController.buttonPressed();
 			}
 		});
 
 		// Bottom title button
 		final View bottomTitleButtonView = view.findViewById(R.id.title_button_bottom_view);
-		bottomTitleButtonView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				TitleButtonController bottomTitleButtonController = menu.getBottomTitleButtonController();
-				if (bottomTitleButtonController != null) {
-					bottomTitleButtonController.buttonPressed();
-				}
+		bottomTitleButtonView.setOnClickListener(v -> {
+			TitleButtonController bottomTitleButtonController = menu.getBottomTitleButtonController();
+			if (bottomTitleButtonController != null) {
+				bottomTitleButtonController.buttonPressed();
 			}
 		});
 
 		// Progress bar
 		final ImageView progressButton = view.findViewById(R.id.progressButton);
 		progressButton.setImageDrawable(getIcon(R.drawable.ic_action_remove_dark, R.color.ctx_menu_buttons_icon_color));
-		progressButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				TitleProgressController titleProgressController = menu.getTitleProgressController();
-				if (titleProgressController != null) {
-					titleProgressController.buttonPressed();
-				}
+		progressButton.setOnClickListener(v -> {
+			TitleProgressController titleProgressController = menu.getTitleProgressController();
+			if (titleProgressController != null) {
+				titleProgressController.buttonPressed();
 			}
 		});
 
@@ -460,18 +432,8 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 					R.drawable.btn_circle_trans, R.drawable.btn_circle_night, nightMode);
 			updateImageButton(zoomOutButtonView, R.drawable.map_zoom_out, R.drawable.map_zoom_out_night,
 					R.drawable.btn_circle_trans, R.drawable.btn_circle_night, nightMode);
-			zoomInButtonView.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					menu.zoomInPressed();
-				}
-			});
-			zoomOutButtonView.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					menu.zoomOutPressed();
-				}
-			});
+			zoomInButtonView.setOnClickListener(v -> menu.zoomInPressed());
+			zoomOutButtonView.setOnClickListener(v -> menu.zoomOutPressed());
 			zoomButtonsView.setVisibility(View.VISIBLE);
 		} else {
 			zoomButtonsView.setVisibility(View.GONE);
@@ -481,19 +443,16 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 		List<TransportStopRoute> transportStopRoutes = menu.getTransportStopRoutes();
 		if (transportStopRoutes != null && transportStopRoutes.size() > 0) {
 			final TransportStopRouteAdapter adapter = new TransportStopRouteAdapter(getMyApplication(), transportStopRoutes, nightMode);
-			adapter.setListener(new TransportStopRouteAdapter.OnClickListener() {
-				@Override
-				public void onClick(int position) {
-					TransportStopRoute route = adapter.getItem(position);
-					if (route != null) {
-						PointDescription pd = new PointDescription(PointDescription.POINT_TYPE_TRANSPORT_ROUTE,
-								route.getDescription(getMapActivity().getMyApplication(), false));
-						menu.show(menu.getLatLon(), pd, route);
-						TransportStopsLayer stopsLayer = getMapActivity().getMapLayers().getTransportStopsLayer();
-						stopsLayer.setRoute(route);
-						int cz = route.calculateZoom(0, getMapActivity().getMapView().getCurrentRotatedTileBox());
-						getMapActivity().changeZoom(cz - getMapActivity().getMapView().getZoom());
-					}
+			adapter.setListener(position -> {
+				TransportStopRoute route = adapter.getItem(position);
+				if (route != null) {
+					PointDescription pd = new PointDescription(PointDescription.POINT_TYPE_TRANSPORT_ROUTE,
+							route.getDescription(getMapActivity().getMyApplication(), false));
+					menu.show(menu.getLatLon(), pd, route);
+					TransportStopsLayer stopsLayer = getMapActivity().getMapLayers().getTransportStopsLayer();
+					stopsLayer.setRoute(route);
+					int cz = route.calculateZoom(0, getMapActivity().getMapView().getCurrentRotatedTileBox());
+					getMapActivity().changeZoom(cz - getMapActivity().getMapView().getZoom());
 				}
 			});
 			transportStopRoutesGrid.setAdapter(adapter);
@@ -525,12 +484,7 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 		imageFavorite.setContentDescription(getString(menu.getFavActionStringId()));
 		((TextView) view.findViewById(R.id.context_menu_fav_text_view)).setText(menu.getFavActionStringId());
 		View favView = view.findViewById(R.id.context_menu_fav_view);
-		favView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				menu.buttonFavoritePressed();
-			}
-		});
+		favView.setOnClickListener(v -> menu.buttonFavoritePressed());
 
 		final ImageView imageWaypoint = view.findViewById(R.id.context_menu_route_image_view);
 		imageWaypoint.setImageDrawable(getIcon(menu.getWaypointActionIconId(),
@@ -538,12 +492,7 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 		imageWaypoint.setContentDescription(getString(menu.getWaypointActionStringId()));
 		View waypointView = view.findViewById(R.id.context_menu_route_view);
 		if (menu.isButtonWaypointEnabled()) {
-			waypointView.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					menu.buttonWaypointPressed();
-				}
-			});
+			waypointView.setOnClickListener(v -> menu.buttonWaypointPressed());
 		} else {
 			deactivate(waypointView);
 		}
@@ -552,34 +501,19 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 		imageShare.setImageDrawable(getIcon(R.drawable.map_action_gshare_dark,
 				R.color.ctx_menu_buttons_icon_color));
 		View shareView = view.findViewById(R.id.context_menu_share_view);
-		shareView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				menu.buttonSharePressed();
-			}
-		});
+		shareView.setOnClickListener(v -> menu.buttonSharePressed());
 
 		final ImageView imageMore = view.findViewById(R.id.context_menu_more_image_view);
 		imageMore.setImageDrawable(getIcon(R.drawable.map_overflow_menu_white,
 				R.color.ctx_menu_buttons_icon_color));
 		View moreView = view.findViewById(R.id.context_menu_more_view);
-		moreView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				menu.buttonMorePressed();
-			}
-		});
+		moreView.setOnClickListener(v -> menu.buttonMorePressed());
 
 		//Bottom buttons
 		int bottomButtonsColor = nightMode ? R.color.ctx_menu_controller_button_text_color_dark_n : R.color.ctx_menu_controller_button_text_color_light_n;
 		TextView detailsButton = view.findViewById(R.id.context_menu_details_button);
 		detailsButton.setTextColor(ContextCompat.getColor(getContext(), bottomButtonsColor));
-		detailsButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				openMenuHalfScreen();
-			}
-		});
+		detailsButton.setOnClickListener(view -> openMenuHalfScreen());
 		TextView directionsButton = view.findViewById(R.id.context_menu_directions_button);
 		int iconResId = R.drawable.map_directions;
 		if (menu.navigateInPedestrianMode()) {
@@ -589,12 +523,7 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 		directionsButton.setTextColor(ContextCompat.getColor(getContext(), bottomButtonsColor));
 		directionsButton.setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null);
 		directionsButton.setCompoundDrawablePadding(dpToPx(8));
-		directionsButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				menu.navigateButtonPressed();
-			}
-		});
+		directionsButton.setOnClickListener(view -> menu.navigateButtonPressed());
 
 		buildBottomView();
 
@@ -605,14 +534,10 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 		view.findViewById(R.id.context_menu_bottom_view).setBackgroundColor(getResources()
 				.getColor(nightMode ? R.color.ctx_menu_bottom_view_bg_dark : R.color.ctx_menu_bottom_view_bg_light));
 
-		containerLayoutListener = new OnLayoutChangeListener() {
-			@Override
-			public void onLayoutChange(View view, int left, int top, int right, int bottom,
-									   int oldLeft, int oldTop, int oldRight, int oldBottom) {
-				if (bottom != oldBottom) {
-					processScreenHeight(view.getParent());
-					runLayoutListener();
-				}
+		containerLayoutListener = (view, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom) -> {
+			if (bottom != oldBottom) {
+				processScreenHeight(view.getParent());
+				runLayoutListener();
 			}
 		};
 
@@ -684,14 +609,11 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 		final boolean showShowHideButton = menuState == MenuState.HALF_SCREEN || (!menu.isLandscapeLayout() && menuState == MenuState.FULL_SCREEN);
 		TextView detailsButton = view.findViewById(R.id.context_menu_details_button);
 		detailsButton.setText(showShowHideButton ? R.string.shared_string_collapse : R.string.description);
-		detailsButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (showShowHideButton) {
-					openMenuHeaderOnly();
-				} else {
-					openMenuHalfScreen();
-				}
+		detailsButton.setOnClickListener(view -> {
+			if (showShowHideButton) {
+				openMenuHeaderOnly();
+			} else {
+				openMenuHalfScreen();
 			}
 		});
 	}

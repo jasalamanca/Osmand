@@ -284,13 +284,7 @@ public class PoiUIFilter implements SearchPoiTypeFilter, Comparable<PoiUIFilter>
 
 	public AmenityNameFilter getNameFilter(String filter) {
 		if (Algorithms.isEmpty(filter)) {
-			return new AmenityNameFilter() {
-
-				@Override
-				public boolean accept(Amenity a) {
-					return true;
-				}
-			};
+			return a -> true;
 		}
 		StringBuilder nmFilter = new StringBuilder();
 		String[] items = filter.split(" ");
@@ -325,90 +319,86 @@ public class PoiUIFilter implements SearchPoiTypeFilter, Comparable<PoiUIFilter>
 		final CollatorStringMatcher sm =
 				nmFilter.length() > 0 ?
 						new CollatorStringMatcher(nmFilter.toString().trim(), StringMatcherMode.CHECK_CONTAINS) : null;
-		return new AmenityNameFilter() {
+		return a -> {
+            if (sm != null) {
+                String lower = OsmAndFormatter.getPoiStringWithoutType(a,
+                        app.getSettings().MAP_PREFERRED_LOCALE.get(), app.getSettings().MAP_TRANSLITERATE_NAMES.get());
+                if (!sm.matches(lower)) {
+                    return false;
+                }
+            }
+            if (poiAdditionals != null) {
+                Map<PoiType, PoiType> textPoiAdditionalsMap = new HashMap<>();
+                Map<String, List<PoiType>> poiAdditionalCategoriesMap = new HashMap<>();
+                for (PoiType pt : poiAdditionals) {
+                    String category = pt.getPoiAdditionalCategory();
+                    List<PoiType> types = poiAdditionalCategoriesMap.get(category);
+                    if (types == null) {
+                        types = new ArrayList<>();
+                        poiAdditionalCategoriesMap.put(category, types);
+                    }
+                    types.add(pt);
 
-			@Override
-			public boolean accept(Amenity a) {
-				if (sm != null) {
-					String lower = OsmAndFormatter.getPoiStringWithoutType(a,
-							app.getSettings().MAP_PREFERRED_LOCALE.get(), app.getSettings().MAP_TRANSLITERATE_NAMES.get());
-					if (!sm.matches(lower)) {
-						return false;
-					}
-				}
-				if (poiAdditionals != null) {
-					Map<PoiType, PoiType> textPoiAdditionalsMap = new HashMap<>();
-					Map<String, List<PoiType>> poiAdditionalCategoriesMap = new HashMap<>();
-					for (PoiType pt : poiAdditionals) {
-						String category = pt.getPoiAdditionalCategory();
-						List<PoiType> types = poiAdditionalCategoriesMap.get(category);
-						if (types == null) {
-							types = new ArrayList<>();
-							poiAdditionalCategoriesMap.put(category, types);
-						}
-						types.add(pt);
-
-						String osmTag = pt.getOsmTag();
-						if (osmTag.length() < pt.getKeyName().length()) {
-							PoiType textPoiType = poiTypes.getTextPoiAdditionalByKey(osmTag);
-							if (textPoiType != null) {
-								textPoiAdditionalsMap.put(pt, textPoiType);
-							}
-						}
-					}
-					for (List<PoiType> types : poiAdditionalCategoriesMap.values()) {
-						boolean acceptedAnyInCategory = false;
-						for (PoiType p : types) {
-							String inf = a.getAdditionalInfo(p.getKeyName());
-							if (inf != null) {
-								acceptedAnyInCategory = true;
-								break;
-							} else {
-								PoiType textPoiType = textPoiAdditionalsMap.get(p);
-								if (textPoiType != null) {
-									inf = a.getAdditionalInfo(textPoiType.getKeyName());
-									if (!Algorithms.isEmpty(inf)) {
-										String[] items = inf.split(";");
-										String val = p.getOsmValue().trim().toLowerCase();
-										for (String item : items) {
-											if (item.trim().toLowerCase().equals(val)) {
-												acceptedAnyInCategory = true;
-												break;
-											}
-										}
-										if (acceptedAnyInCategory) {
-											break;
-										}
-									}
-								}
-							}
-						}
-						if (!acceptedAnyInCategory) {
-							return false;
-						}
-					}
-				}
-				if (allTime) {
-					if (!"24/7".equalsIgnoreCase(a.getOpeningHours()) && !"Mo-Su 00:00-24:00".equalsIgnoreCase(a.getOpeningHours())) {
-						return false;
-					}
-				}
-				if (open) {
-					OpeningHours rs = OpeningHoursParser.parseOpenedHours(a.getOpeningHours());
-					if (rs != null) {
-						Calendar inst = Calendar.getInstance();
-						inst.setTimeInMillis(System.currentTimeMillis());
-						boolean work = rs.isOpenedForTime(inst);
-						if (!work) {
-							return false;
-						}
-					} else {
-						return false;
-					}
-				}
-				return true;
-			}
-		};
+                    String osmTag = pt.getOsmTag();
+                    if (osmTag.length() < pt.getKeyName().length()) {
+                        PoiType textPoiType = poiTypes.getTextPoiAdditionalByKey(osmTag);
+                        if (textPoiType != null) {
+                            textPoiAdditionalsMap.put(pt, textPoiType);
+                        }
+                    }
+                }
+                for (List<PoiType> types : poiAdditionalCategoriesMap.values()) {
+                    boolean acceptedAnyInCategory = false;
+                    for (PoiType p : types) {
+                        String inf = a.getAdditionalInfo(p.getKeyName());
+                        if (inf != null) {
+                            acceptedAnyInCategory = true;
+                            break;
+                        } else {
+                            PoiType textPoiType = textPoiAdditionalsMap.get(p);
+                            if (textPoiType != null) {
+                                inf = a.getAdditionalInfo(textPoiType.getKeyName());
+                                if (!Algorithms.isEmpty(inf)) {
+                                    String[] items = inf.split(";");
+                                    String val = p.getOsmValue().trim().toLowerCase();
+                                    for (String item : items) {
+                                        if (item.trim().toLowerCase().equals(val)) {
+                                            acceptedAnyInCategory = true;
+                                            break;
+                                        }
+                                    }
+                                    if (acceptedAnyInCategory) {
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (!acceptedAnyInCategory) {
+                        return false;
+                    }
+                }
+            }
+            if (allTime) {
+                if (!"24/7".equalsIgnoreCase(a.getOpeningHours()) && !"Mo-Su 00:00-24:00".equalsIgnoreCase(a.getOpeningHours())) {
+                    return false;
+                }
+            }
+            if (open) {
+                OpeningHours rs = OpeningHoursParser.parseOpenedHours(a.getOpeningHours());
+                if (rs != null) {
+                    Calendar inst = Calendar.getInstance();
+                    inst.setTimeInMillis(System.currentTimeMillis());
+                    boolean work = rs.isOpenedForTime(inst);
+                    if (!work) {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            }
+            return true;
+        };
 	}
 
 	private String getNameToken24H() {

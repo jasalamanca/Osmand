@@ -145,12 +145,7 @@ public class MapMarkersDialogFragment extends android.support.v4.app.DialogFragm
 
 		Toolbar toolbar = mainView.findViewById(R.id.map_markers_toolbar);
 		toolbar.setNavigationIcon(getMyApplication().getIconsCache().getIcon(R.drawable.ic_arrow_back));
-		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		toolbar.setNavigationOnClickListener(view -> dismiss());
 
 		viewPager = mainView.findViewById(R.id.map_markers_view_pager);
 		viewPager.setOffscreenPageLimit(3);
@@ -170,37 +165,31 @@ public class MapMarkersDialogFragment extends android.support.v4.app.DialogFragm
 			groupsFragment.setGroupIdToOpen(groupIdToOpen);
 			viewPager.setCurrentItem(GROUPS_POSITION, false);
 		}
-		bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-			@Override
-			public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-				switch (menuItem.getItemId()) {
-					case R.id.action_active:
-						setupLocationUpdate(true, false);
-						setupActiveFragment(ACTIVE_MARKERS_POSITION);
-						return true;
-					case R.id.action_groups:
-						setupLocationUpdate(false, true);
-						setupActiveFragment(GROUPS_POSITION);
-						return true;
-					case R.id.action_history:
-						setupLocationUpdate(false, false);
-						setupActiveFragment(HISTORY_MARKERS_POSITION);
-						return true;
-					case R.id.action_more:
-						showOptionsMenuFragment();
-						return true;
-				}
-				return false;
-			}
-		});
-		bottomNav.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
-			@Override
-			public void onNavigationItemReselected(@NonNull MenuItem menuItem) {
-				if (menuItem.getItemId() == R.id.action_more) {
-					dismissOptionsMenuFragment();
-				}
-			}
-		});
+		bottomNav.setOnNavigationItemSelectedListener(menuItem -> {
+            switch (menuItem.getItemId()) {
+                case R.id.action_active:
+                    setupLocationUpdate(true, false);
+                    setupActiveFragment(ACTIVE_MARKERS_POSITION);
+                    return true;
+                case R.id.action_groups:
+                    setupLocationUpdate(false, true);
+                    setupActiveFragment(GROUPS_POSITION);
+                    return true;
+                case R.id.action_history:
+                    setupLocationUpdate(false, false);
+                    setupActiveFragment(HISTORY_MARKERS_POSITION);
+                    return true;
+                case R.id.action_more:
+                    showOptionsMenuFragment();
+                    return true;
+            }
+            return false;
+        });
+		bottomNav.setOnNavigationItemReselectedListener(menuItem -> {
+            if (menuItem.getItemId() == R.id.action_more) {
+                dismissOptionsMenuFragment();
+            }
+        });
 
 		return mainView;
 	}
@@ -258,12 +247,7 @@ public class MapMarkersDialogFragment extends android.support.v4.app.DialogFragm
 	}
 
 	private OnMapMarkersSavedListener createOnMapMarkersSavedListener() {
-		return new OnMapMarkersSavedListener() {
-			@Override
-			public void onMapMarkersSaved() {
-				updateAdapters();
-			}
-		};
+		return () -> updateAdapters();
 	}
 
 	public void blurStatusBar() {
@@ -398,17 +382,14 @@ public class MapMarkersDialogFragment extends android.support.v4.app.DialogFragm
 						groupsFragment.updateAdapter();
 					}
 					snackbar = Snackbar.make(viewPager, R.string.all_markers_moved_to_history, Snackbar.LENGTH_LONG)
-							.setAction(R.string.shared_string_undo, new View.OnClickListener() {
-								@Override
-								public void onClick(View view) {
-									helper.restoreMarkersFromHistory(markers);
-									if (viewPager.getCurrentItem() == ACTIVE_MARKERS_POSITION) {
-										activeFragment.updateAdapter();
-									} else {
-										groupsFragment.updateAdapter();
-									}
-								}
-							});
+							.setAction(R.string.shared_string_undo, view -> {
+                                helper.restoreMarkersFromHistory(markers);
+                                if (viewPager.getCurrentItem() == ACTIVE_MARKERS_POSITION) {
+                                    activeFragment.updateAdapter();
+                                } else {
+                                    groupsFragment.updateAdapter();
+                                }
+                            });
 					View snackBarView = snackbar.getView();
 					TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
 					tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
@@ -446,16 +427,13 @@ public class MapMarkersDialogFragment extends android.support.v4.app.DialogFragm
 			public void saveGpx(final String fileName) {
 				final String gpxPath = mapActivity.getMyApplication().getMapMarkersHelper().generateGpx(fileName);
 				snackbar = Snackbar.make(viewPager, fileName + " " + getString(R.string.is_saved) + ".", Snackbar.LENGTH_LONG)
-						.setAction(R.string.shared_string_show, new View.OnClickListener() {
-							@Override
-							public void onClick(View view) {
-								Intent intent = new Intent(mapActivity, getMyApplication().getAppCustomization().getTrackActivity());
-								intent.putExtra(TrackActivity.TRACK_FILE_NAME, gpxPath);
-								intent.putExtra(TrackActivity.OPEN_POINTS_TAB, true);
-								intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-								startActivity(intent);
-							}
-						});
+						.setAction(R.string.shared_string_show, view -> {
+                            Intent intent = new Intent(mapActivity, getMyApplication().getAppCustomization().getTrackActivity());
+                            intent.putExtra(TrackActivity.TRACK_FILE_NAME, gpxPath);
+                            intent.putExtra(TrackActivity.OPEN_POINTS_TAB, true);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                        });
 				View snackBarView = snackbar.getView();
 				TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
 				tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
@@ -465,12 +443,7 @@ public class MapMarkersDialogFragment extends android.support.v4.app.DialogFragm
 	}
 
 	private OrderByFragmentListener createOrderByFragmentListener() {
-		return new OrderByFragmentListener() {
-			@Override
-			public void onMapMarkersOrderByModeChanged(MapMarkersOrderByMode orderByMode) {
-				setOrderByMode(orderByMode);
-			}
-		};
+		return orderByMode -> setOrderByMode(orderByMode);
 	}
 
 	private void setOrderByMode(MapMarkersOrderByMode orderByMode) {

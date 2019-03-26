@@ -128,18 +128,15 @@ public class StartGPSStatus extends OsmAndAction {
 		ll.addView(lv);
 		ll.addView(cb);
 		final AlertDialog dlg = builder.create();
-		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				boolean remember = cb.isChecked();
-				GpsStatusApps item = adapter.getItem(position);
-				if(remember) {
-					getSettings().GPS_STATUS_APP.set(item.appName);
-				}
-				dlg.dismiss();
-				runChosenGPSStatus(item);
-			}
-		});
+		lv.setOnItemClickListener((parent, view, position, id) -> {
+            boolean remember = cb.isChecked();
+            GpsStatusApps item = adapter.getItem(position);
+            if(remember) {
+                getSettings().GPS_STATUS_APP.set(item.appName);
+            }
+            dlg.dismiss();
+            runChosenGPSStatus(item);
+        });
 		dlg.setView(ll);
 		return dlg;
 	}
@@ -163,16 +160,13 @@ public class StartGPSStatus extends OsmAndAction {
 			if (Version.isMarketEnabled(getMyApplication())) {
 				AlertDialog.Builder builder = new AlertDialog.Builder(mapActivity);
 				builder.setMessage(mapActivity. getString(R.string.gps_status_app_not_found));
-				builder.setPositiveButton(mapActivity.getString(R.string.shared_string_yes), new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Version.getUrlWithUtmRef(getMyApplication(), g.appName)));
-						try {
-							mapActivity.startActivity(intent);
-						} catch (ActivityNotFoundException e) {
-						}
-					}
-				});
+				builder.setPositiveButton(mapActivity.getString(R.string.shared_string_yes), (dialog, which) -> {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Version.getUrlWithUtmRef(getMyApplication(), g.appName)));
+                    try {
+                        mapActivity.startActivity(intent);
+                    } catch (ActivityNotFoundException e) {
+                    }
+                });
 				builder.setNegativeButton(mapActivity.getString(R.string.shared_string_no), null);
 				builder.show();
 			} else {

@@ -43,50 +43,37 @@ public class OsmAndLocationSimulation {
 			final View view = ma.getLayoutInflater().inflate(R.layout.animate_route, null);
 			final View gpxView = view.findViewById(R.id.layout_animate_gpx);
 			final RadioButton radioGPX = view.findViewById(R.id.radio_gpx);
-			radioGPX.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-				@Override
-				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-					gpxView.setVisibility(isChecked ? View.VISIBLE : View.GONE);
-				}
-			});
+			radioGPX.setOnCheckedChangeListener((buttonView, isChecked) -> gpxView.setVisibility(isChecked ? View.VISIBLE : View.GONE));
 
 			((TextView) view.findViewById(R.id.MinSpeedup)).setText("1"); //$NON-NLS-1$
 			((TextView) view.findViewById(R.id.MaxSpeedup)).setText("4"); //$NON-NLS-1$
 			final SeekBar speedup = view.findViewById(R.id.Speedup);
 			speedup.setMax(3);
 			builder.setView(view);
-			builder.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					boolean gpxNavigation = radioGPX.isChecked();
-					if (gpxNavigation) {
-						GpxUiHelper.selectGPXFile(ma, false, false, new CallbackWithObject<GPXUtilities.GPXFile[]>() {
-							@Override
-							public boolean processResult(GPXUtilities.GPXFile[] result) {
-								GPXRouteParamsBuilder builder = new GPXRouteParamsBuilder(result[0], app.getSettings());
-								startAnimationThread(app, builder.getPoints(), true, speedup.getProgress() + 1);
-								if (runnable != null) {
-									runnable.run();
-								}
-								return true;
-							}
-						});
+			builder.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> {
+				boolean gpxNavigation = radioGPX.isChecked();
+				if (gpxNavigation) {
+					GpxUiHelper.selectGPXFile(ma, false, false, result -> {
+						GPXRouteParamsBuilder builder1 = new GPXRouteParamsBuilder(result[0], app.getSettings());
+						startAnimationThread(app, builder1.getPoints(), true, speedup.getProgress() + 1);
+						if (runnable != null) {
+							runnable.run();
+						}
+						return true;
+					});
+				} else {
+					List<Location> currentRoute = app.getRoutingHelper().getCurrentCalculatedRoute();
+					if (currentRoute.isEmpty()) {
+						Toast.makeText(app, R.string.animate_routing_route_not_calculated,
+								Toast.LENGTH_LONG).show();
 					} else {
-						List<Location> currentRoute = app.getRoutingHelper().getCurrentCalculatedRoute();
-						if (currentRoute.isEmpty()) {
-							Toast.makeText(app, R.string.animate_routing_route_not_calculated,
-									Toast.LENGTH_LONG).show();
-						} else {
-							startAnimationThread(app, new ArrayList<>(currentRoute), false, 1);
-							if (runnable != null) {
-								runnable.run();
-							}
+						startAnimationThread(app, new ArrayList<>(currentRoute), false, 1);
+						if (runnable != null) {
+							runnable.run();
 						}
 					}
-
 				}
+
 			});
 			builder.setNegativeButton(R.string.shared_string_cancel, null);
 			builder.show();
@@ -143,12 +130,7 @@ public class OsmAndLocationSimulation {
 						current.setBearing(prev.bearingTo(current));
 					}
 					final Location toset = current;
-					app.runInUIThread(new Runnable() {
-						@Override
-						public void run() {
-							provider.setLocationFromSimulation(toset);
-						}
-					});
+					app.runInUIThread(() -> provider.setLocationFromSimulation(toset));
 					try {
 						Thread.sleep((long)(timeout / coeff));
 					} catch (InterruptedException e) {

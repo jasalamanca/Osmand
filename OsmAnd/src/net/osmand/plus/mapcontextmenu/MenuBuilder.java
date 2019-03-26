@@ -49,7 +49,6 @@ import net.osmand.util.MapUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -68,7 +67,6 @@ public class MenuBuilder {
 	protected boolean light;
 	private long objectId;
 	private LatLon latLon;
-//	private boolean hidden;
 	private boolean showTitleIfTruncated = true;
 	private boolean showNearestWiki = false;
 	protected List<Amenity> nearestWiki = new ArrayList<>();
@@ -81,7 +79,7 @@ public class MenuBuilder {
 	private final boolean transliterateNames;
 
 	public interface CollapseExpandListener {
-		void onCollapseExpand(boolean collapsed);
+		void onCollapseExpand();
 	}
 
 	class PlainMenuItem {
@@ -162,7 +160,7 @@ public class MenuBuilder {
 //				collapseExpandListener.onCollapseExpand(collapsed);
 //			}
 			if (menuBuilder.collapseExpandListener != null) {
-				menuBuilder.collapseExpandListener.onCollapseExpand(collapsed);
+				menuBuilder.collapseExpandListener.onCollapseExpand();
 			}
 		}
 	}
@@ -234,7 +232,6 @@ public class MenuBuilder {
 
 	public void build(View view) {
 		firstRow = true;
-//		hidden = false;
 		if (showTitleIfTruncated) {
 			buildTitleRow(view);
 		}
@@ -254,7 +251,6 @@ public class MenuBuilder {
 		return routes.size() > 0;
 	}
 	void onHide() {
-//		hidden = true;
 	}
 	void onClose() {
 		clearPluginRows();
@@ -334,12 +330,9 @@ public class MenuBuilder {
 		LinearLayout.LayoutParams llParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		ll.setLayoutParams(llParams);
 		ll.setBackgroundResource(AndroidUtils.resolveAttribute(view.getContext(), android.R.attr.selectableItemBackground));
-		ll.setOnLongClickListener(new View.OnLongClickListener() {
-			@Override
-			public boolean onLongClick(View v) {
-				copyToClipboard(text, view.getContext());
-				return true;
-			}
+		ll.setOnLongClickListener(v -> {
+			copyToClipboard(text, view.getContext());
+			return true;
 		});
 
 		baseView.addView(ll);
@@ -444,18 +437,15 @@ public class MenuBuilder {
 			iconViewCollapse.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
 			iconViewCollapse.setImageDrawable(getCollapseIcon(collapsableView.getContenView().getVisibility() == View.GONE));
 			llIconCollapse.addView(iconViewCollapse);
-			ll.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					if (collapsableView.getContenView().getVisibility() == View.VISIBLE) {
-						collapsableView.getContenView().setVisibility(View.GONE);
-						iconViewCollapse.setImageDrawable(getCollapseIcon(true));
-						collapsableView.setCollapsed(true);
-					} else {
-						collapsableView.getContenView().setVisibility(View.VISIBLE);
-						iconViewCollapse.setImageDrawable(getCollapseIcon(false));
-						collapsableView.setCollapsed(false);
-					}
+			ll.setOnClickListener(v -> {
+				if (collapsableView.getContenView().getVisibility() == View.VISIBLE) {
+					collapsableView.getContenView().setVisibility(View.GONE);
+					iconViewCollapse.setImageDrawable(getCollapseIcon(true));
+					collapsableView.setCollapsed(true);
+				} else {
+					collapsableView.getContenView().setVisibility(View.VISIBLE);
+					iconViewCollapse.setImageDrawable(getCollapseIcon(false));
+					collapsableView.setCollapsed(false);
 				}
 			});
 			if (collapsableView.isCollapsed()) {
@@ -468,13 +458,10 @@ public class MenuBuilder {
 		if (onClickListener != null) {
 			ll.setOnClickListener(onClickListener);
 		} else if (isUrl) {
-			ll.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					Intent intent = new Intent(Intent.ACTION_VIEW);
-					intent.setData(Uri.parse(text));
-					v.getContext().startActivity(intent);
-				}
+			ll.setOnClickListener(v -> {
+				Intent intent = new Intent(Intent.ACTION_VIEW);
+				intent.setData(Uri.parse(text));
+				v.getContext().startActivity(intent);
 			});
 		}
 
@@ -557,13 +544,13 @@ public class MenuBuilder {
 				light ? R.color.ctx_menu_collapse_icon_color_light : R.color.ctx_menu_collapse_icon_color_dark);
 	}
 
-	private View buildTransportRowItem(View view, TransportStopRoute route, OnClickListener listener) {
-		LinearLayout baseView = new LinearLayout(view.getContext());
-		baseView.setOrientation(LinearLayout.HORIZONTAL);
-		LinearLayout.LayoutParams llBaseViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-		baseView.setLayoutParams(llBaseViewParams);
-		baseView.setPadding(dpToPx(16), 0, dpToPx(16), dpToPx(12));
-		baseView.setBackgroundResource(AndroidUtils.resolveAttribute(view.getContext(), android.R.attr.selectableItemBackground));
+	private void /*View*/ buildTransportRowItem(View view, TransportStopRoute route, OnClickListener listener) {
+//		LinearLayout baseView = new LinearLayout(view.getContext());
+//		baseView.setOrientation(LinearLayout.HORIZONTAL);
+//		LinearLayout.LayoutParams llBaseViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+//		baseView.setLayoutParams(llBaseViewParams);
+//		baseView.setPadding(dpToPx(16), 0, dpToPx(16), dpToPx(12));
+//		baseView.setBackgroundResource(AndroidUtils.resolveAttribute(view.getContext(), android.R.attr.selectableItemBackground));
 
 		TextViewEx transportRect = new TextViewEx(view.getContext());
 		LinearLayout.LayoutParams trParams = new LinearLayout.LayoutParams(dpToPx(32), dpToPx(18));
@@ -582,14 +569,14 @@ public class MenuBuilder {
 
 		transportRect.setBackground(shape);
 		transportRect.setText(route.route.getRef());
-		baseView.addView(transportRect);
+//		baseView.addView(transportRect);
 
 		LinearLayout infoView = new LinearLayout(view.getContext());
 		infoView.setOrientation(LinearLayout.VERTICAL);
 		LinearLayout.LayoutParams infoViewLayoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		infoViewLayoutParams.setMargins(dpToPx(16), dpToPx(12), dpToPx(16), 0);
 		infoView.setLayoutParams(infoViewLayoutParams);
-		baseView.addView(infoView);
+//		baseView.addView(infoView);
 
 		TextView titleView = new TextView(view.getContext());
 		LinearLayout.LayoutParams titleParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -622,15 +609,15 @@ public class MenuBuilder {
 		AndroidUtils.setTextSecondaryColor(getMapActivity(), typeTextView, getApplication().getDaynightHelper().isNightModeForMapControls());
 		typeView.addView(typeTextView);
 
-		baseView.setOnClickListener(listener);
+//		baseView.setOnClickListener(listener);
 
-		((ViewGroup) view).addView(baseView);
+//		((ViewGroup) view).addView(baseView);
 
-		return baseView;
+//		return baseView;
 	}
 
 	private void buildTransportRouteRow(ViewGroup parent, TransportStopRoute r, OnClickListener listener, boolean showDivider) {
-		buildTransportRowItem(parent, r, listener);
+//		buildTransportRowItem(parent, r, listener);
 
 		if (showDivider) {
 			buildRowDivider(parent);
@@ -642,18 +629,15 @@ public class MenuBuilder {
 
 		for (int i = 0; i < routes.size(); i++) {
 			final TransportStopRoute r  = routes.get(i);
-			View.OnClickListener listener = new View.OnClickListener() {
-				@Override
-				public void onClick(View arg0) {
-					MapContextMenu mm = getMapActivity().getContextMenu();
-					PointDescription pd = new PointDescription(PointDescription.POINT_TYPE_TRANSPORT_ROUTE,
-							r.getDescription(getMapActivity().getMyApplication(), false));
-					mm.show(latLon, pd, r);
-					TransportStopsLayer stopsLayer = getMapActivity().getMapLayers().getTransportStopsLayer();
-					stopsLayer.setRoute(r);
-					int cz = r.calculateZoom(0, getMapActivity().getMapView().getCurrentRotatedTileBox());
-					getMapActivity().changeZoom(cz - getMapActivity().getMapView().getZoom());
-				}
+			View.OnClickListener listener = arg0 -> {
+				MapContextMenu mm = getMapActivity().getContextMenu();
+				PointDescription pd = new PointDescription(PointDescription.POINT_TYPE_TRANSPORT_ROUTE,
+						r.getDescription(getMapActivity().getMyApplication(), false));
+				mm.show(latLon, pd, r);
+				TransportStopsLayer stopsLayer = getMapActivity().getMapLayers().getTransportStopsLayer();
+				stopsLayer.setRoute(r);
+				int cz = r.calculateZoom(0, getMapActivity().getMapView().getCurrentRotatedTileBox());
+				getMapActivity().changeZoom(cz - getMapActivity().getMapView().getZoom());
 			};
 			boolean showDivider = i < routes.size() - 1;
 			buildTransportRouteRow(view, r, listener, showDivider);
@@ -683,13 +667,10 @@ public class MenuBuilder {
 			String name = wiki.getName(preferredMapAppLang, transliterateNames);
 			button.setText(name);
 
-			button.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					LatLon latLon = new LatLon(wiki.getLocation().getLatitude(), wiki.getLocation().getLongitude());
-					PointDescription pointDescription = mapActivity.getMapLayers().getPoiMapLayer().getObjectName(wiki);
-					mapActivity.getContextMenu().show(latLon, pointDescription, wiki);
-				}
+			button.setOnClickListener(v -> {
+				LatLon latLon = new LatLon(wiki.getLocation().getLatitude(), wiki.getLocation().getLongitude());
+				PointDescription pointDescription = mapActivity.getMapLayers().getPoiMapLayer().getObjectName(wiki);
+				mapActivity.getContextMenu().show(latLon, pointDescription, wiki);
 			});
 			view.addView(button);
 		}
@@ -717,7 +698,6 @@ public class MenuBuilder {
 		TextViewEx button = new TextViewEx(new ContextThemeWrapper(context, light ? R.style.OsmandLightTheme : R.style.OsmandDarkTheme));
 		LinearLayout.LayoutParams llWikiButtonParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		llWikiButtonParams.setMargins(0, 0, 0, dpToPx(8f));
-		//button.setMinimumHeight(dpToPx(36f));
 		button.setLayoutParams(llWikiButtonParams);
 		button.setTypeface(FontCache.getRobotoRegular(context));
 		int bg;
@@ -763,14 +743,10 @@ public class MenuBuilder {
 							return false;
 						}
 					}, rect.top, rect.left, rect.bottom, rect.right, -1, null);
-			Collections.sort(nearestWiki, new Comparator<Amenity>() {
-
-				@Override
-				public int compare(Amenity o1, Amenity o2) {
-					double d1 = MapUtils.getDistance(latLon, o1.getLocation());
-					double d2 = MapUtils.getDistance(latLon, o2.getLocation());
-					return Double.compare(d1, d2);
-				}
+			Collections.sort(nearestWiki, (o1, o2) -> {
+				double d1 = MapUtils.getDistance(latLon, o1.getLocation());
+				double d2 = MapUtils.getDistance(latLon, o2.getLocation());
+				return Double.compare(d1, d2);
 			});
 			Long id = objectId;
 			List<Amenity> wikiList = new ArrayList<>();

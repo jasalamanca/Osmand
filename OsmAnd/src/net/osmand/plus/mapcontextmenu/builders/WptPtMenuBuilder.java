@@ -68,24 +68,14 @@ public class WptPtMenuBuilder extends MenuBuilder {
 		}
 		if (!Algorithms.isEmpty(wpt.desc)) {
 			final View row = buildRow(view, R.drawable.ic_action_note_dark, null, wpt.desc, 0, false, null, true, 10, false, null, false);
-			row.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					POIMapLayer.showDescriptionDialog(row.getContext(), app, wpt.desc,
-							row.getResources().getString(R.string.description));
-				}
-			});
+			row.setOnClickListener(v -> POIMapLayer.showDescriptionDialog(row.getContext(), app, wpt.desc,
+                    row.getResources().getString(R.string.description)));
 		}
 		if (!Algorithms.isEmpty(wpt.comment)) {
 			final View rowc = buildRow(view, R.drawable.ic_action_note_dark, null, wpt.comment, 0,
 					false, null, true, 10, false, null, false);
-			rowc.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					POIMapLayer.showDescriptionDialog(rowc.getContext(), app, wpt.comment,
-							rowc.getResources().getString(R.string.poi_dialog_comment));
-				}
-			});
+			rowc.setOnClickListener(v -> POIMapLayer.showDescriptionDialog(rowc.getContext(), app, wpt.comment,
+                    rowc.getResources().getString(R.string.poi_dialog_comment)));
 		}
 
 		buildWaypointsView(view);
@@ -140,14 +130,11 @@ public class WptPtMenuBuilder extends MenuBuilder {
 			button.setText(point.name);
 
 			if (!selected) {
-				button.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						LatLon latLon = new LatLon(point.getLatitude(), point.getLongitude());
-						PointDescription pointDescription = new PointDescription(PointDescription.POINT_TYPE_WPT, point.name);
-						mapActivity.getContextMenu().show(latLon, pointDescription, point);
-					}
-				});
+				button.setOnClickListener(v -> {
+                    LatLon latLon = new LatLon(point.getLatitude(), point.getLongitude());
+                    PointDescription pointDescription = new PointDescription(PointDescription.POINT_TYPE_WPT, point.name);
+                    mapActivity.getContextMenu().show(latLon, pointDescription, point);
+                });
 			}
 			view.addView(button);
 		}
@@ -155,17 +142,14 @@ public class WptPtMenuBuilder extends MenuBuilder {
 		if (points.size() > 10) {
 			TextViewEx button = buildButtonInCollapsableView(context, false, true);
 			button.setText(context.getString(R.string.shared_string_show_all));
-			button.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					OsmAndAppCustomization appCustomization = app.getAppCustomization();
-					final Intent intent = new Intent(context, appCustomization.getTrackActivity());
-					intent.putExtra(TrackActivity.TRACK_FILE_NAME, gpxFile.path);
-					intent.putExtra(TrackActivity.OPEN_POINTS_TAB, true);
-					intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-					context.startActivity(intent);
-				}
-			});
+			button.setOnClickListener(view1 -> {
+                OsmAndAppCustomization appCustomization = app.getAppCustomization();
+                final Intent intent = new Intent(context, appCustomization.getTrackActivity());
+                intent.putExtra(TrackActivity.TRACK_FILE_NAME, gpxFile.path);
+                intent.putExtra(TrackActivity.OPEN_POINTS_TAB, true);
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                context.startActivity(intent);
+            });
 			view.addView(button);
 		}
 

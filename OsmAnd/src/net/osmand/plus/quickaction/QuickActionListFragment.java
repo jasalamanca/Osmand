@@ -57,12 +57,9 @@ public class QuickActionListFragment extends BaseOsmAndFragment implements Quick
         quickActionRV = view.findViewById(R.id.recycler_view);
         fab = view.findViewById(R.id.fabButton);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AddQuickActionDialog dialog = new AddQuickActionDialog();
-                dialog.show(getFragmentManager(), AddQuickActionDialog.TAG);
-            }
+        fab.setOnClickListener(v -> {
+            AddQuickActionDialog dialog = new AddQuickActionDialog();
+            dialog.show(getFragmentManager(), AddQuickActionDialog.TAG);
         });
 
         return view;
@@ -79,12 +76,7 @@ public class QuickActionListFragment extends BaseOsmAndFragment implements Quick
     }
 
     private void setUpQuickActionRV() {
-        adapter = new QuickActionAdapter(new OnStartDragListener() {
-            @Override
-            public void onStartDrag(RecyclerView.ViewHolder viewHolder) {
-                touchHelper.startDrag(viewHolder);
-            }
-        });
+        adapter = new QuickActionAdapter(viewHolder -> touchHelper.startDrag(viewHolder));
         quickActionRV.setAdapter(adapter);
         quickActionRV.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -110,12 +102,7 @@ public class QuickActionListFragment extends BaseOsmAndFragment implements Quick
         back.setColorFilter(ContextCompat.getColor(getContext(), R.color.color_white), PorterDuff.Mode.MULTIPLY);
         toolbar.setNavigationIcon(back);
         toolbar.setNavigationContentDescription(R.string.access_shared_string_navigate_up);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().onBackPressed();
-            }
-        });
+        toolbar.setNavigationOnClickListener(v -> getActivity().onBackPressed());
         toolbar.setTitle(R.string.configure_screen_quick_action);
         toolbar.setTitleTextColor(ContextCompat.getColor(getContext(), R.color.color_white));
     }
@@ -159,17 +146,11 @@ public class QuickActionListFragment extends BaseOsmAndFragment implements Quick
         builder.setTitle(R.string.quick_actions_delete);
         builder.setMessage(getResources().getString(R.string.quick_actions_delete_text, itemName));
         builder.setIcon(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_delete_dark));
-        builder.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                adapter.deleteItem(itemPosition);
-                dialog.dismiss();
-            }
+        builder.setPositiveButton(R.string.shared_string_yes, (dialog, id) -> {
+            adapter.deleteItem(itemPosition);
+            dialog.dismiss();
         });
-        builder.setNegativeButton(R.string.shared_string_no, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.dismiss();
-            }
-        });
+        builder.setNegativeButton(R.string.shared_string_no, (dialog, id) -> dialog.dismiss());
         AlertDialog dialog = builder.show();
         dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(getContext(), R.color.dashboard_blue));
         dialog.getButton(DialogInterface.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor(getContext(), R.color.dashboard_blue));
@@ -215,28 +196,17 @@ public class QuickActionListFragment extends BaseOsmAndFragment implements Quick
                 itemVH.subTitle.setText(getResources().getString(R.string.quick_action_item_action, getActionPosition(position)));
 
                 itemVH.icon.setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(item.getIconRes(getContext())));
-                itemVH.handleView.setOnTouchListener(new View.OnTouchListener() {
-                    @Override
-                    public boolean onTouch(View v, MotionEvent event) {
-                        if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
-                            onStartDragListener.onStartDrag(itemVH);
-                        }
-                        return false;
+                itemVH.handleView.setOnTouchListener((v, event) -> {
+                    if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
+                        onStartDragListener.onStartDrag(itemVH);
                     }
+                    return false;
                 });
-                itemVH.closeBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        createAndShowDeleteDialog(holder.getAdapterPosition(), getResources().getString(item.getNameRes()));
-                    }
-                });
+                itemVH.closeBtn.setOnClickListener(v -> createAndShowDeleteDialog(holder.getAdapterPosition(), getResources().getString(item.getNameRes())));
 
-                itemVH.container.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        CreateEditActionDialog dialog = CreateEditActionDialog.newInstance(item.id);
-                        dialog.show(getFragmentManager(), AddQuickActionDialog.TAG);
-                    }
+                itemVH.container.setOnClickListener(view -> {
+                    CreateEditActionDialog dialog = CreateEditActionDialog.newInstance(item.id);
+                    dialog.show(getFragmentManager(), AddQuickActionDialog.TAG);
                 });
 
                 LinearLayout.LayoutParams dividerParams = (LinearLayout.LayoutParams) itemVH.divider.getLayoutParams();

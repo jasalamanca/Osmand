@@ -2,7 +2,6 @@ package net.osmand.plus.osmedit;
 
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -454,16 +453,13 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 		final AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 		builder.setTitle(R.string.shared_string_commit);
 		builder.setView(view);
-		builder.setPositiveButton(posButtonTitleRes, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				String text = offline ? getMessageText(view) : getTextAndUpdateUserPwd(view);
-				activity.getContextMenu().close();
-				if (bug != null) {
-					asyncActionTask(bug, null, text, action);
-				} else if (point != null) {
-					asyncActionTask(null, point, text, null);
-				}
+		builder.setPositiveButton(posButtonTitleRes, (dialog, which) -> {
+			String text1 = offline ? getMessageText(view) : getTextAndUpdateUserPwd(view);
+			activity.getContextMenu().close();
+			if (bug != null) {
+				asyncActionTask(bug, null, text1, action);
+			} else if (point != null) {
+				asyncActionTask(null, point, text1, null);
 			}
 		});
 		builder.setNegativeButton(R.string.shared_string_cancel, null);
@@ -530,7 +526,7 @@ public class OsmBugsLayer extends OsmandMapLayer implements IContextMenuProvider
 	}
 
 	public static class OpenStreetNote implements Serializable {
-		private boolean local;
+		private final boolean local = false;
 		private static final long serialVersionUID = -7848941747811172615L;
 		private double latitude;
 		private double longitude;

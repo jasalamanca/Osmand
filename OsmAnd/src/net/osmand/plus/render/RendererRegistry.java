@@ -120,25 +120,21 @@ public class RendererRegistry {
 		
 		loadedRenderers.put(name, main);
 		try {
-			main.parseRulesFromXmlInputStream(is, new RenderingRulesStorageResolver() {
-
-				@Override
-				public RenderingRulesStorage resolve(String name, RenderingRulesStorageResolver ref) throws XmlPullParserException {
-					// reload every time to propagate rendering constants
-					if (loadedRenderers.containsKey(name)) {
-						log.warn("Circular dependencies found " + name); //$NON-NLS-1$
-					}
-					RenderingRulesStorage dep = null;
-					try {
-						dep = loadRenderer(name, loadedRenderers, renderingConstants);
-					} catch (IOException e) {
-						log.warn("Dependent renderer not found : " + e.getMessage(), e); //$NON-NLS-1$
-					}
-					if (dep == null) {
-						log.warn("Dependent renderer not found : " + name); //$NON-NLS-1$
-					}
-					return dep;
+			main.parseRulesFromXmlInputStream(is, (name1, ref) -> {
+				// reload every time to propagate rendering constants
+				if (loadedRenderers.containsKey(name1)) {
+					log.warn("Circular dependencies found " + name1); //$NON-NLS-1$
 				}
+				RenderingRulesStorage dep = null;
+				try {
+					dep = loadRenderer(name1, loadedRenderers, renderingConstants);
+				} catch (IOException e) {
+					log.warn("Dependent renderer not found : " + e.getMessage(), e); //$NON-NLS-1$
+				}
+				if (dep == null) {
+					log.warn("Dependent renderer not found : " + name1); //$NON-NLS-1$
+				}
+				return dep;
 			});
 		} finally {
 			is.close();

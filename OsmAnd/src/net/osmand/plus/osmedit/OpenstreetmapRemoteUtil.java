@@ -204,7 +204,7 @@ public class OpenstreetmapRemoteUtil implements OpenstreetmapUtil {
 		return id;
 	}
 
-	private void writeNode(Node n, EntityInfo i, XmlSerializer ser, long changeSetId, String user)
+	private void writeNode(Node n, EntityInfo i, XmlSerializer ser, long changeSetId)
 			throws IllegalArgumentException, IllegalStateException, IOException {
 		ser.startTag(null, "node"); //$NON-NLS-1$
 		ser.attribute(null, "id", n.getId() + ""); //$NON-NLS-1$ //$NON-NLS-2$
@@ -264,7 +264,7 @@ public class OpenstreetmapRemoteUtil implements OpenstreetmapUtil {
 				ser.startTag(null, OsmPoint.stringAction.get(action));
 				ser.attribute(null, "version", "0.6"); //$NON-NLS-1$ //$NON-NLS-2$
 				ser.attribute(null, "generator", Version.getAppName(ctx)); //$NON-NLS-1$
-				writeNode(n, info, ser, changeSetId, settings.USER_NAME.get());
+				writeNode(n, info, ser, changeSetId);
 				ser.endTag(null, OsmPoint.stringAction.get(action));
 				ser.endTag(null, "osmChange"); //$NON-NLS-1$
 				ser.endDocument();
@@ -298,7 +298,7 @@ public class OpenstreetmapRemoteUtil implements OpenstreetmapUtil {
 		}
 	}
 
-	public void closeChangeSet() {
+	void closeChangeSet() {
 		if (changeSetId != NO_CHANGESET_ID) {
 			String response = sendRequest(
 					getSiteApi() + "api/0.6/changeset/" + changeSetId + "/close", "PUT", "", ctx.getString(R.string.closing_changeset), true); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
@@ -395,24 +395,13 @@ public class OpenstreetmapRemoteUtil implements OpenstreetmapUtil {
 
 		} catch (Exception e) {
 			log.error("Loading node failed " + nodeId, e); //$NON-NLS-1$
-			ctx.runInUIThread(new Runnable() {
-
-				@Override
-				public void run() {
-					Toast.makeText(ctx, ctx.getResources().getString(R.string.shared_string_io_error),
-							Toast.LENGTH_LONG).show();
-				}
-			});
+			ctx.runInUIThread(() -> Toast.makeText(ctx, ctx.getResources().getString(R.string.shared_string_io_error),
+					Toast.LENGTH_LONG).show());
 		}
 		return null;
 	}
 
 	private void showWarning(final String msg) {
-		ctx.runInUIThread(new Runnable() {
-			@Override
-			public void run() {
-				Toast.makeText(ctx, msg, Toast.LENGTH_LONG).show();
-			}
-		});
+		ctx.runInUIThread(() -> Toast.makeText(ctx, msg, Toast.LENGTH_LONG).show());
 	}
 }

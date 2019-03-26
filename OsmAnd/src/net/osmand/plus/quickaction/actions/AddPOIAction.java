@@ -126,28 +126,24 @@ public class AddPOIAction extends QuickAction {
 				}
 			}
 			EditPoiDialogFragment.commitNode(action, newNode, mOpenstreetmapUtil.getEntityInfo(newNode.getId()), "", false,
-					new CallbackWithObject<Node>() {
+                    result -> {
+                        if (result != null) {
+                            OsmEditingPlugin plugin1 = OsmandPlugin.getPlugin(OsmEditingPlugin.class);
+                            if (plugin1 != null && offlineEdit) {
+                                List<OpenstreetmapPoint> points = plugin1.getDBPOI().getOpenstreetmapPoints();
+                                if (points.size() > 0) {
+                                    OsmPoint point = points.get(points.size() - 1);
+                                    activity.getContextMenu().showOrUpdate(
+                                            new LatLon(point.getLatitude(), point.getLongitude()),
+                                            plugin1.getOsmEditsLayer(activity).getObjectName(point), point);
+                                }
+                            }
 
-						@Override
-						public boolean processResult(Node result) {
-							if (result != null) {
-								OsmEditingPlugin plugin = OsmandPlugin.getPlugin(OsmEditingPlugin.class);
-								if (plugin != null && offlineEdit) {
-									List<OpenstreetmapPoint> points = plugin.getDBPOI().getOpenstreetmapPoints();
-									if (points.size() > 0) {
-										OsmPoint point = points.get(points.size() - 1);
-										activity.getContextMenu().showOrUpdate(
-												new LatLon(point.getLatitude(), point.getLongitude()),
-												plugin.getOsmEditsLayer(activity).getObjectName(point), point);
-									}
-								}
+                            activity.getMapView().refreshMap(true);
+                        }
 
-								activity.getMapView().refreshMap(true);
-							}
-
-							return false;
-						}
-					}, activity, mOpenstreetmapUtil, null);
+                        return false;
+                    }, activity, mOpenstreetmapUtil, null);
 
 		}
 	}
@@ -184,18 +180,15 @@ public class AddPOIAction extends QuickAction {
 		mAdapter.setTagData(tagKeys.toArray(new String[tagKeys.size()]));
 		mAdapter.setValueData(valueKeys.toArray(new String[valueKeys.size()]));
 		Button addTagButton = view.findViewById(R.id.addTagButton);
-		addTagButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				for (int i = 0; i < editTagsLineaLayout.getChildCount(); i++) {
-					View item = editTagsLineaLayout.getChildAt(i);
-					if (((EditText) item.findViewById(R.id.tagEditText)).getText().toString().isEmpty() &&
-							((EditText) item.findViewById(R.id.valueEditText)).getText().toString().isEmpty())
-						return;
-				}
-				mAdapter.addTagView("", "");
-			}
-		});
+		addTagButton.setOnClickListener(v -> {
+            for (int i = 0; i < editTagsLineaLayout.getChildCount(); i++) {
+                View item = editTagsLineaLayout.getChildAt(i);
+                if (((EditText) item.findViewById(R.id.tagEditText)).getText().toString().isEmpty() &&
+                        ((EditText) item.findViewById(R.id.valueEditText)).getText().toString().isEmpty())
+                    return;
+            }
+            mAdapter.addTagView("", "");
+        });
 
 		mAdapter.updateViews();
 
@@ -242,45 +235,32 @@ public class AddPOIAction extends QuickAction {
 			}
 		});
 		poiTypeEditText.setText(text != null ? text : "");
-		poiTypeEditText.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(final View v, MotionEvent event) {
-				final EditText editText = (EditText) v;
-				final int DRAWABLE_RIGHT = 2;
-				if (event.getAction() == MotionEvent.ACTION_UP) {
-					if (event.getX() >= (editText.getRight()
-							- editText.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width()
-							- editText.getPaddingRight())) {
-						PoiCategory category = getCategory(allTranslatedNames);
-						PoiCategory tempPoiCategory = (category != null) ? category : poiTypes.getOtherPoiCategory();
-						PoiSubTypeDialogFragment f =
-								PoiSubTypeDialogFragment.createInstance(tempPoiCategory);
-						f.setOnItemSelectListener(new PoiSubTypeDialogFragment.OnItemSelectListener() {
-							@Override
-							public void select(String category) {
-								poiTypeEditText.setText(category);
-							}
-						});
-						f.show(activity.getSupportFragmentManager(), "PoiSubTypeDialogFragment");
+		poiTypeEditText.setOnTouchListener((v, event) -> {
+            final EditText editText = (EditText) v;
+            final int DRAWABLE_RIGHT = 2;
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (event.getX() >= (editText.getRight()
+                        - editText.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width()
+                        - editText.getPaddingRight())) {
+                    PoiCategory category = getCategory(allTranslatedNames);
+                    PoiCategory tempPoiCategory = (category != null) ? category : poiTypes.getOtherPoiCategory();
+                    PoiSubTypeDialogFragment f =
+                            PoiSubTypeDialogFragment.createInstance(tempPoiCategory);
+                    f.setOnItemSelectListener(category1 -> poiTypeEditText.setText(category1));
+                    f.show(activity.getSupportFragmentManager(), "PoiSubTypeDialogFragment");
 
-						return true;
-					}
-				}
-				return false;
-			}
-		});
+                    return true;
+                }
+            }
+            return false;
+        });
 
 		setUpAdapterForPoiTypeEditText(activity, allTranslatedNames, poiTypeEditText);
 
 		ImageButton onlineDocumentationButton =
                 view.findViewById(R.id.onlineDocumentationButton);
-		onlineDocumentationButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				activity.startActivity(new Intent(Intent.ACTION_VIEW,
-						Uri.parse("https://wiki.openstreetmap.org/wiki/Map_Features")));
-			}
-		});
+		onlineDocumentationButton.setOnClickListener(v -> activity.startActivity(new Intent(Intent.ACTION_VIEW,
+                Uri.parse("https://wiki.openstreetmap.org/wiki/Map_Features"))));
 
 		boolean isLightTheme = activity.getMyApplication().getSettings().OSMAND_THEME.get() == OsmandSettings.OSMAND_LIGHT_THEME;
 		final int colorId = isLightTheme ? R.color.inactive_item_orange : R.color.dash_search_icon_dark;
@@ -315,12 +295,7 @@ public class AddPOIAction extends QuickAction {
 				}
 			};
 		}
-		adapter.sort(new Comparator<Object>() {
-			@Override
-			public int compare(Object lhs, Object rhs) {
-				return lhs.toString().compareTo(rhs.toString());
-			}
-		});
+		adapter.sort((lhs, rhs) -> lhs.toString().compareTo(rhs.toString()));
 		poiTypeEditText.setAdapter(adapter);
 		poiTypeEditText.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
@@ -391,33 +366,27 @@ public class AddPOIAction extends QuickAction {
                     convertView.findViewById(R.id.deleteItemImageButton);
 			deleteItemImageButton.setImageDrawable(deleteDrawable);
 			final String[] previousTag = new String[]{tg};
-			deleteItemImageButton.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					linearLayout.removeView((View) v.getParent());
-					tagsData.remove(tagEditText.getText().toString());
-					setTagsIntoParams(tagsData);
-				}
-			});
+			deleteItemImageButton.setOnClickListener(v -> {
+                linearLayout.removeView((View) v.getParent());
+                tagsData.remove(tagEditText.getText().toString());
+                setTagsIntoParams(tagsData);
+            });
 			final AutoCompleteTextView valueEditText =
                     convertView.findViewById(R.id.valueEditText);
 			tagEditText.setText(tg);
 			tagEditText.setAdapter(tagAdapter);
 			tagEditText.setThreshold(1);
-			tagEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-				@Override
-				public void onFocusChange(View v, boolean hasFocus) {
-					if (!hasFocus) {
-						String s = tagEditText.getText().toString();
-						tagsData.remove(previousTag[0]);
-						tagsData.put(s, valueEditText.getText().toString());
-						previousTag[0] = s;
-						setTagsIntoParams(tagsData);
-					} else {
-						tagAdapter.getFilter().filter(tagEditText.getText());
-					}
-				}
-			});
+			tagEditText.setOnFocusChangeListener((v, hasFocus) -> {
+                if (!hasFocus) {
+                    String s = tagEditText.getText().toString();
+                    tagsData.remove(previousTag[0]);
+                    tagsData.put(s, valueEditText.getText().toString());
+                    previousTag[0] = s;
+                    setTagsIntoParams(tagsData);
+                } else {
+                    tagAdapter.getFilter().filter(tagEditText.getText());
+                }
+            });
 
 			valueEditText.setText(vl);
 			valueEditText.addTextChangedListener(new TextWatcher() {
@@ -463,14 +432,11 @@ public class AddPOIAction extends QuickAction {
 
 	private static void initAutocompleteTextView(final AutoCompleteTextView textView,
 												 final ArrayAdapter<String> adapter) {
-		textView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-			@Override
-			public void onFocusChange(View v, boolean hasFocus) {
-				if (hasFocus) {
-					adapter.getFilter().filter(textView.getText());
-				}
-			}
-		});
+		textView.setOnFocusChangeListener((v, hasFocus) -> {
+            if (hasFocus) {
+                adapter.getFilter().filter(textView.getText());
+            }
+        });
 	}
 
 	@Override

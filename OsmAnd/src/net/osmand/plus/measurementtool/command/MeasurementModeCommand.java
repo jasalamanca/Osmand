@@ -16,7 +16,6 @@ abstract class MeasurementModeCommand
 		CLEAR_POINTS,
 		MOVE_POINT,
 		REMOVE_POINT,
-		REORDER_POINT,
-		SNAP_TO_ROAD
+		REORDER_POINT
 	}
 }

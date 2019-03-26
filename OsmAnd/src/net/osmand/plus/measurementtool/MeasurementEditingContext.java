@@ -210,12 +210,7 @@ public class MeasurementEditingContext {
 		RoutingHelper routingHelper = application.getRoutingHelper();
 		if (!snapToRoadPairsToCalculate.isEmpty() && progressListener != null && !routingHelper.isRouteBeingCalculated()) {
 			routingHelper.startRouteCalculationThread(getParams(), true, true);
-			application.runInUIThread(new Runnable() {
-				@Override
-				public void run() {
-					progressListener.showProgressBar();
-				}
-			});
+			application.runInUIThread(() -> progressListener.showProgressBar());
 		}
 	}
 
@@ -304,37 +299,24 @@ public class MeasurementEditingContext {
 				calculatedPairs = 0;
 			}
 		};
-		params.resultListener = new RouteCalculationParams.RouteCalculationResultListener() {
-			@Override
-			public void onRouteCalculated(List<Location> locations) {
-				ArrayList<WptPt> pts = new ArrayList<>(locations.size());
-				for (Location loc : locations) {
-					WptPt pt = new WptPt();
-					pt.lat = loc.getLatitude();
-					pt.lon = loc.getLongitude();
-					pts.add(pt);
-				}
-				calculatedPairs++;
-				snappedToRoadPoints.put(currentPair, pts);
-				updateCacheForSnapIfNeeded(true);
-				application.runInUIThread(new Runnable() {
-					@Override
-					public void run() {
-						progressListener.refresh();
-					}
-				});
-				if (!snapToRoadPairsToCalculate.isEmpty()) {
-					application.getRoutingHelper().startRouteCalculationThread(getParams(), true, true);
-				} else {
-					application.runInUIThread(new Runnable() {
-						@Override
-						public void run() {
-							progressListener.hideProgressBar();
-						}
-					});
-				}
-			}
-		};
+		params.resultListener = locations -> {
+            ArrayList<WptPt> pts = new ArrayList<>(locations.size());
+            for (Location loc : locations) {
+                WptPt pt = new WptPt();
+                pt.lat = loc.getLatitude();
+                pt.lon = loc.getLongitude();
+                pts.add(pt);
+            }
+            calculatedPairs++;
+            snappedToRoadPoints.put(currentPair, pts);
+            updateCacheForSnapIfNeeded(true);
+            application.runInUIThread(() -> progressListener.refresh());
+            if (!snapToRoadPairsToCalculate.isEmpty()) {
+                application.getRoutingHelper().startRouteCalculationThread(getParams(), true, true);
+            } else {
+                application.runInUIThread(() -> progressListener.hideProgressBar());
+            }
+        };
 
 		return params;
 	}

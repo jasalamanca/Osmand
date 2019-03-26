@@ -1,7 +1,5 @@
 package net.osmand.osm.edit;
 
-import net.osmand.data.LatLon;
-
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Collections;
@@ -13,8 +11,7 @@ public abstract class Entity implements Serializable {
 	public enum EntityType {
 		NODE,
 		WAY,
-		RELATION,
-		WAY_BOUNDARY;
+		RELATION;
 
 		static EntityType valueOf(Entity e) {
 			if (e instanceof Node) {
@@ -37,7 +34,7 @@ public abstract class Entity implements Serializable {
 			this.id = id;
 		}
 
-		public static EntityId valueOf(Entity e) {
+		static EntityId valueOf(Entity e) {
 			return new EntityId(EntityType.valueOf(e), e.getId());
 		}
 
@@ -115,6 +112,7 @@ public abstract class Entity implements Serializable {
 		return null;
 	}
 
+	//NOTE jsala usado en C++
 	public String putTag(String key, String value) {
 		return putTagNoLC(key.toLowerCase(), value);
 	}
@@ -150,13 +148,6 @@ public abstract class Entity implements Serializable {
 		}
 		return tags.keySet();
 	}
-
-	public abstract void initializeLinks(Map<EntityId, Entity> entities);
-
-	/**
-	 * @return middle point for entity
-	 */
-	public abstract LatLon getLatLon();
 
 	@Override
 	public String toString() {

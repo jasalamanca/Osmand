@@ -68,12 +68,9 @@ public class CountrySelectionFragment extends BaseOsmAndDialogFragment {
 			}
 		}
 		listView.setAdapter(adapter);
-		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				mListener.onSearchResult(adapter.getItem(position));
-				dismiss();
-			}
+		listView.setOnItemClickListener((parent, view1, position, id) -> {
+			mListener.onSearchResult(adapter.getItem(position));
+			dismiss();
 		});
 		final EditText searchEditText = view.findViewById(R.id.searchEditText);
 		searchEditText.addTextChangedListener(new TextWatcher() {
@@ -92,12 +89,7 @@ public class CountrySelectionFragment extends BaseOsmAndDialogFragment {
 		});
 		ImageButton clearButton = view.findViewById(R.id.clearButton);
 		setThemedDrawable(clearButton, R.drawable.ic_action_remove_dark);
-		clearButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-			}
-		});
+		clearButton.setOnClickListener(v -> dismiss());
 		return view;
 	}
 
@@ -135,17 +127,14 @@ public class CountrySelectionFragment extends BaseOsmAndDialogFragment {
 		ArrayList<WorldRegion> groups = new ArrayList<>();
 		groups.add(root);
 		processGroup(root, groups);
-		Collections.sort(groups, new Comparator<WorldRegion>() {
-			@Override
-			public int compare(WorldRegion lhs, WorldRegion rhs) {
-				if (lhs == root) {
-					return -1;
-				}
-				if (rhs == root) {
-					return 1;
-				}
-				return getHumanReadableName(lhs).compareTo(getHumanReadableName(rhs));
+		Collections.sort(groups, (lhs, rhs) -> {
+			if (lhs == root) {
+				return -1;
 			}
+			if (rhs == root) {
+				return 1;
+			}
+			return getHumanReadableName(lhs).compareTo(getHumanReadableName(rhs));
 		});
 		for (WorldRegion group : groups) {
 			String name = getHumanReadableName(group);

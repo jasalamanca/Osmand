@@ -632,38 +632,30 @@ public class OsmAndLocationProvider
 		final RoutingHelper routingHelper = app.getRoutingHelper();
 		if (location != null) {
 			final long fixTime = location.getTime();
-			app.runMessageInUIThreadAndCancelPrevious(LOST_LOCATION_MSG_ID, new Runnable() {
-
-				@Override
-				public void run() {
+			app.runMessageInUIThreadAndCancelPrevious(LOST_LOCATION_MSG_ID, () -> {
+				net.osmand.Location lastKnown = getLastKnownLocation();
+				if (lastKnown != null && lastKnown.getTime() > fixTime) {
+					// false positive case, still strange how we got here with removeMessages
+					return;
+				}
+				gpsSignalLost = true;
+				if (routingHelper.isFollowingMode() && routingHelper.getLeftDistance() > 0) {
+					routingHelper.getVoiceRouter().gpsLocationLost();
+				}
+				setLocation(null);
+			}, LOST_LOCATION_CHECK_DELAY);
+			if (routingHelper.isFollowingMode() && routingHelper.getLeftDistance() > 0 && simulatePosition == null) {
+				app.runMessageInUIThreadAndCancelPrevious(START_SIMULATE_LOCATION_MSG_ID, () -> {
 					net.osmand.Location lastKnown = getLastKnownLocation();
 					if (lastKnown != null && lastKnown.getTime() > fixTime) {
 						// false positive case, still strange how we got here with removeMessages
 						return;
 					}
-					gpsSignalLost = true;
-					if (routingHelper.isFollowingMode() && routingHelper.getLeftDistance() > 0) {
-						routingHelper.getVoiceRouter().gpsLocationLost();
-					}
-					setLocation(null);
-				}
-			}, LOST_LOCATION_CHECK_DELAY);
-			if (routingHelper.isFollowingMode() && routingHelper.getLeftDistance() > 0 && simulatePosition == null) {
-				app.runMessageInUIThreadAndCancelPrevious(START_SIMULATE_LOCATION_MSG_ID, new Runnable() {
-
-					@Override
-					public void run() {
-						net.osmand.Location lastKnown = getLastKnownLocation();
-						if (lastKnown != null && lastKnown.getTime() > fixTime) {
-							// false positive case, still strange how we got here with removeMessages
-							return;
-						}
-						List<RouteSegmentResult> tunnel = routingHelper.getUpcomingTunnel(1000);
-						if(tunnel != null) {
-							simulatePosition = new SimulationProvider();
-							simulatePosition.startSimulation(tunnel, location);
-							simulatePositionImpl();
-						}
+					List<RouteSegmentResult> tunnel = routingHelper.getUpcomingTunnel(1000);
+					if(tunnel != null) {
+						simulatePosition = new SimulationProvider();
+						simulatePosition.startSimulation(tunnel, location);
+						simulatePositionImpl();
 					}
 				}, START_LOCATION_SIMULATION_DELAY);
 			}
@@ -671,13 +663,7 @@ public class OsmAndLocationProvider
 	}
 	
 	private void simulatePosition() {
-		app.runMessageInUIThreadAndCancelPrevious(RUN_SIMULATE_LOCATION_MSG_ID, new Runnable() {
-
-			@Override
-			public void run() {
-				simulatePositionImpl();
-			}
-		}, 600);
+		app.runMessageInUIThreadAndCancelPrevious(RUN_SIMULATE_LOCATION_MSG_ID, () -> simulatePositionImpl(), 600);
 	}
 	
 	private void simulatePositionImpl() {
@@ -700,7 +686,7 @@ public class OsmAndLocationProvider
 		app.getSavingTrackHelper().updateLocation(location);
 		OsmandPlugin.updateLocationPlugins(location);
 		app.getRoutingHelper().updateLocation(location);
-		app.getWaypointHelper().locationChanged(location);
+		app.getWaypointHelper().locationChanged();
 	}
 	
 	void setLocationFromSimulation(net.osmand.Location location) {
@@ -741,7 +727,7 @@ public class OsmAndLocationProvider
 		} else if(getLocationSimulation().isRouteAnimating()) {
 			routingHelper.setCurrentLocation(location, false);
 		}
-		app.getWaypointHelper().locationChanged(location);
+		app.getWaypointHelper().locationChanged();
 		this.location = updatedLocation;
 		
 		// Update information
@@ -863,13 +849,10 @@ public class OsmAndLocationProvider
 		    // notify user
 		    AlertDialog.Builder dialog = new AlertDialog.Builder(context);
 		    dialog.setMessage(context.getResources().getString(R.string.gps_network_not_enabled));
-		    dialog.setPositiveButton(context.getResources().getString(R.string.shared_string_settings), new DialogInterface.OnClickListener() {
-		            @Override
-		            public void onClick(DialogInterface paramDialogInterface, int paramInt) {
-		                Intent myIntent = new Intent( Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-		                context.startActivity(myIntent);
-		            }
-		        });
+		    dialog.setPositiveButton(context.getResources().getString(R.string.shared_string_settings), (paramDialogInterface, paramInt) -> {
+				Intent myIntent = new Intent( Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+				context.startActivity(myIntent);
+			});
 		    dialog.setNegativeButton(context.getString(R.string.shared_string_cancel), null);
 		    dialog.show();      
 		    return false;

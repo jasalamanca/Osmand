@@ -102,12 +102,9 @@ public class NavigatePointFragment extends Fragment implements SearchActivityChi
 		menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 		menuItem = menuItem.setIcon(app.getIconsCache().getIcon(R.drawable.ic_action_marker_dark, light));
 
-		menuItem.setOnMenuItemClickListener(new OnMenuItemClickListener() {
-			@Override
-			public boolean onMenuItemClick(MenuItem item) {
-				select(SHOW_ON_MAP);
-				return true;
-			}
+		menuItem.setOnMenuItemClickListener(item -> {
+			select(SHOW_ON_MAP);
+			return true;
 		});
 	}
 	

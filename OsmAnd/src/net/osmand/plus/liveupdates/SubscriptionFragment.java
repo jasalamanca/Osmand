@@ -140,12 +140,7 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 		} else {
 			closeButton.setImageDrawable(getMyApplication().getIconsCache().getIcon(R.drawable.ic_action_remove_dark));
 		}
-		closeButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-			}
-		});
+		closeButton.setOnClickListener(v -> dismiss());
 
 		TextView title = view.findViewById(R.id.titleTextView);
 		if (editMode) {
@@ -158,12 +153,9 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 		final View paramsLayout = view.findViewById(R.id.paramsLayout);
 		AppCompatCheckBox donationCheckbox = view.findViewById(R.id.donationCheckbox);
 		donationCheckbox.setChecked(donation);
-		donationCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				donation = isChecked;
-				paramsLayout.setVisibility(isChecked ? View.VISIBLE : View.GONE);
-			}
+		donationCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+			donation = isChecked;
+			paramsLayout.setVisibility(isChecked ? View.VISIBLE : View.GONE);
 		});
 		headerLayout.setVisibility(View.VISIBLE);
 		paramsLayout.setVisibility(donation ? View.VISIBLE : View.GONE);
@@ -189,17 +181,14 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 		if (selectedCountryItem != null) {
 			selectCountryEdit.setText(selectedCountryItem.getLocalName());
 		}
-		selectCountryEdit.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				if (event.getAction() == MotionEvent.ACTION_UP) {
-					CountrySelectionFragment countryCountrySelectionFragment =
-							countrySelectionFragment;
-					countryCountrySelectionFragment
-							.show(getChildFragmentManager(), "CountriesSearchSelectionFragment");
-				}
-				return false;
+		selectCountryEdit.setOnTouchListener((v, event) -> {
+			if (event.getAction() == MotionEvent.ACTION_UP) {
+				CountrySelectionFragment countryCountrySelectionFragment =
+						countrySelectionFragment;
+				countryCountrySelectionFragment
+						.show(getChildFragmentManager(), "CountriesSearchSelectionFragment");
 			}
+			return false;
 		});
 
 		final CheckBox hideUserNameCheckbox = view.findViewById(R.id.hideUserNameCheckbox);
@@ -212,66 +201,60 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 			purchaseCard.setVisibility(View.GONE);
 
 			Button saveChangesButton = view.findViewById(R.id.saveChangesButton);
-			saveChangesButton.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					InAppHelper helper = getInAppHelper();
-					if (helper != null && applySettings(userNameEdit.getText().toString().trim(),
-							emailEdit.getText().toString().trim(), hideUserNameCheckbox.isChecked())) {
+			saveChangesButton.setOnClickListener(v -> {
+				InAppHelper helper12 = getInAppHelper();
+				if (helper12 != null && applySettings(userNameEdit.getText().toString().trim(),
+						emailEdit.getText().toString().trim(), hideUserNameCheckbox.isChecked())) {
 
-						final Map<String, String> parameters = new HashMap<>();
-						parameters.put("visibleName", settings.BILLING_HIDE_USER_NAME.get() ? "" : settings.BILLING_USER_NAME.get());
-						parameters.put("preferredCountry", settings.BILLING_USER_COUNTRY_DOWNLOAD_NAME.get());
-						parameters.put("email", settings.BILLING_USER_EMAIL.get());
-						parameters.put("cemail", prevEmail);
-						parameters.put("userid", settings.BILLING_USER_ID.get());
-						parameters.put("token", helper.getToken());
+					final Map<String, String> parameters = new HashMap<>();
+					parameters.put("visibleName", settings.BILLING_HIDE_USER_NAME.get() ? "" : settings.BILLING_USER_NAME.get());
+					parameters.put("preferredCountry", settings.BILLING_USER_COUNTRY_DOWNLOAD_NAME.get());
+					parameters.put("email", settings.BILLING_USER_EMAIL.get());
+					parameters.put("cemail", prevEmail);
+					parameters.put("userid", settings.BILLING_USER_ID.get());
+					parameters.put("token", helper12.getToken());
 
-						showProgress();
+					showProgress();
 
-						AndroidNetworkUtils.sendRequestAsync(getMyApplication(),
-								"http://download.osmand.net/subscription/update.php",
-								parameters, "Sending data...", true, true, new AndroidNetworkUtils.OnRequestResultListener() {
-									@Override
-									public void onResult(String result) {
-										dismissProgress();
-										OsmandApplication app = getMyApplication();
-										if (result != null) {
-											try {
-												JSONObject obj = new JSONObject(result);
-												if (!obj.has("error")) {
-													String userId = obj.getString("userid");
-													app.getSettings().BILLING_USER_ID.set(userId);
-													String email = obj.getString("email");
-													app.getSettings().BILLING_USER_EMAIL.set(email);
-													String visibleName = obj.getString("visibleName");
-													if (!Algorithms.isEmpty(visibleName)) {
-														app.getSettings().BILLING_USER_NAME.set(visibleName);
-														app.getSettings().BILLING_HIDE_USER_NAME.set(false);
-													} else {
-														app.getSettings().BILLING_HIDE_USER_NAME.set(true);
-													}
-													String preferredCountry = obj.getString("preferredCountry");
-													app.getSettings().BILLING_USER_COUNTRY_DOWNLOAD_NAME.set(preferredCountry);
-
-													Fragment parent = getParentFragment();
-													if (parent instanceof LiveUpdatesFragment) {
-														((LiveUpdatesFragment) parent).updateSubscriptionHeader();
-													}
-
-													dismiss();
-												} else {
-													app.showToastMessage("Error: " + obj.getString("error"));
-												}
-											} catch (JSONException e) {
-												app.showToastMessage(getString(R.string.shared_string_io_error));
+					AndroidNetworkUtils.sendRequestAsync(getMyApplication(),
+							"http://download.osmand.net/subscription/update.php",
+							parameters, "Sending data...", true, true, result -> {
+								dismissProgress();
+								OsmandApplication app = getMyApplication();
+								if (result != null) {
+									try {
+										JSONObject obj = new JSONObject(result);
+										if (!obj.has("error")) {
+											String userId = obj.getString("userid");
+											app.getSettings().BILLING_USER_ID.set(userId);
+											String email1 = obj.getString("email");
+											app.getSettings().BILLING_USER_EMAIL.set(email1);
+											String visibleName = obj.getString("visibleName");
+											if (!Algorithms.isEmpty(visibleName)) {
+												app.getSettings().BILLING_USER_NAME.set(visibleName);
+												app.getSettings().BILLING_HIDE_USER_NAME.set(false);
+											} else {
+												app.getSettings().BILLING_HIDE_USER_NAME.set(true);
 											}
+											String preferredCountry = obj.getString("preferredCountry");
+											app.getSettings().BILLING_USER_COUNTRY_DOWNLOAD_NAME.set(preferredCountry);
+
+											Fragment parent = getParentFragment();
+											if (parent instanceof LiveUpdatesFragment) {
+												((LiveUpdatesFragment) parent).updateSubscriptionHeader();
+											}
+
+											dismiss();
 										} else {
-											app.showToastMessage(getString(R.string.shared_string_io_error));
+											app.showToastMessage("Error: " + obj.getString("error"));
 										}
+									} catch (JSONException e) {
+										app.showToastMessage(getString(R.string.shared_string_io_error));
 									}
-								});
-					}
+								} else {
+									app.showToastMessage(getString(R.string.shared_string_io_error));
+								}
+							});
 				}
 			});
 
@@ -281,20 +264,17 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 
 			updatePrice(view);
 			final Button subscribeButton = view.findViewById(R.id.subscribeButton);
-			subscribeButton.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					InAppHelper helper = getInAppHelper();
-					if (helper != null) {
-						if (applySettings(userNameEdit.getText().toString().trim(),
-								emailEdit.getText().toString().trim(), hideUserNameCheckbox.isChecked())) {
+			subscribeButton.setOnClickListener(v -> {
+				InAppHelper helper1 = getInAppHelper();
+				if (helper1 != null) {
+					if (applySettings(userNameEdit.getText().toString().trim(),
+							emailEdit.getText().toString().trim(), hideUserNameCheckbox.isChecked())) {
 
-							helper.purchaseLiveUpdates(getActivity(),
-									settings.BILLING_USER_EMAIL.get(),
-									settings.BILLING_USER_NAME.get(),
-									settings.BILLING_USER_COUNTRY_DOWNLOAD_NAME.get(),
-									settings.BILLING_HIDE_USER_NAME.get());
-						}
+						helper1.purchaseLiveUpdates(getActivity(),
+								settings.BILLING_USER_EMAIL.get(),
+								settings.BILLING_USER_NAME.get(),
+								settings.BILLING_USER_COUNTRY_DOWNLOAD_NAME.get(),
+								settings.BILLING_HIDE_USER_NAME.get());
 					}
 				}
 			});

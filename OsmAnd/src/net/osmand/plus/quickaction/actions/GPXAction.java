@@ -47,18 +47,13 @@ public class GPXAction extends QuickAction {
 			progressDialog.show();
 
 			GeocodingLookupService.AddressLookupRequest lookupRequest = new GeocodingLookupService.AddressLookupRequest(latLon,
-					new GeocodingLookupService.OnAddressLookupResult() {
-
-						@Override
-						public void geocodingDone(String address) {
-							progressDialog.dismiss();
-							activity.getContextMenu().addWptPt(latLon, address,
-									getParams().get(KEY_CATEGORY_NAME),
-									Integer.valueOf(getParams().get(KEY_CATEGORY_COLOR)),
-									!Boolean.valueOf(getParams().get(KEY_DIALOG)));
-						}
-
-					}, null);
+                    address -> {
+                        progressDialog.dismiss();
+                        activity.getContextMenu().addWptPt(latLon, address,
+                                getParams().get(KEY_CATEGORY_NAME),
+                                Integer.valueOf(getParams().get(KEY_CATEGORY_COLOR)),
+                                !Boolean.valueOf(getParams().get(KEY_DIALOG)));
+                    }, null);
 
 			activity.getMyApplication().getGeocodingLookupService().lookupAddress(lookupRequest);
 		} else activity.getContextMenu().addWptPt(latLon, title,
@@ -95,43 +90,25 @@ public class GPXAction extends QuickAction {
 			getParams().put(KEY_CATEGORY_COLOR, "0");
 		}
 
-		categoryEdit.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(final View view) {
-				SelectCategoryDialogFragment dialogFragment = SelectCategoryDialogFragment.createInstance("");
-				dialogFragment.show(activity.getSupportFragmentManager(),
-									SelectCategoryDialogFragment.TAG);
+		categoryEdit.setOnClickListener(view -> {
+            SelectCategoryDialogFragment dialogFragment = SelectCategoryDialogFragment.createInstance("");
+            dialogFragment.show(activity.getSupportFragmentManager(),
+                                SelectCategoryDialogFragment.TAG);
 
-				dialogFragment.setSelectionListener(new SelectCategoryDialogFragment.CategorySelectionListener() {
-					@Override
-					public void onCategorySelected(String category, int color) {
-						fillGroupParams(root, category, color);
-					}
-				});
-			}
-		});
+            dialogFragment.setSelectionListener((category, color) -> fillGroupParams(root, category, color));
+        });
 
 		SelectCategoryDialogFragment dialogFragment = (SelectCategoryDialogFragment)
 				activity.getSupportFragmentManager().findFragmentByTag(SelectCategoryDialogFragment.TAG);
 
 		if (dialogFragment != null) {
-			dialogFragment.setSelectionListener(new SelectCategoryDialogFragment.CategorySelectionListener() {
-				@Override
-				public void onCategorySelected(String category, int color) {
-					fillGroupParams(root, category, color);
-				}
-			});
+			dialogFragment.setSelectionListener((category, color) -> fillGroupParams(root, category, color));
 		} else {
 			EditCategoryDialogFragment dialog = (EditCategoryDialogFragment)
 					activity.getSupportFragmentManager().findFragmentByTag(EditCategoryDialogFragment.TAG);
 
 			if (dialog != null) {
-				dialogFragment.setSelectionListener(new SelectCategoryDialogFragment.CategorySelectionListener() {
-					@Override
-					public void onCategorySelected(String category, int color) {
-						fillGroupParams(root, category, color);
-					}
-				});
+				dialogFragment.setSelectionListener((category, color) -> fillGroupParams(root, category, color));
 			}
 		}
 	}

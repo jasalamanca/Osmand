@@ -78,12 +78,7 @@ public class MapMarkersListAdapter extends RecyclerView.Adapter<MapMarkerItemVie
     @Override
 	public MapMarkerItemViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
 		View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.map_marker_item_new, viewGroup, false);
-		view.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				listener.onItemClick(view);
-			}
-		});
+		view.setOnClickListener(view1 -> listener.onItemClick(view1));
 		return new MapMarkerItemViewHolder(view);
 	}
 
@@ -122,29 +117,14 @@ public class MapMarkersListAdapter extends RecyclerView.Adapter<MapMarkerItemVie
 			TypedValue outValue = new TypedValue();
 			mapActivity.getTheme().resolveAttribute(android.R.attr.selectableItemBackground, outValue, true);
 			holder.optionsBtn.setBackgroundResource(outValue.resourceId);
-			holder.optionsBtn.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					listener.onDisableRoundTripClick();
-				}
-			});
+			holder.optionsBtn.setOnClickListener(view -> listener.onDisableRoundTripClick());
 		}
 		holder.divider.setBackgroundColor(ContextCompat.getColor(mapActivity, night ? R.color.actionbar_dark_color : R.color.dashboard_divider_light));
 		holder.divider.setVisibility(lastMarkerItem ? View.GONE : View.VISIBLE);
 		holder.checkBox.setVisibility(roundTripFinishItem ? View.GONE : View.VISIBLE);
 		if (!roundTripFinishItem) {
-			holder.checkBox.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					listener.onCheckBoxClick(holder.itemView);
-				}
-			});
-			holder.checkBoxContainer.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					holder.checkBox.performClick();
-				}
-			});
+			holder.checkBox.setOnClickListener(view -> listener.onCheckBoxClick(holder.itemView));
+			holder.checkBoxContainer.setOnClickListener(view -> holder.checkBox.performClick());
 		}
 		holder.bottomShadow.setVisibility(lastMarkerItem ? View.VISIBLE : View.GONE);
 		holder.iconReorder.setVisibility(View.VISIBLE);
@@ -183,21 +163,18 @@ public class MapMarkersListAdapter extends RecyclerView.Adapter<MapMarkerItemVie
 			holder.checkBox.setChecked(marker.selected);
 
 			holder.iconReorder.setAlpha(1f);
-			holder.iconReorder.setOnTouchListener(new View.OnTouchListener() {
-				@Override
-				public boolean onTouch(View view, MotionEvent event) {
-					if (MotionEventCompat.getActionMasked(event) == MotionEvent.ACTION_DOWN) {
-						inDragAndDrop = true;
-						if (showRoundTripItem) {
-							int roundTripItemPos = finishPos;
-							reloadData();
-							notifyItemRemoved(roundTripItemPos);
-						}
-						listener.onDragStarted(holder);
-					}
-					return false;
-				}
-			});
+			holder.iconReorder.setOnTouchListener((view, event) -> {
+                if (MotionEventCompat.getActionMasked(event) == MotionEvent.ACTION_DOWN) {
+                    inDragAndDrop = true;
+                    if (showRoundTripItem) {
+                        int roundTripItemPos = finishPos;
+                        reloadData();
+                        notifyItemRemoved(roundTripItemPos);
+                    }
+                    listener.onDragStarted(holder);
+                }
+                return false;
+            });
 
 			String descr;
 			if ((descr = marker.groupName) != null) {
@@ -334,16 +311,13 @@ public class MapMarkersListAdapter extends RecyclerView.Adapter<MapMarkerItemVie
 			if (locRequest != null) {
 				app.getGeocodingLookupService().cancel(locRequest);
 			}
-			locRequest = new AddressLookupRequest(loc, new OnAddressLookupResult() {
-				@Override
-				public void geocodingDone(String address) {
-					locRequest = null;
-					locDescription.setName(address);
-					if (showLocationItem) {
-						notifyItemChanged(0);
-					}
-				}
-			}, null);
+			locRequest = new AddressLookupRequest(loc, address -> {
+                locRequest = null;
+                locDescription.setName(address);
+                if (showLocationItem) {
+                    notifyItemChanged(0);
+                }
+            }, null);
 			app.getGeocodingLookupService().lookupAddress(locRequest);
 		}
 	}

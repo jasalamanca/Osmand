@@ -53,40 +53,22 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 		toolbar.setNavigationIcon(getMyApplication().getIconsCache().getIcon(R.drawable.ic_arrow_back));
 		toolbar.setNavigationContentDescription(R.string.access_shared_string_navigate_up);
 		toolbar.setTitleTextColor(getResources().getColor(getResIdFromAttribute(getMapActivity(), R.attr.pstsTextColor)));
-		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-			}
-		});
+		toolbar.setNavigationOnClickListener(v -> dismiss());
 
 		Button saveButton = view.findViewById(R.id.save_button);
 		saveButton.setTextColor(getResources().getColor(!getEditor().isLight() ? R.color.osmand_orange : R.color.map_widget_blue));
-		saveButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				savePressed();
-			}
-		});
+		saveButton.setOnClickListener(v -> savePressed());
 
 		Button cancelButton = view.findViewById(R.id.cancel_button);
 		cancelButton.setTextColor(getResources().getColor(!getEditor().isLight() ? R.color.osmand_orange : R.color.map_widget_blue));
-		cancelButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				cancelled = true;
-				dismiss();
-			}
-		});
+		cancelButton.setOnClickListener(v -> {
+            cancelled = true;
+            dismiss();
+        });
 
 		Button deleteButton = view.findViewById(R.id.delete_button);
 		deleteButton.setTextColor(getResources().getColor(!getEditor().isLight() ? R.color.osmand_orange : R.color.map_widget_blue));
-		deleteButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				deletePressed();
-			}
-		});
+		deleteButton.setOnClickListener(v -> deletePressed());
 
 		if (getEditor().isNew()) {
 			deleteButton.setVisibility(View.GONE);
@@ -114,18 +96,15 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 		AndroidUtils.setTextPrimaryColor(view.getContext(), categoryEdit, !getEditor().isLight());
 		categoryEdit.setText(getCategoryInitValue());
 		categoryEdit.setFocusable(false);
-		categoryEdit.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(final View v, MotionEvent event) {
-				if (event.getAction() == MotionEvent.ACTION_UP) {
-					DialogFragment dialogFragment =
-							createSelectCategoryDialog();
-					dialogFragment.show(getChildFragmentManager(), SelectCategoryDialogFragment.TAG);
-					return true;
-				}
-				return false;
-			}
-		});
+		categoryEdit.setOnTouchListener((v, event) -> {
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                DialogFragment dialogFragment =
+                        createSelectCategoryDialog();
+                dialogFragment.show(getChildFragmentManager(), SelectCategoryDialogFragment.TAG);
+                return true;
+            }
+            return false;
+        });
 
 		final EditText descriptionEdit = view.findViewById(R.id.description_edit);
 		AndroidUtils.setTextPrimaryColor(view.getContext(), descriptionEdit, !getEditor().isLight());
@@ -134,21 +113,18 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 			descriptionEdit.setText(getDescriptionInitValue());
 		}
 
-		view.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
-			@Override
-			public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
-				if (descriptionEdit.isFocused()) {
-					ScrollView scrollView = view.findViewById(R.id.editor_scroll_view);
-					scrollView.scrollTo(0, bottom);
-				}
-				if (Build.VERSION.SDK_INT >= 21 && AndroidUiHelper.isOrientationPortrait(getActivity())) {
-					Rect rect = new Rect();
-					getActivity().getWindow().getDecorView().getWindowVisibleDisplayFrame(rect);
-					int heightDiff = getResources().getDisplayMetrics().heightPixels - rect.bottom;
-					view.findViewById(R.id.buttons_container).setPadding(0, 0, 0, heightDiff);
-				}
-			}
-		});
+		view.addOnLayoutChangeListener((v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom) -> {
+            if (descriptionEdit.isFocused()) {
+                ScrollView scrollView = view.findViewById(R.id.editor_scroll_view);
+                scrollView.scrollTo(0, bottom);
+            }
+            if (Build.VERSION.SDK_INT >= 21 && AndroidUiHelper.isOrientationPortrait(getActivity())) {
+                Rect rect = new Rect();
+                getActivity().getWindow().getDecorView().getWindowVisibleDisplayFrame(rect);
+                int heightDiff = getResources().getDisplayMetrics().heightPixels - rect.bottom;
+                view.findViewById(R.id.buttons_container).setPadding(0, 0, 0, heightDiff);
+            }
+        });
 
 		ImageView nameImage = view.findViewById(R.id.name_image);
 		nameImage.setImageDrawable(getNameIcon());

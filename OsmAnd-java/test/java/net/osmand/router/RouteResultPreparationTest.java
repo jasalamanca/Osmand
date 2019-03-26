@@ -36,13 +36,11 @@ public class RouteResultPreparationTest {
     private static RoutePlannerFrontEnd fe;
     private static RoutingContext ctx;
 
-    private String testName;
-    private LatLon startPoint;
-    private LatLon endPoint;
-    private Map<Long, String> expectedResults;
+    private final LatLon startPoint;
+    private final LatLon endPoint;
+    private final Map<Long, String> expectedResults;
 
-    public RouteResultPreparationTest(String testName, LatLon startPoint, LatLon endPoint, Map<Long, String> expectedResults) {
-        this.testName = testName;
+    public RouteResultPreparationTest(LatLon startPoint, LatLon endPoint, Map<Long, String> expectedResults) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.expectedResults = expectedResults;
@@ -84,7 +82,6 @@ public class RouteResultPreparationTest {
         }
         reader.close();
         return twoDArray;
-
     }
 
     @Test

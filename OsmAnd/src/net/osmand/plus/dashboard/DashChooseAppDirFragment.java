@@ -3,19 +3,14 @@ package net.osmand.plus.dashboard;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.os.Bundle;
 import android.os.StatFs;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -66,7 +61,7 @@ public class DashChooseAppDirFragment {
 		private static int typeTemp = -1;
 		private static String selectePathTemp;
 
-		public ChooseAppDirFragment(Activity activity, Dialog dlg) {
+		protected ChooseAppDirFragment(Activity activity, Dialog dlg) {
 			this.activity = activity;
 			this.dlg = dlg;
 		}
@@ -126,8 +121,7 @@ public class DashChooseAppDirFragment {
 			copyMapsBtn.setVisibility(copyFiles ? View.VISIBLE : View.GONE);
 		}
 
-		public View initView(LayoutInflater inflater, ViewGroup container,
-							 @Nullable Bundle savedInstanceState) {
+		public View initView(LayoutInflater inflater, ViewGroup container) {
 			View view = inflater.inflate(R.layout.dash_storage_type_fragment, container, false);
 			settings = getMyApplication().getSettings();
 			locationPath = view.findViewById(R.id.location_path);
@@ -222,37 +216,33 @@ public class DashChooseAppDirFragment {
 			paths.add("");
 			types.add(OsmandSettings.EXTERNAL_STORAGE_TYPE_SPECIFIED);
 
-			editalert.setSingleChoiceItems(items.toArray(new String[items.size()]), selected,
-					new DialogInterface.OnClickListener() {
+			editalert.setSingleChoiceItems(items.toArray(new String[0]), selected,
+					(dialog, which) -> {
+						if (which == items.size() - 1) {
+							dialog.dismiss();
+							showOtherDialog();
+						} else {
 
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							if (which == items.size() - 1) {
+							if (types.get(which) == OsmandSettings.EXTERNAL_STORAGE_TYPE_DEFAULT
+									&& !DownloadActivity.hasPermissionToWriteExternalStorage(activity)) {
+
+								typeTemp = types.get(which);
+								selectePathTemp = paths.get(which);
 								dialog.dismiss();
-								showOtherDialog();
-							} else {
-
-								if (types.get(which) == OsmandSettings.EXTERNAL_STORAGE_TYPE_DEFAULT
-										&& !DownloadActivity.hasPermissionToWriteExternalStorage(activity)) {
-
-									typeTemp = types.get(which);
-									selectePathTemp = paths.get(which);
-									dialog.dismiss();
-									if (dlg != null) {
-										dlg.dismiss();
-									}
-
-									ActivityCompat.requestPermissions(activity,
-											new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-											DownloadActivity.PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
-
-								} else {
-									mapsCopied = false;
-									type = types.get(which);
-									selectedFile = new File(paths.get(which));
-									dialog.dismiss();
-									updateView();
+								if (dlg != null) {
+									dlg.dismiss();
 								}
+
+								ActivityCompat.requestPermissions(activity,
+										new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+										DownloadActivity.PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+
+							} else {
+								mapsCopied = false;
+								type = types.get(which);
+								selectedFile = new File(paths.get(which));
+								dialog.dismiss();
+								updateView();
 							}
 						}
 					});
@@ -284,26 +274,20 @@ public class DashChooseAppDirFragment {
 			settings.getExternalStorageDirectory().getAbsolutePath();
 			editalert.setView(input);
 			editalert.setNegativeButton(R.string.shared_string_cancel, null);
-			editalert.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int whichButton) {
-					selectedFile = new File(input.getText().toString());
-					mapsCopied = false;
-					updateView();
-				}
+			editalert.setPositiveButton(R.string.shared_string_ok, (dialog, whichButton) -> {
+				selectedFile = new File(input.getText().toString());
+				mapsCopied = false;
+				updateView();
 			});
 			editalert.show();
 		}
 
 		private void addListeners() {
-			editBtn.setOnClickListener(new View.OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
-						showOtherDialog();
-					} else {
-						showSelectDialog19();
-					}
+			editBtn.setOnClickListener(v -> {
+				if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
+					showOtherDialog();
+				} else {
+					showSelectDialog19();
 				}
 			});
 			copyMapsBtn.setOnClickListener(new View.OnClickListener() {
@@ -332,25 +316,21 @@ public class DashChooseAppDirFragment {
 		}
 
 		OnClickListener getConfirmListener() {
-			return new View.OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					boolean wr = OsmandSettings.isWritable(selectedFile);
-					if (wr) {
-						boolean changed = !currentAppFile.getAbsolutePath().equals(selectedFile.getAbsolutePath());
-						getMyApplication().setExternalStorageDirectory(type, selectedFile.getAbsolutePath());
-						if (changed) {
-							successCallback();
-							reloadData();
-						}
-					} else {
-						Toast.makeText(activity, R.string.specified_directiory_not_writeable,
-								Toast.LENGTH_LONG).show();
+			return v -> {
+				boolean wr = OsmandSettings.isWritable(selectedFile);
+				if (wr) {
+					boolean changed = !currentAppFile.getAbsolutePath().equals(selectedFile.getAbsolutePath());
+					getMyApplication().setExternalStorageDirectory(type, selectedFile.getAbsolutePath());
+					if (changed) {
+						successCallback();
+						reloadData();
 					}
-					if(dlg != null) {
-						dlg.dismiss();
-					}
+				} else {
+					Toast.makeText(activity, R.string.specified_directiory_not_writeable,
+							Toast.LENGTH_LONG).show();
+				}
+				if(dlg != null) {
+					dlg.dismiss();
 				}
 			};
 		}
@@ -375,7 +355,6 @@ public class DashChooseAppDirFragment {
 	}
 	
 	public static class MoveFilesToDifferentDirectory extends AsyncTask<Void, Void, Boolean> {
-
 		private final File to;
 		private final Context ctx;
 		private final File from;
@@ -502,7 +481,7 @@ public class DashChooseAppDirFragment {
 
 		@Override
 		protected Boolean doInBackground(Void... params) {
-			app.getResourceManager().reloadIndexes(progress, new ArrayList<String>());
+			app.getResourceManager().reloadIndexes(progress, new ArrayList<>());
 			return true;
 		}
 	}

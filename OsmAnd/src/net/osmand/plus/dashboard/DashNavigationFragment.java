@@ -30,17 +30,11 @@ public class DashNavigationFragment extends DashBaseFragment {
 			};
 
 	@Override
-	public View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	public View initView(LayoutInflater inflater, @Nullable ViewGroup container) {
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_common_fragment, container, false);
 		((TextView) view.findViewById(R.id.fav_text)).setText(TITLE_ID);
 		((TextView)view.findViewById(R.id.show_all)).setText(R.string.info_button);
-		(view.findViewById(R.id.show_all)).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-
-				ShowRouteInfoDialogFragment.showDialog(getActivity().getSupportFragmentManager());
-			}
-		});
+		(view.findViewById(R.id.show_all)).setOnClickListener(view1 -> ShowRouteInfoDialogFragment.showDialog(getActivity().getSupportFragmentManager()));
 		return view;
 	}
 
@@ -74,24 +68,16 @@ public class DashNavigationFragment extends DashBaseFragment {
 				R.color.color_myloc_distance));
 		cancel.setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_remove_dark)
 				);
-		cancel.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				AlertDialog dlg = map.getMapActions().stopNavigationActionConfirm();
-				dlg.setOnDismissListener(new DialogInterface.OnDismissListener() {
-					
-					@Override
-					public void onDismiss(DialogInterface dialog) {
-						setupNavigation();
-						DashWaypointsFragment f = dashboard.getFragmentByClass(DashWaypointsFragment.class);
-						if(f != null) {
-							f.onOpenDash();
-						}
-					}
-				});
-			}
-		});
+		cancel.setOnClickListener(v -> {
+            AlertDialog dlg = map.getMapActions().stopNavigationActionConfirm();
+            dlg.setOnDismissListener(dialog -> {
+                setupNavigation();
+                DashWaypointsFragment f = dashboard.getFragmentByClass(DashWaypointsFragment.class);
+                if (f != null) {
+                    f.onOpenDash();
+                }
+            });
+        });
 		int nav;
 		if(routingHelper.isFollowingMode()) {
 			nav = R.string.cancel_navigation;
@@ -110,23 +96,19 @@ public class DashNavigationFragment extends DashBaseFragment {
 				);
 		play.setContentDescription(getString(toContinueNavigation ? R.string.continue_navigation :
 			R.string.pause_navigation));
-		play.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				if(routingHelper.isRoutePlanningMode()) {
-					routingHelper.setRoutePlanningMode(false);
-					routingHelper.setFollowingMode(true);
-				} else {
-					routingHelper.setRoutePlanningMode(true);
-					routingHelper.setFollowingMode(false);
-					routingHelper.setPauseNavigation(true);
-				}
-				updatePlayButton(routingHelper, map, play);
-				map.getMapViewTrackingUtilities().switchToRoutePlanningMode();
-				map.refreshMap();
-			}
-		});
+		play.setOnClickListener(v -> {
+            if(routingHelper.isRoutePlanningMode()) {
+                routingHelper.setRoutePlanningMode(false);
+                routingHelper.setFollowingMode(true);
+            } else {
+                routingHelper.setRoutePlanningMode(true);
+                routingHelper.setFollowingMode(false);
+                routingHelper.setPauseNavigation(true);
+            }
+            updatePlayButton(routingHelper, map, play);
+            map.getMapViewTrackingUtilities().switchToRoutePlanningMode();
+            map.refreshMap();
+        });
 	}
 
 }

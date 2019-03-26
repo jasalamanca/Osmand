@@ -250,12 +250,9 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		dashboardOnMap.createDashboardView();
 		checkAppInitialization();
 		parseLaunchIntentLocation();
-		mapView.setTrackBallDelegate(new OsmandMapTileView.OnTrackBallListener() {
-			@Override
-			public boolean onTrackBallEvent(MotionEvent e) {
-				showAndHideMapPosition();
-				return MapActivity.this.onTrackballEvent(e);
-			}
+		mapView.setTrackBallDelegate(e -> {
+			showAndHideMapPosition();
+			return MapActivity.this.onTrackballEvent(e);
 		});
 		mapView.setAccessibilityActions(new MapAccessibilityActions(this));
 		mapViewTrackingUtilities.setMapView(mapView);
@@ -449,16 +446,13 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 					if (!allowPrivate.getModeValue(getRoutingHelper().getAppMode())) {
 						AlertDialog.Builder dlg = new AlertDialog.Builder(MapActivity.this);
 						dlg.setMessage(R.string.private_access_routing_req);
-						dlg.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								for (ApplicationMode mode : modes) {
-									if (!allowPrivate.getModeValue(mode)) {
-										allowPrivate.setModeValue(mode, true);
-									}
+						dlg.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> {
+							for (ApplicationMode mode : modes) {
+								if (!allowPrivate.getModeValue(mode)) {
+									allowPrivate.setModeValue(mode, true);
 								}
-								getRoutingHelper().recalculateRouteDueToSettingsChange();
 							}
+							getRoutingHelper().recalculateRouteDueToSettingsChange();
 						});
 						dlg.setNegativeButton(R.string.shared_string_no, null);
 						dlg.show();
@@ -491,7 +485,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 	public Object onRetainCustomNonConfigurationInstance() {
 		LinkedHashMap<String, Object> l = new LinkedHashMap<>();
 		for (OsmandMapLayer ml : mapView.getLayers()) {
-			ml.onRetainNonConfigurationInstance(l);
+			ml.onRetainNonConfigurationInstance();
 		}
 		return l;
 	}
@@ -618,12 +612,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 
 		changeKeyguardFlags();
 
-		applicationModeListener = new StateChangedListener<ApplicationMode>() {
-			@Override
-			public void stateChanged(ApplicationMode change) {
-				updateApplicationModeSettings();
-			}
-		};
+		applicationModeListener = change -> updateApplicationModeSettings();
 		settings.APPLICATION_MODE.addListener(applicationModeListener);
 		updateApplicationModeSettings();
 
@@ -875,13 +864,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 	private void restartApp() {
 		AlertDialog.Builder bld = new AlertDialog.Builder(this);
 		bld.setMessage(R.string.storage_permission_restart_is_required);
-		bld.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				doRestart(MapActivity.this);
-			}
-		});
+		bld.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> doRestart(MapActivity.this));
 		bld.show();
 	}
 
@@ -1097,7 +1080,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 
 	public void setMapLocation(double lat, double lon) {
 		mapView.setLatLon(lat, lon);
-		mapViewTrackingUtilities.locationChanged(lat, lon, this);
+		mapViewTrackingUtilities.locationChanged();
 	}
 
 	@Override
@@ -1211,13 +1194,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		mapLayers.updateLayers(mapView);
 		mapActions.updateDrawerMenu();
 		mapView.setComplexZoom(mapView.getZoom(), mapView.getSettingsMapDensity());
-		app.getDaynightHelper().startSensorIfNeeded(new StateChangedListener<Boolean>() {
-
-			@Override
-			public void stateChanged(Boolean change) {
-				getMapView().refreshMap(true);
-			}
-		});
+		app.getDaynightHelper().startSensorIfNeeded(change -> getMapView().refreshMap(true));
 		getMapView().refreshMap(true);
 	}
 
@@ -1259,12 +1236,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER && app.accessibilityEnabled()) {
 			if (!uiHandler.hasMessages(LONG_KEYPRESS_MSG_ID)) {
-				Message msg = Message.obtain(uiHandler, new Runnable() {
-					@Override
-					public void run() {
-						app.getLocationProvider().emitNavigationHint();
-					}
-				});
+				Message msg = Message.obtain(uiHandler, () -> app.getLocationProvider().emitNavigationHint());
 				msg.what = LONG_KEYPRESS_MSG_ID;
 				uiHandler.sendMessageDelayed(msg, LONG_KEYPRESS_DELAY);
 			}
@@ -1340,13 +1312,10 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 
 	private void showAndHideMapPosition() {
 		mapView.setShowMapPosition(true);
-		app.runMessageInUIThreadAndCancelPrevious(SHOW_POSITION_MSG_ID, new Runnable() {
-			@Override
-			public void run() {
-				if (mapView.isShowMapPosition()) {
-					mapView.setShowMapPosition(false);
-					mapView.refreshMap();
-				}
+		app.runMessageInUIThreadAndCancelPrevious(SHOW_POSITION_MSG_ID, () -> {
+			if (mapView.isShowMapPosition()) {
+				mapView.setShowMapPosition(false);
+				mapView.refreshMap();
 			}
 		}, 2500);
 	}

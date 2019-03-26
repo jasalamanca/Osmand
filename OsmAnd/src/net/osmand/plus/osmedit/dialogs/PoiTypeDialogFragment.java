@@ -30,13 +30,10 @@ public class PoiTypeDialogFragment extends DialogFragment {
 				categories.add(category);
 			}
 		}
-		builder.setItems(vals.toArray(new String[vals.size()]), new Dialog.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				PoiCategory aType = categories.get(which);
-				onItemSelectListener.select(aType);
-				dismiss();
-			}
+		builder.setItems(vals.toArray(new String[vals.size()]), (dialog, which) -> {
+			PoiCategory aType = categories.get(which);
+			onItemSelectListener.select(aType);
+			dismiss();
 		});
 		return builder.create();
 	}

@@ -55,6 +55,9 @@ dependencies {
 	implementation group: 'com.ibm.icu', name: 'icu4j', version: '61.1'
 	implementation group: 'junidecode', name: 'junidecode', version: '0.1.1'
 	implementation group: 'net.sf.kxml', name: 'kxml2', version: '2.3.0'
+
+	// https://mvnrepository.com/artifact/com.google.openlocationcode/openlocationcode
+	implementation group: 'com.google.openlocationcode', name: 'openlocationcode', version: '1.0.2'
 }
 
 // Tests

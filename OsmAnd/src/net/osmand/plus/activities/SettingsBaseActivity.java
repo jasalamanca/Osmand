@@ -331,18 +331,15 @@ public abstract class SettingsBaseActivity extends ActionBarPreferenceActivity
 		AlertDialog.Builder b = new AlertDialog.Builder(this);
 		final Set<ApplicationMode> selected = new LinkedHashSet<>();
 		View v = AppModeDialog.prepareAppModeView(this, selected, false, null, true, true, false,
-				new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						if(selected.size() > 0) {
-							// test
-							setSelectedAppMode(selected.iterator().next());
-						}
-						if(profileDialog != null && profileDialog.isShowing()) {
-							profileDialog.dismiss();
-						}
-						profileDialog = null;
+				v1 -> {
+					if(selected.size() > 0) {
+						// test
+						setSelectedAppMode(selected.iterator().next());
 					}
+					if(profileDialog != null && profileDialog.isShowing()) {
+						profileDialog.dismiss();
+					}
+					profileDialog = null;
 				});
 		b.setTitle(R.string.profile_settings);
 		b.setView(v);

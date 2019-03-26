@@ -10,7 +10,6 @@ import net.osmand.data.LatLon;
 import net.osmand.data.RotatedTileBox;
 
 import java.util.Collection;
-import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
@@ -25,11 +24,10 @@ public class MapTextLayer extends OsmandMapLayer {
 	private static final int TEXT_LINES = 3;
 	private Paint paintTextIcon;
 	private OsmandMapTileView view;
-//	private boolean alwaysVisible;
-	
+
 	public interface MapTextProvider<T> {
 		LatLon getTextLocation(T o);
-		int getTextShift(T o, RotatedTileBox rb);
+		int getTextShift(RotatedTileBox rb);
 		String getText(T o);
 	}
 	
@@ -45,14 +43,10 @@ public class MapTextLayer extends OsmandMapLayer {
 		}
 	}
 	
-//	private boolean isAlwaysVisible() {
-//		return alwaysVisible;
-//	}
 	public boolean isVisible() {
-		return view.getSettings().SHOW_POI_LABEL.get();// || isAlwaysVisible();
+		return view.getSettings().SHOW_POI_LABEL.get();
 	}
 	
-	@SuppressWarnings("unchecked")
 	@Override
 	public void onPrepareBufferImage(Canvas canvas, RotatedTileBox tileBox, DrawSettings settings) {
 		if (!isVisible()) {
@@ -80,10 +74,8 @@ public class MapTextLayer extends OsmandMapLayer {
 							lines++;
 						}
 						if (lines == 0) {
-							// drawWrappedText(canvas, "...", paintTextIcon.getTextSize(), x, y + r + 2 +
-							// paintTextIcon.getTextSize() / 2, 1);
 						} else {
-							int r = ((MapTextProvider) l).getTextShift(o, tileBox);
+							int r = ((MapTextProvider) l).getTextShift(tileBox);
 							drawWrappedText(canvas, name, paintTextIcon.getTextSize(), x,
 									y + r + 2 + paintTextIcon.getTextSize() / 2, lines);
 							while (lines > 0) {
@@ -136,8 +128,6 @@ public class MapTextLayer extends OsmandMapLayer {
 				}
 				
 				line++;
-				
-				
 			}
 		} else {
 			drawShadowText(cv, text, x, y);
@@ -164,19 +154,15 @@ public class MapTextLayer extends OsmandMapLayer {
 		paintTextIcon.setTextSize(13 * v.getDensity());
 		paintTextIcon.setTextAlign(Align.CENTER);
 		paintTextIcon.setAntiAlias(true);
-		Map<OsmandMapLayer, Collection<?>> textObjectsLoc = new TreeMap<>(new Comparator<OsmandMapLayer>() {
+		Map<OsmandMapLayer, Collection<?>> textObjectsLoc = new TreeMap<>((lhs, rhs) -> {
+			if (view != null) {
+				float z1 = view.getZorder(lhs);
+				float z2 = view.getZorder(rhs);
+				return Float.compare(z1, z2);
 
-            @Override
-            public int compare(OsmandMapLayer lhs, OsmandMapLayer rhs) {
-                if (view != null) {
-                    float z1 = view.getZorder(lhs);
-                    float z2 = view.getZorder(rhs);
-                    return Float.compare(z1, z2);
-
-                }
-                return 0;
-            }
-        });
+			}
+			return 0;
+		});
 		textObjectsLoc.putAll(this.textObjects);
 		this.textObjects = textObjectsLoc;
 	}

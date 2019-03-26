@@ -28,7 +28,7 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSession;
 
-public class LiveMonitoringHelper  {
+class LiveMonitoringHelper  {
 
 	private final OsmandSettings settings;
 	private long lastTimeUpdated;
@@ -182,11 +182,7 @@ public class LiveMonitoringHelper  {
 			// allow certificates where hostnames doesn't match CN
 			if (url.getProtocol().equals("https")) {
 				((HttpsURLConnection) urlConnection).setHostnameVerifier(
-						new HostnameVerifier() {
-							public boolean verify(String host, SSLSession session) {
-								return (true);
-							}
-						});
+                        (host, session) -> (true));
 			}
 
 			log.info("Monitor " + uri);

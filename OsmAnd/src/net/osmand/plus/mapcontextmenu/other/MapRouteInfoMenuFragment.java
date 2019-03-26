@@ -42,12 +42,7 @@ public class MapRouteInfoMenuFragment extends BaseOsmAndFragment {
 			return view;
 		}
 
-		view.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-			}
-		});
+		view.setOnClickListener(v -> dismiss());
 
 		mainView = view.findViewById(R.id.main_view);
 		updateInfo();

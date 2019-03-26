@@ -3,7 +3,6 @@ package net.osmand.osm.edit;
 import net.osmand.data.LatLon;
 
 import java.io.Serializable;
-import java.util.Map;
 
 public class Node extends Entity implements Serializable {
 
@@ -41,15 +40,8 @@ public class Node extends Entity implements Serializable {
 		this.longitude = longitude;
 	}
 	
-	@Override
 	public LatLon getLatLon() {
 		return new LatLon(latitude, longitude);
-	}
-	
-	@Override
-	public void initializeLinks(Map<EntityId, Entity> entities) {
-		// nothing to initialize
-		
 	}
 
 	@Override

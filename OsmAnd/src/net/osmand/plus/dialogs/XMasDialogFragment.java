@@ -62,40 +62,28 @@ public class XMasDialogFragment extends DialogFragment {
 		View titleView = mapActivity.getLayoutInflater().inflate(R.layout.xmas_dialog_title, null);
 		builder.setCustomTitle(titleView);
 		builder.setCancelable(true);
-		builder.setNegativeButton(mapActivity.getString(R.string.shared_string_cancel), new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
-			}
-		});
-		builder.setPositiveButton(mapActivity.getString(R.string.shared_string_show), new DialogInterface.OnClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
-				PoiCategory xmas = mapActivity.getMyApplication().getPoiTypes().getPoiCategoryByName("xmas");
-				if (xmas != null) {
-					mapActivity.showQuickSearch(xmas);
-				}
-			}
-		});
+		builder.setNegativeButton(mapActivity.getString(R.string.shared_string_cancel), (dialog, which) -> dialog.dismiss());
+		builder.setPositiveButton(mapActivity.getString(R.string.shared_string_show), (dialog, which) -> {
+            dialog.dismiss();
+            PoiCategory xmas = mapActivity.getMyApplication().getPoiTypes().getPoiCategoryByName("xmas");
+            if (xmas != null) {
+                mapActivity.showQuickSearch(xmas);
+            }
+        });
 
 		builder.setView(mapActivity.getLayoutInflater().inflate(R.layout.xmas_dialog, null));
 
 		AlertDialog dialog = builder.create();
-		dialog.setOnShowListener(new DialogInterface.OnShowListener() {
-			@Override
-			public void onShow(DialogInterface dialog) {
-				// Customize POSITIVE, NEGATIVE and NEUTRAL buttons.
-				Button positiveButton = ((AlertDialog) dialog).getButton(DialogInterface.BUTTON_POSITIVE);
-				positiveButton.setTextColor(mapActivity.getResources().getColor(R.color.color_white));
-				positiveButton.invalidate();
+		dialog.setOnShowListener(dialog1 -> {
+            // Customize POSITIVE, NEGATIVE and NEUTRAL buttons.
+            Button positiveButton = ((AlertDialog) dialog1).getButton(DialogInterface.BUTTON_POSITIVE);
+            positiveButton.setTextColor(mapActivity.getResources().getColor(R.color.color_white));
+            positiveButton.invalidate();
 
-				Button negativeButton = ((AlertDialog) dialog).getButton(DialogInterface.BUTTON_NEGATIVE);
-				negativeButton.setTextColor(mapActivity.getResources().getColor(R.color.color_white));
-				negativeButton.invalidate();
-			}
-		});
+            Button negativeButton = ((AlertDialog) dialog1).getButton(DialogInterface.BUTTON_NEGATIVE);
+            negativeButton.setTextColor(mapActivity.getResources().getColor(R.color.color_white));
+            negativeButton.invalidate();
+        });
 		return dialog;
 	}
 }

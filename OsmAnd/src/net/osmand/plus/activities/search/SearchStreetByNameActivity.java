@@ -64,14 +64,10 @@ public class SearchStreetByNameActivity extends SearchByNameAbstractActivity<Str
 		searchAllStrets.setLayoutParams(lp);
 		searchAllStrets.setText(R.string.search_street_in_neighborhood_cities);
 		ll.addView(searchAllStrets);
-		searchAllStrets.setOnClickListener(new View.OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				searchWithCity = 1;
-				research();
-			}
-		});
+		searchAllStrets.setOnClickListener(v -> {
+            searchWithCity = 1;
+            research();
+        });
 		getListView().addFooterView(ll);
 	}
 	
@@ -156,13 +152,7 @@ public class SearchStreetByNameActivity extends SearchByNameAbstractActivity<Str
 					return namesFilter.isCancelled;
 				}
 			});
-			runOnUiThread(new Runnable() {
-				
-				@Override
-				public void run() {
-					finishInitializing(res);					
-				}
-			});
+			runOnUiThread(() -> finishInitializing(res));
 		}
 		return result[0];
 	}

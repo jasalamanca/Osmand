@@ -50,12 +50,7 @@ public class AccessibilityAssistant extends View.AccessibilityDelegate implement
     }
 
     public void unlockEvents() {
-        if (!hostActivity.getWindow().getDecorView().post(new Runnable() {
-                @Override
-                public void run() {
-                    eventsLocked = false;
-                }
-            }))
+        if (!hostActivity.getWindow().getDecorView().post(() -> eventsLocked = false))
             eventsLocked = false;
     }
 

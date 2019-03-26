@@ -3,8 +3,6 @@ package net.osmand.data;
 
 import net.osmand.util.Algorithms;
 
-import java.util.Map;
-
 public class Building extends MapObject {
 	
 	private String postcode;
@@ -12,8 +10,7 @@ public class Building extends MapObject {
 	private BuildingInterpolation interpolationType;
 	private int interpolationInterval;
 	private String name2;
-	private Map<String, LatLon> entrances = null;
-	
+
 	public enum BuildingInterpolation {
 		ALL(-1), EVEN(-2), ODD(-3), ALPHABETIC(-4);
 		private final int val;
@@ -24,7 +21,7 @@ public class Building extends MapObject {
 		public int getValue() {
 			return val;
 		}
-		
+
 		public static BuildingInterpolation fromValue(int i){
 			for(BuildingInterpolation b : values()) {
 				if(b.val == i) {
@@ -88,7 +85,7 @@ public class Building extends MapObject {
 				String sname = getName2();
 				if(fname.contains("-") && sname == null){
 					int l = fname.indexOf('-');
-					sname = fname.substring(l + 1, fname.length());
+					sname = fname.substring(l + 1);
 				}
 				if (sname != null) {
 					numT = Algorithms.extractFirstIntegerNumber(sname);

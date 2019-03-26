@@ -38,64 +38,49 @@ public class OsmEditOptionsBottomSheetDialogFragment extends MenuBottomSheetDial
 			((TextViewEx) mainView.findViewById(R.id.osm_edit_name)).setText(OsmEditingPlugin.getName(osmPoint) + ":");
 
 			((ImageView) mainView.findViewById(R.id.upload_icon)).setImageDrawable(getContentIcon(R.drawable.ic_action_export));
-			mainView.findViewById(R.id.upload_row).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					if (listener != null) {
-						listener.onUploadClick(osmPoint);
-					}
-					dismiss();
+			mainView.findViewById(R.id.upload_row).setOnClickListener(view -> {
+				if (listener != null) {
+					listener.onUploadClick(osmPoint);
 				}
+				dismiss();
 			});
 
 			((ImageView) mainView.findViewById(R.id.show_on_map_icon)).setImageDrawable(getContentIcon(R.drawable.ic_show_on_map));
-			mainView.findViewById(R.id.show_on_map_row).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					if (listener != null) {
-						listener.onShowOnMapClick(osmPoint);
-					}
-					dismiss();
+			mainView.findViewById(R.id.show_on_map_row).setOnClickListener(view -> {
+				if (listener != null) {
+					listener.onShowOnMapClick(osmPoint);
 				}
+				dismiss();
 			});
 
 			if (osmPoint instanceof OpenstreetmapPoint && osmPoint.getAction() != OsmPoint.Action.DELETE) {
 				mainView.findViewById(R.id.modify_osm_change_row).setVisibility(View.VISIBLE);
 				((ImageView) mainView.findViewById(R.id.modify_osm_change_icon)).setImageDrawable(getContentIcon(R.drawable.ic_action_edit_dark));
-				mainView.findViewById(R.id.modify_osm_change_row).setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View view) {
-						if (listener != null) {
-							listener.onModifyOsmChangeClick(osmPoint);
-						}
-						dismiss();
+				mainView.findViewById(R.id.modify_osm_change_row).setOnClickListener(view -> {
+					if (listener != null) {
+						listener.onModifyOsmChangeClick(osmPoint);
 					}
+					dismiss();
 				});
 			}
 
 			if (osmPoint instanceof OsmNotesPoint) {
 				mainView.findViewById(R.id.modify_osm_note_row).setVisibility(View.VISIBLE);
 				((ImageView) mainView.findViewById(R.id.modify_osm_note_icon)).setImageDrawable(getContentIcon(R.drawable.ic_action_edit_dark));
-				mainView.findViewById(R.id.modify_osm_note_row).setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View view) {
-						if (listener != null) {
-							listener.onModifyOsmNoteClick(osmPoint);
-						}
-						dismiss();
+				mainView.findViewById(R.id.modify_osm_note_row).setOnClickListener(view -> {
+					if (listener != null) {
+						listener.onModifyOsmNoteClick(osmPoint);
 					}
+					dismiss();
 				});
 			}
 
 			((ImageView) mainView.findViewById(R.id.delete_icon)).setImageDrawable(getContentIcon(R.drawable.ic_action_delete_dark));
-			mainView.findViewById(R.id.delete_row).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					if (listener != null) {
-						listener.onDeleteClick(osmPoint);
-					}
-					dismiss();
+			mainView.findViewById(R.id.delete_row).setOnClickListener(view -> {
+				if (listener != null) {
+					listener.onDeleteClick(osmPoint);
 				}
+				dismiss();
 			});
 		}
 
@@ -103,12 +88,7 @@ public class OsmEditOptionsBottomSheetDialogFragment extends MenuBottomSheetDial
 			((TextViewEx) mainView.findViewById(R.id.osm_edit_name)).setTextColor(getResources().getColor(R.color.ctx_menu_info_text_dark));
 		}
 
-		mainView.findViewById(R.id.cancel_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.cancel_row).setOnClickListener(view -> dismiss());
 
 		setupHeightAndBackground(mainView, R.id.osm_edit_options_scroll_view);
 

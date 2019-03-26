@@ -21,6 +21,7 @@
         android:layout_height="1dp"
         android:background="?attr/dashboard_divider"
         android:layout_marginLeft="54dp"
+        android:layout_marginStart="54dp"
         android:visibility="gone"/>
 
     <LinearLayout
@@ -28,7 +29,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/list_content_padding">
+        android:paddingLeft="@dimen/list_content_padding"
+        android:paddingStart="@dimen/list_content_padding">
 
         <CheckBox
             android:id="@+id/toggle_item"
@@ -36,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="@dimen/list_content_padding"
+            android:layout_marginEnd="@dimen/list_content_padding"
             android:focusable="false"
             android:visibility="gone"
             tools:visibility="visible"/>
@@ -45,7 +48,8 @@
             android:layout_width="@dimen/standard_icon_size"
             android:layout_height="@dimen/standard_icon_size"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="@dimen/list_content_padding"/>
+            android:layout_marginRight="@dimen/list_content_padding"
+            android:layout_marginEnd="@dimen/list_content_padding"/>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -53,7 +57,8 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:paddingRight="@dimen/list_content_padding">
+            android:paddingRight="@dimen/list_content_padding"
+            android:paddingEnd="@dimen/list_content_padding">
 
             <TextView
                 android:id="@+id/favourite_label"
@@ -80,6 +85,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2dp"
+                    android:layout_marginStart="2dp"
                     android:textColor="?android:textColorSecondary"
                     android:textSize="@dimen/default_sub_text_size"
                     tools:text="100500 km"/>
@@ -90,6 +96,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="4dp"
+                    android:layout_marginStart="4dp"
                     android:src="@drawable/ic_small_group"/>
 
                 <TextView
@@ -98,6 +105,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="2dp"
+                    android:layout_marginStart="2dp"
                     android:textColor="?android:textColorSecondary"
                     android:textSize="@dimen/default_sub_text_size"/>
             </LinearLayout>
@@ -110,6 +118,7 @@
             android:layout_height="@dimen/list_item_height"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/dashFavIconMargin"
+            android:layout_marginStart="@dimen/dashFavIconMargin"
             android:background="?attr/dashboard_button"
             android:src="@drawable/ic_action_test_light"
             android:visibility="invisible"/>

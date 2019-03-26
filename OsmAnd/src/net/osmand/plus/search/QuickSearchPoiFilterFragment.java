@@ -144,64 +144,47 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 		Toolbar toolbar = view.findViewById(R.id.toolbar);
 		toolbar.setNavigationIcon(app.getIconsCache().getIcon(R.drawable.ic_action_remove_dark));
 		toolbar.setNavigationContentDescription(R.string.shared_string_close);
-		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-			}
-		});
+		toolbar.setNavigationOnClickListener(v -> dismiss());
 
 		ImageButton moreButton = view.findViewById(R.id.moreButton);
-		moreButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				IconsCache iconsCache = app.getIconsCache();
-				final PopupMenu optionsMenu = new PopupMenu(getContext(), v);
-				DirectionsDialogs.setupPopUpMenuIcon(optionsMenu);
-				MenuItem item;
+		moreButton.setOnClickListener(v -> {
+            IconsCache iconsCache = app.getIconsCache();
+            final PopupMenu optionsMenu = new PopupMenu(getContext(), v);
+            DirectionsDialogs.setupPopUpMenuIcon(optionsMenu);
+            MenuItem item;
 
-				if (!filter.isStandardFilter()) {
-					item = optionsMenu.getMenu().add(R.string.edit_filter).setIcon(
-							iconsCache.getThemedIcon(R.drawable.ic_action_edit_dark));
-					item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-						@Override
-						public boolean onMenuItemClick(MenuItem item) {
-							editFilter();
-							return true;
-						}
-					});
-				}
+            if (!filter.isStandardFilter()) {
+                item = optionsMenu.getMenu().add(R.string.edit_filter).setIcon(
+                        iconsCache.getThemedIcon(R.drawable.ic_action_edit_dark));
+                item.setOnMenuItemClickListener(item13 -> {
+                    editFilter();
+                    return true;
+                });
+            }
 
-				if (!filter.isStandardFilter()) {
-					item = optionsMenu.getMenu().add(R.string.edit_filter_save_as_menu_item).setIcon(
-							iconsCache.getThemedIcon(R.drawable.ic_action_save));
-				} else {
-					item = optionsMenu.getMenu().add(R.string.save_filter).setIcon(
-							iconsCache.getThemedIcon(R.drawable.ic_action_save));
-				}
-				item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-					@Override
-					public boolean onMenuItemClick(MenuItem item) {
-						saveFilter();
-						return true;
-					}
-				});
+            if (!filter.isStandardFilter()) {
+                item = optionsMenu.getMenu().add(R.string.edit_filter_save_as_menu_item).setIcon(
+                        iconsCache.getThemedIcon(R.drawable.ic_action_save));
+            } else {
+                item = optionsMenu.getMenu().add(R.string.save_filter).setIcon(
+                        iconsCache.getThemedIcon(R.drawable.ic_action_save));
+            }
+            item.setOnMenuItemClickListener(item12 -> {
+                saveFilter();
+                return true;
+            });
 
-				if (!filter.isStandardFilter()) {
-					item = optionsMenu.getMenu().add(R.string.delete_filter)
-							.setIcon(iconsCache.getThemedIcon(R.drawable.ic_action_delete_dark));
-					item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-						@Override
-						public boolean onMenuItemClick(MenuItem item) {
-							deleteFilter();
-							return true;
-						}
-					});
-				}
+            if (!filter.isStandardFilter()) {
+                item = optionsMenu.getMenu().add(R.string.delete_filter)
+                        .setIcon(iconsCache.getThemedIcon(R.drawable.ic_action_delete_dark));
+                item.setOnMenuItemClickListener(item1 -> {
+                    deleteFilter();
+                    return true;
+                });
+            }
 
-				optionsMenu.show();
-			}
-		});
+            optionsMenu.show();
+        });
 
 		listView = view.findViewById(android.R.id.list);
 		listView.setBackgroundColor(getResources().getColor(
@@ -246,58 +229,52 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 		listView.addFooterView(bottomShadowView, null, false);
 		adapter = new PoiFilterListAdapter(app, getListItems());
 		listView.setAdapter(adapter);
-		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				PoiFilterListItem item = adapter.getItem(position - listView.getHeaderViewsCount());
-				if (item != null) {
-					switch (item.type) {
-						case GROUP_HEADER:
-							if (item.category != null) {
-								if (collapsedCategories.contains(item.category)) {
-									collapsedCategories.remove(item.category);
-								} else {
-									collapsedCategories.add(item.category);
-								}
-								updateListView();
-							}
-							break;
-						case CHECKBOX_ITEM:
-							CheckBox checkBox = view.findViewById(R.id.checkboxItem);
-							adapter.toggleCheckbox(item, checkBox, !checkBox.isChecked());
-							break;
-						case BUTTON_ITEM:
-							if (item.category != null) {
-								showAllCategories.add(item.category);
-								updateListView();
-							}
-							break;
-					}
-				}
-			}
-		});
+		listView.setOnItemClickListener((parent, view1, position, id) -> {
+            PoiFilterListItem item = adapter.getItem(position - listView.getHeaderViewsCount());
+            if (item != null) {
+                switch (item.type) {
+                    case GROUP_HEADER:
+                        if (item.category != null) {
+                            if (collapsedCategories.contains(item.category)) {
+                                collapsedCategories.remove(item.category);
+                            } else {
+                                collapsedCategories.add(item.category);
+                            }
+                            updateListView();
+                        }
+                        break;
+                    case CHECKBOX_ITEM:
+                        CheckBox checkBox = view1.findViewById(R.id.checkboxItem);
+                        adapter.toggleCheckbox(item, checkBox, !checkBox.isChecked());
+                        break;
+                    case BUTTON_ITEM:
+                        if (item.category != null) {
+                            showAllCategories.add(item.category);
+                            updateListView();
+                        }
+                        break;
+                }
+            }
+        });
 
 		applyFilterButtonShadow = view.findViewById(R.id.bottomButtonShadow);
 		applyFilterButton = view.findViewById(R.id.bottomButton);
 		applyFilterButton.setText(app.getString(R.string.apply_filters));
-		applyFilterButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				applyFilterFields();
-				if (!filter.isStandardFilter()) {
-					filter.setSavedFilterByName(filter.getFilterByName());
-					if (app.getPoiFilters().editPoiFilter(filter)) {
-						app.getSearchUICore().refreshCustomPoiFilters();
-						((QuickSearchDialogFragment) getParentFragment()).replaceQueryWithUiFilter(filter, "");
-						((QuickSearchDialogFragment) getParentFragment()).reloadCategories();
-						dismiss();
-					}
-				} else {
-					((QuickSearchDialogFragment) getParentFragment()).replaceQueryWithUiFilter(filter, nameFilterText.trim());
-					dismiss();
-				}
-			}
-		});
+		applyFilterButton.setOnClickListener(v -> {
+            applyFilterFields();
+            if (!filter.isStandardFilter()) {
+                filter.setSavedFilterByName(filter.getFilterByName());
+                if (app.getPoiFilters().editPoiFilter(filter)) {
+                    app.getSearchUICore().refreshCustomPoiFilters();
+                    ((QuickSearchDialogFragment) getParentFragment()).replaceQueryWithUiFilter(filter, "");
+                    ((QuickSearchDialogFragment) getParentFragment()).reloadCategories();
+                    dismiss();
+                }
+            } else {
+                ((QuickSearchDialogFragment) getParentFragment()).replaceQueryWithUiFilter(filter, nameFilterText.trim());
+                dismiss();
+            }
+        });
 		updateApplyButton();
 
 		return view;
@@ -314,21 +291,18 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 		builder.setMessage(R.string.edit_filter_delete_dialog_title);
 		builder.setNegativeButton(R.string.shared_string_no, null);
-		builder.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
+		builder.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> {
 
-				if (app.getPoiFilters().removePoiFilter(filter)) {
-					Toast.makeText(getContext(), MessageFormat.format(getContext().getText(R.string.edit_filter_delete_message).toString(),
-							filter.getName()), Toast.LENGTH_SHORT).show();
-					app.getSearchUICore().refreshCustomPoiFilters();
-					QuickSearchDialogFragment quickSearchDialogFragment = (QuickSearchDialogFragment) getParentFragment();
-					quickSearchDialogFragment.reloadCategories();
-					quickSearchDialogFragment.clearLastWord();
-					QuickSearchPoiFilterFragment.this.dismiss();
-				}
-			}
-		});
+            if (app.getPoiFilters().removePoiFilter(filter)) {
+                Toast.makeText(getContext(), MessageFormat.format(getContext().getText(R.string.edit_filter_delete_message).toString(),
+                        filter.getName()), Toast.LENGTH_SHORT).show();
+                app.getSearchUICore().refreshCustomPoiFilters();
+                QuickSearchDialogFragment quickSearchDialogFragment = (QuickSearchDialogFragment) getParentFragment();
+                quickSearchDialogFragment.reloadCategories();
+                quickSearchDialogFragment.clearLastWord();
+                QuickSearchPoiFilterFragment.this.dismiss();
+            }
+        });
 		builder.create().show();
 	}
 
@@ -359,24 +333,21 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 		builder.setView(ll);
 
 		builder.setNegativeButton(R.string.shared_string_cancel, null);
-		builder.setPositiveButton(R.string.shared_string_save, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				PoiUIFilter nFilter = new PoiUIFilter(editText.getText().toString(), null, filter.getAcceptedTypes(), app);
-				applyFilterFields();
-				if (!Algorithms.isEmpty(filter.getFilterByName())) {
-					nFilter.setSavedFilterByName(filter.getFilterByName());
-				}
-				if (app.getPoiFilters().createPoiFilter(nFilter)) {
-					Toast.makeText(getContext(), MessageFormat.format(getContext().getText(R.string.edit_filter_create_message).toString(),
-							editText.getText().toString()), Toast.LENGTH_SHORT).show();
-					app.getSearchUICore().refreshCustomPoiFilters();
-					((QuickSearchDialogFragment) getParentFragment()).replaceQueryWithUiFilter(nFilter, "");
-					((QuickSearchDialogFragment) getParentFragment()).reloadCategories();
-					QuickSearchPoiFilterFragment.this.dismiss();
-				}
-			}
-		});
+		builder.setPositiveButton(R.string.shared_string_save, (dialog, which) -> {
+            PoiUIFilter nFilter = new PoiUIFilter(editText.getText().toString(), null, filter.getAcceptedTypes(), app);
+            applyFilterFields();
+            if (!Algorithms.isEmpty(filter.getFilterByName())) {
+                nFilter.setSavedFilterByName(filter.getFilterByName());
+            }
+            if (app.getPoiFilters().createPoiFilter(nFilter)) {
+                Toast.makeText(getContext(), MessageFormat.format(getContext().getText(R.string.edit_filter_create_message).toString(),
+                        editText.getText().toString()), Toast.LENGTH_SHORT).show();
+                app.getSearchUICore().refreshCustomPoiFilters();
+                ((QuickSearchDialogFragment) getParentFragment()).replaceQueryWithUiFilter(nFilter, "");
+                ((QuickSearchDialogFragment) getParentFragment()).reloadCategories();
+                QuickSearchPoiFilterFragment.this.dismiss();
+            }
+        });
 		builder.create().show();
 	}
 
@@ -571,18 +542,15 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 					items.add(new PoiFilterListItem(PoiFilterListItemType.GROUP_HEADER,
 							categoryIconId, categoryLocalizedName, ++groupId, true, expanded, false, category, null));
 					List<PoiType> categoryPoiAdditionals = new ArrayList<>(entry.getValue());
-					Collections.sort(categoryPoiAdditionals, new Comparator<PoiType>() {
-						@Override
-						public int compare(PoiType p1, PoiType p2) {
-							String firstPoiTypeTranslation = poiAdditionalsTranslations.get(p1);
-							String secondPoiTypeTranslation = poiAdditionalsTranslations.get(p2);
-							if (firstPoiTypeTranslation != null && secondPoiTypeTranslation != null) {
-								return firstPoiTypeTranslation.compareTo(secondPoiTypeTranslation);
-							} else {
-								return 0;
-							}
-						}
-					});
+					Collections.sort(categoryPoiAdditionals, (p1, p2) -> {
+                        String firstPoiTypeTranslation = poiAdditionalsTranslations.get(p1);
+                        String secondPoiTypeTranslation = poiAdditionalsTranslations.get(p2);
+                        if (firstPoiTypeTranslation != null && secondPoiTypeTranslation != null) {
+                            return firstPoiTypeTranslation.compareTo(secondPoiTypeTranslation);
+                        } else {
+                            return 0;
+                        }
+                    });
 					for (PoiType poiType : categoryPoiAdditionals) {
 						String keyName = poiType.getKeyName().replace('_', ':').toLowerCase();
 						String translation = poiAdditionalsTranslations.get(poiType);
@@ -828,12 +796,7 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 						titleRegular.setVisibility(View.VISIBLE);
 						switchItem.setVisibility(View.VISIBLE);
 						switchItem.setChecked(item.checked);
-						switchItem.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-							@Override
-							public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-								toggleSwitch(item, isChecked);
-							}
-						});
+						switchItem.setOnCheckedChangeListener((buttonView, isChecked) -> toggleSwitch(item, isChecked));
 						titleBold.setVisibility(View.GONE);
 						titleButton.setVisibility(View.GONE);
 						expandItem.setVisibility(View.GONE);
@@ -844,12 +807,7 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 						titleRegular.setVisibility(View.VISIBLE);
 						checkBoxItem.setVisibility(View.VISIBLE);
 						checkBoxItem.setChecked(item.checked);
-						checkBoxItem.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-							@Override
-							public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-								toggleCheckbox(item, checkBoxItem, isChecked);
-							}
-						});
+						checkBoxItem.setOnCheckedChangeListener((buttonView, isChecked) -> toggleCheckbox(item, checkBoxItem, isChecked));
 						switchItem.setVisibility(View.GONE);
 						titleBold.setVisibility(View.GONE);
 						titleButton.setVisibility(View.GONE);

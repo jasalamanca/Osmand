@@ -58,8 +58,8 @@ public class RouteCalculationResult {
 		this.routingTime = 0;
 		this.errorMessage = null;
 		this.intermediatePoints = new int[params.intermediates == null ? 0 : params.intermediates.size()];
-		List<Location> locations = list == null ? new ArrayList<Location>() : new ArrayList<>(list);
-		List<RouteDirectionInfo> localDirections = directions == null? new ArrayList<RouteDirectionInfo>() : new ArrayList<>(directions);
+		List<Location> locations = list == null ? new ArrayList<>() : new ArrayList<>(list);
+		List<RouteDirectionInfo> localDirections = directions == null? new ArrayList<>() : new ArrayList<>(directions);
 		if (!locations.isEmpty()) {
 			checkForDuplicatePoints(locations, localDirections);
 		}

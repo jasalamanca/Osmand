@@ -32,12 +32,7 @@ public class FirstUsageWelcomeFragment extends Fragment {
 		}
 
 		AppCompatButton skipButton = view.findViewById(R.id.start_button);
-		skipButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				FirstUsageWizardFragment.startWizard(getActivity());
-			}
-		});
+		skipButton.setOnClickListener(v -> FirstUsageWizardFragment.startWizard(getActivity()));
 		return view;
 	}
 

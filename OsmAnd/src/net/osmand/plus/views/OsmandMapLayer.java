@@ -24,7 +24,6 @@ import net.osmand.data.RotatedTileBox;
 import net.osmand.osm.PoiCategory;
 import net.osmand.plus.ContextMenuAdapter;
 import net.osmand.plus.OsmandApplication;
-import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.render.OsmandRenderer;
 import net.osmand.plus.render.OsmandRenderer.RenderingContext;
 import net.osmand.render.RenderingRuleSearchRequest;
@@ -35,7 +34,6 @@ import net.osmand.util.MapUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import gnu.trove.list.array.TIntArrayList;
 
@@ -57,9 +55,9 @@ public abstract class OsmandMapLayer {
 	public void onPrepareBufferImage(Canvas canvas, RotatedTileBox tileBox, DrawSettings settings) {
 	}
 	public abstract void destroyLayer();
-	public void onRetainNonConfigurationInstance(Map<String, Object> map) {
+	public void onRetainNonConfigurationInstance() {
 	}
-	public void populateObjectContextMenu(LatLon latLon, Object o, ContextMenuAdapter adapter, MapActivity mapActivity) {
+	public void populateObjectContextMenu(Object o, ContextMenuAdapter adapter) {
 	}
 	public boolean onSingleTap(PointF point, RotatedTileBox tileBox) {
 		return false;
@@ -220,7 +218,7 @@ public abstract class OsmandMapLayer {
 
 		Amenity res = null;
 		for (Amenity amenity : amenities) {
-			Long amenityId = amenity.getId() >> 1;
+			long amenityId = amenity.getId() >> 1;
 			if (amenityId == id) {
 				res = amenity;
 				break;
@@ -284,7 +282,7 @@ public abstract class OsmandMapLayer {
 					RotatedTileBox original = tileBox.copy();
 					RotatedTileBox extended = original.copy();
 					extended.increasePixelDimensions(tileBox.getPixWidth() / 2, tileBox.getPixHeight() / 2);
-					Task task = new Task(original, extended);
+					Task task = new Task(extended);
 					if (currentTask == null) {
 						executeTaskInBackground(task);
 					} else {
@@ -305,10 +303,8 @@ public abstract class OsmandMapLayer {
 
 		class Task extends AsyncTask<Object, Object, T> {
 			private final RotatedTileBox dataBox;
-			private final RotatedTileBox requestedBox;
 
-			Task(RotatedTileBox requestedBox, RotatedTileBox dataBox) {
-				this.requestedBox = requestedBox;
+			Task(RotatedTileBox dataBox) {
 				this.dataBox = dataBox;
 			}
 
@@ -358,7 +354,6 @@ public abstract class OsmandMapLayer {
 		int defaultColor = 0;
 		boolean isPaint2;
 		final Paint paint2;
-		final int defaultWidth2 = 0;
 		boolean isPaint3;
 		final Paint paint3;
 		int defaultWidth3 = 0;
@@ -367,7 +362,6 @@ public abstract class OsmandMapLayer {
 		final int defaultShadowWidthExtent = 2;
 		final Paint paint_1;
 		boolean isPaint_1;
-		final int defaultWidth_1 = 0;
 		private final String renderingAttribute;
 
 		public RenderingLineAttributes(String renderingAttribute) {
@@ -404,17 +398,11 @@ public abstract class OsmandMapLayer {
 						rc.setDensityValue(tileBox.getDensity());
 						renderer.updatePaint(req, paint, 0, false, rc);
 						isPaint2 = renderer.updatePaint(req, paint2, 1, false, rc);
-//						if (paint2.getStrokeWidth() == 0 && defaultWidth2 != 0) {
-//							paint2.setStrokeWidth(defaultWidth2);
-//						}
 						isPaint3 = renderer.updatePaint(req, paint3, 2, false, rc);
 						if (paint3.getStrokeWidth() == 0 && defaultWidth3 != 0) {
 							paint3.setStrokeWidth(defaultWidth3);
 						}
 						isPaint_1 = renderer.updatePaint(req, paint_1, -1, false, rc);
-//						if (paint_1.getStrokeWidth() == 0 && defaultWidth_1 != 0) {
-//							paint_1.setStrokeWidth(defaultWidth_1);
-//						}
 						isShadowPaint = req.isSpecified(rrs.PROPS.R_SHADOW_RADIUS);
 						if (isShadowPaint) {
 							ColorFilter cf = new PorterDuffColorFilter(

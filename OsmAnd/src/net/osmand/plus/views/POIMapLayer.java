@@ -114,12 +114,7 @@ public class POIMapLayer extends OsmandMapLayer implements ContextMenuLayer.ICon
 							}));
 				}
 
-				Collections.sort(res, new Comparator<Amenity>() {
-					@Override
-					public int compare(Amenity lhs, Amenity rhs) {
-						return lhs.getId() < rhs.getId() ? -1 : (lhs.getId().longValue() == rhs.getId().longValue() ? 0 : 1);
-					}
-				});
+				Collections.sort(res, (lhs, rhs) -> lhs.getId() < rhs.getId() ? -1 : (lhs.getId().longValue() == rhs.getId().longValue() ? 0 : 1));
 
 				return res;
 			}
@@ -287,12 +282,7 @@ public class POIMapLayer extends OsmandMapLayer implements ContextMenuLayer.ICon
 		topBar.setTitle(title);
 		topBar.setBackgroundColor(ContextCompat.getColor(ctx, getResIdFromAttribute(ctx, R.attr.pstsTabBackground)));
 		topBar.setTitleTextColor(ContextCompat.getColor(ctx, getResIdFromAttribute(ctx, R.attr.pstsTextColor)));
-		topBar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(final View v) {
-				dialog.dismiss();
-			}
-		});
+		topBar.setNavigationOnClickListener(v -> dialog.dismiss());
 
 		final TextView textView = new TextView(ctx);
 		LinearLayout.LayoutParams llTextParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -377,7 +367,7 @@ public class POIMapLayer extends OsmandMapLayer implements ContextMenuLayer.ICon
 	}
 
 	@Override
-	public int getTextShift(Amenity o, RotatedTileBox rb) {
+	public int getTextShift(RotatedTileBox rb) {
 		return getRadiusPoi(rb);
 	}
 

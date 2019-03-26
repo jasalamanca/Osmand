@@ -62,60 +62,40 @@ public class OptionsBottomSheetDialogFragment extends MenuBottomSheetDialogFragm
 			((ImageView) mainView.findViewById(R.id.save_as_new_segment_icon)).setImageDrawable(getContentIcon(R.drawable.ic_action_polygom_dark));
 		}
 
-		mainView.findViewById(R.id.snap_to_road_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (listener != null) {
-					listener.snapToRoadOnCLick();
-				}
-				dismiss();
-			}
-		});
-		mainView.findViewById(R.id.clear_all_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (listener != null) {
-					listener.clearAllOnClick();
-				}
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.snap_to_road_row).setOnClickListener(view -> {
+            if (listener != null) {
+                listener.snapToRoadOnCLick();
+            }
+            dismiss();
+        });
+		mainView.findViewById(R.id.clear_all_row).setOnClickListener(view -> {
+            if (listener != null) {
+                listener.clearAllOnClick();
+            }
+            dismiss();
+        });
 		if (!addLineMode) {
-			mainView.findViewById(R.id.save_as_new_track_row).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					if (listener != null) {
-						listener.saveAsNewTrackOnClick();
-					}
-					dismiss();
-				}
-			});
-			mainView.findViewById(R.id.add_to_the_track_row).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					if (listener != null) {
-						listener.addToTheTrackOnClick();
-					}
-					dismiss();
-				}
-			});
+			mainView.findViewById(R.id.save_as_new_track_row).setOnClickListener(view -> {
+                if (listener != null) {
+                    listener.saveAsNewTrackOnClick();
+                }
+                dismiss();
+            });
+			mainView.findViewById(R.id.add_to_the_track_row).setOnClickListener(view -> {
+                if (listener != null) {
+                    listener.addToTheTrackOnClick();
+                }
+                dismiss();
+            });
 		} else {
-			mainView.findViewById(R.id.save_as_new_segment_row).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					if (listener != null) {
-						listener.addToGpxOnClick();
-					}
-					dismiss();
-				}
-			});
+			mainView.findViewById(R.id.save_as_new_segment_row).setOnClickListener(view -> {
+                if (listener != null) {
+                    listener.addToGpxOnClick();
+                }
+                dismiss();
+            });
 		}
-		mainView.findViewById(R.id.cancel_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.cancel_row).setOnClickListener(view -> dismiss());
 
 		setupHeightAndBackground(mainView, R.id.measure_options_scroll_view);
 

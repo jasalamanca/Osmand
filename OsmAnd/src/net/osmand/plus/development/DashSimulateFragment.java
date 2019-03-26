@@ -48,7 +48,7 @@ public class DashSimulateFragment extends DashBaseFragment {
 	}
 
 	@Override
-	public View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	public View initView(LayoutInflater inflater, @Nullable ViewGroup container) {
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_common_fragment, container, false);
 		TextView header = view.findViewById(R.id.fav_text);
 		header.setText(TITLE_ID);
@@ -57,14 +57,10 @@ public class DashSimulateFragment extends DashBaseFragment {
 		View item = inflater.inflate(R.layout.dash_simulate_item, null, false);
 		tracks.addView(item);
 		final OsmAndLocationProvider loc = getMyApplication().getLocationProvider();
-		OnClickListener listener = new View.OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				loc.getLocationSimulation().startStopRouteAnimation(getActivity());
-				dashboard.hideDashboard();
-			}
-		};
+		OnClickListener listener = v -> {
+            loc.getLocationSimulation().startStopRouteAnimation(getActivity());
+            dashboard.hideDashboard();
+        };
 		item.setOnClickListener(listener);
 		ImageButton actionButton = item.findViewById(R.id.stop);
 		actionButton.setOnClickListener(listener);

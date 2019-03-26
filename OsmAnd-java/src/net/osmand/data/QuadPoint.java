@@ -11,8 +11,4 @@ public class QuadPoint {
 		this.x = x;
 		this.y = y;
 	}
-
-	public QuadPoint(QuadPoint a) {
-		this(a.x, a.y);
-	}
 }

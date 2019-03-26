@@ -92,55 +92,35 @@ public class ReportsFragment extends BaseOsmAndFragment implements CountrySelect
 		View view = inflater.inflate(R.layout.fragment_reports, container, false);
 		monthReportsSpinner = view.findViewById(R.id.monthReportsSpinner);
 		final View monthButton = view.findViewById(R.id.monthButton);
-		monthReportsSpinner.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				event.offsetLocation(AndroidUtils.dpToPx(getActivity(), 48f), 0);
-				monthButton.onTouchEvent(event);
-				return true;
-			}
+		monthReportsSpinner.setOnTouchListener((v, event) -> {
+			event.offsetLocation(AndroidUtils.dpToPx(getActivity(), 48f), 0);
+			monthButton.onTouchEvent(event);
+			return true;
 		});
 		monthsForReportsAdapter = new MonthsForReportsAdapter(getActivity());
 		monthReportsSpinner.setAdapter(monthsForReportsAdapter);
 
-		monthButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				monthReportsSpinner.performClick();
-			}
-		});
+		monthButton.setOnClickListener(v -> monthReportsSpinner.performClick());
 
-		view.findViewById(R.id.show_all).setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(OSM_LIVE_URL));
-				startActivity(intent);
-			}
+		view.findViewById(R.id.show_all).setOnClickListener(v -> {
+			Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(OSM_LIVE_URL));
+			startActivity(intent);
 		});
 		((TextView) view.findViewById(R.id.osm_live_url_label)).setText(OSM_LIVE_URL);
 
 		View regionReportsButton = view.findViewById(R.id.reportsButton);
-		regionReportsButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				countrySelectionFragment.show(getChildFragmentManager(), "CountriesSearchSelectionFragment");
-			}
-		});
-		OnClickListener listener = new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				int monthItemPosition = monthReportsSpinner.getSelectedItemPosition();
-				String monthUrlString = monthsForReportsAdapter.getQueryString(monthItemPosition);
-				String countryUrlString = selectedCountryItem.getDownloadName();
-				boolean isRecipientsReport = v.getId() == R.id.numberOfRecipientsLayout;
-				if (countryUrlString.length() > 0 || isRecipientsReport) {
-					Bundle bl = new Bundle();
-					bl.putString(UsersReportFragment.URL_REQUEST,
-							String.format(isRecipientsReport ? RECIPIENTS_BY_MONTH : USERS_RANKING_BY_MONTH, monthUrlString, countryUrlString));
-					userReportFragment.setArguments(bl);
-					userReportFragment.show(getChildFragmentManager(), isRecipientsReport ? RECIPIENTS_FRAGMENT : EDITS_FRAGMENT);
-				}
+		regionReportsButton.setOnClickListener(v -> countrySelectionFragment.show(getChildFragmentManager(), "CountriesSearchSelectionFragment"));
+		OnClickListener listener = v -> {
+			int monthItemPosition = monthReportsSpinner.getSelectedItemPosition();
+			String monthUrlString = monthsForReportsAdapter.getQueryString(monthItemPosition);
+			String countryUrlString = selectedCountryItem.getDownloadName();
+			boolean isRecipientsReport = v.getId() == R.id.numberOfRecipientsLayout;
+			if (countryUrlString.length() > 0 || isRecipientsReport) {
+				Bundle bl = new Bundle();
+				bl.putString(UsersReportFragment.URL_REQUEST,
+						String.format(isRecipientsReport ? RECIPIENTS_BY_MONTH : USERS_RANKING_BY_MONTH, monthUrlString, countryUrlString));
+				userReportFragment.setArguments(bl);
+				userReportFragment.show(getChildFragmentManager(), isRecipientsReport ? RECIPIENTS_FRAGMENT : EDITS_FRAGMENT);
 			}
 		};
 		view.findViewById(R.id.numberOfContributorsLayout).setOnClickListener(listener);
@@ -219,32 +199,26 @@ public class ReportsFragment extends BaseOsmAndFragment implements CountrySelect
 
 	private void tryUpdateData(String monthUrlString, final String regionUrlString) {
 		GetJsonAsyncTask.OnResponseListener<Protocol.TotalChangesByMonthResponse> onResponseListener =
-				new GetJsonAsyncTask.OnResponseListener<Protocol.TotalChangesByMonthResponse>() {
-					@Override
-					public void onResponse(Protocol.TotalChangesByMonthResponse response) {
-						if (response != null) {
-							if (contributorsTextView != null) {
-								contributorsTextView.setText(String.valueOf(response.users));
-							}
-							if (editsTextView != null) {
-								editsTextView.setText(String.valueOf(response.changes));
-							}
-						}
-						disableProgress();
-					}
-				};
-		GetJsonAsyncTask.OnErrorListener onErrorListener =
-				new GetJsonAsyncTask.OnErrorListener() {
-					@Override
-					public void onError(String error) {
+				response -> {
+					if (response != null) {
 						if (contributorsTextView != null) {
-							contributorsTextView.setText(R.string.data_is_not_available);
+							contributorsTextView.setText(String.valueOf(response.users));
 						}
 						if (editsTextView != null) {
-							editsTextView.setText(R.string.data_is_not_available);
+							editsTextView.setText(String.valueOf(response.changes));
 						}
-						disableProgress();
 					}
+					disableProgress();
+				};
+		GetJsonAsyncTask.OnErrorListener onErrorListener =
+				error -> {
+					if (contributorsTextView != null) {
+						contributorsTextView.setText(R.string.data_is_not_available);
+					}
+					if (editsTextView != null) {
+						editsTextView.setText(R.string.data_is_not_available);
+					}
+					disableProgress();
 				};
 		enableProgress();
 		GetJsonAsyncTask<Protocol.TotalChangesByMonthResponse> totalChangesByMontAsyncTask =
@@ -257,24 +231,21 @@ public class ReportsFragment extends BaseOsmAndFragment implements CountrySelect
 		GetJsonAsyncTask<Protocol.RecipientsByMonth> recChangesByMontAsyncTask =
 				new GetJsonAsyncTask<>(Protocol.RecipientsByMonth.class);
 		GetJsonAsyncTask.OnResponseListener<Protocol.RecipientsByMonth> recResponseListener =
-				new GetJsonAsyncTask.OnResponseListener<Protocol.RecipientsByMonth>() {
-					@Override
-					public void onResponse(Protocol.RecipientsByMonth response) {
-						if (response != null) {
-							if (recipientsTextView != null) {
-								recipientsTextView.setText(String.valueOf(response.regionCount));
-							}
-							if (donationsTextView != null) {
-								donationsTextView.setText(String.format("%.3f", response.regionBtc*1000f) + " mBTC");
-							}
-							if (donationsTotalLayout != null &&
-									donationsTotalTextView != null) {
-								donationsTotalLayout.setVisibility(regionUrlString.isEmpty() ? View.VISIBLE : View.GONE);
-								donationsTotalTextView.setText(String.format("%.3f", response.btc*1000f) + " mBTC");
-							}
+				response -> {
+					if (response != null) {
+						if (recipientsTextView != null) {
+							recipientsTextView.setText(String.valueOf(response.regionCount));
 						}
-						disableProgress();
+						if (donationsTextView != null) {
+							donationsTextView.setText(String.format("%.3f", response.regionBtc*1000f) + " mBTC");
+						}
+						if (donationsTotalLayout != null &&
+								donationsTotalTextView != null) {
+							donationsTotalLayout.setVisibility(regionUrlString.isEmpty() ? View.VISIBLE : View.GONE);
+							donationsTotalTextView.setText(String.format("%.3f", response.btc*1000f) + " mBTC");
+						}
 					}
+					disableProgress();
 				};
 		recChangesByMontAsyncTask.setOnResponseListener(recResponseListener);
 		clearTextViewResult(recipientsTextView);

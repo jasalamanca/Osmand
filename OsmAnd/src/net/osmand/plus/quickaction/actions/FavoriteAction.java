@@ -66,13 +66,10 @@ public class FavoriteAction extends QuickAction {
 			});
 			progressDialog.show();
 
-			lookupRequest = new AddressLookupRequest(latLon, new OnAddressLookupResult() {
-				@Override
-				public void geocodingDone(String address) {
-					dismissProgressDialog();
-					addFavorite(activity, latLon, address, !Boolean.valueOf(getParams().get(KEY_DIALOG)));
-				}
-			}, null);
+			lookupRequest = new AddressLookupRequest(latLon, address -> {
+                dismissProgressDialog();
+                addFavorite(activity, latLon, address, !Boolean.valueOf(getParams().get(KEY_DIALOG)));
+            }, null);
 
 			activity.getMyApplication().getGeocodingLookupService().lookupAddress(lookupRequest);
 		} else {
@@ -85,19 +82,9 @@ public class FavoriteAction extends QuickAction {
 		dialog.setCancelable(false);
 		dialog.setMessage(context.getString(R.string.search_address));
 		dialog.setButton(Dialog.BUTTON_POSITIVE, context.getString(R.string.shared_string_skip),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						listener.skipOnClick();
-					}
-				});
+                (dialog12, which) -> listener.skipOnClick());
 		dialog.setButton(Dialog.BUTTON_NEGATIVE, context.getString(R.string.access_hint_enter_name),
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						listener.enterNameOnClick();
-					}
-				});
+                (dialog1, which) -> listener.enterNameOnClick());
 		return dialog;
 	}
 
@@ -156,44 +143,25 @@ public class FavoriteAction extends QuickAction {
 			getParams().put(KEY_CATEGORY_COLOR, "0");
 		}
 
-		categoryEdit.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(final View view) {
-				SelectCategoryDialogFragment dialogFragment = SelectCategoryDialogFragment.createInstance("");
-				dialogFragment.show(
-						activity.getSupportFragmentManager(),
-						SelectCategoryDialogFragment.TAG);
-				dialogFragment.setSelectionListener(new SelectCategoryDialogFragment.CategorySelectionListener() {
-					@Override
-					public void onCategorySelected(String category, int color) {
-						fillGroupParams(root, category, color);
-					}
-				});
-			}
-		});
+		categoryEdit.setOnClickListener(view -> {
+            SelectCategoryDialogFragment dialogFragment = SelectCategoryDialogFragment.createInstance("");
+            dialogFragment.show(
+                    activity.getSupportFragmentManager(),
+                    SelectCategoryDialogFragment.TAG);
+            dialogFragment.setSelectionListener((category, color) -> fillGroupParams(root, category, color));
+        });
 
 		SelectCategoryDialogFragment dialogFragment = (SelectCategoryDialogFragment)
 				activity.getSupportFragmentManager().findFragmentByTag(SelectCategoryDialogFragment.TAG);
 
 		if (dialogFragment != null) {
-			dialogFragment.setSelectionListener(new SelectCategoryDialogFragment.CategorySelectionListener() {
-				@Override
-				public void onCategorySelected(String category, int color) {
-
-					fillGroupParams(root, category, color);
-				}
-			});
+			dialogFragment.setSelectionListener((category, color) -> fillGroupParams(root, category, color));
 		} else {
 			EditCategoryDialogFragment dialog = (EditCategoryDialogFragment)
 					activity.getSupportFragmentManager().findFragmentByTag(EditCategoryDialogFragment.TAG);
 
 			if (dialog != null) {
-				dialogFragment.setSelectionListener(new SelectCategoryDialogFragment.CategorySelectionListener() {
-					@Override
-					public void onCategorySelected(String category, int color) {
-						fillGroupParams(root, category, color);
-					}
-				});
+				dialogFragment.setSelectionListener((category, color) -> fillGroupParams(root, category, color));
 			}
 		}
 	}

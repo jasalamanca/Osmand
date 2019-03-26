@@ -113,12 +113,7 @@ public class SplitSegmentDialogFragment extends DialogFragment {
 			titleTextView.setText(trackActivityActionBar.getTitle());
 		}
 		toolbar.setNavigationIcon(getMyApplication().getIconsCache().getIcon(R.drawable.ic_arrow_back));
-		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		toolbar.setNavigationOnClickListener(view1 -> dismiss());
 
 		progressBar = view.findViewById(R.id.progress_bar);
 
@@ -186,35 +181,28 @@ public class SplitSegmentDialogFragment extends DialogFragment {
 				prepareSplitIntervalAdapterData();
 			}
 			updateSplitIntervalView(splitIntervalView);
-			splitIntervalView.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					final ListPopupWindow popup = new ListPopupWindow(getActivity());
-					popup.setAnchorView(splitIntervalView);
-					popup.setContentWidth(AndroidUtils.dpToPx(app, 200f));
-					popup.setModal(true);
-					popup.setDropDownGravity(Gravity.RIGHT | Gravity.TOP);
-					popup.setVerticalOffset(AndroidUtils.dpToPx(app, -48f));
-					popup.setHorizontalOffset(AndroidUtils.dpToPx(app, -6f));
-					popup.setAdapter(new ArrayAdapter<>(getTrackActivity(),
-							R.layout.popup_list_text_item, options));
-					popup.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-						@Override
-						public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-							selectedSplitInterval = position;
-							GpxSelectionHelper.SelectedGpxFile sf = app.getSelectedGpxHelper().selectGpxFile(getGpx(), true, false);
-							final List<GpxDisplayGroup> groups = getDisplayGroups();
-							if (groups.size() > 0) {
-								updateSplit(groups, sf);
-							}
-							popup.dismiss();
-							updateSplitIntervalView(splitIntervalView);
-						}
-					});
-					popup.show();
-				}
-			});
+			splitIntervalView.setOnClickListener(v -> {
+                final ListPopupWindow popup = new ListPopupWindow(getActivity());
+                popup.setAnchorView(splitIntervalView);
+                popup.setContentWidth(AndroidUtils.dpToPx(app, 200f));
+                popup.setModal(true);
+                popup.setDropDownGravity(Gravity.RIGHT | Gravity.TOP);
+                popup.setVerticalOffset(AndroidUtils.dpToPx(app, -48f));
+                popup.setHorizontalOffset(AndroidUtils.dpToPx(app, -6f));
+                popup.setAdapter(new ArrayAdapter<>(getTrackActivity(),
+                        R.layout.popup_list_text_item, options));
+                popup.setOnItemClickListener((parent, view, position, id) -> {
+                    selectedSplitInterval = position;
+                    GpxSelectionHelper.SelectedGpxFile sf = app.getSelectedGpxHelper().selectGpxFile(getGpx(), true, false);
+                    final List<GpxDisplayGroup> groups = getDisplayGroups();
+                    if (groups.size() > 0) {
+                        updateSplit(groups, sf);
+                    }
+                    popup.dismiss();
+                    updateSplitIntervalView(splitIntervalView);
+                });
+                popup.show();
+            });
 			splitIntervalView.setVisibility(View.VISIBLE);
 		} else {
 			splitIntervalView.setVisibility(View.GONE);

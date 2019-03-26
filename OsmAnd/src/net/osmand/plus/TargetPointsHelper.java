@@ -162,18 +162,15 @@ public class TargetPointsHelper {
 	private void lookupAddressForIntermediatePoint(final TargetPoint targetPoint) {
 		if (targetPoint != null && targetPoint.pointDescription.isSearchingAddress(ctx)) {
 			cancelPointAddressRequests(targetPoint.point);
-			AddressLookupRequest lookupRequest = new AddressLookupRequest(targetPoint.point, new GeocodingLookupService.OnAddressLookupResult() {
-				@Override
-				public void geocodingDone(String address) {
-					for (TargetPoint p : intermediatePoints) {
-						if (p.point.equals(targetPoint.point)) {
-							p.pointDescription.setName(address);
-							settings.updateIntermediatePoint(p.point.getLatitude(), p.point.getLongitude(),
-									p.pointDescription);
-							updateRouteAndRefresh(false);
-							updateTargetPoint(p);
-							break;
-						}
+			AddressLookupRequest lookupRequest = new AddressLookupRequest(targetPoint.point, address -> {
+				for (TargetPoint p : intermediatePoints) {
+					if (p.point.equals(targetPoint.point)) {
+						p.pointDescription.setName(address);
+						settings.updateIntermediatePoint(p.point.getLatitude(), p.point.getLongitude(),
+								p.pointDescription);
+						updateRouteAndRefresh(false);
+						updateTargetPoint(p);
+						break;
 					}
 				}
 			}, null);
@@ -185,17 +182,14 @@ public class TargetPointsHelper {
 		if (pointToStart != null && pointToStart.isSearchingAddress(ctx)
 				&& (startPointRequest == null || !startPointRequest.getLatLon().equals(pointToStart.point))) {
 			cancelStartPointAddressRequest();
-			startPointRequest = new AddressLookupRequest(pointToStart.point, new GeocodingLookupService.OnAddressLookupResult() {
-				@Override
-				public void geocodingDone(String address) {
-					startPointRequest = null;
-					if (pointToStart != null) {
-						pointToStart.pointDescription.setName(address);
-						settings.setPointToStart(pointToStart.point.getLatitude(), pointToStart.point.getLongitude(),
-								pointToStart.pointDescription);
-						updateRouteAndRefresh(false);
-						updateTargetPoint(pointToStart);
-					}
+			startPointRequest = new AddressLookupRequest(pointToStart.point, address -> {
+				startPointRequest = null;
+				if (pointToStart != null) {
+					pointToStart.pointDescription.setName(address);
+					settings.setPointToStart(pointToStart.point.getLatitude(), pointToStart.point.getLongitude(),
+							pointToStart.pointDescription);
+					updateRouteAndRefresh(false);
+					updateTargetPoint(pointToStart);
 				}
 			}, null);
 			ctx.getGeocodingLookupService().lookupAddress(startPointRequest);
@@ -206,17 +200,14 @@ public class TargetPointsHelper {
 		if (pointToNavigate != null && pointToNavigate.isSearchingAddress(ctx)
 				&& (targetPointRequest == null || !targetPointRequest.getLatLon().equals(pointToNavigate.point))) {
 			cancelTargetPointAddressRequest();
-			targetPointRequest = new AddressLookupRequest(pointToNavigate.point, new GeocodingLookupService.OnAddressLookupResult() {
-				@Override
-				public void geocodingDone(String address) {
-					targetPointRequest = null;
-					if (pointToNavigate != null) {
-						pointToNavigate.pointDescription.setName(address);
-						settings.setPointToNavigate(pointToNavigate.point.getLatitude(), pointToNavigate.point.getLongitude(),
-								pointToNavigate.pointDescription);
-						updateRouteAndRefresh(false);
-						updateTargetPoint(pointToNavigate);
-					}
+			targetPointRequest = new AddressLookupRequest(pointToNavigate.point, address -> {
+				targetPointRequest = null;
+				if (pointToNavigate != null) {
+					pointToNavigate.pointDescription.setName(address);
+					settings.setPointToNavigate(pointToNavigate.point.getLatitude(), pointToNavigate.point.getLongitude(),
+							pointToNavigate.pointDescription);
+					updateRouteAndRefresh(false);
+					updateTargetPoint(pointToNavigate);
 				}
 			}, null);
 			ctx.getGeocodingLookupService().lookupAddress(targetPointRequest);

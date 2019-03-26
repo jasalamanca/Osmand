@@ -5,7 +5,6 @@ import android.app.AlarmManager;
 import android.app.AlertDialog.Builder;
 import android.app.PendingIntent;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -25,9 +24,7 @@ import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.ExpandableListView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -74,12 +71,7 @@ import static net.osmand.plus.liveupdates.LiveUpdatesHelper.setAlarmForPendingIn
 public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppListener {
 	public static final int TITLE = R.string.live_updates;
 	private static final int SUBSCRIPTION_SETTINGS = 5;
-	private static final Comparator<LocalIndexInfo> LOCAL_INDEX_INFO_COMPARATOR = new Comparator<LocalIndexInfo>() {
-		@Override
-		public int compare(LocalIndexInfo lhs, LocalIndexInfo rhs) {
-			return lhs.getName().compareTo(rhs.getName());
-		}
-	};
+	private static final Comparator<LocalIndexInfo> LOCAL_INDEX_INFO_COMPARATOR = (lhs, rhs) -> lhs.getName().compareTo(rhs.getName());
 	private View subscriptionHeader;
 	private ExpandableListView listView;
 	private LocalIndexesAdapter adapter;
@@ -116,18 +108,15 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 		View bottomShadowView = inflater.inflate(R.layout.card_bottom_divider, listView, false);
 		listView.addFooterView(bottomShadowView);
 		adapter = new LocalIndexesAdapter(this);
-		listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-			@Override
-			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-				if (!processing && InAppHelper.isSubscribedToLiveUpdates()) {
-					final FragmentManager fragmentManager = getChildFragmentManager();
-					LiveUpdatesSettingsDialogFragment
-							.createInstance(adapter.getChild(groupPosition, childPosition).getFileName())
-							.show(fragmentManager, "settings");
-					return true;
-				} else {
-					return false;
-				}
+		listView.setOnChildClickListener((parent, v, groupPosition, childPosition, id) -> {
+			if (!processing && InAppHelper.isSubscribedToLiveUpdates()) {
+				final FragmentManager fragmentManager = getChildFragmentManager();
+				LiveUpdatesSettingsDialogFragment
+						.createInstance(adapter.getChild(groupPosition, childPosition).getFileName())
+						.show(fragmentManager, "settings");
+				return true;
+			} else {
+				return false;
 			}
 		});
 
@@ -138,14 +127,11 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 			updateSubscriptionHeader();
 
 			listView.addHeaderView(subscriptionHeader);
-			listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-				@Override
-				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-					if (position == 0 && !processing && InAppHelper.isSubscribedToLiveUpdates()) {
-						SubscriptionFragment subscriptionFragment = new SubscriptionFragment();
-						subscriptionFragment.setEditMode(true);
-						subscriptionFragment.show(getChildFragmentManager(), SubscriptionFragment.TAG);
-					}
+			listView.setOnItemClickListener((parent, view1, position, id) -> {
+				if (position == 0 && !processing && InAppHelper.isSubscribedToLiveUpdates()) {
+					SubscriptionFragment subscriptionFragment = new SubscriptionFragment();
+					subscriptionFragment.setEditMode(true);
+					subscriptionFragment.show(getChildFragmentManager(), SubscriptionFragment.TAG);
 				}
 			});
 		}
@@ -178,22 +164,16 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 			} else {
 				Button readMoreBtn = subscriptionHeader.findViewById(R.id.read_more_button);
 				readMoreBtn.setEnabled(!processing);
-				readMoreBtn.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						Uri uri = Uri.parse("https://osmand.net/osm_live.php");
-						Intent goToOsmLive = new Intent(Intent.ACTION_VIEW, uri);
-						startActivity(goToOsmLive);
-					}
+				readMoreBtn.setOnClickListener(v -> {
+					Uri uri = Uri.parse("https://osmand.net/osm_live.php");
+					Intent goToOsmLive = new Intent(Intent.ACTION_VIEW, uri);
+					startActivity(goToOsmLive);
 				});
 				Button subscriptionButton = subscriptionHeader.findViewById(R.id.subscription_button);
 				subscriptionButton.setEnabled(!processing);
-				subscriptionButton.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						SubscriptionFragment subscriptionFragment = new SubscriptionFragment();
-						subscriptionFragment.show(getChildFragmentManager(), SubscriptionFragment.TAG);
-					}
+				subscriptionButton.setOnClickListener(v -> {
+					SubscriptionFragment subscriptionFragment = new SubscriptionFragment();
+					subscriptionFragment.show(getChildFragmentManager(), SubscriptionFragment.TAG);
 				});
 
 				subscriptionBanner.setVisibility(View.VISIBLE);
@@ -215,7 +195,6 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 			SubscriptionFragment subscriptionFragment = new SubscriptionFragment();
 			subscriptionFragment.show(getChildFragmentManager(), SubscriptionFragment.TAG);
 		}
-
 	}
 
 	@Override
@@ -241,7 +220,6 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		if (getSettings().LIVE_UPDATES_PURCHASED.get() && !Version.isDeveloperVersion(getMyApplication())) {
@@ -377,23 +355,18 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 				final OsmandSettings settings = application.getSettings();
 				liveUpdatesSwitch.setChecked(settings.IS_LIVE_UPDATES_ON.get());
 				liveUpdatesSwitch.setEnabled(!processing);
-				liveUpdatesSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-					@Override
-					public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-						if (isChecked) {
-							if (InAppHelper.isSubscribedToLiveUpdates()) {
-								switchOnLiveUpdates(settings);
-							} else {
-								liveUpdatesSwitch.setChecked(false);
-								getMyApplication().showToastMessage(getString(R.string.osm_live_ask_for_purchase));
-							}
+				liveUpdatesSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+					if (isChecked) {
+						if (InAppHelper.isSubscribedToLiveUpdates()) {
+							switchOnLiveUpdates(settings);
 						} else {
-							settings.IS_LIVE_UPDATES_ON.set(false);
-							enableLiveUpdates(false);
+							liveUpdatesSwitch.setChecked(false);
+							getMyApplication().showToastMessage(getString(R.string.osm_live_ask_for_purchase));
 						}
+					} else {
+						settings.IS_LIVE_UPDATES_ON.set(false);
+						enableLiveUpdates(false);
 					}
-
-					
 				});
 			} else {
 				topShadowView.setVisibility(View.VISIBLE);
@@ -415,15 +388,11 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 			if(dataShouldUpdate.size() > 0) {
 				Builder bld = new Builder(getActivity());
 				bld.setMessage(R.string.update_all_maps_now);
-				bld.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						for (LocalIndexInfo li : dataShouldUpdate) {
-							runLiveUpdate(getMyApplication(), li.getFileName(), false);
-						}
-						notifyDataSetChanged();
+				bld.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> {
+					for (LocalIndexInfo li : dataShouldUpdate) {
+						runLiveUpdate(getMyApplication(), li.getFileName(), false);
 					}
+					notifyDataSetChanged();
 				});
 				bld.setNegativeButton(R.string.shared_string_no, null);
 				bld.show();
@@ -577,12 +546,9 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 			}
 
 			if (!fragment.isProcessing() && InAppHelper.isSubscribedToLiveUpdates()) {
-				final View.OnClickListener clickListener = new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						final FragmentManager fragmentManager = fragment.getChildFragmentManager();
-						LiveUpdatesSettingsDialogFragment.createInstance(item).show(fragmentManager, "settings");
-					}
+				final View.OnClickListener clickListener = v -> {
+					final FragmentManager fragmentManager = fragment.getChildFragmentManager();
+					LiveUpdatesSettingsDialogFragment.createInstance(item).show(fragmentManager, "settings");
 				};
 				options.setOnClickListener(clickListener);
 				options.setEnabled(true);
@@ -694,7 +660,6 @@ public class LiveUpdatesFragment extends BaseOsmAndFragment implements InAppList
 	public void showProgress() {
 		enableProgress();
 	}
-
 	@Override
 	public void dismissProgress() {
 		disableProgress();

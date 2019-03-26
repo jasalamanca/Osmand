@@ -286,14 +286,11 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 		}
 
 		tabView.setFocusable(true);
-		tabView.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (pager.getCurrentItem() != position) {
-					View tab = tabsContainer.getChildAt(pager.getCurrentItem());
-					notSelected(tab);
-					pager.setCurrentItem(position);
-				}
+		tabView.setOnClickListener(v -> {
+			if (pager.getCurrentItem() != position) {
+				View tab = tabsContainer.getChildAt(pager.getCurrentItem());
+				notSelected(tab);
+				pager.setCurrentItem(position);
 			}
 		});
 

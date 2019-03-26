@@ -128,12 +128,7 @@ public class DownloadValidationManager {
 			} else {
 				builder.setMessage(MessageFormat.format(context.getString(R.string.download_files_question_space), i, szChange, asz));
 			}
-			builder.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					downloadFileCheck_Final_Run(context, items);
-				}
-			});
+			builder.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> downloadFileCheck_Final_Run(context, items));
 			builder.setNegativeButton(R.string.shared_string_no, null);
 			builder.show();
 		} else {
@@ -175,12 +170,7 @@ public class DownloadValidationManager {
 			if (getMyApplication().getSettings().isInternetConnectionAvailable()) {
 				AlertDialog.Builder builder = new AlertDialog.Builder(context);
 				builder.setMessage(context.getString(R.string.download_using_mobile_internet));
-				builder.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						downloadFilesCheck_3_ValidateSpace(context, items);
-					}
-				});
+				builder.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> downloadFilesCheck_3_ValidateSpace(context, items));
 				builder.setNegativeButton(R.string.shared_string_no, null);
 				builder.show();
 			} else {
@@ -196,13 +186,10 @@ public class DownloadValidationManager {
 		AlertDialog.Builder bld = new AlertDialog.Builder(ctx);
 		bld.setTitle(ctx.getString(R.string.shared_string_cancel));
 		bld.setMessage(R.string.confirm_interrupt_download);
-		bld.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
-				getDownloadThread().cancelDownload(item);
-			}
-		});
+		bld.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> {
+            dialog.dismiss();
+            getDownloadThread().cancelDownload(item);
+        });
 		bld.setNegativeButton(R.string.shared_string_no, null);
 		bld.show();
 	}
@@ -218,18 +205,14 @@ public class DownloadValidationManager {
 			msg.setTitle(R.string.free_version_title);
 			msg.setMessage(msgTx);
 			if (Version.isMarketEnabled(getMyApplication())) {
-				msg.setPositiveButton(R.string.install_paid, new DialogInterface.OnClickListener() {
-
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						Intent intent = new Intent(Intent.ACTION_VIEW,
-								Uri.parse(Version.getUrlWithUtmRef(getMyApplication(), "net.osmand.plus")));
-						try {
-							startActivity(intent);
-						} catch (ActivityNotFoundException e) {
-						}
-					}
-				});
+				msg.setPositiveButton(R.string.install_paid, (dialog, which) -> {
+                    Intent intent = new Intent(Intent.ACTION_VIEW,
+                            Uri.parse(Version.getUrlWithUtmRef(getMyApplication(), "net.osmand.plus")));
+                    try {
+                        startActivity(intent);
+                    } catch (ActivityNotFoundException e) {
+                    }
+                });
 				msg.setNegativeButton(R.string.shared_string_cancel, null);
 			} else {
 				msg.setNeutralButton(R.string.shared_string_ok, null);

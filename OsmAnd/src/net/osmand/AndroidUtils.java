@@ -52,12 +52,9 @@ public class AndroidUtils {
 	}
 	
 	public static void softKeyboardDelayed(final View view) {
-		view.post(new Runnable() {
-			@Override
-			public void run() {
-				if (!isHardwareKeyboardAvailable(view.getContext())) {
-					showSoftKeyboard(view);
-				}
+		view.post(() -> {
+			if (!isHardwareKeyboardAvailable(view.getContext())) {
+				showSoftKeyboard(view);
 			}
 		});
 	}
@@ -329,11 +326,7 @@ public class AndroidUtils {
 
 	public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
 		List<Map.Entry<K, V>> list = new LinkedList<>(map.entrySet());
-		Collections.sort(list, new Comparator<Map.Entry<K, V>>() {
-			public int compare(Map.Entry<K, V> o1, Map.Entry<K, V> o2) {
-				return (o1.getValue()).compareTo(o2.getValue());
-			}
-		});
+		Collections.sort(list, (o1, o2) -> (o1.getValue()).compareTo(o2.getValue()));
 
 		Map<K, V> result = new LinkedHashMap<>();
 		for (Map.Entry<K, V> entry : list) {

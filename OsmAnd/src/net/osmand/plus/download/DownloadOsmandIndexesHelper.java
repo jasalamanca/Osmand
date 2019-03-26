@@ -40,23 +40,20 @@ class DownloadOsmandIndexesHelper {
         final ArrayList<IndexItem> indexFiles = new ArrayList<>();
 		private String mapversion;
 		
-		private final Comparator<IndexItem> comparator = new Comparator<IndexItem>(){
-			@Override
-			public int compare(IndexItem o1, IndexItem o2) {
-				String object1 = o1.getFileName();
-				String object2 = o2.getFileName();
-				if(object1.endsWith(IndexConstants.ANYVOICE_INDEX_EXT_ZIP)){
-					if(object2.endsWith(IndexConstants.ANYVOICE_INDEX_EXT_ZIP)){
-						return object1.compareTo(object2);
-					} else {
-						return -1;
-					}
-				} else if(object2.endsWith(IndexConstants.ANYVOICE_INDEX_EXT_ZIP)){
-					return 1;
-				}
-				return object1.compareTo(object2);
-			}
-		};
+		private final Comparator<IndexItem> comparator = (o1, o2) -> {
+            String object1 = o1.getFileName();
+            String object2 = o2.getFileName();
+            if(object1.endsWith(IndexConstants.ANYVOICE_INDEX_EXT_ZIP)){
+                if(object2.endsWith(IndexConstants.ANYVOICE_INDEX_EXT_ZIP)){
+                    return object1.compareTo(object2);
+                } else {
+                    return -1;
+                }
+            } else if(object2.endsWith(IndexConstants.ANYVOICE_INDEX_EXT_ZIP)){
+                return 1;
+            }
+            return object1.compareTo(object2);
+        };
 		
 		void setDownloadedFromInternet(boolean downloadedFromInternet) {
 			this.downloadedFromInternet = downloadedFromInternet;

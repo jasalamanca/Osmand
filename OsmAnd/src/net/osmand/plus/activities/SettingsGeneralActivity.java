@@ -2,7 +2,6 @@ package net.osmand.plus.activities;
 
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.pm.ActivityInfo;
@@ -108,76 +107,70 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 	private void addLocalPrefs(PreferenceGroup screen) {
 		drivingRegionPreference.setTitle(R.string.driving_region);
 		drivingRegionPreference.setSummary(R.string.driving_region_descr);
-		drivingRegionPreference.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				final AlertDialog.Builder b = new AlertDialog.Builder(SettingsGeneralActivity.this);
+		drivingRegionPreference.setOnPreferenceClickListener(preference -> {
+			final AlertDialog.Builder b = new AlertDialog.Builder(SettingsGeneralActivity.this);
 
-				b.setTitle(getString(R.string.driving_region));
+			b.setTitle(getString(R.string.driving_region));
 
-				final List<DrivingRegion> drs = new ArrayList<>();
-				drs.add(null);
-				drs.addAll(Arrays.asList(DrivingRegion.values()));
-				int sel = -1;
-				DrivingRegion selectedDrivingRegion = settings.DRIVING_REGION.get();
-				if (settings.DRIVING_REGION_AUTOMATIC.get()) {
-					sel = 0;
-				}
-				for (int i = 1; i < drs.size(); i++) {
-					if (sel == -1 && drs.get(i) == selectedDrivingRegion) {
-						sel = i;
-						break;
-					}
-				}
-
-				final int selected = sel;
-				final ArrayAdapter<DrivingRegion> singleChoiceAdapter =
-						new ArrayAdapter<DrivingRegion>(SettingsGeneralActivity.this, R.layout.single_choice_description_item, R.id.text1, drs) {
-					@NonNull
-					@Override
-					public View getView(int position, View convertView, @NonNull ViewGroup parent) {
-						View v = convertView;
-						if (v == null) {
-							LayoutInflater inflater = SettingsGeneralActivity.this.getLayoutInflater();
-							v = inflater.inflate(R.layout.single_choice_description_item, parent, false);
-						}
-						DrivingRegion item = getItem(position);
-						AppCompatCheckedTextView title = v.findViewById(R.id.text1);
-						TextView desc = v.findViewById(R.id.description);
-						if (item != null) {
-							title.setText(getString(item.name));
-							desc.setVisibility(View.VISIBLE);
-							desc.setText(item.getDescription(v.getContext()));
-						} else {
-							title.setText(getString(R.string.driving_region_automatic));
-							desc.setVisibility(View.GONE);
-						}
-						title.setChecked(position == selected);
-						return v;
-					}
-				};
-
-				b.setAdapter(singleChoiceAdapter, new OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						if (drs.get(which) == null) {
-							settings.DRIVING_REGION_AUTOMATIC.set(true);
-							MapViewTrackingUtilities mapViewTrackingUtilities = MapActivity.getSingleMapViewTrackingUtilities();
-							if (mapViewTrackingUtilities != null) {
-								mapViewTrackingUtilities.resetDrivingRegionUpdate();
-							}
-						} else {
-							settings.DRIVING_REGION_AUTOMATIC.set(false);
-							settings.DRIVING_REGION.set(drs.get(which));
-						}
-						updateAllSettings();
-					}
-				});
-
-				b.setNegativeButton(R.string.shared_string_cancel, null);
-				b.show();
-				return true;
+			final List<DrivingRegion> drs = new ArrayList<>();
+			drs.add(null);
+			drs.addAll(Arrays.asList(DrivingRegion.values()));
+			int sel = -1;
+			DrivingRegion selectedDrivingRegion = settings.DRIVING_REGION.get();
+			if (settings.DRIVING_REGION_AUTOMATIC.get()) {
+				sel = 0;
 			}
+			for (int i = 1; i < drs.size(); i++) {
+				if (sel == -1 && drs.get(i) == selectedDrivingRegion) {
+					sel = i;
+					break;
+				}
+			}
+
+			final int selected = sel;
+			final ArrayAdapter<DrivingRegion> singleChoiceAdapter =
+					new ArrayAdapter<DrivingRegion>(SettingsGeneralActivity.this, R.layout.single_choice_description_item, R.id.text1, drs) {
+				@NonNull
+				@Override
+				public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+					View v = convertView;
+					if (v == null) {
+						LayoutInflater inflater = SettingsGeneralActivity.this.getLayoutInflater();
+						v = inflater.inflate(R.layout.single_choice_description_item, parent, false);
+					}
+					DrivingRegion item = getItem(position);
+					AppCompatCheckedTextView title = v.findViewById(R.id.text1);
+					TextView desc = v.findViewById(R.id.description);
+					if (item != null) {
+						title.setText(getString(item.name));
+						desc.setVisibility(View.VISIBLE);
+						desc.setText(item.getDescription(v.getContext()));
+					} else {
+						title.setText(getString(R.string.driving_region_automatic));
+						desc.setVisibility(View.GONE);
+					}
+					title.setChecked(position == selected);
+					return v;
+				}
+			};
+
+			b.setAdapter(singleChoiceAdapter, (dialog, which) -> {
+				if (drs.get(which) == null) {
+					settings.DRIVING_REGION_AUTOMATIC.set(true);
+					MapViewTrackingUtilities mapViewTrackingUtilities = MapActivity.getSingleMapViewTrackingUtilities();
+					if (mapViewTrackingUtilities != null) {
+						mapViewTrackingUtilities.resetDrivingRegionUpdate();
+					}
+				} else {
+					settings.DRIVING_REGION_AUTOMATIC.set(false);
+					settings.DRIVING_REGION.set(drs.get(which));
+				}
+				updateAllSettings();
+			});
+
+			b.setNegativeButton(R.string.shared_string_cancel, null);
+			b.show();
+			return true;
 		});
 
 		String[] entries;
@@ -355,45 +348,34 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 
 	private void addProxyPrefs(PreferenceGroup proxy) {
 		CheckBoxPreference enableProxyPref = (CheckBoxPreference) proxy.findPreference(settings.ENABLE_PROXY.getId());
-		enableProxyPref.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-			@Override
-			public boolean onPreferenceChange(Preference preference, Object newValue) {
-				enableProxy((Boolean) newValue);
-				return true;
-			}
-
+		enableProxyPref.setOnPreferenceChangeListener((preference, newValue) -> {
+			enableProxy((Boolean) newValue);
+			return true;
 		});
 		EditTextPreference hostPref = (EditTextPreference) proxy.findPreference(settings.PROXY_HOST.getId());
-		hostPref.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-			@Override
-			public boolean onPreferenceChange(Preference preference, Object newValue) {
-				String ipAddress = (String) newValue;
-				if (ipAddress.matches(IP_ADDRESS_PATTERN)) {
-					settings.PROXY_HOST.set(ipAddress);
-					enableProxy(NetworkUtils.getProxy() != null);
-					return true;
-				} else {
-					Toast.makeText(SettingsGeneralActivity.this, getString(R.string.wrong_format), Toast.LENGTH_SHORT).show();
-					return false;
-				}
+		hostPref.setOnPreferenceChangeListener((preference, newValue) -> {
+			String ipAddress = (String) newValue;
+			if (ipAddress.matches(IP_ADDRESS_PATTERN)) {
+				settings.PROXY_HOST.set(ipAddress);
+				enableProxy(NetworkUtils.getProxy() != null);
+				return true;
+			} else {
+				Toast.makeText(SettingsGeneralActivity.this, getString(R.string.wrong_format), Toast.LENGTH_SHORT).show();
+				return false;
 			}
 		});
 
 		EditTextPreference portPref = (EditTextPreference) proxy.findPreference(settings.PROXY_PORT.getId());
-		portPref.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-
-			@Override
-			public boolean onPreferenceChange(Preference preference, Object newValue) {
-				int port = -1;
-				String portString = (String) newValue;
-				try {
-					port = Integer.valueOf(portString.replaceAll("[^0-9]", ""));
-				} catch (NumberFormatException e1) {
-				}
-				settings.PROXY_PORT.set(port);
-				enableProxy(NetworkUtils.getProxy() != null);
-				return true;
+		portPref.setOnPreferenceChangeListener((preference, newValue) -> {
+			int port = -1;
+			String portString = (String) newValue;
+			try {
+				port = Integer.valueOf(portString.replaceAll("[^0-9]", ""));
+			} catch (NumberFormatException e1) {
 			}
+			settings.PROXY_PORT.set(port);
+			enableProxy(NetworkUtils.getProxy() != null);
+			return true;
 		});
 	}
 
@@ -415,11 +397,7 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 		settings.getExternalStorageDirectory().getAbsolutePath();
 		editalert.setView(input);
 		editalert.setNegativeButton(R.string.shared_string_cancel, null);
-		editalert.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				warnAboutChangingStorage(input.getText().toString());
-			}
-		});
+		editalert.setPositiveButton(R.string.shared_string_ok, (dialog, whichButton) -> warnAboutChangingStorage(input.getText().toString()));
 		editalert.show();
 
 	}
@@ -435,7 +413,7 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 		if (permissionRequested && !permissionGranted) {
 			chooseAppDirFragment.setPermissionDenied();
 		}
-		bld.setView(chooseAppDirFragment.initView(getLayoutInflater(), null, null));
+		bld.setView(chooseAppDirFragment.initView(getLayoutInflater(), null));
 		AlertDialog dlg = bld.show();
 		chooseAppDirFragment.setDialog(dlg);
 	}
@@ -445,13 +423,9 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 			applicationDir = new Preference(this);
 			applicationDir.setTitle(R.string.application_dir);
 			applicationDir.setKey("external_storage_dir");
-			applicationDir.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-
-				@Override
-				public boolean onPreferenceClick(Preference preference) {
-					showAppDirDialog();
-					return false;
-				}
+			applicationDir.setOnPreferenceClickListener(preference -> {
+				showAppDirDialog();
+				return false;
 			});
 			misc.addPreference(applicationDir);
 
@@ -524,13 +498,7 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 	private void restartApp() {
 		AlertDialog.Builder bld = new AlertDialog.Builder(this);
 		bld.setMessage(R.string.restart_is_required);
-		bld.setPositiveButton(R.string.shared_string_ok, new OnClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				android.os.Process.killProcess(android.os.Process.myPid());
-			}
-		});
+		bld.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> android.os.Process.killProcess(android.os.Process.myPid()));
 		bld.show();
 	}
 
@@ -548,28 +516,14 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 		}
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setMessage(getString(R.string.application_dir_change_warning3));
-		builder.setPositiveButton(R.string.shared_string_yes, new OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				MoveFilesToDifferentDirectory task =
-						new MoveFilesToDifferentDirectory(SettingsGeneralActivity.this,
-								settings.getExternalStorageDirectory(), path);
-				task.setRunOnSuccess(new Runnable() {
-					@Override
-					public void run() {
-						updateSettingsToNewDir(path.getParentFile().getAbsolutePath());
-					}
-				});
-				task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-			}
+		builder.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> {
+			MoveFilesToDifferentDirectory task =
+					new MoveFilesToDifferentDirectory(SettingsGeneralActivity.this,
+							settings.getExternalStorageDirectory(), path);
+			task.setRunOnSuccess(() -> updateSettingsToNewDir(path.getParentFile().getAbsolutePath()));
+			task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 		});
-		builder.setNeutralButton(R.string.shared_string_no, new OnClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				updateSettingsToNewDir(path.getParentFile().getAbsolutePath());
-			}
-		});
+		builder.setNeutralButton(R.string.shared_string_no, (dialog, which) -> updateSettingsToNewDir(path.getParentFile().getAbsolutePath()));
 		builder.setNegativeButton(R.string.shared_string_cancel, null);
 		builder.show();
 	}
@@ -605,7 +559,7 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 		}.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 	}
 
-	protected void showWarnings(List<String> warnings) {
+	private void showWarnings(List<String> warnings) {
 		if (!warnings.isEmpty()) {
 			final StringBuilder b = new StringBuilder();
 			boolean f = true;
@@ -617,12 +571,7 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 				}
 				b.append(w);
 			}
-			runOnUiThread(new Runnable() {
-				@Override
-				public void run() {
-					Toast.makeText(SettingsGeneralActivity.this, b.toString(), Toast.LENGTH_LONG).show();
-				}
-			});
+			runOnUiThread(() -> Toast.makeText(SettingsGeneralActivity.this, b.toString(), Toast.LENGTH_LONG).show());
 		}
 	}
 

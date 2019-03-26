@@ -87,13 +87,6 @@ public class NavigationNotification extends OsmandNotification {
 		return Notification.PRIORITY_HIGH;
 	}
 
-	public boolean isActive() {
-		NavigationService service = app.getNavigationService();
-		return isEnabled()
-				&& service != null
-				&& (service.getUsedBy() & USED_BY_NAVIGATION) != 0;
-	}
-
 	@Override
 	public boolean isEnabled() {
 		RoutingHelper routingHelper = app.getRoutingHelper();
@@ -109,15 +102,12 @@ public class NavigationNotification extends OsmandNotification {
 		NavigationService service = app.getNavigationService();
 		String notificationTitle;
 		StringBuilder notificationText = new StringBuilder();
-		color = 0;
-		icon = R.drawable.ic_action_start_navigation;
+        icon = R.drawable.ic_action_start_navigation;
         Bitmap turnBitmap = null;
 		ongoing = true;
 		RoutingHelper routingHelper = app.getRoutingHelper();
 		boolean followingMode = routingHelper.isFollowingMode() || app.getLocationProvider().getLocationSimulation().isRouteAnimating();
 		if (service != null && (service.getUsedBy() & USED_BY_NAVIGATION) != 0) {
-			color = app.getResources().getColor(R.color.osmand_orange);
-
 			String distanceStr = OsmAndFormatter.getFormattedDistance(app.getRoutingHelper().getLeftDistance(), app);
 			String timeStr = OsmAndFormatter.getFormattedDuration(app.getRoutingHelper().getLeftTime(), app);
 			String etaStr = SimpleDateFormat.getTimeInstance(DateFormat.SHORT)

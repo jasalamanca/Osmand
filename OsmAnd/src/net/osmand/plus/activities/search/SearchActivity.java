@@ -214,40 +214,36 @@ public class SearchActivity extends TabActivity implements OsmAndLocationListene
 					}
 				};
 		spinnerAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-		getSupportActionBar().setListNavigationCallbacks(spinnerAdapter, new OnNavigationListener() {
-			
-			@Override
-			public boolean onNavigationItemSelected(int position, long itemId) {
-				if (position != 0) {
-					if (position == POSITION_CURRENT_LOCATION) {
-						net.osmand.Location loc = getLocationProvider().getLastKnownLocation();
-						searchAroundCurrentLocation = true;
-						if(loc != null && System.currentTimeMillis() - loc.getTime() < 10000) {
-							updateLocation(loc);
-						}
-						startSearchCurrentLocation();
-					} else {
-						searchAroundCurrentLocation = false;
-						endSearchCurrentLocation();
-						if (position == POSITION_LAST_MAP_VIEW) {
-							updateSearchPoint(settings.getLastKnownMapLocation(), getString(R.string.select_search_position) + " " + getString(R.string.search_position_map_view), false);
-						} else if (position == POSITION_FAVORITES) {
-							Intent intent = new Intent(SearchActivity.this, FavoritesListActivity.class);
-							intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-							intent.putExtra(FavoritesListFragment.SELECT_FAVORITE_POINT_INTENT_KEY, (Serializable) null);
-							startActivityForResult(intent, REQUEST_FAVORITE_SELECT);
-							getSupportActionBar().setSelectedNavigationItem(0);
-						} else if (position == POSITION_ADDRESS) {
-							Intent intent = new Intent(SearchActivity.this, SearchAddressActivity.class);
-							intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-							intent.putExtra(SearchAddressFragment.SELECT_ADDRESS_POINT_INTENT_KEY, (String) null);
-							startActivityForResult(intent, REQUEST_ADDRESS_SELECT);
-							getSupportActionBar().setSelectedNavigationItem(0);
-						}
+		getSupportActionBar().setListNavigationCallbacks(spinnerAdapter, (position, itemId) -> {
+			if (position != 0) {
+				if (position == POSITION_CURRENT_LOCATION) {
+					net.osmand.Location loc = getLocationProvider().getLastKnownLocation();
+					searchAroundCurrentLocation = true;
+					if(loc != null && System.currentTimeMillis() - loc.getTime() < 10000) {
+						updateLocation(loc);
+					}
+					startSearchCurrentLocation();
+				} else {
+					searchAroundCurrentLocation = false;
+					endSearchCurrentLocation();
+					if (position == POSITION_LAST_MAP_VIEW) {
+						updateSearchPoint(settings.getLastKnownMapLocation(), getString(R.string.select_search_position) + " " + getString(R.string.search_position_map_view), false);
+					} else if (position == POSITION_FAVORITES) {
+						Intent intent = new Intent(SearchActivity.this, FavoritesListActivity.class);
+						intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+						intent.putExtra(FavoritesListFragment.SELECT_FAVORITE_POINT_INTENT_KEY, (Serializable) null);
+						startActivityForResult(intent, REQUEST_FAVORITE_SELECT);
+						getSupportActionBar().setSelectedNavigationItem(0);
+					} else if (position == POSITION_ADDRESS) {
+						Intent intent = new Intent(SearchActivity.this, SearchAddressActivity.class);
+						intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+						intent.putExtra(SearchAddressFragment.SELECT_ADDRESS_POINT_INTENT_KEY, (String) null);
+						startActivityForResult(intent, REQUEST_ADDRESS_SELECT);
+						getSupportActionBar().setSelectedNavigationItem(0);
 					}
 				}
-				return true;
 			}
+			return true;
 		});
 	}
 

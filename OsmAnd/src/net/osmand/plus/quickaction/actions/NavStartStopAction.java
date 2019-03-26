@@ -49,12 +49,7 @@ public class NavStartStopAction extends QuickAction {
 			showDialogSwitch.setChecked(Boolean.valueOf(getParams().get(KEY_DIALOG)));
 		}
 
-		view.findViewById(R.id.show_dialog_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				showDialogSwitch.setChecked(!showDialogSwitch.isChecked());
-			}
-		});
+		view.findViewById(R.id.show_dialog_row).setOnClickListener(view1 -> showDialogSwitch.setChecked(!showDialogSwitch.isChecked()));
 
 		parent.addView(view);
 	}

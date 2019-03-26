@@ -37,14 +37,11 @@ public abstract class GroupsAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 			return new MapMarkersGroupHeaderViewHolder(view);
 		} else {
 			View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.markers_group_view_holder, parent, false);
-			view.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					if (listener != null) {
-						listener.onItemClick(view);
-					}
-				}
-			});
+			view.setOnClickListener(view1 -> {
+                if (listener != null) {
+                    listener.onItemClick(view1);
+                }
+            });
 			return new MapMarkersGroupViewHolder(view);
 		}
 	}

@@ -81,12 +81,7 @@ public class ConfigureMapMenu {
 		adapter.addItem(new ContextMenuItem.ItemBuilder()
 				.setTitleId(R.string.app_modes_choose, ma)
 				.setLayout(R.layout.mode_toggles).createItem());
-		adapter.setChangeAppModeListener(new OnClickListener() {
-			@Override
-			public void onClick() {
-				ma.getDashboard().updateListAdapter(createListAdapter(ma));
-			}
-		});
+		adapter.setChangeAppModeListener(() -> ma.getDashboard().updateListAdapter(createListAdapter(ma)));
 		RenderingRulesStorage renderer = ma.getMyApplication().getRendererRegistry().getCurrentSelectedRenderer();
 		List<RenderingRuleProperty> customRules = new ArrayList<>();
 		if (renderer != null) {
@@ -183,16 +178,13 @@ public class ConfigureMapMenu {
 											final ContextMenuItem item) {
 			AlertDialog dialog = ma.getMapLayers().showGPXFileLayer(getAlreadySelectedGpx(),
 					ma.getMapView());
-			dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-				@Override
-				public void onDismiss(DialogInterface dialog) {
-					OsmandApplication app = ma.getMyApplication();
-					boolean selected = app.getSelectedGpxHelper().isShowingAnyGpxFiles();
-					item.setSelected(app.getSelectedGpxHelper().isShowingAnyGpxFiles());
-					item.setDescription(app.getSelectedGpxHelper().getGpxDescription());
-					item.setColorRes(selected ? R.color.osmand_orange : ContextMenuItem.INVALID_ID);
-					adapter.notifyDataSetChanged();
-				}
+			dialog.setOnDismissListener(dialog1 -> {
+				OsmandApplication app = ma.getMyApplication();
+				boolean selected = app.getSelectedGpxHelper().isShowingAnyGpxFiles();
+				item.setSelected(app.getSelectedGpxHelper().isShowingAnyGpxFiles());
+				item.setDescription(app.getSelectedGpxHelper().getGpxDescription());
+				item.setColorRes(selected ? R.color.osmand_orange : ContextMenuItem.INVALID_ID);
+				adapter.notifyDataSetChanged();
 			});
 		}
 
@@ -200,16 +192,13 @@ public class ConfigureMapMenu {
 								 final ContextMenuItem item) {
 			final PoiFiltersHelper poiFiltersHelper = ma.getMyApplication().getPoiFilters();
 			MapActivityLayers.DismissListener dismissListener =
-					new MapActivityLayers.DismissListener() {
-						@Override
-						public void dismiss() {
-							PoiFiltersHelper pf = ma.getMyApplication().getPoiFilters();
-							boolean selected = pf.isShowingAnyPoi();
-							item.setSelected(selected);
-							item.setDescription(pf.getSelectedPoiFiltersName());
-							item.setColorRes(selected ? R.color.osmand_orange : ContextMenuItem.INVALID_ID);
-							adapter.notifyDataSetChanged();
-						}
+					() -> {
+						PoiFiltersHelper pf = ma.getMyApplication().getPoiFilters();
+						boolean selected = pf.isShowingAnyPoi();
+						item.setSelected(selected);
+						item.setDescription(pf.getSelectedPoiFiltersName());
+						item.setColorRes(selected ? R.color.osmand_orange : ContextMenuItem.INVALID_ID);
+						adapter.notifyDataSetChanged();
 					};
 			if (poiFiltersHelper.getSelectedPoiFilters().size() > 1) {
 				ma.getMapLayers().showMultichoicePoiFilterDialog(ma.getMapView(),
@@ -374,15 +363,12 @@ public class ConfigureMapMenu {
 								final Switch check = v.findViewById(R.id.toggle_item);
 								check.setOnCheckedChangeListener(null);
 								check.setChecked(checkedItems[position]);
-								check.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-									@Override
-									public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-										checkedItems[position] = isChecked;
-										if (checkedItems[position]) {
-											icon.setImageDrawable(app.getIconsCache().getIcon(iconIds[position], R.color.osmand_orange));
-										} else {
-											icon.setImageDrawable(app.getIconsCache().getThemedIcon(iconIds[position]));
-										}
+								check.setOnCheckedChangeListener((buttonView, isChecked) -> {
+									checkedItems[position] = isChecked;
+									if (checkedItems[position]) {
+										icon.setImageDrawable(app.getIconsCache().getIcon(iconIds[position], R.color.osmand_orange));
+									} else {
+										icon.setImageDrawable(app.getIconsCache().getThemedIcon(iconIds[position]));
 									}
 								});
 								return v;
@@ -393,41 +379,32 @@ public class ConfigureMapMenu {
 						listView.setDivider(null);
 						listView.setClickable(true);
 						listView.setAdapter(adapter);
-						listView.setOnItemClickListener(new ListView.OnItemClickListener() {
-							@Override
-							public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-								checkedItems[position] = !checkedItems[position];
-								adapter.notifyDataSetChanged();
-							}
+						listView.setOnItemClickListener((parent, view, position, id) -> {
+							checkedItems[position] = !checkedItems[position];
+							adapter.notifyDataSetChanged();
 						});
 						b.setView(listView);
 
-						b.setOnDismissListener(new DialogInterface.OnDismissListener() {
-							@Override
-							public void onDismiss(DialogInterface dialog) {
-								ContextMenuItem item = ad.getItem(pos);
-								if (item != null) {
-									item.setSelected(transportSelectedInner);
-									item.setColorRes(transportSelectedInner ? R.color.osmand_orange : ContextMenuItem.INVALID_ID);
-									ad.notifyDataSetChanged();
-								}
-
+						b.setOnDismissListener(dialog -> {
+							ContextMenuItem item = ad.getItem(pos);
+							if (item != null) {
+								item.setSelected(transportSelectedInner);
+								item.setColorRes(transportSelectedInner ? R.color.osmand_orange : ContextMenuItem.INVALID_ID);
+								ad.notifyDataSetChanged();
 							}
+
 						});
 						b.setNegativeButton(R.string.shared_string_cancel, null);
-						b.setPositiveButton(R.string.shared_string_apply, new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								transportSelectedInner = false;
-								for (int i = 0; i < transportPrefs.size(); i++) {
-									transportPrefs.get(i).set(checkedItems[i]);
-									if (!transportSelectedInner && checkedItems[i]) {
-										transportSelectedInner = true;
-									}
+						b.setPositiveButton(R.string.shared_string_apply, (dialog, which) -> {
+							transportSelectedInner = false;
+							for (int i = 0; i < transportPrefs.size(); i++) {
+								transportPrefs.get(i).set(checkedItems[i]);
+								if (!transportSelectedInner && checkedItems[i]) {
+									transportSelectedInner = true;
 								}
-								refreshMapComplete(activity);
-								activity.getMapLayers().updateLayers(activity.getMapView());
 							}
+							refreshMapComplete(activity);
+							activity.getMapLayers().updateLayers(activity.getMapView());
 						});
 						b.show();
 					}
@@ -462,84 +439,68 @@ public class ConfigureMapMenu {
 				.setCategory(true).setLayout(R.layout.list_group_title_with_switch).createItem());
 		adapter.addItem(new ContextMenuItem.ItemBuilder().setTitleId(R.string.map_widget_renderer, activity)
 				.setDescription(getRenderDescr(activity)).setLayout(R.layout.list_item_single_line_descrition_narrow)
-				.setIcon(R.drawable.ic_map).setListener(new ContextMenuAdapter.ItemClickListener() {
-					@Override
-					public boolean onContextMenuClick(final ArrayAdapter<ContextMenuItem> ad, int itemId,
-													  final int pos, boolean isChecked, int[] viewCoordinates) {
-						AlertDialog.Builder bld = new AlertDialog.Builder(activity);
-						bld.setTitle(R.string.renderers);
-						final OsmandApplication app = activity.getMyApplication();
-						final ArrayList<String> items = new ArrayList<>(app.getRendererRegistry().getRendererNames());
-						final List<String> visibleNamesList = new ArrayList<>();
-						int selected = -1;
-						final String selectedName = app.getRendererRegistry().getCurrentSelectedRenderer().getName();
-						int i = 0;
-						for (String item : items) {
-							if (item.equals(selectedName)) {
-								selected = i;
-							}
-							String translation = RendererRegistry.getTranslatedRendererName(activity, item);
-							visibleNamesList.add(translation != null ? translation
-									: item.replace('_', ' ').replace('-', ' '));
-							i++;
+				.setIcon(R.drawable.ic_map).setListener((ad, itemId, pos, isChecked, viewCoordinates) -> {
+					AlertDialog.Builder bld = new AlertDialog.Builder(activity);
+					bld.setTitle(R.string.renderers);
+					final OsmandApplication app = activity.getMyApplication();
+					final ArrayList<String> items = new ArrayList<>(app.getRendererRegistry().getRendererNames());
+					final List<String> visibleNamesList = new ArrayList<>();
+					int selected = -1;
+					final String selectedName = app.getRendererRegistry().getCurrentSelectedRenderer().getName();
+					int i = 0;
+					for (String item : items) {
+						if (item.equals(selectedName)) {
+							selected = i;
 						}
-
-						bld.setSingleChoiceItems(visibleNamesList.toArray(new String[visibleNamesList.size()]), selected, new DialogInterface.OnClickListener() {
-
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								String renderer = items.get(which);
-								RenderingRulesStorage loaded = app.getRendererRegistry().getRenderer(renderer);
-								if (loaded != null) {
-									OsmandMapTileView view = activity.getMapView();
-									view.getSettings().RENDERER.set(renderer);
-									app.getRendererRegistry().setCurrentSelectedRender(loaded);
-									refreshMapComplete(activity);
-								} else {
-									Toast.makeText(app, R.string.renderer_load_exception, Toast.LENGTH_SHORT).show();
-								}
-								adapter.getItem(pos).setDescription(getRenderDescr(activity));
-								activity.getDashboard().refreshContent(true);
-								dialog.dismiss();
-							}
-
-						});
-						bld.setNegativeButton(R.string.shared_string_dismiss, null);
-						bld.show();
-						return false;
+						String translation = RendererRegistry.getTranslatedRendererName(activity, item);
+						visibleNamesList.add(translation != null ? translation
+								: item.replace('_', ' ').replace('-', ' '));
+						i++;
 					}
+
+					bld.setSingleChoiceItems(visibleNamesList.toArray(new String[visibleNamesList.size()]), selected, (dialog, which) -> {
+						String renderer = items.get(which);
+						RenderingRulesStorage loaded = app.getRendererRegistry().getRenderer(renderer);
+						if (loaded != null) {
+							OsmandMapTileView view = activity.getMapView();
+							view.getSettings().RENDERER.set(renderer);
+							app.getRendererRegistry().setCurrentSelectedRender(loaded);
+							refreshMapComplete(activity);
+						} else {
+							Toast.makeText(app, R.string.renderer_load_exception, Toast.LENGTH_SHORT).show();
+						}
+						adapter.getItem(pos).setDescription(getRenderDescr(activity));
+						activity.getDashboard().refreshContent(true);
+						dialog.dismiss();
+					});
+					bld.setNegativeButton(R.string.shared_string_dismiss, null);
+					bld.show();
+					return false;
 				}).createItem());
 
 		adapter.addItem(new ContextMenuItem.ItemBuilder().setTitleId(R.string.map_mode, activity)
 				.setDescription(getDayNightDescr(activity)).setLayout(R.layout.list_item_single_line_descrition_narrow)
-				.setIcon(getDayNightIcon(activity)).setListener(new ItemClickListener() {
-					@Override
-					public boolean onContextMenuClick(final ArrayAdapter<ContextMenuItem> ad, int itemId,
-													  final int pos, boolean isChecked, int[] viewCoordinates) {
-						final OsmandMapTileView view = activity.getMapView();
-						AlertDialog.Builder bld = new AlertDialog.Builder(view.getContext());
-						bld.setTitle(R.string.daynight);
-						final String[] items = new String[OsmandSettings.DayNightMode.values().length];
-						for (int i = 0; i < items.length; i++) {
-							items[i] = OsmandSettings.DayNightMode.values()[i].toHumanString(activity
-									.getMyApplication());
-						}
-						int i = view.getSettings().DAYNIGHT_MODE.get().ordinal();
-						bld.setSingleChoiceItems(items, i, new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								view.getSettings().DAYNIGHT_MODE.set(OsmandSettings.DayNightMode.values()[which]);
-								refreshMapComplete(activity);
-								dialog.dismiss();
-								activity.getDashboard().refreshContent(true);
-								// adapter.getItem(pos).setDescription(s, getDayNightDescr(activity));
-								// ad.notifyDataSetInvalidated();
-							}
-						});
-						bld.setNegativeButton(R.string.shared_string_dismiss, null);
-						bld.show();
-						return false;
+				.setIcon(getDayNightIcon(activity)).setListener((ad, itemId, pos, isChecked, viewCoordinates) -> {
+					final OsmandMapTileView view = activity.getMapView();
+					AlertDialog.Builder bld = new AlertDialog.Builder(view.getContext());
+					bld.setTitle(R.string.daynight);
+					final String[] items = new String[OsmandSettings.DayNightMode.values().length];
+					for (int i = 0; i < items.length; i++) {
+						items[i] = OsmandSettings.DayNightMode.values()[i].toHumanString(activity
+								.getMyApplication());
 					}
+					int i = view.getSettings().DAYNIGHT_MODE.get().ordinal();
+					bld.setSingleChoiceItems(items, i, (dialog, which) -> {
+						view.getSettings().DAYNIGHT_MODE.set(OsmandSettings.DayNightMode.values()[which]);
+						refreshMapComplete(activity);
+						dialog.dismiss();
+						activity.getDashboard().refreshContent(true);
+						// adapter.getItem(pos).setDescription(s, getDayNightDescr(activity));
+						// ad.notifyDataSetInvalidated();
+					});
+					bld.setNegativeButton(R.string.shared_string_dismiss, null);
+					bld.show();
+					return false;
 				}).createItem());
 
 		adapter.addItem(new ContextMenuItem.ItemBuilder()
@@ -548,59 +509,52 @@ public class ConfigureMapMenu {
 						String.format(Locale.UK, "%.0f",
 								100f * activity.getMyApplication().getSettings().MAP_DENSITY.get())
 								+ " %").setLayout(R.layout.list_item_single_line_descrition_narrow)
-				.setIcon(R.drawable.ic_action_map_magnifier).setListener(new ContextMenuAdapter.ItemClickListener() {
-					@Override
-					public boolean onContextMenuClick(final ArrayAdapter<ContextMenuItem> ad, int itemId,
-													  final int pos, boolean isChecked, int[] viewCoordinates) {
-						final OsmandMapTileView view = activity.getMapView();
-						final OsmandSettings.OsmandPreference<Float> mapDensity = view.getSettings().MAP_DENSITY;
-						final AlertDialog.Builder bld = new AlertDialog.Builder(view.getContext());
-						int p = (int) (mapDensity.get() * 100);
-						final TIntArrayList tlist = new TIntArrayList(new int[]{33, 50, 75, 100, 150, 200, 300, 400});
-						final List<String> values = new ArrayList<>();
-						int i = -1;
-						for (int k = 0; k <= tlist.size(); k++) {
-							final boolean end = k == tlist.size();
-							if (i == -1) {
-								if ((end || p < tlist.get(k))) {
-									values.add(p + " %");
-									i = k;
-								} else if (p == tlist.get(k)) {
-									i = k;
-								}
-							}
-							if (k < tlist.size()) {
-								values.add(tlist.get(k) + " %");
+				.setIcon(R.drawable.ic_action_map_magnifier).setListener((ad, itemId, pos, isChecked, viewCoordinates) -> {
+					final OsmandMapTileView view = activity.getMapView();
+					final OsmandSettings.OsmandPreference<Float> mapDensity = view.getSettings().MAP_DENSITY;
+					final AlertDialog.Builder bld = new AlertDialog.Builder(view.getContext());
+					int p = (int) (mapDensity.get() * 100);
+					final TIntArrayList tlist = new TIntArrayList(new int[]{33, 50, 75, 100, 150, 200, 300, 400});
+					final List<String> values = new ArrayList<>();
+					int i = -1;
+					for (int k = 0; k <= tlist.size(); k++) {
+						final boolean end = k == tlist.size();
+						if (i == -1) {
+							if ((end || p < tlist.get(k))) {
+								values.add(p + " %");
+								i = k;
+							} else if (p == tlist.get(k)) {
+								i = k;
 							}
 						}
-						if (values.size() != tlist.size()) {
-							tlist.insert(i, p);
+						if (k < tlist.size()) {
+							values.add(tlist.get(k) + " %");
 						}
-
-						bld.setTitle(R.string.map_magnifier);
-						bld.setSingleChoiceItems(values.toArray(new String[values.size()]), i,
-								new DialogInterface.OnClickListener() {
-									@Override
-									public void onClick(DialogInterface dialog, int which) {
-										int p = tlist.get(which);
-										mapDensity.set(p / 100.0f);
-										view.setComplexZoom(view.getZoom(), view.getSettingsMapDensity());
-										MapRendererContext mapContext = NativeCoreContext.getMapRendererContext();
-										if (mapContext != null) {
-											mapContext.updateMapSettings();
-										}
-										adapter.getItem(pos).setDescription(
-												String.format(Locale.UK, "%.0f", 100f * activity.getMyApplication()
-														.getSettings().MAP_DENSITY.get())
-														+ " %");
-										ad.notifyDataSetInvalidated();
-										dialog.dismiss();
-									}
-								});
-						bld.setNegativeButton(R.string.shared_string_dismiss, null);
-						bld.show();
-						return false;
 					}
+					if (values.size() != tlist.size()) {
+						tlist.insert(i, p);
+					}
+
+					bld.setTitle(R.string.map_magnifier);
+					bld.setSingleChoiceItems(values.toArray(new String[values.size()]), i,
+							(dialog, which) -> {
+								int p1 = tlist.get(which);
+								mapDensity.set(p1 / 100.0f);
+								view.setComplexZoom(view.getZoom(), view.getSettingsMapDensity());
+								MapRendererContext mapContext = NativeCoreContext.getMapRendererContext();
+								if (mapContext != null) {
+									mapContext.updateMapSettings();
+								}
+								adapter.getItem(pos).setDescription(
+										String.format(Locale.UK, "%.0f", 100f * activity.getMyApplication()
+												.getSettings().MAP_DENSITY.get())
+												+ " %");
+								ad.notifyDataSetInvalidated();
+								dialog.dismiss();
+							});
+					bld.setNegativeButton(R.string.shared_string_dismiss, null);
+					bld.show();
+					return false;
 				}).createItem());
 
 		ContextMenuItem props;
@@ -611,37 +565,30 @@ public class ConfigureMapMenu {
 
 		adapter.addItem(new ContextMenuItem.ItemBuilder().setTitleId(R.string.text_size, activity)
 				.setDescription(getScale(activity)).setLayout(R.layout.list_item_single_line_descrition_narrow)
-				.setIcon(R.drawable.ic_action_map_text_size).setListener(new ContextMenuAdapter.ItemClickListener() {
-					@Override
-					public boolean onContextMenuClick(final ArrayAdapter<ContextMenuItem> ad, int itemId,
-													  final int pos, boolean isChecked, int[] viewCoordinates) {
-						final OsmandMapTileView view = activity.getMapView();
-						AlertDialog.Builder b = new AlertDialog.Builder(view.getContext());
-						// test old descr as title
-						b.setTitle(R.string.text_size);
-						final Float[] txtValues = new Float[]{0.75f, 1f, 1.25f, 1.5f, 2f, 3f};
-						int selected = -1;
-						final String[] txtNames = new String[txtValues.length];
-						for (int i = 0; i < txtNames.length; i++) {
-							txtNames[i] = (int) (txtValues[i] * 100) + " %";
-							if (Math.abs(view.getSettings().TEXT_SCALE.get() - txtValues[i]) < 0.1f) {
-								selected = i;
-							}
+				.setIcon(R.drawable.ic_action_map_text_size).setListener((ad, itemId, pos, isChecked, viewCoordinates) -> {
+					final OsmandMapTileView view = activity.getMapView();
+					AlertDialog.Builder b = new AlertDialog.Builder(view.getContext());
+					// test old descr as title
+					b.setTitle(R.string.text_size);
+					final Float[] txtValues = new Float[]{0.75f, 1f, 1.25f, 1.5f, 2f, 3f};
+					int selected = -1;
+					final String[] txtNames = new String[txtValues.length];
+					for (int i = 0; i < txtNames.length; i++) {
+						txtNames[i] = (int) (txtValues[i] * 100) + " %";
+						if (Math.abs(view.getSettings().TEXT_SCALE.get() - txtValues[i]) < 0.1f) {
+							selected = i;
 						}
-						b.setSingleChoiceItems(txtNames, selected, new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								view.getSettings().TEXT_SCALE.set(txtValues[which]);
-								refreshMapComplete(activity);
-								adapter.getItem(pos).setDescription(getScale(activity));
-								ad.notifyDataSetInvalidated();
-								dialog.dismiss();
-							}
-						});
-						b.setNegativeButton(R.string.shared_string_dismiss, null);
-						b.show();
-						return false;
 					}
+					b.setSingleChoiceItems(txtNames, selected, (dialog, which) -> {
+						view.getSettings().TEXT_SCALE.set(txtValues[which]);
+						refreshMapComplete(activity);
+						adapter.getItem(pos).setDescription(getScale(activity));
+						ad.notifyDataSetInvalidated();
+						dialog.dismiss();
+					});
+					b.setNegativeButton(R.string.shared_string_dismiss, null);
+					b.show();
+					return false;
 				}).createItem());
 
 		String localeDescr = activity.getMyApplication().getSettings().MAP_PREFERRED_LOCALE.get();
@@ -672,12 +619,7 @@ public class ConfigureMapMenu {
 						selectedLanguageIndex = selected;
 						transliterateNames = view.getSettings().MAP_TRANSLITERATE_NAMES.get();
 
-						final OnCheckedChangeListener translitChangdListener = new OnCheckedChangeListener() {
-							@Override
-							public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-								transliterateNames = isChecked;
-							}
-						};
+						final OnCheckedChangeListener translitChangdListener = (buttonView, isChecked1) -> transliterateNames = isChecked1;
 
 						final ArrayAdapter<CharSequence> singleChoiceAdapter = new ArrayAdapter<CharSequence>(activity, R.layout.single_choice_switch_item, R.id.text1, txtValues) {
 							@NonNull
@@ -706,31 +648,25 @@ public class ConfigureMapMenu {
 						};
 
 						b.setAdapter(singleChoiceAdapter, null);
-						b.setSingleChoiceItems(txtValues, selected, new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								selectedLanguageIndex = which;
-								((AlertDialog) dialog).getListView().setSelection(which);
-								singleChoiceAdapter.notifyDataSetChanged();
-							}
+						b.setSingleChoiceItems(txtValues, selected, (dialog, which) -> {
+							selectedLanguageIndex = which;
+							((AlertDialog) dialog).getListView().setSelection(which);
+							singleChoiceAdapter.notifyDataSetChanged();
 						});
 
 						b.setNegativeButton(R.string.shared_string_cancel, null);
-						b.setPositiveButton(R.string.shared_string_apply, new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								view.getSettings().MAP_TRANSLITERATE_NAMES.set(selectedLanguageIndex > 0 && transliterateNames);
-								AlertDialog dlg = (AlertDialog) dialog;
-								int index = dlg.getListView().getCheckedItemPosition();
-								view.getSettings().MAP_PREFERRED_LOCALE.set(
-										txtIds[index]);
-								refreshMapComplete(activity);
-								String localeDescr = txtIds[index];
-								localeDescr = localeDescr == null || localeDescr.equals("") ? activity
-										.getString(R.string.local_map_names) : localeDescr;
-								adapter.getItem(pos).setDescription(localeDescr);
-								ad.notifyDataSetInvalidated();
-							}
+						b.setPositiveButton(R.string.shared_string_apply, (dialog, which) -> {
+							view.getSettings().MAP_TRANSLITERATE_NAMES.set(selectedLanguageIndex > 0 && transliterateNames);
+							AlertDialog dlg = (AlertDialog) dialog;
+							int index = dlg.getListView().getCheckedItemPosition();
+							view.getSettings().MAP_PREFERRED_LOCALE.set(
+									txtIds[index]);
+							refreshMapComplete(activity);
+							String localeDescr1 = txtIds[index];
+							localeDescr1 = localeDescr1 == null || localeDescr1.equals("") ? activity
+									.getString(R.string.local_map_names) : localeDescr1;
+							adapter.getItem(pos).setDescription(localeDescr1);
+							ad.notifyDataSetInvalidated();
 						});
 						b.show();
 						return false;
@@ -782,21 +718,18 @@ public class ConfigureMapMenu {
 		ArrayList<String> lst = new ArrayList<>(mp.keySet());
 		final String systemLocale = ctx.getString(R.string.system_locale) + " (" + ctx.getString(R.string.system_locale_no_translate) + ")";
 		final String englishLocale = ctx.getString(R.string.lang_en);
-		Collections.sort(lst, new Comparator<String>() {
-			@Override
-			public int compare(String lhs, String rhs) {
-				int i1 = Algorithms.isEmpty(lhs) ? 0 : (lhs.equals("en") ? 1 : 2);
-				int i2 = Algorithms.isEmpty(rhs) ? 0 : (rhs.equals("en") ? 1 : 2);
-				if (i1 != i2) {
-					return i1 < i2 ? -1 : 1;
-				}
-				i1 = systemLocale.equals(lhs) ? 0 : (englishLocale.equals(lhs) ? 1 : 2);
-				i2 = systemLocale.equals(rhs) ? 0 : (englishLocale.equals(rhs) ? 1 : 2);
-				if (i1 != i2) {
-					return i1 < i2 ? -1 : 1;
-				}
-				return mp.get(lhs).compareTo(mp.get(rhs));
+		Collections.sort(lst, (lhs, rhs) -> {
+			int i1 = Algorithms.isEmpty(lhs) ? 0 : (lhs.equals("en") ? 1 : 2);
+			int i2 = Algorithms.isEmpty(rhs) ? 0 : (rhs.equals("en") ? 1 : 2);
+			if (i1 != i2) {
+				return i1 < i2 ? -1 : 1;
 			}
+			i1 = systemLocale.equals(lhs) ? 0 : (englishLocale.equals(lhs) ? 1 : 2);
+			i2 = systemLocale.equals(rhs) ? 0 : (englishLocale.equals(rhs) ? 1 : 2);
+			if (i1 != i2) {
+				return i1 < i2 ? -1 : 1;
+			}
+			return mp.get(lhs).compareTo(mp.get(rhs));
 		});
 		return lst.toArray(new String[lst.size()]);
 	}
@@ -849,33 +782,28 @@ public class ConfigureMapMenu {
 					}
 				}
 			}
-			final ItemClickListener clickListener = new ContextMenuAdapter.ItemClickListener() {
-				@Override
-				public boolean onContextMenuClick(ArrayAdapter<ContextMenuItem> a, int itemId, int pos,
-												  boolean isChecked, int[] viewCoordinates) {
-					if (!isChecked && !useDescription) {
-						if (defaultSettings != null) {
-							defaultSettings.set("");
-							for (int i = 0; i < prefs.size(); i++) {
-								if (prefs.get(i).get()) {
-									defaultSettings.addValue(prefs.get(i).getId());
-								}
+			final ItemClickListener clickListener = (a, itemId, pos, isChecked, viewCoordinates) -> {
+				if (!isChecked && !useDescription) {
+					if (defaultSettings != null) {
+						defaultSettings.set("");
+						for (int i = 0; i < prefs.size(); i++) {
+							if (prefs.get(i).get()) {
+								defaultSettings.addValue(prefs.get(i).getId());
 							}
 						}
-						for (int i = 0; i < prefs.size(); i++) {
-							prefs.get(i).set(false);
-						}
-						adapter.getItem(pos).setColorRes(ContextMenuItem.INVALID_ID);
-						a.notifyDataSetInvalidated();
-						refreshMapComplete(activity);
-						activity.getMapLayers().updateLayers(activity.getMapView());
-					} else {
-						showPreferencesDialog(adapter, a, pos, activity, activity.getString(strId), ps, prefs,
-								useDescription, defaultSettings, true, customRulesIncluded);
 					}
-					return false;
+					for (int i = 0; i < prefs.size(); i++) {
+						prefs.get(i).set(false);
+					}
+					adapter.getItem(pos).setColorRes(ContextMenuItem.INVALID_ID);
+					a.notifyDataSetInvalidated();
+					refreshMapComplete(activity);
+					activity.getMapLayers().updateLayers(activity.getMapView());
+				} else {
+					showPreferencesDialog(adapter, a, pos, activity, activity.getString(strId), ps, prefs,
+							useDescription, defaultSettings, true, customRulesIncluded);
 				}
-
+				return false;
 			};
 			ContextMenuItem.ItemBuilder builder = new ContextMenuItem.ItemBuilder().setTitleId(strId, activity)
 					.setIcon(icon).setListener(clickListener);
@@ -968,64 +896,54 @@ public class ConfigureMapMenu {
 			vals[i] = propertyName;
 		}
 
-		bld.setMultiChoiceItems(vals, checkedItems, new OnMultiChoiceClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-				tempPrefs[which] = isChecked;
-			}
-		});
+		bld.setMultiChoiceItems(vals, checkedItems, (dialog, which, isChecked) -> tempPrefs[which] = isChecked);
 
 		bld.setTitle(category);
 
-		bld.setNegativeButton(R.string.shared_string_cancel, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				boolean selected = false;
-				for (int i = 0; i < prefs.size(); i++) {
-					selected |= prefs.get(i).get();
-				}
-				adapter.getItem(pos).setSelected(selected);
-				adapter.getItem(pos).setColorRes(selected ? R.color.osmand_orange : ContextMenuItem.INVALID_ID);
-				a.notifyDataSetInvalidated();
+		bld.setNegativeButton(R.string.shared_string_cancel, (dialog, whichButton) -> {
+			boolean selected = false;
+			for (int i = 0; i < prefs.size(); i++) {
+				selected |= prefs.get(i).get();
 			}
+			adapter.getItem(pos).setSelected(selected);
+			adapter.getItem(pos).setColorRes(selected ? R.color.osmand_orange : ContextMenuItem.INVALID_ID);
+			a.notifyDataSetInvalidated();
 		});
 
-		bld.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				boolean selected = false;
-				for (int i = 0; i < prefs.size(); i++) {
-					prefs.get(i).set(tempPrefs[i]);
-					selected |= tempPrefs[i];
-				}
-				final List<OsmandSettings.CommonPreference<String>> includedPrefs = new ArrayList<>();
-				if (customRulesIncluded != null) {
-					for (RenderingRuleProperty p : customRulesIncluded) {
-						if (p.getAttrName().equals(HIKING_ROUTES_OSMC_ATTR)) {
-							final OsmandSettings.CommonPreference<String> pref = activity.getMyApplication().getSettings()
-									.getCustomRenderProperty(p.getAttrName());
-							includedPrefs.add(pref);
-							if (hikingRouteOSMCValue == 0) {
-								pref.set("");
-							} else {
-								pref.set(p.getPossibleValues()[hikingRouteOSMCValue - 1]);
-								selected = true;
-							}
-							break;
-						}
-					}
-				}
-				if (adapter != null) {
-					if (useDescription) {
-						adapter.getItem(pos).setDescription(getDescription(prefs, includedPrefs));
-					} else {
-						adapter.getItem(pos).setSelected(selected);
-					}
-					adapter.getItem(pos).setColorRes(selected ? R.color.osmand_orange : ContextMenuItem.INVALID_ID);
-				}
-				a.notifyDataSetInvalidated();
-				refreshMapComplete(activity);
-				activity.getMapLayers().updateLayers(activity.getMapView());
+		bld.setPositiveButton(R.string.shared_string_ok, (dialog, whichButton) -> {
+			boolean selected = false;
+			for (int i = 0; i < prefs.size(); i++) {
+				prefs.get(i).set(tempPrefs[i]);
+				selected |= tempPrefs[i];
 			}
+			final List<CommonPreference<String>> includedPrefs = new ArrayList<>();
+			if (customRulesIncluded != null) {
+				for (RenderingRuleProperty p : customRulesIncluded) {
+					if (p.getAttrName().equals(HIKING_ROUTES_OSMC_ATTR)) {
+						final CommonPreference<String> pref = activity.getMyApplication().getSettings()
+								.getCustomRenderProperty(p.getAttrName());
+						includedPrefs.add(pref);
+						if (hikingRouteOSMCValue == 0) {
+							pref.set("");
+						} else {
+							pref.set(p.getPossibleValues()[hikingRouteOSMCValue - 1]);
+							selected = true;
+						}
+						break;
+					}
+				}
+			}
+			if (adapter != null) {
+				if (useDescription) {
+					adapter.getItem(pos).setDescription(getDescription(prefs, includedPrefs));
+				} else {
+					adapter.getItem(pos).setSelected(selected);
+				}
+				adapter.getItem(pos).setColorRes(selected ? R.color.osmand_orange : ContextMenuItem.INVALID_ID);
+			}
+			a.notifyDataSetInvalidated();
+			refreshMapComplete(activity);
+			activity.getMapLayers().updateLayers(activity.getMapView());
 		});
 
 		final AlertDialog dialog = bld.create();
@@ -1166,14 +1084,10 @@ public class ConfigureMapMenu {
 			final OsmandSettings.CommonPreference<Boolean> pref = view.getApplication().getSettings()
 					.getCustomRenderBooleanProperty(p.getAttrName());
 			return ContextMenuItem.createBuilder(propertyName)
-					.setListener(new ContextMenuAdapter.ItemClickListener() {
-
-						@Override
-						public boolean onContextMenuClick(ArrayAdapter<ContextMenuItem> adapter, int itemId, int pos, boolean isChecked, int[] viewCoordinates) {
-							pref.set(!pref.get());
-							refreshMapComplete(activity);
-							return false;
-						}
+					.setListener((adapter1, itemId, pos, isChecked, viewCoordinates) -> {
+						pref.set(!pref.get());
+						refreshMapComplete(activity);
+						return false;
 					})
 					.setSelected(pref.get())
 					.createItem();
@@ -1188,49 +1102,41 @@ public class ConfigureMapMenu {
 						p.getDefaultValueDescription());
 			}
 			ContextMenuItem.ItemBuilder builder = ContextMenuItem.createBuilder(propertyName)
-					.setListener(new ContextMenuAdapter.ItemClickListener() {
+					.setListener((ad, itemId, pos, isChecked, viewCoordinates) -> {
+						AlertDialog.Builder b = new AlertDialog.Builder(view.getContext());
+						// test old descr as title
+						b.setTitle(propertyDescr);
 
-						@Override
-						public boolean onContextMenuClick(final ArrayAdapter<ContextMenuItem> ad,
-														  final int itemId, final int pos, boolean isChecked, int[] viewCoordinates) {
-							AlertDialog.Builder b = new AlertDialog.Builder(view.getContext());
-							// test old descr as title
-							b.setTitle(propertyDescr);
-
-							int i = Arrays.asList(p.getPossibleValues()).indexOf(pref.get());
-							if (i >= 0) {
-								i++;
-							} else if (Algorithms.isEmpty(pref.get())) {
-								i = 0;
-							}
-
-							String[] possibleValuesString = new String[p.getPossibleValues().length + 1];
-							possibleValuesString[0] = SettingsActivity.getStringPropertyValue(view.getContext(),
-									p.getDefaultValueDescription());
-
-							for (int j = 0; j < p.getPossibleValues().length; j++) {
-								possibleValuesString[j + 1] = SettingsActivity.getStringPropertyValue(view.getContext(),
-										p.getPossibleValues()[j]);
-							}
-
-							b.setSingleChoiceItems(possibleValuesString, i, new DialogInterface.OnClickListener() {
-								@Override
-								public void onClick(DialogInterface dialog, int which) {
-									if (which == 0) {
-										pref.set("");
-									} else {
-										pref.set(p.getPossibleValues()[which - 1]);
-									}
-									refreshMapComplete(activity);
-									String description = SettingsActivity.getStringPropertyValue(activity, pref.get());
-									adapter.getItem(pos).setDescription(description);
-									dialog.dismiss();
-								}
-							});
-							b.setNegativeButton(R.string.shared_string_dismiss, null);
-							b.show();
-							return false;
+						int i = Arrays.asList(p.getPossibleValues()).indexOf(pref.get());
+						if (i >= 0) {
+							i++;
+						} else if (Algorithms.isEmpty(pref.get())) {
+							i = 0;
 						}
+
+						String[] possibleValuesString = new String[p.getPossibleValues().length + 1];
+						possibleValuesString[0] = SettingsActivity.getStringPropertyValue(view.getContext(),
+								p.getDefaultValueDescription());
+
+						for (int j = 0; j < p.getPossibleValues().length; j++) {
+							possibleValuesString[j + 1] = SettingsActivity.getStringPropertyValue(view.getContext(),
+									p.getPossibleValues()[j]);
+						}
+
+						b.setSingleChoiceItems(possibleValuesString, i, (dialog, which) -> {
+							if (which == 0) {
+								pref.set("");
+							} else {
+								pref.set(p.getPossibleValues()[which - 1]);
+							}
+							refreshMapComplete(activity);
+							String description = SettingsActivity.getStringPropertyValue(activity, pref.get());
+							adapter.getItem(pos).setDescription(description);
+							dialog.dismiss();
+						});
+						b.setNegativeButton(R.string.shared_string_dismiss, null);
+						b.show();
+						return false;
 					})
 					.setDescription(descr)
 					.setLayout(R.layout.list_item_single_line_descrition_narrow);

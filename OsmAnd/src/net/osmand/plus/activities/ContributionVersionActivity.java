@@ -212,15 +212,11 @@ public class ContributionVersionActivity extends OsmandListActivity {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setMessage(MessageFormat.format(getString(R.string.install_selected_build), item.tag,
 				AndroidUtils.formatDateTime(getMyApplication(), item.date.getTime()), item.size));
-		builder.setPositiveButton(R.string.shared_string_yes, new DialogInterface.OnClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				currentSelectedBuild = item;
-				int kb = (int) (Double.parseDouble(item.size) * 1024);
-				startThreadOperation(INSTALL_BUILD, getString(R.string.downloading_build), kb);
-			}
-		});
+		builder.setPositiveButton(R.string.shared_string_yes, (dialog, which) -> {
+            currentSelectedBuild = item;
+            int kb = (int) (Double.parseDouble(item.size) * 1024);
+            startThreadOperation(INSTALL_BUILD, getString(R.string.downloading_build), kb);
+        });
 
 		builder.setNegativeButton(R.string.shared_string_no, null);
 		builder.show();
@@ -292,14 +288,11 @@ public class ContributionVersionActivity extends OsmandListActivity {
 			}
 			final Exception e = ex;
 			if(this.activity != null){
-				this.activity.runOnUiThread(new Runnable() {
-					@Override
-					public void run() {
-						if (activity != null) {
-							activity.endThreadOperation(operationId, e);
-						}
-					}
-				});
+				this.activity.runOnUiThread(() -> {
+                    if (activity != null) {
+                        activity.endThreadOperation(operationId, e);
+                    }
+                });
 			}
 		}
 	}

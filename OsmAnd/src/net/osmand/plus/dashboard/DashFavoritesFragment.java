@@ -48,15 +48,12 @@ public class DashFavoritesFragment extends DashLocationFragment {
 			new DashFragmentData(TAG, DashFavoritesFragment.class, SHOULD_SHOW_FUNCTION, 90, ROW_NUMBER_TAG);
 
 	@Override
-	public View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	public View initView(LayoutInflater inflater, @Nullable ViewGroup container) {
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_common_fragment, container, false);
-		(view.findViewById(R.id.show_all)).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				startFavoritesActivity(FavoritesActivity.FAV_TAB);
-				closeDashboard();
-			}
-		});
+		(view.findViewById(R.id.show_all)).setOnClickListener(view1 -> {
+            startFavoritesActivity(FavoritesActivity.FAV_TAB);
+            closeDashboard();
+        });
 		return view;
 	}
 
@@ -77,17 +74,14 @@ public class DashFavoritesFragment extends DashLocationFragment {
 		}
 		final LatLon loc = getDefaultLocation();
 		if (loc != null) {
-			Collections.sort(points, new Comparator<FavouritePoint>() {
-				@Override
-				public int compare(FavouritePoint point, FavouritePoint point2) {
-					// LatLon lastKnownMapLocation = getMyApplication().getSettings().getLastKnownMapLocation();
-					int dist = (int) (MapUtils.getDistance(point.getLatitude(), point.getLongitude(),
-							loc.getLatitude(), loc.getLongitude()));
-					int dist2 = (int) (MapUtils.getDistance(point2.getLatitude(), point2.getLongitude(),
-							loc.getLatitude(), loc.getLongitude()));
-					return (dist - dist2);
-				}
-			});
+			Collections.sort(points, (point, point2) -> {
+                // LatLon lastKnownMapLocation = getMyApplication().getSettings().getLastKnownMapLocation();
+                int dist = (int) (MapUtils.getDistance(point.getLatitude(), point.getLongitude(),
+                        loc.getLatitude(), loc.getLongitude()));
+                int dist2 = (int) (MapUtils.getDistance(point2.getLatitude(), point2.getLongitude(),
+                        loc.getLatitude(), loc.getLongitude()));
+                return (dist - dist2);
+            });
 		}
 		LinearLayout favorites = mainView.findViewById(R.id.items);
 		favorites.removeAllViews();
@@ -121,24 +115,16 @@ public class DashFavoritesFragment extends DashLocationFragment {
 			view.findViewById(R.id.navigate_to).setVisibility(View.VISIBLE);
 
 			((ImageView) view.findViewById(R.id.navigate_to)).setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_action_gdirections_dark));
-			view.findViewById(R.id.navigate_to).setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					DirectionsDialogs.directionsToDialogAndLaunchMap(getActivity(), point.getLatitude(),
-							point.getLongitude(),
-							new PointDescription(PointDescription.POINT_TYPE_FAVORITE, point.getName()));
-				}
-			});
+			view.findViewById(R.id.navigate_to).setOnClickListener(view12 -> DirectionsDialogs.directionsToDialogAndLaunchMap(getActivity(), point.getLatitude(),
+                    point.getLongitude(),
+                    new PointDescription(PointDescription.POINT_TYPE_FAVORITE, point.getName())));
 			
-			view.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					getMyApplication().getSettings().setMapLocationToShow(point.getLatitude(), point.getLongitude(),
-							15, new PointDescription(PointDescription.POINT_TYPE_FAVORITE, point.getName()), true,
-							point); //$NON-NLS-1$
-					MapActivity.launchMapActivityMoveToTop(getActivity());
-				}
-			});
+			view.setOnClickListener(view1 -> {
+                getMyApplication().getSettings().setMapLocationToShow(point.getLatitude(), point.getLongitude(),
+                        15, new PointDescription(PointDescription.POINT_TYPE_FAVORITE, point.getName()), true,
+                        point); //$NON-NLS-1$
+                MapActivity.launchMapActivityMoveToTop(getActivity());
+            });
 			favorites.addView(view);
 		}
 		this.distances = distances;

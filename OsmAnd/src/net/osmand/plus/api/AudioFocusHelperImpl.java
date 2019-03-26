@@ -1,13 +1,13 @@
 package net.osmand.plus.api;
 
-import net.osmand.PlatformUtil;
-
-import net.osmand.plus.ApplicationMode;
-import net.osmand.plus.OsmandApplication;
-import org.apache.commons.logging.Log;
-
 import android.content.Context;
 import android.media.AudioManager;
+
+import net.osmand.PlatformUtil;
+import net.osmand.plus.ApplicationMode;
+import net.osmand.plus.OsmandApplication;
+
+import org.apache.commons.logging.Log;
 
 /**
  * This helper class allows API level 8 calls to be isolated from the rest of the app. This class is only be instantiated on OS versions
@@ -28,7 +28,7 @@ public class AudioFocusHelperImpl implements AudioManager.OnAudioFocusChangeList
 		}
 
 	@Override
-	public boolean abandonFocus(Context context, ApplicationMode applicationMode, int streamType) {
+	public boolean abandonFocus(Context context) {
 		AudioManager mAudioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 		return AudioManager.AUDIOFOCUS_REQUEST_GRANTED == mAudioManager.abandonAudioFocus(this);
 	}

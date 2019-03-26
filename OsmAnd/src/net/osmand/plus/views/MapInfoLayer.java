@@ -197,14 +197,10 @@ public class MapInfoLayer
 		this.expand.setImageResource(expanded ? R.drawable.map_up :
 			R.drawable.map_down);
 		expand.setContentDescription(map.getString(expanded ? R.string.shared_string_collapse : R.string.access_widget_expand));
-		expand.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				expanded = !expanded;
-				recreateControls();
-			}
-		});
+		expand.setOnClickListener(v -> {
+            expanded = !expanded;
+            recreateControls();
+        });
 	}
 
 	public void setTrackChartPoints(TrackChartPoints trackChartPoints) {

@@ -6,7 +6,6 @@ import android.util.Pair;
 import android.view.WindowManager;
 
 import net.osmand.Location;
-import net.osmand.StateChangedListener;
 import net.osmand.ValueHolder;
 import net.osmand.binary.BinaryMapDataObject;
 import net.osmand.data.LatLon;
@@ -69,13 +68,9 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 	}
 
 	private void addTargetPointListener(OsmandApplication app) {
-		app.getTargetPointsHelper().addListener(new StateChangedListener<Void>() {
-
-			@Override
-			public void stateChanged(Void change) {
-				if(mapView != null) {
-					mapView.refreshMap();
-				}
+		app.getTargetPointsHelper().addListener(change -> {
+			if(mapView != null) {
+				mapView.refreshMap();
 			}
 		});
 	}
@@ -352,12 +347,7 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 					int fZoom = mapView.getZoom() < zoom ? zoom : mapView.getZoom();
 					movingToMyLocation = true;
 					thread.startMoving(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude(),
-							fZoom, false, new Runnable() {
-								@Override
-								public void run() {
-									movingToMyLocation = false;
-								}
-							});
+							fZoom, false, () -> movingToMyLocation = false);
 				}
 				mapView.refreshMap();
 			}
@@ -368,13 +358,10 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 	}
 
 	private void backToLocationWithDelay(int delay) {
-		app.runMessageInUIThreadAndCancelPrevious(AUTO_FOLLOW_MSG_ID, new Runnable() {
-			@Override
-			public void run() {
-				if (mapView != null && !isMapLinkedToLocation() && contextMenu == null) {
-					app.showToastMessage(R.string.auto_follow_location_enabled);
-					backToLocationImpl();
-				}
+		app.runMessageInUIThreadAndCancelPrevious(AUTO_FOLLOW_MSG_ID, () -> {
+			if (mapView != null && !isMapLinkedToLocation() && contextMenu == null) {
+				app.showToastMessage(R.string.auto_follow_location_enabled);
+				backToLocationImpl();
 			}
 		}, delay * 1000);
 	}
@@ -394,7 +381,7 @@ public class MapViewTrackingUtilities implements OsmAndLocationListener, IMapLoc
 	}
 
 	@Override
-	public void locationChanged(double newLatitude, double newLongitude, Object source) {
+	public void locationChanged() {
 		// when user start dragging 
 		setMapLinkedToLocation(false);
 	}

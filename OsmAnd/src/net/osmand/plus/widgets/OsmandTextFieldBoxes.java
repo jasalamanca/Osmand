@@ -33,19 +33,9 @@ public class OsmandTextFieldBoxes extends TextFieldBoxes {
 	protected void onFinishInflate() {
 		super.onFinishInflate();
 		if (editText != null) {
-			this.panel.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					select();
-				}
-			});
+			this.panel.setOnClickListener(view -> select());
 
-			this.iconImageButton.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					select();
-				}
-			});
+			this.iconImageButton.setOnClickListener(v -> select());
 		}
 	}
 

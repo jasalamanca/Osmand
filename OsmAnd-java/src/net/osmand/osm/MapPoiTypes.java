@@ -17,7 +17,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -100,12 +99,7 @@ public class MapPoiTypes {
 
 	private void sortList(List<? extends PoiFilter> lf) {
 		final Collator instance = Collator.getInstance();
-		Collections.sort(lf, new Comparator<PoiFilter>() {
-			@Override
-			public int compare(PoiFilter object1, PoiFilter object2) {
-				return instance.compare(object1.getTranslation(), object2.getTranslation());
-			}
-		});
+		Collections.sort(lf, (Comparator<PoiFilter>) (object1, object2) -> instance.compare(object1.getTranslation(), object2.getTranslation()));
 	}
 
 	public PoiType getPoiTypeByKey(String name) {
@@ -572,19 +566,6 @@ public class MapPoiTypes {
 		return lst;
 	}
 
-    //NOTE jsala test
-	private static void print(MapPoiTypes df) {
-		List<PoiCategory> pc = df.getCategories(true);
-		for (PoiCategory p : pc) {
-			System.out.println("Category " + p.getKeyName());
-			for (PoiFilter f : p.getPoiFilters()) {
-				System.out.println(" Filter " + f.getKeyName());
-				print("  ", f);
-			}
-			print(" ", p);
-		}
-	}
-
 	private PoiType getPoiAdditionalByKey(AbstractPoiType p, String name) {
 		List<PoiType> pp = p.getPoiAdditionals();
 		if (pp != null) {
@@ -627,30 +608,6 @@ public class MapPoiTypes {
 			}
 		}
 		return null;
-	}
-
-	private static void print(String indent, PoiFilter f) {
-		for (PoiType pt : f.getPoiTypes()) {
-			System.out.println(indent + " Type " + pt.getKeyName() +
-					(pt.isReference() ? (" -> " + pt.getReferenceType().getCategory().getKeyName()) : ""));
-		}
-	}
-
-	//NOTE jsala es un test
-	public static void main(String[] args) {
-		DEFAULT_INSTANCE = new MapPoiTypes("/Users/victorshcherb/osmand/repos/resources/poi/poi_types.xml");
-		DEFAULT_INSTANCE.init();
-//		print(DEFAULT_INSTANCE)	;
-//		System.out.println("-----------------");
-		List<PoiFilter> lf = DEFAULT_INSTANCE.getTopVisibleFilters();
-		for (PoiFilter l : lf) {
-			System.out.println("----------------- " + l.getKeyName());
-//			print("", l);
-			Map<PoiCategory, LinkedHashSet<String>> m =
-					l.putTypes(new LinkedHashMap<PoiCategory, LinkedHashSet<String>>());
-//			System.out.println(m);
-		}
-
 	}
 
 	public String getTranslation(AbstractPoiType abstractPoiType) {

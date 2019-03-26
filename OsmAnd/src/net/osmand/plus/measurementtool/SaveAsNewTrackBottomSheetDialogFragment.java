@@ -44,20 +44,10 @@ public class SaveAsNewTrackBottomSheetDialogFragment extends MenuBottomSheetDial
 				lineImage.setImageResource(R.drawable.img_help_trip_track_day);
 			}
 
-			mainView.findViewById(R.id.line_text).setOnTouchListener(new View.OnTouchListener() {
-				@Override
-				public boolean onTouch(View view, MotionEvent motionEvent) {
-					return false;
-				}
-			});
+			mainView.findViewById(R.id.line_text).setOnTouchListener((view, motionEvent) -> false);
 			lineImage.setOnClickListener(saveAsLineOnClickListener);
 
-			mainView.findViewById(R.id.route_point_text).setOnTouchListener(new View.OnTouchListener() {
-				@Override
-				public boolean onTouch(View view, MotionEvent motionEvent) {
-					return false;
-				}
-			});
+			mainView.findViewById(R.id.route_point_text).setOnTouchListener((view, motionEvent) -> false);
 			routePointImage.setOnClickListener(saveAsRoutePointOnClickListener);
 		}
 
@@ -71,12 +61,7 @@ public class SaveAsNewTrackBottomSheetDialogFragment extends MenuBottomSheetDial
 		mainView.findViewById(R.id.save_as_line_row).setOnClickListener(saveAsLineOnClickListener);
 		mainView.findViewById(R.id.save_as_route_point_row).setOnClickListener(saveAsRoutePointOnClickListener);
 
-		mainView.findViewById(R.id.cancel_row).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				dismiss();
-			}
-		});
+		mainView.findViewById(R.id.cancel_row).setOnClickListener(view -> dismiss());
 
 		setupHeightAndBackground(mainView, R.id.save_as_new_track_scroll_view);
 

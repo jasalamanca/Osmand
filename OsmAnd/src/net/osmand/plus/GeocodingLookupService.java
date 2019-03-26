@@ -236,12 +236,7 @@ public class GeocodingLookupService {
 										List<AddressLookupRequest> requests = addressLookupRequestsMap.get(latLon);
 										for (final AddressLookupRequest request : requests) {
 											if (request.uiProgressCallback != null) {
-												app.runInUIThread(new Runnable() {
-													@Override
-													public void run() {
-														request.uiProgressCallback.geocodingInProgress();
-													}
-												});
+												app.runInUIThread(() -> request.uiProgressCallback.geocodingInProgress());
 											}
 										}
 									}
@@ -255,12 +250,7 @@ public class GeocodingLookupService {
 							List<AddressLookupRequest> requests = addressLookupRequestsMap.get(latLon);
 							for (final AddressLookupRequest request : requests) {
 								if (request.uiResultCallback != null) {
-									app.runInUIThread(new Runnable() {
-										@Override
-										public void run() {
-											request.uiResultCallback.geocodingDone(lastFoundAddress);
-										}
-									});
+									app.runInUIThread(() -> request.uiResultCallback.geocodingDone(lastFoundAddress));
 								}
 							}
 							addressLookupRequestsMap.remove(latLon);

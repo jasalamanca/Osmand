@@ -76,15 +76,12 @@ public class SelectCategoryDialogFragment extends DialogFragment {
 		button.setCompoundDrawablesWithIntrinsicBounds(getIcon(getActivity(), R.drawable.map_zoom_in), null, null, null);
 		button.setCompoundDrawablePadding(dpToPx(15f));
 		button.setText(getActivity().getResources().getText(R.string.favorite_category_add_new));
-		button.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-				EditCategoryDialogFragment dialogFragment = EditCategoryDialogFragment.createInstance(editorTag);
-				dialogFragment.show(getActivity().getSupportFragmentManager(), EditCategoryDialogFragment.TAG);
-				dialogFragment.setSelectionListener(selectionListener);
-			}
-		});
+		button.setOnClickListener(v1 -> {
+            dismiss();
+            EditCategoryDialogFragment dialogFragment = EditCategoryDialogFragment.createInstance(editorTag);
+            dialogFragment.show(getActivity().getSupportFragmentManager(), EditCategoryDialogFragment.TAG);
+            dialogFragment.setSelectionListener(selectionListener);
+        });
 		ll.addView(itemView);
 
 		builder.setView(v);
@@ -104,26 +101,23 @@ public class SelectCategoryDialogFragment extends DialogFragment {
 		button.setCompoundDrawablePadding(dpToPx(15f));
 		String name = categoryName.length() == 0 ? getString(R.string.shared_string_favorites) : categoryName;
 		button.setText(name);
-		button.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
+		button.setOnClickListener(v -> {
 
-				PointEditor editor = ((MapActivity) getActivity()).getContextMenu().getPointEditor(editorTag);
+            PointEditor editor = ((MapActivity) getActivity()).getContextMenu().getPointEditor(editorTag);
 
-				if (editor != null) {
-					editor.setCategory(categoryName);
-					if (gpxFile != null && editor instanceof WptPtEditor) {
-						((WptPtEditor) editor).getWptPt().category = categoryName;
-					}
-				}
+            if (editor != null) {
+                editor.setCategory(categoryName);
+                if (gpxFile != null && editor instanceof WptPtEditor) {
+                    ((WptPtEditor) editor).getWptPt().category = categoryName;
+                }
+            }
 
-				if (selectionListener != null) {
-					selectionListener.onCategorySelected(categoryName, categoryColor);
-				}
+            if (selectionListener != null) {
+                selectionListener.onCategorySelected(categoryName, categoryColor);
+            }
 
-				dismiss();
-			}
-		});
+            dismiss();
+        });
 		ll.addView(itemView);
 	}
 

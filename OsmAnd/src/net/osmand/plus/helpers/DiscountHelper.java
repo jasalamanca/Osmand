@@ -169,32 +169,23 @@ public class DiscountHelper {
 		int iconId = mapActivity.getResources().getIdentifier(icon, "drawable", mapActivity.getMyApplication().getPackageName());
 		toolbarController.setBackBtnIconIds(iconId, iconId);
 		if (!Algorithms.isEmpty(url)) {
-			toolbarController.setOnBackButtonClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					mapActivity.getMyApplication().logEvent(mapActivity, "motd_click");
-					mBannerVisible = false;
-					mapActivity.hideTopToolbar(toolbarController);
-					openUrl(mapActivity, url);
-				}
-			});
-			toolbarController.setOnTitleClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					mapActivity.getMyApplication().logEvent(mapActivity, "motd_click");
-					mBannerVisible = false;
-					mapActivity.hideTopToolbar(toolbarController);
-					openUrl(mapActivity, url);
-				}
-			});
-		}
-		toolbarController.setOnCloseButtonClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mapActivity.getMyApplication().logEvent(mapActivity, "motd_close");
+			toolbarController.setOnBackButtonClickListener(v -> {
+				mapActivity.getMyApplication().logEvent(mapActivity, "motd_click");
 				mBannerVisible = false;
 				mapActivity.hideTopToolbar(toolbarController);
-			}
+				openUrl(mapActivity, url);
+			});
+			toolbarController.setOnTitleClickListener(v -> {
+				mapActivity.getMyApplication().logEvent(mapActivity, "motd_click");
+				mBannerVisible = false;
+				mapActivity.hideTopToolbar(toolbarController);
+				openUrl(mapActivity, url);
+			});
+		}
+		toolbarController.setOnCloseButtonClickListener(v -> {
+			mapActivity.getMyApplication().logEvent(mapActivity, "motd_close");
+			mBannerVisible = false;
+			mapActivity.hideTopToolbar(toolbarController);
 		});
 
 		mTitle = title;
@@ -209,12 +200,9 @@ public class DiscountHelper {
 	private static void openUrl(final MapActivity mapActivity, String url) {
 		if (url.startsWith(INAPP_PREFIX)) {
 			if (url.contains(InAppHelper.SKU_FULL_VERSION_PRICE)) {
-				mapActivity.execInAppTask(new InAppHelper.InAppRunnable() {
-					@Override
-					public void run(InAppHelper helper) {
-						mapActivity.getMyApplication().logEvent(mapActivity, "in_app_purchase_redirect");
-						helper.purchaseFullVersion(mapActivity);
-					}
+				mapActivity.execInAppTask(helper -> {
+					mapActivity.getMyApplication().logEvent(mapActivity, "in_app_purchase_redirect");
+					helper.purchaseFullVersion(mapActivity);
 				});
 			} else if (url.contains(InAppHelper.SKU_LIVE_UPDATES)){
 				Intent intent = new Intent(mapActivity, OsmLiveActivity.class);

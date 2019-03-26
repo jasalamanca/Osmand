@@ -64,7 +64,6 @@ public class OsmBaseStorage {
     private int progressEntity = 0;
 	private IProgress progress;
 	private InputStream streamForProgress;
-//	private final List<IOsmStorageFilter> filters = new ArrayList<>();
 	private boolean convertTagsToLC = true;
 	private boolean parseEntityInfo;
 
@@ -231,7 +230,6 @@ public class OsmBaseStorage {
 		if (type != null) {
 			if(currentParsedEntity != null){
 				EntityId entityId = new EntityId(type, currentParsedEntity.getId());
-				Entity oldEntity = entities.put(entityId, currentParsedEntity);
 				if(parseEntityInfo && currentParsedEntityInfo != null){
 					entityInfo.put(entityId, currentParsedEntityInfo);
 				}
@@ -240,12 +238,6 @@ public class OsmBaseStorage {
 		}
     }
 
-//	private void completeReading(){
-//		for(Entity e : entities.values()){
-//			e.initializeLinks(entities);
-//		}
-//	}
-	
 	public Map<EntityId, EntityInfo> getRegisteredEntityInfo() {
 		return entityInfo;
 	} 

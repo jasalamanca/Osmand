@@ -144,21 +144,18 @@ public class DownloadResourceGroup {
 			final net.osmand.Collator collator = OsmAndCollator.primaryCollator();
 			final OsmandApplication app = getRoot().app;
 			final OsmandRegions osmandRegions = app.getRegions();
-			Collections.sort(g.individualResources, new Comparator<IndexItem>() {
-				@Override
-				public int compare(IndexItem lhs, IndexItem rhs) {
-					int lli = lhs.getType().getOrderIndex();
-					int rri = rhs.getType().getOrderIndex();
-					if(lli < rri) {
-						return -1; 
-					} else if(lli > rri) {
-						return 1;
-					}
+			Collections.sort(g.individualResources, (lhs, rhs) -> {
+                int lli = lhs.getType().getOrderIndex();
+                int rri = rhs.getType().getOrderIndex();
+                if(lli < rri) {
+                    return -1;
+                } else if(lli > rri) {
+                    return 1;
+                }
 
-					return collator.compare(lhs.getVisibleName(app.getApplicationContext(), osmandRegions),
-							rhs.getVisibleName(app.getApplicationContext(), osmandRegions));
-				}
-			});
+                return collator.compare(lhs.getVisibleName(app.getApplicationContext(), osmandRegions),
+                        rhs.getVisibleName(app.getApplicationContext(), osmandRegions));
+            });
 		}
 	}
 	

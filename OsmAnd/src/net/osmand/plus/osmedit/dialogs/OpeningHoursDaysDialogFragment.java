@@ -47,34 +47,22 @@ public class OpeningHoursDaysDialogFragment extends DialogFragment {
 			dayToShow[i] = item.getDays()[pos];
 		}
 		builder.setTitle(getResources().getString(R.string.working_days));
-		builder.setMultiChoiceItems(daysToShow, dayToShow, new DialogInterface.OnMultiChoiceClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-				dayToShow[which] = isChecked;
-
-			}
-
-		});
+		builder.setMultiChoiceItems(daysToShow, dayToShow, (dialog, which, isChecked) -> dayToShow[which] = isChecked);
 		builder.setPositiveButton(createNew ? R.string.next_proceed
 						: R.string.shared_string_save,
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						boolean[] days = item.getDays();
-						for (int i = 0; i < 7; i++) {
-							days[(first + 5 + i) % 7] = dayToShow[i];
-						}
-						if (createNew) {
-							OpeningHoursHoursDialogFragment.createInstance(item, positionToAdd, true, 0)
-									.show(getFragmentManager(), "TimePickerDialogFragment");
-						} else {
-							((BasicEditPoiFragment) getParentFragment())
-									.setBasicOpeningHoursRule(item, positionToAdd);
-						}
-					}
-
-				});
+                (dialog, which) -> {
+                    boolean[] days = item.getDays();
+                    for (int i = 0; i < 7; i++) {
+                        days[(first + 5 + i) % 7] = dayToShow[i];
+                    }
+                    if (createNew) {
+                        OpeningHoursHoursDialogFragment.createInstance(item, positionToAdd, true, 0)
+                                .show(getFragmentManager(), "TimePickerDialogFragment");
+                    } else {
+                        ((BasicEditPoiFragment) getParentFragment())
+                                .setBasicOpeningHoursRule(item, positionToAdd);
+                    }
+                });
 
 		builder.setNegativeButton(getActivity().getString(R.string.shared_string_cancel), null);
 		return builder.create();

@@ -60,23 +60,20 @@ public class DashTrackFragment extends DashBaseFragment {
 	private boolean updateEnable;
 
 	@Override
-	public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View initView(LayoutInflater inflater, ViewGroup container) {
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_common_fragment, container, false);
 		TextView header = view.findViewById(R.id.fav_text);
 		header.setText(TITLE_ID);
 
-		(view.findViewById(R.id.show_all)).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				Activity activity = getActivity();
-				OsmAndAppCustomization appCustomization = getMyApplication().getAppCustomization();
-				final Intent favorites = new Intent(activity, appCustomization.getFavoritesActivity());
-				getMyApplication().getSettings().FAVORITES_TAB.set(FavoritesActivity.GPX_TAB);
-				favorites.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-				activity.startActivity(favorites);
-				closeDashboard();
-			}
-		});
+		(view.findViewById(R.id.show_all)).setOnClickListener(view1 -> {
+            Activity activity = getActivity();
+            OsmAndAppCustomization appCustomization = getMyApplication().getAppCustomization();
+            final Intent favorites = new Intent(activity, appCustomization.getFavoritesActivity());
+            getMyApplication().getSettings().FAVORITES_TAB.set(FavoritesActivity.GPX_TAB);
+            favorites.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            activity.startActivity(favorites);
+            closeDashboard();
+        });
 		return view;
 	}
 	
@@ -145,12 +142,7 @@ public class DashTrackFragment extends DashBaseFragment {
 			createCurrentTrackView(view);
 			((TextView) view.findViewById(R.id.name)).setText(R.string.shared_string_currently_recording_track);
 			updateCurrentTrack(view, getActivity(), app);
-			view.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					AvailableGPXFragment.openTrack(getActivity(), null);
-				}
-			});
+			view.setOnClickListener(v -> AvailableGPXFragment.openTrack(getActivity(), null));
 			view.findViewById(R.id.divider_dash).setVisibility(View.VISIBLE);
 			tracks.addView(view);
 			startHandler(view);
@@ -164,12 +156,7 @@ public class DashTrackFragment extends DashBaseFragment {
 			View v = inflater.inflate(R.layout.dash_gpx_track_item, null, false);
 			AvailableGPXFragment.updateGpxInfoView(v, info, app, true);
 			
-			v.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					AvailableGPXFragment.openTrack(getActivity(), f);
-				}
-			});
+			v.setOnClickListener(v1 -> AvailableGPXFragment.openTrack(getActivity(), f));
 			ImageButton showOnMap = v.findViewById(R.id.show_on_map);
 			showOnMap.setVisibility(View.VISIBLE);
 			showOnMap.setContentDescription(getString(R.string.shared_string_show_on_map));
@@ -203,25 +190,17 @@ public class DashTrackFragment extends DashBaseFragment {
 			stop.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_action_rec_start));
 			stop.setContentDescription(app.getString(R.string.gpx_monitoring_start));
 		}
-		stop.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (isRecording) {
-					plugin.stopRecording();
-				} else
-				if (app.getLocationProvider().checkGPSEnabled(ctx)) {
-					plugin.startGPXMonitoring(ctx);
-				}
-			}
-		});
+		stop.setOnClickListener(v12 -> {
+            if (isRecording) {
+                plugin.stopRecording();
+            } else
+            if (app.getLocationProvider().checkGPSEnabled(ctx)) {
+                plugin.startGPXMonitoring(ctx);
+            }
+        });
 		SavingTrackHelper sth = app.getSavingTrackHelper();
 		ImageButton save = v.findViewById(R.id.show_on_map);
-		save.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				plugin.saveCurrentTrack();
-			}
-		});
+		save.setOnClickListener(v1 -> plugin.saveCurrentTrack());
 		if (sth.getPoints() > 0 || sth.getDistance() > 0) {
 			save.setVisibility(View.VISIBLE);
 		} else {
@@ -247,31 +226,20 @@ public class DashTrackFragment extends DashBaseFragment {
 		final SelectedGpxFile selected = selectedGpxHelper.getSelectedFileByPath(f.getAbsolutePath());
 		if(selected != null) {
 			showOnMap.setImageDrawable(app.getIconsCache().getIcon(R.drawable.ic_show_on_map, R.color.color_distance));
-			showOnMap.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					selectedGpxHelper.selectGpxFile(selected.getGpxFile(), false, false);
-					AvailableGPXFragment.GpxInfo info = new AvailableGPXFragment.GpxInfo();
-					info.subfolder = "";
-					info.file = f;
-					AvailableGPXFragment.updateGpxInfoView(pView, info, app, true);
-					updateShowOnMap(app, f, v, showOnMap);
-				}
-			});
+			showOnMap.setOnClickListener(v -> {
+                selectedGpxHelper.selectGpxFile(selected.getGpxFile(), false, false);
+                AvailableGPXFragment.GpxInfo info = new AvailableGPXFragment.GpxInfo();
+                info.subfolder = "";
+                info.file = f;
+                AvailableGPXFragment.updateGpxInfoView(pView, info, app, true);
+                updateShowOnMap(app, f, v, showOnMap);
+            });
 		} else {
 			showOnMap.setImageDrawable(app.getIconsCache().getThemedIcon(R.drawable.ic_show_on_map));
-			showOnMap.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					Runnable run = new Runnable() {
-						@Override
-						public void run() {
-							showOnMap(GPXUtilities.loadGPXFile(app, f));
-						}
-					};
-					run.run();
-				}
-			});
+			showOnMap.setOnClickListener(v -> {
+                Runnable run = () -> showOnMap(GPXUtilities.loadGPXFile(app, f));
+                run.run();
+            });
 		}
 	}
 
@@ -293,14 +261,11 @@ public class DashTrackFragment extends DashBaseFragment {
 
 	private void startHandler(final View v) {
 		Handler updateCurrentRecordingTrack = new Handler();
-		updateCurrentRecordingTrack.postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				if (updateEnable) {
-					updateCurrentTrack(v, getActivity(), getMyApplication());
-					startHandler(v);
-				}
-			}
-		}, 1500);
+		updateCurrentRecordingTrack.postDelayed(() -> {
+            if (updateEnable) {
+                updateCurrentTrack(v, getActivity(), getMyApplication());
+                startHandler(v);
+            }
+        }, 1500);
 	}
 }

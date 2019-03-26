@@ -89,12 +89,7 @@ public class TransportStopsLayer extends OsmandMapLayer implements ContextMenuLa
 				}
 				List<TransportStop> res = view.getApplication().getResourceManager().searchTransportSync(latLonBounds.top, latLonBounds.left,
 						latLonBounds.bottom, latLonBounds.right);
-				Collections.sort(res, new Comparator<TransportStop>() {
-					@Override
-					public int compare(TransportStop lhs, TransportStop rhs) {
-						return lhs.getId() < rhs.getId() ? -1 : (lhs.getId().longValue() == rhs.getId().longValue() ? 0 : 1);
-					}
-				});
+				Collections.sort(res, (lhs, rhs) -> lhs.getId() < rhs.getId() ? -1 : (lhs.getId().longValue() == rhs.getId().longValue() ? 0 : 1));
 
 				return res;
 			}

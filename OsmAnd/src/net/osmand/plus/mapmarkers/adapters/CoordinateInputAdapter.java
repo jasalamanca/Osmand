@@ -75,17 +75,14 @@ public class CoordinateInputAdapter extends RecyclerView.Adapter<MapMarkerItemVi
 		holder.numberText.setText(Integer.toString(position + 1));
 		holder.description.setVisibility(View.GONE);
 
-		holder.optionsBtn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				int position = holder.getAdapterPosition();
-				if (position != RecyclerView.NO_POSITION) {
-					MapMarker mapMarker = getItem(position);
-					mapMarkers.remove(mapMarker);
-					notifyDataSetChanged();
-				}
-			}
-		});
+		holder.optionsBtn.setOnClickListener(view -> {
+            int position1 = holder.getAdapterPosition();
+            if (position1 != RecyclerView.NO_POSITION) {
+                MapMarker mapMarker1 = getItem(position1);
+                mapMarkers.remove(mapMarker1);
+                notifyDataSetChanged();
+            }
+        });
 
 		boolean singleItem = getItemCount() == 1;
 		boolean fistItem = position == 0;

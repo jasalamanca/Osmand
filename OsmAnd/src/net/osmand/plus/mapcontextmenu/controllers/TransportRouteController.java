@@ -28,24 +28,9 @@ public class TransportRouteController extends MenuController {
 		this.transportRoute = transportRoute;
 		toolbarController = new ContextMenuToolbarController(this);
 		toolbarController.setTitle(getNameStr());
-		toolbarController.setOnBackButtonClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mapActivity.getContextMenu().backToolbarAction(TransportRouteController.this);
-			}
-		});
-		toolbarController.setOnTitleClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				showMenuAndRoute(getLatLon(), true);
-			}
-		});
-		toolbarController.setOnCloseButtonClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mapActivity.getContextMenu().closeToolbar(TransportRouteController.this);
-			}
-		});
+		toolbarController.setOnBackButtonClickListener(v -> mapActivity.getContextMenu().backToolbarAction(TransportRouteController.this));
+		toolbarController.setOnTitleClickListener(v -> showMenuAndRoute(getLatLon(), true));
+		toolbarController.setOnCloseButtonClickListener(v -> mapActivity.getContextMenu().closeToolbar(TransportRouteController.this));
 
 		leftTitleButtonController = new TitleButtonController() {
 			@Override
@@ -151,7 +136,7 @@ public class TransportRouteController extends MenuController {
 		rightTitleButtonController.updateStateListDrawableIcon(R.drawable.ic_arrow_forward, false);
 	}
 
-	public void onAcquireNewController(PointDescription pointDescription, Object object) {
+	public void onAcquireNewController(Object object) {
 		if (object instanceof TransportRouteStop) {
 			resetRoute();
 		}
@@ -247,13 +232,9 @@ public class TransportRouteController extends MenuController {
 			if (currentStop > 0) {
 				addPlainMenuItem(defaultIcon, getMapActivity().getString(R.string.shared_string_show),
 						getMapActivity().getString(R.string.route_stops_before, currentStop),
-						false, false, new OnClickListener() {
-
-							@Override
-							public void onClick(View arg0) {
-								MapContextMenu menu = getMapActivity().getContextMenu();
-								menu.showOrUpdate(latLon, getPointDescription(), transportRoute);
-							}
+						false, false, arg0 -> {
+							MapContextMenu menu = getMapActivity().getContextMenu();
+							menu.showOrUpdate(latLon, getPointDescription(), transportRoute);
 						});
 			}
 		}
@@ -264,13 +245,7 @@ public class TransportRouteController extends MenuController {
 				name = getStopType();
 			}
 			addPlainMenuItem(currentStop == i ? R.drawable.ic_action_marker_dark : defaultIcon,
-					null, name, false, false, new OnClickListener() {
-
-						@Override
-						public void onClick(View arg0) {
-							showTransportStop(stop);
-						}
-					});
+					null, name, false, false, arg0 -> showTransportStop(stop));
 		}
 	}
 

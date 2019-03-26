@@ -33,7 +33,7 @@ public class RenderingRulesStorage {
 	public final static int MULTY_POLYGON_TYPE = 0;
 	public final static int POINT_RULES = 1;
 	public final static int LINE_RULES = 2;
-	public final static int POLYGON_RULES = 3;
+	private final static int POLYGON_RULES = 3;
 	public final static int TEXT_RULES = 4;
 	private final static int ORDER_RULES = 5;
 	public final static int LENGTH_RULES = 6;
@@ -473,14 +473,11 @@ public class RenderingRulesStorage {
 			is.close();
 		}
 		RenderingRulesStorage storage = new RenderingRulesStorage("default", renderingConstants);
-		final RenderingRulesStorageResolver resolver = new RenderingRulesStorageResolver() {
-			@Override
-			public RenderingRulesStorage resolve(String name, RenderingRulesStorageResolver ref) throws XmlPullParserException, IOException {
-				RenderingRulesStorage depends = new RenderingRulesStorage(name, renderingConstants);
+		final RenderingRulesStorageResolver resolver = (name, ref) -> {
+			RenderingRulesStorage depends = new RenderingRulesStorage(name, renderingConstants);
 //				depends.parseRulesFromXmlInputStream(RenderingRulesStorage.class.getResourceAsStream(name + ".render.xml"), ref);
-				depends.parseRulesFromXmlInputStream(new FileInputStream(loc + name + ".render.xml"), ref);
-				return depends;
-			}
+			depends.parseRulesFromXmlInputStream(new FileInputStream(loc + name + ".render.xml"), ref);
+			return depends;
 		};
 		is = new FileInputStream(defaultFile);
 		storage.parseRulesFromXmlInputStream(is, resolver);

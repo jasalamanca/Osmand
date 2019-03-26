@@ -1,6 +1,5 @@
 package net.osmand.plus;
 
-import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -206,7 +205,6 @@ public class GpxSelectionHelper {
 					GpxDisplayItem item = new GpxDisplayItem();
 					item.group = group;
 					item.description = r.desc;
-					item.expanded = true;
 					item.name = r.name;
 					t++;
 					if (Algorithms.isEmpty(item.name)) {
@@ -237,7 +235,6 @@ public class GpxSelectionHelper {
 				if (Algorithms.isEmpty(item.name)) {
 					item.name = getString(R.string.gpx_selection_point, k + "");
 				}
-				item.expanded = true;
 				item.locationStart = r;
 				item.locationEnd = r;
 				list.add(item);
@@ -765,11 +762,9 @@ public class GpxSelectionHelper {
 		public String splitName;
 		public String name;
 		public String description;
-		boolean expanded;
 		public boolean route;
 		public boolean wasHidden = true;
 
-		public WptPt locationOnMap;
 		public GPXDataSetType[] chartTypes;
 		public GPXDataSetAxisType chartAxisType = GPXDataSetAxisType.DISTANCE;
 

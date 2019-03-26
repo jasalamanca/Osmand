@@ -85,14 +85,11 @@ public class SendPoiDialogFragment extends DialogFragment {
 		closeChangeSetCheckBox.setVisibility(hasPOI ? View.VISIBLE : View.GONE);
 		closeChangeSetCheckBox.setChecked(hasPOI && !defaultChangeSet.equals(""));
 		view.findViewById(R.id.osm_note_header).setVisibility(hasPOI ? View.GONE : View.VISIBLE);
-		uploadAnonymously.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				userNameLabel.setVisibility(isChecked ? View.GONE : View.VISIBLE);
-				userNameEditText.setVisibility(isChecked ? View.GONE : View.VISIBLE);
-				passwordLabel.setVisibility(isChecked ? View.GONE : View.VISIBLE);
-				passwordEditText.setVisibility(isChecked ? View.GONE : View.VISIBLE);
-			}
+		uploadAnonymously.setOnCheckedChangeListener((buttonView, isChecked) -> {
+			userNameLabel.setVisibility(isChecked ? View.GONE : View.VISIBLE);
+			userNameEditText.setVisibility(isChecked ? View.GONE : View.VISIBLE);
+			passwordLabel.setVisibility(isChecked ? View.GONE : View.VISIBLE);
+			passwordEditText.setVisibility(isChecked ? View.GONE : View.VISIBLE);
 		});
 
 		final ProgressDialogPoiUploader progressDialogPoiUploader;
@@ -104,25 +101,22 @@ public class SendPoiDialogFragment extends DialogFragment {
 		}
 		builder.setTitle(hasPOI ? R.string.upload_poi : R.string.upload_osm_note)
 				.setView(view)
-				.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						if (progressDialogPoiUploader != null) {
-							settings.USER_NAME.set(userNameEditText.getText().toString());
-							settings.USER_PASSWORD.set(passwordEditText.getText().toString());
-							String comment = messageEditText.getText().toString();
-							if (comment.length() > 0) {
-								for (OsmPoint osmPoint : poi) {
-									if (osmPoint.getGroup() == OsmPoint.Group.POI) {
-										((OpenstreetmapPoint) osmPoint).setComment(comment);
-										break;
-									}
+				.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> {
+					if (progressDialogPoiUploader != null) {
+						settings.USER_NAME.set(userNameEditText.getText().toString());
+						settings.USER_PASSWORD.set(passwordEditText.getText().toString());
+						String comment = messageEditText.getText().toString();
+						if (comment.length() > 0) {
+							for (OsmPoint osmPoint : poi) {
+								if (osmPoint.getGroup() == OsmPoint.Group.POI) {
+									((OpenstreetmapPoint) osmPoint).setComment(comment);
+									break;
 								}
 							}
-							progressDialogPoiUploader.showProgressDialog(poi,
-									closeChangeSetCheckBox.isChecked(),
-									!hasPOI && uploadAnonymously.isChecked());
 						}
+						progressDialogPoiUploader.showProgressDialog(poi,
+								closeChangeSetCheckBox.isChecked(),
+								!hasPOI && uploadAnonymously.isChecked());
 					}
 				})
 				.setNegativeButton(R.string.shared_string_cancel, null);

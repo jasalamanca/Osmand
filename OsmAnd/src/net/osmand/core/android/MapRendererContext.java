@@ -237,13 +237,7 @@ public class MapRendererContext implements RendererRegistry.IRendererLoadedEvent
 	
 	private void applyCurrentContextToView() {
 		mapRendererView.setMapRendererSetupOptionsConfigurator(
-				new MapRendererView.IMapRendererSetupOptionsConfigurator() {
-					@Override
-					public void configureMapRendererSetupOptions(
-							MapRendererSetupOptions mapRendererSetupOptions) {
-						mapRendererSetupOptions.setMaxNumberOfRasterMapLayersInBatch(1);
-					}
-				});
+                mapRendererSetupOptions -> mapRendererSetupOptions.setMaxNumberOfRasterMapLayersInBatch(1));
 		if (mapRendererView instanceof AtlasMapRendererView) {
 			cachedReferenceTileSize = getReferenceTileSize();
 			((AtlasMapRendererView)mapRendererView).setReferenceTileSizeOnScreenInPixels(cachedReferenceTileSize);

@@ -130,7 +130,7 @@ public abstract class MenuController
 	}
 
 	@Override
-	public void onCollapseExpand(boolean collapsed) {
+	public void onCollapseExpand() {
 		if (mapContextMenu != null) {
 			mapContextMenu.updateLayout();
 		}
@@ -665,7 +665,7 @@ public abstract class MenuController
 		}
 	}
 
-	public void onAcquireNewController(PointDescription pointDescription, Object object) {
+	public void onAcquireNewController(Object object) {
 	}
 	boolean isMapDownloaded() {
 		return downloaded;

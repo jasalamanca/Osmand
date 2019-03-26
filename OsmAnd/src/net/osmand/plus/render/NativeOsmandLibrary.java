@@ -50,17 +50,12 @@ public class NativeOsmandLibrary extends NativeLibrary {
 		return library;
 	}
 
-	public static boolean isSupported()
-	{
-		return isNativeSupported != null && isNativeSupported;
-	}
-	
 	private static boolean isLoaded() {
 		return isNativeSupported != null;  
 	}
 	
 	RenderingGenerationResult generateRendering(RenderingContext rc, NativeSearchResult searchResultHandler,
-			Bitmap bitmap, boolean isTransparent, RenderingRuleSearchRequest render) {
+												Bitmap bitmap, RenderingRuleSearchRequest render) {
 		if (searchResultHandler == null) {
 			log.error("Error search result = null"); //$NON-NLS-1$
 			return new RenderingGenerationResult(null);

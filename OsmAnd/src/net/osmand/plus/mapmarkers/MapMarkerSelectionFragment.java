@@ -85,12 +85,7 @@ public class MapMarkerSelectionFragment extends BaseOsmAndDialogFragment {
 		View view = inflater.inflate(R.layout.map_marker_selection_fragment, container, false);
 		ImageButton closeButton = view.findViewById(R.id.closeButton);
 		closeButton.setImageDrawable(getMyApplication().getIconsCache().getIcon(R.drawable.ic_action_mode_back));
-		closeButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-			}
-		});
+		closeButton.setOnClickListener(v -> dismiss());
 
 		ListView listView = view.findViewById(android.R.id.list);
 		final ArrayAdapter<MapMarker> adapter = new MapMarkersListAdapter();
@@ -101,15 +96,12 @@ public class MapMarkerSelectionFragment extends BaseOsmAndDialogFragment {
 			}
 		}
 		listView.setAdapter(adapter);
-		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				if (onClickListener != null) {
-					onClickListener.onSelect(position, target);
-				}
-				dismiss();
-			}
-		});
+		listView.setOnItemClickListener((parent, view1, position, id) -> {
+            if (onClickListener != null) {
+                onClickListener.onSelect(position, target);
+            }
+            dismiss();
+        });
 		return view;
 	}
 

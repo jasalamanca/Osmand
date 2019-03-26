@@ -48,17 +48,8 @@ public class QuadRect {
 	public double centerX() {
 		return (left + right) / 2;
 	}
-
 	public double centerY() {
 		return (top + bottom) / 2;
-	}
-
-	public void offset(double dx, double dy) {
-		left += dx;
-		top += dy;
-		right += dx;
-		bottom += dy;
-
 	}
 
 	public void inset(double dx, double  dy) {
@@ -72,5 +63,4 @@ public class QuadRect {
 	public String toString() {
 		return "[" + (float) left + "," + (float) top + " - " + (float) right + "," + (float) bottom + "]";
 	}
-
 }

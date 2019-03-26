@@ -122,18 +122,16 @@ public class OsmEditsUploadListenerHelper implements OsmEditsUploadListener {
 							getResources().getString(R.string.error_message_pattern), errorMessage))
 					.setPositiveButton(R.string.shared_string_ok, null);
 			builder.setNeutralButton(getResources().getString(R.string.delete_change),
-					new DialogInterface.OnClickListener() {
-						public void onClick(@Nullable DialogInterface dialog, int id) {
-							OsmEditingPlugin plugin =
-									OsmandPlugin.getEnabledPlugin(OsmEditingPlugin.class);
-							assert point != null;
-							assert plugin != null;
-							if (point.getGroup() == OsmPoint.Group.BUG) {
-								plugin.getDBBug().deleteAllBugModifications(
-										(OsmNotesPoint) point);
-							} else if (point.getGroup() == OsmPoint.Group.POI) {
-								plugin.getDBPOI().deletePOI((OpenstreetmapPoint) point);
-							}
+					(dialog, id) -> {
+						OsmEditingPlugin plugin =
+								OsmandPlugin.getEnabledPlugin(OsmEditingPlugin.class);
+						assert point != null;
+						assert plugin != null;
+						if (point.getGroup() == OsmPoint.Group.BUG) {
+							plugin.getDBBug().deleteAllBugModifications(
+									(OsmNotesPoint) point);
+						} else if (point.getGroup() == OsmPoint.Group.POI) {
+							plugin.getDBPOI().deletePOI((OpenstreetmapPoint) point);
 						}
 					});
 			return builder.create();
@@ -178,15 +176,10 @@ public class OsmEditsUploadListenerHelper implements OsmEditsUploadListener {
 					.setAdapter(adapter, null)
 					.setPositiveButton(R.string.shared_string_ok, null)
 					.setNeutralButton(getResources().getString(R.string.try_again),
-							new DialogInterface.OnClickListener() {
-								@Override
-								public void onClick(DialogInterface dialog, int which) {
-									OsmEditsUploadListenerHelper
-											.showUploadItemsProgressDialog(
-													UploadingMultipleErrorDialogFragment.this,
-													points);
-								}
-							});
+							(dialog, which) -> OsmEditsUploadListenerHelper
+									.showUploadItemsProgressDialog(
+											UploadingMultipleErrorDialogFragment.this,
+											points));
 			return builder.create();
 		}
 

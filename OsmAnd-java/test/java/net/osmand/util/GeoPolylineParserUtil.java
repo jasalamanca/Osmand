@@ -5,16 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 class GeoPolylineParserUtil {
-	
-	public static final double PRECISION_6 = 1E6;
-	public static final double PRECISION_5 = 1E5;
+	static final double PRECISION_6 = 1E6;
+
 	/**
 	 * Parses Google esque polyline
 	 *
 	 * @param encoded The polyline as a String
 	 * @return {@link List<LatLon>}
 	 */
-	public static List<LatLon> parse(final String encoded, double precision) {
+	static List<LatLon> parse(final String encoded, double precision) {
 		List<LatLon> track = new ArrayList<>();
 		int index = 0;
 		int lat = 0, lng = 0;

@@ -1,6 +1,5 @@
 package net.osmand.plus.dashboard;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.hardware.Sensor;
@@ -19,17 +18,17 @@ import net.osmand.plus.views.DirectionDrawable;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.view.Surface.ROTATION_0;
+import static android.view.Surface.ROTATION_180;
+import static android.view.Surface.ROTATION_270;
+import static android.view.Surface.ROTATION_90;
+
 /**
  * Created by Denis
  * on 26.01.2015.
  */
-@SuppressLint("ResourceAsColor")
 public abstract class DashLocationFragment extends DashBaseFragment {
 
-	private static final int ORIENTATION_0 = 0;
-	private static final int ORIENTATION_90 = 3;
-	private static final int ORIENTATION_270 = 1;
-	private static final int ORIENTATION_180 = 2;
 	List<DashLocationView> distances = new ArrayList<>();
 	private int screenOrientation;
 
@@ -57,16 +56,16 @@ public abstract class DashLocationFragment extends DashBaseFragment {
 	public static int getScreenOrientation(Activity a) {
 		int screenOrientation = ((WindowManager) a.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getRotation();
 		switch (screenOrientation) {
-			case ORIENTATION_0:   // Device default (normally portrait)
+			case ROTATION_0:   // Device default (normally portrait)
 				screenOrientation = 0;
 				break;
-			case ORIENTATION_90:  // Landscape right
+			case ROTATION_90:  // Landscape right
 				screenOrientation = 90;
 				break;
-			case ORIENTATION_270: // Landscape left
+			case ROTATION_270: // Landscape left
 				screenOrientation = 270;
 				break;
-			case ORIENTATION_180: // Upside down
+			case ROTATION_180: // Upside down
 				screenOrientation = 180;
 				break;
 		}

@@ -18,12 +18,12 @@ public class ContextMenuItem {
 	@ColorRes
 	private int colorRes;
 	@DrawableRes
-	private int secondaryIcon;
+	private final int secondaryIcon;
 	private Boolean selected;
 	private int progress;
 	@LayoutRes
 	private final int layout;
-	private boolean loading;
+	private final boolean loading;
 	private final boolean category;
 	private final boolean clickable;
 	private final boolean skipPaintingWithoutColor;
@@ -169,16 +169,16 @@ public class ContextMenuItem {
 		@DrawableRes
 		private int mSecondaryIcon = INVALID_ID;
 		private Boolean mSelected = null;
-		private int mProgress = INVALID_ID;
+		private final int mProgress = INVALID_ID;
 		@LayoutRes
 		private int mLayout = INVALID_ID;
-		private boolean mLoading = false;
+		private final boolean mLoading = false;
 		private boolean mIsCategory = false;
 		private boolean mIsClickable = true;
 		private int mPosition = -1;
 		private String mDescription = null;
 		private ContextMenuAdapter.ItemClickListener mItemClickListener = null;
-		private ContextMenuAdapter.OnIntegerValueChangedListener mIntegerListener = null;
+		private final ContextMenuAdapter.OnIntegerValueChangedListener mIntegerListener = null;
 		private boolean mSkipPaintingWithoutColor;
 		private boolean mHideDivider;
 		private int mMinHeight;

@@ -89,31 +89,27 @@ public class AppModeDialog {
 				iv.setContentDescription(String.format("%s %s", mode.toHumanString(ctx), ctx.getString(R.string.item_unchecked)));
 				tb.findViewById(R.id.selection).setVisibility(View.INVISIBLE);
 			}
-			iv.setOnClickListener(new View.OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					boolean isChecked = !checked;
-					if (singleChoice) {
-						if (isChecked) {
-							selected.clear();
-							selected.add(mode);
-						}
-					} else {
-						if (isChecked) {
-							selected.add(mode);
-						} else {
-							selected.remove(mode);
-						}
-					}
-					if (onClickListener != null) {
-						onClickListener.onClick(null);
-					}
-					for(int i = 0; i < visible.size(); i++) {
-						updateButtonState(ctx, visible, selected, onClickListener, buttons, i, singleChoice, useMapTheme);
-					}
-				}
-			});
+			iv.setOnClickListener(v -> {
+                boolean isChecked = !checked;
+                if (singleChoice) {
+                    if (isChecked) {
+                        selected.clear();
+                        selected.add(mode);
+                    }
+                } else {
+                    if (isChecked) {
+                        selected.add(mode);
+                    } else {
+                        selected.remove(mode);
+                    }
+                }
+                if (onClickListener != null) {
+                    onClickListener.onClick(null);
+                }
+                for(int i1 = 0; i1 < visible.size(); i1++) {
+                    updateButtonState(ctx, visible, selected, onClickListener, buttons, i1, singleChoice, useMapTheme);
+                }
+            });
 		}
 	}
 

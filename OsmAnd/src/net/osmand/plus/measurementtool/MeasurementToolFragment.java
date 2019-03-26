@@ -223,114 +223,72 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 		upDownBtn = mainView.findViewById(R.id.up_down_button);
 		upDownBtn.setImageDrawable(upIcon);
 
-		mainView.findViewById(R.id.cancel_move_point_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				cancelMovePointMode();
-			}
-		});
+		mainView.findViewById(R.id.cancel_move_point_button).setOnClickListener(view110 -> cancelMovePointMode());
 
-		mainView.findViewById(R.id.cancel_point_before_after_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				cancelAddPointBeforeOrAfterMode();
-			}
-		});
+		mainView.findViewById(R.id.cancel_point_before_after_button).setOnClickListener(view19 -> cancelAddPointBeforeOrAfterMode());
 
 		upDownRow = mainView.findViewById(R.id.up_down_row);
-		upDownRow.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (!pointsListOpened && editingCtx.getPointsCount() > 0 && editingCtx.getSelectedPointPosition() == -1) {
-					showPointsList();
-				} else {
-					hidePointsList();
-				}
-			}
-		});
+		upDownRow.setOnClickListener(view18 -> {
+            if (!pointsListOpened && editingCtx.getPointsCount() > 0 && editingCtx.getSelectedPointPosition() == -1) {
+                showPointsList();
+            } else {
+                hidePointsList();
+            }
+        });
 
-		mainView.findViewById(R.id.apply_move_point_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				applyMovePointMode();
-			}
-		});
+		mainView.findViewById(R.id.apply_move_point_button).setOnClickListener(view17 -> applyMovePointMode());
 
-		mainView.findViewById(R.id.apply_point_before_after_point_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				applyAddPointBeforeAfterMode();
-			}
-		});
+		mainView.findViewById(R.id.apply_point_before_after_point_button).setOnClickListener(view16 -> applyAddPointBeforeAfterMode());
 
-		mainView.findViewById(R.id.add_point_before_after_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				addPointBeforeAfter();
-			}
-		});
+		mainView.findViewById(R.id.add_point_before_after_button).setOnClickListener(view15 -> addPointBeforeAfter());
 
-		mainView.findViewById(R.id.options_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				OptionsBottomSheetDialogFragment fragment = new OptionsBottomSheetDialogFragment();
-				fragment.setUsedOnMap(true);
-				fragment.setSnapToRoadEnabled(editingCtx.isInSnapToRoadMode());
-				fragment.setListener(createOptionsFragmentListener());
-				fragment.setAddLineMode(newGpxData != null);
-				fragment.show(mapActivity.getSupportFragmentManager(), OptionsBottomSheetDialogFragment.TAG);
-			}
-		});
+		mainView.findViewById(R.id.options_button).setOnClickListener(view14 -> {
+            OptionsBottomSheetDialogFragment fragment = new OptionsBottomSheetDialogFragment();
+            fragment.setUsedOnMap(true);
+            fragment.setSnapToRoadEnabled(editingCtx.isInSnapToRoadMode());
+            fragment.setListener(createOptionsFragmentListener());
+            fragment.setAddLineMode(newGpxData != null);
+            fragment.show(mapActivity.getSupportFragmentManager(), OptionsBottomSheetDialogFragment.TAG);
+        });
 
 		undoBtn = ((ImageButton) mainView.findViewById(R.id.undo_point_button));
 		redoBtn = ((ImageButton) mainView.findViewById(R.id.redo_point_button));
 
 		undoBtn.setImageDrawable(getContentIcon(R.drawable.ic_action_undo_dark));
-		undoBtn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				editingCtx.getCommandManager().undo();
-				if (editingCtx.getCommandManager().canUndo()) {
-					enable(undoBtn);
-				} else {
-					disable(undoBtn);
-				}
-				hidePointsListIfNoPoints();
-				if (editingCtx.getPointsCount() > 0) {
-					enable(upDownBtn);
-				}
-				adapter.notifyDataSetChanged();
-				enable(redoBtn);
-				updateText();
-			}
-		});
+		undoBtn.setOnClickListener(view13 -> {
+            editingCtx.getCommandManager().undo();
+            if (editingCtx.getCommandManager().canUndo()) {
+                enable(undoBtn);
+            } else {
+                disable(undoBtn);
+            }
+            hidePointsListIfNoPoints();
+            if (editingCtx.getPointsCount() > 0) {
+                enable(upDownBtn);
+            }
+            adapter.notifyDataSetChanged();
+            enable(redoBtn);
+            updateText();
+        });
 
 		redoBtn.setImageDrawable(getContentIcon(R.drawable.ic_action_redo_dark));
-		redoBtn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				editingCtx.getCommandManager().redo();
-				if (editingCtx.getCommandManager().canRedo()) {
-					enable(redoBtn);
-				} else {
-					disable(redoBtn);
-				}
-				hidePointsListIfNoPoints();
-				if (editingCtx.getPointsCount() > 0) {
-					enable(upDownBtn);
-				}
-				adapter.notifyDataSetChanged();
-				enable(undoBtn);
-				updateText();
-			}
-		});
+		redoBtn.setOnClickListener(view12 -> {
+            editingCtx.getCommandManager().redo();
+            if (editingCtx.getCommandManager().canRedo()) {
+                enable(redoBtn);
+            } else {
+                disable(redoBtn);
+            }
+            hidePointsListIfNoPoints();
+            if (editingCtx.getPointsCount() > 0) {
+                enable(upDownBtn);
+            }
+            adapter.notifyDataSetChanged();
+            enable(undoBtn);
+            updateText();
+        });
 
-		mainView.findViewById(R.id.add_point_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				addCenterPoint();
-			}
-		});
+		mainView.findViewById(R.id.add_point_button).setOnClickListener(view1 -> addCenterPoint());
 
 		measurementLayer.setOnSingleTapListener(new MeasurementToolLayer.OnSingleTapListener() {
 			@Override
@@ -349,23 +307,17 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 			}
 		});
 
-		measurementLayer.setOnMeasureDistanceToCenterListener(new MeasurementToolLayer.OnMeasureDistanceToCenter() {
-			@Override
-			public void onMeasure(float distance) {
-				String distStr = OsmAndFormatter.getFormattedDistance(distance, mapActivity.getMyApplication());
-				distanceToCenterTv.setText(" – " + distStr);
-			}
-		});
+		measurementLayer.setOnMeasureDistanceToCenterListener(distance -> {
+            String distStr = OsmAndFormatter.getFormattedDistance(distance, mapActivity.getMyApplication());
+            distanceToCenterTv.setText(" – " + distStr);
+        });
 
-		measurementLayer.setOnEnterMovePointModeListener(new MeasurementToolLayer.OnEnterMovePointModeListener() {
-			@Override
-			public void onEnterMovePointMode() {
-				if (pointsListOpened) {
-					hidePointsList();
-				}
-				switchMovePointMode(true);
-			}
-		});
+		measurementLayer.setOnEnterMovePointModeListener(() -> {
+            if (pointsListOpened) {
+                hidePointsList();
+            }
+            switchMovePointMode(true);
+        });
 
 		if (!editingCtx.getCommandManager().canUndo()) {
 			disable(undoBtn);
@@ -395,30 +347,19 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 		} else {
 			toolBarController.setTitle(getString(R.string.measurement_tool_action_bar));
 		}
-		toolBarController.setOnBackButtonClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				quit(false);
-			}
-		});
-		toolBarController.setOnSaveViewClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (editingCtx.getPointsCount() > 0) {
-					addToGpx(mapActivity);
-				} else {
-					Toast.makeText(mapActivity, getString(R.string.none_point_error), Toast.LENGTH_SHORT).show();
-				}
-			}
-		});
-		toolBarController.setOnSwitchCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
-				if (!checked) {
-					disableSnapToRoadMode();
-				}
-			}
-		});
+		toolBarController.setOnBackButtonClickListener(v -> quit(false));
+		toolBarController.setOnSaveViewClickListener(v -> {
+            if (editingCtx.getPointsCount() > 0) {
+                addToGpx(mapActivity);
+            } else {
+                Toast.makeText(mapActivity, getString(R.string.none_point_error), Toast.LENGTH_SHORT).show();
+            }
+        });
+		toolBarController.setOnSwitchCheckedChangeListener((compoundButton, checked) -> {
+            if (!checked) {
+                disableSnapToRoadMode();
+            }
+        });
 		mapActivity.showTopToolbar(toolBarController);
 
 		adapter = new MeasurementToolAdapter(getMapActivity(), editingCtx.getPoints(),
@@ -763,12 +704,7 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 			ImageButton snapToRoadBtn = mapActivity.findViewById(R.id.snap_to_road_image_button);
 			snapToRoadBtn.setBackgroundResource(nightMode ? R.drawable.btn_circle_night : R.drawable.btn_circle);
 			snapToRoadBtn.setImageDrawable(getActiveIcon(appMode.getMapIconId()));
-			snapToRoadBtn.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					showSnapToRoadMenu(false);
-				}
-			});
+			snapToRoadBtn.setOnClickListener(view -> showSnapToRoadMenu(false));
 			snapToRoadBtn.setVisibility(View.VISIBLE);
 
 			mapActivity.refreshMap();
@@ -828,19 +764,16 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 	}
 
 	private AlertDialog showAddToTrackDialog(final MapActivity mapActivity) {
-		CallbackWithObject<GPXFile[]> callbackWithObject = new CallbackWithObject<GPXFile[]>() {
-			@Override
-			public boolean processResult(GPXFile[] result) {
-				GPXFile gpxFile;
-				if (result != null && result.length > 0) {
-					gpxFile = result[0];
-					SelectedGpxFile selectedGpxFile = mapActivity.getMyApplication().getSelectedGpxHelper().getSelectedFileByPath(gpxFile.path);
-					boolean showOnMap = selectedGpxFile != null;
-					saveExistingGpx(gpxFile, showOnMap, ActionType.ADD_SEGMENT, false);
-				}
-				return true;
-			}
-		};
+		CallbackWithObject<GPXFile[]> callbackWithObject = result -> {
+            GPXFile gpxFile;
+            if (result != null && result.length > 0) {
+                gpxFile = result[0];
+                SelectedGpxFile selectedGpxFile = mapActivity.getMyApplication().getSelectedGpxHelper().getSelectedFileByPath(gpxFile.path);
+                boolean showOnMap = selectedGpxFile != null;
+                saveExistingGpx(gpxFile, showOnMap, ActionType.ADD_SEGMENT, false);
+            }
+            return true;
+        };
 
 		return GpxUiHelper.selectGPXFile(mapActivity, false, false, callbackWithObject);
 	}
@@ -1139,22 +1072,19 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 			new AlertDialog.Builder(mapActivity)
 					.setTitle(R.string.enter_gpx_name)
 					.setView(view)
-					.setPositiveButton(R.string.shared_string_save, new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							final String name = nameEt.getText().toString();
-							String fileName = name + GPX_SUFFIX;
-							if (textChanged[0]) {
-								File fout = new File(dir, fileName);
-								int ind = 1;
-								while (fout.exists()) {
-									fileName = name + "_" + (++ind) + GPX_SUFFIX;
-									fout = new File(dir, fileName);
-								}
-							}
-							saveNewGpx(dir, fileName, showOnMapToggle.isChecked(), saveType, false);
-						}
-					})
+					.setPositiveButton(R.string.shared_string_save, (dialog, which) -> {
+                        final String name = nameEt.getText().toString();
+                        String fileName = name + GPX_SUFFIX;
+                        if (textChanged[0]) {
+                            File fout1 = new File(dir, fileName);
+                            int ind1 = 1;
+                            while (fout1.exists()) {
+                                fileName = name + "_" + (++ind1) + GPX_SUFFIX;
+                                fout1 = new File(dir, fileName);
+                            }
+                        }
+                        saveNewGpx(dir, fileName, showOnMapToggle.isChecked(), saveType, false);
+                    })
 					.setNegativeButton(R.string.shared_string_cancel, null)
 					.show();
 		}
@@ -1436,31 +1366,23 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 				final SwitchCompat showOnMapToggle = view.findViewById(R.id.toggle_show_on_map);
 
 				builder.setView(view);
-				builder.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						if (showOnMapToggle.isChecked()) {
-							final String name = new SimpleDateFormat("yyyy-MM-dd_HH-mm_EEE", Locale.US).format(new Date());
-							String fileName = name + GPX_SUFFIX;
-							File fout = new File(dir, fileName);
-							int ind = 1;
-							while (fout.exists()) {
-								fileName = name + "_" + (++ind) + GPX_SUFFIX;
-								fout = new File(dir, fileName);
-							}
-							saveNewGpx(dir, fileName, true, SaveType.LINE, true);
-						} else {
-							dismiss(mapActivity);
-						}
-					}
-				});
+				builder.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> {
+                    if (showOnMapToggle.isChecked()) {
+                        final String name = new SimpleDateFormat("yyyy-MM-dd_HH-mm_EEE", Locale.US).format(new Date());
+                        String fileName = name + GPX_SUFFIX;
+                        File fout = new File(dir, fileName);
+                        int ind = 1;
+                        while (fout.exists()) {
+                            fileName = name + "_" + (++ind) + GPX_SUFFIX;
+                            fout = new File(dir, fileName);
+                        }
+                        saveNewGpx(dir, fileName, true, SaveType.LINE, true);
+                    } else {
+                        dismiss(mapActivity);
+                    }
+                });
 			} else {
-				builder.setPositiveButton(R.string.shared_string_ok, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialogInterface, int i) {
-						dismiss(mapActivity);
-					}
-				});
+				builder.setPositiveButton(R.string.shared_string_ok, (dialogInterface, i) -> dismiss(mapActivity));
 			}
 			builder.setTitle(getString(R.string.exit_without_saving))
 					.setMessage(getString(R.string.unsaved_changes_will_be_lost))

@@ -80,13 +80,7 @@ public class Algorithms {
 	}
 
     public static Comparator<File> getFileVersionComparator() {
-		return new Comparator<File>() {
-			@Override
-			public int compare(File o1, File o2) {
-				return -simplifyFileName(o1.getName()).compareTo(simplifyFileName(o2.getName()));
-			}
-
-		};
+		return (o1, o2) -> -simplifyFileName(o1.getName()).compareTo(simplifyFileName(o2.getName()));
 	}
 
     private static String simplifyFileName(String fn) {
@@ -111,12 +105,7 @@ public class Algorithms {
     }
 
     public static Comparator<String> getStringVersionComparator() {
-        return new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return -simplifyFileName(o1).compareTo(simplifyFileName(o2));
-            }
-        };
+        return (o1, o2) -> -simplifyFileName(o1).compareTo(simplifyFileName(o2));
     }
 
 	public static int findFirstNumberEndIndex(String value) {

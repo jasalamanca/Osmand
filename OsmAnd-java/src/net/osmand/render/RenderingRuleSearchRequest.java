@@ -66,15 +66,6 @@ public class RenderingRuleSearchRequest {
 	public BinaryMapDataObject getObject() {
 		return object;
 	}
-	
-	public void setInitialTagValueZoom(String tag, String val, int zoom, BinaryMapDataObject obj){
-		clearState();
-		object = obj;
-		setIntFilter(ALL.R_MINZOOM, zoom);
-		setIntFilter(ALL.R_MAXZOOM, zoom);
-		setStringFilter(ALL.R_TAG, tag);
-		setStringFilter(ALL.R_VALUE, val);
-	}
 
 	public boolean isFound() {
 		return searchResult;
@@ -239,7 +230,7 @@ public class RenderingRuleSearchRequest {
 		return storage.getStringValue(val);
 	}
 	
-	public float getFloatPropertyValue(RenderingRuleProperty property) {
+	float getFloatPropertyValue(RenderingRuleProperty property) {
 		return fvalues[property.getId()];
 	}
 	

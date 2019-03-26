@@ -125,16 +125,13 @@ public class MapMarkerDialogHelper {
 		if (selectionMode) {
 			checkBox.setChecked(marker.selected);
 			checkBox.setVisibility(View.VISIBLE);
-			checkBox.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					marker.selected = checkBox.isChecked();
-					app.getMapMarkersHelper().updateMapMarker(marker, false);
-					if (helperCallbacks != null) {
-						helperCallbacks.showMarkersRouteOnMap();
-					} else if (ctx instanceof MapActivity) {
-						((MapActivity) ctx).refreshMap();
-					}
+			checkBox.setOnClickListener(v -> {
+				marker.selected = checkBox.isChecked();
+				app.getMapMarkersHelper().updateMapMarker(marker, false);
+				if (helperCallbacks != null) {
+					helperCallbacks.showMarkersRouteOnMap();
+				} else if (ctx instanceof MapActivity) {
+					((MapActivity) ctx).refreshMap();
 				}
 			});
 		} else {

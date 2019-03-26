@@ -70,12 +70,7 @@ public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemV
     @Override
 	public MapMarkerItemViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
 		View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.map_marker_item_new, viewGroup, false);
-		view.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				listener.onItemClick(view);
-			}
-		});
+		view.setOnClickListener(view1 -> listener.onItemClick(view1));
 		return new MapMarkerItemViewHolder(view);
 	}
 
@@ -128,15 +123,12 @@ public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemV
 
 		holder.point.setVisibility(View.VISIBLE);
 
-		holder.iconReorder.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(View view, MotionEvent event) {
-				if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
-					listener.onDragStarted(holder);
-				}
-				return false;
-			}
-		});
+		holder.iconReorder.setOnTouchListener((view, event) -> {
+            if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
+                listener.onDragStarted(holder);
+            }
+            return false;
+        });
 
 		holder.title.setText(marker.getName(mapActivity));
 
@@ -157,34 +149,28 @@ public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemV
 		}
 		holder.description.setText(descr);
 
-		holder.optionsBtn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				final int position = holder.getAdapterPosition();
-				if (position < 0) {
-					return;
-				}
-				final MapMarker marker = markers.get(position);
+		holder.optionsBtn.setOnClickListener(view -> {
+            final int position = holder.getAdapterPosition();
+            if (position < 0) {
+                return;
+            }
+            final MapMarker marker1 = markers.get(position);
 
-				mapActivity.getMyApplication().getMapMarkersHelper().moveMapMarkerToHistory(marker);
-				changeMarkers();
-				notifyDataSetChanged();
+            mapActivity.getMyApplication().getMapMarkersHelper().moveMapMarkerToHistory(marker1);
+            changeMarkers();
+            notifyDataSetChanged();
 
-				snackbar = Snackbar.make(holder.itemView, mapActivity.getString(R.string.marker_moved_to_history), Snackbar.LENGTH_LONG)
-						.setAction(R.string.shared_string_undo, new View.OnClickListener() {
-							@Override
-							public void onClick(View view) {
-								mapActivity.getMyApplication().getMapMarkersHelper().restoreMarkerFromHistory(marker, position);
-								changeMarkers();
-								notifyDataSetChanged();
-							}
-						});
-				View snackBarView = snackbar.getView();
-				TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
-				tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
-				snackbar.show();
-			}
-		});
+            snackbar = Snackbar.make(holder.itemView, mapActivity.getString(R.string.marker_moved_to_history), Snackbar.LENGTH_LONG)
+                    .setAction(R.string.shared_string_undo, view1 -> {
+                        mapActivity.getMyApplication().getMapMarkersHelper().restoreMarkerFromHistory(marker1, position);
+                        changeMarkers();
+                        notifyDataSetChanged();
+                    });
+            View snackBarView = snackbar.getView();
+            TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
+            tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));
+            snackbar.show();
+        });
 
 		DashLocationFragment.updateLocationView(useCenter, location,
 				heading, markerImageViewToUpdate, drawableResToUpdate, pos < 2 ? markerColor : 0,
@@ -233,14 +219,11 @@ public class MapMarkersActiveAdapter extends RecyclerView.Adapter<MapMarkerItemV
 		changeMarkers();
 		notifyDataSetChanged();
 		snackbar = Snackbar.make(holder.itemView, R.string.marker_moved_to_history, Snackbar.LENGTH_LONG)
-				.setAction(R.string.shared_string_undo, new View.OnClickListener() {
-					@Override
-					public void onClick(View view) {
-						mapActivity.getMyApplication().getMapMarkersHelper().restoreMarkerFromHistory(marker, pos);
-						changeMarkers();
-						notifyDataSetChanged();
-					}
-				});
+				.setAction(R.string.shared_string_undo, view -> {
+                    mapActivity.getMyApplication().getMapMarkersHelper().restoreMarkerFromHistory(marker, pos);
+                    changeMarkers();
+                    notifyDataSetChanged();
+                });
 		View snackBarView = snackbar.getView();
 		TextView tv = snackBarView.findViewById(android.support.design.R.id.snackbar_action);
 		tv.setTextColor(ContextCompat.getColor(mapActivity, R.color.color_dialog_buttons_dark));

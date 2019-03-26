@@ -10,7 +10,6 @@ import net.osmand.binary.BinaryMapAddressReaderAdapter.CitiesBlock;
 import net.osmand.binary.BinaryMapIndexReader.MapIndex;
 import net.osmand.binary.BinaryMapIndexReader.MapObjectStat;
 import net.osmand.binary.BinaryMapIndexReader.MapRoot;
-import net.osmand.binary.BinaryMapIndexReader.SearchFilter;
 import net.osmand.binary.BinaryMapIndexReader.SearchRequest;
 import net.osmand.binary.BinaryMapIndexReader.TagValuePair;
 import net.osmand.binary.BinaryMapPoiReaderAdapter.PoiRegion;
@@ -855,12 +854,7 @@ public class BinaryInspector {
 				MapUtils.get31TileNumberY(vInfo.lattop),
 				MapUtils.get31TileNumberY(vInfo.latbottom),
 				vInfo.getZoom(),
-				new SearchFilter() {
-					@Override
-					public boolean accept(TIntArrayList types, MapIndex index) {
-						return true;
-					}
-				},
+				(types, index1) -> true,
 				new ResultMatcher<BinaryMapDataObject>() {
 					@Override
 					public boolean publish(BinaryMapDataObject obj) {

@@ -357,7 +357,14 @@ dependencies {
 	implementation group: 'net.sf.trove4j', name: 'trove4j', version: '3.0.3'
     // Hay que mantenerlo por alguna razón que desconozco.
     implementation group: 'com.ibm.icu', name: 'icu4j', version: '61.1'
-    implementation "net.osmand:OsmAndCore_android:0.1-SNAPSHOT@jar"
+
+	// https://mvnrepository.com/artifact/com.google.openlocationcode/openlocationcode
+	implementation group: 'com.google.openlocationcode', name: 'openlocationcode', version: '1.0.2'
+
+    // https://mvnrepository.com/artifact/com.github.ksoichiro/android-observablescrollview
+    implementation group: 'com.github.ksoichiro', name: 'android-observablescrollview', version: '1.6.0'
+
+	implementation "net.osmand:OsmAndCore_android:0.1-SNAPSHOT@jar"
 	implementation ("com.getkeepsafe.taptargetview:taptargetview:1.6.1"){
 		exclude group: 'com.android.support'
 	}

@@ -29,19 +29,11 @@ class MoveMarkerBottomSheetHelper {
 
 		IconsCache iconsCache = activity.getMyApplication().getIconsCache();
 		icon.setImageDrawable(iconsCache.getIcon(R.drawable.ic_action_photo_dark, R.color.marker_green));
-		mView.findViewById(R.id.apply_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mContextMenuLayer.applyNewMarkerPosition();
-			}
-		});
-		mView.findViewById(R.id.cancel_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				hide();
-				mContextMenuLayer.cancelMovingMarker();
-			}
-		});
+		mView.findViewById(R.id.apply_button).setOnClickListener(v -> mContextMenuLayer.applyNewMarkerPosition());
+		mView.findViewById(R.id.cancel_button).setOnClickListener(v -> {
+            hide();
+            mContextMenuLayer.cancelMovingMarker();
+        });
 	}
 	
 	public void onDraw(RotatedTileBox rt) {

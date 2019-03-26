@@ -214,30 +214,27 @@ public class OsmandMonitoringPlugin extends OsmandPlugin {
 					}
 					setIcons(d, dn);
 
-					map.getMyApplication().runInUIThread(new Runnable() {
-						@Override
-						public void run() {
-							int dn;
-							int d;
-							if (globalRecord) {
-								if (liveMonitoringEnabled) {
-									dn = R.drawable.widget_live_monitoring_rec_big_night;
-									d = R.drawable.widget_live_monitoring_rec_big_day;
-								} else {
-									dn = R.drawable.widget_monitoring_rec_big_night;
-									d = R.drawable.widget_monitoring_rec_big_day;
-								}
+					map.getMyApplication().runInUIThread(() -> {
+						int dn1;
+						int d1;
+						if (globalRecord) {
+							if (liveMonitoringEnabled) {
+								dn1 = R.drawable.widget_live_monitoring_rec_big_night;
+								d1 = R.drawable.widget_live_monitoring_rec_big_day;
 							} else {
-								if (liveMonitoringEnabled) {
-									dn = R.drawable.widget_live_monitoring_rec_small_night;
-									d = R.drawable.widget_live_monitoring_rec_small_day;
-								} else {
-									dn = R.drawable.widget_monitoring_rec_small_night;
-									d = R.drawable.widget_monitoring_rec_small_day;
-								}
+								dn1 = R.drawable.widget_monitoring_rec_big_night;
+								d1 = R.drawable.widget_monitoring_rec_big_day;
 							}
-							setIcons(d, dn);
+						} else {
+							if (liveMonitoringEnabled) {
+								dn1 = R.drawable.widget_live_monitoring_rec_small_night;
+								d1 = R.drawable.widget_live_monitoring_rec_small_day;
+							} else {
+								dn1 = R.drawable.widget_monitoring_rec_small_night;
+								d1 = R.drawable.widget_monitoring_rec_small_day;
+							}
 						}
+						setIcons(d1, dn1);
 					}, 500);
 				}
 				return true;
@@ -246,14 +243,7 @@ public class OsmandMonitoringPlugin extends OsmandPlugin {
 		monitoringControl.updateInfo(null);
 
 		// monitoringControl.addView(child);
-		monitoringControl.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				controlDialog(map, true);
-			}
-
-			
-		});
+		monitoringControl.setOnClickListener(v -> controlDialog(map, true));
 		return monitoringControl;
 	}
 
@@ -282,47 +272,39 @@ public class OsmandMonitoringPlugin extends OsmandPlugin {
 			strings[i] = app.getString(items.get(i));
 		}
 		final int[] holder = new int[] {0};
-		final Runnable run = new Runnable() {
-			public void run() {
-				int which = holder[0];
-				int item = items.get(which);
-				if(item == R.string.save_current_track){
-					saveCurrentTrack();
-				} else if(item == R.string.gpx_monitoring_start) {
-					if (app.getLocationProvider().checkGPSEnabled(map)) {
-						startGPXMonitoring(map, showTrackSelection);
-					}
-				} else if(item == R.string.gpx_monitoring_stop) {
-					stopRecording();
-				} else if(item == R.string.gpx_start_new_segment) {
-					app.getSavingTrackHelper().startNewSegment();
-				} else if(item == R.string.live_monitoring_stop) {
-					settings.LIVE_MONITORING.set(false);
-				} else if(item == R.string.live_monitoring_start) {
-					final ValueHolder<Integer> vs = new ValueHolder<>();
-					vs.value = settings.LIVE_MONITORING_INTERVAL.get();
-					showIntervalChooseDialog(map, app.getString(R.string.live_monitoring_interval) + " : %s", 
-							app.getString(R.string.save_track_to_gpx_globally), SECONDS, MINUTES,
-							null, vs, showTrackSelection, new OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
+		final Runnable run = () -> {
+			int which = holder[0];
+			int item = items.get(which);
+			if(item == R.string.save_current_track){
+				saveCurrentTrack();
+			} else if(item == R.string.gpx_monitoring_start) {
+				if (app.getLocationProvider().checkGPSEnabled(map)) {
+					startGPXMonitoring(map, showTrackSelection);
+				}
+			} else if(item == R.string.gpx_monitoring_stop) {
+				stopRecording();
+			} else if(item == R.string.gpx_start_new_segment) {
+				app.getSavingTrackHelper().startNewSegment();
+			} else if(item == R.string.live_monitoring_stop) {
+				settings.LIVE_MONITORING.set(false);
+			} else if(item == R.string.live_monitoring_start) {
+				final ValueHolder<Integer> vs = new ValueHolder<>();
+				vs.value = settings.LIVE_MONITORING_INTERVAL.get();
+				showIntervalChooseDialog(map, app.getString(R.string.live_monitoring_interval) + " : %s",
+						app.getString(R.string.save_track_to_gpx_globally), SECONDS, MINUTES,
+						null, vs, showTrackSelection, (dialog, which1) -> {
 							settings.LIVE_MONITORING_INTERVAL.set(vs.value);
 							settings.LIVE_MONITORING.set(true);
-						}
-					});
-				}
-				monitoringControl.updateInfo(null);
+						});
 			}
+			monitoringControl.updateInfo(null);
 		};
 		if(strings.length == 1) {
 			run.run();
 		} else {
-			bld.setItems(strings, new OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					holder[0] = which;
-					run.run();
-				}
+			bld.setItems(strings, (dialog, which) -> {
+				holder[0] = which;
+				run.run();
 			});
 			bld.show();
 		}
@@ -380,27 +362,20 @@ public class OsmandMonitoringPlugin extends OsmandPlugin {
 		final ValueHolder<Boolean> choice = new ValueHolder<>();
 		vs.value = settings.SAVE_GLOBAL_TRACK_INTERVAL.get();
 		choice.value = settings.SAVE_GLOBAL_TRACK_REMEMBER.get();
-		final Runnable runnable = new Runnable() {
-			public void run() {
-				app.getSavingTrackHelper().startNewSegment();
-				settings.SAVE_GLOBAL_TRACK_INTERVAL.set(vs.value);
-				settings.SAVE_GLOBAL_TRACK_TO_GPX.set(true);
-				settings.SAVE_GLOBAL_TRACK_REMEMBER.set(choice.value);
-				int interval = settings.SAVE_GLOBAL_TRACK_INTERVAL.get();
-				app.startNavigationService(NavigationService.USED_BY_GPX, interval < 30000? 0 : interval);
-			}
+		final Runnable runnable = () -> {
+			app.getSavingTrackHelper().startNewSegment();
+			settings.SAVE_GLOBAL_TRACK_INTERVAL.set(vs.value);
+			settings.SAVE_GLOBAL_TRACK_TO_GPX.set(true);
+			settings.SAVE_GLOBAL_TRACK_REMEMBER.set(choice.value);
+			int interval = settings.SAVE_GLOBAL_TRACK_INTERVAL.get();
+			app.startNavigationService(NavigationService.USED_BY_GPX, interval < 30000? 0 : interval);
 		};
 		if (choice.value || map == null) {
 			runnable.run();
 		} else {
 			showIntervalChooseDialog(map, app.getString(R.string.save_track_interval_globally) + " : %s",
 					app.getString(R.string.save_track_to_gpx_globally), SECONDS, MINUTES, choice, vs, showTrackSelection,
-					new OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							runnable.run();
-						}
-					});
+					(dialog, which) -> runnable.run());
 		}
 	}
 
@@ -491,14 +466,7 @@ public class OsmandMonitoringPlugin extends OsmandPlugin {
 					LayoutParams.WRAP_CONTENT);
 			lp.setMargins(dp24, dp8, dp24, 0);
 			cb.setLayoutParams(lp);
-			cb.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-				@Override
-				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-					choice.value = isChecked;
-
-				}
-			});
+			cb.setOnCheckedChangeListener((buttonView, isChecked) -> choice.value = isChecked);
 			ll.addView(cb);
 		}
 
@@ -521,13 +489,7 @@ public class OsmandMonitoringPlugin extends OsmandPlugin {
 			lp.setMargins(dp24, dp8 * 2, dp24, 0);
 			cb.setLayoutParams(lp);
 			cb.setChecked(app.getSelectedGpxHelper().getSelectedCurrentRecordingTrack() != null);
-			cb.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-				@Override
-				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-					app.getSelectedGpxHelper().selectGpxFile(app.getSavingTrackHelper().getCurrentGpx(), isChecked, false);
-				}
-			});
+			cb.setOnCheckedChangeListener((buttonView, isChecked) -> app.getSelectedGpxHelper().selectGpxFile(app.getSavingTrackHelper().getCurrentGpx(), isChecked, false));
 			ll.addView(cb);
 		}
 

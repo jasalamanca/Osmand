@@ -1,18 +1,16 @@
 package net.osmand.plus.search;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
-import android.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.TypedValue;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -115,12 +113,7 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 		Toolbar toolbar = view.findViewById(R.id.toolbar);
 		toolbar.setNavigationIcon(app.getIconsCache().getIcon(R.drawable.ic_arrow_back));
 		toolbar.setNavigationContentDescription(R.string.access_shared_string_navigate_up);
-		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-			}
-		});
+		toolbar.setNavigationOnClickListener(v -> dismiss());
 
 		screenOrientation = DashLocationFragment.getScreenOrientation(getActivity());
 		myLocation = app.getLocationProvider().getLastKnownLocation();
@@ -197,12 +190,7 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 		}
 
 		formatEdit.setText(PointDescription.formatToHumanString(app, currentFormat));
-		formatEdit.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				new ChooseCoordsFormatDialogFragment().show(getChildFragmentManager(), "ChooseCoordinatesFormatFragment");
-			}
-		});
+		formatEdit.setOnClickListener(v -> new ChooseCoordsFormatDialogFragment().show(getChildFragmentManager(), "ChooseCoordinatesFormatFragment"));
 
 		TextWatcher textWatcher = new TextWatcher() {
 
@@ -226,15 +214,12 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 		zoneEdit.addTextChangedListener(textWatcher);
 		olcEdit.addTextChangedListener(textWatcher);
 
-		OnEditorActionListener doneListener = new OnEditorActionListener() {
-			@Override
-			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-				if (actionId == EditorInfo.IME_ACTION_DONE) {
-					showOnMap();
-					return true;
-				} else {
-					return false;
-				}
+		OnEditorActionListener doneListener = (v, actionId, event) -> {
+			if (actionId == EditorInfo.IME_ACTION_DONE) {
+				showOnMap();
+				return true;
+			} else {
+				return false;
 			}
 		};
 
@@ -254,60 +239,25 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 
 		ImageButton latitudeClearButton = view.findViewById(R.id.latitudeClearButton);
 		latitudeClearButton.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_remove_dark));
-		latitudeClearButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				latEdit.setText("");
-			}
-		});
+		latitudeClearButton.setOnClickListener(v -> latEdit.setText(""));
 		ImageButton longitudeClearButton = view.findViewById(R.id.longitudeClearButton);
 		longitudeClearButton.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_remove_dark));
-		longitudeClearButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				lonEdit.setText("");
-			}
-		});
+		longitudeClearButton.setOnClickListener(v -> lonEdit.setText(""));
 		ImageButton northingClearButton = view.findViewById(R.id.northingClearButton);
 		northingClearButton.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_remove_dark));
-		northingClearButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				northingEdit.setText("");
-			}
-		});
+		northingClearButton.setOnClickListener(v -> northingEdit.setText(""));
 		ImageButton eastingClearButton = view.findViewById(R.id.eastingClearButton);
 		eastingClearButton.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_remove_dark));
-		eastingClearButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				eastingEdit.setText("");
-			}
-		});
+		eastingClearButton.setOnClickListener(v -> eastingEdit.setText(""));
 		ImageButton zoneClearButton = view.findViewById(R.id.zoneClearButton);
 		zoneClearButton.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_remove_dark));
-		zoneClearButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				olcEdit.setText("");
-			}
-		});
+		zoneClearButton.setOnClickListener(v -> olcEdit.setText(""));
 		ImageButton olcClearButton = view.findViewById(R.id.olcClearButton);
 		olcClearButton.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_remove_dark));
-		olcClearButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				olcEdit.setText("");
-			}
-		});
+		olcClearButton.setOnClickListener(v -> olcEdit.setText(""));
 		ImageButton formatSelectButton = view.findViewById(R.id.formatSelectButton);
 		formatSelectButton.setImageDrawable(ic.getThemedIcon(R.drawable.ic_action_arrow_drop_down));
-		formatSelectButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				new ChooseCoordsFormatDialogFragment().show(getChildFragmentManager(), "ChooseCoordinatesFormatFragment");
-			}
-		});
+		formatSelectButton.setOnClickListener(v -> new ChooseCoordsFormatDialogFragment().show(getChildFragmentManager(), "ChooseCoordinatesFormatFragment"));
 
 		coordsView = view.findViewById(R.id.searchListItemLayout);
 		view.findViewById(R.id.divider).setVisibility(View.GONE);
@@ -322,12 +272,7 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 		((ImageView) coordsView.findViewById(R.id.imageView)).setImageDrawable(
 				ic.getIcon(R.drawable.ic_action_world_globe, app.getSettings().isLightContent()
 						? R.color.osmand_orange : R.color.osmand_orange_dark));
-		coordsView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				showOnMap();
-			}
-		});
+		coordsView.setOnClickListener(v -> showOnMap());
 
 		errorView = view.findViewById(R.id.error_item);
 
@@ -424,12 +369,7 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 		heading = value;
 		if (Math.abs(MapUtils.degreesDiff(lastHeading, heading)) > 5) {
 			final net.osmand.Location location = this.myLocation;
-			getMyApplication().runInUIThread(new Runnable() {
-				@Override
-				public void run() {
-					updateLocationUI(location, value);
-				}
-			});
+			getMyApplication().runInUIThread(() -> updateLocationUI(location, value));
 		} else {
 			heading = lastHeading;
 		}
@@ -439,12 +379,7 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 	public void updateLocation(final net.osmand.Location location) {
 		this.myLocation = location;
 		final Float heading = this.heading;
-		getMyApplication().runInUIThread(new Runnable() {
-			@Override
-			public void run() {
-				updateLocationUI(location, heading);
-			}
-		});
+		getMyApplication().runInUIThread(() -> updateLocationUI(location, heading));
 	}
 
 	private void updateLocationUI(net.osmand.Location location, Float heading) {
@@ -691,12 +626,9 @@ public class QuickSearchCoordinatesFragment extends DialogFragment implements Os
 
 			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 			builder.setTitle(R.string.coords_format)
-					.setSingleChoiceItems(entries, parent.currentFormat, new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							parent.applyFormat(which, false);
-							dialog.dismiss();
-						}
+					.setSingleChoiceItems(entries, parent.currentFormat, (dialog, which) -> {
+						parent.applyFormat(which, false);
+						dialog.dismiss();
 					});
 			return builder.create();
 		}

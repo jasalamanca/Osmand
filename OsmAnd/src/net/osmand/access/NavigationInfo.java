@@ -260,12 +260,7 @@ public class NavigationInfo implements OsmAndCompassListener, OsmAndLocationList
 						if (lastDirection.update(destination) || !settings.ACCESSIBILITY_SMART_AUTOANNOUNCE.get()) {
 							final String notification = distanceString(destination) + " " + lastDirection.getString(); //$NON-NLS-1$
 							lastNotificationTime = now;
-							app.runInUIThread(new Runnable() {
-								@Override
-								public void run() {
-									app.showToastMessage(notification);
-								}
-							});
+							app.runInUIThread(() -> app.showToastMessage(notification));
 						}
 					}
 				} else {
@@ -359,24 +354,13 @@ public class NavigationInfo implements OsmAndCompassListener, OsmAndLocationList
 		AlertDialog.Builder info = new AlertDialog.Builder(ctx);
 		if (point != null)
 			info.setPositiveButton(autoAnnounce ? R.string.auto_announce_off : R.string.auto_announce_on,
-					new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int id) {
-							autoAnnounce = !autoAnnounce;
-							dialog.cancel();
-						}
-					});
-		info.setNegativeButton(R.string.shared_string_close, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int id) {
-				dialog.cancel();
-			}
-		});
-		info.setItems(attributes.toArray(new String[attributes.size()]), new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-			}
-		});
+                    (dialog, id) -> {
+                        autoAnnounce = !autoAnnounce;
+                        dialog.cancel();
+                    });
+		info.setNegativeButton(R.string.shared_string_close, (dialog, id) -> dialog.cancel());
+		info.setItems(attributes.toArray(new String[attributes.size()]), (dialog, which) -> {
+        });
 		info.show();
 	}
 
