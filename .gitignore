@@ -25,6 +25,8 @@ out/
 # Gradle
 .gradle
 /local.properties
+gradle
+gradlew*
 
 # MacOSX
 .DS_Store
