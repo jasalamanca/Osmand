@@ -1833,7 +1833,6 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
     <string name="shared_string_time">Aika</string>
     <string name="total_distance">Kokonaisetäisyys</string>
     
-    <string name="routing_attr_height_relief_smoothness_factor_description">Enemmän tasaista vai enemmän mäkiä</string>
     <string name="routing_attr_height_obstacles_name">Käytä korkeustietoja</string>
     <string name="routing_attr_height_obstacles_description">Käytä maaston korkeustietoja jotka saadaan SRTM, ASTER ja EU-DEM lähteistä</string>
 
@@ -1869,7 +1868,6 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
     <string name="context_menu_item_modify_note">Muokkaa OSM huomautusta</string>
     <string name="make_round_trip_descr">Lisää lähtöpisteen kopio maalipisteeksi.</string>
     <string name="make_round_trip">Tee kiertoajelu</string>
-    <string name="shared_string_navigate">Navigoi</string>
     <string name="shared_string_markers">Markkerit</string>
     <string name="coordinates_format">Koordinaattien muoto</string>
     <string name="use_system_keyboard">Käytä järjestelmän näppäimistöä</string>

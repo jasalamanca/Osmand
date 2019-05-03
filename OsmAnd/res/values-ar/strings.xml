@@ -2217,8 +2217,6 @@
     <string name="retry">اعد المحاولة</string>
 <string name="measurement_tool_action_bar">تصفح الخريطة واضف نقاط</string>
     <string name="measurement_tool">قياس المسافة</string>
-    <string name="add_gpx_waypoint_bottom_sheet_title">إضافة إحداثية وجهة gpx</string>
-    <string name="shared_string_create">إنشاء</string>
 <string name="none_point_error">الرجاء إضافة نقطة واحدة على الأقل.</string>
     <string name="enter_gpx_name">اسم ملف GPX:</string>
     <string name="show_on_map_after_saving">إظهار على الخريطة بعد الحفظ</string>
@@ -2227,8 +2225,6 @@
     <string name="save_route_point">حفظ نقطة مسار</string>
     <string name="waypoint_one">إحداثية 1</string>
     <string name="route_point_one">نقطة المسار 1</string>
-<string name="measurement_tool_altitude">الارتفاع: %1$s</string>
-    <string name="measurement_tool_speed">السرعة: %1$s</string>
     <string name="line">خط</string>
     <string name="save_as_route_point">حفظ كنقاط مسار</string>
     <string name="save_as_line">حفظ كخط</string>
@@ -2264,7 +2260,6 @@
     <string name="last_seven_days">آخر 7 أيام</string>
     <string name="this_year">هذه السنة</string>
     <string name="widget">ويدجت</string>
-    <string name="top_bar">الشريط العلوي</string>
     <string name="move_all_to_history">نقل الكل إلى السجل الزمني</string>
     <string name="show_direction">مؤشر المسافة</string>
     <string name="sort_by">فرز حسب</string>
@@ -2302,7 +2297,6 @@
     <string name="routing_attr_avoid_ice_roads_fords_description">تجنب الطرق الجليدية والمعابر.</string>
     <string name="make_round_trip_descr">إضافة نسخة نقطة البداية كوجهة.</string>
     <string name="make_round_trip">القيام برحلة ذهاب وإياب</string>
-    <string name="shared_string_navigate">تنقل</string>
     <string name="osn_modify_dialog_error">حدث استثناء: لم يتم تعديل الملاحظة</string>
     <string name="osn_modify_dialog_title">تعديل ملاحظة</string>
     <string name="context_menu_item_modify_note">تعديل ملاحظة OSM</string>
@@ -2324,7 +2318,6 @@
     <string name="import_file">استيراد ملف</string>
 	<string name="tap_on_map_to_hide_interface_descr">نقرة على الخريطة ستفعل أزرار التحكم والويدجت.</string>
     <string name="tap_on_map_to_hide_interface">وضع الشاشة الكاملة</string>
-    <string name="show_on_top_bar">اظهار في الشريط العلوي</string>
     <string name="mark_passed">تعيين كمتجاوَز</string>
     <string name="empty_state_osm_edits">إنشاء أو تعديل عناصر OSM</string>
     <string name="empty_state_osm_edits_descr">إنشاء أو تعديل OSM POI، فتح أو التعليق على ملاحظات OSM والمساهمة بملفات GPX مسجلة.</string>

@@ -2122,7 +2122,6 @@
     <string name="shared_string_time">Час</string>
     <string name="total_distance">Загальна відстань</string>
     
-    <string name="routing_attr_height_relief_smoothness_factor_description">Більш рівнини чи більш пагорби</string>
     <string name="routing_attr_height_obstacles_name">Використовувати дані висоти</string>
     <string name="routing_attr_height_obstacles_description">Використовувати дані про рельєф земної поверхні від SRTM, ASTER та EU-DEM.</string>
 
@@ -2278,8 +2277,6 @@
     <string name="retry">Повторити</string>
 <string name="measurement_tool_action_bar">Перегляньте мапу і додайте точки</string>
     <string name="measurement_tool">Виміряти відстань</string>
-    <string name="add_gpx_waypoint_bottom_sheet_title">Додати шляхову точку в GPX</string>
-    <string name="shared_string_create">Створити</string>
 <string name="none_point_error">Необхідно додати хоча б одну точку.</string>
     <string name="enter_gpx_name">Ім’я GPX файлу:</string>
     <string name="show_on_map_after_saving">Показати на мапі після збереження</string>
@@ -2288,8 +2285,6 @@
     <string name="save_route_point">Зберегти точку маршруту</string>
     <string name="waypoint_one">Шляхова точка 1</string>
     <string name="route_point_one">Точка маршруту 1</string>
-<string name="measurement_tool_altitude">Висота: %1$s</string>
-    <string name="measurement_tool_speed">Швидкість: %1$s</string>
     <string name="line">Лінія</string>
     <string name="save_as_route_point">Зберегти як точки маршруту</string>
     <string name="save_as_line">Зберегти як лінію</string>
@@ -2316,7 +2311,6 @@
     <string name="move_all_to_history">Перемістити усе в історію</string>
     <string name="show_direction">Відображення відстані</string>
     <string name="sort_by">Сортувати за</string>
-    <string name="marker_options">Параметри маркера</string>
     <string name="do_not_use_animations">Не застосовувати анімацію</string>
     <string name="do_not_use_animations_descr">Відключення анімації в програмі.</string>
     <string name="marker_show_distance_descr">Вибрати як показувати відстань і напрямок до маркерів на екрані мапи:</string>
@@ -2362,7 +2356,6 @@
     <string name="routing_attr_avoid_ice_roads_fords_description">Уникає льодових доріг і бродів.</string>
     <string name="make_round_trip_descr">Додати копію початкової точки як місце призначення.</string>
     <string name="make_round_trip">Зробити кругову подорож</string>
-    <string name="shared_string_navigate">Почати навігацію</string>
     <string name="osn_modify_dialog_error">Виняткова ситуація: примітку не було змінено</string>
     <string name="osn_modify_dialog_title">Змінити примітку</string>
     <string name="context_menu_item_modify_note">Змінити OSM-примітку</string>
@@ -2384,7 +2377,6 @@
     <string name="import_file">Імпортувати файл</string>
 	<string name="tap_on_map_to_hide_interface_descr">Дотик на карті змінює кнопки управління та віджети.</string>
     <string name="tap_on_map_to_hide_interface">Повноекранний режим</string>
-    <string name="show_on_top_bar">Показати на верхній панелі</string>
     <string name="mark_passed">Позначати пройдене</string>
     <string name="digits_quantity">Кількість десяткових цифр</string>
     <string name="show_number_pad">Показати цифрову панель</string>

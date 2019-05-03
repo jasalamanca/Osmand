@@ -2200,7 +2200,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="moving_time">Čas ruchu</string>
     <string name="max_min">Maks./Min.</string>
     
-    <string name="range_min_max">Adliehlasć = Min./Maks.</string>
     <string name="min_max">Min./Maks.</string>
     <string name="rendering_value_translucent_pink_name">Paŭprazrysty ružovy</string>
     <string name="measurement_tool">Vymiarać adlehłaść</string>
@@ -2210,8 +2209,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="quick_action_start_stop_navigation">Pačać/spynić navihacyju</string>
     <string name="quick_action_start_stop_navigation_descr">Nacisnicie hetuju knopku, kab pačać abo skončyć navihacyju.</string>
     <string name="retry">Paŭtaryć sprobu</string>
-    <string name="add_gpx_waypoint_bottom_sheet_title">Dadać GPX šlach</string>
-    <string name="shared_string_create">Stvaryć</string>
 <string name="measurement_tool_action_bar">Prahlad mapy i dadavańnie kropak</string>
     <string name="live_monitoring_max_interval_to_send">Čas bufieryzacyi dla anłajn sačeńnia</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Zadaje čas bufieryzacyi dla źbieražeńnia miescaŭ dla adpraŭki biez złučeńnia</string>
@@ -2223,8 +2220,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="save_route_point">Zachavać kropku maršrutu</string>
     <string name="waypoint_one">Kropka šliachu 1</string>
     <string name="route_point_one">Kropka maršrutu 1</string>
-<string name="measurement_tool_altitude">Vyšynia: %1$s</string>
-    <string name="measurement_tool_speed">Chutkasć: %1$s</string>
     <string name="line">Linija</string>
     <string name="save_as_route_point">Zachavać jak kropki maršrutu</string>
     <string name="save_as_line">Zachavać jak liniju</string>
@@ -2253,7 +2248,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="move_all_to_history">Pieramiaścić usio ŭ historyju</string>
     <string name="show_direction">Indykacyja adlehłaści</string>
     <string name="sort_by">Sartavać pa</string>
-    <string name="marker_options">Nalady markiera</string>
     <string name="marker_show_distance_descr">Vybierycie, jak pakazvać adlehłasć i napramak da markieraŭ na ekranie mapy:</string>
     <string name="map_orientation_change_in_accordance_with_speed">Paroh aryjentacyi mapy</string>
     <string name="map_orientation_change_in_accordance_with_speed_descr">Abiarycie nižej, na jakoj chutkaści aryjentacyja mapy pierakliučajecca z «Napramku ruchu» na «Pa kompasu».</string>
@@ -2269,7 +2263,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="last_seven_days">Apošnija 7 dzion</string>
     <string name="this_year">Sioleta</string>
     <string name="widget">Vidžet</string>
-    <string name="top_bar">Vierchniaja paneĺ</string>
     <string name="remove_from_map_markers">Vydalić z markieraŭ mapy</string>
     <string name="descendingly">pa źmianšeńni</string>
     <string name="ascendingly">pa ŭzrastańni</string>
@@ -2299,7 +2292,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="routing_attr_avoid_ice_roads_fords_description">Pazbiahać liadovych daroh i brodaŭ.</string>
     <string name="make_round_trip_descr">Dadać kopiju pačatkovaj kropki jak miesca pryznačeńnia.</string>
     <string name="make_round_trip">Zrabić kruhavoje padarožža</string>
-    <string name="shared_string_navigate">Pačać navihacyju</string>
     <string name="osn_modify_dialog_error">Adbyłosia vyklučeńnie: natatka nie była źmienienaja</string>
     <string name="osn_modify_dialog_title">Źmianić natatku</string>
     <string name="context_menu_item_modify_note">Źmianić OSM-natatku</string>
@@ -2321,7 +2313,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="import_file">Impartavać fajł</string>
 	<string name="tap_on_map_to_hide_interface_descr">Dotyk na mapie pierakliučaje knopki kiravańnia i vidžety.</string>
     <string name="tap_on_map_to_hide_interface">Poŭnyekranny režym</string>
-    <string name="show_on_top_bar">Pakazać na vierchniaj paneli</string>
     <string name="mark_passed">Adznačyć prajdzienyja</string>
     <string name="add_favourites_group_to_markers_descr">Abiarycie katehoryju ŭlubionych, kab dadać da markieraŭ.</string>
     <string name="track_waypoints">Šliachavyja kropki</string>
@@ -2371,11 +2362,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="context_menu_read_full_article">Čytać uvieś artykul</string>
     <string name="context_menu_read_article">Čytać artykul</string>
     <string name="context_menu_points_of_group">Usie kropki hrupy</string>
-    <string name="opened_from">Adčyniena ad</string>
-    <string name="opened_till">Adčyniena da</string>
-    <string name="will_be_closed_at">Budzie začyniena a</string>
-    <string name="will_be_opened_at">Budzie adčyniena a</string>
-    <string name="will_be_opened_on">Budzie adčyniena</string>
     <string name="additional_actions">Dadatkovyja dziejańni</string>
     <string name="shared_string_actions">Dziejanni</string>
     <string name="shared_string_marker">Markier</string>

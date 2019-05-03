@@ -1992,7 +1992,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="go_to_next_field">Fara í næsta gagnasvið</string>
     <string name="rename_marker">Endurnefna kortamerki</string>
     <string name="tap_on_map_to_hide_interface">Skjáfyllihamur</string>
-    <string name="show_on_top_bar">Birta á toppstiku</string>
     <string name="import_as_gpx">Flytja inn sem GPX-skrá</string>
     <string name="import_as_favorites">Flytja inn sem eftirlæti</string>
     <string name="import_file">Flytja inn skrá</string>

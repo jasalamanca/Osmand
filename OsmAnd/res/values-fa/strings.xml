@@ -2325,7 +2325,6 @@
     <string name="add_route_points">افزودن نقاط مسیر</string>
     <string name="save_route_point">ذخیره‌کردن نقطهٔ مسیر</string>
     <string name="route_point_one">نقطهٔ مسیر 1</string>
-    <string name="shared_string_navigate">مسیریابی کن</string>
     <string name="animate_my_location_desc">در هنگام راهبری نقشه بتواند برای نشان‌دادن موقعیت من جابه‌جا شود.</string>
     <string name="distance_moving">مسافت اصلاح‌شده</string>
     <string name="legacy_search">جست‌وجوی دنباله‌ای</string>
@@ -2359,7 +2358,6 @@
     <string name="import_file">واردکردن فایل</string>
 	<string name="tap_on_map_to_hide_interface_descr">با لمس‌کردن صفحهٔ نقشه، دکمه‌ها و ابزارک‌ها را پنهان/آشکار کنید.</string>
     <string name="tap_on_map_to_hide_interface">حالت تمام‌صفحه</string>
-    <string name="show_on_top_bar">در نوار بالا نشان بده</string>
     <string name="mark_passed">از این عبور کردم</string>
     <string name="rename_marker">تغییر نام نشانه</string>
     <string name="digits_quantity">تعداد رقم‌های اعشاری</string>

@@ -2267,8 +2267,6 @@ représentant la zone : %1$s x %2$s</string>
     <string name="retry">Essayer à nouveau</string>
 <string name="measurement_tool_action_bar">Déplacez la carte et ajoutez des points</string>
     <string name="measurement_tool">Mesurer une distance</string>
-    <string name="shared_string_create">Créer</string>
-<string name="add_gpx_waypoint_bottom_sheet_title">Ajouter un point GPX</string>
     <string name="show_on_map_after_saving">Afficher sur la carte après enregistrement</string>
     <string name="route_point_one">Point 1 de l\'itinéraire</string>
 <string name="none_point_error">Merci d\'ajouter au moins un point.</string>
@@ -2279,8 +2277,6 @@ représentant la zone : %1$s x %2$s</string>
     <string name="save_gpx_waypoint">Enregistrer le point GPX</string>
     <string name="live_monitoring_max_interval_to_send">Durée de mémorisation pour le suivi en ligne</string>
     <string name="live_monitoring_max_interval_to_send_desrc">Indiquez une durée de mémorisation des positions en l\'absence de connexion</string>
-    <string name="measurement_tool_altitude">Altitude : %1$s</string>
-    <string name="measurement_tool_speed">Vitesse : %1$s</string>
     <string name="line">Ligne</string>
     <string name="save_as_route_point">Enregistrer comme points de passage</string>
     <string name="save_as_line">Enregistrer comme ligne</string>
@@ -2309,7 +2305,6 @@ représentant la zone : %1$s x %2$s</string>
     <string name="move_all_to_history">Déplacer tout dans l\'historique</string>
     <string name="show_direction">Indication de distance</string>
     <string name="sort_by">Trier par</string>
-    <string name="marker_options">Options de la marque</string>
     <string name="today">Aujourd\'hui</string>
     <string name="yesterday">Hier</string>
     <string name="map_orientation_change_in_accordance_with_speed">Pilotage de l\'orientation de la carte</string>
@@ -2320,7 +2315,6 @@ représentant la zone : %1$s x %2$s</string>
     <string name="last_seven_days">Ces 7 derniers jours</string>
     <string name="this_year">Cette année</string>
     <string name="make_active">Marquer comme actif</string>
-    <string name="top_bar">Barre supérieure</string>
     <string name="remove_from_map_markers">Supprimer des marques</string>
     <string name="descendingly">Ordre décroissant</string>
     <string name="ascendingly">Ordre croissant</string>
@@ -2353,7 +2347,6 @@ représentant la zone : %1$s x %2$s</string>
     <string name="routing_attr_avoid_ice_roads_fords_name">Éviter les routes sur glace, les fjords</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Éviter les routes sur glace et les fjords.</string>
     <string name="make_round_trip">Faire une boucle</string>
-    <string name="shared_string_navigate">Naviguer</string>
     <string name="osn_modify_dialog_error">Une erreur s\'est produite : la note n\'a pas été enregistrée</string>
     <string name="osn_modify_dialog_title">Modifier la note</string>
     <string name="context_menu_item_modify_note">Modifier la note OSM</string>
@@ -2376,7 +2369,6 @@ représentant la zone : %1$s x %2$s</string>
     <string name="import_file">Importer fichier</string>
 	<string name="tap_on_map_to_hide_interface_descr">Un appui sur la carte bascule les boutons et gadgets.</string>
     <string name="tap_on_map_to_hide_interface">Mode plein écran</string>
-    <string name="show_on_top_bar">Afficher dans la barre supérieure</string>
     <string name="mark_passed">Marquer comme visité</string>
     <string name="rename_marker">Renommer la marque</string>
     <string name="digits_quantity">Nombre de chiffres décimaux</string>

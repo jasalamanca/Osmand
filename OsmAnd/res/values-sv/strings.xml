@@ -2162,7 +2162,6 @@ Vänligen tillhandahåll fullständig kod</string>
     <string name="route_is_calculated">Rutten är beräknad</string>
     <string name="round_trip">Rundtur</string>
     <string name="make_round_trip">Gör en rundtur</string>
-    <string name="shared_string_navigate">Navigera</string>
     <string name="shared_string_markers">Markörer</string>
     <string name="routing_attr_avoid_ice_roads_fords_name">Undvik isvägar och vadställen</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Undvik isvägar och vadställen.</string>

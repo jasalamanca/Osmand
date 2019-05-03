@@ -857,7 +857,6 @@
     <string name="shared_string_install">Instalować</string>
     <string name="shared_string_add_photos">Wobrazy přidać</string>
     <string name="no_photos_descr">Za tute městno fota nimamy.</string>
-    <string name="measurement_tool_speed">spěšnosć: %1$s</string>
     <string name="save_as_route_point">Jako dypki na čarje składować</string>
     <string name="save_as_line">Jako liniju składować</string>
     <string name="route_point">dypk na čarje</string>
@@ -963,7 +962,6 @@
     <string name="rendering_attr_noAdminboundaries_name">Hranicy</string>
     <string name="rendering_attr_noPolygons_name">Polygony</string>
     <string name="get_directions">Nawigacija</string>
-    <string name="measurement_tool_altitude">Wysokosć: %1$s</string>
     <string name="add_point_before">Předchadny dypk dodać</string>
     <string name="add_point_after">Přichodny dypk dodać</string>
     <string name="quick_action_start_stop_navigation">Nawigaciju zahajić/přetorhnyć</string>

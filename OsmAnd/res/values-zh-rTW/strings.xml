@@ -2110,7 +2110,6 @@
     <string name="auto_split_recording_title">自動分割錄製之後的間隙</string>
 	<string name="auto_split_recording_descr">如果日期已更改，開始新區段在6分鐘後的間隔，新軌跡在2小時後的間隔，或新檔案在更長的間隔之後。</string>
 
-    <string name="routing_attr_height_relief_smoothness_factor_description">更多的平原或丘陵</string>
     <string name="routing_attr_height_obstacles_name">使用海拔資料</string>
     <string name="routing_attr_height_obstacles_description">使用 SRTM、ASTER 和 EU-DEM 提供的地形海拔資料。</string>
 
@@ -2227,7 +2226,6 @@
     <string name="moving_time">移動時間</string>
     <string name="max_min">最大/最小</string>
     
-    <string name="range_min_max">範圍 = 最小/最大</string>
     <string name="min_max">最小/最大</string>
     <string name="rendering_value_translucent_pink_name">半透明粉紅色</string>
     <string name="quick_action_resume_pause_navigation">繼續/暫停導航</string>
@@ -2240,8 +2238,6 @@
     <string name="retry">重試</string>
 <string name="measurement_tool">測量距離</string>
     <string name="measurement_tool_action_bar">瀏覽地圖並增加標點</string>
-    <string name="add_gpx_waypoint_bottom_sheet_title">增加 gpx 航點</string>
-    <string name="shared_string_create">建立</string>
 <string name="none_point_error">請至少增加一個標點。</string>
     <string name="enter_gpx_name">GPX 檔案名稱：</string>
     <string name="show_on_map_after_saving">儲存後在地圖上顯示</string>
@@ -2250,8 +2246,6 @@
     <string name="save_route_point">儲存路線標點</string>
     <string name="waypoint_one">航點 1</string>
     <string name="route_point_one">路線標點 1</string>
-<string name="measurement_tool_altitude">海拔：%1$s</string>
-    <string name="measurement_tool_speed">速度：%1$s</string>
     <string name="line">線路</string>
     <string name="save_as_route_point">另存為路線標點</string>
     <string name="save_as_line">另存為線路</string>
@@ -2280,7 +2274,6 @@
     <string name="move_all_to_history">全部移動到歷程</string>
     <string name="show_direction">距離指示</string>
     <string name="sort_by">排序方式</string>
-    <string name="marker_options">標記選項</string>
     <string name="map_orientation_change_in_accordance_with_speed">地圖定位起點</string>
     <string name="all_markers_moved_to_history">所有的地圖標記已移到歷程記錄</string>
     <string name="marker_moved_to_history">地圖標記已移到歷程記錄</string>
@@ -2294,7 +2287,6 @@
     <string name="last_seven_days">最近 7 天</string>
     <string name="this_year">今年</string>
     <string name="widget">小工具</string>
-    <string name="top_bar">頂欄</string>
     <string name="marker_show_distance_descr">選擇如何在地圖畫面上表示距離和方向給地圖標記：</string>
     <string name="map_orientation_change_in_accordance_with_speed_descr">選擇下方哪個速度的地圖方向從\'行動方向\'切換到\'羅盤\'。</string>
     <string name="remove_from_map_markers">從地圖標記中移除</string>
@@ -2326,7 +2318,6 @@
     <string name="routing_attr_avoid_ice_roads_fords_description">避開結冰和涉水的道路。</string>
     <string name="make_round_trip_descr">增加複製的起始點為目的地。</string>
     <string name="make_round_trip">作成往返行程</string>
-    <string name="shared_string_navigate">導航</string>
     <string name="osn_modify_dialog_error">發生異常：註解未被修改</string>
     <string name="osn_modify_dialog_title">修改註解</string>
     <string name="context_menu_item_modify_note">修改 OSM 註解</string>
@@ -2348,7 +2339,6 @@
     <string name="import_file">匯入檔案</string>
 	<string name="tap_on_map_to_hide_interface_descr">在地圖上輕點以切換控制按鈕和小工具。</string>
     <string name="tap_on_map_to_hide_interface">全螢幕模式</string>
-    <string name="show_on_top_bar">在頂列上顯示</string>
     <string name="mark_passed">已經過標記</string>
     <string name="rename_marker">重新命名標記</string>
     <string name="digits_quantity">小數位數</string>

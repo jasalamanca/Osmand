@@ -106,7 +106,6 @@
     <string name="context_menu_item_modify_note">Modify OSM note</string>
     <string name="make_round_trip_descr">Add copy of start point as destination.</string>
     <string name="make_round_trip">Make round trip</string>
-    <!-- string name="shared_string_navigate">Navigate</string-->
     <string name="shared_string_markers">Markers</string>
     <string name="coordinates_format">Coordinates format</string>
     <string name="use_system_keyboard">Use system keyboard</string>
@@ -149,7 +148,6 @@
     <string name="last_seven_days">Last 7 days</string>
     <string name="this_year">This year</string>
     <!-- string name="widget">Widget</string if needed should be shared_string_widget -->
-    <!-- string name="top_bar">Top bar</string use shared_string_topbar -->
     <string name="move_all_to_history">Move all to history</string>
     <string name="show_direction">Distance indication</string>
     <string name="sort_by">Sort by</string>

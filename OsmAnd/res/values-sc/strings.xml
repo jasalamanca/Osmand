@@ -2235,8 +2235,6 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="retry">Torra a proare</string>
 <string name="measurement_tool_action_bar">Esplora sa mapa e annanghe puntos</string>
     <string name="measurement_tool">Medi una distàntzia</string>
-    <string name="add_gpx_waypoint_bottom_sheet_title">Annanghe unu puntu de coladòrgiu gpx</string>
-    <string name="shared_string_create">Crea</string>
 <string name="none_point_error">Pro praghere annanghe a su mancu unu puntu.</string>
     <string name="enter_gpx_name">Nùmene documentu GPX:</string>
     <string name="show_on_map_after_saving">Ammustra in sa mapa a pustis de su sarvatàgiu</string>
@@ -2245,8 +2243,6 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="save_route_point">Sarva puntu de s\'àndala</string>
     <string name="waypoint_one">Puntu de coladòrgiu 1</string>
     <string name="route_point_one">Puntu 1 de s\'àndala</string>
-<string name="measurement_tool_altitude">Artària: %1$s</string>
-    <string name="measurement_tool_speed">Lestresa: %1$s</string>
     <string name="line">Lìnia</string>
     <string name="save_as_route_point">Sarva comente puntos de s\'àndala</string>
     <string name="save_as_line">Sarva comente lìnia</string>
@@ -2275,7 +2271,6 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="move_all_to_history">Pone totu in sa cronologia</string>
     <string name="show_direction">Indicatzione de distàntzia</string>
     <string name="sort_by">Òrdina pro</string>
-    <string name="marker_options">Optziones de sos marcadores</string>
     <string name="map_orientation_change_in_accordance_with_speed">Lìmite de orientamentu de sa mapa</string>
     <string name="map_orientation_change_in_accordance_with_speed_descr">Ischerta sa lestresa in suta de sa cale s\'orientamentu de sa mapa colat dae \'in sa diretzione de mòvida\' a \'bùssola\'.</string>
     <string name="all_markers_moved_to_history">Totu sos marcadores de sa mapa sunt istados archiviados in sa Cronologia</string>
@@ -2287,7 +2282,6 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="yesterday">Eris</string>
     <string name="last_seven_days">Ùrtimas 7 dies</string>
     <string name="this_year">Cust\'annu</string>
-    <string name="top_bar">Barra superiore</string>
     <string name="remove_from_map_markers">Boga dae sos Marcadores Mapa</string>
     <string name="descendingly">in falada</string>
     <string name="ascendingly">in artiada</string>
@@ -2323,7 +2317,6 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="context_menu_item_modify_note">Modìfica sa nota OSM</string>
     <string name="make_round_trip_descr">Annanghe una còpia de su puntu de incumintzu comente destinatzione.</string>
     <string name="make_round_trip">Faghe unu biàgiu tzirculare</string>
-    <string name="shared_string_navigate">Nàviga</string>
     <string name="shared_string_road">Istrada</string>
     <string name="show_map">Ammustra sa mapa</string>
     <string name="route_is_calculated">Àndala torrada a calculare</string>
@@ -2342,7 +2335,6 @@ Pro praghere iscrie su còdighe intreu</string>
     <string name="import_file">Importa documentu</string>
 	<string name="tap_on_map_to_hide_interface_descr">Un\'incarcada in sa mapa istichit sos butones e sos widgets de controllu.</string>
     <string name="tap_on_map_to_hide_interface">Modalidade a ischermu intreu</string>
-    <string name="show_on_top_bar">Ammustra in sa barra superiore</string>
     <string name="mark_passed">Sinna comente coladu</string>
     <string name="digits_quantity">Nùmeru de tzifras detzimales</string>
     <string name="shared_string_right">Destra</string>

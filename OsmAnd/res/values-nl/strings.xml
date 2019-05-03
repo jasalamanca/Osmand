@@ -2260,7 +2260,6 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="move_all_to_history">Verplaats alles naar geschiedenis</string>
     <string name="show_direction">Toon afstand</string>
     <string name="sort_by">Sorteren op</string>
-    <string name="marker_options">Opties voor Markeervlaggetjes</string>
     <string name="do_not_use_animations">Geen animaties gebruiken</string>
     <string name="do_not_use_animations_descr">Zet alle animaties binnen OsmAnd uit.</string>
     <string name="keep_showing_on_map">Verder wel op de kaart blijven tonen</string>
@@ -2294,7 +2293,6 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="context_menu_item_modify_note">Wijzig OSM-notitie</string>
     <string name="make_round_trip_descr">Kopieer het beginpunt en voeg het toe als bestemming.</string>
     <string name="make_round_trip">Ga heen en terug</string>
-    <string name="shared_string_navigate">Navigeer</string>
     <string name="shared_string_markers">Markeringen</string>
     <string name="coordinates_format">Coördinatenformaat</string>
     <string name="use_system_keyboard">Gebruik systeemtoetsenbord</string>
@@ -2373,7 +2371,6 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="shared_string_road">Weg</string>
     <string name="tap_on_map_to_hide_interface_descr">Een tik op de kaart verbergt/toont de bedieningsknoppen en widgets.</string>
     <string name="tap_on_map_to_hide_interface">Volledig scherm modus</string>
-    <string name="show_on_top_bar">Toon op bovenste balk</string>
     <string name="mark_passed">Markering gepasseerd</string>
     <string name="import_gpx_file_description">kan geïmporteerd worden als favorieten, of als track bestand.</string>
     <string name="import_as_gpx">importeer als GPX bestand</string>
@@ -2401,11 +2398,6 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="context_menu_read_full_article">Lees het hele artikel</string>
     <string name="context_menu_read_article">Lees artikel</string>
     <string name="context_menu_points_of_group">Alle punten van de groep</string>
-    <string name="opened_from">Open van</string>
-    <string name="opened_till">Open tot</string>
-    <string name="will_be_closed_at">Sluit om</string>
-    <string name="will_be_opened_at">Gaat open om</string>
-    <string name="will_be_opened_on">Zal opengaan op</string>
     <string name="additional_actions">Verdere acties</string>
     <string name="modify_the_search_query">Zoekopdracht veranderen.</string>
     <string name="shared_string_actions">Acties</string>

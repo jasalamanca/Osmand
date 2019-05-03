@@ -2142,7 +2142,6 @@ Rappresenta l\'area: %1$s x %2$s</string>
     <string name="shared_string_time">Tempo</string>
     <string name="total_distance">Distanza totale</string>
     
-    <string name="routing_attr_height_relief_smoothness_factor_description">Più piatto o più colline</string>
     <string name="routing_attr_height_obstacles_name">Utilizza dati altitudine</string>
     <string name="routing_attr_height_obstacles_description">Utilizza i dati di elevazione del terreno forniti da SRTM, ASTER, e EU-DEM.</string>
 
@@ -2266,8 +2265,6 @@ Rappresenta l\'area: %1$s x %2$s</string>
     <string name="add_waypoint">Aggiungi Waypoint</string>
     <string name="save_gpx_waypoint">Salva Waypoint GPX</string>
     <string name="waypoint_one">Waypoint 1</string>
-    <string name="measurement_tool_altitude">Altitudine: %1$s</string>
-    <string name="measurement_tool_speed">Velocità %1$s</string>
     <string name="line">Linea</string>
     <string name="save_as_route_point">Salva come punti di un percorso</string>
     <string name="save_as_line">Salva come linea</string>
@@ -2294,7 +2291,6 @@ Rappresenta l\'area: %1$s x %2$s</string>
     <string name="move_all_to_history">Sposta tutto nella cronologia</string>
     <string name="show_direction">Indicazione della direzione</string>
     <string name="sort_by">Ordina per</string>
-    <string name="marker_options">Opzioni marcatori</string>
     <string name="marker_show_distance_descr">Scegli come indicare la distanza e la direzione dei marcatori della mappa nella schermata della mappa:</string>
     <string name="map_orientation_change_in_accordance_with_speed">Soglia di orientamento della mappa</string>
     <string name="map_orientation_change_in_accordance_with_speed_descr">Selezionare la velocità sotto la quale l\'orientamento della mappa passa da \'Nella direzione del movimento\' a \'Con bussola\'.</string>
@@ -2339,7 +2335,6 @@ Rappresenta l\'area: %1$s x %2$s</string>
     <string name="context_menu_item_modify_note">Modifica la nota OSM</string>
     <string name="make_round_trip_descr">Aggiungi una copia del punto di partenza come destinazione.</string>
     <string name="make_round_trip">Costruisci un percorso circolare</string>
-    <string name="shared_string_navigate">Naviga</string>
     <string name="shared_string_markers">Marcatori</string>
     <string name="empty_state_my_tracks_desc">Registra o importa le tracce per visualizzarle</string>
     <string name="empty_state_favourites">Aggiungi Luoghi preferiti</string>
@@ -2366,7 +2361,6 @@ Rappresenta l\'area: %1$s x %2$s</string>
     <string name="import_file">Importa file</string>
 	<string name="tap_on_map_to_hide_interface_descr">Un tap sulla mappa per nascondere/visualizzare i pulsanti di controllo e i widgets.</string>
     <string name="tap_on_map_to_hide_interface">Modalità a schermo intero</string>
-    <string name="show_on_top_bar">Mostra nella barra superiore</string>
     <string name="mark_passed">Marcatore superato</string>
     <string name="import_gpx_file_description">può essere importato come Luogo Preferito oppure come file traccia.</string>
     <string name="appearance_on_the_map">Visualizzazione nella mappa</string>

@@ -1537,7 +1537,6 @@
     <string name="coordinate_input_accuracy">%1$d അക്കങ്ങള്‍</string>
     <string name="go_to_next_field">അടുത്ത കളത്തിലേക്ക് പോവു</string>
     <string name="rename_marker">"അടയാളത്തിന്റെ പേരുമാറ്റുക "</string>
-    <string name="show_on_top_bar">മേല്‍പട്ടയില്‍ കാണിക്കുക</string>
     <string name="mark_passed">"പൂര്‍ണമായതായി അടയാളപ്പെടുത്തുക "</string>
     <string name="import_as_gpx">"ജിപിഎക്സ് ഫയല്‍ ആയി എടുക്കുക "</string>
     <string name="import_file">"ഫയല്‍ എടുക്കുക "</string>

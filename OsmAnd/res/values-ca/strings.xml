@@ -1959,7 +1959,6 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="auto_split_recording_title">Divisió automàtica de les gravacions un cop aturades</string>
 	<string name="auto_split_recording_descr">Comença un nou segment desprès de 6 min d\'interrupció, una traça nova si es superen les 2 hores o un nou fitxer si encara dura més i ha canviat la data.</string>
 
-    <string name="routing_attr_height_relief_smoothness_factor_description">Més planes o més turons</string>
     <string name="routing_attr_height_obstacles_name">Utilitza les cotes d\'elevació</string>
     <string name="routing_attr_height_obstacles_description">Utilitza les cotes d\'elevació del terreny proporcionades per SRTM, ASTER i EU-DEM.</string>
 
@@ -2076,7 +2075,6 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="moving_time">Temps en moviment</string>
     <string name="max_min">Màx/Mín</string>
     
-    <string name="range_min_max">Interval = Mín/Màx</string>
     <string name="min_max">Mín/Màx</string>
     <string name="quick_action_resume_pause_navigation">Continua/Atura la navegació</string>
     <string name="quick_action_resume_pause_navigation_descr">Premeu aquest botó per aturar o reprendre la navegació.</string>
@@ -2089,8 +2087,6 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="measurement_tool_action_bar">Consulteu el mapa i afegiu punts</string>
     <string name="measurement_tool">Mesurament de distàncies</string>
     <string name="retry">Torneu a provar</string>
-    <string name="add_gpx_waypoint_bottom_sheet_title">Afegiu una fita gpx</string>
-    <string name="shared_string_create">Crea</string>
 <string name="none_point_error">Afegiu un punt si més no.</string>
     <string name="enter_gpx_name">Nom del fitxer GPX:</string>
     <string name="show_on_map_after_saving">Mostra al mapa després de desar</string>
@@ -2099,8 +2095,6 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="save_route_point">Desa el punt de ruta</string>
     <string name="waypoint_one">Fita 1</string>
     <string name="route_point_one">Punt de ruta 1</string>
-<string name="measurement_tool_altitude">Altitud: %1$s</string>
-    <string name="measurement_tool_speed">Velocitat: %1$s</string>
     <string name="line">Línia</string>
     <string name="save_as_route_point">Desa com punts de la ruta</string>
     <string name="save_as_line">Desa com a línia</string>
@@ -2129,7 +2123,6 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="move_all_to_history">Mou tot a l\'historial</string>
     <string name="show_direction">Indicació de la distància</string>
     <string name="sort_by">Ordena per</string>
-    <string name="marker_options">Opcions de marcador</string>
     <string name="map_orientation_change_in_accordance_with_speed">Interval d\'orientació del mapa</string>
     <string name="map_orientation_change_in_accordance_with_speed_descr">Indiqueu la velocitat mínima per sota de la que s\'utilitzarà la brúixola interna per determinar l\'orientació del mapa en comptes de la direcció del moviment.</string>
     <string name="all_markers_moved_to_history">Tots els marcadors de mapa s\'han mogut a historial</string>
@@ -2144,7 +2137,6 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="last_seven_days">Darrers 7 dies</string>
     <string name="this_year">Aquest any</string>
     <string name="widget">Giny</string>
-    <string name="top_bar">Barra superior</string>
     <string name="remove_from_map_markers">Treu dels marcadors de mapa</string>
     <string name="descendingly">descendent</string>
     <string name="ascendingly">ascendent</string>
@@ -2175,7 +2167,6 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Evita les vies amb risc de gel i els guals.</string>
     <string name="make_round_trip_descr">Afegeix una còpia de punt d\'inici com a destinació.</string>
     <string name="make_round_trip">Fes un trajecte tancat</string>
-    <string name="shared_string_navigate">Navega</string>
     <string name="osn_modify_dialog_error">S\'ha produït una excepció: la nota no s\'ha modificat</string>
     <string name="osn_modify_dialog_title">Modifica nota</string>
     <string name="context_menu_item_modify_note">Modifica nota d\'OSM</string>
@@ -2197,7 +2188,6 @@ Abasta l\'àrea: %1$s x %2$s</string>
     <string name="import_file">Importa fitxer</string>
 	<string name="tap_on_map_to_hide_interface_descr">Prement el mapa canvien els botons de control i els ginys.</string>
     <string name="tap_on_map_to_hide_interface">Mode de pantalla completa</string>
-    <string name="show_on_top_bar">Mostra a la barra superior</string>
     <string name="mark_passed">Marca com passat</string>
     <string name="digits_quantity">Nombre de dígits decimals</string>
     <string name="shared_string_right">Dreta</string>

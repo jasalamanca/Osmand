@@ -805,7 +805,6 @@ Puntos</string>
     <string name="context_menu_item_modify_note">Cambiar nota d\'OSM</string>
     <string name="make_round_trip_descr">Añadir una copia del puntu de partida como destín.</string>
     <string name="make_round_trip">Facer un trayectu circular</string>
-    <string name="shared_string_navigate">Navegar</string>
     <string name="marker_show_distance_descr">Seleiciona como indicar la distancia i dirección a los marcadores de mapa na pantalla:</string>
     <string name="wrong_input">Entrada incorreuta</string>
 	<string name="enter_new_name">Escribir un nome nuevu</string>
@@ -826,7 +825,6 @@ Puntos</string>
     <string name="rename_marker">Cambiar nome del marcador</string>
     <string name="tap_on_map_to_hide_interface_descr">Una toque nel mapa alterna los botones de control y los complementos.</string>
     <string name="tap_on_map_to_hide_interface">Mou de pantalla completa</string>
-    <string name="show_on_top_bar">Ver na barra superior</string>
     <string name="mark_passed">Marcar como pasáu</string>
     <string name="import_gpx_file_description">pueden importase como puntos de favoritos, o como ficheru de traza.</string>
     <string name="import_as_gpx">Importar como ficheru GPX</string>

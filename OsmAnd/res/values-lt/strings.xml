@@ -2228,7 +2228,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="last_seven_days">Per pastarąsias 7 dienas</string>
     <string name="this_year">Šiemet</string>
     <string name="widget">Valdiklis</string>
-    <string name="top_bar">Viršutinė juosta</string>
     <string name="move_all_to_history">Perkelti visus į istoriją</string>
     <string name="show_direction">Atstumo nuoroda</string>
     <string name="sort_by">Rūšiuoti pagal</string>
@@ -2270,7 +2269,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="show_map">Rodyti žemėlapį</string>
     <string name="route_is_calculated">Maršrutas apskaičiuojamas</string>
     <string name="osn_modify_dialog_title">Keisti pastabą</string>
-    <string name="shared_string_navigate">Naviguoti</string>
     <string name="shared_string_markers">Žymekliai</string>
     <string name="coordinates_format">Koordinačių formatas</string>
     <string name="use_system_keyboard">Naudoti sistemos klaviatūra</string>

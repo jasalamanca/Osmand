@@ -2146,7 +2146,6 @@ Lon %2$s</string>
     <string name="context_menu_item_modify_note">Modificar nota de OSM</string>
     <string name="make_round_trip_descr">Engadir copia do punto de partida como destino.</string>
     <string name="make_round_trip">Facer viaxe de ida e volta</string>
-    <string name="shared_string_navigate">Navegar</string>
     <string name="shared_string_markers">Marcadores</string>
     <string name="coordinates_format">Formato das coordenadas</string>
     <string name="use_system_keyboard">Empregar teclado do sistema</string>
@@ -2226,7 +2225,6 @@ Lon %2$s</string>
     <string name="go_to_next_field">Ir ao campo seguinte</string>
     <string name="rename_marker">Renomear o marcador</string>
     <string name="tap_on_map_to_hide_interface">Modo de pantalla completa</string>
-    <string name="show_on_top_bar">Mostrar na barra superior</string>
     <string name="import_as_gpx">Importar como ficheiro GPX</string>
     <string name="import_as_favorites">Importar como Favoritos</string>
     <string name="import_file">Importar ficheiro</string>

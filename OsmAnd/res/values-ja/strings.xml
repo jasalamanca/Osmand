@@ -2369,7 +2369,6 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
 	<string name="shared_string_back">戻る</string>
 	<string name="view">表示</string>
 	<string name="waypoints_added_to_map_markers">経由地点をマップマーカーとして追加</string>
-	<string name="shared_string_navigate">ナビゲート</string>
     <string name="choose_navigation_type">ナビゲーションのプロファイルを選択</string>
     <string name="none_point_error">少なくとも1つのポイントを追加してください。</string>
     <string name="enter_gpx_name">GPXファイル名:</string>
@@ -2393,7 +2392,6 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="appearance_on_the_map">マップ画面での表示設定</string>
     <string name="add_track_to_markers_descr">マーカーとして追加する経由地点を経路データから選択してください。(経由地点を含む経路のみリストアップされます)</string>
     <string name="add_favourites_group_to_markers_descr">マーカーとして追加するお気に入りのカテゴリを選択してください。</string>
-    <string name="show_on_top_bar">画面上部のバーに表示</string>
     <string name="add_group_descr">お気に入り地点や経路データ内の経由地点をまとめてインポートできます。</string>
     <string name="empty_state_markers_groups">グループでインポート</string>
     <string name="empty_state_markers_groups_desc">お気に入り地点や経路データ内の経由地点をマーカーとしてまとめて追加できます。</string>

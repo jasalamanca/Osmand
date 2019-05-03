@@ -2145,7 +2145,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="shared_string_time">Laiks</string>
     <string name="total_distance">Maršruta garums</string>
     
-    <string name="routing_attr_height_relief_smoothness_factor_description">Līdzenāks vai kalnaināks reljefs</string>
     <string name="routing_attr_height_obstacles_name">Lietot elevācijas datus</string>
     <string name="routing_attr_height_obstacles_description">Lietot apgabala elevācijas datus no SRTM, ASTER un EU-DEM.</string>
 
@@ -2255,7 +2254,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="context_menu_item_modify_note">!abot OSM piezīmi</string>
     <string name="make_round_trip_descr">Dublēt sākuma punktu kā galamērķi.</string>
     <string name="make_round_trip">Turp un atpakaļ maršruts</string>
-    <string name="shared_string_navigate">Navigācija</string>
     <string name="shared_string_markers">Marķieri</string>
     <string name="coordinates_format">Koordināšu formāts</string>
     <string name="use_system_keyboard">Lietot sistēmas klaviatūru</string>
@@ -2289,7 +2287,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="measurement_tool">Mērīt attālumu</string>
     <string name="tap_on_map_to_hide_interface_descr">Pieskāriens kartei pārslēdz starp pogām un logrīkiem.</string>
     <string name="tap_on_map_to_hide_interface">Pilnekrāna režīms</string>
-    <string name="show_on_top_bar">Rādīt augšējā joslā</string>
     <string name="mark_passed">Atzīmēt skatītos</string>
     <string name="import_gpx_file_description">Var importēt kā izlases punktus vai kā treka (GPX) failu.</string>
     <string name="import_as_gpx">Importēt kā GPX failu</string>

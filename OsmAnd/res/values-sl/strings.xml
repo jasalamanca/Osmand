@@ -2127,7 +2127,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="shared_string_time">Čas</string>
     <string name="total_distance">Skupna razdalja</string>
     
-    <string name="routing_attr_height_relief_smoothness_factor_description">Več ravnin ali več hribovja</string>
     <string name="routing_attr_height_obstacles_name">Uporabi podatke višine</string>
     <string name="routing_attr_height_obstacles_description">Uporabi podatke višine terena po SRTM, ASTER in EU-DEM.</string>
 
@@ -2252,8 +2251,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="enter_gpx_name">Ime datoteke GPX:</string>
     <string name="show_on_map_after_saving">Po shranjevanju pokaži na zemljevidu</string>
     <string name="measurement_tool">Izmeri razdaljo</string>
-    <string name="measurement_tool_altitude">Nadmorska višina: %1$s</string>
-    <string name="measurement_tool_speed">Hitrost: %1$s</string>
     <string name="shared_string_options">Možnosti</string>
     <string name="empty_state_favourites">Dodaj priljubljene</string>
     <string name="import_track">Uvozi sled</string>
@@ -2284,7 +2281,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="move_all_to_history">Premakni vse v zgodovino</string>
     <string name="show_direction">Kazalec smeri</string>
     <string name="sort_by">Razvrsti po</string>
-    <string name="marker_options">Možnosti označb</string>
     <string name="do_not_use_animations">Ne uporabljaj animacij</string>
     <string name="do_not_use_animations_descr">Onemogoči predvajanje animacij v programu.</string>
     <string name="keep_showing_on_map">Prikazuj na zemljevidu</string>
@@ -2329,7 +2325,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="context_menu_item_modify_note">Spremeni sporočilo OSM</string>
     <string name="make_round_trip_descr">Dodaj kopijo začetne točke kot ciljno.</string>
     <string name="make_round_trip">Ustvari krožno potovanje</string>
-    <string name="shared_string_navigate">Začni z navigacijo</string>
     <string name="marker_save_as_track_descr">Izvozi oznake v datoteko:</string>
     <string name="make_active">Označi kot dejavno</string>
     <string name="appearance_on_the_map">Prikaz na zemljevidu</string>
@@ -2353,7 +2348,6 @@ Koda predstavlja območje: %1$s x %2$s</string>
     <string name="coordinate_input_accuracy">%1$d števk</string>
     <string name="go_to_next_field">Pojdi na naslednje polje</string>
     <string name="tap_on_map_to_hide_interface">Celozaslonski način</string>
-    <string name="show_on_top_bar">Pokaži na vrhnji orodni vrstici</string>
     <string name="import_as_gpx">Uvozi kot datoteko GPX</string>
     <string name="import_as_favorites">Uvozi kot priljubljeno</string>
     <string name="import_file">Uvozi datoteko</string>

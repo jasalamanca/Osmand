@@ -1496,14 +1496,11 @@
     <string name="file_with_name_already_exists">Bu adda fayl artıq mövcuddur.</string>
     <string name="gpx_navigation">GPX marşrut</string>
     <string name="measurement_tool">Məsafəni ölç</string>
-    <string name="add_gpx_waypoint_bottom_sheet_title">GPX yol nöqtəsi əlavə et</string>
-    <string name="shared_string_create">Yarat</string>
 <string name="shared_string_options">Seçimlər</string>
     <string name="enter_gpx_name">GPX fayl adı:</string>
     <string name="move_all_to_history">Hamısını tarixçəyə daşı</string>
     <string name="show_direction">Məsafə göstəricisi</string>
     <string name="sort_by">Sırala</string>
-    <string name="marker_options">İşarə seçimləri</string>
     <string name="exit_without_saving">Yadda saxlamadan çıxılsın?</string>
     <string name="save_as_route_point">Marşrut nöqtələri kimi saxla</string>
     <string name="route_point">Marşrut nöqtəsi</string>

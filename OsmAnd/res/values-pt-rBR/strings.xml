@@ -1814,7 +1814,6 @@ Pôr do Sol: %2$s</string>
     <string name="osn_modify_dialog_title">Modificar anotação</string>
     <string name="context_menu_item_modify_note">Modificar anotação do OSM</string>
     <string name="make_round_trip_descr">Adicionar cópia do ponto de partida como destino.</string>
-    <string name="shared_string_navigate">Navegar</string>
     <string name="shared_string_markers">Marcações</string>
     <string name="coordinates_format">Formato das coordenadas</string>
     <string name="use_system_keyboard">Usar teclado do sistema</string>

@@ -2263,7 +2263,6 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="moving_time">Tid i bevægelse</string>
     <string name="max_min">Maks/min</string>
     
-    <string name="range_min_max">Interval = min/maks</string>
     <string name="min_max">Min/maks</string>
     <string name="rendering_value_translucent_pink_name">Gennemsigtig lyserød</string>
     <string name="quick_action_resume_pause_navigation">Genoptag/pause navigation</string>
@@ -2276,8 +2275,6 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="retry">Prøv igen</string>
     <string name="measurement_tool">Mål afstand</string>
     <string name="measurement_tool_action_bar">Gennemse kortet og tilføj punkter</string>
-    <string name="add_gpx_waypoint_bottom_sheet_title">Tilføj gpx rutepunkt</string>
-    <string name="shared_string_create">Opret</string>
 <string name="none_point_error">Tilføj mindst ét punkt.</string>
     <string name="enter_gpx_name">GPX filnavn:</string>
     <string name="show_on_map_after_saving">Vis på kort efter at have gemt</string>
@@ -2286,8 +2283,6 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="save_route_point">Gem rutepunkt</string>
     <string name="waypoint_one">Rutepunkt 1</string>
     <string name="route_point_one">Rutepunkt 1</string>
-    <string name="measurement_tool_altitude">Højde: %1$s</string>
-    <string name="measurement_tool_speed">Hastighed: %1$s</string>
     <string name="line">Linje</string>
     <string name="save_as_route_point">Gem som rutepunkt</string>
     <string name="save_as_line">Gem som linje</string>
@@ -2316,7 +2311,6 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="move_all_to_history">Flyt alle til historik</string>
     <string name="show_direction">Afstandsangivelse</string>
     <string name="sort_by">Sorter efter</string>
-    <string name="marker_options">Markør indstillinger</string>
     <string name="shared_string_list">Liste</string>
     <string name="shared_string_groups">Grupper</string>
     <string name="today">I dag</string>
@@ -2361,7 +2355,6 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="routing_attr_avoid_ice_roads_fords_description">Undgå isglatte veje og vadesteder.</string>
     <string name="make_round_trip_descr">Tilføj kopi af startpunktet som destination.</string>
     <string name="make_round_trip">Foretag rundtur</string>
-    <string name="shared_string_navigate">Naviger</string>
     <string name="osn_modify_dialog_error">Der opstod en undtagelse: noten blev ikke ændret</string>
     <string name="osn_modify_dialog_title">Ændre note</string>
     <string name="context_menu_item_modify_note">Ændre OSM note</string>
@@ -2383,7 +2376,6 @@ Repræsenterer område: %1$s x %2$s</string>
     <string name="import_file">Importer fil</string>
 	<string name="tap_on_map_to_hide_interface_descr">Et tryk på kortet skifter mellem at vise eller skjule kontrolknapper og moduler.</string>
     <string name="tap_on_map_to_hide_interface">Fuldskærmstilstand</string>
-    <string name="show_on_top_bar">Vis på topbjælken</string>
     <string name="mark_passed">Marker som passeret</string>
     <string name="rename_marker">Omdøb markør</string>
     <string name="digits_quantity">Antal decimaler</string>

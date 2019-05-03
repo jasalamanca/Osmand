@@ -1960,7 +1960,6 @@
     <string name="context_menu_item_modify_note">OSM notunu değiştir</string>
     <string name="make_round_trip_descr">Başlangıç noktasının bir kopyasını varış noktası olarak ekle.</string>
     <string name="make_round_trip">Gidiş-dönüş seyahat yap</string>
-    <string name="shared_string_navigate">Git</string>
     <string name="coordinates_format">Koordinat biçimi</string>
     <string name="use_system_keyboard">Sistemde tanımlı klavyeyi kullan</string>
     <string name="fast_coordinates_input_descr">Koordinat giriş biçimini seç. Bunu her zaman Seçenekler\'den değiştirebilirsiniz.</string>
@@ -2002,7 +2001,6 @@
     <string name="go_to_next_field">Sonraki alana git</string>
     <string name="rename_marker">İşaretçiyi yeniden adlandır</string>
     <string name="tap_on_map_to_hide_interface">Tam ekran modu</string>
-    <string name="show_on_top_bar">Üst Menüde Görüntüle</string>
     <string name="import_as_favorites">Sık kullanılanlar olarak içeri aktar</string>
     <string name="import_file">Dosyayı içe aktar</string>
 	<string name="wrong_input">Yanlış girdi</string>

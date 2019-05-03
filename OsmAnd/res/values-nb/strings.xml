@@ -1942,8 +1942,6 @@
     <string name="quick_action_start_stop_navigation_descr">Trykk på denne knappen for å starte eller avslutte navigeringen.</string>
     <string name="store_tracks_in_monthly_directories">Lagre spor som er tatt opp i månedlige mapper</string>
     <string name="store_tracks_in_monthly_directories_descrp">Lagre spor som er tatt opp, i undermapper per opptaksmåned (f.eks. 2017-01).</string>
-    <string name="measurement_tool_altitude">Høyde: %1$s</string>
-    <string name="measurement_tool_speed">Hastighet: %1$s</string>
     <string name="line">Linje</string>
     <string name="save_as_route_point">Lagre som rutepunkter</string>
     <string name="save_as_line">Lagre som linje</string>
@@ -1985,7 +1983,6 @@
     <string name="move_all_to_history">Flytt alle til historikk</string>
     <string name="show_direction">Avstandsangivelse</string>
     <string name="sort_by">Sorter etter</string>
-    <string name="marker_options">Markøralternativer</string>
     <string name="shared_string_paused">I pausemodus</string>
     <string name="shared_string_groups">Grupper</string>
     <string name="make_active">Aktiver</string>
@@ -2129,7 +2126,6 @@
     <string name="shared_string_road">Vei</string>
     <string name="show_map">Vis kart</string>
     <string name="route_is_calculated">Rute blir beregnet</string>
-    <string name="shared_string_navigate">Naviger</string>
     <string name="round_trip">Rundtur</string>
     <string name="plan_route_no_markers_toast">Du må legge til minst en markør for å bruke denne funksjonen.</string>
     <string name="make_round_trip_descr">Legg til kopi av startpunktet som reisemål.</string>
@@ -2141,7 +2137,6 @@
 	<string name="marker_show_distance_descr">Velg hvordan avstand og retning til kartmarkører på kartskjermen angis:</string>
     <string name="import_gpx_file_description">kan importeres som favorittpunkter, eller som sporfil.</string>
     <string name="tap_on_map_to_hide_interface">Fullskjermmodus</string>
-    <string name="show_on_top_bar">Vis på topplinjen</string>
     <string name="appearance_on_the_map">Utseende på kartet</string>
     <string name="add_group">Legg til en gruppe</string>
     <string name="empty_state_markers_groups">Importer grupper</string>
@@ -2244,11 +2239,6 @@
     <string name="context_menu_read_full_article">Les hele artikkelen</string>
     <string name="context_menu_read_article">Les artikkel</string>
     <string name="context_menu_points_of_group">Alle punkter i gruppen</string>
-    <string name="opened_from">Åpen fra</string>
-    <string name="opened_till">Åpen til</string>
-    <string name="will_be_closed_at">Stenger</string>
-    <string name="will_be_opened_at">Åpner</string>
-    <string name="will_be_opened_on">Åpner</string>
     <string name="quick_action_add_poi_descr">Trykk på handlingsknappen vil legge til et interessepunkt midt på skjermen.</string>
     <string name="open_from">Åpen fra</string>
     <string name="open_till">Åpen til</string>

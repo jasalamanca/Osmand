@@ -2133,7 +2133,6 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="auto_split_recording_title">Automatyczne dzielenie nagrań po przerwie</string>
 	<string name="auto_split_recording_descr">Rozpoczyna nowy segment po 6 min przerwy, nową trasę po 2 h i nowy plik po dłuższej przerwie, jeżeli data ulegnie zmianie.</string>
 
-    <string name="routing_attr_height_relief_smoothness_factor_description">Więcej równin lub więcej wzgórz</string>
     <string name="routing_attr_height_obstacles_name">Użyj danych wysokościowych</string>
     <string name="routing_attr_height_obstacles_description">Używa danych wysokościowych dostarczanych przez SRTM, ASTER i EU-DEM.</string>
 
@@ -2270,8 +2269,6 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="add_waypoint">Dodaj punkt orientacyjny</string>
     <string name="save_gpx_waypoint">Zapisz punkt orientacyjny GPX</string>
     <string name="waypoint_one">Punkt orientacyjny 1</string>
-    <string name="measurement_tool_altitude">Wysokość: %1$s</string>
-    <string name="measurement_tool_speed">Prędkość: %1$s</string>
     <string name="line">Linia</string>
     <string name="save_as_route_point">Zapisz jako punkty trasy</string>
     <string name="save_as_line">Zapisz jako linia</string>
@@ -2300,7 +2297,6 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="move_all_to_history">Przenieś wszystkie do historii</string>
     <string name="show_direction">Wskaźnik odległości</string>
     <string name="sort_by">Kolejność sortowania</string>
-    <string name="marker_options">Opcje znacznika</string>
     <string name="marker_show_distance_descr">Proszę wybrać w jaki sposób wskazywać odległość i kierunek do znaczników mapy na ekranie:</string>
     <string name="map_orientation_change_in_accordance_with_speed">Próg zmiany orientacji mapy</string>
     <string name="map_orientation_change_in_accordance_with_speed_descr">Wybiera prędkość, poniżej której orientacja mapy zmieni się z „względem kierunku ruchu” na „względem kompasu”.</string>
@@ -2316,7 +2312,6 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="last_seven_days">Ostatnie 7 dni</string>
     <string name="this_year">Ten rok</string>
     <string name="widget">Widżet</string>
-    <string name="top_bar">Belka górna</string>
     <string name="remove_from_map_markers">Usuń ze znaczników mapy</string>
     <string name="descendingly">malejąco</string>
     <string name="ascendingly">rosnąco</string>
@@ -2354,7 +2349,6 @@ Reprezentuje obszar: %1$s x %2$s</string>
     <string name="context_menu_item_modify_note">Edytuj uwagę OSM</string>
     <string name="make_round_trip_descr">Dodaj kopię punktu początkowego jako punkt końcowy.</string>
     <string name="make_round_trip">Zamknięta trasa</string>
-    <string name="shared_string_navigate">Nawiguj</string>
     <string name="fast_coordinates_input">Szybkie wprowadzanie współrzędnych</string>
     <string name="rendering_value_darkyellow_name">Ciemno żółty</string>
     <string name="wrong_input">Nieprawidłowe dane</string>

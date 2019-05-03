@@ -110,7 +110,6 @@
     <string name="context_menu_item_modify_note">Ձևափոխել OSM նշումը</string>
     <string name="make_round_trip_descr">Ավելացնել սկզբնակետի պատճեն որպես նպատակակետ։</string>
     <string name="make_round_trip">Կլոր ուղևորություն</string>
-    <string name="shared_string_navigate">Նավարկել</string>
     <string name="shared_string_markers">Մարկերներ</string>
     <string name="coordinates_format">Կոորդինատների ձեւաչափը</string>
     <string name="use_system_keyboard">Օգտագործել համակարգի ստեղնաշարը</string>

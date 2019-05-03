@@ -2131,7 +2131,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="shared_string_time">Idő</string>
     <string name="total_distance">Teljes táv</string>
     
-    <string name="routing_attr_height_relief_smoothness_factor_description">Síkabb vagy dombosabb</string>
     <string name="routing_attr_height_obstacles_name">Magasságadatok használata</string>
     <string name="routing_attr_height_obstacles_description">Terepmagasság használata SRTM, ASTER és EU-DEM domborzatmodellekből.</string>
 
@@ -2307,7 +2306,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="context_menu_item_modify_note">OSM-megjegyzés módosítása</string>
     <string name="make_round_trip_descr">Kiindulási pont másolatának hozzáadása célpontként.</string>
     <string name="make_round_trip">Körút készítése</string>
-    <string name="shared_string_navigate">Navigáció</string>
     <string name="show_map">Térkép megjelenítése</string>
     <string name="route_is_calculated">Útvonal kiszámítva</string>
     <string name="round_trip">Körtúra</string>
@@ -2389,7 +2387,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="rename_marker">Jelölő átnevezése</string>
     <string name="tap_on_map_to_hide_interface_descr">Egy koppintás a térképen ki/be kapcsolja a gombokat.</string>
     <string name="tap_on_map_to_hide_interface">Teljes képernyős mód</string>
-    <string name="show_on_top_bar">Megjelenítés a felső sávon</string>
     <string name="import_gpx_file_description">importálható kedvencek pontként, vagy nyomvonal fájlként.</string>
     <string name="what_is_here">Mi van itt:</string>
     <string name="parked_at">leparkolva ekkor:</string>

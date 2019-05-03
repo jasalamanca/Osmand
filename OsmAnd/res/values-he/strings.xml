@@ -1224,7 +1224,6 @@
     <string name="app_modes_choose">פרופילי יישומון</string>
     <string name="map_widget_map_rendering">עיבוד מפה</string>
     <string name="make_round_trip_descr">הוספת עותק של נקודת ההתחלה כיעד.</string>
-    <string name="shared_string_navigate">ניווט</string>
     <string name="shared_string_markers">סמנים</string>
     <string name="use_system_keyboard">שימוש במקלדת המערכת</string>
     <string name="use_location">שימוש במיקום</string>
@@ -1235,7 +1234,6 @@
     <string name="marker_save_as_track">שמירה כמסלול</string>
     <string name="move_to_history">העברה להיסטוריה</string>
     <string name="tap_on_map_to_hide_interface">מצב מסך מלא</string>
-    <string name="show_on_top_bar">הצגה בסרגל העליון</string>
     <string name="import_gpx_file_description">ניתן לייבא כנקודות מועדפות או כקובץ מסלול.</string>
     <string name="import_as_gpx">ייבוא כקובץ GPX</string>
     <string name="import_as_favorites">ייבוא כמועדפים</string>
