@@ -304,7 +304,6 @@ La memoria utilizzata è  {1} MB.
 
     <string name="voice">Voci registrate</string>
     <string name="no_vector_map_loaded">Mappe vettoriali non sono state caricate</string>
-    <string name="map_route_by_gpx">Percorso tramite GPX</string>
     <string name="gpx_files_not_found">File GPX non trovati nella cartella tracce</string>
     <string name="layer_gpx_layer">Percorso GPX…</string>
     <string name="error_reading_gpx">Errore lettura dati GPX</string>
@@ -1015,8 +1014,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
 
 
     <string name="complex_route_calculation_failed">Calcolo veloce del percorso fallita (%s), rinvio al calcolo lento.</string>
-    <string name="disable_complex_routing_descr">Disabilita il calcolo del percorso in due fasi per l\'uso in automobile.</string>
-    <string name="disable_complex_routing">Disabilita il calcolo complesso del percorso</string>
     <string name="speech_rate_descr">Imposta la velocità della sintesi vocale TTS.</string>
     <string name="speech_rate">Velocità di lettura</string>
     <string name="guidance_preferences_descr">Preferenze di navigazione</string>

@@ -327,8 +327,6 @@ Punktaŭ maršrutu %2$s</string>
     <string name="speech_rate">Chutkaść vymaŭleńnia</string>
     
     <string name="complex_route_calculation_failed">Chutkі raźlik maršrutu nia ŭdaŭsia (%s), pierachod na marudny razlik.</string>
-    <string name="disable_complex_routing_descr">Adkliučennie dźviuch faznaj maršrutyzacyi dlia aŭtamabiĺnaj navihacyi.</string>
-    <string name="disable_complex_routing">Adklučyć składanuju maršrutyzacyju</string>
     <string name="amenity_type_seamark">Navіhacyjny znak (bakien)</string>
     <string name="app_modes_choose_descr">Abiarycie profili karystannia, bačnyja ŭ prahramie.</string>
     <string name="app_modes_choose">Profіli dastasavańnia</string>
@@ -1066,7 +1064,6 @@ Praparcyjnaj pamiacі %4$s MB (Abmiežavańnie Android %5$s MB, Dalvik %6$s MB).
 	<string name="voice">Zapіsany hołas</string>
 	<string name="voices">Hałasavyja padkazkі</string>
 	<string name="no_vector_map_loaded">Viektarnyja mapy nie byli zahružany</string>
-	<string name="map_route_by_gpx">Navіhacyja z vykarystańniem GPX</string>
 	<string name="gpx_files_not_found">GPX fajły nie znojdzieny ŭ katałohu tracks</string>
 	<string name="layer_gpx_layer">GPX-śled…</string>
 	<string name="error_reading_gpx">Pamyłka pry čytańnі GPX dadzienych</string>

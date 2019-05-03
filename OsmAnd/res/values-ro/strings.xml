@@ -574,7 +574,6 @@
 	
 	<string name="voice">Voce înregistrată</string>
 	<string name="no_vector_map_loaded">Hărțile vectoriale nu au fost încărcate</string>
-	<string name="map_route_by_gpx">Navigare folosind GPX</string>
 	<string name="gpx_files_not_found">Nu au fost găsite fișiere GPX în directorul tracks</string>
 	<string name="layer_gpx_layer">Trasee GPX…</string>
 	<string name="error_reading_gpx">Eroare la citirea datelor GPX</string>
@@ -1052,8 +1051,6 @@
 	<string name="routing_attr_prefer_motorway_description">Preferă autostrăzi</string>
 	
 	
-    <string name="disable_complex_routing_descr">Dezactivează rutarea în 2 faze pentru navigarea auto</string>
-    <string name="disable_complex_routing">Dezactivează rutarea complexă</string>
     <string name="amenity_type_seamark">Baliză</string>
     
 	<string name="traffic_warning_speed_limit">Limită viteză</string>

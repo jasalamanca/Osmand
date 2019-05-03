@@ -350,7 +350,6 @@
 
     <string name="voice">Taleopptak</string>
     <string name="no_vector_map_loaded">Vektorkart ble ikke lastet</string>
-    <string name="map_route_by_gpx">Naviger ved bruk av GPX</string>
     <string name="vector_data">Offline vektorkart</string>
 
     
@@ -1768,8 +1767,6 @@
     <string name="speech_rate_descr">Angi talehastigheten for TTS.</string>
     <string name="speech_rate">Talehastighet</string>
     <string name="complex_route_calculation_failed">Rask ruteberegning mislyktes (%s), faller tilbake på treg beregning.</string>
-    <string name="disable_complex_routing_descr">Slå av 2-fase ruteplanlegging for bilnavigering.</string>
-    <string name="disable_complex_routing">Slå av kompleks ruteplanlegging</string>
     <string name="app_modes_choose_descr">Velg bruksprofilene som skal være synlige i programmet.</string>
     <string name="intermediate_items_sort_by_distance">Sorter dør-til-dør</string>
     <string name="local_osm_changes_backup">Sikkerhetskopier som OSM-endring</string>

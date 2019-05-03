@@ -459,7 +459,6 @@
   
   <string name="voice">Голосові дані (запис)</string>
   <string name="no_vector_map_loaded">Векторні мапи не завантажено</string>
-  <string name="map_route_by_gpx">Навігація по GPX</string>
   <string name="gpx_files_not_found">Файли GPX не знайдені в теці з треками</string>
   <string name="layer_gpx_layer">Трек GPX…</string>
   <string name="error_reading_gpx">Помилка читання GPX даних</string>
@@ -1251,8 +1250,6 @@
     <string name="speech_rate">Швидкість вимови</string>
     
     <string name="complex_route_calculation_failed">Збій швидкого прокладання маршруту (%s), перемикання на повільний режим обчислення.</string>
-    <string name="disable_complex_routing_descr">Вимикання 2-фазної маршрутизації для автомобільної навігації.</string>
-    <string name="disable_complex_routing">Вимкнути складну маршрутизацію</string>
     <string name="amenity_type_seamark">Навігаційний знак</string>
     <string name="app_modes_choose_descr">Виберіть профілі, видимі в застосунку.</string>
     <string name="app_modes_choose">Профілі застосунку</string>

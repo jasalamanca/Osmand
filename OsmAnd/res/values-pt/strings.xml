@@ -92,7 +92,6 @@
   <string name="voice">Vozes</string>
   <string name="no_vector_map_loaded">Nenhum mapa vetorial foi carregado</string>
   <string name="gpx_option_reverse_route">Caminho reverso</string>
-  <string name="map_route_by_gpx">Navegar usando GPX</string>
   <string name="gpx_files_not_found">Nenhum arquivo GPX encontrado no diretório /tracks</string>
   <string name="layer_gpx_layer">Rota GPX…</string>
   <string name="error_reading_gpx">Erro na leitura de dados GPX</string>
@@ -1208,8 +1207,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="index_name_italy">Europa - Itália</string>
     <string name="index_name_gb">Europa - Grã-Bretanha</string>
     <string name="complex_route_calculation_failed">Cálculo rápido de rota falhou (%s), voltando para cálculo lento.</string>
-    <string name="disable_complex_routing_descr">Desativar encaminhamento de 2 fases para navegação automóvel</string>
-    <string name="disable_complex_routing">Desativar roteamento complexo</string>
     <string name="interrupt_music_descr">Interromper música quando faz o anúncio</string>
 	<string name="interrupt_music">Interromper música</string>
 	<string name="share_route_as_gpx">Partilhar rota como arquivo GPX</string>

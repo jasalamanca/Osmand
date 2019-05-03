@@ -553,7 +553,6 @@
     <string name="transport_search_again">Искать транспорт заново</string>
     <string name="voice">Голосовые данные (запись)</string>
     <string name="no_vector_map_loaded">Векторные карты не загружены в приложение</string>
-    <string name="map_route_by_gpx">Навигация по GPX</string>
     <string name="gpx_files_not_found">Файлы GPX не найдены в папке с треками</string>
     <string name="layer_gpx_layer">Трек GPX…</string>
     <string name="error_reading_gpx">Ошибка чтения данных GPX</string>
@@ -1148,7 +1147,6 @@
     <string name="routing_attr_weight_description">Укажите массу автомобиля для учёта при построении маршрута.</string>
     <string name="map_widget_map_rendering">Отображение карты</string>
     <string name="amenity_type_seamark">Навигационные знаки (водоемы)</string>
-    <string name="disable_complex_routing">Отключить сложную маршрутизацию</string>
     <string name="speech_rate_descr">Укажите скорость произношения для TTS.</string>
     <string name="guidance_preferences_descr">Настройки навигации</string>
     <string name="routing_preferences_descr">Настройки маршрутизации</string>
@@ -1164,7 +1162,6 @@
 \n Примечание 2: При переносе файлов в новое хранилище совместное использование файлов OsmAnd и OsmAnd+ не возможно.</string>
     <string name="copying_osmand_one_file_descr">Копирование файла (%s) на новое место…</string>
     <string name="copying_osmand_files_descr">Копирование файлов данных OsmAnd на новое место (%s)…</string>
-    <string name="disable_complex_routing_descr">Отключение 2-фазной маршрутизации для автомобильной навигации.</string>
     <string name="complex_route_calculation_failed">Быстрое построение маршрута не удалось (%s), отмените для возврата к медленному построению.</string>
     <string name="map_magnifier">Масштаб</string>
     <string name="select_gpx">Выберите GPX…</string>

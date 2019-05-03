@@ -534,7 +534,6 @@
 	<string name="voices">Sprachansagen</string>
 	<string name="voice">Sprachansage</string>
 	<string name="no_vector_map_loaded">Offline-Daten wurden nicht geladen</string>
-	<string name="map_route_by_gpx">Navigation mittels GPX</string>
 	<string name="layer_gpx_layer">GPX-Track…</string>
 	<string name="error_reading_gpx">Fehler beim Lesen der GPX-Daten</string>
 	<string name="vector_data">Offline-Vektor-Karten</string>
@@ -1087,8 +1086,6 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="speech_rate_descr">Sprachgeschwindigkeit der TTS-Ausgabe bestimmen.</string>
 	<string name="speech_rate">Sprachgeschwindigkeit</string>
 	<string name="complex_route_calculation_failed">Schnelle Routenberechnung fehlgeschlagen (%s), Rückfall auf langsame Berechnung.</string>
-	<string name="disable_complex_routing_descr">Zwei-Phasen-Routing für Autonavigation deaktivieren.</string>
-	<string name="disable_complex_routing">Komplexes Routing deaktivieren</string>
 	<string name="shared_string_select_on_map">Auf Karte auswählen</string>
 	<string name="shared_string_favorite">Favorit</string>
 	<string name="route_preferences">Routing-Einstellungen</string>

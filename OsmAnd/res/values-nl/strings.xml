@@ -421,7 +421,6 @@ Er is nu {2} MB beschikbaar</string>
   
   <string name="voice">Opgenomen stem</string>
   <string name="no_vector_map_loaded">Geen vectorkaarten geladen</string>
-  <string name="map_route_by_gpx">Navigeer met GPX-bestand</string>
   <string name="gpx_files_not_found">Geen GPX-bestanden gevonden in de tracks-map</string>
   <string name="layer_gpx_layer">GPX-track…</string>
   <string name="error_reading_gpx">Fout bij het lezen van GPX-gegevens</string>
@@ -1040,8 +1039,6 @@ Proportioneel werkgeheugen %4$s MB (Android limiet %5$s MB, Dalvik %6$s MB).</st
     
     
     <string name="complex_route_calculation_failed">Snelle routeberekening mislukt (%s), terug naar langzame berekening.</string>
-    <string name="disable_complex_routing_descr">2-traps routeberekening voor auto uitschakelen</string>
-    <string name="disable_complex_routing">Complexe routeberekening uitschakelen</string>
     <string name="speech_rate_descr">Stel de snelheid van de stem in</string>
     <string name="speech_rate">Snelheid van de stem</string>
     <string name="guidance_preferences_descr">Navigatievoorkeuren</string>

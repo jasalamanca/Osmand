@@ -377,7 +377,7 @@ public class RoutingHelper {
 		}
 
 		double projectDist = mode != null && mode.hasFastSpeed() ? posTolerance : posTolerance / 2;
-		if(returnUpdatedLocation && locationProjection != null && currentLocation.distanceTo(locationProjection) < projectDist) {
+		if(returnUpdatedLocation && currentLocation.distanceTo(locationProjection) < projectDist) {
 			return locationProjection;
 		} else {
 			return currentLocation;
@@ -864,15 +864,10 @@ public class RoutingHelper {
 			}
 			params.leftSide = settings.DRIVING_REGION.get().leftHandDriving;
 			params.fast = settings.FAST_ROUTE_MODE.getModeValue(mode);
-//			params.type = settings.ROUTER_SERVICE.getModeValue(mode);
 			params.mode = mode;
 			params.ctx = app;
-			boolean updateProgress = false;
-//			if (params.type == RouteService.OSMAND) {
-				params.calculationProgress = new RouteCalculationProgress();
-				updateProgress = true;
-//			}
-			startRouteCalculationThread(params, paramsChanged, updateProgress);
+			params.calculationProgress = new RouteCalculationProgress();
+			startRouteCalculationThread(params, paramsChanged, true);
 		}
 	}
 
@@ -934,7 +929,6 @@ public class RoutingHelper {
 	public static void applyApplicationSettings(RouteCalculationParams params, OsmandSettings settings, ApplicationMode mode) {
 		params.leftSide = settings.DRIVING_REGION.get().leftHandDriving;
 		params.fast = settings.FAST_ROUTE_MODE.getModeValue(mode);
-//		params.type = settings.ROUTER_SERVICE.getModeValue(mode);
 	}
 
 	public void setProgressBar(RouteCalculationProgressCallback progressRoute) {

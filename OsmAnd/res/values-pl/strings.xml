@@ -272,7 +272,6 @@
 
     <string name="voice">Nagrany głos</string>
     <string name="no_vector_map_loaded">Nie wczytano map wektorowych</string>
-    <string name="map_route_by_gpx">Nawiguj używając GPX</string>
     <string name="gpx_files_not_found">Nie odnaleziono plików GPX w katalogu śladów</string>
     <string name="layer_gpx_layer">Ślad GPX…</string>
     <string name="error_reading_gpx">Błąd odczytu danych GPX</string>
@@ -1068,9 +1067,7 @@
     <string name="speech_rate_descr">Określa tempo odtwarzania syntezowanych komunikatów głosowych.</string>
     <string name="speech_rate">Szybkość mowy</string>
 
-    <string name="disable_complex_routing_descr">Wyłącza 2-etapowe wyznaczanie trasy dla nawigacji samochodowej.</string>
     <string name="complex_route_calculation_failed">"Nie udało się szybko wyznaczyć trasę  (%s). Przełączanie na tryb powolny."</string>
-    <string name="disable_complex_routing">Wyłączenie złożonego wyznaczania trasy</string>
     <string name="guidance_preferences_descr">Ustawienia nawigacji</string>
     <string name="routing_preferences_descr">Ustawienia trasy</string>
     <string name="app_mode_truck">Ciężarówka</string>

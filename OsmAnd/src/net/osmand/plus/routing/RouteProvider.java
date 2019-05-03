@@ -1,6 +1,5 @@
 package net.osmand.plus.routing;
 
-
 import net.osmand.Location;
 import net.osmand.PlatformUtil;
 import net.osmand.binary.BinaryMapIndexReader;
@@ -42,7 +41,6 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
 
 public class RouteProvider {
 	private static final org.apache.commons.logging.Log log = PlatformUtil.getLog(RouteProvider.class);
@@ -143,7 +141,7 @@ public class RouteProvider {
 			useIntermediatePointsRTE = builder.useIntermediatePointsRTE;
 			builder.calculateOsmAndRoute = false; // Disabled temporary builder.calculateOsmAndRoute;
 			if (!file.isPointsEmpty()) {
-				wpt = new ArrayList<LocationPoint>(file.getPoints());
+				wpt = new ArrayList<>(file.getPoints());
 			}
 			if (file.isCloudmadeRouteFile() || OSMAND_ROUTER.equals(file.author)) {
 				directions =  parseOsmAndGPXRoute(points, file, OSMAND_ROUTER.equals(file.author), builder.leftSide);
@@ -485,7 +483,7 @@ public class RouteProvider {
 				RouteCalculationMode.NORMAL);
 		
 		RoutingContext complexCtx = null;
-		boolean complex = params.mode.isDerivedRoutingFrom(ApplicationMode.CAR) && !settings.DISABLE_COMPLEX_ROUTING.get()
+		boolean complex = params.mode.isDerivedRoutingFrom(ApplicationMode.CAR)
 				&& precalculated == null;
 		ctx.leftSideNavigation = params.leftSide;
 		ctx.calculationProgress = params.calculationProgress;
@@ -500,8 +498,7 @@ public class RouteProvider {
 			complex = false;
 		}
 		if(complex) {
-			complexCtx = router.buildRoutingContext(cf, lib,files,
-				RouteCalculationMode.COMPLEX);
+			complexCtx = router.buildRoutingContext(cf, lib, files, RouteCalculationMode.COMPLEX);
 			complexCtx.calculationProgress = params.calculationProgress;
 			complexCtx.leftSideNavigation = params.leftSide;
 			complexCtx.previouslyCalculatedRoute = ctx.previouslyCalculatedRoute;
@@ -537,7 +534,7 @@ public class RouteProvider {
 			RoutingParameter pr = e.getValue();
 			String vl;
 			if(key.equals(GeneralRouter.USE_SHORTEST_WAY)) {
-				Boolean bool = !settings.FAST_ROUTE_MODE.getModeValue(params.mode);
+				boolean bool = !settings.FAST_ROUTE_MODE.getModeValue(params.mode);
 				vl = bool ? "true" : null;
 			} else if(pr.getType() == RoutingParameterType.BOOLEAN) {
 				CommonPreference<Boolean> pref = settings.getCustomRoutingBooleanProperty(key, pr.getDefaultBoolean());

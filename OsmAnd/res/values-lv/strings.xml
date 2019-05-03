@@ -429,7 +429,6 @@
   
   <string name="voice">Ierakstīta balss</string>
   <string name="no_vector_map_loaded">Vektoru karte nav ielādēta</string>
-  <string name="map_route_by_gpx">Navigācija pēc GPX</string>
   <string name="gpx_files_not_found">Treku mapē nav atrasts neviens GPX fails</string>
   <string name="layer_gpx_layer">GPX trases…</string>
   <string name="error_reading_gpx">Kļūda, nolasot GPX datus</string>
@@ -1072,8 +1071,6 @@
     <string name="speech_rate">Vārdu ātrums</string>
     
     <string name="complex_route_calculation_failed">Maršruta ātrā aprēķināšana neizdevās (%s), notiks lēnā aprēķināšana.</string>
-    <string name="disable_complex_routing_descr">Izslēgt kompleksu (divfāžu) maršrutēsanu</string>
-    <string name="disable_complex_routing">Izslēgt kompleksu maršrutēšanu</string>
     
 	<string name="android_19_location_disabled">Pēc Android 4.4 (KitKat) atjauninājuma vecā karšu krātuve (%s) nav izmantojama. Vai vēlaties to nomainīt uz jaunu vietu un pārkopēt visus failus?
 \n Piezīme 1: vecie faili paliks neskarti..\n Piezīme 2: jaunajā krātuvē nebūs iespējams koplietot failus starp OsmAnd un OsmAnd+.</string>

@@ -581,7 +581,6 @@
 	
 	<string name="voice">קול מוקלט</string>
 	<string name="no_vector_map_loaded">המפות הווקטוריות לא נטענו</string>
-	<string name="map_route_by_gpx">ניווט באמצעות GPX</string>
 	<string name="gpx_files_not_found">לא נמצאו קובצי GPX בתיקיית המסלולים</string>
 	<string name="layer_gpx_layer">דרך ה־GPX…</string>
 	<string name="error_reading_gpx">שגיאה בקריאת נתוני ה־GPX</string>
@@ -1222,7 +1221,6 @@
     <string name="speech_rate_descr">ציון מהירות דיבור להקראה.</string>
     <string name="speech_rate">מהירות דיבור</string>
     <string name="complex_route_calculation_failed">חישוב נתיב במהירות נכשלה (%s), כעת יתבצע ניסיון לחישוב אטי.</string>
-    <string name="disable_complex_routing">השבתת ניתוב מורכב</string>
     <string name="app_modes_choose">פרופילי יישומון</string>
     <string name="map_widget_map_rendering">עיבוד מפה</string>
     <string name="make_round_trip_descr">הוספת עותק של נקודת ההתחלה כיעד.</string>
@@ -1236,7 +1234,6 @@
     <string name="shared_string_sort">מיון</string>
     <string name="marker_save_as_track">שמירה כמסלול</string>
     <string name="move_to_history">העברה להיסטוריה</string>
-    <string name="disable_complex_routing_descr">השבתת ניתוב דו־שלבי לניווט הרכב.</string>
     <string name="tap_on_map_to_hide_interface">מצב מסך מלא</string>
     <string name="show_on_top_bar">הצגה בסרגל העליון</string>
     <string name="import_gpx_file_description">ניתן לייבא כנקודות מועדפות או כקובץ מסלול.</string>

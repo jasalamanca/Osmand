@@ -452,7 +452,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
 
     <string name="voice">Įrašytas balsas</string>
     <string name="no_vector_map_loaded">Vektoriniai žemėlapiai neįkelti</string>
-    <string name="map_route_by_gpx">Vykdyti navigaciją naudojant GPX</string>
     <string name="gpx_files_not_found">Tracks segtuve nerasta jokių GPX failų</string>
     <string name="layer_gpx_layer">GPX maršrutas…</string>
     <string name="error_reading_gpx">Įvyko klaida skaitant GPX duomenis</string>
@@ -1063,8 +1062,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="speech_rate">Kalbėjimo greitis</string>
 
     <string name="complex_route_calculation_failed">Greitas maršruto apskaičiavimas nepavyko (%s), vykdomas lėtasis skaičiavimas.</string>
-    <string name="disable_complex_routing_descr">Išjungti dviejų etapų maršruto skaičiavimą važiavimui automobiliu.</string>
-    <string name="disable_complex_routing">Išjungti sudėtingą maršruto skaičiavimą</string>
     <string name="guidance_preferences_descr">Navigacijos nustatymai</string>
     <string name="routing_preferences_descr">Maršruto skaičiavimo nustatymai</string>
     <string name="app_mode_truck">Sunkvežimis</string>

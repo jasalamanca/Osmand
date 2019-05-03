@@ -1,15 +1,14 @@
 package net.osmand.plus.development;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Debug;
 import android.os.Debug.MemoryInfo;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
-import android.app.AlertDialog;
 import android.view.View;
 
 import net.osmand.plus.ApplicationMode;
@@ -36,9 +35,6 @@ public class SettingsDevelopmentActivity extends SettingsBaseActivity {
 		CheckBoxPreference dbg = createCheckBoxPreference(settings.DEBUG_RENDERING_INFO,
 				R.string.trace_rendering, R.string.trace_rendering_descr);
 		cat.addPreference(dbg);
-
-		cat.addPreference(createCheckBoxPreference(settings.DISABLE_COMPLEX_ROUTING,
-				R.string.disable_complex_routing, R.string.disable_complex_routing_descr));
 
 		cat.addPreference(createCheckBoxPreference(settings.USE_FAST_RECALCULATION,
 				R.string.use_fast_recalculation, R.string.use_fast_recalculation_desc));

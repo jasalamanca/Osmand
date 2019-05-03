@@ -1251,8 +1251,6 @@
     <string name="app_mode_truck">Yük maşını</string>
     <string name="speech_rate_descr">TTS üçün danışıq sürəti təyin edin.</string>
     <string name="speech_rate">Danışıq sürəti</string>
-    <string name="disable_complex_routing_descr">Avtomobil naviqasiyası üçün 2 mərhələli marşrutlamanı söndür.</string>
-    <string name="disable_complex_routing">Mürəkkəb marşrutlamanı söndür</string>
     <string name="amenity_type_seamark">Dəniz işarəsi</string>
     <string name="app_modes_choose_descr">Proqramda görünəcək istifadə profillərini seçin.</string>
     <string name="map_widget_map_rendering">Xəritənin göstərilməsi</string>

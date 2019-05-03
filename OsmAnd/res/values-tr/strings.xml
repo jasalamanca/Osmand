@@ -778,7 +778,6 @@
 	<string name="transport_searching_transport">Ulaştırma sonuçları (hedef yok):</string>
 	<string name="transport_searching_route">Ulaşım sonuçları (hedefe {0}):</string>
 	<string name="transport_search_again">Taşıma aramasını sıfırla</string>
-	<string name="map_route_by_gpx">GPX kullanarak gez</string>
 	<string name="gpx_files_not_found">GPX dosyaları /tracks dizininde bulunamadı</string>
 	<string name="error_reading_gpx">GPX verisi okunamıyor</string>
 	<string name="poi_context_menu_modify">İÇN düzenle</string>
@@ -930,8 +929,6 @@
     <string name="speech_rate">Hoparlör yerleşimi</string>
     
     <string name="complex_route_calculation_failed">Hızlı rota hesaplama ( $1%s) başarısız oldu , hesaplama yavaş çare .</string>
-    <string name="disable_complex_routing_descr">Araba navigasyonu için 2 fazlı yönlendirmesi devre dışı bırakın</string>
-    <string name="disable_complex_routing">Karmaşık yönlendirmesi devre dışı bırakın</string>
     <string name="amenity_type_seamark">Mark Deniz</string>
     <string name="app_modes_choose_descr"/>
     <string name="app_modes_choose">Uygulama Profilleri</string>

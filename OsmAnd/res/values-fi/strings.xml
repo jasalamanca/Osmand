@@ -1492,8 +1492,6 @@ Jälki %2$s</string>
     <string name="guidance_preferences_descr">Suunnistusvalinnat</string>
     <string name="routing_preferences_descr">Reititysvalinnat</string>
     <string name="complex_route_calculation_failed">Nopea reitin laskenta epäonnistui (%s), palataan hitaaseen laskentaan.</string>
-    <string name="disable_complex_routing_descr">Poista käytöstä 2-vaiheinen reititys autosuunnistukseen</string>
-    <string name="disable_complex_routing">Poista käytöstä moniosainen reititys</string>
     <string name="app_modes_choose">Sovellutusprofiilit</string>
     <string name="app_mode_hiking">Retkeily</string>
     <string name="local_osm_changes_delete_all_confirm">Olet poistamassa %1$d OSM muutosta. Oletko varma?</string>
@@ -1797,7 +1795,6 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
     <string name="poi_context_menu_call">Näytä POIn puhelinnumero</string>
     <string name="use_high_res_maps">Korkean resoluution näyttö</string>
     <string name="no_vector_map_loaded">Vektorikarttoja ei ladattu</string>
-    <string name="map_route_by_gpx">Suunnista GPX:ää käyttäen</string>
     <string name="gpx_files_not_found">GPX tiedostoja ei löytynyt jälkien hakemistosta</string>
     <string name="error_reading_gpx">Virhe luettaessa GPX dataa</string>
     <string name="vector_data">Offline vektorikartat</string>

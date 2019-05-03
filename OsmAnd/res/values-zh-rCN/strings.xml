@@ -270,7 +270,6 @@
 	
 	
 	<string name="voice">声音</string>
-	<string name="map_route_by_gpx">导航使用GPX</string>
 	<string name="gpx_files_not_found">GPX文件中找不到/曲目目录</string>
 	<string name="layer_gpx_layer">GPX轨迹…</string>
 	<string name="error_reading_gpx">GPX数据读取错误</string>
@@ -1809,8 +1808,6 @@
     <string name="speech_rate_descr">指定 TTS 语音率</string>
     <string name="speech_rate">语速</string>
     <string name="complex_route_calculation_failed">快速路径计算失败 (%s)，回退到缓慢的计算。</string>
-    <string name="disable_complex_routing_descr">汽车导航时禁用双阶段路线</string>
-    <string name="disable_complex_routing">禁用复杂路线</string>
     <string name="amenity_type_seamark">航标</string>
     <string name="app_modes_choose_descr">在应用程序中选择使用的配置文件</string>
     <string name="app_modes_choose">应用程序配置文件</string>

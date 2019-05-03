@@ -138,7 +138,6 @@
 	
 	<string name="voice">Снимљени глас</string>
 	<string name="no_vector_map_loaded">Векторске мапе нису учитане</string>
-	<string name="map_route_by_gpx">Навигација помоћу GPX</string>
 	<string name="gpx_files_not_found">Нема GPX фајлова у фасцикли стаза</string>
 	<string name="error_reading_gpx">Грешка при читању GPX података</string>
 	

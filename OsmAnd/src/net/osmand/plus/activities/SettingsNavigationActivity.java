@@ -4,8 +4,6 @@ import android.app.AlertDialog;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
@@ -409,7 +407,7 @@ public class SettingsNavigationActivity extends SettingsBaseActivity {
 		}
 		super.onPreferenceChange(preference, newValue);
 		if (id.equals(settings.WAKE_ON_VOICE_INT.getId())) {
-			Integer value;
+			int value;
 			try {
 				value = Integer.parseInt(newValue.toString());
 			} catch (NumberFormatException e) {

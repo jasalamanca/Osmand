@@ -583,7 +583,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
 
     <string name="voice">Optaget stemme</string>
     <string name="no_vector_map_loaded">Vektorkort blev ikke indlæst</string>
-    <string name="map_route_by_gpx">Naviger med GPX</string>
     <string name="gpx_files_not_found">Ingen GPX-filer blev fundet i \'/tracks\' mappen</string>
     <string name="layer_gpx_layer">GPX-spor…</string>
     <string name="error_reading_gpx">Fejl under læsning af GPX-data</string>
@@ -1013,8 +1012,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="speech_rate">Talehastighed</string>
 
     <string name="complex_route_calculation_failed">Hurtig ruteberegning mislykkedes (%s), går tilbage til langsom beregning.</string>
-    <string name="disable_complex_routing_descr">Deaktiver 2-faset ruteplanlægning til bilnavigation.</string>
-    <string name="disable_complex_routing">Deaktiver kompleks ruteplanlægning</string>
     <string name="guidance_preferences_descr">Indstillinger for navigation</string>
     <string name="routing_preferences_descr">Indstillinger for ruteplanlægning</string>
     <string name="app_mode_truck">Lastbil</string>

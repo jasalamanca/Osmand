@@ -328,7 +328,6 @@
 
     <string name="voice">Voix enregistrée</string>
     <string name="no_vector_map_loaded">Aucune carte vectorielle n\'a été chargée</string>
-    <string name="map_route_by_gpx">Naviguer en utilisant l\'itinéraire GPX enregistré</string>
     <string name="gpx_files_not_found">Aucun fichier GPX n\'a été trouvé dans le dossier de traces</string>
     <string name="layer_gpx_layer">Trace GPX…</string>
     <string name="error_reading_gpx">Erreur de lecteur des données GPX</string>
@@ -1059,8 +1058,6 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="speech_rate">Vitesse d\'élocution</string>
 
     <string name="complex_route_calculation_failed">Échec du calcul rapide de la route (%s), essai avec la méthode lente.</string>
-    <string name="disable_complex_routing_descr">Désactiver le routage en 2 phases pour la navigation en voiture.</string>
-    <string name="disable_complex_routing">Désactiver le routage complexe</string>
     <string name="guidance_preferences_descr">Paramètres de navigation</string>
     <string name="routing_preferences_descr">Paramètres d\'itinéraire</string>
     <string name="android_19_location_disabled">Depuis Android 4.4 (KitKat), vous ne pouvez plus télécharger et mettre à jour les cartes dans le dossier (%s) utilisé jusqu\'à présent. Voulez-vous utiliser le nouveau dossier et y copier l\'ensemble des fichiers OsmAnd ?

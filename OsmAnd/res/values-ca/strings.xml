@@ -620,7 +620,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="renderers_descr">Trieu l\'aparença de dibuixat.</string>
     <string name="transport_searching_transport">Resultats de transport (cap destí):</string>
     <string name="transport_searching_route">Resultats de transport ({0} al destí):</string>
-    <string name="map_route_by_gpx">Navega utilitzant un GPX</string>
     
     
     <string name="voice_data_unavailable">Les dades de veu seleccionades no estan disponibles</string>
@@ -922,8 +921,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="speech_rate_descr">Especifiqueu la velocitat en la síntesi de veu.</string>
     <string name="speech_rate">Velocitat de lectura</string>
     <string name="complex_route_calculation_failed">El càlcul ràpid de ruta ha fallat (%s), retorn al mètode lent.</string>
-    <string name="disable_complex_routing_descr">Desactiva el càlcul de ruta en 2 fases per cotxe.</string>
-    <string name="disable_complex_routing">Desactiva el càlcul complex de la ruta</string>
 
     <string name="map_widget_fps_info">Info depuració FPS</string>
     <string name="intermediate_items_sort_return">S\'han reordenat les fites per optimitzar la ruta que les inclou des de la ubicació actual fins a la destinació.</string>

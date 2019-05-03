@@ -769,8 +769,6 @@ Lon: %2$s</string>
     <string name="speech_rate_descr">Agordi lud-rapidon por parolsintezitaj dialogaj helpoj.</string>
     <string name="speech_rate">Voĉa rapido</string>
     <string name="complex_route_calculation_failed">Eraro dum rapida kalkulado de kurso (%s), retropaŝanta malrapidan kalkuladon.</string>
-    <string name="disable_complex_routing_descr">Malaktivigi 2-fazan difinadon de kurso por aŭt-navigado.</string>
-    <string name="disable_complex_routing">Malaktivigi komplikan difinadon de vojo</string>
     <string name="amenity_type_seamark">Mara navigadpunkto</string>
     <string name="app_modes_choose">Aplikaĵaj profiloj</string>
     <string name="app_modes_choose_descr">Elekti profilojn de uzado por esti videblaj en la aplikaĵo.</string>
@@ -1422,7 +1420,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="voice">Registrita voĉo</string>
     <string name="voices">Voĉaj avertoj</string>
     <string name="no_vector_map_loaded">Ne ŝargis vektorajn mapojn</string>
-    <string name="map_route_by_gpx">Navigi per GPX</string>
     <string name="vector_data">Eksterretaj vektoraj mapoj</string>
     <string name="transport_context_menu">Serĉi transporton ĉe haltejo</string>
     <string name="poi_context_menu_modify">Modifi interesejon</string>

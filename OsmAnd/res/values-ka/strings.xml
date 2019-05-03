@@ -445,7 +445,6 @@
   
   <string name="voice">ხმა</string>
   <string name="no_vector_map_loaded">ვექტორული რუკები ჩატვირთული არ იქნა</string>
-  <string name="map_route_by_gpx">ნავიგაცია GPX-ის გამოყენებით</string>
   <string name="gpx_files_not_found">GPX ფაილები /tracks დასტაში ნაპოვნი არ იქნა</string>
   <string name="layer_gpx_layer">GPX მიყოლა…</string>
   <string name="error_reading_gpx">GPX მონაცემების კითხვის შეცდომა</string>

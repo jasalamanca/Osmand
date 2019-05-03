@@ -283,7 +283,6 @@
     <string name="routing_attr_avoid_borders_name">ബോര്‍ഡര്‍ ക്രോസിങ്ങ് ഒഴിവാക്കുക</string>
     <string name="routing_attr_weight_name">"ഭാരപരിധി "</string>
     <string name="routing_attr_height_name">ഉയരപരിധി</string>
-    <string name="disable_complex_routing">"സങ്കീര്‍ണ്ണമായ   വഴികണ്ടെത്തല്‍ നിര്‍ത്തുക "</string>
     <string name="app_modes_choose">ആപ്പ്ളിക്കേഷന്‍ പ്രൊഫൈലുകള്‍</string>
     <string name="app_mode_motorcycle">ബൈക്ക്</string>
     <string name="app_mode_boat">"ബോട്ട് "</string>
@@ -923,7 +922,6 @@
 
 കുറിപ്പ് 2. ഓഎസ്എംആന്ഡിനും  ഓഎസ്എംആന്ഡ്+നും പുതിയ സംഭരണ സ്ഥലത്ത് ഫയലുകള്‍ പങ്ക്വയ്ക്കാന്‍ പറ്റില്ല."</string>
     <string name="speech_rate">സംസാരത്തിന്റെ തോത്</string>
-    <string name="disable_complex_routing_descr">"വഴികാട്ടിയുടെ  2-നിലയിലുള്ള റൂട്ടിങ്ങ് നിര്‍ജീവമാക്കുക"</string>
     <string name="app_modes_choose_descr">ആപ്പ്ളിക്കേഷനില്‍ കാണിക്കുന്ന ഉപയോഗരീതികള്‍(പ്രൊഫൈലുകള്‍) തെരഞ്ഞെടുക്കുക</string>
     <string name="base_world_map">അടിസ്ഥാന ലോക ഭൂപടം</string>
     <string name="clear_destination">ലക്ഷ്യസ്ഥാനങ്ങള്‍ കളയുക</string>
@@ -1067,7 +1065,6 @@
     <string name="continuous_rendering">തുടര്‍ച്ചയായി വരച്ച് കാണിക്കുക</string>
     <string name="context_menu_item_search_transport">"പൊതു ഗതാഗത സംവിധാനം തെരയുക "</string>
     <string name="no_vector_map_loaded">"വെക്ടര്‍ ഭൂപടങ്ങള്‍ കയറ്റാനായില്ല "</string>
-    <string name="map_route_by_gpx">വ്ഴികാട്ടിയായ് ജി പി എക്സ് ഫയല്‍ ഉപയോഗിക്കുക</string>
     <string name="no_fav_to_save">"സമ്ഭരിക്കാനായി താല്‍പര്യമുള്ള ബിന്ദുക്കളില്ല "</string>
     <string name="menu_layers">ഭൂപടപാളികള്‍</string>
     <string name="context_menu_item_search_poi">"സ്ഥലങ്ങള്‍  (POI) തിരയുക"</string>

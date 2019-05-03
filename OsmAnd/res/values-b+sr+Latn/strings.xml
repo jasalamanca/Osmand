@@ -140,7 +140,6 @@
 	
 	<string name="voice">glas</string>
 	<string name="no_vector_map_loaded">Vektorske mape nisu učitane</string>
-	<string name="map_route_by_gpx">Navigacija pomoću GPX</string>
 	<string name="gpx_files_not_found">GPX datoteke se ne nalaze u direktorijumu</string>
 	<string name="error_reading_gpx">Greška pri čitanju GPX podataka</string>
 	

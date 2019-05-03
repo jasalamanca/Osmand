@@ -395,7 +395,6 @@ Ehhez {1} MB helyre van szükség.
 
     <string name="voice">Felvett hang</string>
     <string name="no_vector_map_loaded">Nincs betöltött vektoros térkép</string>
-    <string name="map_route_by_gpx">Útvonal GPX alapján</string>
     <string name="gpx_files_not_found">Nem található GPX fálj a tracks könyvtárban</string>
     <string name="layer_gpx_layer">GPX útvonal…</string>
     <string name="error_reading_gpx">Nem sikerült olvasni a GPX-adatot</string>
@@ -1089,8 +1088,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
     <string name="speech_rate">Beszédsebesség</string>
 
     <string name="complex_route_calculation_failed">Gyors útvonaltervezés sikertelen (%s), visszaállás a lassú tervezésre.</string>
-    <string name="disable_complex_routing_descr">Kétfázisú autós útvonaltervezés letiltása.</string>
-    <string name="disable_complex_routing">Komplex tervezés letiltása</string>
     <string name="use_displayed_track_for_navigation">Szeretnéd a megjelenített útvonalat navigálásra használni?</string>
 
     <string name="lang_hr">horvát</string>

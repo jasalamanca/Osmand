@@ -1272,7 +1272,6 @@ Sólsetur: %2$s</string>
     <string name="renderers">Vektor-myndgerð</string>
     <string name="voice">Hljóðrituð rödd</string>
     <string name="no_vector_map_loaded">Vektorkortum var ekki hlaðið inn</string>
-    <string name="map_route_by_gpx">Leiðsögn með notkun GPX</string>
     <string name="error_reading_gpx">Villa við að lesa GPX-gögn</string>
     <string name="vector_data">Ónettengd vektorkort</string>
     <string name="fav_saved_sucessfully">Eftirlæti tókst að vista í {0}</string>
@@ -1850,7 +1849,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="quick_action_map_underlay_switch">Undirlagi kortsins var breytt yfir í \"%s\".</string>
     <string name="keep_and_add_destination_point">Bæta við sem áfangastað í framhaldinu</string>
     <string name="routing_preferences_descr">Stillingar leiðavals</string>
-    <string name="disable_complex_routing">Gera flókið leiðaval óvirkt</string>
     <string name="local_osm_changes_backup_successful">Tókst að útbúa OSM-breytingaskrá %1$s</string>
     <string name="rendering_attr_alpineHiking_description">Setja leiðir fram samkvæmt SAC, svissneska gönguleiðakvarðanum.</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Setja leiðir fram samkvæmt OSMC-ferlum.</string>
@@ -2098,7 +2096,6 @@ Stendur fyrir svæði: %1$s x %2$s</string>
     <string name="choose_navigation_type">Veldu leiðsagnarsnið</string>
     <string name="quick_action_show_navigation_finish_dialog">Birta glugga fyrir lok leiðsagnar</string>
     <string name="quick_action_start_stop_navigation_descr">Bankaðu á þennan hnapp til að hefja eða ljúka leiðsögn.</string>
-    <string name="disable_complex_routing_descr">Gera 2-fasa leiðaval í akstri óvirkt.</string>
     <string name="use_magnetic_sensor_descr">Við lestur áttavita skal nota segulskynjara í stað stefnuskynjara.</string>
     <string name="quick_action_interim_dialog">Birta millistigsglugga</string>
     <string name="empty_state_favourites">Bæta við eftirlætum</string>

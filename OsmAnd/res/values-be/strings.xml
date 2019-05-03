@@ -695,7 +695,6 @@
 	
 	<string name="voice">Запісаны голас</string>
 	<string name="no_vector_map_loaded">Вектарныя мапы не былі загружаны</string>
-	<string name="map_route_by_gpx">Навігацыя з выкарыстаньнем GPX</string>
 	<string name="gpx_files_not_found">GPX файлы не знойдзены ў каталогу tracks</string>
 	<string name="layer_gpx_layer">GPX-сьлед…</string>
 	<string name="error_reading_gpx">Памылка пры чытаньні GPX дадзеных</string>
@@ -1057,7 +1056,6 @@
     <string name="app_mode_truck">Грузавік</string>
     <string name="speech_rate_descr">Задайце хуткасць вымаўлення для TTS.</string>
     <string name="speech_rate">Хуткасьць вымаўленьня</string>
-    <string name="disable_complex_routing">Адключыць складаную маршрутызацыю</string>
     <string name="map_widget_map_rendering">Адмалёўка мапы</string>
     <string name="app_mode_motorcycle">Матацыкл</string>
     <string name="app_mode_aircraft">Самалёт</string>
@@ -1082,7 +1080,6 @@
     <string name="guidance_preferences_descr">Навігацыйныя настройкі</string>
     <string name="routing_preferences_descr">Настройкі маршрутызацыі</string>
     <string name="complex_route_calculation_failed">Хуткі разлік маршруту ня ўдаўся (%s), пераход на марудны разлік.</string>
-    <string name="disable_complex_routing_descr">Адключэнне дзьвюх фазнай маршрутызацыі для аўтамабільнай навігацыі.</string>
     <string name="amenity_type_seamark">Навігацыйны знак</string>
     <string name="app_mode_hiking">Пешы турызм</string>
     <string name="app_mode_boat">Човен</string>

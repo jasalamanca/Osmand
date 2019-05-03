@@ -437,7 +437,6 @@
 	<string name="no_fav_to_save">Nema favorita za spremanje</string>
 	<string name="show_route">Pojedinosti rute</string>
 	<string name="gpx_files_not_found">GPX datoteke nisu pronađene u /direktoriju staza</string>
-	<string name="map_route_by_gpx">Kretanje pomoću GPX datoteka</string>
 	
 	<string name="use_high_res_maps">Zaslon visoke razlučivosti</string>
 	<string name="phone">Telefon</string>
@@ -944,8 +943,6 @@
     <string name="guidance_preferences_descr">Postavke navigacije</string>
     <string name="speech_rate_descr">Odredite brzinu govora za TTS</string>
     <string name="speech_rate">Brzina Govora</string>
-    <string name="disable_complex_routing_descr">Onemogućiti 2-fazno usmjeravanje za automobilsku navigaciju</string>
-    <string name="disable_complex_routing">Onemogućiti složenu usmjeravanje</string>
 
 
     <string name="amenity_type_seamark">Morske oznake</string>

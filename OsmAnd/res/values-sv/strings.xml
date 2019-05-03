@@ -557,7 +557,6 @@ Nyttjat utrymme är {1} MB.
 
     <string name="voice">Inspelad röst</string>
     <string name="no_vector_map_loaded">Vektorkartorna laddades inte</string>
-    <string name="map_route_by_gpx">Navigera med GPX</string>
     <string name="gpx_files_not_found">Hittar inga GPX-filer i spårmappen</string>
     <string name="layer_gpx_layer">GPX-spår …</string>
     <string name="error_reading_gpx">Fel vid läsning av GPX-data</string>
@@ -1003,8 +1002,6 @@ Nyttjat utrymme är {1} MB.
     <string name="speech_rate">Talhastighet</string>
 
     <string name="complex_route_calculation_failed">Snabbberäkning av rutt misslyckades (%s), går tillbaka till långsam beräkning.</string>
-    <string name="disable_complex_routing_descr">Inaktivera 2-fasruttning för bilnavigering.</string>
-    <string name="disable_complex_routing">Inaktivera komplex ruttning</string>
     <string name="guidance_preferences_descr">Navigationsinställningar</string>
     <string name="routing_preferences_descr">Ruttningsinställningar</string>
     <string name="android_19_location_disabled">Efter Androidversion 4.4 (KitKat) går det inte att hämta och uppdatera kartor till den tidigare lagringsmappen (%s). Vill du byta till en tillåten plats och kopiera alla OsmAnd-filerna dit?

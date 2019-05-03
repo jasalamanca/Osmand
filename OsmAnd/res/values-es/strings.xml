@@ -310,7 +310,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="transport_search_again">Reiniciar búsqueda de transporte</string>
     <string name="voice">Voz grabada</string>
     <string name="no_vector_map_loaded">Los mapas vectoriales no fueron cargados</string>
-    <string name="map_route_by_gpx">Navegar utilizando GPX</string>
     <string name="gpx_files_not_found">No se encontró archivos GPX en la carpeta de trazas</string>
     <string name="layer_gpx_layer">Trazas GPX…</string>
     <string name="error_reading_gpx">Error leyendo datos GPX</string>
@@ -926,8 +925,6 @@ El espacio de almacenamiento usado es {1} MB.
     <string name="copying_osmand_files">Copiando archivos de datos de OsmAnd…</string>
     <string name="app_mode_truck">Camión</string>
     <string name="complex_route_calculation_failed">Fallo en el cálculo rápido de la ruta (%s), regresando a cálculo lento.</string>
-    <string name="disable_complex_routing_descr">Desactiva la planificación de ruta de dos fases, para la navegación en automóvil.</string>
-    <string name="disable_complex_routing">Desactivar navegación compleja</string>
     <string name="calculate_osmand_route_gpx">Calcular la ruta OsmAnd sin conexión</string>
     <string name="routing_attr_prefer_motorway_name">Preferir autopistas</string>
     <string name="routing_attr_prefer_motorway_description">Preferir autopistas.</string>

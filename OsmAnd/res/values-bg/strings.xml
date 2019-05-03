@@ -673,7 +673,6 @@
 
     <string name="voice">Записан глас</string>
     <string name="no_vector_map_loaded">Не са заредени векторни карти</string>
-    <string name="map_route_by_gpx">Навигация по GPX</string>
     <string name="gpx_files_not_found">Не са открити файлове GPX в папката за следи</string>
     <string name="layer_gpx_layer">GPX следа…</string>
     <string name="error_reading_gpx">Грешка при четене на GPX данни</string>
@@ -1035,8 +1034,6 @@
     <string name="speech_rate">Темпо на гласовите напътствия</string>
 
     <string name="complex_route_calculation_failed">Бързото изчисляване на маршрут се провали (%s), преминава се на бавно изчисляване.</string>
-    <string name="disable_complex_routing_descr">Премахване на двойното изчисляване на маршрути</string>
-    <string name="disable_complex_routing">Премахване на сложното маршрутизиране</string>
     <string name="calculate_osmand_route_without_internet">Изчисляване на OsmAnd сегмент от маршрута без Интернет</string>
     <string name="gpx_option_calculate_first_last_segment">Намиране на маршрут OsmAnd за первия и последния сегмент от маршрута</string>
     <string name="use_displayed_track_for_navigation">Искате ли да ползвате показания маршрут за навигация?</string>

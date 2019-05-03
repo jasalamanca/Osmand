@@ -1154,8 +1154,6 @@
     <string name="speech_rate_descr">Որոշեք արտասանության արագությունը TTS համար։</string>
     <string name="speech_rate">Արտասանության արագությունը</string>
     <string name="complex_route_calculation_failed">Արագ երթուղու կառուծումը չհաջողվեծ (%s), չեղյալ համարեք դանդաղ հաշվարկին վերադառնալու համար։</string>
-    <string name="disable_complex_routing_descr">Անջատեք 2 փուլային երթուղին ավտոմեքենայի նավարկության համար։</string>
-    <string name="disable_complex_routing">Անջատել բարդ երթուղին</string>
     <string name="amenity_type_seamark">Նավիգացիոն նշաններ (լճակներ)</string>
     <string name="app_modes_choose_descr">"Ընտրեք օգտվողի պրոֆիլները  հավելվածում տեսանելի լինելու համար։"</string>
     <string name="app_modes_choose">Հավելվածի պրոֆիլներ</string>
@@ -1724,7 +1722,6 @@
     <string name="voice">Ձայնային տվյալները (ձայնագրություն)</string>
     <string name="voices">Ձայնային տվյալներ(հրահանգներ)</string>
     <string name="no_vector_map_loaded">Վեկտորային(offline) քարտեզները ներբեռնված չեն հավելվածի մեջ</string>
-    <string name="map_route_by_gpx">Նավիգացիա ըստ GPX</string>
     <string name="gpx_files_not_found">GPX ֆայլերը չեն գտնվել թղթապանակում</string>
     <string name="layer_gpx_layer">GPX տրեկ…</string>
     <string name="error_reading_gpx">GPX տվյալների ընթերցման սխալ</string>

@@ -95,8 +95,6 @@
     <string name="speech_rate">Lestresa de sa boghe</string>
 
     <string name="complex_route_calculation_failed">Càlculu lestru de s’àndala fallidu (%s), rinviu a su càlculu lentu.</string>
-    <string name="disable_complex_routing_descr">Istuda su calculu de s’àndala in duas fases pro s’impreu in màchina.</string>
-    <string name="disable_complex_routing">Istuta su calculu cumplessu de s’àndala</string>
     <string name="amenity_type_seamark">Pidagnu</string>
     <string name="app_modes_choose_descr">Ischerta sas modalidades de impreu chi boles chi siant visìbiles in s’aplicatzione.</string>
     <string name="app_modes_choose">Modalidades de impreu</string>
@@ -950,7 +948,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
 
     <string name="voice">Boghe registrada</string>
     <string name="no_vector_map_loaded">Sas mapas vetoriales non sunt istadas carrigadas</string>
-    <string name="map_route_by_gpx">Àndala tramite GPX</string>
     <string name="gpx_files_not_found">Perunu documentu GPX agatadu in sa cartella /tracks</string>
     <string name="layer_gpx_layer">Rasta GPX…</string>
     <string name="error_reading_gpx">Errore leghidura datos GPX</string>

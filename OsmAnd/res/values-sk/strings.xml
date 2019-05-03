@@ -403,7 +403,6 @@
     <string name="transport_search_again">Hľadať znova prepravu</string>
     <string name="voice">Nahrávka hlasu</string>
     <string name="no_vector_map_loaded">Vektorové mapy neboli načítané</string>
-    <string name="map_route_by_gpx">Cestovať použitím GPX</string>
     <string name="gpx_files_not_found">Žiadne GPX súbory neboli nájdené v priečinku stôp</string>
     <string name="layer_gpx_layer">GPX záznam…</string>
     <string name="error_reading_gpx">Chyba pri načítavaní GPX údajov</string>
@@ -886,8 +885,6 @@ Proporčná pamäť %4$s MB (Limit Androidu %5$s MB, Dalvik %6$s MB).</string>
     <string name="app_modes_choose_descr">Zvoľte profily použitia, ktoré majú byť viditeľné v aplikácii.</string>
     <string name="amenity_type_seamark">Morská značka</string>
     <string name="complex_route_calculation_failed">Rýchly prepočet trasy zlyhal (%s), použije sa pomalý výpočet.</string>
-    <string name="disable_complex_routing_descr">Vypnúť dvojfázovú navigáciu pre režim auta.</string>
-    <string name="disable_complex_routing">Vypnúť komplexnú navigáciu</string>
     <string name="speech_rate_descr">Zadajte rýchlosť reči TTS.</string>
     <string name="speech_rate">Rýchlosť reči</string>
     <string name="guidance_preferences_descr">Nastavenia navigácie</string>

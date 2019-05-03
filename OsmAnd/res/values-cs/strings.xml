@@ -356,7 +356,6 @@
     <string name="transport_search_again">Znovu hledat dopravu</string>
     <string name="voice">Nahrávka hlasu</string>
     <string name="no_vector_map_loaded">Vektorové mapy nebyly načteny</string>
-    <string name="map_route_by_gpx">Cestovat podle GPX</string>
     <string name="gpx_files_not_found">Žádné GPX soubory nebyly nalezeny v adresáři tracks</string>
     <string name="layer_gpx_layer">GPX trasa…</string>
     <string name="error_reading_gpx">Chyba při načítání dat GPX</string>
@@ -962,8 +961,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="speech_rate_descr">Zadejte rychlost řeči TTS.</string>
     <string name="speech_rate">Rychlost řeči</string>
     <string name="complex_route_calculation_failed">Rychlý přepočet trasy selhal (%s), návrat k úplnému výpočtu.</string>
-    <string name="disable_complex_routing_descr">Vypnout dvojfázovou navigaci pro profil auta.</string>
-    <string name="disable_complex_routing">Vypnout komplexní navigaci</string>
     <string name="calculate_osmand_route_without_internet">Vypočítat trasu bez připojení k Internetu</string>
     <string name="gpx_option_calculate_first_last_segment">Vypočítat OsmAnd trasu pro první a poslední úsek</string>
     <string name="index_item_world_altitude_correction">Svět - korekce výšky</string>

@@ -453,8 +453,6 @@ Lon %2$s</string>
     <string name="speech_rate_descr">Indica la velocidad en el habla sintetizada (TTS).</string>
     <string name="speech_rate">Velocidad del habla sintetizada (TTS)</string>
     <string name="complex_route_calculation_failed">Falló el cálculo rápido de la ruta (%s), volviendo a cálculo lento.</string>
-    <string name="disable_complex_routing_descr">Desactiva la planificación de ruta de dos fases para la navegación en automóvil.</string>
-    <string name="disable_complex_routing">Desactivar navegación compleja</string>
     <string name="amenity_type_seamark">Náutico</string>
     <string name="app_modes_choose_descr">Elige los perfiles de uso que se mostrarán en la aplicación.</string>
     <string name="app_modes_choose">Perfiles de aplicación</string>
@@ -1082,7 +1080,6 @@ Lon %2$s</string>
     <string name="voice">Voz grabada</string>
     <string name="voices">Voces</string>
     <string name="no_vector_map_loaded">Los mapas vectoriales no están cargados</string>
-    <string name="map_route_by_gpx">Navegar usando GPX</string>
     <string name="gpx_files_not_found">Sin archivos GPX en la carpeta de trazas</string>
     <string name="layer_gpx_layer">Traza GPX…</string>
     <string name="error_reading_gpx">Error leyendo datos GPX</string>

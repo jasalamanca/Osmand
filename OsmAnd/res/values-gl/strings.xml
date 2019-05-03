@@ -261,8 +261,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
     <string name="speech_rate">Velocidade da fala</string>
     
     <string name="complex_route_calculation_failed">Fallou o cálculo rápido de rutas (%s); recorrer ao cálculo lento.</string>
-    <string name="disable_complex_routing_descr">Desactivar o cálculo de rutas de dúas fases para a navegación con coche</string>
-    <string name="disable_complex_routing">Desactivar o cálculo de rutas complexo</string>
     <string name="amenity_type_seamark">Baliza</string>
     <string name="app_modes_choose_descr">Escoller os perfís de uso visíbeis no aplicativo</string>
     <string name="app_modes_choose">Perfís do aplicativo</string>
@@ -1000,7 +998,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	
 	<string name="voice">Voz gravada</string>
 	<string name="no_vector_map_loaded">Os mapas vectoriais non están cargados</string>
-	<string name="map_route_by_gpx">Navegar empregando GPX</string>
 	<string name="gpx_files_not_found">Non foi posíbel atopar ficheiros GPX no cartafol de pistas</string>
 	<string name="layer_gpx_layer">Pista de GPX…</string>
 	<string name="error_reading_gpx">Produciuse un erro ao ler os datos de GPX</string>

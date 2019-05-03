@@ -713,7 +713,6 @@ Biltegiratzean {1} MB erabiliko dira.
   
   <string name="voice">Grabatutako ahotsa</string>
   <string name="no_vector_map_loaded">Bektore mapak ez dira kargatuak izan</string>
-  <string name="map_route_by_gpx">GPX erabiltzen nabigatu</string>
   <string name="gpx_files_not_found">Ez da GPX fitxategirik aurkitu lorratzen direktorioan</string>
   <string name="layer_gpx_layer">GPX lorratza…</string>
   <string name="error_reading_gpx">Errorea GPX datuak irakurtzean</string>
@@ -1572,7 +1571,6 @@ Biltegiratzean {3} MB behar dira une batez, {1} MB behin betiko.
     <string name="index_item_world_bitcoin_payments">Munduko bitcoin ordainketak</string>
     <string name="index_item_world_basemap">Munduko ikuspegi mapa</string>
     <string name="index_item_world_ski">Munduko ski mapa</string>
-    <string name="disable_complex_routing">Ezgaitu ibilbide kalkulu konplexua</string>
     <string name="amenity_type_seamark">Itsaso marka</string>
     <string name="app_modes_choose">Aplikazio profilak</string>
     <string name="app_mode_motorcycle">Motorra</string>
@@ -1849,7 +1847,6 @@ Biltegiratzean {3} MB behar dira une batez, {1} MB behin betiko.
     <string name="lang_hu_formal">Hungariera (formala)</string>
     <string name="lang_kn">Kannada</string>
     <string name="routing_attr_height_name">Altuera muga</string>
-    <string name="disable_complex_routing_descr">Desgaitu 2 faseetako ibilbide kalkulua kotxe bidezko nabigaziorako.</string>
     <string name="app_modes_choose_descr">Hautatu aplikazioan ikusgai egongo diren erabilera profilak.</string>
     <string name="map_widget_map_rendering">Mapen marrazketa</string>
     <string name="local_osm_changes_delete_all_confirm">%1$d OSM aldaketa ezabatuko dituzu. Ziur zaude?</string>

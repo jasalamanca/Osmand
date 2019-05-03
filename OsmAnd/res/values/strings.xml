@@ -1183,8 +1183,6 @@
     <string name="speech_rate_descr">Specify the speech rate for TTS.</string>
     <string name="speech_rate">Speech Rate</string>
     <string name="complex_route_calculation_failed">Fast route calculation failed (%s), fallback to slow calculation.</string>
-    <string name="disable_complex_routing_descr">Disable 2-phase routing for car navigation.</string>
-    <string name="disable_complex_routing">Disable complex routing</string>
     <string name="amenity_type_seamark">Seamark</string>
     <string name="app_modes_choose_descr">Select the use profiles to be visible in application.</string>
     <string name="app_modes_choose">Application Profiles</string>
@@ -1806,7 +1804,6 @@
     <string name="voice">Recorded voice</string>
     <string name="voices">Voice prompts</string>
     <string name="no_vector_map_loaded">Vector maps were not loaded</string>
-    <!-- string name="map_route_by_gpx">Navigate using GPX</string-->
     <string name="gpx_files_not_found">No GPX files found in the tracks folder</string>
     <string name="layer_gpx_layer">GPX track…</string>
     <string name="error_reading_gpx">Error reading GPX data</string>

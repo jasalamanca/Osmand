@@ -465,8 +465,6 @@
     <string name="speech_rate">Velocidade de fala</string>
     
     <string name="complex_route_calculation_failed">Cálculo rápido da rota falhou (%s), retorno ao cálculo lento.</string>
-    <string name="disable_complex_routing_descr">Desativar o roteamento de 2 fases para a navegação de carro</string>
-    <string name="disable_complex_routing">Desativar o roteamento complexo</string>
     <string name="amenity_type_seamark">Marca náutica</string>
     <string name="app_modes_choose_descr">Escolha os perfis disponíveis no aplicativo</string>
     <string name="app_modes_choose">Perfis do aplicativo</string>
@@ -1166,7 +1164,6 @@ Pôr do Sol: %2$s</string>
 	<string name="voice">Voz gravada</string>
 	<string name="voices">Instruções de voz</string>
 	<string name="no_vector_map_loaded">Nenhum mapa vetorial foi carregado</string>
-	<string name="map_route_by_gpx">Navegar usando GPX</string>
 	<string name="gpx_files_not_found">Nenhum arquivo GPX encontrado no diretório de trilhas</string>
 	<string name="layer_gpx_layer">Trilha GPX…</string>
 	<string name="error_reading_gpx">Erro na leitura de dados GPX</string>

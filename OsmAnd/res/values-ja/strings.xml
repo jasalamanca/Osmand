@@ -217,7 +217,6 @@ MB)をダウンロードしますか?</string>
      <string name="voice">記録音声</string>
      <string name="no_vector_map_loaded">ベクターマップはロードされませんでした</string>
 
-     <string name="map_route_by_gpx">GPXを使ったルート</string>
      <string name="gpx_files_not_found">GPXファイルがtracksフォルダ内に見つかりません</string>
      <string name="layer_gpx_layer">GPX経路…</string>
      <string name="error_reading_gpx">GPXデータ読み込みエラー</string>
@@ -1170,8 +1169,6 @@ POIの更新は利用できません</string>
     <string name="speech_rate">発声速度</string>
     
     <string name="complex_route_calculation_failed">高速ルート計算が失敗しました(%s)、低速モードで再計算します。</string>
-    <string name="disable_complex_routing_descr">車用ナビゲーションの2段階ルート計算を無効化します</string>
-    <string name="disable_complex_routing">複雑なルート計算を無効化</string>
     
     
     <string name="calculate_osmand_route_without_internet">インターネットを使用せずにOsmAnd経路セグメントを計算する</string>

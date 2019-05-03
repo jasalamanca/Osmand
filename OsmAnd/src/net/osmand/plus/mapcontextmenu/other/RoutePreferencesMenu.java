@@ -1,7 +1,6 @@
 package net.osmand.plus.mapcontextmenu.other;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
@@ -10,7 +9,6 @@ import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
@@ -404,7 +402,7 @@ public class RoutePreferencesMenu {
 			} else if (obj instanceof AvoidRoadsRoutingParameter) {
 				selectRestrictedRoads();
 			} else if (view.findViewById(R.id.GPXRouteSpinner) != null) {
-				showOptionsMenu((TextView) view.findViewById(R.id.GPXRouteSpinner));
+				showOptionsMenu(view.findViewById(R.id.GPXRouteSpinner));
 			} else {
 				CheckBox ch = view.findViewById(R.id.toggle_item);
 				if (ch != null) {
@@ -510,7 +508,7 @@ public class RoutePreferencesMenu {
 				if (parameter instanceof GpxLocalRoutingParameter) {
 					View v = mapActivity.getLayoutInflater().inflate(R.layout.plan_route_gpx, null);
 					AndroidUtils.setListItemBackground(mapActivity, v, nightMode);
-					AndroidUtils.setTextPrimaryColor(mapActivity, (TextView) v.findViewById(R.id.GPXRouteTitle), nightMode);
+					AndroidUtils.setTextPrimaryColor(mapActivity, v.findViewById(R.id.GPXRouteTitle), nightMode);
 					final TextView gpxSpinner = v.findViewById(R.id.GPXRouteSpinner);
 					AndroidUtils.setTextPrimaryColor(mapActivity, gpxSpinner, nightMode);
 					((ImageView) v.findViewById(R.id.dropDownIcon))

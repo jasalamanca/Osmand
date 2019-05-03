@@ -741,7 +741,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="transport_search_again">Ponastavi iskanje prevoza</string>
 
     <string name="no_vector_map_loaded">Vektorski zemljevidi niso naloženi</string>
-    <string name="map_route_by_gpx">Navigacija z GPX</string>
     <string name="gpx_files_not_found">V mapi sledi ni najti mogoče nobene datoteke GPX.</string>
     <string name="layer_gpx_layer">Sled GPX …</string>
     <string name="error_reading_gpx">Napaka med branjem podatkov GPX</string>
@@ -1047,13 +1046,11 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="app_modes_choose">Profili programa</string>
 
     <string name="guidance_preferences_descr">Nastavitve navigacije</string>
-    <string name="disable_complex_routing_descr">Onemogoči 2-fazno usmerjanje za avtomobilsko navigacijo.</string>
     <string name="routing_preferences_descr">Nastavitve usmerjanja</string>
 
     <string name="speech_rate_descr">Določitev hitrosti govora za TTS.</string>
     <string name="speech_rate">Hitrost govora</string>
     <string name="complex_route_calculation_failed">Hitri izračun poti je spodletel (%s), zato bo uporabljen počasnejši način izračuna.</string>
-    <string name="disable_complex_routing">Onemogoči zapleteno usmerjanje</string>
 
     <string name="lang_hr">Hrvaščina</string>
     <string name="lang_zh">Kitajščina</string>
