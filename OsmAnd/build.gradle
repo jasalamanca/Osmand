@@ -173,14 +173,14 @@ static def replaceNoTranslate(line) {
 	if (line.contains("\"versionFeatures\"") && System.getenv("APP_FEATURES")) {
 		return line.replaceAll(">[^<]*<", ">" + System.getenv("APP_FEATURES") + "<")
 	}
-	return line;
+	return line
 }
 
 task updateNoTranslate(type: Copy) {
 	from('.') {
 		include 'no_translate.xml'
 		filter {
-			line -> replaceNoTranslate(line);
+			line -> replaceNoTranslate(line)
 		}
 	}
 	into 'res/values/'
@@ -195,7 +195,7 @@ task validateTranslate {
 						line.contains("1\$ ") || line.contains("2\$ ") || line.contains("3\$ ") ||
 						(line.contains("% \$") || line.contains("% 1") ||
 								line.contains("% 2") || line.contains("% 3"))) {
-					throw new GradleException("Incorrect translation " + it.getAbsolutePath() + " " + line);
+					throw new GradleException("Incorrect translation " + it.getAbsolutePath() + " " + line)
 				}
 			}
 		}
