@@ -208,7 +208,6 @@
     <string name="shared_string_remove">ഒഴിവാക്കുക</string>
     <string name="available_maps">ലഭ്യമായ ഭൂപടങ്ങള്‍</string>
     <string name="route_distance">ദൂരം:</string>
-    <string name="show_on_start">"പ്രാരംഭത്തില്‍ കാണിക്കുക "</string>
     <string name="copied_to_clipboard">"ക്ലിപ്പ്ബോര്‍ഡിലേക്കു്  പകര്‍ത്തിയിരിക്കുന്നു"</string>
     <string name="osb_author_dialog_password">ഓഎസ്എം പാസ്സ്വേഡ് (നിര്‍ബന്ധമല്ല)</string>
     <string name="osb_comment_dialog_author">രചയിതാവിന്റെ പേര്</string>
@@ -790,7 +789,6 @@
     <string name="no_address_found">"വിലാസം കണ്ട്പിടിക്കാനയില്ല "</string>
     <string name="shared_string_near">"സമീപത്ത് "</string>
     <string name="shared_string_hide">മറക്കുക</string>
-    <string name="show_on_start_description">"\'ഓഫ്\'  നേരെ ഭുപടം കാണിക്കുന്നു"</string>
     <string name="osn_comment_dialog_title">വിവരണം(കമന്റ്) ചേര്‍ക്കുക</string>
     <string name="osn_reopen_dialog_title">കുറിപ്പ് വീണ്ടും തുറക്കുക</string>
     <string name="osn_close_dialog_title">കുറിപ്പ് അടക്കുക</string>

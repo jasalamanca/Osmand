@@ -1,6 +1,5 @@
 package net.osmand.plus.dashboard;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,14 +26,12 @@ public class DashDashboardOrDrawerFragment extends DashBaseFragment {
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_dashboard_or_drawer_fragment, container, false);
 		view.findViewById(R.id.useDashboardButton).setOnClickListener(v -> {
             final OsmandSettings settings = getMyApplication().getSettings();
-            settings.SHOW_DASHBOARD_ON_START.set(true);
             settings.SHOW_DASHBOARD_ON_MAP_SCREEN.set(true);
             settings.SHOW_CARD_TO_CHOOSE_DRAWER.set(false);
             dashboard.hideFragmentByTag(TAG);
         });
 		view.findViewById(R.id.useDrawerButton).setOnClickListener(v -> {
             final OsmandSettings settings = getMyApplication().getSettings();
-            settings.SHOW_DASHBOARD_ON_START.set(false);
             settings.SHOW_DASHBOARD_ON_MAP_SCREEN.set(false);
             settings.SHOW_CARD_TO_CHOOSE_DRAWER.set(false);
             dashboard.hideDashboard();

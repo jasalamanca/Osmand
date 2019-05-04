@@ -3,7 +3,6 @@ package net.osmand.plus.dashboard.tools;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -63,9 +62,7 @@ public class DashboardSettingsDialogFragment extends DialogFragment
 		textColorSecondary = typedValue.data;
 
 		final OsmandSettings settings = mapActivity.getMyApplication().getSettings();
-		final View showDashboardOnStart = createCheckboxItem(settings.SHOW_DASHBOARD_ON_START, 
-				R.string.show_on_start , R.string.show_on_start_description);
-		final View accessFromMap = createCheckboxItem(settings.SHOW_DASHBOARD_ON_MAP_SCREEN, 
+		final View accessFromMap = createCheckboxItem(settings.SHOW_DASHBOARD_ON_MAP_SCREEN,
 				R.string.access_from_map, R.string.access_from_map_description); 
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -92,8 +89,6 @@ public class DashboardSettingsDialogFragment extends DialogFragment
 						}
 					}
 					mapActivity.getDashboard().refreshDashboardFragments();
-					settings.SHOW_DASHBOARD_ON_START.set(
-							((CompoundButton) showDashboardOnStart.findViewById(R.id.toggle_item)).isChecked());
 					settings.SHOW_DASHBOARD_ON_MAP_SCREEN.set(
 							((CompoundButton) accessFromMap.findViewById(R.id.toggle_item)).isChecked());
 					mapActivity.getMapLayers().getMapControlsLayer().initDasboardRelatedControls();
@@ -102,7 +97,6 @@ public class DashboardSettingsDialogFragment extends DialogFragment
 		final AlertDialog dialog = builder.create();
 
 		ListView listView = dialog.getListView();
-		listView.addHeaderView(showDashboardOnStart);
 		listView.addHeaderView(accessFromMap);
 		return dialog;
 	}

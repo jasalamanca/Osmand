@@ -1121,7 +1121,6 @@
     <string name="please_specify_poi_type_only_from_list">გთხოვთ აირჩიოთ სწორი POI-ს ტიპი ან გამოტოვოთ</string>
     <string name="access_from_map_description">მენიუს ღილაკი უშვებს სამართავ პანელს და არა მენიუს</string>
     <string name="access_from_map">წვდომა რუკიდან</string>
-    <string name="show_on_start">გაშვებისას ჩვენება</string>
     <string name="copied_to_clipboard">კოპირებულია გაცვლის ბუფერში</string>
     <string name="osm_save_offline">გათიშულად ჩაწერა</string>
     <string name="osm_edit_modified_poi">OSM POI-ს შეცვლა</string>

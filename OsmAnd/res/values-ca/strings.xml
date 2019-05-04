@@ -1459,7 +1459,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="simulate_your_location_stop_descr">Atura la simulació de la vostra posició.</string>
     <string name="simulate_your_location_descr">Simula la vostra posició utilitzant una ruta calculada o una traça GPX enregistrada.</string>
     <string name="favourites_context_menu_add">Afegeix un preferit</string>
-    <string name="show_on_start">Mostra a l\'inici</string>
     <string name="count_of_lines">Recompte de línies</string>
     <string name="are_you_sure">N\'esteu segur?</string>
     <string name="unsaved_changes_will_be_lost">Es perdran tots els canvis no desats. Voleu continuar?</string>
@@ -1514,7 +1513,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="map_downloaded_descr">S\'ha baixat el mapa de %1$s, ja el podeu començar a utilitzar.</string>
     <string name="go_to_map">Mostra el mapa</string>
     <string name="world_map_download_descr">El mapa base mundial (d\'abast mundial però amb poc detall) no es troba o està caducat. Considereu baixar-lo per una tenir una perspectiva global.</string>
-    <string name="show_on_start_description">Si es desactiva s\'engega amb la pantalla del mapa.</string>
     <string name="enter_country_name">Indiqueu el nom del país</string>
     <string name="shared_string_upload">Pujada</string>
     <string name="osm_edit_created_poi">S\'ha creat un PDI a OSM</string>

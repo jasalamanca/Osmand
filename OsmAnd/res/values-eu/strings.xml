@@ -1322,7 +1322,6 @@ Lorratza %2$s</string>
     <string name="shared_string_near">+-</string>
     <string name="shared_string_hide">Ezkutatu</string>
     <string name="access_from_map">Sarbidea mapatik</string>
-    <string name="show_on_start">Bistaratu abiatzean</string>
     <string name="copied_to_clipboard">Arbelera kopiatuta</string>
     <string name="osm_save_offline">Gorde lineaz kanpo</string>
     <string name="context_menu_item_open_note">Ireki OSM oharra</string>
@@ -1562,7 +1561,6 @@ Biltegiratzean {3} MB behar dira une batez, {1} MB behin betiko.
     <string name="select_voice_provider_descr">Hautatu zure hizkuntzaren ahots bidezko gidaritza.</string>
     <string name="please_specify_poi_type_only_from_list">Zehaztu POI mota egokia edo saltatu.</string>
     <string name="access_from_map_description">Menu botoiak kontrol panela abiatzen du, ez menua.</string>
-    <string name="show_on_start_description">Desgaitzean maparen pantaila abiatzen da zuzenean.</string>
     <string name="always_center_position_on_map">Bistaratu posizioa beti erdian</string>
     <string name="index_item_world_bitcoin_payments">Munduko bitcoin ordainketak</string>
     <string name="index_item_world_basemap">Munduko ikuspegi mapa</string>

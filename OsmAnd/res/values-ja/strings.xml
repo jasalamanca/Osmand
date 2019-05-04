@@ -1689,7 +1689,6 @@ POIの更新は利用できません</string>
 	<string name="show_gpx">GPXを表示</string>
 <string name="tab_title_basic">基本</string>
 	<string name="tab_title_advanced">拡張</string>
-	<string name="show_on_start">起動時に表示</string>
 	<string name="count_of_lines">表示数の選択</string>
     <string name="favorite_category_dublicate_message">指定したカテゴリ名は既に使用されています。別の名前を使用して下さい。</string>
     <string name="favorite_category_name">カテゴリ名</string>
@@ -1747,7 +1746,6 @@ POIの更新は利用できません</string>
     <string name="please_specify_poi_type_only_from_list">正しいPOIの種類を指定するか、そうでなければ省略してください</string>
     <string name="access_from_map_description">メニューボタンでメニューではなくダッシュボードを開きます</string>
     <string name="access_from_map">マップ画面から開く</string>
-    <string name="show_on_start_description">ONでOsmAnd起動時ダッシュボードを自動的に表示します</string>
     <string name="copied_to_clipboard">クリップボードにコピーしました</string>
     <string name="osm_save_offline">ｵﾌﾗｲﾝで保存</string>
     <string name="osm_edit_modified_poi">OSMのPOIが変更されました</string>

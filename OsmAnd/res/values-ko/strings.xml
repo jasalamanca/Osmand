@@ -1676,7 +1676,6 @@
 	<string name="app_name_osmand">OsmAnd</string>
     <string name="commit_poi">POI 커밋</string>
     <string name="poi_action_delete">삭제</string>
-	<string name="show_on_start">시작할 때 보여주기</string>
 	<string name="tab_title_basic">기본</string>
 	<string name="tab_title_advanced">고급</string>
 	<string name="building_number">건물 번호</string>

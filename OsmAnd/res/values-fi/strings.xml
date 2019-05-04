@@ -1048,7 +1048,6 @@ Nauhoitetut jäljet voidaan jakaa ystävillesi tai käyttää OSM osallistumisis
     <string name="please_specify_poi_type_only_from_list">Ole hyvä ja valitse oikea POI tyyppi tai ohita se</string>
     <string name="access_from_map_description">Valikkonäppäin käynnistää hallintapaneelin eikä valikkoa</string>
     <string name="access_from_map">Käytä kartalta</string>
-    <string name="show_on_start">Näytä käynnistyksessä</string>
     <string name="copied_to_clipboard">Kopioitu leikepöydälle</string>
     <string name="osm_edit_modified_poi">Muokattu OSM POI</string>
     <string name="osm_edit_deleted_poi">Poistettu OSM POI</string>
@@ -1212,7 +1211,6 @@ Nauhoitetut jäljet voidaan jakaa ystävillesi tai käyttää OSM osallistumisis
     <string name="later">Myöhemmin</string>
     <string name="get_full_version">Täysi versio</string>
     <string name="downloads">Lataukset</string>
-    <string name="show_on_start_description">\'Pois\' käynnistää suoraan karttanäytön</string>
     <string name="osm_save_offline">Tallenna offlineen</string>
     <string name="use_opengl_render_descr">Käytä hardware kiihdytettyä OpenGL hahmotusta (ei ehkä toimi kaikilla laitteilla)</string>
     <string name="error_avoid_specific_road">Ohitusta ei löytynyt</string>

@@ -1688,7 +1688,6 @@
     <string name="poi_action_delete">удалить</string>
     <string name="recent_places">Недавние места</string>
     <string name="count_of_lines">Количество строк</string>
-    <string name="show_on_start">Показывать при запуске</string>
     <string name="are_you_sure">Вы уверены?</string>
     <string name="unsaved_changes_will_be_lost">Все несохраненные изменения будут потеряны. Продолжить?</string>
     <string name="simulate_your_location_descr">Моделировать ваше местоположение, используя рассчитанный маршрут или записанный GPX.</string>
@@ -1737,7 +1736,6 @@
     <string name="share_menu_location">Поделиться местоположением</string>
     <string name="shared_string_send">Отправить</string>
     <string name="application_dir_description">Выберите, где вы хотите хранить файлы карт и другие данные.</string>
-    <string name="show_on_start_description">\"Отключено\" непосредственно запускает экран карты.</string>
     <string name="map_downloaded">Карта загружена</string>
     <string name="shared_string_qr_code">QR-код</string>
     <string name="go_to_map">Показать карту</string>

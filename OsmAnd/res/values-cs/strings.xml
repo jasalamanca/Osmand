@@ -1461,7 +1461,6 @@ Délka %2$s</string>
     <string name="opening_at">Otevřeno od</string>
     <string name="closing_at">Otevřeno do</string>
     <string name="count_of_lines">Počet řádků</string>
-    <string name="show_on_start">Zobrazit po spuštění</string>
     <string name="are_you_sure">Jste si jisti?</string>
     <string name="unsaved_changes_will_be_lost">Neuložené změny budou ztraceny. Pokračovat?</string>
     <string name="favorite_category_add_new">Přidat nový</string>
@@ -1512,7 +1511,6 @@ Délka %2$s</string>
     <string name="simulate_initial_startup_descr">Nastavit příznak označující první spuštění aplikace, ostatní nastavení ponechat nezměněná.</string>
     <string name="confirm_download_roadmaps">Opravdu chcete stáhnout silniční mapu, když už máte standardní podrobnou mapu?</string>
     <string name="application_dir_description">Zvolte, kam chcete uložit mapové a ostatní datové soubory.</string>
-    <string name="show_on_start_description">„Vypnout“ spouští přímo obrazovku s mapou.</string>
     <string name="world_map_download_descr">Základní mapa světa (pokrývající celý svět při malých detailech) chybí nebo je zastaralá. Prosím zvažte její stažení pro celkový přehled.</string>
     <string name="shared_string_qr_code">QR kód</string>
     <string name="map_downloaded">Mapa stažena</string>

@@ -1593,7 +1593,6 @@ Lon %2$s</string>
     <string name="poi_deleted_localy">Su PDI at a èssere iscantzelladu a pustis de su carrigamentu de sas modìficas tuas</string>
     <string name="show_gpx">Ammustra GPX</string>
     <string name="saved_at_time">Sarvada in: %1$s</string>
-    <string name="show_on_start">Ammustra in su cumintzu</string>
     <string name="count_of_lines">Contu de sas lìnias</string>
     <string name="are_you_sure">Seguru ses?</string>
     <string name="unsaved_changes_will_be_lost">Totu sas modìficas non sarvadas s’ant a pèrdere. Sighire?</string>
@@ -1659,7 +1658,6 @@ Lon %2$s</string>
     <string name="shared_string_qr_code">Còdighe QR</string>
     <string name="enter_country_name">Inserta su nùmene de s\'istadu</string>
     <string name="world_map_download_descr">Sa mapa mundiale de base (chi coberrit su mundu intreu a ismanniamentos bassos) fartat o est betza. Pro praghere cunsìdera sa possibilidade de l’iscarrigare pro tènnere una immàgine generale.</string>
-    <string name="show_on_start_description">\"Istudadu\" mandat deretu a s’ischermu mapa.</string>
     <string name="new_version">Versione noa</string>
     <string name="begin_with_osmand_menu_group">Primos passos cun OsmAnd</string>
     <string name="features_menu_group">Funtzionalidades</string>

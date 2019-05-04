@@ -1665,7 +1665,6 @@ Lengtegraad:\t\t%2$s</string>
 	<string name="favourites_context_menu_add">Favoriet toevoegen</string>
 	<string name="poi_action_delete">wissen</string>
 	<string name="dahboard_options_dialog_title">Dashboard-instellingen</string>
-	<string name="show_on_start">Na opstarten tonen</string>
 	<string name="shared_string_card_was_hidden">Kaart was verborgen</string>
 	<string name="shared_string_undo">Ongedaan maken</string>
 	<string name="shared_string_skip">Overslaan</string>
@@ -1708,7 +1707,6 @@ Lengtegraad:\t\t%2$s</string>
     <string name="free_downloads_used_description">Bekijk hoeveel gratis downloads er al gebruikt zijn</string>
 
     <string name="application_dir_description">"Kies waar kaarten en andere gegevens  opgeslagen worden."</string>
-    <string name="show_on_start_description">\'Uit\' toont direct de kaart.</string>
     <string name="enter_country_name">Kies het land</string>
     <string name="new_version">Nieuwe versie</string>
     <string name="begin_with_osmand_menu_group">Eerste stappen met OsmAnd</string>

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/list_item_height"
     android:paddingLeft="20dp"
+    android:paddingStart="20dp"
     android:orientation="horizontal">
 
     <include layout="@layout/check_item_rel"/>
@@ -14,6 +15,7 @@
         android:id="@+id/text"
         style="@style/DashboardSubHeader"
         android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:textColor="@color/dashboard_black"
         android:textSize="@dimen/default_list_text_size"
         osmand:typeface="@string/font_roboto_regular"

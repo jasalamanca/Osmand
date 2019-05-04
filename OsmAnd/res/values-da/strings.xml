@@ -1621,7 +1621,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="poi_deleted_localy">Interessepunkt (IP) vil blive slettet, når ændringer overføres</string>
     <string name="show_gpx">Vis GPX</string>
     <string name="count_of_lines">Antal linjer</string>
-    <string name="show_on_start">Vis ved start</string>
     <string name="unsaved_changes_will_be_lost">Eventuelle ikke-gemte ændringer vil gå tabt. Fortsæt?</string>
     <string name="are_you_sure">Sikker?</string>
     <string name="simulate_your_location_stop_descr">Stop simulering af position.</string>
@@ -1681,7 +1680,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="shared_string_send">Send</string>
 
     <string name="application_dir_description">Vælg hvor kort- og andre datafiler skal gemmes.</string>
-    <string name="show_on_start_description">\'Fra\' starter direkte på kortet.</string>
     <string name="map_downloaded">Kort hentet</string>
     <string name="map_downloaded_descr">Kortet over %1$s er nu hentet og kan anvendes.</string>
     <string name="go_to_map">Vis kortet</string>

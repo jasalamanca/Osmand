@@ -133,7 +133,6 @@ public class AppInitializer implements IProgress {
 		} else if (!Version.getFullVersion(app).equals(startPrefs.getString(VERSION_INSTALLED, ""))) {
 			prevAppVersion = startPrefs.getInt(VERSION_INSTALLED_NUMBER, 0);
 			if(prevAppVersion < VERSION_2_2) {
-				app.getSettings().SHOW_DASHBOARD_ON_START.set(true);
 				app.getSettings().SHOW_DASHBOARD_ON_MAP_SCREEN.set(true);
 				app.getSettings().SHOW_CARD_TO_CHOOSE_DRAWER.set(true);
 				startPrefs.edit().putInt(VERSION_INSTALLED_NUMBER, VERSION_2_2).commit();
@@ -286,7 +285,6 @@ public class AppInitializer implements IProgress {
 		app.avoidSpecificRoads = startupInit(new AvoidSpecificRoads(app), AvoidSpecificRoads.class);
 		app.savingTrackHelper = startupInit(new SavingTrackHelper(app), SavingTrackHelper.class);
 		app.notificationHelper = startupInit(new NotificationHelper(app), NotificationHelper.class);
-//		app.liveMonitoringHelper = startupInit(new LiveMonitoringHelper(app), LiveMonitoringHelper.class);
 		app.selectedGpxHelper = startupInit(new GpxSelectionHelper(app, app.savingTrackHelper), GpxSelectionHelper.class);
 		app.gpxDatabase = startupInit(new GPXDatabase(app), GPXDatabase.class);
 		app.favorites = startupInit(new FavouritesDbHelper(app), FavouritesDbHelper.class);

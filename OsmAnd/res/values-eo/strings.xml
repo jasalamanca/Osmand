@@ -100,9 +100,7 @@
     <string name="please_specify_poi_type_only_from_list">Bonvolu difini ĝustan specon de interesejo aŭ transsalti tion ĉi.</string>
     <string name="access_from_map_description">Menu-butono lanĉas stirpanelon, ne menuon.</string>
     <string name="access_from_map">Aligi el mapo</string>
-    <string name="show_on_start_description">‘Ek-butono rekte lanĉas map-ekranon.</string>
     <string name="copied_to_clipboard">Enpoŝigita</string>
-    <string name="show_on_start">Montri dum starto</string>
     <string name="osm_save_offline">Konservi loke</string>
     <string name="osm_edit_modified_poi">Ŝanĝitaj OSM-aj interesejoj</string>
     <string name="osm_edit_deleted_poi">Forigitaj OSM-aj interesejoj</string>

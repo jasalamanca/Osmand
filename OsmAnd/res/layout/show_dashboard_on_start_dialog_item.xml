@@ -10,8 +10,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="@dimen/dialog_content_margin"
+        android:layout_marginEnd="@dimen/dialog_content_margin"
         android:orientation="horizontal">
 
         <include
@@ -30,9 +32,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="@dimen/dialog_content_margin"
+        android:layout_marginStart="@dimen/dialog_content_margin"
         android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_toLeftOf="@id/checkbox_wraper"
-        android:text="@string/show_on_start"
+        android:layout_toStartOf="@id/checkbox_wraper"
+        android:text="@string/access_from_map"
         android:textColor="?android:textColorPrimary"
         android:textSize="@dimen/default_list_text_size"
         osmand:typeface="@string/font_roboto_regular"/>
@@ -44,12 +49,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/text"
         android:layout_marginLeft="@dimen/dialog_content_margin"
+        android:layout_marginStart="@dimen/dialog_content_margin"
         android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_toLeftOf="@id/checkbox_wraper"
-        android:text="@string/show_on_start_description"
+        android:layout_toStartOf="@id/checkbox_wraper"
+        android:text="@string/access_from_map_description"
         android:textColor="?android:textColorSecondary"
         android:textSize="@dimen/default_sub_text_size"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         osmand:typeface="@string/font_roboto_regular"
         android:layout_marginBottom="16dp"/>
 

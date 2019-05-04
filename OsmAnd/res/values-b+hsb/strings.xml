@@ -57,7 +57,6 @@
     <string name="shared_string_near">Blisko</string>
     <string name="shared_string_hide">Schować</string>
     <string name="access_from_map">Přistup z karty</string>
-    <string name="show_on_start">Wot započatka pokazać</string>
     <string name="osm_save_offline">Offline składować</string>
     <string name="osm_edit_modified_poi">Změnjene OSM POI-dypki</string>
     <string name="osm_edit_deleted_poi">Wotstronjene OSM POI-dypki</string>

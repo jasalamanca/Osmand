@@ -1619,7 +1619,6 @@ Lon %2$s</string>
     <string name="shared_string_currently_recording_track">Gravando pista neste momento</string>
 	<string name="favourites_context_menu_add">Engadir un favorito</string>
 	<string name="dahboard_options_dialog_title">Configurar a pantalla principal</string>
-	<string name="show_on_start">Mostrar no inicio</string>
 	<string name="commit_poi">Enviar o PDI</string>
 	<string name="saved_at_time">Gardado correctamente en: %1$s</string>
 	<string name="poi_deleted_localy">O punto de interese será eliminado unha vez enviados os cambios</string>

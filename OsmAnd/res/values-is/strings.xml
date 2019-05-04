@@ -70,7 +70,6 @@
     <string name="rendering_attr_horseRoutes_name">Reiðleiðir</string>
     <string name="shared_string_near">Nálægt</string>
     <string name="shared_string_hide">Fela</string>
-    <string name="show_on_start">Birta í ræsingu</string>
     <string name="copied_to_clipboard">Afritað á klippispjald</string>
     <string name="osn_comment_dialog_title">Bæta við athugasemd</string>
     <string name="osn_close_dialog_title">Loka miða</string>
@@ -1756,7 +1755,6 @@ Punktar</string>
     <string name="select_voice_provider_descr">"Veldu eða sæktu  raddleiðsögn fyrir tungumálið þitt."</string>
     <string name="impassable_road_desc">Veldu þá vegi sem þú vilt forðast á meðan leiðsögn stendur.</string>
     <string name="no_address_found">Ekkert heimilisfang er ákvarðað</string>
-    <string name="show_on_start_description">\'Slökkva\' ræsir kortaskjá beint.</string>
     <string name="osn_add_dialog_error">Frávik kom upp: minnispunktur var ekki útbúinn</string>
     <string name="osn_close_dialog_error">Frávik kom upp: minnispunkti var ekki lokað</string>
     <string name="osb_comment_dialog_error">Frávik kom upp: athugasemd var ekki bætt við</string>

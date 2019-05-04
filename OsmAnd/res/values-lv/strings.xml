@@ -1616,8 +1616,6 @@
     <string name="please_specify_poi_type_only_from_list">Lūdzu norādiet korektu POI tipu vai atstājiet tukšu</string>
     <string name="access_from_map_description">Izvēlnes poga ļauj atvērt manu izvēlni</string>
     <string name="access_from_map">Piekļūt no kartes</string>
-    <string name="show_on_start_description">Stāvoklī \"Izslēgts\" uzreiz tiek atvērta karte</string>
-    <string name="show_on_start">Rādīt startējot</string>
     <string name="copied_to_clipboard">Iekopēts starpliktuvē</string>
     <string name="osm_save_offline">Saglabāt krātuvē</string>
     <string name="osm_edit_modified_poi">Labots OSM POI</string>

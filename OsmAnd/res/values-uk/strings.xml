@@ -1607,7 +1607,6 @@
     <string name="shared_string_near">Поблизу</string>
     <string name="shared_string_hide">Приховати</string>
     <string name="please_specify_poi_type_only_from_list">Будь ласка, вкажіть коректний тип POI з переліку, або пропустіть його.</string>
-    <string name="show_on_start">Показувати після старту</string>
     <string name="copied_to_clipboard">Скопійовано до буферу обміну</string>
     <string name="osm_save_offline">Зберегти локально</string>
     <string name="osm_edit_modified_poi">OSM POI відредаговано</string>
@@ -1833,7 +1832,6 @@
     <string name="live_update">Оновлення</string>
     <string name="reports_for">Відзвітувати</string>
 <string name="rendering_attr_showMtbRoutes_name">Показувати MTB-маршрути</string>
-    <string name="show_on_start_description">Якщо вимкнено, відразу показує мапу після запуску.</string>
     <string name="add_points_to_map_markers_q">Бажаєте додати всі точки до позначок мапи?</string>
     <string name="shared_string_add_to_map_markers">Додати до позначок мапи</string>
     <string name="select_map_markers">Обрати позначки мапи</string>

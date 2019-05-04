@@ -577,16 +577,12 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 
 		if (app.isApplicationInitializing() || DashboardOnMap.staticVisible) {
 			if (!dashboardOnMap.isVisible()) {
-				if (settings.SHOW_DASHBOARD_ON_START.get()) {
-					dashboardOnMap.setDashboardVisibility(true, DashboardOnMap.staticVisibleType);
-				} else {
-					if (ErrorBottomSheetDialog.shouldShow(settings, this)) {
-						SecondSplashScreenFragment.SHOW = false;
-						new ErrorBottomSheetDialog().show(getSupportFragmentManager(), "dialog");
-					} else if (RateUsBottomSheetDialog.shouldShow(app)) {
-						SecondSplashScreenFragment.SHOW = false;
-						new RateUsBottomSheetDialog().show(getSupportFragmentManager(), "dialog");
-					}
+				if (ErrorBottomSheetDialog.shouldShow(settings, this)) {
+					SecondSplashScreenFragment.SHOW = false;
+					new ErrorBottomSheetDialog().show(getSupportFragmentManager(), "dialog");
+				} else if (RateUsBottomSheetDialog.shouldShow(app)) {
+					SecondSplashScreenFragment.SHOW = false;
+					new RateUsBottomSheetDialog().show(getSupportFragmentManager(), "dialog");
 				}
 			} else {
 				dashboardOnMap.updateDashboard();

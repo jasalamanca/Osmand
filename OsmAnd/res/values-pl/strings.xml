@@ -1626,7 +1626,6 @@ Długość %2$s</string>
     <string name="saved_at_time">Zapisano o: %1$s</string>
     <string name="poi_deleted_localy">Użyteczne miejsce zostanie usunięte po wysłaniu zmian</string>
     <string name="show_gpx">Wyświetlanie GPX</string>
-    <string name="show_on_start">Wyświetlanie podczas uruchamiania</string>
     <string name="count_of_lines">Liczba linii</string>
     <string name="unsaved_changes_will_be_lost">Wszelkie niezapisane zmiany zostaną utracone. Kontynuować?</string>
     <string name="are_you_sure">Potwierdzenie</string>
@@ -1698,7 +1697,6 @@ Długość %2$s</string>
     <string name="confirm_download_roadmaps">Pobrać mapę samochodową, nawet jeśli pobrano już zwykłą mapę?</string>
     <string name="free_downloads_used_description">Wyświetla ilość zużytych darmowych pobrań.</string>
 
-    <string name="show_on_start_description">Przełącza wyświetlanie kokpitu po uruchomieniu.</string>
     <string name="new_version">Nowa wersja</string>
     <string name="begin_with_osmand_menu_group">Pierwsze kroki z OsmAnd</string>
     <string name="features_menu_group">Cechy</string>

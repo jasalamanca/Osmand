@@ -1685,7 +1685,6 @@
     <string name="unzipping_file">تفكيك ظغط الملف …</string>
     <string name="search_poi_location">جاري البحث عن الإشارة …</string>
     <string name="access_from_map">الدخول عبر الخريطة</string>
-    <string name="show_on_start">إظهار عند البدء</string>
     <string name="map_widget_bearing">تاثير نسبي</string>
     <string name="download_files_question_space_with_temp">تنزيل {0} ملف؟
  مساحة التخزين المستخدمة هي {3} مب مؤقتة، {1} مب دائمة.
@@ -1765,7 +1764,6 @@
     <string name="confirmation_to_delete_history_items">هل تريد حذف العناصر المحددة من السجل الزمني؟</string>
     <string name="access_direction_haptic_feedback">توجيه رد فعل الهزاز</string>
     <string name="please_specify_poi_type_only_from_list">يرجى تحديد نوع POI الصحيح أو تخطيه.</string>
-    <string name="show_on_start_description">\'إيقاف\' تطلق مباشرة واجهة الخريطة.</string>
     <string name="osm_edit_modified_poi">OSM POI معدل</string>
     <string name="osm_edit_commented_note">ملاحظة OSM معلق عليها</string>
     <string name="osm_edit_removed_note">ملاحظة OSM محذوفة</string>

@@ -435,7 +435,6 @@ Llo %2$s</string>
     <string name="osm_live_region_desc">Parte de la to donación unviaráse a usuarios d\'OSM qu\'unvien camudancies al mapa nesa rexón.</string>
     <string name="select_voice_provider_descr">Seleiciona o descarga la guía de voz pa la to llingua.</string>
 	<string name="access_from_map_description">El botón de menú abre\'l tableru, non el menú.</string>
-    <string name="show_on_start_description">«Off» llancia direutamente la pantalla del mapa.</string>
     <string name="default_speed_system_descr">Define la unidá de velocidá.</string>
 	<string name="version_settings_descr">Baxar versiones diaries inestables.</string>
     <string name="enable_proxy_descr">Configura un proxy HTTP pa toles solicitúes de rede.</string>
@@ -509,7 +508,6 @@ Llo %2$s</string>
     <string name="map_markers_other">Otros marcadores</string>
     <string name="upload_anonymously">Xubir de mou anónimu</string>
     <string name="shared_string_widgets">Widgets</string>
-    <string name="show_on_start">Amosar nel aniciu</string>
     <string name="rendering_attr_hideProposed_name">Oxetos propuestos</string>
     <string name="simulate_initial_startup_descr">Marca l\'aplicación que s\'anicia primero, caltien sin cambios los otros axustes.</string>
     <string name="shared_string_send">Unviar</string>

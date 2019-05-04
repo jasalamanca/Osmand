@@ -1511,8 +1511,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="please_specify_poi_type_only_from_list">Kali łaska, uviadzicie pravilny typ POI abo prapuścicie jaho.</string>
     <string name="access_from_map_description">Knopka Mieniu pakazvaje paneĺ kiravannia, a nie mieniu.</string>
     <string name="access_from_map">Dostup z mapy</string>
-    <string name="show_on_start_description">«Adkliučana» niepasredna zapuskaje ekran mapy.</string>
-    <string name="show_on_start">Pakazvać pry zapusku</string>
     <string name="copied_to_clipboard">Skapіjavana ŭ bufier abmienu</string>
     <string name="osm_save_offline">Zachavać lakalna</string>
     <string name="osm_edit_modified_poi">OSM POI adredahavana</string>

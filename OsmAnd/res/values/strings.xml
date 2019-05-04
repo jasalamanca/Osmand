@@ -553,8 +553,6 @@
     <string name="please_specify_poi_type_only_from_list">Please specify the correct POI type or skip it.</string>
     <string name="access_from_map_description">Menu button launches dashboard, not menu.</string>
     <string name="access_from_map">Access from map</string>
-    <string name="show_on_start_description">\'Off\' directly launches the map screen.</string>
-    <string name="show_on_start">Show on start</string>
     <string name="copied_to_clipboard">Copied to clipboard</string>
     <string name="osm_save_offline">Save offline</string>
     <string name="osm_edit_modified_poi">Modified OSM POI</string>

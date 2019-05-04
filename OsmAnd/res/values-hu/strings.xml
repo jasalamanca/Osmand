@@ -1642,7 +1642,6 @@ Hosszúság: %2$s</string>
     <string name="routing_attr_avoid_shuttle_train_name">Autószállító vonat elkerülése</string>
     <string name="routing_attr_avoid_shuttle_train_description">Autószállító vonat elkerülése</string>
     <string name="favourites_context_menu_add">Kedvenc létrehozása</string>
-    <string name="show_on_start">Megjelenítés indításkor</string>
     <string name="poi_deleted_localy">A POI törölve lesz, amint feltöltöd a változtatásokat</string>
     <string name="show_gpx">GPX megjelenítése</string>
     <string name="count_of_lines">Sorok száma</string>
@@ -1677,7 +1676,6 @@ Hosszúság: %2$s</string>
     <string name="map_downloaded_descr">%1$s térképe letöltődött, elkezdheted használni.</string>
     <string name="go_to_map">Térkép megjelenítése</string>
     <string name="application_dir_description">Válaszd ki, hol szeretnéd tárolni a térképeket és egyéb adatokat.</string>
-    <string name="show_on_start_description">Kikapcsolva közvetlenül a térkép képernyőt indítja.</string>
     <string name="enter_country_name">Add meg az ország nevét</string>
     <string name="new_version">Új verzió</string>
     <string name="begin_with_osmand_menu_group">Ismerkedés az OsmAnddal</string>

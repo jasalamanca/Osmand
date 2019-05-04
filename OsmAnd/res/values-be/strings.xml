@@ -1618,7 +1618,6 @@
 <string name="saved_at_time">Пасьпяхова захаваны ў: %1$s</string>
 <string name="show_gpx">Паказаць GPX</string>
 <string name="poi_deleted_localy">POI будуць выдаленыя, як толькі вы загрузіце вашы зьмены</string>
-	<string name="show_on_start">Паказваць пры запуску</string>
 	<string name="count_of_lines">Колькасьць радкоў</string>
     <string name="are_you_sure">Вы ўпэўненыя?</string>
 	<string name="unsaved_changes_will_be_lost">Усе незахаваныя зьмены будуць страчаны. Працягваць?</string>
@@ -1674,7 +1673,6 @@
     <string name="application_dir_description">Выберыце, дзе вы хочаце захоўваць мапы і іншыя файлы са зьвесткамі.</string>
 <string name="share_menu_location">Падзяліцца месцазнаходжаньнем</string>
     <string name="share_geo">геа:</string>
-    <string name="show_on_start_description">«Адключана» непасрэдна запускае экран мапы.</string>
 <string name="simulate_initial_startup">Імітаваць першы старт праграмы</string>
     <string name="shared_string_qr_code">QR-код</string>
     <string name="map_downloaded">Мапа сьцягнутая</string>

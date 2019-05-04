@@ -105,7 +105,6 @@
     <string name="route_duration">Vaxt:</string>
     <string name="shared_string_near">Yaxın</string>
     <string name="shared_string_hide">Gizlət</string>
-    <string name="show_on_start">Başlanğıcda göstər</string>
     <string name="copied_to_clipboard">Buferə köçürüldü</string>
     <string name="osn_bug_name">OSM qeyd</string>
     <string name="osn_add_dialog_title">Qeyd yarat</string>
@@ -1366,7 +1365,6 @@
     <string name="data_is_not_available">Məlumatlar mövcud deyil</string>
     <string name="starting_point">Başlanğıc nöqtə</string>
     <string name="rendering_attr_horseRoutes_name">At marşrutları</string>
-    <string name="show_on_start_description">“Sönülü” birbaşa xəritə ekranını başladır.</string>
     <string name="osm_save_offline">Offlayn saxla</string>
     <string name="osn_add_dialog_error">Səhv baş verdi: qeyd yaradılmadı</string>
     <string name="osn_close_dialog_error">Səhv baş verdi: qeyd bağladılmadı</string>

@@ -921,7 +921,6 @@
     <string name="please_specify_poi_type_only_from_list">请指定正确的 POI 类型或跳过</string>
     <string name="access_from_map_description">菜单按钮启动仪表板，无菜单</string>
     <string name="access_from_map">从地图访问</string>
-    <string name="show_on_start">在开始时显示</string>
     <string name="copied_to_clipboard">复制到剪贴板</string>
     <string name="osm_save_offline">离线保存</string>
     <string name="osm_edit_modified_poi">已修改 OSM POI</string>
@@ -1500,7 +1499,6 @@
     <string name="live_updates">实时更新</string>
     <string name="no_location_permission">应用程序没有权限访问定位数据。</string>
     <string name="no_microphone_permission">应用程序没有访问麦克风的权限。</string>
-    <string name="show_on_start_description">“关闭”会直接启动地图屏幕</string>
     <string name="share_osm_edits_subject">通过 OsmAnd 协作编辑 OSM</string>
     <string name="lang_nds">低地德语</string>
     <string name="lang_mk">马其顿</string>

@@ -1609,7 +1609,6 @@ ZŠ (β) %2$s</string>
     <string name="show_gpx">Pokaži GPX</string>
     <string name="simulate_your_location_stop_descr">Zaustavi simuliranje položaja.</string>
     <string name="simulate_your_location_descr">Simuliraj trenutno točko z izračunano potjo oziroma s shranjeno potjo GPX.</string>
-    <string name="show_on_start">Pokaži ob zagonu</string>
     <string name="count_of_lines">Seštevek vrstic</string>
     <string name="are_you_sure">Ali ste prepričani?</string>
     <string name="unsaved_changes_will_be_lost">Vse neshranjene spremembe bodo izgubljene. Ali želite nadaljevati?</string>
@@ -1692,7 +1691,6 @@ ZŠ (β) %2$s</string>
     <string name="contact_us">Stik z nami</string>
     <string name="world_map_download_descr">Osnovni svetovni zemljevid (zemljevid sveta pri oddaljenem pogledu) je zastarel, ali pa ni nameščen. Brez tega zemljevida prikaz ni popoln.</string>
     <string name="simulate_initial_startup_descr">Nastavi zastavico, ki določa prvi zagon programa, ostale nastavitve pa ostanejo nespremenjene.</string>
-    <string name="show_on_start_description">Onemogočena možnost zažene program v pogledu zemljevida.</string>
     <string name="enter_country_name">Vpis imena države</string>
 
 

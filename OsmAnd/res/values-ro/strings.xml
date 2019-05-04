@@ -1351,7 +1351,6 @@
     <string name="download_wikipedia_files">Doriți să descărcați informații adiționale din Wikipedia (%1$s MB) ?</string>
     <string name="gps_network_not_enabled">Serviciul de localizare este oprit. Doriți să îl activați?</string>
     <string name="access_from_map">Alegeti de pe harta</string>
-    <string name="show_on_start">Arata la pornire</string>
     <string name="osm_save_offline">Salvați offline</string>
     <string name="osm_edit_modified_poi">Modificat POI OSM</string>
     <string name="osm_edit_deleted_poi">POI OSM șters</string>
@@ -1381,7 +1380,6 @@
     <string name="shared_string_hide">Ascunde</string>
     <string name="please_specify_poi_type_only_from_list">Te rog specifică corect POI(punct de interes) sau ignoră-l</string>
     <string name="access_from_map_description">Butonul de meniu lansează panoul frontal, nu meniul propriu-zis</string>
-    <string name="show_on_start_description">\'Închide\' Lansează direct de pe ecranul cu harta</string>
     <string name="copied_to_clipboard">Copiat în clipboard</string>
     <string name="osm_edit_commented_note">Nota OSM comentată</string>
     <string name="osm_edit_removed_note">Nota OSM ștearsă</string>

@@ -1561,7 +1561,6 @@ Lon %2$s</string>
     <string name="looking_up_address">Adresse wird gesucht</string>
     <string name="favourites_context_menu_add">Favorit hinzufügen</string>
 	<string name="poi_action_delete">löschen</string>
-	<string name="show_on_start">Beim Start anzeigen</string>
 	<string name="description">Beschreibung</string>
 	<string name="add_opening_hours">Öffnungszeiten hinzufügen</string>
 	<string name="please_specify_poi_type">Bitte Art des POI angeben.</string>
@@ -1637,7 +1636,6 @@ Lon %2$s</string>
     <string name="contact_us">Kontakt</string>
     <string name="map_legend">Kartenlegende</string>
     <string name="access_from_map_description">Menütaste startet die Übersichtsseite, nicht das Menü.</string>
-    <string name="show_on_start_description">\"Aus\" startet direkt die Kartenansicht.</string>
     <string name="copied_to_clipboard">In die Zwischenablage kopiert</string>
     <string name="osm_save_offline">Offline speichern</string>
     <string name="osm_edit_modified_poi">Geänderter OSM-POI</string>

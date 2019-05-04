@@ -1618,7 +1618,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="saved_at_time">Salvato con successo in: %1$s</string>
     <string name="poi_deleted_localy">I PDI verranno cancellati una volta caricate le modiche</string>
     <string name="show_gpx">Visualizza GPX</string>
-    <string name="show_on_start">Mostra all\'avvio</string>
     <string name="count_of_lines">Conteggio delle linee</string>
     <string name="are_you_sure">Sei sicuro?</string>
     <string name="unsaved_changes_will_be_lost">Tutte le modifiche non salvate andranno perse. Continuare?</string>
@@ -1683,7 +1682,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="map_downloaded">Mappa scaricata</string>
     <string name="map_downloaded_descr">La mappa %1$s è stata scaricata, ora puoi iniziare a utilizzarla.</string>
     <string name="go_to_map">Mostra la mappa</string>
-    <string name="show_on_start_description">\'Spegni\' lancia direttamente la schermata della mappa.</string>
     <string name="enter_country_name">Inserisci il nome della nazione</string>
     <string name="new_version">Nuova versione</string>
     <string name="begin_with_osmand_menu_group">Primi passi con OsmAnd</string>

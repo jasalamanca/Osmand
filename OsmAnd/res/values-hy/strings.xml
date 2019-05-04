@@ -535,8 +535,6 @@
     <string name="please_specify_poi_type_only_from_list">Խնդրում ենք նշել ճիշտ POI տեսակի կամ բաց թողնել այն։</string>
     <string name="access_from_map_description">Մենյուի կոճակը բացում է Վահանակը, այլ ոչ Մենյու։</string>
     <string name="access_from_map">Մուտք քարտեզից</string>
-    <string name="show_on_start_description">\'Off\' ուղղակիորեն մեկնարկում է քարտեզը։</string>
-    <string name="show_on_start">Ցույց տալ սկզբից</string>
     <string name="copied_to_clipboard">Պատճենված է</string>
     <string name="osm_save_offline">Պահպանել անցանց</string>
     <string name="osm_edit_modified_poi">Փոփոխված OSM POI</string>

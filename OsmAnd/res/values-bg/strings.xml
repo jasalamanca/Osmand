@@ -1528,7 +1528,6 @@
     <string name="shared_string_navigation">Навигация</string>
     <string name="osmand_running_in_background">Фонов режим</string>
     <string name="favourites_edit_dialog_title">Предпочитана информация</string>
-    <string name="show_on_start">Да се показва при стартиране</string>
     <string name="copied_to_clipboard">Копирано</string>
     <string name="osm_save_offline">Запази офлайн</string>
     <string name="osm_edit_modified_poi">Модифицирани OSM POI</string>
@@ -1537,7 +1536,6 @@
     <string name="please_specify_poi_type_only_from_list">Моля, задайте правилния тип POI или пропуснете</string>
     <string name="access_from_map_description">Бутонът \'Меню\' стартира таблото за управление</string>
     <string name="access_from_map">Достъп от картата</string>
-    <string name="show_on_start_description">Ако е изключено се стартира с екрана на картата</string>
     <string name="osm_edit_reopened_note">Отворена отново бележка на OSM</string>
     <string name="osm_edit_commented_note">Бележка на OSM с коментар</string>
     <string name="osm_edit_removed_note">Изтрита бележка на OSM</string>

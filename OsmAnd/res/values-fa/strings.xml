@@ -1904,7 +1904,6 @@
     <string name="route_distance">مسافت:</string>
     <string name="route_duration">مدت‌زمان:</string>
     <string name="rendering_attr_horseRoutes_name">راه اسب‌رو</string>
-    <string name="show_on_start">هنگام شروع نشانش بده</string>
     <string name="copied_to_clipboard">کپی شد</string>
     <string name="osm_edit_deleted_poi">حذف POI</string>
     <string name="osm_edit_removed_note">بستن توضیح ویرایشی</string>
@@ -2255,7 +2254,6 @@
     <string name="save_track_min_distance">کمترین جابه‌جایی برای ثبت</string>
     <string name="translit_names">نویسه‌گردانی نام‌ها</string>
     <string name="shared_string_sound">صدا</string>
-    <string name="show_on_start_description">اگر خاموش باشد، مستقیماً صفحهٔ نقشه را برایتان می‌آورد.</string>
     <string name="osm_edit_modified_poi">اصلاح POI</string>
     <string name="osm_edit_commented_note">توضیح ویرایشیِ دارای نظر</string>
     <string name="lang_mk">مقدونی</string>

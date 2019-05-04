@@ -1615,7 +1615,6 @@ Ilguma %2$s</string>
     <string name="routing_attr_avoid_shuttle_train_name">Vengti priemiestinių traukinių</string>
     <string name="routing_attr_avoid_shuttle_train_description">Vengti priemiestinių traukinių</string>
     <string name="dahboard_options_dialog_title">Duomenų skydelio nustatymai</string>
-    <string name="show_on_start">Rodyti aktyvuojant</string>
     <string name="commit_poi">Išsiųsti LV</string>
     <string name="count_of_lines">Eilučių kiekis</string>
     <string name="are_you_sure">Ar įsitikinę?</string>
@@ -1996,7 +1995,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="map_marker">Žemėlapio žymė</string>
     <string name="consider_turning_polygons_off">Rekomenduotina išjungti daugiakampių atvaizdavimą.</string>
     <string name="access_from_map">Prieiga iš žemėlapio</string>
-    <string name="show_on_start_description">\"Išjungta\" tiesiogiai įjungia žemėlapio rodinį.</string>
     <string name="lang_ast">Astūrų</string>
     <string name="lang_hsb">Aukštutinių sorbų</string>
     <string name="lang_kab">Kabilų</string>

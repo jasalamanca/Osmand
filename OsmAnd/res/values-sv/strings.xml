@@ -1591,7 +1591,6 @@ Long %2$s</string>
     <string name="saved_at_time">Sparades utan problem kl. %1$s</string>
     <string name="poi_deleted_localy">POI tas bort så snart du laddat upp dina ändringar</string>
     <string name="show_gpx">Visa GPX</string>
-    <string name="show_on_start">Visa vid start</string>
     <string name="are_you_sure">Är du säker?</string>
     <string name="unsaved_changes_will_be_lost">Alla osparade ändringar kommer att förloras. Fortsätta ändå?</string>
     <string name="simulate_your_location_stop_descr">Sluta simulera din plats.</string>
@@ -1647,7 +1646,6 @@ Long %2$s</string>
     <string name="application_dir_description">Välj var du vill spara kartfilerna och andra datafiler.</string>
     <string name="share_menu_location">Dela platsen</string>
     <string name="shared_string_send">Sänd</string>
-    <string name="show_on_start_description">\'Av\' startar kartskärmen direkt.</string>
     <string name="map_downloaded">Karta hämtad</string>
     <string name="map_downloaded_descr">Kartan över %1$s har hämtats, och du kan nu börja använda den.</string>
     <string name="go_to_map">Visa kartan</string>

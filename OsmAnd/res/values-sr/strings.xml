@@ -344,8 +344,6 @@
     <string name="please_specify_poi_type_only_from_list">Молим, изаберите тачну врсту тачке занимања или је прескочите.</string>
     <string name="access_from_map_description">Дугме изборника не покреће изборник, већ полицу полетника.</string>
     <string name="access_from_map">Приступ са карте</string>
-    <string name="show_on_start_description">„Искључи“ покреће приказ карте.</string>
-    <string name="show_on_start">Прикажи при покретању</string>
     <string name="copied_to_clipboard">Умножено је у оставу исечака</string>
     <string name="osm_save_offline">Сачувај за преглед ван мреже</string>
     <string name="osm_edit_modified_poi">Измењене тачке занимања ОСМ-а</string>
