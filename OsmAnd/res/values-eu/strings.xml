@@ -2,7 +2,6 @@
 <resources>
     <string name="edit_tilesource_maxzoom">Zoom max</string>
     <string name="edit_tilesource_minzoom">Zoom min</string>
-    <string name="maps_define_edit">Definitu/Editatu…</string>
   <string name="map_widget_fps_info">FPS debugeatzeko info</string>
   <string name="driving_region_descr">Aukeratu gidatze eremua: EEBB, Europa, EB, Asia edo bestelakoak.</string>
   <string name="driving_region">Gidatze eremua</string>
@@ -716,7 +715,6 @@ Biltegiratzean {1} MB erabiliko dira.
   <string name="gpx_files_not_found">Ez da GPX fitxategirik aurkitu lorratzen direktorioan</string>
   <string name="layer_gpx_layer">GPX lorratza…</string>
   <string name="error_reading_gpx">Errorea GPX datuak irakurtzean</string>
-  <string name="vector_data">Lineaz kanpoko bektore mapak</string>
   <string name="transport_context_menu">Bilatu garraioa geldiunean</string>
   
   
@@ -747,7 +745,6 @@ Biltegiratzean {1} MB erabiliko dira.
   <string name="layer_osm_bugs">OSM Oharrak (sarean)</string>
   
   <string name="layer_poi">POI gainazala…</string>
-  <string name="layer_map">Maparen iturburua…</string>
   <string name="menu_layers">Mapa geruzak</string>
   <string name="context_menu_item_search_poi">POIa bilatu</string>
   <string name="use_trackball_descr">Erabili Trackball-a mapa mugitzeko.</string>
@@ -2085,10 +2082,6 @@ Area honi dagokio: %1$s x %2$s</string>
     <string name="quick_action_map_underlay_action">Gehitu azpi-azala</string>
     <string name="quick_action_interim_dialog">Erakutsi barne elkarrizketa-koadroa</string>
     <string name="quick_action_duplicate">Ekintza azkarraren izena bikoiztua dago</string>
-    <string name="quick_action_map_source">Aldatu maparen iturria</string>
-    <string name="quick_action_map_source_title">Mapa-iturriak</string>
-    <string name="quick_action_map_source_action">Gehitu mapa-iturria</string>
-    <string name="quick_action_map_source_switch">Mapa-iturria \"%s\" izatera aldatu da.</string>
     <string name="quick_action_btn_tutorial_title">Aldatu botoiaren posizioa</string>
     <string name="quick_action_btn_tutorial_descr">Sakatze luze eta arrastatu botoia bere pantailako posizioa aldatzeko.</string>
 	<string name="shared_string_action_name">Ekintzaren izena</string>

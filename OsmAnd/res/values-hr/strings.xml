@@ -384,7 +384,6 @@
 	<string name="search_poi_filter">Filtar</string>
 	<string name="where_am_i">Gdje sam?</string>
 	<string name="int_seconds">sekundi</string>
-	<string name="layer_map">Izvor karte-…</string>
 	<string name="menu_layers">Odredite prikaz</string>
 	<string name="context_menu_item_search_poi">Traži POI</string>
 	
@@ -407,7 +406,6 @@
 	
 	<string name="layer_gpx_layer">GPX trag…</string>
 	<string name="error_reading_gpx">Došlo je do pogreške pri čitanju GPX podataka</string>
-	<string name="vector_data">Offline vektorske karte</string>
 	<string name="voice">Glas</string>
 	<string name="no_vector_map_loaded">Vektorske karte nisu učitane</string>
 	
@@ -838,7 +836,6 @@
 	<string name="about_version">Inačica :</string>
     <string name="about_settings_descr">Podaci o inačici, licence, članovi projekta</string>
 
-    <string name="maps_define_edit">Definiraj/Uredi…</string>
 	<string name="driving_region_descr">Odaberite područje u kojem vozite: SAD, Europa, Velika Britanija, Azija i ostalo</string>
 	<string name="driving_region">Područje vožnje</string>
 	<string name="driving_region_japan">Japan</string>

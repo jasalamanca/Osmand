@@ -647,7 +647,6 @@
     <string name="any_poi">Wšě</string>
     
     
-    <string name="layer_map">Kartowe žórło…</string>
     <string name="menu_layers">Kartowe runiny</string>
     <string name="context_menu_item_search_poi">POI pytać</string>
     <string name="where_am_i">Hdźe sym?</string>
@@ -983,9 +982,6 @@
     <string name="quick_action_map_underlay">Kartowu podłohu změnić</string>
     <string name="quick_action_map_underlay_title">Kartowe podłohi</string>
     <string name="quick_action_map_underlay_action">Podłohu dodać</string>
-    <string name="quick_action_map_source">Kartowe žórło změnić</string>
-    <string name="quick_action_map_source_title">Kartowe žórła</string>
-    <string name="quick_action_map_source_action">Kartowe žórło dodać</string>
     <string name="retry">Znowa spytać</string>
     <string name="add_line">Liniju dodać</string>
     <string name="empty_state_favourites">Fawority dodać</string>

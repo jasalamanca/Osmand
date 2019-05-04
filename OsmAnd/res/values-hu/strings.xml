@@ -398,7 +398,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="gpx_files_not_found">Nem található GPX fálj a tracks könyvtárban</string>
     <string name="layer_gpx_layer">GPX útvonal…</string>
     <string name="error_reading_gpx">Nem sikerült olvasni a GPX-adatot</string>
-    <string name="vector_data">Vektoros OSM térkép</string>
     <string name="transport_context_menu">Közlekedés keresése a célnál</string>
 
     
@@ -429,7 +428,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="layer_osm_bugs">OSM-megjegyzések (online)</string>
     
     <string name="layer_poi">POI…</string>
-    <string name="layer_map">Térképforrás…</string>
     <string name="menu_layers">Térképrétegek</string>
     <string name="context_menu_item_search_poi">POI keresése</string>
 
@@ -1022,7 +1020,6 @@ Proporcionális memória %4$s MB (Android korlát %5$s MB, Dalvik %6$s MB).</str
 
     <string name="edit_tilesource_maxzoom">Max zoom</string>
     <string name="edit_tilesource_minzoom">Min zoom</string>
-    <string name="maps_define_edit">Megad/Szerkeszt…</string>
 
     <string name="base_world_map">Föld alaptérkép</string>
     <string name="map_magnifier">Térképnagyító</string>
@@ -2104,10 +2101,6 @@ Jelenleg csak {2} MB érhető el.</string>
     <string name="quick_action_map_underlay">Térkép alátét módosítása</string>
     <string name="quick_action_map_underlay_title">Térkép alátétek</string>
     <string name="quick_action_map_underlay_action">Alátét hozzáadása</string>
-    <string name="quick_action_map_source">Térképforrás módosítása</string>
-    <string name="quick_action_map_source_title">Térképforrások</string>
-    <string name="quick_action_map_source_action">Térképforrás hozzáadása</string>
-    <string name="quick_action_map_source_switch">A térképforrás erre módosult: „%s”.</string>
     <string name="quick_action_btn_tutorial_title">Gombpozíció módosítása</string>
     <string name="quick_action_btn_tutorial_descr">Nyomd meg hosszan és húzd a gombot, hogy módosítsd a pozícióját a képernyőn.</string>
 	<string name="shared_string_action_name">Műveletnév</string>

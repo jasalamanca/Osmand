@@ -455,7 +455,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="gpx_files_not_found">Tracks segtuve nerasta jokių GPX failų</string>
     <string name="layer_gpx_layer">GPX maršrutas…</string>
     <string name="error_reading_gpx">Įvyko klaida skaitant GPX duomenis</string>
-    <string name="vector_data">Parsiųsti vektoriniai žemėlapiai</string>
     <string name="transport_context_menu">Ieškoti transporto stotelėje</string>
 
     
@@ -486,7 +485,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="layer_osm_bugs">OSM Pastabos (online)</string>
     
     <string name="layer_poi">LV sluoksnis…</string>
-    <string name="layer_map">Žemėlapių šaltiniai…</string>
     <string name="menu_layers">Žemėlapio sluoksniai</string>
     <string name="context_menu_item_search_poi">Ieškoti LV</string>
 
@@ -1022,7 +1020,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
 
     <string name="edit_tilesource_maxzoom">Maksimalus mąstelis</string>
     <string name="edit_tilesource_minzoom">Mažiausias mąstelis</string>
-    <string name="maps_define_edit">Nustatyti/redaguoti…</string>
 
 
     <string name="base_world_map">Bazinis pasaulio žemėlapis</string>
@@ -2048,9 +2045,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="quick_action_add_category">Pridėti kategoriją</string>
     <string name="quick_action_bug_message">Pranešimas</string>
     <string name="quick_action_map_styles">Žemėlapio stiliai</string>
-    <string name="quick_action_map_source_title">Žemėlapio šaltiniai</string>
-    <string name="quick_action_map_source_action">Pridėti žemėlapio šaltinį</string>
-    <string name="quick_action_map_source">Pakeisti žemėlapio šaltinį</string>
     <string name="restore_purchases">Atkurti pirkinius</string>
     <string name="fonts_header">Žemėlapio šriftai</string>
     <string name="right_side_navigation">Vairavimas dešinėje</string>
@@ -2139,7 +2133,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="quick_action_poi_list">LV sąrašas</string>
     <string name="quick_action_map_style_action">Pridėti žemėlapio stilių</string>
     <string name="quick_action_empty_param_error">Parametrai negali būti tušti</string>
-    <string name="quick_action_map_source_switch">Žemėlapio šaltinis buvo pakeistas į \'%s\'.</string>
     <string name="quick_action_btn_tutorial_title">Pakeisti mygtuko padėtį</string>
     <string name="shared_string_action_name">Veiksmo pavadinimas</string>
     <string name="shared_string_permissions">Teisės</string>

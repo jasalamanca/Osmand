@@ -362,7 +362,6 @@ Punktaŭ maršrutu %2$s</string>
 
     <string name="edit_tilesource_maxzoom">Maksіmalnaje pavieličeńnie</string>
     <string name="edit_tilesource_minzoom">Mіnіmalnaje pavieličeńnie</string>
-    <string name="maps_define_edit">Vyznačyć/źmianić…</string>
 	<string name="map_widget_fps_info">Adładačnaja іnfarmacyja FPS</string>
 	<string name="driving_region_descr">Abiarycie rehijon kiravańnia: ZŠA, Eŭropa, Vialikabrytanija, Azija i inšyja.</string>
 	<string name="driving_region">Rehіjon kіravańnia</string>
@@ -1067,7 +1066,6 @@ Praparcyjnaj pamiacі %4$s MB (Abmiežavańnie Android %5$s MB, Dalvik %6$s MB).
 	<string name="gpx_files_not_found">GPX fajły nie znojdzieny ŭ katałohu tracks</string>
 	<string name="layer_gpx_layer">GPX-śled…</string>
 	<string name="error_reading_gpx">Pamyłka pry čytańnі GPX dadzienych</string>
-	<string name="vector_data">Łakalnyja viektarnyja mapy</string>
 	<string name="transport_context_menu">Šukać transpart na prypynku</string>
 	
 	
@@ -1102,7 +1100,6 @@ Praparcyjnaj pamiacі %4$s MB (Abmiežavańnie Android %5$s MB, Dalvik %6$s MB).
 	<string name="layer_osm_bugs">OSM-natatki (anłajn)</string>
 	
 	<string name="layer_poi">POI-nakladka…</string>
-	<string name="layer_map">Krynіca mapy…</string>
 	<string name="menu_layers">Słaі mapy</string>
 	<string name="context_menu_item_search_poi">Pošuk POI</string>
 	<string name="use_trackball_descr">Vykarystoŭvajcie trekbol dlia pieramiaščennia mapy.</string>
@@ -2047,10 +2044,6 @@ U vypadku, kali vy lubіcie OsmAnd і OSM і chočacie padtrymać jaho, heta іd
     <string name="lang_kab">Kabilskaja</string>
     <string name="shared_string_action_name">Nazva dziejańnia</string>
 <string name="quick_action_btn_tutorial_title">Zmianić stanovišča knopki</string>
-    <string name="quick_action_map_source_switch">Krynica mapy była źmieniena na \"%s\".</string>
-    <string name="quick_action_map_source">Zmianić krynicu mapy</string>
-    <string name="quick_action_map_source_title">Krynicy mapaŭ</string>
-    <string name="quick_action_map_source_action">Dadać krynicu mapy</string>
     <string name="quick_action_poi_list">Spis POI</string>
     <string name="quick_action_new_action">Dadać dziejańnie</string>
     <string name="configure_screen_quick_action">Chutkaje dziejańnie</string>

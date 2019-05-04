@@ -541,7 +541,6 @@
 	<string name="gpx_files_not_found">Δεν βρέθηκαν αρχεία GPX στον κατάλογο ιχνών</string>
 	<string name="layer_gpx_layer">Ίχνος GPX…</string>
 	<string name="error_reading_gpx">Σφάλμα ανάγνωσης δεδομένων GPX</string>
-	<string name="vector_data">Offline διανυσματικοί χάρτες</string>
 	<string name="transport_context_menu">Αναζήτηση μέσου μεταφοράς στη στάση</string>
 	
 	
@@ -569,7 +568,6 @@
 	<string name="layer_osm_bugs">Σημειώσεις OSM (σε σύνδεση)</string>
 	
 	<string name="layer_poi">Σημ Ενδ…</string>
-	<string name="layer_map">Πηγή χάρτη…</string>
 	<string name="menu_layers">Επίπεδα χάρτη</string>
 	<string name="context_menu_item_search_poi">Αναζήτηση ΣΕ</string>
 	
@@ -993,7 +991,6 @@
 
     <string name="edit_tilesource_maxzoom">Μεγ Εστίαση</string>
     <string name="edit_tilesource_minzoom">Ελαχ εστίαση</string>
-    <string name="maps_define_edit">Καθορισμός/Επεξεργασία…</string>
 
     <string name="driving_region_descr">Επιλέξτε περιοχή οδήγησης: ΗΠΑ, Ευρώπη, ΗΒ, Ασία, κλπ</string>
 	<string name="driving_region">Περιοχή οδήγησης</string>

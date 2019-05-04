@@ -560,7 +560,6 @@ Nyttjat utrymme är {1} MB.
     <string name="gpx_files_not_found">Hittar inga GPX-filer i spårmappen</string>
     <string name="layer_gpx_layer">GPX-spår …</string>
     <string name="error_reading_gpx">Fel vid läsning av GPX-data</string>
-    <string name="vector_data">Offline vektorkartor</string>
     <string name="transport_context_menu">Sök transport vid stopp</string>
 
     <string name="poi_context_menu_modify">Ändra Intressepunkt</string>
@@ -587,7 +586,6 @@ Nyttjat utrymme är {1} MB.
     <string name="layer_osm_bugs">OSM-anteckningar (online)</string>
     
     <string name="layer_poi">Överlägg (POI) …</string>
-    <string name="layer_map">Kartkälla …</string>
     <string name="menu_layers">Kartlager</string>
     <string name="context_menu_item_search_poi">Sök intressepunkt</string>
 
@@ -970,7 +968,6 @@ Nyttjat utrymme är {1} MB.
 
     <string name="edit_tilesource_maxzoom">Max. zoom</string>
     <string name="edit_tilesource_minzoom">Min. zoom</string>
-    <string name="maps_define_edit">Definiera/Redigera …</string>
 
 
     <string name="base_world_map">Baskarta (världen)</string>
@@ -2038,10 +2035,6 @@ Om du tycker om OsmAnd och OSM och vill stödja dem så är detta ett utmärkt s
     <string name="quick_action_add_navigation">Navigering</string>
     <string name="quick_action_bug_message">Meddelande</string>
     <string name="quick_action_btn_tutorial_title">Ändra knapplacering</string>
-    <string name="quick_action_map_source_switch">Kartkällan har ändrats till \"%s\".</string>
-    <string name="quick_action_map_source_action">Lägg till kartkälla</string>
-    <string name="quick_action_map_source_title">Kartkällor</string>
-    <string name="quick_action_map_source">Ändra kartkälla</string>
     <string name="quick_action_map_underlay_action">Lägg till underlägg</string>
     <string name="quick_action_map_underlay_title">Kartunderlägg</string>
     <string name="quick_action_map_underlay">Ändra kartunderlägg</string>

@@ -1152,16 +1152,10 @@
     <string name="routing_preferences_descr">Marşrutlama seçimləri</string>
     <string name="profile_settings">Profil parametrləri</string>
     <string name="about_settings_descr">Versiya məlumatı, lisenziyalar, layihə üzvləri</string>
-    <string name="maps_define_edit">Müəyyənləşdir/Düzəliş et…</string>
     <string name="driving_region_europe_asia">Avropa, Asiya, Latın Amerikası və oxşar</string>
     <string name="driving_region_uk">Böyük Britaniya, Hindistan və oxşar</string>
     <string name="map_widget_view_direction">Baxış istiqaməti</string>
-    <string name="layer_map">Xəritə mənbəyi…</string>
     <string name="map_source">Xəritə mənbəyi</string>
-    <string name="quick_action_map_source">Xəritə mənbəyini dəyiş</string>
-    <string name="quick_action_map_source_title">Xəritə mənbələri</string>
-    <string name="quick_action_map_source_action">Xəritə mənbəyi əlavə et</string>
-    <string name="quick_action_map_source_switch">Xəritə mənbəyi “%s” olaraq dəyişdirildi.</string>
     <string name="distance_moving">Məsafə dəqiqləşdirildi</string>
     <string name="translit_names">Adları başqa dildə yaz</string>
     <string name="osm_live_banner_desc">Limitsiz xəritə endirmələri və xəritələri ayda bir dəfədən çox yeniləmək imkanı əldə edin: həftəlik, günlük və ya saatlıq.</string>
@@ -1479,7 +1473,6 @@
     <string name="transport_search_again">Nəqliyyat axtarışını sıfırla</string>
     <string name="voice">Qeyd edilən səs</string>
     <string name="no_vector_map_loaded">Vektor xəritələr yüklənməyib</string>
-    <string name="vector_data">Offlayn vektor xəritələr</string>
     <string name="transport_context_menu">Dayanacaqda nəqliyyat axtar</string>
     <string name="show_route">Marşrut detalları</string>
     <string name="no_fav_to_save">Yadda saxlanacaq favorit nöqtələr yoxdur</string>

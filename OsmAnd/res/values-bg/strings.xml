@@ -676,7 +676,6 @@
     <string name="gpx_files_not_found">Не са открити файлове GPX в папката за следи</string>
     <string name="layer_gpx_layer">GPX следа…</string>
     <string name="error_reading_gpx">Грешка при четене на GPX данни</string>
-    <string name="vector_data">Офлайн векторни карти</string>
     <string name="transport_context_menu">Търсене за общ. транспорт на тази спирка</string>
 
 
@@ -707,7 +706,6 @@
     <string name="layer_osm_bugs">OSM бележки (онлайн)</string>
     
     <string name="layer_poi">POI…</string>
-    <string name="layer_map">Източници на карти…</string>
     <string name="menu_layers">Слоеве</string>
     <string name="context_menu_item_search_poi">Търсене на POI</string>
 
@@ -1027,7 +1025,6 @@
     <string name="edit_tilesource_maxzoom">Максимално увеличение</string>
     <string name="edit_tilesource_minzoom">Минимално увеличение</string>
 
-    <string name="maps_define_edit">Въвеждане/редактиране…</string>
     <string name="guidance_preferences_descr">Предпочитания за навигацията</string>
     <string name="routing_preferences_descr">Предпочитания за маршрутите</string>
     <string name="speech_rate_descr">Скорост на TTS</string>

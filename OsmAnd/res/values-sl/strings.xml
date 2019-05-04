@@ -744,7 +744,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="gpx_files_not_found">V mapi sledi ni najti mogoče nobene datoteke GPX.</string>
     <string name="layer_gpx_layer">Sled GPX …</string>
     <string name="error_reading_gpx">Napaka med branjem podatkov GPX</string>
-    <string name="vector_data">Vektorski zemljevidi za delo brez povezave</string>
     <string name="transport_context_menu">Iskanje prevoza na postaji</string>
     
     <string name="rotate_map_to_bearing_descr">Izbor poravnave zaslona zemljevida.</string>
@@ -765,7 +764,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="layer_osm_bugs">Hrošči OSM (zahteva povezavo)</string>
     
     <string name="layer_poi">Izbor točk POI …</string>
-    <string name="layer_map">Vir zemljevida …</string>
     <string name="context_menu_item_search_poi">Iskanje točk POI</string>
     <string name="use_trackball_descr">Uporabite sledilno kroglico za premikanje zemljevida.</string>
     <string name="use_trackball">Uporabite sledilno kroglico</string>
@@ -1015,7 +1013,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
 
     <string name="edit_tilesource_maxzoom">Največje približanje</string>
     <string name="edit_tilesource_minzoom">Najmanjše približanje</string>
-    <string name="maps_define_edit">Določi/Uredi …</string>
 
     <string name="base_world_map">Osnovni zemljevid sveta</string>
     <string name="shared_string_and">in</string>
@@ -2080,10 +2077,6 @@ Del prihodka se vrne skupnosti OSM in se izplačuje za vsako opravljeno dejavnos
     <string name="quick_action_map_underlay">Spremeni podlogo zemljevida</string>
     <string name="quick_action_map_underlay_title">Podloge zemljevida</string>
     <string name="quick_action_map_underlay_action">Dodaj podlogo zemljevida</string>
-    <string name="quick_action_map_source">Spremeni vir zemljevida</string>
-    <string name="quick_action_map_source_title">Viri zemljevida</string>
-    <string name="quick_action_map_source_action">Dodaj vir zemljevida</string>
-    <string name="quick_action_map_source_switch">Vir zemljevida je spremenjen na »%s«.</string>
     <string name="quick_action_btn_tutorial_title">Spremeni položaj gumba</string>
     <string name="navigate_point_olc">Odpri kodo območja</string>
     <string name="navigate_point_olc_info_invalid">Neveljavna koda območja

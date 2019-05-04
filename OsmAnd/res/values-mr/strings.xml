@@ -185,7 +185,6 @@
   <string name="show_route">मार्ग तपशील</string>
   <string name="any_poi">कुठलाही</string>
   <string name="shared_string_favorites">आवडती ठिकाणे</string>
-  <string name="layer_map">नकाशाचा स्त्रोत…</string>
   <string name="context_menu_item_search_poi">पिओआय शोधा</string>
   
   <string name="where_am_i">मी कुठे आहे?</string>
@@ -421,7 +420,6 @@
 	
 	<string name="layer_route">मार्ग</string>
 	
-	<string name="vector_data">ऑफलाएन वेक्टर नकाशे</string>
 	<string name="no_vector_map_loaded">वेक्टर नकाशे लोड झाले नाही</string>
 	
 	<string name="context_menu_item_search_transport">सार्वजनिक परिवहन शोधा</string>

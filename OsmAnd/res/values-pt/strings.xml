@@ -95,7 +95,6 @@
   <string name="gpx_files_not_found">Nenhum arquivo GPX encontrado no diretório /tracks</string>
   <string name="layer_gpx_layer">Rota GPX…</string>
   <string name="error_reading_gpx">Erro na leitura de dados GPX</string>
-  <string name="vector_data">Mapas vetoriais offline</string>
   <string name="transport_context_menu">Procurar transporte na parada</string>
   
   
@@ -126,7 +125,6 @@
   <string name="layer_osm_bugs">Bugs OSM</string>
   
   <string name="layer_poi">POI (Ponto de interesse)…</string>
-  <string name="layer_map">Fonte dos mapas…</string>
   <string name="menu_layers">Camada de mapa</string>
   <string name="context_menu_item_search_poi">Encontre um Ponto de Interesse</string>
   
@@ -1048,7 +1046,6 @@ Clique no widget de medição para ver mais ações.</string>
 
     <string name="edit_tilesource_maxzoom">Zoom máximo</string>
     <string name="edit_tilesource_minzoom">Zoom min</string>
-    <string name="maps_define_edit">Definir/Editar…</string>
 	<string name="map_widget_fps_info">Depuração FPS</string>
     <string name="map_magnifier">Lupa do mapa</string>
     <string name="base_world_map">Mapa mundial</string>

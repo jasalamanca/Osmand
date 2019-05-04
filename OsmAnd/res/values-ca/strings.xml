@@ -416,7 +416,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="shared_string_import">Importa</string>
     <string name="any_poi">Algun</string>
     <string name="layer_osm_bugs">Notes d\'OSM (en línia)</string>
-    <string name="layer_map">Origen del mapa…</string>
     <string name="layer_poi">Superposició de PDI…</string>
     <string name="context_menu_item_search_poi">Cerca PDI</string>
     <string name="int_min">min.</string>
@@ -458,7 +457,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="use_fluorescent_overlays">Capes superposades fluorescents</string>
     <string name="shared_string_refresh">Refresca</string>
     <string name="layer_gpx_layer">Traça GPX…</string>
-    <string name="vector_data">Mapes de vectors fora de línia</string>
     <string name="poi_context_menu_modify">Modifica el PDI</string>
     <string name="poi_context_menu_delete">Elimina el PDI</string>
     <string name="rotate_map_compass_opt">Segons la brúixola</string>
@@ -908,7 +906,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="about_settings_descr">Informació de la versió, llicències, membres del projecte</string>
     <string name="edit_tilesource_maxzoom">Escalat màxim</string>
     <string name="edit_tilesource_minzoom">Escalat mínim</string>
-    <string name="maps_define_edit">Defineix/edita…</string>
     <string name="driving_region_descr">Seleccioneu la regió de conducció: EUA, Europa, Regne Unit, Àsia i altres.</string>
     <string name="driving_region">Regió de conducció</string>
     <string name="driving_region_japan">Japó</string>
@@ -1937,10 +1934,6 @@ L\'ús de memòria serà de {3} MB temporalment i {1} MB permanentment.
     <string name="quick_action_map_underlay">Modifica el fons del mapa</string>
     <string name="quick_action_map_underlay_title">Fons de mapa</string>
     <string name="quick_action_map_underlay_action">Afegeix fons</string>
-    <string name="quick_action_map_source">Canvia l\'origen del mapa</string>
-    <string name="quick_action_map_source_title">Orígens de mapa</string>
-    <string name="quick_action_map_source_action">Afegeix origen del mapa</string>
-    <string name="quick_action_map_source_switch">L\'origen del mapa s\'ha canviat al de \"%s\".</string>
     <string name="quick_action_btn_tutorial_title">Modifica la posició del botó</string>
     <string name="quick_action_btn_tutorial_descr">Premeu contínuament i arrossegueu el botó per canviar-li la posició per la pantalla.</string>
 <string name="quick_action_interim_dialog">Mostra un diàleg provisional</string>

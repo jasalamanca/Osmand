@@ -221,7 +221,6 @@ MB)をダウンロードしますか?</string>
      <string name="layer_gpx_layer">GPX経路…</string>
      <string name="error_reading_gpx">GPXデータ読み込みエラー</string>
 
-     <string name="vector_data">オフラインベクターマップ</string>
      <string name="transport_context_menu">交通機関の乗降場を検索</string>
      
      
@@ -254,7 +253,6 @@ MB)をダウンロードしますか?</string>
      <string name="layer_osm_bugs">OSM bugs</string>
      
      <string name="layer_poi">POI…</string>
-     <string name="layer_map">マップソース…</string>
      <string name="menu_layers">ビュー定義</string>
      
      <string name="context_menu_item_search_poi">POIを検索</string>
@@ -593,7 +591,6 @@ POIの更新は利用できません</string>
 
     <string name="edit_tilesource_maxzoom">最大ズーム</string>
     <string name="edit_tilesource_minzoom">最小ズーム</string>
-    <string name="maps_define_edit">マップの定義と編集…</string>
 	<string name="map_widget_fps_info">FPS デバッグ情報</string>
 	<string name="driving_region_descr">運転する地域を選択します:米国、ヨーロッパ、イギリス、アジア、その他</string>
 	<string name="driving_region">運転地域</string>
@@ -2187,10 +2184,6 @@ OsmAndとOSMをサポートする方法として現状最適な方法である�
     <string name="quick_action_map_underlay">アンダーレイマップの変更</string>
     <string name="quick_action_map_underlay_title">アンダーレイマップ</string>
     <string name="quick_action_map_underlay_action">アンダーレイを追加</string>
-    <string name="quick_action_map_source">ソースマップの変更</string>
-    <string name="quick_action_map_source_title">ソースマップ</string>
-    <string name="quick_action_map_source_action">ソースマップを追加</string>
-    <string name="quick_action_map_source_switch">ソースマップは\"%s\"に変更されました。</string>
     <string name="quick_action_btn_tutorial_title">ボタン位置を変更</string>
     <string name="quick_action_btn_tutorial_descr">ロングタップとドラッグで画面上のボタンの位置を変更します。</string>
 	<string name="shared_string_action_name">アクション名</string>

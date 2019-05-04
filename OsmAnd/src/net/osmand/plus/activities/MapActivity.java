@@ -7,7 +7,6 @@ import android.app.Dialog;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
@@ -284,7 +283,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 			}
 		}
 		addDialogProvider(mapActions);
-		OsmandPlugin.onMapActivityCreate(this);
+		OsmandPlugin.onMapActivityCreate();
 		gpxImportHelper = new GpxImportHelper(this, getMyApplication(), getMapView());
 		wakeLockHelper = new WakeLockHelper(getMyApplication());
 		if (System.currentTimeMillis() - tm > 50) {
@@ -640,7 +639,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 
 		readLocationToShow();
 
-		OsmandPlugin.onMapActivityResume(this);
+		OsmandPlugin.onMapActivityResume();
 
 		final Intent intent = getIntent();
 		if (intent != null) {
@@ -1117,7 +1116,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		unregisterReceiver(screenOffReceiver);
 		app.getAidlApi().onDestroyMapActivity(this);
 		FailSafeFunctions.quitRouteRestoreDialog();
-		OsmandPlugin.onMapActivityDestroy(this);
+		OsmandPlugin.onMapActivityDestroy();
 		getMyApplication().unsubscribeInitListener(initListener);
 		mapViewTrackingUtilities.setMapView(null);
 		MapTileDownloader.getInstance().removeDownloaderCallback(mapView);
@@ -1178,7 +1177,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		settings.setLastKnownMapZoom(mapView.getZoom());
 		settings.MAP_ACTIVITY_ENABLED.set(false);
 		app.getResourceManager().interruptRendering();
-		OsmandPlugin.onMapActivityPause(this);
+		OsmandPlugin.onMapActivityPause();
 	}
 
 	public void updateApplicationModeSettings() {
@@ -1290,7 +1289,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 			final LatLon l = tb.getLatLonFromPixel(cp.x + dx, cp.y + dy);
 			setMapLocation(l.getLatitude(), l.getLongitude());
 			return true;
-		} else if (OsmandPlugin.onMapActivityKeyUp(this, keyCode)) {
+		} else if (OsmandPlugin.onMapActivityKeyUp(keyCode)) {
 			return true;
 		}
 		return super.onKeyUp(keyCode, event);
@@ -1597,7 +1596,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 	private class ScreenOffReceiver extends BroadcastReceiver {
 		@Override
 		public void onReceive(Context context, Intent intent) {
-			OsmandPlugin.onMapActivityScreenOff(MapActivity.this);
+			OsmandPlugin.onMapActivityScreenOff();
 		}
 	}
 

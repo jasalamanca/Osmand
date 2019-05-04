@@ -448,7 +448,6 @@
   <string name="gpx_files_not_found">GPX ფაილები /tracks დასტაში ნაპოვნი არ იქნა</string>
   <string name="layer_gpx_layer">GPX მიყოლა…</string>
   <string name="error_reading_gpx">GPX მონაცემების კითხვის შეცდომა</string>
-  <string name="vector_data">გათიშული ვექტორული რუკები</string>
   <string name="transport_context_menu">გაჩერებაზე ტრანსპორტის ძებნა</string>
   
   
@@ -479,7 +478,6 @@
   <string name="layer_osm_bugs">OSM-ის ხოჭოები</string>
   
   <string name="layer_poi">POI…</string>
-  <string name="layer_map">რუკის წყარო…</string>
   <string name="menu_layers">ხედის აღწერა</string>
   <string name="context_menu_item_search_poi">POI-ის ძებნა</string>
   
@@ -968,7 +966,6 @@
     <string name="amenity_type_seamark">ზღვის დონიდან</string>
     <string name="edit_tilesource_maxzoom">მაქს. გადიდება</string>
     <string name="edit_tilesource_minzoom">მინ. გადიდება</string>
-    <string name="maps_define_edit">აღწერა/ჩასწორება…</string>
 	<string name="map_widget_fps_info">FPS გარჩევის ინფორმაცია</string>
 	<string name="driving_region_descr">აირჩიეთ გზის რეგიონი: აშშ, ევროპა, UK, აზია და სხვა</string>
 	<string name="driving_region">გზის რეგიონი</string>

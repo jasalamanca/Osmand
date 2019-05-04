@@ -1,10 +1,8 @@
 package net.osmand.plus.activities;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
-import android.app.AlertDialog;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -49,9 +47,7 @@ import net.osmand.plus.views.TransportStopsLayer;
 import net.osmand.plus.views.mapwidgets.MapWidgetRegistry;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map.Entry;
 
 /**
  * Object is responsible to maintain layers using by map activity
@@ -344,48 +340,6 @@ public class MapActivityLayers {
 		adapter.addItem(builder.createItem());
 	}
 
-	public void selectMapLayer(final OsmandMapTileView mapView, final ContextMenuItem it, final ArrayAdapter<ContextMenuItem> adapter) {
-		final LinkedHashMap<String, String> entriesMap = new LinkedHashMap<>();
-		final String layerOsmVector = "LAYER_OSM_VECTOR";
-		final String layerInstallMore = "LAYER_INSTALL_MORE";
-		final String layerEditInstall = "LAYER_EDIT";
-		entriesMap.put(layerOsmVector, getString(R.string.vector_data));
-		entriesMap.put(layerInstallMore, getString(R.string.install_more));
-		entriesMap.put(layerEditInstall, getString(R.string.maps_define_edit));
-
-		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-		int selectedItem = 0;
-		final List<Entry<String, String>> entriesMapList = new ArrayList<>(entriesMap.entrySet());
-		final String[] items = new String[entriesMapList.size()];
-		int i = 0;
-		for (Entry<String, String> entry : entriesMapList) {
-			items[i++] = entry.getValue();
-		}
-
-		builder.setSingleChoiceItems(items, selectedItem, (dialog, which) -> {
-			String layerKey = entriesMapList.get(which).getKey();
-			switch (layerKey) {
-				case layerOsmVector:
-					updateMapSource(mapView);
-					it.setDescription(null);
-					adapter.notifyDataSetChanged();
-					break;
-				default:
-					it.setDescription(layerKey);
-					adapter.notifyDataSetChanged();
-					updateMapSource(mapView);
-					break;
-			}
-
-			dialog.dismiss();
-		});
-		builder.setNegativeButton(R.string.shared_string_dismiss, null);
-		builder.show();
-	}
-
-	private String getString(int resId) {
-		return activity.getString(resId);
-	}
 	public GPXLayer getGpxLayer() {
 		return gpxLayer;
 	}

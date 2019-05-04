@@ -297,7 +297,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 
     <string name="edit_tilesource_maxzoom">Ampliación máxima</string>
     <string name="edit_tilesource_minzoom">Ampliación mínima</string>
-    <string name="maps_define_edit">Definir/Editar…</string>
 	<string name="map_widget_fps_info">Información de depuración de FPS</string>
 	<string name="driving_region_descr">Seleccione a rexión na que conducir: Estados Unidos, Europa, Reino Unido, Asia e outras</string>
 	<string name="driving_region">Rexión na que conducir</string>
@@ -1001,7 +1000,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="gpx_files_not_found">Non foi posíbel atopar ficheiros GPX no cartafol de pistas</string>
 	<string name="layer_gpx_layer">Pista de GPX…</string>
 	<string name="error_reading_gpx">Produciuse un erro ao ler os datos de GPX</string>
-	<string name="vector_data">Mapas vectoriais sen conexión</string>
 	<string name="transport_context_menu">Buscar transporte na paraxe</string>
 	
 	
@@ -1036,7 +1034,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="layer_osm_bugs">Notas de OSM (con conexión)</string>
 	
 	<string name="layer_poi">PdI…</string>
-	<string name="layer_map">Fonte de mapas…</string>
 	<string name="menu_layers">Capas do mapa</string>
 	<string name="context_menu_item_search_poi">Buscar PDI</string>
 	<string name="use_trackball_descr">Empregar a trackball para mover o mapa</string>
@@ -2034,10 +2031,6 @@ Lon %2$s</string>
     <string name="quick_action_map_style_action">Engadir un estilo de mapa</string>
     <string name="quick_action_empty_param_error">Os parámetros non deberían estar baleiros</string>
     <string name="quick_action_map_styles">Estilos de mapa</string>
-    <string name="quick_action_map_source">Cambiar a fonte do mapa</string>
-    <string name="quick_action_map_source_title">Fontes de mapas</string>
-    <string name="quick_action_map_source_action">Engadir unha fonte de mapas</string>
-    <string name="quick_action_map_source_switch">Cambiouse a fonte de mapas para «%s».</string>
     <string name="quick_action_btn_tutorial_title">Cambiar a posición do botón</string>
     <string name="quick_action_btn_tutorial_descr">Prema e arrastre o botón para cambiar a súa posición na pantalla</string>
 	<string name="shared_string_action_name">Nome da acción</string>

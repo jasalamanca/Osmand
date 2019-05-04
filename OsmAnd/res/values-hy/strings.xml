@@ -1176,7 +1176,6 @@
     <string name="about_settings_descr">Թողարկման տեղեկություն, լիցենզիաներ, նախագծի անդամներ</string>
     <string name="edit_tilesource_maxzoom">Առավելագույն խոշորացում</string>
     <string name="edit_tilesource_minzoom">Նվազագույն խոշորացում</string>
-    <string name="maps_define_edit">Սահմանել/Խմբագրել …</string>
     <string name="map_widget_fps_info">Կարգավորման տեղեկություններ</string>
     <string name="driving_region_descr">Ընտրեք վարելու տարածաշրջանը՝ ԱՄՆ, Եվրոպա, Մեծ Բրիտանիա, Ասիա և այլն։</string>
     <string name="driving_region">Վարելու տարածաշրջանը</string>
@@ -1724,7 +1723,6 @@
     <string name="gpx_files_not_found">GPX ֆայլերը չեն գտնվել թղթապանակում</string>
     <string name="layer_gpx_layer">GPX տրեկ…</string>
     <string name="error_reading_gpx">GPX տվյալների ընթերցման սխալ</string>
-    <string name="vector_data">Տեղական վեկտորային(Offline) քարտեզներ</string>
     <string name="transport_context_menu">Տրանսպորտի որոնում կանգառում</string>
     <string name="poi_context_menu_modify">Խմբագրել POI</string>
     <string name="poi_context_menu_delete">Ջնջել POI</string>
@@ -1746,7 +1744,6 @@
     <string name="layer_route">Երթուղի</string>
     <string name="layer_osm_bugs">OSM նշումներ (online)</string>
     <string name="layer_poi">POI…</string>
-    <string name="layer_map">Քարտեզի աղբյուրը…</string>
     <string name="menu_layers">Շերտեր</string>
     <string name="context_menu_item_search_poi">Որոնել POI</string>
     <string name="use_trackball_descr">Քարտեզը շարժելու համար օգտագործեք trackball։</string>
@@ -2120,10 +2117,6 @@
     <string name="quick_action_map_underlay">Փոխել քարտեզի նեքեվի շերտը</string>
     <string name="quick_action_map_underlay_title">Քարտեզի նեքեվի շերտը</string>
     <string name="quick_action_map_underlay_action">Ավելացնել քարտեզի նեքեվի շերտը</string>
-    <string name="quick_action_map_source">Փոխել քարտեզի աղբյուրը</string>
-    <string name="quick_action_map_source_title">Քարտեզի աղբյուրները</string>
-    <string name="quick_action_map_source_action">Ավելացնել քարտեզի աղբյուրները</string>
-    <string name="quick_action_map_source_switch">Քարտեզի աղբյուրը փոխվել է «%»։</string>
     <string name="quick_action_btn_tutorial_title">Փոխել կոճակի դիրքը</string>
     <string name="quick_action_btn_tutorial_descr">Երկար սեղմումը և քաշեքը փոխում է կոճակի դիրքը։</string>
     <string name="shared_string_action_name">Գործողության անունը</string>

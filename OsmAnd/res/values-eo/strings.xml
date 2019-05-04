@@ -791,7 +791,6 @@ Lon: %2$s</string>
     <string name="map_magnifier">Map-skalado</string>
     <string name="edit_tilesource_maxzoom">Maksimuma skalo</string>
     <string name="edit_tilesource_minzoom">Minimuma skalo</string>
-    <string name="maps_define_edit">Difini/redakti…</string>
     <string name="map_widget_fps_info">Montri kadrojn sekunde (senerarigo)</string>
     <string name="driving_region">Trafika regiono</string>
     <string name="driving_region_descr">Elekti trafikan regionon: Usono, Eŭropo, Britujo, Azio kaj aliaj.</string>
@@ -1420,7 +1419,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="voice">Registrita voĉo</string>
     <string name="voices">Voĉaj avertoj</string>
     <string name="no_vector_map_loaded">Ne ŝargis vektorajn mapojn</string>
-    <string name="vector_data">Eksterretaj vektoraj mapoj</string>
     <string name="transport_context_menu">Serĉi transporton ĉe haltejo</string>
     <string name="poi_context_menu_modify">Modifi interesejon</string>
     <string name="poi_context_menu_delete">Forigi interesejon</string>
@@ -1459,7 +1457,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="dahboard_options_dialog_title">Agordi stirpanelon</string>
 
     <string name="get_directions">Navigi</string>
-    <string name="layer_map">Map-fontoj…</string>
     <string name="app_mode_train">Vagonaro</string>
     <string name="app_mode_bus">Aŭtobuso</string>
  	<string name="fav_file_to_load_not_found">GPX-dosiero kun ŝatataj punktoj ne trovita en {0}</string>
@@ -1918,10 +1915,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="quick_action_map_underlay">Ŝanĝi mapan subtavolon</string>
     <string name="quick_action_map_underlay_title">Mapaj subtavoloj</string>
     <string name="quick_action_map_underlay_action">Aldoni subtavolon</string>
-    <string name="quick_action_map_source">Ŝanĝi mapan fonton</string>
-    <string name="quick_action_map_source_title">Map-fontoj</string>
-    <string name="quick_action_map_source_action">Aldoni map-fonton</string>
-    <string name="quick_action_map_source_switch">Map-fonto ŝanĝita al \"%s\".</string>
     <string name="quick_action_btn_tutorial_title">Ŝanĝi pozicion de butono</string>
     <string name="quick_action_btn_tutorial_descr">Premtenu kaj ŝovu la butonon por ŝanĝi ĝian pozicion sur la ekrano.</string>
 <string name="shared_string_action_name">Nomo de ago</string>

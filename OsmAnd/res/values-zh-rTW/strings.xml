@@ -531,7 +531,6 @@
     <string name="gpx_files_not_found">在 /tracks 資料夾找不到 GPX 檔案</string>
     <string name="layer_gpx_layer">GPX 軌跡…</string>
     <string name="error_reading_gpx">讀取 GPX 資料錯誤</string>
-    <string name="vector_data">離線向量地圖</string>
     <string name="transport_context_menu">查尋公車站牌</string>
 
     
@@ -559,7 +558,6 @@
     <string name="layer_osm_bugs">OSM 註解(連線)</string>
     
     <string name="layer_poi">POI 覆蓋…</string>
-    <string name="layer_map">地圖來源…</string>
     <string name="menu_layers">地圖圖層</string>
     <string name="context_menu_item_search_poi">查尋 POI</string>
 
@@ -960,7 +958,6 @@
 
     <string name="edit_tilesource_maxzoom">最大縮放比</string>
     <string name="edit_tilesource_minzoom">最小縮放比</string>
-    <string name="maps_define_edit">定義/編輯…</string>
     <string name="about_version">版本：</string>
     <string name="shared_string_about">關於</string>
     <string name="about_settings_descr">版本訊息、授權、專案成員</string>
@@ -2070,10 +2067,6 @@
     <string name="quick_action_map_underlay">更改地圖襯底層</string>
     <string name="quick_action_map_underlay_title">地圖襯底層</string>
     <string name="quick_action_map_underlay_action">增加襯底層</string>
-    <string name="quick_action_map_source">更改地圖來源</string>
-    <string name="quick_action_map_source_title">地圖來源</string>
-    <string name="quick_action_map_source_action">增加地圖來源</string>
-    <string name="quick_action_map_source_switch">地圖來源已經被更改為 \"%s\"。</string>
     <string name="quick_action_btn_tutorial_title">更改按鈕位置</string>
     <string name="quick_action_btn_tutorial_descr">長按並拖動在螢幕上的按鈕改變位置。</string>
     <string name="quick_action_fav_name_descr">保留為空白則自動使用地址或地點名稱。</string>

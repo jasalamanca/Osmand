@@ -919,7 +919,6 @@ Ferill %2$s</string>
     <string name="show_route">Nánar um leið</string>
     <string name="send_report">Senda skýrslu</string>
     <string name="layer_yandex_traffic">Yandex umferð</string>
-    <string name="layer_map">Uppruni korts…</string>
     <string name="menu_layers">Lög á korti</string>
     <string name="use_trackball_descr">Nota bendilkúlu til að hreyfa kort.</string>
     <string name="use_trackball">Nota bendilkúlu</string>
@@ -1038,7 +1037,6 @@ Ferill %2$s</string>
     <string name="about_settings_descr">Upplýsingar um útgáfu, notkunarleyfi, þátttakendur verkefnis</string>
     <string name="edit_tilesource_maxzoom">Hám. aðdráttur</string>
     <string name="edit_tilesource_minzoom">Lágm. aðdráttur</string>
-    <string name="maps_define_edit">Skilgreina/Breyta…</string>
     <string name="driving_region_descr">Veldu aksturssvæði: BNA, Evrópa, Bretland, Asía og annað.</string>
     <string name="driving_region">Aksturssvæði</string>
     <string name="speak_street_names">Götuheiti (TTS)</string>
@@ -1273,7 +1271,6 @@ Sólsetur: %2$s</string>
     <string name="voice">Hljóðrituð rödd</string>
     <string name="no_vector_map_loaded">Vektorkortum var ekki hlaðið inn</string>
     <string name="error_reading_gpx">Villa við að lesa GPX-gögn</string>
-    <string name="vector_data">Ónettengd vektorkort</string>
     <string name="fav_saved_sucessfully">Eftirlæti tókst að vista í {0}</string>
     <string name="share_fav_subject">Eftirlætum deilt með OsmAnd</string>
     <string name="error_occurred_loading_gpx">Villa kom upp við lestur GPX</string>
@@ -1699,10 +1696,6 @@ Punktar</string>
     <string name="quick_action_map_underlay">Breyta undirlagi korts</string>
     <string name="quick_action_map_underlay_title">Undirlög korts</string>
     <string name="quick_action_map_underlay_action">Bæta við undirlagi</string>
-    <string name="quick_action_map_source">Breyta gagnagjafa korts</string>
-    <string name="quick_action_map_source_title">Gagnagjafar korta</string>
-    <string name="quick_action_map_source_action">Bæta við gagnagjafa korts</string>
-    <string name="quick_action_map_source_switch">Gagnagjafa kortsins var breytt yfir í \"%s\".</string>
     <string name="quick_action_btn_tutorial_title">Breyta staðsetningu hnapps</string>
     <string name="shared_string_action_name">Heiti aðgerðar</string>
 <string name="rendering_attr_noAdminboundaries_name">Afmarkanir</string>

@@ -536,7 +536,6 @@
 	<string name="no_vector_map_loaded">Offline-Daten wurden nicht geladen</string>
 	<string name="layer_gpx_layer">GPX-Track…</string>
 	<string name="error_reading_gpx">Fehler beim Lesen der GPX-Daten</string>
-	<string name="vector_data">Offline-Vektor-Karten</string>
 	<string name="transport_context_menu">Suche nach Verbindung an Haltestelle</string>
 
 	<string name="poi_context_menu_modify">Bearbeite POI</string>
@@ -567,7 +566,6 @@
 	
 	<string name="layer_poi">POI Overlay…</string>
 	<string name="layer_amenity_label">POI-Overlay-Bezeichnungen</string>
-	<string name="layer_map">Kartenquelle…</string>
 	<string name="menu_layers">Kartenebenen</string>
 	<string name="context_menu_item_search_poi">Suche POI</string>
 	
@@ -1040,7 +1038,6 @@ Proportionaler Speicher %4$s MB (Android Limit %5$s MB, Dalvik %6$s MB).</string
 	<string name="about_settings_descr">Versionsinfo, Lizenz, Projektmitglieder</string>
 	<string name="edit_tilesource_maxzoom">Max Zoom</string>
     <string name="edit_tilesource_minzoom">Min Zoom</string>
-    <string name="maps_define_edit">Definieren/Bearbeiten…</string>
 	<string name="shared_string_and">und</string>
 	<string name="shared_string_or">oder</string>
 	
@@ -2019,10 +2016,6 @@ Wenn Sie OsmAnd und OSM lieben und unterstützen wollen, so ist dies die perfekt
     <string name="quick_action_map_underlay">Underlay-Karte hinzufügen</string>
     <string name="quick_action_map_underlay_title">Underlay-Karten</string>
     <string name="quick_action_map_underlay_action">Underlay hinzufügen</string>
-    <string name="quick_action_map_source">Kartenquelle ändern</string>
-    <string name="quick_action_map_source_title">Kartenquellen</string>
-    <string name="quick_action_map_source_action">Kartenquelle hinzufügen</string>
-    <string name="quick_action_map_source_switch">Die Kartenquelle wurde in \"%s\" geändert.</string>
     <string name="quick_action_btn_tutorial_title">Tastenposition ändern</string>
     <string name="quick_action_favorites_show">Favoriten anzeigen</string>
     <string name="quick_action_favorites_hide">Favoriten ausblenden</string>

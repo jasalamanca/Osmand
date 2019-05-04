@@ -261,7 +261,6 @@
 	
 	<string name="voice">Kaydedilen Ses</string>
 	<string name="no_vector_map_loaded">Vektör haritalar yüklenmedi</string>
-	<string name="vector_data">Çevrim dışı vektör haritaları</string>
 	
 	<string name="poi_context_menu_delete">POI sil</string>
 	<string name="fav_saved_sucessfully">Favoriler şuraya başarıyla kaydedildi: {0}</string>
@@ -271,7 +270,6 @@
 	<string name="layer_yandex_traffic">Yandex Trafik</string>
 	<string name="layer_route">Rota</string>
 	<string name="shared_string_favorites">Favoriler</string>
-	<string name="layer_map">Harita kaynağı…</string>
 	<string name="context_menu_item_search_poi">POI Ara</string>
 	<string name="where_am_i">Neredeyim?</string>
 	<string name="process_navigation_service">OsmAnd yolbul hizmeti</string>
@@ -687,7 +685,6 @@
     <string name="shared_string_about">Hakkında</string>
     <string name="about_settings_descr">Sürüm bilgisi, lisanslar, proje üyeleri</string>
 
-    <string name="maps_define_edit">Tanımla/Düzenle…</string>
 	<string name="clear_intermediate_points"/>
     <string name="keep_intermediate_points">Ara hedefler tutun</string>
     <string name="new_directions_point_dialog">Zaten ara noktaları belirlemişsiniz.</string>

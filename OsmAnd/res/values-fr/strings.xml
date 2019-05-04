@@ -331,7 +331,6 @@
     <string name="gpx_files_not_found">Aucun fichier GPX n\'a été trouvé dans le dossier de traces</string>
     <string name="layer_gpx_layer">Trace GPX…</string>
     <string name="error_reading_gpx">Erreur de lecteur des données GPX</string>
-    <string name="vector_data">Cartes vectorielles OSM</string>
     <string name="transport_context_menu">Transport en commun</string>
 
     
@@ -362,7 +361,6 @@
     <string name="layer_osm_bugs">Notes OSM (en ligne)</string>
     
     <string name="layer_poi">Sur-couche des points d\'intérêt…</string>
-    <string name="layer_map">Carte en ligne…</string>
     <string name="menu_layers">Couches</string>
     <string name="context_menu_item_search_poi">Rechercher un Point d\'Intérêt</string>
 
@@ -1005,7 +1003,6 @@ Mémoire proportionnelle %4$s Mo (limite Android %5$s Mo, Dalvik %6$s Mo).</stri
     <string name="osb_author_or_password_not_specified">Merci de spécifier votre nom d\'utilisateur et mot de passe OSM dans les paramètres</string>
     <string name="clear_intermediate_points">Supprimer les étapes intermédiaires</string>
     <string name="keep_intermediate_points">Conserver les étapes intermédiaires</string>
-    <string name="maps_define_edit">Définir/Éditer…</string>
     <string name="announce_gpx_waypoints">Points de passage GPX</string>
     <string name="speak_descr">Annoncer les noms de rue, les avertissements (stops, ralentisseurs, radars), les limites de vitesse.</string>
     <string name="new_directions_point_dialog">Vous avez déjà défini des étapes intermédiaires.</string>
@@ -2107,10 +2104,6 @@ Si vous appréciez OsmAnd et OSM et que vous souhaitez soutenir ces projets, c\'
     <string name="quick_action_map_underlay">Modifier la sous-couche de carte</string>
     <string name="quick_action_map_underlay_title">Sous-couches de carte</string>
     <string name="quick_action_map_underlay_action">Ajouter une sous-couche</string>
-    <string name="quick_action_map_source">Modifier la source de la carte</string>
-    <string name="quick_action_map_source_title">Sources de cartes</string>
-    <string name="quick_action_map_source_action">Ajouter une source de carte</string>
-    <string name="quick_action_map_source_switch">La source de la carte a été modifiée pour \"%s\".</string>
     <string name="quick_action_btn_tutorial_title">Déplacer le bouton</string>
     <string name="quick_action_btn_tutorial_descr">Appui long pour déplacer le bouton sur l\'écran</string>
 <string name="quick_action_add_marker_descr">Appuyez sur le bouton d\'action pour ajouter une marque au centre de la carte.</string>

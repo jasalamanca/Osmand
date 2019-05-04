@@ -359,7 +359,6 @@
     <string name="gpx_files_not_found">Žádné GPX soubory nebyly nalezeny v adresáři tracks</string>
     <string name="layer_gpx_layer">GPX trasa…</string>
     <string name="error_reading_gpx">Chyba při načítání dat GPX</string>
-    <string name="vector_data">Vektorové off-line mapy</string>
     <string name="transport_context_menu">Hledat dopravu ze zastávky</string>
     
     <string name="poi_context_menu_modify">Upravit POI</string>
@@ -388,7 +387,6 @@
     <string name="layer_osm_bugs">OSM Poznámky (on-line)</string>
     
     <string name="layer_poi">Vrstva POI…</string>
-    <string name="layer_map">Zdroj map…</string>
     <string name="menu_layers">Mapová data</string>
     <string name="context_menu_item_search_poi">Hledat POI</string>
     <string name="use_trackball_descr">Použít trackball k posouvání mapy.</string>
@@ -900,7 +898,6 @@ Proporcionální paměť %4$s MB (limit Androidu %5$s MB, Dalvik %6$s MB).</stri
     <string name="about_settings_descr">Informace o verzi, licenci, členech projektu</string>
     <string name="edit_tilesource_maxzoom">Maximální zvětšení</string>
     <string name="edit_tilesource_minzoom">Minimální zvětšení</string>
-    <string name="maps_define_edit">Vytvořit/Upravit…</string>
     <string name="driving_region_descr">Vyberte dopravní oblast: USA, Evropa, Británie, Asie a další.</string>
     <string name="driving_region">Dopravní oblast</string>
     <string name="map_widget_fps_info">Snímků za sekundu (ladění)</string>
@@ -1938,10 +1935,6 @@ Pokud máte rádi OsmAnd a OSM a chcete je podpořit, toto je výborný způsob,
     <string name="quick_action_map_underlay">Změna mapy podkladu</string>
     <string name="quick_action_map_underlay_title">Mapa podkladu</string>
     <string name="quick_action_map_underlay_action">Přidat podklad</string>
-    <string name="quick_action_map_source">Změnit zdroj mapy</string>
-    <string name="quick_action_map_source_title">Mapové zdroje</string>
-    <string name="quick_action_map_source_action">Přidat zdroj mapy</string>
-    <string name="quick_action_map_source_switch">Zdroj mapy se změnil na \"%s\".</string>
     <string name="quick_action_btn_tutorial_title">Změnit polohu tlačítka</string>
     <string name="quick_action_btn_tutorial_descr">Dlouze stiskněte a přetáhněte tlačítko pro změnu jeho umístění na obrazovce.</string>
 	<string name="shared_string_action_name">Název akce</string>

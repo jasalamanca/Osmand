@@ -494,7 +494,6 @@
 
     <string name="edit_tilesource_maxzoom">Zoom máximo</string>
     <string name="edit_tilesource_minzoom">Zoom mínimo</string>
-    <string name="maps_define_edit">Definir/Editar…</string>
 	<string name="map_widget_fps_info">Informações de depuração FPS</string>
 	<string name="driving_region_descr">Selecionar região de direção</string>
 	<string name="driving_region">Região de direção</string>
@@ -1167,7 +1166,6 @@ Pôr do Sol: %2$s</string>
 	<string name="gpx_files_not_found">Nenhum arquivo GPX encontrado no diretório de trilhas</string>
 	<string name="layer_gpx_layer">Trilha GPX…</string>
 	<string name="error_reading_gpx">Erro na leitura de dados GPX</string>
-	<string name="vector_data">Mapas vetoriais off-line</string>
 	<string name="transport_context_menu">Pesquisar transporte na parada</string>
 	
 	<string name="poi_context_menu_modify">Modificar POI</string>
@@ -1193,7 +1191,6 @@ Pôr do Sol: %2$s</string>
 	<string name="layer_route">Rota</string>
 	
 	<string name="layer_poi">POI…</string>
-	<string name="layer_map">Fonte de mapa…</string>
 	<string name="menu_layers">Camadas de mapa</string>
 	<string name="use_trackball_descr">Usar trackball para mover o mapa</string>
 	<string name="use_trackball">Usar trackball</string>
@@ -2267,10 +2264,6 @@ Pôr do Sol: %2$s</string>
     <string name="quick_action_map_underlay">Mudar camada inferior de mapa</string>
     <string name="quick_action_map_underlay_title">Camadas inferiores de mapa</string>
     <string name="quick_action_map_underlay_action">Adicionar camada inferior</string>
-    <string name="quick_action_map_source">Mudar fonte de mapa</string>
-    <string name="quick_action_map_source_title">Fontes do mapa</string>
-    <string name="quick_action_map_source_action">Adicionar fonte de mapa</string>
-    <string name="quick_action_map_source_switch">A fonte do mapa foi alterada para \"%s\".</string>
     <string name="quick_action_btn_tutorial_title">Mudar posição do botão</string>
     <string name="quick_action_btn_tutorial_descr">Segure e arraste o botão para mudar a sua posição na tela.</string>
     <string name="shared_string_action_name">Nome da ação</string>

@@ -477,7 +477,6 @@ Lon %2$s</string>
     <string name="about_settings_descr">Información de la versión, licencias, miembros del proyecto</string>
     <string name="edit_tilesource_maxzoom">Máxima ampliación</string>
     <string name="edit_tilesource_minzoom">Mínima ampliación</string>
-    <string name="maps_define_edit">Definir/Editar…</string>
     <string name="map_widget_fps_info">Info de depuración FPS</string>
     <string name="driving_region_descr">Elige la región de conducción: EEUU, Europa, Reino Unido, Asia u otras.</string>
     <string name="driving_region">Región de conducción</string>
@@ -1083,7 +1082,6 @@ Lon %2$s</string>
     <string name="gpx_files_not_found">Sin archivos GPX en la carpeta de trazas</string>
     <string name="layer_gpx_layer">Traza GPX…</string>
     <string name="error_reading_gpx">Error leyendo datos GPX</string>
-    <string name="vector_data">Mapas vectoriales descargados</string>
     <string name="transport_context_menu">Buscar transporte en parada</string>
     
     <string name="poi_context_menu_modify">Modificar PDI</string>
@@ -1112,7 +1110,6 @@ Lon %2$s</string>
     <string name="layer_osm_bugs">Notas de OSM (en línea)</string>
     
     <string name="layer_poi">Superposición de PDI…</string>
-    <string name="layer_map">Fuente de mapas…</string>
     <string name="menu_layers">Capas de mapas</string>
     <string name="context_menu_item_search_poi">Buscar PDI</string>
     <string name="use_trackball_descr">Usa la rueda de desplazamiento para mover el mapa.</string>
@@ -1945,10 +1942,6 @@ Si amas a OsmAnd, OSM y quieres apoyarlos, esta es una perfecta manera de hacerl
     <string name="quick_action_map_underlay">Cambiar mapa subyacente</string>
     <string name="quick_action_map_underlay_title">Mapas subyacentes</string>
     <string name="quick_action_map_underlay_action">Añadir subyacencia</string>
-    <string name="quick_action_map_source">Cambiar fuente del mapa</string>
-    <string name="quick_action_map_source_title">Fuentes del mapa</string>
-    <string name="quick_action_map_source_action">Añadir fuente del mapa</string>
-    <string name="quick_action_map_source_switch">La fuente del mapa se cambió a «%s».</string>
     <string name="quick_action_btn_tutorial_title">Cambiar ubicación del botón</string>
     <string name="quick_action_btn_tutorial_descr">Mantén pulsado y arrastra el botón para mover la ubicación en la pantalla.</string>
 <string name="quick_action_interim_dialog">Mostrar un diálogo temporal</string>

@@ -2,8 +2,6 @@ package net.osmand.plus.dialogs;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
@@ -52,7 +50,6 @@ import net.osmand.util.Algorithms;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -164,9 +161,6 @@ public class ConfigureMapMenu {
 				} else {
 					showGpxSelectionDialog(adapter, adapter.getItem(pos));
 				}
-			} else if (itemId == R.string.layer_map) {
-				ContextMenuItem it = adapter.getItem(pos);
-				ma.getMapLayers().selectMapLayer(ma.getMapView(), it, adapter);
 			}
 			adapter.notifyDataSetChanged();
 			ma.getMapLayers().updateLayers(ma.getMapView());
@@ -217,7 +211,6 @@ public class ConfigureMapMenu {
 		adapter.addItem(new ContextMenuItem.ItemBuilder()
 				.setTitleId(R.string.shared_string_show, activity)
 				.setCategory(true).setLayout(R.layout.list_group_title_with_switch).createItem());
-		// String appMode = " [" + settings.getApplicationMode().toHumanString(view.getApplication()) +"] ";
 		boolean selected = settings.SHOW_FAVORITES.get();
 		adapter.addItem(new ContextMenuItem.ItemBuilder()
 				.setTitleId(R.string.shared_string_favorites, activity)
@@ -241,14 +234,6 @@ public class ConfigureMapMenu {
 				.setColor(selected ? R.color.osmand_orange : ContextMenuItem.INVALID_ID)
 				.setIcon(R.drawable.ic_action_text_dark)
 				.setListener(l).createItem());
-
-		/*
-		ContextMenuItem item = createProperties(customRules, null, R.string.rendering_category_transport, R.drawable.ic_action_bus_dark,
-				"transport", settings.TRANSPORT_DEFAULT_SETTINGS, adapter, activity, false);
-		if (item != null) {
-			adapter.addItem(item);
-		}
-		*/
 
 		final List<RenderingRuleProperty> transportRules = new ArrayList<>();
 		final List<OsmandSettings.CommonPreference<Boolean>> transportPrefs = new ArrayList<>();
@@ -418,13 +403,8 @@ public class ConfigureMapMenu {
 				.setIcon(R.drawable.ic_action_polygom_dark)
 				.setSecondaryIcon(R.drawable.ic_action_additional_option)
 				.setListener(l).createItem());
-		adapter.addItem(new ContextMenuItem.ItemBuilder()
-				.setTitleId(R.string.layer_map, activity)
-				.setIcon(R.drawable.ic_world_globe_dark)
-				.setDescription(null)
-				.setListener(l).createItem());
 
-		OsmandPlugin.registerLayerContextMenu(activity.getMapView(), adapter, activity);
+		OsmandPlugin.registerLayerContextMenu(adapter, activity);
 	}
 
 	public static void refreshMapComplete(final MapActivity activity) {
@@ -458,7 +438,7 @@ public class ConfigureMapMenu {
 						i++;
 					}
 
-					bld.setSingleChoiceItems(visibleNamesList.toArray(new String[visibleNamesList.size()]), selected, (dialog, which) -> {
+					bld.setSingleChoiceItems(visibleNamesList.toArray(new String[0]), selected, (dialog, which) -> {
 						String renderer = items.get(which);
 						RenderingRulesStorage loaded = app.getRendererRegistry().getRenderer(renderer);
 						if (loaded != null) {
@@ -495,8 +475,6 @@ public class ConfigureMapMenu {
 						refreshMapComplete(activity);
 						dialog.dismiss();
 						activity.getDashboard().refreshContent(true);
-						// adapter.getItem(pos).setDescription(s, getDayNightDescr(activity));
-						// ad.notifyDataSetInvalidated();
 					});
 					bld.setNegativeButton(R.string.shared_string_dismiss, null);
 					bld.show();
@@ -536,7 +514,7 @@ public class ConfigureMapMenu {
 					}
 
 					bld.setTitle(R.string.map_magnifier);
-					bld.setSingleChoiceItems(values.toArray(new String[values.size()]), i,
+					bld.setSingleChoiceItems(values.toArray(new String[0]), i,
 							(dialog, which) -> {
 								int p1 = tlist.get(which);
 								mapDensity.set(p1 / 100.0f);
@@ -731,7 +709,7 @@ public class ConfigureMapMenu {
 			}
 			return mp.get(lhs).compareTo(mp.get(rhs));
 		});
-		return lst.toArray(new String[lst.size()]);
+		return lst.toArray(new String[0]);
 	}
 
 	private static String[] getMapNamesValues(Context ctx, String[] ids) {

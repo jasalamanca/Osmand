@@ -472,7 +472,6 @@
   <string name="gpx_files_not_found">GPX lêers nie gevind in /tracks adres nie</string>
   <string name="layer_gpx_layer">GPX spoor…</string>
   <string name="error_reading_gpx">Fout met lees van GPX inligting</string>
-  <string name="vector_data">Aflyn vektor kaarte</string>
   <string name="transport_context_menu">Soek vervoer by stop</string>
 
   <string name="poi_context_menu_modify">verander interessante plek</string>
@@ -502,7 +501,6 @@
   <string name="layer_osm_bugs">OSM foute</string>
   
   <string name="layer_poi">Interessante plek…</string>
-  <string name="layer_map">Kaartbron…</string>
   <string name="menu_layers">Kaarte</string>
   <string name="context_menu_item_search_poi">Soek interessante plek</string>
   
@@ -1035,7 +1033,6 @@
 
     <string name="edit_tilesource_maxzoom">Maks vergroting</string>
     <string name="edit_tilesource_minzoom">Min vergroting</string>
-    <string name="maps_define_edit">Definieer/Wysig…</string>
 	
 	
     <string name="keep_and_add_destination_point">Voeg by as bestemmingspunt</string>

@@ -1205,7 +1205,6 @@
     <string name="about_settings_descr">Version info, licenses, project members</string>
     <string name="edit_tilesource_maxzoom">Max zoom</string>
     <string name="edit_tilesource_minzoom">Min zoom</string>
-    <string name="maps_define_edit">Define/Edit…</string>
     <string name="map_widget_fps_info">FPS debug info</string>
     <string name="driving_region_descr">Select the driving region: US, Europe, UK, Asia, and others.</string>
     <string name="driving_region">Driving region</string>
@@ -1805,7 +1804,6 @@
     <string name="gpx_files_not_found">No GPX files found in the tracks folder</string>
     <string name="layer_gpx_layer">GPX track…</string>
     <string name="error_reading_gpx">Error reading GPX data</string>
-    <string name="vector_data">Offline vector maps</string>
     <string name="transport_context_menu">Search transport at stop</string>
     <string name="poi_context_menu_modify">Modify POI</string>
     <string name="poi_context_menu_delete">Delete POI</string>
@@ -1831,7 +1829,6 @@
     <string name="layer_route">Route</string>
     <string name="layer_osm_bugs">OSM Notes (online)</string>
     <string name="layer_poi">POI overlay…</string>
-    <string name="layer_map">Map source…</string>
     <string name="menu_layers">Map layers</string>
     <string name="context_menu_item_search_poi">Search POI</string>
     <string name="use_trackball_descr">Use trackball to move the map.</string>
@@ -2212,10 +2209,6 @@
     <string name="quick_action_map_underlay">Change map underlay</string>
     <string name="quick_action_map_underlay_title">Map underlays</string>
     <string name="quick_action_map_underlay_action">Add underlay</string>
-    <string name="quick_action_map_source">Change map source</string>
-    <string name="quick_action_map_source_title">Map sources</string>
-    <string name="quick_action_map_source_action">Add map source</string>
-    <string name="quick_action_map_source_switch">The map source has been changed to \"%s\".</string>
     <string name="quick_action_btn_tutorial_title">Change button position</string>
     <string name="quick_action_btn_tutorial_descr">Long-tap and drag the button to change its position on the screen.</string>
     <string name="shared_string_action_name">Action name</string>

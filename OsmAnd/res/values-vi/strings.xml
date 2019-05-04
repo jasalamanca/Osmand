@@ -297,7 +297,6 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
 	<string name="layer_gpx_layer">Theo dõi GPX…</string>
 	<string name="error_reading_gpx">Gặp lỗi khi đọc tập tin GPX</string>
 
-	<string name="vector_data">Bản đồ vector Offline</string>
 	<string name="transport_context_menu">Search transport at stop</string>
 	
 	
@@ -323,7 +322,6 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
 	<string name="shared_string_favorites">Ưa thích</string>
 	
 	<string name="layer_poi">Địa điểm…</string>
-	<string name="layer_map">Nguồn bản đồ…</string>
 	<string name="menu_layers">Thiết lập Xem</string>
 	
 	<string name="context_menu_item_search_poi">Tìm Địa điểm</string>

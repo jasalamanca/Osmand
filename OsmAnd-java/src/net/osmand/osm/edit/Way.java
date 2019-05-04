@@ -22,20 +22,6 @@ public class Way extends Entity {
 		nodeIds.add(id);
 	}
 
-	long getFirstNodeId() {
-		if (nodeIds == null) {
-			return -1;
-		}
-		return nodeIds.get(0);
-	}
-
-	long getLastNodeId() {
-		if (nodeIds == null) {
-			return -1;
-		}
-		return nodeIds.get(nodeIds.size() - 1);
-	}
-
 	public void addNode(Node n) {
 		if (nodeIds == null) {
 			nodeIds = new TLongArrayList();
@@ -53,5 +39,4 @@ public class Way extends Entity {
 		}
 		return nodes;
 	}
-
 }

@@ -586,7 +586,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="gpx_files_not_found">Ingen GPX-filer blev fundet i \'/tracks\' mappen</string>
     <string name="layer_gpx_layer">GPX-spor…</string>
     <string name="error_reading_gpx">Fejl under læsning af GPX-data</string>
-    <string name="vector_data">Offline vektorkort</string>
     <string name="transport_context_menu">Søg efter transport ved stoppested</string>
 
     
@@ -614,7 +613,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="layer_route">Rute</string>
     <string name="layer_osm_bugs">OSM noter (online)</string>
     
-    <string name="layer_map">Vælg kortkilde…</string>
     <string name="menu_layers">Kortlag</string>
     <string name="context_menu_item_search_poi">Søg interessepunkt</string>
 
@@ -972,7 +970,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="map_widget_fps_info">FPS-fejlsøgningssinfo</string>
     <string name="edit_tilesource_maxzoom">Maks. zoomniveau</string>
     <string name="edit_tilesource_minzoom">Min. zoomniveau</string>
-    <string name="maps_define_edit">Definer/rediger…</string>
 
     <string name="about_version">Version:</string>
     <string name="shared_string_about">Om</string>
@@ -2125,10 +2122,6 @@ Hvis du  ønsker at støtte OsmAnd og OSM, er dette en god måde at gøre det p�
     <string name="quick_action_map_underlay">Skift kortunderlejring</string>
     <string name="quick_action_map_underlay_title">Kortunderlejring</string>
     <string name="quick_action_map_underlay_action">Tilføj underlejring</string>
-    <string name="quick_action_map_source">Skift kortkilde</string>
-    <string name="quick_action_map_source_title">Kortkilder</string>
-    <string name="quick_action_map_source_action">Tilføj en kortkilde</string>
-    <string name="quick_action_map_source_switch">Kortkilde er ændret til \"%s\".</string>
     <string name="quick_action_btn_tutorial_title">Ændre knap placering</string>
     <string name="quick_action_btn_tutorial_descr">Langt tryk og træk på knappen for at ændre placering på skærmen.</string>
 <string name="quick_action_interim_dialog">Vis en midlertidig dialogboks</string>

@@ -275,7 +275,6 @@
     <string name="gpx_files_not_found">Nie odnaleziono plików GPX w katalogu śladów</string>
     <string name="layer_gpx_layer">Ślad GPX…</string>
     <string name="error_reading_gpx">Błąd odczytu danych GPX</string>
-    <string name="vector_data">Wektorowe mapy offline</string>
     <string name="transport_context_menu">Wyszukaj komunikację na przystanku</string>
 
 
@@ -306,7 +305,6 @@
     <string name="layer_osm_bugs">Uwagi OSM (online)</string>
     
     <string name="layer_poi">Użyteczne miejsce…</string>
-    <string name="layer_map">Zasób mapy…</string>
     <string name="menu_layers">Warstwy mapy</string>
     <string name="context_menu_item_search_poi">Szukaj Miejsc</string>
 
@@ -1025,7 +1023,6 @@
 
     <string name="edit_tilesource_maxzoom">Maksymalne przybliżenie</string>
     <string name="edit_tilesource_minzoom">Minimalne przybliżenie</string>
-    <string name="maps_define_edit">Zdefiniuj/Edytuj…</string>
 
 
     <string name="route_descr_destination">Cel</string>
@@ -2087,7 +2084,6 @@ Długość %2$s</string>
     <string name="quick_action_empty_param_error">Parametry nie mogą być puste</string>
     <string name="quick_action_map_underlay_action">Dodaj podkład</string>
     <string name="quick_action_map_underlay_title">Podkłady map</string>
-    <string name="quick_action_map_source_title">Zasoby map</string>
     <string name="quick_action_add_gpx">Dodaj punkt pośredni GPX</string>
     <string name="quick_favorites_name_preset">Nazwa</string>
     <string name="quick_action_add_marker_descr">Naciśnięcie przycisku doda znacznik mapy na środku ekranu.</string>
@@ -2114,9 +2110,6 @@ Długość %2$s</string>
     <string name="quick_action_map_overlay_title">Nakładki mapy</string>
     <string name="quick_action_map_overlay_action">Dodaj nakładkę</string>
     <string name="quick_action_map_underlay">Zmień podkład mapy</string>
-    <string name="quick_action_map_source">Zmień zasób mapy</string>
-    <string name="quick_action_map_source_action">Dodaj zasób mapy</string>
-    <string name="quick_action_map_source_switch">Zmieniono zasób mapy na „%s”.</string>
     <string name="quick_action_btn_tutorial_title">Zmienianie położenia przycisku</string>
     <string name="quick_action_btn_tutorial_descr">Proszę nacisnąć i przytrzymać przycisk, aby zmienić jego położenie na ekranie.</string>
 <string name="quick_action_interim_dialog">Okno pośrednie</string>

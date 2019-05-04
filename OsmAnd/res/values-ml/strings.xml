@@ -952,7 +952,6 @@
     <string name="show_point_options">സ്ഥാനം ഉപയോഗിക്കു …</string>
     <string name="voice">റിക്കോഡ് ചെയ്ത ശബ്ദം</string>
     <string name="voices">വോയിസ് സൂചനകള്‍</string>
-    <string name="vector_data">ഓഫ്ലൈന്‍ വെക്ടര്‍ ഭൂപടങ്ങള്‍</string>
     <string name="background_service_int_descr">ബാക്ക്ഗ്രൌണ്ട് സേവനങ്ങളുടെ ഇടവേള സജ്ജീകരിക്കുക</string>
     <string name="background_service_provider">സ്ഥലസേവന ദാതാവു്</string>
     <string name="show_poi_filter">അരിപ്പ (ഫില്‍ട്ടര്‍) കാണിക്കുക</string>
@@ -1409,7 +1408,6 @@
     <string name="layer_gpx_layer">ജിപിഎക്സ് പാത…</string>
     <string name="layer_osm_bugs">"ഓണ്‍ലൈനിലുള്ള ഓഎസ്എം കുറിപ്പുകള്‍ "</string>
     <string name="layer_poi">താല്‍പര്യ ബിന്ദു (പി ഓ ഐ )…</string>
-    <string name="layer_map">ഭൂപടഉറവിടം…</string>
     <string name="process_navigation_service">ഓഎസ്എം ആന്റ് വഴികാട്ടി സേവനം</string>
     <string name="opening_hours_not_supported">തുറന്നിരിക്കുന്ന സമയത്തിന്റെ ഫോര്‍മാറ്റ് തിരുത്താനാവില്ല</string>
     <string name="poi">താല്‍പര്യ ബിന്ദു (പി ഓ ഐ )</string>
@@ -1455,7 +1453,6 @@
     <string name="index_item_world_basemap">"ലോക വിഹഗ ഭൂപടം  "</string>
     <string name="use_displayed_track_for_navigation">കാണിച്ചിരിക്കുന്ന പാത വഴികാട്ടിക്കായ് ഉപയോഗിക്കണോ?</string>
     <string name="guidance_preferences_descr">വഴികാട്ടിയുടെ മുന്‍ഗണനകള്‍</string>
-    <string name="maps_define_edit">നിശ്ചയിക്കുക/തിരുത്തുക…</string>
     <string name="intermediate_items_sort_return">നിലവിലെ സ്ഥാനത്തു നിന്നും ലക്ഷ്യസ്ഥാനത്തെക്കുള്ള പാതയില്‍ വരത്തക്കവിധത്തില്‍ ഇടലക്ഷ്യങ്ങള്‍ മാറ്റിക്രമീകരിച്ചിരിക്കുന്നു.</string>
     <string name="gpx_file_name">ജിപിഎക്സ് ഫയലിന്റെ പേര്</string>
     <string name="use_distance_measurement_help">"* ഒരു ബിന്ദു അടയാളപ്പെടുത്താന്‍ മെല്ലെ തൊടുക.

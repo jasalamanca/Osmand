@@ -386,7 +386,6 @@
 
     <string name="edit_tilesource_maxzoom">最大显示级别</string>
     <string name="edit_tilesource_minzoom">最小显示级别</string>
-    <string name="maps_define_edit">定义/编辑…</string>
 	<string name="map_widget_fps_info">FPS 调试信息</string>
 	<string name="driving_region_descr">选择驾驶区域：美国、欧洲、英国、亚洲及其它</string>
 	<string name="driving_region">驾驶区域</string>
@@ -676,7 +675,6 @@
 	<string name="context_menu_item_search_transport">搜索交通设施</string>
 	<string name="transport_search_again">重置交通设施搜索</string>
 	<string name="no_vector_map_loaded">矢量地图未载入</string>
-	<string name="vector_data">离线矢量地图</string>
 	
 	<string name="poi_context_menu_modify">修改 POI</string>
 	<string name="poi_context_menu_delete">删除 POI</string>
@@ -1207,9 +1205,6 @@
     <string name="rendering_value_default_name">默认</string>
     <string name="rendering_value_americanRoadAtlas_name">美国道路地图</string>
     <string name="layer_poi">兴趣点…</string>
-    <string name="layer_map">地图来源…</string>
-    <string name="quick_action_map_source">改变地图来源</string>
-    <string name="quick_action_map_source_action">添加地图来源</string>
     <string name="map_mode">地图模式</string>
     <string name="map_magnifier">地图缩放</string>
     <string name="rendering_attr_showSurfaceGrade_name">显示道路质量</string>
@@ -2121,8 +2116,6 @@
     <string name="quick_action_map_underlay">更改地图衬底层</string>
     <string name="quick_action_map_underlay_title">地图衬底层</string>
     <string name="quick_action_map_underlay_action">添加衬底层</string>
-    <string name="quick_action_map_source_title">地图来源</string>
-    <string name="quick_action_map_source_switch">地图来源已更改为\"%s\"。</string>
     <string name="quick_action_btn_tutorial_title">更改按钮的位置</string>
     <string name="quick_action_btn_tutorial_descr">长按并拖动按钮来改变其在屏幕上的位置</string>
     

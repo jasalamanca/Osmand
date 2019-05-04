@@ -577,7 +577,6 @@
 	<string name="gpx_files_not_found">Nu au fost găsite fișiere GPX în directorul tracks</string>
 	<string name="layer_gpx_layer">Trasee GPX…</string>
 	<string name="error_reading_gpx">Eroare la citirea datelor GPX</string>
-	<string name="vector_data">Hărți vectoriale offline</string>
 	<string name="transport_context_menu">Căutare transport la destinație</string>
 	
 	
@@ -608,7 +607,6 @@
 	<string name="layer_osm_bugs">Bug hartă OSM</string>
 	
 	<string name="layer_poi">POI…</string>
-	<string name="layer_map">Sursă hartă…</string>
 	<string name="menu_layers">Straturi</string>
 	<string name="context_menu_item_search_poi">Caută POI</string>
 	
@@ -973,7 +971,6 @@
     <string name="shared_string_about">Despre</string>
     <string name="about_settings_descr">Informații versiune, licențe, membrii proiect</string>
 
-    <string name="maps_define_edit">Definește/Editează…</string>
 	<string name="map_widget_fps_info">Informații depanare FPS</string>
 	<string name="driving_region_descr">Selectați regiunea de conducere: US, Europa, UK, Asia și altele</string>
 	<string name="driving_region">Regiunea de conducere</string>

@@ -22,8 +22,6 @@ import net.osmand.plus.ContextMenuAdapter;
 import net.osmand.plus.ContextMenuItem;
 import net.osmand.plus.R;
 import net.osmand.plus.helpers.AndroidUiHelper;
-import net.osmand.plus.widgets.tools.ExtendedBottomSheetBehavior;
-import net.osmand.plus.widgets.tools.ExtendedBottomSheetBehavior.BottomSheetCallback;
 
 public class AdditionalActionsBottomSheetDialogFragment extends net.osmand.plus.base.BottomSheetDialogFragment {
 
@@ -68,7 +66,6 @@ public class AdditionalActionsBottomSheetDialogFragment extends net.osmand.plus.
 		View.OnClickListener dismissOnClickListener = view -> dismiss();
 
 		mainView.findViewById(R.id.cancel_row).setOnClickListener(dismissOnClickListener);
-		mainView.findViewById(R.id.scroll_view_container).setOnClickListener(dismissOnClickListener);
 
 		View.OnClickListener onClickListener = view -> {
 			if (listener != null) {
@@ -103,28 +100,6 @@ public class AdditionalActionsBottomSheetDialogFragment extends net.osmand.plus.
 				row = (LinearLayout) View.inflate(getContext(), R.layout.grid_menu_row, null);
 				itemsAdded = 0;
 			}
-		}
-
-		final ExtendedBottomSheetBehavior behavior = ExtendedBottomSheetBehavior.from(scrollView);
-		behavior.setBottomSheetCallback(new BottomSheetCallback() {
-			@Override
-			public void onStateChanged(@NonNull View bottomSheet, int newState) {
-				if (newState == ExtendedBottomSheetBehavior.STATE_HIDDEN) {
-					dismiss();
-				} else {
-					updateBackground(newState == ExtendedBottomSheetBehavior.STATE_EXPANDED);
-				}
-			}
-
-			@Override
-			public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-
-			}
-		});
-		if (portrait) {
-			behavior.setPeekHeight(getResources().getDimensionPixelSize(R.dimen.bottom_sheet_menu_peek_height));
-		} else {
-			getDialog().setOnShowListener(dialog -> behavior.setState(ExtendedBottomSheetBehavior.STATE_EXPANDED));
 		}
 
 		return mainView;

@@ -283,7 +283,6 @@
     
     <string name="map_magnifier">مكبر الخريطة</string>
     <string name="base_world_map">خريطة العالم الأساسية</string>
-    <string name="maps_define_edit">تعريف/تعديل…</string>
 	    
     
     <string name="speak_descr">ضبط إعدادات نطق أسماء الشوارع، وتحذيرات المرور (توقيفات الإجبارية، ومطبات السرعة)، و تحذيرات كاميرات السرعة، و السرعة القصوى.</string>
@@ -949,7 +948,6 @@
 	<string name="shared_string_my_tracks">مساراتي</string>
 	<string name="rendering_category_hide">إخفاء</string>
     <string name="configure_map">ضبط الخريطة</string>
-    <string name="layer_map">مصدر الخريطة…</string>
 	<string name="map_source">مصدر الخريطة</string>
 	<string name="layer_amenity_label">التسميات الفوقية للنقاط</string>
     <string name="layer_gpx_layer">مسار GPX…</string>
@@ -1281,7 +1279,6 @@
 	<string name="voices">المداخلات الصوتية</string>
 	<string name="gpx_files_not_found">لا يوجد أي ملف GPX في مجلد tracks</string>
 	<string name="error_reading_gpx">خطأ في قراءة بيانات GPX</string>
-	<string name="vector_data">خرائط متجهية بدون اتصال</string>
 	<string name="rotate_map_to_bearing_descr">حدد محاذاة شاشة الخريطة.</string>
 	<string name="show_route">تفاصيل الطريق</string>
 	<string name="import_file_favourites">حفظ البيانات كملف GPX أو استيراد نقاط الطريق إلى المفضلة ؟</string>
@@ -2062,10 +2059,6 @@
     <string name="quick_action_empty_param_error">يجب ألا تكون الإعدادات فارغة</string>
     <string name="quick_action_map_styles">أنماط الخريطة</string>
     <string name="quick_action_map_overlay">تغيير واجهة الخريطة السطحية</string>
-    <string name="quick_action_map_source">تغيير مصدر الخريطة</string>
-    <string name="quick_action_map_source_title">مصادر الخريطة</string>
-    <string name="quick_action_map_source_action">إضافة مصدر خريطة</string>
-    <string name="quick_action_map_source_switch">تم تغيير مصدر الخريطة إلى \"%s\".</string>
     <string name="quick_action_btn_tutorial_title">تغيير موضع الزر</string>
     <string name="quick_action_showhide_favorites_descr">النقر على زر الإجراء سيقوم بإظهار أو إخفاء نقاطك المفضلة على الخريطة.</string>
     <string name="quick_action_fav_name_descr">دع الحقل فارغا إن كنت ترغب في استعمال العنوان أو إسم المكان.</string>

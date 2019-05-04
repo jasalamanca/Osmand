@@ -584,7 +584,6 @@
 	<string name="gpx_files_not_found">לא נמצאו קובצי GPX בתיקיית המסלולים</string>
 	<string name="layer_gpx_layer">דרך ה־GPX…</string>
 	<string name="error_reading_gpx">שגיאה בקריאת נתוני ה־GPX</string>
-	<string name="vector_data">מפות וקטוריות בלתי מקוונות</string>
 	<string name="transport_context_menu">חיפוש תחבורה בתחנה</string>
 	
 	
@@ -633,7 +632,6 @@
 	<string name="show_transport_over_map">הצגת תחנות תחבורה</string>
 	<string name="hello">יישום הניווט OsmAnd</string>
 	<string name="layer_poi">שכבת נ״ע…</string>
-	<string name="layer_map">מקור המפה…</string>
 	<string name="menu_layers">הגדרת תצוגה</string>
 	<string name="context_menu_item_search_poi">חיפוש נ״ע</string>
 	
@@ -1520,7 +1518,6 @@
     <string name="shared_string_about">על אודות</string>
     <string name="edit_tilesource_maxzoom">תקריב מרבי</string>
     <string name="edit_tilesource_minzoom">תקריב מזערי</string>
-    <string name="maps_define_edit">הגדרה/עריכה…</string>
     <string name="driving_region">אזור נהיגה</string>
     <string name="driving_region_japan">יפן</string>
     <string name="driving_region_us">ארצות הברית</string>
@@ -1618,10 +1615,6 @@
     <string name="quick_action_map_underlay">החלפת המפה שמתחת</string>
     <string name="quick_action_map_underlay_title">מפות שמתחת</string>
     <string name="quick_action_map_underlay_action">הוספת מפה מתחת</string>
-    <string name="quick_action_map_source">החלפת מקור מפה</string>
-    <string name="quick_action_map_source_title">מקורות מפה</string>
-    <string name="quick_action_map_source_action">הוספת מקור מפה</string>
-    <string name="quick_action_map_source_switch">מקור המפה הוחלף לכדי „%s”.</string>
     <string name="quick_action_btn_tutorial_title">שינוי מיקום הכפתור</string>
     <string name="quick_action_btn_tutorial_descr">יש לגעת נגיעה ארוכה בכפתור כדי לשנות את המיקום שלו על המסך.</string>
     <string name="shared_string_action_name">שם הפעולה</string>

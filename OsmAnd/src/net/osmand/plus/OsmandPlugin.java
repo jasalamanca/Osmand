@@ -162,19 +162,19 @@ public abstract class OsmandPlugin {
 	protected void registerLayers(MapActivity activity) {
 	}
 
-	private void mapActivityCreate(MapActivity activity) {
+	private void mapActivityCreate() {
 	}
 
-	private void mapActivityResume(MapActivity activity) {
+	private void mapActivityResume() {
 	}
 
-	private void mapActivityPause(MapActivity activity) {
+	private void mapActivityPause() {
 	}
 
-	private void mapActivityDestroy(MapActivity activity) {
+	private void mapActivityDestroy() {
 	}
 
-	private void mapActivityScreenOff(MapActivity activity) {
+	private void mapActivityScreenOff() {
 	}
 
 	@TargetApi(Build.VERSION_CODES.M)
@@ -192,7 +192,7 @@ public abstract class OsmandPlugin {
 	private boolean destinationReached() {
 		return true;
 	}
-	protected void registerLayerContextMenuActions(OsmandMapTileView mapView, ContextMenuAdapter adapter, MapActivity mapActivity) {
+	protected void registerLayerContextMenuActions(ContextMenuAdapter adapter, MapActivity mapActivity) {
 	}
 	protected void registerMapContextMenuActions(MapActivity mapActivity, double latitude, double longitude, ContextMenuAdapter adapter, Object selectedObj) {
 	}
@@ -212,7 +212,7 @@ public abstract class OsmandPlugin {
 	private List<String> indexingFiles(IProgress progress) {
 		return null;
 	}
-	private boolean mapActivityKeyUp(MapActivity mapActivity, int keyCode) {
+	private boolean mapActivityKeyUp(int keyCode) {
 		return false;
 	}
 	private void onMapActivityExternalResult(int requestCode, int resultCode, Intent data) {
@@ -297,27 +297,27 @@ public abstract class OsmandPlugin {
 		return l;
 	}
 
-	public static void onMapActivityCreate(MapActivity activity) {
+	public static void onMapActivityCreate() {
 		for (OsmandPlugin plugin : getEnabledPlugins()) {
-			plugin.mapActivityCreate(activity);
+			plugin.mapActivityCreate();
 		}
 	}
 
-	public static void onMapActivityResume(MapActivity activity) {
+	public static void onMapActivityResume() {
 		for (OsmandPlugin plugin : getEnabledPlugins()) {
-			plugin.mapActivityResume(activity);
+			plugin.mapActivityResume();
 		}
 	}
 
-	public static void onMapActivityPause(MapActivity activity) {
+	public static void onMapActivityPause() {
 		for (OsmandPlugin plugin : getEnabledPlugins()) {
-			plugin.mapActivityPause(activity);
+			plugin.mapActivityPause();
 		}
 	}
 
-	public static void onMapActivityDestroy(MapActivity activity) {
+	public static void onMapActivityDestroy() {
 		for (OsmandPlugin plugin : getEnabledPlugins()) {
-			plugin.mapActivityDestroy(activity);
+			plugin.mapActivityDestroy();
 		}
 	}
 
@@ -327,9 +327,9 @@ public abstract class OsmandPlugin {
 		}
 	}
 
-	public static void onMapActivityScreenOff(MapActivity activity) {
+	public static void onMapActivityScreenOff() {
 		for (OsmandPlugin plugin : getEnabledPlugins()) {
-			plugin.mapActivityScreenOff(activity);
+			plugin.mapActivityScreenOff();
 		}
 	}
 
@@ -355,9 +355,9 @@ public abstract class OsmandPlugin {
 		}
 	}
 
-	public static void registerLayerContextMenu(OsmandMapTileView mapView, ContextMenuAdapter adapter, MapActivity mapActivity) {
+	public static void registerLayerContextMenu(ContextMenuAdapter adapter, MapActivity mapActivity) {
 		for (OsmandPlugin plugin : getEnabledPlugins()) {
-			plugin.registerLayerContextMenuActions(mapView, adapter, mapActivity);
+			plugin.registerLayerContextMenuActions(adapter, mapActivity);
 		}
 	}
 
@@ -388,9 +388,9 @@ public abstract class OsmandPlugin {
 		return collection;
 	}
 
-	public static boolean onMapActivityKeyUp(MapActivity mapActivity, int keyCode) {
+	public static boolean onMapActivityKeyUp(int keyCode) {
 		for (OsmandPlugin p : getEnabledPlugins()) {
-			if (p.mapActivityKeyUp(mapActivity, keyCode))
+			if (p.mapActivityKeyUp(keyCode))
 				return true;
 		}
 		return false;

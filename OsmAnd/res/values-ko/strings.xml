@@ -426,7 +426,6 @@
 	<string name="layer_gpx_layer">GPX 경로…</string>
 	<string name="error_reading_gpx">GPX 데이터를 읽는 도중 오류</string>
 
-	<string name="vector_data">오프라인 벡터 맵</string>
 	<string name="transport_context_menu">대중교통 정류소 검색</string>
 	
 	
@@ -456,7 +455,6 @@
 	<string name="layer_osm_bugs">OSM Notes (온라인)</string>
 	
 	<string name="layer_poi">POI…</string>
-	<string name="layer_map">맵 소스…</string>
 	<string name="menu_layers">계층 지도</string>
 	
 	<string name="context_menu_item_search_poi">POI 검색</string>
@@ -1154,7 +1152,6 @@
 	<string name="city_type_village">마을</string>
 	<string name="city_type_town">도시</string>
 	<string name="city_type_city">도시</string>
-	<string name="maps_define_edit">정의/편집…</string>
 	
     <string name="max_speed_none">무제한</string>
     <string name="index_name_openmaps">EU 지도 열기</string>

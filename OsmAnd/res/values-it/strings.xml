@@ -307,7 +307,6 @@ La memoria utilizzata è  {1} MB.
     <string name="gpx_files_not_found">File GPX non trovati nella cartella tracce</string>
     <string name="layer_gpx_layer">Percorso GPX…</string>
     <string name="error_reading_gpx">Errore lettura dati GPX</string>
-    <string name="vector_data">Mappe vettoriali offline</string>
     <string name="transport_context_menu">Cerca un trasporto pubblico alla fermata</string>
 
 
@@ -336,7 +335,6 @@ La memoria utilizzata è  {1} MB.
     <string name="layer_osm_bugs">Note OSM (online)</string>
     
     <string name="layer_poi">PDI…</string>
-    <string name="layer_map">Sorgente mappa…</string>
     <string name="menu_layers">Strati mappa</string>
     <string name="context_menu_item_search_poi">Cerca PDI</string>
 
@@ -979,7 +977,6 @@ Memoria in proporzione %4$s MB (limite di Android %5$s MB, Dalvik %6$s MB).</str
     <string name="map_widget_fps_info">Informazioni FPS</string>
     <string name="edit_tilesource_maxzoom">Zoom massimo</string>
     <string name="edit_tilesource_minzoom">Zoom minimo</string>
-    <string name="maps_define_edit">Imposta/Modifica…</string>
 
     <string name="about_version">Versione:</string>
     <string name="shared_string_about">Informazioni</string>
@@ -2126,10 +2123,6 @@ Rappresenta l\'area: %1$s x %2$s</string>
     <string name="quick_action_map_underlay">Cambia la mappa di sottofondo</string>
     <string name="quick_action_map_underlay_title">Mappa di sottofondo</string>
     <string name="quick_action_map_underlay_action">Aggiungi sottofondo</string>
-    <string name="quick_action_map_source">Cambia la sorgente della mappa</string>
-    <string name="quick_action_map_source_title">Sorgenti della mappa</string>
-    <string name="quick_action_map_source_action">Aggiungi una sorgente della mappa</string>
-    <string name="quick_action_map_source_switch">La sorgente della mappa è stata cambiata in \"%s\".</string>
     <string name="quick_action_btn_tutorial_title">Cambia la posizione del pulsante</string>
     <string name="quick_action_btn_tutorial_descr">Tieni premuto e trascina per cambiare la sua posizione nello schermo</string>
     <string name="auto_split_recording_title">Divisione automatica delle registrazioni dopo un periodo</string>

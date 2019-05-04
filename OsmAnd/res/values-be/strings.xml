@@ -12,7 +12,6 @@
 
     <string name="edit_tilesource_maxzoom">Максімальнае павелічэньне</string>
     <string name="edit_tilesource_minzoom">Мінімальнае павелічэньне</string>
-    <string name="maps_define_edit">Вызначыць/зьмянiць…</string>
 	<string name="map_widget_fps_info">Адладачная інфармацыя FPS</string>
 	<string name="driving_region_descr">Абярыце рэгіён кіраваньня: ЗША, Эўропа, Вялікабрытанія, Азія і іншыя.</string>
 	<string name="driving_region">Рэгіён кіравання</string>
@@ -698,7 +697,6 @@
 	<string name="gpx_files_not_found">GPX файлы не знойдзены ў каталогу tracks</string>
 	<string name="layer_gpx_layer">GPX-сьлед…</string>
 	<string name="error_reading_gpx">Памылка пры чытаньні GPX дадзеных</string>
-	<string name="vector_data">Лакальныя вектарныя мапы</string>
 	<string name="transport_context_menu">Шукаць транспарт на прыпынку</string>
 	
 	
@@ -727,7 +725,6 @@
 	<string name="layer_osm_bugs">OSM-нататкі (анлайн)</string>
 	
 	<string name="layer_poi">POI-накладка…</string>
-	<string name="layer_map">Крыніца мапы…</string>
 	<string name="menu_layers">Слаі мапы</string>
 	<string name="context_menu_item_search_poi">Пошук POI</string>
 	<string name="use_trackball_descr">Выкарыстоўвайце трэкбол для перамяшчэння мапы.</string>
@@ -2086,9 +2083,6 @@
     <string name="quick_action_map_style_action">Дадаць стыль мапы</string>
     <string name="quick_action_empty_param_error">Парамэтры не павінны быць пустымі</string>
     <string name="quick_action_map_styles">Стылі мапы</string>
-    <string name="quick_action_map_source_title">Крыніцы мапаў</string>
-    <string name="quick_action_map_source_action">Дадаць крыніцу мапы</string>
-    <string name="quick_action_map_source_switch">Крыніца мапы была зьменена на \"%s\".</string>
     <string name="quick_action_btn_tutorial_title">Зьмяніць становішча кнопкі</string>
     <string name="shared_string_action_name">Назва дзеяньня</string>
     <string name="quick_action_navigation_voice_off">Голас прыглушаны</string>
@@ -2152,7 +2146,6 @@
     <string name="quick_action_map_underlay">Змяніць падкладку мапы</string>
     <string name="quick_action_map_underlay_title">Падкладка мапы</string>
     <string name="quick_action_map_underlay_action">Дадаць падкладку</string>
-    <string name="quick_action_map_source">Змяніць крыніцу мапы</string>
     <string name="quick_action_btn_tutorial_descr">Доўгі націск і перацягванне дазваляе перамясціць пазіцыю на экране.</string>
 	<string name="route_points_category_name">Павароты на маршруце</string>
     <string name="relief_smoothness_factor_descr">Пераважны рэльеф: раўнінны ці гарысты.</string>

@@ -462,7 +462,6 @@
   <string name="gpx_files_not_found">Файли GPX не знайдені в теці з треками</string>
   <string name="layer_gpx_layer">Трек GPX…</string>
   <string name="error_reading_gpx">Помилка читання GPX даних</string>
-  <string name="vector_data">Оффлайн векторні мапи</string>
   <string name="transport_context_menu">Шукати транспорт на зупинці</string>
   
   
@@ -493,7 +492,6 @@
   <string name="layer_osm_bugs">Нотатки OSM (онлайн)</string>
   
   <string name="layer_poi">POI-накладення…</string>
-  <string name="layer_map">Джерело мапи…</string>
   <string name="menu_layers">Шари мапи</string>
   <string name="context_menu_item_search_poi">Шукати POI</string>
   
@@ -1053,7 +1051,6 @@
 
     <string name="edit_tilesource_maxzoom">Макс.масштаб</string>
     <string name="edit_tilesource_minzoom">Мін.масштаб</string>
-    <string name="maps_define_edit">Визначити/змінити…</string>
 	
 	
     <string name="base_world_map">основна мапа світу</string>
@@ -2104,9 +2101,6 @@
     <string name="quick_action_map_style_action">Додати стиль мапи</string>
     <string name="quick_action_empty_param_error">Параметри не повинні бути порожніми</string>
     <string name="quick_action_map_styles">Стилі мапи</string>
-    <string name="quick_action_map_source_title">Джерела мап</string>
-    <string name="quick_action_map_source_action">Додати джерело мапи</string>
-    <string name="quick_action_map_source_switch">Джерело мапи було змінено на „%s“.</string>
     <string name="quick_action_btn_tutorial_title">Змінити положення кнопки</string>
     <string name="shared_string_action_name">Назва дії</string>
 <string name="quick_favorites_show_favorites_dialog">Показати діалог закладок</string>
@@ -2150,7 +2144,6 @@
     <string name="quick_action_map_underlay">Змінити підкладку мапи</string>
     <string name="quick_action_map_underlay_title">Підкладки мапи</string>
     <string name="quick_action_map_underlay_action">Додати підкладку</string>
-    <string name="quick_action_map_source">Змінити джерело мапи</string>
     <string name="quick_action_btn_tutorial_descr">Довге натиснення й перетягування дозволить перемістити кнопку.</string>
 	<string name="quick_action_add_osm_bug">Додати нотатку OSM</string>
     <string name="navigate_point_olc">Відкритий код розташування (OLC)</string>
