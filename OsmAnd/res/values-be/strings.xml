@@ -777,7 +777,6 @@
 	<string name="map_screen_orientation_descr">Вертыкальная, гарызантальная, ці як прылада.</string>
 	<string name="opening_hours_not_supported">Фармат гадзін працы не падтрымліваецца для рэдагаваньня</string>
 	<string name="add_new_rule">Дадаць новае правіла</string>
-	<string name="transport_Routes">Маршруты</string>
 	<string name="transport_Stop">Прыпынак</string>
 	<string name="transport_stops">прыпынкаў</string>
 	<string name="transport_search_after">Далейшы маршрут</string>	

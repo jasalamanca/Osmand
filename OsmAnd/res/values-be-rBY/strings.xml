@@ -1149,7 +1149,6 @@ Praparcyjnaj pamiacі %4$s MB (Abmiežavańnie Android %5$s MB, Dalvik %6$s MB).
 	<string name="map_screen_orientation_descr">Viertykaĺnaja, haryzantaĺnaja, ci jak prylada.</string>
 	<string name="opening_hours_not_supported">Farmat hadzіn pracy nie padtrymlivajecca dla redahavańnia</string>
 	<string name="add_new_rule">Dadać novaje pravіła</string>
-	<string name="transport_Routes">Maršruty</string>
 	<string name="transport_Stop">Prypynak</string>
 	<string name="transport_stops">prypynkaŭ</string>
 	<string name="transport_search_after">Dalejšy maršrut</string>	

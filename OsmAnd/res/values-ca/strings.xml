@@ -365,7 +365,6 @@ Memòria proporcional %4$s MB (límit de l\'Android %5$s MB, Dalvik %6$s MB).</s
     <string name="search_history_street">Carrer: {0}, {1}</string>
     <string name="transport">Transport col·lectiu</string>
     <string name="transport_stops">parades</string>
-    <string name="transport_Routes">Rutes</string>
     <string name="menu_mute_off">So activat</string>
     <string name="menu_mute_on">So desactivat</string>
     <string name="gps_provider">GPS</string>

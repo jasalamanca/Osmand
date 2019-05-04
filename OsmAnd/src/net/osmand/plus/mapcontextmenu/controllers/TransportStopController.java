@@ -17,7 +17,6 @@ import net.osmand.util.MapUtils;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class TransportStopController extends MenuController {
@@ -43,7 +42,6 @@ public class TransportStopController extends MenuController {
 
 	private void processRoutes() {
 		routes = processTransportStop();
-		builder.setRoutes(routes);
 	}
 
 	@Override

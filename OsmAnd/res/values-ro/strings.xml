@@ -661,7 +661,6 @@
 	<string name="map_screen_orientation_descr">Portret, vedere sau dispozitiv</string>
 	<string name="opening_hours_not_supported">Formatul orei de deschidere nu se poate edita</string>
 	<string name="add_new_rule">Adaugă o nouă regulă</string>
-	<string name="transport_Routes">Rute</string>
 	<string name="transport_Stop">Stație</string>
 	<string name="transport_stops">stații</string>
 	<string name="transport_search_after">Itinerariul următor</string>	

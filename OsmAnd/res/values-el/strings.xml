@@ -622,7 +622,6 @@
 	<string name="map_screen_orientation_descr">Πορτραίτο, τοπίο, ή συσκευή</string>
 	<string name="opening_hours_not_supported">Η μορφή των ωρών λειτουργίας δεν υποστηρίζεται για επεξεργασία</string>
 	<string name="add_new_rule">Προσθήκη νέου κανόνα</string>
-	<string name="transport_Routes">Δρομολόγια</string>
 	<string name="transport_Stop">Στάση</string>
 	<string name="transport_stops">στάσεις</string>
 	<string name="transport_search_after">Μεταγενέστερο δρομολόγιο</string>	

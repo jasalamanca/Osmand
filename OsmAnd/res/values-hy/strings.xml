@@ -1798,7 +1798,6 @@
     <string name="search_nearby">Որոնել մոտակայքում</string>
     <string name="opening_hours_not_supported">Ժամանակի ձևաչափը չի աջակցվում խմբագրման համար</string>
     <string name="add_new_rule">Ավելացնել նոր կանոն</string>
-    <string name="transport_Routes">Երթուղիներ</string>
     <string name="transport_Stop">Կանգառ</string>
     <string name="transport_stops">կանգառներ</string>
     <string name="transport_search_after">Հետագա երթուղին</string>

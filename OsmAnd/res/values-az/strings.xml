@@ -1483,7 +1483,6 @@
     <string name="layer_route">Marşrut</string>
     <string name="layer_osm_bugs">OSM qeydlər (onlayn)</string>
     <string name="search_near_map">Hazırki xəritə mərkəzinin yaxınında axtar</string>
-    <string name="transport_Routes">Marşrutlar</string>
     <string name="transport_Stop">Dayanacaq</string>
     <string name="pref_vector_map">Vektor xəritə parametrləri</string>
     <string name="file_with_name_already_exists">Bu adda fayl artıq mövcuddur.</string>

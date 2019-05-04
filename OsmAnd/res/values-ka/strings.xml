@@ -532,7 +532,6 @@
   <string name="map_screen_orientation_descr">პორტრეტი, ლანდშაფტი ან როგორც მოწყობილობა</string>
   <string name="opening_hours_not_supported">საათური ფორმატის გახსნა ჩასწორებისათვის მხარდაჭერილი არაა</string>
   <string name="add_new_rule">ახალი წესის დამატება</string>
-  <string name="transport_Routes">გზები</string>
   <string name="transport_Stop">გაჩერება</string>
   <string name="transport_stops">გაჩერება</string>
   <string name="transport_search_after">მომდევნო გზა</string>

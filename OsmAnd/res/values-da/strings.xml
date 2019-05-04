@@ -691,7 +691,6 @@ OSM er et i fællesskab drevet, globalt offentligt domæne kortlægningsprojekt.
     <string name="map_screen_orientation">Skærmretning</string>
     <string name="map_screen_orientation_descr">Stående, liggende eller som enhed.</string>
     <string name="add_new_rule">Tilføj ny regel</string>
-    <string name="transport_Routes">Ruter</string>
     <string name="transport_search_after">Efterfølgende ruteplan</string>
     <string name="transport_search_before">Forudgående ruteplan</string>
     <string name="transport_finish_search">Stop søgning</string>

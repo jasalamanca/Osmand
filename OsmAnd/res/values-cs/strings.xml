@@ -439,7 +439,6 @@
     <string name="map_screen_orientation_descr">Orientace obrazovky: na výšku, na šířku, podle zařízení.</string>
     <string name="opening_hours_not_supported">Upravování tohoto formátu otvírací doby není podporováno</string>
     <string name="add_new_rule">Přidat nové pravidlo</string>
-    <string name="transport_Routes">Cesty</string>
     <string name="transport_Stop">Zastávka</string>
     <string name="transport_stops">zastávky</string>
     <string name="transport_search_after">Následné pokyny</string>

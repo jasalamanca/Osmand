@@ -612,7 +612,6 @@
     <string name="map_screen_orientation_descr">直豎、橫向或依裝置。</string>
     <string name="opening_hours_not_supported">開啟時間的格式不支援編輯</string>
     <string name="add_new_rule">新增新規則</string>
-    <string name="transport_Routes">導航路線</string>
     <string name="transport_Stop">停靠點</string>
     <string name="transport_stops">停靠站</string>
     <string name="transport_search_after">後續路線</string>

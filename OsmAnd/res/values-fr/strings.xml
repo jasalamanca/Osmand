@@ -418,7 +418,6 @@
     <string name="map_screen_orientation_descr">Paysage, portrait ou selon la position de l\'appareil</string>
     <string name="opening_hours_not_supported">Le format des heures d\'ouverture n\'est pas supporté pour l\'édition</string>
     <string name="add_new_rule">Ajouter une nouvelle règle</string>
-    <string name="transport_Routes">Lignes</string>
     <string name="transport_Stop">Arrêt</string>
     <string name="transport_stops">arrêts</string>
     <string name="transport_search_after">Itinéraire suivant</string>

@@ -183,7 +183,6 @@
   <string name="map_screen_orientation_descr">Selecione a orientação da tela</string>
   <string name="opening_hours_not_supported">O formato do horário de abertura não é suportado para edição</string>
   <string name="add_new_rule">Adicionar uma nova regra</string>
-  <string name="transport_Routes">Rotas</string>
   <string name="transport_Stop">Parada</string>
   <string name="transport_stops">paradas</string>
   <string name="transport_search_after">Pesquisa rota após</string>

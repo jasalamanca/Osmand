@@ -392,7 +392,6 @@ La memoria utilizzata è  {1} MB.
     <string name="map_screen_orientation_descr">Verticale, orizzontale, o predefinito (dispositivo)</string>
     <string name="opening_hours_not_supported">Il formato dell\'orario di apertura non è supportato per la modifica</string>
     <string name="add_new_rule">Aggiungi una nuova regola</string>
-    <string name="transport_Routes">Percorsi</string>
     <string name="transport_Stop">Fermata</string>
     <string name="transport_stops">fermate</string>
     <string name="transport_search_after">Itinerario successivo</string>

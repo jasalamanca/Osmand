@@ -616,7 +616,6 @@
 	
 	<string name="transport_Stop">תחנה</string>
 	<string name="transport_stops">תחנות</string>
-	<string name="transport_Routes">מסלולים</string>
 	<string name="add_new_rule">הוספת כלל חדש</string>
 	<string name="transport_search_after">מסלול עוקב</string>	
 	<string name="transport_search_before">מסלול קודם</string>

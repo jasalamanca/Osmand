@@ -1159,7 +1159,6 @@ Lon %2$s</string>
     <string name="map_screen_orientation_descr">Vertical, horizontal o según dispositivo.</string>
     <string name="opening_hours_not_supported">No se puede editar el formato de horario de apertura</string>
     <string name="add_new_rule">Añadir nueva regla</string>
-    <string name="transport_Routes">Rutas</string>
     <string name="transport_Stop">Parada</string>
     <string name="transport_stops">paradas</string>
     <string name="transport_search_after">Itinerario siguiente</string>

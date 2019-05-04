@@ -394,7 +394,6 @@
     <string name="map_screen_orientation">Skjermorientering</string>
     <string name="map_screen_orientation_descr">Portrett, landskap eller som enhet.</string>
     <string name="add_new_rule">Legg til ny regel</string>
-    <string name="transport_Routes">Ruter</string>
     <string name="transport_route_distance">Reiserutedistanse</string>
     <string name="transport">Transport</string>
     <string name="shared_string_ok">OK</string>

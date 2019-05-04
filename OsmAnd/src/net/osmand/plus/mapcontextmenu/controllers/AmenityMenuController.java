@@ -27,7 +27,6 @@ import net.osmand.util.OpeningHoursParser;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class AmenityMenuController extends MenuController {
@@ -211,8 +210,6 @@ public class AmenityMenuController extends MenuController {
 			}
 			return o1.desc.compareTo(o2.desc);
 		});
-
-		builder.setRoutes(routes);
 	}
 
 	private void addRoutes(boolean useEnglishNames, TransportIndexRepository t, TransportStop s, int dist) {

@@ -581,7 +581,6 @@
     <string name="first_time_continue">Seinna</string>
     <string name="map_orientation_portrait">Lóðrétt</string>
     <string name="map_orientation_landscape">Lárétt</string>
-    <string name="transport_Routes">Leiðir</string>
     <string name="transport_Stop">Biðstöð</string>
     <string name="transport">Samgöngur</string>
     <string name="search_history_city">Borg: {0}</string>

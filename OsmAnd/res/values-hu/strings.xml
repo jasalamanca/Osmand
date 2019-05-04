@@ -483,7 +483,6 @@ Ehhez {1} MB helyre van szükség.
     <string name="map_screen_orientation_descr">Álló, fekvő, vagy eszköz helyzete szerint.</string>
     <string name="opening_hours_not_supported">Nyitvatartási időformátum szerkesztése nem támogatott</string>
     <string name="add_new_rule">Új szabály felvétele</string>
-    <string name="transport_Routes">Útvonalak</string>
     <string name="transport_Stop">Megálló</string>
     <string name="transport_stops">megállók</string>
     <string name="transport_search_after">Következő útvonal</string>

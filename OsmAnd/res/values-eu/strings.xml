@@ -797,7 +797,6 @@ Biltegiratzean {1} MB erabiliko dira.
   <string name="map_screen_orientation_descr">Bertikalean, horizontalean edo gailuaren arabera.</string>
   <string name="opening_hours_not_supported">Ez da irekitze ordutegien formaturik onartzen editatzean</string>
   <string name="add_new_rule">Erregela berria gehitu</string>
-  <string name="transport_Routes">Ibilbideak</string>
   <string name="transport_Stop">Gelditu</string>
   <string name="transport_stops">geltokiak</string>
   <string name="transport_search_after">Ondorengo ibilbidea</string>

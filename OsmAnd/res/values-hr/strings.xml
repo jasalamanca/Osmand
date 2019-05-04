@@ -524,7 +524,6 @@
 	<string name="transport_stops">Postaje</string>
 	<string name="add_new_rule">Dodaj novo pravilo</string>
 	<string name="map_screen_orientation_descr">Portretno, pejzažno ili po postavkama uređaja</string>
-	<string name="transport_Routes">Rute</string>
 	<string name="transport_search_after">Sljedeća ruta</string>	
 	<string name="transport_search_before">Prijašnja ruta</string>
 	<string name="transport_stop_to_go_out">Odaberite postaju za sići</string>

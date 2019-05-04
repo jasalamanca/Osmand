@@ -546,7 +546,6 @@
   <string name="map_screen_orientation_descr">Виберіть орієнтацію екрану.</string>
   <string name="opening_hours_not_supported">Формат часу не підтримується для редагування</string>
   <string name="add_new_rule">Додати правило</string>
-  <string name="transport_Routes">Маршрути</string>
   <string name="transport_Stop">Зупинка</string>
   <string name="transport_stops">зупинок</string>
   <string name="transport_search_after">Подальший маршрут</string>

@@ -1083,7 +1083,6 @@ As pistas gravadas pódense compartir ou empregar colaborando con OSM. Os atleta
 	<string name="map_screen_orientation_descr">Retrato, paisaxe ou horizontal</string>
 	<string name="opening_hours_not_supported">O formato de horas de apertura non é posíbel editalo</string>
 	<string name="add_new_rule">Engadir unha regra nova</string>
-	<string name="transport_Routes">Rutas</string>
 	<string name="transport_Stop">Stop</string>
 	<string name="transport_stops">paraxes</string>
 	<string name="transport_search_after">Itinerario posterior</string>	

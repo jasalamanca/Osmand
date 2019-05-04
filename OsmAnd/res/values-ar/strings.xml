@@ -1239,7 +1239,6 @@
 	<string name="uploading">جاري الرفع…</string>
 	<string name="search_history_city">مدينة: {0}</string>
 	<string name="transport">نقل</string>
-	<string name="transport_Routes">طرق</string>
 	<string name="map_screen_orientation">وضعية الشاشة</string>
 	<string name="map_orientation_landscape">عرضي</string>
 	<string name="map_orientation_portrait">طولي</string>

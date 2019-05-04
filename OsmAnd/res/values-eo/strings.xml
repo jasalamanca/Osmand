@@ -1301,7 +1301,6 @@ Proporcia memoro %4$s MB (limito de Android %5$s MB, Dalvik %6$s MB).</string>
     <string name="layer_poi">Interesejoj…</string>
     <string name="context_menu_item_search_poi">Serĉi interesejon</string>
     <string name="where_am_i">Kie mi estas?</string>
-    <string name="transport_Routes">Kursoj</string>
     <string name="transport_Stop">Haltejo</string>
     <string name="transport_stops">haltejoj</string>
     <string name="search_history_city">Urbo: {0}</string>

@@ -7,10 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
@@ -24,7 +22,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import net.osmand.AndroidUtils;
@@ -41,8 +38,6 @@ import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.helpers.FontCache;
 import net.osmand.plus.render.RenderingIcons;
-import net.osmand.plus.transport.TransportStopRoute;
-import net.osmand.plus.views.TransportStopsLayer;
 import net.osmand.plus.widgets.TextViewEx;
 import net.osmand.util.Algorithms;
 import net.osmand.util.MapUtils;
@@ -71,7 +66,6 @@ public class MenuBuilder {
 	private boolean showNearestWiki = false;
 	protected List<Amenity> nearestWiki = new ArrayList<>();
 	private final List<OsmandPlugin> menuPlugins = new ArrayList<>();
-	private List<TransportStopRoute> routes = new ArrayList<>();
 	private CollapseExpandListener collapseExpandListener;
 
 	private final String preferredMapLang;
@@ -182,9 +176,6 @@ public class MenuBuilder {
 		this.collapseExpandListener = collapseExpandListener;
 	}
 
-	public void setRoutes(List<TransportStopRoute> routes) {
-		this.routes = routes;
-	}
 	String getPreferredMapLang() {
 		return preferredMapLang;
 	}
@@ -197,9 +188,7 @@ public class MenuBuilder {
 	protected MapActivity getMapActivity() {
 		return mapActivity;
 	}
-	private OsmandApplication getApplication() {
-		return app;
-	}
+
 	protected LatLon getLatLon() {
 		return latLon;
 	}
@@ -235,10 +224,6 @@ public class MenuBuilder {
 		if (showTitleIfTruncated) {
 			buildTitleRow(view);
 		}
-		if (showTransportRoutes()) {
-			buildRow(view, 0, null, app.getString(R.string.transport_Routes), 0, true, getCollapsableTransportStopRoutesView(view.getContext(), false),
-					false, 0, false, null, true);
-		}
 		buildNearestWikiRow(view);
 		if (needBuildPlainMenuItems()) {
 			buildPlainMenuItems(view);
@@ -247,9 +232,6 @@ public class MenuBuilder {
 		buildPluginRows(view);
 	}
 
-	private boolean showTransportRoutes() {
-		return routes.size() > 0;
-	}
 	void onHide() {
 	}
 	void onClose() {
@@ -542,108 +524,6 @@ public class MenuBuilder {
 	protected Drawable getCollapseIcon(boolean collapsed) {
 		return app.getIconsCache().getIcon(collapsed ? R.drawable.ic_action_arrow_down : R.drawable.ic_action_arrow_up,
 				light ? R.color.ctx_menu_collapse_icon_color_light : R.color.ctx_menu_collapse_icon_color_dark);
-	}
-
-	private void /*View*/ buildTransportRowItem(View view, TransportStopRoute route, OnClickListener listener) {
-//		LinearLayout baseView = new LinearLayout(view.getContext());
-//		baseView.setOrientation(LinearLayout.HORIZONTAL);
-//		LinearLayout.LayoutParams llBaseViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-//		baseView.setLayoutParams(llBaseViewParams);
-//		baseView.setPadding(dpToPx(16), 0, dpToPx(16), dpToPx(12));
-//		baseView.setBackgroundResource(AndroidUtils.resolveAttribute(view.getContext(), android.R.attr.selectableItemBackground));
-
-		TextViewEx transportRect = new TextViewEx(view.getContext());
-		LinearLayout.LayoutParams trParams = new LinearLayout.LayoutParams(dpToPx(32), dpToPx(18));
-		trParams.setMargins(0, dpToPx(16), 0, 0);
-		transportRect.setLayoutParams(trParams);
-		transportRect.setGravity(Gravity.CENTER);
-		transportRect.setAllCaps(true);
-		transportRect.setTypeface(FontCache.getRobotoMedium(view.getContext()));
-		transportRect.setTextColor(Color.WHITE);
-		transportRect.setTextSize(10);
-
-		GradientDrawable shape = new GradientDrawable();
-		shape.setShape(GradientDrawable.RECTANGLE);
-		shape.setCornerRadius(dpToPx(3));
-		shape.setColor(route.getColor(mapActivity.getMyApplication(), !light));
-
-		transportRect.setBackground(shape);
-		transportRect.setText(route.route.getRef());
-//		baseView.addView(transportRect);
-
-		LinearLayout infoView = new LinearLayout(view.getContext());
-		infoView.setOrientation(LinearLayout.VERTICAL);
-		LinearLayout.LayoutParams infoViewLayoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-		infoViewLayoutParams.setMargins(dpToPx(16), dpToPx(12), dpToPx(16), 0);
-		infoView.setLayoutParams(infoViewLayoutParams);
-//		baseView.addView(infoView);
-
-		TextView titleView = new TextView(view.getContext());
-		LinearLayout.LayoutParams titleParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-		titleView.setLayoutParams(titleParams);
-		titleView.setTextSize(16);
-		titleView.setTextColor(app.getResources().getColor(light ? R.color.ctx_menu_bottom_view_text_color_light : R.color.ctx_menu_bottom_view_text_color_dark));
-		titleView.setText(route.getDescription(getMapActivity().getMyApplication(), true));
-		infoView.addView(titleView);
-
-		LinearLayout typeView = new LinearLayout(view.getContext());
-		typeView.setOrientation(LinearLayout.HORIZONTAL);
-		LinearLayout.LayoutParams typeViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-		typeViewParams.setMargins(0, dpToPx(8), 0, 0);
-		typeView.setGravity(Gravity.CENTER);
-		typeView.setLayoutParams(typeViewParams);
-		infoView.addView(typeView);
-
-		ImageView typeImageView = new ImageView(view.getContext());
-		LinearLayout.LayoutParams typeImageParams = new LinearLayout.LayoutParams(dpToPx(16), dpToPx(16));
-		typeImageParams.setMargins(dpToPx(4), 0, dpToPx(4), 0);
-		typeImageView.setLayoutParams(typeImageParams);
-		int drawableResId = route.type == null ? R.drawable.ic_action_polygom_dark : route.type.getResourceId();
-		typeImageView.setImageDrawable(getRowIcon(drawableResId));
-		typeView.addView(typeImageView);
-
-		TextView typeTextView = new TextView(view.getContext());
-		LinearLayout.LayoutParams typeTextParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-		typeTextView.setLayoutParams(typeTextParams);
-		typeTextView.setText(route.getTypeStrRes());
-		AndroidUtils.setTextSecondaryColor(getMapActivity(), typeTextView, getApplication().getDaynightHelper().isNightModeForMapControls());
-		typeView.addView(typeTextView);
-
-//		baseView.setOnClickListener(listener);
-
-//		((ViewGroup) view).addView(baseView);
-
-//		return baseView;
-	}
-
-	private void buildTransportRouteRow(ViewGroup parent, TransportStopRoute r, OnClickListener listener, boolean showDivider) {
-//		buildTransportRowItem(parent, r, listener);
-
-		if (showDivider) {
-			buildRowDivider(parent);
-		}
-	}
-
-	private CollapsableView getCollapsableTransportStopRoutesView(final Context context, boolean collapsed) {
-		LinearLayout view = buildCollapsableContentView(context, collapsed, false);
-
-		for (int i = 0; i < routes.size(); i++) {
-			final TransportStopRoute r  = routes.get(i);
-			View.OnClickListener listener = arg0 -> {
-				MapContextMenu mm = getMapActivity().getContextMenu();
-				PointDescription pd = new PointDescription(PointDescription.POINT_TYPE_TRANSPORT_ROUTE,
-						r.getDescription(getMapActivity().getMyApplication(), false));
-				mm.show(latLon, pd, r);
-				TransportStopsLayer stopsLayer = getMapActivity().getMapLayers().getTransportStopsLayer();
-				stopsLayer.setRoute(r);
-				int cz = r.calculateZoom(0, getMapActivity().getMapView().getCurrentRotatedTileBox());
-				getMapActivity().changeZoom(cz - getMapActivity().getMapView().getZoom());
-			};
-			boolean showDivider = i < routes.size() - 1;
-			buildTransportRouteRow(view, r, listener, showDivider);
-		}
-
-		return new CollapsableView(view, this, collapsed);
 	}
 
 	protected CollapsableView getCollapsableTextView(Context context, boolean collapsed, String text) {

@@ -273,7 +273,6 @@
 	<string name="map_screen_orientation">Näytön orientaatio</string>
 	<string name="map_screen_orientation_descr">Pysty, vaaka tai laitteen</string>
 	<string name="add_new_rule">Lisää uusi sääntö</string>
-	<string name="transport_Routes">Reitit</string>
 	<string name="transport_Stop">Pysähdys</string>
 	<string name="transport_stops">pysähdykset</string>
 	<string name="transport_search_after">Myöhempi matkareitti</string>	

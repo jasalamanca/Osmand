@@ -362,7 +362,6 @@
     <string name="map_screen_orientation_descr">Określa orientację ekranu.</string>
     <string name="opening_hours_not_supported">Format godzina otwarcia nie jest obsługiwany</string>
     <string name="add_new_rule">Dodaj nową regułę</string>
-    <string name="transport_Routes">Trasy</string>
     <string name="transport_Stop">Przystanek</string>
     <string name="transport_stops">przystanki</string>
     <string name="transport_search_after">Dalszy rozkład jazdy</string>

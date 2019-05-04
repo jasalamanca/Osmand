@@ -507,7 +507,6 @@ Er is nu {2} MB beschikbaar</string>
   <string name="map_screen_orientation_descr">Scherm-oriëntatie: staand, liggend of apparaatinstelling</string>
   <string name="opening_hours_not_supported">Openingstijden kunnen niet gewijzigd worden</string>
   <string name="add_new_rule">Nieuwe regel toevoegen</string>
-  <string name="transport_Routes">Routes</string>
   <string name="transport_Stop">Halte</string>
   <string name="transport_stops">Haltes</string>
   <string name="transport_search_after">Aansluitende route</string>

@@ -1001,7 +1001,6 @@
 	<string name="route_head">ادامه دهید به</string>
 	<string name="opening_hours_not_supported">قالب ساعات کاری برای ویرایش پشتیبانی نمی‌شود</string>
 	<string name="add_new_rule">افزودن قانون جدید</string>
-	<string name="transport_Routes">مسیرها</string>
 	<string name="transport_search_after">طرح سفر بعدی</string>	
 	<string name="transport_search_before">طرح سفر قبلی</string>
 	<string name="transport_finish_search">پایان جست‌وجو</string>

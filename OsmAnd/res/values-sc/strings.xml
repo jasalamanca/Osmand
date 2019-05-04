@@ -1049,7 +1049,6 @@ Memòria in proportzione %4$s MB (lìmite de Android %5$s MB, Dalvik %6$s MB).</
     <string name="map_screen_orientation_descr">Verticale, orizontale, o predefinidu (dispositivu).</string>
     <string name="opening_hours_not_supported">Su formatu de s’oràriu pro abèrrere no est suportadu pro sa muda</string>
     <string name="add_new_rule">Annanghe una regula noa</string>
-    <string name="transport_Routes">Àndalas</string>
     <string name="transport_Stop">Firmada</string>
     <string name="transport_stops">firmadas</string>
     <string name="transport_search_after">Àndala imbeniente</string>

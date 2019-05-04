@@ -486,7 +486,6 @@
     <string name="map_screen_orientation_descr">Na výšku, na šírku alebo podľa zariadenia.</string>
     <string name="opening_hours_not_supported">Formát otváracích hodín nie je podporovaný na úpravu</string>
     <string name="add_new_rule">Pridať nové pravidlo</string>
-    <string name="transport_Routes">Linky</string>
     <string name="transport_Stop">Zastávka</string>
     <string name="transport_stops">zastávky</string>
     <string name="transport_search_after">Nasledovné pokyny</string>

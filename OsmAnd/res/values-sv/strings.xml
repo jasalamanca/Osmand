@@ -640,7 +640,6 @@ Nyttjat utrymme är {1} MB.
     <string name="map_screen_orientation_descr">Stående, liggande eller som enheten.</string>
     <string name="opening_hours_not_supported">Öppettider format stöds inte för redigering</string>
     <string name="add_new_rule">Lägg till en ny regel</string>
-    <string name="transport_Routes">Rutter</string>
     <string name="transport_Stop">Hållplats</string>
     <string name="transport_stops">hållplatser</string>
     <string name="transport_search_after">Följande resväg</string>

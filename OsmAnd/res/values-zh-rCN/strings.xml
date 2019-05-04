@@ -301,7 +301,6 @@
 	<string name="map_orientation_portrait">肖像</string>
 	<string name="map_orientation_landscape">景观</string>
 	<string name="map_screen_orientation">屏幕方向</string>
-	<string name="transport_Routes">路线</string>
 	<string name="transport_Stop">停止</string>
 	<string name="transport_stops">停止</string>
 	<string name="transport_search_after">后续路由</string>	

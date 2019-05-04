@@ -517,7 +517,6 @@
   <string name="map_screen_orientation_descr">Portrets, ainava vai iekārtas</string>
   <string name="opening_hours_not_supported">Darba laika formāts nav paredzēts mainīšanai</string>
   <string name="add_new_rule">Pievienot jaunu noteikumu</string>
-  <string name="transport_Routes">Maršruti</string>
   <string name="transport_Stop">Pietura</string>
   <string name="transport_stops">pieturas</string>
   <string name="transport_search_after">Nākamais maršruts</string>

@@ -512,7 +512,6 @@
 	<string name="map_screen_orientation_descr">세로, 가로, 자동</string>
 	<string name="opening_hours_not_supported">오프닝 시간 형식은 편집을 지원하지 않습니다</string>
 	<string name="add_new_rule">새로운 규칙 추가</string>
-	<string name="transport_Routes">경로</string>
 	<string name="transport_Stop">정류소</string>
 	<string name="transport_stops">정류소들</string>
 	

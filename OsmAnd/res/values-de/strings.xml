@@ -621,7 +621,6 @@
 	<string name="map_screen_orientation_descr">Ausrichtung der Landkartenanzeige.</string>
 	<string name="opening_hours_not_supported">Ändern von Öffnungszeiten wird nicht unterstützt</string>
 	<string name="add_new_rule">Füge neue Regel hinzu</string>
-	<string name="transport_Routes">Strecken</string>
 	<string name="transport_Stop">Haltestelle</string>
 	<string name="transport_stops">Haltestellen</string>
 	<string name="transport_search_after">Anschließende Route</string>

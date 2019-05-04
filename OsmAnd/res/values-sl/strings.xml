@@ -796,7 +796,6 @@ Sorazmerna velikost pomnilnika je %4$s MB (omejitev na androidu je %5$s MB, na d
     <string name="fav_saved_sucessfully">Priljubljene točke uspešno shranjene v {0}</string>
     <string name="opening_hours_not_supported">Oblike zapisa delovnega časa ni mogoče urejati</string>
     <string name="add_new_rule">Dodajanje novega pravila</string>
-    <string name="transport_Routes">Poti</string>
     <string name="transport_Stop">Postaja</string>
     <string name="transport_stops">postaje</string>
     <string name="transport_search_after">Naslednja pot</string>

@@ -49,7 +49,6 @@ public class FavouritePointMenuController extends MenuController {
 			TransportStop stop = (TransportStop) getObject();
 			TransportStopController transportStopController = new TransportStopController(getMapActivity(), pointDescription, stop);
 			routes = transportStopController.processTransportStop();
-			builder.setRoutes(routes);
 		}
 
 		Object originObject = getBuilder().getOriginObject();

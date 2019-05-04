@@ -539,7 +539,6 @@ Tam prireiks {1} MB pastoviam saugojimui.
     <string name="map_screen_orientation_descr">Stačiai, gulsčiai arba pagal įrenginį.</string>
     <string name="opening_hours_not_supported">Darbo laiko formato redagavimas nepalaikomas</string>
     <string name="add_new_rule">Pridėti naują taisyklę</string>
-    <string name="transport_Routes">Maršrutai</string>
     <string name="transport_Stop">Stotelė</string>
     <string name="transport_stops">stotelės</string>
     <string name="transport_search_after">Kitas maršrutas</string>

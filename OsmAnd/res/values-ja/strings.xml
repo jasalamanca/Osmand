@@ -313,7 +313,6 @@ MB)をダウンロードしますか?</string>
      <string name="map_screen_orientation_descr">画面の向きを指定します</string>
      <string name="opening_hours_not_supported">営業時間形式は編集ではサポートされません</string>
      <string name="add_new_rule">新しいルールを追加</string>
-     <string name="transport_Routes">ルート</string>
      <string name="transport_Stop">乗り場</string>
      <string name="transport_stops">乗り場</string>
 

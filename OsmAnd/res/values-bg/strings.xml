@@ -759,7 +759,6 @@
     <string name="map_screen_orientation_descr">Портрет, пейзаж или от устройството</string>
     <string name="opening_hours_not_supported">Форматът за час не е достъпен за редактиране</string>
     <string name="add_new_rule">Добавяне на ново правило</string>
-    <string name="transport_Routes">Маршрути</string>
     <string name="transport_Stop">Спирка</string>
     <string name="transport_stops">спирки</string>
     <string name="transport_search_after">Следващ маршрут</string>

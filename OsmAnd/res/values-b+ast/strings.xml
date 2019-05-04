@@ -874,7 +874,6 @@ Puntos</string>
     <string name="error_reading_gpx">Fallu lleendo los datos GPX</string>
     <string name="network_provider">Rede</string>
     <string name="int_seconds">segundos</string>
-    <string name="transport_Routes">Rutes</string>
     <string name="transport">Tresporte</string>
     <string name="get_directions">Direiciones</string>
     <string name="error_calculating_route">Fallu calculando la ruta</string>

@@ -379,7 +379,6 @@ Translator: Le Viet Thanh; email: lethanhx2k@gmail.com --><resources>
 	<string name="map_screen_orientation_descr">Chọn hướng màn hình</string>
 	<string name="opening_hours_not_supported">Opening hours format is not supported for editing</string>
 	<string name="add_new_rule">Tạo thêm quy tắc mới</string>
-	<string name="transport_Routes">Tuyến</string>
 	<string name="transport_Stop">Dừng</string>
 	<string name="transport_stops">Dừng</string>
 
