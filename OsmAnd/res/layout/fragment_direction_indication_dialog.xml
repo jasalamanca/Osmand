@@ -165,7 +165,7 @@
                             android:text="@string/show_direction"
                             android:textAppearance="@style/TextAppearance.ListItemTitle"/>
 
-                        <android.support.v7.widget.SwitchCompat
+                        <Switch
                             android:id="@+id/distance_indication_switch"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -304,7 +304,7 @@
                             android:text="@string/show_arrows_on_the_map"
                             android:textAppearance="@style/TextAppearance.ListItemTitle"/>
 
-                        <android.support.v7.widget.SwitchCompat
+                        <Switch
                             android:id="@+id/show_arrows_switch"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -363,7 +363,7 @@
                             android:text="@string/show_guide_line"
                             android:textAppearance="@style/TextAppearance.ListItemTitle"/>
 
-                        <android.support.v7.widget.SwitchCompat
+                        <Switch
                             android:id="@+id/show_guide_line_switch"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -422,7 +422,7 @@
                             android:text="@string/one_tap_active"
                             android:textAppearance="@style/TextAppearance.ListItemTitle"/>
 
-                        <android.support.v7.widget.SwitchCompat
+                        <Switch
                             android:id="@+id/one_tap_active_switch"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
-import android.support.annotation.IdRes;
 import android.support.v4.app.DialogFragment;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 

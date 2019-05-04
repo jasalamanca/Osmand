@@ -18,7 +18,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
@@ -218,7 +217,7 @@ public class DirectionIndicationDialogFragment extends BaseOsmAndDialogFragment 
 			}
 		}
 		((ImageView) mainView.findViewById(R.id.action_bar_image))
-				.setImageDrawable(new LayerDrawable(imgList.toArray(new Drawable[imgList.size()])));
+				.setImageDrawable(new LayerDrawable(imgList.toArray(new Drawable[0])));
 	}
 
 	private Drawable getTopBar2Img() {
@@ -321,7 +320,7 @@ public class DirectionIndicationDialogFragment extends BaseOsmAndDialogFragment 
 
 	private void updateIcon(int imageViewId, int drawableId, boolean active) {
 		ImageView iv = mainView.findViewById(imageViewId);
-		iv.setBackgroundDrawable(getIconBackground(active));
+		iv.setBackground(getIconBackground(active));
 		iv.setImageDrawable(getIconTop(drawableId, active));
 	}
 
