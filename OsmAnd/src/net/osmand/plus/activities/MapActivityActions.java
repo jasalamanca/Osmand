@@ -3,7 +3,6 @@ package net.osmand.plus.activities;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -13,7 +12,6 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -492,7 +490,7 @@ public class MapActivityActions implements DialogProvider {
                     app.logEvent(mapActivity, "drawer_dashboard_open");
                     MapActivity.clearPrevActivityIntent();
                     mapActivity.closeDrawer();
-                    mapActivity.getDashboard().setDashboardVisibility(true, DashboardType.DASHBOARD, viewCoordinates);
+                    mapActivity.getDashboard().setDashboardVisibility(true, DashboardType.DASHBOARD);
                     return true;
                 }).createItem());
 		if (settings.USE_MAP_MARKERS.get()) {
@@ -510,7 +508,7 @@ public class MapActivityActions implements DialogProvider {
 					.setListener((adapter, itemId, pos, isChecked, viewCoordinates) -> {
                         app.logEvent(mapActivity, "drawer_waypoints_open");
                         MapActivity.clearPrevActivityIntent();
-                        mapActivity.getDashboard().setDashboardVisibility(true, DashboardType.WAYPOINTS, viewCoordinates);
+                        mapActivity.getDashboard().setDashboardVisibility(true, DashboardType.WAYPOINTS);
                         return false;
                     }).createItem());
 		}
@@ -569,7 +567,7 @@ public class MapActivityActions implements DialogProvider {
 				.setListener((adapter, itemId, pos, isChecked, viewCoordinates) -> {
                     app.logEvent(mapActivity, "drawer_config_map_open");
                     MapActivity.clearPrevActivityIntent();
-                    mapActivity.getDashboard().setDashboardVisibility(true, DashboardType.CONFIGURE_MAP, viewCoordinates);
+                    mapActivity.getDashboard().setDashboardVisibility(true, DashboardType.CONFIGURE_MAP);
                     return false;
                 }).createItem());
 
@@ -615,7 +613,7 @@ public class MapActivityActions implements DialogProvider {
 				.setListener((adapter, itemId, pos, isChecked, viewCoordinates) -> {
                     app.logEvent(mapActivity, "drawer_config_screen_open");
                     MapActivity.clearPrevActivityIntent();
-                    mapActivity.getDashboard().setDashboardVisibility(true, DashboardType.CONFIGURE_SCREEN, viewCoordinates);
+                    mapActivity.getDashboard().setDashboardVisibility(true, DashboardType.CONFIGURE_SCREEN);
                     return false;
                 }).createItem());
 

@@ -1846,8 +1846,6 @@ Pôr do Sol: %2$s</string>
     <string name="move_all_to_history">Mover tudo para o histórico</string>
     <string name="show_direction">Indicação de distância</string>
     <string name="sort_by">Classificar por</string>
-    <string name="do_not_use_animations">Não usar animações</string>
-    <string name="do_not_use_animations_descr">Desabilitar animações no aplicativo.</string>
     <string name="keep_showing_on_map">Manter mostrando no aplicativo</string>
     <string name="exit_without_saving">Sair sem salvar?</string>
     <string name="line">Linha</string>

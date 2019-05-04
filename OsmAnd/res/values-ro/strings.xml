@@ -1629,8 +1629,6 @@
     <string name="last_seven_days">Ultimele 7 zile</string>
     <string name="this_year">Anul acesta</string>
     <string name="sort_by">Sortează după</string>
-    <string name="do_not_use_animations">Nu utiliza animații</string>
-    <string name="do_not_use_animations_descr">Dezactivează animațiile în această app</string>
     <string name="line">Linie</string>
     <string name="edit_line">Editează linia</string>
     <string name="shared_string_options">Opțiuni</string>

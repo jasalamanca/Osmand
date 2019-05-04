@@ -192,24 +192,21 @@ public class AnimateDraggingMapThread {
 		final float mMoveX = rb.getPixXFromLatLon(startLat, startLon) - rb.getPixXFromLatLon(finalLat, finalLon);
 		final float mMoveY = rb.getPixYFromLatLon(startLat, startLon) - rb.getPixYFromLatLon(finalLat, finalLon);
 
-		final boolean doNotUseAnimations = tileView.getSettings().DO_NOT_USE_ANIMATIONS.get();
-		final float animationTime = doNotUseAnimations ? 0 : Math.max(450, (Math.abs(mStX) + Math.abs(mStY)) / 1200f * MOVE_MOVE_ANIMATION_TIME);
-		
 		startThreadAnimating(() -> {
             setTargetValues(endZoom, finalLat, finalLon);
             if(moveZoom != startZoom){
-                animatingZoomInThread(startZoom, startZoomFP, moveZoom, startZoomFP, doNotUseAnimations ? 0 : ZOOM_MOVE_ANIMATION_TIME, notifyListener);
+                animatingZoomInThread(startZoom, startZoomFP, moveZoom, startZoomFP, 0, notifyListener);
             }
 
             if(!stopped){
-                animatingMoveInThread(mMoveX, mMoveY, animationTime, notifyListener, finishAminationCallback);
+                animatingMoveInThread(mMoveX, mMoveY, 0, notifyListener, finishAminationCallback);
             }
             if(!stopped){
                 tileView.setLatLonAnimate(finalLat, finalLon, notifyListener);
             }
 
             if (!stopped && (moveZoom != endZoom || startZoomFP != 0)) {
-                animatingZoomInThread(moveZoom, startZoomFP, endZoom, 0, doNotUseAnimations ? 0 : ZOOM_MOVE_ANIMATION_TIME, notifyListener);
+                animatingZoomInThread(moveZoom, startZoomFP, endZoom, 0, 0, notifyListener);
             }
             tileView.setFractionalZoom(endZoom, 0, notifyListener);
 
@@ -316,12 +313,10 @@ public class AnimateDraggingMapThread {
 	}
 
 	public void startZooming(final int zoomEnd, final double zoomPart, final boolean notifyListener){
-		boolean doNotUseAnimations = tileView.getSettings().DO_NOT_USE_ANIMATIONS.get();
-		final float animationTime = doNotUseAnimations ? 0 : ZOOM_ANIMATION_TIME;
 		startThreadAnimating(() -> {
             RotatedTileBox tb = tileView.getCurrentRotatedTileBox();
             setTargetValues(zoomEnd, tileView.getLatitude(), tileView.getLongitude());
-            animatingZoomInThread(tb.getZoom(), tb.getZoomFloatPart(), zoomEnd, zoomPart, animationTime, notifyListener);
+            animatingZoomInThread(tb.getZoom(), tb.getZoomFloatPart(), zoomEnd, zoomPart, 0, notifyListener);
             pendingRotateAnimation();
         }); //$NON-NLS-1$
 	}

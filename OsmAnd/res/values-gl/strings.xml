@@ -2177,8 +2177,6 @@ Lon %2$s</string>
     <string name="move_all_to_history">Mover todo para o historial</string>
     <string name="show_direction">Indicación de distancia</string>
     <string name="sort_by">Ordenar por</string>
-    <string name="do_not_use_animations">Non empregar animacións</string>
-    <string name="do_not_use_animations_descr">Desactiva as animacións do aplicativo</string>
     <string name="exit_without_saving">Saír sen gardar?</string>
     <string name="line">Liña</string>
     <string name="save_as_route_point">Gardar como puntos da ruta</string>

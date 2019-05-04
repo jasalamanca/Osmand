@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import net.osmand.AndroidUtils;
 import net.osmand.plus.R;
@@ -101,24 +100,6 @@ public class MapRouteInfoMenuFragment extends BaseOsmAndFragment {
 		}
 	}
 
-// --Commented out by Inspection START (15/02/19 20:42):
-//	public void show(MapActivity mapActivity) {
-//		int slideInAnim = 0;
-//		int slideOutAnim = 0;
-//		if (!mapActivity.getMyApplication().getSettings().DO_NOT_USE_ANIMATIONS.get()) {
-//			slideInAnim = R.anim.slide_in_bottom;
-//			slideOutAnim = R.anim.slide_out_bottom;
-//		}
-//
-//		mapActivity.getSupportFragmentManager()
-//				.beginTransaction()
-//				.setCustomAnimations(slideInAnim, slideOutAnim, slideInAnim, slideOutAnim)
-//				.add(R.id.routeMenuContainer, this, TAG)
-//				.addToBackStack(TAG)
-//				.commitAllowingStateLoss();
-//	}
-// --Commented out by Inspection STOP (15/02/19 20:42)
-
 	public void dismiss() {
 		FragmentActivity activity = getActivity();
 		if (activity != null) {
@@ -160,39 +141,25 @@ public class MapRouteInfoMenuFragment extends BaseOsmAndFragment {
 		AndroidUtils.setBackground(ctx, mainView.findViewById(R.id.dividerBtn2), nightMode,
 				R.color.route_info_divider_light, R.color.route_info_divider_dark);
 
-		AndroidUtils.setTextPrimaryColor(ctx, (TextView) mainView.findViewById(R.id.ViaView), nightMode);
-		AndroidUtils.setTextSecondaryColor(ctx, (TextView) mainView.findViewById(R.id.ViaSubView), nightMode);
-		AndroidUtils.setTextSecondaryColor(ctx, (TextView) mainView.findViewById(R.id.toTitle), nightMode);
-		AndroidUtils.setTextSecondaryColor(ctx, (TextView) mainView.findViewById(R.id.fromTitle), nightMode);
-		AndroidUtils.setTextPrimaryColor(ctx, (TextView) mainView.findViewById(R.id.InfoTextView), nightMode);
+		AndroidUtils.setTextPrimaryColor(ctx, mainView.findViewById(R.id.ViaView), nightMode);
+		AndroidUtils.setTextSecondaryColor(ctx, mainView.findViewById(R.id.ViaSubView), nightMode);
+		AndroidUtils.setTextSecondaryColor(ctx, mainView.findViewById(R.id.toTitle), nightMode);
+		AndroidUtils.setTextSecondaryColor(ctx, mainView.findViewById(R.id.fromTitle), nightMode);
+		AndroidUtils.setTextPrimaryColor(ctx, mainView.findViewById(R.id.InfoTextView), nightMode);
 
-		AndroidUtils.setTextPrimaryColor(ctx, (TextView) mainView.findViewById(R.id.DistanceText), nightMode);
-		AndroidUtils.setTextSecondaryColor(ctx, (TextView) mainView.findViewById(R.id.DistanceTitle), nightMode);
-		AndroidUtils.setTextPrimaryColor(ctx, (TextView) mainView.findViewById(R.id.DurationText), nightMode);
-		AndroidUtils.setTextSecondaryColor(ctx, (TextView) mainView.findViewById(R.id.DurationTitle), nightMode);
+		AndroidUtils.setTextPrimaryColor(ctx, mainView.findViewById(R.id.DistanceText), nightMode);
+		AndroidUtils.setTextSecondaryColor(ctx, mainView.findViewById(R.id.DistanceTitle), nightMode);
+		AndroidUtils.setTextPrimaryColor(ctx, mainView.findViewById(R.id.DurationText), nightMode);
+		AndroidUtils.setTextSecondaryColor(ctx, mainView.findViewById(R.id.DurationTitle), nightMode);
 	}
 
 	public static boolean showInstance(final MapActivity mapActivity) {
-		boolean portrait = AndroidUiHelper.isOrientationPortrait(mapActivity);
-		int slideInAnim = 0;
-		int slideOutAnim = 0;
-		if (!mapActivity.getMyApplication().getSettings().DO_NOT_USE_ANIMATIONS.get()) {
-			if (portrait) {
-				slideInAnim = R.anim.slide_in_bottom;
-				slideOutAnim = R.anim.slide_out_bottom;
-			} else {
-				slideInAnim = R.anim.slide_in_left;
-				slideOutAnim = R.anim.slide_out_left;
-			}
-		}
-
 		try {
 			mapActivity.getContextMenu().hideMenues();
 
 			MapRouteInfoMenuFragment fragment = new MapRouteInfoMenuFragment();
 			mapActivity.getSupportFragmentManager()
 					.beginTransaction()
-					.setCustomAnimations(slideInAnim, slideOutAnim, slideInAnim, slideOutAnim)
 					.add(R.id.routeMenuContainer, fragment, TAG)
 					.addToBackStack(TAG)
 					.commitAllowingStateLoss();

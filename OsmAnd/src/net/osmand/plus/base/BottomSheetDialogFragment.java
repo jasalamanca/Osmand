@@ -11,7 +11,6 @@ import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandSettings;
@@ -27,11 +26,6 @@ public abstract class BottomSheetDialogFragment extends DialogFragment {
 
 		BottomSheetDialog dialog = new BottomSheetDialog(getContext(), themeId);
 		dialog.setCanceledOnTouchOutside(true);
-		Window window = dialog.getWindow();
-		if (!settings.DO_NOT_USE_ANIMATIONS.get() && window != null) {
-			window.getAttributes().windowAnimations = R.style.Animations_PopUpMenu_Bottom;
-		}
-
 		return dialog;
 	}
 

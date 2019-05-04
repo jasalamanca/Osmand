@@ -15,7 +15,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -78,7 +77,7 @@ public class MapMarkersDialogFragment extends android.support.v4.app.DialogFragm
 	@NonNull
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
-		Dialog dialog = new Dialog(getActivity(), getTheme()) {
+		return new Dialog(getActivity(), getTheme()) {
 			@Override
 			public void onBackPressed() {
 				if (!dismissOptionsMenuFragment()) {
@@ -86,10 +85,6 @@ public class MapMarkersDialogFragment extends android.support.v4.app.DialogFragm
 				}
 			}
 		};
-		if (!getMyApplication().getSettings().DO_NOT_USE_ANIMATIONS.get()) {
-			dialog.getWindow().getAttributes().windowAnimations = R.style.Animations_Alpha;
-		}
-		return dialog;
 	}
 
 	@Nullable
@@ -247,7 +242,7 @@ public class MapMarkersDialogFragment extends android.support.v4.app.DialogFragm
 	}
 
 	private OnMapMarkersSavedListener createOnMapMarkersSavedListener() {
-		return () -> updateAdapters();
+		return this::updateAdapters;
 	}
 
 	public void blurStatusBar() {
@@ -443,7 +438,7 @@ public class MapMarkersDialogFragment extends android.support.v4.app.DialogFragm
 	}
 
 	private OrderByFragmentListener createOrderByFragmentListener() {
-		return orderByMode -> setOrderByMode(orderByMode);
+		return this::setOrderByMode;
 	}
 
 	private void setOrderByMode(MapMarkersOrderByMode orderByMode) {

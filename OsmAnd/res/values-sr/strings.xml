@@ -1380,8 +1380,6 @@
     <string name="move_all_to_history">Премести у повест</string>
     <string name="show_direction">Указивач растојања</string>
     <string name="sort_by">Распореди по</string>
-    <string name="do_not_use_animations">Не користи оживљавање</string>
-    <string name="do_not_use_animations_descr">Онемогућава оживљавање у програму.</string>
     <string name="keep_showing_on_map">Приказуј на карти</string>
     <string name="exit_without_saving">Изађи пре чувања?</string>
     <string name="line">Линија</string>

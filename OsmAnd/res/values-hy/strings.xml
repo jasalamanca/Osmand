@@ -154,8 +154,6 @@
     <string name="move_all_to_history">Բոլորը տեղափոխել պատմություն</string>
     <string name="show_direction">Հեռավորության ցուցիչ</string>
     <string name="sort_by">Դասավորել ըստ</string>
-    <string name="do_not_use_animations">Մի օգտագործեք անիմացիաները</string>
-    <string name="do_not_use_animations_descr">Անջատում է անիմացիաները։</string>
     <string name="keep_showing_on_map">Ցուցադրել քարտեզի վրա</string>
     <string name="exit_without_saving">Ելք առանց պահպանման?</string>
     <string name="line">Գիծ</string>

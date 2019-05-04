@@ -2,8 +2,6 @@ package net.osmand.plus.osmedit;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
@@ -15,12 +13,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import net.osmand.AndroidUtils;
 import net.osmand.data.Amenity;
 import net.osmand.osm.PoiType;
 import net.osmand.osm.edit.Node;
 import net.osmand.plus.ContextMenuAdapter;
-import net.osmand.plus.ContextMenuAdapter.ItemClickListener;
 import net.osmand.plus.ContextMenuItem;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandPlugin;
@@ -259,8 +255,7 @@ public class OsmEditingPlugin extends OsmandPlugin {
 					@Override
 					public boolean onRowItemClick(ArrayAdapter<ContextMenuItem> adapter, View view, int itemId, int position) {
 						if (itemId == R.string.layer_osm_bugs) {
-							mapActivity.getDashboard().setDashboardVisibility(true,
-									DashboardType.OSM_NOTES, AndroidUtils.getCenterViewCoordinates(view));
+							mapActivity.getDashboard().setDashboardVisibility(true, DashboardType.OSM_NOTES);
 							return false;
 						}
 						return true;
@@ -311,7 +306,7 @@ public class OsmEditingPlugin extends OsmandPlugin {
 						f.openSelectionMode(R.string.local_index_mi_upload_gpx, R.drawable.ic_action_export,
 								R.drawable.ic_action_export, (dialog, which) -> {
 									List<GpxInfo> selectedItems = f.getSelectedItems();
-									sendGPXFiles(activity, selectedItems.toArray(new GpxInfo[selectedItems.size()]));
+									sendGPXFiles(activity, selectedItems.toArray(new GpxInfo[0]));
 								});
 						return true;
 					})

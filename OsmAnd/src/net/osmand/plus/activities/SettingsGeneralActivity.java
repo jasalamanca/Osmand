@@ -2,8 +2,6 @@ package net.osmand.plus.activities;
 
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -14,8 +12,6 @@ import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.support.annotation.NonNull;
@@ -445,7 +441,6 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 
 		misc.addPreference(createCheckBoxPreference(settings.USE_KALMAN_FILTER_FOR_COMPASS, R.string.use_kalman_filter_compass, R.string.use_kalman_filter_compass_descr));
 		misc.addPreference(createCheckBoxPreference(settings.USE_MAGNETIC_FIELD_SENSOR_COMPASS, R.string.use_magnetic_sensor, R.string.use_magnetic_sensor_descr));
-		misc.addPreference(createCheckBoxPreference(settings.DO_NOT_USE_ANIMATIONS, R.string.do_not_use_animations, R.string.do_not_use_animations_descr));
 		misc.addPreference(createCheckBoxPreference(settings.MAP_EMPTY_STATE_ALLOWED, R.string.tap_on_map_to_hide_interface, R.string.tap_on_map_to_hide_interface_descr));
 		misc.addPreference(createCheckBoxPreference(settings.DO_NOT_SHOW_STARTUP_MESSAGES, R.string.do_not_show_startup_messages, R.string.do_not_show_startup_messages_desc));
 		if (Version.isGooglePlayEnabled(getMyApplication()) && Version.isFreeVersion(getMyApplication())
@@ -487,8 +482,6 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 			restartApp();
 		} else if (id.equals(settings.METRIC_SYSTEM.getId())) {
 			settings.METRIC_SYSTEM_CHANGED_MANUALLY.set(true);
-		} else if (id.equals(settings.DO_NOT_USE_ANIMATIONS.getId())) {
-			restartApp();
 		} else {
 			updateAllSettings();
 		}
@@ -546,7 +539,7 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 			@Override
 			protected List<String> doInBackground(Void... params) {
 				return getMyApplication().getResourceManager().reloadIndexes(IProgress.EMPTY_PROGRESS,
-						new ArrayList<String>());
+						new ArrayList<>());
 			}
 
 			protected void onPostExecute(List<String> result) {

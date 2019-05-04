@@ -1,10 +1,7 @@
 package net.osmand.plus.dashboard;
 
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.app.AlertDialog;
-import android.widget.PopupMenu;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,9 +10,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
-import net.osmand.AndroidUtils;
 import net.osmand.data.LatLon;
 import net.osmand.data.PointDescription;
 import net.osmand.plus.R;
@@ -79,7 +76,7 @@ public class DashWaypointsFragment extends DashLocationFragment {
 		((TextView) mainView.findViewById(R.id.fav_text)).setText(getString(R.string.waypoints));
 		((Button) mainView.findViewById(R.id.show_all)).setText(getString(R.string.shared_string_show_all));
 		mainView.findViewById(R.id.show_all).setVisibility(View.VISIBLE);
-		mainView.findViewById(R.id.show_all).setOnClickListener(v -> dashboard.setDashboardVisibility(true, DashboardType.WAYPOINTS, AndroidUtils.getCenterViewCoordinates(v)));
+		mainView.findViewById(R.id.show_all).setOnClickListener(v -> dashboard.setDashboardVisibility(true, DashboardType.WAYPOINTS));
 		LinearLayout favorites = mainView.findViewById(R.id.items);
 		favorites.removeAllViews();
 		List<DashLocationView> distances = new ArrayList<>();

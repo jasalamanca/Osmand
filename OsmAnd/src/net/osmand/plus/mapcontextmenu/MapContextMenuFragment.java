@@ -418,10 +418,10 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 				nightMode ? R.color.ctx_menu_direction_color_dark : R.color.ctx_menu_direction_color_light));
 
 		AndroidUtils.setTextSecondaryColor(getMapActivity(),
-				(TextView) view.findViewById(R.id.title_button_right_text), nightMode);
+				view.findViewById(R.id.title_button_right_text), nightMode);
 
 		AndroidUtils.setTextSecondaryColor(getMapActivity(),
-				(TextView) view.findViewById(R.id.progressTitle), nightMode);
+				view.findViewById(R.id.progressTitle), nightMode);
 
 		// Zoom buttons
 		zoomButtonsView = view.findViewById(R.id.context_menu_zoom_buttons);
@@ -1633,27 +1633,13 @@ public class MapContextMenuFragment extends BaseOsmAndFragment implements Downlo
 	public static boolean showInstance(final MapContextMenu menu, final MapActivity mapActivity,
 									   final boolean centered) {
 		try {
-
 			if (menu.getLatLon() == null || mapActivity.isActivityDestroyed()) {
 				return false;
-			}
-
-			int slideInAnim = 0;
-			int slideOutAnim = 0;
-			if (!mapActivity.getMyApplication().getSettings().DO_NOT_USE_ANIMATIONS.get()) {
-				slideInAnim = R.anim.slide_in_bottom;
-				slideOutAnim = R.anim.slide_out_bottom;
-
-				if (menu.isExtended()) {
-					slideInAnim = menu.getSlideInAnimation();
-					slideOutAnim = menu.getSlideOutAnimation();
-				}
 			}
 
 			MapContextMenuFragment fragment = new MapContextMenuFragment();
 			fragment.centered = centered;
 			mapActivity.getSupportFragmentManager().beginTransaction()
-					.setCustomAnimations(slideInAnim, slideOutAnim, slideInAnim, slideOutAnim)
 					.add(R.id.fragmentContainer, fragment, TAG)
 					.addToBackStack(TAG).commitAllowingStateLoss();
 

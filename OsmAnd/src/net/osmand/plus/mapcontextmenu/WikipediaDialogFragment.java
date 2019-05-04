@@ -1,11 +1,9 @@
 package net.osmand.plus.mapcontextmenu;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -71,11 +69,7 @@ public class WikipediaDialogFragment extends DialogFragment {
 	@NonNull
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
-		Dialog dialog = new Dialog(getContext(), getTheme());
-		if (!getMyApplication().getSettings().DO_NOT_USE_ANIMATIONS.get()) {
-			dialog.getWindow().getAttributes().windowAnimations = R.style.Animations_Alpha;
-		}
-		return dialog;
+		return new Dialog(getContext(), getTheme());
 	}
 
 	@Nullable
@@ -196,20 +190,14 @@ public class WikipediaDialogFragment extends DialogFragment {
 	}
 
 	private void showFullArticle(Uri uri) {
-		if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-			CustomTabsIntent customTabsIntent = new CustomTabsIntent.Builder()
-					.setToolbarColor(ContextCompat.getColor(getContext(), darkMode ? R.color.actionbar_dark_color : R.color.actionbar_light_color))
-					.build();
-			customTabsIntent.launchUrl(getContext(), uri);
-		} else {
-			Intent i = new Intent(Intent.ACTION_VIEW);
-			i.setData(uri);
-			startActivity(i);
-		}
+		CustomTabsIntent customTabsIntent = new CustomTabsIntent.Builder()
+				.setToolbarColor(ContextCompat.getColor(getContext(), darkMode ? R.color.actionbar_dark_color : R.color.actionbar_light_color))
+				.build();
+		customTabsIntent.launchUrl(getContext(), uri);
 	}
 
 	private void showPopupLangMenu(View view, final String langSelected) {
-		final PopupMenu optionsMenu = new PopupMenu(getContext(), view, Gravity.RIGHT);
+		final PopupMenu optionsMenu = new PopupMenu(getContext(), view, Gravity.END);
 		Set<String> namesSet = new TreeSet<>();
 		namesSet.addAll(amenity.getNames("content", "en"));
 		namesSet.addAll(amenity.getNames("description", "en"));

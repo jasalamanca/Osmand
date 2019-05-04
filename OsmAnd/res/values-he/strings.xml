@@ -1636,8 +1636,6 @@
     <string name="move_all_to_history">העברת הכול להיסטוריה</string>
     <string name="show_direction">חיווי מרחק</string>
     <string name="sort_by">סידור לפי</string>
-    <string name="do_not_use_animations">לא להשתמש בהנפשות</string>
-    <string name="do_not_use_animations_descr">השבתת הנפשות ביישומון.</string>
     <string name="keep_showing_on_map">להמשיך להציג במפה</string>
     <string name="exit_without_saving">לצאת בלי לשמור?</string>
     <string name="line">קו</string>

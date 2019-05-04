@@ -86,8 +86,6 @@
 <string name="update_now">Niha Rojaneyîke</string>
     <string name="update">Hemû rojanekirî</string>
     <string name="sort_by">Tesnîfkirina gorî</string>
-    <string name="do_not_use_animations">Anîmasyonan bi kar neyîne</string>
-    <string name="do_not_use_animations_descr">Di sepanê de anîmasyonan disekinîne</string>
     <string name="exit_without_saving">Derkeve û qeyd neke?</string>
     <string name="line">Xet</string>
     <string name="save_as_line">Wekê xetekê qeyd bike</string>

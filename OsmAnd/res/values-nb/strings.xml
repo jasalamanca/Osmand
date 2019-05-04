@@ -1953,8 +1953,6 @@
     <string name="add_segment_to_the_track">Legg til i et GPX-spor</string>
 <string name="add_route_points">Legg til rutepunkter</string>
     <string name="add_line">Legg til linje</string>
-    <string name="do_not_use_animations">Ikke bruk animasjoner</string>
-    <string name="do_not_use_animations_descr">Slår av animasjoner i programmet.</string>
     <string name="keep_showing_on_map">Fortsett å vise på kartet</string>
     <string name="exit_without_saving">Avslutte uten å lagre?</string>
     <string name="shared_string_install">Installer</string>

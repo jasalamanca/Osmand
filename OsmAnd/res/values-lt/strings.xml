@@ -2221,8 +2221,6 @@ Tai yra puikus būdas paremti OsmAnd ir OSM, jei jie jums patinka.</string>
     <string name="move_all_to_history">Perkelti visus į istoriją</string>
     <string name="show_direction">Atstumo nuoroda</string>
     <string name="sort_by">Rūšiuoti pagal</string>
-    <string name="do_not_use_animations">Nenaudoti animacijos</string>
-    <string name="do_not_use_animations_descr">Išjungia animaciją programoje.</string>
     <string name="keep_showing_on_map">Nuolat rodyti žemėlapyje</string>
     <string name="exit_without_saving">Ar norite išeiti neįrašę?</string>
     <string name="line">Linija</string>

@@ -2277,8 +2277,6 @@ Kérlek adj meg egy teljes kódot</string>
     <string name="this_year">Idén</string>
     <string name="show_direction">Távolság jelzése</string>
     <string name="sort_by">Rendezés alapja</string>
-    <string name="do_not_use_animations">Ne használjon animációkat</string>
-    <string name="do_not_use_animations_descr">Animációk kikapcsolása az alkalmazásban.</string>
     <string name="keep_showing_on_map">Továbbra is mutassa a térképen</string>
     <string name="exit_without_saving">Kilépés mentés nélkül?</string>
     <string name="line">Vonal</string>

@@ -2066,8 +2066,6 @@
     <string name="lang_ber">Берберский язык</string>
     <string name="move_all_to_history">Переместить все в историю</string>
     <string name="sort_by">Сортировать по</string>
-    <string name="do_not_use_animations">Не использовать анимацию</string>
-    <string name="do_not_use_animations_descr">Отключение анимации в приложении.</string>
     <string name="exit_without_saving">Выйти без сохранения?</string>
     <string name="save_as_route_point">Сохранить как точки маршрута</string>
     <string name="save_as_line">Сохранить как линию</string>

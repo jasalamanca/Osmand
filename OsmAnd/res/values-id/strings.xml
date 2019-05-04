@@ -174,8 +174,6 @@
     <string name="this_year">Tahun ini</string>
     <string name="move_all_to_history">Pindahkan semua ke riwayat</string>
     <string name="show_direction">Indikasi jarak</string>
-    <string name="do_not_use_animations">Jangan gunakan animasi</string>
-    <string name="do_not_use_animations_descr">Nonaktifkan animasi di aplikasi.</string>
     <string name="keep_showing_on_map">Tetap tampilkan pada peta</string>
     <string name="exit_without_saving">Keluar tanpa menyimpan?</string>
     <string name="line">Garis</string>

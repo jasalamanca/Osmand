@@ -2023,8 +2023,6 @@
     <string name="this_year">Bu yıl</string>
     <string name="show_direction">Uzaklık göstergesi</string>
     <string name="sort_by">Sırala</string>
-    <string name="do_not_use_animations">Animasyon kullanma</string>
-    <string name="do_not_use_animations_descr">App animasyonlarını devre dışı bırakır.</string>
     <string name="exit_without_saving">Kaydetmeden çık?</string>
     <string name="shared_string_options">Seçenekler</string>
     <string name="choose_navigation_type">Navigasyon profili seç</string>

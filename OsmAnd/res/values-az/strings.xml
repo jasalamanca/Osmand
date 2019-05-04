@@ -1582,8 +1582,6 @@
     <string name="all_markers_moved_to_history">Bütün xəritə işarələri tarixçəyə daşındı</string>
     <string name="marker_moved_to_history">Xəritə işarəsi tarixçəyə daşındı</string>
     <string name="shared_string_list">Siyahı</string>
-    <string name="do_not_use_animations">Animasiyaları istifadə etmə</string>
-    <string name="do_not_use_animations_descr">Proqramda animasiyaları söndürür.</string>
     <string name="keep_showing_on_map">Xəritədə göstərməyə davam et</string>
     <string name="choose_navigation_type">Naviqasiya profili seçin</string>
     <string name="none_point_error">Ən azı bir nöqtə əlavə edin.</string>

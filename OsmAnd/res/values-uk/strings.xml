@@ -2301,8 +2301,6 @@
     <string name="move_all_to_history">Перемістити усе в історію</string>
     <string name="show_direction">Відображення відстані</string>
     <string name="sort_by">Сортувати за</string>
-    <string name="do_not_use_animations">Не застосовувати анімацію</string>
-    <string name="do_not_use_animations_descr">Відключення анімації в програмі.</string>
     <string name="marker_show_distance_descr">Вибрати як показувати відстань і напрямок до маркерів на екрані мапи:</string>
     <string name="map_orientation_change_in_accordance_with_speed">Поріг орієнтації мапи</string>
     <string name="map_orientation_change_in_accordance_with_speed_descr">Виберіть нижче, на якій швидкості орієнтація мапи перемикається зі „за напрямком руху“ на „за компасом“.</string>

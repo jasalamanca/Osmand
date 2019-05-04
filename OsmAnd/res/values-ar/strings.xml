@@ -2253,8 +2253,6 @@
     <string name="move_all_to_history">نقل الكل إلى السجل الزمني</string>
     <string name="show_direction">مؤشر المسافة</string>
     <string name="sort_by">فرز حسب</string>
-    <string name="do_not_use_animations">عدم استخدام الرسوم المتحركة</string>
-    <string name="do_not_use_animations_descr">تعطيل الرسوم المتحركة في التطبيق.</string>
     <string name="keep_showing_on_map">استمرار العرض على الخريطة</string>
     <string name="exit_without_saving">الخروج دون حفظ؟</string>
     <string name="show_guide_line">إظهار خطوط التوجيه</string>

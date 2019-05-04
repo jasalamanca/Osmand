@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import net.osmand.AndroidUtils;
 import net.osmand.Location;
 import net.osmand.binary.RouteDataObject;
 import net.osmand.data.LatLon;
@@ -618,8 +617,8 @@ public class MapInfoWidgetsFactory {
 		public void updateTextColor(boolean nightMode, int textColor, int textShadowColor, boolean bold, int rad) {
 			this.shadowRad = rad;
 			TextInfoWidget.updateTextColor(addressText, addressTextShadow, textColor, textShadowColor, bold, rad);
-			TextInfoWidget.updateTextColor((TextView) waypointInfoBar.findViewById(R.id.waypoint_text),
-					(TextView) waypointInfoBar.findViewById(R.id.waypoint_text_shadow),
+			TextInfoWidget.updateTextColor(waypointInfoBar.findViewById(R.id.waypoint_text),
+					waypointInfoBar.findViewById(R.id.waypoint_text_shadow),
 					textColor, textShadowColor, bold, rad / 2);
 
 			ImageView all = waypointInfoBar.findViewById(R.id.waypoint_more);
@@ -751,7 +750,7 @@ public class MapInfoWidgetsFactory {
 				if (updated || changed) {
 					ImageView all = waypointInfoBar.findViewById(R.id.waypoint_more);
 					ImageView remove = waypointInfoBar.findViewById(R.id.waypoint_close);
-					all.setOnClickListener(view -> map.getDashboard().setDashboardVisibility(true, DashboardType.WAYPOINTS, AndroidUtils.getCenterViewCoordinates(view)));
+					all.setOnClickListener(view -> map.getDashboard().setDashboardVisibility(true, DashboardType.WAYPOINTS));
 					remove.setOnClickListener(view -> {
 						waypointHelper.removeVisibleLocationPoint(pnt);
 						map.refreshMap();

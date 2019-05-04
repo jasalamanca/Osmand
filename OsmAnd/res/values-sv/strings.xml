@@ -2205,8 +2205,6 @@ Vänligen tillhandahåll fullständig kod</string>
     <string name="order_by">Ordna efter:</string>
     <string name="all_markers_moved_to_history">Alla kartmarkörer har flyttats till historiken</string>
     <string name="marker_moved_to_history">Kartmarkören har flyttats till historiken</string>
-    <string name="do_not_use_animations">Använd inte animeringar</string>
-    <string name="do_not_use_animations_descr">Inaktiverar animeringar i appen.</string>
     <string name="line">Linje</string>
     <string name="save_as_route_point">Spara som ruttpunkter</string>
     <string name="save_as_line">Spara som linje</string>

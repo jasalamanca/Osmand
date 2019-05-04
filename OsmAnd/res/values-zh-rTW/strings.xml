@@ -2259,8 +2259,6 @@
     <string name="add_segment_to_the_track">增加到 GPX 軌跡</string>
 <string name="keep_showing_on_map">在地圖上維持著顯示</string>
     <string name="exit_without_saving">離開而不儲存嗎？</string>
-    <string name="do_not_use_animations">不使用動畫</string>
-    <string name="do_not_use_animations_descr">停用在應用程式中的動畫。</string>
     <string name="move_all_to_history">全部移動到歷程</string>
     <string name="show_direction">距離指示</string>
     <string name="sort_by">排序方式</string>

@@ -1810,8 +1810,6 @@ Clique no widget de medição para ver mais ações.</string>
     <string name="move_all_to_history">Mover tudo para histórico</string>
     <string name="show_direction">Indicação da distância</string>
     <string name="sort_by">Ordenar por</string>
-    <string name="do_not_use_animations">Não usar animações</string>
-    <string name="do_not_use_animations_descr">Desativar animações na aplicação</string>
     <string name="keep_showing_on_map">Mantém observável no mapa</string>
     <string name="exit_without_saving">Sair sem guardar?</string>
     <string name="line">Linha</string>

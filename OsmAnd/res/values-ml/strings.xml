@@ -1553,8 +1553,6 @@
     <string name="last_seven_days">"കഴിഞ്ഞ ഒരാഴ്ച "</string>
     <string name="this_year">ഈ വര്‍ഷം</string>
     <string name="sort_by">അടുക്കുന്ന വിധം</string>
-    <string name="do_not_use_animations">ആനിമേഷനുകള്‍ ഉപയോഗിക്കാതിരിക്കുക</string>
-    <string name="do_not_use_animations_descr">ആനിമേഷനുകള്‍ ഉപയോഗിക്കാതിരിക്കുക</string>
     <string name="keep_showing_on_map">കാണിക്കുന്നത് തുടരു</string>
     <string name="exit_without_saving">സൂക്ഷിക്കാതെ പുറത്ത് പോവുക</string>
     <string name="line">വര</string>

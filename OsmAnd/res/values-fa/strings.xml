@@ -2195,8 +2195,6 @@
     <string name="make_active">فعال شود</string>
     <string name="move_all_to_history">همه را بفرست به سابقه</string>
     <string name="show_direction">نشانگر مسافت</string>
-    <string name="do_not_use_animations">از پویانمایی استفاده نکن</string>
-    <string name="do_not_use_animations_descr">پویانمایی‌های درون برنامه را غیرفعال می‌کند.</string>
     <string name="edit_line">اصلاح خط</string>
     <string name="add_point_before">افزودن نقطه به قبل</string>
     <string name="add_point_after">افزودن نقطه به بعد</string>

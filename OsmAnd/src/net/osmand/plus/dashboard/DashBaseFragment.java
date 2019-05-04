@@ -102,7 +102,7 @@ public abstract class DashBaseFragment extends Fragment {
 	}
 
 	protected void closeDashboard() {
-		dashboard.hideDashboard(false);
+		dashboard.hideDashboard();
 	}
 
 	@Override

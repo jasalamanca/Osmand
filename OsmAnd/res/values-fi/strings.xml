@@ -1893,8 +1893,6 @@ Jos pidät OsmAndista ja OSMsta ja haluat tukea niitä, on tämä täydellinen t
     <string name="this_year">Tänä vuonna</string>
     <string name="show_direction">Etäisyyden näyttö</string>
     <string name="sort_by">Lajittelu</string>
-    <string name="do_not_use_animations">Älä käytä animaatioita</string>
-    <string name="do_not_use_animations_descr">Poistaa animaatioiden käytön sovellutuksessa</string>
     <string name="exit_without_saving">Poistu ilman talletusta?</string>
     <string name="save_as_route_point">Tallenna reittipisteinä</string>
     <string name="save_as_line">Tallenna viivana</string>

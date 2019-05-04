@@ -2071,8 +2071,6 @@ Por favor proporciona un código completo</string>
     <string name="save_route_point">Guardar punto de ruta</string>
     <string name="route_point_one">Punto de ruta 1</string>
 <string name="waypoint_one">Punto de ruta 1</string>
-    <string name="do_not_use_animations">No usar animaciones</string>
-    <string name="do_not_use_animations_descr">Desactiva las animaciones en la aplicación.</string>
     <string name="keep_showing_on_map">Mantener en el mapa</string>
     <string name="exit_without_saving">¿Salir sin guardar?</string>
     <string name="line">Línea</string>

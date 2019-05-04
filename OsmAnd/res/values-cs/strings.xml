@@ -2109,8 +2109,6 @@ Zobrazená oblast: %1$s x %2$s</string>
 <string name="move_all_to_history">Přesunout vše do historie</string>
     <string name="show_direction">Indikace vzdálenosti</string>
     <string name="sort_by">Seřadit podle</string>
-    <string name="do_not_use_animations">Nepoužívat animace</string>
-    <string name="do_not_use_animations_descr">Zakáže animace v aplikaci.</string>
     <string name="keep_showing_on_map">Stále zobrazovat na mapě</string>
     <string name="exit_without_saving">Ukončit bez uložení?</string>
     <string name="map_orientation_change_in_accordance_with_speed">Práh změny orientace mapy</string>

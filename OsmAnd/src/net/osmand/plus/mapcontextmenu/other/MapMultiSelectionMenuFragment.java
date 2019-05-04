@@ -17,7 +17,6 @@ import net.osmand.AndroidUtils;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.mapcontextmenu.other.MapMultiSelectionMenu.MenuObject;
-import net.osmand.plus.widgets.TextViewEx;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -118,11 +117,6 @@ public class MapMultiSelectionMenuFragment extends Fragment implements MultiSele
 		int slideInAnim = 0;
 		int slideOutAnim = 0;
 
-		if (!mapActivity.getMyApplication().getSettings().DO_NOT_USE_ANIMATIONS.get()) {
-			slideInAnim = menu.getSlideInAnimation();
-			slideOutAnim = menu.getSlideOutAnimation();
-		}
-
 		MapMultiSelectionMenuFragment fragment = new MapMultiSelectionMenuFragment();
 		menu.getMapActivity().getSupportFragmentManager().beginTransaction()
 				.setCustomAnimations(slideInAnim, slideOutAnim, slideInAnim, slideOutAnim)
@@ -143,7 +137,7 @@ public class MapMultiSelectionMenuFragment extends Fragment implements MultiSele
 					float cancelRowHeight = contentView.getResources().getDimension(R.dimen.bottom_sheet_cancel_button_height);
 					int maxHeight = (int) (headerHeight + cancelRowHeight);
 					for (int i = 0; i < 3; i++) {
-						View childView = listAdapter.getView(0, null, (ListView) contentView.findViewById(R.id.list));
+						View childView = listAdapter.getView(0, null, contentView.findViewById(R.id.list));
 						childView.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
 						maxHeight += childView.getMeasuredHeight();
 					}
@@ -157,13 +151,7 @@ public class MapMultiSelectionMenuFragment extends Fragment implements MultiSele
 					}
 				}
 
-				ViewTreeObserver obs = view.getViewTreeObserver();
-
-				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-					obs.removeOnGlobalLayoutListener(this);
-				} else {
-					obs.removeGlobalOnLayoutListener(this);
-				}
+				view.getViewTreeObserver().removeOnGlobalLayoutListener(this);
 			}
 		});
 	}

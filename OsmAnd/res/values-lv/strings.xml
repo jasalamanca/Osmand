@@ -2299,8 +2299,6 @@ Apraksta laukumu: %1$s x %2$s</string>
     <string name="move_all_to_history">Pārvietot visu uz vēsturi</string>
     <string name="show_direction">Distances indikācija</string>
     <string name="sort_by">Kārtot pēc</string>
-    <string name="do_not_use_animations">Nelietot animāciju</string>
-    <string name="do_not_use_animations_descr">Aplikācija nelietos animācijas efektus.</string>
     <string name="keep_showing_on_map">Turpināt rādīt uz kartes</string>
     <string name="exit_without_saving">Aizvērt bez saglabāšanas?</string>
     <string name="line">Līnija</string>

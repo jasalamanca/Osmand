@@ -2250,8 +2250,6 @@ We slaan geen locatiegegevens, zoektermen of andere gebruikersgegevens op.</stri
     <string name="move_all_to_history">Verplaats alles naar geschiedenis</string>
     <string name="show_direction">Toon afstand</string>
     <string name="sort_by">Sorteren op</string>
-    <string name="do_not_use_animations">Geen animaties gebruiken</string>
-    <string name="do_not_use_animations_descr">Zet alle animaties binnen OsmAnd uit.</string>
     <string name="keep_showing_on_map">Verder wel op de kaart blijven tonen</string>
     <string name="exit_without_saving">Afsluiten zonder op te slaan?</string>
     <string name="line">Lijn</string>

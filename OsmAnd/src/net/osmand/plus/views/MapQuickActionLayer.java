@@ -1,20 +1,14 @@
 package net.osmand.plus.views;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.PointF;
-import android.os.Build;
 import android.os.Vibrator;
 import android.support.annotation.DimenRes;
 import android.support.v4.content.ContextCompat;
 import android.util.Pair;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewAnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -22,7 +16,6 @@ import android.widget.ImageView;
 import com.getkeepsafe.taptargetview.TapTarget;
 import com.getkeepsafe.taptargetview.TapTargetView;
 
-import net.osmand.AndroidUtils;
 import net.osmand.data.LatLon;
 import net.osmand.data.RotatedTileBox;
 import net.osmand.plus.OsmAndLocationProvider;
@@ -37,9 +30,6 @@ import net.osmand.plus.quickaction.QuickAction;
 import net.osmand.plus.quickaction.QuickActionFactory;
 import net.osmand.plus.quickaction.QuickActionRegistry;
 import net.osmand.plus.quickaction.QuickActionsWidget;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static net.osmand.plus.views.ContextMenuLayer.VIBRATE_SHORT;
 
@@ -193,11 +183,7 @@ public class MapQuickActionLayer extends OsmandMapLayer
             return false;
 
 		updateQuickActionButton(showWidget);
-		if (settings.DO_NOT_USE_ANIMATIONS.get()) {
-            quickActionsWidget.setVisibility(!showWidget ? View.GONE : View.VISIBLE);
-        } else {
-		    animateWidget(showWidget);
-        }
+        quickActionsWidget.setVisibility(!showWidget ? View.GONE : View.VISIBLE);
         mapActivity.updateStatusBarColor();
 
         if (!showWidget) {
@@ -214,52 +200,7 @@ public class MapQuickActionLayer extends OsmandMapLayer
         return true;
     }
 
-    private void animateWidget(final boolean show) {
-        AnimatorSet set = new AnimatorSet();
-        List<Animator> animators = new ArrayList<>();
-        int[] animationCoordinates = AndroidUtils.getCenterViewCoordinates(quickActionButton);
-        int centerX = quickActionsWidget.getWidth() / 2;
-        int centerY = quickActionsWidget.getHeight() / 2;
-        float initialValueX = show ? animationCoordinates[0] - centerX : 0;
-        float finalValueX = show ? 0 : animationCoordinates[0] - centerX;
-        float initialValueY = show ? animationCoordinates[1] - centerY : 0;
-        float finalValueY = show ? 0 : animationCoordinates[1] - centerY;
-        animators.add(ObjectAnimator.ofFloat(quickActionsWidget, View.TRANSLATION_X, initialValueX, finalValueX));
-        animators.add(ObjectAnimator.ofFloat(quickActionsWidget, View.TRANSLATION_Y, initialValueY, finalValueY));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            float initialRadius = show ? 0 : (float) Math.sqrt(Math.pow(quickActionsWidget.getWidth() / 2, 2) + Math.pow(quickActionsWidget.getHeight() / 2, 2));
-            float finalRadius = show ? (float) Math.sqrt(Math.pow(quickActionsWidget.getWidth() / 2, 2) + Math.pow(quickActionsWidget.getHeight() / 2, 2)) : 0;
-            Animator circleAnimator = ViewAnimationUtils.createCircularReveal(quickActionsWidget, centerX, centerY, initialRadius, finalRadius);
-            animators.add(circleAnimator);
-        }
-        float initialValueScale = show ? 0f : 1f;
-        float finalValueScale = show ? 1f : 0f;
-        animators.add(ObjectAnimator.ofFloat(quickActionsWidget, View.SCALE_X, initialValueScale, finalValueScale));
-        animators.add(ObjectAnimator.ofFloat(quickActionsWidget, View.SCALE_Y, initialValueScale, finalValueScale));
-        set.setDuration(300).playTogether(animators);
-        set.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationStart(Animator animation) {
-                super.onAnimationStart(animation);
-                if (show) {
-                    quickActionsWidget.setVisibility(View.VISIBLE);
-                }
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-                if (!show) {
-                    quickActionsWidget.setVisibility(View.GONE);
-                    quickActionsWidget.setTranslationX(0);
-                    quickActionsWidget.setTranslationY(0);
-                }
-            }
-        });
-        set.start();
-    }
-
-	private void updateQuickActionButton(boolean widgetVisible) {
+    private void updateQuickActionButton(boolean widgetVisible) {
 		quickActionButton.setImageDrawable(app.getIconsCache().getIcon(
 				!widgetVisible ? R.drawable.map_quick_action : R.drawable.map_action_cancel, !nightMode));
 		quickActionButton.setBackgroundResource(

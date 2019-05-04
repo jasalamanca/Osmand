@@ -27,9 +27,7 @@ import android.text.TextWatcher;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -581,7 +579,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 	@NonNull
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
-		Dialog dialog = new Dialog(getActivity(), getTheme()){
+		return new Dialog(getActivity(), getTheme()){
 			@Override
 			public void onBackPressed() {
 				if (!processBackAction()) {
@@ -589,10 +587,6 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 				}
 			}
 		};
-		if (!getMyApplication().getSettings().DO_NOT_USE_ANIMATIONS.get()) {
-			dialog.getWindow().getAttributes().windowAnimations = R.style.Animations_Alpha;
-		}
-		return dialog;
 	}
 
 	private void saveCustomFilter() {
@@ -1433,7 +1427,7 @@ public class QuickSearchDialogFragment extends DialogFragment implements OsmAndC
 				switch (object.objectType) {
 					case SEARCH_STARTED:
 						if (resultListener != null) {
-							app.runInUIThread(() -> resultListener.searchStarted());
+							app.runInUIThread(resultListener::searchStarted);
 						}
 						break;
 					case SEARCH_FINISHED:
