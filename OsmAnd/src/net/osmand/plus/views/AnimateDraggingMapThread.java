@@ -18,7 +18,6 @@ public class AnimateDraggingMapThread {
 	private final static float DRAGGING_ANIMATION_TIME = 1200f;
 	private final static float ZOOM_ANIMATION_TIME = 250f;
 	private final static float ZOOM_MOVE_ANIMATION_TIME = 350f;
-	private final static float MOVE_MOVE_ANIMATION_TIME = 900f;
 	private final static float NAV_ANIMATION_TIME = 1000f;
 	private final static int DEFAULT_SLEEP_TO_REDRAW = 15;
 	
@@ -195,18 +194,19 @@ public class AnimateDraggingMapThread {
 		startThreadAnimating(() -> {
             setTargetValues(endZoom, finalLat, finalLon);
             if(moveZoom != startZoom){
-                animatingZoomInThread(startZoom, startZoomFP, moveZoom, startZoomFP, 0, notifyListener);
+                animatingZoomInThread(startZoom, startZoomFP, moveZoom, startZoomFP, ZOOM_MOVE_ANIMATION_TIME, notifyListener);
             }
 
             if(!stopped){
-                animatingMoveInThread(mMoveX, mMoveY, 0, notifyListener, finishAminationCallback);
+            	//TODO jsala usar 0 en lugar de ZOOM_MOVE_ANIMATION_TIME tiene efectos de redibujado indeseados. ANALIZAR.
+                animatingMoveInThread(mMoveX, mMoveY, ZOOM_MOVE_ANIMATION_TIME, notifyListener, finishAminationCallback);
             }
             if(!stopped){
                 tileView.setLatLonAnimate(finalLat, finalLon, notifyListener);
             }
 
             if (!stopped && (moveZoom != endZoom || startZoomFP != 0)) {
-                animatingZoomInThread(moveZoom, startZoomFP, endZoom, 0, 0, notifyListener);
+                animatingZoomInThread(moveZoom, startZoomFP, endZoom, 0, ZOOM_MOVE_ANIMATION_TIME, notifyListener);
             }
             tileView.setFractionalZoom(endZoom, 0, notifyListener);
 
@@ -266,7 +266,7 @@ public class AnimateDraggingMapThread {
 			}
 		}
 		if (finishAnimationCallback != null) {
-			tileView.getApplication().runInUIThread(() -> finishAnimationCallback.run());
+			tileView.getApplication().runInUIThread(finishAnimationCallback);
 		}
 	}
 	
@@ -316,14 +316,13 @@ public class AnimateDraggingMapThread {
 		startThreadAnimating(() -> {
             RotatedTileBox tb = tileView.getCurrentRotatedTileBox();
             setTargetValues(zoomEnd, tileView.getLatitude(), tileView.getLongitude());
-            animatingZoomInThread(tb.getZoom(), tb.getZoomFloatPart(), zoomEnd, zoomPart, 0, notifyListener);
+            animatingZoomInThread(tb.getZoom(), tb.getZoomFloatPart(), zoomEnd, zoomPart, ZOOM_ANIMATION_TIME, notifyListener);
             pendingRotateAnimation();
         }); //$NON-NLS-1$
 	}
 
 	void startDragging(final float velocityX, final float velocityY, float startX, float startY,
 					   final float endX, final float endY, final boolean notifyListener){
-		final float animationTime = DRAGGING_ANIMATION_TIME;
 		clearTargetValues();
 		startThreadAnimating(() -> {
             float curX = endX;
@@ -334,7 +333,7 @@ public class AnimateDraggingMapThread {
             float normalizedTime = 0f;
             float prevNormalizedTime = 0f;
             while(!stopped){
-                normalizedTime = (SystemClock.uptimeMillis() - timeMillis) / animationTime;
+                normalizedTime = (SystemClock.uptimeMillis() - timeMillis) / DRAGGING_ANIMATION_TIME;
                 if(normalizedTime >= 1f){
                     break;
                 }
