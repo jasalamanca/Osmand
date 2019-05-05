@@ -3,7 +3,6 @@ package net.osmand.plus.dashboard;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.net.Uri;
-import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -70,7 +69,6 @@ public class DashPluginsFragment extends DashBaseFragment {
 		return view;
 	}
 
-
 	private void initPlugins() {
 		List<OsmandPlugin> notActivePlugins = OsmandPlugin.getNotEnabledVisiblePlugins();
 		Collections.shuffle(notActivePlugins);
@@ -125,7 +123,7 @@ public class DashPluginsFragment extends DashBaseFragment {
 		} else {
 			TypedArray attributes = getActivity().getTheme().obtainStyledAttributes(
 					new int[]{R.attr.bg_plugin_logo_disabled});
-			logoView.setBackgroundDrawable(attributes.getDrawable(0));
+			logoView.setBackground(attributes.getDrawable(0));
 			logoView.setContentDescription(getString(plugin.needsInstallation() ? R.string.access_shared_string_not_installed : R.string.shared_string_enable));
 			attributes.recycle();
 		}
@@ -146,8 +144,7 @@ public class DashPluginsFragment extends DashBaseFragment {
 		getButton.setOnClickListener(getListener(plugin));
 		enableDisableButton.setOnCheckedChangeListener(null);
 		updatePluginState(view, plugin);
-		final View pluginView = view;
-		setListener(plugin, enableDisableButton, pluginView);
+		setListener(plugin, enableDisableButton, view);
 		container.addView(view);
 	}
 

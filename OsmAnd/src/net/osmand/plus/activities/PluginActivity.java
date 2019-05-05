@@ -1,6 +1,5 @@
 package net.osmand.plus.activities;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -14,6 +13,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.R;
@@ -57,7 +57,7 @@ public class PluginActivity extends OsmandActionBarActivity {
 		setContentView(R.layout.plugin);
 		//noinspection ConstantConditions
 		getSupportActionBar().setTitle(plugin.getName());
-		if(plugin.getAssetResourceName() != 0 && Build.VERSION.SDK_INT >= 14) {
+		if(plugin.getAssetResourceName() != 0) {
 			ImageView img = findViewById(R.id.plugin_image);
 			img.setImageResource(plugin.getAssetResourceName());
 		}
@@ -68,8 +68,7 @@ public class PluginActivity extends OsmandActionBarActivity {
 		Button settingsButton = findViewById(R.id.plugin_settings);
 		settingsButton.setOnClickListener(view -> startActivity(new Intent(PluginActivity.this, plugin.getSettingsActivity())));
 
-		CompoundButton enableDisableButton = findViewById(
-				R.id.plugin_enable_disable);
+		CompoundButton enableDisableButton = findViewById(R.id.plugin_enable_disable);
 		enableDisableButton.setOnCheckedChangeListener(
                 (buttonView, isChecked) -> {
                     if (plugin.isActive() == isChecked) {
@@ -114,10 +113,8 @@ public class PluginActivity extends OsmandActionBarActivity {
 		return false;
 	}
 
-	@SuppressLint("NewApi")
 	private void updateState() {
-		CompoundButton enableDisableButton = findViewById(
-				R.id.plugin_enable_disable);
+		CompoundButton enableDisableButton = findViewById(R.id.plugin_enable_disable);
 		Button getButton = findViewById(R.id.plugin_get);
 		Button settingsButton = findViewById(R.id.plugin_settings);
 		settingsButton.setCompoundDrawablesWithIntrinsicBounds(

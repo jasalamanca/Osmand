@@ -1,13 +1,11 @@
 package net.osmand.plus.dashboard;
 
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.app.AlertDialog;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -33,8 +31,9 @@ public class DashNavigationFragment extends DashBaseFragment {
 	public View initView(LayoutInflater inflater, @Nullable ViewGroup container) {
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_common_fragment, container, false);
 		((TextView) view.findViewById(R.id.fav_text)).setText(TITLE_ID);
-		((TextView)view.findViewById(R.id.show_all)).setText(R.string.info_button);
-		(view.findViewById(R.id.show_all)).setOnClickListener(view1 -> ShowRouteInfoDialogFragment.showDialog(getActivity().getSupportFragmentManager()));
+		Button showAll = view.findViewById(R.id.show_all);
+		showAll.setText(R.string.info_button);
+		showAll.setOnClickListener(view1 -> ShowRouteInfoDialogFragment.showDialog(getActivity().getSupportFragmentManager()));
 		return view;
 	}
 

@@ -8,7 +8,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -65,8 +64,8 @@ public class AdvancedEditPoiFragment extends BaseOsmAndFragment
 			addPoiToStringSet(abstractPoiType, tagKeys, valueKeys);
 		}
 		addPoiToStringSet(mapPoiTypes.getOtherMapCategory(), tagKeys, valueKeys);
-		mAdapter.setTagData(tagKeys.toArray(new String[tagKeys.size()]));
-		mAdapter.setValueData(valueKeys.toArray(new String[valueKeys.size()]));
+		mAdapter.setTagData(tagKeys.toArray(new String[0]));
+		mAdapter.setValueData(valueKeys.toArray(new String[0]));
 		Button addTagButton = view.findViewById(R.id.addTagButton);
 		addTagButton.setOnClickListener(v -> mAdapter.addTagView("", ""));
 		return view;

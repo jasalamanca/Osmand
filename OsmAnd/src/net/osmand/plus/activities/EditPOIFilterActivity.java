@@ -1,14 +1,12 @@
 package net.osmand.plus.activities;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -27,7 +25,6 @@ import net.osmand.util.Algorithms;
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -64,7 +61,7 @@ public class EditPOIFilterActivity extends OsmandListActivity {
 			getSupportActionBar().setSubtitle(filter.getName());
 			setListAdapter(new AmenityAdapter(  ((OsmandApplication) getApplication()).getPoiTypes().getCategories(false)));
 		} else {
-			setListAdapter(new AmenityAdapter(new ArrayList<PoiCategory>()));
+			setListAdapter(new AmenityAdapter(new ArrayList<>()));
 		}
 	}
 

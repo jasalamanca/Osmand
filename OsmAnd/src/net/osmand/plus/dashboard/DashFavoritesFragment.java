@@ -1,7 +1,6 @@
 package net.osmand.plus.dashboard;
 
 import android.graphics.Typeface;
-import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +23,6 @@ import net.osmand.util.MapUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -34,7 +32,6 @@ import java.util.List;
 public class DashFavoritesFragment extends DashLocationFragment {
 	private static final String TAG = "DASH_FAVORITES_FRAGMENT";
 	private static final int TITLE_ID = R.string.shared_string_my_favorites;
-	private List<FavouritePoint> points = new ArrayList<>();
 
 	private static final String ROW_NUMBER_TAG = TAG + "_row_number";
 	private static final DashFragmentData.ShouldShowFunction SHOULD_SHOW_FUNCTION =
@@ -65,7 +62,7 @@ public class DashFavoritesFragment extends DashLocationFragment {
 	private void setupFavorites() {
 		View mainView = getView();
 		final FavouritesDbHelper helper = getMyApplication().getFavorites();
-		points = new ArrayList<>(helper.getFavouritePoints());
+		List<FavouritePoint> points = new ArrayList<>(helper.getFavouritePoints());
 		if (points.size() == 0) {
 			(mainView.findViewById(R.id.main_fav)).setVisibility(View.GONE);
 			return;

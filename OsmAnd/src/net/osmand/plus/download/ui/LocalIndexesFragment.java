@@ -1,6 +1,7 @@
 package net.osmand.plus.download.ui;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.Typeface;
@@ -10,14 +11,10 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
-import android.app.AlertDialog;
 import android.support.v7.view.ActionMode;
-import android.widget.PopupMenu;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.TypedValue;
-import android.view.ContextMenu;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -25,13 +22,13 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.ExpandableListContextMenuInfo;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -60,7 +57,6 @@ import java.io.File;
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -353,7 +349,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 		private final DownloadActivity a;
 		private final LocalIndexesAdapter listAdapter;
 
-		public LocalIndexOperationTask(DownloadActivity a, LocalIndexesAdapter listAdapter, int operation) {
+		LocalIndexOperationTask(DownloadActivity a, LocalIndexesAdapter listAdapter, int operation) {
 			this.a = a;
 			this.listAdapter = listAdapter;
 			this.operation = operation;
@@ -627,7 +623,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			operationTask = null;
 		}
 		if (operationTask != null) {
-			operationTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, selectedItems.toArray(new LocalIndexInfo[selectedItems.size()]));
+			operationTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, selectedItems.toArray(new LocalIndexInfo[0]));
 		}
 		if (actionMode != null) {
 			actionMode.finish();
@@ -771,7 +767,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			}
 			LocalIndexInfo newCat = new LocalIndexInfo(val.getType(), backuped, val.getSubfolder());
 			category.add(newCat);
-			data.put(newCat, new ArrayList<LocalIndexInfo>());
+			data.put(newCat, new ArrayList<>());
 			return newCat;
 		}
 
@@ -837,7 +833,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 				category.add(new LocalIndexInfo(info.getType(), info.isBackupedData(), info.getSubfolder()));
 			}
 			if (!data.containsKey(category.get(found))) {
-				data.put(category.get(found), new ArrayList<LocalIndexInfo>());
+				data.put(category.get(found), new ArrayList<>());
 			}
 			data.get(category.get(found)).add(info);
 		}

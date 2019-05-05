@@ -74,9 +74,10 @@ public class DashWaypointsFragment extends DashLocationFragment {
 			(mainView.findViewById(R.id.main_fav)).setVisibility(View.VISIBLE);
 		}		
 		((TextView) mainView.findViewById(R.id.fav_text)).setText(getString(R.string.waypoints));
-		((Button) mainView.findViewById(R.id.show_all)).setText(getString(R.string.shared_string_show_all));
-		mainView.findViewById(R.id.show_all).setVisibility(View.VISIBLE);
-		mainView.findViewById(R.id.show_all).setOnClickListener(v -> dashboard.setDashboardVisibility(true, DashboardType.WAYPOINTS));
+		Button showAll = mainView.findViewById(R.id.show_all);
+		showAll.setText(getString(R.string.shared_string_show_all));
+		showAll.setVisibility(View.VISIBLE);
+		showAll.setOnClickListener(v -> dashboard.setDashboardVisibility(true, DashboardType.WAYPOINTS));
 		LinearLayout favorites = mainView.findViewById(R.id.items);
 		favorites.removeAllViews();
 		List<DashLocationView> distances = new ArrayList<>();

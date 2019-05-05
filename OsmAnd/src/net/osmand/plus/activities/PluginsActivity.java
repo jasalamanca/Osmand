@@ -100,7 +100,7 @@ public class PluginsActivity extends OsmandListActivity {
 			} else {
 				TypedArray attributes = getTheme().obtainStyledAttributes(
 						new int[] {R.attr.bg_plugin_logo_disabled});
-				pluginLogo.setBackgroundDrawable(attributes.getDrawable(0));
+				pluginLogo.setBackground(attributes.getDrawable(0));
 				pluginLogo.setContentDescription(getString(plugin.needsInstallation() ? R.string.access_shared_string_not_installed : R.string.shared_string_enable));
 				attributes.recycle();
 			}

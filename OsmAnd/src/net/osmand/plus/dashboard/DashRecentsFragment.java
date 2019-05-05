@@ -1,6 +1,5 @@
 package net.osmand.plus.dashboard;
 
-import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,8 +28,6 @@ public class DashRecentsFragment extends DashLocationFragment {
 	private static final String TAG = "DASH_RECENTS_FRAGMENT";
 	private static final int TITLE_ID = R.string.shared_string_history;
 
-	private final List<ImageView> arrows = new ArrayList<>();
-	private List<HistoryEntry> points = new ArrayList<>();
 	private static final String ROW_NUMBER_TAG = TAG + "_row_number";
 	private static final DashFragmentData.ShouldShowFunction SHOULD_SHOW_FUNCTION =
 			new DashboardOnMap.DefaultShouldShow() {
@@ -63,8 +60,7 @@ public class DashRecentsFragment extends DashLocationFragment {
 		View mainView = getView();
 		SearchHistoryHelper helper = SearchHistoryHelper.getInstance((OsmandApplication) getActivity()
 				.getApplicationContext());
-		points = helper.getHistoryEntries();
-		arrows.clear();
+		List<HistoryEntry> points = helper.getHistoryEntries();
 		if (points.size() == 0) {
 			(mainView.findViewById(R.id.main_fav)).setVisibility(View.GONE);
 			return;
@@ -91,8 +87,8 @@ public class DashRecentsFragment extends DashLocationFragment {
                         15, historyEntry.getName(), true, historyEntry); //$NON-NLS-1$
                 MapActivity.launchMapActivityMoveToTop(getActivity());
             });
-			DashLocationView dv = new DashLocationView((ImageView) view.findViewById(R.id.direction),
-					(TextView) view.findViewById(R.id.distance), new LatLon(historyEntry.getLat(),
+			DashLocationView dv = new DashLocationView(view.findViewById(R.id.direction),
+					view.findViewById(R.id.distance), new LatLon(historyEntry.getLat(),
 							historyEntry.getLon()));
 			distances.add(dv);
 			recents.addView(view);

@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
-import android.support.v7.widget.SwitchCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.TypedValue;
@@ -22,12 +21,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import net.osmand.CallbackWithObject;
 import net.osmand.data.LatLon;
 import net.osmand.osm.AbstractPoiType;
 import net.osmand.osm.MapPoiTypes;
@@ -52,7 +51,6 @@ import net.osmand.util.Algorithms;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -177,8 +175,8 @@ public class AddPOIAction extends QuickAction {
 		}
 		addPoiToStringSet(poiTypes.getOtherMapCategory(), tagKeys, valueKeys);
 		tagKeys.addAll(EditPoiDialogFragment.BASIC_TAGS);
-		mAdapter.setTagData(tagKeys.toArray(new String[tagKeys.size()]));
-		mAdapter.setValueData(valueKeys.toArray(new String[valueKeys.size()]));
+		mAdapter.setTagData(tagKeys.toArray(new String[0]));
+		mAdapter.setValueData(valueKeys.toArray(new String[0]));
 		Button addTagButton = view.findViewById(R.id.addTagButton);
 		addTagButton.setOnClickListener(v -> {
             for (int i = 0; i < editTagsLineaLayout.getChildCount(); i++) {
@@ -194,7 +192,7 @@ public class AddPOIAction extends QuickAction {
 
 		final TextInputLayout poiTypeTextInputLayout = view.findViewById(R.id.poiTypeTextInputLayout);
 		final AutoCompleteTextView poiTypeEditText = view.findViewById(R.id.poiTypeEditText);
-		final SwitchCompat showDialog = view.findViewById(R.id.saveButton);
+		final Switch showDialog = view.findViewById(R.id.saveButton);
 		showDialog.setChecked(Boolean.valueOf(getParams().get(KEY_DIALOG)));
 
 		final String text = getTagsFromParams().get(POI_TYPE_TAG);
@@ -246,7 +244,7 @@ public class AddPOIAction extends QuickAction {
                     PoiCategory tempPoiCategory = (category != null) ? category : poiTypes.getOtherPoiCategory();
                     PoiSubTypeDialogFragment f =
                             PoiSubTypeDialogFragment.createInstance(tempPoiCategory);
-                    f.setOnItemSelectListener(category1 -> poiTypeEditText.setText(category1));
+                    f.setOnItemSelectListener(poiTypeEditText::setText);
                     f.show(activity.getSupportFragmentManager(), "PoiSubTypeDialogFragment");
 
                     return true;
@@ -441,7 +439,7 @@ public class AddPOIAction extends QuickAction {
 
 	@Override
 	public boolean fillParams(View root) {
-		getParams().put(KEY_DIALOG, Boolean.toString(((SwitchCompat) root.findViewById(R.id.saveButton)).isChecked()));
+		getParams().put(KEY_DIALOG, Boolean.toString(((Switch) root.findViewById(R.id.saveButton)).isChecked()));
 		return !getParams().isEmpty() && (getParams().get(KEY_TAG) != null || !getTagsFromParams().isEmpty());
 	}
 
@@ -453,7 +451,7 @@ public class AddPOIAction extends QuickAction {
 			}.getType();
 			quickActions = new Gson().fromJson(json, type);
 		}
-		return quickActions != null ? quickActions : new LinkedHashMap<String, String>();
+		return quickActions != null ? quickActions : new LinkedHashMap<>();
 	}
 
 	private void setTagsIntoParams(Map<String, String> tags) {

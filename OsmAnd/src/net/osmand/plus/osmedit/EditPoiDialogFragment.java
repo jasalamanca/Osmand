@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
@@ -67,7 +66,6 @@ import net.osmand.util.Algorithms;
 
 import java.io.Serializable;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -183,7 +181,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 		final ImageButton poiTypeButton = view.findViewById(R.id.poiTypeButton);
 		poiTypeButton.setOnClickListener(v -> {
 			PoiTypeDialogFragment fragment = PoiTypeDialogFragment.createInstance();
-			fragment.setOnItemSelectListener(poiCategory -> setPoiCategory(poiCategory));
+			fragment.setOnItemSelectListener(this::setPoiCategory);
 			fragment.show(getChildFragmentManager(), "PoiTypeDialogFragment");
 		});
 
@@ -244,7 +242,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 					if (editPoiData.getPoiCategory() != null) {
 						PoiSubTypeDialogFragment dialogFragment =
 								PoiSubTypeDialogFragment.createInstance(editPoiData.getPoiCategory());
-						dialogFragment.setOnItemSelectListener(category -> setSubCategory(category));
+						dialogFragment.setOnItemSelectListener(this::setSubCategory);
 						dialogFragment.show(getChildFragmentManager(), "PoiSubTypeDialogFragment");
 					}
 
@@ -259,7 +257,7 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 			deleteButton.setVisibility(View.VISIBLE);
 			deleteButton.setOnClickListener(v -> {
 				DeletePoiHelper deletePoiHelper = new DeletePoiHelper(getMyActivity());
-				deletePoiHelper.setCallback(() -> dismiss());
+				deletePoiHelper.setCallback(this::dismiss);
 				deletePoiHelper.deletePoiWithDialog(getEditPoiData().getEntity());
 			});
 		}
@@ -319,8 +317,8 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 
 	private void trySave() {
 		if (TextUtils.isEmpty(poiTypeEditText.getText())) {
-			HashSet<String> tagsCopy = new HashSet<>();
-			tagsCopy.addAll(editPoiData.getTagValues().keySet());
+//			HashSet<String> tagsCopy = new HashSet<>();
+//			tagsCopy.addAll(editPoiData.getTagValues().keySet());
 			if (Algorithms.isEmpty(editPoiData.getTag(OSMSettings.OSMTagKey.ADDR_HOUSE_NUMBER.getValue()))) {
 				SaveExtraValidationDialogFragment f = new SaveExtraValidationDialogFragment();
 				Bundle args = new Bundle();
@@ -652,23 +650,6 @@ public class EditPoiDialogFragment extends BaseOsmAndDialogFragment {
 				openstreetmapUtil = plugin.getPoiModificationRemoteUtil();
 			}
 		}
-
-// --Commented out by Inspection START (13/01/19 18:58):
-//		public void deletePoiWithDialog(Amenity amenity) {
-//			new AsyncTask<Amenity, Void, Node>() {
-//
-//				@Override
-//				protected Node doInBackground(Amenity... params) {
-//					return openstreetmapUtil.loadNode(params[0]);
-//				}
-//
-//				@Override
-//				protected void onPostExecute(Node node) {
-//					deletePoiWithDialog(node);
-//				}
-//			}.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, amenity);
-//		}
-// --Commented out by Inspection STOP (13/01/19 18:58)
 
 		void deletePoiWithDialog(final Node n) {
 			if (n == null) {

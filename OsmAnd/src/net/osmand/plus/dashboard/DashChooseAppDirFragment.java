@@ -375,8 +375,7 @@ public class DashChooseAppDirFragment {
 		protected void onPreExecute() {
 			progress = ProgressImplementation.createProgressDialog(
 					ctx, ctx.getString(R.string.copying_osmand_files),
-					ctx.getString(R.string.copying_osmand_files_descr, to.getPath()),
-					ProgressDialog.STYLE_HORIZONTAL);
+					ctx.getString(R.string.copying_osmand_files_descr, to.getPath()), ProgressDialog.STYLE_HORIZONTAL);
 		}
 		
 		@Override

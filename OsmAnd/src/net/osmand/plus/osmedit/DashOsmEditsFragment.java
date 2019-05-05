@@ -1,9 +1,7 @@
 package net.osmand.plus.osmedit;
 
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,7 +58,7 @@ public class DashOsmEditsFragment extends DashBaseFragment
 		header.setText(TITLE_ID);
 		Button manage = view.findViewById(R.id.show_all);
 		manage.setText(R.string.shared_string_manage);
-		(view.findViewById(R.id.show_all)).setOnClickListener(view1 -> {
+		manage.setOnClickListener(view1 -> {
 			startFavoritesActivity(R.string.osm_edits);
 			closeDashboard();
 		});
@@ -141,8 +139,7 @@ public class DashOsmEditsFragment extends DashBaseFragment
 	}
 
 	@Override
-	public void showProgressDialog(OsmPoint[] points, boolean closeChangeSet, boolean anonymously) {
-		OsmPoint[] toUpload = points;
+	public void showProgressDialog(OsmPoint[] toUpload, boolean closeChangeSet, boolean anonymously) {
 		ProgressDialogFragment dialog = ProgressDialogFragment.createInstance(R.string.uploading,
 				R.string.local_openstreetmap_uploading, ProgressDialog.STYLE_HORIZONTAL);
 		OsmEditsUploadListener listener = new OsmEditsUploadListenerHelper(getActivity(),
@@ -200,5 +197,4 @@ public class DashOsmEditsFragment extends DashBaseFragment
 			}
 		}
 	}
-
 }
