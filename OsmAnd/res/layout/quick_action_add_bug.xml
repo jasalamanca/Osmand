@@ -11,7 +11,7 @@
         android:background="?attr/bg_color">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:layout_gravity="center"
@@ -21,7 +21,7 @@
             android:layout_weight="1"
             android:id="@+id/textView3" />
 
-        <android.support.v7.widget.SwitchCompat
+        <Switch
             android:id="@+id/dialogSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -82,7 +82,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp"
                     android:layout_marginRight="16dp"
+                    android:layout_marginEnd="16dp"
                     android:imeOptions="actionDone"
                     android:inputType="text"
                     android:textColor="?android:textColorPrimary"

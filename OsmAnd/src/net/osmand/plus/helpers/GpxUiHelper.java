@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -16,26 +15,21 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.AppCompatCheckBox;
 import android.support.v7.widget.ListPopupWindow;
-import android.support.v7.widget.SwitchCompat;
 import android.text.SpannableString;
 import android.text.style.StyleSpan;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.MarkerView;
 import com.github.mikephil.charting.components.XAxis;
@@ -44,11 +38,7 @@ import com.github.mikephil.charting.data.ChartData;
 import com.github.mikephil.charting.data.DataSet;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.formatter.IAxisValueFormatter;
-import com.github.mikephil.charting.formatter.IFillFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
-import com.github.mikephil.charting.interfaces.dataprovider.LineDataProvider;
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.utils.MPPointF;
 
 import net.osmand.AndroidUtils;
@@ -69,7 +59,6 @@ import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.ActivityResultListener;
-import net.osmand.plus.activities.ActivityResultListener.OnActivityResultListener;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.activities.PluginActivity;
 import net.osmand.plus.activities.SettingsActivity;
@@ -196,7 +185,7 @@ public class GpxUiHelper {
 		return createDialog(activity, true, true, true, callbackWithObject, allGpxList, adapter);
 	}
 
-	public static AlertDialog selectGPXFile(final Activity activity,
+	public static void selectGPXFile(final Activity activity,
 											final boolean showCurrentGpx, final boolean multipleChoice, final CallbackWithObject<GPXFile[]> callbackWithObject) {
 		OsmandApplication app = (OsmandApplication) activity.getApplication();
 		final File dir = app.getAppPath(IndexConstants.GPX_INDEX_DIR);
@@ -210,9 +199,8 @@ public class GpxUiHelper {
 			}
 
 			final ContextMenuAdapter adapter = createGpxContextMenuAdapter(list, null, showCurrentGpx);
-			return createDialog(activity, showCurrentGpx, multipleChoice, false, callbackWithObject, list, adapter);
+			createDialog(activity, showCurrentGpx, multipleChoice, false, callbackWithObject, list, adapter);
 		}
-		return null;
 	}
 
 	private static ContextMenuAdapter createGpxContextMenuAdapter(List<GPXInfo> allGpxList,
@@ -319,14 +307,14 @@ public class GpxUiHelper {
 					v.findViewById(R.id.check_item).setVisibility(View.GONE);
 				} else {
 					if (checkLayout) {
-						final AppCompatCheckBox ch = v.findViewById(R.id.toggle_checkbox_item);
+						final CheckBox ch = v.findViewById(R.id.toggle_checkbox_item);
 						ch.setVisibility(View.VISIBLE);
 						v.findViewById(R.id.toggle_item).setVisibility(View.GONE);
 						ch.setOnCheckedChangeListener(null);
 						ch.setChecked(item.getSelected());
 						ch.setOnCheckedChangeListener((buttonView, isChecked) -> item.setSelected(isChecked));
 					} else {
-						final SwitchCompat ch = v.findViewById(R.id.toggle_item);
+						final Switch ch = v.findViewById(R.id.toggle_item);
 						ch.setVisibility(View.VISIBLE);
 						v.findViewById(R.id.toggle_checkbox_item).setVisibility(View.GONE);
 						ch.setOnCheckedChangeListener(null);
@@ -381,9 +369,9 @@ public class GpxUiHelper {
 						popup.setOnItemClickListener((parent, view, position, id) -> {
 							AppearanceListItem item = gpxApprAdapter.getItem(position);
 							if (item != null) {
-								if (item.getAttrName() == CURRENT_TRACK_WIDTH_ATTR) {
+								if (item.getAttrName().equals(CURRENT_TRACK_WIDTH_ATTR)) {
 									gpxAppearanceParams.put(CURRENT_TRACK_WIDTH_ATTR, item.getValue());
-								} else if (item.getAttrName() == CURRENT_TRACK_COLOR_ATTR) {
+								} else if (item.getAttrName().equals(CURRENT_TRACK_COLOR_ATTR)) {
 									gpxAppearanceParams.put(CURRENT_TRACK_COLOR_ATTR, item.getValue());
 								}
 							}
@@ -427,8 +415,7 @@ public class GpxUiHelper {
 					}
 				}
 				dialog.dismiss();
-				loadGPXFileInDifferentThread(activity, callbackWithObject, dir, currentGPX,
-						s.toArray(new String[s.size()]));
+				loadGPXFileInDifferentThread(activity, callbackWithObject, dir, currentGPX, s.toArray(new String[0]));
 			});
 			builder.setNegativeButton(R.string.shared_string_cancel, null);
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT

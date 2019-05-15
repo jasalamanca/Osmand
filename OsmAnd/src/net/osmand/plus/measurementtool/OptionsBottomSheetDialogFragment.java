@@ -3,16 +3,16 @@ package net.osmand.plus.measurementtool;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.SwitchCompat;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Switch;
+import android.widget.TextView;
 
 import net.osmand.plus.R;
 import net.osmand.plus.base.MenuBottomSheetDialogFragment;
-import net.osmand.plus.widgets.TextViewEx;
 
 public class OptionsBottomSheetDialogFragment extends MenuBottomSheetDialogFragment {
 
@@ -42,11 +42,11 @@ public class OptionsBottomSheetDialogFragment extends MenuBottomSheetDialogFragm
 		final View mainView = View.inflate(new ContextThemeWrapper(getContext(), themeRes), R.layout.fragment_options_bottom_sheet_dialog, null);
 
 		if (nightMode) {
-			((TextViewEx) mainView.findViewById(R.id.options_title)).setTextColor(getResources().getColor(R.color.ctx_menu_info_text_dark));
+			((TextView) mainView.findViewById(R.id.options_title)).setTextColor(getResources().getColor(R.color.ctx_menu_info_text_dark));
 		}
 		if (snapToRoadEnabled) {
 			mainView.findViewById(R.id.snap_to_road_enabled_text_view).setVisibility(View.VISIBLE);
-			((SwitchCompat) mainView.findViewById(R.id.snap_to_road_switch)).setChecked(true);
+			((Switch) mainView.findViewById(R.id.snap_to_road_switch)).setChecked(true);
 		}
 		((ImageView) mainView.findViewById(R.id.snap_to_road_icon)).setImageDrawable(snapToRoadEnabled
 				? getActiveIcon(R.drawable.ic_action_snap_to_road)

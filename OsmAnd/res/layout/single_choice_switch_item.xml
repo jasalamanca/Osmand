@@ -17,7 +17,9 @@
         android:layout_height="?android:attr/listPreferredItemHeightSmall"
         android:layout_width="match_parent"
         android:paddingLeft="26dp"
+        android:paddingStart="26dp"
         android:paddingRight="@dimen/list_content_padding"
+        android:paddingEnd="@dimen/list_content_padding"
         android:textColor="?android:attr/textColorPrimary"
         android:textSize="@dimen/default_list_text_size"/>
 
@@ -29,7 +31,9 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:paddingLeft="26dp"
-        android:paddingRight="@dimen/list_content_padding">
+        android:paddingStart="26dp"
+        android:paddingRight="@dimen/list_content_padding"
+        android:paddingEnd="@dimen/list_content_padding">
 
         <TextView
             android:id="@+id/switchText"
@@ -37,10 +41,11 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:paddingRight="@dimen/list_content_padding"
+            android:paddingEnd="@dimen/list_content_padding"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/default_sub_text_size"/>
 
-        <android.support.v7.widget.SwitchCompat
+        <Switch
             android:id="@+id/check"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"/>

@@ -12,7 +12,7 @@
         android:background="?attr/bg_color">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:layout_gravity="center"
@@ -22,7 +22,7 @@
             android:layout_weight="1"
             android:id="@+id/textView3" />
 
-        <android.support.v7.widget.SwitchCompat
+        <Switch
             android:id="@+id/saveButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,6 +83,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -101,7 +102,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginRight="16dp"
+                    android:layout_marginEnd="16dp"
                     android:layout_marginTop="8dp"
                     android:imeOptions="actionDone"
                     android:inputType="text"
@@ -117,7 +120,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="68dp"
+            android:layout_marginStart="68dp"
             android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
             android:text="@string/quick_action_fav_name_descr"
             android:textColor="?android:textColorSecondary"
             android:textSize="@dimen/default_sub_text_size"
@@ -128,7 +133,8 @@
             android:layout_height="1dp"
             android:layout_marginBottom="16dp"
             android:background="@color/shadow_color"
-            android:layout_marginLeft="68dp"/>
+            android:layout_marginLeft="68dp"
+            android:layout_marginStart="68dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -158,6 +164,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -176,10 +183,13 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginRight="16dp"
+                    android:layout_marginEnd="16dp"
                     android:layout_marginTop="8dp"
                     android:focusable="false"
                     android:text="@string/shared_string_favorites"
+                    android:drawableEnd="@drawable/ic_action_arrow_drop_down"
                     android:drawableRight="@drawable/ic_action_arrow_drop_down"
                     android:editable="false"/>
 
@@ -191,7 +201,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="68dp"
+            android:layout_marginStart="68dp"
             android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
             android:text="@string/quick_action_gpx_category_descr"
             android:textColor="?android:textColorSecondary"
             android:textSize="@dimen/default_sub_text_size"

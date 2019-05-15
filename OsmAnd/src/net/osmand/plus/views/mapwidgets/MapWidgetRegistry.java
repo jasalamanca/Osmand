@@ -18,7 +18,6 @@ import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.OsmandSettings.OsmandPreference;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.dialogs.ConfigureMapMenu;
 import net.osmand.plus.mapmarkers.DirectionIndicationDialogFragment;
 import net.osmand.plus.quickaction.QuickActionListFragment;
 import net.osmand.plus.views.MapInfoLayer;
@@ -256,9 +255,6 @@ public class MapWidgetRegistry {
 			this.visibleElementsFromSettings.get(mode).add(HIDE_PREFIX + m.key);
 		}
 		saveVisibleElementsToSettings(mode);
-		if (m.stateChangeListener != null) {
-			m.stateChangeListener.run();
-		}
 	}
 
 	private void defineDefaultSettingsElement(ApplicationMode mode) {
@@ -571,7 +567,6 @@ public class MapWidgetRegistry {
 		final int priorityOrder;
 		private final Set<ApplicationMode> visibleCollapsible = new LinkedHashSet<>();
 		private final Set<ApplicationMode> visibleModes = new LinkedHashSet<>();
-		private final Runnable stateChangeListener = null;
 
 		MapWidgetRegInfo(String key, TextInfoWidget widget, @DrawableRes int drawableMenu,
                          @StringRes int messageId, int priorityOrder, boolean left) {
@@ -702,7 +697,7 @@ public class MapWidgetRegistry {
 			}
 			if (priorityOrder == another.priorityOrder) {
 				if (getMessageId() == 0 && another.getMessageId() == 0) {
-					return key.compareTo(key);
+					return key.compareTo(another.key);
 				} else {
 					return getMessageId() - another.getMessageId();
 				}

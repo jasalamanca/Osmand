@@ -1,10 +1,10 @@
 package net.osmand.plus.quickaction.actions;
 
-import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Switch;
 
 import net.osmand.data.LatLon;
 import net.osmand.plus.OsmandPlugin;
@@ -50,7 +50,7 @@ public class AddOSMBugAction extends QuickAction {
 		View view = LayoutInflater.from(parent.getContext())
 				.inflate(R.layout.quick_action_add_bug, parent, false);
 
-		SwitchCompat showDialog = view.findViewById(R.id.dialogSwitch);
+		Switch showDialog = view.findViewById(R.id.dialogSwitch);
 		EditText message = view.findViewById(R.id.message_edit);
 
 		if (!getParams().isEmpty()) {
@@ -64,7 +64,7 @@ public class AddOSMBugAction extends QuickAction {
 
 	@Override
 	public boolean fillParams(View root) {
-		SwitchCompat showDialog = root.findViewById(R.id.dialogSwitch);
+		Switch showDialog = root.findViewById(R.id.dialogSwitch);
 		EditText message = root.findViewById(R.id.message_edit);
 
 		getParams().put(KEY_SHO_DIALOG, String.valueOf(showDialog.isChecked()));

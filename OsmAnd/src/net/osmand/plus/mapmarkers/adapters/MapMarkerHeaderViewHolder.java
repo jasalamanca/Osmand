@@ -1,10 +1,9 @@
 package net.osmand.plus.mapmarkers.adapters;
 
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SwitchCompat;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import net.osmand.plus.R;
@@ -14,10 +13,10 @@ public class MapMarkerHeaderViewHolder extends RecyclerView.ViewHolder {
 	final ImageView icon;
 	final View iconSpace;
 	final TextView title;
-	final SwitchCompat disableGroupSwitch;
+	final Switch disableGroupSwitch;
 	final View bottomShadow;
 
-	public MapMarkerHeaderViewHolder(View itemView) {
+	MapMarkerHeaderViewHolder(View itemView) {
 		super(itemView);
 		icon = itemView.findViewById(R.id.icon);
 		iconSpace = itemView.findViewById(R.id.icon_space);

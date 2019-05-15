@@ -1,10 +1,10 @@
 package net.osmand.plus.quickaction.actions;
 
 import android.content.Context;
-import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
 
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
@@ -43,7 +43,7 @@ public class NavStartStopAction extends QuickAction {
 		View view = LayoutInflater.from(parent.getContext())
 				.inflate(R.layout.quick_action_start_stop_navigation, parent, false);
 
-		final SwitchCompat showDialogSwitch = view.findViewById(R.id.show_dialog_switch);
+		final Switch showDialogSwitch = view.findViewById(R.id.show_dialog_switch);
 
 		if (!getParams().isEmpty()) {
 			showDialogSwitch.setChecked(Boolean.valueOf(getParams().get(KEY_DIALOG)));
@@ -57,7 +57,7 @@ public class NavStartStopAction extends QuickAction {
 	@Override
 	public boolean fillParams(View root) {
 		getParams().put(KEY_DIALOG, Boolean
-				.toString(((SwitchCompat) root.findViewById(R.id.show_dialog_switch)).isChecked()));
+				.toString(((Switch) root.findViewById(R.id.show_dialog_switch)).isChecked()));
 		return true;
 	}
 

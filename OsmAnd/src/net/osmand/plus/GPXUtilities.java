@@ -809,7 +809,7 @@ public class GPXUtilities {
 					}
 				}
 			}
-			g.prepareInformation(fileTimestamp, splitSegments.toArray(new SplitSegment[splitSegments.size()]));
+			g.prepareInformation(fileTimestamp, splitSegments.toArray(new SplitSegment[0]));
 			return g;
 		}
 
@@ -1310,11 +1310,11 @@ public class GPXUtilities {
 			int tok;
 			while ((tok = parser.next()) != XmlPullParser.END_DOCUMENT) {
 				if (tok == XmlPullParser.START_TAG) {
-					Object parse = parserState.peek();
+					GPXExtensions parse = parserState.peek();
 					String tag = parser.getName();
 					if (extensionReadMode && parse != null) {
 						String value = readText(parser, tag);
-						((GPXExtensions) parse).getExtensionsToWrite().put(tag, value);
+						parse.getExtensionsToWrite().put(tag, value);
 						if (tag.equals("speed") && parse instanceof WptPt) {
 							try {
 								((WptPt) parse).speed = Float.parseFloat(value);
@@ -1406,7 +1406,7 @@ public class GPXUtilities {
 								try {
 									String value = readText(parser, "speed");
 									((WptPt) parse).speed = Float.parseFloat(value);
-									((WptPt) parse).getExtensionsToWrite().put("speed", value);
+									parse.getExtensionsToWrite().put("speed", value);
 								} catch (NumberFormatException e) {
 								}
 							} else if (parser.getName().equals("link")) {

@@ -3,16 +3,12 @@ package net.osmand.plus;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import net.osmand.CallbackWithObject;
 import net.osmand.Location;
 import net.osmand.plus.helpers.GpxUiHelper;
 import net.osmand.plus.routing.RouteProvider.GPXRouteParamsBuilder;
@@ -26,7 +22,7 @@ public class OsmAndLocationSimulation {
 	private final OsmAndLocationProvider provider;
 	private final OsmandApplication app;
 	
-	public OsmAndLocationSimulation(OsmandApplication app, OsmAndLocationProvider provider){
+	OsmAndLocationSimulation(OsmandApplication app, OsmAndLocationProvider provider){
 		this.app = app;
 		this.provider = provider;
 	}

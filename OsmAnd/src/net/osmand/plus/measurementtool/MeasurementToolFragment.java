@@ -1,7 +1,7 @@
 package net.osmand.plus.measurementtool;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
@@ -13,10 +13,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
-import android.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -24,16 +22,15 @@ import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import net.osmand.AndroidUtils;
-import net.osmand.CallbackWithObject;
 import net.osmand.IndexConstants;
 import net.osmand.plus.ApplicationMode;
 import net.osmand.plus.GPXUtilities;
@@ -49,7 +46,6 @@ import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.activities.TrackActivity;
 import net.osmand.plus.base.BaseOsmAndFragment;
 import net.osmand.plus.helpers.AndroidUiHelper;
-import net.osmand.plus.helpers.GpxUiHelper;
 import net.osmand.plus.measurementtool.NewGpxData.ActionType;
 import net.osmand.plus.measurementtool.OptionsBottomSheetDialogFragment.OptionsFragmentListener;
 import net.osmand.plus.measurementtool.SaveAsNewTrackBottomSheetDialogFragment.SaveAsNewTrackFragmentListener;
@@ -288,7 +284,7 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
             updateText();
         });
 
-		mainView.findViewById(R.id.add_point_button).setOnClickListener(view1 -> addCenterPoint());
+//		mainView.findViewById(R.id.add_point_button).setOnClickListener(view1 -> addCenterPoint());
 
 		measurementLayer.setOnSingleTapListener(new MeasurementToolLayer.OnSingleTapListener() {
 			@Override
@@ -509,9 +505,7 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 			@Override
 			public void addToTheTrackOnClick() {
 				if (mapActivity != null && measurementLayer != null) {
-					if (editingCtx.getPointsCount() > 0) {
-						showAddToTrackDialog(mapActivity);
-					} else {
+					if (editingCtx.getPointsCount() <= 0) {
 						Toast.makeText(mapActivity, getString(R.string.none_point_error), Toast.LENGTH_SHORT).show();
 					}
 				}
@@ -761,21 +755,6 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 		fragment.setUsedOnMap(true);
 		fragment.setListener(createSaveAsNewTrackFragmentListener());
 		fragment.show(mapActivity.getSupportFragmentManager(), SaveAsNewTrackBottomSheetDialogFragment.TAG);
-	}
-
-	private AlertDialog showAddToTrackDialog(final MapActivity mapActivity) {
-		CallbackWithObject<GPXFile[]> callbackWithObject = result -> {
-            GPXFile gpxFile;
-            if (result != null && result.length > 0) {
-                gpxFile = result[0];
-                SelectedGpxFile selectedGpxFile = mapActivity.getMyApplication().getSelectedGpxHelper().getSelectedFileByPath(gpxFile.path);
-                boolean showOnMap = selectedGpxFile != null;
-                saveExistingGpx(gpxFile, showOnMap, ActionType.ADD_SEGMENT, false);
-            }
-            return true;
-        };
-
-		return GpxUiHelper.selectGPXFile(mapActivity, false, false, callbackWithObject);
 	}
 
 	private void applyMovePointMode() {
@@ -1032,7 +1011,7 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 			final View view = inflater.inflate(R.layout.save_gpx_dialog, null);
 			final EditText nameEt = view.findViewById(R.id.gpx_name_et);
 			final TextView fileExistsTv = view.findViewById(R.id.file_exists_text_view);
-			final SwitchCompat showOnMapToggle = view.findViewById(R.id.toggle_show_on_map);
+			final Switch showOnMapToggle = view.findViewById(R.id.toggle_show_on_map);
 			showOnMapToggle.setChecked(true);
 
 			final String suggestedName = new SimpleDateFormat("yyyy-MM-dd_HH-mm_EEE", Locale.US).format(new Date());
@@ -1363,7 +1342,7 @@ public class MeasurementToolFragment extends BaseOsmAndFragment {
 				final File dir = mapActivity.getMyApplication().getAppPath(IndexConstants.GPX_INDEX_DIR);
 				final LayoutInflater inflater = mapActivity.getLayoutInflater();
 				final View view = inflater.inflate(R.layout.close_measurement_tool_dialog, null);
-				final SwitchCompat showOnMapToggle = view.findViewById(R.id.toggle_show_on_map);
+				final Switch showOnMapToggle = view.findViewById(R.id.toggle_show_on_map);
 
 				builder.setView(view);
 				builder.setPositiveButton(R.string.shared_string_ok, (dialog, which) -> {

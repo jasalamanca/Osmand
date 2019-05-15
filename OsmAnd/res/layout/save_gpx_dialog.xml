@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/content_padding">
 
-        <android.support.v7.widget.SwitchCompat
+        <Switch
             android:id="@+id/toggle_show_on_map"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -57,8 +57,6 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:text="@string/show_on_map_after_saving"/>
-        <!--android:layout_toLeftOf="@id/toggle_row_toggle"-->
-        <!--android:layout_toStartOf="@id/toggle_row_toggle"-->
     </RelativeLayout>
 
 </LinearLayout>

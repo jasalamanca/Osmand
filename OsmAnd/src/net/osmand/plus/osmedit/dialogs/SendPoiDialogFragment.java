@@ -2,17 +2,15 @@ package net.osmand.plus.osmedit.dialogs;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 
 import net.osmand.osm.PoiType;
 import net.osmand.plus.OsmandApplication;
@@ -56,7 +54,7 @@ public class SendPoiDialogFragment extends DialogFragment {
 		final PoiUploaderType poiUploaderType = PoiUploaderType.valueOf(getArguments().getString(POI_UPLOADER_TYPE, PoiUploaderType.SIMPLE.name()));
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		View view = getActivity().getLayoutInflater().inflate(R.layout.send_poi_dialog, null);
-		final SwitchCompat uploadAnonymously = view.findViewById(R.id.upload_anonymously_switch);
+		final Switch uploadAnonymously = view.findViewById(R.id.upload_anonymously_switch);
 		final EditText messageEditText = view.findViewById(R.id.message_field);
 		final EditText userNameEditText = view.findViewById(R.id.user_name_field);
 		final EditText passwordEditText = view.findViewById(R.id.password_field);

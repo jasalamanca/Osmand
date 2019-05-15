@@ -26,7 +26,7 @@
         android:visibility="gone"
         android:paddingRight="16dp">
 
-        <net.osmand.plus.widgets.TextViewEx
+        <TextView
             android:id="@+id/title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             style="@style/TextAppearance.ListItemCategoryTitle"
             tools:text="Live updates"/>
 
-        <android.support.v7.widget.SwitchCompat
+        <Switch
             android:id="@+id/toggle_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

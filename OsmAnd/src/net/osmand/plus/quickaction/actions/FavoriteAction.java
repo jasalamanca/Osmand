@@ -3,19 +3,17 @@ package net.osmand.plus.quickaction.actions;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Switch;
 
 import net.osmand.data.LatLon;
 import net.osmand.plus.FavouritesDbHelper;
 import net.osmand.plus.GeocodingLookupService.AddressLookupRequest;
-import net.osmand.plus.GeocodingLookupService.OnAddressLookupResult;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.mapcontextmenu.editors.EditCategoryDialogFragment;
@@ -107,7 +105,7 @@ public class FavoriteAction extends QuickAction {
 		parent.addView(root);
 
 		AutoCompleteTextViewEx categoryEdit = root.findViewById(R.id.category_edit);
-		SwitchCompat showDialog = root.findViewById(R.id.saveButton);
+		Switch showDialog = root.findViewById(R.id.saveButton);
 		ImageView categoryImage = root.findViewById(R.id.category_image);
 		EditText name = root.findViewById(R.id.name_edit);
 
@@ -169,7 +167,7 @@ public class FavoriteAction extends QuickAction {
 	@Override
 	public boolean fillParams(View root) {
 		getParams().put(KEY_NAME, ((EditText) root.findViewById(R.id.name_edit)).getText().toString());
-		getParams().put(KEY_DIALOG, Boolean.toString(((SwitchCompat) root.findViewById(R.id.saveButton)).isChecked()));
+		getParams().put(KEY_DIALOG, Boolean.toString(((Switch) root.findViewById(R.id.saveButton)).isChecked()));
 
 		return true;
 	}
