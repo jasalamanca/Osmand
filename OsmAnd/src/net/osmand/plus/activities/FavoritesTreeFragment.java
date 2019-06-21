@@ -44,7 +44,6 @@ import net.osmand.plus.TargetPointsHelper;
 import net.osmand.plus.base.FavoriteImageDrawable;
 import net.osmand.plus.base.OsmandExpandableListFragment;
 import net.osmand.plus.helpers.AndroidUiHelper;
-import net.osmand.plus.helpers.FontCache;
 import net.osmand.plus.myplaces.FavoritesActivity;
 import net.osmand.util.Algorithms;
 import net.osmand.util.MapUtils;
@@ -722,10 +721,7 @@ public class FavoritesTreeFragment extends OsmandExpandableListFragment {
 			adjustIndicator(app, groupPosition, isExpanded, row, light);
 			TextView label = row.findViewById(R.id.category_name);
 			label.setTextColor(getResources().getColor(visible ? enabledColor : disabledColor));
-			if (visible) {
-				Typeface typeface = FontCache.getFont(getContext(), "fonts/Roboto-Medium.ttf");
-				label.setTypeface(typeface, Typeface.NORMAL);
-			} else {
+			if (!visible) {
 				label.setTypeface(Typeface.DEFAULT, Typeface.ITALIC);
 			}
 			label.setText(model.name.length() == 0 ? getString(R.string.shared_string_favorites) : model.name);

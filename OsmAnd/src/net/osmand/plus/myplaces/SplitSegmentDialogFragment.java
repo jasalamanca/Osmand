@@ -18,7 +18,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -38,7 +37,6 @@ import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandSettings;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.TrackActivity;
-import net.osmand.plus.helpers.FontCache;
 import net.osmand.util.Algorithms;
 
 import java.text.DateFormat;
@@ -95,7 +93,6 @@ public class SplitSegmentDialogFragment extends DialogFragment {
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		minMaxSpeedPaint = new Paint();
 		minMaxSpeedPaint.setTextSize(getResources().getDimension(R.dimen.default_split_segments_data));
-		minMaxSpeedPaint.setTypeface(FontCache.getFont(getContext(), "fonts/Roboto-Medium.ttf"));
 		minMaxSpeedPaint.setStyle(Paint.Style.FILL);
 		minMaxSpeedTextBounds = new Rect();
 

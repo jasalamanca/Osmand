@@ -29,7 +29,6 @@ import net.osmand.osm.PoiType;
 import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.helpers.FontCache;
 import net.osmand.plus.mapcontextmenu.MenuBuilder;
 import net.osmand.plus.mapcontextmenu.WikipediaDialogFragment;
 import net.osmand.plus.osmedit.OsmEditingPlugin;
@@ -219,7 +218,6 @@ public class AmenityMenuBuilder extends MenuBuilder {
 			LinearLayout.LayoutParams llWikiButtonParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, dpToPx(36f));
 			llWikiButtonParams.setMargins(dpToPx(16f), 0, 0, dpToPx(16f));
 			button.setLayoutParams(llWikiButtonParams);
-			button.setTypeface(FontCache.getRobotoMedium(app));
 			button.setBackgroundResource(light ? R.drawable.context_menu_controller_bg_light : R.drawable.context_menu_controller_bg_dark);
 			button.setTextSize(14);
 			int paddingSides = dpToPx(10f);

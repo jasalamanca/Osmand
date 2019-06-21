@@ -3,10 +3,8 @@ package net.osmand.plus.dashboard;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +22,6 @@ import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.activities.OsmandActionBarActivity;
 import net.osmand.plus.dashboard.tools.DashFragmentData;
 import net.osmand.plus.dialogs.ErrorBottomSheetDialog;
-import net.osmand.plus.helpers.FontCache;
 
 import java.io.File;
 import java.text.MessageFormat;
@@ -46,14 +43,11 @@ public class DashErrorFragment extends DashBaseFragment {
 	public View initView(LayoutInflater inflater, ViewGroup container) {
 		View view = getActivity().getLayoutInflater().inflate(R.layout.dash_error_fragment, container, false);
 		String msg = MessageFormat.format(getString(R.string.previous_run_crashed), OsmandApplication.EXCEPTION_PATH);
-		Typeface typeface = FontCache.getRobotoMedium(getActivity());
 		ImageView iv = view.findViewById(R.id.error_icon);
 		iv.setImageDrawable(getMyApplication().getIconsCache().getThemedIcon(R.drawable.ic_crashlog));
 		TextView message = view.findViewById(R.id.error_header);
-		message.setTypeface(typeface);
 		message.setText(msg);
 		Button errorBtn = view.findViewById(R.id.error_btn);
-		errorBtn.setTypeface(typeface);
 		errorBtn.setOnClickListener(view12 -> {
 			Intent intent = new Intent(Intent.ACTION_SEND);
 			intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"crash@osmand.net"}); //$NON-NLS-1$
@@ -83,7 +77,6 @@ public class DashErrorFragment extends DashBaseFragment {
 		});
 
 		Button cancelBtn = view.findViewById(R.id.error_cancel);
-		cancelBtn.setTypeface(typeface);
 		cancelBtn.setOnClickListener(view1 -> {
 			OsmandActionBarActivity dashboardActivity = ((OsmandActionBarActivity) getActivity());
 			if (dashboardActivity != null) {

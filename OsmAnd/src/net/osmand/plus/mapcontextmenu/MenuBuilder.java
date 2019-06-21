@@ -37,7 +37,6 @@ import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.OsmandPlugin;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.helpers.FontCache;
 import net.osmand.plus.render.RenderingIcons;
 import net.osmand.util.Algorithms;
 import net.osmand.util.MapUtils;
@@ -352,7 +351,6 @@ public class MenuBuilder {
 		LinearLayout.LayoutParams llTextParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		llTextParams.setMargins(icon != null ? 0 : dpToPx(16f), dpToPx(secondaryText != null ? 10f : 8f), 0, dpToPx(secondaryText != null ? 6f : 8f));
 		textView.setLayoutParams(llTextParams);
-		textView.setTypeface(FontCache.getRobotoRegular(view.getContext()));//////
 		textView.setTextSize(16);
 		textView.setTextColor(app.getResources().getColor(light ? R.color.ctx_menu_bottom_view_text_color_light : R.color.ctx_menu_bottom_view_text_color_dark));
 
@@ -382,7 +380,6 @@ public class MenuBuilder {
 			LinearLayout.LayoutParams llTextSecondaryParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 			llTextSecondaryParams.setMargins(icon != null ? 0 : dpToPx(16f), 0, 0, dpToPx(6f));
 			textViewSecondary.setLayoutParams(llTextSecondaryParams);
-			textViewSecondary.setTypeface(FontCache.getRobotoRegular(view.getContext()));
 			textViewSecondary.setTextSize(14);
 			textViewSecondary.setTextColor(app.getResources().getColor(light ? R.color.ctx_menu_bottom_view_secondary_text_color_light: R.color.ctx_menu_bottom_view_secondary_text_color_dark));
 			textViewSecondary.setText(secondaryText);
@@ -396,7 +393,6 @@ public class MenuBuilder {
 			buttonTextViewParams.gravity = Gravity.CENTER_VERTICAL;
 			buttonTextViewParams.setMargins(dpToPx(8), 0, dpToPx(8), 0);
 			buttonTextView.setLayoutParams(buttonTextViewParams);
-			buttonTextView.setTypeface(FontCache.getRobotoMedium(view.getContext()));
 			buttonTextView.setAllCaps(true);
 			buttonTextView.setTextColor(ContextCompat.getColor(view.getContext(), !light ? R.color.ctx_menu_controller_button_text_color_dark_n : R.color.ctx_menu_controller_button_text_color_light_n));
 			buttonTextView.setText(buttonText);
@@ -532,7 +528,6 @@ public class MenuBuilder {
 		LinearLayout.LayoutParams llTextDescParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		llTextDescParams.setMargins(dpToPx(64f), 0, dpToPx(40f), dpToPx(13f));
 		textView.setLayoutParams(llTextDescParams);
-		textView.setTypeface(FontCache.getRobotoRegular(context));
 		textView.setTextSize(16);
 		textView.setTextColor(app.getResources().getColor(light ? R.color.ctx_menu_bottom_view_text_color_light : R.color.ctx_menu_bottom_view_text_color_dark));
 		textView.setText(text);
@@ -579,7 +574,6 @@ public class MenuBuilder {
 		LinearLayout.LayoutParams llWikiButtonParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		llWikiButtonParams.setMargins(0, 0, 0, dpToPx(8f));
 		button.setLayoutParams(llWikiButtonParams);
-		button.setTypeface(FontCache.getRobotoRegular(context));////////////////////
 		int bg;
 		if (selected) {
 			bg = light ? R.drawable.context_menu_controller_bg_light_selected: R.drawable.context_menu_controller_bg_dark_selected;
