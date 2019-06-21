@@ -13,10 +13,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -40,14 +38,12 @@ import net.osmand.plus.R;
 import net.osmand.plus.dialogs.DirectionsDialogs;
 import net.osmand.plus.poi.PoiUIFilter;
 import net.osmand.plus.render.RenderingIcons;
-import net.osmand.plus.widgets.TextViewEx;
 import net.osmand.util.Algorithms;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -581,7 +577,7 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 			}
 			if (collapsedCategories.contains(category) && !extractAll) {
 				if (!additionalsMap.containsKey(category)) {
-					additionalsMap.put(category, new ArrayList<PoiType>());
+					additionalsMap.put(category, new ArrayList<>());
 				}
 				continue;
 			}
@@ -751,9 +747,9 @@ public class QuickSearchPoiFilterFragment extends DialogFragment {
 			}
 
 			final ImageView icon = view.findViewById(R.id.icon);
-			final TextViewEx titleRegular = view.findViewById(R.id.titleRegular);
-			final TextViewEx titleBold = view.findViewById(R.id.titleBold);
-			final TextViewEx titleButton = view.findViewById(R.id.titleButton);
+			final TextView titleRegular = view.findViewById(R.id.titleRegular);
+			final TextView titleBold = view.findViewById(R.id.titleBold);
+			final TextView titleButton = view.findViewById(R.id.titleButton);
 			final Switch switchItem = view.findViewById(R.id.switchItem);
 			final CheckBox checkBoxItem = view.findViewById(R.id.checkboxItem);
 			final ImageView expandItem = view.findViewById(R.id.expandItem);

@@ -8,15 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import net.osmand.plus.R;
 import net.osmand.plus.base.MenuBottomSheetDialogFragment;
-import net.osmand.plus.widgets.TextViewEx;
 
 public class OsmEditOptionsBottomSheetDialogFragment extends MenuBottomSheetDialogFragment {
 
 	public final static String TAG = "OsmEditOptionsBottomSheetDialogFragment";
-
 	public static final String OSM_POINT = "osm_point";
 
 	private OsmEditOptionsFragmentListener listener;
@@ -34,9 +33,7 @@ public class OsmEditOptionsBottomSheetDialogFragment extends MenuBottomSheetDial
 		Bundle args = getArguments();
 		if (args != null) {
 			final OsmPoint osmPoint = (OsmPoint) args.getSerializable(OSM_POINT);
-
-			((TextViewEx) mainView.findViewById(R.id.osm_edit_name)).setText(OsmEditingPlugin.getName(osmPoint) + ":");
-
+			((TextView) mainView.findViewById(R.id.osm_edit_name)).setText(OsmEditingPlugin.getName(osmPoint) + ":");
 			((ImageView) mainView.findViewById(R.id.upload_icon)).setImageDrawable(getContentIcon(R.drawable.ic_action_export));
 			mainView.findViewById(R.id.upload_row).setOnClickListener(view -> {
 				if (listener != null) {
@@ -85,7 +82,7 @@ public class OsmEditOptionsBottomSheetDialogFragment extends MenuBottomSheetDial
 		}
 
 		if (nightMode) {
-			((TextViewEx) mainView.findViewById(R.id.osm_edit_name)).setTextColor(getResources().getColor(R.color.ctx_menu_info_text_dark));
+			((TextView) mainView.findViewById(R.id.osm_edit_name)).setTextColor(getResources().getColor(R.color.ctx_menu_info_text_dark));
 		}
 
 		mainView.findViewById(R.id.cancel_row).setOnClickListener(view -> dismiss());

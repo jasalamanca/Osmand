@@ -1,7 +1,6 @@
 package net.osmand.plus.mapcontextmenu.builders;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
@@ -36,14 +35,12 @@ import net.osmand.plus.mapcontextmenu.WikipediaDialogFragment;
 import net.osmand.plus.osmedit.OsmEditingPlugin;
 import net.osmand.plus.poi.PoiUIFilter;
 import net.osmand.plus.views.POIMapLayer;
-import net.osmand.plus.widgets.TextViewEx;
 import net.osmand.util.Algorithms;
 import net.osmand.util.OpeningHoursParser;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -218,7 +215,7 @@ public class AmenityMenuBuilder extends MenuBuilder {
 		}
 
 		if (isWiki) {
-			TextViewEx button = new TextViewEx(new ContextThemeWrapper(view.getContext(), light ? R.style.OsmandLightTheme : R.style.OsmandDarkTheme));
+			TextView button = new TextView(new ContextThemeWrapper(view.getContext(), light ? R.style.OsmandLightTheme : R.style.OsmandDarkTheme));
 			LinearLayout.LayoutParams llWikiButtonParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, dpToPx(36f));
 			llWikiButtonParams.setMargins(dpToPx(16f), 0, 0, dpToPx(16f));
 			button.setLayoutParams(llWikiButtonParams);
@@ -231,7 +228,7 @@ public class AmenityMenuBuilder extends MenuBuilder {
 					R.color.ctx_menu_controller_button_text_color_light_n, R.color.ctx_menu_controller_button_text_color_light_p,
 					R.color.ctx_menu_controller_button_text_color_dark_n, R.color.ctx_menu_controller_button_text_color_dark_p);
 			button.setTextColor(buttonColorStateList);
-			button.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
+			button.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
 			button.setSingleLine(true);
 			button.setEllipsize(TextUtils.TruncateAt.END);
 			button.setOnClickListener(view1 -> WikipediaDialogFragment.showInstance(mapActivity, amenity));
@@ -531,7 +528,7 @@ public class AmenityMenuBuilder extends MenuBuilder {
 		AmenityInfoRow descInPrefLang = null;
 		for (AmenityInfoRow desc : descriptions) {
 			if (desc.key.length() > langSuffix.length()
-					&& desc.key.substring(desc.key.length() - langSuffix.length(), desc.key.length()).equals(langSuffix)) {
+					&& desc.key.substring(desc.key.length() - langSuffix.length()).equals(langSuffix)) {
 				descInPrefLang = desc;
 				break;
 			}
@@ -589,12 +586,12 @@ public class AmenityMenuBuilder extends MenuBuilder {
 			final Context context, boolean collapsed,
 			@NonNull final List<PoiType> categoryTypes, AmenityInfoRow textCuisineRow) {
 
-		final List<TextViewEx> buttons = new ArrayList<>();
+		final List<TextView> buttons = new ArrayList<>();
 
 		LinearLayout view = buildCollapsableContentView(context, collapsed, true);
 
 		for (final PoiType pt : categoryTypes) {
-			TextViewEx button = buildButtonInCollapsableView(context, false, false);
+			TextView button = buildButtonInCollapsableView(context, false, false);
 			String name = pt.getTranslation();
 			button.setText(name);
 
@@ -618,17 +615,17 @@ public class AmenityMenuBuilder extends MenuBuilder {
 		}
 
 		if (textCuisineRow != null) {
-			TextViewEx button = buildButtonInCollapsableView(context, true, false, false);
+			TextView button = buildButtonInCollapsableView(context, true, false, false);
 			String name = textCuisineRow.textPrefix + ": " + textCuisineRow.text.toLowerCase();
 			button.setText(name);
 			view.addView(button);
 		}
 
 		if (categoryTypes.size() > 4) {
-			final TextViewEx button = buildButtonInCollapsableView(context, false, true);
+			final TextView button = buildButtonInCollapsableView(context, false, true);
 			button.setText(context.getString(R.string.shared_string_show_all));
 			button.setOnClickListener(view1 -> {
-                for (TextViewEx b : buttons) {
+                for (TextView b : buttons) {
                     if (b.getVisibility() != View.VISIBLE) {
                         b.setVisibility(View.VISIBLE);
                     }

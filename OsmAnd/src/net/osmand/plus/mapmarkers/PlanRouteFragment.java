@@ -370,7 +370,7 @@ public class PlanRouteFragment extends BaseOsmAndFragment implements OsmAndLocat
 		MapActivity mapActivity = getMapActivity();
 		if (mapActivity != null) {
 			final Location location = mapActivity.getMyApplication().getLocationProvider().getLastStaleKnownLocation();
-			boolean newLocation = (this.location == null && location != null) || location == null;
+			boolean newLocation = this.location == null || location == null;
 			boolean locationChanged = this.location != null && location != null
 					&& this.location.getLatitude() != location.getLatitude()
 					&& this.location.getLongitude() != location.getLongitude();

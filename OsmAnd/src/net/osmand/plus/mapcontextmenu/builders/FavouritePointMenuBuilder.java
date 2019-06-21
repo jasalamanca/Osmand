@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import net.osmand.binary.BinaryMapIndexReader;
 import net.osmand.data.Amenity;
@@ -21,7 +22,6 @@ import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.mapcontextmenu.MenuBuilder;
 import net.osmand.plus.myplaces.FavoritesActivity;
-import net.osmand.plus.widgets.TextViewEx;
 import net.osmand.util.MapUtils;
 
 import java.util.List;
@@ -132,7 +132,7 @@ public class FavouritePointMenuBuilder extends MenuBuilder {
 		for (int i = 0; i < points.size() && i < 10; i++) {
 			final FavouritePoint point = points.get(i);
 			boolean selected = selectedPoint != null && selectedPoint.equals(point);
-			TextViewEx button = buildButtonInCollapsableView(context, selected, false);
+			TextView button = buildButtonInCollapsableView(context, selected, false);
 			String name = point.getName();
 			button.setText(name);
 
@@ -147,7 +147,7 @@ public class FavouritePointMenuBuilder extends MenuBuilder {
 		}
 
 		if (points.size() > 10) {
-			TextViewEx button = buildButtonInCollapsableView(context, false, true);
+			TextView button = buildButtonInCollapsableView(context, false, true);
 			button.setText(context.getString(R.string.shared_string_show_all));
 			button.setOnClickListener(view1 -> {
                 OsmAndAppCustomization appCustomization = app.getAppCustomization();

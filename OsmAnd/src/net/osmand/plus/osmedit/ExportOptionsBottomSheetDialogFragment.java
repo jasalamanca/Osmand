@@ -13,7 +13,6 @@ import android.widget.TextView;
 import net.osmand.plus.R;
 import net.osmand.plus.base.MenuBottomSheetDialogFragment;
 import net.osmand.plus.osmedit.OsmEditsFragment.ExportTypesDef;
-import net.osmand.plus.widgets.TextViewEx;
 
 public class ExportOptionsBottomSheetDialogFragment extends MenuBottomSheetDialogFragment {
 
@@ -44,7 +43,7 @@ public class ExportOptionsBottomSheetDialogFragment extends MenuBottomSheetDialo
 		}
 
 		if (nightMode) {
-			((TextViewEx) mainView.findViewById(R.id.title_text_view)).setTextColor(getResources().getColor(R.color.ctx_menu_info_text_dark));
+			((TextView) mainView.findViewById(R.id.title_text_view)).setTextColor(getResources().getColor(R.color.ctx_menu_info_text_dark));
 		}
 
 		((ImageView) mainView.findViewById(R.id.poi_icon)).setImageDrawable(getContentIcon(R.drawable.ic_action_info_dark));

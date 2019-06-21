@@ -20,7 +20,6 @@ import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.base.MenuBottomSheetDialogFragment;
 import net.osmand.plus.mapcontextmenu.other.ShareMenu.ShareItem;
-import net.osmand.plus.widgets.TextViewEx;
 
 import java.util.List;
 
@@ -46,7 +45,7 @@ public class ShareMenuFragment extends MenuBottomSheetDialogFragment implements 
 				R.layout.share_menu_fragment, container);
 
 		if (nightMode) {
-			((TextViewEx) view.findViewById(R.id.title_text_view)).setTextColor(getResources().getColor(R.color.ctx_menu_info_text_dark));
+			((TextView) view.findViewById(R.id.title_text_view)).setTextColor(getResources().getColor(R.color.ctx_menu_info_text_dark));
 		}
 
 		ListView listView = view.findViewById(R.id.list);

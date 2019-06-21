@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:osmand="http://schemas.android.com/apk/res-auto"
               xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
@@ -26,14 +25,16 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:background="?attr/bg_color"
-        android:paddingBottom="4dp">
+        android:paddingBottom="4dp"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingLeft="16dp">
+            android:paddingLeft="16dp"
+            android:paddingStart="16dp">
 
             <ImageView
                 android:id="@+id/average_icon"
@@ -46,16 +47,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginLeft="18dp">
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp">
 
-                <net.osmand.plus.widgets.TextViewEx
+                <TextView
                     android:id="@+id/average_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     tools:text="40 m"
                     android:textColor="?android:attr/textColorPrimary"
-                    osmand:typeface="@string/font_roboto_medium"
                     android:textSize="@dimen/default_desc_text_size"/>
 
                 <TextView
@@ -76,7 +77,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:paddingLeft="16dp">
+            android:paddingLeft="16dp"
+            android:paddingStart="16dp">
 
             <ImageView
                 android:id="@+id/range_icon"
@@ -89,16 +91,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginLeft="18dp">
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp">
 
-                <net.osmand.plus.widgets.TextViewEx
+                <TextView
                     android:id="@+id/range_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     tools:text="30m - 53m"
                     android:textColor="?android:attr/textColorPrimary"
-                    osmand:typeface="@string/font_roboto_medium"
                     android:textSize="@dimen/default_desc_text_size"/>
 
                 <TextView
@@ -122,7 +124,8 @@
         android:orientation="horizontal"
         android:background="?attr/bg_color"
         android:paddingTop="4dp"
-        android:paddingBottom="8dp">
+        android:paddingBottom="8dp"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -130,7 +133,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingLeft="16dp"
-            android:paddingRight="8dp">
+            android:paddingStart="16dp"
+            android:paddingRight="8dp"
+            android:paddingEnd="8dp">
 
             <View
                 android:layout_width="match_parent"
@@ -145,7 +150,9 @@
             android:layout_weight="1"
             android:orientation="horizontal"
             android:paddingLeft="8dp"
-            android:paddingRight="16dp">
+            android:paddingStart="8dp"
+            android:paddingRight="16dp"
+            android:paddingEnd="16dp">
 
             <View
                 android:layout_width="match_parent"
@@ -162,14 +169,16 @@
         android:orientation="horizontal"
         android:background="?attr/bg_color"
         android:paddingTop="4dp"
-        android:paddingBottom="8dp">
+        android:paddingBottom="8dp"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingLeft="16dp">
+            android:paddingLeft="16dp"
+            android:paddingStart="16dp">
 
             <ImageView
                 android:id="@+id/ascent_icon"
@@ -182,16 +191,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginLeft="18dp">
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp">
 
-                <net.osmand.plus.widgets.TextViewEx
+            <TextView
                     android:id="@+id/ascent_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     tools:text="174"
                     android:textColor="?android:attr/textColorPrimary"
-                    osmand:typeface="@string/font_roboto_medium"
                     android:textSize="@dimen/default_desc_text_size"/>
 
                 <TextView
@@ -212,7 +221,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:paddingLeft="16dp">
+            android:paddingLeft="16dp"
+            android:paddingStart="16dp">
 
             <ImageView
                 android:id="@+id/descent_icon"
@@ -225,16 +235,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginLeft="18dp">
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp">
 
-                <net.osmand.plus.widgets.TextViewEx
+                <TextView
                     android:id="@+id/descent_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     tools:text="164"
                     android:textColor="?android:attr/textColorPrimary"
-                    osmand:typeface="@string/font_roboto_medium"
                     android:textSize="@dimen/default_desc_text_size"/>
 
                 <TextView
@@ -273,15 +283,13 @@
             android:paddingRight="16dp"
             android:gravity="center">
 
-            <net.osmand.plus.widgets.TextViewEx
+            <TextView
                 android:id="@+id/details_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right|center_vertical"
+                android:gravity="end|center_vertical"
                 android:textColor="?attr/color_dialog_buttons"
                 android:textSize="@dimen/default_sub_text_size"
-                osmand:textAllCapsCompat="true"
-                osmand:typeface="@string/font_roboto_medium"
                 android:text="@string/analyze_on_map"/>
 
         </LinearLayout>

@@ -47,7 +47,7 @@ public class DashPluginsFragment extends DashBaseFragment {
         };
 	}
 
-	private final View.OnClickListener pluginDetailsListener(final OsmandPlugin plugin) {
+	private View.OnClickListener pluginDetailsListener(final OsmandPlugin plugin) {
 		return view -> {
             Intent intent = new Intent(getActivity(), PluginActivity.class);
             intent.putExtra(PluginActivity.EXTRA_PLUGIN_ID, plugin.getId());

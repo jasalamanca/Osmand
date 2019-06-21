@@ -22,6 +22,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import net.osmand.AndroidUtils;
@@ -38,7 +39,6 @@ import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.helpers.FontCache;
 import net.osmand.plus.render.RenderingIcons;
-import net.osmand.plus.widgets.TextViewEx;
 import net.osmand.util.Algorithms;
 import net.osmand.util.MapUtils;
 
@@ -348,11 +348,11 @@ public class MenuBuilder {
 		ll.addView(llText);
 
 		// Primary text
-		TextViewEx textView = new TextViewEx(view.getContext());
+		TextView textView = new TextView(view.getContext());
 		LinearLayout.LayoutParams llTextParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		llTextParams.setMargins(icon != null ? 0 : dpToPx(16f), dpToPx(secondaryText != null ? 10f : 8f), 0, dpToPx(secondaryText != null ? 6f : 8f));
 		textView.setLayoutParams(llTextParams);
-		textView.setTypeface(FontCache.getRobotoRegular(view.getContext()));
+		textView.setTypeface(FontCache.getRobotoRegular(view.getContext()));//////
 		textView.setTextSize(16);
 		textView.setTextColor(app.getResources().getColor(light ? R.color.ctx_menu_bottom_view_text_color_light : R.color.ctx_menu_bottom_view_text_color_dark));
 
@@ -378,7 +378,7 @@ public class MenuBuilder {
 
 		// Secondary text
 		if (!TextUtils.isEmpty(secondaryText)) {
-			TextViewEx textViewSecondary = new TextViewEx(view.getContext());
+			TextView textViewSecondary = new TextView(view.getContext());
 			LinearLayout.LayoutParams llTextSecondaryParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 			llTextSecondaryParams.setMargins(icon != null ? 0 : dpToPx(16f), 0, 0, dpToPx(6f));
 			textViewSecondary.setLayoutParams(llTextSecondaryParams);
@@ -391,7 +391,7 @@ public class MenuBuilder {
 
 		//Button
 		if (!TextUtils.isEmpty(buttonText)) {
-			TextViewEx buttonTextView = new TextViewEx(view.getContext());
+			TextView buttonTextView = new TextView(view.getContext());
 			LinearLayout.LayoutParams buttonTextViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 			buttonTextViewParams.gravity = Gravity.CENTER_VERTICAL;
 			buttonTextViewParams.setMargins(dpToPx(8), 0, dpToPx(8), 0);
@@ -527,7 +527,7 @@ public class MenuBuilder {
 	}
 
 	protected CollapsableView getCollapsableTextView(Context context, boolean collapsed, String text) {
-		final TextViewEx textView = new TextViewEx(context);
+		final TextView textView = new TextView(context);
 		textView.setVisibility(collapsed ? View.GONE : View.VISIBLE);
 		LinearLayout.LayoutParams llTextDescParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		llTextDescParams.setMargins(dpToPx(64f), 0, dpToPx(40f), dpToPx(13f));
@@ -543,7 +543,7 @@ public class MenuBuilder {
 		LinearLayout view = buildCollapsableContentView(context, collapsed, true);
 
 		for (final Amenity wiki : nearestWiki) {
-			TextViewEx button = buildButtonInCollapsableView(context, false, false);
+			TextView button = buildButtonInCollapsableView(context, false, false);
 			String name = wiki.getName(preferredMapAppLang, transliterateNames);
 			button.setText(name);
 
@@ -570,16 +570,16 @@ public class MenuBuilder {
 		return view;
 	}
 
-	protected TextViewEx buildButtonInCollapsableView(Context context, boolean selected, boolean showAll) {
+	protected TextView buildButtonInCollapsableView(Context context, boolean selected, boolean showAll) {
 		return buildButtonInCollapsableView(context, selected, showAll, true);
 	}
 
-	protected TextViewEx buildButtonInCollapsableView(Context context, boolean selected, boolean showAll, boolean singleLine) {
-		TextViewEx button = new TextViewEx(new ContextThemeWrapper(context, light ? R.style.OsmandLightTheme : R.style.OsmandDarkTheme));
+	protected TextView buildButtonInCollapsableView(Context context, boolean selected, boolean showAll, boolean singleLine) {
+		TextView button = new TextView(new ContextThemeWrapper(context, light ? R.style.OsmandLightTheme : R.style.OsmandDarkTheme));
 		LinearLayout.LayoutParams llWikiButtonParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		llWikiButtonParams.setMargins(0, 0, 0, dpToPx(8f));
 		button.setLayoutParams(llWikiButtonParams);
-		button.setTypeface(FontCache.getRobotoRegular(context));
+		button.setTypeface(FontCache.getRobotoRegular(context));////////////////////
 		int bg;
 		if (selected) {
 			bg = light ? R.drawable.context_menu_controller_bg_light_selected: R.drawable.context_menu_controller_bg_dark_selected;

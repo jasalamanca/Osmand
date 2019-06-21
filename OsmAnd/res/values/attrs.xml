@@ -93,9 +93,4 @@
         <attr name="pstsTextAlpha" format="float"/>
         <attr name="pstsTextSelectedAlpha" format="float"/>
     </declare-styleable>
-	
-	<declare-styleable name="TextViewEx">
-		<attr name="typeface" format="string|reference"/>
-		<attr name="textAllCapsCompat" format="reference|boolean" />
-	</declare-styleable>
 </resources>

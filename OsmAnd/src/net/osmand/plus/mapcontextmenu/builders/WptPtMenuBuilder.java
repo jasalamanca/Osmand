@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import net.osmand.data.LatLon;
 import net.osmand.data.PointDescription;
@@ -21,7 +22,6 @@ import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.activities.TrackActivity;
 import net.osmand.plus.mapcontextmenu.MenuBuilder;
 import net.osmand.plus.views.POIMapLayer;
-import net.osmand.plus.widgets.TextViewEx;
 import net.osmand.util.Algorithms;
 
 import java.io.File;
@@ -126,7 +126,7 @@ public class WptPtMenuBuilder extends MenuBuilder {
 		for (int i = 0; i < points.size() && i < 10; i++) {
 			final WptPt point = points.get(i);
 			boolean selected = selectedPoint != null && selectedPoint.equals(point);
-			TextViewEx button = buildButtonInCollapsableView(context, selected, false);
+			TextView button = buildButtonInCollapsableView(context, selected, false);
 			button.setText(point.name);
 
 			if (!selected) {
@@ -140,7 +140,7 @@ public class WptPtMenuBuilder extends MenuBuilder {
 		}
 
 		if (points.size() > 10) {
-			TextViewEx button = buildButtonInCollapsableView(context, false, true);
+			TextView button = buildButtonInCollapsableView(context, false, true);
 			button.setText(context.getString(R.string.shared_string_show_all));
 			button.setOnClickListener(view1 -> {
                 OsmAndAppCustomization appCustomization = app.getAppCustomization();

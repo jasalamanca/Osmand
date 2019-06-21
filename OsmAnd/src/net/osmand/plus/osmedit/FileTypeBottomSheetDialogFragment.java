@@ -9,11 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import net.osmand.plus.R;
 import net.osmand.plus.base.MenuBottomSheetDialogFragment;
 import net.osmand.plus.osmedit.OsmEditsFragment.FileTypesDef;
-import net.osmand.plus.widgets.TextViewEx;
 
 public class FileTypeBottomSheetDialogFragment extends MenuBottomSheetDialogFragment {
 
@@ -33,7 +33,7 @@ public class FileTypeBottomSheetDialogFragment extends MenuBottomSheetDialogFrag
 				R.layout.fragment_osm_file_type_bottom_sheet_dialog, container);
 
 		if (nightMode) {
-			((TextViewEx) mainView.findViewById(R.id.title_text_view)).setTextColor(getResources().getColor(R.color.ctx_menu_info_text_dark));
+			((TextView) mainView.findViewById(R.id.title_text_view)).setTextColor(getResources().getColor(R.color.ctx_menu_info_text_dark));
 		}
 
 		Drawable fileIcon = getContentIcon(R.drawable.ic_type_file);

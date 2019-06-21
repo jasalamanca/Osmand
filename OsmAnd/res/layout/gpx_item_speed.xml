@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:osmand="http://schemas.android.com/apk/res-auto"
               xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
@@ -44,14 +43,13 @@
                 android:layout_marginLeft="18dp"
                 android:layout_marginStart="18dp">
 
-                <net.osmand.plus.widgets.TextViewEx
+                <TextView
                     android:id="@+id/average_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     tools:text="6.8 km/h"
                     android:textColor="?android:attr/textColorPrimary"
-                    osmand:typeface="@string/font_roboto_medium"
                     android:textSize="@dimen/default_desc_text_size"/>
 
                 <TextView
@@ -90,14 +88,13 @@
                 android:layout_marginLeft="18dp"
                 android:layout_marginStart="18dp">
 
-                <net.osmand.plus.widgets.TextViewEx
+                <TextView
                     android:id="@+id/max_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     tools:text="31.3 km/h"
                     android:textColor="?android:attr/textColorPrimary"
-                    osmand:typeface="@string/font_roboto_medium"
                     android:textSize="@dimen/default_desc_text_size"/>
 
                 <TextView
@@ -190,14 +187,13 @@
                 android:layout_marginLeft="18dp"
                 android:layout_marginStart="18dp">
 
-                <net.osmand.plus.widgets.TextViewEx
+                <TextView
                     android:id="@+id/time_moving_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     tools:text="174"
                     android:textColor="?android:attr/textColorPrimary"
-                    osmand:typeface="@string/font_roboto_medium"
                     android:textSize="@dimen/default_desc_text_size"/>
 
                 <TextView
@@ -236,14 +232,13 @@
                 android:layout_marginLeft="18dp"
                 android:layout_marginStart="18dp">
 
-                <net.osmand.plus.widgets.TextViewEx
+                <TextView
                     android:id="@+id/distance_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     tools:text="42 km"
                     android:textColor="?android:attr/textColorPrimary"
-                    osmand:typeface="@string/font_roboto_medium"
                     android:textSize="@dimen/default_desc_text_size"/>
 
                 <TextView
@@ -285,7 +280,7 @@
             android:layout_height="match_parent"
             tools:src="@drawable/ic_overflow_menu_dark"/>
 
-        <net.osmand.plus.widgets.TextViewEx
+        <TextView
             android:background="?attr/selectableItemBackground"
             android:id="@+id/split_interval"
             android:layout_width="0dp"
@@ -296,11 +291,9 @@
             android:gravity="start|center_vertical"
             android:textColor="?attr/color_dialog_buttons"
             android:textSize="@dimen/default_sub_text_size"
-            osmand:textAllCapsCompat="true"
-            osmand:typeface="@string/font_roboto_medium"
             android:text="@string/gpx_split_interval"/>
 
-        <net.osmand.plus.widgets.TextViewEx
+        <TextView
             android:background="?attr/selectableItemBackground"
             android:id="@+id/analyze_on_map"
             android:layout_width="0dp"
@@ -311,8 +304,6 @@
             android:gravity="end|center_vertical"
             android:textColor="?attr/color_dialog_buttons"
             android:textSize="@dimen/default_sub_text_size"
-            osmand:textAllCapsCompat="true"
-            osmand:typeface="@string/font_roboto_medium"
             android:text="@string/analyze_on_map"/>
 
     </LinearLayout>
