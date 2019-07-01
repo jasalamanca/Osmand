@@ -17,6 +17,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -29,7 +30,6 @@ import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.base.BaseOsmAndFragment;
 import net.osmand.plus.helpers.AndroidUiHelper;
-import net.osmand.plus.widgets.AutoCompleteTextViewEx;
 import net.osmand.util.Algorithms;
 
 public abstract class PointEditorFragment extends BaseOsmAndFragment {
@@ -92,7 +92,7 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 		AndroidUtils.setTextPrimaryColor(view.getContext(), nameEdit, !getEditor().isLight());
 		AndroidUtils.setHintTextSecondaryColor(view.getContext(), nameEdit, !getEditor().isLight());
 		nameEdit.setText(getNameInitValue());
-		AutoCompleteTextViewEx categoryEdit = view.findViewById(R.id.category_edit);
+		AutoCompleteTextView categoryEdit = view.findViewById(R.id.category_edit);
 		AndroidUtils.setTextPrimaryColor(view.getContext(), categoryEdit, !getEditor().isLight());
 		categoryEdit.setText(getCategoryInitValue());
 		categoryEdit.setFocusable(false);
@@ -226,7 +226,7 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 	protected abstract String getToolbarTitle();
 
 	public void setCategory(String name) {
-		AutoCompleteTextViewEx categoryEdit = view.findViewById(R.id.category_edit);
+		AutoCompleteTextView categoryEdit = view.findViewById(R.id.category_edit);
 		String n = name.length() == 0 ? getDefaultCategoryName() : name;
 		categoryEdit.setText(n);
 		ImageView categoryImage = view.findViewById(R.id.category_image);
@@ -282,7 +282,7 @@ public abstract class PointEditorFragment extends BaseOsmAndFragment {
 	}
 
 	String getCategoryTextValue() {
-		AutoCompleteTextViewEx categoryEdit = view.findViewById(R.id.category_edit);
+		AutoCompleteTextView categoryEdit = view.findViewById(R.id.category_edit);
 		String name = categoryEdit.getText().toString().trim();
 		return name.equals(getDefaultCategoryName()) ? "" : name;
 	}

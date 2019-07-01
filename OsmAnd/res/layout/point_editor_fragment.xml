@@ -14,7 +14,8 @@
         android:layout_height="match_parent"
         android:background="?attr/ctx_menu_info_view_bg"
         android:clickable="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:focusable="true">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -99,15 +100,15 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="8dp"
+                                    android:layout_marginStart="8dp"
                                     android:layout_marginRight="16dp"
+                                    android:layout_marginEnd="16dp"
                                     android:layout_marginTop="8dp"
                                     android:imeOptions="actionDone"
                                     android:inputType="text"
                                     android:textColor="?android:textColorPrimary"
                                     android:textColorHint="?android:textColorSecondary"
                                     tools:text="@string/shared_string_name"/>
-
-
                             </LinearLayout>
 
                         </LinearLayout>
@@ -152,14 +153,17 @@
                                     android:textColor="?android:textColorSecondary"
                                     android:textSize="@dimen/default_list_text_size"/>
 
-                                <net.osmand.plus.widgets.AutoCompleteTextViewEx
+                                <AutoCompleteTextView
                                     android:id="@+id/category_edit"
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="8dp"
+                                    android:layout_marginStart="8dp"
                                     android:layout_marginRight="16dp"
+                                    android:layout_marginEnd="16dp"
                                     android:layout_marginTop="8dp"
                                     android:drawableRight="@drawable/ic_action_arrow_drop_down"
+                                    android:drawableEnd="@drawable/ic_action_arrow_drop_down"
                                     android:editable="false"/>
 
                             </LinearLayout>
@@ -212,7 +216,9 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="8dp"
+                                    android:layout_marginStart="8dp"
                                     android:layout_marginRight="16dp"
+                                    android:layout_marginEnd="16dp"
                                     android:inputType="textMultiLine"
                                     android:maxLines="8"
                                     android:textColor="?android:textColorPrimary"

@@ -178,7 +178,7 @@
                     android:textColor="?android:textColorSecondary"
                     android:textSize="@dimen/default_sub_text_size"/>
 
-                <net.osmand.plus.widgets.AutoCompleteTextViewEx
+                <AutoCompleteTextView
                     android:id="@+id/category_edit"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"

@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -19,7 +20,6 @@ import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.mapcontextmenu.editors.EditCategoryDialogFragment;
 import net.osmand.plus.mapcontextmenu.editors.SelectCategoryDialogFragment;
 import net.osmand.plus.quickaction.QuickAction;
-import net.osmand.plus.widgets.AutoCompleteTextViewEx;
 
 public class FavoriteAction extends QuickAction {
 	public static final int TYPE = 3;
@@ -104,7 +104,7 @@ public class FavoriteAction extends QuickAction {
 				.inflate(R.layout.quick_action_add_favorite, parent, false);
 		parent.addView(root);
 
-		AutoCompleteTextViewEx categoryEdit = root.findViewById(R.id.category_edit);
+		AutoCompleteTextView categoryEdit = root.findViewById(R.id.category_edit);
 		Switch showDialog = root.findViewById(R.id.saveButton);
 		ImageView categoryImage = root.findViewById(R.id.category_image);
 		EditText name = root.findViewById(R.id.name_edit);
@@ -176,7 +176,7 @@ public class FavoriteAction extends QuickAction {
 		if (color == 0)
 			color = root.getContext().getResources().getColor(R.color.color_favorite);
 
-		((AutoCompleteTextViewEx) root.findViewById(R.id.category_edit)).setText(name);
+		((AutoCompleteTextView) root.findViewById(R.id.category_edit)).setText(name);
 		((ImageView) root.findViewById(R.id.category_image)).setColorFilter(color);
 
 		getParams().put(KEY_CATEGORY_NAME, name);

@@ -1,16 +1,14 @@
 package net.osmand.plus.dialogs;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.DialogInterface.OnDismissListener;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.app.AlertDialog;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -34,7 +32,6 @@ import net.osmand.util.MapUtils;
 import java.text.Collator;
 import java.text.MessageFormat;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class FavoriteDialogs {
@@ -173,7 +170,7 @@ public class FavoriteDialogs {
 		return builder.create();
     }
 	
-	public static final AlertDialog showFavoritesDialog(
+	public static AlertDialog showFavoritesDialog(
 			final Context uiContext,
 			final FavouritesAdapter favouritesAdapter, final OnItemClickListener click,
 			final OnDismissListener dismissListener, final Dialog[] dialogHolder, final boolean sortByDist) {

@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -16,7 +17,6 @@ import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.mapcontextmenu.editors.EditCategoryDialogFragment;
 import net.osmand.plus.mapcontextmenu.editors.SelectCategoryDialogFragment;
 import net.osmand.plus.quickaction.QuickAction;
-import net.osmand.plus.widgets.AutoCompleteTextViewEx;
 
 public class GPXAction extends QuickAction {
 	public static final int TYPE = 6;
@@ -67,7 +67,7 @@ public class GPXAction extends QuickAction {
 		final View root = LayoutInflater.from(parent.getContext())
 				.inflate(R.layout.quick_action_add_gpx, parent, false);
 		parent.addView(root);
-		AutoCompleteTextViewEx categoryEdit = root.findViewById(R.id.category_edit);
+		AutoCompleteTextView categoryEdit = root.findViewById(R.id.category_edit);
 		Switch showDialog = root.findViewById(R.id.saveButton);
 		ImageView categoryImage = root.findViewById(R.id.category_image);
 		EditText name = root.findViewById(R.id.name_edit);
@@ -124,7 +124,7 @@ public class GPXAction extends QuickAction {
 	private void fillGroupParams(View root, String name, int color) {
 		if (color == 0) color = root.getContext().getResources().getColor(R.color.icon_color);
 
-		((AutoCompleteTextViewEx) root.findViewById(R.id.category_edit)).setText(name);
+		((AutoCompleteTextView) root.findViewById(R.id.category_edit)).setText(name);
 		((ImageView) root.findViewById(R.id.category_image)).setColorFilter(color);
 
 		getParams().put(KEY_CATEGORY_NAME, name);

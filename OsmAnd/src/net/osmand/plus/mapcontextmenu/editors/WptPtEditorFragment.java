@@ -2,7 +2,6 @@ package net.osmand.plus.mapcontextmenu.editors;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
