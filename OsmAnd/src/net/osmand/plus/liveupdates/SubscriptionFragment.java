@@ -5,17 +5,14 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.AppCompatCheckBox;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import net.osmand.AndroidNetworkUtils;
@@ -151,7 +148,7 @@ public class SubscriptionFragment extends BaseOsmAndDialogFragment implements In
 
 		final View headerLayout = view.findViewById(R.id.headerLayout);
 		final View paramsLayout = view.findViewById(R.id.paramsLayout);
-		AppCompatCheckBox donationCheckbox = view.findViewById(R.id.donationCheckbox);
+		CheckBox donationCheckbox = view.findViewById(R.id.donationCheckbox);
 		donationCheckbox.setChecked(donation);
 		donationCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
 			donation = isChecked;

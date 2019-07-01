@@ -1,9 +1,9 @@
 package net.osmand.plus.download;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -19,8 +19,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
-import android.app.AlertDialog;
-import android.support.v7.widget.AppCompatButton;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -461,9 +459,9 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 		private final TextView downloadsLeftTextView;
 		private final ProgressBar downloadsLeftProgressBar;
 		private final View fullVersionProgress;
-		private final AppCompatButton fullVersionButton;
+		private final Button fullVersionButton;
 		private final View osmLiveProgress;
-		private final AppCompatButton osmLiveButton;
+		private final Button osmLiveButton;
 		private final DownloadActivity ctx;
 		private final boolean dialog;
 
@@ -490,9 +488,7 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 			freeVersionDescriptionTextView = freeVersionBanner
 					.findViewById(R.id.freeVersionDescriptionTextView);
 			freeVersionBannerTitle = freeVersionBanner.findViewById(R.id.freeVersionBannerTitle);
-			// laterButton = freeVersionBanner.findViewById(R.id.laterButton);
-			// buttonsLinearLayout = freeVersionBanner.findViewById(R.id.buttonsLinearLayout);
-			
+
 			fullVersionProgress = freeVersionBanner.findViewById(R.id.fullVersionProgress);
 			fullVersionButton = freeVersionBanner.findViewById(R.id.fullVersionButton);
 			osmLiveProgress = freeVersionBanner.findViewById(R.id.osmLiveProgress);
@@ -506,14 +502,12 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 
 		private void collapseBanner() {
 			freeVersionDescriptionTextView.setVisibility(View.GONE);
-			// buttonsLinearLayout.setVisibility(View.GONE);
 			priceInfoLayout.setVisibility(View.GONE);
 			freeVersionBannerTitle.setVisibility(View.VISIBLE);
 		}
 
 		public void expandBanner() {
 			freeVersionDescriptionTextView.setVisibility(View.VISIBLE);
-			// buttonsLinearLayout.setVisibility(View.VISIBLE);
 			priceInfoLayout.setVisibility(View.VISIBLE);
 			freeVersionBannerTitle.setVisibility(View.VISIBLE);
 		}
@@ -630,11 +624,9 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 			final Integer mapsDownloaded = settings.NUMBER_OF_FREE_DOWNLOADS.get() + activeTasks;
 			downloadsLeftProgressBar.setProgress(mapsDownloaded);
 		}
-
 	}
 
 	public static class BannerAndDownloadFreeVersion {
-		
 		private final View downloadProgressLayout;
 		private final ProgressBar progressBar;
 		private final TextView leftTextView;
@@ -653,8 +645,6 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 			leftTextView = view.findViewById(R.id.leftTextView);
 			rightTextView = view.findViewById(R.id.rightTextView);
 			
-
-
 			freeVersionDialog.initFreeVersionBanner();
 			updateBannerInProgress();
 		}
@@ -695,18 +685,6 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 				}
 			}
 		}
-
-// --Commented out by Inspection START (6/01/19 20:34):
-//		public void hideDownloadProgressLayout() {
-//			downloadProgressLayout.setVisibility(View.GONE);
-//		}
-// --Commented out by Inspection STOP (6/01/19 20:34)
-
-// --Commented out by Inspection START (6/01/19 20:34):
-//		public void showDownloadProgressLayout() {
-//			downloadProgressLayout.setVisibility(View.VISIBLE);
-//		}
-// --Commented out by Inspection STOP (6/01/19 20:34)
 	}
 
 	public void reloadLocalIndexes() {
@@ -726,7 +704,6 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 
 			@Override
 			protected void onPostExecute(List<String> warnings) {
-//				setSupportProgressBarIndeterminateVisibility(false);
 				if (!warnings.isEmpty()) {
 					final StringBuilder b = new StringBuilder();
 					boolean f = true;

@@ -1,17 +1,13 @@
 package net.osmand.plus.firstusage;
 
-import android.annotation.TargetApi;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.AppCompatButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import net.osmand.plus.R;
@@ -25,13 +21,9 @@ public class FirstUsageWelcomeFragment extends Fragment {
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.first_usage_welcome_fragment, container, false);
 		ImageView backgroundImage = view.findViewById(R.id.background_image);
-		if (Build.VERSION.SDK_INT >= 14) {
-			backgroundImage.setImageResource(R.drawable.bg_first_usage);
-		} else {
-			backgroundImage.setImageDrawable(null);
-		}
+		backgroundImage.setImageResource(R.drawable.bg_first_usage);
 
-		AppCompatButton skipButton = view.findViewById(R.id.start_button);
+		Button skipButton = view.findViewById(R.id.start_button);
 		skipButton.setOnClickListener(v -> FirstUsageWizardFragment.startWizard(getActivity()));
 		return view;
 	}

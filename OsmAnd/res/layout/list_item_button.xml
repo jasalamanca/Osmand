@@ -8,7 +8,7 @@
               android:paddingBottom="8dp"
               android:paddingTop="8dp">
 
-    <android.support.v7.widget.AppCompatButton
+    <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

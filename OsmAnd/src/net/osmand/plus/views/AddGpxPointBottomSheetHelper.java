@@ -34,7 +34,7 @@ public class AddGpxPointBottomSheetHelper implements OnDismissListener {
 	private NewGpxPoint newGpxPoint;
 	private PointDescription pointDescription;
 
-	public AddGpxPointBottomSheetHelper(final MapActivity activity, ContextMenuLayer ctxMenuLayer) {
+	AddGpxPointBottomSheetHelper(final MapActivity activity, ContextMenuLayer ctxMenuLayer) {
 		this.contextMenuLayer = ctxMenuLayer;
 		iconsCache = activity.getMyApplication().getIconsCache();
 		mapActivity = activity;
@@ -105,14 +105,14 @@ public class AddGpxPointBottomSheetHelper implements OnDismissListener {
 		view.setVisibility(View.GONE);
 	}
 
-	public void enterApplyPositionMode() {
+	void enterApplyPositionMode() {
 		if (!applyingPositionMode) {
 			applyingPositionMode = true;
 			view.findViewById(R.id.create_button).setEnabled(false);
 		}
 	}
 
-	public void exitApplyPositionMode() {
+	void exitApplyPositionMode() {
 		if (applyingPositionMode) {
 			applyingPositionMode = false;
 			view.findViewById(R.id.create_button).setEnabled(true);
