@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:background="?attr/selectableItemBackground">
 
-        <android.support.v7.widget.AppCompatImageView
+        <ImageView
             android:id="@+id/measure_point_reorder_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
             android:tint="?attr/secondary_icon_color"
             tools:src="@drawable/ic_action_reorder"/>
 
-        <android.support.v7.widget.AppCompatImageView
+        <ImageView
             android:id="@+id/measure_point_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

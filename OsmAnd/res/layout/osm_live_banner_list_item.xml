@@ -15,11 +15,12 @@
         android:paddingLeft="@dimen/list_content_padding"
         android:paddingRight="@dimen/list_content_padding">
 
-        <android.support.v7.widget.AppCompatImageView
+        <ImageView
             android:id="@+id/icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/favorites_icon_right_margin"
+            android:layout_marginEnd="@dimen/favorites_icon_right_margin"
             android:paddingTop="6dp"
             android:tint="@color/map_widget_blue"
             android:src="@drawable/ic_action_osm_live"/>

@@ -31,7 +31,7 @@ public class MapMarkerItemViewHolder extends RecyclerView.ViewHolder {
 	final View divider;
 	final View bottomShadow;
 
-	public MapMarkerItemViewHolder(View view) {
+	MapMarkerItemViewHolder(View view) {
 		super(view);
 		mainLayout = view.findViewById(R.id.main_layout);
 		topDivider = view.findViewById(R.id.top_divider);

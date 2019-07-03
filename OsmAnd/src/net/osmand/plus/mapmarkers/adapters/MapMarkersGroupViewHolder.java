@@ -13,7 +13,7 @@ class MapMarkersGroupViewHolder extends RecyclerView.ViewHolder {
 	final TextView name;
 	final TextView numberCount;
 
-	public MapMarkersGroupViewHolder(View itemView) {
+	MapMarkersGroupViewHolder(View itemView) {
 		super(itemView);
 		icon = itemView.findViewById(R.id.icon);
 		name = itemView.findViewById(R.id.name_text);

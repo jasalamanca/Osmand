@@ -8,7 +8,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp">
 
-    <android.support.v7.widget.AppCompatImageView
+    <ImageView
         android:id="@+id/icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,6 +27,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
         tools:text="Some title text" />
 
     <CheckBox
@@ -34,6 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/list_item_height"
         android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
         android:focusable="false"
         android:layout_gravity="center_vertical" />
 

@@ -101,7 +101,7 @@
                         android:textSize="@dimen/default_list_text_size"
                         android:text="@string/change_color"/>
 
-                    <android.support.v7.widget.AppCompatImageView
+                    <ImageView
                         android:id="@+id/colorImage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

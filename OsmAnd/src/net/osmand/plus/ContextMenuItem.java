@@ -30,7 +30,7 @@ public class ContextMenuItem {
 	private final int pos;
 	private String description;
 	private final ContextMenuAdapter.ItemClickListener itemClickListener;
-	private final ContextMenuAdapter.OnIntegerValueChangedListener integerListener;
+//	private final ContextMenuAdapter.OnIntegerValueChangedListener integerListener;
 	private final boolean hideDivider;
 	private final int minHeight;
 	private final int tag;
@@ -49,7 +49,7 @@ public class ContextMenuItem {
 							boolean skipPaintingWithoutColor, int pos,
 							String description,
 							ContextMenuAdapter.ItemClickListener itemClickListener,
-							ContextMenuAdapter.OnIntegerValueChangedListener integerListener,
+//							ContextMenuAdapter.OnIntegerValueChangedListener integerListener,
 							boolean hideDivider,
 							int minHeight,
 							int tag) {
@@ -68,7 +68,7 @@ public class ContextMenuItem {
 		this.pos = pos;
 		this.description = description;
 		this.itemClickListener = itemClickListener;
-		this.integerListener = integerListener;
+//		this.integerListener = integerListener;
 		this.hideDivider = hideDivider;
 		this.minHeight = minHeight;
 		this.tag = tag;
@@ -86,12 +86,12 @@ public class ContextMenuItem {
 		return mIcon;
 	}
 	@ColorRes
-	public int getColorRes() {
+	int getColorRes() {
 		return colorRes;
 	}
 
 	@DrawableRes
-	public int getSecondaryIcon() {
+	int getSecondaryIcon() {
 		return secondaryIcon;
 	}
 	public Boolean getSelected() {
@@ -122,11 +122,11 @@ public class ContextMenuItem {
 	public ContextMenuAdapter.ItemClickListener getItemClickListener() {
 		return itemClickListener;
 	}
-	public ContextMenuAdapter.OnIntegerValueChangedListener getIntegerListener() {return integerListener;}
-	public boolean shouldSkipPainting() {
+//	ContextMenuAdapter.OnIntegerValueChangedListener getIntegerListener() {return integerListener;}
+	boolean shouldSkipPainting() {
 		return skipPaintingWithoutColor;
 	}
-	public boolean shouldHideDivider() {
+	boolean shouldHideDivider() {
 		return hideDivider;
 	}
 	public void setTitle(String title) {
@@ -178,7 +178,7 @@ public class ContextMenuItem {
 		private int mPosition = -1;
 		private String mDescription = null;
 		private ContextMenuAdapter.ItemClickListener mItemClickListener = null;
-		private final ContextMenuAdapter.OnIntegerValueChangedListener mIntegerListener = null;
+//		private final ContextMenuAdapter.OnIntegerValueChangedListener mIntegerListener = null;
 		private boolean mSkipPaintingWithoutColor;
 		private boolean mHideDivider;
 		private int mMinHeight;
@@ -266,7 +266,7 @@ public class ContextMenuItem {
 		public ContextMenuItem createItem() {
 			return new ContextMenuItem(mTitleId, mTitle, mIcon, mColorRes, mSecondaryIcon,
 					mSelected, mProgress, mLayout, mLoading, mIsCategory, mIsClickable, mSkipPaintingWithoutColor,
-					mPosition, mDescription, mItemClickListener, mIntegerListener,
+					mPosition, mDescription, mItemClickListener, //mIntegerListener,
 					mHideDivider, mMinHeight, mTag);
 		}
 	}

@@ -10,7 +10,6 @@ import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.widget.AppCompatImageView;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,7 +75,7 @@ public class ContextMenuAdapter {
 		final int layoutId = DEFAULT_LAYOUT_ID;
 		final OsmandApplication app = ((OsmandApplication) activity.getApplication());
 		return new ContextMenuArrayAdapter(activity, layoutId, R.id.title,
-				items.toArray(new ContextMenuItem[items.size()]), app, lightTheme, changeAppModeListener);
+				items.toArray(new ContextMenuItem[0]), app, lightTheme, changeAppModeListener);
 	}
 
 	class ContextMenuArrayAdapter extends ArrayAdapter<ContextMenuItem> {
@@ -193,7 +192,7 @@ public class ContextMenuAdapter {
 						}
 					}
 					final Drawable drawable = mIconsCache.getIcon(item.getIcon(), colorRes);
-					((AppCompatImageView) convertView.findViewById(R.id.icon)).setImageDrawable(drawable);
+					((ImageView) convertView.findViewById(R.id.icon)).setImageDrawable(drawable);
 					convertView.findViewById(R.id.icon).setVisibility(View.VISIBLE);
 				} else if (convertView.findViewById(R.id.icon) != null) {
 					convertView.findViewById(R.id.icon).setVisibility(View.GONE);
@@ -241,33 +240,33 @@ public class ContextMenuAdapter {
 				}
 			}
 
-			if (convertView.findViewById(R.id.seekbar) != null) {
-				SeekBar seekBar = convertView.findViewById(R.id.seekbar);
-				if (item.getProgress() != ContextMenuItem.INVALID_ID) {
-					seekBar.setProgress(item.getProgress());
-					seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-						@Override
-						public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-							OnIntegerValueChangedListener listener = item.getIntegerListener();
-							item.setProgress(progress);
-							if (listener != null && fromUser) {
-								listener.onIntegerValueChangedListener(progress);
-							}
-						}
-
-						@Override
-						public void onStartTrackingTouch(SeekBar seekBar) {
-						}
-
-						@Override
-						public void onStopTrackingTouch(SeekBar seekBar) {
-						}
-					});
-					seekBar.setVisibility(View.VISIBLE);
-				} else if (seekBar != null) {
-					seekBar.setVisibility(View.GONE);
-				}
-			}
+//			if (convertView.findViewById(R.id.seekbar) != null) {
+//				SeekBar seekBar = convertView.findViewById(R.id.seekbar);
+//				if (item.getProgress() != ContextMenuItem.INVALID_ID) {
+//					seekBar.setProgress(item.getProgress());
+//					seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+//						@Override
+//						public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+//							OnIntegerValueChangedListener listener = item.getIntegerListener();
+//							item.setProgress(progress);
+//							if (listener != null && fromUser) {
+//								listener.onIntegerValueChangedListener(progress);
+//							}
+//						}
+//
+//						@Override
+//						public void onStartTrackingTouch(SeekBar seekBar) {
+//						}
+//
+//						@Override
+//						public void onStopTrackingTouch(SeekBar seekBar) {
+//						}
+//					});
+//					seekBar.setVisibility(View.VISIBLE);
+//				} else if (seekBar != null) {
+//					seekBar.setVisibility(View.GONE);
+//				}
+//			}
 
 			View progressBar = convertView.findViewById(R.id.ProgressBar);
 			if (progressBar != null) {
@@ -330,9 +329,9 @@ public class ContextMenuAdapter {
 								   int[] viewCoordinates);
 	}
 
-	public interface OnIntegerValueChangedListener {
-		boolean onIntegerValueChangedListener(int newValue);
-	}
+//	public interface OnIntegerValueChangedListener {
+//		boolean onIntegerValueChangedListener(int newValue);
+//	}
 
 	public static abstract class OnRowItemClick implements ItemClickListener {
 		//boolean return type needed to describe if drawer needed to be close or not
