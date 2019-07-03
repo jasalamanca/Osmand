@@ -97,7 +97,6 @@
 
     <ImageButton
         android:id="@+id/all_points"
-        style="@style/Widget.AppCompat.ActionButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"
@@ -112,7 +111,6 @@
 
     <ImageButton
         android:id="@+id/info_close"
-        style="@style/Widget.AppCompat.ActionButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"

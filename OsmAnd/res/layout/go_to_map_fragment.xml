@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:focusable="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,7 +51,9 @@
                         android:layout_weight="1"
                         android:layout_marginTop="16dp"
                         android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
                         android:paddingRight="8dp"
+                        android:paddingEnd="8dp"
                         android:text="@string/map_downloaded"
                         android:textColor="?android:textColorPrimary"
                         android:textSize="@dimen/dialog_header_text_size"/>
@@ -61,7 +64,6 @@
                         android:layout_width="44dp"
                         android:layout_height="44dp"
                         android:layout_gravity="center"
-                        style="@style/Widget.AppCompat.Button.Borderless"
                         tools:background="@color/color_warning"
                         android:src="@drawable/ic_action_remove_dark"/>
 
@@ -74,7 +76,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
                     android:paddingRight="8dp"
+                    android:paddingEnd="8dp"
                     android:text="@string/map_downloaded_descr"
                     android:textColor="?android:textColorSecondary"
                     android:textSize="@dimen/default_list_text_size"/>
@@ -87,7 +91,6 @@
                     android:layout_marginBottom="10dp"
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp"
-                    style="@style/Widget.AppCompat.Button.Borderless"
                     android:textColor="?attr/contextMenuButtonColor"
                     tools:background="@color/color_warning"
                     android:text="@string/go_to_map"/>

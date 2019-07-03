@@ -25,7 +25,6 @@
 
             <ImageButton
                 android:id="@+id/top_bar_back_button"
-                style="@style/Widget.AppCompat.ActionButton"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_gravity="top"
@@ -71,7 +70,6 @@
 
             <ImageButton
                 android:id="@+id/top_bar_close_button"
-                style="@style/Widget.AppCompat.ActionButton"
                 android:layout_width="56dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="top"
@@ -86,7 +84,8 @@
             android:layout_gravity="bottom"
             android:background="?attr/bg_color"
             android:clickable="true"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -122,6 +121,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:layout_marginRight="8dp"
+                            android:layout_marginEnd="8dp"
                             android:textColor="?android:attr/textColorPrimary"
                             android:textSize="@dimen/default_desc_text_size"
                             tools:text="@string/altitude"/>
@@ -131,6 +131,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginRight="8dp"
+                            android:layout_marginEnd="8dp"
                             android:src="@drawable/ic_action_arrow_drop_down"/>
 
                     </LinearLayout>
@@ -164,17 +165,19 @@
                             android:id="@+id/x_axis_title"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
                             android:layout_marginRight="8dp"
+                            android:layout_weight="1"
                             android:textColor="?android:attr/textColorPrimary"
                             android:textSize="@dimen/default_desc_text_size"
-                            tools:text="@string/map_widget_speed"/>
+                            tools:text="@string/map_widget_speed" />
 
                         <ImageView
                             android:id="@+id/x_axis_arrow"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginRight="8dp"
+                            android:layout_marginEnd="8dp"
                             android:src="@drawable/ic_action_arrow_drop_down"/>
 
                     </LinearLayout>

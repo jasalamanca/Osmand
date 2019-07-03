@@ -30,7 +30,6 @@
 
     <ImageButton
         android:id="@+id/clearButton"
-        style="@style/Widget.AppCompat.ActionButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:contentDescription="@string/shared_string_close"

@@ -63,7 +63,6 @@
 
                     <ImageButton
                         android:id="@+id/shareButton"
-                        style="@style/Widget.AppCompat.ActionButton"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:contentDescription="@string/shared_string_share"
@@ -71,7 +70,6 @@
 
                     <ImageButton
                         android:id="@+id/deleteButton"
-                        style="@style/Widget.AppCompat.ActionButton"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:contentDescription="@string/shared_string_delete"
@@ -151,7 +149,6 @@
 
                     <ImageButton
                         android:id="@+id/filterButton"
-                        style="@style/Widget.AppCompat.ActionButton"
                         android:layout_width="48dp"
                         android:layout_height="match_parent"
                         android:contentDescription="@string/poi_filter_custom_filter"

@@ -54,7 +54,6 @@
 
                     <ImageButton
                         android:id="@+id/print_route"
-                        style="@style/Widget.AppCompat.ActionButton"
                         android:layout_width="44dp"
                         android:layout_height="48dp"
                         android:layout_marginTop="4dp"
@@ -63,7 +62,6 @@
 
                     <ImageButton
                         android:id="@+id/save_as_gpx"
-                        style="@style/Widget.AppCompat.ActionButton"
                         android:layout_width="44dp"
                         android:layout_height="48dp"
                         android:layout_marginTop="4dp"
@@ -72,7 +70,6 @@
 
                     <ImageButton
                         android:id="@+id/share_as_gpx"
-                        style="@style/Widget.AppCompat.ActionButton"
                         android:layout_width="44dp"
                         android:layout_height="48dp"
                         android:layout_marginTop="4dp"

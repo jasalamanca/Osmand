@@ -94,7 +94,6 @@
 
                         <ImageButton
                             android:id="@+id/latitudeClearButton"
-                            style="@style/Widget.AppCompat.ActionButton"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:layout_gravity="end"
@@ -142,7 +141,6 @@
 
                         <ImageButton
                             android:id="@+id/longitudeClearButton"
-                            style="@style/Widget.AppCompat.ActionButton"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:layout_gravity="end"
@@ -192,7 +190,6 @@
 
                         <ImageButton
                             android:id="@+id/northingClearButton"
-                            style="@style/Widget.AppCompat.ActionButton"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:layout_gravity="end"
@@ -242,7 +239,6 @@
 
                         <ImageButton
                             android:id="@+id/eastingClearButton"
-                            style="@style/Widget.AppCompat.ActionButton"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:layout_gravity="end"
@@ -284,7 +280,6 @@
 
                         <ImageButton
                             android:id="@+id/zoneClearButton"
-                            style="@style/Widget.AppCompat.ActionButton"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:layout_gravity="end"
@@ -324,7 +319,6 @@
 
                         <ImageButton
                             android:id="@+id/olcClearButton"
-                            style="@style/Widget.AppCompat.ActionButton"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:layout_gravity="end"
@@ -385,7 +379,6 @@
 
                         <ImageButton
                             android:id="@+id/formatSelectButton"
-                            style="@style/Widget.AppCompat.ActionButton"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:layout_gravity="end"

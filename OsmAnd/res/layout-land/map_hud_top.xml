@@ -374,7 +374,6 @@
 
                 <ImageButton
                     android:id="@+id/widget_top_bar_back_button"
-                    style="@style/Widget.AppCompat.ActionButton"
                     android:layout_width="56dp"
                     android:layout_height="56dp"
                     android:layout_gravity="top"
@@ -420,7 +419,6 @@
 
                 <ImageButton
                     android:id="@+id/widget_top_bar_refresh_button"
-                    style="@style/Widget.AppCompat.ActionButton"
                     android:layout_width="48dp"
                     android:layout_height="56dp"
                     android:layout_gravity="top"
@@ -430,7 +428,6 @@
 
                 <ImageButton
                     android:id="@+id/widget_top_bar_close_button"
-                    style="@style/Widget.AppCompat.ActionButton"
                     android:layout_width="48dp"
                     android:layout_height="56dp"
                     android:layout_gravity="top"
@@ -625,4 +622,4 @@
     </FrameLayout>
 
 </LinearLayout>
-    </LinearLayout>
+</LinearLayout>

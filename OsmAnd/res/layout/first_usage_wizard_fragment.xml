@@ -53,7 +53,6 @@
 
                 <Button
                     android:id="@+id/skip_button"
-                    style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="16dp"
@@ -135,7 +134,6 @@
 
                     <Button
                         android:id="@+id/no_location_action_button"
-                        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -216,7 +214,6 @@
 
                     <Button
                         android:id="@+id/no_inet_action_button"
-                        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -456,7 +453,6 @@
 
             <Button
                 android:id="@+id/search_country_button"
-                style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -540,7 +536,6 @@
 
                                 <ImageButton
                                     android:id="@+id/map_redownload_button"
-                                    style="@style/Widget.AppCompat.ActionButton"
                                     android:layout_width="44dp"
                                     android:layout_height="60dp"
                                     android:contentDescription="@string/shared_string_cancel"
@@ -582,7 +577,6 @@
 
                                 <ImageButton
                                     android:id="@+id/map_download_progress_button"
-                                    style="@style/Widget.AppCompat.ActionButton"
                                     android:layout_width="44dp"
                                     android:layout_height="44dp"
                                     android:contentDescription="@string/shared_string_cancel"
@@ -657,7 +651,6 @@
 
                                 <ImageButton
                                     android:id="@+id/map2_redownload_button"
-                                    style="@style/Widget.AppCompat.ActionButton"
                                     android:layout_width="44dp"
                                     android:layout_height="60dp"
                                     android:contentDescription="@string/shared_string_cancel"
@@ -698,7 +691,6 @@
 
                                 <ImageButton
                                     android:id="@+id/map2_download_progress_button"
-                                    style="@style/Widget.AppCompat.ActionButton"
                                     android:layout_width="44dp"
                                     android:layout_height="44dp"
                                     android:contentDescription="@string/shared_string_cancel"
@@ -815,7 +807,6 @@
 
                     <Button
                         android:id="@+id/storage_change_button"
-                        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="16dp"
