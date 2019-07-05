@@ -28,7 +28,7 @@
             android:layout_height="1dp"
             android:background="?attr/keyboard_controls_divider"/>
 
-        <android.support.v7.widget.AppCompatTextView
+        <TextView
             android:id="@+id/add_marker_button"
             android:layout_width="match_parent"
             android:layout_height="52dp"

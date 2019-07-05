@@ -66,7 +66,7 @@
                             android:textSize="@dimen/default_list_text_size"
                             tools:text="386 m"/>
 
-                        <android.support.v7.widget.AppCompatTextView
+                        <TextView
                             android:maxLines="1"
                             android:id="@+id/selected_point_ele"
                             android:layout_width="wrap_content"
@@ -78,7 +78,7 @@
                             android:layout_marginRight="@dimen/bottom_sheet_content_margin_small"
                             tools:text="A: 345 m"/>
 
-                        <android.support.v7.widget.AppCompatTextView
+                        <TextView
                             android:maxLines="1"
                             android:id="@+id/selected_point_speed"
                             android:layout_width="wrap_content"

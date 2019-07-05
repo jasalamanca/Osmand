@@ -18,7 +18,7 @@
         android:visibility="gone"
         tools:visibility="visible"/>
 
-    <android.support.v7.widget.AppCompatTextView
+    <TextView
         android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

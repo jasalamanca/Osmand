@@ -1,7 +1,6 @@
 package net.osmand.plus.download.ui;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
@@ -31,7 +30,7 @@ import net.osmand.util.Algorithms;
 import java.io.File;
 import java.text.DateFormat;
 
-public class ItemViewHolder {
+class ItemViewHolder {
 
 	private final TextView nameTextView;
 	private final TextView descrTextView;
@@ -63,7 +62,7 @@ public class ItemViewHolder {
 	}
 	
 
-	public ItemViewHolder(View view, DownloadActivity context) {
+	ItemViewHolder(View view, DownloadActivity context) {
 		this.context = context;
 		dateFormat = android.text.format.DateFormat.getMediumDateFormat(context);
 		progressBar = view.findViewById(R.id.progressBar);
@@ -85,28 +84,28 @@ public class ItemViewHolder {
 		textColorSecondary = typedValue.data;
 	}
 	
-	public void setShowRemoteDate(boolean showRemoteDate) {
+	void setShowRemoteDate(boolean showRemoteDate) {
 		this.showRemoteDate = showRemoteDate;
 	}
 	
 	
-	public void setShowParentRegionName(boolean showParentRegionName) {
+	void setShowParentRegionName(boolean showParentRegionName) {
 		this.showParentRegionName = showParentRegionName;
 	}
 	
-	public void setShowProgressInDescr(boolean b) {
+	void setShowProgressInDescr(boolean b) {
 		showProgressInDesc = b;
 	}
 	
-	public void setSilentCancelDownload(boolean silentCancelDownload) {
+	void setSilentCancelDownload(boolean silentCancelDownload) {
 		this.silentCancelDownload = silentCancelDownload;
 	}
 	
-	public void setShowTypeInDesc(boolean showTypeInDesc) {
+	void setShowTypeInDesc(boolean showTypeInDesc) {
 		this.showTypeInDesc = showTypeInDesc;
 	}
 	
-	public void setShowTypeInName(boolean showTypeInName) {
+	void setShowTypeInName(boolean showTypeInName) {
 		this.showTypeInName = showTypeInName;
 	}
 
@@ -114,11 +113,11 @@ public class ItemViewHolder {
 		freeVersion = context.isFreeVersion();
 	}
 
-	public void bindIndexItem(final IndexItem indexItem) {
+	void bindIndexItem(final IndexItem indexItem) {
 		bindIndexItem(indexItem, null);
 	}
 
-	public void bindIndexItem(final IndexItem indexItem, final String cityName) {
+	void bindIndexItem(final IndexItem indexItem, final String cityName) {
 		initAppStatusVariables();
 		boolean isDownloading = context.getDownloadThread().isDownloading(indexItem);
 		int progress = -1;
@@ -193,7 +192,7 @@ public class ItemViewHolder {
 		}
 	}
 
-	public void bindIndexItem(final CityItem cityItem) {
+	void bindIndexItem(final CityItem cityItem) {
 		if (cityItem.getIndexItem() != null) {
 			bindIndexItem(cityItem.getIndexItem(), cityItem.getName());
 		} else {
@@ -268,7 +267,7 @@ public class ItemViewHolder {
 		return disabled;
 	}
 
-	public RightButtonAction getClickAction(final IndexItem indexItem) {
+	RightButtonAction getClickAction(final IndexItem indexItem) {
 		RightButtonAction clickAction = RightButtonAction.DOWNLOAD;
 		if (indexItem.getType() == DownloadActivityType.WIKIPEDIA_FILE && freeVersion
 				&& !context.getMyApplication().getSettings().FULL_VERSION_PURCHASED.get()) {
@@ -277,7 +276,7 @@ public class ItemViewHolder {
 		return clickAction;
 	}
 
-	public OnClickListener getRightButtonAction(final IndexItem item, final RightButtonAction clickAction) {
+	OnClickListener getRightButtonAction(final IndexItem item, final RightButtonAction clickAction) {
 		if (clickAction != RightButtonAction.DOWNLOAD) {
 			return v -> {
                 switch (clickAction) {
