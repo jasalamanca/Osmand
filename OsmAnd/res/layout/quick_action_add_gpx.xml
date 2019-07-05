@@ -97,7 +97,7 @@
                     android:textColor="?android:textColorSecondary"
                     android:textSize="@dimen/default_sub_text_size"/>
 
-                <android.support.v7.widget.AppCompatEditText
+                <EditText
                     android:id="@+id/name_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -16,11 +16,11 @@ import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat.OnRequestPermissionsResultCallback;
-import android.support.v7.widget.AppCompatCheckedTextView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckedTextView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -135,7 +135,7 @@ public class SettingsGeneralActivity extends SettingsBaseActivity implements OnR
 						v = inflater.inflate(R.layout.single_choice_description_item, parent, false);
 					}
 					DrivingRegion item = getItem(position);
-					AppCompatCheckedTextView title = v.findViewById(R.id.text1);
+					CheckedTextView title = v.findViewById(R.id.text1);
 					TextView desc = v.findViewById(R.id.description);
 					if (item != null) {
 						title.setText(getString(item.name));
